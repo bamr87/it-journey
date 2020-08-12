@@ -8,3 +8,4 @@ brew install wget
 brew cask install iterm2
 brew cask install google-cloud-sdk
 brew cask install inkscape
+brew cask install sonic-pi
