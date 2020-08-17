@@ -12,11 +12,15 @@
 
 ### mac
   #### Homebrew
-  file://init_apps/hb-install.sh
+  .init_world/hello-mac/hb-install.sh
+
   ./init_apps/hb-packages.sh
 
   #### atom
   ./init_apps/apm-apps.sh
+
+  ### iterm2
+
 
   #### SDK's
     Python

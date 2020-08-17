@@ -1,5 +1,5 @@
 #!/bin/bash
-test
+
 # $0 - The name of the Bash script.
 # $1 - $9 - The first 9 arguments to the Bash script. (As mentioned above.)
 # $# - How many arguments were passed to the Bash script.
@@ -11,3 +11,11 @@ test
 # $SECONDS - The number of seconds since the script was started.
 # $RANDOM - Returns a different random number each time is it referred to.
 # $LINENO - Returns the current line number in the Bash script.
+
+# Ctrl + A Go to the beginning of the line you are currently typing on
+# Ctrl + E Go to the end of the line you are currently typing on
+# Ctrl + R Lets you search through previously used commands
+# Ctrl + W Delete the word before the cursor
+
+# Bash Games
+git clone https://gitlab.com/slackermedia/bashcrawl.git
