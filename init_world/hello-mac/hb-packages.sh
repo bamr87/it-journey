@@ -11,3 +11,5 @@ brew cask install inkscape
 brew cask install sonic-pi
 brew cask install postman
 brew install bash-completion
+brew install zsh
+brew install node
