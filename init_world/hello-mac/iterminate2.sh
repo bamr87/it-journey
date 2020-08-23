@@ -1,11 +1,4 @@
-_Terminal Upgrade_
-
-1. Get iTerm
-fratures:
-  - split pane
-  - easier search (it highlights all the words),
-  - better mouse text selection support,
-  - more customizable.
+# _Terminal Upgrade_
 
 Download it here: https://www.iterm2.com/version3.html
 
