@@ -12,12 +12,12 @@
 
 ### mac
   #### Homebrew
-  .init_world/hello-mac/hb-install.sh
+  `.init_world/hello-mac/hb-install.sh`
 
-  ./init_apps/hb-packages.sh
+  `./init_apps/hb-packages.sh`
 
   #### atom
-  ./init_apps/apm-apps.sh
+  ` ./init_apps/apm-apps.sh `
 
   ### iterm2
 
@@ -29,7 +29,7 @@
 
           OMZsh
 
-## Level 00 - Navigation/Foundation
+## Level 0000 - Navigation/Foundation
   ### CLI - Command Line Interface
     -
   ### Git
@@ -38,13 +38,35 @@
 
   ### MTD - Make the docs
 
-## Level 01 - Basic building blocks
+## Level 0001 - Basic building blocks
   ### Web building
+  ### Infrastructure
+  ### Database
 
-## Level 02 - PIjects
+## Level 0010 - PIjects
 
-## Level 03 - Cloud
+## Level 0011 - Cloud
 
-## Level 04 - Data
+## Level 0100 - Front end basics
 
-## Level 05 - Devops
+## Level 0101 - Back end basics
+
+## Level 0110 - Data basics
+
+## Level 0111 - Web Development
+
+## Level 1000 -
+
+## Level 1001 -
+
+## Level 1010 -
+
+## Level 1011 -
+
+## Level 1100 -
+
+## Level 1101 -
+
+## Level 1110 -
+
+## Level 1111 - Borne Again Solutions Hero
