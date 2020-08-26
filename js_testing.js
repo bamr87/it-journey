@@ -8,8 +8,8 @@ var bag_taken = 0;
 var n = qtyList1[0] + qtyList1[1];
 
 for (var i = 0; i < itemList1.length; i++) {
-  if (itemList1[i] == "blah") {
-    bag_taken = bag_taken + qtyList1[i];
+  if (itemList1[i] = "blah") {
+    bag_taken = bag_taken + valueOf(qtyList1[i]);
   }
   console.log(bag_taken);
 };
