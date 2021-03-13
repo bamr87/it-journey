@@ -1,4 +1,4 @@
-# zer0
+# zer0 test
 
 ## init_world
   Initialize your IT world
@@ -32,8 +32,8 @@
 ## Level 0000 - Navigation/Foundation
   ### CLI - Command Line Interface
     -
-  ### Git
-
+  ### Git your tools
+    -
   ### RTD - Read the docs
 
   ### MTD - Make the docs
