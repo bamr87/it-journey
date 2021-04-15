@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 echo "Let's bash crawl"
 read -p "launch Bar Crawl? yes or no" parm1
