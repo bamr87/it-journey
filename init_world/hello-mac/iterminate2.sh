@@ -1,7 +1,5 @@
 # _Terminal Upgrade_
 
-Download it here: https://www.iterm2.com/version3.html
-
 2. Shortcuts:
 
    - Ctrl + A Go to the beginning of the line you are currently typing on
