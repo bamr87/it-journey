@@ -30,13 +30,15 @@
           OMZsh
 
 ## Level 0000 - Navigation/Foundation
+  ### RTD - Read the docs
+    - 
   ### CLI - Command Line Interface
     -
   ### Git your tools
     -
-  ### RTD - Read the docs
-
   ### MTD - Make the docs
+
+    
 
 ## Level 0001 - Basic building blocks
   ### Web building
@@ -55,7 +57,7 @@
 
 ## Level 0111 - Web Development
 
-## Level 1000 -
+## Level 1000 - Security
 
 ## Level 1001 -
 
