@@ -4,6 +4,11 @@
   Initialize your IT world
 
 ### win
+
+    #App
+        - Visual Studio 2019
+        - Python
+
   - Winget
     - https://github.com/microsoft/winget-cli
   - CHocolaty
