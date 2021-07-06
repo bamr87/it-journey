@@ -10,6 +10,7 @@
     - https://chocolatey.org/docs/installation
     @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
+
 ### mac
   #### Homebrew
   `.init_world/hello-mac/hb-install.sh`
@@ -37,7 +38,7 @@
   ### Git your tools
     -
   ### MTD - Make the docs
-
+     https://www.mkdocs.org/getting-started/
     
 
 ## Level 0001 - Basic building blocks
