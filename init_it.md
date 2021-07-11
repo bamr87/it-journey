@@ -4,11 +4,17 @@
   Initialize your IT world
 
 ### win
+
+    #App
+        - Visual Studio 2019
+        - Python
+
   - Winget
     - https://github.com/microsoft/winget-cli
   - CHocolaty
     - https://chocolatey.org/docs/installation
     @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
 
 ### mac
   #### Homebrew
@@ -30,13 +36,15 @@
           OMZsh
 
 ## Level 0000 - Navigation/Foundation
+  ### RTD - Read the docs
+    - 
   ### CLI - Command Line Interface
     -
   ### Git your tools
     -
-  ### RTD - Read the docs
-
   ### MTD - Make the docs
+     https://www.mkdocs.org/getting-started/
+    
 
 ## Level 0001 - Basic building blocks
   ### Web building
@@ -55,7 +63,7 @@
 
 ## Level 0111 - Web Development
 
-## Level 1000 -
+## Level 1000 - Security
 
 ## Level 1001 -
 

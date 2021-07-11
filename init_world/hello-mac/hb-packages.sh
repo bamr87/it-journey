@@ -24,5 +24,6 @@ brew $parm1 wget \
  zsh \
  node \
  rdesktop \
- irssi
+ irssi \
+ gh
 fi
