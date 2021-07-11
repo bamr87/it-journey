@@ -1,4 +1,4 @@
-# zer0 test
+# zer0
 
 ## init_world
   Initialize your IT world
