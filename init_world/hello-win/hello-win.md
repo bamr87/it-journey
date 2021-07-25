@@ -1,5 +1,9 @@
 
+#dependancies
 
+#Powershell
+
+cheatsheet: https://www.zerrouki.com/the-ps-cheatsheets/
 
 https://docs.microsoft.com/en-us/windows/wsl/install-win10
 https://docs.microsoft.com/en-us/windows/wsl/interop
@@ -27,6 +31,10 @@ https://docs.microsoft.com/en-us/windows/wsl/user-support
 ## Update Shell Override in Platformio
 
 ## Download/Install Apps
+
+https://docs.microsoft.com/en-us/windows/package-manager/
+
+winget https://github.com/microsoft/winget-cli/releases
 
 # Univeral OS Apps
 Share X
