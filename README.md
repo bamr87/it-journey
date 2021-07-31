@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @bamr87
 - 👀 I’m interested in IT Applications and Architecture
-- 🌱 I’m currently learning DevOps, BASH Scripting, AWS
+- 🌱 I’m currently learning PowerShell and BASH Scripting
 - 💞️ I’m looking to collaborate on Small Business ERP applications
 - 📫 You can reach me at @bamr87
 
