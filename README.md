@@ -12,11 +12,12 @@ WIP: You have stumbled here out of curiousity trying to figure out how to even b
 
 TODO: Eventually, the only way to overcome these challenges is to leverage the community for help evolve the sytem so cater to everyone's needs.
 
-# Paths
+# Init_World_Paths @ /init_world
   - Windows - PSHERO
   - Mac - ITERMINATE2
   - Linux - BASH
-  - Other
+  - Cloud
+  -
 # tools
 
 ## Shell_Profile
