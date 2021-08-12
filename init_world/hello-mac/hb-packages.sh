@@ -25,5 +25,7 @@ brew $parm1 wget \
  node \
  rdesktop \
  irssi \
- gh
+ gh \
+ tree \
+ nmap
 fi
