@@ -18,14 +18,69 @@ TODO: Eventually, the only way to overcome these challenges is to leverage the c
   - Linux - BASH
   - Cloud
   -
-# tools
 
-## Shell_Profile
+# Quests
+## Hello-World
+  [Initialize your world](/init_world)
+##
+
+
+## Level 0000 - Navigation/Foundation
+  ### RTD - Read the docs
+    -
+  ### CLI - Command Line Interface
+    -
+  ### Git your tools
+    -
+  ### MTD - Make the docs
+     https://www.mkdocs.org/getting-started/
+
+
+## Level 0001 - Basic building blocks
+  ### Web building
+  ### Infrastructure
+  ### Database
+
+## Level 0010 - PIjects
+
+## Level 0011 - Cloud
+
+## Level 0100 - Front end basics
+
+## Level 0101 - Back end basics
+
+## Level 0110 - Data basics
+
+## Level 0111 - Web Development
+
+## Level 1000 - Security
+
+## Level 1001 -
+
+## Level 1010 -
+
+## Level 1011 -
+
+## Level 1100 -
+
+## Level 1101 -
+
+## Level 1110 -
+
+## Level 1111 - Borne Again Solutions Hero
+
+
+# Gear
+
+## Terminal Illness
   ### powershell
-    - winget
+
   ### Bash
-    - apt-get
-    - homebrew - Add list of packages
+
+## Package Dependant
+  - winget
+  - apt-get
+  - homebrew
 
 ## Text_Editor
   - atom
@@ -33,11 +88,44 @@ TODO: Eventually, the only way to overcome these challenges is to leverage the c
   - xml Notepad
   - Visual Studio Code
 
+## Data_analysis
+  - Database admin
+  - Data analytics
+
 ## Source_Code
   - Gitlab
   - OneDrive
 
+## Infrastructure
+
+## Security
+
+## Web/App Development
+
+## Graphic Design
+
+## Cloud Tech
+
+## Devops
+
+  ### CI/CD
+
+## System Administration
+
+## Networking
+  - DNS
+  - Authentication
+  - VPN
+  - Sub-Nets
+  - Ports
+  - HTTPS
 ## Documentation
   - wordpress
   - mkdocs
   - jekyll
+  - Pandoc
+  - Github Pages
+
+## Colaboration
+  - Jupyter Notebooks
+  - Github
