@@ -37,6 +37,7 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 # Journal
 
 
+<!-- TODO: Eventually, the only way to overcome these challenges is to leverage the community for help evolve the sytem so cater to everyone's needs. -->
 
 # Init_World_Paths @ /init_world
   - Windows - PSHERO
@@ -133,8 +134,16 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 ## Security
 
 ## Web/App Development
+1. 
 
-## Graphic Design
+## Graphic Design - gdsn
+
+1. GIMP                 
+2. Inkscape
+3. Blender
+4. Krita
+5. Pencil 2D
+
 
 ## Cloud Tech
 
