@@ -129,6 +129,7 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 - Notepad++
 - xml Notepad
 - Visual Studio Code
+- [LaTeX](https://en.wikibooks.org/wiki/LaTeX)
 
 ## Data_analysis
 
