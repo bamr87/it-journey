@@ -18,7 +18,8 @@ brew cask $parm1 atom \
  inkscape \
  sonic-pi \
  postman \
- awscli
+ awscli \
+ visual-studio-code
 brew $parm1 wget \
  bash-completion \
  zsh \
@@ -27,5 +28,7 @@ brew $parm1 wget \
  irssi \
  gh \
  tree \
- nmap
+ nmap \
+ powershell \
+
 fi
