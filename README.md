@@ -114,7 +114,16 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 ## Terminal Illness
 
 ### powershell
+[operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
 
+[sub-expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#subexpression-operator--)
+```powershell
+PS> "Today is $(Get-Date)"
+Today is 12/02/2019 13:15:20
+
+PS> "Folder list: $((dir c:\ -dir).Name -join ', ')"
+Folder list: Program Files, Program Files (x86), Users, Windows
+```
 ### Bash
 
 ## Package Dependant
