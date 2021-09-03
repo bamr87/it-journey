@@ -1,0 +1,6 @@
+title: "IT-Journey"
+theme: minima
+markdown: kramdown
+author: bamr87
+minima:
+  date_format: "%b %-d, %Y"

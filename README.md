@@ -1,9 +1,16 @@
 ---
+Title: IT-Journey
+Author: [@bamr87](twitter.com/bamr87)
+Motive: I want to help my community to learn more about IT.
+Intentions: Provide a platform for people to share their knowledge and experience about IT.
+Layout: page
+Keywords: Home, Zer0
+Description: This is an overall outline where you can start.
 Post:
-Intentions:
-Motive:
-World View:
-Goal:
+TODO:
+- [ ] Build Jekyll Layout
+- [ ] Automate build process
+- [ ] finish building the outline
 ---
 
 # it-journey.home
@@ -28,6 +35,61 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 - [ ]   Publish manifesto article
 -->
 
+# Table of Contents: Ctrl/Shift + P "table"
+
+- [it-journey.home](#it-journeyhome)
+- [Abstract](#abstract)
+- [IT-Manifesto](#it-manifesto)
+- [Table of Contents: Ctrl/Shift + P "table"](#table-of-contents-ctrlshift--p-table)
+- [Principles](#principles)
+- [Init_World_Paths @ /init_world](#init_world_paths--init_world)
+  - [Hello-World](#hello-world)
+- [Quests](#quests)
+  - [Main Quests](#main-quests)
+  - [Side Quests](#side-quests)
+- [Journal](#journal)
+  - [Level zer0   - 0000 - Navigation/Foundation](#level-zer0-----0000---navigationfoundation)
+    - [RTD - Read the docs](#rtd---read-the-docs)
+    - [Get your tools](#get-your-tools)
+    - [Build your command center](#build-your-command-center)
+    - [CLI - Command Line Interface](#cli---command-line-interface)
+    - [Git - Source Code Control](#git---source-code-control)
+    - [Jekyll - Static Site Generator](#jekyll---static-site-generator)
+    - [MTD - Make the docs](#mtd---make-the-docs)
+  - [Level 0n3    - 0001 - Basic building blocks](#level-0n3------0001---basic-building-blocks)
+    - [Web building](#web-building)
+    - [Infrastructure](#infrastructure)
+    - [Database](#database)
+  - [Level tw0    - 0010 - PIjects](#level-tw0------0010---pijects)
+  - [Level thr33  - 0011 - Cloud](#level-thr33----0011---cloud)
+  - [Level f0ur   - 0100 - Front end basics](#level-f0ur-----0100---front-end-basics)
+  - [Level f1v3   - 0101 - Back end basics](#level-f1v3-----0101---back-end-basics)
+  - [Level s1x    - 0110 - Data basics](#level-s1x------0110---data-basics)
+  - [Level s3v3n  - 0111 - Web Development](#level-s3v3n----0111---web-development)
+  - [Level 31ght  - 1000 - Security](#level-31ght----1000---security)
+  - [Level n1n3   - 1001 -](#level-n1n3-----1001--)
+  - [Level t3n    - 1010 - Borne Again Solutions Hero](#level-t3n------1010---borne-again-solutions-hero)
+- [Gear](#gear)
+  - [Terminal Illness](#terminal-illness)
+    - [powershell](#powershell)
+    - [Bash](#bash)
+  - [Package Dependant](#package-dependant)
+  - [Text_Editor](#text_editor)
+  - [Data_analysis](#data_analysis)
+  - [Source_Code](#source_code)
+  - [Infrastructure](#infrastructure-1)
+  - [Security](#security)
+  - [Web/App Development](#webapp-development)
+  - [Graphic Design - gdsn](#graphic-design---gdsn)
+  - [Cloud Tech](#cloud-tech)
+  - [Devops](#devops)
+    - [CI/CD](#cicd)
+  - [System Administration](#system-administration)
+  - [Networking](#networking)
+  - [Documentation](#documentation)
+  - [Colaboration](#colaboration)
+
+
 # Principles
 
 [Programming_principles](https://en.wikipedia.org/wiki/Category:Programming_principles)
@@ -36,42 +98,66 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 - Don't repeat yourself - DRY
 - Keep it simple - KIS
 - Release early and often - REnO
-- Collaborate
+- Minimal Viable Path - MVP
+- Link to Everything - LTE
+- Collaborate - COLAB
+
+
+
+# Init_World_Paths @ /init_world
+[Initialize your world](/init_world)
+
+[Hello-World](init_world/hello-world.md) 
+
+- Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
+  - POLR
+- Mac - [machero]
+- Linux - [bashero]
+- Cloud - [chero]
+
+## Hello-World
+
+
+# Quests
+
+## Main Quests
+- Command and Conquer - CNC
+  - PowerShell
+  - Bash
+  - Iterm
+  - VS Code
+- Git your shit together - GYST
+  - File Management
+  - Continuous Integration and Continuous Deployement (CI/CD)
+  - Source Code Management (SCM)
+- 
+- Book vs Street Smarts - BVSS
+- Share your creations - SYC
+- Dr. Jekyll & Mr. Hub - DJMH
+
+## Side Quests
+
 
 # Journal
 
 <!-- TODO: Eventually, the only way to overcome these challenges is to leverage the community for help evolve the sytem so cater to everyone's needs. -->
 
-# Init_World_Paths @ /init_world
-
-- Windows - PSHERO
-- Mac - ITERMINATE2
-- Linux - BASH
-- Cloud
-
-# Quests
-
-## Hello-World
-
-[Initialize your world](/init_world)
-
-- Command and Conquer - CNC
-- Git your shit together - GYST
-- Book vs Street Smarts - BVSS
-- Share your creations - SYC
-- Dr. Jekyll & Mr. Hub - DJMH
-
-##
-
-## Level 0000 - Navigation/Foundation
+## Level zer0   - 0000 - Navigation/Foundation
 
 ### RTD - Read the docs
 
-    -
+- [PowerShell](https://docs.microsoft.com/en-us/powershell/)
+- [Microsoft Docs](https://docs.microsoft.com/en-us/documentation/)
+- [VS Code](https://code.visualstudio.com/docs)
+
+### Get your tools
+
+### Build your command center
 
 ### CLI - Command Line Interface
 
     -
+
 
 ### Git - Source Code Control
 
@@ -85,7 +171,7 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 
      https://www.mkdocs.org/getting-started/
 
-## Level 0001 - Basic building blocks
+## Level 0n3    - 0001 - Basic building blocks
 
 ### Web building
 
@@ -93,21 +179,16 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 
 ### Database
 
-## Level 0010 - PIjects
+## Level tw0    - 0010 - PIjects
+## Level thr33  - 0011 - Cloud
+## Level f0ur   - 0100 - Front end basics
+## Level f1v3   - 0101 - Back end basics
+## Level s1x    - 0110 - Data basics
+## Level s3v3n  - 0111 - Web Development
+## Level 31ght  - 1000 - Security
+## Level n1n3   - 1001 - 
+## Level t3n    - 1010 - Borne Again Solutions Hero
 
-## Level 0011 - Cloud
-
-## Level 0100 - Front end basics
-
-## Level 0101 - Back end basics
-
-## Level 0110 - Data basics
-
-## Level 0111 - Web Development
-
-## Level 1000 - Security
-
-## Level 1001 - Borne Again Solutions Hero
 
 # Gear
 
