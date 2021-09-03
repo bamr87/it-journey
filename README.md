@@ -7,7 +7,7 @@ Layout: page
 Keywords: Home, Zer0
 Description: This is an overall outline where you can start.
 Post:
-permalink: it-journey/index.html
+permalink: index.html
 TODO:
 - [ ] Build Jekyll Layout
 - [ ] Automate build process
