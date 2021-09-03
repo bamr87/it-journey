@@ -1,7 +1,7 @@
 ---
 Title: IT-Journey
 Author: [@bamr87](twitter.com/bamr87)
-permalink: https://jekyllrb.com/docs/permalinks/
+permalink: /it-journey/
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Layout: page
