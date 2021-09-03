@@ -1,7 +1,7 @@
 ---
 Title: IT-Journey
 Author: [@bamr87](twitter.com/bamr87)
-permalink: https://bamr87.github.io/it-journey/index.html
+permalink: https://jekyllrb.com/docs/permalinks/
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Layout: page
@@ -12,6 +12,7 @@ TODO:
 - [ ] Build Jekyll Layout
 - [ ] Automate build process
 - [ ] finish building the outline
+- [ ] Add index link to jekyll for it-journey
 ---
 
 # it-journey.home
