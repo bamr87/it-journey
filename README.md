@@ -1,20 +1,19 @@
 ---
 Title: IT-Journey
-Author: [@bamr87](twitter.com/bamr87)
+Author: bamr87
 permalink: /it-journey/
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
-Layout: page
 Keywords: Home, Zer0
 Description: This is an overall outline where you can start.
 Post:
-TODO:
+---
+
+<!-- TODO:
 - [ ] Build Jekyll Layout
 - [ ] Automate build process
 - [ ] finish building the outline
-- [ ] Add index link to jekyll for it-journey
----
-
+- [ ] Add index link to jekyll for it-journey -->
 # it-journey.home
 
 This is where is all begins. You can call this home, or the place you always come back to in case you get lost. Since you're on this journey through a world, what was sceince fiction decades back, where the pysical evidence of it is invisible, you need a map, or guide, that makes sense. This here is the starting point.
