@@ -1,13 +1,13 @@
 ---
 Title: IT-Journey
 Author: [@bamr87](twitter.com/bamr87)
+permalink: https://bamr87.github.io/it-journey/index.html
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Layout: page
 Keywords: Home, Zer0
 Description: This is an overall outline where you can start.
 Post:
-permalink: /it-journey/index.html
 TODO:
 - [ ] Build Jekyll Layout
 - [ ] Automate build process
