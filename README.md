@@ -1,7 +1,7 @@
 ---
 Title: IT-Journey
 Author: bamr87
-permalink: /it-journey/
+permalink: /it-journey/index.html
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Keywords: Home, Zer0
