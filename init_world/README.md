@@ -1,18 +1,42 @@
-## init_world
+---
+Title: Init World
+Author: [@bamr87](twitter.com/bamr87)
+Layout: page
+Keywords: init, world
+Description: This is the init world.
+---
+
+# init_world
   Initialize your IT world
 
-### win
 
-    #App
+[Hello Win](hello-win/hello-win.md)
+# Accounts
+## Gmail
+## GitHub
+## Twitter
+## Facebook
+## LinkedIn
+## Instagram
+## StackOverflow
+## CodePen
+
+
+# windows
+  
+
+## VS Code
+
+## App
         - Visual Studio 2019
         - Python
 
-  - Winget
+Winget
     - https://github.com/microsoft/winget-cli
-  - CHocolaty
-    - https://chocolatey.org/docs/installation
+  - [CHocolaty](https://chocolatey.org/docs/installation)
+```PowerShell
     @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-
+```
 
 ### mac
 

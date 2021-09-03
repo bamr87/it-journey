@@ -1,7 +1,12 @@
-
-#dependancies
-
-#Powershell
+---
+Title: Init World
+Author: [@bamr87](twitter.com/bamr87)
+Layout: page
+Keywords: init, world
+Description: This is the init world.
+Dependancies: 
+---
+# Powershell
 
 cheatsheet: https://www.zerrouki.com/the-ps-cheatsheets/
 
@@ -9,15 +14,20 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10
 https://docs.microsoft.com/en-us/windows/wsl/interop
 ## run in Powershell as admin
 
+```powershell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart -verb RunAs
+```
 
 ## enable VM's
+```powershell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-
+```
 ## Set wsl version
-https://docs.microsoft.com/nl-nl/windows/wsl/wsl2-kernel
-wsl --set-default-version 2
+[wsl](https://docs.microsoft.com/nl-nl/windows/wsl/wsl2-kernel)
 
+```powershell
+wsl --set-default-version 2
+```
 ## Install distro
 https://docs.microsoft.com/en-us/windows/wsl/install-manual
 
@@ -36,12 +46,21 @@ https://docs.microsoft.com/en-us/windows/package-manager/
 
 winget https://github.com/microsoft/winget-cli/releases
 
-# Univeral OS Apps
-Share X
-GIMP
-atom
-firefox
+# Core Universal OS Apps (Win/Linux/Mac)
+[ShareX](https://getsharex.com/)
+[GIMP](https://www.gimp.org/)
+VS Code
+Atom
+Firefox
+Chrome
 Github
-gcloud
-gdrive
-inkscape
+Google cloud
+Google Drive
+InkScape
+
+# Google Cloud SDK
+```powershell
+(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
+
+& $env:Temp\GoogleCloudSDKInstaller.exe
+```
