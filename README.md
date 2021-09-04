@@ -162,8 +162,12 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 
 ### Git - Source Code Control
 
-    -
-
+  - Milestones
+    - Forking
+    - Pull Requests
+    - Branches
+    - 
+  
 ### Jekyll - Static Site Generator
 
     -
