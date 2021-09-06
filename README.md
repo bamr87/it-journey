@@ -170,11 +170,15 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
   
 ### Jekyll - Static Site Generator
 
+Jekyll is a static site generator that is used to generate static websites.
     -
 
 ### MTD - Make the docs
 
-     https://www.mkdocs.org/getting-started/
+
+[MkDocs](https://www.mkdocs.org/)
+
+[Docusaurus](https://docusaurus.io/) 
 
 ## Level 0n3    - 0001 - Basic building blocks
 
@@ -276,6 +280,7 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 - jekyll
 - Pandoc
 - Github Pages
+- Docusaurus
 
 ## Colaboration
 
@@ -283,3 +288,5 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 - Github
 - Jekyll
 -
+> this is a quote
+
