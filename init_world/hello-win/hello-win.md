@@ -2,6 +2,7 @@
 Title: Init World
 Author: [@bamr87](twitter.com/bamr87)
 Layout: post
+permalink: /init_world/hello-win/
 Keywords: init, world
 Description: This is the init world.
 Dependancies: 
