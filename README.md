@@ -2,6 +2,7 @@
 Title: IT-Journey
 Author: bamr87 and bamr4287
 permalink: /index.html
+layout: post
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Keywords: Home, Zer0
@@ -188,41 +189,46 @@ Jekyll is a static site generator that is used to generate static websites.
 
 ### Database
 
-## Level tw0    - 0010 - PIjects
-## Level thr33  - 0011 - Cloud
+## Level tw0    - 0010 - Programming
+## Level thr33  - 0011 - PIjects
 ## Level f0ur   - 0100 - Front end basics
 ## Level f1v3   - 0101 - Back end basics
 ## Level s1x    - 0110 - Data basics
 ## Level s3v3n  - 0111 - Web Development
 ## Level 31ght  - 1000 - Security
-## Level n1n3   - 1001 - 
+## Level n1n3   - 1001 - Cloud
 ## Level t3n    - 1010 - Borne Again Solutions Hero
 
 
-# Gear
+# Tools and Equipment
 
-## Terminal Illness
+## Terminal
 
-### powershell
+### Powershell
 [operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
 
 [sub-expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#subexpression-operator--)
 ```powershell
-PS> "Today is $(Get-Date)"
-Today is 12/02/2019 13:15:20
-
-PS> "Folder list: $((dir c:\ -dir).Name -join ', ')"
-Folder list: Program Files, Program Files (x86), Users, Windows
+"Today is $(Get-Date)"
 ```
+> Today is 12/02/2019 13:15:20
+
+```powershell
+"Folder list: $((dir c:\ -dir).Name -join ', ')"
+```
+> Folder list: Program Files, Program Files (x86), Users, Windows
+
 ### Bash
 
-## Package Dependant
+### Iterm
+
+## Package Management
 
 - winget
 - apt-get
 - homebrew
 
-## Text_Editor
+# Text_Editor
 
 - atom
 - Notepad++
@@ -230,39 +236,22 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 - Visual Studio Code
 - [LaTeX](https://en.wikibooks.org/wiki/LaTeX)
 
-## Data_analysis
 
-- Database admin
-- Data analytics
+
+# DevOps
 
 ## Source_Code
 
 - Gitlab
 - OneDrive
 
+# IT Stack
+
 ## Infrastructure
 
 ## Security
 
 ## Web/App Development
-
-1.
-
-## Graphic Design - gdsn
-
-1. GIMP
-2. Inkscape
-3. Blender
-4. Krita
-5. Pencil 2D
-
-## Cloud Tech
-
-## Devops
-
-### CI/CD
-
-## System Administration
 
 ## Networking
 
@@ -272,6 +261,27 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 - Sub-Nets
 - Ports
 - HTTPS
+
+# Development Areas
+
+## Graphic Design - gdsn
+
+1. GIMP
+2. Inkscape
+3. Blender
+4. Krita
+5. Pencil 2D
+
+## Data_analysis
+
+- Database admin
+- Data analytics
+
+# Devops
+
+## CI/CD
+
+## System Administration
 
 ## Documentation
 
