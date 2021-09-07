@@ -1,6 +1,7 @@
 ---
 Title: IT-Journey
 Author: bamr87 and bamr4287
+layout: post
 permalink: /index.html
 layout: post
 Motive: I want to help my community to learn more about IT.

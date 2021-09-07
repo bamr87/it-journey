@@ -1,8 +1,14 @@
 ---
 Title: Init World
+<<<<<<< HEAD
 Author: bamr87
 Layout: post
 permalink: 
+=======
+Author: [@bamr87](twitter.com/bamr87)
+Layout: post
+permalink: /init-world/hello-win/
+>>>>>>> 8a99960517d1dda466fc1c8ba0bf3af8d69b853e
 Keywords: init, world
 Description: This is the init world.
 Dependancies: 
