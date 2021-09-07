@@ -1,7 +1,7 @@
 ---
 Title: Init World
 Author: [@bamr87](twitter.com/bamr87)
-Layout: page
+Layout: post
 Keywords: init, world
 Description: This is the init world.
 Dependancies: 
