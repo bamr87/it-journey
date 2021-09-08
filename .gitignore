@@ -4,3 +4,7 @@ lvl_0000/cv/cv.fdb_latexmk
 lvl_0000/cv/cv.fls
 lvl_0000/cv/cv.log
 lvl_0000/cv/cv.out
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata

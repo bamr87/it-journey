@@ -1,7 +1,7 @@
 ---
 Title: Init World
 Author: [@bamr87](twitter.com/bamr87)
-Layout: post
+Layout: page
 Keywords: init, world
 Description: This is the init world.
 ---
@@ -9,10 +9,11 @@ Description: This is the init world.
 # init_world
   Initialize your IT world
 
+# In
 
 [Hello Win](hello-win/hello-win.md)
 # Accounts
-## Gmail
+## [Gmail](https://www.google.com/gmail/)
 ## GitHub
 ## Twitter
 ## Facebook
