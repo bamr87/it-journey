@@ -1,20 +1,22 @@
 ---
 Title: IT-Journey
-Author: bamr87 and bamr4287
-layout: post
+Author: bamr87
+layout: home
 permalink: /index.html
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
-Keywords: Home, Zer0
+Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
-Post:
+Post: null
+lastmod: '2021-09-17T01:29:57.553Z'
 ---
 
 <!-- TODO:
 - [ ] Build Jekyll Layout
 - [ ] Automate build process
 - [ ] finish building the outline
-- [ ] Add index link to jekyll for it-journey -->
+- [ ] Add index link to jekyll for it-journey 
+- [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) -->
 # it-journey.home
 
 This is where is all begins. You can call this home, or the place you always come back to in case you get lost. Since you're on this journey through a world, what was sceince fiction decades back, where the pysical evidence of it is invisible, you need a map, or guide, that makes sense. This here is the starting point.
@@ -62,32 +64,35 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
     - [Web building](#web-building)
     - [Infrastructure](#infrastructure)
     - [Database](#database)
-  - [Level tw0    - 0010 - PIjects](#level-tw0------0010---pijects)
-  - [Level thr33  - 0011 - Cloud](#level-thr33----0011---cloud)
+  - [Level tw0    - 0010 - Programming](#level-tw0------0010---programming)
+  - [Level thr33  - 0011 - PIjects](#level-thr33----0011---pijects)
   - [Level f0ur   - 0100 - Front end basics](#level-f0ur-----0100---front-end-basics)
   - [Level f1v3   - 0101 - Back end basics](#level-f1v3-----0101---back-end-basics)
   - [Level s1x    - 0110 - Data basics](#level-s1x------0110---data-basics)
   - [Level s3v3n  - 0111 - Web Development](#level-s3v3n----0111---web-development)
   - [Level 31ght  - 1000 - Security](#level-31ght----1000---security)
-  - [Level n1n3   - 1001 -](#level-n1n3-----1001--)
+  - [Level n1n3   - 1001 - Cloud](#level-n1n3-----1001---cloud)
   - [Level t3n    - 1010 - Borne Again Solutions Hero](#level-t3n------1010---borne-again-solutions-hero)
-- [Gear](#gear)
-  - [Terminal Illness](#terminal-illness)
-    - [powershell](#powershell)
+- [Tools and Equipment](#tools-and-equipment)
+  - [Terminal](#terminal)
+    - [Powershell](#powershell)
     - [Bash](#bash)
-  - [Package Dependant](#package-dependant)
-  - [Text_Editor](#text_editor)
-  - [Data_analysis](#data_analysis)
+    - [Iterm](#iterm)
+  - [Package Management](#package-management)
+- [Text_Editor](#text_editor)
+- [DevOps](#devops)
   - [Source_Code](#source_code)
+- [IT Stack](#it-stack)
   - [Infrastructure](#infrastructure-1)
   - [Security](#security)
   - [Web/App Development](#webapp-development)
-  - [Graphic Design - gdsn](#graphic-design---gdsn)
-  - [Cloud Tech](#cloud-tech)
-  - [Devops](#devops)
-    - [CI/CD](#cicd)
-  - [System Administration](#system-administration)
   - [Networking](#networking)
+- [Development Areas](#development-areas)
+  - [Graphic Design - gdsn](#graphic-design---gdsn)
+  - [Data_analysis](#data_analysis)
+- [Devops](#devops-1)
+  - [CI/CD](#cicd)
+  - [System Administration](#system-administration)
   - [Documentation](#documentation)
   - [Colaboration](#colaboration)
 
@@ -136,6 +141,7 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 - Book vs Street Smarts - BVSS
 - Share your creations - SYC
 - Dr. Jekyll & Mr. Hub - DJMH
+  - [examples](https://github.com/collections/github-pages-examples)
 
 ## Side Quests
 

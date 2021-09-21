@@ -1,6 +1,6 @@
 ---
 Title: Init World
-Author: [@bamr87](twitter.com/bamr87)
+Author: bamr87
 Layout: post
 permalink: /init-world/hello-win/
 Keywords: init, world

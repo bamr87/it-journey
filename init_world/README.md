@@ -1,6 +1,6 @@
 ---
 Title: Init World
-Author: [@bamr87](twitter.com/bamr87)
+Author: bamr87
 Layout: page
 Keywords: init, world
 Description: This is the init world.
