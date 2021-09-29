@@ -21,9 +21,12 @@ foo:
 # main links
 main:
   - title: "Docs"
-    url: /docs/quick-start-guide/
+    url: /docs/
+    sublinks:
+    - title: "Jekyll"
+      url: /docs/jekyll/
   - title: "Posts"
-    url: /post/index/
+    url: /posts/
   - title: "Cheats"
     url: /cheat/
   - title: "About"

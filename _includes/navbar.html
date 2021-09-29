@@ -1,0 +1,23 @@
+  <!-- Collapse Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navigation Links -->
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent"> 
+    <ul class="visible-links navbar-nav">
+      {%- for link in site.data.navigation.main -%}
+        <li class="nav-item dropdown">
+          <a class="nav-link {% if link.sublinks %} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" {% endif %}" href="{{ link.url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+          
+          <!-- Drop down links  -->
+          {% if link.sublinks %}
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {%- for sublink in link.sublinks -%}
+                <a class="dropdown-item" href="{{ sublink.url | relative_url }}">{{ sublink.title | 'test' }}</a> 
+              </div>
+              {%- endfor -%}
+            {% endif %}
+        </li>
+      {%- endfor -%}
+    </ul>

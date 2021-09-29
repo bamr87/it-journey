@@ -1,14 +1,14 @@
 ---
 Title: IT-Journey
 Author: bamr87
-layout: home
+layout: default
 permalink: /index.html
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-09-17T01:29:57.553Z'
+lastmod: '2021-09-28T17:11:40.870Z'
 ---
 
 <!-- TODO:
@@ -38,6 +38,10 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 - [ ]   Goal to cater to everyone's need
 - [ ]   Publish manifesto article
 -->
+
+```javascript
+document.write('Hello, world!');
+```
 
 # Table of Contents: Ctrl/Shift + P "table"
 
