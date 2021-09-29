@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-09-28T17:11:40.870Z'
+lastmod: '2021-09-29T21:48:20.790Z'
 ---
 
 <!-- TODO:
