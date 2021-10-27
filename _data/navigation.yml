@@ -25,6 +25,8 @@ main:
     sublinks:
     - title: "Jekyll"
       url: /docs/jekyll/
+    - title: "Command Line"
+      url: /docs/command-line/      
   - title: "Posts"
     url: /posts/
   - title: "Cheats"

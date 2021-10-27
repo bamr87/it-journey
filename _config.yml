@@ -12,31 +12,53 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
-# Site settings
+# You can find config options at: https://jekyllrb.com/docs/configuration/options/
+#
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: IT-Journey
-subtitle: A blog about IT
-masthead_title: # override the default title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
+# theme                  : "zer0-mistakes-jekyll"
+# remote_theme           : "bamr87/zer0-mistakes"
+theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Settings
+
+title                    : IT-Journey
+subtitle                 : Information Highway
+subtitle_url             : "127.0.0.1"
+masthead_title           : # override the default title
+title_separator          : "|" # Appears in the web browser tab name
+locale                   : "en-US"
+name                     : &name "Amr Abdel"
+email                    : amr.abdel@gmail.com
+description              : &description >- # this means to ignore newlines until "baseurl:"
+  Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-
+baseurl                  : "" # the subpath of your site, e.g. /blog
+url                      : "" # the base hostname & protocol for your site, e.g. http://example.com
+repository               : "bamr87/it-journey" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+local_repo               : "it-journey"
+local_git                : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/"
+teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/great-lambda-pyramids-v1.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+breadcrumbs              : true # true, false (default)
+words_per_minute         : 200
+port                     : 4002 # Jekyll Serve Dev port
+dg_port                  : "4001" # Doppelganger site
 
+
+twitter_username         : "bamr87"
+github_username          : "bamr87"
 # Build settings
 # theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-assets
+  
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -57,3 +79,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Sass/SCSS
+# sass:
+#   sass_dir: _sass
+#   style: compressed
+  

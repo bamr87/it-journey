@@ -1,4 +1,5 @@
 ---
+layout: default
 ---
 
 <!doctype html>
@@ -8,44 +9,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="test">
     <meta name="author" content="amr">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-</head>      
-<body class="">
- 
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+  </head>      
+<body class="" data-spy="scroll" data-target="#toc" data-offset="0">
+   
   {% include masthead.html %}
+  {% include toc.html %}
+ 
+  <div class ="container-xxl my-md-4 bd-layout">
+    <aside class="bd-sidebar">
+      {% include sidebar.html %}
+    </aside>
+    <main class="bd-main order-1">
+      
+      <div class="bd-intro ps-lg-4">
+        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+        {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+        {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+        {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
-    <div id="main">
-      <div class="container ">
+      </div>
+
+      <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
+        <nav class="section-nav navbar bd-toc" id="toc-content" data-toggle="toc">
+          <header>
+            <h4 class="toc-entry toc-h2">
+              <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i>
+              {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}
+            </h4>
+          </header>
+          
+          {% include toc.html sanitize=true html=content h_min=1 h_max=2 class="toc toc__menu sidebar__right sticky" item_class="nav-item" anchor_class="nav-link" skip_no_ids=true %}
+          
+        </nav>
+
+      </div>  
+
+      <div class="bd-content ps-lg-4">
         {{ content }}
       </div>
+      
+      
+      
+
+
+
+
+
+
+
+      <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+        
+        
+        <div class="container-fluid">
+          <div class="row flex-xl-nowrap">
+            
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+              
+              
+              <div class="sidebar__top">
+                <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
+                  <i class="fab fa-github-square"></i>
+                </a>
+                <a href="vscode://file/{{ site.local_git}}/{{ site.local_repo }}/{{ page.path }}">
+                  <i class="fas fa-laptop-code"></i>
+                </a>
+                <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+              </div> 
+            </div>
+            <div data-spy="scroll" data-target="toc-content" data-offset="0">
+              
+              <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">    
+                
+              </div>
+            </div>
+            
+            <div class="d-none d-xl-block col-xl-2 bd-toc" id="side-toc">
+              <aside class="sidebar__right sticky">
+                
+              </aside> 
+            </div>
+            
+          </div>
+          
+        </div>
+      </article>
+    </main>
     </div>
-    <div class="alert alert-primary" role="alert">
-      This is a primary alert—check it out!
-    </div>
-    <div class="alert alert-secondary" role="alert">
-      This is a secondary alert—check it out!
-    </div>
-    <div class="alert alert-success" role="alert">
-      This is a success alert—check it out!
-    </div>
-    <div class="alert alert-danger" role="alert">
-      This is a danger alert—check it out!
-    </div>
-    <div class="alert alert-warning" role="alert">
-      This is a warning alert—check it out!
-    </div>
-    <div class="alert alert-info" role="alert">
-      This is a info alert—check it out!
-    </div>
-    <div class="alert alert-light" role="alert">
-      This is a light alert—check it out!
-    </div>
-    <div class="alert alert-dark" role="alert">
-      This is a dark alert—check it out!
-    </div>  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+<script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  
+</body>
 </html>

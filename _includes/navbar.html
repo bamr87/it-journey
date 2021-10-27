@@ -15,8 +15,8 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {%- for sublink in link.sublinks -%}
                 <a class="dropdown-item" href="{{ sublink.url | relative_url }}">{{ sublink.title | 'test' }}</a> 
+                {%- endfor -%}
               </div>
-              {%- endfor -%}
             {% endif %}
         </li>
       {%- endfor -%}

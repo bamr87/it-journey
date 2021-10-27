@@ -8,7 +8,8 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-09-29T21:48:20.790Z'
+lastmod: '2021-10-27T00:26:11.157Z'
+toc: true
 ---
 
 <!-- TODO:
@@ -53,8 +54,10 @@ document.write('Hello, world!');
 - [Init_World_Paths @ /init_world](#init_world_paths--init_world)
   - [Hello-World](#hello-world)
 - [Quests](#quests)
-  - [Main Quests](#main-quests)
-  - [Side Quests](#side-quests)
+- [Realms](#realms)
+  - [Inventory](#inventory)
+  - [Paths](#paths)
+  - [Story Lines](#story-lines)
 - [Journal](#journal)
   - [Level zer0   - 0000 - Navigation/Foundation](#level-zer0-----0000---navigationfoundation)
     - [RTD - Read the docs](#rtd---read-the-docs)
@@ -77,6 +80,7 @@ document.write('Hello, world!');
   - [Level 31ght  - 1000 - Security](#level-31ght----1000---security)
   - [Level n1n3   - 1001 - Cloud](#level-n1n3-----1001---cloud)
   - [Level t3n    - 1010 - Borne Again Solutions Hero](#level-t3n------1010---borne-again-solutions-hero)
+    - [Automate OS Install](#automate-os-install)
 - [Tools and Equipment](#tools-and-equipment)
   - [Terminal](#terminal)
     - [Powershell](#powershell)
@@ -131,23 +135,40 @@ document.write('Hello, world!');
 
 # Quests
 
-## Main Quests
+# Realms
+
+## Inventory
+
+d
+
+## Paths
 - Command and Conquer - CNC
   - PowerShell
+    - WinGet
+    - GitHub
+    - VSCode
   - Bash
+    - apt-get
   - Iterm
+    - Homebrew
   - VS Code
 - Git your shit together - GYST
+  - Build 
   - File Management
-  - Continuous Integration and Continuous Deployement (CI/CD)
+  - Continuous Integration and Continuous Deployment (CI/CD)
   - Source Code Management (SCM)
+- Doc your Jekyll
+  - Make the Docs
+- Marry your Hub
+  - Host the hub
+  - Integrate
+  - Continuously Integrate and Deploy - CID 
 - 
+## Story Lines
 - Book vs Street Smarts - BVSS
 - Share your creations - SYC
 - Dr. Jekyll & Mr. Hub - DJMH
   - [examples](https://github.com/collections/github-pages-examples)
-
-## Side Quests
 
 
 # Journal
@@ -161,6 +182,7 @@ document.write('Hello, world!');
 - [PowerShell](https://docs.microsoft.com/en-us/powershell/)
 - [Microsoft Docs](https://docs.microsoft.com/en-us/documentation/)
 - [VS Code](https://code.visualstudio.com/docs)
+- 
 
 ### Get your tools
 
@@ -209,6 +231,9 @@ Jekyll is a static site generator that is used to generate static websites.
 ## Level n1n3   - 1001 - Cloud
 ## Level t3n    - 1010 - Borne Again Solutions Hero
 
+### Automate OS Install
+
+[win](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-automation-overview)
 
 # Tools and Equipment
 
