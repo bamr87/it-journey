@@ -1,10 +1,4 @@
 {
     "jupyter.jupyterServerType": "local",
-    "frontMatter.content.pageFolders": [
-        {
-            "title": "jekyll",
-            "path": "[[workspace]]/it-journey-docs/docs/jekyll"
-        }
-    ],
     "frontMatter.dashboard.openOnStart": false
 }
