@@ -8,9 +8,11 @@ GEM
     em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     fastimage (1.8.1)
       addressable (~> 2.3, >= 2.3.5)
+    ffi (1.15.4)
     ffi (1.15.4-x64-mingw32)
     forwardable-extended (2.6.0)
     hike (1.2.3)
@@ -72,6 +74,8 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     sprockets (2.12.5)
@@ -97,6 +101,7 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
+  universal-darwin-20
   x64-mingw32
 
 DEPENDENCIES
@@ -109,4 +114,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.27
+   2.2.30
