@@ -9,10 +9,10 @@
       <li class="mb-1">
         {% if nav.url %}
           <!-- <a href="{{ nav.url | relative_url }}"><span class="nav__sub-title">{{ nav.title }}</span></a> -->
-          <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#getting-started-collapse" aria-expanded="false" aria-current="true">
+          <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#{{ nav.title }}-collapse" aria-expanded="false" aria-current="true">
             {{ nav.title }}
           </button>
-          <div class="collapse" id="{{ nav.title }}" style="">
+          <div class="collapse" id="{{ nav.title }}-collapse" style="">
             <ul class="list-unstyled fw-normal pb-1 small">
                 <li><a href="/docs/5.1/getting-started/introduction/" class="d-inline-flex align-items-center rounded">Introduction</a></li>
                 <li><a href="/docs/5.1/getting-started/download/" class="d-inline-flex align-items-center rounded">Download</a></li>

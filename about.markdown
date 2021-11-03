@@ -1,7 +1,7 @@
 ---
-layout: page
 title: About
 permalink: /about/
+lastmod: '2021-10-31T18:57:08.355Z'
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)

@@ -1,7 +1,6 @@
 ---
 title: Build-die-repeat
 author: null
-layout: single
 description: null
 permalink: 'posts/{{ page.name }}/'
 categories:
