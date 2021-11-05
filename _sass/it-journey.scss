@@ -12,8 +12,15 @@
 
 @import "sidebar";
 @import "navigation";
-@import "code-copy";
 @import "layout";
 @import "bootstrap/bootstrap.scss";
-// @import "code-highlight";
 
+/* Syntax highlighting and Copy code */
+
+@import "code-copy";
+// @import "code-highlight";
+@import "syntax";
+@import "clipboard-js";
+
+//
+@import "custom";

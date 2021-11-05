@@ -17,7 +17,7 @@ GEM
     forwardable-extended (2.6.0)
     hike (1.2.3)
     http_parser.rb (0.6.0)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jekyll (4.2.1)
       addressable (~> 2.4)
@@ -108,6 +108,8 @@ DEPENDENCIES
   jekyll
   jekyll-assets
   jekyll-feed (~> 0.12)
+  kramdown
+  rouge
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)

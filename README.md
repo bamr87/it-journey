@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-10-27T17:32:13.596Z'
+lastmod: '2021-11-05T22:32:51.337Z'
 toc: true
 sidebar:
   nav: main
@@ -44,6 +44,34 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 
 ```javascript
 document.write('Hello, world!');
+```
+
+```
+```bash
+code $HOME/Github/
+```
+
+```liquid
+{% raw %}
+{{site.github.repository_url}}
+{% endraw %}
+```
+
+```html
+{%raw %}
+<div class="sidebar__top">
+  <a href="'''liquid{{site.github.repository_url}}'''/blob/gh-pages/{{page.name}}">
+    <i class="fab fa-github-square"></i>
+  </a>
+  <a href="vscode://file{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
+    <i class="fas fa-laptop-code"></i>
+  </a>
+  <a href="vscode://file{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
+    <i class="fas fa-laptop-code"></i>
+  </a>
+  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</div>
+{% endraw %}
 ```
 
 # Table of Contents: Ctrl/Shift + P "table"
