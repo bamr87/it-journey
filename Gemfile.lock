@@ -106,7 +106,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
-  jekyll-assets
+  jekyll-assets (~> 1.0.0)
   jekyll-feed (~> 0.12)
   kramdown
   rouge

@@ -20,17 +20,27 @@ foo:
 
 # main links
 main:
-  - title: "Docs"
+  - title: "Home"
+    url: /
+  - title: "Journal"
+    url: /posts/
+  - title: "Library"
     url: /docs/
     sublinks:
     - title: "Jekyll"
       url: /docs/jekyll/
     - title: "Command Line"
-      url: /docs/command-line/      
-  - title: "Posts"
-    url: /posts/
+      url: /docs/command-line/
+
   - title: "Cheats"
     url: /cheat/
+    sublinks:
+    - title: "home"
+      url: /cheat/
+    - title: "shell"
+      url: /cheat/shell/    
+    - title: "Javascript"
+      url: /cheat/js/
   - title: "About"
     url: /about/
 

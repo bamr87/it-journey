@@ -77,6 +77,34 @@ kramdown:
   # smart_quotes: lsquo,rsquo,ldquo,rdquo
   # enable_coderay: false
 
+
+# Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
+
+defaults:
+  # _cheats
+  - scope:
+      path: "_cheats"
+      type: cheats
+    values:
+      layout: default
+      share: true
+      toc: true
+      author_profile: false
+      toc_sticky: true
+      sidebar:
+        - nav: cheat
+
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+  cheats:
+    output: true
+    permalink: /:collection/:path/
+
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
