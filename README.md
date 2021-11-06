@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-05T22:32:51.337Z'
+lastmod: '2021-11-06T15:53:37.612Z'
 toc: true
 sidebar:
   nav: main
@@ -46,33 +46,12 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 document.write('Hello, world!');
 ```
 
-```
+
 ```bash
 code $HOME/Github/
 ```
 
-```liquid
-{% raw %}
-{{site.github.repository_url}}
-{% endraw %}
-```
 
-```html
-{%raw %}
-<div class="sidebar__top">
-  <a href="'''liquid{{site.github.repository_url}}'''/blob/gh-pages/{{page.name}}">
-    <i class="fab fa-github-square"></i>
-  </a>
-  <a href="vscode://file{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
-    <i class="fas fa-laptop-code"></i>
-  </a>
-  <a href="vscode://file{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
-    <i class="fas fa-laptop-code"></i>
-  </a>
-  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
-</div>
-{% endraw %}
-```
 
 # Table of Contents: Ctrl/Shift + P "table"
 
@@ -81,7 +60,7 @@ code $HOME/Github/
 - [IT-Manifesto](#it-manifesto)
 - [Table of Contents: Ctrl/Shift + P "table"](#table-of-contents-ctrlshift--p-table)
 - [Principles](#principles)
-- [Init_World_Paths @ /init_world](#init_world_paths--init_world)
+- [/init_world](#init_world)
   - [Hello-World](#hello-world)
 - [Quests](#quests)
 - [Realms](#realms)
@@ -149,7 +128,12 @@ code $HOME/Github/
 
 
 
-# Init_World_Paths @ /init_world
+# /init_world
+
+```bash
+gem install jekyll bundler
+```
+
 [Initialize your world](/init_world)
 
 [Hello-World](init_world/hello-world.md) 
@@ -169,7 +153,7 @@ code $HOME/Github/
 
 ## Inventory
 
-d
+
 
 ## Paths
 - Command and Conquer - CNC
@@ -235,6 +219,28 @@ d
 
 Jekyll is a static site generator that is used to generate static websites.
     -
+```liquid
+{% raw %}
+{{site.github.repository_url}}
+{% endraw %}
+```
+
+```html
+{%raw %}
+<div class="sidebar__top">
+  <a href="'''liquid{{site.github.repository_url}}'''/blob/gh-pages/{{page.name}}">
+    <i class="fab fa-github-square"></i>
+  </a>
+  <a href="vscode://file{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
+    <i class="fas fa-laptop-code"></i>
+  </a>
+  <a href="vscode://file{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
+    <i class="fas fa-laptop-code"></i>
+  </a>
+  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</div>
+{% endraw %}
+
 
 ### MTD - Make the docs
 

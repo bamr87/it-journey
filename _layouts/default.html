@@ -15,11 +15,22 @@
   {% include masthead.html %}
   {% include toc.html %}
  
-  <div class ="container-xxl my-md-4 bd-layout sidebar-item">
+  {% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+  <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
+
+  <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
     <div class= "sticky-top">
+
+<!-- Left Sidebar for Outline -->
     <aside class="bd-sidebar">
       {% include sidebar.html %}
     </aside>
+
     </div>
     <main class="bd-main order-1">
       
