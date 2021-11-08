@@ -7,6 +7,8 @@ lastmod: '2021-11-07T14:55:30.334Z'
 
 # Quick Start
 
+https://www.bls.gov/oes/current/oes113021.htm#st
+
 ## [Getting Started](/notes/getting-started)
 
 ### Windows

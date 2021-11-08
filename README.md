@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-07T19:02:29.205Z'
+lastmod: '2021-11-08T19:53:51.655Z'
 toc: true
 sidebar:
   nav: main
@@ -20,21 +20,17 @@ sidebar:
 - [ ] finish building the outline
 - [ ] Add index link to jekyll for it-journey 
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) -->
-# it-journey.home
 
-This is where is all begins. You can call this home, or the place you always come back to in case you get lost. Since you're on this journey through a world, what was sceince fiction decades back, where the pysical evidence of it is invisible, you need a map, or guide, that makes sense. This here is the starting point.
+# it-journey.home
+This is where it all begins. The place where you can always start from, and go back to, during this journey into the world of information technology. Everything you build, create, and think about can be stored here. Your memories, skills, hobbies, can all be created, stored, and improved here in this digital world.
+
+This is where you can home. It's the place you always come back to after getting lost navigating through the  sea of jargon. This is where you can gather and organize your understanding of the world, and quickly retrieve your memories and tools to continue your quest. 
+
+This here is the starting point. And as you build your knowledge, you can also share it for others to find.
 
 # Abstract
 
-From zero to hero collection of docs, tools, scripts, walkthroughs, and information to help with your IT journey.
-
-# IT-Manifesto
-
-- [Wiki](https://en.wikipedia.org/wiki/Manifesto)
-- [GNU Manifesto](https://www.gnu.org/gnu/manifesto.en.html)
-- <!-- Information is king -->
-
-You have stumbled here out of curiousity trying to figure out how to even begin your path through the IT jungle we all live in. Or maybe you thought this place would give you some quick tips and tricks to help you get past the current technical hurdle. These are just a few possibilities of your life choices right now in this digial chaos. In the end, i don't really care. All I care to do right now is to give you (or myself) some kind of roadmap, toolkit, dictionary, manual, cheatsheet, code snipits, and reference material to expand upon. My ultimate goal is to build a repository/system/distribution of all things IT related that might be your best source of "Truth" in this fragmented world. The goal is to be comprehensive for all skill levels, and still maintain user freiendliness, a combination that will always be challenging. Each layer of the IT architecture has a world within its own, requiring advance understanding, and tools to build/maintain. Sure we all have the ability to master each art and/or skill, but the time and commitment would be underutilized until it becomes shared. I want to invest my time and effort to help myself and possibly others, hoping you can take what i've built, and pay it forward.
+From zero to hero collection of docs, tools, scripts, walk-throughs, and information to help with your IT journey.
 
 <!-- TODO:
 - [X] Expand with open source colab to leverage the community
@@ -42,22 +38,10 @@ You have stumbled here out of curiousity trying to figure out how to even begin 
 - [ ]   Publish manifesto article
 -->
 
-```javascript
-document.write('Hello, world!');
-```
-
-
-```bash
-code $HOME/Github/
-```
-
-
-
 # Table of Contents: Ctrl/Shift + P "table"
 
 - [it-journey.home](#it-journeyhome)
 - [Abstract](#abstract)
-- [IT-Manifesto](#it-manifesto)
 - [Table of Contents: Ctrl/Shift + P "table"](#table-of-contents-ctrlshift--p-table)
 - [Principles](#principles)
 - [/init_world](#init_world)
@@ -125,8 +109,6 @@ code $HOME/Github/
 - Minimal Viable Path - MVP
 - Link to Everything - LTE
 - Collaborate - COLAB
-
-
 
 # /init_world
 
