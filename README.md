@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-06T15:53:37.612Z'
+lastmod: '2021-11-07T19:02:29.205Z'
 toc: true
 sidebar:
   nav: main
@@ -240,7 +240,7 @@ Jekyll is a static site generator that is used to generate static websites.
   <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
 </div>
 {% endraw %}
-
+```
 
 ### MTD - Make the docs
 
