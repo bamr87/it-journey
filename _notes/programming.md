@@ -1,9 +1,9 @@
 ---
 title: Programming Languages
-description: Collection of programming languages cheats
-collection: cheats
-permalink: /cheat/programming-languages/
-lastmod: '2021-09-24T20:13:57.142Z'
+description: Collection of programming languages notes
+collection: notes
+permalink: /notes/programming-languages/
+lastmod: '2021-11-06T21:43:43.385Z'
 ---
 
 ## python

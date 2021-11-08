@@ -78,13 +78,41 @@ kramdown:
   # enable_coderay: false
 
 
+
+# Collections https://jekyllrb.com/docs/collections/
+
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+  notes:
+    output: true
+    permalink: /:collection/:path/
+
+
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
 defaults:
-  # _cheats
+  # ALL
   - scope:
-      path: "_cheats"
-      type: cheats
+      path: ""
+    values:
+      layout: default
+      show_date: true
+      author_profile: false
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        - nav: home
+      # _posts
+  # _notes
+  - scope:
+      path: "_notes"
+      type: notes
     values:
       layout: default
       share: true
@@ -92,17 +120,10 @@ defaults:
       author_profile: false
       toc_sticky: true
       sidebar:
-        - nav: cheat
+        - nav: notes
 
+permalink: /:categories/:title/
 
-# Collections
-collections:
-  docs:
-    output: true
-    permalink: /:collection/:path/
-  cheats:
-    output: true
-    permalink: /:collection/:path/
 
 
 # Exclude from processing.

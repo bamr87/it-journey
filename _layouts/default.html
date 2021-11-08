@@ -6,88 +6,78 @@
 -->
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  
   <head>
     {% include head.html %}
-  </head>      
+  </head>
 
-<body class="" data-spy="scroll" data-target="#toc" data-offset="0">
+<body>
    
   {% include masthead.html %}
-  {% include toc.html %}
- 
-  {% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-  <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
-    <div class= "sticky-top">
+    
+    <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
-<!-- Left Sidebar for Outline -->
+    <!-- Left Sidebar for Outline -->
     <aside class="bd-sidebar">
       {% include sidebar.html %}
     </aside>
 
-    </div>
+    <!--  Main Body -->
     <main class="bd-main order-1">
-      
-      <div class="bd-intro ps-lg-4">
-        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-        {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
+      <!-- Intro Section and breadcrumbs -->
+      <div class="bd-intro ps-lg-4">
+      {% include breadcrumbs.html %}
+
+      {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+      {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
       </div>
 
-      <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
-        <nav class="section-nav navbar bd-toc" id="toc-content" data-toggle="toc">
-          <header>
-            <h4 class="toc-entry toc-h2">
-              <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i>
-              {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}
-            </h4>
-          </header>
-          
-          {% include toc.html sanitize=true html=content h_min=1 h_max=2 class="toc toc__menu sidebar__right sticky" item_class="nav-item" anchor_class="nav-link" skip_no_ids=true %}
-          
-        </nav>
+      <!-- Table of Contents -->
+      <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"">
 
+        <!-- On this Page Navigation -->
+        <div bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted>
+        <!-- Source Code Control Shortcuts -->
+            <div class="git-update vscode-update">
+              <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
+                <i class="fab fa-github-square"></i>
+              </a>
+              <a href="vscode://file/{{ site.local_git}}/{{ site.local_repo }}/{{ page.path }}">
+                <i class="fas fa-laptop-code"></i>
+              </a>
+              <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+            </div>
+
+            <strong class="d-block h6 my-2 pb-2 border-bottom">
+              <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i>
+              On this page
+            </strong>
+
+          <nav class="" id="TableOfContents" data-toggle="toc">
+            {% include toc.html sanitize=true html=content h_min=1 h_max=2 class="" item_class="" anchor_class="" skip_no_ids=true %}
+          </nav>
+        </div>  
+          
       </div>  
 
+      <!-- Main Content -->
       <div class="bd-content ps-lg-4">
         {{ content }}
       </div>
       
-      
-      
-
-
-
-
-
-
-
-      <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-        
+       
         
         <div class="container-fluid">
           <div class="row flex-xl-nowrap">
             
             <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
               
-              
-              
               <div class="sidebar__top">
-                <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
-                  <i class="fab fa-github-square"></i>
-                </a>
-                <a href="vscode://file/{{ site.local_git}}/{{ site.local_repo }}/{{ page.path }}">
-                  <i class="fas fa-laptop-code"></i>
-                </a>
-                <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
               </div> 
             </div>
             <div data-spy="scroll" data-target="toc-content" data-offset="0">
@@ -106,13 +96,17 @@
           </div>
           
         </div>
-      </article>
+
     </main>
-    </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!-- <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script> -->
-  {% include footer.html %}
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script> -->
+  
+  </div>
+
+{% include footer.html %}
+
 </body>
 </html>

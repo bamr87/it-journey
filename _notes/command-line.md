@@ -1,9 +1,9 @@
 ---
 title: Command Line
-description: Command Line Cheatsheet
-collection: cheats
-permalink: /cheat/command-line/
-lastmod: '2021-10-27T17:47:23.073Z'
+description: Command Line Notes
+collection: notes
+permalink: /notes/command-line/
+lastmod: '2021-11-06T21:43:26.822Z'
 ---
 
 # Command Line

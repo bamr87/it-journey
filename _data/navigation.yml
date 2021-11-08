@@ -32,15 +32,15 @@ main:
     - title: "Command Line"
       url: /docs/command-line/
 
-  - title: "Cheats"
-    url: /cheat/
+  - title: "Notes"
+    url: /notes/
     sublinks:
     - title: "home"
-      url: /cheat/
+      url: /notes/
     - title: "shell"
-      url: /cheat/shell/    
+      url: /notes/shell/    
     - title: "Javascript"
-      url: /cheat/js/
+      url: /notes/js/
   - title: "About"
     url: /about/
 
@@ -101,22 +101,22 @@ docs:
       - title: "Terms &amp; Privacy Policy"
         url: /terms/
 
-# Cheatsheets
-cheat:
-  - title: "Cheatsheets"
+# Notes
+notes:
+  - title: "Notes"
     children:
       - title: "PowerShell"
-        url: /cheat/powershell/
+        url: /notes/powershell/
       - title: "Bash"
-        url: /cheat/bash/
+        url: /notes/bash/
 
 about:
   - title: "about"
     children:
       - title: "about me"
-        url: /cheat/powershell/
+        url: /notes/powershell/
       - title: "about this site"
-        url: /cheat/bash/
+        url: /notes/bash/
 
 # sidebar navigation list sample
 sidebar-sample:
