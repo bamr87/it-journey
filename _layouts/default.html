@@ -17,19 +17,24 @@
 
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
     
-    <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
-
+    
     <!-- Left Sidebar for Outline -->
     <aside class="bd-sidebar">
-      {% include sidebar.html %}
-    </aside>
+      <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
 
+        {% include sidebar.html %}
+
+      </nav>
+    </aside>
+    
     <!--  Main Body -->
     <main class="bd-main order-1">
-
+      
       <!-- Intro Section and breadcrumbs -->
       <div class="bd-intro ps-lg-4">
-      {% include breadcrumbs.html %}
+        {% include breadcrumbs.html %}
+
+        <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
       {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
       {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -66,36 +71,9 @@
       </div>  
 
       <!-- Main Content -->
-      <div class="bd-content ps-lg-4">
+      <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
         {{ content }}
       </div>
-      
-       
-        
-        <div class="container-fluid">
-          <div class="row flex-xl-nowrap">
-            
-            <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-              
-              <div class="sidebar__top">
-              </div> 
-            </div>
-            <div data-spy="scroll" data-target="toc-content" data-offset="0">
-              
-              <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">    
-                
-              </div>
-            </div>
-            
-            <div class="d-none d-xl-block col-xl-2 bd-toc" id="side-toc">
-              <aside class="sidebar__right sticky">
-                
-              </aside> 
-            </div>
-            
-          </div>
-          
-        </div>
 
     </main>
   </div>
