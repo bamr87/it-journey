@@ -42,7 +42,8 @@ baseurl                  : "" # the subpath of your site, e.g. /blog
 url                      : "" # the base hostname & protocol for your site, e.g. http://example.com
 repository               : "bamr87/it-journey" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 local_repo               : "it-journey"
-local_git                : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/"
+local_git_pc             : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/"
+local_git_mac            : "/Users/amr-mb/OneDrive/Documents/GitHub/"
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/great-lambda-pyramids-v1.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 breadcrumbs              : true # true, false (default)

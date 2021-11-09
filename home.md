@@ -2,13 +2,13 @@
 Title: IT-Journey
 Author: bamr87
 layout: default
-permalink: /index.html
+permalink: /home/
 Motive: I want to help my community to learn more about IT.
 Intentions: Provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-08T19:53:51.655Z'
+lastmod: '2021-11-08T23:51:05.047Z'
 toc: true
 sidebar:
   nav: main

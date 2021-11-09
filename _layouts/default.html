@@ -49,15 +49,19 @@
         <div bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted>
         <!-- Source Code Control Shortcuts -->
             <div class="git-update vscode-update">
-              <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
-                <i class="fab fa-github-square"></i>
-              </a>
-              <a href="vscode://file/{{ site.local_git}}/{{ site.local_repo }}/{{ page.path }}">
-                <i class="fas fa-laptop-code"></i>
-              </a>
-              <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
-            </div>
+            <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
+              <i class="fab fa-github-square"></i>
+            </a>
+            <a href="vscode://file{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
+              <i class="fas fa-laptop-code"></i>
+            </a>
+            <a href="vscode://file{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
+              <i class="fas fa-laptop-code"></i>
+            </a>
+            <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+          </div>  
 
+        <!-- On this page -->
             <strong class="d-block h6 my-2 pb-2 border-bottom">
               <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i>
               On this page
