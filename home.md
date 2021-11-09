@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-08T23:51:05.047Z'
+lastmod: '2021-11-09T05:31:30.312Z'
 toc: true
 sidebar:
   nav: main
@@ -22,7 +22,7 @@ sidebar:
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) -->
 
 # it-journey.home
-This is where it all begins. The place where you can always start from, and go back to, during this journey into the world of information technology. Everything you build, create, and think about can be stored here. Your memories, skills, hobbies, can all be created, stored, and improved here in this digital world.
+This is where it all begins. The place where you can always start from, and return to, during this journey into the world of information technology. Everything you build, create, and think about can be stored here. Your memories, skills, hobbies, can all be created, stored, and improved here in this digital world.
 
 This is where you can home. It's the place you always come back to after getting lost navigating through the  sea of jargon. This is where you can gather and organize your understanding of the world, and quickly retrieve your memories and tools to continue your quest. 
 
@@ -37,66 +37,6 @@ From zero to hero collection of docs, tools, scripts, walk-throughs, and informa
 - [ ]   Goal to cater to everyone's need
 - [ ]   Publish manifesto article
 -->
-
-# Table of Contents: Ctrl/Shift + P "table"
-
-- [it-journey.home](#it-journeyhome)
-- [Abstract](#abstract)
-- [Table of Contents: Ctrl/Shift + P "table"](#table-of-contents-ctrlshift--p-table)
-- [Principles](#principles)
-- [/init_world](#init_world)
-  - [Hello-World](#hello-world)
-- [Quests](#quests)
-- [Realms](#realms)
-  - [Inventory](#inventory)
-  - [Paths](#paths)
-  - [Story Lines](#story-lines)
-- [Journal](#journal)
-  - [Level zer0   - 0000 - Navigation/Foundation](#level-zer0-----0000---navigationfoundation)
-    - [RTD - Read the docs](#rtd---read-the-docs)
-    - [Get your tools](#get-your-tools)
-    - [Build your command center](#build-your-command-center)
-    - [CLI - Command Line Interface](#cli---command-line-interface)
-    - [Git - Source Code Control](#git---source-code-control)
-    - [Jekyll - Static Site Generator](#jekyll---static-site-generator)
-    - [MTD - Make the docs](#mtd---make-the-docs)
-  - [Level 0n3    - 0001 - Basic building blocks](#level-0n3------0001---basic-building-blocks)
-    - [Web building](#web-building)
-    - [Infrastructure](#infrastructure)
-    - [Database](#database)
-  - [Level tw0    - 0010 - Programming](#level-tw0------0010---programming)
-  - [Level thr33  - 0011 - PIjects](#level-thr33----0011---pijects)
-  - [Level f0ur   - 0100 - Front end basics](#level-f0ur-----0100---front-end-basics)
-  - [Level f1v3   - 0101 - Back end basics](#level-f1v3-----0101---back-end-basics)
-  - [Level s1x    - 0110 - Data basics](#level-s1x------0110---data-basics)
-  - [Level s3v3n  - 0111 - Web Development](#level-s3v3n----0111---web-development)
-  - [Level 31ght  - 1000 - Security](#level-31ght----1000---security)
-  - [Level n1n3   - 1001 - Cloud](#level-n1n3-----1001---cloud)
-  - [Level t3n    - 1010 - Borne Again Solutions Hero](#level-t3n------1010---borne-again-solutions-hero)
-    - [Automate OS Install](#automate-os-install)
-- [Tools and Equipment](#tools-and-equipment)
-  - [Terminal](#terminal)
-    - [Powershell](#powershell)
-    - [Bash](#bash)
-    - [Iterm](#iterm)
-  - [Package Management](#package-management)
-- [Text_Editor](#text_editor)
-- [DevOps](#devops)
-  - [Source_Code](#source_code)
-- [IT Stack](#it-stack)
-  - [Infrastructure](#infrastructure-1)
-  - [Security](#security)
-  - [Web/App Development](#webapp-development)
-  - [Networking](#networking)
-- [Development Areas](#development-areas)
-  - [Graphic Design - gdsn](#graphic-design---gdsn)
-  - [Data_analysis](#data_analysis)
-- [Devops](#devops-1)
-  - [CI/CD](#cicd)
-  - [System Administration](#system-administration)
-  - [Documentation](#documentation)
-  - [Colaboration](#colaboration)
-
 
 # Principles
 
