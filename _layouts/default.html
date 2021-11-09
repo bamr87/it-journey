@@ -52,10 +52,10 @@
             <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
               <i class="fab fa-github-square"></i>
             </a>
-            <a href="vscode://file{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
+            <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/{{ page.path }}">
               <i class="fas fa-laptop-code"></i>
             </a>
-            <a href="vscode://file{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
+            <a href="vscode://file/{{ site.local_git_mac}}{{ site.local_repo }}/{{ page.path }}">
               <i class="fas fa-laptop-code"></i>
             </a>
             <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>

@@ -51,15 +51,22 @@
 }
 
 
-.bd-toc {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 7rem;
-    right: 0;
-    z-index: 2;
-    height: calc(100vh - 7rem);
-    overflow-y: auto;
+@media (min-width: 64em){
+  .bd-toc {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 7rem;
+      right: 0;
+      z-index: 2;
+      height: calc(100vh - 7rem);
+      overflow-y: auto;
+      clear: both;
+      float: right;
+  }
 }
+
+
+
 
 .bd-toc nav ul {
   // padding-left: 0;
@@ -81,3 +88,4 @@
   overflow: auto;
   font-weight: 600;
 }
+

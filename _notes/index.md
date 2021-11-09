@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2021-11-07T14:55:30.334Z'
+lastmod: '2021-11-09T05:12:41.757Z'
 ---
 
 # Quick Start
@@ -10,6 +10,7 @@ lastmod: '2021-11-07T14:55:30.334Z'
 https://www.bls.gov/oes/current/oes113021.htm#st
 
 ## [Getting Started](/notes/getting-started)
+
 
 ### Windows
 
@@ -105,6 +106,7 @@ function Restart-Powershell {
 
 ### MacOS
 
+[Importing and exporting homebrew packages](https://tomlankhorst.nl/brew-bundle-restore-backup/)
 
 ```javascript
 document.write('Hello, world!');
