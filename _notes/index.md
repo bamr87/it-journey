@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2021-11-09T05:12:41.757Z'
+lastmod: '2021-11-10T00:25:48.292Z'
 ---
 
 # Quick Start
@@ -11,6 +11,7 @@ https://www.bls.gov/oes/current/oes113021.htm#st
 
 ## [Getting Started](/notes/getting-started)
 
+[Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)
 
 ### Windows
 
@@ -142,3 +143,16 @@ code $HOME/Github/
 </div>
 {% endraw %}
 ```
+## Features 
+
+### Hover Notes
+
+![](../assets/images/hover-note.png)
+
+### Paste images in Markdown
+
+
+![](../assets/images/markdown_paste.gif)
+
+
+### Autoscale images

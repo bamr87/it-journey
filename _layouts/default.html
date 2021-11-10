@@ -31,7 +31,7 @@
     <main class="bd-main order-1">
       
       <!-- Intro Section and breadcrumbs -->
-      <div id="breadcrumbs-intro" class="bd-intro ps-lg-4">
+      <div id="breadcrumbs-intro" class="bd-intro ps-lg-4 collapsed collapse">
         {% include breadcrumbs.html %}
 
         <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
@@ -58,7 +58,7 @@
             <a href="vscode://file/{{ site.local_git_mac}}{{ site.local_repo }}/{{ page.path }}">
               <i class="fas fa-laptop-code"></i>
             </a>
-            <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+            <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
           </div>  
 
         <!-- On this page -->
