@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2021-11-10T00:25:48.292Z'
+lastmod: '2021-11-10T04:23:57.881Z'
 ---
 
 # Quick Start
@@ -156,3 +156,46 @@ code $HOME/Github/
 
 
 ### Autoscale images
+
+
+### Render LaTeX from markdown
+
+add script to head
+
+```html
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+```
+
+
+```LaTeX
+$$ \nabla_\boldsymbol{x} J(\boldsymbol{x}) $$
+```
+$$ \nabla_\boldsymbol{x} J(\boldsymbol{x}) $$
+
+
+## Auto Name Code Snippet
+
+```yaml
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+syntax_highlighter: coderay
+# lsi: false
+# excerpt_separator: "\n\n"
+# incremental: false
+
+# Markdown Processing https://jekyllrb.com/docs/configuration/markdown/
+kramdown: # https://kramdown.gettalong.org/options.html
+  input: GFM
+  header_offset: 2
+  # hard_wrap: false
+  auto_ids: true
+  # footnote_nr: 1
+  # entity_output: as_char
+  # toc_levels: 1..6
+  # smart_quotes: lsquo,rsquo,ldquo,rdquo
+  # enable_coderay: false
+  ```
+
+### Add [Submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules) 

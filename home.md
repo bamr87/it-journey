@@ -8,25 +8,22 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-09T05:31:30.312Z'
+lastmod: '2021-11-23T23:34:25.466Z'
 toc: true
 sidebar:
   nav: main
 ---
 
 <!-- TODO:
-- [ ] Build Jekyll Layout
+- [x] Build Jekyll Layout
 - [ ] Automate build process
 - [ ] finish building the outline
 - [ ] Add index link to jekyll for it-journey 
+- [ ] Build Site map page
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) -->
-
+ 
 # it-journey.home
-This is where it all begins. The place where you can always start from, and return to, during this journey into the world of information technology. Everything you build, create, and think about can be stored here. Your memories, skills, hobbies, can all be created, stored, and improved here in this digital world.
-
-This is where you can home. It's the place you always come back to after getting lost navigating through the  sea of jargon. This is where you can gather and organize your understanding of the world, and quickly retrieve your memories and tools to continue your quest. 
-
-This here is the starting point. And as you build your knowledge, you can also share it for others to find.
+This is the starting point, midpoint, but never the endpoint. This is the place where we return after getting lost or wandering off. Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world. There are journals to capture our experiences and findings, notes to quickly reference when our memories fail, and a library of documentation that gives us the depth of knowledge to build upon and share. Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use.
 
 # Abstract
 
@@ -34,9 +31,26 @@ From zero to hero collection of docs, tools, scripts, walk-throughs, and informa
 
 <!-- TODO:
 - [X] Expand with open source colab to leverage the community
-- [ ]   Goal to cater to everyone's need
+- [x]   Goal to cater to everyone's need
 - [ ]   Publish manifesto article
 -->
+
+# Quick Start
+For those who are already familiar with core IT concepts, this the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction. 
+
+## [Prerequisites](#prerequisites)
+
+- [VS Code](_posts/quests/qs-vscode.md)
+- Github
+- Ruby
+- Jekyll
+
+## [Installation](#installation)
+
+```bash
+cd ~/github/
+gh clone bamr87/it-journey
+```
 
 # Principles
 
@@ -47,7 +61,7 @@ From zero to hero collection of docs, tools, scripts, walk-throughs, and informa
 - Keep it simple - KIS
 - Release early and often - REnO
 - Minimal Viable Path - MVP
-- Link to Everything - LTE
+- Hyperlink Everything - HE
 - Collaborate - COLAB
 
 # /init_world
@@ -109,7 +123,7 @@ gem install jekyll bundler
 
 # Journal
 
-<!-- TODO: Eventually, the only way to overcome these challenges is to leverage the community for help evolve the sytem so cater to everyone's needs. -->
+<!-- TODO: Eventually, the only way to overcome these challenges is to leverage the community for help evolving the system to cater to everyone's needs. -->
 
 ## Level zer0   - 0000 - Navigation/Foundation
 
