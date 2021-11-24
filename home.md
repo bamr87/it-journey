@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-23T23:34:25.466Z'
+lastmod: '2021-11-23T23:42:48.073Z'
 toc: true
 sidebar:
   nav: main
@@ -40,7 +40,7 @@ For those who are already familiar with core IT concepts, this the quick start g
 
 ## [Prerequisites](#prerequisites)
 
-- [VS Code](_posts/quests/qs-vscode.md)
+- [VS Code](/posts/qs-vscode/)
 - Github
 - Ruby
 - Jekyll

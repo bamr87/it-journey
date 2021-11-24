@@ -2,7 +2,10 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2021-11-10T04:23:57.881Z'
+lastmod: '2021-11-24T03:58:53.544Z'
+sidebar:
+  nav: notes
+  title: test
 ---
 
 # Quick Start
@@ -128,7 +131,7 @@ code $HOME/Github/
 ```
 
 ```html
-{%raw %}
+{% raw %}
 <div class="sidebar__top">
   <a href="'''liquid{{site.github.repository_url}}'''/blob/gh-pages/{{page.name}}">
     <i class="fab fa-github-square"></i>
@@ -143,7 +146,7 @@ code $HOME/Github/
 </div>
 {% endraw %}
 ```
-## Features 
+# Features 
 
 ### Hover Notes
 
@@ -199,3 +202,4 @@ kramdown: # https://kramdown.gettalong.org/options.html
   ```
 
 ### Add [Submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules) 
+

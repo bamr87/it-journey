@@ -1,20 +1,11 @@
-{% if page.sidebar %}
+<!-- Sidebar.html -->
+
+<!-- Include Nav List -->
+{% if page.sidebar.nav %}
   <div class="bd-sidebar flex-shrink-0 p-3 bg-white" >
-  {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
-  {% if page.sidebar %}
-    {% for s in page.sidebar %}
-      {% if s.image %}
-        <img src="{{ s.image | relative_url }}"
-             alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
-      {% endif %}
-      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
-      {% if s.text %}{{ s.text | markdownify }}{% endif %}
-      {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
-    {% endfor %}
-    {% if page.sidebar.nav %}
+    <nav class="nav__list collapse bd-links" id="bd-docs-nav">
       {% include nav_list nav=page.sidebar.nav %}
-    {% endif %}
-  {% endif %}
+    </nav>
   </div>
 {% endif %}
     

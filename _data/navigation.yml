@@ -20,6 +20,7 @@ foo:
 
 # main links
 main:
+  - nav-title: "nav title"
   - title: "Home"
     url: /home/
   - title: "Journal"
@@ -31,7 +32,6 @@ main:
       url: /docs/jekyll/
     - title: "Command Line"
       url: /docs/command-line/
-
   - title: "Notes"
     url: /notes/
     sublinks:
@@ -41,8 +41,22 @@ main:
       url: /notes/shell/    
     - title: "Javascript"
       url: /notes/js/
+    - title: "Jekyll"
+      url: /notes/jekyll/
   - title: "About"
     url: /about/
+
+# Notes
+notes:
+  - title: "Notes"
+    sublinks:
+      - title: "PowerShell"
+        url: /notes/powershell/
+      - title: "Bash"
+        url: /notes/bash/
+    url: /notes/
+  - title: "test"
+    url: /test/
 
 # documentation links
 docs:
@@ -101,14 +115,7 @@ docs:
       - title: "Terms &amp; Privacy Policy"
         url: /terms/
 
-# Notes
-notes:
-  - title: "Notes"
-    children:
-      - title: "PowerShell"
-        url: /notes/powershell/
-      - title: "Bash"
-        url: /notes/bash/
+
 
 about:
   - title: "about"

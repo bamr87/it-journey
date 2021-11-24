@@ -109,7 +109,7 @@ defaults:
       toc: true
       toc_sticky: true
       sidebar:
-        - nav: home
+        - nav: main
       # _posts
   # _notes
   - scope:
