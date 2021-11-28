@@ -109,7 +109,7 @@ defaults:
       toc: true
       toc_sticky: true
       sidebar:
-        - nav: main
+        nav: main
       # _posts
   # _notes
   - scope:
@@ -122,7 +122,7 @@ defaults:
       author_profile: false
       toc_sticky: true
       sidebar:
-        - nav: notes
+        nav: notes
 
 permalink: /:categories/:title/
 

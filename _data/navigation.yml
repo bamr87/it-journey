@@ -20,7 +20,7 @@ foo:
 
 # main links
 main:
-  - nav-title: "nav title"
+  - nav-title: "Main Menu"
   - title: "Home"
     url: /home/
   - title: "Journal"
