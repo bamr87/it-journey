@@ -26,7 +26,7 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 
 title                    : IT-Journey
-subtitle                 : Information Highway
+subtitle                 : "zer0 to her0"
 subtitle_url             : "127.0.0.1"
 masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name

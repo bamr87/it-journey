@@ -2,7 +2,7 @@
 title: Build-die-repeat
 author: null
 description: null
-permalink: 'posts/{{ page.name }}/'
+permalink: 'posts/bdr/'
 categories:
   - Posts
 sidebar:

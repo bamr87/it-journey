@@ -2,7 +2,7 @@
 title: IT Purpose
 author: null
 description: null
-permalink: 'posts/{{ page.name }}/'
+permalink: 'posts/purpose/'
 categories:
   - Posts
 sidebar:

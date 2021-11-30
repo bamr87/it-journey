@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-29T00:26:13.421Z'
+lastmod: '2021-11-30T19:21:18.132Z'
 toc: true
 sidebar:
   nav: main
@@ -39,6 +39,18 @@ From zero to hero collection of docs, tools, scripts, walk-throughs, and informa
 ## Quick Start
 
 For those who are already familiar with core IT concepts, this the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction.
+
+### Site layout
+
+#### Top Navigation Bar
+
+![](../assets/images/top-nav.png)
+
+This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
+
+- [Journals](#journals)
+- [Library](#Library)
+- [Notes](#Notes)
 
 ### [Prerequisites](#prerequisites)
 
