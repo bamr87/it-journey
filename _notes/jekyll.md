@@ -1,7 +1,7 @@
 ---
 title: Jeykll Cheatsheet
 permalink: /notes/jekyll/
-lastmod: '2021-11-24T00:19:04.362Z'
+lastmod: '2021-11-30T22:48:09.829Z'
 ---
 
 {% raw %}
@@ -24,13 +24,17 @@ Then open your repo in Terminal, from GitHub Desktop: Repository > Open in Termi
 
 bundle init
 Open the new Gemfile, add the following line:
+
 ```
 gem "jekyll"
 ```
+
 Pop back to Terminal, type:
+
 ```
 bundle install
 ```
+
 ☛ Jekyll installation.
 
 Starting & stopping

@@ -40,7 +40,7 @@ description              : &description >- # this means to ignore newlines until
   Google search results) and in your feed.xml site description.
 baseurl                  : "" # the subpath of your site, e.g. /blog
 url                      : "" # the base hostname & protocol for your site, e.g. http://example.com
-repository               : "bamr87/it-journey" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "bamr87/it-journey" # GitHub username/repo-name
 local_repo               : "it-journey"
 local_git_pc             : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/"
 local_git_mac            : "/Users/amr-mb/OneDrive/Documents/GitHub/"

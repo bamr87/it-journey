@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-11-30T19:21:18.132Z'
+lastmod: '2021-12-01T00:02:35.069Z'
 toc: true
 sidebar:
   nav: main
@@ -44,7 +44,7 @@ For those who are already familiar with core IT concepts, this the quick start g
 
 #### Top Navigation Bar
 
-![](../assets/images/top-nav.png)
+![](/assets/images/top-nav.png)
 
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
 
@@ -52,9 +52,64 @@ This is a fixed navigation bar that is always visible at the top of the page. It
 - [Library](#Library)
 - [Notes](#Notes)
 
+#### Sidebar Navigation
+
+The sidebar navigation is a vertical bar that is always visible on the left side of the page. It is automatically generated based on the navigation YAML file under ../_data/navigation.yml.
+
+```yaml
+main:
+  - nav-title: "Main Menu"
+  - title: "Home"
+    url: /home/
+  - title: "Journal"
+    url: /posts/
+  - title: "Library"
+    url: /docs/
+    sublinks:
+    - title: "Jekyll"
+      url: /docs/jekyll/
+    - title: "Command Line"
+      url: /docs/command-line/
+  - title: "Notes"
+    url: /notes/
+    sublinks:
+    - title: "home"
+      url: /notes/
+    - title: "shell"
+      url: /notes/shell/    
+    - title: "Javascript"
+      url: /notes/js/
+    - title: "Jekyll"
+      url: /notes/jekyll/
+  - title: "About"
+    url: /about/
+```
+
+#### Table Of Contents right sidebar
+
+This is an automatically generated table of contents that is always visible on the right side of the page. It is generated from using a programs located under /_includes/toc.html
+
+It is based on the heading tags in the markdown file. The table of contents is generated from the markdown file and is updated whenever the markdown file is updated.
+
+#### Source Code Short Cuts
+
+Above the right TOC, there is a short cut to the source code. This is a link to the GitHub repository. The link to the shortcut is based on the config file located under /_config.yml. This is the where you have forked this repository.
+
+```yaml
+repository               : "bamr87/it-journey" # GitHub username/repo-name 
+local_repo               : "it-journey"
+local_git_pc             : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/"
+local_git_mac            : "/Users/amr-mb/OneDrive/Documents/GitHub/"
+```
+
+
 ### [Prerequisites](#prerequisites)
 
+The best way to build the 
+In order to build this repository and contribute, you need the following applications installed:
+
 - [VS Code](/posts/qs-vscode/)
+  - 
 - Github
 - Ruby
 - Jekyll
@@ -68,9 +123,14 @@ gh clone bamr87/it-journey
 
 ## Principles
 
+Everyone should approach programming/IT/development/design using a set of principles that to ensure coherence and consistency across the stack. there are many ways to skin a cat, but I try to abide by the common few listed below. These are merely guidelines to strive for, but you can ignore them completely if you dare to. It might make it more difficult following this guide in the future.
+
 [Programming_principles](https://en.wikipedia.org/wiki/Category:Programming_principles)
 
 - Design for failure - DFF
+
+  This concept assumes that systems fail regularly, and a system design should account for this. Some of us might be well aware of the bluye screen of doom during the early days computing, and this concept assumes the blue screen is always right around the corner. In order elminate this concern, the overall design shoudl always account for this. One example is by automating the provision and setup of a server from scratch. There are a 
+
 - Don't repeat yourself - DRY
 - Keep it simple - KIS
 - Release early and often - REnO
@@ -80,14 +140,7 @@ gh clone bamr87/it-journey
 
 ## /init_world
 
-```bash
-gem install jekyll bundler
-```
-
-[Initialize your world](/init_world)
-
-[Hello-World](init_world/hello-world.md)
-
+```bashe
 - Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
   - POLR
 - Mac - [machero]
@@ -316,3 +369,4 @@ Jekyll is a static site generator that is used to generate static websites.
 - Jekyll
 
 > this is a quote
+ 
