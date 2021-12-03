@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-12-01T00:02:35.069Z'
+lastmod: '2021-12-03T16:02:37.956Z'
 toc: true
 sidebar:
   nav: main
@@ -109,7 +109,6 @@ The best way to build the
 In order to build this repository and contribute, you need the following applications installed:
 
 - [VS Code](/posts/qs-vscode/)
-  - 
 - Github
 - Ruby
 - Jekyll
@@ -120,27 +119,41 @@ In order to build this repository and contribute, you need the following applica
 cd ~/github/
 gh clone bamr87/it-journey
 ```
+### Features
 
-## Principles
+- [x] Code Copy button
+- [x] Side table of contents
+- [x] Add quick edit links to GitHub and VS Code
+- [x] Dark Mode toggle
+  - [ ] [JTD](https://pmarsceill.github.io/just-the-docs/docs/customization/)
+- [x] Navigation bar dropdown
+- [x] auto genereate sidebar
+- [ ] alternate TOC structures (easy/med/hard) (pc/mac/linux) (by role)
+- [ ] Tool box page
+- [ ] Contribution Instructions
+- [ ] Search engine
+- [x] Programming Language cheat sheets
+- [x] Accordion TOC
+- [x] bootstrap4
+- [x] auto navbar 
+  - [ ] [Just the Docs](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/)
+- [ ] Add back to [top button](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) in cellphone view
+- [ ] add [plugins](https://jekyllcodex.org/without-plugins/) without plugins
+- [ ] Auto integrate/embed source code files into documentation
+- [ ] UI testing automation - [Selenium](https://www.selenium.dev/)
+- [ ] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) 
+- [ ] page revision view (diff)
 
-Everyone should approach programming/IT/development/design using a set of principles that to ensure coherence and consistency across the stack. there are many ways to skin a cat, but I try to abide by the common few listed below. These are merely guidelines to strive for, but you can ignore them completely if you dare to. It might make it more difficult following this guide in the future.
+[Java Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-[Programming_principles](https://en.wikipedia.org/wiki/Category:Programming_principles)
+Edit in [VSCode](vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/{{ page.path}})
 
-- Design for failure - DFF
+this page's path is {{ page.path}}
 
-  This concept assumes that systems fail regularly, and a system design should account for this. Some of us might be well aware of the bluye screen of doom during the early days computing, and this concept assumes the blue screen is always right around the corner. In order elminate this concern, the overall design shoudl always account for this. One example is by automating the provision and setup of a server from scratch. There are a 
-
-- Don't repeat yourself - DRY
-- Keep it simple - KIS
-- Release early and often - REnO
-- Minimal Viable Path - MVP
-- Hyperlink Everything - HE
-- Collaborate - COLAB
 
 ## /init_world
 
-```bashe
+```bash
 - Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
   - POLR
 - Mac - [machero]
