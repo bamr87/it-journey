@@ -8,7 +8,7 @@ Intentions: Provide a platform for people to share their knowledge and experienc
 Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
 Post: null
-lastmod: '2021-12-03T16:02:37.956Z'
+lastmod: '2021-12-05T18:22:36.602Z'
 toc: true
 sidebar:
   nav: main
@@ -20,7 +20,11 @@ sidebar:
 - [ ] finish building the outline
 - [ ] Add index link to jekyll for it-journey 
 - [ ] Build Site map page
-- [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) -->
+- [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) 
+- [X] Expand with open source colab to leverage the community
+- [x]   Goal to cater to everyone's need
+- [ ]   Publish manifesto article
+-->
 
 # it-journey.home
 
@@ -29,12 +33,6 @@ This is the starting point, midpoint, but never the endpoint. This is the place 
 ## Abstract
 
 From zero to hero collection of docs, tools, scripts, walk-throughs, and information to help with your IT journey.
-
-<!-- TODO:
-- [X] Expand with open source colab to leverage the community
-- [x]   Goal to cater to everyone's need
-- [ ]   Publish manifesto article
--->
 
 ## Quick Start
 
@@ -102,10 +100,9 @@ local_git_pc             : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/
 local_git_mac            : "/Users/amr-mb/OneDrive/Documents/GitHub/"
 ```
 
-
 ### [Prerequisites](#prerequisites)
 
-The best way to build the 
+The best way to build the
 In order to build this repository and contribute, you need the following applications installed:
 
 - [VS Code](/posts/qs-vscode/)

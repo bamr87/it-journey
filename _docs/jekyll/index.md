@@ -1,13 +1,11 @@
 ---
-title: Quickstart
+title: Jekyll
 permalink: /docs/jekyll/
 redirect_from:
   - /docs/jekyll/home/
   - /docs/jekyll/quickstart/
   - /docs/jekyll/extras/
-lastmod: '2021-11-24T18:10:46.509Z'
-sidebar:
-  nav: main
+lastmod: '2021-12-06T01:41:06.227Z'
 ---
 Jekyll is a static site generator. It takes text written in your
 favorite markup language and uses layouts to create a static website. You can

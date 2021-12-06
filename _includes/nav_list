@@ -34,7 +34,8 @@
               {% for child in nav.sublinks %}
                 <li>
                   <a href="{{ child.url | relative_url }}"
-                    {% if child.url == page.url %} class="active d-inline-flex align-items-center rounded"{% endif %}>{{ child.title }}
+                    {% if child.url == page.url %} class="active d-inline-flex align-items-center rounded"{% endif %}
+                      >{{ child.title }}
                   </a>
                 </li>
               {% endfor %}

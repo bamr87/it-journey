@@ -8,4 +8,11 @@
     </nav>
   </div>
 {% endif %}
-    
+
+<ul>
+  {% for note in site.notes %}
+    {% if note.collection == page.collection %}
+      <li class="active"><a href="{{ note.url }}">{{ note.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

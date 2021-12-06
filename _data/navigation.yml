@@ -1,3 +1,5 @@
+# NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION.
+
 # example navigation
 foo:
   - title: "Parent Link 1"
@@ -23,6 +25,15 @@ main:
   - nav-title: "Main Menu"
   - title: "Home"
     url: /home/
+  - title: "Quick-Start"
+    url: /quick-start/
+    sublinks:
+      - title: "Mac"
+        url: /quickstart/mac/
+      - title: "Windows"
+        url: /quickstart/windows/
+      - title: "Linux"
+        url: /quickstart/linux/
   - title: "Journal"
     url: /posts/
   - title: "Library"
@@ -55,6 +66,21 @@ notes:
       - title: "Bash"
         url: /notes/bash/
     url: /notes/
+  - title: "test"
+    url: /test/
+
+# Quick Start
+quickstart:
+  - nav-title: "Quick-Start"
+  - title: "Machine-Setup"
+    sublinks:
+      - title: "Mac"
+        url: /quickstart/mac/
+      - title: "Windows"
+        url: /quickstart/windows/
+      - title: "Linux"
+        url: /quickstart/linux/
+    url: /quickstart/
   - title: "test"
     url: /test/
 

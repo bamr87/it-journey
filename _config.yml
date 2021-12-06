@@ -90,6 +90,9 @@ collections:
   notes:
     output: true
     permalink: /:collection/:path/
+  quickstart:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
@@ -110,7 +113,22 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
-      # _posts
+  # _posts
+  - scope:
+      path: _posts
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: main
+    permalink: /:categories/:title/
   # _notes
   - scope:
       path: "_notes"
@@ -123,6 +141,19 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: notes
+  # _quickstart
+  - scope:
+      path: "_quickstart"
+      type: quickstart
+    values:
+      layout: default
+      share: true
+      toc: true
+      author_profile: false
+      toc_sticky: true
+      sidebar:
+        nav: quickstart
+      permalink: /:categories/:title/
 
 permalink: /:categories/:title/
 

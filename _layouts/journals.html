@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+
+
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+    {{ content }}
+  </div>
+</div>
+
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% collection=page.collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
+  {% assign entries = site[include.collection] %}
+
+  {% if include.sort_by %}
+    {% assign entries = entries | sort: include.sort_by %}
+  {% endif %}
+  
+  {% if include.sort_order == 'reverse' %}
+    {% assign entries = entries | reverse %}
+  {% endif %}
+  
+  
+
+</div>
