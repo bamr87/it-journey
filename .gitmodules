@@ -1,0 +1,3 @@
+[submodule "brewfile"]
+	path = brewfile
+	url = https://github.com/bamr87/brewfile

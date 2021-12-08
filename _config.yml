@@ -81,7 +81,8 @@ kramdown: # https://kramdown.gettalong.org/options.html
 
 
 
-# Collections https://jekyllrb.com/docs/collections/
+# Collections: https://jekyllrb.com/docs/collections/
+  # Permalinks: https://jekyllrb.com/docs/permalinks/
 
 collections:
   docs:

@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2021-11-24T03:58:53.544Z'
+lastmod: '2021-12-08T16:13:36.015Z'
 sidebar:
   nav: notes
   title: test
@@ -112,16 +112,8 @@ function Restart-Powershell {
 
 [Importing and exporting homebrew packages](https://tomlankhorst.nl/brew-bundle-restore-backup/)
 
-```javascript
-document.write('Hello, world!');
-```
-
-
 ```powershell
 vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/{{ page.path}}
-```
-```bash
-code $HOME/Github/
 ```
 
 ```liquid
