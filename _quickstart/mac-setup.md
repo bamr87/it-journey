@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: mac
-lastmod: '2021-12-08T17:37:37.462Z'
+lastmod: '2021-12-09T16:59:33.004Z'
 draft: false
 ---
 
@@ -26,6 +26,8 @@ xcode-select -p
 
 ## Install Homebrew
 
+Homebrew is a package manager for macOS. It is a fork of the original Homebrew package manager for Linux, and is developed and maintained by [Homebrew](https://brew.sh/).
+
 [Install docs](https://docs.brew.sh/Installation)
 
 ```bash
@@ -38,41 +40,36 @@ confirm that you have installed Homebrew by running the following command:
 brew -v
 ```
 
-## Install git
+## Install Github Command Line Interface
 
 ```bash
 brew install gh
 ```
 
+Login to Github and confirm that you have installed the Github Command Line Interface by running the following command:
+
+```bash
+gh -v
+```
+
 ## Install Software Packages
+
+Detailed instructions for installing software packages can be found in the [Brewfile](/quickstart/homebrew/) section.
 
 ```bash
 cd ~
-git clone git@github.com:bamr87/brewfile.git ~/.brew
+gh repo clone bamr87/brewfile ~/.brew
 ```
 
 
 ```bash
-brew cask install atom \
- firefox \
- onedrive \
- iterm2 \
- google-cloud-sdk \
- inkscape \
- sonic-pi \
- postman \
- awscli \
- visual-studio-code
-brew $parm1 wget \
- bash-completion \
- zsh \
- node \
- rdesktop \
- irssi \
- gh \
- tree \
- nmap \
- powershell \
+
+cd ~/.brew
+
+brew bundle
+
+brew bundle --file bundles/core/
+
 ```
 
 
