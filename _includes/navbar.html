@@ -8,7 +8,7 @@
     <ul class="visible-links navbar-nav">
       {%- for link in site.data.navigation.main -%}
         <li class="nav-item dropdown">
-          <a class="nav-link {% if link.sublinks %} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" {% endif %}" href="{{ link.url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+          <a class="nav-link {% if link.sublinks %} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" {% endif %}" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
           
           <!-- Drop down links  -->
           {% if link.sublinks %}
