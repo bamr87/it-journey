@@ -1,24 +1,4 @@
 ---
 ---
 
-@import "it-journey";
-
-
-/* Variables */
-@import "variables";
-
-/* Mixins and functions */
-@import "breakpoint/breakpoint";
-@import "breakpoints";
-@include breakpoint-set("to ems", true);
-@import "mixins";
-@import "transition";
-@import "transitions";
-
-@import "sidebar";
-@import "navigation";
-@import "code-copy";
-@import "layout";
-@import "bootstrap/bootstrap.scss";
-// @import "code-highlight";
-
+@import "_sass/it-journey";

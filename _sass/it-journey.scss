@@ -10,7 +10,6 @@
 @import "transition";
 @import "transitions";
 
-@import "sidebar";
 @import "navigation";
 @import "layout";
 @import "bootstrap/bootstrap.scss";
@@ -18,9 +17,11 @@
 /* Syntax highlighting and Copy code */
 
 @import "code-copy";
+
 // @import "code-highlight";
 @import "syntax";
 @import "clipboard-js";
 
-//
+// Custom
+@import "sidebar";
 @import "custom";
