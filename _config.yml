@@ -181,7 +181,7 @@ permalink: /:categories/:title/
 #   - vendor/ruby/
 
 # Sass/SCSS
-# sass:
-#   sass_dir: _sass
-#   style: compressed
+sass:
+  sass_dir: _sass
+  style: compressed
   
