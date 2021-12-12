@@ -2,7 +2,7 @@
 title: Welcome to Jekyll!
 date: '2021-09-26 12:12:55 -0600'
 categories: jekyll update
-lastmod: '2021-12-05T23:31:29.587Z'
+lastmod: '2021-12-08T15:42:45.448Z'
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
