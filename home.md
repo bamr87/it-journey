@@ -42,7 +42,7 @@ For those who are already familiar with core IT concepts, this the quick start g
 
 #### Top Navigation Bar
 
-![](/assets/images/top-nav.png)
+![](../assets/images/top-nav.png)
 
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
 
