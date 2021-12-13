@@ -6,20 +6,23 @@ description: null
 categories:
     - quickstart
 slug: mac
-lastmod: '2021-12-13T17:10:18.194Z'
+lastmod: '2021-12-13T18:20:56.697Z'
 draft: false
 ---
 
-Here's how to setup a mac
+These are the steps to setup this jekyll site repository on a Mac. All the code snippets are to be run in the terminal.
 
 ## Base setup
 
 - Xcode Command Line Tools
 - Homebrew Package Manager
 - Github CLI
+- Ruby
 - Jekyll
 
 ### Install Xcode Command Line Tools
+
+Homebrew requires Xcode Command Line Tools to be installed if Xcode is not already installed.
 
 ```bash
 xcode-select --install
@@ -38,30 +41,37 @@ Homebrew is a package manager for macOS. It is a fork of the original Homebrew p
 [Install docs](https://docs.brew.sh/Installation)
 
 ```bash
+# Install Homebrew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 confirm that you have installed Homebrew by running the following command:
 
 ```bash
+# Confirm Homebrew installation
 brew -v
 ```
 
 ### Install Github Command Line Interface
 
+The Github CLI is a command line interface for the Github API. It is used to create and manage repositories. It is also used to create and manage issues and pull requests.
+
 ```bash
+# Install Github CLI
 brew install gh
 ```
 
-Login to Github and confirm that you have installed the Github Command Line Interface by running the following command:
+Confirm that you have installed the Github Command Line Interface by running the following command:
 
 ```bash
+# Confirm Github CLI installation
 gh -v
 ```
 
 Login to gh cli using your github credentials
 
 ```bash
+# Login to gh cli
 gh auth login
 ```
 
@@ -70,34 +80,35 @@ gh auth login
 Detailed instructions for installing software packages can be found in the [Brewfile](/quickstart/homebrew/) section.
 
 ```bash
+# Navigate to your home directory and clone the brewfile
 cd ~
 gh repo clone bamr87/brewfile ~/.brew
 ```
 
 
 ```bash
-
+# Navigate into brew file repo and install packages
 cd ~/.brew
-
 brew bundle
-
 brew bundle --file bundles/core/
-
 ```
 
 ### Install VS Code
 
+VS Code is a text editor that integrates well with Github. It is a free and open source software editor.
+
 ```bash
+#install VS Code via Homebrew
 brew cask install visual-studio-code
 ```
 
-Log into VS code using your github account
+Log into VS code using your github account by clicking on the Account icon on the bottom left of the VS code window.
 
 ## Jekyll & ruby Setup
 
 [Detailed instructions](https://jekyllrb.com/docs/installation/macos/)
 
-### set SDKROOT (only macOS Catalina or later)
+### Set SDKROOT (only macOS Catalina or later)
 
 ```bash
 export SDKROOT=$(xcrun --show-sdk-path)
@@ -105,41 +116,112 @@ export SDKROOT=$(xcrun --show-sdk-path)
 
 ### Install Ruby
 
+Ruby is the programming language of choice for Jekyll, and also manages the dependencies for the Jekyll gem.
+
 ```bash
+# Install Ruby
 brew install ruby
 ```
 
-#### If you're using Zsh
+#### Add Ruby to PATH
 
-```bash
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
-```
+After install, you need to add the executables to your PATH. Otherwise, you will not be able to run Ruby or Jekyll.
 
-#### If you're using Bash
-
-```bash
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
-```
-
-#### Unsure which shell you are using? Type
+First check which terminal shell you are using:
 
 ```bash
 echo $SHELL
 ```
 
-### Install Jekyll
+```bash
+# Add Ruby to your PATH if you're using Zsh
+echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
+```
+
 
 ```bash
+# Add Ruby to your PATH If you're using Bash
+echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
+```
+
+### Install Jekyll
+
+Once Ruby is installed, you can install Jekyll. 
+First exit the terminal and open a new terminal to initialize the new PATH variable.
+
+```bash
+# Install Jekyll and Bundler
 gem install --user-install bundler jekyll
 ```
 
-### Append your path file
+### Append the Jekyll Gem your path file
 
-#### If you're using Zsh
+First get the ruby version using:
 
-echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.zshrc
+```bash
+# Get Ruby version
+ruby -v
+```
 
-#### If you're using Bash
 
-echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.bash_profile
+Replace X.X.0 with the version of ruby you just installed
 
+```bash
+# Add path to zshrc profile
+echo 'export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"' >> ~/.zshrc
+```
+
+
+```bash
+# Add to your .bash_profile
+echo 'export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"' >> ~/.bash_profile
+```
+
+Restart your terminal
+
+### Verify that Jekyll is installed
+
+```bash
+# Verify Jekyll is installed
+jekyll --version
+```
+
+## Fork Github Repository
+
+Now you can fork the repository from Github and start working on it.
+
+```bash
+# Navigate to your home directory, create a github folder, and fork the github repo
+cd ~
+mkdir github
+cd github
+gh repo fork bamr87/it-journey
+```
+
+## Install Dependencies
+
+Once the repo is installed, you can install the dependencies for the Jekyll gem.
+
+```bash
+# Navigate to your github repo and install dependancies
+cd ~/github/it-journey
+bundle install
+```
+
+## Build Jekyll site
+
+To build the Jekyll site, you need to run the following command:
+
+```bash
+# Build Jekyll site
+jekyll build
+```
+
+## Start Site locally
+
+To start the site locally, you need to run the following command:
+
+```bash
+# Start Jekyll site locally
+jekyll serve
+```
