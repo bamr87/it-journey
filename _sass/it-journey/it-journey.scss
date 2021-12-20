@@ -25,3 +25,7 @@
 // Custom
 @import "sidebar";
 @import "custom";
+
+blockquote{
+    @extend .blockquote-footer;
+  }

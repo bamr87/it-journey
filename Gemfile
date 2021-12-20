@@ -18,6 +18,7 @@ gem "jekyll"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-assets", "~> 1.0.0"
+  gem "jekyll-redirect-from"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -38,3 +39,5 @@ gem "webrick", "~> 1.7"
 
 gem "kramdown"
 gem "rouge"
+
+# gem 'bootstrap'

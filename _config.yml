@@ -59,6 +59,7 @@ github_username          : "bamr87"
 plugins:
   - jekyll-feed
   - jekyll-assets
+  # - jekyll-redirect-from
   
 # Conversion
 markdown: kramdown
@@ -78,6 +79,7 @@ kramdown: # https://kramdown.gettalong.org/options.html
   toc_levels: 1..6
   # smart_quotes: lsquo,rsquo,ldquo,rdquo
   # enable_coderay: false
+
 
 
 

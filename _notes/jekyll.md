@@ -1,7 +1,7 @@
 ---
 title: Jeykll Cheatsheet
 permalink: /notes/jekyll/
-lastmod: '2021-12-05T18:40:17.875Z'
+lastmod: '2021-12-16T01:33:52.546Z'
 ---
 
 # Jeykll
@@ -386,5 +386,9 @@ Will convert an object or array into JSON.
     {% endfor %}
 </ul>
 ```
+
+## Add Class or ID to markdown element
+
+https://boringrails.com/tips/jekyll-css-class
 
 {% endraw %}

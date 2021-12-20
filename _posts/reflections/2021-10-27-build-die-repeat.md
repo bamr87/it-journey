@@ -1,8 +1,8 @@
 ---
-title: Build-die-repeat
+title: Build-Destroy-Repeat
 author: null
 description: null
-permalink: 'posts/bdr/'
+permalink: posts/bdr/
 categories:
   - Posts
 sidebar:
@@ -10,7 +10,7 @@ sidebar:
 toc: true
 toc_sticky: true
 date: '2021-10-27T21:42:21.287Z'
-lastmod: '2021-10-27T21:52:33.833Z'
+lastmod: '2021-12-20T00:12:41.814Z'
 draft: false
 ---
 

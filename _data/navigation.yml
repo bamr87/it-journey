@@ -1,26 +1,6 @@
 # NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION.
 
-# example navigation
-foo:
-  - title: "Parent Link 1"
-    url: /parent-1-page-url/
-    children:
-      - title: "Child Link 1"
-        url: /child-1-page-url/
-      - title: "Child Link 2"
-        url: /child-2-page-url/
-  - title: "Parent Link 2"
-    url: /parent-2-page-url/
-    children:
-      - title: "Child Link 1"
-        url: /child-1-page-url/
-      - title: "Child Link 2"
-        url: /child-2-page-url/
-      - title: "Child Link 3"
-        url: /child-3-page-url/
-
-
-# main links
+# Main Navigation (top)
 main:
   - nav-title: "Main Menu"
   - title: "Home"
@@ -28,12 +8,14 @@ main:
   - title: "Quick-Start"
     url: /quick-start/
     sublinks:
-      - title: "Mac"
-        url: /quickstart/mac/
-      - title: "Windows"
-        url: /quickstart/windows/
-      - title: "Linux"
-        url: /quickstart/linux/
+      - title: "Home"
+        url: /quickstart/
+      - title: "Machine Setup"
+        url: /quickstart/machine-setup/
+      - title: "VSCode"
+        url: /quickstart/vscode/
+      - title: "Jekyll"
+        url: /quickstart/jekyll/
   - title: "Journal"
     url: /posts/
   - title: "Library"
@@ -75,11 +57,11 @@ quickstart:
   - title: "Machine-Setup"
     sublinks:
       - title: "Mac"
-        url: /quickstart/mac/
+        url: /quickstart/machine-setup/mac/
       - title: "Windows"
-        url: /quickstart/windows/
+        url: /quickstart/machine-setup/windows/
       - title: "Linux"
-        url: /quickstart/linux/
+        url: /quickstart/machine-setup/linux/
     url: /quickstart/
   - title: "test"
     url: /test/

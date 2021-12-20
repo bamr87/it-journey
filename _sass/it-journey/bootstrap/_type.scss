@@ -86,7 +86,7 @@
 .blockquote {
   margin-bottom: $blockquote-margin-y;
   @include font-size($blockquote-font-size);
-
+  font-weight: 200;
   > :last-child {
     margin-bottom: 0;
   }
