@@ -1,13 +1,13 @@
 ---
-title: Mac Setup
+title: Windows Setup
 author: null
 layout: default
 description: null
 categories:
     - quickstart
     - machine-setup
-slug: mac
-lastmod: '2021-12-18T21:30:00.314Z'
+slug: windows
+lastmod: '2021-12-20T00:11:51.010Z'
 draft: false
 ---
 
@@ -25,13 +25,13 @@ These are the steps to setup this jekyll site repository on a Mac. All the code 
 
 Homebrew requires Xcode Command Line Tools to be installed if Xcode is not already installed.
 
-```zsh
+```bash
 xcode-select --install
 ```
 
 Confirm that you have installed Xcode Command Line Tools by running the following command:
 
-```zsh
+```bash
 xcode-select -p
 ```
 
@@ -41,7 +41,7 @@ Homebrew is a package manager for macOS. It is a fork of the original Homebrew p
 
 [Install docs](https://docs.brew.sh/Installation)
 
-```zsh
+```bash
 # Install Homebrew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
@@ -66,7 +66,7 @@ Confirm that you have installed the Github Command Line Interface by running the
 
 ```bash
 # Confirm Github CLI installation
-gh --version
+gh -v
 ```
 
 Login to gh cli using your github credentials
@@ -100,7 +100,7 @@ VS Code is a text editor that integrates well with Github. It is a free and open
 
 ```bash
 #install VS Code via Homebrew
-brew install cask visual-studio-code
+brew cask install visual-studio-code
 ```
 
 Log into VS code using your github account by clicking on the Account icon on the bottom left of the VS code window.
@@ -169,7 +169,7 @@ Replace X.X.0 with the version of ruby you just installed
 
 ```bash
 # Add path to zshrc profile
-echo 'export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"' >> ~/.zshrc
 ```
 
 
@@ -204,10 +204,9 @@ gh repo fork bamr87/it-journey
 Once the repo is installed, you can install the dependencies for the Jekyll gem.
 
 ```bash
-# Navigate to your github repo and install dependencies
+# Navigate to your github repo and install dependancies
 cd ~/github/it-journey
 bundle install
-bundle update
 ```
 
 ## Build Jekyll site

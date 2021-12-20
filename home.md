@@ -1,14 +1,12 @@
 ---
 Title: IT-Journey
 Author: bamr87
-layout: default
-permalink: /home/
-Motive: I want to help my community to learn more about IT.
-Intentions: Provide a platform for people to share their knowledge and experience about IT.
-Keywords: 'Home, Zer0'
 Description: This is an overall outline where you can start.
+permalink: /home/
+purpose: To provide a platform for people to share their knowledge and experience about IT.
+Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2021-12-10T22:07:07.937Z'
+lastmod: '2021-12-17T23:04:51.704Z'
 toc: true
 sidebar:
   nav: main
@@ -31,18 +29,25 @@ sidebar:
 This is the starting point, midpoint, but never the endpoint. This is the place where we return after getting lost or wandering off. Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world. There are journals to capture our experiences and findings, notes to quickly reference when our memories fail, and a library of documentation that gives us the depth of knowledge to build upon and share. Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use.
 
 ## Abstract
+{: .para-one #abstract}
 
-From zero to hero collection of docs, tools, scripts, walk-throughs, and information to help with your IT journey.
+From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
 
 ## Quick Start
 
 For those who are already familiar with core IT concepts, this the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction.
 
+[Machine Setup](\_quickstart\machine-setup.md)
+
+[Integrated Development Environment](/quickstart/vscode/) (VS Code)
+
+[Static Website Generator](/quickstart/jekyll/) (Jekyll)
+
 ### Site layout
 
 #### Top Navigation Bar
 
-![](../assets/images/top-nav.png)
+![](../assets/images/top-nav.png){: .img-fluid }
 
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
 
@@ -54,33 +59,10 @@ This is a fixed navigation bar that is always visible at the top of the page. It
 
 The sidebar navigation is a vertical bar that is always visible on the left side of the page. It is automatically generated based on the navigation YAML file under ../_data/navigation.yml.
 
+[Including](https://jekyllrb.com/docs/includes/) a [truncated](https://shopify.github.io/liquid/filters/truncate/) navigation YAML file under the `_data` folder will automatically generate the sidebar and top navigation.
+
 ```yaml
-main:
-  - nav-title: "Main Menu"
-  - title: "Home"
-    url: /home/
-  - title: "Journal"
-    url: /posts/
-  - title: "Library"
-    url: /docs/
-    sublinks:
-    - title: "Jekyll"
-      url: /docs/jekyll/
-    - title: "Command Line"
-      url: /docs/command-line/
-  - title: "Notes"
-    url: /notes/
-    sublinks:
-    - title: "home"
-      url: /notes/
-    - title: "shell"
-      url: /notes/shell/    
-    - title: "Javascript"
-      url: /notes/js/
-    - title: "Jekyll"
-      url: /notes/jekyll/
-  - title: "About"
-    url: /about/
+{% capture nav %}{% include_relative _data/navigation.yml %}{% endcapture %}{{ nav | truncate: 332 }}
 ```
 
 #### Table Of Contents right sidebar
@@ -124,7 +106,7 @@ gh clone bamr87/it-journey
 - [x] Dark Mode toggle
   - [ ] [JTD](https://pmarsceill.github.io/just-the-docs/docs/customization/)
 - [x] Navigation bar dropdown
-- [x] auto genereate sidebar
+- [ ] auto genereate sidebar
 - [ ] alternate TOC structures (easy/med/hard) (pc/mac/linux) (by role)
 - [ ] Tool box page
 - [ ] Contribution Instructions
@@ -378,5 +360,7 @@ Jekyll is a static site generator that is used to generate static websites.
 - Github
 - Jekyll
 
-> this is a quote
- 
+> this is a blockquote
+
+Pass the `--livereload` option to `serve` to automatically refresh the page with each change you make to the source files: `bundle exec jekyll serve --livereload`
+{: .alert .alert-primary }

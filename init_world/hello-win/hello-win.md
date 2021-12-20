@@ -6,7 +6,7 @@ permalink: /init-world/hello-win/
 Keywords: 'init, world'
 Description: This is the init world.
 Dependancies: null
-lastmod: '2021-12-05T20:02:33.905Z'
+lastmod: '2021-12-16T01:24:13.911Z'
 ---
 # Powershell
 
