@@ -7,142 +7,139 @@ categories:
     - quickstart
     - machine-setup
 slug: windows
-lastmod: '2021-12-20T00:11:51.010Z'
+lastmod: '2021-12-21T02:19:10.831Z'
 draft: false
 ---
 
-These are the steps to setup this jekyll site repository on a Mac. All the code snippets are to be run in the terminal.
+These are the steps to setup this jekyll site repository on a Windows PC. All the code snippets are to be run in the Powershell terminal.
 
 ## Base setup
 
-- Xcode Command Line Tools
-- Homebrew Package Manager
+- Windows Developer Enabled
+- Winget Package Manager
 - Github CLI
 - Ruby
 - Jekyll
 
-### Install Xcode Command Line Tools
+## Windows Developer Settings
 
-Homebrew requires Xcode Command Line Tools to be installed if Xcode is not already installed.
+![](/assets/images/windows-developer-settings.png)
 
-```bash
-xcode-select --install
+![](/assets/images/windows-developer-settings-powershell.png)
+
+### Install Winget
+
+Winget is a package manager for Windows and is developed and maintained [here](https://github.com/microsoft/winget-cli).
+
+Downloadable msi files can be found [here](https://github.com/microsoft/winget-cli/releases).
+
+[Install docs](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
+
+https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+
+```powershell
+# Navigate to the directory where the msi file will be installed
+cd ~
+$download_folder = "win-apps"
+mkdir $download_folder
+cd $download_folder
 ```
 
-Confirm that you have installed Xcode Command Line Tools by running the following command:
+```powershell
+# Download installation package
 
-```bash
-xcode-select -p
+$version = "v1.1.12653"
+$url = "https://github.com/microsoft/winget-cli/releases/download/$version/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+$FileName = Split-Path $url -Leaf
+$FullPath = "$pwd\$FileName"
+
+$webclient = New-Object System.Net.WebClient
+$webclient.DownloadFile($url, $FullPath)
+
+echo "Saved $FileName"
 ```
 
-### Install Homebrew
+Open installation file
 
-Homebrew is a package manager for macOS. It is a fork of the original Homebrew package manager for Linux, and is developed and maintained by [Homebrew](https://brew.sh/).
-
-[Install docs](https://docs.brew.sh/Installation)
-
-```bash
-# Install Homebrew
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```powershell
+ii $FullPath
 ```
 
-confirm that you have installed Homebrew by running the following command:
+Silent Install Option
 
-```bash
-# Confirm Homebrew installation
-brew -v
+```powershell
+msiexec /i $FullPath /qn /norestart
+```
+
+confirm that you have installed Winget by running the following command:
+
+```powershell
+# Confirm Winget installation
+winget -v
 ```
 
 ### Install Github Command Line Interface
 
 The Github CLI is a command line interface for the Github API. It is used to create and manage repositories. It is also used to create and manage issues and pull requests.
 
-```bash
+```powershell
 # Install Github CLI
-brew install gh
+winget install GitHub.cli
 ```
 
 Confirm that you have installed the Github Command Line Interface by running the following command:
 
-```bash
+```powershell
 # Confirm Github CLI installation
 gh -v
 ```
 
 Login to gh cli using your github credentials
 
-```bash
+```powershell
 # Login to gh cli
 gh auth login
 ```
 
 ### Install Software Packages (optional)
 
-Detailed instructions for installing software packages can be found in the [Brewfile](/quickstart/homebrew/) section.
+Detailed instructions for installing software packages can be found in the [Winget](/quickstart/winget/) section.
 
-```bash
-# Navigate to your home directory and clone the brewfile
+```powershell
+# Navigate to your home directory and clone the winget packages
 cd ~
-gh repo clone bamr87/brewfile ~/.brew
+gh repo clone bamr87/winget-packages ~/.winget
 ```
 
-
-```bash
+```powershell
 # Navigate into brew file repo and install packages
-cd ~/.brew
-brew bundle
-brew bundle --file bundles/core/
+cd ~/.winget
+winget import
+winget import --file bundles/core/
 ```
 
 ### Install VS Code
 
 VS Code is a text editor that integrates well with Github. It is a free and open source software editor.
 
-```bash
-#install VS Code via Homebrew
-brew cask install visual-studio-code
+```powershell
+#install VS Code via Winget
+winget install Microsoft.VisualStudioCode
 ```
 
 Log into VS code using your github account by clicking on the Account icon on the bottom left of the VS code window.
 
 ## Jekyll & ruby Setup
 
-[Detailed instructions](https://jekyllrb.com/docs/installation/macos/)
-
-### Set SDKROOT (only macOS Catalina or later)
-
-```bash
-export SDKROOT=$(xcrun --show-sdk-path)
-```
+[Detailed instructions](https://jekyllrb.com/docs/installation/windows/)
 
 ### Install Ruby
 
 Ruby is the programming language of choice for Jekyll, and also manages the dependencies for the Jekyll gem.
 
-```bash
+```powershell
 # Install Ruby
-brew install ruby
-```
-
-#### Add Ruby to PATH
-
-After install, you need to add the executables to your PATH. Otherwise, you will not be able to run Ruby or Jekyll.
-
-First check which terminal shell you are using:
-
-```bash
-echo $SHELL
-```
-
-```bash
-# Add Ruby to your PATH if you're using Zsh
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
-```
-
-
-```bash
-# Add Ruby to your PATH If you're using Bash
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
+winget install RubyInstallerTeam.RubyWithDevKit
 ```
 
 ### Install Jekyll
@@ -150,39 +147,16 @@ echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$P
 Once Ruby is installed, you can install Jekyll. 
 First exit the terminal and open a new terminal to initialize the new PATH variable.
 
-```bash
+```powershell
 # Install Jekyll and Bundler
-gem install --user-install bundler jekyll
-```
-
-### Append the Jekyll Gem your path file
-
-First get the ruby version using:
-
-```bash
-# Get Ruby version
-ruby -v
-```
-
-
-Replace X.X.0 with the version of ruby you just installed
-
-```bash
-# Add path to zshrc profile
-echo 'export PATH="$HOME/.gem/ruby/3.3.0/bin:$PATH"' >> ~/.zshrc
-```
-
-
-```bash
-# Add to your .bash_profile
-echo 'export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"' >> ~/.bash_profile
+gem install bundler jekyll
 ```
 
 Restart your terminal
 
 ### Verify that Jekyll is installed
 
-```bash
+```powershell
 # Verify Jekyll is installed
 jekyll --version
 ```
@@ -191,7 +165,7 @@ jekyll --version
 
 Now you can fork the repository from Github and start working on it.
 
-```bash
+```powershell
 # Navigate to your home directory, create a github folder, and fork the github repo
 cd ~
 mkdir github
@@ -203,7 +177,7 @@ gh repo fork bamr87/it-journey
 
 Once the repo is installed, you can install the dependencies for the Jekyll gem.
 
-```bash
+```powershell
 # Navigate to your github repo and install dependancies
 cd ~/github/it-journey
 bundle install
@@ -213,7 +187,7 @@ bundle install
 
 To build the Jekyll site, you need to run the following command:
 
-```bash
+```powershell
 # Build Jekyll site
 jekyll build
 ```
@@ -222,7 +196,7 @@ jekyll build
 
 To start the site locally, you need to run the following command:
 
-```bash
+```powershell
 # Start Jekyll site locally
 jekyll serve
 ```

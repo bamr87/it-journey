@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: mac
-lastmod: '2021-12-18T21:30:00.314Z'
+lastmod: '2021-12-21T00:21:16.188Z'
 draft: false
 ---
 
