@@ -25,6 +25,17 @@ main:
       url: /docs/jekyll/
     - title: "Command Line"
       url: /docs/command-line/
+  - title: "Hobbies"
+    url: /hobbies/
+    sublinks:
+    - title: "Music"
+      url: /hobbies/music/
+    - title: "Gaming"
+      url: /hobbies/gaming/
+    - title: "Art"
+      url: /hobbies/art/
+    - title: "Cooking"
+      url: /hobbies/cooking/
   - title: "Notes"
     url: /notes/
     sublinks:
@@ -43,12 +54,16 @@ main:
 notes:
   - title: "Notes"
     sublinks:
-      - title: "PowerShell"
-        url: /notes/powershell/
-      - title: "Bash"
-        url: /notes/bash/
+      - title: "home"
+        url: /notes/
+      - title: "Shell"
+        url: /notes/shell/
+      - title: "Programming"
+        url: /notes/programming-languages/
+      - title: "Web-Dev"
+        url: /notes/web-dev/
     url: /notes/
-  - title: "test"
+  - title: "Cheatsheets"
     url: /test/
 
 # Quick Start

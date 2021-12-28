@@ -1,7 +1,7 @@
 ---
-title: Jeykll Cheatsheet
-permalink: /notes/jekyll/
-lastmod: '2021-12-16T01:33:52.546Z'
+title: Jeykll
+permalink: /notes/web-dev/jekyll/
+lastmod: '2021-12-27T17:32:27.799Z'
 ---
 
 # Jeykll

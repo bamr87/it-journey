@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2021-12-08T16:13:36.015Z'
+lastmod: '2021-12-28T03:17:31.154Z'
 sidebar:
   nav: notes
   title: test
@@ -10,7 +10,13 @@ sidebar:
 
 # Quick Start
 
-https://www.bls.gov/oes/current/oes113021.htm#st
+Devhints (devhints.io)
+Bash-hackers wiki (bash-hackers.org)
+Shell vars (bash-hackers.org)
+Learn bash in y minutes (learnxinyminutes.com)
+Bash Guide (mywiki.wooledge.org)
+ShellCheck (shellcheck.net)
+shell - Standard Shell (devmanual.gentoo.org)
 
 ## [Getting Started](/notes/getting-started)
 

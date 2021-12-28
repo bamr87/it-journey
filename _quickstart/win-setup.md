@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: windows
-lastmod: '2021-12-21T02:19:10.831Z'
+lastmod: '2021-12-21T03:26:46.969Z'
 draft: false
 ---
 
@@ -84,8 +84,11 @@ The Github CLI is a command line interface for the Github API. It is used to cre
 
 ```powershell
 # Install Github CLI
+winget install git.git
 winget install GitHub.cli
 ```
+
+Reload the shell
 
 Confirm that you have installed the Github Command Line Interface by running the following command:
 
@@ -141,6 +144,8 @@ Ruby is the programming language of choice for Jekyll, and also manages the depe
 # Install Ruby
 winget install RubyInstallerTeam.RubyWithDevKit
 ```
+
+exit the shell
 
 ### Install Jekyll
 

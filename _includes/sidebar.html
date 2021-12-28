@@ -10,9 +10,12 @@
 {% endif %}
 
 <ul>
-  {% for note in site.notes %}
+  <p>
+    Quick Index
+  </p>
+  {% for note in site.collections.pages %}
     {% if note.collection == page.collection %}
-      <li class="active"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
+      <li class="active mb-1 list-unstyled"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>

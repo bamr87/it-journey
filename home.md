@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2021-12-20T15:11:28.897Z'
+lastmod: '2021-12-28T02:46:33.375Z'
 toc: true
 sidebar:
   nav: main
@@ -23,6 +23,7 @@ sidebar:
 - [x]   Goal to cater to everyone's need
 - [ ]   Publish manifesto article
 - [ ] Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
+- [ ] Need to fix quick index in side bar
 -->
 
 # it-journey.home
@@ -36,13 +37,13 @@ From zero to hero collection of docs, tools, scripts, walk-through, and informat
 
 ## Quick Start
 
-For those who are already familiar with core IT concepts, this the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction.
+For those who are already familiar with core IT concepts, this is the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction.
 
-[Machine Setup](\_quickstart\machine-setup.md)
+Machine Setup [Local link](\_quickstart\machine-setup.md)  Or [Web link](\quickstart\machine-setup\)
 
-[Integrated Development Environment](/quickstart/vscode/) (VS Code)
+Integrated Development Environment (Visual Studio Code) [Local link](\_quickstart\vscode.md)  Or [Web link](\quickstart\vscode\)
 
-[Static Website Generator](/quickstart/jekyll/) (Jekyll)
+Static Website Generator (Jekyll) [Local link](\_quickstart\Jekyll.md)  Or [Web link](\quickstart\Jekyll\)
 
 ### Site layout
 
@@ -52,9 +53,9 @@ For those who are already familiar with core IT concepts, this the quick start g
 
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
 
-- [Journals](#journals)
-- [Library](#Library)
-- [Notes](#Notes)
+- [Journals](/posts/)
+- [Library](/docs/)
+- [Notes](/Notes/)
 
 #### Sidebar Navigation
 
@@ -83,22 +84,6 @@ local_git_pc             : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/
 local_git_mac            : "/Users/amr-mb/OneDrive/Documents/GitHub/"
 ```
 
-### [Prerequisites](#prerequisites)
-
-The best way to build the
-In order to build this repository and contribute, you need the following applications installed:
-
-- [VS Code](/posts/qs-vscode/)
-- Github
-- Ruby
-- Jekyll
-
-### [Installation](#installation)
-
-```bash
-cd ~/github/
-gh clone bamr87/it-journey
-```
 ### Features
 
 - [x] Code Copy button
@@ -115,13 +100,13 @@ gh clone bamr87/it-journey
 - [x] Programming Language cheat sheets
 - [x] Accordion TOC
 - [x] bootstrap4
-- [x] auto navbar 
+- [x] auto navbar
   - [ ] [Just the Docs](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/)
 - [ ] Add back to [top button](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) in cellphone view
 - [ ] add [plugins](https://jekyllcodex.org/without-plugins/) without plugins
 - [ ] Auto integrate/embed source code files into documentation
 - [ ] UI testing automation - [Selenium](https://www.selenium.dev/)
-- [ ] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) 
+- [ ] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
 - [ ] page revision view (diff)
 
 [Java Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -130,10 +115,8 @@ Edit in [VSCode](vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitH
 
 this page's path is {{ page.path}}
 
-
 ## /init_world
 
-```bash
 - Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
   - POLR
 - Mac - [machero]
@@ -234,6 +217,12 @@ Jekyll is a static site generator that is used to generate static websites.
 ## Level 0n3    - 0001 - Basic building blocks
 
 ### Web building
+
+Responsive Design
+- [Tailwind](https://tailwindcss.com/docs/installation)
+- [Bootstrap](https://getbootstrap.com/)
+
+- [Comparison](https://blog.logrocket.com/tailwind-css-vs-bootstrap-ui-kits/)
 
 ### Infrastructure
 

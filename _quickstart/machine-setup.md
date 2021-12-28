@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: machine-setup
-lastmod: '2021-12-17T23:08:35.246Z'
+lastmod: '2021-12-23T03:20:17.849Z'
 draft: false
 ---
 

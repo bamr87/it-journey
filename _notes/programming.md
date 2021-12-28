@@ -1,5 +1,5 @@
 ---
-title: Programming Languages
+title: Programming
 description: Collection of programming languages notes
 collection: notes
 permalink: /notes/programming-languages/

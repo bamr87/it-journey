@@ -1,8 +1,10 @@
 ---
 title: About
 permalink: /about/
-lastmod: '2021-12-02T15:30:05.742Z'
+lastmod: '2021-12-23T03:13:21.123Z'
 ---
+
+https://en.wikipedia.org/wiki/Life_hack
 
 ## Principles
 
