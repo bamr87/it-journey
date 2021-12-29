@@ -97,6 +97,9 @@ collections:
   quickstart:
     output: true
     permalink: /:collection/:path/
+  about:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
@@ -157,6 +160,19 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: quickstart
+      permalink: /:categories/:title/
+  # _about
+  - scope:
+      path: "_about"
+      type: about
+    values:
+      layout: default
+      share: true
+      toc: true
+      author_profile: false
+      toc_sticky: true
+      sidebar:
+        nav: about
       permalink: /:categories/:title/
 
 permalink: /:categories/:title/
