@@ -6,26 +6,21 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2021-12-30T01:43:12.935Z'
+lastmod: '2021-12-30T18:38:51.875Z'
 toc: true
 sidebar:
   nav: main
 ---
 
 <!-- TODO:
-- [x] Build Jekyll Layout
 - [ ] Automate build process
-- [ ] finish building the outline
-- [ ] Add index link to jekyll for it-journey 
 - [ ] Build Site map page
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) 
-- [X] Expand with open source colab to leverage the community
-- [x]   Goal to cater to everyone's need
-- [ ]   Publish manifesto article
+- [ ] Add 
 - [ ] Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
 - [ ] Need to fix quick index in side bar
 - [ ] Add GUI instructions for the n00bs
-- [ ] test 3
+- [ ] Add language title to code blocks
 -->
 
 # it-journey.home
@@ -80,11 +75,15 @@ It is based on the heading tags in the markdown file. The table of contents is g
 Above the right TOC, there is a short cut to the source code. This is a link to the GitHub repository. The link to the shortcut is based on the config file located under /_config.yml. This is the where you have forked this repository.
 
 ```yaml
-repository               : "bamr87/it-journey" # GitHub username/repo-name 
+repository               : "bamr87/it-journey" # GitHub username/repo-name
 local_repo               : "it-journey"
-local_git_pc             : "C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/"
-local_git_mac            : "/Users/amr-mb/OneDrive/Documents/GitHub/"
+home_dir_pc              : &home-win '$HOME'
+home_dir_mac             : &home-mac '$HOME'
+local_git_pc             : [ *home-win, 'github\' ]
+local_git_mac            : [ *home-mac, 'GitHub/' ]
 ```
+
+NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
 
 ### Features
 
