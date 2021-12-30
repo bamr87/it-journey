@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: windows
-lastmod: '2021-12-21T03:26:46.969Z'
+lastmod: '2021-12-29T19:57:59.854Z'
 draft: false
 ---
 
@@ -35,7 +35,11 @@ Downloadable msi files can be found [here](https://github.com/microsoft/winget-c
 
 [Install docs](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
 
+You can directly download the msi file from the following link:
+
 https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+
+Or you can run the following commands in Powershell to download the msi file:
 
 ```powershell
 # Navigate to the directory where the msi file will be installed

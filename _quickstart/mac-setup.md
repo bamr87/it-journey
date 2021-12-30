@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: mac
-lastmod: '2021-12-21T00:21:16.188Z'
+lastmod: '2021-12-29T19:53:40.731Z'
 draft: false
 ---
 
@@ -24,6 +24,8 @@ These are the steps to setup this jekyll site repository on a Mac. All the code 
 ### Install Xcode Command Line Tools
 
 Homebrew requires Xcode Command Line Tools to be installed if Xcode is not already installed.
+
+Open the Terminal (Command + Space) and run the following command:
 
 ```zsh
 xcode-select --install

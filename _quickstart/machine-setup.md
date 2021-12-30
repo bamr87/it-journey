@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: machine-setup
-lastmod: '2021-12-23T03:20:17.849Z'
+lastmod: '2021-12-29T21:09:09.810Z'
 draft: false
 ---
 
@@ -14,64 +14,50 @@ These are the steps to setup this jekyll site repository.
 
 ## Base setup
 
-- Xcode Command Line Tools
-- Homebrew Package Manager
-- Github CLI
-- Ruby
-- Jekyll
+- [Software Package Manager](#software-package-manager)
+- [Github CLI](https://cli.github.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Jekyll](https://jekyllrb.com/)
 
-### Install Xcode Command Line Tools
+### Software Package Manager
 
-Homebrew requires Xcode Command Line Tools to be installed if Xcode is not already installed.
+[Homebrew](https://docs.brew.sh/Installation) is a package manager for macOS.
 
-```bash
-xcode-select --install
-```
+[Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/) is a package manager for Windows.
 
-Confirm that you have installed Xcode Command Line Tools by running the following command:
+**Install Homebrew**
 
 ```bash
-xcode-select -p
-```
-
-### Install Homebrew
-
-Homebrew is a package manager for macOS. It is a fork of the original Homebrew package manager for Linux, and is developed and maintained by [Homebrew](https://brew.sh/).
-
-[Install docs](https://docs.brew.sh/Installation)
-
-```bash
-# Install Homebrew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-confirm that you have installed Homebrew by running the following command:
+**Install Winget**
 
-```bash
-# Confirm Homebrew installation
-brew -v
-```
+<https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle>
 
-### Install Github Command Line Interface
+### Github Command Line Interface
 
 The Github CLI is a command line interface for the Github API. It is used to create and manage repositories. It is also used to create and manage issues and pull requests.
+
+**Mac**
 
 ```bash
 # Install Github CLI
 brew install gh
 ```
 
-Confirm that you have installed the Github Command Line Interface by running the following command:
+**Windows**
 
-```bash
-# Confirm Github CLI installation
-gh -v
+```powershell
+# Install Github CLI
+winget install git.git
+winget install GitHub.cli
 ```
 
 Login to gh cli using your github credentials
 
 ```bash
-# Login to gh cli
 gh auth login
 ```
 
@@ -83,10 +69,7 @@ Detailed instructions for installing software packages can be found in the [Brew
 # Navigate to your home directory and clone the brewfile
 cd ~
 gh repo clone bamr87/brewfile ~/.brew
-```
 
-
-```bash
 # Navigate into brew file repo and install packages
 cd ~/.brew
 brew bundle
@@ -103,6 +86,10 @@ brew cask install visual-studio-code
 ```
 
 Log into VS code using your github account by clicking on the Account icon on the bottom left of the VS code window.
+
+#### Install VS Code extensions (optional)
+
+
 
 ## Jekyll & ruby Setup
 
