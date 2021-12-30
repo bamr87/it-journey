@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2021-12-30T00:53:26.924Z'
+lastmod: '2021-12-30T01:22:12.353Z'
 toc: true
 sidebar:
   nav: main
@@ -25,7 +25,7 @@ sidebar:
 - [ ] Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
 - [ ] Need to fix quick index in side bar
 - [ ] Add GUI instructions for the n00bs
-- [ ] test
+- [ ] test 2
 -->
 
 # it-journey.home
