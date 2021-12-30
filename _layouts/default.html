@@ -34,7 +34,7 @@
       <div id="breadcrumbs-intro" class="bd-intro ps-lg-4 collapsed collapse">
         {% include breadcrumbs.html %}
 
-        <a href="vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/it-journey/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
+        <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
       {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
       {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -49,7 +49,7 @@
         <div bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted>
         <!-- Source Code Control Shortcuts -->
             <div class="git-update vscode-update">
-            <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.name}}">
+            <a href="{{site.github.repository_url}}/blob/master/{{page.name}}">
               <i class="fab fa-github-square"></i>
             </a>
             <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/{{ page.path }}">
