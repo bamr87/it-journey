@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: mac
-lastmod: '2021-12-29T19:53:40.731Z'
+lastmod: '2022-01-01T18:38:49.789Z'
 draft: false
 ---
 
@@ -15,11 +15,11 @@ These are the steps to setup this jekyll site repository on a Mac. All the code 
 
 ## Base setup
 
-- Xcode Command Line Tools
-- Homebrew Package Manager
-- Github CLI
-- Ruby
-- Jekyll
+- Apple [Xcode](https://developer.apple.com/xcode/) Command Line Tools
+- [Homebrew](https://brew.sh/) Package Manager
+- [Github CLI](https://cli.github.com/)
+- [Ruby](https://www.ruby-lang.org/)
+- [Jekyll](https://jekyllrb.com/)
 
 ### Install Xcode Command Line Tools
 
