@@ -1,7 +1,9 @@
 ---
 title: Hello World
-lastmod: '2021-11-22T23:22:19.657Z'
+lastmod: '2021-12-30T18:57:58.777Z'
 ---
 
-Hello world, and welcome to my site. Click on 'Home' in the navigation bar to get started.
+Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
+This is the main landing page and it is still a work in process.
 
+Nothing to see here. Yet...
