@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2021-12-30T18:38:51.875Z'
+lastmod: '2022-01-01T18:03:50.710Z'
 toc: true
 sidebar:
   nav: main
@@ -21,16 +21,65 @@ sidebar:
 - [ ] Need to fix quick index in side bar
 - [ ] Add GUI instructions for the n00bs
 - [ ] Add language title to code blocks
+- [ ] Integrate Jupyter Notebooks into the site
 -->
 
-# it-journey.home
+# it-journey.home (~)
 
-This is the starting point, midpoint, but never the endpoint. This is the place where we return after getting lost or wandering off. Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world. There are journals to capture our experiences and findings, notes to quickly reference when our memories fail, and a library of documentation that gives us the depth of knowledge to build upon and share. Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use.
+This is where we begin our journey. The place where we return after getting lost or wandering off.
+Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
+There are journals to capture our experiences and findings, notes to quickly reference when our memories fail, and a library of documentation that gives us the depth of knowledge to build upon and share.
+Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
 
 ## Abstract
 {: .para-one #abstract}
 
 From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
+
+## Roadmap
+
+Everyone has their preferred mode of learning a new/existing subject, whether it be by trial and error, guided instruction, or through ways that only you can define.
+Ccurrently, the pedagogy of information systems/technology is still evolving along with its ecosystem. However, the foundations this subject is built upon, and the lifestyle necessary to absorb this knowledge is largely intact.
+We still use concepts conceived during the early days of computer science from the 60's and 70's, it just has a different look these days. Also, learning information technology (or "programming" as most people understand it) has to be part of your life style to tolerate the sometimes mundane science.
+There's a wealth of information, terminology, structures, and rules that only apply in this field. It has it's own ecosystem with very limited understanding/oversight. We are in the wild `westworld` era, and no one knows what is best for you.
+However, we will still attempt to give you a roadmap:
+
+### Zer0 to Her0
+
+For those who prefer the route based on difficulty:
+
+1. Foundations - 0000
+2. Intermediate - 0001
+3. Advanced - 0011
+4. Expert - 0111
+5. Heroic - 1111
+
+### Stack Attack
+
+For those who are intermediate/advanced and want to attack a specific stack:
+
+1. Front-end (HTML, CSS, JS)
+2. Back-end (Python, PHP, Ruby)
+3. Databases (SQL, NoSQL, PostgreSQL)
+4. Integrations (API, REST, GraphQL, SOAP)
+5. Infrastructure (AWS, Azure, GCP, Linux)
+
+[Source](https://devopedia.org/full-stack-developer)
+
+### Specialization route
+
+For those who are advanced/heroic and what to specialize in a field:
+
+1. Infrastructure (System Administration, Networking, Operating Systems)
+2. DevOps (Source Code control, CD/CI, Automated Testing, Agile Development)
+3. Web Design (HTML, CSS, JavaScript, Jekyll, Bootstrap)
+4. Software Engineering (Python, Ruby, Java, C#, C++)
+5. Data Science (SQL, BI, Hadoop, Spark, HBase, Hive, Kafka, Cassandra)
+6. Cyber Security (Firewalls, Metadata analysis, Network Penetration, Ransomware, Vulnerability, Exploits, Malware)
+7. Multimedia/Graphic Design (GIMP, Blender, Inkscape, Krita, Pencil 2D)
+8. Mobile Development (Android, iOS, React Native)
+9. Game Development (Unity, Unreal Engine)
+10. AI (Machine Learning, Deep Learning, Natural Language Processing)
 
 ## Quick Start
 
@@ -84,6 +133,7 @@ local_git_mac            : [ *home-mac, 'GitHub/' ]
 ```
 
 NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
+{: .alert .alert-primary }
 
 ### Features
 
@@ -119,7 +169,6 @@ this page's path is {{ page.path}}
 ## /init_world
 
 - Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
-  - POLR
 - Mac - [machero]
 - Linux - [bashero]
 - Cloud - [chero]
@@ -156,10 +205,6 @@ this page's path is {{ page.path}}
 - Share your creations - SYC
 - Dr. Jekyll & Mr. Hub - DJMH
   - [examples](https://github.com/collections/github-pages-examples)
-
-## Journal
-
-<!-- TODO: Eventually, the only way to overcome these challenges is to leverage the community for help evolving the system to cater to everyone's needs. -->
 
 ## Level zer0   - 0000 - Navigation/Foundation
 
@@ -291,21 +336,6 @@ Responsive Design
 - Visual Studio Code
 - [LaTeX](https://en.wikibooks.org/wiki/LaTeX)
 
-## DevOps
-
-### Source_Code
-
-- Gitlab
-- OneDrive
-
-## IT Stack
-
-### Infrastructure stack
-
-### Security
-
-### Web/App Development
-
 ### Networking
 
 - DNS
@@ -315,43 +345,4 @@ Responsive Design
 - Ports
 - HTTPS
 
-## Development Areas
 
-### Graphic Design - gdsn
-
-1. GIMP
-2. Inkscape
-3. Blender
-4. Krita
-5. Pencil 2D
-
-## #Data_analysis
-
-- Database admin
-- Data analytics
-
-## Devops
-
-### CI/CD
-
-### System Administration
-
-### Documentation
-
-- wordpress
-- mkdocs
-- jekyll
-- Pandoc
-- Github Pages
-- Docusaurus
-
-### Colaboration
-
-- Jupyter Notebooks
-- Github
-- Jekyll
-
-> this is a blockquote
-
-Pass the `--livereload` option to `serve` to automatically refresh the page with each change you make to the source files: `bundle exec jekyll serve --livereload`
-{: .alert .alert-primary }
