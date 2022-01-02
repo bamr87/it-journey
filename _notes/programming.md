@@ -3,7 +3,7 @@ title: Programming
 description: Collection of programming languages notes
 collection: notes
 permalink: /notes/programming-languages/
-lastmod: '2021-11-06T21:43:43.385Z'
+lastmod: '2022-01-02T03:39:23.888Z'
 ---
 
 ## python
@@ -124,4 +124,17 @@ echo "My first PHP script!";
     }}
   \end{itemize}
  \vspace{-16pt}
+```
+
+## Progress 4GL
+
+```progress
+define var i as int.
+i=0.
+
+for each vd_mstr no-lock where vd_addr begins "e":
+	display vd_addr vd_curr.
+	i = i + 1.
+end.
+display i
 ```
