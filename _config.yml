@@ -52,7 +52,7 @@ breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : "4001" # Doppelganger site
-test:
+
 
 twitter_username         : "bamr87"
 github_username          : "bamr87"
