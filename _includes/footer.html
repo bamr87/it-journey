@@ -1,4 +1,31 @@
+<!-- 
+  _includes/footer.html 
 
+-->
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-sm d-flex align-items-center">
+    <span class="text-muted">
+      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>
+    </span>
+    <ul class="nav col-sm justify-content-end list-unstyled d-flex">
+      <!-- Search for Site Identity links in config file -->
+      {% if site.author.links %}
+      {% for link in site.author.links %}
+      {% if link.label and link.url %}
+      <li class="ms-3"><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+    </ul>
+    {% unless site.atom_feed.hide %}
+    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+  {% endunless %}
+  </div>
+</footer>
+
+  {%- include copy-code-script.html -%}
+  
 <script src="{{ '/assets/js/bootstrap.bundle.min.js'| relative_url }}"></script>
 <script src="{{ '/assets/js/docs.min.js' | relative_url }}"></script>
 

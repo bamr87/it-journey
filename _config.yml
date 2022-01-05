@@ -47,12 +47,32 @@ home_dir_mac             : &home-mac '/Users/amr-mb/'
 local_git_pc             : [ *home-win, 'github\' ]
 local_git_mac            : [ *home-mac, 'GitHub/' ]
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : /assets/images/great-lambda-pyramids-v1.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : "4001" # Doppelganger site
 
+# Identity
+
+author:
+  name             : *name # *name is a YAML reference pointing to the &anchor earlier
+  avatar           : "/assets/images/gravatar-small.png"
+  bio              : "IT nerd trying to be an IT hero"
+  location         : "Denver, CO"
+  links:
+    - label: "BASH Consulting"
+      icon: "fas fa-fw fa-link"
+      url: "https://bashconsultants.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/bamr87"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/bamr87"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/bamr42"
 
 twitter_username         : "bamr87"
 github_username          : "bamr87"
@@ -206,3 +226,17 @@ sass:
   sass_dir: _sass
   style: compressed
   
+
+# Footer Links Settings
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/bamr87"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/bamr87"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/bamr42"
