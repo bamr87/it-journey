@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-01T18:03:50.710Z'
+lastmod: '2022-01-05T00:57:01.963Z'
 toc: true
 sidebar:
   nav: main
@@ -160,12 +160,6 @@ NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of t
 - [ ] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
 - [ ] page revision view (diff)
 
-[Java Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-Edit in [VSCode](vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/{{ page.path}})
-
-this page's path is {{ page.path}}
-
 ## /init_world
 
 - Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
@@ -231,29 +225,6 @@ this page's path is {{ page.path}}
 
 Jekyll is a static site generator that is used to generate static websites.
 
-```liquid
-{% raw %}
-{{site.github.repository_url}}
-{% endraw %}
-```
-
-```html
-{%raw %}
-<div class="sidebar__top">
-  <a href="'''liquid{{site.github.repository_url}}'''/blob/gh-pages/{{page.name}}">
-    <i class="fab fa-github-square"></i>
-  </a>
-  <a href="vscode://file{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
-    <i class="fas fa-laptop-code"></i>
-  </a>
-  <a href="vscode://file{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
-    <i class="fas fa-laptop-code"></i>
-  </a>
-  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
-</div>
-{% endraw %}
-```
-
 ### MTD - Make the docs
 
 [MkDocs](https://www.mkdocs.org/)
@@ -284,65 +255,10 @@ Responsive Design
 
 ## Level s1x    - 0110 - Data basics
 
-## Level s3v3n  - 0111 - Web Development
+## Level s3v3n  - 0111 -
 
 ## Level 31ght  - 1000 - Security
 
 ## Level n1n3   - 1001 - Cloud
 
 ## Level t3n    - 1010 - Borne Again Solutions Hero
-
-### Automate OS Install
-
-[win](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-automation-overview)
-
-## Tools and Equipment
-
-### Terminal
-
-#### Powershell
-
-[operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
-
-[sub-expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#subexpression-operator--)
-
-```powershell
-"Today is $(Get-Date)"
-```
-
-> Today is 12/02/2019 13:15:20
-
-```powershell
-"Folder list: $((dir c:\ -dir).Name -join ', ')"
-```
-
-> Folder list: Program Files, Program Files (x86), Users, Windows
-
-### Bash
-
-### Iterm
-
-## Package Management
-
-- winget
-- apt-get
-- homebrew
-
-## Text_Editor
-
-- atom
-- Notepad++
-- xml Notepad
-- Visual Studio Code
-- [LaTeX](https://en.wikibooks.org/wiki/LaTeX)
-
-### Networking
-
-- DNS
-- Authentication
-- VPN
-- Sub-Nets
-- Ports
-- HTTPS
-
-

@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: machine-setup
-lastmod: '2021-12-29T21:09:09.810Z'
+lastmod: '2022-01-04T00:17:51.552Z'
 draft: false
 ---
 
@@ -59,6 +59,10 @@ Login to gh cli using your github credentials
 
 ```bash
 gh auth login
+```
+
+```bash
+git config --global user.email "<username>@users.noreply.github.com"
 ```
 
 ### Install Software Packages (optional)

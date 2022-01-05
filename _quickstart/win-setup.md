@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: windows
-lastmod: '2021-12-29T19:57:59.854Z'
+lastmod: '2022-01-05T00:38:08.407Z'
 draft: false
 ---
 
@@ -24,7 +24,7 @@ These are the steps to setup this jekyll site repository on a Windows PC. All th
 ## Windows Developer Settings
 
 ![](/assets/images/windows-developer-settings.png)
-
+w
 ![](/assets/images/windows-developer-settings-powershell.png)
 
 ### Install Winget
@@ -44,7 +44,7 @@ Or you can run the following commands in Powershell to download the msi file:
 ```powershell
 # Navigate to the directory where the msi file will be installed
 cd ~
-$download_folder = "win-apps"
+$download_folder = ".winget"
 mkdir $download_folder
 cd $download_folder
 ```
@@ -115,14 +115,14 @@ Detailed instructions for installing software packages can be found in the [Wing
 ```powershell
 # Navigate to your home directory and clone the winget packages
 cd ~
-gh repo clone bamr87/winget-packages ~/.winget
+gh repo clone bamr87/winget-packages .winget
 ```
 
 ```powershell
 # Navigate into brew file repo and install packages
 cd ~/.winget
-winget import
-winget import --file bundles/core/
+winget import --import-file winget-app-core.json
+winget import --import-file winget-app-dev.json
 ```
 
 ### Install VS Code
@@ -149,11 +149,15 @@ Ruby is the programming language of choice for Jekyll, and also manages the depe
 winget install RubyInstallerTeam.RubyWithDevKit
 ```
 
+If this doesn't work, download the MSI file and install manually.
+
+[Ruby Downloads](https://rubyinstaller.org/downloads/)
+
 exit the shell
 
 ### Install Jekyll
 
-Once Ruby is installed, you can install Jekyll. 
+Once Ruby is installed, you can install Jekyll.
 First exit the terminal and open a new terminal to initialize the new PATH variable.
 
 ```powershell

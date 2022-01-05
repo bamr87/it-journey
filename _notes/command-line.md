@@ -3,7 +3,7 @@ title: Command Line
 description: Command Line Notes
 collection: notes
 permalink: /notes/command-line/
-lastmod: '2021-11-06T21:43:26.822Z'
+lastmod: '2022-01-05T00:55:02.209Z'
 ---
 
 # Command Line
@@ -16,9 +16,20 @@ cd ~
 ```
 
 ## powershell
+
+[operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
+
+[sub-expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#subexpression-operator--)
+
 ```powershell
 write-host "hello world"
 ```
+
+```powershell
+"Today is $(Get-Date)"
+```
+
+> Today is 12/02/2019 13:15:20
 
 ## github cli
 
