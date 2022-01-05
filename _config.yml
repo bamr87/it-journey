@@ -240,3 +240,6 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bamr42"
+
+algolia:
+  application_id: '99CKJ6KQ3Z'
