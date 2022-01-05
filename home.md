@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-05T00:57:01.963Z'
+lastmod: '2022-01-05T22:16:15.730Z'
 toc: true
 sidebar:
   nav: main
@@ -16,12 +16,14 @@ sidebar:
 - [ ] Automate build process
 - [ ] Build Site map page
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) 
-- [ ] Add 
+- [ ] Add search functionality
 - [ ] Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
 - [ ] Need to fix quick index in side bar
 - [ ] Add GUI instructions for the n00bs
 - [ ] Add language title to code blocks
 - [ ] Integrate Jupyter Notebooks into the site
+- [ ] Add an auto generated nav side bar
+- [ ] add embedded todo button for viewing 
 -->
 
 # it-journey.home (~)
