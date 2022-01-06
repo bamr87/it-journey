@@ -243,3 +243,4 @@ footer:
 
 algolia:
   application_id: '99CKJ6KQ3Z'
+  index_name: dev_lifehacker
