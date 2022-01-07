@@ -1,46 +1,46 @@
-<!-- Retreive logo based on config file -->
-{% capture logo_path %}{{ site.logo }}{% endcapture %}
+<!-- 
+  Masthead
+  _includes/navbar.html 
+-->
+
 
 <!-- Header Structure -->
-<header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark ">
-  {% unless logo_path == empty %}
+
+  <!-- Logo -->
+  {% capture logo_path %}{{ site.logo }}{% endcapture %}
+  <div>
     <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}"></a>
-  {% endunless %}
+  </div>
   
   <!-- Title Section  -->
-  <a class="navbar-brand" href="{{ '/' | relative_url }}">
-    {{ site.masthead_title | default: site.title }}
-    {% if site.subtitle %}
+  <div>
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">
+      {{ site.masthead_title | default: site.title }}
+      {% if site.subtitle %}
       <br>
       <span class="site-subtitle">{{ site.subtitle }}</span>
-    {% endif %}
-  </a>
+      {% endif %}
+    </a>
+  </div>
 
 <!-- Home Collapse button -->
-
+  <div>
     <button type="button" 
             data-toggle="collapse" 
-            data-target="#breadcrumbs-intro" 
+            data-target=".breadcrumbs-intro" 
             aria-expanded="false" 
             aria-controls="" 
             class="collapsed">
       <span class="oi" data-glyph="chevron-bottom">Hi</span>
     </button>
+  </div>
 
 {% include navbar.html %}
 
     <!-- Search Form -->
-    {% if site.search == true %}
-    <button class="search__toggle" type="button">
-      <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-      <i class="fas fa-search"></i>
-    </button>
-    {% endif %}
-    <ul class="hidden-links hidden"></ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</header>
-
+    <div id="search-searchbar">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>

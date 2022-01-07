@@ -1,14 +1,18 @@
 <!-- 
   _includes/footer.html 
-
+  Social Links and Branding
 -->
 
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <div class="col-sm d-flex align-items-center">
+    
+    <!-- Branding and Powered By: -->
     <span class="text-muted">
       &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>
     </span>
+    
     <ul class="nav col-sm justify-content-end list-unstyled d-flex">
+
       <!-- Search for Site Identity links in config file -->
       {% for link in site.author.links %}
       <li class="ms-3">
@@ -19,17 +23,18 @@
         </li>
       {% endfor %}
     </ul>
-    {% unless site.atom_feed.hide %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-  {% endunless %}
+    
+    <!-- RSS Feed -->
+    <li>
+      <a href="{{ '/feed.xml' | relative_url }}">
+        <i class="fas fa-fw fa-rss-square" aria-hidden="true">
+        </i>{{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
+      </a>
+    </li>
+
   </div>
 </footer>
-
-  {%- include copy-code-script.html -%}
-  
+ 
+<!-- Boot Strap source location -->
 <script src="{{ '/assets/js/bootstrap.bundle.min.js'| relative_url }}"></script>
 <script src="{{ '/assets/js/docs.min.js' | relative_url }}"></script>
-
-<!-- {%- include copy-code-script.html -%} 
-Already part of bootstrap js (clipboard-js.scss)
--->

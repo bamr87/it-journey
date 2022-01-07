@@ -1,4 +1,4 @@
-  <!-- Collapse Button -->
+  <!-- Collapse Button in mobile view -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,7 +10,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link {% if link.sublinks %} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" {% endif %}" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
           
-          <!-- Drop down links  -->
+          <!-- Drop down links   -->
           {% if link.sublinks %}
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {%- for sublink in link.sublinks -%}

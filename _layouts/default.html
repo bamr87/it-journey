@@ -3,52 +3,75 @@
 <!--
   Zer0 Mistakes Jekyll Theme 0.1 by Amr Abdel-Motaleb
   Copyright 2021 Amr Abdel-Motaleb - amrabdel.com | @bamr87
+  _layouts/default.html
 -->
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   
-  <head>
-    {% include head.html %}
-  </head>
+<head>
+  <!-- _includes/head.html  -->
+  {% include head.html %}
+  
+  <!-- Meta data attributes -->
+  {% if page.title %}
+  <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  {% endif %}
+
+  {% if page.excerpt %}
+  <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+  {% endif %}
+  
+  {% if page.date %}
+  <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+  {% endif %}
+  
+  {% if page.last_modified_at %}
+  <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
+  {% endif %}
+
+</head>
 
 <body>
-   
-  {% include masthead.html %}
+  
+  <!-- Header section with main Navigation and Search engine -->
+  <header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark ">
+    <!-- _includes/masthead.html  -->
+    {% include masthead.html %}
+  </header>
 
+  <!-- Main body including sidebars -->
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
-    
     
     <!-- Left Sidebar for Outline -->
     <aside class="bd-sidebar">
       <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
-
         {% include sidebar.html %}
-
+        <!-- _includes/sidebar.html  -->
       </nav>
     </aside>
     
     <!--  Main Body -->
     <main class="bd-main order-1">
       
-      <!-- Intro Section and breadcrumbs -->
-      <div id="breadcrumbs-intro" class="bd-intro ps-lg-4 collapsed collapse">
-        {% include breadcrumbs.html %}
-
-        <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
-
-      {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-      {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-      {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-      {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+      <!-- Main Content -->
+      <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
+        {{ content }}
       </div>
 
-      <!-- Table of Contents -->
-      <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted"">
+      <!-- Intro Section and breadcrumbs -->
+      <div class="breadcrumbs-intro bd-intro ps-lg-4 collapsed collapse">
+        
+        <!-- _include/breadcrumbs.html -->
+        {% include breadcrumbs.html %}
+        <!-- Layout location -->
+        <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
-        <!-- On this Page Navigation -->
-        <div bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted>
-        <!-- Source Code Control Shortcuts -->
-            <div class="git-update vscode-update">
+    </div>
+
+      <!-- Right Side Bar - Page Contents and Shortcuts-->
+      <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
+          <!-- Source Code Control Shortcuts -->
+          <div class="git-update vscode-update">
             <a href="{{site.github.repository_url}}/blob/master/{{page.name}}">
               <i class="fab fa-github-square"></i>
             </a>
@@ -62,33 +85,30 @@
           </div>  
 
         <!-- On this page -->
-            <strong class="d-block h6 my-2 pb-2 border-bottom">
-              <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i>
-              On this page
-            </strong>
+          <strong class="d-block h6 my-2 pb-2 border-bottom">
+            <i class="fas fa-file-alt"></i>
+            On this page
+          </strong>
 
           <nav class="" id="TableOfContents" data-toggle="toc">
             {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
           </nav>
-        </div>  
-          
       </div>  
-
-      <!-- Main Content -->
-      <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
-        {{ content }}
-      </div>
-
     </main>
   </div>
+</div>
+
+  <!-- Javascript CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script> -->
   
-  </div>
+  <!-- Search Engine  -->
+  <!-- _include/algolia.html -->
+  {% include algolia.html %}
 
-{% include footer.html %}
+  <!-- _include/footer.html -->
+  {% include footer.html %}
 
 </body>
 </html>

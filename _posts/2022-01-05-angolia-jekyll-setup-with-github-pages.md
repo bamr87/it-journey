@@ -5,7 +5,7 @@ layout: default
 description: null
 categories:
   - Posts
-lastmod: '2022-01-05T21:52:50.688Z'
+lastmod: '2022-01-07T00:37:44.088Z'
 draft: true
 ---
 
@@ -16,3 +16,9 @@ https://community.algolia.com/jekyll-algolia/getting-started.html
 
 
 https://community.algolia.com/jekyll-algolia/github-pages.html
+
+
+https://beatletech.com/2020/08/16/jekyll-and-algolia-search-integration
+
+
+https://community.algolia.com/jekyll-algolia/blog.html

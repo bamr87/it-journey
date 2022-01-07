@@ -6,25 +6,13 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-05T22:16:15.730Z'
+lastmod: '2022-01-07T00:36:37.089Z'
 toc: true
 sidebar:
   nav: main
 ---
 
-<!-- TODO:
-- [ ] Automate build process
-- [ ] Build Site map page
-- [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) 
-- [ ] Add search functionality
-- [ ] Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
-- [ ] Need to fix quick index in side bar
-- [ ] Add GUI instructions for the n00bs
-- [ ] Add language title to code blocks
-- [ ] Integrate Jupyter Notebooks into the site
-- [ ] Add an auto generated nav side bar
-- [ ] add embedded todo button for viewing 
--->
+
 
 # it-journey.home (~)
 
@@ -155,7 +143,7 @@ NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of t
 - [x] bootstrap4
 - [x] auto navbar
   - [ ] [Just the Docs](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/)
-- [ ] Add back to [top button](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) in cellphone view
+- [x] Add back to [top button](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) in cellphone view
 - [ ] add [plugins](https://jekyllcodex.org/without-plugins/) without plugins
 - [ ] Auto integrate/embed source code files into documentation
 - [ ] UI testing automation - [Selenium](https://www.selenium.dev/)

@@ -1,21 +1,30 @@
-<!-- Sidebar.html -->
+<!-- Sidebar.html 
+     _includes/nav_li 
+-->
 
-<!-- Include Nav List -->
+<!-- Left Sidebar Nav List  -->
 {% if page.sidebar.nav %}
   <div class="bd-sidebar flex-shrink-0 p-3 bg-white" >
     <nav class="nav__list collapse bd-links" id="bd-docs-nav">
-      {% include nav_list nav=page.sidebar.nav %}
+      
+      <!-- Nav Toggle button in mobile view -->
+      <input id="ac-toc" name="accordion-toc" type="checkbox" />
+      <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>  
+      
+      <!-- Include nav_list.html -->
+      {% include nav_list.html nav=page.sidebar.nav %}
     </nav>
   </div>
 {% endif %}
 
+<!-- Quick index of pages in the collection -->
+{% if site.collections.pages %}
 <ul>
-  <p>
-    Quick Index
-  </p>
+  <p>Quick Index</p>
   {% for note in site.collections.pages %}
     {% if note.collection == page.collection %}
       <li class="active mb-1 list-unstyled"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
+{% endif %}
