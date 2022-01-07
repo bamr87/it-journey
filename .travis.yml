@@ -3,13 +3,17 @@
 dist: xenial
 language: ruby
 cache: bundler
-before_install:
-  - gem install bundler
-script:
+before_script: bundle update
+script: 
+  - bundle exec rake test
   - bundle exec jekyll algolia
+rvm:
+ - 2.6.2
+ - 2.4.2
+ - 2.3.5
+ - 3.0
+
 branches:
   only:
     # Change this to gh-pages if you're deploying using the gh-pages branch
     - master
-rvm:
- - 3.0
