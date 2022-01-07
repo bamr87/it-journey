@@ -1,6 +1,6 @@
 # .travis.yml
 # This file should be at the root of your project
-dist: xenial
+# dist: xenial
 language: ruby
 cache: bundler
 before_script: bundle update
