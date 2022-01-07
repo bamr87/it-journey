@@ -11,6 +11,6 @@ branches:
     # Change this to gh-pages if you're deploying using the gh-pages branch
     - master
 rvm:
- - 3.0
+ - 2.4
 
 dist: trusty
