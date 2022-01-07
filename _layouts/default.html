@@ -35,6 +35,7 @@
   
   <!-- Header section with main Navigation and Search engine -->
   <header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark ">
+  
     <!-- _includes/masthead.html  -->
     {% include masthead.html %}
   </header>
@@ -42,17 +43,22 @@
   <!-- Main body including sidebars -->
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
     
+
+
     <!-- Left Sidebar for Outline -->
     <aside class="bd-sidebar">
       <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
-        {% include sidebar.html %}
+
         <!-- _includes/sidebar.html  -->
+        {% include sidebar.html %}
       </nav>
     </aside>
     
     <!--  Main Body -->
     <main class="bd-main order-1">
-      
+      <div class="container">
+        <div id="search-hits"></div>
+      </div>
       <!-- Main Content -->
       <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
         {{ content }}
@@ -63,6 +69,7 @@
         
         <!-- _include/breadcrumbs.html -->
         {% include breadcrumbs.html %}
+
         <!-- Layout location -->
         <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
@@ -70,7 +77,8 @@
 
       <!-- Right Side Bar - Page Contents and Shortcuts-->
       <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
-          <!-- Source Code Control Shortcuts -->
+
+        <!-- Source Code Control Shortcuts -->
           <div class="git-update vscode-update">
             <a href="{{site.github.repository_url}}/blob/master/{{page.name}}">
               <i class="fab fa-github-square"></i>
@@ -104,6 +112,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
   <!-- Search Engine  -->
+
   <!-- _include/algolia.html -->
   {% include algolia.html %}
 
