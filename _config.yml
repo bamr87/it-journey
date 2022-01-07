@@ -247,5 +247,7 @@ algolia:
   application_id: '99CKJ6KQ3Z'
   index_name: dev_lifehacker
 
+exclude: [vendor]
+
 atom_feed:
 path                   : # blank (default) uses feed.xml
