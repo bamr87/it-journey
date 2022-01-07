@@ -16,6 +16,11 @@ main:
         url: /quickstart/vscode/
       - title: "Jekyll"
         url: /quickstart/jekyll/
+  - title: "Research"
+    url: /research/
+    sublinks:
+      - title: "Data"
+      - url: /research/data/
   - title: "Journal"
     url: /posts/
   - title: "Library"
