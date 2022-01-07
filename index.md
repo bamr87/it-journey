@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: '2022-01-07T00:36:50.542Z'
+lastmod: '2022-01-07T22:59:26.074Z'
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -10,6 +10,7 @@ Nothing to see here. Yet...
 
 <!-- FIXME:
 - [ ] - Adjust menu toggle in Mobile view
+- [ ] fix presentation of search results
 -->
 
 TODO:
