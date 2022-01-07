@@ -245,6 +245,7 @@ footer:
 
 algolia:
   application_id: '99CKJ6KQ3Z'
+  search_only_api_key: '03a0c530bc2ff9acfde23485092602f3'
   index_name: dev_lifehacker
 
 exclude: [vendor]
