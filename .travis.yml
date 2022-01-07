@@ -12,3 +12,5 @@ branches:
     - master
 rvm:
  - 3.0
+
+dist: trusty
