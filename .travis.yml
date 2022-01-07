@@ -1,5 +1,6 @@
 # .travis.yml
 # This file should be at the root of your project
+dist: xenial
 language: ruby
 cache: bundler
 before_install:
@@ -11,6 +12,4 @@ branches:
     # Change this to gh-pages if you're deploying using the gh-pages branch
     - master
 rvm:
- - 2.4
-
-dist: trusty
+ - 2.6
