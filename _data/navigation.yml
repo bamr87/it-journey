@@ -16,11 +16,6 @@ main:
         url: /quickstart/vscode/
       - title: "Jekyll"
         url: /quickstart/jekyll/
-  - title: "Research"
-    url: /research/
-    sublinks:
-      - title: "Data"
-      - url: /research/data/
   - title: "Journal"
     url: /posts/
   - title: "Library"
@@ -41,13 +36,20 @@ main:
       url: /hobbies/art/
     - title: "Cooking"
       url: /hobbies/cooking/
+  - title: "Research"
+    url: /research/
+    sublinks:
+      - title: "Data"
+        url: /research/data/
+      - title: "Analysis"
+        url: /research/analysis/
   - title: "Notes"
     url: /notes/
     sublinks:
     - title: "home"
       url: /notes/
     - title: "shell"
-      url: /notes/shell/    
+      url: /notes/shell/
     - title: "Javascript"
       url: /notes/js/
     - title: "Jekyll"

@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-07T00:36:37.089Z'
+lastmod: '2022-01-09T04:32:13.204Z'
 toc: true
 sidebar:
   nav: main
@@ -28,11 +28,7 @@ From zero to hero collection of docs, tools, scripts, walk-through, and informat
 
 ## Roadmap
 
-Everyone has their preferred mode of learning a new/existing subject, whether it be by trial and error, guided instruction, or through ways that only you can define.
-Ccurrently, the pedagogy of information systems/technology is still evolving along with its ecosystem. However, the foundations this subject is built upon, and the lifestyle necessary to absorb this knowledge is largely intact.
-We still use concepts conceived during the early days of computer science from the 60's and 70's, it just has a different look these days. Also, learning information technology (or "programming" as most people understand it) has to be part of your life style to tolerate the sometimes mundane science.
-There's a wealth of information, terminology, structures, and rules that only apply in this field. It has it's own ecosystem with very limited understanding/oversight. We are in the wild `westworld` era, and no one knows what is best for you.
-However, we will still attempt to give you a roadmap:
+Here are a few routes:
 
 ### Zer0 to Her0
 
@@ -50,9 +46,10 @@ For those who are intermediate/advanced and want to attack a specific stack:
 
 1. Front-end (HTML, CSS, JS)
 2. Back-end (Python, PHP, Ruby)
-3. Databases (SQL, NoSQL, PostgreSQL)
+3. Databases (MySQL, NoSQL, PostgreSQL)
 4. Integrations (API, REST, GraphQL, SOAP)
 5. Infrastructure (AWS, Azure, GCP, Linux)
+6. Solutions (LAMP, Jampstack, MERN, WINS)
 
 [Source](https://devopedia.org/full-stack-developer)
 
@@ -70,6 +67,16 @@ For those who are advanced/heroic and what to specialize in a field:
 8. Mobile Development (Android, iOS, React Native)
 9. Game Development (Unity, Unreal Engine)
 10. AI (Machine Learning, Deep Learning, Natural Language Processing)
+
+### Project Route
+
+1. Wikimedia Server - [Downloads](https://www.mediawiki.org/wiki/Download)
+2. Personal Website
+3. Retro Picade
+4. Mobile App
+5. Web Scraper
+6. Documentation Site
+7. Video game
 
 ## Quick Start
 
@@ -150,7 +157,11 @@ NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of t
 - [ ] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
 - [ ] page revision view (diff)
 
+
+
 ## /init_world
+
+Choose your World:
 
 - Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
 - Mac - [machero]
@@ -159,7 +170,9 @@ NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of t
 
 ### Hello-World
 
-### Paths
+- Build your base
+- Upgrade
+- Extend
 
 - Command and Conquer - CNC
   - PowerShell

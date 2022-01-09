@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: '2022-01-07T22:59:26.074Z'
+lastmod: '2022-01-09T04:32:30.763Z'
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -15,7 +15,7 @@ Nothing to see here. Yet...
 
 TODO:
 - [ ] Automate build process
-- [ ] Build Site map page
+- [ ] Build Site map page [example](http://www.publicdomainsherpa.com/site-map.html)
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) 
 - [ ] Add search functionality
 - [ ] Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
