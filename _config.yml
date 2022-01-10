@@ -53,8 +53,6 @@ words_per_minute         : 200
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : "4001" # Doppelganger site
 
-
-
 # Identity
 
 author:
@@ -260,6 +258,17 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bamr42"
+
+powered_by:
+  - name: "Jekyll"
+    url: "https://jekyllrb.com/"
+  - name: "Bootstrap"
+    url: "https://getbootstrap.com/"
+  - name: "Algolia"
+    url: "https://algolia.com/"
+  - name: "JQuery"
+    url: "https://jquery.com/"
+
 
 algolia:
   application_id: '99CKJ6KQ3Z'

@@ -8,7 +8,10 @@
     
     <!-- Branding and Powered By: -->
     <span class="text-muted">
-      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>
+      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by 
+      {% for power in site.powered_by %}
+      <a href="{{ power.url }}" rel="nofollow">{{ power.name }} -</a>
+      {% endfor %}
     </span>
     
     <ul class="nav col-sm justify-content-end list-unstyled d-flex">
