@@ -24,7 +24,7 @@ These are the steps to setup this jekyll site repository on a Windows PC. All th
 ## Windows Developer Settings
 
 ![](/assets/images/windows-developer-settings.png)
-w
+
 ![](/assets/images/windows-developer-settings-powershell.png)
 
 ### Install Winget

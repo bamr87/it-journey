@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: '2022-01-09T04:32:30.763Z'
+lastmod: '2022-01-10T00:47:58.751Z'
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -26,4 +26,5 @@ TODO:
 - [ ] Add an auto generated nav side bar
 - [ ] add embedded todo button for viewing 
 - [ ] update SEO, document setup https://jsinibardy.com/optimize-seo-jekyll
+- [ ] add next/back button to turn pages
 {: .alert .alert-primary .collapse .collapsed .breadcrumbs-intro }

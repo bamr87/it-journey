@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-09T04:32:13.204Z'
+lastmod: '2022-01-09T18:24:23.473Z'
 toc: true
 sidebar:
   nav: main
@@ -45,7 +45,7 @@ For those who prefer the route based on difficulty:
 For those who are intermediate/advanced and want to attack a specific stack:
 
 1. Front-end (HTML, CSS, JS)
-2. Back-end (Python, PHP, Ruby)
+2. Back-end (Python, PHP, Ruby, Command Line)
 3. Databases (MySQL, NoSQL, PostgreSQL)
 4. Integrations (API, REST, GraphQL, SOAP)
 5. Infrastructure (AWS, Azure, GCP, Linux)
@@ -55,7 +55,7 @@ For those who are intermediate/advanced and want to attack a specific stack:
 
 ### Specialization route
 
-For those who are advanced/heroic and what to specialize in a field:
+For those who are advanced/expert and what to specialize in a field:
 
 1. Infrastructure (System Administration, Networking, Operating Systems)
 2. DevOps (Source Code control, CD/CI, Automated Testing, Agile Development)
