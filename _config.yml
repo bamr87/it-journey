@@ -43,7 +43,7 @@ baseurl                  : "" # the subpath of your site, e.g. /blog
 repository               : "bamr87/it-journey" # GitHub username/repo-name
 local_repo               : "it-journey"
 home_dir_pc              : &home-win 'C:\Users\amrab\'
-home_dir_mac             : &home-mac '/Users/amr-mb/'
+home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github\' ]
 local_git_mac            : [ *home-mac, 'GitHub/' ]
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
