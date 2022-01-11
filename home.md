@@ -6,13 +6,13 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-09T18:24:23.473Z'
+lastmod: '2022-01-11T00:38:53.947Z'
 toc: true
 sidebar:
   nav: main
 ---
 
-
+test
 
 # it-journey.home (~)
 
