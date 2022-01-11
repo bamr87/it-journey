@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2022-01-10T02:54:34.444Z'
+lastmod: '2022-01-10T16:02:28.856Z'
 sidebar:
   nav: notes
   title: test
@@ -211,7 +211,7 @@ kramdown: # https://kramdown.gettalong.org/options.html
 ![this is a caption](../assets/images/nubi-son.png){: .img-fluid }
 ```
 
-adding `{: .img-fluid }` to a list of images will addd it to the `<p>` tag.
+adding `{: .img-fluid }` to a list of images will add it to the `<p>` tag.
 
 See _scss/it-journey/it-journey.scss
 
@@ -226,9 +226,9 @@ p, img
 
 ### Examples
 
-![this is a caption](../assets/images/nubi-son.png){: .img-fluid }
+![this is a caption](../assets/images/nubi-son.png)
 ![Nubi in a sink](../assets/images/nubi-sink.png)
-![Nubi yawning](../assets/images/nubi-yawn.png)
-{: .img-fluid }
+![Nubi yawning](../assets/images/nubi-yawn.png){: .img-thumbnail }
+
 
 > this is a block quote

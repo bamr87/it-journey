@@ -5,11 +5,11 @@ excerpt: null
 description: null
 snippet: null
 categories:
-    - posts
+    - notes
 tags:
-    - article
+    - notes
 meta: null
 draft: true
-lastmod: '2022-01-10T03:04:34.643Z'
+lastmod: '2022-01-10T21:54:00.053Z'
 ---
 
