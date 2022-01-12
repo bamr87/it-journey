@@ -5,9 +5,8 @@ layout: default
 description: null
 categories:
     - quickstart
-    - github
 slug: github
-lastmod: '2022-01-11T01:03:40.511Z'
+lastmod: '2022-01-12T17:40:59.735Z'
 draft: false
 ---
 
@@ -17,31 +16,36 @@ draft: false
 
 ### Prerequisites
 
-- Homebrew
+- Machine Setup
 - VSCode
 
-confirm that you have installed Homebrew by running the following command:
+Confirm that you have a package manager installed by running the following command:
+
+**Mac OS**
 
 ```shell
-# Confirm Homebrew installation
 brew -v
 ```
 
-### Install Github Command Line Interface
+**Windows**
+
+```powershell
+winget -v
+```
+
+### Install Github CLI
 
 The Github CLI is a command line interface for the Github API. It is used to create and manage repositories. It is also used to create and manage issues and pull requests.
 
-MacOS
+**MacOS**
 
 ```shell
-# Install Github CLI
 brew install gh
 ```
 
-Windows
+**Windows**
 
 ```powershell
-# Install Github CLI
 winget install git.git
 winget install GitHub.cli
 ```
@@ -49,18 +53,18 @@ winget install GitHub.cli
 Confirm that you have installed the Github Command Line Interface by running the following command:
 
 ```shell
-# Confirm Github CLI installation
 gh --version
 ```
 
-Login to gh cli using your github credentials
+### Login to gh cli
 
-```bash
-# Login to gh cli
+Before you can begin using the CLI, you need to first log in to your account by running the following command:
+
+```shell
 gh auth login
 ```
 
-In order for Github to recognize your user ID when commiting to your repository, you need to add a no-reply email id to git.
+In order for Github to recognize your user ID when committing to your repository, you need to add a no-reply email id to git.
 
 Replace `<username>` with your github user id.
 
@@ -71,6 +75,8 @@ git config --global user.email "<username>@users.noreply.github.com"
 ## Fork Github Repository
 
 Now you can fork the repository from Github and start working on it.
+
+The following command will create a new directory in your home folder (enter `echo $HOME` in the terminal to find it) and then clone the repository into that new directory. The last command `gh repo fork bamr87/it-journey` is all you really need to get started.
 
 ```bash
 # Navigate to your home directory, create a github folder, and fork the github repo

@@ -89,8 +89,12 @@ quickstart:
       - title: "Linux"
         url: /quickstart/machine-setup/linux/
     url: /quickstart/
-  - title: "test"
-    url: /test/
+  - title: "VS-Code"
+    url: /quickstart/vscode/
+  - title: "Github"
+    url: /quickstart/github/
+  - title: "Jekyll"
+    url: /quickstart/Jekyll/
 
 # documentation links
 docs:
