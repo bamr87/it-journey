@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2022-01-10T16:02:28.856Z'
+lastmod: '2022-01-12T03:43:23.589Z'
 sidebar:
   nav: notes
   title: test
@@ -10,15 +10,7 @@ sidebar:
 
 # Quick Start
 
-Devhints (devhints.io)
-Bash-hackers wiki (bash-hackers.org)
-Shell vars (bash-hackers.org)
-Learn bash in y minutes (learnxinyminutes.com)
-Bash Guide (mywiki.wooledge.org)
-ShellCheck (shellcheck.net)
-shell - Standard Shell (devmanual.gentoo.org)
-
-## [Getting Started](/notes/getting-started)
+## Getting Started
 
 [Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)
 
@@ -69,16 +61,12 @@ Set-LocalVar amr smells
 
 ```
 
-
-
-
-[Check-Get-PS-Profile.ps1]() 
-
 Navigate to Profile home directory
 
 ```powershell
 split-path $PROFILE | cd
 ```
+
 ### Download $Profile
 
 ```powershell
@@ -103,7 +91,9 @@ function Restart-Powershell {
 }
 
 ```
+
 restart  powershell function
+
 ```powershell
 function Restart-Powershell {
   Start-Process powershell

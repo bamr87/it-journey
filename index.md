@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: '2022-01-10T00:47:58.751Z'
+lastmod: '2022-01-12T03:43:32.154Z'
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -24,7 +24,8 @@ TODO:
 - [ ] Add language title to code blocks
 - [ ] Integrate Jupyter Notebooks into the site
 - [ ] Add an auto generated nav side bar
-- [ ] add embedded todo button for viewing 
+- [ ] add embedded todo button for viewing
 - [ ] update SEO, document setup https://jsinibardy.com/optimize-seo-jekyll
 - [ ] add next/back button to turn pages
+- [ ] enhance right side bar design - [example](https://bootstrap-themes.github.io/dashboard/docs/#whats-included)
 {: .alert .alert-primary .collapse .collapsed .breadcrumbs-intro }

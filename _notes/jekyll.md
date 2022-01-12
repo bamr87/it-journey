@@ -1,7 +1,7 @@
 ---
 title: Jeykll
-permalink: /notes/web-dev/jekyll/
-lastmod: '2022-01-05T00:43:50.530Z'
+permalink: /notes/jekyll/
+lastmod: '2022-01-11T20:39:53.550Z'
 ---
 
 # Jeykll
