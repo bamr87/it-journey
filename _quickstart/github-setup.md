@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: github
-lastmod: '2022-01-12T17:40:59.735Z'
+lastmod: '2022-01-12T18:02:14.820Z'
 draft: false
 ---
 

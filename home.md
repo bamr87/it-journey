@@ -6,7 +6,7 @@ permalink: /home/
 purpose: To provide a platform for people to share their knowledge and experience about IT.
 Keywords: 'Home, Zer0'
 Post: null
-lastmod: '2022-01-11T00:39:54.691Z'
+lastmod: '2022-01-12T20:23:07.289Z'
 toc: true
 sidebar:
   nav: main
@@ -131,33 +131,6 @@ local_git_mac            : [ *home-mac, 'GitHub/' ]
 
 NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
 {: .alert .alert-primary }
-
-### Features
-
-- [x] Code Copy button
-- [x] Side table of contents
-- [x] Add quick edit links to GitHub and VS Code
-- [x] Dark Mode toggle
-  - [ ] [JTD](https://pmarsceill.github.io/just-the-docs/docs/customization/)
-- [x] Navigation bar dropdown
-- [ ] auto genereate sidebar
-- [ ] alternate TOC structures (easy/med/hard) (pc/mac/linux) (by role)
-- [ ] Tool box page
-- [ ] Contribution Instructions
-- [ ] Search engine
-- [x] Programming Language cheat sheets
-- [x] Accordion TOC
-- [x] bootstrap4
-- [x] auto navbar
-  - [ ] [Just the Docs](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/)
-- [x] Add back to [top button](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) in cellphone view
-- [ ] add [plugins](https://jekyllcodex.org/without-plugins/) without plugins
-- [ ] Auto integrate/embed source code files into documentation
-- [ ] UI testing automation - [Selenium](https://www.selenium.dev/)
-- [ ] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
-- [ ] page revision view (diff)
-
-
 
 ## /init_world
 
