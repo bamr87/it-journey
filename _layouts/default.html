@@ -42,18 +42,12 @@
 
   <!-- Main body including sidebars -->
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
-    
-
 
     <!-- Left Sidebar for Outline -->
-    <aside class="bd-sidebar">
-      <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
 
         <!-- _includes/sidebar.html  -->
         {% include sidebar.html %}
-      </nav>
-    </aside>
-    
+
     <!--  Main Body -->
     <main class="bd-main order-1">
       <div class="container">
@@ -87,7 +81,7 @@
               <i class="fas fa-laptop-code"></i>
             </a>
             <a href="vscode://file/{{ site.local_git_mac}}{{ site.local_repo }}/{{ page.path }}">
-              <i class="fas fa-laptop-code"></i>
+              <i class="fab fa-apple"></i>
             </a>
             <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
           </div>  

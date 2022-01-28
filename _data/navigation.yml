@@ -56,6 +56,9 @@ main:
       url: /notes/jekyll/
   - title: "About"
     url: /about/
+  - title: "Map"
+    url: /map/
+
 
 # Notes
 notes:

@@ -1,9 +1,25 @@
 <!-- Sidebar.html 
-     _includes/nav_li 
+     _includes/nav_list.html 
 -->
+<aside class="bd-sidebar">
+  <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
+
+<!-- Source Code Control Shortcuts - navigation -->
+    
+{% if page.sidebar.nav %}
+  <div class="git-update vscode-update">
+    <a href="{{site.github.repository_url}}/blob/master/{{site.nav-file}}">
+      <i class="fab fa-github-square"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/{{ site.nav-file }}">
+      <i class="fas fa-laptop-code"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_mac}}{{ site.local_repo }}/{{ site.nav-file }}">
+      <i class="fab fa-apple"></i>
+    </a>
+  </div>  
 
 <!-- Left Sidebar Nav List  -->
-{% if page.sidebar.nav %}
   <div class="bd-sidebar flex-shrink-0 p-3 bg-white" >
     <nav class="nav__list collapse bd-links" id="bd-docs-nav">
       
@@ -35,4 +51,5 @@
 </div>
 {% endif %}
 
-
+</nav>
+</aside>

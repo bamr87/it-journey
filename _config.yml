@@ -83,6 +83,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
+  # - jemoji # Doesn't work for some reason
   # - jekyll-postcss
   # - jekyll-redirect-from
   
@@ -104,6 +105,7 @@ kramdown: # https://kramdown.gettalong.org/options.html
   toc_levels: 1..6
   # smart_quotes: lsquo,rsquo,ldquo,rdquo
   # enable_coderay: false
+
 
 
 
@@ -130,6 +132,8 @@ collections:
 
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
+
+nav-file: '_data/navigation.yml'
 
 defaults:
   # ALL
