@@ -21,6 +21,7 @@ group :jekyll_plugins do
   gem 'jekyll-redirect-from'
   gem 'jekyll-algolia'
   gem 'jekyll-sitemap' 
+  # gem 'jemoji' # Doesn't work for some reason
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -43,5 +44,7 @@ gem "webrick", "~> 1.7"
 gem "kramdown"
 gem "rouge"
 gem "algoliasearch"
+
+
 
 # gem 'bootstrap'
