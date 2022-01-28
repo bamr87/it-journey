@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: github
-lastmod: '2022-01-12T18:02:14.820Z'
+lastmod: '2022-01-25T04:36:34.355Z'
 draft: false
 ---
 
@@ -84,4 +84,15 @@ cd ~
 mkdir github
 cd github
 gh repo fork bamr87/it-journey
+```
+
+### Add [Submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules) 
+
+```shell
+git submodule add https://github.com/bamr87/winget-packages.git winget
+
+# if the submodule is empty, run the following command to initialize it
+
+git submodule update --init
+
 ```

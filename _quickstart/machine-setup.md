@@ -6,7 +6,7 @@ description: null
 categories:
     - quickstart
 slug: machine-setup
-lastmod: '2022-01-12T20:23:25.494Z'
+lastmod: '2022-01-25T04:36:33.690Z'
 draft: false
 ---
 
@@ -61,18 +61,52 @@ The Github CLI is a command line interface for the Github API. It is used to cre
 
 ### Install Software Packages (optional)
 
-Detailed instructions for installing software packages can be found in the [Brewfile](/quickstart/homebrew/) section.
+Most people are familiar with downloading and installing software from a website the manual way. However, there are a few things that can be done with the package manager that can make it easier and automatic. For instance, you can install a package with a single command (i.e. `brew cask install visual-studio-code`), or you can install multiple packages at once.
 
-```bash
-# Navigate to your home directory and clone the brewfile
-cd ~
-gh repo clone bamr87/brewfile ~/.brew
+This repository has 2 submodules that contain files for installing different collections of software. You can find the files in the `\homebrew` or `\winget` directory.
 
-# Navigate into brew file repo and install packages
-cd ~/.brew
-brew bundle
-brew bundle --file bundles/core/
+If the directories are empty, run the following command to fetch the submodules:
+
+```shell
+git submodule update --init
 ```
+
+Detailed instructions for installing software packages can be found in the [Brewfile](/quickstart/machine-setup/mac/#install-software-packages-optional) section for Mac, or the [Winget](/quickstart/machine-setup/windows/#install-software-packages-optional) section for Windows.
+
+[Homebrew packages](/quickstart/homebrew/)
+
+Packages are grouped into the following categories:
+
+Core Apps
+
+- Source Code Control (Git, GitHub CLI)
+- Integrated Development Environment (VS Code)
+- Archiver/compressor (7zip)
+- Screen Capture (ShareX)
+- File Transfer Utility (Filezilla)
+
+Development Tools
+
+- Programming Languages 
+  - Python
+  - Perl
+  - .NET
+  - Node.js
+  - Ruby
+  - MikTex
+- Databases
+  - MySQL
+  - PostgreSQL
+  - MongoDB
+  - Redis
+- 
+
+Graphic Design Software
+
+Music Software
+
+Web 
+
 
 ### Install VS Code
 
@@ -84,10 +118,6 @@ brew cask install visual-studio-code
 ```
 
 Log into VS code using your github account by clicking on the Account icon on the bottom left of the VS code window.
-
-#### Install VS Code extensions (optional)
-
-
 
 ## Jekyll & ruby Setup
 

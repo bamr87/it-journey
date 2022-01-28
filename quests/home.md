@@ -10,6 +10,113 @@ sidebar:
 toc: true
 toc_sticky: true
 date: '2021-11-29T03:41:20.614Z'
-lastmod: '2021-11-30T19:01:50.560Z'
+lastmod: '2022-01-18T19:47:02.116Z'
 ---
 
+## /init_world
+
+Choose your World:
+
+- Win - [pshero](it-journey-docs/notes/init-world/pshero.ipynb)
+- Mac - [machero]
+- Linux - [bashero]
+- Cloud - [chero]
+
+### Hello-World
+
+- Build your base
+- Upgrade
+- Extend
+
+- Command and Conquer - CNC
+  - PowerShell
+    - WinGet
+    - GitHub
+    - VSCode
+  - Bash
+    - apt-get
+  - Iterm
+    - Homebrew
+  - VS Code
+- Git your shit together - GYST
+  - Build
+  - File Management
+  - Continuous Integration and Continuous Deployment (CI/CD)
+  - Source Code Management (SCM)
+- Doc your Jekyll
+  - Make the Docs
+- Marry your Hub
+  - Host the hub
+  - Integrate
+  - Continuously Integrate and Deploy - CID
+
+## Story Lines
+
+- Book vs Street Smarts - BVSS
+- Share your creations - SYC
+- Dr. Jekyll & Mr. Hub - DJMH
+  - [examples](https://github.com/collections/github-pages-examples)
+
+
+## Level zer0   - 0000 - Navigation/Foundation
+
+### RTD - Read the docs
+
+- [PowerShell](https://docs.microsoft.com/en-us/powershell/)
+- [Microsoft Docs](https://docs.microsoft.com/en-us/documentation/)
+- [VS Code](https://code.visualstudio.com/docs)
+
+### Get your tools
+
+### Build your command center
+
+### CLI - Command Line Interface
+
+### Git - Source Code Control
+
+- Milestones
+  - Forking
+  - Pull Requests
+  - Branches
+
+### Jekyll - Static Site Generator
+
+Jekyll is a static site generator that is used to generate static websites.
+
+### MTD - Make the docs
+
+[MkDocs](https://www.mkdocs.org/)
+
+[Docusaurus](https://docusaurus.io/)
+
+## Level 0n3    - 0001 - Basic building blocks
+
+### Web building
+
+Responsive Design
+- [Tailwind](https://tailwindcss.com/docs/installation)
+- [Bootstrap](https://getbootstrap.com/)
+
+- [Comparison](https://blog.logrocket.com/tailwind-css-vs-bootstrap-ui-kits/)
+
+### Infrastructure
+
+### Database
+
+## Level tw0    - 0010 - Programming
+
+## Level thr33  - 0011 - PIjects
+
+## Level f0ur   - 0100 - Front end basics
+
+## Level f1v3   - 0101 - Back end basics
+
+## Level s1x    - 0110 - Data basics
+
+## Level s3v3n  - 0111 -
+
+## Level 31ght  - 1000 - Security
+
+## Level n1n3   - 1001 - Cloud
+
+## Level t3n    - 1010 - Borne Again Solutions Hero

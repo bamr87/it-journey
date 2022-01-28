@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2022-01-12T03:43:23.589Z'
+lastmod: '2022-01-25T04:36:34.984Z'
 sidebar:
   nav: notes
   title: test
@@ -189,8 +189,6 @@ kramdown: # https://kramdown.gettalong.org/options.html
   # enable_coderay: false
   ```
 
-### Add [Submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules) 
-
 ## Keyboard shortcuts
 
 [MS WOrd](https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-word-95ef89dd-7142-4b50-afb2-f762f663ceb2#bkmk_navigatewin)
@@ -222,3 +220,7 @@ p, img
 
 
 > this is a block quote
+
+> [!NOTE]
+> this is a note
+

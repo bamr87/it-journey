@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: windows
-lastmod: '2022-01-05T00:38:08.407Z'
+lastmod: '2022-01-24T04:35:21.097Z'
 draft: false
 ---
 
@@ -110,6 +110,10 @@ gh auth login
 
 ### Install Software Packages (optional)
 
+For a list of packages you can download/install using winget, see [here](https://winget.run/)
+
+For a list of package bundles, see [here](https://winstall.app/)
+
 Detailed instructions for installing software packages can be found in the [Winget](/quickstart/winget/) section.
 
 ```powershell
@@ -119,7 +123,7 @@ gh repo clone bamr87/winget-packages .winget
 ```
 
 ```powershell
-# Navigate into brew file repo and install packages
+# Navigate into winget file repo and install packages
 cd ~/.winget
 winget import --import-file winget-app-core.json
 winget import --import-file winget-app-dev.json
@@ -135,6 +139,53 @@ winget install Microsoft.VisualStudioCode
 ```
 
 Log into VS code using your github account by clicking on the Account icon on the bottom left of the VS code window.
+
+#### Install VS Code extensions (optional)
+
+Here's a recommended list of VS Code extensions to install:
+
+```
+aaron-bond.better-comments
+DavidAnson.vscode-markdownlint
+eliostruyf.vscode-front-matter
+esbenp.prettier-vscode
+Gruntfuggly.todo-tree
+James-Yu.latex-workshop
+leodevbro.blockman
+mdickin.markdown-shortcuts
+ms-azuretools.vscode-docker
+ms-dotnettools.csharp
+ms-kubernetes-tools.vscode-kubernetes-tools
+ms-python.python
+ms-python.vscode-pylance
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-wsl
+ms-vscode.powershell
+ms-vsliveshare.vsliveshare
+ms-vsliveshare.vsliveshare-audio
+ms-vsliveshare.vsliveshare-pack
+redhat.vscode-xml
+redhat.vscode-yaml
+sissel.shopify-liquid
+streetsidesoftware.code-spell-checker
+syler.sass-indented
+TakumiI.markdowntable
+tchayen.markdown-links
+telesoho.vscode-markdown-paste-image
+yzhang.markdown-all-in-one
+```
+
+[source](https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management)
+
+[Iterating over file to install extensions](https://stackoverflow.com/questions/58513266/how-to-install-multiple-extensions-in-vscode-using-command-line/62403267#62403267)
+
+```powershell
+cd ~/github/it-journey/_quickstart
+Get-Content extensions.txt | ForEach-Object {code --install-extension $_}
+```
 
 ## Jekyll & ruby Setup
 
