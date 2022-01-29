@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\minimal-mistakes"
+		},
+		{
+			"path": "..\\..\\bamr87.github.io"
+		},
+		{
+			"path": "..\\..\\minima"
+		}
+	],
+	"settings": {
+		"frontMatter.dashboard.openOnStart": false
+	}
+}

@@ -167,6 +167,22 @@ defaults:
       sidebar:
         nav: main
     permalink: /:categories/:title/
+  # _posts/quests
+  - scope:
+      path: _posts/quests
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: main
+    permalink: /:categories/:title/
   # _notes
   - scope:
       path: "_notes"
