@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: mac
-lastmod: '2022-01-01T18:54:40.063Z'
+lastmod: '2022-01-28T23:54:09.760Z'
 draft: false
 ---
 
@@ -94,6 +94,13 @@ gh repo clone bamr87/brewfile ~/.brew
 cd ~/.brew
 brew bundle
 brew bundle --file bundles/core/
+```
+
+Or install individually using a loop
+
+```shell
+# Include init_world/hello-mac/hb-packages.sh
+{% include_relative init_world/hello-mac/hb-packages.sh %}
 ```
 
 ### Install VS Code
@@ -228,4 +235,13 @@ To start the site locally, you need to run the following command:
 ```bash
 # Start Jekyll site locally
 jekyll serve
+```
+
+## Iterm2
+
+```shell
+brew install iterm2
+
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 ```

@@ -10,10 +10,12 @@ sidebar:
 toc: true
 toc_sticky: true
 date: '2021-11-29T03:41:20.614Z'
-lastmod: '2022-01-18T19:47:02.116Z'
+lastmod: '2022-01-29T00:44:48.969Z'
 ---
 
-## /init_world
+## Level zer0   - 0000 - Navigation/Foundation
+
+### /init_world (quickstart)
 
 Choose your World:
 
@@ -22,43 +24,50 @@ Choose your World:
 - Linux - [bashero]
 - Cloud - [chero]
 
-### Hello-World
+#### Hello-World
 
 - Build your base
+  - Package Manager
+  - IDE
 - Upgrade
+  - Terminal
+  - IDE
 - Extend
+  - Develop
+  - Scale
 
 - Command and Conquer - CNC
-  - PowerShell
-    - WinGet
-    - GitHub
+  - PowerShell & WinGet
+  - Shell & apt-get or Homebrew
+
+  - IDE
     - VSCode
-  - Bash
-    - apt-get
-  - Iterm
-    - Homebrew
-  - VS Code
-- Git your shit together - GYST
+  - Git your shit together - GYS
+    - Source Code Management (SCM)
+      - GitHub
   - Build
-  - File Management
-  - Continuous Integration and Continuous Deployment (CI/CD)
-  - Source Code Management (SCM)
+    - Static Web Generator
+      - Jekyll
+    - Continuous Integration and Continuous Deployment (CI/CD)
+    - 
+
+- File Management
+
+
+
+## Story Lines
+
+- Share your creations - SYC
+
+
+- Dr. Jekyll & Mr. Hub - DJMH
+  - [examples](https://github.com/collections/github-pages-examples)
 - Doc your Jekyll
   - Make the Docs
 - Marry your Hub
   - Host the hub
   - Integrate
   - Continuously Integrate and Deploy - CID
-
-## Story Lines
-
-- Book vs Street Smarts - BVSS
-- Share your creations - SYC
-- Dr. Jekyll & Mr. Hub - DJMH
-  - [examples](https://github.com/collections/github-pages-examples)
-
-
-## Level zer0   - 0000 - Navigation/Foundation
 
 ### RTD - Read the docs
 

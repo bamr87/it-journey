@@ -44,8 +44,8 @@ repository               : "bamr87/it-journey" # GitHub username/repo-name
 local_repo               : "it-journey"
 home_dir_pc              : &home-win 'C:\Users\amrab\'
 home_dir_mac             : &home-mac '/Users/amr/'
-local_git_pc             : [ *home-win, 'github\' ]
-local_git_mac            : [ *home-mac, 'GitHub/' ]
+local_git_pc             : [ *home-win, 'github' ]
+local_git_mac            : [ *home-mac, 'github' ]
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 breadcrumbs              : true # true, false (default)

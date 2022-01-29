@@ -7,7 +7,7 @@ if [ $parm1 = 'Install']
     exit
   else
     exit
-brew cask $parm1 atom \
+brew $parm1 --cask atom \
  google-chrome \
  google-drive-file-stream \
  firefox \
