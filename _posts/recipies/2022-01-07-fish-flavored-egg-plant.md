@@ -5,8 +5,10 @@ layout: default
 description: null
 categories:
   - Posts
-lastmod: '2022-01-09T04:33:36.114Z'
+lastmod: '2022-01-30T00:47:43.405Z'
 draft: true
+sidebar:
+  nav: cooking
 ---
 
 ## Ingredients

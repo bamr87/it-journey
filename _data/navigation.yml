@@ -163,3 +163,11 @@ about:
         url: /notes/powershell/
       - title: "about this site"
         url: /notes/bash/
+
+cooking:
+  - title: "cooking"
+    children:
+      - title: "Chinese-Egg-plant"
+        url: /cooking/egg-plant/
+      - title: "Mapo-Tofu"
+        url: /cooking/egg-plant/
