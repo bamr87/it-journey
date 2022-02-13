@@ -1,0 +1,8 @@
+cask_args appdir: '/Applications'
+
+cask 'visual-studio-code'
+# cask 'visual-studio-code-insiders'
+# cask 'intellij-idea'
+# cask 'sublime-merge-dev'
+# cask 'sublime-text-dev'
+# cask 'android-studio'

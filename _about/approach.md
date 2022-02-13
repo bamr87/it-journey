@@ -1,5 +1,6 @@
 ---
-lastmod: '2022-01-09T04:32:34.483Z'
+lastmod: '2022-02-05T19:54:15.493Z'
+permalink: /about/approach/
 ---
 
 # Approach

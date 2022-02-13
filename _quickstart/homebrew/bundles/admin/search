@@ -1,0 +1,6 @@
+cask_args appdir: '/Applications'
+
+brew 'ack'
+brew 'fd'
+brew 'ripgrep'
+brew 'the_silver_searcher'

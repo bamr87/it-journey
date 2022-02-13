@@ -1,0 +1,10 @@
+cask_args appdir: '/Applications'
+
+brew 'mysql'
+brew 'mycli'
+brew 'sqlite'
+brew 'postgresql'
+brew 'redis'
+brew 'kafka'
+
+cask 'sequel-pro-nightly'

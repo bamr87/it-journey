@@ -2,7 +2,7 @@
 title: Notes Index
 description: Notes Index
 permalink: /notes/
-lastmod: '2022-01-25T04:36:34.984Z'
+lastmod: '2022-02-05T18:06:59.410Z'
 sidebar:
   nav: notes
   title: test
@@ -224,3 +224,20 @@ p, img
 > [!NOTE]
 > this is a note
 
+# Welcome to MkDocs
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.

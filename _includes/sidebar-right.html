@@ -1,0 +1,31 @@
+<!-- Sidebar.html 
+     _includes/nav_list.html 
+-->
+
+<!-- Right sidebar container -->
+<div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
+
+<!-- Source Code Control Shortcuts - Page -->
+    
+  <div class="git-update vscode-update breadcrumbs-intro collapsed collapse">
+    <a href="{{site.github.repository_url}}/blob/master/{{page.name}}">
+      <i class="fab fa-github-square"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/{{ page.path }}">
+      <i class="fab fa-windows"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo }}/{{ page.path }}">
+      <i class="fab fa-apple"></i>
+    </a>
+    <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+  </div>
+
+<!-- On this page -->
+<strong class="d-block h6 my-2 pb-2 border-bottom">
+  <i class="fas fa-file-alt"></i>
+  On this page
+</strong>
+
+<nav class="" id="TableOfContents" data-toggle="toc">
+  {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
+</nav>

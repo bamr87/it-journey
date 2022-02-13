@@ -1,6 +1,6 @@
 [submodule "homebrew"]
-	path = homebrew
+	path = _quickstart/homebrew
 	url = https://github.com/bamr87/homebrew
 [submodule "winget"]
-	path = winget
+	path = _quickstart/winget
 	url = https://github.com/bamr87/winget-packages.git

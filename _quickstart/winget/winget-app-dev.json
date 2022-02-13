@@ -1,0 +1,41 @@
+{
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2021-10-28T08:48:51.067-00:00",
+	"Sources" : 
+	[
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "Python.Python.3"
+				},
+				{
+					"PackageIdentifier" : "StrawberryPerl.StrawberryPerl"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.dotnet"
+				},
+				{
+					"PackageIdentifier" : "OpenJS.NodeJS"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK"
+				},
+				{
+					"PackageIdentifier" : "RubyInstallerTeam.RubyWithDevKit"
+				},
+				{
+					"PackageIdentifier" : "ChristianSchenk.MiKTeX"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://winget.azureedge.net/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		}
+	],
+	"WinGetVersion" : "1.1.12653"
+}

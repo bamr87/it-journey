@@ -1,0 +1,11 @@
+cask_args appdir: '/Applications'
+
+# Graphic Design
+
+cask 'blender'
+cask 'inkscape'
+cask 'krita'
+cask 'gimp'
+
+# Game Design
+# cask 'godot'

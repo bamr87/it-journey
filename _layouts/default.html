@@ -32,11 +32,9 @@
 </head>
 
 <body>
-
   <!-- _includes/google-tag-mgr.html  -->
   {% include google-tag-mgr.html %}
 
-  
   <!-- Header section with main Navigation and Search engine -->
   <header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark ">
   
@@ -57,52 +55,30 @@
       <div class="container">
         <div id="search-hits"></div>
       </div>
+
       <!-- Main Content -->
       <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
         {{ content }}
       </div>
 
       <!-- Intro Section and breadcrumbs -->
-      <div class="breadcrumbs-intro bd-intro ps-lg-4 collapsed collapse">
+      <div class="bd-intro ps-lg-4 breadcrumbs-intro collapsed collapse">
         
         <!-- _include/breadcrumbs.html -->
         {% include breadcrumbs.html %}
 
         <!-- Layout location -->
-        <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
+        <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
-    </div>
+      </div>
 
-      <!-- Right Side Bar - Page Contents and Shortcuts-->
-      <div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
+    <!-- Right Sidebar - Page Contents and Shortcuts-->
 
-        <!-- Source Code Control Shortcuts -->
-          <div class="git-update vscode-update">
-            <a href="{{site.github.repository_url}}/blob/master/{{page.name}}">
-              <i class="fab fa-github-square"></i>
-            </a>
-            <a href="vscode://file/{{ site.local_git_pc}}{{ site.local_repo }}/{{ page.path }}">
-              <i class="fas fa-laptop-code"></i>
-            </a>
-            <a href="vscode://file/{{ site.local_git_mac}}{{ site.local_repo }}/{{ page.path }}">
-              <i class="fab fa-apple"></i>
-            </a>
-            <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
-          </div>  
+          <!-- _includes/sidebar-right.html  -->
+          {% include sidebar-right.html %}
 
-        <!-- On this page -->
-          <strong class="d-block h6 my-2 pb-2 border-bottom">
-            <i class="fas fa-file-alt"></i>
-            On this page
-          </strong>
-
-          <nav class="" id="TableOfContents" data-toggle="toc">
-            {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
-          </nav>
-      </div>  
     </main>
   </div>
-</div>
 
   <!-- Javascript CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

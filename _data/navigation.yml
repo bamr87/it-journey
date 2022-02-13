@@ -12,10 +12,10 @@ main:
         url: /quickstart/
       - title: "Machine Setup"
         url: /quickstart/machine-setup/
-      - title: "VSCode"
-        url: /quickstart/vscode/
-      - title: "Jekyll"
-        url: /quickstart/jekyll/
+      - title: "IDE"
+        url: /quickstart/ide/
+      - title: "Web Server"
+        url: /quickstart/web-server/
   - title: "Journal"
     url: /posts/
   - title: "Library"
@@ -25,6 +25,13 @@ main:
       url: /docs/jekyll/
     - title: "Command Line"
       url: /docs/command-line/
+  # - title: "Research"
+  #   url: /research/
+  #   sublinks:
+  #     - title: "Data"
+  #       url: /research/data/
+  #     - title: "Analysis"
+  #       url: /research/analysis/
   - title: "Hobbies"
     url: /hobbies/
     sublinks:
@@ -36,13 +43,6 @@ main:
       url: /hobbies/art/
     - title: "Cooking"
       url: /hobbies/cooking/
-  - title: "Research"
-    url: /research/
-    sublinks:
-      - title: "Data"
-        url: /research/data/
-      - title: "Analysis"
-        url: /research/analysis/
   - title: "Notes"
     url: /notes/
     sublinks:
@@ -54,10 +54,10 @@ main:
       url: /notes/js/
     - title: "Jekyll"
       url: /notes/jekyll/
-  - title: "About"
-    url: /about/
   - title: "Map"
     url: /map/
+  - title: "About"
+    url: /about/
 
 
 # Notes
@@ -157,12 +157,15 @@ docs:
         url: /terms/
 
 about:
+  - nav-title: "About"
   - title: "about"
-    children:
-      - title: "about me"
-        url: /notes/powershell/
-      - title: "about this site"
-        url: /notes/bash/
+    sublinks:
+      - title: "Home"
+        url: /about/
+      - title: "Purpose"
+        url: /about/purpose/
+      - title: "Approach"
+        url: /about/approach/
 
 cooking:
   - title: "cooking"
