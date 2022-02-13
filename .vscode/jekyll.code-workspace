@@ -4,13 +4,13 @@
 			"path": ".."
 		},
 		{
-			"path": "..\\..\\minimal-mistakes"
+			"path": "../../minimal-mistakes"
 		},
 		{
-			"path": "..\\..\\bamr87.github.io"
+			"path": "../../minima"
 		},
 		{
-			"path": "..\\..\\minima"
+			"path": "../../bamr87.github.io"
 		}
 	],
 	"settings": {
