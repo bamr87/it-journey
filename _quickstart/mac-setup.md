@@ -7,7 +7,7 @@ categories:
     - quickstart
     - machine-setup
 slug: mac
-lastmod: '2022-02-05T21:38:29.309Z'
+lastmod: '2022-02-14T03:08:28.573Z'
 draft: false
 ---
 
@@ -100,7 +100,10 @@ Or install individually using a loop
 
 ```shell
 # Include init_world/hello-mac/hb-packages.sh
-{% include_relative ../_quest/init_world/hello-mac/hb-packages.sh %}
+mkdir _quest/init_world/hello-mac/
+ln ../_quest/init_world/hello-mac/hb-packages.sh _quest/init_world/hello-mac/hb-packages.sh
+
+{% include_relative /_quest/init_world/hello-mac/hb-packages.sh %}
 ```
 
 ### Install VS Code
