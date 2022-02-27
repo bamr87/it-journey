@@ -10,7 +10,11 @@ tags:
     - article
 meta: null
 draft: true
-lastmod: '2022-02-26T21:35:01.777Z'
+lastmod: '2022-02-27T18:51:40.762Z'
 ---
 
 https://developer.android.com/guide
+
+```powershell
+winget install google.androidstudio
+```

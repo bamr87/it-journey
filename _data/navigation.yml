@@ -35,6 +35,8 @@ main:
   - title: "Hobbies"
     url: /hobbies/
     sublinks:
+    - title: "home"
+      url: /hobbies/
     - title: "Music"
       url: /hobbies/music/
     - title: "Gaming"
