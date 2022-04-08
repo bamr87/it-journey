@@ -52,18 +52,16 @@
 
     <!--  Main Body -->
     <main class="bd-main order-1">
-      <div class="container">
-        <div id="search-hits"></div>
-      </div>
-
-      <!-- Main Content -->
-      <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
-        {{ content }}
-      </div>
 
       <!-- Intro Section and breadcrumbs -->
       <div class="bd-intro ps-lg-4 breadcrumbs-intro collapsed collapse">
         
+        <!-- Algolia Searchbar and hits -->
+        <div class="container order-1">
+          <div id="search-searchbar"></div>
+          <div id="search-hits"></div>
+        </div> 
+
         <!-- _include/breadcrumbs.html -->
         {% include breadcrumbs.html %}
 
@@ -71,6 +69,13 @@
         <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
 
       </div>
+
+      <!-- Main Content -->
+      <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
+        {{ content }}
+      </div>
+
+
 
     <!-- Right Sidebar - Page Contents and Shortcuts-->
 

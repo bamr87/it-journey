@@ -3,10 +3,11 @@ Title: IT-Journey
 Author: bamr87
 Description: This is an overall outline where you can start.
 permalink: /home/
-purpose: To provide a platform for people to share their knowledge and experience about IT.
-Keywords: 'Home, Zer0'
+purpose: To provide a platform for people to share their knowledge and experience about
+  IT.
+Keywords: Home, Zer0
 Post: null
-lastmod: '2022-01-19T22:46:15.172Z'
+lastmod: 2022-04-05T22:40:24.363Z
 toc: true
 sidebar:
   nav: main
@@ -32,11 +33,12 @@ Here are a few routes:
 
 For those who prefer the route based on difficulty:
 
-1. Foundations - 0000
-2. Intermediate - 0001
-3. Advanced - 0011
-4. Expert - 0111
-5. Heroic - 1111
+1. Foundations - 000
+2. Intermediate - 001
+3. Advanced - 010
+4. Expert - 011
+5. Master - 100
+6. Hero - 101
 
 ### Stack Attack
 
