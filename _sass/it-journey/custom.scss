@@ -7,3 +7,15 @@
     flex-wrap: wrap;
 }
 
+.bottom-shadow {
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .35), inset 0 -1px 0 rgba(0, 0, 0, .15);
+}
+
+#TableOfContents {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// https://designkojo.com/add-ellipse-truncated-text-css-single-line-and-multi-line-options

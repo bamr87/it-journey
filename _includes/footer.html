@@ -21,19 +21,26 @@
       <li class="ms-3">
         <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
           <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true">
-          </i>{{ link.label }}
+          </i>
+          <!-- display name if there's enough space, else icon only -->
+          <span class="d-none d-md-inline"> 
+            {{ link.label }}
+          </span>
         </a>
         </li>
       {% endfor %}
+      
+      <!-- RSS Feed -->
+      <li class="ms-3">
+        <a href="{{ '/feed.xml' | relative_url }}">
+          <i class="fas fa-fw fa-rss-square" aria-hidden="true">
+          </i>
+          <span class="d-none d-md-inline">
+            {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
+          </span>
+        </a>
+      </li>
     </ul>
-    
-    <!-- RSS Feed -->
-    <li>
-      <a href="{{ '/feed.xml' | relative_url }}">
-        <i class="fas fa-fw fa-rss-square" aria-hidden="true">
-        </i>{{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
-      </a>
-    </li>
 
   </div>
 </footer>

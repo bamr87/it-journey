@@ -36,10 +36,12 @@
   {% include google-tag-mgr.html %}
 
   <!-- Header section with main Navigation and Search engine -->
-  <header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark ">
-  
+  <header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark bottom-shadow">
+  <div class="container-xxl">
+
     <!-- _includes/masthead.html  -->
     {% include masthead.html %}
+  </div>
   </header>
 
   <!-- Main body including sidebars -->
@@ -96,7 +98,10 @@
   {% include algolia.html %}
 
   <!-- _include/footer.html -->
-  {% include footer.html %}
+  <div class="container-xxl">
+
+    {% include footer.html %}
+  </div>
 
 </body>
 </html>
