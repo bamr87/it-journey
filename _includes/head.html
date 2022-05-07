@@ -54,3 +54,15 @@
     {% if page.last_modified_at %}
         <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
     {% endif %}
+
+    <!-- Google Analytics  -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBDKNMC168"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZBDKNMC168');
+        </script>
