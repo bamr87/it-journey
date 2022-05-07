@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: '2022-01-29T00:27:12.124Z'
+lastmod: 2022-05-07T19:27:33.605Z
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -15,7 +15,10 @@ Nothing to see here. Yet...
 
 TODO:
 {: .collapse .collapsed .breadcrumbs-intro }
+- [ ] leader board for level progression
+- [ ] Adjust menu toggle in Mobile view
 - [ ] [Quest](/quests/home)
+- [ ] Add keyboard shortcuts (e.g. ctl + / to toggle search)
 - [ ] Automate build process
 - [ ] Build Site map page [example](http://www.publicdomainsherpa.com/site-map.html)
 - [ ] Publish training article on [Programming Historian](https://programminghistorian.org/) 
@@ -42,6 +45,11 @@ TODO:
 - [ ] page revision view (diff)
 - [ ] add floating "back to top" button
 - [ ] [Just the Docs](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/)
+- [ ] integrate kanban board
+- [ ] build account based system
+- [ ] simulate generic business operations
+- [ ] build backend todo interface checking
+- [ ] 
 {: .alert .alert-primary .collapse .collapsed .breadcrumbs-intro }
 
 ### Features
@@ -59,3 +67,11 @@ TODO:
 - [x] Add back to [top button](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/) in cellphone view
 - [x] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
 {: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```

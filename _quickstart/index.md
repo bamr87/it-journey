@@ -12,4 +12,7 @@ sidebar:
 Here's an index of all the posts in the quick-start collection.
 
 1. Machine Setup
+   1. VS Code
+   2. Github
 2. Jekyll Setup
+3. 

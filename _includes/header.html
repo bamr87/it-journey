@@ -1,0 +1,27 @@
+<!-- 
+    Header
+    _includes/branding.html, _includes/navbar.html
+ -->
+
+<header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark bottom-shadow">
+    <div class="container-xxl">
+
+        <!-- include branding.html -->
+            {% include branding.html %}
+
+        <!-- Settings Collapse button -->
+            <div>
+                <i type="button" 
+                    data-toggle="collapse" 
+                    data-target=".breadcrumbs-intro" 
+                    aria-expanded="false" 
+                    aria-controls="" 
+                    class="fas fa-cog">
+                </i>
+            </div>
+            
+        <!-- include navbar.html -->
+            {% include navbar.html %}
+
+    </div>
+</header>

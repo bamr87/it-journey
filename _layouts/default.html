@@ -7,48 +7,21 @@
 -->
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
-  
+
 <head>
   <!-- _includes/head.html  -->
   {% include head.html %}
-  
-  <!-- Meta data attributes -->
-  {% if page.title %}
-  <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
-  {% endif %}
-
-  {% if page.excerpt %}
-  <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
-  {% endif %}
-  
-  {% if page.date %}
-  <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
-  {% endif %}
-  
-  {% if page.last_modified_at %}
-  <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
-  {% endif %}
-
 </head>
 
 <body>
-  <!-- _includes/google-tag-mgr.html  -->
-  {% include google-tag-mgr.html %}
-
-  <!-- Header section with main Navigation and Search engine -->
-  <header class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark bottom-shadow">
-  <div class="container-xxl">
-
-    <!-- _includes/masthead.html  -->
-    {% include masthead.html %}
-  </div>
-  </header>
-
+  <!-- _includes/google-tag-mgr.html - SEO -->
+    {% include google-tag-mgr.html %}
+  <!-- _includes/header.html - Header section with main Navigation and Search engine -->
+    {% include header.html %}
   <!-- Main body including sidebars -->
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
 
     <!-- Left Sidebar for Outline -->
-
         <!-- _includes/sidebar.html  -->
         {% include sidebar.html %}
 
@@ -68,7 +41,7 @@
         {% include breadcrumbs.html %}
 
         <!-- Layout location -->
-        <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/_layouts/{{ page.layout }}.html">Page layout is {{ page.layout | default: layout.layout }}</a>
+        {% include layout-shortcut.html %}
 
       </div>
 
@@ -77,13 +50,9 @@
         {{ content }}
       </div>
 
-
-
     <!-- Right Sidebar - Page Contents and Shortcuts-->
-
           <!-- _includes/sidebar-right.html  -->
           {% include sidebar-right.html %}
-
     </main>
   </div>
 
@@ -97,11 +66,10 @@
   <!-- _include/algolia.html -->
   {% include algolia.html %}
 
-  <!-- _include/footer.html -->
-  <div class="container-xxl">
-
-    {% include footer.html %}
-  </div>
-
 </body>
+<!-- _include/footer.html -->
+<div class="container-xxl">
+
+  {% include footer.html %}
+</div>
 </html>
