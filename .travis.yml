@@ -5,18 +5,17 @@ language: ruby
 cache: bundler # caching bundler gem packages will speed up build
 before_script: 
   - gem install bundler
-  - chmod +x ./script/cibuild # or do this locally and commit
   - bundle update
+  - chmod +x ./script/cibuild # or do this locally and commit
 # the `install` step will run `bundle install` by default.
+install: gem install jekyll html-proofer
 script: 
   - ./script/cibuild
-  - "./setup"
+  # - ./setup
   # - bundle exec rake test
-  # - bundle exec jekyll algolia
+  - bundle exec jekyll algolia
 rvm:
  - 2.6.2
- - 2.4.2
- - 2.3.5
  - 3.0
 
     # branch whitelist, only for GitHub Pages
