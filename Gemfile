@@ -48,6 +48,7 @@ gem "webrick", "~> 1.7"
 gem "kramdown"
 gem "rouge"
 gem "algoliasearch"
+gem "html-proofer"
 
 
 
