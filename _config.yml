@@ -83,6 +83,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
+  - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
   # - jekyll-postcss
   # - jekyll-redirect-from

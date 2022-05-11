@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: 2022-05-07T19:27:33.605Z
+lastmod: 2022-05-08T16:03:18.692Z
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -68,10 +68,17 @@ TODO:
 - [x] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
 {: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
 
-```mermaid
+```mermaid!
 graph TD;
     A-->B;
     A-->C;
     B-->D;
     C-->D;
+```
+
+```mermaid!
+pie title Pets adopted by volunteers
+  "Dogs" : 386
+  "Cats" : 85
+  "Rats" : 35
 ```

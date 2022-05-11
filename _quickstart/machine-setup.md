@@ -4,9 +4,9 @@ author: null
 layout: default
 description: null
 categories:
-    - quickstart
+  - quickstart
 slug: machine-setup
-lastmod: '2022-01-25T04:36:33.690Z'
+lastmod: 2022-05-11T01:27:31.919Z
 draft: false
 ---
 
@@ -14,7 +14,7 @@ draft: false
 
 Before you can begin developing, your machine (computer) needs to be configured and loaded with the necessary software. Regardless of the OS you are using (Windows, Mac, Linux), there are specific components required. Detailed instructions based on your OS are provided, and can be accessed from the left side bar. 
 
-## Base setup
+## Core setup
 
 - [Software Package Manager](#software-package-manager)
 - [Github CLI](https://cli.github.com/)
@@ -22,13 +22,18 @@ Before you can begin developing, your machine (computer) needs to be configured 
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Jekyll](https://jekyllrb.com/)
 
+
+Core Apps
+
+- Source Code Control (Git, GitHub CLI)
+- Integrated Development Environment (VS Code)
+- Archiver/compressor (7zip)
+- Screen Capture (ShareX)
+- File Transfer Utility (Filezilla)
+
 ### Software Package Manager
 
 A [package manager](https://en.wikipedia.org/wiki/Package_manager) is a software that allows you to install, upgrade, remove other software packages on your computer in a consistent manner. With a package manager, you can easily maintain and track your collection of software packages required for use, but also install any other packages that are dependant in order to function.
-
-Often, a package is just a particular program. On the other hand, it is common for programs to consist of several interrelated packages. For instance, the gimp image editor consists not only of the gimp package, but also of the gimp-data package; in addition, several optional add-on packages (containing esoteric data, documentation, and so on) are also available. It is also possible for several small, related programs to be contained in a single package: for instance, the fileutils package contains several common Unix commands, such as ls, cp, etc.
-
-If a package A conflicts with another package B, then the two packages cannot be installed at the same time. For instance, fb-music-hi conflicts with fb-music-low because they provide alternate sets of music for the game Frozen Bubble.
 
 The job of a package manager is to present an interface which assists the user in managing the collection of packages installed on his or her system.
 
@@ -77,13 +82,7 @@ Detailed instructions for installing software packages can be found in the [Brew
 
 Packages are grouped into the following categories:
 
-Core Apps
 
-- Source Code Control (Git, GitHub CLI)
-- Integrated Development Environment (VS Code)
-- Archiver/compressor (7zip)
-- Screen Capture (ShareX)
-- File Transfer Utility (Filezilla)
 
 Development Tools
 
