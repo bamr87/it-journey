@@ -1,9 +1,9 @@
 ---
 title: Hello World
-lastmod: 2022-05-11T03:35:56.683Z
+lastmod: 2022-05-15T23:54:37.098Z
 ---
 
-[![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
+
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
 This is the main landing page and it is still a work in process.
