@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: 2022-05-08T16:03:18.692Z
+lastmod: '2022-05-22T20:55:28.100Z'
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -15,6 +15,7 @@ Nothing to see here. Yet...
 
 TODO:
 {: .collapse .collapsed .breadcrumbs-intro }
+- [ ] quick view of post contents/reading time
 - [ ] leader board for level progression
 - [ ] Adjust menu toggle in Mobile view
 - [ ] [Quest](/quests/home)
