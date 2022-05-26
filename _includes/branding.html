@@ -17,7 +17,7 @@
         </a>
         {% if site.subtitle %}
         <br>
-        <a class="sub-title" href="{ site.subtitle_url }}">
+        <a class="sub-title" href="{{ site.subtitle_url:site.port | absolute_url }}">
             <span class="site-subtitle">{{ site.subtitle }}</span>
         {% endif %}
         </a>
