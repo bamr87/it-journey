@@ -214,7 +214,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: quickstart
-      permalink: /:collection/:categories/:slug/:title
+      permalink: /:collection/:categories/:slug/
   # _about
   - scope:
       path: "_about"

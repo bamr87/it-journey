@@ -14,9 +14,11 @@
     <div>
         <a class="navbar-brand" href="{{ '/' | relative_url }}">
         {{ site.masthead_title | default: site.title }}
+        </a>
         {% if site.subtitle %}
         <br>
-        <span class="site-subtitle">{{ site.subtitle }}</span>
+        <a class="sub-title" href="{ site.subtitle_url }}">
+            <span class="site-subtitle">{{ site.subtitle }}</span>
         {% endif %}
         </a>
     </div>
