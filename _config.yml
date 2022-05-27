@@ -42,7 +42,8 @@ description              : &description >- # this means to ignore newlines until
   Google search results) and in your feed.xml site description.
 site_domain              : &site_domain "github.io"
 baseurl                  : "" # the subpath of your site, e.g. /blog
-url                      : ['https://' , *github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+github_base_url          : [ *github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+url                      : *github_base_url
 repository_name          : &github_repository "it-journey"
 repository               : [*gituser, "/", *local_repo] # GitHub username/repo-name
 home_dir_pc              : &home-win 'C:\Users\AmrAbdel-Motaleb\'
