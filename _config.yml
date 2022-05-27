@@ -27,22 +27,25 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 title                    : IT-Journey
 subtitle                 : "zer0 to her0"
-subtitle_url             : "127.0.0.1"
+subtitle_url             : "localhost"
+logo_source              : &logo_source "lifehacker.dev"
 masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name
 locale                   : "en-US"
 name                     : &name "Amr"
-email                    : bamr4287@gmail.com
+email                    : &git_email "amr.abdel@gmail.com"
+github_user              : &gituser "bamr87"
 description              : &description >- # this means to ignore newlines until "url:"
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-url                      : "https://lifehacker.dev" # the base hostname & protocol for your site, e.g. http://example.com
+site_domain              : &site_domain "github.io"
 baseurl                  : "" # the subpath of your site, e.g. /blog
-repository               : "bamr87/it-journey" # GitHub username/repo-name
-local_repo               : "it-journey"
-home_dir_pc              : &home-win 'C:\Users\amrab\'
+url                      : ["https://" , *github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+repository_name          : &github_repository "it-journey"
+repository               : [*gituser, "/", *local_repo] # GitHub username/repo-name
+home_dir_pc              : &home-win 'C:\Users\AmrAbdel-Motaleb\'
 home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
@@ -50,7 +53,7 @@ teaser                   : /assets/images/teaser_default-500x300.png # path of f
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
-port                     : 4002 # Jekyll Serve Dev port
+port                     : "4002" # Jekyll Serve Dev port
 dg_port                  : "4001" # Doppelganger site
 
 # Identity
@@ -69,13 +72,13 @@ author:
       url: "https://twitter.com/bamr87"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/bamr87"
+      url: ["https://github.com/" , *github_user]
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bamr42"
 
 twitter_username         : "bamr87"
-github_username          : "bamr87"
+github_username          : *github_user
 # Build settings
 # theme: minima
 plugins:
@@ -117,19 +120,21 @@ kramdown: # https://kramdown.gettalong.org/options.html
 collections:
   docs:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name
   notes:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name
   quickstart:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name
   about:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name
   hobbies:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:name
+
+permalink: pretty
 
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
@@ -138,7 +143,8 @@ nav-file: '_data/navigation.yml'
 
 defaults:
   # ALL
-  - scope:
+  - 
+    scope:
       path: ""
     values:
       layout: default
@@ -152,8 +158,11 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
+    # permalink: pretty
+
   # _posts
-  - scope:
+  - 
+    scope:
       path: _posts
     values:
       layout: default
@@ -167,7 +176,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
-    permalink: /:categories/:title/
+
   # _posts/quests
   - scope:
       path: _posts/quests
@@ -183,7 +192,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
-    permalink: /:categories/:title/
+      permalink: /:categories/:slug
   # _notes
   - scope:
       path: "_notes"
@@ -208,7 +217,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: quickstart
-      permalink: /:categories/:title/
+      permalink: /:collection/:categories/:slug/
   # _about
   - scope:
       path: "_about"
@@ -221,7 +230,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: about
-      permalink: /:categories/:title/
+      permalink: /:categories/:title
   # _hobbies
   - scope:
       path: "_hobbies"
@@ -234,11 +243,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: hobbies
-      permalink: /:categories/:title/
-
-permalink: /:categories/:title/
-
-
+      permalink: /:categories/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.

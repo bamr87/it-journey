@@ -1,10 +1,9 @@
 ---
 title: Homebrew
-collection: quickstart
-permalink: /quickstart/homebrew/
+categories: notes
 sidebar:
     nav: quickstart
-lastmod: '2021-12-09T16:52:17.090Z'
+lastmod: '2022-05-22T20:55:23.521Z'
 ---
 ![brew](\brew.png)
 
