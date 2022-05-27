@@ -281,7 +281,7 @@ footer:
       url: "https://twitter.com/bamr87"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/bamr87"
+      url: [ "https://github.com/" , *github_user ]
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bamr42"

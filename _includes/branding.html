@@ -16,9 +16,9 @@
         {{ site.masthead_title | default: site.title }}
         </a>
         {% if site.subtitle %}
-        <br>
-        <a class="sub-title" href="http://localhost:{{ site.port }}{{ page.url }}">
-            <span class="site-subtitle">{{ site.subtitle }}</span>
+            <br>
+            <a class="navbar-brand" href="http://localhost:{{ site.port }}{{ page.url }}">
+                {{ site.subtitle }}
+            </a>
         {% endif %}
-        </a>
     </div>
