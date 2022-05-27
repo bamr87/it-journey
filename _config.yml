@@ -28,7 +28,7 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 title                    : IT-Journey
 subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
-logo_source              : &logo_source "lifehacker.dev"
+logo_source              : &logo_source "https://www.lifehacker.dev"
 masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name
 locale                   : "en-US"
@@ -42,7 +42,8 @@ description              : &description >- # this means to ignore newlines until
   Google search results) and in your feed.xml site description.
 site_domain              : &site_domain "github.io"
 baseurl                  : "" # the subpath of your site, e.g. /blog
-url                      : ["https://" , *github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+github_base_url          : [ *github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+url                      : *github_base_url
 repository_name          : &github_repository "it-journey"
 repository               : [*gituser, "/", *local_repo] # GitHub username/repo-name
 home_dir_pc              : &home-win 'C:\Users\AmrAbdel-Motaleb\'
@@ -280,7 +281,7 @@ footer:
       url: "https://twitter.com/bamr87"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/bamr87"
+      url: [ "https://github.com/" , *github_user ]
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bamr42"
