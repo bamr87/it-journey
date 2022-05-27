@@ -7,17 +7,17 @@
     <!-- Logo -->
     {% capture logo_path %}{{ site.logo }}{% endcapture %}
     <div>
-    <a class="site-logo" href="https://amr-bash.github.io/"><img src="{{ logo_path | relative_url }}"></a>
+    <a class="site-logo" href="https://{{ site.github_user}}.github.io/"><img src="{{ logo_path | relative_url }}"></a>
     </div>
 
     <!-- Title Section  -->
     <div>
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+        <a class="navbar-brand" href="{{ page.url | relative_url }}">
         {{ site.masthead_title | default: site.title }}
         </a>
         {% if site.subtitle %}
         <br>
-        <a class="sub-title" href="http://localhost:{{ site.port }}">
+        <a class="sub-title" href="http://localhost:{{ site.port }}{{ page.url }}">
             <span class="site-subtitle">{{ site.subtitle }}</span>
         {% endif %}
         </a>

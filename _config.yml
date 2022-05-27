@@ -27,12 +27,12 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 title                    : IT-Journey
 subtitle                 : "zer0 to her0"
-subtitle_url             : "127.0.0.1"
+subtitle_url             : "localhost"
 masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name
 locale                   : "en-US"
 name                     : &name "Amr"
-email                    : bamr4287@gmail.com
+email                    : &git_email "amr@bash-365.com"
 description              : &description >- # this means to ignore newlines until "url:"
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
@@ -40,9 +40,10 @@ description              : &description >- # this means to ignore newlines until
   Google search results) and in your feed.xml site description.
 url                      : "https://lifehacker.dev" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl                  : "" # the subpath of your site, e.g. /blog
-repository               : "bamr87/it-journey" # GitHub username/repo-name
-local_repo               : "it-journey"
-home_dir_pc              : &home-win 'C:\Users\amrab\'
+github_user              : &gituser "amr-bash"
+local_repo               : &local_repo "it-journey"
+repository               : [*gituser, "/", *local_repo] # GitHub username/repo-name
+home_dir_pc              : &home-win 'C:\Users\AmrAbdel-Motaleb\'
 home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
@@ -75,7 +76,7 @@ author:
       url: "https://instagram.com/bamr42"
 
 twitter_username         : "bamr87"
-github_username          : "bamr87"
+github_username          : *github_user
 # Build settings
 # theme: minima
 plugins:
