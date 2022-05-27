@@ -33,8 +33,8 @@ masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name
 locale                   : "en-US"
 name                     : &name "Amr"
-email                    : &git_email "amr@bash-365.com"
-github_user              : &gituser "amr-bash"
+email                    : &git_email "amr.abdel@gmail.com"
+github_user              : &gituser "bamr87"
 description              : &description >- # this means to ignore newlines until "url:"
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
