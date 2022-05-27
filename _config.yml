@@ -50,7 +50,7 @@ teaser                   : /assets/images/teaser_default-500x300.png # path of f
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
-port                     : 4002 # Jekyll Serve Dev port
+port                     : "4002" # Jekyll Serve Dev port
 dg_port                  : "4001" # Doppelganger site
 
 # Identity
