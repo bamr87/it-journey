@@ -7,12 +7,12 @@
     <!-- Logo -->
     {% capture logo_path %}{{ site.logo }}{% endcapture %}
     <div>
-    <a class="site-logo" href="https://{{ site.github_user}}.github.io/"><img src="{{ logo_path | relative_url }}"></a>
+    <a class="site-logo" href="https://{{ site.logo_source}}{{ page.url }}"><img src="{{ logo_path | relative_url }}"></a>
     </div>
 
     <!-- Title Section  -->
     <div>
-        <a class="navbar-brand" href="{{ page.url | relative_url }}">
+        <a class="navbar-brand" href="https://{{ site.github_user}}.github.io{{ page.url }}">
         {{ site.masthead_title | default: site.title }}
         </a>
         {% if site.subtitle %}
