@@ -7,7 +7,7 @@
     <!-- Logo -->
     {% capture logo_path %}{{ site.logo }}{% endcapture %}
     <div>
-    <a class="site-logo" href="https://{{ site.logo_source}}{{ page.url }}"><img src="{{ logo_path | relative_url }}"></a>
+    <a class="site-logo" href="{{ site.logo_source}}{{ page.url }}"><img src="{{ logo_path | relative_url }}"></a>
     </div>
 
     <!-- Title Section  -->

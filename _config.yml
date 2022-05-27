@@ -28,7 +28,7 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 title                    : IT-Journey
 subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
-logo_source              : &logo_source "lifehacker.dev"
+logo_source              : &logo_source "https://www.lifehacker.dev"
 masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name
 locale                   : "en-US"
