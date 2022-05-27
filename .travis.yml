@@ -21,7 +21,7 @@ rvm:
     # branch whitelist, only for GitHub Pages
 branches:
   only:
-    - master
+    # - master
     # Change this to gh-pages if you're deploying using the gh-pages branch
-    # - gh-pages     # test the gh-pages branch
+    - gh-pages     # test the gh-pages branch
     # - /pages-(.*)/ # test every branch which starts with "pages-"
