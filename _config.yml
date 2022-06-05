@@ -130,6 +130,9 @@ collections:
   hobbies:
     output: true
     permalink: /:collection/:name
+  quest:
+    output: true
+    permalink: /:collection/:name
 
 permalink: pretty
 
@@ -155,8 +158,25 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
-    # permalink: pretty
+    permalink: pretty
 
+  # _docs
+  - 
+    scope:
+      path: _docs/jekyll
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: docs
+    permalink: /:collection/:categories/
   # _posts
   - 
     scope:
@@ -174,8 +194,28 @@ defaults:
       sidebar:
         nav: main
 
+  # quests
+  - 
+    scope:
+      path: "_quest"
+      type: quest
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: main
+      permalink: /:categories/:title
+
   # _posts/quests
-  - scope:
+  - 
+    scope:
       path: _posts/quests
     values:
       layout: default
@@ -191,7 +231,8 @@ defaults:
         nav: main
       permalink: /:categories/:slug
   # _notes
-  - scope:
+  - 
+    scope:
       path: "_notes"
       type: notes
     values:
@@ -203,7 +244,8 @@ defaults:
       sidebar:
         nav: notes
   # _quickstart
-  - scope:
+  - 
+    scope:
       path: "_quickstart"
       type: quickstart
     values:
@@ -216,7 +258,8 @@ defaults:
         nav: quickstart
       permalink: /:collection/:categories/:slug/:title
   # _about
-  - scope:
+  - 
+    scope:
       path: "_about"
       type: about
     values:
@@ -229,7 +272,8 @@ defaults:
         nav: about
       permalink: /:categories/:title
   # _hobbies
-  - scope:
+  - 
+    scope:
       path: "_hobbies"
       type: hobbies
     values:

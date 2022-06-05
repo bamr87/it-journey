@@ -18,9 +18,16 @@ main:
         url: /quickstart/web-server/
   - title: "Journal"
     url: /posts/
+    sublinks:
+    - title: "Quests"
+      url: /quest/
+    - title: "Posts"
+      url: /posts/
   - title: "Library"
     url: /docs/
     sublinks:
+    - title: "Home"
+      url: /docs/
     - title: "Jekyll"
       url: /docs/jekyll/
     - title: "Command Line"
@@ -87,6 +94,8 @@ quickstart:
   - nav-title: "Quick-Start"
   - title: "Machine-Setup"
     sublinks:
+      - title: "Home"
+        url: /quickstart/machine-setup/home/
       - title: "Mac"
         url: /quickstart/machine-setup/mac/
       - title: "Windows"
