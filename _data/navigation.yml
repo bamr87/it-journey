@@ -11,11 +11,11 @@ main:
       - title: "Home"
         url: /quickstart/
       - title: "Machine Setup"
-        url: /quickstart/machine-setup/
+        url: /quickstart/machine-setup/home
       - title: "IDE"
-        url: /quickstart/ide/
+        url: /quickstart/ide/home
       - title: "Web Server"
-        url: /quickstart/web-server/
+        url: /quickstart/web-server/home
   - title: "Journal"
     url: /posts/
     sublinks:
@@ -94,8 +94,13 @@ quickstart:
   - nav-title: "Quick-Start"
   - title: "Machine-Setup"
     sublinks:
+<<<<<<< HEAD
       - title: "Home"
         url: /quickstart/machine-setup/home/
+=======
+      - title: "home"
+        url: /quickstart/machine-setup/home
+>>>>>>> 14b5d78a4db16ca881b4d14fc95d5931f3552d99
       - title: "Mac"
         url: /quickstart/machine-setup/mac/
       - title: "Windows"
@@ -103,8 +108,11 @@ quickstart:
       - title: "Linux"
         url: /quickstart/machine-setup/linux/
     url: /quickstart/
-  - title: "VS-Code"
-    url: /quickstart/vscode/
+  - title: "IDE"
+    sublinks:
+      - title: "VS-Code"
+        url: /quickstart/ide/vscode/
+    url: /ide/
   - title: "Github"
     url: /quickstart/github/
   - title: "Jekyll"

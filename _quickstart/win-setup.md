@@ -4,7 +4,6 @@ author: null
 layout: default
 description: null
 categories:
-    - quickstart
     - machine-setup
 slug: windows
 lastmod: '2022-01-24T04:35:21.097Z'

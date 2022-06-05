@@ -6,7 +6,7 @@
   _layouts/default.html
 -->
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+<html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js">
 
 <head>
   <!-- _includes/head.html  -->
@@ -16,8 +16,10 @@
 <body>
   <!-- _includes/google-tag-mgr.html - SEO -->
     {% include google-tag-mgr.html %}
+  
   <!-- _includes/header.html - Header section with main Navigation and Search engine -->
     {% include header.html %}
+  
   <!-- Main body including sidebars -->
   <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
 

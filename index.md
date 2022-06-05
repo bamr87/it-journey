@@ -1,7 +1,14 @@
 ---
 title: Hello World
+<<<<<<< HEAD
 lastmod: 2022-05-24T01:58:56.349Z
+=======
+lastmod: '2022-05-22T20:55:28.100Z'
+
+>>>>>>> 14b5d78a4db16ca881b4d14fc95d5931f3552d99
 ---
+
+
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
 This is the main landing page and it is still a work in process.
