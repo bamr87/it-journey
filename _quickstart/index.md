@@ -1,12 +1,12 @@
 ---
-title: Quick Start Index
+title: Quick Start Index (~)
 author: null
 layout: collection
 description: null
-lastmod: '2022-01-25T04:36:32.490Z'
+lastmod: 2022-06-04T17:33:43.747Z
 permalink: /quickstart/
 sidebar:
-    nav: quickstart
+  nav: quickstart
 ---
 
 Here's an index of all the posts in the quick-start collection.

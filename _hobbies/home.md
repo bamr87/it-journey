@@ -5,7 +5,7 @@ layout: collection
 permalink: /hobbies/
 description: null
 collection: posts
-lastmod: '2022-02-27T18:59:21.630Z'
+lastmod: 2022-06-04T18:47:40.734Z
 draft: true
 sidebar: searchCats
 sort_by: date
