@@ -1,17 +1,40 @@
 ---
-Title: Init World
-Author: bamr87
-Layout: page
-Keywords: init, world
-Description: This is the init world.
+title: Init World
+# Author: bamr87
+layout: collection
+keywords: init, world
+catagories: quests
+description: This is the init world.
+permalink: /quest/
+lastmod: 2022-05-24T00:55:59.600Z
 ---
 
 # init_world
   Initialize your IT world
 
-# In
+```mermaid!
+graph TD;
+    OS-->Win;
+    OS-->Mac;
+    OS-->Linux;
+    OS-->Internet;
+```
+
+Choose your difficulty:
+
+  * What is OS? - [n00b](/quest/n00b/hello-noob)
+  * I has Internet!? - Easy
+  * Big Macintosh - Medium
+  * Damn Windows Update  - Hard
+  * A Linux to the past - Epic
+
 
 [Hello Win](hello-win/hello-win.md)
+Hello Cloud
+Hell Mac
+Hello Linux 
+
+
 # Accounts
 ## [Gmail](https://www.google.com/gmail/)
 ## GitHub

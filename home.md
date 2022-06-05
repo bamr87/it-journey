@@ -7,7 +7,7 @@ purpose: To provide a platform for people to share their knowledge and experienc
   IT.
 Keywords: Home, Zer0
 Post: null
-lastmod: 2022-04-05T22:40:24.363Z
+lastmod: 2022-05-23T00:19:14.640Z
 toc: true
 sidebar:
   nav: main
@@ -29,8 +29,17 @@ From zero to hero collection of docs, tools, scripts, walk-through, and informat
 
 Here are a few routes:
 
-### Zer0 to Her0
+### Zer0 to Her0 [Quest](/quest/)
 
+1. Prologue - Init Hello World
+2. Chapter 1 - Identity Crisis
+   1. 
+   2. Minimum requirements
+   3. Class Selection up
+   4. Character Building
+3. Chapter 2 - Training
+
+### Skill Level Route
 For those who prefer the route based on difficulty:
 
 1. Foundations - 000
@@ -42,7 +51,7 @@ For those who prefer the route based on difficulty:
 
 ### Stack Attack
 
-For those who are intermediate/advanced and want to attack a specific stack:
+For those who are intermediate/advanced and want to work on a specific stack:
 
 1. Front-end (HTML, CSS, JS)
 2. Back-end (Python, PHP, Ruby, Command Line)

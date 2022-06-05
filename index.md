@@ -1,7 +1,6 @@
 ---
 title: Hello World
-lastmod: '2022-05-22T20:55:28.100Z'
-
+lastmod: 2022-06-05T19:44:53.282Z
 ---
 
 
@@ -19,6 +18,7 @@ Nothing to see here. Yet...
 TODO:
 {: .collapse .collapsed .breadcrumbs-intro }
 - [ ] quick view of post contents/reading time
+- [ ] [doc example](https://tmuxp.git-pull.com/index.html)
 - [ ] leader board for level progression
 - [ ] Adjust menu toggle in Mobile view
 - [ ] [Quest](/quests/home)
