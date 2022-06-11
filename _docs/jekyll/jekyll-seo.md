@@ -8,7 +8,7 @@ tags:
   - SEO
   - CDN
   - DNS
-lastmod: 2022-06-04T17:35:42.102Z
+lastmod: 2022-06-11T18:16:53.931Z
 ---
 
 > Optimize the website to improve the rankings.
@@ -67,7 +67,7 @@ type: blog
   {% for page in site.pages %}
     {% if page.layout != nil and page.layout != 'feed' and page.url != '/note/' and page.url != '/index_note/' and page.url != '/index_tutorial/' and page.url != '/search/' and page.url != '/blog/atom.xml' and page.url != '/contact/'%}
       <url>
-        <loc>http://jojozhuang.github.io{{ page.url | remove: 'index.html' }}</loc>
+        <loc>http://{{ site.github_user }}.github.io{{ page.url | remove: 'index.html' }}</loc>
       </url>
     {% endif %}
   {% endfor %}
@@ -77,7 +77,7 @@ type: blog
   {% assign posts = portfolios | concat: blogs %}
   {% for post in posts %}
     <url>
-      <loc>http://jojozhuang.github.io{{ post.url | remove: 'index.html' }}</loc>
+      <loc>http://{{ site.github_user }}.github.io{{ post.url | remove: 'index.html' }}</loc>
     </url>
   {% endfor %}
 

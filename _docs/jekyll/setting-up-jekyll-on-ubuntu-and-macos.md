@@ -10,7 +10,7 @@ tags:
   - Jekyll
   - Ruby
   - macOS
-lastmod: 2022-06-04T17:35:42.080Z
+lastmod: 2022-06-11T18:16:53.916Z
 ---
 
 > Setup Jekyll on Ubuntu and macOS.
@@ -60,8 +60,8 @@ jekyll 3.6.2
 Get source files of my person website from Github.
 ```raw
 $ cd /Johnny/Github/
-$ git clone https://github.com/jojozhuang/jojozhuang.github.io
-$ cd jojozhuang.github.io
+$ git clone https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io
+$ cd {{ site.github_user }}.github.io
 ```
 
 Build and launch the website. All of the files will be deployed to a new folder named '\_site'. Open web browser and access  http://127.0.0.1:4000/.
@@ -100,9 +100,9 @@ Generate a Liquid rendering profile to help you identify performance bottlenecks
 ```raw
 jekyll serve --profile
 $ bundle exec jekyll build --profile
-Configuration file: /Users/Johnny/GitHub/jojozhuang.github.io/_config.yml
-            Source: /Users/Johnny/GitHub/jojozhuang.github.io
-       Destination: /Users/Johnny/GitHub/jojozhuang.github.io/_site
+Configuration file: /Users/Johnny/GitHub/{{ site.github_user }}.github.io/_config.yml
+            Source: /Users/Johnny/GitHub/{{ site.github_user }}.github.io
+       Destination: /Users/Johnny/GitHub/{{ site.github_user }}.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
      Build Warning: Layout 'nil' requested in blog/atom.xml does not exist.
@@ -166,7 +166,7 @@ incremental: true
 $ brew update
 $ brew upgrade ruby
 $ gem update jekyll
-$ cd /Johnny/GitHub/jojozhuang.github.io
+$ cd /Johnny/GitHub/{{ site.github_user }}.github.io
 $ bundle update
 $ bundle exec jekyll serve --port 12001
 ```

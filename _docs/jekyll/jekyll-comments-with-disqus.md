@@ -6,7 +6,7 @@ subcategory: jekyll
 date: 2017-08-17
 tags:
   - Disqus
-lastmod: 2022-06-04T17:35:42.086Z
+lastmod: 2022-06-11T18:16:53.918Z
 ---
 
 > Use Disqus to enable reader to comment on Jekyll site.
@@ -24,7 +24,7 @@ Access the following link to find the universal code of your Disqus. Replace the
 https://[shortname].disqus.com/admin/universalcode
 
 //e.g.
-https://jojozhuang.disqus.com/admin/universalcode
+https://{{ site.github_user }}.disqus.com/admin/universalcode
 ```
 Copy the scripts and use it to create an include file in your Jekyll site, e.g. disqus.html.
 ```html
@@ -43,7 +43,7 @@ Copy the scripts and use it to create an include file in your Jekyll site, e.g. 
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
 
-        s.src = 'https://jojozhuang.disqus.com/embed.js';
+        s.src = 'https://{{ site.github_user }}.disqus.com/embed.js';
 
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
@@ -97,12 +97,12 @@ Open the page, you will see the comments.
 ### 3.1 Script for Count
 Add the following script to the page where you want to display the count of page. For me, I added it to the include head.html file, so it can be applied to all pages, I don't need to add one by one.
 ```html
-<script id="dsq-count-scr" src="//jojozhuang.disqus.com/count.js" async></script>
+<script id="dsq-count-scr" src="//{{ site.github_user }}.disqus.com/count.js" async></script>
 ```
 ### 3.2 Getting Count
 Append `#disqus_thread` to the `href` attribute in your links. For example,
 ```html
-<a href="http://jojozhuang.github.io/tutorial/basis/getting-started-with-linux/#disqus_thread">Comments</a>
+<a href="http://{{ site.github_user }}.github.io/tutorial/basis/getting-started-with-linux/#disqus_thread">Comments</a>
 ```
 In the list page, it is added to all the links through 'tutorial.url'.
 {% raw %}

@@ -7,7 +7,7 @@ date: 2018-04-01
 tags:
   - Jekyll
   - Windows10
-lastmod: 2022-06-04T17:35:42.075Z
+lastmod: 2022-06-11T18:16:53.935Z
 ---
 
 > Setup Jekyll on Windows 10.
@@ -117,19 +117,19 @@ Access http://127.0.0.1:4000/ in web browser. The new 'blog' website is live now
 ## 4. Hosting Existing GitHub Page Website
 Clone the source code of your GitHub Page Website from GitHub to your local directory. Run 'bundle exec jekyll serve \-\-port 12001'.
 ```raw
-C:\Users\jojoz>cd d:\Johnny\GitHub\jojozhuang.github.io
+C:\Users\jojoz>cd d:\Johnny\GitHub\{{ site.github_user }}.github.io
 C:\Users\jojoz>d:
-d:\Johnny\GitHub\jojozhuang.github.io>bundle exec jekyll serve --port 12001
-Configuration file: d:/Johnny/GitHub/jojozhuang.github.io/_config.yml
-            Source: d:/Johnny/GitHub/jojozhuang.github.io
-       Destination: d:/Johnny/GitHub/jojozhuang.github.io/_site
+d:\Johnny\GitHub\{{ site.github_user }}.github.io>bundle exec jekyll serve --port 12001
+Configuration file: d:/Johnny/GitHub/{{ site.github_user }}.github.io/_config.yml
+            Source: d:/Johnny/GitHub/{{ site.github_user }}.github.io
+       Destination: d:/Johnny/GitHub/{{ site.github_user }}.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
      Build Warning: Layout 'nil' requested in blog/atom.xml does not exist.
                     done in 11.595 seconds.
   Please add the following to your Gemfile to avoid polling for changes:
     gem 'wdm', '>= 0.1.0' if Gem.win_platform?
- Auto-regeneration: enabled for 'd:/Johnny/GitHub/jojozhuang.github.io'
+ Auto-regeneration: enabled for 'd:/Johnny/GitHub/{{ site.github_user }}.github.io'
     Server address: http://127.0.0.1:12001
 ```
 Access http://127.0.0.1:12001 in web browser. GitHub Page website is live in local.
@@ -152,7 +152,7 @@ Follow the steps mentioned in [Setting up Jekyll on Ubuntu and macOS]({% link _d
 
 Then navigate to the root directory of jekyll site, use bundle command to launch it.
 ```sh
-cd /mnt/d/GitHub/jojozhuang.github.io/
+cd /mnt/d/GitHub/{{ site.github_user }}.github.io/
 bundle exec jekyll serve --port 12001
 ```
 

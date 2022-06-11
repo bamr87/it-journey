@@ -6,7 +6,7 @@ subcategory: jekyll
 date: 2019-06-21
 tags:
   - Custom Domain
-lastmod: 2022-06-04T17:35:42.085Z
+lastmod: 2022-06-11T18:16:53.926Z
 ---
 
 > Setup personal website with Github page and custom domain.
@@ -14,7 +14,7 @@ lastmod: 2022-06-04T17:35:42.085Z
 ## 1. Setup website in github page
 Refer this post [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/) to create a repository on github and publish it to GitHub Pages.
 
-For demo purpose, I will use the repository of my personal website, see https://github.com/jojozhuang/jojozhuang.github.io.
+For demo purpose, I will use the repository of my personal website, see https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io.
 
 ## 2. Register domain from Godaddy
 Visit https://www.godaddy.com, register account and search domains.
@@ -25,20 +25,20 @@ After you finish the payment, congratulations, you own the domain!
 ![image](/assets/images/jekyll/8142/godaddy_domain.png)
 
 ## 3. Setup DNS
-Now, it's time to setup DNS for your new domain. Add `A` record to point the new domain(eg. jojozhuang.github.io) to a specific IP. The below four IP addresses are for GitHub Pages.
+Now, it's time to setup DNS for your new domain. Add `A` record to point the new domain(eg. {{ site.github_user }}.github.io) to a specific IP. The below four IP addresses are for GitHub Pages.
 * 185.199.108.153
 * 185.199.109.153
 * 185.199.110.153
 * 185.199.111.153
 
-In addition, add `CNAME` record to point the new domain(eg. jojozhuang.github.io) to the existing github page domain(eg. jojozhuang.github.io).
+In addition, add `CNAME` record to point the new domain(eg. {{ site.github_user }}.github.io) to the existing github page domain(eg. {{ site.github_user }}.github.io).
 ![image](/assets/images/jekyll/8142/godaddy_adddns.png)
 
 ## 4. Enable Custom Domain and SSL on GitHub
 Go to the github repository. In Settings, input the custom domain and check 'Enforce HTTPS'.
 ![image](/assets/images/jekyll/8142/custom_domain.png){:width="700px"}
 
-The settings on GitHub and GoDaddy will be activated after a while. Visit the website with new domain [jojozhuang.github.io](jojozhuang.github.io). Notice that the url always starts with `https`.
+The settings on GitHub and GoDaddy will be activated after a while. Visit the website with new domain [{{ site.github_user }}.github.io]({{ site.github_user }}.github.io). Notice that the url always starts with `https`.
 ![image](/assets/images/jekyll/8142/rongzhuang_home.png)
 Portfolio page.
 ![image](/assets/images/jekyll/8142/rongzhuang_portfolio.png)

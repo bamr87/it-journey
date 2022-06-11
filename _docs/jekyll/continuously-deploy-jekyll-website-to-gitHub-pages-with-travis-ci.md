@@ -8,13 +8,13 @@ tags:
   - Jekyll
   - Github Pages
   - Travis CI
-lastmod: 2022-06-04T17:35:42.074Z
+lastmod: 2022-06-11T18:16:21.350Z
 ---
 
 > Start continuous integration with Travis CI for Jekyll website.
 
 ## 1. GitHub Pages & Jekyll
-I have my person website http://jojozhuang.github.io/ hosted on [Github Pages](https://pages.github.com/). I post new blogs by creating Markdown files(.md) and submit them to the repository on Github. Then, Github Pages(powered by [Jekyll](https://jekyllrb.com/)) starts to compile the entire website and publish it. In some cases, however, the compilation fails, and the new changes are not published. Then, GitHub Page will send a notification email to me. This email just reminds me that there is one build failure, but doesn't tell what is the root cause.
+I have my person website http://{{ site.github_user }}.github.io/ hosted on [Github Pages](https://pages.github.com/). I post new blogs by creating Markdown files(.md) and submit them to the repository on Github. Then, Github Pages(powered by [Jekyll](https://jekyllrb.com/)) starts to compile the entire website and publish it. In some cases, however, the compilation fails, and the new changes are not published. Then, GitHub Page will send a notification email to me. This email just reminds me that there is one build failure, but doesn't tell what is the root cause.
 
 One approach to figure out what is exactly happening with this issue is to setup Jekyll website locally. I introduced the steps in [Setting up Jekyll on Ubuntu and macOS]({% link _docs/jekyll/setting-up-jekyll-on-ubuntu-and-macos.md %}).
 
@@ -80,4 +80,4 @@ Build history.
 ## 7. Reference
 * [Travis CI to the Jekyll site](https://jekyllrb.com/docs/continuous-integration/travis-ci/)
 * [Viewing Jekyll build error messages](https://help.github.com/articles/viewing-jekyll-build-error-messages/)  
-* [Build Error Sample](https://travis-ci.org/jojozhuang/jojozhuang.github.io/builds/315705267?utm_source=email&utm_medium=notification)
+* [Build Error Sample](https://travis-ci.org/{{ site.github_user }}/{{ site.github_user }}.github.io/builds/315705267?utm_source=email&utm_medium=notification)
