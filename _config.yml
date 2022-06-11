@@ -34,7 +34,7 @@ title_separator          : "|" # Appears in the web browser tab name
 locale                   : "en-US"
 name                     : &name "Amr"
 email                    : &git_email "amr.abdel@gmail.com"
-github_user              : &gituser "bamr87"
+github_user              : &github_user "bamr87"
 description              : &description >- # this means to ignore newlines until "url:"
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
@@ -42,10 +42,10 @@ description              : &description >- # this means to ignore newlines until
   Google search results) and in your feed.xml site description.
 site_domain              : &site_domain "github.io"
 baseurl                  : "" # the subpath of your site, e.g. /blog
-github_base_url          : [ *github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
 url                      : *github_base_url
 repository_name          : &github_repository "it-journey"
-repository               : [*gituser, "/", *github_repository] # GitHub username/repo-name
+repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 home_dir_pc              : &home-win 'C:\Users\amrab\'
 home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]

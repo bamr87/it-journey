@@ -6,7 +6,10 @@ subcategory: jekyll
 date: 2017-08-19
 tags:
   - Social Share
-lastmod: 2022-06-04T17:35:42.105Z
+lastmod: 2022-06-11T18:25:58.534Z
+keywords:
+  - Jekyll
+slug: jekyll-social-share-buttons
 ---
 
 > Create share buttons for the most popular social medias.

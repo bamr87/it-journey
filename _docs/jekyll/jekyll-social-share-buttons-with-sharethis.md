@@ -6,7 +6,7 @@ subcategory: jekyll
 date: 2017-08-20
 tags:
   - ShareThis
-lastmod: 2022-06-04T17:35:42.103Z
+lastmod: 2022-06-11T18:16:53.929Z
 ---
 
 > Integrate ShareThis to Jekyll website.
@@ -51,7 +51,7 @@ Access the website from mobile device.
 ShareThis supports multiple domains. You can create different share buttons for different domains. For different domains, you will get different urls for sharethis.js.
 ![image](/assets/images/jekyll/8118/multi-domain.png)
 
-I deployed my personal website to two domains, https://jojozhuang.github.io/ and https://jojozhuang.github.io/. Both are generated based on the same codes, https://github.com/jojozhuang/jojozhuang.github.io.
+I deployed my personal website to two domains, https://{{ site.github_user }}.github.io/ and https://{{ site.github_user }}.github.io/. Both are generated based on the same codes, https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io.
 
 We can use Jekyll Environment Variables to specify different urls for share buttons.
 
@@ -66,7 +66,7 @@ Edit `_layouts/default.html`, use `jekyll.environment` in the condition statemen
 ```
 {% endraw %}
 
-Edit `netlify.toml`, specify a "env-netlify" environment in the build command. Notice, https://jojozhuang.github.io/ is hosted on http://jojozhuang.netlify.com/, we reply on netlify to build this website. netlify.toml is the configuration file.
+Edit `netlify.toml`, specify a "env-netlify" environment in the build command. Notice, https://{{ site.github_user }}.github.io/ is hosted on http://{{ site.github_user }}.netlify.com/, we reply on netlify to build this website. netlify.toml is the configuration file.
 ```toml
 [build]
   command = "JEKYLL_ENV=env-netlify jekyll build"

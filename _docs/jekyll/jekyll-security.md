@@ -6,18 +6,18 @@ subcategory: jekyll
 date: 2019-06-29
 tags:
   - Security
-lastmod: 2022-06-04T17:35:42.100Z
+lastmod: 2022-06-11T18:16:53.927Z
 ---
 
 > Scan website security vulnerabilities and fix them.
 
 ## 1. Website Headers
 ### 1.1 Websites
-I have my personal website hosted on two domains, [jojozhuang.github.io](https://jojozhuang.github.io) and [jojozhuang.netlify.com](https://jojozhuang.netlify.com). The first one is hosted on [GitHub Pages](https://pages.github.com/), while the second one is hosted on [Netlify](https://www.netlify.com/). These two websites are powered by [Jekyll](https://jekyllrb.com/) and all their contents are totally static. Actually, they are using the same code base.The source codes are managed on GitHub in repository [https://github.com/jojozhuang/jojozhuang.github.io](https://github.com/jojozhuang/jojozhuang.github.io). Both sites are CI/CD with GitHub. If there is any change submitted to this repository, GitHub Pages and Netlify will compile and deploy the website automatically.
+I have my personal website hosted on two domains, [{{ site.github_user }}.github.io](https://{{ site.github_user }}.github.io) and [{{ site.github_user }}.netlify.com](https://{{ site.github_user }}.netlify.com). The first one is hosted on [GitHub Pages](https://pages.github.com/), while the second one is hosted on [Netlify](https://www.netlify.com/). These two websites are powered by [Jekyll](https://jekyllrb.com/) and all their contents are totally static. Actually, they are using the same code base.The source codes are managed on GitHub in repository [https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io](https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io). Both sites are CI/CD with GitHub. If there is any change submitted to this repository, GitHub Pages and Netlify will compile and deploy the website automatically.
 ### 1.2 Header Security
-Visit [securityheaders.com](https://securityheaders.com) and scan headers for site https://jojozhuang.github.io.
+Visit [securityheaders.com](https://securityheaders.com) and scan headers for site https://{{ site.github_user }}.github.io.
 ![image](/assets/images/jekyll/8133/header_githubpages.png)
-All the checks on header are failed. If we scan site https://jojozhuang.netlify.com, same result will be returned.
+All the checks on header are failed. If we scan site https://{{ site.github_user }}.netlify.com, same result will be returned.
 ### 1.3 Resolution
 To fix these security issues, we need to make some change at server side. However, there is no way to do that on GitHub Pages, but it can be done on Netlify. PS: This is one of the reasons why I migrated this static website from GitHub Pages to Netlify.
 
@@ -42,7 +42,7 @@ In the root directory of repository, create a file named `netlify.toml` with the
       public,
       s-max-age=604800'''
 ```
-Submit this file, wait for a while to let Netlify deploy the change. Once this file is deployed, run the scan for https://jojozhuang.netlify.com. This time, we can see all tests for header security are passed.
+Submit this file, wait for a while to let Netlify deploy the change. Once this file is deployed, run the scan for https://{{ site.github_user }}.netlify.com. This time, we can see all tests for header security are passed.
 ![image](/assets/images/jekyll/8133/header_netlify_fixed.png)
 
 ## 2. SSL

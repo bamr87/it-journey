@@ -1,7 +1,16 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.content.pageFolders": [],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "jekyll",
+      "path": "[[workspace]]/_docs/jekyll"
+    },
+    {
+      "path": "[[workspace]]/_posts"
+    }
+  ],
   "frontMatter.templates.enabled": true,
   "frontMatter.framework.id": "jekyll",
-  "frontMatter.content.publicFolder": "assets"
+  "frontMatter.content.publicFolder": "assets",
+  "frontMatter.dashboard.openOnStart": true
 }
