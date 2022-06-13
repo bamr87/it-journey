@@ -110,7 +110,7 @@ quickstart:
       - title: "VS-Code"
         url: /quickstart/ide/vscode/
     url: /ide/
-  - title: "Source Code"
+  - title: "Source-Code"
     sublinks:
       - title: "github"
         url: /quickstart/github/home
