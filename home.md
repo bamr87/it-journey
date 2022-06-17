@@ -7,7 +7,7 @@ purpose: To provide a platform for people to share their knowledge and experienc
   IT.
 Keywords: Home, Zer0
 Post: null
-lastmod: 2022-05-23T00:19:14.640Z
+lastmod: 2022-06-14T22:15:16.462Z
 toc: true
 sidebar:
   nav: main
@@ -71,7 +71,7 @@ For those who are advanced/expert and what to specialize in a field:
 2. DevOps (Source Code control, CD/CI, Automated Testing, Agile Development)
 3. Web Design (HTML, CSS, JavaScript, Jekyll, Bootstrap)
 4. Software Engineering (Python, Ruby, Java, C#, C++)
-5. Data Science (SQL, BI, Hadoop, Spark, HBase, Hive, Kafka, Cassandra)
+5. Data Science (Python, SQL, BI, Hadoop, Spark, HBase, Hive, Kafka, Cassandra)
 6. Cyber Security (Firewalls, Metadata analysis, Network Penetration, Ransomware, Vulnerability, Exploits, Malware)
 7. Multimedia/Graphic Design (GIMP, Blender, Inkscape, Krita, Pencil 2D)
 8. Mobile Development (Android, iOS, React Native)
