@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: /about/
-lastmod: 2022-04-24T22:30:55.880Z
+lastmod: 2022-06-17T02:01:09.704Z
 ---
 
 # About this site
@@ -10,7 +10,7 @@ For those of you who have stumbled upon this partially completed website, as you
 
 Within this site, I attempt to utilize open source technologies and free services so anyone, and everyone, can learn. Not only will you learn how these technologies work that make up the "Internet", but you might find some of these tools/techniques useful in your everyday life, such as journalizing your day, or capturing recipes for later use. This site should be understood by anyone who wants to embark on this journey to learn "IT", and will hopefully give you everything you need to become a full stack developers, if you so choose to.
 
-I chose the domain `Lifehacker.dev` because I hope this site will provide a lifelong learning experience for anyone who wants to learn how to code and build information systems that help them with everyday life.
+I chose the domain `{{ site.logo_source }}` because I hope this site will provide a lifelong learning experience for anyone who wants to learn how to code and build information systems that help them with everyday life.
 
 [Life Hack Wiki](https://en.wikipedia.org/wiki/Life_hack) 
 
