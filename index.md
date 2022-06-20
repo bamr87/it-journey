@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: 2022-06-05T19:44:53.282Z
+lastmod: 2022-06-19T22:08:04.523Z
 ---
 
 
@@ -72,6 +72,7 @@ TODO:
 - [x] code snippet syntax [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
 {: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
 
+{: .collapse .collapsed .breadcrumbs-intro }
 ```mermaid!
 graph TD;
     A-->B;
@@ -80,6 +81,7 @@ graph TD;
     C-->D;
 ```
 
+{: .collapse .collapsed .breadcrumbs-intro }
 ```mermaid!
 pie title Pets adopted by volunteers
   "Dogs" : 386
