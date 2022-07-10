@@ -4,7 +4,6 @@ author: null
 layout: default
 description: null
 categories:
-    - quickstart
     - machine-setup
 slug: mac
 lastmod: '2022-02-14T03:08:28.573Z'
