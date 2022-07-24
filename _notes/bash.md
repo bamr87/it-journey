@@ -1,24 +1,26 @@
 ---
 title: Bash cheatsheet
 description: BASH cheatsheet
-intro: This is a quick reference cheat sheet to getting started with linux bash shell scripting.
+intro: This is a quick reference cheat sheet to getting started with linux bash shell
+  scripting.
 tags:
-    - shell
-    - script
-    - linux
-    - bash
+  - shell
+  - script
+  - linux
+  - bash
 collection:
-    - notes
+  - notes
+  - shell
 keywords:
-    - Variables
-    - Functions
-    - Interpolation
-    - Brace expansions
-    - Loops
-    - Conditional execution
-    - Command substitution
+  - Variables
+  - Functions
+  - Interpolation
+  - Brace expansions
+  - Loops
+  - Conditional execution
+  - Command substitution
 slug: /shell/
-lastmod: '2022-01-11T20:17:42.486Z'
+lastmod: 2022-07-24T05:05:34.220Z
 ---
 
 Getting started
@@ -878,7 +880,7 @@ fi
 ```
 
 ### Backslash escapes {.row-span-2}
-
+```shell
 - &nbsp;
 - \!
 - \"
@@ -901,10 +903,11 @@ fi
 - \`
 - \$
 - \*
-- \?
-{.cols-4 .style-none}
+```
 
-Escape these special characters with `\`
+Escape these special characters with backslash `\` ok
+
+![](../assets/images/bash-fix.png)  
 
 ### Heredoc
 

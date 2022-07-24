@@ -1,8 +1,9 @@
 ---
 title: Notes Index
 description: Notes Index
+layout: collection
 permalink: /notes/
-lastmod: '2022-02-05T18:06:59.410Z'
+lastmod: 2022-07-24T04:35:01.549Z
 sidebar:
   nav: notes
   title: test
