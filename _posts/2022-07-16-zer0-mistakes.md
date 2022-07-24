@@ -10,7 +10,7 @@ tags:
   - article
 meta: null
 draft: true
-lastmod: 2022-07-22T21:56:21.083Z
+lastmod: 2022-07-24T05:05:34.218Z
 ---
 
 {{ page.title }}
@@ -59,7 +59,6 @@ gh repo create $GITREPO --public --source=. --remote=upstream
 ```shell
 echo "# $GITREPO" >> README.md
 git init
-git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/bamr87/$GITREPO.git
@@ -83,3 +82,61 @@ bundle install
 ```shell
 jekyll serve
 ```
+
+## Building the theme
+
+### Override default
+
+
+https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+### Comment out the theme from config and Gemfile
+
+```shell
+#_config.yml
+# Build settings
+# theme: minima
+plugins:
+  - jekyll-feed
+```
+
+```shell
+bundle remove minima --install
+```
+
+Restart jekyll
+```shell
+jekyll serve
+```
+
+## Build default page
+
+
+```shell
+{%- raw -%}
+cd ~/$GITDIR/$GITREPO
+mkdir _layout
+cd _layout
+echo "{{ content }}" >> default.html 
+{% endraw %}
+``` 
+
+```shell
+# find theme path
+bundle info --path minima
+JEKYLL_THEME=$(bundle info --path minima)
+echo $JEKYLL_THEME
+cd $JEKYLL_THEME
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+echo alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" >> ~/.zshrc
+
+tree
+cd -
+```
+
+### Copy theme repo
+
+```shell
+cp -R $JEKYLL_THEME ~/$GITDIR/$GITREPO
+```
+
