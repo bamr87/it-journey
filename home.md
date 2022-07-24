@@ -7,7 +7,7 @@ purpose: To provide a platform for people to share their knowledge and experienc
   IT.
 Keywords: Home, Zer0
 Post: null
-lastmod: 2022-06-14T22:15:16.462Z
+lastmod: 2022-07-24T23:33:35.204Z
 toc: true
 sidebar:
   nav: main
@@ -117,7 +117,9 @@ The sidebar navigation is a vertical bar that is always visible on the left side
 [Including](https://jekyllrb.com/docs/includes/) a [truncated](https://shopify.github.io/liquid/filters/truncate/) navigation YAML file under the `_data` folder will automatically generate the sidebar and top navigation.
 
 ```yaml
+{%- raw -%}
 {% capture nav %}{% include_relative _data/navigation.yml %}{% endcapture %}{{ nav | truncate: 332 }}
+{% endraw %}
 ```
 
 #### Table Of Contents right sidebar

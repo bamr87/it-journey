@@ -10,7 +10,7 @@ tags:
   - article
 meta: null
 draft: true
-lastmod: 2022-07-24T05:05:34.218Z
+lastmod: 2022-07-24T23:33:59.452Z
 ---
 
 {{ page.title }}
@@ -38,9 +38,14 @@ Install [Github cli](https://github.com/cli/cli#installation)
 ## Set your variables
 
 ```shell
-export GITDIR=github
-export GITREPO=zer0-mistakes-3
-echo $GITDIR $GITREPO
+export GITHOME=~/github
+export GHUSER=bamr87
+export GIT_REPO=$GHUSER.github.io
+export ZREPO=$GITHOME/$GIT_REPO
+echo $GITHOME $ZREPO $GHUSER $GIT_REPO
+
+git config --global user.email "$GHUSER@users.noreply.github.com"
+git config --global user.name "$GHUSER"
 ```
 
 ## Initialize your new github repository
@@ -49,32 +54,49 @@ echo $GITDIR $GITREPO
 
 ```shell
 cd ~
-mkdir $GITDIR
-cd ~/$GITDIR
-mkdir $GITREPO
-git init
-gh repo create $GITREPO --public --source=. --remote=upstream
+mkdir $GITHOME
+cd $GITHOME
+mkdir $GIT_REPO
+cd $ZREPO
 ```
 
 ```shell
-echo "# $GITREPO" >> README.md
+# If repo already exists
+cd $ZREPO
+gh repo clone $GHUSER/$GIT_REPO
+```
+
+```shell
+# If new repo
+cd $ZREPO
 git init
+echo "# Building new report from $ZREPO" >> README.md
+git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/bamr87/$GITREPO.git
+git remote add origin https://github.com/$GHUSER/$GHUSER.github.io.git
 git push -u origin main
 ```
 
-## Initialize Jekyll
+## Checkpoint - Github Repo Initialized
+
+```shell non-github.io version
+gh repo create $GIT_REPO --public --source=. --remote=upstream
+git remote add origin https://$GHUSER@github.com/$GHUSER/$GIT_REPO.git
+```
+
+## Initialize Jekyll - If New Repo
 
 Install [jekyll](https://jekyllrb.com/docs/installation/)
 
 ```shell
-cd ~/$GITDIR/$GITREPO
+cd $ZREPO
 jekyll new ./ --force
+bundle install
 ```
 
 ```shell
+# If running MacOS
 bundle add webrick
 bundle install
 ```
@@ -83,12 +105,68 @@ bundle install
 jekyll serve
 ```
 
-## Building the theme
+## Initialize Jekyll - If Existing Repo
+
+```shell
+cd $ZREPO
+bundle update
+bundle install
+jekyll serve
+```
+
+## Checkpoint - Jekyll Initialized
+![](../assets/images/jekyll-serve-1.png)  
+
+```shell
+code _config.yml
+```
+
+```yaml
+title: zer0-mistakes
+email: bamr87@zer0-mistakes.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: bamr87
+github_username:  bamr87
+```
+
+```shell
+cd $ZREPO
+wget https://raw.githubusercontent.com/bamr87/it-journey/master/favicon.ico
+```
+
+## Checkpoint 1
+
+```shell
+bundle lock --add-platform x86-mingw32 x64-mingw32 x86-mswin32 java
+```
 
 ### Override default
-
-
 https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+```shell
+# find theme path
+bundle info --path minima
+JEKYLL_THEME=$(bundle info --path minima)
+echo $JEKYLL_THEME
+cd $JEKYLL_THEME
+
+```
+### Copy theme repo
+
+```shell
+cp -aR $JEKYLL_THEME/* $ZREPO
+```
+
+### Remove Theme plugin
+
+```shell
+bundle remove jekyll-theme-minima
+```
 
 ### Comment out the theme from config and Gemfile
 
@@ -109,24 +187,24 @@ Restart jekyll
 jekyll serve
 ```
 
-## Build default page
+## Building the theme
+
+### Build default page
 
 
 ```shell
 {%- raw -%}
-cd ~/$GITDIR/$GITREPO
+cd $ZREPO
 mkdir _layout
 cd _layout
 echo "{{ content }}" >> default.html 
 {% endraw %}
 ``` 
 
+
+
 ```shell
-# find theme path
-bundle info --path minima
-JEKYLL_THEME=$(bundle info --path minima)
-echo $JEKYLL_THEME
-cd $JEKYLL_THEME
+#tree #alias #zshrc #profile
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 echo alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" >> ~/.zshrc
 
@@ -134,9 +212,4 @@ tree
 cd -
 ```
 
-### Copy theme repo
-
-```shell
-cp -R $JEKYLL_THEME ~/$GITDIR/$GITREPO
-```
-
+![](../assets/images/about-profile.png)  
