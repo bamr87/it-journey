@@ -1,14 +1,13 @@
 ---
-Title: IT-Journey
+Title: Hello World
 Author: bamr87
 Description: This is an overall outline where you can start.
 permalink: /home/
 layout: home
-purpose: To provide a platform for people to share their knowledge and experience about
-  IT.
+purpose: To provide a platform for people to share their knowledge and tools
 Keywords: Home, Zer0
 Post: null
-lastmod: 2022-07-24T23:41:43.057Z
+lastmod: 2022-07-25T00:10:47.252Z
 toc: true
 sidebar:
   nav: main
