@@ -1,13 +1,13 @@
 ---
-Title: IT-Journey
+Title: Hello World
 Author: bamr87
 Description: This is an overall outline where you can start.
 permalink: /home/
-purpose: To provide a platform for people to share their knowledge and experience about
-  IT.
+layout: home
+purpose: To provide a platform for people to share their knowledge and tools
 Keywords: Home, Zer0
 Post: null
-lastmod: 2022-06-14T22:15:16.462Z
+lastmod: 2022-07-25T00:10:47.252Z
 toc: true
 sidebar:
   nav: main
@@ -117,7 +117,9 @@ The sidebar navigation is a vertical bar that is always visible on the left side
 [Including](https://jekyllrb.com/docs/includes/) a [truncated](https://shopify.github.io/liquid/filters/truncate/) navigation YAML file under the `_data` folder will automatically generate the sidebar and top navigation.
 
 ```yaml
+{%- raw -%}
 {% capture nav %}{% include_relative _data/navigation.yml %}{% endcapture %}{{ nav | truncate: 332 }}
+{% endraw %}
 ```
 
 #### Table Of Contents right sidebar

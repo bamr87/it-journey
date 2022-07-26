@@ -65,6 +65,8 @@ main:
       url: /notes/jekyll/
   - title: "Map"
     url: /map/
+  - title: "Styles"
+    url: /styles/
   - title: "About"
     url: /about/
 
