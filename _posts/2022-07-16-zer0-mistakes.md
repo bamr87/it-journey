@@ -14,7 +14,7 @@ tags:
   - bash
 meta: null
 draft: true
-lastmod: 2022-07-25T04:24:25.869Z
+lastmod: 2022-07-26T04:57:01.238Z
 ---
 
 {{ page.title }}
@@ -89,7 +89,7 @@ git push -u origin main
 gh repo create $GIT_REPO --public --source=. --remote=upstream
 git remote add origin https://$GHUSER@github.com/$GHUSER/$GIT_REPO.git
 ```
-asdf
+
 ## Initialize Jekyll - If New Repo
 
 Install [jekyll](https://jekyllrb.com/docs/installation/)
