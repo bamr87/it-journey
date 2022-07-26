@@ -1,16 +1,20 @@
 ---
 title: zer0-mistakes
-author: null
-excerpt: null
+author: bamr87
+excerpt: Building a site with zero mistakes
 description: null
 snippet: null
 categories:
   - posts
 tags:
   - article
+  - how-to
+  - jekyll
+  - github
+  - bash
 meta: null
 draft: true
-lastmod: 2022-07-24T23:33:59.452Z
+lastmod: 2022-07-25T04:24:25.869Z
 ---
 
 {{ page.title }}
@@ -80,11 +84,12 @@ git push -u origin main
 
 ## Checkpoint - Github Repo Initialized
 
-```shell non-github.io version
+```shell
+# non-github.io version
 gh repo create $GIT_REPO --public --source=. --remote=upstream
 git remote add origin https://$GHUSER@github.com/$GHUSER/$GIT_REPO.git
 ```
-
+asdf
 ## Initialize Jekyll - If New Repo
 
 Install [jekyll](https://jekyllrb.com/docs/installation/)
@@ -213,3 +218,18 @@ cd -
 ```
 
 ![](../assets/images/about-profile.png)  
+
+## Download your home
+
+```shell
+d=$(date +%Y-%m-%d)
+echo "$d"
+```
+
+```shell
+cd $ZREPO/_posts
+wget -O $d-home.md https://raw.githubusercontent.com/bamr87/it-journey/master/home.md 
+```
+
+![](../assets/images/header_pages.png)  
+
