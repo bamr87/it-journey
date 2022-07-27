@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem 'jekyll'
+gem 'jekyll' , '3.9.2'
 # gem "bootstrap", ">= 4.3.1"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.5"
@@ -18,7 +18,7 @@ gem 'jekyll'
 group :jekyll_plugins do
   gem 'jekyll-feed', "~> 0.12"
   gem 'jekyll-assets', "~> 1.0.0"
-  gem 'jekyll-redirect-from'
+  # gem 'jekyll-redirect-from'
   gem 'jekyll-algolia'
   gem 'jekyll-sitemap' 
   gem 'jekyll-seo-tag'
@@ -45,7 +45,8 @@ gem "webrick", "~> 1.7"
 
 
 
-gem "kramdown"
+gem "kramdown" 
+gem "kramdown-parser-gfm"
 gem "rouge"
 gem "algoliasearch"
 # gem "html-proofer"
