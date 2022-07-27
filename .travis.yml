@@ -15,7 +15,7 @@ script:
   # - bundle exec rake test
   - bundle exec jekyll algolia
 rvm:
- - 2.6.2
+ - 2.7.3
  - 3.0
 
     # branch whitelist, only for GitHub Pages
