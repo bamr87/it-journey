@@ -6,7 +6,7 @@ keywords: init, world
 catagories: quests
 description: This is the init world.
 permalink: /quest/
-lastmod: 2022-05-24T00:55:59.600Z
+lastmod: 2022-08-07T14:49:52.005Z
 ---
 
 # init_world
@@ -27,6 +27,7 @@ Choose your difficulty:
   * Big Macintosh - Medium
   * Damn Windows Update  - Hard
   * A Linux to the past - Epic
+  * Cloud Atlas - Heroic
 
 
 [Hello Win](hello-win/hello-win.md)
@@ -73,3 +74,10 @@ Winget
     https://medium.com/@sahanarajasekar/5-ways-to-upgrade-your-terminal-2fb8ab447949
 
           OMZsh
+
+## Linux
+
+- Hello_world
+  - Navigation
+  - profile
+  - 

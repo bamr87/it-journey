@@ -20,7 +20,7 @@ keywords:
   - Conditional execution
   - Command substitution
 slug: /shell/
-lastmod: 2022-07-24T05:05:34.220Z
+lastmod: 2022-08-07T14:49:51.999Z
 ---
 
 Getting started
@@ -28,7 +28,21 @@ Getting started
 
 ---------------
 
-### hello.sh
+## cd go home ~
+
+```shell
+cd ~
+ls -la
+```
+
+
+## hello_world.sh
+
+```bash
+SCRIPTS_DIR=~/scripts
+mkdir $SCRIPTS_DIR
+touch $SCRIPTS_DIR/hello.sh
+```
 
 ```bash
 #!/bin/bash
@@ -40,6 +54,7 @@ echo "Hello $VAR!" # => Hello world!
 Execute the script
 
 ```shell script
+chmod +x hello.sh
 $ bash hello.sh
 ```
 
