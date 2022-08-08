@@ -1,6 +1,6 @@
 ---
 title: Hello World
-lastmod: 2022-06-19T22:08:04.523Z
+lastmod: 2022-08-08T04:55:21.228Z
 ---
 
 
@@ -17,6 +17,7 @@ Nothing to see here. Yet...
 
 TODO:
 {: .collapse .collapsed .breadcrumbs-intro }
+- [ ] create custom svg icon
 - [ ] quick view of post contents/reading time
 - [ ] [doc example](https://tmuxp.git-pull.com/index.html)
 - [ ] leader board for level progression

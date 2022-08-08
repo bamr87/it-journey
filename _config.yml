@@ -1,4 +1,7 @@
 # Welcome to Jekyll!
+# Configuration file for Jekyll.
+# Full docs at: http://jekyllrb.com/docs/configuration/
+# -----------------------------------------------------------------------------
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
@@ -19,80 +22,114 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-# theme                  : "zer0-mistakes-jekyll"
-# remote_theme           : "bamr87/zer0-mistakes"
-theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# Site Settings
+# Site Settings ---------------------------------------------------------------
+
+## Site Information -----------------------------------------------------------
 
 title                    : IT-Journey
+masthead_title           : # override the default title
 subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
-logo_source              : &logo_source "https://www.it-journey.dev"
-masthead_title           : # override the default title
 title_separator          : "|" # Appears in the web browser tab name
-locale                   : "en-US"
+site_domain              : &site_domain "github.io"
+baseurl                  : "" # the subpath of your site, e.g. /blog
+github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+url                      : *github_base_url
+port                     : "4002" # Jekyll Serve Dev port
+dg_port                  : "4001" # Doppelganger site
+
+### Owner Information ---------------------------------------------------------
+
 name                     : &name "Amr"
-email                    : &git_email "amr.abdel@gmail.com"
+email                    : &email "amr.abdel@gmail.com"
 github_user              : &github_user "bamr87"
 description              : &description >- # this means to ignore newlines until "url:"
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-site_domain              : &site_domain "github.io"
-baseurl                  : "" # the subpath of your site, e.g. /blog
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
-url                      : *github_base_url
+
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
+
+## Personalization -------------------------------------------------------------
+
+locale                   : "en-US"
 home_dir_pc              : &home-win 'C:\Users\amrab\'
 home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
-teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo_source              : &logo_source "https://www.it-journey.dev"
+
+teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
-port                     : "4002" # Jekyll Serve Dev port
-dg_port                  : "4001" # Doppelganger site
 
-# Identity
+## Identity #####################################################################
 
 author:
-  name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : "/assets/images/gravatar-small.png"
-  bio              : "IT nerd trying to be an IT hero"
-  location         : "Denver, CO"
-  links:
-    - label: "BASH Consulting"
-      icon: "fas fa-fw fa-link"
-      url: "https://bashconsultants.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/bamr87"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: [ 'https://github.com/' , *github_user ]
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/bamr42"
+  name                   : *name # *name is a YAML reference pointing to the &anchor earlier
+  avatar                 : "/assets/images/gravatar-small.png"
+  email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
+  gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
+  bio                    : "IT nerd trying to be an IT hero"
+  location               : "Denver, CO"
+  twitter_username       : "bamr87"
+  github_username        : *github_user
 
-twitter_username         : "bamr87"
-github_username          : *github_user
-# Build settings
-# theme: minima
+
+fa_default: "fab"
+
+links:
+  - label: "BASH Consulting"
+    url: "https://bashconsultants.com"
+    icon: "fas fa-link"
+  - label: "Twitter"
+    icon: "fa-twitter-square"
+    url: "https://twitter.com/bamr87"
+  - label: "GitHub"
+    icon: "fa-github"
+    url: [ 'https://github.com/' , *github_user ]
+  - label: "Instagram"
+    icon: "fa-instagram"
+    url: "https://instagram.com/bamr42"
+
+## Build settings ##############################################################
+
+powered_by:
+  - name: "Jekyll"
+    version: "3.9.2"
+    url: "https://jekyllrb.com/"
+  - name: "Bootstrap"
+    version: "5.2.0"
+    url: "https://getbootstrap.com/"
+  - name: "Algolia"
+    version: 
+    url: "https://algolia.com/"
+  - name: "JQuery"
+    url: "https://jquery.com/"
+
+### Plugins 
+# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
+# http://jekyllrb.com/docs/plugins/
+
+# All plugins are enabled by default for GitHub Pages. https://pages.github.com/versions/
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
+  - github-pages
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
   # - jekyll-postcss
   # - jekyll-redirect-from
   
-# Conversion
+## Conversion
+
 markdown: kramdown
 highlighter: rouge
 # lsi: false
@@ -110,10 +147,6 @@ kramdown: # https://kramdown.gettalong.org/options.html
   toc_levels: 1..6
   # smart_quotes: lsquo,rsquo,ldquo,rdquo
   # enable_coderay: false
-
-
-
-
 
 # Collections: https://jekyllrb.com/docs/collections/
   # Permalinks: https://jekyllrb.com/docs/permalinks/
@@ -316,29 +349,7 @@ sass:
   style: compressed
   
 
-# Footer Links Settings
 
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/bamr87"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: [ "https://github.com/" , *github_user ]
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/bamr42"
-
-powered_by:
-  - name: "Jekyll"
-    url: "https://jekyllrb.com/"
-  - name: "Bootstrap"
-    url: "https://getbootstrap.com/"
-  - name: "Algolia"
-    url: "https://algolia.com/"
-  - name: "JQuery"
-    url: "https://jquery.com/"
 
 
 algolia:
@@ -350,3 +361,33 @@ exclude: [vendor]
 
 atom_feed:
 path                   : # blank (default) uses feed.xml
+
+
+## Style Settings -------------------------------------------------------------
+
+# theme                  : "zer0-mistakes-jekyll"
+# remote_theme           : "bamr87/zer0-mistakes"
+theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
+# remote_style           : "bamr87/zer0-mistakes"
+
+## Font Settings ---------------------------------------------------------------
+# font_family             : "Roboto"
+# font_size               : "16px"
+# font_weight             : "400"
+# font_style              : "normal"
+# font_size_mobile        : "16px"
+# font_weight_mobile      : "400"
+# font_style_mobile       : "normal"
+# font_size_tablet        : "16px"
+# font_weight_tablet      : "400"
+# font_style_tablet       : "normal"
+# font_size_desktop       : "16px"
+# font_weight_desktop     : "400"
+# font_style_desktop      : "normal"
+# font_size_large_desktop : "16px"
+# font_weight_large_desktop : "400"
+# font_style_large_desktop : "normal"
+
+## Color Settings --------------------------------------------------------------

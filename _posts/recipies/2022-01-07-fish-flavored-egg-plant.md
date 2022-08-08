@@ -5,7 +5,7 @@ layout: default
 description: null
 categories:
   - Posts
-lastmod: '2022-01-30T00:47:43.405Z'
+lastmod: 2022-08-08T04:55:50.623Z
 draft: true
 sidebar:
   nav: cooking
@@ -25,8 +25,8 @@ sidebar:
 | 1     | tbsp | potato (or corn) starch       | mixed with 1 tbsp cold water (roux) |
 | 1     | tbsp | Chinkiang vinegar             |                                     |
 | 6     | tbsp | thinly sliced scallion greens |                                     |
-|       |      | Cooking oil, for deep-frying  |                                     |
-|       |      | Salt                          |                                     |
+| 5     | tbsp | Cooking oil, for deep-frying  |                                     |
+| 1     | tbsp | Salt                          |                                     |
 
 ## Instructions
 

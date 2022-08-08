@@ -17,12 +17,12 @@
     <ul class="nav col-sm justify-content-end list-unstyled d-flex">
 
       <!-- Search for Site Identity links in config file -->
-      {% for link in site.author.links %}
+      {% for link in site.links %}
       <li class="ms-3">
+        <i class="{{ site.fa_default }} {{ link.icon | default: site.links.default }}" aria-hidden="true">
+        </i>
+        <!-- display name if there's enough space, else icon only -->
         <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
-          <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true">
-          </i>
-          <!-- display name if there's enough space, else icon only -->
           <span class="d-none d-md-inline"> 
             {{ link.label }}
           </span>
@@ -33,7 +33,7 @@
       <!-- RSS Feed -->
       <li class="ms-3">
         <a href="{{ '/feed.xml' | relative_url }}">
-          <i class="fas fa-fw fa-rss-square" aria-hidden="true">
+          <i class="fas fa-rss-square" aria-hidden="true">
           </i>
           <span class="d-none d-md-inline">
             {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
