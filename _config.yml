@@ -118,11 +118,11 @@ powered_by:
 # All plugins are enabled by default for GitHub Pages. https://pages.github.com/versions/
 
 plugins:
+  - github-pages
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
-  - github-pages
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
   # - jekyll-postcss
