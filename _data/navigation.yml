@@ -16,6 +16,8 @@ main:
         url: /quickstart/ide/home
       - title: "Web Server"
         url: /quickstart/web-server/home
+      - title: "Web App"
+        url: /quickstart/web-app/home
   - title: "Journal"
     url: /posts/
     sublinks:

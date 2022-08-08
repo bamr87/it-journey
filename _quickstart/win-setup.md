@@ -4,9 +4,9 @@ author: null
 layout: default
 description: null
 categories:
-    - machine-setup
+  - machine-setup
 slug: windows
-lastmod: '2022-01-24T04:35:21.097Z'
+lastmod: 2022-08-06T17:38:11.496Z
 draft: false
 ---
 
@@ -127,6 +127,39 @@ cd ~/.winget
 winget import --import-file winget-app-core.json
 winget import --import-file winget-app-dev.json
 ```
+
+#### Windows Terminal
+
+##### Oh-My-Posh
+
+[OMP](https://ohmyposh.dev/docs/installation/windows)
+
+##### Nerd Fonts
+
+[Nerd fonts git repo](https://github.com/ryanoasis/nerd-fonts#option-3-install-script)
+
+
+
+#### Windows Sub Linus
+
+
+Download Ubuntu
+
+```powershell
+Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
+wsl --set-default-version 2
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+#### Docker
+
+Windows Instructions [wsl](https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
+
+[Docker Instructions](https://docs.docker.com/desktop/install/windows-install/)
+
+
 
 ### Install VS Code
 
