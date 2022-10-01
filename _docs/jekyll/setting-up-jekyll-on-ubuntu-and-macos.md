@@ -10,7 +10,7 @@ tags:
   - Jekyll
   - Ruby
   - macOS
-lastmod: 2022-06-11T18:16:53.916Z
+lastmod: 2022-10-01T19:54:32.521Z
 ---
 
 > Setup Jekyll on Ubuntu and macOS.
@@ -110,7 +110,7 @@ Configuration file: /Users/Johnny/GitHub/{{ site.github_user }}.github.io/_confi
 Filename                                                                 | Count |     Bytes |  Time
 -------------------------------------------------------------------------+-------+-----------+------
 _layouts/tutorial.html                                                   |   313 | 18175.35K | 3.408
-_includes/sidebar.html                                                   |   316 |  9473.80K | 2.605
+_includes/sidebar-left.html                                              |   316 |  9473.80K | 2.605
 _layouts/default.html                                                    |   392 | 25954.53K | 0.804
 favorite.html                                                            |     1 |   340.92K | 0.646
 _includes/navbar.html                                                    |   392 |   956.45K | 0.366

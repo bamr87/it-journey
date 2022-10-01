@@ -5,7 +5,7 @@
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-    <a href="/">Home</a>
+    <a href="/">root</a>
     {% for crumb in crumbs offset: 1 %}
     {% if forloop.last %}
     / {{ page.title }}
