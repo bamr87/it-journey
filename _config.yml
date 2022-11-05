@@ -99,6 +99,9 @@ links:
 ## Build settings ##############################################################
 
 powered_by:
+  - name: "Ruby"
+    version: "2.7.4"
+    url: "https://www.ruby-lang.org/"
   - name: "Jekyll"
     version: "3.9.2"
     url: "https://jekyllrb.com/"
