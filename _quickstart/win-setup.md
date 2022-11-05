@@ -223,6 +223,8 @@ Get-Content extensions.txt | ForEach-Object {code --install-extension $_}
 
 [Detailed instructions](https://jekyllrb.com/docs/installation/windows/)
 
+[Github Pages Dependancies](https://pages.github.com/versions/)
+
 ### Install Ruby
 
 Ruby is the programming language of choice for Jekyll, and also manages the dependencies for the Jekyll gem.
