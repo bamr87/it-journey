@@ -107,6 +107,13 @@ Login to gh cli using your github credentials
 gh auth login
 ```
 
+```powershell
+$GIT_EMAIL = Read-Host "What is your Github Email?"
+$GIT_USER_NAME = Read-Host "What is your Github User Name?"
+git config --global user.email $GIT_EMAIL
+git config --global user.name $GIT_USER_NAME
+```
+
 ### Install Software Packages (optional)
 
 For a list of packages you can download/install using winget, see [here](https://winget.run/)

@@ -13,8 +13,6 @@ sidebar:
   nav: main
 ---
 
-# it-journey.home (~)
-
 This is where we begin our journey. The place where we return after getting lost or wandering off.
 Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
 There are journals to capture our experiences and findings, notes to quickly reference when our memories fail, and a library of documentation that gives us the depth of knowledge to build upon and share.

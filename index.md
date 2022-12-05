@@ -39,6 +39,7 @@ Nothing to see here. Yet... but try clicking on the gear icon for a sneak peek.
 
 ### TODO:
 {: .collapse .collapsed .breadcrumbs-intro }
+- [ ] Add create new post button
 - [ ] add floating "back to top" button
 - [ ] create custom svg icon
 - [ ] quick view of post contents/reading time
