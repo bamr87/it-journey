@@ -107,11 +107,13 @@ Login to gh cli using your github credentials
 gh auth login
 ```
 
+Find your User ID in the [github emails settings](https://github.com/settings/emails)
+
 ```powershell
-$GIT_EMAIL = Read-Host "What is your Github Email?"
+$GIT_ID = Read-Host "What is your Github ID?"
 $GIT_USER_NAME = Read-Host "What is your Github User Name?"
-git config --global user.email $GIT_EMAIL
-git config --global user.name $GIT_USER_NAME
+git config --global user.name "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
+git config --global user.email "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
 ```
 
 ### Install Software Packages (optional)
