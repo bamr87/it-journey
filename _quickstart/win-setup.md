@@ -108,6 +108,7 @@ gh auth login
 ```
 
 Find your User ID in the [github emails settings](https://github.com/settings/emails)
+more info [here ](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)
 
 ```powershell
 $GIT_ID = Read-Host "What is your Github ID?"
