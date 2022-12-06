@@ -1,10 +1,11 @@
 ---
-title: zer0-mistakes
+title: "zer0-mistakes with github-pages and jekyll "
 sub-title: The ultimate starting point for full stack developers
 author: bamr87
 excerpt: Bashing through systems to 10X levels of expertise
-description: Introduction page to build a statically generated website on Github using
-  Jekyll and Ruby
+description: Introductory post to begin your quest on becoming an IT ninja/wizard by
+  building statically generated websites using modern day, open source
+  techniques
 snippet: null
 categories:
   - posts
@@ -14,7 +15,11 @@ tags:
   - how-to
   - jekyll
 draft: true
-lastmod: 2022-12-06T18:57:40.377Z
+lastmod: 2022-12-06T19:20:52.370Z
+keywords:
+  - github
+  - Web Development
+  - jekyll
 ---
 
 {{ page.title }}
