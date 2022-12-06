@@ -15,6 +15,7 @@ gem 'jekyll' , '3.9.2'
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 
 gem "github-pages"
+# dependancies https://pages.github.com/versions/
 # , group: :jekyll_plugins
 
 # If you have any jekyll plugins, put them here!
@@ -45,6 +46,7 @@ end
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
+# Mac OS compatibility fix
 gem "webrick", "~> 1.7"
 # gem "rack", ">= 2.1.4"
 # gem "jekyll-postcss"

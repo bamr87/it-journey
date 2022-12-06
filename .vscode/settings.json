@@ -17,5 +17,6 @@
     "diffEditor.wordWrap": "off",
     "[search-result]": {
         "editor.lineNumbers": "on"
-    }
+    },
+    "frontMatter.content.autoUpdateDate": true
 }
