@@ -12,7 +12,7 @@ Nothing to see here. Yet... but try clicking on the gear icon for a sneak peek.
 
 ## Features
 {: .collapse .collapsed .breadcrumbs-intro }
-- [x] Github Pages compatible
+- [x] Github Pages compatibility
 - [ ] Bootstrap 5 CDN
 - [x] Algolia Search indexing
 - [x] Jekyll Site Generation
@@ -31,7 +31,9 @@ Nothing to see here. Yet... but try clicking on the gear icon for a sneak peek.
 {: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
 
 ### FIXME:
-{: .collapse .collapsed .breadcrumbs-intro }
+
+- [ ] {: .collapse .collapsed .breadcrumbs-intro }
+- [ ] left sidebar header color
 - [ ] Adjust menu toggle in Mobile view
 - [ ] fix presentation of search results
 - [ ] Need to fix quick index in side bar
@@ -39,6 +41,8 @@ Nothing to see here. Yet... but try clicking on the gear icon for a sneak peek.
 
 ### TODO:
 {: .collapse .collapsed .breadcrumbs-intro }
+- [ ] add 3rd level nav bar drop down option
+- [ ] automate pull request to publish to gh-pages
 - [ ] Add create new post button
 - [ ] add floating "back to top" button
 - [ ] create custom svg icon

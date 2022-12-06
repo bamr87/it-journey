@@ -10,7 +10,7 @@ main:
     sublinks:
       - title: "Home"
         url: /quickstart/
-      - title: "Machine Setup"
+      - title: "Master Setup"
         url: /quickstart/machine-setup/home
       - title: "IDE"
         url: /quickstart/ide/home

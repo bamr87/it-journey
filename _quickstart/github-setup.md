@@ -16,7 +16,7 @@ draft: false
 
 ### Prerequisites
 
-- Machine Setup
+- Master Setup
 - VSCode
 
 Confirm that you have a package manager installed by running the following command:

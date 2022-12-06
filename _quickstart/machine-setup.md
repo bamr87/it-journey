@@ -1,5 +1,5 @@
 ---
-title: Machine Setup
+title: Master Setup
 author: null
 layout: default
 description: null
@@ -10,7 +10,7 @@ lastmod: '2022-05-21T20:45:39.643Z'
 draft: false
 ---
 
-# Machine Setup Overview
+# Master Setup Overview
 
 Before you can begin developing, your machine (computer) needs to be configured and loaded with the necessary software. Regardless of the OS you are using (Windows, Mac, Linux), there are specific components required. Detailed instructions based on your OS are provided, and can be accessed from the left side bar. 
 

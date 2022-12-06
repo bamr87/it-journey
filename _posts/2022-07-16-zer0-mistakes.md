@@ -1,20 +1,20 @@
 ---
 title: zer0-mistakes
+sub-title: The ultimate starting point for full stack developers
 author: bamr87
-excerpt: Building a site with zero mistakes
-description: null
+excerpt: Bashing through systems to 10X levels of expertise
+description: Introduction page to build a statically generated website on Github using
+  Jekyll and Ruby
 snippet: null
 categories:
   - posts
 tags:
-  - article
+  - bash
+  - github
   - how-to
   - jekyll
-  - github
-  - bash
-meta: null
 draft: true
-lastmod: 2022-07-26T04:57:01.238Z
+lastmod: 2022-12-06T18:57:40.377Z
 ---
 
 {{ page.title }}
@@ -25,7 +25,7 @@ Github Account
 
 [Signup](https://github.com/signup) or [Sign-in](https://github.com/login)
 
-### Machine Setup
+### Master Setup
 
 Install package manager:
 

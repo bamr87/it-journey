@@ -2,6 +2,7 @@
 # 
 key: tutorial
 title: Setting up Jekyll on Ubuntu and macOS
+author: Amr
 index: 8103
 subcategory: jekyll
 date: 2016-01-16
@@ -10,7 +11,7 @@ tags:
   - Jekyll
   - Ruby
   - macOS
-lastmod: 2022-10-01T19:54:32.521Z
+lastmod: 2022-12-06T18:22:39.946Z
 ---
 
 > Setup Jekyll on Ubuntu and macOS.

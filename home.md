@@ -90,7 +90,7 @@ For those who are advanced/expert and what to specialize in a field:
 
 For those who are already familiar with core IT concepts, this is the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction.
 
-Machine Setup [Local link](\_quickstart\machine-setup.md)  Or [Web link](\quickstart\machine-setup\)
+Master Setup [Local link](\_quickstart\machine-setup.md)  Or [Web link](\quickstart\machine-setup\)
 
 Integrated Development Environment (Visual Studio Code) [Local link](\_quickstart\vscode.md)  Or [Web link](\quickstart\vscode\)
 

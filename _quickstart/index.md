@@ -11,8 +11,20 @@ sidebar:
 
 Here's an index of all the posts in the quick-start collection.
 
-1. Machine Setup
-   1. VS Code
-   2. Github
-2. Jekyll Setup
-3. test
+1. Master Setup
+   1. Machine
+   2. Code Editor
+   3. CI/CD (Travis CI)
+   4. Source Code Control (Github)
+2. Web Development
+   1. Ruby
+   2. Jekyll
+   3. Github Pages
+3. App Development
+   1. Front-end
+   2. Back-end
+   3. Data Store
+4. Cloud Development
+   1. Google
+   2. Azure
+   3. AWS
