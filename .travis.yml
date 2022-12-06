@@ -8,7 +8,7 @@ before_script:
   - bundle update
   - chmod +x ./script/cibuild # or do this locally and commit
 # the `install` step will run `bundle install` by default.
-install: gem install jekyll html-proofer
+install: gem install jekyll
 script: 
   - ./script/cibuild
   # - ./setup
