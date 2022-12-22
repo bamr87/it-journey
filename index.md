@@ -3,12 +3,13 @@ title: Hello World
 lastmod: 2022-08-28T01:51:53.807Z
 ---
 
+
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
 This is the main landing page and it is still a work in process.
 
-Nothing to see here. Yet... but try clicking on the gear icon for a sneak peek.
+Nothing to see here. Yet... but try clicking on the gear icon (or particles) for a sneak peek.
 
-
+<div id="particles-js"></div>
 
 ## Features
 {: .collapse .collapsed .breadcrumbs-intro }
