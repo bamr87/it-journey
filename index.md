@@ -31,7 +31,6 @@ Nothing to see here. Yet... but try clicking on the gear icon for a sneak peek.
 {: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
 
 ### FIXME:
-
 - [ ] {: .collapse .collapsed .breadcrumbs-intro }
 - [ ] left sidebar header color
 - [ ] Adjust menu toggle in Mobile view

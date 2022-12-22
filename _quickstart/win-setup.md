@@ -240,8 +240,8 @@ Get-Content extensions.txt | ForEach-Object {code --install-extension $_}
 Ruby is the programming language of choice for Jekyll, and also manages the dependencies for the Jekyll gem.
 
 ```powershell
-# Install Ruby
-winget install RubyInstallerTeam.RubyWithDevKit
+# Install Ruby (version 2.7 for github pages)
+winget install RubyInstallerTeam.RubyWithDevKit.2.7 -v 2.7.4-1
 ```
 
 If this doesn't work, download the MSI file and install manually.
