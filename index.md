@@ -3,6 +3,11 @@ title: Hello World
 lastmod: 2022-08-28T01:51:53.807Z
 ---
 
+{: .collapse .collapsed .breadcrumbs-intro }
+Branch | Build Status
+---------|---------
+Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
+gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=gh-pages)](https://app.travis-ci.com/bamr87/it-journey)
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
 This is the main landing page and it is still a work in process.
@@ -84,6 +89,7 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 {% capture styles %}{% include_relative _notes/bootstrap-examples.md %}{% endcapture %}{{ styles }}
 </div>
 
+{: .collapse .collapsed .breadcrumbs-intro }
 ```mermaid!
 graph TD;
     A-->B;

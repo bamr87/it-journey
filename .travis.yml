@@ -8,14 +8,15 @@ before_script:
   - bundle update
   - chmod +x ./script/cibuild # or do this locally and commit
 # the `install` step will run `bundle install` by default.
-install: gem install jekyll
+install: bundle install
 script: 
   - ./script/cibuild
   # - ./setup
   # - bundle exec rake test
   - bundle exec jekyll algolia
+# Ruby versions. first one for github-pages, second for next major release
 rvm:
- - 2.7.3
+ - 2.7.4
  - 3.0
 
     # branch whitelist, only for GitHub Pages
@@ -23,5 +24,5 @@ branches:
   only:
     - master
     # Change this to gh-pages if you're deploying using the gh-pages branch
-    - gh-pages     # test the gh-pages branch
     # - /pages-(.*)/ # test every branch which starts with "pages-"
+    - gh-pages     # test the gh-pages branch
