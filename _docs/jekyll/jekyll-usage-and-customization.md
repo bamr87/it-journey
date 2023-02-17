@@ -1,13 +1,11 @@
 ---
-key: tutorial
 title: Jekyll - Usage and Customization
 index: 8112
 subcategory: jekyll
 date: 2016-11-18
 tags:
   - Jekyll
-  - Excerpt
-lastmod: 2022-06-11T18:16:53.933Z
+lastmod: 2023-01-02T18:50:32.287Z
 ---
 
 > Customize Jekyll website.
@@ -63,14 +61,12 @@ Be default, there is only a grey rectangle as background, no highlighting on the
 ![image](/assets/images/jekyll/8112/withouthighlight.png)  
 
 To enable the highlighting, you need to edit `_config.yml` file which is located in the root directory of the website, add following lines.
+
 ```
 markdown: kramdown
 highlighter: rouge
 ```
-Then, create css file, for example, [highlight.scss]({% link /assets/css/highlight.scss %}). And include this css file to the page.
-```html
-<link href="/assets/css/highlight.css" rel="stylesheet" />
-```
+
 Refresh the page. The highlighting is working now.
 ![image](/assets/images/jekyll/8112/javahighlight.png)  
 

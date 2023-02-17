@@ -229,6 +229,21 @@ cd ~/github/it-journey/_quickstart
 Get-Content extensions.txt | ForEach-Object {code --install-extension $_}
 ```
 
+## Fork or clone Github Repository
+
+Now you can fork the repository from Github and start working on it.
+
+```powershell
+# Navigate to your home directory, create a github folder, and fork the github repo
+cd ~
+mkdir github
+cd github
+```
+
+```powershell
+gh repo fork bamr87/it-journey
+```
+
 ## Jekyll & ruby Setup
 
 [Detailed instructions](https://jekyllrb.com/docs/installation/windows/)
@@ -250,14 +265,15 @@ If this doesn't work, download the MSI file and install manually.
 
 exit the shell
 
-### Install Jekyll
+### Install Gems
 
-Once Ruby is installed, you can install Jekyll.
+Once Ruby is installed, you can install all the gems and its dependencies based on the Gemfile.
 First exit the terminal and open a new terminal to initialize the new PATH variable.
 
 ```powershell
-# Install Jekyll and Bundler
-gem install bundler jekyll
+# Navigate to your github repo and install gems and its dependencies
+cd ~/github/it-journey
+bundler install
 ```
 
 Restart your terminal
@@ -267,28 +283,6 @@ Restart your terminal
 ```powershell
 # Verify Jekyll is installed
 jekyll --version
-```
-
-## Fork Github Repository
-
-Now you can fork the repository from Github and start working on it.
-
-```powershell
-# Navigate to your home directory, create a github folder, and fork the github repo
-cd ~
-mkdir github
-cd github
-gh repo fork bamr87/it-journey
-```
-
-## Install Dependencies
-
-Once the repo is installed, you can install the dependencies for the Jekyll gem.
-
-```powershell
-# Navigate to your github repo and install dependancies
-cd ~/github/it-journey
-bundle install
 ```
 
 ## Build Jekyll site

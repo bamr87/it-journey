@@ -3,10 +3,7 @@
 -->
 
 <!-- Right sidebar container -->
-<div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
-  <a href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/_layouts/asd{{ filename }}.html">
-    <i class="fas fa-code"></i>
-  </a>
+
 <!-- Source Code Control Shortcuts - Page -->
     
   <div class="git-update vscode-update breadcrumbs-intro collapsed collapse">
@@ -25,11 +22,24 @@
   </div>
 
 <!-- On this page -->
-<strong class="d-block h6 my-2 pb-2 border-bottom">
-  <i class="fas fa-file-alt"></i>
-  On this page
-</strong>
+<div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5">
 
-<nav class="" id="TableOfContents" data-toggle="toc">
-  {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
-</nav>
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    On this page
+    <svg class="bi d-md-none ms-2" aria-hidden="true"><use xlink:href="#chevron-expand"></use></svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">
+    <i class="fas fa-file-alt"></i>
+    On this page
+  </strong>
+  
+  <div class="bd-toc-collapse collapse" id="tocContents" style="">
+
+    <nav class="" id="TableOfContents">
+      {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
+    </nav>
+  </div>
+    
+</div>
+  
