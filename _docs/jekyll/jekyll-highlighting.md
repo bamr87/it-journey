@@ -7,7 +7,7 @@ date: 2019-06-18
 tags:
   - Highlighting
   - highlight.js
-lastmod: 2022-06-04T17:35:42.088Z
+lastmod: 2023-01-02T18:49:34.893Z
 ---
 
 > Highlighting with highlight.js.
@@ -29,10 +29,7 @@ To enable the highlighting, you need to edit `_config.yml` file which is located
 markdown: kramdown
 highlighter: rouge
 ```
-Then, create css file, for example, [highlight.scss]({% link /assets/css/highlight.scss %}). And include this css file to the page.
-```html
-<link href="/assets/css/highlight.css" rel="stylesheet" />
-```
+
 Refresh the page. The highlighting is working now.
 ![image](/assets/images/jekyll/8123/javahighlight.png)  
 

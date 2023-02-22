@@ -3,51 +3,36 @@
 -->
 
 <aside class="bd-sidebar">
-  <!-- Source Code Control Shortcuts - navigation -->
-  {% if page.sidebar.nav %}
-    <div class="git-update vscode-update breadcrumbs-intro collapsed collapse">
-      <a href="{{site.github.repository_url}}/blob/master/{{site.nav-file}}">
-        <i class="fab fa-github-square"></i>
-      </a>
-      <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/{{ site.nav-file }}">
-        <i class="fab fa-windows"></i>
-      </a>
-      <a href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo }}/{{ site.nav-file }}">
-        <i class="fab fa-apple"></i>
-      </a>
-    </div>  
-  <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
+  <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">Browse docs</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
+    </div>
+    
+    <!-- Left Sidebar Nav List  -->
+    <div class="offcanvas-body">
+      <nav class="bd-links w-100" id="bd-docs-nav">
 
-
-<!-- Left Sidebar Nav List  -->
-  <div class="bd-sidebar flex-shrink-0 p-3" >
-    <nav class="nav__list collapse bd-links" id="bd-docs-nav">
-      <!-- Nav Toggle button in mobile view -->
-      <input id="ac-toc" name="accordion-toc" type="checkbox" />
-      <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
-      <!-- Include nav_list.html -->
-      {% include nav_list.html nav=page.sidebar.nav %}
-    </nav>
+        <!-- Source Code Control Shortcuts - navigation -->
+        {% if page.sidebar.nav %}
+        <div class="git-update vscode-update breadcrumbs-intro collapsed collapse">
+          <a href="{{site.github.repository_url}}/blob/master/{{site.nav-file}}">
+            <i class="fab fa-github-square"></i>
+          </a>
+          <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/{{ site.nav-file }}">
+            <i class="fab fa-windows"></i>
+          </a>
+          <a href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo }}/{{ site.nav-file }}">
+            <i class="fab fa-apple"></i>
+          </a>
+        </div>  
+        
+        <!-- Include nav_list.html -->
+        {% include nav_list.html nav=page.sidebar.nav %}
+        {% endif %}
+      </nav>
+    </div>      
   </div>
-{% endif %}
 
-<!-- Quick index of pages in the collection -->
-{% if site.collections.pages %}
-<ul>
-  <p>Quick Index</p>
-  {% for note in site.collections.pages %}
-    {% if note.collection == page.collection %}
-      <li class="active mb-1 list-unstyled"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
-{% endif %}
-
-<!-- Post Categories -->
-{% if page.sidebar == "searchCats" %}
-<div id="categories">
-</div>
-{% endif %}
-
-</nav>
 </aside>
+  

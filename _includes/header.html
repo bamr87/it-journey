@@ -4,33 +4,43 @@
  -->
 
 <header class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top bottom-shadow" role="banner">
-    <div class="container-xxl">
-
-        <!-- include branding.html -->
-            {% include branding.html %}
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
         
-            <!-- Dark Mode Switch -->
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkMode">
-                <label class="form-check-label" for="darkMode">
-                </label>
-                <i class="fa-regular fa-circle-half-stroke"></i>
-            </div>
+        <!-- Collapse Button in mobile view -->
+        <div class="bd-navbar-toggle flex-grow-1">
 
-        <!-- Settings Collapse button -->
-            <div class="align-center">
-                <i type="button" 
-                    data-toggle="collapse" 
-                    data-target=".breadcrumbs-intro" 
-                    aria-expanded="false" 
-                    aria-controls="" 
-                    class="fas fa-cog">
-                </i>
-            </div>
-            
+            <button class="navbar-toggler p-2" 
+                type="button" 
+                data-bs-toggle="offcanvas" 
+                data-bs-target="#bdSidebar" 
+                aria-controls="bdSidebar" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+        <!-- include branding.html -->
+        {% include branding.html %}
+        
+        <!-- Dark Mode Switch -->
+        <div class="form-switch">
+            <input class="form-check-input" type="checkbox" id="darkMode">
+        </div>
+        <i class="fas fa-moon"></i>
 
         <!-- include navbar.html -->
-            {% include navbar.html %}
+        {% include navbar.html %}
 
-    </div>
+        <!-- Settings Collapse button -->
+        <div class="">
+
+            <i type="button" 
+            data-toggle="collapse" 
+            data-target=".breadcrumbs-intro" 
+            aria-expanded="false" 
+            aria-controls="" 
+            class="fas fa-cog">
+            </i>
+        </div>
+    </nav>
 </header>

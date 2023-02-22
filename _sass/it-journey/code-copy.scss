@@ -1,88 +1,90 @@
-// // https://remarkablemark.org/blog/2021/06/01/add-copy-code-to-clipboard-button-to-jeyll-site/
+// https://remarkablemark.org/blog/2021/06/01/add-copy-code-to-clipboard-button-to-jeyll-site/
 
-// .gist {
-//     td {
-//       border: inherit; // fix Skeleton override
-//     }
-//   }
+.gist {
+    td {
+      border: inherit; // fix Skeleton override
+    }
+  }
   
-//   //Codeblock 
+  //Codeblock 
   
-//   pre.highlight {
-//     padding: 8px 12px;
-//     position: relative;
   
-//     // override skeleton styles
-//     > code {
-//       border: 0;
-//       overflow-x: auto;
-//       padding-right: 0;
-//       padding-left: 0;
-//     }
+  pre.highlight {
+    padding: 8px 12px;
+    position: relative;
   
-//     &.highlight {
-//       border-left: 15px solid #35383c;
-//       color: #c1c2c3;
-//       overflow: auto;
-//       white-space: pre;
-//       word-wrap: normal;
+    // override skeleton styles
+    > code {
+      border: 0;
+      overflow-x: auto;
+      padding-right: 0;
+      padding-left: 1rem;
+    }
   
-//       &,
-//       code {
-//         background-color: #222;
-//         font-size: 18px;
-//       }
-//     }
+    &.highlight {
+      border-left: 15px solid #35383c;
+      color: #c1c2c3;
+      overflow: auto;
+      white-space: pre;
+      word-wrap: normal;
   
-//     // copy code to clipboard
-//     .copy {
-//       color: #FFFFFF;
-//       position: absolute;
-//       right: 1.2rem;
-//       top: 1.2rem;
-//       opacity: 0;
+      &,
+      code {
+        background-color: #222;
+        // font-size: 18px;
+      }
+    }
   
-//       &:active,
-//       &:focus,
-//       &:hover {
-//         background: rgba(0, 0, 0, 0.7);
-//         opacity: 1;
-//       }
-//     }
+    // copy code to clipboard
+    .copy {
+      color: #FFFFFF;
+      position: absolute;
+      right: 1.2rem;
+      top: 1.2rem;
+      opacity: 0;
   
-//     &:active .copy,
-//     &:focus .copy,
-//     &:hover .copy {
-//       background: rgba(0, 0, 0, 0.7);
-//       opacity: 1;
-//     }
-//   }
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+      }
+    }
+  
+    &:active .copy,
+    &:focus .copy,
+    &:hover .copy {
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 1;
+    }
+  }
 
-//   pre.highlight > button {
-//     opacity: 0;
-//   }
+  pre.highlight > button {
+    opacity: 0;
+  }
   
-//   pre.highlight:hover > button {
-//     opacity: 1;
-//   }
+  pre.highlight:hover > button {
+    opacity: 1;
+  }
   
-//   pre.highlight > button:active,
-//   pre.highlight > button:focus {
-//     opacity: 1;
-//   }
+  pre.highlight > button:active,
+  pre.highlight > button:focus {
+    opacity: 1;
+  }
 
-// .button, button {
-//   display: inline-block;
-//   // height: 30px; // override skeleton
-//   padding: 0 20px;
-//   border-radius: 4px;
-//   border: 1px solid #bbb;
-//   font-size: 11px;
-//   cursor: pointer;
-//   };
+.button, button {
+  display: inline-block;
+  // height: 30px; // override skeleton
+  padding: 0 20px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  font-size: 11px;
+  cursor: pointer;
+  };
 
-// pre>code {
-//   display: block;
-//   padding: 1rem 1.5rem;
-//   white-space: pre;
-// }
+pre>code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+

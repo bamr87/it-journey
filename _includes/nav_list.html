@@ -11,7 +11,7 @@
 
 
   
-  <ul class="nav__items list-unstyled mb-0 py-3 pt-md-1">
+  <ul class="list-unstyled fw-normal pb-2 small">
   <!-- Accordion Nav List -->
   {% for nav in navigation %}
       <!-- Nav Title Only Link -->
@@ -25,13 +25,20 @@
 
       {% if nav.sublinks %}
         <li class="mb-1">
-          <button class="btn d-inline-flex align-items-center rounded collapsed" 
+          <strong class="d-flex w-100 align-items-center fw-semibold collapsed"
+          data-bs-toggle="collapse" 
+          data-bs-target="#{{ nav.title }}-collapse" 
+          aria-expanded="true" 
+          aria-current="true">
+            {{ nav.title }}
+          </strong>
+          <!-- <button class="btn d-inline-flex align-items-center rounded collapsed" 
                   data-bs-toggle="collapse" 
                   data-bs-target="#{{ nav.title }}-collapse" 
                   aria-expanded="true" 
                   aria-current="true">
             {{ nav.title }}
-          </button>
+          </button> -->
           <div class="collapse show" id="{{ nav.title }}-collapse" style="">
             <ul class="list-unstyled fw-normal pb-1 small">
               {% for child in nav.sublinks %}

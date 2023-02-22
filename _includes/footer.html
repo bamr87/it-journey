@@ -3,11 +3,11 @@
   Social Links and Branding
 -->
 
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+<footer class="container-xxl d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <div class="col-sm d-flex align-items-center">
     
     <!-- Branding and Powered By: -->
-    <span class="text-muted">
+    <span class="">
       &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by 
       {% for power in site.powered_by %}
       <a href="{{ power.url }}" rel="nofollow">{{ power.name }} -</a>

@@ -21,7 +21,7 @@
     {% include header.html %}
   
   <!-- Main body including sidebars -->
-  <div id= "main" class ="container-xxl my-md-4 bd-layout sidebar-item">
+  <div class ="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
 
     <!-- Left Sidebar for Outline -->
         <!-- _includes/sidebar-left.html  -->
@@ -47,21 +47,22 @@
 
       </div>
 
+      <!-- Right Sidebar - Page Contents and Shortcuts-->
+      <!-- _includes/sidebar-right.html  -->
+      {% include sidebar-right.html %}
+
       <!-- Main Content -->
       <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
         {{ content }}
       </div>
 
-    <!-- Right Sidebar - Page Contents and Shortcuts-->
-          <!-- _includes/sidebar-right.html  -->
-          {% include sidebar-right.html %}
     </main>
   </div>
 
 <!-- _include/footer.html -->
-<div class="container-xxl">
+
   {%- include footer.html -%}
-</div>
+
 
 
 <!-- include/halfmoon.html -->

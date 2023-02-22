@@ -58,4 +58,5 @@ gem "webrick", "~> 1.7"
 
 gem "algoliasearch"
 # gem "html-proofer"
-# gem 'bootstrap'
+
+# gem 'bootstrap', '~> 5.2.2'
