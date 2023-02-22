@@ -8,6 +8,7 @@
   
   //Codeblock 
   
+  
   pre.highlight {
     padding: 8px 12px;
     position: relative;
@@ -17,7 +18,7 @@
       border: 0;
       overflow-x: auto;
       padding-right: 0;
-      padding-left: 0;
+      padding-left: 1rem;
     }
   
     &.highlight {
@@ -30,7 +31,7 @@
       &,
       code {
         background-color: #222;
-        font-size: 18px;
+        // font-size: 18px;
       }
     }
   
@@ -86,3 +87,4 @@ pre>code {
   padding: 1rem 1.5rem;
   white-space: pre;
 }
+
