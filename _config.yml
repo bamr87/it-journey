@@ -155,24 +155,9 @@ kramdown: # https://kramdown.gettalong.org/options.html
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
 collections:
-  docs:
+  pages:
     output: true
-    permalink: /:collection/:name
-  notes:
-    output: true
-    permalink: /:collection/:name
-  quickstart:
-    output: true
-    permalink: /:collection/:name
-  about:
-    output: true
-    permalink: /:collection/:name
-  hobbies:
-    output: true
-    permalink: /:collection/:name
-  quest:
-    output: true
-    permalink: /:collection/:name
+    permalink: /:path
 
 permalink: pretty
 
@@ -200,10 +185,10 @@ defaults:
         nav: main
     permalink: pretty
 
-  # _docs
+  # _pages
   - 
     scope:
-      path: _docs/jekyll
+      path: _pages/docs
     values:
       layout: default
       show_date: true
@@ -216,7 +201,8 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: docs
-    permalink: /:collection/:categories/
+    permalink: /:path/:name/
+
   # _posts
   - 
     scope:
@@ -234,29 +220,10 @@ defaults:
       sidebar:
         nav: main
 
-  # quests
+  # _pages/quests
   - 
     scope:
-      path: "_quest"
-      type: quest
-    values:
-      layout: default
-      show_date: true
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      toc: true
-      toc_sticky: true
-      sidebar:
-        nav: main
-      permalink: /:categories/:title
-
-  # _posts/quests
-  - 
-    scope:
-      path: _posts/quests
+      path: _pages/quests
     values:
       layout: default
       show_date: true
@@ -273,7 +240,7 @@ defaults:
   # _notes
   - 
     scope:
-      path: "_notes"
+      path: "_pages/notes"
       type: notes
     values:
       layout: default
@@ -283,48 +250,6 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: notes
-  # _quickstart
-  - 
-    scope:
-      path: "_quickstart"
-      type: quickstart
-    values:
-      layout: default
-      share: true
-      toc: true
-      author_profile: false
-      toc_sticky: true
-      sidebar:
-        nav: quickstart
-      permalink: /:collection/:categories/:slug/
-  # _about
-  - 
-    scope:
-      path: "_about"
-      type: about
-    values:
-      layout: default
-      share: true
-      toc: true
-      author_profile: false
-      toc_sticky: true
-      sidebar:
-        nav: about
-      permalink: /:categories/:title
-  # _hobbies
-  - 
-    scope:
-      path: "_hobbies"
-      type: hobbies
-    values:
-      layout: default
-      share: true
-      toc: true
-      author_profile: false
-      toc_sticky: true
-      sidebar:
-        nav: hobbies
-      permalink: /:categories/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
