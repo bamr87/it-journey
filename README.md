@@ -9,6 +9,13 @@ From zero to hero collection of docs, tools, scripts, and information to support
 
 ## Sources
 
+## Pre reqs
+
+* ruby 2.7.4
+* jekyll 3.8
+* git
+* gh cli
+
 [JTD](https://just-the-docs.github.io/just-the-docs/)
 
 [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)

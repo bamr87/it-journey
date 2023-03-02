@@ -77,6 +77,18 @@ Login to gh cli using your github credentials
 gh auth login
 ```
 
+Find your User ID in the [github emails settings](https://github.com/settings/emails)
+more info [here ](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)
+
+```bash
+echo 'What is your Github ID?' 
+read GIT_ID
+echo 'What is your Github User Name?'
+read GIT_USER_NAME
+git config --global user.name "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
+git config --global user.email "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
+```
+
 ### Install Software Packages (optional)
 
 Detailed instructions for installing software packages can be found in the [Brewfile](/quickstart/homebrew/) section.

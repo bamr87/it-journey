@@ -13,7 +13,7 @@ script:
   - ./script/cibuild
   # - ./setup
   # - bundle exec rake test
-  - bundle exec jekyll algolia
+  # - bundle exec jekyll algolia
 # Ruby versions. first one for github-pages, second for next major release
 rvm:
  - 2.7.4
