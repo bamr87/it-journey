@@ -1,0 +1,77 @@
+﻿Folder PATH listing
+Volume serial number is F40D-D235
+C:.
+├───.frontmatter
+│   ├───content
+│   └───templates
+├───.github
+│   ├───ISSUE_TEMPLATE
+│   └───workflows
+├───.vscode
+├───assets
+│   ├───css
+│   ├───images
+│   │   └───jekyll
+│   │       ├───8102
+│   │       ├───8103
+│   │       ├───8104
+│   │       ├───8105
+│   │       ├───8111
+│   │       ├───8112
+│   │       ├───8113
+│   │       ├───8117
+│   │       ├───8118
+│   │       ├───8122
+│   │       ├───8123
+│   │       ├───8126
+│   │       ├───8131
+│   │       ├───8132
+│   │       ├───8133
+│   │       ├───8141
+│   │       ├───8142
+│   │       └───8143
+│   ├───js
+│   └───svg
+├───script
+├───_data
+├───_includes
+├───_layouts
+├───_pages
+│   ├───about
+│   ├───docs
+│   │   └───jekyll
+│   ├───hobbies
+│   ├───notes
+│   ├───quest
+│   │   └───init_world
+│   │       ├───hello-cloud
+│   │       │   └───gcp
+│   │       ├───hello-linux
+│   │       ├───hello-mac
+│   │       ├───hello-win
+│   │       └───tools
+│   └───quickstart
+│       ├───homebrew
+│       │   └───bundles
+│       │       ├───addons
+│       │       ├───admin
+│       │       ├───core
+│       │       ├───dev
+│       │       ├───graphic-design
+│       │       ├───music
+│       │       └───web
+│       ├───winget
+│       └───_quest
+│           └───init_world
+│               └───hello-mac
+├───_posts
+│   ├───cloud
+│   ├───quests
+│   │   ├───lvl_0000
+│   │   └───lvl_0001
+│   │       └───language
+│   ├───recipies
+│   ├───reflections
+│   └───reports
+└───_sass
+    └───it-journey

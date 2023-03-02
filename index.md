@@ -86,7 +86,7 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 {: .collapse .collapsed .breadcrumbs-intro }
 
 <div class="collapse collapsed breadcrumbs-intro">
-{% capture styles %}{% include_relative _notes/bootstrap-examples.md %}{% endcapture %}{{ styles }}
+{% capture styles %}{% include_relative _pages/notes/bootstrap-examples.md %}{% endcapture %}{{ styles }}
 </div>
 
 {: .collapse .collapsed .breadcrumbs-intro }

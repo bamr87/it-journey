@@ -38,13 +38,15 @@
           <div id="search-searchbar"></div>
           <div id="search-hits"></div>
         </div> 
-
-        <!-- _include/breadcrumbs.html -->
-        {% include breadcrumbs.html %}
-
-        <!-- Layout location -->
-        {% include layout-shortcut.html %}
-
+        
+        <div class="container flex-grow-1">
+          <!-- Layout location -->
+          {% include layout-shortcut.html %}
+          
+          <!-- _include/breadcrumbs.html -->
+          {% include breadcrumbs.html %}
+        </div>        
+          
       </div>
 
       <!-- Right Sidebar - Page Contents and Shortcuts-->
@@ -63,11 +65,8 @@
 
   {%- include footer.html -%}
 
-
-
 <!-- include/halfmoon.html -->
 {% include halfmoon.html %}
-
 
   <!-- Javascript CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

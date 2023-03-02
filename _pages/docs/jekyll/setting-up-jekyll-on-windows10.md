@@ -148,7 +148,7 @@ Then, restart your computer when prompted.
 ![image](/assets/images/jekyll/8104/ubuntuapp.png){:width="800px"}
 
 ### 5.3 Installing Jekyll on Ubuntu
-Follow the steps mentioned in [Setting up Jekyll on Ubuntu and macOS]({% link _docs/jekyll/setting-up-jekyll-on-ubuntu-and-macos.md %}) to setup Jekyll on Ubuntu sub system.
+Follow the steps mentioned in [Setting up Jekyll on Ubuntu and macOS]({% link _pages/docs/jekyll/setting-up-jekyll-on-ubuntu-and-macos.md %}) to setup Jekyll on Ubuntu sub system.
 
 Then navigate to the root directory of jekyll site, use bundle command to launch it.
 ```sh
