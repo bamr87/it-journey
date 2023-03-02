@@ -52,6 +52,8 @@ description              : &description >- # this means to ignore newlines until
 
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
+local_repo               : *github_repository
+repo_map                 : "_pages/about/"
 
 ## Personalization -------------------------------------------------------------
 

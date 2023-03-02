@@ -1,7 +1,8 @@
 ﻿Folder PATH listing
-Volume serial number is D2F5-6DB3
+Volume serial number is F40D-D235
 C:.
 ├───.frontmatter
+│   ├───content
 │   └───templates
 ├───.github
 │   ├───ISSUE_TEMPLATE
@@ -10,30 +11,59 @@ C:.
 ├───assets
 │   ├───css
 │   ├───images
-│   └───js
-├───homebrew
-│   └───bundles
-│       ├───addons
-│       ├───admin
-│       ├───core
-│       ├───dev
-│       ├───graphic-design
-│       ├───music
-│       └───web
+│   │   └───jekyll
+│   │       ├───8102
+│   │       ├───8103
+│   │       ├───8104
+│   │       ├───8105
+│   │       ├───8111
+│   │       ├───8112
+│   │       ├───8113
+│   │       ├───8117
+│   │       ├───8118
+│   │       ├───8122
+│   │       ├───8123
+│   │       ├───8126
+│   │       ├───8131
+│   │       ├───8132
+│   │       ├───8133
+│   │       ├───8141
+│   │       ├───8142
+│   │       └───8143
+│   ├───js
+│   └───svg
 ├───script
-├───winget
-├───_about
 ├───_data
-├───_docs
-│   ├───it-journey-docs
-│   │   ├───docs
-│   │   └───notes
-│   │       └───init-world
-│   └───jekyll
-├───_hobbies
 ├───_includes
 ├───_layouts
-├───_notes
+├───_pages
+│   ├───about
+│   ├───docs
+│   │   └───jekyll
+│   ├───hobbies
+│   ├───notes
+│   ├───quest
+│   │   └───init_world
+│   │       ├───hello-cloud
+│   │       │   └───gcp
+│   │       ├───hello-linux
+│   │       ├───hello-mac
+│   │       ├───hello-win
+│   │       └───tools
+│   └───quickstart
+│       ├───homebrew
+│       │   └───bundles
+│       │       ├───addons
+│       │       ├───admin
+│       │       ├───core
+│       │       ├───dev
+│       │       ├───graphic-design
+│       │       ├───music
+│       │       └───web
+│       ├───winget
+│       └───_quest
+│           └───init_world
+│               └───hello-mac
 ├───_posts
 │   ├───cloud
 │   ├───quests
@@ -43,25 +73,5 @@ C:.
 │   ├───recipies
 │   ├───reflections
 │   └───reports
-├───_quickstart
-│   └───init_world
-│       ├───hello-cloud
-│       │   └───gcp
-│       ├───hello-linux
-│       ├───hello-mac
-│       ├───hello-win
-│       └───tools
 └───_sass
     └───it-journey
-        ├───bootstrap
-        │   ├───forms
-        │   ├───helpers
-        │   ├───mixins
-        │   ├───utilities
-        │   └───vendor
-        └───breakpoint
-            └───parsers
-                ├───double
-                ├───resolution
-                ├───single
-                └───triple
