@@ -1,0 +1,323 @@
+# Welcome to Jekyll!
+# Configuration file for Jekyll.
+# Full docs at: http://jekyllrb.com/docs/configuration/
+# -----------------------------------------------------------------------------
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# You can find config options at: https://jekyllrb.com/docs/configuration/options/
+#
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+
+# Site Settings ---------------------------------------------------------------
+
+## Site Information -----------------------------------------------------------
+
+title                    : IT-Journey
+masthead_title           : # override the default title
+subtitle                 : "zer0 to her0"
+subtitle_url             : "localhost"
+title_separator          : "|" # Appears in the web browser tab name
+site_domain              : &site_domain "github.io"
+baseurl                  : "" # the subpath of your site, e.g. /blog
+github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+url                      : *github_base_url
+port                     : 4002 # Jekyll Serve Dev port
+dg_port                  : 4001 # Doppelganger site
+
+### Owner Information ---------------------------------------------------------
+
+name                     : &name "Amr"
+email                    : &email "amr.abdel@gmail.com"
+github_user              : &github_user "bamr87"
+description              : &description >- # this means to ignore newlines until "url:"
+  Scrolls and spells of IT magic.
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+repository_name          : &github_repository "it-journey"
+repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
+local_repo               : *github_repository
+repo_map                 : "_pages/about/"
+
+## Personalization -------------------------------------------------------------
+
+locale                   : "en-US"
+home_dir_pc              : &home-win 'C:\Users\amr\'
+home_dir_mac             : &home-mac '/Users/amr/'
+local_git_pc             : [ *home-win, 'github' ]
+local_git_mac            : [ *home-mac, 'github' ]
+logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo_source              : &logo_source "https://www.it-journey.dev"
+
+teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+breadcrumbs              : true # true, false (default)
+words_per_minute         : 200
+
+## Identity #####################################################################
+
+author:
+  name                   : *name # *name is a YAML reference pointing to the &anchor earlier
+  avatar                 : "/assets/images/gravatar-small.png"
+  email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
+  gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
+  bio                    : "IT nerd trying to be an IT hero"
+  location               : "Denver, CO"
+  twitter_username       : "bamr87"
+  github_username        : *github_user
+
+
+fa_default: "fab"
+
+links:
+  - label: "BASH Consulting"
+    url: "https://bashconsultants.com"
+    icon: "fas fa-link"
+  - label: "Twitter"
+    icon: "fa-twitter-square"
+    url: "https://twitter.com/bamr87"
+  - label: "GitHub"
+    icon: "fa-github"
+    url: [ 'https://github.com/' , *github_user ]
+  - label: "Instagram"
+    icon: "fa-instagram"
+    url: "https://instagram.com/bamr42"
+
+## Build settings ##############################################################
+
+powered_by:
+  - name: "Ruby"
+    version: "2.7.4"
+    url: "https://www.ruby-lang.org/"
+  - name: "Jekyll"
+    version: "3.9.2"
+    url: "https://jekyllrb.com/"
+  - name: "Bootstrap"
+    version: "5.2.0"
+    url: "https://getbootstrap.com/"
+  - name: "Algolia"
+    version: 
+    url: "https://algolia.com/"
+  - name: "JQuery"
+    url: "https://jquery.com/"
+
+### Plugins 
+# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
+# http://jekyllrb.com/docs/plugins/
+
+# All plugins are enabled by default for GitHub Pages. https://pages.github.com/versions/
+
+plugins:
+  # - github-pages
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-assets
+  - jekyll-algolia
+  # - jekyll-spaceship
+  # - jemoji # Doesn't work for some reason
+  # - jekyll-postcss
+  # - jekyll-redirect-from
+  
+## Conversion
+
+markdown: kramdown
+highlighter: rouge
+# lsi: false
+# excerpt_separator: "\n\n"
+# incremental: false
+
+# Markdown Processing https://jekyllrb.com/docs/configuration/markdown/
+kramdown: # https://kramdown.gettalong.org/options.html
+  input: GFM
+  header_offset: 0
+  # hard_wrap: false
+  # auto_ids: true
+  # footnote_nr: 1
+  # entity_output: as_char
+  toc_levels: 1..6
+  # smart_quotes: lsquo,rsquo,ldquo,rdquo
+  # enable_coderay: false
+
+# Collections: https://jekyllrb.com/docs/collections/
+  # Permalinks: https://jekyllrb.com/docs/permalinks/
+
+collections:
+  pages:
+    output: true
+    permalink: /:path
+
+permalink: pretty
+
+
+# Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
+
+nav-file: '_data/navigation.yml'
+
+defaults:
+  # ALL
+  - 
+    scope:
+      path: ""
+    values:
+      layout: default
+      show_date: true
+      author_profile: false
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: main
+    permalink: pretty
+
+  # _pages
+  - 
+    scope:
+      path: _pages/docs
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: docs
+    permalink: /:path/:name/
+
+  # _posts
+  - 
+    scope:
+      path: _posts
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: main
+
+  # _pages/quests
+  - 
+    scope:
+      path: _pages/quests
+    values:
+      layout: default
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: main
+      permalink: /:categories/:slug
+  # _notes
+  - 
+    scope:
+      path: "_pages/notes"
+      type: notes
+    values:
+      layout: default
+      share: true
+      toc: true
+      author_profile: false
+      toc_sticky: true
+      sidebar:
+        nav: notes
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+#   - .sass-cache/
+  - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+  - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+  - vendor
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+  
+
+
+
+
+algolia:
+  application_id: '99CKJ6KQ3Z'
+  search_only_api_key: '03a0c530bc2ff9acfde23485092602f3'
+  index_name: dev_lifehacker
+
+exclude: [vendor]
+
+atom_feed:
+path                   : # blank (default) uses feed.xml
+
+
+## Style Settings -------------------------------------------------------------
+
+# theme                  : "zer0-mistakes-jekyll"
+# remote_theme           : "bamr87/zer0-mistakes"
+theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
+# remote_style           : "bamr87/zer0-mistakes"
+
+## Font Settings ---------------------------------------------------------------
+# font_family             : "Roboto"
+# font_size               : "16px"
+# font_weight             : "400"
+# font_style              : "normal"
+# font_size_mobile        : "16px"
+# font_weight_mobile      : "400"
+# font_style_mobile       : "normal"
+# font_size_tablet        : "16px"
+# font_weight_tablet      : "400"
+# font_style_tablet       : "normal"
+# font_size_desktop       : "16px"
+# font_weight_desktop     : "400"
+# font_style_desktop      : "normal"
+# font_size_large_desktop : "16px"
+# font_weight_large_desktop : "400"
+# font_style_large_desktop : "normal"
+
+## Color Settings --------------------------------------------------------------
