@@ -4,9 +4,12 @@
 
 <!-- Right sidebar container -->
 
-<!-- Source Code Control Shortcuts - Page -->
+<!-- On this page -->
+  <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5">
+  
+  <!-- Source Code Control Shortcuts - Page -->
     
-  <div class="git-update vscode-update breadcrumbs-intro collapsed collapse">
+  <div class="flex-grow-1 git-update vscode-update breadcrumbs-intro collapsed collapse">
     <a href="https://github.com/{{site.repository}}/blob/master/{{page.path}}">
       <i class="fab fa-github-square"></i>
     </a>
@@ -16,14 +19,13 @@
     <a href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/{{ page.path }}">
       <i class="fab fa-apple"></i>
     </a>
-    <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;
-      <i class="fa-solid fa-up-long"></i>
+    <a href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/_config.yml">
+      <i class="fas fa-cog"></i>
     </a>
+
   </div>
 
-<!-- On this page -->
-<div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5">
-
+  <!-- Table of contents -->
   <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
     On this page
     <svg class="bi d-md-none ms-2" aria-hidden="true"><use xlink:href="#chevron-expand"></use></svg>
@@ -40,6 +42,11 @@
       {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
     </nav>
   </div>
-    
+  
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;
+    <i class="fa-solid fa-up-long"></i>
+  </a>
+  
 </div>
   

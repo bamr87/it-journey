@@ -12,7 +12,7 @@ Autogenerate Config File
 [config]()
 
 ```powershell
-# Regenerate Config Rile
+# Regenerate Config File
 
 cd ~/github/{{ site.local_repo }}
 cp {{ page.config-file }} {{ page.config-dir  }}/config-utf16.txt
