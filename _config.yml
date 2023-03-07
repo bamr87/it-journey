@@ -97,6 +97,9 @@ links:
   - label: "Instagram"
     icon: "fa-instagram"
     url: "https://instagram.com/bamr42"
+  - label: "MathJax"
+    icon: ""
+    url: "https://www.mathjax.org/"
 
 ## Build settings ##############################################################
 

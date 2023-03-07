@@ -6,24 +6,9 @@
 
 <!-- On this page -->
   <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5">
-  
-  <!-- Source Code Control Shortcuts - Page -->
-    
-  <div class="flex-grow-1 git-update vscode-update breadcrumbs-intro collapsed collapse">
-    <a href="https://github.com/{{site.repository}}/blob/master/{{page.path}}">
-      <i class="fab fa-github-square"></i>
-    </a>
-    <a href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/{{ page.path }}">
-      <i class="fab fa-windows"></i>
-    </a>
-    <a href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/{{ page.path }}">
-      <i class="fab fa-apple"></i>
-    </a>
-    <a href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/_config.yml">
-      <i class="fas fa-cog"></i>
-    </a>
 
-  </div>
+    <!-- Layout location -->
+    {% include dev-shortcuts.html %}
 
   <!-- Table of contents -->
   <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
