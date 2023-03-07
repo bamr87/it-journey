@@ -16,10 +16,18 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 
 <div id="particles-js"></div>
 
+## Powered BY
+{: .collapse .collapsed .breadcrumbs-intro }
+{% for power in site.powered_by %}
+<ul href="{{ power.url }}" rel="nofollow">{{ power.name }}</ul>
+{: .collapse .collapsed .breadcrumbs-intro }
+{% endfor %}
+
 ## Features
 {: .collapse .collapsed .breadcrumbs-intro }
 - [x] Github Pages compatibility
-- [ ] Bootstrap 5 CDN
+- [x] MathJax
+- [x] Bootstrap 5 CDN
 - [x] Algolia Search indexing
 - [x] Jekyll Site Generation
 - [x] Travic CI Build Automation

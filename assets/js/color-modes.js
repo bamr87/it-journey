@@ -1,42 +1,4 @@
-<div class="nav-item dropdown">
-  <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
-          id="bd-theme"
-          type="button"
-          aria-expanded="false"
-          data-bs-toggle="dropdown"
-          data-bs-display="static"
-          aria-label="Toggle theme (auto)">
-    <i class="bi my-1 theme-icon-active fas fa-moon"><use href="#circle-half"></use></i>
-    <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
-    <li>
-      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-        <svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
-        Light
-        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-      </button>
-    </li>
-    <li>
-      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-        <svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
-        Dark
-        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-      </button>
-    </li>
-    <li>
-      <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-        <svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
-        Auto
-        <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
-      </button>
-    </li>
-  </ul>
-</div>
-
-<script>
-
-  /*!
+/*!
  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
@@ -98,4 +60,3 @@
       })
   })
 })()
-</script>

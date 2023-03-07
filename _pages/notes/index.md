@@ -164,6 +164,23 @@ $$ \nabla_\boldsymbol{x} J(\boldsymbol{x}) $$
 ```
 $$ \nabla_\boldsymbol{x} J(\boldsymbol{x}) $$
 
+## MathJax
+
+```latex
+Golden Ratio
+1.6180339887
+\phi = \frac{1+\sqrt{5}}{2}
+```
+
+\begin{equation}
+\phi = \frac{1+\sqrt{5}}{2}
+\end{equation}
+
+$$ \phi = \frac{1+\sqrt{5}}{2} $$ is the golden ratio
+
+\begin{align}
+\phi = \frac{1+\sqrt{5}}{2}
+\end{align}
 
 ## Auto Name Code Snippet
 
