@@ -2,12 +2,18 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.pageFolders": [
     {
-      "title": "Docs",
-      "path": "[[workspace]]/_docs"
+      "title": "Journal",
+      "path": "[[workspace]]/_posts",
+      "originalPath": "[[workspace]]/_posts"
     },
     {
-      "title": "Journal",
-      "path": "[[workspace]]/_posts"
+      "title": "docs",
+      "path": "[[workspace]]/_pages/docs",
+      "originalPath": "[[workspace]]/_pages/docs"
+    },
+    {
+      "title": "notes",
+      "path": "[[workspace]]/_pages/notes"
     }
   ],
   "frontMatter.templates.enabled": true,
