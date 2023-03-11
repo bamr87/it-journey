@@ -1,5 +1,6 @@
 # .travis.yml
 # This file should be at the root of your project
+# To reload OSS Credits, go here: https://docs.travis-ci.com/user/billing-faq/#what-if-i-am-building-open-source
 # dist: xenial
 language: ruby
 cache: bundler # caching bundler gem packages will speed up build
