@@ -14,7 +14,10 @@ This is the main landing page and it is still a work in process.
 
 Nothing to see here. Yet... but try clicking on the gear icon (or particles) for a sneak peek.
 
-<div id="particles-js"></div>
+
+  <div>
+  <p id="particles-js">this is a paragraph</p>
+  </div>
 
 ## Powered BY
 {: .collapse .collapsed .dev-settings }
@@ -36,7 +39,7 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 - [x] JQuery Plugin
 - [x] Auto generated right side bar TOC
 - [x] Right side quick edit links to GitHub and VS Code
-- [x] Left side accordion Navigation (based on nav data file)
+- [x] Left sidebar site Navigation (based on nav data file)
 - [x] Code Copy button
 - [x] Back to top button in mobile view [w3schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 - [x] Category filter for posts
@@ -88,6 +91,7 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 - [ ] build account based system
 - [ ] simulate generic business operations
 - [ ] build backend todo interface checking
+- [ ] Build note to article function/workflow
 {: .collapse .collapsed .dev-settings .alert .alert-primary}
 
 ## Examples

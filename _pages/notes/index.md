@@ -3,7 +3,7 @@ title: Notes Index
 description: Notes Index
 layout: collection
 permalink: /notes/
-lastmod: 2022-07-24T04:35:01.549Z
+lastmod: 2023-03-11T20:53:36.032Z
 sidebar:
   nav: notes
   title: test
@@ -259,3 +259,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+
+# Icons with bootstrap
+
+https://icons.getbootstrap.com/#install
+
+<i class="bi bi-gem"></i>

@@ -5,7 +5,7 @@ layout: default
 description: null
 categories:
   - Posts
-lastmod: '2022-01-09T04:33:15.792Z'
+lastmod: 2023-03-11T17:44:11.633Z
 draft: true
 ---
 
@@ -29,3 +29,13 @@ https://tonyzhangnd.github.io/2018/06/Integrating-Jekyll-and-Travis-CI.html
 
 
 https://medium.com/@ajaykarwal/deploying-a-jekyll-website-using-travis-ci-7961d10fd8c6
+
+[installation](https://www.algolia.com/doc/guides/building-search-ui/installation/js/) 
+
+
+
+```html
+<!-- Add to header -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.15.0/dist/algoliasearch-lite.umd.js" integrity="sha256-tJskEBAaO8rEBc+kjX8V7iTCp3nRzOGEsDKS6ckFGOY=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.52.0/dist/instantsearch.production.min.js" integrity="sha256-kdjtbM+kzsFq5LhyAd6euD4RaWProlpgNWpDpu8HGKs=" crossorigin="anonymous"></script>
+```

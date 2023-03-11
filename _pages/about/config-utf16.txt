@@ -82,7 +82,7 @@ author:
   github_username        : *github_user
 
 
-fa_default: "fab"
+default_icon: "fab"
 
 links:
   - label: "BASH Consulting"

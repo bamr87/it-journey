@@ -5,13 +5,13 @@
 <!-- Right sidebar container -->
 
 <!-- On this page -->
-  <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5">
+  <div class="bd-toc">
 
     <!-- Layout location -->
     {% include dev-shortcuts.html %}
 
   <!-- Table of contents -->
-  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+  <button class="btn btn-link text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
     On this page
     <svg class="bi d-md-none ms-2" aria-hidden="true"><use xlink:href="#chevron-expand"></use></svg>
   </button>
@@ -30,8 +30,8 @@
   
   <!-- Back to Top -->
   
-  <a onclick="topfunction()" id="backToTopBtn" title="Go to top" href="#" class="btn btn-primary">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;
-  </a>
+  <button onclick="backToTopBtn()" id="backToTopBtn" title="Go to top" class="btn btn-primary">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;
+  </button>
   
 </div>
   

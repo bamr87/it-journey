@@ -7,22 +7,39 @@
   <div class="col-sm d-flex align-items-center">
     
     <!-- Branding and Powered By: -->
-    <span class="">
-      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by 
-      {% for power in site.powered_by %}
-      <a href="{{ power.url }}" rel="nofollow">{{ power.name }} -</a>
-      {% endfor %}
+    <!-- <span class="">
+      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by: 
     </span>
+      {% for power in site.powered_by %}
+      <li>
+        <a href="{{ power.url }}" rel="nofollow">{{ power.name }} -</a>
+      </li>
+        {% endfor %} -->
     
-    <ul class="nav col-sm justify-content-end list-unstyled d-flex">
-
-      <!-- Search for Site Identity links in config file -->
-      {% for link in site.links %}
-      <li class="ms-3">
-        <i class="{{ site.fa_default }} {{ link.icon | default: site.links.default }}" aria-hidden="true">
-        </i>
+        <ul class="nav col-sm justify-content-end list-unstyled d-flex">
+        
+        <!-- Search for Site Frameworks in config file -->
+      <span class="">
+        &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by: 
+      </span>
+      {% for power in site.powered_by %}
+      <li class="btn ">
+        <a href="{{ power.url }}" rel="">
+          <i class="{{ site.default_icon }} {{ power.icon | default: site.powered_by.default }}" aria-hidden="true"></i>
         <!-- display name if there's enough space, else icon only -->
-        <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
+          <span class="d-none d-md-inline"> 
+            {{ power.name }}
+          </span>
+        </a>
+        </li>
+        {% endfor %}
+        
+      <!-- Search for Site Affiliation links in config file -->
+      {% for link in site.links %}
+      <li class="btn ">
+        <a href="{{ link.url }}" rel="">
+          <i class="{{ site.default_icon }} {{ link.icon | default: site.links.default }}" aria-hidden="true"></i>
+        <!-- display name if there's enough space, else icon only -->
           <span class="d-none d-md-inline"> 
             {{ link.label }}
           </span>
@@ -31,10 +48,10 @@
       {% endfor %}
       
       <!-- RSS Feed -->
-      <li class="ms-3">
+      <li class="btn">
         <a href="{{ '/feed.xml' | relative_url }}">
-          <i class="fas fa-rss-square" aria-hidden="true">
-          </i>
+          <i class="{{ site.default_icon }} bi-rss" aria-hidden="true"></i>
+          <!-- https://icons.getbootstrap.com/icons/rss/ -->
           <span class="d-none d-md-inline">
             {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
           </span>

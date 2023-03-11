@@ -1,5 +1,5 @@
 <!-- https://www.algolia.com/doc/onboarding/ -->
-
+<!-- https://community.algolia.com/jekyll-algolia/blog.html -->
 
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
@@ -10,12 +10,7 @@
 const search = instantsearch({
   appId: '{{ site.algolia.application_id }}',
   apiKey: '{{ site.algolia.search_only_api_key }}',
-  indexName: '{{ site.algolia.index_name }}',
-  searchParameters: {
-    hitsPerPage: 3,
-    attributesToSnippet: ["content:14"],
-    snippetEllipsisText: " [...]"
-  }
+  indexName: '{{ site.algolia.index_name }}'
 });
 
 const hitTemplate = function(hit) {
@@ -52,30 +47,15 @@ search.addWidget(
   instantsearch.widgets.searchBox({
     container: '#search-searchbar',
     placeholder: 'Search into posts...',
-    autofocus: false,
     poweredBy: true // This is required if you're on the free Community plan
   })
 );
 
 search.addWidget(
   instantsearch.widgets.hits({
-    container: "#search-hits",
+    container: '#search-hits',
     templates: {
-      empty: "try again.",
-      item(hit) {
-        return hitTemplate(hit);
-      }
-    }
-  })
-);
-
-search.addWidget(
-  instantsearch.widgets.refinementList({
-    container: "#categories",
-    attributeName: "categories",
-    autoHideContainer: false,
-    templates: {
-      header: "Categories"
+      item: hitTemplate
     }
   })
 );

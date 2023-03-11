@@ -4,6 +4,7 @@
   
 <nav class="breadcrumbs">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <i class="bi bi-folder"></i>
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
     <a href="/">root</a>
     {% for crumb in crumbs offset: 1 %}

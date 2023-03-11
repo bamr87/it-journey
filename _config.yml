@@ -58,8 +58,8 @@ repo_map                 : "_pages/about/"
 ## Personalization -------------------------------------------------------------
 
 locale                   : "en-US"
-home_dir_pc              : &home-win 'C:\Users\amr\'
-home_dir_mac             : &home-mac '/Users/amr/'
+home_dir_pc              : &home-win 'C:\Users\amrab\'
+home_dir_mac             : &home-mac '/Users/amrab/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -82,42 +82,55 @@ author:
   github_username        : *github_user
 
 
-fa_default: "fab"
+## Affiliations ##############################################################
+
+default_icon: "bi" ## Bootstrap Icons https://icons.getbootstrap.com/
 
 links:
   - label: "BASH Consulting"
     url: "https://bashconsultants.com"
-    icon: "fas fa-link"
+    icon: "bi-link"
   - label: "Twitter"
-    icon: "fa-twitter-square"
+    icon: "bi-twitter"
     url: "https://twitter.com/bamr87"
   - label: "GitHub"
-    icon: "fa-github"
+    icon: "bi-github"
     url: [ 'https://github.com/' , *github_user ]
   - label: "Instagram"
-    icon: "fa-instagram"
+    icon: "bi-instagram"
     url: "https://instagram.com/bamr42"
-  - label: "MathJax"
-    icon: ""
-    url: "https://www.mathjax.org/"
 
-## Build settings ##############################################################
+## Build Framework ##############################################################
 
 powered_by:
   - name: "Ruby"
     version: "2.7.4"
     url: "https://www.ruby-lang.org/"
+    icon: "bi-gem"
   - name: "Jekyll"
     version: "3.9.2"
     url: "https://jekyllrb.com/"
+    icon: "bi-joystick"
   - name: "Bootstrap"
     version: "5.2.0"
     url: "https://getbootstrap.com/"
+    icon: "bi-bootstrap"
   - name: "Algolia"
     version: 
     url: "https://algolia.com/"
+    icon: "bi-search"
   - name: "JQuery"
     url: "https://jquery.com/"
+    icon: "bi-filetype-js"
+  - name: "MathJax"
+    version: "1.0"
+    url: "https://www.mathjax.org/"
+    icon: "bi-calculator"
+  - name: "GitHub Pages"
+    version: "228"
+    url: "https://pages.github.com/"
+    icon: "bi-github"
+
 
 ### Plugins 
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins

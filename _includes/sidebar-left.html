@@ -13,22 +13,26 @@
     <div class="offcanvas-body">
       <nav class="bd-links w-100" id="bd-docs-nav">
 
-        <!-- Source Code Control Shortcuts - navigation -->
-        {% if page.sidebar.nav %}
+        <!-- Source Code Control Shortcuts - Site and Nav -->
         <div class="git-update vscode-update dev-settings collapsed collapse">
-          <a href="{{site.github.repository_url}}/blob/master/{{site.nav-file}}">
-            <i class="fab fa-github-square"></i>
+          <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/{{site.nav-file}}">
+            <i class="{{site.default_icon}} {{site.default_icon}}-github"></i>
           </a>
-          <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/{{ site.nav-file }}">
-            <i class="fab fa-windows"></i>
+          <a class="btn bg-primary" href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/{{ site.nav-file }}">
+            <i class="{{site.default_icon}} {{site.default_icon}}-microsoft"></i>
           </a>
-          <a href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo }}/{{ site.nav-file }}">
-            <i class="fab fa-apple"></i>
+          <a class="btn bg-primary" href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo }}/{{ site.nav-file }}">
+            <i class="{{site.default_icon}} {{site.default_icon}}-apple"></i>
           </a>
-        </div>  
-        
+          <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/_config.yml">
+            <i class="bi bi-gear"></i>
+            <!-- https://icons.getbootstrap.com/icons/gear/ -->
+          </a>
+        </div>
+
         <!-- Include nav_list.html -->
-        {% include nav_list.html nav=page.sidebar.nav %}
+        {% if page.sidebar.nav %}
+          {% include nav_list.html nav=page.sidebar.nav %}
         {% endif %}
       </nav>
     </div>      
