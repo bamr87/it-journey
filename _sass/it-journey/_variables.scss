@@ -444,17 +444,6 @@ $container-max-widths: (
 
 $variable-prefix:             bs- !default;
 
-// scss-docs-start grid-breakpoints
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-) !default;
-// scss-docs-end grid-breakpoints
-
 // stylelint-disable scss/dollar-variable-default
 
 // Local docs variables

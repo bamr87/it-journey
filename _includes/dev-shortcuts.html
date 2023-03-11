@@ -1,0 +1,19 @@
+<!-- Source Code Control Shortcuts - Page -->
+
+<div class="flex-grow-1 git-update vscode-update dev-settings collapsed collapse">
+    <a href="https://github.com/{{site.repository}}/blob/master/{{page.path}}">
+        <i class="fab fa-github-square"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/{{ page.path }}">
+        <i class="fab fa-windows"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/{{ page.path }}">
+        <i class="fab fa-apple"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/_config.yml">
+        <i class="fas fa-cog"></i>
+    </a>
+    <a href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/_layouts/{{ page.layout }}.html">
+        <i class="fas fa-code"></i>
+    </a>
+</div>

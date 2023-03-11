@@ -3,7 +3,7 @@ title: Hello World
 lastmod: 2022-08-28T01:51:53.807Z
 ---
 
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 Branch | Build Status
 ---------|---------
 Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
@@ -16,10 +16,18 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 
 <div id="particles-js"></div>
 
+## Powered BY
+{: .collapse .collapsed .dev-settings }
+{% for power in site.powered_by %}
+<ul href="{{ power.url }}" rel="nofollow">{{ power.name }}</ul>
+{: .collapse .collapsed .dev-settings }
+{% endfor %}
+
 ## Features
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 - [x] Github Pages compatibility
-- [ ] Bootstrap 5 CDN
+- [x] MathJax
+- [x] Bootstrap 5 CDN
 - [x] Algolia Search indexing
 - [x] Jekyll Site Generation
 - [x] Travic CI Build Automation
@@ -34,18 +42,18 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 - [x] Category filter for posts
 - [x] Code syntax highlighting
 - [x] Programming Language cheat sheets
-{: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
+{: .alert .alert-secondary .collapse .collapsed .dev-settings }
 
 ### FIXME:
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 - [ ] left sidebar header color
 - [ ] Adjust menu toggle in Mobile view
 - [ ] fix presentation of search results
 - [ ] Need to fix quick index in side bar
-{: .alert .alert-secondary .collapse .collapsed .breadcrumbs-intro }
+{: .alert .alert-secondary .collapse .collapsed .dev-settings }
 
 ### TODO:
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 - [ ] add 3rd level nav bar drop down option
 - [ ] automate pull request to publish to gh-pages
 - [ ] Add create new post button
@@ -80,16 +88,16 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 - [ ] build account based system
 - [ ] simulate generic business operations
 - [ ] build backend todo interface checking
-{: .collapse .collapsed .breadcrumbs-intro .alert .alert-primary}
+{: .collapse .collapsed .dev-settings .alert .alert-primary}
 
 ## Examples
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 
-<div class="collapse collapsed breadcrumbs-intro">
+<div class="collapse collapsed dev-settings">
 {% capture styles %}{% include_relative _pages/notes/bootstrap-examples.md %}{% endcapture %}{{ styles }}
 </div>
 
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 ```mermaid!
 graph TD;
     A-->B;
@@ -98,7 +106,7 @@ graph TD;
     C-->D;
 ```
 
-{: .collapse .collapsed .breadcrumbs-intro }
+{: .collapse .collapsed .dev-settings }
 ```mermaid!
 pie title Pets adopted by volunteers
   "Dogs" : 386

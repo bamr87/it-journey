@@ -6,7 +6,7 @@
   _layouts/default.html
 -->
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js">
+<html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js" data-bs-theme="dark">
 
 <head>
   <!-- _includes/head.html  -->
@@ -31,7 +31,7 @@
     <main class="bd-main order-1">
 
       <!-- Intro Section and breadcrumbs -->
-      <div class="bd-intro ps-lg-4 breadcrumbs-intro collapsed collapse">
+      <div class="bd-intro ps-lg-4">
         
         <!-- Algolia Searchbar and hits -->
         <div class="container order-1">
@@ -40,9 +40,7 @@
         </div> 
         
         <div class="container flex-grow-1">
-          <!-- Layout location -->
-          {% include layout-shortcut.html %}
-          
+
           <!-- _include/breadcrumbs.html -->
           {% include breadcrumbs.html %}
         </div>        
@@ -64,9 +62,6 @@
 <!-- _include/footer.html -->
 
   {%- include footer.html -%}
-
-<!-- include/halfmoon.html -->
-{% include halfmoon.html %}
 
   <!-- Javascript CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

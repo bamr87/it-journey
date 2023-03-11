@@ -9,7 +9,7 @@ lastmod: '2021-12-27T17:46:18.040Z'
 draft: true
 ---
 
-
+[Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 # Jekyll Markdown Quick Reference
 
 [Kramdown quickref](https://kramdown.gettalong.org/quickref.html)
