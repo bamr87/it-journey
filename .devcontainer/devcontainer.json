@@ -1,0 +1,9 @@
+{
+  "name": "my-jekyll-devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/ruby:1": {
+    "version": "2.7"
+    }
+  }
+}
