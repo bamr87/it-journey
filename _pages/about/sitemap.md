@@ -1,6 +1,5 @@
 ---
 title: sitemap
-permalink: /map/
 layout: collection
 lastmod: 2022-05-09T14:35:41.594Z
 tree-dir: _pages/about

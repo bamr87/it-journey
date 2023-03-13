@@ -1,23 +1,16 @@
----
-layout: default
-title: Cheatsheet
-permalink: /styles/
-lastmod: 2022-08-28T01:53:01.033Z
----
+<!-- https://getbootstrap.com/docs/5.3/examples/ -->
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Cheatsheet · Bootstrap v5.3</title>
 
-  <head>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cheatsheet/">
 
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
-
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -73,17 +66,79 @@ lastmod: 2022-08-28T01:53:01.033Z
     </style>
 
     
-
+    <!-- Custom styles for this template -->
+    <link href="cheatsheet.css" rel="stylesheet">
   </head>
     
-<div class="bd-cheatsheet container-fluid">
+<!-- <header class="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
+  <div class="container-fluid d-flex align-items-center">
+    <h1 class="d-flex align-items-center fs-4 text-white mb-0">
+      <img src="../assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="me-3" alt="Bootstrap">
+      Cheatsheet
+    </h1>
+    <a href="../examples/cheatsheet-rtl/" class="ms-auto link-light" hreflang="ar">RTL cheatsheet</a>
+  </div>
+</header> -->
+<aside class="bd-aside bd-toc sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-2">
+  <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">On this page</h2>
+  <nav class="small" id="toc">
+    <ul class="list-unstyled">
+      <li class="my-2">
+        <a class="d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Contents</a>
+        <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">Typography</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">Images</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">Tables</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <a class="d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">Forms</a>
+        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#overview">Overview</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#disabled-forms">Disabled forms</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#sizing">Sizing</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#input-group">Input group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#floating-labels">Floating labels</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#validation">Validation</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <a class="d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">Components</a>
+        <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#accordion">Accordion</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#alerts">Alerts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#badge">Badge</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#breadcrumb">Breadcrumb</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#buttons">Buttons</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#button-group">Button group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#card">Card</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#carousel">Carousel</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#dropdowns">Dropdowns</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#list-group">List group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#modal">Modal</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#navs">Navs</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#navbar">Navbar</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#pagination">Pagination</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#popovers">Popovers</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#progress">Progress</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#scrollspy">Scrollspy</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#spinners">Spinners</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#toasts">Toasts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tooltips">Tooltips</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>
+<div class="bd-cheatsheet container-fluid bg-body">
   <section id="content">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Contents</h2>
 
     <article class="my-3" id="typography">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Typography</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/content/typography/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/content/typography/">Documentation</a>
       </div>
 
       <div>
@@ -170,19 +225,17 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="images">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Images</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/content/images/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/content/images/">Documentation</a>
       </div>
 
       <div>
         <div class="bd-example-snippet bd-code-snippet"><div class="bd-example">
         <svg class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
-
         </div></div>
 
 
         <div class="bd-example-snippet bd-code-snippet"><div class="bd-example">
         <svg class="bd-placeholder-img img-thumbnail" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false"><title>A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">200x200</text></svg>
-
         </div></div>
 
       </div>
@@ -190,7 +243,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="tables">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Tables</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/content/tables/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/content/tables/">Documentation</a>
       </div>
 
       <div>
@@ -358,14 +411,13 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="figures">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Figures</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/content/figures/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/content/figures/">Documentation</a>
       </div>
 
       <div>
         <div class="bd-example-snippet bd-code-snippet"><div class="bd-example">
         <figure class="figure">
           <svg class="bd-placeholder-img figure-img img-fluid rounded" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x300" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">400x300</text></svg>
-
           <figcaption class="figure-caption">A caption for the above image.</figcaption>
         </figure>
         </div></div>
@@ -380,7 +432,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="overview">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Overview</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/forms/overview/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/forms/overview/">Documentation</a>
       </div>
 
       <div>
@@ -394,6 +446,15 @@ lastmod: 2022-08-28T01:53:01.033Z
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleSelect" class="form-label">Select menu</label>
+            <select class="form-select" id="exampleSelect">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -431,7 +492,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="disabled-forms">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Disabled forms</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/forms/overview/#disabled-forms">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/forms/overview/#disabled-forms">Documentation</a>
       </div>
 
       <div>
@@ -489,7 +550,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="sizing">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Sizing</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/forms/form-control/#sizing">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/forms/form-control/#sizing">Documentation</a>
       </div>
 
       <div>
@@ -498,7 +559,7 @@ lastmod: 2022-08-28T01:53:01.033Z
           <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
         </div>
         <div class="mb-3">
-          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+          <select class="form-select form-select-lg" aria-label=".form-select-lg example">
             <option selected>Open this select menu</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -533,7 +594,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="input-group">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Input group</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/forms/input-group/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/forms/input-group/">Documentation</a>
       </div>
 
       <div>
@@ -567,7 +628,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="floating-labels">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Floating labels</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/forms/floating-labels/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/forms/floating-labels/">Documentation</a>
       </div>
 
       <div>
@@ -589,7 +650,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="validation">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Validation</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/forms/validation/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/forms/validation/">Documentation</a>
       </div>
 
       <div>
@@ -670,7 +731,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="accordion">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Accordion</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/accordion/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/accordion/">Documentation</a>
       </div>
 
       <div>
@@ -720,7 +781,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="alerts">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Alerts</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/alerts/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/alerts/">Documentation</a>
       </div>
 
       <div>
@@ -775,7 +836,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="badge">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Badge</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/badge/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/badge/">Documentation</a>
       </div>
 
       <div>
@@ -808,7 +869,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="breadcrumb">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Breadcrumb</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/breadcrumb/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/breadcrumb/">Documentation</a>
       </div>
 
       <div>
@@ -827,7 +888,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="buttons">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Buttons</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/buttons/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/buttons/">Documentation</a>
       </div>
 
       <div>
@@ -870,7 +931,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="button-group">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Button group</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/button-group/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/button-group/">Documentation</a>
       </div>
 
       <div>
@@ -898,7 +959,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="card">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Card</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/card/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/card/">Documentation</a>
       </div>
 
       <div>
@@ -907,7 +968,6 @@ lastmod: 2022-08-28T01:53:01.033Z
           <div class="col">
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -952,7 +1012,6 @@ lastmod: 2022-08-28T01:53:01.033Z
               <div class="row g-0">
                 <div class="col-md-4">
                   <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text></svg>
-
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -972,7 +1031,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="carousel">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Carousel</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/carousel/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/carousel/">Documentation</a>
       </div>
 
       <div>
@@ -986,7 +1045,6 @@ lastmod: 2022-08-28T01:53:01.033Z
           <div class="carousel-inner">
             <div class="carousel-item active">
               <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
-
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
@@ -994,7 +1052,6 @@ lastmod: 2022-08-28T01:53:01.033Z
             </div>
             <div class="carousel-item">
               <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"/><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
-
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
@@ -1002,7 +1059,6 @@ lastmod: 2022-08-28T01:53:01.033Z
             </div>
             <div class="carousel-item">
               <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"/><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
-
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -1025,7 +1081,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="dropdowns">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Dropdowns</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/dropdowns/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/dropdowns/">Documentation</a>
       </div>
 
       <div>
@@ -1211,7 +1267,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="list-group">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>List group</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/list-group/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/list-group/">Documentation</a>
       </div>
 
       <div>
@@ -1257,7 +1313,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="modal">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Modal</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/modal/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/modal/">Documentation</a>
       </div>
 
       <div>
@@ -1283,7 +1339,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="navs">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Navs</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/navs-tabs/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/navs-tabs/">Documentation</a>
       </div>
 
       <div>
@@ -1341,7 +1397,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="navbar">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Navbar</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/navbar/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/navbar/">Documentation</a>
       </div>
 
       <div>
@@ -1349,7 +1405,7 @@ lastmod: 2022-08-28T01:53:01.033Z
         <nav class="navbar navbar-expand-lg bg-light">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img src="/docs/5.2/assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="d-inline-block align-top" alt="Bootstrap" loading="lazy"
+              <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="d-inline-block align-top" alt="Bootstrap" loading="lazy"
                    style="filter: invert(1) grayscale(100%) brightness(200%);">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -1389,7 +1445,7 @@ lastmod: 2022-08-28T01:53:01.033Z
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-5">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img src="/docs/5.2/assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="d-inline-block align-top" alt="Bootstrap" loading="lazy">
+              <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="d-inline-block align-top" alt="Bootstrap" loading="lazy">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -1431,7 +1487,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="pagination">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Pagination</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/pagination/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/pagination/">Documentation</a>
       </div>
 
       <div>
@@ -1492,7 +1548,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="popovers">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Popovers</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/popovers/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/popovers/">Documentation</a>
       </div>
 
       <div>
@@ -1521,33 +1577,37 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="progress">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Progress</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/progress/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/progress/">Documentation</a>
       </div>
 
       <div>
         <div class="bd-example-snippet bd-code-snippet"><div class="bd-example">
-        <div class="progress mb-3">
-          <div class="progress-bar" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        <div class="progress mb-3" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar">0%</div>
         </div>
-        <div class="progress mb-3">
-          <div class="progress-bar bg-success w-25" role="progressbar" aria-label="Success example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="progress mb-3" role="progressbar" aria-label="Success example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success w-25">25%</div>
         </div>
-        <div class="progress mb-3">
-          <div class="progress-bar text-bg-info w-50" role="progressbar" aria-label="Info example with label" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div class="progress mb-3" role="progressbar" aria-label="Info example with label" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar text-bg-info w-50">50%</div>
         </div>
-        <div class="progress mb-3">
-          <div class="progress-bar text-bg-warning w-75" role="progressbar" aria-label="Warning example with label" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        <div class="progress mb-3" role="progressbar" aria-label="Warning example with label" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar text-bg-warning w-75">75%</div>
         </div>
-        <div class="progress">
-          <div class="progress-bar bg-danger w-100" role="progressbar" aria-label="Danger example with label" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+        <div class="progress" role="progressbar" aria-label="Danger example with label" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-danger w-100">100%</div>
         </div>
         </div></div>
 
 
         <div class="bd-example-snippet bd-code-snippet"><div class="bd-example">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-label="Segment one - default example" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Segment two - animated striped success example" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-stacked">
+          <div class="progress" role="progressbar" aria-label="Segment one - default example" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="progress" role="progressbar" aria-label="Segment two - animated striped success example" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"></div>
+          </div>
         </div>
         </div></div>
 
@@ -1556,7 +1616,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="scrollspy">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Scrollspy</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/scrollspy/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/scrollspy/">Documentation</a>
       </div>
 
       <div>
@@ -1599,7 +1659,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="spinners">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Spinners</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/spinners/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/spinners/">Documentation</a>
       </div>
 
       <div>
@@ -1665,7 +1725,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="my-3" id="toasts">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Toasts</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/toasts/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/toasts/">Documentation</a>
       </div>
 
       <div>
@@ -1673,7 +1733,6 @@ lastmod: 2022-08-28T01:53:01.033Z
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-header">
             <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#007aff"/></svg>
-
             <strong class="me-auto">Bootstrap</strong>
             <small class="text-muted">11 mins ago</small>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -1689,7 +1748,7 @@ lastmod: 2022-08-28T01:53:01.033Z
     <article class="mt-3 mb-5 pb-5" id="tooltips">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Tooltips</h3>
-        <a class="d-flex align-items-center" href="/docs/5.2/components/tooltips/">Documentation</a>
+        <a class="d-flex align-items-center" href="https://getbootstrap.com/docs/5.3/components/tooltips/">Documentation</a>
       </div>
 
       <div>
@@ -1710,7 +1769,7 @@ lastmod: 2022-08-28T01:53:01.033Z
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1727,7 +1786,7 @@ lastmod: 2022-08-28T01:53:01.033Z
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLiveLabel">Modal title</h5>
+        <h1 class="modal-title fs-5" id="staticBackdropLiveLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1744,7 +1803,7 @@ lastmod: 2022-08-28T01:53:01.033Z
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Modal title</h5>
+        <h1 class="modal-title fs-5" id="exampleModalCenteredScrollableTitle">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1763,7 +1822,7 @@ lastmod: 2022-08-28T01:53:01.033Z
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Full screen modal</h5>
+        <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Full screen modal</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1776,7 +1835,3 @@ lastmod: 2022-08-28T01:53:01.033Z
   </div>
 </div>
 
-
-    <!-- <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
-      <script src="/assets/js/cheatsheet.js"></script> -->

@@ -2,17 +2,25 @@
   navbar.html
  -->
 
+<!-- Home Link -->
+    {%- for home in site.data.navigation.home -%}
+    <a class="btn flex-grow-1" href="{{ home.url | relative_url }}">
+        <i class="{{ site.default_icon}} {{ home.icon }}" ></i>
+    </a>
+    {% endfor %}
 <!-- Navigation Links -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
     <ul class="visible-links navbar-nav">
         {%- for link in site.data.navigation.main -%}
             <li class="nav-item dropdown">
-                <a class="nav-link 
-                    {% if link.sublinks %} 
-                        dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
-                    {% endif %}"
-                    href="{{ link.url | relative_url }}"
->                            {{ link.title }}
+                <a {% if link.sublinks %} 
+                         href="#" id="navbarDropdown" 
+                         role="button" 
+                         data-toggle="dropdown" 
+                         class="nav-link dropdown-toggle" 
+                    {% endif %}
+                         href="{{ link.url | relative_url }}"
+                    >{{ link.title }}
                 </a>
             <!-- Drop down links   -->
                 {% if link.sublinks %}

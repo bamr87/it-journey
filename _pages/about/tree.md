@@ -1,7 +1,5 @@
 ---
 title: Tree
-collection: about
-permalink: /about/sitemap/
 lastmod: '2022-01-17T03:00:11.087Z'
 ---
 

@@ -3,19 +3,11 @@
   Social Links and Branding
 -->
 
-<footer class="container-xxl d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+<footer class="bd-footer container-xxl d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <div class="col-sm d-flex align-items-center">
     
-    <!-- Branding and Powered By: -->
-    <!-- <span class="">
-      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by: 
-    </span>
-      {% for power in site.powered_by %}
-      <li>
-        <a href="{{ power.url }}" rel="nofollow">{{ power.name }} -</a>
-      </li>
-        {% endfor %} -->
-    
+    <!-- Frameworks/Engines and Affiliations -->
+   
         <ul class="nav col-sm justify-content-end list-unstyled d-flex">
         
         <!-- Search for Site Frameworks in config file -->
@@ -24,7 +16,7 @@
       </span>
       {% for power in site.powered_by %}
       <li class="btn ">
-        <a href="{{ power.url }}" rel="">
+        <a href="{{ power.url }}" rel="nofollow">
           <i class="{{ site.default_icon }} {{ power.icon | default: site.powered_by.default }}" aria-hidden="true"></i>
         <!-- display name if there's enough space, else icon only -->
           <span class="d-none d-md-inline"> 
@@ -37,7 +29,7 @@
       <!-- Search for Site Affiliation links in config file -->
       {% for link in site.links %}
       <li class="btn ">
-        <a href="{{ link.url }}" rel="">
+        <a href="{{ link.url }}" rel="nofollow">
           <i class="{{ site.default_icon }} {{ link.icon | default: site.links.default }}" aria-hidden="true"></i>
         <!-- display name if there's enough space, else icon only -->
           <span class="d-none d-md-inline"> 

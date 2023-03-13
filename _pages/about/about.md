@@ -14,6 +14,25 @@ I chose the domain `{{ site.logo_source }}` because I hope this site will provid
 
 [Life Hack Wiki](https://en.wikipedia.org/wiki/Life_hack) 
 
+## Quick Facts
+
+This world was created by {{ site.founder }} and maintained by:
+
+Name | Profile
+---------|----------
+{% for follower in site.maintainers -%}
+  {{ follower.name }} | {{ follower.profile }}
+{% endfor %}
+
+
+And, most importantly, Powered By:
+
+Name | Link
+---------|----------
+{% for power in site.powered_by -%}
+{{ power.name }} | {{ power.url }}
+{% endfor %}
+
 ## Principles
 
 To help guide you through this journey, I have described some principles that I believe will help you learn how to code and build information systems.
@@ -41,3 +60,5 @@ Designing for failure can be accomplished at a number of levels:
 ### Minimal Viable Path - MVP
 
 ### Collaborate - COLAB
+
+

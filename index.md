@@ -1,23 +1,34 @@
 ---
 title: Hello World
+sub-title: Welcome to my landing site of this world
+description: "This is the index.md file for the whole site and root "
+preview: /images/nubi-yawn.png
+excerpt: ""
+layout: default
+keywords:
+  - Root
+  - Algolia
+  - Bootstrap
+  - Github
+  - GitHub Pages
+  - Jekyll
+  - TravisCI
+  - Web Development
+tags:
+  - index
+categories:
+  - hello world
 lastmod: 2022-08-28T01:51:53.807Z
 ---
 
-{: .collapse .collapsed .dev-settings }
-Branch | Build Status
----------|---------
-Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
-gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=gh-pages)](https://app.travis-ci.com/bamr87/it-journey)
-
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
-This is the main landing page and it is still a work in process.
+This is the main landing  and with everything on this 
 
 Nothing to see here. Yet... but try clicking on the gear icon (or particles) for a sneak peek.
 
+  <div id="particles-js" class=""></div>
 
-  <div>
-  <p id="particles-js">this is a paragraph</p>
-  </div>
+{% include_relative /_site/README.md %}
 
 ## Powered BY
 {: .collapse .collapsed .dev-settings }
@@ -45,6 +56,9 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 - [x] Category filter for posts
 - [x] Code syntax highlighting
 - [x] Programming Language cheat sheets
+- [ ] data file generation program
+- [ ] infinite scrolling landing page 
+- [ ] Landing page site intro based on features
 {: .alert .alert-secondary .collapse .collapsed .dev-settings }
 
 ### FIXME:
@@ -98,22 +112,5 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 {: .collapse .collapsed .dev-settings }
 
 <div class="collapse collapsed dev-settings">
-{% capture styles %}{% include_relative _pages/notes/bootstrap-examples.md %}{% endcapture %}{{ styles }}
+{% capture styles %}{% include_relative _pages/about/style.md %}{% endcapture %}{{ styles }}
 </div>
-
-{: .collapse .collapsed .dev-settings }
-```mermaid!
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-{: .collapse .collapsed .dev-settings }
-```mermaid!
-pie title Pets adopted by volunteers
-  "Dogs" : 386
-  "Cats" : 85
-  "Rats" : 35
-```

@@ -1,10 +1,11 @@
 # FIXME: NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION. 
-
+home:
+  - title: "Home"
+    icon: bi-house
+    url: /home/
 # Main Navigation (top)
 main:
   - nav-title: "Main Menu"
-  - title: "Home"
-    url: /home/
   - title: "Quick-Start"
     url: /quick-start/
     sublinks:
@@ -65,13 +66,15 @@ main:
       url: /notes/js/
     - title: "Jekyll"
       url: /notes/jekyll/
-  - title: "Map"
-    url: /map/
-  - title: "Styles"
-    url: /styles/
   - title: "About"
     url: /about/
-
+    sublinks:
+    - title: "home"
+      url: /about/
+    - title: "Map"
+      url: /about/sitemap/
+    - title: "Style"
+      url: /about/style/
 
 # Notes
 notes:
@@ -191,6 +194,10 @@ about:
         url: /about/purpose/
       - title: "Approach"
         url: /about/approach/
+      - title: "Sitemap"
+        url: /about/sitemap/
+      - title: "Style"
+        url: /about/style/
 
 cooking:
   - title: "cooking"

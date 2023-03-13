@@ -1,7 +1,5 @@
 ---
 title: Purpose
-collection: about
-permalink: /about/purpose/
 lastmod: '2021-12-29T16:53:56.879Z'
 ---
 

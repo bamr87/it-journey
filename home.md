@@ -102,6 +102,9 @@ Static Website Generator (Jekyll) [Local link](\_quickstart\Jekyll.md)  Or [Web 
 
 ![](../assets/images/top-nav.png){: .img-fluid }
 
+<div class="bd-example-snippet bd-code-snippet">
+{%- include header.html -%}
+</div>
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
 
 - [Journals](/posts/)
