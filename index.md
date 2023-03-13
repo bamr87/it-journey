@@ -28,7 +28,7 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 
   <div id="particles-js" class=""></div>
 
-{% include_relative /_site/README.md %}
+{% include_relative /README.md %}
 
 ## Powered BY
 {: .collapse .collapsed .dev-settings }
