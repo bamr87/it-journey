@@ -4,7 +4,7 @@ author: null
 layout: collection
 description: null
 lastmod: 2022-06-04T17:33:43.747Z
-permalink: /quickstart/
+permalink: /quickstart
 sidebar:
   nav: quickstart
 ---
@@ -28,3 +28,5 @@ Here's an index of all the posts in the quick-start collection.
    1. Google
    2. Azure
    3. AWS
+
+

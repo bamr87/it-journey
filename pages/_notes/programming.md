@@ -1,8 +1,6 @@
 ---
 title: Programming
 description: Collection of programming languages notes
-collection: notes
-permalink: /notes/programming-languages/
 lastmod: '2022-01-02T03:39:23.888Z'
 ---
 

@@ -6,24 +6,26 @@ layout: default
 
 {{ content }}
 
-<div class="entries-{{ entries_layout }}">
-
-  {% assign entries = site[page.collection] %}
-  {% assign entries = entries | sort: page.sort_order %}
-  {% if page.sort_order == 'reverse' %}
-    {% assign entries = entries | reverse %}
-  {% endif %}
+{% assign entries = site[page.collection] %}
+{% assign entries = entries | sort: page.sort_order %}
+{% if page.sort_order == 'reverse' %}
+{% assign entries = entries | reverse %}
+{% endif %}
 
 <!-- Loop through collection and summarize  -->
+<div class="row">
   {%- for post in entries -%}
-    <div class="article-summary" itemscope itemtype="https://schema.org/CreativeWork">
-      <h2 class="article-title" itemprop="headline">
-          <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
-      </h2>
-        <p class="post-excerpt" itemprop="description">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title " itemprop="headline">
+          <a class="card-link" href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
+        </h5>
+        <p class="card-text" itemprop="description">
           {{ post.excerpt | strip_html | truncate: 160 }}
         </p>
-    </div>
+      </div>
+    </div>  
+  </div>
   {%- endfor -%}
-  
 </div>

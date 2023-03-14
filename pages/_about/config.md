@@ -3,7 +3,7 @@ title: config
 permalink: /config/
 layout: default
 lastmod: 2022-05-09T14:35:41.594Z
-config-dir: _pages/about
+config-dir: _about
 config-file: _config.yml
 ---
 

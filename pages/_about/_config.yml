@@ -53,7 +53,7 @@ description              : &description >- # this means to ignore newlines until
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
-repo_map                 : "_pages/about/"
+repo_map                 : "pages/about/"
 
 ## Personalization -------------------------------------------------------------
 
@@ -190,7 +190,7 @@ defaults:
   # _pages
   - 
     scope:
-      path: _pages/docs
+      path: pages/docs
     values:
       layout: default
       show_date: true
@@ -222,10 +222,10 @@ defaults:
       sidebar:
         nav: main
 
-  # _pages/quests
+  # pages/quests
   - 
     scope:
-      path: _pages/quests
+      path: pages/quests
     values:
       layout: default
       show_date: true
@@ -242,7 +242,7 @@ defaults:
   # _notes
   - 
     scope:
-      path: "_pages/notes"
+      path: "pages/notes"
       type: notes
     values:
       layout: default

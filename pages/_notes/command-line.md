@@ -1,8 +1,7 @@
 ---
-title: Command Line
-description: Command Line Notes
-collection: notes
-permalink: /notes/command-line/
+title: Shell and the CLI
+description: Command Line Interface Notes
+permalink: /notes/shell
 lastmod: '2022-01-05T00:55:02.209Z'
 ---
 

@@ -5,7 +5,7 @@ layout: collection
 keywords: init, world
 catagories: quests
 description: This is the init world.
-permalink: /quest/
+permalink: /quests/
 lastmod: 2022-08-07T14:49:52.005Z
 ---
 

@@ -54,7 +54,7 @@ description              : &description >- # this means to ignore newlines until
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
-repo_map                 : "_pages/about/"
+repo_map                 : "_about/"
 
 ## Maintainer Information----------------------------------------------------------
 
@@ -181,10 +181,33 @@ kramdown: # https://kramdown.gettalong.org/options.html
 # Collections: https://jekyllrb.com/docs/collections/
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
+collections_dir: pages
+
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: /:collection/:name/
+  posts:
+    output: true
+    permalink: /:collection/:name/
+  docs:
+    output: true
+    permalink: /:collection/:name/
+  quests:
+    output: true
+    permalink: /:collection/:name/
+  hobbies:
+    output: true
+    permalink: /:collection/:name/
+  notes:
+    output: true
+    permalink: /:collection/:name/
+  quickstart:
+    output: true
+    permalink: /:collection/:name/
+  about:
+    output: true
+    permalink: /:collection/:name/
 
 permalink: pretty
 
@@ -210,7 +233,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
-    permalink: pretty
+    permalink: /:collection/:name/
 
   # _pages
   - 
@@ -230,26 +253,27 @@ defaults:
         nav: main
     permalink: /:path/:name/
 
-  # _pages/about
+  # pages/about
   - 
     scope:
-      path: _pages/about
+      path: pages/about
     values:
       layout: default
+      collection: about
       share: true
       related: true
       toc: true
       toc_sticky: true
       sidebar:
         nav: about
-    permalink: /:path/:name/
 
-  # _pages/docs
+  # pages/docs
   - 
     scope:
-      path: _pages/docs
+      path: pages/docs
     values:
       layout: default
+      category: docs
       show_date: true
       author_profile: true
       read_time: true
@@ -260,7 +284,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: docs
-    permalink: /:path/:name/
+    # permalink: /docs/:category/:name/
 
   # _posts
   - 
@@ -278,11 +302,13 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main
+      permalink: /:collection/:name/
+      
 
-  # _pages/quests
+  # pages/quests
   - 
     scope:
-      path: _pages/quests
+      path: pages/quests
     values:
       layout: default
       show_date: true
@@ -299,7 +325,7 @@ defaults:
   # _notes
   - 
     scope:
-      path: "_pages/notes"
+      path: "pages/notes"
       type: notes
     values:
       layout: default

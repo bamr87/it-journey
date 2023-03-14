@@ -1,9 +1,8 @@
 ---
 lastmod: '2022-02-05T19:54:15.493Z'
-permalink: /about/approach/
 ---
 
-# Approach
+## Approach
 
 
 

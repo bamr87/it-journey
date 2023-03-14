@@ -1,8 +1,7 @@
 ---
-title: sitemap
-layout: collection
+title: sitemaps
 lastmod: 2022-05-09T14:35:41.594Z
-tree-dir: _pages/about
+tree-dir: _about
 tree-file: tree.txt
 ---
 

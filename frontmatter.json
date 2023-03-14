@@ -8,12 +8,12 @@
     },
     {
       "title": "docs",
-      "path": "[[workspace]]/_pages/docs",
-      "originalPath": "[[workspace]]/_pages/docs"
+      "path": "[[workspace]]/pages/docs",
+      "originalPath": "[[workspace]]/pages/docs"
     },
     {
       "title": "notes",
-      "path": "[[workspace]]/_pages/notes"
+      "path": "[[workspace]]/pages/notes"
     }
   ],
   "frontMatter.templates.enabled": true,

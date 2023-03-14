@@ -5,7 +5,6 @@ layout: default
 description: null
 categories:
   - machine-setup
-slug: /home/
 lastmod: '2022-05-21T20:45:39.643Z'
 draft: false
 ---

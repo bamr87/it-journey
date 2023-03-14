@@ -1,5 +1,7 @@
 ---
 title: About
+layout: collection
+collection: post
 permalink: /about/
 lastmod: 2022-06-17T02:01:09.704Z
 ---
