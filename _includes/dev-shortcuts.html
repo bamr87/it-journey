@@ -1,15 +1,15 @@
 <!-- Source Code Control Shortcuts - Page -->
 
 <div class="git-update vscode-update dev-settings collapsed collapse">
-    <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/{{page.path}}">
+    <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/{{ site.collections_dir }}/{{page.path}}">
         <i class="bi bi-github"></i>
         <!-- https://icons.getbootstrap.com/icons/github/ -->
     </a>
-    <a class="btn bg-primary" href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/{{ page.path }}">
+    <a class="btn bg-primary" href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/{{ site.collections_dir }}/{{ page.path }}">
         <i class="bi bi-microsoft"></i>
         <!-- https://icons.getbootstrap.com/icons/microsoft/ -->
     </a>
-    <a class="btn bg-primary" href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/{{ page.path }}">
+    <a class="btn bg-primary" href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo_path }}/{{ page.path }}">
         <i class="bi bi-apple"></i>
         <!-- https://icons.getbootstrap.com/icons/apple/ -->
     </a>

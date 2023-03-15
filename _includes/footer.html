@@ -7,11 +7,10 @@
   <div class="col-sm d-flex align-items-center">
     
     <!-- Frameworks/Engines and Affiliations -->
-   
-        <ul class="nav col-sm justify-content-end list-unstyled d-flex">
-        
-        <!-- Search for Site Frameworks in config file -->
-      <span class="">
+    <ul class="nav col-sm justify-content-end list-unstyled d-flex align-items-center">
+
+      <!-- Search for Site Frameworks in config file -->
+      <span class="align-self">
         &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by: 
       </span>
       {% for power in site.powered_by %}
