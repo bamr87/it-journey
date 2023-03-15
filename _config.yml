@@ -68,7 +68,7 @@ maintainers:
 
 locale                   : "en-US"
 home_dir_pc              : &home-win 'C:\Users\amrab\'
-home_dir_mac             : &home-mac '/Users/amrab/'
+home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -181,7 +181,8 @@ kramdown: # https://kramdown.gettalong.org/options.html
 # Collections: https://jekyllrb.com/docs/collections/
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
-collections_dir: pages
+collections_dir: &collections_dir pages
+local_repo_path: [ *collections_dir, '/', *local_repo ]
 
 collections:
   pages:
