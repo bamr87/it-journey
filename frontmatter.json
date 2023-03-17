@@ -1,21 +1,6 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "Journal",
-      "path": "[[workspace]]/_posts",
-      "originalPath": "[[workspace]]/_posts"
-    },
-    {
-      "title": "docs",
-      "path": "[[workspace]]/pages/docs",
-      "originalPath": "[[workspace]]/pages/docs"
-    },
-    {
-      "title": "notes",
-      "path": "[[workspace]]/pages/notes"
-    }
-  ],
+  "frontMatter.content.pageFolders": [],
   "frontMatter.templates.enabled": true,
   "frontMatter.framework.id": "jekyll",
   "frontMatter.content.publicFolder": "assets",
