@@ -266,3 +266,5 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 https://icons.getbootstrap.com/#install
 
 <i class="bi bi-gem"></i>
+
+![](../../assets/images/penrose-hard.png)
