@@ -1,6 +1,6 @@
 ---
 title: style
-layout: default
+layout: home
 lastmod: 2022-08-28T01:53:01.033Z
 ---
 
