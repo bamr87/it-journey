@@ -110,5 +110,5 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 {: .collapse .collapsed .dev-settings }
 
 <div class="collapse collapsed dev-settings">
-{% include_relative pages/_about/style.md %}
+{% include style.html %}
 </div>
