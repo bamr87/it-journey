@@ -14,4 +14,4 @@ draft: true
 lastmod: 2023-03-12T22:39:30.674Z
 ---
 
-{% include_relative index.html %}
+{% include_relative cheetsheet.html %}
