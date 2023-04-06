@@ -254,7 +254,7 @@ defaults:
         nav: main
     permalink: /:path/:name/
 
-  # pages/quickstart
+  # pages/_quickstart
   - 
     scope:
       path: pages/_quickstart
@@ -268,10 +268,10 @@ defaults:
       sidebar:
         nav: quickstart
 
-  # pages/about
+  # pages/_about
   - 
     scope:
-      path: pages/about
+      path: pages/_about
     values:
       layout: default
       collection: about
@@ -282,10 +282,10 @@ defaults:
       sidebar:
         nav: about
 
-  # pages/docs
+  # pages/_docs
   - 
     scope:
-      path: pages/docs
+      path: pages/_docs
     values:
       layout: default
       category: docs
@@ -304,7 +304,7 @@ defaults:
   # _posts
   - 
     scope:
-      path: _posts
+      path: pages/_posts
     values:
       layout: default
       show_date: true
@@ -320,10 +320,10 @@ defaults:
       permalink: /:collection/:name/
       
 
-  # pages/quests
+  # pages/_quests
   - 
     scope:
-      path: pages/quests
+      path: pages/_quests
     values:
       layout: default
       show_date: true
@@ -337,10 +337,10 @@ defaults:
       sidebar:
         nav: main
       permalink: /:categories/:slug
-  # _notes
+  # pages/_notes
   - 
     scope:
-      path: "pages/notes"
+      path: pages/_notes
       type: notes
     values:
       layout: default
