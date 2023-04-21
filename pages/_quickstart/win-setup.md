@@ -150,8 +150,9 @@ winget import --import-file winget-app-dev.json
 
 
 
-#### Windows Sub Linus
+#### Windows Sub Linux
 
+[install docs](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 Download Ubuntu
 

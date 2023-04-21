@@ -1,5 +1,5 @@
 ---
-title: versioning
+title: frontmatter generator
 author: null
 excerpt: null
 description: null
@@ -13,4 +13,5 @@ draft: true
 lastmod: 2022-05-21T23:56:40.448Z
 ---
 
-https://semver.org/
+## Python
+

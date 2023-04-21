@@ -4,7 +4,7 @@ author: null
 layout: default
 description: null
 categories:
-    - machine-setup
+    - mac
 slug: mac
 lastmod: '2022-02-14T03:08:28.573Z'
 draft: false

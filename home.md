@@ -1,16 +1,15 @@
 ---
-Title: Hello World
-Author: bamr87
-Description: This is an overall outline where you can start.
-permalink: /home/
-layout: home
+title: Hello World
+author: bamr87
+description: This is an overall outline of this site, and a place to start or come back to when lost.
 purpose: To provide a platform for people to share their knowledge and tools
-Keywords: Home, Zer0
-Post: null
-lastmod: 2022-07-25T00:10:47.252Z
-toc: true
+layout: home
+keywords: Home, Zer0, IT-Journey, programming, development
+post: null
 sidebar:
   nav: main
+permalink: /home/
+lastmod: 2022-07-25T00:10:47.252Z
 ---
 
 This is where we begin our journey. The place where we return after getting lost or wandering off.
@@ -19,9 +18,10 @@ There are journals to capture our experiences and findings, notes to quickly ref
 Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
 
 ## Abstract
-{: .para-one #abstract}
+{: .para-one #abstract .accordion-header .accordion-button}
 
 From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
+{: .para-one #abstract .accordion-body}
 
 ## Roadmap
 

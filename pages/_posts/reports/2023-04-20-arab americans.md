@@ -10,28 +10,15 @@ Here's an old ariticle about arab americans published soon after 9/11 (December 
 
 ## A JOURNALIST'S GUIDE
 
-Like all people, Arab Americans are too often described in simplistic terms.
-Although the Arab culture is one of the oldest on Earth, it is, in many
-parts of the United States, misunderstood. There are no easy,
-one-size-fits-all answers. Culture, language and religion are distinct
-qualities that act in different ways to connect Arabs, and to distinguish
-them from one another.
+Like all people, Arab Americans are too often described in simplistic terms. Although the Arab culture is one of the oldest on Earth, it is, in many parts of the United States, misunderstood. There are no easy, one-size-fits-all answers. Culture, language and religion are distinct qualities that act in different ways to connect Arabs, and to distinguish them from one another.
 
-The differences that seem to separate Arab Americans from non-Arabs can be
-much smaller than the variations that at times differentiate them from one
-another. It takes time to learn the issues and to understand them, but it is
-essential and rewarding for us to do that. Misunderstanding ultimately hurts
-each one of us.
+The differences that seem to separate Arab Americans from non-Arabs can be much smaller than the variations that at times differentiate them from one another. It takes time to learn the issues and to understand them, but it is essential and rewarding for us to do that. Misunderstanding ultimately hurts each one of us.
 
 ## Overview
 
 1. Who are Arab Americans?
 
-Arab Americans are U.S. citizens and permanent residents who trace their
-ancestry to or who immigrated from Arabic-speaking places in southwestern
-Asia and northern Africa, a region known as the Middle East. Not all people
-in this region are Arabs. Most Arab Americans were born in the United
-States.
+Arab Americans are U.S. citizens and permanent residents who trace their ancestry to or who immigrated from Arabic-speaking places in southwestern Asia and northern Africa, a region known as the Middle East. Not all people in this region are Arabs. Most Arab Americans were born in the United States.
 
 Note: Some middle eastern Americans do not like to be called Arab. For example, many Maronites in Lebanon believe that because they trace their ancestry to the ancient Phoenicians, and have no ethnic roots in the Arabian Peninsula where the original pre-Islamic Arabic tribes hailed from, then they don;t like to be collectively called "Arab Americans" (Personal Note).
 
@@ -44,50 +31,23 @@ d. Gubran Khalil is Lebanese Not Arab - American Maronite Union Letter to Powell
 
 2. How many Arab Americans are there?
 
-This is the subject of some debate. Estimates vary because the U.S. Census
-Bureau does not use an Arab American classification and because people
-identify themselves in various ways. Some Arab Americans identify themselves
-as Middle Eastern, for example. Recent immigrants from many countries are
-reluctant to give personal and confidential information to the government,
-and an increasing number of people have more than one ethnicity. Estimates
-of Arab Americans living in the United States are about 3 million.
+This is the subject of some debate. Estimates vary because the U.S. Census Bureau does not use an Arab American classification and because people identify themselves in various ways. Some Arab Americans identify themselves as Middle Eastern, for example. Recent immigrants from many countries are reluctant to give personal and confidential information to the government, and an increasing number of people have more than one ethnicity. Estimates of Arab Americans living in the United States are about 3 million.
 
 3. Where do Arab Americans live?
 
-Arab Americans live in all 50 states, but about a third are concentrated in
-California, Michigan and New York. Another third are in these seven states:
-Illinois, Maryland, Massachusetts, New Jersey, Ohio, Texas and Virginia.
+Arab Americans live in all 50 states, but about a third are concentrated in California, Michigan and New York. Another third are in these seven states: Illinois, Maryland, Massachusetts, New Jersey, Ohio, Texas and Virginia.
 
 4. What are the population centers for Arab Americans?
 
-About half of Arab Americans live in 20 metropolitan areas. The top four are
-Los Angeles County in California; Wayne and Oakland counties in Michigan;
-Brooklyn, N.Y., and Cook County, Ill.
+About half of Arab Americans live in 20 metropolitan areas. The top four are Los Angeles County in California; Wayne and Oakland counties in Michigan; Brooklyn, N.Y., and Cook County, Ill.
 
 5. Do Arabs have a shared language?
 
-The Arabic language is one of the great unifying and distinguishing
-characteristics of Arab people. Even so, colloquial Arabic differs from
-place to place. There are several categories: Levantine dialect (Jordan,
-Syria, Palestine, Lebanon), Egyptian and North African dialect, and
-Khalijji, or Gulf, dialect. Modern Standard Arabic (MSA) is a pan-Arabic
-language used in formal letters, books and newspapers. It is also spoken at
-Middle East peace conferences and on television news. Quaranic Arabic, like
-MSA, also is a widely spoken form of the language, but it differs in style
-and lexicon from MSA. Not all Arab Americans know Arabic, of course, as many
-are second-, third- and fourth-generation Americans.
+The Arabic language is one of the great unifying and distinguishing characteristics of Arab people. Even so, colloquial Arabic differs from place to place. There are several categories: Levantine dialect (Jordan, Syria, Palestine, Lebanon), Egyptian and North African dialect, and Khalijji, or Gulf, dialect. Modern Standard Arabic (MSA) is a pan-Arabic language used in formal letters, books and newspapers. It is also spoken at Middle East peace conferences and on television news. Quaranic Arabic, like MSA, also is a widely spoken form of the language, but it differs in style and lexicon from MSA. Not all Arab Americans know Arabic, of course, as many are second-, third- and fourth-generation Americans.
 
 6. Do Arabs have a shared religion?
 
-No. Arabs belong to many religions, including Islam, Christianity, Druze,
-Judaism and others. There are further distinctions within each of these, and
-some religious groups have evolved new identities and faith practices in the
-United States. Be careful to distinguish religion from culture. Although
-Arabs are connected by culture, they have different faiths. Common
-misperceptions are to think that Arab traditions are Islamic, or that Islam
-unifies all Arabs. Most Arab Americans are Catholic or Orthodox Christians,
-but this is not true in all parts of the United States. In some areas most
-Arab Americans are Muslim.
+No. Arabs belong to many religions, including Islam, Christianity, Druze, Judaism and others. There are further distinctions within each of these, and some religious groups have evolved new identities and faith practices in the United States. Be careful to distinguish religion from culture. Although Arabs are connected by culture, they have different faiths. Common misperceptions are to think that Arab traditions are Islamic, or that Islam unifies all Arabs. Most Arab Americans are Catholic or Orthodox Christians, but this is not true in all parts of the United States. In some areas most Arab Americans are Muslim.
 
 7. What is the Middle East conflict all about?
 
@@ -457,10 +417,7 @@ in one's culture.
 
 50. Why do some Arab women dress in black?
 
-Remember that black is a popular color in contemporary American fashion and
-may not have any special significance. When it does, it may be a sign of
-mourning. Black, when worn in mourning, may be worn for a few days to many
-years.
+Remember that black is a popular color in contemporary American fashion and may not have any special significance. When it does, it may be a sign of mourning. Black, when worn in mourning, may be worn for a few days to many years.
 
 51. What is an appropriate way to greet an Arab American?
 

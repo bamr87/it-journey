@@ -1,7 +1,8 @@
 # Welcome to Jekyll!
 # Configuration file for Jekyll.
 # Full docs at: http://jekyllrb.com/docs/configuration/
-# -----------------------------------------------------------------------------
+# YAML docs at: https://yaml.org/spec/1.2.2/
+# ---------------------------------------------------------------------------------
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
@@ -9,7 +10,7 @@
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, please restart the server.
 #
 # If you need help with YAML syntax, here are some quick references for you: 
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
@@ -23,23 +24,25 @@
 # in the templates via {{ site.myvariable }}.
 
 
-# Site Settings ---------------------------------------------------------------
+# Site Settings ###################################################################
 
-## Site Information -----------------------------------------------------------
+## Site Information ---------------------------------------------------------------
 
+founder                  : "Amr Abdel-Motaleb"
 title                    : IT-Journey
 masthead_title           : # override the default title
 subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
 title_separator          : "|" # Appears in the web browser tab name
+domain                   : *github_base_url
 site_domain              : &site_domain "github.io"
-baseurl                  : "" # the subpath of your site, e.g. /blog
+baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
 url                      : *github_base_url
 port                     : 4002 # Jekyll Serve Dev port
-dg_port                  : 4001 # Doppelganger site
+dg_port                  : 4001 # Doppelganger site. Use this if you want to switch between parallel deployments
 
-### Owner Information ---------------------------------------------------------
+### Owner Information -------------------------------------------------------------
 
 name                     : &name "Amr"
 email                    : &email "amr.abdel@gmail.com"
@@ -53,12 +56,20 @@ description              : &description >- # this means to ignore newlines until
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
-repo_map                 : "pages/about/"
+repo_map                 : "_about/"
 
-## Personalization -------------------------------------------------------------
+## Maintainer Information----------------------------------------------------------
+
+maintainers:
+  - name: "Amr"
+    profile: "/github.com/bamr87"
+  - name: "Vacant"
+    profile: "/github.com"
+
+## Personalization ----------------------------------------------------------------
 
 locale                   : "en-US"
-home_dir_pc              : &home-win 'C:\Users\amr\'
+home_dir_pc              : &home-win 'C:\Users\amrab\'
 home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
@@ -82,39 +93,55 @@ author:
   github_username        : *github_user
 
 
-default_icon: "fab"
+## Affiliations ##############################################################
+
+default_icon: "bi" ## Bootstrap Icons https://icons.getbootstrap.com/
 
 links:
   - label: "BASH Consulting"
     url: "https://bashconsultants.com"
-    icon: "fas fa-link"
+    icon: "bi-link"
   - label: "Twitter"
-    icon: "fa-twitter-square"
+    icon: "bi-twitter"
     url: "https://twitter.com/bamr87"
   - label: "GitHub"
-    icon: "fa-github"
+    icon: "bi-github"
     url: [ 'https://github.com/' , *github_user ]
   - label: "Instagram"
-    icon: "fa-instagram"
+    icon: "bi-instagram"
     url: "https://instagram.com/bamr42"
 
-## Build settings ##############################################################
+## Build Framework ##############################################################
 
 powered_by:
   - name: "Ruby"
     version: "2.7.4"
     url: "https://www.ruby-lang.org/"
+    icon: "bi-gem"
   - name: "Jekyll"
     version: "3.9.2"
     url: "https://jekyllrb.com/"
+    icon: "bi-joystick"
   - name: "Bootstrap"
     version: "5.2.0"
     url: "https://getbootstrap.com/"
+    icon: "bi-bootstrap"
   - name: "Algolia"
     version: 
     url: "https://algolia.com/"
+    icon: "bi-search"
   - name: "JQuery"
     url: "https://jquery.com/"
+    icon: "bi-filetype-js"
+  - name: "MathJax"
+    version: "1.0"
+    url: "https://www.mathjax.org/"
+    icon: "bi-calculator"
+  - name: "GitHub Pages"
+    version: "228"
+    url: "https://pages.github.com/"
+    icon: "bi-github"
+
 
 ### Plugins 
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
@@ -156,10 +183,34 @@ kramdown: # https://kramdown.gettalong.org/options.html
 # Collections: https://jekyllrb.com/docs/collections/
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
+collections_dir: &collections_dir pages
+local_repo_path: [ *collections_dir, '/', *local_repo ]
+
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: /:collection/:name/
+  posts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:name/
+  docs:
+    output: true
+    permalink: /:collection/:categories/:name/
+  quests:
+    output: true
+    permalink: /:collection/:name/
+  hobbies:
+    output: true
+    permalink: /:collection/:name/
+  notes:
+    output: true
+    permalink: /:collection/:name/
+  quickstart:
+    output: true
+    permalink: /:collection/:categories/:name/
+  about:
+    output: true
+    permalink: /:collection/:name/
 
 permalink: pretty
 
@@ -174,7 +225,7 @@ defaults:
     scope:
       path: ""
     values:
-      layout: default
+      layout: root
       show_date: true
       author_profile: false
       read_time: true
@@ -182,17 +233,16 @@ defaults:
       share: true
       related: true
       toc: true
-      toc_sticky: true
       sidebar:
         nav: main
-    permalink: pretty
+    permalink: /:collection/:name/
 
-  # _pages
+  # pages
   - 
     scope:
-      path: pages/docs
+      path: pages
     values:
-      layout: default
+      layout: &pages default
       show_date: true
       author_profile: true
       read_time: true
@@ -202,15 +252,40 @@ defaults:
       toc: true
       toc_sticky: true
       sidebar:
-        nav: docs
+        nav: main
     permalink: /:path/:name/
+
+  # pages/_about
+  - 
+    scope:
+      path: pages/_about
+    values:
+      layout: *pages
+      collection: about
+      share: true
+      related: true
+      toc: true
+      sidebar:
+        nav: about
+
+  # pages/_quickstart
+  - 
+    scope:
+      path: pages/_quickstart
+    values:
+      collection: quickstart
+      share: true
+      related: true
+      toc: true
+      sidebar:
+        nav: quickstart
 
   # _posts
   - 
     scope:
-      path: _posts
+      path: pages/_posts
     values:
-      layout: default
+      layout: *pages
       show_date: true
       author_profile: true
       read_time: true
@@ -218,16 +293,17 @@ defaults:
       share: true
       related: true
       toc: true
-      toc_sticky: true
       sidebar:
         nav: main
+      permalink: /:collection/:name/
 
-  # pages/quests
+  # pages/_docs
   - 
     scope:
-      path: pages/quests
+      path: pages/_docs
     values:
-      layout: default
+      layout: *pages
+      category: docs
       show_date: true
       author_profile: true
       read_time: true
@@ -235,23 +311,54 @@ defaults:
       share: true
       related: true
       toc: true
-      toc_sticky: true
+      sidebar:
+        nav: docs
+    # permalink: /docs/:category/:name/
+
+  # pages/_quests
+  - 
+    scope:
+      path: pages/_quests
+    values:
+      layout: *pages
+      show_date: true
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+      toc: true
       sidebar:
         nav: main
       permalink: /:categories/:slug
-  # _notes
+
+  # pages/_hobbies
   - 
     scope:
-      path: "pages/notes"
-      type: notes
+      path: pages/_hobbies
+      type: hobbies
     values:
-      layout: default
-      share: true
+      layout: *pages
+      share: false
       toc: true
       author_profile: false
-      toc_sticky: true
+      sidebar:
+        nav: hobbies
+
+  # pages/_notes
+  - 
+    scope:
+      path: pages/_notes
+      type: notes
+    values:
+      layout: *pages
+      share: false
+      toc: true
+      author_profile: false
       sidebar:
         nav: notes
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -321,3 +428,13 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 # font_style_large_desktop : "normal"
 
 ## Color Settings --------------------------------------------------------------
+
+
+
+
+
+## Copyright Settings --------------------------------------------------------------
+
+cr_year: 2023
+cr_entity: "Amr"
+cr_lisense: "MIT"

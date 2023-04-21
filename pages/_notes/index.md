@@ -4,9 +4,6 @@ description: Notes Index
 layout: collection
 permalink: /notes/
 lastmod: 2023-03-11T20:53:36.032Z
-sidebar:
-  nav: notes
-  title: test
 ---
 
 # Quick Start

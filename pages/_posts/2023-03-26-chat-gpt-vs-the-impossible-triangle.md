@@ -97,11 +97,9 @@ To reallly understand the impact, you might want to ask yourself:
 
 One good documentary to catch up on some of the negative consequences of AI/ML is titled "Coded Bias" on [Netflix](https://www.netflix.com/title/81328723). This movie provides a bleak view of how AI technology has gone wrong today... 
 
-## Outlook, not email
+## Summary Outlook, not email
 
 Honestly, I'm not too familiar with the AI roadmap, and I have no idea what to expect in the next few years. However, I am very confident that it's time for everyone to start experimenting this tool as it starts to evolve and improve. Just like in the early days of the internet, there's a lot of potential, and those who understand how it works, will be the ones to ride the wave...
-
-## Summary
 
 I guess the moral of this story is that we're still in the "80's" of AI technology, but at this rate, Chat GPT5 will take use to Y2K or beyond...
 

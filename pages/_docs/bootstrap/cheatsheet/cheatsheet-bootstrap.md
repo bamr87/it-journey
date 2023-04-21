@@ -4,11 +4,11 @@ author: null
 excerpt: null
 description: null
 snippet: null
-layout: cheatsheet
+layout: root
 categories:
-  - notes
+  - bootstrap
 tags:
-  - notes
+  - cheatsheet
 meta: null
 draft: true
 lastmod: 2023-03-12T22:39:30.674Z

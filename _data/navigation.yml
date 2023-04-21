@@ -1,8 +1,19 @@
 # FIXME: NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION. 
+
+# FIXME: Nest yaml into succeeding hierarchies
+
+test: &test
+  - title: "About-test"
+    url: /about/test
+    sublinks:
+      - title: "Home"
+        url: /about
+
 home:
   - title: "Home"
     icon: bi-house
     url: /home
+
 # Main Navigation (top)
 main:
   - nav-title: "Main Menu"
@@ -22,10 +33,12 @@ main:
   - title: "Journal"
     url: /posts
     sublinks:
+    - title: "home"
+      url: /posts
+    - title: "articles"
+      url: /posts/articles
     - title: "Quests"
       url: /quests
-    - title: "Posts"
-      url: /posts
   - title: "Library"
     url: /docs/
     sublinks:
@@ -35,20 +48,14 @@ main:
       url: /docs/jekyll
     - title: "Command Line"
       url: /docs/command-line
-  # - title: "Research"
-  #   url: /research/
-  #   sublinks:
-  #     - title: "Data"
-  #       url: /research/data/
-  #     - title: "Analysis"
-  #       url: /research/analysis/
   - title: "Hobbies"
-    url: /hobbies
+    url: &home '/hobbies'
     sublinks:
     - title: "home"
-      url: /hobbies
+      url: *home
     - title: "Music"
-      url: /hobbies/music
+      sub: &sub '/music'
+      url: [*home,*sub] # FIXME
     - title: "Gaming"
       url: /hobbies/gaming
     - title: "Art"
@@ -66,15 +73,20 @@ main:
       url: /notes/js
     - title: "Jekyll"
       url: /notes/jekyll
+  # - title: *test
   - title: "About"
     url: /about/
     sublinks:
     - title: "home"
       url: /about
+    - title: "Config"
+      url: /about/config
+    - title: "Theme"
+      url: /about/theme
+    - title: "Contributing"
+      url: /about/contributing
     - title: "Map"
       url: /about/sitemap
-    - title: "Style"
-      url: /about/style
 
 # Notes
 notes:
@@ -85,16 +97,12 @@ notes:
         url: /notes
       - title: "Shell"
         url: /notes/shell
-      - title: "Programming"
-        url: /notes/programming
-      - title: "Web-Dev"
-        url: /notes/web-dev
-      - title: "Cloud"
-        url: /notes/cloud
-  - title: "Cheatsheets"
-    url: /test
-  - title: "Cheatsheets"
-    url: /test
+      - title: "programming cs"
+        url: /notes/cheatsheets/programming
+      - title: "bootstrap cs"
+        url: /notes/cheatsheets/bootstrap
+      - title: "liquid cs"
+        url: /notes/cheatsheets/bootstrap
 
 # Quick Start
 quickstart:
@@ -129,22 +137,14 @@ quickstart:
 
 # documentation links
 docs:
-  - title: Getting Started
-    children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide
-      - title: "Structure"
-        url: /docs/structure
-      - title: "Installation"
-        url: /docs/installation
-      - title: "Upgrading"
-        url: /docs/upgrading
-  - title: Customization
-    children:
+  - title: Setup
+    sublinks:
       - title: "Configuration"
         url: /docs/configuration
       - title: "Overriding Theme Defaults"
         url: /docs/overriding-theme-defaults
+  - title: Features
+    sublinks:
       - title: "Navigation"
         url: /docs/navigation
       - title: "UI Text"
@@ -153,8 +153,8 @@ docs:
         url: /docs/authors
       - title: "Layouts"
         url: /docs/layouts
-  - title: Content
-    children:
+  - title: Headless CMS
+    sublinks:
       - title: "Working with Posts"
         url: /docs/posts
       - title: "Working with Pages"
@@ -165,24 +165,21 @@ docs:
         url: /docs/helpers
       - title: "Utility Classes"
         url: /docs/utility-classes
-  - title: Extras
-    children:
+  - title: Programming
+    sublinks:
+      - title: "Liquid"
+        url: /
+        source: 
+  - title: Design
+    sublinks:
       - title: "Stylesheets"
         url: /docs/stylesheets
       - title: "JavaScript"
         url: /docs/javascript
-  - title: Meta
-    children:
+  - title: Releases
+    sublinks:
       - title: "History"
         url: /docs/history
-      - title: "Contributing"
-        url: /docs/contributing
-      - title: "Old 2.2 Docs"
-        url: /docs/docs-2-2
-      - title: "License"
-        url: /docs/license
-      - title: "Terms &amp; Privacy Policy"
-        url: /terms
 
 about:
   - nav-title: "About"
@@ -194,15 +191,36 @@ about:
         url: /about/purpose
       - title: "Approach"
         url: /about/approach
+      - title: "Contributing"
+        url: /about/contributing
+      - title: "License"
+        url: /about/license
+      - title: "Terms &amp; Privacy Policy"
+        url: /terms
+      - title: "Theme"
+        url: /about/theme
       - title: "Sitemap"
         url: /about/sitemap
-      - title: "Style"
-        url: /about/style
 
 cooking:
   - title: "cooking"
-    children:
+    sublinks:
       - title: "Chinese-Egg-plant"
         url: /cooking/egg-plant
       - title: "Mapo-Tofu"
         url: /cooking/egg-plant
+
+hobbies: 
+  - title: "hobbies"
+    url: /hobbies/
+    sublinks:
+    - title: "home"
+      url: /hobbies
+    - title: "Music"
+      url: /hobbies/music
+    - title: "Gaming"
+      url: /hobbies/gaming
+    - title: "Art"
+      url: /hobbies/art
+    - title: "Cooking"
+      url: /hobbies/cooking

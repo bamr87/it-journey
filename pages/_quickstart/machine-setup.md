@@ -1,34 +1,42 @@
 ---
-title: Master Setup
+title: Machine Setup
 author: null
 layout: default
 description: null
 categories:
-  - machine-setup
+  - machine setup
+  - home
+keywords:
+  - 
 lastmod: '2022-05-21T20:45:39.643Z'
-draft: false
+draft: true
+
 ---
 
-# Master Setup Overview
+# Machine Setup Overview
 
-Before you can begin developing, your machine (computer) needs to be configured and loaded with the necessary software. Regardless of the OS you are using (Windows, Mac, Linux), there are specific components required. Detailed instructions based on your OS are provided, and can be accessed from the left side bar. 
+Before you can begin developing, your machine (computer) needs to be configured and loaded with the necessary software and dependancieis.
+Each OS (Windows, Mac, Linux) will have its own method to download and install software based on the technology stack you're working with. 
+In this guide, we will focus on how to build a Minimal Viable Product (MVP) to prep your machine to create a Static Website Generator using Jekyll.
+
+Detailed instructions based on your OS are provided, and can be accessed from the left side bar.
 
 ## Core setup
 
-- [Software Package Manager](#software-package-manager)
-- [Github CLI](https://cli.github.com/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Jekyll](https://jekyllrb.com/)
 
 
-Core Apps
-
-- Source Code Control (Git, GitHub CLI)
-- Integrated Development Environment (VS Code)
-- Archiver/compressor (7zip)
-- Screen Capture (ShareX)
-- File Transfer Utility (Filezilla)
+- Apps - [Software Package Manager](#software-package-manager)
+  - Retreives your applications/libraries/code through a trusted repository
+- Code - Source Code Repository
+  - [Github CLI](https://cli.github.com/)
+  - The command line tool to interact with Github repos
+- IDE - Integrated Development Environment
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - The best integrated development environment for beginners to advanced programmers
+- Programming Languages
+  - [Ruby](https://www.ruby-lang.org/en/)
+    - The programming language and framework used by Jekyll and Github pages
+  - Python
 
 ### Software Package Manager
 
@@ -57,6 +65,18 @@ Click on the links below to navigate to the detailed instructions:
 - [Install Homebrew](/quickstart/machine-setup/mac/#install-homebrew)
 - [Install Winget](/quickstart/machine-setup/windows/#install-winget)
 
+### Core Apps
+
+- Source Code Control (Git, GitHub CLI)
+- Integrated Development Environment (VS Code)
+- System Tools
+  - Archiver/compressor (7zip)
+  - Screen Capture (ShareX)
+  - File Transfer Utility (FileZilla)
+Graphic Design Tools
+  - Krita
+  - InkScape
+  - Gimp
 ### Github Command Line Interface
 
 The Github CLI is a command line interface for the Github API. It is used to create and manage repositories. It is also used to create and manage issues and pull requests.
@@ -81,8 +101,6 @@ Detailed instructions for installing software packages can be found in the [Brew
 
 Packages are grouped into the following categories:
 
-
-
 Development Tools
 
 - Programming Languages 
@@ -97,14 +115,12 @@ Development Tools
   - PostgreSQL
   - MongoDB
   - Redis
-- 
 
 Graphic Design Software
 
 Music Software
 
 Web 
-
 
 ### Install VS Code
 

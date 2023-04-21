@@ -4,7 +4,7 @@ sub-title: Welcome to my landing site of this world
 description: "This is the index.md file for the whole site and root "
 preview: /images/nubi-yawn.png
 excerpt: ""
-layout: default
+layout: root
 keywords:
   - Root
   - Algolia

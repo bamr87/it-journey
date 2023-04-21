@@ -1,15 +1,14 @@
 ---
 title: '{{title}}'
+description: null
 author: null
 excerpt: null
-description: null
-snippet: null
-categories:
-    - posts
-tags:
-    - article
-meta: null
+date: 2019-08-22T15:20:28.000Z
+lastmod: 2019-08-22T15:20:28.000Z
 draft: true
-lastmod: '2022-05-21T23:56:40.448Z'
+tags: []
+categories: []
+meta: null
+snippet: null
+slug:
 ---
-
