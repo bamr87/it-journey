@@ -3,9 +3,8 @@ title: Windows Setup
 author: null
 layout: default
 description: null
-categories:
-  - machine-setup
-slug: windows
+categories: win
+slug: win
 lastmod: 2022-08-06T17:38:11.496Z
 draft: false
 ---

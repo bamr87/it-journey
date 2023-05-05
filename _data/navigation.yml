@@ -110,30 +110,26 @@ quickstart:
   - title: "Machine-Setup"
     sublinks:
       - title: "Home"
-        url: /quickstart/machine-setup/home
+        url: /quickstart/machine-setup
       - title: "Mac"
-        url: /quickstart/machine-setup/mac
+        url: /quickstart/mac
       - title: "Windows"
-        url: /quickstart/machine-setup/windows
+        url: /quickstart/win
       - title: "Linux"
-        url: /quickstart/machine-setup/linux
+        url: /quickstart/linux
     url: /quickstart
   - title: "IDE"
     sublinks:
       - title: "Home"
-        url: /quickstart/ide/home
+        url: /quickstart/ide/
       - title: "VS-Code"
         url: /quickstart/ide/vscode
-    url: /ide/
-  - title: "Source-Code"
-    sublinks:
+      - title: "Jupiter Notebooks"
+        url: /quickstart/ide/jupiter
       - title: "github"
-        url: /quickstart/github/home
-  - title: "Web-Server"
-    sublinks:
+        url: /quickstart/ide/github
       - title: "Jekyll"
-        url: /quickstart/Jekyll/home
-    url: /quickstart/web-server/home
+        url: /quickstart/ide/jekyll
 
 # documentation links
 docs:

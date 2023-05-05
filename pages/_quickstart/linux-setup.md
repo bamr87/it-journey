@@ -3,9 +3,7 @@ title: Linux Setup
 author: null
 layout: default
 description: null
-categories:
-    - quickstart
-    - machine-setup
+categories: linux
 slug: linux
 lastmod: '2022-01-28T03:31:19.415Z'
 draft: false

@@ -3,9 +3,7 @@ title: Machine Setup
 author: null
 layout: default
 description: null
-categories:
-  - machine setup
-  - home
+categories: machine-setup
 keywords:
   - 
 lastmod: '2022-05-21T20:45:39.643Z'

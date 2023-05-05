@@ -207,7 +207,7 @@ collections:
     permalink: /:collection/:name/
   quickstart:
     output: true
-    permalink: /:collection/:categories/:name/
+    permalink: /:collection/:categories/
   about:
     output: true
     permalink: /:collection/:name/
