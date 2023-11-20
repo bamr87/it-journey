@@ -112,7 +112,7 @@ more info [here ](https://docs.github.com/en/account-and-profile/setting-up-and-
 ```powershell
 $GIT_ID = Read-Host "What is your Github ID?"
 $GIT_USER_NAME = Read-Host "What is your Github User Name?"
-git config --global user.name "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
+git config --global user.name "$GIT_USER_NAME@users.noreply.github.com"
 git config --global user.email "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
 ```
 
