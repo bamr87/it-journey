@@ -1,5 +1,23 @@
-//FIXME: Scroll to top is buggy
+//Event listener to see if scrolling has started
+
+window.addEventListener('scroll', function() {
+  var element = document.getElementById('backToTopBtn');
+  var height = window.innerHeight;
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (scrollTop > height * 0.1) { // Adjust the 0.1 to control when the opacity starts changing
+      element.style.opacity = 0.2; // 20% opacity
+      element.style.display = "block"
+  } else {
+      element.style.opacity = 0; // 0% opacity
+      element.style.display = "none"
+  }
+});
+
 function backToTopBtn() {
+  
+
+  
   let mybutton = document.getElementById("backToTopBtn");
  
   if (mybutton) {

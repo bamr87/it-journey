@@ -24,16 +24,16 @@
 // Floating back to top button
 
 #backToTopBtn { 
-    display: block; /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    bottom: 150px; /* Place the button at the bottom of the page */
+    bottom: 20px; /* Place the button at the bottom of the page */
     right: 20px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
     background-color: $primary; /* Set a background color */
     color: inherit; /* Text color */
-    opacity: 50%;
+    opacity: 25%;
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
     border-radius:10px;/* Rounded corners */
