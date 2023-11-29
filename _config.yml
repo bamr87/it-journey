@@ -150,20 +150,28 @@ powered_by:
 # All plugins are enabled by default for GitHub Pages. https://pages.github.com/versions/
 
 plugins:
-  # - github-pages
+  - github-pages
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
+  - jekyll-mermaid # https://mermaidjs.github.io/
+
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
   # - jekyll-postcss
-  # - jekyll-redirect-from
-  
+
+# https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
+
+mermaid:
+  src: 'mermaid/src/mermaid.js'
+
 ## Conversion
+# Markdown Options https://jekyllrb.com/docs/configuration/markdown/
+# https://github.com/github/jekyll-commonmark-ghpages
 
 markdown: kramdown
-highlighter: rouge
+# highlighter: rouge
 # lsi: false
 # excerpt_separator: "\n\n"
 # incremental: false
@@ -303,7 +311,7 @@ defaults:
       path: pages/_docs
     values:
       layout: *pages
-      category: docs
+      # category: docs
       show_date: true
       author_profile: true
       read_time: true

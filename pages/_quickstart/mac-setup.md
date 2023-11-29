@@ -5,7 +5,7 @@ layout: default
 description: null
 categories: mac
 slug: mac
-lastmod: 2023-11-28T04:16:55.590Z
+lastmod: 2023-11-28T20:00:38.622Z
 draft: false
 ---
 
@@ -286,3 +286,8 @@ brew install iterm2
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ```
+
+## References  
+
+[1](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
+[2](https://raisunny.com/ruby-for-jekyll-macos-update/)

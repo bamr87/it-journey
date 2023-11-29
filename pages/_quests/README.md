@@ -5,11 +5,19 @@ keywords: init, world
 catagories: quests
 description: This is the init world.
 permalink: /quests/
-lastmod: 2023-11-25T21:09:53.180Z
+lastmod: 2023-11-28T05:13:22.165Z
 ---
 
 # init_world
   Initialize your IT world
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
 ```mermaid
 graph TD;
