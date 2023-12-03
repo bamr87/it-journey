@@ -6,7 +6,7 @@ subcategory: jekyll
 date: 2020-01-20
 tags:
   - Personal Site
-lastmod: 2023-12-03T08:47:32.699Z
+lastmod: 2023-12-03T09:01:50.241Z
 ---
 
 > Services/tools used for building personal site.
@@ -19,7 +19,7 @@ My personal website can be accessed through following domains. These sites are a
 
  No. | URL                                                | Description
 -----|----------------------------------------------------|----------------------------------------
- 1   | <https://github.com/{{> site.github_user }}/{{ site.github_user }}.github.io | Source code repository
+ 1   | https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io | Source code repository
  2   | https://{{ site.github_user }}.github.io/                      | `Domain 1`, hosted by GitHub Pages
  3   | <https://travis-ci.org/>                             | CI/CD for {{ site.github_user }}.github.io
  4   | https://{{ site.github_user }}.netlify.com/                    | `Domain 2`, hosted by Netlify

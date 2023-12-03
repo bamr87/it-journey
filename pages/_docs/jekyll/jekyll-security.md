@@ -6,7 +6,7 @@ subcategory: jekyll
 date: 2019-06-29
 tags:
   - Security
-lastmod: 2023-12-03T08:47:30.198Z
+lastmod: 2023-12-03T09:00:54.463Z
 ---
 
 > Scan website security vulnerabilities and fix them.
@@ -15,11 +15,11 @@ lastmod: 2023-12-03T08:47:30.198Z
 
 ### 1.1 Websites
 
-I have my personal website hosted on two domains, [{{ site.github_user }}.github.io](https://{{ site.github_user }}.github.io) and [{{ site.github_user }}.netlify.com](https://{{ site.github_user }}.netlify.com). The first one is hosted on [GitHub Pages](https://pages.github.com/), while the second one is hosted on [Netlify](https://www.netlify.com/). These two websites are powered by [Jekyll](https://jekyllrb.com/) and all their contents are totally static. Actually, they are using the same code base.The source codes are managed on GitHub in repository [https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io](<https://github.com/{{> site.github_user }}/{{ site.github_user }}.github.io). Both sites are CI/CD with GitHub. If there is any change submitted to this repository, GitHub Pages and Netlify will compile and deploy the website automatically.
+I have my personal website hosted on two domains, [{{ site.github_user }}.github.io](https://{{ site.github_user }}.github.io) and [{{ site.github_user }}.netlify.com](https://{{ site.github_user }}.netlify.com). The first one is hosted on [GitHub Pages](https://pages.github.com/), while the second one is hosted on [Netlify](https://www.netlify.com/). These two websites are powered by [Jekyll](https://jekyllrb.com/) and all their contents are totally static. Actually, they are using the same code base.The source codes are managed on GitHub in repository [https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io](https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io). Both sites are CI/CD with GitHub. If there is any change submitted to this repository, GitHub Pages and Netlify will compile and deploy the website automatically.
 
 ### 1.2 Header Security
 
-Visit [securityheaders.com](https://securityheaders.com) and scan headers for site https://{{ site.github_user }}.github.io.
+Visit [securityheaders.com](https://securityheaders.com) and scan headers for site https://{{ site.github_user }}.github.io.w
 ![image](/assets/images/jekyll/8133/header_githubpages.png)
 All the checks on header are failed. If we scan site https://{{ site.github_user }}.netlify.com, same result will be returned.
 
