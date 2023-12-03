@@ -11,11 +11,9 @@ tags:
 meta: null
 keywords: wsl, windows, windowssubsystem, gnu, linux, bash, vs code, remote extension, debug, path, visual studio
 draft: true
-lastmod: 2022-05-21T23:56:40.448Z
-source: 'https://github.com/MicrosoftDocs/WSL/blob/main/WSL/tutorials/wsl-vscode.md'
+lastmod: 2023-12-03T08:37:14.103Z
+source: https://github.com/MicrosoftDocs/WSL/blob/main/WSL/tutorials/wsl-vscode.md
 ---
-
-# Get started using Visual Studio Code with Windows Subsystem for Linux
 
 Visual Studio Code, along with the WSL extension, enables you to use WSL as your full-time development environment directly from VS Code. You can:
 

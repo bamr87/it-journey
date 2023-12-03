@@ -8,21 +8,28 @@ tags:
   - SEO
   - CDN
   - DNS
-lastmod: 2022-06-11T18:16:53.931Z
+lastmod: 2023-12-03T08:47:31.567Z
 ---
 
 > Optimize the website to improve the rankings.
 
 ## 1. SEO
+
 Search engine optimization (`SEO`) is the process of increasing the quality and quantity of website traffic by increasing the visibility of a website or a web page to users of a web search engine.
+
 ### 1.1 robots.txt
+
 Avoid web crawler to visit specific content, eg. /note.
+
 ```raw
 User-agent: *
 Disallow: /note/
 ```
+
 ### 1.2 RSS Feed
+
 Edit /blog/atom.xml
+
 ```html
 {%- raw -%}
 ---
@@ -56,8 +63,11 @@ type: blog
 </feed>
 {% endraw %}
 ```
+
 ![image](/assets/images/jekyll/8131/rssfeed.png)
+
 ### 1.3 Sitemap
+
 ```xml
 {%- raw -%}
 ---
@@ -84,15 +94,20 @@ type: blog
 </urlset>
 {% endraw %}
 ```
+
 ![image](/assets/images/jekyll/8131/sitemap.png)
 
 ## 2. Caching with CDN
+
 ### 2.1 Create a new account in Cloudflare
+
 Add a new site, note the two name servers
+
 * miki.ns.cloudflare.com
 * owen.ns.cloudflare.com
 
 ### 2.2 Update Name server in GoDaddy
+
 Find your domain, click the three dot button, choose 'Manage DNS'.
 ![image](/assets/images/jekyll/8131/godaddy_mydomains.png)
 Scroll down, see the Nameservers section, click 'Change' btton.
@@ -105,9 +120,11 @@ You will receive an email from CloudFlare.
 ![image](/assets/images/jekyll/8131/cloudflare_notification.png)
 
 ## 3. Move Javascript Files to Bottom
+
 Put javascript files to the bottom of the page can speed up the loading.
 
 ## 4. Reference
+
 * [About robots.txt](https://www.robotstxt.org/robotstxt.html)
 * [How to Use XML Sitemaps to Boost SEO](https://www.searchenginejournal.com/xml-sitemaps-seo/)
 * [JEKYLL - GENERATING A SITEMAP.XML WITHOUT A PLUGIN](http://www.independent-software.com/generating-a-sitemap-xml-with-jekyll-without-a-plugin.html)

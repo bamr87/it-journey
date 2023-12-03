@@ -1,6 +1,6 @@
 ---
 key: tutorial
-title: Continuously Deploy Jekyll Website to GitHub Pages with Travis-CI
+title: Continuously Deploy Jekyll to GitHub Pages with Travis-CI
 index: 8141
 subcategory: jekyll
 date: 2017-12-10
@@ -8,14 +8,14 @@ tags:
   - Jekyll
   - Github Pages
   - Travis CI
-lastmod: 2022-06-11T18:16:21.350Z
+lastmod: 2023-12-03T08:38:10.703Z
 ---
 
 > Start continuous integration with Travis CI for Jekyll website.
 
 ## 1. GitHub Pages & Jekyll
-I have my person website http://{{ site.github_user }}.github.io/ hosted on [Github Pages](https://pages.github.com/). I post new blogs by creating Markdown files(.md) and submit them to the repository on Github. Then, Github Pages(powered by [Jekyll](https://jekyllrb.com/)) starts to compile the entire website and publish it. In some cases, however, the compilation fails, and the new changes are not published. Then, GitHub Page will send a notification email to me. This email just reminds me that there is one build failure, but doesn't tell what is the root cause.
 
+I have my person website http://{{ site.github_user }}.github.io/ hosted on [Github Pages](https://pages.github.com/). I post new blogs by creating Markdown files(.md) and submit them to the repository on Github. Then, Github Pages(powered by [Jekyll](https://jekyllrb.com/)) starts to compile the entire website and publish it. In some cases, however, the compilation fails, and the new changes are not published. Then, GitHub Page will send a notification email to me. This email just reminds me that there is one build failure, but doesn't tell what is the root cause.
 
 Another approach is to use third-party service(eg. Travis CI) to display Jekyll build error messages, which is also recommended by Github Pages.
 

@@ -2,7 +2,7 @@
 title: Set up a WSL development environment
 author: null
 excerpt: null
-description: Set up a WSL development environment using best practices from this set-by-step guide. Learn how to run Ubuntu, Visual Studio Code or Visual Studio, Git, Windows Credential Manager, MongoDB, MySQL, Docker remote containers and more.
+description: Set up a WSL development environment using best practices.
 snippet: null
 categories:
   - notes
@@ -10,11 +10,9 @@ tags:
   - notes
 meta: null
 draft: true
-lastmod: 2022-01-10T21:54:00.053Z
-source: 'https://github.com/MicrosoftDocs/wsl/blob/main/WSL/setup/environment.md'
+lastmod: 2023-12-03T08:37:16.464Z
+source: https://github.com/MicrosoftDocs/wsl/blob/main/WSL/setup/environment.md
 ---
-
-# Set up a WSL development environment
 
 A step-by-step guide to the best practices for setting up a WSL development environment. Learn how to run the command to install the default Bash shell that uses Ubuntu or can be set to install other Linux distributions, use basic WSL commands, set up Visual Studio Code or Visual Studio, Git, Windows Credential Manager, databases like MongoDB, Postgres, or MySQL, set up GPU acceleration, run GUI apps, and more.
 
@@ -113,9 +111,13 @@ We recommend using WSL with Windows Terminal, especially if you plan to work wit
 
 ## File storage
 
-- To open your WSL project in Windows File Explorer, enter: `explorer.exe .` <br> *Be sure to add the period at the end of the command to open the current directory.*
+- To open your WSL project in Windows File Explorer, enter: `explorer.exe .`
 
-- [Store your project files on the same operating system as the tools you plan to use](../filesystems.md#file-storage-and-performance-across-file-systems). <br>For the fastest performance speed, store your files in the WSL file system if you are working on them with Linux tools in a Linux command line (Ubuntu, OpenSUSE, etc). If you're working in a Windows command line (PowerShell, Command Prompt) with Windows tools, store your files in the Windows file system. Files can be accessed across the operating systems, but it may significantly slow down performance.
+*Be sure to add the period at the end of the command to open the current directory.*
+
+- [Store your project files on the same operating system as the tools you plan to use](../filesystems.md#file-storage-and-performance-across-file-systems).
+
+For the fastest performance speed, store your files in the WSL file system if you are working on them with Linux tools in a Linux command line (Ubuntu, OpenSUSE, etc). If you're working in a Windows command line (PowerShell, Command Prompt) with Windows tools, store your files in the Windows file system. Files can be accessed across the operating systems, but it may significantly slow down performance.
 
 For example, when storing your WSL project files:
 
@@ -126,7 +128,7 @@ For example, when storing your WSL project files:
 
 ## Set up your favorite code editor
 
-We recommend using Visual Studio Code or Visual Studio, as they directly support remote development and debugging with WSL. Visual Studio Code allows you to use WSL as a full-featured development environment. Visual Studio offers native WSL support for C++ cross-platform development. 
+We recommend using Visual Studio Code or Visual Studio, as they directly support remote development and debugging with WSL. Visual Studio Code allows you to use WSL as a full-featured development environment. Visual Studio offers native WSL support for C++ cross-platform development.
 
 ### Use Visual Studio Code
 
@@ -140,7 +142,7 @@ Once VS Code is installed and set up, you can open your WSL project with a VS Co
 
 ### Use Visual Studio
 
-Follow this step-by-step guide to [Get started using Visual Studio with WSL for C++ cross-platform development](/cpp/build/walkthrough-build-debug-wsl2). Visual Studio 2022 enables you to build and debug CMake projects on Windows, WSL distributions, and SSH connections from the same instance of Visual Studio. 
+Follow this step-by-step guide to [Get started using Visual Studio with WSL for C++ cross-platform development](/cpp/build/walkthrough-build-debug-wsl2). Visual Studio 2022 enables you to build and debug CMake projects on Windows, WSL distributions, and SSH connections from the same instance of Visual Studio.
 
 ![Select a target system in Visual Studio 2022](../media/vs-target-system.png)
 
@@ -199,4 +201,4 @@ Follow this tutorial to learn how to set up and [run Linux GUI apps on WSL](../t
 - [Set up your development environment on Windows](/windows/dev-environment/): Learn more about setting up your development environment for your preferred language or framework, such as React, Python, NodeJS, Vue, etc.
 - [Troubleshooting](../troubleshooting.md): Find common issues, where to report bugs, where to request new features, and how to contribute to the docs.
 - [FAQs](../faq.yml): Find a list of frequently asked questions.
-- [Release Notes](../release-notes.md): Review the WSL Release Notes for a history of past build updates. You can also find the [release notes for the WSL Linux Kernel](../kernel-release-notes.md).
+- [Release Notes](../release-notes.md): Review the WSL Release Notes for a history of past build updates. You can also find the [release notes for the WSL Linux Kernel](../kernel-release-notes.md)
