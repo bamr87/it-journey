@@ -1,6 +1,3 @@
-[submodule "homebrew"]
-	path = _quickstart/homebrew
-	url = https://github.com/bamr87/homebrew
-[submodule "winget"]
-	path = _quickstart/winget
-	url = https://github.com/bamr87/winget-packages.git
+[submodule "pages/_docs/jekyll-docs"]
+	path = pages/_docs/jekyll-docs
+	url = https://github.com/jekyll/jekyll.git
