@@ -66,6 +66,18 @@ maintainers:
   - name: "Vacant"
     profile: "/github.com"
 
+
+## Admin Information----------------------------------------------------------
+
+jekyll_admin:
+  # hidden_links:
+  #   - posts
+  #   - pages
+  #   - staticfiles
+  #   - datafiles
+  #   - configuration
+  homepage: "pages"
+
 ## Personalization ----------------------------------------------------------------
 
 locale                   : "en-US"

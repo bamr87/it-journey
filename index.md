@@ -1,24 +1,23 @@
 ---
 title: Hello World
 sub-title: Welcome to my landing site of this world
-description: "This is the index.md file for the whole site and root "
-preview: /images/nubi-yawn.png
-excerpt: ""
+description: This is the index.md file for the whole site and root
+preview: "/images/nubi-yawn.png"
 layout: root
 keywords:
-  - Root
-  - Algolia
-  - Bootstrap
-  - Github
-  - GitHub Pages
-  - Jekyll
-  - TravisCI
-  - Web Development
+- Root
+- Algolia
+- Bootstrap
+- Github
+- GitHub Pages
+- Jekyll
+- TravisCI
+- Web Development
 tags:
-  - index
+- index
 categories:
-  - hello world
-lastmod: 2022-08-28T01:51:53.807Z
+- hello world
+lastmod: '2022-08-28 01:51:53 +0000'
 ---
 
 Hello world, and welcome to my site. Click on `Home` in the navigation bar to get started.
@@ -38,6 +37,7 @@ Nothing to see here. Yet... but try clicking on the gear icon (or particles) for
 ## Features
 {: .collapse .collapsed .dev-settings }
 - [x] Github Pages compatibility
+- [x] Jekyll Admin
 - [x] MathJax
 - [x] Bootstrap 5 CDN
 - [x] Algolia Search indexing

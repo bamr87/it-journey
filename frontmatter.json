@@ -76,6 +76,21 @@
           "title": "lastmod",
           "name": "lastmod",
           "type": "datetime"
+        },
+        {
+          "title": "key",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "title": "index",
+          "name": "index",
+          "type": "number"
+        },
+        {
+          "title": "subcategory",
+          "name": "subcategory",
+          "type": "string"
         }
       ]
     },
