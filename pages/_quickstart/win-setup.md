@@ -21,9 +21,45 @@ These are the steps to setup this jekyll site repository on a Windows PC. All th
 
 ## Windows Developer Settings
 
-![](/assets/images/windows-developer-settings.png)
+![](/assets/gif/windows-developer-settings.gif))
 
-![](/assets/images/windows-developer-settings-powershell.png)
+```powershell
+# Enable Developer Mode, apply File Explorer settings, and change execution policy
+
+# Check if running with elevated privileges
+if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Host "Please run this script as an administrator."
+    
+    # Pause before exiting
+    Read-Host "Press Enter to exit..."
+    exit
+}
+
+# Enable developer mode
+Write-Host "Enabling Developer Mode..."
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /v AllowDevelopmentWithoutDevLicense /t REG_DWORD /d 1 /f
+
+# Apply File Explorer settings
+Write-Host "Applying File Explorer settings..."
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowFullPath /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowEncryptCompressedColor /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v AutoCheckSelect /t REG_DWORD /d 1 /f
+
+# Change execution policy to allow local PowerShell scripts
+Write-Host "Changing execution policy..."
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+Write-Host "Developer mode has been enabled, File Explorer settings applied, and execution policy changed."
+Write-Host "Please check the 'For developers' section in 'Update & Security' settings for confirmation."
+
+# Pause before exiting
+Read-Host "Press Enter to exit..."
+
+```
+
+
 
 ### Install Winget
 
