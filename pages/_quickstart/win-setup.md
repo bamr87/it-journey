@@ -19,49 +19,15 @@ These are the steps to setup this jekyll site repository on a Windows PC. All th
 - Ruby
 - Jekyll
 
-## Windows Developer Settings
+## Windows Developer Settings (Windows 10 only)
+
+Update your OS settings to allow shell scripts to execute and to install winget (if applicable). Without this setting, you may run into issues later on.
 
 ![](/assets/gif/windows-developer-settings.gif))
 
-```powershell
-# Enable Developer Mode, apply File Explorer settings, and change execution policy
+NOTE: This change opens up a lot of security vualnerabilities so proceed with caution. 
 
-# Check if running with elevated privileges
-if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Host "Please run this script as an administrator."
-    
-    # Pause before exiting
-    Read-Host "Press Enter to exit..."
-    exit
-}
-
-# Enable developer mode
-Write-Host "Enabling Developer Mode..."
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /v AllowDevelopmentWithoutDevLicense /t REG_DWORD /d 1 /f
-
-# Apply File Explorer settings
-Write-Host "Applying File Explorer settings..."
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hidden /t REG_DWORD /d 1 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowFullPath /t REG_DWORD /d 1 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowEncryptCompressedColor /t REG_DWORD /d 1 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v AutoCheckSelect /t REG_DWORD /d 1 /f
-
-# Change execution policy to allow local PowerShell scripts
-Write-Host "Changing execution policy..."
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-
-Write-Host "Developer mode has been enabled, File Explorer settings applied, and execution policy changed."
-Write-Host "Please check the 'For developers' section in 'Update & Security' settings for confirmation."
-
-# Pause before exiting
-Read-Host "Press Enter to exit..."
-
-```
-
-
-
-### Install Winget
+### Install Winget (Windows 10 only)
 
 Winget is a package manager for Windows and is developed and maintained [here](https://github.com/microsoft/winget-cli).
 
