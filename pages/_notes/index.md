@@ -265,3 +265,21 @@ https://icons.getbootstrap.com/#install
 <i class="bi bi-gem"></i>
 
 ![](../../assets/images/penrose-hard.png)
+
+## OS Based instructions
+
+{% mac %}
+
+These instructions are pertinent to Mac users.
+
+{% endmac %}
+{% linux %}
+
+ These instructions are pertinent to Linux users.
+
+{% endlinux %}
+{% windows %}
+
+These instructions are pertinent to Windows users.
+
+{% endwindows %}

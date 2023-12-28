@@ -27,7 +27,7 @@ Visual Studio Code, along with the WSL extension, enables you to use WSL as your
 * edit files in your Linux or mounted Windows filesystem (for example /mnt/c) without worrying about pathing issues, binary compatibility, or other cross-OS challenges
 
 ## Install VS Code and the WSL extension
-
+ 
 * Visit the [VS Code install page](https://code.visualstudio.com/download) and select the 32 or 64 bit installer. Install Visual Studio Code on Windows (not in your WSL file system).
 
 * When prompted to **Select Additional Tasks** during installation, be sure to check the **Add to PATH** option so you can easily open a folder in WSL using the code command.
