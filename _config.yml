@@ -91,6 +91,9 @@ logo_source              : &logo_source "https://www.it-journey.dev"
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
+_posts_file_structure    : "year-month-day-title.md"
+
+
 
 ## Identity #####################################################################
 
@@ -167,7 +170,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
-  - jekyll-mermaid # https://mermaidjs.github.io/
+  - jekyll-mermaid  # https://mermaidjs.github.io/
+  - jekyll-admin # https://github.com/jekyll/jekyll-admin
+  - jekyll-redirect-from
 
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason

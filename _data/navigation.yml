@@ -67,12 +67,6 @@ main:
     sublinks:
     - title: "home"
       url: /notes
-    - title: "shell"
-      url: /notes/shell
-    - title: "Javascript"
-      url: /notes/js
-    - title: "Jekyll"
-      url: /notes/jekyll
   # - title: *test
   - title: "About"
     url: /about/
@@ -88,21 +82,21 @@ main:
     - title: "Map"
       url: /about/sitemap
 
-# Notes
-notes:
-  - title: "Notes"
-    url: /notes
-    sublinks:
-      - title: "home"
-        url: /notes
-      - title: "Shell"
-        url: /notes/shell
-      - title: "programming cs"
-        url: /notes/cheatsheets/programming
-      - title: "bootstrap cs"
-        url: /notes/cheatsheets/bootstrap
-      - title: "liquid cs"
-        url: /notes/cheatsheets/bootstrap
+# # Notes
+# notes:
+#   - title: "Notes"
+#     url: /notes
+#     sublinks:
+#       - title: "home"
+#         url: /notes
+#       - title: "Shell"
+#         url: /notes/shell
+#       - title: "programming cs"
+#         url: /notes/cheatsheets/programming
+#       - title: "bootstrap cs"
+#         url: /notes/cheatsheets/bootstrap
+#       - title: "liquid cs"
+#         url: /notes/cheatsheets/bootstrap
 
 # Quick Start
 quickstart:

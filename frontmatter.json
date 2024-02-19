@@ -4,6 +4,42 @@
     {
       "title": "pages",
       "path": "[[workspace]]/pages"
+    },
+    {
+      "title": "it-journey",
+      "path": "[[workspace]]"
+    },
+    {
+      "title": "_about",
+      "path": "[[workspace]]/pages/_about"
+    },
+    {
+      "title": "_docs",
+      "path": "[[workspace]]/pages/_docs"
+    },
+    {
+      "title": "_hobbies",
+      "path": "[[workspace]]/pages/_hobbies"
+    },
+    {
+      "title": "_notes",
+      "path": "[[workspace]]/pages/_notes"
+    },
+    {
+      "title": "_posts",
+      "path": "[[workspace]]/pages/_posts"
+    },
+    {
+      "title": "_quests",
+      "path": "[[workspace]]/pages/_quests"
+    },
+    {
+      "title": "_quickstart",
+      "path": "[[workspace]]/pages/_quickstart"
+    },
+    {
+      "title": "pages",
+      "path": "[[workspace]]/pages"
     }
   ],
   "frontMatter.templates.enabled": true,
@@ -156,5 +192,13 @@
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.content.snippets": {
+    "Test Snippet": {
+      "description": "test",
+      "body": "echo \"hello World\"",
+      "fields": []
+    }
+  },
+  "frontMatter.preview.host": "http://localhost:4000"
 }
