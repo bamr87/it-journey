@@ -4,7 +4,7 @@ Author: bamr87
 Description: This is an overall outline where you can start.
 permalink: /home/
 layout: home
-purpose: To provide a platform for people to share their knowledge and tools
+purpose: To build a platform for learning and share knowledge and tools
 Keywords: Home, Zer0
 Post: null
 lastmod: 2022-07-25T00:10:47.252Z
@@ -29,7 +29,14 @@ Here are a few routes:
 
 ### Zer0 to Her0 [Quest](/quest/)
 
+<!-- TODO: Need story line  -->
+
 1. Prologue - Init Hello World
+   1. Who are you and what do you want?
+   2. Are you willing to put in the time and effort to become a full-stack developer?
+   3. What are your minimum requirements to start this journey?
+   4. What are your goals?
+   5. What are your expectations?
 2. Chapter 1 - Identity Crisis
    1. 
    2. Minimum requirements
@@ -40,12 +47,14 @@ Here are a few routes:
 ### Skill Level Route
 For those who prefer the route based on difficulty:
 
-1. Foundations - 000
+1. Beginner - 000
 2. Intermediate - 001
 3. Advanced - 010
 4. Expert - 011
 5. Master - 100
 6. Hero - 101
+7. Super Hero - 110
+8. God - 111
 
 ### Stack Attack
 
