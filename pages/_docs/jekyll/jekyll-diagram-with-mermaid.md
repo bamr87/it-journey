@@ -1,14 +1,13 @@
 ---
 key: tutorial
 title: Jekyll - Diagram with Mermaid
-index: 8127
 subcategory: jekyll
-date: 2018-09-15
+date: 2023-11-28
 tags:
   - Mermaid
   - Diagram
 mermaid: true
-lastmod: 2022-06-04T17:35:42.078Z
+lastmod: 2023-11-28T18:27:12.988Z
 ---
 
 > Use Mermaid in Markdown to draw diagrams.
@@ -121,6 +120,93 @@ graph LR
       B-->D(fa:fa-spinner);
       B-->E(fa:fa-camera-retro perhaps?);
 </div>
+
+## AI Instructions
+Setting up Jekyll to use the Mermaid diagram tool involves a few steps. Here's a guide to help you through the process:
+
+### 1. Install Jekyll (if you haven't already)
+
+First, ensure you have Jekyll installed. You can install it by running:
+
+```bash
+gem install jekyll bundler
+```
+
+### 2. Create a New Jekyll Site (if needed)
+
+If you're starting from scratch, create a new Jekyll site:
+
+```bash
+jekyll new my-awesome-site
+cd my-awesome-site
+```
+
+### 3. Install Mermaid
+
+Mermaid can be included in Jekyll sites via a JavaScript file. You need to add the Mermaid JS to your site.
+
+#### Option 1: Using a CDN
+
+Add the following line to your HTML layout (usually in `_layouts/default.html`):
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+```
+
+#### Option 2: Download and Host
+
+1. Download `mermaid.min.js` from the [Mermaid GitHub repository](https://github.com/mermaid-js/mermaid).
+2. Place it in an accessible directory in your Jekyll site, like `/assets/js/`.
+3. Link to it in your HTML layout:
+
+```html
+<script src="{{ '/assets/js/mermaid.min.js' | relative_url }}"></script>
+```
+
+### 4. Initialize Mermaid
+
+You can initialize Mermaid by adding a script tag at the bottom of your layout file (`_layouts/default.html`), just before the closing `</body>` tag:
+
+```html
+<script>
+    mermaid.initialize({startOnLoad:true});
+</script>
+```
+
+### 5. Add Mermaid Diagrams in Your Content
+
+You can now add Mermaid diagrams directly in your Markdown files. Use code blocks with `mermaid` as the language identifier:
+
+````
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+````
+
+### 6. Build and Serve Your Site
+
+Finally, build and serve your Jekyll site:
+
+```bash
+bundle exec jekyll serve
+```
+
+### Troubleshooting
+
+- **Check JavaScript Console**: If Mermaid diagrams aren't rendering, check your browser's JavaScript console for errors.
+- **Syntax Errors in Diagrams**: Ensure your Mermaid syntax is correct. Invalid syntax can prevent diagrams from rendering.
+
+### Additional Customization
+
+- **Mermaid Configuration**: Mermaid offers various configuration options. You can customize these in the initialization script.
+- **Styling**: You can apply custom CSS to style your Mermaid diagrams.
+
+By following these steps, you should be able to integrate Mermaid diagrams into your Jekyll site. Remember to regularly check for updates to the Mermaid library to ensure compatibility and security.
+
 
 ## 3. References
 * [Mermaid Documentation](https://mermaidjs.github.io/)

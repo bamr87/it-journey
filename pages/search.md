@@ -7,6 +7,7 @@ categories:
 slug: search
 lastmod: 2023-03-11T01:12:55.441Z
 draft: false
+permalink: /search/
 ---
 
 ```html

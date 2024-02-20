@@ -3,9 +3,8 @@ title: Windows Setup
 author: null
 layout: default
 description: null
-categories:
-  - machine-setup
-slug: windows
+categories: win
+slug: win
 lastmod: 2022-08-06T17:38:11.496Z
 draft: false
 ---
@@ -20,13 +19,15 @@ These are the steps to setup this jekyll site repository on a Windows PC. All th
 - Ruby
 - Jekyll
 
-## Windows Developer Settings
+## Windows Developer Settings (Windows 10 only)
 
-![](/assets/images/windows-developer-settings.png)
+Update your OS settings to allow shell scripts to execute and to install winget (if applicable). Without this setting, you may run into issues later on.
 
-![](/assets/images/windows-developer-settings-powershell.png)
+![](/assets/gif/windows-developer-settings.gif))
 
-### Install Winget
+NOTE: This change opens up a lot of security vualnerabilities so proceed with caution. 
+
+### Install Winget (Windows 10 only)
 
 Winget is a package manager for Windows and is developed and maintained [here](https://github.com/microsoft/winget-cli).
 
@@ -113,7 +114,7 @@ more info [here ](https://docs.github.com/en/account-and-profile/setting-up-and-
 ```powershell
 $GIT_ID = Read-Host "What is your Github ID?"
 $GIT_USER_NAME = Read-Host "What is your Github User Name?"
-git config --global user.name "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
+git config --global user.name "$GIT_USER_NAME@users.noreply.github.com"
 git config --global user.email "$GIT_ID+$GIT_USER_NAME@users.noreply.github.com"
 ```
 
@@ -150,8 +151,9 @@ winget import --import-file winget-app-dev.json
 
 
 
-#### Windows Sub Linus
+#### Windows Sub Linux
 
+[install docs](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 Download Ubuntu
 

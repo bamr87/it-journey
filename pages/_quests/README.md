@@ -1,18 +1,25 @@
 ---
 title: Init World
-# Author: bamr87
 layout: collection
 keywords: init, world
 catagories: quests
 description: This is the init world.
 permalink: /quests/
-lastmod: 2022-08-07T14:49:52.005Z
+lastmod: 2023-11-28T05:13:22.165Z
 ---
 
 # init_world
   Initialize your IT world
 
-```mermaid!
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+```mermaid
 graph TD;
     OS-->Win;
     OS-->Mac;
@@ -80,4 +87,8 @@ Winget
 - Hello_world
   - Navigation
   - profile
-  - 
+
+
+Main Quests
+
+Side Quests

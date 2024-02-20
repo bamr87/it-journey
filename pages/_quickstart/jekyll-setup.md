@@ -6,7 +6,7 @@ description: null
 categories:
   - quickstart
 slug: jekyll
-lastmod: '2022-01-29T00:45:02.139Z'
+lastmod: 2023-11-20T04:55:27.266Z
 draft: false
 ---
 
@@ -21,6 +21,10 @@ Jekyll requires the following:
 * Ruby version **{{ site.data.ruby.min_version }}** or higher
 * RubyGems
 * GCC and Make
+
+If you want to use Github Pages, here are the [dependencies](https://pages.github.com/versions.json) 
+
+
 
 ## Instructions
 

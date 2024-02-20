@@ -4,7 +4,6 @@ author: null
 layout: default
 description: null
 categories:
-    - github
 slug: github
 lastmod: '2022-01-25T04:36:34.355Z'
 draft: false

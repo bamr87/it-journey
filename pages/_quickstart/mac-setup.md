@@ -3,10 +3,9 @@ title: Mac Setup
 author: null
 layout: default
 description: null
-categories:
-    - machine-setup
+categories: mac
 slug: mac
-lastmod: '2022-02-14T03:08:28.573Z'
+lastmod: 2023-11-28T20:00:38.622Z
 draft: false
 ---
 
@@ -114,7 +113,7 @@ Or install individually using a loop
 mkdir _quest/init_world/hello-mac/
 ln ../_quest/init_world/hello-mac/hb-packages.sh _quest/init_world/hello-mac/hb-packages.sh
 
-{% include_relative /_quest/init_world/hello-mac/hb-packages.sh %}
+{% include_relative /homebrew/hb-packages.sh %}
 ```
 
 ### Install VS Code
@@ -140,14 +139,31 @@ export SDKROOT=$(xcrun --show-sdk-path)
 
 ### Install Ruby
 
+[Ref](https://mac.install.guide/ruby/13.html)
+
 Ruby is the programming language of choice for Jekyll, and also manages the dependencies for the Jekyll gem.
+
+
 
 ```bash
 # Install Ruby
-brew install ruby
+brew install ruby@2.7
 ```
 
+
 #### Add Ruby to PATH
+
+```
+Ah, the `$PATH` variable in Linux and MacOS – it's like the wise old map of a seasoned explorer! This variable is crucial because it tells your system where to look for the executable files (those little adventurers that actually run your commands) when you type a command in the terminal.
+
+Imagine you're in a vast library (your computer) looking for a specific book (a program, like `python` or `git`). Now, if this library had no organization, you'd be wandering around forever! That's where `$PATH` comes in – it's like a magical index telling you exactly in which aisles (directories) to look for your book (executable file).
+
+When you type a command, the system checks each directory listed in your `$PATH` variable, in the order they're listed. If it finds the executable file in one of these directories, voilà! The command runs. If not, it's like hitting a dead end in a maze, and you get an error saying the command wasn't found.
+
+You can see your current `$PATH` by typing `echo $PATH` in the terminal. It shows a list of paths, separated by colons. You can add new paths to it, ensuring that your system knows about more places to look for your programs. 
+
+Just remember, with great power comes great responsibility. Modify the `$PATH` wisely, or you might lead your system into a labyrinth of confusion!
+```
 
 After install, you need to add the executables to your PATH. Otherwise, you will not be able to run Ruby or Jekyll.
 
@@ -157,15 +173,26 @@ First check which terminal shell you are using:
 echo $SHELL
 ```
 
+Add new PATH to ruby 2.7 by inserting into your profile
+
+```shell
+# This tells your system where to look for the executable files and where the gems are located
+
+export PATH="/usr/local/opt/ruby/bin:/usr/local/opt/ruby@2.7/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+export PATH=/usr/local/opt/ruby@2.7/bin:$PATH
+export PATH=`gem environment gemdir`/bin:$PATH
+```
+
 ```bash
 # Add Ruby to your PATH if you're using Zsh
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.4/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH=`gem environment gemdir`/bin:$PATH' >> ~/.zshrc
 ```
 
 
 ```bash
 # Add Ruby to your PATH If you're using Bash
-echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.4/bin:$PATH"' >> ~/.bash_profile
 ```
 
 ### Install Jekyll
@@ -259,3 +286,8 @@ brew install iterm2
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ```
+
+## References  
+
+[1](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
+[2](https://raisunny.com/ruby-for-jekyll-macos-update/)

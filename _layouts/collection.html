@@ -3,7 +3,13 @@ layout: default
 ---
 
 <!-- collection.html  -->
-
+<div class="dev-settings collapsed collapse">
+  <button type="button" class="btn btn-primary">
+    <a href="#index-section">
+      go-to-index
+    </a>
+  </button>
+</div>
 {{ content }}
 
 {% assign entries = site[page.collection] %}
@@ -14,6 +20,9 @@ layout: default
 
 <!-- Loop through collection and summarize  -->
 <div class="row">
+  <h2 id="index-section">
+    Index
+  </h2>
   {%- for post in entries -%}
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card" style="width: 18rem;">

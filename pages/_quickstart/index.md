@@ -3,17 +3,17 @@ title: Quick Start Index (~)
 author: null
 layout: collection
 description: null
-lastmod: 2022-06-04T17:33:43.747Z
-permalink: /quickstart
+permalink: /quickstart/
 sidebar:
   nav: quickstart
+lastmod: 2022-06-04T17:33:43.747Z
 ---
 
 Here's an index of all the posts in the quick-start collection.
 
 1. Master Setup
-   1. Machine
-   2. Code Editor
+   1. [Machine](machine-setup.md)
+   2. IDE
    3. CI/CD (Travis CI)
    4. Source Code Control (Github)
 2. Web Development

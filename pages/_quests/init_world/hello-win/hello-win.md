@@ -3,17 +3,18 @@ Title: Init World - Win
 Author: bamr87
 Layout: post
 permalink: /init-world/hello-win/
-Keywords: 'init, world'
+Keywords: init, world
 Description: This is the init world.
 Dependancies: null
-lastmod: '2021-12-16T01:24:13.911Z'
+lastmod: 2023-12-03T08:47:22.762Z
 ---
-# Powershell
+## Powershell
 
-cheatsheet: https://www.zerrouki.com/the-ps-cheatsheets/
+cheatsheet: <https://www.zerrouki.com/the-ps-cheatsheets/>
 
-https://docs.microsoft.com/en-us/windows/wsl/install-win10
-https://docs.microsoft.com/en-us/windows/wsl/interop
+<https://docs.microsoft.com/en-us/windows/wsl/install-win10>
+<https://docs.microsoft.com/en-us/windows/wsl/interop>
+
 ## run in Powershell as admin
 
 ```powershell
@@ -36,23 +37,23 @@ wsl --set-default-version 2
 
 ## Install distro
 
-https://docs.microsoft.com/en-us/windows/wsl/install-manual
+<https://docs.microsoft.com/en-us/windows/wsl/install-manual>
 
-Invoke-WebRequest -Uri https://aka.ms/wsl-debian-gnulinux -OutFile Debian.appx -UseBasicParsing
+Invoke-WebRequest -Uri <https://aka.ms/wsl-debian-gnulinux> -OutFile Debian.appx -UseBasicParsing
 cd ~/Downloads
 Add-AppxPackage .\Debian.appx
 
 ## Setup new user and password
 
-https://docs.microsoft.com/en-us/windows/wsl/user-support
+<https://docs.microsoft.com/en-us/windows/wsl/user-support>
 
 ## Update Shell Override in Platformio
 
 ## Download/Install Apps
 
-https://docs.microsoft.com/en-us/windows/package-manager/
+<https://docs.microsoft.com/en-us/windows/package-manager/>
 
-winget https://github.com/microsoft/winget-cli/releases
+winget <https://github.com/microsoft/winget-cli/releases>
 
 # Core Universal OS Apps (Win/Linux/Mac)
 

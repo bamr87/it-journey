@@ -8,15 +8,15 @@ tags:
   - Search
   - Lunr.js
 draft: true
-lastmod: 2022-06-04T17:35:42.098Z
+lastmod: 2023-12-03T08:47:24.633Z
 ---
 
 > Search.
 
 ## 1. Search
 
-
 ## 7. Reference
+
 * [Jekyll search using lunr.js](https://learn.cloudcannon.com/jekyll/jekyll-search-using-lunr-js/)
 * [Lunrjs - Searching](https://lunrjs.com/guides/searching.html)
 * [Jekyll Search with Algolia and Webtasks](https://forestry.io/blog/search-with-algolia-in-jekyll/)
