@@ -50,6 +50,7 @@
     {
       "name": "default",
       "pageBundle": false,
+      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -76,7 +77,7 @@
         {
           "title": "Is in draft",
           "name": "draft",
-          "type": "boolean"
+          "type": "draft"
         },
         {
           "title": "Tags",
@@ -87,108 +88,6 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
-        },
-        {
-          "title": "sub-title",
-          "name": "sub-title",
-          "type": "string"
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
-        },
-        {
-          "title": "excerpt",
-          "name": "excerpt",
-          "type": "string"
-        },
-        {
-          "title": "snippet",
-          "name": "snippet",
-          "type": "image"
-        },
-        {
-          "title": "lastmod",
-          "name": "lastmod",
-          "type": "datetime"
-        },
-        {
-          "title": "key",
-          "name": "key",
-          "type": "string"
-        },
-        {
-          "title": "index",
-          "name": "index",
-          "type": "number"
-        },
-        {
-          "title": "subcategory",
-          "name": "subcategory",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "Article",
-      "pageBundle": false,
-      "fields": [
-        {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "sub-title",
-          "name": "sub-title",
-          "type": "string"
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
-        },
-        {
-          "title": "excerpt",
-          "name": "excerpt",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
-        },
-        {
-          "title": "snippet",
-          "name": "snippet",
-          "type": "datetime"
-        },
-        {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "draft",
-          "name": "draft",
-          "type": "datetime"
-        },
-        {
-          "title": "lastmod",
-          "name": "lastmod",
-          "type": "datetime"
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "default": "Article",
-          "hidden": true
         }
       ]
     }
@@ -200,5 +99,5 @@
       "fields": []
     }
   },
-  "frontMatter.preview.host": "http://localhost:4000"
+  "frontMatter.preview.host": "http://localhost:4002"
 }
