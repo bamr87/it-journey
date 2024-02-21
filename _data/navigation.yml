@@ -30,7 +30,7 @@ main:
         url: /quickstart/web-server
       - title: "Web App"
         url: /quickstart/web-app
-  - title: "Journal"
+  - title: "Journey"
     url: /posts
     sublinks:
     - title: "home"
@@ -68,6 +68,11 @@ main:
     - title: "home"
       url: /notes
   # - title: *test
+  - title: "Training"
+    url: /training/
+    sublinks:
+    - title: "home"
+      url: /training
   - title: "About"
     url: /about/
     sublinks:
