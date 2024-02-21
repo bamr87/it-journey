@@ -23,6 +23,11 @@ slug: /shell/
 lastmod: 2022-08-07T14:49:51.999Z
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)
+
+
+test
+
 Getting started
 {: .cols-3 }
 
