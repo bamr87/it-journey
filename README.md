@@ -7,7 +7,7 @@ date-released: 2022-03-01
 url: https://github.com/bamr87/it-journey
 tags: []
 license: MIT
-lastmod: 2024-02-15T01:16:11.554Z
+lastmod: 2024-02-25T18:21:31.035Z
 created: 2022-03-01T12:00:00.000Z
 ---
 
@@ -85,3 +85,4 @@ From zero to hero collection of docs, tools, scripts, and information to support
 
 * [JTD](https://just-the-docs.github.io/just-the-docs/)
 * [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
+* [Static Badges](https://shields.io/badges)

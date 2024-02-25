@@ -12,7 +12,7 @@ tags:
   - Markdown
 type: Article
 draft: true
-lastmod: 2024-02-15T22:01:35.673Z
+lastmod: 2024-02-25T18:21:36.669Z
 slug: building-code-extension
 ---
 
