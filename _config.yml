@@ -91,6 +91,9 @@ logo_source              : &logo_source "https://www.it-journey.dev"
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
+_posts_file_structure    : "year-month-day-title.md"
+
+
 
 ## Identity #####################################################################
 
@@ -167,7 +170,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
-  - jekyll-mermaid # https://mermaidjs.github.io/
+  - jekyll-mermaid  # https://mermaidjs.github.io/
+  - jekyll-admin # https://github.com/jekyll/jekyll-admin
+  - jekyll-redirect-from
 
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
@@ -449,9 +454,42 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 ## Color Settings --------------------------------------------------------------
 
+### Color Schema Override 
+ # https://meodai.github.io/poline/
+
+# Harbour Mirror
+# Harbour Blue
+# Dark Blue
+# Smoking Mirror
+  #3d7695
+  #2f5877
+  #a19587
 
 
-
+theme_color:
+  main: #007bff
+  secondary: #6c757d
+  red: #a11111
+  yellow: #ffe900
+  teal: #376986
+  blue: #007bff
+  green: #28a745
+  purple: #6f42c1
+  pink: #e83e8c
+  orange: #fd7e14
+  brown: #795548
+  cyan: #17a2b8
+  indigo: #6610f2
+  lime: #cddc39
+  amber: #ffc107
+  deep_orange: #ff5722
+  deep_purple: #673ab7
+  light_blue: #03a9f4
+  light_green: #8bc34a
+  light_purple: #9c27b0
+  light_red: #f44336
+  light_yellow: #ffeb3b
+  light_teal: #009688
 
 ## Copyright Settings --------------------------------------------------------------
 

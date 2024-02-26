@@ -3,11 +3,12 @@ title: Notes Index
 description: Notes Index
 layout: collection
 permalink: /notes/
-lastmod: 2023-03-11T20:53:36.032Z
+lastmod: 2024-02-19T16:46:41.137Z
 ---
 
 # Quick Start
-
+ test 
+ 
 ## Getting Started
 
 [Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)
@@ -268,18 +269,11 @@ https://icons.getbootstrap.com/#install
 
 ## OS Based instructions
 
-{% mac %}
+TODO: find a way to include OS based instructions using liquid tags
 
 These instructions are pertinent to Mac users.
 
-{% endmac %}
-{% linux %}
-
  These instructions are pertinent to Linux users.
 
-{% endlinux %}
-{% windows %}
 
 These instructions are pertinent to Windows users.
-
-{% endwindows %}

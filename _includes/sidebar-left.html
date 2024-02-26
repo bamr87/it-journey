@@ -9,8 +9,31 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
     </div>
     
-    <!-- Left Sidebar Nav List  -->
-    <div class="offcanvas-body">
+<!-- dynamic listing of notes in side bar -->
+
+<div class="d-flex">
+  <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="list-group list-group-flush">
+        {% if page.collection == "notes" %}
+          {% assign collection = site.collections | where: "label", page.collection | first %}
+          <div class="list-group list-group-flush">
+            {% for doc in collection.docs %}
+              {% assign folder = doc.path | split: '/' | first %}
+              {% unless folders contains folder %}
+                <!-- Output the folder name if you want -->
+                {% assign folders = folders | push: folder %}
+              {% endunless %}
+              <a href="{{ doc.url }}" class="list-group-item list-group-item-action ">{{ doc.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+</div>
+
+<!-- Left Sidebar Nav List  -->
+<div class="offcanvas-body">
+
       <nav class="bd-links w-100" id="bd-docs-nav">
 
         <!-- Source Code Control Shortcuts - Site and Nav -->

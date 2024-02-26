@@ -4,6 +4,42 @@
     {
       "title": "pages",
       "path": "[[workspace]]/pages"
+    },
+    {
+      "title": "it-journey",
+      "path": "[[workspace]]"
+    },
+    {
+      "title": "_about",
+      "path": "[[workspace]]/pages/_about"
+    },
+    {
+      "title": "_docs",
+      "path": "[[workspace]]/pages/_docs"
+    },
+    {
+      "title": "_hobbies",
+      "path": "[[workspace]]/pages/_hobbies"
+    },
+    {
+      "title": "_notes",
+      "path": "[[workspace]]/pages/_notes"
+    },
+    {
+      "title": "_posts",
+      "path": "[[workspace]]/pages/_posts"
+    },
+    {
+      "title": "_quests",
+      "path": "[[workspace]]/pages/_quests"
+    },
+    {
+      "title": "_quickstart",
+      "path": "[[workspace]]/pages/_quickstart"
+    },
+    {
+      "title": "pages",
+      "path": "[[workspace]]/pages"
     }
   ],
   "frontMatter.templates.enabled": true,
@@ -14,6 +50,7 @@
     {
       "name": "default",
       "pageBundle": false,
+      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -40,7 +77,7 @@
         {
           "title": "Is in draft",
           "name": "draft",
-          "type": "boolean"
+          "type": "draft"
         },
         {
           "title": "Tags",
@@ -51,110 +88,16 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
-        },
-        {
-          "title": "sub-title",
-          "name": "sub-title",
-          "type": "string"
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
-        },
-        {
-          "title": "excerpt",
-          "name": "excerpt",
-          "type": "string"
-        },
-        {
-          "title": "snippet",
-          "name": "snippet",
-          "type": "image"
-        },
-        {
-          "title": "lastmod",
-          "name": "lastmod",
-          "type": "datetime"
-        },
-        {
-          "title": "key",
-          "name": "key",
-          "type": "string"
-        },
-        {
-          "title": "index",
-          "name": "index",
-          "type": "number"
-        },
-        {
-          "title": "subcategory",
-          "name": "subcategory",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "Article",
-      "pageBundle": false,
-      "fields": [
-        {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "sub-title",
-          "name": "sub-title",
-          "type": "string"
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
-        },
-        {
-          "title": "excerpt",
-          "name": "excerpt",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
-        },
-        {
-          "title": "snippet",
-          "name": "snippet",
-          "type": "datetime"
-        },
-        {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "draft",
-          "name": "draft",
-          "type": "datetime"
-        },
-        {
-          "title": "lastmod",
-          "name": "lastmod",
-          "type": "datetime"
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "default": "Article",
-          "hidden": true
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.content.snippets": {
+    "Test Snippet": {
+      "description": "test",
+      "body": "echo \"hello World\"",
+      "fields": []
+    }
+  },
+  "frontMatter.preview.host": "http://localhost:4002"
 }

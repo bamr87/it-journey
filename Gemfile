@@ -16,6 +16,7 @@ gem 'jekyll' , '3.9.2'
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 
 # dependancies https://pages.github.com/versions/
+# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 # , group: :jekyll_plugins
 
 # If you have any jekyll plugins, put them here!
@@ -44,14 +45,24 @@ end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"
+  # gem "webrick"
+  # gem 'eventmachine', github: 'eventmachine/eventmachine'
+  # gem "eventmachine" --platform ruby
 end
+# gem "eventmachine", "1.2.0"
+
+# Live Reload Compatibility
+# platforms :x64-mingw32 do
+  # gem "eventmachine" ~> 1.2.7
+# end
 
 # Performance-booster for watching directories on Windows
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Mac OS compatibility fix
-gem "webrick", "~> 1.7"
+
+# gem "webrick", "~> 1.7"
 # gem "rack", ">= 2.1.4"
 
 # gem "jekyll-postcss"

@@ -1,3 +1,23 @@
+---
+title: it-journey
+description: it-journey
+excerpt: it-journey
+version: 0.0.0
+date-released: 2022-03-01
+url: https://github.com/bamr87/it-journey
+tags: []
+license: MIT
+lastmod: 2024-02-25T18:21:31.035Z
+created: 2022-03-01T12:00:00.000Z
+---
+
+
+Branch | Build Status
+---------|---------
+Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
+gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=gh-pages)](https://app.travis-ci.com/bamr87/it-journey)
+
+
 # README
 
 Welcome to the source code reposoity for it-journey.dev.
@@ -47,10 +67,6 @@ Thank you for being part of IT-Journey.dev - Your Pathway to IT Mastery!
 
 This template provides a clear and engaging overview of the site, its contents, and how users can contribute. You can tailor it to fit the specific features and guidelines of "it-journey.dev."
 
-Branch | Build Status
----------|---------
-Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
-gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=gh-pages)](https://app.travis-ci.com/bamr87/it-journey)
 
 ## Abstract
 
@@ -69,3 +85,4 @@ From zero to hero collection of docs, tools, scripts, and information to support
 
 * [JTD](https://just-the-docs.github.io/just-the-docs/)
 * [highlighting](https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/)
+* [Static Badges](https://shields.io/badges)
