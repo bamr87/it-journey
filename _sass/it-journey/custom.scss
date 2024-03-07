@@ -1,3 +1,12 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
 .make-me-sticky {
     position: -webkit-sticky;
 	position: sticky;
@@ -39,14 +48,44 @@
     border-radius:10px;/* Rounded corners */
     font-size:18px;/* Increase font size */
   }
-    
+
+#backToTopBtn {
+    .text {
+        display: inline-block;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .text {
+            display: none;
+        }
+
+        .arrow {
+            display: inline-block;
+        }
+    }
+}
+
   #backToTopBtn:hover { 
     background-color: #555; /* Add a dark-grey background on hover */ 
     opacity: 100%;
   }
 
-.img {
+img {
     display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+#navbar {
+    transition: transform 0.3s;
+}
+
+.hide-navbar {
+    transform: translateY(-100%);
 }
 
 // #box {
