@@ -1,10 +1,10 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
-lastmod: '2021-10-27T17:33:19.923Z'
+title: 'Feature Request - '
+labels: feature request
+assignees: bamr87
+
 ---
 
 **Is your feature request related to a problem? Please describe.**
