@@ -86,6 +86,8 @@ main:
       url: /about/contributing
     - title: "Map"
       url: /about/sitemap
+    - title: "Features"
+      url: /about/features
 
 # # Notes
 # notes:

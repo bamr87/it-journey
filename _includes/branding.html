@@ -23,20 +23,27 @@
     {% capture logo_path %}{{ site.logo }}{% endcapture %}
 
     <!-- <a class="navbar-brand p-0 me-0 me-lg-2 flex-grow-1" href="{{ site.logo_source}}{{ page.url }}"> -->
-    <a class="navbar-brand p-0 me-0 me-lg-2 flex-grow-1" href="/">
+    <a class="navbar-brand p-0" href="/">
         <img src="{{ logo_path | relative_url }}" alt="Logo" width="30" height="30">
         
         <!-- Title Section  -->
-        <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
 
-                <!-- <a class="navbar-brand" href="https://{{ site.github_user}}.github.io{{ page.url }}"> -->
-                <a class="navbar-brand" href="  {{ site.logo_source}}{{ page.url }}">
+        <div class="flex-grow-1">
+            <a class="navbar-brand" href="  {{ site.logo_source}}{{ page.url }}">
+              <i class="{{ site.default_icon }} {{ power.icon | default: site.powered_by.default }}" aria-hidden="true"></i>
+              <!-- display name if there's enough space, else icon only -->
+                <span class="d-none d-md-inline"> 
                     {{ site.masthead_title | default: site.title }}
-                </a>
-                {%- if site.subtitle -%}
-                <a class="navbar-brand" href="http://localhost:{{ site.port }}{{ page.url }}">
+                </span>
+
+                <!-- If a subtitle exsits -->
+            {%- if site.subtitle -%}
+            <a class="navbar-brand" href="http://localhost:{{ site.port }}{{ page.url }}">
+                <i class="{{ site.default_icon }} {{ power.icon | default: site.powered_by.default }}" aria-hidden="true"></i>
+                <span class="d-none d-md-inline"> 
                     {{ site.subtitle }}
-                </a>
-                {% endif %}
+                </span>
+            </a>
+            {% endif %}
         </div>
     </a>

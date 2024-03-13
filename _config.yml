@@ -310,7 +310,7 @@ defaults:
     scope:
       path: pages/_posts
     values:
-      layout: *pages
+      layout: journals
       show_date: true
       author_profile: true
       read_time: true

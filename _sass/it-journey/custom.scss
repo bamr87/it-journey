@@ -7,6 +7,7 @@ html, body {
     box-sizing: border-box;
   }
 
+  
 .make-me-sticky {
     position: -webkit-sticky;
 	position: sticky;
@@ -81,11 +82,15 @@ img {
 }
 
 #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     transition: transform 0.3s;
 }
 
 .hide-navbar {
     transform: translateY(-100%);
+    top: -100px;
 }
 
 // #box {

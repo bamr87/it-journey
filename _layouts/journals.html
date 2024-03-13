@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<!-- Journals Layout -->
+
 <div id="main" role="main">
 
 
@@ -13,20 +15,19 @@ layout: default
   </div>
 </div>
 
+<!-- giscus app - Feature # FR000001 -->
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% collection=page.collection sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-  {% assign entries = site[include.collection] %}
-
-  {% if include.sort_by %}
-    {% assign entries = entries | sort: include.sort_by %}
-  {% endif %}
-  
-  {% if include.sort_order == 'reverse' %}
-    {% assign entries = entries | reverse %}
-  {% endif %}
-  
-  
-
-</div>
+<script src="https://giscus.app/client.js"
+        data-repo="bamr87/it-journey"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM="
+        data-category-id="DIC_kwDOEOrJ7c4CAn8D"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
