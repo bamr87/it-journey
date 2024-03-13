@@ -3,7 +3,7 @@
     _includes/branding.html, _includes/navbar.html
  -->
 
-<header class="bd-header navbar navbar-expand-lg navbar-dark bg-primary sticky-top bottom-shadow" role="banner">
+<header id="navbar" class="bd-header navbar navbar-expand-lg navbar-dark bg-body-tertiary sticky-top bottom-shadow" role="banner">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
         
         <!-- Collapse Button in mobile view -->
@@ -18,13 +18,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        
-        <!-- include branding.html -->
-        {% include branding.html %}
-        
-        <!-- include navbar.html -->
-        {% include navbar.html %}
-        
+
+        <!-- Home Link -->
+        {%- for home in site.data.navigation.home -%}
+        <a class="btn flex-grow-1" href="{{ home.url | relative_url }}">
+            <i class="{{ site.default_icon}} {{ home.icon }}" ></i>
+        </a>
+        {% endfor %}
+
+            <!-- include branding.html -->
+            {% include branding.html %}
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+            
+            <!-- include navbar.html -->
+            {% include navbar.html %}
+        </div>
+            
         <!-- Settings Collapse button -->
         <div class="btn flex-grow-1"
         data-toggle="collapse" 
@@ -41,5 +51,19 @@
 
     {% include halfmoon.html %}
 
+      <div class="bd-navbar-toggle flex-grow-1">
+
+    <!-- offcanvas button for nav links -->
+        <button class="navbar-toggler p-2" 
+            type="button" 
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#bdNavbar" 
+            aria-controls="bdNavbar" 
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+      
     </nav>
 </header>

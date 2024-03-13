@@ -5,7 +5,7 @@ keywords: init, world
 catagories: quests
 description: This is the init world.
 permalink: /quests/
-lastmod: 2023-11-28T05:13:22.165Z
+lastmod: 2024-03-13T01:15:03.334Z
 ---
 
 # init_world
@@ -89,6 +89,10 @@ Winget
   - profile
 
 
-Main Quests
+## Main Quests
 
-Side Quests
+### Create a giscus app
+
+Instructions: [giscus](https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md)
+
+## Side Quests

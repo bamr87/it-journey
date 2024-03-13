@@ -7,10 +7,10 @@ layout: home
 keywords: Home, Zer0, IT-Journey, programming, development
 post: null
 permalink: /home/
-lastmod: 2022-07-25T00:10:47.252Z
+lastmod: 2024-03-07T13:09:00.253Z
 toc: true
 sidebar:
-  nav: main
+   nav: main
 ---
 
 This is where we begin our journey. The place where we return after getting lost or wandering off.
@@ -112,9 +112,14 @@ Static Website Generator (Jekyll) [Local link](\_quickstart\Jekyll.md)  Or [Web 
 
 ![](../assets/images/top-nav.png){: .img-fluid }
 
+```html
+{% raw %}
 <div class="bd-example-snippet bd-code-snippet">
 {%- include header.html -%}
 </div>
+{% endraw %}
+```
+
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into three sections:
 
 - [Journals](/posts/)

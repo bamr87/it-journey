@@ -10,4 +10,3 @@ function myFunction() {
   for (var i = 0; i < imgs.length; i++) {
     imgs[i].classList.add('img-fluid');
   }
-  

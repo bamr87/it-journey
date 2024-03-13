@@ -38,8 +38,12 @@
       "path": "[[workspace]]/pages/_quickstart"
     },
     {
-      "title": "pages",
-      "path": "[[workspace]]/pages"
+      "title": "gpt",
+      "path": "[[workspace]]/pages/_posts/gpt"
+    },
+    {
+      "title": "_about",
+      "path": "[[workspace]]/pages/_about"
     }
   ],
   "frontMatter.templates.enabled": true,

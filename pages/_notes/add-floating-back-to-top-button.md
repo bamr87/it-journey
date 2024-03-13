@@ -9,7 +9,7 @@ sub-title: ""
 author: ""
 excerpt: ""
 snippet: ""
-lastmod: 2023-03-11T18:03:19.840Z
+lastmod: 2024-03-07T00:01:36.787Z
 ---
 
 [w3 schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
@@ -51,6 +51,26 @@ Style the button:
     font-size:18px;/* Increase font size */
   }
     
+#backToTopBtn {
+  .text {
+    display: inline-block;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .text {
+      display: none;
+    }
+
+    .arrow {
+      display: inline-block;
+    }
+  }
+}
+
   #backToTopBtn:hover { 
     background-color: #555; /* Add a dark-grey background on hover */ 
     opacity: 100%;
@@ -62,13 +82,22 @@ Style the button:
 ```js
 // assets/js/back-to-top.js
 
-function backToTopBtn () {
-  topFunction();   
-
+document.addEventListener('DOMContentLoaded', (event) => {
   let mybutton = document.getElementById("backToTopBtn");
+
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    mybutton.style.opacity = "75%";
+  }
+
+  if (mybutton) {
+    mybutton.onclick = topFunction;
+  }
+
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
-  
+
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       mybutton.style.display = "block";
@@ -76,15 +105,7 @@ function backToTopBtn () {
       mybutton.style.display = "none";
     }
   }
-  
-  // When the user clicks on the button, scroll to the top of the document
-  mybutton.onclick = function() {topFunction()};
-  
-  function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
-}
+});
 ```
 
 ### Add the JS source to head
