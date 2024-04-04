@@ -1,7 +1,7 @@
 ---
 title: Jeykll
 permalink: /notes/jekyll/
-lastmod: 2024-03-05T00:24:51.246Z
+lastmod: 2024-04-04T19:00:44.583Z
 ---
 
 # Jeykll
@@ -1023,15 +1023,6 @@ def main
 end
 {% endhighlight %}
 ```
-
-**Gist Tag**
-
-```liquid
-{% gist hyde/931c1c8d465a04042403 %}
-{% gist hyde/931c1c8d465a04042403 hello_world.rb %}  -- You may specify the filename to display
-```
-
-(Source: see jekyll-gist gem)
 
 ## Permalinks
 

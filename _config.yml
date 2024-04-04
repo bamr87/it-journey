@@ -134,7 +134,7 @@ powered_by:
     url: "https://www.ruby-lang.org/"
     icon: "bi-gem"
   - name: "Jekyll"
-    version: "3.9.2"
+    version: "3.9.5"
     url: "https://jekyllrb.com/"
     icon: "bi-joystick"
   - name: "Bootstrap"
@@ -156,6 +156,10 @@ powered_by:
     version: "228"
     url: "https://pages.github.com/"
     icon: "bi-github"
+  - name: "docker"
+    version: "20.10.8"
+    url: "https://www.docker.com/"
+    icon: "bi-docker"
 
 
 ### Plugins 

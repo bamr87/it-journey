@@ -5,9 +5,10 @@ excerpt: it-journey
 version: 0.0.0
 date-released: 2022-03-01
 url: https://github.com/bamr87/it-journey
-tags: []
+tags:
+    - it-journey
 license: MIT
-lastmod: 2024-02-25T18:21:31.035Z
+lastmod: 2024-04-04T19:03:13.770Z
 created: 2022-03-01T12:00:00.000Z
 ---
 
@@ -17,8 +18,7 @@ Branch | Build Status
 Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
 gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=gh-pages)](https://app.travis-ci.com/bamr87/it-journey)
 
-
-# README
+## README
 
 Welcome to the source code reposoity for it-journey.dev.
 
@@ -79,7 +79,17 @@ From zero to hero collection of docs, tools, scripts, and information to support
 * git
 * gh cli
 
+## Docker Image Build
 
+```shell
+docker build -t it-journey .
+```
+
+## Docker Run
+
+```shell
+docker run -p 4000:4002 -v /Users/bamr87/github/it-journey:/app it-journey
+```
 
 ## Sources
 
