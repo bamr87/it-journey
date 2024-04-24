@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @bamr87
 - 🤖 I’m interested in the achitecture of information systems that facilitate to production of goods and services
-- 🌱 I’m currently learning Web Development and Content Management Systems
-- 💞️ I’m looking to collaborate on Application Development
+- 📚 I'm currently learning front-end development, specfically for Content Management Systems (it-journey.dev)
+- 🧐 I’m looking to collaborate on developing frontend frameworks for small businesses
 - 📫 You can reach me at @bamr87
 
 Here's some of my progress:
@@ -18,11 +18,7 @@ You can click the Preview link to take a look at your changes.
 <details>
 <summary>My top THINGS-TO-RANK</summary>
 
-YOUR TABLE
-
 </details>
-
-
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -39,6 +35,7 @@ YOUR TABLE
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
+
 Here is a simple flow chart:
 
 ```mermaid
@@ -48,6 +45,8 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+## Geo
 
 ```geojson
 {
@@ -75,6 +74,8 @@ graph TD;
   ]
 }
 ```
+
+## 3D Model 
 
 ```stl
 solid cube_corner
