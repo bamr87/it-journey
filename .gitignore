@@ -4,3 +4,5 @@ _site
 .jekyll-metadata
 _algolia_api_key
 Gemfile.lock
+.obsidian
+pages/_notes/.DS_Store

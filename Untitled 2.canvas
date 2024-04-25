@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"39cc4ee6bbaf170b","type":"text","text":"test","x":-200,"y":160,"width":250,"height":60},
+		{"id":"ab69a71849274a48","type":"text","text":"test32","x":-60,"y":-20,"width":250,"height":60},
+		{"id":"56f8036ef7e5f529","type":"text","text":"","x":-125,"y":-30,"width":250,"height":60},
+		{"id":"23a059ba5c8aca95","type":"file","file":"_site/Untitled 2.canvas","x":-400,"y":-520,"width":400,"height":400},
+		{"id":"be0dc19d92560c02","type":"file","file":"assets/images/bash-fix.png","x":40,"y":-460,"width":399,"height":243}
+	],
+	"edges":[
+		{"id":"6871cf96b4f8864d","fromNode":"39cc4ee6bbaf170b","fromSide":"top","toNode":"ab69a71849274a48","toSide":"bottom"},
+		{"id":"a61b0ef59b3be4c2","fromNode":"23a059ba5c8aca95","fromSide":"bottom","toNode":"56f8036ef7e5f529","toSide":"top"}
+	]
+}

@@ -1,10 +1,10 @@
 ---
-title: "{{title}}"
+title: {{title}}
 description: null
 author: null
 excerpt: null
 date: 2019-08-22T15:20:28.000Z
-lastmod: 2024-04-25T15:44:43.695Z
+lastmod: 2024-04-25T15:19:12.566Z
 draft: true
 tags: []
 categories: []

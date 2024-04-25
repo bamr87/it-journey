@@ -103,5 +103,7 @@
       "fields": []
     }
   },
-  "frontMatter.preview.host": "http://localhost:4002"
+  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.website.host": "https://it-journey.dev",
+  "frontMatter.git.enabled": true
 }

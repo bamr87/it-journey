@@ -7,7 +7,7 @@ layout: home
 keywords: Home, Zer0, IT-Journey, programming, development
 post: null
 permalink: /home/
-lastmod: 2024-03-07T13:09:00.253Z
+lastmod: 2024-04-24T15:41:06.583Z
 toc: true
 sidebar:
    nav: main
@@ -26,7 +26,13 @@ From zero to hero collection of docs, tools, scripts, walk-through, and informat
 
 ## Roadmap
 
-Here are a few routes:
+Here are a
+ few routes:
+
+<iframe src="https://roadmap.sh/r/embed?id=66254a38e699ec2b9b39a61e" width="100%" height="800px" frameBorder="0"
+></iframe>
+
+[source](https://roadmap.sh/r/roadmaps---it-journey)
 
 ### Zer0 to Her0 [Quest](/quest/)
 
@@ -41,6 +47,7 @@ Here are a few routes:
 2. Chapter 1 - Identity Crisis
    1. 
    2. Minimum requirements
+      1. Quick start with [github](https://docs.github.com/en/get-started/start-your-journey) 
    3. Class Selection up
    4. Character Building
 3. Chapter 2 - Training

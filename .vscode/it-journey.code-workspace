@@ -22,7 +22,7 @@
 				"strings": "off",
 				"other": "off"
 			},
-			"editor.minimap.enabled": false
+			"editor.minimap.enabled": true
 		},
 		"githubPullRequests.ignoredPullRequestBranches": [
 			"master"

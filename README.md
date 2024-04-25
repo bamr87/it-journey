@@ -8,7 +8,7 @@ url: https://github.com/bamr87/it-journey
 tags:
     - it-journey
 license: MIT
-lastmod: 2024-04-04T19:03:13.770Z
+lastmod: 2024-04-21T17:09:18.751Z
 created: 2022-03-01T12:00:00.000Z
 ---
 
@@ -90,6 +90,11 @@ docker build -t it-journey .
 ```shell
 docker run -p 4000:4002 -v /Users/bamr87/github/it-journey:/app it-journey
 ```
+
+```shell
+http://localhost:4000/
+```
+
 
 ## Sources
 

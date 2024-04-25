@@ -1,14 +1,14 @@
 ---
 title: Set up a WSL development environment
-author: null
-excerpt: null
+author: test
+excerpt: 
 description: Set up a WSL development environment using best practices.
-snippet: null
+snippet: 
 categories:
   - notes
 tags:
   - notes
-meta: null
+meta: 
 draft: true
 lastmod: 2023-12-03T08:37:16.464Z
 source: https://github.com/MicrosoftDocs/wsl/blob/main/WSL/setup/environment.md
