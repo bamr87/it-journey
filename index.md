@@ -12,7 +12,8 @@ tags:
   - index
 categories:
   - hello world
-lastmod: 2024-03-04T23:06:10.964Z
+lastmod: 2024-04-25T17:03:42.589Z
+slug: /
 ---
 
 # Welcome to IT-Journey.dev: Your Full Stack Development Quest Begins Here!

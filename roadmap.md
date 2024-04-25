@@ -1,6 +1,6 @@
 ---
 title: My Roadmap
-layout: defualt
+layout: default
 author: Amr
 permalink: /roadmap/
 lastmod: 2024-04-24T15:45:41.399Z

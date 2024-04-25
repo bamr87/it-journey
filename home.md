@@ -1,16 +1,12 @@
 ---
-title: Hello World
+title: Home
 author: bamr87
 description: This is an overall outline of this site, and a place to start or come back to when lost.
 purpose: To build a platform for learning and share knowledge and tools
 layout: home
 keywords: Home, Zer0, IT-Journey, programming, development
-post: null
 permalink: /home/
-lastmod: 2024-04-24T15:41:06.583Z
-toc: true
-sidebar:
-   nav: main
+lastmod: 2024-04-25T17:05:17.690Z
 ---
 
 This is where we begin our journey. The place where we return after getting lost or wandering off.
