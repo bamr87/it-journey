@@ -1,0 +1,7 @@
+- navTitle: Home
+  subTitle: Home Base
+  url: /Home/
+  sublinks:
+    - title: Sub-Links
+      url: /sub-link/
+

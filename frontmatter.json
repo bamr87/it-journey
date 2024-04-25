@@ -105,5 +105,64 @@
   },
   "frontMatter.preview.host": "http://localhost:4000",
   "frontMatter.website.host": "https://it-journey.dev",
-  "frontMatter.git.enabled": true
+  "frontMatter.git.enabled": false,
+  "frontMatter.data.files": [
+    {
+      "id": "mainNav",
+      "title": "Main Navigation",
+      "file": "[[workspace]]/_data/navigation/main.yml",
+      "fileType": "yaml",
+      "labelField": "name",
+      "singleEntry": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "navTitle": {
+            "description": "The title of the page",
+            "type": "string"
+          },
+          "subTitle": {
+            "description": "sub title",
+            "type": "string"
+          },
+          "url": {
+            "description": "The URL of the page",
+            "type": "string"
+          },
+          "sublinks": {
+            "description": "Tags for the product",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "dimensions": {
+            "type": "object",
+            "properties": {
+              "length": {
+                "type": "string"
+              },
+              "width": {
+                "type": "string"
+              },
+              "height": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [ "navTitle", "subTitle", "url" ]
+        }
+      }
+    }
+  ] 
 }
