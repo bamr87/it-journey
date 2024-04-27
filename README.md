@@ -8,7 +8,11 @@ url: https://github.com/bamr87/it-journey
 tags:
     - it-journey
 license: MIT
+<<<<<<< Updated upstream
 lastmod: 2024-04-21T17:09:18.751Z
+=======
+lastmod: 2024-04-05T04:34:00.505Z
+>>>>>>> Stashed changes
 created: 2022-03-01T12:00:00.000Z
 ---
 
@@ -87,15 +91,26 @@ docker build -t it-journey .
 
 ## Docker Run
 
+### Mac
+
 ```shell
 docker run -p 4000:4002 -v /Users/bamr87/github/it-journey:/app it-journey
 ```
 
+<<<<<<< Updated upstream
 ```shell
 http://localhost:4000/
 ```
 
 
+=======
+### Windows
+
+```shell
+docker run -p 4000:4002 -v C:\Users\AmrAbdel-Motaleb\github\it-journey:/app bundle exec it-journey
+```
+
+>>>>>>> Stashed changes
 ## Sources
 
 * [JTD](https://just-the-docs.github.io/just-the-docs/)
