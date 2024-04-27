@@ -22,12 +22,21 @@
         <!-- _includes/google-tag-mgr.html - SEO -->
         {% include google-tag-mgr.html %}
         
-        <!-- _includes/header.html - Header section with main Navigation and Search engine -->
-        {% include header.html %}
+        <div>
+            <!-- _includes/header.html - Header section with main Navigation and Search engine -->
+            {% include header.html %}
+            <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
+            <div class="container-xxl position-fixed mt-10">
+                {% include info-bar.html %}
+            </div>
+        </div>
 
+        <div>
+        </div>
+        
         <!-- Content -->
-        <div class="container-xl">
-
+        <div class="container-xl pt-5 pt-lg-6">
+            
             {{ content }}
 
         </div>

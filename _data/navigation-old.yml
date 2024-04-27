@@ -1,3 +1,5 @@
+# Refactored to _data/navigation/
+
 # FIXME: NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION. 
 
 # FIXME: Nest yaml into succeeding hierarchies
@@ -8,11 +10,6 @@ test: &test
     sublinks:
       - title: "Home"
         url: /about
-
-home:
-  - title: "Home"
-    icon: bi-house
-    url: /home
 
 # Main Navigation (top)
 main:
@@ -49,13 +46,13 @@ main:
     - title: "Command Line"
       url: /docs/command-line
   - title: "Hobbies"
-    url: &home '/hobbies'
+    url: &home /hobbies
     sublinks:
     - title: "home"
       url: *home
     - title: "Music"
-      sub: &sub '/music'
-      url: [*home,*sub] # FIXME
+      sub: &sub /music
+      url: [*home,*sub] # FIXME: Tried removing single quotes
     - title: "Gaming"
       url: /hobbies/gaming
     - title: "Art"
@@ -67,12 +64,6 @@ main:
     sublinks:
     - title: "home"
       url: /notes
-  # - title: *test
-  - title: "Training"
-    url: /training/
-    sublinks:
-    - title: "home"
-      url: /training
   - title: "About"
     url: /about/
     sublinks:
@@ -88,22 +79,6 @@ main:
       url: /about/sitemap
     - title: "Features"
       url: /about/features
-
-# # Notes
-# notes:
-#   - title: "Notes"
-#     url: /notes
-#     sublinks:
-#       - title: "home"
-#         url: /notes
-#       - title: "Shell"
-#         url: /notes/shell
-#       - title: "programming cs"
-#         url: /notes/cheatsheets/programming
-#       - title: "bootstrap cs"
-#         url: /notes/cheatsheets/bootstrap
-#       - title: "liquid cs"
-#         url: /notes/cheatsheets/bootstrap
 
 # Quick Start
 quickstart:
@@ -177,27 +152,6 @@ docs:
     sublinks:
       - title: "History"
         url: /docs/history
-
-about:
-  - nav-title: "About"
-  - title: "about"
-    sublinks:
-      - title: "Home"
-        url: /about
-      - title: "Purpose"
-        url: /about/purpose
-      - title: "Approach"
-        url: /about/approach
-      - title: "Contributing"
-        url: /about/contributing
-      - title: "License"
-        url: /about/license
-      - title: "Terms &amp; Privacy Policy"
-        url: /terms
-      - title: "Theme"
-        url: /about/theme
-      - title: "Sitemap"
-        url: /about/sitemap
 
 cooking:
   - title: "cooking"

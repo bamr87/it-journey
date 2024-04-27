@@ -1,10 +1,17 @@
 <!-- 
-  navbar.html
+  file: navbar.html
+  path: /includes/navbar.html
+  includes: 
  -->
 
 <!-- Navigation Links -->
-  <div class="collapse navbar-collapse offcanvas offcanvas-end" id="bdNavbar" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbar"> 
-    <div class="offcanvas offcanvas-body navbar-nav">
+
+<div class="collapse navbar-collapse offcanvas offcanvas-end" id="bdNavbar" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbar"> 
+      <div class="offcanvas-header border-bottom">
+          <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">Main Navigation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
+        </div>
+    <div class="offcanvas-body navbar-nav">
         {%- for link in site.data.navigation.main -%}
             <li class="nav-item dropdown">
                 <a {% if link.sublinks %} 

@@ -1289,7 +1289,8 @@
 }
 
 .bd-toc {
-    grid-area: toc
+    grid-area: toc;
+    padding-top: 5rem;
 }
 
 .bd-content {

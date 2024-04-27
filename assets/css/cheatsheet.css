@@ -99,17 +99,17 @@ body {
       gap: 1rem;
     }
   
-    .bd-header {
+    /* .bd-header {
       position: fixed;
       top: 0;
-      /* rtl:begin:ignore */
+      rtl:begin:ignore
       right: 0;
       left: 0;
-      /* rtl:end:ignore */
+      rtl:end:ignore
       z-index: 1030;
       grid-column: 1 / span 3;
     }
-  
+   */
     .bd-aside,
     .bd-cheatsheet {
       padding-top: 4rem;

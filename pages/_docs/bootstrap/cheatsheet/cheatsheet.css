@@ -98,17 +98,17 @@ body {
     grid-template-columns: 1fr 4fr 1fr;
     gap: 1rem;
   }
-
+/* 
   .bd-header {
     position: fixed;
     top: 0;
-    /* rtl:begin:ignore */
+    rtl:begin:ignore
     right: 0;
     left: 0;
-    /* rtl:end:ignore */
+    rtl:end:ignore
     z-index: 1030;
     grid-column: 1 / span 3;
-  }
+  } */
 
   .bd-aside,
   .bd-cheatsheet {

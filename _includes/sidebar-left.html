@@ -2,8 +2,7 @@
      _includes/nav_list.html 
 -->
 
-<aside class="bd-sidebar">
-  <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+  <div>
     <div class="offcanvas-header border-bottom">
       <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">Browse docs</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
@@ -36,23 +35,6 @@
 
       <nav class="bd-links w-100" id="bd-docs-nav">
 
-        <!-- Source Code Control Shortcuts - Site and Nav -->
-        <div class="git-update vscode-update dev-settings collapsed collapse">
-          <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/{{site.nav-file}}">
-            <i class="{{site.default_icon}} {{site.default_icon}}-github"></i>
-          </a>
-          <a class="btn bg-primary" href="vscode://file/{{ site.local_git_pc}}/{{ site.local_repo }}/{{ site.nav-file }}">
-            <i class="{{site.default_icon}} {{site.default_icon}}-microsoft"></i>
-          </a>
-          <a class="btn bg-primary" href="vscode://file/{{ site.local_git_mac}}/{{ site.local_repo }}/{{ site.nav-file }}">
-            <i class="{{site.default_icon}} {{site.default_icon}}-apple"></i>
-          </a>
-          <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/_config.yml">
-            <i class="bi bi-gear"></i>
-            <!-- https://icons.getbootstrap.com/icons/gear/ -->
-          </a>
-        </div>
-
         <!-- Include nav_list.html -->
         {% if page.sidebar.nav %}
           {% include nav_list.html nav=page.sidebar.nav %}
@@ -60,6 +42,4 @@
       </nav>
     </div>      
   </div>
-
-</aside>
   

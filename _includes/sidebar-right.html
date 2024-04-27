@@ -2,38 +2,46 @@
      _includes/nav_list.html 
 -->
 
-<!-- Right sidebar container -->
 
-<!-- On this page -->
-  <div class="bd-toc">
 
-    <!-- Source code location -->
-    {% include dev-shortcuts.html %}
-
-  <!-- Table of contents -->
-  <button class="btn btn-link text-decoration-none bd-toc-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
-    On this page
-    <svg class="bi d-md-none ms-2" aria-hidden="true"><use xlink:href="#chevron-expand"></use></svg>
+<div class="d-flex justify-content-end">
+  <!-- TODO: Need to fix the TOC to be hidden in mobile view -->
+  <!-- Button in mobile view -->
+  <button class="col-2 btn btn-link text-decoration-none bd-toc-toggle d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    <i class="bi bi-list-ul"></i>
   </button>
+</div>
 
-  <strong class="d-none d-md-block h6 my-2">
-    <i class="fas fa-file-alt"></i>
-    On this page
-  </strong>
-  
-  <div class="bd-toc-collapse collapse" id="tocContents" style="">
+<!-- Right sidebar container -->
+<div class="d-flex justify-content-end">
 
+  <!-- Source code shortcuts -->
+  <div>
+    {% include dev-shortcuts.html %}
+  </div>
+    
+  <!-- Table of contents -->
+  <div class="toc-collapse collapse" id="tocContents">
     <nav class="" id="TableOfContents">
+    <!-- TOC tile -->
+    <div>
+      <strong class="">
+        <i class="fas fa-file-alt"></i>
+        On this page
+      </strong>
+    </div>    
+    <!-- TOC list -->
       {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
     </nav>
   </div>
   
   <!-- Back to Top -->
-  
-  <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
-    <span class="arrow">&uarr;</span>
-    <span class="text">Back to Top</span>
-  </button>
+  <div>
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+      <span class="arrow">&uarr;</span>
+      <span class="text">Back to Top</span>
+    </button>
+  </div>
   
 </div>
   

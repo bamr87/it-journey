@@ -1,0 +1,43 @@
+- title: Setup
+  sublinks:
+    - title: "Configuration"
+      url: /docs/configuration
+    - title: "Overriding Theme Defaults"
+      url: /docs/overriding-theme-defaults
+- title: Features
+  sublinks:
+    - title: "Navigation"
+      url: /docs/navigation
+    - title: "UI Text"
+      url: /docs/ui-text
+    - title: "Authors"
+      url: /docs/authors
+    - title: "Layouts"
+      url: /docs/layouts
+- title: Headless CMS
+  sublinks:
+    - title: "Working with Posts"
+      url: /docs/posts
+    - title: "Working with Pages"
+      url: /docs/pages
+    - title: "Working with Collections"
+      url: /docs/collections
+    - title: "Helpers"
+      url: /docs/helpers
+    - title: "Utility Classes"
+      url: /docs/utility-classes
+- title: Programming
+  sublinks:
+    - title: "Liquid"
+      url: /
+      source: 
+- title: Design
+  sublinks:
+    - title: "Stylesheets"
+      url: /docs/stylesheets
+    - title: "JavaScript"
+      url: /docs/javascript
+- title: Releases
+  sublinks:
+    - title: "History"
+      url: /docs/history

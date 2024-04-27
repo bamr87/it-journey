@@ -8,11 +8,7 @@ url: https://github.com/bamr87/it-journey
 tags:
     - it-journey
 license: MIT
-<<<<<<< Updated upstream
-lastmod: 2024-04-21T17:09:18.751Z
-=======
 lastmod: 2024-04-05T04:34:00.505Z
->>>>>>> Stashed changes
 created: 2022-03-01T12:00:00.000Z
 ---
 
@@ -25,6 +21,8 @@ gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?bran
 ## README
 
 Welcome to the source code reposoity for it-journey.dev.
+ 
+test
 
 ## About IT-Journey.dev
 
@@ -90,6 +88,7 @@ docker build -t it-journey .
 ```
 
 ## Docker Run
+<!-- TODO: combine windows and mac commands -->
 
 ### Mac
 
@@ -97,20 +96,21 @@ docker build -t it-journey .
 docker run -p 4000:4002 -v /Users/bamr87/github/it-journey:/app it-journey
 ```
 
-<<<<<<< Updated upstream
 ```shell
 http://localhost:4000/
 ```
 
-
-=======
 ### Windows
 
+<!-- TODO: Check on windows docker bug "Auto-regeneration may not work on some Windows versions."-->
+
 ```shell
-docker run -p 4000:4002 -v C:\Users\AmrAbdel-Motaleb\github\it-journey:/app bundle exec it-journey
+docker run -p 4000:4002 -v C:\Users\AmrAbdel-Motaleb\github\it-journey:/app it-journey
 ```
 
->>>>>>> Stashed changes
+> [!NOTE]
+> Auto-regeneration may not work on some Windows versions
+
 ## Sources
 
 * [JTD](https://just-the-docs.github.io/just-the-docs/)

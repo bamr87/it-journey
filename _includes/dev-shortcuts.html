@@ -1,5 +1,7 @@
 <!-- Source Code Control Shortcuts - Page -->
 <!-- https://shopify.github.io/liquid/tags/variable/#capture -->
+<!-- TODO: Write tutorial on creating this hidden settings feature -->
+<!-- TODO: Article about the collapse feature in Bootstrap https://getbootstrap.com/docs/5.3/components/collapse/--> 
 
 {% if page.collection %}
     {% capture page_dir %}{{ site.collections_dir }}{% endcapture %}
@@ -7,24 +9,41 @@
 {% endif %}
 
 <div class="git-update vscode-update dev-settings collapsed collapse">
+
+<!-- Source Code Control Shortcuts - Page -->
     <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/{{ page_dir }}/{{page.path}}">
-        <i class="bi bi-github"></i>
+        <i class="{{site.default_icon}} {{site.default_icon}}-github"></i>
         <!-- https://icons.getbootstrap.com/icons/github/ -->
     </a>
     <a class="btn bg-primary" href="https://github.dev/{{site.repository}}/blob/master/{{ page_dir }}/{{ page.path }}">
-        <i class="bi bi-microsoft"></i>
+        <i class="{{site.default_icon}} {{site.default_icon}}-code"></i>
         <!-- https://icons.getbootstrap.com/icons/microsoft/ -->
     </a>
-<!-- 
+
+<!-- Source Code Control Shortcuts - Site and Nav -->
+
+<!-- site config -->
+    <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/_config.yml">
+        <i class="bi bi-gear"></i>
+        <!-- https://icons.getbootstrap.com/icons/gear/ -->
+    </a>
+
+<a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/master/{{site.nav-file}}">
+        <i class="{{site.default_icon}} {{site.default_icon}}-map"></i>
+    </a>
+
+    <a class="btn bg-primary" href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/{{ page_dir }}{{ page.path }}">
+        <i class="{{site.default_icon}} {{site.default_icon}}-windows"></i>
+    </a>
+
     <a class="btn bg-primary" href="vscode://file/{{ site.local_git_mac}}/{{ site.repository_name }}/{{ page_dir }}{{ page.path }}">
-        <i class="bi bi-apple"></i>
+        <i class="{{site.default_icon}} {{site.default_icon}}-apple"></i>
     </a>
- -->
-        <!-- https://icons.getbootstrap.com/icons/apple/ -->
-<!-- 
-    <a class="btn bg-primary" href="vscode://file/{{ site.local_git_pc}}/{{ site.repository_name }}/_layouts/{{ page.layout }}.html">
-        <i class="bi bi-filetype-html"></i>
+    <!-- https://icons.getbootstrap.com/icons/apple/ -->
+
+    <a class="btn bg-primary" href="https://github.com/{{ site.repository_name }}/_layouts/{{ page.layout }}.html">
+        <i class="{{site.default_icon}} {{site.default_icon}}-filetype-html"></i>
     </a>
- -->
-        <!-- https://icons.getbootstrap.com/icons/filetype-html/ -->
+    <!-- https://icons.getbootstrap.com/icons/filetype-html/ -->
+
 </div>

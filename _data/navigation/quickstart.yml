@@ -1,0 +1,24 @@
+- nav-title: "Quick-Start"
+- title: "Machine-Setup"
+  sublinks:
+    - title: "Home"
+      url: /quickstart/machine-setup
+    - title: "Mac"
+      url: /quickstart/mac
+    - title: "Windows"
+      url: /quickstart/win
+    - title: "Linux"
+      url: /quickstart/linux
+  url: /quickstart
+- title: "IDE"
+  sublinks:
+    - title: "Home"
+      url: /quickstart/ide/
+    - title: "VS-Code"
+      url: /quickstart/ide/vscode
+    - title: "Jupiter Notebooks"
+      url: /quickstart/ide/jupiter
+    - title: "github"
+      url: /quickstart/ide/github
+    - title: "Jekyll"
+      url: /quickstart/ide/jekyll

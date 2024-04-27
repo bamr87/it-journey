@@ -96,14 +96,14 @@ body {
     gap: 1rem;
   }
 
-  .bd-header {
+  /* .bd-header {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
     grid-column: 1 / span 3;
-  }
+  } */
 
   .bd-aside,
   .bd-cheatsheet {

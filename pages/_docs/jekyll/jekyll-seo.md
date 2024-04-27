@@ -3,27 +3,87 @@ key: tutorial
 title: Jekyll - SEO
 index: 8131
 subcategory: jekyll
-date: 2019-06-27
+date: 2023-12-04T19:48:04.694Z
 tags:
   - SEO
   - CDN
   - DNS
-lastmod: 2023-12-03T08:47:31.567Z
+lastmod: 2023-12-04T22:41:17.301Z
+slug: jekyll-seo
+description: This is a tutorial about how to optimize the website to improve the rankings.
+draft: true
+categories:
+  - jekyll
+preview: /images/jekyll-seo-preview.png
+sub-title: SEO Optimization using Jekyll
+author: Amr
+excerpt: Search engine optimization (`SEO`) is the process of increasing the quality and quantity of website traffic by increasing the visibility of a website or a web page to users of a web search engine.
+snippet: /images/jekyll-seo-snippet.png
 ---
 
-> Optimize the website to improve the rankings.
+[Google Search Docs](https://developers.google.com/search)
+
+SEO (Search Engine Optimization) optimization is a crucial aspect for any website, and this is no different for sites built with Jekyll, the popular static site generator. By nature, Jekyll offers a lean and fast-loading website structure, which is a positive factor for SEO. However, there are specific strategies you can employ to further enhance your Jekyll site's SEO.
+
+1. **Optimizing Content**: The cornerstone of SEO is high-quality, relevant content. With Jekyll, you can easily manage content through Markdown files, ensuring that your text is clear, well-structured, and includes appropriate keywords.
+
+2. **URL Structure**: Jekyll allows for customization of URL structures. By using meaningful and keyword-rich URLs, you can make your pages more understandable to search engines and users.
+
+3. **Meta Tags**: Incorporate meta tags for titles and descriptions in your Jekyll site's HTML templates. These tags help search engines understand the content of your pages and display them appropriately in search results.
+
+4. **Mobile Responsiveness**: Jekyll supports responsive design themes, which is vital since mobile-friendliness is a significant ranking factor for search engines.
+
+5. **Loading Speed**: Jekyll generates static sites, which generally load faster than dynamic websites. You can further optimize this by minimizing CSS, JavaScript, and image sizes.
+
+6. **Sitemaps and Robots.txt**: Use Jekyll plugins to generate sitemaps automatically and manage robots.txt files, ensuring search engines can efficiently crawl and index your site.
+
+7. **Social Media Integration**: Integrating social media sharing options can increase the visibility of your content, indirectly boosting your SEO efforts.
+
+8. **Analytics**: Incorporate tools like Google Analytics to track your site’s performance, understand your audience better, and fine-tune your SEO strategies.
+
+9. **Regular Updates**: Regularly updating your website with fresh content can signal to search engines that your site is active and relevant.
+
+By implementing these strategies, you can significantly improve your Jekyll site's SEO, making it more visible and accessible to your target audience.
 
 ## 1. SEO
 
-Search engine optimization (`SEO`) is the process of increasing the quality and quantity of website traffic by increasing the visibility of a website or a web page to users of a web search engine.
-
 ### 1.1 robots.txt
 
-Avoid web crawler to visit specific content, eg. /note.
+Use Jekyll plugins to generate sitemaps automatically and manage robots.txt files, ensuring search engines can efficiently crawl and index your site.
 
-```raw
+I.e., Prevent web crawlers from specific content. 
+
+
+```sh
+# e.g. /note.
+
 User-agent: *
 Disallow: /note/
+Sitemap: http://{{ site.github_user }}.github.io/sitemap.xml
+
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /duplicate-content/
+Disallow: /under-development/
+Allow: /public-content/
+Disallow: /*.gif$
+Disallow: /*.xls$
+
+# Sitemap location
+Sitemap: https://www.yoursite.com/sitemap.xml
+
+# Specific rules for certain bots
+User-agent: Googlebot
+Disallow: /no-google/
+
+User-agent: Bingbot
+Disallow: /no-bing/
+
+# Delay between successive requests (in seconds)
+Crawl-delay: 10
+
+
 ```
 
 ### 1.2 RSS Feed
@@ -31,6 +91,7 @@ Disallow: /note/
 Edit /blog/atom.xml
 
 ```html
+
 {%- raw -%}
 ---
 layout: nil
@@ -65,7 +126,6 @@ type: blog
 ```
 
 ![image](/assets/images/jekyll/8131/rssfeed.png)
-
 ### 1.3 Sitemap
 
 ```xml

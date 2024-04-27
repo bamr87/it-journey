@@ -6,7 +6,6 @@ html, body {
   * {
     box-sizing: border-box;
   }
-
   
 .make-me-sticky {
     position: -webkit-sticky;
@@ -18,7 +17,7 @@ html, body {
 }
 
 .bottom-shadow {
-    background-color: rgba(255,255,255,0.95);
+    // background-color: rgba(255,255,255,0.95);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .35), inset 0 -1px 0 rgba(0, 0, 0, .15);
 }
 
@@ -26,6 +25,103 @@ html, body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.toc {
+    grid-area: toc;
+    padding-top: 5rem;
+    top: 0;
+    right: 5rem;
+}
+
+
+@media (min-width: 992px) {
+    .toc {
+        position:-webkit-sticky;
+        position: sticky;
+        top: 5rem;
+        right: 5rem;
+        z-index: 2;
+        height: calc(100vh - 7rem);
+        overflow-y: auto
+    }
+}
+
+.toc nav {
+    font-size: .875rem
+}
+
+.toc nav ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+.toc nav ul ul {
+    padding-left: 1rem;
+    margin-top: .25rem
+}
+
+.toc nav li {
+    margin-bottom: .25rem
+}
+
+.toc nav a {
+    color: inherit
+}
+
+.toc nav a:not(:hover) {
+    text-decoration: none
+}
+
+.toc nav a code {
+    font: inherit
+}
+
+.toc-toggle {
+    display: flex;
+    align-items: center
+}
+
+
+@media (max-width: 767.98px) {
+    .toc-collapse nav {
+        padding:1.25rem;
+        background-color: var(--bs-tertiary-bg);
+        border: 1px solid var(--bs-border-color);
+        border-radius: var(--bs-border-radius)
+    }
+}
+
+@media (min-width: 768px) {
+    .toc-collapse {
+        display:block !important
+    }
+}
+
+
+@media (min-width: 992px) {
+    .sidebar {
+        position:-webkit-sticky;
+        position: sticky;
+        top: 5rem;
+        display: block !important;
+        height: calc(100vh - 6rem);
+        padding-left: .25rem;
+        margin-left: -.25rem;
+        overflow-y: auto
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar .offcanvas-lg {
+        border-right-color:var(--bs-border-color);
+        box-shadow: 0 1rem 3rem rgba(var(--bs-body-color-rgb), 0.175)
+    }
+}
+
+.bd-sidebar {
+    grid-area: sidebar
 }
 
 // https://designkojo.com/add-ellipse-truncated-text-css-single-line-and-multi-line-options

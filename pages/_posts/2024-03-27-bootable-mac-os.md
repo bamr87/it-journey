@@ -4,13 +4,14 @@ description: null
 author: null
 excerpt: null
 date: 2024-03-27T22:53:26.161Z
-lastmod: 2024-03-27T22:53:47.995Z
+lastmod: 2024-03-28T20:36:30.045Z
 draft: true
 tags: []
 categories: []
 meta: null
 snippet: null
 slug: bootable-mac-os
+source: https://support.apple.com/en-us/101578
 ---
 
 

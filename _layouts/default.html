@@ -1,42 +1,27 @@
 ---
 layout: root
 ---
-<!-- Default Layout -->
+<!-- _layouts/default.html -->
+<!-- Default Layout - Bootstrap Docs -->
+<!-- Main body including sidebars -->
+<div class ="row mt-5">
 
-  <!-- Main body including sidebars -->
-  <div class ="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
-
-    <!-- Left Sidebar for Outline -->
-        <!-- _includes/sidebar-left.html  -->
-        {% include sidebar-left.html %}
-
-    <!--  Main Body -->
-    <main class="bd-main order-1">
-
-      <!-- Intro Section and breadcrumbs -->
-      <div class="bd-intro">
-
-        <!-- Algolia Searchbar and hits -->
-        <div class="container order-1 dev-settings collapse">
-          <div id="search-searchbar"></div>
-          <div id="search-hits"></div>
-        </div> 
-
-        <!-- _include/breadcrumbs.html -->
-        <div class="container">
-          {% include breadcrumbs.html %}
-        </div>        
-          
-      </div>
-
-      <!-- Right Sidebar - Page Contents and Shortcuts-->
-      <!-- _includes/sidebar-right.html  -->
-      {% include sidebar-right.html %}
-
-      <!-- Main Content -->
-      <div class="bd-content ps-lg-4" data-spy="scroll" data-target="toc-content" data-offset="0">
-        {{ content }}
-      </div>
-
-    </main>
+  <!-- Left Sidebar for Outline -->
+  <!-- _includes/sidebar-left.html  -->
+  <div class="col-lg-2 offcanvas-lg offcanvas-start position-fixed" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+    {% include sidebar-left.html %}
   </div>
+
+  <!--  Main Body -->
+  <main class="col-lg-8 col-sm-12 overflow-auto justify-content-center offset-lg-2">
+    <!-- Main Content -->
+    <div class="bd-content ps-lg-4 overflow-auto" data-spy="scroll" data-target="toc-content" data-offset="0">
+      {{ content }}
+    </div>
+  </main>
+    <!-- Right Sidebar - Page Contents and Shortcuts-->
+    <!-- _includes/sidebar-right.html  -->
+    <div class="col-lg-2 position-fixed end-0" >
+      {% include sidebar-right.html %}
+    </div>
+</div>
