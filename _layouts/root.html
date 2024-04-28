@@ -20,23 +20,21 @@
     </head>
     <body>
 
+        <!--  mermain script -->
         <script >
             mermaid.initialize({ startOnLoad: true });
         </script>
+
         <!-- _includes/google-tag-mgr.html - SEO -->
         {% include google-tag-mgr.html %}
-        
-        <div>
-            <!-- _includes/header.html - Header section with main Navigation and Search engine -->
-            {% include header.html %}
 
-        </div>
-
-        <div>
-        </div>
-        
-        <!-- Content -->
+        <!-- _includes/header.html - Header section with main Navigation and Search engine -->
         <div class="container-xl pt-5 pt-lg-6">
+            {% include header.html %}
+        </div>
+
+        <!-- Content -->
+        <div class="container-xl">
             
             {{ content }}
 

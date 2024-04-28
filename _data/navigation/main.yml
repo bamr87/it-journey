@@ -1,80 +1,78 @@
-- nav-title: "Main Menu"
-
 - title: Home
   url: /Home/
   sublinks:
     - title: Sub-Links
       url: /sub-link/
-
-- title: "Quick-Start"
+- title: Quick-Start
   url: /quick-start
   sublinks:
-    - title: "Home"
+    - title: Home
       url: /quickstart
-    - title: "Master Setup"
+    - title: Master Setup
       url: /quickstart/machine-setup
-    - title: "IDE"
+    - title: IDE
       url: /quickstart/ide
-    - title: "Web Server"
+    - title: Web Server
       url: /quickstart/web-server
-    - title: "Web App"
+    - title: Web App
       url: /quickstart/web-app
-
-- title: "Journey"
+- title: Journey
   url: /posts
   sublinks:
-  - title: "home"
-    url: /posts
-  - title: "articles"
-    url: /posts/articles
-  - title: "Quests"
-    url: /quests
-- title: "Library"
+    - title: home
+      url: /posts
+    - title: articles
+      url: /posts/articles
+    - title: Quests
+      url: /quests
+- title: Library
   url: /docs/
   sublinks:
-  - title: "Home"
-    url: /docs
-  - title: "Jekyll"
-    url: /docs/jekyll
-  - title: "Command Line"
-    url: /docs/command-line
-- title: "Hobbies"
-  url: &home '/hobbies'
+    - title: Home
+      url: /docs
+    - title: Jekyll
+      url: /docs/jekyll
+    - title: Command Line
+      url: /docs/command-line
+- title: Hobbies
+  url: /hobbies
   sublinks:
-  - title: "home"
-    url: *home
-  - title: "Music"
-    sub: &sub '/music'
-    url: [*home,*sub] # FIXME
-  - title: "Gaming"
-    url: /hobbies/gaming
-  - title: "Art"
-    url: /hobbies/art
-  - title: "Cooking"
-    url: /hobbies/cooking
-- title: "Notes"
+    - title: home
+      url: /hobbies
+    - title: Music
+      sub: /music
+      url: /hobbies/music
+    - title: Gaming
+      url: /hobbies/gaming
+    - title: Art
+      url: /hobbies/art
+    - title: Cooking
+      url: /hobbies/cooking
+- title: Notes
   url: /notes
   sublinks:
-  - title: "home"
-    url: /notes
-# - title: *test
-- title: "Training"
+    - title: home
+      url: /notes
+    - title: keyboard shortcuts
+      url: /keyboard-shortcuts/
+- title: Training
   url: /training/
   sublinks:
-  - title: "home"
-    url: /training
-- title: "About"
+    - title: home
+      url: /training
+- title: About
   url: /about/
   sublinks:
-  - title: "home"
-    url: /about
-  - title: "Config"
-    url: /about/config
-  - title: "Theme"
-    url: /about/theme
-  - title: "Contributing"
-    url: /about/contributing
-  - title: "Map"
-    url: /about/sitemap
-  - title: "Features"
-    url: /about/features
+    - title: home
+      url: /about
+    - title: Config
+      url: /about/config
+    - title: Theme
+      url: /about/theme
+    - title: Contributing
+      url: /about/contributing
+    - title: Map
+      url: /about/sitemap
+    - title: Features
+      url: /about/features
+

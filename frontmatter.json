@@ -112,17 +112,17 @@
       "title": "Main Navigation",
       "file": "[[workspace]]/_data/navigation/main.yml",
       "fileType": "yaml",
-      "labelField": "name",
+      "labelField": "title",
       "singleEntry": false,
       "schema": {
         "type": "object",
         "properties": {
-          "navTitle": {
+          "title": {
             "description": "The title of the page",
             "type": "string"
           },
-          "subTitle": {
-            "description": "sub title",
+          "icon": {
+            "description": "Bootstrap icon",
             "type": "string"
           },
           "url": {
@@ -130,7 +130,7 @@
             "type": "string"
           },
           "sublinks": {
-            "description": "Tags for the product",
+            "description": "sublinks for the section",
             "type": "array",
             "items": {
               "type": "object",
@@ -159,9 +159,9 @@
               }
             }
           }
-        },
-        "required": [ "navTitle", "subTitle", "url" ]
         }
+      },
+      "required": [ "title", "url" ]
       }
     }
   ] 
