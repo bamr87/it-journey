@@ -246,7 +246,7 @@ permalink: pretty
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
-nav-file: '_data/navigation.yml'
+nav-file: '_data/navigation/map.yml'
 
 defaults:
   # ALL

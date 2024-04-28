@@ -1,17 +1,16 @@
-<!-- info-bar.html
-    _include/searchbar.html
-    _include/breadcrumbs.html
+<!--
+  file: info-bar.html
+  path: _includes/info-bar.html
+  includes: searchbar.html, breadcrumbs.html
 -->
 
-         <!-- Search and breadcrumbs section -->
-
-            <div class="bg-body-tertiary position-relative z-index-1 mt-1">
-                <!-- Intro Section and breadcrumbs -->
-                <div class="bd-intro col-lg-auto order-1 order-lg-2">
-                
-                <!-- _include/breadcrumbs.html -->
-                <div class="container dev-settings collapse">
-                    {% include breadcrumbs.html %}
-                    {% include searchbar.html %}
-                </div>   
-            </div>
+<!-- Search and breadcrumbs section -->
+<div class="bg-body-tertiary position-relative z-index-1">
+    <!-- Intro Section and breadcrumbs -->
+    <div class="bd-intro col-lg-auto order-1 order-lg-2">
+    <!-- _include/breadcrumbs.html -->
+    <div class="container dev-settings collapse">
+        {% include breadcrumbs.html %}
+        {% include searchbar.html %}
+    </div>
+</div>

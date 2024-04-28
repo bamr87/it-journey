@@ -1,12 +1,12 @@
 <!-- 
   file: header.html
   path: /_includes/header.html
-  includes:  _includes/branding.html, _includes/navbar.html
+  includes:  branding.html, navbar.html, info-bar.html, halfmoon.html
  -->
 
-<header id="navbar" class="navbar sticky-top bottom-shadow" role="navigation">
+<header id="navbar" class="sticky-top bottom-shadow" role="navigation"></header>
     <!-- Top Navigation Bar -->
-    <div class="container-xxl flex-wrap flex-lg-nowrap">
+    <div class="container-xxl flex-wrap flex-lg-nowrap"></div>
         <!-- Main Navbar -->
         <nav class="navbar navbar-expand-xxl bg-body-tertiary container-fluid order-2 order-lg-1">
 
@@ -28,7 +28,7 @@
             </a>
             {% endfor %}
 
-            <!-- include branding.html -->
+            <!-- include branding.html --> 
             {% include branding.html %}
 
             <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true"> -->
@@ -67,6 +67,14 @@
             </div>
 
         </nav>
-    </div>
+        <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
+        <div class="container-xxl mt-10">
+            {% include info-bar.html %}
+        </div>
 
+        <!-- Source code shortcuts -->
+        <div class="text-center"></div>
+            {% include dev-shortcuts.html %}
+        </div>
+    </div>
 </header>

@@ -1,11 +1,11 @@
-<!-- Sidebar-right.html 
-     _includes/nav_list.html 
+<!-- 
+  file: sidebar-right.html 
+  path: _includes/sidebar-right.html
+  includes: nav_list.html, toc.html
 -->
 
-
-
 <div class="d-flex justify-content-end">
-  <!-- TODO: Need to fix the TOC to be hidden in mobile view -->
+  <!-- [x] TODO: Need to fix the TOC to be hidden in mobile view -->
   <!-- Button in mobile view -->
   <button class="col-2 btn btn-link text-decoration-none bd-toc-toggle d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
     <i class="bi bi-list-ul"></i>
@@ -15,11 +15,6 @@
 <!-- Right sidebar container -->
 <div class="d-flex justify-content-end">
 
-  <!-- Source code shortcuts -->
-  <div>
-    {% include dev-shortcuts.html %}
-  </div>
-    
   <!-- Table of contents -->
   <div class="toc-collapse collapse" id="tocContents">
     <nav class="" id="TableOfContents">
@@ -29,12 +24,13 @@
         <i class="fas fa-file-alt"></i>
         On this page
       </strong>
-    </div>    
+    </div>
+
     <!-- TOC list -->
       {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
     </nav>
   </div>
-  
+
   <!-- Back to Top -->
   <div>
     <button onclick="topFunction()" id="backToTopBtn" title="Go to top">

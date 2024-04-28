@@ -1,11 +1,15 @@
 ---
 ---
 <!--
-  Zer0 Mistakes Jekyll Theme 0.1 by Amr Abdel-Motaleb
-  Copyright 2021 Amr Abdel-Motaleb - amrabdel.com | @bamr87
+  Zer0 Mistakes Jekyll Theme version 0.1 by Amr Abdel-Motaleb
+  Copyright 2024 Amr Abdel-Motaleb - amrabdel.com | @bamr87
 -->
 
-<!-- _layouts/root.html -->
+<!--
+  file: root.html
+  path:_layouts/root.html 
+  includes: head.html, google-tag-mgr.html, header.html, footer.html, algolia.html
+-->
 
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js" data-bs-theme="dark">
@@ -25,10 +29,7 @@
         <div>
             <!-- _includes/header.html - Header section with main Navigation and Search engine -->
             {% include header.html %}
-            <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
-            <div class="container-xxl position-fixed mt-10">
-                {% include info-bar.html %}
-            </div>
+
         </div>
 
         <div>
