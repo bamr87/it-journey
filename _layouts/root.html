@@ -13,52 +13,35 @@
 
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js" data-bs-theme="dark">
-
     <head>
         <!-- _includes/head.html  -->
         {% include head.html %}
     </head>
     <body>
 
-        <!--  mermain script -->
-        <script >
-            mermaid.initialize({ startOnLoad: true });
-        </script>
-
-        <!-- _includes/google-tag-mgr.html - SEO -->
-        {% include google-tag-mgr.html %}
+        <!-- _includes/google-tag-manager-body.html - SEO -->
+        {% include google-tag-manager-body.html %}
 
         <!-- _includes/header.html - Header section with main Navigation and Search engine -->
-        <div class="container-xl pt-5 pt-lg-6">
-            {% include header.html %}
-        </div>
+        {% include header.html %}
 
         <!-- Content -->
-        <div class="container-xl">
-            
+        <div class="container-xl pt-3">
             {{ content }}
-
+        </div>
+        </div>
+        
+        <!-- _include/footer.html -->
+        <div class="border-top">
+            {%- include footer.html -%}
+        </div>
+        <!-- Ja -->
+        <div>
+            <!-- Javascript CDN -->
+            {% include js-cdn.html %}
+            <!-- Search Engine  -->
+            <!-- _include/algolia.html -->
+            {% include algolia.html %}
         </div>
     </body>
-
-    <!-- _include/footer.html -->
-    <div class="border-top">
-        {%- include footer.html -%}
-    </div>
-
-    <!-- Javascript CDN -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- Search Engine  -->
-
-        <!-- _include/algolia.html -->
-        {% include algolia.html %}
-
-    <!-- Features -->
-        <!-- particles.js -->
-        <script src="/assets/js/particles-source.js"></script>
-        <script src="/assets/js/particles.js"></script>
-
  </html>

@@ -1,19 +1,20 @@
-- nav-title: "About"
-- title: "about"
+- nav-title: About
+- title: About
   sublinks:
-    - title: "Home"
+    - title: Home
       url: /about
-    - title: "Purpose"
+    - title: Purpose
       url: /about/purpose
-    - title: "Approach"
+    - title: Approach
       url: /about/approach
-    - title: "Contributing"
+    - title: Contributing
       url: /about/contributing
-    - title: "License"
+    - title: License
       url: /about/license
-    - title: "Terms &amp; Privacy Policy"
+    - title: Terms &amp; Privacy Policy
       url: /terms
-    - title: "Theme"
+    - title: Theme
       url: /about/theme
-    - title: "Sitemap"
+    - title: Sitemap
       url: /about/sitemap
+  url: /about/

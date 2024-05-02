@@ -30,24 +30,21 @@
 
 founder                  : "Amr Abdel-Motaleb"
 title                    : IT-Journey
-masthead_title           : # override the default title
 subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
 title_separator          : "|" # Appears in the web browser tab name
-domain                   : *github_base_url
-site_domain              : &site_domain "github.io"
+domain                   : &domain "it-journey.dev"
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
-url                      : *github_base_url
+url                      : ['https://', *domain] # the base hostname & protocol for your site, e.g. http://example.com
 port                     : 4002 # Jekyll Serve Dev port
-dg_port                  : 4001 # Doppelganger site. Use this if you want to switch between parallel deployments
+dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
 
 ### Owner Information -------------------------------------------------------------
 
 name                     : &name "Amr"
 email                    : &email "amr.abdel@gmail.com"
 github_user              : &github_user "bamr87"
-description              : &description >- # this means to ignore newlines until "url:"
+description              : &description >- # this means to ignore newlines until the next variable
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -57,6 +54,8 @@ repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
 repo_map                 : "_about/"
+github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+portfolio                : [*github_user, '.', 'github.io']
 
 ## Maintainer Information----------------------------------------------------------
 
@@ -86,7 +85,7 @@ home_dir_mac             : &home-mac '/Users/amr/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
 logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo_source              : &logo_source "https://www.it-journey.dev"
+logo_link                : &logo_link "https://www.it-journey.dev"
 
 teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)

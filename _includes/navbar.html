@@ -4,14 +4,17 @@
   includes: 
  -->
 
-<!-- Navigation Links -->
+<!-- Navigation Links - Offcanvas -->
+<div class="offcanvas offcanvas-end col-lg-2" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbar"> 
 
-<div class="collapse navbar-collapse offcanvas offcanvas-end" id="bdNavbar" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbar"> 
-      <div class="offcanvas-header border-bottom">
-          <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">Main Navigation</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
-        </div>
-    <div class="offcanvas-body navbar-nav">
+<!-- Main Navigation Header - Offcanvas -->
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="mainNavOffcanvasLabel">Main Navigation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
+    </div>
+
+<!-- Main Navigation List - Offcanvas  -->
+    <ul class="navbar-nav offcanvas-body" >
         {%- for link in site.data.navigation.main -%}
             <li class="nav-item dropdown">
                 <a {% if link.sublinks %} 
@@ -33,5 +36,5 @@
                 {% endif %}
             </li>
         {%- endfor -%}
-    </div>
+        </ul>
 </div>

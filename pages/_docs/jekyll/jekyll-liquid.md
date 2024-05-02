@@ -7,7 +7,11 @@ date: 2016-01-19
 tags:
   - Jekyll
   - Liquid
-lastmod: 2022-06-04T17:35:42.089Z
+lastmod: 2024-04-29T21:00:14.358Z
+sources:
+  - https://shopify.github.io/liquid/
+  - https://help.shopify.com/themes/liquid/objects/for-loops
+  - https://jekyllrb.com/docs/liquid/filters/
 ---
 
 > Useful tricks of Liquid, which are used in Jekyll.

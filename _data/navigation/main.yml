@@ -1,8 +1,3 @@
-- title: Home
-  url: /Home/
-  sublinks:
-    - title: Sub-Links
-      url: /sub-link/
 - title: Quick-Start
   url: /quick-start
   sublinks:
@@ -34,20 +29,6 @@
       url: /docs/jekyll
     - title: Command Line
       url: /docs/command-line
-- title: Hobbies
-  url: /hobbies
-  sublinks:
-    - title: home
-      url: /hobbies
-    - title: Music
-      sub: /music
-      url: /hobbies/music
-    - title: Gaming
-      url: /hobbies/gaming
-    - title: Art
-      url: /hobbies/art
-    - title: Cooking
-      url: /hobbies/cooking
 - title: Notes
   url: /notes
   sublinks:
@@ -55,11 +36,6 @@
       url: /notes
     - title: keyboard shortcuts
       url: /keyboard-shortcuts/
-- title: Training
-  url: /training/
-  sublinks:
-    - title: home
-      url: /training
 - title: About
   url: /about/
   sublinks:

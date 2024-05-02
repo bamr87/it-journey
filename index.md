@@ -3,7 +3,7 @@ title: Hello World
 sub-title: Landing site for the IT Journey
 description: This is the index.md file for the whole site and root
 preview: /images/wizard-on-journey.png
-layout: root
+layout: landing
 keywords:
   - Github
   - Jekyll
@@ -12,13 +12,15 @@ tags:
   - index
 categories:
   - hello world
-lastmod: 2024-04-25T17:03:42.589Z
+lastmod: 2024-04-29T21:18:15.453Z
 slug: /
 ---
 
 # Welcome to IT-Journey.dev: Your Full Stack Development Quest Begins Here!
 
 Embark on an epic adventure through the realms of full stack development, where coding skills empower you to build anything from the ground up. At IT-Journey.dev, we believe learning should be a quest - full of challenges, mysteries, and achievements. Are you ready to become a Full Stack Wizard?
+
+{{ site.url }}
 
 ## 🧙‍♂️ Begin Your Quest
 

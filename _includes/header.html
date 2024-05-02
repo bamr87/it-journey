@@ -4,38 +4,43 @@
   includes:  branding.html, navbar.html, info-bar.html, halfmoon.html
  -->
 
-<header id="navbar" class="navbar container-xl justify-content-center sticky-top bottom-shadow" role="navigation">
+<header id="navbar" class="container-fluid bg-body-tertiary justify-content-center bottom-shadow" role="navigation">
+
     <!-- Top Navigation Bar -->
     <div class="flex-wrap flex-lg-nowrap">
+
         <!-- Main Navbar -->
-        <nav class="navbar navbar-expand-xl bg-body-tertiary container-fluid order-2 order-lg-1">
+        <nav class="navbar navbar-expand-lg container-fluid order-2 order-lg-1 grid gap-1">
 
             <!-- Offcanvas button for left side bar in mobile view -->
-            <div class="bd-navbar-toggle flex-grow-1">
+            <div class="bd-navbar-toggle ">
                 <button class="navbar-toggler p-2" 
                         type="button" 
                         data-bs-toggle="offcanvas" 
                         data-bs-target="#bdSidebar" 
                         aria-controls="bdSidebar" 
                         aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="bi bi-list"></span>
                 </button>
             </div>
+
             <!-- Home Link -->
             {%- for home in site.data.navigation.home -%}
-            <a class="btn flex-grow-1" href="{{ home.url | relative_url }}">
+            <a class="btn " href="{{ home.url | relative_url }}">
                 <i class="{{ site.default_icon}} {{ home.icon }}" ></i>
             </a>
             {% endfor %}
 
-            <!-- include branding.html --> 
-            {% include branding.html %}
-
+            <div class="d-inline-flex text-center gap-3">
+                <!-- include branding.html --> 
+                {% include branding.html %}
+            </div>
+                
                 <!-- include navbar.html -->
                 {% include navbar.html %}
 
             <!-- Settings Collapse button -->
-            <div class="btn flex-grow-1"
+            <div class="btn "
                 data-toggle="collapse" 
                 data-target=".dev-settings" 
                 aria-expanded="false" 
@@ -50,7 +55,7 @@
             {% include halfmoon.html %}
 
             <!-- Offcanvas button for nav links -->
-            <div class="bd-navbar-toggle flex-grow-1">
+            <div class="bd-navbar-toggle ">
                 <button class="navbar-toggler p-2" 
                         type="button" 
                         data-bs-toggle="offcanvas" 
@@ -63,13 +68,12 @@
         </nav>
     </div>
 
+    <!-- Information Section - 2nd Row -->
     <div class="row container-xxl text-center">
         <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
             {% include info-bar.html %}
 
         <!-- Source code shortcuts -->
             {% include dev-shortcuts.html %}
-
     </div>
-        
 </header>

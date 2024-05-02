@@ -1,23 +1,38 @@
 ---
 title: About
 layout: collection
+execerpt:
+  "{ site.description }": null
 collection: post
 permalink: /about/
-lastmod: 2022-06-17T02:01:09.704Z
-slug:
+lastmod: 2024-05-02T04:37:42.957Z
+slug: null
 ---
 
 # About this site
+
+{{site.description}}
+
+{{ site.domain }}
 
 For those of you who have stumbled upon this partially completed website, as you can see, there's not much useful information here. I'm attempting to build this site while covering fundamental concepts and tools used to build "Information Systems". Obviously, if you're familiar with the subject, it's a huge undertaking, and there's no right way to approach it and there are many technologies to choose from.
 
 Within this site, I attempt to utilize open source technologies and free services so anyone, and everyone, can learn. Not only will you learn how these technologies work that make up the "Internet", but you might find some of these tools/techniques useful in your everyday life, such as journalizing your day, or capturing recipes for later use. This site should be understood by anyone who wants to embark on this journey to learn "IT", and will hopefully give you everything you need to become a full stack developers, if you so choose to.
 
-I chose the domain `{{ site.logo_source }}` because I hope this site will provide a lifelong learning experience for anyone who wants to learn how to code and build information systems that help them with everyday life.
+I chose the domain `{{ site.domain }}` because I hope this site will provide a lifelong learning experience for anyone who wants to learn how to code and build information systems that help them with everyday life.
 
-[Life Hack Wiki](https://en.wikipedia.org/wiki/Life_hack) 
+[Life Hack Wiki](https://en.wikipedia.org/wiki/Life_hack)
 
 ## Quick Facts
+
+### Site Settings
+
+Key | Value
+-----|-----
+
+site.title | {{ site.title }}
+site.domain | {{ site.domain }}
+site.
 
 This world was created by {{ site.founder }} and maintained by:
 

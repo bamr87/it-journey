@@ -7,7 +7,7 @@
 <div class="d-flex justify-content-end">
   <!-- [x] TODO: Need to fix the TOC to be hidden in mobile view -->
   <!-- Button in mobile view -->
-  <button class="col-2 btn btn-link text-decoration-none bd-toc-toggle d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+  <button class="col-2 btn bg-primary bg-opacity-25 btn-link text-decoration-none bd-toc-toggle d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
     <i class="bi bi-list-ul"></i>
   </button>
 </div>
@@ -27,7 +27,7 @@
     </div>
 
     <!-- TOC list -->
-      {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="" item_class="" anchor_class="" skip_no_ids=true %}
+      {% include toc.html sanitize=true html=content h_min=1 h_max=3 class="list-group-flush" item_class="list-group-item" anchor_class="" skip_no_ids=true %}
     </nav>
   </div>
 

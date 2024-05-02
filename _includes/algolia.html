@@ -1,12 +1,26 @@
-<!-- https://www.algolia.com/doc/onboarding/ -->
-<!-- https://community.algolia.com/jekyll-algolia/blog.html -->
+<!--
+  file: algolia.html
+  sources: 
+    https://www.algolia.com/doc/onboarding/,
+    https://community.algolia.com/jekyll-algolia/blog.html,
+    https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/#the-instantsearch-instance,
+    https://www.algolia.com/doc/guides/building-search-ui/getting-started/js/,
+    https://www.algolia.com/doc/guides/building-search-ui/installation/js/
+  TODO: Uplift Algolia functionality
+-->
+
+<!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.23.3/dist/algoliasearch-lite.umd.js" integrity="sha256-1QNshz86RqXe/qsCBldsUu13eAX6n/O98uubKQs87UI=" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.67.0/dist/instantsearch.production.min.js" integrity="sha256-TW7D3X/i/W+RUgEeDppEnFT2ixv5lzplKH0c58D92dY=" crossorigin="anonymous"></script> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/reset-min.css" integrity="sha256-2AeJLzExpZvqLUxMfcs+4DWcMwNfpnjUeAAvEtPr0wU=" crossorigin="anonymous"> -->
+
 
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
-
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css"> -->
 <script>
+
 const search = instantsearch({
   appId: '{{ site.algolia.application_id }}',
   apiKey: '{{ site.algolia.search_only_api_key }}',

@@ -1,5 +1,5 @@
-- nav-title: "Quick-Start"
-- title: "Machine-Setup"
+- title: "Quick-Start"
+  url: /quickstart/
   sublinks:
     - title: "Home"
       url: /quickstart/machine-setup
@@ -9,7 +9,6 @@
       url: /quickstart/win
     - title: "Linux"
       url: /quickstart/linux
-  url: /quickstart
 - title: "IDE"
   sublinks:
     - title: "Home"
