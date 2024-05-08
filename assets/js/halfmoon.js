@@ -1,59 +1,80 @@
-    // https://raw.githubusercontent.com/halfmoonui/halfmoon/master/js/halfmoon.js
-    let darkModeOn = false;
-      
-    const createStorage = (name, value) => {
-      localStorage.setItem(name, value);
-    }
-      
-    const readStorage = name => {
-      return localStorage.getItem(name);
-    }
-      
-    const deleteStorage = name => {
-      localStorage.removeItem(name);
-    }
-     
-    const toggleDarkMode = (e) => {
-      if (document.body.classList.contains("dark-mode")) {
-        document.body.classList.remove("dark-mode");
-        darkModeOn = false;
-        createStorage("my_preferredMode", "light-mode");
-      } else {
-        document.body.classList.add("dark-mode");
-        darkModeOn = true;
-        createStorage("my_preferredMode", "dark-mode");
-      }
-    }
-      
-    document.getElementById("darkMode").addEventListener("click", toggleDarkMode)
-      
-    document.addEventListener("DOMContentLoaded", () => {
-      if (readStorage("my_preferredMode")) {
-        if (readStorage("my_preferredMode") == "dark-mode") {
-          darkModeOn = true;
-        } else {
-          darkModeOn = false;
-        }
-      } else {
-        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          darkModeOn = true;
-        } else {
-          if (document.body.classList.contains("dark-mode")) {
-            darkModeOn = true;
-          } else {
-            darkModeOn = false;
-          }
-        }
-      }
+ /*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
 
-      if (darkModeOn) {
-        if (!document.body.classList.contains("dark-mode")) {
-          document.body.classList.add("dark-mode");
-        }
-        document.getElementById("darkMode").checked = true
-      } else {
-        if (document.body.classList.contains("dark-mode")) {
-          document.body.classList.remove("dark-mode");
-        }
-      }
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => localStorage.getItem('theme')
+  const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active use')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
     })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()

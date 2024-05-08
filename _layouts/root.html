@@ -19,6 +19,9 @@
     </head>
     <body data-bs-spy="scroll" data-bs-target="#TableOfContents">
 
+        <!-- -inclues/svg.html -->
+        {% include svg.html %}
+
         <!-- _includes/google-tag-manager-body.html - SEO -->
         {% include google-tag-manager-body.html %}
 
@@ -34,11 +37,11 @@
         </div>
         <!-- Ja -->
         <div>
-            <!-- Javascript CDN -->
-            {% include js-cdn.html %}
             <!-- Search Engine  -->
             <!-- _include/algolia.html -->
             {% include algolia.html %}
+            <!-- Javascript CDN -->
+            {% include js-cdn.html %}
         </div>
     </body>
  </html>
