@@ -65,7 +65,6 @@ maintainers:
   - name: "Vacant"
     profile: "/github.com"
 
-
 ## Admin Information----------------------------------------------------------
 
 jekyll_admin:
@@ -92,8 +91,6 @@ breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
 
-
-
 ## Identity #####################################################################
 
 author:
@@ -105,7 +102,6 @@ author:
   location               : "Denver, CO"
   twitter_username       : "bamr87"
   github_username        : *github_user
-
 
 ## Affiliations ##############################################################
 
@@ -160,7 +156,6 @@ powered_by:
     url: "https://www.docker.com/"
     icon: "bi-docker"
 
-
 ### Plugins 
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
 # http://jekyllrb.com/docs/plugins/
@@ -176,7 +171,7 @@ plugins:
   - jekyll-mermaid  # https://mermaidjs.github.io/
   - jekyll-admin # https://github.com/jekyll/jekyll-admin
   - jekyll-redirect-from
-
+  # - bootstrap
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
   # - jekyll-postcss
@@ -241,7 +236,6 @@ collections:
     permalink: /:collection/:name/
 
 permalink: pretty
-
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
@@ -386,8 +380,6 @@ defaults:
       sidebar:
         nav: notes
 
-
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -395,38 +387,36 @@ defaults:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
+
 exclude:
-#   - .sass-cache/
+  - .sass-cache/
   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-  - vendor
+  - gemfiles/
+  - Gemfile
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "*.sh"
+
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed
-  
 
-
-
+#  TODO: Fix bootstrap plugin
+  # load_paths:
+  #   - /usr/local/bundle/gems/bootstrap-5.3.3/assets/stylesheets
 
 algolia:
   application_id: '99CKJ6KQ3Z'
   search_only_api_key: '03a0c530bc2ff9acfde23485092602f3'
   index_name: dev_lifehacker
 
-exclude: [vendor]
-
 atom_feed:
 path                   : # blank (default) uses feed.xml
-
 
 ## Style Settings -------------------------------------------------------------
 

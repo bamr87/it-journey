@@ -8,7 +8,7 @@ url: https://github.com/bamr87/it-journey
 tags:
     - it-journey
 license: MIT
-lastmod: 2024-04-05T04:34:00.505Z
+lastmod: 2024-05-02T16:11:54.831Z
 created: 2022-03-01T12:00:00.000Z
 ---
 
@@ -93,11 +93,11 @@ docker build -t it-journey .
 ### Mac
 
 ```shell
-docker run -p 4000:4002 -v /Users/bamr87/github/it-journey:/app it-journey
+docker run -p 4002:4002 -v /Users/bamr87/github/it-journey:/app it-journey
 ```
 
 ```shell
-http://localhost:4000/
+http://localhost:4002/
 ```
 
 ### Windows
@@ -105,7 +105,7 @@ http://localhost:4000/
 <!-- TODO: Check on windows docker bug "Auto-regeneration may not work on some Windows versions."-->
 
 ```shell
-docker run -p 4000:4002 -v C:\Users\AmrAbdel-Motaleb\github\it-journey:/app it-journey
+docker run -p 4002:4002 -v C:\Users\AmrAbdel-Motaleb\github\it-journey:/app it-journey
 ```
 
 > [!NOTE]

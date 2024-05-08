@@ -14,14 +14,15 @@
     </div>
 
 <!-- Main Navigation List - Offcanvas  -->
-    <ul class="navbar-nav offcanvas-body" >
+    <ul class="navbar-nav offcanvas-body justify-content-lg-center" >
         {%- for link in site.data.navigation.main -%}
             <li class="nav-item dropdown">
                 <a {% if link.sublinks %} 
                          href="#" id="navbarDropdown" 
                          role="button" 
-                         data-toggle="dropdown" 
+                         data-bs-toggle="dropdown" 
                          class="nav-link dropdown-toggle" 
+                         aria-expanded="false"
                     {% endif %}
                          href="{{ link.url | relative_url }}"
                     >{{ link.title }}

@@ -2,7 +2,15 @@
 layout: root
 ---
 
-{{ content }}
+  <!-- Left Sidebar for Outline - Offcanvas -->
+  <!-- _includes/sidebar-left.html  -->
+  <div class="offcanvas">
+    {% include sidebar-left.html %}
+  </div>
+  
+  <div class="container-xl pt-5">
+  {{ content }}
+</div>
 
 <!-- Features -->
     <!-- particles.js -->

@@ -23,7 +23,6 @@ gem 'jekyll' , '3.9.5'
 
 # If you have any jekyll plugins, put them here!
 group :jekyll_plugins do
-  # gem "github-pages"
   gem 'jekyll-algolia' 
   gem 'jekyll-assets', "~> 1.0.0"
   gem 'jekyll-mermaid'
@@ -39,7 +38,13 @@ group :jekyll_plugins do
   # gem 'jemoji' # Doesn't work for some reason
 end
 
-# gem "bootstrap", ">= 4.3.1"
+# TODO: build a bootstrap plugin for jekyll
+
+#  bootstrap https://getbootstrap.com/docs/5.1/getting-started/introduction/
+#  https://github.com/twbs/bootstrap-rubygem/blob/main/README.md
+# gem "bootstrap",  ">=5.3.3"
+# gem 'bootstrap-icons', '~> 1.0', '>= 1.0.14'
+# gem 'jquery-rails'
 # gem "minima", "~> 2.5"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -75,5 +80,3 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem "algoliasearch"
 # gem "html-proofer"
-
-# gem 'bootstrap', '~> 5.3.0-alpha1'

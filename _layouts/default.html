@@ -1,26 +1,36 @@
 ---
 layout: root
 ---
-<!-- _layouts/default.html -->
-<!-- Default Layout - Bootstrap Docs -->
-<!-- Main body including sidebars -->
-<div class ="row mt-5">
+<!-- _
+  file: default.html
+  path: _layouts/default.html
+  includes: sidebar-left.html, sidebar-right.html
+-->
 
+<!-- Default Layout - Docs -->
+
+<!-- Main body including sidebars -->
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
   <!-- Left Sidebar for Outline - Offcanvas -->
   <!-- _includes/sidebar-left.html  -->
+  <aside class=" bd-sidebar ">
     {% include sidebar-left.html %}
-
-
-  <!--  Main Body -->
-  <main class="col-lg-8 col-sm-12 overflow-auto justify-content-center offset-lg-2">
+  </aside>
+    
+    <!--  Main Body -->
+  <main class="bd-main order-1" data-spy="scroll" data-bs-target="toc-content" data-offset="0">
+<!-- Intro Section -->
+<div class="bd-intro pt-2 ps-lg-2">
+  <p>Intro</p>
+</div>
+    <!-- Right Sidebar - Page Contents and Shortcuts-->
+    <!-- _includes/sidebar-right.html  -->
+  <div class="bd-toc text-body-secondary" >
+    {% include sidebar-right.html %}
+  </div>
     <!-- Main Content -->
-    <div class="bd-content ps-lg-4 overflow-auto" data-spy="scroll" data-target="toc-content" data-offset="0">
+    <div class="bd-content ps-lg-2">
       {{ content }}
     </div>
   </main>
-    <!-- Right Sidebar - Page Contents and Shortcuts-->
-    <!-- _includes/sidebar-right.html  -->
-    <div class="col-lg-2 position-fixed end-0" >
-      {% include sidebar-right.html %}
-    </div>
 </div>

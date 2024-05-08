@@ -4,13 +4,13 @@
   includes:  branding.html, navbar.html, info-bar.html, halfmoon.html
  -->
 
-<header id="navbar" class="container-fluid bg-body-tertiary justify-content-center bottom-shadow" role="navigation">
+<header id="navbar" class="container-fluid  text-center z-1" role="navigation">
 
     <!-- Top Navigation Bar -->
-    <div class="flex-wrap flex-lg-nowrap">
+    <div class="navbar navbar-expand-lg bg-body-tertiary flex-wrap flex-lg-nowrap justify-content-center bottom-shadow">
 
         <!-- Main Navbar -->
-        <nav class="navbar navbar-expand-lg container-fluid order-2 order-lg-1 grid gap-1">
+        <nav class=" container-xl order-2 order-lg-1 grid gap-1">
 
             <!-- Offcanvas button for left side bar in mobile view -->
             <div class="bd-navbar-toggle ">
@@ -40,11 +40,12 @@
                 {% include navbar.html %}
 
             <!-- Settings Collapse button -->
-            <div class="btn "
-                data-toggle="collapse" 
-                data-target=".dev-settings" 
+            <div class="btn"
+                data-bs-toggle="collapse" 
+                data-bs-target=".dev-settings" 
                 aria-expanded="false" 
-                aria-controls="" >
+                aria-controls=".dev-settings"
+                role="button"  >
                 <i 
                     type="button" 
                     class="{{site.default_icon}} bi-gear">
@@ -69,11 +70,14 @@
     </div>
 
     <!-- Information Section - 2nd Row -->
-    <div class="row container-xxl text-center">
+    <div class="row justify-content-md-center">
+        <div class="bg-body-secondary col-lg-6 z-index-1">
         <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
             {% include info-bar.html %}
 
         <!-- Source code shortcuts -->
             {% include dev-shortcuts.html %}
+        </div>
     </div>
+
 </header>

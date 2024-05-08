@@ -6,7 +6,7 @@ purpose: To build a platform for learning and share knowledge and tools
 layout: home
 keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
-lastmod: 2024-04-25T17:05:17.690Z
+lastmod: 2024-05-03T18:14:20.778Z
 ---
 
 This is where we begin our journey. The place where we return after getting lost or wandering off.
@@ -137,7 +137,7 @@ The sidebar navigation is a vertical bar that is always visible on the left side
 
 ```yaml
 {%- raw -%}
-{% capture nav %}{% include_relative _data/navigation.yml %}{% endcapture %}{{ nav | truncate: 332 }}
+{% capture nav %}{% include_relative _data/navigation-old.yml %}{% endcapture %}{{ nav | truncate: 332 }}
 {% endraw %}
 ```
 

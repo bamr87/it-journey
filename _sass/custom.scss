@@ -1,6 +1,6 @@
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
   }
   
   * {
@@ -24,7 +24,7 @@ html, body {
 #TableOfContents {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    // white-space: nowrap;
 }
 
 .toc {
@@ -84,7 +84,7 @@ html, body {
 }
 
 
-@media (max-width: 767.98px) {
+@media (max-width: 989.98px) {
     .toc-collapse nav {
         padding:1.25rem;
         background-color: var(--bs-tertiary-bg);
@@ -93,7 +93,7 @@ html, body {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 990px) {
     .toc-collapse {
         display:block !important
     }
@@ -186,8 +186,11 @@ img {
 
 .hide-navbar {
     transform: translateY(-100%);
-    top: -100px;
+    top: -99px;
 }
+
+$enable-cssgrid: true;
+$enable-grid-classes: false;
 
 // #box {
 //     background:url('data:image/gif;base64,R0lGODlhBgAGAIAAAO7u7t7e3iH5BAAAAAAALAAAAAAGAAYAAAIKhIOXgKGuDIOzAAA7') #eeeff1;

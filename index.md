@@ -12,7 +12,7 @@ tags:
   - index
 categories:
   - hello world
-lastmod: 2024-04-29T21:18:15.453Z
+lastmod: 2024-05-08T04:53:36.889Z
 slug: /
 ---
 
@@ -73,7 +73,7 @@ Click on these particales for fun.
 
 <div id="particles-js" class=""></div>
 
-<div class="btn flex-grow-1" data-toggle="collapse" data-target=".dev-settings" aria-expanded="true" aria-controls="">
+<div class="btn flex-grow-1" data-bs-toggle="collapse" data-bs-target=".dev-settings" aria-expanded="true" aria-controls="">
   <p>⚙ site features
   </p>
 </div>
