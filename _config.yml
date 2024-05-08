@@ -30,8 +30,11 @@
 
 founder                  : "Amr Abdel-Motaleb"
 title                    : IT-Journey
+title_url                : "/"
+title_icon               : "globe"
 subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
+subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey.dev"
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch

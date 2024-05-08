@@ -7,7 +7,7 @@
 <header id="navbar" class="container-fluid  text-center z-1" role="navigation">
 
     <!-- Top Navigation Bar -->
-    <div class="navbar navbar-expand-lg bg-body-tertiary flex-wrap flex-lg-nowrap justify-content-center bottom-shadow">
+    <div class="navbar navbar-expand-lg bg-body-tertiary flex-nowrap justify-content-center bottom-shadow">
 
         <!-- Main Navbar -->
         <nav class=" container-xl order-2 order-lg-1 grid gap-1">
@@ -24,18 +24,24 @@
                 </button>
             </div>
 
-            <!-- Home Link -->
-            {%- for home in site.data.navigation.home -%}
-            <a class="btn " href="{{ home.url | relative_url }}">
-                <i class="{{ site.default_icon}} {{ home.icon }}" ></i>
-            </a>
-            {% endfor %}
-
-            <div class="d-inline-flex text-center gap-3">
-                <!-- include branding.html --> 
-                {% include branding.html %}
+            <!-- Home and Root Logo -->
+            <div class="container d-inline-flex text-center gap-3">
+                <!-- Home Link -->
+                {%- for home in site.data.navigation.home -%}
+                <a class="btn " href="{{ home.url | relative_url }}">
+                    <i class="{{ site.default_icon}} {{ home.icon }}" ></i>
+                </a>
+                {% endfor %}
+                <!-- Brand Logo to root  -->
+                <!-- set the URL for the logo image in the _config file -->
+                {% capture logo_path %}{{ site.logo }}{% endcapture %}
+                <a class="navbar-brand" href="/">
+                    <img src="{{ logo_path | relative_url }}" alt="Logo" width="30" height="30">
+                </a>
             </div>
-                
+            <!-- include branding.html --> 
+                {% include branding.html %}
+    
                 <!-- include navbar.html -->
                 {% include navbar.html %}
 
@@ -70,8 +76,8 @@
     </div>
 
     <!-- Information Section - 2nd Row -->
-    <div class="row justify-content-md-center">
-        <div class="bg-body-secondary col-lg-6 z-index-1">
+    <div class="row justify-content-md-center bg-body-secondary">
+        <div class="col-lg-6 z-index-1">
         <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
             {% include info-bar.html %}
 
