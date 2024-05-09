@@ -11,13 +11,6 @@ slug: features
 lastmod: 2024-03-12T21:47:52.802Z
 ---
 
-**TOC**
-- [Features](#features)
-  - [Feature 1 - Gisgus](#feature-1---gisgus)
-  - [Feature 2](#feature-2)
-  - [Feature 3](#feature-3)
-- [Conclusion](#conclusion)
-
 ## Features
 
 ### Feature 1 - Gisgus
