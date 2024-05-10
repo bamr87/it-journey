@@ -3,9 +3,8 @@ title: Profile
 author: Amr
 class: Wizard
 permalink: /contributors/bamr87/
-lastmod: 2024-05-10T04:27:31.804Z
+lastmod: 2024-05-10T04:32:45.704Z
 ---
-
 
 - 👋 Hi, I’m @bamr87
 - 🤖 I’m interested in the achitecture of information systems that facilitate to production of goods and services
