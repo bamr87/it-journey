@@ -42,6 +42,22 @@ Test
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
+Favorite Dish
+
+| Qty   |  UM  | Ingredient                    | Notes                               |
+| :---- | :--: | :---------------------------- | ----------------------------------- |
+| 1 1/2 |  lb  | Chinese eggplants             | 680g or 3 large                     |
+| 1½    | tbsp | Sichuan chile bean paste      |                                     |
+| 1½    | tbsp | finely chopped garlic         |                                     |
+| 1     | tbsp | finely chopped ginger         |                                     |
+| 10    | tbsp | hot stock or water            | 150ml                               |
+| 1     | tbsp | superfine sugar               |                                     |
+| 1     | tsp  | light soy sauce               |                                     |
+| 1     | tbsp | potato (or corn) starch       | mixed with 1 tbsp cold water (roux) |
+| 1     | tbsp | Chinkiang vinegar             |                                     |
+| 6     | tbsp | thinly sliced scallion greens |                                     |
+| 5     | tbsp | Cooking oil, for deep-frying  |                                     |
+| 1     | tbsp | Salt                          |                                     |
 
 Here is a simple flow chart:
 
