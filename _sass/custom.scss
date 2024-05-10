@@ -178,6 +178,13 @@ img {
 }
 
 #navbar {
+    // position: fixed;
+    top: 0;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.fixed-navbar {
     position: fixed;
     top: 0;
     width: 100%;

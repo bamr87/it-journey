@@ -430,36 +430,6 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
 # remote_style           : "bamr87/zer0-mistakes"
 
-## Font Settings ---------------------------------------------------------------
-# font_family             : "Roboto"
-# font_size               : "16px"
-# font_weight             : "400"
-# font_style              : "normal"
-# font_size_mobile        : "16px"
-# font_weight_mobile      : "400"
-# font_style_mobile       : "normal"
-# font_size_tablet        : "16px"
-# font_weight_tablet      : "400"
-# font_style_tablet       : "normal"
-# font_size_desktop       : "16px"
-# font_weight_desktop     : "400"
-# font_style_desktop      : "normal"
-# font_size_large_desktop : "16px"
-# font_weight_large_desktop : "400"
-# font_style_large_desktop : "normal"
-
-## Color Settings --------------------------------------------------------------
-
-### Color Schema Override 
- # https://meodai.github.io/poline/
-
-# Harbour Mirror
-# Harbour Blue
-# Dark Blue
-# Smoking Mirror
-  #3d7695
-  #2f5877
-  #a19587
 
 
 theme_color:
@@ -489,6 +459,6 @@ theme_color:
 
 ## Copyright Settings --------------------------------------------------------------
 
-cr_year: 2023
+cr_year: 2024
 cr_entity: "Amr"
 cr_lisense: "MIT"

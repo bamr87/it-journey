@@ -7,12 +7,17 @@
 
 // Styling Variables
 @import "it-journey/variables";
+@import "it-journey/docs";
+@import "it-journey/theme";
 
 // Bootstrap Styles
 // @import "bootstrap.scss";
-// @import "it-journey/docs";
 
 // Custom Styles
 @import "custom.scss";
-@import "it-journey.scss";
+
+// Custom Features
+@import "it-journey/code-copy";
+@import "it-journey/clipboard-js";
+@import "it-journey/syntax";
 

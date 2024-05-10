@@ -7,6 +7,7 @@
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop) {
             navbar.classList.add('hide-navbar');
+            navbar.classList.add('fixed-navbar');
         } else {
             navbar.classList.remove('hide-navbar');
         }

@@ -1,10 +1,8 @@
 ---
-title: Theme
+title: Bootstrap Theme Examples
 layout: root
-lastmod: 2022-08-28T01:53:01.033Z
-source: 'https://getbootstrap.com/docs/5.3/examples/cheatsheet/'
+lastmod: 2024-05-09T02:11:01.435Z
+source: https://getbootstrap.com/docs/5.3/examples/cheatsheet/
 ---
 
-## Bootstrap Styles
-
-{% include style.html %}
+<iframe src="{{ page.source }}" width="100%" height="1000"></iframe>
