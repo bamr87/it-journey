@@ -4,7 +4,8 @@ author: Amr
 class: Wizard
 ---
 
-- 👋 Hi, I’m @bamr87
+
+- 👋 Hi, I’m {{ page.author }} @bamr87
 - 🤖 I’m interested in the achitecture of information systems that facilitate to production of goods and services
 - 📚 I'm currently learning front-end development, specfically for Content Management Systems (it-journey.dev)
 - 🧐 I’m looking to collaborate on developing frontend frameworks for small businesses
