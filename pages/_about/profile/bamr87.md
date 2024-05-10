@@ -8,22 +8,25 @@ website: https://yourwebsite.com
 github: your-github-username
 twitter: your-twitter-handle
 linkedin: your-linkedin-username
-lastmod: 2024-05-10T04:18:29.592Z
+lastmod: 2024-05-10T04:38:55.251Z
 permalink: /about/bamr87/
 ---
 
 
 # Navigate to your current repository
+```shell
 
-`cd ~/github/it-journey`
+cd ~/github/it-journey
 
 # Add the GitHub profile repository as a remote repository
 
-`git remote add bamr87 https://github.com/bamr87/bamr87.git`
+git remote add bamr87 https://github.com/bamr87/bamr87.git
 
 # Add the remote repository as a subtree
 
-`git subtree add --prefix=pages/_about/contributors/bamr87 bamr87 main`
+git subtree add --prefix=pages/_about/contributors/bamr87 bamr87 main
+
+```
 
 <!-- Include the library. -->
 <script
