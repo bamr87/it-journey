@@ -4,7 +4,6 @@ author: Amr
 class: Wizard
 ---
 
-
 - 👋 Hi, I’m @bamr87
 - 🤖 I’m interested in the achitecture of information systems that facilitate to production of goods and services
 - 📚 I'm currently learning front-end development, specfically for Content Management Systems (it-journey.dev)
@@ -22,9 +21,23 @@ bamr87/bamr87 is a ✨ special ✨ repository because its `README.md` (this file
 You can click the Preview link to take a look at your changes.
 --->
 
-<summary>My top THINGS-TO-RANK</summary>
+<summary>Add this repo as a sub-tree</summary>
 <details>
-Test
+
+```shell
+
+cd ~/github/it-journey
+
+# Add the GitHub profile repository as a remote repository
+
+git remote add bamr87 https://github.com/bamr87/bamr87.git
+
+# Add the remote repository as a subtree
+
+git subtree add --prefix=pages/_about/contributors/bamr87 bamr87 main
+
+```
+    
 </details>
 
 > [!NOTE]
