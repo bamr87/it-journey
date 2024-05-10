@@ -2,6 +2,8 @@
 title: Profile
 author: Amr
 class: Wizard
+permalink: /contributors/bamr87/
+lastmod: 2024-05-10T04:27:31.804Z
 ---
 
 
