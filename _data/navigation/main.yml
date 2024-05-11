@@ -5,12 +5,6 @@
       url: /quickstart
     - title: Master Setup
       url: /quickstart/machine-setup
-    - title: IDE
-      url: /quickstart/ide
-    - title: Web Server
-      url: /quickstart/web-server
-    - title: Web App
-      url: /quickstart/web-app
 - title: Journey
   url: /posts
   sublinks:
@@ -27,15 +21,11 @@
       url: /docs
     - title: Jekyll
       url: /docs/jekyll
-    - title: Command Line
-      url: /docs/command-line
 - title: Notes
   url: /notes
   sublinks:
     - title: home
       url: /notes
-    - title: keyboard shortcuts
-      url: /keyboard-shortcuts/
 - title: About
   url: /about/
   sublinks:
