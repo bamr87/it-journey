@@ -3,7 +3,7 @@ title: Notes Index
 description: Notes Index
 layout: collection
 permalink: /notes/
-lastmod: 2024-02-19T16:46:41.137Z
+lastmod: 2024-05-11T22:53:32.500Z
 ---
 
 # Quick Start
@@ -277,3 +277,8 @@ These instructions are pertinent to Mac users.
 
 
 These instructions are pertinent to Windows users.
+
+
+## Github Custom Domain
+
+[docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)

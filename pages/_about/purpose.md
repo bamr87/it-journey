@@ -1,6 +1,6 @@
 ---
 title: Purpose
-lastmod: '2021-12-29T16:53:56.879Z'
+lastmod: 2024-05-11T22:54:10.783Z
 ---
 
 ## Statement of Purpose
@@ -29,3 +29,34 @@ Path of least resistance (PoLR)
 Open Source As Possible (OSAP)
 
 Keeping it stupid simple (KISS)
+
+## Projects
+
+Bootstrap Docs with co-pilot
+
+Open Edgar Fundamentals with Python
+
+Parady News with LLM
+
+# Mission
+Equalize the imbalance between the have and havenots by educating and empowering the public with tools that are designed with grassroot potential. This can only be achieved with open sourced
+
+All/any financial procedes are to be deposited to into the not for profit collective, and only critical maintenance costs. The master production environment should be designed to operate in perpetuity, and decentralized. 
+
+
+minimum 
+
+Hooded Robin
+
+SEC Financial Data Analyzer
+
+**https://www.sec.gov/os/accessing-edgar-data**
+**[EDGAR Data API](https://www.sec.gov/os/accessing-edgar-data)**
+
+Data Source
+
+zer0 her0
+
+Jekyll CMS
+
+The day of combination is here to stay, individualism is gone and never to return - John D Rockefeller.

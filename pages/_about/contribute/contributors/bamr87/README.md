@@ -1,9 +1,9 @@
 ---
-title: Profile
+title: Bamr87
 author: Amr
 class: Wizard
 permalink: /contributors/bamr87/
-lastmod: 2024-05-10T04:32:45.704Z
+lastmod: 2024-05-11T21:22:03.958Z
 ---
 
 - 👋 Hi, I’m @bamr87
@@ -14,9 +14,9 @@ lastmod: 2024-05-10T04:32:45.704Z
 
 Here's some of my progress:
 
-[![roadmap.sh](https://api.roadmap.sh/v1-badge/tall/6553d32668ca6026132e78a8?variant=dark)](https://roadmap.sh)
+[![roadmap.sh](https://api.roadmap.sh/v1-badge/tall/6553d32668ca6026132e78a8?variant=dark)](https://roadmap.sh/u/bamr87)
 
-[![roadmap.sh](https://api.roadmap.sh/v1-badge/wide/6553d32668ca6026132e78a8?variant=dark)](https://roadmap.sh)
+[![roadmap.sh](https://api.roadmap.sh/v1-badge/wide/6553d32668ca6026132e78a8?variant=dark)](https://roadmap.sh/u/bamr87)
 
 <!---
 bamr87/bamr87 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.

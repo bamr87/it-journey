@@ -1,19 +1,18 @@
 ---
 title: About
 layout: collection
-execerpt:
-  "{ site.description }": null
-collection: post
+execerpt: Summary info about the site
+collection: about
 permalink: /about/
-lastmod: 2024-05-02T04:37:42.957Z
-slug: null
+lastmod: 2024-05-11T21:50:40.396Z
+slug: about
 ---
 
 # About this site
 
-{{site.description}}
+The site description is: {{site.description}}
 
-{{ site.domain }}
+The site domain is: {{ site.domain }}
 
 For those of you who have stumbled upon this partially completed website, as you can see, there's not much useful information here. I'm attempting to build this site while covering fundamental concepts and tools used to build "Information Systems". Obviously, if you're familiar with the subject, it's a huge undertaking, and there's no right way to approach it and there are many technologies to choose from.
 
