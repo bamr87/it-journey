@@ -1,3 +1,11 @@
-[submodule "pages/_docs/jekyll-docs"]
-	path = pages/_docs/jekyll-docs
+# Submodules of the repository
+# This file is used by the `git submodule` command and should not be edited manually
+# For more information, see https://git-scm.com/book/en/v2/Git-Tools-Submodules
+# To load the submodules, run `git submodule update --init --recursive`
+#  to add a new submodule, run `git submodule add <url> <path>`
+# for example, to add the jekyll submodule, run `git submodule add ht
+
+
+[submodule "submodules/jekyll"]
+	path = submodules/jekyll
 	url = https://github.com/jekyll/jekyll.git
