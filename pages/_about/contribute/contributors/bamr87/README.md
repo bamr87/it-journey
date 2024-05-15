@@ -2,8 +2,9 @@
 title: Bamr87
 author: Amr
 class: Wizard
+username: bamr87
 permalink: /contributors/bamr87/
-lastmod: 2024-05-11T21:22:03.958Z
+lastmod: 2024-05-14T15:14:42.965Z
 ---
 
 - 👋 Hi, I’m @bamr87
@@ -25,6 +26,8 @@ You can click the Preview link to take a look at your changes.
 
 <summary>Add this repo as a sub-tree</summary>
 <details>
+   
+</details>
 
 ```shell
 
@@ -32,15 +35,13 @@ cd ~/github/it-journey
 
 # Add the GitHub profile repository as a remote repository
 
-git remote add bamr87 https://github.com/bamr87/bamr87.git
+git remote add {{ page.username }} https://github.com/{{ page.username }}/{{ page.username }}.git
 
 # Add the remote repository as a subtree
 
-git subtree add --prefix=pages/_about/contributors/bamr87 bamr87 main
+git subtree add --prefix=pages/_about/contributors/{{ page.username }} {{ page.username }} main
 
 ```
-    
-</details>
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -55,7 +56,8 @@ git subtree add --prefix=pages/_about/contributors/bamr87 bamr87 main
 > Urgent info that needs immediate user attention to avoid problems.
 
 > [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
+> Advises about risks or negative outcomes of certain actions
+Note: > This is a note
 
 Favorite Dish
 

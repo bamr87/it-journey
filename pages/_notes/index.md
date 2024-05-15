@@ -3,12 +3,14 @@ title: Notes Index
 description: Notes Index
 layout: collection
 permalink: /notes/
-lastmod: 2024-05-11T22:53:32.500Z
+lastmod: 2024-05-13T20:29:25.406Z
 ---
 
 # Quick Start
  test 
- 
+
+{{ page.sidebar.nav }}
+
 ## Getting Started
 
 [Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)

@@ -1,17 +1,17 @@
 ---
 title: Jekyll and Travis
-author: null
+author: 
 excerpt: Deploying Jekyll using Travis CI and Github
-description: null
-snippet: null
+description: 
+snippet: 
 categories:
   - posts
   - guides
 tags:
-  - article
   - jekyll
-  - travis ci
-lastmod: '2022-01-13T17:30:34.958Z'
+  - travis
+  - ci
+lastmod: 2022-01-13T17:30:34.958Z
 draft: false
 slug: jekyll-and-travis
 ---

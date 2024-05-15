@@ -18,30 +18,17 @@
 
   <!-- Dynamic listing of notes in side bar -->
   {% if page.collection == "notes" %}
-    {% assign collection = site.collections | where: "label", page.collection | first %}
-  <div class="d-flex">
-    <div class="border-end bg-white" id="sidebar-wrapper">
-      <div class="list-group list-group-flush">
-          <div class="list-group list-group-flush">
-            {% for doc in collection.docs %}
-              {% assign folder = doc.path | split: '/' | first %}
-              {% unless folders contains folder %}
-                <!-- Output the folder name if you want -->
-                {% assign folders = folders | push: folder %}
-              {% endunless %}
-              <a href="{{ doc.url }}" class="list-group-item list-group-item-action ">{{ doc.title }}</a>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
+  <div class="list-group" id="sidebar-content">
+    {% assign folders = site.notes | where_exp: "item", "item.path contains 'index.md'" | sort: 'path' %}
+    {% include sidebar-folders.html folders=folders %}
+  </div>
+  {% endif %}
 
     <!-- Include nav_list.html -->
+    {% if page.sidebar.nav %}
     <nav class="w-100">
-      {% if page.sidebar.nav %}
         {% include nav_list.html nav=page.sidebar.nav %}
-      {% endif %}
     </nav>
+    {% endif %}
   </div>
 </div>

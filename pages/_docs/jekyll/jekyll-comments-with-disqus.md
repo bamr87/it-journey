@@ -1,24 +1,28 @@
 ---
-key: tutorial
 title: Jekyll - Comments with Disqus
-index: 8116
-subcategory: jekyll
-date: 2017-08-17
+date: 2022-06-11T18:16:53.918Z
+lastmod: 2024-05-15T00:59:55.982Z
 tags:
   - Disqus
-lastmod: 2022-06-11T18:16:53.918Z
+  - jekyll
+  - comments
+type: default
+slug: jekyll-comments-disqus
 ---
 
 > Use Disqus to enable reader to comment on Jekyll site.
 
-## 1. Disqus
+## Disqus
 [Disqus](https://disqus.com/) is a worldwide blog comment hosting service for web sites and online communities that use a networked platform.
 
-## 2. Installing Disqus
-### 2.1 Registration
+## Installing Disqus
+
+### Registration
+
 Go to https://disqus.com/ to create a Disqus account. Login and go to settings->profile, set your name. This name will be used as short name for your site.
 ![image](/assets/images/jekyll/8111/account.png)
-### 2.2 Universal Code
+
+### Universal Code
 Access the following link to find the universal code of your Disqus. Replace the shortname with yours.
 ```raw
 https://[shortname].disqus.com/admin/universalcode
@@ -126,11 +130,15 @@ In the list page, it is added to all the links through 'tutorial.url'.
     </ul>
 </div>
 ```
+
 {% endraw %}
-### 3.3 Demo
+
+### Demo
+
 See the comments count is correctly displayed. Click on the link, it will navigate you to the comments on that page directly.
 ![image](/assets/images/jekyll/8111/count.png)
 
-## 4. References:
+## References:
+
 * [DISQUS universal code](https://disqus.com/admin/install/platforms/universalcode/)
 * [HOW TO ADD DISQUS TO YOUR JEKYLL SITE?](https://poanchen.github.io/blog/2017/07/27/how-to-add-disqus-to-your-jekyll-sitel)

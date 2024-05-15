@@ -1,13 +1,13 @@
 ---
-key: tutorial
 title: Jekyll - Liquid
+key: tutorial
 index: 8111
 subcategory: jekyll
 date: 2016-01-19
 tags:
   - Jekyll
   - Liquid
-lastmod: 2024-04-29T21:00:14.358Z
+lastmod: 2024-05-15T03:06:30.555Z
 sources:
   - https://shopify.github.io/liquid/
   - https://help.shopify.com/themes/liquid/objects/for-loops

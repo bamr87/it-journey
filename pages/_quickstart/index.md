@@ -5,11 +5,12 @@ layout: collection
 description: null
 permalink: /quickstart/
 sidebar:
-  nav: quickstart
-lastmod: 2022-06-04T17:33:43.747Z
+   nav: quickstart
+lastmod: 2024-05-15T02:29:34.623Z
 ---
 
-Here's an index of all the posts in the quick-start collection.
+
+Here's an index of all the quickstart documents in the collection.
 
 1. Master Setup
    1. [Machine](machine-setup.md)
@@ -28,5 +29,3 @@ Here's an index of all the posts in the quick-start collection.
    1. Google
    2. Azure
    3. AWS
-
-

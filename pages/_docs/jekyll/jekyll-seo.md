@@ -8,13 +8,13 @@ tags:
   - SEO
   - CDN
   - DNS
-lastmod: 2023-12-04T22:41:17.301Z
+lastmod: 2024-05-15T03:22:06.737Z
 slug: jekyll-seo
 description: This is a tutorial about how to optimize the website to improve the rankings.
 draft: true
 categories:
   - jekyll
-preview: /images/jekyll-seo-preview.png
+preview: /assets/images/jekyll-seo-preview.png
 sub-title: SEO Optimization using Jekyll
 author: Amr
 excerpt: Search engine optimization (`SEO`) is the process of increasing the quality and quantity of website traffic by increasing the visibility of a website or a web page to users of a web search engine.

@@ -133,6 +133,16 @@
           "title": "slug",
           "name": "slug",
           "type": "datetime"
+        },
+        {
+          "title": "sort_by",
+          "name": "sort_by",
+          "type": "string"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string"
         }
       ]
     }

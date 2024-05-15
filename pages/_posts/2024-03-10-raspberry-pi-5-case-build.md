@@ -1,5 +1,5 @@
 ---
-title: "{{name}}"
+title: Raspberry Pi
 author: null
 excerpt: null
 description: null
@@ -7,10 +7,10 @@ snippet: null
 categories:
     - notes
 tags:
-    - notes
+    - raspberrypi
 meta: null
 draft: true
-lastmod: 2024-03-13T01:15:01.362Z
+lastmod: 2024-05-13T17:40:58.806Z
 ---
 
 

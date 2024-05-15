@@ -319,3 +319,13 @@ $enable-grid-classes: false;
 // }
 
 //   .legend			{padding:1.5em 0.5em; border-bottom:1px #eee solid;}
+
+.nested-list-group {
+    display: none;
+  }
+  .nested-list-group.show {
+    display: block;
+  }
+  .folder {
+    cursor: pointer;
+  }

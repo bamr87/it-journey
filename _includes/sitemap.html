@@ -1,0 +1,23 @@
+<h2>Sitemap of current collection</h2>
+
+<ul>
+{% for item in page.collections %}
+    <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+
+<h1>Sitemap</h1>
+
+{% for collection in site.collections %}
+<h2>{{ collection.label }}</h2>
+<ul>
+{% for item in collection.docs %}
+    <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endfor %}

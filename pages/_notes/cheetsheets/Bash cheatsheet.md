@@ -3,10 +3,12 @@ title: Bash cheatsheet
 updated: 2022-08-07 20:49:00Z
 created: 2023-12-15 04:10:54Z
 tags:
-  - bash
-  - linux
-  - script
-  - shell
+    - bash
+    - linux
+    - script
+    - shell
+TODO: create a cheatsheet layout based on devhints.io
+lastmod: 2024-05-14T15:14:49.051Z
 ---
 
 Getting started
@@ -958,10 +960,10 @@ See: [Unofficial bash strict mode](http://redsymbol.net/articles/unofficial-bash
 
 ## Also see {.cols-1}
 
-* [Devhints](https://devhints.io/bash) _(devhints.io)_
-* [Bash-hackers wiki](http://wiki.bash-hackers.org/) _(bash-hackers.org)_
 * [Shell vars](http://wiki.bash-hackers.org/syntax/shellvars) _(bash-hackers.org)_
 * [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) _(learnxinyminutes.com)_
+* [Devhints](https://devhints.io/bash) _(devhints.io)_
+* [Bash-hackers wiki](http://wiki.bash-hackers.org/) _(bash-hackers.org)_
 * [Bash Guide](http://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
 * [ShellCheck](https://www.shellcheck.net/) _(shellcheck.net)_
 * [shell - Standard Shell](https://devmanual.gentoo.org/tools-reference/bash/index.html) _(devmanual.gentoo.org)_

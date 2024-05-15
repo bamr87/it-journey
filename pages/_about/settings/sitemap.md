@@ -1,9 +1,11 @@
 ---
 title: sitemaps
-lastmod: 2024-05-11T22:59:05.897Z
+lastmod: 2024-05-15T02:15:03.067Z
 tree-dir: _about
 tree-file: tree.txt
 ---
+
+{{page.collection}}
 
 Autogenerate Site Map
 
@@ -25,3 +27,27 @@ Get-Content {{ page.tree-dir  }}/tree-utf16.txt -Encoding Unicode | Set-Content 
 {% include_relative {{ page.tree-file }} %}
 ```
 
+```shell
+#!/bin/bash
+
+# Navigate to the repository
+cd ~/github/{{ site.local_repo }}
+
+# Clean the Jekyll site
+jekyll clean
+
+# Remove the old tree file
+rm {{ page.tree-dir  }}/{{ page.tree-file }}
+
+# Generate the new tree file
+tree > {{ page.tree-dir  }}/tree-utf16.txt
+
+# Convert the encoding of the tree file
+Get-Content {{ page.tree-dir  }}/tree-utf16.txt -Encoding Unicode | Set-Content -Encoding UTF8 {{ page.tree-dir }}/{{ page.tree-file }}
+
+# Build the Jekyll site
+jekyll build
+
+```
+
+{% include sitemap.html %}

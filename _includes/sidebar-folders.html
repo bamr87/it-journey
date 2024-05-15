@@ -1,0 +1,107 @@
+<!-- 
+  file: sidebar-folders.html
+  title: Folder Structured Sidebar
+ -->
+
+ {% assign root_folder = site.collections | where: "label", page.collection | first %}
+ <h2>{{ root_folder.label }}</h2>
+ {% assign docs = root_folder.docs | sort: 'path' %}
+ {% assign prev_path = "" %}
+ <ul class="list-group list-group-flush">
+ {% for doc in docs %}
+   {% assign current_path = doc.path | split: '/' | pop %}
+   {% if current_path != prev_path %}
+     {% for folder in current_path %}
+       {% if forloop.index != 1 %}
+         <li class="folder ">{{ folder }}</li>
+       {% endif %}
+     {% endfor %}
+     {% assign prev_path = current_path %}
+   {% endif %}
+   <li class="file list-group-item list-group-item-action"><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+ {% endfor %}
+ </ul>
+
+ <!-- {% assign collection = site.collections | where: "label", page.collection | first %}
+
+ <div class="d-flex">
+    <ul class="list-group list-group-flush ">
+      {% assign folders = "" | split: '/' %}
+      {% for doc in collection.docs %}
+        {% assign doc_folders = doc.path | split: '/' %}
+        {% for doc_folder in doc_folders %}
+          {% unless folders contains doc_folder %}
+            {% assign folders = folders | push: doc_folder %}
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#{{ doc_folder }}-collapse" aria-expanded="true">
+              {{ doc_folder }}
+            </button>
+            <div class="collapse show" id="{{ doc_folder }}-collapse" style="">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                {% for doc in collection.docs %}
+                  {% if doc.path contains doc_folder %}
+                    <li><a href="{{ doc.url }}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">{{ doc.title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+</div> -->
+
+ 
+<!-- <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Home
+        </button>
+        <div class="collapse show" id="home-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Dashboard
+        </button>
+        <div class="collapse" id="dashboard-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Orders
+        </button>
+        <div class="collapse" id="orders-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Account
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul> -->

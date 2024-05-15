@@ -1,15 +1,7 @@
 ---
-layout: default
+layout: home
 ---
 
-<!-- collection.html  -->
-<div class="dev-settings collapsed collapse">
-  <button type="button" class="btn btn-primary">
-    <a href="#index-section">
-      go-to-index
-    </a>
-  </button>
-</div>
 {{ content }}
 
 {% assign entries = site[page.collection] %}
@@ -19,13 +11,16 @@ layout: default
 {% endif %}
 
 <!-- Loop through collection and summarize  -->
-<div class="row">
-  <h2 id="index-section">
-    Index
-  </h2>
+<h2 id="index-collection">
+  Index - {{ page.collection }}
+</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  
   {%- for post in entries -%}
-  <div class="col-sm-6 mb-3 mb-sm-0">
-    <div class="card" style="width: 18rem;">
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{ site.public_folder }}/{{ post.preview | default: site.teaser }}" class="card-img-top" alt="page preview image">
       <div class="card-body">
         <h5 class="card-title " itemprop="headline">
           <a class="card-link" href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
@@ -33,6 +28,9 @@ layout: default
         <p class="card-text" itemprop="description">
           {{ post.excerpt | strip_html | truncate: 160 }}
         </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary post-meta">Last updated {{ post.lastmod | date: '%B %d, %Y' }}</small>
       </div>
     </div>  
   </div>

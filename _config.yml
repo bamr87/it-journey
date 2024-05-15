@@ -38,7 +38,8 @@ subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey.dev"
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
-url                      : ['https://', *domain] # the base hostname & protocol for your site, e.g. http://example.com
+url                      : &url ['https://', *domain] # the base hostname & protocol for your site, e.g. http://example.com
+public_folder            : &public "/assets/"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
 
@@ -83,13 +84,13 @@ jekyll_admin:
 
 locale                   : "en-US"
 home_dir_pc              : &home-win 'C:\Users\amrab\'
-home_dir_mac             : &home-mac '/Users/amr/'
+home_dir_mac             : &home-mac '/Users/bamr87/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
-logo                     : /assets/images/gravatar-small.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : &logo_link "https://www.it-journey.dev"
 
-teaser                   : /assets/images/teaser_default-500x300.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -98,7 +99,7 @@ _posts_file_structure    : "year-month-day-title.md"
 
 author:
   name                   : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar                 : "/assets/images/gravatar-small.png"
+  avatar                 : "/images/gravatar-small.png"
   email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
   gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
   bio                    : "IT nerd trying to be an IT hero"
@@ -224,19 +225,19 @@ collections:
     permalink: /:collection/:categories/:name/
   quests:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:categories/:name/
   hobbies:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:categories/:name/
   notes:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:path/:name/
   quickstart:
     output: true
-    permalink: /:collection/:categories/
+    permalink: /:collection/:categories/:name/
   about:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:categories/:name/
 
 permalink: pretty
 
@@ -258,8 +259,8 @@ defaults:
       share: true
       related: true
       toc: true
-      sidebar:
-        nav: main
+      # sidebar:
+      #   nav: main
     permalink: /:collection/:name/
 
   # pages
@@ -276,8 +277,8 @@ defaults:
       related: true
       toc: true
       toc_sticky: true
-      sidebar:
-        nav: main
+      # sidebar:
+      #   nav: main
     permalink: /:path/:name/
 
   # pages/_about
@@ -298,6 +299,7 @@ defaults:
     scope:
       path: pages/_quickstart
     values:
+      layout: default
       collection: quickstart
       share: true
       related: true
@@ -380,8 +382,8 @@ defaults:
       share: false
       toc: true
       author_profile: false
-      sidebar:
-        nav: notes
+      # sidebar:
+      #   nav: notes
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -394,6 +396,7 @@ defaults:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
+  - .obsidian
   - Gemfile.lock
   - gemfiles/
   - Gemfile
@@ -462,3 +465,11 @@ theme_color:
 cr_year: 2024
 cr_entity: "Amr"
 cr_lisense: "MIT"
+
+## Sitemap Settings --------------------------------------------------------------
+
+# sitemap_include: A list of file extensions that should be included in the sitemap. By default, HTML files and any files with sitemap: true in their front matter are included.
+# sitemap_exclude: A list of files or directories that should be excluded from the sitemap.
+
+sitemap_include: ["html", "xml"]
+sitemap_exclude: ["secret.html", "private"]
