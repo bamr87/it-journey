@@ -11,7 +11,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 
 # dependancies https://pages.github.com/versions/
-gem "github-pages"
+gem 'github-pages' , '231'
 gem 'jekyll' , '3.9.5'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
@@ -23,10 +23,10 @@ gem 'jekyll' , '3.9.5'
 
 # If you have any jekyll plugins, put them here!
 group :jekyll_plugins do
-  gem 'jekyll-algolia' 
-  gem 'jekyll-assets', "~> 1.0.0"
+  # gem 'jekyll-algolia' 
+  # gem 'jekyll-assets', "~> 1.0.0"
   # gem 'jekyll-mermaid'
-  gem 'jekyll-admin'
+  # gem 'jekyll-admin'
   # gem 'jekyll-spaceship'
 
 # these are all part of the github-pages gem
@@ -50,8 +50,8 @@ end
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
+  # gem "tzinfo", "~> 1.2"
+  # gem "tzinfo-data"
   # gem "webrick"
   # gem 'eventmachine', github: 'eventmachine/eventmachine'
   # gem "eventmachine" --platform ruby
@@ -64,7 +64,7 @@ end
 # end
 
 # Performance-booster for watching directories on Windows
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+# gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Mac OS compatibility fix
@@ -78,5 +78,5 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # gem "kramdown-parser-gfm", "~> 1.1.0"
 # gem "rouge", "~> 3.36.0"
 
-gem "algoliasearch"
+# gem "algoliasearch"
 # gem "html-proofer"

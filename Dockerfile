@@ -24,10 +24,10 @@ ADD . /app
 # Install specific versions of Jekyll and Bundler that are compatible with Ruby 2.7
 # RUN gem install jekyll -v 3.9.0 && gem install bundler -v 1.17.3
 
-RUN gem install nokogiri -v 1.15.5
-RUN gem install faraday-net_http -v 3.0.2
-RUN gem install faraday -v 2.8.1
-RUN gem install github-pages
+# RUN gem install nokogiri -v 1.15.5
+# RUN gem install github-pages -v 231
+# RUN gem install faraday-net_http -v 3.0.2
+# RUN gem install faraday -v 2.8.1
 # RUN gem install bootstrap -v 5.3.3
 
 # RUN apk --update add --virtual build_deps \

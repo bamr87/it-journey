@@ -168,13 +168,13 @@ powered_by:
 
 plugins:
   - github-pages
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-assets
-  - jekyll-algolia
+  # - jekyll-feed
+  # - jekyll-sitemap
+  # - jekyll-assets
+  # - jekyll-algolia
   # - jekyll-mermaid  # https://mermaidjs.github.io/
-  - jekyll-admin # https://github.com/jekyll/jekyll-admin
-  - jekyll-redirect-from
+  # - jekyll-admin # https://github.com/jekyll/jekyll-admin
+  # - jekyll-redirect-from
   # - bootstrap
   # - jekyll-spaceship
   # - jemoji # Doesn't work for some reason
