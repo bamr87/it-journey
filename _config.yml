@@ -37,18 +37,22 @@ subtitle_url             : "localhost"
 subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey.dev"
-baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
-url                      : &url ['https://', *domain] # the base hostname & protocol for your site, e.g. http://example.com
-public_folder            : &public "/assets/"
+baseurl                  : null # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
+url                      : 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
+public_folder            : "/assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
+og_image                 : '/assets/images/wizard-on-journey.png'
+
+### Github Information
+github_user              : &github_user "bamr87"
+github_site              : 'bamr87.github.io'
 
 ### Owner Information -------------------------------------------------------------
 
 name                     : &name "Amr"
-email                    : &email "amr.abdel@gmail.com"
-github_user              : &github_user "bamr87"
-description              : &description >- # this means to ignore newlines until the next variable
+email                    : "amr@it-journey.dev"
+description              : >- # this means to ignore newlines until the next variable
   Scrolls and spells of IT magic.
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -87,10 +91,10 @@ home_dir_pc              : &home-win 'C:\Users\amrab\'
 home_dir_mac             : &home-mac '/Users/bamr87/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
-logo                     : /images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : 'https://www.it-journey.dev'
 
-teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -99,7 +103,7 @@ _posts_file_structure    : "year-month-day-title.md"
 
 author:
   name                   : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar                 : "/images/gravatar-small.png"
+  avatar                 : "/assets/images/gravatar-small.png"
   email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
   gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
   bio                    : "IT nerd trying to be an IT hero"
@@ -152,7 +156,7 @@ powered_by:
     url: "https://www.mathjax.org/"
     icon: "bi-calculator"
   - name: "GitHub Pages"
-    version: "228"
+    version: "231"
     url: "https://pages.github.com/"
     icon: "bi-github"
   - name: "docker"

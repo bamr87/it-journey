@@ -8,44 +8,23 @@
 
 <!--  -->
 
-{%- if site.url -%}
-  {%- assign seo_url = site.url | append: site.baseurl -%}
-{%- endif -%}
-{%- assign seo_url = seo_url | default: site.github.url -%}
+{%- assign seo_url = site.url | append: site.baseurl -%}
+{%- assign canonical_url = site.url %}
+{%- assign seo_title = page.title | default: site.title | append: " " | append: title_separator | append: " " | append: site.title -%}
+{% assign title_separator = site.title_separator | default: '-' %}
+{%- assign seo_description = page.description | default: site.description -%}
 
-{% assign title_separator = site.title_separator | default: '-' | replace: '|', '&#124;' %}
+{%- assign author = page.author | default: site.author -%}
 
-{%- if page.title -%}
-  {%- assign seo_title = page.title | append: " " | append: title_separator | append: " " | append: site.title -%}
-{%- endif -%}
+<!-- TODO: build author data set for SEO -->
 
-{%- if seo_title -%}
-  {%- assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once -%}
-{%- endif -%}
-
-{% if page.canonical_url %}
-  {%- assign canonical_url = page.canonical_url %}
-{% else %}
-  {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
-{% endif %}
-
-{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
-{%- if seo_description -%}
-  {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
-{%- endif -%}
-
-{%- assign author = page.author | default: page.authors[0] | default: site.author -%}
-{%- assign author = site.data.authors[author] | default: author -%}
-
-{%- if author.twitter -%}
-  {%- assign author_twitter = author.twitter | replace: "@", "" -%}
-{%- endif -%}
+{%- assign author_twitter = site.author.twitter_username %}
 
 {%- assign page_large_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | absolute_url -%}
 {%- assign page_large_image = page_large_image | escape -%}
 
-{%- assign page_teaser_image = page.header.teaser | default: site.og_image | absolute_url -%}
-{%- assign page_teaser_image = page_teaser_image | escape -%}
+{%- assign page_teaser_image = page.preview | default: site.og_image -%}
+{%- assign page_teaser_image = {{ site.public_folder }}/page_teaser_image | escape -%}
 
 {%- assign site_og_image = site.og_image | absolute_url -%}
 {%- assign site_og_image = site_og_image | escape -%}
@@ -59,11 +38,10 @@
 <title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 <meta name="description" content="{{ seo_description }}">
 
-{% if author.name %}
-  <meta name="author" content="{{ author.name | default: author }}">
-  {% if og_type == "article" %}
-  <meta property="article:author" content="{{ author.name | default: author }}">
-  {% endif %}
+<meta name="author" content="{{ author.name | default: author }}">
+{% if og_type == "article" %}
+<meta property="article:author" content="{{ author.name | default: author }}">
+
 {% endif %}
 
 <meta property="og:type" content="{{ og_type }}">
@@ -72,9 +50,8 @@
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
 
-{% if seo_description %}
-  <meta property="og:description" content="{{ seo_description }}">
-{% endif %}
+<meta property="og:description" content="{{ seo_description }}">
+
 
 {% if page_large_image %}
   <meta property="og:image" content="{{ page_large_image }}">
