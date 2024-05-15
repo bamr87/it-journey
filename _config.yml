@@ -172,7 +172,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-assets
   - jekyll-algolia
-  - jekyll-mermaid  # https://mermaidjs.github.io/
+  # - jekyll-mermaid  # https://mermaidjs.github.io/
   - jekyll-admin # https://github.com/jekyll/jekyll-admin
   - jekyll-redirect-from
   # - bootstrap

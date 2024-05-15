@@ -25,7 +25,7 @@ gem 'jekyll' , '3.9.5'
 group :jekyll_plugins do
   gem 'jekyll-algolia' 
   gem 'jekyll-assets', "~> 1.0.0"
-  gem 'jekyll-mermaid'
+  # gem 'jekyll-mermaid'
   gem 'jekyll-admin'
   # gem 'jekyll-spaceship'
 
