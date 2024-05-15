@@ -44,7 +44,6 @@ Aliases are shortcuts or abbreviations for commands you type in the terminal.
 To set up aliases,
 create a file ~/.aliases:
 
-# vim [https://vim.rtorr.com/]
 # vi ~/.aliases
 touch ~/.aliases
 
