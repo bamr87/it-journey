@@ -88,7 +88,7 @@ home_dir_mac             : &home-mac '/Users/bamr87/'
 local_git_pc             : [ *home-win, 'github' ]
 local_git_mac            : [ *home-mac, 'github' ]
 logo                     : /images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo_link                : &logo_link "https://www.it-journey.dev"
+logo_link                : 'https://www.it-journey.dev'
 
 teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
