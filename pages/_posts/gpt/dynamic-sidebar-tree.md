@@ -1,6 +1,7 @@
 ---
 title: Dynamic Sidebar Tree
-date: 2024-05-14T19:50:54.728Z
+lastmod: 2024-05-16T16:15:26.771Z
+date: 2024-05-16T16:15:25.503Z
 tags:
   - copilot
   - jekyll
@@ -8,7 +9,6 @@ tags:
   - sidebar
   - tree
   - folder
-lastmod: 2024-05-16T03:34:30.557Z
 description: Update code to display sub-folders and files in a sidebar tree structure.
 preview: null
 categories: []
@@ -18,9 +18,10 @@ author: null
 layout: null
 keywords: {}
 slug: dynamic-sidebar-tree
-type: default
+type: posts
 FIXME: need code blocks to be raw liquid maybe vscode plugin?
 raw_liquid: true
+draft: true
 ---
 {% raw %}
 bamr87: help me update this code to display a the sub-folder and files.

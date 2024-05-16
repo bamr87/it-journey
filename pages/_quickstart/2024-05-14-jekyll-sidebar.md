@@ -2,17 +2,19 @@
 title: jekyll sidebar
 date: 2024-05-14T20:39:28.955Z
 tags: []
-lastmod: 2024-05-16T01:45:59.223Z
+lastmod: 2024-05-16T16:11:20.297Z
 description: null
 preview: null
 categories:
-   - jekyll
+  - jekyll
 sub-title: null
 snippet: null
 author: null
 keywords: {}
 slug: jekyll-sidebar
-type: default
+type: posts
+published: false
+draft: true
 ---
 
 {% raw %}

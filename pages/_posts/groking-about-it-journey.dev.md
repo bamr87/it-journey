@@ -4,21 +4,23 @@ description: Groking About IT Journey. A personal blog with a focus on IT and so
 date: 2024-05-16T02:07:27.384Z
 preview: null
 tags:
-    - jekyll
-    - bootstrap
-    - it-journey
+  - jekyll
+  - bootstrap
+  - it-journey
 categories:
-    - jekyll
-    - bootstrap
-    - it-journey
+  - jekyll
+  - bootstrap
+  - it-journey
 sub-title: null
 snippet: null
 author: bamr87 and grok
 layout: null
 keywords: {}
-lastmod: 2024-05-16T02:36:32.857Z
+lastmod: 2024-05-16T16:11:20.289Z
 sort_by: null
-type: default
+type: posts
+draft: true
+slug: groking-journey
 ---
 
 ## Groking About IT Journey

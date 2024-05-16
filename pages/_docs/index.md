@@ -1,5 +1,5 @@
 ---
-title: Docs Index (~)
+title: Docs (~) Index
 author: Amr Abdel Eissa
 layout: collection
 permalink: /docs/
@@ -12,7 +12,7 @@ sidebar:
 toc: true
 toc_sticky: true
 date: 2021-09-24T19:32:44.876Z
-lastmod: 2023-12-03T01:21:22.098Z
+lastmod: 2024-05-16T20:02:25.942Z
 draft: true
 ---
 

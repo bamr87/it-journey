@@ -1,14 +1,18 @@
 ---
-title: Features
+title: Features (~) Index
 description: null
 date: 2024-03-12T21:42:28.963Z
 preview: null
 tags: []
 categories: []
 type: default
-permalink: /about/features/
 slug: features
-lastmod: 2024-05-16T01:45:59.226Z
+permalink: /about/features/
+lastmod: 2024-05-16T20:02:35.296Z
+draft: in progress
+inspiration:
+    - features are the foundation of the future
+TODO: generate a list of features based on folder contents
 ---
 
 ## Features

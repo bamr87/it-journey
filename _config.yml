@@ -37,7 +37,7 @@ subtitle_url             : "localhost"
 subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey.dev"
-baseurl                  : null # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
+baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 url                      : 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "/assets"
 port                     : 4002 # Jekyll Serve Dev port
@@ -233,7 +233,7 @@ collections:
     permalink: /:collection/:name/
   posts:
     output: true
-    permalink: /:collection/:year/:month/:day/:name/
+    permalink: /:collection/:year/:month/:day/:slug/
   docs:
     output: true
     permalink: /:collection/:categories/:name/
@@ -336,7 +336,7 @@ defaults:
       toc: true
       sidebar:
         nav: main
-      permalink: /:collection/:name/
+      # permalink: /:collection/:name/
 
   # pages/_docs
   - 
