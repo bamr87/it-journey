@@ -2,13 +2,17 @@
   file: header.html
   path: /_includes/header.html
   includes:  branding.html, navbar.html, info-bar.html, halfmoon.html
+  TODO: Fix Nanobar progress bar
  -->
 
 <header id="navbar" class="container-fluid  text-center z-1" role="navigation">
 
     <!-- Top Navigation Bar -->
     <div class="navbar navbar-expand-lg bg-body-tertiary flex-nowrap justify-content-center bottom-shadow">
-
+       
+        <div class="nanobar" id="top-progress-bar" style="position: fixed;">
+            <div class="bar"></div>
+        </div>
         <!-- Main Navbar -->
         <nav class=" container-xl order-2 order-lg-1 grid gap-1">
 

@@ -15,7 +15,7 @@ slug: jekyll-sidebar
 type: default
 ---
 
-{%raw%}
+{% raw %}
 
 # How to Display Files and Folders in a Sidebar in Jekyll
 
@@ -112,5 +112,4 @@ This guide will show you how to display files and folders in a sidebar in Jekyll
     ```
 
 This will display the files and folders in a sidebar, with each file being a hyperlink to its URL. The folders will not be repeated for each file, and the root folder will not be included in the path.
-
-{%endraw%}
+{% endraw %}

@@ -112,3 +112,9 @@
     /* background-position: 50% 50%; */
     background-repeat: no-repeat;
   }
+
+
+  .nanobar .bar {
+    margin-top: 56px;
+    background: #1cc927;
+  }

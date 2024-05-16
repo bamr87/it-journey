@@ -8,7 +8,7 @@ tags:
   - sidebar
   - tree
   - folder
-lastmod: 2024-05-16T02:26:38.556Z
+lastmod: 2024-05-16T03:34:30.557Z
 description: Update code to display sub-folders and files in a sidebar tree structure.
 preview: null
 categories: []
@@ -20,9 +20,9 @@ keywords: {}
 slug: dynamic-sidebar-tree
 type: default
 FIXME: need code blocks to be raw liquid maybe vscode plugin?
+raw_liquid: true
 ---
-{%raw%}
-
+{% raw %}
 bamr87: help me update this code to display a the sub-folder and files.
 
 GitHub Copilot: The existing code already displays sub-folders and files. However, it does not differentiate between them. To make it clear which are folders and which are files, you can add a class to the `<li>` elements. 
@@ -304,5 +304,4 @@ GitHub Copilot: Sure, you can add a hyperlink to each file by using the `doc.url
 ```
 
 In this code, I've added an `<a>` tag around `{{ doc.title }}` with the `href` attribute set to `{{ doc.url }}`. This creates a hyperlink for each file that points to the file's URL.
-
-{%endraw%}
+{% endraw %}

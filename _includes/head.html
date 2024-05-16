@@ -21,20 +21,26 @@
 <!-- third party scripts -->
 
     <!--  mermaid script -->
-        <script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
-        <script >mermaid.initialize({ startOnLoad: true });</script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+    <script >mermaid.initialize({ startOnLoad: true });</script> -->
 
     <!-- Nano Bar -->
     <script src="/assets/js/nanobar.min.js"></script>
 
-    <!-- JQuery -->
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<!-- add dummy progress bar -->
+<script>
+    var options = {
+      classname: 'nanobar',
+      id: 'top-progress-bar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go( 30 );
+    nanobar.go( 76 );
+    nanobar.go(100);
+  </script>
 
     <!-- MathJax for LaTex -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
-
 
 <!-- Meta -->
 <meta charset="utf-8">
@@ -43,10 +49,6 @@
 
 <!-- includes/seo.html -->
 {% include seo.html %}
-
-<script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
 
 <!-- SEO  https://analytics.google.com/ -->
 
@@ -61,7 +63,7 @@
         <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
     {% endif %}
     {% if page.last_modified_at %}
-        <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
+        <meta itemprop="dateModified" content="{{ page.lastmod | date_to_xmlschema }}">
     {% endif %}
 
     <!-- Google Analytics  -->

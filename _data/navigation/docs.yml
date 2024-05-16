@@ -18,8 +18,6 @@
   sublinks:
     - title: "Working with Posts"
       url: /docs/posts
-    - title: "Working with Pages"
-      url: /docs/pages
     - title: "Working with Collections"
       url: /docs/collections
     - title: "Helpers"

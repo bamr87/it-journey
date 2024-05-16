@@ -7,11 +7,22 @@ layout: home
 keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
 lastmod: 2024-05-15T03:54:48.681Z
+TODO:
+   - Fix the copy button on code snipets
+   - fix the top nav bar
+   - fix the sidebar
 ---
 
-TODO: Fix the copy button on code snipets
-TODO: TEst
-{:.dev-settings collapsed collapse}
+{{ page.TODO }}
+{:.dev-settings .alert .alert-warning}
+
+{{ page.description }}
+{:.para-one}
+
+{{ page.purpose }}
+{:.para-one}
+
+## Introduction
 
 This is where we begin our journey. The place where we return after getting lost or wandering off.
 Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
