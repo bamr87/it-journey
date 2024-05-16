@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /secret/
+Disallow: /private/
+Disallow: /tmp/
+Sitemap: https://it-journey.dev/sitemap.xml

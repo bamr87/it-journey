@@ -1,14 +1,14 @@
 ---
 title: robots dot txt
-sub-title: ""
-author: ""
-excerpt: ""
-description: ""
+sub-title: null
+author: null
+excerpt: null
+description: null
 snippet: 2023-12-04T21:15:31.625Z
 categories: []
 tags: []
 draft: 2023-12-04T21:15:31.625Z
-lastmod: 2023-12-04T22:40:40.615Z
+lastmod: 2024-05-16T02:49:07.594Z
 type: Article
 ---
 
@@ -20,7 +20,7 @@ User-agent: *
 Disallow: /secret/
 Disallow: /private/
 Disallow: /tmp/
-Sitemap: https://www.yoursite.com/sitemap.xml
+Sitemap: {{ site.url}}/sitemap.xml
 ```
 
 In this example:

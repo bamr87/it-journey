@@ -1,16 +1,16 @@
 ---
 title: placeholders
-description: ""
+description: null
 date: 2024-04-25T16:19:09.808Z
-preview: ""
+preview: null
 tags: []
 categories: []
 author: 2024-04-25T16:19:09.808Z
 layout: default
-sort_by: ""
-lastmod: 2024-04-25T16:19:09.808Z
+sort_by: null
+lastmod: 2024-05-16T01:45:59.216Z
 type: default
-source: "https://frontmatter.codes/docs/content-creation/placeholders"
+source: https://frontmatter.codes/docs/content-creation/placeholders
 ---
 
 https://frontmatter.codes/docs/content-creation/placeholders

@@ -1,14 +1,14 @@
 ---
 title: Features
-description: ""
+description: null
 date: 2024-03-12T21:42:28.963Z
-preview: ""
+preview: null
 tags: []
 categories: []
 type: default
 permalink: /about/features/
 slug: features
-lastmod: 2024-03-12T21:47:52.802Z
+lastmod: 2024-05-16T01:45:59.226Z
 ---
 
 ## Features

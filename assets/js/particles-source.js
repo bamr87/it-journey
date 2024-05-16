@@ -51,7 +51,7 @@ var pJS = function(e, a) {
                     nb_sides: 5
                 },
                 image: {
-                    src: "",
+                    src: null,
                     width: 100,
                     height: 100
                 }

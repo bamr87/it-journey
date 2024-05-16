@@ -36,7 +36,7 @@ subtitle_url             : "localhost"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : *github_base_url
 site_domain              : &site_domain "github.io"
-baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
+baseurl                  : null # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
 url                      : *github_base_url
 port                     : 4002 # Jekyll Serve Dev port
@@ -223,7 +223,7 @@ defaults:
   # ALL
   - 
     scope:
-      path: ""
+      path: null
     values:
       layout: root
       show_date: true

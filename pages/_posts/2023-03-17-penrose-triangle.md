@@ -1,14 +1,14 @@
 ---
 title: penrose triangle
-sub-title: ""
-author: ""
-excerpt: ""
-description: ""
+sub-title: null
+author: null
+excerpt: null
+description: null
 snippet: 2023-03-11T16:12:28.481Z
-categories: ""
-tags: ""
+categories: null
+tags: null
 draft: 2023-03-11T16:12:28.481Z
-lastmod: 2023-03-11T16:37:26.439Z
+lastmod: 2024-05-16T01:45:59.201Z
 type: Article
 ---
 

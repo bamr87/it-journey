@@ -8,14 +8,13 @@ tags:
   - sidebar
   - tree
   - folder
-lastmod: 2024-05-14T20:35:21.438Z
+lastmod: 2024-05-16T02:26:38.556Z
 description: Update code to display sub-folders and files in a sidebar tree structure.
-preview: ""
+preview: null
 categories: []
-sub-title: ""
-excerpt: ""
-snippet: ""
-author: ""
+sub-title: null
+snippet: null
+author: null
 layout: null
 keywords: {}
 slug: dynamic-sidebar-tree

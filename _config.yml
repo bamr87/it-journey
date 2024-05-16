@@ -111,6 +111,16 @@ author:
   twitter_username       : "bamr87"
   github_username        : *github_user
 
+
+## Site verification #############################################################
+
+google_site_verification : null
+bing_site_verification   : null
+alexa_site_verification  : null
+yandex_site_verification : null
+aver_site_verification   : null
+baidu_site_verification  : null
+
 ## Affiliations ##############################################################
 
 default_icon: "bi" ## Bootstrap Icons https://icons.getbootstrap.com/

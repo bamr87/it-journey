@@ -1,14 +1,14 @@
 ---
 title: LaTex your CV
-sub-title: ""
-author: ""
-excerpt: ""
-description: ""
+sub-title: null
+author: null
+excerpt: null
+description: null
 snippet: 2023-11-05T02:50:50.370Z
 categories: []
 tags: []
 draft: 2023-11-05T02:50:50.370Z
-lastmod: 2023-11-27T10:59:17.163Z
+lastmod: 2024-05-16T01:45:59.188Z
 type: Article
 ---
 

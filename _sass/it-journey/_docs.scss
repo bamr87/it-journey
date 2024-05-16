@@ -619,7 +619,7 @@
     inset: 0;
     z-index: -1;
     display: block;
-    content: "";
+    content: null;
     background-image: linear-gradient(rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95))
 }
 
@@ -1488,7 +1488,7 @@
 .bd-example::after {
     display: block;
     clear: both;
-    content: ""
+    content: null
 }
 
 @media (min-width: 768px) {

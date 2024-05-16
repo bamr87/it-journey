@@ -3,7 +3,7 @@ title: Notes Index
 description: Notes Index
 layout: collection
 permalink: /notes/
-lastmod: 2024-05-13T20:29:25.406Z
+lastmod: 2024-05-16T02:05:52.727Z
 ---
 
 # Quick Start
@@ -284,3 +284,8 @@ These instructions are pertinent to Windows users.
 ## Github Custom Domain
 
 [docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)
+
+## frontmatter content types
+
+https://frontmatter.codes/docs/content-creation/content-types#run-a-script-after-your-content-is-created
+

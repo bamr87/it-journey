@@ -1,18 +1,18 @@
 ---
 title: side-bar-folders
-author: ""
+author: null
 layout: null
-description: ""
+description: null
 slug: side-bar-folders
-lastmod: 2024-05-14T22:05:44.287Z
+lastmod: 2024-05-16T01:45:59.214Z
 date: 2024-05-14T15:47:06.342Z
-preview: ""
+preview: null
 tags: []
 categories:
-  - sidebar
-sub-title: ""
-excerpt: ""
-snippet: ""
+   - sidebar
+sub-title: null
+excerpt: null
+snippet: null
 keywords: {}
 type: default
 ---
