@@ -30,9 +30,9 @@ group :jekyll_plugins do
   # gem 'jekyll-spaceship'
 
 # these are all part of the github-pages gem
-  # gem 'jekyll-feed', "~> 0.12"
-  # gem 'jekyll-sitemap' , "~> 1.4.0"
-  # gem 'jekyll-seo-tag', "~> 2.8.0"
+  gem 'jekyll-feed', "~> 0.17"
+  gem 'jekyll-sitemap' , "~> 1.4.0"
+  gem 'jekyll-seo-tag', "~> 2.8.0"
   # gem 'jekyll-redirect-from'
   # gem 'jekyll-paginate'
   # gem 'jemoji' # Doesn't work for some reason
