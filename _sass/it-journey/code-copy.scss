@@ -1,13 +1,16 @@
 // https://remarkablemark.org/blog/2021/06/01/add-copy-code-to-clipboard-button-to-jeyll-site/
 
-.gist {
-    td {
-      border: inherit; // fix Skeleton override
-    }
-  }
-  
   //Codeblock 
-  
+
+.copy-code {
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
   
   pre.highlight {
     padding: 8px 12px;
@@ -88,25 +91,11 @@ pre>code {
   white-space: pre;
 }
 
-.btn-clipboard {
-  position: relative;
-  z-index: 2;
-  margin-top: .75rem;
-  margin-right: .75rem
-}
 
-.bd-clipboard,.bd-edit {
-  position: relative;
+pre.has-copy-button .copy {
   display: none;
-  float: right
 }
 
-.bd-clipboard+.highlight,.bd-edit+.highlight {
-  margin-top: 0
-}
-
-@media (min-width: 768px) {
-  .bd-clipboard,.bd-edit {
-      display:block
-  }
+pre.has-copy-button:hover .copy {
+  display: inline-block;
 }

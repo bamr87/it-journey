@@ -1,6 +1,5 @@
-// Copy code to clipboard
-
-document
+document.addEventListener('DOMContentLoaded', function () {
+  document
     .querySelectorAll('pre.highlight')
     .forEach(function (pre) {
       var button = document.createElement('button');
@@ -18,4 +17,6 @@ document
         }, 4000);
       });
       pre.appendChild(button);
+      pre.classList.add('has-copy-button'); // Add a class to the pre element
     });
+});
