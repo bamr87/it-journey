@@ -3,11 +3,18 @@ title: zer0
 description: zer0
 excerpt: zer0
 version: 0.0.0
-tags: []
-categories: []
+tags:
+  - Jekyll
+categories:
+  - bootstrap
+  - quickstart
 modified: 2024-02-10T23:51:11.480Z
 created: 2024-02-10T23:51:11.480Z
 lastmod: 2024-02-19T20:29:42.099Z
+draft: in progress
+date: 2024-05-17T01:53:10.461Z
+layout: home
+permalink: /zer0/
 ---
 >_
 # Zer0

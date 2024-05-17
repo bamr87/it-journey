@@ -2,6 +2,8 @@
 title: Shell and the CLI
 updated: 2022-01-05 07:55:00Z
 created: 2023-12-15 04:10:54Z
+lastmod: 2024-05-17T01:52:39.490Z
+draft: draft
 ---
 
 # Command Line
@@ -33,9 +35,19 @@ write-host "hello world"
 
 To create a clone of your fork, use the --clone flag.
 
-```cmd
-$gh_repo = "bamr87/it-journey"
-gh repo fork $gh_repo --clone=true
+```shell
+# set the destination folder
+gh_repo_dest="searchdocs"
+
+# set the repo to fork
+gh_repo="algolia/docsearch"
+
+# change to the home directory
+
+cd ~
+mkdir github
+cd github
+gh repo fork $gh_repo --clone=true --fork-name $gh_repo_dest
 ```
 
 wmic 

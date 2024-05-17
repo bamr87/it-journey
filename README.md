@@ -1,15 +1,23 @@
 ---
-title: it-journey
+title: README - it-journey
 description: it-journey
 excerpt: it-journey
 version: 0.0.0
 date-released: 2022-03-01
-url: https://github.com/bamr87/it-journey
+repo: https://github.com/bamr87/it-journey
 tags:
     - it-journey
+    - readme
+    - jekyll
 license: MIT
-lastmod: 2024-05-02T16:11:54.831Z
+lastmod: 2024-05-17T01:42:30.675Z
 created: 2022-03-01T12:00:00.000Z
+draft: in progress
+slug: readme
+keywords:
+    - readme
+permalink: /readme/
+layout: home
 ---
 
 
@@ -17,6 +25,8 @@ Branch | Build Status
 ---------|---------
 Master | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=master)](https://app.travis-ci.com/bamr87/it-journey)
 gh-pages | [![Build Status](https://app.travis-ci.com/bamr87/it-journey.svg?branch=gh-pages)](https://app.travis-ci.com/bamr87/it-journey)
+
+[![pages-build-deployment](https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment)
 
 ## README
 
