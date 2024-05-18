@@ -14,44 +14,7 @@ categories:
   - hello world
 lastmod: 2024-05-08T04:53:36.889Z
 slug: /
-TODO: 
-  - add 3rd level nav bar drop down option
-  - automate pull request to publish to gh-pages
-  - Add create new post button
-  - add floating "back to top" button
-  - create custom svg icon
-  - quick view of post contents/reading time
-  - Adjust menu toggle in Mobile view
-  - leader board for level progression
-  - Add keyboard shortcuts (e.g. ctl + / to toggle search)
-  - Build Site map page [example](http://www.publicdomainsherpa.com/site-map.html)
-  - Publish training article on [Programming Historian](https://programminghistorian.org/) 
-  - Add search functionality
-  - Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
-  - Add GUI instructions for the n00bs
-  - Add language title to code blocks
-  - Integrate Jupyter Notebooks into the site
-  - add embedded todo button for viewing
-  - update SEO, document setup https://jsinibardy.com/optimize-seo-jekyll
-  - add next/back button to turn pages
-  - enhance right side bar design - [example](https://bootstrap-themes.github.io/dashboard/docs/#whats-included)
-  - Cross reference features to documentation
-  - alternate TOC structures (easy/med/hard) (pc/mac/linux) (by role)
-  - add a tool kit page with all software tools used
-  - Contribution Instructions
-  - add [plugins](https://jekyllcodex.org/without-plugins/) without plugins
-  - Auto integrate/embed source code files into documentation
-  - UI testing automation - [Selenium](https://www.selenium.dev/)
-  - page revision view (diff)
-  - integrate kanban board
-  - build account based system
-  - simulate generic business operations
-  - build backend todo interface checking
-  - Build note to article function/workflow
 ---
-
-{{ page.TODO }}
-{: .collapse .collapsed .dev-settings }
 
 # Welcome to IT-Journey.dev: Your Full Stack Development Quest Begins Here!
 

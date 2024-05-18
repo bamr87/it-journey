@@ -2,6 +2,12 @@
     "recommendations": [
         "gruntfuggly.todo-tree",
         "james-yu.latex-workshop",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "eliostruyf.vscode-front-matter",
+        "ms-azuretools.vscode-docker",
+        "DavidAnson.vscode-markdownlint",
+        "TakumiI.markdowntable",
+        "ms-python.python",
+        "ms-toolsai.jupyter"
     ]
 }

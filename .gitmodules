@@ -9,3 +9,6 @@
 [submodule "submodules/jekyll"]
 	path = submodules/jekyll
 	url = https://github.com/jekyll/jekyll.git
+[submodule "submodules/homebrew"]
+	path = submodules/homebrew
+	url = https://github.com/bamr87/homebrew.git

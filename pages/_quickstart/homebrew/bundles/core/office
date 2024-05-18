@@ -1,7 +1,0 @@
-cask_args appdir: '/Applications'
-
-# Office
-cask 'microsoft-office'
-cask 'microsoft-auto-update'
-
-# mas 'Microsoft OneNote', id: 784801555

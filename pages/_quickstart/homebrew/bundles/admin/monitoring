@@ -1,7 +1,0 @@
-cask_args appdir: '/Applications'
-
-brew 'ctop'
-brew 'htop'
-brew 'iftop'
-tap 'clementtsang/bottom'
-brew 'bottom'

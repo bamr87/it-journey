@@ -1,4 +1,0 @@
-cask_args appdir: '/Applications'
-
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'

@@ -1,7 +1,0 @@
-cask_args appdir: '/Applications'
-
-# OpenEmu (Multiple Video Game System)
-cask 'openemu'
-
-# Nintendo 3DS
-cask 'citra'

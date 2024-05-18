@@ -1,5 +1,0 @@
-cask_args appdir: '/Applications'
-
-brew 'nmap'
-brew 'telnet'
-brew 'wrk'

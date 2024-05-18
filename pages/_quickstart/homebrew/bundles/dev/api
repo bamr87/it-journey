@@ -1,4 +1,0 @@
-cask_args appdir: '/Applications'
-
-cask 'postman'
-# cask 'insomnia'
