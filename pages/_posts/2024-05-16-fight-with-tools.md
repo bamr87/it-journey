@@ -12,9 +12,8 @@ snippet: null
 author: bamr87
 layout: null
 keywords: {}
-lastmod: 2024-05-16T19:50:28.913Z
+lastmod: 2024-05-18T05:29:21.209Z
 slug: null
-permalink: null
 attachments: ""
 type: posts
 ---

@@ -1,0 +1,67 @@
+---
+layout: landing
+title: All Posts
+---
+
+<!-- This loops through the paginated posts -->
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    {% for post in paginator.posts %}
+    <div class="col">
+      <div class="card h-100">
+        {%- if post.preview -%}
+        <img src="{{ site.public_folder }}/{{ post.preview}}" class="card-img-top" alt="page preview image">
+        {% else %}
+        <img src="{{ site.teaser }}" class="card-img-top" alt="page preview image">
+        {%- endif -%}
+        <div class="card-body">
+          <h5 class="card-title " itemprop="headline">
+            <a class="card-link" href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
+          </h5>
+          <p class="card-text" itemprop="description">
+            {{ post.excerpt | strip_html | truncate: 160 }}
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary post-meta">Last updated {{ post.lastmod | date: '%B %d, %Y' }}</small>
+        </div>
+      </div>  
+    </div>
+    {%- endfor -%}
+  </div>
+
+<!-- Pagination links -->
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        {% if paginator.previous_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+            <li class="page-item {% if page == paginator.page %}active{% endif %}">
+                <a class="page-link" href="{{ site.baseurl }}{% if page != 1 %}/pages/{{ page }}{% endif %}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Next</span>
+            </li>
+        {% endif %}
+    </ul>
+</nav>

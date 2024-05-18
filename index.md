@@ -16,6 +16,8 @@ lastmod: 2024-05-08T04:53:36.889Z
 slug: /
 ---
 
+<div id="particles-js" class="z-n1 position-absolute"></div>
+
 # Welcome to IT-Journey.dev: Your Full Stack Development Quest Begins Here!
 
 Embark on an epic adventure through the realms of full stack development, where coding skills empower you to build anything from the ground up. At IT-Journey.dev, we believe learning should be a quest - full of challenges, mysteries, and achievements. Are you ready to become a Full Stack Wizard?
@@ -66,10 +68,6 @@ Arm yourself with a selection of resources and tools designed to aid your quest.
 ---
 
 This landing page sets the tone for a learning adventure, inviting users to explore full stack development in a fun and engaging way. Feel free to tweak the content however you see fit, or even create your own landing page to better fit your site's theme and structure. Good luck on your quest to educate the next generation of Full Stack Wizards!
-
-Click on these particales for fun.
-
-<div id="particles-js" class=""></div>
 
 ## Powered BY
 

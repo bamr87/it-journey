@@ -1,11 +1,14 @@
 ---
-title: Init World
+title: Quests (~) Index
 layout: collection
-keywords: init, world
+keywords:
+  - init
+  - hello world
 catagories: quests
-description: This is the init world.
+description: This is an index of quests that are written, or being written.
 permalink: /quests/
-lastmod: 2024-03-13T01:15:03.334Z
+lastmod: 2024-05-18T05:57:24.042Z
+draft: draft
 ---
 
 # init_world

@@ -1,3 +1,10 @@
-- title: "Home"
+- title: Home
   icon: bi-house
   url: /home
+  sublinks:
+    - title: Style
+      url: /home/style/
+- title: Roadmap
+  icon: bi-map
+  url: /roadmap
+

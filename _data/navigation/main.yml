@@ -8,12 +8,14 @@
 - title: Journey
   url: /posts
   sublinks:
-    - title: home
+    - title: Home
       url: /posts
-    - title: articles
+    - title: Articles
       url: /posts/articles
     - title: Quests
       url: /quests
+    - title: Pages
+      url: /pages/
 - title: Library
   url: /docs/
   sublinks:
@@ -24,12 +26,12 @@
 - title: Notes
   url: /notes
   sublinks:
-    - title: home
+    - title: Home
       url: /notes
 - title: About
   url: /about/
   sublinks:
-    - title: home
+    - title: Home
       url: /about
     - title: Config
       url: /about/config

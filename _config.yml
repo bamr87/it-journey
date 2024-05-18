@@ -184,6 +184,8 @@ plugins:
   - github-pages
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
   # - jekyll-assets
   # - jekyll-algolia
   # - jekyll-mermaid  # https://mermaidjs.github.io/
@@ -255,6 +257,11 @@ collections:
 
 permalink: pretty
 
+#  pagination https://jekyllrb.com/docs/pagination/
+
+paginate: 10
+paginate_path: "/pages/:num/"
+
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
 nav-file: '_data/navigation/map.yml'
@@ -273,8 +280,8 @@ defaults:
       share: true
       related: true
       toc: true
-      # sidebar:
-      #   nav: main
+      sidebar:
+        nav: main
     permalink: /:collection/:name/
 
   # pages
