@@ -11,7 +11,7 @@ sidebar:
    nav: home
 lastmod: 2024-05-15T03:54:48.681Z
 TODO:
-   - Fix the copy button on code snipets
+   - Fix the copy button on code snippets
    - fix the top nav bar
    - fix the sidebar
 ---
@@ -33,7 +33,6 @@ There are journals to capture our experiences and findings, notes to quickly ref
 Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
 
 ## Abstract
-{: .para-one #abstract .accordion-header .accordion-button}
 
 From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
 {: .para-one #abstract .accordion-body}
@@ -59,14 +58,15 @@ Here are a
    4. What are your goals?
    5. What are your expectations?
 2. Chapter 1 - Identity Crisis
-   1. 
+   1. Tools of the trade
    2. Minimum requirements
-      1. Quick start with [github](https://docs.github.com/en/get-started/start-your-journey) 
+      1. Quick start with [github](https://docs.github.com/en/get-started/start-your-journey)
    3. Class Selection up
    4. Character Building
 3. Chapter 2 - Training
 
 ### Skill Level Route
+
 For those who prefer the route based on difficulty:
 
 1. Beginner - 000
@@ -111,7 +111,7 @@ For those who are advanced/expert and what to specialize in a field:
 
 1. Wikimedia Server - [Downloads](https://www.mediawiki.org/wiki/Download)
 2. Personal Website
-3. Retro Picade
+3. Retro "Picade"
 4. Mobile App
 5. Web Scraper
 6. Documentation Site
@@ -130,8 +130,6 @@ Static Website Generator (Jekyll) [Local link](\_quickstart\Jekyll.md)  Or [Web 
 ### Site layout
 
 #### Top Navigation Bar
-
-![](../assets/images/top-nav.png){: .img-fluid }
 
 ```html
 {% raw %}
@@ -180,5 +178,3 @@ local_git_mac            : [ *home-mac, 'GitHub/' ]
 
 NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
 {: .alert .alert-primary }
-
-

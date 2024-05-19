@@ -1,0 +1,33 @@
+<!--
+  file: info-section.html
+  path: _includes/info-section.html
+  includes: breadcrumbs.html, searchbar.html, dev-shortcuts.html
+  references: 
+    - https://getbootstrap.com/docs/5.3/components/modal/
+ -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="info-section" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Information Highway</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <!-- _include/breadcrumbs.html -->
+                {% include breadcrumbs.html %}
+                {% include searchbar.html %}
+                {% include dev-shortcuts.html %}
+                <!-- Dark Mode Switch -->
+                {% include halfmoon.html %}
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>

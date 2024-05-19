@@ -29,7 +29,7 @@
             </div>
 
             <!-- Home and Root Logo -->
-            <div class="container d-inline-flex text-center gap-3">
+            <div class="container d-inline-flex text-center ">
                 <!-- Home Link -->
                 {%- for home in site.data.navigation.home -%}
                 <a class="btn " href="{{ home.url | relative_url }}">
@@ -49,21 +49,19 @@
                 <!-- include navbar.html -->
                 {% include navbar.html %}
 
-            <!-- Settings Collapse button -->
-            <div class="btn"
-                data-bs-toggle="collapse" 
-                data-bs-target=".dev-settings" 
+            <!-- Settings modal button -->
+            <div 
+                class="btn"
+                data-bs-toggle="modal" 
+                data-bs-target="#info-section" 
                 aria-expanded="false" 
-                aria-controls=".dev-settings"
+                aria-controls="#info-section"
                 role="button"  >
                 <i 
                     type="button" 
                     class="{{site.default_icon}} bi-gear">
                 </i>
             </div>
-
-            <!-- Dark Mode Switch -->
-            {% include halfmoon.html %}
 
             <!-- Offcanvas button for nav links -->
             <div class="bd-navbar-toggle ">
@@ -78,16 +76,4 @@
             </div>
         </nav>
     </div>
-
-    <!-- Information Section - 2nd Row -->
-    <div class="row justify-content-md-center bg-body-secondary">
-        <div class="col-lg-6 z-index-1">
-        <!-- _includes/info-bar.html - Section with breadbcrumbs and search engine -->
-            {% include info-bar.html %}
-
-        <!-- Source code shortcuts -->
-            {% include dev-shortcuts.html %}
-        </div>
-    </div>
-
 </header>

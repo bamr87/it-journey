@@ -95,6 +95,7 @@ logo                     : /assets/images/gravatar-small.png  # path of logo ima
 logo_link                : 'https://www.it-journey.dev'
 
 teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+info_banner              : /assets/images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -298,8 +299,8 @@ defaults:
       related: true
       toc: true
       toc_sticky: true
-      # sidebar:
-      #   nav: main
+      sidebar:
+        nav: categories
     permalink: /:path/:name/
 
   # pages/_about
@@ -342,7 +343,7 @@ defaults:
       related: true
       toc: true
       sidebar:
-        nav: main
+        nav: categories
       # permalink: /:collection/:name/
 
   # pages/_docs
@@ -377,7 +378,7 @@ defaults:
       related: true
       toc: true
       sidebar:
-        nav: main
+        nav: dynamic
       permalink: /:categories/:slug
 
   # pages/_hobbies
@@ -403,8 +404,8 @@ defaults:
       share: false
       toc: true
       author_profile: false
-      # sidebar:
-      #   nav: notes
+      sidebar:
+        nav: dynamic
 
 # Exclude from processing.
 # The following items will not be processed, by default.

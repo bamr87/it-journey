@@ -1,9 +1,15 @@
+<!-- 
+  file: halfmoon.html
+  path: _includes/halfmoon.html
+  description: This is the snippet for the dark mode switch.
+ -->
 
+ <div class="justify-content-end">
   <i class="btn dropdown-toggle" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
     <i class="bi bi-circle-half theme-icon-active"><use href="#moon-stars-fill"></use></i>
     <span class="d-none ms-2" id="bd-theme-text">Toggle theme</span>
   </i>
-  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text" data-bs-popper="static">
+  <ul class="dropdown-menu" aria-labelledby="bd-theme-text" data-bs-popper="static">
     <li>
       <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
         <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
@@ -26,8 +32,4 @@
       </button>
     </li>
   </ul>
-
-
-<script>
-
-  </script>
+</div>

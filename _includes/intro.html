@@ -1,0 +1,17 @@
+<!-- 
+  file: _intro.html
+  description: This is the intro section of the blog post. It includes the title, author, and excerpt of the post.
+  path: _includes/intro.html
+ -->
+
+<!-- Intro Section -->
+
+<div class="bd-intro pt-5 ps-lg-2" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ page.preview | default: site.info_banner }}') no-repeat center center / cover;
+    color: #fff;">
+    <br>
+    <h1>{{ page.title }}</h1>
+    <p>By {{ page.author | default: site.author.name }}</p>
+    <p>{{ page.excerpt }}</p>
+    <p>Estimated reading time: {{ content | number_of_words | divided_by:200 }} minutes</p>
+</div>

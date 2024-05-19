@@ -1,25 +1,45 @@
 ---
 permalink: /404.html
-layout: default
+layout: root
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div class="container text-center mt-5">
+  <h1 class="display-1 text-danger">404</h1>
 
-<div class="container">
-  <h1>404</h1>
+  <p class="h4 mt-4"><strong>Page not found :(</strong></p>
+  <p class="lead">The requested page could not be found.</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="my-4">
+    <p class="h5">Try searching for what you are looking for:</p>
+    <form class="d-flex justify-content-center" action="/search" method="get">
+      <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search">
+      <button class="btn btn-danger" type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="my-4">
+    <p class="h5">Or navigate to one of these pages:</p>
+    <div class="nav justify-content-center">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/about">About</a>
+      <a class="nav-link" href="/contact">Contact</a>
+      <a class="nav-link" href="/blog">Blog</a>
+    </div>
+  </div>
+
+  <a class="btn btn-danger mt-4" href="/">Return to Homepage</a>
+  <div class="mt-3">
+    <a id="github-issue-link" class="btn btn-secondary" href="#">
+      Submit an Issue on GitHub
+    </a>
+  </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var githubIssueLink = document.getElementById('github-issue-link');
+    var currentUrl = window.location.href;
+    var githubUrl = `https://github.com/{{site.repository}}/issues/new?title=404%20Error%20on%20${encodeURIComponent(currentUrl)}&body=I%20encountered%20a%20404%20error%20on%20the%20following%20page:%20${encodeURIComponent(currentUrl)}.%20Please%20investigate.`;
+    githubIssueLink.href = githubUrl;
+  });
+</script>

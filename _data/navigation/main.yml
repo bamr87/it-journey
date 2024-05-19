@@ -10,12 +10,10 @@
   sublinks:
     - title: Home
       url: /posts
-    - title: Articles
-      url: /posts/articles
     - title: Quests
       url: /quests
     - title: Pages
-      url: /pages/
+      url: /pages
 - title: Library
   url: /docs/
   sublinks:
@@ -23,11 +21,15 @@
       url: /docs
     - title: Jekyll
       url: /docs/jekyll
-- title: Notes
+    - title: Categories
+      url: /categories
+- title: Notebook
   url: /notes
   sublinks:
-    - title: Home
+    - title: Notes
       url: /notes
+    - title: Jupyter
+      url: /notes/jupyter
 - title: About
   url: /about/
   sublinks:

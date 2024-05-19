@@ -16,19 +16,27 @@
   <!-- Left Sidebar Nav List - Offcanvas  -->
   <div class="offcanvas-body overflow-auto">
 
-  <!-- Dynamic listing of notes in side bar -->
-  {% if page.collection == "notes" %}
+  <!-- Dynamic listing of pages in side bar -->
+
+  {% if page.sidebar.nav == "dynamic" %}
   <div class="list-group" id="sidebar-content">
-    {% assign folders = site.notes | where_exp: "item", "item.path contains 'index.md'" | sort: 'path' %}
+    {% assign folders = site.pages | where_exp: "item", "item.path contains 'index.md'" | sort: 'path' %}
     {% include sidebar-folders.html folders=folders %}
   </div>
   {% endif %}
 
-    <!-- Include nav_list.html -->
-    {% if page.sidebar.nav %}
+  <!-- Dynamic listing of page categories in side bar -->
+  {% if page.sidebar.nav == "searchCats" %}
+  <div class="list-group" id="sidebar-content">
+    {% assign categories = site.categories | sort %}
+    {% include sidebar-categories.html categories=categories %}
+  {% else %}
+
+  <!-- Manually defined navigation list in _data  -->
+    <!-- Includes nav_list.html -->
     <nav class="w-100">
         {% include nav_list.html nav=page.sidebar.nav %}
     </nav>
-    {% endif %}
+  {% endif %}
   </div>
 </div>

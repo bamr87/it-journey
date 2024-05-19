@@ -2,12 +2,13 @@
 title: jekyll sidebar
 date: 2024-05-14T20:39:28.955Z
 tags: []
-lastmod: 2024-05-16T16:11:20.297Z
+lastmod: 2024-05-19T16:02:26.577Z
 description: null
 preview: null
 categories:
-  - jekyll
+   - jekyll
 sub-title: null
+excerpt: test
 snippet: null
 author: null
 keywords: {}
