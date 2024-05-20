@@ -8,7 +8,7 @@ snippet: 2023-03-11T16:12:28.481Z
 categories: null
 tags: null
 draft: 2023-03-11T16:12:28.481Z
-lastmod: 2024-05-16T01:45:59.201Z
+lastmod: 2024-05-20T14:59:10.308Z
 type: Article
 ---
 
@@ -59,12 +59,9 @@ Generative AI Art
 
 RGBA 1d522529
 
+<https://jekyllrb.com/docs/static-files/>
 
-https://jekyllrb.com/docs/static-files/
-
-
-
-
+<p>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
   <defs>
     <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
@@ -81,4 +78,4 @@ https://jekyllrb.com/docs/static-files/
     <polygon points="200,100 350,250 50,250" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" />
   </g>
 </svg>
-
+</p>

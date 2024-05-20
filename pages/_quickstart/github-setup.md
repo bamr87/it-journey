@@ -3,9 +3,9 @@ title: Github Setup
 author: null
 layout: default
 description: null
-categories:
+categories: null
 slug: github
-lastmod: '2022-01-25T04:36:34.355Z'
+lastmod: 2024-05-20T14:58:30.179Z
 draft: false
 ---
 
@@ -36,13 +36,13 @@ winget -v
 
 The Github CLI is a command line interface for the Github API. It is used to create and manage repositories. It is also used to create and manage issues and pull requests.
 
-**MacOS**
+> MacOS
 
 ```shell
 brew install gh
 ```
 
-**Windows**
+> Windows
 
 ```powershell
 winget install git.git
@@ -85,7 +85,7 @@ cd github
 gh repo fork bamr87/it-journey
 ```
 
-### Add [Submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules) 
+### Add [Submodules](http://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 ```shell
 git submodule add https://github.com/bamr87/winget-packages.git winget
@@ -95,5 +95,3 @@ git submodule add https://github.com/bamr87/winget-packages.git winget
 git submodule update --init
 
 ```
-### Github Pages
-

@@ -274,13 +274,11 @@ defaults:
       path: ""
     values:
       layout: root
-      show_date: true
       author_profile: false
       read_time: true
       comments: # true
       share: true
       related: true
-      toc: true
       sidebar:
         nav: main
     permalink: /:collection/:name/
@@ -291,16 +289,14 @@ defaults:
       path: pages
     values:
       layout: &pages default
-      show_date: true
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
-      toc: true
       toc_sticky: true
       sidebar:
-        nav: categories
+        nav: searchCats
     permalink: /:path/:name/
 
   # pages/_about
@@ -312,7 +308,6 @@ defaults:
       collection: about
       share: true
       related: true
-      toc: true
       sidebar:
         nav: about
 
@@ -325,7 +320,6 @@ defaults:
       collection: quickstart
       share: true
       related: true
-      toc: true
       sidebar:
         nav: quickstart
 
@@ -335,15 +329,13 @@ defaults:
       path: pages/_posts
     values:
       layout: journals
-      show_date: true
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
-      toc: true
       sidebar:
-        nav: categories
+        nav: dynamic
       # permalink: /:collection/:name/
 
   # pages/_docs
@@ -353,13 +345,11 @@ defaults:
     values:
       layout: *pages
       # category: docs
-      show_date: true
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
-      toc: true
       sidebar:
         nav: docs
     # permalink: /docs/:category/:name/
@@ -370,13 +360,11 @@ defaults:
       path: pages/_quests
     values:
       layout: *pages
-      show_date: true
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
-      toc: true
       sidebar:
         nav: dynamic
       permalink: /:categories/:slug
@@ -389,7 +377,6 @@ defaults:
     values:
       layout: *pages
       share: false
-      toc: true
       author_profile: false
       sidebar:
         nav: hobbies
@@ -402,7 +389,6 @@ defaults:
     values:
       layout: *pages
       share: false
-      toc: true
       author_profile: false
       sidebar:
         nav: dynamic
@@ -423,17 +409,14 @@ exclude:
   - gemfiles/
   - Gemfile
   - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
   - "*.sh"
   - submodules/
 
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed
+  style: expanded
 
 #  TODO: Fix bootstrap plugin
   # load_paths:

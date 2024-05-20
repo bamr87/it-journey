@@ -4,12 +4,8 @@ author: null
 description: null
 categories:
   - Posts
-sidebar:
-  nav: posts
-toc: true
-toc_sticky: true
 date: 2021-11-08T19:50:20.168Z
-lastmod: 2024-05-18T05:57:12.990Z
+lastmod: 2024-05-20T17:41:07.639Z
 draft: true
 ---
 # IT-Manifesto

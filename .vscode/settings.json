@@ -23,6 +23,7 @@
         "bamr",
         "endcapture",
         "endraw",
+        "Groking",
         "Inkscape",
         "Jamstack",
         "Krita",
@@ -30,6 +31,7 @@
         "markdownify",
         "MERN",
         "Picade",
-        "sublinks"
+        "sublinks",
+        "winget"
     ]
 }

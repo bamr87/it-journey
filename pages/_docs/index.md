@@ -9,10 +9,9 @@ catagories:
   - home
 sidebar:
   nav: docs
-toc: true
 toc_sticky: true
 date: 2021-09-24T19:32:44.876Z
-lastmod: 2024-05-16T20:02:25.942Z
+lastmod: 2024-05-20T17:47:12.244Z
 draft: true
 ---
 

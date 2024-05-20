@@ -11,7 +11,7 @@ tags:
   - contributing
 meta: null
 draft: true
-lastmod: 2024-05-12T22:33:25.194Z
+lastmod: 2024-05-20T17:42:21.099Z
 permalink: /about/contributing
 ---
 
@@ -22,7 +22,7 @@ TODO: Right contribution instructions.
 
 Here's a list of contributors:
 
-- [Amr](/_about/contributors/bamr87/)
+- [Amr](/contributors/bamr87/)
 
 Start with Contribution framework
 

@@ -1,5 +1,5 @@
 ---
-title: "Krita Tips and Tricks"
+title: Krita Tips and Tricks
 author: null
 excerpt: null
 description: null
@@ -9,8 +9,10 @@ categories:
 tags:
   - article
 meta: null
+sidebar:
+  nav: searchCats
 draft: true
-lastmod: 2022-05-21T23:56:40.448Z
+lastmod: 2024-05-20T17:37:08.794Z
 ---
 
 ## Krita Settings - Pen Pressure
