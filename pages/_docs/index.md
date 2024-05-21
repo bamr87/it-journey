@@ -5,13 +5,13 @@ layout: collection
 permalink: /docs/
 description: Index of all doc pages and instructions on how to add new doc sections
 catagories:
-  - docs
-  - home
+    - docs
+    - home
 sidebar:
-  nav: docs
+    nav: docs
 toc_sticky: true
 date: 2021-09-24T19:32:44.876Z
-lastmod: 2024-05-20T17:47:12.244Z
+lastmod: 2024-05-21T18:27:46.013Z
 draft: true
 ---
 
@@ -34,54 +34,11 @@ To add to this collection, you need to run the following commands on your local 
 
 ```sh
 git submodule add https://github.com/jekyll/jekyll.git jekyll-docs
-
 ```
-
 
 ```sh
 cd jekyll-docs/docs/_docs
 git sparse-checkout init --cone
 git sparse-checkout set jekyll-docs/docs/_docs
 git sparse-checkout set docs/_docs
-
 ```
-
-```html
-<!-- docs_version_badge.html -->
-<span class="version-badge" title="This feature is available starting version {{ include.version }}">{{ include.version }}</span>
-```
-
-
-```html
-<!-- docs_variables_table -->
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Variable</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for var in include.scope -%}
-    <tr>
-      <td><p><code>{{ var.name }}</code></p></td>
-      <td><p>{{- var.description -}}</p></td>
-    </tr>
-  {% endfor -%}
-  </tbody>
-</table>
-</div>
-
-```
-
-
-
-## Bootstrap
-
-## Ruby
-
-## Github Pages
-
-
