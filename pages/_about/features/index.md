@@ -8,7 +8,7 @@ categories: []
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2024-05-17T02:59:54.442Z
+lastmod: 2024-05-21T18:27:42.823Z
 draft: in progress
 inspiration:
     - features are the foundation of the future
@@ -41,10 +41,9 @@ TODO: generate a list of features based on folder contents
 - [ ] Landing page site intro based on features
 
 ## TODO:
+- Add create new post/feature button
 - add 3rd level nav bar drop down option
 - automate pull request to publish to gh-pages
-- Add create new post button
-- add floating "back to top" button
 - create custom svg icon
 - quick view of post contents/reading time
 - Adjust menu toggle in Mobile view

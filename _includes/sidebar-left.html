@@ -23,20 +23,19 @@
     {% assign folders = site.pages | where_exp: "item", "item.path contains 'index.md'" | sort: 'path' %}
     {% include sidebar-folders.html folders=folders %}
   </div>
-  {% endif %}
 
   <!-- Dynamic listing of page categories in side bar -->
-  {% if page.sidebar.nav == "searchCats" %}
+  {% elsif page.sidebar.nav == "searchCats" %}
   <div class="list-group" id="sidebar-content">
     {% assign categories = site.categories | sort %}
     {% include sidebar-categories.html categories=categories %}
-  {% else %}
-
-  <!-- Manually defined navigation list in _data  -->
+    
+    <!-- Manually defined navigation list in _data  -->
+    {% elsif page.sidebar.nav %}
     <!-- Includes nav_list.html -->
     <nav class="w-100">
-        {% include nav_list.html nav=page.sidebar.nav %}
+      {% include nav_list.html nav=page.sidebar.nav %}
     </nav>
-  {% endif %}
   </div>
+  {% endif %}
 </div>

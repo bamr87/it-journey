@@ -14,28 +14,21 @@
     </div>
 
 <!-- Main Navigation List - Offcanvas  -->
-    <ul class="navbar-nav offcanvas-body justify-content-lg-center text-start" >
-        {%- for link in site.data.navigation.main -%}
-            <li class="nav-item dropdown">
-                <a {% if link.sublinks %} 
-                         href="#" id="navbarDropdown" 
-                         role="button" 
-                         data-bs-toggle="dropdown" 
-                         class="nav-link dropdown-toggle" 
-                         aria-expanded="false"
-                    {% endif %}
-                         href="{{ link.url | relative_url }}"
-                    >{{ link.title }}
-                </a>
-            <!-- Drop down links   -->
-                {% if link.sublinks %}
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {%- for sublink in link.sublinks -%}
-                            <a class="dropdown-item" href="{{ sublink.url | relative_url }}">{{ sublink.title | 'test' }}</a> 
-                        {%- endfor -%}
-                    </div>
-                {% endif %}
-            </li>
-        {%- endfor -%}
-        </ul>
+<ul class="navbar-nav offcanvas-body justify-content-lg-center text-start" >
+    {%- for link in site.data.navigation.main -%}
+        <div class="btn-group">
+            <a href="{{ link.url | relative_url }}" class=" nav-link">{{ link.title }}</a>
+            {% if link.sublinks %}
+                <button type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {%- for sublink in link.sublinks -%}
+                        <a class="dropdown-item" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a> 
+                    {%- endfor -%}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</ul>
 </div>
