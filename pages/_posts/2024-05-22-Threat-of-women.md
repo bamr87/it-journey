@@ -1,9 +1,10 @@
 ---
-title: threat of women to capitalism 
-category: parody 
+title: "Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale"
+category: parody
+lastmod: 2024-05-22T15:28:30.002Z
 ---
 
-Title: Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale
+Title: 
 
 In a shocking turn of events, the rise of women in power has sent shockwaves through the seemingly unshakable pillars of modern society: capitalism and religion. As women ascend to the top of the corporate ladder and take the reins of religious institutions, the old boys' club is left reeling, desperately trying to maintain its grip on power.
 
