@@ -78,5 +78,6 @@ end
 # gem "kramdown-parser-gfm", "~> 1.1.0"
 # gem "rouge", "~> 3.36.0"
 
-# gem "algoliasearch"
+# gem "algolia"
+gem "jekyll-algolia"
 # gem "html-proofer"

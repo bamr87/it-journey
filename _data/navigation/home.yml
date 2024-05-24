@@ -7,4 +7,7 @@
 - title: Roadmap
   icon: bi-map
   url: /roadmap
+  sublinks:
+    - title: Search
+      url: /search/
 

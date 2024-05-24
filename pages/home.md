@@ -3,10 +3,8 @@ title: Home
 author: bamr87
 description: This is an overall outline of this site, and a place to start or come back to when lost.
 purpose: To build a platform for learning and share knowledge and tools
-layout: collection
 keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
-collection: posts
 sidebar: 
    nav: home
 lastmod: 2024-05-15T03:54:48.681Z
@@ -178,3 +176,7 @@ local_git_mac            : [ *home-mac, 'GitHub/' ]
 
 NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
 {: .alert .alert-primary }
+
+## Sitemap
+
+{% include sitemap.html %}

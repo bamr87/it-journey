@@ -2,7 +2,6 @@
   file: algolia.html
   sources: 
     https://www.algolia.com/doc/onboarding/,
-    https://community.algolia.com/jekyll-algolia/blog.html,
     https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/#the-instantsearch-instance,
     https://www.algolia.com/doc/guides/building-search-ui/getting-started/js/,
     https://www.algolia.com/doc/guides/building-search-ui/installation/js/
@@ -10,105 +9,51 @@
 -->
 
 <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.23.3/dist/algoliasearch-lite.umd.js" integrity="sha256-1QNshz86RqXe/qsCBldsUu13eAX6n/O98uubKQs87UI=" crossorigin="anonymous"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.67.0/dist/instantsearch.production.min.js" integrity="sha256-TW7D3X/i/W+RUgEeDppEnFT2ixv5lzplKH0c58D92dY=" crossorigin="anonymous"></script> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/reset-min.css" integrity="sha256-2AeJLzExpZvqLUxMfcs+4DWcMwNfpnjUeAAvEtPr0wU=" crossorigin="anonymous"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.23.3/dist/algoliasearch-lite.umd.js" integrity="sha256-1QNshz86RqXe/qsCBldsUu13eAX6n/O98uubKQs87UI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.68.1/dist/instantsearch.production.min.js" integrity="sha256-AEialBwCKmHcqym8j00nCLu/FDy3530TKG9n6okJobM=" crossorigin="anonymous"></script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-<!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css"> -->
 <script>
+const searchClient = algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_only_api_key }}');
 
 const search = instantsearch({
-  appId: '{{ site.algolia.application_id }}',
-  apiKey: '{{ site.algolia.search_only_api_key }}',
-  indexName: '{{ site.algolia.index_name }}'
+  indexName: '{{ site.algolia.index_name }}',
+  searchClient,
+  searchFunction(helper) {
+    const container = document.querySelector('#hits');
+    if (helper.state.query === '') {
+      container.style.display = 'none';
+      return;
+    }
+    container.style.display = 'block';
+    helper.search();
+  }
 });
 
-const hitTemplate = function(hit) {
-  let date = '';
-  if (hit.date) {
-    date = moment.unix(hit.date).format('MMM D, YYYY');
-  }
-
-  let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
-
-  const title = hit._highlightResult.title.value;
-
-  let breadcrumbs = '';
-  if (hit._highlightResult.headings) {
-    breadcrumbs = hit._highlightResult.headings.map(match => {
-      return `<span class="post-breadcrumb">${match.value}</span>`
-    }).join(' > ')
-  }
-
-  const content = hit._highlightResult.html.value;
-
-  return `
-    <div class="post-item">
-      <span class="post-meta">${date}</span>
-      <h2><a class="post-link" href="${url}">${title}</a></h2>
-      {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
-      <div class="post-snippet">${content}</div>
-    </div>
-  `;
-}
-
-
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.searchBox({
-    container: '#search-searchbar',
-    placeholder: 'Search...',
-    poweredBy: true // This is required if you're on the free Community plan
-  })
-);
+    container: '#searchbox',
+  }),
 
-search.addWidget(
   instantsearch.widgets.hits({
-    container: '#search-hits',
+    container: '#hits',
     templates: {
-      item: hitTemplate
+      item: function(hit) {
+        return `
+          <div>
+            <h2>${hit.title}</h2>
+            <p>${hit.content}</p>
+          </div>
+        `;
+      }
     }
   })
-);
-
+]);
 
 search.start();
+
 </script>
 
-<!-- <style>
-.ais-search-box {
-  max-width: 100%;
-  margin-bottom: 15px;
-}
-.post-item {
-  margin-bottom: 30px;
-}
-.post-link .ais-Highlight {
-  color: #111;
-  font-style: normal;
-  text-decoration: underline;
-}
-.post-breadcrumbs {
-  color: #424242;
-  display: block;
-}
-.post-breadcrumb {
-  font-size: 18px;
-  color: #424242;
-}
-.post-breadcrumb .ais-Highlight {
-  font-weight: bold;
-  font-style: normal;
-}
-.post-snippet .ais-Highlight {
-  color: #2a7ae2;
-  font-style: normal;
-  font-weight: bold;
-}
-.post-snippet img {
-  display: none;
-}
-</style> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/satellite-min.css" integrity="sha256-p/rGN4RGy6EDumyxF9t7LKxWGg6/MZfGhJM/asKkqvA=" crossorigin="anonymous">
+

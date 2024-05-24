@@ -1,17 +1,12 @@
 ---
-title: Notes Index
+title: Notes (~) Index
 description: Notes Index
 layout: collection
 permalink: /notes/
-lastmod: 2024-05-16T02:05:52.727Z
+lastmod: 2024-05-24T04:34:37.380Z
 ---
 
-# Quick Start
- test 
-
-{{ page.sidebar.nav }}
-
-## Getting Started
+## Randmon Notes
 
 [Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)
 
@@ -44,9 +39,7 @@ Set-EnvVar $envName $envValue
 
 echo $env:psgist
 
-
 ```
-
 
 ```powershell
 $name = "amr"
@@ -58,7 +51,6 @@ function Set-LocalVar($name, $value) {
 }
 
 Set-LocalVar amr smells
-
 
 ```
 
@@ -242,10 +234,6 @@ p, img
 > [!NOTE]
 > this is a note
 
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
@@ -259,7 +247,6 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
-
 
 # Icons with bootstrap
 
@@ -277,9 +264,7 @@ These instructions are pertinent to Mac users.
 
  These instructions are pertinent to Linux users.
 
-
 These instructions are pertinent to Windows users.
-
 
 ## Github Custom Domain
 
@@ -287,5 +272,4 @@ These instructions are pertinent to Windows users.
 
 ## frontmatter content types
 
-https://frontmatter.codes/docs/content-creation/content-types#run-a-script-after-your-content-is-created
-
+<https://frontmatter.codes/docs/content-creation/content-types#run-a-script-after-your-content-is-created>

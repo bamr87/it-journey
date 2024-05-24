@@ -1,11 +1,12 @@
 ---
 title: About
 layout: collection
-execerpt: Summary info about the site
+excerpt: Summary info about the site
 collection: about
 permalink: /about/
-lastmod: 2024-05-11T21:50:40.396Z
+lastmod: 2024-05-24T04:34:37.382Z
 slug: about
+draft: draft
 ---
 
 # About this site

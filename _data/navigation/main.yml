@@ -1,15 +1,11 @@
 - title: Quick-Start
-  url: /quick-start
+  url: /quickstart
   sublinks:
-    - title: Home
-      url: /quickstart
     - title: Master Setup
       url: /quickstart/machine-setup
 - title: Journey
   url: /posts
   sublinks:
-    - title: Home
-      url: /posts
     - title: Quests
       url: /quests
     - title: Pages
@@ -17,8 +13,6 @@
 - title: Library
   url: /docs/
   sublinks:
-    - title: Home
-      url: /docs
     - title: Jekyll
       url: /docs/jekyll
     - title: Categories
@@ -33,15 +27,13 @@
 - title: About
   url: /about/
   sublinks:
-    - title: Home
-      url: /about
     - title: Config
       url: /about/config
     - title: Theme
       url: /about/theme
     - title: Contributing
       url: /about/contributing
-    - title: Map
+    - title: Sitemap
       url: /about/sitemap
     - title: Features
       url: /about/features

@@ -188,7 +188,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   # - jekyll-assets
-  # - jekyll-algolia
+  - jekyll-algolia
   # - jekyll-mermaid  # https://mermaidjs.github.io/
   # - jekyll-admin # https://github.com/jekyll/jekyll-admin
   # - jekyll-redirect-from
@@ -423,9 +423,9 @@ sass:
   #   - /usr/local/bundle/gems/bootstrap-5.3.3/assets/stylesheets
 
 algolia:
-  application_id: '99CKJ6KQ3Z'
-  search_only_api_key: '03a0c530bc2ff9acfde23485092602f3'
-  index_name: dev_lifehacker
+  application_id: 'SP02Z3YYL4'
+  search_only_api_key: '3b9200e21085fbebc263950c157b2682'
+  index_name: dev_it-journey
 
 atom_feed:
 path                   : # blank (default) uses feed.xml
