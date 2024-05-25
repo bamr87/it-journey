@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# /script/jupyter-to-markdown.sh
 # Define the path to your Jekyll site's _posts directory
 POSTS_DIR="/_posts/notebooks"
 

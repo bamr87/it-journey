@@ -14,9 +14,10 @@ categories:
   - hello world
 lastmod: 2024-05-08T04:53:36.889Z
 slug: /
+draft: draft
 ---
 
-<div id="particles-js" class="z-n1 position-absolute"></div>
+<div id="particles-js" class="container-xxl z-n1 position-absolute"></div>
 
 # Welcome to IT-Journey.dev: Your Full Stack Development Quest Begins Here!
 
@@ -69,15 +70,6 @@ Arm yourself with a selection of resources and tools designed to aid your quest.
 
 This landing page sets the tone for a learning adventure, inviting users to explore full stack development in a fun and engaging way. Feel free to tweak the content however you see fit, or even create your own landing page to better fit your site's theme and structure. Good luck on your quest to educate the next generation of Full Stack Wizards!
 
-## Powered BY
+## Powered By
 
-{% for power in site.powered_by %}
-<ul href="{{ power.url }}" rel="nofollow">{{ power.name }}</ul>
-{% endfor %}
-
-## FIXME:
-- [ ] Fix the copy button on code snippets
-- [ ] left sidebar header color
-- [ ] Adjust menu toggle in Mobile view
-- [ ] fix presentation of search results
-- [ ] Need to fix quick index in side bar
+{% include powered-by.html %}

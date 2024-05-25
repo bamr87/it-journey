@@ -1,17 +1,30 @@
+---
+draft: draft
+---
 <!-- 
   file: _intro.html
   description: This is the intro section of the blog post. It includes the title, author, and excerpt of the post.
   path: _includes/intro.html
  -->
 
+ {% if page.collection %}
+ {% capture page_dir %}{{ site.collections_dir }}{% endcapture %}
+ {% assign testvar = "collection exists" %}
+{% endif %}
+
 <!-- Intro Section -->
 
-<div class="bd-intro pt-5 ps-lg-2" style="
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ page.preview | default: site.info_banner }}') no-repeat center center / cover;
-    color: #fff;">
-    <br>
-    <h1>{{ page.title }}</h1>
-    <p>By {{ page.author | default: site.author.name }}</p>
-    <p>{{ page.excerpt }}</p>
-    <p>Estimated reading time: {{ content | number_of_words | divided_by:200 }} minutes</p>
+<div class="bd-intro pt-5 ps-lg-2 position-relative" style="
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ page.preview | default: site.info_banner }}') no-repeat center center / cover;
+  color: #fff;">
+  <br>
+  <h1>{{ page.title }}</h1>
+  <p>By {{ page.author | default: site.author.name }}</p>
+  <p>{{ page.excerpt }}</p>
+  <p>Estimated reading time: {{ content | number_of_words | divided_by:200 }} minutes</p>
+  <!-- Edit on Github Button -->
+  <a href="https://github.com/{{ site.repository }}/blob/master/{{ page_dir }}/{{ page.path }}" class="btn btn-dark position-absolute bottom-0 end-0 m-3">
+    <i class="bi bi-github"></i>
+    <span class="d-none d-sm-inline">Edit on Github</span>
+  </a>
 </div>

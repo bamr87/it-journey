@@ -246,6 +246,9 @@ collections:
   hobbies:
     output: true
     permalink: /:collection/:categories/:name/
+  notebooks:
+    output: true
+    permalink: /:collection/:path/:name/
   notes:
     output: true
     permalink: /:collection/:path/:name/

@@ -1,19 +1,19 @@
 ---
 name: Amr Abdel-Motaleb
-avatar: /path/to/avatar.png
-bio: A brief description about yourself
-location: Your location
-email: your.email@example.com
-website: https://yourwebsite.com
-github: your-github-username
-twitter: your-twitter-handle
-linkedin: your-linkedin-username
-lastmod: 2024-05-10T04:38:55.251Z
+avatar: /assets/images/bamr-avatar.png
+excerpt: IT Wizard, Software Architect, Tech Enthusiast.
+location: Denver, CO
+email: null
+website: https://it-journey.dev
+github: bamr87
+twitter: bamr42
+linkedin: amrabdel
+lastmod: 2024-05-25T19:07:46.394Z
 permalink: /about/bamr87/
 ---
 
-
 # Navigate to your current repository
+
 ```shell
 
 cd ~/github/it-journey

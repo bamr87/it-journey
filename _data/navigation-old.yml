@@ -1,9 +1,5 @@
 # Refactored to _data/navigation/
 
-# FIXME: NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION. 
-
-# FIXME: Nest yaml into succeeding hierarchies
-
 test: &test
   - title: "About-test"
     url: /about/test
@@ -52,7 +48,7 @@ main:
       url: *home
     - title: "Music"
       sub: &sub /music
-      url: [*home,*sub] # FIXME: Tried removing single quotes
+      url: [*home,*sub]
     - title: "Gaming"
       url: /hobbies/gaming
     - title: "Art"
