@@ -33,7 +33,7 @@ In the world of IT-Journey.dev, your mission is to traverse through various land
 - **CSS Cascades**: Weave magic with CSS to style your applications, making them not just functional but visually enchanting.
 - **JavaScript Jungles**: Tame the wild beasts of JavaScript to breathe life into your static pages.
 
-[Start Your Frontend Quest](/pages/_quests/frontend.md)
+[Start Your Frontend Quest](/quests/frontend/)
 
 ### The Backend Badlands
 
