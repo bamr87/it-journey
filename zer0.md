@@ -22,6 +22,8 @@ date: 2024-05-27T04:49:32.883Z
 snippet: What is a snippet?
 ---
 
+Version Test
+
 # {{ page.title }} Version {{ page.version }}
 
 This is the seed of the project with all the commands, scripts, and instructions that build this application from the ground up.
