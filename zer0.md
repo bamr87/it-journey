@@ -1,32 +1,63 @@
 ---
 title: zer0
+sub-title: 2 her0
 description: zer0
-excerpt: zer0
+excerpt: zer0 to her0
 version: 0.0.0
 tags:
-  - Jekyll
+  - jekyll
 categories:
   - bootstrap
   - quickstart
-modified: 2024-02-10T23:51:11.480Z
 created: 2024-02-10T23:51:11.480Z
-lastmod: 2024-02-19T20:29:42.099Z
-draft: in progress
-date: 2024-05-17T01:53:10.461Z
-layout: home
+lastmod: 2024-05-27T04:50:51.594Z
+draft: draft
+layout: default
 permalink: /zer0/
+slug: zer0
+keywords:
+  - jekyll
+  - zer0
+date: 2024-05-27T04:49:32.883Z
+snippet: What is a snippet?
 ---
->_
-# Zer0
 
-This is the root of the project and all the commands that build this application. For more information, see the [README](/README.md) file. 
+# {{ page.title }} Version {{ page.version }}
+
+This is the seed of the project with all the commands, scripts, and instructions that build this application from the ground up.
+In theory, this should be the only file you need to build the project from scratch.
+However, in practice, you may need to install additional dependencies or configure the environment to match the target system. 
+For example, you may need to install Ruby, Node.js, or other tools to run the application locally or deploy it to a server.
+Therefore, part of this document is to provide a list of prerequisites and setup instructions to help you get started with the project.
+
+For my development machine, I use the following specs:
+
+- Model Name: MacBook Pro
+- Model Identifier: Mac15,6
+- Model Number: MRX33LL/A
+- Chip: Apple M3 Pro
+- System Firmware Version: 10151.101.3
+- System Version: macOS 14.4.1 (23E224)
+- Kernel Version: Darwin 23.4.0
+
+```shell
+
+# Get specific hardware and software information for Macs
+system_profiler SPHardwareDataType | awk '/Model Name:|Model Identifier:|Model Number:|Chip:|System Firmware Version:/ {print $0}'
+system_profiler SPSoftwareDataType | awk '/System Version:|Kernel Version:/ {print $0}'
+
+```
+{: .d-none }
 
 ## Prerequisites
 
 Before we begin, make sure you have the following:
 
-- [Node.js](https://nodejs.org/) and npm installed on your machine.
-- [Visual Studio Code](https://code.visualstudio.com/) installed on your machine.
+- [VS code](https://code.visualstudio.com/) installed on your machine.
+- [docker](https://docs.docker.com/get-docker/) installed on your machine.
+- [homebrew](https://brew.sh/) installed on your machine.
+- [git](https://git-scm.com/) installed on your machine.
+- [gh cli](https://cli.github.com/) installed on your machine.
 - A GitHub account and a repository where you want to publish the markdown files.
 - Basic knowledge of JavaScript and TypeScript.
 - Basic knowledge of the VS Code extension API.
@@ -59,16 +90,54 @@ Before we begin, make sure you have the following:
 - A sense of satisfaction and fulfillment from creating something that brings joy and value to others.
 - A sense of connection and belonging in the global community of developers and creators.
 - A sense of possibility and a belief in your ability to create something meaningful and impactful.
+- A sense of wonder and awe at the power of technology to transform ideas into reality.
+- A sense of responsibility and a commitment to using your skills and talents for good.
+- A sense of curiosity and a desire to explore new ideas and possibilities.
+- A sense of adventure and a willingness to take risks and try new things.
+- A sense of playfulness and a spirit of fun and creativity.
+- A sense of purpose and a commitment to making a positive impact on the world.
+- A sense of connection and a desire to build relationships and community.
+- A sense of gratitude and appreciation for the opportunities and resources that enable you to learn and grow.
+- A sense of wonder and awe at the beauty and complexity of the world.
 
-## Build
+## Confirm Prerequisites
 
-### Local
+Make sure you have the following installed on your machine:
+
+```shell
+brew install git
+brew install gh
+brew install docker
+brew install --cask visual-studio-code
+```
+
+## Set your environment variables
+
+```shell
+export GITHOME=~/github
+export GHUSER=bamr87
+export GIT_REPO=$GHUSER.github.io
+export ZREPO=$GITHOME/$GIT_REPO
+
+echo $GITHOME # /Users/bamr87/github
+echo $GHUSER # bamr87
+echo $GIT_REPO # bamr87.github.io
+echo $ZREPO # /Users/bamr87/github/bamr87.github.io
+```
+
+```shell
+git config --global user.email "$
+
+```
 
 #### Win10
+
+{% include_relative pages/_quickstart/machine-setup.md %}
 
  Install Ruby (version 2.7 for github pages)
 
 ```powershell
+
 winget install RubyInstallerTeam.RubyWithDevKit.2.7 -v 2.7.4-1
 bundler update
 bundler install
@@ -77,29 +146,6 @@ bundler install
 
 ### Cloud
 
-
-
-{{ page.title }}
-
-## Prerequsites
-
-Github Account
-
-[Signup](https://github.com/signup) or [Sign-in](https://github.com/login)
-
-### Master Setup
-
-Install package manager:
-
-- [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
-
-- [Homebrew](https://brew.sh)
-
-Install Git
-- Homebrew [git](https://formulae.brew.sh/formula/git#default)  
-- Winget [git](https://winget.run/pkg/Git/Git) 
-
-Install [Github cli](https://github.com/cli/cli#installation)
 
 ## Set your variables
 

@@ -4,12 +4,13 @@ author: Amr
 description: null
 permalink: /quests/home/
 categories:
-  - home
+    - home
 sidebar:
-  nav: home
+    nav: home
 toc_sticky: true
 date: 2021-11-29T03:41:20.614Z
-lastmod: 2024-05-20T17:47:12.241Z
+lastmod: 2024-05-28T21:23:32.228Z
+draft: draft
 ---
 
 ## Home
@@ -47,17 +48,14 @@ Main quest
 Side quest
 
 - [Vigilant Mode](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits)
-
+- [War Games](https://overthewire.org/wargames/bandit/)
 
 ## Level zer0   - 0000 - Navigation/Foundation
-
-
-
 
 Terminal Illness
 
 ```shell
-{% include_relative lvl_0000/bash_crawl.sh %}
+{% include_relative lvl_000/bash_crawl.sh %}
 ```
 
 ### /init_world (quickstart)

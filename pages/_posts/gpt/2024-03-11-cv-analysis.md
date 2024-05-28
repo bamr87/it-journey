@@ -7,17 +7,17 @@ description: An analysis of a CV and recommendations for career paths and growth
 snippet: null
 categories:
     - Finance
+tags:
     - IT Consulting
     - Enterprise Systems
     - ERP Systems
     - Data Analytics
     - Project Management
-tags:
     - CV
     - GPT-4
 meta: null
 draft: true
-lastmod: 2024-03-11T20:54:58.586Z
+lastmod: 2024-05-28T04:15:59.343Z
 ---
 
 ## CV Analysis

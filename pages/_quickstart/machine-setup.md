@@ -12,7 +12,7 @@ keywords:
   - homebrew
   - winget
   - apt
-lastmod: 2024-05-17T04:39:35.014Z
+lastmod: 2024-05-27T04:59:45.030Z
 draft: true
 slug: machine-setup
 ---
@@ -249,7 +249,6 @@ Or install individually using a loop
 mkdir _quest/init_world/hello-mac/
 ln ../_quest/init_world/hello-mac/hb-packages.sh _quest/init_world/hello-mac/hb-packages.sh
 
-{% include_relative /scripts/hb-packages.sh %}
 ```
 
 ***Linux***

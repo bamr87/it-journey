@@ -11,7 +11,8 @@ tags:
   - article
 meta: null
 draft: true
-lastmod: 2024-05-15T03:05:07.312Z
+date: 2024-05-28T04:22:21.140Z
+lastmod: 2024-05-28T04:22:22.855Z
 keywords:
   - Chat GPT
   - Penrose Triangle

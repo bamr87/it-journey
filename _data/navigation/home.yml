@@ -4,10 +4,12 @@
   sublinks:
     - title: Style
       url: /home/style/
-- title: Roadmap
+- title: Map
   icon: bi-map
-  url: /roadmap
+  url: /search/index
   sublinks:
     - title: Search
       url: /search/
+    - title: Roadmap
+      url: /roadmap/
 

@@ -1,10 +1,22 @@
 ---
 title: "Frontend Forests: Building a Jekyll Site with Bootstrap"
-permalink: /quests/frontend/
-layout: page
+layout: null
 description: Embark on a quest to build a Jekyll site using Bootstrap for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 preview: /images/frontend-forests.png
-lastmod: 2024-03-04T23:06:19.697Z
+lastmod: 2024-05-28T04:03:05.692Z
+permalink: /quests/frontend/
+date: 2024-05-28T02:17:12.672Z
+tags: []
+categories: []
+sub-title: null
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests
+snippet: null
+author: GPT and bamr87
+keywords: {}
+slug: frontend-forests
+attachments: ""
+type: default
+draft: draft
 ---
 
 Embarking on the quest to build a Jekyll site using Bootstrap for CSS and JavaScript in the Frontend Forests requires a clear map and a set of steps to guide you through the enchanted woods. Below is an outline designed to navigate you through this journey, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.

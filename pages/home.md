@@ -2,48 +2,37 @@
 title: Home
 author: bamr87
 description: This is an overall outline of this site, and a place to start or come back to when lost.
+excerpt: This is where we begin our journey. The place where we return after getting lost or wandering off.
 purpose: To build a platform for learning and share knowledge and tools
 keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
-sidebar: 
+bookmark: /zer0/
+sidebar:
    nav: home
 lastmod: 2024-05-15T03:54:48.681Z
 TODO:
-   - Fix the copy button on code snippets
-   - fix the top nav bar
-   - fix the sidebar
+   - Add a story line
+draft: draft
 ---
+
+Go to [bookmark]({{ page.bookmark }})
+
+
+## TODO 
 
 {{ page.TODO }}
 {:.dev-settings .alert .alert-warning}
-
-{{ page.description }}
-{:.para-one}
-
-{{ page.purpose }}
-{:.para-one}
 
 ## Introduction
 
 This is where we begin our journey. The place where we return after getting lost or wandering off.
 Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
-There are journals to capture our experiences and findings, notes to quickly reference when our memories fail, and a library of documentation that gives us the depth of knowledge to build upon and share.
+There are [journals](/posts) to capture our experiences and findings, [notes](/notes) to quickly reference when our memories fail, and a [library](/docs) of documentation that gives us the depth of knowledge to build upon and share.
 Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
 
 ## Abstract
 
 From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
-{: .para-one #abstract .accordion-body}
-
-## Roadmap
-
-Here are a
- few routes:
-
-<iframe src="https://roadmap.sh/r/embed?id=66254a38e699ec2b9b39a61e" width="100%" height="800px" frameBorder="0"
-></iframe>
-
-[source](https://roadmap.sh/r/roadmaps---it-journey)
 
 ### Zer0 to Her0 [Quest](/quest/)
 

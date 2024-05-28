@@ -17,4 +17,6 @@ if [[ $parm1 == "no" ]]; then
   fi
 exit
 
-git clone https://gitlab.com/slackermedia/bashcrawl.git
+git clone https://gitlab.com/slackermedia/bashcrawl.git -o bashell
+
+

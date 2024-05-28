@@ -413,7 +413,7 @@ exclude:
   - Gemfile
   - node_modules/
   - vendor/
-  - "*.sh"
+  # - "*.sh"
   - submodules/
 
 # Sass/SCSS
