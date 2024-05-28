@@ -22,7 +22,7 @@ date: 2024-05-27T04:49:32.883Z
 snippet: What is a snippet?
 ---
 
-Version Test
+Version Test take 2
 
 # {{ page.title }} Version {{ page.version }}
 
