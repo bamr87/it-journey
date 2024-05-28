@@ -3,7 +3,7 @@ title: zer0
 sub-title: 2 her0
 description: zer0
 excerpt: zer0 to her0
-version: 0.0.0
+version: 0.0.1
 tags:
   - jekyll
 categories:
@@ -22,7 +22,7 @@ date: 2024-05-27T04:49:32.883Z
 snippet: What is a snippet?
 ---
 
-Version Test take 3
+Version Test take 4
 
 # {{ page.title }} Version {{ page.version }}
 
