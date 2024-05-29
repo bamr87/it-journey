@@ -18,6 +18,12 @@ jobs:
           python-version: '3.x'
 
       - name: Append feature to markdown file
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPO_URL: https://github.com/${{ github.repository }}/issues/
+          GITHUB_WORKSPACE: ${{ github.workspace }}
         run: |
           python script/append_feature.py
 

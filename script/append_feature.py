@@ -1,3 +1,4 @@
+import os
 import re
 
 issue_title = "${{ github.event.issue.title }}"
@@ -5,8 +6,11 @@ issue_body = "${{ github.event.issue.body }}"
 issue_number = "${{ github.event.issue.number }}"
 repo_url = "https://github.com/${{ github.repository }}/issues/"
 
+# Construct the absolute path to the markdown file
+file_path = os.path.join(os.getenv("GITHUB_WORKSPACE"), "it-journey/pages/_about/features/index.md")
+
 # Read the markdown file
-with open("it-journey/pages/_about/features/index.md", "r") as file:
+with open(file_path, "r") as file:
     lines = file.readlines()
 
 # Find the line number of the "Requested features" header
