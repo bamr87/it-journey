@@ -23,11 +23,8 @@ header_line = next(i for i, line in enumerate(lines) if "Requested features" in 
 # Find the line number of the next header (or the end of the file)
 next_header_line = next((i for i, line in enumerate(lines[header_line+1:], start=header_line+1) if re.match(r"^## ", line)), len(lines))
 
-# Insert the new feature request before the next header
-lines.insert(next_header_line, f"{issue_title} - FR{issue_number} | [{issue_number}]({repo_url}{issue_number})\n")
-
-# Append an empty line
-lines.append('\n')
+# Insert the new feature request and a blank line before the next header
+lines.insert(next_header_line, f"{issue_title} - FR{issue_number} | [{issue_number}]({repo_url}{issue_number})\n\n")
 
 # Write the updated content back to the markdown file
 with open(file_path, "w") as file:
