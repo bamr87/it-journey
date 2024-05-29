@@ -22,6 +22,6 @@ next_header_line = next((i for i, line in enumerate(lines[header_line+1:], start
 # Insert the new feature request before the next header
 lines.insert(next_header_line, f"| {issue_title} | {issue_body} | [{issue_number}]({repo_url}{issue_number}) |\n")
 
-# Write the modified lines back to the file
-with open("it-journey/pages/_about/features/index.md", "w") as file:
+# Write the updated content back to the markdown file
+with open(file_path, "w") as file:
     file.writelines(lines)
