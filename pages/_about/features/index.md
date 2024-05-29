@@ -68,6 +68,7 @@ Add any other context or screenshots about the feature request here.
 
 test
  | [53](https://github.com/bamr87/it-journey/issues/53) |
+Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
 ## Old List
 
 - add automated changelog page
@@ -102,3 +103,4 @@ test
 - simulate generic business operations
 - build backend todo interface checking
 - Build note to article function/workflow
+
