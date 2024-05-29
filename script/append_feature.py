@@ -3,7 +3,6 @@ import re
 
 # Use os.getenv to get the environment variables
 issue_title = os.getenv("ISSUE_TITLE")
-issue_body = os.getenv("ISSUE_BODY")
 issue_number = os.getenv("ISSUE_NUMBER")
 repo_url = os.getenv("REPO_URL")
 
@@ -25,7 +24,7 @@ header_line = next(i for i, line in enumerate(lines) if "Requested features" in 
 next_header_line = next((i for i, line in enumerate(lines[header_line+1:], start=header_line+1) if re.match(r"^## ", line)), len(lines))
 
 # Insert the new feature request before the next header
-lines.insert(next_header_line, f"| {issue_title} | {issue_body} | [{issue_number}]({repo_url}{issue_number}) |\n")
+lines.insert(next_header_line, f"{issue_title} - FR{issue_number} | [{issue_number}]({repo_url}{issue_number})\n")
 
 # Append an empty line
 lines.append('\n')
