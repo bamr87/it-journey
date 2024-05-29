@@ -8,7 +8,7 @@ categories: []
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2024-05-29T16:38:47.250Z
+lastmod: 2024-05-29T18:39:10.146Z
 draft: in progress
 inspiration:
   - features are the foundation of the future
@@ -46,30 +46,9 @@ Title | Description | Issue #
 ---------|----------|---------
 Test Title | test desc | [#53](https://github.com/bamr87/it-journey/issues/53)
 Add create new post/feature button | Please add a new feature to add new features. | [#56](https://github.com/bamr87/it-journey/issues/56)
-
-| ${{ github.event.issue.title }} | ${{ github.event.issue.body }} | [${{ github.event.issue.number }}](https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}) |
-| Feature Request - FR000001 | **Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
-
-Test
-
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-Test
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-Test
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
-
-test
- | [53](https://github.com/bamr87/it-journey/issues/53) |
 Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
 Feature Request - export to csv - FR75 | [75](https://github.com/bamr87/it-journey/issues/75)
+
 ## Old List
 
 - add automated changelog page
