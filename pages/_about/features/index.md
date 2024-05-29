@@ -8,7 +8,7 @@ categories: []
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2024-05-29T18:39:10.146Z
+lastmod: 2024-05-29T18:54:16.351Z
 draft: in progress
 inspiration:
   - features are the foundation of the future
@@ -42,14 +42,13 @@ TODO: generate a list of features based on folder contents
 
 ## Requested features
 
-Title | Description | Issue #
----------|----------|---------
-Test Title | test desc | [#53](https://github.com/bamr87/it-journey/issues/53)
-Add create new post/feature button | Please add a new feature to add new features. | [#56](https://github.com/bamr87/it-journey/issues/56)
+Title | Issue #
+---------|----------
+Test Title | [#53](https://github.com/bamr87/it-journey/issues/53)
+Add create new post/feature button | [#56](https://github.com/bamr87/it-journey/issues/56)
 Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
 Feature Request - export to csv - FR75 | [75](https://github.com/bamr87/it-journey/issues/75)
 
-Feature Request - Test feature request feature - FR76 | [76](https://github.com/bamr87/it-journey/issues/76)
 ## Old List
 
 - add automated changelog page
