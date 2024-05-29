@@ -3,9 +3,12 @@ title: zer0
 sub-title: 2 her0
 description: zer0
 excerpt: zer0 to her0
-version: 0.0.2
+version: 0.0.3
 tags:
   - jekyll
+  - bootstrap5
+  - javascript
+  - docker
 categories:
   - bootstrap
   - quickstart
@@ -17,6 +20,9 @@ permalink: /zer0/
 slug: zer0
 keywords:
   - jekyll
+  - bootstrap5
+  - javascript
+  - docker
   - zer0
 date: 2024-05-27T04:49:32.883Z
 snippet: What is a snippet?
