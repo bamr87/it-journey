@@ -50,6 +50,8 @@ Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/is
 Feature Request - export to csv - FR75 | [75](https://github.com/bamr87/it-journey/issues/75)
 
 Feature Request - Test feature request feature - FR76 | [76](https://github.com/bamr87/it-journey/issues/76)
+Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
+
 ## Old List
 
 - add automated changelog page
@@ -84,4 +86,3 @@ Feature Request - Test feature request feature - FR76 | [76](https://github.com/
 - simulate generic business operations
 - build backend todo interface checking
 - Build note to article function/workflow
-
