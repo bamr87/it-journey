@@ -1,10 +1,11 @@
 import os
 import re
 
-issue_title = "${{ github.event.issue.title }}"
-issue_body = "${{ github.event.issue.body }}"
-issue_number = "${{ github.event.issue.number }}"
-repo_url = "https://github.com/${{ github.repository }}/issues/"
+# Use os.getenv to get the environment variables
+issue_title = os.getenv("ISSUE_TITLE")
+issue_body = os.getenv("ISSUE_BODY")
+issue_number = os.getenv("ISSUE_NUMBER")
+repo_url = os.getenv("REPO_URL")
 
 # Construct the absolute path to the markdown file
 file_path = os.path.join(os.getenv("GITHUB_WORKSPACE"), "pages/_about/features/index.md")
@@ -12,6 +13,10 @@ file_path = os.path.join(os.getenv("GITHUB_WORKSPACE"), "pages/_about/features/i
 # Read the markdown file
 with open(file_path, "r") as file:
     lines = file.readlines()
+
+# Remove trailing empty lines
+while lines[-1].strip() == '':
+    lines.pop()
 
 # Find the line number of the "Requested features" header
 header_line = next(i for i, line in enumerate(lines) if "Requested features" in line)
@@ -21,6 +26,9 @@ next_header_line = next((i for i, line in enumerate(lines[header_line+1:], start
 
 # Insert the new feature request before the next header
 lines.insert(next_header_line, f"| {issue_title} | {issue_body} | [{issue_number}]({repo_url}{issue_number}) |\n")
+
+# Append an empty line
+lines.append('\n')
 
 # Write the updated content back to the markdown file
 with open(file_path, "w") as file:
