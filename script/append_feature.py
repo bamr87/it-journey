@@ -7,7 +7,7 @@ issue_number = "${{ github.event.issue.number }}"
 repo_url = "https://github.com/${{ github.repository }}/issues/"
 
 # Construct the absolute path to the markdown file
-file_path = os.path.join(os.getenv("GITHUB_WORKSPACE"), "it-journey/pages/_about/features/index.md")
+file_path = os.path.join(os.getenv("GITHUB_WORKSPACE"), "pages/_about/features/index.md")
 
 # Read the markdown file
 with open(file_path, "r") as file:
