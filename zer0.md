@@ -3,7 +3,7 @@ title: zer0
 sub-title: 2 her0
 description: zer0
 excerpt: zer0 to her0
-version: 0.0.3
+version: 0.0.4
 tags:
   - jekyll
   - bootstrap5
@@ -49,8 +49,8 @@ For my development machine, I use the following specs:
 - Kernel Version: Darwin 23.4.0
 
 ```shell
-
 # Get specific hardware and software information for Macs
+
 system_profiler SPHardwareDataType | awk '/Model Name:|Model Identifier:|Model Number:|Chip:|System Firmware Version:/ {print $0}'
 system_profiler SPSoftwareDataType | awk '/System Version:|Kernel Version:/ {print $0}'
 
@@ -134,36 +134,6 @@ echo $ZREPO # /Users/bamr87/github/bamr87.github.io
 ```
 
 ```shell
-git config --global user.email "$
-
-```
-
-#### Win10
-
-{% include_relative pages/_quickstart/machine-setup.md %}
-
- Install Ruby (version 2.7 for github pages)
-
-```powershell
-
-winget install RubyInstallerTeam.RubyWithDevKit.2.7 -v 2.7.4-1
-bundler update
-bundler install
-
-```
-
-### Cloud
-
-
-## Set your variables
-
-```shell
-export GITHOME=~/github
-export GHUSER=bamr87
-export GIT_REPO=$GHUSER.github.io
-export ZREPO=$GITHOME/$GIT_REPO
-echo $GITHOME $ZREPO $GHUSER $GIT_REPO
-
 git config --global user.email "$GHUSER@users.noreply.github.com"
 git config --global user.name "$GHUSER"
 ```

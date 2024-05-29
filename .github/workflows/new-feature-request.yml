@@ -1,0 +1,29 @@
+name: Add new feature request
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  update_features:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'approved'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Append feature to markdown file
+        run: |
+          python script/append_feature.py
+
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "Add new feature request: ${{ github.event.issue.title }}"

@@ -8,7 +8,7 @@ categories: []
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2024-05-24T04:34:37.372Z
+lastmod: 2024-05-29T16:38:47.250Z
 draft: in progress
 inspiration:
   - features are the foundation of the future
@@ -40,9 +40,15 @@ TODO: generate a list of features based on folder contents
 - [ ] infinite scrolling landing page 
 - [ ] Landing page site intro based on features
 
-## TODO: Requested features
+## Requested features
 
-- Add create new post/feature button
+Title | Description | Issue #
+---------|----------|---------
+Test Title | test desc | [#53](https://github.com/bamr87/it-journey/issues/53)
+Add create new post/feature button | Please add a new feature to add new features. | [#56](https://github.com/bamr87/it-journey/issues/56)
+
+## Old List
+
 - add automated changelog page
 - add 3rd level nav bar drop down option
 - automate pull request to publish to gh-pages
