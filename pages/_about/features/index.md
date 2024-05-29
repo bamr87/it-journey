@@ -69,6 +69,7 @@ Add any other context or screenshots about the feature request here.
 test
  | [53](https://github.com/bamr87/it-journey/issues/53) |
 Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
+Feature Request - export to csv - FR75 | [75](https://github.com/bamr87/it-journey/issues/75)
 ## Old List
 
 - add automated changelog page
