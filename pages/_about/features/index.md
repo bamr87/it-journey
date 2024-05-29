@@ -49,6 +49,7 @@ Add create new post/feature button | [#56](https://github.com/bamr87/it-journey/
 Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
 Feature Request - export to csv - FR75 | [75](https://github.com/bamr87/it-journey/issues/75)
 
+Feature Request - Test feature request feature - FR76 | [76](https://github.com/bamr87/it-journey/issues/76)
 ## Old List
 
 - add automated changelog page
