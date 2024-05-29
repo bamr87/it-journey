@@ -63,7 +63,7 @@ repo_map                 : "_about/"
 maintainers:
   - name: "Amr"
     profile: "/github.com/bamr87"
-  - name: "Vacant"
+  - name: "bob"
     profile: "/github.com"
 
 ## Personalization ----------------------------------------------------------------
