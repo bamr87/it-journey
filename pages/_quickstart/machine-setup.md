@@ -1,8 +1,9 @@
 ---
 title: Machine Setup
-author: null
+author: bamr87
+description: A guide to setting up your machine for Jekyll development.
+excerpt: A guide to setting up your machine for Jekyll development.
 layout: default
-description: null
 keywords:
   - machine setup
   - jekyll
@@ -12,7 +13,7 @@ keywords:
   - homebrew
   - winget
   - apt
-lastmod: 2024-05-27T04:59:45.030Z
+lastmod: 2024-05-30T22:34:02.510Z
 draft: true
 slug: machine-setup
 ---

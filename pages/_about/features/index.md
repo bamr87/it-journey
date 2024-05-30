@@ -1,6 +1,7 @@
 ---
 title: Features (~) Index
-description: null
+description: A list of features that are currently implemented and requested for the site.
+excerpt: A list of features that are currently implemented and requested for the site.
 date: 2024-03-12T21:42:28.963Z
 preview: null
 tags: []
@@ -8,49 +9,51 @@ categories: []
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2024-05-29T18:54:16.351Z
+lastmod: 2024-05-30T16:59:37.397Z
 draft: in progress
 inspiration:
   - features are the foundation of the future
-TODO: generate a list of features based on folder contents
+quest: /quests/featured-future/
 ---
 
 ## Current Features
 
-- [x] Github Pages compatibility
-- [x] giscus.app/
-- [x] Jekyll Admin
-- [x] MathJax
-- [x] Bootstrap 5 CDN
-- [x] Algolia Search indexing
-- [x] Jekyll Site Generation
-- [x] Travic CI Build Automation
-- [x] Health Status/Monitoring (Build)
-- [x] Dark Mode toggle
-- [x] JQuery Plugin
-- [x] Auto generated right side bar TOC
-- [x] Right side quick edit links to GitHub and VS Code
-- [x] Left sidebar site Navigation (based on nav data file)
-- [x] Code Copy button
-- [x] Back to top button in mobile view [w3schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
-- [x] Category filter for posts
-- [x] Code syntax highlighting
-- [x] Programming Language cheat sheets
-- [ ] data file generation program
-- [ ] infinite scrolling landing page 
-- [ ] Landing page site intro based on features
+{: .table .table-bordered .table-striped .table-hover .table-responsive}
+| Feature                                               | Implemented | Issue # | Quest |
+| ----------------------------------------------------- | ----------- | ------- | --- |
+| Github Pages compatibility                            | True        |test|test|
+| giscus.app/                                           | True        |         |     |
+| Jekyll Admin                                          | True        |         |     |
+| MathJax                                               | True        |         |     |
+| Bootstrap 5 CDN                                       | True        |         |     |
+| Algolia Search indexing                               | True        |         |     |
+| Jekyll Site Generation                                | True        |         |     |
+| Travis CI Build Automation                            | True        |         |     |
+| Health Status/Monitoring (Build)                      | True        |         |     |
+| Dark Mode toggle                                      | True        |         |     |
+| JQuery Plugin                                         | True        |         |     |
+| Auto generated right side bar TOC                     | True        |         |     |
+| Right side quick edit links to GitHub and VS Code     | True        |         |     |
+| Left sidebar site Navigation (based on nav data file) | True        |         |     |
+| Code Copy button                                      | True        |         |     |
+| Back to top button in mobile view                     | True        |         |     |
+| Category filter for posts                             | True        |         |     |
+| Code syntax highlighting                              | True        |         |     |
+| Programming Language cheat sheets                     | True        |         |     |
+| data file generation program                          | False       |         |     |
+| infinite scrolling landing page                       | False       |         |     |
+| Landing page site intro based on features             | False       |         |     |
 
 ## Requested features
 
-Title | Issue #
----------|----------
-Test Title | [#53](https://github.com/bamr87/it-journey/issues/53)
-Add create new post/feature button | [#56](https://github.com/bamr87/it-journey/issues/56)
-Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
-Feature Request - export to csv - FR75 | [75](https://github.com/bamr87/it-journey/issues/75)
-
-Feature Request - Test feature request feature - FR76 | [76](https://github.com/bamr87/it-journey/issues/76)
-Feature Request - FR000001 - FR53 | [53](https://github.com/bamr87/it-journey/issues/53)
+{: .table .table-bordered .table-striped .table-hover .table-responsive}
+| Title                                                 | Issue #                                               |
+| ----------------------------------------------------- | ----------------------------------------------------- |
+| Add create new post/feature button                    | [56](https://github.com/bamr87/it-journey/issues/56) |
+| Feature Request - FR000001 - FR53                     | [53](https://github.com/bamr87/it-journey/issues/53)  |
+| Feature Request - export to csv - FR75                | [75](https://github.com/bamr87/it-journey/issues/75)  |
+| Feature Request - Test feature request feature - FR76 | [76](https://github.com/bamr87/it-journey/issues/76)  |
+| Feature Request - FR000001 - FR53                     | [53](https://github.com/bamr87/it-journey/issues/53)  |
 
 ## Old List
 
