@@ -10,8 +10,12 @@
   background-color: black;
   border: none;
   cursor: pointer;
+  &:focus {
+    outline: none; // remove default focus outline
+    box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4); // add custom focus style
+  };
 }
-  
+
   pre.highlight {
     padding: 8px 12px;
     // position: relative;
@@ -44,7 +48,7 @@
       position: absolute;
       right: 1.2rem;
       top: 1.2rem;
-      opacity: 0;
+      // opacity: 0;
   
       &:active,
       &:focus,
@@ -58,17 +62,17 @@
     &:focus .copy,
     &:hover .copy {
       background: rgba(0, 0, 0, 0.7);
-      opacity: 1;
+      // opacity: 1;
     }
   }
 
-  pre.highlight > button {
-    opacity: 0;
-  }
+  // pre.highlight > button {
+  //   opacity: 0;
+  // }
   
-  pre.highlight:hover > button {
-    opacity: 1;
-  }
+  // pre.highlight:hover > button {
+  //   opacity: 1;
+  // }
   
   pre.highlight > button:active,
   pre.highlight > button:focus {
@@ -92,10 +96,10 @@ pre>code {
 }
 
 
-pre.has-copy-button .copy {
-  display: none;
-}
+// pre.has-copy-button .copy {
+//   display: none;
+// }
 
-pre.has-copy-button:hover .copy {
-  display: inline-block;
-}
+// pre.has-copy-button:hover .copy {
+//   display: inline-block;
+// }

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       button.type = 'button';
       button.ariaLabel = 'Copy code to clipboard';
       button.innerText = copyText;
+      button.tabIndex = 1; // Add this line to make the button focusable with the keyboard
       button.addEventListener('click', function () {
         var code = pre.querySelector('code').innerText.trim();
         navigator.clipboard.writeText(code);
