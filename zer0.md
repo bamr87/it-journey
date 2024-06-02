@@ -1,9 +1,8 @@
 ---
 title: zer0
 sub-title: 2 her0
-description: zer0
-excerpt: zer0 to her0
-version: 0.0.5
+description: Seed page with scripts, commands, instructions to build the most epic statically generated website in the universe.
+version: 0.0.7
 tags:
   - jekyll
   - bootstrap5
@@ -28,15 +27,15 @@ date: 2024-05-27T04:49:32.883Z
 snippet: What is a snippet?
 ---
 
-Version Test take 5
-
-# {{ page.title }} Version {{ page.version }}
-
 This is the seed of the project with all the commands, scripts, and instructions that build this application from the ground up.
 In theory, this should be the only file you need to build the project from scratch.
 However, in practice, you may need to install additional dependencies or configure the environment to match the target system. 
 For example, you may need to install Ruby, Node.js, or other tools to run the application locally or deploy it to a server.
 Therefore, part of this document is to provide a list of prerequisites and setup instructions to help you get started with the project.
+
+## {{ page.title }} Version {{ page.version }}
+
+## System Specs
 
 For my development machine, I use the following specs:
 
@@ -47,6 +46,8 @@ For my development machine, I use the following specs:
 - System Firmware Version: 10151.101.3
 - System Version: macOS 14.4.1 (23E224)
 - Kernel Version: Darwin 23.4.0
+
+Inspect the page to see the hidden code to populate your system specs for a MacBook pro. Press (cmd + shift + c) in the browser.
 
 ```shell
 # Get specific hardware and software information for Macs
@@ -59,60 +60,54 @@ system_profiler SPSoftwareDataType | awk '/System Version:|Kernel Version:/ {pri
 
 ## Prerequisites
 
-Before we begin, make sure you have the following:
+Before we begin, make sure you have the following software installed on your machine:
 
-- [VS code](https://code.visualstudio.com/) installed on your machine.
-- [docker](https://docs.docker.com/get-docker/) installed on your machine.
-- [homebrew](https://brew.sh/) installed on your machine.
-- [git](https://git-scm.com/) installed on your machine.
-- [gh cli](https://cli.github.com/) installed on your machine.
-- A GitHub account and a repository where you want to publish the markdown files.
-- Basic knowledge of JavaScript and TypeScript.
-- Basic knowledge of the VS Code extension API.
+- [VS code](https://code.visualstudio.com/) installed on your machine (if you're smart)
+- [docker](https://docs.docker.com/get-docker/) installed on your machine (if you're a pro)
+- [homebrew](https://brew.sh/) installed on your machine (if you're a cli junkie)
+- [git](https://git-scm.com/) installed on your machine (if you want to track the truth)
+- [gh cli](https://cli.github.com/) installed on your machine (if you want to publish the truth)
+
+For step-by-step instructions on how to install these tools, visit the "Quickstart" section of the site here: [Quickstart](/quickstart)
+
+To use these tools effectively, you need:
+
+- A GitHub account and a repository where you want to maintain and publish your site.
 - A personal access token from GitHub to authenticate with the GitHub API.
-- A text editor or IDE to write and test the extension code.
-- A terminal or command line interface to run commands.
-- An internet connection to install dependencies and access documentation.
-- A desire to automate the process of saving Copilot conversations as markdown files as the building blocks of your documentation.
-- A willingness to learn and experiment with VS Code extension development.
 - A cup of coffee or your favorite beverage to keep you energized.
 - A positive attitude and a sense of curiosity.
 - A sense of adventure and a willingness to explore new tools and technologies.
 - A growth mindset and a willingness to embrace challenges and learn from mistakes.
 - A sense of humor and the ability to laugh at unexpected errors and bugs.
 - A supportive community or network of friends and colleagues to ask for help and share your progress.
-- A clear goal and motivation to build a useful and practical extension.
+- A clear goal and motivation to build this project and share your knowledge with the world.
 - A spirit of creativity and a desire to express yourself through code and technology.
-- A sense of responsibility and a commitment to ethical and inclusive software development practices.
-- A sense of empathy and a desire to create tools that benefit others and make the world a better place.
-- A sense of gratitude and appreciation for the opportunities and resources that enable you to learn and grow.
-- A sense of wonder and a curiosity about the possibilities of AI and machine learning in software development.
-- A sense of purpose and a vision for how your extension can help developers be more productive and creative.
-- A sense of determination and a willingness to persevere through challenges and setbacks.
-- A sense of humility and a willingness to learn from others and share your knowledge with the community.
-- A sense of optimism and a belief in the potential of technology to improve people's lives and create positive change.
-- A sense of fun and a spirit of playfulness to make the learning process enjoyable and engaging.
-- A sense of balance and a commitment to taking breaks and caring for your well-being while working on the extension.
-- A sense of completion and a desire to celebrate your achievements and share your extension with the world.
-- A sense of anticipation and excitement to see how your extension can make a difference in the developer community.
-- A sense of satisfaction and fulfillment from creating something that brings joy and value to others.
-- A sense of connection and belonging in the global community of developers and creators.
-- A sense of possibility and a belief in your ability to create something meaningful and impactful.
-- A sense of wonder and awe at the power of technology to transform ideas into reality.
-- A sense of responsibility and a commitment to using your skills and talents for good.
-- A sense of curiosity and a desire to explore new ideas and possibilities.
-- A sense of adventure and a willingness to take risks and try new things.
-- A sense of playfulness and a spirit of fun and creativity.
-- A sense of purpose and a commitment to making a positive impact on the world.
-- A sense of connection and a desire to build relationships and community.
-- A sense of gratitude and appreciation for the opportunities and resources that enable you to learn and grow.
-- A sense of wonder and awe at the beauty and complexity of the world.
+
+More importantly, you need to:
+
+- Embrace responsibility and ethical, inclusive software development.
+- Cultivate empathy and create tools that benefit others.
+- Appreciate opportunities and resources for learning and growth.
+- Foster curiosity about AI and machine learning.
+- Pursue a purpose that enhances productivity and creativity.
+- Persevere through challenges with determination.
+- Learn from others and share knowledge with humility.
+- Believe in technology's potential to improve lives and create positive change.
+- Make the learning process fun and engaging.
+- Balance work with breaks for well-being.
+- Celebrate achievements and share your work with the world.
+- Anticipate making a difference in the developer community.
+- Find satisfaction and fulfillment in creating value for others.
+- Connect with the global community of developers and creators.
+- Believe in your ability to create something meaningful and impactful.
+- Stand in awe of technology's power to transform ideas into reality.
 
 ## Confirm Prerequisites
 
 Make sure you have the following installed on your machine:
 
 ```shell
+# install and update prerequisites
 brew install git
 brew install gh
 brew install docker
@@ -132,18 +127,25 @@ brew install --cask visual-studio-code
 
 export GITHOME=~/github
 export GHUSER=bamr87
-export GIT_REPO=zero-mistakes
+export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
+
+```
+
+```shell
+# Confirm the environment variables by echoing them
 
 echo $GITHOME # /Users/bamr87/github
 echo $GHUSER # bamr87
-echo $GIT_REPO # zero-mistakes
-echo $ZREPO # /Users/bamr87/github/zero-mistakes
+echo $GIT_REPO # zer0-mistakes
+echo $ZREPO # /Users/bamr87/github/zer0-mistakes
 ```
 
 ### Set your Git email and name
 
 ```shell
+# Set your Git email and name to tag your commits
+
 git config --global user.email "$GHUSER@users.noreply.github.com"
 git config --global user.name "$GHUSER"
 ```
@@ -153,13 +155,25 @@ git config --global user.name "$GHUSER"
 See [here](https://github.com/settings/emails) for details.
 
 ```shell
-# If you didn't already set it in the previous step
-$GIT_ID = Read-Host "What is your Github ID?"
+# If you didnt already set it in the previous step
+# FIXME: quotes in comments dont work
+
+echo "What is your Github ID?"
+read GIT_ID
+
 ```
 
 ```shell
 # Set your email using ID
+
 git config --global user.email "$GIT_ID+$GHUSER@users.noreply.github.com"
+```
+
+```shell
+# confirm your email
+
+git config -l
+
 ```
 
 ## Initialize your new github repository
@@ -167,28 +181,44 @@ git config --global user.email "$GIT_ID+$GHUSER@users.noreply.github.com"
 [gh cli docs](https://cli.github.com/manual/)
 
 ```shell
-cd ~
-mkdir $GITHOME
-cd $GITHOME
-mkdir $GIT_REPO
-cd $ZREPO
+# Initialize your github repository
+
+gh repo create $GHUSER/$GIT_REPO --public
 ```
 
 ```shell
-# If new repo
+```
+
+```shell
+# Create your github home directory and repo
+
+mkdir -p $ZREPO
+```
+
+```shell
+# If new repo, initialize it
+
 cd $ZREPO
 git init
 echo "# Building new report from $ZREPO" >> README.md
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/$GHUSER/$GIT_REPO.git
+git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git push -u origin main
+
 ```
 
 ## Checkpoint - Github Repo Initialized
 
 Go to your new github repository.
+
+```shell
+# Open your new github repository in the browser
+
+open https://github.com/${GHUSER}/${GIT_REPO}
+
+```
 
 <a id="repo-link"></a>
 
@@ -335,3 +365,40 @@ wget -O $d-home.md https://raw.githubusercontent.com/bamr87/it-journey/master/ho
 ```
 
 ![](../assets/images/header_pages.png)  
+
+## Convert zer0.md to zer0.sh using Python
+
+```python
+def convert_md_to_files(md_file_path):
+    language_files = {}
+    language_mode = None
+    language_extensions = {'python': '.py', 'shell': '.sh'}
+    shebang_lines = {'python': '#!/usr/bin/env python3\n', 'shell': '#!/bin/bash\n'}
+
+    with open(md_file_path, 'r') as md_file:
+        for line in md_file:
+            if line.startswith('```'):
+                if language_mode:
+                    # End of a language block, switch back to markdown mode
+                    language_mode = None
+                else:
+                    # Start of a language block, open a new file for this language if not already open
+                    language = line.strip('`\n')
+                    if language in language_extensions:
+                        language_mode = language
+                        if language not in language_files:
+                            language_file = open(md_file_path.replace('.md', language_extensions[language]), 'w')
+                            if language in shebang_lines:
+                                language_file.write(shebang_lines[language])
+                            language_files[language] = language_file
+                continue
+
+            if language_mode:
+                language_files[language_mode].write(line)
+
+    # Close all open language files
+    for language_file in language_files.values():
+        language_file.close()
+
+convert_md_to_files('zer0.md')
+```
