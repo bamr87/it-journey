@@ -53,10 +53,9 @@ github_site              : 'bamr87.github.io'
 name                     : &name "Amr"
 email                    : "amr@it-journey.dev"
 description              : >- # this means to ignore newlines until the next variable
-  Scrolls and spells of IT magic.
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Collection of articles, notes, and tutorials to build a website
+  or headless CMS using Jekyll and Github Pages.
+  This is my journey from zer0 to her0.
 
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
@@ -139,6 +138,11 @@ links:
   - label: "Instagram"
     icon: "bi-instagram"
     url: "https://instagram.com/bamr42"
+
+youtube:
+  - label: "YouTube"
+    icon: "bi-youtube"
+    url: "https://www.youtube.com/channel/UCO0j3Opg3J9i2iWnDwHUsXQ"
 
 ## Build Framework ##############################################################
 
