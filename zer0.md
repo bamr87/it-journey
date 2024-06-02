@@ -3,7 +3,7 @@ title: zer0
 sub-title: 2 her0
 description: zer0
 excerpt: zer0 to her0
-version: 0.0.4
+version: 0.0.5
 tags:
   - jekyll
   - bootstrap5
@@ -119,23 +119,47 @@ brew install docker
 brew install --cask visual-studio-code
 ```
 
-## Set your environment variables
+## Environment
+
+### Set your own environment variables
+
+{% include zer0-env-var.html %}
+
+### Set the default environment variables
 
 ```shell
+# Or use the following to set the environment variables
+
 export GITHOME=~/github
 export GHUSER=bamr87
-export GIT_REPO=$GHUSER.github.io
+export GIT_REPO=zero-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
 
 echo $GITHOME # /Users/bamr87/github
 echo $GHUSER # bamr87
-echo $GIT_REPO # bamr87.github.io
-echo $ZREPO # /Users/bamr87/github/bamr87.github.io
+echo $GIT_REPO # zero-mistakes
+echo $ZREPO # /Users/bamr87/github/zero-mistakes
 ```
+
+### Set your Git email and name
 
 ```shell
 git config --global user.email "$GHUSER@users.noreply.github.com"
 git config --global user.name "$GHUSER"
+```
+
+### Set your GitHub email using ID (optional)
+
+See [here](https://github.com/settings/emails) for details.
+
+```shell
+# If you didn't already set it in the previous step
+$GIT_ID = Read-Host "What is your Github ID?"
+```
+
+```shell
+# Set your email using ID
+git config --global user.email "$GIT_ID+$GHUSER@users.noreply.github.com"
 ```
 
 ## Initialize your new github repository
@@ -151,12 +175,6 @@ cd $ZREPO
 ```
 
 ```shell
-# If repo already exists
-cd $ZREPO
-gh repo clone $GHUSER/$GIT_REPO
-```
-
-```shell
 # If new repo
 cd $ZREPO
 git init
@@ -164,17 +182,15 @@ echo "# Building new report from $ZREPO" >> README.md
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/$GHUSER/$GHUSER.github.io.git
+git remote add origin https://github.com/$GHUSER/$GIT_REPO.git
 git push -u origin main
 ```
 
 ## Checkpoint - Github Repo Initialized
 
-```shell
-# non-github.io version
-gh repo create $GIT_REPO --public --source=. --remote=upstream
-git remote add origin https://$GHUSER@github.com/$GHUSER/$GIT_REPO.git
-```
+Go to your new github repository.
+
+<a id="repo-link"></a>
 
 ## Initialize Jekyll - If New Repo
 
@@ -249,6 +265,7 @@ echo $JEKYLL_THEME
 cd $JEKYLL_THEME
 
 ```
+
 ### Copy theme repo
 
 ```shell
@@ -284,7 +301,6 @@ jekyll serve
 
 ### Build default page
 
-
 ```shell
 {%- raw -%}
 cd $ZREPO
@@ -293,7 +309,6 @@ cd _layout
 echo "{{ content }}" >> default.html 
 {% endraw %}
 ``` 
-
 
 
 ```shell
@@ -320,4 +335,3 @@ wget -O $d-home.md https://raw.githubusercontent.com/bamr87/it-journey/master/ho
 ```
 
 ![](../assets/images/header_pages.png)  
-
