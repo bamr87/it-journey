@@ -1,53 +1,34 @@
 ---
 title: About
-layout: collection
-excerpt: Summary info about the site
-collection: about
+excerpt: This page provides information about the site, its purpose, and the principles guiding its development.
 permalink: /about/
-lastmod: 2024-05-25T02:22:27.213Z
+lastmod: 2024-05-31T02:27:28.184Z
 slug: about
-draft: draft
+date: 2024-05-31T01:35:49.414Z
+description: This page provides information about the site, its purpose, and the principles guiding its development.
+categories:
+  - about
+tags:
+  - about
+  - principles
+  - open-source
+  - collaboration
+  - DRY
+  - KIS
+  - REnO
+  - MVP
+draft: published
 ---
 
-# About this site
+{{ site.description }}
 
-The site description is: {{site.description}}
-
-The site domain is: {{ site.domain }}
+## Introduction
 
 For those of you who have stumbled upon this partially completed website, as you can see, there's not much useful information here. I'm attempting to build this site while covering fundamental concepts and tools used to build "Information Systems". Obviously, if you're familiar with the subject, it's a huge undertaking, and there's no right way to approach it and there are many technologies to choose from.
 
 Within this site, I attempt to utilize open source technologies and free services so anyone, and everyone, can learn. Not only will you learn how these technologies work that make up the "Internet", but you might find some of these tools/techniques useful in your everyday life, such as journalizing your day, or capturing recipes for later use. This site should be understood by anyone who wants to embark on this journey to learn "IT", and will hopefully give you everything you need to become a full stack developers, if you so choose to.
 
 I chose the domain `{{ site.domain }}` because I hope this site will provide a lifelong learning experience for anyone who wants to learn how to code and build information systems that help them with everyday life.
-
-## Quick Facts
-
-### Site Settings
-
-Key | Value
------|-----
-
-site.title | {{ site.title }}
-site.domain | {{ site.domain }}
-site.
-
-This world was created by {{ site.founder }} and maintained by:
-
-Name | Profile
----------|----------
-{% for follower in site.maintainers -%}
-  {{ follower.name }} | {{ follower.profile }}
-{% endfor %}
-
-
-And, most importantly, Powered By:
-
-Name | Link
----------|----------
-{% for power in site.powered_by -%}
-{{ power.name }} | {{ power.url }}
-{% endfor %}
 
 ## Principles
 
@@ -180,3 +161,29 @@ Here's why collaboration is so crucial in open source development:
 7. **Global Impact**: Finally, collaboration in open source development allows for the creation of software that has a global impact. Just as the combined efforts of wizards from different lands can create magic with far-reaching benefits, open source projects can address needs and solve problems for people all over the world, transcending geographical and cultural boundaries.
 
 In essence, collaboration in open source development embodies the principle that "together, we are stronger." It leverages the collective power of a global community to build software that is more innovative, reliable, and impactful than what could be achieved in isolation. Just like in a magical world, where the combined efforts of many can create wonders far beyond the reach of any individual, open source development thrives on collaboration, making the digital realm a richer, more inclusive, and more innovative space.
+
+## Quick Facts
+
+This world was created by {{ site.founder }} and maintained by:
+
+{:table .table .table-striped}
+Name | Profile
+---------|----------
+{% for follower in site.maintainers -%}
+  {{ follower.name }} | {{ follower.profile }}
+{% endfor %}
+
+And, most importantly, Powered By:
+
+{:table .table .table-striped}
+Name | Link
+---------|----------
+{% for power in site.powered_by -%}
+{{ power.name }} | {{ power.url }}
+{% endfor %}
+
+## Contact Information
+
+If you have any questions, comments, or suggestions, please feel free to reach out to us at:
+
+- Email: {{ site.email }}

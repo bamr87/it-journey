@@ -7,9 +7,10 @@ tags: Bootstrap
 categories: How-To
 sub-title: null
 author: null
-excerpt: null
+excerpt: Steps to add a floating back-to-top button to a website.
 snippet: null
-lastmod: 2024-05-16T01:45:59.228Z
+lastmod: 2024-05-31T01:44:40.366Z
+draft: draft
 ---
 
 [w3 schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)

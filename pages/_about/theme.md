@@ -1,8 +1,9 @@
 ---
 title: Bootstrap Theme Examples
 layout: root
-lastmod: 2024-05-23T16:28:47.022Z
+lastmod: 2024-05-31T01:40:37.133Z
 source: https://getbootstrap.com/docs/5.3/examples/cheatsheet/
+draft: draft
 ---
 
 ## Iframe from Bootstrap
