@@ -17,13 +17,12 @@ draft: draft
 
 Go to [bookmark]({{ page.bookmark }})
 
-## What build today?
+## What to build today?
 
-```txt
+```text
 I want to build an integration from Github to an LLM (such as Gemini) to review markdown files for grammar, spelling, completeness, etc., and then commit the changes for review.
 ```
 
-```
 
 
 

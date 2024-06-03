@@ -2,7 +2,7 @@
 title: zer0
 sub-title: 2 her0
 description: Seed page with scripts, commands, instructions to build the most epic statically generated website in the universe.
-version: 0.0.7
+version: 0.0.8
 tags:
   - jekyll
   - bootstrap5
@@ -108,6 +108,7 @@ Make sure you have the following installed on your machine:
 
 ```shell
 # install and update prerequisites
+
 brew install git
 brew install gh
 brew install docker
@@ -129,7 +130,14 @@ export GITHOME=~/github
 export GHUSER=bamr87
 export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
+```
 
+### Add the environment variables to your shell profile (optional)
+
+```shell
+#open Code to edit your shell profile and copy the environment variables
+
+code ~/.zshrc
 ```
 
 ```shell
@@ -160,7 +168,6 @@ See [here](https://github.com/settings/emails) for details.
 
 echo "What is your Github ID?"
 read GIT_ID
-
 ```
 
 ```shell
@@ -173,21 +180,11 @@ git config --global user.email "$GIT_ID+$GHUSER@users.noreply.github.com"
 # confirm your email
 
 git config -l
-
 ```
 
 ## Initialize your new github repository
 
 [gh cli docs](https://cli.github.com/manual/)
-
-```shell
-# Initialize your github repository
-
-gh repo create $GHUSER/$GIT_REPO --public
-```
-
-```shell
-```
 
 ```shell
 # Create your github home directory and repo
@@ -196,20 +193,25 @@ mkdir -p $ZREPO
 ```
 
 ```shell
+# Initialize your github repository
+
+gh repo create $GHUSER/$GIT_REPO --public --gitignore=jekyll --license=mit
+```
+
+```shell
 # If new repo, initialize it
 
 cd $ZREPO
 git init
-echo "# Building new report from $ZREPO" >> README.md
+curl https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md > README.md
 git add README.md
-git commit -m "first commit"
+git commit -m "Init zer0-mistakes"
 git branch -M main
 git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git push -u origin main
-
 ```
 
-## Checkpoint - Github Repo Initialized
+### Checkpoint - Github Repo Initialized
 
 Go to your new github repository.
 
@@ -222,7 +224,58 @@ open https://github.com/${GHUSER}/${GIT_REPO}
 
 <a id="repo-link"></a>
 
-## Initialize Jekyll - If New Repo
+## Initialize Jekyll
+
+### Create Gemfile
+
+```shell
+# Create a new Gemfile
+cd $ZREPO
+touch Gemfile
+
+# Write the non-commented lines to the Gemfile
+echo 'source "https://rubygems.org"' >> Gemfile
+echo "gem 'github-pages' , '231'" >> Gemfile
+echo "gem 'jekyll' , '3.9.5'" >> Gemfile
+echo "group :jekyll_plugins do" >> Gemfile
+echo "  gem 'jekyll-feed', \"~> 0.17\"" >> Gemfile
+echo "  gem 'jekyll-sitemap' , \"~> 1.4.0\"" >> Gemfile
+echo "  gem 'jekyll-seo-tag', \"~> 2.8.0\"" >> Gemfile
+echo "  gem 'jekyll-paginate', '~> 1.1'" >> Gemfile
+echo "end" >> Gemfile
+```
+
+### Create Dockerfile
+
+```shell
+# Create a new Dockerfile
+cd $ZREPO
+touch Dockerfile
+
+# Write the content to the Dockerfile
+echo "# Use an official Ruby runtime as a parent image" >> Dockerfile
+echo "FROM ruby:2.7.4" >> Dockerfile
+echo "# escape=\\" >> Dockerfile
+echo "ENV GITHUB_GEM_VERSION 231" >> Dockerfile
+echo "ENV JSON_GEM_VERSION 1.8.6" >> Dockerfile
+echo "WORKDIR /app" >> Dockerfile
+echo "ADD . /app" >> Dockerfile
+echo "RUN bundle update" >> Dockerfile
+echo "RUN bundle install" >> Dockerfile
+echo "EXPOSE 4002" >> Dockerfile
+echo 'CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]' >> Dockerfile
+```
+
+```shell
+docker build -t zer0-mistakes .
+```
+
+```shell
+docker run -p 4000:4000 -v $ZREPO:/app zer0-mistakes
+
+```
+
+## Initialize Jekyll - MacOS
 
 Install [jekyll](https://jekyllrb.com/docs/installation/)
 
@@ -239,15 +292,6 @@ bundle install
 ```
 
 ```shell
-jekyll serve
-```
-
-## Initialize Jekyll - If Existing Repo
-
-```shell
-cd $ZREPO
-bundle update
-bundle install
 jekyll serve
 ```
 
@@ -352,16 +396,18 @@ cd -
 
 ![](../assets/images/about-profile.png)  
 
-## Download your home
+## Plant the seed
 
 ```shell
+# Set the date format
 d=$(date +%Y-%m-%d)
 echo "$d"
 ```
 
 ```shell
-cd $ZREPO/_posts
-wget -O $d-home.md https://raw.githubusercontent.com/bamr87/it-journey/master/home.md 
+# Download the seed page
+cd $ZREPO
+wget -O $d-zer0.md https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md 
 ```
 
 ![](../assets/images/header_pages.png)  
