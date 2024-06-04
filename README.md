@@ -2,7 +2,7 @@
 title: README - it-journey
 description: it-journey
 excerpt: it-journey
-version: 0.0.0
+version: 0.0.1
 date-released: 2022-03-01
 repo: https://github.com/bamr87/it-journey
 tags:
@@ -103,7 +103,16 @@ docker build -t it-journey .
 ### Mac
 
 ```shell
-docker run -p 4002:4002 -v /Users/bamr87/github/it-journey:/app it-journey
+# run the docker image and mount the local directory to the container and open a bash shell
+# Run the container in detached mode
+docker run -d -p 4002:4002 -v ${GITHOME}/it-journey:/app --name my_container it-journey
+
+# Start the container and run the CMD line from the Dockerfile
+docker start my_container
+
+# Attach to the running container
+docker exec -it my_container /bin/bash
+
 ```
 
 ```shell

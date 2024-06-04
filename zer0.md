@@ -2,7 +2,7 @@
 title: zer0
 sub-title: 2 her0
 description: Seed page with scripts, commands, instructions to build the most epic statically generated website in the universe.
-version: 0.0.8
+version: 0.0.9
 tags:
   - jekyll
   - bootstrap5
@@ -111,7 +111,7 @@ Make sure you have the following installed on your machine:
 
 brew install git
 brew install gh
-brew install docker
+brew install --cask docker
 brew install --cask visual-studio-code
 ```
 
@@ -119,7 +119,9 @@ brew install --cask visual-studio-code
 
 ### Set your own environment variables
 
-{% include zer0-env-var.html %}
+{% if site.level == 'her0' %}
+  {% include zer0-env-var.html %}
+{% endif %}
 
 ### Set the default environment variables
 
@@ -137,7 +139,7 @@ export ZREPO=$GITHOME/$GIT_REPO
 ```shell
 #open Code to edit your shell profile and copy the environment variables
 
-code ~/.zshrc
+code ~/.zprofile
 ```
 
 ```shell
@@ -195,7 +197,7 @@ mkdir -p $ZREPO
 ```shell
 # Initialize your github repository
 
-gh repo create $GHUSER/$GIT_REPO --public --gitignore=jekyll --license=mit
+gh repo create $GIT_REPO --gitignore Jekyll -l mit --public
 ```
 
 ```shell
@@ -203,11 +205,12 @@ gh repo create $GHUSER/$GIT_REPO --public --gitignore=jekyll --license=mit
 
 cd $ZREPO
 git init
+git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
+git pull origin main
 curl https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md > README.md
 git add README.md
 git commit -m "Init zer0-mistakes"
 git branch -M main
-git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git push -u origin main
 ```
 
@@ -223,6 +226,8 @@ open https://github.com/${GHUSER}/${GIT_REPO}
 ```
 
 <a id="repo-link"></a>
+
+![Checkpoint 1](/assets/images/zer0-checkpoint-1.png)
 
 ## Initialize Jekyll
 
@@ -258,41 +263,84 @@ echo "FROM ruby:2.7.4" >> Dockerfile
 echo "# escape=\\" >> Dockerfile
 echo "ENV GITHUB_GEM_VERSION 231" >> Dockerfile
 echo "ENV JSON_GEM_VERSION 1.8.6" >> Dockerfile
+echo "ENV GIT_REPO ${GIT_REPO}" >> Dockerfile
 echo "WORKDIR /app" >> Dockerfile
 echo "ADD . /app" >> Dockerfile
+echo "RUN gem update --system 3.3.22" >> Dockerfile
 echo "RUN bundle update" >> Dockerfile
 echo "RUN bundle install" >> Dockerfile
-echo "EXPOSE 4002" >> Dockerfile
+echo "RUN bundle clean --force" >> Dockerfile
+echo "EXPOSE 4000" >> Dockerfile
 echo 'CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]' >> Dockerfile
 ```
 
 ```shell
-docker build -t zer0-mistakes .
+# build the docker image based on the Dockerfile
+docker build -t ${GIT_REPO} .
 ```
 
 ```shell
-docker run -p 4000:4000 -v $ZREPO:/app zer0-mistakes
+# Run the container in detached mode
+docker run -d -p 4000:4000 -v ${ZREPO}:/app --name zer0_container ${GIT_REPO}
 
+# Start the container and run the CMD line from the Dockerfile
+docker start zer0_container
+
+# Attach to the running container
+docker exec -it zer0_container /bin/bash
 ```
 
-## Initialize Jekyll - MacOS
+## Checkpoint - Jekyll Initialized
+
+```shell
+open http://localhost:4000/
+```
+
+![](/assets/images/zer0-checkpoint-2.png)
+
+## Install Jekyll
 
 Install [jekyll](https://jekyllrb.com/docs/installation/)
 
 ```shell
-cd $ZREPO
 jekyll new ./ --force
 bundle install
 ```
 
-```shell
-# If running MacOS
-bundle add webrick
-bundle install
-```
+## Checkpoint - Jekyll Initialized
+![](../assets/images/jekyll-serve-1.png)  
 
 ```shell
-jekyll serve
+code _config.yml
+```
+
+```yaml
+title: zer0-mistakes
+email: bamr87@zer0-mistakes.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: null # the subpath of your site, e.g. /blog
+url: null # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: bamr87
+github_username:  bamr87
+```
+
+<!-- TODO: add favicon instructions for branding -->
+
+```shell
+cd $ZREPO
+wget https://raw.githubusercontent.com/bamr87/it-journey/master/favicon.ico
+```
+
+## Install Jekyll
+
+Install [jekyll](https://jekyllrb.com/docs/installation/)
+
+```shell
+docker run jekyll new ./ --force
+bundle install
 ```
 
 ## Checkpoint - Jekyll Initialized
@@ -325,6 +373,7 @@ wget https://raw.githubusercontent.com/bamr87/it-journey/master/favicon.ico
 ## Checkpoint 1
 
 ```shell
+
 bundle lock --add-platform x86-mingw32 x64-mingw32 x86-mswin32 java
 ```
 
@@ -333,11 +382,11 @@ https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 ```shell
 # find theme path
+
 bundle info --path minima
 JEKYLL_THEME=$(bundle info --path minima)
 echo $JEKYLL_THEME
 cd $JEKYLL_THEME
-
 ```
 
 ### Copy theme repo

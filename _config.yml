@@ -63,6 +63,8 @@ local_repo               : *github_repository
 repo_map                 : "_about/"
 github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
 portfolio                : [*github_user, '.', 'github.io']
+level                    : 'her0'
+
 
 ## Maintainer Information----------------------------------------------------------
 

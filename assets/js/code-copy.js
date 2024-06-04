@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
       button.innerText = copyText;
       button.tabIndex = 1; // Add this line to make the button focusable with the keyboard
       button.addEventListener('click', function () {
-        var code = pre.querySelector('code').innerText.trim();
+        var code = pre.querySelector('code').innerText
+          .split('\n')
+          .filter(line => !line.trim().startsWith('#'))
+          .join('\n')
+          .trim();
         navigator.clipboard.writeText(code);
         button.innerText = 'Copied';
         setTimeout(function () {
