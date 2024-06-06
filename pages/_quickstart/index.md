@@ -1,12 +1,12 @@
 ---
 title: Quick Start (~) Index
 author: null
-layout: collection
+layout: blog
 description: null
 permalink: /quickstart/
 sidebar:
    nav: quickstart
-lastmod: 2024-05-20T14:59:11.504Z
+lastmod: 2024-06-06T03:11:33.251Z
 ---
 
 
