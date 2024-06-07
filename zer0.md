@@ -14,7 +14,9 @@ categories:
 created: 2024-02-10T23:51:11.480Z
 lastmod: 2024-05-27T04:50:51.594Z
 draft: draft
-layout: default
+layout: journals
+sidebar:
+  nav: dynamic
 permalink: /zer0/
 slug: zer0
 keywords:
@@ -204,7 +206,7 @@ gh repo create $GIT_REPO --gitignore Jekyll -l mit --public
 # If new repo, initialize it
 
 cd $ZREPO
-git init
+git init -b main
 git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git pull origin main
 curl https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md > README.md
@@ -229,7 +231,16 @@ open https://github.com/${GHUSER}/${GIT_REPO}
 
 ![Checkpoint 1](/assets/images/zer0-checkpoint-1.png)
 
-## Initialize Jekyll
+## Clone Github Repo - Optional
+
+```shell
+# Remove and Clone the new github repository if needed. Mostly a checkpoint test.
+rm -rf $ZREPO
+gh repo clone $GHUSER/$GIT_REPO $ZREPO
+
+```
+
+## Deploy Jekyll
 
 ### Create Gemfile
 
@@ -250,7 +261,7 @@ echo "  gem 'jekyll-paginate', '~> 1.1'" >> Gemfile
 echo "end" >> Gemfile
 ```
 
-### Create Dockerfile
+## Create Docker Image and container
 
 ```shell
 # Create a new Dockerfile
@@ -293,22 +304,21 @@ docker exec -it zer0_container /bin/bash
 ## Checkpoint - Jekyll Initialized
 
 ```shell
-open http://localhost:4000/
+open http://localhost:4000/zer0/
 ```
 
 ![](/assets/images/zer0-checkpoint-2.png)
 
-## Install Jekyll
-
-Install [jekyll](https://jekyllrb.com/docs/installation/)
+## Configure Jekyll
 
 ```shell
-jekyll new ./ --force
-bundle install
+# Download the default it-journey configuration file
+curl https://raw.githubusercontent.com/bamr87/it-journey/master/_config.yml > $ZREPO/_config.yml
 ```
 
-## Checkpoint - Jekyll Initialized
-![](../assets/images/jekyll-serve-1.png)  
+```yaml
+{% include_relative _config.yml %}
+```
 
 ```shell
 code _config.yml

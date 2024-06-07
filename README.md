@@ -105,7 +105,7 @@ docker build -t it-journey .
 ```shell
 # run the docker image and mount the local directory to the container and open a bash shell
 # Run the container in detached mode
-docker run -d -p 4002:4002 -v ${GITHOME}/it-journey:/app --name my_container it-journey
+docker run -d -p 4002:4002 -v ${GITHOME}/it-journey:/app --name it_container it-journey
 
 # Start the container and run the CMD line from the Dockerfile
 docker start my_container

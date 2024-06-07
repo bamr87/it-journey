@@ -5,16 +5,14 @@ layout: default
 <!-- Journals Layout -->
 
 <div id="main" role="main">
+    <div class="archive">
+        {% unless page.header.overlay_color or page.header.overlay_image %}
+        <h1 id="page-title" class="">{{ page.title }}</h1>
+        {% endunless %}
+        {{ content }}
+    </div>
 
-
-  <div class="archive">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
-    {% endunless %}
-    {{ content }}
-  </div>
-
-<nav aria-label="Page navigation">
+    <nav aria-label="Page navigation">
         <ul class="pagination pagination-lg justify-content-center">
             <li class="page-item">
                 {% if page.previous %}
@@ -36,22 +34,8 @@ layout: default
             </li>
         </ul>
     </nav>
-
 </div>
 
-<!-- giscus app - Feature # FR000001 -->
-
-<script src="https://giscus.app/client.js"
-        data-repo="bamr87/it-journey"
-        data-repo-id="MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM="
-        data-category-id="DIC_kwDOEOrJ7c4CAn8D"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
+{% if page.comments %}
+    {% include giscus.html %}
+{% endif %}

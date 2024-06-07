@@ -44,10 +44,6 @@ port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
 og_image                 : '/assets/images/wizard-on-journey.png'
 
-### Github Information
-github_user              : &github_user "bamr87"
-github_site              : 'bamr87.github.io'
-
 ### Owner Information -------------------------------------------------------------
 
 name                     : &name "Amr"
@@ -56,42 +52,31 @@ description              : >- # this means to ignore newlines until the next var
   Collection of articles, notes, and tutorials to build a website
   or headless CMS using Jekyll and Github Pages.
   This is my journey from zer0 to her0.
+level                    : 'her0'
 
+### Github Information
+github_user              : &github_user "bamr87"
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
-repo_map                 : "_about/"
+branch                   : "main"
+repo_map                 : "/about/sitemap/"
 github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
 portfolio                : [*github_user, '.', 'github.io']
-level                    : 'her0'
 
-
-## Maintainer Information----------------------------------------------------------
+# Maintainer Information----------------------------------------------------------
 
 maintainers:
-  - name: "Amr"
-    profile: "/github.com/bamr87"
+  - name: *name
+    profile: ["https://github.com", "/", *github_user]
   - name: "Vacant"
     profile: "/github.com"
-
-## Admin Information----------------------------------------------------------
-
-jekyll_admin:
-  # hidden_links:
-  #   - posts
-  #   - pages
-  #   - staticfiles
-  #   - datafiles
-  #   - configuration
-  homepage: "pages"
 
 ## Personalization ----------------------------------------------------------------
 
 locale                   : "en-US"
-home_dir_pc              : &home-win 'C:\Users\amrab\'
-home_dir_mac             : &home-mac '/Users/bamr87/'
-local_git_pc             : [ *home-win, 'github' ]
-local_git_mac            : [ *home-mac, 'github' ]
+home_dir                 : &home '/Users/bamr87/'
+local_git                : [ *home, 'github' ]
 logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : 'https://www.it-journey.dev'
 
@@ -113,6 +98,10 @@ author:
   twitter_username       : "bamr87"
   github_username        : *github_user
 
+
+## Site Analytics #############################################################
+
+google_analytics         : 'G-ZBDKNMC168'
 
 ## Site verification #############################################################
 
@@ -181,7 +170,8 @@ powered_by:
     url: "https://www.docker.com/"
     icon: "bi-docker"
 
-### Plugins 
+### Plugins  #####################################################################
+
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
 # http://jekyllrb.com/docs/plugins/
 
@@ -193,20 +183,16 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-  # - jekyll-assets
   - jekyll-algolia
-  # - jekyll-mermaid  # https://mermaidjs.github.io/
-  # - jekyll-admin # https://github.com/jekyll/jekyll-admin
-  # - jekyll-redirect-from
-  # - bootstrap
-  # - jekyll-spaceship
-  # - jemoji # Doesn't work for some reason
-  # - jekyll-postcss
+
+## Gisgus Plugin #################################################################
+
+gisgus:
+  enabled: true
+  data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
+  data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
 
 # https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
-
-mermaid:
-  src: 'mermaid/src/mermaid.js'
 
 ## Conversion
 # Markdown Options https://jekyllrb.com/docs/configuration/markdown/
@@ -285,7 +271,7 @@ defaults:
       layout: root
       author_profile: false
       read_time: true
-      comments: # true
+      comments: false # true
       share: true
       related: true
       sidebar:

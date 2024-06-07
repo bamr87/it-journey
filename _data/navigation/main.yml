@@ -3,6 +3,8 @@
   sublinks:
     - title: Master Setup
       url: /quickstart/machine-setup
+    - title: Zer0-Mistakes
+      url: /zer0/
 - title: Journey
   url: /posts
   sublinks:
