@@ -26,9 +26,20 @@
 
 # Site Settings ###################################################################
 
+founder                  : "Amr Abdel-Motaleb"
+
+### Github Information
+github_user              : &github_user "bamr87"
+repository_name          : &github_repository "it-journey"
+repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
+local_repo               : *github_repository
+branch                   : "main"
+repo_map                 : "/about/sitemap/"
+github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+portfolio                : [*github_user, '.', 'github.io']
+
 ## Site Information ---------------------------------------------------------------
 
-founder                  : "Amr Abdel-Motaleb"
 title                    : IT-Journey
 title_url                : "/"
 title_icon               : "globe"
@@ -36,9 +47,10 @@ subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
 subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
-domain                   : &domain "it-journey.dev"
+domain                   : &domain "it-journey"
+domain_ext               : ".dev"
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
-url                      : 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
+url                      : ['https://', *domain, *domain_ext ] # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "/assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
@@ -54,15 +66,6 @@ description              : >- # this means to ignore newlines until the next var
   This is my journey from zer0 to her0.
 level                    : 'her0'
 
-### Github Information
-github_user              : &github_user "bamr87"
-repository_name          : &github_repository "it-journey"
-repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
-local_repo               : *github_repository
-branch                   : "main"
-repo_map                 : "/about/sitemap/"
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
-portfolio                : [*github_user, '.', 'github.io']
 
 # Maintainer Information----------------------------------------------------------
 

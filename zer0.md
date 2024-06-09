@@ -453,7 +453,7 @@ tree
 cd -
 ```
 
-![](../assets/images/about-profile.png)  
+
 
 ## Plant the seed
 
