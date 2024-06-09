@@ -27,6 +27,7 @@ keywords:
   - zer0
 date: 2024-05-27T04:49:32.883Z
 snippet: What is a snippet?
+comments: true
 ---
 
 This is the seed of the project with all the commands, scripts, and instructions that build this application from the ground up.
@@ -35,7 +36,7 @@ However, in practice, you may need to install additional dependencies or configu
 For example, you may need to install Ruby, Node.js, or other tools to run the application locally or deploy it to a server.
 Therefore, part of this document is to provide a list of prerequisites and setup instructions to help you get started with the project.
 
-## {{ page.title }} Version {{ page.version }}
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-zer0.svg)](https://badge.fury.io/rb/jekyll-theme-zer0)
 
 ## System Specs
 
@@ -206,7 +207,7 @@ gh repo create $GIT_REPO --gitignore Jekyll -l mit --public
 # If new repo, initialize it
 
 cd $ZREPO
-git init -b main
+git init
 git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git pull origin main
 curl https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md > README.md
@@ -231,16 +232,7 @@ open https://github.com/${GHUSER}/${GIT_REPO}
 
 ![Checkpoint 1](/assets/images/zer0-checkpoint-1.png)
 
-## Clone Github Repo - Optional
-
-```shell
-# Remove and Clone the new github repository if needed. Mostly a checkpoint test.
-rm -rf $ZREPO
-gh repo clone $GHUSER/$GIT_REPO $ZREPO
-
-```
-
-## Deploy Jekyll
+## Initialize Jekyll
 
 ### Create Gemfile
 
@@ -261,7 +253,7 @@ echo "  gem 'jekyll-paginate', '~> 1.1'" >> Gemfile
 echo "end" >> Gemfile
 ```
 
-## Create Docker Image and container
+### Create Dockerfile
 
 ```shell
 # Create a new Dockerfile
@@ -304,21 +296,22 @@ docker exec -it zer0_container /bin/bash
 ## Checkpoint - Jekyll Initialized
 
 ```shell
-open http://localhost:4000/zer0/
+open http://localhost:4000/
 ```
 
 ![](/assets/images/zer0-checkpoint-2.png)
 
-## Configure Jekyll
+## Install Jekyll
+
+Install [jekyll](https://jekyllrb.com/docs/installation/)
 
 ```shell
-# Download the default it-journey configuration file
-curl https://raw.githubusercontent.com/bamr87/it-journey/master/_config.yml > $ZREPO/_config.yml
+jekyll new ./ --force
+bundle install
 ```
 
-```yaml
-{% include_relative _config.yml %}
-```
+## Checkpoint - Jekyll Initialized
+
 
 ```shell
 code _config.yml
@@ -354,7 +347,6 @@ bundle install
 ```
 
 ## Checkpoint - Jekyll Initialized
-![](../assets/images/jekyll-serve-1.png)  
 
 ```shell
 code _config.yml
@@ -454,7 +446,6 @@ cd -
 ```
 
 
-
 ## Plant the seed
 
 ```shell
@@ -469,7 +460,6 @@ cd $ZREPO
 wget -O $d-zer0.md https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md 
 ```
 
-![](../assets/images/header_pages.png)  
 
 ## Convert zer0.md to zer0.sh using Python
 
