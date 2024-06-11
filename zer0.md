@@ -30,13 +30,18 @@ snippet: What is a snippet?
 comments: true
 ---
 
+{{ site.url_test }}
+
+[![pages-build-deployment](https://github.com/bamr87/zer0-mistakes/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bamr87/zer0-mistakes/actions/workflows/pages/pages-build-deployment)
+
+[![Gem Version](https://badge.fury.io/rb/jekyll-theme-zer0.svg)](https://badge.fury.io/rb/jekyll-theme-zer0)
+
 This is the seed of the project with all the commands, scripts, and instructions that build this application from the ground up.
 In theory, this should be the only file you need to build the project from scratch.
 However, in practice, you may need to install additional dependencies or configure the environment to match the target system. 
 For example, you may need to install Ruby, Node.js, or other tools to run the application locally or deploy it to a server.
 Therefore, part of this document is to provide a list of prerequisites and setup instructions to help you get started with the project.
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-zer0.svg)](https://badge.fury.io/rb/jekyll-theme-zer0)
 
 ## System Specs
 
@@ -212,7 +217,7 @@ git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git pull origin main
 curl https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md > README.md
 git add README.md
-git commit -m "Init zer0-mistakes"
+git commit -m "Init $GIT_REPO"
 git branch -M main
 git push -u origin main
 ```
@@ -245,12 +250,34 @@ touch Gemfile
 echo 'source "https://rubygems.org"' >> Gemfile
 echo "gem 'github-pages' , '231'" >> Gemfile
 echo "gem 'jekyll' , '3.9.5'" >> Gemfile
+echo "gem 'jekyll-theme-zer0' , '0.1.2'" >> Gemfile
 echo "group :jekyll_plugins do" >> Gemfile
 echo "  gem 'jekyll-feed', \"~> 0.17\"" >> Gemfile
 echo "  gem 'jekyll-sitemap' , \"~> 1.4.0\"" >> Gemfile
 echo "  gem 'jekyll-seo-tag', \"~> 2.8.0\"" >> Gemfile
 echo "  gem 'jekyll-paginate', '~> 1.1'" >> Gemfile
 echo "end" >> Gemfile
+```
+
+### Configure Jekyll
+
+```shell
+code _config.yml
+```
+
+```yaml
+theme: jekyll-theme-zer0
+
+title: zer0-mistakes
+email: bamr87@zer0-mistakes.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: null # the subpath of your site, e.g. /blog
+url: null # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: bamr87
+github_username:  bamr87
 ```
 
 ### Create Dockerfile
@@ -301,18 +328,6 @@ open http://localhost:4000/
 
 ![](/assets/images/zer0-checkpoint-2.png)
 
-## Install Jekyll
-
-Install [jekyll](https://jekyllrb.com/docs/installation/)
-
-```shell
-jekyll new ./ --force
-bundle install
-```
-
-## Checkpoint - Jekyll Initialized
-
-
 ```shell
 code _config.yml
 ```
@@ -329,137 +344,6 @@ url: null # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bamr87
 github_username:  bamr87
 ```
-
-<!-- TODO: add favicon instructions for branding -->
-
-```shell
-cd $ZREPO
-wget https://raw.githubusercontent.com/bamr87/it-journey/master/favicon.ico
-```
-
-## Install Jekyll
-
-Install [jekyll](https://jekyllrb.com/docs/installation/)
-
-```shell
-docker run jekyll new ./ --force
-bundle install
-```
-
-## Checkpoint - Jekyll Initialized
-
-```shell
-code _config.yml
-```
-
-```yaml
-title: zer0-mistakes
-email: bamr87@zer0-mistakes.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: null # the subpath of your site, e.g. /blog
-url: null # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: bamr87
-github_username:  bamr87
-```
-
-<!-- TODO: add favicon instructions for branding -->
-
-```shell
-cd $ZREPO
-wget https://raw.githubusercontent.com/bamr87/it-journey/master/favicon.ico
-```
-
-## Checkpoint 1
-
-```shell
-
-bundle lock --add-platform x86-mingw32 x64-mingw32 x86-mswin32 java
-```
-
-### Override default
-https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-```shell
-# find theme path
-
-bundle info --path minima
-JEKYLL_THEME=$(bundle info --path minima)
-echo $JEKYLL_THEME
-cd $JEKYLL_THEME
-```
-
-### Copy theme repo
-
-```shell
-cp -aR $JEKYLL_THEME/* $ZREPO
-```
-
-### Remove Theme plugin
-
-```shell
-bundle remove jekyll-theme-minima
-```
-
-### Comment out the theme from config and Gemfile
-
-```shell
-#_config.yml
-# Build settings
-# theme: minima
-plugins:
-  - jekyll-feed
-```
-
-```shell
-bundle remove minima --install
-```
-
-Restart jekyll
-```shell
-jekyll serve
-```
-
-## Building the theme
-
-### Build default page
-
-```shell
-{%- raw -%}
-cd $ZREPO
-mkdir _layout
-cd _layout
-echo "{{ content }}" >> default.html 
-{% endraw %}
-``` 
-
-
-```shell
-#tree #alias #zshrc #profile
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-echo alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" >> ~/.zshrc
-
-tree
-cd -
-```
-
-
-## Plant the seed
-
-```shell
-# Set the date format
-d=$(date +%Y-%m-%d)
-echo "$d"
-```
-
-```shell
-# Download the seed page
-cd $ZREPO
-wget -O $d-zer0.md https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md 
-```
-
 
 ## Convert zer0.md to zer0.sh using Python
 
@@ -496,4 +380,10 @@ def convert_md_to_files(md_file_path):
         language_file.close()
 
 convert_md_to_files('zer0.md')
+```
+
+## Config file
+
+```yaml
+{% include_relative _config.yml %}
 ```
