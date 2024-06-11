@@ -336,3 +336,9 @@ convert_md_to_files('zer0.md')
 ```yaml
 {% include_relative _config.yml %}
 ```
+
+## Scripts
+
+```shell
+{% include_relative script/zer0.sh %}
+```

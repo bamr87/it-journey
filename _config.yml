@@ -27,6 +27,7 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
+remote_theme             : "bamr87/zer0-mistakes"
 
 ### Github Information
 github_user              : &github_user "bamr87"
@@ -52,7 +53,7 @@ domain_ext               : ".dev"
 sub_domain               : &sub_domain ""
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ] # the base hostname & protocol for your site, e.g. http://example.com
-url                      : 'https://bamr87.github.io' # the base hostname & protocol for your site, e.g. http://example.com
+url                      : 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "/assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
