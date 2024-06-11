@@ -42,7 +42,6 @@ However, in practice, you may need to install additional dependencies or configu
 For example, you may need to install Ruby, Node.js, or other tools to run the application locally or deploy it to a server.
 Therefore, part of this document is to provide a list of prerequisites and setup instructions to help you get started with the project.
 
-
 ## System Specs
 
 For my development machine, I use the following specs:
@@ -125,13 +124,13 @@ brew install --cask visual-studio-code
 
 ## Environment
 
-### Set your own environment variables
+### Enter Variables
 
 {% if site.level == 'her0' %}
   {% include zer0-env-var.html %}
 {% endif %}
 
-### Set the default environment variables
+### Or use default
 
 ```shell
 # Or use the following to set the environment variables
@@ -142,57 +141,33 @@ export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
 ```
 
-### Add the environment variables to your shell profile (optional)
-
 ```shell
-#open Code to edit your shell profile and copy the environment variables
+# Confirm the environment variables by echoing them and logging them to a file
 
-code ~/.zprofile
+echo "$(date) - Log started" > env-variables.log
+echo -e "GITHOME: $GITHOME\nGHUSER: $GHUSER\nGIT_REPO: $GIT_REPO\nZREPO: $ZREPO" >> env-variables.log
 ```
 
-```shell
-# Confirm the environment variables by echoing them
-
-echo $GITHOME # /Users/bamr87/github
-echo $GHUSER # bamr87
-echo $GIT_REPO # zer0-mistakes
-echo $ZREPO # /Users/bamr87/github/zer0-mistakes
-```
-
-### Set your Git email and name
+### Set Git email and username
 
 ```shell
 # Set your Git email and name to tag your commits
+# If the GIT_ID is set, use it to tag your commits. "https://github.com/settings/emails"
 
-git config --global user.email "$GHUSER@users.noreply.github.com"
 git config --global user.name "$GHUSER"
-```
-
-### Set your GitHub email using ID (optional)
-
-See [here](https://github.com/settings/emails) for details.
-
-```shell
-# If you didnt already set it in the previous step
-# FIXME: quotes in comments dont work
-
-echo "What is your Github ID?"
-read GIT_ID
-```
-
-```shell
-# Set your email using ID
-
-git config --global user.email "$GIT_ID+$GHUSER@users.noreply.github.com"
+git config --global user.email "$GHUSER@users.noreply.github.com"
+if [ -n "$GIT_ID" ]; then
+  git config --global user.email "$GIT_ID+$GHUSER@users.noreply.github.com"
+fi
 ```
 
 ```shell
 # confirm your email
 
-git config -l
+git config -l | tee -a env-variables.log
 ```
 
-## Initialize your new github repository
+## Initialize github
 
 [gh cli docs](https://cli.github.com/manual/)
 
@@ -215,6 +190,11 @@ cd $ZREPO
 git init
 git remote add origin https://github.com/${GHUSER}/${GIT_REPO}.git
 git pull origin main
+
+```
+
+```shell
+# Create a README.md file based on the zer0.md file from this repo
 curl https://raw.githubusercontent.com/bamr87/it-journey/master/zer0.md > README.md
 git add README.md
 git commit -m "Init $GIT_REPO"
@@ -222,7 +202,7 @@ git branch -M main
 git push -u origin main
 ```
 
-### Checkpoint - Github Repo Initialized
+### Checkpoint - Github Repo
 
 Go to your new github repository.
 
@@ -255,29 +235,16 @@ echo "group :jekyll_plugins do" >> Gemfile
 echo "  gem 'jekyll-feed', \"~> 0.17\"" >> Gemfile
 echo "  gem 'jekyll-sitemap' , \"~> 1.4.0\"" >> Gemfile
 echo "  gem 'jekyll-seo-tag', \"~> 2.8.0\"" >> Gemfile
-echo "  gem 'jekyll-paginate', '~> 1.1'" >> Gemfile
+echo "  gem 'jekyll-paginate', \"'~> 1.1'\"" >> Gemfile
 echo "end" >> Gemfile
 ```
 
-### Configure Jekyll
+### Download Config file
 
 ```shell
-code _config.yml
-```
+# Download the _config.yml file from the jekyll-theme-zer0 repo
 
-```yaml
-theme: jekyll-theme-zer0
-
-title: zer0-mistakes
-email: bamr87@zer0-mistakes.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: null # the subpath of your site, e.g. /blog
-url: null # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: bamr87
-github_username:  bamr87
+curl https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/_config.yml > _config.yml
 ```
 
 ### Create Dockerfile
@@ -316,70 +283,12 @@ docker run -d -p 4000:4000 -v ${ZREPO}:/app --name zer0_container ${GIT_REPO}
 # Start the container and run the CMD line from the Dockerfile
 docker start zer0_container
 
-# Attach to the running container
-docker exec -it zer0_container /bin/bash
 ```
 
-## Checkpoint - Jekyll Initialized
+## Checkpoint - Jekyll
 
 ```shell
 open http://localhost:4000/
-```
-
-![](/assets/images/zer0-checkpoint-2.png)
-
-```shell
-code _config.yml
-```
-
-```yaml
-title: zer0-mistakes
-email: bamr87@zer0-mistakes.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: null # the subpath of your site, e.g. /blog
-url: null # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: bamr87
-github_username:  bamr87
-```
-
-## Convert zer0.md to zer0.sh using Python
-
-```python
-def convert_md_to_files(md_file_path):
-    language_files = {}
-    language_mode = None
-    language_extensions = {'python': '.py', 'shell': '.sh'}
-    shebang_lines = {'python': '#!/usr/bin/env python3\n', 'shell': '#!/bin/bash\n'}
-
-    with open(md_file_path, 'r') as md_file:
-        for line in md_file:
-            if line.startswith('```'):
-                if language_mode:
-                    # End of a language block, switch back to markdown mode
-                    language_mode = None
-                else:
-                    # Start of a language block, open a new file for this language if not already open
-                    language = line.strip('`\n')
-                    if language in language_extensions:
-                        language_mode = language
-                        if language not in language_files:
-                            language_file = open(md_file_path.replace('.md', language_extensions[language]), 'w')
-                            if language in shebang_lines:
-                                language_file.write(shebang_lines[language])
-                            language_files[language] = language_file
-                continue
-
-            if language_mode:
-                language_files[language_mode].write(line)
-
-    # Close all open language files
-    for language_file in language_files.values():
-        language_file.close()
-
-convert_md_to_files('zer0.md')
 ```
 
 ## Config file
