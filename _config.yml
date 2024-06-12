@@ -28,8 +28,9 @@
 
 founder                  : "Amr Abdel-Motaleb"
 remote_theme             : "bamr87/zer0-mistakes"
+theme                    : "jekyll-theme-zer0"
 
-### Github Information
+## Github Information
 github_user              : &github_user "bamr87"
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
@@ -84,7 +85,7 @@ locale                   : "en-US"
 home_dir                 : &home '/Users/bamr87/'
 local_git                : [ *home, 'github' ]
 logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo_link                : 'https://www.it-journey.dev'
+logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
 teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 info_banner              : /assets/images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -189,7 +190,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-  # - jekyll-algolia
+  - jekyll-relative-links
 
 ## Gisgus Plugin #################################################################
 
@@ -266,8 +267,6 @@ paginate_path: "/pages/:num/"
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
-nav-file: '_data/navigation/map.yml'
-
 defaults:
   # ALL
   - 
@@ -324,7 +323,7 @@ defaults:
       sidebar:
         nav: quickstart
 
-  # _posts
+  # pages/_posts
   - 
     scope:
       path: pages/_posts
@@ -428,9 +427,6 @@ algolia:
   search_only_api_key: '3b9200e21085fbebc263950c157b2682'
   index_name: dev_it-journey
 
-atom_feed:
-path                   : # blank (default) uses feed.xml
-
 ## Style Settings -------------------------------------------------------------
 
 # theme                  : "zer0-mistakes-jekyll"
@@ -439,8 +435,6 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
 # remote_style           : "bamr87/zer0-mistakes"
-
-
 
 theme_color:
   main: #007bff
@@ -470,7 +464,7 @@ theme_color:
 ## Copyright Settings --------------------------------------------------------------
 
 cr_year: 2024
-cr_entity: "Amr"
+cr_entity: *name
 cr_lisense: "MIT"
 
 ## Sitemap Settings --------------------------------------------------------------

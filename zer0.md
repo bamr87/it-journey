@@ -133,11 +133,19 @@ brew install --cask visual-studio-code
 ### Or use default
 
 ```shell
-# Or use the following to set the environment variables
+# Or enter them in the terminal
 
+echo "Please enter your GitHub username:"
+read GHUSER
+export GHUSER
+
+echo "Please enter your Git repository name:"
+read GIT_REPO
+export GIT_REPO
+```
+
+```shell
 export GITHOME=~/github
-export GHUSER=bamr87
-export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
 ```
 
@@ -228,14 +236,14 @@ touch Gemfile
 
 # Write the non-commented lines to the Gemfile
 echo 'source "https://rubygems.org"' >> Gemfile
-echo "gem 'github-pages' , '231'" >> Gemfile
-echo "gem 'jekyll' , '3.9.5'" >> Gemfile
-echo "gem 'jekyll-theme-zer0' , '0.1.2'" >> Gemfile
+echo "gem 'github-pages'" >> Gemfile
+echo "gem 'jekyll-theme-zer0'" >> Gemfile
 echo "group :jekyll_plugins do" >> Gemfile
+echo "  gem 'jekyll-remote-theme', \"~> 0.4.3\"" >> Gemfile
 echo "  gem 'jekyll-feed', \"~> 0.17\"" >> Gemfile
 echo "  gem 'jekyll-sitemap' , \"~> 1.4.0\"" >> Gemfile
 echo "  gem 'jekyll-seo-tag', \"~> 2.8.0\"" >> Gemfile
-echo "  gem 'jekyll-paginate', \"'~> 1.1'\"" >> Gemfile
+echo "  gem 'jekyll-paginate', \"~> 1.1\"" >> Gemfile
 echo "end" >> Gemfile
 ```
 
@@ -268,7 +276,7 @@ echo "RUN bundle update" >> Dockerfile
 echo "RUN bundle install" >> Dockerfile
 echo "RUN bundle clean --force" >> Dockerfile
 echo "EXPOSE 4000" >> Dockerfile
-echo 'CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]' >> Dockerfile
+echo 'CMD ["bundle", "exec", "jekyll", "serve", "--verbose", "--host", "0.0.0.0"]' >> Dockerfile
 ```
 
 ```shell
@@ -339,6 +347,6 @@ convert_md_to_files('zer0.md')
 
 ## Scripts
 
-```shell
+```bash
 {% include_relative script/zer0.sh %}
 ```

@@ -10,11 +10,16 @@ brew install git
 brew install gh
 brew install --cask docker
 brew install --cask visual-studio-code
-# Or use the following to set the environment variables
+# Or enter them in the terminal
 
+echo "Please enter your GitHub username:"
+read GHUSER
+export GHUSER
+
+echo "Please enter your Git repository name:"
+read GIT_REPO
+export GIT_REPO
 export GITHOME=~/github
-export GHUSER=bamr87
-export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
 # Confirm the environment variables by echoing them and logging them to a file
 
@@ -62,12 +67,12 @@ touch Gemfile
 echo 'source "https://rubygems.org"' >> Gemfile
 echo "gem 'github-pages' , '231'" >> Gemfile
 echo "gem 'jekyll' , '3.9.5'" >> Gemfile
-echo "gem 'jekyll-theme-zer0' , '0.1.2'" >> Gemfile
+echo "gem 'jekyll-theme-zer0'" >> Gemfile
 echo "group :jekyll_plugins do" >> Gemfile
 echo "  gem 'jekyll-feed', \"~> 0.17\"" >> Gemfile
 echo "  gem 'jekyll-sitemap' , \"~> 1.4.0\"" >> Gemfile
 echo "  gem 'jekyll-seo-tag', \"~> 2.8.0\"" >> Gemfile
-echo "  gem 'jekyll-paginate', \"'~> 1.1'\"" >> Gemfile
+echo "  gem 'jekyll-paginate', \"~> 1.1\"" >> Gemfile
 echo "end" >> Gemfile
 # Download the _config.yml file from the jekyll-theme-zer0 repo
 
