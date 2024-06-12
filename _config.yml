@@ -28,7 +28,7 @@
 
 founder                  : "Amr Abdel-Motaleb"
 remote_theme             : "bamr87/zer0-mistakes"
-theme                    : "jekyll-theme-zer0"
+# theme                    : "jekyll-theme-zer0"
 
 ## Github Information
 github_user              : &github_user "bamr87"
