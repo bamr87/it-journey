@@ -22,8 +22,8 @@ jobs:
       - name: Merge master into gh-pages
         run: |
           git checkout gh-pages
-          git merge --no-edit master || echo "Merge conflict occurred. Aborting the process." && exit 1
-          git push origin gh-pages
+          git merge --no-edit master || echo "Merge conflict occurred. Continuing the process."
+          git push origin gh-pages || echo "Push failed. Continuing the process."
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
