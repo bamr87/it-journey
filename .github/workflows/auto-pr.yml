@@ -1,0 +1,32 @@
+name: Automated PR for merging master into gh-pages
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at 00:00
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+
+      - name: Merge master into gh-pages
+        run: |
+          git checkout gh-pages
+          git merge --no-edit master || echo "Merge conflict occurred. Aborting the process." && exit 1
+          git push origin gh-pages
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: 'Weekly merge: master into gh-pages'
+          branch: 'gh-pages'
+          base: 'master'
