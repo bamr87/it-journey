@@ -30,9 +30,7 @@ snippet: What is a snippet?
 comments: true
 ---
 
-{{ site.url_test }}
-
-[![pages-build-deployment](https://github.com/bamr87/zer0-mistakes/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bamr87/zer0-mistakes/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment)
 
 [![Gem Version](https://badge.fury.io/rb/jekyll-theme-zer0.svg)](https://badge.fury.io/rb/jekyll-theme-zer0)
 
@@ -114,12 +112,45 @@ More importantly, you need to:
 Make sure you have the following installed on your machine:
 
 ```shell
-# install and update prerequisites
+# Check if git is installed
+if ! git --version > /dev/null 2>&1; then
+  echo "git is not installed. Installing..."
+  brew install git
+else
+  echo "git is already installed."
+fi
 
-brew install git
-brew install gh
-brew install --cask docker
-brew install --cask visual-studio-code
+# Check if gh is installed
+if ! gh --version > /dev/null 2>&1; then
+  echo "gh is not installed. Installing..."
+  brew install gh
+else
+  echo "gh is already installed."
+fi
+
+# Check if gh is authenticated
+if ! gh auth status > /dev/null 2>&1; then
+  echo "gh is not authenticated. Please authenticate..."
+  gh auth login
+else
+  echo "gh is already authenticated."
+fi
+
+# Check if Docker is installed
+if ! docker --version > /dev/null 2>&1; then
+  echo "Docker is not installed. Installing..."
+  brew install --cask docker
+else
+  echo "Docker is already installed."
+fi
+
+# Check if Visual Studio Code is installed
+if ! code --version > /dev/null 2>&1; then
+  echo "Visual Studio Code is not installed. Installing..."
+  brew install --cask visual-studio-code
+else
+  echo "Visual Studio Code is already installed."
+fi
 ```
 
 ## Environment
@@ -146,6 +177,8 @@ export GIT_REPO
 
 ```shell
 export GITHOME=~/github
+export GHUSER=$(gh api user --jq '.login')
+export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
 ```
 
@@ -296,7 +329,7 @@ docker start zer0_container
 ## Checkpoint - Jekyll
 
 ```shell
-open http://localhost:4000/
+open http://localhost:4000/${GIT_REPO}
 ```
 
 ## Python Script
@@ -317,8 +350,10 @@ def convert_md_to_files(md_file_path):
         for line in md_file:
             if line.startswith('```'):
                 if language_mode:
+                    # End of a language block, switch back to markdown mode
                     language_mode = None
                 else:
+                    # Start of a language block, open a new file for this language if not already open
                     language = line.strip('`\n')
                     if language in language_extensions:
                         language_mode = language
@@ -333,6 +368,7 @@ def convert_md_to_files(md_file_path):
             if language_mode:
                 language_files[language_mode].write(line)
 
+    # Close all open language files
     for language_file in language_files.values():
         language_file.close()
 
@@ -347,6 +383,6 @@ convert_md_to_files('zer0.md')
 
 ## Scripts
 
-```bash
+```liquid
 {% include_relative script/zer0.sh %}
 ```
