@@ -1,9 +1,6 @@
 name: Create Pull Request from master to gh-pages
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: '0 0 * * 0'  # This runs the workflow every Sunday at midnight UTC
   workflow_dispatch:  # Allows the workflow to be triggered manually
@@ -30,9 +27,9 @@ jobs:
 
       - name: Authenticate GitHub CLI
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN }}
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          echo "${{ secrets.AUTO_PR_GITHUB_TOKEN }}" | gh auth login --with-token
 
       - name: Create Pull Request
         run: |
