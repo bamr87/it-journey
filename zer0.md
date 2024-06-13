@@ -30,7 +30,7 @@ snippet: What is a snippet?
 comments: true
 ---
 
-testing pr workflow again again, Damn it.
+testing pr workflow again again, Damn it. I think i figured it out.
 
 [![pages-build-deployment](https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment)
 
