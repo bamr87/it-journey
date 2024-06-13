@@ -321,10 +321,10 @@ docker build -t ${GIT_REPO} .
 
 ```shell
 # Run the container in detached mode
-docker run -d -p 4000:4000 -v ${ZREPO}:/app --name zer0_container ${GIT_REPO}
+docker run -d -p 4000:4000 -v ${ZREPO}:/app --name ${GIT_REPO}-container ${GIT_REPO}
 
 # Start the container and run the CMD line from the Dockerfile
-docker start zer0_container
+docker start ${GIT_REPO}-container
 
 ```
 
