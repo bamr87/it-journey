@@ -31,3 +31,4 @@ jobs:
           title: 'Weekly merge: master into gh-pages'
           branch: 'gh-pages'
           base: 'master'
+          auto_merge: false
