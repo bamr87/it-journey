@@ -25,5 +25,11 @@ EXPOSE 4002
 # EXPOSE 4000 80
 
 # Run Jekyll when the container launches
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+CMD ["bundle", "exec", "jekyll", "serve", "--config", "_config.yml,_config_dev.yml", "--host", "0.0.0.0"]
 # CMD jekyll serve -d /_site --watch --force_polling -H 0.0.0.0 -P 4000
+
+# source .env
+# docker build -t ${GIT_REPO} .
+# docker run -d -p 4002:4002 -v ${ZREPO}:/app --name ${GIT_REPO}-container ${GIT_REPO}
+# docker start ${GIT_REPO}-container
+# docker exec -it ${GIT_REPO}-container /bin/bash

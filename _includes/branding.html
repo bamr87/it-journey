@@ -33,7 +33,7 @@
 <div class="navbar-brand">
     <!-- If a subtitle exsits -->
     {%- if site.subtitle -%}
-    <a class="nav-link" href="http://localhost:{{ site.port }}{{ page.url }}">
+    <a class="nav-link" href="http://localhost:{{ site.port }}{{ site.baseurl}}{{ page.url }}">
         <i class="d-sm-inline d-md-none {{ site.default_icon }} {{ site.default_icon }}-{{ site.subtitle_icon | default: site.powered_by.default }}" aria-hidden="true"></i>
         <span class="d-none d-md-inline"> 
             {{ site.subtitle }}
