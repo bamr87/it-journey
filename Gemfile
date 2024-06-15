@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+# gemspec
 
 # This is where you define which Jekyll version to use for your site.
 # This site is using the GitHub Pages gem, which is updated regularly.
@@ -10,10 +11,14 @@ source "https://rubygems.org"
 # Github Pages Gems:
 gem 'github-pages'
 
+# Jekyll Theme
+gem 'jekyll-theme-zer0'
+
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
   
   # these are all part of the github-pages gem
+  gem 'jekyll-remote-theme', "~> 0.4.3"
   gem 'jekyll-feed', "~> 0.17"
   gem 'jekyll-sitemap' , "~> 1.4.0"
   gem 'jekyll-seo-tag', "~> 2.8.0"
