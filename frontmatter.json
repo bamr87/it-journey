@@ -359,9 +359,9 @@
       "type": "navigation"
     },
     {
-      "id": "subNav",
-      "title": "Sub Navigation",
-      "file": "[[workspace]]/_data/navigation/sub.yml",
+      "id": "postsNav",
+      "title": "Posts Navigation",
+      "file": "[[workspace]]/_data/navigation/posts.yml",
       "fileType": "yaml",
       "labelField": "title",
       "singleEntry": false,
