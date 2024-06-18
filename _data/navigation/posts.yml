@@ -1,0 +1,11 @@
+- icon: world
+  url: /posts/world/
+  sublinks: []
+  title: World
+- title: Technology
+  icon: tech
+  url: /posts/tech/
+- title: Business
+  icon: Cash
+  url: /posts/business/
+
