@@ -7,7 +7,10 @@ tags: ["python", "web scraping", "html", "markdown"]
 
 
 ```python
+# install prerequisites
 %pip install markdownify
+%pip install requests
+%pip install pandas
 ```
 
 
