@@ -1,10 +1,10 @@
 ---
 categories: gpt
-date: '2024-06-16 20:20:59'
+date: 2024-06-16 20:20:59
 layout: journals
-title: 'Enchanted Baking: Unicorn Delights'
+title: "Enchanted Baking: Unicorn Delights"
+lastmod: 2024-06-18T17:08:00.151Z
 ---
-Title: Magical Unicorn Kitchen
 
 Episode 1: Rainbow Cupcake Extravaganza
 
