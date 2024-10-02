@@ -5,7 +5,9 @@
       "title": "posts",
       "previewPath": "/{{fm.type}}/{{year}}/{{month}}/{{day}}",
       "path": "[[workspace]]/pages/_posts",
-      "contentTypes": ["posts"]
+      "contentTypes": [
+        "posts"
+      ]
     },
     {
       "title": "quickstart",
@@ -34,7 +36,11 @@
   "frontMatter.content.draftField": {
     "name": "draft",
     "type": "choice",
-    "choices": ["draft", "in progress", "published"]
+    "choices": [
+      "draft",
+      "in progress",
+      "published"
+    ]
   },
   "frontMatter.dashboard.openOnStart": true,
   "frontMatter.taxonomy.contentTypes": [
@@ -111,7 +117,11 @@
           "title": "layout",
           "name": "layout",
           "type": "choice",
-          "choices": ["default", "journal", "home"],
+          "choices": [
+            "default",
+            "journal",
+            "home"
+          ],
           "default": null
         },
         {
@@ -142,7 +152,11 @@
           "name": "attachments",
           "type": "file",
           "multiple": true,
-          "fileExtensions": ["pdf", "mp4", "wav"]
+          "fileExtensions": [
+            "pdf",
+            "mp4",
+            "wav"
+          ]
         }
       ]
     },
@@ -249,7 +263,11 @@
           "name": "attachments",
           "type": "file",
           "multiple": true,
-          "fileExtensions": ["pdf", "mp4", "wav"]
+          "fileExtensions": [
+            "pdf",
+            "mp4",
+            "wav"
+          ]
         }
       ]
     }
@@ -367,5 +385,6 @@
       "singleEntry": false,
       "type": "navigation"
     }
-  ]
+  ],
+  "frontMatter.content.autoUpdateDate": true
 }
