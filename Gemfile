@@ -25,6 +25,10 @@ group :jekyll_plugins do
   gem 'jekyll-paginate', '~> 1.1'
 end
 
+# Docker support (Modify the Dockerfile to include the installation of the ffi gem and its dependencies. Additionally, ensure that all gems are installed for the correct platform.)
+gem "ffi", "~> 1.17.0"
+gem 'webrick', '~> 1.7'
+
 # TODO: build a bootstrap plugin for jekyll
 
 #  bootstrap https://getbootstrap.com/docs/5.1/getting-started/introduction/

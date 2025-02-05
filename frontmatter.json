@@ -57,126 +57,9 @@
         {
           "title": "Description",
           "name": "description",
-          "type": "string",
-          "default": null
-        },
-        {
-          "title": "Publishing date",
-          "name": "date",
-          "type": "datetime",
-          "default": "{{now}}",
-          "isPublishDate": true
-        },
-        {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image",
-          "default": null
-        },
-        {
-          "title": "Draft Status",
-          "name": "draft",
-          "type": "draft",
-          "default": "draft"
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "sub-title",
-          "name": "sub-title",
-          "type": "string",
-          "default": null
-        },
-        {
-          "title": "excerpt",
-          "name": "excerpt",
-          "type": "string",
-          "default": null
-        },
-        {
-          "title": "snippet",
-          "name": "snippet",
-          "type": "string",
-          "default": null
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string",
-          "default": "bamr87"
-        },
-        {
-          "title": "layout",
-          "name": "layout",
-          "type": "choice",
-          "choices": [
-            "default",
-            "journal",
-            "home"
-          ],
-          "default": null
-        },
-        {
-          "title": "keywords",
-          "name": "keywords",
-          "type": "fields",
-          "fields": []
-        },
-        {
-          "title": "lastmod",
-          "name": "lastmod",
-          "type": "datetime"
-        },
-        {
-          "title": "slug",
-          "name": "slug",
-          "type": "string",
-          "default": null
-        },
-        {
-          "title": "permalink",
-          "name": "permalink",
-          "type": "string",
-          "default": null
-        },
-        {
-          "title": "Attachments",
-          "name": "attachments",
-          "type": "file",
-          "multiple": true,
-          "fileExtensions": [
-            "pdf",
-            "mp4",
-            "wav"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "posts",
-      "pageBundle": false,
-      "previewPath": null,
-      "fields": [
-        {
-          "title": "Title",
-          "name": "title",
           "type": "string"
         },
         {
-          "title": "Description",
-          "name": "description",
-          "type": "string",
-          "default": null
-        },
-        {
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
@@ -186,14 +69,12 @@
         {
           "title": "Content preview",
           "name": "preview",
-          "type": "image",
-          "default": null
+          "type": "image"
         },
         {
           "title": "Is in draft",
           "name": "draft",
-          "type": "draft",
-          "default": true
+          "type": "draft"
         },
         {
           "title": "Tags",
@@ -208,32 +89,27 @@
         {
           "title": "sub-title",
           "name": "sub-title",
-          "type": "string",
-          "default": null
+          "type": "datetime"
         },
         {
           "title": "excerpt",
           "name": "excerpt",
-          "type": "string",
-          "default": null
+          "type": "datetime"
         },
         {
           "title": "snippet",
           "name": "snippet",
-          "type": "string",
-          "default": null
+          "type": "datetime"
         },
         {
           "title": "author",
           "name": "author",
-          "type": "string",
-          "default": "bamr87"
+          "type": "string"
         },
         {
           "title": "layout",
           "name": "layout",
-          "type": "string",
-          "default": null
+          "type": "datetime"
         },
         {
           "title": "keywords",
@@ -247,27 +123,19 @@
           "type": "datetime"
         },
         {
-          "title": "slug",
-          "name": "slug",
-          "type": "string",
-          "default": null
-        },
-        {
           "title": "permalink",
           "name": "permalink",
-          "type": "string",
-          "default": null
+          "type": "datetime"
         },
         {
-          "title": "Attachments",
+          "title": "attachments",
           "name": "attachments",
-          "type": "file",
-          "multiple": true,
-          "fileExtensions": [
-            "pdf",
-            "mp4",
-            "wav"
-          ]
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
         }
       ]
     }
@@ -279,7 +147,7 @@
       "fields": []
     }
   },
-  "frontMatter.preview.host": "http://localhost:4002",
+  "frontMatter.preview.host": "http://localhost:4000",
   "frontMatter.website.host": "https://it-journey.dev",
   "frontMatter.git.enabled": false,
   "frontMatter.data.types": [

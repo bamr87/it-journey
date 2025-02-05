@@ -53,7 +53,7 @@ domain                   : &domain "it-journey"
 domain_ext               : ".dev"
 sub_domain               : &sub_domain ""
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
-url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ] # the base hostname & protocol for your site, e.g. http://example.com
+url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ]
 url                      : &url 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "/assets"
 port                     : 4002 # Jekyll Serve Dev port

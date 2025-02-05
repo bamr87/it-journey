@@ -8,7 +8,7 @@ website: https://it-journey.dev
 github: bamr87
 twitter: bamr42
 linkedin: amrabdel
-lastmod: 2024-05-25T19:07:46.394Z
+lastmod: 2025-01-21T23:09:20.504Z
 permalink: /about/bamr87/
 ---
 

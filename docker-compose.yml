@@ -1,0 +1,14 @@
+services:
+
+  jekyll:
+    image: jekyll/jekyll:latest
+    command: jekyll serve --watch --force_polling --config "_config.yml,_config_dev.yml"
+
+    volumes:
+      - ./:/app
+    ports:
+      - "4002:4002"
+    working_dir: /app
+    environment:
+      JEKYLL_ENV: development
+
