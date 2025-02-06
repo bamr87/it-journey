@@ -13,9 +13,10 @@ keywords:
   - homebrew
   - winget
   - apt
-lastmod: 2024-05-30T22:34:02.510Z
+lastmod: 2025-02-06T18:16:41.924Z
 draft: true
 slug: machine-setup
+comments: true
 ---
 
 Before you can begin developing, your machine (computer) needs to be configured and loaded with the necessary software and dependencies.
