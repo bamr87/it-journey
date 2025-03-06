@@ -1,19 +1,19 @@
 ---
 title: Quick Start (~) Index
 author: null
-layout: blog
+layout: default
 description: null
 permalink: /quickstart/
 sidebar:
    nav: quickstart
-lastmod: 2024-06-06T03:11:33.251Z
+lastmod: 2025-02-06T18:18:33.556Z
 ---
 
 
 Here's an index of all the quickstart documents in the collection.
 
 1. Master Setup
-   1. [Machine](machine-setup.md)
+   1. [Machine](/quickstart/machine-setup)
    2. IDE
    3. CI/CD (Travis CI)
    4. Source Code Control (Github)

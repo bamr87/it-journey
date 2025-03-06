@@ -155,7 +155,23 @@ else
 fi
 ```
 
+The script checks if certain tools (git, gh, docker, and Visual Studio Code) are installed and if gh is authenticated on a macOS system using Homebrew. 
+
+For each tool, it runs a version check command and redirects the output to null. If the tool is not installed, it installs it using Homebrew. If the tool is already installed, it prints a message indicating that. For gh, it also checks if it is authenticated and prompts the user to authenticate if it is not.
+
+
 ## Environment
+
+This section of the document is about setting up environment variables for a project. It provides two methods to set these variables:
+
+Manual Entry:
+
+Prompts the user to enter their GitHub username and repository name in the terminal.
+These values are then stored as environment variables.
+Automatic Setup:
+
+Sets default values for the environment variables, including the GitHub home directory, the GitHub username (retrieved using the GitHub CLI), the repository name, and the full path to the repository.
+Finally, it confirms the environment variables by printing them to the terminal and logging them to a file named env-variables.log.
 
 ### Enter Variables
 
