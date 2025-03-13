@@ -55,10 +55,10 @@ sub_domain               : &sub_domain ""
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ]
 url                      : &url 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
-public_folder            : "/assets"
+public_folder            : "assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
-og_image                 : '/assets/images/wizard-on-journey.png'
+og_image                 : '/images/wizard-on-journey.png'
 
 ### Owner Information -------------------------------------------------------------
 
@@ -87,8 +87,8 @@ local_git                : [ *home, 'github' ]
 logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
-teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-info_banner              : /assets/images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+info_banner              : /images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -254,7 +254,7 @@ collections:
     permalink: /:collection/:path/:name/
   quickstart:
     output: true
-    permalink: /:collection/:categories/:name/
+    permalink: /:collection/:name/
   about:
     output: true
     permalink: /:collection/:categories/:name/

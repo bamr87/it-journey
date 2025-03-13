@@ -1,7 +1,7 @@
 ---
 title: Machine Setup
 author: bamr87
-description: A guide to setting up your machine for Jekyll development.
+description: Learn how to set up your machine for developing a Static Website Generator with Jekyll, covering software installation for Windows, Mac, and Linux.
 excerpt: A guide to setting up your machine for Jekyll development.
 layout: default
 keywords:
@@ -13,10 +13,24 @@ keywords:
   - homebrew
   - winget
   - apt
-lastmod: 2025-02-06T18:16:41.924Z
+lastmod: 2025-03-06T15:52:31.348Z
 draft: true
 slug: machine-setup
 comments: true
+fmContentType: default
+preview: /assets/images/building-machines.png
+tags:
+  - development
+  - Jekyll
+  - machine setup
+  - Ruby
+  - Visual Studio Code
+categories:
+  - Development
+  - Guides
+  - Jekyll
+  - Programming
+  - Web Development
 ---
 
 Before you can begin developing, your machine (computer) needs to be configured and loaded with the necessary software and dependencies.
