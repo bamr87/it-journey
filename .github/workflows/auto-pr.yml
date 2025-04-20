@@ -1,4 +1,4 @@
-name: Automated PR for merging master into gh-pages
+name: Automated PR for merging main into gh-pages
 
 on:
   workflow_dispatch:
@@ -19,16 +19,16 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
 
-      - name: Merge master into gh-pages
+      - name: Merge main into gh-pages
         run: |
           git checkout gh-pages
-          git merge --no-edit master || echo "Merge conflict occurred. Continuing the process."
+          git merge --no-edit main || echo "Merge conflict occurred. Continuing the process."
           git push origin gh-pages || echo "Push failed. Continuing the process."
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          title: 'Weekly merge: master into gh-pages'
+          title: 'Weekly merge: main into gh-pages'
           branch: 'gh-pages'
-          base: 'master'
+          base: 'main'
           auto_merge: false
