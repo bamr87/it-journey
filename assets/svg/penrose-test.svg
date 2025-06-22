@@ -1,0 +1,17 @@
+<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\">
+  <defs>
+    <linearGradient id=\"grad1\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">
+      <stop offset=\"0%\" style=\"stop-color:#4c669f;stop-opacity:1\" />
+      <stop offset=\"100%\" style=\"stop-color:#3b5998;stop-opacity:1\" />
+    </linearGradient>
+  </defs>
+
+  <g fill=\"url(#grad1)\" stroke=\"#000\" stroke-width=\"1\">
+    <!-- First Bar -->
+    <polygon points=\"50,150 100,50 120,90 70,190\" />
+    <!-- Second Bar -->
+    <polygon points=\"100,50 150,150 110,170 60,70\" />
+    <!-- Third Bar -->
+    <polygon points=\"150,150 50,150 90,130 190,130\" />
+  </g>
+</svg>
