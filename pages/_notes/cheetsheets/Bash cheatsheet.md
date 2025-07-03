@@ -1,14 +1,23 @@
 ---
-title: Bash cheatsheet
-updated: 2022-08-07 20:49:00Z
-created: 2023-12-15 04:10:54Z
+title: Bash Cheatsheet
+author: bamr87
+description: Essential bash commands and scripting techniques for system administration and automation
+excerpt: Quick reference for bash shell commands, scripting patterns, and Linux system administration
+categories:
+  - notes
+  - cheatsheets
+  - shell
 tags:
     - bash
     - linux
     - script
     - shell
+    - cheatsheet
+    - reference
+layout: default
 TODO: create a cheatsheet layout based on devhints.io
 lastmod: 2024-05-14T15:14:49.051Z
+draft: false
 ---
 
 Getting started

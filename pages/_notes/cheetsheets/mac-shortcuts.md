@@ -1,19 +1,22 @@
 ---
-title: Mac keyboard shortcuts
-author: Apple
-excerpt: null
-description: null
-snippet: null
+title: Mac Keyboard Shortcuts
+author: bamr87
+description: Comprehensive reference guide for Mac keyboard shortcuts to improve productivity and efficiency
+excerpt: Essential Mac keyboard shortcuts for power users - boost your productivity with these time-saving combinations
 categories:
     - notes
+    - cheatsheets
     - shortcuts
 tags:
-    - notes
     - mac
-meta: null
-draft: true
+    - keyboard
+    - shortcuts
+    - productivity
+    - reference
+layout: default
 lastmod: 2024-04-29T16:26:31.967Z
 source: https://support.apple.com/en-us/HT201236
+draft: false
 ---
 
 By pressing certain key combinations, you can do things that normally need a mouse, trackpad, or other input device.
