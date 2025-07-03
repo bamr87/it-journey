@@ -186,10 +186,16 @@ EOF
                 # Clean title of quotes
                 title=$(echo "$title" | sed 's/^["'\'']//' | sed 's/["'\'']$//')
                 
-                echo "  - file: $file" >> "$SETTINGS_DIR/sitemap-data.yml"
-                echo "    title: \"$title\"" >> "$SETTINGS_DIR/sitemap-data.yml"
+                # Add entry to the array
+                sitemap_entries+=("  - file: $file\n    title: \"$title\"")
             fi
-        done | sort
+        done
+    
+    # Sort entries
+    sorted_entries=$(printf "%s\n" "${sitemap_entries[@]}" | sort)
+    
+    # Write sorted entries to sitemap-data.yml
+    echo "$sorted_entries" >> "$SETTINGS_DIR/sitemap-data.yml"
     
     echo "✅ Sitemap data generated successfully (gitignore-filtered)"
 }
