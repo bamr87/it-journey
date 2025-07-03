@@ -1,0 +1,110 @@
+name: Update Settings Configuration
+
+on:
+  push:
+    branches: [main]
+    paths: 
+      - '_config.yml'
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update all settings files'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  SETTINGS_DIR: pages/_about/settings
+  CONFIG_FILE: _config.yml
+
+jobs:
+  update-settings:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Install tree command
+        run: sudo apt-get update && sudo apt-get install -y tree
+
+      - name: Make update script executable
+        run: chmod +x scripts/update-settings.sh
+
+      - name: Run update settings script
+        run: |
+          export SETTINGS_DIR="${{ env.SETTINGS_DIR }}"
+          export CONFIG_FILE="${{ env.CONFIG_FILE }}"
+          ./scripts/update-settings.sh
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ${{ env.SETTINGS_DIR }}/
+          git commit -m "🤖 Auto-update settings configuration files
+
+          - Updated _config.yml copy
+          - Regenerated tree structure
+          - Updated sitemap data
+          - Enhanced config.md with automation details
+          
+          Triggered by: ${{ github.event_name }}
+          Commit: ${{ github.sha }}"
+          git push
+
+      - name: Create summary
+        run: |
+          echo "## Settings Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Update Method:" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Using modular script**: \`scripts/update-settings.sh\`" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **DRY Principle**: Single source of truth for update logic" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Maintainable**: Logic centralized in reusable script" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Files Updated:" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.SETTINGS_DIR }}/${{ env.CONFIG_FILE }}\` - Jekyll configuration copy" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.SETTINGS_DIR }}/tree.txt\` - Directory structure (gitignore-filtered)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.SETTINGS_DIR }}/sitemap-data.yml\` - Site navigation data (gitignore-filtered)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.SETTINGS_DIR }}/config.md\` - Enhanced configuration documentation" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.SETTINGS_DIR }}/tree.md\` - Enhanced tree structure documentation" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.SETTINGS_DIR }}/sitemap.md\` - Enhanced sitemap documentation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Automation Features:" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Configuration synchronization" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Tree structure generation (respects .gitignore)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Sitemap data creation (gitignore-filtered)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Enhanced documentation generation" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Cross-platform compatibility" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Modular, maintainable script architecture" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.changes.outputs.changes }}" == "true" ]; then
+            echo "🎉 **Changes committed and pushed successfully!**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **No changes were necessary.**" >> $GITHUB_STEP_SUMMARY
+          fi
