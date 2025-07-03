@@ -194,9 +194,10 @@ export GIT_REPO
 ```
 
 ```shell
+# Or set them automatically
+
 export GITHOME=~/github
 export GHUSER=$(gh api user --jq '.login')
-export GIT_REPO=zer0-mistakes
 export ZREPO=$GITHOME/$GIT_REPO
 ```
 
@@ -205,6 +206,17 @@ export ZREPO=$GITHOME/$GIT_REPO
 
 echo "$(date) - Log started" > env-variables.log
 echo -e "GITHOME: $GITHOME\nGHUSER: $GHUSER\nGIT_REPO: $GIT_REPO\nZREPO: $ZREPO" >> env-variables.log
+tail -n 10 env-variables.log
+```
+
+```shell
+# Create your github home directory and repo
+
+mkdir -p $GITHOME
+cd $GITHOME
+
+mkdir -p $ZREPO
+cd $ZREPO
 ```
 
 ### Set Git email and username
@@ -229,12 +241,6 @@ git config -l | tee -a env-variables.log
 ## Initialize github
 
 [gh cli docs](https://cli.github.com/manual/)
-
-```shell
-# Create your github home directory and repo
-
-mkdir -p $ZREPO
-```
 
 ```shell
 # Initialize your github repository
@@ -276,6 +282,134 @@ open https://github.com/${GHUSER}/${GIT_REPO}
 
 ![Checkpoint 1](/assets/images/zer0-checkpoint-1.png)
 
+## Build App Infrastructure
+
+### Install zer0-mistakes Jekyll Theme Foundation
+
+The simplest way to build your application infrastructure is to use the zer0-mistakes Jekyll theme installer. This script creates the optimal directory structure and configuration files for both local development and Azure Static Web Apps deployment.
+
+#### Quick Start Installation
+
+```shell
+# Navigate to your repository directory
+cd $ZREPO
+
+# Download and run the zer0-mistakes theme installer directly from GitHub
+curl -fsSL https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.sh | bash
+
+# Alternative: Clone and run locally
+# git clone https://github.com/bamr87/zer0-mistakes.git temp-theme
+# ./temp-theme/install.sh .
+# rm -rf temp-theme
+```
+
+#### What the installer creates
+
+The installer automatically sets up:
+
+- **Jekyll Configuration**: `_config.yml`, `_config_dev.yml`, `frontmatter.json`
+- **Build System**: `Gemfile`, `Rakefile`, `package.json`
+- **Docker Support**: `docker-compose.yml`, `Dockerfile`
+- **Theme Structure**: `_data/`, `_sass/`, `_includes/`, `_layouts/`, `assets/`
+- **Static Files**: `404.html`, `favicon.ico`, `index.md` (if not exists)
+- **Development Tools**: `.gitignore`, `INSTALLATION.md`
+
+#### Verify Installation
+
+```shell
+# Check that key files were created
+ls -la | grep -E "(_config|Gemfile|docker-compose)"
+
+# View the installation summary
+cat INSTALLATION.md
+
+# Log the installation completion
+echo "zer0-mistakes theme installed successfully at $(date)" | tee -a build/env-variables.log
+```
+
+#### Next Steps After Installation
+
+```shell
+# Start development server with Docker (recommended)
+docker-compose up
+
+# OR start with local Ruby environment
+bundle install
+bundle exec jekyll serve --config _config_dev.yml
+
+# Your site will be available at http://localhost:4000
+```
+
+### Azure Static Web Apps Structure
+
+The zer0-mistakes theme is pre-configured for Azure Static Web Apps deployment with the following structure:
+
+- **App Location**: Root directory (`.`) - Contains Jekyll source files
+- **API Location**: `api/` directory - For Azure Functions (optional)
+- **Output Location**: `_site/` directory - Jekyll build output
+
+#### Add Azure Functions (Optional)
+
+If you need serverless backend functionality, create the API structure:
+
+```shell
+# Create Azure Functions API structure
+mkdir -p api/hello
+
+# Create function configuration
+cat > api/hello/function.json << 'EOF'
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get", "post"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
+EOF
+
+# Create sample function
+cat > api/hello/index.js << 'EOF'
+module.exports = async function (context, req) {
+  context.log("JavaScript HTTP trigger function processed a request.");
+  
+  const name = (req.query.name || (req.body && req.body.name));
+  const responseMessage = name
+    ? `Hello, ${name}. This is your Azure Function API!`
+    : "Hello! This is your Azure Function API. Pass a name in the query string or request body.";
+  
+  context.res = {
+    status: 200,
+    body: responseMessage
+  };
+};
+EOF
+
+# Log API creation
+echo "Azure Functions API structure created" | tee -a build/env-variables.log
+```
+
+#### Azure Static Web Apps Deployment
+
+The theme includes GitHub Actions workflow for automatic deployment. To enable:
+
+1. Create an Azure Static Web App in the Azure portal
+2. Copy the deployment token to your GitHub repository secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN`
+3. Push to the `main` branch to trigger deployment
+
+The workflow file is automatically created at `.github/workflows/azure-static-web-apps.yml`.
+
+
+
+
 ## Initialize Jekyll
 
 ### Create Gemfile
@@ -299,6 +433,8 @@ echo "end" >> Gemfile
 ```
 
 ### Download Config file
+
+<!-- TODO: Build a configuration file wizard to download  -->
 
 ```shell
 # Download the _config.yml file from the jekyll-theme-zer0 repo
