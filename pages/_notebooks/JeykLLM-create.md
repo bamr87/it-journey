@@ -1,11 +1,19 @@
 ---
-title: "Chat GPT Text Generation"
-description: "This notebook demonstrates how to use the Chat GPT model for text generation."
-tags: ["NLP", "GPT", "Text Generation"]
-libraries: 
-  - openai
-  - python-dotenv
-
+author: bamr87
+categories:
+- notebooks
+date: '2025-07-03T16:39:35.0471Z'
+description: This notebook demonstrates how to use the Chat GPT model for text generation.
+draft: false
+lastmod: '2025-07-03T16:47:08.3131Z'
+libraries:
+- openai
+- python-dotenv
+tags:
+- NLP
+- GPT
+- Text Generation
+title: Chat GPT Text Generation
 ---
 
 ## Introduction

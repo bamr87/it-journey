@@ -1,14 +1,16 @@
 ---
-title: penrose triangle
-sub-title: null
-author: null
-excerpt: null
+author: bamr87
+categories:
+- posts
+date: '2023-03-17T00:00:00.000Z'
 description: null
-snippet: 2023-03-11T16:12:28.481Z
-categories: null
+draft: 2023-03-11 16:12:28.481000+00:00
+excerpt: null
+lastmod: 2024-05-20 14:59:10.308000+00:00
+snippet: 2023-03-11 16:12:28.481000+00:00
+sub-title: null
 tags: null
-draft: 2023-03-11T16:12:28.481Z
-lastmod: 2024-05-20T14:59:10.308Z
+title: penrose triangle
 type: Article
 ---
 

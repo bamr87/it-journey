@@ -1,7 +1,12 @@
 ---
 Title: Music Index
-lastmod: '2022-01-09T04:32:39.222Z'
+author: bamr87
+categories:
+- hobbies
 category: hobbies
+date: '2025-07-03T16:39:35.0461Z'
+draft: false
+lastmod: '2022-01-09T04:32:39.222Z'
 slug: music
 ---
 

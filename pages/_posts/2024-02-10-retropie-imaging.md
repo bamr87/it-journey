@@ -1,16 +1,18 @@
 ---
-title: RetroPie Imaging
-sub-title: null
-author: null
-excerpt: null
+author: bamr87
+categories:
+- posts
+date: '2024-02-10T00:00:00.000Z'
 description: null
-snippet: 2024-02-10T23:51:06.235Z
-categories: []
-tags: []
-draft: 2024-02-10T23:51:06.235Z
-lastmod: 2024-05-20T14:59:05.949Z
-type: Article
+draft: 2024-02-10 23:51:06.235000+00:00
+excerpt: null
+lastmod: 2024-05-20 14:59:05.949000+00:00
 slug: retropie-imaging
+snippet: 2024-02-10 23:51:06.235000+00:00
+sub-title: null
+tags: []
+title: RetroPie Imaging
+type: Article
 ---
 
 
