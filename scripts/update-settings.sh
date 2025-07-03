@@ -109,8 +109,20 @@ should_ignore_file() {
     else
         # Fallback to manual checking
         # Default ignores - check for exact patterns and path components
-        if [[ "$file" =~ ^(_site/|\.git/|node_modules/|vendor/|\.bundle/) ]]; then
-            return 0  # ignore
+        # Dynamically match patterns from .gitignore
+        if [ -f ".gitignore" ]; then
+            while IFS= read -r line; do
+                # Skip empty lines and comments
+                if [ -n "$line" ] && [[ ! "$line" =~ ^[[:space:]]*# ]]; then
+                    # Remove leading/trailing whitespace
+                    line=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+                    
+                    # Use globbing to match patterns
+                    if [[ "$file" == $line ]]; then
+                        return 0  # ignore
+                    fi
+                fi
+            done < ".gitignore"
         fi
         
         # Check against gitignore patterns if file exists
