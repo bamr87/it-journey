@@ -1,3 +1,20 @@
+---
+title: Markdown to Script Converter
+description: Python utilities to convert markdown files to executable scripts
+author: bamr87
+layout: default
+categories:
+  - notebooks
+  - utilities
+tags:
+  - python
+  - markdown
+  - scripting
+  - automation
+lastmod: 2024-05-15T03:54:48.681Z
+draft: false
+---
+
 ```python
 def convert_md_to_bash(md_file_path, bash_file_path):
     with open(md_file_path, 'r') as md_file, open(bash_file_path, 'w') as bash_file:
