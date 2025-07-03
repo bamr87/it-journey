@@ -1,14 +1,16 @@
 ---
-title: LaTex your CV
-sub-title: null
-author: null
-excerpt: null
+author: bamr87
+categories:
+- posts
+date: '2023-11-04T00:00:00.000Z'
 description: null
-snippet: 2023-11-05T02:50:50.370Z
-categories: []
+draft: 2023-11-05 02:50:50.370000+00:00
+excerpt: null
+lastmod: 2024-05-20 14:59:08.505000+00:00
+snippet: 2023-11-05 02:50:50.370000+00:00
+sub-title: null
 tags: []
-draft: 2023-11-05T02:50:50.370Z
-lastmod: 2024-05-20T14:59:08.505Z
+title: LaTex your CV
 type: Article
 ---
 

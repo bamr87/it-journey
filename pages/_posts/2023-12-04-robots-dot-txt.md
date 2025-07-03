@@ -1,14 +1,16 @@
 ---
-title: robots dot txt
-sub-title: null
-author: null
-excerpt: null
+author: bamr87
+categories:
+- posts
+date: '2023-12-04T00:00:00.000Z'
 description: null
-snippet: 2023-12-04T21:15:31.625Z
-categories: []
+draft: 2023-12-04 21:15:31.625000+00:00
+excerpt: null
+lastmod: 2024-05-16 02:49:07.594000+00:00
+snippet: 2023-12-04 21:15:31.625000+00:00
+sub-title: null
 tags: []
-draft: 2023-12-04T21:15:31.625Z
-lastmod: 2024-05-16T02:49:07.594Z
+title: robots dot txt
 type: Article
 ---
 

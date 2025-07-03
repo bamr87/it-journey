@@ -1,9 +1,14 @@
 ---
-title: Notes (~) Index
+author: bamr87
+categories:
+- notes
+date: '2025-07-03T16:39:35.0501Z'
 description: Notes Index
+draft: false
+lastmod: 2024-05-24 04:34:37.380000+00:00
 layout: collection
 permalink: /notes/
-lastmod: 2024-05-24T04:34:37.380Z
+title: Notes (~) Index
 ---
 
 ## Randmon Notes

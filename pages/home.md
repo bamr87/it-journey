@@ -9,10 +9,22 @@ permalink: /home/
 bookmark: /zer0/
 sidebar:
    nav: home
-lastmod: 2024-05-15T03:54:48.681Z
+date: 2024-05-15T03:54:48.681Z
+lastmod: 2025-07-03T16:40:00.000Z
+categories:
+  - home
+  - navigation
+  - guides
+tags:
+  - home
+  - journey
+  - learning
+  - programming
+  - development
+  - tutorial
 TODO:
    - Add a story line
-draft: draft
+draft: false
 ---
 
 Go to [bookmark]({{ page.bookmark }})
