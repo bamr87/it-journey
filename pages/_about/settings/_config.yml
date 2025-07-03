@@ -26,9 +26,22 @@
 
 # Site Settings ###################################################################
 
+founder                  : "Amr Abdel-Motaleb"
+remote_theme             : "bamr87/zer0-mistakes"
+# theme                    : "jekyll-theme-zer0"
+
+## Github Information
+github_user              : &github_user "bamr87"
+repository_name          : &github_repository "it-journey"
+repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
+local_repo               : *github_repository
+branch                   : "main"
+repo_map                 : "/about/sitemap/"
+github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+portfolio                : [*github_user, '.', 'github.io']
+
 ## Site Information ---------------------------------------------------------------
 
-founder                  : "Amr Abdel-Motaleb"
 title                    : IT-Journey
 title_url                : "/"
 title_icon               : "globe"
@@ -36,17 +49,16 @@ subtitle                 : "zer0 to her0"
 subtitle_url             : "localhost"
 subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
-domain                   : &domain "it-journey.dev"
+domain                   : &domain "it-journey"
+domain_ext               : ".dev"
+sub_domain               : &sub_domain ""
 baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
-url                      : 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
-public_folder            : "/assets"
+url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ]
+url                      : &url 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
+public_folder            : "assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
-og_image                 : '/assets/images/wizard-on-journey.png'
-
-### Github Information
-github_user              : &github_user "bamr87"
-github_site              : 'bamr87.github.io'
+og_image                 : '/images/wizard-on-journey.png'
 
 ### Owner Information -------------------------------------------------------------
 
@@ -56,45 +68,27 @@ description              : >- # this means to ignore newlines until the next var
   Collection of articles, notes, and tutorials to build a website
   or headless CMS using Jekyll and Github Pages.
   This is my journey from zer0 to her0.
+level                    : 'her0'
 
-repository_name          : &github_repository "it-journey"
-repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
-local_repo               : *github_repository
-repo_map                 : "_about/"
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
-portfolio                : [*github_user, '.', 'github.io']
 
-## Maintainer Information----------------------------------------------------------
+# Maintainer Information----------------------------------------------------------
 
 maintainers:
-  - name: "Amr"
-    profile: "/github.com/bamr87"
+  - name: *name
+    profile: ["https://github.com", "/", *github_user]
   - name: "Vacant"
     profile: "/github.com"
-
-## Admin Information----------------------------------------------------------
-
-jekyll_admin:
-  # hidden_links:
-  #   - posts
-  #   - pages
-  #   - staticfiles
-  #   - datafiles
-  #   - configuration
-  homepage: "pages"
 
 ## Personalization ----------------------------------------------------------------
 
 locale                   : "en-US"
-home_dir_pc              : &home-win 'C:\Users\amrab\'
-home_dir_mac             : &home-mac '/Users/bamr87/'
-local_git_pc             : [ *home-win, 'github' ]
-local_git_mac            : [ *home-mac, 'github' ]
+home_dir                 : &home '/Users/bamr87/'
+local_git                : [ *home, 'github' ]
 logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-logo_link                : 'https://www.it-journey.dev'
+logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
-teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-info_banner              : /assets/images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+info_banner              : /images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -111,6 +105,10 @@ author:
   twitter_username       : "bamr87"
   github_username        : *github_user
 
+
+## Site Analytics #############################################################
+
+google_analytics         : 'G-ZBDKNMC168'
 
 ## Site verification #############################################################
 
@@ -179,7 +177,8 @@ powered_by:
     url: "https://www.docker.com/"
     icon: "bi-docker"
 
-### Plugins 
+### Plugins  #####################################################################
+
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins
 # http://jekyllrb.com/docs/plugins/
 
@@ -187,24 +186,21 @@ powered_by:
 
 plugins:
   - github-pages
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-  # - jekyll-assets
-  - jekyll-algolia
-  # - jekyll-mermaid  # https://mermaidjs.github.io/
-  # - jekyll-admin # https://github.com/jekyll/jekyll-admin
-  # - jekyll-redirect-from
-  # - bootstrap
-  # - jekyll-spaceship
-  # - jemoji # Doesn't work for some reason
-  # - jekyll-postcss
+  - jekyll-relative-links
+
+## Gisgus Plugin #################################################################
+
+gisgus:
+  enabled: true
+  data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
+  data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
 
 # https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
-
-mermaid:
-  src: 'mermaid/src/mermaid.js'
 
 ## Conversion
 # Markdown Options https://jekyllrb.com/docs/configuration/markdown/
@@ -258,7 +254,7 @@ collections:
     permalink: /:collection/:path/:name/
   quickstart:
     output: true
-    permalink: /:collection/:categories/:name/
+    permalink: /:collection/:name/
   about:
     output: true
     permalink: /:collection/:categories/:name/
@@ -272,8 +268,6 @@ paginate_path: "/pages/:num/"
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
-nav-file: '_data/navigation/map.yml'
-
 defaults:
   # ALL
   - 
@@ -283,7 +277,7 @@ defaults:
       layout: root
       author_profile: false
       read_time: true
-      comments: # true
+      comments: false # true
       share: true
       related: true
       sidebar:
@@ -330,7 +324,7 @@ defaults:
       sidebar:
         nav: quickstart
 
-  # _posts
+  # pages/_posts
   - 
     scope:
       path: pages/_posts
@@ -434,9 +428,6 @@ algolia:
   search_only_api_key: '3b9200e21085fbebc263950c157b2682'
   index_name: dev_it-journey
 
-atom_feed:
-path                   : # blank (default) uses feed.xml
-
 ## Style Settings -------------------------------------------------------------
 
 # theme                  : "zer0-mistakes-jekyll"
@@ -445,8 +436,6 @@ theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
 # remote_style           : "bamr87/zer0-mistakes"
-
-
 
 theme_color:
   main: #007bff
@@ -476,7 +465,7 @@ theme_color:
 ## Copyright Settings --------------------------------------------------------------
 
 cr_year: 2024
-cr_entity: "Amr"
+cr_entity: *name
 cr_lisense: "MIT"
 
 ## Sitemap Settings --------------------------------------------------------------
