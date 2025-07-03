@@ -17,14 +17,11 @@ draft: draft
 
 Go to [bookmark]({{ page.bookmark }})
 
-## What to build today?
+## What to Build Today?
 
 ```text
-I want to build an integration from Github to an LLM (such as Gemini) to review markdown files for grammar, spelling, completeness, etc., and then commit the changes for review.
+I want to build an integration from GitHub to an LLM (such as Gemini) to review markdown files for grammar, spelling, completeness, etc., and then commit the changes for review.
 ```
-
-
-
 
 ## TODO 
 
@@ -33,10 +30,9 @@ I want to build an integration from Github to an LLM (such as Gemini) to review 
 
 ## Introduction
 
-This is where we begin our journey. The place where we return after getting lost or wandering off.
-Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
-There are [journals](/posts) to capture our experiences and findings, [notes](/notes) to quickly reference when our memories fail, and a [library](/docs) of documentation that gives us the depth of knowledge to build upon and share.
-Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
+This is where we begin our journey — the place where we return after getting lost or wandering off. Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
+
+There are [journals](/posts) to capture our experiences and findings, [notes](/notes) to quickly reference when our memories fail, and a [library](/docs) of documentation that gives us the depth of knowledge to build upon and share. Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
 
 ## Abstract
 
