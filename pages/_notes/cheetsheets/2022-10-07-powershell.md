@@ -1,18 +1,22 @@
 ---
-title: "Windows Powershell Cheatsheet"
+title: "Windows PowerShell Cheatsheet"
 author: bamr87
-excerpt: null
-description: null
-snippet: null
+description: PowerShell scripting reference for Windows system administration and automation
+excerpt: Comprehensive PowerShell commands and scripting techniques for Windows environments
 categories:
   - notes
-  - cheetsheet
-tags:
-  - note
+  - cheatsheets
   - powershell
-meta: null
-draft: true
+tags:
+  - powershell
+  - windows
+  - scripting
+  - administration
+  - cheatsheet
+  - reference
+layout: default
 lastmod: 2022-01-10T21:54:00.053Z
+draft: false
 ---
 
 Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS).

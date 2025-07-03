@@ -8,3 +8,4 @@ Gemfile.lock
 pages/_notes/.DS_Store
 *.DS_Store
 .env
+.venv

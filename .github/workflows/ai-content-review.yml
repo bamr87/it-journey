@@ -1,0 +1,322 @@
+name: AI Content Review Workflow
+
+on:
+  pull_request:
+    paths:
+      - 'pages/**/*.md'
+    types: [opened, synchronize]
+  push:
+    branches: [main]
+    paths:
+      - 'pages/**/*.md'
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  ai-content-review:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    
+    - name: Install dependencies
+      run: |
+        pip install pyyaml requests openai
+    
+    - name: Get changed markdown files
+      id: changed-files
+      run: |
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          # Get files changed in PR
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep -E '^pages/.*\.md$' | head -20)
+        else
+          # Get files changed in push
+          changed_files=$(git diff --name-only HEAD~1 HEAD | grep -E '^pages/.*\.md$' | head -20)
+        fi
+        
+        echo "Changed markdown files:"
+        echo "$changed_files"
+        
+        # Save to output
+        echo "files<<EOF" >> $GITHUB_OUTPUT
+        echo "$changed_files" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+    
+    - name: Review content with AI
+      id: ai-review
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        cat > review_content.py << 'EOF'
+        import os
+        import sys
+        import json
+        import yaml
+        import requests
+        from pathlib import Path
+
+        def extract_frontmatter_and_content(file_path):
+            """Extract YAML frontmatter and content from markdown file."""
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                if content.startswith('---\n'):
+                    parts = content.split('\n---\n', 1)
+                    if len(parts) == 2:
+                        try:
+                            frontmatter = yaml.safe_load(parts[0][4:])
+                            body_content = parts[1]
+                            return frontmatter if frontmatter else {}, body_content
+                        except yaml.YAMLError:
+                            return {}, content
+                return {}, content
+            except Exception as e:
+                print(f"Error reading {file_path}: {e}")
+                return {}, ""
+
+        def call_openai_api(content, filename):
+            """Call OpenAI API to review content."""
+            api_key = os.getenv('OPENAI_API_KEY')
+            if not api_key:
+                return {"error": "OpenAI API key not found"}
+            
+            prompt = f"""
+            You are an expert content reviewer for a technical blog/documentation site called "IT-Journey". 
+            Please review the following markdown file and provide feedback on:
+            
+            1. **Frontmatter completeness**: Check if required fields are present and properly formatted
+            2. **Content quality**: Assess writing quality, structure, and technical accuracy
+            3. **SEO optimization**: Suggest improvements for discoverability
+            4. **Accessibility**: Check for proper heading structure and alt text
+            5. **Technical accuracy**: Review any code examples or technical content
+            
+            Required frontmatter fields: title, description, date, author, categories, tags
+            Preferred frontmatter fields: excerpt, lastmod, draft
+            
+            File: {filename}
+            Content:
+            {content}
+            
+            Please provide a JSON response with the following structure:
+            {{
+              "overall_score": <1-10>,
+              "frontmatter_issues": ["list of issues"],
+              "content_suggestions": ["list of suggestions"],
+              "seo_improvements": ["list of SEO suggestions"],
+              "technical_issues": ["list of technical issues"],
+              "positive_aspects": ["list of good things"],
+              "action_items": ["prioritized list of actions to take"]
+            }}
+            """
+            
+            try:
+                response = requests.post(
+                    'https://api.openai.com/v1/chat/completions',
+                    headers={
+                        'Authorization': f'Bearer {api_key}',
+                        'Content-Type': 'application/json'
+                    },
+                    json={
+                        'model': 'gpt-4',
+                        'messages': [
+                            {'role': 'user', 'content': prompt}
+                        ],
+                        'max_tokens': 1500,
+                        'temperature': 0.3
+                    }
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    content_text = result['choices'][0]['message']['content']
+                    
+                    # Try to extract JSON from the response
+                    try:
+                        # Look for JSON block in the response
+                        import re
+                        json_match = re.search(r'\{.*\}', content_text, re.DOTALL)
+                        if json_match:
+                            return json.loads(json_match.group())
+                        else:
+                            return {"error": "No JSON found in response", "raw_response": content_text}
+                    except json.JSONDecodeError:
+                        return {"error": "Invalid JSON in response", "raw_response": content_text}
+                else:
+                    return {"error": f"API call failed: {response.status_code}"}
+                    
+            except Exception as e:
+                return {"error": f"Exception during API call: {str(e)}"}
+
+        def main():
+            changed_files_str = os.getenv('CHANGED_FILES', '')
+            changed_files = [f.strip() for f in changed_files_str.split('\n') if f.strip()]
+            
+            all_reviews = {}
+            
+            for file_path in changed_files:
+                if not os.path.exists(file_path):
+                    continue
+                    
+                print(f"Reviewing: {file_path}")
+                frontmatter, content = extract_frontmatter_and_content(file_path)
+                
+                # Combine frontmatter and content for review
+                full_content = f"---\n{yaml.dump(frontmatter)}\n---\n{content}"
+                
+                review = call_openai_api(full_content, file_path)
+                all_reviews[file_path] = review
+            
+            # Save reviews to file
+            with open('/tmp/ai_review_results.json', 'w') as f:
+                json.dump(all_reviews, f, indent=2)
+            
+            # Print summary
+            print("AI Review completed!")
+            for file_path, review in all_reviews.items():
+                if 'error' not in review:
+                    score = review.get('overall_score', 'N/A')
+                    print(f"{file_path}: Score {score}/10")
+                else:
+                    print(f"{file_path}: Error - {review['error']}")
+
+        if __name__ == "__main__":
+            main()
+        EOF
+        
+        # Set environment variable for the script
+        export CHANGED_FILES="${{ steps.changed-files.outputs.files }}"
+        python review_content.py
+    
+    - name: Create review summary
+      run: |
+        cat > create_summary.py << 'EOF'
+        import json
+        import os
+        
+        # Load review results
+        try:
+            with open('/tmp/ai_review_results.json', 'r') as f:
+                reviews = json.load(f)
+        except:
+            reviews = {}
+        
+        if not reviews:
+            print("No reviews to process")
+            exit(0)
+        
+        # Create markdown summary
+        summary = "## 🤖 AI Content Review Summary\n\n"
+        
+        total_files = len(reviews)
+        successful_reviews = len([r for r in reviews.values() if 'error' not in r])
+        
+        summary += f"**Files reviewed:** {total_files}  \n"
+        summary += f"**Successful reviews:** {successful_reviews}  \n\n"
+        
+        if successful_reviews > 0:
+            avg_score = sum(r.get('overall_score', 0) for r in reviews.values() if 'error' not in r) / successful_reviews
+            summary += f"**Average quality score:** {avg_score:.1f}/10\n\n"
+        
+        for file_path, review in reviews.items():
+            summary += f"### 📄 `{file_path}`\n\n"
+            
+            if 'error' in review:
+                summary += f"❌ **Error:** {review['error']}\n\n"
+                continue
+            
+            score = review.get('overall_score', 'N/A')
+            summary += f"**Quality Score:** {score}/10\n\n"
+            
+            if review.get('positive_aspects'):
+                summary += "**✅ Positive Aspects:**\n"
+                for aspect in review['positive_aspects']:
+                    summary += f"- {aspect}\n"
+                summary += "\n"
+            
+            if review.get('action_items'):
+                summary += "**🎯 Priority Action Items:**\n"
+                for item in review['action_items'][:3]:  # Top 3 items
+                    summary += f"- {item}\n"
+                summary += "\n"
+            
+            if review.get('frontmatter_issues'):
+                summary += "**⚠️ Frontmatter Issues:**\n"
+                for issue in review['frontmatter_issues']:
+                    summary += f"- {issue}\n"
+                summary += "\n"
+            
+            summary += "---\n\n"
+        
+        # Save summary
+        with open('/tmp/review_summary.md', 'w') as f:
+            f.write(summary)
+        
+        print("Review summary created!")
+        EOF
+        
+        python create_summary.py
+    
+    - name: Comment on PR (if applicable)
+      if: github.event_name == 'pull_request'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        if [ -f "/tmp/review_summary.md" ]; then
+          # Post comment on PR
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d @<(echo '{
+              "body": "'"$(cat /tmp/review_summary.md | sed 's/"/\\"/g' | tr '\n' ' ')"'"
+            }') \
+            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
+        fi
+    
+    - name: Create improvement PR (if push to main)
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Check if we have significant issues to address
+        if [ -f "/tmp/ai_review_results.json" ]; then
+          # Create a new branch for improvements
+          git checkout -b ai-content-improvements-$(date +%Y%m%d-%H%M%S)
+          
+          # Here you could implement automatic fixes based on AI suggestions
+          # For now, we'll just create an issue with the suggestions
+          
+          if [ -f "/tmp/review_summary.md" ]; then
+            # Create an issue with improvement suggestions
+            curl -X POST \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Content-Type: application/json" \
+              -d @<(echo '{
+                "title": "🤖 AI Content Review - Improvement Suggestions",
+                "body": "'"$(cat /tmp/review_summary.md | sed 's/"/\\"/g' | tr '\n' ' ')"'",
+                "labels": ["ai-review", "content-improvement", "automated"]
+              }') \
+              "https://api.github.com/repos/${{ github.repository }}/issues"
+          fi
+        fi
+    
+    - name: Upload review artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ai-review-results
+        path: |
+          /tmp/ai_review_results.json
+          /tmp/review_summary.md
+        retention-days: 30

@@ -1,0 +1,451 @@
+name: Frontmatter Validation and Auto-Fix
+
+on:
+  pull_request:
+    paths:
+      - 'pages/**/*.md'
+    types: [opened, synchronize]
+  workflow_dispatch:
+    inputs:
+      apply_fixes:
+        description: 'Apply automatic fixes to frontmatter'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+        - 'true'
+        - 'false'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate-frontmatter:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    
+    - name: Install dependencies
+      run: |
+        pip install pyyaml
+    
+    - name: Get changed markdown files
+      id: changed-files
+      run: |
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep -E '^pages/.*\.md$' || true)
+        else
+          # For workflow_dispatch, check all files
+          changed_files=$(find pages -name "*.md" -type f)
+        fi
+        
+        echo "Changed markdown files:"
+        echo "$changed_files"
+        
+        echo "files<<EOF" >> $GITHUB_OUTPUT
+        echo "$changed_files" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+    
+    - name: Analyze frontmatter
+      run: |
+        cat > frontmatter_validator.py << 'EOF'
+        import os
+        import yaml
+        import re
+        import json
+        from pathlib import Path
+        from datetime import datetime
+        from typing import Dict, List, Any, Optional
+
+        class FrontmatterValidator:
+            def __init__(self):
+                self.required_fields = {'title', 'description', 'date', 'categories', 'tags', 'author'}
+                self.recommended_fields = {'excerpt', 'lastmod', 'draft'}
+                self.default_author = "bamr87"
+                
+            def extract_frontmatter_and_content(self, file_path: Path) -> tuple:
+                """Extract YAML frontmatter and content from markdown file."""
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    
+                    if content.startswith('---\n'):
+                        parts = content.split('\n---\n', 1)
+                        if len(parts) == 2:
+                            try:
+                                frontmatter = yaml.safe_load(parts[0][4:])
+                                body_content = parts[1]
+                                return frontmatter if frontmatter else {}, body_content
+                            except yaml.YAMLError:
+                                return {}, content
+                    return {}, content
+                except Exception as e:
+                    print(f"Error reading {file_path}: {e}")
+                    return {}, ""
+            
+            def validate_file(self, file_path: Path) -> Dict[str, Any]:
+                """Validate frontmatter of a single file."""
+                frontmatter, content = self.extract_frontmatter_and_content(file_path)
+                
+                issues = []
+                warnings = []
+                suggestions = []
+                
+                # Check required fields
+                missing_required = self.required_fields - set(frontmatter.keys())
+                for field in missing_required:
+                    issues.append(f"Missing required field: {field}")
+                
+                # Check for empty values
+                empty_fields = [k for k, v in frontmatter.items() if v == "" or v is None]
+                for field in empty_fields:
+                    if field in self.required_fields:
+                        issues.append(f"Required field '{field}' is empty")
+                    else:
+                        warnings.append(f"Optional field '{field}' is empty")
+                
+                # Check recommended fields
+                missing_recommended = self.recommended_fields - set(frontmatter.keys())
+                for field in missing_recommended:
+                    suggestions.append(f"Consider adding recommended field: {field}")
+                
+                # Validate specific fields
+                if frontmatter.get('date'):
+                    try:
+                        # Validate date format
+                        date_str = str(frontmatter['date'])
+                        if not re.match(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}', date_str):
+                            warnings.append("Date format should be ISO 8601 (YYYY-MM-DDTHH:MM:SS.sssZ)")
+                    except:
+                        issues.append("Invalid date format")
+                
+                if frontmatter.get('tags') and not isinstance(frontmatter['tags'], list):
+                    issues.append("Tags should be a list")
+                
+                if frontmatter.get('categories') and not isinstance(frontmatter['categories'], list):
+                    issues.append("Categories should be a list")
+                
+                # Content quality checks
+                if len(content.strip()) < 100:
+                    warnings.append("Content is very short (less than 100 characters)")
+                
+                if not re.search(r'^#{1,6}\s+', content, re.MULTILINE):
+                    suggestions.append("Consider adding headers to improve content structure")
+                
+                return {
+                    'file_path': str(file_path),
+                    'has_issues': bool(issues),
+                    'issues': issues,
+                    'warnings': warnings,
+                    'suggestions': suggestions,
+                    'frontmatter': frontmatter
+                }
+            
+            def generate_fixes(self, file_path: Path, validation_result: Dict) -> Dict[str, Any]:
+                """Generate automatic fixes for frontmatter issues."""
+                frontmatter, content = self.extract_frontmatter_and_content(file_path)
+                fixes_applied = []
+                
+                # Fix missing title
+                if not frontmatter.get('title'):
+                    title = file_path.stem.replace('-', ' ').replace('_', ' ').title()
+                    title = re.sub(r'^\d{4}-\d{2}-\d{2}\s*', '', title)
+                    frontmatter['title'] = title
+                    fixes_applied.append(f"Added title: {title}")
+                
+                # Fix missing description
+                if not frontmatter.get('description'):
+                    lines = content.split('\n')
+                    content_lines = [line.strip() for line in lines if line.strip() and not line.startswith('#')]
+                    if content_lines:
+                        description = content_lines[0][:150]
+                        if len(content_lines[0]) > 150:
+                            description += "..."
+                    else:
+                        description = f"Learn about {frontmatter.get('title', 'this topic').lower()}."
+                    frontmatter['description'] = description
+                    fixes_applied.append("Added description")
+                
+                # Fix missing date
+                if not frontmatter.get('date'):
+                    date_match = re.search(r'(\d{4}-\d{2}-\d{2})', file_path.name)
+                    if date_match:
+                        date_str = date_match.group(1)
+                        frontmatter['date'] = f"{date_str}T00:00:00.000Z"
+                    else:
+                        file_stat = file_path.stat()
+                        creation_time = datetime.fromtimestamp(file_stat.st_mtime)
+                        frontmatter['date'] = creation_time.strftime('%Y-%m-%dT%H:%M:%S.%fZ')[:-3] + 'Z'
+                    fixes_applied.append("Added date")
+                
+                # Fix missing author
+                if not frontmatter.get('author'):
+                    frontmatter['author'] = self.default_author
+                    fixes_applied.append(f"Added author: {self.default_author}")
+                
+                # Fix missing categories
+                if not frontmatter.get('categories'):
+                    relative_path = file_path.relative_to(Path('pages'))
+                    if len(relative_path.parts) > 1:
+                        category = relative_path.parts[0]
+                        if category.startswith('_'):
+                            category = category[1:]
+                        frontmatter['categories'] = [category]
+                        fixes_applied.append(f"Added categories: [{category}]")
+                
+                # Fix missing tags
+                if not frontmatter.get('tags'):
+                    # Basic tag inference from content
+                    content_lower = content.lower()
+                    tags = []
+                    tag_keywords = {
+                        'tutorial': ['tutorial', 'guide', 'how-to'],
+                        'jekyll': ['jekyll', 'liquid'],
+                        'git': ['git', 'github'],
+                        'ai': ['ai', 'artificial intelligence', 'gpt'],
+                        'python': ['python', 'pip'],
+                        'javascript': ['javascript', 'js', 'node']
+                    }
+                    
+                    for tag, keywords in tag_keywords.items():
+                        if any(keyword in content_lower for keyword in keywords):
+                            tags.append(tag)
+                    
+                    if tags:
+                        frontmatter['tags'] = tags
+                        fixes_applied.append(f"Added tags: {tags}")
+                
+                # Add lastmod
+                if not frontmatter.get('lastmod'):
+                    frontmatter['lastmod'] = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%fZ')[:-3] + 'Z'
+                    fixes_applied.append("Added lastmod")
+                
+                # Set draft status
+                if 'draft' not in frontmatter:
+                    frontmatter['draft'] = False
+                    fixes_applied.append("Set draft: false")
+                
+                return {
+                    'file_path': str(file_path),
+                    'fixes_applied': fixes_applied,
+                    'new_frontmatter': frontmatter,
+                    'content': content
+                }
+            
+            def write_file_with_frontmatter(self, file_path: Path, frontmatter: Dict, content: str):
+                """Write file with updated frontmatter."""
+                try:
+                    yaml_content = yaml.dump(frontmatter, default_flow_style=False, allow_unicode=True)
+                    full_content = f"---\n{yaml_content}---\n{content}"
+                    
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(full_content)
+                    
+                    return True
+                except Exception as e:
+                    print(f"Error writing {file_path}: {e}")
+                    return False
+
+        def main():
+            validator = FrontmatterValidator()
+            
+            # Get list of files to validate
+            changed_files_str = os.getenv('CHANGED_FILES', '')
+            files_to_check = [f.strip() for f in changed_files_str.split('\n') if f.strip()]
+            
+            if not files_to_check:
+                print("No markdown files to validate")
+                return
+            
+            validation_results = []
+            fix_results = []
+            
+            apply_fixes = os.getenv('APPLY_FIXES', 'false').lower() == 'true'
+            
+            for file_path_str in files_to_check:
+                file_path = Path(file_path_str)
+                if not file_path.exists():
+                    continue
+                
+                print(f"Validating: {file_path}")
+                validation_result = validator.validate_file(file_path)
+                validation_results.append(validation_result)
+                
+                if apply_fixes and (validation_result['has_issues'] or validation_result['warnings']):
+                    print(f"Applying fixes to: {file_path}")
+                    fix_result = validator.generate_fixes(file_path, validation_result)
+                    
+                    if fix_result['fixes_applied']:
+                        success = validator.write_file_with_frontmatter(
+                            file_path, 
+                            fix_result['new_frontmatter'], 
+                            fix_result['content']
+                        )
+                        if success:
+                            fix_results.append(fix_result)
+            
+            # Save results
+            with open('/tmp/validation_results.json', 'w') as f:
+                json.dump({
+                    'validation_results': validation_results,
+                    'fix_results': fix_results,
+                    'apply_fixes': apply_fixes
+                }, f, indent=2)
+            
+            # Print summary
+            total_files = len(validation_results)
+            files_with_issues = len([r for r in validation_results if r['has_issues']])
+            files_with_warnings = len([r for r in validation_results if r['warnings']])
+            
+            print(f"\n=== FRONTMATTER VALIDATION SUMMARY ===")
+            print(f"Files validated: {total_files}")
+            print(f"Files with issues: {files_with_issues}")
+            print(f"Files with warnings: {files_with_warnings}")
+            
+            if apply_fixes:
+                files_fixed = len(fix_results)
+                print(f"Files automatically fixed: {files_fixed}")
+
+        if __name__ == "__main__":
+            main()
+        EOF
+        
+        export CHANGED_FILES="${{ steps.changed-files.outputs.files }}"
+        export APPLY_FIXES="${{ github.event.inputs.apply_fixes || 'false' }}"
+        python frontmatter_validator.py
+    
+    - name: Create validation report
+      run: |
+        cat > create_validation_report.py << 'EOF'
+        import json
+        import os
+        
+        try:
+            with open('/tmp/validation_results.json', 'r') as f:
+                results = json.load(f)
+        except:
+            results = {'validation_results': [], 'fix_results': [], 'apply_fixes': False}
+        
+        validation_results = results['validation_results']
+        fix_results = results['fix_results']
+        apply_fixes = results['apply_fixes']
+        
+        if not validation_results:
+            print("No validation results to report")
+            exit(0)
+        
+        # Create markdown report
+        report = "## 📋 Frontmatter Validation Report\n\n"
+        
+        total_files = len(validation_results)
+        files_with_issues = len([r for r in validation_results if r['has_issues']])
+        files_with_warnings = len([r for r in validation_results if r['warnings']])
+        
+        report += f"**Files validated:** {total_files}  \n"
+        report += f"**Files with issues:** {files_with_issues}  \n"
+        report += f"**Files with warnings:** {files_with_warnings}  \n"
+        
+        if apply_fixes:
+            files_fixed = len(fix_results)
+            report += f"**Files automatically fixed:** {files_fixed}  \n"
+        
+        report += "\n"
+        
+        # Show validation results
+        for result in validation_results:
+            if result['has_issues'] or result['warnings'] or result['suggestions']:
+                report += f"### 📄 `{result['file_path']}`\n\n"
+                
+                if result['issues']:
+                    report += "**❌ Issues (must fix):**\n"
+                    for issue in result['issues']:
+                        report += f"- {issue}\n"
+                    report += "\n"
+                
+                if result['warnings']:
+                    report += "**⚠️ Warnings:**\n"
+                    for warning in result['warnings']:
+                        report += f"- {warning}\n"
+                    report += "\n"
+                
+                if result['suggestions']:
+                    report += "**💡 Suggestions:**\n"
+                    for suggestion in result['suggestions'][:3]:  # Limit to top 3
+                        report += f"- {suggestion}\n"
+                    report += "\n"
+                
+                report += "---\n\n"
+        
+        # Show fix results if any
+        if fix_results:
+            report += "## 🔧 Automatic Fixes Applied\n\n"
+            for fix_result in fix_results:
+                report += f"### 📄 `{fix_result['file_path']}`\n\n"
+                report += "**Fixes applied:**\n"
+                for fix in fix_result['fixes_applied']:
+                    report += f"- ✅ {fix}\n"
+                report += "\n"
+        
+        # Save report
+        with open('/tmp/validation_report.md', 'w') as f:
+            f.write(report)
+        
+        print("Validation report created!")
+        EOF
+        
+        python create_validation_report.py
+    
+    - name: Commit fixes (if applied)
+      if: github.event.inputs.apply_fixes == 'true'
+      run: |
+        if [ -f "/tmp/validation_results.json" ]; then
+          # Check if there are any changes
+          if ! git diff --quiet; then
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            git add pages/
+            git commit -m "🤖 Auto-fix frontmatter issues
+
+            - Added missing required fields
+            - Fixed formatting issues
+            - Standardized metadata structure
+            
+            Generated by frontmatter validation workflow"
+            git push
+          fi
+        fi
+    
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        if [ -f "/tmp/validation_report.md" ]; then
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d @<(echo '{
+              "body": "'"$(cat /tmp/validation_report.md | sed 's/"/\\"/g' | tr '\n' ' ')"'"
+            }') \
+            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
+        fi
+    
+    - name: Upload validation artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontmatter-validation-results
+        path: |
+          /tmp/validation_results.json
+          /tmp/validation_report.md
+        retention-days: 30

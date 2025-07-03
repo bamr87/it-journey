@@ -1,16 +1,20 @@
 ---
-title: Bash cheatsheet
-description: BASH cheatsheet
+title: Bash Cheatsheet
+author: bamr87
+description: BASH cheatsheet - Quick reference guide for Linux bash shell scripting
 intro: This is a quick reference cheat sheet to getting started with linux bash shell
   scripting.
+categories:
+  - notes
+  - cheatsheets
+  - shell
 tags:
   - shell
   - script
   - linux
   - bash
-collection:
-  - notes
-  - shell
+  - cheatsheet
+  - reference
 keywords:
   - Variables
   - Functions
@@ -19,8 +23,10 @@ keywords:
   - Loops
   - Conditional execution
   - Command substitution
+layout: default
 slug: /shell/
 lastmod: 2022-08-07T14:49:51.999Z
+draft: false
 ---
 
 [![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)

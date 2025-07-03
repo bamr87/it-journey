@@ -1,20 +1,26 @@
 ---
-title: side-bar-folders
-author: null
-layout: null
-description: null
+title: Sidebar Folder Structure
+author: bamr87
+description: Jekyll Liquid template code for generating dynamic sidebar navigation with folder structures from collections
+excerpt: Implementation guide for creating organized sidebar navigation that displays collection files in a hierarchical folder structure
+layout: default
+categories:
+   - notes
+   - dev
+   - jekyll
+   - sidebar
+tags:
+   - jekyll
+   - liquid
+   - sidebar
+   - navigation
+   - collections
+   - file-structure
 slug: side-bar-folders
 lastmod: 2024-05-16T01:45:59.214Z
 date: 2024-05-14T15:47:06.342Z
-preview: null
-tags: []
-categories:
-   - sidebar
-sub-title: null
-excerpt: null
-snippet: null
-keywords: {}
 type: default
+draft: false
 ---
 
 ## All Notes Section

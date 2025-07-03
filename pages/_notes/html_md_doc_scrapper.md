@@ -1,8 +1,21 @@
 ---
-title: "HTML to markdown web scraping"
-description: "A simple web scraping project to convert HTML to markdown using Python"
-date: 2024-05-20
-tags: ["python", "web scraping", "html", "markdown"]
+title: "HTML to Markdown Web Scraping"
+description: "A simple web scraping project to convert HTML to markdown using Python with Beautiful Soup and markdownify"
+date: 2024-05-20T00:00:00.000Z
+author: bamr87
+categories:
+  - notes
+  - python
+  - web-scraping
+tags:
+  - python
+  - web-scraping
+  - html
+  - markdown
+  - beautiful-soup
+  - automation
+lastmod: 2025-07-03T16:40:00.000Z
+draft: false
 ---
 
 

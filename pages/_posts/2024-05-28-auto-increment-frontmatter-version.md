@@ -2,21 +2,21 @@
 title: Auto Increment Frontmatter Version
 description: How to automatically increment the version number in the frontmatter of a markdown file after every commit.
 date: 2024-05-28T21:36:50.132Z
-preview: null
-draft: true
-tags:
-    - git
-categories: []
-sub-title: null
-excerpt: null
-snippet: null
 author: bamr87
-layout: null
-keywords: {}
+layout: default
+excerpt: Learn how to use Git hooks to automatically increment version numbers in frontmatter for better content versioning
+categories:
+  - posts
+  - automation
+  - git
+tags:
+  - git
+  - automation
+  - versioning
+  - frontmatter
+  - git-hooks
 lastmod: 2024-05-28T21:40:13.289Z
-slug: null
-permalink: null
-attachments: ""
+draft: true
 type: posts
 ---
 
