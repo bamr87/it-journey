@@ -1,9 +1,80 @@
 {
-  "name": "my-jekyll-devcontainer",
+  "name": "IT-Journey Jekyll Dev Environment",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
+  
   "features": {
     "ghcr.io/devcontainers/features/ruby:1": {
-    "version": "2.7"
+      "version": "3.1",
+      "installGems": "bundler,jekyll"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
     }
-  }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "shopify.ruby-lsp",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-vscode.live-server",
+        "formulahendry.auto-rename-tag",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        },
+        "files.associations": {
+          "*.md": "markdown",
+          "*.yml": "yaml",
+          "*.yaml": "yaml"
+        },
+        "markdown.preview.breaks": true,
+        "markdown.extension.toc.levels": "2..6"
+      }
+    }
+  },
+
+  "forwardPorts": [4000, 4002, 35729],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Dev Server",
+      "onAutoForward": "notify"
+    },
+    "4002": {
+      "label": "Jekyll Docker Server", 
+      "onAutoForward": "notify"
+    },
+    "35729": {
+      "label": "Jekyll LiveReload",
+      "onAutoForward": "silent"
+    }
+  },
+
+  "postCreateCommand": "bundle install && npm install -g @prettier/plugin-ruby",
+  
+  "remoteUser": "codespace",
+  
+  "mounts": [
+    "source=${localWorkspaceFolder}/.git,target=/workspaces/it-journey/.git,type=bind,consistency=cached"
+  ]
 }
