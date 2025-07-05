@@ -27,13 +27,11 @@ keywords:
         - growth patterns
         - development acceleration
         - future tech
-lastmod: 2025-07-03T23:01:07.219Z
+lastmod: 2025-07-04T21:07:37.711Z
 permalink: /planting-seeds-software-evolution/
 attachments: ""
 comments: true
 ---
-
-As I've been digging into the world of AI, I've been struggling to catch up with the speed of innovation—not in AI itself, but in using AI for development, rapidly evolving from the antiquated systems of the 90s and 2000s.
 
 ## The Seed Metaphor: Nature's Blueprint for Software Evolution
 

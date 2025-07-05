@@ -4,24 +4,24 @@ description: Explore sourcery code methods to enhance your programming skills an
 date: 2025-04-18T19:00:55.950Z
 preview: ""
 tags:
-    - code methods
-    - javascript
-    - programming
-    - sourcery
-    - tutorial
+  - code methods
+  - javascript
+  - programming
+  - sourcery
+  - tutorial
 categories:
-    - Development
-    - Guides
-    - JavaScript
-    - Programming
-    - Quickstart
+  - Development
+  - Guides
+  - JavaScript
+  - Programming
+  - Quickstart
 sub-title: null
 excerpt: null
 snippet: null
 author: ""
 layout: null
 keywords: {}
-lastmod: 2025-04-18T19:11:38.017Z
+lastmod: 2025-07-04T23:01:19.388Z
 permalink: null
 attachments: ""
 comments: false
@@ -224,7 +224,7 @@ jobs:
       with:
         config-name: release-drafter.yml
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_TOKEN }}
 ```
 
 * * * *

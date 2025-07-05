@@ -5,7 +5,7 @@ source "https://rubygems.org"
 # This site is using the GitHub Pages gem, which is updated regularly.
 # We recommend you lock your Jekyll version to the one used by GitHub Pages.
 
-# Here are the dependancies from github pages https://pages.github.com/versions/
+# Here are the dependencies from github pages https://pages.github.com/versions/
 # For more detailed instructions, look here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 
 # Github Pages Gems:

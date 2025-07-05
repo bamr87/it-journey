@@ -21,7 +21,7 @@ snippet: null
 author: ""
 layout: null
 keywords: {}
-lastmod: 2025-04-18T19:43:43.294Z
+lastmod: 2025-07-04T23:01:16.851Z
 permalink: null
 attachments: ""
 comments: false
@@ -95,7 +95,7 @@ jobs:
       with:
         config-name: release-drafter.yml
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_TOKEN }}
 ```
 
 🧪 **Translation**: Every PR to main triggers tests. If those pass and you're on main, the release process begins. All while you sip coffee or battle CSS dragons.

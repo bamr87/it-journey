@@ -295,6 +295,7 @@ The simplest way to build your application infrastructure is to use the zer0-mis
 cd $ZREPO
 
 # Download and run the zer0-mistakes theme installer directly from GitHub
+# Note: Script has been updated with improved error handling for remote installation
 curl -fsSL https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.sh | bash
 
 # Alternative: Clone and run locally
@@ -302,6 +303,8 @@ curl -fsSL https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.s
 # ./temp-theme/install.sh .
 # rm -rf temp-theme
 ```
+
+> **Recent Fix**: The install script has been updated to properly handle remote execution via `curl | bash` and includes improved error handling for network issues and missing dependencies.
 
 #### What the installer creates
 
