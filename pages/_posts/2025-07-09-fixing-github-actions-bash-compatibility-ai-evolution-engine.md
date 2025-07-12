@@ -26,7 +26,7 @@ keywords:
         - ci cd debugging
         - script compatibility
         - devops troubleshooting
-lastmod: 2025-07-09T22:30:00.000Z
+lastmod: 2025-07-10T04:45:40.362Z
 permalink: /fixing-github-actions-bash-compatibility-ai-evolution-engine/
 attachments: ""
 comments: true
