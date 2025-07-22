@@ -1,0 +1,34 @@
+# Lightweight Jekyll Development Container
+FROM ruby:3.1-slim-bullseye
+
+# Set working directory
+WORKDIR /workspace
+
+# Install system dependencies with cleanup in single layer
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    curl \
+    nodejs \
+    npm \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g npm@latest
+
+# Install Jekyll and Bundler
+RUN gem install jekyll bundler --no-document
+
+# Create non-root user
+RUN useradd -m -s /bin/bash vscode && \
+    chown -R vscode:vscode /workspace
+
+USER vscode
+
+# Set up environment
+ENV JEKYLL_ENV=development
+ENV PATH="/home/vscode/.gem/bin:$PATH"
+
+# Expose Jekyll port
+EXPOSE 4000
+
+CMD ["bash"]
