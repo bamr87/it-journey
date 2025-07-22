@@ -374,3 +374,28 @@ Before publishing, verify:
 - [ ] Article connects to the broader IT-Journey narrative
 - [ ] AI assistance is properly credited and explained
 
+## Quest Creation Guidelines for IT-Journey
+
+### **Dedicated Quest Instructions**
+For comprehensive quest creation guidelines, structure standards, and gamification best practices, please refer to the dedicated **Quest Instructions** file at `.github/instructions/quest.instructions.md`.
+
+The quest instructions provide detailed guidance on:
+- **Quest Philosophy and Educational Standards**: Learning theory integration and gamification psychology
+- **Complete Content Structure Templates**: Frontmatter requirements, content architecture, and fantasy theme integration
+- **Multi-Platform Development Support**: macOS, Windows, Linux, and cloud-based quest paths
+- **Quality Assurance Standards**: Technical accuracy, educational effectiveness, and accessibility requirements
+- **Quest Classification System**: Level-based progression, difficulty scaling, and skill categorization
+- **Integration Workflow**: Navigation updates, skill progression paths, and ecosystem management
+- **Template Examples**: Tool mastery, language learning, platform specialization, project building, and career advancement quests
+
+### **Quick Quest Creation Reference**
+
+For AI-assisted quest development, remember these key principles:
+- **Fantasy Theme Consistency**: Use RPG metaphors and magical terminology throughout
+- **Progressive Learning Design**: Structure content from simple to complex with clear checkpoints
+- **Multi-Platform Support**: Provide instructions for macOS, Windows, and Linux where applicable
+- **Measurable Objectives**: Define specific, achievable learning outcomes with validation criteria
+- **Community Integration**: Link to prerequisite quests and suggest follow-up adventures
+
+*For complete quest creation standards and detailed templates, always reference the dedicated quest.instructions.md file.*
+

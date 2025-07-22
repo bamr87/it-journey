@@ -18,7 +18,7 @@ keywords:
         - homebrew
         - winget
         - apt
-lastmod: 2025-07-22T04:33:04.464Z
+lastmod: 2025-07-22T04:33:04.476Z
 draft: false
 slug: machine-setup
 comments: true
@@ -73,15 +73,15 @@ Welcome to your journey in setting up a professional Jekyll development environm
 
 ## 📋 Table of Contents
 
-- [Prerequisites Check](#-prerequisites-check)
-- [Choose Your Platform Path](#-choose-your-platform-path)
+- [Prerequisites Check](#prerequisites-check)
+- [Choose Your Platform Path](#choose-your-platform-path)
 - [Phase 1: Package Manager Setup](#phase-1-package-manager-setup)
 - [Phase 2: Development Tools Installation](#phase-2-development-tools-installation)
 - [Phase 3: Ruby and Jekyll Setup](#phase-3-ruby-and-jekyll-setup)
 - [Phase 4: Project Creation and Testing](#phase-4-project-creation-and-testing)
 - [Phase 5: Advanced Configuration](#phase-5-advanced-configuration)
-- [Troubleshooting Guide](#-troubleshooting-guide)
-- [Verification and Next Steps](#-verification-and-next-steps)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [Next Steps](#next-steps)
 
 ## ✅ Prerequisites Check
 
@@ -930,7 +930,7 @@ If you encounter issues or have questions:
 
 ---
 
-## 🏆 Congratulations
+## 🏆 Congratulations!
 
 You've successfully set up a professional Jekyll development environment! You now have:
 

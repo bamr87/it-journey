@@ -1,56 +1,128 @@
 ---
 title: "Complete Machine Setup Guide: Jekyll Development Environment"
 author: bamr87
-description: Step-by-step guide to setting up Jekyll development environment across Windows, macOS, and Linux with automation scripts.
-excerpt: Master the complete setup process for Jekyll development across all major operating systems with our comprehensive, platform-specific guide.
+description: "Comprehensive step-by-step guide to setting up your development machine for Jekyll static site generation, covering Windows, macOS, and Linux with automated installation scripts and troubleshooting."
+excerpt: "Master the complete setup process for Jekyll development across all major operating systems with our comprehensive, platform-specific guide."
 layout: default
 keywords:
-    primary:
-        - machine setup
-        - jekyll development
-        - development environment
-        - cross-platform setup
-    secondary:
-        - ruby installation
-        - github setup
-        - visual studio code
-        - package managers
-        - homebrew
-        - winget
-        - apt
-lastmod: 2025-07-22T04:33:04.464Z
+  primary:
+    - machine setup
+    - jekyll development
+    - development environment
+    - cross-platform setup
+  secondary:
+    - ruby installation
+    - github setup
+    - visual studio code
+    - package managers
+    - homebrew
+    - winget
+    - apt
+lastmod: 2025-07-21T18:00:00.000Z
 draft: false
 slug: machine-setup
 comments: true
 fmContentType: default
 preview: /assets/images/building-machines.png
 tags:
-    - development
-    - Jekyll
-    - machine-setup
-    - Ruby
-    - Visual-Studio-Code
-    - cross-platform
-    - automation
+  - development
+  - Jekyll
+  - machine-setup
+  - Ruby
+  - Visual-Studio-Code
+  - cross-platform
+  - automation
 categories:
-    - Development
-    - Guides
-    - Jekyll
-    - Programming
-    - Web-Development
-difficulty: 🟡 Medium
-estimatedTime: 60-90 minutes
+  - Development
+  - Guides
+  - Jekyll
+  - Programming
+  - Web-Development
+difficulty: "🟡 Medium"
+estimatedTime: "60-90 minutes"
 prerequisites:
-    - Basic familiarity with command line/terminal
-    - Administrator access to your computer
-    - Internet connection for downloads
+  - "Basic familiarity with command line/terminal"
+  - "Administrator access to your computer"
+  - "Internet connection for downloads"
 relatedDocs:
-    - title: Jekyll Quickstart Guide
-      url: ./jekyll-quickstart.md
-    - title: Git Configuration Guide
-      url: ./git-setup.md
-    - title: VS Code Extensions for Jekyll
-      url: ./vscode-extensions.md
+  - title: "Jekyll Quickstart Guide"
+    url: "./jekyll-quickstart.md"
+  - title: "Git Configuration Guide"
+    url: "./git-setup.md"
+  - title: "VS Code Extensions for Jekyll"
+    url: "./vscode-extensions.md"
+---
+
+## 🎯 Mission Overview
+
+Welcome to your journey in setting up a professional Jekyll development environment! This comprehensive guide will transform your machine into a powerful static site generation workstation. Whether you're using Windows, macOS, or Linux, you'll have everything needed to create, develop, and deploy Jekyll websites.
+
+**What You'll Accomplish:**
+- ✅ Install and configure essential development tools
+- ✅ Set up package managers for streamlined software management
+- ✅ Configure Git and GitHub for version control
+- ✅ Install Ruby and Jekyll with proper environment configuration
+- ✅ Set up Visual Studio Code with Jekyll-optimized extensions
+- ✅ Create your first Jekyll project
+- ✅ Establish automated backup and deployment workflows
+
+**Time Investment:** 60-90 minutes for complete setup
+**Skill Level:** Beginner to Intermediate
+**End Result:** A fully functional Jekyll development environment ready for professional web development
+
+---
+title: "Complete Machine Setup Guide: Jekyll Development Environment"
+author: bamr87
+description: "Step-by-step guide to setting up Jekyll development environment across Windows, macOS, and Linux with automation scripts."
+excerpt: "Master the complete setup process for Jekyll development across all major operating systems with our comprehensive, platform-specific guide."
+layout: default
+keywords:
+  primary:
+    - machine setup
+    - jekyll development
+    - development environment
+    - cross-platform setup
+  secondary:
+    - ruby installation
+    - github setup
+    - visual studio code
+    - package managers
+    - homebrew
+    - winget
+    - apt
+lastmod: 2025-07-21T18:00:00.000Z
+draft: false
+slug: machine-setup
+comments: true
+fmContentType: default
+preview: /assets/images/building-machines.png
+tags:
+  - development
+  - Jekyll
+  - machine-setup
+  - Ruby
+  - Visual-Studio-Code
+  - cross-platform
+  - automation
+categories:
+  - Development
+  - Guides
+  - Jekyll
+  - Programming
+  - Web-Development
+difficulty: "🟡 Medium"
+estimatedTime: "60-90 minutes"
+prerequisites:
+  - "Basic familiarity with command line/terminal"
+  - "Administrator access to your computer"
+  - "Internet connection for downloads"
+relatedDocs:
+  - title: "Jekyll Quickstart Guide"
+    url: "./jekyll-quickstart.md"
+  - title: "Git Configuration Guide"
+    url: "./git-setup.md"
+  - title: "VS Code Extensions for Jekyll"
+    url: "./vscode-extensions.md"
 ---
 
 ## 🎯 Mission Overview
@@ -67,21 +139,21 @@ Welcome to your journey in setting up a professional Jekyll development environm
 - ✅ Create your first Jekyll project
 - ✅ Establish automated backup and deployment workflows
 
-**Time Investment:** 60-90 minutes for complete setup  
-**Skill Level:** Beginner to Intermediate  
+**Time Investment:** 60-90 minutes for complete setup
+**Skill Level:** Beginner to Intermediate
 **End Result:** A fully functional Jekyll development environment ready for professional web development
 
 ## 📋 Table of Contents
 
-- [Prerequisites Check](#-prerequisites-check)
-- [Choose Your Platform Path](#-choose-your-platform-path)
+- [Prerequisites Check](#prerequisites-check)
+- [Choose Your Platform Path](#choose-your-platform-path)
 - [Phase 1: Package Manager Setup](#phase-1-package-manager-setup)
 - [Phase 2: Development Tools Installation](#phase-2-development-tools-installation)
 - [Phase 3: Ruby and Jekyll Setup](#phase-3-ruby-and-jekyll-setup)
 - [Phase 4: Project Creation and Testing](#phase-4-project-creation-and-testing)
 - [Phase 5: Advanced Configuration](#phase-5-advanced-configuration)
-- [Troubleshooting Guide](#-troubleshooting-guide)
-- [Verification and Next Steps](#-verification-and-next-steps)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [Next Steps](#next-steps)
 
 ## ✅ Prerequisites Check
 
@@ -106,15 +178,12 @@ Before we begin, ensure you have:
 Select your operating system to begin the setup journey:
 
 ### 🍎 macOS Setup Path
-
 Perfect for Mac users who want a streamlined development experience with Homebrew.
 
-### 🪟 Windows Setup Path
-
+### 🪟 Windows Setup Path  
 Comprehensive Windows setup using Winget and PowerShell, with WSL2 support.
 
 ### 🐧 Linux Setup Path
-
 Native Linux development using APT, YUM, or other distribution package managers.
 
 ---
@@ -509,8 +578,7 @@ bundle exec jekyll serve --host 0.0.0.0 --port 4000 --livereload
 ```
 
 **Expected Output:**
-
-```text
+```
 Configuration file: _config_dev.yml
             Source: /path/to/it-journey
        Destination: /path/to/it-journey/_site
@@ -650,7 +718,6 @@ services:
 **Problem:** `gem install` fails with permission errors
 
 **Solution:**
-
 ```bash
 # Use user installation directory
 gem install --user-install bundler jekyll
@@ -663,7 +730,6 @@ export PATH="$HOME/gems/bin:$PATH"
 **Problem:** Multiple Ruby versions causing conflicts
 
 **Solution:**
-
 ```bash
 # Check which Ruby is being used
 which ruby
@@ -679,7 +745,6 @@ rbenv local 3.1.0
 **Problem:** `bundle install` fails
 
 **Solution:**
-
 ```bash
 # Clear bundle cache
 bundle clean --force
@@ -696,7 +761,6 @@ bundle lock --add-platform ruby
 **Problem:** Port already in use
 
 **Solution:**
-
 ```bash
 # Kill process using port 4000
 lsof -ti:4000 | xargs kill -9
@@ -710,7 +774,6 @@ bundle exec jekyll serve --port 4001
 **Problem:** Git push fails with authentication errors
 
 **Solution:**
-
 ```bash
 # Re-authenticate with GitHub CLI
 gh auth logout
@@ -726,7 +789,6 @@ gh ssh-key add ~/.ssh/id_ed25519.pub
 #### 🍎 macOS Troubleshooting
 
 **Xcode Command Line Tools:**
-
 ```zsh
 # Install if missing
 xcode-select --install
@@ -736,7 +798,6 @@ sudo xcode-select --reset
 ```
 
 **Path Issues:**
-
 ```zsh
 # Check your PATH
 echo $PATH
@@ -748,7 +809,6 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 #### 🪟 Windows Troubleshooting
 
 **PowerShell Execution Policy:**
-
 ```powershell
 # Check current policy
 Get-ExecutionPolicy
@@ -758,7 +818,6 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **Windows Subsystem for Linux (WSL2) Setup:**
-
 ```powershell
 # Enable WSL2 (run as Administrator)
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -772,7 +831,6 @@ wsl --set-default-version 2
 #### 🐧 Linux Troubleshooting
 
 **Permission Issues:**
-
 ```bash
 # Fix gem permissions
 sudo chown -R $(whoami) ~/.gem
@@ -782,7 +840,6 @@ sudo usermod -a -G sudo $(whoami)
 ```
 
 **Missing Dependencies:**
-
 ```bash
 # Install additional build tools if needed
 sudo apt install -y libffi-dev libssl-dev libxml2-dev libxslt-dev
@@ -879,21 +936,18 @@ git push origin main
 Now that your environment is set up, here's your suggested learning journey:
 
 #### Week 1: Jekyll Fundamentals
-
 - [ ] **[Jekyll Documentation](https://jekyllrb.com/docs/)**: Official getting started guide
 - [ ] **[Liquid Templating](https://shopify.github.io/liquid/)**: Learn the templating language
 - [ ] **[Markdown Guide](https://www.markdownguide.org/)**: Master Markdown syntax
 - [ ] **Practice**: Create 3-5 blog posts with different layouts
 
 #### Week 2: Advanced Features
-
 - [ ] **[Collections](https://jekyllrb.com/docs/collections/)**: Organize content beyond posts
 - [ ] **[Data Files](https://jekyllrb.com/docs/datafiles/)**: Use YAML/JSON data
 - [ ] **[Plugins](https://jekyllrb.com/docs/plugins/)**: Extend Jekyll functionality
 - [ ] **Practice**: Build a portfolio section
 
 #### Week 3: Customization and Deployment
-
 - [ ] **[Themes](https://jekyllrb.com/docs/themes/)**: Customize appearance
 - [ ] **[GitHub Pages](https://docs.github.com/en/pages)**: Deploy your site
 - [ ] **[Custom Domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)**: Set up your own domain
@@ -902,19 +956,16 @@ Now that your environment is set up, here's your suggested learning journey:
 ### Additional Resources
 
 #### Official Documentation
-
 - **[Jekyll Documentation](https://jekyllrb.com/docs/)**: Comprehensive official guide
 - **[GitHub Pages Documentation](https://docs.github.com/en/pages)**: Hosting and deployment
 - **[Liquid Documentation](https://shopify.github.io/liquid/)**: Templating language reference
 
 #### Community Resources
-
 - **[Jekyll Talk Forum](https://talk.jekyllrb.com/)**: Community support and discussions
 - **[Jekyll Themes](https://jekyllthemes.org/)**: Free and premium themes
 - **[Awesome Jekyll](https://github.com/planetjekyll/awesome-jekyll)**: Curated list of Jekyll resources
 
 #### Tools and Extensions
-
 - **[Jekyll Admin](https://github.com/jekyll/jekyll-admin)**: Web-based administration
 - **[Jekyll Feed](https://github.com/jekyll/jekyll-feed)**: RSS feed generation
 - **[Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag)**: SEO optimization
@@ -930,7 +981,7 @@ If you encounter issues or have questions:
 
 ---
 
-## 🏆 Congratulations
+## 🏆 Congratulations!
 
 You've successfully set up a professional Jekyll development environment! You now have:
 

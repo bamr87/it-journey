@@ -535,11 +535,9 @@ convert_md_to_files('zer0.md')
 ## Config file
 
 ```yaml
+{% comment %}
 {% include_relative _config.yml %}
+{% endcomment %}
 ```
 
-## Scripts
 
-```liquid
-{% include_relative script/zer0.sh %}
-```
