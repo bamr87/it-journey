@@ -1,21 +1,13 @@
 {
-  "name": "IT-Journey Jekyll Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "name": "IT-Journey Jekyll Dev Environment (Optimized)",
+  "image": "mcr.microsoft.com/devcontainers/ruby:1-3.1-bullseye",
   
   "features": {
-    "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.1",
-      "installGems": "bundler,jekyll"
-    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "18"
     },
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "dockerDashComposeVersion": "v2"
     },
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest"
@@ -26,16 +18,12 @@
     "vscode": {
       "extensions": [
         "shopify.ruby-lsp",
-        "bradlc.vscode-tailwindcss",
         "ms-vscode.vscode-json",
-        "redhat.vscode-yaml",
+        "redhat.vscode-yaml", 
         "davidanson.vscode-markdownlint",
         "yzhang.markdown-all-in-one",
         "github.copilot",
-        "github.copilot-chat",
-        "ms-vscode.live-server",
-        "formulahendry.auto-rename-tag",
-        "esbenp.prettier-vscode"
+        "github.copilot-chat"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
@@ -70,11 +58,7 @@
     }
   },
 
-  "postCreateCommand": "bundle install && npm install -g @prettier/plugin-ruby",
+  "postCreateCommand": "gem install bundler jekyll && bundle install",
   
-  "remoteUser": "codespace",
-  
-  "mounts": [
-    "source=${localWorkspaceFolder}/.git,target=/workspaces/it-journey/.git,type=bind,consistency=cached"
-  ]
+  "remoteUser": "vscode"
 }
