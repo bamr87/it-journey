@@ -11,23 +11,28 @@
     },
     {
       "title": "quickstart",
-      "path": "[[workspace]]/pages/_quickstart"
+      "path": "[[workspace]]/pages/_quickstart",
+      "filePrefix": ""
     },
     {
       "title": "notes",
-      "path": "[[workspace]]/pages/_notes"
+      "path": "[[workspace]]/pages/_notes",
+      "filePrefix": ""
     },
     {
       "title": "about",
-      "path": "[[workspace]]/pages/_about"
+      "path": "[[workspace]]/pages/_about",
+      "filePrefix": ""
     },
     {
       "title": "docs",
-      "path": "[[workspace]]/pages/_docs"
+      "path": "[[workspace]]/pages/_docs",
+      "filePrefix": ""
     },
     {
       "title": "quests",
-      "path": "[[workspace]]/pages/_quests"
+      "path": "[[workspace]]/pages/_quests",
+      "filePrefix": ""
     }
   ],
   "frontMatter.templates.enabled": true,
