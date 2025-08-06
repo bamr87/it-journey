@@ -1,0 +1,48 @@
+# Lychee Link Checker Configuration
+# Ignore patterns for the IT-Journey Jekyll site
+
+# Local development URLs
+http://localhost:*
+https://localhost:*
+http://127.0.0.1:*
+https://127.0.0.1:*
+
+# Jekyll internal linking patterns that might not resolve during static analysis
+file:///*
+
+# Placeholder URLs commonly used in templates
+https://example\.com.*
+http://example\.com.*
+https://your-domain\.com.*
+http://your-domain\.com.*
+
+# Social media URLs that might be rate-limited or block automated requests
+https://twitter\.com/.*
+https://instagram\.com/.*
+https://facebook\.com/.*
+https://linkedin\.com/.*
+
+# GitHub URLs that might be private or rate-limited
+https://github\.com/.*/settings.*
+https://github\.com/.*/edit.*
+
+# Common placeholder patterns in Jekyll/documentation
+https://yourdomain\.com.*
+https://username\.github\.io.*
+
+# Relative anchor links (Jekyll handles these differently)
+#*
+
+# Skip PDF downloads and large files that might timeout
+.*\.pdf$
+.*\.zip$
+.*\.dmg$
+.*\.exe$
+
+# Skip known temporary or maintenance URLs
+.*maintenance.*
+.*under-construction.*
+.*coming-soon.*
+
+# Email addresses (not real links)
+mailto:.*

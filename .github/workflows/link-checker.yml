@@ -1,0 +1,576 @@
+name: "Automated Link Checker with AI Analysis"
+
+on:
+  # Manual trigger for testing and on-demand runs
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'Scope of link checking'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - pages-only
+          - posts-only
+          - quests-only
+      create_issue:
+        description: 'Create GitHub issue with results'
+        required: false
+        default: true
+        type: boolean
+
+  # Scheduled run every Monday at 9 AM UTC
+  schedule:
+    - cron: '0 9 * * 1'
+
+  # Run on changes to content (but not too frequently to avoid spam)
+  push:
+    branches:
+      - main
+    paths:
+      - 'pages/**/*.md'
+      - '_config.yml'
+      - '*.md'
+    # Only triggers if no link check has run in the last 6 hours
+
+jobs:
+  link-checker:
+    name: "Check Links and Analyze with AI"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for better AI analysis
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: "Install Lychee Link Checker"
+        run: |
+          # Install lychee link checker
+          curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar -xzf - -C /tmp
+          sudo mv /tmp/lychee /usr/local/bin/lychee
+          sudo chmod +x /usr/local/bin/lychee
+          
+          # Verify installation
+          lychee --version
+
+      - name: "Determine Scope and Files"
+        id: scope
+        run: |
+          SCOPE="${{ github.event.inputs.scope || 'all' }}"
+          echo "scope=$SCOPE" >> $GITHUB_OUTPUT
+          
+          case $SCOPE in
+            "pages-only")
+              FILES="pages/_pages/**/*.md pages/index.html pages/home.md pages/search.md"
+              ;;
+            "posts-only")
+              FILES="pages/_posts/**/*.md"
+              ;;
+            "quests-only")
+              FILES="pages/_quests/**/*.md"
+              ;;
+            *)
+              FILES="pages/**/*.md *.md index.md"
+              ;;
+          esac
+          
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+          echo "Checking scope: $SCOPE"
+          echo "Files pattern: $FILES"
+
+      - name: "Run Link Checker"
+        id: lychee
+        run: |
+          echo "Running lychee link checker..."
+          
+          # Create output directory
+          mkdir -p link-check-results
+          
+          # Run lychee with comprehensive options
+          lychee \
+            --format json \
+            --output link-check-results/results.json \
+            --max-redirects 5 \
+            --timeout 30 \
+            --retry-wait-time 2 \
+            --max-retries 3 \
+            --user-agent "IT-Journey-LinkChecker/1.0 (GitHub Actions; +https://github.com/bamr87/it-journey)" \
+            --verbose \
+            --no-progress \
+            ${{ steps.scope.outputs.files }} 2>&1 || echo "Link checking completed with some failures"
+          
+          # Also create a human-readable summary
+          lychee \
+            --format markdown \
+            --output link-check-results/summary.md \
+            --max-redirects 5 \
+            --timeout 30 \
+            --retry-wait-time 2 \
+            --max-retries 3 \
+            --user-agent "IT-Journey-LinkChecker/1.0 (GitHub Actions; +https://github.com/bamr87/it-journey)" \
+            --no-progress \
+            ${{ steps.scope.outputs.files }} 2>&1 || echo "Summary generation completed"
+          
+          # Check if results file exists and has content
+          if [ -f link-check-results/results.json ] && [ -s link-check-results/results.json ]; then
+            # Parse JSON more safely
+            BROKEN_COUNT=$(python3 -c "
+import json, sys
+try:
+    with open('link-check-results/results.json', 'r') as f:
+        data = json.load(f)
+    print(data.get('errors', 0))
+except:
+    print('0')
+" 2>/dev/null || echo "0")
+            
+            TOTAL_COUNT=$(python3 -c "
+import json, sys
+try:
+    with open('link-check-results/results.json', 'r') as f:
+        data = json.load(f)
+    print(data.get('total', 0))
+except:
+    print('0')
+" 2>/dev/null || echo "0")
+            
+            echo "broken_count=$BROKEN_COUNT" >> $GITHUB_OUTPUT
+            echo "total_count=$TOTAL_COUNT" >> $GITHUB_OUTPUT
+            echo "results_available=true" >> $GITHUB_OUTPUT
+            
+            echo "Link check completed: $TOTAL_COUNT total, $BROKEN_COUNT broken"
+          else
+            echo "broken_count=0" >> $GITHUB_OUTPUT
+            echo "total_count=0" >> $GITHUB_OUTPUT
+            echo "results_available=false" >> $GITHUB_OUTPUT
+            echo "No results file generated or file is empty"
+          fi
+
+      - name: "Process and Analyze Results"
+        id: analyze
+        if: steps.lychee.outputs.results_available == 'true'
+        run: |
+          # Create analysis script
+          cat > analyze_links.py << 'EOF'
+          #!/usr/bin/env python3
+          import json
+          import sys
+          from collections import defaultdict
+          
+          def analyze_link_failures(results_file):
+              """Analyze link check results and categorize failures."""
+              try:
+                  with open(results_file, 'r') as f:
+                      data = json.load(f)
+              except (FileNotFoundError, json.JSONDecodeError) as e:
+                  print(f"Error reading results: {e}")
+                  return None
+              
+              # Extract the error map and success map to analyze individual results
+              results = []
+              error_map = data.get('error_map', {})
+              
+              # Convert error map to individual result format
+              for file_path, errors in error_map.items():
+                  for error in errors:
+                      results.append({
+                          'url': error['url'],
+                          'status': 'Failed',
+                          'error': {'message': error['status']['details']},
+                          'file': file_path
+                      })
+              
+              # Also include successful links if available
+              success_map = data.get('success_map', {})
+              for file_path, successes in success_map.items():
+                  for success in successes:
+                      results.append({
+                          'url': success.get('url', ''),
+                          'status': 'Ok',
+                          'file': file_path
+                      })
+              
+              # Categorize failures
+              categories = {
+                  'broken_external': [],
+                  'broken_internal': [],
+                  'redirects': [],
+                  'timeouts': [],
+                  'rate_limited': [],
+                  'certificate_errors': [],
+                  'network_errors': [],
+                  'unknown': []
+              }
+              
+              successful_links = []
+              
+              for result in results:
+                  url = result.get('url', '')
+                  status = result.get('status', '')
+                  
+                  if status == 'Ok':
+                      successful_links.append(result)
+                  elif status == 'Failed':
+                      failure_reason = result.get('error', {}).get('message', '').lower()
+                      
+                      if 'certificate' in failure_reason:
+                          categories['certificate_errors'].append(result)
+                      elif 'network error' in failure_reason:
+                          categories['network_errors'].append(result)
+                      elif 'timeout' in failure_reason or 'timed out' in failure_reason:
+                          categories['timeouts'].append(result)
+                      elif 'too many requests' in failure_reason or '429' in failure_reason:
+                          categories['rate_limited'].append(result)
+                      elif url.startswith('http'):
+                          categories['broken_external'].append(result)
+                      elif url.startswith('/') or not url.startswith('http'):
+                          categories['broken_internal'].append(result)
+                      else:
+                          categories['unknown'].append(result)
+              
+              # Generate analysis summary
+              total_checked = data.get('total', len(results))
+              total_broken = sum(len(cat) for cat in categories.values())
+              
+              analysis = {
+                  'total_links': total_checked,
+                  'broken_links': total_broken,
+                  'success_rate': (total_checked - total_broken) / total_checked * 100 if total_checked > 0 else 100,
+                  'categories': categories,
+                  'patterns': analyze_patterns(categories),
+                  'summary_stats': {
+                      'successful': data.get('successful', 0),
+                      'excludes': data.get('excludes', 0),
+                      'errors': data.get('errors', 0),
+                      'timeouts': data.get('timeouts', 0),
+                      'redirects': data.get('redirects', 0)
+                  }
+              }
+              
+              return analysis
+          
+          def analyze_patterns(categories):
+              """Identify patterns in link failures."""
+              patterns = []
+              
+              # Check for common domain failures
+              domain_failures = defaultdict(int)
+              for category in ['broken_external', 'timeouts', 'rate_limited', 'certificate_errors', 'network_errors']:
+                  for item in categories[category]:
+                      url = item.get('url', '')
+                      if url.startswith('http'):
+                          domain = url.split('/')[2] if len(url.split('/')) > 2 else url
+                          domain_failures[domain] += 1
+              
+              # Identify problematic domains
+              if domain_failures:
+                  top_failing_domains = sorted(domain_failures.items(), key=lambda x: x[1], reverse=True)[:5]
+                  patterns.append(f"Top failing domains: {', '.join([f'{domain} ({count})' for domain, count in top_failing_domains])}")
+              
+              # Check for Jekyll-specific issues
+              internal_count = len(categories['broken_internal'])
+              if internal_count > 0:
+                  patterns.append(f"Found {internal_count} broken internal links - may indicate Jekyll baseurl or permalink issues")
+              
+              timeout_count = len(categories['timeouts'])
+              if timeout_count > 5:
+                  patterns.append(f"High timeout rate ({timeout_count} links) - may indicate network issues or slow external sites")
+              
+              rate_limit_count = len(categories['rate_limited'])
+              if rate_limit_count > 0:
+                  patterns.append(f"Rate limiting detected on {rate_limit_count} links - consider adding to ignore list")
+              
+              cert_error_count = len(categories['certificate_errors'])
+              if cert_error_count > 0:
+                  patterns.append(f"Certificate errors on {cert_error_count} links - may be environment-specific or expired certificates")
+              
+              network_error_count = len(categories['network_errors'])
+              if network_error_count > 3:
+                  patterns.append(f"High network error rate ({network_error_count} links) - may indicate connectivity issues or restrictive environment")
+              
+              return patterns
+          
+          # Run analysis
+          analysis = analyze_link_failures('link-check-results/results.json')
+          if analysis:
+              with open('link-check-results/analysis.json', 'w') as f:
+                  json.dump(analysis, f, indent=2)
+              
+              print(f"Analysis complete:")
+              print(f"- Total links checked: {analysis['total_links']}")
+              print(f"- Broken links: {analysis['broken_links']}")
+              print(f"- Success rate: {analysis['success_rate']:.1f}%")
+              
+              # Set outputs for GitHub Actions
+              with open('analysis_summary.txt', 'w') as f:
+                  f.write(f"BROKEN_COUNT={analysis['broken_links']}\n")
+                  f.write(f"TOTAL_COUNT={analysis['total_links']}\n")
+                  f.write(f"SUCCESS_RATE={analysis['success_rate']:.1f}\n")
+          else:
+              print("Analysis failed")
+              sys.exit(1)
+          EOF
+          
+          # Run analysis
+          python3 analyze_links.py
+          
+          # Load outputs
+          if [ -f analysis_summary.txt ]; then
+            source analysis_summary.txt
+            echo "broken_count=$BROKEN_COUNT" >> $GITHUB_OUTPUT
+            echo "total_count=$TOTAL_COUNT" >> $GITHUB_OUTPUT
+            echo "success_rate=$SUCCESS_RATE" >> $GITHUB_OUTPUT
+          fi
+
+      - name: "Generate AI Analysis"
+        id: ai_analysis
+        if: steps.lychee.outputs.results_available == 'true' && steps.analyze.outputs.broken_count != '0'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          # Create AI analysis script
+          cat > ai_analyze.py << 'EOF'
+          #!/usr/bin/env python3
+          import json
+          import os
+          import requests
+          import sys
+          
+          def generate_ai_analysis():
+              """Generate AI-powered analysis of link failures."""
+              
+              # Check if OpenAI API key is available
+              api_key = os.environ.get('OPENAI_API_KEY')
+              if not api_key:
+                  print("OpenAI API key not available. Skipping AI analysis.")
+                  return "AI analysis skipped: No API key configured."
+              
+              try:
+                  # Load analysis results
+                  with open('link-check-results/analysis.json', 'r') as f:
+                      analysis = json.load(f)
+                  
+                  # Load site config for context
+                  site_context = ""
+                  try:
+                      with open('_config.yml', 'r') as f:
+                          config_content = f.read()[:2000]  # First 2000 chars
+                          site_context = f"Site configuration context:\n{config_content}\n\n"
+                  except:
+                      pass
+                  
+                  # Prepare prompt for AI analysis
+                  prompt = f"""You are analyzing link failures for a Jekyll-based GitHub Pages site called "IT-Journey" - a technical learning platform focused on coding education and career development.
+
+          {site_context}
+
+          ## Link Check Results Summary:
+          - **Total links checked**: {analysis['total_links']}
+          - **Broken links found**: {analysis['broken_links']}
+          - **Success rate**: {analysis['success_rate']:.1f}%
+
+          ## Failure Categories:
+          - **Broken external links**: {len(analysis['categories']['broken_external'])}
+          - **Broken internal links**: {len(analysis['categories']['broken_internal'])}
+          - **Certificate errors**: {len(analysis['categories'].get('certificate_errors', []))}
+          - **Network errors**: {len(analysis['categories'].get('network_errors', []))}
+          - **Timeouts**: {len(analysis['categories']['timeouts'])}
+          - **Rate limited**: {len(analysis['categories']['rate_limited'])}
+
+          ## Identified Patterns:
+          {chr(10).join(analysis['patterns']) if analysis['patterns'] else 'No specific patterns identified.'}
+
+          ## Sample Broken Links by Category:
+          """
+                  
+                  # Add sample broken links for context
+                  for category, links in analysis['categories'].items():
+                      if links and category != 'redirects':
+                          prompt += f"\n{category.replace('_', ' ').title()}:\n"
+                          for link in links[:3]:  # First 3 examples
+                              url = link.get('url', 'Unknown URL')
+                              error = link.get('error', {}).get('message', 'Unknown error')
+                              prompt += f"  - {url}: {error}\n"
+                  
+                  prompt += """
+          
+          Please provide a concise analysis including:
+          1. Most likely root causes for these link failures
+          2. Jekyll/GitHub Pages specific issues to consider
+          3. Prioritized recommendations for fixing these issues
+          4. Suggestions for preventing similar issues in the future
+          
+          Format your response in markdown with clear sections."""
+                  
+                  # Call OpenAI API
+                  headers = {
+                      'Authorization': f'Bearer {api_key}',
+                      'Content-Type': 'application/json'
+                  }
+                  
+                  data = {
+                      'model': 'gpt-3.5-turbo',
+                      'messages': [
+                          {
+                              'role': 'system',
+                              'content': 'You are an expert in Jekyll sites, GitHub Pages, and web development. Provide practical, actionable advice for fixing link issues.'
+                          },
+                          {
+                              'role': 'user',
+                              'content': prompt
+                          }
+                      ],
+                      'max_tokens': 1500,
+                      'temperature': 0.7
+                  }
+                  
+                  response = requests.post(
+                      'https://api.openai.com/v1/chat/completions',
+                      headers=headers,
+                      json=data,
+                      timeout=30
+                  )
+                  
+                  if response.status_code == 200:
+                      ai_response = response.json()
+                      analysis_text = ai_response['choices'][0]['message']['content']
+                      
+                      # Save AI analysis
+                      with open('link-check-results/ai_analysis.md', 'w') as f:
+                          f.write(analysis_text)
+                      
+                      print("AI analysis completed successfully")
+                      return analysis_text
+                  else:
+                      print(f"OpenAI API error: {response.status_code} - {response.text}")
+                      return f"AI analysis failed: API error {response.status_code}"
+                      
+              except Exception as e:
+                  print(f"Error in AI analysis: {e}")
+                  return f"AI analysis failed: {str(e)}"
+          
+          # Generate analysis
+          ai_result = generate_ai_analysis()
+          
+          # Create output file for GitHub Actions
+          with open('ai_analysis_result.txt', 'w') as f:
+              f.write(ai_result)
+          EOF
+          
+          # Run AI analysis
+          python3 ai_analyze.py
+          
+          # Set output
+          if [ -f ai_analysis_result.txt ]; then
+            echo "ai_analysis_completed=true" >> $GITHUB_OUTPUT
+          else
+            echo "ai_analysis_completed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: "Create GitHub Issue"
+        if: (github.event.inputs.create_issue != 'false') && (steps.analyze.outputs.broken_count != '0')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create comprehensive issue body
+          cat > issue_body.md << 'EOF'
+          # 🔗 Automated Link Check Report
+          
+          This issue was automatically generated by the IT-Journey link checker workflow.
+          
+          ## 📊 Summary
+          
+          - **Total links checked**: ${{ steps.analyze.outputs.total_count }}
+          - **Broken links found**: ${{ steps.analyze.outputs.broken_count }}
+          - **Success rate**: ${{ steps.analyze.outputs.success_rate }}%
+          - **Scope**: ${{ steps.scope.outputs.scope }}
+          - **Check date**: $(date -u +"%Y-%m-%d %H:%M UTC")
+          
+          ## 🔍 Detailed Results
+          
+          EOF
+          
+          # Add link check summary if available
+          if [ -f link-check-results/summary.md ]; then
+            echo "" >> issue_body.md
+            echo "### Link Check Details" >> issue_body.md
+            echo "" >> issue_body.md
+            cat link-check-results/summary.md >> issue_body.md
+            echo "" >> issue_body.md
+          fi
+          
+          # Add AI analysis if available
+          if [ -f link-check-results/ai_analysis.md ]; then
+            echo "" >> issue_body.md
+            echo "## 🤖 AI Analysis" >> issue_body.md
+            echo "" >> issue_body.md
+            cat link-check-results/ai_analysis.md >> issue_body.md
+            echo "" >> issue_body.md
+          fi
+          
+          # Add footer
+          cat >> issue_body.md << 'EOF'
+          
+          ## 🛠️ Next Steps
+          
+          1. Review the broken links listed above
+          2. Fix or remove broken internal links
+          3. Update external links that have moved
+          4. Consider adding problematic domains to `.lycheeignore` if they're prone to rate limiting
+          5. Re-run the link checker after fixes to verify improvements
+          
+          ## 🔄 Re-running This Check
+          
+          You can manually trigger another link check by:
+          1. Going to the [Actions tab](../../actions/workflows/link-checker.yml)
+          2. Clicking "Run workflow"
+          3. Selecting your preferred scope
+          
+          ---
+          
+          *This issue was created automatically by the IT-Journey link checker. The check was run with scope: `${{ steps.scope.outputs.scope }}`*
+          EOF
+          
+          # Create issue title with timestamp
+          ISSUE_TITLE="🔗 Link Check Report - $(date -u +"%Y-%m-%d") - ${{ steps.analyze.outputs.broken_count }} broken links found"
+          
+          # Create the issue
+          gh issue create \
+            --title "$ISSUE_TITLE" \
+            --body-file issue_body.md \
+            --label "automated,link-checker,maintenance" \
+            --assignee "${{ github.repository_owner }}"
+          
+          echo "GitHub issue created successfully"
+
+      - name: "Upload Artifacts"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-results-${{ github.run_number }}
+          path: link-check-results/
+          retention-days: 30
+
+      - name: "Summary Comment"
+        if: always()
+        run: |
+          echo "## 🔗 Link Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Scope**: ${{ steps.scope.outputs.scope }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total links**: ${{ steps.analyze.outputs.total_count || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Broken links**: ${{ steps.analyze.outputs.broken_count || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Success rate**: ${{ steps.analyze.outputs.success_rate || 'N/A' }}%" >> $GITHUB_STEP_SUMMARY
+          echo "- **AI analysis**: ${{ steps.ai_analysis.outputs.ai_analysis_completed == 'true' && 'Completed' || 'Skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Check the artifacts for detailed results and analysis." >> $GITHUB_STEP_SUMMARY
