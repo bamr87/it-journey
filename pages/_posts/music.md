@@ -1,13 +1,38 @@
 ---
-Title: Music Index
+title: "Music Resources: Free Sheet Music and Musical Education"
+description: "Comprehensive guide to finding free sheet music, music libraries, and digital music collections for musicians, students, and music enthusiasts"
 author: bamr87
 categories:
-- hobbies
-category: hobbies
-date: '2025-07-03T16:39:35.0461Z'
+    - Hobbies
+    - Music
+    - Resources
+tags:
+    - sheet-music
+    - classical-music
+    - public-domain
+    - music-education
+    - digital-libraries
+    - music-resources
+date: 2025-07-03T16:39:35.046Z
 draft: false
-lastmod: '2022-01-09T04:32:39.222Z'
+lastmod: 2022-01-09T04:32:39.222Z
 slug: music
+layout: journals
+excerpt: "Discover the best sources for free sheet music, from public domain collections to modern digital archives, perfect for musicians and music students"
+sub-title: "Your Complete Guide to Free Musical Resources"
+snippet: "Music is the universal language - and these resources ensure everyone can access its written form"
+permalink: /posts/music-resources-free-sheet-music/
+keywords:
+    primary:
+        - free sheet music
+        - music libraries
+        - public domain music
+    secondary:
+        - classical music
+        - digital archives
+        - music education
+        - choral music
+        - historical sheet music
 ---
 
 
