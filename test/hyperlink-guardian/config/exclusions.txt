@@ -1,0 +1,54 @@
+# Hyperlink Guardian URL Exclusions
+# Lines starting with # are comments
+# Each line is a regex pattern for URLs to exclude from testing
+
+# Local development URLs
+localhost
+127\.0\.0\.1
+0\.0\.0\.0
+\[::\]
+
+# Common placeholder URLs
+example\.com
+test\.example
+placeholder\.com
+your-domain\.com
+
+# Jekyll/Liquid template variables
+\{\{.*\}\}
+\{%.*%\}
+
+# Social media tracking and analytics
+utm_source=
+utm_medium=
+utm_campaign=
+fbclid=
+gclid=
+
+# GitHub specific exclusions (if needed)
+# github\.com/settings
+# github\.com/notifications
+
+# Temporary exclusions during maintenance
+# docs\.microsoft\.com
+
+# Development and staging URLs
+# staging\.
+# dev\.
+# test\.
+
+# CDN and asset URLs that might have CORS issues
+# fonts\.googleapis\.com
+# cdnjs\.cloudflare\.com
+
+# Academic and research URLs that might be slow or restricted
+# scholar\.google\.com
+# researchgate\.net
+
+# URLs known to block automated requests
+# linkedin\.com/in/
+# twitter\.com/.*/status/
+
+# Internal testing URLs
+internal\.test
+private\.local 

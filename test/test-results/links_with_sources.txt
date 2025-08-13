@@ -1,0 +1,1589 @@
+[0;35m🔍 DEBUG: Extracting links from markdown: [0;35m🔍 DEBUG: Searching for markdown files...[0m[0m|[0;35m🔍 DEBUG: Searching for markdown files...[0m
+[0;35m🔍 DEBUG: Extracting links from markdown: ./CODE_OF_CONDUCT.md[0m|./CODE_OF_CONDUCT.md
+http://stumptownsyndicate.org|./CODE_OF_CONDUCT.md
+http://creativecommons.org/licenses/by-sa/3.0/|./CODE_OF_CONDUCT.md
+https://www.djangoproject.com/conduct/|./CODE_OF_CONDUCT.md
+http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy|./CODE_OF_CONDUCT.md
+http://stumptownsyndicate.org|./CODE_OF_CONDUCT.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.seed.md[0m|./.seed.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./zer0.md[0m|./zer0.md
+https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment/badge.svg|./zer0.md
+https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment|./zer0.md
+https://badge.fury.io/rb/jekyll-theme-zer0.svg|./zer0.md
+https://badge.fury.io/rb/jekyll-theme-zer0|./zer0.md
+https://code.visualstudio.com/|./zer0.md
+https://docs.docker.com/get-docker/|./zer0.md
+https://brew.sh/|./zer0.md
+https://git-scm.com/|./zer0.md
+https://cli.github.com/|./zer0.md
+https://github.com|./zer0.md
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/setup-dev-env.sh|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/setup-dev-env.sh|./zer0.md
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh|./zer0.md
+https://github.com/settings/emails|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO|./zer0.md
+https://github.com/${GHUSER}/${GIT_REPO}.git|./zer0.md
+https://$GHUSER.github.io/$GIT_REPO|./zer0.md
+https://github.com/${GHUSER}/${GIT_REPO}|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO|./zer0.md
+https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.sh|./zer0.md
+https://rubygems.org|./zer0.md
+https://your-username.github.io|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+https://$GHUSER.github.io/$GIT_REPO|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO/settings/pages|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO/settings/pages|./zer0.md
+https://jekyllrb.com/docs/|./zer0.md
+https://guides.github.com/introduction/git-handbook/|./zer0.md
+https://docs.docker.com/get-started/|./zer0.md
+https://lab.github.com/|./zer0.md
+https://dev.to/|./zer0.md
+https://stackoverflow.com/|./zer0.md
+https://github.community/|./zer0.md
+https://talk.jekyllrb.com/|./zer0.md
+https://www.freecodecamp.org/|./zer0.md
+https://www.codecademy.com/|./zer0.md
+https://developer.mozilla.org/|./zer0.md
+https://skills.github.com/|./zer0.md
+https://$GHUSER.github.io/$GIT_REPO|./zer0.md
+https://github.com/bamr87/it-journey|./zer0.md
+https://github.com/bamr87/zer0-mistakes|./zer0.md
+https://reddit.com/r/webdev|./zer0.md
+https://dev.to|./zer0.md
+https://stackoverflow.com|./zer0.md
+https://talk.jekyllrb.com|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/zer0-to-hero-complete.sh|./zer0.md
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO.git|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO.git|./zer0.md
+https://$GHUSER.github.io/$GIT_REPO|./zer0.md
+http://localhost:4000|./zer0.md
+https://jekyllrb.com/|./zer0.md
+https://github.com/bamr87/zer0-mistakes|./zer0.md
+https://www.docker.com/|./zer0.md
+https://pages.github.com/|./zer0.md
+https://github.com/bamr87/it-journey|./zer0.md
+https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.sh|./zer0.md
+https://rubygems.org|./zer0.md
+https://$GHUSER.github.io|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+http://localhost:4000|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO|./zer0.md
+https://$GHUSER.github.io/$GIT_REPO${NC}|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO/settings/pages${NC}|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO/settings/pages|./zer0.md
+http://localhost:4000|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO|./zer0.md
+https://$GHUSER.github.io/$GIT_REPO|./zer0.md
+http://localhost:4000${NC}|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO${NC}|./zer0.md
+https://github.com/$GHUSER/$GIT_REPO/settings/pages${NC}|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/generate-zer0-script.sh|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/zer0-to-hero-complete.sh|./zer0.md
+https://github.com/bamr87/it-journey.git|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/extract-script.sh|./zer0.md
+https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/zer0-to-hero-complete.sh|./zer0.md
+http://localhost:4000|./zer0.md
+https://github.com/YOURUSERNAME/YOURREPO.git|./zer0.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.frontmatter/templates/default.md[0m|./.frontmatter/templates/default.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.frontmatter/templates/article.md[0m|./.frontmatter/templates/article.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.frontmatter/templates/poem.md[0m|./.frontmatter/templates/poem.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.frontmatter/templates/notes.md[0m|./.frontmatter/templates/notes.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.frontmatter/templates/quests.md[0m|./.frontmatter/templates/quests.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./docs/script-cleanup-summary.md[0m|./docs/script-cleanup-summary.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./docs/script-consolidation-plan.md[0m|./docs/script-consolidation-plan.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./TODO/todo-tree-20240515-2103.md[0m|./TODO/todo-tree-20240515-2103.md
+https://getbootstrap.com/docs/5.3/components/collapse/|./TODO/todo-tree-20240515-2103.md
+https://yeoman.io/learning/|./TODO/todo-tree-20240515-2103.md
+https://www.w3schools.com/howto/howto_js_scroll_to_top.asp|./TODO/todo-tree-20240515-2103.md
+https://tmuxp.git-pull.com/index.html|./TODO/todo-tree-20240515-2103.md
+http://www.publicdomainsherpa.com/site-map.html|./TODO/todo-tree-20240515-2103.md
+https://programminghistorian.org/|./TODO/todo-tree-20240515-2103.md
+https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html|./TODO/todo-tree-20240515-2103.md
+https://jsinibardy.com/optimize-seo-jekyll|./TODO/todo-tree-20240515-2103.md
+https://bootstrap-themes.github.io/dashboard/docs/#whats-included|./TODO/todo-tree-20240515-2103.md
+https://jekyllcodex.org/without-plugins/|./TODO/todo-tree-20240515-2103.md
+https://www.selenium.dev/|./TODO/todo-tree-20240515-2103.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./README.md[0m|./README.md
+https://github.com/bamr87/it-journey|./README.md
+https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages|./README.md
+https://github.com/bamr87/it-journey/actions/workflows/pages/pages-build-deployment|./README.md
+http://localhost:4002/`|./README.md
+https://just-the-docs.github.io/just-the-docs/|./README.md
+https://jun711.github.io/web/how-to-highlight-code-on-a-Jekyll-site-syntax-highlighting/|./README.md
+https://shields.io/badges|./README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./roadmap.md[0m|./roadmap.md
+https://roadmap.sh/r/embed?id=662539e2e699ec2b9b3873ab|./roadmap.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./index.md[0m|./index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./INSTALLATION_UPDATE.md[0m|./INSTALLATION_UPDATE.md
+https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.sh|./INSTALLATION_UPDATE.md
+https://raw.githubusercontent.com/bamr87/zer0-mistakes/main/install.sh|./INSTALLATION_UPDATE.md
+https://github.com/bamr87/zer0-mistakes.git|./INSTALLATION_UPDATE.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./CONTRIBUTING.md[0m|./CONTRIBUTING.md
+https://docs.github.com/en/contributing|./CONTRIBUTING.md
+https://docs.github.com/en/contributing|./CONTRIBUTING.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_bleach.md[0m|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_bleach.md
+https://bleach.readthedocs.io/en/latest/index.html|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_bleach.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_extensions.md[0m|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_extensions.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_strip.md[0m|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_strip.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_linkify.md[0m|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_linkify.md
+http://somelink.com|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_linkify.md
+http://somelink.com|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_linkify.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_default.md[0m|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_default.md
+http://somelink.com|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_default.md
+http://httplink.com|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_default.md
+https://httpslink.com|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_default.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_alternative.md[0m|./.venv/lib/python3.9/site-packages/markdownify/tests/input_text_alternative.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/httpcore-1.0.5.dist-info/licenses/LICENSE.md[0m|./.venv/lib/python3.9/site-packages/httpcore-1.0.5.dist-info/licenses/LICENSE.md
+https://www.encode.io/|./.venv/lib/python3.9/site-packages/httpcore-1.0.5.dist-info/licenses/LICENSE.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/Markdown-3.6.dist-info/LICENSE.md[0m|./.venv/lib/python3.9/site-packages/Markdown-3.6.dist-info/LICENSE.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/idna-3.7.dist-info/LICENSE.md[0m|./.venv/lib/python3.9/site-packages/idna-3.7.dist-info/LICENSE.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/httpx-0.27.0.dist-info/licenses/LICENSE.md[0m|./.venv/lib/python3.9/site-packages/httpx-0.27.0.dist-info/licenses/LICENSE.md
+https://www.encode.io/|./.venv/lib/python3.9/site-packages/httpx-0.27.0.dist-info/licenses/LICENSE.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.venv/lib/python3.9/site-packages/django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./scripts/core/README.md[0m|./scripts/core/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./scripts/development/README.md[0m|./scripts/development/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./scripts/zer0-to-hero-generated-README.md[0m|./scripts/zer0-to-hero-generated-README.md
+http://localhost:4000|./scripts/zer0-to-hero-generated-README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./scripts/README.md[0m|./scripts/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/instructions/space.instructions.md[0m|./.github/instructions/space.instructions.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/instructions/quest.instructions.md[0m|./.github/instructions/quest.instructions.md
+https://example.com/docs|./.github/instructions/quest.instructions.md
+https://example.com/api|./.github/instructions/quest.instructions.md
+https://example.com/best-practices|./.github/instructions/quest.instructions.md
+https://youtube.com/example|./.github/instructions/quest.instructions.md
+https://example.com/interactive|./.github/instructions/quest.instructions.md
+https://example.com/webinar|./.github/instructions/quest.instructions.md
+https://stackoverflow.com/questions/tagged/technology|./.github/instructions/quest.instructions.md
+https://discord.gg/example|./.github/instructions/quest.instructions.md
+https://reddit.com/r/technology|./.github/instructions/quest.instructions.md
+https://example.com/tool|./.github/instructions/quest.instructions.md
+https://marketplace.visualstudio.com/example|./.github/instructions/quest.instructions.md
+https://github.com/example/cli|./.github/instructions/quest.instructions.md
+https://example.com/cheatsheet|./.github/instructions/quest.instructions.md
+https://example.com/troubleshooting|./.github/instructions/quest.instructions.md
+https://example.com/migration|./.github/instructions/quest.instructions.md
+https://example.com/showcase|./.github/instructions/quest.instructions.md
+https://example.com/case-studies|./.github/instructions/quest.instructions.md
+https://example.com/portfolios|./.github/instructions/quest.instructions.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/workflows/README.md[0m|./.github/workflows/README.md
+https://platform.openai.com/api-keys|./.github/workflows/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/copilot-instructions.md[0m|./.github/copilot-instructions.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/ISSUE_TEMPLATE/feature_request.md[0m|./.github/ISSUE_TEMPLATE/feature_request.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/ISSUE_TEMPLATE/bug_report.md[0m|./.github/ISSUE_TEMPLATE/bug_report.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/ISSUE_TEMPLATE/hyperlink-guardian-report.md[0m|./.github/ISSUE_TEMPLATE/hyperlink-guardian-report.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./.github/ISSUE_TEMPLATE/custom.md[0m|./.github/ISSUE_TEMPLATE/custom.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./prompts/seed_prompt.md[0m|./prompts/seed_prompt.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./_data/README.md[0m|./_data/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notebooks/markdown-to-script.md[0m|./pages/_notebooks/markdown-to-script.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notebooks/JeykLLM-create.md[0m|./pages/_notebooks/JeykLLM-create.md
+https://github.com/theskumar/python-dotenv|./pages/_notebooks/JeykLLM-create.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notebooks/jupyter.md[0m|./pages/_notebooks/jupyter.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notebooks/html_md_doc_scrapper.md[0m|./pages/_notebooks/html_md_doc_scrapper.md
+https://getbootstrap.com/docs/5.3/components/modal/'|./pages/_notebooks/html_md_doc_scrapper.md
+https://jekyllrb.com/docs/configuration/options/#global-configuration'|./pages/_notebooks/html_md_doc_scrapper.md
+https://jekyllrb.com/docs/configuration/options/#global-configuration'|./pages/_notebooks/html_md_doc_scrapper.md
+https://getbootstrap.com/docs/5.3/components/modal/'|./pages/_notebooks/html_md_doc_scrapper.md
+https://getbootstrap.com/docs/5.3/components/modal/|./pages/_notebooks/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/site/content/docs/5.3/components/modal.md|./pages/_notebooks/html_md_doc_scrapper.md
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus|./pages/_notebooks/html_md_doc_scrapper.md
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes|./pages/_notebooks/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/site/assets/js/snippets.js|./pages/_notebooks/html_md_doc_scrapper.md
+https://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal|./pages/_notebooks/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_modal.scss|./pages/_notebooks/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_modal.scss|./pages/_notebooks/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_variables.scss|./pages/_notebooks/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_modal.scss|./pages/_notebooks/html_md_doc_scrapper.md
+https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/|./pages/_notebooks/html_md_doc_scrapper.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notebooks/jupyter-to-markdown.md[0m|./pages/_notebooks/jupyter-to-markdown.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/search.md[0m|./pages/search.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/versioning.md[0m|./pages/_about/versioning.md
+https://semver.org/|./pages/_about/versioning.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/settings/config.md[0m|./pages/_about/settings/config.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/settings/tree.md[0m|./pages/_about/settings/tree.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/settings/sitemap.md[0m|./pages/_about/settings/sitemap.md
+https://github.com/bamr87/it-journey|./pages/_about/settings/sitemap.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/about_new.md[0m|./pages/_about/about_new.md
+https://en.wikipedia.org/wiki/Fault_tolerance|./pages/_about/about_new.md
+https://en.wikipedia.org/wiki/Don%27t_repeat_yourself|./pages/_about/about_new.md
+https://en.wikipedia.org/wiki/KISS_principle|./pages/_about/about_new.md
+https://en.wikipedia.org/wiki/Agile_software_development|./pages/_about/about_new.md
+https://en.wikipedia.org/wiki/Minimum_viable_product|./pages/_about/about_new.md
+https://opensource.guide/how-to-contribute/|./pages/_about/about_new.md
+https://github.com/features/copilot|./pages/_about/about_new.md
+https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes|./pages/_about/about_new.md
+https://github.com/microsoft/playwright|./pages/_about/about_new.md
+https://en.wikipedia.org/wiki/Category:Programming_principles|./pages/_about/about_new.md
+https://opensource.guide/|./pages/_about/about_new.md
+https://12factor.net/|./pages/_about/about_new.md
+https://docs.github.com/en/copilot|./pages/_about/about_new.md
+https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/|./pages/_about/about_new.md
+https://www.promptingguide.ai/|./pages/_about/about_new.md
+https://jacobian.org/2009/nov/10/what-to-write/|./pages/_about/about_new.md
+https://docs.gitbook.com/getting-started/overview|./pages/_about/about_new.md
+https://mintlify.com/|./pages/_about/about_new.md
+https://github.com/bamr87/it-journey/issues|./pages/_about/about_new.md
+https://github.com/bamr87/it-journey/discussions|./pages/_about/about_new.md
+https://opensource.guide/how-to-contribute/|./pages/_about/about_new.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/features/add-floating-back-to-top-button.md[0m|./pages/_about/features/add-floating-back-to-top-button.md
+https://www.w3schools.com/howto/howto_js_scroll_to_top.asp|./pages/_about/features/add-floating-back-to-top-button.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/features/index.md[0m|./pages/_about/features/index.md
+https://github.com/bamr87/it-journey/issues/56|./pages/_about/features/index.md
+https://github.com/bamr87/it-journey/issues/53|./pages/_about/features/index.md
+https://github.com/bamr87/it-journey/issues/75|./pages/_about/features/index.md
+https://github.com/bamr87/it-journey/issues/76|./pages/_about/features/index.md
+https://github.com/bamr87/it-journey/issues/53|./pages/_about/features/index.md
+http://www.publicdomainsherpa.com/site-map.html|./pages/_about/features/index.md
+https://programminghistorian.org/|./pages/_about/features/index.md
+https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html|./pages/_about/features/index.md
+https://jsinibardy.com/optimize-seo-jekyll|./pages/_about/features/index.md
+https://bootstrap-themes.github.io/dashboard/docs/#whats-included|./pages/_about/features/index.md
+https://jekyllcodex.org/without-plugins/|./pages/_about/features/index.md
+https://www.selenium.dev/|./pages/_about/features/index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/features/jekyll.md[0m|./pages/_about/features/jekyll.md
+https://learn-the-web.algonquindesign.ca/topics/jekyll-cheat-sheet/|./pages/_about/features/jekyll.md
+https://raw.githubusercontent.com/Homebrew/install/master/install|./pages/_about/features/jekyll.md
+http://localhost:4000/'|./pages/_about/features/jekyll.md
+https://boringrails.com/tips/jekyll-css-class|./pages/_about/features/jekyll.md
+http://127.0.0.1:4000/|./pages/_about/features/jekyll.md
+http://127.0.0.1:4000`|./pages/_about/features/jekyll.md
+https://github.com/feedreader/jekyll-minimal-theme|./pages/_about/features/jekyll.md
+http://feedreader.github.io/jekyll-minimal-theme|./pages/_about/features/jekyll.md
+http://docs.seattlerb.org/hoe/Hoe.pdf|./pages/_about/features/jekyll.md
+http://openfootball.github.io`|./pages/_about/features/jekyll.md
+http://openfootball.github.io'|./pages/_about/features/jekyll.md
+https://github.com/jekyll/jekyll-sass-converter|./pages/_about/features/jekyll.md
+http://www.w3.org/2005/Atom|./pages/_about/features/jekyll.md
+{{site.url}}/i/book-ruby-under-a-microscope.png)|./pages/_about/features/jekyll.md
+{{ site.url }}/feed.xml|./pages/_about/features/jekyll.md
+{{ site.url }}/|./pages/_about/features/jekyll.md
+{{ site.url }}/|./pages/_about/features/jekyll.md
+{{ site.url }}{{|./pages/_about/features/jekyll.md
+{{ site.url }}{{|./pages/_about/features/jekyll.md
+{{ site.url }}/feed.xml|./pages/_about/features/jekyll.md
+{{ site.url }}/feed.xml|./pages/_about/features/jekyll.md
+{{ site.url }}/books/feed.xml|./pages/_about/features/jekyll.md
+{{ site.url }}/links/feed.xml|./pages/_about/features/jekyll.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/profile/bamr87.md[0m|./pages/_about/profile/bamr87.md
+https://it-journey.dev|./pages/_about/profile/bamr87.md
+https://github.com/bamr87/bamr87.git|./pages/_about/profile/bamr87.md
+https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js|./pages/_about/profile/bamr87.md
+https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css|./pages/_about/profile/bamr87.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/theme.md[0m|./pages/_about/theme.md
+https://getbootstrap.com/docs/5.3/examples/cheatsheet/|./pages/_about/theme.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/contribute/contributors/bamr87/README.md[0m|./pages/_about/contribute/contributors/bamr87/README.md
+https://api.roadmap.sh/v1-badge/tall/6553d32668ca6026132e78a8?variant=dark|./pages/_about/contribute/contributors/bamr87/README.md
+https://roadmap.sh/u/bamr87|./pages/_about/contribute/contributors/bamr87/README.md
+https://api.roadmap.sh/v1-badge/wide/6553d32668ca6026132e78a8?variant=dark|./pages/_about/contribute/contributors/bamr87/README.md
+https://roadmap.sh/u/bamr87|./pages/_about/contribute/contributors/bamr87/README.md
+https://github.com/{{|./pages/_about/contribute/contributors/bamr87/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/contribute/contributing.md[0m|./pages/_about/contribute/contributing.md
+https://opensource.guide/|./pages/_about/contribute/contributing.md
+https://github.com/{{|./pages/_about/contribute/contributing.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/purpose.md[0m|./pages/_about/purpose.md
+https://www.sec.gov/os/accessing-edgar-data**|./pages/_about/purpose.md
+https://www.sec.gov/os/accessing-edgar-data|./pages/_about/purpose.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/about.md[0m|./pages/_about/about.md
+https://en.wikipedia.org/wiki/Fault_tolerance|./pages/_about/about.md
+https://en.wikipedia.org/wiki/Don%27t_repeat_yourself|./pages/_about/about.md
+https://en.wikipedia.org/wiki/KISS_principle|./pages/_about/about.md
+https://en.wikipedia.org/wiki/Agile_software_development|./pages/_about/about.md
+https://en.wikipedia.org/wiki/Minimum_viable_product|./pages/_about/about.md
+https://opensource.guide/how-to-contribute/|./pages/_about/about.md
+https://en.wikipedia.org/wiki/Category:Programming_principles|./pages/_about/about.md
+https://opensource.guide/|./pages/_about/about.md
+https://12factor.net/|./pages/_about/about.md
+https://github.com/bamr87/it-journey/issues|./pages/_about/about.md
+https://github.com/bamr87/it-journey/discussions|./pages/_about/about.md
+https://opensource.guide/how-to-contribute/|./pages/_about/about.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_about/automation.md[0m|./pages/_about/automation.md
+https://docs.github.com/en/actions|./pages/_about/automation.md
+https://jekyllrb.com/docs/configuration/|./pages/_about/automation.md
+https://yaml.org/spec/1.2.2/|./pages/_about/automation.md
+https://tldp.org/LDP/Bash-Beginners-Guide/html/|./pages/_about/automation.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-28-auto-increment-frontmatter-version.md[0m|./pages/_posts/2024-05-28-auto-increment-frontmatter-version.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-27-gpt-prompt-engineering.md[0m|./pages/_posts/2024-06-27-gpt-prompt-engineering.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-26-defiances-role-in-democracy.md[0m|./pages/_posts/2024-06-26-defiances-role-in-democracy.md
+https://books.google.com/ngrams/interactive_chart?year_start=1800&year_end=2019&corpus=26&smoothing=7&case_insensitive=on&content=defiance|./pages/_posts/2024-06-26-defiances-role-in-democracy.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-10-fixing-github-actions-version-integration-prepare-command.md[0m|./pages/_posts/2025-07-10-fixing-github-actions-version-integration-prepare-command.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/recipies/2022-01-07-fish-flavored-egg-plant.md[0m|./pages/_posts/recipies/2022-01-07-fish-flavored-egg-plant.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-01-09-sonic-pi.md[0m|./pages/_posts/2022-01-09-sonic-pi.md
+http://sonic-pi.mehackit.org/|./pages/_posts/2022-01-09-sonic-pi.md
+http://sonic-pi.mehackit.org/assets/img/play_scale_1_en.png|./pages/_posts/2022-01-09-sonic-pi.md
+http://sonic-pi.mehackit.org/assets/img/play_scale_2_en.png|./pages/_posts/2022-01-09-sonic-pi.md
+http://sonic-pi.mehackit.org/assets/img/play_scale_3_en.png|./pages/_posts/2022-01-09-sonic-pi.md
+http://sonic-pi.mehackit.org/assets/img/chords.png|./pages/_posts/2022-01-09-sonic-pi.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-08-01-enhancing-bashcrawl-cellar-scroll-educational-content.md[0m|./pages/_posts/2025-08-01-enhancing-bashcrawl-cellar-scroll-educational-content.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md[0m|./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md
+https://en.wikipedia.org/wiki/Bash_(Unix_shell|./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md
+https://en.wikipedia.org/wiki/SVG|./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md
+https://en.wikipedia.org/wiki/Penrose_triangle|./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md
+https://en.wikipedia.org/wiki/Inkscape|./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md
+https://www.netflix.com/title/81328723|./pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-07-18-texan-cowboys-learn-history-pyramid-scheme-revealed.md[0m|./pages/_posts/2024-07-18-texan-cowboys-learn-history-pyramid-scheme-revealed.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-03-12-excel-circular-reference-or-piece-of-pi.md[0m|./pages/_posts/2025-03-12-excel-circular-reference-or-piece-of-pi.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/reflections/2021-11-08-it-purpose.md[0m|./pages/_posts/reflections/2021-11-08-it-purpose.md
+https://en.wikipedia.org/wiki/Manifesto|./pages/_posts/reflections/2021-11-08-it-purpose.md
+https://www.gnu.org/gnu/manifesto.en.html|./pages/_posts/reflections/2021-11-08-it-purpose.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/reflections/2021-10-27-build-die-repeat.md[0m|./pages/_posts/reflections/2021-10-27-build-die-repeat.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2023-03-17-penrose-triangle.md[0m|./pages/_posts/2023-03-17-penrose-triangle.md
+https://en.wikipedia.org/wiki/Penrose_triangle|./pages/_posts/2023-03-17-penrose-triangle.md
+http://www.w3.org/2000/svg|./pages/_posts/2023-03-17-penrose-triangle.md
+https://jekyllrb.com/docs/static-files/|./pages/_posts/2023-03-17-penrose-triangle.md
+http://www.w3.org/2000/svg|./pages/_posts/2023-03-17-penrose-triangle.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-22-Threat-of-women.md[0m|./pages/_posts/2024-05-22-Threat-of-women.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/music.md[0m|./pages/_posts/music.md
+http://www.bpl.org/research/music/aboutmusic.htm|./pages/_posts/music.md
+http://library.music.indiana.edu/music_resources/musiclib2.html|./pages/_posts/music.md
+http://memory.loc.gov/ammem/collections/sheetmusic/brown/|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/rights-of-publicity-and-privacy.html|./pages/_posts/music.md
+http://www.sims.berkeley.edu/~mkduggan/neh.html|./pages/_posts/music.md
+http://chopin.lib.uchicago.edu/|./pages/_posts/music.md
+http://www.cpdl.org/wiki/index.php/Main_Page|./pages/_posts/music.md
+http://www.ccel.org/cceh/|./pages/_posts/music.md
+http://www.hymntime.com/tch/|./pages/_posts/music.md
+http://www.ezfolk.com/library/|./pages/_posts/music.md
+http://music.dalitio.de/|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/creative-commons.html|./pages/_posts/music.md
+http://www.free-scores.com/index_uk.php3|./pages/_posts/music.md
+http://library.duke.edu/digitalcollections/hasm/|./pages/_posts/music.md
+http://www.letrs.indiana.edu/s/sheetmusic/|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/license-agreement.html|./pages/_posts/music.md
+http://levysheetmusic.mse.jhu.edu/|./pages/_posts/music.md
+http://www.musicaviva.com/index.html|./pages/_posts/music.md
+http://www.musicaviva.com|./pages/_posts/music.md
+http://memory.loc.gov/ammem/smhtml/smhome.html|./pages/_posts/music.md
+http://www.mutopiaproject.org/|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/creative-commons.html|./pages/_posts/music.md
+http://www.lib.unc.edu/dc/sheetmusic/|./pages/_posts/music.md
+http://digital.nypl.org/lpa/nypl/lpa_home4.html|./pages/_posts/music.md
+http://www.gutenberg.org/wiki/Gutenberg:The_Sheet_Music_Project|./pages/_posts/music.md
+http://www.pdinfo.com/Public-Domain-Music-List.php|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/public-domain-sheet-music.html|./pages/_posts/music.md
+http://www.leeds.ac.uk/music/Info/RRTuneBk/|./pages/_posts/music.md
+http://www.sheetmusicarchive.net/index.cfm|./pages/_posts/music.md
+http://digital.library.ucla.edu/apam/|./pages/_posts/music.md
+http://icking-music-archive.org/|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/public-domain-music.html|./pages/_posts/music.md
+http://www.publicdomainsherpa.com/free-sheet-music.html|./pages/_posts/music.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-09-bootstrap-your-theme-and-character.md[0m|./pages/_posts/2024-05-09-bootstrap-your-theme-and-character.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-27-sandle-tuesday.md[0m|./pages/_posts/2024-06-27-sandle-tuesday.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/gpt/chat_2023_12_14_22_02_47.md[0m|./pages/_posts/gpt/chat_2023_12_14_22_02_47.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/gpt/2024-03-11-cv-analysis.md[0m|./pages/_posts/gpt/2024-03-11-cv-analysis.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/gpt/2024-02-14-vscode_extension.md[0m|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://code.visualstudio.com/api|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://nodejs.org/|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://code.visualstudio.com/|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://copilot.github.com/|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://www.ruby-lang.org/en/|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://jekyllrb.com/|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://formspree.io/YOUREMAIL|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://api.github.com/repos/${repoOwner}/${repoName}/contents/_posts/${filename}.md`,|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://code.visualstudio.com/api/get-started/your-first-extension|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://nodejs.org/|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+https://code.visualstudio.com/api/working-with-extensions/publishing-extension|./pages/_posts/gpt/2024-02-14-vscode_extension.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/gpt/dynamic-sidebar-tree.md[0m|./pages/_posts/gpt/dynamic-sidebar-tree.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-05-advanced-version-management-ai-implementation.md[0m|./pages/_posts/2025-07-05-advanced-version-management-ai-implementation.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-09-fixing-github-actions-bash-compatibility-ai-evolution-engine.md[0m|./pages/_posts/2025-07-09-fixing-github-actions-bash-compatibility-ai-evolution-engine.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-03-06-auto-hide-nav-bar.md[0m|./pages/_posts/2024-03-06-auto-hide-nav-bar.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-10-14-aws-database-setup-for-django-lambda-functions.md[0m|./pages/_posts/2024-10-14-aws-database-setup-for-django-lambda-functions.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/groking-about-it-journey.dev.md[0m|./pages/_posts/groking-about-it-journey.dev.md
+https://it-journey.dev|./pages/_posts/groking-about-it-journey.dev.md
+https://it-journey.dev|./pages/_posts/groking-about-it-journey.dev.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-04-02-dockering-your-it-journey.md[0m|./pages/_posts/2024-04-02-dockering-your-it-journey.md
+https://docs.docker.com/engine/reference/builder/|./pages/_posts/2024-04-02-dockering-your-it-journey.md
+https://github.com/yourusername/yourrepository.git|./pages/_posts/2024-04-02-dockering-your-it-journey.md
+https://github.com/yourusername/yourrepository.git`|./pages/_posts/2024-04-02-dockering-your-it-journey.md
+https://docs.docker.com/engine/reference/builder/|./pages/_posts/2024-04-02-dockering-your-it-journey.md
+http://localhost:4002`.|./pages/_posts/2024-04-02-dockering-your-it-journey.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-05-02-erp-and-tech-economics.md[0m|./pages/_posts/2025-05-02-erp-and-tech-economics.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-07-01-angular-tour-of-heros.md[0m|./pages/_posts/2022-07-01-angular-tour-of-heros.md
+https://angular.io/tutorial|./pages/_posts/2022-07-01-angular-tour-of-heros.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-07-ai-assisted-script-consolidation-development-workflows.md[0m|./pages/_posts/2025-07-07-ai-assisted-script-consolidation-development-workflows.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-05-01-injustice.md[0m|./pages/_posts/2025-05-01-injustice.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-02-27-dual-boot-win-linux.md[0m|./pages/_posts/2022-02-27-dual-boot-win-linux.md
+https://packages.microsoft.com/keys/microsoft.asc|./pages/_posts/2022-02-27-dual-boot-win-linux.md
+https://packages.microsoft.com/repos/code|./pages/_posts/2022-02-27-dual-boot-win-linux.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-18-aquaaid's-devastating-desert-mission.md[0m|./pages/_posts/2024-06-18-aquaaid's-devastating-desert-mission.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-03-12-article-schema.md[0m|./pages/_posts/2025-03-12-article-schema.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-01-doc-scraper.md[0m|./pages/_posts/2024-05-01-doc-scraper.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-10-07-django-on-aws-lambda.md[0m|./pages/_posts/2024-10-07-django-on-aws-lambda.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2023-12-04-robots-dot-txt.md[0m|./pages/_posts/2023-12-04-robots-dot-txt.md
+https://www.yoursite.com/sitemap.xml`|./pages/_posts/2023-12-04-robots-dot-txt.md
+https://www.yoursite.com/sitemap.xml`|./pages/_posts/2023-12-04-robots-dot-txt.md
+{{ site.url}}/sitemap.xml|./pages/_posts/2023-12-04-robots-dot-txt.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-04-25-placeholders.md[0m|./pages/_posts/2024-04-25-placeholders.md
+https://frontmatter.codes/docs/content-creation/placeholders|./pages/_posts/2024-04-25-placeholders.md
+https://frontmatter.codes/docs/content-creation/placeholders|./pages/_posts/2024-04-25-placeholders.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-10-github-actions-authentication-fix-ai-evolution-engine.md[0m|./pages/_posts/2025-07-10-github-actions-authentication-fix-ai-evolution-engine.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-02-markdown-code-to-scripts.md[0m|./pages/_posts/2024-06-02-markdown-code-to-scripts.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-05-debugging-github-actions-workflows-ai-assisted.md[0m|./pages/_posts/2025-07-05-debugging-github-actions-workflows-ai-assisted.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2023-04-07-krita-tips-and-tricks.md[0m|./pages/_posts/2023-04-07-krita-tips-and-tricks.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2000-01-01-index.md[0m|./pages/_posts/2000-01-01-index.md
+https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-automation-overview|./pages/_posts/2000-01-01-index.md
+http://www.bradleyschacht.com/remote-desktop-to-azure-ad-joined-computer/|./pages/_posts/2000-01-01-index.md
+https://docs.microsoft.com/en-us/windows/client-management/connect-to-remote-aadj-pc|./pages/_posts/2000-01-01-index.md
+https://en.wikibooks.org/wiki/LaTeX|./pages/_posts/2000-01-01-index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-03-27-bootable-mac-os.md[0m|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/en-us/101578|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/kb/HT201541|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/kb/HT204904|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/kb/HT211683|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://cdsassets.apple.com/live/7WUAS350/images/macos/ventura/macos-ventura-terminal-command-createinstallmedia.png|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/en-us/101578#commands|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/kb/HT211814|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/101666|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/kb/HT211873|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/HT208862|./pages/_posts/2024-03-27-bootable-mac-os.md
+https://support.apple.com/kb/HT208198|./pages/_posts/2024-03-27-bootable-mac-os.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-06-29-planting-seeds.md[0m|./pages/_posts/2025-06-29-planting-seeds.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-14-jekyll-sidebar.md[0m|./pages/_posts/2024-05-14-jekyll-sidebar.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-02-10-retropie-imaging.md[0m|./pages/_posts/2024-02-10-retropie-imaging.md
+https://retropie.org.uk/download/|./pages/_posts/2024-02-10-retropie-imaging.md
+https://github.com/RetroPie/RetroPie-Setup/releases/download/4.8/retropie-buster-4.8-rpi4_400.img.gz|./pages/_posts/2024-02-10-retropie-imaging.md
+https://api.github.com/repos/$GITHUB_USER/$GITHUB_REPO/releases/latest|./pages/_posts/2024-02-10-retropie-imaging.md
+https://code.visualstudio.com/docs/remote/wsl|./pages/_posts/2024-02-10-retropie-imaging.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-12-05-sharex.md[0m|./pages/_posts/2022-12-05-sharex.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-01-07-jekyll-and-travis.md[0m|./pages/_posts/2022-01-07-jekyll-and-travis.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-05-09-javascript-testing.md[0m|./pages/_posts/2022-05-09-javascript-testing.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/bash-scripting.md[0m|./pages/_posts/bash-scripting.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-23-searchbar-and-sitemaping.md[0m|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+{{ site.url }}{{|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+{{ site.url }}{{|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+{{ site.url }}{{|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+{{ site.url }}{{|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+{{ site.url }}{{|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+{{ site.url }}{{|./pages/_posts/2024-05-23-searchbar-and-sitemaping.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-05-16-fight-with-tools.md[0m|./pages/_posts/2024-05-16-fight-with-tools.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-03-13-excel-guru's-are-the-most-valuable-programmers.md[0m|./pages/_posts/2025-03-13-excel-guru's-are-the-most-valuable-programmers.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-07-05-ai-powered-modular-refactoring-shell-scripts.md[0m|./pages/_posts/2025-07-05-ai-powered-modular-refactoring-shell-scripts.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-12-31-cats-and-dogs.md[0m|./pages/_posts/2024-12-31-cats-and-dogs.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-01-latest-trends-in-manufacturing-technology.md[0m|./pages/_posts/2024-06-01-latest-trends-in-manufacturing-technology.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-03-13-excel-to-python.md[0m|./pages/_posts/2025-03-13-excel-to-python.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2023-04-14-windows-sub-linux-setu.md[0m|./pages/_posts/2023-04-14-windows-sub-linux-setu.md
+https://aka.ms/wslubuntu2004|./pages/_posts/2023-04-14-windows-sub-linux-setu.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-24-furry-monarchs-rule-night.md[0m|./pages/_posts/2024-06-24-furry-monarchs-rule-night.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-03-10-raspberry-pi-5-case-build.md[0m|./pages/_posts/2024-03-10-raspberry-pi-5-case-build.md
+https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf|./pages/_posts/2024-03-10-raspberry-pi-5-case-build.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-16-unwavering-joy-of-fetch.md[0m|./pages/_posts/2024-06-16-unwavering-joy-of-fetch.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-17-wizard-topples-capitalist-dominance-ingeniously.md[0m|./pages/_posts/2024-06-17-wizard-topples-capitalist-dominance-ingeniously.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-10-14-deploy-django-on-aws-lambda-with-sam-a-stepby-step-guide.md[0m|./pages/_posts/2024-10-14-deploy-django-on-aws-lambda-with-sam-a-stepby-step-guide.md
+https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'|./pages/_posts/2024-10-14-deploy-django-on-aws-lambda-with-sam-a-stepby-step-guide.md
+https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'|./pages/_posts/2024-10-14-deploy-django-on-aws-lambda-with-sam-a-stepby-step-guide.md
+https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html|./pages/_posts/2024-10-14-deploy-django-on-aws-lambda-with-sam-a-stepby-step-guide.md
+https://github.com/aws-samples|./pages/_posts/2024-10-14-deploy-django-on-aws-lambda-with-sam-a-stepby-step-guide.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-04-13-sec's-edgar-database.md[0m|./pages/_posts/2024-04-13-sec's-edgar-database.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2023-11-04-latex-your-cv.md[0m|./pages/_posts/2023-11-04-latex-your-cv.md
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.```sh|./pages/_posts/2023-11-04-latex-your-cv.md
+https://github.com/yourusername/yourrepository.git|./pages/_posts/2023-11-04-latex-your-cv.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2024-06-16-enchanted-baking-unicorn-delights.md[0m|./pages/_posts/2024-06-16-enchanted-baking-unicorn-delights.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/reports/2023-04-20-arab americans.md[0m|./pages/_posts/reports/2023-04-20-arab americans.md
+https://web.archive.org/web/20080512152353/http://www.amalid.com/100_Questions.htm|./pages/_posts/reports/2023-04-20-arab americans.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2022-06-10-desktop-widgets-windows.md[0m|./pages/_posts/2022-06-10-desktop-widgets-windows.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-03-15-ai-to-create-ai.md[0m|./pages/_posts/2025-03-15-ai-to-create-ai.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_posts/2025-03-19-open-ai-future-features-with-github-action.md[0m|./pages/_posts/2025-03-19-open-ai-future-features-with-github-action.md
+https://openai.com|./pages/_posts/2025-03-19-open-ai-future-features-with-github-action.md
+https://platform.openai.com/api-keys|./pages/_posts/2025-03-19-open-ai-future-features-with-github-action.md
+https://api.github.com/repos/{repo}/issues/{number}|./pages/_posts/2025-03-19-open-ai-future-features-with-github-action.md
+https://api.github.com/repos/{repo}/issues|./pages/_posts/2025-03-19-open-ai-future-features-with-github-action.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-comments-with-disqus.md[0m|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://disqus.com/|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://disqus.com/|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://[shortname].disqus.com/admin/universalcode|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://{{|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://disqus.com/admin/universalcode/#configuration-variables|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://{{|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://disqus.com/?ref_noscript|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+http://{{|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+http://fortawesome.github.io/Font-Awesome/|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://disqus.com/admin/install/platforms/universalcode/|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+https://poanchen.github.io/blog/2017/07/27/how-to-add-disqus-to-your-jekyll-sitel|./pages/_docs/jekyll/jekyll-comments-with-disqus.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-highlighting.md[0m|./pages/_docs/jekyll/jekyll-highlighting.md
+https://highlightjs.org/|./pages/_docs/jekyll/jekyll-highlighting.md
+https://highlightjs.org/download/.|./pages/_docs/jekyll/jekyll-highlighting.md
+https://highlightjs.org/static/demo/|./pages/_docs/jekyll/jekyll-highlighting.md
+https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-light.min.css|./pages/_docs/jekyll/jekyll-highlighting.md
+http://www.vishalsinha.in/2017/04/23/highlight-code-jekyll.html|./pages/_docs/jekyll/jekyll-highlighting.md
+https://highlightjs.org/download/|./pages/_docs/jekyll/jekyll-highlighting.md
+https://github.com/highlightjs/highlight.js|./pages/_docs/jekyll/jekyll-highlighting.md
+https://github.com/wcoder/highlightjs-line-numbers.js|./pages/_docs/jekyll/jekyll-highlighting.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md[0m|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+https://www.w3schools.com/charsets/ref_utf_math.asp|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+https://www.mathjax.org/|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+http://docs.mathjax.org/en/latest/tex.html#tex-and-latex-math-delimiters|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+https://www.w3.org/Math/MJ/Overview.html|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+http://jeffskinnerbox.me/notebooks/typesetting-math-using-mathjax.html|./pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md[0m|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://www.sharethis.com/|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://www.sharethis.com/|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://{{|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://{{|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://github.com/{{|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://platform-api.sharethis.com/js/sharethis.js#property=5e25e723d6ee4a00124a9181&product=sticky-share-buttons'|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://platform-api.sharethis.com/js/sharethis.js#property=5b595ccbf5aa6d001130cf95&product=sticky-share-buttons'|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://{{|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+http://{{|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://platform.sharethis.com/sticky-share-buttons|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+https://jekyllrb.com/docs/configuration/environments/|./pages/_docs/jekyll/jekyll-social-share-buttons-with-sharethis.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-security.md[0m|./pages/_docs/jekyll/jekyll-security.md
+https://{{|./pages/_docs/jekyll/jekyll-security.md
+https://{{|./pages/_docs/jekyll/jekyll-security.md
+https://pages.github.com/|./pages/_docs/jekyll/jekyll-security.md
+https://www.netlify.com/|./pages/_docs/jekyll/jekyll-security.md
+https://jekyllrb.com/|./pages/_docs/jekyll/jekyll-security.md
+https://github.com/{{|./pages/_docs/jekyll/jekyll-security.md
+https://securityheaders.com|./pages/_docs/jekyll/jekyll-security.md
+https://{{|./pages/_docs/jekyll/jekyll-security.md
+https://{{|./pages/_docs/jekyll/jekyll-security.md
+https://{{|./pages/_docs/jekyll/jekyll-security.md
+https://developer.okta.com/blog/2019/04/11/site-security-cloudflare-netlify|./pages/_docs/jekyll/jekyll-security.md
+https://geekflare.com/online-scan-website-security-vulnerabilities/|./pages/_docs/jekyll/jekyll-security.md
+https://www.netlify.com/docs/netlify-toml-reference/|./pages/_docs/jekyll/jekyll-security.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-search-function-for-static-website.md[0m|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+https://learn.cloudcannon.com/jekyll/jekyll-search-using-lunr-js/|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+https://lunrjs.com/guides/searching.html|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+https://forestry.io/blog/search-with-algolia-in-jekyll/|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+https://lunrjs.com/guides/upgrading.html|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+http://www.mtlong.me/blog/jekyll-search-function/|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+https://stackoverflow.com/questions/45147948/how-to-strip-newlines-in-jekyll|./pages/_docs/jekyll/jekyll-search-function-for-static-website.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md[0m|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+http://{{|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://pages.github.com/|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://jekyllrb.com/|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://travis-ci.org|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://rubygems.org'|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://travis-ci.org|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://shopify.github.io/liquid/|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://jekyllrb.com/docs/continuous-integration/travis-ci/|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://help.github.com/articles/viewing-jekyll-build-error-messages/|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+https://travis-ci.org/{{|./pages/_docs/jekyll/continuously-deploy-jekyll-website-to-gitHub-pages-with-travis-ci.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/index.md[0m|./pages/_docs/jekyll/index.md
+http://localhost:4000](http://localhost:4000|./pages/_docs/jekyll/index.md
+https://github.com/github/pages-gem/issues/752|./pages/_docs/jekyll/index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md[0m|./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md
+http://jmcglone.com/guides/github-pages/|./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md
+https://github.com/|./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md
+https://www.godaddy.com|./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md
+https://medium.com/@supriyakankure/how-to-add-a-custom-domain-to-your-github-page-with-godaddy-84495781143e|./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md
+https://github.blog/2018-05-01-github-pages-custom-domains-https/|./pages/_docs/jekyll/deploying-personal-website-with-custom-domain.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-config.md[0m|./pages/_docs/jekyll/jekyll-config.md
+https://jekyllrb.com/docs/configuration/options/|./pages/_docs/jekyll/jekyll-config.md
+https://github.com/jekyll/jekyll/edit/master/docs/_docs/configuration/options.md|./pages/_docs/jekyll/jekyll-config.md
+https://en.wikipedia.org/wiki/Tz_database|./pages/_docs/jekyll/jekyll-config.md
+https://en.wikipedia.org/wiki/List_of_tz_database_time_zones|./pages/_docs/jekyll/jekyll-config.md
+https://jekyll.github.io/classifier-reborn/|./pages/_docs/jekyll/jekyll-config.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-usage-and-customization.md[0m|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://{{|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://{{|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://{{|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://{{|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://{{|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://www.freeformatter.com/xml-formatter.html|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://www.w3schools.com/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://www.tutorialspoint.com/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://javascript.info/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://www.docker.com/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://kitematic.com/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://nodejs.org/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://notepad-plus-plus.org/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://eclipse.org|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://netbeans.org/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://atom.io/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://code.visualstudio.com/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://{{|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://jekyllrb.com/docs/home/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://jekyllrb.com/docs/posts/#post-excerpts|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://jekyllrb.com/docs/templates/#links|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://blog.webjeda.com/jekyll-collections/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+http://anjesh.github.io/2015/01/25/collection-pagination-working-github-pages/|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://gist.github.com/tamouse/4204dddabb6b072b0242|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://stackoverflow.com/questions/41076390/is-there-a-way-to-overflow-a-markdown-table-using-html|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+https://www.w3schools.com/bootstrap4/bootstrap_tables.asp|./pages/_docs/jekyll/jekyll-usage-and-customization.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/cannot-start-jekyll-at-specific-port.md[0m|./pages/_docs/jekyll/cannot-start-jekyll-at-specific-port.md
+http://{{|./pages/_docs/jekyll/cannot-start-jekyll-at-specific-port.md
+https://stackoverflow.com/questions/10261477/tcpserver-error-address-already-in-use-bind2|./pages/_docs/jekyll/cannot-start-jekyll-at-specific-port.md
+https://www.nomachine.com/AR04L00800|./pages/_docs/jekyll/cannot-start-jekyll-at-specific-port.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-frontmatter-cms.md[0m|./pages/_docs/jekyll/jekyll-frontmatter-cms.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md[0m|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://mermaidjs.github.io/|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://unpkg.com/mermaid|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://fontawesome.com/|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://use.fontawesome.com/releases/v5.3.1/css/all.css|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://mermaidjs.github.io/|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://mermaidjs.github.io/mermaid-live-editor/|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+https://github.com/knsv/mermaid|./pages/_docs/jekyll/generating-diagrams-and-flowcharts-with-mermaid.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-performance-optimization.md[0m|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://martin.ankerl.com/2017/07/22/free-secure-web-jekyll-github-pages-cloudflare/|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://medium.com/crowdbotics/annie-azana-how-to-deploy-websites-using-cloudflare-and-github-pages-c415c55fea36|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://www.collectiveray.com/defer-parsing-of-javascript-wordpress-async|./pages/_docs/jekyll/jekyll-performance-optimization.md
+http://stevesouders.com/examples/rule-js-bottom.php|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://help.github.com/en/articles/search-engine-optimization-for-github-pages|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://www.netlify.com/docs/netlify-toml-reference/|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://www.keycdn.com/support/how-to-use-cookie-free-domains|./pages/_docs/jekyll/jekyll-performance-optimization.md
+https://www.keycdn.com/blog/front-end-optimization|./pages/_docs/jekyll/jekyll-performance-optimization.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-google-analytics.md[0m|./pages/_docs/jekyll/jekyll-google-analytics.md
+https://analytics.google.com/analytics/|./pages/_docs/jekyll/jekyll-google-analytics.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-liquid.md[0m|./pages/_docs/jekyll/jekyll-liquid.md
+https://shopify.github.io/liquid/|./pages/_docs/jekyll/jekyll-liquid.md
+https://help.shopify.com/themes/liquid/objects/for-loops|./pages/_docs/jekyll/jekyll-liquid.md
+https://jekyllrb.com/docs/liquid/filters/|./pages/_docs/jekyll/jekyll-liquid.md
+https://shopify.github.io/liquid/|./pages/_docs/jekyll/jekyll-liquid.md
+https://shopify.github.io/liquid/|./pages/_docs/jekyll/jekyll-liquid.md
+https://shopify.github.io/liquid/basics/whitespace/|./pages/_docs/jekyll/jekyll-liquid.md
+https://help.shopify.com/themes/liquid/objects/for-loops|./pages/_docs/jekyll/jekyll-liquid.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-social-share-buttons.md[0m|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+https://www.facebook.com/sharer.php?t={{page.title}}&u={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+https://twitter.com/intent/tweet?text={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+https://plus.google.com/share?url={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+https://www.linkedin.com/shareArticle?mini=true&url={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+http://pinterest.com/pin/create/button/?url={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+http://www.tumblr.com/share/link?url={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+http://www.reddit.com/submit?url={{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+https://mycyberuniverse.com/web/social-media-share-bar-jekyll-blog-website.html|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+{{ site.url }}{{|./pages/_docs/jekyll/jekyll-social-share-buttons.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md[0m|./pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md
+https://pages.github.com/|./pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md
+https://www.netlify.com/|./pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md
+https://app.netlify.com/signup|./pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md
+https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/|./pages/_docs/jekyll/deploying-jekyll-website-to-netlify.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-progress-bar.md[0m|./pages/_docs/jekyll/jekyll-progress-bar.md
+http://nanobar.jacoborus.codes/|./pages/_docs/jekyll/jekyll-progress-bar.md
+https://github.com/jacoborus/nanobar/archive/master.zip|./pages/_docs/jekyll/jekyll-progress-bar.md
+https://blog.webjeda.com/top-bar-website/|./pages/_docs/jekyll/jekyll-progress-bar.md
+http://nanobar.jacoborus.codes/|./pages/_docs/jekyll/jekyll-progress-bar.md
+https://bootsnipp.com/snippets/Q0dAX|./pages/_docs/jekyll/jekyll-progress-bar.md
+https://getbootstrap.com/docs/4.1/examples/navbar-static/?|./pages/_docs/jekyll/jekyll-progress-bar.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-pagination.md[0m|./pages/_docs/jekyll/jekyll-pagination.md
+http://stories.upthebuzzard.com/jekyll_notes/2017-02-19-prev-and-next-within-a-jekyll-collection.html|./pages/_docs/jekyll/jekyll-pagination.md
+https://gist.github.com/budparr/3e637e575471401d01ec|./pages/_docs/jekyll/jekyll-pagination.md
+https://blog.webjeda.com/jekyll-filters/|./pages/_docs/jekyll/jekyll-pagination.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md[0m|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://mermaidjs.github.io/|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://github.com/jasonbellamy/jekyll-mermaid|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://github.com/github/markup/issues/533|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://unpkg.com/mermaid|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://github.com/knsv/mermaid/tree/master/src/themes|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://github.com/mermaid-js/mermaid|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://mermaidjs.github.io/|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://mermaidjs.github.io/mermaid-live-editor/|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://github.com/knsv/mermaid|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+http://kkpattern.github.io/2015/05/15/Embed-Chart-in-Jekyll.html|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/|./pages/_docs/jekyll/jekyll-diagram-with-mermaid.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_docs/index.md[0m|./pages/_docs/index.md
+https://learn.microsoft.com/en-us/docs/|./pages/_docs/index.md
+https://jekyllrb.com/docs/|./pages/_docs/index.md
+https://github.com/jekyll/jekyll.git|./pages/_docs/index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md[0m|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://www.anaconda.com/|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/python/python-tutorial|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/datascience/data-science-tutorial|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/python/python-tutorial|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/datascience/jupyter-notebooks|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://psychopy.org/documentation.html|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://mne.tools/stable/auto_tutorials/index.html|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://nilearn.github.io/stable/auto_examples/index.html|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://code.visualstudio.com/docs/getstarted/keybindings|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+https://github.com/microsoft/vscode|./pages/_quickstart/2025-07-22-vscode-for-neuroscience.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quickstart/github-setup.md[0m|./pages/_quickstart/github-setup.md
+https://cli.github.com/|./pages/_quickstart/github-setup.md
+http://git-scm.com/book/en/v2/Git-Tools-Submodules|./pages/_quickstart/github-setup.md
+https://github.com/bamr87/winget-packages.git|./pages/_quickstart/github-setup.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quickstart/jekyll-setup.md[0m|./pages/_quickstart/jekyll-setup.md
+https://pages.github.com/versions.json|./pages/_quickstart/jekyll-setup.md
+http://localhost:4000](http://localhost:4000|./pages/_quickstart/jekyll-setup.md
+https://github.com/github/pages-gem/issues/752|./pages/_quickstart/jekyll-setup.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quickstart/index.md[0m|./pages/_quickstart/index.md
+https://code.visualstudio.com/|./pages/_quickstart/index.md
+https://github.com/|./pages/_quickstart/index.md
+https://www.docker.com/|./pages/_quickstart/index.md
+https://www.w3schools.com/html/|./pages/_quickstart/index.md
+https://jekyllrb.com/|./pages/_quickstart/index.md
+https://pages.github.com/|./pages/_quickstart/index.md
+https://reactjs.org/|./pages/_quickstart/index.md
+https://nodejs.org/|./pages/_quickstart/index.md
+https://www.mongodb.com/|./pages/_quickstart/index.md
+https://www.postman.com/|./pages/_quickstart/index.md
+https://reactnative.dev/|./pages/_quickstart/index.md
+https://azure.microsoft.com/|./pages/_quickstart/index.md
+https://aws.amazon.com/|./pages/_quickstart/index.md
+https://cloud.google.com/|./pages/_quickstart/index.md
+https://docs.github.com/en/actions|./pages/_quickstart/index.md
+https://kubernetes.io/|./pages/_quickstart/index.md
+https://www.terraform.io/|./pages/_quickstart/index.md
+https://www.jenkins.io/doc/book/pipeline/|./pages/_quickstart/index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quickstart/2025-03-08-setting-up-django-and-git.md[0m|./pages/_quickstart/2025-03-08-setting-up-django-and-git.md
+https://github.com|./pages/_quickstart/2025-03-08-setting-up-django-and-git.md
+https://github.com/YOUR_USERNAME/Django-Magic.git|./pages/_quickstart/2025-03-08-setting-up-django-and-git.md
+https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git|./pages/_quickstart/2025-03-08-setting-up-django-and-git.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quickstart/machine-setup.md[0m|./pages/_quickstart/machine-setup.md
+https://github.com|./pages/_quickstart/machine-setup.md
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh|./pages/_quickstart/machine-setup.md
+https://cli.github.com/packages/githubcli-archive-keyring.gpg|./pages/_quickstart/machine-setup.md
+https://cli.github.com/packages|./pages/_quickstart/machine-setup.md
+https://code.visualstudio.com/|./pages/_quickstart/machine-setup.md
+https://code.visualstudio.com/|./pages/_quickstart/machine-setup.md
+https://packages.microsoft.com/keys/microsoft.asc|./pages/_quickstart/machine-setup.md
+https://packages.microsoft.com/repos/code|./pages/_quickstart/machine-setup.md
+http://localhost:4000|./pages/_quickstart/machine-setup.md
+http://127.0.0.1:4000/|./pages/_quickstart/machine-setup.md
+http://localhost:4000`|./pages/_quickstart/machine-setup.md
+https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer|./pages/_quickstart/machine-setup.md
+http://localhost:4000`|./pages/_quickstart/machine-setup.md
+https://jekyllrb.com/docs/|./pages/_quickstart/machine-setup.md
+https://shopify.github.io/liquid/|./pages/_quickstart/machine-setup.md
+https://www.markdownguide.org/|./pages/_quickstart/machine-setup.md
+https://jekyllrb.com/docs/collections/|./pages/_quickstart/machine-setup.md
+https://jekyllrb.com/docs/datafiles/|./pages/_quickstart/machine-setup.md
+https://jekyllrb.com/docs/plugins/|./pages/_quickstart/machine-setup.md
+https://jekyllrb.com/docs/themes/|./pages/_quickstart/machine-setup.md
+https://docs.github.com/en/pages|./pages/_quickstart/machine-setup.md
+https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site|./pages/_quickstart/machine-setup.md
+https://jekyllrb.com/docs/|./pages/_quickstart/machine-setup.md
+https://docs.github.com/en/pages|./pages/_quickstart/machine-setup.md
+https://shopify.github.io/liquid/|./pages/_quickstart/machine-setup.md
+https://talk.jekyllrb.com/|./pages/_quickstart/machine-setup.md
+https://jekyllthemes.org/|./pages/_quickstart/machine-setup.md
+https://github.com/planetjekyll/awesome-jekyll|./pages/_quickstart/machine-setup.md
+https://github.com/jekyll/jekyll-admin|./pages/_quickstart/machine-setup.md
+https://github.com/jekyll/jekyll-feed|./pages/_quickstart/machine-setup.md
+https://github.com/jekyll/jekyll-seo-tag|./pages/_quickstart/machine-setup.md
+https://github.com/bamr87/it-journey/issues|./pages/_quickstart/machine-setup.md
+https://talk.jekyllrb.com/|./pages/_quickstart/machine-setup.md
+https://github.com/bamr87/it-journey|./pages/_quickstart/machine-setup.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/home.md[0m|./pages/home.md
+https://devopedia.org/full-stack-developer|./pages/home.md
+https://en.wikipedia.org/wiki/Solution_stack|./pages/home.md
+https://www.mediawiki.org/wiki/Download|./pages/home.md
+https://jekyllrb.com/docs/includes/|./pages/home.md
+https://shopify.github.io/liquid/filters/truncate/|./pages/home.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_hobbies/home.md[0m|./pages/_hobbies/home.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/action-triggers.md[0m|./pages/_quests/action-triggers.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md[0m|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://bamr87.github.io/it-journey}|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://{0}.github.io/{1}',|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://bamr87.github.io/it-journey}|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://docs.github.com/en/actions|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://platform.openai.com/docs|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://jekyllrb.com/docs/|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://www.youtube.com/playlist?list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://www.youtube.com/watch?v=AI_Integration_Examples|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://github.community/|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://reddit.com/r/devops|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://community.openai.com/|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://github.com/nektos/act|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://cli.github.com/|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://github.com/tcort/markdown-link-check|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://platform.openai.com/docs/api-reference|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://regexr.com/3e6m0|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://github.com/sdras/awesome-actions|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://github.com/topics/ai-devops|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+https://github.com/topics/website-monitoring|./pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/terminal-illness.md[0m|./pages/_quests/terminal-illness.md
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh|./pages/_quests/terminal-illness.md
+https://www.gnu.org/software/coreutils/manual/|./pages/_quests/terminal-illness.md
+https://reddit.com/r/commandline|./pages/_quests/terminal-illness.md
+https://unix.stackexchange.com/|./pages/_quests/terminal-illness.md
+http://linuxcommand.org/tlcl.php|./pages/_quests/terminal-illness.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/frontend/frontend-levels.md[0m|./pages/_quests/frontend/frontend-levels.md
+https://www.docker.com/products/docker-desktop|./pages/_quests/frontend/frontend-levels.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css|./pages/_quests/frontend/frontend-levels.md
+https://code.jquery.com/jquery-3.3.1.slim.min.js|./pages/_quests/frontend/frontend-levels.md
+https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js|./pages/_quests/frontend/frontend-levels.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js|./pages/_quests/frontend/frontend-levels.md
+https://github.com/yourusername/your-repo-name.git|./pages/_quests/frontend/frontend-levels.md
+http://localhost:4000`|./pages/_quests/frontend/frontend-levels.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/frontend/lvl-001-frontend-docker.md[0m|./pages/_quests/frontend/lvl-001-frontend-docker.md
+http://localhost:4000`.|./pages/_quests/frontend/lvl-001-frontend-docker.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/frontend/lvl-010-frontend-docker.md[0m|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://code.jquery.com/jquery-3.3.1.slim.min.js|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://code.jquery.com/jquery-3.3.1.slim.min.js|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js|./pages/_quests/frontend/lvl-010-frontend-docker.md
+https://getbootstrap.com/docs/5.0/getting-started/introduction/#cdn-links|./pages/_quests/frontend/lvl-010-frontend-docker.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/frontend/lvl-000-frontend-docker.md[0m|./pages/_quests/frontend/lvl-000-frontend-docker.md
+https://www.docker.com/products/docker-desktop|./pages/_quests/frontend/lvl-000-frontend-docker.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/frontend/frontend.md[0m|./pages/_quests/frontend/frontend.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/frontend/frontend-docker.md[0m|./pages/_quests/frontend/frontend-docker.md
+https://www.docker.com/products/docker-desktop|./pages/_quests/frontend/frontend-docker.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css|./pages/_quests/frontend/frontend-docker.md
+https://code.jquery.com/jquery-3.3.1.slim.min.js|./pages/_quests/frontend/frontend-docker.md
+https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js|./pages/_quests/frontend/frontend-docker.md
+https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js|./pages/_quests/frontend/frontend-docker.md
+https://github.com/yourusername/your-repo-name.git|./pages/_quests/frontend/frontend-docker.md
+http://localhost:4000`|./pages/_quests/frontend/frontend-docker.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/change-logs.md[0m|./pages/_quests/change-logs.md
+https://semver.org/|./pages/_quests/change-logs.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/revolutionizing-work-with-ai-automation.md[0m|./pages/_quests/revolutionizing-work-with-ai-automation.md
+https://api.openai.com/v1/chat/completions|./pages/_quests/revolutionizing-work-with-ai-automation.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/codex/world_map.md[0m|./pages/_quests/codex/world_map.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/codex/glossary.md[0m|./pages/_quests/codex/glossary.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/sourcery-code-methods.md[0m|./pages/_quests/sourcery-code-methods.md
+https://git-scm.com/download/win|./pages/_quests/sourcery-code-methods.md
+https://github.com/yourusername/my-first-quest.git|./pages/_quests/sourcery-code-methods.md
+https://git-scm.com/doc|./pages/_quests/sourcery-code-methods.md
+https://docs.github.com/|./pages/_quests/sourcery-code-methods.md
+https://docs.github.com/en/actions|./pages/_quests/sourcery-code-methods.md
+https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV|./pages/_quests/sourcery-code-methods.md
+https://skills.github.com/|./pages/_quests/sourcery-code-methods.md
+http://gitimmersion.com/|./pages/_quests/sourcery-code-methods.md
+https://git-scm.com/community|./pages/_quests/sourcery-code-methods.md
+https://github.community/|./pages/_quests/sourcery-code-methods.md
+https://stackoverflow.com/questions/tagged/git|./pages/_quests/sourcery-code-methods.md
+https://desktop.github.com/|./pages/_quests/sourcery-code-methods.md
+https://www.gitkraken.com/|./pages/_quests/sourcery-code-methods.md
+https://marketplace.visualstudio.com/search?term=git&target=VSCode|./pages/_quests/sourcery-code-methods.md
+https://education.github.com/git-cheat-sheet-education.pdf|./pages/_quests/sourcery-code-methods.md
+https://github.com/marketplace?type=actions|./pages/_quests/sourcery-code-methods.md
+https://www.conventionalcommits.org/|./pages/_quests/sourcery-code-methods.md
+https://github.com/explore|./pages/_quests/sourcery-code-methods.md
+https://opensource.guide/|./pages/_quests/sourcery-code-methods.md
+https://github.com/customer-stories|./pages/_quests/sourcery-code-methods.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/django-and-git.md[0m|./pages/_quests/django-and-git.md
+https://github.com|./pages/_quests/django-and-git.md
+https://github.com/YOUR_USERNAME/Django-Magic.git|./pages/_quests/django-and-git.md
+https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git|./pages/_quests/django-and-git.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/home.md[0m|./pages/_quests/home.md
+https://overthewire.org/wargames/bandit/|./pages/_quests/home.md
+https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits|./pages/_quests/home.md
+https://docs.microsoft.com/en-us/powershell/|./pages/_quests/home.md
+https://docs.microsoft.com/en-us/learn/|./pages/_quests/home.md
+https://code.visualstudio.com/docs|./pages/_quests/home.md
+https://www.mkdocs.org/|./pages/_quests/home.md
+https://docusaurus.io/|./pages/_quests/home.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/README.md[0m|./pages/_quests/README.md
+https://chocolatey.org/install.ps1'|./pages/_quests/README.md
+https://github.com/microsoft/winget-cli|./pages/_quests/README.md
+https://chocolatey.org/docs/installation|./pages/_quests/README.md
+https://medium.com/@sahanarajasekar/5-ways-to-upgrade-your-terminal-2fb8ab447949|./pages/_quests/README.md
+https://www.google.com/gmail/|./pages/_quests/README.md
+https://github.com|./pages/_quests/README.md
+https://twitter.com|./pages/_quests/README.md
+https://linkedin.com|./pages/_quests/README.md
+https://instagram.com|./pages/_quests/README.md
+https://stackoverflow.com|./pages/_quests/README.md
+https://codepen.io|./pages/_quests/README.md
+https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md|./pages/_quests/README.md
+https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits|./pages/_quests/README.md
+https://github.com/login|./pages/_quests/README.md
+https://github.com/signup|./pages/_quests/README.md
+https://github.com/bamr87/it-journey/fork|./pages/_quests/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md[0m|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://code.visualstudio.com/|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://code.visualstudio.com/|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://packages.microsoft.com/keys/microsoft.asc|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://packages.microsoft.com/repos/code|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://packages.microsoft.com/keys/microsoft.asc|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://packages.microsoft.com/yumrepos/vscode|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://packages.microsoft.com/keys/microsoft.asc|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://code.visualstudio.com/docs|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://code.visualstudio.com/api|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://marketplace.visualstudio.com/vscode|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://github.com/microsoft/vscode|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://github.com/viatsko/awesome-vscode|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://www.youtube.com/channel/UCs5Y5_7XK8HLDX0SLNwkd3w|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://www.youtube.com/watch?v=fnPhJHN0jTE|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+https://www.youtube.com/watch?v=ifTF3ags0XI|./pages/_quests/init_world/2025-07-21-vscode-mastery-quest.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/tools/tools.md[0m|./pages/_quests/init_world/tools/tools.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/hello-noob.md[0m|./pages/_quests/init_world/hello-noob.md
+https://github.com/login|./pages/_quests/init_world/hello-noob.md
+https://github.com/signup|./pages/_quests/init_world/hello-noob.md
+https://github.com/bamr87/it-journey/fork|./pages/_quests/init_world/hello-noob.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/2023-11-23-character-building.md[0m|./pages/_quests/init_world/2023-11-23-character-building.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/hello-win/hello-win.md[0m|./pages/_quests/init_world/hello-win/hello-win.md
+https://www.zerrouki.com/the-ps-cheatsheets/|./pages/_quests/init_world/hello-win/hello-win.md
+https://docs.microsoft.com/en-us/windows/wsl/install-win10|./pages/_quests/init_world/hello-win/hello-win.md
+https://docs.microsoft.com/en-us/windows/wsl/interop|./pages/_quests/init_world/hello-win/hello-win.md
+https://docs.microsoft.com/nl-nl/windows/wsl/wsl2-kernel|./pages/_quests/init_world/hello-win/hello-win.md
+https://docs.microsoft.com/en-us/windows/wsl/install-manual|./pages/_quests/init_world/hello-win/hello-win.md
+https://aka.ms/wsl-debian-gnulinux|./pages/_quests/init_world/hello-win/hello-win.md
+https://docs.microsoft.com/en-us/windows/wsl/user-support|./pages/_quests/init_world/hello-win/hello-win.md
+https://docs.microsoft.com/en-us/windows/package-manager/|./pages/_quests/init_world/hello-win/hello-win.md
+https://github.com/microsoft/winget-cli/releases|./pages/_quests/init_world/hello-win/hello-win.md
+https://getsharex.com/|./pages/_quests/init_world/hello-win/hello-win.md
+https://www.gimp.org/|./pages/_quests/init_world/hello-win/hello-win.md
+https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe|./pages/_quests/init_world/hello-win/hello-win.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/2023-11-23-it-fundamentals.md[0m|./pages/_quests/init_world/2023-11-23-it-fundamentals.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/2023-11-24-os-selection.md[0m|./pages/_quests/init_world/2023-11-24-os-selection.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/2023-11-23-begin-your-it-journey.md[0m|./pages/_quests/init_world/2023-11-23-begin-your-it-journey.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/hello-linux/linux-fun.md[0m|./pages/_quests/init_world/hello-linux/linux-fun.md
+https://www.gnu.org/software/bash/manual/|./pages/_quests/init_world/hello-linux/linux-fun.md
+https://tldp.org/LDP/abs/html/|./pages/_quests/init_world/hello-linux/linux-fun.md
+https://www.cisecurity.org/|./pages/_quests/init_world/hello-linux/linux-fun.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/init_world/2023-11-24-character-selection.md[0m|./pages/_quests/init_world/2023-11-24-character-selection.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/branches-and-pull-requests.md[0m|./pages/_quests/branches-and-pull-requests.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/bash-scripting.md[0m|./pages/_quests/bash-scripting.md
+https://git-scm.com/download/win|./pages/_quests/bash-scripting.md
+https://copy.sh/v86/|./pages/_quests/bash-scripting.md
+https://bellard.org/jslinux/|./pages/_quests/bash-scripting.md
+https://www.gnu.org/software/bash/manual/|./pages/_quests/bash-scripting.md
+https://tldp.org/LDP/abs/html/|./pages/_quests/bash-scripting.md
+https://github.com/koalaman/shellcheck/wiki|./pages/_quests/bash-scripting.md
+https://www.youtube.com/playlist?list=PLT98CRl2KxKGj-VKtApD8-zCqSaN2mD4w|./pages/_quests/bash-scripting.md
+https://www.coursera.org/learn/linux-command-line|./pages/_quests/bash-scripting.md
+https://www.youtube.com/watch?v=V1y-mbWM3B8|./pages/_quests/bash-scripting.md
+https://reddit.com/r/bash|./pages/_quests/bash-scripting.md
+https://stackoverflow.com/questions/tagged/bash|./pages/_quests/bash-scripting.md
+https://unix.stackexchange.com/|./pages/_quests/bash-scripting.md
+https://www.shellcheck.net/|./pages/_quests/bash-scripting.md
+https://github.com/bash-lsp/bash-language-server|./pages/_quests/bash-scripting.md
+https://github.com/bats-core/bats-core|./pages/_quests/bash-scripting.md
+http://bashdb.sourceforge.net/|./pages/_quests/bash-scripting.md
+https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh|./pages/_quests/bash-scripting.md
+https://ss64.com/bash/|./pages/_quests/bash-scripting.md
+https://wiki.bash-hackers.org/syntax/pe|./pages/_quests/bash-scripting.md
+https://github.com/alebcay/awesome-shell|./pages/_quests/bash-scripting.md
+https://github.com/dylanaraps/pure-bash-bible|./pages/_quests/bash-scripting.md
+https://github.com/alexanderepstein/Bash-Snippets|./pages/_quests/bash-scripting.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/lvl_000/2024-05-28-bash-run.md[0m|./pages/_quests/lvl_000/2024-05-28-bash-run.md
+https://gitlab.com/slackermedia/bashrun.git|./pages/_quests/lvl_000/2024-05-28-bash-run.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/lvl_000/bashcrawl/README.md[0m|./pages/_quests/lvl_000/bashcrawl/README.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/lvl_001/personal-site.md[0m|./pages/_quests/lvl_001/personal-site.md
+https://{{|./pages/_quests/lvl_001/personal-site.md
+https://github.com/{{|./pages/_quests/lvl_001/personal-site.md
+https://{{|./pages/_quests/lvl_001/personal-site.md
+https://travis-ci.org/|./pages/_quests/lvl_001/personal-site.md
+https://{{|./pages/_quests/lvl_001/personal-site.md
+https://www.netlify.com/|./pages/_quests/lvl_001/personal-site.md
+https://{{|./pages/_quests/lvl_001/personal-site.md
+https://www.cloudflare.com/|./pages/_quests/lvl_001/personal-site.md
+https://www.godaddy.com/|./pages/_quests/lvl_001/personal-site.md
+https://sharethis.com/|./pages/_quests/lvl_001/personal-site.md
+https://disqus.com/|./pages/_quests/lvl_001/personal-site.md
+https://analytics.google.com|./pages/_quests/lvl_001/personal-site.md
+https://jekyllrb.com/|./pages/_quests/lvl_001/personal-site.md
+https://highlightjs.org/|./pages/_quests/lvl_001/personal-site.md
+https://www.mathjax.org/|./pages/_quests/lvl_001/personal-site.md
+https://mermaidjs.github.io/|./pages/_quests/lvl_001/personal-site.md
+https://lunrjs.com/|./pages/_quests/lvl_001/personal-site.md
+http://nanobar.jacoborus.codes/|./pages/_quests/lvl_001/personal-site.md
+https://www.google.com/adsense/|./pages/_quests/lvl_001/personal-site.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_quests/commitments-to-clean-commits.md[0m|./pages/_quests/commitments-to-clean-commits.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/2025-01-16-mastering-iterm-shortcuts-for-efficiency.md[0m|./pages/_notes/2025-01-16-mastering-iterm-shortcuts-for-efficiency.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/misc/Favicons.md[0m|./pages/_notes/misc/Favicons.md
+https://mailchimp.com/resources/favicon-size/|./pages/_notes/misc/Favicons.md
+https://meodai.github.io/poline/|./pages/_notes/misc/Favicons.md
+https://www.favicon-generator.org/|./pages/_notes/misc/Favicons.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/misc/cloud.md[0m|./pages/_notes/misc/cloud.md
+https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/|./pages/_notes/misc/cloud.md
+https://explore.skillbuilder.aws/learn|./pages/_notes/misc/cloud.md
+https://www.aws.training/Certification|./pages/_notes/misc/cloud.md
+https://aws.amazon.com/certification/certification-prep/|./pages/_notes/misc/cloud.md
+https://amazonwebservices.benchprep.com/|./pages/_notes/misc/cloud.md
+https://docs.aws.amazon.com/|./pages/_notes/misc/cloud.md
+https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|./pages/_notes/misc/cloud.md
+https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#use-roles-with-ec2|./pages/_notes/misc/cloud.md
+https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#use-roles-with-ec2|./pages/_notes/misc/cloud.md
+http://169.254.169.254/latest/meta-data|./pages/_notes/misc/cloud.md
+http://localhost/latest/meta-data|./pages/_notes/misc/cloud.md
+http://254.169.254.169/latest/meta-data|./pages/_notes/misc/cloud.md
+http://192.168.0.1/latest/meta-data|./pages/_notes/misc/cloud.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/misc/AWS Practice Question Set.md[0m|./pages/_notes/misc/AWS Practice Question Set.md
+https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/|./pages/_notes/misc/AWS Practice Question Set.md
+https://explore.skillbuilder.aws/learn|./pages/_notes/misc/AWS Practice Question Set.md
+https://www.aws.training/Certification|./pages/_notes/misc/AWS Practice Question Set.md
+https://aws.amazon.com/certification/certification-prep/|./pages/_notes/misc/AWS Practice Question Set.md
+https://amazonwebservices.benchprep.com/|./pages/_notes/misc/AWS Practice Question Set.md
+https://docs.aws.amazon.com/|./pages/_notes/misc/AWS Practice Question Set.md
+https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|./pages/_notes/misc/AWS Practice Question Set.md
+https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#use-roles-with-ec2|./pages/_notes/misc/AWS Practice Question Set.md
+https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#use-roles-with-ec2|./pages/_notes/misc/AWS Practice Question Set.md
+http://169.254.169.254/latest/meta-data|./pages/_notes/misc/AWS Practice Question Set.md
+http://localhost/latest/meta-data|./pages/_notes/misc/AWS Practice Question Set.md
+http://254.169.254.169/latest/meta-data|./pages/_notes/misc/AWS Practice Question Set.md
+http://192.168.0.1/latest/meta-data|./pages/_notes/misc/AWS Practice Question Set.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/2025-01-24-set-up-azure-for-jekyll-contact-us-form.md[0m|./pages/_notes/2025-01-24-set-up-azure-for-jekyll-contact-us-form.md
+https://portal.azure.com|./pages/_notes/2025-01-24-set-up-azure-for-jekyll-contact-us-form.md
+https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions|./pages/_notes/2025-01-24-set-up-azure-for-jekyll-contact-us-form.md
+https://YOUR-FUNCTION-APP-NAME.azurewebsites.net/api/ContactFormHandler',|./pages/_notes/2025-01-24-set-up-azure-for-jekyll-contact-us-form.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md[0m|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://yourdomain.com`|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://dash.cloudflare.com/](https://dash.cloudflare.com/|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://github.com/bamr87/github/barodybroject.git|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://gunicorn.org/|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://www.uvicorn.org/|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://pkg.cloudflare.com/cloudflare-main.gpg|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+http://pkg.cloudflare.com/|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://github.com/cloudflare/cloudflared/releases|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm.deb|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+http://localhost:8000|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+http://localhost:8000`|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://yourdomain.com`**.|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+https://yourdomain.com`**|./pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/2025-01-23-sass-mixins.md[0m|./pages/_notes/2025-01-23-sass-mixins.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md[0m|./pages/_notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md
+https://abc123.execute-api.us-east-1.amazonaws.com/contact`.|./pages/_notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md
+https://abc123.execute-api.us-east-1.amazonaws.com/contact|./pages/_notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md
+https://abc123.execute-api.us-east-1.amazonaws.com/contact',|./pages/_notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/html_md_doc_scrapper.md[0m|./pages/_notes/html_md_doc_scrapper.md
+https://getbootstrap.com/docs/5.3/components/modal/'|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/urllib3/urllib3/issues/3020|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/site/content/docs/5.3/components/modal.md|./pages/_notes/html_md_doc_scrapper.md
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus|./pages/_notes/html_md_doc_scrapper.md
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/site/assets/js/snippets.js|./pages/_notes/html_md_doc_scrapper.md
+https://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_modal.scss|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_modal.scss|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_variables.scss|./pages/_notes/html_md_doc_scrapper.md
+https://github.com/twbs/bootstrap/blob/v5.3.3/scss/_modal.scss|./pages/_notes/html_md_doc_scrapper.md
+https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/|./pages/_notes/html_md_doc_scrapper.md
+https://jekyllrb.com/docs/configuration/options/#global-configuration'|./pages/_notes/html_md_doc_scrapper.md
+https://jekyllrb.com/docs/configuration/options/#global-configuration'|./pages/_notes/html_md_doc_scrapper.md
+http://localhost:4002/home/'|./pages/_notes/html_md_doc_scrapper.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/zero/Start.md[0m|./pages/_notes/zero/Start.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/index.md[0m|./pages/_notes/index.md
+https://docs.gitlab.com/ee/topics/autodevops/stages.html|./pages/_notes/index.md
+https://gist.githubusercontent.com/$gitUser/$env:psgist/raw/$masterProfile|./pages/_notes/index.md
+https://tomlankhorst.nl/brew-bundle-restore-backup/|./pages/_notes/index.md
+https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML|./pages/_notes/index.md
+https://jekyllrb.com/docs/configuration/markdown/|./pages/_notes/index.md
+https://kramdown.gettalong.org/options.html|./pages/_notes/index.md
+https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-word-95ef89dd-7142-4b50-afb2-f762f663ceb2#bkmk_navigatewin|./pages/_notes/index.md
+https://icons.getbootstrap.com/#install|./pages/_notes/index.md
+https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages|./pages/_notes/index.md
+https://frontmatter.codes/docs/content-creation/content-types#run-a-script-after-your-content-is-created|./pages/_notes/index.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/jekyllm-integration.md[0m|./pages/_notes/jekyllm-integration.md
+https://api.openai.com/v1/engines/davinci-codex/completions'|./pages/_notes/jekyllm-integration.md
+https://api.openai.com/v1/engines/davinci-codex/completions'|./pages/_notes/jekyllm-integration.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/markdown.md[0m|./pages/_notes/cheetsheets/markdown.md
+https://www.markdownguide.org/basic-syntax/|./pages/_notes/cheetsheets/markdown.md
+https://kramdown.gettalong.org/quickref.html|./pages/_notes/cheetsheets/markdown.md
+https://raw.githubusercontent.com/barryclark/www.jekyllnow.com/gh-pages/_posts/2014-6-19-Markdown-Style-Guide.md|./pages/_notes/cheetsheets/markdown.md
+http://github.com/barryclark/jekyll-now/|./pages/_notes/cheetsheets/markdown.md
+http://github.com/barryclark/jekyll-now/|./pages/_notes/cheetsheets/markdown.md
+https://raw.githubusercontent.com/barryclark/www.jekyllnow.com/gh-pages/_posts/2014-6-19-Markdown-Style-Guide.md|./pages/_notes/cheetsheets/markdown.md
+http://github.com/barryclark/jekyll-now/|./pages/_notes/cheetsheets/markdown.md
+http://github.com/barryclark/jekyll-now/|./pages/_notes/cheetsheets/markdown.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/Shell and the CLI.md[0m|./pages/_notes/cheetsheets/Shell and the CLI.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1|./pages/_notes/cheetsheets/Shell and the CLI.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#subexpression-operator--|./pages/_notes/cheetsheets/Shell and the CLI.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/mac-shortcuts.md[0m|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#about|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#copy|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#sleep|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#finder|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#text|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#accessibility|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#other|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/en-us/HT201236#more|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/what-are-those-symbols-shown-in-menus-cpmh0011/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac/mac-fn-key-globe-icon.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/keyboard-icon-increase-display-brightness.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/keyboard-icon-increase-keyboard-brightness.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/create-keyboard-shortcuts-for-apps-mchlp2271/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/HT201276|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/mchlp1008/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/type-language-mac-input-sources-mchlp1406/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/mchlp2864/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/mchlp1560/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/view-and-edit-files-with-quick-look-mh14119/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT201260|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT201361|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/itunes/divider.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/eject-button-icon.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/eject-button-icon.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/eject-button-icon.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/eject-button-icon.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/eject-button-icon.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT207054|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/itunes/divider.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/select-items-mchlp1378/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/itunes/divider.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/itunes/divider.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/HT202562|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/voiceover/general-commands-cpvokys01/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT210978|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/control-the-pointer-using-mouse-keys-mh27469/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/voiceover/make-voiceover-ignore-the-next-key-press-vo2722/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/safari/keyboard-and-other-shortcuts-cpsh003/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/spotlight-keyboard-shortcuts-mh26783/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mail/keyboard-shortcuts-mlhlb94f262b/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/photos/keyboard-shortcuts-and-gestures-pht9b4411b24/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/disk-utility/keyboard-shortcuts-dsku1b491744/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/preview/keyboard-shortcuts-cpprvw0003/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/music/keyboard-shortcuts-mus1019/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT201255|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/itunes/divider.png|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/use-emoji-and-symbols-on-mac-mchlp1560/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/create-keyboard-shortcuts-for-apps-mchlp2271/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/if-a-keyboard-shortcut-doesnt-work-mchlp2864/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT204436|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/guide/mac-help/change-the-behavior-of-the-modifier-keys-mchlp1011/mac|./pages/_notes/cheetsheets/mac-shortcuts.md
+https://support.apple.com/kb/HT203085|./pages/_notes/cheetsheets/mac-shortcuts.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/command-line.md[0m|./pages/_notes/cheetsheets/command-line.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1|./pages/_notes/cheetsheets/command-line.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#subexpression-operator--|./pages/_notes/cheetsheets/command-line.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/Bash cheatsheet.md[0m|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/syntax/expansion/brace|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/syntax/expansion/cmdsubst|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/syntax/pe|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://redsymbol.net/articles/unofficial-bash-strict-mode/|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/syntax/shellvars|./pages/_notes/cheetsheets/Bash cheatsheet.md
+https://learnxinyminutes.com/docs/bash/|./pages/_notes/cheetsheets/Bash cheatsheet.md
+https://devhints.io/bash|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://wiki.bash-hackers.org/|./pages/_notes/cheetsheets/Bash cheatsheet.md
+http://mywiki.wooledge.org/BashGuide|./pages/_notes/cheetsheets/Bash cheatsheet.md
+https://www.shellcheck.net/|./pages/_notes/cheetsheets/Bash cheatsheet.md
+https://devmanual.gentoo.org/tools-reference/bash/index.html|./pages/_notes/cheetsheets/Bash cheatsheet.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md[0m|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html'|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://([0-9.]*|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators/|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://msdn.microsoft.com/en-us/library/system.console(v=vs.110|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://msdn.microsoft.com/en-us/library/system.random(v=vs.110|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html'|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://([0-9.]*|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators/|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://msdn.microsoft.com/en-us/library/system.console(v=vs.110|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://msdn.microsoft.com/en-us/library/system.random(v=vs.110|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+https://www.theochem.ru.nl/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/programming.md[0m|./pages/_notes/cheetsheets/programming.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/bash.md[0m|./pages/_notes/cheetsheets/bash.md
+https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge|./pages/_notes/cheetsheets/bash.md
+https://hackmd.io/mCoifzaSQLOH_18DCH1IQg|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/syntax/expansion/brace|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/syntax/expansion/cmdsubst|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/syntax/pe|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables|./pages/_notes/cheetsheets/bash.md
+http://redsymbol.net/articles/unofficial-bash-strict-mode/|./pages/_notes/cheetsheets/bash.md
+https://devhints.io/bash|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/|./pages/_notes/cheetsheets/bash.md
+http://wiki.bash-hackers.org/syntax/shellvars|./pages/_notes/cheetsheets/bash.md
+https://learnxinyminutes.com/docs/bash/|./pages/_notes/cheetsheets/bash.md
+http://mywiki.wooledge.org/BashGuide|./pages/_notes/cheetsheets/bash.md
+https://www.shellcheck.net/|./pages/_notes/cheetsheets/bash.md
+https://devmanual.gentoo.org/tools-reference/bash/index.html|./pages/_notes/cheetsheets/bash.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/cheetsheets/2022-10-07-powershell.md[0m|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html'|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://([0-9.]*|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators/|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://msdn.microsoft.com/en-us/library/system.console(v=vs.110|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://msdn.microsoft.com/en-us/library/system.random(v=vs.110|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html'|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://([0-9.]*|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://131.174.138.39/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators/|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://msdn.microsoft.com/en-us/library/system.console(v=vs.110|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://msdn.microsoft.com/en-us/library/system.math_methods(v=vs.110|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://msdn.microsoft.com/en-us/library/system.random(v=vs.110|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://docs.microsoft.com/en-us/PowerShell/module/microsoft.PowerShell.core/about/about_trap?view=PowerShell-5.1|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+https://www.theochem.ru.nl/~pwormer/teachmat/PS_cheat_sheet.html|./pages/_notes/cheetsheets/2022-10-07-powershell.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/code-snippets/test.md[0m|./pages/_notes/code-snippets/test.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/Journal Entries/What is my PiDentity_.md[0m|./pages/_notes/Journal Entries/What is my PiDentity_.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/Journal Entries/GPT App Build.md[0m|./pages/_notes/Journal Entries/GPT App Build.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/Journal Entries/Github_s hidden gem.md[0m|./pages/_notes/Journal Entries/Github_s hidden gem.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/Curiculum.md[0m|./pages/_notes/dev/Curiculum.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/projects/Master_s Project.md[0m|./pages/_notes/dev/projects/Master_s Project.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/projects/People.md[0m|./pages/_notes/dev/projects/People.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/projects/Production.md[0m|./pages/_notes/dev/projects/Production.md
+https://scrapy.org/|./pages/_notes/dev/projects/Production.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/projects/Project List.md[0m|./pages/_notes/dev/projects/Project List.md
+https://yeoman.io/learning/|./pages/_notes/dev/projects/Project List.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/Take good notes.md[0m|./pages/_notes/dev/Take good notes.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/dev/2024-05-14-side-bar-folders.md[0m|./pages/_notes/dev/2024-05-14-side-bar-folders.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./pages/_notes/2025-01-16-iterm-tips-and-tricks.md[0m|./pages/_notes/2025-01-16-iterm-tips-and-tricks.md
+[0;35m🔍 DEBUG: Extracting links from markdown: ./SECURITY.md[0m|./SECURITY.md
+[0;35m🔍 DEBUG: Extracting links from HTML: [0;35m🔍 DEBUG: Searching for HTML files...[0m[0m|[0;35m🔍 DEBUG: Searching for HTML files...[0m
+[0;35m🔍 DEBUG: Extracting links from HTML: ./404.html[0m|./404.html
+/|./404.html
+/about|./404.html
+/contact|./404.html
+/blog|./404.html
+/|./404.html
+#|./404.html
+/search|./404.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/label.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/label.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/table.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/table.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/p.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/p.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/div.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/div.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/formsets/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/table.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/table.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/p.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/p.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/div.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/div.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/list/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/list/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/list/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/list/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/dict/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/dict/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/dict/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/errors/dict/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/attrs.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/attrs.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/select.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/select.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/radio_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/radio_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/text.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/text.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/splitdatetime.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/splitdatetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/splithiddendatetime.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/splithiddendatetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/email.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/email.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/textarea.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/textarea.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/radio.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/radio.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/multiple_hidden.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/multiple_hidden.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/select_date.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/select_date.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/url.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/url.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/time.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/time.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/clearable_file_input.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/clearable_file_input.html
+{{ widget.value.url }}|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/clearable_file_input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/checkbox.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/checkbox.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/number.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/number.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/checkbox_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/checkbox_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/file.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/file.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/multiwidget.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/multiwidget.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/select_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/select_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/input.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/multiple_input.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/multiple_input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/checkbox_select.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/checkbox_select.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/hidden.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/hidden.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/input_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/input_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/attrs.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/attrs.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/datetime.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/datetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/date.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/date.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/password.html[0m|./.venv/lib/python3.9/site-packages/django/forms/jinja2/django/forms/widgets/password.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/label.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/label.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/table.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/table.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/p.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/p.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/div.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/div.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/formsets/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/table.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/table.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/p.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/p.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/div.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/div.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/list/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/list/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/list/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/list/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/dict/default.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/dict/default.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/dict/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/errors/dict/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/ul.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/ul.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/attrs.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/attrs.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/select.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/select.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/radio_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/radio_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/text.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/text.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/splitdatetime.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/splitdatetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/splithiddendatetime.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/splithiddendatetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/email.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/email.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/textarea.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/textarea.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/radio.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/radio.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/multiple_hidden.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/multiple_hidden.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/select_date.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/select_date.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/url.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/url.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/time.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/time.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/clearable_file_input.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/clearable_file_input.html
+{{ widget.value.url }}|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/clearable_file_input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/checkbox.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/checkbox.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/number.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/number.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/checkbox_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/checkbox_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/file.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/file.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/multiwidget.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/multiwidget.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/select_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/select_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/input.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/multiple_input.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/multiple_input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/checkbox_select.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/checkbox_select.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/hidden.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/hidden.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/input_option.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/input_option.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/attrs.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/attrs.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/datetime.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/datetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/date.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/date.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/password.html[0m|./.venv/lib/python3.9/site-packages/django/forms/templates/django/forms/widgets/password.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/auth/templates/auth/widgets/read_only_password_hash.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/auth/templates/auth/widgets/read_only_password_hash.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_done.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_done.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_done.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_form.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_form.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_form.html
+{{ docsroot }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_form.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_form.html
+{% url 'admin:logout' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_form.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_email.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_email.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_confirm.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_confirm.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_confirm.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_confirm.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_form.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_form.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_form.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_form.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/logged_out.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/logged_out.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/logged_out.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/logged_out.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html
+{{ login_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_reset_complete.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_done.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_done.html
+{{ docsroot }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_done.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_done.html
+{% url 'admin:logout' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/registration/password_change_done.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+{% url 'admin:app_list' app_label=opts.app_label %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+{% url opts|admin_urlname:'changelist' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+#|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+{% static 'admin/js/cancel.js' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_selected_confirmation.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_object_tools.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_object_tools.html
+{% add_preserved_filters add_url is_popup to_field %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_object_tools.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+{% url 'admin:app_list' app_label=opts.app_label %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+{% url opts|admin_urlname:'changelist' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+{% url opts|admin_urlname:'change' object.pk|admin_urlquote %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+#|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+{% static 'admin/js/cancel.js' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/delete_confirmation.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/actions.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/actions.html
+#|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/actions.html
+#|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/actions.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/color_theme_toggle.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/color_theme_toggle.html
+#icon-auto|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/color_theme_toggle.html
+#icon-moon|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/color_theme_toggle.html
+#icon-sun|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/color_theme_toggle.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_results.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_results.html
+{{ header.url_remove }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_results.html
+{{ header.url_toggle }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_results.html
+{{ header.url_primary }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list_results.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/index.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/index.html
+{{ entry.get_admin_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/pagination.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/pagination.html
+{{ show_all_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/pagination.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% block stylesheet %}{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% block stylesheet_rtl %}{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+#content-start|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{{ site_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{{ docsroot }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% url 'admin:password_change' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% static 'admin/js/nav_sidebar.js' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+{% url 'admin:logout' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/date_hierarchy.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/date_hierarchy.html
+{{ back.link }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/date_hierarchy.html
+{{ choice.link }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/date_hierarchy.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/invalid_setup.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/invalid_setup.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/invalid_setup.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+{% url 'admin:app_list' app_label=opts.app_label %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+{% url opts|admin_urlname:'changelist' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+{% url opts|admin_urlname:'change' original.pk|admin_urlquote %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+{{ form_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/change_password.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/add_form.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/auth/user/add_form.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_index.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/includes/object_delete_summary.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/includes/object_delete_summary.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/includes/fieldset.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/includes/fieldset.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/500.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/500.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/500.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html
+{% url 'admin:app_list' app_label=opts.app_label %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html
+{% url opts|admin_urlname:'changelist' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html
+{% url opts|admin_urlname:'change' object.pk|admin_urlquote %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html
+?{{ page_var }}={{ i }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/object_history.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/404.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/404.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/login.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/login.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/login.html
+{{ password_reset_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/login.html
+{{ app_path }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/login.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{% url 'admin:app_list' app_label=cl.opts.app_label %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{{ cl.clear_all_filters_qs }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{% url 'admin:jsi18n' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+{% static 'admin/js/filters.js' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_list.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/popup_response.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/popup_response.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/popup_response.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form_object_tools.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form_object_tools.html
+{% add_preserved_filters history_url %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form_object_tools.html
+{{ absolute_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form_object_tools.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html
+{{ app.app_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html
+{{ model.admin_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html
+{{ model.add_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html
+{{ model.admin_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html
+{{ model.admin_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/app_list.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/submit_line.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/submit_line.html
+{% add_preserved_filters changelist_url %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/submit_line.html
+{% add_preserved_filters delete_url %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/submit_line.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/search_form.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/search_form.html
+?{% if cl.is_popup %}{{ is_popup_var }}=1{% endif %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/search_form.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/search_form.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/prepopulated_fields_js.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/prepopulated_fields_js.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/prepopulated_fields_js.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{% url 'admin:app_list' app_label=opts.app_label %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{% url opts|admin_urlname:'changelist' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{% url 'admin:jsi18n' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{% static 'admin/js/change_form.js' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+{{ form_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/change_form.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/stacked.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/stacked.html
+{% url inline_admin_form.model_admin.opts|admin_urlname:'change' inline_admin_form.original.pk|admin_urlquote %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/stacked.html
+{{ inline_admin_form.absolute_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/stacked.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/tabular.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/tabular.html
+{% url inline_admin_form.model_admin.opts|admin_urlname:'change' inline_admin_form.original.pk|admin_urlquote %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/tabular.html
+{{ inline_admin_form.absolute_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/tabular.html
+{% static |./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/edit_inline/tabular.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/nav_sidebar.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/nav_sidebar.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base_site.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base_site.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/base_site.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/many_to_many_raw_id.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/many_to_many_raw_id.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/radio.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/radio.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/url.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/url.html
+{{ widget.href }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/url.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/foreign_key_raw_id.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/foreign_key_raw_id.html
+{{ related_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/foreign_key_raw_id.html
+{{ link_url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/foreign_key_raw_id.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/time.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/time.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/clearable_file_input.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/clearable_file_input.html
+{{ widget.value.url }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/clearable_file_input.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/split_datetime.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/split_datetime.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/date.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/date.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+{{ add_related_url }}?{{ url_params }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+{% static 'admin/img/icon-changelink.svg' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+{% static 'admin/img/icon-addlink.svg' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+{% static 'admin/img/icon-deletelink.svg' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+{% static 'admin/img/icon-viewlink.svg' %}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/widgets/related_widget_wrapper.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/filter.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/filter.html
+{{ choice.query_string|iriencode }}|./.venv/lib/python3.9/site-packages/django/contrib/admin/templates/admin/filter.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/postgres/jinja2/postgres/widgets/split_array.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/postgres/jinja2/postgres/widgets/split_array.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/postgres/templates/postgres/widgets/split_array.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/postgres/templates/postgres/widgets/split_array.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/openlayers-osm.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/openlayers-osm.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/admin/osm.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/admin/osm.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/admin/openlayers.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/admin/openlayers.html
+javascript:{{ module }}.clearFeatures()|./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/admin/openlayers.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/openlayers.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/gis/templates/gis/openlayers.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+tags/|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+filters/|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+models/|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+views/|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+bookmarklets/|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_detail.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_detail.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_detail.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_detail.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_detail.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/bookmarklets.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/bookmarklets.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/bookmarklets.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/bookmarklets.html
+javascript:(function(){if(typeof XMLHttpRequest!='undefined'){x=new XMLHttpRequest()}else{return;}x.open('HEAD',location.href,false);x.send(null);try{view=x.getResponseHeader('x-view');}catch(e){alert('No view found for this page');return;}if(view=='undefined'){alert('No view found for this page');}document.location='{% url 'django-admindocs-views-index' %}'+view+'/';})()|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/bookmarklets.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_detail.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_detail.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_detail.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_detail.html
+{% url 'django-admindocs-models-index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_detail.html
+{% url 'django-admindocs-models-index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_detail.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_index.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_index.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_index.html
+#ns|{{ ns_views.grouper }}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_index.html
+{% url 'django-admindocs-views-detail' view=view.full_name %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_detail.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_detail.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_detail.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_detail.html
+{% url 'django-admindocs-views-index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_detail.html
+{% url 'django-admindocs-views-index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/view_detail.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_filter_index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_filter_index.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_filter_index.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_filter_index.html
+#{{ library.grouper|default:|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_filter_index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_tag_index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_tag_index.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_tag_index.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_tag_index.html
+#{{ library.grouper|default:|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/template_tag_index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_index.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_index.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_index.html
+{% url 'django-admindocs-docroot' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_index.html
+{% url 'django-admindocs-models-detail' app_label=model.app_label model_name=model.model_name %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_index.html
+#app-{{ group.grouper.label }}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/model_index.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/missing_docutils.html[0m|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/missing_docutils.html
+{% url 'admin:index' %}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/missing_docutils.html
+{{ link }}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/missing_docutils.html
+{{ link }}|./.venv/lib/python3.9/site-packages/django/contrib/admindocs/templates/admin_doc/missing_docutils.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html[0m|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+https://www.djangoproject.com/|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+https://docs.djangoproject.com/en/{{ version }}/releases/|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+https://docs.djangoproject.com/en/{{ version }}/ref/settings/#debug|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+https://docs.djangoproject.com/en/{{ version }}/|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+https://docs.djangoproject.com/en/{{ version }}/intro/tutorial01/|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+https://www.djangoproject.com/community/|./.venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/views/templates/technical_404.html[0m|./.venv/lib/python3.9/site-packages/django/views/templates/technical_404.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./.venv/lib/python3.9/site-packages/django/views/templates/technical_500.html[0m|./.venv/lib/python3.9/site-packages/django/views/templates/technical_500.html
+#|./.venv/lib/python3.9/site-packages/django/views/templates/technical_500.html
+https://dpaste.com/|./.venv/lib/python3.9/site-packages/django/views/templates/technical_500.html
+[0;35m🔍 DEBUG: Extracting links from HTML: ./pages/index.html[0m|./pages/index.html
+{{ post.url | relative_url }}|./pages/index.html
+{{ paginator.previous_page_path }}|./pages/index.html
+{{ site.baseurl }}{% if page != 1 %}/pages/{{ page }}{% endif %}|./pages/index.html
+{{ paginator.next_page_path }}|./pages/index.html
+{{ site.public_folder }}/{{ post.preview}}|./pages/index.html
+{{ site.teaser }}|./pages/index.html

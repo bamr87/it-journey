@@ -1,0 +1,156 @@
+# Guardian 2.0 Configuration File
+# Hyperlink Guardian Testing Framework Configuration
+
+# Site configuration
+site:
+  url: "https://bamr87.github.io/it-journey"
+  name: "IT-Journey Educational Platform"
+  description: "Educational technology platform and learning resources"
+
+# Testing parameters
+testing:
+  max_parallel: 10
+  timeout: 30
+  retry_count: 2
+  retry_delay: 5
+  internal_only: false
+  user_agent: "IT-Journey-Hyperlink-Guardian/2.0"
+  
+  # Advanced testing options
+  connect_timeout: 10
+  follow_redirects: true
+  max_redirects: 5
+  
+  # Performance thresholds
+  slow_response_threshold: 5.0  # seconds
+  critical_response_threshold: 10.0  # seconds
+
+# Exclusion patterns (regex)
+exclusions:
+  patterns:
+    - "localhost"
+    - "127\\.0\\.0\\.1"
+    - "\\[\\[.*\\]\\]"  # Jekyll liquid tags
+    - "example\\.com"
+    - "test\\.example"
+  
+  # Exclude specific URL patterns
+  url_patterns:
+    - "^#.*"  # Anchor links
+    - "^mailto:"  # Email links
+    - "^tel:"  # Phone links
+    - "^javascript:"  # JavaScript URLs
+    - "^data:"  # Data URLs
+
+# AI analysis configuration
+ai_analysis:
+  model: "gpt-4"
+  max_tokens: 3000
+  temperature: 0.3
+  
+  # Fallback configuration
+  enable_fallback: true
+  fallback_model: "gpt-3.5-turbo"
+  
+  # Analysis categories
+  categories:
+    - "external_documentation"
+    - "github_repositories" 
+    - "academic_resources"
+    - "commercial_tools"
+    - "social_media"
+    - "internal_links"
+    - "deprecated_services"
+    - "temporary_failures"
+    - "cdn_resources"
+    - "api_endpoints"
+    - "ssl_certificate_issues"
+    - "dns_resolution_failures"
+    - "connection_timeouts"
+
+# Output configuration
+output:
+  base_directory: "test-results"
+  
+  # File structure
+  files:
+    summary: "summary.json"
+    detailed_results: "detailed-results.csv"
+    broken_links: "broken-links.json"
+    ai_analysis: "ai-analysis.json"
+    performance_metrics: "performance-metrics.json"
+  
+  # Artifact storage
+  artifacts:
+    directory: "artifacts"
+    retention_days: 30
+    include_raw_data: true
+    include_debug_logs: true
+
+# GitHub integration
+github:
+  # Issue creation
+  create_issues: true
+  issue_labels:
+    - "automated-report"
+    - "links" 
+    - "hyperlink-guardian"
+    - "testing"
+  
+  # Issue lifecycle
+  close_old_issues: true
+  old_issue_threshold_days: 7
+  
+  # Artifact management
+  upload_artifacts: true
+  artifact_retention_days: 30
+
+# Monitoring and alerting
+monitoring:
+  # Performance monitoring
+  track_response_times: true
+  track_success_rates: true
+  track_error_patterns: true
+  
+  # Alerting thresholds
+  alerts:
+    high_failure_rate: 20  # percentage
+    critical_failure_rate: 50  # percentage
+    slow_response_rate: 30  # percentage of requests over threshold
+    
+  # Historical tracking
+  enable_trend_analysis: true
+  trend_window_days: 30
+
+# Educational platform specific settings
+educational:
+  # Content categorization
+  prioritize_learning_resources: true
+  
+  # Learning path analysis
+  analyze_quest_links: true
+  analyze_tutorial_links: true
+  analyze_reference_links: true
+  
+  # Impact assessment
+  assess_learner_impact: true
+  assess_content_accessibility: true
+  assess_learning_disruption: true
+
+# Development and debugging
+development:
+  verbose_logging: false
+  debug_mode: false
+  dry_run_mode: false
+  
+  # Testing overrides
+  test_mode: false
+  test_url_limit: 10
+  test_timeout_override: 5
+
+# Version and metadata
+metadata:
+  config_version: "2.0.0"
+  guardian_version: "2.0.0"
+  last_updated: "2025-01-27"
+  maintainer: "IT-Journey Testing Framework" 

@@ -1,0 +1,506 @@
+# 🔗 Hyperlink Guardian - Daily Link Health Check
+# Automated testing and AI-powered analysis for Jekyll site link integrity
+
+name: 🔗 Hyperlink Guardian
+
+on:
+  schedule:
+    # Run every day at 3:00 AM UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:  # Allow manual triggering
+    inputs:
+      force_scan:
+        description: 'Force full site scan even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+      max_parallel:
+        description: 'Maximum parallel link tests (default: 10)'
+        required: false
+        default: '10'
+        type: string
+
+env:
+  SITE_URL: ${{ github.pages.url || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+  OUTPUT_DIR: './link-check-results'
+  MAX_PARALLEL: ${{ github.event.inputs.max_parallel || '10' }}
+
+jobs:
+  link-health-scan:
+    name: 🔍 Scan Link Health
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    
+    steps:
+    - name: 🏰 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for change detection
+    
+    - name: 🔧 Setup Node.js Environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: 🐍 Setup Python Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: 📦 Install Dependencies
+      run: |
+        # Node.js dependencies
+        npm install -g markdown-link-check
+        
+        # System dependencies
+        sudo apt-get update
+        sudo apt-get install -y curl jq bc
+        
+        # Python dependencies for AI analysis
+        pip install openai requests
+    
+    - name: 🛠️ Prepare Guardian 2.0 Testing Framework
+      run: |
+        # Verify Guardian 2.0 scripts are ready
+        echo "🔍 Guardian 2.0 Testing Framework validation..."
+        ls -la test/hyperlink-guardian/scripts/
+        
+        # Validate the testing framework
+        ./test/hyperlink-guardian/scripts/validate.sh dependencies
+        
+        echo "✅ Guardian 2.0 framework ready for execution"
+    
+    - name: 🔍 Execute Guardian 2.0 Comprehensive Scan
+      run: |
+        echo "🚀 Starting Guardian 2.0 comprehensive link health check..."
+        echo "📍 Target site: $SITE_URL"
+        echo "⚙️ Max parallel tests: $MAX_PARALLEL"
+        echo "🗂️ Output directory: $OUTPUT_DIR"
+        
+        # Execute the Guardian 2.0 scan
+        ./test/hyperlink-guardian/scripts/guardian.sh --verbose
+        
+        echo "📊 Guardian 2.0 Scan Results Summary:"
+        if [[ -f "$OUTPUT_DIR/summary.json" ]]; then
+          echo "✅ Summary generated successfully"
+          cat "$OUTPUT_DIR/summary.json" | jq '.'
+        else
+          echo "❌ No summary file generated"
+          exit 1
+        fi
+    
+    - name: 📁 Upload Guardian 2.0 Results as Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: guardian-2.0-results-${{ github.run_number }}
+        path: |
+          ${{ env.OUTPUT_DIR }}/
+        retention-days: 30
+      if: always()
+    
+    - name: 🤖 Prepare Guardian 2.0 AI Analysis Data
+      id: prepare-analysis
+      run: |
+        # Create comprehensive data package for Guardian 2.0 AI analysis
+        ANALYSIS_DIR="./ai-analysis-input"
+        mkdir -p "$ANALYSIS_DIR"
+        
+        # Copy Guardian 2.0 scan results
+        if [[ -d "$OUTPUT_DIR" ]]; then
+          cp -r "$OUTPUT_DIR"/* "$ANALYSIS_DIR/" 2>/dev/null || echo "No scan results to copy"
+        fi
+        
+        # Add repository context
+        cat > "$ANALYSIS_DIR/repository_context.json" << EOF
+        {
+          "repository": "$GITHUB_REPOSITORY",
+          "branch": "$GITHUB_REF_NAME",
+          "commit_sha": "$GITHUB_SHA",
+          "workflow_run_id": "$GITHUB_RUN_ID",
+          "trigger": "$GITHUB_EVENT_NAME",
+          "site_url": "$SITE_URL",
+          "scan_parameters": {
+            "max_parallel": "$MAX_PARALLEL",
+            "force_scan": "${{ github.event.inputs.force_scan || 'false' }}"
+          }
+        }
+        EOF
+        
+        # Add recent commit history for context
+        git log --oneline -10 > "$ANALYSIS_DIR/recent_commits.txt" || echo "No git history available"
+        
+        # Check if there are broken links
+        BROKEN_COUNT=0
+        if [[ -f "$OUTPUT_DIR/summary.json" ]]; then
+          BROKEN_COUNT=$(jq -r '.broken_links // 0' "$OUTPUT_DIR/summary.json" 2>/dev/null || echo "0")
+        fi
+        echo "broken_count=$BROKEN_COUNT" >> $GITHUB_OUTPUT
+        
+        # Create enhanced analysis prompt for Guardian 2.0
+        cat > "$ANALYSIS_DIR/analysis_prompt.txt" << EOF
+        Please analyze the Guardian 2.0 hyperlink health scan results for the IT-Journey repository.
+        
+        Context:
+        - This is a Jekyll-based GitHub Pages educational site about IT learning journeys
+        - The site contains technical documentation, tutorials, learning quests, and educational content
+        - Links may reference external documentation, GitHub repositories, educational tools, or internal content
+        - This is an educational platform focused on democratizing IT education
+        - Guardian 2.0 provides enhanced categorization with detailed error analysis
+        
+        Enhanced Analysis Requirements:
+        1. Summarize the overall link health status leveraging Guardian 2.0's enhanced categorization
+        2. Analyze broken links using the new error categories (ssl_error, dns_error, timeout, etc.)
+        3. Identify patterns in link failures using enhanced URL type and link category data
+        4. Provide root cause analysis based on Guardian 2.0's detailed error categorization
+        5. Suggest specific remediation actions for each enhanced category
+        6. Recommend preventive measures leveraging Guardian 2.0's monitoring capabilities
+        7. Assess the impact on learners and educational outcomes
+        8. Evaluate Guardian 2.0's effectiveness in link health monitoring
+        9. Provide technical implementation recommendations for enhanced monitoring
+        
+        Please provide actionable insights that leverage Guardian 2.0's advanced capabilities to maintain the educational value and reliability of this learning platform.
+        EOF
+        
+        echo "🤖 AI analysis data prepared in $ANALYSIS_DIR"
+        ls -la "$ANALYSIS_DIR"
+    
+    outputs:
+      broken_count: ${{ steps.prepare-analysis.outputs.broken_count }}
+
+  ai-analysis:
+    name: 🧠 Guardian 2.0 AI-Powered Analysis
+    needs: link-health-scan
+    runs-on: ubuntu-latest
+    if: needs.link-health-scan.outputs.broken_count > 0
+    permissions:
+      contents: read
+      issues: write
+    
+    steps:
+    - name: 🏰 Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: 🐍 Setup Python Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: 📦 Install AI Analysis Dependencies
+      run: |
+        pip install openai requests
+    
+    - name: 📥 Download Guardian 2.0 Results
+      uses: actions/download-artifact@v4
+      with:
+        name: guardian-2.0-results-${{ github.run_number }}
+        path: ./analysis-input
+    
+    - name: 🧠 Execute Guardian 2.0 AI Analysis
+      id: ai-analysis
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        echo "🤖 Starting Guardian 2.0 AI-powered analysis..."
+        
+        # Check if API key is available
+        if [[ -z "$OPENAI_API_KEY" ]]; then
+          echo "⚠️ OPENAI_API_KEY not found in secrets. Creating enhanced fallback analysis..."
+          
+          # Create enhanced fallback analysis for Guardian 2.0
+          cat > ./ai_analysis_result.json << EOF
+        {
+          "executive_summary": "Guardian 2.0 detected ${{ needs.link-health-scan.outputs.broken_count }} broken links with enhanced categorization. Full AI analysis requires OPENAI_API_KEY secret to be configured.",
+          "fallback_analysis": true,
+          "guardian_version": "2.0.0",
+          "broken_links_count": ${{ needs.link-health-scan.outputs.broken_count }},
+          "health_assessment": {
+            "overall_grade": "C",
+            "critical_issues": ["${{ needs.link-health-scan.outputs.broken_count }} broken links requiring attention"],
+            "educational_impact_level": "medium"
+          },
+          "priority_actions": [
+            {
+              "action": "Review broken links using Guardian 2.0 categorization data",
+              "priority": "high",
+              "effort": "medium",
+              "impact": "high",
+              "educational_benefit": "Restores access to educational resources",
+              "timeline": "immediate"
+            },
+            {
+              "action": "Configure OPENAI_API_KEY secret for enhanced AI analysis",
+              "priority": "medium",
+              "effort": "low",
+              "impact": "medium",
+              "educational_benefit": "Enables intelligent failure analysis and recommendations",
+              "timeline": "short-term"
+            }
+          ],
+          "preventive_measures": [
+            {
+              "measure": "Leverage Guardian 2.0's enhanced monitoring capabilities",
+              "implementation": "Continue daily scans with improved categorization",
+              "automation_potential": "Fully automated with Guardian 2.0 framework",
+              "educational_context": "Proactive detection prevents learner disruption"
+            }
+          ],
+          "educational_impact_assessment": {
+            "learner_experience_impact": "Broken links may disrupt learning pathways and access to resources",
+            "content_accessibility": "Some educational content may be temporarily inaccessible",
+            "learning_journey_disruption": "Link failures can interrupt planned learning sequences",
+            "recommendations": ["Use Guardian 2.0 data to prioritize fixes by educational impact"]
+          },
+          "guardian_assessment": {
+            "categorization_effectiveness": "Guardian 2.0 successfully categorized all link failures",
+            "detection_improvements": "Enhanced error categorization provides better troubleshooting guidance"
+          },
+          "analysis_metadata": {
+            "analysis_type": "enhanced_fallback",
+            "guardian_version": "2.0.0",
+            "timestamp": "$(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          }
+        }
+        EOF
+          
+          echo "analysis_file=ai_analysis_result.json" >> $GITHUB_OUTPUT
+        else
+          echo "🚀 Running Guardian 2.0 AI analysis with OpenAI API..."
+          
+          # Execute AI analysis using the Guardian 2.0 analyzer
+          python3 test/hyperlink-guardian/scripts/ai-analyzer.py --input ./analysis-input --output ./ai_analysis_result.json --verbose
+          
+          # Set output for next step
+          if [[ -f "./ai_analysis_result.json" ]]; then
+            echo "analysis_file=ai_analysis_result.json" >> $GITHUB_OUTPUT
+          else
+            echo "analysis_file=ai_analysis_result.txt" >> $GITHUB_OUTPUT
+          fi
+        fi
+    
+    - name: 📋 Create GitHub Issue with Analysis
+      uses: actions/github-script@v7
+      env:
+        ANALYSIS_FILE: ${{ steps.ai-analysis.outputs.analysis_file }}
+        BROKEN_COUNT: ${{ needs.link-health-scan.outputs.broken_count }}
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Load scan summary
+          let summary = {};
+          try {
+            summary = JSON.parse(fs.readFileSync('./analysis-input/summary.json', 'utf8'));
+          } catch (error) {
+            console.log('Could not load summary.json, creating basic summary');
+            summary = {
+              scan_timestamp: new Date().toISOString(),
+              total_links: 0,
+              working_links: 0,
+              broken_links: parseInt(process.env.BROKEN_COUNT) || 0,
+              success_rate: 0,
+              broken_link_details: []
+            };
+          }
+          
+          // Load AI analysis
+          let aiAnalysis = {};
+          try {
+            const analysisPath = `./${process.env.ANALYSIS_FILE}`;
+            if (process.env.ANALYSIS_FILE.endsWith('.json')) {
+              aiAnalysis = JSON.parse(fs.readFileSync(analysisPath, 'utf8'));
+            } else {
+              aiAnalysis = { raw_analysis: fs.readFileSync(analysisPath, 'utf8') };
+            }
+          } catch (error) {
+            console.log('Could not load AI analysis, creating basic analysis');
+            aiAnalysis = {
+              executive_summary: `Detected ${process.env.BROKEN_COUNT} broken links requiring attention.`,
+              fallback_analysis: true
+            };
+          }
+          
+          // Create issue body
+          let issueBody = `# 🔗 Guardian 2.0 Hyperlink Health Report
+          
+          **Scan Date**: ${summary.scan_timestamp || new Date().toISOString()}
+          **Repository**: ${context.repo.owner}/${context.repo.repo}
+          **Site URL**: ${summary.site_url || 'https://bamr87.github.io/it-journey'}
+          **Guardian Version**: 2.0.0
+          
+          ## 📊 Summary Statistics
+          
+          - **Total Links Tested**: ${summary.total_links || 'Unknown'}
+          - **Working Links**: ${summary.working_links || 'Unknown'}
+          - **Broken Links**: ${summary.broken_links || process.env.BROKEN_COUNT}
+          - **Success Rate**: ${summary.success_rate || 'Unknown'}%
+          
+          `;
+          
+          if ((summary.broken_links || parseInt(process.env.BROKEN_COUNT)) > 0) {
+            issueBody += `## ❌ Broken Links Detected
+          
+          `;
+            
+            if (aiAnalysis.executive_summary) {
+              issueBody += `### 🧠 AI Analysis Summary
+          
+          ${aiAnalysis.executive_summary}
+          
+          `;
+            }
+            
+            if (aiAnalysis.priority_actions && aiAnalysis.priority_actions.length > 0) {
+              issueBody += `### 🎯 Priority Actions
+          
+          `;
+              aiAnalysis.priority_actions.forEach((action, index) => {
+                const priorityEmoji = {"high": "🔴", "medium": "🟡", "low": "🟢"}[action.priority] || "🟡";
+                issueBody += `${index + 1}. **${action.action}**
+             - Priority: ${priorityEmoji} ${action.priority || 'Medium'}
+             - Effort: ${action.effort || 'Unknown'}
+             - Impact: ${action.impact || 'Unknown'}
+             - Timeline: ${action.timeline || 'Unknown'}
+          
+          `;
+              });
+            }
+            
+            if (aiAnalysis.preventive_measures && aiAnalysis.preventive_measures.length > 0) {
+              issueBody += `### 🛡️ Preventive Measures
+          
+          `;
+              aiAnalysis.preventive_measures.forEach((measure, index) => {
+                issueBody += `${index + 1}. **${measure.measure || 'Preventive measure'}**
+             - Implementation: ${measure.implementation || 'Details needed'}
+             - Automation Potential: ${measure.automation_potential || 'Assessment needed'}
+          
+          `;
+              });
+            }
+            
+            if (aiAnalysis.educational_impact) {
+              issueBody += `### 📚 Educational Impact
+          
+          ${aiAnalysis.educational_impact}
+          
+          `;
+            }
+            
+            if (summary.broken_link_details && summary.broken_link_details.length > 0) {
+              issueBody += `### 📋 Broken Link Details
+          
+          | URL | Status Code | Error Message |
+          |-----|-------------|---------------|
+          `;
+              
+              summary.broken_link_details.slice(0, 20).forEach(link => {
+                const url = (link.url || 'Unknown').substring(0, 80) + (link.url && link.url.length > 80 ? '...' : '');
+                const status = link.status_code || 'Unknown';
+                const error = (link.error_message || 'N/A').substring(0, 50) + (link.error_message && link.error_message.length > 50 ? '...' : '');
+                issueBody += `| ${url} | ${status} | ${error} |\n`;
+              });
+              
+              if (summary.broken_link_details.length > 20) {
+                issueBody += `\n*Showing first 20 of ${summary.broken_link_details.length} broken links*\n`;
+              }
+            }
+          } else {
+            issueBody += `## ✅ All Links Healthy
+          
+          Excellent! All links are working correctly. Your IT-Journey site maintains perfect link integrity.
+          `;
+          }
+          
+          issueBody += `
+          
+          ---
+          
+          **Workflow Run**: [#${context.runNumber}](${context.payload.repository.html_url}/actions/runs/${context.runId})
+          **Commit**: ${context.sha.substring(0, 7)}
+          
+          This issue was automatically created by the Guardian 2.0 workflow. 🤖
+          
+          ### 🔧 Next Steps
+          
+          1. Review the broken links using Guardian 2.0's enhanced categorization
+          2. Update or remove broken links in the relevant markdown files
+          3. Consider adding redirects for moved content
+          4. Analyze failure patterns using Guardian 2.0's detailed error categories
+          5. Implement preventive measures based on AI recommendations
+          
+          ### 💡 Need Help?
+          
+          - Check the [Guardian 2.0 documentation](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/test/README.md)
+          - Review the [quest documentation](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
+          - Review the workflow logs for detailed Guardian 2.0 execution info
+          - Configure \`OPENAI_API_KEY\` secret for enhanced AI analysis
+          - Use Guardian 2.0's validation tools: \`./test/hyperlink-guardian/scripts/validate.sh\`
+          `;
+          
+          // Create the issue
+          const issue = await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `🔗 Guardian 2.0 Health Report - ${(summary.broken_links || process.env.BROKEN_COUNT) > 0 ? (summary.broken_links || process.env.BROKEN_COUNT) + ' broken links detected' : 'All links healthy'} (${new Date().toLocaleDateString()})`,
+            body: issueBody,
+            labels: (summary.broken_links || parseInt(process.env.BROKEN_COUNT)) > 0 ? ['bug', 'links', 'automated-report', 'guardian-2.0'] : ['maintenance', 'links', 'automated-report', 'guardian-2.0']
+          });
+          
+          console.log(`✅ Created issue: ${issue.data.html_url}`);
+
+  cleanup:
+    name: 🧹 Cleanup Old Guardian Reports
+    needs: [link-health-scan, ai-analysis]
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: read
+      issues: write
+    
+    steps:
+    - name: 🗑️ Close Old Guardian 2.0 Reports
+      uses: actions/github-script@v7
+      with:
+        script: |
+          try {
+            // Find old automated Guardian 2.0 reports
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'automated-report,guardian-2.0',
+              state: 'open'
+            });
+            
+            // Close issues older than 7 days
+            const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+            
+            for (const issue of issues) {
+              const issueDate = new Date(issue.created_at);
+              if (issueDate < oneWeekAgo) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed'
+                });
+                
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: '🤖 Automatically closed by Guardian 2.0 - report is more than 7 days old.\n\nNew Guardian 2.0 health reports are generated daily. Check the latest issues for current status.'
+                });
+                
+                console.log(`Closed old issue: #${issue.number}`);
+              }
+            }
+            
+            console.log('✅ Cleanup completed successfully');
+          } catch (error) {
+            console.log('⚠️ Cleanup failed but workflow will continue:', error.message);
+          } 
