@@ -1,23 +1,41 @@
 ---
-title: Chat GPT vs The Impossible Triangle
-sub-title: Machine vs Human
-description: Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossible 3D spaces.
+title: "Chat GPT vs The Impossible Triangle: AI Limitations in 3D Space"
+sub-title: "Machine vs Human: Understanding AI Spatial Reasoning Limitations"
+description: "Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossible 3D spaces."
 author: Amr Abdel-Motaleb
-excerpt: null
-snippet: /svg/penrose-amr-icon-1000.svg
+excerpt: "Explore the fascinating intersection of AI capabilities and limitations through the lens of impossible geometry and the famous Penrose Triangle"
+snippet: "When AI meets impossible geometry - understanding the boundaries of machine perception"
 categories:
-  - posts
+  - Posts
+  - AI-Analysis
+  - Design
 tags:
-  - article
-meta: null
-draft: true
-date: 2024-05-28T04:22:21.140Z
+  - chatgpt
+  - ai-limitations
+  - penrose-triangle
+  - svg
+  - 3d-geometry
+  - optical-illusions
+  - design-analysis
+meta:
+  topic: ai-limitations
+  complexity: intermediate
+draft: false
+date: 2023-03-26T00:00:00.000Z
 lastmod: 2024-05-28T04:22:22.855Z
+layout: journals
 keywords:
-  - Chat GPT
-  - Penrose Triangle
-  - SVG
-  - BASH
+  primary:
+    - Chat GPT
+    - Penrose Triangle
+    - AI limitations
+  secondary:
+    - SVG
+    - 3D geometry
+    - spatial reasoning
+    - impossible objects
+permalink: /posts/chatgpt-vs-impossible-triangle/
+---
 preview: /svg/penrose-gpt-vs-human.png
 ---
 ## What is a Generative Pre-trained Transformer?

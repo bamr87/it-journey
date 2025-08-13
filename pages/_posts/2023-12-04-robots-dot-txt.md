@@ -1,17 +1,37 @@
 ---
+title: "Robots.txt: Web Crawler Control for Jekyll Sites"
 author: bamr87
 categories:
-- posts
+    - Posts
+    - Web-Development
+    - SEO
 date: '2023-12-04T00:00:00.000Z'
-description: null
-draft: 2023-12-04 21:15:31.625000+00:00
-excerpt: null
-lastmod: 2024-05-16 02:49:07.594000+00:00
-snippet: 2023-12-04 21:15:31.625000+00:00
-sub-title: null
-tags: []
-title: robots dot txt
+description: "Learn how to properly configure robots.txt files for Jekyll websites to control search engine crawlers and optimize SEO"
+draft: false
+excerpt: "Master robots.txt configuration for Jekyll sites to guide search engine crawlers and improve your site's SEO performance"
+lastmod: 2024-05-16T02:49:07.594Z
+snippet: "robots.txt - your site's first line of communication with search engines"
+sub-title: "SEO and Web Crawler Management"
+tags:
+    - robots-txt
+    - seo
+    - jekyll
+    - web-crawlers
+    - search-engines
+    - web-development
+title: "robots dot txt"
 type: Article
+layout: journals
+keywords:
+    primary:
+        - robots.txt
+        - jekyll seo
+        - web crawlers
+    secondary:
+        - search engine optimization
+        - site indexing
+        - crawler directives
+permalink: /posts/robots-txt-jekyll/
 ---
 
 

@@ -1,17 +1,40 @@
 ---
+title: "Penrose Triangle: Symbol of Impossibility in Design and Mathematics"
 author: bamr87
 categories:
-- posts
+    - Posts
+    - Design
+    - Mathematics
 date: '2023-03-17T00:00:00.000Z'
-description: null
-draft: 2023-03-11 16:12:28.481000+00:00
-excerpt: null
-lastmod: 2024-05-20 14:59:10.308000+00:00
-snippet: 2023-03-11 16:12:28.481000+00:00
-sub-title: null
-tags: null
-title: penrose triangle
+description: "Explore the fascinating world of impossible geometry through the iconic Penrose Triangle, a symbol that challenges perception and mathematical logic"
+draft: false
+excerpt: "Dive into the mathematical and artistic significance of the Penrose Triangle, an impossible object that has captivated designers and mathematicians alike"
+lastmod: 2024-05-20T14:59:10.308Z
+snippet: "An impossible triangle that exists in our minds but not in our world"
+sub-title: "Impossible Geometry and Optical Illusions"
+tags:
+    - penrose-triangle
+    - optical-illusions
+    - impossible-objects
+    - geometry
+    - design
+    - mathematics
+    - inkscape
+    - svg
+title: "penrose triangle"
 type: Article
+layout: journals
+keywords:
+    primary:
+        - penrose triangle
+        - impossible objects
+        - optical illusions
+    secondary:
+        - geometry
+        - design
+        - mathematics
+        - impossible geometry
+permalink: /posts/penrose-triangle-impossible-geometry/
 ---
 
 Symbol of impossibility [Wiki](https://en.wikipedia.org/wiki/Penrose_triangle)
