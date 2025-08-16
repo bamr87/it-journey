@@ -21,7 +21,7 @@ on:
         type: string
 
 env:
-  SITE_URL: ${{ github.pages.url || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+  SITE_URL: ${{ github.pages.url }}
   OUTPUT_DIR: './link-check-results'
   MAX_PARALLEL: ${{ github.event.inputs.max_parallel || '10' }}
 

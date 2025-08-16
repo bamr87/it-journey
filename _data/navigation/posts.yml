@@ -1,6 +1,12 @@
+- title: Home
+  icon: home
+  url: /posts/
+  sublinks: []
 - icon: world
   url: /posts/world/
-  sublinks: []
+  sublinks:
+    - title: test
+      url: etsetst
   title: World
 - title: Technology
   icon: tech
@@ -8,4 +14,6 @@
 - title: Business
   icon: Cash
   url: /posts/business/
-
+- title: Forbidden Fruit
+  icon: Apple
+  url: do-not-click

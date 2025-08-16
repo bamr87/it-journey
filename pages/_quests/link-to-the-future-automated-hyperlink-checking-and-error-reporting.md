@@ -1,62 +1,62 @@
 ---
 title: "Link to the Future: Automated Hyperlink Guardian Quest"
-description: "Master the computational arts of automated link testing and AI-powered analysis to protect your digital realm from broken hyperlink corruption"
+description: Master the computational arts of automated link testing and AI-powered analysis to protect your digital realm from broken hyperlink corruption
 date: 2025-01-27T04:06:49.176Z
-preview: "/images/quest-preview-link-guardian.png"
+preview: /images/quest-preview-link-guardian.png
 tags:
-    - lvl-1010
-    - github-actions
-    - automated-testing
-    - ai-analysis
-    - devops-automation
-    - link-validation
+  - lvl-1010
+  - github-actions
+  - automated-testing
+  - ai-analysis
+  - devops-automation
+  - link-validation
 categories:
-    - Quests
-    - DevOps-Automation
-    - Quality-Assurance
+  - Quests
+  - DevOps-Automation
+  - Quality-Assurance
 sub-title: "Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration"
-excerpt: "Build an intelligent hyperlink guardian that automatically tests, analyzes, and reports on the health of your digital realm's connections"
-snippet: "Even the most magnificent digital fortress is only as strong as its weakest link"
-author: "Quest Master DevOps"
+excerpt: Build an intelligent hyperlink guardian that automatically tests, analyzes, and reports on the health of your digital realm's connections
+snippet: Even the most magnificent digital fortress is only as strong as its weakest link
+author: Quest Master DevOps
 layout: journals
 keywords:
-    primary:
-        - github-actions
-        - automated-testing
-        - ai-integration
-        - link-validation
-    secondary:
-        - jekyll-sites
-        - ci-cd-pipeline
-        - issue-automation
-        - site-monitoring
-        - quality-assurance
-lastmod: 2025-01-27T04:06:49.176Z
+  primary:
+    - github-actions
+    - automated-testing
+    - ai-integration
+    - link-validation
+  secondary:
+    - jekyll-sites
+    - ci-cd-pipeline
+    - issue-automation
+    - site-monitoring
+    - quality-assurance
+lastmod: 2025-08-16T04:06:22.859Z
 permalink: /quests/level-1010-automated-hyperlink-guardian/
 attachments: ""
 comments: true
-difficulty: "🟡 Medium"
-estimated_time: "120-180 minutes"
+difficulty: 🟡 Medium
+estimated_time: 120-180 minutes
 prerequisites:
-    - "Level 0100 (4): Git and GitHub fundamentals"
-    - "Level 0101 (5): Basic GitHub Actions workflow experience"
-    - "Level 1001 (9): Understanding of Jekyll site structure"
-    - "Familiarity with YAML configuration files"
+  - "Level 0100 (4): Git and GitHub fundamentals"
+  - "Level 0101 (5): Basic GitHub Actions workflow experience"
+  - "Level 1001 (9): Understanding of Jekyll site structure"
+  - Familiarity with YAML configuration files
 rewards:
-    - "🏆 Hyperlink Guardian Badge - Master of Automated Link Protection"
-    - "⚡ CI/CD Automation Mastery - Advanced pipeline orchestration skills"
-    - "🛠️ AI Integration Proficiency - Intelligent analysis and reporting capabilities"
-    - "🎯 Site Quality Assurance Excellence - Proactive issue detection and resolution"
-quest_series: "DevOps Automation Mastery Path"
+  - 🏆 Hyperlink Guardian Badge - Master of Automated Link Protection
+  - ⚡ CI/CD Automation Mastery - Advanced pipeline orchestration skills
+  - 🛠️ AI Integration Proficiency - Intelligent analysis and reporting capabilities
+  - 🎯 Site Quality Assurance Excellence - Proactive issue detection and resolution
+quest_series: DevOps Automation Mastery Path
 related_quests:
-    - "Level 1001 (9): Jekyll Site Deployment Automation"
-    - "Level 1011 (11): Advanced GitHub Actions Patterns"
-    - "Level 1100 (12): AI-Powered Code Review Systems"
+  - "Level 1001 (9): Jekyll Site Deployment Automation"
+  - "Level 1011 (11): Advanced GitHub Actions Patterns"
+  - "Level 1100 (12): AI-Powered Code Review Systems"
 validation_criteria:
-    - "Functional GitHub Actions workflow that runs daily link checks"
-    - "Working link testing script with comprehensive coverage"
-    - "AI analysis component that provides meaningful insights"
-    - "Automated issue creation with detailed reports and recommendations"
+  - Functional GitHub Actions workflow that runs daily link checks
+  - Working link testing script with comprehensive coverage
+  - AI analysis component that provides meaningful insights
+  - Automated issue creation with detailed reports and recommendations
 ---
 
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
@@ -422,7 +422,7 @@ on:
         type: boolean
 
 env:
-  SITE_URL: ${{ github.pages.url || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+  SITE_URL: ${{ github.pages.url }}
   OUTPUT_DIR: './link-check-results'
 
 jobs:

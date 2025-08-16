@@ -1,3 +1,6 @@
+- title: Home
+  icon: home
+  url: /home/
 - title: Setup
   sublinks:
     - title: Configuration
@@ -39,3 +42,4 @@
   sublinks:
     - title: History
       url: /docs/history
+

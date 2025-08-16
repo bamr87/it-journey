@@ -1,3 +1,6 @@
+- title: Home
+  icon: home
+  url: /home/
 - title: About
   sublinks:
     - title: Home

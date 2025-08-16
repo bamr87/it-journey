@@ -8,10 +8,10 @@
 - title: Journey
   url: /posts
   sublinks:
-    - title: Quests
-      url: /quests
     - title: Pages
       url: /pages
+    - title: Quests
+      url: /quests
 - title: Library
   url: /docs/
   sublinks:
