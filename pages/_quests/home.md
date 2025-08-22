@@ -17,7 +17,7 @@ sidebar:
 toc: true
 toc_sticky: true
 date: 2021-11-29T03:41:20.614Z
-lastmod: 2025-07-22T04:13:15.531Z
+lastmod: 2025-08-20T04:29:20.828Z
 draft: false
 ---
 
@@ -316,6 +316,7 @@ Latest Magical Discoveries
 - [ ] [Clean Commit Commitments](2025-04-18-commitments-to-clean-commits.md) - *Perfect Git Rituals*
 - [ ] [AI Automation Revolution](2025-04-18-revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
 - [ ] [Sourcery Code Methods](2025-04-18-sourcery-code-methods.md) - *Advanced Coding Arts*
+- [ ] [Siege of King EDGAR: Storming the SEC Data Castle](/quests/level-1100-sec-edgar-siege/) - *Data Liberation Trail*
 
 ## Essential Equipment & Spell Components
 
@@ -476,7 +477,8 @@ When You're Stuck on a Quest
 
 Become a Quest Creator
 
-Interested in adding your own adventures to the quest system? Follow the [contribution guidelines](README.md#contributing-to-the-quest-realm) to:
+Interested in adding your own adventures to the quest system?
+Follow the [contribution guidelines](README.md#contributing-to-the-quest-realm) to:
 
 1. Share your learning journey
 2. Create new quest content
@@ -485,8 +487,10 @@ Interested in adding your own adventures to the quest system? Follow the [contri
 
 ---
 
-*Remember, noble adventurer: This overworld map grows with your journey. Check back regularly to track your progress, plan new adventures, and celebrate your achievements. Every checkbox you mark is a step closer to IT mastery!*
+*Remember, noble adventurer: This overworld map grows with your journey.
+Check back regularly to track your progress, plan new adventures, and celebrate your achievements.
+Every checkbox you mark is a step closer to IT mastery!*
 
-**Ready to begin your next quest? Choose your path and let the adventure continue!** ⚔️✨ 
+**Ready to begin your next quest? Choose your path and let the adventure continue!** ⚔️✨
 
 
