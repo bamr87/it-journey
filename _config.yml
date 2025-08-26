@@ -27,10 +27,7 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
-# remote_theme             : "bamr87/zer0-mistakes"
-# Theme currently disabled for testing - replace with working theme
-# Using minima as temporary theme for build compatibility
-theme: minima
+remote_theme             : "bamr87/zer0-mistakes"
 # theme                    : "jekyll-theme-zer0"
 
 ## Github Information
