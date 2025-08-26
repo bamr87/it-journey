@@ -22,15 +22,15 @@ author: "Quest Master"
 layout: journals
 keywords:
   primary:
-	- sec-edgar
-	- financial-filings
-	- api-integration
+    - sec-edgar
+    - financial-filings
+    - api-integration
   secondary:
-	- xbrl
-	- data-pipelines
-	- python-requests
-	- node-fetch
-	- rate-limiting
+    - xbrl
+    - data-pipelines
+    - python-requests
+    - node-fetch
+    - rate-limiting
 lastmod: 2025-08-20T04:18:02.180Z
 permalink: /quests/level-1100-sec-edgar-siege/
 attachments: ""

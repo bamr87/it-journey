@@ -173,21 +173,21 @@ print(env.get_template('page.html').render(title='Temple of Templates', user={'n
 <!-- templates/base.html -->
 <!doctype html>
 <html>
-  <head><title>{% block title %}Base{% endblock %}</title></head>
+  <head><title>{% raw %}{% block title %}Base{% endblock %}{% endraw %}</title></head>
   <body>
-    <header>🏛️ {{ site_name | default('Temple') }}</header>
-    <main>{% block content %}{% endblock %}</main>
+    <header>🏛️ {% raw %}{{ site_name | default('Temple') }}{% endraw %}</header>
+    <main>{% raw %}{% block content %}{% endblock %}{% endraw %}</main>
   </body>
   </html>
 ```
 
 ```html
 <!-- templates/page.html -->
-{% extends 'base.html' %}
+{% raw %}{% extends 'base.html' %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
   <h1>Hello {{ user.name }}!</h1>
-{% endblock %}
+{% endblock %}{% endraw %}
 ```
 
 **Expected Output**:
@@ -239,15 +239,15 @@ export function Card({ title, children }) {
 
 ```html
 <!-- templates/partials/button.html -->
-<button class="btn {{ variant | default('primary') }}">{{ label }}</button>
+<button class="btn {% raw %}{{ variant | default('primary') }}{% endraw %}">{% raw %}{{ label }}{% endraw %}</button>
 ```
 
 ```html
 <!-- templates/page.html (extended) -->
-{% extends 'base.html' %}
+{% raw %}{% extends 'base.html' %}
 {% block content %}
   {% include 'partials/button.html' with context %}
-{% endblock %}
+{% endblock %}{% endraw %}
 ```
 
 #### 🔧 Implementation: React Composition

@@ -1,0 +1,66 @@
+# Example GitHub Actions workflow for automated content statistics
+# Save this as .github/workflows/update-statistics.yml
+
+name: Update Content Statistics
+
+on:
+  # Run when posts are updated
+  push:
+    paths:
+      - 'pages/_posts/**'
+      - '_data/statistics_config.yml'
+    branches: [main]
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run weekly to catch any missed updates
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 6 AM UTC
+
+jobs:
+  update-statistics:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Allow the workflow to commit changes
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      
+      - name: Install yq (for YAML processing)
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+      
+      - name: Update content statistics
+        env:
+          CI: true
+          AUTO_PUSH: true
+        run: |
+          bash _data/update_statistics.sh
+      
+      - name: Display statistics summary
+        if: always()
+        run: |
+          if [ -f "_data/content_statistics.yml" ]; then
+            echo "📊 Updated Statistics Summary:"
+            echo "================================"
+            echo "Total Posts: $(yq '.total_posts' _data/content_statistics.yml)"
+            echo "Published: $(yq '.published' _data/content_statistics.yml)"
+            echo "Drafts: $(yq '.drafts' _data/content_statistics.yml)"
+            echo "Categories: $(yq '.category_count' _data/content_statistics.yml)"
+            echo "================================"
+            
+            echo "🏆 Top Focus Areas:"
+            yq '.focus_areas | to_entries | sort_by(.value) | reverse | .[0:5] | .[] | "  " + .key + ": " + (.value | tostring)' _data/content_statistics.yml
+          fi

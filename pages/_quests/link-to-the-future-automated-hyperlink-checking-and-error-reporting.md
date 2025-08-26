@@ -678,16 +678,19 @@ jobs:
             {json.dumps(repo_context, indent=2)}
             
             Please provide a comprehensive analysis in JSON format with the following structure:
-            {{
+            ```json
+            {
               "executive_summary": "Brief overview of link health status",
               "broken_links_analysis": [
-                {{
+                {
                   "url": "broken_url",
                   "issue_type": "category",
                   "root_cause": "explanation",
                   "recommended_action": "specific_fix",
                   "priority": "high|medium|low"
-                }}
+                }
+              ]
+            }
               ],
               "patterns_identified": ["pattern1", "pattern2"],
               "preventive_measures": ["measure1", "measure2"],
@@ -1135,44 +1138,46 @@ class HyperlinkIntelligenceEngine:
         7. Provide specific technical implementation recommendations
 
         Please respond in valid JSON format with this structure:
-        {{
+        ```json
+        {
           "executive_summary": "Brief overview highlighting key issues and overall health",
-          "category_analysis": {{
-            "category_name": {{
+          "category_analysis": {
+            "category_name": {
               "impact": "high|medium|low",
               "root_cause": "Primary reason for failures in this category",
               "recommended_actions": ["action1", "action2"],
               "timeline": "immediate|short-term|long-term"
-            }}
-          }},
+            }
+          },
           "priority_actions": [
-            {{
+            {
               "action": "Specific action to take",
               "priority": "high|medium|low",
               "effort": "low|medium|high",
               "impact": "high|medium|low",
               "timeline": "immediate|short-term|long-term"
-            }}
+            }
           ],
           "preventive_measures": [
-            {{
+            {
               "measure": "Description of preventive action",
               "implementation": "How to implement this measure",
               "automation_potential": "Can this be automated? How?"
-            }}
+            }
           ],
           "educational_impact": "Assessment of how broken links affect learning outcomes",
           "technical_recommendations": [
-            {{
+            {
               "recommendation": "Technical improvement suggestion",
               "justification": "Why this recommendation is important",
               "implementation_complexity": "low|medium|high"
-            }}
+            }
           ],
           "monitoring_suggestions": [
             "Enhanced monitoring recommendations"
           ]
-        }}
+        }
+        ```
         """
         
         try:

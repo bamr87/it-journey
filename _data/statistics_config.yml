@@ -1,0 +1,199 @@
+# Configuration for content statistics generation
+# This file defines the mappings and categories used to analyze posts
+
+# Focus area mappings - maps keywords to focus areas
+focus_areas:
+  "AI & Machine Learning":
+    - ai
+    - ml
+    - machine-learning
+    - artificial-intelligence
+    - ai-assisted
+    - gpt
+    - chatgpt
+    - neural
+    - automation
+  
+  "Web Development":
+    - web
+    - javascript
+    - html
+    - css
+    - react
+    - angular
+    - django
+    - flask
+    - jekyll
+    - frontend
+    - backend
+    - fullstack
+    - api
+    - rest
+  
+  "DevOps & Infrastructure":
+    - devops
+    - docker
+    - kubernetes
+    - ci/cd
+    - deployment
+    - infrastructure
+    - containers
+    - orchestration
+    - pipeline
+    - automation
+  
+  "System Administration":
+    - linux
+    - windows
+    - macos
+    - server
+    - admin
+    - system
+    - dual-boot
+    - installation
+    - configuration
+  
+  "Programming & Scripting":
+    - programming
+    - scripting
+    - python
+    - bash
+    - shell
+    - coding
+    - development
+    - refactoring
+    - architecture
+  
+  "Data & Analytics":
+    - data
+    - database
+    - analytics
+    - scraping
+    - analysis
+    - edgar
+    - sec
+    - processing
+  
+  "Tools & Development Environment":
+    - tools
+    - vscode
+    - editor
+    - environment
+    - productivity
+    - extension
+    - workflow
+  
+  "Creative & Experimental":
+    - creative
+    - experimental
+    - art
+    - music
+    - fiction
+    - storytelling
+    - krita
+    - sonic
+
+# Skill level mappings
+skill_levels:
+  beginner:
+    - beginner
+    - intro
+    - introduction
+    - getting-started
+    - basics
+    - fundamentals
+    - first
+    - setup
+  
+  intermediate:
+    - intermediate
+    - advanced-beginner
+    - practical
+    - hands-on
+    - implementation
+    - building
+  
+  advanced:
+    - advanced
+    - deep-dive
+    - optimization
+    - performance
+    - architecture
+    - complex
+    - sophisticated
+  
+  expert:
+    - expert
+    - research
+    - cutting-edge
+    - innovation
+    - meta
+    - engine
+    - evolution
+
+# Content type mappings
+content_types:
+  "Tutorial":
+    - tutorial
+    - guide
+    - how-to
+    - step-by-step
+    - walkthrough
+    - setup
+  
+  "Article":
+    - article
+    - analysis
+    - insights
+    - deep-dive
+    - discussion
+    - overview
+  
+  "Journal Entry":
+    - journal
+    - learning-journey
+    - experience
+    - chronicle
+    - documentation
+  
+  "Documentation":
+    - documentation
+    - reference
+    - api
+    - specification
+    - manual
+  
+  "Creative Writing":
+    - story
+    - fiction
+    - creative
+    - experimental
+    - narrative
+    - tale
+
+# Display preferences for statistics
+display:
+  top_categories_limit: 5
+  top_tags_limit: 10
+  top_authors_limit: 5
+  
+  # Categories to highlight in focus areas
+  highlight_focus_areas:
+    - "AI & Machine Learning"
+    - "Web Development"
+    - "DevOps & Infrastructure"
+    - "System Administration"
+  
+  # Skills to track progression
+  track_skill_progression: true
+  
+  # Date grouping preferences
+  group_by_year: true
+  group_by_quarter: false
+  
+  # Chart preferences (for future implementation)
+  enable_charts: true
+  chart_types:
+    - pie
+    - bar
+    - timeline
