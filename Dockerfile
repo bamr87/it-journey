@@ -2,31 +2,29 @@
 FROM ruby:3.2.3
 
 # Set environment variables
-ENV GITHUB_GEM_VERSION 231
-ENV JSON_GEM_VERSION 1.8.6
+ENV GITHUB_GEM_VERSION=231
+ENV JSON_GEM_VERSION=1.8.6
 
 # Set the working directory in the container to /app
 WORKDIR /app
-# WORKDIR /usr/src/app
 
-# Add the current directory contents into the container at /app 
-ADD . /app
+# Copy dependency files first for better caching
+COPY Gemfile Gemfile.lock* ./
 
-# Install any needed packages specified in Gemfile
-RUN gem update --system
-RUN bundle update
+# Install dependencies
 RUN bundle install
+
+# Add the rest of the application
+COPY . .
 
 # Clean up 
 RUN bundle clean --force
 
 # Make port 4002 available to the world outside this container
 EXPOSE 4002
-# EXPOSE 4000 80
 
 # Run Jekyll when the container launches
 CMD ["bundle", "exec", "jekyll", "serve", "--config", "_config.yml,_config_dev.yml", "--host", "0.0.0.0"]
-# CMD jekyll serve -d /_site --watch --force_polling -H 0.0.0.0 -P 4000
 
 # source .env
 # docker build -t ${GIT_REPO} .

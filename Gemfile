@@ -11,8 +11,9 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages', '~> 231'
 
-# Jekyll Theme
-gem 'jekyll-theme-zer0'
+# Jekyll Theme - Using temporary minima theme for build compatibility
+# gem 'jekyll-theme-zer0'
+gem 'minima', '~> 2.5'
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
