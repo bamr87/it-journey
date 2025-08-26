@@ -1,5 +1,5 @@
 # Use an official Ruby runtime as a parent image
-FROM ruby:2.7.4
+FROM ruby:3.2.3
 
 # Set environment variables
 ENV GITHUB_GEM_VERSION 231
@@ -13,7 +13,7 @@ WORKDIR /app
 ADD . /app
 
 # Install any needed packages specified in Gemfile
-RUN gem update --system 3.3.22
+RUN gem update --system
 RUN bundle update
 RUN bundle install
 

@@ -8,8 +8,8 @@ source "https://rubygems.org"
 # Here are the dependencies from github pages https://pages.github.com/versions/
 # For more detailed instructions, look here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 
-# Github Pages Gems:
-gem 'github-pages'
+# Github Pages Gems - Use latest compatible version:
+gem 'github-pages', '~> 231'
 
 # Jekyll Theme
 gem 'jekyll-theme-zer0'
@@ -17,7 +17,7 @@ gem 'jekyll-theme-zer0'
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
   
-  # these are all part of the github-pages gem
+  # these are all part of the github-pages gem - updated versions
   gem 'jekyll-remote-theme', "~> 0.4.3"
   gem 'jekyll-feed', "~> 0.17"
   gem 'jekyll-sitemap' , "~> 1.4.0"
@@ -25,9 +25,9 @@ group :jekyll_plugins do
   gem 'jekyll-paginate', '~> 1.1'
 end
 
-# Docker support (Modify the Dockerfile to include the installation of the ffi gem and its dependencies. Additionally, ensure that all gems are installed for the correct platform.)
+# Docker support and system dependencies - updated versions
 gem "ffi", "~> 1.17.0"
-gem 'webrick', '~> 1.7'
+gem 'webrick', '~> 1.8'
 
 # TODO: build a bootstrap plugin for jekyll
 
