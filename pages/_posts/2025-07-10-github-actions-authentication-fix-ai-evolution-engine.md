@@ -28,6 +28,7 @@ lastmod: 2025-07-10T18:00:00.000Z
 permalink: /github-actions-authentication-fix-2025-07-10/
 attachments: ""
 comments: true
+section: DevOps
 ---
 
 ## The Challenge: GitHub Actions Authentication Failure

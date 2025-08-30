@@ -6,6 +6,7 @@ layout: journals
 prompt: write an article in the form of a riddle about dogs and cats ruling humans. End it with a haiku.
 title: Furry Monarchs Rule Night
 lastmod: 2024-06-24T16:43:13.205Z
+section: Creative & Experimental
 ---
 
 I am a creature beloved by many,

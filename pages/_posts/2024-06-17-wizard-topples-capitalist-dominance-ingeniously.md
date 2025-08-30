@@ -5,6 +5,7 @@ layout: journals
 title: Wizard Topples Capitalist Dominance Ingeniously
 lastmod: 2025-03-06T17:32:30.092Z
 draft: true
+section: Creative & Experimental
 preview: /images/wizard-on-journey.png
 ---
 In a stunning turn of events, the world was saved from the clutches of capitalism by a wizard who used non-arcane magic to eliminate the evils of the system while still maintaining shareholder value. The wizard, known only as Merlin Financialis, has been hailed as a hero for his groundbreaking efforts to expose the financial puppeteering that has plagued humanity for generations.

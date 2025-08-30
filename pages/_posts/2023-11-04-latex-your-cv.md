@@ -8,6 +8,7 @@ categories:
 date: '2023-11-04T00:00:00.000Z'
 description: "Complete guide to creating professional CVs and resumes using LaTeX with Visual Studio Code integration and GitHub version control"
 draft: false
+section: Tools & Environment
 excerpt: "Learn to create stunning, professional CVs using LaTeX, integrated with VS Code for the ultimate document creation workflow"
 lastmod: 2024-05-20T14:59:08.505Z
 snippet: "LaTeX + VS Code = Professional documents that stand out from the crowd"

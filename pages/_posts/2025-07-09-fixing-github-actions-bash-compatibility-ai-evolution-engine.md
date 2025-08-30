@@ -30,6 +30,7 @@ lastmod: 2025-07-10T04:45:40.362Z
 permalink: /fixing-github-actions-bash-compatibility-ai-evolution-engine/
 attachments: ""
 comments: true
+section: DevOps
 ---
 
 ## The Challenge: When Modern Scripts Meet Legacy Environments

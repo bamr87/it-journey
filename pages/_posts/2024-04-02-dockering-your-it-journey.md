@@ -14,6 +14,7 @@ categories:
     - Development
 meta: null
 snippet: null
+section: DevOps
 slug: dockering-your-it-journey
 ---
 

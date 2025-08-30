@@ -11,6 +11,7 @@ categories: []
 meta: null
 snippet: null
 slug: null
+section: Web Development
 ---
 
 Integrating a database with a serverless Django application deployed on AWS Lambda requires careful consideration due to the stateless and ephemeral nature of Lambda functions. Here's an expanded guide on setting up and managing the database in this architecture.

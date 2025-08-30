@@ -1,0 +1,37 @@
+<!-- Ultra Simple Content Statistics Template -->
+<!-- Usage: {% include content_statistics/ultra_simple.html %} -->
+
+{% assign stats = site.data.content_statistics %}
+
+<div class="simple-statistics">
+  <ul class="stats-list">
+    <li><strong>Total Posts</strong>: {{ stats.total_posts | default: "70+" }} articles and tutorials</li>
+    <li><strong>Categories</strong>: {{ stats.categories.size | default: "10" }} major technical domains</li>
+    <li><strong>Published</strong>: {{ stats.published | default: "40+" }} posts</li>
+    <li><strong>Date Range</strong>: {{ stats.date_range.earliest | default: "2021" }}-{{ stats.date_range.latest | default: "2025" }} (Active development)</li>
+    <li><strong>Learning Paths</strong>: Structured progression routes</li>
+  </ul>
+  
+  {% if stats.generated_at %}
+  <p class="stats-updated"><small><em>Last updated: {{ stats.generated_at | date: "%B %d, %Y" }}</em></small></p>
+  {% endif %}
+</div>
+
+<style>
+.simple-statistics .stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.simple-statistics .stats-list li {
+  margin: 0.5rem 0;
+  padding: 0.25rem 0;
+}
+
+.simple-statistics .stats-updated {
+  margin-top: 1rem;
+  text-align: center;
+  color: #6c757d;
+}
+</style>

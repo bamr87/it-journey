@@ -32,6 +32,7 @@ keywords:
     - future ai
     - grok humor
 permalink: /posts/from-programmed-to-grokking-off/
+section: AI & Machine Learning
 ---
 
 # From Punching Cards to Punching Out: The Grim Evolution of Programmers

@@ -25,6 +25,7 @@ lastmod: 2025-05-02T16:49:48.383Z
 permalink: null
 attachments: ""
 comments: false
+section: Business
 ---
 
 ## From Economic Theory to Scalable Infrastructure

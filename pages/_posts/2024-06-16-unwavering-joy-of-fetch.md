@@ -1,7 +1,7 @@
----
 categories: gpt
 date: '2024-06-16 20:12:52'
 layout: journals
+section: Creative & Experimental
 title: Unwavering Joy of Fetch
 ---
 Fido was a lively and energetic dog who lived in a cozy little house on the outskirts of the town. He was a handsome golden retriever with a shiny coat and a wagging tail that never seemed to stop. Fido's favorite pastime was playing fetch in the park with his owner, Sarah.

@@ -8,6 +8,7 @@ categories:
 date: '2023-03-17T00:00:00.000Z'
 description: "Explore the fascinating world of impossible geometry through the iconic Penrose Triangle, a symbol that challenges perception and mathematical logic"
 draft: false
+section: Trends & Ideas
 excerpt: "Dive into the mathematical and artistic significance of the Penrose Triangle, an impossible object that has captivated designers and mathematicians alike"
 lastmod: 2024-05-20T14:59:10.308Z
 snippet: "An impossible triangle that exists in our minds but not in our world"

@@ -15,6 +15,7 @@ lastmod: 2025-08-19T21:58:40.258Z
 permalink: null
 attachments: ""
 comments: false
+section: Programming
 ---
 
 # Refactory: How to Rebuild American Manufacturing by Refactoring ERP Legacy Code Using AI

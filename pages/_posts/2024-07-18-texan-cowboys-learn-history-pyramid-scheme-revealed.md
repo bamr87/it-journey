@@ -17,6 +17,7 @@ slug: null
 permalink: null
 attachments: ""
 type: posts
+section: Culture & Society
 ---
 
 ## Dallas Family Ousted by Drunken Cowboys Seeking Revenge for Ancient Pyramid Schemes

@@ -24,6 +24,7 @@ lastmod: 2025-08-22T05:24:47.762Z
 permalink: null
 attachments: ""
 comments: false
+section: Trends & Ideas
 ---
 
 # Consulting in the AI Era: Why Full-Stack Developers Armed with AI Are Replacing New Grads and Revolutionizing the Industry

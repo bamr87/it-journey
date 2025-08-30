@@ -21,6 +21,7 @@ sort_by: null
 type: posts
 draft: true
 slug: groking-journey
+section: Learning
 ---
 
 ## Groking About IT Journey

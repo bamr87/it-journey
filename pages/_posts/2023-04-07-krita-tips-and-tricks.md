@@ -13,6 +13,7 @@ sidebar:
   nav: searchCats
 draft: true
 lastmod: 2024-05-20T17:37:08.794Z
+section: Tools & Environment
 ---
 
 ## Krita Settings - Pen Pressure

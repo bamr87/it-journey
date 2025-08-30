@@ -28,6 +28,7 @@ lastmod: 2025-07-10T21:13:04.148Z
 permalink: /fixing-github-actions-version-integration-prepare-command/
 attachments: ""
 comments: true
+section: DevOps
 ---
 
 ## The Challenge: GitHub Actions Workflow Failure

@@ -22,6 +22,7 @@ type: posts
 FIXME: need code blocks to be raw liquid maybe vscode plugin?
 raw_liquid: true
 draft: true
+section: Web Development
 ---
 {% raw %}
 bamr87: help me update this code to display a the sub-folder and files.

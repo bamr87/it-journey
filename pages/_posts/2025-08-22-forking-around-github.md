@@ -25,6 +25,7 @@ lastmod: 2025-08-25T00:46:40.815Z
 permalink: null
 attachments: ""
 comments: false
+section: Programming
 ---
 
 # The Programmer's Ultimate Dream: Getting Forked on GitHub

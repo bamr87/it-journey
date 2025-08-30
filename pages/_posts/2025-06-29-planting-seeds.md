@@ -31,6 +31,7 @@ lastmod: 2025-07-23T03:06:11.440Z
 permalink: /planting-seeds-software-evolution/
 attachments: ""
 comments: true
+section: Trends & Ideas
 ---
 
 ## The Seed Metaphor: Nature's Blueprint for Software Evolution
