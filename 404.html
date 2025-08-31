@@ -3,14 +3,73 @@ permalink: /404.html
 layout: root
 ---
 
-<div class="container text-center mt-5">
-  <h1 class="display-1 text-danger">404</h1>
+<style>
+/* Retro SCSS-inspired styles */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  <p class="h4 mt-4"><strong>Page not found 😿</strong></p>
-  <p class="lead">The requested page could not be found.</p>
+.retro-404 {
+  font-family: 'Press Start 2P', monospace;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.portal-link {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.riddle {
+  font-style: italic;
+  color: #ff4500;
+  margin: 20px 0;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.clickable:hover {
+  color: #ff0000;
+}
+</style>
+
+<div class="container text-center mt-5">
+  <h1 class="display-1 retro-404" id="four">4</h1>
+  <h1 class="display-1 retro-404" id="zero">0</h1>
+  <h1 class="display-1 retro-404" id="four2">4</h1>
+
+  <p class="h4 mt-4"><strong>Lost in the Linkwood Forest 🧙‍♂️</strong></p>
+  <p class="lead">The path you sought has vanished into the digital mist. But brave adventurers may find a hidden portal...</p>
+
+  <div class="riddle">
+    <p>"To awaken the ancient ward, touch the binary runes in sequence: the first 4, the void 0, the final 4. Only then shall the portal reveal itself."</p>
+  </div>
+
+  <div id="portal" class="portal-link">
+    <a href="/quests/level-1110-404-hunting-quest/" class="btn btn-success btn-lg pixelated">Enter the 404 Hunting Quest</a>
+  </div>
 
   <div class="my-4">
-    <p class="h5">Try searching for what you are looking for:</p>
+    <p class="h5">Or search the archives for lost knowledge:</p>
     <form class="d-flex justify-content-center" action="/search" method="get">
       <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search">
       <button class="btn btn-danger" type="submit">Search</button>
@@ -18,7 +77,7 @@ layout: root
   </div>
 
   <div class="my-4">
-    <p class="h5">Or navigate to one of these pages:</p>
+    <p class="h5">Navigate to familiar realms:</p>
     <div class="nav justify-content-center">
       <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/about">About</a>
@@ -27,19 +86,39 @@ layout: root
     </div>
   </div>
 
-  <a class="btn btn-danger mt-4" href="/">Return to Homepage</a>
+  <a class="btn btn-danger mt-4" href="/">Return to the Village</a>
   <div class="mt-3">
     <a id="github-issue-link" class="btn btn-secondary" href="#">
-      Submit an Issue on GitHub
+      Report this Lost Path to the Guild
     </a>
   </div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Existing GitHub issue link setup
     var githubIssueLink = document.getElementById('github-issue-link');
     var currentUrl = window.location.href;
     var githubUrl = `https://github.com/{{site.repository}}/issues/new?title=404%20Error%20on%20${encodeURIComponent(currentUrl)}&body=I%20encountered%20a%20404%20error%20on%20the%20following%20page:%20${encodeURIComponent(currentUrl)}.%20Please%20investigate.`;
     githubIssueLink.href = githubUrl;
+
+    // Puzzle logic: Click sequence 4 -> 0 -> 4
+    let sequence = [];
+    const targetSequence = ['four', 'zero', 'four2'];
+    const portal = document.getElementById('portal');
+
+    document.getElementById('four').addEventListener('click', () => checkSequence('four'));
+    document.getElementById('zero').addEventListener('click', () => checkSequence('zero'));
+    document.getElementById('four2').addEventListener('click', () => checkSequence('four2'));
+
+    function checkSequence(id) {
+      sequence.push(id);
+      if (sequence.length > 3) sequence.shift(); // Keep only last 3
+      if (JSON.stringify(sequence) === JSON.stringify(targetSequence)) {
+        portal.style.display = 'block';
+        // Add a retro sound effect if possible, but keep it lightweight
+        console.log('Portal unlocked!'); // Placeholder for sound
+      }
+    }
   });
 </script>
