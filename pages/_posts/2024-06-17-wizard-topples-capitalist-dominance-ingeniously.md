@@ -1,9 +1,9 @@
 ---
-categories: gpt breaking
+categories: gpt
 date: 2024-06-17 20:03:39
 layout: journals
 title: Wizard Topples Capitalist Dominance Ingeniously
-lastmod: 2025-03-06T17:32:30.092Z
+lastmod: 2025-09-01T00:59:51.883Z
 draft: true
 section: Creative & Experimental
 preview: /images/wizard-on-journey.png
