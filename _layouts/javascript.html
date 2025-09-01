@@ -1,0 +1,470 @@
+---
+layout: default
+---
+
+<div class="javascript-demo-container">
+  <h2>🚀 Interactive JavaScript Demo</h2>
+  <p class="demo-intro">Experience Jekyll's powerful layout system combined with dynamic JavaScript functionality!</p>
+
+  <!-- Interactive Elements Section -->
+  <div class="demo-section">
+    <h3>🎯 Basic Interactions</h3>
+    <div class="demo-controls">
+      <p id="demo-text">Click the buttons below to see JavaScript in action!</p>
+      <button type="button" onclick="changeText()" class="btn btn-primary">Change Text</button>
+      <button type="button" onclick="toggleVisibility()" class="btn btn-secondary">Toggle Visibility</button>
+      <button type="button" onclick="showAlert()" class="btn btn-warning">Show Alert</button>
+    </div>
+  </div>
+
+  <!-- Dynamic Content Section -->
+  <div class="demo-section">
+    <h3>📊 Dynamic Content Generation</h3>
+    <div class="dynamic-content">
+      <button onclick="generateList()" class="btn btn-success">Generate Random List</button>
+      <button onclick="clearList()" class="btn btn-danger">Clear List</button>
+      <ul id="dynamic-list" class="generated-list"></ul>
+    </div>
+  </div>
+
+  <!-- Form Interaction Section -->
+  <div class="demo-section">
+    <h3>📝 Form Interactions</h3>
+    <div class="form-demo">
+      <input type="text" id="name-input" placeholder="Enter your name" class="form-control">
+      <button onclick="greetUser()" class="btn btn-info">Greet Me!</button>
+      <p id="greeting-output" class="greeting-text"></p>
+    </div>
+  </div>
+
+  <!-- Data Visualization Section -->
+  <div class="demo-section">
+    <h3>📈 Simple Data Visualization</h3>
+    <div class="chart-demo">
+      <button onclick="generateChart()" class="btn btn-primary">Generate Chart</button>
+      <div id="chart-container" class="chart-area"></div>
+    </div>
+  </div>
+
+  <!-- Jekyll Integration Demo -->
+  <div class="demo-section">
+    <h3>🔧 Jekyll Layout Integration</h3>
+    <div class="jekyll-info">
+      <p><strong>Page Title:</strong> <span id="page-title"></span></p>
+      <p><strong>Current Date:</strong> <span id="current-date"></span></p>
+      <p><strong>Layout Used:</strong> <span id="layout-name"></span></p>
+      <p><strong>Site URL:</strong> <span id="site-url"></span></p>
+    </div>
+  </div>
+
+  <!-- Performance Metrics -->
+  <div class="demo-section">
+    <h3>⚡ Performance Demo</h3>
+    <div class="performance-demo">
+      <button onclick="runPerformanceTest()" class="btn btn-warning">Run Performance Test</button>
+      <div id="performance-results" class="performance-output"></div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript Code -->
+<script>
+// Basic text manipulation
+function changeText() {
+  const demoText = document.getElementById('demo-text');
+  const messages = [
+    "JavaScript is working perfectly! 🎉",
+    "Jekyll layouts make this possible! 📄",
+    "Dynamic content generation in action! ⚡",
+    "Interactive web development made easy! 🚀"
+  ];
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  demoText.textContent = randomMessage;
+  demoText.style.color = getRandomColor();
+}
+
+// Toggle visibility with animation
+function toggleVisibility() {
+  const demoText = document.getElementById('demo-text');
+  if (demoText.style.display === 'none') {
+    demoText.style.display = 'block';
+    demoText.style.animation = 'fadeIn 0.5s ease-in';
+  } else {
+    demoText.style.animation = 'fadeOut 0.5s ease-out';
+    setTimeout(() => {
+      demoText.style.display = 'none';
+    }, 500);
+  }
+}
+
+// Custom alert with styling
+function showAlert() {
+  const alertBox = document.createElement('div');
+  alertBox.className = 'custom-alert';
+  alertBox.innerHTML = `
+    <div class="alert-content">
+      <h4>🎉 JavaScript Alert!</h4>
+      <p>This is a custom-styled alert created with JavaScript!</p>
+      <p>Jekyll rendered this page on: ${new Date().toLocaleString()}</p>
+      <button onclick="this.parentElement.parentElement.remove()">Close</button>
+    </div>
+  `;
+  document.body.appendChild(alertBox);
+}
+
+// Generate dynamic list
+function generateList() {
+  const list = document.getElementById('dynamic-list');
+  const items = [
+    '🚀 Rocket Science',
+    '🎨 Digital Art',
+    '📚 Learning JavaScript',
+    '🌟 Building Amazing Websites',
+    '🎯 Achieving Goals',
+    '💡 Creative Problem Solving',
+    '🔧 Fixing Bugs',
+    '📈 Growing Skills'
+  ];
+
+  list.innerHTML = '';
+  const numItems = Math.floor(Math.random() * 5) + 3;
+
+  for (let i = 0; i < numItems; i++) {
+    const randomItem = items[Math.floor(Math.random() * items.length)];
+    const li = document.createElement('li');
+    li.textContent = randomItem;
+    li.style.animation = `slideIn 0.3s ease-out ${i * 0.1}s both`;
+    list.appendChild(li);
+  }
+}
+
+// Clear dynamic list
+function clearList() {
+  const list = document.getElementById('dynamic-list');
+  list.innerHTML = '';
+}
+
+// User greeting
+function greetUser() {
+  const nameInput = document.getElementById('name-input');
+  const greetingOutput = document.getElementById('greeting-output');
+  const name = nameInput.value.trim();
+
+  if (name) {
+    const greetings = [
+      `Hello, ${name}! Welcome to our JavaScript demo! 👋`,
+      `Greetings, ${name}! Thanks for exploring Jekyll layouts! 🎉`,
+      `Hi there, ${name}! JavaScript + Jekyll = Awesome! 🚀`,
+      `Welcome, ${name}! You're experiencing dynamic web content! ⚡`
+    ];
+    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+    greetingOutput.textContent = randomGreeting;
+    greetingOutput.style.color = getRandomColor();
+  } else {
+    greetingOutput.textContent = 'Please enter your name first! 📝';
+    greetingOutput.style.color = '#e74c3c';
+  }
+}
+
+// Generate simple chart
+function generateChart() {
+  const container = document.getElementById('chart-container');
+  const data = Array.from({length: 8}, () => Math.floor(Math.random() * 100) + 10);
+
+  container.innerHTML = '<h4>Random Data Chart</h4>';
+
+  data.forEach((value, index) => {
+    const bar = document.createElement('div');
+    bar.className = 'chart-bar';
+    bar.style.height = `${value * 2}px`;
+    bar.style.backgroundColor = getRandomColor();
+    bar.title = `Value: ${value}`;
+
+    const label = document.createElement('div');
+    label.className = 'chart-label';
+    label.textContent = value;
+
+    bar.appendChild(label);
+    container.appendChild(bar);
+  });
+}
+
+// Performance test
+function runPerformanceTest() {
+  const results = document.getElementById('performance-results');
+  const startTime = performance.now();
+
+  // Simulate some work
+  let sum = 0;
+  for (let i = 0; i < 1000000; i++) {
+    sum += Math.random();
+  }
+
+  const endTime = performance.now();
+  const executionTime = (endTime - startTime).toFixed(2);
+
+  results.innerHTML = `
+    <div class="performance-result">
+      <h4>Performance Test Results</h4>
+      <p>Calculation completed in: <strong>${executionTime}ms</strong></p>
+      <p>Operations performed: <strong>1,000,000</strong></p>
+      <p>Result: <strong>${sum.toFixed(2)}</strong></p>
+      <p>Browser: <strong>${navigator.userAgent.split(' ').pop()}</strong></p>
+    </div>
+  `;
+}
+
+// Utility functions
+function getRandomColor() {
+  const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22', '#34495e'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// Initialize Jekyll information
+document.addEventListener('DOMContentLoaded', function() {
+  // Jekyll frontmatter variables would be available here
+  document.getElementById('page-title').textContent = document.title || 'JavaScript Demo';
+  document.getElementById('current-date').textContent = new Date().toLocaleString();
+  document.getElementById('layout-name').textContent = 'javascript.html';
+  document.getElementById('site-url').textContent = window.location.origin;
+});
+</script>
+
+<!-- Custom CSS for styling -->
+<style>
+.javascript-demo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.demo-intro {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.demo-section {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #007bff;
+}
+
+.demo-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.demo-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary { background: #007bff; color: white; }
+.btn-secondary { background: #6c757d; color: white; }
+.btn-success { background: #28a745; color: white; }
+.btn-danger { background: #dc3545; color: white; }
+.btn-warning { background: #ffc107; color: black; }
+.btn-info { background: #17a2b8; color: white; }
+
+#demo-text {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.generated-list {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.generated-list li {
+  margin: 5px 0;
+  padding: 5px 10px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.form-demo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-control {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  flex: 1;
+  min-width: 200px;
+}
+
+.greeting-text {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.chart-area {
+  margin-top: 20px;
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  height: 200px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chart-bar {
+  flex: 1;
+  background: #007bff;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  min-height: 20px;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.chart-label {
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.jekyll-info {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.jekyll-info p {
+  margin: 8px 0;
+  font-family: monospace;
+}
+
+.performance-result {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 15px;
+}
+
+.performance-result strong {
+  color: #007bff;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.alert-content h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.alert-content button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-demo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
