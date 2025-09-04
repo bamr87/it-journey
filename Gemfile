@@ -11,8 +11,8 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages', '~> 231'
 
-# Jekyll Theme
-gem 'jekyll-theme-zer0'
+# Jekyll Theme - Using remote theme instead
+# gem 'jekyll-theme-zer0'
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
