@@ -376,7 +376,7 @@ Objective: Use guardian logs to create a minimal viable resource (MVR) or redire
 
 ## 📚 Quest Resource Codex
 
-- Companion Article: <https://it-journey.dev/posts/404-hunting-quest/>
+- Companion Article: </posts/404-hunting-quest/>
 - Jekyll Permalinks: <https://jekyllrb.com/docs/permalinks/>
 - jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
 - jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>
