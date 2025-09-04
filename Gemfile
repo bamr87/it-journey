@@ -11,18 +11,18 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages', '~> 231'
 
-# Jekyll Theme
+# Jekyll Theme - Using remote theme instead
 gem 'jekyll-theme-zer0'
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
   
   # these are all part of the github-pages gem - updated versions
-  gem 'jekyll-remote-theme', "~> 0.4.3"
-  gem 'jekyll-feed', "~> 0.17"
-  gem 'jekyll-sitemap' , "~> 1.4.0"
-  gem 'jekyll-seo-tag', "~> 2.8.0"
-  gem 'jekyll-paginate', '~> 1.1'
+  # gem 'jekyll-remote-theme', "~> 0.4.3"
+  # gem 'jekyll-feed', "~> 0.17"
+  # gem 'jekyll-sitemap' , "~> 1.4.0"
+  # gem 'jekyll-seo-tag', "~> 2.8.0"
+  # gem 'jekyll-paginate', '~> 1.1'
 end
 
 # Docker support and system dependencies - updated versions
