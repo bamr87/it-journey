@@ -107,9 +107,18 @@ layout: root
     const targetSequence = ['four', 'zero', 'four2'];
     const portal = document.getElementById('portal');
 
-    document.getElementById('four').addEventListener('click', () => checkSequence('four'));
-    document.getElementById('zero').addEventListener('click', () => checkSequence('zero'));
-    document.getElementById('four2').addEventListener('click', () => checkSequence('four2'));
+    const fourEl = document.getElementById('four');
+    if (fourEl) {
+      fourEl.addEventListener('click', () => checkSequence('four'));
+    }
+    const zeroEl = document.getElementById('zero');
+    if (zeroEl) {
+      zeroEl.addEventListener('click', () => checkSequence('zero'));
+    }
+    const four2El = document.getElementById('four2');
+    if (four2El) {
+      four2El.addEventListener('click', () => checkSequence('four2'));
+    }
 
     function checkSequence(id) {
       sequence.push(id);
