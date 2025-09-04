@@ -17,6 +17,7 @@ slug: null
 permalink: null
 attachments: ""
 type: posts
+section: Creative & Experimental
 ---
 
 In a quiet little village in the heart of Egypt, where the Nile whispered secrets to anyone who would listen and pyramids stood as dusty sentinels of long-forgotten kings, there lived a boy named Tarek. Tarek was like any other twelve-year-old kid—mischievous, bright-eyed, and relentlessly optimistic. But beneath his mop of unruly hair and cheeky grin, Tarek harbored the heart of a revolutionary.

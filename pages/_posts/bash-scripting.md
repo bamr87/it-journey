@@ -11,6 +11,7 @@ tags:
 meta: null
 draft: true
 lastmod: 2023-03-17T04:54:35.711Z
+section: Programming
 ---
 
 ## What is Bash Scripting?

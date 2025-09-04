@@ -3,6 +3,7 @@ categories: gpt
 date: 2024-06-16 20:20:59
 layout: journals
 title: "Enchanted Baking: Unicorn Delights"
+section: Creative & Experimental
 lastmod: 2024-06-18T17:08:00.151Z
 ---
 

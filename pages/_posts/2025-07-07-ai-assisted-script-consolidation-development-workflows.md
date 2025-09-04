@@ -32,6 +32,7 @@ lastmod: 2025-07-08T03:13:33.558Z
 permalink: /ai-assisted-script-consolidation-development-workflows/
 attachments: ""
 comments: true
+section: DevOps
 ---
 
 ## The Challenge: Script Directory Chaos

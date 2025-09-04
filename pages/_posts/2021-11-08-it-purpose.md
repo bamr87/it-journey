@@ -1,11 +1,13 @@
 ---
 title: "IT Purpose: Manifesto for Digital Knowledge Sharing"
 author: IT-Journey Team
-description: "The foundational philosophy behind IT-Journey: democratizing technical knowledge and creating comprehensive learning resources for all skill levels"
+description: Explore the IT Manifesto for digital knowledge sharing, offering a roadmap to navigate the tech landscape and empower your learning journey.
 categories:
-  - Posts
-  - Reflections
-  - Philosophy
+  - Community
+  - Documentation
+  - Innovation
+  - IT Consulting
+  - Learning
 tags:
   - it-manifesto
   - knowledge-sharing
@@ -14,23 +16,24 @@ tags:
   - community-building
   - digital-literacy
 date: 2021-11-08T19:50:20.168Z
-lastmod: 2024-05-20T17:41:07.639Z
+lastmod: 2025-08-27T01:40:11.248Z
 draft: false
 layout: journals
 excerpt: "The mission statement and philosophical foundation of IT-Journey: building a comprehensive repository of IT knowledge that serves learners at every level"
-sub-title: "Building a Universal IT Knowledge Repository"
-snippet: "In a fragmented digital world, we create order through shared knowledge"
+sub-title: Building a Universal IT Knowledge Repository
+snippet: In a fragmented digital world, we create order through shared knowledge
 keywords:
-    primary:
-        - it manifesto
-        - knowledge sharing
-        - technical education
-    secondary:
-        - open source education
-        - community learning
-        - digital literacy
-        - comprehensive documentation
+  primary:
+    - it manifesto
+    - knowledge sharing
+    - technical education
+  secondary:
+    - open source education
+    - community learning
+    - digital literacy
+    - comprehensive documentation
 permalink: /posts/it-purpose-manifesto/
+section: Learning
 ---
 # IT-Manifesto
 

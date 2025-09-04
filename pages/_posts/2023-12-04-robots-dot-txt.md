@@ -8,6 +8,7 @@ categories:
 date: '2023-12-04T00:00:00.000Z'
 description: "Learn how to properly configure robots.txt files for Jekyll websites to control search engine crawlers and optimize SEO"
 draft: false
+section: Data & Analytics
 excerpt: "Master robots.txt configuration for Jekyll sites to guide search engine crawlers and improve your site's SEO performance"
 lastmod: 2024-05-16T02:49:07.594Z
 snippet: "robots.txt - your site's first line of communication with search engines"

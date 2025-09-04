@@ -7,6 +7,7 @@ date: '2024-05-22T00:00:00.000Z'
 draft: false
 lastmod: 2024-05-22 15:28:30.002000+00:00
 title: 'Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale'
+section: Culture & Society
 ---
 
 Title: 

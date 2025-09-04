@@ -32,6 +32,7 @@ lastmod: 2025-07-22T03:39:45.211Z
 permalink: /ai-powered-modular-shell-script-refactoring/
 attachments: ""
 comments: true
+section: Programming
 ---
 
 ## The Challenge: Refactoring Legacy Shell Scripts with AI Assistance

@@ -12,6 +12,7 @@ categories: []
 meta: null
 snippet: null
 slug: auto-hide-navbar
+section: Web Development
 ---
 
 # Auto Hide Navbar

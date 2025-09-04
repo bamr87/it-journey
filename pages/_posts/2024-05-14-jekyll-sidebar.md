@@ -16,6 +16,8 @@ slug: jekyll-sidebar
 type: posts
 published: false
 draft: true
+section: Web Development
+
 ---
 
 {% raw %}

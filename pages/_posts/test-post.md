@@ -14,7 +14,7 @@ toc_sticky: true
 date: 2024-08-24T19:30:00.000Z
 draft: false
 layout: journals
-section: technology
+section: Technology
 slug: test-post-organization
 lastmod: 2025-08-25T01:32:39.531Z
 ---

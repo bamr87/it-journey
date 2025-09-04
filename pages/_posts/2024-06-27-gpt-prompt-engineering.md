@@ -17,6 +17,7 @@ slug: gpt-prompt-engineering
 permalink: null
 attachments: ""
 type: posts
+section: AI & Machine Learning
 ---
 
 ### System Instructions for GPT-4o

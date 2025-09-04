@@ -17,3 +17,49 @@
 - title: Forbidden Fruit
   icon: Apple
   url: do-not-click
+
+# Added sections discovered in posts front matter
+- title: AI & Machine Learning
+  icon: ai
+  url: /posts/ai/
+  sublinks: []
+- title: Web Development
+  icon: web
+  url: /posts/web/
+  sublinks: []
+- title: DevOps
+  icon: devops
+  url: /posts/devops/
+  sublinks: []
+- title: Programming
+  icon: code
+  url: /posts/programming/
+  sublinks: []
+- title: System Administration
+  icon: server
+  url: /posts/sysadmin/
+  sublinks: []
+- title: Data & Analytics
+  icon: data
+  url: /posts/data/
+  sublinks: []
+- title: Tools & Environment
+  icon: tools
+  url: /posts/tools/
+  sublinks: []
+- title: Creative & Experimental
+  icon: art
+  url: /posts/creative/
+  sublinks: []
+- title: Culture & Society
+  icon: globe
+  url: /posts/culture/
+  sublinks: []
+- title: Trends & Ideas
+  icon: trend
+  url: /posts/trends/
+  sublinks: []
+- title: Learning
+  icon: learn
+  url: /posts/learning/
+  sublinks: []

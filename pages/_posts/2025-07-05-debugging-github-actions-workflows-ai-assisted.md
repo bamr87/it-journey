@@ -29,6 +29,7 @@ lastmod: 2025-07-06T00:43:55.178Z
 permalink: /debugging-github-actions-workflows-ai-assisted/
 attachments: ""
 comments: true
+section: DevOps
 ---
 
 ## The Challenge: Failing Daily Evolution Workflow

@@ -26,6 +26,7 @@ permalink: null
 attachments: ""
 comments: false
 aiPrompt: I want to explore a article topic about how Microsoft Excel and people who can use Excel to its greatest extent (by using formulas and functions and some of the more advanced capabilities) have the greatest potential for becoming programmers. they are applying programming concepts and methods through Excel and visualizing it and customizing it with a great degree. Essentially, the idea is that there should be motivation for financial analysts and accountants who are advanced users in Excel to expand into computer science and other IT technologies to harness their understanding and abilities they learn from Excel. This article should show those parallels of advanced programming and advanced Microsoft Excel users and how someone could make advance their skill set with programming capabilities beyond Excel.
+section: Data & Analytics
 ---
 
 ## Abstract

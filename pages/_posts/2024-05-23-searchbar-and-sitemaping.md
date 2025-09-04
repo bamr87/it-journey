@@ -17,6 +17,7 @@ slug: null
 permalink: null
 attachments: ""
 type: posts
+section: Web Development
 ---
 {% raw %}
 bamr87: add the page excerpt, page tags, absolute url, and author as new columns 

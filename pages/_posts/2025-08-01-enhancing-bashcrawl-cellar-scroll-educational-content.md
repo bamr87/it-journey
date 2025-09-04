@@ -32,6 +32,7 @@ lastmod: 2025-08-02T04:47:31.045Z
 permalink: /enhancing-bashcrawl-cellar-scroll-educational-content/
 attachments: ""
 comments: true
+section: Learning
 ---
 
 ## The Challenge: Transforming Basic Terminal Instructions into Comprehensive Learning

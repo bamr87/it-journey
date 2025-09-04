@@ -25,6 +25,7 @@ lastmod: 2025-05-01T23:48:33.613Z
 permalink: null
 attachments: ""
 comments: false
+section: Culture & Society
 ---
 
 # Manufactured Dispossession: A Case Study in Corporate Betrayal, Racial Marginalization, and Geopolitical Subterfuge

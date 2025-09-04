@@ -1,0 +1,8 @@
+<!-- Test Content Statistics Template -->
+{% assign stats = site.data.content_statistics %}
+
+<div class="test-statistics">
+  <p><strong>Total Posts</strong>: {{ stats.total_posts | default: "Loading..." }}</p>
+  <p><strong>Categories</strong>: {{ stats.categories.size | default: "Loading..." }}</p>
+  <p><strong>Generated</strong>: {{ stats.generated_at | default: "Not available" }}</p>
+</div>

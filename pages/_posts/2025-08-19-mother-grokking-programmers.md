@@ -21,6 +21,7 @@ lastmod: 2025-08-19T21:42:52.468Z
 permalink: null
 attachments: ""
 comments: false
+section: AI & Machine Learning
 ---
 
 # Mother Grokking Programmers: The Evolution of Code Monkeys

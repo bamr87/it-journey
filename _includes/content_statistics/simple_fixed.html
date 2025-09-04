@@ -1,0 +1,78 @@
+<!-- Simple Content Statistics Template - Fixed Version -->
+<!-- Usage: {% include content_statistics/simple_fixed.html %} -->
+
+{% assign stats = site.data.content_statistics %}
+
+<div class="simple-statistics">
+  {% if stats %}
+  <ul class="stats-list">
+    <li><strong>Total Posts</strong>: {{ stats.total_posts | default: "70+" }} articles and tutorials</li>
+    <li><strong>Categories</strong>: {{ stats.categories.size | default: "10" }} major technical domains</li>
+    <li><strong>Date Range</strong>: 
+      {% if stats.date_range.earliest and stats.date_range.latest %}
+        {{ stats.date_range.earliest }}-{{ stats.date_range.latest }} (Active development)
+      {% else %}
+        2021-2025 (Active development)
+      {% endif %}
+    </li>
+    <li><strong>Focus Areas</strong>: 
+      {% if stats.focus_areas and stats.focus_areas.size > 0 %}
+        {% assign top_areas = stats.focus_areas | slice: 0, 4 %}
+        {% for area in top_areas %}{{ area[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+      {% else %}
+        AI/ML, Web Development, DevOps, System Administration
+      {% endif %}
+    </li>
+    <li><strong>Skill Levels</strong>: 
+      {% if stats.skill_levels and stats.skill_levels.size > 0 %}
+        {% for skill in stats.skill_levels %}
+          {% case skill[0] %}
+            {% when "beginner" %}🟢 Beginner
+            {% when "intermediate" %}🟡 Intermediate  
+            {% when "advanced" %}🔴 Advanced
+            {% when "expert" %}⚫ Expert
+            {% else %}🔵 {{ skill[0] | capitalize }}
+          {% endcase %}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      {% else %}
+        🟢 Beginner to ⚫ Advanced
+      {% endif %}
+    </li>
+    <li><strong>Learning Paths</strong>: Structured progression routes</li>
+  </ul>
+  
+  {% if stats.generated_at %}
+  <p class="stats-updated"><small><em>Statistics last updated: {{ stats.generated_at | date: "%B %d, %Y" }}</em></small></p>
+  {% endif %}
+  
+  {% else %}
+  <!-- Fallback content when statistics are not available -->
+  <ul class="stats-list">
+    <li><strong>Total Posts</strong>: 70+ articles and tutorials</li>
+    <li><strong>Categories</strong>: 10 major technical domains</li>
+    <li><strong>Date Range</strong>: 2021-2025 (Active development)</li>
+    <li><strong>Focus Areas</strong>: AI/ML, Web Development, DevOps, System Administration</li>
+    <li><strong>Skill Levels</strong>: 🟢 Beginner to ⚫ Advanced</li>
+    <li><strong>Learning Paths</strong>: Structured progression routes</li>
+  </ul>
+  {% endif %}
+</div>
+
+<style>
+.simple-statistics .stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.simple-statistics .stats-list li {
+  margin: 0.5rem 0;
+  padding: 0.25rem 0;
+}
+
+.simple-statistics .stats-updated {
+  margin-top: 1rem;
+  text-align: center;
+  color: #6c757d;
+}
+</style>

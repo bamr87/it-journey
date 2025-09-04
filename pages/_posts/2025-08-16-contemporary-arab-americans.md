@@ -35,6 +35,7 @@ keywords:
         - stereotypes
         - cultural understanding
 lastmod: 2025-08-16T05:57:54.885Z
+section: Culture & Society
 ---
 
 # Introduction
