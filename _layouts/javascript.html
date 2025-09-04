@@ -189,29 +189,47 @@ function generateChart() {
   });
 }
 
-// Performance test
+// Utility: Safe time getter
+function getCurrentTime() {
+  if (typeof performance !== "undefined" && typeof performance.now === "function") {
+    return performance.now();
+  } else {
+    return Date.now();
+  }
+}
+
+// Performance test (non-blocking, with error handling)
 function runPerformanceTest() {
   const results = document.getElementById('performance-results');
-  const startTime = performance.now();
-
-  // Simulate some work
+  const totalIterations = 1000000;
+  const batchSize = 10000;
   let sum = 0;
-  for (let i = 0; i < 1000000; i++) {
-    sum += Math.random();
+  let i = 0;
+  const startTime = getCurrentTime();
+
+  function processBatch() {
+    const end = Math.min(i + batchSize, totalIterations);
+    for (; i < end; i++) {
+      sum += Math.random();
+    }
+    if (i < totalIterations) {
+      setTimeout(processBatch, 0);
+    } else {
+      const endTime = getCurrentTime();
+      const executionTime = (endTime - startTime).toFixed(2);
+      results.innerHTML = `
+        <div class="performance-result">
+          <h4>Performance Test Results</h4>
+          <p>Calculation completed in: <strong>${executionTime}ms</strong></p>
+          <p>Operations performed: <strong>${totalIterations.toLocaleString()}</strong></p>
+          <p>Result: <strong>${sum.toFixed(2)}</strong></p>
+          <p>Browser: <strong>${navigator.userAgent.split(' ').pop()}</strong></p>
+        </div>
+      `;
+    }
   }
 
-  const endTime = performance.now();
-  const executionTime = (endTime - startTime).toFixed(2);
-
-  results.innerHTML = `
-    <div class="performance-result">
-      <h4>Performance Test Results</h4>
-      <p>Calculation completed in: <strong>${executionTime}ms</strong></p>
-      <p>Operations performed: <strong>1,000,000</strong></p>
-      <p>Result: <strong>${sum.toFixed(2)}</strong></p>
-      <p>Browser: <strong>${navigator.userAgent.split(' ').pop()}</strong></p>
-    </div>
-  `;
+  processBatch();
 }
 
 // Utility functions
