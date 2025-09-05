@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Jekyll: Serve with Docker",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "docker-compose up",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Jekyll: Serve Local (Bundle)",
+      "type": "node-terminal",
+      "request": "launch", 
+      "command": "bundle exec jekyll serve --config _config.yml,_config_dev.yml --port 4002 --host 0.0.0.0",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Jekyll: Build Site",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bundle exec jekyll build --config _config.yml,_config_dev.yml",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Docker: Stop All Services",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "docker-compose down",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

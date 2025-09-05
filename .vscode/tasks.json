@@ -1,0 +1,264 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Jekyll: Serve with Docker",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["up"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Start Jekyll development server using Docker Compose"
+    },
+    {
+      "label": "Jekyll: Serve with Docker (Detached)",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["up", "-d"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Start Jekyll development server in background using Docker Compose"
+    },
+    {
+      "label": "Jekyll: Stop Docker",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["down"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Stop Jekyll Docker containers"
+    },
+    {
+      "label": "Jekyll: Build Only (Docker)",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "run",
+        "--rm",
+        "jekyll",
+        "jekyll",
+        "build",
+        "--config",
+        "_config.yml,_config_dev.yml"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Build Jekyll site using Docker (development configuration)"
+    },
+    {
+      "label": "Jekyll: Production Build (Docker)",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "run",
+        "--rm",
+        "jekyll",
+        "jekyll",
+        "build",
+        "--config",
+        "_config.yml"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Build Jekyll site for production using Docker"
+    },
+    {
+      "label": "Jekyll: Clean and Rebuild (Docker)",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "run",
+        "--rm",
+        "jekyll",
+        "sh",
+        "-c",
+        "jekyll clean && jekyll build --config _config.yml,_config_dev.yml"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Clean and rebuild Jekyll site using Docker"
+    },
+    {
+      "label": "Jekyll: Serve Local (No Docker)",
+      "type": "shell",
+      "command": "bundle",
+      "args": [
+        "exec",
+        "jekyll",
+        "serve",
+        "--watch",
+        "--force_polling",
+        "--config",
+        "_config.yml,_config_dev.yml",
+        "--port",
+        "4002",
+        "--host",
+        "0.0.0.0"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "JEKYLL_ENV": "development",
+          "BUNDLE_GEMFILE": "${workspaceFolder}/Gemfile"
+        }
+      },
+      "problemMatcher": [],
+      "detail": "Start Jekyll development server locally (requires Ruby/Bundle setup)"
+    },
+    {
+      "label": "Docker: View Logs",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["logs", "-f", "jekyll"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "View Jekyll container logs in real-time"
+    },
+    {
+      "label": "Bundle: Install Dependencies",
+      "type": "shell",
+      "command": "bundle",
+      "args": ["install"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Install Ruby gem dependencies"
+    },
+    {
+      "label": "Bundle: Update Dependencies",
+      "type": "shell",
+      "command": "bundle",
+      "args": ["update"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Update Ruby gem dependencies"
+    },
+    {
+      "label": "Docker: Rebuild Container",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["up", "--build", "--force-recreate"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "detail": "Rebuild and recreate Jekyll Docker container"
+    }
+  ]
+}

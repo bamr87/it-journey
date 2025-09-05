@@ -33,5 +33,54 @@
         "Picade",
         "sublinks",
         "winget"
-    ]
+    ],
+    // Jekyll Development Settings
+    "files.associations": {
+        "*.html": "liquid",
+        "*.md": "markdown",
+        "*.yml": "yaml",
+        "*.yaml": "yaml",
+        "_config*.yml": "yaml"
+    },
+    "emmet.includeLanguages": {
+        "liquid": "html"
+    },
+    "liquid.format.enable": true,
+    // Jekyll file watching
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/_site/**": true,
+        "**/.sass-cache/**": true,
+        "**/.jekyll-cache/**": true,
+        "**/vendor/**": true
+    },
+    // Docker settings
+    "docker.images.label": "latest",
+    "docker.commands.compose": "docker-compose",
+    // Terminal settings for Jekyll development
+    "terminal.integrated.env.osx": {
+        "JEKYLL_ENV": "development"
+    },
+    "terminal.integrated.env.linux": {
+        "JEKYLL_ENV": "development"
+    },
+    // Ruby/Bundle settings
+    "ruby.rubocop.onSave": true,
+    "ruby.format": "rubocop",
+    // YAML settings for Jekyll config files
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced"
+    },
+    // Liquid template settings
+    "[liquid]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    // Auto-save for Jekyll live reload
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
 }
