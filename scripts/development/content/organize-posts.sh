@@ -69,18 +69,25 @@ install_requirements() {
 
 # Function to check if requirements are installed
 check_requirements() {
+    local auto_confirm="${1:-false}"
+    
     log "Checking if PyYAML is installed..."
     
     if ! $PYTHON_CMD -c "import yaml" 2>/dev/null; then
         warn "PyYAML is not installed"
-        read -p "Install requirements now? (y/n): " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
+        if [[ "$auto_confirm" == true ]]; then
+            log "Auto-confirm enabled - installing requirements automatically"
             install_requirements
         else
-            error "PyYAML is required to run this script"
-            echo "Install it with: pip install pyyaml"
-            exit 1
+            read -p "Install requirements now? (y/n): " -n 1 -r
+            echo
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
+                install_requirements
+            else
+                error "PyYAML is required to run this script"
+                echo "Install it with: pip install pyyaml"
+                exit 1
+            fi
         fi
     else
         success "PyYAML is installed"
@@ -100,6 +107,7 @@ OPTIONS:
     -c, --config-file PATH   Path to posts.yml config file (default: $DEFAULT_CONFIG_FILE)
     -n, --dry-run           Show what would be done without moving files
     -i, --install-deps      Install Python dependencies
+    -y, --auto-confirm      Skip confirmation prompts (for automation)
     -h, --help              Show this help message
 
 EXAMPLES:
@@ -140,6 +148,7 @@ main() {
     local config_file="$DEFAULT_CONFIG_FILE"
     local dry_run=false
     local install_only=false
+    local auto_confirm=false
     
     # Parse command line arguments
     while [[ $# -gt 0 ]]; do
@@ -160,6 +169,10 @@ main() {
                 install_only=true
                 shift
                 ;;
+            -y|--auto-confirm)
+                auto_confirm=true
+                shift
+                ;;
             -h|--help)
                 usage
                 exit 0
@@ -176,7 +189,7 @@ main() {
     check_python
     
     # Check and install requirements
-    check_requirements
+    check_requirements "$auto_confirm"
     
     # If install-only mode, exit after installing dependencies
     if [[ "$install_only" == true ]]; then
@@ -217,8 +230,8 @@ main() {
     log "  Dry Run: $dry_run"
     log "  Python Script: $PYTHON_SCRIPT"
     
-    # Ask for confirmation unless it's a dry run
-    if [[ "$dry_run" != true ]]; then
+    # Ask for confirmation unless it's a dry run or auto-confirm is enabled
+    if [[ "$dry_run" != true && "$auto_confirm" != true ]]; then
         echo
         warn "This will move files in your posts directory!"
         read -p "Continue? (y/n): " -n 1 -r
@@ -227,6 +240,8 @@ main() {
             log "Operation cancelled"
             exit 0
         fi
+    elif [[ "$auto_confirm" == true && "$dry_run" != true ]]; then
+        log "Auto-confirm enabled - proceeding without user confirmation"
     fi
     
     # Run the Python script
