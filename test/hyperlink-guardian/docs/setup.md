@@ -52,7 +52,7 @@ The Guardian 2.0 system works out of the box with sensible defaults, but you can
 ```yaml
 # Site configuration
 site:
-  url: "https://your-username.github.io/your-repo"
+  url: "https://bamr87.github.io/your-repo"
   name: "Your Site Name"
 
 # Testing parameters

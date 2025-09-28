@@ -35,7 +35,7 @@ keywords:
       - content-management-system
       - open-source-contribution
       - development-environment
-lastmod: 2025-08-30T16:04:36.461Z
+lastmod: 2025-09-27T19:59:13.800Z
 permalink: /posts/vscode-front-matter-fork-development-setup/
 attachments: ""
 comments: true
@@ -604,7 +604,7 @@ git rebase main
    - Navigate to your fork on GitHub
    - Click "Compare & pull request"
    - Select base: `estruyf/vscode-front-matter` main
-   - Select compare: `your-username/vscode-front-matter` feature-branch
+   - Select compare: `bamr87/vscode-front-matter` feature-branch
 
 2. **PR Description Template**:
    ```markdown
