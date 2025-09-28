@@ -1,8 +1,7 @@
 ---
 title: "{{fm.title | default('Quest Title: Clear and Action-Oriented Description')}}"
 description: "{{fm.description | default('Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)')}}"
-date:
-    "{ date }": null
+date: 2025-01-27T10:00:00.000Z
 preview: "{{fm.preview | default('/images/quest-preview-image.png')}}"
 tags:
     - binary-level-indicator
@@ -29,7 +28,7 @@ keywords:
         - related-concepts
         - tool-categories
         - methodology-keywords
-lastmod: 2025-09-28T19:19:42.052Z
+lastmod: 2025-09-28T21:11:33.421Z
 permalink: /quests/level-{{fm.level | default("0001")}}-{{slug}}/
 attachments: ""
 comments: true
