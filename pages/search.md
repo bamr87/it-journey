@@ -18,4 +18,4 @@ permalink: /search/
 
 ## Search Index and Sitemap
 
-{% include sitemap.html %}
+{% include content/sitemap.html %}
