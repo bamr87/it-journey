@@ -32,7 +32,10 @@
     {
       "title": "quests",
       "path": "[[workspace]]/pages/_quests",
-      "filePrefix": ""
+      "filePrefix": "",
+      "contentTypes": [
+        "quest"
+      ]
     }
   ],
   "frontMatter.templates.enabled": true,
@@ -146,6 +149,297 @@
           "title": "comments",
           "name": "comments",
           "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "quest",
+      "pageBundle": false,
+      "previewPath": "/quests/{{fm.level}}-{{slug}}",
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "description": "Clear and action-oriented quest title"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string",
+          "description": "Complete description of what the quest teaches (150-300 characters for SEO)"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image",
+          "default": "/images/quest-preview-image.png"
+        },
+        {
+          "title": "Binary Level",
+          "name": "level",
+          "type": "choice",
+          "choices": [
+            "0000",
+            "0001", 
+            "0010",
+            "0011",
+            "0100",
+            "0101",
+            "0110",
+            "0111",
+            "1000",
+            "1001",
+            "1010",
+            "1011",
+            "1100",
+            "1101",
+            "1110",
+            "1111"
+          ],
+          "default": "0001",
+          "description": "Binary level indicating quest complexity and prerequisites"
+        },
+        {
+          "title": "Difficulty",
+          "name": "difficulty",
+          "type": "choice",
+          "choices": [
+            "🟢 Easy",
+            "🟡 Medium", 
+            "🔴 Hard",
+            "⚔️ Epic"
+          ],
+          "default": "🟢 Easy",
+          "description": "Quest difficulty level"
+        },
+        {
+          "title": "Estimated Time",
+          "name": "estimated_time",
+          "type": "choice",
+          "choices": [
+            "15-30 minutes",
+            "30-60 minutes",
+            "60-90 minutes",
+            "90-120 minutes",
+            "2-3 hours",
+            "3-4 hours",
+            "4+ hours (multi-session)"
+          ],
+          "default": "30-60 minutes",
+          "description": "Expected time to complete the quest"
+        },
+        {
+          "title": "Primary Technology",
+          "name": "primary_technology",
+          "type": "choice",
+          "choices": [
+            "python",
+            "javascript",
+            "docker",
+            "git",
+            "linux",
+            "bash",
+            "html-css",
+            "sql",
+            "aws",
+            "azure",
+            "kubernetes",
+            "react",
+            "nodejs",
+            "java",
+            "c-sharp",
+            "go",
+            "rust",
+            "terraform",
+            "ansible"
+          ],
+          "description": "Main technology or tool focus of the quest"
+        },
+        {
+          "title": "Quest Type",
+          "name": "quest_type",
+          "type": "choice",
+          "choices": [
+            "tool-mastery",
+            "language-learning",
+            "project-building",
+            "concept-exploration",
+            "integration-challenge",
+            "troubleshooting"
+          ],
+          "description": "Type of learning experience"
+        },
+        {
+          "title": "Skill Focus",
+          "name": "skill_focus",
+          "type": "choice",
+          "choices": [
+            "frontend",
+            "backend",
+            "fullstack", 
+            "devops",
+            "security",
+            "data-science",
+            "mobile",
+            "cloud",
+            "infrastructure",
+            "testing"
+          ],
+          "description": "Primary skill area being developed"
+        },
+        {
+          "title": "Learning Style",
+          "name": "learning_style",
+          "type": "choice",
+          "choices": [
+            "hands-on",
+            "conceptual",
+            "project-based",
+            "problem-solving",
+            "guided-tutorial",
+            "exploratory"
+          ],
+          "description": "Approach to learning in this quest"
+        },
+        {
+          "title": "Quest Series",
+          "name": "quest_series",
+          "type": "string",
+          "default": "Standalone Quest",
+          "description": "Name of quest series if part of a learning path"
+        },
+        {
+          "title": "Sub-title",
+          "name": "sub_title",
+          "type": "string",
+          "description": "Level and specific classification of the quest"
+        },
+        {
+          "title": "Excerpt",
+          "name": "excerpt",
+          "type": "string",
+          "description": "One-sentence summary of core learning objective"
+        },
+        {
+          "title": "Snippet",
+          "name": "snippet",
+          "type": "string",
+          "description": "Memorable quest tagline or motto"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "default": "Quest Master IT-Journey Team"
+        },
+        {
+          "title": "Layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "journals",
+            "default",
+            "quest"
+          ],
+          "default": "journals"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags",
+          "taxonomyLimit": 10
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Prerequisites",
+          "name": "prerequisites",
+          "type": "dataFile",
+          "dataFileId": "prerequisites",
+          "dataFileKey": "prerequisites",
+          "dataFileValue": "title",
+          "multiple": true
+        },
+        {
+          "title": "Rewards",
+          "name": "rewards",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Achievement Badge",
+              "name": "badge",
+              "type": "string"
+            },
+            {
+              "title": "Skill Enhancement",
+              "name": "skill",
+              "type": "string"
+            },
+            {
+              "title": "Tool Mastery",
+              "name": "tool",
+              "type": "string"
+            },
+            {
+              "title": "Project Capability",
+              "name": "capability",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "title": "Related Quests",
+          "name": "related_quests",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Prerequisites",
+              "name": "prerequisites",
+              "type": "string",
+              "multiple": true
+            },
+            {
+              "title": "Follow-ups",
+              "name": "followups", 
+              "type": "string",
+              "multiple": true
+            },
+            {
+              "title": "Parallel Quests",
+              "name": "parallel",
+              "type": "string",
+              "multiple": true
+            }
+          ]
+        },
+        {
+          "title": "Validation Criteria",
+          "name": "validation_criteria",
+          "type": "string",
+          "multiple": true,
+          "description": "Specific, measurable completion requirements"
+        },
+        {
+          "title": "Comments",
+          "name": "comments",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
         }
       ]
     }
@@ -360,6 +654,37 @@
     }
   ],
   "frontMatter.data.files": [
+    {
+      "id": "prerequisites",
+      "title": "Quest Prerequisites",
+      "file": "[[workspace]]/_data/prerequisites.yml",
+      "fileType": "yaml",
+      "labelField": "title",
+      "singleEntry": false,
+      "schema": {
+        "title": "Prerequisites",
+        "type": "object",
+        "properties": {
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "level": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     {
       "id": "mainNav",
       "title": "Main Navigation",

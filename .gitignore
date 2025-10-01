@@ -9,3 +9,5 @@ pages/_notes/.DS_Store
 *.DS_Store
 .env
 .venv
+logs/debug-attach-trace.log
+logs/debug-rebuild-trace.log

@@ -659,7 +659,7 @@ EOF
 cat > _config.yml << 'EOF'
 title: "My IT Journey"
 description: "Building my first professional website"
-url: "https://your-username.github.io"
+url: "https://bamr87.github.io"
 baseurl: "/your-repo-name"
 
 markdown: kramdown

@@ -1,0 +1,60 @@
+prerequisites:
+  - title: "Basic command-line interface knowledge"
+    description: "Comfortable using terminal/command prompt"
+    level: "foundation"
+  
+  - title: "Git version control basics"
+    description: "Understanding of git clone, add, commit, push"
+    level: "foundation"
+  
+  - title: "Text editor or IDE familiarity"
+    description: "Comfortable editing code in preferred editor"
+    level: "foundation"
+  
+  - title: "Basic programming concepts"
+    description: "Variables, functions, loops, conditionals"
+    level: "foundation"
+  
+  - title: "Web development basics"
+    description: "Understanding of HTML, CSS, and HTTP"
+    level: "web-foundation"
+  
+  - title: "JavaScript fundamentals"
+    description: "ES6+ syntax, async/await, DOM manipulation"
+    level: "frontend"
+  
+  - title: "Python basics"
+    description: "Syntax, data structures, modules"
+    level: "backend"
+  
+  - title: "SQL database knowledge"
+    description: "Basic queries, joins, database design"
+    level: "data"
+  
+  - title: "Docker containerization"
+    description: "Container concepts, Dockerfile, docker-compose"
+    level: "devops"
+  
+  - title: "Linux/Unix command line"
+    description: "File navigation, permissions, process management"
+    level: "systems"
+  
+  - title: "HTTP/REST API concepts"
+    description: "Request/response, status codes, JSON"
+    level: "api"
+  
+  - title: "Cloud platform basics"
+    description: "Understanding of cloud services and deployment"
+    level: "cloud"
+  
+  - title: "Security fundamentals"
+    description: "Authentication, authorization, encryption basics"
+    level: "security"
+  
+  - title: "Agile development practices"
+    description: "Scrum, user stories, iterative development"
+    level: "process"
+  
+  - title: "Testing methodologies"
+    description: "Unit tests, integration tests, TDD concepts"
+    level: "quality"

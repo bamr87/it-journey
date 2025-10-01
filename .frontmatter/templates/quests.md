@@ -1,58 +1,50 @@
 ---
-title: "{{fm.title | default('Quest Title: Clear and Action-Oriented Description')}}"
-description: "{{fm.description | default('Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)')}}"
-date: {{date}}
-preview: "{{fm.preview | default('/images/quest-preview-image.png')}}"
+title: "{{fm.title}}"
+description: "{{fm.description}}"
+date: {{fm.date}}
+preview: "{{fm.preview}}"
+level: "{{fm.level}}"
+difficulty: "{{fm.difficulty}}"
+estimated_time: "{{fm.estimated_time}}"
+primary_technology: "{{fm.primary_technology}}"
+quest_type: "{{fm.quest_type}}"
+skill_focus: "{{fm.skill_focus}}"
+learning_style: "{{fm.learning_style}}"
+quest_series: "{{fm.quest_series}}"
+sub_title: "Level {{fm.level}} ({{fm.level | decimal}}) Quest: {{fm.quest_type | title}} - {{fm.primary_technology | title}}"
+excerpt: "{{fm.excerpt}}"
+snippet: "{{fm.snippet}}"
+author: "{{fm.author}}"
+layout: {{fm.layout}}
 tags:
-    - binary-level-indicator  # lvl-0000, lvl-0001, lvl-1010, etc.
-    - primary-technology      # python, javascript, docker, etc.
-    - quest-type             # tool-mastery, language-learning, project-building
-    - skill-focus            # frontend, backend, devops, security
-    - learning-style         # hands-on, conceptual, project-based
+    - lvl-{{fm.level}}
+    - {{fm.primary_technology}}
+    - {{fm.quest_type}}
+    - {{fm.skill_focus}}
+    - {{fm.learning_style}}
     - gamified-learning
 categories:
     - Quests
-    - Technology-Category    # Development, Infrastructure, Security
-    - Skill-Category        # Foundation, Intermediate, Advanced, Expert
-sub-title: "{{fm.sub_title | default('Level [BINARY] ([DECIMAL]) Quest: Specific Quest Classification')}}"
-excerpt: "{{fm.excerpt | default('One-sentence summary of the quest core learning objective and value proposition')}}"
-snippet: "{{fm.snippet | default('Memorable quest tagline or motto that captures the adventure spirit')}}"
-author: "{{fm.author | default('Quest Master IT-Journey Team')}}"
-layout: journals
+    - {{fm.skill_focus | title}}
+    - {{fm.difficulty | replace: '🟢 ', '' | replace: '🟡 ', '' | replace: '🔴 ', '' | replace: '⚔️ ', ''}}
 keywords:
     primary:
-        - main-technology-skill
-        - core-learning-objective
+        - {{fm.primary_technology}}
+        - {{fm.quest_type}}
     secondary:
-        - supporting-technologies
-        - related-concepts
-        - tool-categories
-        - methodology-keywords
-lastmod: {{date}}
-permalink: /quests/level-{{fm.level | default("0001")}}-{{slug}}/
+        - {{fm.skill_focus}}
+        - gamified-learning
+        - it-journey
+        - quest-based-learning
+lastmod: {{fm.date}}
+permalink: /quests/level-{{fm.level}}-{{slug}}/
 attachments: ""
-comments: true
-difficulty: "{{fm.difficulty | default('🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic')}}"
-estimated_time: "{{fm.estimated_time | default('30-60 minutes')}}"
-prerequisites:
-    - "Specific prior knowledge or completed quests"
-    - "Required system setup or tools"
-    - "Recommended skill level"
-rewards:
-    - "🏆 [Specific Achievement Badge Name]"
-    - "⚡ [Quantified Skill Enhancement]"
-    - "🛠️ [Tool or Technology Mastery]"
-    - "🎯 [Project Capability Unlocked]"
-quest_series: "{{fm.quest_series | default('Standalone Quest')}}"
-related_quests:
-    - "Link to prerequisite quests"
-    - "Link to follow-up quests"
-    - "Link to parallel skill quests"
-validation_criteria:
-    - "Specific, measurable completion requirements"
-    - "Portfolio artifacts to be created"
-    - "Skills to be demonstrated"
-draft: true
+comments: {{fm.comments}}
+prerequisites: {{fm.prerequisites}}
+rewards: {{fm.rewards}}
+related_quests: {{fm.related_quests}}
+validation_criteria: {{fm.validation_criteria}}
+draft: {{fm.draft}}
 ---
 
 *Greetings, brave adventurer! Welcome to [Quest Name] - an epic journey that will [transformation/learning outcome]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
@@ -87,19 +79,27 @@ You'll know you've truly mastered this quest when you can:
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Understanding of [fundamental concept]
-- [ ] Familiarity with [basic tool/technology]
-- [ ] Completion of [specific prerequisite quest]
+{{#if fm.prerequisites}}
+{{#each fm.prerequisites}}
+- [ ] {{this}}
+{{/each}}
+{{else}}
+- [ ] Basic understanding of {{fm.skill_focus}} concepts
+- [ ] Familiarity with command-line interface
+- [ ] Completion of foundational {{fm.primary_technology}} setup
+{{/if}}
 
 ### 🛠️ System Requirements
-- [ ] [Operating System] with [specific version]
-- [ ] [Software/Tool] installed and configured
-- [ ] [Hardware/Resource] requirements met
+- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
+- [ ] {{fm.primary_technology | title}} development environment setup
+- [ ] Text editor or IDE of your choice
+- [ ] Internet connection for downloading resources
 
 ### 🧠 Skill Level Indicators
-- [ ] Can [demonstrate basic competency]
-- [ ] Comfortable with [intermediate concept]
-- [ ] Has experience with [related technology]
+This {{fm.difficulty}} quest expects:
+- [ ] {{#if (eq fm.difficulty "🟢 Easy")}}Beginner-friendly - no prior {{fm.primary_technology}} experience required{{/if}}{{#if (eq fm.difficulty "🟡 Medium")}}Basic familiarity with {{fm.primary_technology}} concepts{{/if}}{{#if (eq fm.difficulty "🔴 Hard")}}Solid foundation in {{fm.primary_technology}} and {{fm.skill_focus}}{{/if}}{{#if (eq fm.difficulty "⚔️ Epic")}}Advanced understanding of {{fm.primary_technology}} and complex problem-solving skills{{/if}}
+- [ ] Comfortable working with development tools
+- [ ] Ready for {{fm.estimated_time}} of focused learning
 
 ## 🌍 Choose Your Adventure Platform
 
@@ -146,45 +146,46 @@ You'll know you've truly mastered this quest when you can:
 // Cross-platform web technologies
 ```
 
-## 🧙‍♂️ Chapter 1: [Foundational Concept with Fantasy Title]
+## 🧙‍♂️ Chapter 1: {{fm.primary_technology | title}} Foundation - Setting Up Your Digital Workshop
 
-*[Each chapter should build upon the previous one, introducing new concepts progressively]*
+*In this foundational chapter, we'll establish your {{fm.primary_technology}} environment and explore the core concepts that will power your entire journey. Every great {{fm.skill_focus}} practitioner begins with a solid understanding of the fundamentals.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- Specific skill or knowledge point
-- Practical application
-- Connection to broader concepts
+- {{fm.primary_technology | title}} environment setup and configuration
+- Core concepts and terminology for {{fm.skill_focus}} development
+- First practical implementation using {{fm.learning_style}} approach
+- Connection to broader {{fm.skill_focus}} ecosystem
 
 ### 🏗️ Building Your Knowledge Foundation
 
-[Step-by-step instructions with:]
-- Clear explanations of WHY each step matters
-- Code examples with comprehensive comments
-- Expected outputs and visual confirmations
-- Common pitfalls and how to avoid them
-- Links to official documentation
+Follow these step-by-step instructions to build your foundation:
 
-```language
-# Code examples should be:
-# 1. Fully functional and tested
-# 2. Well-commented with explanations
-# 3. Include expected outputs
-# 4. Show error handling where appropriate
+1. **Environment Setup** - Configure your development environment for optimal {{fm.primary_technology}} work
+2. **Core Concepts** - Understand the fundamental principles that drive {{fm.primary_technology}}
+3. **First Implementation** - Create your first working example using {{fm.learning_style}} techniques
+4. **Validation** - Verify your setup and understanding through practical exercises
 
-# Example command with explanation
-command --flag value  # This flag does X because Y
+```{{fm.primary_technology}}
+# {{fm.primary_technology | title}} example code will go here
+# This example demonstrates fundamental concepts
+# Expected output: [Describe what users should see]
+
+# Step-by-step implementation
+# 1. [First step explanation]
+# 2. [Second step explanation]
+# 3. [Third step explanation]
 ```
 
-### 🔍 Knowledge Check: [Chapter Topic]
-- [ ] Can you explain what happened in step X?
-- [ ] What would happen if you changed parameter Y?
-- [ ] How does this relate to concept Z from a previous quest?
+### 🔍 Knowledge Check: {{fm.primary_technology | title}} Fundamentals
+- [ ] Can you explain the core purpose of {{fm.primary_technology}} in {{fm.skill_focus}}?
+- [ ] What would happen if you modified the basic configuration?
+- [ ] How does {{fm.primary_technology}} connect to other tools in your {{fm.skill_focus}} toolkit?
 
 ### ⚡ Quick Wins and Checkpoints
-*[Small victories that learners can celebrate along the way]*
-- [ ] **Checkpoint 1**: [Specific milestone achieved]
-- [ ] **Checkpoint 2**: [Validation of learned concept]
-- [ ] **Checkpoint 3**: [Integration or application completed]
+*Celebrate these victories as you progress through the chapter:*
+- [ ] **Setup Complete**: {{fm.primary_technology}} environment is ready for development
+- [ ] **First Success**: Successfully executed your first {{fm.primary_technology}} implementation
+- [ ] **Understanding Gained**: Can explain key concepts to another person
 
 ## 🎮 Mastery Challenges
 

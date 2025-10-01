@@ -35,10 +35,9 @@ github_user              : &github_user "bamr87"
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
-branch                   : "main"
-repo_map                 : "/about/sitemap/"
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
-portfolio                : [*github_user, '.', 'github.io']
+branch                   : &branch "main"
+repo_map                 : "/sitemap/"
+portfolio                : &portfolio [*github_user, '.', 'github.io']
 
 ## Site Information ---------------------------------------------------------------
 
@@ -423,10 +422,6 @@ sass:
   # load_paths:
   #   - /usr/local/bundle/gems/bootstrap-5.3.3/assets/stylesheets
 
-algolia:
-  application_id: 'SP02Z3YYL4'
-  search_only_api_key: '3b9200e21085fbebc263950c157b2682'
-  index_name: dev_it-journey
 
 ## Style Settings -------------------------------------------------------------
 

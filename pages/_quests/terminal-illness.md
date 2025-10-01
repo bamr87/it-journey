@@ -4,63 +4,63 @@ description: Master terminal navigation and command-line tools to unlock develop
 date: 2025-07-28T15:30:00.000Z
 preview: /images/quests/terminal-mastery-preview.png
 tags:
-    - lvl-0001
-    - terminal
-    - command-line
-    - tool-mastery
-    - foundation
-    - system-administration
-    - developer-tools
-    - hands-on
-    - gamified-learning
+   - lvl-0001
+   - terminal
+   - command-line
+   - tool-mastery
+   - foundation
+   - system-administration
+   - developer-tools
+   - hands-on
+   - gamified-learning
 categories:
-    - Quests
-    - Development
-    - Foundation
+   - Quests
+   - Development
+   - Foundation
 sub-title: "Level 0001 (1) Quest: Command-Line Interface Mastery"
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
 snippet: Where code meets the metal, heroes are forged in the fire of the command line
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
-    primary:
-        - terminal
-        - command-line
-        - shell
-        - bash
-        - zsh
-    secondary:
-        - unix
-        - linux
-        - macos
-        - developer-productivity
-        - system-navigation
-        - file-management
-lastmod: 2025-07-29T05:34:40.294Z
+   primary:
+      - terminal
+      - command-line
+      - shell
+      - bash
+      - zsh
+   secondary:
+      - unix
+      - linux
+      - macos
+      - developer-productivity
+      - system-navigation
+      - file-management
+lastmod: 2025-09-27T19:59:13.794Z
 permalink: /quests/level-0001-terminal-mastery/
 attachments: ""
 comments: true
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
 prerequisites:
-    - Basic computer literacy and file system understanding
-    - Access to a Unix-like terminal (macOS, Linux, or WSL on Windows)
-    - Willingness to embrace the power of text-based interfaces
+   - Basic computer literacy and file system understanding
+   - Access to a Unix-like terminal (macOS, Linux, or WSL on Windows)
+   - Willingness to embrace the power of text-based interfaces
 rewards:
-    - 🏆 Terminal Navigator Badge
-    - ⚡ 10x Developer Productivity Boost
-    - 🛠️ Command-Line Mastery Foundation
-    - 🎯 Advanced Developer Toolkit Access
+   - 🏆 Terminal Navigator Badge
+   - ⚡ 10x Developer Productivity Boost
+   - 🛠️ Command-Line Mastery Foundation
+   - 🎯 Advanced Developer Toolkit Access
 quest_series: "Foundation Path: Digital Literacy Mastery"
 related_quests:
-    - "Level 0000: Digital Awakening - Computer Fundamentals"
-    - "Level 0010: File System Sorcery - Directory Navigation"
-    - "Level 0011: Version Control Magic - Git Fundamentals"
+   - "Level 0000: Digital Awakening - Computer Fundamentals"
+   - "Level 0010: File System Sorcery - Directory Navigation"
+   - "Level 0011: Version Control Magic - Git Fundamentals"
 validation_criteria:
-    - Navigate complex directory structures using only terminal commands
-    - Execute file operations (create, copy, move, delete) with confidence
-    - Demonstrate text manipulation and search capabilities
-    - Show proficiency with process management and system information commands
+   - Navigate complex directory structures using only terminal commands
+   - Execute file operations (create, copy, move, delete) with confidence
+   - Demonstrate text manipulation and search capabilities
+   - Show proficiency with process management and system information commands
 draft: false
 ---
 
@@ -206,11 +206,11 @@ First, open your terminal application. This is your gateway to the command realm
 
 # Your first spell - identify yourself to the system
 whoami
-# Expected output: your-username
+# Expected output: bamr87
 
 # Discover your current location in the file system
 pwd
-# Expected output: /home/your-username (Linux) or /Users/your-username (macOS)
+# Expected output: /home/bamr87 (Linux) or /Users/bamr87 (macOS)
 ```
 
 **Step 2: Surveying Your Digital Realm**

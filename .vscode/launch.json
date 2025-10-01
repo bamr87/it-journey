@@ -1,34 +1,141 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
     {
-      "name": "Jekyll: Serve with Docker",
-      "type": "node-terminal",
+      "type": "msedge",
       "request": "launch",
-      "command": "docker-compose up",
-      "cwd": "${workspaceFolder}"
+      "name": "🚀 Edge: Debug Jekyll with Console Integration",
+      "url": "http://localhost:4000",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Docker: Compose Up (Detached)",
+      "postDebugTask": "Docker: Compose Stop",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--disable-web-security",
+        "--disable-features=VizDisplayCompositor"
+      ],
+      "sourceMaps": true,
+      "smartStep": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "trace": {
+        "stdio": true,
+        "logFile": "${workspaceFolder}/logs/debug-trace.log"
+      },
+      "pathMapping": {
+        "/": "${workspaceFolder}/_site/",
+        "/assets/": "${workspaceFolder}/assets/",
+        "/js/": "${workspaceFolder}/assets/js/",
+        "/css/": "${workspaceFolder}/assets/css/"
+      }
     },
     {
-      "name": "Jekyll: Serve Local (Bundle)",
-      "type": "node-terminal",
-      "request": "launch", 
-      "command": "bundle exec jekyll serve --config _config.yml,_config_dev.yml --port 4002 --host 0.0.0.0",
-      "cwd": "${workspaceFolder}"
+      "type": "msedge",
+      "request": "attach",
+      "name": "🔗 Edge: Attach to Running Jekyll (Console)",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "smartStep": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "urlFilter": "localhost:4000*",
+      "trace": {
+        "stdio": true,
+        "logFile": "${workspaceFolder}/logs/debug-attach-trace.log"
+      },
+      "pathMapping": {
+        "/": "${workspaceFolder}/_site/",
+        "/assets/": "${workspaceFolder}/assets/",
+        "/js/": "${workspaceFolder}/assets/js/",
+        "/css/": "${workspaceFolder}/assets/css/"
+      }
     },
     {
-      "name": "Jekyll: Build Site",
-      "type": "node-terminal",
+      "type": "msedge",
       "request": "launch",
-      "command": "bundle exec jekyll build --config _config.yml,_config_dev.yml",
-      "cwd": "${workspaceFolder}"
+      "name": "🔧 Edge: Debug + Rebuild Jekyll Site",
+      "url": "http://localhost:4000",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Docker: Rebuild (Force)",
+      "postDebugTask": "Docker: Compose Down",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--disable-web-security",
+        "--auto-open-devtools-for-tabs"
+      ],
+      "sourceMaps": true,
+      "smartStep": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "trace": {
+        "stdio": true,
+        "logFile": "${workspaceFolder}/logs/debug-rebuild-trace.log"
+      },
+      "pathMapping": {
+        "/": "${workspaceFolder}/_site/",
+        "/assets/": "${workspaceFolder}/assets/",
+        "/js/": "${workspaceFolder}/assets/js/",
+        "/css/": "${workspaceFolder}/assets/css/"
+      }
     },
     {
-      "name": "Docker: Stop All Services",
-      "type": "node-terminal",
+      "type": "msedge",
       "request": "launch",
-      "command": "docker-compose down",
-      "cwd": "${workspaceFolder}"
+      "name": "📱 Edge: Mobile Debug (Responsive Testing)",
+      "url": "http://localhost:4000",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Docker: Compose Up (Detached)",
+      "postDebugTask": "Docker: Compose Stop",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--device-scale-factor=2",
+        "--force-device-scale-factor=2",
+        "--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1"
+      ],
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "pathMapping": {
+        "/": "${workspaceFolder}/_site/",
+        "/assets/": "${workspaceFolder}/assets/",
+        "/js/": "${workspaceFolder}/assets/js/",
+        "/css/": "${workspaceFolder}/assets/css/"
+      }
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "🎯 Edge: Performance Debug Mode",
+      "url": "http://localhost:4000",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Docker: Compose Up (Detached)",
+      "postDebugTask": "Docker: Compose Stop",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--enable-logging=stderr",
+        "--log-level=0",
+        "--enable-features=NetworkService,NetworkServiceLogging"
+      ],
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "trace": {
+        "stdio": true,
+        "logFile": "${workspaceFolder}/logs/performance-debug.log"
+      },
+      "pathMapping": {
+        "/": "${workspaceFolder}/_site/",
+        "/assets/": "${workspaceFolder}/assets/",
+        "/js/": "${workspaceFolder}/assets/js/",
+        "/css/": "${workspaceFolder}/assets/css/"
+      }
     }
   ]
 }
