@@ -248,4 +248,4 @@ NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of t
 
 ## Sitemap
 
-{% include sitemap.html %}
+{% include content/sitemap.html %}

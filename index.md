@@ -167,6 +167,6 @@ Ready to transform your career and join the ranks of IT professionals? Choose yo
 
 ## Powered By Open Source Magic
 
-{% include powered-by.html %}
+{% include components/powered-by.html %}
 
 **Built with 💜 by the IT-Journey community** - Join us in democratizing technology education through open source collaboration and AI-enhanced learning experiences.
