@@ -9,46 +9,165 @@ categories:
   - Init-World
   - Beginner
 tags:
-  - n00b
+  - lvl-0000
   - github
   - git
   - beginner
   - init-world
-  - lvl-000
-meta:
-  quest_type: foundation
-  skill_level: absolute_beginner
+  - community-entry
 draft: false
 date: 2022-05-24T00:00:00.000Z
 lastmod: 2022-05-24T16:43:34.796Z
 layout: journals
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
+
+# === ENHANCED QUEST HIERARCHY ===
+quest_type: "main_quest"
+quest_line: "Foundation Path"
+quest_series: "Character Creation Journey"
+quest_arc: "Digital Awakening Arc"
+
+quest_dependencies:
+    required_quests: []  # Entry point quest
+    recommended_quests: []
+    unlocks_quests:
+        - "/quests/character-building/"
+        - "/quests/operating-system-selection/"
+        - "/quests/terminal-navigation-mastery/"
+
+quest_relationships:
+    child_quests:
+        - "/quests/github-profile-optimization/"     # Side quest
+        - "/quests/repository-exploration-guide/"    # Side quest
+    sequel_quests:
+        - "/quests/character-building/"
+        - "/quests/development-environment-setup/"
+    parallel_quests:
+        - "/quests/computer-literacy-fundamentals/"
+
+learning_paths:
+    primary_paths:
+        - "Software Development"
+        - "System Administration"
+        - "Data Science"
+        - "Digital Literacy"
+    character_classes:
+        - "💻 Software Developer"
+        - "🏗️ System Engineer"
+        - "🛡️ Security Specialist"
+        - "📊 Data Scientist"
+        - "🎨 Digital Artist"
+        - "🎮 Game Developer"
+    skill_trees:
+        - "Version Control Fundamentals"
+        - "Community Participation"
+        - "Open Source Contribution"
+
+quest_mapping:
+    coordinates: "[0, 0]"
+    region: "Entry"
+    realm: "Community"
+    biome: "GitHub"
+
 prerequisites:
-  - Access to a computer with internet connection
-  - Valid email address
-  - Willingness to learn and explore
-rewards:
-  - 🏆 GitHub Account Creation Badge
-  - ⚡ Version Control Fundamentals
-  - 🛠️ Open Source Contribution Foundation
-  - 🎯 Community Membership Access
-quest_series: "Init World - Character Creation"
-related_quests:
-  - "2023-11-23-begin-your-it-journey.md - Official IT Journey Start"
-  - "2023-11-24-character-selection.md - Choose Your Development Path"
-  - "2023-11-24-os-selection.md - Select Your Operating System"
+    knowledge_requirements:
+        - "Basic computer operation (clicking, typing, navigating websites)"
+        - "Understanding of what a website is"
+        - "Familiarity with creating online accounts"
+    system_requirements:
+        - "Access to a computer with internet connection"
+        - "Valid email address"
+        - "Web browser (Chrome, Firefox, Safari, or Edge)"
+    skill_level_indicators:
+        - "Curious about technology and eager to learn"
+        - "Comfortable navigating websites and creating accounts"
+        - "Willingness to learn and explore new concepts"
+
 validation_criteria:
-  - "Successfully create a GitHub account"
-  - "Fork the IT-Journey repository"
-  - "Navigate the GitHub interface"
-sub-title: "Level 000 Quest: First Steps in Digital Collaboration"
+    completion_requirements:
+        - "Successfully create a GitHub account"
+        - "Fork the IT-Journey repository"
+        - "Navigate the GitHub interface confidently"
+    skill_demonstrations:
+        - "Demonstrate understanding of GitHub's basic functionality"
+        - "Show ability to interact with repositories and community features"
+    knowledge_checks:
+        - "Explain what GitHub is and why it's important"
+        - "Describe the concept of forking and open source collaboration"
+
+rewards:
+    badges:
+        - "🏆 GitHub Account Creation Badge - Entry into developer community"
+        - "⚡ Digital Citizenship - Understanding of online collaboration"
+    skills_unlocked:
+        - "🛠️ Open Source Contribution Foundation"
+        - "🎯 Community Membership Access"
+    progression_points: 100
+    unlocks_features:
+        - "Access to all Foundation Path quests"
+        - "Ability to participate in community discussions"
+        - "Foundation for version control learning"
+
+sub-title: "Level 0000 (0) Main Quest: First Steps in Digital Collaboration"
 permalink: /quests/hello-noob/
 ---
 
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 
 *This quest is specifically designed for absolute beginners - those who might not even know what GitHub is yet. That's perfectly okay! Every expert started exactly where you are now.*
+
+### 🗺️ Quest Network Position
+
+```mermaid
+graph TB
+    subgraph "Entry Point"
+        Start[🌟 Begin Your Journey]
+    end
+    
+    subgraph "Hello n00b Main Quest"
+        Main[🏰 Hello n00b]
+        Profile[⚔️ GitHub Profile Setup]
+        Explore[⚔️ Repository Explorer]
+    end
+    
+    subgraph "Foundation Path Unlocked"
+        Character[🏰 Character Building]
+        OS[🏰 Operating System Selection]
+        Terminal[🏰 Terminal Navigation]
+        Computer[🏰 Computer Literacy]
+    end
+    
+    Start --> Main
+    Main --> Profile
+    Main --> Explore
+    Main --> Character
+    Main --> OS
+    Main --> Terminal
+    Main --> Computer
+    
+    style Main fill:#87ceeb
+    style Profile fill:#ffd700
+    style Explore fill:#ffd700
+    style Start fill:#90EE90
+```
+
+**Character Creation Journey Series**:
+```mermaid
+graph LR
+    subgraph "Character Creation Journey"
+        A[🏰 Hello n00b] --> B[🏰 Character Building]
+        B --> C[🏰 OS Selection]
+        C --> D[🏰 Development Environment]
+        D --> E[🏰 First Project]
+    end
+    
+    style A fill:#87ceeb
+    style B fill:#87ceeb
+    style C fill:#87ceeb
+    style D fill:#87ceeb
+    style E fill:#87ceeb
+```
 
 ## 🎯 Quest Objectives
 
