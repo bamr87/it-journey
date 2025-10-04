@@ -308,6 +308,8 @@ Create `_includes/components/mermaid.html`:
 
 Modify your `_includes/head.html` (or create it if it doesn't exist):
 
+Add the following code to your head section:
+
 ```html
 <head>
   <meta charset="utf-8">
@@ -317,11 +319,14 @@ Modify your `_includes/head.html` (or create it if it doesn't exist):
   <!-- Your existing head content -->
   
   <!-- Mermaid Diagrams - Conditional loading based on page front matter -->
-  {&#37; if page.mermaid &#37;}
-    {&#37; include components/mermaid.html &#37;}
-  {&#37; endif &#37;}
+  <!-- Add conditional Liquid tags here -->
 </head>
 ```
+
+**Important**: Add the following Liquid code to your head.html file:
+- `{% if page.mermaid %}` - Check if page has mermaid enabled
+- `{% include components/mermaid.html %}` - Include the Mermaid component
+- `{% endif %}` - Close the conditional block
 
 **Checkpoint**: Your Mermaid component is ready for conditional loading!
 
