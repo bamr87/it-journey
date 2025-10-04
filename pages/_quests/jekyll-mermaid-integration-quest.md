@@ -679,7 +679,7 @@ test_mermaid_component_exists() {
 
 test_conditional_loading() {
     ((TOTAL_TESTS++))
-    if grep -q "{% if page.mermaid %}" _includes/head.html; then
+    if grep -q "if page.mermaid" _includes/head.html; then
         log_success "Conditional loading configured"
         ((TESTS_PASSED++))
     else
