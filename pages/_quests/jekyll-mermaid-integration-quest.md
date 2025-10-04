@@ -317,9 +317,9 @@ Modify your `_includes/head.html` (or create it if it doesn't exist):
   <!-- Your existing head content -->
   
   <!-- Mermaid Diagrams - Conditional loading based on page front matter -->
-  {% raw %}{% if page.mermaid %}{% endraw %}
-    {% raw %}{% include components/mermaid.html %}{% endraw %}
-  {% raw %}{% endif %}{% endraw %}
+  {&#37; if page.mermaid &#37;}
+    {&#37; include components/mermaid.html &#37;}
+  {&#37; endif &#37;}
 </head>
 ```
 
