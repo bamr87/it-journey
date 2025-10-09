@@ -3,7 +3,6 @@ services:
   jekyll:
     image: jekyll/jekyll:latest
     command: jekyll serve --watch --force_polling --config "_config.yml,_config_dev.yml"
-
     volumes:
       - ./:/app
     ports:
@@ -11,4 +10,17 @@ services:
     working_dir: /app
     environment:
       JEKYLL_ENV: development
+
+  quest-validator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python3 /app/test/quest-validator/quest_validator.py
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      PYTHONPATH: /app
+      PYTHONUNBUFFERED: 1
+      PATH: "/opt/venv/bin:$PATH"
 

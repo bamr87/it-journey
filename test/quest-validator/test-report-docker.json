@@ -1,0 +1,21 @@
+{
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "total_errors": 0,
+  "total_warnings": 2,
+  "average_score": 92.0,
+  "results": [
+    {
+      "quest_file": "/app/pages/_quests/testing-quests-with-recurrisive-questing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_relationships",
+        "8 code blocks without language specification"
+      ],
+      "score": 69,
+      "max_score": 75
+    }
+  ]
+}
