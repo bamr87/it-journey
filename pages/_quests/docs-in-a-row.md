@@ -4,7 +4,7 @@ description: Build a centralized documentation system that aggregates and organi
 date: 2025-10-03T21:41:24.219Z
 preview: /images/quest-preview-image.png
 level: "0001"
-difficulty: "\udfe1 Intermediate"
+difficulty: "🟡 Intermediate"
 estimated_time: 2-3 hours
 primary_technology: GitHub Actions
 quest_type: Project Building
