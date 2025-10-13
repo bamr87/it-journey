@@ -268,7 +268,7 @@ class PageState {
 
 - [PageSpeed Insights](https://pagespeed.web.dev/) - Performance analysis tools
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Comprehensive auditing
-- [WebPageTest](https://www.webpagetest.org/) - Detailed performance testing
+- [GTmetrix](https://gtmetrix.com/) - Detailed performance testing
 
 ## 🎯 Next Steps
 
@@ -290,7 +290,7 @@ class PageState {
 
 This demo is open source! Ways to contribute:
 
-- **Bug Reports**: Found an issue? [Create an issue](https://github.com/it-journey/it-journey/issues)
+- **Bug Reports**: Found an issue? [Create an issue](https://github.com/bamr87/it-journey/issues)
 - **Feature Requests**: Have ideas for new interactive features?
 - **Code Improvements**: Submit pull requests with enhancements
 - **Documentation**: Help improve these learning materials
@@ -299,8 +299,8 @@ This demo is open source! Ways to contribute:
 
 Need help with Jekyll layouts or JavaScript integration?
 
-- **Community Forum**: Join our [GitHub Discussions](https://github.com/it-journey/it-journey/discussions)
-- **Documentation**: Check our [Wiki](https://github.com/it-journey/it-journey/wiki)
+- **Community Forum**: Join our [GitHub Discussions](https://github.com/bamr87/it-journey/discussions)
+- **Documentation**: Check our [Wiki](https://github.com/bamr87/it-journey/wiki)
 - **Issues**: Report bugs or request features
 
 ---

@@ -954,7 +954,7 @@ This is just the beginning! Here's what you can explore next:
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
 - [Git Handbook](https://guides.github.com/introduction/git-handbook/)
 - [Docker Getting Started](https://docs.docker.com/get-started/)
-- [GitHub Learning Lab](https://lab.github.com/)
+- [GitHub Skills](https://skills.github.com/)
 
 #### **Community & Support**
 - [Dev.to Community](https://dev.to/)

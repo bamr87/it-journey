@@ -4,12 +4,17 @@ description: User-facing features and educational tools available on IT-Journey 
 excerpt: Comprehensive list of learning features, educational tools, and community capabilities.
 date: 2024-03-12T21:42:28.963Z
 preview: null
-tags: [features, learning, education, community]
-categories: [about]
+tags:
+  - features
+  - learning
+  - education
+  - community
+categories:
+  - about
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2025-01-13T00:00:00.000Z
+lastmod: 2025-10-13T22:52:35.526Z
 draft: published
 inspiration:
   - features are the foundation of the future
