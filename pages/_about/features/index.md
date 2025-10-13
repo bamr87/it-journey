@@ -1,91 +1,132 @@
 ---
-title: Features (~) Index
-description: A list of features that are currently implemented and requested for the site.
-excerpt: A list of features that are currently implemented and requested for the site.
+title: Learning Platform Features
+description: User-facing features and educational tools available on IT-Journey platform.
+excerpt: Comprehensive list of learning features, educational tools, and community capabilities.
 date: 2024-03-12T21:42:28.963Z
 preview: null
-tags: []
-categories: []
+tags: [features, learning, education, community]
+categories: [about]
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2024-05-30T16:59:37.397Z
-draft: in progress
+lastmod: 2025-01-13T00:00:00.000Z
+draft: published
 inspiration:
   - features are the foundation of the future
 quest: /quests/featured-future/
 ---
 
-## Current Features
+## Educational Features
+
+These are the learning-focused features that make IT-Journey a comprehensive educational platform.
+
+### 🎓 Learning & Content Features
 
 {: .table .table-bordered .table-striped .table-hover .table-responsive}
-| Feature                                               | Implemented | Issue # | Quest |
-| ----------------------------------------------------- | ----------- | ------- | --- |
-| Github Pages compatibility                            | True        |test|test|
-| giscus.app/                                           | True        |         |     |
-| Jekyll Admin                                          | True        |         |     |
-| MathJax                                               | True        |         |     |
-| Bootstrap 5 CDN                                       | True        |         |     |
-| Algolia Search indexing                               | True        |         |     |
-| Jekyll Site Generation                                | True        |         |     |
-| Travis CI Build Automation                            | True        |         |     |
-| Health Status/Monitoring (Build)                      | True        |         |     |
-| Dark Mode toggle                                      | True        |         |     |
-| JQuery Plugin                                         | True        |         |     |
-| Auto generated right side bar TOC                     | True        |         |     |
-| Right side quick edit links to GitHub and VS Code     | True        |         |     |
-| Left sidebar site Navigation (based on nav data file) | True        |         |     |
-| Code Copy button                                      | True        |         |     |
-| Back to top button in mobile view                     | True        |         |     |
-| Category filter for posts                             | True        |         |     |
-| Code syntax highlighting                              | True        |         |     |
-| Programming Language cheat sheets                     | True        |         |     |
-| data file generation program                          | False       |         |     |
-| infinite scrolling landing page                       | False       |         |     |
-| Landing page site intro based on features             | False       |         |     |
+| Feature                                               | Status      | Description | Quest |
+| ----------------------------------------------------- | ----------- | ----------- | ----- |
+| **AI-Powered Learning Paths**                         | ✅ Active   | Personalized learning recommendations using AI | [AI Journey](/quests/ai-powered-learning/) |
+| **Interactive Quests System**                         | ✅ Active   | Gamified learning challenges and exercises | [Quest System](/quests/) |
+| **Hands-on Notebooks**                                | ✅ Active   | Jupyter notebooks for practical coding | [Notebooks](/notebooks/) |
+| **Progressive Skill Levels**                          | ✅ Active   | Structured progression from zero to hero | [Levels](/quests/levels/) |
+| **Community Discussions**                             | ✅ Active   | GitHub Discussions for peer learning | [Join Discussion](https://github.com/bamr87/it-journey/discussions) |
+| **Collaborative Learning**                            | ✅ Active   | Open-source contribution opportunities | [Contributing](/about/contributing/) |
 
-## Requested features
+### 📚 Content & Documentation
 
 {: .table .table-bordered .table-striped .table-hover .table-responsive}
-| Title                                                 | Issue #                                               |
-| ----------------------------------------------------- | ----------------------------------------------------- |
-| Add create new post/feature button                    | [56](https://github.com/bamr87/it-journey/issues/56) |
-| Feature Request - FR000001 - FR53                     | [53](https://github.com/bamr87/it-journey/issues/53)  |
-| Feature Request - export to csv - FR75                | [75](https://github.com/bamr87/it-journey/issues/75)  |
-| Feature Request - Test feature request feature - FR76 | [76](https://github.com/bamr87/it-journey/issues/76)  |
-| Feature Request - FR000001 - FR53                     | [53](https://github.com/bamr87/it-journey/issues/53)  |
+| Feature                                               | Status      | Description |
+| ----------------------------------------------------- | ----------- | ----------- |
+| **Comprehensive Documentation**                       | ✅ Active   | Detailed guides and tutorials |
+| **AI-Generated Documentation**                        | ✅ Active   | Automated content updates and summaries |
+| **Code Examples & Snippets**                          | ✅ Active   | Practical code demonstrations |
+| **Programming Language Cheat Sheets**                 | ✅ Active   | Quick reference guides |
+| **Real-World Projects**                               | ✅ Active   | Portfolio-building opportunities |
 
-## Old List
+### 🔍 Discovery & Navigation
 
-- add automated changelog page
-- add 3rd level nav bar drop down option
-- automate pull request to publish to gh-pages
-- create custom svg icon
-- quick view of post contents/reading time
-- Adjust menu toggle in Mobile view
-- leader board for level progression
-- Add keyboard shortcuts (e.g. ctl + / to toggle search)
-- Build Site map page [example](http://www.publicdomainsherpa.com/site-map.html)
-- Publish training article on [Programming Historian](https://programminghistorian.org/) 
-- Add search functionality
-- Add tab functionality https://idratherbewriting.com/documentation-theme-jekyll/mydoc_navtabs.html
-- Add GUI instructions for the n00bs
-- Add language title to code blocks
-- Integrate Jupyter Notebooks into the site
-- add embedded todo button for viewing
-- update SEO, document setup https://jsinibardy.com/optimize-seo-jekyll
-- add next/back button to turn pages
-- enhance right side bar design - [example](https://bootstrap-themes.github.io/dashboard/docs/#whats-included)
-- Cross reference features to documentation
-- alternate TOC structures (easy/med/hard) (pc/mac/linux) (by role)
-- add a tool kit page with all software tools used
-- Contribution Instructions
-- add [plugins](https://jekyllcodex.org/without-plugins/) without plugins
-- Auto integrate/embed source code files into documentation
-- UI testing automation - [Selenium](https://www.selenium.dev/)
-- page revision view (diff)
-- integrate kanban board
-- build account based system
-- simulate generic business operations
-- build backend todo interface checking
-- Build note to article function/workflow
+{: .table .table-bordered .table-striped .table-hover .table-responsive}
+| Feature                                               | Status      | Description |
+| ----------------------------------------------------- | ----------- | ----------- |
+| **Algolia Search**                                    | ✅ Active   | Fast, intelligent content search |
+| **Category Filtering**                                | ✅ Active   | Browse content by topic |
+| **Tag-Based Navigation**                              | ✅ Active   | Explore related content |
+| **Sidebar Navigation**                                | ✅ Active   | Context-aware navigation |
+| **Auto-Generated TOC**                                | ✅ Active   | Quick page navigation |
+
+### 💬 Community & Engagement
+
+{: .table .table-bordered .table-striped .table-hover .table-responsive}
+| Feature                                               | Status      | Description |
+| ----------------------------------------------------- | ----------- | ----------- |
+| **Comment System (giscus)**                           | ✅ Active   | GitHub-based discussions on posts |
+| **Contributor Profiles**                              | ✅ Active   | Showcase community contributors |
+| **GitHub Integration**                                | ✅ Active   | Direct editing and contributions |
+| **Progress Tracking**                                 | 🔄 Planned  | Track your learning journey |
+| **Leaderboards**                                      | 🔄 Planned  | Gamified progression |
+
+### 🎨 User Experience Features
+
+{: .table .table-bordered .table-striped .table-hover .table-responsive}
+| Feature                                               | Status      | Description |
+| ----------------------------------------------------- | ----------- | ----------- |
+| **Responsive Design**                                 | ✅ Active   | Mobile-first, works on all devices |
+| **Dark Mode**                                         | ✅ Active   | Eye-friendly theme switching |
+| **MathJax Support**                                   | ✅ Active   | Beautiful mathematical equations |
+| **Code Syntax Highlighting**                          | ✅ Active   | Colorized code examples |
+| **Copy Code Button**                                  | ✅ Active   | One-click code copying |
+| **Back to Top Button**                                | ✅ Active   | Mobile-optimized navigation |
+
+---
+
+## Theme & Technical Features
+
+For theme customization, Jekyll configuration, and developer tools, visit the **[Zer0-Mistakes Theme Documentation](https://zer0-mistakes.com/about/features/)**.
+
+The Zer0-Mistakes theme provides:
+- 🎨 Bootstrap 5 framework
+- 🔧 Jekyll optimization
+- 📊 Statistics dashboard
+- 🚀 Automated build system
+- 🛠️ Developer tools
+
+---
+
+## Planned Features
+
+We're constantly improving the platform. Here are some features in development:
+
+{: .table .table-bordered .table-striped .table-hover .table-responsive}
+| Feature                                     | Priority | Status      | Issue # |
+| ------------------------------------------- | -------- | ----------- | ------- |
+| **Progress Tracking Dashboard**             | High     | 🔄 Planned  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+| **Learning Path Recommendations**           | High     | 🔄 Planned  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+| **Skill Assessment Tests**                  | Medium   | 🔄 Planned  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+| **Certificate Generation**                  | Medium   | 🔄 Planned  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+| **Peer Mentorship Program**                 | Medium   | 🔄 Planned  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+| **Live Coding Sessions**                    | Low      | 💡 Concept  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+| **Interactive Code Playground**             | Low      | 💡 Concept  | [#TBD](https://github.com/bamr87/it-journey/issues) |
+
+### Request a Feature
+
+Have an idea for a new learning feature? [Submit a feature request](https://github.com/bamr87/it-journey/issues/new?template=feature_request.md) on GitHub!
+
+---
+
+## About Our Features
+
+All features are designed following our [Core Principles](/about/#core-principles):
+- 🔒 **Design for Failure (DFF)** - Reliable and resilient
+- 🔄 **Don't Repeat Yourself (DRY)** - Efficient and maintainable
+- ⚡ **Keep It Simple (KIS)** - Intuitive and accessible
+- 🚀 **Release Early and Often (REnO)** - Continuously improving
+- 🤖 **AI-Powered Development (AIPD)** - Intelligent and adaptive
+- 🤝 **Collaboration (COLAB)** - Community-driven development
+
+---
+
+**Related Pages:**
+- [About IT-Journey](/about/) - Our mission and vision
+- [Getting Started](/quickstart/) - Begin your learning journey
+- [Community Guidelines](/about/contributing/) - Join our community
+- [Theme Documentation](https://zer0-mistakes.com/about/features/) - Technical details
