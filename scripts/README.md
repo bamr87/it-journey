@@ -189,6 +189,14 @@ This system serves as both a practical tool and an educational example of modern
 
 ### 🔗 Related Documentation
 
+### IT-Journey Documentation
+- [Scripts Guide](../docs/scripts/SCRIPTS_GUIDE.md) - Comprehensive scripts documentation
+- [Script Cleanup Summary](../docs/scripts/CLEANUP_SUMMARY.md) - Consolidation results
+- [Script Consolidation Plan](../docs/scripts/CONSOLIDATION_PLAN.md) - Organization strategy
+- [Development Environment](../docs/setup/DEVELOPMENT_ENVIRONMENT.md) - Setup guide
+- [Contributing Guide](../docs/CONTRIBUTING_DEVELOPER.md) - Contribution workflow
+
+### External Documentation
 - [Lychee Link Checker Documentation](https://github.com/lycheeverse/lychee)
 - [OpenAI API Documentation](https://platform.openai.com/docs)
 - [GitHub CLI Documentation](https://cli.github.com/manual/)

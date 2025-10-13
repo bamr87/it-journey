@@ -211,14 +211,24 @@ Planned improvements include:
 - Integration with content management tools
 - Performance optimization for large repositories
 
+## Related Documentation
+
+For comprehensive workflow documentation, see:
+- **[GitHub Actions Guide](../../docs/workflows/GITHUB_ACTIONS.md)** - Complete workflow documentation
+- **[Link Checker Resolution](../../docs/workflows/LINK_CHECKER_FIX_RESOLUTION.md)** - Link health fixes
+- **[Link Checker Validation](../../docs/workflows/LINK_CHECKER_VALIDATION.md)** - Validation results
+- **[Testing Frameworks](../../docs/testing/TESTING_FRAMEWORKS.md)** - Test infrastructure
+- **[Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)** - Contribution workflow
+
 ## Contributing
 
 To contribute improvements to these workflows:
 1. Test changes in a fork first
 2. Document any new configuration options
-3. Update this documentation
+3. Update relevant documentation in `docs/workflows/`
 4. Submit pull requests with clear descriptions
+5. Follow the [Developer Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)
 
 ---
 
-*This documentation is maintained as part of the IT-Journey project. For questions or suggestions, please create an issue.*
+*This documentation is maintained as part of the IT-Journey project. For complete workflow documentation, see the [GitHub Actions Guide](../../docs/workflows/GITHUB_ACTIONS.md).*

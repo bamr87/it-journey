@@ -1,94 +1,140 @@
 ---
 title: Contributing
-description: This is how to contribute.
+description: How to contribute to IT-Journey
 slug: contributing
-lastmod: 2024-02-19T20:18:29.010Z
+lastmod: 2025-10-13T00:00:00.000Z
 ---
 
-## Contributing
+# Contributing to IT-Journey
 
-Build the repository
+Thank you for your interest in contributing to IT-Journey! We welcome contributions from developers, content creators, and learners of all experience levels.
 
-Test your changes
+## Quick Start
 
-Create a pull request
+1. **Read the Developer Guide**: See the comprehensive [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md)
+2. **Setup Your Environment**: Follow the [Development Environment Setup](docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+3. **Understand the Structure**: Review [Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)
+4. **Follow Standards**: Check [Content Guidelines](docs/standards/CONTENT_GUIDELINES.md) and [Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)
+
+## Documentation
+
+All technical documentation for contributors has been moved to the `docs/` directory:
+
+### Essential Reading
+- **[Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md)** - Complete contribution workflow
+- **[Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)** - Directory organization
+- **[Development Environment](docs/setup/DEVELOPMENT_ENVIRONMENT.md)** - Setup instructions
+- **[Content Guidelines](docs/standards/CONTENT_GUIDELINES.md)** - Writing standards
+- **[Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)** - Metadata requirements
+
+### Additional Documentation
+- **[Jekyll Implementation](docs/architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll details
+- **[GitHub Actions](docs/workflows/GITHUB_ACTIONS.md)** - CI/CD workflows
+- **[Scripts Guide](docs/scripts/SCRIPTS_GUIDE.md)** - Automation tools
+- **[Testing Frameworks](docs/testing/TESTING_FRAMEWORKS.md)** - Quality assurance
+
+## Types of Contributions
+
+### Content Creation
+- Write blog posts and tutorials
+- Create gamified quests
+- Add educational documentation
+- Contribute Jupyter notebooks
+
+### Code Contributions
+- Improve automation scripts
+- Enhance testing frameworks
+- Optimize workflows
+- Fix bugs and issues
+
+### Documentation
+- Improve developer documentation
+- Add learning resources
+- Update guides and tutorials
+- Fix typos and errors
+
+### Community Support
+- Help answer questions
+- Review pull requests
+- Share your experiences
+- Mentor new contributors
 
 ## Prerequisites
 
-- A cup of coffee or your favorite beverage to keep you energized.
-- A positive attitude and a sense of curiosity.
-- A sense of adventure and a willingness to explore new tools and technologies.
-- A growth mindset and a willingness to embrace challenges and learn from mistakes.
-- A sense of humor and the ability to laugh at unexpected errors and bugs.
-- A supportive community or network of friends and colleagues to ask for help and share your progress.
-- A clear goal and motivation to build a useful and practical extension.
-- A spirit of creativity and a desire to express yourself through code and technology.
-- A sense of responsibility and a commitment to ethical and inclusive software development practices.
-- A sense of empathy and a desire to create tools that benefit others and make the world a better place.
-- A sense of gratitude and appreciation for the opportunities and resources that enable you to learn and grow.
-- A sense of wonder and a curiosity about the possibilities of AI and machine learning in software development.
-- A sense of purpose and a vision for how your extension can help developers be more productive and creative.
-- A sense of determination and a willingness to persevere through challenges and setbacks.
-- A sense of humility and a willingness to learn from others and share your knowledge with the community.
-- A sense of optimism and a belief in the potential of technology to improve people's lives and create positive change.
-- A sense of fun and a spirit of playfulness to make the learning process enjoyable and engaging.
-- A sense of balance and a commitment to taking breaks and caring for your well-being while working on the extension.
-- A sense of completion and a desire to celebrate your achievements and share your extension with the world.
-- A sense of anticipation and excitement to see how your extension can make a difference in the developer community.
-- A sense of satisfaction and fulfillment from creating something that brings joy and value to others.
-- A sense of connection and belonging in the global community of developers and creators.
-- A sense of possibility and a belief in your ability to create something meaningful and impactful.
+Before contributing, you should have:
 
-## Contributing
+- [ ] Git and GitHub account
+- [ ] Development environment set up (see [setup guide](docs/setup/DEVELOPMENT_ENVIRONMENT.md))
+- [ ] Familiarity with Jekyll (see [Jekyll docs](pages/_docs/jekyll/))
+- [ ] Understanding of repository structure (see [architecture docs](docs/architecture/REPOSITORY_STRUCTURE.md))
+- [ ] Knowledge of contribution standards (see [contributing guide](docs/CONTRIBUTING_DEVELOPER.md))
 
-Build the repository
+## Quick Contribution Workflow
 
-Test your changes
+```bash
+# 1. Fork and clone
+git clone https://github.com/YOUR-USERNAME/it-journey.git
+cd it-journey
 
-Create a pull request
+# 2. Create branch
+git checkout -b feature/your-feature-name
 
-## Prerequisites
+# 3. Make changes
+# Edit files, test locally
 
-- A cup of coffee or your favorite beverage to keep you energized.
-- A positive attitude and a sense of curiosity.
-- A sense of adventure and a willingness to explore new tools and technologies.
-- A growth mindset and a willingness to embrace challenges and learn from mistakes.
-- A sense of humor and the ability to laugh at unexpected errors and bugs.
-- A supportive community or network of friends and colleagues to ask for help and share your progress.
-- A clear goal and motivation to build a useful and practical extension.
-- A spirit of creativity and a desire to express yourself through code and technology.
-- A sense of responsibility and a commitment to ethical and inclusive software development practices.
-- A sense of empathy and a desire to create tools that benefit others and make the world a better place.
-- A sense of gratitude and appreciation for the opportunities and resources that enable you to learn and grow.
-- A sense of wonder and a curiosity about the possibilities of AI and machine learning in software development.
-- A sense of purpose and a vision for how your extension can help developers be more productive and creative.
-- A sense of determination and a willingness to persevere through challenges and setbacks.
-- A sense of humility and a willingness to learn from others and share your knowledge with the community.
-- A sense of optimism and a belief in the potential of technology to improve people's lives and create positive change.
-- A sense of fun and a spirit of playfulness to make the learning process enjoyable and engaging.
-- A sense of balance and a commitment to taking breaks and caring for your well-being while working on the extension.
-- A sense of completion and a desire to celebrate your achievements and share your extension with the world.
-- A sense of anticipation and excitement to see how your extension can make a difference in the developer community.
-- A sense of satisfaction and fulfillment from creating something that brings joy and value to others.
-- A sense of connection and belonging in the global community of developers and creators.
-- A sense of possibility and a belief in your ability to create something meaningful and impactful.
+# 4. Commit with conventional format
+git commit -m "feat(scope): description"
 
-This is how to contribute.
+# 5. Push and create PR
+git push origin feature/your-feature-name
+# Create Pull Request on GitHub
+```
 
-## Prep
+See the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md) for detailed workflow instructions.
 
-Define and prep your development environment.
+## Code of Conduct
 
-## Build
+- Be respectful and inclusive
+- Welcome newcomers and beginners
+- Provide constructive feedback
+- Focus on the work, not the person
+- Respect different perspectives
+- Be patient and empathetic
 
-Build the repo using github cli, Ruby, and Jekyll.
+## Getting Help
 
-## Test
+### Questions
+- Check [documentation](docs/README.md) first
+- Search existing issues
+- Create discussion in GitHub Discussions
+- Ask in pull request comments
 
-Run the automated tests.
+### Issues
+- Bug reports: Use `bug` label
+- Feature requests: Use `enhancement` label
+- Questions: Use `question` label
+- Documentation: Use `documentation` label
 
-## Pull Request
+### Support Channels
+- **Technical Issues**: [GitHub Issues](https://github.com/bamr87/it-journey/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/bamr87/it-journey/discussions)
+- **Documentation**: See `docs/` directory in repository
+- **Email**: For sensitive issues only
 
-Make a change to the contibutor page and submit a pull request
+## Recognition
 
-Will base this on Github's documentaiton [here](https://docs.github.com/en/contributing)https://docs.github.com/en/contributing
+Contributors are recognized through:
+- Repository contributors page
+- Release notes acknowledgments
+- About page (for significant contributions)
+- Special recognition in related content
+
+## License
+
+By contributing, you agree that your contributions will be licensed under the MIT License.
+
+---
+
+For complete contribution guidelines, please see the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md).
+
+**Last Updated**: 2025-10-13

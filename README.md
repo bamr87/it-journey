@@ -163,6 +163,30 @@ After engaging with the IT-Journey platform, learners will have:
 - **Community Recognition**: Contributions to educational resources
 - **Continuous Learning**: Established habits for ongoing skill development
 
+## 📖 Documentation
+
+IT-Journey has two types of documentation:
+
+### Developer Documentation (`docs/`)
+**For Contributors and Developers** - Technical repository documentation:
+- **[Getting Started](docs/README.md)** - Main documentation entry point
+- **[Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)** - Complete directory layout
+- **[Jekyll Implementation](docs/architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll configuration details
+- **[Development Setup](docs/setup/DEVELOPMENT_ENVIRONMENT.md)** - Environment configuration
+- **[Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md)** - Contribution workflow
+- **[Content Guidelines](docs/standards/CONTENT_GUIDELINES.md)** - Writing standards
+- **[Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)** - Metadata requirements
+- **[GitHub Actions](docs/workflows/GITHUB_ACTIONS.md)** - CI/CD workflows
+- **[Scripts Guide](docs/scripts/SCRIPTS_GUIDE.md)** - Automation scripts
+- **[Testing Frameworks](docs/testing/TESTING_FRAMEWORKS.md)** - Quality assurance
+
+### Learning Resources (`pages/_docs/`)
+**For Learners** - Educational content about tools and technologies:
+- **[Jekyll Documentation](pages/_docs/jekyll/)** - Jekyll as used in IT-Journey
+- Tool and technology references
+- Framework and library guides
+- Educational tutorials
+
 ## 🤝 Contributing
 
 We welcome contributions from learners and experts alike:
@@ -176,10 +200,11 @@ We welcome contributions from learners and experts alike:
 
 ### Getting Started
 1. **Fork the Repository**: Create your own copy for development
-2. **Review Guidelines**: Check [CONTRIBUTING.md](CONTRIBUTING.md) for standards
-3. **Start Small**: Begin with documentation improvements or bug fixes
-4. **Engage**: Join discussions and provide feedback
-5. **Share**: Tell others about useful resources you've found
+2. **Review Guidelines**: Check [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md) for technical standards
+3. **Setup Environment**: Follow [Development Setup](docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+4. **Start Small**: Begin with documentation improvements or bug fixes
+5. **Engage**: Join discussions and provide feedback
+6. **Share**: Tell others about useful resources you've found
 
 ## 📞 Support and Community
 
