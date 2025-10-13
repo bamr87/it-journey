@@ -11,3 +11,4 @@ pages/_notes/.DS_Store
 .venv
 logs/debug-attach-trace.log
 logs/debug-rebuild-trace.log
+test-results/*
