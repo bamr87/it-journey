@@ -1,0 +1,167 @@
+<!--
+  ===================================================================
+  FOOTER - Comprehensive Site Footer with Branding & Navigation
+  ===================================================================
+  
+  File: footer.html
+  Path: _includes/footer.html
+  Purpose: Rich footer inspired by bashconsultants with Powered-by row,
+           branding/contact, quick links, social/RSS, subscribe form, and
+           policy links. Fully responsive with Bootstrap 5 utilities.
+  
+  Template Logic:
+  - Top row: "Powered by" credits from site.powered_by
+  - Branding block: Site title, optional address/phone/email
+  - Quick links: Common pages (adjust as needed)
+  - Social links: site.links with icons + RSS feed
+  - Subscribe form: Non-functional placeholder endpoint (/subscribe)
+  - Bottom bar: Dynamic copyright year
+  
+  Dependencies:
+  - site.powered_by: Framework and service credits
+  - site.links: Social media and affiliate links
+  - site.default_icon: Icon framework (Bootstrap Icons)
+  - site.data.ui-text: Internationalization support for RSS label
+  - Bootstrap 5 classes provided by the theme
+  
+  Notes:
+  - Guard optional fields (address/phone/email) to avoid empty output
+  - Use relative_url for internal links to respect baseurl
+  ===================================================================
+-->
+
+<footer class="bd-footer container-xl border-top" role="contentinfo">
+  <!-- Powered by Row -->
+  <div class="container row my-3">
+    <ul class="nav col-sm justify-content-end list-unstyled d-flex align-items-center" aria-label="Powered by technologies">
+      <span class="align-start">
+        &copy; {{ site.time | date: "%Y" }} {{ site.name | default: site.title }} — Powered by:
+      </span>
+      {% for power in site.powered_by %}
+        <li class="btn align-items-end">
+          {% if power.url %}
+            <a href="{{ power.url }}" rel="nofollow">
+              <i class="{{ site.default_icon }} {{ power.icon | default: site.powered_by.default }}" aria-hidden="true"></i>
+              <span class="d-none d-md-inline">{{ power.name }}</span>
+            </a>
+          {% else %}
+            <span class="text-muted">
+              <i class="{{ site.default_icon }} {{ power.icon | default: site.powered_by.default }}" aria-hidden="true"></i>
+              <span class="d-none d-md-inline">{{ power.name }}</span>
+            </span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Branding and Navigation Block -->
+  <div class="container row">
+    <div class="container bg-dark text-light py-5 rounded-3">
+      <div class="container">
+        <!-- Top: Site info + Quick Links + Social -->
+        <div class="row mb-4">
+          <!-- Site Info -->
+          <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <h5 class="text-uppercase mb-3">{{ site.title }}</h5>
+            {% if site.address %}<p class="mb-1">{{ site.address }}</p>{% endif %}
+            {% if site.phone %}<p class="mb-1"><a href="tel:{{ site.phone }}" class="text-light text-decoration-none">{{ site.phone }}</a></p>{% endif %}
+            {% if site.email %}<p class="mb-0"><a href="mailto:{{ site.email }}" class="text-light text-decoration-none">{{ site.email }}</a></p>{% endif %}
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <h5 class="text-uppercase mb-3">Quick Links</h5>
+            <ul class="list-unstyled" aria-label="Footer quick links">
+              <li><a href="{{ '/' | relative_url }}" class="text-light text-decoration-none">Home</a></li>
+              <li><a href="{{ '/about' | relative_url }}" class="text-light text-decoration-none">About</a></li>
+              <li><a href="{{ '/services' | relative_url }}" class="text-light text-decoration-none">Services</a></li>
+              <li><a href="{{ '/blog' | relative_url }}" class="text-light text-decoration-none">Blog</a></li>
+              <li><a href="{{ '/contact' | relative_url }}" class="text-light text-decoration-none">Contact</a></li>
+              <li><a href="{{ '/sitemap.xml' | relative_url }}" class="text-light text-decoration-none">Sitemap (XML)</a></li>
+            </ul>
+          </div>
+
+          <!-- Latest Posts (dynamic) -->
+          {% assign posts_count = site.posts | size %}
+          {% if posts_count and posts_count > 0 %}
+          <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <h5 class="text-uppercase mb-3">Latest Posts</h5>
+            <ul class="list-unstyled" aria-label="Latest posts">
+              {% for post in site.posts limit:3 %}
+                <li class="mb-1">
+                  <a href="{{ post.url | relative_url }}" class="text-light text-decoration-none">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <!-- Social & RSS -->
+          <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <h5 class="text-uppercase mb-3">Follow Us</h5>
+            <ul class="list-inline mb-0" aria-label="Social links">
+              {% for link in site.links %}
+                {% if link.url %}
+                  <li class="list-inline-item">
+                    <a href="{{ link.url }}" rel="nofollow" class="text-light text-decoration-none">
+                      <i class="{{ site.default_icon }} {{ link.icon | default: site.links.default }}" aria-hidden="true"></i>
+                      <span class="d-none d-md-inline">{{ link.label }}</span>
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              <li class="list-inline-item">
+                <a class="text-light text-decoration-none" href="{{ '/feed.xml' | relative_url }}">
+                  <i class="{{ site.default_icon }} bi-rss" aria-hidden="true"></i>
+                  <span class="d-none d-md-inline">{{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Middle: Subscribe + Policies -->
+        <div class="row mb-4 align-items-center g-2">
+          <div class="col-md-8">
+            <form action="/subscribe" method="post" class="row g-2" aria-label="Subscribe form">
+              <div class="col-md-8">
+                <label for="footer-email" class="visually-hidden">Email</label>
+                <input type="email" name="email" id="footer-email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a href="{{ '/privacy-policy' | relative_url }}" class="text-light text-decoration-none">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="{{ '/terms-of-service' | relative_url }}" class="text-light text-decoration-none">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom: Copyright -->
+        <div class="text-center">
+          <p class="mb-0">&copy; {{ site.time | date: "%Y" }} {{ site.title | default: site.name }}. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button (controlled by assets/js/back-to-top.js) -->
+  <a
+    id="backToTopBtn"
+    href="#"
+    class="btn btn-primary position-fixed bottom-0 end-0 m-3"
+    aria-label="Back to top"
+    title="Back to top"
+    role="button"
+    style="display: none;"
+  >
+    <i class="{{ site.default_icon }} bi-arrow-up" aria-hidden="true"></i>
+    <span class="visually-hidden">Back to top</span>
+  </a>
+</footer>
+

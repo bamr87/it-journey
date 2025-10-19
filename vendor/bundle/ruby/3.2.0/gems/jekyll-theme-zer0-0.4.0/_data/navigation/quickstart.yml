@@ -1,0 +1,12 @@
+- title: "Quick Start"
+  url: /quickstart/
+  sublinks:
+    - title: "Machine Setup"
+      url: /quickstart/machine-setup/
+      description: "Platform-specific setup and Docker installation"
+    - title: "Jekyll Setup"
+      url: /quickstart/jekyll-setup/
+      description: "Jekyll theme configuration and development environment"
+    - title: "GitHub Setup"
+      url: /quickstart/github-setup/
+      description: "Version control, GitHub integration, and deployment"

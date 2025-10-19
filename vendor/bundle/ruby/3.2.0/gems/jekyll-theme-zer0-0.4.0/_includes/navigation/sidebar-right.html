@@ -1,0 +1,40 @@
+<!-- 
+  file: sidebar-right.html 
+  path: _includes/sidebar-right.html
+  includes: nav_list.html, content/toc.html
+-->
+
+<!-- TOC button in mobile view  -->
+<div class="d-flex justify-content-end position-fixed top-50 end-0 translate-middle-y me-3">
+
+  <button class="btn bg-opacity-2 bd-toc-toggle d-lg-none border z-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocContents" aria-controls="tocContents">
+    <i class="bi bi-list-ul"></i>
+  </button>
+</div>
+
+<!-- Right sidebar container -->
+<div class="offcanvas-lg offcanvas-end" tabindex="-1" id="tocContents" aria-labelledby="tocLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="tocLabel">Table of Contents</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#tocContents"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- Table of contents -->
+    <nav id="TableOfContents">
+      <!-- TOC tile -->
+      <div>
+        <strong>
+          <i class="fas fa-file-alt"></i>
+          On this page
+        </strong>
+      </div>
+
+    <!-- TOC list -->
+
+    <!-- TOC list -->
+      {% include content/toc.html sanitize=true html=content h_min=1 h_max=3 class="list-group-flush" item_class="list-group-item" anchor_class="" skip_no_ids=true %}
+    </nav>
+  </div>
+</div>
+   
+

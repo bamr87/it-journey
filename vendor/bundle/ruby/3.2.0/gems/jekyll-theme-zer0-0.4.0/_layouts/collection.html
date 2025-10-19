@@ -1,0 +1,123 @@
+---
+layout: default
+---
+<!--
+  ===================================================================
+  COLLECTION LAYOUT - Display template for Jekyll collections
+  ===================================================================
+  
+  File: collection.html
+  Path: _layouts/collection.html
+  Inherits: default.html (which inherits root.html)
+  Purpose: Display collection pages with card-based grid layout
+  
+  Template Logic:
+  - Displays individual collection items (like blog posts, projects, etc.)
+  - Creates responsive card grid using Bootstrap components
+  - Supports custom sorting and filtering of collection items
+  - Shows preview images with fallback to default teaser
+  - Implements semantic HTML5 structure for better SEO
+  
+  Collection Configuration:
+  - Reads collection from page.collection frontmatter variable
+  - Sorts by page.sort_order (supports 'reverse' for descending)
+  - Falls back to default Jekyll collection ordering
+  
+  Card Layout Features:
+  - Responsive grid (1 column mobile, up to 3 columns desktop)
+  - Equal height cards with Bootstrap h-100 class
+  - Preview images with fallback system
+  - Excerpt truncation for consistent appearance
+  - Last modified date in footer
+  
+  SEO and Accessibility:
+  - Proper heading hierarchy with h2 for section title
+  - Microdata with itemprop attributes
+  - Alt text for images
+  - Semantic HTML structure
+  
+  Dependencies:
+  - Jekyll collections system
+  - Bootstrap 5 card and grid components
+  - Site configuration for public_folder and teaser image
+  ===================================================================
+-->
+
+<!-- ========================== -->
+<!-- COLLECTION PAGE CONTENT    -->
+<!-- ========================== -->
+<!-- Main content area for collection description or introduction -->
+{{ content }}
+
+<!-- ========================== -->
+<!-- COLLECTION DATA PROCESSING -->
+<!-- ========================== -->
+<!-- Extract and sort collection entries based on page configuration -->
+{% assign entries = site[page.collection] %}
+{% assign entries = entries | sort: page.sort_order %}
+
+<!-- Handle reverse sorting if specified -->
+{% if page.sort_order == 'reverse' %}
+    {% assign entries = entries | reverse %}
+{% endif %}
+
+<!-- ========================== -->
+<!-- COLLECTION INDEX HEADER    -->
+<!-- ========================== -->
+<h2 id="index-collection">
+    Collection Index - {{ page.collection }}
+</h2>
+
+<!-- ================================ -->
+<!-- COLLECTION ITEMS GRID           -->
+<!-- ================================ -->
+<!-- Responsive card grid: 1 column mobile, up to 3 columns desktop -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    {% for post in entries %}
+        <div class="col">
+            <!-- Bootstrap card with equal height for consistent layout -->
+            <div class="card h-100">
+                
+                <!-- ====================== -->
+                <!-- CARD IMAGE SECTION     -->
+                <!-- ====================== -->
+                <!-- Display preview image with fallback to site teaser -->
+                {% if post.preview %}
+                    <img src="{{site.baseurl}}/{{ site.public_folder }}/{{ post.preview}}" 
+                         class="card-img-top" alt="Preview image for {{ post.title }}">
+                {% else %}
+                    <img src="{{site.baseurl}}/{{ site.public_folder }}/{{ site.teaser }}" 
+                         class="card-img-top" alt="Default preview image">
+                {% endif %}
+                
+                <!-- ====================== -->
+                <!-- CARD CONTENT SECTION   -->
+                <!-- ====================== -->
+                <div class="card-body">
+                    <!-- Post title with SEO microdata -->
+                    <h5 class="card-title" itemprop="headline">
+                        <a class="card-link" href="{{ post.url | relative_url }}" rel="permalink">
+                            {{ post.title }}
+                        </a>
+                    </h5>
+                    
+                    <!-- Post excerpt with HTML stripped and character limit -->
+                    <p class="card-text" itemprop="description">
+                        {{ post.excerpt | strip_html | truncate: 160 }}
+                    </p>
+                </div>
+                
+                <!-- ====================== -->
+                <!-- CARD FOOTER SECTION    -->
+                <!-- ====================== -->
+                <div class="card-footer">
+                    <!-- Last modified date for content freshness indicator -->
+                    <small class="text-body-secondary post-meta">
+                        Last updated {{ post.lastmod | date: '%B %d, %Y' }}
+                    </small>
+                </div>
+            </div>  
+        </div>
+    {% endfor %}
+</div>

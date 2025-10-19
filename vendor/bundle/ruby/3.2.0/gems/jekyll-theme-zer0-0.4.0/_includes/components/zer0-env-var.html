@@ -1,0 +1,88 @@
+<div class="container mt-5">
+    <h2>Define Environment Variables</h2>
+    <table class="table" id="envTable">
+        <thead>
+            <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Value</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="form-control" value="GITHOME" required></td>
+                <td><input type="text" class="form-control" value="~/github" required></td>
+                <td><button class="btn btn-danger removeRow">Remove</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" value="GHUSER" required></td>
+                <td><input type="text" class="form-control" value="" required></td>
+                <td><button class="btn btn-danger removeRow">Remove</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" value="GIT_REPO" required></td>
+                <td><input type="text" class="form-control" value="$GHUSER.github.io" required></td>
+                <td><button class="btn btn-danger removeRow">Remove</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" value="GIT_ID" required></td>
+                <td><input type="text" class="form-control" value="" required></td>
+                <td><button class="btn btn-danger removeRow">Remove</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" value="ZREPO" required></td>
+                <td><input type="text" class="form-control" value="$GITHOME/$GIT_REPO" required></td>
+                <td><button class="btn btn-danger removeRow">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" id="addRow">Add Row</button>
+    <button class="btn btn-success" id="submit">Submit</button>
+    <div class="highlight">
+        <pre class="highlight has-copy-button">
+            <code id="codeBlock">export GITHOME=~/github</code>
+            <button class="copy" type="button" aria-label="Copy code to clipboard">Copy</button>
+        </pre>
+    </div>
+</div>
+
+<script>
+    document.getElementById('addRow').addEventListener('click', function() {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><input type="text" class="form-control" required></td>
+            <td><input type="text" class="form-control" required></td>
+            <td><button class="btn btn-danger removeRow">Remove</button></td>
+        `;
+        document.querySelector('#envTable tbody').appendChild(row);
+    });
+
+    document.getElementById('submit').addEventListener('click', function() {
+        const rows = document.querySelectorAll('#envTable tbody tr');
+        let codeBlockText = '';
+        rows.forEach(row => {
+            const key = row.querySelector('td:nth-child(1) input').value;
+            const value = row.querySelector('td:nth-child(2) input').value;
+            sessionStorage.setItem(key, value);
+            codeBlockText += `<span class="nb">export </span><span class="nv">${key}</span><span class="o">=</span>${value}\n`;
+        });
+        document.getElementById('codeBlock').innerHTML = codeBlockText;
+
+        // Get the environment variables from the session storage
+        const GHUSER = sessionStorage.getItem('GHUSER');
+        const GIT_REPO = sessionStorage.getItem('GIT_REPO');
+
+        // Update the link
+        const link = `https://github.com/${GHUSER}/${GIT_REPO}`;
+
+        // Display the link
+        document.getElementById('repo-link').textContent = link;
+        document.getElementById('repo-link').href = link;
+    });
+
+    document.querySelector('#envTable tbody').addEventListener('click', function(event) {
+        if (event.target.classList.contains('removeRow')) {
+            event.target.parentNode.parentNode.remove();
+        }
+    });
+</script>

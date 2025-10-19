@@ -1,0 +1,14 @@
+- title: About
+  sublinks:
+    - title: Home
+      url: /about
+    - title: License
+      url: /about/license
+    - title: Terms &amp; Privacy Policy
+      url: /terms
+    - title: Sitemap
+      url: /about/sitemap
+    - title: Stats
+      url: /stats
+  url: /about/
+

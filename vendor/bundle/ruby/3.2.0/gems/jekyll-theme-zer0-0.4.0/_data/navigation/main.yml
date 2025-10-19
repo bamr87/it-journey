@@ -1,0 +1,33 @@
+- title: Quick Start
+  url: /quickstart/
+  sublinks:
+    - title: zer0
+      url: /zer0/
+    - title: Machine Setup
+      url: /quickstart/machine-setup/
+    - title: "Jekyll Setup"
+      url: /quickstart/jekyll-setup/
+    - title: "GitHub Setup"
+      url: /quickstart/github-setup/
+- title: Blog
+  url: /blog/
+  sublinks:
+    - title: All Posts
+      url: /posts/
+- title: Stats
+  url: /stats/
+- title: Docs
+  url: /docs/
+  sublinks:
+    - title: Jekyll
+      url: /docs/jekyll/
+
+- title: About
+  url: /about/
+  sublinks:
+    - title: Config
+      url: /about/config/
+    - title: Theme
+      url: /about/theme/
+    - title: Sitemap
+      url: /about/sitemap/

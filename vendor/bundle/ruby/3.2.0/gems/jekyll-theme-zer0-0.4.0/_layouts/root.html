@@ -1,0 +1,89 @@
+---
+---
+<!--
+  ===================================================================
+  ROOT LAYOUT - Base template for the Zer0 Mistakes Jekyll Theme
+  ===================================================================
+  
+  File: root.html
+  Path: _layouts/root.html
+  Purpose: Base HTML structure that all other layouts inherit from
+  
+  Template Logic:
+  - Sets up the HTML document structure with Bootstrap 5 dark theme
+  - Includes essential meta tags and SEO optimization
+  - Loads external dependencies (CSS, JS, fonts)
+  - Provides the main content wrapper for child layouts
+  - Implements scroll spy for table of contents navigation
+  
+  Dependencies:
+  - head.html: Meta tags, stylesheets, and external resources
+  - svg.html: Inline SVG symbols for icons
+  - header.html: Main navigation and site branding
+  - info-section.html: Site-wide announcements or notices
+  - footer.html: Site footer with links and copyright
+  - js-cdn.html: JavaScript dependencies and custom scripts
+  
+  Theme: Zer0 Mistakes Jekyll Theme v0.1
+  Author: Amr Abdel-Motaleb
+  Copyright: 2024 - it-journey.com | @bamr87
+  ===================================================================
+-->
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="no-js" data-bs-theme="dark">
+    <head>
+        <!-- =============================================== -->
+        <!-- HEAD SECTION: Meta tags, styles, and SEO setup -->
+        <!-- =============================================== -->
+        
+        <!-- Core site metadata, stylesheets, and external dependencies -->
+        {% include core/head.html %}
+
+        <!-- Jekyll SEO plugin for enhanced search engine optimization -->
+        <!-- Documentation: https://github.com/jekyll/jekyll-seo-tag -->
+        {% seo %}
+    </head>
+    
+    <body data-bs-spy="scroll" data-bs-target="#TableOfContents">
+        <!-- ============================================== -->
+        <!-- BODY SECTION: Site structure and content area -->
+        <!-- ============================================== -->
+        
+        <!-- Inline SVG symbols for consistent iconography throughout the site -->
+        {% include components/svg.html %}
+
+        <!-- Google Tag Manager body code for analytics (if configured) -->
+        <!-- Note: Currently commented out - uncomment when GTM is needed -->
+
+        <!-- Main site header with navigation, branding, and search functionality -->
+        {% include core/header.html %}
+
+        <!-- Site-wide information banner or announcement section -->
+        {% include components/info-section.html %}
+
+        <!-- ======================== -->
+        <!-- MAIN CONTENT AREA        -->
+        <!-- ======================== -->
+        <!-- This is where child layouts inject their specific content -->
+        <div>
+            {{ content }}
+        </div>
+
+        <!-- ======================== -->
+        <!-- FOOTER AND SCRIPTS       -->
+        <!-- ======================== -->
+        
+        <!-- Site footer with links, copyright, and additional navigation -->
+        {%- include core/footer.html -%}
+
+        <!-- JavaScript dependencies and custom scripts -->
+        <div>
+            <!-- Search functionality (Algolia or similar) -->
+            <!-- Note: Currently commented out - uncomment when search is implemented -->
+
+            <!-- External JavaScript libraries and custom scripts -->
+            {% include components/js-cdn.html %}
+        </div>
+    </body>
+</html>

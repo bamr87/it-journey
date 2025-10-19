@@ -1,0 +1,96 @@
+<!-- 
+    file: navbar.html
+    path: /includes/navbar.html
+    includes:
+    purpose: Offcanvas main navigation following Bootstrap 5 best practices
+ -->
+
+<!-- Navigation Links - Offcanvas -->
+<div class="offcanvas offcanvas-end col-lg-2" tabindex="-1" id="bdNavbar" aria-labelledby="mainNavOffcanvasLabel">
+
+    <!-- Main Navigation Header - Offcanvas -->
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="mainNavOffcanvasLabel">Main Navigation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
+    </div>
+
+    <!-- Main Navigation Body - Offcanvas -->
+    <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-lg-center text-start flex-grow-1">
+            {%- for link in site.data.navigation.main -%}
+                {%- assign has_children = link.sublinks and link.sublinks.size > 0 -%}
+
+                {%- if has_children -%}
+                    <li class="nav-item dropdown d-flex align-items-center">
+                        <!-- Parent link navigates directly -->
+                        <a
+                            class="nav-link"
+                            href="{{ link.url | relative_url }}"
+                            {%- if link.url == page.url -%} aria-current="page"{%- endif -%}
+                        >
+                            {{ link.title }}
+                        </a>
+
+                        <!-- Split toggle opens the dropdown -->
+                        <a
+                            class="nav-link dropdown-toggle dropdown-toggle-split ms-2"
+                            href="#"
+                            id="dropdown-{{ link.title | slugify }}"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            aria-label="Toggle {{ link.title }} menu"
+                        >
+                            <span class="visually-hidden">Toggle dropdown</span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-start w-100" aria-labelledby="dropdown-{{ link.title | slugify }}">
+                            {%- for sublink in link.sublinks -%}
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ sublink.url | relative_url }}"
+                                        {%- if sublink.url == page.url -%} aria-current="page"{%- endif -%}
+                                    >
+                                        {{ sublink.title }}
+                                    </a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    </li>
+                {%- else -%}
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="{{ link.url | relative_url }}"
+                            {%- if link.url == page.url -%} aria-current="page"{%- endif -%}
+                        >
+                            {{ link.title }}
+                        </a>
+                    </li>
+                {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>
+
+<!-- Script to handle offcanvas navigation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links in the offcanvas
+    const offcanvasLinks = document.querySelectorAll('#bdNavbar .nav-link[href]:not(.dropdown-toggle), #bdNavbar .dropdown-item[href]');
+    
+    offcanvasLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Allow the navigation to happen
+            // Then close the offcanvas after a brief delay
+            setTimeout(() => {
+                const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('bdNavbar'));
+                if (offcanvas) {
+                    offcanvas.hide();
+                }
+            }, 100);
+        });
+    });
+});
+</script>

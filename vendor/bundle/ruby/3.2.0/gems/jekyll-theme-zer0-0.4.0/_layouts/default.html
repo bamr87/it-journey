@@ -1,0 +1,85 @@
+---
+layout: root
+---
+<!--
+  ===================================================================
+  DEFAULT LAYOUT - Standard content layout with sidebars
+  ===================================================================
+  
+  File: default.html
+  Path: _layouts/default.html
+  Inherits: root.html
+  Purpose: Primary content layout with sidebar navigation and table of contents
+  
+  Template Logic:
+  - Creates a responsive three-column layout using Bootstrap grid
+  - Left sidebar: Site navigation and content outline (collapsible on mobile)
+  - Center: Main content area with page title and body content
+  - Right sidebar: Table of contents and page shortcuts (hidden on mobile)
+  - Implements scroll spy for navigation highlighting
+  - Responsive design that stacks vertically on mobile devices
+  
+  Layout Structure:
+  1. Container wrapper with Bootstrap responsive classes
+  2. Left sidebar (bd-sidebar) - Navigation and outline
+  3. Main content area (bd-main) with:
+     - Intro section (page title, metadata)
+     - Right sidebar (bd-toc) - Table of contents
+     - Content area (bd-content) - Main page content
+  
+  Dependencies:
+  - sidebar-left.html: Site navigation and content outline
+  - intro.html: Page title, breadcrumbs, and metadata
+  - sidebar-right.html: Table of contents and page shortcuts
+  
+  Bootstrap Classes Used:
+  - container-xxl: Extra large responsive container
+  - bd-gutter: Custom Bootstrap spacing
+  - bd-layout: Custom layout utility class
+  - bd-sidebar: Custom sidebar styling
+  - bd-main: Main content area
+  - bd-toc: Table of contents styling
+  - bd-content: Content area styling
+  ===================================================================
+-->
+
+<!-- ================================================ -->
+<!-- MAIN LAYOUT CONTAINER                           -->
+<!-- Bootstrap responsive container with custom grid -->
+<!-- ================================================ -->
+<div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+
+    <!-- ================================ -->
+    <!-- LEFT SIDEBAR - Navigation       -->
+    <!-- ================================ -->
+    <!-- Site navigation, content outline, and offcanvas menu for mobile -->
+    <aside class="bd-sidebar">
+        {% include navigation/sidebar-left.html %}
+    </aside>
+    
+    <!-- ================================ -->
+    <!-- MAIN CONTENT AREA               -->
+    <!-- ================================ -->
+    <!-- Primary content section with scroll spy for table of contents navigation -->
+    <main class="bd-main order-1" data-spy="scroll" data-bs-target="toc-content" data-offset="0">
+
+        <!-- Page introduction: title, breadcrumbs, metadata -->
+        {% include content/intro.html %}
+
+        <!-- =============================== -->
+        <!-- RIGHT SIDEBAR - Table of Contents -->
+        <!-- =============================== -->
+        <!-- Page outline, shortcuts, and related links (hidden on mobile) -->
+        <div class="bd-toc text-body-secondary">
+            {% include navigation/sidebar-right.html %}
+        </div>
+        
+        <!-- =============================== -->
+        <!-- MAIN CONTENT BODY              -->
+        <!-- =============================== -->
+        <!-- Where the actual page content is rendered -->
+        <div id="main-content" class="bd-content ps-lg-2">
+            {{ content }}
+        </div>
+    </main>
+</div>

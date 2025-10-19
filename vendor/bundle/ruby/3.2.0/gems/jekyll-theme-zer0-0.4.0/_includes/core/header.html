@@ -1,0 +1,125 @@
+<!--
+  ===================================================================
+  HEADER - Main Navigation and Site Header
+  ===================================================================
+  
+  File: header.html
+  Path: _includes/header.html
+  Purpose: Primary site navigation with responsive design and 
+           offcanvas mobile menu integration
+  
+  Template Logic:
+  - Responsive navigation bar with Bootstrap 5 components
+  - Offcanvas sidebars for mobile navigation
+  - Brand logo and home navigation integration
+  - Settings modal and navigation toggles
+  
+  Dependencies:
+  - branding.html: Site title and logo display
+  - navbar.html: Main navigation menu items
+  - Bootstrap 5 offcanvas and navbar components
+  
+  Responsive Behavior:
+  - Desktop: Full horizontal navigation bar
+  - Mobile: Collapsed navigation with hamburger menu
+  - Offcanvas panels for sidebar and navigation
+  
+  TODO: Fix Nanobar progress bar positioning and animation
+  ===================================================================
+-->
+
+<header id="navbar" class="container-fluid text-center z-1" role="navigation">
+
+    <!-- ================================ -->
+    <!-- TOP NAVIGATION BAR              -->
+    <!-- ================================ -->
+    <div class="navbar navbar-expand-lg bg-body-tertiary flex-nowrap justify-content-center bottom-shadow">
+       
+        <!-- ========================== -->
+        <!-- PROGRESS BAR INDICATOR    -->
+        <!-- ========================== -->
+        <!-- Fixed position progress bar for page loading feedback -->
+        <div class="nanobar" id="top-progress-bar" style="position: fixed;">
+            <div class="bar"></div>
+        </div>
+        
+        <!-- ========================== -->
+        <!-- MAIN NAVIGATION CONTAINER -->
+        <!-- ========================== -->
+        <nav class="container-xl order-2 order-lg-1 grid gap-1">
+
+            <!-- ========================== -->
+            <!-- MOBILE MENU CONTROLS      -->
+            <!-- ========================== -->
+            
+            <!-- Left Sidebar Toggle - Mobile view only -->
+            <div class="bd-navbar-toggle">
+                <button class="navbar-toggler p-2" 
+                        type="button" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#bdSidebar" 
+                        aria-controls="bdSidebar" 
+                        aria-label="Toggle navigation">
+                    <span class="bi bi-list"></span>
+                </button>
+            </div>
+
+            <!-- ========================== -->
+            <!-- BRAND AND HOME NAVIGATION -->
+            <!-- ========================== -->
+            <div class="container d-inline-flex text-center">
+                <!-- Home Navigation Button -->
+                {%- for home in site.data.navigation.home -%}
+                <a class="btn" href="{{ home.url | relative_url }}">
+                    <i class="{{ site.default_icon}} {{ home.icon }}"></i>
+                </a>
+                {% endfor %}
+                
+                <!-- Brand Logo Link to Root -->
+                <!-- Logo path configured in _config.yml -->
+                {% capture logo_path %}{{ site.logo }}{% endcapture %}
+                <a class="navbar-brand" href="{{ site.baseurl }}/">
+                    <img src="{{ logo_path | relative_url }}" alt="Logo" width="30" height="30">
+                </a>
+            </div>
+            
+            <!-- ========================== -->
+            <!-- SITE BRANDING SECTION     -->
+            <!-- ========================== -->
+            <!-- Site title and subtitle display -->
+            {% include core/branding.html %}
+    
+            <!-- ========================== -->
+            <!-- MAIN NAVIGATION MENU      -->
+            <!-- ========================== -->
+            <!-- Primary navigation items from _data/navigation.yml -->
+            {% include navigation/navbar.html %}
+
+            <!-- ========================== -->
+            <!-- UTILITY CONTROLS          -->
+            <!-- ========================== -->
+            
+            <!-- Settings Modal Toggle -->
+            <div class="btn"
+                data-bs-toggle="modal" 
+                data-bs-target="#info-section" 
+                aria-expanded="false" 
+                aria-controls="#info-section"
+                role="button">
+                <i type="button" class="{{site.default_icon}} bi-gear"></i>
+            </div>
+
+            <!-- Navigation Menu Toggle - Mobile view -->
+            <div class="bd-navbar-toggle">
+                <button class="navbar-toggler p-2" 
+                        type="button" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#bdNavbar" 
+                        aria-controls="bdNavbar" 
+                        aria-label="Toggle navigation">
+                    <span class="bi bi-three-dots"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,163 @@
+<!--
+  ===================================================================
+  HEAD - HTML Document Head Section
+  ===================================================================
+  
+  File: head.html
+  Path: _includes/head.html
+  Purpose: Complete HTML document head section with meta tags, styles, 
+           and essential JavaScript libraries
+  
+  Template Logic:
+  - Loads critical JavaScript libraries before page render
+  - Includes SEO optimization and social media meta tags
+  - Configures third-party integrations (Analytics, MathJax)
+  - Sets up progress bar and UI enhancement scripts
+  
+  Dependencies:
+  - seo.html: SEO meta tags and Open Graph data
+  - google-analytics.html: Google Analytics tracking
+  - google-tag-manager-head.html: GTM head section
+  
+  Performance Notes:
+  - Scripts loaded in head for immediate availability
+  - MathJax loaded asynchronously to prevent render blocking
+  - Nanobar provides visual loading feedback
+  ===================================================================
+-->
+
+<!-- ================================ -->
+<!-- ANALYTICS AND TRACKING          -->
+<!-- ================================ -->
+<!-- Google Tag Manager - Must be in head section for proper tracking -->
+{% include analytics/google-tag-manager-head.html %}
+
+<!-- ================================ -->
+<!-- JAVASCRIPT LIBRARIES            -->
+<!-- ================================ -->
+<!-- Custom theme JavaScript - Loaded early for UI functionality -->
+<script src="{{ '/assets/js/myScript.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/auto-hide-nav.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/back-to-top.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/halfmoon.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/side-bar-folders.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/code-copy.js' | relative_url }}"></script>
+
+<!-- ================================ -->
+<!-- THIRD PARTY INTEGRATIONS        -->
+<!-- ================================ -->
+
+<!-- Mermaid Diagrams - Conditional loading based on page front matter -->
+{% if page.mermaid %}
+  {% include components/mermaid.html %}
+{% endif %}
+
+<!-- Nano Progress Bar - Visual loading indicator -->
+<script src="{{'/assets/js/nanobar.min.js' | relative_url }}"></script>
+
+<!-- Progress Bar Initialization - Creates visual loading feedback -->
+<script>
+    // Wait for DOM to be ready before initializing Nanobar
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if the progress bar element exists before initializing
+        var progressElement = document.getElementById('top-progress-bar');
+        if (progressElement) {
+            var options = {
+              classname: 'nanobar',
+              id: 'top-progress-bar'
+            };
+            var nanobar = new Nanobar(options);
+            nanobar.go( 30 );  // Initial loading state
+            nanobar.go( 76 );  // Partial completion
+            nanobar.go(100);   // Complete loading
+        } else {
+            console.warn('Progress bar element #top-progress-bar not found. Skipping Nanobar initialization.');
+        }
+    });
+</script>
+
+<!-- MathJax - Mathematical notation rendering (async for performance) -->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ================================ -->
+<!-- HTML DOCUMENT META DATA         -->
+<!-- ================================ -->
+<!-- Essential meta tags for proper document rendering and mobile support -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- ================================ -->
+<!-- SEO AND SOCIAL MEDIA META TAGS  -->
+<!-- ================================ -->
+<!-- Comprehensive SEO optimization including Open Graph and Twitter Cards -->
+{% include content/seo.html %}
+
+<!-- ========================== -->
+<!-- STRUCTURED DATA MARKUP    -->
+<!-- ========================== -->
+<!-- Enhanced meta data for rich snippets and social media -->
+{% if page.title %}
+    <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+{% endif %}
+{% if page.description %}
+    <meta itemprop="description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
+{% elsif page.excerpt %}
+    <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once}} ">
+{% endif %}
+{% if page.date %}
+    <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+{% if page.last_modified_at %}
+    <meta itemprop="dateModified" content="{{ page.lastmod | date_to_xmlschema }}">
+{% endif %}
+
+<!-- ========================== -->
+<!-- ANALYTICS INTEGRATION     -->
+<!-- ========================== -->
+<!-- Google Analytics tracking - Configured in _config.yml -->
+{% include analytics/google-analytics.html %}
+
+
+<!-- ================================ -->
+<!-- CSS FRAMEWORKS AND LIBRARIES   -->
+<!-- ================================ -->
+
+<!-- ========================== -->
+<!-- BOOTSTRAP 5 FRAMEWORK     -->
+<!-- ========================== -->
+<!-- Bootstrap 5.3.3 - Primary CSS framework via CDN for performance -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<!-- Local Bootstrap Installation - Alternative for offline development -->
+<!-- <script src="/assets/js/bootstrap.js"></script> -->
+
+<!-- ========================== -->
+<!-- ICON LIBRARIES             -->
+<!-- ========================== -->
+<!-- Bootstrap Icons 1.10.3 - Complete icon set for UI elements -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+<!-- ========================== -->
+<!-- CUSTOM THEME STYLES       -->
+<!-- ========================== -->
+<!-- Primary theme stylesheet - Core styling and layout -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Custom CSS overrides - Theme customizations and tweaks -->
+<link rel="stylesheet" href="{{'/assets/css/custom.css' | relative_url }}">
+
+<!-- Statistics page specific styles -->
+{% if page.layout == 'stats' %}
+<link rel="stylesheet" href="{{ '/assets/css/stats.css' | relative_url }}">
+{% endif %}
+
+<!-- ========================== -->
+<!-- EXPERIMENTAL FRAMEWORKS   -->
+<!-- ========================== -->
+<!-- Tailwind CSS - Currently disabled, enable for utility-first styling -->
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+<!-- Docs CSS - Alternative stylesheet, currently disabled due to scroll spy issues -->
+<!-- TODO: Replace with compiled Sass when scroll spy functionality is fixed -->
+<!-- <link rel="stylesheet" href="/assets/css/docs.css"> -->

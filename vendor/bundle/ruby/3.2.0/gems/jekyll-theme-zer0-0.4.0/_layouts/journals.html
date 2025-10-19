@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<!--
+  Simple journals layout for debugging stack overflow issue
+-->
+
+<div id="main" role="main">
+    <div class="archive">
+        <h1 id="page-title">{{ page.title }}</h1>
+        {{ content }}
+    </div>
+    
+    <!-- Simple navigation without complex logic -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-lg justify-content-center">
+            <li class="page-item">
+                {% if page.previous %}
+                    <a class="page-link" href="{{ page.previous.url }}">Previous</a>
+                {% else %}
+                    <span class="page-link disabled">Previous</span>
+                {% endif %}
+            </li>
+            <li class="page-item">
+                {% if page.next %}
+                    <a class="page-link" href="{{ page.next.url }}">Next</a>
+                {% else %}
+                    <span class="page-link disabled">Next</span>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>
