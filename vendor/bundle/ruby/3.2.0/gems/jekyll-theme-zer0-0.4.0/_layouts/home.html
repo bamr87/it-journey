@@ -1,0 +1,66 @@
+---
+layout: root
+---
+<!--
+  ===================================================================
+  HOME LAYOUT - Homepage template with minimal structure
+  ===================================================================
+  
+  File: home.html
+  Path: _layouts/home.html
+  Inherits: root.html
+  Purpose: Clean, minimal layout for the site homepage
+  
+  Template Logic:
+  - Provides a simple container for homepage content
+  - Conditionally displays page title if specified in frontmatter
+  - Includes RSS feed subscription link for blog functionality
+  - Bypasses the sidebar navigation system for a cleaner look
+  - Focuses on content presentation without distractions
+  
+  Layout Structure:
+  1. Main home container wrapper
+  2. Optional page title (controlled by frontmatter)
+  3. Main content area (from Markdown or HTML)
+  4. RSS subscription link for blog updates
+  
+  Usage:
+  - Set layout: home in page frontmatter
+  - Optionally include title: "Page Title" for display
+  - Content can include hero sections, feature highlights, etc.
+  
+  Design Philosophy:
+  - Minimal structure allows for maximum content flexibility
+  - RSS link maintains blog connectivity
+  - Clean presentation suitable for landing pages
+  ===================================================================
+-->
+
+<!-- ================================ -->
+<!-- HOME PAGE CONTAINER             -->
+<!-- ================================ -->
+<div class="home">
+    <!-- ========================== -->
+    <!-- OPTIONAL PAGE TITLE        -->
+    <!-- ========================== -->
+    <!-- Display title only if specified in page frontmatter -->
+    <!-- Usage: Add 'title: "Homepage Title"' to page frontmatter -->
+    {%- if page.title -%}
+        <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+    
+    <!-- ========================== -->
+    <!-- MAIN CONTENT AREA          -->
+    <!-- ========================== -->
+    <!-- Homepage content rendered from Markdown or HTML -->
+    <!-- Can include hero sections, feature cards, etc. -->
+    {{ content }}
+
+    <!-- ========================== -->
+    <!-- RSS SUBSCRIPTION LINK      -->
+    <!-- ========================== -->
+    <!-- Provides easy access to RSS feed for blog updates -->
+    <p class="rss-subscribe">
+        subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
+    </p>
+</div>

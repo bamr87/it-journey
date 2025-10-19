@@ -1,0 +1,123 @@
+<!-- 
+  file: sitemap.html
+  path: _includes/content/sitemap.html
+  description: This is the snippet for the sitemap page.
+ -->
+
+<h1>Sitemap - Index</h1>
+
+<input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for keywords..">
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" data-type="string" data-order="desc">Collection <i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Page <i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Description<i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Excerpt<i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Path<i class="sort-icon"></i></th>
+                <th scope="col" data-type="date" data-order="desc">Last Modified Date <i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Categories<i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Tags<i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Absolute URL<i class="sort-icon"></i></th>
+                <th scope="col" data-type="string" data-order="desc">Author <i class="sort-icon"></i></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for collection in site.collections %}
+            {% for item in collection.docs %}
+            <tr>
+                <td>{{ collection.label }}</td>
+                <td>
+                    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                </td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.excerpt }}</td>
+                <td>{{ item.path }}</td>
+                <td>{{ item.lastmod | date: "%Y/%m/%d" | default: "null" }}</td>
+                <td>{{ item.categories | join: ", " }}</td>
+                <td>{{ item.tags | join: ", " }}</td>
+                <td>
+                    <a href="{{ site.url }}{{ item.url }}">{{ site.url }}{{ item.url }}</a>
+                </td>
+                <td>{{ item.author }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Sorting feature -->
+
+<script>
+    document.querySelectorAll('th').forEach(header => {
+        header.addEventListener('click', () => {
+            const tableElement = document.querySelector('table');
+            const headerIndex = Array.prototype.indexOf.call(header.parentNode.children, header);
+            const currentTbody = tableElement.querySelector('tbody');
+            const newTbody = currentTbody.cloneNode(true);
+            const rows = Array.from(newTbody.querySelectorAll('tr'));
+            const type = header.getAttribute('data-type');
+            const order = header.getAttribute('data-order');
+            const sortedRows = rows.sort((a, b) => {
+                const aValue = a.children[headerIndex].textContent;
+                const bValue = b.children[headerIndex].textContent;
+                if (type === 'date') {
+                    const aDate = aValue === "null" ? new Date(0) : new Date(...aValue.split('/').map((val, idx) => parseInt(val) - (idx === 1 ? 1 : 0))); // subtract 1 from month
+                    const bDate = bValue === "null" ? new Date(0) : new Date(...bValue.split('/').map((val, idx) => parseInt(val) - (idx === 1 ? 1 : 0))); // subtract 1 from month
+                    return order === 'asc' ? aDate - bDate : bDate - aDate;
+                }
+                return order === 'asc' ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+            });
+            sortedRows.forEach(row => newTbody.appendChild(row));
+            tableElement.replaceChild(newTbody, currentTbody);
+            header.setAttribute('data-order', order === 'asc' ? 'desc' : 'asc');
+            document.querySelectorAll('.sort-icon').forEach(icon => icon.className = 'sort-icon'); // clear all icons
+            header.querySelector('.sort-icon').className = order === 'asc' ? 'sort-icon bi bi-arrow-down' : 'sort-icon bi bi-arrow-up'; // set the icon for the sorted column
+
+        });
+    });
+    </script>
+
+<!-- searchbar script -->
+
+<script>
+function searchFunction() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("searchBar");
+    filter = input.value.toLowerCase();
+    table = document.getElementsByTagName("table");
+    tr = table[0].getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
+</script>
+
+<script>
+    // Parse the URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    // Get the 'q' parameter
+    const searchQuery = urlParams.get('q');
+    // If a search query was provided, set it as the value of the search bar
+    if (searchQuery) {
+        document.getElementById('searchBar').value = searchQuery;
+        // Call the search function
+        searchFunction();
+    }
+</script>

@@ -1,0 +1,28 @@
+<!-- Quick Links bar for landing page; uses site.resources config -->
+<div class="bg-dark text-white py-3">
+  <div class="container-xl px-4 px-md-5">
+    <div class="row g-3 justify-content-center text-center align-items-center">
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <a class="btn btn-outline-light btn-sm w-100" href="{{ site.resources.github_repo | default: site.github.repository_url | default: '/' }}" target="_blank" rel="noopener">
+          <i class="bi bi-github me-2"></i> GitHub
+        </a>
+      </div>
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <a class="btn btn-outline-light btn-sm w-100" href="{{ site.resources.rubygems.url | default: '#' }}" target="_blank" rel="noopener">
+          <i class="bi bi-gem me-2"></i> RubyGems
+        </a>
+      </div>
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <a class="btn btn-outline-light btn-sm w-100" href="{{ site.resources.docker.hub_url | default: '#' }}" target="_blank" rel="noopener">
+          <i class="bi bi-box-seam me-2"></i> Docker Hub
+        </a>
+      </div>
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <a class="btn btn-outline-light btn-sm w-100" href="{{ site.resources.github_fork | default: site.github.repository_url | append: '/fork' }}" target="_blank" rel="noopener">
+          <i class="bi bi-git me-2"></i> Fork Project
+        </a>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,57 @@
+<!--
+    Title: Dev Shortcuts
+    Description: This file contains the dev shortcuts for the site.
+    file: dev-shortcuts.html
+    variables: 
+        - site.repository
+        - site.default_icon
+        - site.collections_dir
+        - site.repository_name
+        - site.nav-file
+        - site.local_git_pc
+        - site.local_git_mac
+        - page.collection
+        - page_dir
+        - testvar
+    references:
+        - https://shopify.github.io/liquid/tags/variable/#capture
+        - https://getbootstrap.com/docs/5.3/components/collapse/
+    tutorial: 
+        - https://jekyllcodex.org/without-plugin/hidden-settings/
+        - https://jekyllcodex.org/without-plugin/hidden-settings/#collapse-feature
+ -->
+
+ <!-- TODO: Article about the collapse feature in Bootstrap https://getbootstrap.com/docs/5.3/components/collapse/--> 
+ <!-- TODO: Write tutorial on creating this hidden settings feature -->
+
+ <!-- Source Code Control Shortcuts - Page -->
+ <div class="container text-center">
+
+    {% if page.collection %}
+        {% capture page_dir %}{{ site.collections_dir }}{% endcapture %}
+        {% assign testvar = "collection exists" %}
+    {% endif %}
+    
+    <!-- Source Code Control Shortcuts - Page -->
+        <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/{{site.branch}}/{{ page_dir }}/{{page.path}}">
+            <i class="{{site.default_icon}} {{site.default_icon}}-github"></i>
+            <!-- https://icons.getbootstrap.com/icons/github/ -->
+        </a>
+        <a class="btn bg-primary" href="https://github.dev/{{site.repository}}/blob/{{site.branch}}/{{ page_dir }}/{{ page.path }}">
+            <i class="{{site.default_icon}} {{site.default_icon}}-cloud"></i>
+            <!-- https://icons.getbootstrap.com/icons/microsoft/ -->
+        </a>
+    
+    <!-- Source Code Control Shortcuts - Site and Nav -->
+    
+        <a class="btn bg-primary" href="vscode://file{{ site.local_git}}/{{ site.repository_name }}/{{ page_dir }}/{{ page.path }}">
+            <i class="{{site.default_icon}} {{site.default_icon}}-code"></i>
+        </a>
+
+        <!-- site config -->
+        <a class="btn bg-primary" href="https://github.com/{{site.repository}}/blob/{{site.branch}}/_config.yml">
+            <i class="bi bi-gear"></i>
+            <!-- https://icons.getbootstrap.com/icons/gear/ -->
+        </a>
+
+</div>

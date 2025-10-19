@@ -1,0 +1,63 @@
+<!--
+  file: nav_list.html
+  path: /_includes/nav_list.html
+  includes:
+-->
+
+<!-- Navigation List -->
+
+{% assign navigation = site.data.navigation[include.nav] %}
+
+  <!-- Navigation Title -->
+  {% for nav in navigation %}
+    {% if nav.nav-title %}
+      <h3 class="nav__title" style="padding-left: 0;">{{ nav.nav-title }}</h3>
+    {% endif %}
+  {% endfor %}
+
+
+  
+  <ul class="list-unstyled fw-normal pb-2 small">
+  <!-- Accordion Nav List -->
+  {% for nav in navigation %}
+      <!-- Nav Title Only Link -->
+      {% if nav.sublinks == null and nav.title%}
+      <li class="mb-1">
+        <a href="{{ nav.url | relative_url }}" class="active d-inline-flex align-items-center rounded">
+          <span class="">{{ nav.title }}</span>
+        </a>
+      </li>
+      {% endif %}
+
+      {% if nav.sublinks %}
+        <li class="mb-1">
+          <strong class="d-flex w-100 align-items-center fw-semibold collapsed"
+          data-bs-toggle="collapse" 
+          data-bs-target="#{{ nav.title }}-collapse" 
+          aria-expanded="true" 
+          aria-current="true">
+            {{ nav.title }}
+          </strong>
+          <!-- <button class="btn d-inline-flex align-items-center rounded collapsed" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#{{ nav.title }}-collapse" 
+                  aria-expanded="true" 
+                  aria-current="true">
+            {{ nav.title }}
+          </button> -->
+          <div class="collapse show" id="{{ nav.title }}-collapse" style="">
+            <ul class="list-unstyled fw-normal pb-1 small">
+              {% for child in nav.sublinks %}
+                <li>
+                  <a href="{{ child.url | relative_url }}"
+                    {% if child.url == page.url %} class="active d-inline-flex align-items-center rounded"{% endif %}
+                      >{{ child.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>

@@ -1,0 +1,21 @@
+<!-- sidebar-categories.html -->
+<div class="d-flex flex-column flex-shrink-0" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center text-decoration-none">
+        <span class="fs-4">Categories</span>
+    </a>
+    <hr>
+    {% for category in site.categories %}
+        <div class="">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#{{category[0]}}-list" aria-expanded="false">
+                {{ category[0] }}
+            </button>
+            <div class="collapse" id="{{category[0]}}-list">
+                <ul class="btn-toggle-nav list-unstyled fw-normal small">
+                    {% for post in category[1] %}
+                        <li class="link-light"><a href="{{ post.url }}" class=" rounded">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</div>

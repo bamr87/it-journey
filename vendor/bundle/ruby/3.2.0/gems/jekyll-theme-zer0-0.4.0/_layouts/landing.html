@@ -1,0 +1,154 @@
+---
+layout: root
+---
+<!--
+  ===================================================================
+  LANDING LAYOUT - Welcome page for first-time visitors
+  ===================================================================
+  
+  File: landing.html
+  Path: _layouts/landing.html
+  Inherits: root.html
+  Purpose: Create an engaging first impression for visitors discovering the site
+  
+  Template Logic:
+  - Hero section with clear value proposition
+  - Feature highlights with visual appeal
+  - Quick navigation to key areas
+  - Professional presentation with Bootstrap components
+  - Mobile-responsive design for all devices
+  
+  Layout Features:
+  - Hero banner with call-to-action
+  - Feature cards with icons and descriptions
+  - Quick start guide and navigation
+  - Social proof and credibility indicators
+  - Clean, professional aesthetic
+  
+  Target Audience:
+  - First-time visitors exploring the repository
+  - Developers looking for Jekyll themes
+  - Users seeking Docker-optimized solutions
+  - People interested in error-free development
+  
+  Conversion Goals:
+  - Encourage exploration of documentation
+  - Drive adoption of the theme
+  - Build trust through professional presentation
+  - Guide users to relevant resources
+  
+  Dependencies:
+  - Bootstrap 5 components and utilities
+  - Custom CSS for enhanced styling
+  - Responsive images and icons
+  ===================================================================
+-->
+
+<!-- ================================ -->
+<!-- HERO SECTION                     -->
+<!-- ================================ -->
+<div class="bg-primary text-white">
+    <div class="container-xl py-5 px-4 px-md-5">
+        <div class="row align-items-center min-vh-50 g-4 g-lg-5">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-3">{{ page.title }}</h1>
+                <p class="lead mb-4">{{ page.description }}</p>
+                <div class="d-flex flex-column flex-md-row gap-3">
+                    <a href="#get-started" class="btn btn-light btn-lg">
+                        <i class="bi bi-rocket-takeoff me-2"></i>Get Started
+                    </a>
+                    <a href="#features" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-list-check me-2"></i>Features
+                    </a>
+                    <a href="{{ site.resources.github_repo }}" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-github me-2"></i>GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                {% if page.hero_image %}
+                <img src="{{ page.hero_image }}" alt="{{ page.title }}" class="img-fluid rounded shadow-lg">
+                {% else %}
+                <div class="bg-light rounded p-5 text-dark">
+                    <i class="bi bi-code-square display-1"></i>
+                    <p class="mt-3 mb-0">Jekyll Theme</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================================ -->
+<!-- MAIN CONTENT AREA               -->
+<!-- ================================ -->
+{% include landing/landing-quick-links.html %}
+
+<div class="container-xl py-5 px-4 px-md-5">
+    {{ content }}
+</div>
+
+<!-- ================================ -->
+<!-- FEATURES SECTION                 -->
+<!-- ================================ -->
+<div class="py-5 bg-body-tertiary" id="features">
+    <div class="container-xl px-4 px-md-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+        <h2 class="display-5 fw-bold text-body-emphasis">Why Choose zer0-mistakes?</h2>
+        <p class="lead text-body-secondary">Built for developers who value reliability, simplicity, and modern workflows</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-shield-check fs-4"></i>
+                        </div>
+            <h5 class="card-title text-body-emphasis">Error-Free Development</h5>
+            <p class="card-text text-body-secondary">Built-in error handling and self-healing installation process ensures a smooth development experience.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-boxes fs-4"></i>
+                        </div>
+            <h5 class="card-title text-body-emphasis">Docker-First Approach</h5>
+            <p class="card-text text-body-secondary">Cross-platform compatibility with zero local configuration. Works on Apple Silicon, Intel, and Linux.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-lightning-charge fs-4"></i>
+                        </div>
+            <h5 class="card-title text-body-emphasis">AI-Powered Setup</h5>
+            <p class="card-text text-body-secondary">Intelligent installation automation that detects and fixes common issues automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================================ -->
+<!-- QUICK START SECTION             -->
+<!-- ================================ -->
+<div class="container-xl py-5 px-4 px-md-5" id="get-started">
+    <div class="row">
+        <div class="col-12 col-xl-10 mx-auto text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+            <p class="lead mb-4">Choose your preferred installation method and be up and running in minutes</p>
+            {% include landing/landing-install-cards.html %}
+        </div>
+    </div>
+</div>

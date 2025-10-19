@@ -1,0 +1,66 @@
+<!--
+  file: _includes/intro.html
+  description: Enhanced intro section with improved share functionality and better button alignment
+  path: _includes/intro.html
+  features:
+    - Responsive share dropdown with multiple social platforms
+    - Properly aligned action buttons at bottom right
+    - Improved accessibility with icons and labels
+    - Clean button grouping with consistent spacing
+--> 
+{% if page.collection %}
+  {% capture page_dir %}{{ site.collections_dir }}{% endcapture %}
+  {% assign testvar = "collection exists" %}
+{% endif %}
+
+<!-- Intro Section -->
+
+<div class="bd-intro pt-5 ps-lg-2 position-relative" style="
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{site.baseurl}}/{{ site.public_folder }}/{{ page.preview | default: site.info_banner }}') no-repeat center center / cover;
+  color: #fff;">
+
+  <br>
+  <h1>{{ page.title }}</h1>
+  <p>By {{ page.author | default: site.author.name }}</p>
+  <p>{{ page.description }}</p>
+  <p>Estimated reading time: {{ content | number_of_words | divided_by:200 }} minutes</p>
+  <!-- Action Buttons Group -->
+  <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2">
+    <!-- Share Button -->
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button" id="shareDropdownBottom" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-share"></i>
+        <span class="d-none d-sm-inline ms-1">Share</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="shareDropdownBottom">
+        <li>
+          <a class="dropdown-item" href="https://reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&amp;title={{ page.title | url_encode }}" target="_blank">
+            <i class="bi bi-reddit me-2"></i>Share on Reddit
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank">
+            <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank">
+            <i class="bi bi-twitter me-2"></i>Share on Twitter
+          </a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <button class="dropdown-item" onclick='navigator.clipboard.writeText("{{ page.url | absolute_url }}"); alert("Link copied to clipboard!");'>
+            <i class="bi bi-clipboard me-2"></i>Copy Link
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Edit on Github Button -->
+    <a href="https://github.com/{{ site.repository }}/blob/master/{{ page_dir }}/{{ page.path }}" class="btn btn-dark">
+      <i class="bi bi-github"></i>
+      <span class="d-none d-sm-inline ms-1">Edit on GitHub</span>
+    </a>
+  </div>
+</div>

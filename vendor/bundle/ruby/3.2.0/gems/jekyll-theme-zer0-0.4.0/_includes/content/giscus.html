@@ -1,0 +1,60 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                giscus.html                                                        ║
+║                                         GitHub Discussions Comment System                                         ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                   ║
+║ Purpose:      Integrates Giscus comment system powered by GitHub Discussions                                     ║
+║ Location:     /_includes/giscus.html                                                                             ║
+║ Usage:        {% include giscus.html %} (typically at bottom of posts/pages)                                    ║
+║ Dependencies: GitHub repository with Discussions enabled, site.repository, site.giscus configuration           ║
+║                                                                                                                   ║
+║ Features:                                                                                                         ║
+║ • GitHub Discussions-based commenting system                                                                     ║
+║ • Automatic theme detection (preferred_color_scheme)                                                             ║
+║ • Pathname-based mapping for unique comment threads                                                              ║
+║ • Reaction support for enhanced user engagement                                                                  ║
+║ • Top-positioned input for better UX                                                                             ║
+║                                                                                                                   ║
+║ Configuration Options:                                                                                            ║
+║ • data-repo: GitHub repository (site.repository)                                                                 ║
+║ • data-repo-id: GitHub repository ID (site.giscus.data-repo-id)                                                 ║
+║ • data-category-id: Discussions category ID (site.giscus.data-category-id)                                      ║
+║ • data-mapping: "pathname" - maps comments to page URL                                                           ║
+║ • data-strict: "1" - enables strict mapping mode                                                                 ║
+║                                                                                                                   ║
+║ Setup Requirements:                                                                                               ║
+║ • GitHub repository with Discussions feature enabled                                                             ║
+║ • Giscus app installed on the repository                                                                         ║
+║ • Correct repo-id and category-id in _config.yml                                                                 ║
+║                                                                                                                   ║
+║ Reference: Feature Request #FR000001                                                                              ║
+║ Documentation: https://giscus.app/                                                                                ║
+║                                                                                                                   ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- ===================================================================================================== -->
+<!--                                      GISCUS COMMENT SYSTEM                                           -->
+<!-- ===================================================================================================== -->
+<!-- GitHub Discussions-powered comment system integration                                                -->
+<!-- Feature Request: #FR000001                                                                           -->
+<!-- Documentation: https://giscus.app/                                                                   -->
+<!-- Async loading: Non-blocking comment system initialization                                            -->
+
+<!-- giscus app - https://giscus.app/ - Feature # FR000001 -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="{{ site.repository }}"
+        data-repo-id="{{ site.giscus.data-repo-id }}"
+        data-category-id="{{ site.giscus.data-category-id }}"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
