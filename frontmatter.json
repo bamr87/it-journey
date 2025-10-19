@@ -3,7 +3,7 @@
   "frontMatter.content.pageFolders": [
     {
       "title": "posts",
-      "previewPath": "/{{fm.type}}/{{year}}/{{month}}/{{day}}",
+      "previewPath": "/preview/pages/_posts/{{pathToken.relPath}}/",
       "path": "[[workspace]]/pages/_posts",
       "contentTypes": [
         "default"
@@ -12,22 +12,26 @@
     {
       "title": "quickstart",
       "path": "[[workspace]]/pages/_quickstart",
-      "filePrefix": ""
+      "filePrefix": "",
+      "previewPath": "/preview/pages/_quickstart/{{pathToken.relPath}}/"
     },
     {
       "title": "notes",
       "path": "[[workspace]]/pages/_notes",
-      "filePrefix": ""
+      "filePrefix": "",
+      "previewPath": "/preview/pages/_notes/{{pathToken.relPath}}/"
     },
     {
       "title": "about",
       "path": "[[workspace]]/pages/_about",
-      "filePrefix": ""
+      "filePrefix": "",
+      "previewPath": "/preview/pages/_about/{{pathToken.relPath}}/"
     },
     {
       "title": "docs",
       "path": "[[workspace]]/pages/_docs",
-      "filePrefix": ""
+      "filePrefix": "",
+      "previewPath": "/preview/pages/_docs/{{pathToken.relPath}}/"
     },
     {
       "title": "quests",
@@ -35,7 +39,8 @@
       "filePrefix": "",
       "contentTypes": [
         "quest"
-      ]
+      ],
+      "previewPath": "/preview/pages/_quests/{{pathToken.relPath}}/"
     }
   ],
   "frontMatter.templates.enabled": true,
@@ -97,17 +102,17 @@
         {
           "title": "sub-title",
           "name": "sub-title",
-          "type": "datetime"
+          "type": "string"
         },
         {
           "title": "excerpt",
           "name": "excerpt",
-          "type": "datetime"
+          "type": "string"
         },
         {
           "title": "snippet",
           "name": "snippet",
-          "type": "datetime"
+          "type": "string"
         },
         {
           "title": "author",
@@ -117,7 +122,9 @@
         {
           "title": "layout",
           "name": "layout",
-          "type": "datetime"
+          "type": "choice",
+          "choices": ["default", "journals", "collection", "root", "quest"],
+          "default": "default"
         },
         {
           "title": "keywords",
@@ -133,7 +140,8 @@
         {
           "title": "permalink",
           "name": "permalink",
-          "type": "datetime"
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
           "title": "attachments",
@@ -155,7 +163,7 @@
     {
       "name": "quest",
       "pageBundle": false,
-      "previewPath": "/quests/{{fm.level}}-{{slug}}",
+      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -188,7 +196,7 @@
           "type": "choice",
           "choices": [
             "0000",
-            "0001", 
+            "0001",
             "0010",
             "0011",
             "0100",
@@ -213,7 +221,7 @@
           "type": "choice",
           "choices": [
             "🟢 Easy",
-            "🟡 Medium", 
+            "🟡 Medium",
             "🔴 Hard",
             "⚔️ Epic"
           ],
@@ -284,7 +292,7 @@
           "choices": [
             "frontend",
             "backend",
-            "fullstack", 
+            "fullstack",
             "devops",
             "security",
             "data-science",
@@ -411,7 +419,7 @@
             },
             {
               "title": "Follow-ups",
-              "name": "followups", 
+              "name": "followups",
               "type": "string",
               "multiple": true
             },
@@ -593,8 +601,9 @@
       "fields": []
     }
   },
-  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.preview.host": "http://localhost:4002",
   "frontMatter.website.host": "https://it-journey.dev",
+  "frontMatter.preview.pathName": "/",
   "frontMatter.git.enabled": false,
   "frontMatter.data.types": [
     {
@@ -731,5 +740,6 @@
       "type": "navigation"
     }
   ],
-  "frontMatter.content.autoUpdateDate": true
+  "frontMatter.content.autoUpdateDate": true,
+  "frontMatter.framework.startCommand": "docker-compose up"
 }
