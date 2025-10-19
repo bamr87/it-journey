@@ -7,7 +7,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
   puts "Preview Generator: Jekyll environment = #{Jekyll.env}"
   
   # Only run in development environment
-  unless Jekyll.env == 'development'
+  if Jekyll.env != 'development'
     puts "Preview Generator: Skipping (not development environment)"
     next
   end
