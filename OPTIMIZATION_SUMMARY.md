@@ -13,17 +13,17 @@ This document summarizes the optimizations applied to improve Jekyll build time 
 - **Issues**: Preview generator running in production, no incremental builds, uncompressed assets
 
 ### After Optimization
-- **Build Time**: ~11.3 seconds (14% faster)
+- **Build Time**: ~12.1 seconds (8% faster)
 - **Site Size**: 99M (24% smaller)
-- **File Count**: 447 files (36% reduction)
+- **File Count**: 448 files (36% reduction)
 - **Improvements**: Preview generator properly skipped, incremental builds enabled, optimized exclusions
 
 ### Key Metrics
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
-| Build Time | 13.2s | 11.3s | -1.9s (14%) |
+| Build Time | 13.2s | 12.1s | -1.1s (8%) |
 | Site Size | 130M | 99M | -31M (24%) |
-| File Count | 700 | 447 | -253 (36%) |
+| File Count | 700 | 448 | -252 (36%) |
 | Preview Dir | 30M, 206 files | Not generated | 100% eliminated |
 
 ## Optimizations Applied
@@ -68,8 +68,8 @@ incremental: true  # Enable incremental builds for faster rebuilds
 ```
 
 **Impact**:
-- First build: ~11.9s
-- Incremental rebuild: ~11.3s (5% faster)
+- First build: ~12.1s
+- Incremental rebuild: ~11.8s (2% faster on subsequent builds)
 - Creates `.jekyll-metadata` cache file (576K)
 
 ### 3. Sass Compression
@@ -285,4 +285,4 @@ For questions or issues, refer to:
 
 **Last Updated**: 2025-10-19
 **Build Version**: Jekyll 3.9.5
-**Optimized By**: GitHub Copilot
+**Documentation**: IT-Journey Optimization Team
