@@ -2,28 +2,28 @@
 title: About
 excerpt: Discover the vision behind IT-Journey - a comprehensive learning platform that guides aspiring developers from zero to hero through open-source principles and hands-on experience.
 permalink: /about/
-lastmod: 2025-06-22T20:18:50.867Z
+lastmod: 2025-11-02T15:57:16.201Z
 slug: about
 date: 2024-05-31T01:35:49.414Z
 description: Learn about IT-Journey's mission to democratize IT education through open-source technologies and collaborative learning.
 categories:
-    - about
+  - about
 tags:
-    - about
-    - principles
-    - open-source
-    - collaboration
-    - DRY
-    - KIS
-    - REnO
-    - MVP
-    - education
-    - learning
-    - ai-agents
-    - ai-development
-    - machine-learning
-    - documentation
-    - automated-documentation
+  - about
+  - principles
+  - open-source
+  - collaboration
+  - DRY
+  - KIS
+  - REnO
+  - MVP
+  - education
+  - learning
+  - ai-agents
+  - ai-development
+  - machine-learning
+  - documentation
+  - automated-documentation
 draft: published
 ---
 

@@ -5,13 +5,13 @@ layout: collection
 permalink: /docs/
 description: Reference documentation and learning resources for tools and technologies used in IT-Journey
 categories:
-    - docs
-    - home
+  - docs
+  - home
 sidebar:
-    nav: docs
+  nav: docs
 toc_sticky: true
 date: 2021-09-24T19:32:44.876Z
-lastmod: 2025-10-13T00:00:00.000Z
+lastmod: 2025-10-19T22:33:21.677Z
 draft: false
 ---
 
@@ -46,6 +46,7 @@ The IT-Journey platform is built with Jekyll, a static site generator. The Jekyl
 - [Jekyll Overview](jekyll/) - Jekyll as used in IT-Journey
 - [Configuration Options](jekyll/jekyll-config.md) - Jekyll configuration reference
 - [Frontmatter CMS](jekyll/jekyll-frontmatter-cms.md) - Using frontmatter as a CMS
+- [Frontmatter Preview Configuration](jekyll/jekyll-frontmatter-preview-configuration.md) - Configure VS Code preview with permalinks
 - [Liquid Templating](jekyll/jekyll-liquid.md) - Liquid template language
 - [Mermaid Diagrams](jekyll/jekyll-diagram-with-mermaid.md) - Creating diagrams
 - [Math Symbols](jekyll/jekyll-math-symbols-with-mathjax.md) - Mathematical notation
