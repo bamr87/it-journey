@@ -1,7 +1,9 @@
 ---
-file: README.instructions.md
 description: VS Code Copilot-optimized guidelines for maintaining, reviewing, and evolving README.md files throughout the repository
 applyTo: '**/README.md'
+---
+
+```yaml
 author: IT-Journey Team
 created: 2025-10-17
 lastModified: 2025-10-17
@@ -38,7 +40,7 @@ changelog:
 
 usage: "Reference for creating, maintaining, and evolving all README.md files in the IT-Journey ecosystem with VS Code Copilot assistance"
 notes: "Follows IT-Journey principles: DFF, DRY, KIS, REnO, MVP, COLAB, AIPD with VS Code Copilot integration"
----
+```
 
 # README.md Maintenance & Evolution Guidelines
 

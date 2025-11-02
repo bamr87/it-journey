@@ -1,7 +1,10 @@
 ---
-file: quest.instructions.md
 description: VS Code Copilot-optimized quest creation standards and best practices for the IT-Journey gamified learning experience
 applyTo: "pages/_quests/**/*.md"
+---
+
+```yaml
+file: quest.instructions.md
 author: "IT-Journey Team <team@it-journey.org>"
 created: "2025-07-21"
 lastModified: "2025-10-17"
@@ -69,7 +72,7 @@ changelog:
 
 usage: "Reference for all quest creation, gamification, and educational module development in the IT-Journey platform"
 notes: "Emphasizes fantasy RPG themes, progressive learning, accessibility, and measurable skill development"
----
+```
 
 # Quest Creation Instructions for IT-Journey
 
