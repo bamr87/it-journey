@@ -2,7 +2,7 @@
 title: Contributing
 description: How to contribute to IT-Journey
 slug: contributing
-lastmod: 2025-10-13T00:00:00.000Z
+lastmod: 2025-11-02T00:00:00.000Z
 ---
 
 # Contributing to IT-Journey
@@ -15,6 +15,36 @@ Thank you for your interest in contributing to IT-Journey! We welcome contributi
 2. **Setup Your Environment**: Follow the [Development Environment Setup](docs/setup/DEVELOPMENT_ENVIRONMENT.md)
 3. **Understand the Structure**: Review [Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)
 4. **Follow Standards**: Check [Content Guidelines](docs/standards/CONTENT_GUIDELINES.md) and [Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)
+
+## 🚀 First-Time Contributor Fast Track
+
+**New here? Make your first contribution in under 5 minutes!**
+
+Perfect first contributions that require no setup:
+- Fix a typo in documentation
+- Improve a README
+- Add clarifying comments to code examples
+
+```bash
+# 1. Fork this repo on GitHub (click "Fork" button)
+
+# 2. Clone and create branch (replace YOUR-USERNAME)
+git clone https://github.com/YOUR-USERNAME/it-journey.git
+cd it-journey
+git checkout -b fix/my-first-contribution
+
+# 3. Make your change (example: fix typo in this file)
+# Edit CONTRIBUTING.md or any documentation file
+
+# 4. Commit and push
+git add .
+git commit -m "docs: fix typo in CONTRIBUTING.md"
+git push origin fix/my-first-contribution
+
+# 5. Create Pull Request on GitHub
+```
+
+**That's it!** Once you've made your first contribution, explore the [full developer guide](docs/CONTRIBUTING_DEVELOPER.md) for more complex contributions.
 
 ## Documentation
 
@@ -69,26 +99,42 @@ Before contributing, you should have:
 - [ ] Understanding of repository structure (see [architecture docs](docs/architecture/REPOSITORY_STRUCTURE.md))
 - [ ] Knowledge of contribution standards (see [contributing guide](docs/CONTRIBUTING_DEVELOPER.md))
 
-## Quick Contribution Workflow
+## Contribution Workflow
+
+### Standard Workflow (All Contributions)
 
 ```bash
 # 1. Fork and clone
 git clone https://github.com/YOUR-USERNAME/it-journey.git
 cd it-journey
 
-# 2. Create branch
+# 2. Create branch (use descriptive name)
 git checkout -b feature/your-feature-name
 
 # 3. Make changes
-# Edit files, test locally
+# Edit files
 
-# 4. Commit with conventional format
+# 4. Test locally (for code/Jekyll changes)
+docker-compose up  # Or: bundle exec jekyll serve --config _config_dev.yml
+# Visit http://localhost:4000 to verify changes
+
+# 5. Commit with conventional format
+git add .
 git commit -m "feat(scope): description"
+# Examples: 
+#   "docs: improve contributing guide"
+#   "feat(quest): add docker basics quest"
+#   "fix(ci): resolve workflow timeout issue"
 
-# 5. Push and create PR
+# 6. Push and create PR
 git push origin feature/your-feature-name
-# Create Pull Request on GitHub
+# Go to GitHub and click "Create Pull Request"
 ```
+
+**Commit Message Format**: `<type>(<scope>): <description>`
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+- **Scope**: Component affected (quest, post, ci, script, etc.)
+- **Description**: Brief summary in present tense
 
 See the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md) for detailed workflow instructions.
 
@@ -137,4 +183,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 For complete contribution guidelines, please see the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md).
 
-**Last Updated**: 2025-10-13
+**Last Updated**: 2025-11-02 | **Next Review**: 2025-12-02
