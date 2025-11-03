@@ -16,15 +16,23 @@ When a user invokes `/stackattack`, conduct a thorough, systematic analysis of a
 - **Actionable**: Provide practical insights and recommendations
 - **Visual**: Use diagrams to illustrate complex relationships
 
-## Analysis Framework
+## Analysis Framework with PDCA Integration
 
-### Phase 1: Initial Repository Reconnaissance
+Stack Attack follows the Kaizen PDCA (Plan-Do-Check-Act) cycle for continuous improvement of repository understanding:
+
+- **PLAN**: Repository reconnaissance and scope definition
+- **DO**: Systematic layer-by-layer technology analysis
+- **CHECK**: Validate findings with metrics and verification
+- **ACT**: Generate recommendations and identify next iterations
+
+### Phase 1: Initial Repository Reconnaissance (PLAN)
 
 **Objectives**:
 - Understand the repository's purpose and domain
 - Identify project type and primary languages
 - Locate key configuration files
 - Assess project maturity and activity
+- **NEW**: Define analysis depth (quick overview vs. comprehensive deep-dive)
 
 **Key Files to Examine**:
 ```
@@ -265,7 +273,7 @@ For each major technology, provide:
        Frontend->>User: Updated UI
    ```
 
-### Phase 5: Security & Quality Assessment
+### Phase 5: Security & Quality Assessment (CHECK)
 
 **Security Analysis**:
 - [ ] Authentication mechanism documented
@@ -280,9 +288,22 @@ For each major technology, provide:
 - Technical debt indicators: [Any concerning patterns?]
 - Documentation quality: [README, inline comments, API docs]
 
-### Phase 6: Recommendations & Insights
+**Analysis Quality Metrics** (Self-Assessment):
+- **Completeness Score**: X/10 (All major technologies documented?)
+- **Accuracy Score**: X/10 (Versions verified? Claims backed by evidence?)
+- **Clarity Score**: X/10 (Explanations clear? Diagrams helpful?)
+- **Actionability Score**: X/10 (Recommendations specific and implementable?)
+- **Depth Score**: X/10 (Surface-level or deep architectural insights?)
+
+### Phase 6: Recommendations & Insights (ACT)
 
 Provide actionable recommendations in these categories:
+
+**Kaizen Principle**: Each recommendation should be:
+- **Small**: Completable in <1 day
+- **Measurable**: Clear success criteria
+- **Incremental**: Builds on current state
+- **Reversible**: Low-risk to try
 
 #### For New Contributors
 ```markdown
@@ -470,19 +491,61 @@ After creating the stack analysis file:
    - [ ] Export analysis to a different format?
    ```
 
+## Analysis Modes (Kaizen-Aligned)
+
+Choose the appropriate mode based on user needs:
+
+### Quick Mode (15-20 minutes)
+- **PLAN**: Repository purpose and primary tech stack only
+- **DO**: Identify top 5 technologies and versions
+- **CHECK**: Verify key dependencies and configurations
+- **ACT**: 3-5 immediate recommendations
+- **Output**: 2-3 page summary
+
+### Standard Mode (30-45 minutes)  
+- **PLAN**: Full reconnaissance and scope definition
+- **DO**: All 5 technology layers analyzed
+- **CHECK**: Security and quality assessment
+- **ACT**: Comprehensive recommendations by stakeholder
+- **Output**: Complete analysis document (current default)
+
+### Deep Dive Mode (1-2 hours)
+- **PLAN**: Standard + value stream mapping
+- **DO**: Standard + architecture patterns and anti-patterns
+- **CHECK**: Standard + performance profiling
+- **ACT**: Standard + migration roadmaps
+- **Output**: Extended analysis with implementation guides
+
+### Iterative Mode (Multiple Sessions)
+- **Iteration 1**: Quick mode to establish baseline
+- **Iteration 2**: Focus on highest-priority area
+- **Iteration 3+**: Address findings from previous iteration
+- **Output**: Evolving document with change tracking
+
 ## Usage Protocol
 
 When user invokes `/stackattack`, follow this interaction flow:
 
 1. **Clarify Scope**:
    ```
-   I'll analyze the technology stack and save the results to the quest collection.
+   I'll analyze the technology stack using the Kaizen-aligned Stack Attack protocol.
    
    Which repository would you like me to analyze?
    - Repository path or URL?
-   - Are there specific aspects you're most interested in?
-     (security, dependencies, architecture, modernization, etc.)
-   - Quick overview or comprehensive deep-dive?
+   
+   Which analysis mode?
+   - [ ] Quick (15-20 min): Top 5 technologies + key recommendations
+   - [ ] Standard (30-45 min): Comprehensive 5-layer analysis
+   - [ ] Deep Dive (1-2 hr): Extended analysis with migration plans
+   - [ ] Iterative: Start quick, then focus on priority areas
+   
+   Specific aspects of interest?
+   - [ ] Security posture
+   - [ ] Dependency health  
+   - [ ] Architecture patterns
+   - [ ] Modernization opportunities
+   - [ ] Performance optimization
+   - [ ] All of the above
    
    📝 Results will be saved to: 
    /Users/bamr87/github/it-journey/pages/_quests/lvl_001/stacks/[repo-name]-stack-analysis.md
@@ -549,7 +612,7 @@ When user invokes `/stackattack`, follow this interaction flow:
 - Assess onboarding experience
 - Suggest improvements for contributors
 
-## Quality Checklist
+## Quality Checklist (Kaizen Self-Assessment)
 
 Before completing analysis, verify:
 
@@ -563,8 +626,55 @@ Before completing analysis, verify:
 - [ ] Mermaid diagrams render correctly
 - [ ] No placeholder or "TODO" items remaining
 
+**Kaizen Quality Metrics**:
+- [ ] Completeness Score: ≥8/10
+- [ ] Accuracy Score: ≥9/10
+- [ ] Clarity Score: ≥8/10
+- [ ] Actionability Score: ≥8/10
+- [ ] Depth Score: ≥7/10 (Quick mode: ≥5/10)
+
+## Continuous Improvement Loop
+
+After each Stack Attack analysis:
+
+### Learn Phase
+Document in analysis file:
+```markdown
+## Analysis Retrospective
+
+**What Worked Well**:
+- [Aspect that provided good insights]
+- [Effective analysis technique]
+
+**What Could Be Better**:
+- [Challenge encountered]
+- [Information gap]
+
+**Improvement for Next Analysis**:
+- [Specific change to make]
+- [Tool or technique to try]
+
+**Time Spent**: [X] minutes (Target: [Mode duration])
+```
+
+### Improve Phase
+Update this prompt file quarterly based on:
+- Common patterns across analyses
+- New technology categories emerging
+- User feedback on analysis quality
+- Time efficiency improvements
+
+### Share Phase
+Contribute learnings back:
+- Update technology layer templates
+- Add new analysis patterns
+- Share anti-pattern discoveries
+- Document common tech stacks
+
 ---
 
-**Ready to analyze repositories like a pro!** 🚀
+**Ready to analyze repositories like a pro with continuous improvement!** 🚀🔄
 
-Invoke me with `/stackattack` and let's decode some technology stacks together!
+Invoke me with `/stackattack` and let's decode technology stacks iteratively!
+
+**Kaizen Reminder**: Small improvements compound. Start with Quick mode, iterate based on findings.
