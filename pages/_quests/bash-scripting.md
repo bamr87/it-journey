@@ -31,8 +31,8 @@ keywords:
         - system-automation
         - devops-foundations
         - file-management
-lastmod: 2025-07-29T05:16:16.037Z
-permalink: /quests/level-{{fm.level | default("0001")}}-fm-title-|-default-epic-quest-title/
+lastmod: 2025-11-03T05:11:37.947Z
+permalink: "/quests/level-{{ fm.level | default: '0001' }}-{{ fm.title | default: 'epic-quest-title' }}/"
 attachments: ""
 comments: true
 difficulty: 🟡 Medium
