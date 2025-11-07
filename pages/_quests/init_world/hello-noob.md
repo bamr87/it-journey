@@ -110,7 +110,7 @@ rewards:
         - "Foundation for version control learning"
 
 sub-title: "Level 0000 (0) Main Quest: First Steps in Digital Collaboration"
-permalink: /quests/hello-noob/
+permalink: /quests/init_world/hello-noob/
 ---
 
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*

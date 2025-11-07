@@ -44,7 +44,7 @@ quest_arc: "Digital Literacy Arc"
 
 quest_dependencies:
     required_quests:
-        - "/quests/hello-noob/"
+        - "/quests/init_world/hello-noob/"
         - "/quests/computer-literacy-basics/"
     recommended_quests:
         - "/quests/operating-system-selection/"

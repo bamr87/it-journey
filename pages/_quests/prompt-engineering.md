@@ -39,7 +39,7 @@ quest_series: AI Development Mastery
 quest_arc: Tool Mastery Arc
 quest_dependencies:
   required_quests:
-    - /quests/hello-noob/
+    - /quests/init_world/hello-noob/
     - /quests/terminal-fundamentals/
   recommended_quests:
     - /quests/kaizen-continuous-improvement/

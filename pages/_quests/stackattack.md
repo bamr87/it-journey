@@ -56,7 +56,7 @@ rewards:
     - AI prompt engineering techniques
 related_quests:
   prerequisites:
-    - /quests/hello-noob/
+    - /quests/init_world/hello-noob/
     - /quests/terminal-fundamentals/
   followups:
     - /quests/dependency-analysis/
@@ -83,7 +83,7 @@ draft: false
 fmContentType: quest
 quest_dependencies:
   required_quests:
-    - /quests/hello-noob/
+    - /quests/init_world/hello-noob/
   recommended_quests:
     - /quests/github-basics/
     - /quests/vs-code-mastery/
