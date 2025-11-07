@@ -34,7 +34,7 @@ prerequisites:
   - Basic Bash scripting knowledge
   - Python fundamentals (file I/O, functions)
   - GitHub account with repository creation permissions
-  - "Completed: [Hello n00b](/quests/hello-noob/) quest"
+  - "Completed: [Hello n00b](/quests/init_world/hello-noob/) quest"
 rewards:
   badge: Documentation Architect
   skill: CI/CD Pipeline Development

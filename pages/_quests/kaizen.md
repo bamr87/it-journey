@@ -50,7 +50,7 @@ prerequisites:
         - Interest in team improvement and efficiency
 quest_dependencies:
     required_quests:
-        - /quests/hello-noob/
+        - /quests/init_world/hello-noob/
     recommended_quests:
         - /quests/team-collaboration-basics/
         - /quests/agile-fundamentals/
