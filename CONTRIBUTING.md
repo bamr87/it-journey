@@ -48,14 +48,26 @@ git push origin fix/my-first-contribution
 
 ## Documentation
 
-All technical documentation for contributors has been moved to the `docs/` directory:
+All technical documentation for contributors has been organized as follows:
 
-### Essential Reading
+### For Human Contributors
 - **[Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md)** - Complete contribution workflow
+- **[Web Contributing Page](/about/contributing/)** - User-facing guide on it-journey.dev
 - **[Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)** - Directory organization
 - **[Development Environment](docs/setup/DEVELOPMENT_ENVIRONMENT.md)** - Setup instructions
 - **[Content Guidelines](docs/standards/CONTENT_GUIDELINES.md)** - Writing standards
 - **[Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)** - Metadata requirements
+
+### For AI Agents (VS Code Copilot)
+AI agents assisting with contributions should reference:
+- **[Contributing Instructions](.github/instructions/contributing.instructions.md)** - AI agent guidance for contributions
+- **[README Instructions](.github/instructions/README.instructions.md)** - Documentation standards
+- **[Quest Instructions](.github/instructions/quest.instructions.md)** - Quest creation patterns
+- **[Post Instructions](.github/instructions/posts.instructions.md)** - Blog post standards
+- **[Feature Instructions](.github/instructions/features.instructions.md)** - Feature development
+- **[Space Instructions](.github/instructions/space.instructions.md)** - Project organization
+
+The `.github/instructions/` directory contains AI-optimized instructions that help VS Code Copilot and other AI agents assist contributors more effectively while maintaining project standards and quality.
 
 ### Additional Documentation
 - **[Jekyll Implementation](docs/architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll details
@@ -183,4 +195,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 For complete contribution guidelines, please see the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md).
 
-**Last Updated**: 2025-11-02 | **Next Review**: 2025-12-02
+**Last Updated**: 2025-11-07 | **Next Review**: 2025-12-07
