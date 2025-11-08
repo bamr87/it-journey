@@ -4,7 +4,7 @@ description: Master the art of repository analysis and technology stack document
 date: 2025-11-02T21:00:31.059Z
 preview: /images/quest-stack-attack.png
 level: "0001"
-difficulty: "\udfe1 Medium"
+difficulty: "🟡 Medium"
 estimated_time: 90-120 minutes
 primary_technology: AI-Assisted Analysis
 quest_type: main_quest
