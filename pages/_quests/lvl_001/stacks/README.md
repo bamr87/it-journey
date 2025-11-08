@@ -2,12 +2,16 @@
 
 ## 📚 Overview
 
-This directory contains comprehensive technology stack analyses performed using the **Stack Attack Protoc## 📊 Collection Statistics
+This directory contains comprehensive technology stack analyses performed using the **Stack Attack Protocol**.
+
+Each analysis provides deep insights into repository architectures, technology choices, dependencies, security posture, and modernization opportunities.
+
+## 📊 Collection Statistics
 
 - **Total Analyses**: 1
 - **Languages Covered**: 1 (Ruby)
 - **Last Updated**: 2025-11-02
-- **Most Common Stack**: Jekyll/Ruby (Educational Platforms)Each analysis provides deep insights into repository architectures, technology choices, dependencies, security posture, and modernization opportunities.
+- **Most Common Stack**: Jekyll/Ruby (Educational Platforms)
 
 ## 🎯 Purpose
 
