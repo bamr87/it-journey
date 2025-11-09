@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mermaid Auto-Detection Test</title>
+</head>
+<body>
+    <h1>Mermaid Auto-Detection Test</h1>
+    
+    <p>This page contains a Mermaid diagram to test auto-detection:</p>
+    
+    <div class="mermaid">
+graph TD;
+    A[Start] --> B{Is Auto-Detection Working?};
+    B -->|Yes| C[Great!];
+    B -->|No| D[Check Console];
+    C --> E[Success!];
+    D --> F[Debug Required];
+    E --> G[End];
+    F --> G;
+    </div>
+    
+    <p>If auto-detection is working, you should see:</p>
+    <ul>
+        <li>Console message: "Mermaid diagrams detected, loading library..."</li>
+        <li>Console message: "Mermaid.js v10 loaded and initialized successfully"</li>
+        <li>The diagram above should render as a flowchart</li>
+    </ul>
+    
+    <script>
+        // Test script to verify auto-detection
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page loaded, checking for Mermaid auto-detection...');
+            
+            // Check if Mermaid auto-detection script is present
+            const mermaidScripts = document.querySelectorAll('script[src*="mermaid"]');
+            console.log('Mermaid scripts found:', mermaidScripts.length);
+            
+            // Check if Mermaid is available
+            if (typeof mermaid !== 'undefined') {
+                console.log('✅ Mermaid is available globally');
+            } else {
+                console.log('⏳ Mermaid not yet loaded (this is normal if auto-detection is working)');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -216,7 +216,7 @@ By completing this quest, you will:
 #### Understanding the Implementation
 
 The Mermaid integration uses a modular approach:
-- **Conditional Loading**: Only loads Mermaid when `mermaid: true` in page front matter
+- **Auto-Detection**: Automatically detects and loads Mermaid when diagrams are present
 - **CDN Integration**: Uses jsdelivr CDN for reliable, fast loading
 - **Custom Configuration**: Forest theme with Bootstrap 5 color integration
 - **FontAwesome Support**: Icon integration for enhanced diagrams
@@ -478,14 +478,14 @@ mermaid: true
 
 ## Quick Start
 
-Add `mermaid: true` to your page front matter:
+Simply use standard markdown code fences - no front matter needed:
 
-```yaml
----
-title: "My Page with Diagrams"
-mermaid: true
----
+````markdown
+```mermaid
+graph TD;
+    A[Start] --> B[End];
 ```
+````
 
 Then add diagrams using HTML divs:
 
@@ -530,8 +530,8 @@ The integration uses the Forest theme with Bootstrap 5 colors. You can customize
 ## Troubleshooting
 
 ### Diagrams Not Rendering
-1. Check that `mermaid: true` is in page front matter
-2. Verify the Mermaid component is included in your layout
+1. Check browser console for "Mermaid diagrams detected" message
+2. Verify the theme is using zer0-mistakes v0.5.0+
 3. Check browser console for JavaScript errors
 
 ### Styling Issues
@@ -540,9 +540,9 @@ The integration uses the Forest theme with Bootstrap 5 colors. You can customize
 3. Verify dark mode compatibility
 
 ### Performance
-1. Only use `mermaid: true` on pages that need diagrams
-2. Consider lazy loading for pages with many diagrams
-3. Optimize diagram complexity for better performance
+1. Auto-detection ensures Mermaid only loads when needed
+2. Library loads on-demand from CDN for optimal performance
+3. Optimize diagram complexity for better rendering speed
 ```
 
 #### Create Examples Page
@@ -827,7 +827,7 @@ chmod +x scripts/test-mermaid.sh
 
 Create a comprehensive test page with all diagram types and verify:
 - [ ] All diagrams render correctly
-- [ ] Conditional loading works (diagrams only appear on pages with `mermaid: true`)
+- [ ] Auto-detection works (diagrams appear automatically when present)
 - [ ] Responsive design works on mobile and desktop
 - [ ] Dark mode compatibility functions
 - [ ] Performance is acceptable
@@ -902,8 +902,8 @@ Integrate AI for automatic diagram creation:
 **Problem**: Mermaid diagrams appear as code blocks instead of rendered diagrams
 
 **Solutions**:
-1. Verify `mermaid: true` is in page front matter
-2. Check that the Mermaid component is included in your layout
+1. Check browser console for "Mermaid diagrams detected" message
+2. Verify the theme is using zer0-mistakes v0.5.0+
 3. Ensure JavaScript is enabled in the browser
 4. Check browser console for JavaScript errors
 
@@ -922,9 +922,9 @@ Integrate AI for automatic diagram creation:
 **Problem**: Site loads slowly with many diagrams
 
 **Solutions**:
-1. Only use `mermaid: true` on pages that need diagrams
-2. Consider lazy loading for pages with many diagrams
-3. Optimize diagram complexity
+1. Auto-detection ensures optimal loading (no manual configuration needed)
+2. Library loads on-demand from CDN for best performance
+3. Optimize diagram complexity for faster rendering
 4. Use CDN caching effectively
 
 ### GitHub Pages Issues
