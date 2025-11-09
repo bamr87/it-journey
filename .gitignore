@@ -13,3 +13,5 @@ logs/debug-attach-trace.log
 logs/debug-rebuild-trace.log
 test-results/*
 logs/debug-trace.log
+vendor/bundle
+.bundle

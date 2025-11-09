@@ -1,0 +1,278 @@
+---
+layout: root
+source: "https://getbootstrap.com/docs/5.3/examples/blog/#"
+---
+<!--
+  ===================================================================
+  BLOG LAYOUT - Modern blog homepage with featured content
+  ===================================================================
+  
+  File: blog.html
+  Path: _layouts/blog.html
+  Inherits: root.html
+  Purpose: Full-featured blog homepage with content organization
+  Source: Adapted from Bootstrap 5.3 blog example
+  
+  Template Logic:
+  - Creates a magazine-style blog layout with multiple content sections
+  - Features breaking news/highlighted posts prominently
+  - Displays featured posts in a card grid layout
+  - Includes sidebar with recent posts, archives, and categories
+  - Implements responsive design for mobile and desktop
+  - Provides navigation between posts with pagination
+  
+  Layout Structure:
+  1. Blog Header: Subscribe, logo/title, search, and sign-up
+  2. Navigation Bar: Dynamic navigation from site data
+  3. Hero Section: Most recent breaking news post
+  4. Featured Posts: Grid of featured content
+  5. Main Content: Blog content with pagination
+  6. Sidebar: Recent posts, archives, categories, external links
+  
+  Content Logic:
+  - Breaking news: Posts with "breaking" category
+  - Featured posts: Posts with "featured: true" in frontmatter
+  - Recent posts: Latest 3 posts for sidebar
+  - Navigation: Dynamic from site.data.navigation.posts
+  
+  Responsive Features:
+  - Mobile-first responsive grid system
+  - Image optimization with responsive classes
+  - Collapsible navigation and mobile-friendly layout
+  ===================================================================
+-->
+
+<!-- ================================ -->
+<!-- BLOG HEADER SECTION             -->
+<!-- ================================ -->
+<div class="container">
+    <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <!-- Subscription Link -->
+            <div class="col-4 pt-1">
+                <a class="link-secondary" href="#">Subscribe</a>
+            </div>
+            
+            <!-- Blog Title/Logo -->
+            <div class="col-4 text-center">
+                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
+                    {{ page.title }}
+                </a>
+            </div>
+            
+            <!-- Search and Sign-up -->
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <!-- Search Icon -->
+                <a class="link-secondary" href="#" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24">
+                        <title>Search</title>
+                        <circle cx="10.5" cy="10.5" r="7.5"/>
+                        <path d="M21 21l-5.2-5.2"/>
+                    </svg>
+                </a>
+                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================ -->
+    <!-- NAVIGATION BAR                   -->
+    <!-- ================================ -->
+    <!-- Dynamic navigation from site data configuration -->
+    <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+            {% for item in site.data.navigation.posts %}
+                <a class="nav-item nav-link link-body-emphasis" href="{{ item.url | relative_url }}">
+                    {{ item.title }}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
+</div>
+
+<!-- ================================ -->
+<!-- MAIN CONTENT CONTAINER          -->
+<!-- ================================ -->
+<main class="container">
+    
+    <!-- ================================ -->
+    <!-- HERO SECTION - Breaking News     -->
+    <!-- ================================ -->
+    <!-- Featured highlight of most recent breaking news post -->
+    {% assign breaking_news_posts = site.posts | where: "categories", "breaking" %}
+    {% assign most_recent_post = breaking_news_posts | first %}
+
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="row">
+            <!-- Breaking News Content -->
+            <div class="col-lg-6">
+                <h1 class="display-4 fst-italic">{{ most_recent_post.title }}</h1>
+                <p class="lead my-3">{{ most_recent_post.excerpt }}</p>
+                <p class="lead mb-0">
+                    <a href="{{ site.baseurl }}{{ most_recent_post.url }}" class="text-body-emphasis fw-bold">
+                        Continue reading...
+                    </a>
+                </p>
+            </div>
+            
+            <!-- Breaking News Image -->
+            <div class="col-lg-6">
+                <img src="{{ site.baseurl }}/{{ site.public_folder }}/{{ most_recent_post.preview }}" 
+                     alt="Preview image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- FEATURED POSTS GRID             -->
+    <!-- ================================ -->
+    <!-- Two-column grid of featured posts marked with 'featured: true' -->
+    <div class="row mb-2">
+        {% assign featured_posts = site.posts | where: "featured", true %}
+        {% for post in featured_posts %}
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <!-- Post Content -->
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">
+                            {{ post.categories[0] }}
+                        </strong>
+                        <h3 class="mb-0">{{ post.title }}</h3>
+                        <div class="mb-1 text-body-secondary">{{ post.date | date: "%b %d" }}</div>
+                        <p class="card-text mb-auto">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Continue reading
+                            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Post Preview Image -->
+                    <div class="col-md-6 d-none d-lg-block">
+                        <img src="{{ site.baseurl }}/{{ site.public_folder }}/{{ post.preview }}" 
+                             alt="Post preview image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- ================================ -->
+    <!-- MAIN CONTENT AND SIDEBAR        -->
+    <!-- ================================ -->
+    <div class="row g-5">
+        <!-- ========================== -->
+        <!-- MAIN CONTENT COLUMN        -->
+        <!-- ========================== -->
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">From the Firehose</h3>
+
+            <!-- Blog Post Content -->
+            <article class="blog-post">
+                {{ content }}
+            </article>
+
+            <!-- ========================== -->
+            <!-- POST PAGINATION            -->
+            <!-- ========================== -->
+            <!-- Previous and Next page navigation -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination pagination-lg justify-content-center">
+                    <li class="page-item">
+                        {% if page.previous %}
+                            <a class="page-link" href="{{ page.previous.url | prepend: site.baseurl }}">
+                                Previous: {{ page.previous.title }}
+                            </a>
+                        {% else %}
+                            <a class="page-link" href="#" aria-disabled="true">Previous</a>
+                        {% endif %}
+                    </li>
+                    <li class="page-item">
+                        {% if page.next %}
+                            <a class="page-link" href="{{ page.next.url | prepend: site.baseurl }}">
+                                Next: {{ page.next.title }}
+                            </a>
+                        {% else %}
+                            <a class="page-link" href="#" aria-disabled="true">Next</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- ========================== -->
+        <!-- SIDEBAR COLUMN             -->
+        <!-- ========================== -->
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                
+                <!-- About Section -->
+                <div class="p-4 mb-3 bg-body-tertiary rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">
+                        Customize this section to tell your visitors a little bit about your publication, 
+                        writers, content, or something else entirely. Totally up to you.
+                    </p>
+                </div>
+
+                <!-- Recent Posts Section -->
+                <div>
+                    <h4 class="fst-italic">Recent posts</h4>
+                    <ul class="list-unstyled">
+                        {% for post in site.posts limit:3 %}
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" 
+                                   href="{{site.baseurl}}/{{ post.url }}">
+                                    <img class="bd-placeholder-img" 
+                                         src="{{ site.baseurl }}/{{ site.public_folder }}/{{ page.preview | default: site.og_image }}" 
+                                         width="50%" alt="Preview image">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">{{ post.title }}</h6>
+                                        <small class="text-body-secondary">{{ post.date | date: "%B %d, %Y" }}</small>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Archives Section -->
+                <!-- Note: This section uses static links - consider making dynamic -->
+                <div class="p-4">
+                    <h4 class="fst-italic">Archives</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">March 2021</a></li>
+                        <li><a href="#">February 2021</a></li>
+                        <li><a href="#">January 2021</a></li>
+                        <li><a href="#">December 2020</a></li>
+                        <li><a href="#">November 2020</a></li>
+                        <li><a href="#">October 2020</a></li>
+                        <li><a href="#">September 2020</a></li>
+                        <li><a href="#">August 2020</a></li>
+                        <li><a href="#">July 2020</a></li>
+                        <li><a href="#">June 2020</a></li>
+                        <li><a href="#">May 2020</a></li>
+                        <li><a href="#">April 2020</a></li>
+                    </ol>
+                </div>
+
+                <!-- Categories Section -->
+                <div class="p-4">
+                    {% include navigation/sidebar-categories.html %}
+                </div>
+
+                <!-- External Links Section -->
+                <div class="p-4">
+                    <h4 class="fst-italic">Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+

@@ -1,0 +1,19 @@
+- icon: world
+  url: /posts/world/
+  title: World
+- title: Technology
+  icon: tech
+  url: /posts/tech/
+- title: Business
+  icon: cash
+  url: /posts/business/
+- title: Science
+  icon: flask
+  url: /posts/science/
+- title: Health
+  icon: heart
+  url: /posts/health/
+- title: Politics
+  icon: politics
+  url: /posts/politics/
+

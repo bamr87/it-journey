@@ -209,7 +209,7 @@ markdown: kramdown
 # highlighter: rouge
 # lsi: false
 # excerpt_separator: "\n\n"
-# incremental: false
+incremental: true  # Enable incremental builds for faster rebuilds
 
 # Markdown Processing https://jekyllrb.com/docs/configuration/markdown/
 kramdown: # https://kramdown.gettalong.org/options.html
@@ -412,11 +412,20 @@ exclude:
   - vendor/
   # - "*.sh"
   - submodules/
+  - .bundle/
+  - .devcontainer/
+  - .frontmatter/
+  - .vscode/
+  - test/
+  - prompts/
+  - docs/
+  - TODO
+  - "*.log"
 
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: expanded
+  style: compressed  # Compressed CSS in production for smaller file sizes
 
 #  TODO: Fix bootstrap plugin
   # load_paths:

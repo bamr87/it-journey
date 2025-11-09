@@ -1,0 +1,247 @@
+// # Font Settings ---------------------------------------------------------------
+
+// # Color Settings --------------------------------------------------------------
+
+// ## Color Schema Override 
+//  https://meodai.github.io/poline/
+
+// Harbour Mirror
+// Harbour Blue
+// Dark Blue
+
+
+$blue-400: #073781;
+$blue-500: #073781;
+$blue-600: #346182;
+$blue-700: #346182;
+
+// Smoking Mirror
+//   3d7695
+//   2f5877
+//   a19587
+
+// https://getbootstrap.com/docs/5.3/customize/color-modes/#custom-color-modes
+// Custom Theme
+
+[data-bs-theme="wizard"] {
+    --bs-body-color: var(--bs-white);
+    --bs-body-color-rgb: #{to-rgb($white)};
+    --bs-body-bg: var(--bs-blue);
+    --bs-body-bg-rgb: #{to-rgb($blue)};
+    --bs-tertiary-bg: #{$blue-600};
+  
+    .dropdown-menu {
+      --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
+      --bs-dropdown-link-active-bg: #{$blue-700};
+    }
+  
+    .btn-secondary {
+      --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
+      --bs-btn-border-color: #{rgba($white, .25)};
+      --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
+      --bs-btn-hover-border-color: #{rgba($white, .25)};
+      --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, .5), 10%)};
+      --bs-btn-active-border-color: #{rgba($white, .5)};
+      --bs-btn-focus-border-color: #{rgba($white, .5)};
+      --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+    }
+}
+
+
+  :root,[data-bs-theme="light"] {
+    --bd-purple: #4c0bce;
+    --bd-violet: #712cf9;
+    --bd-accent: #ffe484;
+    --bd-violet-rgb: 112.520718,44.062154,249.437846;
+    --bd-accent-rgb: 255,228,132;
+    --bd-pink-rgb: 214,51,132;
+    --bd-teal-rgb: 32,201,151;
+    --bd-violet-bg: var(--bd-violet);
+    --bd-toc-color: var(--bd-violet);
+    --bd-sidebar-link-bg: rgba(var(--bd-violet-rgb), .1);
+    --bd-callout-link: 10,88,202;
+    --bd-callout-code-color: #ab296a;
+    --bd-pre-bg: var(--bs-tertiary-bg)
+}
+
+[data-bs-theme="dark"] {
+    --bd-violet: #9461fb;
+    --bd-violet-bg: #712cf9;
+    --bd-toc-color: var(--bs-emphasis-color);
+    --bd-sidebar-link-bg: rgba(84,33,187, .5);
+    --bd-callout-link: 110,168,254;
+    --bd-callout-code-color: #e685b5;
+    --bd-pre-bg: #1b1f22
+}
+
+
+
+/* Typography
+   ========================================================================== */
+
+   $doc-font-size: 16 !default;
+
+   /* paragraph indention */
+   $paragraph-indent: false !default; // true, false (default)
+   $indent-var: 1.3em !default;
+   
+   $global-font-family: $sans-serif !default;
+   $header-font-family: $sans-serif !default;
+   $caption-font-family: $serif !default;
+/*  Colors
+    ========================================================================== */
+
+   $background-color: #fff !default;
+   $code-background-color: #fafafa !default;
+   $code-background-color-dark: $light-gray !default;
+   $text-color: $dark-gray !default;
+   $muted-text-color: mix(#fff, $text-color, 20%) !default;
+   $border-color: $lighter-gray !default;
+   $form-background-color: $lighter-gray !default;
+   $footer-background-color: $lighter-gray !default;
+   
+   $primary-color: #6f777d !default;
+   $success-color: #3fa63f !default;
+   $warning-color: #d67f05 !default;
+   $danger-color: #ee5f5b !default;
+   $info-color: #3b9cba !default;
+   $focus-color: $primary-color !default;
+   $active-color: mix(#fff, $primary-color, 80%) !default;
+   
+   /* links */
+   $link-color: mix(#000, $info-color, 20%) !default;
+   $link-color-hover: mix(#000, $link-color, 25%) !default;
+   $link-color-visited: mix(#fff, $link-color, 15%) !default;
+   $masthead-link-color: $primary-color !default;
+   $masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
+   $navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
+   
+   /* notices */
+   $notice-background-mix: 80% !default;
+   $code-notice-background-mix: 90% !default;
+   
+   /*
+      Other
+      ========================================================================== */
+   
+   $border-radius: 4px !default;
+   $box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125) !default;
+   $nav-height: 2em !default;
+   $nav-toggle-height: 2rem !default;
+   $navicon-width: 1.5rem !default;
+   $navicon-height: 0.25rem !default;
+   $global-transition: all 0.2s ease-in-out !default;
+   $intro-transition: intro 0.3s both !default;
+
+   
+   // scss-docs-start theme-color-variables
+   $primary:       $blue !default;
+   $secondary:     $gray-600 !default;
+   $success:       $green !default;
+   $info:          $cyan !default;
+   $warning:       $yellow !default;
+   $danger:        $red !default;
+   $light:         $gray-100 !default;
+   $dark:          $gray-900 !default;
+   // scss-docs-end theme-color-variables
+   
+   // Links
+   //
+   // Style anchor elements.
+   
+   $link-color:                              $primary !default;
+   $link-decoration:                         underline !default;
+   $link-shade-percentage:                   20% !default;
+   $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+   $link-hover-decoration:                   null !default;
+   
+   $stretched-link-pseudo-element:           after !default;
+   $stretched-link-z-index:                  1 !default;
+   
+   
+   // Body
+   //
+   // Settings for the `<body>` element.
+   
+   $body-bg:                   $white !default;
+   $body-color:                $gray-900 !default;
+   $body-text-align:           null !default;
+   
+   // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+   // $font-size-base affects the font size of the body text
+   $font-size-root:              null !default;
+   $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+   $font-size-sm:                $font-size-base * .875 !default;
+   $font-size-lg:                $font-size-base * 1.25 !default;
+   
+   $font-weight-lighter:         lighter !default;
+   $font-weight-light:           300 !default;
+   $font-weight-normal:          400 !default;
+   $font-weight-bold:            700 !default;
+   $font-weight-bolder:          bolder !default;
+   
+   $font-weight-base:            $font-weight-normal !default;
+   
+   $line-height-base:            1.5 !default;
+   $line-height-sm:              1.25 !default;
+   $line-height-lg:              2 !default;
+   
+
+   // scss-docs-end font-variables
+   
+   $component-active-color:      $white !default;
+   $component-active-bg:         $primary !default;
+   
+   // Buttons
+   //
+   // For each of Bootstrap's buttons, define text, background, and border color.
+   
+   // scss-docs-start input-btn-variables
+   $input-btn-padding-y:         .375rem !default;
+   $input-btn-padding-x:         .75rem !default;
+   $input-btn-font-family:       null !default;
+   $input-btn-font-size:         $font-size-base !default;
+   $input-btn-line-height:       $line-height-base !default;
+   
+   $input-btn-focus-width:         .25rem !default;
+   $input-btn-focus-color-opacity: .25 !default;
+   $input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
+   $input-btn-focus-blur:          0 !default;
+   $input-btn-focus-box-shadow:    0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color !default;
+
+   
+   $input-btn-border-width:      $border-width !default;
+   // scss-docs-end input-btn-variables
+   
+   
+   $btn-link-color:              $link-color !default;
+   $btn-link-hover-color:        $link-hover-color !default;
+   $btn-link-disabled-color:     $gray-600 !default;
+   
+   // scss-docs-start border-radius-variables
+   $border-radius:               .25rem !default;
+   $border-radius-sm:            .2rem !default;
+   $border-radius-lg:            .3rem !default;
+   $border-radius-pill:          50rem !default;
+   // scss-docs-end border-radius-variables
+   
+   
+   // scss-docs-start navbar-theme-variables
+   $navbar-dark-color:                 rgba($white, .55) !default;
+   $navbar-dark-hover-color:           rgba($white, .75) !default;
+   $navbar-dark-active-color:          $white !default;
+   $navbar-dark-disabled-color:        rgba($white, .25) !default;
+   $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+   $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+   
+   $navbar-light-color:                rgba($black, .55) !default;
+   $navbar-light-hover-color:          rgba($black, .7) !default;
+   $navbar-light-active-color:         rgba($black, .9) !default;
+   $navbar-light-disabled-color:       rgba($black, .3) !default;
+   $navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+   $navbar-light-toggler-border-color: rgba($black, .1) !default;
+   
+   $navbar-light-brand-color:                $navbar-light-active-color !default;
+   $navbar-light-brand-hover-color:          $navbar-light-active-color !default;
+   $navbar-dark-brand-color:                 $navbar-dark-active-color !default;
+   $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;

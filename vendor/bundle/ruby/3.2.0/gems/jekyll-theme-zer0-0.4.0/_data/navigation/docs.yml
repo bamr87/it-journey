@@ -1,0 +1,27 @@
+- title: Setup
+  sublinks:
+    - title: Configuration
+      url: /docs/configuration
+    - title: Overriding Theme Defaults
+      url: /docs/overriding-theme-defaults
+- title: Programming
+  sublinks:
+    - title: Liquid
+      url: /
+      source: null
+- title: Headless CMS
+  sublinks:
+    - title: Working with Posts
+      url: /docs/posts
+    - title: Working with Collections
+      url: /docs/collections
+    - title: Helpers
+      url: /docs/helpers
+    - title: Utility Classes
+      url: /docs/utility-classes
+- title: Design
+  sublinks:
+    - title: Stylesheets
+      url: /docs/stylesheets
+    - title: JavaScript
+      url: /docs/javascript

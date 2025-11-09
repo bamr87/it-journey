@@ -1,0 +1,17 @@
+<!-- Quick index of pages in the collection -->
+{% if site.collections.pages %}
+<ul>
+  <p>Quick Index</p>
+  {% for note in site.collections.pages %}
+  {% if note.collection == page.collection %}
+  <li class="active mb-1 list-unstyled"><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}
+
+<!-- Post Categories -->
+{% if page.sidebar == "searchCats" %}
+<div id="categories">
+</div>
+{% endif %}

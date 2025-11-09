@@ -1,0 +1,54 @@
+---
+layout: root
+---
+<!--
+  ===================================================================
+  INDEX LAYOUT - Search indexing template
+  ===================================================================
+  
+  File: index.html
+  Path: _layouts/index.html
+  Inherits: root.html
+  Purpose: Specialized layout for search functionality and site indexing
+  
+  Template Logic:
+  - Provides a clean container for search-related content
+  - Uses fluid container for full-width search interfaces
+  - Implements proper spacing with Bootstrap padding classes
+  - Bypasses sidebar navigation for focused search experience
+  
+  Layout Features:
+  - Full-width fluid container for search components
+  - Responsive padding that adapts to screen size
+  - Clean, minimal structure to highlight search functionality
+  - Semantic HTML5 structure with proper search context
+  
+  Usage:
+  - Typically used for search result pages
+  - Site indexing and content discovery pages
+  - Archive pages with search functionality
+  - Any page requiring full-width content presentation
+  
+  Search Integration:
+  - Can be integrated with Algolia, Lunr.js, or other search engines
+  - Provides container for search forms, filters, and results
+  - Supports dynamic content loading and filtering
+  
+  Accessibility:
+  - Uses semantic search-index ID for screen readers
+  - Provides proper container context for search tools
+  - Maintains consistent navigation patterns
+  ===================================================================
+-->
+
+<!-- ================================ -->
+<!-- SEARCH INDEX CONTAINER          -->
+<!-- ================================ -->
+<!-- Full-width container optimized for search interfaces and content discovery -->
+<div id="search-index" class="container-fluid pt-5 py-5">
+    <!-- ========================== -->
+    <!-- SEARCH CONTENT AREA        -->
+    <!-- ========================== -->
+    <!-- Main content area for search forms, results, filters, and indexing -->
+    {{ content }}
+</div>

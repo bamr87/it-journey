@@ -1,0 +1,31 @@
+<!-- Breadcrumsbs
+  file: breadcrumbs.html
+  path: _includes/breadcrumbs.html
+  TODO: Update to be read by Google Search Console "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb"
+ -->
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}{% endunless %}
+  
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <i class="bi bi-folder"></i>
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    <a href="/">root</a>
+    {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+    / {{ page.title }}
+    {% else %}
+    / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+    {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+<!-- Secret Search bar  -->
+<!-- Hidden
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form> 
+-->
+
+{% endif %}
