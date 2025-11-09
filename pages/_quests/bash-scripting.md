@@ -31,8 +31,8 @@ keywords:
         - system-automation
         - devops-foundations
         - file-management
-lastmod: 2025-11-03T05:11:37.947Z
-permalink: "/quests/level-{{ fm.level | default: '0001' }}-{{ fm.title | default: 'epic-quest-title' }}/"
+lastmod: 2025-11-08T15:20:04.000Z
+permalink: /quests/level-0010-bash-scripting-mastery/
 attachments: ""
 comments: true
 difficulty: 🟡 Medium
