@@ -1,13 +1,63 @@
 {
-    "recommendations": [
-        "gruntfuggly.todo-tree",
-        "james-yu.latex-workshop",
-        "yzhang.markdown-all-in-one",
-        "eliostruyf.vscode-front-matter",
-        "ms-azuretools.vscode-docker",
-        "DavidAnson.vscode-markdownlint",
-        "TakumiI.markdowntable",
-        "ms-python.python",
-        "ms-toolsai.jupyter"
-    ]
+  // ==================================================
+  // UNIFIED VS CODE EXTENSIONS - Docker-First Development
+  // ==================================================
+  // Optimized for it-journey educational platform development
+  // Last Updated: 2025-10-26
+  
+  "recommendations": [
+    // ==========================================
+    // CORE DEVELOPMENT TOOLS
+    // ==========================================
+    "github.copilot",
+    "github.copilot-chat",
+    "ms-azuretools.vscode-docker",
+    
+    // ==========================================
+    // RUBY/JEKYLL DEVELOPMENT
+    // ==========================================
+    "shopify.ruby-lsp",
+    "rebornix.ruby",
+    
+    // ==========================================
+    // JEKYLL/WEB DEVELOPMENT
+    // ==========================================
+    "shopify.liquid",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    "davidanson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    
+    // ==========================================
+    // UTILITY EXTENSIONS
+    // ==========================================
+    "ms-vscode.vscode-typescript-next",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode.remote-repositories",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    
+    // ==========================================
+    // IT-JOURNEY SPECIFIC
+    // ==========================================
+    "eliostruyf.vscode-front-matter",
+    "ms-toolsai.jupyter",
+    
+    // ==========================================
+    // OPTIONAL ENHANCEMENTS
+    // ==========================================
+    "ms-vscode.live-server",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode"
+  ],
+  
+  // ==========================================
+  // WORKSPACE SPECIFIC RECOMMENDATIONS
+  // ==========================================
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript",
+    "ms-vscode.nodejs-extension-pack"
+  ]
 }

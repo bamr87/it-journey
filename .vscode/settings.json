@@ -1,86 +1,213 @@
 {
-    "jupyter.jupyterServerType": "local",
-    "frontMatter.dashboard.openOnStart": true,
-    "[markdown]": {
-        "editor.fontSize": 14,
-        "editor.lineHeight": 26,
-        "editor.wordWrapColumn": 64,
-        "editor.lineNumbers": "on",
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        },
-        "editor.minimap.enabled": false,
-        "editor.wordWrap": "off"
-    },
-    "diffEditor.wordWrap": "off",
-    "[search-result]": {
-        "editor.lineNumbers": "on"
-    },
-    "frontMatter.content.autoUpdateDate": true,
-    "cSpell.words": [
-        "bamr",
-        "endcapture",
-        "endraw",
-        "Groking",
-        "Inkscape",
-        "Jamstack",
-        "Krita",
-        "lastmod",
-        "markdownify",
-        "MERN",
-        "Picade",
-        "sublinks",
-        "winget"
-    ],
-    // Jekyll Development Settings
-    "files.associations": {
-        "*.html": "liquid",
-        "*.md": "markdown",
-        "*.yml": "yaml",
-        "*.yaml": "yaml",
-        "_config*.yml": "yaml"
-    },
-    "emmet.includeLanguages": {
-        "liquid": "html"
-    },
-    "liquid.format.enable": true,
-    // Jekyll file watching
-    "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true,
-        "**/_site/**": true,
-        "**/.sass-cache/**": true,
-        "**/.jekyll-cache/**": true,
-        "**/vendor/**": true
-    },
-    // Docker settings
-    "docker.images.label": "latest",
-    "docker.commands.compose": "docker-compose",
-    // Terminal settings for Jekyll development
-    "terminal.integrated.env.osx": {
-        "JEKYLL_ENV": "development"
-    },
-    "terminal.integrated.env.linux": {
-        "JEKYLL_ENV": "development"
-    },
-    // Ruby/Bundle settings
-    "ruby.rubocop.onSave": true,
-    "ruby.format": "rubocop",
-    // YAML settings for Jekyll config files
-    "[yaml]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "advanced"
-    },
-    // Liquid template settings
-    "[liquid]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true
-    },
-    // Auto-save for Jekyll live reload
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000
+  // ==================================================
+  // UNIFIED VS CODE SETTINGS - Docker-First Development
+  // ==================================================
+  // Optimized for it-journey, zer0-mistakes, barodybroject
+  // Last Updated: 2025-10-26
+  
+  // ==========================================
+  // GITHUB COPILOT CONFIGURATION
+  // ==========================================
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "yaml": true,
+    "liquid": true,
+    "html": true,
+    "scss": true,
+    "javascript": true,
+    "python": true,
+    "dockerfile": true,
+    "json": true,
+    "jsonc": true
+  },
+  "github.copilot.advanced": {
+    "enableSuggestionAutoTrigger": true,
+    "contextLength": 4096,
+    "enableAutoCompletions": true
+  },
+
+  // ==========================================
+  // FILE ASSOCIATIONS & LANGUAGE SUPPORT
+  // ==========================================
+  "files.associations": {
+    "*.html": "liquid",
+    "*.md": "markdown", 
+    "*.yml": "yaml",
+    "*.yaml": "yaml",
+    "_config*.yml": "yaml",
+    "docker-compose*.yml": "yaml",
+    "Dockerfile*": "dockerfile"
+  },
+
+  // ==========================================
+  // EDITOR CONFIGURATION
+  // ==========================================
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.tabCompletion": "on",
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 26,
+
+  // ==========================================
+  // MARKDOWN CONFIGURATION
+  // ==========================================
+  "[markdown]": {
+    "editor.fontSize": 14,
+    "editor.lineHeight": 26,
+    "editor.wordWrapColumn": 80,
+    "editor.lineNumbers": "on",
+    "editor.wordWrap": "bounded",
+    "editor.minimap.enabled": false
+  },
+  "markdown.preview.breaks": true,
+  "markdown.preview.linkify": true,
+
+  // ==========================================
+  // YAML CONFIGURATION
+  // ==========================================
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced"
+  },
+  "yaml.format.enable": true,
+  "yaml.completion": true,
+  "yaml.hover": true,
+  "yaml.validate": true,
+
+  // ==========================================
+  // LIQUID TEMPLATE CONFIGURATION
+  // ==========================================
+  "[liquid]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "liquid.format.enable": true,
+  "emmet.includeLanguages": {
+    "liquid": "html"
+  },
+
+  // ==========================================
+  // PYTHON CONFIGURATION
+  // ==========================================
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["src", "tests"],
+  "python.defaultInterpreterPath": "./venv/bin/python",
+
+  // ==========================================
+  // DOCKER CONFIGURATION
+  // ==========================================
+  "docker.images.label": "latest",
+  "docker.commands.compose": "docker-compose",
+
+  // ==========================================
+  // TERMINAL CONFIGURATION
+  // ==========================================
+  "terminal.integrated.env.osx": {
+    "JEKYLL_ENV": "development",
+    "DOCKER_BUILDKIT": "1"
+  },
+  "terminal.integrated.env.linux": {
+    "JEKYLL_ENV": "development", 
+    "DOCKER_BUILDKIT": "1"
+  },
+
+  // ==========================================
+  // FILE WATCHING & PERFORMANCE
+  // ==========================================
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/_site/**": true,
+    "**/.sass-cache/**": true,
+    "**/.jekyll-cache/**": true,
+    "**/vendor/**": true,
+    "**/__pycache__/**": true,
+    "**/*.pyc": true,
+    "**/venv/**": true,
+    "**/env/**": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/_site": true,
+    "**/.sass-cache": true,
+    "**/.jekyll-cache": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/_site": true,
+    "**/vendor": true,
+    "**/__pycache__": true
+  },
+
+  // ==========================================
+  // AUTO-SAVE & LIVE RELOAD
+  // ==========================================
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // ==========================================
+  // FRONT MATTER CMS INTEGRATION
+  // ==========================================
+  "frontMatter.dashboard.openOnStart": true,
+  "frontMatter.content.autoUpdateDate": true,
+
+  // ==========================================
+  // JUPYTER INTEGRATION
+  // ==========================================
+  "jupyter.jupyterServerType": "local",
+
+  // ==========================================
+  // DIFF EDITOR CONFIGURATION
+  // ==========================================
+  "diffEditor.wordWrap": "off",
+  "[search-result]": {
+    "editor.lineNumbers": "on"
+  },
+
+  // ==========================================
+  // RUBY/BUNDLE SETTINGS
+  // ==========================================
+  "ruby.rubocop.onSave": true,
+  "ruby.format": "rubocop",
+
+  // ==========================================
+  // SPELL CHECKING
+  // ==========================================
+  "cSpell.words": [
+    "bamr",
+    "endcapture",
+    "endraw",
+    "Groking",
+    "Inkscape",
+    "Jamstack",
+    "Krita",
+    "lastmod",
+    "markdownify",
+    "MERN",
+    "Picade",
+    "sublinks",
+    "winget",
+    "barodybroject",
+    "parodynews"
+  ]
 }

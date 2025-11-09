@@ -1,10 +1,20 @@
 {
+  // ==================================================
+  // UNIFIED VS CODE LAUNCH CONFIGURATION - Docker-First
+  // ==================================================
+  // Optimized for it-journey Jekyll development
+  // Last Updated: 2025-10-26
+  
   "version": "0.2.0",
   "configurations": [
+    
+    // ==========================================
+    // DOCKER DEVELOPMENT CONFIGURATIONS
+    // ==========================================
     {
+      "name": "� Debug IT-Journey (Docker)",
       "type": "msedge",
       "request": "launch",
-      "name": "🚀 Edge: Debug Jekyll with Console Integration",
       "url": "http://localhost:4002",
       "webRoot": "${workspaceFolder}",
       "preLaunchTask": "Docker: Compose Up (Detached)",
@@ -16,9 +26,7 @@
       ],
       "sourceMaps": true,
       "smartStep": true,
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "internalConsoleOptions": "openOnSessionStart",
       "trace": {
         "stdio": true,
@@ -31,17 +39,16 @@
         "/css/": "${workspaceFolder}/assets/css/"
       }
     },
+
     {
-      "type": "msedge",
+      "name": "🔗 Attach to Running Jekyll (Docker)",
+      "type": "msedge", 
       "request": "attach",
-      "name": "🔗 Edge: Attach to Running Jekyll (Console)",
       "port": 9222,
       "webRoot": "${workspaceFolder}",
       "sourceMaps": true,
       "smartStep": true,
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "internalConsoleOptions": "openOnSessionStart",
       "urlFilter": "localhost:4002*",
       "trace": {
@@ -55,10 +62,11 @@
         "/css/": "${workspaceFolder}/assets/css/"
       }
     },
+
     {
+      "name": "🔄 Docker Rebuild & Debug",
       "type": "msedge",
-      "request": "launch",
-      "name": "🔧 Edge: Debug + Rebuild Jekyll Site",
+      "request": "launch", 
       "url": "http://localhost:4002",
       "webRoot": "${workspaceFolder}",
       "preLaunchTask": "Docker: Rebuild (Force)",
@@ -70,9 +78,7 @@
       ],
       "sourceMaps": true,
       "smartStep": true,
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "internalConsoleOptions": "openOnSessionStart",
       "trace": {
         "stdio": true,
@@ -85,10 +91,14 @@
         "/css/": "${workspaceFolder}/assets/css/"
       }
     },
+
+    // ==========================================
+    // MOBILE & RESPONSIVE TESTING
+    // ==========================================
     {
+      "name": "📱 Mobile Debug (Docker)",
       "type": "msedge",
       "request": "launch",
-      "name": "📱 Edge: Mobile Debug (Responsive Testing)",
       "url": "http://localhost:4002",
       "webRoot": "${workspaceFolder}",
       "preLaunchTask": "Docker: Compose Up (Detached)",
@@ -109,10 +119,14 @@
         "/css/": "${workspaceFolder}/assets/css/"
       }
     },
+
+    // ==========================================
+    // PERFORMANCE DEBUGGING
+    // ==========================================
     {
+      "name": "🎯 Performance Debug (Docker)",
       "type": "msedge",
       "request": "launch",
-      "name": "🎯 Edge: Performance Debug Mode",
       "url": "http://localhost:4002",
       "webRoot": "${workspaceFolder}",
       "preLaunchTask": "Docker: Compose Up (Detached)",
