@@ -1,6 +1,5 @@
 ---
-description: VS Code Copilot instructions for guiding IT-Journey contributors through creation, code, documentation, and community contributions.
-applyTo: "**"
+applyTo: '**/*'
 ---
 
 # Contributing Instructions for AI Agents
@@ -442,4 +441,8 @@ Happy learning! 🎯
 
 **Remember**: AI assists contributors, but humans make creative decisions, provide final approval, and build community relationships. The goal is to make contributing easier and more rewarding, not to automate away the human element of open-source collaboration.
 
-**Last Updated**: 2025-11-07 | **Maintained by**: IT-Journey Team
+---
+
+**Version:** 1.0.0 | **Last Modified:** 2025-11-07 | **Author:** IT-Journey Team
+
+**Usage:** VS Code Copilot instructions for guiding IT-Journey contributors through creation, code, documentation, and community contributions.

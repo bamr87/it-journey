@@ -17,10 +17,24 @@ Each `.instructions.md` file follows a consistent frontmatter format:
 
 ```yaml
 ---
-description: Brief description under 160 characters for SEO
-applyTo: "**"  # File pattern this applies to
+applyTo: 'file-patterns'  # Required: glob patterns for file matching (use single quotes)
 ---
+
+# Content Title
+
+Brief description of the instruction file's purpose and scope.
+
+## Content sections
+
+---
+
+**Version:** X.Y.Z | **Last Modified:** YYYY-MM-DD | **Author:** Team Name
+
+**Related Files:**
+- `other-file.md`: Relationship description
 ```
+
+**Note:** Per GitHub Copilot documentation, only the `applyTo` field is required in frontmatter. Additional metadata (version, author, etc.) is placed in the document body footer.
 
 ### Available Instruction Files
 

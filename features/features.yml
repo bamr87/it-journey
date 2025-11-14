@@ -1,0 +1,22 @@
+features:
+  - id: FR-ITJ-001
+    title: "Jekyll site generation"
+    description: "Automated Jekyll site generation with Jekyll + GitHub Pages"
+    implemented: true
+    link: "/"
+    tags: [site, jekyll, build]
+    date: 2024-03-12
+  - id: FR-ITJ-002
+    title: "Algolia Search indexing"
+    description: "Search indexing for site content using Algolia"
+    implemented: true
+    link: "/search/"
+    tags: [search, algolia]
+    date: 2024-05-01
+  - id: FR-ITJ-003
+    title: "Auto features index generation"
+    description: "Add features metadata files across repos and auto-generate consolidated features index"
+    implemented: true
+    link: "/about/features/"
+    tags: [automation, features]
+    date: 2025-11-11

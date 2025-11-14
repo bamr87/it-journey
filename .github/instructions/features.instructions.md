@@ -1,18 +1,10 @@
 ---
-applyTo: '**'
-file: features.instructions.md
-description: VS Code Copilot-optimized instructions for feature building pipeline with end-to-end CI/CD integration
-version: 2.1.0
-lastModified: 2025-10-17
-dependencies:
-  - copilot-instructions.md: Core VS Code Copilot principles
-  - README.instructions.md: Documentation standards
-  - quest.instructions.md: Educational content patterns
+applyTo: '**/*.py,**/*.js,**/*.ts,**/*.jsx,**/*.tsx,**/*.sh,**/*.bash,.github/workflows/*.yml,.github/workflows/*.yaml'
 ---
 
 # Enhanced VS Code Copilot Instructions for Feature Building Pipeline with End-to-End CI/CD in it-journey Repo
 
-These enhanced instructions build upon the previous set, integrating complete end-to-end CI/CD processes tailored to the `github.com/bamr87/it-journey` repository. The repo leverages GitHub Actions for CI/CD, automating quality checks, builds, tests, deployments to GitHub Pages, and monitoring. This ensures educational content (e.g., quests, posts, notebooks) maintains high standards while supporting gamified learning, cross-platform compatibility, and AI-powered development (AIPD) with VS Code Copilot optimization.
+VS Code Copilot-optimized instructions for feature building pipeline with end-to-end CI/CD integration. These enhanced instructions build upon the previous set, integrating complete end-to-end CI/CD processes tailored to the `github.com/bamr87/it-journey` repository. The repo leverages GitHub Actions for CI/CD, automating quality checks, builds, tests, deployments to GitHub Pages, and monitoring. This ensures educational content (e.g., quests, posts, notebooks) maintains high standards while supporting gamified learning, cross-platform compatibility, and AI-powered development (AIPD) with VS Code Copilot optimization.
 
 ## 🤖 VS Code Copilot Integration for Feature Development
 
@@ -329,3 +321,12 @@ The following updates incorporate CI/CD prompts. Use as before, pasting as comme
 ```
 
 This comprehensive setup transforms the pipeline into a robust, automated system, accessible and understandable for both AI and humans.
+
+---
+
+**Version:** 2.1.0 | **Last Modified:** 2025-10-17 | **Author:** IT-Journey Team
+
+**Related Files:**
+- `copilot-instructions.md`: Core VS Code Copilot principles
+- `README.instructions.md`: Documentation standards
+- `quest.instructions.md`: Educational content patterns

@@ -1,50 +1,10 @@
 ---
-description: VS Code Copilot-optimized guidelines for maintaining, reviewing, and evolving README.md files throughout the repository
 applyTo: '**/README.md'
 ---
 
-```yaml
-author: IT-Journey Team
-created: 2025-10-17
-lastModified: 2025-10-17
-version: 2.1.0
-
-dependencies:
-  - copilot-instructions.md: Core principles and VS Code Copilot integration
-  - features.instructions.md: Feature documentation standards
-  - quest.instructions.md: Quest-specific README patterns
-
-relatedEvolutions:
-  - "VS Code Copilot integration for documentation generation"
-  - "AI-assisted README maintenance workflows"
-  - "Automated documentation quality assurance"
-
-containerRequirements:
-  description: "README files are platform-agnostic documentation optimized for AI assistance"
-  validation: "markdown-lint, link-checker, accessibility validation, AI-readability scoring"
-
-paths:
-  readme_evolution_path:
-    - initial_creation
-    - ai_assisted_enhancement
-    - regular_maintenance
-    - improvement_cycles
-    - integration_updates
-    - community_feedback
-    - continuous_refinement
-
-changelog:
-  - date: "2025-10-17"
-    description: "Enhanced with VS Code Copilot optimization and AI-assisted documentation workflows"
-    author: "IT-Journey Team"
-
-usage: "Reference for creating, maintaining, and evolving all README.md files in the IT-Journey ecosystem with VS Code Copilot assistance"
-notes: "Follows IT-Journey principles: DFF, DRY, KIS, REnO, MVP, COLAB, AIPD with VS Code Copilot integration"
-```
-
 # README.md Maintenance & Evolution Guidelines
 
-This document provides comprehensive instructions for maintaining, reviewing, updating, fixing, adjusting, improving, evolving, growing, connecting, and styling README.md files throughout the IT-Journey repository ecosystem, optimized for VS Code Copilot assistance.
+VS Code Copilot-optimized guidelines for maintaining, reviewing, and evolving README.md files throughout the repository. This document provides comprehensive instructions for maintaining, reviewing, updating, fixing, adjusting, improving, evolving, growing, connecting, and styling README.md files throughout the IT-Journey repository ecosystem, optimized for VS Code Copilot assistance.
 
 ## 🤖 VS Code Copilot Integration for README Development
 
@@ -1206,5 +1166,14 @@ Remember the IT-Journey core principles in every README:
 - **AIPD**: AI-powered development - leverage AI assistively, not exclusively
 
 ---
+
+**Version:** 2.1.0 | **Last Modified:** 2025-10-17 | **Author:** IT-Journey Team
+
+**Related Files:**
+- `copilot-instructions.md`: Core principles and VS Code Copilot integration
+- `features.instructions.md`: Feature documentation standards
+- `quest.instructions.md`: Quest-specific README patterns
+
+**Usage:** Reference for creating, maintaining, and evolving all README.md files in the IT-Journey ecosystem with VS Code Copilot assistance. Follows IT-Journey principles: DFF, DRY, KIS, REnO, MVP, COLAB, AIPD with VS Code Copilot integration.
 
 **Questions?** [Open an issue](https://github.com/bamr87/it-journey/issues) or [start a discussion](https://github.com/bamr87/it-journey/discussions)
