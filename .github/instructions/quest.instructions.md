@@ -139,6 +139,8 @@ a### Enhanced Frontmatter Template with Quest Hierarchy
 
 Every quest MUST include this comprehensive frontmatter structure with enhanced organizational metadata:
 
+Reference: the canonical YAML template exists at `.frontmatter/templates/quests.md`. Use that file when generating front matter for a quest and ensure the fields match the instruction schema.
+
 ```yaml
 ---
 title: "Quest Title: Clear and Action-Oriented Description"

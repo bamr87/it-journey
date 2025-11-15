@@ -209,5 +209,6 @@
     "winget",
     "barodybroject",
     "parodynews"
-  ]
+  ],
+  "containers.images.label": "latest"
 }

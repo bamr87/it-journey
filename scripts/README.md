@@ -94,6 +94,7 @@ The unified approach provides:
 3. **Consistent Results**: Same behavior whether run locally or in CI
 4. **Easy Maintenance**: Updates only require modifying the Python script
 5. **Comprehensive Outputs**: All results available for workflow decisions
+6. **Placeholder Handling**: The link-checker ignores documented placeholder patterns (like `$GHUSER`, `$GIT_REPO`) via `.lycheeignore` so example links don't falsely trigger failures during CI runs.
 
 ### 🛠️ Development
 
