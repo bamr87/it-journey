@@ -103,6 +103,11 @@ The unified approach provides:
 - Python 3.11+
 - `requests` library
 - Lychee link checker (auto-installed)
+   - The script attempts to install Lychee automatically:
+      - macOS: will try Homebrew (`brew install lychee`) when available
+      - Debian/Ubuntu: will try `apt-get` when available
+      - Fallback: download official tarball from GitHub releases and extract
+      - Tip: In CI or restricted environments, use `--skip-install` and pre-install `lychee` via your package manager
 - GitHub CLI (for issue creation)
 
 #### Environment Variables
@@ -121,6 +126,14 @@ python3 scripts/link-checker.py --scope internal --analysis-level basic
 
 # Test without AI (faster execution)
 python3 scripts/link-checker.py --scope docs --no-ai
+```
+
+#### Unit Tests
+
+There's a small test harness that validates the parser logic for different Lychee output formats:
+
+```bash
+python3 scripts/test_link_checker.py
 ```
 
 ### 📈 Architecture Benefits
