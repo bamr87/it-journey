@@ -1,0 +1,104 @@
+# Configuration for organizing posts by section
+# This file defines valid sections for blog posts and their corresponding directory names
+
+sections:
+  "AI & Machine Learning":
+    directory: "ai & machine learning"
+    aliases:
+      - "ai"
+      - "machine learning"
+      - "artificial intelligence"
+  "Web Development":
+    directory: "web development"
+    aliases:
+      - "web"
+      - "frontend"
+      - "backend"
+  "DevOps":
+    directory: "devops"
+    aliases:
+      - "deployment"
+      - "ci/cd"
+      - "infrastructure"
+  "Programming":
+    directory: "programming"
+    aliases:
+      - "coding"
+      - "development"
+      - "software"
+  "System Administration":
+    directory: "system administration"
+    aliases:
+      - "sysadmin"
+      - "administration"
+      - "systems"
+  "Data & Analytics":
+    directory: "data & analytics"
+    aliases:
+      - "data"
+      - "analytics"
+      - "analysis"
+  "Tools & Environment":
+    directory: "tools & environment"
+    aliases:
+      - "tools"
+      - "environment"
+      - "setup"
+  "Creative & Experimental":
+    directory: "creative & experimental"
+    aliases:
+      - "creative"
+      - "experimental"
+      - "art"
+  "Culture & Society":
+    directory: "culture & society"
+    aliases:
+      - "culture"
+      - "society"
+      - "social"
+  "Trends & Ideas":
+    directory: "trends & ideas"
+    aliases:
+      - "trends"
+      - "ideas"
+      - "innovation"
+  "Learning":
+    directory: "learning"
+    aliases:
+      - "education"
+      - "tutorial"
+      - "guide"
+  "Business":
+    directory: "business"
+    aliases:
+      - "enterprise"
+      - "commercial"
+      - "corporate"
+  "Technology":
+    directory: "technology"
+    aliases:
+      - "tech"
+      - "technical"
+  "Home":
+    directory: "home"
+    aliases:
+      - "personal"
+      - "misc"
+  "World":
+    directory: "world"
+    aliases:
+      - "global"
+      - "international"
+
+# Default section for posts without a clear section
+default_section: "technology"
+
+# Fallback mapping for categories to sections
+category_to_section:
+  "Development": "Programming"
+  "Debugging": "Programming"
+  "Research": "Learning"
+  "Cultural-Education": "Culture & Society"
+  "Social-Issues": "Culture & Society"
+  "Posts": null  # Skip generic categories
+  "Test": null   # Skip test categories
