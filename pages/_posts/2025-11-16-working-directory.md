@@ -1,51 +1,51 @@
 ---
-title: "Working Directories: The Invisible Backbone of Software Builds"
-description: "Deep dive into working directories in software development, how they influence tooling, builds, tests, and deployments, and the subtle ways they can break or harden your pipelines."
+title: "Working Directories: Backbone of Software Builds"
+description: How working directories shape tooling, builds, tests, deployments—and how directory assumptions can break or harden pipelines.
 date: 2025-11-16T00:50:00.488Z
-preview: "/images/post-preview-working-directory.png"
+preview: /images/post-preview-working-directory.png
 tags:
-	- devops
-	- build-systems
-	- filesystem
-	- debugging
-	- best-practices
+    - devops
+    - build-systems
+    - filesystem
+    - debugging
+    - best-practices
 categories:
-	- Posts
-	- DevOps
-	- Tutorials
-sub-title: "How current directories quietly shape your tools, tests, and CI pipelines"
-excerpt: "Working directories look trivial—`cd` and forget—but they define how tools resolve paths, load configs, cache artifacts, and can make builds reproducible or fragile. This article dissects their power, pitfalls, and best practices."
-snippet: "Every build has a working directory; the best ones don’t surprise you."
-author: "IT-Journey Team"
+    - Posts
+    - DevOps
+    - Tutorials
+sub-title: How current directories quietly shape your tools, tests, and CI pipelines
+excerpt: Working directories look trivial—`cd` and forget—but they define how tools resolve paths, load configs, cache artifacts, and can make builds reproducible or fragile. This article dissects their power, pitfalls, and best practices.
+snippet: Every build has a working directory; the best ones don’t surprise you.
+author: IT-Journey Team
 layout: journals
 keywords:
-	primary:
-		- working-directory
-		- build-systems
-	secondary:
-		- ci-cd
-		- path-resolution
-		- tooling
-lastmod: 2025-11-16T00:50:00.488Z
+    primary:
+        - working-directory
+        - build-systems
+    secondary:
+        - ci-cd
+        - path-resolution
+        - tooling
+lastmod: 2025-11-16T02:42:33.708Z
 permalink: /posts/working-directories-in-software-development/
 attachments: ""
 comments: true
-difficulty: "🟡 Intermediate"
-estimated_reading_time: "20-30 minutes"
+difficulty: 🟡 Intermediate
+estimated_reading_time: 20-30 minutes
 prerequisites:
-	- "Basic command-line experience (cd, ls, pwd)"
-	- "Familiarity with project structures and build tools (npm, Maven, Make, etc.)"
+    - Basic command-line experience (cd, ls, pwd)
+    - Familiarity with project structures and build tools (npm, Maven, Make, etc.)
 learning_outcomes:
-	- "🎯 Explain what a working directory is across OSes and shells."
-	- "⚡ Predict how tools will resolve relative paths and configs."
-	- "🛠️ Design build scripts that are robust to directory changes."
-	- "🔗 Identify and fix working-directory-related flakiness in builds and CI."
-content_series: "DevOps Foundations"
+    - 🎯 Explain what a working directory is across OSes and shells.
+    - ⚡ Predict how tools will resolve relative paths and configs.
+    - 🛠️ Design build scripts that are robust to directory changes.
+    - 🔗 Identify and fix working-directory-related flakiness in builds and CI.
+content_series: DevOps Foundations
 related_posts: []
 validation_methods:
-	- "Reproduce common working-directory bugs and apply fixes described in the article."
-	- "Refactor an existing build script to be directory-agnostic and compare behavior."
-	- "Run the same build pipeline locally and in CI to confirm consistent results."
+    - Reproduce common working-directory bugs and apply fixes described in the article.
+    - Refactor an existing build script to be directory-agnostic and compare behavior.
+    - Run the same build pipeline locally and in CI to confirm consistent results.
 ---
 
 ## Introduction
