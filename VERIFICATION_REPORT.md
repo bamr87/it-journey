@@ -9,7 +9,7 @@
 #### 1. Updated Workflow File
 **File:** `.github/workflows/organize-posts-weekly.yml`
 - Replaced "Commit and Push Changes" step with "Create Pull Request with Organized Posts"
-- Integrated `peter-evans/create-pull-request@v7` action
+- Integrated GitHub CLI (`gh pr create`) for PR creation
 - Removed duplicate PR creation step for dry-run mode
 - Enhanced workflow summary to report PR creation status
 
@@ -32,7 +32,7 @@
 ### Technical Details
 
 #### PR Creation Configuration
-- **Action:** peter-evans/create-pull-request@v7
+- **Method:** GitHub CLI (gh pr create)
 - **Branch Pattern:** `automated/organize-posts-{run_id}`
 - **Auto-delete:** Yes
 - **Labels:** automated, content-organization, posts

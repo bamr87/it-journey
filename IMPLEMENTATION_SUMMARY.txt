@@ -31,7 +31,7 @@ AFTER:
 
 1. .github/workflows/organize-posts-weekly.yml
    • Removed: Direct git push step (20 lines)
-   • Added: peter-evans/create-pull-request@v7 action (39 lines)
+   • Added: GitHub CLI for PR creation (2 steps, ~80 lines)
    • Updated: Workflow summary reporting (7 lines)
    • Net: 82 lines modified
 
@@ -63,7 +63,7 @@ AFTER:
 ✓ PR creation step present and configured
 ✓ No direct push to main branch found
 ✓ Workflow summary reports PR creation with URL
-✓ peter-evans/create-pull-request@v7 properly configured
+✓ GitHub CLI PR creation properly configured
 ✓ Branch auto-delete enabled
 ✓ Labels and assignees configured
 ✓ Comprehensive PR body template included

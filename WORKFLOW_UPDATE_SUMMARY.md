@@ -37,14 +37,26 @@ This update modifies the `organize-posts-weekly.yml` workflow to create a pull r
 
 **Added:**
 ```yaml
-- name: 'Create Pull Request with Organized Posts'
-  uses: peter-evans/create-pull-request@v7
-  id: create_pr
-  with:
-    token: ${{ secrets.GITHUB_TOKEN }}
-    branch: automated/organize-posts-${{ github.run_id }}
-    delete-branch: true
-    title: '🤖 Weekly Post Organization - ${{ github.run_id }}'
+- name: 'Create Branch and Commit Changes'
+  run: |
+    BRANCH_NAME="automated/organize-posts-${{ github.run_id }}"
+    git checkout -b "$BRANCH_NAME"
+    git add pages/_posts/
+    git commit -m "🤖 Weekly post organization and archiving"
+    git push origin "$BRANCH_NAME"
+
+- name: 'Create Pull Request with GitHub CLI'
+  env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    gh pr create \
+      --title "🤖 Weekly Post Organization - ${{ github.run_id }}" \
+      --body-file pr_body.md \
+      --base main \
+      --label "automated" \
+      --label "content-organization" \
+      --label "posts" \
+      --assignee "bamr87"
     ...
 ```
 

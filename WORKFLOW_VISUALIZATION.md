@@ -51,24 +51,28 @@ graph LR
     git push origin main  # ❌ Direct push
 ```
 
-### New Workflow (Lines 201-240)
+### New Workflow (Lines 201-277)
 ```yaml
-- name: 'Create Pull Request with Organized Posts'
-  uses: peter-evans/create-pull-request@v7  # ✅ PR-based
-  id: create_pr
-  with:
-    token: ${{ secrets.GITHUB_TOKEN }}
-    branch: automated/organize-posts-${{ github.run_id }}
-    delete-branch: true
-    title: '🤖 Weekly Post Organization - ${{ github.run_id }}'
-    body: |
-      ## 📋 Automated Post Organization
-      [Summary and details...]
-    labels: |
-      automated
-      content-organization
-      posts
-    assignees: bamr87
+- name: 'Create Branch and Commit Changes'
+  run: |
+    BRANCH_NAME="automated/organize-posts-${{ github.run_id }}"
+    git checkout -b "$BRANCH_NAME"
+    git add pages/_posts/
+    git commit -m "$commit_msg"
+    git push origin "$BRANCH_NAME"  # ✅ Push to branch
+
+- name: 'Create Pull Request with GitHub CLI'
+  env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    gh pr create \
+      --title "🤖 Weekly Post Organization - ${{ github.run_id }}" \
+      --body-file pr_body.md \
+      --base main \
+      --label "automated" \
+      --label "content-organization" \
+      --label "posts" \
+      --assignee "bamr87"  # ✅ PR-based using GitHub CLI
 ```
 
 ## Key Improvements
