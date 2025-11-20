@@ -47,6 +47,7 @@ Brief description of the instruction file's purpose and scope.
 | `features.instructions.md` | Feature development pipeline and CI/CD | Code contributors |
 | `space.instructions.md` | Project organization and workspace structure | All contributors |
 | `prompts.instructions.md` | Prompt engineering for AI development | AI-assisted development |
+| `scripts.instructions.md` | Script development standards and best practices | Script developers and automation engineers |
 
 ## How AI Agents Use These Instructions
 
@@ -204,6 +205,6 @@ When adding new instruction files:
 
 ---
 
-**Last Updated:** 2025-11-07  
+**Last Updated:** 2025-11-18  
 **Maintained by:** IT-Journey Team  
 **Purpose:** Enable AI agents to assist contributors more effectively while maintaining project quality and standards

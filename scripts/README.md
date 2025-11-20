@@ -204,6 +204,7 @@ This system serves as both a practical tool and an educational example of modern
 ### 🔗 Related Documentation
 
 ### IT-Journey Documentation
+- [Scripts Instructions](../.github/instructions/scripts.instructions.md) - Standards and best practices for scripts
 - [Scripts Guide](../docs/scripts/SCRIPTS_GUIDE.md) - Comprehensive scripts documentation
 - [Script Cleanup Summary](../docs/scripts/CLEANUP_SUMMARY.md) - Consolidation results
 - [Script Consolidation Plan](../docs/scripts/CONSOLIDATION_PLAN.md) - Organization strategy
@@ -214,6 +215,103 @@ This system serves as both a practical tool and an educational example of modern
 - [Lychee Link Checker Documentation](https://github.com/lycheeverse/lychee)
 - [OpenAI API Documentation](https://platform.openai.com/docs)
 - [GitHub CLI Documentation](https://cli.github.com/manual/)
+
+## ☁️ Azure Jekyll Deploy
+
+The Azure Jekyll Deploy script is a comprehensive automation tool that transforms the Azure Ascension quest into a production-ready deployment solution. It provides complete automation for deploying Jekyll sites to Azure Static Web Apps with GitHub Actions CI/CD integration.
+
+### 🚀 Features
+
+- **Complete Azure Integration**: Automated Azure Static Web Apps setup and configuration
+- **GitHub Actions CI/CD**: Full pipeline creation with deployment workflows
+- **Custom Domain Support**: Automated DNS configuration and SSL certificate setup
+- **Multi-Platform Compatibility**: Works on macOS, Linux, and WSL2 environments
+- **Interactive & Non-Interactive Modes**: Flexible deployment options for different use cases
+- **Dry-Run Capability**: Safe testing mode to preview all changes before execution
+- **Comprehensive Error Handling**: Detailed logging with specific exit codes and recovery procedures
+- **Security-First Design**: No hardcoded credentials, proper input validation, and secure token handling
+
+### 📁 File Structure
+
+```
+scripts/
+├── azure-jekyll-deploy.sh              # Main deployment script
+├── azure-jekyll-deploy-README.md       # Comprehensive documentation
+└── azure-jekyll-deploy-TESTING.md      # Testing checklist and procedures
+
+.github/workflows/
+└── azure-jekyll-deploy.yml             # Example GitHub Actions workflow
+```
+
+### 🔧 Usage
+
+#### Quick Start
+
+```bash
+# Make executable and run interactive setup
+chmod +x scripts/azure-jekyll-deploy.sh
+./scripts/azure-jekyll-deploy.sh setup
+
+# Deploy with minimal configuration
+./scripts/azure-jekyll-deploy.sh deploy --app-name my-jekyll-site --github-repo https://github.com/user/repo
+```
+
+#### Advanced Usage
+
+```bash
+# Full deployment with custom domain
+./scripts/azure-jekyll-deploy.sh deploy \
+  --app-name production-site \
+  --github-repo https://github.com/org/production-site \
+  --custom-domain www.mysite.com \
+  --verbose \
+  --yes
+
+# Dry-run to preview changes
+./scripts/azure-jekyll-deploy.sh --dry-run deploy --app-name test-site
+
+# Step-by-step deployment
+./scripts/azure-jekyll-deploy.sh configure --jekyll-dir ./my-site
+./scripts/azure-jekyll-deploy.sh azure-create --app-name my-site
+./scripts/azure-jekyll-deploy.sh github-workflow --github-repo https://github.com/user/my-site
+```
+
+#### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `setup` | Interactive initial setup and dependency checks |
+| `deploy` | Complete end-to-end deployment |
+| `configure` | Configure Jekyll site for deployment |
+| `azure-create` | Create and configure Azure Static Web App |
+| `github-workflow` | Setup GitHub Actions deployment pipeline |
+| `domain-setup` | Configure custom domain and SSL |
+| `cleanup` | Remove Azure resources |
+
+### 🛠️ Dependencies
+
+- **Azure CLI**: For Azure resource management
+- **GitHub CLI** (optional): For automated secret setup
+- **Jekyll**: Static site generator
+- **Git**: Version control operations
+- **curl, jq**: HTTP requests and JSON processing
+
+### 📊 Educational Value
+
+This script demonstrates advanced automation concepts:
+
+- **Infrastructure as Code**: Azure resource creation via CLI commands
+- **CI/CD Pipeline Design**: GitHub Actions workflow automation
+- **Multi-Cloud Deployment**: Azure Static Web Apps best practices
+- **Security Automation**: Secure credential handling and validation
+- **Error Recovery**: Comprehensive error handling and rollback procedures
+- **Cross-Platform Scripting**: Bash scripting for multiple operating systems
+
+### 🔗 Related Documentation
+
+- [Azure Ascension Quest](../../pages/_quests/level-0082-azure-ascension-jekyll-deployment/index.md) - Original educational content
+- [Azure Jekyll Deploy README](azure-jekyll-deploy-README.md) - Complete usage guide
+- [Azure Jekyll Deploy Testing](azure-jekyll-deploy-TESTING.md) - Testing procedures
 
 ## 🤝 Contributing
 
