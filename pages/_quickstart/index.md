@@ -17,6 +17,7 @@ Here's an index of all the quickstart documents in the collection.
    2. IDE (Visual Studio Code) [Local link](/quickstart/vscode)  Or [Web link](https://code.visualstudio.com/)
    3. Source Code Control (Github) [Local link](/quickstart/github)  Or [Web link](https://github.com/)
    4. Docker [Local link](/quickstart/docker) Or [Web link](https://www.docker.com/)
+   5. Terminal Tools (Charm) [Local link](/quickstart/charm-setup) Or [Web link](https://charm.sh/)
 2. Website Development
    1. HTML/CSS Basics [Local link](/quickstart/html-css-basics) Or [Web link](https://www.w3schools.com/html/)
    2. Jekyll [Local link](/quickstart/jekyll) Or [Web link](https://jekyllrb.com/)
