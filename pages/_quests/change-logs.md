@@ -15,6 +15,7 @@ lastmod: 2025-04-18T19:43:43.286Z
 permalink: null
 attachments: ""
 comments: false
+preview: /svg/penrose-gpt-vs-human.png
 ---
 
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**

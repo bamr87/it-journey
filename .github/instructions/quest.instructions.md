@@ -1,82 +1,10 @@
 ---
-description: VS Code Copilot-optimized quest creation standards and best practices for the IT-Journey gamified learning experience
-applyTo: "pages/_quests/**/*.md"
+applyTo: 'pages/_quests/**/*.md'
 ---
-
-```yaml
-file: quest.instructions.md
-author: "IT-Journey Team <team@it-journey.org>"
-created: "2025-07-21"
-lastModified: "2025-10-17"
-version: "2.1.0"
-
-relatedIssues:
-  - "N/A"
-
-relatedEvolutions:
-  - "Enhanced gamification framework"
-  - "Multi-platform quest support"
-  - "Progressive skill path system"
-
-dependencies:
-  - file: markdown.instructions.md
-    description: Foundation Markdown writing standards and accessibility
-  - file: space.instructions.md
-    description: Path-based development principles
-  - file: project.instructions.md
-    description: IT-Journey specific context and requirements
-
-containerRequirements:
-  baseImage: node:18-alpine
-  description: for quest development and testing environment
-  exposedPorts:
-    - 4000
-    - 3000
-  portDescription: Jekyll development server and quest validation tools
-  volumes:
-    - "/quests:rw"
-    - "/templates:rw"
-    - "/assets:rw"
-  environment:
-    JEKYLL_ENV: development
-    QUEST_VALIDATION: enabled
-  resources:
-    cpu: "0.5-1.0"
-    memory: "512MiB-1GiB"
-  healthCheck: "/health endpoint on quest development server"
-
-paths:
-  quest_creation_path:
-    - conceptualization
-    - planning
-    - development
-    - testing
-    - integration
-    - publication
-  learning_progression_path:
-    - foundation_quests
-    - skill_building_quests
-    - specialization_quests
-    - mastery_quests
-  gamification_workflow_path:
-    - objective_definition
-    - challenge_design
-    - reward_system
-    - progress_tracking
-    - achievement_validation
-
-changelog:
-  - date: "2025-07-21"
-    description: "Initial creation from refactored copilot-instructions.md"
-    author: "IT-Journey Team"
-
-usage: "Reference for all quest creation, gamification, and educational module development in the IT-Journey platform"
-notes: "Emphasizes fantasy RPG themes, progressive learning, accessibility, and measurable skill development"
-```
 
 # Quest Creation Instructions for IT-Journey
 
-These instructions provide comprehensive guidance for creating engaging, educational, and accessible quests that transform technical learning into epic adventures. Quests are the cornerstone of the IT-Journey gamified learning experience, designed to make complex technical concepts approachable and enjoyable for learners at all levels, optimized for VS Code Copilot assistance.
+VS Code Copilot-optimized quest creation standards and best practices for the IT-Journey gamified learning experience. These instructions provide comprehensive guidance for creating engaging, educational, and accessible quests that transform technical learning into epic adventures. Quests are the cornerstone of the IT-Journey gamified learning experience, designed to make complex technical concepts approachable and enjoyable for learners at all levels, optimized for VS Code Copilot assistance.
 
 ## 🤖 VS Code Copilot Integration for Quest Creation
 
@@ -210,6 +138,8 @@ Quests transform traditional technical documentation into immersive learning adv
 a### Enhanced Frontmatter Template with Quest Hierarchy
 
 Every quest MUST include this comprehensive frontmatter structure with enhanced organizational metadata:
+
+Reference: the canonical YAML template exists at `.frontmatter/templates/quests.md`. Use that file when generating front matter for a quest and ensure the fields match the instruction schema.
 
 ```yaml
 ---
@@ -2421,3 +2351,14 @@ ecosystem_validation:
 - **Cross-Reference Capability**: Easy mapping between binary and decimal for accessibility
 - **Visual Recognition**: Binary patterns create memorable visual quest identifiers
 - **Community Building**: Shared binary level system creates common language for learners
+
+---
+
+**Version:** 2.1.0 | **Last Modified:** 2025-10-17 | **Author:** IT-Journey Team
+
+**Related Files:**
+- `markdown.instructions.md`: Foundation Markdown writing standards and accessibility
+- `space.instructions.md`: Path-based development principles
+- `project.instructions.md`: IT-Journey specific context and requirements
+
+**Usage:** Reference for all quest creation, gamification, and educational module development in the IT-Journey platform. Emphasizes fantasy RPG themes, progressive learning, accessibility, and measurable skill development.

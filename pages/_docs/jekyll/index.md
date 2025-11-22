@@ -60,8 +60,33 @@ See the [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT
 
 ### Rich Content
 
-- **[Mermaid Diagrams](jekyll-diagram-with-mermaid.md)** - Creating diagrams with Mermaid in Jekyll
+- **[Mermaid Diagrams (Auto-Detection)](jekyll-diagram-with-mermaid.md)** - Zero-configuration diagram creation with automatic detection
+- **[Migration Guide](mermaid-migration.md)** - Upgrading from manual to automatic Mermaid configuration
 - **[Math Symbols with MathJax](jekyll-math-symbols-with-mathjax.md)** - Displaying mathematical notation
+
+## 🎯 New: Mermaid Auto-Detection
+
+**Zero Configuration Required!** The zer0-mistakes theme now automatically detects and renders Mermaid diagrams.
+
+### Quick Usage
+
+Simply use standard markdown code fences - no front matter needed:
+
+````markdown
+```mermaid
+graph TD;
+    A[Start] --> B[End];
+```
+````
+
+### Benefits
+
+- ✅ **No configuration** - just use ```mermaid blocks
+- ✅ **Better performance** - library loads only when needed
+- ✅ **Impossible to forget** - automatic detection
+- ✅ **GitHub Pages compatible** - works everywhere
+
+[Learn more →](jekyll-diagram-with-mermaid.md) • [Migration guide →](mermaid-migration.md)
 
 ## Quick Start
 

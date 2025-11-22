@@ -1,0 +1,184 @@
+# Azure Jekyll Deploy Workflow
+# This workflow demonstrates how to use the azure-jekyll-deploy.sh script
+# in a GitHub Actions CI/CD pipeline for automated Jekyll deployments to Azure
+
+name: Deploy Jekyll to Azure
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      app_name:
+        description: 'Azure Static Web App name'
+        required: false
+        type: string
+      custom_domain:
+        description: 'Custom domain (leave empty for default Azure domain)'
+        required: false
+        type: string
+
+env:
+  AZURE_APP_NAME: ${{ github.event.inputs.app_name || format('jekyll-{0}-{1}', github.event.repository.name, github.event.inputs.environment || 'staging') }}
+  DEPLOY_ENV: ${{ github.event.inputs.environment || 'staging' }}
+  CUSTOM_DOMAIN: ${{ github.event.inputs.custom_domain }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (for Jekyll dependencies)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Setup Ruby (for Jekyll)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install Jekyll dependencies
+        run: |
+          bundle install
+
+      - name: Setup Azure CLI
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Setup GitHub CLI (optional)
+        run: |
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          sudo apt update
+          sudo apt install gh
+
+      - name: Authenticate GitHub CLI
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+
+      - name: Make deployment script executable
+        run: chmod +x scripts/azure-jekyll-deploy.sh
+
+      - name: Configure Jekyll for deployment
+        run: |
+          ./scripts/azure-jekyll-deploy.sh configure \
+            --jekyll-dir . \
+            --environment ${{ env.DEPLOY_ENV }}
+
+      - name: Deploy to Azure (Staging)
+        if: env.DEPLOY_ENV == 'staging'
+        run: |
+          ./scripts/azure-jekyll-deploy.sh deploy \
+            --app-name ${{ env.AZURE_APP_NAME }} \
+            --github-repo ${{ github.repositoryUrl }} \
+            --github-token ${{ secrets.GITHUB_TOKEN }} \
+            --verbose \
+            --yes
+
+      - name: Deploy to Azure (Production)
+        if: env.DEPLOY_ENV == 'production'
+        run: |
+          ./scripts/azure-jekyll-deploy.sh deploy \
+            --app-name ${{ env.AZURE_APP_NAME }} \
+            --github-repo ${{ github.repositoryUrl }} \
+            --github-token ${{ secrets.GITHUB_TOKEN }} \
+            --custom-domain ${{ env.CUSTOM_DOMAIN }} \
+            --verbose \
+            --yes
+
+      - name: Setup custom domain (Production only)
+        if: env.DEPLOY_ENV == 'production' && env.CUSTOM_DOMAIN != ''
+        run: |
+          ./scripts/azure-jekyll-deploy.sh domain-setup \
+            --app-name ${{ env.AZURE_APP_NAME }} \
+            --custom-domain ${{ env.CUSTOM_DOMAIN }} \
+            --yes
+
+      - name: Verify deployment
+        run: |
+          # Wait for deployment to complete
+          sleep 30
+
+          # Check if site is accessible
+          SITE_URL="https://${{ env.AZURE_APP_NAME }}.azurestaticapps.net"
+          if curl -f -s "$SITE_URL" > /dev/null; then
+            echo "✅ Site deployed successfully: $SITE_URL"
+          else
+            echo "❌ Site deployment failed"
+            exit 1
+          fi
+
+      - name: Run link checker (post-deployment)
+        run: |
+          python3 scripts/link-checker.py --scope website --timeout 30
+
+      - name: Cleanup on failure
+        if: failure()
+        run: |
+          echo "Deployment failed, consider manual cleanup if needed"
+          echo "Azure resources may need manual removal via Azure portal"
+
+  cleanup:
+    runs-on: ubuntu-latest
+    if: failure() && github.event_name == 'workflow_dispatch'
+    needs: deploy
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Azure CLI
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Make deployment script executable
+        run: chmod +x scripts/azure-jekyll-deploy.sh
+
+      - name: Cleanup Azure resources
+        run: |
+          ./scripts/azure-jekyll-deploy.sh cleanup \
+            --resource-group jekyll-citadel-rg \
+            --force \
+            --yes
+
+# Required Secrets:
+# - AZURE_CREDENTIALS: Azure service principal credentials (JSON format)
+# - GITHUB_TOKEN: GitHub personal access token with repo and workflow permissions
+#
+# Optional Secrets:
+# - AZURE_SUBSCRIPTION_ID: Azure subscription ID (can be set in environment)
+# - AZURE_RESOURCE_GROUP: Custom resource group name
+#
+# Required Environment Variables (can be set in repository settings):
+# - AZURE_LOCATION: Azure region (default: EastUS)
+#
+# Usage:
+# 1. Set up Azure service principal and add credentials as AZURE_CREDENTIALS secret
+# 2. Create GitHub token with repo and workflow permissions
+# 3. Configure environment variables as needed
+# 4. Trigger workflow manually or on push/PR events
+#
+# For production deployments, consider:
+# - Using Azure Front Door for global CDN
+# - Setting up Azure Monitor alerts
+# - Implementing blue-green deployment strategy
+# - Adding security scanning (Azure Security Center)
+# - Configuring backup and disaster recovery

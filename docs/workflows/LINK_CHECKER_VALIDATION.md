@@ -19,6 +19,7 @@ This document validates the automated link checker workflow implementation.
 - **Status**: ✅ PASSED
 - **File**: `.lycheeignore` created with proper regex patterns
 - **Patterns**: 25+ ignore patterns for common problematic URLs
+	- **Note**: Updated to ignore template variables and developer placeholders (e.g. `$GHUSER`, `$GIT_REPO`) so the workflow excludes generated examples that are not resolvable during static analysis.
 
 ### 4. Analysis Script Testing
 - **Status**: ✅ PASSED

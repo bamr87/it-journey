@@ -17,10 +17,24 @@ Each `.instructions.md` file follows a consistent frontmatter format:
 
 ```yaml
 ---
-description: Brief description under 160 characters for SEO
-applyTo: "**"  # File pattern this applies to
+applyTo: 'file-patterns'  # Required: glob patterns for file matching (use single quotes)
 ---
+
+# Content Title
+
+Brief description of the instruction file's purpose and scope.
+
+## Content sections
+
+---
+
+**Version:** X.Y.Z | **Last Modified:** YYYY-MM-DD | **Author:** Team Name
+
+**Related Files:**
+- `other-file.md`: Relationship description
 ```
+
+**Note:** Per GitHub Copilot documentation, only the `applyTo` field is required in frontmatter. Additional metadata (version, author, etc.) is placed in the document body footer.
 
 ### Available Instruction Files
 
@@ -33,6 +47,7 @@ applyTo: "**"  # File pattern this applies to
 | `features.instructions.md` | Feature development pipeline and CI/CD | Code contributors |
 | `space.instructions.md` | Project organization and workspace structure | All contributors |
 | `prompts.instructions.md` | Prompt engineering for AI development | AI-assisted development |
+| `scripts.instructions.md` | Script development standards and best practices | Script developers and automation engineers |
 
 ## How AI Agents Use These Instructions
 
@@ -190,6 +205,6 @@ When adding new instruction files:
 
 ---
 
-**Last Updated:** 2025-11-07  
+**Last Updated:** 2025-11-18  
 **Maintained by:** IT-Journey Team  
 **Purpose:** Enable AI agents to assist contributors more effectively while maintaining project quality and standards

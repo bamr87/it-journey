@@ -17,6 +17,7 @@ import argparse
 import logging
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 
@@ -35,6 +36,8 @@ class PostOrganizer:
         self.config_file = config_file
         self.dry_run = dry_run
         self.valid_sections: Set[str] = set()
+        self.section_mapping: Dict[str, str] = {}  # Maps section names to directory names
+        self.category_mapping: Dict[str, str] = {}  # Maps categories to sections
         self.processed_files: List[str] = []
         self.skipped_files: List[Dict] = []
         self.error_files: List[Dict] = []
@@ -51,38 +54,66 @@ class PostOrganizer:
         self.logger = logging.getLogger(__name__)
     
     def load_valid_sections(self) -> None:
-        """Load valid sections from posts.yml configuration file."""
+        """Load valid sections from posts_organization.yml configuration file."""
         if not self.config_file:
-            # Default sections based on the posts.yml we examined
-            self.valid_sections = {
-                'technology', 'tech', 'business', 'world', 'home'
-            }
-            self.logger.info(f"Using default sections: {self.valid_sections}")
-            return
+            # If no config file specified, try to find it relative to script location
+            script_dir = Path(__file__).parent
+            default_config = script_dir.parent.parent.parent / "_data" / "posts_organization.yml"
+            if default_config.exists():
+                self.config_file = str(default_config)
+                self.logger.info(f"Using default config file: {self.config_file}")
+            else:
+                # Fallback to hardcoded sections
+                self.valid_sections = {
+                    'ai & machine learning', 'business', 'creative & experimental',
+                    'culture & society', 'data & analytics', 'devops', 'learning',
+                    'programming', 'system administration', 'technology',
+                    'tools & environment', 'trends & ideas', 'web development'
+                }
+                self.logger.info(f"Using fallback sections: {self.valid_sections}")
+                return
         
         try:
             config_path = Path(self.config_file)
             if not config_path.exists():
-                self.logger.warning(f"Config file {self.config_file} not found, using defaults")
-                self.valid_sections = {'technology', 'tech', 'business', 'world', 'home'}
+                self.logger.error(f"Config file {self.config_file} not found")
                 return
             
             with open(config_path, 'r', encoding='utf-8') as f:
-                posts_config = yaml.safe_load(f)
+                config = yaml.safe_load(f)
             
-            # Extract section names from posts.yml structure
-            for item in posts_config:
-                if isinstance(item, dict) and 'title' in item:
-                    section_name = item['title'].lower().replace(' ', '-')
-                    self.valid_sections.add(section_name)
-                    # Also add the exact title
-                    self.valid_sections.add(item['title'].lower())
+            # Load sections and their directory mappings
+            sections_config = config.get('sections', {})
+            for section_name, section_data in sections_config.items():
+                self.valid_sections.add(section_name)
+                
+                # Map section name to directory name
+                directory = section_data.get('directory', section_name.lower())
+                self.section_mapping[section_name] = directory
+                
+                # Also add aliases as valid sections
+                aliases = section_data.get('aliases', [])
+                for alias in aliases:
+                    self.valid_sections.add(alias)
+                    self.section_mapping[alias] = directory
+            
+            # Load category to section mappings
+            self.category_mapping = config.get('category_to_section', {})
             
             self.logger.info(f"Loaded {len(self.valid_sections)} valid sections from config")
             
         except Exception as e:
             self.logger.error(f"Error loading config file: {e}")
-            self.valid_sections = {'technology', 'tech', 'business', 'world', 'home'}
+            # Fallback to hardcoded sections
+            self.valid_sections = {
+                'ai & machine learning', 'business', 'creative & experimental',
+                'culture & society', 'data & analytics', 'devops', 'learning',
+                'programming', 'system administration', 'technology',
+                'tools & environment', 'trends & ideas', 'web development'
+            }
+            # Create basic mapping
+            for section in self.valid_sections:
+                self.section_mapping[section] = section
     
     def extract_frontmatter(self, file_path: Path) -> Optional[Dict]:
         """Extract YAML frontmatter from a markdown file."""
@@ -106,69 +137,125 @@ class PostOrganizer:
             self.logger.error(f"Error reading frontmatter from {file_path}: {e}")
             return None
     
+    def extract_date_prefix(self, frontmatter: Dict, filename: str) -> Optional[str]:
+        """Extract date prefix from filename or frontmatter."""
+        # First try to extract from existing filename
+        date_pattern = r'^(\d{4}-\d{2}-\d{2})-'
+        match = re.match(date_pattern, filename)
+        if match:
+            return match.group(1)
+        
+        # Try to extract from frontmatter date field
+        date_fields = ['date', 'created', 'published']
+        for field in date_fields:
+            if field in frontmatter and frontmatter[field]:
+                date_value = frontmatter[field]
+                # Handle different date formats
+                try:
+                    if isinstance(date_value, str):
+                        # Parse various date formats
+                        if 'T' in date_value:  # ISO format
+                            date_obj = datetime.fromisoformat(date_value.replace('Z', '+00:00').split('T')[0])
+                        elif ' ' in date_value:  # Space-separated format
+                            date_obj = datetime.strptime(date_value.split(' ')[0], '%Y-%m-%d')
+                        else:
+                            date_obj = datetime.strptime(date_value, '%Y-%m-%d')
+                        return date_obj.strftime('%Y-%m-%d')
+                    elif hasattr(date_value, 'strftime'):  # datetime object
+                        return date_value.strftime('%Y-%m-%d')
+                except Exception:
+                    continue
+        
+        # Fallback: use current date
+        return datetime.now().strftime('%Y-%m-%d')
+    
     def extract_slug(self, frontmatter: Dict, filename: str) -> Optional[str]:
-        """Extract slug from frontmatter or generate from filename/title."""
+        """Extract slug from frontmatter or generate from filename/title, preserving date prefix."""
+        # Get the date prefix
+        date_prefix = self.extract_date_prefix(frontmatter, filename)
+        
         # Try to get slug from permalink first
         if 'permalink' in frontmatter and frontmatter['permalink']:
             permalink = frontmatter['permalink']
             # Extract the last part of the permalink as slug
-            slug = Path(permalink).name
-            if slug and slug != '/':
-                return slug
+            slug_part = Path(permalink).name
+            if slug_part and slug_part != '/':
+                return f"{date_prefix}-{slug_part}"
         
         # Try to get slug from explicit slug field
         if 'slug' in frontmatter and frontmatter['slug']:
-            return frontmatter['slug']
+            slug_part = frontmatter['slug']
+            return f"{date_prefix}-{slug_part}"
         
         # Generate slug from title
         if 'title' in frontmatter and frontmatter['title']:
             title = frontmatter['title']
             # Convert title to slug format
-            slug = re.sub(r'[^\w\s-]', '', title.lower())
-            slug = re.sub(r'[-\s]+', '-', slug)
-            return slug.strip('-')
+            slug_part = re.sub(r'[^\w\s-]', '', title.lower())
+            slug_part = re.sub(r'[-\s]+', '-', slug_part)
+            slug_part = slug_part.strip('-')
+            return f"{date_prefix}-{slug_part}"
         
-        # Fallback: use filename without date prefix and extension
-        # Remove date prefix (YYYY-MM-DD-) if present
+        # Fallback: use filename without date prefix and extension, then re-add date
         base_name = Path(filename).stem
         date_pattern = r'^\d{4}-\d{2}-\d{2}-'
-        slug = re.sub(date_pattern, '', base_name)
-        return slug if slug else None
+        slug_part = re.sub(date_pattern, '', base_name)
+        if slug_part:
+            return f"{date_prefix}-{slug_part}"
+        
+        return None
     
     def get_section(self, frontmatter: Dict) -> Optional[str]:
-        """Get the section from frontmatter."""
-        if 'section' not in frontmatter:
-            return None
+        """Get the section from frontmatter, with fallback to categories mapping."""
+        # First try to get section directly
+        if 'section' in frontmatter and frontmatter['section']:
+            section = frontmatter['section']
+            
+            # Normalize section name
+            section = section.strip()
+            
+            # Check if it's a valid section (exact match first)
+            if section in self.valid_sections:
+                return section
+            
+            # Try case-insensitive match
+            for valid_section in self.valid_sections:
+                if section.lower() == valid_section.lower():
+                    return valid_section
+            
+            # Try variations
+            section_variations = [
+                section.lower(),
+                section.lower().replace(' ', '-'),
+                section.lower().replace('-', ' '),
+                section.lower().replace('_', '-'),
+                section.lower().replace('_', ' ')
+            ]
+            
+            for variation in section_variations:
+                if variation in self.valid_sections:
+                    return variation
         
-        section = frontmatter['section']
-        if not section:
-            return None
-        
-        # Normalize section name
-        section = section.lower().strip()
-        
-        # Check if it's a valid section
-        if section in self.valid_sections:
-            return section
-        
-        # Try variations
-        section_variations = [
-            section,
-            section.replace(' ', '-'),
-            section.replace('-', ' '),
-            section.replace('_', '-'),
-            section.replace('_', ' ')
-        ]
-        
-        for variation in section_variations:
-            if variation in self.valid_sections:
-                return variation
+        # Fallback: try to map from categories
+        if 'categories' in frontmatter and frontmatter['categories']:
+            categories = frontmatter['categories']
+            if isinstance(categories, str):
+                categories = [categories]
+            
+            for category in categories:
+                if category in self.category_mapping:
+                    mapped_section = self.category_mapping[category]
+                    if mapped_section and mapped_section in self.valid_sections:
+                        self.logger.info(f"Mapped category '{category}' to section '{mapped_section}'")
+                        return mapped_section
         
         return None
     
     def create_target_directory(self, section: str) -> Path:
         """Create the target directory for the section."""
-        target_dir = self.posts_dir / section
+        # Get the directory name from the mapping, or use the section as-is
+        directory_name = self.section_mapping.get(section, section)
+        target_dir = self.posts_dir / directory_name
         
         if not self.dry_run:
             target_dir.mkdir(exist_ok=True)

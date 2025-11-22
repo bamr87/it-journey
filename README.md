@@ -57,6 +57,16 @@ This system exemplifies modern DevOps practices including automated testing, AI 
 
 Whether you're a complete beginner or looking to enhance your existing skills, the IT-Journey provides structured learning paths:
 
+### Quick Terminal Access
+**New!** Use our interactive terminal interface for easy navigation:
+```bash
+# Install Charm tools (Gum & Glow)
+brew install gum glow  # macOS
+# Then run the interface
+./journey.sh
+```
+This provides a beautiful TUI (Text User Interface) to browse quests, docs, and manage the repository.
+
 ### For Beginners
 1. **Start with Zero**: Follow our [Zero to Hero guide](zer0.md) 
 2. **Basic Quests**: Complete foundational [learning quests](pages/_quests/)

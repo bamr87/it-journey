@@ -402,16 +402,69 @@ defaults:
 # their entries' file path in the `include:` list.
 
 exclude:
+  # Jekyll/Ruby specific
   - .sass-cache/
   - .jekyll-cache/
-  - .obsidian
+  - .bundle/
+  - .ruby-lsp/
+  - Gemfile
   - Gemfile.lock
   - gemfiles/
-  - Gemfile
-  - node_modules/
   - vendor/
-  # - "*.sh"
+  
+  # Build and dependency directories
+  - node_modules/
+  - .venv/
+  - _site/
+  
+  # Development and configuration files
+  - .env
+  - .DS_Store
+  - .obsidian/
+  - .vscode/
+  - .devcontainer/
+  - .frontmatter/
+  - .git/
+  - .gitignore
+  - .gitmodules
+  
+  # Docker and containerization
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose.*.yml
+  
+  # Scripts and automation
+  - "*.sh"
+  - "*.py"
+  - scripts/
+  - Makefile
+  
+  # Testing and validation
+  - test/
+  - test-results/
+  - .lycheeignore
+  - .markdownlint.json
+  - .yamllint.yml
+  
+  # Documentation and project files
+  - docs/
+  - logs/
+  - prompts/
+  - TODO/
+  - "*.log"
+  - "**/*.log"
+  
+  # Configuration and metadata files
+  - frontmatter.json
+  - "*.md.backup"
+  - "*.tmp"
+  - ".seed.md"
+  
+  # Project-specific files
   - submodules/
+  - post-organization.log
+  - "*_SUMMARY.md"
+  - roadmap.md
 
 # Sass/SCSS
 sass:

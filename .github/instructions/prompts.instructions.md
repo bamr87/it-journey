@@ -1,6 +1,5 @@
 ---
-applyTo: '**/prompts/**.md'
-description: Kaizen-based prompt engineering instructions for VS Code Copilot and AI agent development. Combines prompt engineering techniques with Kaizen methodology for systematic prompt optimization and continuous improvement.
+applyTo: '**/prompts/**/*.md'
 ---
 
 # Prompt Engineering Instructions with Kaizen Integration
@@ -801,3 +800,9 @@ Use this checklist for every significant prompt:
 - **Kaizen Agent Protocol**: Full PDCA framework for AI-assisted development
 - **Quest Instructions**: Standards for educational content creation
 - **VS Code Copilot Documentation**: Official integration guidelines
+
+---
+
+**Version:** 1.0.0 | **Last Modified:** 2025-01-27 | **Author:** IT-Journey Team
+
+**Usage:** Kaizen-based prompt engineering instructions for VS Code Copilot and AI agent development. Combines prompt engineering techniques with Kaizen methodology for systematic prompt optimization and continuous improvement.

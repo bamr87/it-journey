@@ -2,16 +2,16 @@
 title: Quests (~) Index
 layout: collection
 keywords:
-  - init
-  - hello world
-  - quest
-  - learning path
-  - IT journey
-  - developer training
+    - init
+    - hello world
+    - quest
+    - learning path
+    - IT journey
+    - developer training
 categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 permalink: /quests/
-lastmod: 2025-07-22T04:19:08.325Z
+lastmod: 2025-11-20T05:43:41.427Z
 draft: false
 toc: true
 toc_sticky: true
@@ -130,6 +130,7 @@ Web technologies and advanced scripting
 
 **Available Adventures:**
 
+- [The GitHub Pages Portal: Forging Your Digital Realm](lvl_001/github-pages-portal.md) - *Deploy Your First Website*
 - [Personal Site Creation](lvl_001/personal-site.md) - *Build Your Digital Castle*
 - `js-examples.js` - *JavaScript Spell Components*
 - `js_testing.js` - *Test Your Magical Constructs*
@@ -174,6 +175,12 @@ Latest adventures and discoveries from fellow travelers
 - [Clean Commit Commitments](2025-04-18-commitments-to-clean-commits.md) - *Perfect Your Git Ritual*
 - [AI Automation Revolution](2025-04-18-revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
 - [Sourcery Code Methods](2025-04-18-sourcery-code-methods.md) - *Advanced Coding Incantations*
+
+**November 2025 Quest Chronicles:**
+
+- [GitHub Code Search: Your Secret Weapon for Code Navigation](2025-11-14-github-hidden-gem-code-search-quest.md) - *Your Secret Weapon for Code Navigation*
+- [Azure Ascension: Deploying the Crystal Citadel to the Cloud Kingdom](2025-11-17-azure-ascension-jekyll-deployment-quest.md) - *Master Azure Static Web Apps deployment*
+- [Terminal Artificer: Forging the Glass Interface](lvl_0010/2025-11-19-terminal-artificer-frontend-building.md) - *Craft beautiful, interactive frontends for your shell scripts*
 
 ## Codex & Reference Materials
 

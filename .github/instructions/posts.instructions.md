@@ -1,83 +1,10 @@
 ---
-file: posts.instructions.md
-description: VS Code Copilot-optimized post creation standards and best practices for the IT-Journey blog and content management system
-applyTo: "pages/_posts/**/*.md"
-author: "IT-Journey Team <team@it-journey.org>"
-created: "2025-01-27"
-lastModified: "2025-10-17"
-version: "2.1.0"
-
-relatedIssues:
-  - "N/A"
-
-relatedEvolutions:
-  - "Enhanced content management framework"
-  - "Multi-category post organization"
-  - "Progressive knowledge documentation system"
-
-dependencies:
-  - file: markdown.instructions.md
-    description: Foundation Markdown writing standards and accessibility
-  - file: space.instructions.md
-    description: Path-based development principles
-  - file: quest.instructions.md
-    description: Gamification framework for educational content
-  - file: project.instructions.md
-    description: IT-Journey specific context and requirements
-
-containerRequirements:
-  baseImage: node:18-alpine
-  description: for Jekyll development and content validation environment
-  exposedPorts:
-    - 4000
-    - 3001
-  portDescription: Jekyll development server and content validation tools
-  volumes:
-    - "/posts:rw"
-    - "/assets:rw"
-    - "/_data:rw"
-  environment:
-    JEKYLL_ENV: development
-    CONTENT_VALIDATION: enabled
-  resources:
-    cpu: "0.5-1.0"
-    memory: "512MiB-1GiB"
-  healthCheck: "/health endpoint on Jekyll development server"
-
-paths:
-  content_creation_path:
-    - research_and_planning
-    - drafting
-    - technical_validation
-    - review_and_editing
-    - publication
-    - community_engagement
-  knowledge_organization_path:
-    - categorization
-    - tagging
-    - indexing
-    - cross_referencing
-    - taxonomy_management
-  content_workflow_path:
-    - topic_identification
-    - outline_creation
-    - content_development
-    - technical_accuracy_review
-    - accessibility_validation
-    - publication_optimization
-
-changelog:
-  - date: "2025-01-27"
-    description: "Initial creation based on quest.instructions.md template"
-    author: "IT-Journey Team"
-
-usage: "Reference for all blog post creation, technical article writing, and content management in the IT-Journey platform"
-notes: "Emphasizes technical accuracy, educational value, accessibility, and progressive knowledge building"
+applyTo: 'pages/_posts/**/*.md'
 ---
 
 # Post Creation Instructions for IT-Journey
 
-These instructions provide comprehensive guidance for creating high-quality, educational, and accessible blog posts that document technical learning journeys and share valuable IT knowledge. Posts are the foundation of knowledge sharing in the IT-Journey platform, designed to transform complex technical experiences into accessible learning resources for developers at all levels, optimized for VS Code Copilot assistance.
+VS Code Copilot-optimized post creation standards and best practices for the IT-Journey blog and content management system. These instructions provide comprehensive guidance for creating high-quality, educational, and accessible blog posts that document technical learning journeys and share valuable IT knowledge. Posts are the foundation of knowledge sharing in the IT-Journey platform, designed to transform complex technical experiences into accessible learning resources for developers at all levels, optimized for VS Code Copilot assistance.
 
 ## 🤖 VS Code Copilot Integration for Post Creation
 
@@ -811,3 +738,15 @@ Before proceeding, ensure you understand:
 - **Industry Connection**: Align content with professional needs and career development
 - **Thought Leadership**: Establish expertise and contribute to technical discourse
 - **Network Building**: Connect with other professionals and practitioners in the field
+
+---
+
+**Version:** 2.1.0 | **Last Modified:** 2025-10-17 | **Author:** IT-Journey Team
+
+**Related Files:**
+- `markdown.instructions.md`: Foundation Markdown writing standards and accessibility
+- `space.instructions.md`: Path-based development principles
+- `quest.instructions.md`: Gamification framework for educational content
+- `project.instructions.md`: IT-Journey specific context and requirements
+
+**Usage:** Reference for all blog post creation, technical article writing, and content management in the IT-Journey platform. Emphasizes technical accuracy, educational value, accessibility, and progressive knowledge building.

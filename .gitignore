@@ -13,3 +13,6 @@ logs/debug-attach-trace.log
 logs/debug-rebuild-trace.log
 test-results/*
 logs/debug-trace.log
+*/__pycache__/*
+
+work/

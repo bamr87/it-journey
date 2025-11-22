@@ -15,7 +15,7 @@ REQUIREMENTS_FILE="${SCRIPT_DIR}/requirements.txt"
 # Default paths (relative to IT-Journey root)
 IT_JOURNEY_ROOT="$(cd "${SCRIPT_DIR}/../../../" && pwd)"
 DEFAULT_POSTS_DIR="${IT_JOURNEY_ROOT}/pages/_posts"
-DEFAULT_CONFIG_FILE="${IT_JOURNEY_ROOT}/_data/navigation/posts.yml"
+DEFAULT_CONFIG_FILE="${IT_JOURNEY_ROOT}/_data/posts_organization.yml"
 
 # Colors for output
 RED='\033[0;31m'

@@ -1,45 +1,214 @@
 {
+  // ==================================================
+  // UNIFIED VS CODE TASKS - Docker-First Development
+  // ==================================================
+  // Optimized for it-journey Jekyll development
+  // Last Updated: 2025-10-26
+  
   "version": "2.0.0",
   "tasks": [
+    
+    // ==========================================
+    // CORE DOCKER OPERATIONS
+    // ==========================================
     {
       "label": "Docker: Compose Up (Detached)",
       "type": "shell",
       "command": "docker-compose",
       "args": ["up", "-d"],
       "options": { "cwd": "${workspaceFolder}" },
-      "problemMatcher": []
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Start Docker containers in detached mode"
     },
+
     {
       "label": "Docker: Compose Stop",
-      "type": "shell",
+      "type": "shell", 
       "command": "docker-compose",
       "args": ["stop"],
       "options": { "cwd": "${workspaceFolder}" },
-      "problemMatcher": []
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Stop running Docker containers"
     },
+
     {
       "label": "Docker: Compose Down",
       "type": "shell",
-      "command": "docker-compose",
+      "command": "docker-compose", 
       "args": ["down"],
       "options": { "cwd": "${workspaceFolder}" },
-      "problemMatcher": []
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Stop and remove Docker containers, networks"
     },
+
     {
       "label": "Docker: Rebuild (Force)",
       "type": "shell",
       "command": "docker-compose",
       "args": ["up", "--build", "--force-recreate", "-d"],
       "options": { "cwd": "${workspaceFolder}" },
-      "problemMatcher": []
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Force rebuild and recreate all Docker containers"
     },
+
     {
       "label": "Docker: Logs (Follow)",
       "type": "shell",
       "command": "docker-compose",
       "args": ["logs", "-f", "jekyll"],
       "options": { "cwd": "${workspaceFolder}" },
-      "problemMatcher": []
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "detail": "Follow Jekyll container logs in real-time"
+    },
+
+    // ==========================================
+    // JEKYLL SPECIFIC TASKS
+    // ==========================================
+    {
+      "label": "Jekyll: Build Site",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["exec", "jekyll", "bundle", "exec", "jekyll", "build"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "dependsOn": "Docker: Compose Up (Detached)",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Build Jekyll site inside Docker container"
+    },
+
+    // ==========================================
+    // TESTING TASKS
+    // ==========================================
+    {
+      "label": "Test: Run All Tests",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["exec", "jekyll", "bundle", "exec", "rspec"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "dependsOn": "Docker: Compose Up (Detached)",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Run test suite in Docker container"
+    },
+
+    {
+      "label": "Lint: Markdown Files",
+      "type": "shell",
+      "command": "markdownlint",
+      "args": ["**/*.md"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Lint all Markdown files with markdownlint"
+    },
+
+    // ==========================================
+    // MAINTENANCE TASKS
+    // ==========================================
+    {
+      "label": "Docker: Clean Up",
+      "type": "shell",
+      "command": "docker",
+      "args": ["system", "prune", "-f"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": [],
+      "detail": "Clean up Docker system (containers, networks, images)"
+    },
+
+    {
+      "label": "Dependencies: Update Jekyll",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["exec", "jekyll", "bundle", "update"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "dependsOn": "Docker: Compose Up (Detached)",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Update Jekyll dependencies in Docker container"
     }
   ]
 }

@@ -16,6 +16,17 @@ http://example\.com.*
 https://your-domain\.com.*
 http://your-domain\.com.*
 
+# Ignore template variables and placeholder patterns used across docs
+# These patterns allow link-checkers to skip unresolved template values
+https://\$GHUSER\..*
+https://\$GHUSER\.github\.io.*
+https://github\.com/\$GHUSER/.*
+https://github\.com/\$\{GHUSER\}/.*
+https://github\.com/\$GHUSER/\$GIT_REPO.*
+https://\$GHUSER\.github\.io/\$GIT_REPO.*
+.*\$GHUSER.*
+.*\$GIT_REPO.*
+
 # Social media URLs that might be rate-limited or block automated requests
 https://twitter\.com/.*
 https://instagram\.com/.*

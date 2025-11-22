@@ -16,6 +16,7 @@ from datetime import datetime
 from pathlib import Path
 
 import requests
+import shutil
 
 
 class LinkHealthGuardian:
@@ -54,8 +55,7 @@ class LinkHealthGuardian:
         
         try:
             # Check if lychee is already installed
-            result = subprocess.run(['lychee', '--version'], 
-                                  capture_output=True, text=True)
+            result = subprocess.run(['lychee', '--version'], capture_output=True, text=True)
             if result.returncode == 0:
                 self.log('SUCCESS', f'Lychee already installed: {result.stdout.strip()}')
                 return True
@@ -65,15 +65,43 @@ class LinkHealthGuardian:
         # Install lychee
         self.log('INFO', 'Installing Lychee link checker...')
         try:
-            # Download and install lychee
-            install_cmd = [
-                'curl', '-sSfL',
-                'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz',
-                '|', 'tar', '-xz', '-C', '/tmp'
-            ]
-            subprocess.run(' '.join(install_cmd), shell=True, check=True)
-            subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
-            subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
+            # Choose install method by platform
+            platform = sys.platform
+
+            # Prefer package managers if available
+            if platform == 'darwin' and shutil.which('brew'):
+                self.log('INFO', 'Installing lychee with Homebrew (macOS)')
+                subprocess.run(['brew', 'install', 'lychee'], check=True)
+            elif platform.startswith('linux'):
+                # Try apt first, then fall back to tarball
+                if shutil.which('apt-get'):
+                    try:
+                        subprocess.run(['sudo', 'apt-get', 'update'], check=True)
+                        subprocess.run(['sudo', 'apt-get', 'install', '-y', 'lychee'], check=True)
+                    except subprocess.CalledProcessError:
+                        # Fall back to prebuilt tarball
+                        self.log('INFO', 'apt-get install failed; falling back to tarball install')
+                        tarball_url = 'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz'
+                        subprocess.run(['curl', '-sSfL', tarball_url, '-o', '/tmp/lychee.tar.gz'], check=True)
+                        subprocess.run(['tar', '-xzf', '/tmp/lychee.tar.gz', '-C', '/tmp'], check=True)
+                        subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
+                        subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
+                else:
+                    # If apt-get not available, try to download binary directly
+                    self.log('INFO', 'Downloading lychee tarball (fallback)')
+                    tarball_url = 'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz'
+                    subprocess.run(['curl', '-sSfL', tarball_url, '-o', '/tmp/lychee.tar.gz'], check=True)
+                    subprocess.run(['tar', '-xzf', '/tmp/lychee.tar.gz', '-C', '/tmp'], check=True)
+                    # Copy to local bin; prefer sudo when available
+                    if shutil.which('sudo'):
+                        subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
+                        subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
+                    else:
+                        try:
+                            subprocess.run(['mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
+                            subprocess.run(['chmod', '+x', '/usr/local/bin/lychee'], check=True)
+                        except Exception:
+                            raise
             
             # Verify installation
             result = subprocess.run(['lychee', '--version'], 
@@ -99,7 +127,7 @@ class LinkHealthGuardian:
         
         base_path = scope_mapping.get(scope, '.')
         
-        # Find all markdown files in the specified path
+        # Find all markdown & HTML files in the specified path
         files = []
         for ext in ['*.md', '*.html', '*.htm']:
             if os.path.exists(base_path):
@@ -110,7 +138,8 @@ class LinkHealthGuardian:
         
         # For internal/external scope, we'll filter during analysis
         self.log('INFO', f'Scope "{scope}" includes {len(file_list)} files')
-        return file_list if file_list else ['.']
+        # Return an empty list if no files found - caller will handle default '.'
+        return file_list
     
     def run_link_check(self):
         """Execute the main link checking with Lychee."""
@@ -144,6 +173,9 @@ class LinkHealthGuardian:
         # Lychee follows redirects by default
         
         # Add files to check
+        # If no files were found, use repository root (lychee expects at least one path)
+        if not files:
+            files = ['.']
         cmd.extend(files)
         
         self.log('INFO', f'Running: {" ".join(cmd)}')
@@ -245,6 +277,26 @@ class LinkHealthGuardian:
             else:
                 self.log('WARNING', f'Unexpected data format in lychee results: {type(data)}')
                 return False
+
+            # If the raw output doesn't contain a canonical error_map, build one
+            if isinstance(data, dict) and 'error_map' not in data:
+                # Lychee may provide 'failures' or 'error_details' as a list
+                if isinstance(data.get('error_details'), list) and data.get('error_details'):
+                    failures = data.get('error_details')
+                elif isinstance(data.get('failures'), list) and data.get('failures'):
+                    failures = data.get('failures')
+                elif isinstance(data, dict) and data.get('failed'):  # summary with nested
+                    failures = data.get('failed')
+                else:
+                    failures = []
+
+                error_map = defaultdict(list)
+                for item in failures:
+                    file_path = item.get('file', item.get('source', 'unknown'))
+                    error_map[file_path].append(item)
+
+                # Attach built map back to raw data for analysis
+                data['error_map'] = dict(error_map)
             
             success_rate = (successful / total * 100) if total > 0 else 100
             
@@ -296,8 +348,19 @@ class LinkHealthGuardian:
         }
         
         # Process error map
-        error_map = data.get('error_map', {})
-        for file_path, errors in error_map.items():
+        # Normalize data: lychee sometimes returns a list of results or nested failure
+        if isinstance(data, list):
+            # Convert list to error_map keyed by file
+            error_map = defaultdict(list)
+            for item in data:
+                if item.get('status') in ['ok', 'success']:
+                    continue
+                file_key = item.get('file', 'unknown')
+                error_map[file_key].append(item)
+            error_map = dict(error_map)
+        else:
+            error_map = data.get('error_map', {}) or data.get('errors', {})
+        for file_path, errors in (error_map or {}).items():
             for error in errors:
                 try:
                     url = error.get('url', '')
@@ -517,9 +580,17 @@ class LinkHealthGuardian:
                 self.log('SUCCESS', 'AI analysis completed successfully')
                 return True
             else:
-                self.log('ERROR', f'OpenAI API error: {response.status_code}')
+                try:
+                    err = response.json()
+                except Exception:
+                    err = response.text
+                self.log('ERROR', f'OpenAI API error: {response.status_code} - {err}')
                 return self.generate_fallback_ai_analysis()
                 
+        except requests.exceptions.RequestException as e:
+            # Network or timeout related exceptions
+            self.log('ERROR', f'AI request failed: {e}')
+            return self.generate_fallback_ai_analysis()
         except Exception as e:
             self.log('ERROR', f'AI analysis failed: {e}')
             return self.generate_fallback_ai_analysis()
@@ -842,8 +913,9 @@ You can manually trigger another link check by:
                 self.log('WARNING', 'AI analysis failed but continuing...')
         
         # Step 5: Create GitHub issue (if enabled)
-        if not self.create_github_issue():
-            self.log('WARNING', 'GitHub issue creation failed but continuing...')
+        if self.config.get('create_issue', False):
+            if not self.create_github_issue():
+                self.log('WARNING', 'GitHub issue creation failed but continuing...')
         
         # Final summary
         self.log('INFO', 'Workflow Summary:')
