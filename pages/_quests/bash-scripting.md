@@ -31,8 +31,8 @@ keywords:
         - system-automation
         - devops-foundations
         - file-management
-lastmod: 2025-11-08T15:20:04.000Z
-permalink: /quests/level-0010-bash-scripting-mastery/
+lastmod: 2025-11-08T15:07:21.509Z
+permalink: /quests/level-0010-bash-scripting/
 attachments: ""
 comments: true
 difficulty: 🟡 Medium
