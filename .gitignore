@@ -16,3 +16,5 @@ logs/debug-trace.log
 */__pycache__/*
 
 work/
+.crush/crush.db-shm
+.crush/crush.db-wal

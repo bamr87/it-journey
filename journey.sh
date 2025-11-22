@@ -43,6 +43,7 @@ while true; do
         "📖 Read Quickstarts" \
         "📝 View Posts" \
         "📊 View Statistics" \
+        "🎯 Run Content Workflow" \
         "🐳 Docker Controls" \
         "🚪 Exit")
 
@@ -89,6 +90,92 @@ while true; do
                 "Posts:  $(find pages/_posts -name "*.md" 2>/dev/null | wc -l | xargs)" \
                 "Guides: $(find pages/_quickstart -name "*.md" 2>/dev/null | wc -l | xargs)"
             gum confirm "Return to menu?" && continue || break
+            ;;
+
+        "🎯 Run Content Workflow")
+            # Check if workflow system is available
+            if [[ ! -f ".crush/workflows/engine.sh" ]]; then
+                gum style --foreground red "Workflow system not found. Please ensure .crush/workflows/ is set up."
+                gum confirm "Return to menu?" && continue || break
+            fi
+            
+            # Workflow menu
+            gum style --border double --padding "1 2" --border-foreground 212 \
+                "🔮 Crush Workflow System" \
+                "AI-powered content creation pipelines"
+            
+            WORKFLOW_CHOICE=$(gum choose \
+                "📝 Article + Quest Creation (Full Pipeline)" \
+                "⚔️ Quest Only" \
+                "📰 Article Only" \
+                "🔄 Resume Previous Workflow" \
+                "📊 View Recent Executions" \
+                "🔙 Back to Main Menu")
+            
+            case "$WORKFLOW_CHOICE" in
+                "📝 Article + Quest Creation (Full Pipeline)")
+                    gum style --foreground 212 "Starting full content creation workflow..."
+                    if [[ -f ".crush/workflows/templates/article-quest-creation.yml" ]]; then
+                        bash .crush/workflows/engine.sh run --interactive .crush/workflows/templates/article-quest-creation.yml
+                    else
+                        gum style --foreground red "Template not found: article-quest-creation.yml"
+                    fi
+                    gum confirm "Return to menu?" && continue || break
+                    ;;
+                
+                "⚔️ Quest Only")
+                    gum style --foreground 212 "Starting quest-only workflow..."
+                    if [[ -f ".crush/workflows/templates/quest-only.yml" ]]; then
+                        bash .crush/workflows/engine.sh run --interactive .crush/workflows/templates/quest-only.yml
+                    else
+                        gum style --foreground yellow "Template not yet created. Use full pipeline instead."
+                    fi
+                    gum confirm "Return to menu?" && continue || break
+                    ;;
+                
+                "📰 Article Only")
+                    gum style --foreground 212 "Starting article-only workflow..."
+                    if [[ -f ".crush/workflows/templates/article-only.yml" ]]; then
+                        bash .crush/workflows/engine.sh run --interactive .crush/workflows/templates/article-only.yml
+                    else
+                        gum style --foreground yellow "Template not yet created. Use full pipeline instead."
+                    fi
+                    gum confirm "Return to menu?" && continue || break
+                    ;;
+                
+                "🔄 Resume Previous Workflow")
+                    # List recent executions for selection
+                    EXECUTIONS=$(find work/workflows -name "state.json" -type f 2>/dev/null | sort -r | head -10)
+                    if [[ -z "$EXECUTIONS" ]]; then
+                        gum style --foreground yellow "No previous workflow executions found."
+                        gum confirm "Return to menu?" && continue || break
+                    fi
+                    
+                    EXECUTION=$(echo "$EXECUTIONS" | while read -r state_file; do
+                        workflow=$(jq -r '.workflow.name' "$state_file" 2>/dev/null || echo "Unknown")
+                        exec_id=$(jq -r '.workflow.execution_id' "$state_file" 2>/dev/null || echo "Unknown")
+                        status=$(jq -r '.workflow.status' "$state_file" 2>/dev/null || echo "Unknown")
+                        echo "$workflow | $exec_id | $status | $(dirname "$state_file")"
+                    done | gum filter --placeholder "Select execution to resume...")
+                    
+                    if [[ -n "$EXECUTION" ]]; then
+                        EXEC_DIR=$(echo "$EXECUTION" | cut -d'|' -f4 | xargs)
+                        gum style --foreground 212 "Resuming workflow from: $EXEC_DIR"
+                        bash .crush/workflows/engine.sh resume "$EXEC_DIR"
+                    fi
+                    gum confirm "Return to menu?" && continue || break
+                    ;;
+                
+                "📊 View Recent Executions")
+                    gum style --foreground 212 "Recent Workflow Executions:"
+                    bash .crush/workflows/engine.sh executions --recent 10 | glow
+                    gum confirm "Return to menu?" && continue || break
+                    ;;
+                
+                "🔙 Back to Main Menu")
+                    continue
+                    ;;
+            esac
             ;;
 
         "🐳 Docker Controls")

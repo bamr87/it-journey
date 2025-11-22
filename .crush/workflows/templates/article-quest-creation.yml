@@ -1,0 +1,348 @@
+---
+# Article and Quest Creation Workflow
+# Full content creation pipeline with iterative refinement
+
+workflow:
+  name: "Article and Quest Creation"
+  version: "1.0.0"
+  description: "Draft article, create related quest, iterate to refine and publish"
+  author: "IT-Journey Team"
+  created: "2025-11-20"
+  tags: ["content-creation", "article", "quest", "iterative"]
+
+# Input Requirements
+inputs:
+  required:
+    - name: "topic"
+      type: "string"
+      description: "Main topic or learning objective"
+      example: "Docker Containerization Basics"
+      
+    - name: "level"
+      type: "string"
+      description: "Binary level code for quest (0000-11111+)"
+      example: "0011"
+      pattern: "^[01]{4,}$"
+      
+  optional:
+    - name: "difficulty"
+      type: "string"
+      description: "Difficulty level for learners"
+      default: "intermediate"
+      enum: ["beginner", "intermediate", "advanced", "expert"]
+      
+    - name: "estimated_time"
+      type: "string"
+      description: "Estimated completion time"
+      default: "2-3 hours"
+      example: "2-3 hours"
+      
+    - name: "prerequisites"
+      type: "array"
+      description: "Required prior knowledge or quests"
+      default: []
+      example: ["Basic command line", "Git fundamentals"]
+
+# Workflow Steps
+steps:
+  # Step 1: Draft Article Outline
+  - id: "draft_article"
+    name: "Draft Article Outline"
+    description: "Generate comprehensive article outline with learning objectives"
+    prompt: ".github/prompts/draft-article.prompt.md"
+    inputs:
+      topic: "{{ inputs.topic }}"
+      difficulty: "{{ inputs.difficulty }}"
+      estimated_time: "{{ inputs.estimated_time }}"
+      prerequisites: "{{ inputs.prerequisites }}"
+    outputs:
+      - name: "article_outline"
+        path: "outline.md"
+        description: "Structured article outline with sections"
+      - name: "learning_objectives"
+        path: "learning_objectives.json"
+        description: "Specific, measurable learning outcomes"
+      - name: "target_audience"
+        path: "target_audience.json"
+        description: "Audience profile and skill level"
+    on_success: "generate_article_frontmatter"
+    on_failure: "abort"
+    timeout: "5m"
+
+  # Step 2: Generate Article Front Matter
+  - id: "generate_article_frontmatter"
+    name: "Generate Article Front Matter"
+    description: "Create complete article frontmatter following IT-Journey standards"
+    prompt: ".github/prompts/generate-frontmatter.prompt.md"
+    inputs:
+      content_type: "post"
+      outline: "{{ steps.draft_article.outputs.article_outline }}"
+      learning_objectives: "{{ steps.draft_article.outputs.learning_objectives }}"
+      target_audience: "{{ steps.draft_article.outputs.target_audience }}"
+      topic: "{{ inputs.topic }}"
+      difficulty: "{{ inputs.difficulty }}"
+      estimated_time: "{{ inputs.estimated_time }}"
+      prerequisites: "{{ inputs.prerequisites }}"
+    outputs:
+      - name: "frontmatter"
+        path: "frontmatter.yml"
+        description: "Complete YAML frontmatter for article"
+    on_success: "create_quest_outline"
+    timeout: "3m"
+
+  # Step 3: Create Related Quest Outline
+  - id: "create_quest_outline"
+    name: "Create Related Quest Outline"
+    description: "Generate quest outline that complements the article"
+    prompt: ".github/prompts/write-quest.prompt.md"
+    inputs:
+      topic: "{{ inputs.topic }}"
+      level: "{{ inputs.level }}"
+      difficulty: "{{ inputs.difficulty }}"
+      related_article: "{{ steps.draft_article.outputs.article_outline }}"
+      learning_objectives: "{{ steps.draft_article.outputs.learning_objectives }}"
+      estimated_time: "{{ inputs.estimated_time }}"
+    outputs:
+      - name: "quest_outline"
+        path: "quest_outline.md"
+        description: "Quest structure with challenges and objectives"
+      - name: "quest_objectives"
+        path: "quest_objectives.json"
+        description: "Quest-specific learning objectives"
+      - name: "quest_dependencies"
+        path: "quest_dependencies.json"
+        description: "Required and recommended prerequisite quests"
+    on_success: "generate_quest_frontmatter"
+    timeout: "5m"
+
+  # Step 4: Generate Quest Front Matter
+  - id: "generate_quest_frontmatter"
+    name: "Generate Quest Front Matter"
+    description: "Create enhanced quest frontmatter with hierarchy and mapping"
+    prompt: ".github/prompts/generate-frontmatter.prompt.md"
+    inputs:
+      content_type: "quest"
+      outline: "{{ steps.create_quest_outline.outputs.quest_outline }}"
+      quest_objectives: "{{ steps.create_quest_outline.outputs.quest_objectives }}"
+      quest_dependencies: "{{ steps.create_quest_outline.outputs.quest_dependencies }}"
+      level: "{{ inputs.level }}"
+      topic: "{{ inputs.topic }}"
+      difficulty: "{{ inputs.difficulty }}"
+      estimated_time: "{{ inputs.estimated_time }}"
+    outputs:
+      - name: "quest_frontmatter"
+        path: "quest_frontmatter.yml"
+        description: "Complete enhanced quest frontmatter"
+    on_success: "expand_article"
+    timeout: "3m"
+
+  # Step 5: Expand Article Content
+  - id: "expand_article"
+    name: "Expand Article with Examples"
+    description: "Add code examples, multi-platform guidance, and detailed explanations"
+    prompt: ".github/prompts/expand-content.prompt.md"
+    inputs:
+      content_type: "article"
+      outline: "{{ steps.draft_article.outputs.article_outline }}"
+      frontmatter: "{{ steps.generate_article_frontmatter.outputs.frontmatter }}"
+      topic: "{{ inputs.topic }}"
+      platforms: ["macOS", "Windows", "Linux", "Cloud"]
+    outputs:
+      - name: "expanded_article"
+        path: "expanded_article.md"
+        description: "Article with code examples and platform guidance"
+      - name: "code_examples"
+        path: "code_examples/"
+        description: "Extracted code snippets organized by platform"
+    on_success: "refine_quest"
+    timeout: "10m"
+
+  # Step 6: Refine Quest Content
+  - id: "refine_quest"
+    name: "Refine Quest with Challenges and Diagrams"
+    description: "Add implementation challenges, Mermaid diagrams, and validation criteria"
+    prompt: ".github/prompts/refine-content.prompt.md"
+    inputs:
+      content_type: "quest"
+      outline: "{{ steps.create_quest_outline.outputs.quest_outline }}"
+      frontmatter: "{{ steps.generate_quest_frontmatter.outputs.quest_frontmatter }}"
+      article_content: "{{ steps.expand_article.outputs.expanded_article }}"
+      topic: "{{ inputs.topic }}"
+    outputs:
+      - name: "refined_quest"
+        path: "refined_quest.md"
+        description: "Quest with challenges, diagrams, and validation"
+      - name: "mermaid_diagrams"
+        path: "mermaid_diagrams/"
+        description: "Quest network and flow diagrams"
+    on_success: "improvement_loop"
+    timeout: "10m"
+
+  # Step 7: Improvement Iteration (Loop)
+  - id: "improvement_loop"
+    name: "Iterative Improvement Cycle"
+    description: "Apply Kaizen principles to improve, expand, and refine both contents"
+    type: "loop"
+    max_iterations: 3
+    prompt: ".github/prompts/kaizen.prompt.md"
+    inputs:
+      article: "{{ steps.expand_article.outputs.expanded_article }}"
+      quest: "{{ steps.refine_quest.outputs.refined_quest }}"
+      iteration: "{{ loop.iteration }}"
+      focus_areas:
+        - "technical accuracy"
+        - "clarity and accessibility"
+        - "code quality"
+        - "educational value"
+    outputs:
+      - name: "improved_article"
+        path: "article_v{{ loop.iteration }}.md"
+        description: "Improved article version"
+      - name: "improved_quest"
+        path: "quest_v{{ loop.iteration }}.md"
+        description: "Improved quest version"
+      - name: "improvements_log"
+        path: "improvements_{{ loop.iteration }}.json"
+        description: "Log of changes made in this iteration"
+    continue_if: "{{ loop.iteration < 3 }}"
+    on_success: "validate_content"
+    timeout: "8m"
+
+  # Step 8: Validate Content
+  - id: "validate_content"
+    name: "Validate Article and Quest"
+    description: "Run validation checks for technical accuracy, links, and standards compliance"
+    prompt: ".github/prompts/validate-content.prompt.md"
+    inputs:
+      article: "{{ steps.improvement_loop.outputs.improved_article }}"
+      quest: "{{ steps.improvement_loop.outputs.improved_quest }}"
+      article_frontmatter: "{{ steps.generate_article_frontmatter.outputs.frontmatter }}"
+      quest_frontmatter: "{{ steps.generate_quest_frontmatter.outputs.quest_frontmatter }}"
+    outputs:
+      - name: "validation_report"
+        path: "validation_report.json"
+        description: "Comprehensive validation results"
+      - name: "article_score"
+        path: "article_score.json"
+        description: "Article quality score"
+      - name: "quest_score"
+        path: "quest_score.json"
+        description: "Quest quality score"
+    on_success: "publish_preparation"
+    on_failure: "improvement_loop"
+    condition: "{{ outputs.article_score.score >= 80 && outputs.quest_score.score >= 80 }}"
+    timeout: "5m"
+
+  # Step 9: Prepare for Publishing
+  - id: "publish_preparation"
+    name: "Prepare Final Files for Publishing"
+    description: "Combine frontmatter and content, generate filenames, update navigation"
+    prompt: ".github/prompts/publish-prep.prompt.md"
+    inputs:
+      article: "{{ steps.improvement_loop.outputs.improved_article }}"
+      quest: "{{ steps.improvement_loop.outputs.improved_quest }}"
+      article_frontmatter: "{{ steps.generate_article_frontmatter.outputs.frontmatter }}"
+      quest_frontmatter: "{{ steps.generate_quest_frontmatter.outputs.quest_frontmatter }}"
+      topic: "{{ inputs.topic }}"
+      level: "{{ inputs.level }}"
+    outputs:
+      - name: "article_file"
+        path: "final_article.md"
+        save_to: "pages/_posts/"
+        filename: "{{ workflow.started_date }}-{{ inputs.topic | slugify }}.md"
+        description: "Final article ready for publishing"
+      - name: "quest_file"
+        path: "final_quest.md"
+        save_to: "pages/_quests/"
+        filename: "lvl-{{ inputs.level }}-{{ inputs.topic | slugify }}.md"
+        description: "Final quest ready for publishing"
+      - name: "readme_updates"
+        path: "readme_updates.json"
+        description: "Instructions for updating README files"
+      - name: "navigation_updates"
+        path: "navigation_updates.json"
+        description: "Navigation menu updates needed"
+    on_success: "complete"
+    timeout: "5m"
+
+  # Step 10: Complete and Summarize
+  - id: "complete"
+    name: "Workflow Completion Summary"
+    description: "Generate summary report and next steps"
+    prompt: ".github/prompts/workflow-summary.prompt.md"
+    inputs:
+      workflow_name: "{{ workflow.name }}"
+      execution_id: "{{ workflow.execution_id }}"
+      article_path: "{{ steps.publish_preparation.outputs.article_file }}"
+      quest_path: "{{ steps.publish_preparation.outputs.quest_file }}"
+      validation_report: "{{ steps.validate_content.outputs.validation_report }}"
+      total_iterations: "{{ steps.improvement_loop.iterations }}"
+    outputs:
+      - name: "summary_report"
+        path: "workflow_summary.md"
+        description: "Complete workflow execution summary"
+      - name: "next_steps"
+        path: "next_steps.md"
+        description: "Actions to take after workflow completion"
+    on_success: "end"
+    timeout: "3m"
+
+# Workflow State Management
+state:
+  persistence: "file"
+  location: "work/workflows/{{ workflow.name | slugify }}/{{ workflow.execution_id }}"
+  checkpoints:
+    - after: "generate_article_frontmatter"
+      reason: "Article outline and frontmatter completed"
+    - after: "generate_quest_frontmatter"
+      reason: "Both article and quest outlines with frontmatter ready"
+    - after: "improvement_loop"
+      reason: "All improvement iterations completed"
+  auto_save: true
+  backup_on_error: true
+
+# Error Handling
+error_handling:
+  retry_on_failure: true
+  max_retries: 2
+  backoff: "exponential"
+  base_delay: "5s"
+  cleanup_on_abort: false  # Keep artifacts for debugging
+  fallback_steps:
+    validate_content: "improvement_loop"  # If validation fails, improve again
+  notification_on_error: true
+
+# Resource Limits
+resources:
+  max_execution_time: "60m"
+  max_memory: "2GB"
+  max_output_size: "100MB"
+
+# Notifications
+notifications:
+  on_start:
+    enabled: true
+    message: "Starting {{ workflow.name }} for topic: {{ inputs.topic }}"
+  on_complete:
+    enabled: true
+    message: "Workflow completed! Article and quest ready for review."
+  on_error:
+    enabled: true
+    message: "Workflow failed at step {{ workflow.current_step }}"
+  on_checkpoint:
+    enabled: false
+  channel: "terminal"  # Options: terminal, webhook, email, slack
+
+# Metadata
+metadata:
+  documentation: ".crush/workflows/README.md"
+  example_execution: ".crush/workflows/examples/docker-article-quest/"
+  related_workflows:
+    - "templates/quest-only.yml"
+    - "templates/article-only.yml"
+  tags:
+    - "content-creation"
+    - "full-pipeline"
+    - "iterative"
+    - "article"
+    - "quest"

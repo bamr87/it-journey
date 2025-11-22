@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# IT-Journey Evolution Engine - Universal Setup Initializer v2.1
-# Sacred initialization script for the mystical IT-Journey repository
+# IT-Journey Evolution Engine - Universal Setup Initializer v2.2
+# Sacred initialization script and AI-powered entry wizard for the mystical IT-Journey repository
 
 set -euo pipefail
 
@@ -15,7 +15,7 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 echo -e "${PURPLE}🌟 IT-Journey Evolution Engine Initializing...${NC}"
-echo -e "${CYAN}Preparing the sacred development environment${NC}"
+echo -e "${CYAN}Preparing the sacred development environment and AI facilitation gateway${NC}"
 echo ""
 
 # Function to check if command exists
@@ -48,7 +48,7 @@ if ! command_exists ruby; then
     MISSING_DEPS+=("ruby")
     echo -e "${RED}❌ Ruby not found - The crimson gem is missing${NC}"
 else
-    RUBY_VERSION=$(ruby --version | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
+    RUBY_VERSION=$(ruby --version 2>/dev/null | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1 || echo "unknown")
     echo -e "${GREEN}✅ Ruby ${RUBY_VERSION} - The crimson gem is present${NC}"
 fi
 
@@ -56,7 +56,7 @@ if ! command_exists jekyll; then
     MISSING_DEPS+=("jekyll")
     echo -e "${RED}❌ Jekyll not found - The static site sorcerer is absent${NC}"
 else
-    JEKYLL_VERSION=$(jekyll --version | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
+    JEKYLL_VERSION=$(jekyll --version 2>/dev/null | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1 || echo "unknown")
     echo -e "${GREEN}✅ Jekyll ${JEKYLL_VERSION} - The static site sorcerer is ready${NC}"
 fi
 
@@ -64,21 +64,21 @@ if ! command_exists git; then
     MISSING_DEPS+=("git")
     echo -e "${RED}❌ Git not found - The version control deity is missing${NC}"
 else
-    GIT_VERSION=$(git --version | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
+    GIT_VERSION=$(git --version 2>/dev/null | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1 || echo "unknown")
     echo -e "${GREEN}✅ Git ${GIT_VERSION} - The version control deity watches over us${NC}"
 fi
 
 if ! command_exists gh; then
     echo -e "${YELLOW}⚠️ GitHub CLI not found - Communication with the repository gods will be limited${NC}"
 else
-    GH_VERSION=$(gh --version | grep gh | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
+    GH_VERSION=$(gh --version 2>/dev/null | grep gh | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1 || echo "unknown")
     echo -e "${GREEN}✅ GitHub CLI ${GH_VERSION} - Ready to commune with repository gods${NC}"
 fi
 
 if ! command_exists docker; then
     echo -e "${YELLOW}⚠️ Docker not found - Container sorcery will be unavailable${NC}"
 else
-    DOCKER_VERSION=$(docker --version | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
+    DOCKER_VERSION=$(docker --version 2>/dev/null | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1 || echo "unknown")
     echo -e "${GREEN}✅ Docker ${DOCKER_VERSION} - Container spirits are ready${NC}"
 fi
 
@@ -112,6 +112,21 @@ fi
 
 echo ""
 echo -e "${GREEN}🎉 All sacred artifacts are present! The ritual may proceed.${NC}"
+
+# Optional tools for the expert AI-assisted track
+CRUSH_AVAILABLE=false
+if command_exists crush; then
+    CRUSH_AVAILABLE=true
+    echo -e "${GREEN}✅ Crush detected - Terminal exploration engine is available${NC}"
+else
+    echo -e "${YELLOW}⚠️ Crush not found - Expert terminal exploration will be limited until installed${NC}"
+fi
+
+if [[ -f "journey.sh" ]]; then
+    echo -e "${GREEN}✅ journey.sh detected - IT-Journey terminal interface is ready for launch${NC}"
+else
+    echo -e "${YELLOW}⚠️ journey.sh not found - Terminal interface will be unavailable in this session${NC}"
+fi
 
 # Initialize repository if needed
 if [ ! -d ".git" ]; then
@@ -164,12 +179,45 @@ EOF
 echo -e "${GREEN}✅ Universal environment configured${NC}"
 
 echo ""
-echo -e "${PURPLE}🚀 IT-Journey Evolution Engine initialization complete!${NC}"
-echo -e "${CYAN}You are now ready to embark on your mystical coding journey.${NC}"
+# Expert track: optional AI-assisted entry wizard using Crush and journey.sh
 echo ""
-echo -e "${YELLOW}📋 Next steps:${NC}"
-echo -e "  1. ${BLUE}Start the Jekyll development server:${NC} bundle exec jekyll serve --port 4002"
-echo -e "  2. ${BLUE}Or use Docker magic:${NC} docker build -t it-journey . && docker run -p 4002:4002 -v ~/github/it-journey:/app it-journey"
-echo -e "  3. ${BLUE}Visit your local sanctuary:${NC} http://localhost:4002"
-echo ""
+if [[ "${CRUSH_AVAILABLE}" == "true" && -f "journey.sh" ]]; then
+    echo -e "${PURPLE}🧠 Expert Track Unlocked: AI & Crush-powered entry wizard${NC}"
+    echo -e "${CYAN}You can now launch the interactive terminal journey experience.${NC}"
+    echo ""
+    echo -e "${YELLOW}📋 Next steps:${NC}"
+    echo -e "  1. ${BLUE}Start the Jekyll development server (optional):${NC} bundle exec jekyll serve --port 4002"
+    echo -e "  2. ${BLUE}Or use Docker magic:${NC} docker-compose up -d"
+    echo -e "  3. ${BLUE}Launch the terminal journey interface:${NC} ./journey.sh"
+    echo -e "  4. ${BLUE}Explore the repository with Crush:${NC} crush"
+    echo ""
+    # Offer to immediately drop the user into the expert wizard (only in interactive mode)
+    if [[ -t 0 ]]; then
+        read -r -p "✨ Would you like to launch the IT-Journey terminal interface now? [y/N] " RESP
+        case "${RESP}" in
+            [yY][eE][sS]|[yY])
+                echo ""
+                echo -e "${GREEN}🚀 Launching journey.sh ...${NC}"
+                sleep 1
+                ./journey.sh || echo -e "${YELLOW}⚠️ journey.sh exited or encountered an issue. You can rerun it later with: ./journey.sh${NC}"
+                ;;
+            *)
+                echo ""
+                echo -e "${GREEN}You can start the expert terminal journey anytime with:${NC} ./journey.sh"
+                ;;
+        esac
+    else
+        echo -e "${CYAN}Running in non-interactive mode. You can launch the journey anytime with:${NC} ./journey.sh"
+    fi
+else
+    echo -e "${PURPLE}🚀 IT-Journey Evolution Engine initialization complete!${NC}"
+    echo -e "${CYAN}You are now ready to embark on your mystical coding journey.${NC}"
+    echo ""
+    echo -e "${YELLOW}📋 Next steps:${NC}"
+    echo -e "  1. ${BLUE}Start the Jekyll development server:${NC} bundle exec jekyll serve --port 4002"
+    echo -e "  2. ${BLUE}Or use Docker magic:${NC} docker build -t it-journey . && docker run -p 4002:4002 -v ~/github/it-journey:/app it-journey"
+    echo -e "  3. ${BLUE}Visit your local sanctuary:${NC} http://localhost:4002"
+    echo ""
+fi
+
 echo -e "${GREEN}May your code compile and your documentation be accurate! 🙏${NC}"
