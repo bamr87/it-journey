@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # For more detailed instructions, look here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 
 # Github Pages Gems - Use latest compatible version:
-gem 'github-pages', '~> 231'
+gem 'github-pages'
 
 # Jekyll Theme - Using remote theme instead
 gem 'jekyll-theme-zer0'
@@ -26,8 +26,8 @@ group :jekyll_plugins do
 end
 
 # Docker support and system dependencies - updated versions
-gem "ffi", "~> 1.17.0"
-gem 'webrick', '~> 1.8'
+gem "ffi"
+gem 'webrick'
 
 # TODO: build a bootstrap plugin for jekyll
 
