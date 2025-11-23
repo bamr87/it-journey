@@ -170,9 +170,9 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      WORK_DIR: ${{ github.workspace }}/work
-      CACHE_DIR: ${{ github.workspace }}/work/cache
-      BUILD_DIR: ${{ github.workspace }}/work/build
+      WORK_DIR: {% raw %}${{ github.workspace }}/work{% endraw %}
+      CACHE_DIR: {% raw %}${{ github.workspace }}/work/cache{% endraw %}
+      BUILD_DIR: {% raw %}${{ github.workspace }}/work/build{% endraw %}
       
     steps:
       # 1. Checkout repository
@@ -190,9 +190,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: work/cache/**
-          key: ${{ runner.os }}-deps-${{ hashFiles('**/package-lock.json', '**/requirements.txt', '**/pom.xml') }}
+          key: {% raw %}${{ runner.os }}-deps-${{ hashFiles('**/package-lock.json', '**/requirements.txt', '**/pom.xml') }}{% endraw %}
           restore-keys: |
-            ${{ runner.os }}-deps-
+            {% raw %}${{ runner.os }}-deps-{% endraw %}
       
       # 4. Install dependencies (cached)
       - name: Install dependencies
@@ -335,7 +335,7 @@ jobs:
       
       - restore_cache:
           keys:
-            - v1-deps-{{ checksum "package-lock.json" }}
+            - {% raw %}v1-deps-{{ checksum "package-lock.json" }}{% endraw %}
             - v1-deps-
       
       - run:
@@ -343,7 +343,7 @@ jobs:
           command: npm install --cache $CACHE_DIR/npm
       
       - save_cache:
-          key: v1-deps-{{ checksum "package-lock.json" }}
+          key: {% raw %}v1-deps-{{ checksum "package-lock.json" }}{% endraw %}
           paths:
             - work/cache/npm
       
@@ -395,10 +395,10 @@ Use fallback keys for partial cache hits:
 - uses: actions/cache@v4
   with:
     path: work/cache/**
-    key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+    key: {% raw %}${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}{% endraw %}
     restore-keys: |
-      ${{ runner.os }}-${{ matrix.node-version }}-
-      ${{ runner.os }}-
+      {% raw %}${{ runner.os }}-${{ matrix.node-version }}-{% endraw %}
+      {% raw %}${{ runner.os }}-{% endraw %}
 ```
 
 **Why**: If `package-lock.json` changes, you still get the OS-level cache (better than nothing).
@@ -410,13 +410,13 @@ Use fallback keys for partial cache hits:
   uses: actions/cache@v4
   with:
     path: work/cache/npm
-    key: npm-${{ hashFiles('package-lock.json') }}
+    key: {% raw %}npm-${{ hashFiles('package-lock.json') }}{% endraw %}
 
 - name: Cache Python dependencies
   uses: actions/cache@v4
   with:
     path: work/cache/pip
-    key: pip-${{ hashFiles('requirements.txt') }}
+    key: {% raw %}pip-${{ hashFiles('requirements.txt') }}{% endraw %}
 ```
 
 **Why**: Independent invalidation—changing Python deps doesn't bust your npm cache.
@@ -501,7 +501,7 @@ jobs:
       - uses: actions/cache/save@v4
         with:
           path: work/cache/npm
-          key: npm-${{ hashFiles('package-lock.json') }}
+          key: {% raw %}npm-${{ hashFiles('package-lock.json') }}{% endraw %}
   
   build:
     needs: setup-cache

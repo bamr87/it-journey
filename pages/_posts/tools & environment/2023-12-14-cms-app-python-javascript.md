@@ -12,9 +12,8 @@ categories:
     - python
     - javascript
 author: ChatGPT
-layout: journal
 draft: draft
-lastmod: 2024-05-16T19:50:32.504Z
+lastmod: 2025-11-22T23:57:06.524Z
 slug: cms-app-python-javascript
 section: Tools & Environment
 ---
