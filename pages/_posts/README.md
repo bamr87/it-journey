@@ -2,7 +2,7 @@
 title: Blog Posts - IT-Journey
 description: Comprehensive collection of educational blog posts covering web development, DevOps, system administration, and emerging technologies
 date: 2025-11-16T00:00:00.000Z
-lastmod: 2025-11-19T03:51:28.582Z
+lastmod: 2025-11-24T20:31:36.218Z
 version: 1.0.0
 section: Home
 layout: default
@@ -18,13 +18,14 @@ This directory contains the complete collection of educational blog posts that d
 Technical articles focusing on web technologies, hosting solutions, and development workflows:
 
 **Recent Posts:**
+- **[Mastering React: A Beginner's Guide](web%20development/2025-11-24-mastering-react-beginners-guide.md)** *(2025-11-24)* - Comprehensive beginner's guide to React fundamentals with hands-on examples for building interactive components
 - **[Deploying Jekyll Sites to Azure Cloud](2025-11-17-deploying-jekyll-sites-to-azure-cloud.md)** *(2025-11-17)* - Complete guide to deploying Jekyll sites to Azure Static Web Apps with CI/CD
 - **[GitHub Pages: The Hidden Gem Revolutionizing Web Publishing](2025-11-15-githubs-hidden-gem.md)** *(2025-11-15)* - Comprehensive guide to free web hosting with GitHub Pages and Jekyll integration
 
 **Other Web Development Content:**
 - Static site generation tutorials
 - Jekyll and GitHub Pages guides  
-- Frontend framework implementations
+- Frontend framework implementations (React, Angular, Vue)
 - Responsive design patterns
 
 ### 🤖 AI & Machine Learning
@@ -59,9 +60,9 @@ Reviews and tutorials for development tools and environment setup:
 
 ## 📈 Post Statistics
 
-- **Total Posts**: 28+ articles
-- **Last Updated**: November 17, 2025
-- **Most Recent**: Azure deployment guide (November 17, 2025)
+- **Total Posts**: 29+ articles
+- **Last Updated**: November 24, 2025
+- **Most Recent**: React beginner's guide (November 24, 2025)
 - **Categories**: 6 main categories with specialized subcategories
 
 ## 🎯 Educational Features
