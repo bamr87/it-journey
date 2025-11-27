@@ -2,7 +2,7 @@
 title: "Stack Attack: Deciphering the Technology Matrix"
 description: Master the art of repository analysis and technology stack documentation using AI-powered investigation techniques
 date: 2025-11-02T21:00:31.059Z
-preview: /images/quest-stack-attack.png
+preview: /images/previews/stack-attack-deciphering-the-technology-matrix.png
 level: "0001"
 difficulty: "🟡 Medium"
 estimated_time: 90-120 minutes

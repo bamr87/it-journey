@@ -523,3 +523,23 @@ cr_lisense: "MIT"
 
 sitemap_include: ["html", "xml"]
 sitemap_exclude: ["secret.html", "private"]
+# =============================================================================
+# AI Preview Image Generator Configuration
+# Feature: ZER0-003
+# Documentation: https://github.com/bamr87/zer0-mistakes/blob/main/docs/features/preview-image-generator.md
+# =============================================================================
+preview_images:
+  enabled: true
+  provider: openai          # openai, stability, or local
+  model: dall-e-3                        # OpenAI model to use
+  size: "1792x1024"                      # Landscape banner size
+  quality: standard                      # standard or hd
+  style: "retro pixel art, 8-bit video game aesthetic, vibrant colors, nostalgic, clean pixel graphics"
+  style_modifiers: "pixelated, retro gaming style, CRT screen glow effect, limited color palette"
+  output_dir: assets/images/previews     # Where to save generated images
+  auto_generate: false                   # Generate during build (slow, use script instead)
+  collections:                           # Collections to scan for missing previews
+    - posts
+    - docs
+    - quickstart
+    - quests

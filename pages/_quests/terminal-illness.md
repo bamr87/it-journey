@@ -2,7 +2,7 @@
 title: "Terminal Mastery: Conquering the Command-Line Realm"
 description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
 date: 2025-07-28T15:30:00.000Z
-preview: /images/quests/terminal-mastery-preview.png
+preview: /images/previews/terminal-mastery-conquering-the-command-line-realm.png
 tags:
    - lvl-0001
    - terminal
