@@ -11,9 +11,13 @@ pages/_notes/.DS_Store
 .venv
 logs/debug-attach-trace.log
 logs/debug-rebuild-trace.log
+logs/*.log
 test-results/*
 logs/debug-trace.log
 */__pycache__/*
+
+# Prevent log files in root directory
+*.log
 
 work/
 .crush/crush.db-shm

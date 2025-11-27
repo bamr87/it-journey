@@ -7,10 +7,12 @@ Welcome to the IT-Journey developer documentation. This directory contains compr
 ### Architecture
 - **[Repository Structure](architecture/REPOSITORY_STRUCTURE.md)** - Complete directory tree and organization
 - **[Jekyll Implementation](architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll configuration, collections, and build process
+- **[About Reorganization](architecture/ABOUT_REORGANIZATION_SUMMARY.md)** - _about directory restructuring between repositories
 
 ### Standards
 - **[Frontmatter Standards](standards/FRONTMATTER_STANDARDS.md)** - Content metadata requirements and templates
 - **[Content Guidelines](standards/CONTENT_GUIDELINES.md)** - Writing style, formatting, and conventions
+- **[Quest Template Enhancement](standards/QUEST_TEMPLATE_ENHANCEMENT_SUMMARY.md)** - Quest template system improvements
 
 ### Setup & Development
 - **[Development Environment](setup/DEVELOPMENT_ENVIRONMENT.md)** - Local setup and configuration
@@ -18,8 +20,10 @@ Welcome to the IT-Journey developer documentation. This directory contains compr
 
 ### Workflows & Automation
 - **[GitHub Actions](workflows/GITHUB_ACTIONS.md)** - CI/CD workflows and automation
+- **[Dependency Updates](workflows/DEPENDENCY_UPDATE_SUMMARY.md)** - Dependency management and build checking
 - **[Link Checker Resolution](workflows/LINK_CHECKER_FIX_RESOLUTION.md)** - Link health monitoring fixes
 - **[Link Checker Validation](workflows/LINK_CHECKER_VALIDATION.md)** - Validation test results
+- **[Link Consolidation](workflows/LINK_CONSOLIDATION_SUMMARY.md)** - Link checker workflow consolidation
 
 ### Scripts & Tools
 - **[Scripts Guide](scripts/SCRIPTS_GUIDE.md)** - Automation scripts overview and usage
@@ -184,6 +188,6 @@ This documentation is maintained alongside the codebase. When making changes:
 - Follow the established documentation structure
 - Add new sections as needed for new features
 
-**Last Updated**: 2025-10-13  
-**Documentation Version**: 1.0.0
+**Last Updated**: 2025-11-26  
+**Documentation Version**: 1.1.0
 

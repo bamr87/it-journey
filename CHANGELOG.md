@@ -7,21 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-- Updated Weekly Post Organization workflow to use PR-based approval instead of direct push
-- Replaced `peter-evans/create-pull-request` third-party action with native GitHub CLI
-- Split PR creation into two explicit steps: branch creation and PR creation
-- Enhanced workflow summary to report PR creation status with PR number and URL
+## [2.1.0] - 2025-11-26
 
 ### Added
-- Comprehensive documentation for organize-posts workflow in `docs/workflows/ORGANIZE_POSTS_WORKFLOW.md`
-- Automated PR creation with labels (`automated`, `content-organization`, `posts`) and assignee
-- Traceability: Each PR now links back to the workflow run that created it
-- Review process: All automated post organization changes now go through PR review before merging
+- **New Quest**: `2025-11-26-prompt-crystal-mastery-vscode-copilot-quest.md` - Comprehensive VS Code Copilot prompt engineering quest with RCTF patterns, few-shot prompting, and reusable template creation
+- **New Post**: `2025-11-26-mastering-prompt-engineering-vscode-copilot.md` - Tutorial companion to the prompt engineering quest
+- **New Prompt Template**: `commit-publish.prompt.md` - Complete release pipeline workflow for semantic versioning and publishing
+- **Enhanced Prompt**: `draft-article.prompt.md` v2.0.0 - Major upgrade with RCTF pattern, Kaizen-driven structure, intake checklists, and quality gates
+- **CRUSH Workflow System**: Added `.crush/workflows/CRUSH_WORKFLOW_SYSTEM_SUMMARY.md` documentation
+
+### Changed
+- **Documentation Reorganization**: Moved summary files from repository root to organized `/docs/` subdirectories:
+  - `ABOUT_REORGANIZATION_SUMMARY.md` → `docs/architecture/`
+  - `QUEST_TEMPLATE_ENHANCEMENT_SUMMARY.md` → `docs/standards/`
+  - `DEPENDENCY_UPDATE_SUMMARY.md` → `docs/workflows/`
+  - `LINK_CONSOLIDATION_SUMMARY.md` → `docs/workflows/`
+- Updated `docs/README.md` with links to newly organized documentation (v1.1.0)
+- Updated `.gitignore` to exclude log files from root directory and `logs/*.log`
 
 ### Removed
-- Direct push to main branch from organize-posts workflow
-- Third-party dependency on `peter-evans/create-pull-request` action
+- Cleaned up repository root:
+  - Removed `.seed.md` (seed content moved to proper locations)
+  - Removed `.github/workflows/blank.yml` (unused workflow)
+  - Removed `prompts/seed.prompt.yml` and `prompts/seed_prompt.md` (consolidated)
+  - Removed `test-mermaid.html` (moved to `test/` directory)
+  - Removed various log files (`add-date-prefixes.log`, `post-organization.log`)
+
+### Fixed
+- Improved `.gitignore` patterns to prevent log file accumulation in repository
 
 ## [2.0.0] - 2025-11-16
 
@@ -79,6 +92,7 @@ This changelog is manually maintained. When making changes:
 - **Minor version** (0.X.0): New features, non-breaking changes
 - **Patch version** (0.0.X): Bug fixes, documentation updates
 
-[Unreleased]: https://github.com/bamr87/it-journey/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/bamr87/it-journey/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/bamr87/it-journey/releases/tag/v2.1.0
 [2.0.0]: https://github.com/bamr87/it-journey/releases/tag/v2.0.0
 [1.0.0]: https://github.com/bamr87/it-journey/releases/tag/v1.0.0
