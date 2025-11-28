@@ -1,8 +1,8 @@
 ---
 title: "PRD: PRD MACHINE – The Self-Writing, Self-Evolving Product Reality Distillery"
 description: "Autonomous PRD generation and maintenance for the IT-Journey platform"
-date: 2025-11-28T21:27:32.000Z
-lastmod: 2025-11-28T21:27:32.000Z
+date: 2025-11-28T22:51:35.000Z
+lastmod: 2025-11-28T22:51:35.000Z
 status: Living
 version: 2025-11-28
 auto_generated: true
@@ -40,7 +40,7 @@ As a **founder / PM / engineer**, I want:
 
 | Source | Count | Status |
 |--------|-------|--------|
-| Git Commits | 2 | ✅ Ingested |
+| Git Commits | 3 | ✅ Ingested |
 | Markdown Files | 79 | ✅ Ingested |
 | Features | 1 | ✅ Parsed |
 | Conflicts | 0 | ⚠️ Detected |
