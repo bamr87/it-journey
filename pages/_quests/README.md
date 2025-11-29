@@ -12,7 +12,8 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-11-20T05:43:41.427Z
+lastmod: 2025-11-29T18:31:13.401Z
+mermaid: true
 draft: false
 toc: true
 toc_sticky: true
