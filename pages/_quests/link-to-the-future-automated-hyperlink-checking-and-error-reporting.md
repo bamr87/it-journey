@@ -2,7 +2,7 @@
 title: "Link to the Future: Automated Hyperlink Guardian Quest"
 description: Master the computational arts of automated link testing and AI-powered analysis to protect your digital realm from broken hyperlink corruption
 date: 2025-01-27T04:06:49.176Z
-preview: /images/quest-preview-link-guardian.png
+preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
 tags:
   - lvl-1010
   - github-actions

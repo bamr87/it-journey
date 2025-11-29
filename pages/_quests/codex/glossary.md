@@ -3,6 +3,7 @@ title: "Glossary "
 author: null
 excerpt: null
 description: null
+preview: images/previews/glossary.png
 snippet: null
 categories:
   - notes

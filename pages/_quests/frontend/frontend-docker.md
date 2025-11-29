@@ -4,6 +4,7 @@ author: GPT and bamr87
 excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 layout: default
 description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+preview: images/previews/dockering-jekyll-with-bootstrap-5.png
 draft: true
 lastmod: 2024-05-28T04:11:52.774Z
 permalink: /quests/frontend-docker/

@@ -2,7 +2,7 @@
 title: "The Temple of Templates: Binary Abstractions and Reusable Realms"
 description: Embark on a fantasy-themed quest to master software templates and reusable architectures across C++, HTML/Jinja, and React. Learn abstraction, type-safety, inheritance, and composition patterns to forge scalable, maintainable systems.
 date: 2025-08-24T22:40:52.276Z
-preview: /images/previews/the-temple-of-templates-binary-abstractions-and-re.png
+preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
 tags:
     - lvl-1100
     - templates

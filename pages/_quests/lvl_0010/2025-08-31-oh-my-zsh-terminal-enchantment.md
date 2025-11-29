@@ -2,7 +2,7 @@
 title: "Terminal Enchantment: Oh-My-Zsh Mastery related_quests:"
 description: Transform your terminal into a powerful development weapon by mastering Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity and workflow efficiency
 date: 2025-08-31T12:00:00.000Z
-preview: /images/quest-preview-oh-my-zsh.png
+preview: images/previews/terminal-enchantment-oh-my-zsh-mastery-related-que.png
 tags:
     - binary-level-indicator
     - terminal-mastery

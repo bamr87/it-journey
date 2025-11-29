@@ -1,6 +1,7 @@
 ---
 title: Character Selection
 description: null
+preview: images/previews/character-selection.png
 author: null
 excerpt: null
 date: 2023-11-24T18:53:11.166Z

@@ -1,6 +1,7 @@
 ---
 title: "Technology Stack Analysis: Barodybroject"
 description: Comprehensive analysis of the Barodybroject Django-based parody news generator with OpenAI integration and Azure Container Apps deployment
+preview: images/previews/technology-stack-analysis-barodybroject.png
 repository: https://github.com/bamr87/barodybroject
 owner: bamr87
 primary_language: Python

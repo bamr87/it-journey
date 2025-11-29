@@ -2,7 +2,7 @@
 title: "Forging the Prompt Crystal: VS Code Copilot Mastery Quest"
 description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
 date: 2025-11-26T00:00:00.000Z
-preview: /images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
+preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
 level: "0011"
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes

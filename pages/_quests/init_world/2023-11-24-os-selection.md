@@ -1,6 +1,7 @@
 ---
 title: OS Selection
 description: null
+preview: images/previews/os-selection.png
 author: null
 excerpt: null
 date: 2023-11-24T18:42:29.810Z

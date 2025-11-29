@@ -1,6 +1,7 @@
 ---
 title: "Character Building: Forge Your IT Identity and Development Environment"
 description: "Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero"
+preview: images/previews/character-building-forge-your-it-identity-and-deve.png
 author: IT-Journey Team
 excerpt: "Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment"
 date: 2023-11-23T18:10:54.834Z

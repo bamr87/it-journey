@@ -2,7 +2,7 @@
 title: "Quest: Mastering the Ancient Arts of Source Control Sorcery"
 description: Master the mystical powers of Git and GitHub workflows to become a legendary code guardian and collaboration wizard in the digital realm
 date: 2025-04-18T19:00:55.950Z
-preview: /images/quest-source-control-mastery.png
+preview: images/previews/quest-mastering-the-ancient-arts-of-source-control.png
 tags:
   - lvl-0100
   - git

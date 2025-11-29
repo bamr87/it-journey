@@ -2,7 +2,7 @@
 title: level-010-frontend-docker
 description: null
 date: 2024-05-28T02:30:46.765Z
-preview: null
+preview: images/previews/level-010-frontend-docker.png
 tags: []
 categories: []
 sub-title: null

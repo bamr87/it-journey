@@ -2,7 +2,7 @@
 title: "Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic"
 description: Transform your terminal into a powerful, visually enhanced development environment with Oh-My-Zsh themes and plugins
 date: 2025-10-03T12:30:00.000Z
-preview: /images/quest-preview-oh-my-zsh.png
+preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
     - lvl-0010
     - terminal-enhancement

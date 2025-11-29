@@ -2,6 +2,7 @@
 title: 🏰 Overworld - Master Quest Map
 author: IT-Journey Team
 description: Your central command hub for tracking progress through the IT mastery quest system. Navigate your learning journey, monitor achievements, and plan your next adventures.
+preview: images/previews/overworld-master-quest-map.png
 permalink: /quests/home/
 categories:
     - home

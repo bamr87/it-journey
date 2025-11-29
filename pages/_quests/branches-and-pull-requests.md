@@ -2,7 +2,7 @@
 title: Mastering Branches and Pull Requests for Developers
 description: Learn how branches and pull requests streamline collaboration and enhance code quality in software development.
 date: 2025-04-18T19:08:47.292Z
-preview: ""
+preview: images/previews/mastering-branches-and-pull-requests-for-developer.png
 tags:
     - Collaboration
     - Git

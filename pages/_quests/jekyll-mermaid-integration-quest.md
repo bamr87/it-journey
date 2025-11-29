@@ -2,7 +2,7 @@
 title: "The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest"
 description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
 date: 2025-01-27T15:00:00.000Z
-preview: /images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
+preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
 level: "0010"
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours

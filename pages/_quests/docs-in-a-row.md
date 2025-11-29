@@ -2,7 +2,7 @@
 title: "The Knowledge Vault: Building an Automated Documentation Hub"
 description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
 date: 2025-10-03T21:41:24.219Z
-preview: /images/quest-preview-image.png
+preview: images/previews/the-knowledge-vault-building-an-automated-document.png
 level: "0001"
 difficulty: "🟡 Intermediate"
 estimated_time: 2-3 hours

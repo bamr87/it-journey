@@ -2,7 +2,7 @@
 title: "Kaizen Quest: The Path of Continuous Improvement in Software Alchemy"
 description: Master the ancient art of Kaizen - continuous improvement - and transform your software development practices through incremental refinement, waste elimination, and perpetual evolution
 date: 2025-11-02T21:38:25.194Z
-preview: /images/quest-preview-image.png
+preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
 tags:
     - lvl-0001
     - kaizen

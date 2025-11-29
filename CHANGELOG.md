@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Preview images for various quests in `assets/images/previews/`
+
+### Changed
+- Updated `scripts/lib/preview_generator.py` for enhanced preview generation
+- Updated `test/quest-validator/requirements.txt` for validator dependencies
+
 ## [2.1.0] - 2025-11-26
 
 ### Added

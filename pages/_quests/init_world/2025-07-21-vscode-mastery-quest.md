@@ -2,7 +2,7 @@
 title: "VS Code Mastery Quest: Forge Your Ultimate Development Weapon"
 description: Master Visual Studio Code setup and configuration to create the ultimate development environment for any programming domain
 date: 2025-07-21T00:00:00.000Z
-preview: Transform VS Code into your personalized development powerhouse with extensions, configurations, and domain-specific setups
+preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
 tags:
     - vscode
     - ide-setup

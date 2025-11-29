@@ -2,7 +2,7 @@
 title: "Nerd Font Enchantment: Terminal Icon Mastery"
 description: Install and configure Nerd Fonts to unlock the full visual potential of your terminal themes and plugins
 date: 2025-08-31T13:00:00.000Z
-preview: /images/quest-preview-nerd-fonts.png
+preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
 tags:
     - binary-level-indicator
     - terminal-mastery

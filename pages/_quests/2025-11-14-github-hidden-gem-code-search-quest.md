@@ -2,7 +2,7 @@
 title: "The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms"
 description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
 date: 2025-11-14T00:00:00.000Z
-preview: Discover GitHub Pages' power to transform repositories into websites and capture AI dialogues for eternity
+preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
 tags:
   - github-pages
   - jekyll

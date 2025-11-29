@@ -2,7 +2,7 @@
 title: "Forging the Stats Portal: Data Analytics Quest"
 description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
 date: 2025-10-08T15:02:55.070Z
-preview: /images/quest-preview-image.png
+preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
 tags:
   - lvl-0001
   - jekyll

@@ -1,6 +1,7 @@
 ---
 title: Begin your IT Journey
 description: null
+preview: images/previews/begin-your-it-journey.png
 author: null
 excerpt: null
 date: 2023-11-23T17:42:43.105Z

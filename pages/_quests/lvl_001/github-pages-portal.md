@@ -2,7 +2,7 @@
 title: "The GitHub Pages Portal: Forging Your Digital Realm"
 description: Master the art of deploying static websites using GitHub Pages, transforming your code into live web experiences with no server required.
 date: 2025-11-14T12:00:00.000Z
-preview: Deploy your first website with GitHub Pages - no server required!
+preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
 level: "001"
 difficulty: 🟢 Easy
 estimated_time: 2-4 hours

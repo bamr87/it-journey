@@ -2,7 +2,7 @@
 title: "Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle"
 description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into usable insights with Python and AI assistance.
 date: 2025-08-19T00:00:00.000Z
-preview: /images/quest-preview-image.png
+preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
 tags:
     - lvl-1100
     - python

@@ -1,6 +1,7 @@
 ---
 title: "Hello Windows: Mastering the Windows Development Environment"
 description: "Set up a complete Windows development environment with WSL, PowerShell mastery, and essential development tools for the modern Windows developer"
+preview: images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
 layout: journals
 permalink: /quests/hello-windows/

@@ -2,7 +2,7 @@
 title: "AI Feature Pipeline Architect: DevSecOps Mastery Quest"
 description: Master the art of building AI-orchestrated feature pipelines from user request to deployment, combining DevSecOps practices with intelligent automation
 date: 2025-01-27T10:00:00.000Z
-preview: /images/ai-pipeline-quest.png
+preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.png
 tags:
     - lvl-1011
     - ai-orchestration

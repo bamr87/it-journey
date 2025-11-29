@@ -1,6 +1,7 @@
 ---
 title: "Building & Testing the Git Init Script: Headless, Interactive, Scaffolding"
 description: "Hands-on quest to build, extend, and test `git_init.sh` — an interactive and headless repo initializer with programmatic scaffolding." 
+preview: images/previews/building-testing-the-git-init-script-headless-inte.png
 date: 2025-11-13T10:00:00.000Z
 tags:
   - shell-scripting

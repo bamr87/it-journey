@@ -2,7 +2,7 @@
 title: "Forging the Prompt Crystal: Master AI Communication"
 description: Master prompt engineering to craft optimal AI instructions. Learn systematic design, iterative refinement, and structured patterns for language models.
 date: 2025-11-02T22:09:57.431Z
-preview: /images/quest-preview-image.png
+preview: images/previews/forging-the-prompt-crystal-master-ai-communication.png
 tags:
   - lvl-0010
   - ai-development

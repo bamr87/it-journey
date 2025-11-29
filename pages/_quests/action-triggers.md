@@ -2,7 +2,7 @@
 title: Understanding Action Triggers in Depth
 description: Unlock the power of automation with GitHub Actions! Streamline your workflows and enhance your CI/CD processes effortlessly.
 date: 2025-04-18T19:39:18.958Z
-preview: ""
+preview: images/previews/understanding-action-triggers-in-depth.png
 tags:
   - automation
   - CI/CD
@@ -19,9 +19,9 @@ sub-title: null
 excerpt: null
 snippet: null
 author: ""
-layout: null
+layout: journals
 keywords: {}
-lastmod: 2025-07-04T23:01:16.851Z
+lastmod: 2025-11-29T00:14:37.004Z
 permalink: null
 attachments: ""
 comments: false

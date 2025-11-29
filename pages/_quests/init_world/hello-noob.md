@@ -1,114 +1,105 @@
 ---
 title: "Hello n00b: Your First Steps into the IT Journey"
 author: IT-Journey Team
-excerpt: "Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community"
-description: "The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development"
-snippet: "Every expert was once a beginner - every hero was once a n00b"
+excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
+description: The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development
+preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
+snippet: Every expert was once a beginner - every hero was once a n00b
 categories:
-  - Quests
-  - Init-World
-  - Beginner
+    - Quests
+    - Init-World
+    - Beginner
 tags:
-  - lvl-0000
-  - github
-  - git
-  - beginner
-  - init-world
-  - community-entry
+    - lvl-0000
+    - github
+    - git
+    - beginner
+    - init-world
+    - community-entry
 draft: false
 date: 2022-05-24T00:00:00.000Z
-lastmod: 2022-05-24T16:43:34.796Z
+lastmod: 2025-11-29T00:51:30.507Z
 layout: journals
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
-
-# === ENHANCED QUEST HIERARCHY ===
-quest_type: "main_quest"
-quest_line: "Foundation Path"
-quest_series: "Character Creation Journey"
-quest_arc: "Digital Awakening Arc"
-
+quest_type: main_quest
+quest_line: Foundation Path
+quest_series: Character Creation Journey
+quest_arc: Digital Awakening Arc
 quest_dependencies:
-    required_quests: []  # Entry point quest
+    required_quests: []
     recommended_quests: []
     unlocks_quests:
-        - "/quests/character-building/"
-        - "/quests/operating-system-selection/"
-        - "/quests/terminal-navigation-mastery/"
-
+        - /quests/character-building/
+        - /quests/operating-system-selection/
+        - /quests/terminal-navigation-mastery/
 quest_relationships:
     child_quests:
-        - "/quests/github-profile-optimization/"     # Side quest
-        - "/quests/repository-exploration-guide/"    # Side quest
+        - /quests/github-profile-optimization/
+        - /quests/repository-exploration-guide/
     sequel_quests:
-        - "/quests/character-building/"
-        - "/quests/development-environment-setup/"
+        - /quests/character-building/
+        - /quests/development-environment-setup/
     parallel_quests:
-        - "/quests/computer-literacy-fundamentals/"
-
+        - /quests/computer-literacy-fundamentals/
 learning_paths:
     primary_paths:
-        - "Software Development"
-        - "System Administration"
-        - "Data Science"
-        - "Digital Literacy"
+        - Software Development
+        - System Administration
+        - Data Science
+        - Digital Literacy
     character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-        - "🛡️ Security Specialist"
-        - "📊 Data Scientist"
-        - "🎨 Digital Artist"
-        - "🎮 Game Developer"
+        - 💻 Software Developer
+        - 🏗️ System Engineer
+        - 🛡️ Security Specialist
+        - 📊 Data Scientist
+        - 🎨 Digital Artist
+        - 🎮 Game Developer
     skill_trees:
-        - "Version Control Fundamentals"
-        - "Community Participation"
-        - "Open Source Contribution"
-
+        - Version Control Fundamentals
+        - Community Participation
+        - Open Source Contribution
 quest_mapping:
     coordinates: "[0, 0]"
-    region: "Entry"
-    realm: "Community"
-    biome: "GitHub"
-
+    region: Entry
+    realm: Community
+    biome: GitHub
 prerequisites:
     knowledge_requirements:
-        - "Basic computer operation (clicking, typing, navigating websites)"
-        - "Understanding of what a website is"
-        - "Familiarity with creating online accounts"
+        - Basic computer operation (clicking, typing, navigating websites)
+        - Understanding of what a website is
+        - Familiarity with creating online accounts
     system_requirements:
-        - "Access to a computer with internet connection"
-        - "Valid email address"
-        - "Web browser (Chrome, Firefox, Safari, or Edge)"
+        - Access to a computer with internet connection
+        - Valid email address
+        - Web browser (Chrome, Firefox, Safari, or Edge)
     skill_level_indicators:
-        - "Curious about technology and eager to learn"
-        - "Comfortable navigating websites and creating accounts"
-        - "Willingness to learn and explore new concepts"
-
+        - Curious about technology and eager to learn
+        - Comfortable navigating websites and creating accounts
+        - Willingness to learn and explore new concepts
 validation_criteria:
     completion_requirements:
-        - "Successfully create a GitHub account"
-        - "Fork the IT-Journey repository"
-        - "Navigate the GitHub interface confidently"
+        - Successfully create a GitHub account
+        - Fork the IT-Journey repository
+        - Navigate the GitHub interface confidently
     skill_demonstrations:
-        - "Demonstrate understanding of GitHub's basic functionality"
-        - "Show ability to interact with repositories and community features"
+        - Demonstrate understanding of GitHub's basic functionality
+        - Show ability to interact with repositories and community features
     knowledge_checks:
-        - "Explain what GitHub is and why it's important"
-        - "Describe the concept of forking and open source collaboration"
-
+        - Explain what GitHub is and why it's important
+        - Describe the concept of forking and open source collaboration
 rewards:
     badges:
-        - "🏆 GitHub Account Creation Badge - Entry into developer community"
-        - "⚡ Digital Citizenship - Understanding of online collaboration"
+        - 🏆 GitHub Account Creation Badge - Entry into developer community
+        - ⚡ Digital Citizenship - Understanding of online collaboration
     skills_unlocked:
-        - "🛠️ Open Source Contribution Foundation"
-        - "🎯 Community Membership Access"
+        - 🛠️ Open Source Contribution Foundation
+        - 🎯 Community Membership Access
     progression_points: 100
     unlocks_features:
-        - "Access to all Foundation Path quests"
-        - "Ability to participate in community discussions"
-        - "Foundation for version control learning"
-
+        - Access to all Foundation Path quests
+        - Ability to participate in community discussions
+        - Foundation for version control learning
 sub-title: "Level 0000 (0) Main Quest: First Steps in Digital Collaboration"
 permalink: /quests/init_world/hello-noob/
 ---

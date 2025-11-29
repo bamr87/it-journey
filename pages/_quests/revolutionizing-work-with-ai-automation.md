@@ -2,7 +2,7 @@
 title: Revolutionizing Work with AI Automation
 description: Discover how AI automation can transform your workflow, enhancing code reviews, documentation, and PR summaries for a smarter coding experience.
 date: 2025-04-18T19:42:20.800Z
-preview: ""
+preview: images/previews/revolutionizing-work-with-ai-automation.png
 tags:
   - AI Automation
   - Best Practices

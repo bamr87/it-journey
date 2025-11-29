@@ -2,7 +2,7 @@
 title: "Siege of King EDGAR: Storming the SEC Data Castle"
 description: "Embark on a satirical, mystical quest to liberate financial knowledge from King EDGAR’s vaults. Assemble AI companions, master SEC APIs, and responsibly harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight."
 date: 2025-08-20T04:18:02.180Z
-preview: "/images/quest-preview-image.png"
+preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
 tags:
   - lvl-1100
   - sec-edgar

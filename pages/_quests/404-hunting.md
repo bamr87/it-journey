@@ -2,7 +2,7 @@
 title: "404 Hunting: Binary Wards for Unbreakable Links"
 description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians, and living resource endpoints powered by GitHub.
 date: 2025-08-31T23:10:14.466Z
-preview: /images/quest-preview-image.png
+preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
 tags:
   - lvl-1110
   - jekyll

@@ -2,7 +2,7 @@
 title: "Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest"
 description: Build an epic, ATS-friendly Curriculum Vitae in VS Code using LaTeX, aligned to the provided cv.tex template—install tools, customize sections, compile, and export a polished PDF.
 date: 2025-08-17T21:11:48.247Z
-preview: ""
+preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
 tags:
   - lvl-0101
   - latex

@@ -1,6 +1,7 @@
 ---
 key: tutorial
 title: Personal Site
+preview: images/previews/personal-site.png
 index: 8199
 subcategory: jekyll
 date: 2020-01-20

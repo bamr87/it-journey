@@ -1,6 +1,7 @@
 ---
 title: IT Fundamentals
 description: null
+preview: images/previews/it-fundamentals.png
 author: null
 excerpt: null
 date: 2023-11-23T17:51:07.025Z

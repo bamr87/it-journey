@@ -2,7 +2,7 @@
 title: Commitments to clean commits
 description: Learn how to maintain clean commits in your projects for better collaboration and version control efficiency.
 date: 2025-04-18T19:27:18.405Z
-preview: ""
+preview: images/previews/commitments-to-clean-commits.png
 tags:
     - clean commits
     - Git

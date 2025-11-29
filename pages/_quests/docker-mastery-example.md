@@ -2,7 +2,7 @@
 title: "Docker Containerization Mastery: Level 0101 (5) Quest"
 description: Master Docker containerization to build, deploy, and manage applications in isolated, portable environments with practical hands-on projects
 date: 2025-01-27T12:00:00.000Z
-preview: /images/quests/docker-mastery-quest.png
+preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
 level: "0101"
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes

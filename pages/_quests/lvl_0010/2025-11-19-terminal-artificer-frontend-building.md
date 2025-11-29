@@ -2,7 +2,7 @@
 title: "Terminal Artificer: Forging the Glass Interface"
 description: Master the art of crafting beautiful, interactive frontends for your shell scripts using Gum, transforming raw command-line magic into elegant tools.
 date: 2025-11-19T00:00:00.000Z
-preview: ""
+preview: images/previews/terminal-artificer-forging-the-glass-interface.png
 tags:
     - lvl-0010
     - gum
@@ -30,7 +30,7 @@ keywords:
         - frontend
         - bash
         - zsh
-lastmod: 2025-11-20T05:43:41.424Z
+lastmod: 2025-11-29T01:07:17.270Z
 permalink: /quests/level-0010-terminal-artificer/
 attachments: ""
 comments: true
@@ -101,6 +101,8 @@ quest_mapping:
 *In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
 
 *Today, you will learn to craft these interfaces using **Gum**, a mystical artifact from the Charm realm that brings glamour and interactivity to your shell scripts.*
+
+![Quest Preview: Terminal Artificer: Forging the Glass Interface](/assets/images/previews/terminal-artificer-forging-the-glass-interface.png)
 
 ### 🌟 The Legend Behind This Quest
 For decades, wizards of the terminal have relied on `read` and arcane flags to gather intelligence from users. But the modern era demands more. We crave the tactile feedback of a menu, the safety of a confirmation dialog, and the clarity of a well-formatted prompt. Gum is the modern artificer's hammer, allowing you to build beautiful, composable CLIs with simple shell commands.

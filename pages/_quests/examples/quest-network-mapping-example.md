@@ -1,6 +1,7 @@
 ---
 title: "Quest Network Mapping: Comprehensive Learning Path Visualization"
 description: "Demonstration of the enhanced quest hierarchy system with complete mapping examples and mermaid diagrams"
+preview: images/previews/quest-network-mapping-comprehensive-learning-path-.png
 date: 2025-10-03T13:30:00.000Z
 categories:
     - Documentation

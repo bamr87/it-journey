@@ -2,7 +2,7 @@
 title: "Recursive Realms: Testing Infinite Loops with AI"
 description: Master recursion, unit testing, and AI integration by navigating self-replicating code towers
 date: 2025-10-08T18:11:38.267Z
-preview: /images/quest-preview-image.png
+preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
 level: "0010"
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes

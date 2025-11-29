@@ -1,6 +1,7 @@
 ---
 title: "Bashcrawl Quest: Terminal Adventure RPG"
 description: An interactive terminal-based adventure game that teaches command line skills through exploration and puzzle-solving in a mystical dungeon
+preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
 date: 2024-05-28T00:00:00.000Z
 categories:
     - Quests

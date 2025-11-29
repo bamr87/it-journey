@@ -467,7 +467,11 @@ class PreviewGenerator:
         # Generate filename and paths
         safe_filename = self.generate_filename(content.title)
         output_file = self.output_dir / f"{safe_filename}.png"
-        preview_url = f"/{self.output_dir.relative_to(self.project_root)}/{safe_filename}.png"
+        # Generate preview URL - relative path without leading slash, theme adds /assets/
+        relative_path = str(self.output_dir.relative_to(self.project_root))
+        if relative_path.startswith('assets/'):
+            relative_path = relative_path[7:]  # Remove 'assets/' prefix
+        preview_url = f"{relative_path}/{safe_filename}.png"  # No leading slash
         
         # Generate prompt
         prompt = self.generate_prompt(content)
@@ -539,7 +543,7 @@ def main():
     )
     parser.add_argument(
         '-c', '--collection',
-        choices=['posts', 'quickstart', 'docs', 'all'],
+        choices=['posts', 'quickstart', 'docs', 'quests', 'all'],
         help="Process specific collection"
     )
     parser.add_argument(
@@ -617,6 +621,7 @@ def main():
             'posts': project_root / 'pages' / '_posts',
             'quickstart': project_root / 'pages' / '_quickstart',
             'docs': project_root / 'pages' / '_docs',
+            'quests': project_root / 'pages' / '_quests',
         }
         
         if args.collection == 'all':
