@@ -12,7 +12,7 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-11-29T18:31:13.401Z
+lastmod: 2025-11-29T23:41:31.778Z
 mermaid: true
 draft: false
 toc: true
@@ -75,7 +75,7 @@ graph LR;
 
 ### Choose Your Difficulty Level
 
-- **🌱 What is OS?** - [n00b Quest](/quests/init_world/hello-noob/)
+- **🌱 What is OS?** - [n00b Quest](/quests/0000/hello-noob/)
 - **🌐 I has Internet!?** - Easy Mode
 - **🍎 Big Macintosh** - Medium Challenge
 - **🪟 Damn Windows Update** - Hard Mode
@@ -99,90 +99,158 @@ Begin your journey and establish your digital identity
 
 **Featured Quests:**
 
-- [Begin Your IT Journey](init_world/2023-11-23-begin-your-it-journey.md) - *The Hero's Call*
-- [Character Building](init_world/2023-11-23-character-building.md) - *Forge Your Identity*
-- [IT Fundamentals](init_world/2023-11-23-it-fundamentals.md) - *Learn the Ancient Arts*
-- [Character Selection](init_world/2023-11-24-character-selection.md) - *Choose Your Destiny*
-- [OS Selection](init_world/2023-11-24-os-selection.md) - *Pick Your Realm*
+- [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
+- [Character Building](0000/character-building.md) - *Forge Your Identity*
+- [IT Fundamentals](0000/it-fundamentals.md) - *Learn the Ancient Arts*
+- [Character Selection](0000/character-selection.md) - *Choose Your Destiny*
+- [OS Selection](0000/os-selection.md) - *Pick Your Realm*
 
 **Platform-Specific Starting Quests:**
 
-- [Hello n00b](init_world/hello-noob.md) - *Your First Steps into the Digital Realm*
-- [Hello Windows](init_world/hello-win/) - *Mastering the Microsoft Kingdom*
-- [Hello macOS](init_world/hello-mac/) - *Conquering the Apple Empire*
-- [Hello Linux](init_world/hello-linux/) - *Taming the Penguin's Domain*
-- [Hello Cloud](init_world/hello-cloud/) - *Ascending to the Digital Heavens*
+- [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
+- [Hello Windows](0000/hello-win/) - *Mastering the Microsoft Kingdom*
+- [Hello macOS](0000/hello-mac/) - *Conquering the Apple Empire*
+- [Hello Linux](0000/hello-linux/) - *Taming the Penguin's Domain*
+- [Hello Cloud](0000/hello-cloud/) - *Ascending to the Digital Heavens*
+
+📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing for this level
 
 ### Level Progression System
 
-#### Level 000 - Apprentice Trials
+#### Level 0000 - Apprentice Trials
 
 Basic scripting and automation magic
 
 **Available Quests:**
 
-- [Bash Fundamentals](lvl_000/2024-05-28-bash-run.md) - *Learn the Terminal Incantations*
-- `bash_crawl.sh` - *Your First Automation Spell*
-- `calculator.sh` - *Mathematical Magic Basics*
-- `profile.sh` - *Customize Your Digital Presence*
+- [Bash Fundamentals](0000/bash-run.md) - *Learn the Terminal Incantations*
+- [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Master Your Primary IDE*
+- [Bashcrawl Adventure](0000/bashcrawl/) - *Your First Automation Spell*
 
-#### Level 001 - Journeyman Challenges
+📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing and learning paths
+
+#### Level 0001 - Journeyman Challenges
 
 Web technologies and advanced scripting
 
 **Available Adventures:**
 
-- [The GitHub Pages Portal: Forging Your Digital Realm](lvl_001/github-pages-portal.md) - *Deploy Your First Website*
-- [Personal Site Creation](lvl_001/personal-site.md) - *Build Your Digital Castle*
-- `js-examples.js` - *JavaScript Spell Components*
-- `js_testing.js` - *Test Your Magical Constructs*
-- `python.py` - *Pythonic Sorcery Basics*
+- [The GitHub Pages Portal: Forging Your Digital Realm](0001/github-pages-portal.md) - *Deploy Your First Website*
+- [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle*
 
-#### Level 010 - Master Tier Quests
+📁 **[Level 0001 Directory Guide](0001/README.md)** - Complete quest listing and learning paths
 
-Complex application development
+#### Level 0010 - Master Tier Quests
+
+Terminal enhancement and shell mastery
 
 **Epic Challenges:**
 
-- [Bookstore Application](lvl_0010/bookstore/) - *Craft a Complete Magical Marketplace*
+- [Bash Scripting Mastery](0010/bash-scripting.md) - *Master the Ancient Bash Incantations*
+- [Oh My Zsh Terminal Enchantment](0010/oh-my-zsh-terminal-enchantment.md) - *Transform Your Terminal*
+- [Nerd Font Enchantment](0010/nerd-font-enchantment-side-quest.md) - *Visual Terminal Magic*
+- [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal*
+- [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration-quest.md) - *Diagram Magic*
+
+📁 **[Level 0010 Directory Guide](0010/README.md)** - Complete quest listing and learning paths
+
+#### Level 0011 - AI Integration Tier
+
+Development tools and AI-powered workflows
+
+**Available Quests:**
+
+- [GitHub Code Search Quest](0011/github-hidden-gem-code-search-quest.md) - *Master Code Discovery*
+- [Prompt Crystal Mastery: VS Code Copilot](0011/prompt-crystal-mastery-vscode-copilot-quest.md) - *AI Pair Programming*
+
+📁 **[Level 0011 Directory Guide](0011/README.md)** - Complete quest listing and learning paths
 
 ### Specialized Quest Lines
 
-#### Frontend Mastery Path
+#### Level 0100 - Frontend Mastery Path
 
-Become a master of user interfaces and digital aesthetics
+Become a master of user interfaces and Docker containerization
 
 **Quest Series:**
 
-- [Frontend Fundamentals](frontend/frontend.md) - *The Art of Digital Presentation*
-- [Frontend Docker Adventures](frontend/frontend-docker.md) - *Containerized UI Magic*
-- [Frontend Level Progression](frontend/frontend-levels.md) - *Structured Learning Path*
-- [Level 000 Frontend](frontend/lvl-000-frontend-docker.md) - *Beginner Container Magic*
-- [Level 001 Frontend](frontend/lvl-001-frontend-docker.md) - *Intermediate UI Sorcery*
-- [Level 010 Frontend](frontend/lvl-010-frontend-docker.md) - *Advanced Interface Wizardry*
+- [Frontend Fundamentals](0100/frontend.md) - *The Art of Digital Presentation*
+- [Frontend Docker Adventures](0100/frontend-docker.md) - *Containerized UI Magic*
+- [Frontend Level Progression](0100/frontend-levels.md) - *Structured Learning Path*
+- [Level 000 Frontend](0100/lvl-000-frontend-docker.md) - *Beginner Container Magic*
+- [Level 001 Frontend](0100/lvl-001-frontend-docker.md) - *Intermediate UI Sorcery*
+- [Level 010 Frontend](0100/lvl-010-frontend-docker.md) - *Advanced Interface Wizardry*
 
-### Recent Chronicle Entries
+📁 **[Level 0100 Directory Guide](0100/README.md)** - Complete quest listing and learning paths
 
-Latest adventures and discoveries from fellow travelers
+#### Level 0101 - Advanced Docker & DevOps
 
-**2025 Quest Updates:**
+Advanced containerization and document automation
 
-- [Django & Git Mastery](2025-03-08-django-and-git.md) - *Web Framework Sorcery*
+**Quest Series:**
 
-**April 2025 AI-Enhanced Adventures:**
+- [Docker Mastery Example](0101/docker-mastery-example.md) - *Advanced Container Patterns*
+- [LazyTeX CV Building](0101/the-lazytex-of-building-a-curriculum-vitae.md) - *Professional Document Automation*
 
-- [Action Triggers](2025-04-18-action-triggers.md) - *Automation Spell Casting*
-- [Branches & Pull Requests](2025-04-18-branches-and-pull-requests.md) - *Version Control Mastery*
-- [Change Log Chronicles](2025-04-18-change-logs.md) - *Document Your Journey*
-- [Clean Commit Commitments](2025-04-18-commitments-to-clean-commits.md) - *Perfect Your Git Ritual*
-- [AI Automation Revolution](2025-04-18-revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
-- [Sourcery Code Methods](2025-04-18-sourcery-code-methods.md) - *Advanced Coding Incantations*
+📁 **[Level 0101 Directory Guide](0101/README.md)** - Complete quest listing and learning paths
 
-**November 2025 Quest Chronicles:**
+#### Level 1010 - Automation & Testing
 
-- [GitHub Code Search: Your Secret Weapon for Code Navigation](2025-11-14-github-hidden-gem-code-search-quest.md) - *Your Secret Weapon for Code Navigation*
-- [Azure Ascension: Deploying the Crystal Citadel to the Cloud Kingdom](2025-11-17-azure-ascension-jekyll-deployment-quest.md) - *Master Azure Static Web Apps deployment*
-- [Terminal Artificer: Forging the Glass Interface](lvl_0010/2025-11-19-terminal-artificer-frontend-building.md) - *Craft beautiful, interactive frontends for your shell scripts*
+Build automated validation and CI/CD pipelines
+
+**Quest Series:**
+
+- [Link to the Future: Automated Hyperlink Checking](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md) - *Automated Validation*
+
+📁 **[Level 1010 Directory Guide](1010/README.md)** - Complete quest listing and learning paths
+
+#### Level 1011 - Feature Development
+
+Structured feature development and project management
+
+**Quest Series:**
+
+- [Feature Re-Quest](1011/feature-re-quest-.md) - *Feature Development Workflows*
+
+📁 **[Level 1011 Directory Guide](1011/README.md)** - Complete quest listing and learning paths
+
+#### Level 1100 - Data & Templates
+
+Financial data integration and template systems
+
+**Quest Series:**
+
+- [EDGAR API Integration](1100/edgar.md) - *Financial Data Access*
+- [SEC EDGAR Deep Dive](1100/sec-edgar.md) - *Advanced Financial Analysis*
+- [Temple of Templates](1100/the-temple-of-templates.md) - *Reusable Template Systems*
+
+📁 **[Level 1100 Directory Guide](1100/README.md)** - Complete quest listing and learning paths
+
+#### Level 1110 - Quality Assurance
+
+Error handling and robust application development
+
+**Quest Series:**
+
+- [404 Hunting Quest](1110/404-hunting.md) - *Error Handling Mastery*
+
+📁 **[Level 1110 Directory Guide](1110/README.md)** - Complete quest listing and learning paths
+
+### Tools Collection
+
+Development tools, version control, and professional workflows
+
+**Featured Quests:**
+
+- [Django & Git Mastery](tools/django-and-git.md) - *Web Framework Sorcery*
+- [Action Triggers](tools/action-triggers.md) - *Automation Spell Casting*
+- [Branches & Pull Requests](tools/branches-and-pull-requests.md) - *Version Control Mastery*
+- [Change Log Chronicles](tools/change-logs.md) - *Document Your Journey*
+- [Clean Commit Commitments](tools/commitments-to-clean-commits.md) - *Perfect Your Git Ritual*
+- [AI Automation Revolution](tools/revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
+- [Planting Seeds](tools/planting-seeds.md) - *Software Evolution Principles*
+- [Zer0 to Her0 Epic](tools/epic-quest-zer0-to-her0-cmstyle.md) - *Complete Journey from Beginner to Hero*
+
+📁 **[Tools Collection Guide](tools/README.md)** - Complete tools quest listing
 
 ## Codex & Reference Materials
 
@@ -194,6 +262,81 @@ Latest adventures and discoveries from fellow travelers
 ### Home Base Operations
 
 - [Overworld Hub](home.md) - *Your Central Command Center*
+
+### Quest Collection Resources
+
+- [Inventory System](inventory/README.md) - *Learner Progress Tracking (Coming Soon)*
+
+## Directory Structure & Organization
+
+The quests directory follows a binary-coded level system representing skill progression:
+
+```
+_quests/
+├── README.md              # This file - main quest index
+├── home.md                # Overworld hub and navigation
+│
+├── 0000/                  # Level 0 - Foundation & Init World
+│   ├── README.md          # Level guide with quest listings
+│   ├── scripts/           # Script examples (calculator.sh, profile.sh)
+│   ├── hello-*/           # Platform-specific onboarding quests
+│   └── *.md               # Individual quest files
+│
+├── 0001/                  # Level 1 - Journeyman Challenges
+│   ├── README.md          # Level guide
+│   └── examples/          # Code examples (js, python)
+│
+├── 0010/                  # Level 2 - Terminal Enhancement
+├── 0011/                  # Level 3 - AI Integration
+├── 0100/                  # Level 4 - Frontend & Docker
+├── 0101/                  # Level 5 - Advanced Docker
+├── 1010/                  # Level 10 - Automation & Testing
+├── 1011/                  # Level 11 - Feature Development
+├── 1100/                  # Level 12 - Data & Templates
+├── 1110/                  # Level 14 - Quality Assurance
+│
+├── tools/                 # Cross-level tool quests
+│   └── README.md          # Tools collection guide
+│
+├── codex/                 # Reference materials
+│   ├── glossary.md        # Term definitions
+│   └── world_map.md       # Navigation guide
+│
+└── inventory/             # Learner tracking (future feature)
+    └── README.md          # Feature documentation
+```
+
+### Binary Level System
+
+Each level directory uses binary notation for technical authenticity:
+
+| Binary | Decimal | Level Name | Status |
+|--------|---------|------------|--------|
+| 0000   | 0       | Foundation & Init World | ✅ Active |
+| 0001   | 1       | Journeyman Challenges | ✅ Active |
+| 0010   | 2       | Terminal Enhancement | ✅ Active |
+| 0011   | 3       | AI Integration | ✅ Active |
+| 0100   | 4       | Frontend & Docker | ✅ Active |
+| 0101   | 5       | Advanced Docker | ✅ Active |
+| 0110   | 6       | *Reserved* | 🔮 Future |
+| 0111   | 7       | *Reserved* | 🔮 Future |
+| 1000   | 8       | *Reserved* | 🔮 Future |
+| 1001   | 9       | *Reserved* | 🔮 Future |
+| 1010   | 10      | Automation & Testing | ✅ Active |
+| 1011   | 11      | Feature Development | ✅ Active |
+| 1100   | 12      | Data & Templates | ✅ Active |
+| 1101   | 13      | *Reserved* | 🔮 Future |
+| 1110   | 14      | Quality Assurance | ✅ Active |
+| 1111   | 15      | *Reserved* | 🔮 Future |
+
+> **Note:** Levels 6-9, 13, and 15 are reserved for future quest lines. The non-sequential numbering reflects organic growth of the quest collection.
+
+### Quest File Organization Rules
+
+1. **Quest files**: Use kebab-case naming without date prefixes (e.g., `bash-run.md`, not `2024-05-28-bash-run.md`)
+2. **Code examples**: Place in subdirectories (`scripts/`, `examples/`)
+3. **README files**: Each level directory must have a `README.md` documenting its quests
+4. **Cross-references**: Link to related quests using relative paths
 
 ## Essential Equipment & Tools
 
@@ -289,7 +432,7 @@ Establish your presence across the digital multiverse
 
 2. **🍴 Fork This Repository:** [Fork it-journey](https://github.com/bamr87/it-journey/fork)
 
-3. **🎯 Choose Your First Quest:** Start with [hello-noob](init_world/hello-noob.md)
+3. **🎯 Choose Your First Quest:** Start with [hello-noob](0000/hello-noob.md)
 
 ### For Experienced Adventurers
 

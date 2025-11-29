@@ -18,7 +18,7 @@ sidebar:
 toc: true
 toc_sticky: true
 date: 2021-11-29T03:41:20.614Z
-lastmod: 2025-08-20T04:29:20.828Z
+lastmod: 2025-11-29T23:23:08.290Z
 draft: false
 ---
 
@@ -64,11 +64,11 @@ graph TB
 
 | 🌍 Realm | 🎯 Difficulty | 📍 Starting Point | 📊 Progress |
 |-----------|---------------|-------------------|-------------|
-| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](init_world/hello-mac/) | [ ] |
-| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](init_world/hello-win/) | [ ] |
-| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](init_world/hello-linux/) | [ ] |
-| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](init_world/hello-cloud/) | [ ] |
-| 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](init_world/hello-noob.md) | [ ] |
+| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](0000/hello-mac/) | [ ] |
+| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](0000/hello-win/) | [ ] |
+| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](0000/hello-linux/) | [ ] |
+| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](0000/hello-cloud/) | [ ] |
+| 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](0000/hello-noob.md) | [ ] |
 
 ### Character Class Selection
 
@@ -98,8 +98,8 @@ Terminal Mastery & Basic Setup
 
 **Available Quests:**
 
-- [ ] [VS Code Mastery Quest](init_world/2025-07-21-vscode-mastery-quest.md) - *Forge Your Ultimate Development Weapon*
-- [ ] [Bash Fundamentals](lvl_000/2024-05-28-bash-run.md) - *Terminal Incantations*
+- [ ] [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Forge Your Ultimate Development Weapon*
+- [ ] [Bash Fundamentals](0000/bash-run.md) - *Terminal Incantations*
 - [ ] `bash_crawl.sh` - *First Automation Spell*
 - [ ] `calculator.sh` - *Mathematical Magic*
 - [ ] `profile.sh` - *Environment Customization*
@@ -123,7 +123,7 @@ Web Technologies & Programming Fundamentals
 
 **Available Quests:**
 
-- [ ] [Personal Site Creation](lvl_001/personal-site.md) - *Build Your Digital Castle*
+- [ ] [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle*
 - [ ] `js-examples.js` - *JavaScript Spell Components*
 - [ ] `js_testing.js` - *Test Your Constructs*
 - [ ] `python.py` - *Pythonic Sorcery*
@@ -164,11 +164,11 @@ User Interface & Experience Specialization
 
 **Frontend Quest Series:**
 
-- [ ] [Frontend Fundamentals](frontend/frontend.md) - *Digital Presentation Arts*
-- [ ] [Frontend Docker](frontend/frontend-docker.md) - *Containerized UI Magic*
-- [ ] [Level 000 Frontend](frontend/lvl-000-frontend-docker.md) - *Beginner Container UI*
-- [ ] [Level 001 Frontend](frontend/lvl-001-frontend-docker.md) - *Intermediate UI Sorcery*
-- [ ] [Level 010 Frontend](frontend/lvl-010-frontend-docker.md) - *Advanced Interface Wizardry*
+- [ ] [Frontend Fundamentals](0100/frontend.md) - *Digital Presentation Arts*
+- [ ] [Frontend Docker](0100/frontend-docker.md) - *Containerized UI Magic*
+- [ ] [Level 000 Frontend](0100/lvl-000-frontend-docker.md) - *Beginner Container UI*
+- [ ] [Level 001 Frontend](0100/lvl-001-frontend-docker.md) - *Intermediate UI Sorcery*
+- [ ] [Level 010 Frontend](0100/lvl-010-frontend-docker.md) - *Advanced Interface Wizardry*
 
 **Mastery Objectives:**
 
@@ -265,12 +265,12 @@ Enterprise Architecture & Leadership
 
 Essential Starting Adventures
 
-- [ ] [VS Code Mastery Quest](init_world/2025-07-21-vscode-mastery-quest.md) - *Forge Your Ultimate Development Weapon*
-- [ ] [Begin Your IT Journey](init_world/2023-11-23-begin-your-it-journey.md) - *The Hero's Call*
-- [ ] [Character Building](init_world/2023-11-23-character-building.md) - *Forge Your Identity*
-- [ ] [IT Fundamentals](init_world/2023-11-23-it-fundamentals.md) - *Ancient Arts Foundation*
-- [ ] [Character Selection](init_world/2023-11-24-character-selection.md) - *Choose Your Destiny*
-- [ ] [OS Selection](init_world/2023-11-24-os-selection.md) - *Pick Your Realm*
+- [ ] [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Forge Your Ultimate Development Weapon*
+- [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
+- [ ] [Character Building](0000/character-building.md) - *Forge Your Identity*
+- [ ] [IT Fundamentals](0000/it-fundamentals.md) - *Ancient Arts Foundation*
+- [ ] [Character Selection](0000/character-selection.md) - *Choose Your Destiny*
+- [ ] [OS Selection](0000/os-selection.md) - *Pick Your Realm*
 
 ### Quick Start Paths
 
@@ -310,14 +310,14 @@ Fast Track Adventures by Platform
 
 Latest Magical Discoveries
 
-- [ ] [Django & Git Mastery](2025-03-08-django-and-git.md) - *Web Framework Sorcery*
-- [ ] [Action Triggers](2025-04-18-action-triggers.md) - *Automation Spell Casting*
-- [ ] [Branches & Pull Requests](2025-04-18-branches-and-pull-requests.md) - *Version Control Mastery*
-- [ ] [Change Log Chronicles](2025-04-18-change-logs.md) - *Document Your Journey*
-- [ ] [Clean Commit Commitments](2025-04-18-commitments-to-clean-commits.md) - *Perfect Git Rituals*
-- [ ] [AI Automation Revolution](2025-04-18-revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
-- [ ] [Sourcery Code Methods](2025-04-18-sourcery-code-methods.md) - *Advanced Coding Arts*
-- [ ] [Siege of King EDGAR: Storming the SEC Data Castle](/quests/level-1100-sec-edgar-siege/) - *Data Liberation Trail*
+- [ ] [Django & Git Mastery](tools/django-and-git.md) - *Web Framework Sorcery*
+- [ ] [Action Triggers](tools/action-triggers.md) - *Automation Spell Casting*
+- [ ] [Branches & Pull Requests](tools/branches-and-pull-requests.md) - *Version Control Mastery*
+- [ ] [Change Log Chronicles](tools/change-logs.md) - *Document Your Journey*
+- [ ] [Clean Commit Commitments](tools/commitments-to-clean-commits.md) - *Perfect Git Rituals*
+- [ ] [AI Automation Revolution](tools/revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
+- [ ] [Sourcery Code Methods](0100/sourcery-code-methods.md) - *Advanced Coding Arts*
+- [ ] [Siege of King EDGAR: Storming the SEC Data Castle](1100/sec-edgar.md) - *Data Liberation Trail*
 
 ## Essential Equipment & Spell Components
 
@@ -327,7 +327,7 @@ Universal Tools for All Classes
 
 #### Cross-Platform Essentials
 
-- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](init_world/2025-07-21-vscode-mastery-quest.md)
+- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](0000/vscode-mastery-quest.md)
 - [ ] **Git** - *Version Control Magic*
 - [ ] **Docker** - *Container Summoning*
 - [ ] **Terminal** - *Command Line Mastery*
@@ -348,7 +348,7 @@ Proven Magical Combinations
 Epic Campaign Objectives
 
 1. [ ] **Build Your Digital Castle**
-   - [ ] Master your IDE with [VS Code Mastery Quest](init_world/2025-07-21-vscode-mastery-quest.md)
+   - [ ] Master your IDE with [VS Code Mastery Quest](0000/vscode-mastery-quest.md)
    - [ ] Set up development environment
    - [ ] Configure essential tools
    - [ ] Establish workflow processes

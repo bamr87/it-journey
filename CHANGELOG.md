@@ -9,10 +9,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Preview images for various quests in `assets/images/previews/`
+- **README.md files**: Added README.md to all level directories (0000, 0001, 0010, 0011, 0100, 0101, 1010, 1011, 1100, 1110)
+- **inventory/README.md**: New directory for learner progress tracking (future feature)
+- **tools/README.md**: Collection documentation for cross-level tool quests
+- **Directory Structure section**: Added comprehensive structure documentation to main quests README.md
+- **Binary Level System table**: Complete 16-level table (0000-1111) with status indicators and reserved levels
 
 ### Changed
+- **Major Quest Reorganization**: Restructured `pages/_quests/` from mixed naming to binary-coded level system
+  - `init_world/` → `0000/` (Foundation & Init World)
+  - `lvl_000/` → `0000/` (merged with init_world content)
+  - `lvl_001/` → `0001/` (Journeyman Challenges)
+  - `lvl_0010/` → `0010/` (Terminal Enhancement)
+  - `frontend/` → `0100/` (Frontend & Docker)
+  - Tool quests → `tools/` directory
+  - Quest examples → `codex/` directory
+- **File Naming**: Removed date prefixes from all quest files (e.g., `2024-05-28-bash-run.md` → `bash-run.md`)
+- **Code Files**: Moved script/code examples from level root directories to subdirectories (`scripts/`, `examples/`)
+- **Updated paths**: All internal quest links updated to new binary-coded paths in README.md and home.md
 - Updated `scripts/lib/preview_generator.py` for enhanced preview generation
 - Updated `test/quest-validator/requirements.txt` for validator dependencies
+
+### Removed
+- Legacy directory structure (`init_world/`, `lvl_000/`, `lvl_001/`, `lvl_0010/`, `frontend/`, `examples/`)
+- Date prefixes from 75+ quest files
+- Duplicate `0000/tools/` directory (consolidated to root `tools/`)
+
+### Migration Notes
+- Quest permalinks may have changed - update any external references
+- Binary level directories (0000-1110) replace legacy naming convention
+- Code examples now live in subdirectories within level folders
 
 ## [2.1.0] - 2025-11-26
 
