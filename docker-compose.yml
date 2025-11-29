@@ -8,6 +8,8 @@ services:
     ports:
       - "4002:4002"
     working_dir: /app
+    env_file:
+      - .env
     environment:
       JEKYLL_ENV: development
 
