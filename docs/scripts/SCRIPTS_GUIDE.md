@@ -338,6 +338,76 @@ python3 scripts/link-checker.py --scope docs
 
 **See Also:** [Testing Frameworks](../testing/TESTING_FRAMEWORKS.md)
 
+## PRD Machine
+
+**Directory:** `scripts/prd-machine/`
+
+**Purpose:** Autonomous PRD (Product Requirements Document) generation and maintenance.
+
+**Key Feature:** PRD Machine writes, maintains, and evolves perfect PRDs faster and more accurately than any human PM, ensuring documentation never goes stale (< 6 hours).
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `sync` | Generate or update PRD.md from repository signals |
+| `status` | Check PRD health and freshness |
+| `conflicts` | Show detected requirement conflicts |
+
+### Usage
+
+```bash
+# Navigate to repository root
+cd /path/to/it-journey
+
+# Generate/update PRD.md
+./scripts/prd-machine/prd-machine sync
+
+# Check PRD freshness
+./scripts/prd-machine/prd-machine status
+
+# Show conflicts
+./scripts/prd-machine/prd-machine conflicts
+
+# Use specific history window
+./scripts/prd-machine/prd-machine sync --days 7
+
+# Custom output path
+./scripts/prd-machine/prd-machine sync --output docs/REQUIREMENTS.md
+```
+
+### Signal Sources
+
+PRD Machine ingests signals from:
+- **Git Commits** - Subject, body, author, date
+- **Markdown Files** - Quests, posts, docs with frontmatter
+- **Features YAML** - Feature definitions and status
+
+### Generated PRD Sections
+
+| # | Section | Purpose |
+|---|---------|---------|
+| 0 | WHY | Mission and key success metric |
+| 1 | MVP | Minimum Viable Promise with signals |
+| 2 | UX | User experience flow diagrams |
+| 3 | API | CLI commands and interface |
+| 4 | NFR | Non-functional requirements |
+| 5 | EDGE | Edge cases, dependencies, gotchas |
+| 6 | OOS | Out of scope items |
+| 7 | ROAD | Roadmap with milestones |
+| 8 | RISK | Top risks with mitigation |
+| 9 | DONE | Definition of done |
+
+### CI/CD Integration
+
+Included GitHub Actions workflow (`.github/workflows/prd-sync.yml`):
+- Runs every 6 hours automatically
+- Triggers on quest/post/feature changes
+- Creates issues for detected conflicts
+- Auto-commits updated PRD.md
+
+**See Also:** [PRD Machine Documentation](PRD_MACHINE.md)
+
 ## Deployment Scripts
 
 ### Update Settings
