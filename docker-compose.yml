@@ -24,3 +24,17 @@ services:
       PYTHONUNBUFFERED: 1
       PATH: "/opt/venv/bin:$PATH"
 
+  prd-machine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./scripts/prd-machine/prd-machine --help
+    volumes:
+      - ./:/app
+      - ./.git:/app/.git
+    working_dir: /app
+    environment:
+      PYTHONPATH: /app
+      PYTHONUNBUFFERED: 1
+      PATH: "/opt/venv/bin:$PATH"
+

@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2025-11-29
+
+### Added
+- **PRD Machine Docker Integration**: Added `prd-machine` service to `docker-compose.yml` for containerized PRD generation
+- **New Quest**: `2025-11-29-prd-codex-mastering-product-reality-distillation.md` - Level 0011 educational quest teaching Product Requirements Documents and PRD Machine usage with fantasy RPG theme
+- **PRD Machine CLI**: Python-based tool (`scripts/prd-machine/prd-machine.py`) with three commands:
+  - `sync` - Generate/update PRD.md from repository signals
+  - `status` - Check PRD health and freshness
+  - `conflicts` - Detect and display PRD conflicts
+
+### Changed
+- **PRD Content Refactor**: Regenerated `PRD.md` to document the IT-Journey platform instead of self-referential PRD Machine documentation
+- **PRD Section Generators**: Updated all section generators in `prd-machine.py` to output IT-Journey focused content (WHY, MVPs, Key Signals, etc.)
+
+### Documentation
+- Updated `pages/_quests/README.md` with new PRD Codex quest entry
+- PRD Machine README at `scripts/prd-machine/README.md` provides complete usage guide
+
 ## [2.1.0] - 2025-11-26
 
 ### Added

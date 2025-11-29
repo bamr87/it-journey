@@ -242,234 +242,301 @@ class PRDMachine:
         return conflicts
     
     def generate_section_why(self) -> str:
-        """Generate the WHY section (Section 0)."""
+        """Generate the WHY section (Section 0) for IT-Journey."""
         return """## 0. WHY
 
-Build the **PRD MACHINE** — an autonomous agent that writes, maintains, and evolves 
-perfect PRDs faster and more accurately than any human PM, forever ending the era of 
-stale, bloated, or missing product requirements documents.
+Build **IT-Journey** — an open-source educational platform that democratizes IT education 
+through gamified quests, practical tutorials, and AI-enhanced learning experiences, 
+transforming complete beginners into skilled IT professionals.
 
-**KFI:** 100% of shipped features trace directly to a machine-maintained PRD that was 
-never out of date by more than 6 hours.
+**KFI:** 100% of learners who complete a quest path can demonstrate measurable skill 
+improvement through hands-on projects in their portfolio.
 
 """
     
     def generate_section_mvp(self) -> str:
-        """Generate the MVP section (Section 1)."""
+        """Generate the MVP section (Section 1) for IT-Journey."""
         feature_count = len(self.signals.get("features", []))
         md_count = len(self.signals.get("markdown_files", []))
         
+        # Count quests and posts from markdown files
+        quest_count = sum(1 for f in self.signals.get("markdown_files", []) if "_quests" in f.get("path", ""))
+        post_count = sum(1 for f in self.signals.get("markdown_files", []) if "_posts" in f.get("path", ""))
+        
         return f"""## 1. MVP (Minimum Viable Promise)
 
-As a **founder / PM / engineer**, I want:
+As a **learner / contributor / educator**, I want:
 
-- ✅ A single CLI command `prd-machine sync` that instantly produces or updates a perfect `PRD.md`
-- ✅ Zero manual writing after initial 3-line product seed
-- 🔄 Automatic ingestion of git commits, markdown files, and feature definitions
-- ✅ Real-time conflict detection with proposed resolutions
-- ✅ Auto-generated MVP, UX, API, NFR, EDGE, OOS, ROAD, RISK, DONE sections
-- 🔜 One-click "Ship this PRD" → opens PR with updated PRD.md + skeleton code/tests/CI
+- ✅ Gamified learning quests with progressive difficulty (Level 0000 → advanced)
+- ✅ Practical tutorials that build real-world portfolio projects
+- ✅ Multi-platform support (macOS, Windows, Linux, Cloud)
+- ✅ AI-enhanced development workflows and automation
+- ✅ Jekyll-based static site with GitHub Pages deployment
+- ✅ Automated quality assurance (link checking, content validation)
+- 🔄 Interactive terminal interface (`journey.sh`) for navigation
+- 🔜 Certification tracking and skill progression metrics
 
-### Current Signal Status
+### Current Content Status
 
 | Source | Count | Status |
 |--------|-------|--------|
-| Git Commits | {len(self.signals.get('git_commits', []))} | ✅ Ingested |
-| Markdown Files | {md_count} | ✅ Ingested |
-| Features | {feature_count} | ✅ Parsed |
-| Conflicts | {len(self.signals.get('conflicts', []))} | ⚠️ Detected |
+| Learning Quests | {quest_count} | ✅ Published |
+| Educational Posts | {post_count} | ✅ Published |
+| Total Markdown Files | {md_count} | ✅ Indexed |
+| Implemented Features | {feature_count} | ✅ Tracked |
+| Recent Commits | {len(self.signals.get('git_commits', []))} | ✅ Analyzed |
+| Detected Issues | {len(self.signals.get('conflicts', []))} | {'⚠️ Review needed' if self.signals.get('conflicts') else '✅ None'} |
 
 """
     
     def generate_section_ux(self) -> str:
-        """Generate the UX section (Section 2)."""
+        """Generate the UX section (Section 2) for IT-Journey."""
         return """## 2. UX (User eXperience Flow)
 
 ```mermaid
 graph TD
-    A[Product seed 3 lines] --> B[PRD MACHINE wakes]
-    B --> C[Ingests all signals in repo/org]
-    C --> D[Distills into canonical PRD.md]
-    D --> E[Notifies humans only on conflict or approval]
-    E --> F[Humans thumbs-up → PRD becomes law]
-    F --> G[🔄 Loop: Monitor for changes]
-    G --> C
+    A[New Learner] --> B[Visit IT-Journey Site]
+    B --> C{Choose Path}
+    C -->|Beginner| D[Zero to Hero Guide]
+    C -->|Intermediate| E[Learning Quests]
+    C -->|Advanced| F[Contribute & Create]
+    D --> G[Complete Foundational Quests]
+    E --> G
+    G --> H[Build Portfolio Projects]
+    H --> I[Skill Progression Tracked]
+    I --> J[Community Recognition]
+    F --> K[Create Quests/Tutorials]
+    K --> J
+    J --> L[🔄 Continue Learning Journey]
+    L --> C
 ```
 
-### User Journey
+### User Journeys
 
-1. **Initialize**: Run `prd-machine init` to create seed file
-2. **Sync**: Run `prd-machine sync` to generate/update PRD
-3. **Review**: Check for conflicts and resolve them
-4. **Ship**: Run `prd-machine ship` to create PR with updates
+**Beginner Path:**
+1. **Discover**: Visit site → Browse quests by level
+2. **Learn**: Start with Level 0000 quests → Follow step-by-step tutorials
+3. **Practice**: Complete hands-on exercises → Build first projects
+4. **Progress**: Track skill development → Unlock advanced content
+
+**Contributor Path:**
+1. **Explore**: Review existing content → Identify gaps or improvements
+2. **Create**: Write new quests/tutorials → Follow content guidelines
+3. **Submit**: Open PR → Get community feedback
+4. **Iterate**: Refine based on learner outcomes
 
 """
     
     def generate_section_api(self) -> str:
-        """Generate the API section (Section 3)."""
+        """Generate the API section (Section 3) for IT-Journey."""
         return """## 3. API (Atomic Programmable Interface)
 
-| Endpoint | Method | Trigger | Output |
-|----------|--------|---------|--------|
-| `/v1/prd/generate` | POST | git push / ticket move | Updated PRD.md diff |
-| `/v1/prd/conflict` | GET | Contradiction detected | Resolution proposals |
-| `/v1/prd/ship` | POST | Human approval | Opens PR with scaffolding |
-| `/v1/prd/status` | GET | Any time | Current PRD health metrics |
+### Site Navigation
 
-### CLI Commands
+| Route | Content | Purpose |
+|-------|---------|---------|
+| `/` | Home | Landing page with learning paths |
+| `/quests/` | Quest Collection | Browse gamified learning experiences |
+| `/posts/` | Blog Posts | Tutorials, case studies, guides |
+| `/docs/` | Documentation | Reference materials and guides |
+| `/notebooks/` | Jupyter Notebooks | Interactive code examples |
+| `/about/features/` | Features Index | Platform capabilities |
+
+### CLI Tools
 
 ```bash
-# Generate or update PRD
-prd-machine sync
+# Interactive terminal interface
+./journey.sh
 
-# Initialize new project
-prd-machine init
+# Local development
+bundle exec jekyll serve --config _config.yml,_config_dev.yml
 
-# Check for conflicts
-prd-machine conflicts
+# Docker development
+docker compose up jekyll
 
-# Ship PRD as PR
-prd-machine ship
+# Quest validation
+docker compose run quest-validator
 
-# Show PRD status
-prd-machine status
+# PRD synchronization
+docker compose run prd-machine ./scripts/prd-machine/prd-machine sync
+
+# Link health check
+python3 scripts/link-checker.py --scope website
 ```
+
+### GitHub Actions Workflows
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `build-validation.yml` | Push/PR | Validate Jekyll build |
+| `link-checker.yml` | Schedule/Manual | Check link health |
+| `prd-sync.yml` | Schedule/Push | Update PRD.md |
+| `frontmatter-validation.yml` | Push | Validate content metadata |
 
 """
     
     def generate_section_nfr(self) -> str:
-        """Generate the NFR section (Section 4)."""
+        """Generate the NFR section (Section 4) for IT-Journey."""
         return """## 4. NFR (Non-Functional Realities)
 
 | Category | Requirement | Metric | Current |
 |----------|-------------|--------|---------|
-| Freshness | PRD never stale > 6h | 99th percentile | ✅ On every sync |
-| Cost | ≤ $8 per PRD per month | Even at 10k features/yr | ✅ $0 (local execution) |
-| Accuracy | ≥ 98% human agreement | Blind Turing test | 🔄 In progress |
-| Safety | No hallucinated requirements | Guardrails + human veto | ✅ Source-linked |
-| Performance | Sync < 10 seconds | 95th percentile | ✅ Target met |
+| Accessibility | WCAG 2.1 AA compliance | Lighthouse score ≥90 | 🔄 In progress |
+| Performance | Fast page loads | Time to Interactive <3s | ✅ Static site |
+| Availability | Always accessible | 99.9% uptime | ✅ GitHub Pages |
+| SEO | Discoverable content | Proper meta tags | ✅ Jekyll SEO |
+| Security | Safe content delivery | HTTPS everywhere | ✅ GitHub Pages |
+| Multi-Platform | Cross-OS support | macOS/Windows/Linux | ✅ Documented |
+| Mobile | Responsive design | All breakpoints | ✅ CSS framework |
+| Content Freshness | Regular updates | Activity within 30 days | ✅ Active |
 
 """
     
     def generate_section_edge(self) -> str:
-        """Generate the EDGE section (Section 5)."""
+        """Generate the EDGE section (Section 5) for IT-Journey."""
         conflicts = self.signals.get("conflicts", [])
         conflict_text = ""
         
         if conflicts:
-            conflict_text = "\n### Detected Conflicts\n\n"
+            conflict_text = "\n### Recent Issues Detected\n\n"
             for c in conflicts[:5]:  # Show top 5 conflicts
                 conflict_text += f"- **{c['type'].upper()}**: {c['description']}\n"
-                conflict_text += f"  - *Resolution*: {c['resolution']}\n"
+                conflict_text += f"  - *Action*: {c['resolution']}\n"
         
         return f"""## 5. EDGE (Exceptions, Dependencies, Gotchas)
 
 ### Dependencies
 
-- **Git**: Required for commit ingestion and version control
-- **Python 3.8+**: Runtime environment
-- **Repository structure**: Expects standard IT-Journey layout
+- **Ruby 3.2+**: Jekyll runtime
+- **Jekyll 3.9+**: Static site generator
+- **Bundler**: Ruby dependency management
+- **Python 3.8+**: Automation scripts and validation
+- **Docker**: Containerized development environment
+- **Git**: Version control and GitHub integration
+
+### Platform Requirements
+
+| Platform | Requirements | Notes |
+|----------|--------------|-------|
+| macOS | Homebrew, Xcode CLI | Primary development |
+| Windows | WSL2 recommended | Docker Desktop |
+| Linux | Standard dev tools | Native support |
+| Cloud | GitHub Codespaces | Zero setup |
 
 ### Gotchas
 
-- Founder changes mind verbally → machine must detect via commit patterns
-- Large repos (>10k commits) → use incremental sync with `--days` flag
-- Binary files → ignored in signal ingestion
-
-### TDD (Technical Design Decisions)
-
-We intentionally ship with "over-alignment" — if humans disagree with generated 
-requirements, the machine picks the most data-backed reality from actual signals.
+- **Jekyll versions**: Pinned to 3.9.x for GitHub Pages compatibility
+- **Ruby versions**: Use rbenv/rvm for version management
+- **Large repos**: Initial clone may take time; use sparse checkout if needed
+- **Binary files**: Images/media should go in `assets/` only
+- **Frontmatter**: All content files require valid YAML frontmatter
 {conflict_text}
 """
     
     def generate_section_oos(self) -> str:
-        """Generate the OOS section (Section 6)."""
+        """Generate the OOS section (Section 6) for IT-Journey."""
         return """## 6. OOS (Out Of Scope)
 
-The PRD MACHINE explicitly does NOT:
+IT-Journey explicitly does NOT:
 
-- ❌ Write actual code (only scaffolding templates)
-- ❌ Replace product sense (only distills existing sense from signals)
-- ❌ Generate legal contracts or pricing pages
-- ❌ Make business decisions without human approval
-- ❌ Access external APIs without explicit configuration
-- ❌ Modify code outside of PRD.md and related documentation
+- ❌ Provide paid certifications or credentials
+- ❌ Offer live instructor-led training
+- ❌ Host user-generated content without review
+- ❌ Store personal user data or accounts
+- ❌ Provide enterprise or commercial support
+- ❌ Replace formal education programs
+- ❌ Guarantee job placement or outcomes
+
+### Focus Areas
+
+The platform focuses on:
+- ✅ Self-paced, asynchronous learning
+- ✅ Open-source community contributions
+- ✅ Practical, portfolio-building projects
+- ✅ Free, accessible educational content
 
 """
     
     def generate_section_road(self) -> str:
-        """Generate the ROAD section (Section 7)."""
+        """Generate the ROAD section (Section 7) for IT-Journey."""
         return """## 7. ROAD (Roadmap)
 
 | Milestone | Objective | Target | Status |
 |-----------|-----------|--------|--------|
-| **Alpha** | Single-repo, private beta (10 teams) | Q1 2025 | ✅ Complete |
-| **Beta** | Multi-org, public launch | Q2 2025 | 🔄 In Progress |
-| **1.0** | Zero-touch mode (no human ever edits PRD) | Q4 2025 | 📋 Planned |
-| **2.0** | Self-evolving PRD MACHINE writes PRDs about itself | 2026 | 🔮 Vision |
+| **Foundation** | Jekyll site + GitHub Pages deployment | 2024 Q1 | ✅ Complete |
+| **Content** | Initial quest collection + tutorials | 2024 Q2 | ✅ Complete |
+| **Guardian 2.0** | Advanced link monitoring + AI analysis | 2025 Q1 | ✅ Complete |
+| **PRD Machine** | Automated requirements documentation | 2025 Q4 | 🔄 In Progress |
+| **Interactive** | Enhanced terminal interface + CLI tools | 2025 Q4 | 🔄 In Progress |
+| **Community** | Contributor growth + content expansion | 2026 Q1 | 📋 Planned |
+| **Certification** | Skill tracking + progress metrics | 2026 Q2 | 📋 Planned |
+| **AI Tutor** | Personalized learning recommendations | 2026 Q4 | 🔮 Vision |
 
 ### Upcoming Features
 
-- [ ] Slack/Discord integration for signal ingestion
-- [ ] Linear/Jira ticket synchronization
-- [ ] Figma comment extraction
-- [ ] AI-powered requirement summarization
-- [ ] Automated PR generation with code scaffolding
+- [ ] Enhanced quest progression tracking
+- [ ] Community discussion integration
+- [ ] Skill assessment and badging
+- [ ] Mobile-optimized experience
+- [ ] AI-powered content recommendations
+- [ ] Integration with external learning platforms
 
 """
     
     def generate_section_risk(self) -> str:
-        """Generate the RISK section (Section 8)."""
+        """Generate the RISK section (Section 8) for IT-Journey."""
         return """## 8. RISK (Top Risks)
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|------------|
-| Humans stop thinking | 🔴 High | Medium | Keep final veto button forever |
-| Infinite requirement churn | 🟡 Medium | Medium | Auto-freeze on ship date |
-| PRD MACHINE becomes the product | 🟣 Existential | Low | Embrace it |
-| Signal pollution (too much noise) | 🟡 Medium | High | Smart filtering + human curation |
-| Loss of context over time | 🟡 Medium | Medium | Version history + semantic linking |
+| Content staleness | 🟡 Medium | Medium | Automated freshness monitoring |
+| Contributor burnout | 🟡 Medium | Medium | Community growth + shared ownership |
+| Technology obsolescence | 🟡 Medium | Low | Regular stack reviews + updates |
+| Broken links/content | 🔴 High | Medium | Guardian 2.0 automated checking |
+| SEO/discoverability issues | 🟡 Medium | Medium | Jekyll SEO plugin + sitemap |
+| Accessibility gaps | 🔴 High | Medium | Regular audits + WCAG compliance |
 
 ### Risk Monitoring
 
-The PRD MACHINE tracks its own health via the `prd-machine status` command, 
-alerting humans when:
+The platform monitors health through:
 
-- Signal sources go stale (no commits in 7 days)
-- Conflict rate exceeds threshold (>5 per sync)
-- Section accuracy falls below target (<90%)
+- **Guardian 2.0**: Daily link health checks with AI-powered analysis
+- **PRD Machine**: Automated requirements freshness tracking
+- **GitHub Actions**: Build validation and content checks
+- **Community feedback**: Issue tracking and discussion monitoring
 
 """
     
     def generate_section_done(self) -> str:
-        """Generate the DONE section (Section 9)."""
+        """Generate the DONE section (Section 9) for IT-Journey."""
         return """## 9. DONE (Definition of Done)
 
 ### Success Criteria
 
-- [ ] `prd-machine sync` produces a PRD that 100% of engineers prefer over writing themselves
-- [ ] Average time from idea → shipped feature < 72h with zero requirement bugs
-- [ ] At least one company ships an entire product without a human ever typing a requirement
+- [ ] Learners complete quests with demonstrable skill improvements
+- [ ] Contributors can easily add content following clear guidelines
+- [ ] Site remains accessible and fast across all platforms
+- [ ] Content stays current with regular community contributions
+- [ ] Quality assurance catches issues before they impact learners
 
 ### Validation Metrics
 
 | Metric | Target | Current | Status |
 |--------|--------|---------|--------|
-| PRD Generation Success | 100% | 100% | ✅ |
-| Human Override Rate | < 10% | TBD | 📋 |
-| Time-to-Sync | < 10s | ~3s | ✅ |
-| Signal Coverage | > 80% | ~60% | 🔄 |
+| Quest Completion Rate | >70% | TBD | 📋 Tracking planned |
+| Content Freshness | <30 days | Active | ✅ |
+| Build Success Rate | 100% | 100% | ✅ |
+| Link Health | >95% | Monitored | ✅ |
+| Community Growth | +10%/quarter | Growing | 🔄 |
 
 ---
 
-**When these boxes are green, the loop is closed:**
+**When these criteria are met, IT-Journey fulfills its mission:**
 
-> *The PRD MACHINE writes perfect PRDs about itself writing perfect PRDs.*
-> 
-> *Reality fully armed. The distillery now distills distilleries.*
+> *Democratizing IT education through open-source learning,*
+> *gamified experiences, and community-driven content.*
 
-**Ship it.** 🚀
+**Keep learning. Keep building. Keep sharing.** 🚀
 
 """
     
@@ -478,8 +545,8 @@ alerting humans when:
         now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
         
         return f"""---
-title: "PRD: PRD MACHINE – The Self-Writing, Self-Evolving Product Reality Distillery"
-description: "Autonomous PRD generation and maintenance for the IT-Journey platform"
+title: "PRD: IT-Journey – Open-Source IT Education Platform"
+description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
 date: {now}
 lastmod: {now}
 status: Living
@@ -506,8 +573,8 @@ repository: https://github.com/bamr87/it-journey
         # Generate sections
         sections = [
             self.generate_metadata_section(),
-            "# PRD MACHINE\n\n",
-            "*The Self-Writing, Self-Evolving Product Reality Distillery*\n\n",
+            "# IT-Journey\n\n",
+            "*Open-Source IT Education Platform*\n\n",
             f"> **Status:** Living | **Version:** {datetime.now().strftime('%Y-%m-%d')} | **Auto-Generated:** ✅\n\n",
             self.generate_section_why(),
             self.generate_section_mvp(),
