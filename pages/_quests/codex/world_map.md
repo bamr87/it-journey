@@ -18,6 +18,10 @@ layout: default
 toc: true
 toc_sticky: true
 permalink: /quests/codex/world-map/
+level: "codex"
+difficulty: 📚 Reference
+estimated_time: Variable
+quest_type: reference
 ---
 
 *Welcome, brave traveler, to the complete cartographical guide of the IT-Journey realm! This mystical map reveals every secret path, hidden treasure, and learning adventure across our digital kingdom.*

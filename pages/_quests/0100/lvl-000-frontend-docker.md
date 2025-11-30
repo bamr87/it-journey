@@ -13,6 +13,11 @@ tags:
     - jekyll
     - bootstrap
 lastmod: 2024-05-28T02:28:31.950Z
+level: "0100"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
+permalink: /quests/level-0100/lvl-000-frontend-docker/
 ---
 
 ## Intro

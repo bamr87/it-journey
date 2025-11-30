@@ -54,6 +54,8 @@ validation_criteria:
     - Implements one working template per stack (C++ or Jinja or React)—two for bonus
     - Explains abstraction benefits and trade-offs
     - Publishes a small repo or gist with README and examples
+level: "1100"
+quest_type: main_quest
 ---
 
 ## 🧙‍♂️ Epic Introduction

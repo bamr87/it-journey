@@ -51,6 +51,8 @@ validation_criteria:
   - CI link checks pass on PRs and on a weekly schedule
   - 404 page provides helpful exits, recent content, and an issue link
   - Moved pages redirect via jekyll-redirect-from without loops
+level: "1110"
+quest_type: main_quest
 ---
 
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*

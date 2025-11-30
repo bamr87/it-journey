@@ -149,6 +149,7 @@ rewards:
         - "Access to advanced architecture quests"
         - "Eligibility for leadership and mentoring roles"
         - "Professional portfolio for career advancement"
+level: "codex"
 ---
 
 *Welcome, ambitious architect, to the Digital Portfolio Fortress Epic Quest! This comprehensive adventure represents the culmination of your foundation and intermediate learning, challenging you to integrate multiple technologies and best practices into a single, professional-quality project.*

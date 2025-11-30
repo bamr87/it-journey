@@ -53,6 +53,8 @@ validation_criteria:
   - VS Code compiles cv.tex to a PDF without errors
   - Contact, Education, Experience, Skills sections are populated
   - Clickable links for email, LinkedIn, and GitHub
+level: "0101"
+quest_type: main_quest
 ---
 
 ## 🧙‍♂️ Epic Introduction

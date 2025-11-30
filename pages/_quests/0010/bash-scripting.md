@@ -15,6 +15,10 @@ categories:
     - Quests
     - Foundation
     - System-Administration
+level: "0010"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 120-150 minutes
 sub-title: "Level 0010 (2) Quest: Shell Scripting Mastery and Automation Arts"
 excerpt: Transform from a terminal novice into a bash scripting wizard through hands-on automation magic and command-line mastery.
 snippet: When the shell speaks, the system listens - master the ancient bash incantations!

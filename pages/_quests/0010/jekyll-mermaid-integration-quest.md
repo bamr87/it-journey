@@ -62,6 +62,7 @@ comments: true
 draft: false
 fmContentType: quest
 lastmod: 2025-01-27T15:00:00.000Z
+permalink: /quests/level-0010/jekyll-mermaid-integration-quest/
 ---
 
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest

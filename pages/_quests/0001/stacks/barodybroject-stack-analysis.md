@@ -21,6 +21,11 @@ categories:
     - Django Applications
 layout: default
 lastmod: 2025-11-02T21:54:51.383Z
+level: "0001"
+quest_type: side_quest
+difficulty: 🟢 Easy
+estimated_time: 60-90 minutes
+permalink: /quests/level-0001/barodybroject-stack-analysis/
 ---
 
 # Technology Stack Analysis: Barodybroject

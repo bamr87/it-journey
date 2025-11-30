@@ -1,13 +1,24 @@
 ---
 title: Character Selection
-description: null
+description: Choose your character class and begin your specialized IT journey
 preview: images/previews/character-selection.png
-author: null
-excerpt: null
+author: IT-Journey Team
+excerpt: Select from six unique character classes, each with distinct skills and career paths
 date: 2023-11-24T18:53:11.166Z
-lastmod: 2023-11-25T21:09:54.989Z
+lastmod: 2025-11-29T21:40:00.000Z
 draft: true
-tags: []
+permalink: /quests/lvl_000/character-selection/
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 20-30 minutes
+quest_type: main_quest
+tags:
+  - character-selection
+  - career-paths
+  - lvl-0000
+categories:
+  - Quests
+  - Init-World
 categories: []
 meta: null
 snippet: null

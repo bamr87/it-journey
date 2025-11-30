@@ -13,6 +13,11 @@ tags:
     - hierarchy-system
     - mermaid-diagrams
 layout: default
+permalink: /quests/level-codex/quest-network-mapping-example/
+level: "codex"
+difficulty: 📚 Reference
+estimated_time: Variable
+quest_type: reference
 ---
 
 # Quest Network Mapping Examples

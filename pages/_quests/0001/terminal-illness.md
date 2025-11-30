@@ -16,7 +16,11 @@ tags:
 categories:
    - Quests
    - Development
-   - Foundation
+    - Foundation
+level: "0001"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 sub-title: "Level 0001 (1) Quest: Command-Line Interface Mastery"
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
 snippet: Where code meets the metal, heroes are forged in the fire of the command line

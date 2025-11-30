@@ -14,6 +14,10 @@ categories:
     - Quests
     - Process-Improvement
     - Team-Development
+level: "0001"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 120-150 minutes
 sub-title: "Level 0001 (1) Quest: Process Improvement and Team Culture Mastery"
 excerpt: Embark on an epic journey to master Kaizen principles and forge a culture of continuous improvement in software development
 snippet: Small steps, infinite progress - the way of the Code Alchemist

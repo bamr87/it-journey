@@ -57,6 +57,8 @@ validation_criteria:
   - Create professional pull request with proper documentation
   - Implement automated GitHub Actions workflow
   - Execute complete feature development cycle using best practices
+level: "0100"
+quest_type: main_quest
 ---
 
 *In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*

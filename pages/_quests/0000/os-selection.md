@@ -1,16 +1,24 @@
 ---
 title: OS Selection
-description: null
+description: Choose your operating system and understand the unique strengths of Windows, macOS, and Linux for your IT journey
 preview: images/previews/os-selection.png
-author: null
-excerpt: null
+author: IT-Journey Team
+excerpt: Selecting the right operating system is a crucial first step in your IT adventure
 date: 2023-11-24T18:42:29.810Z
-lastmod: 2023-11-24T18:42:48.157Z
+lastmod: 2025-11-30T05:46:59.328Z
 draft: true
-tags: []
-categories: []
-meta: null
-snippet: null
+permalink: /quests/lvl_000/os-selection/
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 30-45 minutes
+quest_type: main_quest
+tags:
+  - lvl-0000
+  - operating-systems
+  - beginner
+categories:
+  - Quests
+  - Init-World
 slug: os-selection
 ---
 Choosing the right operating system (OS) is like selecting the right wand in the wizarding world – it's a very personal choice and can greatly influence your journey ahead. Let's delve into the key aspects of the major operating systems to help you make an informed decision:

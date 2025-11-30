@@ -12,7 +12,7 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-11-29T23:41:31.778Z
+lastmod: 2025-11-29T23:57:25.670Z
 mermaid: true
 draft: false
 toc: true
@@ -89,7 +89,224 @@ graph LR;
 - **🛡️ Security Specialist** - *Guardian Against Digital Dragons*
 - **📊 Data Scientist** - *Diviner of Digital Prophecies*
 - **🎨 Digital Artist** - *Crafter of Beautiful Interfaces*
-- **🎮 Gamer-Dev** - *Builder of Interactive Worlds*
+- **🎮 Game Developer** - *Builder of Interactive Worlds*
+
+---
+
+## Character Class Specialization Paths
+
+*Choose your destiny and follow the path that calls to you. Each class has a recommended quest progression through the level system.*
+
+### 💻 Software Developer Path
+
+*Master the art of code creation, from web apps to enterprise systems*
+
+```mermaid
+graph LR
+    subgraph "Apprentice (0000-0011)"
+        A1[0000: IDE & Terminal] --> A2[0001: Web Basics]
+        A2 --> A3[0010: Shell Scripting]
+        A3 --> A4[0011: AI Tools]
+    end
+    
+    subgraph "Adventurer (0100-0111)"
+        B1[0100: Frontend] --> B2[0101: Backend]
+        B2 --> B3[0110: Databases]
+        B3 --> B4[0111: Full-Stack]
+    end
+    
+    subgraph "Master (1100-1110)"
+        C1[1100: Data Eng] --> C2[1110: Architecture]
+    end
+    
+    A4 --> B1
+    B4 --> C1
+```
+
+**Recommended Quest Sequence:**
+
+| Level | Focus | Key Skills |
+|-------|-------|------------|
+| 0000 | Foundation | VS Code, Git basics, terminal navigation |
+| 0001 | Web Fundamentals | HTML, CSS, JavaScript, static sites |
+| 0010 | Terminal Mastery | Bash scripting, automation |
+| 0011 | AI Tools | GitHub Copilot, AI-assisted development |
+| 0100 | Frontend | React/Vue, CSS frameworks, build tools |
+| 0101 | Backend | Node.js/Python, APIs, server management |
+| 0110 | Databases | SQL, NoSQL, data modeling |
+| 0111 | Full-Stack | Integration, authentication, state management |
+| 1100 | Data Engineering | ETL, data pipelines |
+| 1110 | Architecture | Design patterns, system design |
+
+### 🏗️ System Engineer Path
+
+*Build and maintain the infrastructure that powers the digital world*
+
+```mermaid
+graph LR
+    subgraph "Apprentice"
+        A1[0000: Linux/Terminal] --> A2[0010: Shell Mastery]
+    end
+    
+    subgraph "Warrior"
+        B1[1000: Security] --> B2[1001: Cloud]
+        B2 --> B3[1010: Automation]
+        B3 --> B4[1011: DevOps]
+    end
+    
+    subgraph "Master"
+        C1[1110: Architecture]
+    end
+    
+    A2 --> B1
+    B4 --> C1
+```
+
+**Recommended Quest Sequence:**
+
+| Level | Focus | Key Skills |
+|-------|-------|------------|
+| 0000 | Foundation | Linux basics, terminal, file systems |
+| 0010 | Terminal Mastery | Advanced bash, SSH, system administration |
+| 1000 | Security | System hardening, access control |
+| 1001 | Cloud | AWS/Azure/GCP, IaaS fundamentals |
+| 1010 | Automation | CI/CD, testing pipelines |
+| 1011 | DevOps | Kubernetes, Terraform, monitoring |
+| 1110 | Architecture | Infrastructure design, scaling |
+
+### 🛡️ Security Specialist Path
+
+*Protect digital realms from threats and vulnerabilities*
+
+```mermaid
+graph LR
+    subgraph "Foundation"
+        A1[0000: Basics] --> A2[0010: Scripting]
+    end
+    
+    subgraph "Security Core"
+        B1[1000: Security Fund.] --> B2[1001: Cloud Security]
+        B2 --> B3[1010: Security Automation]
+    end
+    
+    subgraph "Expert"
+        C1[1110: Security Architecture]
+    end
+    
+    A2 --> B1
+    B3 --> C1
+```
+
+**Recommended Quest Sequence:**
+
+| Level | Focus | Key Skills |
+|-------|-------|------------|
+| 0000 | Foundation | System basics, terminal, networking |
+| 0010 | Scripting | Automation for security tasks |
+| 1000 | Security Fundamentals | OWASP, pen testing, cryptography |
+| 1001 | Cloud Security | IAM, network security, compliance |
+| 1010 | Security Automation | SIEM, automated scanning |
+| 1110 | Security Architecture | Threat modeling, security design |
+
+### 📊 Data Scientist Path
+
+*Divine insights from the rivers of data*
+
+```mermaid
+graph LR
+    subgraph "Foundation"
+        A1[0000: Python Setup] --> A2[0001: Web Data]
+    end
+    
+    subgraph "Data Skills"
+        B1[0110: Databases] --> B2[1100: Data Eng.]
+        B2 --> B3[1101: ML/AI]
+    end
+    
+    subgraph "Expert"
+        C1[1110: Data Architecture]
+    end
+    
+    A2 --> B1
+    B3 --> C1
+```
+
+**Recommended Quest Sequence:**
+
+| Level | Focus | Key Skills |
+|-------|-------|------------|
+| 0000 | Foundation | Python setup, Jupyter notebooks |
+| 0001 | Web Data | APIs, data scraping, JSON |
+| 0110 | Databases | SQL, data modeling, queries |
+| 1100 | Data Engineering | ETL, data pipelines, warehousing |
+| 1101 | ML/AI | Machine learning, neural networks |
+| 1110 | Data Architecture | Big data systems, streaming |
+
+### 🎨 Digital Artist (UI/UX) Path
+
+*Create beautiful and intuitive digital experiences*
+
+```mermaid
+graph LR
+    subgraph "Foundation"
+        A1[0000: Tools] --> A2[0001: Web Design]
+    end
+    
+    subgraph "Specialization"
+        B1[0100: Frontend] --> B2[0111: Full Apps]
+    end
+    
+    subgraph "Expert"
+        C1[1110: Design Systems]
+    end
+    
+    A2 --> B1
+    B2 --> C1
+```
+
+**Recommended Quest Sequence:**
+
+| Level | Focus | Key Skills |
+|-------|-------|------------|
+| 0000 | Foundation | Design tools, version control |
+| 0001 | Web Design | HTML/CSS, responsive design |
+| 0100 | Frontend | Component libraries, animations |
+| 0111 | Full Apps | User flows, prototyping |
+| 1110 | Design Systems | Style guides, component architecture |
+
+### 🎮 Game Developer Path
+
+*Build interactive worlds and engaging experiences*
+
+```mermaid
+graph LR
+    subgraph "Foundation"
+        A1[0000: Programming] --> A2[0001: Graphics]
+    end
+    
+    subgraph "Game Dev"
+        B1[0100: UI/Frontend] --> B2[0101: Game Logic]
+        B2 --> B3[0110: Game Data]
+    end
+    
+    subgraph "Advanced"
+        C1[1101: AI for Games]
+    end
+    
+    A2 --> B1
+    B3 --> C1
+```
+
+**Recommended Quest Sequence:**
+
+| Level | Focus | Key Skills |
+|-------|-------|------------|
+| 0000 | Foundation | Programming basics, tools setup |
+| 0001 | Graphics | Canvas, WebGL basics |
+| 0100 | Game UI | Interface design, menus |
+| 0101 | Game Logic | Physics, game loops, state |
+| 0110 | Game Data | Save systems, leaderboards |
+| 1101 | Game AI | NPC behavior, pathfinding |
 
 ## Quest Categories
 
@@ -117,81 +334,187 @@ Begin your journey and establish your digital identity
 
 ### Level Progression System
 
-#### Level 0000 - Apprentice Trials
+#### 🌱 Apprentice Tier (Levels 0000-0011)
 
-Basic scripting and automation magic
+*Master the fundamentals and awaken your digital potential*
+
+#### Level 0000 - Foundation & Init World
+
+Basic scripting, terminal navigation, and environment setup
 
 **Available Quests:**
 
-- [Bash Fundamentals](0000/bash-run.md) - *Learn the Terminal Incantations*
-- [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Master Your Primary IDE*
-- [Bashcrawl Adventure](0000/bashcrawl/) - *Your First Automation Spell*
+- [x] [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
+- [x] [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Master Your Primary IDE*
+- [x] [Bash Fundamentals](0000/bash-run.md) - *Learn the Terminal Incantations*
+- [x] [Bashcrawl Adventure](0000/bashcrawl/) - *Your First Automation Spell*
+- [x] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
+- [x] [Character Building](0000/character-building.md) - *Forge Your Identity*
+- [x] [IT Fundamentals](0000/it-fundamentals.md) - *Learn the Ancient Arts*
+- [ ] File System Navigation - *Mapping the Digital Terrain*
+- [ ] Package Manager Mastery - *Homebrew, apt, Chocolatey*
+- [ ] Environment Variables - *Configuring Your World*
 
-📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing and learning paths
+**Platform-Specific Quests:**
+- [Hello Windows](0000/hello-win/) | [Hello macOS](0000/hello-mac/) | [Hello Linux](0000/hello-linux/) | [Hello Cloud](0000/hello-cloud/)
 
-#### Level 0001 - Journeyman Challenges
+📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing for this level
 
-Web technologies and advanced scripting
+#### Level 0001 - Web Fundamentals
+
+Web technologies, HTML/CSS/JS basics, and static sites
 
 **Available Adventures:**
 
-- [The GitHub Pages Portal: Forging Your Digital Realm](0001/github-pages-portal.md) - *Deploy Your First Website*
-- [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle*
+- [x] [The GitHub Pages Portal](0001/github-pages-portal.md) - *Deploy Your First Website*
+- [x] [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle*
+- [x] [Docs in a Row](0001/docs-in-a-row.md) - *Documentation Basics*
+- [x] [Stack Attack](0001/stackattack.md) - *Understanding Tech Stacks*
+- [ ] HTML Foundations - *The Structure of the Web*
+- [ ] CSS Styling - *Visual Magic & Design*
+- [ ] JavaScript Basics - *Adding Interactivity*
+- [ ] Responsive Design - *Mobile-First Thinking*
+- [ ] Static Site Generators - *Jekyll & Hugo Basics*
 
 📁 **[Level 0001 Directory Guide](0001/README.md)** - Complete quest listing and learning paths
 
-#### Level 0010 - Master Tier Quests
+#### Level 0010 - Terminal Mastery
 
-Terminal enhancement and shell mastery
+Advanced terminal customization and shell scripting
 
 **Epic Challenges:**
 
-- [Bash Scripting Mastery](0010/bash-scripting.md) - *Master the Ancient Bash Incantations*
-- [Oh My Zsh Terminal Enchantment](0010/oh-my-zsh-terminal-enchantment.md) - *Transform Your Terminal*
-- [Nerd Font Enchantment](0010/nerd-font-enchantment-side-quest.md) - *Visual Terminal Magic*
-- [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal*
-- [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration-quest.md) - *Diagram Magic*
+- [x] [Bash Scripting Mastery](0010/bash-scripting.md) - *Master the Ancient Bash Incantations*
+- [x] [Oh My Zsh Terminal Enchantment](0010/oh-my-zsh-terminal-enchantment.md) - *Transform Your Terminal*
+- [x] [Nerd Font Enchantment](0010/nerd-font-enchantment-side-quest.md) - *Visual Terminal Magic*
+- [x] [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal*
+- [x] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration-quest.md) - *Diagram Magic*
+- [ ] Advanced Shell Scripting - *Complex Automation Spells*
+- [ ] Regular Expressions - *Pattern Matching Sorcery*
+- [ ] Terminal Multiplexing - *tmux & screen Mastery*
+- [ ] SSH & Remote Connections - *Portal Magic*
 
 📁 **[Level 0010 Directory Guide](0010/README.md)** - Complete quest listing and learning paths
 
-#### Level 0011 - AI Integration Tier
+#### Level 0011 - AI-Assisted Development
 
-Development tools and AI-powered workflows
+Development tools, AI copilots, and productivity workflows
 
 **Available Quests:**
 
-- [GitHub Code Search Quest](0011/github-hidden-gem-code-search-quest.md) - *Master Code Discovery*
-- [Prompt Crystal Mastery: VS Code Copilot](0011/prompt-crystal-mastery-vscode-copilot-quest.md) - *AI Pair Programming*
+- [x] [GitHub Code Search Quest](0011/github-hidden-gem-code-search-quest.md) - *Master Code Discovery*
+- [x] [Prompt Crystal Mastery: VS Code Copilot](0011/prompt-crystal-mastery-vscode-copilot-quest.md) - *AI Pair Programming*
+- [ ] ChatGPT for Developers - *Conversational AI Tools*
+- [ ] Claude for Coding - *Advanced AI Assistance*
+- [ ] AI Code Review - *Automated Quality Checks*
+- [ ] Prompt Engineering for Code - *Crafting Perfect Prompts*
+- [ ] AI-Powered Debugging - *Smart Error Resolution*
 
 📁 **[Level 0011 Directory Guide](0011/README.md)** - Complete quest listing and learning paths
 
-### Specialized Quest Lines
+---
 
-#### Level 0100 - Frontend Mastery Path
+#### ⚔️ Adventurer Tier (Levels 0100-0111)
 
-Become a master of user interfaces and Docker containerization
+*Specialize your skills and build real-world applications*
+
+#### Level 0100 - Frontend & Containers
+
+User interface development and Docker containerization
 
 **Quest Series:**
 
-- [Frontend Fundamentals](0100/frontend.md) - *The Art of Digital Presentation*
-- [Frontend Docker Adventures](0100/frontend-docker.md) - *Containerized UI Magic*
-- [Frontend Level Progression](0100/frontend-levels.md) - *Structured Learning Path*
-- [Level 000 Frontend](0100/lvl-000-frontend-docker.md) - *Beginner Container Magic*
-- [Level 001 Frontend](0100/lvl-001-frontend-docker.md) - *Intermediate UI Sorcery*
-- [Level 010 Frontend](0100/lvl-010-frontend-docker.md) - *Advanced Interface Wizardry*
+- [x] [Frontend Fundamentals](0100/frontend.md) - *The Art of Digital Presentation*
+- [x] [Frontend Docker Adventures](0100/frontend-docker.md) - *Containerized UI Magic*
+- [x] [Frontend Level Progression](0100/frontend-levels.md) - *Structured Learning Path*
+- [x] [Sourcery Code Methods](0100/sourcery-code-methods.md) - *Advanced Coding Arts*
+- [ ] React Foundations - *Component-Based Magic*
+- [ ] Vue.js Adventures - *Progressive Framework*
+- [ ] Docker Fundamentals - *Container Basics*
+- [ ] CSS Frameworks - *Bootstrap & Tailwind*
+- [ ] Build Tools - *Webpack, Vite, Parcel*
 
 📁 **[Level 0100 Directory Guide](0100/README.md)** - Complete quest listing and learning paths
 
-#### Level 0101 - Advanced Docker & DevOps
+#### Level 0101 - Backend Systems
 
-Advanced containerization and document automation
+Server-side development and API creation
 
 **Quest Series:**
 
-- [Docker Mastery Example](0101/docker-mastery-example.md) - *Advanced Container Patterns*
-- [LazyTeX CV Building](0101/the-lazytex-of-building-a-curriculum-vitae.md) - *Professional Document Automation*
+- [x] [Docker Mastery Example](0101/docker-mastery-example.md) - *Advanced Container Patterns*
+- [x] [LazyTeX CV Building](0101/the-lazytex-of-building-a-curriculum-vitae.md) - *Professional Document Automation*
+- [ ] Node.js Fundamentals - *JavaScript on the Server*
+- [ ] Python Flask/Django - *Pythonic Web Services*
+- [ ] RESTful API Design - *Building Service Endpoints*
+- [ ] GraphQL Introduction - *Modern Query Languages*
+- [ ] Server Configuration - *Nginx & Apache*
+- [ ] Process Management - *PM2 & Supervisor*
 
 📁 **[Level 0101 Directory Guide](0101/README.md)** - Complete quest listing and learning paths
+
+### Specialized Quest Lines
+
+#### Level 0110 - Database Mastery (🔮 Coming Soon)
+
+*Master the arcane arts of data storage and retrieval*
+
+**Quest Series:**
+
+- [ ] Database Design Fundamentals - *Structuring the Data Vaults*
+- [ ] SQL Sorcery - *Query Language Mastery*
+- [ ] NoSQL Adventures - *Document & Key-Value Stores*
+- [ ] Database Administration - *Vault Keeper Training*
+- [ ] Query Optimization - *Speed of Lightning*
+- [ ] Database Security - *Protecting the Treasure*
+
+📁 **[Level 0110 Directory Guide](0110/README.md)** - *Coming Soon*
+
+#### Level 0111 - Full-Stack Integration (🔮 Coming Soon)
+
+*Bridge frontend and backend into unified applications*
+
+**Quest Series:**
+
+- [ ] API Design Patterns - *The Communication Protocols*
+- [ ] Authentication & Authorization - *Keys to the Kingdom*
+- [ ] State Management - *Maintaining the Balance*
+- [ ] Real-time Applications - *Living Connections*
+- [ ] Full-Stack Project - *Build Your First Castle*
+- [ ] Performance Optimization - *Speed Enhancement Spells*
+
+📁 **[Level 0111 Directory Guide](0111/README.md)** - *Coming Soon*
+
+#### Level 1000 - Security Fundamentals (🔮 Coming Soon)
+
+*Learn the defensive arts to protect digital realms*
+
+**Quest Series:**
+
+- [ ] Security Mindset - *Think Like a Guardian*
+- [ ] OWASP Top 10 - *Know Your Enemies*
+- [ ] Secure Coding Practices - *Fortified Construction*
+- [ ] Penetration Testing Basics - *Ethical Dragon Slaying*
+- [ ] Cryptography Fundamentals - *The Art of Secrets*
+- [ ] Security Auditing - *Fortress Inspection*
+
+📁 **[Level 1000 Directory Guide](1000/README.md)** - *Coming Soon*
+
+#### Level 1001 - Cloud Architecture (🔮 Coming Soon)
+
+*Ascend to the cloud realms and build sky fortresses*
+
+**Quest Series:**
+
+- [ ] Cloud Fundamentals - *Understanding the Heavens*
+- [ ] AWS Quest Line - *Amazon's Digital Empire*
+- [ ] Azure Adventures - *Microsoft's Cloud Kingdom*
+- [ ] GCP Expeditions - *Google's Sky Territory*
+- [ ] Multi-Cloud Strategy - *Realm Diplomacy*
+- [ ] Serverless Architecture - *Magic Without Servers*
+- [ ] Cloud Security - *Protecting Sky Fortresses*
+
+📁 **[Level 1001 Directory Guide](1001/README.md)** - *Coming Soon*
 
 #### Level 1010 - Automation & Testing
 
@@ -199,58 +522,206 @@ Build automated validation and CI/CD pipelines
 
 **Quest Series:**
 
-- [Link to the Future: Automated Hyperlink Checking](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md) - *Automated Validation*
+- [x] [Link to the Future: Automated Hyperlink Checking](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md) - *Automated Validation*
+- [ ] Unit Testing Mastery - *Spell Verification*
+- [ ] Integration Testing - *System Harmony Checks*
+- [ ] E2E Testing Adventures - *Full Journey Testing*
+- [ ] Test-Driven Development - *Write Tests First*
+- [ ] CI/CD Pipeline Construction - *Automation Assembly Line*
 
 📁 **[Level 1010 Directory Guide](1010/README.md)** - Complete quest listing and learning paths
 
-#### Level 1011 - Feature Development
+#### Level 1011 - DevOps & Infrastructure
 
-Structured feature development and project management
+Infrastructure as Code and system operations
 
 **Quest Series:**
 
-- [Feature Re-Quest](1011/feature-re-quest-.md) - *Feature Development Workflows*
+- [x] [Feature Re-Quest](1011/feature-re-quest-.md) - *Feature Development Workflows*
+- [ ] Infrastructure as Code - *Terraform & Pulumi*
+- [ ] Container Orchestration - *Kubernetes Mastery*
+- [ ] Monitoring & Observability - *All-Seeing Eye*
+- [ ] Log Management - *Chronicle Keeping*
+- [ ] Incident Response - *Emergency Protocols*
 
 📁 **[Level 1011 Directory Guide](1011/README.md)** - Complete quest listing and learning paths
 
-#### Level 1100 - Data & Templates
+#### Level 1100 - Data Engineering
 
-Financial data integration and template systems
+Financial data integration and data pipeline mastery
 
 **Quest Series:**
 
-- [EDGAR API Integration](1100/edgar.md) - *Financial Data Access*
-- [SEC EDGAR Deep Dive](1100/sec-edgar.md) - *Advanced Financial Analysis*
-- [Temple of Templates](1100/the-temple-of-templates.md) - *Reusable Template Systems*
+- [x] [EDGAR API Integration](1100/edgar.md) - *Financial Data Access*
+- [x] [SEC EDGAR Deep Dive](1100/sec-edgar.md) - *Advanced Financial Analysis*
+- [x] [Temple of Templates](1100/the-temple-of-templates.md) - *Reusable Template Systems*
+- [ ] ETL Pipeline Design - *Data Transformation Arts*
+- [ ] Data Warehousing - *The Grand Data Library*
+- [ ] Stream Processing - *Real-time Data Rivers*
 
 📁 **[Level 1100 Directory Guide](1100/README.md)** - Complete quest listing and learning paths
 
-#### Level 1110 - Quality Assurance
+#### Level 1101 - Machine Learning & AI (🔮 Coming Soon)
 
-Error handling and robust application development
+*Harness the power of digital intelligence*
 
 **Quest Series:**
 
-- [404 Hunting Quest](1110/404-hunting.md) - *Error Handling Mastery*
+- [ ] ML Fundamentals - *Teaching Machines to Learn*
+- [ ] Python for Data Science - *Pythonic Prophecies*
+- [ ] Neural Networks - *Digital Brain Construction*
+- [ ] Natural Language Processing - *Understanding Digital Speech*
+- [ ] Computer Vision - *Machine Sight*
+- [ ] MLOps - *Deploying Intelligence*
+- [ ] AI Ethics - *Responsible Creation*
+
+📁 **[Level 1101 Directory Guide](1101/README.md)** - *Coming Soon*
+
+#### Level 1110 - Architecture & Design
+
+System architecture and quality assurance mastery
+
+**Quest Series:**
+
+- [x] [404 Hunting Quest](1110/404-hunting.md) - *Error Handling Mastery*
+- [ ] Design Patterns - *Architectural Blueprints*
+- [ ] Microservices Architecture - *Distributed Kingdoms*
+- [ ] Event-Driven Design - *Reactive Systems*
+- [ ] Domain-Driven Design - *Business Logic Mastery*
+- [ ] System Design Interviews - *Architect Certification*
 
 📁 **[Level 1110 Directory Guide](1110/README.md)** - Complete quest listing and learning paths
 
+#### Level 1111 - Leadership & Innovation (🔮 Coming Soon)
+
+*Become a legend and shape the future of technology*
+
+**Quest Series:**
+
+- [ ] Technical Leadership - *Leading the Guild*
+- [ ] Open Source Contribution - *Community Building*
+- [ ] Tech Blogging & Speaking - *Spreading Knowledge*
+- [ ] Mentorship - *Training the Next Generation*
+- [ ] Innovation & R&D - *Pushing Boundaries*
+- [ ] Career Advancement - *The Hero's Journey Complete*
+- [ ] Building Your Legacy - *Creating Lasting Impact*
+
+📁 **[Level 1111 Directory Guide](1111/README.md)** - *Coming Soon*
+
 ### Tools Collection
 
-Development tools, version control, and professional workflows
+Cross-level tools, version control mastery, and professional development workflows
 
-**Featured Quests:**
+**Core Tool Quests:**
 
-- [Django & Git Mastery](tools/django-and-git.md) - *Web Framework Sorcery*
-- [Action Triggers](tools/action-triggers.md) - *Automation Spell Casting*
-- [Branches & Pull Requests](tools/branches-and-pull-requests.md) - *Version Control Mastery*
-- [Change Log Chronicles](tools/change-logs.md) - *Document Your Journey*
-- [Clean Commit Commitments](tools/commitments-to-clean-commits.md) - *Perfect Your Git Ritual*
-- [AI Automation Revolution](tools/revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
-- [Planting Seeds](tools/planting-seeds.md) - *Software Evolution Principles*
-- [Zer0 to Her0 Epic](tools/epic-quest-zer0-to-her0-cmstyle.md) - *Complete Journey from Beginner to Hero*
+- [x] [Django & Git Mastery](tools/django-and-git.md) - *Web Framework Sorcery*
+- [x] [Action Triggers](tools/action-triggers.md) - *Automation Spell Casting*
+- [x] [Branches & Pull Requests](tools/branches-and-pull-requests.md) - *Version Control Mastery*
+- [x] [Change Log Chronicles](tools/change-logs.md) - *Document Your Journey*
+- [x] [Clean Commit Commitments](tools/commitments-to-clean-commits.md) - *Perfect Your Git Ritual*
+- [x] [AI Automation Revolution](tools/revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars*
+- [x] [Planting Seeds](tools/planting-seeds.md) - *Software Evolution Principles*
+- [x] [Zer0 to Her0 Epic](tools/epic-quest-zer0-to-her0-cmstyle.md) - *Complete Journey from Beginner to Hero*
+
+**Planned Tool Quests:**
+
+- [ ] Git Advanced Techniques - *Time Travel & Branch Magic*
+- [ ] GitHub Actions Mastery - *Workflow Automation*
+- [ ] Package Management - *npm, pip, cargo, gems*
+- [ ] Code Linting & Formatting - *Quality Standards*
+- [ ] IDE Extensions & Plugins - *Power-Up Your Editor*
+- [ ] Documentation Tools - *MkDocs, Docusaurus, Sphinx*
+- [ ] API Testing Tools - *Postman, Insomnia, curl*
+- [ ] Database Tools - *DBeaver, pgAdmin, MongoDB Compass*
 
 📁 **[Tools Collection Guide](tools/README.md)** - Complete tools quest listing
+
+---
+
+## Skill Tree System
+
+*Every quest contributes to your skill tree. Here's an overview of all skills you can master:*
+
+### Core Skills (All Classes)
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 🖥️ Terminal Navigation | Command line basics | Level 0000 |
+| 📝 Text Editing | IDE and editor mastery | Level 0000 |
+| 🔄 Version Control | Git fundamentals | Level 0000 |
+| 🌐 Web Basics | HTML/CSS/JS foundations | Level 0001 |
+| 🐚 Shell Scripting | Bash/PowerShell automation | Level 0010 |
+| 🤖 AI Assistance | AI-powered development | Level 0011 |
+
+### Frontend Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 🎨 CSS Mastery | Advanced styling | Level 0100 |
+| ⚛️ React/Vue | Component frameworks | Level 0100 |
+| 📱 Responsive Design | Mobile-first development | Level 0100 |
+| 🎭 State Management | Redux, Vuex, Zustand | Level 0111 |
+| ✨ Animations | CSS & JS animations | Level 0100 |
+
+### Backend Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 🔧 Server Setup | Node.js/Python servers | Level 0101 |
+| 🔌 API Design | REST & GraphQL | Level 0101 |
+| 🔐 Authentication | JWT, OAuth, sessions | Level 0111 |
+| 📦 Containerization | Docker fundamentals | Level 0100 |
+| ⚙️ Microservices | Distributed systems | Level 1110 |
+
+### Database Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 📊 SQL Basics | Queries and joins | Level 0110 |
+| 🗄️ NoSQL | MongoDB, Redis | Level 0110 |
+| 📐 Data Modeling | Schema design | Level 0110 |
+| ⚡ Query Optimization | Performance tuning | Level 1100 |
+| 🔄 Replication | High availability | Level 1100 |
+
+### DevOps Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 🔄 CI/CD | Pipeline creation | Level 1010 |
+| ☸️ Kubernetes | Container orchestration | Level 1011 |
+| 📊 Monitoring | Observability setup | Level 1011 |
+| 🏗️ IaC | Terraform, Pulumi | Level 1011 |
+| ☁️ Cloud Platforms | AWS/Azure/GCP | Level 1001 |
+
+### Security Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 🔒 Secure Coding | Best practices | Level 1000 |
+| 🔍 Pen Testing | Vulnerability assessment | Level 1000 |
+| 🔐 Cryptography | Encryption basics | Level 1000 |
+| 🛡️ Security Auditing | Compliance checks | Level 1000 |
+| 🚨 Incident Response | Breach handling | Level 1000 |
+
+### Data & ML Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 📈 Data Analysis | Pandas, NumPy | Level 1100 |
+| 🔄 ETL Pipelines | Data transformation | Level 1100 |
+| 🧠 Machine Learning | sklearn, TensorFlow | Level 1101 |
+| 💬 NLP | Text processing | Level 1101 |
+| 👁️ Computer Vision | Image analysis | Level 1101 |
+
+### Leadership Skills
+
+| Skill | Description | Unlocked At |
+|-------|-------------|-------------|
+| 👥 Mentoring | Teaching others | Level 1111 |
+| 📢 Tech Speaking | Presentations | Level 1111 |
+| 📝 Tech Writing | Blogs & docs | Level 1111 |
+| 🤝 Open Source | Community contribution | Level 1111 |
+| 🎯 Tech Strategy | Planning & vision | Level 1111 |
 
 ## Codex & Reference Materials
 
@@ -308,28 +779,36 @@ _quests/
 
 ### Binary Level System
 
-Each level directory uses binary notation for technical authenticity:
+Each level directory uses binary notation for technical authenticity. The 16-level system (0000-1111) creates a comprehensive IT mastery progression:
 
-| Binary | Decimal | Level Name | Status |
-|--------|---------|------------|--------|
-| 0000   | 0       | Foundation & Init World | ✅ Active |
-| 0001   | 1       | Journeyman Challenges | ✅ Active |
-| 0010   | 2       | Terminal Enhancement | ✅ Active |
-| 0011   | 3       | AI Integration | ✅ Active |
-| 0100   | 4       | Frontend & Docker | ✅ Active |
-| 0101   | 5       | Advanced Docker | ✅ Active |
-| 0110   | 6       | *Reserved* | 🔮 Future |
-| 0111   | 7       | *Reserved* | 🔮 Future |
-| 1000   | 8       | *Reserved* | 🔮 Future |
-| 1001   | 9       | *Reserved* | 🔮 Future |
-| 1010   | 10      | Automation & Testing | ✅ Active |
-| 1011   | 11      | Feature Development | ✅ Active |
-| 1100   | 12      | Data & Templates | ✅ Active |
-| 1101   | 13      | *Reserved* | 🔮 Future |
-| 1110   | 14      | Quality Assurance | ✅ Active |
-| 1111   | 15      | *Reserved* | 🔮 Future |
+| Binary | Decimal | Tier | Level Name | Theme | Status |
+|--------|---------|------|------------|-------|--------|
+| 0000   | 0       | 🌱 Apprentice | Foundation & Init World | Digital Awakening | ✅ Active |
+| 0001   | 1       | 🌱 Apprentice | Web Fundamentals | Building Blocks | ✅ Active |
+| 0010   | 2       | 🌱 Apprentice | Terminal Mastery | Command Line Arts | ✅ Active |
+| 0011   | 3       | 🌱 Apprentice | AI-Assisted Development | Digital Familiars | ✅ Active |
+| 0100   | 4       | ⚔️ Adventurer | Frontend & Containers | Interface Magic | ✅ Active |
+| 0101   | 5       | ⚔️ Adventurer | Backend Systems | Server Sorcery | ✅ Active |
+| 0110   | 6       | ⚔️ Adventurer | Database Mastery | Data Vaults | 🔮 Planned |
+| 0111   | 7       | ⚔️ Adventurer | Full-Stack Integration | Bridge Building | 🔮 Planned |
+| 1000   | 8       | 🔥 Warrior | Security Fundamentals | Digital Defense | 🔮 Planned |
+| 1001   | 9       | 🔥 Warrior | Cloud Architecture | Sky Fortresses | 🔮 Planned |
+| 1010   | 10      | 🔥 Warrior | Automation & CI/CD | Spell Automation | ✅ Active |
+| 1011   | 11      | 🔥 Warrior | DevOps & Infrastructure | System Forging | ✅ Active |
+| 1100   | 12      | ⚡ Master | Data Engineering | Information Alchemy | ✅ Active |
+| 1101   | 13      | ⚡ Master | Machine Learning & AI | Digital Intelligence | 🔮 Planned |
+| 1110   | 14      | ⚡ Master | Architecture & Design | Master Builder | ✅ Active |
+| 1111   | 15      | 👑 Legend | Leadership & Innovation | Realm Shaper | 🔮 Planned |
 
-> **Note:** Levels 6-9, 13, and 15 are reserved for future quest lines. The non-sequential numbering reflects organic growth of the quest collection.
+#### Tier Progression System
+
+| Tier | Levels | Focus | Experience Range |
+|------|--------|-------|------------------|
+| 🌱 **Apprentice** | 0000-0011 | Foundation skills, basic tools, first programs | 0-1000 XP |
+| ⚔️ **Adventurer** | 0100-0111 | Specialization begins, project building, integration | 1000-3000 XP |
+| 🔥 **Warrior** | 1000-1011 | Advanced skills, production systems, team collaboration | 3000-6000 XP |
+| ⚡ **Master** | 1100-1110 | Expert knowledge, architecture, mentoring | 6000-10000 XP |
+| 👑 **Legend** | 1111 | Industry leadership, innovation, legacy creation | 10000+ XP |
 
 ### Quest File Organization Rules
 

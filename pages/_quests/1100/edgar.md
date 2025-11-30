@@ -58,6 +58,8 @@ validation_criteria:
     - Respect rate limits (no 429s in final run) and implement basic backoff
     - Write a short readme summarizing findings
 draft: false
+level: "1100"
+quest_type: main_quest
 ---
 
 🌟 Welcome, Brave Data Sorcerer! 🌟

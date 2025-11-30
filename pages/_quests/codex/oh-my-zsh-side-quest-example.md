@@ -115,6 +115,7 @@ rewards:
     unlocks_features:
         - "Access to advanced shell scripting quests"
         - "Custom plugin development capabilities"
+level: "codex"
 ---
 
 *Welcome, terminal navigator, to the Oh-My-Zsh Terminal Enchantment side quest! Having mastered the fundamental arts of command-line navigation, you're now ready to transform your terminal from a simple tool into a powerful, visually enhanced development weapon.*

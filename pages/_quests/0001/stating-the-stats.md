@@ -16,6 +16,10 @@ categories:
   - Quests
   - Development
   - Data-Analytics
+level: "0001"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 120-150 minutes
 sub_title: "Level 0001 (1) Quest: Jekyll Data Analytics and Visualization Mastery"
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
 snippet: Transform raw site data into compelling visual insights

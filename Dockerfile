@@ -18,6 +18,7 @@ WORKDIR /app
 # Copy dependency files first for better caching
 COPY Gemfile Gemfile.lock* ./
 COPY test/quest-validator/requirements.txt ./test/quest-validator/
+COPY scripts/requirements.txt ./scripts/
 
 # Install Ruby dependencies
 RUN bundle install
@@ -27,6 +28,7 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --upgrade pip
 RUN pip install -r test/quest-validator/requirements.txt
+RUN pip install -r scripts/requirements.txt
 
 # Add the rest of the application
 COPY . .

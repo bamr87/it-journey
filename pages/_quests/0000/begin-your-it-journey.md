@@ -1,13 +1,24 @@
 ---
 title: Begin your IT Journey
-description: null
+description: Take your first steps into the world of information technology
 preview: images/previews/begin-your-it-journey.png
-author: null
-excerpt: null
+author: IT-Journey Team
+excerpt: Start your adventure with the essential skills and mindset for IT success
 date: 2023-11-23T17:42:43.105Z
-lastmod: 2023-11-25T21:09:59.174Z
+lastmod: 2025-11-29T21:40:00.000Z
 draft: true
-tags: []
+permalink: /quests/lvl_000/begin-your-it-journey/
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 30-45 minutes
+quest_type: main_quest
+tags:
+  - getting-started
+  - beginner
+  - lvl-0000
+categories:
+  - Quests
+  - Init-World
 categories: []
 meta: null
 snippet: null

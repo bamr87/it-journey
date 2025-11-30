@@ -59,6 +59,8 @@ validation_criteria:
     - Configure VSCode to use Nerd Font
     - Verify icons display correctly
     - Test with Oh-My-Zsh themes
+level: "0010"
+quest_type: side_quest
 ---
 
 ## 🌟 The Legend of Font Enchantment

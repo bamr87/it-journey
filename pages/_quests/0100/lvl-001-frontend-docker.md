@@ -17,6 +17,10 @@ permalink: null
 attachments: ""
 type: default
 draft: draft
+level: "0100"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 ---
 
 You've successfully set up your Docker environment, and now you're ready to delve deeper into the mystical realms of Level 001. This level involves creating your Jekyll site with the power of Docker, setting the stage for our enchanted journey ahead.

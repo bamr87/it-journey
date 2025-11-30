@@ -17,6 +17,10 @@ slug: frontend-forests
 attachments: ""
 type: default
 draft: draft
+level: "0100"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 ---
 
 Embarking on the quest to build a Jekyll site using Bootstrap for CSS and JavaScript in the Frontend Forests requires a clear map and a set of steps to guide you through the enchanted woods. Below is an outline designed to navigate you through this journey, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.

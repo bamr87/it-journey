@@ -6,20 +6,21 @@ description: The perfect starting quest for absolute beginners. Learn to create 
 preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
 snippet: Every expert was once a beginner - every hero was once a n00b
 categories:
-    - Quests
-    - Init-World
-    - Beginner
+  - Quests
+  - Init-World
+  - Beginner
 tags:
-    - lvl-0000
-    - github
-    - git
-    - beginner
-    - init-world
-    - community-entry
+  - lvl-0000
+  - github
+  - git
+  - beginner
+  - init-world
+  - community-entry
 draft: false
 date: 2022-05-24T00:00:00.000Z
-lastmod: 2025-11-29T00:51:30.507Z
+lastmod: 2025-11-30T05:46:59.323Z
 layout: journals
+level: "0000"
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
 quest_type: main_quest
@@ -27,79 +28,79 @@ quest_line: Foundation Path
 quest_series: Character Creation Journey
 quest_arc: Digital Awakening Arc
 quest_dependencies:
-    required_quests: []
-    recommended_quests: []
-    unlocks_quests:
-        - /quests/character-building/
-        - /quests/operating-system-selection/
-        - /quests/terminal-navigation-mastery/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests:
+    - /quests/character-building/
+    - /quests/operating-system-selection/
+    - /quests/terminal-navigation-mastery/
 quest_relationships:
-    child_quests:
-        - /quests/github-profile-optimization/
-        - /quests/repository-exploration-guide/
-    sequel_quests:
-        - /quests/character-building/
-        - /quests/development-environment-setup/
-    parallel_quests:
-        - /quests/computer-literacy-fundamentals/
+  child_quests:
+    - /quests/github-profile-optimization/
+    - /quests/repository-exploration-guide/
+  sequel_quests:
+    - /quests/character-building/
+    - /quests/development-environment-setup/
+  parallel_quests:
+    - /quests/computer-literacy-fundamentals/
 learning_paths:
-    primary_paths:
-        - Software Development
-        - System Administration
-        - Data Science
-        - Digital Literacy
-    character_classes:
-        - 💻 Software Developer
-        - 🏗️ System Engineer
-        - 🛡️ Security Specialist
-        - 📊 Data Scientist
-        - 🎨 Digital Artist
-        - 🎮 Game Developer
-    skill_trees:
-        - Version Control Fundamentals
-        - Community Participation
-        - Open Source Contribution
+  primary_paths:
+    - Software Development
+    - System Administration
+    - Data Science
+    - Digital Literacy
+  character_classes:
+    - 💻 Software Developer
+    - 🏗️ System Engineer
+    - 🛡️ Security Specialist
+    - 📊 Data Scientist
+    - 🎨 Digital Artist
+    - 🎮 Game Developer
+  skill_trees:
+    - Version Control Fundamentals
+    - Community Participation
+    - Open Source Contribution
 quest_mapping:
-    coordinates: "[0, 0]"
-    region: Entry
-    realm: Community
-    biome: GitHub
+  coordinates: "[0, 0]"
+  region: Entry
+  realm: Community
+  biome: GitHub
 prerequisites:
-    knowledge_requirements:
-        - Basic computer operation (clicking, typing, navigating websites)
-        - Understanding of what a website is
-        - Familiarity with creating online accounts
-    system_requirements:
-        - Access to a computer with internet connection
-        - Valid email address
-        - Web browser (Chrome, Firefox, Safari, or Edge)
-    skill_level_indicators:
-        - Curious about technology and eager to learn
-        - Comfortable navigating websites and creating accounts
-        - Willingness to learn and explore new concepts
+  knowledge_requirements:
+    - Basic computer operation (clicking, typing, navigating websites)
+    - Understanding of what a website is
+    - Familiarity with creating online accounts
+  system_requirements:
+    - Access to a computer with internet connection
+    - Valid email address
+    - Web browser (Chrome, Firefox, Safari, or Edge)
+  skill_level_indicators:
+    - Curious about technology and eager to learn
+    - Comfortable navigating websites and creating accounts
+    - Willingness to learn and explore new concepts
 validation_criteria:
-    completion_requirements:
-        - Successfully create a GitHub account
-        - Fork the IT-Journey repository
-        - Navigate the GitHub interface confidently
-    skill_demonstrations:
-        - Demonstrate understanding of GitHub's basic functionality
-        - Show ability to interact with repositories and community features
-    knowledge_checks:
-        - Explain what GitHub is and why it's important
-        - Describe the concept of forking and open source collaboration
+  completion_requirements:
+    - Successfully create a GitHub account
+    - Fork the IT-Journey repository
+    - Navigate the GitHub interface confidently
+  skill_demonstrations:
+    - Demonstrate understanding of GitHub's basic functionality
+    - Show ability to interact with repositories and community features
+  knowledge_checks:
+    - Explain what GitHub is and why it's important
+    - Describe the concept of forking and open source collaboration
 rewards:
-    badges:
-        - 🏆 GitHub Account Creation Badge - Entry into developer community
-        - ⚡ Digital Citizenship - Understanding of online collaboration
-    skills_unlocked:
-        - 🛠️ Open Source Contribution Foundation
-        - 🎯 Community Membership Access
-    progression_points: 100
-    unlocks_features:
-        - Access to all Foundation Path quests
-        - Ability to participate in community discussions
-        - Foundation for version control learning
+  badges:
+    - 🏆 GitHub Account Creation Badge - Entry into developer community
+    - ⚡ Digital Citizenship - Understanding of online collaboration
+  skills_unlocked:
+    - 🛠️ Open Source Contribution Foundation
+    - 🎯 Community Membership Access
+  progression_points: 100
+  unlocks_features:
+    - Access to all Foundation Path quests
+    - Ability to participate in community discussions
+    - Foundation for version control learning
 sub-title: "Level 0000 (0) Main Quest: First Steps in Digital Collaboration"
 permalink: /quests/init_world/hello-noob/
 ---

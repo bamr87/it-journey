@@ -1,63 +1,65 @@
 ---
 title: "Character Building: Forge Your IT Identity and Development Environment"
-description: "Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero"
+description: Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero
 preview: images/previews/character-building-forge-your-it-identity-and-deve.png
 author: IT-Journey Team
-excerpt: "Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment"
+excerpt: Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment
 date: 2023-11-23T18:10:54.834Z
-lastmod: 2023-12-03T08:47:29.067Z
+lastmod: 2025-11-30T05:46:59.330Z
 draft: false
 tags:
-    - character-building
-    - career-planning
-    - development-environment
-    - specialization
-    - it-career
-    - init-world
-    - lvl-001
+  - character-building
+  - career-planning
+  - development-environment
+  - specialization
+  - it-career
+  - init-world
+  - lvl-001
+level: "0000"
+quest_type: main_quest
 categories:
-    - Quests
-    - Init-World
-    - Career-Development
+  - Quests
+  - Init-World
+  - Career-Development
 meta:
-    quest_type: character_development
-    skill_focus: career_planning
-snippet: "Every hero needs an origin story - craft yours with intention and purpose"
+  quest_type: character_development
+  skill_focus: career_planning
+snippet: Every hero needs an origin story - craft yours with intention and purpose
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 prerequisites:
-    - Completed hello-noob quest or basic GitHub familiarity
-    - Basic understanding of different operating systems
-    - Clear motivation to learn IT skills
+  - Completed hello-noob quest or basic GitHub familiarity
+  - Basic understanding of different operating systems
+  - Clear motivation to learn IT skills
 rewards:
-    - 🏆 Character Identity Badge
-    - ⚡ Clear Career Direction
-    - 🛠️ Customized Learning Path
-    - 🎯 Professional Development Foundation
-quest_series: "Init World - Character Creation"
+  - 🏆 Character Identity Badge
+  - ⚡ Clear Career Direction
+  - 🛠️ Customized Learning Path
+  - 🎯 Professional Development Foundation
+quest_series: Init World - Character Creation
 related_quests:
-    - "hello-noob.md - First Steps into IT"
-    - "2023-11-24-character-selection.md - Choose Your IT Specialization"
-    - "2023-11-24-os-selection.md - Operating System Selection Guide"
+  - hello-noob.md - First Steps into IT
+  - 2023-11-24-character-selection.md - Choose Your IT Specialization
+  - 2023-11-24-os-selection.md - Operating System Selection Guide
 validation_criteria:
-    - "Complete personal IT character profile"
-    - "Choose primary and secondary specialization areas"
-    - "Configure basic development environment"
-    - "Set clear learning goals and milestones"
+  - Complete personal IT character profile
+  - Choose primary and secondary specialization areas
+  - Configure basic development environment
+  - Set clear learning goals and milestones
 sub-title: "Level 001 Quest: Defining Your Digital Identity"
 layout: journals
 slug: character-building
 permalink: /quests/character-building/
 keywords:
-    primary:
-        - character building
-        - career planning
-        - it specialization
-    secondary:
-        - development environment
-        - professional development
-        - skill assessment
-        - learning path
+  primary:
+    - character building
+    - career planning
+    - it specialization
+  secondary:
+    - development environment
+    - professional development
+    - skill assessment
+    - learning path
 ---
 
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
