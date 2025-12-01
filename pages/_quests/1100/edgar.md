@@ -31,6 +31,7 @@ keywords:
         - Rate limiting
         - Data parsing
 lastmod: 2025-08-20T04:37:39.870Z
+fmContentType: quest
 permalink: /quests/level-1100-conquer-king-edgar/
 attachments: ""
 comments: true

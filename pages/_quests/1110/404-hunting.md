@@ -28,6 +28,7 @@ keywords:
     - htmlproofer
     - lychee
 lastmod: 2025-08-31T23:16:16.119Z
+fmContentType: quest
 permalink: /quests/level-1110-404-hunting-quest/
 attachments: ""
 comments: true

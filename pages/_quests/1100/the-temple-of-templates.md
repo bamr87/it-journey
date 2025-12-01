@@ -31,6 +31,7 @@ keywords:
         - design-patterns
         - composition-over-inheritance
 lastmod: 2025-08-25T00:43:51.189Z
+fmContentType: quest
 permalink: /quests/level-1100-temple-of-templates/
 attachments: ""
 comments: true

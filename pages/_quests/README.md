@@ -12,7 +12,7 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-11-29T23:57:25.670Z
+lastmod: 2025-11-30T21:00:00.000Z
 mermaid: true
 draft: false
 toc: true
@@ -561,21 +561,22 @@ Financial data integration and data pipeline mastery
 
 📁 **[Level 1100 Directory Guide](1100/README.md)** - Complete quest listing and learning paths
 
-#### Level 1101 - Machine Learning & AI (🔮 Coming Soon)
+#### Level 1101 - Machine Learning & AI
 
 *Harness the power of digital intelligence*
 
 **Quest Series:**
 
-- [ ] ML Fundamentals - *Teaching Machines to Learn*
-- [ ] Python for Data Science - *Pythonic Prophecies*
-- [ ] Neural Networks - *Digital Brain Construction*
-- [ ] Natural Language Processing - *Understanding Digital Speech*
-- [ ] Computer Vision - *Machine Sight*
-- [ ] MLOps - *Deploying Intelligence*
-- [ ] AI Ethics - *Responsible Creation*
+- [x] [ML Fundamentals](1101/ml-fundamentals.md) - *Teaching Machines to Learn*
+- [x] [Python for Data Science](1101/python-data-science.md) - *Pythonic Prophecies*
+- [x] [Neural Networks](1101/neural-networks.md) - *Digital Brain Construction*
+- [x] [Natural Language Processing](1101/natural-language-processing.md) - *Understanding Digital Speech*
+- [x] [Computer Vision](1101/computer-vision.md) - *Machine Sight*
+- [x] [MLOps](1101/mlops.md) - *Deploying Intelligence*
+- [x] [AI Ethics](1101/ai-ethics.md) - *Responsible Creation*
+- [x] [Deep Learning Frameworks](1101/deep-learning-frameworks.md) - *TensorFlow & PyTorch Mastery*
 
-📁 **[Level 1101 Directory Guide](1101/README.md)** - *Coming Soon*
+📁 **[Level 1101 Directory Guide](1101/README.md)** - Complete quest listing and learning paths
 
 #### Level 1110 - Architecture & Design
 
@@ -584,29 +585,32 @@ System architecture and quality assurance mastery
 **Quest Series:**
 
 - [x] [404 Hunting Quest](1110/404-hunting.md) - *Error Handling Mastery*
-- [ ] Design Patterns - *Architectural Blueprints*
-- [ ] Microservices Architecture - *Distributed Kingdoms*
-- [ ] Event-Driven Design - *Reactive Systems*
-- [ ] Domain-Driven Design - *Business Logic Mastery*
-- [ ] System Design Interviews - *Architect Certification*
+- [x] [Design Patterns](1110/design-patterns.md) - *Architectural Blueprints*
+- [x] [Microservices Architecture](1110/microservices-architecture.md) - *Distributed Kingdoms*
+- [x] [Event-Driven Design](1110/event-driven-design.md) - *Reactive Systems*
+- [x] [Domain-Driven Design](1110/domain-driven-design.md) - *Business Logic Mastery*
+- [x] [System Design Interviews](1110/system-design-interviews.md) - *Architect Certification*
+- [x] [API Gateway Patterns](1110/api-gateway-patterns.md) - *Traffic Management*
+- [x] [Scaling Strategies](1110/scaling-strategies.md) - *Growth Engineering*
 
 📁 **[Level 1110 Directory Guide](1110/README.md)** - Complete quest listing and learning paths
 
-#### Level 1111 - Leadership & Innovation (🔮 Coming Soon)
+#### Level 1111 - Leadership & Innovation
 
 *Become a legend and shape the future of technology*
 
 **Quest Series:**
 
-- [ ] Technical Leadership - *Leading the Guild*
-- [ ] Open Source Contribution - *Community Building*
-- [ ] Tech Blogging & Speaking - *Spreading Knowledge*
-- [ ] Mentorship - *Training the Next Generation*
-- [ ] Innovation & R&D - *Pushing Boundaries*
-- [ ] Career Advancement - *The Hero's Journey Complete*
-- [ ] Building Your Legacy - *Creating Lasting Impact*
+- [x] [Technical Leadership](1111/technical-leadership.md) - *Leading the Guild*
+- [x] [Open Source Contribution](1111/open-source-contribution.md) - *Community Building*
+- [x] [Tech Speaking & Writing](1111/tech-speaking-writing.md) - *Spreading Knowledge*
+- [x] [Mentorship Programs](1111/mentorship-programs.md) - *Training the Next Generation*
+- [x] [Innovation & R&D](1111/innovation-rnd.md) - *Pushing Boundaries*
+- [x] [Career Advancement](1111/career-advancement.md) - *The Hero's Journey Complete*
+- [x] [Building Technical Communities](1111/building-technical-communities.md) - *Creating Lasting Impact*
+- [x] [Architecture Reviews](1111/architecture-reviews.md) - *Quality Guardianship*
 
-📁 **[Level 1111 Directory Guide](1111/README.md)** - *Coming Soon*
+📁 **[Level 1111 Directory Guide](1111/README.md)** - Complete quest listing and learning paths
 
 ### Tools Collection
 

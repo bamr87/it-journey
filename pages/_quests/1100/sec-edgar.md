@@ -32,6 +32,7 @@ keywords:
     - node-fetch
     - rate-limiting
 lastmod: 2025-08-20T04:18:02.180Z
+fmContentType: quest
 permalink: /quests/level-1100-sec-edgar-siege/
 attachments: ""
 comments: true

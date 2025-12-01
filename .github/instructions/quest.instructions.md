@@ -135,7 +135,7 @@ Quests transform traditional technical documentation into immersive learning adv
 
 ## Quest Structure and Content Standards
 
-a### Enhanced Frontmatter Template with Quest Hierarchy
+### Enhanced Frontmatter Template with Quest Hierarchy
 
 Every quest MUST include this comprehensive frontmatter structure with enhanced organizational metadata:
 
@@ -147,36 +147,26 @@ title: "Quest Title: Clear and Action-Oriented Description"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters)"
 date: YYYY-MM-DDTHH:MM:SS.000Z
 preview: "/images/quest-preview-image.png"
+level: 0000  # Binary level indicator (0000-1111)
+difficulty: "🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic"
+estimated_time: "XX-XX hours"
+primary_technology: "technology-name"
+quest_type: "main_quest | side_quest | bonus_quest | epic_quest"
+skill_focus: "frontend | backend | devops | security | data-engineering"
+learning_style: "hands-on | conceptual | project-based"
+quest_series: "[series-name]"
+fmContentType: quest  # REQUIRED - identifies this as a quest document
 tags:
-    - binary-level-indicator  # lvl-0000, lvl-0001, lvl-1010, etc.
-    - primary-technology      # python, javascript, docker, etc.
-    - quest-type             # tool-mastery, language-learning, project-building
-    - skill-focus            # frontend, backend, devops, security
-    - learning-style         # hands-on, conceptual, project-based
+    - lvl-XXXX  # Binary level (lvl-0000, lvl-0001, lvl-1010, etc.)
+    - primary-technology
+    - quest_type
+    - skill-focus
+    - learning-style
+    - gamified-learning
 categories:
     - Quests
-    - Technology-Category    # Development, Infrastructure, Security
-    - Skill-Category        # Foundation, Intermediate, Advanced, Expert
-sub-title: "Level [BINARY] ([DECIMAL]) Quest: Specific Quest Classification"
-excerpt: "One-sentence summary of the quest's core learning objective and value proposition"
-snippet: "Memorable quest tagline or motto that captures the adventure spirit"
-author: "Quest Master [Name]"
-layout: journals
-keywords:
-    primary:
-        - main-technology-skill
-        - core-learning-objective
-    secondary:
-        - supporting-technologies
-        - related-concepts
-        - tool-categories
-        - methodology-keywords
-lastmod: YYYY-MM-DDTHH:MM:SS.000Z
-permalink: /quests/level-[BINARY]-descriptive-slug/
-attachments: ""
-comments: true
-difficulty: "🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic"
-estimated_time: "XX-XX minutes"
+    - Technology-Category
+    - Skill-Category
 
 # === ENHANCED QUEST HIERARCHY SYSTEM ===
 quest_type: "main_quest | side_quest | bonus_quest | epic_quest"
@@ -266,6 +256,166 @@ quest_mapping:
     biome: "Terminal | Web | Cloud | Mobile | AI"
 ---
 ```
+
+## 🔒 Quest Frontmatter Validation Rules
+
+The following rules govern quest structure validation. All quests are automatically validated using `test/quest-validator/quest_validator.py`. **Quests must pass validation before committing.**
+
+### Required Fields (Validation Errors if Missing)
+
+These fields are **mandatory** for every quest. Missing any of these will cause validation failure:
+
+| Field | Description | Example | Validation Rule |
+|-------|-------------|---------|-----------------|
+| `title` | Quest title with descriptive subtitle | `"Docker Mastery: Container Orchestration"` | Non-empty string, 10-100 chars |
+| `description` | SEO-optimized description | `"Learn container orchestration..."` | 150-300 characters |
+| `date` | Creation date (ISO 8601) | `2025-12-01T04:21:46.000Z` | Valid ISO 8601 format |
+| `level` | Binary level indicator (0000-1111) | `1100` | 4-digit binary number |
+| `difficulty` | Quest difficulty rating | `⚔️ Epic` | One of: `🟢 Easy`, `🟡 Medium`, `🔴 Hard`, `⚔️ Epic` |
+| `estimated_time` | Time to complete | `6-8 hours` | Format: `X-X hours` or `X-X minutes` |
+| `primary_technology` | Main technology taught | `docker` | Lowercase technology name |
+| `quest_type` | Quest classification | `main_quest` | One of: `main_quest`, `side_quest`, `bonus_quest`, `epic_quest` |
+| `skill_focus` | Primary skill area | `devops` | One of: `frontend`, `backend`, `devops`, `security`, `data-engineering`, `fullstack` |
+| `learning_style` | Teaching approach | `hands-on` | One of: `hands-on`, `conceptual`, `project-based` |
+| `quest_series` | Series name | `Container Mastery` | Non-empty string |
+| `author` | Quest author | `IT-Journey Team` | Non-empty string |
+| `layout` | Jekyll layout | `journals` | Must be `journals` |
+| `keywords` | SEO keywords | `{primary: [...], secondary: [...]}` | Object with primary and secondary arrays |
+| `permalink` | URL path | `/quests/level-1100-docker/` | Format: `/quests/level-XXXX-slug/` |
+| `fmContentType` | Content type identifier | `quest` | **MUST be `quest`** |
+
+### Enhanced Fields (Warnings if Missing)
+
+These fields are recommended for complete quest metadata:
+
+| Field | Description | Purpose |
+|-------|-------------|---------|
+| `quest_line` | Campaign/storyline name | Groups quests into learning paths |
+| `quest_arc` | Story arc or thematic grouping | Narrative progression |
+| `prerequisites` | Prior knowledge needed | Dependency tracking |
+| `quest_dependencies` | Required/recommended quests | Unlock progression |
+| `quest_relationships` | Parent/child/parallel quests | Network mapping |
+| `learning_paths` | Career paths this supports | Career guidance |
+| `rewards` | Badges and skills unlocked | Gamification |
+| `validation_criteria` | Completion requirements | Assessment criteria |
+
+### Content Structure Validation
+
+**Required Sections** (checked by validator):
+
+1. **Quest Objectives section** - Must include `## 🎯 Quest Objectives` with checkboxes
+2. **Code blocks with language specification** - All code blocks must specify language: ` ```python`, ` ```bash`, etc.
+3. **Interactive checkboxes** - Must include `- [ ]` checkbox items for learner progress tracking
+4. **Fantasy theme integration** - Content should include RPG terminology and emojis
+
+**Code Block Rules**:
+```yaml
+# ✅ CORRECT - Always specify language
+```python
+print("Hello, adventurer!")
+```
+
+# ❌ INCORRECT - Missing language specification
+```
+print("Hello, adventurer!")
+```
+```
+
+### Difficulty Level Guidelines
+
+| Difficulty | Target Audience | Time | Complexity |
+|------------|-----------------|------|------------|
+| `🟢 Easy` | Beginners, no prior experience | 1-2 hours | Basic concepts, simple tasks |
+| `🟡 Medium` | Some experience required | 2-4 hours | Intermediate concepts, multi-step tasks |
+| `🔴 Hard` | Solid foundation required | 4-6 hours | Advanced concepts, complex integration |
+| `⚔️ Epic` | Expert practitioners | 6+ hours | Mastery level, production-ready skills |
+
+### Binary Level System
+
+Quest levels follow a 4-bit binary progression (0000-1111, decimal 0-15):
+
+| Level Range | Tier | Description |
+|-------------|------|-------------|
+| `0000-0011` | 🌱 Apprentice | Foundation skills (0-3) |
+| `0100-0111` | ⚔️ Adventurer | Applied skills (4-7) |
+| `1000-1011` | 🔥 Warrior | Professional skills (8-11) |
+| `1100-1110` | ⚡ Master | Advanced expertise (12-14) |
+| `1111` | 👑 Legend | Leadership & innovation (15) |
+
+### Running Quest Validation
+
+**Using Docker (recommended)**:
+```bash
+# Validate all quests
+docker-compose run --rm quest-validator python3 /app/test/quest-validator/quest_validator.py -d /app/pages/_quests/
+
+# Validate specific directory
+docker-compose run --rm quest-validator python3 /app/test/quest-validator/quest_validator.py -d /app/pages/_quests/1100/
+
+# Validate single quest
+docker-compose run --rm quest-validator python3 /app/test/quest-validator/quest_validator.py /app/pages/_quests/1100/apache-spark.md
+```
+
+**Without Docker**:
+```bash
+python3 test/quest-validator/quest_validator.py -d pages/_quests/
+```
+
+### Validation Score Thresholds
+
+| Score | Status | Action Required |
+|-------|--------|-----------------|
+| 90-100% | ✅ Excellent | Ready to commit |
+| 80-89% | ⚠️ Good | Minor improvements recommended |
+| 70-79% | ⚠️ Acceptable | Should address warnings before commit |
+| <70% | ❌ Needs Work | Must fix errors before commit |
+
+### Common Validation Issues and Fixes
+
+**Issue: Missing `fmContentType`**
+```yaml
+# Add this field to frontmatter
+fmContentType: quest
+```
+
+**Issue: Invalid difficulty format**
+```yaml
+# Use exact format with emoji
+difficulty: "⚔️ Epic"  # ✅ Correct
+difficulty: "Epic"     # ❌ Wrong - missing emoji
+difficulty: "epic"     # ❌ Wrong - lowercase
+```
+
+**Issue: Code blocks without language**
+```markdown
+# Change from:
+```
+npm install
+```
+
+# To:
+```bash
+npm install
+```
+```
+
+**Issue: Missing Quest Objectives section**
+```markdown
+# Add this section header with checkboxes:
+## 🎯 Quest Objectives
+
+- [ ] **Learn the fundamentals** - Core concepts
+- [ ] **Build practical skills** - Hands-on practice
+- [ ] **Integrate knowledge** - Apply to real scenarios
+```
+
+### Quest Template Reference
+
+The canonical quest template is located at: `.frontmatter/templates/quests.md`
+
+Always use this template when creating new quests to ensure all required fields are included.
+
+---
 
 ### Quest Content Architecture
 
