@@ -1,46 +1,47 @@
 ---
-title: "Database Fundamentals: Data Storage [Quest Title] Retrieval: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Database Fundamentals: Data Storage and Retrieval"
+description: "Master the fundamentals of databases, including data storage, retrieval, and management using SQL and relational database concepts. Learn how to design, query, and optimize databases for real-world applications."
 date: 2025-11-30T05:07:24.000Z
 preview: images/previews/database-fundamentals-data-storage-quest-title-ret.png
 level: "0110"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "90-120 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
+primary_technology: "sql"  # e.g., docker, bash, python, react
 quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
+skill_focus: "data-engineering"  # e.g., frontend, backend, devops, data
 learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0110 (6) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+quest_series: "Database Mastery"  # e.g., "Docker Mastery", "Terminal Arts"
+sub_title: "Level 0110 (6) Quest: Main Quest - SQL & Relational Databases"
+excerpt: "Learn how databases store and retrieve data, and gain hands-on experience with SQL and relational database design."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0110
-    - [primary-technology]
+    - sql
     - main_quest
-    - [skill-focus]
+    - data-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Data-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - sql
+        - database fundamentals
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - relational databases
+        - data storage
+        - data retrieval
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:07:24.000Z
 permalink: /quests/level-0110-database-fundamentals/
 
 # Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
+quest_line: "Foundation Path"  # e.g., "Init World", "Cloud Journey"
+quest_arc: "Database Fundamentals Arc"  # e.g., "Terminal Mastery Arc"
 
 # Quest Network - Relationships
 quest_dependencies:
