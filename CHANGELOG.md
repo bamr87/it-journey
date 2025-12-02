@@ -9,6 +9,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+#### Quest Collection Layout System
+- **New Layout: `quest-collection.html`** - Dynamic layout for displaying quests grouped by binary level tiers (Apprentice, Adventurer, Warrior, Master)
+- **New Include: `quest-card.html`** - Reusable quest card component with data attributes for filtering
+- **New Include: `quest-filters.html`** - Interactive filtering UI with JavaScript for quest type, difficulty, level, technology, and search
+- **New Include: `quest-stats.html`** - Statistics display component showing quest counts by type and difficulty
+- **New Include: `quest_card.html`** - Alternative quest card with BEM-style CSS classes
+- **New Include: `quest_grid.html`** - Grid layout component for quest collections
+- **New Include: `quest_stats.html`** - Alternative statistics component with time estimation
+
+#### New Quest
+- **Side Quest: `jekyll-quest-tracking.md`** (Level 0101, 🔴 Hard, 4-6 hours)
+  - Master Jekyll's collection system by building a quest tracking interface
+  - Covers: Liquid templating, JavaScript filtering, Python automation
+  - Includes 5 chapters and 4 mastery challenges
+  - Complete with Mermaid diagrams for quest network and implementation flow
+
+#### Automation Scripts
+- **New Script: `update_level_readmes.py`** - Python script to ensure consistent frontmatter across level README files
+  - Adds missing `layout: quest-collection`, `level`, and `categories` fields
+  - Uses regex to detect 4-digit binary level directories
+
+### Changed
+- **Quest Index**: Updated `pages/_quests/README.md` to use `quest-collection` layout
+- **Level READMEs**: All level README files (0000-1111) updated with consistent frontmatter:
+  - Added `layout: quest-collection` for dynamic quest display
+  - Added `level` field matching directory name
+  - Added `categories: quests` for proper collection filtering
+- **Level 0101 README**: Added new Jekyll Quest Tracking side quest entry with updated Mermaid diagram
+
+### Fixed
+- **Integer/String Sorting**: Quest filters now handle mixed Integer/String level values by coercing to strings before sorting
+
+---
+
+## [Previous Unreleased]
+
+### Added
+
 #### Phase 5: Master Tier Quest Generation (Levels 1100-1111)
 - **32 New Quests**: Complete Master Tier quest generation across 4 levels
   - **Level 1100 - Data Engineering** (5 new quests):

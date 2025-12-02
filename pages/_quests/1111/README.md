@@ -1,4 +1,5 @@
 ---
+
 title: "Level 1111: Leadership & Innovation"
 description: Achieve mastery in technical leadership, community building, and driving innovation to shape the future of technology
 level: "1111"
@@ -28,6 +29,8 @@ toc: true
 toc_sticky: true
 sidebar:
   nav: quests
+
+layout: quest-collection
 ---
 
 # 👑 Level 1111: Leadership & Innovation

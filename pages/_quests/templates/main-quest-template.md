@@ -35,7 +35,7 @@ keywords:
     - - related-concepts
     - gamified-learning
     - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+lastmod: 2025-12-01T05:49:32.316Z
 permalink: /quests/level-XXXX-[quest-slug]/
 quest_line: "[Campaign/storyline name]"
 quest_arc: "[Story arc or thematic grouping]"

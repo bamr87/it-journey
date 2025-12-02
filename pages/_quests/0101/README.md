@@ -3,7 +3,10 @@ title: Level 0101 - Advanced Docker & DevOps
 description: Advanced containerization patterns, document automation, and professional portfolio building
 preview: images/previews/level-0101-advanced-docker.png
 permalink: /quests/level-0101/
-lastmod: 2025-11-29T23:41:31.771Z
+lastmod: 2025-12-02T04:46:12.277Z
+layout: quest-collection
+level: 101
+categories: quests
 ---
 
 # Level 0101: Advanced Docker & DevOps
@@ -50,6 +53,21 @@ Master LaTeX for professional document creation. Build a stunning CV that stands
 
 **Prerequisites:** Basic terminal, Docker knowledge recommended
 
+### 🏗️ Static Site Engineering
+
+#### [Jekyll Quest Tracking: Building Dynamic Collection Layouts](jekyll-quest-tracking.md)
+**Quest Type**: Side ⚔️ | **Difficulty**: 🔴 Hard | **Estimated Time**: 4-6 hours
+
+Master Jekyll's collection system by building a quest tracking interface with dynamic filtering, statistics, and level-aware displays using Liquid templating and frontmatter data.
+
+**Skills You'll Master:**
+- Jekyll collections configuration and architecture
+- Liquid templating with includes and parameters
+- Client-side filtering with JavaScript and data attributes
+- Python automation for batch frontmatter management
+
+**Prerequisites:** [Frontend Docker Quest](../0100/frontend-docker.md), Basic Jekyll knowledge
+
 ## Learning Path Recommendations
 
 ### For DevOps Engineers
@@ -71,8 +89,11 @@ Master LaTeX for professional document creation. Build a stunning CV that stands
 graph TD
     A[Level 0100 Complete] --> B[🐳 Docker Mastery]
     A --> C[📄 LazyTeX CV Building]
+    A --> E[🏗️ Jekyll Quest Tracking]
     B --> D[Level 1010 Quests]
     C --> D
+    E --> D
+    E --> F[Level 1011 Feature Development]
 ```
 
 ## Quest Completion Benefits

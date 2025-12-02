@@ -1,6 +1,6 @@
 ---
 title: Quests (~) Index
-layout: collection
+layout: quest-collection
 keywords:
     - init
     - hello world
@@ -12,7 +12,7 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-11-30T21:00:00.000Z
+lastmod: 2025-12-01T06:43:04.446Z
 mermaid: true
 draft: false
 toc: true

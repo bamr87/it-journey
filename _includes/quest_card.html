@@ -1,0 +1,111 @@
+{% comment %}
+  Quest Card Component
+  Renders a single quest as a styled card with frontmatter data
+  
+  Parameters:
+  - quest: The quest page object with frontmatter
+{% endcomment %}
+
+{% assign q = include.quest %}
+
+<div class="quest-card quest-card--{{ q.quest_type | default: 'main_quest' | replace: '_', '-' }} quest-card--{{ q.difficulty | default: '🟢 Easy' | split: ' ' | first | replace: '🟢', 'easy' | replace: '🟡', 'medium' | replace: '🔴', 'hard' | replace: '⚔️', 'epic' }}">
+  
+  {% comment %} Quest Type Badge {% endcomment %}
+  <div class="quest-card__badge">
+    {% case q.quest_type %}
+      {% when 'main_quest' %}
+        🏰 Main Quest
+      {% when 'side_quest' %}
+        ⚔️ Side Quest
+      {% when 'bonus_quest' %}
+        🎁 Bonus Quest
+      {% when 'epic_quest' %}
+        👑 Epic Quest
+      {% else %}
+        🏰 Quest
+    {% endcase %}
+  </div>
+
+  {% comment %} Quest Header {% endcomment %}
+  <div class="quest-card__header">
+    <h3 class="quest-card__title">
+      <a href="{{ q.url | relative_url }}">{{ q.title }}</a>
+    </h3>
+    
+    {% if q.sub_title or q.sub-title %}
+      <p class="quest-card__subtitle">{{ q.sub_title | default: q.sub-title }}</p>
+    {% endif %}
+  </div>
+
+  {% comment %} Quest Metadata {% endcomment %}
+  <div class="quest-card__meta">
+    {% if q.level %}
+      <span class="quest-card__level" title="Binary Level">
+        📊 Level {{ q.level }}
+      </span>
+    {% endif %}
+    
+    {% if q.difficulty %}
+      <span class="quest-card__difficulty">
+        {{ q.difficulty }}
+      </span>
+    {% endif %}
+    
+    {% if q.estimated_time %}
+      <span class="quest-card__time" title="Estimated Time">
+        ⏱️ {{ q.estimated_time }}
+      </span>
+    {% endif %}
+  </div>
+
+  {% comment %} Quest Description {% endcomment %}
+  {% if q.description %}
+    <p class="quest-card__description">
+      {{ q.description | truncate: 150 }}
+    </p>
+  {% endif %}
+
+  {% comment %} Primary Technology {% endcomment %}
+  {% if q.primary_technology %}
+    <div class="quest-card__tech">
+      <span class="quest-card__tech-badge">
+        🛠️ {{ q.primary_technology | capitalize }}
+      </span>
+    </div>
+  {% endif %}
+
+  {% comment %} Tags Preview {% endcomment %}
+  {% if q.tags and q.tags.size > 0 %}
+    <div class="quest-card__tags">
+      {% for tag in q.tags limit:3 %}
+        {% unless tag contains 'lvl-' or tag == 'gamified-learning' %}
+          <span class="quest-card__tag">{{ tag }}</span>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% comment %} Skill Focus {% endcomment %}
+  {% if q.skill_focus %}
+    <div class="quest-card__skill">
+      <span class="quest-card__skill-badge">
+        {% case q.skill_focus %}
+          {% when 'frontend' %}🎨 Frontend
+          {% when 'backend' %}⚙️ Backend
+          {% when 'devops' %}🔧 DevOps
+          {% when 'security' %}🛡️ Security
+          {% when 'data-engineering' %}📊 Data Engineering
+          {% when 'fullstack' %}🌐 Full-Stack
+          {% else %}📚 {{ q.skill_focus | capitalize }}
+        {% endcase %}
+      </span>
+    </div>
+  {% endif %}
+
+  {% comment %} Action Button {% endcomment %}
+  <div class="quest-card__action">
+    <a href="{{ q.url | relative_url }}" class="quest-card__button">
+      Begin Quest →
+    </a>
+  </div>
+</div>

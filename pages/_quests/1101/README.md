@@ -1,4 +1,5 @@
 ---
+
 title: "Level 1101: Machine Learning & AI"
 description: Master the fundamentals of machine learning, neural networks, and artificial intelligence to build intelligent systems
 level: "1101"
@@ -28,6 +29,8 @@ toc: true
 toc_sticky: true
 sidebar:
   nav: quests
+
+layout: quest-collection
 ---
 
 # ⚡ Level 1101: Machine Learning & AI
