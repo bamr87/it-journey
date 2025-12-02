@@ -2,7 +2,7 @@
 title: "Stream Processing: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:21:46.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/stream-processing-descriptive-subtitle.png
 level: 1100
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours

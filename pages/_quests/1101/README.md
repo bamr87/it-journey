@@ -2,6 +2,7 @@
 
 title: "Level 1101: Machine Learning & AI"
 description: Master the fundamentals of machine learning, neural networks, and artificial intelligence to build intelligent systems
+preview: images/previews/level-1101-machine-learning-ai.png
 level: "1101"
 level_decimal: 13
 tier: Master

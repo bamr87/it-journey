@@ -2,7 +2,7 @@
 title: "Git Basics: Version Control Introduction: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T04:57:55.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/git-basics-version-control-introduction-descriptiv.png
 level: "0000"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "60-75 minutes"

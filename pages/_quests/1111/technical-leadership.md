@@ -2,7 +2,7 @@
 title: "Technical Leadership: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:22:54.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/technical-leadership-descriptive-subtitle.png
 level: 1111
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours

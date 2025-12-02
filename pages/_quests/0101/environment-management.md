@@ -2,7 +2,7 @@
 title: "Environment Management: Dev, Staging [Quest Title] Production: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:05:35.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/environment-management-dev-staging-quest-title-pro.png
 level: "0101"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "60-75 minutes"

@@ -2,7 +2,7 @@
 title: "Alerting Systems: PagerDuty [Quest Title] Incident Management: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:44:12.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
 level: "1010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "75-90 minutes"

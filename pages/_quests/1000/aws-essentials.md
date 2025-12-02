@@ -2,7 +2,7 @@
 title: "AWS Essentials: Core Services [Quest Title] Architecture: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:41:10.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/aws-essentials-core-services-quest-title-architect.png
 level: "1000"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "120-150 minutes"

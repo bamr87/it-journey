@@ -1,7 +1,7 @@
 ---
 title: Tools Collection - Development Tools & Workflows
 description: Quests focused on development tools, version control, CI/CD, and professional workflows
-preview: images/previews/tools-collection.png
+preview: images/previews/tools-collection-development-tools-workflows.png
 permalink: /quests/tools/
 lastmod: 2025-11-29T23:41:31.777Z
 ---

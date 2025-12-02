@@ -2,7 +2,7 @@
 title: "AI Ethics and Responsible AI: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:22:13.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
 level: 1101
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours

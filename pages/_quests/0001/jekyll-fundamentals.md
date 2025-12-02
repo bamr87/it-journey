@@ -2,7 +2,7 @@
 title: "Jekyll Fundamentals: Static Site Generation: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T04:58:48.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/jekyll-fundamentals-static-site-generation-descrip.png
 level: "0001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "75-90 minutes"

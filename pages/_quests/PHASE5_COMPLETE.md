@@ -1,6 +1,7 @@
 ---
 title: "Phase 5 Complete: Master & Legend Tier Quest Generation"
 description: Summary of Phase 5 quest generation for Master Tier (Levels 1100-1111)
+preview: images/previews/phase-5-complete-master-legend-tier-quest-generati.png
 date: 2025-11-30
 lastmod: 2025-12-01T04:36:39.415Z
 categories:

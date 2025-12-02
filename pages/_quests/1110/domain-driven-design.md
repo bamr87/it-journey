@@ -2,7 +2,7 @@
 title: "Domain-Driven Design: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:22:33.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/domain-driven-design-descriptive-subtitle.png
 level: 1110
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours

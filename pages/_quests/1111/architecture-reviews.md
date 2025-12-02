@@ -2,7 +2,7 @@
 title: "Architecture Reviews: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:23:04.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/architecture-reviews-descriptive-subtitle.png
 level: 1111
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours

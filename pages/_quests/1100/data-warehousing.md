@@ -2,7 +2,7 @@
 title: "Data Warehousing: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:21:40.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/data-warehousing-descriptive-subtitle.png
 level: 1100
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours

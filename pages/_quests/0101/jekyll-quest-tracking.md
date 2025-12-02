@@ -2,7 +2,7 @@
 title: "Jekyll Quest Tracking: Building Dynamic Collection Layouts"
 description: Master Jekyll's collection system by building a quest tracking interface with dynamic filtering, statistics, and level-aware displays using Liquid templating and frontmatter data
 date: 2025-12-01T08:00:00.000Z
-preview: /images/quest-preview-jekyll-quest-tracking.png
+preview: images/previews/jekyll-quest-tracking-building-dynamic-collection-.png
 level: "0101"
 difficulty: 🔴 Hard
 estimated_time: 4-6 hours

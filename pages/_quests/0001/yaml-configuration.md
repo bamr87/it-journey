@@ -2,7 +2,7 @@
 title: "YAML Configuration: Site Settings Mastery: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T04:59:04.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
 level: "0001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "30-45 minutes"

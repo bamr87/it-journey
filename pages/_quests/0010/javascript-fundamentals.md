@@ -2,7 +2,7 @@
 title: "JavaScript Fundamentals: Interactive Web Elements: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T04:59:38.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
 level: "0010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "75-90 minutes"

@@ -1,6 +1,7 @@
 ---
 title: Level [BINARY] ([DECIMAL]) - [Level Name]
 description:
+preview: images/previews/level-binary-decimal-level-name.png
   - Concise description of what this level covers and its role in the learning journey
 permalink: /quests/[LEVEL]/
 categories:

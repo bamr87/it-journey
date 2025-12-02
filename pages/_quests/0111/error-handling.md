@@ -2,7 +2,7 @@
 title: "Error Handling: API Response [Quest Title] Status Codes: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:09:37.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/error-handling-api-response-quest-title-status-cod.png
 level: "0111"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "45-60 minutes"

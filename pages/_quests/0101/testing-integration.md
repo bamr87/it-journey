@@ -2,7 +2,7 @@
 title: "Testing Integration: Automated Quality Assurance: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:05:26.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/testing-integration-automated-quality-assurance-de.png
 level: "0101"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "75-90 minutes"

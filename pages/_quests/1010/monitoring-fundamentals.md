@@ -2,7 +2,7 @@
 title: "Monitoring Fundamentals: Metrics, Logs [Quest Title] Traces: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:43:59.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
 level: "1010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "90-120 minutes"

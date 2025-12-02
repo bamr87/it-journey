@@ -2,7 +2,7 @@
 title: "Event-Driven Architecture: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:22:33.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/event-driven-architecture-descriptive-subtitle.png
 level: 1110
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours

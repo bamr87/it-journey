@@ -2,7 +2,7 @@
 title: "Custom Domains: Professional Site Setup: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:00:31.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/custom-domains-professional-site-setup-descriptive.png
 level: "0011"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "30-45 minutes"

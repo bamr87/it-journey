@@ -2,7 +2,7 @@
 title: "API Documentation: OpenAPI [Quest Title] Developer Experience: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T05:09:31.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/api-documentation-openapi-quest-title-developer-ex.png
 level: "0111"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "60-75 minutes"

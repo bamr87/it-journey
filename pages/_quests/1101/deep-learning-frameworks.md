@@ -2,7 +2,7 @@
 title: "Deep Learning Frameworks: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:22:04.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/deep-learning-frameworks-descriptive-subtitle.png
 level: 1101
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours

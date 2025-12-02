@@ -2,7 +2,7 @@
 title: "Advanced Markdown: Tables, Footnotes [Quest Title] Extensions: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
 date: 2025-11-30T04:59:31.000Z
-preview: "/images/quest-preview-[slug].png"
+preview: images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
 level: "0010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
 difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "45-60 minutes"

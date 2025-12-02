@@ -2,6 +2,7 @@
 
 title: "Level 1111: Leadership & Innovation"
 description: Achieve mastery in technical leadership, community building, and driving innovation to shape the future of technology
+preview: images/previews/level-1111-leadership-innovation.png
 level: "1111"
 level_decimal: 15
 tier: Legend

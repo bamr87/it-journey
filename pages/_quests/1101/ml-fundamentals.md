@@ -2,7 +2,7 @@
 title: "Machine Learning Fundamentals: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:21:59.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/machine-learning-fundamentals-descriptive-subtitle.png
 level: 1101
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours

@@ -1,7 +1,7 @@
 ---
 title: 🎒 Inventory - Learner Collection Tracker
 description: Future home for tracking collected items, badges, achievements, and quest rewards throughout your IT-Journey adventure
-preview: images/previews/inventory-collection-tracker.png
+preview: images/previews/inventory-learner-collection-tracker.png
 permalink: /quests/inventory/
 lastmod: 2025-11-29T23:41:31.763Z
 draft: true

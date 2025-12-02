@@ -2,7 +2,7 @@
 title: "API Gateway Patterns: [Descriptive Subtitle]"
 description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-12-01T04:22:39.000Z
-preview: /images/quest-preview-[slug].png
+preview: images/previews/api-gateway-patterns-descriptive-subtitle.png
 level: 1110
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
