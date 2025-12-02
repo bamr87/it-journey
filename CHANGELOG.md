@@ -9,6 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+#### AI-Generated Quest Preview Images (2025-12-01)
+- **107 New Preview Images**: AI-generated preview images for all quest levels using DALL-E 3
+  - Level 0000-1111 README banners with consistent retro pixel art style
+  - Individual quest preview images for 100+ quests
+  - Images stored in `assets/images/previews/`
+
+#### Enhanced Preview Generator Script
+- **New Feature: Batch Processing** - Process multiple files with `--batch N` flag
+- **New Feature: Rate Limiting** - Token bucket rate limiter for API calls (5 req/min default)
+- **New Feature: Logging Support** - File logging with `--log-file` flag
+- **New Feature: Interrupt Handling** - Graceful shutdown on Ctrl+C with progress preservation
+- **New Feature: Progress Tracking** - Real-time progress bar and ETA during batch generation
+- **New Feature: Retry Logic** - Automatic retries with exponential backoff for API failures
+
+### Fixed
+
+- **Jekyll Build Error**: Added `work/` directory to Jekyll exclude list to prevent symlink errors from local Python virtual environments
+
 #### Quest Collection Layout System
 - **New Layout: `quest-collection.html`** - Dynamic layout for displaying quests grouped by binary level tiers (Apprentice, Adventurer, Warrior, Master)
 - **New Include: `quest-card.html`** - Reusable quest card component with data attributes for filtering
