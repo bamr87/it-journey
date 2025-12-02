@@ -4,7 +4,7 @@ description: "Complete description of what the quest teaches and accomplishes (1
 date: 2025-11-30T05:06:25.000Z
 preview: images/previews/workflow-optimization-caching-quest-title-parallel.png
 level: "0101"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+difficulty: "🟡 Medium"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
 estimated_time: "60-75 minutes"
 primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
 quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
