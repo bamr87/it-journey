@@ -1,13 +1,25 @@
 ---
 title: IT Fundamentals
-description: null
+description: Master the foundational concepts that power the digital world
 preview: images/previews/it-fundamentals.png
-author: null
-excerpt: null
+author: IT-Journey Team
+excerpt: Learn the core principles of IT infrastructure, networking, and computing
 date: 2023-11-23T17:51:07.025Z
-lastmod: 2023-12-03T08:47:27.790Z
+lastmod: 2025-11-29T21:40:00.000Z
 draft: true
-tags: []
+permalink: /quests/lvl_000/it-fundamentals/
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 60-90 minutes
+quest_type: main_quest
+tags:
+  - fundamentals
+  - it-basics
+  - lvl-0000
+categories:
+  - Quests
+  - Init-World
+  - Fundamentals
 categories: []
 meta: null
 snippet: null

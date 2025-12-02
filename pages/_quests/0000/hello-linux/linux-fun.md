@@ -4,6 +4,11 @@ description: Basic Linux concepts including navigation, scripting, security, and
 preview: images/previews/linux-fundamentals.png
 author: bamr87
 layout: default
+permalink: /quests/hello-linux/linux-fundamentals/
+level: "0000"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 60-90 minutes
 categories:
   - quests
   - linux
@@ -14,7 +19,7 @@ tags:
   - scripting
   - security
   - networking
-lastmod: 2024-05-15T03:54:48.681Z
+lastmod: 2025-11-30T05:46:59.343Z
 draft: false
 ---
 

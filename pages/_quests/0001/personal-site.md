@@ -1,13 +1,24 @@
 ---
 key: tutorial
 title: Personal Site
+description: Services and tools used for building personal site with GitHub Pages
 preview: images/previews/personal-site.png
 index: 8199
 subcategory: jekyll
 date: 2020-01-20
+permalink: /quests/level-0001/personal-site/
+level: "0001"
+quest_type: side_quest
+difficulty: 🟢 Easy
+estimated_time: 45-60 minutes
 tags:
   - Personal Site
-lastmod: 2023-12-03T09:01:50.241Z
+  - lvl-0001
+  - github-pages
+lastmod: 2025-11-30T05:46:59.346Z
+categories:
+  - Quests
+  - GitHub-Pages
 ---
 
 > Services/tools used for building personal site.

@@ -20,6 +20,8 @@ permalink: /quests/level-0001-git-init-testing/
 comments: true
 difficulty: "🟢 Easy"
 estimated_time: "45-75 minutes"
+quest_type: main_quest
+level: "0001"
 ---
 
 ## The Challenge: Safe automation without surprises

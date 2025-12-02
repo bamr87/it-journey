@@ -60,6 +60,7 @@ comments: true
 draft: false
 fmContentType: quest
 lastmod: 2025-10-03T21:57:41.816Z
+permalink: /quests/level-0001/docs-in-a-row/
 ---
 
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub

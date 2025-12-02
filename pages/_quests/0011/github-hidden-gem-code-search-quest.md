@@ -115,6 +115,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
+level: "0011"
 ---
 
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms

@@ -16,6 +16,10 @@ keywords:
         - winget
         - package management
 date: 2023-12-03T00:00:00.000Z
+level: "0000"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 categories:
     - Quests
     - Init-World

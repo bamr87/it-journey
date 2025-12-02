@@ -8,6 +8,10 @@ preview: images/previews/dockering-jekyll-with-bootstrap-5.png
 draft: true
 lastmod: 2024-05-28T04:11:52.774Z
 permalink: /quests/frontend-docker/
+level: "0100"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 ---
 
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.

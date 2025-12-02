@@ -32,6 +32,7 @@ keywords:
     - node-fetch
     - rate-limiting
 lastmod: 2025-08-20T04:18:02.180Z
+fmContentType: quest
 permalink: /quests/level-1100-sec-edgar-siege/
 attachments: ""
 comments: true
@@ -57,6 +58,8 @@ validation_criteria:
   - "Evidence of rate limiting and error handling"
   - "Transformed output (CSV/JSON) suitable for analysis"
   - "Short write-up of insights learned"
+level: "1100"
+quest_type: main_quest
 ---
 
 *In the twilight of the Digital Realm, a stern monarch sits upon a throne of filings—King EDGAR,

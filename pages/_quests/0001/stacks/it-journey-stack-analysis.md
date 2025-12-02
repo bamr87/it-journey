@@ -25,6 +25,11 @@ categories:
     - Stack Analysis
 layout: journals
 lastmod: 2025-11-02T21:37:25.394Z
+level: "0001"
+quest_type: side_quest
+difficulty: 🟢 Easy
+estimated_time: 60-90 minutes
+permalink: /quests/level-0001/it-journey-stack-analysis/
 ---
 
 # Stack Attack Analysis: IT-Journey

@@ -4,48 +4,50 @@ description: Master Visual Studio Code setup and configuration to create the ult
 date: 2025-07-21T00:00:00.000Z
 preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
 tags:
-    - vscode
-    - ide-setup
-    - development-environment
-    - productivity
-    - coding-tools
-    - quest
-    - init-world
+  - vscode
+  - ide-setup
+  - development-environment
+  - productivity
+  - coding-tools
+  - quest
+  - init-world
 categories:
-    - Quests
-    - Tools
-    - Development
-    - IDE-Setup
+  - Quests
+  - Tools
+  - Development
+  - IDE-Setup
+level: "0000"
+quest_type: main_quest
 sub-title: "Level 0001 Quest: Essential Development Arsenal"
 excerpt: Learn to configure VS Code as your primary development weapon, mastering extensions, shortcuts, and specialized setups for maximum productivity
 snippet: Forge the ultimate coding weapon with VS Code mastery
 author: IT-Journey Team
 layout: journals
 keywords:
-    primary:
-        - visual studio code
-        - ide setup
-        - development environment
-        - programming tools
-    secondary:
-        - extensions
-        - configuration
-        - productivity
-        - coding efficiency
-        - developer workflow
-lastmod: 2025-07-22T04:09:12.831Z
+  primary:
+    - visual studio code
+    - ide setup
+    - development environment
+    - programming tools
+  secondary:
+    - extensions
+    - configuration
+    - productivity
+    - coding efficiency
+    - developer workflow
+lastmod: 2025-11-30T05:46:59.334Z
 permalink: /quests/vscode-mastery/
 attachments: ""
 comments: true
 difficulty: 🟢 Easy
 estimated_time: 45 minutes
 prerequisites:
-    - Basic computer navigation skills
-    - Admin privileges on your system
+  - Basic computer navigation skills
+  - Admin privileges on your system
 rewards:
-    - 🏆 IDE Master Badge
-    - ⚡ Enhanced coding productivity
-    - 🛠️ Professional development setup
+  - 🏆 IDE Master Badge
+  - ⚡ Enhanced coding productivity
+  - 🛠️ Professional development setup
 ---
 
 *Greetings, aspiring code warrior! You stand before one of the most crucial quests in your IT journey. Visual Studio Code is not just a text editor—it's a magical artifact that, when properly enchanted, becomes the ultimate weapon in any developer's arsenal.*

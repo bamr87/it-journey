@@ -57,6 +57,8 @@ validation_criteria:
   - Working link testing script with comprehensive coverage
   - AI analysis component that provides meaningful insights
   - Automated issue creation with detailed reports and recommendations
+level: "1010"
+quest_type: main_quest
 ---
 
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*

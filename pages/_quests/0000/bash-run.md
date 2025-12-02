@@ -8,38 +8,40 @@ excerpt: Starting with bashrun as a base and building upon it is a great way to 
 permalink: /quests/lvl_000/bash-run/
 date: 2024-05-28T00:00:00.000Z
 tags:
-    - bash
-    - terminal
-    - game-development
-    - shell-scripting
-    - lvl-000
+  - bash
+  - terminal
+  - game-development
+  - shell-scripting
+  - lvl-000
 categories:
-    - Quests
-    - Terminal
-    - Level-000
+  - Quests
+  - Terminal
+  - Level-000
+level: "0000"
+quest_type: side_quest
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 prerequisites:
-    - Basic bash command knowledge
-    - Terminal navigation skills
-    - Text editor familiarity (nano, vim, or VS Code)
+  - Basic bash command knowledge
+  - Terminal navigation skills
+  - Text editor familiarity (nano, vim, or VS Code)
 rewards:
-    - 🏆 Bash Scripting Badge
-    - ⚡ Advanced Terminal Skills
-    - 🛠️ Game Development Foundation
-    - 🎯 Shell Programming Mastery
-quest_series: "Level 000 - Foundation Skills"
+  - 🏆 Bash Scripting Badge
+  - ⚡ Advanced Terminal Skills
+  - 🛠️ Game Development Foundation
+  - 🎯 Shell Programming Mastery
+quest_series: Level 000 - Foundation Skills
 related_quests:
-    - "bashcrawl/README.md - Terminal Adventure RPG"
-    - "hello-noob.md - Beginner's IT Journey"
+  - bashcrawl/README.md - Terminal Adventure RPG
+  - hello-noob.md - Beginner's IT Journey
 validation_criteria:
-    - "Complete the terminal game development"
-    - "Successfully run the enhanced bashrun game"
-    - "Demonstrate understanding of shell scripting concepts"
+  - Complete the terminal game development
+  - Successfully run the enhanced bashrun game
+  - Demonstrate understanding of shell scripting concepts
 sub-title: "Level 000 Quest: Advanced Terminal Game Development"
-snippet: "Transform basic shell commands into an interactive gaming experience"
+snippet: Transform basic shell commands into an interactive gaming experience
 draft: false
-lastmod: 2024-05-29T04:28:57.398Z
+lastmod: 2025-11-30T05:46:59.326Z
 ---
 
 Starting with bashrun as a base and building upon it is a great way to create an advanced terminal-based game. bashrun is typically built using shell scripts, which can be a bit limiting but also provides a good foundation for learning and expanding.

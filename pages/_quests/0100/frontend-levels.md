@@ -17,6 +17,10 @@ permalink: null
 attachments: ""
 type: default
 draft: draft
+level: "0100"
+quest_type: main_quest
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
 ---
 
 Absolutely! Let's structure our adventure with binary-coded levels, making our journey both organized and fun. Each level will have specific tasks and goals to help you progress step by step. Here’s our quest map in binary-coded levels:

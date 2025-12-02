@@ -61,6 +61,8 @@ validation_criteria:
     - Integrate enhanced terminal with VSCode for seamless development
     - Demonstrate improved development workflow using VSCode tools
     - Create and share custom plugin or configuration via VSCode
+level: "0010"
+quest_type: main_quest
 ---
 
 ## 🌟 The Legend of Terminal Enchantment

@@ -126,6 +126,7 @@ rewards:
         - "Access to terminal customization quests"
         - "Eligibility for shell scripting adventures"
         - "Foundation for all development tool mastery"
+level: "codex"
 ---
 
 *Greetings, brave digital explorer! Welcome to the Terminal Navigation Mastery Quest - the foundational adventure that transforms you from a point-and-click apprentice into a command-line champion. This main quest forms the cornerstone of your IT journey, providing essential skills that every developer, system administrator, and digital craftsperson must master.*

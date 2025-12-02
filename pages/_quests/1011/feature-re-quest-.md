@@ -60,6 +60,8 @@ validation_criteria:
     - Demonstrate multi-agent system coordination
     - Document the entire pipeline with architectural decision records
 draft: draft
+level: "1011"
+quest_type: main_quest
 ---
 
 *Greetings, master architect! Welcome to the **AI Feature Pipeline Architect Quest** - an epic journey that will transform you into a wizard of AI-orchestrated development pipelines. This quest will guide you through building intelligent systems that seamlessly convert user ideas into deployed applications, preparing you for the future of software engineering where AI and human creativity work in perfect harmony.*

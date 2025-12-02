@@ -1,9 +1,14 @@
 ---
+
 title: Level 1010 - Automation & Testing
 description: Build automated testing pipelines, link validation systems, and CI/CD workflows
 preview: images/previews/level-1010-automation-testing.png
 permalink: /quests/level-1010/
 lastmod: 2025-11-29T23:41:31.772Z
+
+layout: quest-collection
+level: 1010
+categories: quests
 ---
 
 # Level 1010: Automation & Testing

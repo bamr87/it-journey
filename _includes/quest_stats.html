@@ -1,0 +1,173 @@
+{% comment %}
+  Quest Statistics Component
+  Displays statistics about a quest collection
+  
+  Parameters:
+  - quests: Array of quest page objects
+  - title: Optional title for the stats section
+{% endcomment %}
+
+{% assign quest_list = include.quests %}
+{% assign stats_title = include.title | default: "Collection Statistics" %}
+
+{% comment %} Calculate Statistics {% endcomment %}
+{% assign total_quests = quest_list.size %}
+
+{% assign main_quests = 0 %}
+{% assign side_quests = 0 %}
+{% assign bonus_quests = 0 %}
+{% assign epic_quests = 0 %}
+
+{% assign easy_count = 0 %}
+{% assign medium_count = 0 %}
+{% assign hard_count = 0 %}
+{% assign epic_count = 0 %}
+
+{% assign total_time_min = 0 %}
+
+{% for quest in quest_list %}
+  {% case quest.quest_type %}
+    {% when 'main_quest' %}
+      {% assign main_quests = main_quests | plus: 1 %}
+    {% when 'side_quest' %}
+      {% assign side_quests = side_quests | plus: 1 %}
+    {% when 'bonus_quest' %}
+      {% assign bonus_quests = bonus_quests | plus: 1 %}
+    {% when 'epic_quest' %}
+      {% assign epic_quests = epic_quests | plus: 1 %}
+    {% else %}
+      {% assign main_quests = main_quests | plus: 1 %}
+  {% endcase %}
+  
+  {% if quest.difficulty contains '🟢' %}
+    {% assign easy_count = easy_count | plus: 1 %}
+  {% elsif quest.difficulty contains '🟡' %}
+    {% assign medium_count = medium_count | plus: 1 %}
+  {% elsif quest.difficulty contains '🔴' %}
+    {% assign hard_count = hard_count | plus: 1 %}
+  {% elsif quest.difficulty contains '⚔️' %}
+    {% assign epic_count = epic_count | plus: 1 %}
+  {% endif %}
+  
+  {% comment %} Parse estimated time (e.g., "30-45 minutes" -> use average) {% endcomment %}
+  {% if quest.estimated_time %}
+    {% assign time_str = quest.estimated_time | downcase %}
+    {% if time_str contains 'hour' %}
+      {% assign time_parts = time_str | remove: 'hours' | remove: 'hour' | split: '-' %}
+      {% if time_parts.size == 2 %}
+        {% assign time_low = time_parts[0] | strip | times: 60 %}
+        {% assign time_high = time_parts[1] | strip | times: 60 %}
+        {% assign avg_time = time_low | plus: time_high | divided_by: 2 %}
+      {% else %}
+        {% assign avg_time = time_parts[0] | strip | times: 60 %}
+      {% endif %}
+      {% assign total_time_min = total_time_min | plus: avg_time %}
+    {% elsif time_str contains 'minute' %}
+      {% assign time_parts = time_str | remove: 'minutes' | remove: 'minute' | split: '-' %}
+      {% if time_parts.size == 2 %}
+        {% assign time_low = time_parts[0] | strip | plus: 0 %}
+        {% assign time_high = time_parts[1] | strip | plus: 0 %}
+        {% assign avg_time = time_low | plus: time_high | divided_by: 2 %}
+      {% else %}
+        {% assign avg_time = time_parts[0] | strip | plus: 0 %}
+      {% endif %}
+      {% assign total_time_min = total_time_min | plus: avg_time %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Convert total time to hours and minutes {% endcomment %}
+{% assign total_hours = total_time_min | divided_by: 60 %}
+{% assign remaining_mins = total_time_min | modulo: 60 %}
+
+<div class="quest-stats">
+  <h3 class="quest-stats__title">📊 {{ stats_title }}</h3>
+  
+  <div class="quest-stats__grid">
+    {% comment %} Total Quests {% endcomment %}
+    <div class="quest-stats__card quest-stats__card--total">
+      <div class="quest-stats__number">{{ total_quests }}</div>
+      <div class="quest-stats__label">Total Quests</div>
+    </div>
+    
+    {% comment %} Quest Types {% endcomment %}
+    <div class="quest-stats__card quest-stats__card--types">
+      <div class="quest-stats__breakdown">
+        {% if main_quests > 0 %}
+          <div class="quest-stats__item">
+            <span class="quest-stats__icon">🏰</span>
+            <span class="quest-stats__value">{{ main_quests }}</span>
+            <span class="quest-stats__desc">Main</span>
+          </div>
+        {% endif %}
+        {% if side_quests > 0 %}
+          <div class="quest-stats__item">
+            <span class="quest-stats__icon">⚔️</span>
+            <span class="quest-stats__value">{{ side_quests }}</span>
+            <span class="quest-stats__desc">Side</span>
+          </div>
+        {% endif %}
+        {% if bonus_quests > 0 %}
+          <div class="quest-stats__item">
+            <span class="quest-stats__icon">🎁</span>
+            <span class="quest-stats__value">{{ bonus_quests }}</span>
+            <span class="quest-stats__desc">Bonus</span>
+          </div>
+        {% endif %}
+        {% if epic_quests > 0 %}
+          <div class="quest-stats__item">
+            <span class="quest-stats__icon">👑</span>
+            <span class="quest-stats__value">{{ epic_quests }}</span>
+            <span class="quest-stats__desc">Epic</span>
+          </div>
+        {% endif %}
+      </div>
+      <div class="quest-stats__label">By Type</div>
+    </div>
+    
+    {% comment %} Difficulty Distribution {% endcomment %}
+    <div class="quest-stats__card quest-stats__card--difficulty">
+      <div class="quest-stats__breakdown">
+        {% if easy_count > 0 %}
+          <div class="quest-stats__item quest-stats__item--easy">
+            <span class="quest-stats__icon">🟢</span>
+            <span class="quest-stats__value">{{ easy_count }}</span>
+          </div>
+        {% endif %}
+        {% if medium_count > 0 %}
+          <div class="quest-stats__item quest-stats__item--medium">
+            <span class="quest-stats__icon">🟡</span>
+            <span class="quest-stats__value">{{ medium_count }}</span>
+          </div>
+        {% endif %}
+        {% if hard_count > 0 %}
+          <div class="quest-stats__item quest-stats__item--hard">
+            <span class="quest-stats__icon">🔴</span>
+            <span class="quest-stats__value">{{ hard_count }}</span>
+          </div>
+        {% endif %}
+        {% if epic_count > 0 %}
+          <div class="quest-stats__item quest-stats__item--epic">
+            <span class="quest-stats__icon">⚔️</span>
+            <span class="quest-stats__value">{{ epic_count }}</span>
+          </div>
+        {% endif %}
+      </div>
+      <div class="quest-stats__label">By Difficulty</div>
+    </div>
+    
+    {% comment %} Total Time {% endcomment %}
+    {% if total_time_min > 0 %}
+      <div class="quest-stats__card quest-stats__card--time">
+        <div class="quest-stats__number">
+          {% if total_hours > 0 %}
+            {{ total_hours }}h {% if remaining_mins > 0 %}{{ remaining_mins }}m{% endif %}
+          {% else %}
+            {{ total_time_min }}m
+          {% endif %}
+        </div>
+        <div class="quest-stats__label">Est. Total Time</div>
+      </div>
+    {% endif %}
+  </div>
+</div>

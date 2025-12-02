@@ -102,6 +102,7 @@ rewards:
   unlocks_features:
     - Access to advanced AI agent development quests
     - Ability to create custom AI-powered tools
+level: "0010"
 ---
 
 *In the vast Digital Nexus, where streams of data flow like rivers of light and artificial minds process infinite thoughts, there exists a sacred art known only to the most skilled technologists: **Prompt Engineering**. This mystical discipline allows mortals to communicate with the great Language Spirits—vast AI entities of unimaginable knowledge—and bend their power to solve problems, create content, and transform ideas into reality.*

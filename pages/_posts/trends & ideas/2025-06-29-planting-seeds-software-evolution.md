@@ -2,7 +2,7 @@
 title: "Planting Seeds: The DNA of Software Evolution"
 description: Exploring how AI-powered development mirrors natural growth patterns, where encoded wisdom in our 'software seeds' enables exponential evolution and adaptation.
 date: 2025-06-29T22:22:13.626Z
-preview: "From punch cards to AI-assisted development: How software evolution mirrors biological growth patterns"
+preview: /images/previews/planting-seeds-software-evolution.png
 tags:
     - AI
     - software-development
@@ -27,7 +27,7 @@ keywords:
         - growth patterns
         - development acceleration
         - future tech
-lastmod: 2025-07-23T03:06:11.440Z
+lastmod: 2025-12-01T04:50:56.536Z
 permalink: /planting-seeds-software-evolution/
 attachments: ""
 comments: true

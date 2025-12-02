@@ -3,8 +3,9 @@ title: "Stack Attack: Deciphering the Technology Matrix"
 description: Master the art of repository analysis and technology stack documentation using AI-powered investigation techniques
 date: 2025-11-02T21:00:31.059Z
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
+permalink: /quests/level-0001/stack-attack/
 level: "0001"
-difficulty: "🟡 Medium"
+difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: AI-Assisted Analysis
 quest_type: main_quest
@@ -116,7 +117,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: AI-Enhanced
-lastmod: 2025-11-02T21:13:37.893Z
+lastmod: 2025-11-30T05:46:59.350Z
 ---
 
 *In the vast digital realm, repositories stand as ancient fortresses containing powerful technological artifacts. Within their walls lie complex stacks of technologies—layered like the floors of a mystical tower, each serving a purpose, each connected in intricate ways. Most developers wander these halls without truly understanding the architecture that surrounds them. But you, brave adventurer, are about to become a Stack Detective, wielding the power of AI to illuminate every corner of these digital strongholds.*

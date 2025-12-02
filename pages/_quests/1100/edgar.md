@@ -31,6 +31,7 @@ keywords:
         - Rate limiting
         - Data parsing
 lastmod: 2025-08-20T04:37:39.870Z
+fmContentType: quest
 permalink: /quests/level-1100-conquer-king-edgar/
 attachments: ""
 comments: true
@@ -58,6 +59,8 @@ validation_criteria:
     - Respect rate limits (no 429s in final run) and implement basic backoff
     - Write a short readme summarizing findings
 draft: false
+level: "1100"
+quest_type: main_quest
 ---
 
 🌟 Welcome, Brave Data Sorcerer! 🌟
