@@ -451,7 +451,7 @@ exclude:
   - logs/
   - prompts/
   - TODO/
-  - work/
+  - work/         # Temporary build/cache directory
   - "*.log"
   - "**/*.log"
   
