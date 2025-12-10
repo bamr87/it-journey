@@ -159,7 +159,12 @@ class LinkHealthGuardian:
             '--user-agent', 'IT-Journey-LinkChecker/2.0 (GitHub Actions)',
             '--verbose',
             '--no-progress',
-            '--accept', '200,204,206,300,301,302,303,307,308'  # Accept common redirect codes
+            '--accept', '200,204,206,300,301,302,303,307,308',  # Accept common redirect codes
+            '--base', 'https://it-journey.dev',  # Base URL for resolving root-relative links
+            '--exclude', 'https://url/',  # Exclude placeholder URLs
+            '--exclude', 'http://www.letrs.indiana.edu',  # Exclude known failing domains
+            '--exclude', 'http://library.music.indiana.edu',  # Exclude known failing domains
+            '--exclude', 'http://www.musicaviva.com'  # Exclude sites returning 403
         ]
         
         # Add scope-specific options
