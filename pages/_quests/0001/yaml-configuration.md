@@ -1,119 +1,103 @@
 ---
 title: "YAML Configuration: Site Settings Mastery: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
 date: 2025-11-30T04:59:04.000Z
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
-level: "0001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
-estimated_time: "30-45 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
+level: "0001"
+difficulty: 🟢 Easy
+estimated_time: 30-45 minutes
+primary_technology: ""
+quest_type: ""
+skill_focus: ""
+learning_style: hands-on
+quest_series: "[series-name]"
 sub_title: "Level 0001 (1) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
-author: "IT-Journey Team"
+excerpt: One-sentence summary of the quest's core learning objective
+author: IT-Journey Team
 layout: journals
 tags:
     - lvl-0001
-    - [primary-technology]
+    - - primary-technology
     - main_quest
-    - [skill-focus]
+    - - skill-focus
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - - Skill-Category
+    - - Difficulty-Level
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - - main-technology-skill
+        - - core-learning-objective
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - - supporting-technologies
+        - - related-concepts
         - gamified-learning
         - it-journey
-lastmod: 2025-11-30T04:59:04.000Z
+lastmod: 2025-12-04T01:48:31.566Z
 permalink: /quests/level-0001-yaml-configuration/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: "[Campaign/storyline name]"
+quest_arc: "[Story arc or thematic grouping]"
 quest_dependencies:
     required_quests:
-        - "/quests/level-0001-prerequisite-quest/"
+        - /quests/level-0001-prerequisite-quest/
     recommended_quests:
-        - "/quests/level-0001-helpful-quest/"
+        - /quests/level-0001-helpful-quest/
     unlocks_quests:
-        - "/quests/level-0001-next-quest/"
-
+        - /quests/level-0001-next-quest/
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
+    parent_quest: null
     child_quests:
-        - "/quests/level-0001-side-quest-1/"
-        - "/quests/level-0001-side-quest-2/"
+        - /quests/level-0001-side-quest-1/
+        - /quests/level-0001-side-quest-2/
     parallel_quests:
-        - "/quests/level-0001-alternative-path/"
+        - /quests/level-0001-alternative-path/
     sequel_quests:
-        - "/quests/level-0001-continuation/"
-
-# Learning Paths - Character Class Alignment
+        - /quests/level-0001-continuation/
 learning_paths:
     primary_paths:
-        - "Software Development"
+        - Software Development
     character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
+        - 💻 Software Developer
+        - 🏗️ System Engineer
     skill_trees:
         - "[Primary Skill Tree]"
         - "[Secondary Skill Tree]"
-
-# Progression System
 rewards:
     badges:
-        - "🏆 [Achievement Badge Name]"
+        - 🏆 [Achievement Badge Name]
     skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
+        - 🛠️ [Tool or Technology Mastery]
+    progression_points: 50
     unlocks_features:
         - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
 prerequisites:
     knowledge_requirements:
-        - "Basic command line navigation"
+        - Basic command line navigation
         - "[Specific prior knowledge]"
     system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
+        - Modern OS (macOS, Windows 10+, Linux)
         - "[Required software installed]"
     skill_level_indicators:
         - "[Recommended skill level description]"
-
-# Validation Criteria
 validation_criteria:
     completion_requirements:
-        - "All primary objectives completed"
+        - All primary objectives completed
         - "[Specific deliverable created]"
     skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
+        - Can explain [concept] clearly
+        - Can implement [skill] independently
     knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+        - Understands [principle]
+        - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+    coordinates: "[x, y]"
+    region: Foundation
+    realm: Development
+    biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
