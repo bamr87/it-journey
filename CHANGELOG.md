@@ -342,3 +342,28 @@ This changelog is manually maintained. When making changes:
 [2.1.0]: https://github.com/bamr87/it-journey/releases/tag/v2.1.0
 [2.0.0]: https://github.com/bamr87/it-journey/releases/tag/v2.0.0
 [1.0.0]: https://github.com/bamr87/it-journey/releases/tag/v1.0.0
+
+## Theme Fixes (2025-12-12)
+
+### Fixed - Theme Social Button URLs
+- **Pull Request**: [zer0-mistakes#15](https://github.com/bamr87/zer0-mistakes/pull/15)
+- **Branch**: `fix/social-button-urls`
+- **Commit**: 866e26b
+
+#### Changes
+- Fixed social sharing buttons to use production URLs instead of localhost
+- Updated `_includes/content/intro.html`: Reddit, LinkedIn, Twitter, copy link buttons
+- Updated `_layouts/notebook.html`: Twitter, LinkedIn, email share buttons
+- Replaced `{{ page.url | absolute_url }}` with `{{ site.url | append: page.url }}`
+
+#### Impact
+- Resolves 353 unique broken URLs (20.8% of all broken link types)
+- Eliminates false positives in link health checks
+- Social buttons now work correctly in all environments
+- Expected 46% reduction in unique broken URL types after theme merge
+
+#### Documentation
+- Created `link-check-results/THEME_FIXES.md` with comprehensive details
+- Technical implementation notes and testing procedures included
+- Deployment process and expected improvements documented
+
