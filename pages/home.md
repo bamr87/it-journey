@@ -6,7 +6,6 @@ excerpt: This is where we begin our journey. The place where we return after get
 purpose: To build a platform for learning and share knowledge and tools
 keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
-bookmark: /zer0/
 sidebar:
    nav: home
 date: 2024-05-15T03:54:48.681Z

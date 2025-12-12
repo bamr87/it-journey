@@ -202,7 +202,11 @@ class LinkHealthGuardian:
             '--no-progress',
             '--accept', '200,204,206,300,301,302,303,307,308',  # Accept common redirect codes
             '--base', 'https://it-journey.dev',  # Base URL for resolving root-relative links
-            '--exclude', 'https://url/'  # Exclude placeholder URLs
+            '--exclude', 'https://url/',  # Exclude placeholder URLs
+            '--exclude', 'https://github.com/.*/blob/.*',  # Exclude GitHub file links (rate limited)
+            '--exclude', 'https://reddit.com/submit.*',  # Exclude Reddit share buttons (rate limited)
+            '--exclude-path', '_site/preview/',  # Exclude preview builds
+            '--exclude-path', 'work/',  # Exclude work directory
         ]
         
         # Add scope-specific options

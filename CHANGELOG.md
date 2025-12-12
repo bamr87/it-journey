@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+#### Link Health Improvements (2025-12-11)
+- **Removed Broken Internal References**:
+  - Removed `/zer0/` bookmark from `pages/home.md` (404 error)
+  - Updated quest example in `stating-the-stats.md` from `/blog/` to `/posts/`
+- **Enhanced Link Checker Configuration**:
+  - Excluded `_site/preview/` directory to eliminate ~15,000 false positives
+  - Excluded `work/` directory from link checking
+  - Added exclusion patterns for rate-limited URLs (GitHub blob URLs, Reddit share buttons)
+  - Reduced total link checks from 152K to 78K (48% reduction in noise)
+  - Reduced broken link reports from 19,877 to 10,680 (46% reduction)
+  - Reduced unique broken URLs from 2,173 to 1,696 (22% reduction)
+- **Added Comprehensive Link Analysis Documentation**:
+  - `link-check-results/ANALYSIS_SUMMARY.md` - Statistical analysis of link health
+  - `link-check-results/FIXES_APPLIED.md` - Detailed documentation of fixes and remaining issues
+  - `link-check-results/detailed_analysis.md` - Automated link failure analysis
+  - `link-check-results/ai_analysis.md` - AI-powered link health insights
+
 ### Added
 
 #### AI-Generated Quest Preview Images (2025-12-01)

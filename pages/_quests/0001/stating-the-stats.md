@@ -807,8 +807,8 @@ Add a link to the stats page in your navigation. The location depends on your th
 main:
   - title: "Home"
     url: /
-  - title: "Blog"
-    url: /blog/
+  - title: "Posts"
+    url: /posts/
   - title: "Quests"
     url: /quests/
   - title: "Statistics"  # New entry
