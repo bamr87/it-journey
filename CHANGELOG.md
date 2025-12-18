@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+#### Content Organization Improvements (2025-12-17)
+- **Consolidated Blog Post Index**: Replaced multiple duplicate post index files with a unified `pages/posts.md`
+  - Removed redundant files: `pages/_posts/2000-01-01-index.md`, `pages/_posts/README.md`
+  - Removed duplicate home section files: `pages/_posts/home/2025-11-16-blog-posts-it-journey.md`, `pages/_posts/home/2025-11-16-posts.md`
+  - Created new unified post index at `pages/posts.md` with improved table-based category overview
+  - Enhanced structure with better organization and visual layout
+  - Updated frontmatter with current timestamp and version 2.0.0
+
 ### Fixed
 
 #### Link Health Improvements (2025-12-11)
