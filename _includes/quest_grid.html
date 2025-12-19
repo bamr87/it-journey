@@ -1,0 +1,27 @@
+{% comment %}
+  Quest Grid Component
+  Renders a grid of quest cards
+  
+  Parameters:
+  - quests: Array of quest page objects
+  - columns: Number of columns (default: 3)
+  - show_empty: Whether to show empty state message (default: true)
+{% endcomment %}
+
+{% assign quest_list = include.quests %}
+{% assign columns = include.columns | default: 3 %}
+{% assign show_empty = include.show_empty | default: true %}
+
+{% if quest_list and quest_list.size > 0 %}
+  <div class="quest-grid quest-grid--cols-{{ columns }}">
+    {% for quest in quest_list %}
+      {% include quest_card.html quest=quest %}
+    {% endfor %}
+  </div>
+{% elsif show_empty %}
+  <div class="quest-grid__empty">
+    <div class="quest-grid__empty-icon">🗺️</div>
+    <p class="quest-grid__empty-text">No quests found in this collection.</p>
+    <p class="quest-grid__empty-hint">New adventures are being forged! Check back soon.</p>
+  </div>
+{% endif %}

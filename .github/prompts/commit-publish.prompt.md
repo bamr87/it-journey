@@ -1,16 +1,16 @@
 ---
 agent: agent
 mode: agent
-description: "Review changes, run tests, update documentation, bump version, and publish Jekyll theme gem"
+description: "Review changes, run tests, update documentation, and publish IT-Journey Jekyll site via PR to gh-pages branch"
 ---
 
-# Commit & Publish Workflow for Zer0-Mistakes Jekyll Theme
+# Commit & Publish Workflow for IT-Journey Jekyll Site
 
-Review open changes, run appropriate tests, create/update documentation, update the changelog, bump the version according to semantic versioning, and publish the Ruby gem.
+Review open changes, run appropriate tests, create/update documentation, update the changelog, and publish the Jekyll site by creating a pull request to the gh-pages branch for GitHub Pages deployment.
 
 ## Task Overview
 
-Execute the complete release pipeline for the zer0-mistakes Jekyll theme. This workflow handles Docker-first development, Jekyll theme validation, and Ruby gem publishing to RubyGems.org.
+Execute the complete release pipeline for the IT-Journey Jekyll site. This workflow handles Docker-first development, Jekyll site validation, and deployment via pull request to the gh-pages branch for GitHub Pages hosting.
 
 ## Step 1: Review Open Changes
 
@@ -32,13 +32,14 @@ Execute the complete release pipeline for the zer0-mistakes Jekyll theme. This w
    - Use `./scripts/analyze-commits.sh HEAD~5..HEAD` to determine impact level
    - Note any breaking changes that require migration
 
-3. **Jekyll-Specific Change Categories**:
-   - **Layouts** (`_layouts/`): Template structure changes
-   - **Includes** (`_includes/`): Component changes
-   - **Sass** (`_sass/`): Style changes
+3. **IT-Journey-Specific Change Categories**:
+   - **Quests** (`pages/_quests/`): Educational quest content changes
+   - **Posts** (`pages/_posts/`): Blog post changes
+   - **Pages** (`pages/_*/`): Static page changes
    - **Assets** (`assets/`): Static file changes
    - **Data** (`_data/`): Configuration data changes
    - **Config** (`_config*.yml`): Jekyll configuration changes
+   - **Scripts** (`scripts/`): Automation script changes
 
 ## Step 2: Run Appropriate Tests
 
@@ -76,79 +77,64 @@ Execute the complete release pipeline for the zer0-mistakes Jekyll theme. This w
 1. **Update Affected README Files**:
    - Update `README.md` for user-facing changes
    - Update `scripts/README.md` for automation changes
-   - Update component-specific READMEs in `_layouts/README.md`, `_includes/README.md`
-   - Ensure all new features are documented
+   - Update quest-specific READMEs in `pages/_quests/README.md`
+   - Ensure all new content is documented
 
-2. **Update Component Documentation**:
-   - Add front matter documentation headers to new layouts/includes
-   - Document parameters and dependencies for new components
+2. **Update Content Documentation**:
+   - Add front matter documentation to new quests/posts
+   - Document learning objectives and prerequisites
    - Update usage examples in the `/docs/` directory
 
-3. **Update Theme Documentation**:
-   - If layout changes, update `docs/jekyll/` documentation
+3. **Update Site Documentation**:
+   - If content structure changes, update `docs/content/` documentation
    - If configuration changes, update `docs/configuration/`
    - If new features, add to `docs/features/`
 
 ## Step 4: Update CHANGELOG.md
 
-1. **Determine Version Type** based on changes:
-   - **MAJOR** (X.0.0): Breaking changes, layout renames, config incompatibilities
-   - **MINOR** (0.X.0): New layouts, components, features (backward-compatible)
-   - **PATCH** (0.0.X): Bug fixes, documentation, minor improvements
+1. **Determine Release Type** based on changes:
+   - **MAJOR**: Breaking changes, major content restructuring, config incompatibilities
+   - **MINOR**: New quests, posts, features (backward-compatible)
+   - **PATCH**: Bug fixes, documentation, minor improvements
 
 2. **Add Changelog Entry** following Keep a Changelog format:
    ```markdown
-   ## [X.Y.Z] - YYYY-MM-DD
+   ## [Unreleased] - YYYY-MM-DD
    
    ### Added
-   - **New Layout: `layout-name.html`** - Description of the layout
-   - **New Component: `component.html`** - Description of the component
-   - New features or capabilities
+   - **New Quest: `quest-name.md`** - Description of the quest
+   - **New Post: `post-title.md`** - Description of the post
+   - New features or content
    
    ### Changed
-   - **Enhanced: `filename.html`** - Description of improvements
+   - **Enhanced: `filename.md`** - Description of improvements
    - Changes to existing functionality
-   
-   ### Deprecated
-   - Features marked for removal
-   
-   ### Removed
-   - Removed features or components
    
    ### Fixed
    - **Critical: issue description** - Resolution details
    - Bug fixes with context
    
-   ### Security
-   - Security updates
+   ### Removed
+   - Removed content or features
    ```
 
 3. **Reference Issues/PRs** if applicable
 
-## Step 5: Bump Version
+## Step 5: Build Site for Deployment
 
-1. **Update Version File** (`lib/jekyll-theme-zer0/version.rb`):
-   ```ruby
-   # frozen_string_literal: true
-   
-   module JekyllThemeZer0
-     VERSION = "X.Y.Z"
-   end
-   ```
-
-2. **Verify Version Consistency**:
-   - Ensure `lib/jekyll-theme-zer0/version.rb` has correct version
-   - Check `jekyll-theme-zer0.gemspec` reads from version.rb correctly
-   - Verify CHANGELOG.md has entry for new version
-
-3. **Alternative: Use Release Script**:
+1. **Build the Jekyll Site**:
    ```bash
-   # Preview version bump
-   ./scripts/release patch --dry-run
+   # Build with Docker
+   docker-compose exec jekyll bundle exec jekyll build --destination /tmp/_site
    
-   # Or let the script handle version updates
-   ./scripts/release patch --skip-publish --no-github-release
+   # Or locally if Docker not running
+   bundle exec jekyll build --destination /tmp/_site
    ```
+
+2. **Verify Build Output**:
+   - Check that `_site/` directory is generated correctly
+   - Validate key pages (index.html, quests, posts)
+   - Ensure no build errors or warnings
 
 ## Step 6: Prepare for Publication
 
@@ -161,19 +147,19 @@ Execute the complete release pipeline for the zer0-mistakes Jekyll theme. This w
    Format: `<type>(<scope>): <description>`
    
    Types:
-   - `feat`: New feature (layout, component, functionality)
+   - `feat`: New feature (quest, post, functionality)
    - `fix`: Bug fix
    - `docs`: Documentation changes
    - `style`: Code style changes (formatting, CSS)
    - `refactor`: Code refactoring
    - `test`: Test additions/changes
    - `chore`: Maintenance tasks (deps, configs)
-   - `breaking`: Breaking changes
+   - `content`: Content additions/updates
 
-   Scopes (Jekyll-specific):
-   - `layouts`: Layout template changes
-   - `includes`: Component changes
-   - `sass`: Style changes
+   Scopes (IT-Journey specific):
+   - `quests`: Quest content changes
+   - `posts`: Blog post changes
+   - `pages`: Static page changes
    - `assets`: Static file changes
    - `config`: Configuration changes
    - `scripts`: Automation script changes
@@ -191,44 +177,50 @@ Execute the complete release pipeline for the zer0-mistakes Jekyll theme. This w
    Closes #<issue-number> (if applicable)"
    ```
 
-4. **Use Full Release Workflow** (Recommended):
+4. **Push to Main Branch**:
    ```bash
-   # Full release with gem publishing and GitHub release
-   ./scripts/release patch
-   
-   # Or minor/major releases
-   ./scripts/release minor
-   ./scripts/release major
+   git push origin main
    ```
 
-5. **Manual Release Alternative**:
+5. **Create Pull Request to gh-pages Branch**:
+   - Switch to gh-pages branch or create it if needed
+   - Copy built site from `/tmp/_site` to repository root
+   - Commit and push the built site to gh-pages branch
+   - Create a pull request from main to gh-pages (or directly push if allowed)
+   
    ```bash
-   # Build gem
-   ./scripts/build
+   # Switch to gh-pages branch
+   git checkout gh-pages
    
-   # Create tag
-   git tag -a v<X.Y.Z> -m "Release v<X.Y.Z>: <summary>"
+   # Copy built site
+   cp -r /tmp/_site/* .
    
-   # Push changes
-   git push origin main
-   git push origin --tags
+   # Commit built site
+   git add -A
+   git commit -m "Deploy site for <version/date>
    
-   # Publish to RubyGems
-   gem push jekyll-theme-zer0-<X.Y.Z>.gem
+   Built from commit: <main-commit-hash>
+   Changes: <summary>"
+   
+   # Push to gh-pages
+   git push origin gh-pages
+   
+   # Create PR (if using PR workflow)
+   # Use GitHub CLI or web interface to create PR from main to gh-pages
+   gh pr create --base gh-pages --head main --title "Deploy Site Updates" --body "Site deployment from main branch"
    ```
 
 ## Success Criteria
 
 - [ ] All tests pass with no failures (`./test/test_runner.sh`)
 - [ ] Jekyll builds successfully (`docker-compose exec jekyll jekyll build`)
-- [ ] All changed code has proper documentation
-- [ ] CHANGELOG.md updated with new version entry
-- [ ] `lib/jekyll-theme-zer0/version.rb` updated to new version
-- [ ] Gemspec validates correctly (`bundle exec gem build`)
+- [ ] All changed content has proper documentation
+- [ ] CHANGELOG.md updated with new entry
+- [ ] Site builds correctly to `_site/` directory
 - [ ] Git commit follows semantic commit format
-- [ ] Git tag created: `v<version>`
-- [ ] Gem published to RubyGems (optional)
-- [ ] GitHub release created (optional)
+- [ ] Changes pushed to main branch
+- [ ] Pull request created to gh-pages branch
+- [ ] Site deployed to GitHub Pages (optional, via PR merge)
 
 ## Output Format
 
@@ -237,67 +229,72 @@ After completing all steps, provide a summary:
 ```markdown
 ## Release Summary
 
-**Version**: X.Y.Z (from X.Y.Z)
-**Type**: MAJOR | MINOR | PATCH
 **Date**: YYYY-MM-DD
 
 ### Changes Included
-- [ ] New layout: `layout-name.html`
-- [ ] Component update: `component.html`
-- [ ] Bug fix: description
+- [ ] New quest: `quest-name.md`
+- [ ] New post: `post-title.md`
+- [ ] Content update: description
 - [ ] etc.
 
 ### Test Results
 - Test Suite: PASSED/FAILED
 - Jekyll Build: SUCCESS/FAILED
-- Jekyll Doctor: OK/WARNINGS
+- Site Validation: OK/WARNINGS
 
 ### Files Modified
-- _layouts/new-layout.html
-- _includes/components/new-component.html
-- _sass/custom.scss
-- assets/js/script.js
+- pages/_quests/new-quest.md
+- pages/_posts/new-post.md
+- _data/navigation.yml
+- assets/images/new-image.png
 
 ### Documentation Updated
 - [ ] README.md
 - [ ] CHANGELOG.md
 - [ ] docs/features/new-feature.md
-- [ ] Component inline documentation
+- [ ] Content front matter
 
 ### Commit Information
 - Hash: <commit-hash>
 - Message: <commit-message>
-- Tag: v<version>
+- Branch: main
 
 ### Publication Status
-- RubyGems: https://rubygems.org/gems/jekyll-theme-zer0/versions/<version>
-- GitHub Release: https://github.com/bamr87/zer0-mistakes/releases/tag/v<version>
+- Pull Request: https://github.com/bamr87/it-journey/pull/<pr-number>
+- gh-pages Branch: Updated with built site
+- GitHub Pages: https://bamr87.github.io/it-journey/ (after PR merge)
 ```
 
 ## Rollback Procedure
 
 If issues are discovered after publication:
 
-1. **Revert the commit**:
+1. **Close/Revert the Pull Request**:
+   ```bash
+   # Close the PR without merging
+   gh pr close <pr-number>
+   
+   # Or revert the merge if already merged
+   git revert <merge-commit-hash>
+   git push origin gh-pages
+   ```
+
+2. **Revert the Main Branch Commit** (if needed):
    ```bash
    git revert <commit-hash>
+   git push origin main
    ```
 
-2. **Delete the tag**:
+3. **Clean up gh-pages Branch** (if deployed):
    ```bash
-   git tag -d v<version>
-   git push origin :refs/tags/v<version>
+   git checkout gh-pages
+   git reset --hard <previous-commit>
+   git push origin gh-pages --force
    ```
 
-3. **Yank the gem from RubyGems** (if published):
-   ```bash
-   gem yank jekyll-theme-zer0 -v <version>
-   ```
-
-4. **Create a patch release** with the fix:
-   ```bash
-   ./scripts/release patch
-   ```
+4. **Create a Fix Release**:
+   - Fix the issues on main branch
+   - Follow the workflow again to create a new PR
 
 ---
 
@@ -312,20 +309,26 @@ docker-compose exec jekyll bash      # Shell access
 ./test/test_runner.sh               # Full test suite
 ./test/test_runner.sh --verbose     # Verbose output
 
-# Version analysis
-./scripts/analyze-commits.sh HEAD~5..HEAD
+# Site building
+docker-compose exec jekyll bundle exec jekyll build  # Build site
+bundle exec jekyll build --destination /tmp/_site    # Build to temp dir
 
-# Release workflow
-./scripts/release patch --dry-run    # Preview release
-./scripts/release patch              # Patch release
-./scripts/release minor              # Minor release
-./scripts/release major              # Major release
+# Git workflow
+git add -A                         # Stage all changes
+git commit -m "feat(content): add new quest"  # Semantic commit
+git push origin main               # Push to main
 
-# Build only (no publish)
-./scripts/build
-./scripts/release patch --skip-publish --no-github-release
+# Deployment to gh-pages
+git checkout gh-pages              # Switch to gh-pages branch
+cp -r /tmp/_site/* .               # Copy built site
+git add -A                         # Stage built files
+git commit -m "Deploy site updates" # Commit deployment
+git push origin gh-pages           # Push to gh-pages
+
+# Pull request creation
+gh pr create --base gh-pages --head main --title "Deploy Site Updates" --body "Site deployment from main branch"
 ```
 
 ---
 
-**Note**: Always run tests and validate Jekyll builds before publishing. Use Docker for consistent environment. The `./scripts/release` command handles the complete workflow including changelog generation, version bumping, testing, building, tagging, and publishing.
+**Note**: Always run tests and validate Jekyll builds before publishing. Use Docker for consistent environment. The deployment process involves building the site, committing the built files to the gh-pages branch, and creating a pull request for review before merging to deploy to GitHub Pages.

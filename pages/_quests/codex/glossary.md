@@ -3,6 +3,7 @@ title: "Glossary "
 author: null
 excerpt: null
 description: null
+preview: images/previews/glossary.png
 snippet: null
 categories:
   - notes
@@ -11,6 +12,11 @@ tags:
 meta: null
 draft: true
 lastmod: 2023-11-25T11:31:20.728Z
+permalink: /quests/level-codex/glossary/
+level: "codex"
+difficulty: 📚 Reference
+estimated_time: Variable
+quest_type: reference
 ---
 
 Enterprise

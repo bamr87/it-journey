@@ -15,7 +15,7 @@ tags:
     - music-resources
 date: 2025-07-03T16:39:35.046Z
 draft: false
-lastmod: 2022-01-09T04:32:39.222Z
+lastmod: 2025-07-17T00:00:00.000Z
 slug: music
 layout: journals
 excerpt: "Discover the best sources for free sheet music, from public domain collections to modern digital archives, perfect for musicians and music students"
@@ -39,7 +39,7 @@ section: Creative & Experimental
 
 Libraries are a great place to find free sheet music, especially large city libraries and university libraries. For example, the [Boston Public Library](http://www.bpl.org/research/music/aboutmusic.htm "Home page of Boston Public Library music department") houses one of the finest music libraries in the world, with over 150,000 volumes. If sheet music is in the public domain and in good condition, photocopying is allowed. So ... check your local library.
 
-Indiana University offers a helpful [list of music libraries](http://library.music.indiana.edu/music_resources/musiclib2.html "Indiana University list of music libraries"), sorted by location. You might be able to find a music library near you.
+Indiana University offers a helpful [list of music libraries](https://libraries.indiana.edu/cook "Indiana University Cook Music Library"), sorted by location. You might be able to find a music library near you.
 
 Sites that offer free sheet music
 ---------------------------------
@@ -145,7 +145,7 @@ Since this is a directory site, you'll come across a number of different license
 
 
 
-[Indiana University Sheet Music Collection](http://www.letrs.indiana.edu/s/sheetmusic/ "Indiana University Sheet Music Collection")
+[Indiana University Lilly Library Sheet Music Collection](https://libraries.indiana.edu/lilly-library "Indiana University Lilly Library")
 
 
 
@@ -165,17 +165,17 @@ Since this is a directory site, you'll come across a number of different license
 
 
 
-[Musica Viva](http://www.musicaviva.com/index.html "Musica Viva web site")
+~~[Musica Viva](http://www.musicaviva.com/index.html "Musica Viva web site")~~ *(Site no longer available)*
 
+> **Note:** The Musica Viva website is no longer accessible. For similar free sheet music resources, consider [IMSLP](https://imslp.org/ "International Music Score Library Project") or [Mutopia Project](https://www.mutopiaproject.org/ "Mutopia Project").
 
+**What was there:** This was a large site offering free sheet music for many instruments, focusing on classical and traditional music including Irish, English, Scottish and Norwegian traditional music arrangements.
 
-**What's there:** Large site offering free sheet music for many instruments. For copyright reasons the site has mostly classical and traditional music. Includes a Folkband section that has ensemble arrangements of Irish, English, Scottish and Norwegian traditional music. File formats are PDF, GIF, and ABC notation. A number of the PDF files only are available to site members only, though. (It costs $30 per year to join --- by joining you can make the ad banners go away, too.)
+**Using what you find:** *(Historical note - the following applied when the site was active)* Most of the music was in the public domain according to Norwegian copyright law. The site was hosted in Norway and run by a Norwegian citizen. Norway, like the US, has a "life plus 70" copyright term.
 
-**Using what you find:** Most of the music is in the public domain according to Norwegian copyright law (the site is hosted in Norway and run by a Norwegian citizen living in Norway). Norway, like the US, has a "life plus 70" copyright term. Not all the music on the site is public domain, though ...
+~~The site owner offers his own compositions and arrangements here, too --- these are copyrighted by him. There are a few compositions copyrighted by other people, also. As for the public domain works ... the site owner claims copyright in his *editions* of these works. Digitizing a public domain music score will **not** get you a copyright here in the US, but that's not so in some other countries. Don't say I didn't tell you.~~
 
-The site owner offers his own compositions and arrangements here, too --- these are copyrighted by him. There are a few compositions copyrighted by other people, also. As for the public domain works ... the site owner claims copyright in his *editions* of these works. Digitizing a public domain music score will **not** get you a copyright here in the US, but that's not so in some other countries. Don't say I didn't tell you.
-
-So what can you do? Print the music for your own use. You can distribute it to your friends, your choir, your band, or whomever ... as long as you don't charge for it, distribute paper copies only, and include the name (Musica Viva) and URL (http://www.musicaviva.com) of your source. You can redistribute the ABC files however you wish as long as you don't charge for them and don't modify them.
+~~So what can you do? Print the music for your own use. You can distribute it to your friends, your choir, your band, or whomever ... as long as you don't charge for it, distribute paper copies only, and include the name (Musica Viva) and URL of your source. You can redistribute the ABC files however you wish as long as you don't charge for them and don't modify them.~~
 
 
 

@@ -1,0 +1,348 @@
+{%- comment -%}
+Quest Filters Include
+Provides interactive filtering UI for quest collections.
+Uses JavaScript for client-side filtering with data attributes.
+No parameters required - filters are applied to .quest-card elements.
+{%- endcomment -%}
+
+{%- comment -%} Collect unique values for filter dropdowns {%- endcomment -%}
+{% assign all_quests = site.quests | where_exp: "q", "q.title != nil" %}
+{%- if include.level and include.level != '' -%}
+  {% assign all_quests = all_quests | where: "level", include.level %}
+{%- endif -%}
+
+{%- comment -%} Get unique quest types {%- endcomment -%}
+{% assign quest_types = all_quests | map: "quest_type" | compact | uniq | sort %}
+
+{%- comment -%} Get unique difficulties {%- endcomment -%}
+{% assign difficulties = all_quests | map: "difficulty" | compact | uniq | sort %}
+
+{%- comment -%} Get unique levels (coerce to string to avoid integer/string comparison in sort) {%- endcomment -%}
+{% assign levels_raw = all_quests | map: "level" | compact | uniq %}
+{% assign levels_joined = "" %}
+{% for lval in levels_raw %}
+  {% assign levels_joined = levels_joined | append: lval | append: "," %}
+{% endfor %}
+{% assign levels = levels_joined | split: "," | uniq | sort %}
+
+{%- comment -%} Get unique primary technologies {%- endcomment -%}
+{% assign technologies = all_quests | map: "primary_technology" | compact | uniq | sort %}
+
+{%- comment -%} Get unique skill focuses {%- endcomment -%}
+{% assign skill_focuses = all_quests | map: "skill_focus" | compact | uniq | sort %}
+
+<div class="quest-filters" id="quest-filters">
+  <div class="filters-header">
+    <h3>🔍 Filter Quests</h3>
+    <button type="button" class="btn-reset-filters" onclick="resetAllFilters()">
+      Reset All
+    </button>
+  </div>
+  
+  <div class="filters-grid">
+    {%- comment -%} Quest Type Filter {%- endcomment -%}
+    <div class="filter-group">
+      <label for="filter-quest-type">Quest Type</label>
+      <select id="filter-quest-type" onchange="applyFilters()">
+        <option value="">All Types</option>
+        {% for type in quest_types %}
+        <option value="{{ type }}">
+          {% case type %}
+            {% when 'main_quest' %}🏰 Main Quest
+            {% when 'side_quest' %}⚔️ Side Quest
+            {% when 'bonus_quest' %}🎁 Bonus Quest
+            {% when 'epic_quest' %}👑 Epic Quest
+            {% else %}{{ type | replace: "_", " " | capitalize }}
+          {% endcase %}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {%- comment -%} Difficulty Filter {%- endcomment -%}
+    <div class="filter-group">
+      <label for="filter-difficulty">Difficulty</label>
+      <select id="filter-difficulty" onchange="applyFilters()">
+        <option value="">All Difficulties</option>
+        {% for diff in difficulties %}
+        <option value="{{ diff }}">{{ diff }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {%- comment -%} Level Filter {%- endcomment -%}
+    <div class="filter-group">
+      <label for="filter-level">Level</label>
+      <select id="filter-level" onchange="applyFilters()">
+        <option value="">All Levels</option>
+        {% for level in levels %}
+        <option value="{{ level }}">
+          {{ level }}
+          {% case level %}
+            {% when '0000', '0001', '0010', '0011' %} (🌱 Apprentice)
+            {% when '0100', '0101', '0110', '0111' %} (⚔️ Adventurer)
+            {% when '1000', '1001', '1010', '1011' %} (🔥 Warrior)
+            {% when '1100', '1101', '1110', '1111' %} (👑 Master)
+          {% endcase %}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {%- comment -%} Technology Filter {%- endcomment -%}
+    <div class="filter-group">
+      <label for="filter-technology">Technology</label>
+      <select id="filter-technology" onchange="applyFilters()">
+        <option value="">All Technologies</option>
+        {% for tech in technologies %}
+        <option value="{{ tech }}">{{ tech | capitalize }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {%- comment -%} Skill Focus Filter {%- endcomment -%}
+    <div class="filter-group">
+      <label for="filter-skill-focus">Skill Focus</label>
+      <select id="filter-skill-focus" onchange="applyFilters()">
+        <option value="">All Skills</option>
+        {% for skill in skill_focuses %}
+        <option value="{{ skill }}">{{ skill | replace: "-", " " | capitalize }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {%- comment -%} Search Filter {%- endcomment -%}
+    <div class="filter-group filter-search">
+      <label for="filter-search">Search</label>
+      <input type="text" id="filter-search" placeholder="Search quests..." oninput="applyFilters()">
+    </div>
+  </div>
+
+  <div class="filter-results" id="filter-results">
+    <span id="results-count">Showing all quests</span>
+  </div>
+</div>
+
+<style>
+.quest-filters {
+  background: var(--bs-body-bg, #fff);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--bs-border-color, #dee2e6);
+}
+
+.filters-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--bs-heading-color, inherit);
+}
+
+.btn-reset-filters {
+  background: transparent;
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--bs-secondary-color, #6c757d);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset-filters:hover {
+  background: var(--bs-danger, #dc3545);
+  color: white;
+  border-color: var(--bs-danger, #dc3545);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bs-secondary-color, #6c757d);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 0.375rem;
+  background: var(--bs-body-bg, #fff);
+  color: var(--bs-body-color, #212529);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: var(--bs-primary, #0d6efd);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.filter-search {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-search {
+    grid-column: span 1;
+  }
+}
+
+.filter-results {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--bs-border-color, #dee2e6);
+  font-size: 0.875rem;
+  color: var(--bs-secondary-color, #6c757d);
+}
+
+#results-count {
+  font-weight: 500;
+}
+
+/* Hide filtered-out quest cards */
+.quest-card.filtered-out {
+  display: none !important;
+}
+
+/* Tier sections that are empty after filtering */
+.quest-tier.filtered-empty {
+  display: none !important;
+}
+</style>
+
+<script>
+function applyFilters() {
+  const questType = document.getElementById('filter-quest-type').value.toLowerCase();
+  const difficulty = document.getElementById('filter-difficulty').value.toLowerCase();
+  const level = document.getElementById('filter-level').value.toLowerCase();
+  const technology = document.getElementById('filter-technology').value.toLowerCase();
+  const skillFocus = document.getElementById('filter-skill-focus').value.toLowerCase();
+  const searchTerm = document.getElementById('filter-search').value.toLowerCase().trim();
+
+  const questCards = document.querySelectorAll('.quest-card');
+  let visibleCount = 0;
+
+  questCards.forEach(card => {
+    const cardType = (card.dataset.questType || '').toLowerCase();
+    const cardDifficulty = (card.dataset.difficulty || '').toLowerCase();
+    const cardLevel = (card.dataset.level || '').toLowerCase();
+    const cardTechnology = (card.dataset.technology || '').toLowerCase();
+    const cardSkillFocus = (card.dataset.skillFocus || '').toLowerCase();
+    const cardTitle = (card.dataset.title || '').toLowerCase();
+    const cardDescription = (card.dataset.description || '').toLowerCase();
+
+    let show = true;
+
+    // Apply quest type filter
+    if (questType && !cardType.includes(questType)) {
+      show = false;
+    }
+
+    // Apply difficulty filter
+    if (show && difficulty && !cardDifficulty.includes(difficulty)) {
+      show = false;
+    }
+
+    // Apply level filter
+    if (show && level && cardLevel !== level) {
+      show = false;
+    }
+
+    // Apply technology filter
+    if (show && technology && !cardTechnology.includes(technology)) {
+      show = false;
+    }
+
+    // Apply skill focus filter
+    if (show && skillFocus && !cardSkillFocus.includes(skillFocus)) {
+      show = false;
+    }
+
+    // Apply search filter
+    if (show && searchTerm) {
+      const matchesSearch = cardTitle.includes(searchTerm) || 
+                           cardDescription.includes(searchTerm) ||
+                           cardTechnology.includes(searchTerm);
+      if (!matchesSearch) {
+        show = false;
+      }
+    }
+
+    if (show) {
+      card.classList.remove('filtered-out');
+      visibleCount++;
+    } else {
+      card.classList.add('filtered-out');
+    }
+  });
+
+  // Update tier section visibility
+  updateTierVisibility();
+
+  // Update results count
+  const totalCount = questCards.length;
+  const resultsText = document.getElementById('results-count');
+  if (visibleCount === totalCount) {
+    resultsText.textContent = `Showing all ${totalCount} quests`;
+  } else {
+    resultsText.textContent = `Showing ${visibleCount} of ${totalCount} quests`;
+  }
+}
+
+function updateTierVisibility() {
+  const tiers = document.querySelectorAll('.quest-tier');
+  tiers.forEach(tier => {
+    const visibleCards = tier.querySelectorAll('.quest-card:not(.filtered-out)');
+    if (visibleCards.length === 0) {
+      tier.classList.add('filtered-empty');
+    } else {
+      tier.classList.remove('filtered-empty');
+    }
+  });
+}
+
+function resetAllFilters() {
+  document.getElementById('filter-quest-type').value = '';
+  document.getElementById('filter-difficulty').value = '';
+  document.getElementById('filter-level').value = '';
+  document.getElementById('filter-technology').value = '';
+  document.getElementById('filter-skill-focus').value = '';
+  document.getElementById('filter-search').value = '';
+  
+  applyFilters();
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  applyFilters();
+});
+</script>

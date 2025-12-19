@@ -2,7 +2,7 @@
 title: "Fixing GitHub Actions: Bash 3.2 Compatibility for AI Evolution Engine"
 description: Resolving command not found errors in GitHub Actions by implementing bash 3.2 compatibility in the AI Evolution Engine health analysis scripts
 date: 2025-07-09T22:30:00.000Z
-preview: "How to fix 'validate_argument: command not found' errors in GitHub Actions by adding bash version compatibility to evolution scripts"
+preview: /images/previews/fixing-github-actions-bash-compatibility.png
 tags:
     - ai-assisted-development
     - github-actions
@@ -26,7 +26,7 @@ keywords:
         - ci cd debugging
         - script compatibility
         - devops troubleshooting
-lastmod: 2025-07-10T04:45:40.362Z
+lastmod: 2025-12-01T04:50:56.567Z
 permalink: /fixing-github-actions-bash-compatibility-ai-evolution-engine/
 attachments: ""
 comments: true

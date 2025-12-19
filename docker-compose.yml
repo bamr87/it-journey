@@ -34,6 +34,13 @@ services:
     volumes:
       - ./:/app
       - ./.git:/app/.git
+  quest-network-validator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python3 /app/scripts/validate-quest-network.py
+    volumes:
+      - ./:/app
     working_dir: /app
     environment:
       PYTHONPATH: /app

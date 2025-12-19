@@ -1,0 +1,266 @@
+---
+layout: default
+---
+{%- comment -%}
+Quest Collection Layout
+Displays quests from the site.quests collection using frontmatter data.
+Supports filtering by level (pass level parameter to filter to specific level).
+{%- endcomment -%}
+
+<div class="quest-collection">
+  <header class="quest-collection-header">
+    <h1>{{ page.title | default: "Quest Collection" }}</h1>
+    {% if page.description %}
+    <p class="lead">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  {%- comment -%} Quest Statistics {%- endcomment -%}
+  {% include quest-stats.html level=page.level %}
+
+  {%- comment -%} Quest Filters {%- endcomment -%}
+  {% include quest-filters.html level=page.level %}
+
+  {%- comment -%} 
+  Determine which quests to display:
+  - If page.level is set, filter to that level only
+  - Otherwise show all quests
+  {%- endcomment -%}
+  
+  {% if page.level %}
+    {% assign filtered_quests = site.quests | where: "level", page.level %}
+  {% else %}
+    {% assign filtered_quests = site.quests %}
+  {% endif %}
+
+  {%- comment -%} Group quests by level tier {%- endcomment -%}
+  {% assign level_0000 = filtered_quests | where: "level", "0000" %}
+  {% assign level_0001 = filtered_quests | where: "level", "0001" %}
+  {% assign level_0010 = filtered_quests | where: "level", "0010" %}
+  {% assign level_0011 = filtered_quests | where: "level", "0011" %}
+  {% assign level_0100 = filtered_quests | where: "level", "0100" %}
+  {% assign level_0101 = filtered_quests | where: "level", "0101" %}
+  {% assign level_0110 = filtered_quests | where: "level", "0110" %}
+  {% assign level_0111 = filtered_quests | where: "level", "0111" %}
+  {% assign level_1000 = filtered_quests | where: "level", "1000" %}
+  {% assign level_1001 = filtered_quests | where: "level", "1001" %}
+  {% assign level_1010 = filtered_quests | where: "level", "1010" %}
+  {% assign level_1011 = filtered_quests | where: "level", "1011" %}
+  {% assign level_1100 = filtered_quests | where: "level", "1100" %}
+  {% assign level_1101 = filtered_quests | where: "level", "1101" %}
+  {% assign level_1110 = filtered_quests | where: "level", "1110" %}
+  {% assign level_1111 = filtered_quests | where: "level", "1111" %}
+
+  {%- comment -%} Apprentice Tier (0000-0011) {%- endcomment -%}
+  {% assign apprentice_quests = level_0000 | concat: level_0001 | concat: level_0010 | concat: level_0011 %}
+  {% if apprentice_quests.size > 0 and page.level == nil %}
+  <section class="quest-tier quest-tier-apprentice" data-tier="apprentice">
+    <h2 class="tier-header">
+      <span class="tier-icon">🌱</span>
+      <span class="tier-name">Apprentice Tier</span>
+      <span class="tier-levels">(Levels 0000-0011)</span>
+      <span class="tier-count">{{ apprentice_quests.size }} quests</span>
+    </h2>
+    <p class="tier-description">Foundation skills for beginning your IT journey. Start here if you're new to technology.</p>
+    <div class="quest-grid" data-filter-group="apprentice">
+      {% for quest in apprentice_quests %}
+        {% include quest-card.html quest=quest %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {%- comment -%} Adventurer Tier (0100-0111) {%- endcomment -%}
+  {% assign adventurer_quests = level_0100 | concat: level_0101 | concat: level_0110 | concat: level_0111 %}
+  {% if adventurer_quests.size > 0 and page.level == nil %}
+  <section class="quest-tier quest-tier-adventurer" data-tier="adventurer">
+    <h2 class="tier-header">
+      <span class="tier-icon">⚔️</span>
+      <span class="tier-name">Adventurer Tier</span>
+      <span class="tier-levels">(Levels 0100-0111)</span>
+      <span class="tier-count">{{ adventurer_quests.size }} quests</span>
+    </h2>
+    <p class="tier-description">Applied skills for building real-world projects. You've mastered the basics and are ready for adventure.</p>
+    <div class="quest-grid" data-filter-group="adventurer">
+      {% for quest in adventurer_quests %}
+        {% include quest-card.html quest=quest %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {%- comment -%} Warrior Tier (1000-1011) {%- endcomment -%}
+  {% assign warrior_quests = level_1000 | concat: level_1001 | concat: level_1010 | concat: level_1011 %}
+  {% if warrior_quests.size > 0 and page.level == nil %}
+  <section class="quest-tier quest-tier-warrior" data-tier="warrior">
+    <h2 class="tier-header">
+      <span class="tier-icon">🔥</span>
+      <span class="tier-name">Warrior Tier</span>
+      <span class="tier-levels">(Levels 1000-1011)</span>
+      <span class="tier-count">{{ warrior_quests.size }} quests</span>
+    </h2>
+    <p class="tier-description">Professional-level skills for career advancement. Battle-tested techniques for production systems.</p>
+    <div class="quest-grid" data-filter-group="warrior">
+      {% for quest in warrior_quests %}
+        {% include quest-card.html quest=quest %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {%- comment -%} Master Tier (1100-1111) {%- endcomment -%}
+  {% assign master_quests = level_1100 | concat: level_1101 | concat: level_1110 | concat: level_1111 %}
+  {% if master_quests.size > 0 and page.level == nil %}
+  <section class="quest-tier quest-tier-master" data-tier="master">
+    <h2 class="tier-header">
+      <span class="tier-icon">👑</span>
+      <span class="tier-name">Master Tier</span>
+      <span class="tier-levels">(Levels 1100-1111)</span>
+      <span class="tier-count">{{ master_quests.size }} quests</span>
+    </h2>
+    <p class="tier-description">Advanced expertise and leadership skills. Shape the future of technology.</p>
+    <div class="quest-grid" data-filter-group="master">
+      {% for quest in master_quests %}
+        {% include quest-card.html quest=quest %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {%- comment -%} Single Level Display (when page.level is set) {%- endcomment -%}
+  {% if page.level %}
+  <section class="quest-tier quest-tier-single" data-level="{{ page.level }}">
+    <div class="quest-grid">
+      {% for quest in filtered_quests %}
+        {% include quest-card.html quest=quest %}
+      {% endfor %}
+    </div>
+    {% if filtered_quests.size == 0 %}
+    <div class="empty-state">
+      <p>No quests found for level {{ page.level }}.</p>
+      <a href="{{ '/quests/' | relative_url }}" class="btn">View All Quests</a>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {%- comment -%} Page Content {%- endcomment -%}
+  {% if content != "" %}
+  <section class="quest-collection-content">
+    {{ content }}
+  </section>
+  {% endif %}
+</div>
+
+<style>
+/* Quest Collection Styles */
+.quest-collection {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.quest-collection-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quest-collection-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.quest-collection-header .lead {
+  font-size: 1.25rem;
+  color: var(--text-muted, #6c757d);
+}
+
+/* Quest Tier Sections */
+.quest-tier {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--bg-secondary, #f8f9fa);
+}
+
+.tier-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.tier-icon {
+  font-size: 1.5rem;
+}
+
+.tier-levels {
+  font-size: 0.875rem;
+  color: var(--text-muted, #6c757d);
+  font-weight: normal;
+}
+
+.tier-count {
+  margin-left: auto;
+  font-size: 0.875rem;
+  background: var(--bg-primary, #007bff);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: normal;
+}
+
+.tier-description {
+  color: var(--text-muted, #6c757d);
+  margin-bottom: 1.5rem;
+}
+
+/* Tier Colors */
+.quest-tier-apprentice { border-left: 4px solid #28a745; }
+.quest-tier-adventurer { border-left: 4px solid #fd7e14; }
+.quest-tier-warrior { border-left: 4px solid #dc3545; }
+.quest-tier-master { border-left: 4px solid #6f42c1; }
+
+/* Quest Grid */
+.quest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted, #6c757d);
+}
+
+.empty-state .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--bg-primary, #007bff);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quest-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tier-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tier-count {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+</style>

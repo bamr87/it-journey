@@ -11,6 +11,7 @@ quest_type: "{{fm.quest_type}}"
 skill_focus: "{{fm.skill_focus}}"
 learning_style: "{{fm.learning_style}}"
 quest_series: "{{fm.quest_series}}"
+fmContentType: quest
 # Advanced frontmatter fields (see `.github/instructions/quest.instructions.md` for structure):
 # - quest_line
 # - quest_arc

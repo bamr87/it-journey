@@ -73,35 +73,73 @@ class LinkHealthGuardian:
                 self.log('INFO', 'Installing lychee with Homebrew (macOS)')
                 subprocess.run(['brew', 'install', 'lychee'], check=True)
             elif platform.startswith('linux'):
-                # Try apt first, then fall back to tarball
-                if shutil.which('apt-get'):
+                # Try cargo install as primary method (most reliable)
+                if shutil.which('cargo'):
+                    self.log('INFO', 'Installing lychee with cargo')
                     try:
-                        subprocess.run(['sudo', 'apt-get', 'update'], check=True)
-                        subprocess.run(['sudo', 'apt-get', 'install', '-y', 'lychee'], check=True)
-                    except subprocess.CalledProcessError:
-                        # Fall back to prebuilt tarball
-                        self.log('INFO', 'apt-get install failed; falling back to tarball install')
-                        tarball_url = 'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz'
-                        subprocess.run(['curl', '-sSfL', tarball_url, '-o', '/tmp/lychee.tar.gz'], check=True)
+                        subprocess.run(['cargo', 'install', 'lychee', '--locked'], check=True, timeout=300)
+                        return True
+                    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                        self.log('WARNING', 'Cargo install failed or timed out, trying alternative methods')
+                
+                # Try downloading pre-built binary with retries and fallback versions
+                self.log('INFO', 'Downloading lychee pre-built binary')
+                
+                # Try multiple versions for resilience
+                versions_to_try = [
+                    'latest',
+                    'v0.16.1',  # Known stable version
+                    'v0.15.1'   # Fallback
+                ]
+                
+                for version in versions_to_try:
+                    try:
+                        if version == 'latest':
+                            tarball_url = 'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz'
+                        else:
+                            tarball_url = f'https://github.com/lycheeverse/lychee/releases/download/{version}/lychee-x86_64-unknown-linux-gnu.tar.gz'
+                        
+                        self.log('INFO', f'Attempting download from {version}')
+                        
+                        # Download with retries
+                        max_retries = 3
+                        for attempt in range(max_retries):
+                            try:
+                                subprocess.run(['curl', '-sSfL', '--retry', '3', '--retry-delay', '2', 
+                                              tarball_url, '-o', '/tmp/lychee.tar.gz'], 
+                                              check=True, timeout=60)
+                                break
+                            except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as e:
+                                if attempt == max_retries - 1:
+                                    raise
+                                self.log('WARNING', f'Download attempt {attempt + 1} failed, retrying...')
+                                time.sleep(2)
+                        
                         subprocess.run(['tar', '-xzf', '/tmp/lychee.tar.gz', '-C', '/tmp'], check=True)
-                        subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
-                        subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
-                else:
-                    # If apt-get not available, try to download binary directly
-                    self.log('INFO', 'Downloading lychee tarball (fallback)')
-                    tarball_url = 'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz'
-                    subprocess.run(['curl', '-sSfL', tarball_url, '-o', '/tmp/lychee.tar.gz'], check=True)
-                    subprocess.run(['tar', '-xzf', '/tmp/lychee.tar.gz', '-C', '/tmp'], check=True)
-                    # Copy to local bin; prefer sudo when available
-                    if shutil.which('sudo'):
-                        subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
-                        subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
-                    else:
-                        try:
-                            subprocess.run(['mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
-                            subprocess.run(['chmod', '+x', '/usr/local/bin/lychee'], check=True)
-                        except Exception:
-                            raise
+                        
+                        # Install to /usr/local/bin or ~/.local/bin
+                        if shutil.which('sudo'):
+                            subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
+                            subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
+                        else:
+                            # Fall back to user-local install
+                            local_bin = os.path.expanduser('~/.local/bin')
+                            os.makedirs(local_bin, exist_ok=True)
+                            subprocess.run(['mv', '/tmp/lychee', local_bin], check=True)
+                            subprocess.run(['chmod', '+x', f'{local_bin}/lychee'], check=True)
+                            # Add to PATH if not already there
+                            if local_bin not in os.environ.get('PATH', ''):
+                                os.environ['PATH'] = f"{local_bin}:{os.environ.get('PATH', '')}"
+                        
+                        self.log('SUCCESS', f'Successfully installed lychee from {version}')
+                        return True
+                    except Exception as e:
+                        self.log('WARNING', f'Failed to install from {version}: {e}')
+                        continue
+                
+                # If all else fails, log error and return False
+                self.log('ERROR', 'All installation methods failed')
+                return False
             
             # Verify installation
             result = subprocess.run(['lychee', '--version'], 
@@ -111,6 +149,9 @@ class LinkHealthGuardian:
             
         except subprocess.CalledProcessError as e:
             self.log('ERROR', f'Failed to install Lychee: {e}')
+            return False
+        except Exception as e:
+            self.log('ERROR', f'Unexpected error during installation: {e}')
             return False
     
     def determine_scope_files(self, scope):
@@ -159,7 +200,13 @@ class LinkHealthGuardian:
             '--user-agent', 'IT-Journey-LinkChecker/2.0 (GitHub Actions)',
             '--verbose',
             '--no-progress',
-            '--accept', '200,204,206,300,301,302,303,307,308'  # Accept common redirect codes
+            '--accept', '200,204,206,300,301,302,303,307,308',  # Accept common redirect codes
+            '--base', 'https://it-journey.dev',  # Base URL for resolving root-relative links
+            '--exclude', 'https://url/',  # Exclude placeholder URLs
+            '--exclude', 'https://github.com/.*/blob/.*',  # Exclude GitHub file links (rate limited)
+            '--exclude', 'https://reddit.com/submit.*',  # Exclude Reddit share buttons (rate limited)
+            '--exclude-path', '_site/preview/',  # Exclude preview builds
+            '--exclude-path', 'work/',  # Exclude work directory
         ]
         
         # Add scope-specific options
