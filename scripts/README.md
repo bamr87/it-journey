@@ -313,6 +313,69 @@ This script demonstrates advanced automation concepts:
 - [Azure Jekyll Deploy README](azure-jekyll-deploy-README.md) - Complete usage guide
 - [Azure Jekyll Deploy Testing](azure-jekyll-deploy-TESTING.md) - Testing procedures
 
+## 🤖 PRD Machine
+
+The PRD Machine is an autonomous agent that writes, maintains, and evolves perfect PRDs (Product Requirements Documents) faster and more accurately than any human PM.
+
+### 🚀 Features
+
+- **Single Command Sync**: `prd-machine sync` instantly produces or updates a perfect PRD.md
+- **Zero Manual Writing**: Automatic ingestion of git commits, markdown files, and feature definitions
+- **Conflict Detection**: Real-time detection of conflicting requirements with proposed resolutions
+- **Auto-Generated Sections**: MVP, UX, API, NFR, EDGE, OOS, ROAD, RISK, DONE sections
+- **Health Monitoring**: Track PRD freshness and alert when stale (> 6 hours)
+
+### 📁 File Structure
+
+```
+scripts/
+└── prd-machine/
+    ├── prd-machine           # Bash wrapper script
+    ├── prd-machine.py        # Main Python implementation
+    └── README.md             # Detailed documentation
+
+.github/workflows/
+└── prd-sync.yml              # Automated PRD synchronization
+
+PRD.md                        # Generated PRD document
+```
+
+### 🔧 Usage
+
+```bash
+# Generate or update PRD.md
+./scripts/prd-machine/prd-machine sync
+
+# Check PRD health status
+./scripts/prd-machine/prd-machine status
+
+# Show detected conflicts
+./scripts/prd-machine/prd-machine conflicts
+
+# Generate with specific history window
+./scripts/prd-machine/prd-machine sync --days 7
+```
+
+### 📊 Signal Sources
+
+| Source | Type | Description |
+|--------|------|-------------|
+| Git Commits | Active | Subject, body, author, date |
+| Markdown Files | Active | Quests, posts, docs with frontmatter |
+| Features YAML | Active | Feature definitions and status |
+
+### 🔄 CI/CD Integration
+
+The PRD Machine runs automatically via GitHub Actions:
+- **Scheduled**: Every 6 hours to maintain freshness
+- **On Push**: When relevant content changes (quests, posts, features)
+- **Manual**: Via workflow dispatch for on-demand sync
+
+### 🔗 Related Documentation
+
+- [PRD Machine README](prd-machine/README.md) - Complete usage guide
+- [PRD.md](../PRD.md) - Generated product requirements document
+
 ## 🤝 Contributing
 
 When adding new scripts:

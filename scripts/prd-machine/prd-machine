@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# PRD MACHINE - CLI Wrapper Script
+# The Self-Writing, Self-Evolving Product Reality Distillery
+#
+# Usage: prd-machine sync | status | conflicts
+#
+
+set -e
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Check if Python 3 is available
+if ! command -v python3 &> /dev/null; then
+    echo "Error: Python 3 is required but not installed."
+    echo "Please install Python 3.8 or higher."
+    exit 1
+fi
+
+# Run the PRD Machine
+exec python3 "${SCRIPT_DIR}/prd-machine.py" "$@"

@@ -1,0 +1,239 @@
+name: 🤖 PRD Machine Sync
+
+# PRD MACHINE - Autonomous PRD Generation and Maintenance
+# Syncs PRD.md every 6 hours or on relevant changes
+
+on:
+  # Scheduled sync to maintain PRD freshness (< 6 hours)
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  
+  # Sync on changes that affect requirements
+  push:
+    branches: [main, master]
+    paths:
+      - 'pages/_quests/**'
+      - 'pages/_posts/**'
+      - 'features/**'
+      - 'docs/**'
+      - 'README.md'
+      - '.github/workflows/prd-sync.yml'
+  
+  # Manual trigger for on-demand sync
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Days of git history to analyze'
+        required: false
+        default: '30'
+        type: string
+      dry_run:
+        description: 'Dry run (do not commit changes)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-prd:
+    name: 🔄 Sync PRD.md
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🏰 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for commit analysis
+    
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: 📊 Pre-Sync Status
+      run: |
+        echo "## 🤖 PRD Machine Sync" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -f "PRD.md" ]; then
+          # Use portable stat command - try GNU stat first, then BSD stat
+          PRD_MODIFIED=$(stat -c %Y PRD.md 2>/dev/null || stat -f %m PRD.md 2>/dev/null || echo "0")
+          if [ "$PRD_MODIFIED" = "0" ]; then
+            echo "### Pre-Sync Status" >> $GITHUB_STEP_SUMMARY
+            echo "- **PRD exists**: ✅" >> $GITHUB_STEP_SUMMARY
+            echo "- **Age**: Unknown (stat not available)" >> $GITHUB_STEP_SUMMARY
+          else
+            CURRENT_TIME=$(date +%s)
+            AGE_HOURS=$(( (CURRENT_TIME - PRD_MODIFIED) / 3600 ))
+            
+            echo "### Pre-Sync Status" >> $GITHUB_STEP_SUMMARY
+            echo "- **PRD exists**: ✅" >> $GITHUB_STEP_SUMMARY
+            echo "- **Age**: ${AGE_HOURS} hours" >> $GITHUB_STEP_SUMMARY
+            
+            if [ $AGE_HOURS -lt 6 ]; then
+              echo "- **Health**: 🟢 Healthy" >> $GITHUB_STEP_SUMMARY
+            elif [ $AGE_HOURS -lt 24 ]; then
+              echo "- **Health**: 🟡 Stale" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "- **Health**: 🔴 Outdated" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+        else
+          echo "### Pre-Sync Status" >> $GITHUB_STEP_SUMMARY
+          echo "- **PRD exists**: ❌ (will be created)" >> $GITHUB_STEP_SUMMARY
+        fi
+        echo "" >> $GITHUB_STEP_SUMMARY
+    
+    - name: 🔄 Run PRD Machine Sync
+      id: sync
+      run: |
+        DAYS="${{ github.event.inputs.days || '30' }}"
+        
+        echo "### Sync Output" >> $GITHUB_STEP_SUMMARY
+        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        
+        # Run the sync
+        python3 scripts/prd-machine/prd-machine.py sync --days "$DAYS" 2>&1 | tee sync-output.log
+        
+        cat sync-output.log >> $GITHUB_STEP_SUMMARY
+        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        
+        # Check if PRD changed
+        if git diff --quiet PRD.md 2>/dev/null; then
+          echo "PRD_CHANGED=false" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "ℹ️ No changes detected in PRD.md" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "PRD_CHANGED=true" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ PRD.md updated with new signals" >> $GITHUB_STEP_SUMMARY
+          
+          # Show diff summary
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Changes" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`diff" >> $GITHUB_STEP_SUMMARY
+          git diff PRD.md | head -50 >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        fi
+    
+    - name: 📝 Commit Changes
+      if: steps.sync.outputs.PRD_CHANGED == 'true' && github.event.inputs.dry_run != 'true'
+      run: |
+        git config user.name "PRD Machine"
+        git config user.email "prd-machine[bot]@users.noreply.github.com"
+        
+        git add PRD.md
+        
+        COMMIT_MSG="chore(prd): auto-sync PRD.md
+
+Automated PRD synchronization by PRD Machine.
+- Ingested signals from git commits, markdown files, and features
+- Updated all sections to reflect current repository state
+
+Triggered by: ${{ github.event_name }}
+Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        
+        git commit -m "$COMMIT_MSG"
+        git push
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Commit" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Changes committed and pushed to repository" >> $GITHUB_STEP_SUMMARY
+    
+    - name: 📊 Post-Sync Status
+      run: |
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Post-Sync Status" >> $GITHUB_STEP_SUMMARY
+        
+        python3 scripts/prd-machine/prd-machine.py status 2>&1 | while read line; do
+          # Extract status information
+          if [[ "$line" == *"Health:"* ]]; then
+            echo "- $line" | sed 's/\x1b\[[0-9;]*m//g' >> $GITHUB_STEP_SUMMARY
+          fi
+        done
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "---" >> $GITHUB_STEP_SUMMARY
+        echo "*PRD Machine - The Self-Writing, Self-Evolving Product Reality Distillery* 🚀" >> $GITHUB_STEP_SUMMARY
+    
+    - name: 📤 Upload Sync Logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: prd-sync-logs
+        path: sync-output.log
+        retention-days: 7
+
+  check-conflicts:
+    name: 🔍 Check Conflicts
+    runs-on: ubuntu-latest
+    needs: sync-prd
+    if: always()
+    
+    steps:
+    - name: 🏰 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: 🔍 Detect Conflicts
+      id: conflicts
+      run: |
+        echo "## 🔍 Conflict Detection" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        python3 scripts/prd-machine/prd-machine.py conflicts 2>&1 | tee conflicts-output.log
+        
+        if grep -q "Found.*conflicts" conflicts-output.log; then
+          echo "CONFLICTS_FOUND=true" >> $GITHUB_OUTPUT
+          echo "⚠️ **Conflicts detected** - review required" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          cat conflicts-output.log >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "CONFLICTS_FOUND=false" >> $GITHUB_OUTPUT
+          echo "✅ No conflicts detected" >> $GITHUB_STEP_SUMMARY
+        fi
+    
+    - name: ⚠️ Create Issue for Conflicts
+      if: steps.conflicts.outputs.CONFLICTS_FOUND == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const conflicts = fs.readFileSync('conflicts-output.log', 'utf8');
+          
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: '⚠️ PRD Machine: Requirement Conflicts Detected',
+            body: `## Conflict Detection Report
+          
+          The PRD Machine has detected potential conflicts in requirements that need human review.
+          
+          ### Detected Conflicts
+          
+          \`\`\`
+          ${conflicts}
+          \`\`\`
+          
+          ### Next Steps
+          
+          1. Review the conflicts listed above
+          2. Determine the correct resolution
+          3. Update the relevant source files
+          4. Run \`prd-machine sync\` to regenerate the PRD
+          
+          ---
+          *Generated by PRD Machine - [Workflow Run](${context.payload.repository.html_url}/actions/runs/${context.runId})*`,
+            labels: ['prd-machine', 'requires-review', 'automated']
+          });

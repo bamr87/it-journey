@@ -12,6 +12,7 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
+lastmod: 2025-11-29T06:48:54.502Z
 lastmod: 2025-12-01T06:43:04.446Z
 mermaid: true
 draft: false
@@ -638,6 +639,10 @@ Cross-level tools, version control mastery, and professional development workflo
 - [ ] API Testing Tools - *Postman, Insomnia, curl*
 - [ ] Database Tools - *DBeaver, pgAdmin, MongoDB Compass*
 
+- [GitHub Code Search: Your Secret Weapon for Code Navigation](2025-11-14-github-hidden-gem-code-search-quest.md) - *Your Secret Weapon for Code Navigation*
+- [Azure Ascension: Deploying the Crystal Citadel to the Cloud Kingdom](2025-11-17-azure-ascension-jekyll-deployment-quest.md) - *Master Azure Static Web Apps deployment*
+- [Terminal Artificer: Forging the Glass Interface](lvl_0010/2025-11-19-terminal-artificer-frontend-building.md) - *Craft beautiful, interactive frontends for your shell scripts*
+- [The PRD Codex: Mastering Product Reality Distillation](2025-11-29-prd-codex-mastering-product-reality-distillation.md) - *Transform repository signals into living Product Requirements Documents*
 📁 **[Tools Collection Guide](tools/README.md)** - Complete tools quest listing
 
 ---

@@ -27,6 +27,7 @@ Welcome to the IT-Journey developer documentation. This directory contains compr
 
 ### Scripts & Tools
 - **[Scripts Guide](scripts/SCRIPTS_GUIDE.md)** - Automation scripts overview and usage
+- **[PRD Machine](scripts/PRD_MACHINE.md)** - Autonomous PRD generation and maintenance
 - **[Cleanup Summary](scripts/CLEANUP_SUMMARY.md)** - Script consolidation results
 - **[Consolidation Plan](scripts/CONSOLIDATION_PLAN.md)** - Script organization strategy
 

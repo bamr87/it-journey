@@ -8,6 +8,8 @@ services:
     ports:
       - "4002:4002"
     working_dir: /app
+    env_file:
+      - .env
     environment:
       JEKYLL_ENV: development
 
@@ -24,6 +26,14 @@ services:
       PYTHONUNBUFFERED: 1
       PATH: "/opt/venv/bin:$PATH"
 
+  prd-machine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./scripts/prd-machine/prd-machine --help
+    volumes:
+      - ./:/app
+      - ./.git:/app/.git
   quest-network-validator:
     build:
       context: .
