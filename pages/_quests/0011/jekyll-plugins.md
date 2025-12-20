@@ -1,38 +1,41 @@
 ---
-title: "Jekyll Plugins: Extending Site Functionality: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Jekyll Plugins: Essential Extensions for Powerful Static Sites"
+description: "Master Jekyll plugins to extend your site's functionality. Learn to install, configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination for GitHub Pages compatibility."
 date: 2025-11-30T05:00:15.000Z
 preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
-level: "0011"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0011"
+difficulty: "🟡 Medium"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0011 (3) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "jekyll"
+quest_type: "main_quest"
+skill_focus: "backend"
+learning_style: "hands-on"
+quest_series: "Jekyll Mastery"
+sub_title: "Level 0011 (3) Quest: Main Quest - Jekyll Plugins"
+excerpt: "Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps, and custom functionality"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0011
-    - [primary-technology]
+    - jekyll
+    - ruby
     - main_quest
-    - [skill-focus]
+    - backend
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Backend
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - jekyll plugins
+        - jekyll seo tag
+        - jekyll sitemap
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - jekyll pagination
+        - jekyll feed
+        - github pages plugins
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:00:15.000Z

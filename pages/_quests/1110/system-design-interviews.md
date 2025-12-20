@@ -1,6 +1,6 @@
 ---
-title: "System Design Interview Mastery: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "System Design Interview Mastery: Ace Technical Interviews"
+description: "Prepare for system design interviews with frameworks for designing scalable systems. Practice URL shorteners, social networks, and distributed systems problems."
 date: 2025-12-01T04:22:39.000Z
 preview: images/previews/system-design-interview-mastery-descriptive-subtit.png
 level: 1110
@@ -10,29 +10,29 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "architecture"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1110 (14) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "System Design Mastery"
+sub_title: "Level 1110 (14) Quest: Main Quest - Interviews"
+excerpt: "Master system design interview techniques and frameworks for technical interviews"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1110
-  - - primary-technology
+  - python
   - main_quest
-  - - skill-focus
+  - architecture
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Architecture
+  - Epic
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - system-design-interview
+    - technical-interviews
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - scalability-design
+    - distributed-systems
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

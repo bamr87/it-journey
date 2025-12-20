@@ -1,6 +1,6 @@
 ---
-title: "Career Advancement Strategies: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Career Advancement Strategies: Growing from Engineer to Leader"
+description: "Navigate career advancement in tech from IC to leadership. Learn promotion strategies, personal branding, networking, and building executive presence."
 date: 2025-12-01T04:23:09.000Z
 preview: images/previews/career-advancement-strategies-descriptive-subtitle.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "general"
 quest_type: main_quest
 skill_focus: "leadership"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Career"
+excerpt: "Navigate career advancement from individual contributor to technical leadership"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - career
   - main_quest
-  - - skill-focus
+  - leadership
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Leadership
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - career-advancement
+    - tech-leadership
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - personal-branding
+    - executive-presence
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

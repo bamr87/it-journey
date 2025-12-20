@@ -1,24 +1,37 @@
 ---
-title: Auto Increment Frontmatter Version
-description: How to automatically increment the version number in the frontmatter of a markdown file after every commit.
+title: "Auto-Increment Version Numbers in Frontmatter with Git Hooks"
+description: "Learn how to automatically increment version numbers in markdown frontmatter using Git pre-commit hooks. Complete bash script tutorial for content versioning automation."
 date: 2024-05-28T21:36:50.132Z
 author: bamr87
 layout: default
-excerpt: Learn how to use Git hooks to automatically increment version numbers in frontmatter for better content versioning
+excerpt: "Automate version numbering in markdown frontmatter with Git hooks. Step-by-step bash script guide for developers managing versioned content."
 categories:
   - posts
   - automation
   - git
+  - tutorials
 tags:
   - git
+  - git-hooks
   - automation
   - versioning
   - frontmatter
-  - git-hooks
-lastmod: 2024-05-28T21:40:13.289Z
-draft: true
+  - bash
+  - pre-commit
+  - markdown
+  - devops
+keywords:
+  - git hooks version increment
+  - auto increment version git
+  - frontmatter versioning
+  - pre-commit hook bash
+  - markdown version automation
+lastmod: 2025-12-19T00:00:00.000Z
+draft: false
 type: posts
 section: Programming
+difficulty: intermediate
+estimated_time: "15 minutes"
 ---
 
 bamr87: how can i automatically increment this version frontmatter after every commit? in other words, whenever i commit changes, i want the version number to be the next increment from the last commit of this file

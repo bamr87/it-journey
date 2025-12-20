@@ -1,6 +1,6 @@
 ---
-title: "ETL Pipeline Design: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "ETL Pipeline Design: Build Scalable Data Pipelines with Python"
+description: "Design and implement production ETL pipelines. Learn data extraction patterns, transformation logic, loading strategies, error handling, and workflow orchestration with Airflow or Prefect."
 date: 2025-12-01T04:16:26.000Z
 preview: images/previews/etl-pipeline-design-descriptive-subtitle.png
 level: 1100
@@ -10,29 +10,32 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "data-engineering"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1100 (12) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Data Engineering Mastery"
+sub_title: "Level 1100 (12) Quest: Main Quest - ETL Pipelines"
+excerpt: "Build production-grade ETL pipelines with Python, including extraction, transformation, and orchestration patterns"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1100
-  - - primary-technology
+  - python
+  - etl
   - main_quest
-  - - skill-focus
+  - data-engineering
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Engineering
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - etl pipeline python
+    - data pipeline design
+    - extract transform load
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - airflow orchestration
+    - data engineering
+    - pipeline patterns
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

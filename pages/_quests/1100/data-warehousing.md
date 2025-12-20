@@ -1,6 +1,6 @@
 ---
-title: "Data Warehousing: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Data Warehousing: Design Star Schema & Build Modern Analytics Architecture"
+description: "Master data warehouse design with dimensional modeling. Learn star and snowflake schemas, fact and dimension tables, slowly changing dimensions, and modern cloud data warehouse patterns."
 date: 2025-12-01T04:21:40.000Z
 preview: images/previews/data-warehousing-descriptive-subtitle.png
 level: 1100
@@ -10,29 +10,32 @@ primary_technology: "sql"
 quest_type: main_quest
 skill_focus: "data-engineering"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1100 (12) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Data Engineering Mastery"
+sub_title: "Level 1100 (12) Quest: Main Quest - Data Warehousing"
+excerpt: "Design data warehouses with dimensional modeling, star schemas, and modern cloud analytics patterns"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1100
-  - - primary-technology
+  - sql
+  - data-warehouse
   - main_quest
-  - - skill-focus
+  - data-engineering
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Engineering
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - data warehouse design
+    - star schema
+    - dimensional modeling
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - snowflake schema
+    - fact tables
+    - slowly changing dimensions
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

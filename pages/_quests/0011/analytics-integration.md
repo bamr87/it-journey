@@ -1,38 +1,41 @@
 ---
-title: "Analytics Integration: Tracking User Engagement: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Google Analytics for Jekyll: Complete User Tracking Integration Guide"
+description: "Add Google Analytics 4 to your Jekyll site. Learn event tracking, custom dimensions, privacy-compliant implementation, and dashboard setup to understand your website traffic and user behavior."
 date: 2025-11-30T05:00:25.000Z
 preview: images/previews/analytics-integration-tracking-user-engagement-des.png
-level: "0011"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0011"
+difficulty: "🟡 Medium"
 estimated_time: "45-60 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0011 (3) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "google-analytics"
+quest_type: "main_quest"
+skill_focus: "data"
+learning_style: "hands-on"
+quest_series: "Site Analytics Mastery"
+sub_title: "Level 0011 (3) Quest: Main Quest - Google Analytics"
+excerpt: "Implement Google Analytics 4 on your Jekyll site to track visitors, events, and user engagement metrics"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0011
-    - [primary-technology]
+    - google-analytics
+    - jekyll
     - main_quest
-    - [skill-focus]
+    - data
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Data
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - google analytics jekyll
+        - ga4 static site
+        - website analytics setup
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - event tracking
+        - user engagement metrics
+        - privacy gdpr analytics
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:00:25.000Z

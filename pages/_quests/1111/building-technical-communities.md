@@ -1,6 +1,6 @@
 ---
-title: "Building Technical Communities: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Building Technical Communities: Growing Developer Ecosystems"
+description: "Build and grow technical communities around your projects. Learn community management, developer relations, event organization, and engagement strategies."
 date: 2025-12-01T04:23:09.000Z
 preview: images/previews/building-technical-communities-descriptive-subtitl.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "general"
 quest_type: main_quest
 skill_focus: "community"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Community"
+excerpt: "Build thriving technical communities and developer ecosystems"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - community
   - main_quest
-  - - skill-focus
+  - community
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Community
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - technical-communities
+    - developer-relations
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - community-building
+    - event-organization
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

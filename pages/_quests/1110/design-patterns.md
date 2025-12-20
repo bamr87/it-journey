@@ -1,6 +1,6 @@
 ---
-title: "Software Design Patterns: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Software Design Patterns: Gang of Four and Modern Patterns"
+description: "Master essential software design patterns including creational, structural, and behavioral patterns. Learn when and how to apply patterns for maintainable code."
 date: 2025-12-01T04:22:28.000Z
 preview: images/previews/software-design-patterns-descriptive-subtitle.png
 level: 1110
@@ -10,29 +10,29 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "architecture"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1110 (14) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "System Design Mastery"
+sub_title: "Level 1110 (14) Quest: Main Quest - Design Patterns"
+excerpt: "Master essential design patterns for writing maintainable, scalable software"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1110
-  - - primary-technology
+  - python
   - main_quest
-  - - skill-focus
+  - architecture
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Architecture
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - design-patterns
+    - software-architecture
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - gang-of-four
+    - solid-principles
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

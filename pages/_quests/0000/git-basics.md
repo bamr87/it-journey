@@ -1,53 +1,48 @@
 ---
-title: "Git Basics: Version Control Introduction: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Git Basics: Version Control Introduction"
+description: "Learn Git fundamentals including repositories, commits, branches, and basic workflow for tracking code changes and collaborating with developers."
 date: 2025-11-30T04:57:55.000Z
 preview: images/previews/git-basics-version-control-introduction-descriptiv.png
-level: "0000"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0000"
+difficulty: "🟢 Easy"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0000 (0) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "git"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Version Control Mastery"
+sub_title: "Level 0000 (0) Quest: Main Quest - Git"
+excerpt: "Master Git fundamentals to track changes, manage versions, and collaborate effectively with teams."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0000
-    - [primary-technology]
+    - git
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Beginner
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - git basics
+        - version control
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - repository management
+        - code collaboration
         - gamified-learning
         - it-journey
-lastmod: 2025-11-30T04:57:55.000Z
+lastmod: 2025-12-20T00:00:00.000Z
 permalink: /quests/level-0000-git-basics/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: "Init World"
+quest_arc: "Version Control Arc"
 quest_dependencies:
     required_quests:
-        - "/quests/level-0000-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0000-helpful-quest/"
+        - "/quests/level-0000-terminal-fundamentals/"
+    recommended_quests: []
     unlocks_quests:
         - "/quests/level-0000-next-quest/"
 

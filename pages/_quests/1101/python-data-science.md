@@ -1,6 +1,6 @@
 ---
-title: "Python for Data Science: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide"
+description: "Master Python data science libraries. Learn NumPy for numerical computing, Pandas for data manipulation, Matplotlib and Seaborn for visualization, and Jupyter notebooks for analysis workflows."
 date: 2025-12-01T04:21:59.000Z
 preview: images/previews/python-for-data-science-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,34 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "data-science"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Main Quest - Python Data Science"
+excerpt: "Master NumPy, Pandas, and Matplotlib for Python data science and analysis workflows"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - python
+  - numpy
+  - pandas
+  - matplotlib
   - main_quest
-  - - skill-focus
+  - data-science
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Science
+  - Medium
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - python data science
+    - pandas tutorial
+    - numpy arrays
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - matplotlib visualization
+    - seaborn
+    - jupyter notebooks
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

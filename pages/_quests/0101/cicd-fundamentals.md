@@ -1,38 +1,38 @@
 ---
-title: "CI/CD Fundamentals: Continuous Integration [Quest Title] Deployment: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials"
+description: "Master the fundamentals of CI/CD pipelines including automated builds, testing, and deployment. Learn to implement continuous integration and deployment workflows."
 date: 2025-11-30T05:05:18.000Z
 preview: images/previews/ci-cd-fundamentals-continuous-integration-quest-ti.png
-level: "0101"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0101"
+difficulty: "🟡 Medium"
 estimated_time: "75-90 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0101 (5) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "cicd"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "DevOps Pipeline Mastery"
+sub_title: "Level 0101 (5) Quest: Main Quest - CI/CD"
+excerpt: "Learn the core concepts and practices of continuous integration and continuous deployment for automated software delivery"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0101
-    - [primary-technology]
+    - cicd
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - continuous-integration
+        - continuous-deployment
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - automated-builds
+        - pipeline-automation
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:05:18.000Z

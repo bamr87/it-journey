@@ -1,38 +1,41 @@
 ---
-title: "Distributed Tracing: Jaeger [Quest Title] OpenTelemetry: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide"
+description: "Implement distributed tracing with Jaeger and OpenTelemetry. Learn span contexts, trace propagation, service graphs, and performance debugging for microservices architectures."
 date: 2025-11-30T05:44:22.000Z
 preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
-level: "1010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1010"
+difficulty: "🔴 Hard"
 estimated_time: "90-120 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1010 (10) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "opentelemetry"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Observability Mastery"
+sub_title: "Level 1010 (10) Quest: Main Quest - Distributed Tracing"
+excerpt: "Implement distributed tracing with Jaeger and OpenTelemetry for microservices debugging"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1010
-    - [primary-technology]
+    - jaeger
+    - opentelemetry
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - distributed tracing
+        - jaeger tutorial
+        - opentelemetry
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - trace propagation
+        - service graphs
+        - microservices debugging
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:44:22.000Z

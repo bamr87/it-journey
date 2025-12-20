@@ -1,18 +1,39 @@
 ---
-title: Bootable mac os
-description: null
-author: null
-excerpt: null
+title: "Create Bootable macOS Installer: Complete Guide for Recovery & Installation"
+description: "Step-by-step tutorial to create bootable macOS installers using Terminal. Includes commands for Sonoma, Ventura, Monterey & older versions. Perfect for system recovery and clean installs."
+author: IT-Journey Team
+excerpt: "Learn how to create a bootable macOS USB installer with Terminal commands for all macOS versions from El Capitan to Sonoma. Essential for system administrators and recovery situations."
 date: 2024-03-27T22:53:26.161Z
-lastmod: 2024-03-28T20:36:30.045Z
-draft: true
-tags: []
-categories: []
-meta: null
-snippet: null
-slug: bootable-mac-os
+lastmod: 2025-12-19T00:00:00.000Z
+draft: false
+tags:
+  - macos
+  - bootable-usb
+  - system-recovery
+  - terminal
+  - installation
+  - apple
+  - system-administration
+categories:
+  - tutorials
+  - macos
+  - system-administration
+keywords:
+  - bootable macos installer
+  - create macos usb
+  - createinstallmedia command
+  - macos recovery
+  - install macos from usb
+  - macos sonoma installer
+  - macos ventura bootable
+  - system administrator macos
+meta: "Complete guide for creating bootable macOS installers using Terminal for Sonoma, Ventura, Monterey, Big Sur, Catalina, Mojave, High Sierra, and El Capitan"
+snippet: "Create a bootable macOS installer using Terminal commands - supports all versions from El Capitan to Sonoma"
+slug: create-bootable-macos-installer-guide
 section: System Administration
 source: https://support.apple.com/en-us/101578
+difficulty: intermediate
+estimated_time: "30 minutes"
 ---
 
 

@@ -1,38 +1,38 @@
 ---
-title: "Kubernetes ConfigMaps [Quest Title] Secrets: Configuration Management: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices"
+description: "Master Kubernetes configuration with ConfigMaps and Secrets. Learn secure secrets management, environment variables, volume mounts, and configuration best practices."
 date: 2025-11-30T05:42:00.000Z
 preview: images/previews/kubernetes-configmaps-quest-title-secrets-configur.png
-level: "1001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1001"
+difficulty: "🔴 Hard"
 estimated_time: "75-90 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1001 (9) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "kubernetes"
+quest_type: "main_quest"
+skill_focus: "cloud-engineering"
+learning_style: "hands-on"
+quest_series: "Kubernetes Mastery"
+sub_title: "Level 1001 (9) Quest: Main Quest - K8s Config"
+excerpt: "Manage Kubernetes configuration securely with ConfigMaps and Secrets"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1001
-    - [primary-technology]
+    - kubernetes
     - main_quest
-    - [skill-focus]
+    - cloud-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Cloud-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - kubernetes-configmaps
+        - k8s-secrets
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - configuration-management
+        - secrets-management
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:42:00.000Z

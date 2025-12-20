@@ -1,6 +1,6 @@
 ---
-title: "Apache Spark Mastery: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Apache Spark Mastery: Big Data Processing with PySpark & Scala"
+description: "Master Apache Spark for distributed data processing. Learn RDDs, DataFrames, Spark SQL, MLlib machine learning, and cluster management for petabyte-scale analytics."
 date: 2025-12-01T04:21:46.000Z
 preview: images/previews/apache-spark-mastery-descriptive-subtitle.png
 level: 1100
@@ -10,29 +10,33 @@ primary_technology: "spark"
 quest_type: main_quest
 skill_focus: "data-engineering"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1100 (12) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Data Engineering Mastery"
+sub_title: "Level 1100 (12) Quest: Epic Quest - Apache Spark"
+excerpt: "Process big data at scale with Apache Spark RDDs, DataFrames, Spark SQL, and MLlib machine learning"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1100
-  - - primary-technology
+  - spark
+  - pyspark
+  - big-data
   - main_quest
-  - - skill-focus
+  - data-engineering
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Engineering
+  - Epic
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - apache spark tutorial
+    - pyspark dataframes
+    - spark sql
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - distributed computing
+    - mllib
+    - big data processing
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

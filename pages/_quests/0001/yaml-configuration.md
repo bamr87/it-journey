@@ -1,51 +1,51 @@
 ---
-title: "YAML Configuration: Site Settings Mastery: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "YAML Configuration: Site Settings Mastery"
+description: "Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites."
 date: 2025-11-30T04:59:04.000Z
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
 level: "0001"
-difficulty: 🟢 Easy
-estimated_time: 30-45 minutes
-primary_technology: ""
-quest_type: ""
-skill_focus: ""
-learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 0001 (1) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
-author: IT-Journey Team
+difficulty: "🟢 Easy"
+estimated_time: "30-45 minutes"
+primary_technology: "yaml"
+quest_type: "main_quest"
+skill_focus: "frontend"
+learning_style: "hands-on"
+quest_series: "Jekyll Foundations"
+sub_title: "Level 0001 (1) Quest: Main Quest - YAML"
+excerpt: "Learn YAML syntax and Jekyll configuration to build and customize professional static websites."
+author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0001
-    - - primary-technology
+    - yaml
     - main_quest
-    - - skill-focus
+    - frontend
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - - Skill-Category
-    - - Difficulty-Level
+    - Frontend
+    - Beginner
 keywords:
     primary:
-        - - main-technology-skill
-        - - core-learning-objective
+        - yaml configuration
+        - jekyll settings
     secondary:
-        - - supporting-technologies
-        - - related-concepts
+        - static site configuration
+        - site customization
         - gamified-learning
         - it-journey
-lastmod: 2025-12-04T01:48:31.566Z
+lastmod: 2025-12-20T00:00:00.000Z
 permalink: /quests/level-0001-yaml-configuration/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: "Init World"
+quest_arc: "Jekyll Mastery Arc"
 quest_dependencies:
     required_quests:
-        - /quests/level-0001-prerequisite-quest/
+        - "/quests/level-0000-markdown-mastery/"
     recommended_quests:
-        - /quests/level-0001-helpful-quest/
+        - "/quests/level-0000-terminal-fundamentals/"
     unlocks_quests:
-        - /quests/level-0001-next-quest/
+        - "/quests/level-0010-jekyll-templating/"
 quest_relationships:
     parent_quest: null
     child_quests:

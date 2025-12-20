@@ -1,6 +1,6 @@
 ---
-title: "Stream Processing: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Stream Processing: Real-Time Data with Apache Kafka & Flink"
+description: "Build real-time data streaming pipelines with Kafka and Flink. Learn event-driven architecture, stream processing patterns, exactly-once semantics, and windowing operations."
 date: 2025-12-01T04:21:46.000Z
 preview: images/previews/stream-processing-descriptive-subtitle.png
 level: 1100
@@ -10,29 +10,33 @@ primary_technology: "kafka"
 quest_type: main_quest
 skill_focus: "data-engineering"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1100 (12) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Data Engineering Mastery"
+sub_title: "Level 1100 (12) Quest: Main Quest - Stream Processing"
+excerpt: "Build real-time data pipelines with Kafka, stream processing patterns, and event-driven architecture"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1100
-  - - primary-technology
+  - kafka
+  - flink
+  - streaming
   - main_quest
-  - - skill-focus
+  - data-engineering
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Engineering
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - kafka streaming
+    - stream processing
+    - real-time data
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - apache flink
+    - event-driven architecture
+    - exactly-once semantics
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

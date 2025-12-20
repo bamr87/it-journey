@@ -1,6 +1,6 @@
 ---
-title: "Open Source Contribution: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Open Source Contribution: Leading and Maintaining Projects"
+description: "Lead and maintain open source projects effectively. Learn project governance, contributor management, release processes, and sustainable OSS practices."
 date: 2025-12-01T04:22:54.000Z
 preview: images/previews/open-source-contribution-descriptive-subtitle.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "git"
 quest_type: main_quest
 skill_focus: "community"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Open Source"
+excerpt: "Lead and maintain open source projects with sustainable practices"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - git
   - main_quest
-  - - skill-focus
+  - community
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Community
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - open-source
+    - project-maintenance
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - contributor-management
+    - oss-governance
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

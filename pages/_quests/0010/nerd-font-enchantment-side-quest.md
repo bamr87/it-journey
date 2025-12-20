@@ -1,6 +1,6 @@
 ---
 title: "Nerd Font Enchantment: Terminal Icon Mastery"
-description: Install and configure Nerd Fonts to unlock the full visual potential of your terminal themes and plugins
+description: "Complete step-by-step guide to install Nerd Fonts on macOS, Linux & Windows. Transform your terminal with icons, symbols, and visual themes. 20-minute setup tutorial with troubleshooting."
 date: 2025-08-31T13:00:00.000Z
 preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
 tags:
@@ -12,29 +12,37 @@ tags:
     - cross-platform-setup
     - development-tools
     - terminal-customization
+    - macos
+    - linux
+    - windows
 categories:
     - Quests
     - Side-Quests
     - Tools
     - Terminal-Mastery
 sub-title: "Side Quest: Font Enhancement and Icon Display"
-excerpt: Master the art of Nerd Font installation to transform your terminal from plain text to a visually rich development environment
-snippet: Unlock the power of icons and symbols in your terminal with Nerd Fonts - where every character tells a story
+excerpt: "Install Nerd Fonts on macOS, Linux, and Windows to transform your terminal with beautiful icons, symbols, and glyphs. Complete guide with Oh-My-Zsh and VS Code integration."
+snippet: "Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual themes on any platform"
 author: IT-Journey Team
 layout: journals
 keywords:
     primary:
         - nerd-fonts
-        - terminal-icons
-        - font-installation
-        - visual-enhancement
+        - install nerd fonts
+        - terminal icons
+        - nerd fonts macos
+        - nerd fonts linux
+        - nerd fonts windows
     secondary:
         - patched-fonts
         - unicode-symbols
         - terminal-themes
+        - oh-my-zsh fonts
+        - powerlevel10k fonts
+        - vscode terminal font
         - development-environment
         - cross-platform-fonts
-lastmod: 2025-09-01T01:50:22.304Z
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/side-quest-nerd-font-enchantment/
 attachments: ""
 comments: true

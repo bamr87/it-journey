@@ -1,6 +1,6 @@
 ---
-title: "Scaling Strategies: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Scaling Strategies: Horizontal and Vertical Scaling Patterns"
+description: "Master scaling strategies for high-availability systems. Learn horizontal scaling, load balancing, caching, database sharding, and auto-scaling patterns."
 date: 2025-12-01T04:22:40.000Z
 preview: images/previews/scaling-strategies-descriptive-subtitle.png
 level: 1110
@@ -10,29 +10,29 @@ primary_technology: "kubernetes"
 quest_type: main_quest
 skill_focus: "devops"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1110 (14) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "System Design Mastery"
+sub_title: "Level 1110 (14) Quest: Main Quest - Scaling"
+excerpt: "Scale applications effectively with horizontal scaling, caching, and sharding strategies"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1110
-  - - primary-technology
+  - kubernetes
   - main_quest
-  - - skill-focus
+  - devops
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - DevOps
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - scaling-strategies
+    - horizontal-scaling
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - load-balancing
+    - database-sharding
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

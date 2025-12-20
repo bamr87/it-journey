@@ -1,6 +1,6 @@
 ---
-title: "Natural Language Processing: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Natural Language Processing: Text Analysis, Transformers & LLMs with Python"
+description: "Build NLP applications with Python using transformers and Hugging Face. Learn text preprocessing, sentiment analysis, named entity recognition, and large language model fine-tuning."
 date: 2025-12-01T04:22:08.000Z
 preview: images/previews/natural-language-processing-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,33 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "data-science"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Main Quest - NLP"
+excerpt: "Build NLP applications with transformers, sentiment analysis, NER, and large language models"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - python
+  - nlp
+  - transformers
   - main_quest
-  - - skill-focus
+  - data-science
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Science
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - nlp tutorial
+    - hugging face transformers
+    - text analysis python
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - sentiment analysis
+    - named entity recognition
+    - llm fine-tuning
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

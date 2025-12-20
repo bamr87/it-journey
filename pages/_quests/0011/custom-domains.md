@@ -1,38 +1,41 @@
 ---
-title: "Custom Domains: Professional Site Setup: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Custom Domains for GitHub Pages: Professional Website Setup Guide"
+description: "Configure custom domains for GitHub Pages sites. Learn DNS setup, CNAME configuration, SSL certificates, and subdomain management to give your Jekyll site a professional web address."
 date: 2025-11-30T05:00:31.000Z
 preview: images/previews/custom-domains-professional-site-setup-descriptive.png
-level: "0011"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0011"
+difficulty: "🟡 Medium"
 estimated_time: "30-45 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0011 (3) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "github-pages"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "GitHub Pages Mastery"
+sub_title: "Level 0011 (3) Quest: Main Quest - DNS & Domains"
+excerpt: "Transform your GitHub Pages site with a custom domain, SSL, and professional DNS configuration"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0011
-    - [primary-technology]
+    - github-pages
+    - dns
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - custom domain github pages
+        - github pages dns setup
+        - ssl certificate github
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - cname record
+        - apex domain
+        - subdomain configuration
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:00:31.000Z

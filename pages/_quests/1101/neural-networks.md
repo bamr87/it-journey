@@ -1,6 +1,6 @@
 ---
-title: "Neural Networks Deep Dive: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch"
+description: "Master neural network architectures with TensorFlow. Learn convolutional networks, recurrent networks, attention mechanisms, and transformer architectures for computer vision and NLP."
 date: 2025-12-01T04:22:04.000Z
 preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,33 @@ primary_technology: "tensorflow"
 quest_type: main_quest
 skill_focus: "data-science"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Epic Quest - Neural Networks"
+excerpt: "Build CNN, RNN, and transformer architectures from scratch with TensorFlow and Keras"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - tensorflow
+  - neural-networks
+  - deep-learning
   - main_quest
-  - - skill-focus
+  - data-science
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Science
+  - Epic
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - neural networks tutorial
+    - deep learning
+    - tensorflow keras
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - cnn
+    - rnn
+    - transformers
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

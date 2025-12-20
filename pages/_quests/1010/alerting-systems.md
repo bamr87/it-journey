@@ -1,38 +1,41 @@
 ---
-title: "Alerting Systems: PagerDuty [Quest Title] Incident Management: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Alerting Systems: PagerDuty Integration & Incident Management Guide"
+description: "Build production-ready alerting systems with PagerDuty and incident management workflows. Learn alert routing, escalation policies, on-call schedules, and runbook automation for SRE teams."
 date: 2025-11-30T05:44:12.000Z
 preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
-level: "1010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1010"
+difficulty: "🔴 Hard"
 estimated_time: "75-90 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1010 (10) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "pagerduty"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Observability Mastery"
+sub_title: "Level 1010 (10) Quest: Main Quest - Alerting"
+excerpt: "Implement production alerting with PagerDuty, escalation policies, and incident management workflows"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1010
-    - [primary-technology]
+    - pagerduty
+    - alerting
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - pagerduty integration
+        - incident management
+        - alert routing
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - escalation policies
+        - on-call schedules
+        - runbook automation
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:44:12.000Z

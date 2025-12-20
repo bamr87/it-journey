@@ -1,38 +1,38 @@
 ---
-title: "Secure Coding Practices: OWASP Top 10: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Secure Coding Practices: OWASP Top 10 Vulnerability Prevention"
+description: "Learn secure coding practices to prevent OWASP Top 10 vulnerabilities. Master input validation, output encoding, authentication, and secure development patterns."
 date: 2025-11-30T05:44:46.000Z
 preview: images/previews/secure-coding-practices-owasp-top-10-descriptive-s.png
-level: "1011"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1011"
+difficulty: "🔴 Hard"
 estimated_time: "120-150 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1011 (11) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "security"
+quest_type: "main_quest"
+skill_focus: "security"
+learning_style: "hands-on"
+quest_series: "Security Mastery"
+sub_title: "Level 1011 (11) Quest: Main Quest - Secure Coding"
+excerpt: "Write secure code and prevent OWASP Top 10 vulnerabilities in your applications"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1011
-    - [primary-technology]
+    - security
     - main_quest
-    - [skill-focus]
+    - security
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Security
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - secure-coding
+        - owasp-top-10
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - input-validation
+        - vulnerability-prevention
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:44:46.000Z

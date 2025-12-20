@@ -1,6 +1,6 @@
 ---
-title: "Architecture Reviews: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Architecture Reviews: Leading Technical Design Discussions"
+description: "Lead effective architecture reviews and design discussions. Master RFC processes, technical debt assessment, system evaluation, and architectural decision records."
 date: 2025-12-01T04:23:04.000Z
 preview: images/previews/architecture-reviews-descriptive-subtitle.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "general"
 quest_type: main_quest
 skill_focus: "architecture"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Architecture"
+excerpt: "Lead effective architecture reviews and technical design discussions"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - architecture
   - main_quest
-  - - skill-focus
+  - architecture
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Architecture
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - architecture-reviews
+    - design-discussions
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - rfc-process
+    - technical-decisions
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

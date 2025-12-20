@@ -1,6 +1,6 @@
 ---
-title: "Machine Learning Fundamentals: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn"
+description: "Master machine learning fundamentals with Python. Learn supervised and unsupervised learning, model evaluation, cross-validation, and scikit-learn best practices for classification and regression."
 date: 2025-12-01T04:21:59.000Z
 preview: images/previews/machine-learning-fundamentals-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,33 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "data-science"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Main Quest - Machine Learning"
+excerpt: "Master ML fundamentals with scikit-learn: classification, regression, clustering, and model evaluation"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - python
+  - machine-learning
+  - scikit-learn
   - main_quest
-  - - skill-focus
+  - data-science
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Science
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - machine learning tutorial
+    - scikit-learn
+    - ml fundamentals
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - supervised learning
+    - unsupervised learning
+    - model evaluation
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

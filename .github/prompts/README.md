@@ -2,7 +2,7 @@
 title: ".github/prompts Directory"
 description: "AI agent prompt collection powering IT-Journey automation flows"
 permalink: /github/prompts/readme/
-lastmod: 2025-11-18T00:00:00.000Z
+lastmod: 2025-12-19T00:00:00.000Z
 layout: default
 ---
 
@@ -18,6 +18,7 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 ├── kaizen.prompt.md        # Continuous improvement / PDCA facilitator
 ├── stackattack.prompt.md   # Repository stack analysis playbook
 ├── write-quest.prompt.md   # Epic quest authoring protocol
+├── wtd.prompt.md           # What To Do - TODO task execution agent
 └── README.md               # This guide
 ```
 
@@ -30,6 +31,7 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 | `kaizen.prompt.md` | `/kaizen` | Lead incremental PDCA improvement sessions for code, process, or tooling | PLAN/DO/CHECK/ACT report with metrics, risks, next iteration |
 | `stackattack.prompt.md` | `/stackattack` | Analyze any repository's full technology stack with diagrams and recommendations | Stack overview, five-layer analysis, Mermaid diagrams, modernization roadmap saved under quests/stacks |
 | `write-quest.prompt.md` | `/write-quest` | Transform learning context into IT-Journey compliant epic quests | Complete quest front matter, chaptered narrative, multi-platform paths, diagrams, validation + Kaizen hooks |
+| `wtd.prompt.md` | `/wtd` | Work through TODO directory items using PDCA methodology | Task selection, execution, status updates, progress tracking, suggested commits |
 
 Note: `write-quest` references the canonical front matter template stored at `/.frontmatter/templates/quests.md`. Do not duplicate YAML fields in the prompt; the agent must read and use the template to produce consistent front matter for every quest.
 

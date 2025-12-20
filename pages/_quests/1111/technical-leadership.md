@@ -1,6 +1,6 @@
 ---
-title: "Technical Leadership: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Technical Leadership: Building High-Performance Engineering Teams"
+description: "Develop technical leadership skills for engineering managers. Learn team building, technical decision-making, stakeholder management, and engineering excellence."
 date: 2025-12-01T04:22:54.000Z
 preview: images/previews/technical-leadership-descriptive-subtitle.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "general"
 quest_type: main_quest
 skill_focus: "leadership"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Leadership"
+excerpt: "Develop technical leadership skills for building and leading high-performance teams"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - leadership
   - main_quest
-  - - skill-focus
+  - leadership
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Leadership
+  - Epic
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - technical-leadership
+    - engineering-management
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - team-building
+    - decision-making
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

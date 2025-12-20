@@ -1,53 +1,47 @@
 ---
-title: "Terminal Fundamentals: Command Line Navigation Quest: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Terminal Fundamentals: Command Line Navigation Quest"
+description: "Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals."
 date: 2025-11-30T04:54:33.000Z
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
-level: "0000"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0000"
+difficulty: "🟢 Easy"
 estimated_time: "45-60 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0000 (0) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "bash"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Terminal Arts"
+sub_title: "Level 0000 (0) Quest: Main Quest - Terminal"
+excerpt: "Learn essential command line skills for navigating and managing files in any operating system."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0000
-    - [primary-technology]
+    - bash
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Beginner
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - terminal basics
+        - command line navigation
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - shell commands
+        - file management
         - gamified-learning
         - it-journey
-lastmod: 2025-11-30T04:54:33.000Z
+lastmod: 2025-12-20T00:00:00.000Z
 permalink: /quests/level-0000-terminal-fundamentals/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: "Init World"
+quest_arc: "Terminal Mastery Arc"
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0000-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0000-helpful-quest/"
+    required_quests: []
+    recommended_quests: []
     unlocks_quests:
         - "/quests/level-0000-next-quest/"
 

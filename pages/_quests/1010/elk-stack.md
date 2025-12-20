@@ -1,38 +1,42 @@
 ---
-title: "ELK Stack: Elasticsearch, Logstash [Quest Title] Kibana: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis"
+description: "Deploy the complete ELK stack for centralized logging. Learn Elasticsearch indexing, Logstash pipelines, Kibana dashboards, and log aggregation patterns for distributed systems."
 date: 2025-11-30T05:44:18.000Z
 preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.png
-level: "1010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1010"
+difficulty: "🔴 Hard"
 estimated_time: "120-150 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1010 (10) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "elasticsearch"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Observability Mastery"
+sub_title: "Level 1010 (10) Quest: Main Quest - ELK Stack"
+excerpt: "Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana visualization"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1010
-    - [primary-technology]
+    - elasticsearch
+    - logstash
+    - kibana
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - elk stack
+        - elasticsearch tutorial
+        - log analysis
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - logstash pipelines
+        - kibana dashboards
+        - centralized logging
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:44:18.000Z

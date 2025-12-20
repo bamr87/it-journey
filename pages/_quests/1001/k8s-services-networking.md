@@ -1,38 +1,38 @@
 ---
-title: "Kubernetes Services [Quest Title] Networking: Ingress [Quest Title] DNS: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Kubernetes Services and Networking: Ingress and DNS Configuration"
+description: "Master Kubernetes networking with Services, Ingress controllers, DNS, NetworkPolicies, and load balancing. Configure secure, scalable application networking."
 date: 2025-11-30T05:41:56.000Z
 preview: images/previews/kubernetes-services-quest-title-networking-ingress.png
-level: "1001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1001"
+difficulty: "🔴 Hard"
 estimated_time: "90-120 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1001 (9) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "kubernetes"
+quest_type: "main_quest"
+skill_focus: "cloud-engineering"
+learning_style: "hands-on"
+quest_series: "Kubernetes Mastery"
+sub_title: "Level 1001 (9) Quest: Main Quest - K8s Networking"
+excerpt: "Configure Kubernetes networking with Services, Ingress, and DNS for scalable applications"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1001
-    - [primary-technology]
+    - kubernetes
     - main_quest
-    - [skill-focus]
+    - cloud-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Cloud-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - kubernetes-services
+        - k8s-networking
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - ingress-controller
+        - kubernetes-dns
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:41:56.000Z

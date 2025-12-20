@@ -1,38 +1,38 @@
 ---
-title: "Workflow Optimization: Caching [Quest Title] Parallelization: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Workflow Optimization: Caching Strategies and Pipeline Parallelization"
+description: "Optimize CI/CD workflows for speed and efficiency. Implement dependency caching, parallel job execution, matrix builds, and workflow performance monitoring."
 date: 2025-11-30T05:06:25.000Z
 preview: images/previews/workflow-optimization-caching-quest-title-parallel.png
-level: "0101"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0101"
+difficulty: "🟡 Medium"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0101 (5) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "optimization"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "DevOps Pipeline Mastery"
+sub_title: "Level 0101 (5) Quest: Main Quest - Optimization"
+excerpt: "Speed up your CI/CD pipelines with caching strategies and parallel execution techniques"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0101
-    - [primary-technology]
+    - optimization
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - workflow-optimization
+        - pipeline-caching
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - parallel-execution
+        - matrix-builds
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:06:25.000Z

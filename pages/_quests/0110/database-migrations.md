@@ -1,38 +1,38 @@
 ---
-title: "Database Migrations: Schema Evolution: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Database Migrations: Schema Evolution and Version Control"
+description: "Master database migration strategies for evolving schemas safely. Learn migration tools, versioning, rollback strategies, and zero-downtime schema changes."
 date: 2025-11-30T05:08:08.000Z
 preview: images/previews/database-migrations-schema-evolution-descriptive-s.png
-level: "0110"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0110"
+difficulty: "🔴 Hard"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0110 (6) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "sql"
+quest_type: "main_quest"
+skill_focus: "data-engineering"
+learning_style: "hands-on"
+quest_series: "Database Mastery"
+sub_title: "Level 0110 (6) Quest: Main Quest - Migrations"
+excerpt: "Implement safe database migrations with versioning and rollback strategies"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0110
-    - [primary-technology]
+    - sql
     - main_quest
-    - [skill-focus]
+    - data-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Data-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - database-migrations
+        - schema-evolution
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - migration-tools
+        - version-control
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:08:08.000Z

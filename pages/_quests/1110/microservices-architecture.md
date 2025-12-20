@@ -1,6 +1,6 @@
 ---
-title: "Microservices Architecture: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Microservices Architecture: Building Scalable Distributed Systems"
+description: "Master microservices architecture patterns for building scalable, maintainable systems. Learn service decomposition, communication patterns, and deployment strategies."
 date: 2025-12-01T04:22:28.000Z
 preview: images/previews/microservices-architecture-descriptive-subtitle.png
 level: 1110
@@ -10,29 +10,29 @@ primary_technology: "docker"
 quest_type: main_quest
 skill_focus: "architecture"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1110 (14) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "System Design Mastery"
+sub_title: "Level 1110 (14) Quest: Main Quest - Microservices"
+excerpt: "Design and implement microservices architectures for scalable distributed systems"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1110
-  - - primary-technology
+  - docker
   - main_quest
-  - - skill-focus
+  - architecture
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Architecture
+  - Epic
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - microservices-architecture
+    - distributed-systems
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - service-decomposition
+    - api-design
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

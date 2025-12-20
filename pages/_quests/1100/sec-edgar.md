@@ -1,5 +1,5 @@
 ---
-title: "Siege of King EDGAR: Storming the SEC Data Castle"
+description: "Complete Python & Node.js tutorial for SEC EDGAR API integration. Learn to download 10-K, 10-Q, 8-K filings, parse XBRL data, and build financial analysis pipelines with rate limiting and best practices."
 description: "Embark on a satirical, mystical quest to liberate financial knowledge from King EDGAR’s vaults. Assemble AI companions, master SEC APIs, and responsibly harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight."
 date: 2025-08-20T04:18:02.180Z
 preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
@@ -29,7 +29,7 @@ keywords:
     - xbrl
     - data-pipelines
     - python-requests
-    - node-fetch
+lastmod: 2025-12-19T00:00:00.000Z
     - rate-limiting
 lastmod: 2025-08-20T04:18:02.180Z
 fmContentType: quest

@@ -1,41 +1,45 @@
 ---
-title: "Advanced Markdown: Tables, Footnotes [Quest Title] Extensions: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Advanced Markdown: Tables, Footnotes & Extended Syntax"
+description: "Master advanced Markdown features beyond basics. Learn tables, footnotes, task lists, and GitHub-flavored extensions. Documentation and content creation tutorial."
 date: 2025-11-30T04:59:31.000Z
 preview: images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
-level: "0010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0010"
+difficulty: "🟡 Medium"
 estimated_time: "45-60 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0010 (2) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "markdown"
+quest_type: "main_quest"
+skill_focus: "documentation"
+learning_style: "hands-on"
+quest_series: "Documentation Mastery"
+sub_title: "Level 0010 (2) Quest: Advanced Markdown Techniques"
+excerpt: "Level up your Markdown with tables, footnotes, task lists, and GitHub-flavored extensions."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0010
-    - [primary-technology]
+    - markdown
+    - github-markdown
+    - documentation
+    - tables
     - main_quest
-    - [skill-focus]
     - hands-on
-    - gamified-learning
+    - intermediate
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Documentation
+    - Markdown
+    - Intermediate
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - markdown tables
+        - advanced markdown
+        - github markdown
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T04:59:31.000Z
+        - markdown footnotes
+        - markdown task lists
+        - markdown extensions
+        - documentation writing
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/level-0010-advanced-markdown/
 
 # Advanced Quest Metadata

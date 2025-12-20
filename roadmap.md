@@ -5,7 +5,7 @@ layout: default
 author: IT-Journey Team
 permalink: /roadmap/
 backlink: /
-lastmod: 2025-07-21T00:00:00.000Z
+lastmod: 2025-12-19T00:00:00.000Z
 draft: false
 toc: true
 toc_sticky: true
@@ -119,63 +119,82 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 * ✅ Real-world skill application through challenges
 * ✅ AI-assisted development methodologies
 
-**Quest Navigation Hub:** [Browse All Quests](/quests/) | [World Map Guide](/quests/codex/world-map/)
+**Quest Navigation Hub:** [Browse All Quests](/quests/) | [World Map Guide](/quests/codex/world_map/)
 
 #### 🗺️ Quest System by Level
 
-**🌱 Init World - Foundation Quests (Level 0000)**
+**🌱 Level 0000 - Foundation Quests (Init World)**
 *Your origin story and character creation*
 
 | Quest | Focus | Difficulty | Platform |
 |-------|-------|------------|----------|
-| [Hello n00b](/quests/hello-noob/) | GitHub & Community | 🟢 Easy | All |
-| [Character Building](/quests/character-building/) | Environment Setup | 🟢 Easy | All |
-| [IT Fundamentals](/quests/init_world/2023-11-23-it-fundamentals/) | Core Concepts | 🟢 Easy | All |
-| [OS Selection](/quests/init_world/2023-11-24-os-selection/) | Platform Choice | 🟢 Easy | All |
-| [VS Code Mastery](/quests/vscode-mastery/) | IDE Configuration | 🟡 Medium | All |
+| [Hello n00b](/quests/0000/hello-noob/) | GitHub & Community | 🟢 Easy | All |
+| [Character Building](/quests/0000/character-building/) | Environment Setup | 🟢 Easy | All |
+| [IT Fundamentals](/quests/0000/it-fundamentals/) | Core Concepts | 🟢 Easy | All |
+| [OS Selection](/quests/0000/os-selection/) | Platform Choice | 🟢 Easy | All |
+| [VS Code Mastery](/quests/0000/vscode-mastery-quest/) | IDE Configuration | 🟡 Medium | All |
+| [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) | Command Line Basics | 🟢 Easy | All |
+| [Markdown Mastery](/quests/0000/markdown-mastery/) | Documentation | 🟢 Easy | All |
+| [Git Basics](/quests/0000/git-basics/) | Version Control | 🟢 Easy | All |
 
 **Platform-Specific Paths:**
-- [Hello Windows](/quests/init_world/hello-win/) - 🪟 Windows development setup
-- [Hello macOS](/quests/init_world/hello-mac/) - 🍎 Mac development environment
-- [Hello Linux](/quests/init_world/hello-linux/) - 🐧 Linux configuration
-- [Hello Cloud](/quests/init_world/hello-cloud/) - ☁️ Cloud platform basics
+- [Hello Windows](/quests/0000/hello-win/) - 🪟 Windows development setup
+- [Hello macOS](/quests/0000/hello-mac/) - 🍎 Mac development environment
+- [Hello Linux](/quests/0000/hello-linux/) - 🐧 Linux configuration
+- [Hello Cloud](/quests/0000/hello-cloud/) - ☁️ Cloud platform basics
 
-**🟢 Level 000 - Apprentice Trials**
-*Master the terminal and basic scripting*
+**🟢 Level 0001 - Apprentice Trials**
+*Build your first projects and master the web*
 
 | Quest | Technology | Time | Type |
 |-------|-----------|------|------|
-| [Bash Run](/quests/lvl_000/bash-run/) | Terminal Games | 60-90 min | 🏰 Main |
-| [Bash Scripting](/quests/bash-scripting/) | Shell Scripts | 90-120 min | 🏰 Main |
+| [Personal Site](/quests/0001/personal-site/) | Web Development | 90-120 min | 🏰 Main |
+| [Jekyll Fundamentals](/quests/0001/jekyll-fundamentals/) | Static Sites | 60-90 min | 🏰 Main |
+| [GitHub Pages Basics](/quests/0001/github-pages-basics/) | Web Hosting | 45-60 min | 🏰 Main |
+| [Liquid Templating](/quests/0001/liquid-templating/) | Template Engine | 60-90 min | ⚔️ Side |
+| [YAML Configuration](/quests/0001/yaml-configuration/) | Data Formats | 30-45 min | ⚔️ Side |
+| [Terminal Illness](/quests/0001/terminal-illness/) | Advanced Terminal | 60-90 min | ⚔️ Side |
 
-**🟡 Level 001 - Journeyman Challenges**
-*Build real applications and web projects*
+**🟡 Level 0010 - Journeyman Challenges**
+*Master scripting and advanced tooling*
 
 | Quest | Focus | Deliverable | Level |
 |-------|-------|-------------|-------|
-| [Personal Site](/quests/lvl_001/personal-site/) | Web Development | Portfolio Site | 🟡 Medium |
+| [Bash Scripting](/quests/0010/bash-scripting/) | Shell Automation | Scripts Library | 🟡 Medium |
+| [Oh-My-Zsh Enchantment](/quests/0010/oh-my-zsh-terminal-enchantment/) | Terminal Enhancement | Custom Shell | 🟡 Medium |
+| [Nerd Font Enchantment](/quests/0010/nerd-font-enchantment-side-quest/) | Terminal Icons | Enhanced Terminal | 🟢 Easy |
+| [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/) | Diagram Integration | Documentation | 🟡 Medium |
+| [JavaScript Fundamentals](/quests/0010/javascript-fundamentals/) | Frontend Dev | Interactive Sites | 🟡 Medium |
+| [CSS Styling Basics](/quests/0010/css-styling-basics/) | Design | Styled Pages | 🟢 Easy |
 
-**🔴 Level 010 - Master Tier**
+**🔴 Level 0011+ - Master Tier**
 *Advanced configurations and optimizations*
 
 | Quest | Specialization | Time | Prerequisites |
 |-------|---------------|------|---------------|
-| [Oh-My-Zsh Mastery](/quests/level-0010-oh-my-zsh-mastery/) | Terminal Enhancement | 45-60 min | Terminal basics |
-| [Nerd Font Enchantment](/quests/side-quest-nerd-font-enchantment/) | Terminal Icons | 20-30 min | Terminal setup |
+| [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/) | AI & Copilot | 60-90 min | VS Code basics |
+| [GitHub Hidden Gem](/quests/0011/github-hidden-gem-code-search-quest/) | Advanced Search | 45-60 min | GitHub basics |
+| [SEO Optimization](/quests/0011/seo-optimization/) | Web Performance | 60-90 min | Web fundamentals |
+| [Advanced Git Workflows](/quests/0011/advanced-git-workflows/) | Version Control | 90-120 min | Git basics |
 
 #### 🎯 Specialized Quest Categories
 
-**🔧 DevOps & Automation**
-- [Docker Mastery](/quests/level-0101-docker-mastery/) - Containerization fundamentals
-- [GitHub Actions](/quests/action-triggers/) - CI/CD automation
-- [Change Logs](/quests/change-logs/) - Version documentation
+**🔧 DevOps & Automation (Level 0100-0101)**
+- [Container Fundamentals](/quests/0100/container-fundamentals/) - Docker basics
+- [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/) - Multi-container apps
+- [GitHub Actions Basics](/quests/0101/github-actions-basics/) - CI/CD automation
+- [CI/CD Fundamentals](/quests/0101/cicd-fundamentals/) - Pipeline design
+- [Deployment Pipelines](/quests/0101/deployment-pipelines/) - Production workflows
 
-**🎨 Frontend & Documentation**
-- [Jekyll-Mermaid Integration](/quests/jekyll-mermaid-integration-quest/) - Diagram integration
-- [Frontend Quests](/quests/frontend/) - UI/UX development
+**🎨 Frontend & Documentation (Level 0100)**
+- [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/) - Diagram integration
+- [Frontend Development](/quests/0100/frontend/) - UI/UX development
+- [Frontend Docker](/quests/0100/frontend-docker/) - Containerized frontend
+- [Bootstrap Framework](/quests/0010/bootstrap-framework/) - CSS framework
 
-**🤖 AI-Powered Development**
-- [AI Automation](/quests/revolutionizing-work-with-ai-automation/) - AI workflows
+**🤖 AI-Powered Development (Level 0010-0011)**
+- [Prompt Engineering](/quests/0010/prompt-engineering/) - AI prompt skills
+- [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/) - VS Code Copilot
 - [AI Development Posts](/posts/tags/ai/) - Real-world AI applications
 
 **📜 Chronicles & Learning Posts**
@@ -233,8 +252,8 @@ Deep knowledge vaults for comprehensive understanding - your technical reference
 
 **Best Practices & Standards:**
 - [Development Principles](/about/) - DFF, DRY, KIS, REnO, MVP, COLAB, AIPD
-- [Quest Creation Instructions](/.github/instructions/quest.instructions.md) - Quest design guidelines
-- [Post Creation Instructions](/.github/instructions/posts.instructions.md) - Content standards
+- Quest Creation Instructions - See `.github/instructions/quest.instructions.md`
+- Post Creation Instructions - See `.github/instructions/posts.instructions.md`
 
 **Roadmap Goals:**
 
@@ -319,21 +338,20 @@ graph LR
 ```
 
 **Step-by-Step Path:**
-1. [Hello n00b Quest](/quests/hello-noob/) - 15-30 min - Set up GitHub account
-2. [Character Building](/quests/character-building/) - 30-45 min - Configure development environment
-3. [IT Fundamentals](/quests/init_world/2023-11-23-it-fundamentals/) - 60 min - Learn core concepts
+1. [Hello n00b Quest](/quests/0000/hello-noob/) - 15-30 min - Set up GitHub account
+2. [Character Building](/quests/0000/character-building/) - 30-45 min - Configure development environment
+3. [IT Fundamentals](/quests/0000/it-fundamentals/) - 60 min - Learn core concepts
 4. **Platform Selection:**
-   - [Hello Windows](/quests/init_world/hello-win/) OR
-   - [Hello macOS](/quests/init_world/hello-mac/) OR
-   - [Hello Linux](/quests/init_world/hello-linux/)
-5. [VS Code Mastery](/quests/vscode-mastery/) - 90 min - Master your primary tool
-6. [Bash Run Quest](/quests/lvl_000/bash-run/) - 90 min - Terminal game learning
-7. [Personal Site Project](/quests/lvl_001/personal-site/) - Build your portfolio
+   - [Hello Windows](/quests/0000/hello-win/) OR
+   - [Hello macOS](/quests/0000/hello-mac/) OR
+   - [Hello Linux](/quests/0000/hello-linux/)
+5. [VS Code Mastery](/quests/0000/vscode-mastery-quest/) - 90 min - Master your primary tool
+6. [Bash Run Quest](/quests/0000/bash-run/) - 90 min - Terminal game learning
+7. [Personal Site Project](/quests/0001/personal-site/) - Build your portfolio
 
 **Supporting Resources:**
 - [Machine Setup QuickStart](/quickstart/machine-setup/) - Environment setup
 - [GitHub Setup QuickStart](/quickstart/github-setup/) - Version control basics
-- [Beginner Posts](/posts/tags/beginner/) - Additional tutorials
 
 ---
 
@@ -357,16 +375,16 @@ graph LR
 ```
 
 **Recommended Quest Path:**
-1. [Oh-My-Zsh Mastery](/quests/level-0010-oh-my-zsh-mastery/) - Enhanced terminal
-2. [Nerd Font Enchantment](/quests/side-quest-nerd-font-enchantment/) - Terminal customization
-3. [Docker Mastery](/quests/level-0101-docker-mastery/) - Containerization
-4. [Jekyll-Mermaid Integration](/quests/jekyll-mermaid-integration-quest/) - Documentation
-5. [GitHub Actions](/quests/action-triggers/) - CI/CD automation
-6. [Hello Cloud](/quests/init_world/hello-cloud/) - Cloud deployment
+1. [Oh-My-Zsh Enchantment](/quests/0010/oh-my-zsh-terminal-enchantment/) - Enhanced terminal
+2. [Nerd Font Enchantment](/quests/0010/nerd-font-enchantment-side-quest/) - Terminal customization
+3. [Container Fundamentals](/quests/0100/container-fundamentals/) - Containerization
+4. [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/) - Documentation
+5. [GitHub Actions Basics](/quests/0101/github-actions-basics/) - CI/CD automation
+6. [Hello Cloud](/quests/0000/hello-cloud/) - Cloud deployment
 
 **Skill Building:**
-- [Frontend Quest Line](/quests/frontend/) - UI/UX development
-- [Bash Scripting](/quests/bash-scripting/) - Automation scripts
+- [Frontend Development](/quests/0100/frontend/) - UI/UX development
+- [Bash Scripting](/quests/0010/bash-scripting/) - Automation scripts
 - [Django & Git Setup](/quickstart/2025-03-08-setting-up-django-and-git/) - Web framework
 
 **Learn from Experience:**
@@ -401,8 +419,8 @@ graph TB
 ```
 
 **Advanced Quest Progression:**
-1. [AI Automation](/quests/revolutionizing-work-with-ai-automation/) - AI-powered workflows
-2. [Advanced Version Management](/posts/2025-07-05-advanced-version-management-ai-implementation/) - Complex CI/CD
+1. [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/) - AI-powered workflows
+2. [Advanced Version Management](/posts/devops/2025-07-05-advanced-version-management-ai-implementation/) - Complex CI/CD
 3. Choose specialization path:
    - **Frontend:** Advanced frameworks, performance optimization
    - **Backend:** Microservices, system architecture
@@ -465,9 +483,9 @@ graph LR
    * JavaScript essentials and modern ES6+ features
 
 2. **Adventure Realm** (Journey/Quests)
-   * [Personal Site Project](/quests/lvl_001/personal-site/) - Build your portfolio
-   * [Frontend Quest Line](/quests/frontend/) - UI/UX development path
-   * [Jekyll-Mermaid Integration](/quests/jekyll-mermaid-integration-quest/) - Enhanced documentation
+   * [Personal Site Project](/quests/0001/personal-site/) - Build your portfolio
+   * [Frontend Development](/quests/0100/frontend/) - UI/UX development path
+   * [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/) - Enhanced documentation
    * Backend API development challenges
 
 3. **Knowledge Vault** (Library)
@@ -515,11 +533,11 @@ graph LR
    * CI/CD pipeline setup with GitHub Actions
 
 2. **Adventure Realm** (Journey/Quests)
-   * [Bash Scripting Quest](/quests/bash-scripting/) - Automation fundamentals
-   * [Docker Mastery](/quests/level-0101-docker-mastery/) - Containerization deep dive
-   * [GitHub Actions](/quests/action-triggers/) - CI/CD automation
-   * [Hello Cloud](/quests/init_world/hello-cloud/) - Cloud platform basics
-   * [Change Logs Quest](/quests/change-logs/) - Version documentation
+   * [Bash Scripting Quest](/quests/0010/bash-scripting/) - Automation fundamentals
+   * [Container Fundamentals](/quests/0100/container-fundamentals/) - Containerization deep dive
+   * [GitHub Actions Basics](/quests/0101/github-actions-basics/) - CI/CD automation
+   * [Hello Cloud](/quests/0000/hello-cloud/) - Cloud platform basics
+   * [CI/CD Fundamentals](/quests/0101/cicd-fundamentals/) - Pipeline design
    * Container orchestration challenges
    * Infrastructure as Code (Terraform) quests
    * Monitoring and observability adventures
@@ -570,14 +588,15 @@ graph LR
    * Prompt engineering fundamentals
 
 2. **Adventure Realm** (Journey/Quests)
-   * [AI Automation Quest](/quests/revolutionizing-work-with-ai-automation/) - Workflow automation
+   * [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/) - Workflow automation
+   * [Prompt Engineering](/quests/0010/prompt-engineering/) - AI prompt skills
    * Build AI-powered applications
    * Create intelligent automation workflows
    * Implement ML model deployment pipelines
 
 3. **Knowledge Vault** (Library)
-   * [Quest Creation with AI](/.github/instructions/quest.instructions.md) - AI-assisted content
-   * [Post Creation Guidelines](/.github/instructions/posts.instructions.md) - AI documentation
+   * [Quest Creation Guide](.github/instructions/quest.instructions.md) - AI-assisted content
+   * [Post Creation Guidelines](.github/instructions/posts.instructions.md) - AI documentation
    * AI integration patterns and best practices
    * Ethical AI development guidelines
    * Performance and scaling considerations
@@ -597,7 +616,7 @@ graph LR
 - [From Programmed to Grokking Off](/posts/ai%20&%20machine%20learning/from-programmed-to-grokking-off/) - AI evolution
 - [All AI/ML Posts](/posts/tags/ai/) - Complete AI collection
 
-## 🚀 Immediate Next Steps (Q4 2025)
+## 🚀 Immediate Next Steps (Q1 2026)
 
 ### Priority 1: Core Infrastructure Enhancement
 
@@ -650,10 +669,10 @@ Transform IT-Journey into a comprehensive platform where:
 ### 📍 Essential Starting Points
 
 **Absolute Beginners:**
-1. [Hello n00b Quest](/quests/hello-noob/) - Your first 30 minutes
+1. [Hello n00b Quest](/quests/0000/hello-noob/) - Your first 30 minutes
 2. [Machine Setup QuickStart](/quickstart/machine-setup/) - Configure your system
-3. [Character Building](/quests/character-building/) - Set up your environment
-4. [World Map Guide](/quests/codex/world-map/) - Navigate the platform
+3. [Character Building](/quests/0000/character-building/) - Set up your environment
+4. [World Map Guide](/quests/codex/world_map/) - Navigate the platform
 
 **Developers with Experience:**
 1. [All Quests Index](/quests/) - Browse 46+ quests
@@ -664,19 +683,21 @@ Transform IT-Journey into a comprehensive platform where:
 ### 🎯 Quest Categories (Complete Index)
 
 **By Level:**
-- 🌱 [Init World](/quests/init_world/) - Foundation & platform setup (8+ quests)
-- 🟢 [Level 000](/quests/lvl_000/) - Apprentice: Terminal & scripting (2+ quests)
-- 🟡 [Level 001](/quests/lvl_001/) - Journeyman: Web projects (1+ quest)
-- 🔴 [Level 010](/quests/lvl_0010/) - Master: Advanced config (2+ quests)
+- 🌱 [Level 0000](/quests/0000/) - Foundation & platform setup (15+ quests)
+- 🟢 [Level 0001](/quests/0001/) - Apprentice: Web development basics (10+ quests)
+- 🟡 [Level 0010](/quests/0010/) - Journeyman: Scripting & tooling (12+ quests)
+- 🟠 [Level 0011](/quests/0011/) - Advanced: Git & optimization (8+ quests)
+- 🔴 [Level 0100](/quests/0100/) - Expert: Containers & frontend (10+ quests)
+- 🟣 [Level 0101](/quests/0101/) - Master: CI/CD & deployment (10+ quests)
 
 **By Technology:**
-- 🎨 [Frontend Development](/quests/frontend/) - UI/UX and web technologies
-- 🐳 Docker & Containers - [Docker Mastery](/quests/level-0101-docker-mastery/)
-- ⚡ Terminal Enhancement - [Oh-My-Zsh](/quests/level-0010-oh-my-zsh-mastery/), [Nerd Fonts](/quests/side-quest-nerd-font-enchantment/)
-- 🤖 AI Integration - [AI Automation](/quests/revolutionizing-work-with-ai-automation/)
-- 📝 Documentation - [Jekyll-Mermaid](/quests/jekyll-mermaid-integration-quest/)
-- ⚙️ CI/CD - [GitHub Actions](/quests/action-triggers/), [Change Logs](/quests/change-logs/)
-- 🧙‍♂️ Scripting - [Bash Scripting](/quests/bash-scripting/), [Bash Run](/quests/lvl_000/bash-run/)
+- 🎨 [Frontend Development](/quests/0100/frontend/) - UI/UX and web technologies
+- 🐳 Docker & Containers - [Container Fundamentals](/quests/0100/container-fundamentals/)
+- ⚡ Terminal Enhancement - [Oh-My-Zsh](/quests/0010/oh-my-zsh-terminal-enchantment/), [Nerd Fonts](/quests/0010/nerd-font-enchantment-side-quest/)
+- 🤖 AI Integration - [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/)
+- 📝 Documentation - [Jekyll-Mermaid](/quests/0010/jekyll-mermaid-integration-quest/)
+- ⚙️ CI/CD - [GitHub Actions](/quests/0101/github-actions-basics/), [CI/CD Fundamentals](/quests/0101/cicd-fundamentals/)
+- 🧙‍♂️ Scripting - [Bash Scripting](/quests/0010/bash-scripting/), [Bash Run](/quests/0000/bash-run/)
 
 **By Quest Type:**
 - 🏰 Main Quests - Core learning adventures with substantial content
@@ -688,38 +709,38 @@ Transform IT-Journey into a comprehensive platform where:
 
 **Version Control & Collaboration:**
 - [GitHub Setup QuickStart](/quickstart/github-setup/)
-- [Hello n00b Quest](/quests/hello-noob/) - GitHub fundamentals
+- [Hello n00b Quest](/quests/0000/hello-noob/) - GitHub fundamentals
 - [Django & Git](/quickstart/2025-03-08-setting-up-django-and-git/)
-- [Branches & Pull Requests](/quests/branches-and-pull-requests/)
-- [Change Logs](/quests/change-logs/)
+- [Git Basics](/quests/0000/git-basics/) - Version control fundamentals
+- [Advanced Git Workflows](/quests/0011/advanced-git-workflows/) - Advanced techniques
 
 **Development Environment:**
 - [Machine Setup Guide](/quickstart/machine-setup/)
-- [Character Building Quest](/quests/character-building/)
-- [VS Code Mastery](/quests/vscode-mastery/)
-- [Platform-Specific Guides](/quests/init_world/) - Windows, Mac, Linux, Cloud
+- [Character Building Quest](/quests/0000/character-building/)
+- [VS Code Mastery](/quests/0000/vscode-mastery-quest/)
+- [Platform-Specific Guides](/quests/0000/) - Windows, Mac, Linux, Cloud
 
 **Web Development:**
 - [Jekyll Setup](/quickstart/jekyll-setup/)
-- [Personal Site Project](/quests/lvl_001/personal-site/)
-- [Frontend Quest Line](/quests/frontend/)
-- [Jekyll-Mermaid Integration](/quests/jekyll-mermaid-integration-quest/)
+- [Personal Site Project](/quests/0001/personal-site/)
+- [Frontend Development](/quests/0100/frontend/)
+- [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/)
 
 **DevOps & Automation:**
-- [Docker Mastery](/quests/level-0101-docker-mastery/)
-- [GitHub Actions](/quests/action-triggers/)
-- [Bash Scripting](/quests/bash-scripting/)
-- [DevOps Chronicles](/posts/tags/devops/)
+- [Container Fundamentals](/quests/0100/container-fundamentals/)
+- [GitHub Actions Basics](/quests/0101/github-actions-basics/)
+- [Bash Scripting](/quests/0010/bash-scripting/)
+- [DevOps Chronicles](/posts/devops/)
 
 **AI & Machine Learning:**
-- [AI Automation Quest](/quests/revolutionizing-work-with-ai-automation/)
-- [AI Development Posts](/posts/tags/ai/)
-- [JeykLLM Notebook](/notebooks/JeykLLM-create.html)
+- [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/)
+- [AI Development Posts](/posts/ai%20%26%20machine%20learning/)
+- [JeykLLM Notebook](/notebooks/JeykLLM-create/)
 
 ### 🗺️ Platform Maps & Guides
 
 **Navigation Resources:**
-- [World Map - Complete Site Guide](/quests/codex/world-map/) - Comprehensive navigation
+- [World Map - Complete Site Guide](/quests/codex/world_map/) - Comprehensive navigation
 - [Glossary](/quests/codex/glossary/) - IT terminology reference
 - [Sitemap](/about/sitemap/) - Complete site structure
 - [Feature Overview](/about/features/) - Platform capabilities
@@ -727,8 +748,8 @@ Transform IT-Journey into a comprehensive platform where:
 **Community & Contribution:**
 - [Contributing Guide](/about/contributing/) - How to add content
 - [Development Principles](/about/) - Philosophy and standards
-- [Quest Creation Guide](/.github/instructions/quest.instructions.md) - Write quests
-- [Post Creation Guide](/.github/instructions/posts.instructions.md) - Write articles
+- Quest Creation Guide - See `.github/instructions/quest.instructions.md`
+- Post Creation Guide - See `.github/instructions/posts.instructions.md`
 
 ### 📊 Progress Tracking
 

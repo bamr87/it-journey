@@ -1,53 +1,48 @@
 ---
-title: "Markdown Mastery: Content Formatting Fundamentals: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Markdown Mastery: Content Formatting Fundamentals"
+description: "Master Markdown syntax for creating rich documentation, blog posts, and technical content with proper formatting, links, images, and code blocks."
 date: 2025-11-30T04:58:05.000Z
 preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
-level: "0000"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0000"
+difficulty: "🟢 Easy"
 estimated_time: "30-45 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0000 (0) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "markdown"
+quest_type: "main_quest"
+skill_focus: "documentation"
+learning_style: "hands-on"
+quest_series: "Content Creation Basics"
+sub_title: "Level 0000 (0) Quest: Main Quest - Markdown"
+excerpt: "Learn essential Markdown syntax to create beautifully formatted documentation and technical content."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0000
-    - [primary-technology]
+    - markdown
     - main_quest
-    - [skill-focus]
+    - documentation
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Documentation
+    - Beginner
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - markdown syntax
+        - content formatting
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - documentation writing
+        - technical content
         - gamified-learning
         - it-journey
-lastmod: 2025-11-30T04:58:05.000Z
+lastmod: 2025-12-20T00:00:00.000Z
 permalink: /quests/level-0000-markdown-mastery/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: "Init World"
+quest_arc: "Documentation Mastery Arc"
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0000-prerequisite-quest/"
+    required_quests: []
     recommended_quests:
-        - "/quests/level-0000-helpful-quest/"
+        - "/quests/level-0000-terminal-fundamentals/"
     unlocks_quests:
         - "/quests/level-0000-next-quest/"
 

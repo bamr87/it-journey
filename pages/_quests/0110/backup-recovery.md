@@ -1,38 +1,38 @@
 ---
-title: "Backup [Quest Title] Recovery: Data Protection Strategies: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Backup and Recovery: Data Protection Strategies for Databases"
+description: "Implement comprehensive backup and recovery strategies for databases. Learn backup types, recovery procedures, point-in-time recovery, and disaster recovery planning."
 date: 2025-11-30T05:08:21.000Z
 preview: images/previews/backup-quest-title-recovery-data-protection-strate.png
-level: "0110"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0110"
+difficulty: "🔴 Hard"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0110 (6) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "sql"
+quest_type: "main_quest"
+skill_focus: "data-engineering"
+learning_style: "hands-on"
+quest_series: "Database Mastery"
+sub_title: "Level 0110 (6) Quest: Main Quest - Backup & Recovery"
+excerpt: "Protect your data with comprehensive backup strategies and recovery procedures"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0110
-    - [primary-technology]
+    - sql
     - main_quest
-    - [skill-focus]
+    - data-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Data-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - backup-recovery
+        - data-protection
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - disaster-recovery
+        - point-in-time-recovery
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:08:21.000Z

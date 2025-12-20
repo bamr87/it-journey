@@ -1,6 +1,6 @@
 ---
-title: "Innovation and R[Quest Title]D: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Innovation and R&D: Driving Technical Innovation"
+description: "Lead innovation and R&D initiatives in engineering organizations. Learn innovation frameworks, prototyping, research methodologies, and technology evaluation."
 date: 2025-12-01T04:23:04.000Z
 preview: images/previews/innovation-and-r-quest-title-d-descriptive-subtitl.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "general"
 quest_type: main_quest
 skill_focus: "innovation"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Innovation"
+excerpt: "Lead innovation and R&D initiatives to drive technical advancement"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - innovation
   - main_quest
-  - - skill-focus
+  - innovation
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Innovation
+  - Epic
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - innovation-rnd
+    - technical-innovation
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - prototyping
+    - research-methodologies
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

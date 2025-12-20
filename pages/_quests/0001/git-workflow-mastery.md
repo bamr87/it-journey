@@ -1,41 +1,46 @@
 ---
-title: "Git Workflow Mastery: Branches and Collaboration: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Git Workflow Mastery: Branches, Merging & Team Collaboration"
+description: "Learn Git branching, merging, and collaboration workflows. Master feature branches, pull requests, and conflict resolution for team development. Beginner-friendly hands-on tutorial."
 date: 2025-11-30T04:59:12.000Z
 preview: images/previews/git-workflow-mastery-branches-and-collaboration-de.png
-level: "0001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0001"
+difficulty: "🟢 Easy"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0001 (1) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "git"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Version Control Mastery"
+sub_title: "Level 0001 (1) Quest: Git Branching & Collaboration"
+excerpt: "Master Git branching strategies, merging techniques, and pull request workflows for effective team collaboration."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0001
-    - [primary-technology]
+    - git
+    - git-branching
+    - pull-requests
+    - version-control
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
-    - gamified-learning
+    - beginner
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Version-Control
+    - Beginner
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - git branching tutorial
+        - git workflow
+        - pull request tutorial
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T04:59:12.000Z
+        - git merge
+        - git collaboration
+        - feature branches
+        - git for teams
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/level-0001-git-workflow-mastery/
 
 # Advanced Quest Metadata

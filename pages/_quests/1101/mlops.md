@@ -1,6 +1,6 @@
 ---
-title: "MLOps Engineering: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "MLOps Engineering: CI/CD Pipelines for Machine Learning Production"
+description: "Implement MLOps workflows for production ML systems. Learn model versioning with MLflow, CI/CD pipelines, model serving with Docker, A/B testing, and monitoring for model drift detection."
 date: 2025-12-01T04:22:13.000Z
 preview: images/previews/mlops-engineering-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,33 @@ primary_technology: "docker"
 quest_type: main_quest
 skill_focus: "devops"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Main Quest - MLOps"
+excerpt: "Build MLOps pipelines with model versioning, CI/CD, serving, and production monitoring"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - mlops
+  - docker
+  - mlflow
   - main_quest
-  - - skill-focus
+  - devops
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - DevOps
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - mlops tutorial
+    - ml pipeline
+    - model deployment
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - mlflow
+    - model serving
+    - model drift
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

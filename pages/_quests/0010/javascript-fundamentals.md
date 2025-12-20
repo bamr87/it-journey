@@ -1,41 +1,45 @@
 ---
-title: "JavaScript Fundamentals: Interactive Web Elements: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "JavaScript Fundamentals: DOM Manipulation & Events"
+description: "Learn JavaScript essentials for web interactivity. Master DOM manipulation, event handling, and dynamic content creation. Beginner-friendly tutorial with practical examples."
 date: 2025-11-30T04:59:38.000Z
 preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
-level: "0010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0010"
+difficulty: "🟡 Medium"
 estimated_time: "75-90 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0010 (2) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "javascript"
+quest_type: "main_quest"
+skill_focus: "frontend"
+learning_style: "hands-on"
+quest_series: "Web Development Fundamentals"
+sub_title: "Level 0010 (2) Quest: JavaScript for Web Interactivity"
+excerpt: "Build interactive web pages with JavaScript DOM manipulation, events, and dynamic content."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0010
-    - [primary-technology]
+    - javascript
+    - dom-manipulation
+    - web-development
+    - frontend
     - main_quest
-    - [skill-focus]
     - hands-on
-    - gamified-learning
+    - intermediate
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Frontend
+    - JavaScript
+    - Intermediate
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - javascript tutorial
+        - dom manipulation
+        - javascript events
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T04:59:38.000Z
+        - javascript for beginners
+        - web interactivity
+        - dynamic web pages
+        - event listeners
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/level-0010-javascript-fundamentals/
 
 # Advanced Quest Metadata

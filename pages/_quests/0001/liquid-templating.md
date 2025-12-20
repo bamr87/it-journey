@@ -1,41 +1,46 @@
 ---
-title: "Liquid Templating: Dynamic Content Basics: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Liquid Templating: Dynamic Content for Jekyll Sites"
+description: "Learn Liquid templating language for Jekyll. Master variables, filters, loops, and conditionals to create dynamic content. Shopify and Jekyll template tutorial with examples."
 date: 2025-11-30T04:58:56.000Z
 preview: images/previews/liquid-templating-dynamic-content-basics-descripti.png
-level: "0001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0001"
+difficulty: "🟢 Easy"
 estimated_time: "45-60 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0001 (1) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "liquid"
+quest_type: "main_quest"
+skill_focus: "frontend"
+learning_style: "hands-on"
+quest_series: "Static Site Mastery"
+sub_title: "Level 0001 (1) Quest: Liquid Template Language"
+excerpt: "Create dynamic content in Jekyll with Liquid - master variables, filters, and control flow."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0001
-    - [primary-technology]
+    - liquid
+    - templating
+    - jekyll
+    - shopify
     - main_quest
-    - [skill-focus]
+    - frontend
     - hands-on
-    - gamified-learning
+    - beginner
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Frontend
+    - Templating
+    - Beginner
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - liquid templating tutorial
+        - jekyll liquid
+        - liquid template language
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T04:58:56.000Z
+        - liquid filters
+        - liquid variables
+        - liquid loops
+        - shopify liquid
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/level-0001-liquid-templating/
 
 # Advanced Quest Metadata

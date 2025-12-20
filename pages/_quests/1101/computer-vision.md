@@ -1,6 +1,6 @@
 ---
-title: "Computer Vision Mastery: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Computer Vision Mastery: Image Classification, Object Detection & Segmentation"
+description: "Build computer vision applications with Python and OpenCV. Learn image classification, object detection with YOLO, semantic segmentation, and image generation with GANs and diffusion models."
 date: 2025-12-01T04:22:08.000Z
 preview: images/previews/computer-vision-mastery-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,33 @@ primary_technology: "python"
 quest_type: main_quest
 skill_focus: "data-science"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Main Quest - Computer Vision"
+excerpt: "Build CV applications with image classification, object detection, and segmentation using Python"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - python
+  - opencv
+  - computer-vision
   - main_quest
-  - - skill-focus
+  - data-science
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Science
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - computer vision python
+    - object detection
+    - image classification
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - opencv tutorial
+    - yolo detection
+    - image segmentation
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

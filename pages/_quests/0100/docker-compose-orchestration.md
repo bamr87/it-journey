@@ -1,38 +1,41 @@
 ---
-title: "Docker Compose Orchestration: Multi-Container Apps: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Docker Compose Orchestration: Build Multi-Container Applications"
+description: "Master Docker Compose for orchestrating multi-container applications. Learn YAML configuration, service networking, volume management, and environment variables for development and production stacks."
 date: 2025-11-30T05:04:44.000Z
 preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
-level: "0100"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0100"
+difficulty: "🟡 Medium"
 estimated_time: "75-90 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0100 (4) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "docker-compose"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Docker Mastery"
+sub_title: "Level 0100 (4) Quest: Main Quest - Docker Compose"
+excerpt: "Build and orchestrate multi-container applications with Docker Compose YAML configuration and networking"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0100
-    - [primary-technology]
+    - docker-compose
+    - docker
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - docker compose
+        - multi-container apps
+        - container orchestration
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - docker networking
+        - docker volumes
+        - compose yaml
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:04:44.000Z

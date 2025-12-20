@@ -1,41 +1,46 @@
 ---
-title: "CSS Styling Basics: Visual Design Fundamentals: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "CSS Styling Basics: Selectors, Layout & Responsive Design"
+description: "Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox, grid, and responsive design. Hands-on tutorial with modern CSS techniques and best practices."
 date: 2025-11-30T04:59:34.000Z
 preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
-level: "0010"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0010"
+difficulty: "🟡 Medium"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0010 (2) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "css"
+quest_type: "main_quest"
+skill_focus: "frontend"
+learning_style: "hands-on"
+quest_series: "Web Development Fundamentals"
+sub_title: "Level 0010 (2) Quest: CSS for Visual Design"
+excerpt: "Create beautiful, responsive web layouts with CSS selectors, flexbox, and grid."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0010
-    - [primary-technology]
+    - css
+    - flexbox
+    - css-grid
+    - responsive-design
+    - frontend
     - main_quest
-    - [skill-focus]
     - hands-on
-    - gamified-learning
+    - intermediate
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Frontend
+    - CSS
+    - Intermediate
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - css tutorial
+        - css flexbox
+        - responsive design
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T04:59:34.000Z
+        - css grid
+        - css selectors
+        - modern css
+        - web design basics
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/level-0010-css-styling-basics/
 
 # Advanced Quest Metadata

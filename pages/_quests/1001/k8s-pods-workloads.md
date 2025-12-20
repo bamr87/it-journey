@@ -1,38 +1,38 @@
 ---
-title: "Kubernetes Pods [Quest Title] Workloads: Deployments [Quest Title] StatefulSets: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Kubernetes Pods and Workloads: Deployments and StatefulSets"
+description: "Master Kubernetes workloads including Pods, Deployments, StatefulSets, DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies."
 date: 2025-11-30T05:41:52.000Z
 preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
-level: "1001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1001"
+difficulty: "🔴 Hard"
 estimated_time: "90-120 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1001 (9) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "kubernetes"
+quest_type: "main_quest"
+skill_focus: "cloud-engineering"
+learning_style: "hands-on"
+quest_series: "Kubernetes Mastery"
+sub_title: "Level 1001 (9) Quest: Main Quest - K8s Workloads"
+excerpt: "Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and DaemonSets"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1001
-    - [primary-technology]
+    - kubernetes
     - main_quest
-    - [skill-focus]
+    - cloud-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Cloud-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - kubernetes-pods
+        - k8s-workloads
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - deployments
+        - statefulsets
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:41:52.000Z

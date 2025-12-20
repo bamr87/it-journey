@@ -1,38 +1,38 @@
 ---
-title: "Error Handling: API Response [Quest Title] Status Codes: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Error Handling: API Response Patterns and HTTP Status Codes"
+description: "Implement robust API error handling with proper HTTP status codes, error response formats, error logging, and client-friendly error messages."
 date: 2025-11-30T05:09:37.000Z
 preview: images/previews/error-handling-api-response-quest-title-status-cod.png
-level: "0111"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0111"
+difficulty: "🔴 Hard"
 estimated_time: "45-60 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0111 (7) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "api"
+quest_type: "main_quest"
+skill_focus: "backend"
+learning_style: "hands-on"
+quest_series: "API Design Mastery"
+sub_title: "Level 0111 (7) Quest: Main Quest - Error Handling"
+excerpt: "Implement professional API error handling with proper status codes and response patterns"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0111
-    - [primary-technology]
+    - api
     - main_quest
-    - [skill-focus]
+    - backend
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Backend
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - api-error-handling
+        - http-status-codes
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - error-responses
+        - error-logging
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:09:37.000Z

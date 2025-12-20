@@ -1,13 +1,19 @@
 ---
-title: level-001-frontend-docker
-description: null
+title: "Frontend Docker Level 001: Create Jekyll Site with Docker Container"
+description: "Set up a Docker-containerized Jekyll development environment. Learn to create Dockerfiles, configure docker-compose, and build Jekyll sites in isolated containers for consistent development."
 date: 2024-05-28T02:30:46.765Z
 preview: images/previews/level-001-frontend-docker.png
-tags: []
-categories: []
-sub-title: null
-excerpt: null
-snippet: null
+tags:
+    - lvl-0100
+    - docker
+    - jekyll
+    - frontend
+categories:
+    - Quests
+    - DevOps
+sub-title: "Level 001: Create Jekyll Site with Docker"
+excerpt: "Build a Docker-containerized Jekyll development environment with Dockerfile and docker-compose configuration"
+snippet: "Containerize your Jekyll development workflow with Docker"
 author: bamr87
 layout: null
 keywords: {}

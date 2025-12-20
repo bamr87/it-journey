@@ -1,38 +1,41 @@
 ---
-title: "SEO Optimization: Search Engine Visibility: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "SEO Optimization: Boost Search Engine Visibility for Jekyll Sites"
+description: "Master technical SEO for Jekyll static sites. Learn meta tags, structured data, sitemap generation, robots.txt configuration, and Google Search Console integration to improve organic search rankings."
 date: 2025-11-30T05:00:21.000Z
 preview: images/previews/seo-optimization-search-engine-visibility-descript.png
-level: "0011"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟡 Medium"  # 🟡 Medium | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0011"
+difficulty: "🟡 Medium"
 estimated_time: "45-60 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0011 (3) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "jekyll"
+quest_type: "main_quest"
+skill_focus: "frontend"
+learning_style: "hands-on"
+quest_series: "Jekyll Mastery"
+sub_title: "Level 0011 (3) Quest: Main Quest - Jekyll SEO"
+excerpt: "Optimize your Jekyll site for search engines with meta tags, structured data, and technical SEO best practices"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0011
-    - [primary-technology]
+    - jekyll
+    - seo
     - main_quest
-    - [skill-focus]
+    - frontend
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Frontend
+    - Medium
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - jekyll seo
+        - search engine optimization
+        - meta tags jekyll
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - structured data
+        - sitemap xml
+        - google search console
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:00:21.000Z

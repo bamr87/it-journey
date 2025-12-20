@@ -1,38 +1,38 @@
 ---
-title: "Infrastructure as Code: Terraform [Quest Title] CloudFormation: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Infrastructure as Code: Terraform and CloudFormation Fundamentals"
+description: "Learn Infrastructure as Code with Terraform and CloudFormation. Automate cloud provisioning, manage state, implement modules, and apply IaC best practices."
 date: 2025-11-30T05:41:15.000Z
 preview: images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
-level: "1000"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "1000"
+difficulty: "🔴 Hard"
 estimated_time: "120-150 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 1000 (8) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "terraform"
+quest_type: "main_quest"
+skill_focus: "cloud-engineering"
+learning_style: "hands-on"
+quest_series: "Cloud Journey"
+sub_title: "Level 1000 (8) Quest: Main Quest - IaC"
+excerpt: "Automate cloud infrastructure provisioning with Terraform and CloudFormation"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-1000
-    - [primary-technology]
+    - terraform
     - main_quest
-    - [skill-focus]
+    - cloud-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Cloud-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - infrastructure-as-code
+        - terraform-cloudformation
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - cloud-automation
+        - iac-best-practices
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:41:15.000Z

@@ -1,38 +1,38 @@
 ---
-title: "SQL Mastery: Query Language Proficiency: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "SQL Mastery: Query Language Proficiency for Data Professionals"
+description: "Become proficient in SQL query language with advanced SELECT statements, JOINs, subqueries, window functions, and complex data manipulation techniques."
 date: 2025-11-30T05:07:39.000Z
 preview: images/previews/sql-mastery-query-language-proficiency-descriptive.png
-level: "0110"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0110"
+difficulty: "🔴 Hard"
 estimated_time: "90-120 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0110 (6) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "sql"
+quest_type: "main_quest"
+skill_focus: "data-engineering"
+learning_style: "hands-on"
+quest_series: "Database Mastery"
+sub_title: "Level 0110 (6) Quest: Main Quest - SQL"
+excerpt: "Master advanced SQL query techniques including JOINs, subqueries, and window functions"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0110
-    - [primary-technology]
+    - sql
     - main_quest
-    - [skill-focus]
+    - data-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Data-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - sql-mastery
+        - advanced-sql
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - window-functions
+        - complex-queries
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:07:39.000Z

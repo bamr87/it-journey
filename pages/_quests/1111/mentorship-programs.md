@@ -1,6 +1,6 @@
 ---
-title: "Mentorship Programs: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "Mentorship Programs: Developing and Growing Engineering Talent"
+description: "Create effective mentorship programs for engineering teams. Learn mentoring techniques, career development guidance, knowledge transfer, and talent growth strategies."
 date: 2025-12-01T04:22:59.000Z
 preview: images/previews/mentorship-programs-descriptive-subtitle.png
 level: 1111
@@ -10,29 +10,29 @@ primary_technology: "general"
 quest_type: main_quest
 skill_focus: "leadership"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1111 (15) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "Leadership Mastery"
+sub_title: "Level 1111 (15) Quest: Main Quest - Mentorship"
+excerpt: "Build effective mentorship programs for growing engineering talent and teams"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1111
-  - - primary-technology
+  - mentorship
   - main_quest
-  - - skill-focus
+  - leadership
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Leadership
+  - Hard
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - mentorship-programs
+    - talent-development
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - career-guidance
+    - knowledge-transfer
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

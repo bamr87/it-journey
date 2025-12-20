@@ -1,6 +1,6 @@
 ---
-title: "AI Ethics and Responsible AI: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+title: "AI Ethics and Responsible AI: Bias Detection, Fairness & Governance"
+description: "Learn responsible AI practices and ethics frameworks. Understand bias detection, fairness metrics, explainability with SHAP/LIME, model governance, and regulatory compliance for AI systems."
 date: 2025-12-01T04:22:13.000Z
 preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
 level: 1101
@@ -10,29 +10,33 @@ primary_technology: "python"
 quest_type: side_quest
 skill_focus: "data-science"
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level 1101 (13) Quest: Main Quest - [Technology]"
-excerpt: One-sentence summary of the quest's core learning objective
+quest_series: "AI/ML Mastery"
+sub_title: "Level 1101 (13) Quest: Side Quest - AI Ethics"
+excerpt: "Build responsible AI systems with bias detection, fairness metrics, and model explainability"
 author: IT-Journey Team
 layout: journals
 tags:
   - lvl-1101
-  - - primary-technology
+  - python
+  - ai-ethics
+  - responsible-ai
   - side_quest
-  - - skill-focus
+  - data-science
   - hands-on
   - gamified-learning
 categories:
   - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+  - Data-Science
+  - Medium
 keywords:
   primary:
-    - - main-technology-skill
-    - - core-learning-objective
+    - ai ethics
+    - responsible ai
+    - bias detection
   secondary:
-    - - supporting-technologies
-    - - related-concepts
+    - fairness metrics
+    - model explainability
+    - shap lime
     - gamified-learning
     - it-journey
 lastmod: 2025-11-30T05:46:59.315Z

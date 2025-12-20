@@ -1,11 +1,18 @@
 ---
-title: "IT-Journey SEO Optimization Plan"
+title: "SEO Optimization Plan"
 description: "Comprehensive action plan to improve search engine optimization based on Google Analytics analysis"
 created: 2025-11-14T00:00:00.000Z
-priority: HIGH
-status: PLANNING
+lastmod: 2025-12-19T00:00:00.000Z
+status: "PLANNING"
+priority: "HIGH"
+category: "seo"
+owner: "IT-Journey Team"
 estimated_effort: "4-6 weeks"
 expected_impact: "15-30% CTR improvement, better search rankings"
+tags:
+  - todo
+  - seo
+  - optimization
 ---
 
 # 🚀 IT-Journey SEO Optimization Plan

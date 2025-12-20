@@ -1,41 +1,46 @@
 ---
-title: "GitHub Pages Basics: Free Hosting Fundamentals: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "GitHub Pages Basics: Deploy Free Websites in Minutes"
+description: "Learn to deploy static websites for free with GitHub Pages. Step-by-step tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect for portfolios and projects."
 date: 2025-11-30T04:58:35.000Z
 preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
-level: "0001"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🟢 Easy"  # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0001"
+difficulty: "🟢 Easy"
 estimated_time: "60-75 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0001 (1) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "github-pages"
+quest_type: "main_quest"
+skill_focus: "devops"
+learning_style: "hands-on"
+quest_series: "Web Hosting Fundamentals"
+sub_title: "Level 0001 (1) Quest: Free Website Hosting with GitHub"
+excerpt: "Deploy your first website for free using GitHub Pages with custom domains and HTTPS."
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0001
-    - [primary-technology]
+    - github-pages
+    - web-hosting
+    - static-sites
+    - free-hosting
     - main_quest
-    - [skill-focus]
+    - devops
     - hands-on
-    - gamified-learning
+    - beginner
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - DevOps
+    - Web-Hosting
+    - Beginner
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - github pages tutorial
+        - free website hosting
+        - deploy static site
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T04:58:35.000Z
+        - github pages custom domain
+        - github pages https
+        - portfolio hosting
+        - static site deployment
+lastmod: 2025-12-19T00:00:00.000Z
 permalink: /quests/level-0001-github-pages-basics/
 
 # Advanced Quest Metadata

@@ -1,38 +1,38 @@
 ---
-title: "Data Modeling: Schema Design [Quest Title] Relationships: [Descriptive Subtitle]"
-description: "Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)"
+title: "Data Modeling: Schema Design and Database Relationships"
+description: "Learn data modeling techniques for designing efficient database schemas. Master ER diagrams, normalization, relationships, and data architecture best practices."
 date: 2025-11-30T05:07:55.000Z
 preview: images/previews/data-modeling-schema-design-quest-title-relationsh.png
-level: "0110"  # Binary level (e.g., 0000, 0001, 0010, etc.)
-difficulty: "🔴 Hard"  # 🔴 Hard | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+level: "0110"
+difficulty: "🔴 Hard"
 estimated_time: "75-90 minutes"
-primary_technology: "[main-tech]"  # e.g., docker, bash, python, react
-quest_type: "main_quest"  # main_quest | side_quest | bonus_quest | epic_quest
-skill_focus: "[skill-category]"  # e.g., frontend, backend, devops, data
-learning_style: "hands-on"  # hands-on | theoretical | project-based | tutorial
-quest_series: "[series-name]"  # e.g., "Docker Mastery", "Terminal Arts"
-sub_title: "Level 0110 (6) Quest: Main Quest - [Technology]"
-excerpt: "One-sentence summary of the quest's core learning objective"
+primary_technology: "sql"
+quest_type: "main_quest"
+skill_focus: "data-engineering"
+learning_style: "hands-on"
+quest_series: "Database Mastery"
+sub_title: "Level 0110 (6) Quest: Main Quest - Data Modeling"
+excerpt: "Design efficient database schemas with normalization, relationships, and ER diagrams"
 author: "IT-Journey Team"
 layout: journals
 tags:
     - lvl-0110
-    - [primary-technology]
+    - sql
     - main_quest
-    - [skill-focus]
+    - data-engineering
     - hands-on
     - gamified-learning
 categories:
     - Quests
-    - [Skill-Category]
-    - [Difficulty-Level]
+    - Data-Engineering
+    - Hard
 keywords:
     primary:
-        - [main-technology-skill]
-        - [core-learning-objective]
+        - data-modeling
+        - schema-design
     secondary:
-        - [supporting-technologies]
-        - [related-concepts]
+        - er-diagrams
+        - database-normalization
         - gamified-learning
         - it-journey
 lastmod: 2025-11-30T05:07:55.000Z
