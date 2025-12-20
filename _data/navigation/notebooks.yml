@@ -1,0 +1,33 @@
+- title: Notebooks
+  icon: book
+  url: /notes/
+  sublinks:
+    - title: Notes Index
+      url: /notes/
+    - title: Jupyter
+      url: /notes/jupyter/
+- title: Cheatsheets
+  icon: list
+  sublinks:
+    - title: Bash
+      url: /notes/cheetsheets/bash
+    - title: PowerShell
+      url: /notes/cheetsheets/powershell
+    - title: Command Line
+      url: /notes/cheetsheets/command-line
+    - title: Markdown
+      url: /notes/cheetsheets/markdown
+    - title: Mac Shortcuts
+      url: /notes/cheetsheets/mac-shortcuts
+- title: Code Snippets
+  icon: code
+  sublinks:
+    - title: Code Snippets Index
+      url: /notes/code-snippets/
+- title: Development Notes
+  icon: terminal
+  sublinks:
+    - title: Dev Notes
+      url: /notes/dev/
+    - title: Projects
+      url: /notes/dev/projects/

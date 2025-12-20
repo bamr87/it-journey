@@ -1,15 +1,23 @@
 - title: Home
   icon: bi-house
-  url: /home
+  url: /home/
   sublinks:
-    - title: Style
-      url: /home/style/
+    - title: Welcome
+      url: /home/
 - title: Map
   icon: bi-map
-  url: /search/index
+  url: /search/
   sublinks:
     - title: Search
       url: /search/
-    - title: Roadmap
-      url: /roadmap/
+    - title: Stats
+      url: /stats/
+- title: Journey
+  icon: bi-journal
+  url: /posts/
+  sublinks:
+    - title: Posts
+      url: /posts/
+    - title: Quests
+      url: /quests/home/
 

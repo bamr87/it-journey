@@ -186,7 +186,53 @@ VERBOSE=1 ruby _data/generate_statistics.rb
 
 ## Navigation Data
 
-The `navigation/` directory contains navigation menu configurations for different sections of the site.
+The `navigation/` directory contains navigation menu configurations for different sections of the site. These are used by the theme's sidebar system.
+
+### Navigation Files
+
+| File | Purpose | Sidebar Config (`_config.yml`) | Collection/Section |
+|------|---------|-------------------------------|-------------------|
+| `main.yml` | Main site header navigation | Default for all pages | Site-wide header |
+| `home.yml` | Home page sidebar navigation | N/A (used in header) | `/home/` page |
+| `about.yml` | About section sidebar | `pages/_about` | `/about/` pages |
+| `docs.yml` | Documentation sidebar | `pages/_docs` | `/docs/` pages |
+| `posts.yml` | Posts/blog category navigation | N/A (uses `searchCats` mode) | `/posts/` pages |
+| `quests.yml` | Quest system navigation by level | `pages/_quests` | `/quests/` pages |
+| `quickstart.yml` | Quick-start guides navigation | `pages/_quickstart` | `/quickstart/` pages |
+| `notebooks.yml` | Notes and notebooks navigation | `pages/_notes`, `pages/_notebooks` | `/notes/`, `/notebooks/` |
+| `hobbies.yml` | Hobbies section navigation | `pages/_hobbies` | `/hobbies/` pages |
+
+### Sidebar Navigation Modes
+
+The theme supports multiple sidebar navigation modes configured in `_config.yml`:
+
+| Mode | Description | Navigation Source |
+|------|-------------|-------------------|
+| `dynamic` | Auto-generated from folder structure | `sidebar-folders.html` |
+| `searchCats` | Category-based navigation | `sidebar-categories.html` |
+| `<filename>` | Manual navigation file | `_data/navigation/<filename>.yml` |
+
+### Navigation Structure
+
+Each navigation file uses a YAML array structure:
+```yaml
+- title: Section Name
+  icon: icon-name    # Optional Bootstrap icon
+  url: /section/     # Main section URL
+  sublinks:          # Optional child links
+    - title: Child Page
+      url: /section/child/
+```
+
+### Updating Navigation
+
+When adding new pages or collections:
+1. Add the page with proper frontmatter and permalink
+2. Update the relevant navigation file in `_data/navigation/`
+3. If needed, update sidebar configuration in `_config.yml` defaults
+4. Test navigation rendering locally with `bundle exec jekyll serve`
+
+**Last Updated:** 2025-12-20
 
 ## Schema Data
 

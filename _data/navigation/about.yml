@@ -2,22 +2,18 @@
   icon: home
   url: /home/
 - title: About
+  url: /about/
   sublinks:
     - title: Home
-      url: /about
+      url: /about/
     - title: Purpose
-      url: /about/purpose
-    - title: Approach
-      url: /about/approach
+      url: /about/purpose/
+    - title: Features
+      url: /about/features/
     - title: Contributing
-      url: /about/contributing
-    - title: License
-      url: /about/license
-    - title: Terms &amp; Privacy Policy
-      url: /terms
-    - title: Theme
-      url: /about/theme
+      url: /about/contributing/
+    - title: Config
+      url: /about/config/
     - title: Sitemap
-      url: /about/sitemap
-  url: /about/
+      url: /about/sitemap/
 

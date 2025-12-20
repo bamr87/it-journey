@@ -1,0 +1,93 @@
+- title: Quest Hub
+  icon: map
+  url: /quests/home/
+  sublinks:
+    - title: Overworld Map
+      url: /quests/home/
+    - title: Quest Index
+      url: /quests/
+- title: "Level 0000 - Foundation"
+  icon: seedling
+  url: /quests/0000/
+  sublinks:
+    - title: Begin Your Journey
+      url: /quests/0000/begin-your-it-journey
+    - title: Terminal Fundamentals
+      url: /quests/0000/terminal-fundamentals
+    - title: Git Basics
+      url: /quests/0000/git-basics
+    - title: Markdown Mastery
+      url: /quests/0000/markdown-mastery
+    - title: VS Code Mastery
+      url: /quests/0000/vscode-mastery-quest
+- title: "Level 0001 - Beginner"
+  icon: leaf
+  url: /quests/0001/
+  sublinks:
+    - title: GitHub Pages Basics
+      url: /quests/0001/github-pages-basics
+    - title: Jekyll Fundamentals
+      url: /quests/0001/jekyll-fundamentals
+    - title: YAML Configuration
+      url: /quests/0001/yaml-configuration
+    - title: Liquid Templating
+      url: /quests/0001/liquid-templating
+    - title: Git Workflow Mastery
+      url: /quests/0001/git-workflow-mastery
+- title: "Level 0010 - Intermediate"
+  icon: tree
+  url: /quests/0010/
+  sublinks:
+    - title: Bash Scripting
+      url: /quests/0010/bash-scripting
+    - title: JavaScript Fundamentals
+      url: /quests/0010/javascript-fundamentals
+    - title: CSS Styling Basics
+      url: /quests/0010/css-styling-basics
+    - title: Bootstrap Framework
+      url: /quests/0010/bootstrap-framework
+    - title: Prompt Engineering
+      url: /quests/0010/prompt-engineering
+- title: "Level 0011 - Advanced"
+  icon: mountain
+  url: /quests/0011/
+  sublinks:
+    - title: Advanced Git Workflows
+      url: /quests/0011/advanced-git-workflows
+    - title: Jekyll Plugins
+      url: /quests/0011/jekyll-plugins
+    - title: SEO Optimization
+      url: /quests/0011/seo-optimization
+    - title: Analytics Integration
+      url: /quests/0011/analytics-integration
+- title: "Level 0100 - Container"
+  icon: box
+  url: /quests/0100/
+  sublinks:
+    - title: Container Fundamentals
+      url: /quests/0100/container-fundamentals
+    - title: Docker Compose
+      url: /quests/0100/docker-compose-orchestration
+    - title: Frontend Docker
+      url: /quests/0100/frontend-docker
+- title: "Level 0101 - CI/CD"
+  icon: rocket
+  url: /quests/0101/
+  sublinks:
+    - title: CI/CD Fundamentals
+      url: /quests/0101/cicd-fundamentals
+    - title: GitHub Actions Basics
+      url: /quests/0101/github-actions-basics
+    - title: Deployment Pipelines
+      url: /quests/0101/deployment-pipelines
+    - title: Secrets Management
+      url: /quests/0101/secrets-management
+- title: Resources
+  icon: book
+  sublinks:
+    - title: Codex
+      url: /quests/codex/
+    - title: Inventory
+      url: /quests/inventory/
+    - title: Tools
+      url: /quests/tools/

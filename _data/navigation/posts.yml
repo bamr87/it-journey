@@ -2,23 +2,6 @@
   icon: home
   url: /posts/
   sublinks: []
-- icon: world
-  url: /posts/world/
-  sublinks:
-    - title: test
-      url: etsetst
-  title: World
-- title: Technology
-  icon: tech
-  url: /posts/tech/
-- title: Business
-  icon: Cash
-  url: /posts/business/
-- title: Forbidden Fruit
-  icon: Apple
-  url: do-not-click
-
-# Added sections discovered in posts front matter
 - title: AI & Machine Learning
   icon: ai
   url: /posts/ai/
@@ -62,4 +45,8 @@
 - title: Learning
   icon: learn
   url: /posts/learning/
+  sublinks: []
+- title: Business
+  icon: cash
+  url: /posts/business/
   sublinks: []

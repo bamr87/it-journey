@@ -1,45 +1,32 @@
 - title: Home
   icon: home
   url: /home/
-- title: Setup
+- title: Documentation
+  url: /docs/
   sublinks:
-    - title: Configuration
-      url: /docs/configuration
-    - title: Overriding Theme Defaults
-      url: /docs/overriding-theme-defaults
-- title: Features
+    - title: Library Index
+      url: /docs/
+    - title: Frontmatter Preview
+      url: /docs/frontmatter-preview-solution/
+- title: Jekyll
+  url: /docs/jekyll/
   sublinks:
-    - title: Navigation
-      url: /docs/navigation
-    - title: UI Text
-      url: /docs/ui-text
-    - title: Authors
-      url: /docs/authors
-    - title: Layouts
-      url: /docs/layouts
-- title: Programming
+    - title: Jekyll Overview
+      url: /docs/jekyll/
+    - title: Jekyll Configuration
+      url: /docs/jekyll/jekyll-config
+    - title: Frontmatter CMS
+      url: /docs/jekyll/jekyll-frontmatter-cms
+    - title: Liquid Templating
+      url: /docs/jekyll/jekyll-liquid
+    - title: Mermaid Diagrams
+      url: /docs/jekyll/jekyll-diagram-with-mermaid
+    - title: MathJax Symbols
+      url: /docs/jekyll/jekyll-math-symbols-with-mathjax
+    - title: Mermaid Migration
+      url: /docs/jekyll/mermaid-migration
+- title: Terminal
   sublinks:
-    - title: Liquid
-      url: /
-      source: null
-- title: Headless CMS
-  sublinks:
-    - title: Working with Posts
-      url: /docs/posts
-    - title: Working with Collections
-      url: /docs/collections
-    - title: Helpers
-      url: /docs/helpers
-    - title: Utility Classes
-      url: /docs/utility-classes
-- title: Design
-  sublinks:
-    - title: Stylesheets
-      url: /docs/stylesheets
-    - title: JavaScript
-      url: /docs/javascript
-- title: Releases
-  sublinks:
-    - title: History
-      url: /docs/history
+    - title: Terminal Shortcuts
+      url: /docs/terminal-shortcuts-cheat-sheet/
 

@@ -1,42 +1,48 @@
 - title: Quick-Start
-  url: /quickstart
+  url: /quickstart/
   sublinks:
-    - title: Master Setup
+    - title: Machine Setup
       url: /quickstart/machine-setup
-    - title: Zer0-Mistakes
-      url: /zer0/
+    - title: GitHub Setup
+      url: /quickstart/github
+    - title: Jekyll Setup
+      url: /quickstart/jekyll
+    - title: Charm Tools
+      url: /quickstart/charm-setup/
 - title: Journey
-  url: /posts
+  url: /posts/
   sublinks:
-    - title: Pages
-      url: /pages
+    - title: Posts Index
+      url: /posts/
     - title: Quests
-      url: /quests
+      url: /quests/home/
+    - title: Stats
+      url: /stats/
 - title: Library
   url: /docs/
   sublinks:
     - title: Jekyll
-      url: /docs/jekyll
-    - title: Categories
-      url: /categories
+      url: /docs/jekyll/
+    - title: Terminal
+      url: /docs/terminal-shortcuts-cheat-sheet/
 - title: Notebook
-  url: /notes
+  url: /notes/
   sublinks:
-    - title: Notes
-      url: /notes
+    - title: Notes Index
+      url: /notes/
     - title: Jupyter
-      url: /notes/jupyter
+      url: /notes/jupyter/
+    - title: Cheatsheets
+      url: /notes/cheetsheets/
 - title: About
   url: /about/
   sublinks:
-    - title: Config
-      url: /about/config
-    - title: Theme
-      url: /about/theme
-    - title: Contributing
-      url: /about/contributing
-    - title: Sitemap
-      url: /about/sitemap
     - title: Features
-      url: /about/features
+      url: /about/features/
+    - title: Config
+      url: /about/config/
+    - title: Contributing
+      url: /about/contributing/
+    - title: Sitemap
+      url: /about/sitemap/
 

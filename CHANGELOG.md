@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.4.1] - 2025-12-28
+
+### Added
+- **`_data/navigation/quests.yml`** - New navigation file for quest collection with all levels (0000-0101)
+- **`_data/navigation/notebooks.yml`** - New navigation file for notes/cheatsheets collection
+
+### Changed
+
+#### Navigation System Alignment
+- **`_data/navigation/main.yml`** - Fixed broken `/zer0/` link, reorganized sections (Quick-Start, Journey, Library, Notebook, About)
+- **`_data/navigation/about.yml`** - Removed non-existent pages (`/about/approach`, `/about/license`, `/about/terms`)
+- **`_data/navigation/docs.yml`** - Complete rewrite to match actual `_docs` collection content
+- **`_data/navigation/hobbies.yml`** - Simplified to existing `/hobbies/` page only
+- **`_data/navigation/home.yml`** - Fixed broken `/roadmap/` reference, added Journey section
+- **`_data/navigation/posts.yml`** - Removed broken entries, added Business category
+- **`_data/navigation/quickstart.yml`** - Removed non-existent platform-specific pages
+
+#### Sidebar Configuration
+- **`_config.yml`** - Updated sidebar nav settings: `_quests` collection uses `quests` nav, `_notes` uses `notebooks`, added `_notebooks` collection scope
+- **`pages/_about/settings/_config.yml`** - Synced with main config changes
+
+### Documentation
+- **`_data/README.md`** - Added comprehensive navigation files table and sidebar modes documentation
+
 ## [2.4.0] - 2025-12-20
 
 ### Added

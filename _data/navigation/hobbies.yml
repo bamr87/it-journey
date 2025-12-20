@@ -1,13 +1,5 @@
-- title: "hobbies"
+- title: Hobbies
   url: /hobbies/
   sublinks:
-  - title: "home"
-    url: /hobbies
-  - title: "Music"
-    url: /hobbies/music
-  - title: "Gaming"
-    url: /hobbies/gaming
-  - title: "Art"
-    url: /hobbies/art
-  - title: "Cooking"
-    url: /hobbies/cooking
+    - title: Home
+      url: /hobbies/
