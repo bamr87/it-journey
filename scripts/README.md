@@ -150,6 +150,74 @@ python3 scripts/test_link_checker.py
 - Single point of truth
 - Easy to maintain, test, and extend
 
+---
+
+## 📊 SEO & Content Automation
+
+A suite of Ruby scripts for SEO optimization, content validation, and freshness tracking. All scripts are designed to run in the Docker/Jekyll environment.
+
+### Scripts Overview
+
+| Script | Purpose | Key Features |
+|--------|---------|--------------|
+| `frontmatter-validator.rb` | Validate frontmatter SEO fields | Multi-type validation, SEO scoring (0-100), JSON reports |
+| `ctr-report-generator.rb` | Generate SEO/CTR reports | Baseline metrics, weekly templates, opportunities analysis |
+| `content-freshness-check.rb` | Track content age/staleness | Freshness categories, health scoring, priority ranking |
+
+### 🔧 Usage
+
+All scripts run inside Docker for consistent environment:
+
+```bash
+# Frontmatter Validation
+docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/
+docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/_quests/ --errors-only
+docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/ -o report.json
+
+# CTR Report Generation
+docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --baseline
+docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --weekly -o weekly.md
+docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --opportunities
+docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --json -o metrics.json
+
+# Content Freshness Checking
+docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/
+docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/ --stale-only
+docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/ --json -o freshness.json
+docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/ --markdown -o report.md
+```
+
+### 📈 SEO Scoring (frontmatter-validator.rb)
+
+The validator scores content on a 100-point scale:
+- **Description** (40 pts): 120-160 chars optimal
+- **Title** (20 pts): Presence and quality
+- **Keywords** (20 pts): Relevant keywords array
+- **Tags** (10 pts): Categorization tags
+- **Lastmod** (5 pts): Update tracking
+- **Author** (5 pts): Attribution
+
+### 📅 Freshness Thresholds (content-freshness-check.rb)
+
+Content is categorized by age:
+- 🟢 **Fresh**: 0-30 days (good)
+- 🟡 **Aging**: 31-60 days (monitor)
+- 🟠 **Stale**: 61-90 days (review needed)
+- 🔴 **Critical**: >90 days (update urgently)
+- ❓ **Unknown**: No lastmod date
+
+Different content types have adjusted thresholds (posts can be older than quests).
+
+### 📊 Output Locations
+
+Reports are saved to the TODO directory:
+- `TODO/seo/data/frontmatter-report.json` - Validation data
+- `TODO/seo/data/seo-metrics.json` - SEO baseline metrics
+- `TODO/seo/data/freshness-report.json` - Freshness tracking
+- `TODO/seo/reports/*.md` - Human-readable reports
+
+---
+
 ## 🏗️ Development Scripts
 
 ### Core Scripts

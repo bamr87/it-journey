@@ -7,6 +7,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.4.0] - 2025-12-20
+
+### Added
+
+#### SEO & Content Automation Scripts (Ruby)
+Three new Ruby automation scripts for Docker/Jekyll environment:
+
+- **`scripts/frontmatter-validator.rb`** - Comprehensive frontmatter validation
+  - Multi-type validation (posts, quests, docs, notes)
+  - SEO scoring system (0-100 points)
+  - JSON report export
+  - CLI options for filtering and verbose output
+  - Validates 343 files with 91.5% validity rate
+
+- **`scripts/ctr-report-generator.rb`** - SEO/CTR report generation
+  - Baseline metrics from Google Search Console
+  - Weekly review template generation
+  - Opportunities analysis for improvement
+  - CSV parsing and JSON export
+
+- **`scripts/content-freshness-check.rb`** - Content age tracking
+  - Freshness categories (fresh/aging/stale/critical/unknown)
+  - Content health scoring (56.2% current health)
+  - Priority-ranked action items
+  - Markdown and JSON report exports
+  - Content-type specific thresholds
+
+#### SEO Data & Reports
+- `TODO/seo/data/frontmatter-report.json` - Full validation report (343 files)
+- `TODO/seo/data/seo-metrics.json` - SEO baseline metrics
+- `TODO/seo/data/freshness-report.json` - Content freshness data
+- `TODO/seo/reports/weekly-review-2025-12-20.md` - Weekly review template
+- `TODO/seo/reports/content-freshness-2025-12-20.md` - Freshness report
+
+### Changed
+- **TODO Status Dashboard**: Updated `TODO/STATUS.md` with Automation category at 100% completion
+- **TODO README**: Updated `TODO/README.md` with completed automation scripts and usage examples
+- **Scripts README**: Added comprehensive SEO Automation section with usage examples
+
+### Documentation
+- Updated `scripts/README.md` with SEO & Content Automation section
+- Added usage examples for all three Ruby scripts
+- Documented SEO scoring methodology and freshness thresholds
+
 ## [2.3.0] - 2025-12-20
 
 ### Added

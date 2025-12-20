@@ -1,0 +1,3455 @@
+{
+  "timestamp": "2025-12-20T15:18:52-06:00",
+  "summary": {
+    "total_files": 343,
+    "files_with_lastmod": 313,
+    "files_without_lastmod": 30,
+    "average_age_days": 249.1,
+    "by_status": {
+      "aging": 39,
+      "critical": 142,
+      "stale": 17,
+      "unknown": 8,
+      "fresh": 137
+    },
+    "by_type": {
+      "other": 27,
+      "docs": 10,
+      "notes": 33,
+      "posts": 117,
+      "quests": 156
+    }
+  },
+  "files": [
+    {
+      "file_path": "pages/_about/about.md",
+      "title": "About",
+      "content_type": "other",
+      "lastmod": "2025-11-02",
+      "created": "2024-05-31",
+      "days_since_update": 48,
+      "status": "aging",
+      "priority": 44
+    },
+    {
+      "file_path": "pages/_about/automation.md",
+      "title": "Configuration Automation System",
+      "content_type": "other",
+      "lastmod": "2025-06-22",
+      "created": null,
+      "days_since_update": 181,
+      "status": "critical",
+      "priority": 118
+    },
+    {
+      "file_path": "pages/_about/contribute/contributing.md",
+      "title": "Contributing to IT-Journey",
+      "content_type": "other",
+      "lastmod": "2025-11-07",
+      "created": null,
+      "days_since_update": 43,
+      "status": "aging",
+      "priority": 44
+    },
+    {
+      "file_path": "pages/_about/features/index.md",
+      "title": "Learning Platform Features",
+      "content_type": "other",
+      "lastmod": "2025-10-13",
+      "created": "2024-03-12",
+      "days_since_update": 68,
+      "status": "stale",
+      "priority": 76
+    },
+    {
+      "file_path": "pages/_about/profile/bamr87.md",
+      "title": null,
+      "content_type": "other",
+      "lastmod": "2025-01-21",
+      "created": null,
+      "days_since_update": 333,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_about/purpose.md",
+      "title": "Purpose",
+      "content_type": "other",
+      "lastmod": "2024-05-11",
+      "created": null,
+      "days_since_update": 588,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_about/settings/config.md",
+      "title": "Jekyll Configuration & Site Structure",
+      "content_type": "other",
+      "lastmod": "2025-07-03",
+      "created": null,
+      "days_since_update": 170,
+      "status": "critical",
+      "priority": 117
+    },
+    {
+      "file_path": "pages/_about/settings/sitemap.md",
+      "title": "Site Navigation Map",
+      "content_type": "other",
+      "lastmod": "2025-07-03",
+      "created": null,
+      "days_since_update": 170,
+      "status": "critical",
+      "priority": 117
+    },
+    {
+      "file_path": "pages/_about/settings/tree.md",
+      "title": "Site Tree Structure",
+      "content_type": "other",
+      "lastmod": "2025-07-03",
+      "created": null,
+      "days_since_update": 170,
+      "status": "critical",
+      "priority": 117
+    },
+    {
+      "file_path": "pages/_about/versioning.md",
+      "title": "versioning",
+      "content_type": "other",
+      "lastmod": "2022-05-21",
+      "created": null,
+      "days_since_update": 1309,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_docs/frontmatter-preview-solution.md",
+      "title": null,
+      "content_type": "docs",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_docs/index.md",
+      "title": "Learning Resources Library",
+      "content_type": "docs",
+      "lastmod": "2025-10-19",
+      "created": "2021-09-24",
+      "days_since_update": 62,
+      "status": "aging",
+      "priority": 46
+    },
+    {
+      "file_path": "pages/_docs/jekyll/index.md",
+      "title": "Jekyll Documentation",
+      "content_type": "docs",
+      "lastmod": "2025-10-13",
+      "created": null,
+      "days_since_update": 68,
+      "status": "aging",
+      "priority": 46
+    },
+    {
+      "file_path": "pages/_docs/jekyll/jekyll-config.md",
+      "title": "Configuration Options | Jekyll • Simple, blog-aware, static sites",
+      "content_type": "docs",
+      "lastmod": "2024-05-02",
+      "created": null,
+      "days_since_update": 597,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_docs/jekyll/jekyll-diagram-with-mermaid.md",
+      "title": "Jekyll Mermaid Diagrams: Auto-Detection Guide for Flowcharts & More",
+      "content_type": "docs",
+      "lastmod": "2025-12-19",
+      "created": "2025-01-27",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_docs/jekyll/jekyll-frontmatter-cms.md",
+      "title": "Jekyll Frontmatter CMS",
+      "content_type": "docs",
+      "lastmod": "2024-05-16",
+      "created": "2022-06-11",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_docs/jekyll/jekyll-liquid.md",
+      "title": "Jekyll - Liquid",
+      "content_type": "docs",
+      "lastmod": "2024-05-16",
+      "created": "2016-01-19",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md",
+      "title": "Jekyll - Math Symbols with MathJax",
+      "content_type": "docs",
+      "lastmod": "2022-06-04",
+      "created": "2018-09-10",
+      "days_since_update": 1295,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_docs/jekyll/mermaid-migration.md",
+      "title": "Mermaid Auto-Detection Migration Guide",
+      "content_type": "docs",
+      "lastmod": "2025-01-27",
+      "created": "2025-01-27",
+      "days_since_update": 327,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_docs/terminal/terminal-shortcuts-cheat-sheet.md",
+      "title": "Essential Terminal Shortcuts: macOS, Linux & Windows Cheat Sheet",
+      "content_type": "docs",
+      "lastmod": "2025-12-20",
+      "created": "2025-12-20",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_hobbies/home.md",
+      "title": "hobbies",
+      "content_type": "other",
+      "lastmod": "2022-06-04",
+      "created": "2025-07-03",
+      "days_since_update": 1295,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notebooks/JeykLLM-create.md",
+      "title": "Chat GPT Text Generation",
+      "content_type": "other",
+      "lastmod": "2025-07-03",
+      "created": "2025-07-03",
+      "days_since_update": 170,
+      "status": "critical",
+      "priority": 117
+    },
+    {
+      "file_path": "pages/_notebooks/html_md_doc_scrapper.md",
+      "title": "HTML to markdown web scraping",
+      "content_type": "other",
+      "lastmod": null,
+      "created": "2024-05-20",
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notebooks/jupyter-to-markdown.md",
+      "title": "Jupyter Notebook to Markdown Converter",
+      "content_type": "other",
+      "lastmod": null,
+      "created": "2024-05-24",
+      "days_since_update": 575,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notebooks/jupyter.md",
+      "title": "Jupyter",
+      "content_type": "other",
+      "lastmod": "2025-07-03",
+      "created": "2025-07-03",
+      "days_since_update": 170,
+      "status": "critical",
+      "priority": 117
+    },
+    {
+      "file_path": "pages/_notebooks/markdown-to-script.md",
+      "title": "Markdown to Script Converter",
+      "content_type": "other",
+      "lastmod": "2024-05-15",
+      "created": null,
+      "days_since_update": 584,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/2025-01-16-iterm-tips-and-tricks.md",
+      "title": "iTerm Tips and Tricks",
+      "content_type": "notes",
+      "lastmod": "2025-01-17",
+      "created": "2025-01-16",
+      "days_since_update": 337,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/2025-01-16-mastering-iterm-shortcuts-for-efficiency.md",
+      "title": "Mastering iTerm Shortcuts for Efficiency",
+      "content_type": "notes",
+      "lastmod": "2025-01-17",
+      "created": "2025-01-16",
+      "days_since_update": 337,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/2025-01-23-sass-mixins.md",
+      "title": "Sass mixins",
+      "content_type": "notes",
+      "lastmod": "2025-01-23",
+      "created": "2025-01-23",
+      "days_since_update": 331,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/2025-01-24-set-up-azure-for-jekyll-contact-us-form.md",
+      "title": "Set Up Azure for Jekyll Contact Us Form",
+      "content_type": "notes",
+      "lastmod": "2025-01-25",
+      "created": "2025-01-24",
+      "days_since_update": 329,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md",
+      "title": "Using Jekyll, Lambda, and SES for Efficient Web Solutions",
+      "content_type": "notes",
+      "lastmod": "2025-01-25",
+      "created": "2025-01-24",
+      "days_since_update": 329,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md",
+      "title": "Host Django on Raspberry Pi: A Complete Guide",
+      "content_type": "notes",
+      "lastmod": "2025-02-05",
+      "created": "2025-02-05",
+      "days_since_update": 318,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/Journal Entries/GPT App Build.md",
+      "title": "GPT App Build",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-13",
+      "days_since_update": 676,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/Journal Entries/Github_s hidden gem.md",
+      "title": "Github's hidden gem",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-14",
+      "days_since_update": 675,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/Journal Entries/What is my PiDentity_.md",
+      "title": "What is my PiDentity?",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-14",
+      "days_since_update": 675,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/2022-10-07-powershell.md",
+      "title": "Windows PowerShell Cheatsheet",
+      "content_type": "notes",
+      "lastmod": "2022-01-10",
+      "created": null,
+      "days_since_update": 1440,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/Bash cheatsheet.md",
+      "title": "Bash Cheatsheet",
+      "content_type": "notes",
+      "lastmod": "2024-05-14",
+      "created": null,
+      "days_since_update": 585,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/Shell and the CLI.md",
+      "title": "Shell and the CLI",
+      "content_type": "notes",
+      "lastmod": "2024-05-17",
+      "created": "2023-12-15",
+      "days_since_update": 582,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/Windows Powershell Cheatsheet.md",
+      "title": "Windows Powershell Cheatsheet",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2023-12-15",
+      "days_since_update": 736,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/bash.md",
+      "title": "Bash Cheatsheet",
+      "content_type": "notes",
+      "lastmod": "2022-08-07",
+      "created": null,
+      "days_since_update": 1231,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/command-line.md",
+      "title": "Shell and the CLI",
+      "content_type": "notes",
+      "lastmod": "2022-01-05",
+      "created": null,
+      "days_since_update": 1445,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/mac-shortcuts.md",
+      "title": "Mac Keyboard Shortcuts",
+      "content_type": "notes",
+      "lastmod": "2024-04-29",
+      "created": null,
+      "days_since_update": 600,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/markdown.md",
+      "title": "Markdown Cheatsheet",
+      "content_type": "notes",
+      "lastmod": "2021-12-27",
+      "created": null,
+      "days_since_update": 1454,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/cheetsheets/programming.md",
+      "title": "Programming",
+      "content_type": "notes",
+      "lastmod": "2022-01-02",
+      "created": null,
+      "days_since_update": 1448,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/code-snippets/test.md",
+      "title": "test",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 30
+    },
+    {
+      "file_path": "pages/_notes/dev/2024-05-14-side-bar-folders.md",
+      "title": "Sidebar Folder Structure",
+      "content_type": "notes",
+      "lastmod": "2024-05-16",
+      "created": "2024-05-14",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/dev/Curiculum.md",
+      "title": "Curiculum",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-13",
+      "days_since_update": 676,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/dev/Take good notes.md",
+      "title": "Take good notes",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-03",
+      "days_since_update": 686,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/dev/projects/Master_s Project.md",
+      "title": "Master's Project",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-13",
+      "days_since_update": 676,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/dev/projects/People.md",
+      "title": "People",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-03",
+      "days_since_update": 686,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/dev/projects/Production.md",
+      "title": "Production",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-03",
+      "days_since_update": 686,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/dev/projects/Project List.md",
+      "title": "Project List",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-13",
+      "days_since_update": 676,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/html_md_doc_scrapper.md",
+      "title": "HTML to Markdown Web Scraping",
+      "content_type": "notes",
+      "lastmod": "2025-07-03",
+      "created": "2024-05-20",
+      "days_since_update": 170,
+      "status": "critical",
+      "priority": 117
+    },
+    {
+      "file_path": "pages/_notes/index.md",
+      "title": "Notes (~) Index",
+      "content_type": "notes",
+      "lastmod": "2024-05-24",
+      "created": "2025-07-03",
+      "days_since_update": 575,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/jekyllm-integration.md",
+      "title": "Jekyll LLM Integration Ideas",
+      "content_type": "notes",
+      "lastmod": "2024-06-01",
+      "created": "2024-06-01",
+      "days_since_update": 567,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/misc/AWS Practice Question Set.md",
+      "title": "AWS Practice Question Set",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2023-12-15",
+      "days_since_update": 736,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/misc/Favicons.md",
+      "title": "Favicons",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-19",
+      "days_since_update": 670,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/misc/cloud.md",
+      "title": "AWS Practice Question Set",
+      "content_type": "notes",
+      "lastmod": "2022-01-12",
+      "created": null,
+      "days_since_update": 1438,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_notes/zero/Start.md",
+      "title": "Start",
+      "content_type": "notes",
+      "lastmod": null,
+      "created": "2024-02-01",
+      "days_since_update": 688,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2022-01-09-sonic-pi.md",
+      "title": "Sonic Pi",
+      "content_type": "posts",
+      "lastmod": "2022-01-18",
+      "created": null,
+      "days_since_update": 1432,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2022-02-27-dual-boot-win-linux.md",
+      "title": "dual boot win linux",
+      "content_type": "posts",
+      "lastmod": "2022-03-07",
+      "created": null,
+      "days_since_update": 1384,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2022-05-09-javascript-testing.md",
+      "title": "Interactive JavaScript & Jekyll Layout Magic: A Comprehensive Demo",
+      "content_type": "posts",
+      "lastmod": "2025-09-01",
+      "created": null,
+      "days_since_update": 110,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/2022-06-10-desktop-widgets-windows.md",
+      "title": "Install Rainmeter Desktop Widgets on Windows: Quick Setup Guide",
+      "content_type": "posts",
+      "lastmod": "2025-12-19",
+      "created": "2022-06-10",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_posts/2022-07-01-angular-tour-of-heros.md",
+      "title": "Angular Tour of Heros",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": null,
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2023-03-26-chat-gpt-vs-the-impossible-triangle.md",
+      "title": "Chat GPT vs The Impossible Triangle: AI Limitations in 3D Space",
+      "content_type": "posts",
+      "lastmod": "2025-11-01",
+      "created": "2023-03-26",
+      "days_since_update": 49,
+      "status": "fresh",
+      "priority": 4
+    },
+    {
+      "file_path": "pages/_posts/2024-02-10-retropie-imaging.md",
+      "title": "RetroPie Imaging",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": "2024-02-10",
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-03-10-raspberry-pi-5-case-build.md",
+      "title": "Raspberry Pi",
+      "content_type": "posts",
+      "lastmod": "2024-05-13",
+      "created": null,
+      "days_since_update": 586,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-03-11-cv-analysis.md",
+      "title": "GPT - CV Analysis",
+      "content_type": "posts",
+      "lastmod": "2024-05-28",
+      "created": "2024-03-11",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-03-27-bootable-mac-os.md",
+      "title": "Create Bootable macOS Installer: Complete Guide for Recovery & Installation",
+      "content_type": "posts",
+      "lastmod": "2025-12-19",
+      "created": "2024-03-27",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_posts/2024-04-13-sec's-edgar-database.md",
+      "title": "SEC's Edgar Database",
+      "content_type": "posts",
+      "lastmod": "2024-04-16",
+      "created": "2019-08-22",
+      "days_since_update": 613,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-05-28-auto-increment-frontmatter-version.md",
+      "title": "Auto-Increment Version Numbers in Frontmatter with Git Hooks",
+      "content_type": "posts",
+      "lastmod": "2025-12-19",
+      "created": "2024-05-28",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_posts/2024-06-01-latest-trends-in-manufacturing-technology.md",
+      "title": "Latest Trends in Manufacturing Technology",
+      "content_type": "posts",
+      "lastmod": "2024-06-02",
+      "created": "2024-06-01",
+      "days_since_update": 566,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-06-02-markdown-code-to-scripts.md",
+      "title": "Markdown Code to Scripts",
+      "content_type": "posts",
+      "lastmod": "2024-06-02",
+      "created": "2024-06-02",
+      "days_since_update": 566,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-06-16-unwavering-joy-of-fetch.md",
+      "title": "Unwavering Joy of Fetch",
+      "content_type": "posts",
+      "lastmod": null,
+      "created": "2024-06-16",
+      "days_since_update": 552,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2024-06-18-aquaaid's-devastating-desert-mission.md",
+      "title": "AquaAid's Devastating Desert Mission",
+      "content_type": "posts",
+      "lastmod": null,
+      "created": "2024-06-18",
+      "days_since_update": 550,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/2025-08-31-404-hunting-the-quest-for-resources.md",
+      "title": "404 Hunting: The Quest for Resources",
+      "content_type": "posts",
+      "lastmod": "2025-08-31",
+      "created": "2025-08-31",
+      "days_since_update": 111,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/2025-09-01-enchanted-overhaul-wizards-ethical-sorcery.md",
+      "title": "Enchanted Overhaul: Wizard's Ethical Sorcery Dismantles Capitalism's Dark Side, Boosts Shareholder Returns",
+      "content_type": "posts",
+      "lastmod": "2025-09-01",
+      "created": "2025-09-01",
+      "days_since_update": 110,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/2025-10-13-el-capitan-boot-loader.md",
+      "title": "Creating El Capitan Bootable Installer on Apple Silicon",
+      "content_type": "posts",
+      "lastmod": "2025-10-13",
+      "created": "2025-10-13",
+      "days_since_update": 68,
+      "status": "aging",
+      "priority": 46
+    },
+    {
+      "file_path": "pages/_posts/2025-11-15-githubs-hidden-gem.md",
+      "title": "GitHub Pages: The Hidden Gem Revolutionizing Web Publishing",
+      "content_type": "posts",
+      "lastmod": "2025-11-16",
+      "created": "2025-11-15",
+      "days_since_update": 34,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/2025-11-16-work-directory-ci-cd.md",
+      "title": "The work/ Directory: CI/CD Integration Best Practices",
+      "content_type": "posts",
+      "lastmod": "2025-11-23",
+      "created": "2025-11-16",
+      "days_since_update": 27,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_posts/2025-11-16-working-directory.md",
+      "title": "Working Directories: Backbone of Software Builds",
+      "content_type": "posts",
+      "lastmod": "2025-11-16",
+      "created": "2025-11-16",
+      "days_since_update": 34,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/2025-11-17-deploying-jekyll-sites-to-azure-cloud.md",
+      "title": "Deploying Jekyll Sites to Azure Cloud: Complete Guide for Static Web Hosting",
+      "content_type": "posts",
+      "lastmod": "2025-11-19",
+      "created": "2025-11-17",
+      "days_since_update": 31,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/2025-11-20-using-crush-vscode-github-pages.md",
+      "title": "Streamlining Content Creation - Using Crush in VSCode for Instant GitHub Pages Publishing",
+      "content_type": "posts",
+      "lastmod": "2025-11-20",
+      "created": "2025-11-20",
+      "days_since_update": 30,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/2025-11-22-flow.md",
+      "title": "Flow in DevOps: The Psychology of Optimal Engineering",
+      "content_type": "posts",
+      "lastmod": "2025-11-22",
+      "created": "2025-11-22",
+      "days_since_update": 28,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_posts/2025-11-26-mastering-prompt-engineering-vscode-copilot.md",
+      "title": "Mastering Prompt Engineering: A Practical Guide to VS Code Copilot",
+      "content_type": "posts",
+      "lastmod": "2025-11-27",
+      "created": "2025-11-26",
+      "days_since_update": 23,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_posts/2025-11-28-prd-machine-self-writing-documentation.md",
+      "title": "PRD Machine: Building a Self-Writing Product Requirements Distillery",
+      "content_type": "posts",
+      "lastmod": "2025-11-28",
+      "created": "2025-11-28",
+      "days_since_update": 22,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_posts/ai & machine learning/2023-03-26-chatgpt-vs-impossible-triangle.md",
+      "title": "Chat GPT vs The Impossible Triangle: AI Limitations in 3D Space",
+      "content_type": "posts",
+      "lastmod": "2025-11-01",
+      "created": "2023-03-26",
+      "days_since_update": 49,
+      "status": "fresh",
+      "priority": 4
+    },
+    {
+      "file_path": "pages/_posts/ai & machine learning/2024-06-27-gpt-prompt-engineering.md",
+      "title": "GPT Prompt Engineering",
+      "content_type": "posts",
+      "lastmod": "2024-06-30",
+      "created": "2024-06-27",
+      "days_since_update": 538,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/ai & machine learning/2025-03-15-ai-to-create-ai.md",
+      "title": "AI to create AI",
+      "content_type": "posts",
+      "lastmod": "2025-03-20",
+      "created": "2025-03-15",
+      "days_since_update": 275,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/ai & machine learning/2025-03-19-open-ai-future-features-with-github-action.md",
+      "title": "Open AI Future Features with Github Action",
+      "content_type": "posts",
+      "lastmod": "2025-07-04",
+      "created": "2025-03-19",
+      "days_since_update": 169,
+      "status": "stale",
+      "priority": 86
+    },
+    {
+      "file_path": "pages/_posts/ai & machine learning/2025-08-19-mother-grokking-programmers.md",
+      "title": "Mother Grokking Programmers",
+      "content_type": "posts",
+      "lastmod": "2025-08-19",
+      "created": "2025-08-19",
+      "days_since_update": 123,
+      "status": "stale",
+      "priority": 82
+    },
+    {
+      "file_path": "pages/_posts/ai & machine learning/2025-08-20-from-programmed-to-grokking-off.md",
+      "title": "From Programmed to Grokking Off: The Dark Evolution of Programmers",
+      "content_type": "posts",
+      "lastmod": "2025-08-22",
+      "created": "2025-08-20",
+      "days_since_update": 120,
+      "status": "aging",
+      "priority": 52
+    },
+    {
+      "file_path": "pages/_posts/business/2025-05-02-erp-systems-as-the-engine-of-modern-economic-design.md",
+      "title": "ERP Systems as the Engine of Modern Economic Design",
+      "content_type": "posts",
+      "lastmod": "2025-05-02",
+      "created": "2025-05-02",
+      "days_since_update": 232,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-06-16-enchanted-baking-unicorn-delights.md",
+      "title": "Enchanted Baking: Unicorn Delights",
+      "content_type": "posts",
+      "lastmod": "2024-06-18",
+      "created": "2024-06-16",
+      "days_since_update": 550,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-06-16-unwavering-joy-of-fetch.md",
+      "title": "Unwavering Joy of Fetch",
+      "content_type": "posts",
+      "lastmod": null,
+      "created": "2024-06-16",
+      "days_since_update": 552,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-06-17-wizard-topples-capitalist-dominance-ingeniously.md",
+      "title": "Wizard Topples Capitalist Dominance Ingeniously",
+      "content_type": "posts",
+      "lastmod": "2025-09-01",
+      "created": "2024-06-17",
+      "days_since_update": 110,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-06-18-aquaaids-devastating-desert-mission.md",
+      "title": "AquaAid's Devastating Desert Mission",
+      "content_type": "posts",
+      "lastmod": null,
+      "created": "2024-06-18",
+      "days_since_update": 550,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-06-24-furry-monarchs-rule-night.md",
+      "title": "Furry Monarchs Rule Night",
+      "content_type": "posts",
+      "lastmod": "2024-06-24",
+      "created": "2024-06-24",
+      "days_since_update": 544,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-06-27-sandle-tuesday.md",
+      "title": "Sandle Tuesday",
+      "content_type": "posts",
+      "lastmod": "2024-06-30",
+      "created": "2024-06-27",
+      "days_since_update": 538,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2024-12-31-cats-and-dogs-pet-care.md",
+      "title": "Cats and Dogs: Pet Care Adventures",
+      "content_type": "posts",
+      "lastmod": "2024-12-31",
+      "created": "2024-12-31",
+      "days_since_update": 354,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2025-07-03-music-resources-free-sheet-music.md",
+      "title": "Music Resources: Free Sheet Music and Musical Education",
+      "content_type": "posts",
+      "lastmod": "2025-07-17",
+      "created": "2025-07-03",
+      "days_since_update": 156,
+      "status": "stale",
+      "priority": 85
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2025-09-01-enchanted-overhaul-wizards-ethical-sorcery.md",
+      "title": "Enchanted Overhaul: Wizard's Ethical Sorcery Dismantles Capitalism's Dark Side, Boosts Shareholder Returns",
+      "content_type": "posts",
+      "lastmod": "2025-09-01",
+      "created": "2025-09-01",
+      "days_since_update": 110,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2025-11-16-fish-flavored-egg-plant.md",
+      "title": "Fish Flavored Egg plant",
+      "content_type": "posts",
+      "lastmod": "2022-08-08",
+      "created": null,
+      "days_since_update": 1230,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/creative & experimental/2025-11-16-sonic-pi.md",
+      "title": "Sonic Pi",
+      "content_type": "posts",
+      "lastmod": "2022-01-18",
+      "created": null,
+      "days_since_update": 1432,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/culture & society/2023-04-20-arab-americans-journalists-guide.md",
+      "title": "100 Questions & Answers About Arab-Americans: A Journalist's Guide",
+      "content_type": "posts",
+      "lastmod": "2025-08-16",
+      "created": "2023-04-20",
+      "days_since_update": 126,
+      "status": "stale",
+      "priority": 82
+    },
+    {
+      "file_path": "pages/_posts/culture & society/2024-05-22-rise-of-the-matriarchs-capitalism-and-religion-face-the-femme-fatale.md",
+      "title": "Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale",
+      "content_type": "posts",
+      "lastmod": "2024-05-22",
+      "created": "2024-05-22",
+      "days_since_update": 577,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/culture & society/2024-07-18-texan-cowboys-learn-history-pyramid-scheme-revealed.md",
+      "title": "Texan Cowboys Learn History: Pyramid Scheme Revealed",
+      "content_type": "posts",
+      "lastmod": "2024-07-18",
+      "created": "2024-07-18",
+      "days_since_update": 520,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/culture & society/2025-05-01-exploring-the-roots-of-injustice.md",
+      "title": "Exploring the Roots of Injustice",
+      "content_type": "posts",
+      "lastmod": "2025-05-01",
+      "created": "2025-05-01",
+      "days_since_update": 233,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/culture & society/2025-11-16-defiances-role-in-democracy.md",
+      "title": "Defiance's Role in Democracy",
+      "content_type": "posts",
+      "lastmod": "2024-06-30",
+      "created": null,
+      "days_since_update": 538,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2019-08-22-aws-database-setup-for-django-lambda-functions.md",
+      "title": "AWS Database Setup for Django Lambda Functions",
+      "content_type": "posts",
+      "lastmod": "2024-10-14",
+      "created": "2019-08-22",
+      "days_since_update": 432,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2019-08-22-secs-edgar-database.md",
+      "title": "SEC's Edgar Database",
+      "content_type": "posts",
+      "lastmod": "2024-04-16",
+      "created": "2019-08-22",
+      "days_since_update": 613,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2023-12-04-robots-txt-jekyll.md",
+      "title": "robots dot txt",
+      "content_type": "posts",
+      "lastmod": "2024-05-16",
+      "created": "2023-12-04",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2024-03-11-gpt-cv-analysis.md",
+      "title": "GPT - CV Analysis",
+      "content_type": "posts",
+      "lastmod": "2024-05-28",
+      "created": "2024-03-11",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2024-04-25-placeholders.md",
+      "title": "placeholders",
+      "content_type": "posts",
+      "lastmod": "2024-05-16",
+      "created": "2024-04-25",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2024-05-01-doc-scraper.md",
+      "title": "doc scraper",
+      "content_type": "posts",
+      "lastmod": null,
+      "created": "2024-05-01",
+      "days_since_update": 598,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2025-03-13-excel-gurus-are-the-most-valuable-programmers.md",
+      "title": "Excel Guru's are the most valuable programmers",
+      "content_type": "posts",
+      "lastmod": "2025-03-13",
+      "created": "2025-03-13",
+      "days_since_update": 282,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2025-03-13-excel-to-python.md",
+      "title": "Excel to Python",
+      "content_type": "posts",
+      "lastmod": "2025-03-13",
+      "created": "2025-03-13",
+      "days_since_update": 282,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/data & analytics/2025-11-16-excel-circular-reference-error-by-design.md",
+      "title": "Excel: Circular Reference Error by Design",
+      "content_type": "posts",
+      "lastmod": "2025-03-13",
+      "created": null,
+      "days_since_update": 282,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/devops/2019-08-22-deploy-django-on-aws-lambda-with-sam-a-step-by-step-guide.md",
+      "title": "Deploy Django on AWS Lambda with SAM: A Step-by-Step Guide",
+      "content_type": "posts",
+      "lastmod": "2024-10-14",
+      "created": "2019-08-22",
+      "days_since_update": 432,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/devops/2019-08-22-dockering-your-it-journey.md",
+      "title": "Dockering Your IT Journey",
+      "content_type": "posts",
+      "lastmod": "2024-04-02",
+      "created": "2019-08-22",
+      "days_since_update": 627,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-07-05-advanced-version-management-ai-implementation.md",
+      "title": "Advanced Version Management System: Complete Implementation with AI-Assisted Development",
+      "content_type": "posts",
+      "lastmod": "2025-07-05",
+      "created": "2025-07-05",
+      "days_since_update": 168,
+      "status": "stale",
+      "priority": 86
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-07-05-debugging-github-actions-workflows-ai-assisted.md",
+      "title": "Debugging GitHub Actions Workflows: AI-Assisted Troubleshooting Session",
+      "content_type": "posts",
+      "lastmod": "2025-07-06",
+      "created": "2025-07-05",
+      "days_since_update": 167,
+      "status": "stale",
+      "priority": 86
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-07-07-ai-assisted-script-consolidation-development-workflows.md",
+      "title": "AI-Assisted Script Consolidation: Transforming Chaotic Directories into Organized Development Workflows",
+      "content_type": "posts",
+      "lastmod": "2025-07-08",
+      "created": "2025-07-07",
+      "days_since_update": 165,
+      "status": "stale",
+      "priority": 86
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-07-09-fixing-github-actions-bash-compatibility-ai-evolution-engine.md",
+      "title": "Fixing GitHub Actions: Bash 3.2 Compatibility for AI Evolution Engine",
+      "content_type": "posts",
+      "lastmod": "2025-12-01",
+      "created": "2025-07-09",
+      "days_since_update": 19,
+      "status": "fresh",
+      "priority": 1
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-07-10-fixing-github-actions-version-integration-prepare-command.md",
+      "title": "Fixing GitHub Actions Workflow: Adding Missing 'prepare' Command to Version Integration Script",
+      "content_type": "posts",
+      "lastmod": "2025-07-10",
+      "created": "2025-07-10",
+      "days_since_update": 163,
+      "status": "stale",
+      "priority": 86
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-07-10-github-actions-authentication-fix-2025-07-10.md",
+      "title": "GitHub Actions Authentication Fix: Resolving CI/CD Workflow Failures",
+      "content_type": "posts",
+      "lastmod": "2025-07-10",
+      "created": "2025-07-10",
+      "days_since_update": 163,
+      "status": "stale",
+      "priority": 86
+    },
+    {
+      "file_path": "pages/_posts/devops/2025-12-20-docker-beginners-tutorial.md",
+      "title": "Docker for Beginners: Complete Tutorial to Get Started with Containers",
+      "content_type": "posts",
+      "lastmod": "2025-12-20",
+      "created": "2025-12-20",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_posts/learning/2021-11-08-it-purpose-manifesto.md",
+      "title": "IT Purpose: Manifesto for Digital Knowledge Sharing",
+      "content_type": "posts",
+      "lastmod": "2025-08-27",
+      "created": "2021-11-08",
+      "days_since_update": 115,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/learning/2024-05-16-groking-journey.md",
+      "title": "Groking About IT Journey",
+      "content_type": "posts",
+      "lastmod": "2024-05-16",
+      "created": "2024-05-16",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/learning/2025-08-01-enhancing-bashcrawl-cellar-scroll-educational-content.md",
+      "title": "Enhancing Bashcrawl Cellar Scroll: Creating Comprehensive Terminal Education Content",
+      "content_type": "posts",
+      "lastmod": "2025-08-02",
+      "created": "2025-08-01",
+      "days_since_update": 140,
+      "status": "stale",
+      "priority": 84
+    },
+    {
+      "file_path": "pages/_posts/programming/2024-05-28-auto-increment-frontmatter-version.md",
+      "title": "Auto Increment Frontmatter Version",
+      "content_type": "posts",
+      "lastmod": "2024-05-28",
+      "created": "2024-05-28",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/programming/2024-06-02-markdown-code-to-scripts.md",
+      "title": "Markdown Code to Scripts",
+      "content_type": "posts",
+      "lastmod": "2024-06-02",
+      "created": "2024-06-02",
+      "days_since_update": 566,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-01-27-consolidating-github-actions-modular-architecture.md",
+      "title": "Consolidating GitHub Actions: From Embedded Scripts to Modular Architecture",
+      "content_type": "posts",
+      "lastmod": "2025-09-30",
+      "created": "2025-01-27",
+      "days_since_update": 81,
+      "status": "aging",
+      "priority": 48
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-01-27-fixing-github-actions-link-checker-keyerror.md",
+      "title": "Fixing GitHub Actions Link Checker: KeyError 'details' Resolution",
+      "content_type": "posts",
+      "lastmod": "2025-09-30",
+      "created": "2025-01-27",
+      "days_since_update": 81,
+      "status": "aging",
+      "priority": 48
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-03-12-ais-infinite-loop-unveiling-arbitrage-in-complexity-of-models.md",
+      "title": "AI's Infinite Loop: Unveiling Arbitrage in Complexity of Models",
+      "content_type": "posts",
+      "lastmod": "2025-03-13",
+      "created": "2025-03-12",
+      "days_since_update": 282,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-07-05-ai-powered-modular-shell-script-refactoring.md",
+      "title": "AI-Powered Modular Shell Script Refactoring: Evolution Engine Architecture",
+      "content_type": "posts",
+      "lastmod": "2025-07-22",
+      "created": "2025-07-05",
+      "days_since_update": 151,
+      "status": "stale",
+      "priority": 85
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-08-19-refactory.md",
+      "title": "Refactory",
+      "content_type": "posts",
+      "lastmod": "2025-08-19",
+      "created": "2025-08-19",
+      "days_since_update": 123,
+      "status": "stale",
+      "priority": 82
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-08-22-forking-around-github.md",
+      "title": "Forking Around Github",
+      "content_type": "posts",
+      "lastmod": "2025-08-25",
+      "created": "2025-08-22",
+      "days_since_update": 117,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-08-27-vscode-front-matter-fork-development-setup.md",
+      "title": "VSCode Front Matter: Complete Fork & Development Guide",
+      "content_type": "posts",
+      "lastmod": "2025-09-27",
+      "created": "2025-08-27",
+      "days_since_update": 84,
+      "status": "aging",
+      "priority": 48
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-10-17-erp-stack-architecture-guide.md",
+      "title": "Comprehensive Guide to Modern ERP Stack Architecture",
+      "content_type": "posts",
+      "lastmod": "2025-10-17",
+      "created": "2025-10-17",
+      "days_since_update": 64,
+      "status": "aging",
+      "priority": 46
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-11-16-bash-scripting.md",
+      "title": "Bash Scripting",
+      "content_type": "posts",
+      "lastmod": "2023-03-17",
+      "created": null,
+      "days_since_update": 1009,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/programming/2025-11-16-working-directories-in-software-development.md",
+      "title": "Working Directories: Backbone of Software Builds",
+      "content_type": "posts",
+      "lastmod": "2025-11-16",
+      "created": "2025-11-16",
+      "days_since_update": 34,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/system administration/2022-05-21-windows-sub-linux-setup.md",
+      "title": "Windows Subsystem for Linux (WSL) Setup Guide",
+      "content_type": "posts",
+      "lastmod": "2025-10-19",
+      "created": "2022-05-21",
+      "days_since_update": 62,
+      "status": "aging",
+      "priority": 46
+    },
+    {
+      "file_path": "pages/_posts/system administration/2024-02-10-retropie-imaging.md",
+      "title": "RetroPie Imaging",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": "2024-02-10",
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/system administration/2024-03-27-bootable-mac-os.md",
+      "title": "Bootable mac os",
+      "content_type": "posts",
+      "lastmod": "2024-03-28",
+      "created": "2024-03-27",
+      "days_since_update": 632,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/system administration/2025-10-13-el-capitan-bootable-installer-apple-silicon.md",
+      "title": "Creating El Capitan Bootable Installer on Apple Silicon",
+      "content_type": "posts",
+      "lastmod": "2025-10-13",
+      "created": "2025-10-13",
+      "days_since_update": 68,
+      "status": "aging",
+      "priority": 46
+    },
+    {
+      "file_path": "pages/_posts/system administration/2025-11-16-desktop-widgets-windows.md",
+      "title": "Desktop Widgets - Windows",
+      "content_type": "posts",
+      "lastmod": "2022-06-10",
+      "created": null,
+      "days_since_update": 1289,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/system administration/2025-11-16-dual-boot-win-linux.md",
+      "title": "dual boot win linux",
+      "content_type": "posts",
+      "lastmod": "2022-03-07",
+      "created": null,
+      "days_since_update": 1384,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/system administration/2025-11-16-raspberry-pi.md",
+      "title": "Raspberry Pi",
+      "content_type": "posts",
+      "lastmod": "2024-05-13",
+      "created": null,
+      "days_since_update": 586,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/technology/2021-10-27-build-destroy-repeat-mastery.md",
+      "title": "Build-Destroy-Repeat: The Developer's Path to Mastery",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": "2021-10-27",
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/technology/2024-08-24-test-post-organization.md",
+      "title": "Test Post for Organization",
+      "content_type": "posts",
+      "lastmod": "2025-08-25",
+      "created": "2024-08-24",
+      "days_since_update": 117,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2023-11-04-latex-cv-professional-resume.md",
+      "title": "LaTex your CV",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": "2023-11-04",
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2023-12-14-cms-app-python-javascript.md",
+      "title": "CMS App with Python and JavaScript",
+      "content_type": "posts",
+      "lastmod": "2025-11-22",
+      "created": "2023-12-14",
+      "days_since_update": 28,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2024-02-14-building-code-extension.md",
+      "title": "Building a VS Code Extension",
+      "content_type": "posts",
+      "lastmod": "2024-02-25",
+      "created": "2024-02-14",
+      "days_since_update": 664,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2024-05-16-fight-with-tools.md",
+      "title": "fight with tools",
+      "content_type": "posts",
+      "lastmod": "2024-06-02",
+      "created": "2024-05-16",
+      "days_since_update": 566,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2025-11-16-krita-tips-and-tricks.md",
+      "title": "Krita Tips and Tricks",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": null,
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2025-11-16-sharex.md",
+      "title": "sharex",
+      "content_type": "posts",
+      "lastmod": "2024-05-15",
+      "created": null,
+      "days_since_update": 584,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2025-11-19-terminal-frontend-architecture.md",
+      "title": "Architecting the Glass Interface: Building Frontends for Terminal Scripts",
+      "content_type": "posts",
+      "lastmod": "2025-11-20",
+      "created": "2025-11-19",
+      "days_since_update": 30,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/tools & environment/2025-12-20-essential-vscode-extensions-developers.md",
+      "title": "Essential VS Code Extensions for Developers: The Ultimate 2025 Guide",
+      "content_type": "posts",
+      "lastmod": "2025-12-20",
+      "created": "2025-12-20",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_posts/trends & ideas/2023-03-17-penrose-triangle-impossible-geometry.md",
+      "title": "penrose triangle",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": "2023-03-17",
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/trends & ideas/2024-05-09-bootstrap-your-theme-and-character.md",
+      "title": "Bootstrap your theme and character",
+      "content_type": "posts",
+      "lastmod": "2024-05-16",
+      "created": "2024-05-09",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/trends & ideas/2024-06-01-latest-trends-in-manufacturing-technology.md",
+      "title": "Latest Trends in Manufacturing Technology",
+      "content_type": "posts",
+      "lastmod": "2024-06-02",
+      "created": "2024-06-01",
+      "days_since_update": 566,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/trends & ideas/2025-06-29-planting-seeds-software-evolution.md",
+      "title": "Planting Seeds: The DNA of Software Evolution",
+      "content_type": "posts",
+      "lastmod": "2025-12-01",
+      "created": "2025-06-29",
+      "days_since_update": 19,
+      "status": "fresh",
+      "priority": 1
+    },
+    {
+      "file_path": "pages/_posts/trends & ideas/2025-08-22-millennials-ai-takeover.md",
+      "title": "Millennials AI Takeover",
+      "content_type": "posts",
+      "lastmod": "2025-08-22",
+      "created": "2025-08-22",
+      "days_since_update": 120,
+      "status": "aging",
+      "priority": 52
+    },
+    {
+      "file_path": "pages/_posts/web development/2019-08-22-auto-hide-navbar.md",
+      "title": "Auto Hide Navbar",
+      "content_type": "posts",
+      "lastmod": "2024-03-06",
+      "created": "2019-08-22",
+      "days_since_update": 654,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2019-08-22-how-to-build-a-django-application-on-aws-lambda.md",
+      "title": "How to build a Django Application on AWS Lambda",
+      "content_type": "posts",
+      "lastmod": "2024-10-07",
+      "created": "2019-08-22",
+      "days_since_update": 439,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2024-05-14-jekyll-sidebar.md",
+      "title": "jekyll sidebar",
+      "content_type": "posts",
+      "lastmod": "2024-05-19",
+      "created": "2024-05-14",
+      "days_since_update": 580,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2024-05-16-dynamic-sidebar-tree.md",
+      "title": "Dynamic Sidebar Tree",
+      "content_type": "posts",
+      "lastmod": "2024-05-16",
+      "created": "2024-05-16",
+      "days_since_update": 583,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2024-05-24-searchbar-and-sitemaping.md",
+      "title": "Searchbar and sitemaping",
+      "content_type": "posts",
+      "lastmod": "2024-05-24",
+      "created": "2024-05-24",
+      "days_since_update": 575,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-08-29-integrating-ai-chatbot-jekyll-site.md",
+      "title": "Integrating an AI Chatbot into Jekyll: Transforming Static Sites into Interactive Learning Platforms",
+      "content_type": "posts",
+      "lastmod": "2025-08-29",
+      "created": "2025-08-29",
+      "days_since_update": 113,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-08-31-404-hunting-quest.md",
+      "title": "404 Hunting: The Quest for Resources",
+      "content_type": "posts",
+      "lastmod": "2025-08-31",
+      "created": "2025-08-31",
+      "days_since_update": 111,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-11-15-github-pages-hidden-gem.md",
+      "title": "GitHub Pages: The Hidden Gem Revolutionizing Web Publishing",
+      "content_type": "posts",
+      "lastmod": "2025-11-16",
+      "created": "2025-11-15",
+      "days_since_update": 34,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-11-16-angular-tour-of-heros.md",
+      "title": "Angular Tour of Heros",
+      "content_type": "posts",
+      "lastmod": "2024-05-20",
+      "created": null,
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-11-16-javascript-jekyll-interactive-demo.md",
+      "title": "Interactive JavaScript & Jekyll Layout Magic: A Comprehensive Demo",
+      "content_type": "posts",
+      "lastmod": "2025-09-01",
+      "created": null,
+      "days_since_update": 110,
+      "status": "aging",
+      "priority": 51
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-11-16-jekyll-and-travis.md",
+      "title": "Jekyll and Travis",
+      "content_type": "posts",
+      "lastmod": "2022-01-13",
+      "created": null,
+      "days_since_update": 1437,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_posts/web development/2025-11-24-mastering-react-beginners-guide.md",
+      "title": "Mastering React: A Beginner's Guide",
+      "content_type": "posts",
+      "lastmod": "2025-11-24",
+      "created": "2025-11-24",
+      "days_since_update": 26,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/bash-run.md",
+      "title": "bashrun and Beyond: Building an Advanced Terminal Game",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2024-05-28",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/begin-your-it-journey.md",
+      "title": "Begin your IT Journey",
+      "content_type": "quests",
+      "lastmod": "2025-11-29",
+      "created": "2023-11-23",
+      "days_since_update": 21,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/character-building.md",
+      "title": "Character Building: Forge Your IT Identity and Development Environment",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2023-11-23",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/character-selection.md",
+      "title": "Character Selection",
+      "content_type": "quests",
+      "lastmod": "2025-11-29",
+      "created": "2023-11-24",
+      "days_since_update": 21,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/git-basics.md",
+      "title": "Git Basics: Version Control Introduction",
+      "content_type": "quests",
+      "lastmod": "2025-12-20",
+      "created": "2025-11-30",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0000/hello-linux/linux-fun.md",
+      "title": "Linux Fundamentals",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": null,
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/hello-noob.md",
+      "title": "Hello n00b: Your First Steps into the IT Journey",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2022-05-24",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/hello-win/hello-win.md",
+      "title": "Hello Windows: Mastering the Windows Development Environment",
+      "content_type": "quests",
+      "lastmod": "2023-12-03",
+      "created": "2023-12-03",
+      "days_since_update": 748,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0000/it-fundamentals.md",
+      "title": "IT Fundamentals",
+      "content_type": "quests",
+      "lastmod": "2025-11-29",
+      "created": "2023-11-23",
+      "days_since_update": 21,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/markdown-mastery.md",
+      "title": "Markdown Mastery: Content Formatting Fundamentals",
+      "content_type": "quests",
+      "lastmod": "2025-12-20",
+      "created": "2025-11-30",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0000/os-selection.md",
+      "title": "OS Selection",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2023-11-24",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0000/terminal-fundamentals.md",
+      "title": "Terminal Fundamentals: Command Line Navigation Quest",
+      "content_type": "quests",
+      "lastmod": "2025-12-20",
+      "created": "2025-11-30",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0000/vscode-mastery-quest.md",
+      "title": "VS Code Mastery Quest: Forge Your Ultimate Development Weapon",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-07-21",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0001/building-testing-git-init-script.md",
+      "title": "Building & Testing the Git Init Script: Headless, Interactive, Scaffolding",
+      "content_type": "quests",
+      "lastmod": "2025-11-13",
+      "created": "2025-11-13",
+      "days_since_update": 37,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_quests/0001/docs-in-a-row.md",
+      "title": "The Knowledge Vault: Building an Automated Documentation Hub",
+      "content_type": "quests",
+      "lastmod": "2025-10-03",
+      "created": "2025-10-03",
+      "days_since_update": 78,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/0001/git-workflow-mastery.md",
+      "title": "Git Workflow Mastery: Branches, Merging & Team Collaboration",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0001/github-pages-basics.md",
+      "title": "GitHub Pages Basics: Deploy Free Websites in Minutes",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0001/github-pages-portal.md",
+      "title": "The GitHub Pages Portal: Forging Your Digital Realm",
+      "content_type": "quests",
+      "lastmod": "2025-11-15",
+      "created": "2025-11-14",
+      "days_since_update": 35,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_quests/0001/jekyll-fundamentals.md",
+      "title": "Jekyll Fundamentals: Build Static Sites with Ruby",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0001/kaizen.md",
+      "title": "Kaizen Quest: The Path of Continuous Improvement in Software Alchemy",
+      "content_type": "quests",
+      "lastmod": "2025-11-02",
+      "created": "2025-11-02",
+      "days_since_update": 48,
+      "status": "aging",
+      "priority": 44
+    },
+    {
+      "file_path": "pages/_quests/0001/liquid-templating.md",
+      "title": "Liquid Templating: Dynamic Content for Jekyll Sites",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0001/personal-site.md",
+      "title": "Personal Site",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2020-01-20",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0001/stackattack.md",
+      "title": "Stack Attack: Deciphering the Technology Matrix",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-02",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0001/stacks/barodybroject-stack-analysis.md",
+      "title": "Technology Stack Analysis: Barodybroject",
+      "content_type": "quests",
+      "lastmod": "2025-11-02",
+      "created": null,
+      "days_since_update": 48,
+      "status": "aging",
+      "priority": 44
+    },
+    {
+      "file_path": "pages/_quests/0001/stacks/it-journey-stack-analysis.md",
+      "title": "Stack Attack Analysis: IT-Journey",
+      "content_type": "quests",
+      "lastmod": "2025-11-02",
+      "created": "2025-11-02",
+      "days_since_update": 48,
+      "status": "aging",
+      "priority": 44
+    },
+    {
+      "file_path": "pages/_quests/0001/stating-the-stats.md",
+      "title": "Forging the Stats Portal: Data Analytics Quest",
+      "content_type": "quests",
+      "lastmod": "2025-10-08",
+      "created": "2025-10-08",
+      "days_since_update": 73,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/0001/terminal-illness.md",
+      "title": "Terminal Mastery: Conquering the Command-Line Realm",
+      "content_type": "quests",
+      "lastmod": "2025-09-27",
+      "created": "2025-07-28",
+      "days_since_update": 84,
+      "status": "aging",
+      "priority": 48
+    },
+    {
+      "file_path": "pages/_quests/0001/yaml-configuration.md",
+      "title": "YAML Configuration: Site Settings Mastery",
+      "content_type": "quests",
+      "lastmod": "2025-12-20",
+      "created": "2025-11-30",
+      "days_since_update": 0,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0010/advanced-markdown.md",
+      "title": "Advanced Markdown: Tables, Footnotes & Extended Syntax",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0010/bash-scripting.md",
+      "title": "Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest",
+      "content_type": "quests",
+      "lastmod": "2025-11-08",
+      "created": "2025-07-28",
+      "days_since_update": 42,
+      "status": "fresh",
+      "priority": 4
+    },
+    {
+      "file_path": "pages/_quests/0010/bootstrap-framework.md",
+      "title": "Bootstrap Framework: Build Responsive Sites Fast",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0010/css-styling-basics.md",
+      "title": "CSS Styling Basics: Selectors, Layout & Responsive Design",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0010/javascript-fundamentals.md",
+      "title": "JavaScript Fundamentals: DOM Manipulation & Events",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-11-30",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0010/jekyll-mermaid-integration-quest.md",
+      "title": "The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest",
+      "content_type": "quests",
+      "lastmod": "2025-01-27",
+      "created": "2025-01-27",
+      "days_since_update": 327,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0010/nerd-font-enchantment-side-quest.md",
+      "title": "Nerd Font Enchantment: Terminal Icon Mastery",
+      "content_type": "quests",
+      "lastmod": "2025-12-19",
+      "created": "2025-08-31",
+      "days_since_update": 1,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/0010/oh-my-zsh-terminal-enchantment.md",
+      "title": "Terminal Enchantment: Oh-My-Zsh Mastery related_quests:",
+      "content_type": "quests",
+      "lastmod": "2025-09-01",
+      "created": "2025-08-31",
+      "days_since_update": 110,
+      "status": "stale",
+      "priority": 81
+    },
+    {
+      "file_path": "pages/_quests/0010/prompt-engineering.md",
+      "title": "Forging the Prompt Crystal: Master AI Communication",
+      "content_type": "quests",
+      "lastmod": "2025-11-03",
+      "created": "2025-11-02",
+      "days_since_update": 47,
+      "status": "aging",
+      "priority": 44
+    },
+    {
+      "file_path": "pages/_quests/0010/terminal-artificer-frontend-building.md",
+      "title": "Terminal Artificer: Forging the Glass Interface",
+      "content_type": "quests",
+      "lastmod": "2025-11-29",
+      "created": "2025-11-19",
+      "days_since_update": 21,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0010/testing-quests-with-recurrisive-questing.md",
+      "title": "Recursive Realms: Testing Infinite Loops with AI",
+      "content_type": "quests",
+      "lastmod": "2025-10-09",
+      "created": "2025-10-08",
+      "days_since_update": 72,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/0011/advanced-git-workflows.md",
+      "title": "Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0011/analytics-integration.md",
+      "title": "Google Analytics for Jekyll: Complete User Tracking Integration Guide",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0011/custom-domains.md",
+      "title": "Custom Domains for GitHub Pages: Professional Website Setup Guide",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0011/github-hidden-gem-code-search-quest.md",
+      "title": "The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms",
+      "content_type": "quests",
+      "lastmod": "2025-11-15",
+      "created": "2025-11-14",
+      "days_since_update": 35,
+      "status": "fresh",
+      "priority": 3
+    },
+    {
+      "file_path": "pages/_quests/0011/jekyll-plugins.md",
+      "title": "Jekyll Plugins: Essential Extensions for Powerful Static Sites",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0011/prompt-crystal-mastery-vscode-copilot-quest.md",
+      "title": "Forging the Prompt Crystal: VS Code Copilot Mastery Quest",
+      "content_type": "quests",
+      "lastmod": "2025-11-27",
+      "created": "2025-11-26",
+      "days_since_update": 23,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0011/seo-optimization.md",
+      "title": "SEO Optimization: Boost Search Engine Visibility for Jekyll Sites",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0100/container-fundamentals.md",
+      "title": "Docker Container Fundamentals: Master Isolation & Portability for DevOps",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0100/docker-compose-orchestration.md",
+      "title": "Docker Compose Orchestration: Build Multi-Container Applications",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0100/frontend-docker.md",
+      "title": "Dockering Jekyll with Bootstrap 5",
+      "content_type": "quests",
+      "lastmod": "2024-05-28",
+      "created": null,
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0100/frontend-levels.md",
+      "title": "Frontend Forests Levels",
+      "content_type": "quests",
+      "lastmod": "2024-05-28",
+      "created": "2024-05-28",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0100/frontend.md",
+      "title": "Frontend Forests: Building a Jekyll Site with Bootstrap",
+      "content_type": "quests",
+      "lastmod": "2024-05-28",
+      "created": "2024-05-28",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0100/lvl-000-frontend-docker.md",
+      "title": "Frontend Docker - level 000",
+      "content_type": "quests",
+      "lastmod": "2024-05-28",
+      "created": null,
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0100/lvl-001-frontend-docker.md",
+      "title": "Frontend Docker Level 001: Create Jekyll Site with Docker Container",
+      "content_type": "quests",
+      "lastmod": "2024-05-28",
+      "created": "2024-05-28",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0100/lvl-010-frontend-docker.md",
+      "title": "Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker",
+      "content_type": "quests",
+      "lastmod": "2024-05-28",
+      "created": "2024-05-28",
+      "days_since_update": 571,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/0100/sourcery-code-methods.md",
+      "title": "Quest: Mastering the Ancient Arts of Source Control Sorcery",
+      "content_type": "quests",
+      "lastmod": "2025-07-29",
+      "created": "2025-04-18",
+      "days_since_update": 144,
+      "status": "critical",
+      "priority": 114
+    },
+    {
+      "file_path": "pages/_quests/0101/artifact-management.md",
+      "title": "Artifact Management: Build Output Storage and Dependency Caching",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/cicd-fundamentals.md",
+      "title": "CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/deployment-pipelines.md",
+      "title": "Deployment Pipelines: Production Release Automation Strategies",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/docker-mastery-example.md",
+      "title": "Docker Containerization Mastery: Level 0101 (5) Quest",
+      "content_type": "quests",
+      "lastmod": "2025-09-28",
+      "created": "2025-01-27",
+      "days_since_update": 83,
+      "status": "aging",
+      "priority": 48
+    },
+    {
+      "file_path": "pages/_quests/0101/environment-management.md",
+      "title": "Environment Management: Dev, Staging, and Production Configuration",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/github-actions-basics.md",
+      "title": "GitHub Actions Basics: Workflow Automation for Modern DevOps",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/jekyll-quest-tracking.md",
+      "title": "Jekyll Quest Tracking: Building Dynamic Collection Layouts",
+      "content_type": "quests",
+      "lastmod": "2025-12-02",
+      "created": "2025-12-01",
+      "days_since_update": 18,
+      "status": "fresh",
+      "priority": 1
+    },
+    {
+      "file_path": "pages/_quests/0101/secrets-management.md",
+      "title": "Secrets Management: Secure Configuration and Credential Handling",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/testing-integration.md",
+      "title": "Testing Integration: Automated Quality Assurance in CI/CD Pipelines",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0101/the-lazytex-of-building-a-curriculum-vitae.md",
+      "title": "Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest",
+      "content_type": "quests",
+      "lastmod": "2025-08-17",
+      "created": "2025-08-17",
+      "days_since_update": 125,
+      "status": "critical",
+      "priority": 112
+    },
+    {
+      "file_path": "pages/_quests/0101/workflow-optimization.md",
+      "title": "Workflow Optimization: Caching Strategies and Pipeline Parallelization",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/backup-recovery.md",
+      "title": "Backup and Recovery: Data Protection Strategies for Databases",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/connection-pooling.md",
+      "title": "Connection Pooling: Efficient Database Resource Management",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/data-modeling.md",
+      "title": "Data Modeling: Schema Design and Database Relationships",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/database-fundamentals.md",
+      "title": "Database Fundamentals: Data Storage and Retrieval",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/database-migrations.md",
+      "title": "Database Migrations: Schema Evolution and Version Control",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/database-security.md",
+      "title": "Database Security: Access Control and Data Encryption",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/query-optimization.md",
+      "title": "Query Optimization: Performance Tuning for Fast Database Queries",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0110/sql-mastery.md",
+      "title": "SQL Mastery: Query Language Proficiency for Data Professionals",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/api-authentication.md",
+      "title": "API Authentication: OAuth, JWT, and API Keys Implementation",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/api-documentation.md",
+      "title": "API Documentation: OpenAPI Specification and Developer Experience",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/api-fundamentals.md",
+      "title": "API Fundamentals: Building Web Services and HTTP APIs",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/api-versioning.md",
+      "title": "API Versioning: Managing API Evolution and Backwards Compatibility",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/error-handling.md",
+      "title": "Error Handling: API Response Patterns and HTTP Status Codes",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/rate-limiting.md",
+      "title": "Rate Limiting: API Traffic Control and Throttling Strategies",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/0111/rest-principles.md",
+      "title": "REST Principles: RESTful API Design Best Practices",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1000/aws-essentials.md",
+      "title": "AWS Essentials: Core Services and Cloud Architecture Patterns",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1000/cloud-computing-fundamentals.md",
+      "title": "Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1000/infrastructure-as-code.md",
+      "title": "Infrastructure as Code: Terraform and CloudFormation Fundamentals",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1001/k8s-config-secrets.md",
+      "title": "Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1001/k8s-pods-workloads.md",
+      "title": "Kubernetes Pods and Workloads: Deployments and StatefulSets",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1001/k8s-services-networking.md",
+      "title": "Kubernetes Services and Networking: Ingress and DNS Configuration",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1001/kubernetes-fundamentals.md",
+      "title": "Kubernetes Fundamentals: Container Orchestration Essentials",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1010/alerting-systems.md",
+      "title": "Alerting Systems: PagerDuty Integration & Incident Management Guide",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1010/distributed-tracing.md",
+      "title": "Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1010/elk-stack.md",
+      "title": "ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md",
+      "title": "Link to the Future: Automated Hyperlink Guardian Quest",
+      "content_type": "quests",
+      "lastmod": "2025-08-16",
+      "created": "2025-01-27",
+      "days_since_update": 126,
+      "status": "critical",
+      "priority": 112
+    },
+    {
+      "file_path": "pages/_quests/1010/monitoring-fundamentals.md",
+      "title": "Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1010/prometheus-grafana.md",
+      "title": "Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1011/compliance-standards.md",
+      "title": "Compliance Standards: SOC 2, GDPR, and HIPAA Requirements",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1011/feature-re-quest-.md",
+      "title": "AI Feature Pipeline Architect: DevSecOps Mastery Quest",
+      "content_type": "quests",
+      "lastmod": "2025-09-29",
+      "created": "2025-01-27",
+      "days_since_update": 82,
+      "status": "aging",
+      "priority": 48
+    },
+    {
+      "file_path": "pages/_quests/1011/penetration-testing.md",
+      "title": "Penetration Testing: Tools and Ethical Hacking Methodologies",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1011/secure-coding.md",
+      "title": "Secure Coding Practices: OWASP Top 10 Vulnerability Prevention",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1011/security-fundamentals.md",
+      "title": "Security Fundamentals: CIA Triad and Defense in Depth Strategies",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1011/threat-modeling.md",
+      "title": "Threat Modeling: STRIDE Framework and Attack Trees Analysis",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-30",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1100/apache-spark.md",
+      "title": "Apache Spark Mastery: Big Data Processing with PySpark & Scala",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1100/data-quality.md",
+      "title": "Data Quality Engineering: Testing, Validation & Monitoring Frameworks",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1100/data-warehousing.md",
+      "title": "Data Warehousing: Design Star Schema & Build Modern Analytics Architecture",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1100/edgar.md",
+      "title": "Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle",
+      "content_type": "quests",
+      "lastmod": "2025-08-20",
+      "created": "2025-08-19",
+      "days_since_update": 122,
+      "status": "critical",
+      "priority": 112
+    },
+    {
+      "file_path": "pages/_quests/1100/etl-pipeline-design.md",
+      "title": "ETL Pipeline Design: Build Scalable Data Pipelines with Python",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1100/sec-edgar.md",
+      "title": null,
+      "content_type": "quests",
+      "lastmod": "2025-08-20",
+      "created": "2025-08-20",
+      "days_since_update": 122,
+      "status": "critical",
+      "priority": 112
+    },
+    {
+      "file_path": "pages/_quests/1100/stream-processing.md",
+      "title": "Stream Processing: Real-Time Data with Apache Kafka & Flink",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1100/the-temple-of-templates.md",
+      "title": "The Temple of Templates: Binary Abstractions and Reusable Realms",
+      "content_type": "quests",
+      "lastmod": "2025-08-25",
+      "created": "2025-08-24",
+      "days_since_update": 117,
+      "status": "stale",
+      "priority": 81
+    },
+    {
+      "file_path": "pages/_quests/1101/ai-ethics.md",
+      "title": "AI Ethics and Responsible AI: Bias Detection, Fairness & Governance",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/computer-vision.md",
+      "title": "Computer Vision Mastery: Image Classification, Object Detection & Segmentation",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/deep-learning-frameworks.md",
+      "title": "Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/ml-fundamentals.md",
+      "title": "Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/mlops.md",
+      "title": "MLOps Engineering: CI/CD Pipelines for Machine Learning Production",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/natural-language-processing.md",
+      "title": "Natural Language Processing: Text Analysis, Transformers & LLMs with Python",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/neural-networks.md",
+      "title": "Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1101/python-data-science.md",
+      "title": "Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/404-hunting.md",
+      "title": "404 Hunting: Binary Wards for Unbreakable Links",
+      "content_type": "quests",
+      "lastmod": "2025-08-31",
+      "created": "2025-08-31",
+      "days_since_update": 111,
+      "status": "stale",
+      "priority": 81
+    },
+    {
+      "file_path": "pages/_quests/1110/api-gateway-patterns.md",
+      "title": "API Gateway Patterns: Routing, Load Balancing and Security",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/design-patterns.md",
+      "title": "Software Design Patterns: Gang of Four and Modern Patterns",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/domain-driven-design.md",
+      "title": "Domain-Driven Design: Strategic and Tactical Patterns",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/event-driven-design.md",
+      "title": "Event-Driven Architecture: Message Queues and Event Sourcing",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/microservices-architecture.md",
+      "title": "Microservices Architecture: Building Scalable Distributed Systems",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/scaling-strategies.md",
+      "title": "Scaling Strategies: Horizontal and Vertical Scaling Patterns",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1110/system-design-interviews.md",
+      "title": "System Design Interview Mastery: Ace Technical Interviews",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/architecture-reviews.md",
+      "title": "Architecture Reviews: Leading Technical Design Discussions",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/building-technical-communities.md",
+      "title": "Building Technical Communities: Growing Developer Ecosystems",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/career-advancement.md",
+      "title": "Career Advancement Strategies: Growing from Engineer to Leader",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/innovation-rnd.md",
+      "title": "Innovation and R&D: Driving Technical Innovation",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/mentorship-programs.md",
+      "title": "Mentorship Programs: Developing and Growing Engineering Talent",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/open-source-contribution.md",
+      "title": "Open Source Contribution: Leading and Maintaining Projects",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/tech-speaking-writing.md",
+      "title": "Tech Speaking and Writing: Building Your Technical Brand",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/1111/technical-leadership.md",
+      "title": "Technical Leadership: Building High-Performance Engineering Teams",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-12-01",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/2025-11-29-prd-codex-mastering-product-reality-distillation.md",
+      "title": "The PRD Codex: Mastering the Art of Product Reality Distillation",
+      "content_type": "quests",
+      "lastmod": "2025-11-29",
+      "created": "2025-11-29",
+      "days_since_update": 21,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/PHASE1_COMPLETE.md",
+      "title": null,
+      "content_type": "quests",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/PHASE2_COMPLETE.md",
+      "title": null,
+      "content_type": "quests",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/PHASE3_COMPLETE.md",
+      "title": null,
+      "content_type": "quests",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/PHASE4_COMPLETE.md",
+      "title": "Phase 4 Complete: Expert Tier Quests Generated",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": null,
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/PHASE5_COMPLETE.md",
+      "title": "Phase 5 Complete: Master & Legend Tier Quest Generation",
+      "content_type": "quests",
+      "lastmod": "2025-12-01",
+      "created": "2025-11-30",
+      "days_since_update": 19,
+      "status": "fresh",
+      "priority": 1
+    },
+    {
+      "file_path": "pages/_quests/QUEST_BUILD_PLAN.md",
+      "title": "Quest Build Plan - Complete Placeholder Quest System",
+      "content_type": "quests",
+      "lastmod": "2025-11-30",
+      "created": "2025-11-29",
+      "days_since_update": 20,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/VALIDATION_FIXES_SUMMARY.md",
+      "title": null,
+      "content_type": "quests",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/codex/QUEST_ORGANIZATION_SUMMARY.md",
+      "title": null,
+      "content_type": "quests",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/_quests/codex/full-stack-portfolio-epic-example.md",
+      "title": "The Digital Portfolio Fortress: Full-Stack Epic Construction",
+      "content_type": "quests",
+      "lastmod": "2025-10-03",
+      "created": "2025-10-03",
+      "days_since_update": 78,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/codex/glossary.md",
+      "title": "Glossary ",
+      "content_type": "quests",
+      "lastmod": "2023-11-25",
+      "created": null,
+      "days_since_update": 756,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/codex/oh-my-zsh-side-quest-example.md",
+      "title": "Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic",
+      "content_type": "quests",
+      "lastmod": "2025-10-03",
+      "created": "2025-10-03",
+      "days_since_update": 78,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/codex/quest-network-mapping-example.md",
+      "title": "Quest Network Mapping: Comprehensive Learning Path Visualization",
+      "content_type": "quests",
+      "lastmod": null,
+      "created": "2025-10-03",
+      "days_since_update": 78,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/codex/terminal-mastery-main-quest-example.md",
+      "title": "Terminal Navigation Mastery: Command-Line Fundamentals",
+      "content_type": "quests",
+      "lastmod": "2025-10-03",
+      "created": "2025-10-03",
+      "days_since_update": 78,
+      "status": "aging",
+      "priority": 47
+    },
+    {
+      "file_path": "pages/_quests/codex/world_map.md",
+      "title": "🗺️ World Map: Navigation Guide to the IT-Journey Realm",
+      "content_type": "quests",
+      "lastmod": "2025-07-23",
+      "created": "2024-05-28",
+      "days_since_update": 150,
+      "status": "critical",
+      "priority": 115
+    },
+    {
+      "file_path": "pages/_quests/home.md",
+      "title": "🏰 Overworld - Master Quest Map",
+      "content_type": "quests",
+      "lastmod": "2025-12-01",
+      "created": "2021-11-29",
+      "days_since_update": 19,
+      "status": "fresh",
+      "priority": 1
+    },
+    {
+      "file_path": "pages/_quests/tools/action-triggers.md",
+      "title": "Understanding Action Triggers in Depth",
+      "content_type": "quests",
+      "lastmod": "2025-11-29",
+      "created": "2025-04-18",
+      "days_since_update": 21,
+      "status": "fresh",
+      "priority": 2
+    },
+    {
+      "file_path": "pages/_quests/tools/branches-and-pull-requests.md",
+      "title": "Mastering Branches and Pull Requests for Developers",
+      "content_type": "quests",
+      "lastmod": "2025-04-18",
+      "created": "2025-04-18",
+      "days_since_update": 246,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/tools/change-logs.md",
+      "title": "Change Logs",
+      "content_type": "quests",
+      "lastmod": "2025-04-18",
+      "created": "2025-04-18",
+      "days_since_update": 246,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/tools/commitments-to-clean-commits.md",
+      "title": "Commitments to clean commits",
+      "content_type": "quests",
+      "lastmod": "2025-04-18",
+      "created": "2025-04-18",
+      "days_since_update": 246,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/tools/django-and-git.md",
+      "title": "Setting up Django and Git",
+      "content_type": "quests",
+      "lastmod": "2025-03-12",
+      "created": "2025-03-08",
+      "days_since_update": 283,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quests/tools/epic-quest-zer0-to-her0-cmstyle.md",
+      "title": "Epic Quest: Zer0-to-Her0 CMStyle",
+      "content_type": "quests",
+      "lastmod": "2025-08-25",
+      "created": "2025-08-22",
+      "days_since_update": 117,
+      "status": "stale",
+      "priority": 81
+    },
+    {
+      "file_path": "pages/_quests/tools/planting-seeds.md",
+      "title": "planting seeds",
+      "content_type": "quests",
+      "lastmod": null,
+      "created": "2025-08-10",
+      "days_since_update": 132,
+      "status": "critical",
+      "priority": 113
+    },
+    {
+      "file_path": "pages/_quests/tools/revolutionizing-work-with-ai-automation.md",
+      "title": "Revolutionizing Work with AI Automation",
+      "content_type": "quests",
+      "lastmod": "2025-04-18",
+      "created": "2025-04-18",
+      "days_since_update": 246,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quickstart/2025-03-08-setting-up-django-and-git.md",
+      "title": "Setting up Django and Git",
+      "content_type": "other",
+      "lastmod": "2025-03-12",
+      "created": "2025-03-08",
+      "days_since_update": 283,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quickstart/2025-07-22-vscode-for-neuroscience.md",
+      "title": "VS Code for Neuroscience: Complete Setup Guide for macOS",
+      "content_type": "other",
+      "lastmod": "2025-07-22",
+      "created": "2025-07-22",
+      "days_since_update": 151,
+      "status": "critical",
+      "priority": 115
+    },
+    {
+      "file_path": "pages/_quickstart/charm-setup.md",
+      "title": "Setting Up Charm & Building a Terminal Interface",
+      "content_type": "other",
+      "lastmod": "2025-11-19",
+      "created": null,
+      "days_since_update": 31,
+      "status": "aging",
+      "priority": 43
+    },
+    {
+      "file_path": "pages/_quickstart/github-setup.md",
+      "title": "Github Setup",
+      "content_type": "other",
+      "lastmod": "2024-05-20",
+      "created": null,
+      "days_since_update": 579,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quickstart/index.md",
+      "title": "Quick Start (~) Index",
+      "content_type": "other",
+      "lastmod": "2025-07-23",
+      "created": null,
+      "days_since_update": 150,
+      "status": "critical",
+      "priority": 115
+    },
+    {
+      "file_path": "pages/_quickstart/jekyll-setup.md",
+      "title": "Jekyll Setup",
+      "content_type": "other",
+      "lastmod": "2023-11-20",
+      "created": null,
+      "days_since_update": 761,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/_quickstart/machine-setup.md",
+      "title": "Complete Machine Setup Guide: Jekyll Development Environment",
+      "content_type": "other",
+      "lastmod": "2025-07-22",
+      "created": null,
+      "days_since_update": 151,
+      "status": "critical",
+      "priority": 115
+    },
+    {
+      "file_path": "pages/home.md",
+      "title": "Home",
+      "content_type": "other",
+      "lastmod": "2025-07-22",
+      "created": "2024-05-15",
+      "days_since_update": 151,
+      "status": "critical",
+      "priority": 115
+    },
+    {
+      "file_path": "pages/posts.md",
+      "title": "Journey (~) Index",
+      "content_type": "other",
+      "lastmod": "2025-12-14",
+      "created": "2025-11-16",
+      "days_since_update": 6,
+      "status": "fresh",
+      "priority": 0
+    },
+    {
+      "file_path": "pages/search.md",
+      "title": "Search",
+      "content_type": "other",
+      "lastmod": "2023-03-11",
+      "created": null,
+      "days_since_update": 1015,
+      "status": "critical",
+      "priority": 120
+    },
+    {
+      "file_path": "pages/stats.md",
+      "title": "IT-Journey Statistics Portal",
+      "content_type": "other",
+      "lastmod": null,
+      "created": null,
+      "days_since_update": null,
+      "status": "unknown",
+      "priority": 30
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "generated": "2025-12-20T14:24:01-06:00",
+  "baseline": {
+    "overall": {
+      "avg_ctr": 0.7,
+      "avg_position": 32,
+      "total_impressions": 10000,
+      "total_clicks": 70
+    },
+    "pages": {
+      "/quests/level-010-nerd-font-enchantment/": {
+        "title": "Nerd Font Quest",
+        "impressions": 755,
+        "clicks": 5,
+        "ctr": 0.7,
+        "position": 35,
+        "optimized": "2025-12-19",
+        "target_ctr": 1.5
+      },
+      "/posts/2024/03/27/bootable-mac-os/": {
+        "title": "Bootable macOS Guide",
+        "impressions": 557,
+        "clicks": 3,
+        "ctr": 0.5,
+        "position": 40,
+        "optimized": "2025-12-19",
+        "target_ctr": 1.2
+      },
+      "/posts/django-pi-guide/": {
+        "title": "Django Pi Guide",
+        "impressions": 461,
+        "clicks": 10,
+        "ctr": 2.2,
+        "position": 20,
+        "optimized": null,
+        "status": "performing_well"
+      },
+      "/quests/bashcrawl/": {
+        "title": "Bashcrawl Quest",
+        "impressions": 352,
+        "clicks": 5,
+        "ctr": 1.4,
+        "position": 25,
+        "optimized": null,
+        "status": "performing_well"
+      },
+      "/docs/jekyll-mermaid/": {
+        "title": "Jekyll Mermaid Guide",
+        "impressions": 43,
+        "clicks": 0,
+        "ctr": 0.0,
+        "position": 45,
+        "optimized": "2025-12-19",
+        "target_ctr": 0.8
+      },
+      "/posts/sec-edgar-guide/": {
+        "title": "SEC EDGAR Guide",
+        "impressions": 41,
+        "clicks": 0,
+        "ctr": 0.0,
+        "position": 50,
+        "optimized": "2025-12-19",
+        "target_ctr": 0.8
+      }
+    },
+    "targets": {
+      "ctr": 1.5,
+      "position": 20,
+      "impressions_growth": 20
+    },
+    "new_content": {
+      "/docs/terminal-shortcuts-cheat-sheet/": {
+        "title": "Terminal Shortcuts Cheat Sheet",
+        "published": "2025-12-20",
+        "target_keywords": [
+          "terminal shortcuts",
+          "bash shortcuts",
+          "command line shortcuts"
+        ]
+      },
+      "/posts/essential-vscode-extensions-developers/": {
+        "title": "VS Code Extensions Guide",
+        "published": "2025-12-20",
+        "target_keywords": [
+          "vscode extensions",
+          "best vscode extensions"
+        ]
+      },
+      "/posts/docker-beginners-tutorial/": {
+        "title": "Docker Tutorial for Beginners",
+        "published": "2025-12-20",
+        "target_keywords": [
+          "docker tutorial",
+          "docker for beginners",
+          "learn docker"
+        ]
+      }
+    }
+  },
+  "summary": {
+    "total_tracked_pages": 6,
+    "new_content_count": 3,
+    "avg_ctr_baseline": 0.7,
+    "target_ctr": 1.5,
+    "pages_optimized": 4,
+    "pages_performing_well": 2
+  }
+}
