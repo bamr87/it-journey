@@ -1,119 +1,100 @@
 ---
-title: "GitHub Actions Basics: Workflow Automation for Modern DevOps"
-description: "Learn to create and manage GitHub Actions workflows for CI/CD automation. Build automated testing, deployment, and code quality pipelines using YAML workflows."
-date: 2025-11-30T05:05:22.000Z
+title: 'GitHub Actions Basics: Workflow Automation for Modern DevOps'
+description: Learn to create and manage GitHub Actions workflows for CI/CD automation. Build automated testing, deployment, and code quality pipelines using YAML workflows.
+date: 2025-11-30 05:05:22+00:00
 preview: images/previews/github-actions-basics-workflow-automation-descript.png
-level: "0101"
-difficulty: "🟡 Medium"
-estimated_time: "60-75 minutes"
-primary_technology: "github-actions"
-quest_type: "main_quest"
-skill_focus: "devops"
-learning_style: "hands-on"
-quest_series: "DevOps Pipeline Mastery"
-sub_title: "Level 0101 (5) Quest: Main Quest - GitHub Actions"
-excerpt: "Master GitHub Actions workflow creation for automating your software development lifecycle"
-author: "IT-Journey Team"
+level: '0101'
+difficulty: 🟡 Medium
+estimated_time: 60-75 minutes
+primary_technology: github-actions
+quest_type: main_quest
+skill_focus: devops
+learning_style: hands-on
+quest_series: DevOps Pipeline Mastery
+sub_title: 'Level 0101 (5) Quest: Main Quest - GitHub Actions'
+excerpt: Master GitHub Actions workflow creation for automating your software development lifecycle
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0101
-    - github-actions
-    - main_quest
-    - devops
-    - hands-on
-    - gamified-learning
+- lvl-0101
+- github-actions
+- main_quest
+- devops
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - DevOps
-    - Medium
+- Quests
+- DevOps
+- Medium
 keywords:
-    primary:
-        - github-actions
-        - workflow-automation
-    secondary:
-        - yaml-workflows
-        - automated-testing
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T05:05:22.000Z
+  primary:
+  - github-actions
+  - workflow-automation
+  secondary:
+  - yaml-workflows
+  - automated-testing
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:05:22+00:00
 permalink: /quests/level-0101-github-actions-basics/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0101-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0101-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-0101-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0101-side-quest-1/"
-        - "/quests/level-0101-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0101-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0101-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0101-side-quest-1/
+  - /quests/level-0101-side-quest-2/
+  parallel_quests:
+  - /quests/level-0101-alternative-path/
+  sequel_quests:
+  - /quests/level-0101-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

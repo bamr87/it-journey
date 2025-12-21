@@ -1,122 +1,103 @@
 ---
-title: "SEO Optimization: Boost Search Engine Visibility for Jekyll Sites"
-description: "Master technical SEO for Jekyll static sites. Learn meta tags, structured data, sitemap generation, robots.txt configuration, and Google Search Console integration to improve organic search rankings."
-date: 2025-11-30T05:00:21.000Z
+title: 'SEO Optimization: Boost Search Engine Visibility for Jekyll Sites'
+description: Master technical SEO for Jekyll static sites. Learn meta tags, structured data, sitemap generation, robots.txt configuration, and Google Search Console integration to improve organic search rankings.
+date: 2025-11-30 05:00:21+00:00
 preview: images/previews/seo-optimization-search-engine-visibility-descript.png
-level: "0011"
-difficulty: "🟡 Medium"
-estimated_time: "45-60 minutes"
-primary_technology: "jekyll"
-quest_type: "main_quest"
-skill_focus: "frontend"
-learning_style: "hands-on"
-quest_series: "Jekyll Mastery"
-sub_title: "Level 0011 (3) Quest: Main Quest - Jekyll SEO"
-excerpt: "Optimize your Jekyll site for search engines with meta tags, structured data, and technical SEO best practices"
-author: "IT-Journey Team"
+level: '0011'
+difficulty: 🟡 Medium
+estimated_time: 45-60 minutes
+primary_technology: jekyll
+quest_type: main_quest
+skill_focus: frontend
+learning_style: hands-on
+quest_series: Jekyll Mastery
+sub_title: 'Level 0011 (3) Quest: Main Quest - Jekyll SEO'
+excerpt: Optimize your Jekyll site for search engines with meta tags, structured data, and technical SEO best practices
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0011
-    - jekyll
-    - seo
-    - main_quest
-    - frontend
-    - hands-on
-    - gamified-learning
+- lvl-0011
+- jekyll
+- seo
+- main_quest
+- frontend
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - Frontend
-    - Medium
+- Quests
+- Frontend
+- Medium
 keywords:
-    primary:
-        - jekyll seo
-        - search engine optimization
-        - meta tags jekyll
-    secondary:
-        - structured data
-        - sitemap xml
-        - google search console
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T05:00:21.000Z
+  primary:
+  - jekyll seo
+  - search engine optimization
+  - meta tags jekyll
+  secondary:
+  - structured data
+  - sitemap xml
+  - google search console
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:00:21+00:00
 permalink: /quests/level-0011-seo-optimization/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0011-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0011-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-0011-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0011-side-quest-1/"
-        - "/quests/level-0011-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0011-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0011-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0011-side-quest-1/
+  - /quests/level-0011-side-quest-2/
+  parallel_quests:
+  - /quests/level-0011-alternative-path/
+  sequel_quests:
+  - /quests/level-0011-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

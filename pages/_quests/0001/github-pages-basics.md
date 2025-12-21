@@ -1,124 +1,105 @@
 ---
-title: "GitHub Pages Basics: Deploy Free Websites in Minutes"
-description: "Learn to deploy static websites for free with GitHub Pages. Step-by-step tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect for portfolios and projects."
-date: 2025-11-30T04:58:35.000Z
+title: 'GitHub Pages Basics: Deploy Free Websites in Minutes'
+description: Learn to deploy static websites for free with GitHub Pages. Step-by-step tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect for portfolios and projects.
+date: 2025-11-30 04:58:35+00:00
 preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
-level: "0001"
-difficulty: "🟢 Easy"
-estimated_time: "60-75 minutes"
-primary_technology: "github-pages"
-quest_type: "main_quest"
-skill_focus: "devops"
-learning_style: "hands-on"
-quest_series: "Web Hosting Fundamentals"
-sub_title: "Level 0001 (1) Quest: Free Website Hosting with GitHub"
-excerpt: "Deploy your first website for free using GitHub Pages with custom domains and HTTPS."
-author: "IT-Journey Team"
+level: '0001'
+difficulty: 🟢 Easy
+estimated_time: 60-75 minutes
+primary_technology: github-pages
+quest_type: main_quest
+skill_focus: devops
+learning_style: hands-on
+quest_series: Web Hosting Fundamentals
+sub_title: 'Level 0001 (1) Quest: Free Website Hosting with GitHub'
+excerpt: Deploy your first website for free using GitHub Pages with custom domains and HTTPS.
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0001
-    - github-pages
-    - web-hosting
-    - static-sites
-    - free-hosting
-    - main_quest
-    - devops
-    - hands-on
-    - beginner
+- lvl-0001
+- github-pages
+- web-hosting
+- static-sites
+- free-hosting
+- main_quest
+- devops
+- hands-on
+- beginner
 categories:
-    - Quests
-    - DevOps
-    - Web-Hosting
-    - Beginner
+- Quests
+- DevOps
+- Web-Hosting
+- Beginner
 keywords:
-    primary:
-        - github pages tutorial
-        - free website hosting
-        - deploy static site
-    secondary:
-        - github pages custom domain
-        - github pages https
-        - portfolio hosting
-        - static site deployment
-lastmod: 2025-12-19T00:00:00.000Z
+  primary:
+  - github pages tutorial
+  - free website hosting
+  - deploy static site
+  secondary:
+  - github pages custom domain
+  - github pages https
+  - portfolio hosting
+  - static site deployment
+lastmod: 2025-12-19 00:00:00+00:00
 permalink: /quests/level-0001-github-pages-basics/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0001-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0001-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-0001-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0001-side-quest-1/"
-        - "/quests/level-0001-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0001-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0001-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0001-side-quest-1/
+  - /quests/level-0001-side-quest-2/
+  parallel_quests:
+  - /quests/level-0001-alternative-path/
+  sequel_quests:
+  - /quests/level-0001-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

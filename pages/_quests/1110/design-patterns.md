@@ -1,99 +1,96 @@
 ---
-title: "Software Design Patterns: Gang of Four and Modern Patterns"
-description: "Master essential software design patterns including creational, structural, and behavioral patterns. Learn when and how to apply patterns for maintainable code."
-date: 2025-12-01T04:22:28.000Z
+title: 'Software Design Patterns: Gang of Four and Modern Patterns'
+description: Master essential software design patterns including creational, structural, and behavioral patterns. Learn when and how to apply patterns for maintainable code.
+date: 2025-12-01 04:22:28+00:00
 preview: images/previews/software-design-patterns-descriptive-subtitle.png
-level: 1110
+level: '1110'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
-primary_technology: "python"
+primary_technology: python
 quest_type: main_quest
-skill_focus: "architecture"
+skill_focus: architecture
 learning_style: hands-on
-quest_series: "System Design Mastery"
-sub_title: "Level 1110 (14) Quest: Main Quest - Design Patterns"
-excerpt: "Master essential design patterns for writing maintainable, scalable software"
+quest_series: System Design Mastery
+sub_title: 'Level 1110 (14) Quest: Main Quest - Design Patterns'
+excerpt: Master essential design patterns for writing maintainable, scalable software
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1110
-  - python
-  - main_quest
-  - architecture
-  - hands-on
-  - gamified-learning
+- lvl-1110
+- python
+- main_quest
+- architecture
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Architecture
-  - Hard
+- Quests
+- Architecture
+- Hard
 keywords:
   primary:
-    - design-patterns
-    - software-architecture
+  - design-patterns
+  - software-architecture
   secondary:
-    - gang-of-four
-    - solid-principles
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - gang-of-four
+  - solid-principles
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1110-design-patterns/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1110-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1110-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1110-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-1110-side-quest-1/
-    - /quests/level-1110-side-quest-2/
+  - /quests/level-1110-side-quest-1/
+  - /quests/level-1110-side-quest-2/
   parallel_quests:
-    - /quests/level-1110-alternative-path/
+  - /quests/level-1110-alternative-path/
   sequel_quests:
-    - /quests/level-1110-continuation/
+  - /quests/level-1110-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

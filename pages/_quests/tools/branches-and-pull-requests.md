@@ -1,30 +1,35 @@
 ---
 title: Mastering Branches and Pull Requests for Developers
-description: Learn how branches and pull requests streamline collaboration and enhance code quality in software development.
-date: 2025-04-18T19:08:47.292Z
+description: Learn how branches and pull requests streamline collaboration and enhance
+  code quality in software development.
+date: 2025-04-18 19:08:47.292000+00:00
 preview: images/previews/mastering-branches-and-pull-requests-for-developer.png
 tags:
-    - Collaboration
-    - Git
-    - GitHub
-    - Pull Requests
-    - Version Control
+- Collaboration
+- Git
+- GitHub
+- Pull Requests
+- Version Control
 categories:
-    - Development
-    - Git
-    - Programming
-    - Version Control
-    - Web Development
+- Development
+- Git
+- Programming
+- Version Control
+- Web Development
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 layout: null
 keywords: {}
-lastmod: 2025-04-18T19:24:06.552Z
-permalink: null
-attachments: ""
+lastmod: 2025-04-18 19:24:06.552000+00:00
+permalink: /quests/level-0010-branches-and-pull-requests/
+attachments: ''
 comments: false
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+quest_type: main_quest
 ---
 
 

@@ -1,30 +1,35 @@
 ---
 title: Understanding Action Triggers in Depth
-description: Unlock the power of automation with GitHub Actions! Streamline your workflows and enhance your CI/CD processes effortlessly.
-date: 2025-04-18T19:39:18.958Z
+description: Unlock the power of automation with GitHub Actions! Streamline your workflows
+  and enhance your CI/CD processes effortlessly.
+date: 2025-04-18 19:39:18.958000+00:00
 preview: images/previews/understanding-action-triggers-in-depth.png
 tags:
-  - automation
-  - CI/CD
-  - GitHub Actions
-  - workflows
-  - YAML
+- automation
+- CI/CD
+- GitHub Actions
+- workflows
+- YAML
 categories:
-  - Automation
-  - CI/CD
-  - Development
-  - GitHub Actions
-  - Programming
+- Automation
+- CI/CD
+- Development
+- GitHub Actions
+- Programming
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 layout: journals
 keywords: {}
-lastmod: 2025-11-29T00:14:37.004Z
-permalink: null
-attachments: ""
+lastmod: 2025-11-29 00:14:37.004000+00:00
+permalink: /quests/level-0010-action-triggers/
+attachments: ''
 comments: false
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+quest_type: main_quest
 ---
 
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.

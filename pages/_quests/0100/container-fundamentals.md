@@ -1,122 +1,103 @@
 ---
-title: "Docker Container Fundamentals: Master Isolation & Portability for DevOps"
-description: "Learn Docker container fundamentals including images, containers, volumes, and networking. Understand container isolation, portability, and lifecycle management for modern application deployment."
-date: 2025-11-30T05:04:39.000Z
+title: 'Docker Container Fundamentals: Master Isolation & Portability for DevOps'
+description: Learn Docker container fundamentals including images, containers, volumes, and networking. Understand container isolation, portability, and lifecycle management for modern application deployment.
+date: 2025-11-30 05:04:39+00:00
 preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
-level: "0100"
-difficulty: "🟡 Medium"
-estimated_time: "60-75 minutes"
-primary_technology: "docker"
-quest_type: "main_quest"
-skill_focus: "devops"
-learning_style: "hands-on"
-quest_series: "Docker Mastery"
-sub_title: "Level 0100 (4) Quest: Main Quest - Docker Fundamentals"
-excerpt: "Master Docker container fundamentals including images, volumes, and networking for portable application deployment"
-author: "IT-Journey Team"
+level: '0100'
+difficulty: 🟡 Medium
+estimated_time: 60-75 minutes
+primary_technology: docker
+quest_type: main_quest
+skill_focus: devops
+learning_style: hands-on
+quest_series: Docker Mastery
+sub_title: 'Level 0100 (4) Quest: Main Quest - Docker Fundamentals'
+excerpt: Master Docker container fundamentals including images, volumes, and networking for portable application deployment
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0100
-    - docker
-    - containers
-    - main_quest
-    - devops
-    - hands-on
-    - gamified-learning
+- lvl-0100
+- docker
+- containers
+- main_quest
+- devops
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - DevOps
-    - Medium
+- Quests
+- DevOps
+- Medium
 keywords:
-    primary:
-        - docker containers
-        - container fundamentals
-        - docker images
-    secondary:
-        - container isolation
-        - docker volumes
-        - container networking
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T05:04:39.000Z
+  primary:
+  - docker containers
+  - container fundamentals
+  - docker images
+  secondary:
+  - container isolation
+  - docker volumes
+  - container networking
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:04:39+00:00
 permalink: /quests/level-0100-container-fundamentals/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0100-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0100-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-0100-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0100-side-quest-1/"
-        - "/quests/level-0100-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0100-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0100-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0100-side-quest-1/
+  - /quests/level-0100-side-quest-2/
+  parallel_quests:
+  - /quests/level-0100-alternative-path/
+  sequel_quests:
+  - /quests/level-0100-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

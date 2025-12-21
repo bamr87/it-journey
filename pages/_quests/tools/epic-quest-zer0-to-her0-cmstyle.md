@@ -1,31 +1,36 @@
 ---
-title: "Epic Quest: Zer0-to-Her0 CMStyle"
-description: Discover how one nerd transformed from zero to hero by building an AI-powered open source CMS using VS Code and Jekyll. Join the epic journey!
-date: 2025-08-22T04:58:03.625Z
+title: 'Epic Quest: Zer0-to-Her0 CMStyle'
+description: Discover how one nerd transformed from zero to hero by building an AI-powered
+  open source CMS using VS Code and Jekyll. Join the epic journey!
+date: 2025-08-22 04:58:03.625000+00:00
 preview: images/previews/epic-quest-zer0-to-her0-cmstyle.png
 tags:
-  - ai-integration
-  - cms
-  - gamified-learning
-  - open-source
-  - vscode
+- ai-integration
+- cms
+- gamified-learning
+- open-source
+- vscode
 categories:
-  - AI/ML
-  - CMS
-  - Development
-  - Open Source
-  - Quests
+- AI/ML
+- CMS
+- Development
+- Open Source
+- Quests
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 layout: null
 keywords: {}
-lastmod: 2025-08-25T00:46:40.810Z
-permalink: null
-attachments: ""
+lastmod: 2025-08-25 00:46:40.810000+00:00
+permalink: /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
+attachments: ''
 comments: false
 draft: draft
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+quest_type: epic_quest
 ---
 
 # Zer0 to Her0: How One Nerd Built an Open Source CMS Out of VS Code and Integrated AI to Do All the Heavy Lifting

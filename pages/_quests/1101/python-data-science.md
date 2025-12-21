@@ -1,104 +1,97 @@
 ---
-title: "Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide"
-description: "Master Python data science libraries. Learn NumPy for numerical computing, Pandas for data manipulation, Matplotlib and Seaborn for visualization, and Jupyter notebooks for analysis workflows."
-date: 2025-12-01T04:21:59.000Z
+title: 'Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide'
+description: Master Python data science libraries. Learn NumPy for numerical computing, Pandas for data manipulation, Matplotlib and Seaborn for visualization, and Jupyter notebooks for analysis workflows.
+date: 2025-12-01 04:21:59+00:00
 preview: images/previews/python-for-data-science-descriptive-subtitle.png
-level: 1101
+level: '1101'
 difficulty: 🟡 Medium
 estimated_time: 4-5 hours
-primary_technology: "python"
+primary_technology: python
 quest_type: main_quest
-skill_focus: "data-science"
+skill_focus: data-science
 learning_style: hands-on
-quest_series: "AI/ML Mastery"
-sub_title: "Level 1101 (13) Quest: Main Quest - Python Data Science"
-excerpt: "Master NumPy, Pandas, and Matplotlib for Python data science and analysis workflows"
+quest_series: AI/ML Mastery
+sub_title: 'Level 1101 (13) Quest: Main Quest - Python Data Science'
+excerpt: Master NumPy, Pandas, and Matplotlib for Python data science and analysis workflows
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1101
-  - python
-  - numpy
-  - pandas
-  - matplotlib
-  - main_quest
-  - data-science
-  - hands-on
-  - gamified-learning
+- lvl-1101
+- python
+- numpy
+- pandas
+- matplotlib
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Data-Science
-  - Medium
+- Quests
+- Data-Science
+- Medium
 keywords:
   primary:
-    - python data science
-    - pandas tutorial
-    - numpy arrays
+  - python data science
+  - pandas tutorial
+  - numpy arrays
   secondary:
-    - matplotlib visualization
-    - seaborn
-    - jupyter notebooks
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - matplotlib visualization
+  - seaborn
+  - jupyter notebooks
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1101-python-data-science/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1101-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1101-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1101-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-    - /quests/level-1101-side-quest-1/
-    - /quests/level-1101-side-quest-2/
-  parallel_quests:
-    - /quests/level-1101-alternative-path/
-  sequel_quests:
-    - /quests/level-1101-continuation/
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

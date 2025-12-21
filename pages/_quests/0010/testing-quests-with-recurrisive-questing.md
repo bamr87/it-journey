@@ -1,42 +1,42 @@
 ---
-title: "Recursive Realms: Testing Infinite Loops with AI"
+title: 'Recursive Realms: Testing Infinite Loops with AI'
 description: Master recursion, unit testing, and AI integration by navigating self-replicating code towers
-date: 2025-10-08T18:11:38.267Z
+date: 2025-10-08 18:11:38.267000+00:00
 preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
-level: "0010"
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: python
-quest_type: language-learning
+quest_type: main_quest
 skill_focus: testing
 learning_style: hands-on
 quest_series: Python Mastery Path
-sub_title: "Level 0010 (2) Quest: Python Recursion & Testing"
+sub_title: 'Level 0010 (2) Quest: Python Recursion & Testing'
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
 snippet: Beware the stack overflow curse—always define your base cases!
 author: Quest Master IT-Journey Team
 layout: journals
 tags:
-  - lvl-0010
-  - python
-  - language-learning
-  - testing
-  - hands-on
-  - recursion
+- lvl-0010
+- python
+- language-learning
+- testing
+- hands-on
+- recursion
 categories:
-  - Quests
-  - Development
-  - Intermediate
+- Quests
+- Development
+- Intermediate
 keywords:
   primary:
-    - python recursion
-    - unit testing
+  - python recursion
+  - unit testing
   secondary:
-    - ai integration
-    - testing frameworks
-lastmod: 2025-10-09T00:09:00.916Z
+  - ai integration
+  - testing frameworks
+lastmod: 2025-10-09 00:09:00.916000+00:00
 permalink: /quests/level-0010-recursive-realms-testing/
-attachments: ""
+attachments: ''
 comments: true
 draft: false
 fmContentType: quest
@@ -44,31 +44,29 @@ quest_line: Foundation Path
 quest_arc: Testing & Quality Assurance
 prerequisites:
   knowledge_requirements:
-    - Basic Python syntax
-    - Understanding of functions
+  - Basic Python syntax
+  - Understanding of functions
   system_requirements:
-    - Python 3.8+
-    - Text editor or IDE
+  - Python 3.8+
+  - Text editor or IDE
 quest_dependencies:
-  recommended_quests:
-    - Python Fundamentals
-  unlocks_quests:
-    - Advanced Algorithm Design
+  recommended_quests: []
+  unlocks_quests: []
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
 rewards:
   badges:
-    - 🏆 Recursive Realm Master
+  - 🏆 Recursive Realm Master
   skills_unlocked:
-    - Advanced Recursion Patterns
+  - Advanced Recursion Patterns
   progression_points: 150
 validation_criteria:
   completion_requirements:
-    - Implement 3 recursive functions
-    - Create test suite with >90% coverage
+  - Implement 3 recursive functions
+  - Create test suite with >90% coverage
 quest_mapping:
-  coordinates: "[10, 20]"
+  coordinates: '[10, 20]'
   region: Foundation
   realm: Development
   biome: Testing

@@ -1,123 +1,110 @@
 ---
-title: "Forging the Stats Portal: Data Analytics Quest"
+title: 'Forging the Stats Portal: Data Analytics Quest'
 description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
-date: 2025-10-08T15:02:55.070Z
+date: 2025-10-08 15:02:55.070000+00:00
 preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
 tags:
-  - lvl-0001
-  - jekyll
-  - data-analytics
-  - liquid-templating
-  - bootstrap
-  - site-statistics
-  - data-visualization
-  - yaml-data-files
+- lvl-0001
+- jekyll
+- data-analytics
+- liquid-templating
+- bootstrap
+- site-statistics
+- data-visualization
+- yaml-data-files
 categories:
-  - Quests
-  - Development
-  - Data-Analytics
-level: "0001"
+- Quests
+- Development
+- Data-Analytics
+level: '0001'
 quest_type: main_quest
-difficulty: 🟡 Medium
-estimated_time: 120-150 minutes
-sub_title: "Level 0001 (1) Quest: Jekyll Data Analytics and Visualization Mastery"
+difficulty: 🟢 Easy
+estimated_time: 60-90 minutes
+sub_title: 'Level 0001 (1) Quest: Jekyll Data Analytics and Visualization Mastery'
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
 snippet: Transform raw site data into compelling visual insights
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
   primary:
-    - jekyll-statistics
-    - liquid-templating
-    - data-visualization
+  - jekyll-statistics
+  - liquid-templating
+  - data-visualization
   secondary:
-    - bootstrap-components
-    - yaml-data-files
-    - site-analytics
-    - content-metrics
-lastmod: 2025-10-08T18:10:29.972Z
+  - bootstrap-components
+  - yaml-data-files
+  - site-analytics
+  - content-metrics
+lastmod: 2025-10-08 18:10:29.972000+00:00
 permalink: /quests/stating-the-stats/
-attachments: ""
+attachments: ''
 comments: true
-difficulty: 🟢 Easy
-estimated_time: 60-90 minutes
-quest_type: main_quest
 quest_line: Development Mastery
 quest_series: Jekyll Site Building
 quest_arc: Data Analytics Arc
 quest_dependencies:
-  required_quests:
-    - Basic understanding of Jekyll site structure
-    - Familiarity with YAML syntax
-  recommended_quests:
-    - Bootstrap fundamentals
-    - Liquid templating basics
-  unlocks_quests:
-    - /quests/advanced-jekyll-analytics/
-    - /quests/data-visualization-mastery/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-  parallel_quests:
-    - Jekyll plugin development
-    - Custom liquid filters
-  sequel_quests:
-    - Advanced data analytics dashboards
-    - Real-time statistics with JavaScript
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
-    - Web Development
-    - Data Analytics
+  - Web Development
+  - Data Analytics
   character_classes:
-    - 💻 Software Developer
-    - 📊 Data Analyst
+  - 💻 Software Developer
+  - 📊 Data Analyst
   skill_trees:
-    - Jekyll Development
-    - Data Visualization
-    - Frontend Design
+  - Jekyll Development
+  - Data Visualization
+  - Frontend Design
 quest_mapping:
-  coordinates: "[3, 4]"
+  coordinates: '[3, 4]'
   region: Foundation
   realm: Development
   biome: Web
 prerequisites:
   knowledge_requirements:
-    - Basic understanding of Jekyll site structure and build process
-    - Familiarity with YAML data files
-    - Basic HTML and CSS knowledge
+  - Basic understanding of Jekyll site structure and build process
+  - Familiarity with YAML data files
+  - Basic HTML and CSS knowledge
   system_requirements:
-    - Jekyll site running locally (Docker or native)
-    - Text editor or IDE (VS Code recommended)
-    - Web browser for testing
+  - Jekyll site running locally (Docker or native)
+  - Text editor or IDE (VS Code recommended)
+  - Web browser for testing
   skill_level_indicators:
-    - Can create and edit Jekyll pages
-    - Comfortable with command-line navigation
-    - Understanding of basic web development concepts
+  - Can create and edit Jekyll pages
+  - Comfortable with command-line navigation
+  - Understanding of basic web development concepts
 validation_criteria:
   completion_requirements:
-    - Statistics page accessible at /stats/ or /statistics/
-    - Display at least 5 different content metrics
-    - Bootstrap-styled responsive layout
-    - Data automatically generated during Jekyll build
+  - Statistics page accessible at /stats/ or /statistics/
+  - Display at least 5 different content metrics
+  - Bootstrap-styled responsive layout
+  - Data automatically generated during Jekyll build
   skill_demonstrations:
-    - Create YAML data files with site statistics
-    - Build Liquid templates to display data
-    - Implement Bootstrap components for visualization
-    - Verify statistics accuracy across site rebuild
+  - Create YAML data files with site statistics
+  - Build Liquid templates to display data
+  - Implement Bootstrap components for visualization
+  - Verify statistics accuracy across site rebuild
   knowledge_checks:
-    - Explain Jekyll build-time vs. runtime data generation
-    - Describe YAML data file structure and usage
-    - Understand Liquid template filters and tags
+  - Explain Jekyll build-time vs. runtime data generation
+  - Describe YAML data file structure and usage
+  - Understand Liquid template filters and tags
 rewards:
   badges:
-    - 🏆 Data Portal Architect
-    - ⚡ Jekyll Analytics Master
+  - 🏆 Data Portal Architect
+  - ⚡ Jekyll Analytics Master
   skills_unlocked:
-    - 🛠️ Jekyll Data File Management
-    - 🎯 Liquid Templating Proficiency
-    - 📊 Bootstrap Data Visualization
+  - 🛠️ Jekyll Data File Management
+  - 🎯 Liquid Templating Proficiency
+  - 📊 Bootstrap Data Visualization
   progression_points: 150
   unlocks_features:
-    - Access to advanced analytics quest line
-    - Data-driven site optimization capabilities
+  - Access to advanced analytics quest line
+  - Data-driven site optimization capabilities
 fmContentType: quest
 ---
 

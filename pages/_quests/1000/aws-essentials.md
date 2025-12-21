@@ -1,119 +1,100 @@
 ---
-title: "AWS Essentials: Core Services and Cloud Architecture Patterns"
-description: "Learn essential AWS services including EC2, S3, RDS, Lambda, and VPC. Build scalable cloud architectures using AWS best practices and Well-Architected Framework."
-date: 2025-11-30T05:41:10.000Z
+title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
+description: Learn essential AWS services including EC2, S3, RDS, Lambda, and VPC. Build scalable cloud architectures using AWS best practices and Well-Architected Framework.
+date: 2025-11-30 05:41:10+00:00
 preview: images/previews/aws-essentials-core-services-quest-title-architect.png
-level: "1000"
-difficulty: "🔴 Hard"
-estimated_time: "120-150 minutes"
-primary_technology: "aws"
-quest_type: "main_quest"
-skill_focus: "cloud-engineering"
-learning_style: "hands-on"
-quest_series: "Cloud Journey"
-sub_title: "Level 1000 (8) Quest: Main Quest - AWS"
-excerpt: "Master essential AWS services and build scalable cloud architectures"
-author: "IT-Journey Team"
+level: '1000'
+difficulty: 🔴 Hard
+estimated_time: 120-150 minutes
+primary_technology: aws
+quest_type: main_quest
+skill_focus: cloud-engineering
+learning_style: hands-on
+quest_series: Cloud Journey
+sub_title: 'Level 1000 (8) Quest: Main Quest - AWS'
+excerpt: Master essential AWS services and build scalable cloud architectures
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-1000
-    - aws
-    - main_quest
-    - cloud-engineering
-    - hands-on
-    - gamified-learning
+- lvl-1000
+- aws
+- main_quest
+- cloud-engineering
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - Cloud-Engineering
-    - Hard
+- Quests
+- Cloud-Engineering
+- Hard
 keywords:
-    primary:
-        - aws-services
-        - cloud-architecture
-    secondary:
-        - ec2-s3-lambda
-        - well-architected
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T05:41:10.000Z
+  primary:
+  - aws-services
+  - cloud-architecture
+  secondary:
+  - ec2-s3-lambda
+  - well-architected
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:41:10+00:00
 permalink: /quests/level-1000-aws-essentials/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-1000-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-1000-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-1000-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-1000-side-quest-1/"
-        - "/quests/level-1000-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-1000-alternative-path/"
-    sequel_quests:
-        - "/quests/level-1000-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-1000-side-quest-1/
+  - /quests/level-1000-side-quest-2/
+  parallel_quests:
+  - /quests/level-1000-alternative-path/
+  sequel_quests:
+  - /quests/level-1000-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

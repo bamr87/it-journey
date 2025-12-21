@@ -1,103 +1,96 @@
 ---
-title: "Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation"
-description: "Compare and master PyTorch and TensorFlow frameworks. Learn tensor operations, automatic differentiation, model building, training loops, and GPU acceleration for production deep learning."
-date: 2025-12-01T04:22:04.000Z
+title: 'Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation'
+description: Compare and master PyTorch and TensorFlow frameworks. Learn tensor operations, automatic differentiation, model building, training loops, and GPU acceleration for production deep learning.
+date: 2025-12-01 04:22:04+00:00
 preview: images/previews/deep-learning-frameworks-descriptive-subtitle.png
-level: 1101
+level: '1101'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
-primary_technology: "pytorch"
+primary_technology: pytorch
 quest_type: main_quest
-skill_focus: "data-science"
+skill_focus: data-science
 learning_style: hands-on
-quest_series: "AI/ML Mastery"
-sub_title: "Level 1101 (13) Quest: Main Quest - Deep Learning Frameworks"
-excerpt: "Master PyTorch and TensorFlow for production deep learning with GPU acceleration"
+quest_series: AI/ML Mastery
+sub_title: 'Level 1101 (13) Quest: Main Quest - Deep Learning Frameworks'
+excerpt: Master PyTorch and TensorFlow for production deep learning with GPU acceleration
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1101
-  - pytorch
-  - tensorflow
-  - deep-learning
-  - main_quest
-  - data-science
-  - hands-on
-  - gamified-learning
+- lvl-1101
+- pytorch
+- tensorflow
+- deep-learning
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Data-Science
-  - Hard
+- Quests
+- Data-Science
+- Hard
 keywords:
   primary:
-    - pytorch tutorial
-    - tensorflow vs pytorch
-    - deep learning frameworks
+  - pytorch tutorial
+  - tensorflow vs pytorch
+  - deep learning frameworks
   secondary:
-    - tensor operations
-    - autograd
-    - gpu training
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - tensor operations
+  - autograd
+  - gpu training
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1101-deep-learning-frameworks/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1101-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1101-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1101-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-    - /quests/level-1101-side-quest-1/
-    - /quests/level-1101-side-quest-2/
-  parallel_quests:
-    - /quests/level-1101-alternative-path/
-  sequel_quests:
-    - /quests/level-1101-continuation/
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

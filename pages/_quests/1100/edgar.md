@@ -1,65 +1,65 @@
 ---
-title: "Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle"
+title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
 description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into usable insights with Python and AI assistance.
-date: 2025-08-19T00:00:00.000Z
+date: 2025-08-19 00:00:00+00:00
 preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
 tags:
-    - lvl-1100
-    - python
-    - api
-    - sec-edgar
-    - xbrl
-    - data-engineering
-    - project-based
-    - gamified-learning
+- lvl-1100
+- python
+- api
+- sec-edgar
+- xbrl
+- data-engineering
+- project-based
+- gamified-learning
 categories:
-    - Quests
-    - Development
-    - Intermediate
-sub-title: "Level 1100 (12) Quest: Epic API Data Extraction and Analysis"
+- Quests
+- Development
+- Intermediate
+sub-title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
 excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured, analyzable datasets.
 snippet: Breach the SEC Data Castle and turn EDGAR’s scrolls into insight.
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
-    primary:
-        - SEC EDGAR
-        - API data extraction
-    secondary:
-        - XBRL
-        - Python requests
-        - Rate limiting
-        - Data parsing
-lastmod: 2025-08-20T04:37:39.870Z
+  primary:
+  - SEC EDGAR
+  - API data extraction
+  secondary:
+  - XBRL
+  - Python requests
+  - Rate limiting
+  - Data parsing
+lastmod: 2025-08-20 04:37:39.870000+00:00
 fmContentType: quest
 permalink: /quests/level-1100-conquer-king-edgar/
-attachments: ""
+attachments: ''
 comments: true
-difficulty: 🟡 Medium → ⚔️ Epic
+difficulty: 🟡 Medium
 estimated_time: 60-180 minutes
 prerequisites:
-    - Python 3.10+ and pip/venv (or language of choice)
-    - Basic REST API knowledge and JSON handling
-    - A User-Agent header string (e.g., 'DataDruidGuild questmaster@financea.com')
+- Python 3.10+ and pip/venv (or language of choice)
+- Basic REST API knowledge and JSON handling
+- A User-Agent header string (e.g., 'DataDruidGuild questmaster@financea.com')
 rewards:
-    - 🏆 EDGAR Slayer Badge
-    - ⚡ Stronger API + data wrangling skills
-    - 🛠️ SEC XBRL and Frames API familiarity
-    - 🎯 Reusable EDGAR data pipeline artifacts
+- 🏆 EDGAR Slayer Badge
+- ⚡ Stronger API + data wrangling skills
+- 🛠️ SEC XBRL and Frames API familiarity
+- 🎯 Reusable EDGAR data pipeline artifacts
 quest_series: Data Realm Conquests
 related_quests:
-    - "Level 1010: JSON Alchemy – From Chaos to Tables"
-    - "Level 1110: Testing Rituals – Resilience for Data Pipelines"
-    - "Level 10001: Data Vis – Charts and Dashboards"
+- 'Level 1010: JSON Alchemy – From Chaos to Tables'
+- 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
+- 'Level 10001: Data Vis – Charts and Dashboards'
 validation_criteria:
-    - Fetch submissions for at least 2 CIKs with valid User-Agent
-    - Extract one us-gaap concept via companyconcept and chart or tabulate trend
-    - Pull companyfacts and export at least one CSV with date/value/form
-    - Call frames API for one period and compare at least 2 entities
-    - Respect rate limits (no 429s in final run) and implement basic backoff
-    - Write a short readme summarizing findings
+- Fetch submissions for at least 2 CIKs with valid User-Agent
+- Extract one us-gaap concept via companyconcept and chart or tabulate trend
+- Pull companyfacts and export at least one CSV with date/value/form
+- Call frames API for one period and compare at least 2 entities
+- Respect rate limits (no 429s in final run) and implement basic backoff
+- Write a short readme summarizing findings
 draft: false
-level: "1100"
+level: '1100'
 quest_type: main_quest
 ---
 

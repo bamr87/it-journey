@@ -1,103 +1,100 @@
 ---
-title: "Stream Processing: Real-Time Data with Apache Kafka & Flink"
-description: "Build real-time data streaming pipelines with Kafka and Flink. Learn event-driven architecture, stream processing patterns, exactly-once semantics, and windowing operations."
-date: 2025-12-01T04:21:46.000Z
+title: 'Stream Processing: Real-Time Data with Apache Kafka & Flink'
+description: Build real-time data streaming pipelines with Kafka and Flink. Learn event-driven architecture, stream processing patterns, exactly-once semantics, and windowing operations.
+date: 2025-12-01 04:21:46+00:00
 preview: images/previews/stream-processing-descriptive-subtitle.png
-level: 1100
+level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
-primary_technology: "kafka"
+primary_technology: kafka
 quest_type: main_quest
-skill_focus: "data-engineering"
+skill_focus: data-engineering
 learning_style: hands-on
-quest_series: "Data Engineering Mastery"
-sub_title: "Level 1100 (12) Quest: Main Quest - Stream Processing"
-excerpt: "Build real-time data pipelines with Kafka, stream processing patterns, and event-driven architecture"
+quest_series: Data Engineering Mastery
+sub_title: 'Level 1100 (12) Quest: Main Quest - Stream Processing'
+excerpt: Build real-time data pipelines with Kafka, stream processing patterns, and event-driven architecture
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1100
-  - kafka
-  - flink
-  - streaming
-  - main_quest
-  - data-engineering
-  - hands-on
-  - gamified-learning
+- lvl-1100
+- kafka
+- flink
+- streaming
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Data-Engineering
-  - Hard
+- Quests
+- Data-Engineering
+- Hard
 keywords:
   primary:
-    - kafka streaming
-    - stream processing
-    - real-time data
+  - kafka streaming
+  - stream processing
+  - real-time data
   secondary:
-    - apache flink
-    - event-driven architecture
-    - exactly-once semantics
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - apache flink
+  - event-driven architecture
+  - exactly-once semantics
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1100-stream-processing/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1100-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1100-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1100-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-1100-side-quest-1/
-    - /quests/level-1100-side-quest-2/
+  - /quests/level-1100-side-quest-1/
+  - /quests/level-1100-side-quest-2/
   parallel_quests:
-    - /quests/level-1100-alternative-path/
+  - /quests/level-1100-alternative-path/
   sequel_quests:
-    - /quests/level-1100-continuation/
+  - /quests/level-1100-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

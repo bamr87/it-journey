@@ -7,6 +7,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.0] - 2025-01-27
+
+### Added
+
+#### Quest Network Validation & Fixes (Phase 6)
+Complete quest network validation and frontmatter standardization across all 147 quests.
+
+- **`scripts/fix-quest-frontmatter.py`** - New automated frontmatter fixer script
+  - Removes placeholder dependencies (unlocks_quests, prerequisites)
+  - Adds missing required fields (difficulty, estimated_time, quest_type)
+  - Normalizes quest_type and difficulty values to valid options
+  - Dry-run mode for safe previewing
+  - Fixed 284 issues across 90 files
+
+- **`pages/_quests/lvl_0110/README.md`** - New level README (Advanced Quests I)
+- **`pages/_quests/lvl_0111/README.md`** - New level README (Advanced Quests II)
+- **`pages/_quests/lvl_1000/README.md`** - New level README (Expert Quests I)
+- **`pages/_quests/lvl_1001/README.md`** - New level README (Expert Quests II)
+- **`pages/_quests/docs/`** - New documentation directory for phase plans
+
+#### Documentation
+- **`pages/_quests/PHASE6_PLAN.md`** - Detailed Phase 6 execution plan with 5-week timeline
+- **`pages/_quests/docs/PHASE1-5_COMPLETE.md`** - Archived phase completion summary
+- **`pages/_quests/docs/VALIDATION_FIXES_SUMMARY.md`** - Archived validation fixes summary
+
+### Changed
+
+#### Quest Frontmatter Standardization (~120 files)
+- Removed all placeholder `unlocks_quests` and `prerequisites` references
+- Added missing `difficulty` fields with contextually appropriate values
+- Added missing `estimated_time` fields
+- Normalized `quest_type` values to valid options (main_quest, side_quest, epic_quest, bonus_quest, reference)
+- Normalized `difficulty` values to valid options (🟢 Easy, 🟡 Medium, 🔴 Hard, ⚔️ Epic)
+- Fixed duplicate frontmatter keys in `sec-edgar.md`
+- Cleared broken inter-quest dependencies (314 → 0 broken deps)
+
+#### Validation System
+- **`scripts/validate-quest-network.py`** - Updated to exclude `/docs/` directory from scanning
+- **`pages/_quests/QUEST_BUILD_PLAN.md`** - Updated with Phase 6 status, quest counts, and version 2.0.0
+
+### Fixed
+- **318 validation errors → 0 errors** - Complete quest network integrity
+- Removed 314 broken dependency references
+- Fixed invalid `quest_type` values (guide → reference, etc.)
+- Fixed invalid `difficulty` values (intermediate → 🟡 Medium, etc.)
+- Fixed `sec-edgar.md` missing title and duplicate description fields
+
+### Validation Results
+- Total Quests: 147
+- Complete Quests: 29
+- Broken Dependencies: 0
+- Errors: 0
+- Warnings: 444 (non-blocking orphan quests - expected during development)
+
 ## [2.4.1] - 2025-12-28
 
 ### Added

@@ -1,132 +1,110 @@
 ---
-title: "Terminal Navigation Mastery: Command-Line Fundamentals"
+title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
 description: Master terminal navigation and essential command-line operations to unlock developer productivity and system control powers
-date: 2025-10-03T12:00:00.000Z
+date: 2025-10-03 12:00:00+00:00
 preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
-    - lvl-0001
-    - terminal
-    - command-line
-    - navigation
-    - file-operations
-    - development-fundamentals
+- lvl-0001
+- terminal
+- command-line
+- navigation
+- file-operations
+- development-fundamentals
 categories:
-    - Quests
-    - Foundation
-    - Terminal-Mastery
-sub-title: "Level 0001 (1) Main Quest: Terminal Navigation and Command Mastery"
+- Quests
+- Foundation
+- Terminal-Mastery
+sub-title: 'Level 0001 (1) Main Quest: Terminal Navigation and Command Mastery'
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential navigation and file operations
 snippet: Where digital adventures begin - master the gateway to all development power
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
-    primary:
-        - terminal-navigation
-        - command-line-mastery
-        - file-operations
-    secondary:
-        - bash-fundamentals
-        - shell-commands
-        - developer-productivity
-        - system-navigation
-lastmod: 2025-10-03T12:00:00.000Z
+  primary:
+  - terminal-navigation
+  - command-line-mastery
+  - file-operations
+  secondary:
+  - bash-fundamentals
+  - shell-commands
+  - developer-productivity
+  - system-navigation
+lastmod: 2025-10-03 12:00:00+00:00
 permalink: /quests/level-0001-terminal-navigation-mastery/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-
-# === ENHANCED QUEST HIERARCHY ===
-quest_type: "main_quest"
-quest_line: "Foundation Path"
-quest_series: "Terminal Mastery Path"
-quest_arc: "Digital Literacy Arc"
-
+quest_type: main_quest
+quest_line: Foundation Path
+quest_series: Terminal Mastery Path
+quest_arc: Digital Literacy Arc
 quest_dependencies:
-    required_quests:
-        - "/quests/init_world/hello-noob/"
-        - "/quests/computer-literacy-basics/"
-    recommended_quests:
-        - "/quests/operating-system-selection/"
-    unlocks_quests:
-        - "/quests/advanced-shell-scripting/"
-        - "/quests/terminal-customization-mastery/"
-        - "/quests/version-control-fundamentals/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    child_quests:
-        - "/quests/oh-my-zsh-setup/"                    # Side quest
-        - "/quests/nerd-font-enchantment/"              # Side quest
-        - "/quests/terminal-productivity-hacks/"        # Bonus quest
-    sequel_quests:
-        - "/quests/advanced-shell-scripting/"
-        - "/quests/system-administration-basics/"
-    parallel_quests:
-        - "/quests/text-editor-mastery/"
-        - "/quests/development-environment-setup/"
-
+  child_quests: []
+  sequel_quests: []
+  parallel_quests: []
 learning_paths:
-    primary_paths:
-        - "Software Development"
-        - "System Administration"
-        - "DevOps Engineering"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-        - "🛡️ Security Specialist"
-    skill_trees:
-        - "Terminal Mastery"
-        - "Development Environment"
-        - "System Administration"
-        - "Automation Fundamentals"
-
+  primary_paths:
+  - Software Development
+  - System Administration
+  - DevOps Engineering
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  - 🛡️ Security Specialist
+  skill_trees:
+  - Terminal Mastery
+  - Development Environment
+  - System Administration
+  - Automation Fundamentals
 quest_mapping:
-    coordinates: "[1, 2]"
-    region: "Foundation"
-    realm: "Development"
-    biome: "Terminal"
-
+  coordinates: '[1, 2]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 prerequisites:
-    knowledge_requirements:
-        - "Basic computer literacy and file system understanding"
-        - "Familiarity with the concept of text-based interfaces"
-        - "Understanding of files, folders, and directory structures"
-    system_requirements:
-        - "Access to a Unix-like terminal (macOS, Linux, or WSL on Windows)"
-        - "Text editor access (nano, vim, or VS Code)"
-        - "Administrative privileges for some operations"
-    skill_level_indicators:
-        - "Can navigate folders using a graphical file manager"
-        - "Comfortable with basic computer operations"
-        - "Ready to learn keyboard-driven workflows"
-
+  knowledge_requirements:
+  - Basic computer literacy and file system understanding
+  - Familiarity with the concept of text-based interfaces
+  - Understanding of files, folders, and directory structures
+  system_requirements:
+  - Access to a Unix-like terminal (macOS, Linux, or WSL on Windows)
+  - Text editor access (nano, vim, or VS Code)
+  - Administrative privileges for some operations
+  skill_level_indicators:
+  - Can navigate folders using a graphical file manager
+  - Comfortable with basic computer operations
+  - Ready to learn keyboard-driven workflows
 validation_criteria:
-    completion_requirements:
-        - "Navigate complex directory structures using only terminal commands"
-        - "Execute file operations (create, copy, move, delete) with confidence"
-        - "Create organized directory structures for development projects"
-    skill_demonstrations:
-        - "Demonstrate text manipulation and search capabilities"
-        - "Show proficiency with process management commands"
-        - "Chain commands together for complex operations"
-    knowledge_checks:
-        - "Explain the difference between absolute and relative paths"
-        - "Troubleshoot common terminal navigation issues"
-        - "Optimize terminal workflow for development tasks"
-
+  completion_requirements:
+  - Navigate complex directory structures using only terminal commands
+  - Execute file operations (create, copy, move, delete) with confidence
+  - Create organized directory structures for development projects
+  skill_demonstrations:
+  - Demonstrate text manipulation and search capabilities
+  - Show proficiency with process management commands
+  - Chain commands together for complex operations
+  knowledge_checks:
+  - Explain the difference between absolute and relative paths
+  - Troubleshoot common terminal navigation issues
+  - Optimize terminal workflow for development tasks
 rewards:
-    badges:
-        - "🏆 Terminal Navigator - Master of command-line navigation"
-        - "⚡ Digital Explorer - Fearless system investigator"
-    skills_unlocked:
-        - "🛠️ Advanced Terminal Operations"
-        - "🎯 Development Workflow Foundation"
-    progression_points: 150
-    unlocks_features:
-        - "Access to terminal customization quests"
-        - "Eligibility for shell scripting adventures"
-        - "Foundation for all development tool mastery"
-level: "codex"
+  badges:
+  - 🏆 Terminal Navigator - Master of command-line navigation
+  - ⚡ Digital Explorer - Fearless system investigator
+  skills_unlocked:
+  - 🛠️ Advanced Terminal Operations
+  - 🎯 Development Workflow Foundation
+  progression_points: 150
+  unlocks_features:
+  - Access to terminal customization quests
+  - Eligibility for shell scripting adventures
+  - Foundation for all development tool mastery
+level: '0000'
 ---
 
 *Greetings, brave digital explorer! Welcome to the Terminal Navigation Mastery Quest - the foundational adventure that transforms you from a point-and-click apprentice into a command-line champion. This main quest forms the cornerstone of your IT journey, providing essential skills that every developer, system administrator, and digital craftsperson must master.*

@@ -1,7 +1,7 @@
 ---
 title: Frontend Forests Levels
 description: This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
-date: 2024-05-28T02:17:12.672Z
+date: 2024-05-28 02:17:12.672000+00:00
 preview: /images/frontend-forests.png
 tags: []
 categories: []
@@ -11,13 +11,13 @@ snippet: null
 author: GPT and bamr87
 layout: null
 keywords: {}
-lastmod: 2024-05-28T04:13:59.660Z
+lastmod: 2024-05-28 04:13:59.660000+00:00
 slug: frontend-forests-levels
-permalink: null
-attachments: ""
+permalink: /quests/level-0100-frontend-levels/
+attachments: ''
 type: default
 draft: draft
-level: "0100"
+level: '0100'
 quest_type: main_quest
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes

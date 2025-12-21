@@ -1,103 +1,100 @@
 ---
-title: "Apache Spark Mastery: Big Data Processing with PySpark & Scala"
-description: "Master Apache Spark for distributed data processing. Learn RDDs, DataFrames, Spark SQL, MLlib machine learning, and cluster management for petabyte-scale analytics."
-date: 2025-12-01T04:21:46.000Z
+title: 'Apache Spark Mastery: Big Data Processing with PySpark & Scala'
+description: Master Apache Spark for distributed data processing. Learn RDDs, DataFrames, Spark SQL, MLlib machine learning, and cluster management for petabyte-scale analytics.
+date: 2025-12-01 04:21:46+00:00
 preview: images/previews/apache-spark-mastery-descriptive-subtitle.png
-level: 1100
+level: '1100'
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours
-primary_technology: "spark"
+primary_technology: spark
 quest_type: main_quest
-skill_focus: "data-engineering"
+skill_focus: data-engineering
 learning_style: hands-on
-quest_series: "Data Engineering Mastery"
-sub_title: "Level 1100 (12) Quest: Epic Quest - Apache Spark"
-excerpt: "Process big data at scale with Apache Spark RDDs, DataFrames, Spark SQL, and MLlib machine learning"
+quest_series: Data Engineering Mastery
+sub_title: 'Level 1100 (12) Quest: Epic Quest - Apache Spark'
+excerpt: Process big data at scale with Apache Spark RDDs, DataFrames, Spark SQL, and MLlib machine learning
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1100
-  - spark
-  - pyspark
-  - big-data
-  - main_quest
-  - data-engineering
-  - hands-on
-  - gamified-learning
+- lvl-1100
+- spark
+- pyspark
+- big-data
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Data-Engineering
-  - Epic
+- Quests
+- Data-Engineering
+- Epic
 keywords:
   primary:
-    - apache spark tutorial
-    - pyspark dataframes
-    - spark sql
+  - apache spark tutorial
+  - pyspark dataframes
+  - spark sql
   secondary:
-    - distributed computing
-    - mllib
-    - big data processing
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - distributed computing
+  - mllib
+  - big data processing
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1100-apache-spark/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1100-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1100-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1100-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-1100-side-quest-1/
-    - /quests/level-1100-side-quest-2/
+  - /quests/level-1100-side-quest-1/
+  - /quests/level-1100-side-quest-2/
   parallel_quests:
-    - /quests/level-1100-alternative-path/
+  - /quests/level-1100-alternative-path/
   sequel_quests:
-    - /quests/level-1100-continuation/
+  - /quests/level-1100-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

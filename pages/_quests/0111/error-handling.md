@@ -1,119 +1,100 @@
 ---
-title: "Error Handling: API Response Patterns and HTTP Status Codes"
-description: "Implement robust API error handling with proper HTTP status codes, error response formats, error logging, and client-friendly error messages."
-date: 2025-11-30T05:09:37.000Z
+title: 'Error Handling: API Response Patterns and HTTP Status Codes'
+description: Implement robust API error handling with proper HTTP status codes, error response formats, error logging, and client-friendly error messages.
+date: 2025-11-30 05:09:37+00:00
 preview: images/previews/error-handling-api-response-quest-title-status-cod.png
-level: "0111"
-difficulty: "🔴 Hard"
-estimated_time: "45-60 minutes"
-primary_technology: "api"
-quest_type: "main_quest"
-skill_focus: "backend"
-learning_style: "hands-on"
-quest_series: "API Design Mastery"
-sub_title: "Level 0111 (7) Quest: Main Quest - Error Handling"
-excerpt: "Implement professional API error handling with proper status codes and response patterns"
-author: "IT-Journey Team"
+level: '0111'
+difficulty: 🔴 Hard
+estimated_time: 45-60 minutes
+primary_technology: api
+quest_type: main_quest
+skill_focus: backend
+learning_style: hands-on
+quest_series: API Design Mastery
+sub_title: 'Level 0111 (7) Quest: Main Quest - Error Handling'
+excerpt: Implement professional API error handling with proper status codes and response patterns
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0111
-    - api
-    - main_quest
-    - backend
-    - hands-on
-    - gamified-learning
+- lvl-0111
+- api
+- main_quest
+- backend
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - Backend
-    - Hard
+- Quests
+- Backend
+- Hard
 keywords:
-    primary:
-        - api-error-handling
-        - http-status-codes
-    secondary:
-        - error-responses
-        - error-logging
-        - gamified-learning
-        - it-journey
-lastmod: 2025-11-30T05:09:37.000Z
+  primary:
+  - api-error-handling
+  - http-status-codes
+  secondary:
+  - error-responses
+  - error-logging
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:09:37+00:00
 permalink: /quests/level-0111-error-handling/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0111-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0111-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-0111-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0111-side-quest-1/"
-        - "/quests/level-0111-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0111-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0111-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0111-side-quest-1/
+  - /quests/level-0111-side-quest-2/
+  parallel_quests:
+  - /quests/level-0111-alternative-path/
+  sequel_quests:
+  - /quests/level-0111-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

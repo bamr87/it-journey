@@ -1,69 +1,69 @@
 ---
-title: "Docker Containerization Mastery: Level 0101 (5) Quest"
+title: 'Docker Containerization Mastery: Level 0101 (5) Quest'
 description: Master Docker containerization to build, deploy, and manage applications in isolated, portable environments with practical hands-on projects
-date: 2025-01-27T12:00:00.000Z
+date: 2025-01-27 12:00:00+00:00
 preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
-level: "0101"
+level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
 primary_technology: docker
-quest_type: tool-mastery
+quest_type: main_quest
 skill_focus: devops
 learning_style: hands-on
 quest_series: DevOps Fundamentals
-sub_title: "Level 0101 (5) Quest: Tool-mastery - Docker"
+sub_title: 'Level 0101 (5) Quest: Tool-mastery - Docker'
 excerpt: Learn to containerize applications and manage Docker environments for consistent, scalable deployments
 snippet: Master the art of digital containerization and unlock deployment freedom
 author: Quest Master IT-Journey Team
 layout: journals
 tags:
-    - lvl-0101
-    - docker
-    - tool-mastery
-    - devops
-    - hands-on
-    - gamified-learning
+- lvl-0101
+- docker
+- tool-mastery
+- devops
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - Devops
-    - Medium
+- Quests
+- Devops
+- Medium
 keywords:
-    primary:
-        - docker
-        - tool-mastery
-    secondary:
-        - devops
-        - gamified-learning
-        - it-journey
-        - quest-based-learning
-lastmod: 2025-09-28T18:49:08.719Z
+  primary:
+  - docker
+  - tool-mastery
+  secondary:
+  - devops
+  - gamified-learning
+  - it-journey
+  - quest-based-learning
+lastmod: 2025-09-28 18:49:08.719000+00:00
 permalink: /quests/level-0101-docker-mastery/
-attachments: ""
+attachments: ''
 comments: true
 prerequisites:
-    - Basic command-line interface knowledge
-    - Basic programming concepts
-    - Text editor or IDE familiarity
+- Basic command-line interface knowledge
+- Basic programming concepts
+- Text editor or IDE familiarity
 rewards:
-    badge: Docker Container Architect
-    skill: Container Orchestration Mastery
-    tool: Docker Development Environment
-    capability: Scalable Application Deployment
+  badge: Docker Container Architect
+  skill: Container Orchestration Mastery
+  tool: Docker Development Environment
+  capability: Scalable Application Deployment
 related_quests:
-    prerequisites:
-        - "Level 0001: Command Line Fundamentals"
-        - "Level 0010: Git Version Control"
-    followups:
-        - "Level 0110: Kubernetes Orchestration"
-        - "Level 1000: CI/CD Pipeline Mastery"
-    parallel:
-        - "Level 0101: Linux System Administration"
-        - "Level 0100: Web Server Configuration"
+  prerequisites:
+  - 'Level 0001: Command Line Fundamentals'
+  - 'Level 0010: Git Version Control'
+  followups:
+  - 'Level 0110: Kubernetes Orchestration'
+  - 'Level 1000: CI/CD Pipeline Mastery'
+  parallel:
+  - 'Level 0101: Linux System Administration'
+  - 'Level 0100: Web Server Configuration'
 validation_criteria:
-    - Successfully create and run Docker containers from custom images
-    - Build multi-container applications using Docker Compose
-    - Implement Docker security best practices and optimization techniques
-    - Deploy containerized applications to cloud platforms
+- Successfully create and run Docker containers from custom images
+- Build multi-container applications using Docker Compose
+- Implement Docker security best practices and optimization techniques
+- Deploy containerized applications to cloud platforms
 draft: false
 ---
 

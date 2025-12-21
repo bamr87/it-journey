@@ -1,22 +1,22 @@
 ---
-title: "Glossary "
+title: 'Glossary '
 author: null
 excerpt: null
 description: null
 preview: images/previews/glossary.png
 snippet: null
 categories:
-  - notes
+- notes
 tags:
-  - notes
+- notes
 meta: null
 draft: true
-lastmod: 2023-11-25T11:31:20.728Z
+lastmod: 2023-11-25 11:31:20.728000+00:00
 permalink: /quests/level-codex/glossary/
-level: "codex"
-difficulty: 📚 Reference
+level: '0000'
+difficulty: 🟢 Easy
 estimated_time: Variable
-quest_type: reference
+quest_type: side_quest
 ---
 
 Enterprise

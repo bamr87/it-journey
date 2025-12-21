@@ -1,21 +1,24 @@
 ---
 title: Change Logs
-description: ""
-date: 2025-04-18T19:36:19.164Z
-preview: ""
+description: ''
+date: 2025-04-18 19:36:19.164000+00:00
+preview: /svg/penrose-gpt-vs-human.png
 tags: []
 categories: []
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 layout: null
 keywords: {}
-lastmod: 2025-04-18T19:43:43.286Z
-permalink: null
-attachments: ""
+lastmod: 2025-04-18 19:43:43.286000+00:00
+permalink: /quests/level-0010-change-logs/
+attachments: ''
 comments: false
-preview: /svg/penrose-gpt-vs-human.png
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+quest_type: main_quest
 ---
 
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**

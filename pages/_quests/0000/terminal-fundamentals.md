@@ -1,113 +1,100 @@
 ---
-title: "Terminal Fundamentals: Command Line Navigation Quest"
-description: "Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals."
-date: 2025-11-30T04:54:33.000Z
+title: 'Terminal Fundamentals: Command Line Navigation Quest'
+description: Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals.
+date: 2025-11-30 04:54:33+00:00
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
-level: "0000"
-difficulty: "🟢 Easy"
-estimated_time: "45-60 minutes"
-primary_technology: "bash"
-quest_type: "main_quest"
-skill_focus: "devops"
-learning_style: "hands-on"
-quest_series: "Terminal Arts"
-sub_title: "Level 0000 (0) Quest: Main Quest - Terminal"
-excerpt: "Learn essential command line skills for navigating and managing files in any operating system."
-author: "IT-Journey Team"
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 45-60 minutes
+primary_technology: bash
+quest_type: main_quest
+skill_focus: devops
+learning_style: hands-on
+quest_series: Terminal Arts
+sub_title: 'Level 0000 (0) Quest: Main Quest - Terminal'
+excerpt: Learn essential command line skills for navigating and managing files in any operating system.
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0000
-    - bash
-    - main_quest
-    - devops
-    - hands-on
-    - gamified-learning
+- lvl-0000
+- bash
+- main_quest
+- devops
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - DevOps
-    - Beginner
+- Quests
+- DevOps
+- Beginner
 keywords:
-    primary:
-        - terminal basics
-        - command line navigation
-    secondary:
-        - shell commands
-        - file management
-        - gamified-learning
-        - it-journey
-lastmod: 2025-12-20T00:00:00.000Z
+  primary:
+  - terminal basics
+  - command line navigation
+  secondary:
+  - shell commands
+  - file management
+  - gamified-learning
+  - it-journey
+lastmod: 2025-12-20 00:00:00+00:00
 permalink: /quests/level-0000-terminal-fundamentals/
-quest_line: "Init World"
-quest_arc: "Terminal Mastery Arc"
+quest_line: Init World
+quest_arc: Terminal Mastery Arc
 quest_dependencies:
-    required_quests: []
-    recommended_quests: []
-    unlocks_quests:
-        - "/quests/level-0000-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0000-side-quest-1/"
-        - "/quests/level-0000-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0000-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0000-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0000-side-quest-1/
+  - /quests/level-0000-side-quest-2/
+  parallel_quests:
+  - /quests/level-0000-alternative-path/
+  sequel_quests:
+  - /quests/level-0000-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

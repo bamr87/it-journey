@@ -1,101 +1,94 @@
 ---
-title: "YAML Configuration: Site Settings Mastery"
-description: "Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites."
-date: 2025-11-30T04:59:04.000Z
+title: 'YAML Configuration: Site Settings Mastery'
+description: Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites.
+date: 2025-11-30 04:59:04+00:00
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
-level: "0001"
-difficulty: "🟢 Easy"
-estimated_time: "30-45 minutes"
-primary_technology: "yaml"
-quest_type: "main_quest"
-skill_focus: "frontend"
-learning_style: "hands-on"
-quest_series: "Jekyll Foundations"
-sub_title: "Level 0001 (1) Quest: Main Quest - YAML"
-excerpt: "Learn YAML syntax and Jekyll configuration to build and customize professional static websites."
-author: "IT-Journey Team"
+level: '0001'
+difficulty: 🟢 Easy
+estimated_time: 30-45 minutes
+primary_technology: yaml
+quest_type: main_quest
+skill_focus: frontend
+learning_style: hands-on
+quest_series: Jekyll Foundations
+sub_title: 'Level 0001 (1) Quest: Main Quest - YAML'
+excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional static websites.
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0001
-    - yaml
-    - main_quest
-    - frontend
-    - hands-on
-    - gamified-learning
+- lvl-0001
+- yaml
+- main_quest
+- frontend
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - Frontend
-    - Beginner
+- Quests
+- Frontend
+- Beginner
 keywords:
-    primary:
-        - yaml configuration
-        - jekyll settings
-    secondary:
-        - static site configuration
-        - site customization
-        - gamified-learning
-        - it-journey
-lastmod: 2025-12-20T00:00:00.000Z
+  primary:
+  - yaml configuration
+  - jekyll settings
+  secondary:
+  - static site configuration
+  - site customization
+  - gamified-learning
+  - it-journey
+lastmod: 2025-12-20 00:00:00+00:00
 permalink: /quests/level-0001-yaml-configuration/
-quest_line: "Init World"
-quest_arc: "Jekyll Mastery Arc"
+quest_line: Init World
+quest_arc: Jekyll Mastery Arc
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0000-markdown-mastery/"
-    recommended_quests:
-        - "/quests/level-0000-terminal-fundamentals/"
-    unlocks_quests:
-        - "/quests/level-0010-jekyll-templating/"
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null
-    child_quests:
-        - /quests/level-0001-side-quest-1/
-        - /quests/level-0001-side-quest-2/
-    parallel_quests:
-        - /quests/level-0001-alternative-path/
-    sequel_quests:
-        - /quests/level-0001-continuation/
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
-    primary_paths:
-        - Software Development
-    character_classes:
-        - 💻 Software Developer
-        - 🏗️ System Engineer
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - 🏆 [Achievement Badge Name]
-    skills_unlocked:
-        - 🛠️ [Tool or Technology Mastery]
-    progression_points: 50
-    unlocks_features:
-        - "[Feature or capability unlocked]"
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - Basic command line navigation
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - Modern OS (macOS, Windows 10+, Linux)
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - All primary objectives completed
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - Can explain [concept] clearly
-        - Can implement [skill] independently
-    knowledge_checks:
-        - Understands [principle]
-        - Can troubleshoot [common issue]
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"
-    region: Foundation
-    realm: Development
-    biome: Terminal
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
 draft: true
 ---

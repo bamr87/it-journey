@@ -86,7 +86,7 @@ class QuestValidator:
             """Process a single quest file and store its data"""
             try:
                 # Skip templates, READMEs, and certain meta files
-                if any(skip in str(md_file) for skip in ['templates/', 'README.md', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md']):
+                if any(skip in str(md_file) for skip in ['templates/', 'README.md', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md', '/docs/']):
                     return
                 
                 frontmatter, body = self.extract_frontmatter(md_file)

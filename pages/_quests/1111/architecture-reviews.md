@@ -1,99 +1,96 @@
 ---
-title: "Architecture Reviews: Leading Technical Design Discussions"
-description: "Lead effective architecture reviews and design discussions. Master RFC processes, technical debt assessment, system evaluation, and architectural decision records."
-date: 2025-12-01T04:23:04.000Z
+title: 'Architecture Reviews: Leading Technical Design Discussions'
+description: Lead effective architecture reviews and design discussions. Master RFC processes, technical debt assessment, system evaluation, and architectural decision records.
+date: 2025-12-01 04:23:04+00:00
 preview: images/previews/architecture-reviews-descriptive-subtitle.png
-level: 1111
+level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
-primary_technology: "general"
+primary_technology: general
 quest_type: main_quest
-skill_focus: "architecture"
+skill_focus: architecture
 learning_style: hands-on
-quest_series: "Leadership Mastery"
-sub_title: "Level 1111 (15) Quest: Main Quest - Architecture"
-excerpt: "Lead effective architecture reviews and technical design discussions"
+quest_series: Leadership Mastery
+sub_title: 'Level 1111 (15) Quest: Main Quest - Architecture'
+excerpt: Lead effective architecture reviews and technical design discussions
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1111
-  - architecture
-  - main_quest
-  - architecture
-  - hands-on
-  - gamified-learning
+- lvl-1111
+- architecture
+- main_quest
+- architecture
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Architecture
-  - Hard
+- Quests
+- Architecture
+- Hard
 keywords:
   primary:
-    - architecture-reviews
-    - design-discussions
+  - architecture-reviews
+  - design-discussions
   secondary:
-    - rfc-process
-    - technical-decisions
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - rfc-process
+  - technical-decisions
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1111-architecture-reviews/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1111-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1111-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1111-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-1111-side-quest-1/
-    - /quests/level-1111-side-quest-2/
+  - /quests/level-1111-side-quest-1/
+  - /quests/level-1111-side-quest-2/
   parallel_quests:
-    - /quests/level-1111-alternative-path/
+  - /quests/level-1111-alternative-path/
   sequel_quests:
-    - /quests/level-1111-continuation/
+  - /quests/level-1111-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

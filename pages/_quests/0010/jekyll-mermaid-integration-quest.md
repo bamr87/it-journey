@@ -1,41 +1,41 @@
 ---
-title: "The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest"
+title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
 description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
-date: 2025-01-27T15:00:00.000Z
+date: 2025-01-27 15:00:00+00:00
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
-level: "0010"
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: Jekyll
-quest_type: Integration Mastery
+quest_type: main_quest
 skill_focus: Frontend Development
 learning_style: Hands-on Implementation
 quest_series: Jekyll Mastery
-sub_title: "Level 0010 (2) Quest: Jekyll-Mermaid Integration Mastery"
+sub_title: 'Level 0010 (2) Quest: Jekyll-Mermaid Integration Mastery'
 excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
 snippet: Master the art of diagrammatic magic and bring your Jekyll documentation to life
 author: Quest Master IT-Journey Team
 layout: journals
 tags:
-  - jekyll
-  - mermaid
-  - diagrams
-  - frontend
-  - integration
-  - documentation
-  - javascript
-  - cdn
+- jekyll
+- mermaid
+- diagrams
+- frontend
+- integration
+- documentation
+- javascript
+- cdn
 categories:
-  - Quests
-  - Jekyll
-  - Frontend
+- Quests
+- Jekyll
+- Frontend
 prerequisites:
-  - Basic Jekyll site setup and configuration
-  - Understanding of HTML, CSS, and JavaScript
-  - Familiarity with YAML front matter
-  - Git version control basics
-  - "Completed: [Hello n00b](/quests/init_world/hello-noob/) quest"
-  - "Completed: [Bash Scripting](/quests/bash-scripting/) quest (recommended)"
+- Basic Jekyll site setup and configuration
+- Understanding of HTML, CSS, and JavaScript
+- Familiarity with YAML front matter
+- Git version control basics
+- 'Completed: [Hello n00b](/quests/init_world/hello-noob/) quest'
+- 'Completed: [Bash Scripting](/quests/bash-scripting/) quest (recommended)'
 rewards:
   badge: Diagrammatic Sorcerer
   skill: Jekyll Integration Mastery
@@ -43,25 +43,25 @@ rewards:
   capability: Interactive Documentation Creation
 related_quests:
   prerequisites:
-    - hello-noob
-    - bash-scripting
+  - hello-noob
+  - bash-scripting
   followups:
-    - github-pages-deployment
-    - advanced-jekyll-theming
+  - github-pages-deployment
+  - advanced-jekyll-theming
   parallel:
-    - action-triggers
-    - change-logs
+  - action-triggers
+  - change-logs
 validation_criteria:
-  - Mermaid diagrams render correctly on Jekyll site
-  - Conditional loading works based on page front matter
-  - All major diagram types (flowchart, sequence, class, etc.) function
-  - Responsive design works across devices
-  - Dark mode compatibility confirmed
-  - Documentation is comprehensive and accurate
+- Mermaid diagrams render correctly on Jekyll site
+- Conditional loading works based on page front matter
+- All major diagram types (flowchart, sequence, class, etc.) function
+- Responsive design works across devices
+- Dark mode compatibility confirmed
+- Documentation is comprehensive and accurate
 comments: true
 draft: false
 fmContentType: quest
-lastmod: 2025-01-27T15:00:00.000Z
+lastmod: 2025-01-27 15:00:00+00:00
 permalink: /quests/level-0010/jekyll-mermaid-integration-quest/
 ---
 

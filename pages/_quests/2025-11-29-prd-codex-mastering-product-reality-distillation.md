@@ -1,9 +1,9 @@
 ---
-title: "The PRD Codex: Mastering the Art of Product Reality Distillation"
+title: 'The PRD Codex: Mastering the Art of Product Reality Distillation'
 description: Master the ancient art of transforming scattered signals into living Product Requirements Documents using automated tooling and CI/CD integration
-date: 2025-11-29T00:00:00.000Z
+date: 2025-11-29 00:00:00+00:00
 preview: /images/quest-preview-prd-codex.png
-level: "0011"
+level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: documentation-automation
@@ -13,111 +13,106 @@ learning_style: hands-on
 quest_series: Documentation Mastery Path
 quest_line: Foundation Path
 quest_arc: Product Definition & Requirements
-sub_title: "Level 0011 (3) Quest: Main Quest - Documentation Automation"
+sub_title: 'Level 0011 (3) Quest: Main Quest - Documentation Automation'
 excerpt: Transform scattered repository signals into a living, breathing PRD that never goes stale
 snippet: Reality fully armed. The distillery now distills distilleries.
 author: Quest Master IT-Journey
 layout: journals
 tags:
-    - lvl-0011
-    - documentation-automation
-    - main_quest
-    - product-management
-    - hands-on
-    - gamified-learning
-    - prd
-    - cli-tools
-    - ci-cd
+- lvl-0011
+- documentation-automation
+- main_quest
+- product-management
+- hands-on
+- gamified-learning
+- prd
+- cli-tools
+- ci-cd
 categories:
-    - Quests
-    - Product Management
-    - Medium
+- Quests
+- Product Management
+- Medium
 keywords:
-    primary:
-        - prd-machine
-        - product-requirements
-    secondary:
-        - documentation-automation
-        - signal-ingestion
-        - conflict-detection
-        - github-actions
-        - living-documentation
-lastmod: 2025-11-29T06:48:54.497Z
+  primary:
+  - prd-machine
+  - product-requirements
+  secondary:
+  - documentation-automation
+  - signal-ingestion
+  - conflict-detection
+  - github-actions
+  - living-documentation
+lastmod: 2025-11-29 06:48:54.497000+00:00
 permalink: /quests/level-0011-prd-codex-mastery/
-attachments: ""
+attachments: ''
 comments: true
 prerequisites:
-    knowledge_requirements:
-        - Basic command-line proficiency
-        - Understanding of Git commits and version control
-        - Familiarity with YAML and Markdown syntax
-    system_requirements:
-        - Docker installed and running
-        - Git repository with commit history
-        - Text editor or IDE
-    skill_level_indicators:
-        - Comfortable navigating terminal/command line
-        - Can read and write basic YAML files
-        - Understands version control concepts
+  knowledge_requirements:
+  - Basic command-line proficiency
+  - Understanding of Git commits and version control
+  - Familiarity with YAML and Markdown syntax
+  system_requirements:
+  - Docker installed and running
+  - Git repository with commit history
+  - Text editor or IDE
+  skill_level_indicators:
+  - Comfortable navigating terminal/command line
+  - Can read and write basic YAML files
+  - Understands version control concepts
 quest_dependencies:
-    required_quests: []
-    recommended_quests:
-        - /quests/level-0001-docs-in-a-row/
-        - /quests/level-0010-jekyll-mermaid/
-    unlocks_quests:
-        - /quests/level-0100-advanced-automation/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null
-    child_quests: []
-    parallel_quests:
-        - /quests/prompt-engineering/
-    sequel_quests:
-        - /quests/revolutionizing-work-with-ai-automation/
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
-    primary_paths:
-        - Product Management
-        - Technical Documentation
-        - DevOps Automation
-    character_classes:
-        - 📋 Product Manager
-        - 💻 Software Developer
-        - 📝 Technical Writer
-        - 🎯 Project Lead
-    skill_trees:
-        - Documentation Automation
-        - CI/CD Integration
-        - Requirements Engineering
+  primary_paths:
+  - Product Management
+  - Technical Documentation
+  - DevOps Automation
+  character_classes:
+  - 📋 Product Manager
+  - 💻 Software Developer
+  - 📝 Technical Writer
+  - 🎯 Project Lead
+  skill_trees:
+  - Documentation Automation
+  - CI/CD Integration
+  - Requirements Engineering
 rewards:
-    badges:
-        - 🏆 PRD Codex Master
-        - ⚡ Signal Distiller
-        - 📜 Requirements Architect
-    skills_unlocked:
-        - 🛠️ PRD Machine CLI Mastery
-        - 🎯 Automated Documentation Generation
-        - 🔍 Conflict Detection & Resolution
-    progression_points: 150
-    unlocks_features:
-        - Advanced automation quest access
-        - CI/CD workflow templates
+  badges:
+  - 🏆 PRD Codex Master
+  - ⚡ Signal Distiller
+  - 📜 Requirements Architect
+  skills_unlocked:
+  - 🛠️ PRD Machine CLI Mastery
+  - 🎯 Automated Documentation Generation
+  - 🔍 Conflict Detection & Resolution
+  progression_points: 150
+  unlocks_features:
+  - Advanced automation quest access
+  - CI/CD workflow templates
 validation_criteria:
-    completion_requirements:
-        - Generated PRD.md with all 10 sections
-        - Successfully executed sync, status, and conflicts commands
-        - Understood signal ingestion from commits, markdown, features
-    skill_demonstrations:
-        - Explain the 10-section PRD structure
-        - Interpret conflict detection results
-        - Configure CI/CD for PRD freshness
-    knowledge_checks:
-        - Why is 6-hour freshness important?
-        - What signals does PRD Machine ingest?
-        - How do you resolve detected conflicts?
+  completion_requirements:
+  - Generated PRD.md with all 10 sections
+  - Successfully executed sync, status, and conflicts commands
+  - Understood signal ingestion from commits, markdown, features
+  skill_demonstrations:
+  - Explain the 10-section PRD structure
+  - Interpret conflict detection results
+  - Configure CI/CD for PRD freshness
+  knowledge_checks:
+  - Why is 6-hour freshness important?
+  - What signals does PRD Machine ingest?
+  - How do you resolve detected conflicts?
 quest_mapping:
-    coordinates: "[3, 2]"
-    region: Foundation
-    realm: Documentation
-    biome: Terminal
+  coordinates: '[3, 2]'
+  region: Foundation
+  realm: Documentation
+  biome: Terminal
 draft: false
 ---
 

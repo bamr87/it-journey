@@ -1,30 +1,35 @@
 ---
 title: Commitments to clean commits
-description: Learn how to maintain clean commits in your projects for better collaboration and version control efficiency.
-date: 2025-04-18T19:27:18.405Z
+description: Learn how to maintain clean commits in your projects for better collaboration
+  and version control efficiency.
+date: 2025-04-18 19:27:18.405000+00:00
 preview: images/previews/commitments-to-clean-commits.png
 tags:
-    - clean commits
-    - Git
-    - GitHub
-    - tutorial
-    - version control
+- clean commits
+- Git
+- GitHub
+- tutorial
+- version control
 categories:
-    - Development
-    - Git Best Practices
-    - IT Consulting
-    - Programming
-    - Project Management
+- Development
+- Git Best Practices
+- IT Consulting
+- Programming
+- Project Management
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 layout: null
 keywords: {}
-lastmod: 2025-04-18T19:27:42.681Z
-permalink: null
-attachments: ""
+lastmod: 2025-04-18 19:27:42.681000+00:00
+permalink: /quests/level-0010-commitments-to-clean-commits/
+attachments: ''
 comments: false
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+quest_type: main_quest
 ---
 
 **Ah, brave adventurer!** You've mastered the sacred art of branching and the scroll-writing ritual known as the Pull Request. Now, prepare thyself for the next enchanted trial:

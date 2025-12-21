@@ -1,124 +1,105 @@
 ---
-title: "CSS Styling Basics: Selectors, Layout & Responsive Design"
-description: "Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox, grid, and responsive design. Hands-on tutorial with modern CSS techniques and best practices."
-date: 2025-11-30T04:59:34.000Z
+title: 'CSS Styling Basics: Selectors, Layout & Responsive Design'
+description: Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox, grid, and responsive design. Hands-on tutorial with modern CSS techniques and best practices.
+date: 2025-11-30 04:59:34+00:00
 preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
-level: "0010"
-difficulty: "🟡 Medium"
-estimated_time: "60-75 minutes"
-primary_technology: "css"
-quest_type: "main_quest"
-skill_focus: "frontend"
-learning_style: "hands-on"
-quest_series: "Web Development Fundamentals"
-sub_title: "Level 0010 (2) Quest: CSS for Visual Design"
-excerpt: "Create beautiful, responsive web layouts with CSS selectors, flexbox, and grid."
-author: "IT-Journey Team"
+level: '0010'
+difficulty: 🟡 Medium
+estimated_time: 60-75 minutes
+primary_technology: css
+quest_type: main_quest
+skill_focus: frontend
+learning_style: hands-on
+quest_series: Web Development Fundamentals
+sub_title: 'Level 0010 (2) Quest: CSS for Visual Design'
+excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and grid.
+author: IT-Journey Team
 layout: journals
 tags:
-    - lvl-0010
-    - css
-    - flexbox
-    - css-grid
-    - responsive-design
-    - frontend
-    - main_quest
-    - hands-on
-    - intermediate
+- lvl-0010
+- css
+- flexbox
+- css-grid
+- responsive-design
+- frontend
+- main_quest
+- hands-on
+- intermediate
 categories:
-    - Quests
-    - Frontend
-    - CSS
-    - Intermediate
+- Quests
+- Frontend
+- CSS
+- Intermediate
 keywords:
-    primary:
-        - css tutorial
-        - css flexbox
-        - responsive design
-    secondary:
-        - css grid
-        - css selectors
-        - modern css
-        - web design basics
-lastmod: 2025-12-19T00:00:00.000Z
+  primary:
+  - css tutorial
+  - css flexbox
+  - responsive design
+  secondary:
+  - css grid
+  - css selectors
+  - modern css
+  - web design basics
+lastmod: 2025-12-19 00:00:00+00:00
 permalink: /quests/level-0010-css-styling-basics/
-
-# Advanced Quest Metadata
-quest_line: "[Campaign/storyline name]"  # e.g., "Init World", "Cloud Journey"
-quest_arc: "[Story arc or thematic grouping]"  # e.g., "Terminal Mastery Arc"
-
-# Quest Network - Relationships
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0010-prerequisite-quest/"
-    recommended_quests:
-        - "/quests/level-0010-helpful-quest/"
-    unlocks_quests:
-        - "/quests/level-0010-next-quest/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: null  # Main quests typically have no parent
-    child_quests:
-        - "/quests/level-0010-side-quest-1/"
-        - "/quests/level-0010-side-quest-2/"
-    parallel_quests:
-        - "/quests/level-0010-alternative-path/"
-    sequel_quests:
-        - "/quests/level-0010-continuation/"
-
-# Learning Paths - Character Class Alignment
+  parent_quest: null
+  child_quests:
+  - /quests/level-0010-side-quest-1/
+  - /quests/level-0010-side-quest-2/
+  parallel_quests:
+  - /quests/level-0010-alternative-path/
+  sequel_quests:
+  - /quests/level-0010-continuation/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "[Primary Skill Tree]"
-        - "[Secondary Skill Tree]"
-
-# Progression System
+  primary_paths:
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
-    badges:
-        - "🏆 [Achievement Badge Name]"
-    skills_unlocked:
-        - "🛠️ [Tool or Technology Mastery]"
-    progression_points: 50  # XP value
-    unlocks_features:
-        - "[Feature or capability unlocked]"
-
-# Prerequisites (Detailed)
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 prerequisites:
-    knowledge_requirements:
-        - "Basic command line navigation"
-        - "[Specific prior knowledge]"
-    system_requirements:
-        - "Modern OS (macOS, Windows 10+, Linux)"
-        - "[Required software installed]"
-    skill_level_indicators:
-        - "[Recommended skill level description]"
-
-# Validation Criteria
+  knowledge_requirements:
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
+  system_requirements:
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
+  skill_level_indicators:
+  - '[Recommended skill level description]'
 validation_criteria:
-    completion_requirements:
-        - "All primary objectives completed"
-        - "[Specific deliverable created]"
-    skill_demonstrations:
-        - "Can explain [concept] clearly"
-        - "Can implement [skill] independently"
-    knowledge_checks:
-        - "Understands [principle]"
-        - "Can troubleshoot [common issue]"
-
-# Quest Positioning
+  completion_requirements:
+  - All primary objectives completed
+  - '[Specific deliverable created]'
+  skill_demonstrations:
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
+  knowledge_checks:
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-    coordinates: "[x, y]"  # Position on quest map
-    region: "Foundation"  # Init World | Foundation | Intermediate | Advanced | Expert
-    realm: "Development"  # Development | Infrastructure | Security | Data | Creative
-    biome: "Terminal"  # Terminal | Web | Cloud | Mobile | AI | Database
-
+  coordinates: '[x, y]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 comments: true
-draft: true  # Set to false when quest is complete and ready for publication
+draft: true
 ---
 
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*

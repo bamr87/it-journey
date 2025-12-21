@@ -1,40 +1,40 @@
 ---
-title: "The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms"
+title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms'
 description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
-date: 2025-11-14T00:00:00.000Z
+date: 2025-11-14 00:00:00+00:00
 preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
 tags:
-  - github-pages
-  - jekyll
-  - ai-capture
-  - vs-code
-  - web-publishing
-  - static-sites
-  - version-control
-  - markdown
+- github-pages
+- jekyll
+- ai-capture
+- vs-code
+- web-publishing
+- static-sites
+- version-control
+- markdown
 categories:
-  - Quests
-  - Development
-  - AI
-sub-title: "Level 0011 (3) Quest: Web Publishing and AI Capture Mastery"
+- Quests
+- Development
+- AI
+sub-title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
 excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
 snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
 author: IT-Journey Team
 layout: journals
 keywords:
   primary:
-    - github pages
-    - jekyll
-    - ai capture
-    - static site generation
+  - github pages
+  - jekyll
+  - ai capture
+  - static site generation
   secondary:
-    - vs code
-    - markdown
-    - web hosting
-    - version control
-lastmod: 2025-11-15T03:52:35.140Z
+  - vs code
+  - markdown
+  - web hosting
+  - version control
+lastmod: 2025-11-15 03:52:35.140000+00:00
 permalink: /quests/level-0011-github-pages-hidden-gem/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
@@ -44,78 +44,69 @@ quest_series: Web Publishing Mastery
 quest_arc: Digital Creation Arc
 prerequisites:
   knowledge_requirements:
-    - Basic understanding of Git and GitHub
-    - Familiarity with Markdown syntax
-    - Basic computer literacy and file management
+  - Basic understanding of Git and GitHub
+  - Familiarity with Markdown syntax
+  - Basic computer literacy and file management
   system_requirements:
-    - GitHub account
-    - Visual Studio Code installed
-    - Internet connection for repository operations
+  - GitHub account
+  - Visual Studio Code installed
+  - Internet connection for repository operations
   skill_level_indicators:
-    - Comfortable using web browsers and basic software installation
-    - Able to create and edit text files
+  - Comfortable using web browsers and basic software installation
+  - Able to create and edit text files
 quest_dependencies:
-  required_quests:
-    - /quests/hello-noob/
-  recommended_quests:
-    - /quests/terminal-fundamentals/
-  unlocks_quests:
-    - /quests/jekyll-advanced-customization/
-    - /quests/ai-integration-patterns/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: /quests/hello-noob/
-  child_quests:
-    - /quests/github-pages-custom-domains/
-    - /quests/jekyll-theme-development/
-  parallel_quests:
-    - /quests/static-site-generators-comparison/
-  sequel_quests:
-    - /quests/full-stack-web-development/
-    - /quests/content-management-systems/
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
-    - Software Development
-    - Content Creation
+  - Software Development
+  - Content Creation
   character_classes:
-    - 💻 Software Developer
-    - 🎨 Content Creator
-    - 🤖 AI Enthusiast
+  - 💻 Software Developer
+  - 🎨 Content Creator
+  - 🤖 AI Enthusiast
   skill_trees:
-    - Web Publishing
-    - Version Control
-    - Static Site Generation
+  - Web Publishing
+  - Version Control
+  - Static Site Generation
 rewards:
   badges:
-    - 🏆 GitHub Pages Master
-    - 💎 Hidden Gem Discoverer
-    - 🤖 AI Conversation Capturer
+  - 🏆 GitHub Pages Master
+  - 💎 Hidden Gem Discoverer
+  - 🤖 AI Conversation Capturer
   skills_unlocked:
-    - 🛠️ Static Site Publishing
-    - 📝 Markdown to Web Conversion
-    - 🔄 Version-Controlled Content
+  - 🛠️ Static Site Publishing
+  - 📝 Markdown to Web Conversion
+  - 🔄 Version-Controlled Content
   progression_points: 150
   unlocks_features:
-    - Access to advanced Jekyll customization quests
-    - Eligibility for web development learning paths
+  - Access to advanced Jekyll customization quests
+  - Eligibility for web development learning paths
 validation_criteria:
   completion_requirements:
-    - Successfully create and deploy a GitHub Pages site
-    - Capture and publish at least one AI conversation as a blog post
-    - Demonstrate understanding of Jekyll basics and Markdown conversion
+  - Successfully create and deploy a GitHub Pages site
+  - Capture and publish at least one AI conversation as a blog post
+  - Demonstrate understanding of Jekyll basics and Markdown conversion
   skill_demonstrations:
-    - Customize site appearance using Jekyll themes
-    - Implement proper frontmatter and metadata
-    - Use VS Code effectively for site development
+  - Customize site appearance using Jekyll themes
+  - Implement proper frontmatter and metadata
+  - Use VS Code effectively for site development
   knowledge_checks:
-    - Explain how GitHub Pages differs from traditional web hosting
-    - Describe the role of Jekyll in static site generation
-    - Understand the benefits of version-controlled content publishing
+  - Explain how GitHub Pages differs from traditional web hosting
+  - Describe the role of Jekyll in static site generation
+  - Understand the benefits of version-controlled content publishing
 quest_mapping:
-  coordinates: "[3, 2]"
+  coordinates: '[3, 2]'
   region: Foundation
   realm: Development
   biome: Web
-level: "0011"
+level: '0011'
 ---
 
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms

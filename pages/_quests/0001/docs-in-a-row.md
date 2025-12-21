@@ -1,13 +1,13 @@
 ---
-title: "The Knowledge Vault: Building an Automated Documentation Hub"
+title: 'The Knowledge Vault: Building an Automated Documentation Hub'
 description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
-date: 2025-10-03T21:41:24.219Z
+date: 2025-10-03 21:41:24.219000+00:00
 preview: images/previews/the-knowledge-vault-building-an-automated-document.png
-level: "0001"
-difficulty: "🟡 Intermediate"
+level: '0001'
+difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: GitHub Actions
-quest_type: Project Building
+quest_type: main_quest
 skill_focus: DevOps Automation
 learning_style: Hands-on Implementation
 quest_series: Automation Mastery
@@ -17,24 +17,24 @@ snippet: Transform scattered docs into organized knowledge with automation magic
 author: Quest Master IT-Journey Team
 layout: journals
 tags:
-  - github-actions
-  - bash-scripting
-  - python-automation
-  - documentation
-  - devops
-  - ci-cd
-  - workflow-automation
+- github-actions
+- bash-scripting
+- python-automation
+- documentation
+- devops
+- ci-cd
+- workflow-automation
 categories:
-  - Automation
-  - DevOps
-  - Documentation
+- Automation
+- DevOps
+- Documentation
 prerequisites:
-  - Basic Git operations (clone, commit, push, pull)
-  - Familiarity with Markdown syntax
-  - Basic Bash scripting knowledge
-  - Python fundamentals (file I/O, functions)
-  - GitHub account with repository creation permissions
-  - "Completed: [Hello n00b](/quests/init_world/hello-noob/) quest"
+- Basic Git operations (clone, commit, push, pull)
+- Familiarity with Markdown syntax
+- Basic Bash scripting knowledge
+- Python fundamentals (file I/O, functions)
+- GitHub account with repository creation permissions
+- 'Completed: [Hello n00b](/quests/init_world/hello-noob/) quest'
 rewards:
   badge: Documentation Architect
   skill: CI/CD Pipeline Development
@@ -42,24 +42,24 @@ rewards:
   capability: Multi-Repository Management
 related_quests:
   prerequisites:
-    - hello-noob
-    - bash-scripting
+  - hello-noob
+  - bash-scripting
   followups:
-    - github-pages-deployment
-    - advanced-ci-cd
+  - github-pages-deployment
+  - advanced-ci-cd
   parallel:
-    - action-triggers
-    - change-logs
+  - action-triggers
+  - change-logs
 validation_criteria:
-  - GitHub Actions workflow executes successfully
-  - Documentation aggregates from at least 2 repositories
-  - Files organized into logical directory structure
-  - YAML front matter correctly added to documents
-  - Workflow runs on schedule and manual trigger
+- GitHub Actions workflow executes successfully
+- Documentation aggregates from at least 2 repositories
+- Files organized into logical directory structure
+- YAML front matter correctly added to documents
+- Workflow runs on schedule and manual trigger
 comments: true
 draft: false
 fmContentType: quest
-lastmod: 2025-10-03T21:57:41.816Z
+lastmod: 2025-10-03 21:57:41.816000+00:00
 permalink: /quests/level-0001/docs-in-a-row/
 ---
 

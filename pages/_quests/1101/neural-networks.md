@@ -1,103 +1,96 @@
 ---
-title: "Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch"
-description: "Master neural network architectures with TensorFlow. Learn convolutional networks, recurrent networks, attention mechanisms, and transformer architectures for computer vision and NLP."
-date: 2025-12-01T04:22:04.000Z
+title: 'Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch'
+description: Master neural network architectures with TensorFlow. Learn convolutional networks, recurrent networks, attention mechanisms, and transformer architectures for computer vision and NLP.
+date: 2025-12-01 04:22:04+00:00
 preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
-level: 1101
+level: '1101'
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours
-primary_technology: "tensorflow"
+primary_technology: tensorflow
 quest_type: main_quest
-skill_focus: "data-science"
+skill_focus: data-science
 learning_style: hands-on
-quest_series: "AI/ML Mastery"
-sub_title: "Level 1101 (13) Quest: Epic Quest - Neural Networks"
-excerpt: "Build CNN, RNN, and transformer architectures from scratch with TensorFlow and Keras"
+quest_series: AI/ML Mastery
+sub_title: 'Level 1101 (13) Quest: Epic Quest - Neural Networks'
+excerpt: Build CNN, RNN, and transformer architectures from scratch with TensorFlow and Keras
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1101
-  - tensorflow
-  - neural-networks
-  - deep-learning
-  - main_quest
-  - data-science
-  - hands-on
-  - gamified-learning
+- lvl-1101
+- tensorflow
+- neural-networks
+- deep-learning
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Data-Science
-  - Epic
+- Quests
+- Data-Science
+- Epic
 keywords:
   primary:
-    - neural networks tutorial
-    - deep learning
-    - tensorflow keras
+  - neural networks tutorial
+  - deep learning
+  - tensorflow keras
   secondary:
-    - cnn
-    - rnn
-    - transformers
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - cnn
+  - rnn
+  - transformers
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1101-neural-networks/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1101-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1101-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1101-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-    - /quests/level-1101-side-quest-1/
-    - /quests/level-1101-side-quest-2/
-  parallel_quests:
-    - /quests/level-1101-alternative-path/
-  sequel_quests:
-    - /quests/level-1101-continuation/
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

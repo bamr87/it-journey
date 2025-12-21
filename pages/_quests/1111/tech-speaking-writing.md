@@ -1,99 +1,96 @@
 ---
-title: "Tech Speaking and Writing: Building Your Technical Brand"
-description: "Master technical communication through speaking and writing. Learn conference speaking, technical blogging, documentation, and building thought leadership."
-date: 2025-12-01T04:22:59.000Z
+title: 'Tech Speaking and Writing: Building Your Technical Brand'
+description: Master technical communication through speaking and writing. Learn conference speaking, technical blogging, documentation, and building thought leadership.
+date: 2025-12-01 04:22:59+00:00
 preview: images/previews/tech-speaking-and-writing-descriptive-subtitle.png
-level: 1111
+level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
-primary_technology: "general"
+primary_technology: general
 quest_type: main_quest
-skill_focus: "communication"
+skill_focus: communication
 learning_style: hands-on
-quest_series: "Leadership Mastery"
-sub_title: "Level 1111 (15) Quest: Main Quest - Communication"
-excerpt: "Develop technical speaking and writing skills for thought leadership"
+quest_series: Leadership Mastery
+sub_title: 'Level 1111 (15) Quest: Main Quest - Communication'
+excerpt: Develop technical speaking and writing skills for thought leadership
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1111
-  - communication
-  - main_quest
-  - communication
-  - hands-on
-  - gamified-learning
+- lvl-1111
+- communication
+- main_quest
+- communication
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Communication
-  - Hard
+- Quests
+- Communication
+- Hard
 keywords:
   primary:
-    - tech-speaking
-    - technical-writing
+  - tech-speaking
+  - technical-writing
   secondary:
-    - thought-leadership
-    - conference-speaking
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - thought-leadership
+  - conference-speaking
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1111-tech-speaking-writing/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1111-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1111-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1111-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-1111-side-quest-1/
-    - /quests/level-1111-side-quest-2/
+  - /quests/level-1111-side-quest-1/
+  - /quests/level-1111-side-quest-2/
   parallel_quests:
-    - /quests/level-1111-alternative-path/
+  - /quests/level-1111-alternative-path/
   sequel_quests:
-    - /quests/level-1111-continuation/
+  - /quests/level-1111-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

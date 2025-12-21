@@ -1,121 +1,104 @@
 ---
-title: "Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic"
+title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
 description: Transform your terminal into a powerful, visually enhanced development environment with Oh-My-Zsh themes and plugins
-date: 2025-10-03T12:30:00.000Z
+date: 2025-10-03 12:30:00+00:00
 preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
-    - lvl-0010
-    - terminal-enhancement
-    - oh-my-zsh
-    - shell-customization
-    - productivity-tools
-    - themes
-    - plugins
+- lvl-0010
+- terminal-enhancement
+- oh-my-zsh
+- shell-customization
+- productivity-tools
+- themes
+- plugins
 categories:
-    - Quests
-    - Side-Quests
-    - Terminal-Enhancement
-sub-title: "Level 0010 (2) Side Quest: Terminal Enhancement and Customization"
+- Quests
+- Side-Quests
+- Terminal-Enhancement
+sub-title: 'Level 0010 (2) Side Quest: Terminal Enhancement and Customization'
 excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved productivity and visual appeal
 snippet: Transform your terminal from tool to weapon with Oh-My-Zsh magic
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
-    primary:
-        - oh-my-zsh
-        - terminal-enhancement
-        - shell-customization
-    secondary:
-        - zsh-plugins
-        - terminal-themes
-        - productivity-enhancement
-        - development-workflow
-lastmod: 2025-10-03T12:30:00.000Z
+  primary:
+  - oh-my-zsh
+  - terminal-enhancement
+  - shell-customization
+  secondary:
+  - zsh-plugins
+  - terminal-themes
+  - productivity-enhancement
+  - development-workflow
+lastmod: 2025-10-03 12:30:00+00:00
 permalink: /quests/oh-my-zsh-terminal-enchantment/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
-
-# === ENHANCED QUEST HIERARCHY ===
-quest_type: "side_quest"
-quest_line: "Foundation Path"
-quest_series: "Terminal Mastery Path"
-quest_arc: "Tool Enhancement Arc"
-
+quest_type: side_quest
+quest_line: Foundation Path
+quest_series: Terminal Mastery Path
+quest_arc: Tool Enhancement Arc
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0001-terminal-navigation-mastery/"
-    recommended_quests:
-        - "/quests/nerd-font-enchantment/"
-    unlocks_quests:
-        - "/quests/custom-shell-scripting/"
-        - "/quests/terminal-automation-workflows/"
-
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: "/quests/level-0001-terminal-navigation-mastery/"
-    parallel_quests:
-        - "/quests/nerd-font-enchantment/"
-        - "/quests/terminal-theme-customization/"
-    sequel_quests:
-        - "/quests/advanced-zsh-configuration/"
-        - "/quests/custom-plugin-development/"
-
+  parent_quest: /quests/level-0001-terminal-navigation-mastery/
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
-    primary_paths:
-        - "Software Development"
-        - "System Administration"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "Terminal Mastery"
-        - "Productivity Tools"
-        - "Development Environment"
-
+  primary_paths:
+  - Software Development
+  - System Administration
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
+  - Productivity Tools
+  - Development Environment
 quest_mapping:
-    coordinates: "[2, 3]"
-    region: "Foundation"
-    realm: "Development"
-    biome: "Terminal"
-
+  coordinates: '[2, 3]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 prerequisites:
-    knowledge_requirements:
-        - "Completion of Terminal Navigation Mastery main quest"
-        - "Understanding of shell concepts and terminal usage"
-        - "Basic familiarity with command-line configuration"
-    system_requirements:
-        - "Zsh shell installed (default on macOS, installable on Linux/Windows)"
-        - "Internet connection for downloading Oh-My-Zsh framework"
-        - "Terminal emulator with customization support"
-    skill_level_indicators:
-        - "Comfortable with terminal navigation and basic commands"
-        - "Ready to customize and enhance development environment"
-
+  knowledge_requirements:
+  - Completion of Terminal Navigation Mastery main quest
+  - Understanding of shell concepts and terminal usage
+  - Basic familiarity with command-line configuration
+  system_requirements:
+  - Zsh shell installed (default on macOS, installable on Linux/Windows)
+  - Internet connection for downloading Oh-My-Zsh framework
+  - Terminal emulator with customization support
+  skill_level_indicators:
+  - Comfortable with terminal navigation and basic commands
+  - Ready to customize and enhance development environment
 validation_criteria:
-    completion_requirements:
-        - "Successfully install and configure Oh-My-Zsh framework"
-        - "Apply custom theme and demonstrate visual enhancements"
-        - "Install and configure at least 3 productivity plugins"
-    skill_demonstrations:
-        - "Show improved workflow efficiency with enhanced terminal"
-        - "Demonstrate plugin functionality and customization"
-    knowledge_checks:
-        - "Explain benefits of terminal enhancement frameworks"
-        - "Troubleshoot common Oh-My-Zsh configuration issues"
-
+  completion_requirements:
+  - Successfully install and configure Oh-My-Zsh framework
+  - Apply custom theme and demonstrate visual enhancements
+  - Install and configure at least 3 productivity plugins
+  skill_demonstrations:
+  - Show improved workflow efficiency with enhanced terminal
+  - Demonstrate plugin functionality and customization
+  knowledge_checks:
+  - Explain benefits of terminal enhancement frameworks
+  - Troubleshoot common Oh-My-Zsh configuration issues
 rewards:
-    badges:
-        - "⚔️ Terminal Enchanter - Master of shell enhancement"
-        - "🎨 Interface Artisan - Creator of beautiful terminal environments"
-    skills_unlocked:
-        - "🛠️ Advanced Terminal Customization"
-        - "🎯 Enhanced Development Productivity"
-    progression_points: 75
-    unlocks_features:
-        - "Access to advanced shell scripting quests"
-        - "Custom plugin development capabilities"
-level: "codex"
+  badges:
+  - ⚔️ Terminal Enchanter - Master of shell enhancement
+  - 🎨 Interface Artisan - Creator of beautiful terminal environments
+  skills_unlocked:
+  - 🛠️ Advanced Terminal Customization
+  - 🎯 Enhanced Development Productivity
+  progression_points: 75
+  unlocks_features:
+  - Access to advanced shell scripting quests
+  - Custom plugin development capabilities
+level: '0010'
 ---
 
 *Welcome, terminal navigator, to the Oh-My-Zsh Terminal Enchantment side quest! Having mastered the fundamental arts of command-line navigation, you're now ready to transform your terminal from a simple tool into a powerful, visually enhanced development weapon.*

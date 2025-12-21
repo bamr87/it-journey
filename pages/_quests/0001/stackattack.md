@@ -1,10 +1,10 @@
 ---
-title: "Stack Attack: Deciphering the Technology Matrix"
+title: 'Stack Attack: Deciphering the Technology Matrix'
 description: Master the art of repository analysis and technology stack documentation using AI-powered investigation techniques
-date: 2025-11-02T21:00:31.059Z
+date: 2025-11-02 21:00:31.059000+00:00
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
 permalink: /quests/level-0001/stack-attack/
-level: "0001"
+level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: AI-Assisted Analysis
@@ -14,110 +14,100 @@ learning_style: hands-on, investigative, analytical
 quest_series: Repository Mastery Path
 quest_line: Development Mastery
 quest_arc: Tool Mastery Arc
-sub_title: "Level 0001 (1) Quest: AI-Powered Repository Investigation"
+sub_title: 'Level 0001 (1) Quest: AI-Powered Repository Investigation'
 excerpt: Learn to systematically dissect and document any technology stack using AI assistance and investigative techniques
 snippet: Knowledge is power; understanding the stack is mastery
 author: Quest Master IT-Journey Team
 layout: journals
 tags:
-  - lvl-0001
-  - ai-assisted-development
-  - repository-analysis
-  - technology-stack
-  - documentation
-  - reverse-engineering
-  - github
+- lvl-0001
+- ai-assisted-development
+- repository-analysis
+- technology-stack
+- documentation
+- reverse-engineering
+- github
 categories:
-  - Quests
-  - Development
-  - AI-Powered-Tools
+- Quests
+- Development
+- AI-Powered-Tools
 prerequisites:
   knowledge_requirements:
-    - Basic understanding of software development concepts
-    - Familiarity with GitHub repositories
-    - Comfort with terminal/command line basics
+  - Basic understanding of software development concepts
+  - Familiarity with GitHub repositories
+  - Comfort with terminal/command line basics
   system_requirements:
-    - GitHub account for repository access
-    - VS Code with GitHub Copilot extension
-    - Terminal access (macOS, Windows, Linux)
+  - GitHub account for repository access
+  - VS Code with GitHub Copilot extension
+  - Terminal access (macOS, Windows, Linux)
   skill_level_indicators:
-    - Can navigate file systems and directories
-    - Comfortable reading code in multiple languages
+  - Can navigate file systems and directories
+  - Comfortable reading code in multiple languages
 rewards:
   badges:
-    - 🔍 Stack Detective - Repository Analysis Master
-    - 📚 Documentation Sage - Stack Documentation Expert
+  - 🔍 Stack Detective - Repository Analysis Master
+  - 📚 Documentation Sage - Stack Documentation Expert
   skills_unlocked:
-    - 🛠️ Technology Stack Analysis
-    - 🎯 AI-Assisted Code Investigation
-    - 📝 Technical Documentation Mastery
+  - 🛠️ Technology Stack Analysis
+  - 🎯 AI-Assisted Code Investigation
+  - 📝 Technical Documentation Mastery
   progression_points: 200
   unlocks_features:
-    - Access to advanced repository analysis quests
-    - AI prompt engineering techniques
+  - Access to advanced repository analysis quests
+  - AI prompt engineering techniques
 related_quests:
   prerequisites:
-    - /quests/init_world/hello-noob/
-    - /quests/terminal-fundamentals/
+  - /quests/init_world/hello-noob/
+  - /quests/terminal-fundamentals/
   followups:
-    - /quests/dependency-analysis/
-    - /quests/architecture-mapping/
+  - /quests/dependency-analysis/
+  - /quests/architecture-mapping/
   parallel:
-    - /quests/github-workflows/
-    - /quests/documentation-generation/
+  - /quests/github-workflows/
+  - /quests/documentation-generation/
 validation_criteria:
   completion_requirements:
-    - Successfully deploy and use /stackattack AI prompt
-    - Complete technology stack analysis of a repository
-    - Create comprehensive stack documentation
-    - Identify all major technologies and their relationships
+  - Successfully deploy and use /stackattack AI prompt
+  - Complete technology stack analysis of a repository
+  - Create comprehensive stack documentation
+  - Identify all major technologies and their relationships
   skill_demonstrations:
-    - Analyze repository structure and organization
-    - Document technology stack in organized format
-    - Create visual diagrams of stack architecture
+  - Analyze repository structure and organization
+  - Document technology stack in organized format
+  - Create visual diagrams of stack architecture
   knowledge_checks:
-    - Explain the purpose of each technology in the stack
-    - Identify technology relationships and dependencies
-    - Assess stack strengths and potential improvements
+  - Explain the purpose of each technology in the stack
+  - Identify technology relationships and dependencies
+  - Assess stack strengths and potential improvements
 comments: true
 draft: false
 fmContentType: quest
 quest_dependencies:
-  required_quests:
-    - /quests/init_world/hello-noob/
-  recommended_quests:
-    - /quests/github-basics/
-    - /quests/vs-code-mastery/
-  unlocks_quests:
-    - /quests/advanced-stack-optimization/
-    - /quests/dependency-security-analysis/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-  child_quests:
-    - /quests/frontend-stack-analysis/
-    - /quests/backend-stack-analysis/
-    - /quests/infrastructure-stack-analysis/
-  sequel_quests:
-    - /quests/architecture-documentation/
-    - /quests/technology-migration-planning/
+  child_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
-    - Software Development
-    - DevOps Engineering
-    - Technical Architecture
+  - Software Development
+  - DevOps Engineering
+  - Technical Architecture
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
-    - 🔍 Security Specialist
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  - 🔍 Security Specialist
   skill_trees:
-    - Repository Analysis
-    - Documentation Mastery
-    - AI-Assisted Development
+  - Repository Analysis
+  - Documentation Mastery
+  - AI-Assisted Development
 quest_mapping:
-  coordinates: "[2, 2]"
+  coordinates: '[2, 2]'
   region: Foundation
   realm: Development
   biome: AI-Enhanced
-lastmod: 2025-11-30T05:46:59.350Z
+lastmod: 2025-11-30 05:46:59.350000+00:00
 ---
 
 *In the vast digital realm, repositories stand as ancient fortresses containing powerful technological artifacts. Within their walls lie complex stacks of technologies—layered like the floors of a mystical tower, each serving a purpose, each connected in intricate ways. Most developers wander these halls without truly understanding the architecture that surrounds them. But you, brave adventurer, are about to become a Stack Detective, wielding the power of AI to illuminate every corner of these digital strongholds.*

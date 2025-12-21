@@ -1,99 +1,96 @@
 ---
-title: "API Gateway Patterns: Routing, Load Balancing and Security"
-description: "Implement API gateway patterns for microservices. Master request routing, load balancing, rate limiting, authentication, and service mesh integration."
-date: 2025-12-01T04:22:39.000Z
+title: 'API Gateway Patterns: Routing, Load Balancing and Security'
+description: Implement API gateway patterns for microservices. Master request routing, load balancing, rate limiting, authentication, and service mesh integration.
+date: 2025-12-01 04:22:39+00:00
 preview: images/previews/api-gateway-patterns-descriptive-subtitle.png
-level: 1110
+level: '1110'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
-primary_technology: "docker"
+primary_technology: docker
 quest_type: main_quest
-skill_focus: "architecture"
+skill_focus: architecture
 learning_style: hands-on
-quest_series: "System Design Mastery"
-sub_title: "Level 1110 (14) Quest: Main Quest - API Gateway"
-excerpt: "Implement API gateway patterns for routing, security, and service orchestration"
+quest_series: System Design Mastery
+sub_title: 'Level 1110 (14) Quest: Main Quest - API Gateway'
+excerpt: Implement API gateway patterns for routing, security, and service orchestration
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-1110
-  - docker
-  - main_quest
-  - architecture
-  - hands-on
-  - gamified-learning
+- lvl-1110
+- docker
+- main_quest
+- architecture
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Architecture
-  - Hard
+- Quests
+- Architecture
+- Hard
 keywords:
   primary:
-    - api-gateway
-    - service-mesh
+  - api-gateway
+  - service-mesh
   secondary:
-    - load-balancing
-    - rate-limiting
-    - gamified-learning
-    - it-journey
-lastmod: 2025-11-30T05:46:59.315Z
+  - load-balancing
+  - rate-limiting
+  - gamified-learning
+  - it-journey
+lastmod: 2025-11-30 05:46:59.315000+00:00
 fmContentType: quest
 permalink: /quests/level-1110-api-gateway-patterns/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-    - /quests/level-1110-prerequisite-quest/
-  recommended_quests:
-    - /quests/level-1110-helpful-quest/
-  unlocks_quests:
-    - /quests/level-1110-next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-1110-side-quest-1/
-    - /quests/level-1110-side-quest-2/
+  - /quests/level-1110-side-quest-1/
+  - /quests/level-1110-side-quest-2/
   parallel_quests:
-    - /quests/level-1110-alternative-path/
+  - /quests/level-1110-alternative-path/
   sequel_quests:
-    - /quests/level-1110-continuation/
+  - /quests/level-1110-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal

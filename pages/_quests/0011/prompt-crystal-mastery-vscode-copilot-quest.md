@@ -1,9 +1,9 @@
 ---
-title: "Forging the Prompt Crystal: VS Code Copilot Mastery Quest"
+title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
 description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
-date: 2025-11-26T00:00:00.000Z
+date: 2025-11-26 00:00:00+00:00
 preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
-level: "0011"
+level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: prompt-engineering
@@ -14,124 +14,112 @@ quest_series: AI Development Mastery
 quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
 quest_dependencies:
-    required_quests:
-        - /quests/init_world/hello-noob/
-        - /quests/level-0010-prompt-engineering-mastery/
-    recommended_quests:
-        - /quests/terminal-fundamentals/
-        - /quests/kaizen-continuous-improvement/
-    unlocks_quests:
-        - /quests/advanced-ai-agent-development/
-        - /quests/mcp-server-prompt-patterns/
-        - /quests/team-prompt-library-setup/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: /quests/level-0010-prompt-engineering-mastery/
-    child_quests:
-        - /quests/copilot-workspace-configuration/
-        - /quests/prompt-template-library/
-    parallel_quests:
-        - /quests/vscode-productivity-mastery/
-    sequel_quests:
-        - /quests/ai-agent-orchestration/
-        - /quests/multi-agent-systems/
+  parent_quest: /quests/level-0010-prompt-engineering-mastery/
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
-    primary_paths:
-        - AI Development
-        - Software Development
-    character_classes:
-        - 💻 Software Developer
-        - 🤖 AI Engineer
-        - 🏗️ System Engineer
-    skill_trees:
-        - AI Development
-        - Prompt Engineering
-        - VS Code Mastery
-        - Developer Productivity
+  primary_paths:
+  - AI Development
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🤖 AI Engineer
+  - 🏗️ System Engineer
+  skill_trees:
+  - AI Development
+  - Prompt Engineering
+  - VS Code Mastery
+  - Developer Productivity
 quest_mapping:
-    coordinates: "[3, 2]"
-    region: Foundation
-    realm: AI-Enhanced
-    biome: Development Tools
-sub_title: "Level 0011 (3) Quest: Main Quest - VS Code Copilot Prompt Mastery"
+  coordinates: '[3, 2]'
+  region: Foundation
+  realm: AI-Enhanced
+  biome: Development Tools
+sub_title: 'Level 0011 (3) Quest: Main Quest - VS Code Copilot Prompt Mastery'
 excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding precision-crafted prompts that unlock consistent, high-quality AI assistance in your development workflow
 snippet: Your prompts are code—version them, test them, perfect them
 author: Quest Master IT-Journey Team
 layout: journals
 tags:
-    - lvl-0011
-    - prompt-engineering
-    - vscode-copilot
-    - ai-development
-    - tool-mastery
-    - hands-on
-    - gamified-learning
+- lvl-0011
+- prompt-engineering
+- vscode-copilot
+- ai-development
+- tool-mastery
+- hands-on
+- gamified-learning
 categories:
-    - Quests
-    - AI-Development
-    - Tool-Mastery
-    - Medium
+- Quests
+- AI-Development
+- Tool-Mastery
+- Medium
 keywords:
-    primary:
-        - prompt-engineering
-        - vs-code-copilot
-        - ai-coding-assistant
-    secondary:
-        - rctf-pattern
-        - few-shot-prompting
-        - chain-of-thought
-        - copilot-instructions
-        - prompt-templates
-        - pdca-cycle
-        - kaizen
-lastmod: 2025-11-27T05:11:44.573Z
+  primary:
+  - prompt-engineering
+  - vs-code-copilot
+  - ai-coding-assistant
+  secondary:
+  - rctf-pattern
+  - few-shot-prompting
+  - chain-of-thought
+  - copilot-instructions
+  - prompt-templates
+  - pdca-cycle
+  - kaizen
+lastmod: 2025-11-27 05:11:44.573000+00:00
 permalink: /quests/level-0011-prompt-crystal-vscode-copilot/
-attachments: ""
+attachments: ''
 comments: true
 prerequisites:
-    knowledge_requirements:
-        - Basic familiarity with VS Code (navigation, extensions, settings)
-        - Understanding of programming fundamentals in at least one language
-        - Familiarity with Git basics (commits, branches, repos)
-    system_requirements:
-        - VS Code with GitHub Copilot extension installed
-        - Active GitHub Copilot subscription (individual or enterprise)
-        - Text editor for prompt template development
-        - Git repository for version-controlling your prompt library
-    skill_level_indicators:
-        - Comfortable using VS Code for development
-        - Have used Copilot but want more consistent results
-        - Ready to treat prompts as a learnable, improvable skill
+  knowledge_requirements:
+  - Basic familiarity with VS Code (navigation, extensions, settings)
+  - Understanding of programming fundamentals in at least one language
+  - Familiarity with Git basics (commits, branches, repos)
+  system_requirements:
+  - VS Code with GitHub Copilot extension installed
+  - Active GitHub Copilot subscription (individual or enterprise)
+  - Text editor for prompt template development
+  - Git repository for version-controlling your prompt library
+  skill_level_indicators:
+  - Comfortable using VS Code for development
+  - Have used Copilot but want more consistent results
+  - Ready to treat prompts as a learnable, improvable skill
 validation_criteria:
-    completion_requirements:
-        - Create and test 3 structured prompts using the RCTF pattern
-        - Build a functional .github/copilot-instructions.md for a project
-        - Design at least 2 reusable prompt templates with variables
-        - Complete one full PDCA iteration cycle on a prompt
-    skill_demonstrations:
-        - Transform a vague prompt into a structured, effective prompt
-        - Configure project-level Copilot context using workspace references
-        - Apply few-shot prompting to achieve consistent output formats
-        - Use Chain-of-Thought prompting for complex reasoning tasks
-    knowledge_checks:
-        - Explain the RCTF pattern and when to apply each component
-        - Describe the difference between zero-shot and few-shot prompting
-        - Identify when Chain-of-Thought prompting improves results
-        - Apply PDCA cycle principles to prompt quality improvement
+  completion_requirements:
+  - Create and test 3 structured prompts using the RCTF pattern
+  - Build a functional .github/copilot-instructions.md for a project
+  - Design at least 2 reusable prompt templates with variables
+  - Complete one full PDCA iteration cycle on a prompt
+  skill_demonstrations:
+  - Transform a vague prompt into a structured, effective prompt
+  - Configure project-level Copilot context using workspace references
+  - Apply few-shot prompting to achieve consistent output formats
+  - Use Chain-of-Thought prompting for complex reasoning tasks
+  knowledge_checks:
+  - Explain the RCTF pattern and when to apply each component
+  - Describe the difference between zero-shot and few-shot prompting
+  - Identify when Chain-of-Thought prompting improves results
+  - Apply PDCA cycle principles to prompt quality improvement
 rewards:
-    badges:
-        - 🏆 Prompt Crystal Forger - VS Code Copilot Master
-        - ⚡ Systematic Prompter - Structured Instruction Designer
-        - 📚 Template Architect - Reusable Prompt Library Builder
-    skills_unlocked:
-        - 🛠️ Advanced RCTF Prompt Pattern Design
-        - 🎯 Project-Level Copilot Configuration
-        - 📋 Reusable Prompt Template Development
-        - ♻️ Kaizen-Driven Prompt Iteration
-    progression_points: 175
-    unlocks_features:
-        - Access to advanced AI agent development quests
-        - Ability to create team-wide prompt standards
-        - Foundation for MCP server prompt patterns
+  badges:
+  - 🏆 Prompt Crystal Forger - VS Code Copilot Master
+  - ⚡ Systematic Prompter - Structured Instruction Designer
+  - 📚 Template Architect - Reusable Prompt Library Builder
+  skills_unlocked:
+  - 🛠️ Advanced RCTF Prompt Pattern Design
+  - 🎯 Project-Level Copilot Configuration
+  - 📋 Reusable Prompt Template Development
+  - ♻️ Kaizen-Driven Prompt Iteration
+  progression_points: 175
+  unlocks_features:
+  - Access to advanced AI agent development quests
+  - Ability to create team-wide prompt standards
+  - Foundation for MCP server prompt patterns
 draft: false
 ---
 

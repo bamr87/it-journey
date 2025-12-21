@@ -1,38 +1,38 @@
 ---
-title: "Terminal Artificer: Forging the Glass Interface"
+title: 'Terminal Artificer: Forging the Glass Interface'
 description: Master the art of crafting beautiful, interactive frontends for your shell scripts using Gum, transforming raw command-line magic into elegant tools.
-date: 2025-11-19T00:00:00.000Z
+date: 2025-11-19 00:00:00+00:00
 preview: images/previews/terminal-artificer-forging-the-glass-interface.png
 tags:
-    - lvl-0010
-    - gum
-    - shell-scripting
-    - frontend
-    - cli
-    - tool-mastery
-    - hands-on
+- lvl-0010
+- gum
+- shell-scripting
+- frontend
+- cli
+- tool-mastery
+- hands-on
 categories:
-    - Quests
-    - Development
-    - Foundation
-sub-title: "Level 0010 (2) Quest: Terminal Frontend Building"
+- Quests
+- Development
+- Foundation
+sub-title: 'Level 0010 (2) Quest: Terminal Frontend Building'
 excerpt: Transform your raw shell scripts into interactive, user-friendly tools with menus, inputs, and beautiful styling.
 snippet: Forge the glass interface between wizard and machine.
 author: Quest Master Copilot
 layout: journals
 keywords:
-    primary:
-        - gum
-        - shell-scripting
-        - terminal-ui
-    secondary:
-        - cli-design
-        - frontend
-        - bash
-        - zsh
-lastmod: 2025-11-29T01:07:17.270Z
+  primary:
+  - gum
+  - shell-scripting
+  - terminal-ui
+  secondary:
+  - cli-design
+  - frontend
+  - bash
+  - zsh
+lastmod: 2025-11-29 01:07:17.270000+00:00
 permalink: /quests/level-0010-terminal-artificer/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -41,62 +41,58 @@ quest_line: Foundation Path
 quest_series: Terminal Mastery Path
 quest_arc: Tool Mastery Arc
 prerequisites:
-    knowledge_requirements:
-        - Basic understanding of shell scripting (variables, execution)
-        - Comfortable navigating the terminal
-    system_requirements:
-        - A terminal emulator (iTerm2, Windows Terminal, Alacritty)
-        - Package manager (Homebrew, Winget, Scoop, or Apt)
-    skill_level_indicators:
-        - Can write a simple 'Hello World' bash script
+  knowledge_requirements:
+  - Basic understanding of shell scripting (variables, execution)
+  - Comfortable navigating the terminal
+  system_requirements:
+  - A terminal emulator (iTerm2, Windows Terminal, Alacritty)
+  - Package manager (Homebrew, Winget, Scoop, or Apt)
+  skill_level_indicators:
+  - Can write a simple 'Hello World' bash script
 quest_dependencies:
-    required_quests:
-        - /quests/level-0001-terminal-mastery/
-    recommended_quests:
-        - /quests/level-0010-oh-my-zsh-enchantment/
-    unlocks_quests:
-        - /quests/level-0011-advanced-shell-scripting/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-    parent_quest: /quests/level-0010-terminal-mastery/
-    parallel_quests:
-        - /quests/level-0010-nerd-font-enchantment/
+  parent_quest: /quests/level-0010-terminal-mastery/
+  parallel_quests: []
 learning_paths:
-    primary_paths:
-        - Software Development
-        - System Administration
-    character_classes:
-        - 💻 Software Developer
-        - 🏗️ System Engineer
-    skill_trees:
-        - Terminal Mastery
-        - DevOps Automation
+  primary_paths:
+  - Software Development
+  - System Administration
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
+  - DevOps Automation
 rewards:
-    badges:
-        - 🏆 Glass Interface Artificer
-        - ⚡ UI/UX Enchanter
-    skills_unlocked:
-        - 🛠️ Interactive Scripting
-        - 🎯 CLI Design Patterns
-    progression_points: 50
-    unlocks_features:
-        - Ability to create user-friendly CLI tools
+  badges:
+  - 🏆 Glass Interface Artificer
+  - ⚡ UI/UX Enchanter
+  skills_unlocked:
+  - 🛠️ Interactive Scripting
+  - 🎯 CLI Design Patterns
+  progression_points: 50
+  unlocks_features:
+  - Ability to create user-friendly CLI tools
 validation_criteria:
-    completion_requirements:
-        - Install Gum on your local machine
-        - Create a script with a selection menu
-        - Create a script with text input
-    skill_demonstrations:
-        - Build a multi-step interactive form
-        - Implement a confirmation dialog
-    knowledge_checks:
-        - Explain the difference between arguments and interactive input
-        - Understand exit codes in selection menus
+  completion_requirements:
+  - Install Gum on your local machine
+  - Create a script with a selection menu
+  - Create a script with text input
+  skill_demonstrations:
+  - Build a multi-step interactive form
+  - Implement a confirmation dialog
+  knowledge_checks:
+  - Explain the difference between arguments and interactive input
+  - Understand exit codes in selection menus
 quest_mapping:
-    coordinates: "[1, 2]"
-    region: Foundation
-    realm: Development
-    biome: Terminal
-level: "0010"
+  coordinates: '[1, 2]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
+level: '0010'
 ---
 
 *In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
