@@ -1,24 +1,66 @@
-_site
-.sass-cache
-.jekyll-cache
+##############################
+# Jekyll / Ruby / Bundler
+##############################
+_site/
+.jekyll-cache/
 .jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/bundle/
+
+# Project-specific secrets / generated files
 _algolia_api_key
+
+# NOTE: Many Ruby projects DO commit this, but this repo currently does not.
 Gemfile.lock
-.obsidian
-pages/_notes/.DS_Store
-*.DS_Store
+
+##############################
+# Environment / Secrets
+##############################
 .env
-.venv
-logs/debug-attach-trace.log
-logs/debug-rebuild-trace.log
-logs/*.log
-test-results/*
-logs/debug-trace.log
-*/__pycache__/*
+.env.*
+.venv/
+venv/
 
-# Prevent log files in root directory
+##############################
+# OS / Editor / Tooling
+##############################
+.DS_Store
+.AppleDouble
+.LSOverride
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+.idea/
+.obsidian/
+
+##############################
+# Python
+##############################
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+##############################
+# Logs / Test Outputs
+##############################
+logs/
 *.log
+test-results/
 
+##############################
+# Work Directory Pattern (disposable)
+##############################
 work/
-.crush/crush.db-shm
-.crush/crush.db-wal
+
+##############################
+# Local databases / AI tooling
+##############################
+.crush/
