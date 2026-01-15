@@ -1,6 +1,7 @@
 ---
 title: 'The PRD Codex: Mastering the Art of Product Reality Distillation'
-description: Master the ancient art of transforming scattered signals into living Product Requirements Documents using automated tooling and CI/CD integration
+description: Master the ancient art of transforming scattered signals into living
+  Product Requirements Documents using automated tooling and CI/CD integration
 date: 2025-11-29 00:00:00+00:00
 preview: /images/quest-preview-prd-codex.png
 level: '0011'
@@ -14,11 +15,12 @@ quest_series: Documentation Mastery Path
 quest_line: Foundation Path
 quest_arc: Product Definition & Requirements
 sub_title: 'Level 0011 (3) Quest: Main Quest - Documentation Automation'
-excerpt: Transform scattered repository signals into a living, breathing PRD that never goes stale
+excerpt: Transform scattered repository signals into a living, breathing PRD that
+  never goes stale
 snippet: Reality fully armed. The distillery now distills distilleries.
 author: Quest Master IT-Journey
 layout: journals
-tags:
+tags: &id001
 - lvl-0011
 - documentation-automation
 - main_quest
@@ -32,16 +34,7 @@ categories:
 - Quests
 - Product Management
 - Medium
-keywords:
-  primary:
-  - prd-machine
-  - product-requirements
-  secondary:
-  - documentation-automation
-  - signal-ingestion
-  - conflict-detection
-  - github-actions
-  - living-documentation
+keywords: *id001
 lastmod: 2025-11-29 06:48:54.497000+00:00
 permalink: /quests/level-0011-prd-codex-mastery/
 attachments: ''
@@ -114,8 +107,8 @@ quest_mapping:
   realm: Documentation
   biome: Terminal
 draft: false
+fmContentType: quest
 ---
-
 *Greetings, brave Scribe of the Digital Realm! You stand at the threshold of an ancient art—the distillation of scattered signals into crystalline Product Requirements. In ages past, Product Managers toiled endlessly, their PRDs growing stale mere moments after quill touched parchment. But you shall learn the secrets of the PRD MACHINE—an autonomous oracle that writes, maintains, and evolves perfect PRDs faster than any mortal hand.*
 
 *This quest will transform you from a weary documentarian into a master of living documentation, wielding automated tools that ensure your requirements never decay, your conflicts are always surfaced, and your product vision remains forever clear.*

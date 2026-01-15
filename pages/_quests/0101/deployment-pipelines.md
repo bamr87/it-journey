@@ -1,42 +1,19 @@
 ---
 title: 'Deployment Pipelines: Production Release Automation Strategies'
-description: Build robust deployment pipelines for production releases. Learn blue-green deployments, rolling updates, canary releases, and automated rollback strategies.
-date: 2025-11-30 05:05:30+00:00
+author: IT-Journey Team
+description: Build robust deployment pipelines for production releases. Learn blue-green
+  deployments, rolling updates, canary releases, and automated rollback strategies.
+excerpt: Design and implement production-grade deployment pipelines with automated
+  release strategies
 preview: images/previews/deployment-pipelines-production-release-automation.png
+date: 2025-11-30 05:05:30+00:00
+lastmod: 2025-11-30 05:05:30+00:00
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: deployment
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: DevOps Pipeline Mastery
-sub_title: 'Level 0101 (5) Quest: Main Quest - Deployment'
-excerpt: Design and implement production-grade deployment pipelines with automated release strategies
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0101
-- deployment
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Medium
-keywords:
-  primary:
-  - deployment-pipelines
-  - release-automation
-  secondary:
-  - blue-green-deployment
-  - rolling-updates
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:05:30+00:00
-permalink: /quests/level-0101-deployment-pipelines/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +38,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +65,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0101-deployment-pipelines/
+categories:
+- Quests
+- DevOps
+- Medium
+tags:
+- lvl-0101
+- deployment
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0101
+- deployment
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0101 (5) Quest: Main Quest - Deployment'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

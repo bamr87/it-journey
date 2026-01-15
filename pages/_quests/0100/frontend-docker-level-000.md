@@ -1,25 +1,44 @@
 ---
 title: Frontend Docker - level 000
 author: GPT and bamr87
-layout: default
-description: Verify Docker installation on macOS for building Jekyll sites with Bootstrap 5 in the Frontend Forests.
+description: Verify Docker installation on macOS for building Jekyll sites with Bootstrap
+  5 in the Frontend Forests.
 preview: images/previews/frontend-docker-level-000.png
-draft: true
-tags:
-    - level-000
-    - frontend
-    - docker
-    - macos
-    - jekyll
-    - bootstrap
-lastmod: 2024-05-28T02:28:31.950Z
-level: "0100"
-quest_type: main_quest
+date: 2024-05-28 02:28:31.950000+00:00
+lastmod: 2024-05-28 02:28:31.950000+00:00
+level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
+primary_technology: level-000
+quest_type: main_quest
+quest_series: Level 0100 Quest Line
+skill_focus:
+- level-000
+- frontend
+- docker
+- macos
+- jekyll
+- bootstrap
+learning_style: hands-on
+layout: default
 permalink: /quests/level-0100/lvl-000-frontend-docker/
+tags:
+- level-000
+- frontend
+- docker
+- macos
+- jekyll
+- bootstrap
+keywords:
+- level-000
+- frontend
+- docker
+- macos
+- jekyll
+- bootstrap
+fmContentType: quest
+draft: true
 ---
-
 ## Intro
 
 As you begin your journey through the Frontend Forests, imagine Docker Desktop as your magical backpack. It's filled with everything you need to build, deploy, and run your mystical projects. The Terminal is your enchanted wand, allowing you to cast spells (commands) to interact with Docker spirits. By verifying the Docker installation, you ensure that your backpack and wand are in perfect condition, ready to assist you on your quest.

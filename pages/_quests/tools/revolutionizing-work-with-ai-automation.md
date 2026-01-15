@@ -1,37 +1,51 @@
 ---
 title: Revolutionizing Work with AI Automation
+author: IT-Journey Team
 description: Discover how AI automation can transform your workflow, enhancing code
   reviews, documentation, and PR summaries for a smarter coding experience.
-date: 2025-04-18 19:42:20.800000+00:00
+excerpt: null
+snippet: null
 preview: images/previews/revolutionizing-work-with-ai-automation.png
-tags:
+date: 2025-04-18 19:42:20.800000+00:00
+lastmod: 2025-04-18 19:43:43.298000+00:00
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+primary_technology: AI Automation
+quest_type: main_quest
+quest_series: Tools Collection
+skill_focus:
 - AI Automation
-- Best Practices
-- Code Review
-- GitHub Copilot
-- OpenAI API
+- Development
+- IT Consulting
+- Programming
+- Project Management
+learning_style: hands-on
+layout: journals
+permalink: /quests/level-0010-revolutionizing-work-with-ai-automation/
 categories:
 - AI Automation
 - Development
 - IT Consulting
 - Programming
 - Project Management
-sub-title: null
-excerpt: null
-snippet: null
-author: ''
-layout: null
-keywords: {}
-lastmod: 2025-04-18 19:43:43.298000+00:00
-permalink: /quests/level-0010-revolutionizing-work-with-ai-automation/
-attachments: ''
+tags:
+- AI Automation
+- Best Practices
+- Code Review
+- GitHub Copilot
+- OpenAI API
+keywords:
+- AI Automation
+- Best Practices
+- Code Review
+- GitHub Copilot
+- OpenAI API
+fmContentType: quest
 comments: false
-level: '0010'
-difficulty: 🟢 Easy
-estimated_time: 30-60 minutes
-quest_type: main_quest
+attachments: ''
+sub-title: null
 ---
-
 **Ah, the final frontier... the arcane fusion of human cleverness and artificial intelligence.** You've set up branches, written perfect commits, documented your journey, and summoned automation spells---but now it's time to meet your **AI familiars**.
 
 * * * *

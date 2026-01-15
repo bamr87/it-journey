@@ -1,42 +1,19 @@
 ---
 title: 'Security Fundamentals: CIA Triad and Defense in Depth Strategies'
-description: Master information security fundamentals including the CIA triad, defense in depth, security controls, risk management, and foundational security concepts.
-date: 2025-11-30 05:44:36+00:00
+author: IT-Journey Team
+description: Master information security fundamentals including the CIA triad, defense
+  in depth, security controls, risk management, and foundational security concepts.
+excerpt: Learn foundational security concepts including CIA triad, defense in depth,
+  and risk management
 preview: images/previews/security-fundamentals-cia-triad-quest-title-defens.png
+date: 2025-11-30 05:44:36+00:00
+lastmod: 2025-11-30 05:44:36+00:00
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: security
 quest_type: main_quest
-skill_focus: security
-learning_style: hands-on
 quest_series: Security Mastery
-sub_title: 'Level 1011 (11) Quest: Main Quest - Security'
-excerpt: Learn foundational security concepts including CIA triad, defense in depth, and risk management
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1011
-- security
-- main_quest
-- security
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Security
-- Hard
-keywords:
-  primary:
-  - security-fundamentals
-  - cia-triad
-  secondary:
-  - defense-in-depth
-  - risk-management
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:44:36+00:00
-permalink: /quests/level-1011-security-fundamentals/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +38,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- security
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +65,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1011-security-fundamentals/
+categories:
+- Quests
+- Security
+- Hard
+tags:
+- lvl-1011
+- security
+- main_quest
+- security
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1011
+- security
+- main_quest
+- security
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1011 (11) Quest: Main Quest - Security'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

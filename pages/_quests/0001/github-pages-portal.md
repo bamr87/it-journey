@@ -1,15 +1,19 @@
 ---
 title: 'The GitHub Pages Portal: Forging Your Digital Realm'
-description: Master the art of deploying static websites using GitHub Pages, transforming your code into live web experiences with no server required.
-date: 2025-11-14 12:00:00+00:00
+author: IT-Journey Team
+description: Master the art of deploying static websites using GitHub Pages, transforming
+  your code into live web experiences with no server required.
+excerpt: Transform your code into a live website using GitHub Pages - the free hosting
+  solution for developers.
+snippet: 'From repository to website: Deploy with GitHub Pages!'
 preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
+date: 2025-11-14 12:00:00+00:00
+lastmod: 2025-11-15 04:27:16.771000+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 2-4 hours
 primary_technology: github-pages
 quest_type: main_quest
-skill_focus: web-deployment
-learning_style: hands-on
 quest_series: Web Development Fundamentals
 quest_line: Web Development
 quest_arc: Deployment
@@ -25,15 +29,28 @@ quest_relationships:
   related:
   - 'Level 001: HTML Basics'
   - 'Level 001: CSS Fundamentals'
+skill_focus:
+- web-deployment
+learning_style: hands-on
+prerequisites:
+- GitHub account (free)
+- Basic Git knowledge (clone, commit, push)
+- Text editor (VS Code, Atom, or any editor)
+validation_criteria:
+- Successfully deployed a GitHub Pages site
+- Custom domain configuration (optional bonus)
+- Repository properly configured for Pages
+- Site accessible via GitHub Pages URL
 quest_mapping:
   binary_level: '001'
   decimal_level: 1
   skill_tree: Web Development
-sub_title: 'Level 001 (1) Quest: Main - GitHub Pages'
-excerpt: Transform your code into a live website using GitHub Pages - the free hosting solution for developers.
-snippet: 'From repository to website: Deploy with GitHub Pages!'
-author: IT-Journey Team
 layout: quests
+permalink: /quests/level-001-github-pages-portal/
+categories:
+- Quests
+- Web Deployment
+- Easy
 tags:
 - lvl-001
 - github-pages
@@ -41,27 +58,18 @@ tags:
 - web-deployment
 - hands-on
 - gamified-learning
-categories:
-- Quests
-- Web Deployment
-- Easy
 keywords:
-  primary:
-  - github-pages
-  - main
-  secondary:
-  - web-deployment
-  - gamified-learning
-  - it-journey
-  - quest-based-learning
-lastmod: 2025-11-15 04:27:16.771000+00:00
-permalink: /quests/level-001-github-pages-portal/
-attachments: ''
+- lvl-001
+- github-pages
+- main
+- web-deployment
+- hands-on
+- gamified-learning
+fmContentType: quest
+draft: false
 comments: true
-prerequisites:
-- GitHub account (free)
-- Basic Git knowledge (clone, commit, push)
-- Text editor (VS Code, Atom, or any editor)
+attachments: ''
+sub_title: 'Level 001 (1) Quest: Main - GitHub Pages'
 rewards:
 - GitHub Pages deployment badge
 - Live website portfolio piece
@@ -71,14 +79,7 @@ related_quests:
 - 'Level 001: HTML Basics'
 - 'Level 001: CSS Fundamentals'
 - 'Level 010: Jekyll Mastery'
-validation_criteria:
-- Successfully deployed a GitHub Pages site
-- Custom domain configuration (optional bonus)
-- Repository properly configured for Pages
-- Site accessible via GitHub Pages URL
-draft: false
 ---
-
 *Greetings, brave adventurer! Welcome to **The GitHub Pages Portal: Forging Your Digital Realm** - an epic journey that will transform your code into live web experiences. This quest will guide you through deploying your first website using GitHub Pages, the free hosting solution that turns your GitHub repositories into beautiful, accessible websites.*
 
 *Whether you're a novice developer seeking to showcase your first projects or an experienced coder looking to quickly deploy prototypes, this adventure will equip you with the fundamental skills of web deployment. No servers to manage, no hosting fees - just pure, magical web presence!*

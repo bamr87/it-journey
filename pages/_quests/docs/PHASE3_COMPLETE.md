@@ -1,3 +1,24 @@
+---
+title: Phase 3 Complete
+description: Reference - Phase 3 completion notes.
+author: IT-Journey Team
+date: 2026-01-14
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+primary_technology: documentation
+quest_type: documentation
+skill_focus:
+- documentation
+learning_style: reading
+quest_series: Quest Documentation
+layout: journals
+permalink: /quests/docs/phase-3-complete/
+keywords:
+- documentation
+- quests
+fmContentType: documentation
+---
 # Phase 3 Complete: Journeyman Tier Quests Generated ✅
 
 ## Summary
@@ -158,24 +179,24 @@
 ## Quest Generation Process
 
 ### Tools Used
-- **Script**: `scripts/generate-placeholder-quest.sh`
+- **Script**: `scripts/quest/generate-placeholder-quest.sh`
 - **Template**: `pages/_quests/templates/main-quest-template.md`
 - **Validation**: Docker-based `quest-network-validator`
 
 ### Script Usage Pattern
 ```bash
-./scripts/generate-placeholder-quest.sh <level> <slug> "<title>" [options]
+./scripts/quest/generate-placeholder-quest.sh <level> <slug> "<title>" [options]
 ```
 
 **Examples**:
 ```bash
 # Level 0100 (Medium difficulty)
-./scripts/generate-placeholder-quest.sh 0100 container-fundamentals \
+./scripts/quest/generate-placeholder-quest.sh 0100 container-fundamentals \
   "Container Fundamentals: Isolation & Portability" \
   --difficulty medium --type main_quest --time "60-75 minutes"
 
 # Level 0110 (Hard difficulty)
-./scripts/generate-placeholder-quest.sh 0110 database-fundamentals \
+./scripts/quest/generate-placeholder-quest.sh 0110 database-fundamentals \
   "Database Fundamentals: Data Storage & Retrieval" \
   --difficulty hard --type main_quest --time "90-120 minutes"
 ```
@@ -388,8 +409,8 @@ pages/_quests/
 - **Phase 1 Summary**: `pages/_quests/PHASE1_COMPLETE.md`
 - **Phase 2 Summary**: `pages/_quests/PHASE2_COMPLETE.md`
 - **Quest Template**: `pages/_quests/templates/main-quest-template.md`
-- **Generation Script**: `scripts/generate-placeholder-quest.sh`
-- **Validation Script**: `scripts/validate-quest-network.py`
+- **Generation Script**: `scripts/quest/generate-placeholder-quest.sh`
+- **Validation Script**: `scripts/quest/validate-quest-network.py`
 
 ---
 

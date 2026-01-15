@@ -1,46 +1,19 @@
 ---
 title: 'Advanced Markdown: Tables, Footnotes & Extended Syntax'
-description: Master advanced Markdown features beyond basics. Learn tables, footnotes, task lists, and GitHub-flavored extensions. Documentation and content creation tutorial.
-date: 2025-11-30 04:59:31+00:00
+author: IT-Journey Team
+description: Master advanced Markdown features beyond basics. Learn tables, footnotes,
+  task lists, and GitHub-flavored extensions. Documentation and content creation tutorial.
+excerpt: Level up your Markdown with tables, footnotes, task lists, and GitHub-flavored
+  extensions.
 preview: images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
+date: 2025-11-30 04:59:31+00:00
+lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: markdown
 quest_type: main_quest
-skill_focus: documentation
-learning_style: hands-on
 quest_series: Documentation Mastery
-sub_title: 'Level 0010 (2) Quest: Advanced Markdown Techniques'
-excerpt: Level up your Markdown with tables, footnotes, task lists, and GitHub-flavored extensions.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0010
-- markdown
-- github-markdown
-- documentation
-- tables
-- main_quest
-- hands-on
-- intermediate
-categories:
-- Quests
-- Documentation
-- Markdown
-- Intermediate
-keywords:
-  primary:
-  - markdown tables
-  - advanced markdown
-  - github markdown
-  secondary:
-  - markdown footnotes
-  - markdown task lists
-  - markdown extensions
-  - documentation writing
-lastmod: 2025-12-19 00:00:00+00:00
-permalink: /quests/level-0010-advanced-markdown/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -49,9 +22,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0010-side-quest-1/
-  - /quests/level-0010-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0010-alternative-path/
   sequel_quests:
@@ -65,14 +36,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- documentation
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -97,10 +63,44 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0010-advanced-markdown/
+categories:
+- Quests
+- Documentation
+- Markdown
+- Intermediate
+tags:
+- lvl-0010
+- markdown
+- github-markdown
+- documentation
+- tables
+- main_quest
+- hands-on
+- intermediate
+keywords:
+- lvl-0010
+- markdown
+- github-markdown
+- documentation
+- tables
+- main_quest
+- hands-on
+- intermediate
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0010 (2) Quest: Advanced Markdown Techniques'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -1,7 +1,7 @@
 ---
 title: Site Tree Structure
 excerpt: Complete directory structure and file organization of the IT-Journey platform.
-lastmod: 2025-07-03T16:48:55.000Z
+lastmod: 2026-01-15T05:11:51.000Z
 permalink: /about/tree/
 tags:
   - structure

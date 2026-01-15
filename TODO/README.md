@@ -177,20 +177,20 @@ Based on search data and user demand, the following content priorities have been
 ### Automation Scripts (All Complete ✅)
 | Automation | Description | Script | Status |
 |------------|-------------|--------|--------|
-| Frontmatter Validator | Auto-check SEO fields, scoring | `scripts/frontmatter-validator.rb` | ✅ Done |
-| CTR Report Generator | Weekly SEO reports, opportunities | `scripts/ctr-report-generator.rb` | ✅ Done |
-| Content Freshness Check | Flag stale content, age tracking | `scripts/content-freshness-check.rb` | ✅ Done |
+| Frontmatter Validator | Auto-check SEO fields, scoring | `scripts/validation/frontmatter-validator.rb` | ✅ Done |
+| CTR Report Generator | Weekly SEO reports, opportunities | `scripts/validation/ctr-report-generator.rb` | ✅ Done |
+| Content Freshness Check | Flag stale content, age tracking | `scripts/validation/content-freshness-check.rb` | ✅ Done |
 
 ### Quick Usage
 ```bash
 # Validate frontmatter across all content
-docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/
+docker-compose exec jekyll ruby scripts/validation/frontmatter-validator.rb pages/
 
 # Generate SEO baseline metrics
-docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --baseline
+docker-compose exec jekyll ruby scripts/validation/ctr-report-generator.rb --baseline
 
 # Check content freshness
-docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/
+docker-compose exec jekyll ruby scripts/validation/content-freshness-check.rb pages/
 ```
 
 ---

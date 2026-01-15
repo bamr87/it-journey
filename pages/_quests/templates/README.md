@@ -44,29 +44,29 @@ Template for advanced challenges and mastery demonstrations.
 ## Tools
 
 ### Quest Generation Script
-**File**: `../scripts/generate-placeholder-quest.sh`
+**File**: `../scripts/quest/generate-placeholder-quest.sh`
 
 Automated script to create placeholder quest files from templates.
 
 **Usage**:
 ```bash
-./scripts/generate-placeholder-quest.sh <level> <quest-slug> "<quest-title>" [options]
+./scripts/quest/generate-placeholder-quest.sh <level> <quest-slug> "<quest-title>" [options]
 ```
 
 **Examples**:
 ```bash
 # Create a basic quest
-./scripts/generate-placeholder-quest.sh 0110 database-design-fundamentals "Database Design Fundamentals"
+./scripts/quest/generate-placeholder-quest.sh 0110 database-design-fundamentals "Database Design Fundamentals"
 
 # Create with additional options
-./scripts/generate-placeholder-quest.sh 0110 sql-sorcery "SQL Sorcery" \
+./scripts/quest/generate-placeholder-quest.sh 0110 sql-sorcery "SQL Sorcery" \
   --difficulty medium \
   --time "45-60 minutes" \
   --tech sql \
   --skill data-engineering
 
 # Dry run to preview
-./scripts/generate-placeholder-quest.sh 1101 ml-fundamentals "ML Fundamentals" --dry-run
+./scripts/quest/generate-placeholder-quest.sh 1101 ml-fundamentals "ML Fundamentals" --dry-run
 ```
 
 **Options**:
@@ -78,13 +78,13 @@ Automated script to create placeholder quest files from templates.
 - `--dry-run`: Preview without creating files
 
 ### Quest Network Validator
-**File**: `../scripts/validate-quest-network.py`
+**File**: `../scripts/quest/validate-quest-network.py`
 
 Python script to validate quest network integrity.
 
 **Usage**:
 ```bash
-python3 scripts/validate-quest-network.py
+python3 scripts/quest/validate-quest-network.py
 ```
 
 **Checks**:
@@ -113,7 +113,7 @@ python3 scripts/validate-quest-network.py
 
 2. **Generate placeholder**:
    ```bash
-   ./scripts/generate-placeholder-quest.sh 0110 my-quest-slug "My Quest Title" \
+   ./scripts/quest/generate-placeholder-quest.sh 0110 my-quest-slug "My Quest Title" \
      --difficulty medium --tech python --skill backend
    ```
 
@@ -131,7 +131,7 @@ python3 scripts/validate-quest-network.py
 
 5. **Validate the quest network**:
    ```bash
-   python3 scripts/validate-quest-network.py
+   python3 scripts/quest/validate-quest-network.py
    ```
 
 6. **When complete**:
@@ -159,8 +159,8 @@ python3 scripts/validate-quest-network.py
 
 4. **Generate quests for the level**:
    ```bash
-   ./scripts/generate-placeholder-quest.sh XXXX quest-1-slug "Quest 1 Title"
-   ./scripts/generate-placeholder-quest.sh XXXX quest-2-slug "Quest 2 Title"
+   ./scripts/quest/generate-placeholder-quest.sh XXXX quest-1-slug "Quest 1 Title"
+   ./scripts/quest/generate-placeholder-quest.sh XXXX quest-2-slug "Quest 2 Title"
    # ... etc
    ```
 

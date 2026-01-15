@@ -1,16 +1,16 @@
 ## Testing Checklist
 
 ### Syntax Validation
-- [ ] ShellCheck analysis: `shellcheck scripts/azure-jekyll-deploy.sh`
-- [ ] Bash syntax check: `bash -n scripts/azure-jekyll-deploy.sh`
-- [ ] POSIX compliance: `checkbashisms scripts/azure-jekyll-deploy.sh` (if POSIX required)
+- [ ] ShellCheck analysis: `shellcheck scripts/deployment/azure-jekyll-deploy.sh`
+- [ ] Bash syntax check: `bash -n scripts/deployment/azure-jekyll-deploy.sh`
+- [ ] POSIX compliance: `checkbashisms scripts/deployment/azure-jekyll-deploy.sh` (if POSIX required)
 
 ### Functionality Tests
-- [ ] Help display: `./scripts/azure-jekyll-deploy.sh --help`
-- [ ] Version display: `./scripts/azure-jekyll-deploy.sh --version`
-- [ ] Dry-run mode: `./scripts/azure-jekyll-deploy.sh --dry-run --verbose setup`
-- [ ] Verbose mode: `./scripts/azure-jekyll-deploy.sh --verbose --dry-run`
-- [ ] Invalid arguments: `./scripts/azure-jekyll-deploy.sh --invalid-option`
+- [ ] Help display: `./scripts/deployment/azure-jekyll-deploy.sh --help`
+- [ ] Version display: `./scripts/deployment/azure-jekyll-deploy.sh --version`
+- [ ] Dry-run mode: `./scripts/deployment/azure-jekyll-deploy.sh --dry-run --verbose setup`
+- [ ] Verbose mode: `./scripts/deployment/azure-jekyll-deploy.sh --verbose --dry-run`
+- [ ] Invalid arguments: `./scripts/deployment/azure-jekyll-deploy.sh --invalid-option`
 - [ ] Core functionality with valid inputs (dry-run mode)
 - [ ] Error handling with invalid inputs
 - [ ] Cleanup on normal exit

@@ -1,45 +1,20 @@
 ---
 title: 'Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial'
-description: Deploy Prometheus for metrics collection and Grafana for visualization. Learn PromQL queries, custom dashboards, alerting rules, and service discovery for Kubernetes and Docker environments.
-date: 2025-11-30 05:44:08+00:00
+author: IT-Journey Team
+description: Deploy Prometheus for metrics collection and Grafana for visualization.
+  Learn PromQL queries, custom dashboards, alerting rules, and service discovery for
+  Kubernetes and Docker environments.
+excerpt: Build complete monitoring with Prometheus metrics collection and Grafana
+  visualization dashboards
 preview: images/previews/prometheus-quest-title-grafana-metrics-collection-.png
+date: 2025-11-30 05:44:08+00:00
+lastmod: 2025-11-30 05:44:08+00:00
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: prometheus
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Observability Mastery
-sub_title: 'Level 1010 (10) Quest: Main Quest - Prometheus/Grafana'
-excerpt: Build complete monitoring with Prometheus metrics collection and Grafana visualization dashboards
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1010
-- prometheus
-- grafana
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Hard
-keywords:
-  primary:
-  - prometheus monitoring
-  - grafana dashboards
-  - promql queries
-  secondary:
-  - metrics collection
-  - service discovery
-  - alerting rules
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:44:08+00:00
-permalink: /quests/level-1010-prometheus-grafana/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -64,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +66,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1010-prometheus-grafana/
+categories:
+- Quests
+- DevOps
+- Hard
+tags:
+- lvl-1010
+- prometheus
+- grafana
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1010
+- prometheus
+- grafana
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1010 (10) Quest: Main Quest - Prometheus/Grafana'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

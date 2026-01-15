@@ -78,7 +78,7 @@ case "$COMMAND" in
         fi
         
         print_info "Generating quest via Docker..."
-        docker-compose run --rm jekyll bash /app/scripts/generate-placeholder-quest.sh "$@"
+        docker-compose run --rm jekyll bash /app/scripts/quest/generate-placeholder-quest.sh "$@"
         ;;
     
     validate)

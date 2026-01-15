@@ -35,10 +35,9 @@ github_user              : &github_user "bamr87"
 repository_name          : &github_repository "it-journey"
 repository               : [*github_user, "/", *github_repository] # GitHub username/repo-name
 local_repo               : *github_repository
-branch                   : "main"
-repo_map                 : "/about/sitemap/"
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
-portfolio                : [*github_user, '.', 'github.io']
+branch                   : &branch "main"
+repo_map                 : "/sitemap/"
+portfolio                : &portfolio [*github_user, '.', 'github.io']
 
 ## Site Information ---------------------------------------------------------------
 
@@ -146,7 +145,7 @@ youtube:
 
 powered_by:
   - name: "Ruby"
-    version: "2.7.4"
+    version: "3.2.3"
     url: "https://www.ruby-lang.org/"
     icon: "bi-gem"
   - name: "Jekyll"
@@ -169,7 +168,7 @@ powered_by:
     url: "https://www.mathjax.org/"
     icon: "bi-calculator"
   - name: "GitHub Pages"
-    version: "231"
+    version: "232"
     url: "https://pages.github.com/"
     icon: "bi-github"
   - name: "docker"
@@ -415,16 +414,70 @@ defaults:
 # their entries' file path in the `include:` list.
 
 exclude:
+  # Jekyll/Ruby specific
   - .sass-cache/
   - .jekyll-cache/
-  - .obsidian
+  - .bundle/
+  - .ruby-lsp/
+  - Gemfile
   - Gemfile.lock
   - gemfiles/
-  - Gemfile
-  - node_modules/
   - vendor/
-  # - "*.sh"
+  
+  # Build and dependency directories
+  - node_modules/
+  - .venv/
+  - _site/
+  
+  # Development and configuration files
+  - .env
+  - .DS_Store
+  - .obsidian/
+  - .vscode/
+  - .devcontainer/
+  - .frontmatter/
+  - .git/
+  - .gitignore
+  - .gitmodules
+  
+  # Docker and containerization
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose.*.yml
+  
+  # Scripts and automation
+  - "*.sh"
+  - "*.py"
+  - scripts/
+  - Makefile
+  
+  # Testing and validation
+  - test/
+  - test-results/
+  - .lycheeignore
+  - .markdownlint.json
+  - .yamllint.yml
+  
+  # Documentation and project files
+  - docs/
+  - logs/
+  - prompts/
+  - TODO/
+  - work/         # Temporary build/cache directory
+  - "*.log"
+  - "**/*.log"
+  
+  # Configuration and metadata files
+  - frontmatter.json
+  - "*.md.backup"
+  - "*.tmp"
+  - ".seed.md"
+  
+  # Project-specific files
   - submodules/
+  - post-organization.log
+  - "*_SUMMARY.md"
+  - roadmap.md
 
 # Sass/SCSS
 sass:
@@ -435,10 +488,6 @@ sass:
   # load_paths:
   #   - /usr/local/bundle/gems/bootstrap-5.3.3/assets/stylesheets
 
-algolia:
-  application_id: 'SP02Z3YYL4'
-  search_only_api_key: '3b9200e21085fbebc263950c157b2682'
-  index_name: dev_it-journey
 
 ## Style Settings -------------------------------------------------------------
 
@@ -487,3 +536,23 @@ cr_lisense: "MIT"
 
 sitemap_include: ["html", "xml"]
 sitemap_exclude: ["secret.html", "private"]
+# =============================================================================
+# AI Preview Image Generator Configuration
+# Feature: ZER0-003
+# Documentation: https://github.com/bamr87/zer0-mistakes/blob/main/docs/features/preview-image-generator.md
+# =============================================================================
+preview_images:
+  enabled: true
+  provider: openai          # openai, stability, or local
+  model: dall-e-3                        # OpenAI model to use
+  size: "1792x1024"                      # Landscape banner size
+  quality: standard                      # standard or hd
+  style: "retro pixel art, 8-bit video game aesthetic, vibrant colors, nostalgic, clean pixel graphics"
+  style_modifiers: "pixelated, retro gaming style, CRT screen glow effect, limited color palette"
+  output_dir: assets/images/previews     # Where to save generated images
+  auto_generate: false                   # Generate during build (slow, use script instead)
+  collections:                           # Collections to scan for missing previews
+    - posts
+    - docs
+    - quickstart
+    - quests

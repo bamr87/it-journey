@@ -5,7 +5,7 @@
 This script was automatically generated from `zer0.md` on Fri Aug  1 21:13:46 MDT 2025.
 
 **Source**: `/Users/bamr87/github/it-journey/zer0.md`
-**Generated Script**: `/Users/bamr87/github/it-journey/scripts/zer0-to-hero-generated.sh`
+**Generated Script**: `/Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh`
 **Generator**: `./generate-zer0-script.sh`
 
 ## What It Does
@@ -25,7 +25,7 @@ This comprehensive script executes all the commands from the IT-Journey "From Ze
 ### Quick Start
 ```bash
 # Run the generated script
-/Users/bamr87/github/it-journey/scripts/zer0-to-hero-generated.sh
+/Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh
 ```
 
 ### With Custom Environment
@@ -35,16 +35,16 @@ export GHUSER="your-github-username"
 export GIT_REPO="my-awesome-website"
 
 # Run the script
-/Users/bamr87/github/it-journey/scripts/zer0-to-hero-generated.sh
+/Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh
 ```
 
 ### Dry Run (Check What It Would Do)
 ```bash
 # Review the script first
-cat /Users/bamr87/github/it-journey/scripts/zer0-to-hero-generated.sh
+cat /Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh
 
 # Check specific sections
-grep -n "safe_execute" /Users/bamr87/github/it-journey/scripts/zer0-to-hero-generated.sh
+grep -n "safe_execute" /Users/bamr87/github/it-journey/scripts/generation/zer0-to-hero-generated.sh
 ```
 
 ## Prerequisites

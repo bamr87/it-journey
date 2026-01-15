@@ -1,6 +1,7 @@
 ---
 title: 'The Digital Portfolio Fortress: Full-Stack Epic Construction'
-description: Build a complete portfolio website from design to deployment, integrating frontend, backend, database, and DevOps practices in one comprehensive project
+description: Build a complete portfolio website from design to deployment, integrating
+  frontend, backend, database, and DevOps practices in one comprehensive project
 date: 2025-10-03 13:00:00+00:00
 preview: images/previews/the-digital-portfolio-fortress-full-stack-epic-con.png
 tags:
@@ -17,21 +18,19 @@ categories:
 - Full-Stack-Development
 - Portfolio-Building
 sub-title: 'Level 1111 (15) Epic Quest: Complete Portfolio Platform Construction'
-excerpt: Create a professional portfolio website that showcases your IT journey while mastering full-stack development, deployment, and project management
+excerpt: Create a professional portfolio website that showcases your IT journey while
+  mastering full-stack development, deployment, and project management
 snippet: From concept to production - build the digital castle that tells your story
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
-  primary:
-  - full-stack-development
-  - portfolio-website
-  - professional-showcase
-  secondary:
-  - react-development
-  - node-backend
-  - database-integration
-  - deployment-automation
-  - project-architecture
+- lvl-1111
+- full-stack-development
+- portfolio-project
+- web-development
+- deployment
+- project-management
+- professional-development
 lastmod: 2025-10-03 13:00:00+00:00
 permalink: /quests/epic-digital-portfolio-fortress/
 attachments: ''
@@ -118,8 +117,13 @@ rewards:
   - Eligibility for leadership and mentoring roles
   - Professional portfolio for career advancement
 level: '1110'
+primary_technology: reference
+skill_focus:
+- codex
+- reference
+learning_style: reading
+fmContentType: codex
 ---
-
 *Welcome, ambitious architect, to the Digital Portfolio Fortress Epic Quest! This comprehensive adventure represents the culmination of your foundation and intermediate learning, challenging you to integrate multiple technologies and best practices into a single, professional-quality project.*
 
 *Unlike shorter quests that focus on specific skills, this epic quest requires you to think like a professional developer, making architectural decisions, managing project complexity, and delivering a production-ready application that showcases your growing expertise.*

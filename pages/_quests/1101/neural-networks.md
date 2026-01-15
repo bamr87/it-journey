@@ -1,47 +1,20 @@
 ---
 title: 'Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch'
-description: Master neural network architectures with TensorFlow. Learn convolutional networks, recurrent networks, attention mechanisms, and transformer architectures for computer vision and NLP.
-date: 2025-12-01 04:22:04+00:00
+author: IT-Journey Team
+description: Master neural network architectures with TensorFlow. Learn convolutional
+  networks, recurrent networks, attention mechanisms, and transformer architectures
+  for computer vision and NLP.
+excerpt: Build CNN, RNN, and transformer architectures from scratch with TensorFlow
+  and Keras
 preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
+date: 2025-12-01 04:22:04+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours
 primary_technology: tensorflow
 quest_type: main_quest
-skill_focus: data-science
-learning_style: hands-on
 quest_series: AI/ML Mastery
-sub_title: 'Level 1101 (13) Quest: Epic Quest - Neural Networks'
-excerpt: Build CNN, RNN, and transformer architectures from scratch with TensorFlow and Keras
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1101
-- tensorflow
-- neural-networks
-- deep-learning
-- main_quest
-- data-science
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Science
-- Epic
-keywords:
-  primary:
-  - neural networks tutorial
-  - deep learning
-  - tensorflow keras
-  secondary:
-  - cnn
-  - rnn
-  - transformers
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1101-neural-networks/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -62,14 +35,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-science
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +62,43 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1101-neural-networks/
+categories:
+- Quests
+- Data-Science
+- Epic
+tags:
+- lvl-1101
+- tensorflow
+- neural-networks
+- deep-learning
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1101
+- tensorflow
+- neural-networks
+- deep-learning
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1101 (13) Quest: Epic Quest - Neural Networks'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

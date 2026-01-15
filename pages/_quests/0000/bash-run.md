@@ -1,49 +1,67 @@
 ---
-title: "bashrun and Beyond: Building an Advanced Terminal Game"
+title: 'bashrun and Beyond: Building an Advanced Terminal Game'
 author: IT-Journey Team
-layout: journals
-description: Starting with bashrun as a base and building upon it is a great way to create an advanced terminal-based game. bashrun is typically built using shell scripts, which can be a bit limiting but also provides a good foundation for learning and expanding.
+description: Starting with bashrun as a base and building upon it is a great way to
+  create an advanced terminal-based game. bashrun is typically built using shell scripts,
+  which can be a bit limiting but also provides a good foundation for learning and
+  expanding.
+excerpt: Starting with bashrun as a base and building upon it is a great way to create
+  an advanced terminal-based game. bashrun is typically built using shell scripts,
+  which can be a bit limiting but also provides a good foundation for learning and
+  expanding.
+snippet: Transform basic shell commands into an interactive gaming experience
 preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
-excerpt: Starting with bashrun as a base and building upon it is a great way to create an advanced terminal-based game. bashrun is typically built using shell scripts, which can be a bit limiting but also provides a good foundation for learning and expanding.
-permalink: /quests/lvl_000/bash-run/
-date: 2024-05-28T00:00:00.000Z
-tags:
-  - bash
-  - terminal
-  - game-development
-  - shell-scripting
-  - lvl-000
-categories:
-  - Quests
-  - Terminal
-  - Level-000
-level: "0000"
-quest_type: side_quest
+date: 2024-05-28 00:00:00+00:00
+lastmod: 2025-11-30 05:46:59.326000+00:00
+level: '0000'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-prerequisites:
-  - Basic bash command knowledge
-  - Terminal navigation skills
-  - Text editor familiarity (nano, vim, or VS Code)
-rewards:
-  - 🏆 Bash Scripting Badge
-  - ⚡ Advanced Terminal Skills
-  - 🛠️ Game Development Foundation
-  - 🎯 Shell Programming Mastery
+primary_technology: bash
+quest_type: side_quest
 quest_series: Level 000 - Foundation Skills
-related_quests:
-  - bashcrawl/README.md - Terminal Adventure RPG
-  - hello-noob.md - Beginner's IT Journey
+skill_focus:
+- Quests
+- Terminal
+- Level-000
+learning_style: hands-on
+prerequisites:
+- Basic bash command knowledge
+- Terminal navigation skills
+- Text editor familiarity (nano, vim, or VS Code)
 validation_criteria:
-  - Complete the terminal game development
-  - Successfully run the enhanced bashrun game
-  - Demonstrate understanding of shell scripting concepts
-sub-title: "Level 000 Quest: Advanced Terminal Game Development"
-snippet: Transform basic shell commands into an interactive gaming experience
+- Complete the terminal game development
+- Successfully run the enhanced bashrun game
+- Demonstrate understanding of shell scripting concepts
+layout: journals
+permalink: /quests/lvl_000/bash-run/
+categories:
+- Quests
+- Terminal
+- Level-000
+tags:
+- bash
+- terminal
+- game-development
+- shell-scripting
+- lvl-000
+keywords:
+- bash
+- terminal
+- game-development
+- shell-scripting
+- lvl-000
+fmContentType: quest
 draft: false
-lastmod: 2025-11-30T05:46:59.326Z
+sub-title: 'Level 000 Quest: Advanced Terminal Game Development'
+rewards:
+- 🏆 Bash Scripting Badge
+- ⚡ Advanced Terminal Skills
+- 🛠️ Game Development Foundation
+- 🎯 Shell Programming Mastery
+related_quests:
+- bashcrawl/README.md - Terminal Adventure RPG
+- hello-noob.md - Beginner's IT Journey
 ---
-
 Starting with bashrun as a base and building upon it is a great way to create an advanced terminal-based game. bashrun is typically built using shell scripts, which can be a bit limiting but also provides a good foundation for learning and expanding.
 
 Here's a step-by-step guide to start with bashrun and build upon it:

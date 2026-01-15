@@ -1,24 +1,41 @@
 ---
 title: Level [BINARY] ([DECIMAL]) - [Level Name]
-description:
-preview: images/previews/level-binary-decimal-level-name.png
-  - Concise description of what this level covers and its role in the learning journey
+description: 'Reference: Level [BINARY] ([DECIMAL]) - [Level Name].'
+preview: images/previews/level-binary-decimal-level-name.png - Concise description
+  of what this level covers and its role in the learning journey
 permalink: /quests/[LEVEL]/
 categories:
-  - Quests
-  - Level-[LEVEL]
-  - - Theme-Category
+- Quests
+- Level-[LEVEL]
+- - Theme-Category
 tags:
-  - lvl-[BINARY]
-  - - theme-tag
-  - - skill-area
-  - quest-collection
-lastmod: 2025-11-30T05:46:59.319Z
+- lvl-[BINARY]
+- - theme-tag
+- - skill-area
+- quest-collection
+lastmod: &id001 2025-11-30 05:46:59.319000+00:00
 toc: true
 toc_sticky: true
 draft: false
+keywords:
+- lvl-[BINARY]
+- '[''theme-tag'']'
+- '[''skill-area'']'
+- quest-collection
+date: *id001
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+author: IT-Journey Team
+layout: journals
+quest_series: Quest Templates
+primary_technology: template
+skill_focus:
+- template
+learning_style: reading
+quest_type: template
+fmContentType: template
 ---
-
 # Level [BINARY] ([DECIMAL]) - [Level Name]
 
 *[Fantasy-themed introduction that sets the stage for this level. Describe the challenges, themes, and transformations adventurers will experience. Use RPG language and maintain the quest narrative.]*
@@ -111,9 +128,9 @@ The main storyline for this level - complete these in order for optimal learning
 
 | Quest | Difficulty | Time | XP | Status | Technologies |
 |-------|-----------|------|-----|--------|--------------|
-| [Quest Name 1](quest-1-slug.md) | 🟢 Easy | 30-45 min | 50 | ✅ | [tech1, tech2] |
-| [Quest Name 2](quest-2-slug.md) | 🟡 Medium | 45-60 min | 75 | ✅ | [tech1, tech3] |
-| [Quest Name 3](quest-3-slug.md) | 🔴 Hard | 60-90 min | 100 | 🔮 | [tech2, tech4] |
+| Quest Name 1 (`quest-1-slug.md`) | 🟢 Easy | 30-45 min | 50 | ✅ | [tech1, tech2] |
+| Quest Name 2 (`quest-2-slug.md`) | 🟡 Medium | 45-60 min | 75 | ✅ | [tech1, tech3] |
+| Quest Name 3 (`quest-3-slug.md`) | 🔴 Hard | 60-90 min | 100 | 🔮 | [tech2, tech4] |
 
 ### ⭐ Side Quests
 
@@ -121,8 +138,8 @@ Optional adventures that enhance your skills and provide alternative learning pa
 
 | Quest | Difficulty | Time | XP | Status | Focus Area |
 |-------|-----------|------|-----|--------|------------|
-| [Side Quest 1](side-quest-1-slug.md) | 🟢 Easy | 20-30 min | 30 | 🔮 | [focus-area] |
-| [Side Quest 2](side-quest-2-slug.md) | 🟡 Medium | 30-45 min | 50 | 🔮 | [focus-area] |
+| Side Quest 1 (`side-quest-1-slug.md`) | 🟢 Easy | 20-30 min | 30 | 🔮 | [focus-area] |
+| Side Quest 2 (`side-quest-2-slug.md`) | 🟡 Medium | 30-45 min | 50 | 🔮 | [focus-area] |
 
 ### 💎 Bonus Quests
 
@@ -130,8 +147,8 @@ Advanced challenges for those seeking mastery and extra achievements.
 
 | Quest | Difficulty | Time | XP | Status | Challenge Type |
 |-------|-----------|------|-----|--------|----------------|
-| [Bonus Quest 1](bonus-quest-1-slug.md) | 🔴 Hard | 60+ min | 150 | 🔮 | [challenge-type] |
-| [Bonus Quest 2](bonus-quest-2-slug.md) | ⚔️ Epic | 90+ min | 200 | 🔮 | [challenge-type] |
+| Bonus Quest 1 (`bonus-quest-1-slug.md`) | 🔴 Hard | 60+ min | 150 | 🔮 | [challenge-type] |
+| Bonus Quest 2 (`bonus-quest-2-slug.md`) | ⚔️ Epic | 90+ min | 200 | 🔮 | [challenge-type] |
 
 **Legend**: ✅ Complete | 🚧 In Progress | 🔮 Placeholder | 📝 Draft
 

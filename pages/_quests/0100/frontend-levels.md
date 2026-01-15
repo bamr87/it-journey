@@ -1,28 +1,38 @@
 ---
 title: Frontend Forests Levels
-description: This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
-date: 2024-05-28 02:17:12.672000+00:00
-preview: /images/frontend-forests.png
-tags: []
-categories: []
-sub-title: null
-excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests
-snippet: null
 author: GPT and bamr87
-layout: null
-keywords: {}
+description: This guide will navigate you through the enchanted woods, ensuring you
+  leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript
+  in the Frontend Forests
+snippet: null
+preview: /images/frontend-forests.png
+date: 2024-05-28 02:17:12.672000+00:00
 lastmod: 2024-05-28 04:13:59.660000+00:00
-slug: frontend-forests-levels
-permalink: /quests/level-0100-frontend-levels/
-attachments: ''
-type: default
-draft: draft
 level: '0100'
-quest_type: main_quest
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
+primary_technology: General
+quest_type: main_quest
+quest_series: Level 0100 Quest Line
+skill_focus:
+- Foundations
+learning_style: hands-on
+layout: journals
+permalink: /quests/level-0100-frontend-levels/
+categories: []
+tags: []
+keywords:
+- frontend
+- forests
+- levels
+fmContentType: quest
+draft: draft
+attachments: ''
+sub-title: null
+slug: frontend-forests-levels
+type: default
 ---
-
 Absolutely! Let's structure our adventure with binary-coded levels, making our journey both organized and fun. Each level will have specific tasks and goals to help you progress step by step. Here’s our quest map in binary-coded levels:
 
 ### Level 000: Initial Setup

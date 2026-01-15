@@ -1,45 +1,20 @@
 ---
 title: 'Google Analytics for Jekyll: Complete User Tracking Integration Guide'
-description: Add Google Analytics 4 to your Jekyll site. Learn event tracking, custom dimensions, privacy-compliant implementation, and dashboard setup to understand your website traffic and user behavior.
-date: 2025-11-30 05:00:25+00:00
+author: IT-Journey Team
+description: Add Google Analytics 4 to your Jekyll site. Learn event tracking, custom
+  dimensions, privacy-compliant implementation, and dashboard setup to understand
+  your website traffic and user behavior.
+excerpt: Implement Google Analytics 4 on your Jekyll site to track visitors, events,
+  and user engagement metrics
 preview: images/previews/analytics-integration-tracking-user-engagement-des.png
+date: 2025-11-30 05:00:25+00:00
+lastmod: 2025-11-30 05:00:25+00:00
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: google-analytics
 quest_type: main_quest
-skill_focus: data
-learning_style: hands-on
 quest_series: Site Analytics Mastery
-sub_title: 'Level 0011 (3) Quest: Main Quest - Google Analytics'
-excerpt: Implement Google Analytics 4 on your Jekyll site to track visitors, events, and user engagement metrics
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0011
-- google-analytics
-- jekyll
-- main_quest
-- data
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data
-- Medium
-keywords:
-  primary:
-  - google analytics jekyll
-  - ga4 static site
-  - website analytics setup
-  secondary:
-  - event tracking
-  - user engagement metrics
-  - privacy gdpr analytics
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:00:25+00:00
-permalink: /quests/level-0011-analytics-integration/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -48,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0011-side-quest-1/
-  - /quests/level-0011-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0011-alternative-path/
   sequel_quests:
@@ -64,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +64,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0011-analytics-integration/
+categories:
+- Quests
+- Data
+- Medium
+tags:
+- lvl-0011
+- google-analytics
+- jekyll
+- main_quest
+- data
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0011
+- google-analytics
+- jekyll
+- main_quest
+- data
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0011 (3) Quest: Main Quest - Google Analytics'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

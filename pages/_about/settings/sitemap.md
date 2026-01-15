@@ -1,7 +1,7 @@
 ---
 title: Site Navigation Map
 excerpt: Complete sitemap and navigation structure for the IT-Journey platform.
-lastmod: 2025-07-03T17:11:44.984Z
+lastmod: 2026-01-15T05:11:51.000Z
 permalink: /about/sitemap/
 tags:
   - navigation
@@ -16,9 +16,9 @@ This page provides a comprehensive map of all pages and content available on the
 
 ### Page Structure Data
 
-```yml
+\`\`\`yml
 {% include_relative sitemap-data.yml %}
-```
+\`\`\`
 
 ### Navigation Sections
 
@@ -70,14 +70,14 @@ This ensures the sitemap contains only relevant, public-facing content that user
 
 If you need to manually regenerate the sitemap:
 
-```bash
+\`\`\`bash
 # Generate sitemap data
 find . -name "*.md" -o -name "*.html" | grep -v "_site\\|\\.git\\|node_modules" | sort > sitemap-files.txt
 
 # Create tree structure
 tree -a -I '.git|.github|_site|node_modules|vendor|.bundle|.sass-cache|*.gem' \\
   --dirsfirst --charset ascii > tree.txt
-``
+\`\`\`
 
 ---
 

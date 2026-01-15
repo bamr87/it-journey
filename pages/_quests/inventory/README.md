@@ -50,7 +50,7 @@ This directory is reserved for future development of the **Learner Inventory Sys
 ## 🤝 Contributing
 
 Want to help build the Inventory System? Check out:
-- [Feature Development Quest](../1011/feature-re-quest-.md) - Learn to contribute features
+- [Feature Development Quest](../1011/ai-feature-pipeline-architect.md) - Learn to contribute features
 - [GitHub Issues](https://github.com/bamr87/it-journey/issues) - Submit feature requests
 
 ---

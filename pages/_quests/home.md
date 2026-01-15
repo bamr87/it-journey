@@ -64,10 +64,10 @@ graph TB
 
 | 🌍 Realm | 🎯 Difficulty | 📍 Starting Point | 📊 Progress |
 |-----------|---------------|-------------------|-------------|
-| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](0000/hello-mac/) | [ ] |
-| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](0000/hello-win/) | [ ] |
-| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](0000/hello-linux/) | [ ] |
-| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](0000/hello-cloud/) | [ ] |
+| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](0000/hello-mac/hello-mac.md) | [ ] |
+| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](0000/hello-win/hello-win.md) | [ ] |
+| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](0000/hello-linux/linux-fundamentals.md) | [ ] |
+| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](0000/hello-cloud/hello-cloud.md) | [ ] |
 | 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](0000/hello-noob.md) | [ ] |
 
 ### Character Class Selection
@@ -147,7 +147,7 @@ Terminal Mastery & Basic Setup
 
 **Available Quests:**
 
-- [ ] [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Forge Your Ultimate Development Weapon* (50 XP)
+- [ ] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Forge Your Ultimate Development Weapon* (50 XP)
 - [ ] [Bash Fundamentals](0000/bash-run.md) - *Terminal Incantations* (40 XP)
 - [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call* (30 XP)
 - [ ] [Hello n00b](0000/hello-noob.md) - *First Steps* (20 XP)
@@ -165,7 +165,7 @@ Terminal Mastery & Basic Setup
 |----------|-------|--------|-----|
 | 🪟 Windows | [Hello Windows](0000/hello-win/hello-win.md) | [ ] | 50 |
 | 🍎 macOS | Hello macOS (Coming Soon) | 🔮 | 50 |
-| 🐧 Linux | [Hello Linux](0000/hello-linux/linux-fun.md) | [ ] | 50 |
+| 🐧 Linux | [Hello Linux](0000/hello-linux/linux-fundamentals.md) | [ ] | 50 |
 | ☁️ Cloud | Hello Cloud (Coming Soon) | 🔮 | 50 |
 
 ### Level 0001 - Web Fundamentals
@@ -188,14 +188,14 @@ Web Technologies & Programming Fundamentals
 - [ ] [GitHub Pages Portal](0001/github-pages-portal.md) - *Deploy Your First Website* (50 XP)
 - [ ] [GitHub Pages Basics](0001/github-pages-basics.md) - *Static Site Hosting* (40 XP)
 - [ ] [Docs in a Row](0001/docs-in-a-row.md) - *Documentation Basics* (40 XP)
-- [ ] [Stack Attack](0001/stackattack.md) - *Understanding Tech Stacks* (30 XP)
+- [ ] [Stack Attack](0001/stack-attack.md) - *Understanding Tech Stacks* (30 XP)
 - [ ] [Jekyll Fundamentals](0001/jekyll-fundamentals.md) - *Static Site Generation* (50 XP)
 - [ ] [Liquid Templating](0001/liquid-templating.md) - *Dynamic Content Magic* (40 XP)
 - [ ] [YAML Configuration](0001/yaml-configuration.md) - *Data Structuring* (30 XP)
 - [ ] [Git Workflow Mastery](0001/git-workflow-mastery.md) - *Collaboration Patterns* (50 XP)
 - [ ] [Kaizen](0001/kaizen.md) - *Continuous Improvement* (40 XP)
 - [ ] [Stating the Stats](0001/stating-the-stats.md) - *Data Tracking* (30 XP)
-- [ ] [Terminal Illness](0001/terminal-illness.md) - *Advanced Terminal Skills* (40 XP)
+- [ ] [Terminal Mastery](0001/terminal-mastery.md) - *Advanced Terminal Skills* (40 XP)
 - [ ] [Building Testing Git Init Script](0001/building-testing-git-init-script.md) - *Automation Testing* (50 XP)
 
 ### Level 0010 - Terminal Mastery
@@ -216,15 +216,15 @@ Advanced Terminal & Shell Scripting
 
 - [ ] [Bash Scripting Mastery](0010/bash-scripting.md) - *Ancient Bash Incantations* (70 XP)
 - [ ] [Oh My Zsh Enchantment](0010/oh-my-zsh-terminal-enchantment.md) - *Transform Your Terminal* (50 XP)
-- [ ] [Nerd Font Enchantment](0010/nerd-font-enchantment-side-quest.md) - *Visual Terminal Magic* (30 XP)
+- [ ] [Nerd Font Enchantment](0010/nerd-font-enchantment.md) - *Visual Terminal Magic* (30 XP)
 - [ ] [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal* (40 XP)
-- [ ] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration-quest.md) - *Diagram Magic* (40 XP)
+- [ ] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration.md) - *Diagram Magic* (40 XP)
 - [ ] [Advanced Markdown](0010/advanced-markdown.md) - *Documentation Mastery* (40 XP)
 - [ ] [JavaScript Fundamentals](0010/javascript-fundamentals.md) - *Interactive Web Programming* (60 XP)
 - [ ] [CSS Styling Basics](0010/css-styling-basics.md) - *Visual Design Magic* (50 XP)
 - [ ] [Bootstrap Framework](0010/bootstrap-framework.md) - *Rapid UI Development* (40 XP)
 - [ ] [Terminal Artificer Frontend Building](0010/terminal-artificer-frontend-building.md) - *Command Line UI* (50 XP)
-- [ ] [Testing Quests with Recursive Questing](0010/testing-quests-with-recurrisive-questing.md) - *Quest Validation* (40 XP)
+- [ ] [Testing Quests with Recursive Questing](0010/testing-quests-with-recursive-questing.md) - *Quest Validation* (40 XP)
 
 ### Level 0011 - AI-Assisted Development
 
@@ -242,8 +242,8 @@ AI Tools & Productivity Workflows
 
 **Available Quests:**
 
-- [ ] [GitHub Code Search Quest](0011/github-hidden-gem-code-search-quest.md) - *Master Code Discovery* (50 XP)
-- [ ] [VS Code Copilot Mastery](0011/prompt-crystal-mastery-vscode-copilot-quest.md) - *AI Pair Programming* (70 XP)
+- [ ] [GitHub Code Search Quest](0011/github-pages-hidden-gem.md) - *Master Code Discovery* (50 XP)
+- [ ] [VS Code Copilot Mastery](0011/prompt-crystal-mastery-vscode-copilot.md) - *AI Pair Programming* (70 XP)
 - [ ] [Advanced Git Workflows](0011/advanced-git-workflows.md) - *Version Control Mastery* (60 XP)
 - [ ] [Custom Domains](0011/custom-domains.md) - *Professional Web Presence* (40 XP)
 - [ ] [SEO Optimization](0011/seo-optimization.md) - *Search Engine Magic* (50 XP)
@@ -278,9 +278,9 @@ User Interface & Docker Fundamentals
 - [ ] [Container Fundamentals](0100/container-fundamentals.md) - *Docker Basics* (60 XP)
 - [ ] [Docker Compose Orchestration](0100/docker-compose-orchestration.md) - *Multi-Container Magic* (70 XP)
 - [ ] [Frontend Levels](0100/frontend-levels.md) - *Progressive Learning* (50 XP)
-- [ ] [Level 000 Frontend Docker](0100/lvl-000-frontend-docker.md) - *Beginner Containers* (40 XP)
-- [ ] [Level 001 Frontend Docker](0100/lvl-001-frontend-docker.md) - *Intermediate Containers* (50 XP)
-- [ ] [Level 010 Frontend Docker](0100/lvl-010-frontend-docker.md) - *Advanced Containers* (60 XP)
+- [ ] [Level 000 Frontend Docker](0100/frontend-docker-level-000.md) - *Beginner Containers* (40 XP)
+- [ ] [Level 001 Frontend Docker](0100/frontend-docker-level-001.md) - *Intermediate Containers* (50 XP)
+- [ ] [Level 010 Frontend Docker](0100/frontend-docker-level-010.md) - *Advanced Containers* (60 XP)
 
 ### Level 0101 - Backend Systems
 
@@ -444,7 +444,7 @@ Infrastructure & Operations
 
 **Available Quests:**
 
-- [ ] [Feature Re-Quest](1011/feature-re-quest-.md) - *Feature Workflows* (60 XP)
+- [ ] [Feature Re-Quest](1011/ai-feature-pipeline-architect.md) - *Feature Workflows* (60 XP)
 - [ ] [Security Fundamentals](1011/security-fundamentals.md) - *Cybersecurity Basics* (70 XP)
 - [ ] [Secure Coding](1011/secure-coding.md) - *Defensive Programming* (80 XP)
 - [ ] [Threat Modeling](1011/threat-modeling.md) - *Risk Assessment* (70 XP)
@@ -682,7 +682,7 @@ graph TB
 
 Essential Starting Adventures
 
-- [ ] [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Forge Your Ultimate Development Weapon*
+- [ ] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Forge Your Ultimate Development Weapon*
 - [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
 - [ ] [Character Building](0000/character-building.md) - *Forge Your Identity*
 - [ ] [IT Fundamentals](0000/it-fundamentals.md) - *Ancient Arts Foundation*
@@ -695,7 +695,7 @@ Fast Track Adventures
 
 #### 💻 Developer Quick Start
 1. [Hello n00b](0000/hello-noob.md) - First Steps
-2. [VS Code Mastery](0000/vscode-mastery-quest.md) - Tool Setup
+2. [VS Code Mastery](0000/vscode-mastery.md) - Tool Setup
 3. [Personal Site](0001/personal-site.md) - First Project
 
 #### 🏗️ Engineer Quick Start
@@ -710,7 +710,7 @@ Fast Track Adventures
 
 #### 📊 Data Science Quick Start
 1. [Python Basics](0001/) - Programming Foundation
-2. [AI Tools](0011/prompt-crystal-mastery-vscode-copilot-quest.md) - AI Assistance
+2. [AI Tools](0011/prompt-crystal-mastery-vscode-copilot.md) - AI Assistance
 3. [EDGAR Quest](1100/edgar.md) - Data Analysis
 
 ### Platform-Specific Paths
@@ -775,7 +775,7 @@ Universal Tools for All Classes
 
 #### Cross-Platform Essentials
 
-- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](0000/vscode-mastery-quest.md)
+- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](0000/vscode-mastery.md)
 - [ ] **Git** - *Version Control Magic*
 - [ ] **Docker** - *Container Summoning*
 - [ ] **Terminal** - *Command Line Mastery*
@@ -796,7 +796,7 @@ Proven Magical Combinations
 Epic Campaign Objectives
 
 1. [ ] **Build Your Digital Castle**
-   - [ ] Master your IDE with [VS Code Mastery Quest](0000/vscode-mastery-quest.md)
+   - [ ] Master your IDE with [VS Code Mastery Quest](0000/vscode-mastery.md)
    - [ ] Set up development environment
    - [ ] Configure essential tools
    - [ ] Establish workflow processes
@@ -977,7 +977,7 @@ graph TB
 Based on your current progress:
 
 1. **Start Here:** [Hello n00b](0000/hello-noob.md) - Begin your journey
-2. **Then:** [VS Code Mastery](0000/vscode-mastery-quest.md) - Set up your tools
+2. **Then:** [VS Code Mastery](0000/vscode-mastery.md) - Set up your tools
 3. **Next:** [Bash Fundamentals](0000/bash-run.md) - Learn the terminal
 4. **Goal:** Complete Apprentice Tier (Levels 0000-0011)
 

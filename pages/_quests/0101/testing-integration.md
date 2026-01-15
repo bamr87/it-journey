@@ -1,42 +1,18 @@
 ---
 title: 'Testing Integration: Automated Quality Assurance in CI/CD Pipelines'
-description: Integrate automated testing into your CI/CD pipeline. Learn unit testing, integration testing, E2E testing, and code coverage reporting for quality assurance.
-date: 2025-11-30 05:05:26+00:00
+author: IT-Journey Team
+description: Integrate automated testing into your CI/CD pipeline. Learn unit testing,
+  integration testing, E2E testing, and code coverage reporting for quality assurance.
+excerpt: Implement comprehensive automated testing strategies in your CI/CD workflows
 preview: images/previews/testing-integration-automated-quality-assurance-de.png
+date: 2025-11-30 05:05:26+00:00
+lastmod: 2025-11-30 05:05:26+00:00
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: testing
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: DevOps Pipeline Mastery
-sub_title: 'Level 0101 (5) Quest: Main Quest - Testing'
-excerpt: Implement comprehensive automated testing strategies in your CI/CD workflows
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0101
-- testing
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Medium
-keywords:
-  primary:
-  - automated-testing
-  - quality-assurance
-  secondary:
-  - unit-testing
-  - integration-testing
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:05:26+00:00
-permalink: /quests/level-0101-testing-integration/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0101-testing-integration/
+categories:
+- Quests
+- DevOps
+- Medium
+tags:
+- lvl-0101
+- testing
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0101
+- testing
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0101 (5) Quest: Main Quest - Testing'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

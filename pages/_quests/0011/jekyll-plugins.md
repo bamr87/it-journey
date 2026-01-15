@@ -1,45 +1,20 @@
 ---
 title: 'Jekyll Plugins: Essential Extensions for Powerful Static Sites'
-description: Master Jekyll plugins to extend your site's functionality. Learn to install, configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination for GitHub Pages compatibility.
-date: 2025-11-30 05:00:15+00:00
+author: IT-Journey Team
+description: Master Jekyll plugins to extend your site's functionality. Learn to install,
+  configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination
+  for GitHub Pages compatibility.
+excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps,
+  and custom functionality
 preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
+date: 2025-11-30 05:00:15+00:00
+lastmod: 2025-11-30 05:00:15+00:00
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
 primary_technology: jekyll
 quest_type: main_quest
-skill_focus: backend
-learning_style: hands-on
 quest_series: Jekyll Mastery
-sub_title: 'Level 0011 (3) Quest: Main Quest - Jekyll Plugins'
-excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps, and custom functionality
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0011
-- jekyll
-- ruby
-- main_quest
-- backend
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Backend
-- Medium
-keywords:
-  primary:
-  - jekyll plugins
-  - jekyll seo tag
-  - jekyll sitemap
-  secondary:
-  - jekyll pagination
-  - jekyll feed
-  - github pages plugins
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:00:15+00:00
-permalink: /quests/level-0011-jekyll-plugins/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -48,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0011-side-quest-1/
-  - /quests/level-0011-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0011-alternative-path/
   sequel_quests:
@@ -64,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- backend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +64,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0011-jekyll-plugins/
+categories:
+- Quests
+- Backend
+- Medium
+tags:
+- lvl-0011
+- jekyll
+- ruby
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0011
+- jekyll
+- ruby
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0011 (3) Quest: Main Quest - Jekyll Plugins'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

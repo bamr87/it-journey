@@ -1,42 +1,20 @@
 ---
 title: 'Database Security: Access Control and Data Encryption'
-description: Implement robust database security with access control, encryption, audit logging, and SQL injection prevention. Learn security best practices for protecting sensitive data.
-date: 2025-11-30 05:08:26+00:00
+author: IT-Journey Team
+description: Implement robust database security with access control, encryption, audit
+  logging, and SQL injection prevention. Learn security best practices for protecting
+  sensitive data.
+excerpt: Secure your databases with access control, encryption, and SQL injection
+  prevention
 preview: images/previews/database-security-access-control-quest-title-encry.png
+date: 2025-11-30 05:08:26+00:00
+lastmod: 2025-11-30 05:08:26+00:00
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
 primary_technology: sql
 quest_type: main_quest
-skill_focus: data-engineering
-learning_style: hands-on
 quest_series: Database Mastery
-sub_title: 'Level 0110 (6) Quest: Main Quest - Security'
-excerpt: Secure your databases with access control, encryption, and SQL injection prevention
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0110
-- sql
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Engineering
-- Hard
-keywords:
-  primary:
-  - database-security
-  - access-control
-  secondary:
-  - data-encryption
-  - sql-injection-prevention
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:08:26+00:00
-permalink: /quests/level-0110-database-security/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-engineering
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +66,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0110-database-security/
+categories:
+- Quests
+- Data-Engineering
+- Hard
+tags:
+- lvl-0110
+- sql
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0110
+- sql
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0110 (6) Quest: Main Quest - Security'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -1,47 +1,20 @@
 ---
 title: 'GitHub Pages Basics: Deploy Free Websites in Minutes'
-description: Learn to deploy static websites for free with GitHub Pages. Step-by-step tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect for portfolios and projects.
-date: 2025-11-30 04:58:35+00:00
+author: IT-Journey Team
+description: Learn to deploy static websites for free with GitHub Pages. Step-by-step
+  tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect
+  for portfolios and projects.
+excerpt: Deploy your first website for free using GitHub Pages with custom domains
+  and HTTPS.
 preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
+date: 2025-11-30 04:58:35+00:00
+lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
 primary_technology: github-pages
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Web Hosting Fundamentals
-sub_title: 'Level 0001 (1) Quest: Free Website Hosting with GitHub'
-excerpt: Deploy your first website for free using GitHub Pages with custom domains and HTTPS.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0001
-- github-pages
-- web-hosting
-- static-sites
-- free-hosting
-- main_quest
-- devops
-- hands-on
-- beginner
-categories:
-- Quests
-- DevOps
-- Web-Hosting
-- Beginner
-keywords:
-  primary:
-  - github pages tutorial
-  - free website hosting
-  - deploy static site
-  secondary:
-  - github pages custom domain
-  - github pages https
-  - portfolio hosting
-  - static site deployment
-lastmod: 2025-12-19 00:00:00+00:00
-permalink: /quests/level-0001-github-pages-basics/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -50,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0001-side-quest-1/
-  - /quests/level-0001-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0001-alternative-path/
   sequel_quests:
@@ -66,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -98,10 +64,46 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0001-github-pages-basics/
+categories:
+- Quests
+- DevOps
+- Web-Hosting
+- Beginner
+tags:
+- lvl-0001
+- github-pages
+- web-hosting
+- static-sites
+- free-hosting
+- main_quest
+- devops
+- hands-on
+- beginner
+keywords:
+- lvl-0001
+- github-pages
+- web-hosting
+- static-sites
+- free-hosting
+- main_quest
+- devops
+- hands-on
+- beginner
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0001 (1) Quest: Free Website Hosting with GitHub'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -319,7 +319,7 @@ class CTRReportGenerator
 
       - [ ] Export Google Search Console data (Performance > Export)
       - [ ] Save to `TODO/seo/data/gsc-#{today.strftime('%Y-%m-%d')}.csv`
-      - [ ] Run comparison: `ruby scripts/ctr-report-generator.rb --parse TODO/seo/data/gsc-#{today.strftime('%Y-%m-%d')}.csv`
+      - [ ] Run comparison: `ruby scripts/validation/ctr-report-generator.rb --parse TODO/seo/data/gsc-#{today.strftime('%Y-%m-%d')}.csv`
 
       ## Key Metrics This Week
 

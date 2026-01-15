@@ -1,46 +1,20 @@
 ---
 title: 'ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis'
-description: Deploy the complete ELK stack for centralized logging. Learn Elasticsearch indexing, Logstash pipelines, Kibana dashboards, and log aggregation patterns for distributed systems.
-date: 2025-11-30 05:44:18+00:00
+author: IT-Journey Team
+description: Deploy the complete ELK stack for centralized logging. Learn Elasticsearch
+  indexing, Logstash pipelines, Kibana dashboards, and log aggregation patterns for
+  distributed systems.
+excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana
+  visualization
 preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.png
+date: 2025-11-30 05:44:18+00:00
+lastmod: 2025-11-30 05:44:18+00:00
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: elasticsearch
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Observability Mastery
-sub_title: 'Level 1010 (10) Quest: Main Quest - ELK Stack'
-excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana visualization
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1010
-- elasticsearch
-- logstash
-- kibana
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Hard
-keywords:
-  primary:
-  - elk stack
-  - elasticsearch tutorial
-  - log analysis
-  secondary:
-  - logstash pipelines
-  - kibana dashboards
-  - centralized logging
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:44:18+00:00
-permalink: /quests/level-1010-elk-stack/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -65,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -97,10 +66,43 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1010-elk-stack/
+categories:
+- Quests
+- DevOps
+- Hard
+tags:
+- lvl-1010
+- elasticsearch
+- logstash
+- kibana
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1010
+- elasticsearch
+- logstash
+- kibana
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1010 (10) Quest: Main Quest - ELK Stack'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

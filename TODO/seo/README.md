@@ -100,13 +100,13 @@ tags:
 **Target**: Track improvements and iterate
 
 - [x] Set up Google Search Console monitoring dashboard (MONITORING_DASHBOARD.md)
-- [x] Create SEO tracking script (scripts/seo-tracker.py)
+- [x] Create SEO tracking script (scripts/validation/seo-tracker.py)
 - [ ] Weekly performance reviews (Dec 26 - first review)
 - [ ] A/B test meta descriptions (pending data)
 
 **New Files Created for Phase 4**:
 - `TODO/seo/MONITORING_DASHBOARD.md` - Weekly tracking templates
-- `scripts/seo-tracker.py` - Automated reporting tool
+- `scripts/validation/seo-tracker.py` - Automated reporting tool
 
 ---
 

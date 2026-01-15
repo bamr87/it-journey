@@ -1,31 +1,39 @@
 ---
 title: IT Fundamentals
-description: Master the foundational concepts that power the digital world
-preview: images/previews/it-fundamentals.png
 author: IT-Journey Team
+description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
-date: 2023-11-23T17:51:07.025Z
-lastmod: 2025-11-29T21:40:00.000Z
-draft: true
-permalink: /quests/lvl_000/it-fundamentals/
-level: "0000"
+snippet: null
+preview: images/previews/it-fundamentals.png
+date: 2023-11-23 17:51:07.025000+00:00
+lastmod: 2025-11-29 21:40:00+00:00
+level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
+primary_technology: fundamentals
 quest_type: main_quest
-tags:
-  - fundamentals
-  - it-basics
-  - lvl-0000
-categories:
-  - Quests
-  - Init-World
-  - Fundamentals
+quest_series: Level 0000 Quest Line
+skill_focus:
+- fundamentals
+- it-basics
+- lvl-0000
+learning_style: hands-on
+layout: journals
+permalink: /quests/lvl_000/it-fundamentals/
 categories: []
+tags:
+- fundamentals
+- it-basics
+- lvl-0000
+keywords:
+- fundamentals
+- it-basics
+- lvl-0000
+fmContentType: quest
+draft: true
 meta: null
-snippet: null
 slug: fundamentals
 ---
-
 Absolutely! Hands-on exercises are like spells and incantations – they're best learned by doing. Let's start with some foundational IT skills and practical exercises to get you going:
 
 ### 1. **Basic Computer Skills**

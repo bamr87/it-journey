@@ -25,9 +25,21 @@ Level 0011 quests focus on:
 
 ## Available Quests
 
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands](/quests/level-0011-advanced-git-workflows/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/level-0011-analytics-integration/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Custom Domains for GitHub Pages: Professional Website Setup Guide](/quests/level-0011-custom-domains/) | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/level-0011-github-pages-hidden-gem/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
+| [Jekyll Plugins: Essential Extensions for Powerful Static Sites](/quests/level-0011-jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/level-0011-prd-codex-mastery/) | 🟡 Medium | 45-60 minutes | main_quest | ✅ Complete |
+| [Forging the Prompt Crystal: VS Code Copilot Mastery Quest](/quests/level-0011-prompt-crystal-vscode-copilot/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [SEO Optimization: Boost Search Engine Visibility for Jekyll Sites](/quests/level-0011-seo-optimization/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+
+
 ### 🤖 AI-Powered Development
 
-#### [Prompt Crystal Mastery: VS Code Copilot Quest](prompt-crystal-mastery-vscode-copilot-quest.md)
+#### [Prompt Crystal Mastery: VS Code Copilot Quest](prompt-crystal-mastery-vscode-copilot.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 60-90 minutes
 
 Master the art of wielding GitHub Copilot - the AI pair programmer that transforms how you write code. Learn to craft effective prompts, understand suggestions, and maximize productivity.
@@ -38,11 +50,11 @@ Master the art of wielding GitHub Copilot - the AI pair programmer that transfor
 - Context management for better suggestions
 - AI-assisted debugging and refactoring
 
-**Prerequisites:** [VS Code Mastery Quest](../0000/vscode-mastery-quest.md), Programming basics
+**Prerequisites:** [VS Code Mastery Quest](../0000/vscode-mastery.md), Programming basics
 
 ### 🔍 Code Search & Discovery
 
-#### [GitHub Hidden Gem: Code Search Quest](github-hidden-gem-code-search-quest.md)
+#### [GitHub Hidden Gem: Code Search Quest](github-pages-hidden-gem.md)
 **Quest Type**: Side ⚔️ | **Difficulty**: 🟢 Easy | **Estimated Time**: 30-45 minutes
 
 Uncover the hidden powers of GitHub's code search. Find code patterns, discover implementations, and learn from the world's largest code repository.
@@ -58,13 +70,13 @@ Uncover the hidden powers of GitHub's code search. Find code patterns, discover 
 ## Learning Path Recommendations
 
 ### For AI-Curious Developers
-1. [GitHub Hidden Gem: Code Search Quest](github-hidden-gem-code-search-quest.md) - Research skills
-2. [Prompt Crystal Mastery: VS Code Copilot Quest](prompt-crystal-mastery-vscode-copilot-quest.md) - AI coding
+1. [GitHub Hidden Gem: Code Search Quest](github-pages-hidden-gem.md) - Research skills
+2. [Prompt Crystal Mastery: VS Code Copilot Quest](prompt-crystal-mastery-vscode-copilot.md) - AI coding
 
 ### For Productivity Seekers
 1. Ensure Level 0010 terminal enhancements complete
-2. [Prompt Crystal Mastery: VS Code Copilot Quest](prompt-crystal-mastery-vscode-copilot-quest.md)
-3. [GitHub Hidden Gem: Code Search Quest](github-hidden-gem-code-search-quest.md)
+2. [Prompt Crystal Mastery: VS Code Copilot Quest](prompt-crystal-mastery-vscode-copilot.md)
+3. [GitHub Hidden Gem: Code Search Quest](github-pages-hidden-gem.md)
 
 ## Quest Dependencies & Progression
 

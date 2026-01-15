@@ -1,70 +1,74 @@
 ---
-title: "Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest"
-description: Master the ancient art of bash scripting and unlock the power of automation through command-line incantations and shell magic.
-date: 2025-07-28T10:30:00.000Z
-preview: images/previews/mastering-the-bash-incantations-binary-level-0010-.png
-tags:
-    - lvl-0010
-    - bash
-    - shell-scripting
-    - command-line
-    - automation
-    - system-administration
-    - gamified-learning
-categories:
-    - Quests
-    - Foundation
-    - System-Administration
-level: "0010"
-quest_type: main_quest
-difficulty: 🟡 Medium
-estimated_time: 120-150 minutes
-sub-title: "Level 0010 (2) Quest: Shell Scripting Mastery and Automation Arts"
-excerpt: Transform from a terminal novice into a bash scripting wizard through hands-on automation magic and command-line mastery.
-snippet: When the shell speaks, the system listens - master the ancient bash incantations!
+title: 'Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery
+  Quest'
 author: Quest Master IT-Journey Team
-layout: journals
-keywords:
-    primary:
-        - bash-scripting
-        - shell-automation
-        - command-line-mastery
-    secondary:
-        - linux-terminal
-        - scripting-fundamentals
-        - system-automation
-        - devops-foundations
-        - file-management
-lastmod: 2025-11-08T15:07:21.509Z
-permalink: /quests/level-0010-bash-scripting/
-attachments: ""
-comments: true
+description: Master the ancient art of bash scripting and unlock the power of automation
+  through command-line incantations and shell magic.
+excerpt: Transform from a terminal novice into a bash scripting wizard through hands-on
+  automation magic and command-line mastery.
+snippet: When the shell speaks, the system listens - master the ancient bash incantations!
+preview: images/previews/mastering-the-bash-incantations-binary-level-0010-.png
+date: 2025-07-28 10:30:00+00:00
+lastmod: 2025-11-08 15:07:21.509000+00:00
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-prerequisites:
-    - Basic terminal navigation and command execution
-    - Familiarity with file system structure (directories, files, paths)
-    - Text editor comfort (nano, vim, or VS Code)
-    - Understanding of basic computing concepts
-rewards:
-    - 🏆 Shell Script Wizard Badge - Command line automation mastery
-    - ⚡ Automation Powers - Ability to create time-saving scripts
-    - 🛠️ Bash Mastery - Advanced shell scripting capabilities
-    - 🎯 System Administration Skills - Foundation for DevOps practices
+primary_technology: lvl-0010
+quest_type: main_quest
 quest_series: Foundation Binary Mastery Path
-related_quests:
-    - "Level 0001: Terminal Navigation Quest - Essential prerequisite"
-    - "Level 0011: File Management Mastery - Builds on this quest"
-    - "Level 0100: Version Control with Git - Natural progression"
-    - "Level 0101: Environment Setup Quest - Development workflow"
+skill_focus:
+- Quests
+- Foundation
+- System-Administration
+learning_style: hands-on
+prerequisites:
+- Basic terminal navigation and command execution
+- Familiarity with file system structure (directories, files, paths)
+- Text editor comfort (nano, vim, or VS Code)
+- Understanding of basic computing concepts
 validation_criteria:
-    - Create functional bash scripts with error handling
-    - Demonstrate automation of repetitive tasks
-    - Build a personal script library for common operations
-    - Troubleshoot and debug script errors independently
+- Create functional bash scripts with error handling
+- Demonstrate automation of repetitive tasks
+- Build a personal script library for common operations
+- Troubleshoot and debug script errors independently
+layout: journals
+permalink: ../README.mdlevel-0010-bash-scripting/
+categories:
+- Quests
+- Foundation
+- System-Administration
+tags:
+- lvl-0010
+- bash
+- shell-scripting
+- command-line
+- automation
+- system-administration
+- gamified-learning
+keywords:
+- lvl-0010
+- bash
+- shell-scripting
+- command-line
+- automation
+- system-administration
+- gamified-learning
+fmContentType: quest
 draft: false
+comments: true
+attachments: ''
+sub-title: 'Level 0010 (2) Quest: Shell Scripting Mastery and Automation Arts'
+rewards:
+- 🏆 Shell Script Wizard Badge - Command line automation mastery
+- ⚡ Automation Powers - Ability to create time-saving scripts
+- 🛠️ Bash Mastery - Advanced shell scripting capabilities
+- 🎯 System Administration Skills - Foundation for DevOps practices
+related_quests:
+- 'Level 0001: Terminal Navigation Quest - Essential prerequisite'
+- 'Level 0011: File Management Mastery - Builds on this quest'
+- 'Level 0100: Version Control with Git - Natural progression'
+- 'Level 0101: Environment Setup Quest - Development workflow'
 ---
-
 *Greetings, aspiring Digital Sorcerer! Welcome to the realm of Bash Incantations - an epic journey that will transform you from a mere terminal user into a powerful automation wizard. In this quest, you'll master the ancient art of shell scripting, learning to weave commands into powerful spells that can automate tasks, manage systems, and bend the digital realm to your will.*
 
 *Whether you're a novice who's just discovered the terminal's power or an intermediate practitioner seeking to unlock advanced automation magic, this adventure will equip you with the practical skills needed for DevOps mastery, system administration, and efficient development workflows.*
@@ -1048,4 +1052,4 @@ Your newfound bash powers open several paths:
 
 ---
 
-*May your scripts run without errors, your automation save countless hours, and your bash mastery open doors to advanced system administration and DevOps adventures! Ready for your next challenge? Check the [Quest Map](/quests/) for your next epic journey!* ⚔️✨
+*May your scripts run without errors, your automation save countless hours, and your bash mastery open doors to advanced system administration and DevOps adventures! Ready for your next challenge? Check the [Quest Map](../README.md) for your next epic journey!* ⚔️✨

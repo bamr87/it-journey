@@ -1,42 +1,19 @@
 ---
 title: 'Markdown Mastery: Content Formatting Fundamentals'
-description: Master Markdown syntax for creating rich documentation, blog posts, and technical content with proper formatting, links, images, and code blocks.
-date: 2025-11-30 04:58:05+00:00
+author: IT-Journey Team
+description: Master Markdown syntax for creating rich documentation, blog posts, and
+  technical content with proper formatting, links, images, and code blocks.
+excerpt: Learn essential Markdown syntax to create beautifully formatted documentation
+  and technical content.
 preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
+date: 2025-11-30 04:58:05+00:00
+lastmod: 2025-12-20 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
 primary_technology: markdown
 quest_type: main_quest
-skill_focus: documentation
-learning_style: hands-on
 quest_series: Content Creation Basics
-sub_title: 'Level 0000 (0) Quest: Main Quest - Markdown'
-excerpt: Learn essential Markdown syntax to create beautifully formatted documentation and technical content.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0000
-- markdown
-- main_quest
-- documentation
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Documentation
-- Beginner
-keywords:
-  primary:
-  - markdown syntax
-  - content formatting
-  secondary:
-  - documentation writing
-  - technical content
-  - gamified-learning
-  - it-journey
-lastmod: 2025-12-20 00:00:00+00:00
-permalink: /quests/level-0000-markdown-mastery/
 quest_line: Init World
 quest_arc: Documentation Mastery Arc
 quest_dependencies:
@@ -46,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0000-side-quest-1/
-  - /quests/level-0000-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0000-alternative-path/
   sequel_quests:
@@ -62,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- documentation
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0000-markdown-mastery/
+categories:
+- Quests
+- Documentation
+- Beginner
+tags:
+- lvl-0000
+- markdown
+- main_quest
+- documentation
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0000
+- markdown
+- main_quest
+- documentation
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0000 (0) Quest: Main Quest - Markdown'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

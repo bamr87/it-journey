@@ -302,7 +302,7 @@ pages/_posts/
 
 ## Link Checker
 
-**File:** `scripts/link-checker.py`
+**File:** `scripts/validation/link-checker.py`
 
 **Purpose:** Comprehensive link validation with AI analysis.
 
@@ -316,24 +316,24 @@ pages/_posts/
 **Usage:**
 ```bash
 # Basic website check
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 
 # Comprehensive with AI
-python3 scripts/link-checker.py \
+python3 scripts/validation/link-checker.py \
   --scope website \
   --analysis-level comprehensive \
   --timeout 30
 
 # Create GitHub issue
-python3 scripts/link-checker.py \
+python3 scripts/validation/link-checker.py \
   --scope website \
   --create-issue \
   --repository bamr87/it-journey
 
 # Check specific content
-python3 scripts/link-checker.py --scope posts
-python3 scripts/link-checker.py --scope quests
-python3 scripts/link-checker.py --scope docs
+python3 scripts/validation/link-checker.py --scope posts
+python3 scripts/validation/link-checker.py --scope quests
+python3 scripts/validation/link-checker.py --scope docs
 ```
 
 **See Also:** [Testing Frameworks](../testing/TESTING_FRAMEWORKS.md)
@@ -433,18 +433,18 @@ Included GitHub Actions workflow (`.github/workflows/prd-sync.yml`):
 ### Zer0 to Hero Scripts
 
 **Files:**
-- `scripts/zer0-to-hero-complete.sh` - Complete setup script
-- `scripts/zer0-to-hero-generated.sh` - Auto-generated version
+- `scripts/generation/zer0-to-hero-complete.sh` - Complete setup script
+- `scripts/generation/zer0-to-hero-generated.sh` - Auto-generated version
 
 **Purpose:** Complete environment setup for new contributors.
 
 **Usage:**
 ```bash
 # Run complete setup
-./scripts/zer0-to-hero-complete.sh
+./scripts/generation/zer0-to-hero-complete.sh
 
 # With specific options
-./scripts/zer0-to-hero-complete.sh --docker-only
+./scripts/generation/zer0-to-hero-complete.sh --docker-only
 ```
 
 **What It Does:**

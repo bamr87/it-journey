@@ -1,59 +1,24 @@
 ---
-title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms'
-description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
-date: 2025-11-14 00:00:00+00:00
-preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
-tags:
-- github-pages
-- jekyll
-- ai-capture
-- vs-code
-- web-publishing
-- static-sites
-- version-control
-- markdown
-categories:
-- Quests
-- Development
-- AI
-sub-title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
-excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
-snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
+title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and
+  Conquer AI Realms'
 author: IT-Journey Team
-layout: journals
-keywords:
-  primary:
-  - github pages
-  - jekyll
-  - ai capture
-  - static site generation
-  secondary:
-  - vs code
-  - markdown
-  - web hosting
-  - version control
+description: Embark on an epic journey to master GitHub Pages, the hidden gem of web
+  publishing, and learn to capture and immortalize AI conversations using Jekyll and
+  VS Code
+excerpt: Transform your GitHub repositories into powerful websites and learn to preserve
+  AI conversations forever
+snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
+preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
+date: 2025-11-14 00:00:00+00:00
 lastmod: 2025-11-15 03:52:35.140000+00:00
-permalink: /quests/level-0011-github-pages-hidden-gem/
-attachments: ''
-comments: true
+level: '0011'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
+primary_technology: github-pages
 quest_type: main_quest
-quest_line: Foundation Path
 quest_series: Web Publishing Mastery
+quest_line: Foundation Path
 quest_arc: Digital Creation Arc
-prerequisites:
-  knowledge_requirements:
-  - Basic understanding of Git and GitHub
-  - Familiarity with Markdown syntax
-  - Basic computer literacy and file management
-  system_requirements:
-  - GitHub account
-  - Visual Studio Code installed
-  - Internet connection for repository operations
-  skill_level_indicators:
-  - Comfortable using web browsers and basic software installation
-  - Able to create and edit text files
 quest_dependencies:
   required_quests: []
   recommended_quests: []
@@ -75,19 +40,23 @@ learning_paths:
   - Web Publishing
   - Version Control
   - Static Site Generation
-rewards:
-  badges:
-  - 🏆 GitHub Pages Master
-  - 💎 Hidden Gem Discoverer
-  - 🤖 AI Conversation Capturer
-  skills_unlocked:
-  - 🛠️ Static Site Publishing
-  - 📝 Markdown to Web Conversion
-  - 🔄 Version-Controlled Content
-  progression_points: 150
-  unlocks_features:
-  - Access to advanced Jekyll customization quests
-  - Eligibility for web development learning paths
+skill_focus:
+- Quests
+- Development
+- AI
+learning_style: hands-on
+prerequisites:
+  knowledge_requirements:
+  - Basic understanding of Git and GitHub
+  - Familiarity with Markdown syntax
+  - Basic computer literacy and file management
+  system_requirements:
+  - GitHub account
+  - Visual Studio Code installed
+  - Internet connection for repository operations
+  skill_level_indicators:
+  - Comfortable using web browsers and basic software installation
+  - Able to create and edit text files
 validation_criteria:
   completion_requirements:
   - Successfully create and deploy a GitHub Pages site
@@ -106,9 +75,48 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-level: '0011'
+layout: journals
+permalink: /quests/level-0011-github-pages-hidden-gem/
+categories:
+- Quests
+- Development
+- AI
+tags:
+- github-pages
+- jekyll
+- ai-capture
+- vs-code
+- web-publishing
+- static-sites
+- version-control
+- markdown
+keywords:
+- github-pages
+- jekyll
+- ai-capture
+- vs-code
+- web-publishing
+- static-sites
+- version-control
+- markdown
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
+rewards:
+  badges:
+  - 🏆 GitHub Pages Master
+  - 💎 Hidden Gem Discoverer
+  - 🤖 AI Conversation Capturer
+  skills_unlocked:
+  - 🛠️ Static Site Publishing
+  - 📝 Markdown to Web Conversion
+  - 🔄 Version-Controlled Content
+  progression_points: 150
+  unlocks_features:
+  - Access to advanced Jekyll customization quests
+  - Eligibility for web development learning paths
 ---
-
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 
 *[Opening paragraph that sets the fantasy context using RPG metaphors and adventuring language. This should immediately immerse the learner in the quest narrative while clearly explaining the real-world technical value.]*

@@ -1,42 +1,18 @@
 ---
 title: 'Rate Limiting: API Traffic Control and Throttling Strategies'
-description: Implement API rate limiting for traffic control and protection. Learn throttling algorithms, quota management, rate limit headers, and DDoS protection.
-date: 2025-11-30 05:08:59+00:00
+author: IT-Journey Team
+description: Implement API rate limiting for traffic control and protection. Learn
+  throttling algorithms, quota management, rate limit headers, and DDoS protection.
+excerpt: Protect your APIs with rate limiting, throttling, and traffic control strategies
 preview: images/previews/rate-limiting-api-traffic-control-descriptive-subt.png
+date: 2025-11-30 05:08:59+00:00
+lastmod: 2025-11-30 05:08:59+00:00
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 60-75 minutes
 primary_technology: api
 quest_type: main_quest
-skill_focus: backend
-learning_style: hands-on
 quest_series: API Design Mastery
-sub_title: 'Level 0111 (7) Quest: Main Quest - Rate Limiting'
-excerpt: Protect your APIs with rate limiting, throttling, and traffic control strategies
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0111
-- api
-- main_quest
-- backend
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Backend
-- Hard
-keywords:
-  primary:
-  - rate-limiting
-  - api-throttling
-  secondary:
-  - traffic-control
-  - ddos-protection
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:08:59+00:00
-permalink: /quests/level-0111-rate-limiting/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- backend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0111-rate-limiting/
+categories:
+- Quests
+- Backend
+- Hard
+tags:
+- lvl-0111
+- api
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0111
+- api
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0111 (7) Quest: Main Quest - Rate Limiting'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

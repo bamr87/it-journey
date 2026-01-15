@@ -1,105 +1,105 @@
 ---
-title: "[Quest Title]: [Descriptive Subtitle]"
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
-date: 2025-11-29T00:00:00.000Z
+title: '[Quest Title]: [Descriptive Subtitle]'
+description: Complete description of what the quest teaches and accomplishes (150-300
+  characters for SEO)
+date: 2025-11-29 00:00:00+00:00
 preview: images/previews/quest-title-descriptive-subtitle.png
 level: XXXX
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: "[main-tech]"
+primary_technology: '[main-tech]'
 quest_type: main_quest
-skill_focus: "[skill-category]"
+skill_focus:
+- '[skill-category]'
 learning_style: hands-on
-quest_series: "[series-name]"
-sub_title: "Level XXXX (XX) Quest: Main Quest - [Technology]"
+quest_series: '[series-name]'
+sub_title: 'Level XXXX (XX) Quest: Main Quest - [Technology]'
 excerpt: One-sentence summary of the quest's core learning objective
 author: IT-Journey Team
 layout: journals
 tags:
-  - lvl-XXXX
-  - - primary-technology
-  - main_quest
-  - - skill-focus
-  - hands-on
-  - gamified-learning
+- lvl-XXXX
+- - primary-technology
+- main_quest
+- - skill-focus
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - - Skill-Category
-  - - Difficulty-Level
+- Quests
+- - Skill-Category
+- - Difficulty-Level
 keywords:
-  primary:
-    - - main-technology-skill
-    - - core-learning-objective
-  secondary:
-    - - supporting-technologies
-    - - related-concepts
-    - gamified-learning
-    - it-journey
-lastmod: 2025-12-01T05:49:32.316Z
+- lvl-XXXX
+- '[''primary-technology'']'
+- main_quest
+- '[''skill-focus'']'
+- hands-on
+- gamified-learning
+lastmod: 2025-12-01 05:49:32.316000+00:00
 permalink: /quests/level-XXXX-[quest-slug]/
-quest_line: "[Campaign/storyline name]"
-quest_arc: "[Story arc or thematic grouping]"
+quest_line: '[Campaign/storyline name]'
+quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
   required_quests:
-    - /quests/level-XXXX-prerequisite-quest/
+  - /quests/level-XXXX-prerequisite-quest/
   recommended_quests:
-    - /quests/level-XXXX-helpful-quest/
+  - /quests/level-XXXX-helpful-quest/
   unlocks_quests:
-    - /quests/level-XXXX-next-quest/
+  - /quests/level-XXXX-next-quest/
 quest_relationships:
   parent_quest: null
   child_quests:
-    - /quests/level-XXXX-side-quest-1/
-    - /quests/level-XXXX-side-quest-2/
+  - /quests/level-XXXX-side-quest-1/
+  - /quests/level-XXXX-side-quest-2/
   parallel_quests:
-    - /quests/level-XXXX-alternative-path/
+  - /quests/level-XXXX-alternative-path/
   sequel_quests:
-    - /quests/level-XXXX-continuation/
+  - /quests/level-XXXX-continuation/
 learning_paths:
   primary_paths:
-    - Software Development
+  - Software Development
   character_classes:
-    - 💻 Software Developer
-    - 🏗️ System Engineer
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "[Primary Skill Tree]"
-    - "[Secondary Skill Tree]"
+  - '[Primary Skill Tree]'
+  - '[Secondary Skill Tree]'
 rewards:
   badges:
-    - 🏆 [Achievement Badge Name]
+  - 🏆 [Achievement Badge Name]
   skills_unlocked:
-    - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ [Tool or Technology Mastery]
   progression_points: 50
   unlocks_features:
-    - "[Feature or capability unlocked]"
+  - '[Feature or capability unlocked]'
 prerequisites:
   knowledge_requirements:
-    - Basic command line navigation
-    - "[Specific prior knowledge]"
+  - Basic command line navigation
+  - '[Specific prior knowledge]'
   system_requirements:
-    - Modern OS (macOS, Windows 10+, Linux)
-    - "[Required software installed]"
+  - Modern OS (macOS, Windows 10+, Linux)
+  - '[Required software installed]'
   skill_level_indicators:
-    - "[Recommended skill level description]"
+  - '[Recommended skill level description]'
 validation_criteria:
   completion_requirements:
-    - All primary objectives completed
-    - "[Specific deliverable created]"
+  - All primary objectives completed
+  - '[Specific deliverable created]'
   skill_demonstrations:
-    - Can explain [concept] clearly
-    - Can implement [skill] independently
+  - Can explain [concept] clearly
+  - Can implement [skill] independently
   knowledge_checks:
-    - Understands [principle]
-    - Can troubleshoot [common issue]
+  - Understands [principle]
+  - Can troubleshoot [common issue]
 quest_mapping:
-  coordinates: "[x, y]"
+  coordinates: '[x, y]'
   region: Foundation
   realm: Development
   biome: Terminal
 comments: true
 draft: true
+fmContentType: template
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

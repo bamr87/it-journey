@@ -1,8 +1,8 @@
 ---
 title: 'Glossary '
-author: null
+author: IT-Journey Team
 excerpt: null
-description: null
+description: 'Reference: Glossary .'
 preview: images/previews/glossary.png
 snippet: null
 categories:
@@ -11,14 +11,24 @@ tags:
 - notes
 meta: null
 draft: true
-lastmod: 2023-11-25 11:31:20.728000+00:00
+lastmod: &id001 2023-11-25 11:31:20.728000+00:00
 permalink: /quests/level-codex/glossary/
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
+keywords:
+- notes
+date: *id001
+layout: journals
+quest_series: Codex Reference
+primary_technology: reference
+skill_focus:
+- codex
+- reference
+learning_style: reading
+fmContentType: codex
 ---
-
 Enterprise
 
 Spells - Scripts

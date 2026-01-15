@@ -1,19 +1,42 @@
 ---
 title: Quest Build Plan - Complete Placeholder Quest System
-description: Comprehensive plan for building all placeholder quests across all levels with complete linking and mapping
-date: 2025-11-29T00:00:00.000Z
+description: Comprehensive plan for building all placeholder quests across all levels
+  with complete linking and mapping
+date: 2025-11-29 00:00:00+00:00
 lastmod: 2025-01-27
 categories:
-  - planning
-  - quest-development
+
+- planning
+- quest-development
 tags:
-  - roadmap
-  - quest-system
-  - planning
-  - infrastructure
+
+- roadmap
+- quest-system
+- planning
+- infrastructure
 draft: false
 toc: true
 toc_sticky: true
+keywords:
+
+- roadmap
+- quest-system
+- planning
+- infrastructure
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+author: IT-Journey Team
+layout: journals
+quest_series: Quest Documentation
+primary_technology: planning
+skill_focus:
+
+- planning
+learning_style: reading
+quest_type: documentation
+fmContentType: documentation
+permalink: /quests/quest-build-plan/
 ---
 
 # Quest Build Plan: Complete Placeholder Quest System
@@ -24,28 +47,28 @@ This plan outlines the systematic creation of **all placeholder quests** across 
 
 - ✅ All quest files created with proper frontmatter
 - ✅ Complete quest hierarchy and relationships defined
-- ✅ All internal links and paths mapped (Phase 6)
-- ✅ Quest network validation passing (0 errors)
+- 🟡 Internal links and paths mapped (Phase 6 in progress)
+- 🟡 Quest network validation in progress
 - ✅ Level README files updated and complete
-- ✅ Home.md and main README.md fully integrated (Phase 6)
+- 🟡 home.md and main README.md integration in progress
 
 ---
 
 ## 📊 Project Status Dashboard (Updated: January 27, 2025)
 
 | Phase | Focus | Status | Quests |
-|-------|-------|--------|--------|
+| --- | --- | --- | --- |
 | Phase 1 | Infrastructure | ✅ **Complete** | Templates, scripts, validation |
 | Phase 2 | Apprentice Tier (0000-0011) | ✅ **Complete** | 17 quests |
 | Phase 3 | Journeyman Tier (0100-0111) | ✅ **Complete** | 36 quests |
 | Phase 4 | Expert Tier (1000-1011) | ✅ **Complete** | 19 quests |
 | Phase 5 | Master/Legend Tier (1100-1111) | ✅ **Complete** | 28 quests |
-| **Phase 6** | **Polish & Integration** | ✅ **Complete** | Validation, linking |
+| **Phase 6** | **Polish & Integration** | 🟡 **In Progress** | Validation, linking |
 
 ### Current Quest Inventory
 
 | Level | Theme | Quests | README |
-|-------|-------|--------|--------|
+| --- | --- | --- | --- |
 | 0000 | Foundation | 14 | ✅ |
 | 0001 | Web Fundamentals | 13 | ✅ |
 | 0010 | Terminal Mastery | 11 | ✅ |
@@ -63,19 +86,22 @@ This plan outlines the systematic creation of **all placeholder quests** across 
 | 1110 | Architecture | 8 | ✅ |
 | 1111 | Leadership | 8 | ✅ |
 
-**Total Quest Files: 147**
+### Total Quest Files
 
-### Validation Status (January 27, 2025)
+Total quest files: 147
+
+### Validation Status (Updated: January 2026)
 
 | Metric | Count | Status |
-|--------|-------|--------|
-| Total Quests | 147 | ✅ |
-| Validation Errors | 0 | ✅ **Fixed** |
-| Warnings | 444 | ⚠️ Non-blocking |
-| Broken Dependencies | 0 | ✅ **Fixed** |
-| Complete Quests | 29 | ✅ |
+| --- | --- | --- |
+| Total Quests | 147+ | ✅ |
+| Frontmatter Completeness | 100% | ✅ |
+| Validation Errors | In progress | 🟡 |
+| Warnings | Pending review | 🟡 |
+| Broken Dependencies | Pending review | 🟡 |
+| Complete Quests | 30+ | 🟡 |
 
-**Phase 6 Validation Complete** - See [docs/](docs/) for historical phase documentation.
+**Phase 6 Validation In Progress** - See [Phase documentation](docs/PHASE6_PLAN.md) for historical phase documentation.
 
 ---
 
@@ -84,6 +110,7 @@ This plan outlines the systematic creation of **all placeholder quests** across 
 ### Original Completed Quests (Pre-Phase 2)
 
 **Level 0000 (Foundation)**: 9 quests
+
 - VS Code Mastery Quest
 - Bash Fundamentals
 - Bashcrawl Adventure
@@ -94,12 +121,14 @@ This plan outlines the systematic creation of **all placeholder quests** across 
 - Platform-specific quests (Windows, macOS, Linux, Cloud)
 
 **Level 0001 (Web Fundamentals)**: 4 quests
+
 - GitHub Pages Portal
 - Personal Site Creation
 - Docs in a Row
 - Stack Attack
 
 **Level 0010 (Terminal Mastery)**: 5 quests
+
 - Bash Scripting Mastery
 - Oh My Zsh Enchantment
 - Nerd Font Enchantment
@@ -107,38 +136,45 @@ This plan outlines the systematic creation of **all placeholder quests** across 
 - Jekyll Mermaid Integration
 
 **Level 0011 (AI-Assisted Dev)**: 2 quests
+
 - GitHub Code Search Quest
 - VS Code Copilot Mastery
 
 **Level 0100 (Frontend & Containers)**: 4 quests
+
 - Frontend Fundamentals
 - Frontend Docker
 - Frontend Levels
 - Sourcery Code Methods
 
 **Level 0101 (Backend Systems)**: 2 quests
+
 - Docker Mastery Example
 - LazyTeX CV Building
 
 **Level 1010 (Automation & Testing)**: 1 quest
+
 - Link to the Future (Automated Hyperlink Checking)
 
 **Level 1011 (DevOps & Infrastructure)**: 1 quest
+
 - Feature Re-Quest
 
 **Level 1100 (Data Engineering)**: 3 quests
+
 - EDGAR API Integration
 - SEC EDGAR Deep Dive
 - Temple of Templates
 
 **Level 1110 (Architecture)**: 1 quest
+
 - 404 Hunting Quest
 
 **Total Completed**: 32 quests
 
 ### Missing Placeholder Quests (🔮)
 
-Based on home.md and README.md analysis:
+Based on home.md and README.md analysis. Counts below are directional; use each level README for the latest list.
 
 **Level 0000**: 3 additional quests needed
 **Level 0001**: 5 additional quests needed
@@ -165,7 +201,8 @@ Based on home.md and README.md analysis:
 
 **Objective**: Set up templates, tools, and documentation
 
-#### Tasks:
+#### Tasks
+
 1. **Create Quest Template Files**
    - [ ] Main quest template (main-quest-template.md)
    - [ ] Side quest template (side-quest-template.md)
@@ -195,14 +232,17 @@ Based on home.md and README.md analysis:
 **Objective**: Complete all quests for Levels 0000-0011
 
 #### Level 0000 - Foundation & Init World
+
 **Status**: 9/12 quests complete
 
 Missing Quests:
+
 - [ ] File System Navigation (file-system-navigation.md)
 - [ ] Package Manager Mastery (package-manager-mastery.md)
 - [ ] Environment Variables (environment-variables.md)
 
 **Quest Relationships**:
+
 ```mermaid
 graph TB
     Hello[Hello n00b] --> FileNav[File System Navigation]
@@ -213,10 +253,13 @@ graph TB
     EnvVar --> Backend[Level 0101: Backend Systems]
 ```
 
+
 #### Level 0001 - Web Fundamentals
+
 **Status**: 4/9 quests complete
 
 Missing Quests:
+
 - [ ] HTML Foundations (html-foundations.md)
 - [ ] CSS Styling (css-styling.md)
 - [ ] JavaScript Basics (javascript-basics.md)
@@ -224,6 +267,7 @@ Missing Quests:
 - [ ] Static Site Generators (static-site-generators.md)
 
 **Quest Relationships**:
+
 ```mermaid
 graph TB
     HTML[HTML Foundations] --> CSS[CSS Styling]
@@ -234,16 +278,20 @@ graph TB
     GitHub[GitHub Pages Portal] --> Static
 ```
 
+
 #### Level 0010 - Terminal Mastery
+
 **Status**: 5/9 quests complete
 
 Missing Quests:
+
 - [ ] Advanced Shell Scripting (advanced-shell-scripting.md)
 - [ ] Regular Expressions (regular-expressions.md)
 - [ ] Terminal Multiplexing (terminal-multiplexing.md)
 - [ ] SSH & Remote Connections (ssh-remote-connections.md)
 
 **Quest Relationships**:
+
 ```mermaid
 graph TB
     Bash[Bash Scripting] --> Advanced[Advanced Shell Scripting]
@@ -252,10 +300,13 @@ graph TB
     Advanced --> SSH[SSH & Remote Connections]
 ```
 
+
 #### Level 0011 - AI-Assisted Development
+
 **Status**: 2/7 quests complete
 
 Missing Quests:
+
 - [ ] ChatGPT for Developers (chatgpt-developers.md)
 - [ ] Claude for Coding (claude-coding.md)
 - [ ] AI Code Review (ai-code-review.md)
@@ -263,6 +314,7 @@ Missing Quests:
 - [ ] AI-Powered Debugging (ai-powered-debugging.md)
 
 **Quest Relationships**:
+
 ```mermaid
 graph TB
     Copilot[VS Code Copilot] --> ChatGPT[ChatGPT for Developers]
@@ -272,14 +324,17 @@ graph TB
     Claude --> AIDebug[AI-Powered Debugging]
 ```
 
+
 ### Phase 3: Adventurer Tier Completion (Weeks 4-6)
 
 **Objective**: Complete all quests for Levels 0100-0111
 
 #### Level 0100 - Frontend & Containers
+
 **Status**: 4/9 quests complete
 
 Missing Quests:
+
 - [ ] React Foundations (react-foundations.md)
 - [ ] Vue.js Adventures (vuejs-adventures.md)
 - [ ] Docker Fundamentals (docker-fundamentals.md)
@@ -287,9 +342,11 @@ Missing Quests:
 - [ ] Build Tools (build-tools.md)
 
 #### Level 0101 - Backend Systems
+
 **Status**: 2/8 quests complete
 
 Missing Quests:
+
 - [ ] Node.js Fundamentals (nodejs-fundamentals.md)
 - [ ] Python Flask/Django (python-flask-django.md)
 - [ ] RESTful API Design (restful-api-design.md)
@@ -298,9 +355,11 @@ Missing Quests:
 - [ ] Process Management (process-management.md)
 
 #### Level 0110 - Database Mastery
+
 **Status**: 0/8 quests complete (NEW LEVEL)
 
 Required Quests:
+
 - [ ] Database Design Fundamentals (database-design-fundamentals.md)
 - [ ] SQL Sorcery (sql-sorcery.md)
 - [ ] NoSQL Adventures (nosql-adventures.md)
@@ -311,9 +370,11 @@ Required Quests:
 - [ ] Database Security (database-security.md)
 
 #### Level 0111 - Full-Stack Integration
+
 **Status**: 0/8 quests complete (NEW LEVEL)
 
 Required Quests:
+
 - [ ] API Design Patterns (api-design-patterns.md)
 - [ ] JWT & OAuth (jwt-oauth.md)
 - [ ] State Management (state-management.md)
@@ -328,9 +389,11 @@ Required Quests:
 **Objective**: Complete all quests for Levels 1000-1011
 
 #### Level 1000 - Security Fundamentals
+
 **Status**: 0/8 quests complete (NEW LEVEL)
 
 Required Quests:
+
 - [ ] Security Mindset (security-mindset.md)
 - [ ] OWASP Top 10 (owasp-top-10.md)
 - [ ] Secure Coding Practices (secure-coding-practices.md)
@@ -341,9 +404,11 @@ Required Quests:
 - [ ] Security Tools (security-tools.md)
 
 #### Level 1001 - Cloud Architecture
+
 **Status**: 0/8 quests complete (NEW LEVEL)
 
 Required Quests:
+
 - [ ] Cloud Fundamentals (cloud-fundamentals.md)
 - [ ] AWS Quest Line (aws-quest-line.md)
 - [ ] Azure Adventures (azure-adventures.md)
@@ -354,9 +419,11 @@ Required Quests:
 - [ ] Cost Optimization (cost-optimization.md)
 
 #### Level 1010 - Automation & Testing
+
 **Status**: 1/8 quests complete
 
 Missing Quests:
+
 - [ ] Unit Testing Mastery (unit-testing-mastery.md)
 - [ ] Integration Testing (integration-testing.md)
 - [ ] E2E Testing Adventures (e2e-testing-adventures.md)
@@ -366,9 +433,11 @@ Missing Quests:
 - [ ] Code Quality Gates (code-quality-gates.md)
 
 #### Level 1011 - DevOps & Infrastructure
+
 **Status**: 1/8 quests complete
 
 Missing Quests:
+
 - [ ] Infrastructure as Code (infrastructure-as-code.md)
 - [ ] Kubernetes Mastery (kubernetes-mastery.md)
 - [ ] Monitoring & Observability (monitoring-observability.md)
@@ -382,9 +451,11 @@ Missing Quests:
 **Objective**: Complete all quests for Levels 1100-1110
 
 #### Level 1100 - Data Engineering
+
 **Status**: 3/8 quests complete
 
 Missing Quests:
+
 - [ ] ETL Pipeline Design (etl-pipeline-design.md)
 - [ ] Data Warehousing (data-warehousing.md)
 - [ ] Stream Processing (stream-processing.md)
@@ -392,9 +463,11 @@ Missing Quests:
 - [ ] Data Quality (data-quality.md)
 
 #### Level 1101 - Machine Learning & AI
+
 **Status**: 0/8 quests complete (NEW LEVEL)
 
 Required Quests:
+
 - [ ] ML Fundamentals (ml-fundamentals.md)
 - [ ] Python for Data Science (python-data-science.md)
 - [ ] Neural Networks (neural-networks.md)
@@ -405,9 +478,11 @@ Required Quests:
 - [ ] AI Ethics (ai-ethics.md)
 
 #### Level 1110 - Architecture & Design
+
 **Status**: 1/8 quests complete
 
 Missing Quests:
+
 - [ ] Design Patterns (design-patterns.md)
 - [ ] Microservices Architecture (microservices-architecture.md)
 - [ ] Event-Driven Design (event-driven-design.md)
@@ -421,9 +496,11 @@ Missing Quests:
 **Objective**: Establish Level 1111 structure
 
 #### Level 1111 - Leadership & Innovation
+
 **Status**: 0/8+ quests complete (NEW LEVEL)
 
 Required Quests:
+
 - [ ] Technical Leadership (technical-leadership.md)
 - [ ] Open Source Contribution (open-source-contribution.md)
 - [ ] Tech Speaking & Writing (tech-speaking-writing.md)
@@ -437,11 +514,13 @@ Required Quests:
 
 ### Quest File Naming Convention
 
-```
+```text
 pages/_quests/[LEVEL]/[quest-slug].md
 ```
 
+
 Examples:
+
 - `pages/_quests/0000/file-system-navigation.md`
 - `pages/_quests/0110/database-design-fundamentals.md`
 - `pages/_quests/1101/ml-fundamentals.md`
@@ -541,7 +620,6 @@ quest_mapping:
 
 draft: true  # Remove when quest is complete
 ---
-```
 
 ### Standard Quest Content Structure
 
@@ -567,15 +645,15 @@ title: Level [BINARY] ([DECIMAL]) - [Level Name]
 description: [Level theme and focus]
 permalink: /quests/[LEVEL]/
 categories:
-    - Quests
-    - Level-[LEVEL]
+  - Quests
+  - Level-[LEVEL]
 tags:
-    - lvl-[BINARY]
-    - [theme]
+  - lvl-[BINARY]
+  - [theme]
 lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 ---
 
-# Level [BINARY] ([DECIMAL]) - [Level Name]
+## Level [BINARY] ([DECIMAL]) - [Level Name]
 
 *[Fantasy-themed introduction to the level]*
 
@@ -604,9 +682,7 @@ lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 
 ## Quest Network
 
-```mermaid
-[Level-specific quest relationships]
-```
+[Mermaid diagram placeholder]
 
 ## Prerequisites
 
@@ -645,7 +721,7 @@ lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 
 ### Quest Generation Script
 
-Create `scripts/generate-placeholder-quest.sh`:
+Create `scripts/quest/generate-placeholder-quest.sh`:
 
 ```bash
 #!/usr/bin/env bash
@@ -665,7 +741,7 @@ QUEST_TITLE=$3
 
 ### Quest Validation Script
 
-Create `scripts/validate-quest-network.py`:
+Create `scripts/quest/validate-quest-network.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -681,7 +757,7 @@ Create `scripts/validate-quest-network.py`:
 
 ### Link Update Script
 
-Create `scripts/update-quest-links.py`:
+Create `scripts/quest/update-quest-links.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -741,27 +817,33 @@ For each placeholder quest:
 ## Timeline and Milestones
 
 ### Week 1: Infrastructure
+
 - Day 1-2: Create templates
 - Day 3-4: Build automation scripts
 - Day 5-7: Documentation and validation
 
 ### Weeks 2-3: Apprentice Tier (Levels 0000-0011)
+
 - 18 placeholder quests
 - 4 level READMEs updated
 
 ### Weeks 4-6: Adventurer Tier (Levels 0100-0111)
+
 - 32 placeholder quests
 - 4 level READMEs created/updated
 
 ### Weeks 7-9: Warrior Tier (Levels 1000-1011)
+
 - 31 placeholder quests
 - 4 level READMEs created
 
 ### Weeks 10-12: Master Tier (Levels 1100-1110)
+
 - 24 placeholder quests
 - 3 level READMEs updated
 
 ### Weeks 13-14: Legend Tier & Final Integration
+
 - 8 placeholder quests (Level 1111)
 - 1 level README created
 - Final link validation
@@ -782,48 +864,69 @@ All quest placeholder files have been successfully created:
 
 ### 🚀 Phase 6: Polish & Integration (Current)
 
-**See [PHASE6_PLAN.md](PHASE6_PLAN.md) for detailed execution plan.**
+**See [PHASE6_PLAN.md](docs/PHASE6_PLAN.md) for detailed execution plan.**
 
 Phase 6 focuses on:
-1. **Frontmatter Cleanup** - Fix 165 validation errors
-2. **Dependency Cleanup** - Remove placeholder dependencies
-3. **Network Building** - Create actual cross-level connections
-4. **Content Development** - Complete entry point quests
-5. **Final Validation** - Achieve 0 errors, 0 orphaned quests
+
+1. **Frontmatter Cleanup** - ✅ Complete (metadata normalized)
+2. **Dependency Cleanup** - 🟡 In progress (automation scripts created)
+3. **Network Building** - 🟡 In progress
+4. **Content Development** - 🟡 In progress (entry quests underway)
+5. **Final Validation** - ⏳ Pending
 
 **Estimated Duration**: 5 weeks
+
+### Automation Scripts Created
+
+The following automation scripts have been created to support Phase 6:
+
+1. **`scripts/quest/update-quest-links.py`** - Updates quest links across documentation files
+2. **`scripts/quest/remove-placeholder-deps.py`** - Removes placeholder dependencies from quest frontmatter
+3. **`scripts/quest/fix-quest-types.py`** - Standardizes quest_type values
+4. **`scripts/cleanup-placeholder-deps.sh`** - Bash script for placeholder cleanup
+5. **`scripts/quest/generate-network-report.sh`** - Generates quest network validation reports
 
 ### Action Items for Phase 6
 
 1. **Week 1: Frontmatter Fixes**
-   - Standardize quest_type values
-   - Add missing difficulty fields
-   - Normalize level format (4-digit binary)
+   - ✅ Standardize quest_type values
+   - ✅ Add missing difficulty fields
+   - ✅ Normalize level format (4-digit binary)
+   - ✅ Fix difficulty text in body content (docs-in-a-row.md)
 
 2. **Week 2: Dependency Cleanup**
-   - Remove invalid cross-references
-   - Build prerequisite mappings
-   - Create unlock chains
+   - 🟡 Remove invalid cross-references (scripts ready)
+   - 🟡 Build prerequisite mappings
+   - 🟡 Create unlock chains
 
 3. **Week 3: Network Building**
-   - Connect entry quests (0000)
-   - Build progression paths
-   - Add cross-level unlocks
+   - 🟡 Connect entry quests (0000)
+   - 🟡 Build progression paths
+   - ⏳ Add cross-level unlocks
 
 4. **Week 4: Content Development**
-   - Complete hello-n00b.md
-   - Write personal-site-forge.md
-   - Create terminal-awakening.md
+   - ✅ Complete hello-n00b.md
+   - ✅ Add hello-mac.md
+   - ✅ Add hello-cloud.md
+   - 🟡 Write personal-site-forge.md
+   - 🟡 Create terminal-awakening.md
 
 5. **Week 5: Final Documentation**
-   - Update all level READMEs
-   - Regenerate quest maps
-   - Final validation pass
+   - ✅ Update all level READMEs
+   - 🟡 Regenerate quest maps
+   - ⏳ Final validation pass
 
 ---
 
-**Plan Version**: 2.0.0  
+**Plan Version**: 2.1.0  
 **Created**: 2025-11-29  
-**Last Updated**: 2025-12-20  
+**Last Updated**: 2025-01-27  
 **Status**: Phase 6 In Progress  
 **Phase 6 Completion**: Estimated January 2026
+
+### Recent Updates (January 27, 2025)
+
+- ✅ Created automation scripts for Phase 6 tasks
+- ✅ Fixed difficulty text inconsistency in docs-in-a-row.md
+- 🟡 Placeholder dependency removal scripts ready for execution
+- 🟡 Quest network validation tools operational

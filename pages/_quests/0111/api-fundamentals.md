@@ -1,42 +1,19 @@
 ---
 title: 'API Fundamentals: Building Web Services and HTTP APIs'
-description: Master the fundamentals of API development including HTTP methods, request/response patterns, headers, and building scalable web services.
-date: 2025-11-30 05:08:50+00:00
+author: IT-Journey Team
+description: Master the fundamentals of API development including HTTP methods, request/response
+  patterns, headers, and building scalable web services.
+excerpt: Learn the core concepts of API development including HTTP, request patterns,
+  and web services
 preview: images/previews/api-fundamentals-building-web-services-descriptive.png
+date: 2025-11-30 05:08:50+00:00
+lastmod: 2025-11-30 05:08:50+00:00
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: api
 quest_type: main_quest
-skill_focus: backend
-learning_style: hands-on
 quest_series: API Design Mastery
-sub_title: 'Level 0111 (7) Quest: Main Quest - API'
-excerpt: Learn the core concepts of API development including HTTP, request patterns, and web services
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0111
-- api
-- main_quest
-- backend
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Backend
-- Hard
-keywords:
-  primary:
-  - api-development
-  - web-services
-  secondary:
-  - http-methods
-  - request-response
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:08:50+00:00
-permalink: /quests/level-0111-api-fundamentals/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +38,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- backend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +65,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0111-api-fundamentals/
+categories:
+- Quests
+- Backend
+- Hard
+tags:
+- lvl-0111
+- api
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0111
+- api
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0111 (7) Quest: Main Quest - API'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

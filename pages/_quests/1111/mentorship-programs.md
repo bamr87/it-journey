@@ -1,43 +1,18 @@
 ---
 title: 'Mentorship Programs: Developing and Growing Engineering Talent'
-description: Create effective mentorship programs for engineering teams. Learn mentoring techniques, career development guidance, knowledge transfer, and talent growth strategies.
-date: 2025-12-01 04:22:59+00:00
+author: IT-Journey Team
+description: Create effective mentorship programs for engineering teams. Learn mentoring
+  techniques, career development guidance, knowledge transfer, and talent growth strategies.
+excerpt: Build effective mentorship programs for growing engineering talent and teams
 preview: images/previews/mentorship-programs-descriptive-subtitle.png
+date: 2025-12-01 04:22:59+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
 primary_technology: general
 quest_type: main_quest
-skill_focus: leadership
-learning_style: hands-on
 quest_series: Leadership Mastery
-sub_title: 'Level 1111 (15) Quest: Main Quest - Mentorship'
-excerpt: Build effective mentorship programs for growing engineering talent and teams
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1111
-- mentorship
-- main_quest
-- leadership
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Leadership
-- Hard
-keywords:
-  primary:
-  - mentorship-programs
-  - talent-development
-  secondary:
-  - career-guidance
-  - knowledge-transfer
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1111-mentorship-programs/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -62,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- leadership
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1111-mentorship-programs/
+categories:
+- Quests
+- Leadership
+- Hard
+tags:
+- lvl-1111
+- mentorship
+- main_quest
+- leadership
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1111
+- mentorship
+- main_quest
+- leadership
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1111 (15) Quest: Main Quest - Mentorship'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

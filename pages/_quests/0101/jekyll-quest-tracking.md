@@ -1,77 +1,24 @@
 ---
 title: 'Jekyll Quest Tracking: Building Dynamic Collection Layouts'
-description: Master Jekyll's collection system by building a quest tracking interface with dynamic filtering, statistics, and level-aware displays using Liquid templating and frontmatter data
-date: 2025-12-01 08:00:00+00:00
+author: IT-Journey Team
+description: Master Jekyll's collection system by building a quest tracking interface
+  with dynamic filtering, statistics, and level-aware displays using Liquid templating
+  and frontmatter data
+excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections,
+  Liquid templating, and JavaScript filtering
+snippet: Learn to build interactive collection displays with filters, statistics,
+  and level-aware content using Jekyll's powerful templating system
 preview: images/previews/jekyll-quest-tracking-building-dynamic-collection-.png
+date: 2025-12-01 08:00:00+00:00
+lastmod: 2025-12-02 04:46:12.269000+00:00
 level: '0101'
 difficulty: 🔴 Hard
 estimated_time: 4-6 hours
 primary_technology: jekyll
 quest_type: side_quest
-skill_focus: frontend
-learning_style: hands-on
 quest_series: Static Site Mastery
-fmContentType: quest
-sub_title: 'Level 0101 (5) Quest: Side Quest - Jekyll Collections & Dynamic Layouts'
-excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections, Liquid templating, and JavaScript filtering
-snippet: Learn to build interactive collection displays with filters, statistics, and level-aware content using Jekyll's powerful templating system
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0101
-- jekyll
-- liquid
-- collections
-- frontmatter
-- javascript
-- side_quest
-- frontend
-- hands-on
-- gamified-learning
-- static-sites
-- python-automation
-categories:
-- Quests
-- Frontend
-- Hard
-keywords:
-  primary:
-  - jekyll
-  - liquid-templating
-  - collections
-  - frontmatter
-  secondary:
-  - static-site-generator
-  - javascript-filtering
-  - python-automation
-  - gamified-learning
-  - it-journey
-  - quest-based-learning
-lastmod: 2025-12-02 04:46:12.269000+00:00
-permalink: /quests/level-0101-jekyll-quest-tracking/
-attachments: ''
-comments: true
-draft: false
-mermaid: true
-toc: true
-toc_sticky: true
 quest_line: Static Site Mastery
 quest_arc: Dynamic Content Systems
-prerequisites:
-  knowledge_requirements:
-  - Basic Jekyll site structure and configuration
-  - Understanding of YAML frontmatter format
-  - Familiarity with HTML and CSS
-  - Basic JavaScript for DOM manipulation
-  system_requirements:
-  - Jekyll development environment (Docker recommended)
-  - Text editor with YAML/Liquid support
-  - Python 3.x for automation scripts
-  - Git for version control
-  skill_level_indicators:
-  - Comfortable with Jekyll's Liquid templating basics
-  - Can read and modify YAML configuration files
-  - Ready for 4-6 hours of focused learning
 quest_dependencies:
   required_quests: []
   recommended_quests: []
@@ -93,21 +40,24 @@ learning_paths:
   - Jekyll & Static Sites
   - Templating Systems
   - Frontend Automation
-rewards:
-  badges:
-  - 🏆 Collection Architect
-  - ⚡ Liquid Wizard
-  - 🛠️ Template Forger
-  skills_unlocked:
-  - 🛠️ Jekyll Collections Mastery
-  - 🎯 Liquid Templating Proficiency
-  - 🔧 Python Automation Integration
-  - 📊 Data-Driven UI Development
-  progression_points: 350
-  unlocks_features:
-  - Custom collection layouts
-  - Dynamic filtering systems
-  - Automated frontmatter management
+skill_focus:
+- frontend
+learning_style: hands-on
+prerequisites:
+  knowledge_requirements:
+  - Basic Jekyll site structure and configuration
+  - Understanding of YAML frontmatter format
+  - Familiarity with HTML and CSS
+  - Basic JavaScript for DOM manipulation
+  system_requirements:
+  - Jekyll development environment (Docker recommended)
+  - Text editor with YAML/Liquid support
+  - Python 3.x for automation scripts
+  - Git for version control
+  skill_level_indicators:
+  - Comfortable with Jekyll's Liquid templating basics
+  - Can read and modify YAML configuration files
+  - Ready for 4-6 hours of focused learning
 validation_criteria:
   completion_requirements:
   - Create a quest-collection.html layout that displays quests by tier
@@ -129,8 +79,62 @@ quest_mapping:
   region: Adventurer
   realm: Development
   biome: Web
+layout: journals
+permalink: /quests/level-0101-jekyll-quest-tracking/
+categories:
+- Quests
+- Frontend
+- Hard
+tags:
+- lvl-0101
+- jekyll
+- liquid
+- collections
+- frontmatter
+- javascript
+- side_quest
+- frontend
+- hands-on
+- gamified-learning
+- static-sites
+- python-automation
+keywords:
+- lvl-0101
+- jekyll
+- liquid
+- collections
+- frontmatter
+- javascript
+- side_quest
+- frontend
+- hands-on
+- gamified-learning
+- static-sites
+- python-automation
+fmContentType: quest
+draft: false
+toc: true
+toc_sticky: true
+comments: true
+attachments: ''
+sub_title: 'Level 0101 (5) Quest: Side Quest - Jekyll Collections & Dynamic Layouts'
+mermaid: true
+rewards:
+  badges:
+  - 🏆 Collection Architect
+  - ⚡ Liquid Wizard
+  - 🛠️ Template Forger
+  skills_unlocked:
+  - 🛠️ Jekyll Collections Mastery
+  - 🎯 Liquid Templating Proficiency
+  - 🔧 Python Automation Integration
+  - 📊 Data-Driven UI Development
+  progression_points: 350
+  unlocks_features:
+  - Custom collection layouts
+  - Dynamic filtering systems
+  - Automated frontmatter management
 ---
-
 *Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging powerful layouts that respond to frontmatter incantations and user interactions alike.*
 
 *The knowledge you gain here will allow you to build quest tracking systems, portfolio galleries, documentation hubs, and any content collection that demands organization and discovery. Whether you seek to catalog your own adventures or create portals for fellow travelers, this quest will arm you with the spells needed to succeed.*

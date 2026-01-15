@@ -1,6 +1,7 @@
 ---
 title: '🗺️ World Map: Navigation Guide to the IT-Journey Realm'
-description: Your comprehensive guide to navigating the IT-Journey platform - quests, documentation, tutorials, and learning paths.
+description: Your comprehensive guide to navigating the IT-Journey platform - quests,
+  documentation, tutorials, and learning paths.
 preview: images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
 date: 2024-05-28 04:25:04.447000+00:00
 lastmod: 2025-07-23 03:53:06.678000+00:00
@@ -22,8 +23,21 @@ level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
+keywords:
+- navigation
+- site-map
+- world-map
+- it-journey
+- learning-paths
+author: IT-Journey Team
+quest_series: Codex Reference
+primary_technology: reference
+skill_focus:
+- codex
+- reference
+learning_style: reading
+fmContentType: codex
 ---
-
 *Welcome, brave traveler, to the complete cartographical guide of the IT-Journey realm! This mystical map reveals every secret path, hidden treasure, and learning adventure across our digital kingdom.*
 
 ## 🌟 Realm Overview: The Four Sacred Domains
@@ -66,15 +80,15 @@ graph TD
 | Territory | Path | Description |
 |-----------|------|-------------|
 | **🔧 Master Setup** | `/quickstart/machine-setup/` | Essential development environment configuration |
-| **🛠️ Zer0-Mistakes Foundation** | `/zer0/` | Core setup and fundamental tools |
-| **⚡ Essential Tools Arsenal** | `/quickstart/tools/` | Critical software and utilities |
+| **🛠️ Zer0-Mistakes Foundation** | `/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/` | Core setup and fundamental tools |
+| **⚡ Essential Tools Arsenal** | `/quickstart/` | Critical software and utilities |
 | **👣 First Steps Ceremony** | `/quickstart/first-steps/` | Gentle introductions for newcomers |
 
 ### 🎯 Quick Navigation Links
 
 - [Machine Setup Guide](/quickstart/machine-setup/) - Configure your development fortress
-- [Essential Tools](/quickstart/tools/) - Arm yourself with the right weapons
-- [Zer0-Mistakes Starter](/zer0/) - Foundation principles and practices
+- [Essential Tools](/quickstart/) - Arm yourself with the right weapons
+- [Zer0-Mistakes Starter](/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/) - Foundation principles and practices
 
 ## ⚔️ Journey Domain - The Epic Quest Realm
 
@@ -100,10 +114,10 @@ Battle-tested wisdom and real-world experiences from fellow code warriors who've
 
 #### 📅 Recent Chronicles (2024-2025)
 
-- [AI-Powered Development Workflows](/posts/2025-07-05-advanced-version-management-ai-implementation/) - Advanced automation techniques
-- [GitHub Actions Mastery](/posts/2025-07-05-debugging-github-actions-workflows-ai-assisted/) - CI/CD optimization
-- [Docker for IT-Journey](/posts/2024-04-02-dockering-your-it-journey/) - Containerization strategies
-- [Jekyll Theming & Bootstrap](/posts/2024-05-09-bootstrap-your-theme-and-character/) - Site customization
+- [AI-Powered Development Workflows](/advanced-version-management-ai-implementation/) - Advanced automation techniques
+- [GitHub Actions Mastery](/debugging-github-actions-workflows-ai-assisted/) - CI/CD optimization
+- [Docker for IT-Journey](/posts/dockering-your-it-journey/) - Containerization strategies
+- Jekyll Theming & Bootstrap (planned) - Site customization
 
 ### ⚔️ Quests Territory (`/quests/`)
 
@@ -142,26 +156,26 @@ graph TD
 
 | Quest | Difficulty | Description |
 |-------|------------|-------------|
-| [Begin Your IT Journey](/quests/init_world/2023-11-23-begin-your-it-journey/) | 🌱 n00b | The Hero's Call |
-| [Character Building](/quests/init_world/2023-11-23-character-building/) | 🌱 n00b | Forge Your Identity |
-| [IT Fundamentals](/quests/init_world/2023-11-23-it-fundamentals/) | 🌱 n00b | Learn the Ancient Arts |
-| [Character Selection](/quests/init_world/2023-11-24-character-selection/) | 🟢 Easy | Choose Your Destiny |
-| [OS Selection](/quests/init_world/2023-11-24-os-selection/) | 🟢 Easy | Pick Your Realm |
+| [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🌱 n00b | The Hero's Call |
+| [Character Building](/quests/character-building/) | 🌱 n00b | Forge Your Identity |
+| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🌱 n00b | Learn the Ancient Arts |
+| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | Choose Your Destiny |
+| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | Pick Your Realm |
 
 **Platform-Specific Quests:**
 
 - [Hello n00b](/quests/init_world/hello-noob/) - Your first steps into the digital realm
-- [Hello Windows](/quests/init_world/hello-win/) - Mastering the Microsoft Kingdom
-- [Hello macOS](/quests/init_world/hello-mac/) - Conquering the Apple Empire
-- [Hello Linux](/quests/init_world/hello-linux/) - Taming the Penguin's Domain
-- [Hello Cloud](/quests/init_world/hello-cloud/) - Ascending to the Digital Heavens
+- [Hello Windows](/quests/hello-windows/) - Mastering the Microsoft Kingdom
+- [Hello macOS](/quests/hello-macos/) - Conquering the Apple Empire
+- [Hello Linux](/quests/hello-linux/linux-fundamentals/) - Taming the Penguin's Domain
+- [Hello Cloud](/quests/hello-cloud/) - Ascending to the Digital Heavens
 
 #### ⚡ Level Progression System
 
 **Level 000 - Apprentice Trials** (`/quests/lvl_000/`)  
 Basic scripting and automation magic
 
-- [Bash Fundamentals](/quests/lvl_000/2024-05-28-bash-run/) - Learn the Terminal Incantations
+- [Bash Fundamentals](/quests/lvl_000/bash-run/) - Learn the Terminal Incantations
 - `bash_crawl.sh` - Your First Automation Spell
 - `calculator.sh` - Mathematical Magic Basics
 - `profile.sh` - Customize Your Digital Presence
@@ -169,7 +183,7 @@ Basic scripting and automation magic
 **Level 001 - Journeyman Challenges** (`/quests/lvl_001/`)  
 Web technologies and advanced scripting
 
-- [Personal Site Creation](/quests/lvl_001/personal-site/) - Build Your Digital Castle
+- [Personal Site Creation](/quests/level-0001/personal-site/) - Build Your Digital Castle
 - `js-examples.js` - JavaScript Spell Components
 - `js_testing.js` - Test Your Magical Constructs
 - `python.py` - Pythonic Sorcery Basics
@@ -177,18 +191,18 @@ Web technologies and advanced scripting
 **Level 010 - Master Tier Quests** (`/quests/lvl_0010/`)  
 Complex application development
 
-- [Bookstore Application](/quests/lvl_0010/bookstore/) - Craft a Complete Magical Marketplace
+- Bookstore Application (planned) - Craft a Complete Magical Marketplace
 
 #### 🎨 Frontend Mastery Path (`/quests/frontend/`)
 
 Become a master of user interfaces and digital aesthetics
 
-- [Frontend Fundamentals](/quests/frontend/frontend/) - The Art of Digital Presentation
-- [Frontend Docker Adventures](/quests/frontend/frontend-docker/) - Containerized UI Magic
-- [Frontend Level Progression](/quests/frontend/frontend-levels/) - Structured Learning Path
-- [Level 000 Frontend](/quests/frontend/lvl-000-frontend-docker/) - Beginner Container Magic
-- [Level 001 Frontend](/quests/frontend/lvl-001-frontend-docker/) - Intermediate UI Sorcery
-- [Level 010 Frontend](/quests/frontend/lvl-010-frontend-docker/) - Advanced Interface Wizardry
+- [Frontend Fundamentals](/quests/frontend/) - The Art of Digital Presentation
+- [Frontend Docker Adventures](/quests/frontend-docker/) - Containerized UI Magic
+- [Frontend Level Progression](/quests/level-0100-frontend-levels/) - Structured Learning Path
+- [Level 000 Frontend](/quests/level-0100/frontend-docker-level-000/) - Beginner Container Magic
+- [Level 001 Frontend](/quests/level-0100/frontend-docker-level-001/) - Intermediate UI Sorcery
+- [Level 010 Frontend](/quests/level-0100/frontend-docker-level-010/) - Advanced Interface Wizardry
 
 #### 📚 Quest Codex (`/quests/codex/`)
 
@@ -199,13 +213,13 @@ Reference materials and navigation aids
 
 #### 🕰️ Recent Quest Chronicles (2025)
 
-- [Django & Git Mastery](/quests/2025-03-08-django-and-git/) - Web Framework Sorcery
-- [Action Triggers](/quests/2025-04-18-action-triggers/) - Automation Spell Casting
-- [Branches & Pull Requests](/quests/2025-04-18-branches-and-pull-requests/) - Version Control Mastery
-- [Change Log Chronicles](/quests/2025-04-18-change-logs/) - Document Your Journey
-- [Clean Commit Commitments](/quests/2025-04-18-commitments-to-clean-commits/) - Perfect Your Git Ritual
-- [AI Automation Revolution](/quests/2025-04-18-revolutionizing-work-with-ai-automation/) - Summon AI Familiars
-- [Sourcery Code Methods](/quests/2025-04-18-sourcery-code-methods/) - Advanced Coding Incantations
+- [Django & Git Mastery](/quests/level-0010-django-and-git/) - Web Framework Sorcery
+- [Action Triggers](/quests/level-0010-action-triggers/) - Automation Spell Casting
+- [Branches & Pull Requests](/quests/level-0010-branches-and-pull-requests/) - Version Control Mastery
+- [Change Log Chronicles](/quests/level-0010-change-logs/) - Document Your Journey
+- [Clean Commit Commitments](/quests/level-0010-commitments-to-clean-commits/) - Perfect Your Git Ritual
+- [AI Automation Revolution](/quests/level-0010-revolutionizing-work-with-ai-automation/) - Summon AI Familiars
+- [Sourcery Code Methods](/quests/level-0100-source-control-sorcery/) - Advanced Coding Incantations
 
 ## 📚 Library Domain - The Sacred Repository of Knowledge
 
@@ -333,8 +347,8 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 1. **Start Here:** [Hello n00b Quest](/quests/init_world/hello-noob/)
 2. **Setup Environment:** [Machine Setup Guide](/quickstart/machine-setup/)
-3. **Choose Platform:** [OS Selection Quest](/quests/init_world/2023-11-24-os-selection/)
-4. **Begin Journey:** [Character Creation](/quests/init_world/2023-11-23-character-building/)
+3. **Choose Platform:** [OS Selection Quest](/quests/lvl_000/os-selection/)
+4. **Begin Journey:** [Character Creation](/quests/character-building/)
 
 ### ⚡ For Experienced Developers
 
@@ -346,8 +360,8 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 ### 🔧 For System Administrators
 
 1. **Platform Setup:** [Configuration Guide](/about/config/)
-2. **Docker Environment:** [Container Setup](/posts/2024-04-02-dockering-your-it-journey/)
-3. **CI/CD Integration:** [GitHub Actions](/posts/2025-07-05-debugging-github-actions-workflows-ai-assisted/)
+2. **Docker Environment:** [Container Setup](/posts/dockering-your-it-journey/)
+3. **CI/CD Integration:** [GitHub Actions](/debugging-github-actions-workflows-ai-assisted/)
 4. **Monitoring:** [Site Analytics](/about/features/)
 
 ## 🌟 Hidden Treasures & Advanced Features

@@ -1,42 +1,19 @@
 ---
 title: 'Git Basics: Version Control Introduction'
-description: Learn Git fundamentals including repositories, commits, branches, and basic workflow for tracking code changes and collaborating with developers.
-date: 2025-11-30 04:57:55+00:00
+author: IT-Journey Team
+description: Learn Git fundamentals including repositories, commits, branches, and
+  basic workflow for tracking code changes and collaborating with developers.
+excerpt: Master Git fundamentals to track changes, manage versions, and collaborate
+  effectively with teams.
 preview: images/previews/git-basics-version-control-introduction-descriptiv.png
+date: 2025-11-30 04:57:55+00:00
+lastmod: 2025-12-20 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
 primary_technology: git
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Version Control Mastery
-sub_title: 'Level 0000 (0) Quest: Main Quest - Git'
-excerpt: Master Git fundamentals to track changes, manage versions, and collaborate effectively with teams.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0000
-- git
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Beginner
-keywords:
-  primary:
-  - git basics
-  - version control
-  secondary:
-  - repository management
-  - code collaboration
-  - gamified-learning
-  - it-journey
-lastmod: 2025-12-20 00:00:00+00:00
-permalink: /quests/level-0000-git-basics/
 quest_line: Init World
 quest_arc: Version Control Arc
 quest_dependencies:
@@ -46,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0000-side-quest-1/
-  - /quests/level-0000-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0000-alternative-path/
   sequel_quests:
@@ -62,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0000-git-basics/
+categories:
+- Quests
+- DevOps
+- Beginner
+tags:
+- lvl-0000
+- git
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0000
+- git
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0000 (0) Quest: Main Quest - Git'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

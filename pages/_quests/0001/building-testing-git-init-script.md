@@ -1,29 +1,42 @@
 ---
-title: "Building & Testing the Git Init Script: Headless, Interactive, Scaffolding"
-description: "Hands-on quest to build, extend, and test `git_init.sh` — an interactive and headless repo initializer with programmatic scaffolding." 
+title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
+author: IT-Journey Team
+description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive
+  and headless repo initializer with programmatic scaffolding.
+excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable
+  in both interactive and headless modes.
 preview: images/previews/building-testing-the-git-init-script-headless-inte.png
-date: 2025-11-13T10:00:00.000Z
-tags:
-  - shell-scripting
-  - testing
-  - automation
-  - bash
-categories:
-  - Quests
-  - Development
-sub-title: "Level 0001 (1) Quest: Shell Script Unit & Integration Testing"
-excerpt: "Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable in both interactive and headless modes."
-author: "IT-Journey Team"
-layout: journals
-lastmod: 2025-11-13T10:30:00.000Z
-permalink: /quests/level-0001-git-init-testing/
-comments: true
-difficulty: "🟢 Easy"
-estimated_time: "45-75 minutes"
+date: 2025-11-13 10:00:00+00:00
+lastmod: 2025-11-13 10:30:00+00:00
+level: '0001'
+difficulty: 🟢 Easy
+estimated_time: 45-75 minutes
+primary_technology: shell-scripting
 quest_type: main_quest
-level: "0001"
+quest_series: Level 0001 Quest Line
+skill_focus:
+- Quests
+- Development
+learning_style: hands-on
+layout: journals
+permalink: /quests/level-0001-git-init-testing/
+categories:
+- Quests
+- Development
+tags:
+- shell-scripting
+- testing
+- automation
+- bash
+keywords:
+- shell-scripting
+- testing
+- automation
+- bash
+fmContentType: quest
+comments: true
+sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
 ---
-
 ## The Challenge: Safe automation without surprises
 
 You have a powerful repository initializer — `scripts/git_init.sh` — that supports interactive prompts and programmatic `--headless` invocations. This quest will guide you through validating the script's behavior, adding tests, and ensuring it behaves well in CI.

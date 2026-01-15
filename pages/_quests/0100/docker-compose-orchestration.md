@@ -1,45 +1,20 @@
 ---
 title: 'Docker Compose Orchestration: Build Multi-Container Applications'
-description: Master Docker Compose for orchestrating multi-container applications. Learn YAML configuration, service networking, volume management, and environment variables for development and production stacks.
-date: 2025-11-30 05:04:44+00:00
+author: IT-Journey Team
+description: Master Docker Compose for orchestrating multi-container applications.
+  Learn YAML configuration, service networking, volume management, and environment
+  variables for development and production stacks.
+excerpt: Build and orchestrate multi-container applications with Docker Compose YAML
+  configuration and networking
 preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
+date: 2025-11-30 05:04:44+00:00
+lastmod: 2025-11-30 05:04:44+00:00
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: docker-compose
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Docker Mastery
-sub_title: 'Level 0100 (4) Quest: Main Quest - Docker Compose'
-excerpt: Build and orchestrate multi-container applications with Docker Compose YAML configuration and networking
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0100
-- docker-compose
-- docker
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Medium
-keywords:
-  primary:
-  - docker compose
-  - multi-container apps
-  - container orchestration
-  secondary:
-  - docker networking
-  - docker volumes
-  - compose yaml
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:04:44+00:00
-permalink: /quests/level-0100-docker-compose-orchestration/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -64,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +66,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0100-docker-compose-orchestration/
+categories:
+- Quests
+- DevOps
+- Medium
+tags:
+- lvl-0100
+- docker-compose
+- docker
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0100
+- docker-compose
+- docker
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0100 (4) Quest: Main Quest - Docker Compose'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

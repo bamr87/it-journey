@@ -1,66 +1,64 @@
 ---
-title: "Hello Windows: Mastering the Windows Development Environment"
-description: "Set up a complete Windows development environment with WSL, PowerShell mastery, and essential development tools for the modern Windows developer"
+title: 'Hello Windows: Mastering the Windows Development Environment'
+description: Set up a complete Windows development environment with WSL, PowerShell
+  mastery, and essential development tools for the modern Windows developer
 preview: images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
 layout: journals
 permalink: /quests/hello-windows/
-keywords:
-    primary:
-        - windows development
-        - powershell
-        - wsl setup
-    secondary:
-        - windows subsystem linux
-        - development tools
-        - winget
-        - package management
-date: 2023-12-03T00:00:00.000Z
-level: "0000"
+keywords: &id001
+- windows
+- powershell
+- wsl
+- development-setup
+- package-management
+- init-world
+- lvl-001
+date: 2023-12-03 00:00:00+00:00
+level: '0000'
 quest_type: main_quest
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 categories:
-    - Quests
-    - Init-World
-    - Windows
-    - Development-Environment
-tags:
-    - windows
-    - powershell
-    - wsl
-    - development-setup
-    - package-management
-    - init-world
-    - lvl-001
-difficulty: 🟡 Medium
-estimated_time: 90-120 minutes
+- Quests
+- Init-World
+- Windows
+- Development-Environment
+tags: *id001
 prerequisites:
-    - Windows 10 version 2004 or higher (or Windows 11)
-    - Administrator access to your Windows machine
-    - Basic familiarity with command line concepts
-    - Stable internet connection for downloads
+- Windows 10 version 2004 or higher (or Windows 11)
+- Administrator access to your Windows machine
+- Basic familiarity with command line concepts
+- Stable internet connection for downloads
 rewards:
-    - 🏆 Windows Power User Badge
-    - ⚡ Dual-Environment Mastery (Windows + Linux)
-    - 🛠️ Advanced Development Toolkit
-    - 🎯 Professional Windows Setup
-quest_series: "Init World - Platform Mastery"
+- 🏆 Windows Power User Badge
+- ⚡ Dual-Environment Mastery (Windows + Linux)
+- 🛠️ Advanced Development Toolkit
+- 🎯 Professional Windows Setup
+quest_series: Init World - Platform Mastery
 related_quests:
-    - "hello-noob.md - Beginner's First Steps"
-    - "2023-11-24-os-selection.md - Operating System Selection Guide"
-    - "../tools/tools.md - Essential Development Tools"
+- hello-noob.md - Beginner's First Steps
+- 2023-11-24-os-selection.md - Operating System Selection Guide
+- ../../tools/README.md - Essential Development Tools
 validation_criteria:
-    - "Successfully enable and configure WSL2"
-    - "Install and configure essential development tools"
-    - "Demonstrate PowerShell automation capabilities"
-    - "Set up complete Windows development workflow"
-sub-title: "Level 001 Quest: Windows Development Environment Mastery"
-excerpt: "Transform your Windows machine into a powerful development environment with WSL, modern PowerShell, and professional-grade tools"
-snippet: "Windows + Linux + Developer Tools = Ultimate Development Power"
-lastmod: 2023-12-03T08:47:22.762Z
+- Successfully enable and configure WSL2
+- Install and configure essential development tools
+- Demonstrate PowerShell automation capabilities
+- Set up complete Windows development workflow
+sub-title: 'Level 001 Quest: Windows Development Environment Mastery'
+excerpt: Transform your Windows machine into a powerful development environment with
+  WSL, modern PowerShell, and professional-grade tools
+snippet: Windows + Linux + Developer Tools = Ultimate Development Power
+lastmod: 2023-12-03 08:47:22.762000+00:00
+primary_technology: windows
+skill_focus:
+- Quests
+- Init-World
+- Windows
+- Development-Environment
+learning_style: hands-on
+fmContentType: quest
 ---
-
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 
 *By quest's end, you'll wield the combined might of Windows and Linux, master PowerShell automation, and command a toolkit that professional developers rely on daily.*
@@ -407,12 +405,12 @@ Set up important environment variables:
 
 **Prerequisite Quests**:
 - [Hello n00b](../hello-noob.md) - GitHub and community basics
-- [OS Selection](../2023-11-24-os-selection.md) - Platform decision making
+- [OS Selection](../os-selection.md) - Platform decision making
 
 **Follow-Up Quests**:
-- [VS Code Mastery Quest](../2025-07-21-vscode-mastery-quest.md) - IDE optimization
-- [Bash Scripting Adventures](../../lvl_000/2024-05-28-bash-run.md) - Linux automation
-- [Development Tools Mastery](../tools/tools.md) - Advanced tooling
+- [VS Code Mastery Quest](../vscode-mastery.md) - IDE optimization
+- [Bash Scripting Adventures](../bash-run.md) - Linux automation
+- [Development Tools Mastery](../../tools/README.md) - Advanced tooling
 
 **Parallel Quests** (can be completed in any order):
 - Platform-specific setup quests for macOS and Linux

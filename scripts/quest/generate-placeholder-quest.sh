@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # generate-placeholder-quest.sh
 # Generate a placeholder quest file with proper structure and frontmatter
-# Usage: ./scripts/generate-placeholder-quest.sh <level> <quest-slug> "<quest-title>"
+# Usage: ./scripts/quest/generate-placeholder-quest.sh <level> <quest-slug> "<quest-title>"
 
 set -euo pipefail
 
@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 QUEST_DIR="${PROJECT_ROOT}/pages/_quests"
 TEMPLATE_DIR="${QUEST_DIR}/templates"
 TEMPLATE_FILE="${TEMPLATE_DIR}/main-quest-template.md"
@@ -245,7 +245,7 @@ print_info "2. Update level README: ${LEVEL_README}"
 print_info "3. Update main quest index: ${QUEST_DIR}/README.md"
 print_info "4. Update overworld map: ${QUEST_DIR}/home.md"
 print_info "5. Set draft: false when quest is ready"
-print_info "6. Run validation: ./scripts/validate-quest-network.py"
+print_info "6. Run validation: ./scripts/quest/validate-quest-network.py"
 
 # Git integration (optional)
 read -p "Create git commit? (y/N): " -n 1 -r

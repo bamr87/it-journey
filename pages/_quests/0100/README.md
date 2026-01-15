@@ -25,6 +25,19 @@ Level 0100 quests focus on:
 
 ## Available Quests
 
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [Dockering Jekyll with Bootstrap 5](/quests/frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Forests: Building a Jekyll Site with Bootstrap](/quests/frontend/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Docker Container Fundamentals: Master Isolation & Portability for DevOps](/quests/level-0100-container-fundamentals/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Docker Compose Orchestration: Build Multi-Container Applications](/quests/level-0100-docker-compose-orchestration/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Forests Levels](/quests/level-0100-frontend-levels/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/level-0100-lvl-001-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/level-0100-lvl-010-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Quest: Mastering the Ancient Arts of Source Control Sorcery](/quests/level-0100-source-control-sorcery/) | 🟡 Medium | 120-180 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Docker - level 000](/quests/level-0100/lvl-000-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+
+
 ### 🐳 Docker & Containers
 
 #### [Frontend Docker Quest](frontend-docker.md)
@@ -42,7 +55,7 @@ Master Docker for frontend development. Create containerized development environ
 
 ---
 
-#### [Frontend Docker - Level 000](lvl-000-frontend-docker.md)
+#### [Frontend Docker - Level 000](frontend-docker-level-000.md)
 **Quest Type**: Side ⚔️ | **Difficulty**: 🟢 Easy | **Estimated Time**: 30-45 minutes
 
 Begin your Docker journey with the absolute basics. Install Docker and run your first containers.
@@ -57,7 +70,7 @@ Begin your Docker journey with the absolute basics. Install Docker and run your 
 
 ---
 
-#### [Frontend Docker - Level 001](lvl-001-frontend-docker.md)
+#### [Frontend Docker - Level 001](frontend-docker-level-001.md)
 **Quest Type**: Side ⚔️ | **Difficulty**: 🟡 Medium | **Estimated Time**: 45-60 minutes
 
 Build on your Docker basics with custom images and Dockerfiles for frontend projects.
@@ -68,11 +81,11 @@ Build on your Docker basics with custom images and Dockerfiles for frontend proj
 - Layer caching strategies
 - Multi-stage builds
 
-**Prerequisites:** [Frontend Docker - Level 000](lvl-000-frontend-docker.md)
+**Prerequisites:** [Frontend Docker - Level 000](frontend-docker-level-000.md)
 
 ---
 
-#### [Frontend Docker - Level 010](lvl-010-frontend-docker.md)
+#### [Frontend Docker - Level 010](frontend-docker-level-010.md)
 **Quest Type**: Side ⚔️ | **Difficulty**: 🔴 Hard | **Estimated Time**: 60-90 minutes
 
 Advanced Docker patterns for frontend development including networking, volumes, and production deployment.
@@ -83,7 +96,7 @@ Advanced Docker patterns for frontend development including networking, volumes,
 - Production optimization techniques
 - Container orchestration basics
 
-**Prerequisites:** [Frontend Docker - Level 001](lvl-001-frontend-docker.md)
+**Prerequisites:** [Frontend Docker - Level 001](frontend-docker-level-001.md)
 
 ### 🌐 Frontend Development
 
@@ -133,9 +146,9 @@ Learn automated code analysis and improvement with Sourcery. Write cleaner, more
 ## Learning Path Recommendations
 
 ### For Docker Newcomers
-1. [Frontend Docker - Level 000](lvl-000-frontend-docker.md) - Install and basics
-2. [Frontend Docker - Level 001](lvl-001-frontend-docker.md) - Building images
-3. [Frontend Docker - Level 010](lvl-010-frontend-docker.md) - Advanced patterns
+1. [Frontend Docker - Level 000](frontend-docker-level-000.md) - Install and basics
+2. [Frontend Docker - Level 001](frontend-docker-level-001.md) - Building images
+3. [Frontend Docker - Level 010](frontend-docker-level-010.md) - Advanced patterns
 4. [Frontend Docker Quest](frontend-docker.md) - Full integration
 
 ### For Frontend Developers
@@ -144,7 +157,7 @@ Learn automated code analysis and improvement with Sourcery. Write cleaner, more
 3. [Sourcery Code Methods](sourcery-code-methods.md) - Code quality
 
 ### For DevOps Learners
-1. [Frontend Docker - Level 000](lvl-000-frontend-docker.md) through Level 010
+1. [Frontend Docker - Level 000](frontend-docker-level-000.md) through Level 010
 2. [Frontend Docker Quest](frontend-docker.md)
 3. Progress to Level 0101 for advanced Docker
 

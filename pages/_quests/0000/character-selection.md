@@ -1,27 +1,38 @@
 ---
 title: Character Selection
-description: Choose your character class and begin your specialized IT journey
-preview: images/previews/character-selection.png
 author: IT-Journey Team
-excerpt: Select from six unique character classes, each with distinct skills and career paths
-date: 2023-11-24T18:53:11.166Z
-lastmod: 2025-11-29T21:40:00.000Z
-draft: true
-permalink: /quests/lvl_000/character-selection/
-level: "0000"
+description: Choose your character class and begin your specialized IT journey
+excerpt: Select from six unique character classes, each with distinct skills and career
+  paths
+snippet: null
+preview: images/previews/character-selection.png
+date: 2023-11-24 18:53:11.166000+00:00
+lastmod: 2025-11-29 21:40:00+00:00
+level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
+primary_technology: character-selection
 quest_type: main_quest
-tags:
-  - character-selection
-  - career-paths
-  - lvl-0000
-categories:
-  - Quests
-  - Init-World
+quest_series: Level 0000 Quest Line
+skill_focus:
+- character-selection
+- career-paths
+- lvl-0000
+learning_style: hands-on
+layout: journals
+permalink: /quests/lvl_000/character-selection/
 categories: []
+tags:
+- character-selection
+- career-paths
+- lvl-0000
+keywords:
+- character-selection
+- career-paths
+- lvl-0000
+fmContentType: quest
+draft: true
 meta: null
-snippet: null
 slug: character-selection
 ---
 In the grand adventure of IT and technology, you can choose from a variety of "characters" or roles, each with its unique skills and abilities. Think of these roles as the different classes in a role-playing game, like wizards, warriors, or archers, but in the tech world. Let's explore some of these exciting roles:

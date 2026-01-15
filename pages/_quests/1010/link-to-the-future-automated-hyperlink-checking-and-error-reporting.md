@@ -1,66 +1,70 @@
 ---
-title: "Link to the Future: Automated Hyperlink Guardian Quest"
-description: Master the computational arts of automated link testing and AI-powered analysis to protect your digital realm from broken hyperlink corruption
-date: 2025-01-27T04:06:49.176Z
-preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
-tags:
-  - lvl-1010
-  - github-actions
-  - automated-testing
-  - ai-analysis
-  - devops-automation
-  - link-validation
-categories:
-  - Quests
-  - DevOps-Automation
-  - Quality-Assurance
-sub-title: "Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration"
-excerpt: Build an intelligent hyperlink guardian that automatically tests, analyzes, and reports on the health of your digital realm's connections
-snippet: Even the most magnificent digital fortress is only as strong as its weakest link
+title: 'Link to the Future: Automated Hyperlink Guardian Quest'
 author: Quest Master DevOps
-layout: journals
-keywords:
-  primary:
-    - github-actions
-    - automated-testing
-    - ai-integration
-    - link-validation
-  secondary:
-    - jekyll-sites
-    - ci-cd-pipeline
-    - issue-automation
-    - site-monitoring
-    - quality-assurance
-lastmod: 2025-08-16T04:06:22.859Z
-permalink: /quests/level-1010-automated-hyperlink-guardian/
-attachments: ""
-comments: true
+description: Master the computational arts of automated link testing and AI-powered
+  analysis to protect your digital realm from broken hyperlink corruption
+excerpt: Build an intelligent hyperlink guardian that automatically tests, analyzes,
+  and reports on the health of your digital realm's connections
+snippet: Even the most magnificent digital fortress is only as strong as its weakest
+  link
+preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
+date: 2025-01-27 04:06:49.176000+00:00
+lastmod: 2025-08-16 04:06:22.859000+00:00
+level: '1010'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-prerequisites:
-  - "Level 0100 (4): Git and GitHub fundamentals"
-  - "Level 0101 (5): Basic GitHub Actions workflow experience"
-  - "Level 1001 (9): Understanding of Jekyll site structure"
-  - Familiarity with YAML configuration files
-rewards:
-  - 🏆 Hyperlink Guardian Badge - Master of Automated Link Protection
-  - ⚡ CI/CD Automation Mastery - Advanced pipeline orchestration skills
-  - 🛠️ AI Integration Proficiency - Intelligent analysis and reporting capabilities
-  - 🎯 Site Quality Assurance Excellence - Proactive issue detection and resolution
-quest_series: DevOps Automation Mastery Path
-related_quests:
-  - "Level 1001 (9): Jekyll Site Deployment Automation"
-  - "Level 1011 (11): Advanced GitHub Actions Patterns"
-  - "Level 1100 (12): AI-Powered Code Review Systems"
-validation_criteria:
-  - Functional GitHub Actions workflow that runs daily link checks
-  - Working link testing script with comprehensive coverage
-  - AI analysis component that provides meaningful insights
-  - Automated issue creation with detailed reports and recommendations
-level: "1010"
+primary_technology: lvl-1010
 quest_type: main_quest
+quest_series: DevOps Automation Mastery Path
+skill_focus:
+- Quests
+- DevOps-Automation
+- Quality-Assurance
+learning_style: hands-on
+prerequisites:
+- 'Level 0100 (4): Git and GitHub fundamentals'
+- 'Level 0101 (5): Basic GitHub Actions workflow experience'
+- 'Level 1001 (9): Understanding of Jekyll site structure'
+- Familiarity with YAML configuration files
+validation_criteria:
+- Functional GitHub Actions workflow that runs daily link checks
+- Working link testing script with comprehensive coverage
+- AI analysis component that provides meaningful insights
+- Automated issue creation with detailed reports and recommendations
+layout: journals
+permalink: /quests/level-1010-automated-hyperlink-guardian/
+categories:
+- Quests
+- DevOps-Automation
+- Quality-Assurance
+tags:
+- lvl-1010
+- github-actions
+- automated-testing
+- ai-analysis
+- devops-automation
+- link-validation
+keywords:
+- lvl-1010
+- github-actions
+- automated-testing
+- ai-analysis
+- devops-automation
+- link-validation
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration'
+rewards:
+- 🏆 Hyperlink Guardian Badge - Master of Automated Link Protection
+- ⚡ CI/CD Automation Mastery - Advanced pipeline orchestration skills
+- 🛠️ AI Integration Proficiency - Intelligent analysis and reporting capabilities
+- 🎯 Site Quality Assurance Excellence - Proactive issue detection and resolution
+related_quests:
+- 'Level 1001 (9): Jekyll Site Deployment Automation'
+- 'Level 1011 (11): Advanced GitHub Actions Patterns'
+- 'Level 1100 (12): AI-Powered Code Review Systems'
 ---
-
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 
 *The ancient DevOps masters speak of a legendary guardian system: an intelligent sentinel that tirelessly patrols every corner of your digital domain, testing each hyperlink's integrity and summoning AI-powered analysis to root out the causes of corruption. This automated guardian not only detects the broken pathways but uses artificial intelligence to understand why they failed and how to prevent future breaks.*

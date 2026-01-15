@@ -1,46 +1,20 @@
 ---
 title: 'ETL Pipeline Design: Build Scalable Data Pipelines with Python'
-description: Design and implement production ETL pipelines. Learn data extraction patterns, transformation logic, loading strategies, error handling, and workflow orchestration with Airflow or Prefect.
-date: 2025-12-01 04:16:26+00:00
+author: IT-Journey Team
+description: Design and implement production ETL pipelines. Learn data extraction
+  patterns, transformation logic, loading strategies, error handling, and workflow
+  orchestration with Airflow or Prefect.
+excerpt: Build production-grade ETL pipelines with Python, including extraction, transformation,
+  and orchestration patterns
 preview: images/previews/etl-pipeline-design-descriptive-subtitle.png
+date: 2025-12-01 04:16:26+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
 primary_technology: python
 quest_type: main_quest
-skill_focus: data-engineering
-learning_style: hands-on
 quest_series: Data Engineering Mastery
-sub_title: 'Level 1100 (12) Quest: Main Quest - ETL Pipelines'
-excerpt: Build production-grade ETL pipelines with Python, including extraction, transformation, and orchestration patterns
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1100
-- python
-- etl
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Engineering
-- Hard
-keywords:
-  primary:
-  - etl pipeline python
-  - data pipeline design
-  - extract transform load
-  secondary:
-  - airflow orchestration
-  - data engineering
-  - pipeline patterns
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1100-etl-pipeline-design/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -65,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-engineering
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -97,10 +66,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1100-etl-pipeline-design/
+categories:
+- Quests
+- Data-Engineering
+- Hard
+tags:
+- lvl-1100
+- python
+- etl
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1100
+- python
+- etl
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1100 (12) Quest: Main Quest - ETL Pipelines'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

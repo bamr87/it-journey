@@ -1,76 +1,83 @@
 ---
-title: "Nerd Font Enchantment: Terminal Icon Mastery"
-description: "Complete step-by-step guide to install Nerd Fonts on macOS, Linux & Windows. Transform your terminal with icons, symbols, and visual themes. 20-minute setup tutorial with troubleshooting."
-date: 2025-08-31T13:00:00.000Z
-preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
-tags:
-    - binary-level-indicator
-    - terminal-mastery
-    - nerd-fonts
-    - font-installation
-    - visual-enhancement
-    - cross-platform-setup
-    - development-tools
-    - terminal-customization
-    - macos
-    - linux
-    - windows
-categories:
-    - Quests
-    - Side-Quests
-    - Tools
-    - Terminal-Mastery
-sub-title: "Side Quest: Font Enhancement and Icon Display"
-excerpt: "Install Nerd Fonts on macOS, Linux, and Windows to transform your terminal with beautiful icons, symbols, and glyphs. Complete guide with Oh-My-Zsh and VS Code integration."
-snippet: "Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual themes on any platform"
+title: 'Nerd Font Enchantment: Terminal Icon Mastery'
 author: IT-Journey Team
-layout: journals
-keywords:
-    primary:
-        - nerd-fonts
-        - install nerd fonts
-        - terminal icons
-        - nerd fonts macos
-        - nerd fonts linux
-        - nerd fonts windows
-    secondary:
-        - patched-fonts
-        - unicode-symbols
-        - terminal-themes
-        - oh-my-zsh fonts
-        - powerlevel10k fonts
-        - vscode terminal font
-        - development-environment
-        - cross-platform-fonts
-lastmod: 2025-12-19T00:00:00.000Z
-permalink: /quests/side-quest-nerd-font-enchantment/
-attachments: ""
-comments: true
+description: Complete step-by-step guide to install Nerd Fonts on macOS, Linux & Windows.
+  Transform your terminal with icons, symbols, and visual themes. 20-minute setup
+  tutorial with troubleshooting.
+excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your terminal
+  with beautiful icons, symbols, and glyphs. Complete guide with Oh-My-Zsh and VS
+  Code integration.
+snippet: Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual
+  themes on any platform
+preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
+date: 2025-08-31 13:00:00+00:00
+lastmod: 2025-12-19 00:00:00+00:00
+level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
-prerequisites:
-    - Basic terminal/command-line knowledge
-    - Internet connection for downloading fonts
-    - Administrative privileges for font installation
-rewards:
-    - 🏆 [Font Alchemist] - Master of terminal visual enhancement
-    - ⚡ [Icon Weaver] - Creator of visually rich terminal experiences
-    - 🛠️ [Symbol Sage] - Expert in Unicode and glyph management
-    - 🎨 [Visual Artisan] - Designer of beautiful development interfaces
-quest_series: Terminal Mastery Path
-related_quests:
-    - "Level 0010: Terminal Enchantment - Oh-My-Zsh Mastery"
-    - "Level 0001: Terminal Fundamentals"
-validation_criteria:
-    - Successfully install Nerd Fonts on system
-    - Configure terminal to use Nerd Font
-    - Configure VSCode to use Nerd Font
-    - Verify icons display correctly
-    - Test with Oh-My-Zsh themes
-level: "0010"
+primary_technology: binary-level-indicator
 quest_type: side_quest
+quest_series: Terminal Mastery Path
+skill_focus:
+- Quests
+- Side-Quests
+- Tools
+- Terminal-Mastery
+learning_style: hands-on
+prerequisites:
+- Basic terminal/command-line knowledge
+- Internet connection for downloading fonts
+- Administrative privileges for font installation
+validation_criteria:
+- Successfully install Nerd Fonts on system
+- Configure terminal to use Nerd Font
+- Configure VSCode to use Nerd Font
+- Verify icons display correctly
+- Test with Oh-My-Zsh themes
+layout: journals
+permalink: /quests/side-quest-nerd-font-enchantment/
+categories:
+- Quests
+- Side-Quests
+- Tools
+- Terminal-Mastery
+tags:
+- binary-level-indicator
+- terminal-mastery
+- nerd-fonts
+- font-installation
+- visual-enhancement
+- cross-platform-setup
+- development-tools
+- terminal-customization
+- macos
+- linux
+- windows
+keywords:
+- binary-level-indicator
+- terminal-mastery
+- nerd-fonts
+- font-installation
+- visual-enhancement
+- cross-platform-setup
+- development-tools
+- terminal-customization
+- macos
+- linux
+- windows
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Side Quest: Font Enhancement and Icon Display'
+rewards:
+- 🏆 [Font Alchemist] - Master of terminal visual enhancement
+- ⚡ [Icon Weaver] - Creator of visually rich terminal experiences
+- 🛠️ [Symbol Sage] - Expert in Unicode and glyph management
+- 🎨 [Visual Artisan] - Designer of beautiful development interfaces
+related_quests:
+- 'Level 0010: Terminal Enchantment - Oh-My-Zsh Mastery'
+- 'Level 0001: Terminal Fundamentals'
 ---
-
 ## 🌟 The Legend of Font Enchantment
 
 *In the mystical realms of terminal mastery, there exists a legendary collection of fonts known as Nerd Fonts. These are not ordinary typefaces, but enchanted glyphs that contain thousands of magical symbols, icons, and characters. Without these fonts, your terminal themes appear as mere shadows - beautiful icons become ugly boxes, symbols become question marks, and the visual magic of modern development tools remains hidden.*

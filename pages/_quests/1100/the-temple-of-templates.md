@@ -1,64 +1,68 @@
 ---
-title: "The Temple of Templates: Binary Abstractions and Reusable Realms"
-description: Embark on a fantasy-themed quest to master software templates and reusable architectures across C++, HTML/Jinja, and React. Learn abstraction, type-safety, inheritance, and composition patterns to forge scalable, maintainable systems.
-date: 2025-08-24T22:40:52.276Z
-preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
-tags:
-    - lvl-1100
-    - templates
-    - design-patterns
-    - software-architecture
-    - reusable-components
-    - hands-on
-categories:
-    - Quests
-    - Development
-    - Intermediate
-sub-title: "Level 1100 (12) Quest: Function Crafting and Modular Abstractions"
-excerpt: Master the sacred art of templates to build elegant, reusable systems across languages.
-snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
+title: 'The Temple of Templates: Binary Abstractions and Reusable Realms'
 author: Quest Master
-layout: journals
-keywords:
-    primary:
-        - templates
-        - abstraction
-        - reusable-architecture
-    secondary:
-        - c++ generics
-        - jinja2
-        - react-components
-        - design-patterns
-        - composition-over-inheritance
-lastmod: 2025-08-25T00:43:51.189Z
-fmContentType: quest
-permalink: /quests/level-1100-temple-of-templates/
-attachments: ""
-comments: true
+description: Embark on a fantasy-themed quest to master software templates and reusable
+  architectures across C++, HTML/Jinja, and React. Learn abstraction, type-safety,
+  inheritance, and composition patterns to forge scalable, maintainable systems.
+excerpt: Master the sacred art of templates to build elegant, reusable systems across
+  languages.
+snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
+preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
+date: 2025-08-24 22:40:52.276000+00:00
+lastmod: 2025-08-25 00:43:51.189000+00:00
+level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-prerequisites:
-    - Basic programming (variables, functions, modules)
-    - Fundamentals of one templating approach (C++ templates, or HTML templating, or components)
-    - Local dev environment with Node.js and Python
-rewards:
-    - 🏆 Pattern Weaver – Reuse and Abstraction
-    - ⚡ System Design Insight +1
-    - 🛠️ Template Mastery (C++/Jinja/React)
-    - "🎯 Portfolio artifact: multi-language template demo"
-quest_series: Binary Function Crafting
-related_quests:
-    - "Level 0011: Programming Foundations"
-    - "Level 0100: Version Control with Git"
-    - "Level 1111: Testing and Verification Rites"
-validation_criteria:
-    - Implements one working template per stack (C++ or Jinja or React)—two for bonus
-    - Explains abstraction benefits and trade-offs
-    - Publishes a small repo or gist with README and examples
-level: "1100"
+primary_technology: lvl-1100
 quest_type: main_quest
+quest_series: Binary Function Crafting
+skill_focus:
+- Quests
+- Development
+- Intermediate
+learning_style: hands-on
+prerequisites:
+- Basic programming (variables, functions, modules)
+- Fundamentals of one templating approach (C++ templates, or HTML templating, or components)
+- Local dev environment with Node.js and Python
+validation_criteria:
+- Implements one working template per stack (C++ or Jinja or React)—two for bonus
+- Explains abstraction benefits and trade-offs
+- Publishes a small repo or gist with README and examples
+layout: journals
+permalink: /quests/level-1100-temple-of-templates/
+categories:
+- Quests
+- Development
+- Intermediate
+tags:
+- lvl-1100
+- templates
+- design-patterns
+- software-architecture
+- reusable-components
+- hands-on
+keywords:
+- lvl-1100
+- templates
+- design-patterns
+- software-architecture
+- reusable-components
+- hands-on
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 1100 (12) Quest: Function Crafting and Modular Abstractions'
+rewards:
+- 🏆 Pattern Weaver – Reuse and Abstraction
+- ⚡ System Design Insight +1
+- 🛠️ Template Mastery (C++/Jinja/React)
+- '🎯 Portfolio artifact: multi-language template demo'
+related_quests:
+- 'Level 0011: Programming Foundations'
+- 'Level 0100: Version Control with Git'
+- 'Level 1111: Testing and Verification Rites'
 ---
-
 ## 🧙‍♂️ Epic Introduction
 
 In the vast digital matrix where data flows like rivers of light, an ancient archway awaits. Step through and behold The Temple of Templates—a sanctum where binary incantations become architecture and reusable patterns are carved in code like sacred runes. Here, temples and templates are kindred artifacts: both are blueprints that outlive their makers, both embed deep wisdom for future builders, and both scale from humble shrines to sprawling cathedrals (or from scripts to systems). Today, you’ll learn to forge reusable components across stacks, weaving type-safety, composition, and inheritance into an elegant tapestry of maintainable software.

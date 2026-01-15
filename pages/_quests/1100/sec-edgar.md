@@ -1,67 +1,73 @@
 ---
-title: "The Siege of King EDGAR: Storming the SEC Data Castle"
-description: "Embark on a satirical, mystical quest to liberate financial knowledge from King EDGAR's vaults. Assemble AI companions, master SEC APIs, and responsibly harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight."
-date: 2025-08-20T04:18:02.180Z
+title: 'The Siege of King EDGAR: Storming the SEC Data Castle'
+author: Quest Master
+description: Embark on a satirical, mystical quest to liberate financial knowledge
+  from King EDGAR's vaults. Assemble AI companions, master SEC APIs, and responsibly
+  harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight.
+excerpt: Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings into actionable
+  wisdom—ethically, safely, and with proper headers.
+snippet: All hail transparency—storm the gates, free the filings, enlighten the realm.
 preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
-tags:
-  - lvl-1100
-  - sec-edgar
-  - api
-  - data-engineering
-  - xbrl
-  - python
-  - node
-categories:
-  - Quests
-  - Data-Engineering
-  - Intermediate
-sub-title: "Level 1100 (12) Quest: API Gate Storming & Data Liberation"
-excerpt: "Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings into actionable wisdom—ethically, safely, and with proper headers."
-snippet: "All hail transparency—storm the gates, free the filings, enlighten the realm."
-author: "Quest Master"
-layout: journals
-keywords:
-  primary:
-    - sec-edgar
-    - financial-filings
-    - api-integration
-  secondary:
-    - xbrl
-    - data-pipelines
-    - python-requests
-lastmod: 2025-12-19T00:00:00.000Z
-    - rate-limiting
-lastmod: 2025-08-20T04:18:02.180Z
-fmContentType: quest
-permalink: /quests/level-1100-sec-edgar-siege/
-attachments: ""
-comments: true
-difficulty: "🟡 Medium"
-estimated_time: "90-150 minutes"
-prerequisites:
-  - "Basic command-line and Git fluency"
-  - "Python 3.10+ or Node.js 18+ installed"
-  - "A contact email for SEC-compliant User-Agent headers"
-  - "Familiarity with JSON and HTTP APIs"
-rewards:
-  - "🏆 EDGAR Gatecrasher Badge"
-  - "⚡ Data Alchemist: From Filings to Facts"
-  - "🛠️ API Mastery: Requests, Rate Limits, and Resilience"
-  - "🎯 Portfolio Artifact: Reproducible EDGAR harvester"
-quest_series: "Data Liberation Trail"
-related_quests:
-  - "2025-04-18-revolutionizing-work-with-ai-automation.md"
-  - "frontend/frontend-docker.md"
-  - "lvl_001/personal-site.md"
-validation_criteria:
-  - "Working script that fetches at least one company’s recent filings from SEC JSON endpoints with compliant headers"
-  - "Evidence of rate limiting and error handling"
-  - "Transformed output (CSV/JSON) suitable for analysis"
-  - "Short write-up of insights learned"
-level: "1100"
+date: 2025-08-20 04:18:02.180000+00:00
+lastmod: 2025-08-20 04:18:02.180000+00:00
+level: '1100'
+difficulty: 🟡 Medium
+estimated_time: 90-150 minutes
+primary_technology: lvl-1100
 quest_type: main_quest
+quest_series: Data Liberation Trail
+skill_focus:
+- Quests
+- Data-Engineering
+- Intermediate
+learning_style: hands-on
+prerequisites:
+- Basic command-line and Git fluency
+- Python 3.10+ or Node.js 18+ installed
+- A contact email for SEC-compliant User-Agent headers
+- Familiarity with JSON and HTTP APIs
+validation_criteria:
+- Working script that fetches at least one company’s recent filings from SEC JSON
+  endpoints with compliant headers
+- Evidence of rate limiting and error handling
+- Transformed output (CSV/JSON) suitable for analysis
+- Short write-up of insights learned
+layout: journals
+permalink: /quests/level-1100-sec-edgar-siege/
+categories:
+- Quests
+- Data-Engineering
+- Intermediate
+tags:
+- lvl-1100
+- sec-edgar
+- api
+- data-engineering
+- xbrl
+- python
+- node
+keywords:
+- lvl-1100
+- sec-edgar
+- api
+- data-engineering
+- xbrl
+- python
+- node
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 1100 (12) Quest: API Gate Storming & Data Liberation'
+rewards:
+- 🏆 EDGAR Gatecrasher Badge
+- '⚡ Data Alchemist: From Filings to Facts'
+- '🛠️ API Mastery: Requests, Rate Limits, and Resilience'
+- '🎯 Portfolio Artifact: Reproducible EDGAR harvester'
+related_quests:
+- 2025-04-18-revolutionizing-work-with-ai-automation.md
+- frontend/frontend-docker.md
+- lvl_001/personal-site.md
 ---
-
 *In the twilight of the Digital Realm, a stern monarch sits upon a throne of filings—King EDGAR,
 custodian of truths encoded in structured scrolls and cryptic XBRL sigils. His castle is vast, his
 archives deep, his sentinels polite but strict. You are summoned—not to plunder—but to liberate

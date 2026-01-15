@@ -251,9 +251,9 @@ When you encounter challenges:
 - None - This is a perfect starting adventure!
 
 **Follow-Up Quests**:
-- [Bash Run Quest](../2024-05-28-bash-run.md) - Shell Scripting Fundamentals
-- [Hello n00b Quest](../../init_world/hello-noob.md) - Continuing Your IT Journey
-- [VS Code Mastery](../../init_world/2025-07-21-vscode-mastery-quest.md) - Development Environment Setup
+- [Bash Run Quest](../bash-run.md) - Shell Scripting Fundamentals
+- [Hello n00b Quest](../hello-noob.md) - Continuing Your IT Journey
+- [VS Code Mastery](../vscode-mastery.md) - Development Environment Setup
 
 **Parallel Quests** (can be completed in any order):
 - Character Building and IT Fundamentals quests

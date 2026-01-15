@@ -1,47 +1,20 @@
 ---
 title: 'Computer Vision Mastery: Image Classification, Object Detection & Segmentation'
-description: Build computer vision applications with Python and OpenCV. Learn image classification, object detection with YOLO, semantic segmentation, and image generation with GANs and diffusion models.
-date: 2025-12-01 04:22:08+00:00
+author: IT-Journey Team
+description: Build computer vision applications with Python and OpenCV. Learn image
+  classification, object detection with YOLO, semantic segmentation, and image generation
+  with GANs and diffusion models.
+excerpt: Build CV applications with image classification, object detection, and segmentation
+  using Python
 preview: images/previews/computer-vision-mastery-descriptive-subtitle.png
+date: 2025-12-01 04:22:08+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
 primary_technology: python
 quest_type: main_quest
-skill_focus: data-science
-learning_style: hands-on
 quest_series: AI/ML Mastery
-sub_title: 'Level 1101 (13) Quest: Main Quest - Computer Vision'
-excerpt: Build CV applications with image classification, object detection, and segmentation using Python
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1101
-- python
-- opencv
-- computer-vision
-- main_quest
-- data-science
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Science
-- Hard
-keywords:
-  primary:
-  - computer vision python
-  - object detection
-  - image classification
-  secondary:
-  - opencv tutorial
-  - yolo detection
-  - image segmentation
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1101-computer-vision/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -62,14 +35,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-science
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +62,43 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1101-computer-vision/
+categories:
+- Quests
+- Data-Science
+- Hard
+tags:
+- lvl-1101
+- python
+- opencv
+- computer-vision
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1101
+- python
+- opencv
+- computer-vision
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1101 (13) Quest: Main Quest - Computer Vision'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

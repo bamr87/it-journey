@@ -471,7 +471,7 @@ class ContentFreshnessChecker
 
     lines << ""
     lines << "---"
-    lines << "*Run `ruby scripts/content-freshness-check.rb --help` for options*"
+    lines << "*Run `ruby scripts/validation/content-freshness-check.rb --help` for options*"
 
     lines.join("\n")
   end

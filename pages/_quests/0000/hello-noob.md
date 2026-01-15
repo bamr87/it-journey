@@ -1,31 +1,22 @@
 ---
 title: 'Hello n00b: Your First Steps into the IT Journey'
 author: IT-Journey Team
-excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
-description: The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development
-preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
+description: The perfect starting quest for absolute beginners. Learn to create a
+  GitHub account, fork repositories, and take your first steps into the world of collaborative
+  development
+excerpt: Begin your epic adventure in the world of IT with your very first quest -
+  setting up GitHub and joining the community
 snippet: Every expert was once a beginner - every hero was once a n00b
-categories:
-- Quests
-- Init-World
-- Beginner
-tags:
-- lvl-0000
-- github
-- git
-- beginner
-- init-world
-- community-entry
-draft: false
+preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
 date: 2022-05-24 00:00:00+00:00
 lastmod: 2025-11-30 05:46:59.323000+00:00
-layout: journals
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
+primary_technology: lvl-0000
 quest_type: main_quest
-quest_line: Foundation Path
 quest_series: Character Creation Journey
+quest_line: Foundation Path
 quest_arc: Digital Awakening Arc
 quest_dependencies:
   required_quests: []
@@ -52,11 +43,11 @@ learning_paths:
   - Version Control Fundamentals
   - Community Participation
   - Open Source Contribution
-quest_mapping:
-  coordinates: '[0, 0]'
-  region: Entry
-  realm: Community
-  biome: GitHub
+skill_focus:
+- Quests
+- Init-World
+- Beginner
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic computer operation (clicking, typing, navigating websites)
@@ -81,6 +72,34 @@ validation_criteria:
   knowledge_checks:
   - Explain what GitHub is and why it's important
   - Describe the concept of forking and open source collaboration
+quest_mapping:
+  coordinates: '[0, 0]'
+  region: Entry
+  realm: Community
+  biome: GitHub
+layout: journals
+permalink: /quests/init_world/hello-noob/
+categories:
+- Quests
+- Init-World
+- Beginner
+tags:
+- lvl-0000
+- github
+- git
+- beginner
+- init-world
+- community-entry
+keywords:
+- lvl-0000
+- github
+- git
+- beginner
+- init-world
+- community-entry
+fmContentType: quest
+draft: false
+sub-title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
 rewards:
   badges:
   - 🏆 GitHub Account Creation Badge - Entry into developer community
@@ -93,10 +112,7 @@ rewards:
   - Access to all Foundation Path quests
   - Ability to participate in community discussions
   - Foundation for version control learning
-sub-title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
-permalink: /quests/init_world/hello-noob/
 ---
-
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 
 *This quest is specifically designed for absolute beginners - those who might not even know what GitHub is yet. That's perfectly okay! Every expert started exactly where you are now.*
@@ -335,9 +351,9 @@ Familiarize yourself with these important buttons and sections:
 - None! This is perfect for absolute beginners
 
 **Follow-Up Quests**:
-- [Begin Your IT Journey](2023-11-23-begin-your-it-journey.md) - Official welcome and orientation
-- [Character Selection](2023-11-24-character-selection.md) - Choose your development focus area
-- [OS Selection](2023-11-24-os-selection.md) - Set up your development environment
+- [Begin Your IT Journey](begin-your-it-journey.md) - Official welcome and orientation
+- [Character Selection](character-selection.md) - Choose your development focus area
+- [OS Selection](os-selection.md) - Set up your development environment
 
 **Parallel Quests** (can be completed in any order):
 - Basic computer literacy and digital citizenship quests

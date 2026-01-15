@@ -23,6 +23,18 @@ Level 1100 quests focus on:
 
 ## Available Quests
 
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [Apache Spark Mastery: Big Data Processing with PySpark & Scala](/quests/level-1100-apache-spark/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle](/quests/level-1100-conquer-king-edgar/) | 🟡 Medium | 60-180 minutes | main_quest | ✅ Complete |
+| [Data Quality Engineering: Testing, Validation & Monitoring Frameworks](/quests/level-1100-data-quality/) | 🔴 Hard | 3-4 hours | main_quest | 🔮 Placeholder |
+| [Data Warehousing: Design Star Schema & Build Modern Analytics Architecture](/quests/level-1100-data-warehousing/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [ETL Pipeline Design: Build Scalable Data Pipelines with Python](/quests/level-1100-etl-pipeline-design/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [The Siege of King EDGAR: Storming the SEC Data Castle](/quests/level-1100-sec-edgar-siege/) | 🟡 Medium | 90-150 minutes | main_quest | 🔮 Placeholder |
+| [Stream Processing: Real-Time Data with Apache Kafka & Flink](/quests/level-1100-stream-processing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [The Temple of Templates: Binary Abstractions and Reusable Realms](/quests/level-1100-temple-of-templates/) | 🟡 Medium | 60-90 minutes | main_quest | 🔮 Placeholder |
+
+
 ### 📊 Financial Data
 
 #### [EDGAR API Integration](edgar.md)

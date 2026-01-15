@@ -1,43 +1,19 @@
 ---
 title: 'Technical Leadership: Building High-Performance Engineering Teams'
-description: Develop technical leadership skills for engineering managers. Learn team building, technical decision-making, stakeholder management, and engineering excellence.
-date: 2025-12-01 04:22:54+00:00
+author: IT-Journey Team
+description: Develop technical leadership skills for engineering managers. Learn team
+  building, technical decision-making, stakeholder management, and engineering excellence.
+excerpt: Develop technical leadership skills for building and leading high-performance
+  teams
 preview: images/previews/technical-leadership-descriptive-subtitle.png
+date: 2025-12-01 04:22:54+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours
 primary_technology: general
 quest_type: main_quest
-skill_focus: leadership
-learning_style: hands-on
 quest_series: Leadership Mastery
-sub_title: 'Level 1111 (15) Quest: Main Quest - Leadership'
-excerpt: Develop technical leadership skills for building and leading high-performance teams
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1111
-- leadership
-- main_quest
-- leadership
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Leadership
-- Epic
-keywords:
-  primary:
-  - technical-leadership
-  - engineering-management
-  secondary:
-  - team-building
-  - decision-making
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1111-technical-leadership/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -62,14 +38,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- leadership
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +65,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1111-technical-leadership/
+categories:
+- Quests
+- Leadership
+- Epic
+tags:
+- lvl-1111
+- leadership
+- main_quest
+- leadership
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1111
+- leadership
+- main_quest
+- leadership
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1111 (15) Quest: Main Quest - Leadership'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -4,7 +4,7 @@
 
 - [ ] Export Google Search Console data (Performance > Export)
 - [ ] Save to `TODO/seo/data/gsc-2025-12-20.csv`
-- [ ] Run comparison: `ruby scripts/ctr-report-generator.rb --parse TODO/seo/data/gsc-2025-12-20.csv`
+- [ ] Run comparison: `ruby scripts/validation/ctr-report-generator.rb --parse TODO/seo/data/gsc-2025-12-20.csv`
 
 ## Key Metrics This Week
 

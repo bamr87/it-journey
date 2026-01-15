@@ -5,24 +5,38 @@ preview: images/previews/linux-fundamentals.png
 author: bamr87
 layout: default
 permalink: /quests/hello-linux/linux-fundamentals/
-level: "0000"
+level: '0000'
 quest_type: main_quest
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
 categories:
-  - quests
-  - linux
+- quests
+- linux
 tags:
-  - linux
-  - fundamentals
-  - navigation
-  - scripting
-  - security
-  - networking
-lastmod: 2025-11-30T05:46:59.343Z
+- linux
+- fundamentals
+- navigation
+- scripting
+- security
+- networking
+lastmod: &id001 2025-11-30 05:46:59.343000+00:00
 draft: false
+date: *id001
+primary_technology: linux
+skill_focus:
+- quests
+- linux
+learning_style: hands-on
+fmContentType: quest
+quest_series: Level 0000 Quest Line
+keywords:
+- linux
+- fundamentals
+- navigation
+- scripting
+- security
+- networking
 ---
-
 # Linux Fundamentals
 
 ## Introduction

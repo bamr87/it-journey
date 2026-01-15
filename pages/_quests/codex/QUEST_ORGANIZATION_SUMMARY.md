@@ -1,3 +1,24 @@
+---
+title: Quest Organization Summary
+description: Reference - quest organization summary and structure notes.
+author: IT-Journey Team
+date: 2026-01-14
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+primary_technology: documentation
+quest_type: documentation
+skill_focus:
+- documentation
+learning_style: reading
+quest_series: Quest Documentation
+layout: journals
+permalink: /quests/codex/quest-organization-summary/
+keywords:
+- documentation
+- quests
+fmContentType: codex
+---
 # Quest Organization Enhancement Summary
 
 ## 🎯 Completed Enhancements

@@ -1,4 +1,5 @@
 ---
+
 title: Level 1000 (8) - Cloud Computing Fundamentals
 description: Ascend to the clouds and master the infrastructure that powers global-scale applications
 preview: images/previews/level-1000-cloud-computing.png
@@ -19,6 +20,9 @@ lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
+
+layout: quest-collection
+level: 1000
 ---
 
 # Level 1000 (8) - Cloud Computing Fundamentals
@@ -167,3 +171,14 @@ Upon completing all main quests:
 ---
 
 **Level Status**: 📋 Placeholder quests generated | **Quests**: 3 | **Est. Time**: 6-8 hours
+
+
+## Available Quests
+
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [AWS Essentials: Core Services and Cloud Architecture Patterns](/quests/level-1000-aws-essentials/) | 🔴 Hard | 120-150 minutes | main_quest | 🔮 Placeholder |
+| [Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained](/quests/level-1000-cloud-computing-fundamentals/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Infrastructure as Code: Terraform and CloudFormation Fundamentals](/quests/level-1000-infrastructure-as-code/) | 🔴 Hard | 120-150 minutes | main_quest | 🔮 Placeholder |
+
+

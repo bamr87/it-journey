@@ -57,7 +57,7 @@ Crush excels at generating and editing Markdown content. Here's a typical workfl
 
 3. **Validation**:
    - Run repo's validators: `python3 test/quest-validator/quest_validator.py` (adapt for posts).
-   - Check links: `python3 scripts/link-checker.py`.
+   - Check links: `python3 scripts/validation/link-checker.py`.
 
 Example: To create this article, a prompt like "write an article for this repo, about using Crush in vscode to write articles and publishing them to github-pages almost instantly because of CI/CD designs" was used—Crush handled the rest autonomously.
 

@@ -182,8 +182,8 @@ To achieve Legendary Status, you must:
 ## 🔗 Related Resources
 
 - [Level 1110: Architecture & Design](../1110/)
-- [System Engineer Path](/quests/home/#-system-engineer-path)
-- [Contributing to IT-Journey](/contributing/)
+- [System Engineer Path](/quests/#-system-engineer-path)
+- [Contributing to IT-Journey](/about/contributing/)
 
 ## 💭 Wisdom from the Legends
 
@@ -198,3 +198,19 @@ To achieve Legendary Status, you must:
 *"Leadership is not about being in charge. It is about taking care of those in your charge." — Simon Sinek*
 
 **Ready to shape the future? Your legend begins here! 👑✨**
+
+
+## Available Quests
+
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [Architecture Reviews: Leading Technical Design Discussions](/quests/level-1111-architecture-reviews/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Building Technical Communities: Growing Developer Ecosystems](/quests/level-1111-building-technical-communities/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Career Advancement Strategies: Growing from Engineer to Leader](/quests/level-1111-career-advancement/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Innovation and R&D: Driving Technical Innovation](/quests/level-1111-innovation-rnd/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Mentorship Programs: Developing and Growing Engineering Talent](/quests/level-1111-mentorship-programs/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Open Source Contribution: Leading and Maintaining Projects](/quests/level-1111-open-source-contribution/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Tech Speaking and Writing: Building Your Technical Brand](/quests/level-1111-tech-speaking-writing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Technical Leadership: Building High-Performance Engineering Teams](/quests/level-1111-technical-leadership/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+
+

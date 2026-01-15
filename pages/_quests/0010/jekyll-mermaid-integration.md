@@ -1,21 +1,45 @@
 ---
 title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
-description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
-date: 2025-01-27 15:00:00+00:00
+author: Quest Master IT-Journey Team
+description: Master the ancient art of diagrammatic magic by integrating Mermaid.js
+  into any Jekyll static site, creating beautiful, interactive diagrams that bring
+  your documentation to life.
+excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js
+  integration, conditional loading, and comprehensive documentation
+snippet: Master the art of diagrammatic magic and bring your Jekyll documentation
+  to life
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
+date: 2025-01-27 15:00:00+00:00
+lastmod: 2025-01-27 15:00:00+00:00
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: Jekyll
 quest_type: main_quest
-skill_focus: Frontend Development
-learning_style: Hands-on Implementation
 quest_series: Jekyll Mastery
-sub_title: 'Level 0010 (2) Quest: Jekyll-Mermaid Integration Mastery'
-excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
-snippet: Master the art of diagrammatic magic and bring your Jekyll documentation to life
-author: Quest Master IT-Journey Team
+skill_focus:
+- Frontend Development
+learning_style: Hands-on Implementation
+prerequisites:
+- Basic Jekyll site setup and configuration
+- Understanding of HTML, CSS, and JavaScript
+- Familiarity with YAML front matter
+- Git version control basics
+- 'Completed: [Hello n00b](../0000/hello-noob.md) quest'
+- 'Completed: [Bash Scripting](../0010/bash-scripting.md) quest (recommended)'
+validation_criteria:
+- Mermaid diagrams render correctly on Jekyll site
+- Conditional loading works based on page front matter
+- All major diagram types (flowchart, sequence, class, etc.) function
+- Responsive design works across devices
+- Dark mode compatibility confirmed
+- Documentation is comprehensive and accurate
 layout: journals
+permalink: /quests/level-0010-jekyll-mermaid-integration/
+categories:
+- Quests
+- Jekyll
+- Frontend
 tags:
 - jekyll
 - mermaid
@@ -25,17 +49,19 @@ tags:
 - documentation
 - javascript
 - cdn
-categories:
-- Quests
-- Jekyll
-- Frontend
-prerequisites:
-- Basic Jekyll site setup and configuration
-- Understanding of HTML, CSS, and JavaScript
-- Familiarity with YAML front matter
-- Git version control basics
-- 'Completed: [Hello n00b](/quests/init_world/hello-noob/) quest'
-- 'Completed: [Bash Scripting](/quests/bash-scripting/) quest (recommended)'
+keywords:
+- jekyll
+- mermaid
+- diagrams
+- frontend
+- integration
+- documentation
+- javascript
+- cdn
+fmContentType: quest
+draft: false
+comments: true
+sub_title: 'Level 0010 (2) Quest: Jekyll-Mermaid Integration Mastery'
 rewards:
   badge: Diagrammatic Sorcerer
   skill: Jekyll Integration Mastery
@@ -51,20 +77,7 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
-validation_criteria:
-- Mermaid diagrams render correctly on Jekyll site
-- Conditional loading works based on page front matter
-- All major diagram types (flowchart, sequence, class, etc.) function
-- Responsive design works across devices
-- Dark mode compatibility confirmed
-- Documentation is comprehensive and accurate
-comments: true
-draft: false
-fmContentType: quest
-lastmod: 2025-01-27 15:00:00+00:00
-permalink: /quests/level-0010/jekyll-mermaid-integration-quest/
 ---
-
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 
 ## 🎯 Quest Overview
@@ -950,15 +963,15 @@ Integrate AI for automatic diagram creation:
 
 ### Related Quests
 
-- **[Action Triggers](/quests/action-triggers/)**: Automate your Jekyll deployment
-- **[Change Logs](/quests/change-logs/)**: Document your Mermaid integration updates
-- **[Bash Scripting](/quests/bash-scripting/)**: Enhance your testing automation
+- **[Action Triggers](../tools/action-triggers.md)**: Automate your Jekyll deployment
+- **[Change Logs](../tools/change-logs.md)**: Document your Mermaid integration updates
+- **[Bash Scripting](../0010/bash-scripting.md)**: Enhance your testing automation
 
 ### Community
 
 - [Jekyll Community](https://talk.jekyllrb.com/)
 - [Mermaid GitHub Discussions](https://github.com/mermaid-js/mermaid/discussions)
-- [IT-Journey Quest Discussions](/quests/)
+- [IT-Journey Quest Discussions](../README.md)
 
 ---
 

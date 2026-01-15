@@ -1,45 +1,20 @@
 ---
 title: 'SEO Optimization: Boost Search Engine Visibility for Jekyll Sites'
-description: Master technical SEO for Jekyll static sites. Learn meta tags, structured data, sitemap generation, robots.txt configuration, and Google Search Console integration to improve organic search rankings.
-date: 2025-11-30 05:00:21+00:00
+author: IT-Journey Team
+description: Master technical SEO for Jekyll static sites. Learn meta tags, structured
+  data, sitemap generation, robots.txt configuration, and Google Search Console integration
+  to improve organic search rankings.
+excerpt: Optimize your Jekyll site for search engines with meta tags, structured data,
+  and technical SEO best practices
 preview: images/previews/seo-optimization-search-engine-visibility-descript.png
+date: 2025-11-30 05:00:21+00:00
+lastmod: 2025-11-30 05:00:21+00:00
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: jekyll
 quest_type: main_quest
-skill_focus: frontend
-learning_style: hands-on
 quest_series: Jekyll Mastery
-sub_title: 'Level 0011 (3) Quest: Main Quest - Jekyll SEO'
-excerpt: Optimize your Jekyll site for search engines with meta tags, structured data, and technical SEO best practices
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0011
-- jekyll
-- seo
-- main_quest
-- frontend
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Frontend
-- Medium
-keywords:
-  primary:
-  - jekyll seo
-  - search engine optimization
-  - meta tags jekyll
-  secondary:
-  - structured data
-  - sitemap xml
-  - google search console
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:00:21+00:00
-permalink: /quests/level-0011-seo-optimization/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -48,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0011-side-quest-1/
-  - /quests/level-0011-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0011-alternative-path/
   sequel_quests:
@@ -64,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- frontend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +64,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0011-seo-optimization/
+categories:
+- Quests
+- Frontend
+- Medium
+tags:
+- lvl-0011
+- jekyll
+- seo
+- main_quest
+- frontend
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0011
+- jekyll
+- seo
+- main_quest
+- frontend
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0011 (3) Quest: Main Quest - Jekyll SEO'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

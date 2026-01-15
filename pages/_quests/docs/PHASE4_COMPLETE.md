@@ -1,11 +1,30 @@
 ---
 layout: page
-title: "Phase 4 Complete: Expert Tier Quests Generated"
+title: 'Phase 4 Complete: Expert Tier Quests Generated'
 preview: images/previews/phase-4-complete-expert-tier-quests-generated.png
 permalink: /quests/phase4-complete/
-lastmod: 2025-11-30T05:46:59.363Z
+lastmod: &id001 2025-11-30 05:46:59.363000+00:00
+keywords:
+- phase
+- '4'
+- complete
+- expert
+- tier
+- quests
+description: 'Reference: Phase 4 Complete: Expert Tier Quests Generated.'
+date: *id001
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+author: IT-Journey Team
+quest_series: Quest Documentation
+primary_technology: documentation
+skill_focus:
+- documentation
+learning_style: reading
+quest_type: documentation
+fmContentType: documentation
 ---
-
 # Phase 4 Complete: Expert Tier Quest Generation ✅
 
 ## Overview
@@ -190,7 +209,7 @@ Each quest includes:
 All quests were generated using the automated quest generation script:
 
 ```bash
-./scripts/generate-placeholder-quest.sh <level> <slug> "<title>" --difficulty hard --type main_quest --time "<minutes>"
+./scripts/quest/generate-placeholder-quest.sh <level> <slug> "<title>" --difficulty hard --type main_quest --time "<minutes>"
 ```
 
 ### Level Directory Structure
@@ -275,7 +294,7 @@ Each new level was automatically created with:
 ## Acknowledgments
 
 Phase 4 generation completed using:
-- **Quest Generation Script**: `scripts/generate-placeholder-quest.sh`
+- **Quest Generation Script**: `scripts/quest/generate-placeholder-quest.sh`
 - **Main Quest Template**: `pages/_quests/templates/main-quest-template.md`
 - **Docker Validation**: Multi-service validation environment
 - **Binary Level System**: 16-level progression (0000-1111)
@@ -284,12 +303,12 @@ Phase 4 generation completed using:
 
 ## References
 
-- [Quest Build Plan](QUEST_BUILD_PLAN.md)
+- [Quest Build Plan](../QUEST_BUILD_PLAN.md)
 - [Phase 1 Complete](PHASE1_COMPLETE.md)
 - [Phase 2 Complete](PHASE2_COMPLETE.md)
 - [Phase 3 Complete](PHASE3_COMPLETE.md)
-- [Main Quest Index](README.md)
-- [Quest Generation Script](../../scripts/generate-placeholder-quest.sh)
+- [Main Quest Index](../README.md)
+- [Quest Generation Script](../../../scripts/quest/generate-placeholder-quest.sh)
 
 ---
 

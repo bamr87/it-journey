@@ -1,47 +1,30 @@
 ---
 title: 'Recursive Realms: Testing Infinite Loops with AI'
-description: Master recursion, unit testing, and AI integration by navigating self-replicating code towers
-date: 2025-10-08 18:11:38.267000+00:00
+author: Quest Master IT-Journey Team
+description: Master recursion, unit testing, and AI integration by navigating self-replicating
+  code towers
+excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
+snippet: Beware the stack overflow curse—always define your base cases!
 preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
+date: 2025-10-08 18:11:38.267000+00:00
+lastmod: 2025-10-09 00:09:00.916000+00:00
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: python
 quest_type: main_quest
-skill_focus: testing
-learning_style: hands-on
 quest_series: Python Mastery Path
-sub_title: 'Level 0010 (2) Quest: Python Recursion & Testing'
-excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
-snippet: Beware the stack overflow curse—always define your base cases!
-author: Quest Master IT-Journey Team
-layout: journals
-tags:
-- lvl-0010
-- python
-- language-learning
-- testing
-- hands-on
-- recursion
-categories:
-- Quests
-- Development
-- Intermediate
-keywords:
-  primary:
-  - python recursion
-  - unit testing
-  secondary:
-  - ai integration
-  - testing frameworks
-lastmod: 2025-10-09 00:09:00.916000+00:00
-permalink: /quests/level-0010-recursive-realms-testing/
-attachments: ''
-comments: true
-draft: false
-fmContentType: quest
 quest_line: Foundation Path
 quest_arc: Testing & Quality Assurance
+quest_dependencies:
+  recommended_quests: []
+  unlocks_quests: []
+learning_paths:
+  primary_paths:
+  - Software Development
+skill_focus:
+- testing
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic Python syntax
@@ -49,18 +32,6 @@ prerequisites:
   system_requirements:
   - Python 3.8+
   - Text editor or IDE
-quest_dependencies:
-  recommended_quests: []
-  unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-rewards:
-  badges:
-  - 🏆 Recursive Realm Master
-  skills_unlocked:
-  - Advanced Recursion Patterns
-  progression_points: 150
 validation_criteria:
   completion_requirements:
   - Implement 3 recursive functions
@@ -70,8 +41,38 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Testing
+layout: journals
+permalink: /quests/level-0010-recursive-realms-testing/
+categories:
+- Quests
+- Development
+- Intermediate
+tags:
+- lvl-0010
+- python
+- language-learning
+- testing
+- hands-on
+- recursion
+keywords:
+- lvl-0010
+- python
+- language-learning
+- testing
+- hands-on
+- recursion
+fmContentType: quest
+draft: false
+comments: true
+attachments: ''
+sub_title: 'Level 0010 (2) Quest: Python Recursion & Testing'
+rewards:
+  badges:
+  - 🏆 Recursive Realm Master
+  skills_unlocked:
+  - Advanced Recursion Patterns
+  progression_points: 150
 ---
-
 *Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge powerful unit tests, and summon AI guardians that think in layered patterns.*
 
 ### 🌟 The Legend Behind This Quest

@@ -1,45 +1,20 @@
 ---
 title: 'Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability'
-description: 'Learn the three pillars of observability: metrics, logs, and traces. Understand monitoring architecture, instrumentation patterns, and SRE best practices for production systems.'
-date: 2025-11-30 05:43:59+00:00
+author: IT-Journey Team
+description: 'Learn the three pillars of observability: metrics, logs, and traces.
+  Understand monitoring architecture, instrumentation patterns, and SRE best practices
+  for production systems.'
+excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade
+  monitoring
 preview: images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
+date: 2025-11-30 05:43:59+00:00
+lastmod: 2025-11-30 05:43:59+00:00
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: observability
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Observability Mastery
-sub_title: 'Level 1010 (10) Quest: Main Quest - Observability'
-excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade monitoring
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1010
-- monitoring
-- observability
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Hard
-keywords:
-  primary:
-  - monitoring fundamentals
-  - observability pillars
-  - metrics logs traces
-  secondary:
-  - sre practices
-  - instrumentation
-  - production monitoring
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:43:59+00:00
-permalink: /quests/level-1010-monitoring-fundamentals/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -64,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +66,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1010-monitoring-fundamentals/
+categories:
+- Quests
+- DevOps
+- Hard
+tags:
+- lvl-1010
+- monitoring
+- observability
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1010
+- monitoring
+- observability
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1010 (10) Quest: Main Quest - Observability'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

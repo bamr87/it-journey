@@ -2,6 +2,42 @@
 
 This directory contains automation scripts and tools for the IT-Journey project.
 
+## 📁 Directory Structure
+
+```
+scripts/
+├── core/                    # Core environment and system scripts
+│   ├── environment-setup.sh
+│   └── version-manager.sh
+├── deployment/              # Deployment automation
+│   ├── azure-jekyll-deploy.sh
+│   └── update-settings.sh
+├── development/             # Development workflow scripts
+│   ├── build/              # Build automation
+│   ├── content/            # Content management
+│   └── testing/            # Testing utilities
+├── generation/             # Content generation scripts
+│   ├── generate-preview-images.sh
+│   ├── generate-zer0-script.sh
+│   └── zer0-to-hero-*.sh
+├── lib/                     # Shared libraries
+│   └── preview_generator.py
+├── prd-machine/             # PRD automation tool
+├── quest/                   # Quest tooling (generation, validation, linking)
+├── testing/                 # Test scripts
+│   └── test-generated-script.sh
+├── utils/                   # Utility scripts
+│   └── extract-script.sh
+├── validation/             # Validation and monitoring tools
+│   ├── link-checker.py
+│   ├── frontmatter-validator.*
+│   ├── content-freshness-check.rb
+│   ├── ctr-report-generator.rb
+│   ├── seo-tracker.py
+│   └── requirements.txt
+└── README.md
+```
+
 ## 🔗 Link Health Guardian
 
 The Link Health Guardian is a unified, comprehensive link checking system for the IT-Journey website. It provides automated link validation, intelligent analysis, and GitHub integration with minimal workflow complexity.
@@ -16,11 +52,22 @@ The Link Health Guardian is a unified, comprehensive link checking system for th
 - **Multiple Scope Options**: Check website, internal links, docs, posts, quests, or all content
 - **Flexible Analysis Levels**: Basic, standard, comprehensive, or AI-only analysis
 
-### � File Structure
+### 📁 File Structure
 
 ```
 scripts/
-└── link-checker.py          # Single unified script with all functionality
+├── validation/              # Validation and monitoring tools
+│   ├── link-checker.py      # Link health monitoring
+│   ├── frontmatter-validator.py  # Frontmatter validation (Python)
+│   ├── frontmatter-validator.rb  # Frontmatter validation (Ruby)
+│   ├── content-freshness-check.rb # Content freshness tracking
+│   ├── ctr-report-generator.rb    # SEO/CTR reports
+│   ├── seo-tracker.py       # SEO tracking automation
+│   └── requirements.txt     # Python dependencies
+├── quest/                   # Quest tooling (generation, validation, linking)
+├── deployment/               # Deployment automation
+│   └── azure-jekyll-deploy.sh # Azure deployment
+└── ...
 
 .github/workflows/
 └── link-checker.yml         # Minimal workflow that calls the Python script
@@ -32,18 +79,18 @@ scripts/
 
 ```bash
 # Basic website check
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 
 # Comprehensive analysis with AI
-python3 scripts/link-checker.py --scope website --analysis-level comprehensive
+python3 scripts/validation/link-checker.py --scope website --analysis-level comprehensive
 
 # Create GitHub issue with results
-python3 scripts/link-checker.py --scope website --create-issue --repository bamr87/it-journey
+python3 scripts/validation/link-checker.py --scope website --create-issue --repository bamr87/it-journey
 
 # Check specific content types
-python3 scripts/link-checker.py --scope posts
-python3 scripts/link-checker.py --scope quests  
-python3 scripts/link-checker.py --scope docs
+python3 scripts/validation/link-checker.py --scope posts
+python3 scripts/validation/link-checker.py --scope quests  
+python3 scripts/validation/link-checker.py --scope docs
 ```
 
 #### GitHub Actions Workflow
@@ -119,13 +166,13 @@ The unified approach provides:
 
 ```bash
 # Test with dry run (no actual changes)
-python3 scripts/link-checker.py --scope website --dry-run
+python3 scripts/validation/link-checker.py --scope website --dry-run
 
 # Test specific analysis level
-python3 scripts/link-checker.py --scope internal --analysis-level basic
+python3 scripts/validation/link-checker.py --scope internal --analysis-level basic
 
 # Test without AI (faster execution)
-python3 scripts/link-checker.py --scope docs --no-ai
+python3 scripts/validation/link-checker.py --scope docs --no-ai
 ```
 
 #### Unit Tests
@@ -133,7 +180,7 @@ python3 scripts/link-checker.py --scope docs --no-ai
 There's a small test harness that validates the parser logic for different Lychee output formats:
 
 ```bash
-python3 scripts/test_link_checker.py
+python3 scripts/validation/test_link_checker.py
 ```
 
 ### 📈 Architecture Benefits
@@ -149,6 +196,37 @@ python3 scripts/test_link_checker.py
 - Minimal workflow (just calls the script)
 - Single point of truth
 - Easy to maintain, test, and extend
+
+---
+
+## 🧭 Quest Automation
+
+Quest tooling has been organized into a dedicated subdirectory to keep the root of `scripts/` focused on cross-cutting utilities.
+
+### Location
+
+- `scripts/quest/` - Quest generation, validation, and network maintenance
+  - See `scripts/quest/README.md` for full usage
+
+### Common Commands
+
+```bash
+# Validate quest network
+python3 scripts/quest/validate-quest-network.py
+
+# Remove placeholder dependencies (YAML-aware)
+python3 scripts/quest/remove-placeholder-deps.py --dry-run
+
+# Update level READMEs and quest overview
+python3 scripts/quest/update-quest-links.py --dry-run
+
+# Generate a quest network report
+./scripts/quest/generate-network-report.sh
+```
+
+### Backward Compatibility
+
+Legacy paths under `scripts/` still exist as thin wrappers and will print a deprecation warning before dispatching to `scripts/quest/`.
 
 ---
 
@@ -170,21 +248,21 @@ All scripts run inside Docker for consistent environment:
 
 ```bash
 # Frontmatter Validation
-docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/
-docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/_quests/ --errors-only
-docker-compose exec jekyll ruby scripts/frontmatter-validator.rb pages/ -o report.json
+docker-compose exec jekyll ruby scripts/validation/frontmatter-validator.rb pages/
+docker-compose exec jekyll ruby scripts/validation/frontmatter-validator.rb pages/_quests/ --errors-only
+docker-compose exec jekyll ruby scripts/validation/frontmatter-validator.rb pages/ -o report.json
 
 # CTR Report Generation
-docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --baseline
-docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --weekly -o weekly.md
-docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --opportunities
-docker-compose exec jekyll ruby scripts/ctr-report-generator.rb --json -o metrics.json
+docker-compose exec jekyll ruby scripts/validation/ctr-report-generator.rb --baseline
+docker-compose exec jekyll ruby scripts/validation/ctr-report-generator.rb --weekly -o weekly.md
+docker-compose exec jekyll ruby scripts/validation/ctr-report-generator.rb --opportunities
+docker-compose exec jekyll ruby scripts/validation/ctr-report-generator.rb --json -o metrics.json
 
 # Content Freshness Checking
-docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/
-docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/ --stale-only
-docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/ --json -o freshness.json
-docker-compose exec jekyll ruby scripts/content-freshness-check.rb pages/ --markdown -o report.md
+docker-compose exec jekyll ruby scripts/validation/content-freshness-check.rb pages/
+docker-compose exec jekyll ruby scripts/validation/content-freshness-check.rb pages/ --stale-only
+docker-compose exec jekyll ruby scripts/validation/content-freshness-check.rb pages/ --json -o freshness.json
+docker-compose exec jekyll ruby scripts/validation/content-freshness-check.rb pages/ --markdown -o report.md
 ```
 
 ### 📈 SEO Scoring (frontmatter-validator.rb)
@@ -232,16 +310,26 @@ Reports are saved to the TODO directory:
 - `jupyter-to-markdown.sh` - Notebook conversion
 
 ### Generated Scripts
+Located in `scripts/generation/`:
 - `zer0-to-hero-complete.sh` - Complete learning journey script
 - `zer0-to-hero-generated.sh` - Auto-generated version
-- Various test and extraction scripts
+- `generate-preview-images.sh` - Preview image generation
+- `generate-zer0-script.sh` - Script generation utility
+
+### Testing Scripts
+Located in `scripts/testing/`:
+- `test-generated-script.sh` - Test harness for generated scripts
+
+### Utility Scripts
+Located in `scripts/utils/`:
+- `extract-script.sh` - Script extraction utility
 
 ## 🔧 Usage Guidelines
 
 ### Local Development
 1. Clone the repository
-2. Install Python dependencies: `pip install requests`
-3. Run link checker locally: `python3 scripts/link-checker.py --scope website --verbose`
+2. Install Python dependencies: `pip install -r scripts/validation/requirements.txt`
+3. Run link checker locally: `python3 scripts/validation/link-checker.py --scope website --verbose`
 
 ### CI/CD Integration
 1. Set `OPENAI_API_KEY` secret in GitHub repository settings (optional for AI analysis)
@@ -303,9 +391,10 @@ The Azure Jekyll Deploy script is a comprehensive automation tool that transform
 
 ```
 scripts/
-├── azure-jekyll-deploy.sh              # Main deployment script
-├── azure-jekyll-deploy-README.md       # Comprehensive documentation
-└── azure-jekyll-deploy-TESTING.md      # Testing checklist and procedures
+└── deployment/
+    ├── azure-jekyll-deploy.sh          # Main deployment script
+    ├── azure-jekyll-deploy-README.md   # Comprehensive documentation
+    └── azure-jekyll-deploy-TESTING.md  # Testing checklist and procedures
 
 .github/workflows/
 └── azure-jekyll-deploy.yml             # Example GitHub Actions workflow
@@ -317,18 +406,18 @@ scripts/
 
 ```bash
 # Make executable and run interactive setup
-chmod +x scripts/azure-jekyll-deploy.sh
-./scripts/azure-jekyll-deploy.sh setup
+chmod +x scripts/deployment/azure-jekyll-deploy.sh
+./scripts/deployment/azure-jekyll-deploy.sh setup
 
 # Deploy with minimal configuration
-./scripts/azure-jekyll-deploy.sh deploy --app-name my-jekyll-site --github-repo https://github.com/user/repo
+./scripts/deployment/azure-jekyll-deploy.sh deploy --app-name my-jekyll-site --github-repo https://github.com/user/repo
 ```
 
 #### Advanced Usage
 
 ```bash
 # Full deployment with custom domain
-./scripts/azure-jekyll-deploy.sh deploy \
+./scripts/deployment/azure-jekyll-deploy.sh deploy \
   --app-name production-site \
   --github-repo https://github.com/org/production-site \
   --custom-domain www.mysite.com \
@@ -336,12 +425,12 @@ chmod +x scripts/azure-jekyll-deploy.sh
   --yes
 
 # Dry-run to preview changes
-./scripts/azure-jekyll-deploy.sh --dry-run deploy --app-name test-site
+./scripts/deployment/azure-jekyll-deploy.sh --dry-run deploy --app-name test-site
 
 # Step-by-step deployment
-./scripts/azure-jekyll-deploy.sh configure --jekyll-dir ./my-site
-./scripts/azure-jekyll-deploy.sh azure-create --app-name my-site
-./scripts/azure-jekyll-deploy.sh github-workflow --github-repo https://github.com/user/my-site
+./scripts/deployment/azure-jekyll-deploy.sh configure --jekyll-dir ./my-site
+./scripts/deployment/azure-jekyll-deploy.sh azure-create --app-name my-site
+./scripts/deployment/azure-jekyll-deploy.sh github-workflow --github-repo https://github.com/user/my-site
 ```
 
 #### Available Commands
@@ -378,8 +467,8 @@ This script demonstrates advanced automation concepts:
 ### 🔗 Related Documentation
 
 - [Azure Ascension Quest](../../pages/_quests/level-0082-azure-ascension-jekyll-deployment/index.md) - Original educational content
-- [Azure Jekyll Deploy README](azure-jekyll-deploy-README.md) - Complete usage guide
-- [Azure Jekyll Deploy Testing](azure-jekyll-deploy-TESTING.md) - Testing procedures
+- [Azure Jekyll Deploy README](deployment/azure-jekyll-deploy-README.md) - Complete usage guide
+- [Azure Jekyll Deploy Testing](deployment/azure-jekyll-deploy-TESTING.md) - Testing procedures
 
 ## 🤖 PRD Machine
 
@@ -454,7 +543,7 @@ When adding new scripts:
 5. Consider educational value and learning opportunities
 
 For the Link Health Guardian system specifically:
-- Test locally before committing changes: `python3 scripts/link-checker.py --scope website --dry-run`
+- Test locally before committing changes: `python3 scripts/validation/link-checker.py --scope website --dry-run`
 - Verify AI analysis produces meaningful insights
 - Ensure workflow compatibility across different operating systems
 - Document any new configuration options or environment variables

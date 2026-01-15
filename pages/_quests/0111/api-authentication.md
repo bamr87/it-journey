@@ -1,42 +1,18 @@
 ---
 title: 'API Authentication: OAuth, JWT, and API Keys Implementation'
-description: Implement secure API authentication with OAuth 2.0, JWT tokens, and API keys. Learn token-based auth, refresh tokens, scopes, and security best practices.
-date: 2025-11-30 05:09:08+00:00
+author: IT-Journey Team
+description: Implement secure API authentication with OAuth 2.0, JWT tokens, and API
+  keys. Learn token-based auth, refresh tokens, scopes, and security best practices.
+excerpt: Secure your APIs with OAuth 2.0, JWT tokens, and API key authentication methods
 preview: images/previews/api-authentication-oauth-jwt-quest-title-api-keys-.png
+date: 2025-11-30 05:09:08+00:00
+lastmod: 2025-11-30 05:09:08+00:00
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: authentication
 quest_type: main_quest
-skill_focus: backend
-learning_style: hands-on
 quest_series: API Design Mastery
-sub_title: 'Level 0111 (7) Quest: Main Quest - Authentication'
-excerpt: Secure your APIs with OAuth 2.0, JWT tokens, and API key authentication methods
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0111
-- authentication
-- main_quest
-- backend
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Backend
-- Hard
-keywords:
-  primary:
-  - api-authentication
-  - oauth-jwt
-  secondary:
-  - token-based-auth
-  - api-keys
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:09:08+00:00
-permalink: /quests/level-0111-api-authentication/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- backend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0111-api-authentication/
+categories:
+- Quests
+- Backend
+- Hard
+tags:
+- lvl-0111
+- authentication
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0111
+- authentication
+- main_quest
+- backend
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0111 (7) Quest: Main Quest - Authentication'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

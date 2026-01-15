@@ -1,47 +1,20 @@
 ---
 title: 'CSS Styling Basics: Selectors, Layout & Responsive Design'
-description: Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox, grid, and responsive design. Hands-on tutorial with modern CSS techniques and best practices.
-date: 2025-11-30 04:59:34+00:00
+author: IT-Journey Team
+description: Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox,
+  grid, and responsive design. Hands-on tutorial with modern CSS techniques and best
+  practices.
+excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and
+  grid.
 preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
+date: 2025-11-30 04:59:34+00:00
+lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
 primary_technology: css
 quest_type: main_quest
-skill_focus: frontend
-learning_style: hands-on
 quest_series: Web Development Fundamentals
-sub_title: 'Level 0010 (2) Quest: CSS for Visual Design'
-excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and grid.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0010
-- css
-- flexbox
-- css-grid
-- responsive-design
-- frontend
-- main_quest
-- hands-on
-- intermediate
-categories:
-- Quests
-- Frontend
-- CSS
-- Intermediate
-keywords:
-  primary:
-  - css tutorial
-  - css flexbox
-  - responsive design
-  secondary:
-  - css grid
-  - css selectors
-  - modern css
-  - web design basics
-lastmod: 2025-12-19 00:00:00+00:00
-permalink: /quests/level-0010-css-styling-basics/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -50,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0010-side-quest-1/
-  - /quests/level-0010-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0010-alternative-path/
   sequel_quests:
@@ -66,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- frontend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -98,10 +64,46 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0010-css-styling-basics/
+categories:
+- Quests
+- Frontend
+- CSS
+- Intermediate
+tags:
+- lvl-0010
+- css
+- flexbox
+- css-grid
+- responsive-design
+- frontend
+- main_quest
+- hands-on
+- intermediate
+keywords:
+- lvl-0010
+- css
+- flexbox
+- css-grid
+- responsive-design
+- frontend
+- main_quest
+- hands-on
+- intermediate
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0010 (2) Quest: CSS for Visual Design'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -13,7 +13,7 @@ This was causing the GitHub Actions workflow to exit with code 1, marking it as 
 
 ## Root Cause Analysis
 
-The issue was identified in the `scripts/link-checker.py` file, specifically in the lychee command construction. The problem was the incorrect usage of the `--remap` option:
+The issue was identified in the `scripts/validation/link-checker.py` file, specifically in the lychee command construction. The problem was the incorrect usage of the `--remap` option:
 
 ### Original Problematic Code
 ```python
@@ -125,7 +125,7 @@ This fix resolves the GitHub Actions workflow failure and ensures:
 
 ## Files Modified
 
-- `scripts/link-checker.py`: Main fixes for lychee command and error handling
+- `scripts/validation/link-checker.py`: Main fixes for lychee command and error handling
 - Added comprehensive logging and fallback mechanisms
 - Improved result parsing to handle different output formats
 - Made workflow more resilient to edge cases

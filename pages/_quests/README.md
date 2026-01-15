@@ -12,7 +12,6 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-11-29T06:48:54.502Z
 lastmod: 2025-12-01T06:43:04.446Z
 mermaid: true
 draft: false
@@ -76,7 +75,7 @@ graph LR;
 
 ### Choose Your Difficulty Level
 
-- **🌱 What is OS?** - [n00b Quest](/quests/0000/hello-noob/)
+- **🌱 What is OS?** - [n00b Quest](/quests/init_world/hello-noob/)
 - **🌐 I has Internet!?** - Easy Mode
 - **🍎 Big Macintosh** - Medium Challenge
 - **🪟 Damn Windows Update** - Hard Mode
@@ -326,10 +325,10 @@ Begin your journey and establish your digital identity
 **Platform-Specific Starting Quests:**
 
 - [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
-- [Hello Windows](0000/hello-win/) - *Mastering the Microsoft Kingdom*
-- [Hello macOS](0000/hello-mac/) - *Conquering the Apple Empire*
-- [Hello Linux](0000/hello-linux/) - *Taming the Penguin's Domain*
-- [Hello Cloud](0000/hello-cloud/) - *Ascending to the Digital Heavens*
+- [Hello Windows](0000/hello-win/hello-win.md) - *Mastering the Microsoft Kingdom*
+- [Hello macOS](0000/hello-mac/hello-mac.md) - *Conquering the Apple Empire*
+- [Hello Linux](0000/hello-linux/linux-fundamentals.md) - *Taming the Penguin's Domain*
+- [Hello Cloud](0000/hello-cloud/hello-cloud.md) - *Ascending to the Digital Heavens*
 
 📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing for this level
 
@@ -346,7 +345,7 @@ Basic scripting, terminal navigation, and environment setup
 **Available Quests:**
 
 - [x] [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
-- [x] [VS Code Mastery Quest](0000/vscode-mastery-quest.md) - *Master Your Primary IDE*
+- [x] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Master Your Primary IDE*
 - [x] [Bash Fundamentals](0000/bash-run.md) - *Learn the Terminal Incantations*
 - [x] [Bashcrawl Adventure](0000/bashcrawl/) - *Your First Automation Spell*
 - [x] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
@@ -357,7 +356,7 @@ Basic scripting, terminal navigation, and environment setup
 - [ ] Environment Variables - *Configuring Your World*
 
 **Platform-Specific Quests:**
-- [Hello Windows](0000/hello-win/) | [Hello macOS](0000/hello-mac/) | [Hello Linux](0000/hello-linux/) | [Hello Cloud](0000/hello-cloud/)
+- [Hello Windows](0000/hello-win/hello-win.md) | [Hello macOS](0000/hello-mac/hello-mac.md) | [Hello Linux](0000/hello-linux/linux-fundamentals.md) | [Hello Cloud](0000/hello-cloud/hello-cloud.md)
 
 📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing for this level
 
@@ -370,7 +369,7 @@ Web technologies, HTML/CSS/JS basics, and static sites
 - [x] [The GitHub Pages Portal](0001/github-pages-portal.md) - *Deploy Your First Website*
 - [x] [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle*
 - [x] [Docs in a Row](0001/docs-in-a-row.md) - *Documentation Basics*
-- [x] [Stack Attack](0001/stackattack.md) - *Understanding Tech Stacks*
+- [x] [Stack Attack](0001/stack-attack.md) - *Understanding Tech Stacks*
 - [ ] HTML Foundations - *The Structure of the Web*
 - [ ] CSS Styling - *Visual Magic & Design*
 - [ ] JavaScript Basics - *Adding Interactivity*
@@ -387,9 +386,9 @@ Advanced terminal customization and shell scripting
 
 - [x] [Bash Scripting Mastery](0010/bash-scripting.md) - *Master the Ancient Bash Incantations*
 - [x] [Oh My Zsh Terminal Enchantment](0010/oh-my-zsh-terminal-enchantment.md) - *Transform Your Terminal*
-- [x] [Nerd Font Enchantment](0010/nerd-font-enchantment-side-quest.md) - *Visual Terminal Magic*
+- [x] [Nerd Font Enchantment](0010/nerd-font-enchantment.md) - *Visual Terminal Magic*
 - [x] [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal*
-- [x] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration-quest.md) - *Diagram Magic*
+- [x] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration.md) - *Diagram Magic*
 - [ ] Advanced Shell Scripting - *Complex Automation Spells*
 - [ ] Regular Expressions - *Pattern Matching Sorcery*
 - [ ] Terminal Multiplexing - *tmux & screen Mastery*
@@ -403,8 +402,8 @@ Development tools, AI copilots, and productivity workflows
 
 **Available Quests:**
 
-- [x] [GitHub Code Search Quest](0011/github-hidden-gem-code-search-quest.md) - *Master Code Discovery*
-- [x] [Prompt Crystal Mastery: VS Code Copilot](0011/prompt-crystal-mastery-vscode-copilot-quest.md) - *AI Pair Programming*
+- [x] [GitHub Code Search Quest](0011/github-pages-hidden-gem.md) - *Master Code Discovery*
+- [x] [Prompt Crystal Mastery: VS Code Copilot](0011/prompt-crystal-mastery-vscode-copilot.md) - *AI Pair Programming*
 - [ ] ChatGPT for Developers - *Conversational AI Tools*
 - [ ] Claude for Coding - *Advanced AI Assistance*
 - [ ] AI Code Review - *Automated Quality Checks*
@@ -538,7 +537,7 @@ Infrastructure as Code and system operations
 
 **Quest Series:**
 
-- [x] [Feature Re-Quest](1011/feature-re-quest-.md) - *Feature Development Workflows*
+- [x] [Feature Re-Quest](1011/ai-feature-pipeline-architect.md) - *Feature Development Workflows*
 - [ ] Infrastructure as Code - *Terraform & Pulumi*
 - [ ] Container Orchestration - *Kubernetes Mastery*
 - [ ] Monitoring & Observability - *All-Seeing Eye*
@@ -639,9 +638,9 @@ Cross-level tools, version control mastery, and professional development workflo
 - [ ] API Testing Tools - *Postman, Insomnia, curl*
 - [ ] Database Tools - *DBeaver, pgAdmin, MongoDB Compass*
 
-- [GitHub Code Search: Your Secret Weapon for Code Navigation](2025-11-14-github-hidden-gem-code-search-quest.md) - *Your Secret Weapon for Code Navigation*
+- [GitHub Code Search: Your Secret Weapon for Code Navigation](0011/github-pages-hidden-gem.md) - *Your Secret Weapon for Code Navigation*
 - [Azure Ascension: Deploying the Crystal Citadel to the Cloud Kingdom](2025-11-17-azure-ascension-jekyll-deployment-quest.md) - *Master Azure Static Web Apps deployment*
-- [Terminal Artificer: Forging the Glass Interface](lvl_0010/2025-11-19-terminal-artificer-frontend-building.md) - *Craft beautiful, interactive frontends for your shell scripts*
+- [Terminal Artificer: Forging the Glass Interface](0010/terminal-artificer-frontend-building.md) - *Craft beautiful, interactive frontends for your shell scripts*
 - [The PRD Codex: Mastering Product Reality Distillation](2025-11-29-prd-codex-mastering-product-reality-distillation.md) - *Transform repository signals into living Product Requirements Documents*
 📁 **[Tools Collection Guide](tools/README.md)** - Complete tools quest listing
 
@@ -963,3 +962,30 @@ This quest collection grows through community contributions. Whether you're fixi
 *Remember, brave adventurer: Every great wizard started as an apprentice. Mistakes are like misfired spells—you learn from them. Most importantly, have fun on your quest. The IT world is vast and full of wonders. Ready your wand (keyboard), and off you go!* 🌟💻📚
 
 May your code compile and your deployments be ever successful! ⚡✨
+
+
+## Quest System Overview
+
+Total Quests: **144**
+
+### Quest Distribution by Level
+
+| Level | Quests | Theme |
+|-------|--------|-------|
+| 0000 | 15 | Foundation |
+| 0001 | 15 | Web Fundamentals |
+| 0010 | 19 | Terminal Mastery |
+| 0011 | 8 | AI-Assisted Dev |
+| 0100 | 9 | Containers & Frontend |
+| 0101 | 11 | CI/CD & DevOps |
+| 0110 | 8 | Database Mastery |
+| 0111 | 7 | API Development |
+| 1000 | 3 | Cloud Computing |
+| 1001 | 5 | Kubernetes |
+| 1010 | 6 | Monitoring |
+| 1011 | 6 | Security |
+| 1100 | 8 | Data Engineering |
+| 1101 | 8 | Machine Learning |
+| 1110 | 8 | Architecture |
+| 1111 | 8 | Leadership |
+

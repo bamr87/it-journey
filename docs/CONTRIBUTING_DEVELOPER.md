@@ -324,7 +324,7 @@ bundle exec jekyll doctor
 python3 scripts/validate-frontmatter.py pages/_posts/your-post.md
 
 # 4. Check links
-python3 scripts/link-checker.py --scope internal
+python3 scripts/validation/link-checker.py --scope internal
 
 # 5. Test scripts
 # If you modified scripts

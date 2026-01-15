@@ -1,42 +1,19 @@
 ---
 title: 'Penetration Testing: Tools and Ethical Hacking Methodologies'
-description: Learn penetration testing tools and methodologies for ethical hacking. Master reconnaissance, vulnerability scanning, exploitation, and security assessment techniques.
-date: 2025-11-30 05:44:51+00:00
+author: IT-Journey Team
+description: Learn penetration testing tools and methodologies for ethical hacking.
+  Master reconnaissance, vulnerability scanning, exploitation, and security assessment
+  techniques.
+excerpt: Master ethical hacking and penetration testing tools for security assessments
 preview: images/previews/penetration-testing-tools-quest-title-methodologie.png
+date: 2025-11-30 05:44:51+00:00
+lastmod: 2025-11-30 05:44:51+00:00
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: security
 quest_type: main_quest
-skill_focus: security
-learning_style: hands-on
 quest_series: Security Mastery
-sub_title: 'Level 1011 (11) Quest: Main Quest - Pentesting'
-excerpt: Master ethical hacking and penetration testing tools for security assessments
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1011
-- security
-- main_quest
-- security
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Security
-- Hard
-keywords:
-  primary:
-  - penetration-testing
-  - ethical-hacking
-  secondary:
-  - vulnerability-scanning
-  - security-tools
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:44:51+00:00
-permalink: /quests/level-1011-penetration-testing/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +38,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- security
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +65,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1011-penetration-testing/
+categories:
+- Quests
+- Security
+- Hard
+tags:
+- lvl-1011
+- security
+- main_quest
+- security
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1011
+- security
+- main_quest
+- security
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1011 (11) Quest: Main Quest - Pentesting'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

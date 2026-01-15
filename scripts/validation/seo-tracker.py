@@ -239,7 +239,7 @@ def generate_weekly_template() -> str:
 
 - [ ] Export Google Search Console data (Performance > Export)
 - [ ] Save to `TODO/seo/data/gsc-{today.strftime('%Y-%m-%d')}.csv`
-- [ ] Run comparison: `python scripts/seo-tracker.py --compare`
+- [ ] Run comparison: `python scripts/validation/seo-tracker.py --compare`
 
 ## Key Metrics This Week
 

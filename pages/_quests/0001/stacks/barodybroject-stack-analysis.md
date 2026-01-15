@@ -1,6 +1,7 @@
 ---
-title: "Technology Stack Analysis: Barodybroject"
-description: Comprehensive analysis of the Barodybroject Django-based parody news generator with OpenAI integration and Azure Container Apps deployment
+title: 'Technology Stack Analysis: Barodybroject'
+description: Comprehensive analysis of the Barodybroject Django-based parody news
+  generator with OpenAI integration and Azure Container Apps deployment
 preview: images/previews/technology-stack-analysis-barodybroject.png
 repository: https://github.com/bamr87/barodybroject
 owner: bamr87
@@ -8,26 +9,43 @@ primary_language: Python
 project_type: Web Application
 analysis_date: 2025-11-02
 tags:
-    - stack-analysis
-    - python
-    - django
-    - openai
-    - azure
-    - web-application
-    - docker
-    - postgresql
+- stack-analysis
+- python
+- django
+- openai
+- azure
+- web-application
+- docker
+- postgresql
 categories:
-    - Stack Analysis
-    - Django Applications
+- Stack Analysis
+- Django Applications
 layout: default
-lastmod: 2025-11-02T21:54:51.383Z
-level: "0001"
+lastmod: &id001 2025-11-02 21:54:51.383000+00:00
+level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
 permalink: /quests/level-0001/barodybroject-stack-analysis/
+date: *id001
+primary_technology: stack-analysis
+skill_focus:
+- Stack Analysis
+- Django Applications
+learning_style: hands-on
+fmContentType: quest
+quest_series: Level 0001 Quest Line
+keywords:
+- stack-analysis
+- python
+- django
+- openai
+- azure
+- web-application
+- docker
+- postgresql
+author: IT-Journey Team
 ---
-
 # Technology Stack Analysis: Barodybroject
 
 > **Repository**: [https://github.com/bamr87/barodybroject](https://github.com/bamr87/barodybroject)  

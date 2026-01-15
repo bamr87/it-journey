@@ -1,7 +1,7 @@
 #!/bin/bash
 # zer0-to-hero-complete.sh
 # Self-contained script that builds the entire IT Journey from this markdown guide
-# Usage: curl -fsSL https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/zer0-to-hero-complete.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/bamr87/it-journey/main/scripts/generation/zer0-to-hero-complete.sh | bash
 
 set -euo pipefail
 

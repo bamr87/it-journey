@@ -115,7 +115,7 @@ docker compose run quest-validator
 docker compose run prd-machine ./scripts/prd-machine/prd-machine sync
 
 # Link health check
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 ```
 
 ### GitHub Actions Workflows

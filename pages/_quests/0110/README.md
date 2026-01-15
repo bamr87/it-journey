@@ -1,4 +1,5 @@
 ---
+
 title: Level 0110 (6) - Database Mastery
 description: Master the arts of data storage, retrieval, and management through SQL sorcery and NoSQL adventures
 preview: images/previews/level-0110-database-mastery.png
@@ -18,6 +19,9 @@ lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
+
+layout: quest-collection
+level: 0110
 ---
 
 # Level 0110 (6) - Database Mastery
@@ -174,3 +178,19 @@ Upon completing all main quests:
 ---
 
 **Level Status**: 📋 Placeholder quests generated | **Quests**: 8 | **Est. Time**: 10-14 hours
+
+
+## Available Quests
+
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [Backup and Recovery: Data Protection Strategies for Databases](/quests/level-0110-backup-recovery/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Connection Pooling: Efficient Database Resource Management](/quests/level-0110-connection-pooling/) | 🔴 Hard | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Data Modeling: Schema Design and Database Relationships](/quests/level-0110-data-modeling/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Database Fundamentals: Data Storage and Retrieval](/quests/level-0110-database-fundamentals/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Database Migrations: Schema Evolution and Version Control](/quests/level-0110-database-migrations/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Database Security: Access Control and Data Encryption](/quests/level-0110-database-security/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Query Optimization: Performance Tuning for Fast Database Queries](/quests/level-0110-query-optimization/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [SQL Mastery: Query Language Proficiency for Data Professionals](/quests/level-0110-sql-mastery/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+
+

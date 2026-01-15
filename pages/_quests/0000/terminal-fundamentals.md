@@ -1,42 +1,19 @@
 ---
 title: 'Terminal Fundamentals: Command Line Navigation Quest'
-description: Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals.
-date: 2025-11-30 04:54:33+00:00
+author: IT-Journey Team
+description: Master essential command line skills including navigation, file management,
+  and basic shell commands across macOS, Linux, and Windows terminals.
+excerpt: Learn essential command line skills for navigating and managing files in
+  any operating system.
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
+date: 2025-11-30 04:54:33+00:00
+lastmod: 2025-12-20 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 primary_technology: bash
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Terminal Arts
-sub_title: 'Level 0000 (0) Quest: Main Quest - Terminal'
-excerpt: Learn essential command line skills for navigating and managing files in any operating system.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0000
-- bash
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Beginner
-keywords:
-  primary:
-  - terminal basics
-  - command line navigation
-  secondary:
-  - shell commands
-  - file management
-  - gamified-learning
-  - it-journey
-lastmod: 2025-12-20 00:00:00+00:00
-permalink: /quests/level-0000-terminal-fundamentals/
 quest_line: Init World
 quest_arc: Terminal Mastery Arc
 quest_dependencies:
@@ -45,9 +22,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0000-side-quest-1/
-  - /quests/level-0000-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0000-alternative-path/
   sequel_quests:
@@ -61,14 +36,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +63,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0000-terminal-fundamentals/
+categories:
+- Quests
+- DevOps
+- Beginner
+tags:
+- lvl-0000
+- bash
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0000
+- bash
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0000 (0) Quest: Main Quest - Terminal'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

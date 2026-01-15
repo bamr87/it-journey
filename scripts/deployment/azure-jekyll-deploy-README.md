@@ -6,10 +6,10 @@
 cd /path/to/it-journey
 
 # Make script executable (already done)
-chmod +x scripts/azure-jekyll-deploy.sh
+chmod +x scripts/deployment/azure-jekyll-deploy.sh
 
 # Optional: Create symlink for global access
-sudo ln -sf $(pwd)/scripts/azure-jekyll-deploy.sh /usr/local/bin/azure-jekyll-deploy
+sudo ln -sf $(pwd)/scripts/deployment/azure-jekyll-deploy.sh /usr/local/bin/azure-jekyll-deploy
 
 # Verify installation
 azure-jekyll-deploy --version
@@ -94,16 +94,16 @@ JEKYLL_SOURCE_DIR="."
 ### Example 1: Interactive Setup and Deployment
 ```bash
 # Start with basic setup
-./scripts/azure-jekyll-deploy.sh setup
+./scripts/deployment/azure-jekyll-deploy.sh setup
 
 # Then perform full deployment (will prompt for configuration)
-./scripts/azure-jekyll-deploy.sh deploy
+./scripts/deployment/azure-jekyll-deploy.sh deploy
 ```
 
 ### Example 2: Automated Deployment with Configuration
 ```bash
 # Deploy with all parameters specified
-./scripts/azure-jekyll-deploy.sh deploy \
+./scripts/deployment/azure-jekyll-deploy.sh deploy \
   --app-name my-awesome-jekyll-site \
   --github-repo https://github.com/myusername/my-jekyll-blog \
   --custom-domain blog.mywebsite.com \
@@ -113,7 +113,7 @@ JEKYLL_SOURCE_DIR="."
 ### Example 3: Dry-Run to Preview Changes
 ```bash
 # See what would happen without making changes
-./scripts/azure-jekyll-deploy.sh --dry-run --verbose deploy \
+./scripts/deployment/azure-jekyll-deploy.sh --dry-run --verbose deploy \
   --app-name test-site \
   --github-repo https://github.com/user/test-repo
 ```
@@ -121,19 +121,19 @@ JEKYLL_SOURCE_DIR="."
 ### Example 4: Step-by-Step Deployment
 ```bash
 # 1. Configure Jekyll site only
-./scripts/azure-jekyll-deploy.sh configure --jekyll-dir ./my-site
+./scripts/deployment/azure-jekyll-deploy.sh configure --jekyll-dir ./my-site
 
 # 2. Create Azure resources
-./scripts/azure-jekyll-deploy.sh azure-create \
+./scripts/deployment/azure-jekyll-deploy.sh azure-create \
   --app-name my-site \
   --github-repo https://github.com/user/my-site
 
 # 3. Setup CI/CD pipeline
-./scripts/azure-jekyll-deploy.sh github-workflow \
+./scripts/deployment/azure-jekyll-deploy.sh github-workflow \
   --github-repo https://github.com/user/my-site
 
 # 4. Add custom domain (optional)
-./scripts/azure-jekyll-deploy.sh domain-setup \
+./scripts/deployment/azure-jekyll-deploy.sh domain-setup \
   --app-name my-site \
   --custom-domain www.mysite.com
 ```
@@ -141,7 +141,7 @@ JEKYLL_SOURCE_DIR="."
 ### Example 5: Non-Interactive Mode
 ```bash
 # Run without prompts (useful for CI/CD)
-./scripts/azure-jekyll-deploy.sh --yes deploy \
+./scripts/deployment/azure-jekyll-deploy.sh --yes deploy \
   --app-name production-site \
   --github-repo https://github.com/org/production-site
 ```
@@ -149,7 +149,7 @@ JEKYLL_SOURCE_DIR="."
 ### Example 6: Cleanup Resources
 ```bash
 # Remove all Azure resources (destructive!)
-./scripts/azure-jekyll-deploy.sh cleanup \
+./scripts/deployment/azure-jekyll-deploy.sh cleanup \
   --resource-group jekyll-citadel-rg \
   --force
 ```
@@ -159,7 +159,7 @@ JEKYLL_SOURCE_DIR="."
 ### Cron Job for Automated Backups
 ```bash
 # Add to crontab for daily resource checks
-0 2 * * * /path/to/it-journey/scripts/azure-jekyll-deploy.sh --quiet azure-create --app-name daily-check
+0 2 * * * /path/to/it-journey/scripts/deployment/azure-jekyll-deploy.sh --quiet azure-create --app-name daily-check
 ```
 
 ### Systemd Service
@@ -172,7 +172,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/path/to/it-journey/scripts/azure-jekyll-deploy.sh --yes deploy --config /etc/azure-jekyll-deploy.conf
+ExecStart=/path/to/it-journey/scripts/deployment/azure-jekyll-deploy.sh --yes deploy --config /etc/azure-jekyll-deploy.conf
 StandardOutput=journal
 StandardError=journal
 Environment=AZURE_SUBSCRIPTION=your-subscription-id
@@ -204,8 +204,8 @@ jobs:
       
       - name: Deploy Jekyll to Azure
         run: |
-          chmod +x scripts/azure-jekyll-deploy.sh
-          ./scripts/azure-jekyll-deploy.sh --yes deploy \
+          chmod +x scripts/deployment/azure-jekyll-deploy.sh
+          ./scripts/deployment/azure-jekyll-deploy.sh --yes deploy \
             --app-name ${{ secrets.AZURE_APP_NAME }} \
             --github-repo ${{ github.repositoryUrl }} \
             --github-token ${{ secrets.GITHUB_TOKEN }}
@@ -233,7 +233,7 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 RUN gem install bundler jekyll
 
 # Copy deployment script
-COPY scripts/azure-jekyll-deploy.sh /usr/local/bin/
+COPY scripts/deployment/azure-jekyll-deploy.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/azure-jekyll-deploy.sh
 
 # Set working directory
@@ -348,7 +348,7 @@ gh repo view yourusername/your-repo --json permissions
 ```
 
 #### Debug Mode
-Enable debug logging: `bash -x scripts/azure-jekyll-deploy.sh --verbose [command]`
+Enable debug logging: `bash -x scripts/deployment/azure-jekyll-deploy.sh --verbose [command]`
 
 #### Recovery Procedures
 
@@ -361,7 +361,7 @@ tail -f /var/log/azure-jekyll-deploy/azure-jekyll-deploy_*.log
 az group delete --name jekyll-citadel-rg --yes
 
 # Retry deployment
-./scripts/azure-jekyll-deploy.sh deploy [options]
+./scripts/deployment/azure-jekyll-deploy.sh deploy [options]
 ```
 
 **GitHub Actions Issues:**
@@ -441,7 +441,7 @@ gem install bundler
 bundle install
 
 # Run tests
-bash scripts/azure-jekyll-deploy-TESTING.md  # Follow testing checklist
+bash scripts/deployment/azure-jekyll-deploy-TESTING.md  # Follow testing checklist
 ```
 
 ### Code Style

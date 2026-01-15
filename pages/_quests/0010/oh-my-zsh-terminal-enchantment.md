@@ -1,70 +1,78 @@
 ---
-title: "Terminal Enchantment: Oh-My-Zsh Mastery related_quests:"
-description: Transform your terminal into a powerful development weapon by mastering Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity and workflow efficiency
-date: 2025-08-31T12:00:00.000Z
-preview: images/previews/terminal-enchantment-oh-my-zsh-mastery-related-que.png
-tags:
-    - binary-level-indicator
-    - terminal-mastery
-    - zsh
-    - productivity-tools
-    - shell-customization
-    - vscode-integration
-    - development-workflow
-    - command-line-efficiency
-categories:
-    - Quests
-    - Development
-    - Tools
-    - Terminal-Mastery
-sub-title: "Level 0010 (10) Quest: Terminal Supercharging and Customization"
-excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple tool into a powerful development artifact
-snippet: Unleash the true power of your terminal with Oh-My-Zsh - where every command becomes a spell of productivity
+title: 'Terminal Enchantment: Oh-My-Zsh Mastery related_quests:'
 author: IT-Journey Team
-layout: journals
-keywords:
-    primary:
-        - oh-my-zsh
-        - terminal-customization
-        - zsh-plugins
-        - shell-productivity
-    secondary:
-        - vscode-terminal
-        - command-line-tools
-        - development-workflow
-        - shell-themes
-        - productivity-enhancement
-lastmod: 2025-09-01T02:22:46.734Z
-permalink: /quests/level-0010-oh-my-zsh-mastery/
-attachments: ""
-comments: true
+description: Transform your terminal into a powerful development weapon by mastering
+  Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity
+  and workflow efficiency
+excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple
+  tool into a powerful development artifact
+snippet: Unleash the true power of your terminal with Oh-My-Zsh - where every command
+  becomes a spell of productivity
+preview: images/previews/terminal-enchantment-oh-my-zsh-mastery-related-que.png
+date: 2025-08-31 12:00:00+00:00
+lastmod: 2025-09-01 02:22:46.734000+00:00
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-90 minutes
-prerequisites:
-    - Basic terminal/command-line knowledge (Level 0001 or equivalent)
-    - Zsh shell installed on your system
-    - VSCode editor with terminal integration (primary tool for file examination and editing)
-    - Internet connection for downloading scripts and plugins
-rewards:
-    - 🏆 [Terminal Sorcerer] - Master of Shell Customization
-    - ⚡ [Productivity Surge] - 40% faster command-line workflows
-    - 🛠️ [Plugin Artisan] - Custom terminal tool creation skills
-    - 🎯 [VSCode Integration] - Seamless editor-terminal synergy
-quest_series: Terminal Mastery Path
-related_quests:
-    - "Level 0001: Terminal Fundamentals"
-    - "Level 0010: Advanced Shell Scripting"
-    - VSCode Mastery Quest
-validation_criteria:
-    - Successfully install Oh-My-Zsh using VSCode for script examination
-    - Customize terminal with themes and plugins using VSCode file editing
-    - Integrate enhanced terminal with VSCode for seamless development
-    - Demonstrate improved development workflow using VSCode tools
-    - Create and share custom plugin or configuration via VSCode
-level: "0010"
+primary_technology: binary-level-indicator
 quest_type: main_quest
+quest_series: Terminal Mastery Path
+skill_focus:
+- Quests
+- Development
+- Tools
+- Terminal-Mastery
+learning_style: hands-on
+prerequisites:
+- Basic terminal/command-line knowledge (Level 0001 or equivalent)
+- Zsh shell installed on your system
+- VSCode editor with terminal integration (primary tool for file examination and editing)
+- Internet connection for downloading scripts and plugins
+validation_criteria:
+- Successfully install Oh-My-Zsh using VSCode for script examination
+- Customize terminal with themes and plugins using VSCode file editing
+- Integrate enhanced terminal with VSCode for seamless development
+- Demonstrate improved development workflow using VSCode tools
+- Create and share custom plugin or configuration via VSCode
+layout: journals
+permalink: ../README.mdlevel-0010-oh-my-zsh-mastery/
+categories:
+- Quests
+- Development
+- Tools
+- Terminal-Mastery
+tags:
+- binary-level-indicator
+- terminal-mastery
+- zsh
+- productivity-tools
+- shell-customization
+- vscode-integration
+- development-workflow
+- command-line-efficiency
+keywords:
+- binary-level-indicator
+- terminal-mastery
+- zsh
+- productivity-tools
+- shell-customization
+- vscode-integration
+- development-workflow
+- command-line-efficiency
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 0010 (10) Quest: Terminal Supercharging and Customization'
+rewards:
+- 🏆 [Terminal Sorcerer] - Master of Shell Customization
+- ⚡ [Productivity Surge] - 40% faster command-line workflows
+- 🛠️ [Plugin Artisan] - Custom terminal tool creation skills
+- 🎯 [VSCode Integration] - Seamless editor-terminal synergy
+related_quests:
+- 'Level 0001: Terminal Fundamentals'
+- 'Level 0010: Advanced Shell Scripting'
+- VSCode Mastery Quest
 ---
-
 ## 🌟 The Legend of Terminal Enchantment
 
 *In the vast digital realms where developers forge their code, there exists a legendary framework known as Oh-My-Zsh. This ancient artifact transforms the humble terminal from a mere tool into a powerful weapon of productivity. Like a master blacksmith who takes raw iron and crafts it into an exquisite sword, Oh-My-Zsh takes the basic Zsh shell and enchants it with themes, plugins, and magical enhancements that make every command a spell of efficiency.*
@@ -530,7 +538,7 @@ alias gmerge="git mergetool --tool=code"
 - [ ] Oh-My-Zsh themes render correctly with full visual elements
 - [ ] Font configuration persists across terminal sessions
 
-**📖 Complete Guide**: This side quest has been moved to a dedicated file for better organization and reusability. Please visit: **[Nerd Font Enchantment: Terminal Icon Mastery](/quests/side-quest-nerd-font-enchantment/)**
+**📖 Complete Guide**: This side quest has been moved to a dedicated file for better organization and reusability. Please visit: **[Nerd Font Enchantment: Terminal Icon Mastery](nerd-font-enchantment.md)**
 
 ### ✅ Quest Completion Verification
 

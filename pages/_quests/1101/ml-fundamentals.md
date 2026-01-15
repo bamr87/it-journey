@@ -1,47 +1,20 @@
 ---
 title: 'Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn'
-description: Master machine learning fundamentals with Python. Learn supervised and unsupervised learning, model evaluation, cross-validation, and scikit-learn best practices for classification and regression.
-date: 2025-12-01 04:21:59+00:00
+author: IT-Journey Team
+description: Master machine learning fundamentals with Python. Learn supervised and
+  unsupervised learning, model evaluation, cross-validation, and scikit-learn best
+  practices for classification and regression.
+excerpt: 'Master ML fundamentals with scikit-learn: classification, regression, clustering,
+  and model evaluation'
 preview: images/previews/machine-learning-fundamentals-descriptive-subtitle.png
+date: 2025-12-01 04:21:59+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
 primary_technology: python
 quest_type: main_quest
-skill_focus: data-science
-learning_style: hands-on
 quest_series: AI/ML Mastery
-sub_title: 'Level 1101 (13) Quest: Main Quest - Machine Learning'
-excerpt: 'Master ML fundamentals with scikit-learn: classification, regression, clustering, and model evaluation'
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1101
-- python
-- machine-learning
-- scikit-learn
-- main_quest
-- data-science
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Science
-- Hard
-keywords:
-  primary:
-  - machine learning tutorial
-  - scikit-learn
-  - ml fundamentals
-  secondary:
-  - supervised learning
-  - unsupervised learning
-  - model evaluation
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1101-ml-fundamentals/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -62,14 +35,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-science
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +62,43 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1101-ml-fundamentals/
+categories:
+- Quests
+- Data-Science
+- Hard
+tags:
+- lvl-1101
+- python
+- machine-learning
+- scikit-learn
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1101
+- python
+- machine-learning
+- scikit-learn
+- main_quest
+- data-science
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1101 (13) Quest: Main Quest - Machine Learning'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -1,47 +1,20 @@
 ---
 title: 'Stream Processing: Real-Time Data with Apache Kafka & Flink'
-description: Build real-time data streaming pipelines with Kafka and Flink. Learn event-driven architecture, stream processing patterns, exactly-once semantics, and windowing operations.
-date: 2025-12-01 04:21:46+00:00
+author: IT-Journey Team
+description: Build real-time data streaming pipelines with Kafka and Flink. Learn
+  event-driven architecture, stream processing patterns, exactly-once semantics, and
+  windowing operations.
+excerpt: Build real-time data pipelines with Kafka, stream processing patterns, and
+  event-driven architecture
 preview: images/previews/stream-processing-descriptive-subtitle.png
+date: 2025-12-01 04:21:46+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
 primary_technology: kafka
 quest_type: main_quest
-skill_focus: data-engineering
-learning_style: hands-on
 quest_series: Data Engineering Mastery
-sub_title: 'Level 1100 (12) Quest: Main Quest - Stream Processing'
-excerpt: Build real-time data pipelines with Kafka, stream processing patterns, and event-driven architecture
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1100
-- kafka
-- flink
-- streaming
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Engineering
-- Hard
-keywords:
-  primary:
-  - kafka streaming
-  - stream processing
-  - real-time data
-  secondary:
-  - apache flink
-  - event-driven architecture
-  - exactly-once semantics
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1100-stream-processing/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -66,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-engineering
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -98,10 +66,43 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1100-stream-processing/
+categories:
+- Quests
+- Data-Engineering
+- Hard
+tags:
+- lvl-1100
+- kafka
+- flink
+- streaming
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1100
+- kafka
+- flink
+- streaming
+- main_quest
+- data-engineering
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1100 (12) Quest: Main Quest - Stream Processing'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

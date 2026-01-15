@@ -51,7 +51,7 @@ status: "ACTIVE"
 
 **Phase 4 Details**:
 - ✅ Monitoring Dashboard (`TODO/seo/MONITORING_DASHBOARD.md`)
-- ✅ SEO Tracker Script (`scripts/seo-tracker.py`)
+- ✅ SEO Tracker Script (`scripts/validation/seo-tracker.py`)
 - ✅ Tracking Tools Documented
 - ⏳ First Weekly Review (Dec 26, 2025)
 - ⏳ A/B Testing Meta Descriptions (pending data)

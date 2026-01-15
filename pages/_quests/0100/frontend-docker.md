@@ -1,19 +1,37 @@
 ---
 title: Dockering Jekyll with Bootstrap 5
 author: GPT and bamr87
-excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
-layout: default
-description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and
+  JavaScript in the Frontend Forests. This guide will navigate you through the enchanted
+  woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create
+  an enchanting website.
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript
+  in the Frontend Forests. This guide will navigate you through the enchanted woods,
+  ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting
+  website.
 preview: images/previews/dockering-jekyll-with-bootstrap-5.png
-draft: true
-lastmod: 2024-05-28T04:11:52.774Z
-permalink: /quests/frontend-docker/
-level: "0100"
-quest_type: main_quest
+date: 2024-05-28 04:11:52.774000+00:00
+lastmod: 2024-05-28 04:11:52.774000+00:00
+level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
+primary_technology: General
+quest_type: main_quest
+quest_series: Level 0100 Quest Line
+skill_focus:
+- Foundations
+learning_style: hands-on
+layout: default
+permalink: /quests/frontend-docker/
+keywords:
+- dockering
+- jekyll
+- with
+- bootstrap
+- '5'
+fmContentType: quest
+draft: true
 ---
-
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.
 
 ### Step 1: Set Up Your Environment

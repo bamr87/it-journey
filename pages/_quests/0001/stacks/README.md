@@ -34,7 +34,7 @@ The Stack Analysis Collection serves as:
 
 <!-- 
 Add new entries as analyses are completed:
-| [Repository Name](repository-name-stack-analysis.md) | Language | Type | YYYY-MM-DD | ✅ Complete |
+| Repository Name (`repository-name-stack-analysis.md`) | Language | Type | YYYY-MM-DD | ✅ Complete |
 -->
 
 ## 🔍 What's in a Stack Analysis?
@@ -190,7 +190,7 @@ If creating a stack analysis manually:
 ## 🔗 Related Resources
 
 ### IT-Journey Quests
-- [Stack Attack Quest](../stackattack.md) - Learn to use the Stack Attack Protocol
+- [Stack Attack Quest](../stack-attack.md) - Learn to use the Stack Attack Protocol
 - [Technology Analysis](../../) - Other technology analysis quests
 - [Level 001 Quests](../) - Beginner-level learning adventures
 

@@ -1,46 +1,22 @@
 ---
 title: 'Forging the Stats Portal: Data Analytics Quest'
-description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
-date: 2025-10-08 15:02:55.070000+00:00
+author: Quest Master IT-Journey Team
+description: Build a comprehensive statistics page that reveals the hidden metrics
+  of your Jekyll site, displaying real-time content analytics with Bootstrap-powered
+  visualizations
+excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create
+  a dynamic statistics portal
+snippet: Transform raw site data into compelling visual insights
 preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
-tags:
-- lvl-0001
-- jekyll
-- data-analytics
-- liquid-templating
-- bootstrap
-- site-statistics
-- data-visualization
-- yaml-data-files
-categories:
-- Quests
-- Development
-- Data-Analytics
+date: 2025-10-08 15:02:55.070000+00:00
+lastmod: 2025-10-08 18:10:29.972000+00:00
 level: '0001'
-quest_type: main_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-sub_title: 'Level 0001 (1) Quest: Jekyll Data Analytics and Visualization Mastery'
-excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
-snippet: Transform raw site data into compelling visual insights
-author: Quest Master IT-Journey Team
-layout: journals
-keywords:
-  primary:
-  - jekyll-statistics
-  - liquid-templating
-  - data-visualization
-  secondary:
-  - bootstrap-components
-  - yaml-data-files
-  - site-analytics
-  - content-metrics
-lastmod: 2025-10-08 18:10:29.972000+00:00
-permalink: /quests/stating-the-stats/
-attachments: ''
-comments: true
-quest_line: Development Mastery
+primary_technology: lvl-0001
+quest_type: main_quest
 quest_series: Jekyll Site Building
+quest_line: Development Mastery
 quest_arc: Data Analytics Arc
 quest_dependencies:
   required_quests: []
@@ -60,11 +36,11 @@ learning_paths:
   - Jekyll Development
   - Data Visualization
   - Frontend Design
-quest_mapping:
-  coordinates: '[3, 4]'
-  region: Foundation
-  realm: Development
-  biome: Web
+skill_focus:
+- Quests
+- Development
+- Data-Analytics
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic understanding of Jekyll site structure and build process
@@ -93,6 +69,39 @@ validation_criteria:
   - Explain Jekyll build-time vs. runtime data generation
   - Describe YAML data file structure and usage
   - Understand Liquid template filters and tags
+quest_mapping:
+  coordinates: '[3, 4]'
+  region: Foundation
+  realm: Development
+  biome: Web
+layout: journals
+permalink: /quests/stating-the-stats/
+categories:
+- Quests
+- Development
+- Data-Analytics
+tags:
+- lvl-0001
+- jekyll
+- data-analytics
+- liquid-templating
+- bootstrap
+- site-statistics
+- data-visualization
+- yaml-data-files
+keywords:
+- lvl-0001
+- jekyll
+- data-analytics
+- liquid-templating
+- bootstrap
+- site-statistics
+- data-visualization
+- yaml-data-files
+fmContentType: quest
+comments: true
+attachments: ''
+sub_title: 'Level 0001 (1) Quest: Jekyll Data Analytics and Visualization Mastery'
 rewards:
   badges:
   - 🏆 Data Portal Architect
@@ -105,9 +114,7 @@ rewards:
   unlocks_features:
   - Access to advanced analytics quest line
   - Data-driven site optimization capabilities
-fmContentType: quest
 ---
-
 *In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 
 *By mastering the ancient arts of Jekyll data generation and Liquid templating, you'll create a living dashboard that automatically tracks content metrics, analyzes patterns, and presents statistics with Bootstrap-powered elegance. This portal will serve as a beacon for adventurers, showcasing the collective wisdom accumulated on their journey.*

@@ -1,21 +1,38 @@
 ---
 title: 'Docker Containerization Mastery: Level 0101 (5) Quest'
-description: Master Docker containerization to build, deploy, and manage applications in isolated, portable environments with practical hands-on projects
-date: 2025-01-27 12:00:00+00:00
+author: Quest Master IT-Journey Team
+description: Master Docker containerization to build, deploy, and manage applications
+  in isolated, portable environments with practical hands-on projects
+excerpt: Learn to containerize applications and manage Docker environments for consistent,
+  scalable deployments
+snippet: Master the art of digital containerization and unlock deployment freedom
 preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
+date: 2025-01-27 12:00:00+00:00
+lastmod: 2025-09-28 18:49:08.719000+00:00
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
 primary_technology: docker
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: DevOps Fundamentals
-sub_title: 'Level 0101 (5) Quest: Tool-mastery - Docker'
-excerpt: Learn to containerize applications and manage Docker environments for consistent, scalable deployments
-snippet: Master the art of digital containerization and unlock deployment freedom
-author: Quest Master IT-Journey Team
+skill_focus:
+- devops
+learning_style: hands-on
+prerequisites:
+- Basic command-line interface knowledge
+- Basic programming concepts
+- Text editor or IDE familiarity
+validation_criteria:
+- Successfully create and run Docker containers from custom images
+- Build multi-container applications using Docker Compose
+- Implement Docker security best practices and optimization techniques
+- Deploy containerized applications to cloud platforms
 layout: journals
+permalink: /quests/level-0101-docker-mastery/
+categories:
+- Quests
+- Devops
+- Medium
 tags:
 - lvl-0101
 - docker
@@ -23,27 +40,18 @@ tags:
 - devops
 - hands-on
 - gamified-learning
-categories:
-- Quests
-- Devops
-- Medium
 keywords:
-  primary:
-  - docker
-  - tool-mastery
-  secondary:
-  - devops
-  - gamified-learning
-  - it-journey
-  - quest-based-learning
-lastmod: 2025-09-28 18:49:08.719000+00:00
-permalink: /quests/level-0101-docker-mastery/
-attachments: ''
+- lvl-0101
+- docker
+- tool-mastery
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
+draft: false
 comments: true
-prerequisites:
-- Basic command-line interface knowledge
-- Basic programming concepts
-- Text editor or IDE familiarity
+attachments: ''
+sub_title: 'Level 0101 (5) Quest: Tool-mastery - Docker'
 rewards:
   badge: Docker Container Architect
   skill: Container Orchestration Mastery
@@ -59,14 +67,7 @@ related_quests:
   parallel:
   - 'Level 0101: Linux System Administration'
   - 'Level 0100: Web Server Configuration'
-validation_criteria:
-- Successfully create and run Docker containers from custom images
-- Build multi-container applications using Docker Compose
-- Implement Docker security best practices and optimization techniques
-- Deploy containerized applications to cloud platforms
-draft: false
 ---
-
 *Greetings, brave adventurer! Welcome to **Docker Containerization Mastery: Level 0101 (5) Quest** - an epic 🟡 Medium journey that will transform your docker mastery. This quest will guide you through tool-mastery adventures in devops, preparing you for the next level of your IT journey.*
 
 *Whether you're a novice seeking your first docker spell or an experienced practitioner looking to master advanced devops techniques, this hands-on adventure will challenge and reward you with practical, real-world knowledge.*

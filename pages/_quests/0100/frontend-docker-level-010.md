@@ -1,35 +1,49 @@
 ---
 title: 'Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker'
-description: Integrate Bootstrap 5 CSS framework into your Docker-containerized Jekyll site. Learn to include CDN resources, configure includes, and style your static site with responsive components.
-date: 2024-05-28 02:30:46.765000+00:00
+author: bamr87
+description: Integrate Bootstrap 5 CSS framework into your Docker-containerized Jekyll
+  site. Learn to include CDN resources, configure includes, and style your static
+  site with responsive components.
+excerpt: Integrate Bootstrap 5 into your Docker-containerized Jekyll site for responsive,
+  professional styling
+snippet: Style your Jekyll site with Bootstrap 5 in a containerized environment
 preview: images/previews/level-010-frontend-docker.png
+date: 2024-05-28 02:30:46.765000+00:00
+lastmod: 2024-05-28 04:25:00.957000+00:00
+level: '0100'
+difficulty: 🟡 Medium
+estimated_time: 90-120 minutes
+primary_technology: lvl-0100
+quest_type: main_quest
+quest_series: Level 0100 Quest Line
+skill_focus:
+- Quests
+- Frontend
+learning_style: hands-on
+layout: journals
+permalink: /quests/level-0100-lvl-010-frontend-docker/
+categories:
+- Quests
+- Frontend
 tags:
 - lvl-0100
 - docker
 - jekyll
 - bootstrap
 - frontend
-categories:
-- Quests
-- Frontend
-sub-title: 'Level 010: Adding Bootstrap 5 to Jekyll'
-excerpt: Integrate Bootstrap 5 into your Docker-containerized Jekyll site for responsive, professional styling
-snippet: Style your Jekyll site with Bootstrap 5 in a containerized environment
-author: bamr87
-layout: null
-keywords: {}
-lastmod: 2024-05-28 04:25:00.957000+00:00
-slug: null
-permalink: /quests/level-0100-lvl-010-frontend-docker/
-attachments: ''
-type: default
+keywords:
+- lvl-0100
+- docker
+- jekyll
+- bootstrap
+- frontend
+fmContentType: quest
 draft: draft
-level: '0100'
-quest_type: main_quest
-difficulty: 🟡 Medium
-estimated_time: 90-120 minutes
+attachments: ''
+sub-title: 'Level 010: Adding Bootstrap 5 to Jekyll'
+slug: null
+type: default
 ---
-
 Awesome! You’ve laid a strong foundation by setting up Docker and creating your Jekyll site. Now, let’s journey further into Level 010, where we will add Bootstrap 5 to enhance the visual appeal and functionality of your site.
 
 ### Level 010: Adding Bootstrap 5

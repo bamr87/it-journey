@@ -1,67 +1,74 @@
 ---
-title: "Character Building: Forge Your IT Identity and Development Environment"
-description: Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero
-preview: images/previews/character-building-forge-your-it-identity-and-deve.png
+title: 'Character Building: Forge Your IT Identity and Development Environment'
 author: IT-Journey Team
-excerpt: Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment
-date: 2023-11-23T18:10:54.834Z
-lastmod: 2025-11-30T05:46:59.330Z
-draft: false
-tags:
-  - character-building
-  - career-planning
-  - development-environment
-  - specialization
-  - it-career
-  - init-world
-  - lvl-001
-level: "0000"
+description: Shape your digital persona and choose the tools, technologies, and specializations
+  that will define your IT journey from novice to hero
+excerpt: Begin your transformation from IT novice to digital hero by building your
+  character profile, choosing your specialization path, and configuring your ideal
+  development environment
+snippet: Every hero needs an origin story - craft yours with intention and purpose
+preview: images/previews/character-building-forge-your-it-identity-and-deve.png
+date: 2023-11-23 18:10:54.834000+00:00
+lastmod: 2025-11-30 05:46:59.330000+00:00
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 45-60 minutes
+primary_technology: character-building
 quest_type: main_quest
+quest_series: Init World - Character Creation
+skill_focus:
+- Quests
+- Init-World
+- Career-Development
+learning_style: hands-on
+prerequisites:
+- Completed hello-noob quest or basic GitHub familiarity
+- Basic understanding of different operating systems
+- Clear motivation to learn IT skills
+validation_criteria:
+- Complete personal IT character profile
+- Choose primary and secondary specialization areas
+- Configure basic development environment
+- Set clear learning goals and milestones
+layout: journals
+permalink: /quests/character-building/
 categories:
-  - Quests
-  - Init-World
-  - Career-Development
+- Quests
+- Init-World
+- Career-Development
+tags:
+- character-building
+- career-planning
+- development-environment
+- specialization
+- it-career
+- init-world
+- lvl-001
+keywords:
+- character-building
+- career-planning
+- development-environment
+- specialization
+- it-career
+- init-world
+- lvl-001
+fmContentType: quest
+draft: false
+sub-title: 'Level 001 Quest: Defining Your Digital Identity'
 meta:
   quest_type: character_development
   skill_focus: career_planning
-snippet: Every hero needs an origin story - craft yours with intention and purpose
-difficulty: 🟢 Easy
-estimated_time: 45-60 minutes
-prerequisites:
-  - Completed hello-noob quest or basic GitHub familiarity
-  - Basic understanding of different operating systems
-  - Clear motivation to learn IT skills
 rewards:
-  - 🏆 Character Identity Badge
-  - ⚡ Clear Career Direction
-  - 🛠️ Customized Learning Path
-  - 🎯 Professional Development Foundation
-quest_series: Init World - Character Creation
+- 🏆 Character Identity Badge
+- ⚡ Clear Career Direction
+- 🛠️ Customized Learning Path
+- 🎯 Professional Development Foundation
 related_quests:
-  - hello-noob.md - First Steps into IT
-  - 2023-11-24-character-selection.md - Choose Your IT Specialization
-  - 2023-11-24-os-selection.md - Operating System Selection Guide
-validation_criteria:
-  - Complete personal IT character profile
-  - Choose primary and secondary specialization areas
-  - Configure basic development environment
-  - Set clear learning goals and milestones
-sub-title: "Level 001 Quest: Defining Your Digital Identity"
-layout: journals
+- hello-noob.md - First Steps into IT
+- character-selection.md - Choose Your IT Specialization
+- os-selection.md - Operating System Selection Guide
 slug: character-building
-permalink: /quests/character-building/
-keywords:
-  primary:
-    - character building
-    - career planning
-    - it specialization
-  secondary:
-    - development environment
-    - professional development
-    - skill assessment
-    - learning path
 ---
-
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 
 *This quest will help you forge your unique IT identity, select your specialization path, and create the foundation upon which all your future learning will build. Every great hero has an origin story—this is where you write yours.*
@@ -370,9 +377,9 @@ Set up systems to monitor your advancement:
 - [Hello n00b](hello-noob.md) - First steps into IT community
 
 **Follow-Up Quests**:
-- [Character Selection](2023-11-24-character-selection.md) - Detailed specialization guidance  
-- [OS Selection](2023-11-24-os-selection.md) - Deep dive into operating system setup
-- [Begin Your IT Journey](2023-11-23-begin-your-it-journey.md) - Official journey kickoff
+- [Character Selection](character-selection.md) - Detailed specialization guidance  
+- [OS Selection](os-selection.md) - Deep dive into operating system setup
+- [Begin Your IT Journey](begin-your-it-journey.md) - Official journey kickoff
 
 **Parallel Quests** (can be completed in any order):
 - Tool mastery quests specific to your chosen specialization

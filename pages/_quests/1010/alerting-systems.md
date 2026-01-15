@@ -1,45 +1,20 @@
 ---
 title: 'Alerting Systems: PagerDuty Integration & Incident Management Guide'
-description: Build production-ready alerting systems with PagerDuty and incident management workflows. Learn alert routing, escalation policies, on-call schedules, and runbook automation for SRE teams.
-date: 2025-11-30 05:44:12+00:00
+author: IT-Journey Team
+description: Build production-ready alerting systems with PagerDuty and incident management
+  workflows. Learn alert routing, escalation policies, on-call schedules, and runbook
+  automation for SRE teams.
+excerpt: Implement production alerting with PagerDuty, escalation policies, and incident
+  management workflows
 preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
+date: 2025-11-30 05:44:12+00:00
+lastmod: 2025-11-30 05:44:12+00:00
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
 primary_technology: pagerduty
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Observability Mastery
-sub_title: 'Level 1010 (10) Quest: Main Quest - Alerting'
-excerpt: Implement production alerting with PagerDuty, escalation policies, and incident management workflows
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1010
-- pagerduty
-- alerting
-- main_quest
-- devops
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- DevOps
-- Hard
-keywords:
-  primary:
-  - pagerduty integration
-  - incident management
-  - alert routing
-  secondary:
-  - escalation policies
-  - on-call schedules
-  - runbook automation
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:44:12+00:00
-permalink: /quests/level-1010-alerting-systems/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -64,14 +39,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -96,10 +66,41 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1010-alerting-systems/
+categories:
+- Quests
+- DevOps
+- Hard
+tags:
+- lvl-1010
+- pagerduty
+- alerting
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1010
+- pagerduty
+- alerting
+- main_quest
+- devops
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1010 (10) Quest: Main Quest - Alerting'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

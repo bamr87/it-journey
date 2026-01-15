@@ -1,21 +1,40 @@
 ---
-title: "Phase 6: Polish & Integration"
-description: Final phase of quest development - content filling, network linking, and validation
+title: 'Phase 6: Polish & Integration'
+description: Final phase of quest development - content filling, network linking,
+  and validation
 preview: images/previews/phase-6-polish-integration.png
 date: 2025-12-20
 lastmod: 2025-12-20
 categories:
-  - documentation
-  - quest-development
+- documentation
+- quest-development
 tags:
-  - phase-6
-  - polish
-  - integration
-  - validation
-  - complete
+- phase-6
+- polish
+- integration
+- validation
+- complete
 toc: true
+keywords:
+- phase-6
+- polish
+- integration
+- validation
+- complete
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+author: IT-Journey Team
+layout: journals
+quest_series: Quest Documentation
+primary_technology: documentation
+skill_focus:
+- documentation
+learning_style: reading
+quest_type: documentation
+fmContentType: documentation
+permalink: /quests/docs/phase-6-plan/
 ---
-
 # 🎯 Phase 6: Polish & Integration
 
 **Date Started:** December 20, 2025
@@ -220,7 +239,7 @@ For each completed quest:
 ### Script 1: Remove Placeholder Dependencies
 ```bash
 #!/bin/bash
-# scripts/cleanup-placeholder-deps.sh
+# scripts/quest/cleanup-placeholder-deps.sh
 # Removes template placeholder dependencies from quest frontmatter
 
 QUEST_DIR="pages/_quests"
@@ -236,7 +255,7 @@ find "$QUEST_DIR" -name "*.md" -exec sed -i '' \
 ### Script 2: Fix Quest Type Values
 ```python
 #!/usr/bin/env python3
-# scripts/fix-quest-types.py
+# scripts/quest/fix-quest-types.py
 # Standardizes quest_type values in frontmatter
 
 VALID_QUEST_TYPES = ['main_quest', 'side_quest', 'epic_quest', 'reference']
@@ -253,10 +272,10 @@ REPLACEMENTS = {
 ### Script 3: Generate Network Report
 ```bash
 #!/bin/bash
-# scripts/generate-network-report.sh
+# scripts/quest/generate-network-report.sh
 # Generates a summary of quest network connections
 
-python3 scripts/validate-quest-network.py 2>&1 | \
+python3 scripts/quest/validate-quest-network.py 2>&1 | \
   grep -E "(Total|Errors|Warnings|Orphaned)" > \
   pages/_quests/NETWORK_REPORT.md
 ```
@@ -324,7 +343,7 @@ python3 scripts/validate-quest-network.py 2>&1 | \
 
 ## 📚 Related Documentation
 
-- [QUEST_BUILD_PLAN.md](QUEST_BUILD_PLAN.md) - Original build plan
+- [QUEST_BUILD_PLAN.md](../QUEST_BUILD_PLAN.md) - Original build plan
 - [PHASE1_COMPLETE.md](PHASE1_COMPLETE.md) - Infrastructure setup
 - [PHASE2_COMPLETE.md](PHASE2_COMPLETE.md) - Apprentice tier
 - [PHASE3_COMPLETE.md](PHASE3_COMPLETE.md) - Journeyman tier

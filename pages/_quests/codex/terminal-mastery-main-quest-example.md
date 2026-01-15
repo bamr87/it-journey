@@ -1,6 +1,7 @@
 ---
 title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
-description: Master terminal navigation and essential command-line operations to unlock developer productivity and system control powers
+description: Master terminal navigation and essential command-line operations to unlock
+  developer productivity and system control powers
 date: 2025-10-03 12:00:00+00:00
 preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
@@ -15,20 +16,18 @@ categories:
 - Foundation
 - Terminal-Mastery
 sub-title: 'Level 0001 (1) Main Quest: Terminal Navigation and Command Mastery'
-excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential navigation and file operations
+excerpt: Transform from terminal novice to command-line champion through hands-on
+  practice with essential navigation and file operations
 snippet: Where digital adventures begin - master the gateway to all development power
 author: Quest Master IT-Journey Team
 layout: journals
 keywords:
-  primary:
-  - terminal-navigation
-  - command-line-mastery
-  - file-operations
-  secondary:
-  - bash-fundamentals
-  - shell-commands
-  - developer-productivity
-  - system-navigation
+- lvl-0001
+- terminal
+- command-line
+- navigation
+- file-operations
+- development-fundamentals
 lastmod: 2025-10-03 12:00:00+00:00
 permalink: /quests/level-0001-terminal-navigation-mastery/
 attachments: ''
@@ -105,8 +104,13 @@ rewards:
   - Eligibility for shell scripting adventures
   - Foundation for all development tool mastery
 level: '0000'
+primary_technology: reference
+skill_focus:
+- codex
+- reference
+learning_style: reading
+fmContentType: codex
 ---
-
 *Greetings, brave digital explorer! Welcome to the Terminal Navigation Mastery Quest - the foundational adventure that transforms you from a point-and-click apprentice into a command-line champion. This main quest forms the cornerstone of your IT journey, providing essential skills that every developer, system administrator, and digital craftsperson must master.*
 
 *Whether you're taking your first steps into the world of development or seeking to solidify your command-line foundations, this comprehensive adventure will guide you through the essential arts of terminal navigation, file manipulation, and system exploration.*

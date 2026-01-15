@@ -1,47 +1,20 @@
 ---
 title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
-description: Learn Liquid templating language for Jekyll. Master variables, filters, loops, and conditionals to create dynamic content. Shopify and Jekyll template tutorial with examples.
-date: 2025-11-30 04:58:56+00:00
+author: IT-Journey Team
+description: Learn Liquid templating language for Jekyll. Master variables, filters,
+  loops, and conditionals to create dynamic content. Shopify and Jekyll template tutorial
+  with examples.
+excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters,
+  and control flow.
 preview: images/previews/liquid-templating-dynamic-content-basics-descripti.png
+date: 2025-11-30 04:58:56+00:00
+lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 primary_technology: liquid
 quest_type: main_quest
-skill_focus: frontend
-learning_style: hands-on
 quest_series: Static Site Mastery
-sub_title: 'Level 0001 (1) Quest: Liquid Template Language'
-excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters, and control flow.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0001
-- liquid
-- templating
-- jekyll
-- shopify
-- main_quest
-- frontend
-- hands-on
-- beginner
-categories:
-- Quests
-- Frontend
-- Templating
-- Beginner
-keywords:
-  primary:
-  - liquid templating tutorial
-  - jekyll liquid
-  - liquid template language
-  secondary:
-  - liquid filters
-  - liquid variables
-  - liquid loops
-  - shopify liquid
-lastmod: 2025-12-19 00:00:00+00:00
-permalink: /quests/level-0001-liquid-templating/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -50,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0001-side-quest-1/
-  - /quests/level-0001-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0001-alternative-path/
   sequel_quests:
@@ -66,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- frontend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -98,10 +64,46 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0001-liquid-templating/
+categories:
+- Quests
+- Frontend
+- Templating
+- Beginner
+tags:
+- lvl-0001
+- liquid
+- templating
+- jekyll
+- shopify
+- main_quest
+- frontend
+- hands-on
+- beginner
+keywords:
+- lvl-0001
+- liquid
+- templating
+- jekyll
+- shopify
+- main_quest
+- frontend
+- hands-on
+- beginner
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0001 (1) Quest: Liquid Template Language'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

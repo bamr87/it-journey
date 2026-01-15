@@ -1,47 +1,20 @@
 ---
 title: 'Git Workflow Mastery: Branches, Merging & Team Collaboration'
-description: Learn Git branching, merging, and collaboration workflows. Master feature branches, pull requests, and conflict resolution for team development. Beginner-friendly hands-on tutorial.
-date: 2025-11-30 04:59:12+00:00
+author: IT-Journey Team
+description: Learn Git branching, merging, and collaboration workflows. Master feature
+  branches, pull requests, and conflict resolution for team development. Beginner-friendly
+  hands-on tutorial.
+excerpt: Master Git branching strategies, merging techniques, and pull request workflows
+  for effective team collaboration.
 preview: images/previews/git-workflow-mastery-branches-and-collaboration-de.png
+date: 2025-11-30 04:59:12+00:00
+lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
 primary_technology: git
 quest_type: main_quest
-skill_focus: devops
-learning_style: hands-on
 quest_series: Version Control Mastery
-sub_title: 'Level 0001 (1) Quest: Git Branching & Collaboration'
-excerpt: Master Git branching strategies, merging techniques, and pull request workflows for effective team collaboration.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0001
-- git
-- git-branching
-- pull-requests
-- version-control
-- main_quest
-- devops
-- hands-on
-- beginner
-categories:
-- Quests
-- DevOps
-- Version-Control
-- Beginner
-keywords:
-  primary:
-  - git branching tutorial
-  - git workflow
-  - pull request tutorial
-  secondary:
-  - git merge
-  - git collaboration
-  - feature branches
-  - git for teams
-lastmod: 2025-12-19 00:00:00+00:00
-permalink: /quests/level-0001-git-workflow-mastery/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -50,9 +23,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0001-side-quest-1/
-  - /quests/level-0001-side-quest-2/
+  child_quests: []
   parallel_quests:
   - /quests/level-0001-alternative-path/
   sequel_quests:
@@ -66,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- devops
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -98,10 +64,46 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0001-git-workflow-mastery/
+categories:
+- Quests
+- DevOps
+- Version-Control
+- Beginner
+tags:
+- lvl-0001
+- git
+- git-branching
+- pull-requests
+- version-control
+- main_quest
+- devops
+- hands-on
+- beginner
+keywords:
+- lvl-0001
+- git
+- git-branching
+- pull-requests
+- version-control
+- main_quest
+- devops
+- hands-on
+- beginner
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0001 (1) Quest: Git Branching & Collaboration'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

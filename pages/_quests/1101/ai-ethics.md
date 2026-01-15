@@ -1,47 +1,20 @@
 ---
 title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
-description: Learn responsible AI practices and ethics frameworks. Understand bias detection, fairness metrics, explainability with SHAP/LIME, model governance, and regulatory compliance for AI systems.
-date: 2025-12-01 04:22:13+00:00
+author: IT-Journey Team
+description: Learn responsible AI practices and ethics frameworks. Understand bias
+  detection, fairness metrics, explainability with SHAP/LIME, model governance, and
+  regulatory compliance for AI systems.
+excerpt: Build responsible AI systems with bias detection, fairness metrics, and model
+  explainability
 preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
+date: 2025-12-01 04:22:13+00:00
+lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: python
 quest_type: side_quest
-skill_focus: data-science
-learning_style: hands-on
 quest_series: AI/ML Mastery
-sub_title: 'Level 1101 (13) Quest: Side Quest - AI Ethics'
-excerpt: Build responsible AI systems with bias detection, fairness metrics, and model explainability
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1101
-- python
-- ai-ethics
-- responsible-ai
-- side_quest
-- data-science
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Data-Science
-- Medium
-keywords:
-  primary:
-  - ai ethics
-  - responsible ai
-  - bias detection
-  secondary:
-  - fairness metrics
-  - model explainability
-  - shap lime
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:46:59.315000+00:00
-fmContentType: quest
-permalink: /quests/level-1101-ai-ethics/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -62,14 +35,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- data-science
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -94,10 +62,43 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1101-ai-ethics/
+categories:
+- Quests
+- Data-Science
+- Medium
+tags:
+- lvl-1101
+- python
+- ai-ethics
+- responsible-ai
+- side_quest
+- data-science
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1101
+- python
+- ai-ethics
+- responsible-ai
+- side_quest
+- data-science
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1101 (13) Quest: Side Quest - AI Ethics'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

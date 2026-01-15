@@ -104,7 +104,7 @@ bundle exec jekyll build
 ### Testing
 ```bash
 # Run link checker locally
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 
 # Validate frontmatter
 # (Automated via GitHub Actions)

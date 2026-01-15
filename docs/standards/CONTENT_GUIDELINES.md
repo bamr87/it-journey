@@ -712,7 +712,7 @@ Show expected output after commands:
 Run the link checker:
 
 ```bash
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 ```
 
 Expected output:

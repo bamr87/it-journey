@@ -516,7 +516,7 @@ bundle outdated
 
 ```bash
 # Link checker
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 
 # Environment setup
 ./scripts/core/environment-setup.sh

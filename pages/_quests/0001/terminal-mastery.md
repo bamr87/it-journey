@@ -1,73 +1,74 @@
 ---
-title: "Terminal Mastery: Conquering the Command-Line Realm"
-description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
-date: 2025-07-28T15:30:00.000Z
-preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
-tags:
-   - lvl-0001
-   - terminal
-   - command-line
-   - tool-mastery
-   - foundation
-   - system-administration
-   - developer-tools
-   - hands-on
-   - gamified-learning
-categories:
-   - Quests
-   - Development
-    - Foundation
-level: "0001"
-quest_type: main_quest
-difficulty: 🟡 Medium
-estimated_time: 90-120 minutes
-sub-title: "Level 0001 (1) Quest: Command-Line Interface Mastery"
-excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
-snippet: Where code meets the metal, heroes are forged in the fire of the command line
+title: 'Terminal Mastery: Conquering the Command-Line Realm'
 author: Quest Master IT-Journey Team
-layout: journals
-keywords:
-   primary:
-      - terminal
-      - command-line
-      - shell
-      - bash
-      - zsh
-   secondary:
-      - unix
-      - linux
-      - macos
-      - developer-productivity
-      - system-navigation
-      - file-management
-lastmod: 2025-09-27T19:59:13.794Z
-permalink: /quests/level-0001-terminal-mastery/
-attachments: ""
-comments: true
+description: Master terminal navigation and command-line tools to unlock developer
+  productivity and system control powers in this hands-on quest
+excerpt: Transform from terminal novice to command-line champion through hands-on
+  practice with essential shell commands and navigation techniques
+snippet: Where code meets the metal, heroes are forged in the fire of the command
+  line
+preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
+date: 2025-07-28 15:30:00+00:00
+lastmod: 2025-09-27 19:59:13.794000+00:00
+level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
+primary_technology: lvl-0001
+quest_type: main_quest
+quest_series: 'Foundation Path: Digital Literacy Mastery'
+skill_focus:
+- Quests
+- Development - Foundation
+learning_style: hands-on
 prerequisites:
-   - Basic computer literacy and file system understanding
-   - Access to a Unix-like terminal (macOS, Linux, or WSL on Windows)
-   - Willingness to embrace the power of text-based interfaces
-rewards:
-   - 🏆 Terminal Navigator Badge
-   - ⚡ 10x Developer Productivity Boost
-   - 🛠️ Command-Line Mastery Foundation
-   - 🎯 Advanced Developer Toolkit Access
-quest_series: "Foundation Path: Digital Literacy Mastery"
-related_quests:
-   - "Level 0000: Digital Awakening - Computer Fundamentals"
-   - "Level 0010: File System Sorcery - Directory Navigation"
-   - "Level 0011: Version Control Magic - Git Fundamentals"
+- Basic computer literacy and file system understanding
+- Access to a Unix-like terminal (macOS, Linux, or WSL on Windows)
+- Willingness to embrace the power of text-based interfaces
 validation_criteria:
-   - Navigate complex directory structures using only terminal commands
-   - Execute file operations (create, copy, move, delete) with confidence
-   - Demonstrate text manipulation and search capabilities
-   - Show proficiency with process management and system information commands
+- Navigate complex directory structures using only terminal commands
+- Execute file operations (create, copy, move, delete) with confidence
+- Demonstrate text manipulation and search capabilities
+- Show proficiency with process management and system information commands
+layout: journals
+permalink: /quests/level-0001-terminal-mastery/
+categories:
+- Quests
+- Development - Foundation
+tags:
+- lvl-0001
+- terminal
+- command-line
+- tool-mastery
+- foundation
+- system-administration
+- developer-tools
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0001
+- terminal
+- command-line
+- tool-mastery
+- foundation
+- system-administration
+- developer-tools
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: false
+comments: true
+attachments: ''
+sub-title: 'Level 0001 (1) Quest: Command-Line Interface Mastery'
+rewards:
+- 🏆 Terminal Navigator Badge
+- ⚡ 10x Developer Productivity Boost
+- 🛠️ Command-Line Mastery Foundation
+- 🎯 Advanced Developer Toolkit Access
+related_quests:
+- 'Level 0000: Digital Awakening - Computer Fundamentals'
+- 'Level 0010: File System Sorcery - Directory Navigation'
+- 'Level 0011: Version Control Magic - Git Fundamentals'
 ---
-
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 
 *Whether you're a complete novice who trembles at the sight of a black screen or an aspiring developer looking to unlock true productivity powers, this adventure will challenge and reward you with practical, real-world command-line mastery.*

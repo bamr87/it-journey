@@ -26,20 +26,20 @@ tags:
 | Tool | Purpose | Location |
 |------|---------|----------|
 | **MONITORING_DASHBOARD.md** | Weekly metric tracking templates | `TODO/seo/MONITORING_DASHBOARD.md` |
-| **seo-tracker.py** | Automated baseline/opportunity reports | `scripts/seo-tracker.py` |
+| **seo-tracker.py** | Automated baseline/opportunity reports | `scripts/validation/seo-tracker.py` |
 | **Google Search Console** | Primary data source | [search.google.com/search-console](https://search.google.com/search-console) |
 
 ### Quick Commands
 
 ```bash
 # Show baseline metrics
-python3 scripts/seo-tracker.py --baseline
+python3 scripts/validation/seo-tracker.py --baseline
 
 # Generate weekly review template  
-python3 scripts/seo-tracker.py --report weekly
+python3 scripts/validation/seo-tracker.py --report weekly
 
 # Identify optimization opportunities
-python3 scripts/seo-tracker.py --opportunities
+python3 scripts/validation/seo-tracker.py --opportunities
 ```
 
 ---

@@ -26,6 +26,25 @@ Level 0000 quests focus on:
 
 ## Available Quests
 
+| Quest | Difficulty | Time | Type | Status |
+|-------|------------|------|------|--------|
+| [Character Building: Forge Your IT Identity and Development Environment](/quests/character-building/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
+| [Hello Cloud: First Steps into the Sky Realm](/quests/hello-cloud/) | ⚔️ Epic | 120-180 minutes | main_quest | ✅ Complete |
+| [Linux Fundamentals](/quests/hello-linux/linux-fundamentals/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
+| [Hello macOS: Setting Up the Apple Kingdom](/quests/hello-macos/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [Hello Windows: Mastering the Windows Development Environment](/quests/hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Hello n00b: Your First Steps into the IT Journey](/quests/init_world/hello-noob/) | 🟢 Easy | 15-30 minutes | main_quest | ✅ Complete |
+| [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/lvl_000/bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
+| [Begin your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | 🔮 Placeholder |
+| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
+| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | 🔮 Placeholder |
+
+
 ### 🌱 Character Creation & Identity
 
 #### [Hello n00b: Your First Steps](hello-noob.md)
@@ -118,7 +137,7 @@ Choose your primary operating system realm. Understand the strengths of each pla
 
 ### 💻 Platform-Specific Onboarding
 
-#### [Hello Windows](hello-win/)
+#### [Hello Windows](hello-win/hello-win.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 60-90 minutes
 
 Master the Windows Empire with PowerShell, WinGet, and Windows Terminal customization.
@@ -133,7 +152,7 @@ Master the Windows Empire with PowerShell, WinGet, and Windows Terminal customiz
 
 ---
 
-#### [Hello macOS](hello-mac/)
+#### [Hello macOS](hello-mac/hello-mac.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Conquer the Apple Kingdom with Homebrew, iTerm2, and Xcode command-line tools.
@@ -148,7 +167,7 @@ Conquer the Apple Kingdom with Homebrew, iTerm2, and Xcode command-line tools.
 
 ---
 
-#### [Hello Linux](hello-linux/)
+#### [Hello Linux](hello-linux/linux-fundamentals.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🔴 Hard | **Estimated Time**: 90-120 minutes
 
 Tame the Penguin's Domain with Bash mastery, package managers, and system configuration.
@@ -163,7 +182,7 @@ Tame the Penguin's Domain with Bash mastery, package managers, and system config
 
 ---
 
-#### [Hello Cloud](hello-cloud/)
+#### [Hello Cloud](hello-cloud/hello-cloud.md)
 **Quest Type**: Main 🏰 | **Difficulty**: ⚔️ Epic | **Estimated Time**: 120-180 minutes
 
 Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundamentals.
@@ -178,7 +197,7 @@ Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundam
 
 ### 🔧 Terminal & Scripting Foundations
 
-#### [VS Code Mastery Quest](vscode-mastery-quest.md)
+#### [VS Code Mastery Quest](vscode-mastery.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Forge your ultimate development weapon. Master VS Code setup, extensions, and productivity features.
@@ -204,7 +223,7 @@ Learn the terminal incantations that power Unix-like systems. Master Bash script
 - Variables and control flow
 - File manipulation
 
-**Prerequisites:** Terminal access, [Hello Linux](hello-linux/) or [Hello macOS](hello-mac/)
+**Prerequisites:** Terminal access, [Hello Linux](hello-linux/linux-fundamentals.md) or [Hello macOS](hello-mac/hello-mac.md)
 
 ---
 
@@ -239,7 +258,7 @@ Environment customization script showcasing shell profile configuration and alia
 
 ### 🛠️ Tools Introduction
 
-See the [tools/](tools/) subdirectory for beginner tool guides and getting-started resources.
+See the [tools collection](../tools/README.md) for beginner tool guides and getting-started resources.
 
 ## Learning Path Recommendations
 
@@ -253,11 +272,11 @@ See the [tools/](tools/) subdirectory for beginner tool guides and getting-start
 ### For Those with Some Experience
 1. [Character Selection](character-selection.md) - Confirm your specialization
 2. Platform-specific Hello quest
-3. [VS Code Mastery Quest](vscode-mastery-quest.md) - Set up your IDE
+3. [VS Code Mastery Quest](vscode-mastery.md) - Set up your IDE
 4. [Bash Fundamentals](bash-run.md) - Terminal proficiency
 
 ### For Quick Setup
-1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](vscode-mastery-quest.md)
+1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](vscode-mastery.md)
 
 ## Quest Dependencies & Progression
 

@@ -1,30 +1,39 @@
 ---
 title: Begin your IT Journey
-description: Take your first steps into the world of information technology
-preview: images/previews/begin-your-it-journey.png
 author: IT-Journey Team
+description: Take your first steps into the world of information technology
 excerpt: Start your adventure with the essential skills and mindset for IT success
-date: 2023-11-23T17:42:43.105Z
-lastmod: 2025-11-29T21:40:00.000Z
-draft: true
-permalink: /quests/lvl_000/begin-your-it-journey/
-level: "0000"
+snippet: null
+preview: images/previews/begin-your-it-journey.png
+date: 2023-11-23 17:42:43.105000+00:00
+lastmod: 2025-11-29 21:40:00+00:00
+level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
+primary_technology: getting-started
 quest_type: main_quest
-tags:
-  - getting-started
-  - beginner
-  - lvl-0000
-categories:
-  - Quests
-  - Init-World
+quest_series: Level 0000 Quest Line
+skill_focus:
+- getting-started
+- beginner
+- lvl-0000
+learning_style: hands-on
+layout: journals
+permalink: /quests/lvl_000/begin-your-it-journey/
 categories: []
+tags:
+- getting-started
+- beginner
+- lvl-0000
+keywords:
+- getting-started
+- beginner
+- lvl-0000
+fmContentType: quest
+draft: true
 meta: null
-snippet: null
 slug: journey
 ---
-
 Ah, embarking on your IT adventure, are we? Fantastic! To become an IT wizard, you'll need to gather your tools and learn the incantations (or, in our world, the technologies and languages). Here's your starter map:
 
 1. **Choose Your Path**: IT is a realm with many paths - development, system administration, network engineering, security, and cloud technologies, to name a few. Reflect on what excites you most. Do you enjoy creating things (development)? Solving puzzles (security)? Building and maintaining systems (system admin or network engineer)? Or perhaps you're drawn to the vast skies of cloud technologies?

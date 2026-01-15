@@ -1,7 +1,7 @@
 ---
 title: Jekyll Configuration & Site Structure
 excerpt: Configuration file contents, site tree structure, and automated regeneration workflows.
-lastmod: 2025-07-03T17:12:14.461Z
+lastmod: 2026-01-15T05:11:51.000Z
 config-dir: pages/_about/settings
 config-file: _config.yml
 permalink: /about/config/
@@ -32,7 +32,7 @@ The configuration files in this directory are automatically updated via GitHub A
 If you need to manually regenerate the configuration files, use these commands:
 
 #### PowerShell (Windows)
-```powershell
+\`\`\`powershell
 # Regenerate Config File
 cd ~/github/{{ site.local_repo }}
 cp {{ page.config-file }} {{ page.config-dir }}/config-utf16.txt
@@ -41,10 +41,10 @@ Get-Content {{ page.config-dir }}/config-utf16.txt | Set-Content -Encoding UTF8 
 # Generate tree structure
 tree /f > {{ page.config-dir }}/tree-utf16.txt
 Get-Content {{ page.config-dir }}/tree-utf16.txt -Encoding Unicode | Set-Content -Encoding UTF8 {{ page.config-dir }}/tree.txt
-```
+\`\`\`
 
 #### Bash (Linux/macOS)
-```bash
+\`\`\`bash
 # Regenerate Config File
 cd ~/github/{{ site.local_repo }}
 cp {{ page.config-file }} {{ page.config-dir }}/{{ page.config-file }}
@@ -58,7 +58,7 @@ else
   # Fallback for systems without tree command
   find . -type d | grep -v -E "(\$(generate_gitignore_pattern))" | sort > {{ page.config-dir }}/tree.txt
 fi
-```
+\`\`\`
 
 ### Gitignore Integration
 
@@ -70,7 +70,7 @@ The tree structure and sitemap generation **automatically respect the \`.gitigno
 - Sensitive or build artifacts are not included in public documentation
 
 **Current .gitignore patterns respected:**
-```ignore
+\`\`\`ignore
 _site
 .sass-cache
 .jekyll-cache
@@ -81,31 +81,31 @@ Gemfile.lock
 pages/_notes/.DS_Store
 *.DS_Store
 .env
-```
+\`\`\`
 
 ## Jekyll Configuration
 
 Current configuration from \`{{ page.config-file }}\`:
 
-```yml
+\`\`\`yml
 {% include_relative {{ page.config-file }} %}
-```
+\`\`\`
 
 ## Site Tree Structure
 
 Current directory structure (auto-generated):
 
-```
+\`\`\`
 {% include_relative tree.txt %}
-```
+\`\`\`
 
 ## Site Map Data
 
 Site structure and page information:
 
-```yml
+\`\`\`yml
 {% include_relative sitemap-data.yml %}
-```
+\`\`\`
 
 ## Related Files
 

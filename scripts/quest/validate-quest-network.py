@@ -346,7 +346,7 @@ def main():
     """Main entry point."""
     # Get quest directory
     script_dir = Path(__file__).parent
-    project_root = script_dir.parent
+    project_root = script_dir.parent.parent
     quest_dir = project_root / 'pages' / '_quests'
     
     if not quest_dir.exists():

@@ -1,42 +1,18 @@
 ---
 title: 'Infrastructure as Code: Terraform and CloudFormation Fundamentals'
-description: Learn Infrastructure as Code with Terraform and CloudFormation. Automate cloud provisioning, manage state, implement modules, and apply IaC best practices.
-date: 2025-11-30 05:41:15+00:00
+author: IT-Journey Team
+description: Learn Infrastructure as Code with Terraform and CloudFormation. Automate
+  cloud provisioning, manage state, implement modules, and apply IaC best practices.
+excerpt: Automate cloud infrastructure provisioning with Terraform and CloudFormation
 preview: images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
+date: 2025-11-30 05:41:15+00:00
+lastmod: 2025-11-30 05:41:15+00:00
 level: '1000'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: terraform
 quest_type: main_quest
-skill_focus: cloud-engineering
-learning_style: hands-on
 quest_series: Cloud Journey
-sub_title: 'Level 1000 (8) Quest: Main Quest - IaC'
-excerpt: Automate cloud infrastructure provisioning with Terraform and CloudFormation
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1000
-- terraform
-- main_quest
-- cloud-engineering
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Cloud-Engineering
-- Hard
-keywords:
-  primary:
-  - infrastructure-as-code
-  - terraform-cloudformation
-  secondary:
-  - cloud-automation
-  - iac-best-practices
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:41:15+00:00
-permalink: /quests/level-1000-infrastructure-as-code/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +37,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- cloud-engineering
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +64,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1000-infrastructure-as-code/
+categories:
+- Quests
+- Cloud-Engineering
+- Hard
+tags:
+- lvl-1000
+- terraform
+- main_quest
+- cloud-engineering
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1000
+- terraform
+- main_quest
+- cloud-engineering
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1000 (8) Quest: Main Quest - IaC'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

@@ -1,62 +1,70 @@
 ---
-title: "Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest"
-description: Build an epic, ATS-friendly Curriculum Vitae in VS Code using LaTeX, aligned to the provided cv.tex template—install tools, customize sections, compile, and export a polished PDF.
-date: 2025-08-17T21:11:48.247Z
-preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
-tags:
-  - lvl-0101
-  - latex
-  - vscode
-  - resume
-  - pdf
-  - tool-mastery
-categories:
-  - Quests
-  - Development
-  - Foundation
-sub-title: "Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction"
-excerpt: Craft a professional CV from the cv.tex template using VS Code + LaTeX—install, customize, compile, and validate.
-snippet: From blank page to battle-ready CV—forge, compile, and level up your professional codex.
+title: 'Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest'
 author: Quest Master
-layout: journals
-keywords:
-  primary:
-    - latex-cv
-    - vscode-latex
-  secondary:
-    - pdf-ats
-    - resume-template
-    - latex-workshop
-    - texlive-mactex-miktex
-lastmod: 2025-08-17T21:36:08.855Z
-permalink: /quests/level-0101-latex-cv-forging/
-attachments: ""
-comments: true
+description: Build an epic, ATS-friendly Curriculum Vitae in VS Code using LaTeX,
+  aligned to the provided cv.tex template—install tools, customize sections, compile,
+  and export a polished PDF.
+excerpt: Craft a professional CV from the cv.tex template using VS Code + LaTeX—install,
+  customize, compile, and validate.
+snippet: From blank page to battle-ready CV—forge, compile, and level up your professional
+  codex.
+preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
+date: 2025-08-17 21:11:48.247000+00:00
+lastmod: 2025-08-17 21:36:08.855000+00:00
+level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-prerequisites:
-  - Basic command-line familiarity
-  - VS Code installed
-  - Git installed (optional, recommended)
-rewards:
-  - 🏆 CV Forgemaster (LaTeX)
-  - ⚡ VS Code LaTeX workflow mastery
-  - 🛠️ Reusable CV template you can tailor per role
-  - 🎯 ATS-friendly professional PDF
-quest_series: Professional Identity Path
-related_quests:
-  - "Level 0011: Markdown to PDF Basics"
-  - "Level 0100: Git Fundamentals"
-  - "Level 1010: Portfolio Website Publishing"
-validation_criteria:
-  - Repository contains a customized cv.tex aligned to your details
-  - VS Code compiles cv.tex to a PDF without errors
-  - Contact, Education, Experience, Skills sections are populated
-  - Clickable links for email, LinkedIn, and GitHub
-level: "0101"
+primary_technology: lvl-0101
 quest_type: main_quest
+quest_series: Professional Identity Path
+skill_focus:
+- Quests
+- Development
+- Foundation
+learning_style: hands-on
+prerequisites:
+- Basic command-line familiarity
+- VS Code installed
+- Git installed (optional, recommended)
+validation_criteria:
+- Repository contains a customized cv.tex aligned to your details
+- VS Code compiles cv.tex to a PDF without errors
+- Contact, Education, Experience, Skills sections are populated
+- Clickable links for email, LinkedIn, and GitHub
+layout: journals
+permalink: /quests/level-0101-latex-cv-forging/
+categories:
+- Quests
+- Development
+- Foundation
+tags:
+- lvl-0101
+- latex
+- vscode
+- resume
+- pdf
+- tool-mastery
+keywords:
+- lvl-0101
+- latex
+- vscode
+- resume
+- pdf
+- tool-mastery
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction'
+rewards:
+- 🏆 CV Forgemaster (LaTeX)
+- ⚡ VS Code LaTeX workflow mastery
+- 🛠️ Reusable CV template you can tailor per role
+- 🎯 ATS-friendly professional PDF
+related_quests:
+- 'Level 0011: Markdown to PDF Basics'
+- 'Level 0100: Git Fundamentals'
+- 'Level 1010: Portfolio Website Publishing'
 ---
-
 ## 🧙‍♂️ Epic Introduction
 
 In the vast digital matrix where data flows like rivers of light, the guild calls you to forge your

@@ -1,8 +1,9 @@
 ---
-title: "Stack Attack Analysis: IT-Journey"
-description: Comprehensive technology stack analysis and documentation for the IT-Journey educational platform
+title: 'Stack Attack Analysis: IT-Journey'
+description: Comprehensive technology stack analysis and documentation for the IT-Journey
+  educational platform
 preview: images/previews/stack-attack-analysis-it-journey.png
-date: 2025-11-02T00:00:00.000Z
+date: 2025-11-02 00:00:00+00:00
 repository: https://github.com/bamr87/it-journey
 repository_name: it-journey
 repository_owner: bamr87
@@ -11,27 +12,44 @@ project_type: Educational Platform / Static Site
 analysis_date: 2025-11-02
 analyzed_by: Stack Attack Protocol v1.0
 tags:
-    - stack-analysis
-    - technology-stack
-    - ruby
-    - jekyll
-    - educational-platform
-    - static-site
-    - github-pages
-    - docker
-    - python
-    - ai-integration
+- stack-analysis
+- technology-stack
+- ruby
+- jekyll
+- educational-platform
+- static-site
+- github-pages
+- docker
+- python
+- ai-integration
 categories:
-    - Stack Analysis
+- Stack Analysis
 layout: journals
-lastmod: 2025-11-02T21:37:25.394Z
-level: "0001"
+lastmod: 2025-11-02 21:37:25.394000+00:00
+level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
 permalink: /quests/level-0001/it-journey-stack-analysis/
+primary_technology: stack-analysis
+skill_focus:
+- Stack Analysis
+learning_style: hands-on
+fmContentType: quest
+quest_series: Level 0001 Quest Line
+keywords:
+- stack-analysis
+- technology-stack
+- ruby
+- jekyll
+- educational-platform
+- static-site
+- github-pages
+- docker
+- python
+- ai-integration
+author: IT-Journey Team
 ---
-
 # Stack Attack Analysis: IT-Journey
 
 ## 📋 Executive Summary
@@ -286,7 +304,7 @@ services:
 #### Python Automation (3.11+)
 
 **Primary Use Cases**:
-- **Link Health Monitoring**: `scripts/link-checker.py`
+- **Link Health Monitoring**: `scripts/validation/link-checker.py`
 - **Quest Validation**: `test/quest-validator/quest_validator.py`
 - **AI Integration**: `scripts/ai-analyzer.py`
 - **Content Processing**: Various utility scripts

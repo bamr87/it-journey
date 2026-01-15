@@ -1,21 +1,43 @@
 ---
 title: 'The Knowledge Vault: Building an Automated Documentation Hub'
-description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
-date: 2025-10-03 21:41:24.219000+00:00
+author: Quest Master IT-Journey Team
+description: Build a centralized documentation system that aggregates and organizes
+  knowledge from multiple GitHub repositories using automation
+excerpt: Build a powerful automation system that collects, organizes, and maintains
+  documentation from multiple GitHub repositories using GitHub Actions, Bash, and
+  Python
+snippet: Transform scattered docs into organized knowledge with automation magic
 preview: images/previews/the-knowledge-vault-building-an-automated-document.png
+date: 2025-10-03 21:41:24.219000+00:00
+lastmod: 2025-10-03 21:57:41.816000+00:00
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: GitHub Actions
 quest_type: main_quest
-skill_focus: DevOps Automation
-learning_style: Hands-on Implementation
 quest_series: Automation Mastery
-sub_title: Aggregate, organize, and maintain documentation across your entire project ecosystem
-excerpt: Build a powerful automation system that collects, organizes, and maintains documentation from multiple GitHub repositories using GitHub Actions, Bash, and Python
-snippet: Transform scattered docs into organized knowledge with automation magic
-author: Quest Master IT-Journey Team
+skill_focus:
+- DevOps Automation
+learning_style: Hands-on Implementation
+prerequisites:
+- Basic Git operations (clone, commit, push, pull)
+- Familiarity with Markdown syntax
+- Basic Bash scripting knowledge
+- Python fundamentals (file I/O, functions)
+- GitHub account with repository creation permissions
+- 'Completed: [Hello n00b](../0000/hello-noob.md) quest'
+validation_criteria:
+- GitHub Actions workflow executes successfully
+- Documentation aggregates from at least 2 repositories
+- Files organized into logical directory structure
+- YAML front matter correctly added to documents
+- Workflow runs on schedule and manual trigger
 layout: journals
+permalink: ../README.mdlevel-0001/docs-in-a-row/
+categories:
+- Automation
+- DevOps
+- Documentation
 tags:
 - github-actions
 - bash-scripting
@@ -24,17 +46,19 @@ tags:
 - devops
 - ci-cd
 - workflow-automation
-categories:
-- Automation
-- DevOps
-- Documentation
-prerequisites:
-- Basic Git operations (clone, commit, push, pull)
-- Familiarity with Markdown syntax
-- Basic Bash scripting knowledge
-- Python fundamentals (file I/O, functions)
-- GitHub account with repository creation permissions
-- 'Completed: [Hello n00b](/quests/init_world/hello-noob/) quest'
+keywords:
+- github-actions
+- bash-scripting
+- python-automation
+- documentation
+- devops
+- ci-cd
+- workflow-automation
+fmContentType: quest
+draft: false
+comments: true
+sub_title: Aggregate, organize, and maintain documentation across your entire project
+  ecosystem
 rewards:
   badge: Documentation Architect
   skill: CI/CD Pipeline Development
@@ -50,24 +74,12 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
-validation_criteria:
-- GitHub Actions workflow executes successfully
-- Documentation aggregates from at least 2 repositories
-- Files organized into logical directory structure
-- YAML front matter correctly added to documents
-- Workflow runs on schedule and manual trigger
-comments: true
-draft: false
-fmContentType: quest
-lastmod: 2025-10-03 21:57:41.816000+00:00
-permalink: /quests/level-0001/docs-in-a-row/
 ---
-
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
 
 ## � Quest Overview
 
-**Level**: Journeyman (Lvl 001) | **Difficulty**: 🟡 Intermediate | **Time**: 2-3 hours
+**Level**: Journeyman (Lvl 001) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
 
 In the realm of software development, documentation is your most powerful spell—but only if you can find it when you need it! As projects multiply across GitHub repositories, valuable knowledge becomes scattered across dozens of README files, wiki pages, and doc folders. This quest will teach you to build an **automated documentation aggregation system** that collects, organizes, and maintains a centralized knowledge hub.
 
@@ -663,9 +675,9 @@ Track documentation health:
 
 ### Related Quests
 
-- **[Action Triggers](/quests/action-triggers/)**: Master advanced GitHub Actions patterns
-- **[Change Logs](/quests/change-logs/)**: Automate changelog generation
-- **[Bash Scripting](/quests/bash-scripting/)**: Deepen your shell scripting skills
+- **[Action Triggers](../tools/action-triggers.md)**: Master advanced GitHub Actions patterns
+- **[Change Logs](../tools/change-logs.md)**: Automate changelog generation
+- **[Bash Scripting](../0010/bash-scripting.md)**: Deepen your shell scripting skills
 
 ### Community
 

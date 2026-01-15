@@ -1,38 +1,52 @@
 ---
 title: 'Epic Quest: Zer0-to-Her0 CMStyle'
+author: IT-Journey Team
 description: Discover how one nerd transformed from zero to hero by building an AI-powered
   open source CMS using VS Code and Jekyll. Join the epic journey!
-date: 2025-08-22 04:58:03.625000+00:00
+excerpt: null
+snippet: null
 preview: images/previews/epic-quest-zer0-to-her0-cmstyle.png
-tags:
-- ai-integration
-- cms
-- gamified-learning
-- open-source
-- vscode
+date: 2025-08-22 04:58:03.625000+00:00
+lastmod: 2025-08-25 00:46:40.810000+00:00
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+primary_technology: ai-integration
+quest_type: epic_quest
+quest_series: Tools Collection
+skill_focus:
+- AI/ML
+- CMS
+- Development
+- Open Source
+- Quests
+learning_style: hands-on
+layout: journals
+permalink: /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
 categories:
 - AI/ML
 - CMS
 - Development
 - Open Source
 - Quests
-sub-title: null
-excerpt: null
-snippet: null
-author: ''
-layout: null
-keywords: {}
-lastmod: 2025-08-25 00:46:40.810000+00:00
-permalink: /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
-attachments: ''
-comments: false
+tags:
+- ai-integration
+- cms
+- gamified-learning
+- open-source
+- vscode
+keywords:
+- ai-integration
+- cms
+- gamified-learning
+- open-source
+- vscode
+fmContentType: quest
 draft: draft
-level: '0010'
-difficulty: 🟢 Easy
-estimated_time: 30-60 minutes
-quest_type: epic_quest
+comments: false
+attachments: ''
+sub-title: null
 ---
-
 # Zer0 to Her0: How One Nerd Built an Open Source CMS Out of VS Code and Integrated AI to Do All the Heavy Lifting
 
 In the vast digital wilderness, where code reigns supreme and innovation is the ultimate currency, one determined nerd embarked on an epic IT journey. Starting from absolute zero—no fancy degrees, no corporate backing, just sheer curiosity and open source grit—this tale unfolds as a blueprint for mastering the tools of the digital world. It all began with the holy trinity of modern development: GitHub for collaboration and version control, Visual Studio Code (VS Code) as the versatile editor, and Jekyll as the static site generator that sparked the flame of creation. What emerged was not just a personal project, but a fully fledged open source content management system (CMS) that leverages AI to handle the tedious tasks, from automated setups to intelligent error resolution and even content enhancement. This is the story of turning raw ambition into a hero's arsenal, documented in two key GitHub repositories: [bamr87/it-journey](https://github.com/bamr87/it-journey) and [bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes).

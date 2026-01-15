@@ -1,61 +1,65 @@
 ---
-title: "404 Hunting: Binary Wards for Unbreakable Links"
-description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians, and living resource endpoints powered by GitHub.
-date: 2025-08-31T23:10:14.466Z
-preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
-tags:
-  - lvl-1110
-  - jekyll
-  - github-actions
-  - link-integrity
-  - devops
-categories:
-  - Quests
-  - Web-Development
-  - Intermediate
-sub-title: "Level 1110 (14) Quest: Integration Spells for Link Integrity"
-excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink guardians, and organic resource endpoints.
-snippet: May your links never stray and your redirects never loop.
+title: '404 Hunting: Binary Wards for Unbreakable Links'
 author: Quest Master IT-Journey
-layout: journals
-keywords:
-  primary:
-    - jekyll-404
-    - link-integrity
-  secondary:
-    - redirects
-    - sitemap
-    - htmlproofer
-    - lychee
-lastmod: 2025-08-31T23:16:16.119Z
-fmContentType: quest
-permalink: /quests/level-1110-404-hunting-quest/
-attachments: ""
-comments: true
+description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians,
+  and living resource endpoints powered by GitHub.
+excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink
+  guardians, and organic resource endpoints.
+snippet: May your links never stray and your redirects never loop.
+preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
+date: 2025-08-31 23:10:14.466000+00:00
+lastmod: 2025-08-31 23:16:16.119000+00:00
+level: '1110'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-prerequisites:
-  - GitHub account and a repository with GitHub Pages or Actions enabled
-  - Git, Ruby 3.x, and Bundler installed
-  - Basic terminal usage (cd, git add/commit/push)
-rewards:
-  - 🏆 Resource Guardian Badge
-  - ⚡ Link Integrity +5
-  - 🛠️ Jekyll Redirect Mastery
-  - 🎯 CI Link Guardian Setup
-quest_series: Site Reliability for Static Sites
-related_quests:
-  - "Permalink Lore: Stable Slugs and Trails (Level 1100)"
-  - "CI Scribes: Automating Quality Trials (Level 1111)"
-  - "Content Gardens: Jekyll Collections (Level 10100)"
-validation_criteria:
-  - CI link checks pass on PRs and on a weekly schedule
-  - 404 page provides helpful exits, recent content, and an issue link
-  - Moved pages redirect via jekyll-redirect-from without loops
-level: "1110"
+primary_technology: lvl-1110
 quest_type: main_quest
+quest_series: Site Reliability for Static Sites
+skill_focus:
+- Quests
+- Web-Development
+- Intermediate
+learning_style: hands-on
+prerequisites:
+- GitHub account and a repository with GitHub Pages or Actions enabled
+- Git, Ruby 3.x, and Bundler installed
+- Basic terminal usage (cd, git add/commit/push)
+validation_criteria:
+- CI link checks pass on PRs and on a weekly schedule
+- 404 page provides helpful exits, recent content, and an issue link
+- Moved pages redirect via jekyll-redirect-from without loops
+layout: journals
+permalink: /quests/level-1110-404-hunting-quest/
+categories:
+- Quests
+- Web-Development
+- Intermediate
+tags:
+- lvl-1110
+- jekyll
+- github-actions
+- link-integrity
+- devops
+keywords:
+- lvl-1110
+- jekyll
+- github-actions
+- link-integrity
+- devops
+fmContentType: quest
+comments: true
+attachments: ''
+sub-title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
+rewards:
+- 🏆 Resource Guardian Badge
+- ⚡ Link Integrity +5
+- 🛠️ Jekyll Redirect Mastery
+- 🎯 CI Link Guardian Setup
+related_quests:
+- 'Permalink Lore: Stable Slugs and Trails (Level 1100)'
+- 'CI Scribes: Automating Quality Trials (Level 1111)'
+- 'Content Gardens: Jekyll Collections (Level 10100)'
 ---
-
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 
 Your quest blends myth and method: a practical Jekyll journey powered by GitHub CI/CD that harmonizes with the companion article “404 Hunting: The Quest for Resources.” Follow these chapters to forge stable permalinks, etch redirect runes, summon automated hyperlink guardians, and grow living resource endpoints so your realm strengthens with every release.

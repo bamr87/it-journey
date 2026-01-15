@@ -14,7 +14,7 @@ Successfully combined and simplified the link checking workflows and documentati
 
 - ✅ `.github/workflows/link-checker.yml` - **Single unified workflow** (202 lines)
 - ✅ `scripts/README.md` - **Comprehensive documentation** with merged content
-- ✅ `scripts/link-checker.py` - **Unified Python script** (all functionality)
+- ✅ `scripts/validation/link-checker.py` - **Unified Python script** (all functionality)
 
 ## 🎯 Architecture Benefits
 
@@ -65,13 +65,13 @@ scripts/
 ### Manual Execution
 ```bash
 # Basic website check
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 
 # Comprehensive analysis with AI and GitHub issue
-python3 scripts/link-checker.py --scope website --analysis-level comprehensive --create-issue --repository bamr87/it-journey
+python3 scripts/validation/link-checker.py --scope website --analysis-level comprehensive --create-issue --repository bamr87/it-journey
 
 # Quick internal links check without AI
-python3 scripts/link-checker.py --scope internal --analysis-level basic --no-ai
+python3 scripts/validation/link-checker.py --scope internal --analysis-level basic --no-ai
 ```
 
 ### GitHub Actions

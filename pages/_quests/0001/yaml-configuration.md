@@ -1,42 +1,19 @@
 ---
 title: 'YAML Configuration: Site Settings Mastery'
-description: Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites.
-date: 2025-11-30 04:59:04+00:00
+author: IT-Journey Team
+description: Master YAML syntax and Jekyll configuration to customize site settings,
+  manage collections, and configure build options for static websites.
+excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional
+  static websites.
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
+date: 2025-11-30 04:59:04+00:00
+lastmod: 2025-12-20 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
 primary_technology: yaml
 quest_type: main_quest
-skill_focus: frontend
-learning_style: hands-on
 quest_series: Jekyll Foundations
-sub_title: 'Level 0001 (1) Quest: Main Quest - YAML'
-excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional static websites.
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-0001
-- yaml
-- main_quest
-- frontend
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Frontend
-- Beginner
-keywords:
-  primary:
-  - yaml configuration
-  - jekyll settings
-  secondary:
-  - static site configuration
-  - site customization
-  - gamified-learning
-  - it-journey
-lastmod: 2025-12-20 00:00:00+00:00
-permalink: /quests/level-0001-yaml-configuration/
 quest_line: Init World
 quest_arc: Jekyll Mastery Arc
 quest_dependencies:
@@ -57,14 +34,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- frontend
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -89,10 +61,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-0001-yaml-configuration/
+categories:
+- Quests
+- Frontend
+- Beginner
+tags:
+- lvl-0001
+- yaml
+- main_quest
+- frontend
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0001
+- yaml
+- main_quest
+- frontend
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 0001 (1) Quest: Main Quest - YAML'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

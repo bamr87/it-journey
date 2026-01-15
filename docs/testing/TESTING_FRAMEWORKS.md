@@ -32,7 +32,7 @@ The Hyperlink Guardian is a comprehensive link validation system that proactivel
 
 ### Location
 
-- **Main Script:** `scripts/link-checker.py` (unified implementation)
+- **Main Script:** `scripts/validation/link-checker.py` (unified implementation)
 - **Documentation:** `test/hyperlink-guardian/docs/`
 - **Workflow:** `.github/workflows/link-checker.yml`
 
@@ -57,17 +57,17 @@ The Hyperlink Guardian is a comprehensive link validation system that proactivel
 **Command Line:**
 ```bash
 # Basic website check
-python3 scripts/link-checker.py --scope website
+python3 scripts/validation/link-checker.py --scope website
 
 # Comprehensive analysis with AI
-python3 scripts/link-checker.py \
+python3 scripts/validation/link-checker.py \
   --scope website \
   --analysis-level comprehensive \
   --timeout 30 \
   --output-dir link-check-results
 
 # Create GitHub issue with results
-python3 scripts/link-checker.py \
+python3 scripts/validation/link-checker.py \
   --scope website \
   --create-issue \
   --repository bamr87/it-journey
@@ -153,7 +153,7 @@ Comprehensive documentation available:
 **Issue:** High false positive rate
 ```bash
 # Solution: Increase timeout
-python3 scripts/link-checker.py --scope website --timeout 45
+python3 scripts/validation/link-checker.py --scope website --timeout 45
 ```
 
 **Issue:** AI analysis not working
@@ -297,10 +297,10 @@ sudo mv lychee /usr/local/bin/
 **Link Health Check:**
 ```bash
 # Quick internal link check
-python3 scripts/link-checker.py --scope internal --timeout 10
+python3 scripts/validation/link-checker.py --scope internal --timeout 10
 
 # Comprehensive check with AI
-python3 scripts/link-checker.py \
+python3 scripts/validation/link-checker.py \
   --scope website \
   --analysis-level comprehensive
 ```

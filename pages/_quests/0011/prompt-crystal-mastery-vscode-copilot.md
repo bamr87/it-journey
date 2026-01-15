@@ -1,15 +1,21 @@
 ---
 title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
-description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
-date: 2025-11-26 00:00:00+00:00
+author: Quest Master IT-Journey Team
+description: Master the ancient art of prompt engineering to unlock the full power
+  of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured
+  patterns that transform AI assistance from hit-or-miss to precision tools.
+excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding
+  precision-crafted prompts that unlock consistent, high-quality AI assistance in
+  your development workflow
+snippet: Your prompts are code—version them, test them, perfect them
 preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
+date: 2025-11-26 00:00:00+00:00
+lastmod: 2025-11-27 05:11:44.573000+00:00
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: prompt-engineering
 quest_type: main_quest
-skill_focus: ai-development
-learning_style: hands-on
 quest_series: AI Development Mastery
 quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
@@ -35,46 +41,9 @@ learning_paths:
   - Prompt Engineering
   - VS Code Mastery
   - Developer Productivity
-quest_mapping:
-  coordinates: '[3, 2]'
-  region: Foundation
-  realm: AI-Enhanced
-  biome: Development Tools
-sub_title: 'Level 0011 (3) Quest: Main Quest - VS Code Copilot Prompt Mastery'
-excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding precision-crafted prompts that unlock consistent, high-quality AI assistance in your development workflow
-snippet: Your prompts are code—version them, test them, perfect them
-author: Quest Master IT-Journey Team
-layout: journals
-tags:
-- lvl-0011
-- prompt-engineering
-- vscode-copilot
+skill_focus:
 - ai-development
-- tool-mastery
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- AI-Development
-- Tool-Mastery
-- Medium
-keywords:
-  primary:
-  - prompt-engineering
-  - vs-code-copilot
-  - ai-coding-assistant
-  secondary:
-  - rctf-pattern
-  - few-shot-prompting
-  - chain-of-thought
-  - copilot-instructions
-  - prompt-templates
-  - pdca-cycle
-  - kaizen
-lastmod: 2025-11-27 05:11:44.573000+00:00
-permalink: /quests/level-0011-prompt-crystal-vscode-copilot/
-attachments: ''
-comments: true
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic familiarity with VS Code (navigation, extensions, settings)
@@ -105,6 +74,39 @@ validation_criteria:
   - Describe the difference between zero-shot and few-shot prompting
   - Identify when Chain-of-Thought prompting improves results
   - Apply PDCA cycle principles to prompt quality improvement
+quest_mapping:
+  coordinates: '[3, 2]'
+  region: Foundation
+  realm: AI-Enhanced
+  biome: Development Tools
+layout: journals
+permalink: /quests/level-0011-prompt-crystal-vscode-copilot/
+categories:
+- Quests
+- AI-Development
+- Tool-Mastery
+- Medium
+tags:
+- lvl-0011
+- prompt-engineering
+- vscode-copilot
+- ai-development
+- tool-mastery
+- hands-on
+- gamified-learning
+keywords:
+- lvl-0011
+- prompt-engineering
+- vscode-copilot
+- ai-development
+- tool-mastery
+- hands-on
+- gamified-learning
+fmContentType: quest
+draft: false
+comments: true
+attachments: ''
+sub_title: 'Level 0011 (3) Quest: Main Quest - VS Code Copilot Prompt Mastery'
 rewards:
   badges:
   - 🏆 Prompt Crystal Forger - VS Code Copilot Master
@@ -120,9 +122,7 @@ rewards:
   - Access to advanced AI agent development quests
   - Ability to create team-wide prompt standards
   - Foundation for MCP server prompt patterns
-draft: false
 ---
-
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 
 *You, brave Code Alchemist, stand at the threshold of VS Code's most powerful enchantment: **GitHub Copilot**. But like any great artifact, its power lies dormant without the proper incantations. Your quest: to master the art of prompt engineering within VS Code, learning to craft instructions that consistently unlock Copilot's full potential.*
@@ -1296,16 +1296,16 @@ Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 ### 🎯 Recommended Follow-Up Quests
 
 **Immediate Next Steps**:
-- 🤖 **[AI Agent Development](/quests/advanced-ai-agent-development/)** - Build autonomous AI agents using your prompt mastery (Level 0100)
-- ⚙️ **[MCP Server Prompt Patterns](/quests/mcp-server-prompt-patterns/)** - Design prompts for Model Context Protocol servers (Level 0101)
-- 📊 **[Prompt Performance Monitoring](/quests/prompt-monitoring/)** - Build systems to track prompt effectiveness (Level 0110)
+- 🤖 **AI Agent Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 📊 **Prompt Performance Monitoring** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
 
 **Advanced Specializations**:
-- 🔬 **[Advanced RAG Systems](/quests/advanced-rag/)** - Build retrieval-augmented generation pipelines (Level 1000)
-- 🏗️ **[Multi-Agent Systems](/quests/multi-agent-systems/)** - Coordinate multiple AI agents (Level 1010)
+- 🔬 **Advanced RAG Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🏗️ **Multi-Agent Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
 
 **Team & Community**:
-- 🤝 **[Team Prompt Library Setup](/quests/team-prompt-library/)** - Create organization-wide prompt standards (Level 0011)
+- 🤝 **Team Prompt Library Setup** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
 
 ---
 

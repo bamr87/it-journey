@@ -48,4 +48,4 @@
 3. **Metadata**: Add `lastmod` dates to 30 files
 
 ---
-*Run `ruby scripts/content-freshness-check.rb --help` for options*
+*Run `ruby scripts/validation/content-freshness-check.rb --help` for options*

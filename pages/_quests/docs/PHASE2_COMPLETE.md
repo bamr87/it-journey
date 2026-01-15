@@ -1,3 +1,24 @@
+---
+title: Phase 2 Complete
+description: Reference - Phase 2 completion notes.
+author: IT-Journey Team
+date: 2026-01-14
+level: '0000'
+difficulty: 🟢 Easy
+estimated_time: 10-20 minutes
+primary_technology: documentation
+quest_type: documentation
+skill_focus:
+- documentation
+learning_style: reading
+quest_series: Quest Documentation
+layout: journals
+permalink: /quests/docs/phase-2-complete/
+keywords:
+- documentation
+- quests
+fmContentType: documentation
+---
 # Phase 2 Complete: Apprentice Tier Quests Generated ✅
 
 ## Summary
@@ -118,18 +139,18 @@
 ## Quest Generation Process
 
 ### Tools Used
-- **Script**: `scripts/generate-placeholder-quest.sh`
+- **Script**: `scripts/quest/generate-placeholder-quest.sh`
 - **Template**: `pages/_quests/templates/main-quest-template.md`
 - **Validation**: Docker-based `quest-network-validator`
 
 ### Script Usage Pattern
 ```bash
-./scripts/generate-placeholder-quest.sh <level> <slug> "<title>" [options]
+./scripts/quest/generate-placeholder-quest.sh <level> <slug> "<title>" [options]
 ```
 
 **Example**:
 ```bash
-./scripts/generate-placeholder-quest.sh 0000 terminal-fundamentals \
+./scripts/quest/generate-placeholder-quest.sh 0000 terminal-fundamentals \
   "Terminal Fundamentals: Command Line Navigation Quest" \
   --difficulty easy --type main_quest --time "45-60 minutes"
 ```
@@ -275,8 +296,8 @@ pages/_quests/
 - **Quest Build Plan**: `pages/_quests/QUEST_BUILD_PLAN.md`
 - **Phase 1 Summary**: `pages/_quests/PHASE1_COMPLETE.md`
 - **Quest Template**: `pages/_quests/templates/main-quest-template.md`
-- **Generation Script**: `scripts/generate-placeholder-quest.sh`
-- **Validation Script**: `scripts/validate-quest-network.py`
+- **Generation Script**: `scripts/quest/generate-placeholder-quest.sh`
+- **Validation Script**: `scripts/quest/validate-quest-network.py`
 
 ---
 

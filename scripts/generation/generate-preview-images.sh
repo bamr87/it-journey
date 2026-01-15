@@ -5,7 +5,7 @@
 #              Scans content files, detects missing preview images, and generates
 #              images using AI (OpenAI DALL-E, Stable Diffusion, or other providers)
 #
-# Usage: ./scripts/generate-preview-images.sh [options]
+# Usage: ./scripts/generation/generate-preview-images.sh [options]
 #
 # Options:
 #   -h, --help              Show this help message
@@ -31,10 +31,10 @@
 #   IMAGE_SIZE              Image dimensions (default: "1024x1024")
 #
 # Examples:
-#   ./scripts/generate-preview-images.sh --dry-run
-#   ./scripts/generate-preview-images.sh --collection posts
-#   ./scripts/generate-preview-images.sh --file pages/_posts/my-post.md
-#   ./scripts/generate-preview-images.sh --provider openai --verbose
+#   ./scripts/generation/generate-preview-images.sh --dry-run
+#   ./scripts/generation/generate-preview-images.sh --collection posts
+#   ./scripts/generation/generate-preview-images.sh --file pages/_posts/my-post.md
+#   ./scripts/generation/generate-preview-images.sh --provider openai --verbose
 #
 
 set -euo pipefail
@@ -205,19 +205,19 @@ CONFIGURATION:
 
 EXAMPLES:
     # List all files missing preview images
-    ./scripts/generate-preview-images.sh --list-missing
+    ./scripts/generation/generate-preview-images.sh --list-missing
 
     # Dry run to see what would be generated
-    ./scripts/generate-preview-images.sh --dry-run --verbose
+    ./scripts/generation/generate-preview-images.sh --dry-run --verbose
 
     # Generate images for posts collection
-    ./scripts/generate-preview-images.sh --collection posts
+    ./scripts/generation/generate-preview-images.sh --collection posts
 
     # Generate image for a specific file
-    ./scripts/generate-preview-images.sh -f pages/_posts/my-article.md
+    ./scripts/generation/generate-preview-images.sh -f pages/_posts/my-article.md
 
     # Force regenerate all images
-    ./scripts/generate-preview-images.sh --force
+    ./scripts/generation/generate-preview-images.sh --force
 
 EOF
 }

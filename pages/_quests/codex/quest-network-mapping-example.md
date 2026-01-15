@@ -1,6 +1,7 @@
 ---
 title: 'Quest Network Mapping: Comprehensive Learning Path Visualization'
-description: Demonstration of the enhanced quest hierarchy system with complete mapping examples and mermaid diagrams
+description: Demonstration of the enhanced quest hierarchy system with complete mapping
+  examples and mermaid diagrams
 preview: images/previews/quest-network-mapping-comprehensive-learning-path-.png
 date: 2025-10-03 13:30:00+00:00
 categories:
@@ -18,8 +19,20 @@ level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
+keywords:
+- quest-mapping
+- learning-paths
+- hierarchy-system
+- mermaid-diagrams
+author: IT-Journey Team
+quest_series: Codex Reference
+primary_technology: reference
+skill_focus:
+- codex
+- reference
+learning_style: reading
+fmContentType: codex
 ---
-
 # Quest Network Mapping Examples
 
 This document demonstrates the comprehensive quest hierarchy system with practical examples of how main quests, side quests, bonus quests, and epic quests interconnect to create cohesive learning experiences.

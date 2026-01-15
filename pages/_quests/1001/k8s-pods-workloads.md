@@ -1,42 +1,19 @@
 ---
 title: 'Kubernetes Pods and Workloads: Deployments and StatefulSets'
-description: Master Kubernetes workloads including Pods, Deployments, StatefulSets, DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies.
-date: 2025-11-30 05:41:52+00:00
+author: IT-Journey Team
+description: Master Kubernetes workloads including Pods, Deployments, StatefulSets,
+  DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies.
+excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and
+  DaemonSets
 preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
+date: 2025-11-30 05:41:52+00:00
+lastmod: 2025-11-30 05:41:52+00:00
 level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: kubernetes
 quest_type: main_quest
-skill_focus: cloud-engineering
-learning_style: hands-on
 quest_series: Kubernetes Mastery
-sub_title: 'Level 1001 (9) Quest: Main Quest - K8s Workloads'
-excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and DaemonSets
-author: IT-Journey Team
-layout: journals
-tags:
-- lvl-1001
-- kubernetes
-- main_quest
-- cloud-engineering
-- hands-on
-- gamified-learning
-categories:
-- Quests
-- Cloud-Engineering
-- Hard
-keywords:
-  primary:
-  - kubernetes-pods
-  - k8s-workloads
-  secondary:
-  - deployments
-  - statefulsets
-  - gamified-learning
-  - it-journey
-lastmod: 2025-11-30 05:41:52+00:00
-permalink: /quests/level-1001-k8s-pods-workloads/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
@@ -61,14 +38,9 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-rewards:
-  badges:
-  - 🏆 [Achievement Badge Name]
-  skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
-  unlocks_features:
-  - '[Feature or capability unlocked]'
+skill_focus:
+- cloud-engineering
+learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
@@ -93,10 +65,39 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-comments: true
+layout: journals
+permalink: /quests/level-1001-k8s-pods-workloads/
+categories:
+- Quests
+- Cloud-Engineering
+- Hard
+tags:
+- lvl-1001
+- kubernetes
+- main_quest
+- cloud-engineering
+- hands-on
+- gamified-learning
+keywords:
+- lvl-1001
+- kubernetes
+- main_quest
+- cloud-engineering
+- hands-on
+- gamified-learning
+fmContentType: quest
 draft: true
+comments: true
+sub_title: 'Level 1001 (9) Quest: Main Quest - K8s Workloads'
+rewards:
+  badges:
+  - 🏆 [Achievement Badge Name]
+  skills_unlocked:
+  - 🛠️ [Tool or Technology Mastery]
+  progression_points: 50
+  unlocks_features:
+  - '[Feature or capability unlocked]'
 ---
-
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
 *Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*

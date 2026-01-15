@@ -1,38 +1,51 @@
 ---
 title: Mastering Branches and Pull Requests for Developers
+author: IT-Journey Team
 description: Learn how branches and pull requests streamline collaboration and enhance
   code quality in software development.
-date: 2025-04-18 19:08:47.292000+00:00
+excerpt: null
+snippet: null
 preview: images/previews/mastering-branches-and-pull-requests-for-developer.png
-tags:
-- Collaboration
+date: 2025-04-18 19:08:47.292000+00:00
+lastmod: 2025-04-18 19:24:06.552000+00:00
+level: '0010'
+difficulty: 🟢 Easy
+estimated_time: 30-60 minutes
+primary_technology: Collaboration
+quest_type: main_quest
+quest_series: Tools Collection
+skill_focus:
+- Development
 - Git
-- GitHub
-- Pull Requests
+- Programming
 - Version Control
+- Web Development
+learning_style: hands-on
+layout: journals
+permalink: /quests/level-0010-branches-and-pull-requests/
 categories:
 - Development
 - Git
 - Programming
 - Version Control
 - Web Development
-sub-title: null
-excerpt: null
-snippet: null
-author: ''
-layout: null
-keywords: {}
-lastmod: 2025-04-18 19:24:06.552000+00:00
-permalink: /quests/level-0010-branches-and-pull-requests/
-attachments: ''
+tags:
+- Collaboration
+- Git
+- GitHub
+- Pull Requests
+- Version Control
+keywords:
+- Collaboration
+- Git
+- GitHub
+- Pull Requests
+- Version Control
+fmContentType: quest
 comments: false
-level: '0010'
-difficulty: 🟢 Easy
-estimated_time: 30-60 minutes
-quest_type: main_quest
+attachments: ''
+sub-title: null
 ---
-
-
 * * * *
 
 🧙‍♂️ Branch Like a Wizard: GitHub PR Sorcery 101
