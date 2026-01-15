@@ -38,7 +38,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python3 /app/scripts/validate-quest-network.py
+    command: python3 /app/scripts/quest/validate-quest-network.py
     volumes:
       - ./:/app
     working_dir: /app
