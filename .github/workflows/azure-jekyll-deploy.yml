@@ -74,18 +74,18 @@ jobs:
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
 
       - name: Make deployment script executable
-        run: chmod +x scripts/azure-jekyll-deploy.sh
+        run: chmod +x scripts/deployment/azure-jekyll-deploy.sh
 
       - name: Configure Jekyll for deployment
         run: |
-          ./scripts/azure-jekyll-deploy.sh configure \
+          ./scripts/deployment/azure-jekyll-deploy.sh configure \
             --jekyll-dir . \
             --environment ${{ env.DEPLOY_ENV }}
 
       - name: Deploy to Azure (Staging)
         if: env.DEPLOY_ENV == 'staging'
         run: |
-          ./scripts/azure-jekyll-deploy.sh deploy \
+          ./scripts/deployment/azure-jekyll-deploy.sh deploy \
             --app-name ${{ env.AZURE_APP_NAME }} \
             --github-repo ${{ github.repositoryUrl }} \
             --github-token ${{ secrets.GITHUB_TOKEN }} \
@@ -95,7 +95,7 @@ jobs:
       - name: Deploy to Azure (Production)
         if: env.DEPLOY_ENV == 'production'
         run: |
-          ./scripts/azure-jekyll-deploy.sh deploy \
+          ./scripts/deployment/azure-jekyll-deploy.sh deploy \
             --app-name ${{ env.AZURE_APP_NAME }} \
             --github-repo ${{ github.repositoryUrl }} \
             --github-token ${{ secrets.GITHUB_TOKEN }} \
@@ -106,7 +106,7 @@ jobs:
       - name: Setup custom domain (Production only)
         if: env.DEPLOY_ENV == 'production' && env.CUSTOM_DOMAIN != ''
         run: |
-          ./scripts/azure-jekyll-deploy.sh domain-setup \
+          ./scripts/deployment/azure-jekyll-deploy.sh domain-setup \
             --app-name ${{ env.AZURE_APP_NAME }} \
             --custom-domain ${{ env.CUSTOM_DOMAIN }} \
             --yes
@@ -127,7 +127,7 @@ jobs:
 
       - name: Run link checker (post-deployment)
         run: |
-          python3 scripts/link-checker.py --scope website --timeout 30
+          python3 scripts/validation/link-checker.py --scope website --timeout 30
 
       - name: Cleanup on failure
         if: failure()
@@ -150,11 +150,11 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Make deployment script executable
-        run: chmod +x scripts/azure-jekyll-deploy.sh
+        run: chmod +x scripts/deployment/azure-jekyll-deploy.sh
 
       - name: Cleanup Azure resources
         run: |
-          ./scripts/azure-jekyll-deploy.sh cleanup \
+          ./scripts/deployment/azure-jekyll-deploy.sh cleanup \
             --resource-group jekyll-citadel-rg \
             --force \
             --yes
