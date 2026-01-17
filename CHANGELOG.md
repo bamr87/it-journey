@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **`scripts/quest/update-quest-home.py`** - Generate and inject an auto-updated quest index into `pages/_quests/home.md`.
+
+### Changed
+- **`pages/_quests/home.md`** - Added auto-generated quest index section with markers and refreshed `lastmod`.
+
+### Documentation
+- **`scripts/quest/README.md`** - Added front matter and documented quest index generation script usage.
+
 ## [2.5.0] - 2025-01-27
 
 ### Added

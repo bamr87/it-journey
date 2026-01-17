@@ -18,10 +18,9 @@ sidebar:
 toc: true
 toc_sticky: true
 date: 2021-11-29T03:41:20.614Z
-lastmod: 2025-12-01T04:36:39.393Z
+lastmod: 2026-01-15T20:39:18.803Z
 draft: false
 ---
-
 *Behold, brave adventurer! This is your personal overworld map—the mystical realm where all paths converge and all journeys begin. Here you can track your progress, plan your next adventures, and survey the vast landscape of IT mastery that awaits.*
 
 ## Quest System Overview
@@ -1013,4 +1012,235 @@ Every checkbox you mark is a step closer to IT mastery!*
 
 **Ready to begin your next quest? Choose your path and let the adventure continue!** ⚔️✨
 
+## 🧭 Quest Index (Auto-Generated)
 
+<!-- QUEST_INDEX:START -->
+_This section is auto-generated. Do not edit manually._
+_Last generated: 2026-01-15T20:39:18Z_
+
+**Total quests:** 144
+
+### Level 0000
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/lvl_000/bash-run/) | side_quest | 🟡 Medium | 90-120 minutes | Level 000 - Foundation Skills | ✅ Complete |
+| [Begin your IT Journey](/quests/lvl_000/begin-your-it-journey/) | main_quest | 🟢 Easy | 30-45 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [Character Building: Forge Your IT Identity and Development Environment](/quests/character-building/) | main_quest | 🟢 Easy | 45-60 minutes | Init World - Character Creation | ✅ Complete |
+| [Character Selection](/quests/lvl_000/character-selection/) | main_quest | 🟢 Easy | 20-30 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | main_quest | 🟢 Easy | 60-75 minutes | Version Control Mastery | 🔮 Draft |
+| [Hello Cloud: First Steps into the Sky Realm](/quests/hello-cloud/) | main_quest | ⚔️ Epic | 120-180 minutes | Init World - Platform Mastery | ✅ Complete |
+| [Hello macOS: Setting Up the Apple Kingdom](/quests/hello-macos/) | main_quest | 🟢 Easy | 60-90 minutes | Init World - Platform Mastery | ✅ Complete |
+| [Hello n00b: Your First Steps into the IT Journey](/quests/init_world/hello-noob/) | main_quest | 🟢 Easy | 15-30 minutes | Character Creation Journey | ✅ Complete |
+| [Hello Windows: Mastering the Windows Development Environment](/quests/hello-windows/) | main_quest | 🟡 Medium | 90-120 minutes | Init World - Platform Mastery | ✅ Complete |
+| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | main_quest | 🟢 Easy | 60-90 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [Linux Fundamentals](/quests/hello-linux/linux-fundamentals/) | main_quest | 🟡 Medium | 60-90 minutes | Level 0000 Quest Line | ✅ Complete |
+| [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | main_quest | 🟢 Easy | 30-45 minutes | Content Creation Basics | 🔮 Draft |
+| [OS Selection](/quests/lvl_000/os-selection/) | main_quest | 🟢 Easy | 30-45 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | main_quest | 🟢 Easy | 45-60 minutes | Terminal Arts | 🔮 Draft |
+| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/vscode-mastery/) | main_quest | 🟢 Easy | 45 minutes | Level 0000 Quest Line | ✅ Complete |
+
+### Level 0001
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Building & Testing the Git Init Script: Headless, Interactive, Scaffolding](/quests/level-0001-git-init-testing/) | main_quest | 🟢 Easy | 45-75 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Forging the Stats Portal: Data Analytics Quest](/quests/stating-the-stats/) | main_quest | 🟢 Easy | 60-90 minutes | Jekyll Site Building | ✅ Complete |
+| [Git Workflow Mastery: Branches, Merging & Team Collaboration](/quests/level-0001-git-workflow-mastery/) | main_quest | 🟢 Easy | 60-75 minutes | Version Control Mastery | 🔮 Draft |
+| [GitHub Pages Basics: Deploy Free Websites in Minutes](/quests/level-0001-github-pages-basics/) | main_quest | 🟢 Easy | 60-75 minutes | Web Hosting Fundamentals | 🔮 Draft |
+| [Jekyll Fundamentals: Build Static Sites with Ruby](/quests/level-0001-jekyll-fundamentals/) | main_quest | 🟢 Easy | 75-90 minutes | Static Site Mastery | 🔮 Draft |
+| [Kaizen Quest: The Path of Continuous Improvement in Software Alchemy](/quests/level-0001-kaizen-continuous-improvement/) | main_quest | 🟡 Medium | 90-120 minutes | Process Mastery Path | ✅ Complete |
+| [Liquid Templating: Dynamic Content for Jekyll Sites](/quests/level-0001-liquid-templating/) | main_quest | 🟢 Easy | 45-60 minutes | Static Site Mastery | 🔮 Draft |
+| [Personal Site](/quests/level-0001/personal-site/) | side_quest | 🟢 Easy | 45-60 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Stack Attack Analysis: IT-Journey](/quests/level-0001/it-journey-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Stack Attack: Deciphering the Technology Matrix](/quests/level-0001/stack-attack/) | main_quest | 🟡 Medium | 90-120 minutes | Repository Mastery Path | ✅ Complete |
+| [Technology Stack Analysis: Barodybroject](/quests/level-0001/barodybroject-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Terminal Mastery: Conquering the Command-Line Realm](/quests/level-0001-terminal-mastery/) | main_quest | 🟢 Easy | 45-90 minutes | Foundation Path: Digital Literacy Mastery | ✅ Complete |
+| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-001-github-pages-portal/) | main_quest | 🟢 Easy | 2-4 hours | Web Development Fundamentals | ✅ Complete |
+| [The Knowledge Vault: Building an Automated Documentation Hub](../README.mdlevel-0001/docs-in-a-row/) | main_quest | 🟡 Medium | 2-3 hours | Automation Mastery | ✅ Complete |
+| [YAML Configuration: Site Settings Mastery](/quests/level-0001-yaml-configuration/) | main_quest | 🟢 Easy | 30-45 minutes | Jekyll Foundations | 🔮 Draft |
+
+### Level 0010
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Advanced Markdown: Tables, Footnotes & Extended Syntax](/quests/level-0010-advanced-markdown/) | main_quest | 🟡 Medium | 45-60 minutes | Documentation Mastery | 🔮 Draft |
+| [Bootstrap Framework: Build Responsive Sites Fast](/quests/level-0010-bootstrap-framework/) | main_quest | 🟡 Medium | 60-75 minutes | Web Development Fundamentals | 🔮 Draft |
+| [Change Logs](/quests/level-0010-change-logs/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+| [Commitments to clean commits](/quests/level-0010-commitments-to-clean-commits/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+| [CSS Styling Basics: Selectors, Layout & Responsive Design](/quests/level-0010-css-styling-basics/) | main_quest | 🟡 Medium | 60-75 minutes | Web Development Fundamentals | 🔮 Draft |
+| [Epic Quest: Zer0-to-Her0 CMStyle](/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/) | epic_quest | 🟢 Easy | 30-60 minutes | Tools Collection | 🔮 Draft |
+| [Forging the Prompt Crystal: Master AI Communication](/quests/level-0010-prompt-engineering-mastery/) | main_quest | 🟡 Medium | 90-120 minutes | AI Development Mastery | ✅ Complete |
+| [JavaScript Fundamentals: DOM Manipulation & Events](/quests/level-0010-javascript-fundamentals/) | main_quest | 🟡 Medium | 75-90 minutes | Web Development Fundamentals | 🔮 Draft |
+| [Mastering Branches and Pull Requests for Developers](/quests/level-0010-branches-and-pull-requests/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](../README.mdlevel-0010-bash-scripting/) | main_quest | 🟡 Medium | 90-120 minutes | Foundation Binary Mastery Path | ✅ Complete |
+| [Nerd Font Enchantment: Terminal Icon Mastery](/quests/side-quest-nerd-font-enchantment/) | side_quest | 🟢 Easy | 20-30 minutes | Terminal Mastery Path | ✅ Complete |
+| [planting seeds](/quests/level-0010-planting-seeds/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+| [Recursive Realms: Testing Infinite Loops with AI](/quests/level-0010-recursive-realms-testing/) | main_quest | 🟡 Medium | 90-120 minutes | Python Mastery Path | ✅ Complete |
+| [Revolutionizing Work with AI Automation](/quests/level-0010-revolutionizing-work-with-ai-automation/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+| [Setting up Django and Git](/quests/level-0010-django-and-git/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+| [Terminal Artificer: Forging the Glass Interface](/quests/level-0010-terminal-artificer/) | side_quest | 🟢 Easy | 30-45 minutes | Terminal Mastery Path | ✅ Complete |
+| [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](../README.mdlevel-0010-oh-my-zsh-mastery/) | main_quest | 🟡 Medium | 45-90 minutes | Terminal Mastery Path | ✅ Complete |
+| [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](/quests/level-0010-jekyll-mermaid-integration/) | main_quest | 🟡 Medium | 2-3 hours | Jekyll Mastery | ✅ Complete |
+| [Understanding Action Triggers in Depth](/quests/level-0010-action-triggers/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
+
+### Level 0011
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands](/quests/level-0011-advanced-git-workflows/) | main_quest | 🟡 Medium | 60-75 minutes | Git Mastery | 🔮 Draft |
+| [Custom Domains for GitHub Pages: Professional Website Setup Guide](/quests/level-0011-custom-domains/) | main_quest | 🟡 Medium | 30-45 minutes | GitHub Pages Mastery | 🔮 Draft |
+| [Forging the Prompt Crystal: VS Code Copilot Mastery Quest](/quests/level-0011-prompt-crystal-vscode-copilot/) | main_quest | 🟡 Medium | 90-120 minutes | AI Development Mastery | ✅ Complete |
+| [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/level-0011-analytics-integration/) | main_quest | 🟡 Medium | 45-60 minutes | Site Analytics Mastery | 🔮 Draft |
+| [Jekyll Plugins: Essential Extensions for Powerful Static Sites](/quests/level-0011-jekyll-plugins/) | main_quest | 🟡 Medium | 60-75 minutes | Jekyll Mastery | 🔮 Draft |
+| [SEO Optimization: Boost Search Engine Visibility for Jekyll Sites](/quests/level-0011-seo-optimization/) | main_quest | 🟡 Medium | 45-60 minutes | Jekyll Mastery | 🔮 Draft |
+| [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/level-0011-github-pages-hidden-gem/) | main_quest | 🟢 Easy | 60-90 minutes | Web Publishing Mastery | ✅ Complete |
+| [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/level-0011-prd-codex-mastery/) | main_quest | 🟡 Medium | 45-60 minutes | Documentation Mastery Path | ✅ Complete |
+
+### Level 0100
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Docker Compose Orchestration: Build Multi-Container Applications](/quests/level-0100-docker-compose-orchestration/) | main_quest | 🟡 Medium | 75-90 minutes | Docker Mastery | 🔮 Draft |
+| [Docker Container Fundamentals: Master Isolation & Portability for DevOps](/quests/level-0100-container-fundamentals/) | main_quest | 🟡 Medium | 60-75 minutes | Docker Mastery | 🔮 Draft |
+| [Dockering Jekyll with Bootstrap 5](/quests/frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker - level 000](/quests/level-0100/lvl-000-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/level-0100-lvl-001-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/level-0100-lvl-010-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Forests Levels](/quests/level-0100-frontend-levels/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Forests: Building a Jekyll Site with Bootstrap](/quests/frontend/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Quest: Mastering the Ancient Arts of Source Control Sorcery](/quests/level-0100-source-control-sorcery/) | main_quest | 🟡 Medium | 120-180 minutes | Foundation Development Skills | ✅ Complete |
+
+### Level 0101
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Artifact Management: Build Output Storage and Dependency Caching](/quests/level-0101-artifact-management/) | main_quest | 🟡 Medium | 45-60 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials](/quests/level-0101-cicd-fundamentals/) | main_quest | 🟡 Medium | 75-90 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [Deployment Pipelines: Production Release Automation Strategies](/quests/level-0101-deployment-pipelines/) | main_quest | 🟡 Medium | 90-120 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [Docker Containerization Mastery: Level 0101 (5) Quest](/quests/level-0101-docker-mastery/) | main_quest | 🟡 Medium | 60-90 minutes | DevOps Fundamentals | ✅ Complete |
+| [Environment Management: Dev, Staging, and Production Configuration](/quests/level-0101-environment-management/) | main_quest | 🟡 Medium | 60-75 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest](/quests/level-0101-latex-cv-forging/) | main_quest | 🟡 Medium | 90-120 minutes | Professional Identity Path | ✅ Complete |
+| [GitHub Actions Basics: Workflow Automation for Modern DevOps](/quests/level-0101-github-actions-basics/) | main_quest | 🟡 Medium | 60-75 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [Jekyll Quest Tracking: Building Dynamic Collection Layouts](/quests/level-0101-jekyll-quest-tracking/) | side_quest | 🔴 Hard | 4-6 hours | Static Site Mastery | ✅ Complete |
+| [Secrets Management: Secure Configuration and Credential Handling](/quests/level-0101-secrets-management/) | main_quest | 🟡 Medium | 45-60 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [Testing Integration: Automated Quality Assurance in CI/CD Pipelines](/quests/level-0101-testing-integration/) | main_quest | 🟡 Medium | 75-90 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+| [Workflow Optimization: Caching Strategies and Pipeline Parallelization](/quests/level-0101-workflow-optimization/) | main_quest | 🟡 Medium | 60-75 minutes | DevOps Pipeline Mastery | 🔮 Draft |
+
+### Level 0110
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Backup and Recovery: Data Protection Strategies for Databases](/quests/level-0110-backup-recovery/) | main_quest | 🔴 Hard | 60-75 minutes | Database Mastery | 🔮 Draft |
+| [Connection Pooling: Efficient Database Resource Management](/quests/level-0110-connection-pooling/) | main_quest | 🔴 Hard | 45-60 minutes | Database Mastery | 🔮 Draft |
+| [Data Modeling: Schema Design and Database Relationships](/quests/level-0110-data-modeling/) | main_quest | 🔴 Hard | 75-90 minutes | Database Mastery | 🔮 Draft |
+| [Database Fundamentals: Data Storage and Retrieval](/quests/level-0110-database-fundamentals/) | main_quest | 🔴 Hard | 90-120 minutes | Database Mastery | 🔮 Draft |
+| [Database Migrations: Schema Evolution and Version Control](/quests/level-0110-database-migrations/) | main_quest | 🔴 Hard | 60-75 minutes | Database Mastery | 🔮 Draft |
+| [Database Security: Access Control and Data Encryption](/quests/level-0110-database-security/) | main_quest | 🔴 Hard | 75-90 minutes | Database Mastery | 🔮 Draft |
+| [Query Optimization: Performance Tuning for Fast Database Queries](/quests/level-0110-query-optimization/) | main_quest | 🔴 Hard | 75-90 minutes | Database Mastery | 🔮 Draft |
+| [SQL Mastery: Query Language Proficiency for Data Professionals](/quests/level-0110-sql-mastery/) | main_quest | 🔴 Hard | 90-120 minutes | Database Mastery | 🔮 Draft |
+
+### Level 0111
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [API Authentication: OAuth, JWT, and API Keys Implementation](/quests/level-0111-api-authentication/) | main_quest | 🔴 Hard | 90-120 minutes | API Design Mastery | 🔮 Draft |
+| [API Documentation: OpenAPI Specification and Developer Experience](/quests/level-0111-api-documentation/) | main_quest | 🔴 Hard | 60-75 minutes | API Design Mastery | 🔮 Draft |
+| [API Fundamentals: Building Web Services and HTTP APIs](/quests/level-0111-api-fundamentals/) | main_quest | 🔴 Hard | 90-120 minutes | API Design Mastery | 🔮 Draft |
+| [API Versioning: Managing API Evolution and Backwards Compatibility](/quests/level-0111-api-versioning/) | main_quest | 🔴 Hard | 60-75 minutes | API Design Mastery | 🔮 Draft |
+| [Error Handling: API Response Patterns and HTTP Status Codes](/quests/level-0111-error-handling/) | main_quest | 🔴 Hard | 45-60 minutes | API Design Mastery | 🔮 Draft |
+| [Rate Limiting: API Traffic Control and Throttling Strategies](/quests/level-0111-rate-limiting/) | main_quest | 🔴 Hard | 60-75 minutes | API Design Mastery | 🔮 Draft |
+| [REST Principles: RESTful API Design Best Practices](/quests/level-0111-rest-principles/) | main_quest | 🔴 Hard | 75-90 minutes | API Design Mastery | 🔮 Draft |
+
+### Level 1000
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [AWS Essentials: Core Services and Cloud Architecture Patterns](/quests/level-1000-aws-essentials/) | main_quest | 🔴 Hard | 120-150 minutes | Cloud Journey | 🔮 Draft |
+| [Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained](/quests/level-1000-cloud-computing-fundamentals/) | main_quest | 🔴 Hard | 90-120 minutes | Cloud Journey | 🔮 Draft |
+| [Infrastructure as Code: Terraform and CloudFormation Fundamentals](/quests/level-1000-infrastructure-as-code/) | main_quest | 🔴 Hard | 120-150 minutes | Cloud Journey | 🔮 Draft |
+
+### Level 1001
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Azure Ascension: Deploying Jekyll to the Cloud Kingdom](/quests/azure-ascension-jekyll-deployment/) | main_quest | 🔴 Hard | 90-120 minutes | Cloud Deployment Quests | ✅ Complete |
+| [Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices](/quests/level-1001-k8s-config-secrets/) | main_quest | 🔴 Hard | 75-90 minutes | Kubernetes Mastery | 🔮 Draft |
+| [Kubernetes Fundamentals: Container Orchestration Essentials](/quests/level-1001-kubernetes-fundamentals/) | main_quest | 🔴 Hard | 120-150 minutes | Kubernetes Mastery | 🔮 Draft |
+| [Kubernetes Pods and Workloads: Deployments and StatefulSets](/quests/level-1001-k8s-pods-workloads/) | main_quest | 🔴 Hard | 90-120 minutes | Kubernetes Mastery | 🔮 Draft |
+| [Kubernetes Services and Networking: Ingress and DNS Configuration](/quests/level-1001-k8s-services-networking/) | main_quest | 🔴 Hard | 90-120 minutes | Kubernetes Mastery | 🔮 Draft |
+
+### Level 1010
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Alerting Systems: PagerDuty Integration & Incident Management Guide](/quests/level-1010-alerting-systems/) | main_quest | 🔴 Hard | 75-90 minutes | Observability Mastery | 🔮 Draft |
+| [Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide](/quests/level-1010-distributed-tracing/) | main_quest | 🔴 Hard | 90-120 minutes | Observability Mastery | 🔮 Draft |
+| [ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis](/quests/level-1010-elk-stack/) | main_quest | 🔴 Hard | 120-150 minutes | Observability Mastery | 🔮 Draft |
+| [Link to the Future: Automated Hyperlink Guardian Quest](/quests/level-1010-automated-hyperlink-guardian/) | main_quest | 🟡 Medium | 120-180 minutes | DevOps Automation Mastery Path | ✅ Complete |
+| [Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability](/quests/level-1010-monitoring-fundamentals/) | main_quest | 🔴 Hard | 90-120 minutes | Observability Mastery | 🔮 Draft |
+| [Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial](/quests/level-1010-prometheus-grafana/) | main_quest | 🔴 Hard | 90-120 minutes | Observability Mastery | 🔮 Draft |
+
+### Level 1011
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [AI Feature Pipeline Architect: DevSecOps Mastery Quest](/quests/level-1011-ai-feature-pipeline-architect/) | main_quest | 🔴 Hard | 240-360 minutes | AI-Enhanced Development Mastery Path | 🔮 Draft |
+| [Compliance Standards: SOC 2, GDPR, and HIPAA Requirements](/quests/level-1011-compliance-standards/) | main_quest | 🔴 Hard | 90-120 minutes | Security Mastery | 🔮 Draft |
+| [Penetration Testing: Tools and Ethical Hacking Methodologies](/quests/level-1011-penetration-testing/) | main_quest | 🔴 Hard | 120-150 minutes | Security Mastery | 🔮 Draft |
+| [Secure Coding Practices: OWASP Top 10 Vulnerability Prevention](/quests/level-1011-secure-coding/) | main_quest | 🔴 Hard | 120-150 minutes | Security Mastery | 🔮 Draft |
+| [Security Fundamentals: CIA Triad and Defense in Depth Strategies](/quests/level-1011-security-fundamentals/) | main_quest | 🔴 Hard | 90-120 minutes | Security Mastery | 🔮 Draft |
+| [Threat Modeling: STRIDE Framework and Attack Trees Analysis](/quests/level-1011-threat-modeling/) | main_quest | 🔴 Hard | 90-120 minutes | Security Mastery | 🔮 Draft |
+
+### Level 1100
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Apache Spark Mastery: Big Data Processing with PySpark & Scala](/quests/level-1100-apache-spark/) | main_quest | ⚔️ Epic | 6-8 hours | Data Engineering Mastery | 🔮 Draft |
+| [Data Quality Engineering: Testing, Validation & Monitoring Frameworks](/quests/level-1100-data-quality/) | main_quest | 🔴 Hard | 3-4 hours | Data Engineering Mastery | 🔮 Draft |
+| [Data Warehousing: Design Star Schema & Build Modern Analytics Architecture](/quests/level-1100-data-warehousing/) | main_quest | 🔴 Hard | 5-6 hours | Data Engineering Mastery | 🔮 Draft |
+| [ETL Pipeline Design: Build Scalable Data Pipelines with Python](/quests/level-1100-etl-pipeline-design/) | main_quest | 🔴 Hard | 4-5 hours | Data Engineering Mastery | 🔮 Draft |
+| [Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle](/quests/level-1100-conquer-king-edgar/) | main_quest | 🟡 Medium | 60-180 minutes | Data Realm Conquests | ✅ Complete |
+| [Stream Processing: Real-Time Data with Apache Kafka & Flink](/quests/level-1100-stream-processing/) | main_quest | 🔴 Hard | 4-5 hours | Data Engineering Mastery | 🔮 Draft |
+| [The Siege of King EDGAR: Storming the SEC Data Castle](/quests/level-1100-sec-edgar-siege/) | main_quest | 🟡 Medium | 90-150 minutes | Data Liberation Trail | ✅ Complete |
+| [The Temple of Templates: Binary Abstractions and Reusable Realms](/quests/level-1100-temple-of-templates/) | main_quest | 🟡 Medium | 60-90 minutes | Binary Function Crafting | ✅ Complete |
+
+### Level 1101
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [AI Ethics and Responsible AI: Bias Detection, Fairness & Governance](/quests/level-1101-ai-ethics/) | side_quest | 🟡 Medium | 2-3 hours | AI/ML Mastery | 🔮 Draft |
+| [Computer Vision Mastery: Image Classification, Object Detection & Segmentation](/quests/level-1101-computer-vision/) | main_quest | 🔴 Hard | 5-6 hours | AI/ML Mastery | 🔮 Draft |
+| [Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation](/quests/level-1101-deep-learning-frameworks/) | main_quest | 🔴 Hard | 5-6 hours | AI/ML Mastery | 🔮 Draft |
+| [Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn](/quests/level-1101-ml-fundamentals/) | main_quest | 🔴 Hard | 5-6 hours | AI/ML Mastery | 🔮 Draft |
+| [MLOps Engineering: CI/CD Pipelines for Machine Learning Production](/quests/level-1101-mlops/) | main_quest | 🔴 Hard | 5-6 hours | AI/ML Mastery | 🔮 Draft |
+| [Natural Language Processing: Text Analysis, Transformers & LLMs with Python](/quests/level-1101-natural-language-processing/) | main_quest | 🔴 Hard | 5-6 hours | AI/ML Mastery | 🔮 Draft |
+| [Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch](/quests/level-1101-neural-networks/) | main_quest | ⚔️ Epic | 6-8 hours | AI/ML Mastery | 🔮 Draft |
+| [Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide](/quests/level-1101-python-data-science/) | main_quest | 🟡 Medium | 4-5 hours | AI/ML Mastery | 🔮 Draft |
+
+### Level 1110
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [404 Hunting: Binary Wards for Unbreakable Links](/quests/level-1110-404-hunting-quest/) | main_quest | 🟡 Medium | 60-90 minutes | Site Reliability for Static Sites | ✅ Complete |
+| [API Gateway Patterns: Routing, Load Balancing and Security](/quests/level-1110-api-gateway-patterns/) | main_quest | 🔴 Hard | 4-5 hours | System Design Mastery | 🔮 Draft |
+| [Domain-Driven Design: Strategic and Tactical Patterns](/quests/level-1110-domain-driven-design/) | main_quest | 🔴 Hard | 5-6 hours | System Design Mastery | 🔮 Draft |
+| [Event-Driven Architecture: Message Queues and Event Sourcing](/quests/level-1110-event-driven-design/) | main_quest | 🔴 Hard | 5-6 hours | System Design Mastery | 🔮 Draft |
+| [Microservices Architecture: Building Scalable Distributed Systems](/quests/level-1110-microservices-architecture/) | main_quest | ⚔️ Epic | 6-8 hours | System Design Mastery | 🔮 Draft |
+| [Scaling Strategies: Horizontal and Vertical Scaling Patterns](/quests/level-1110-scaling-strategies/) | main_quest | 🔴 Hard | 4-5 hours | System Design Mastery | 🔮 Draft |
+| [Software Design Patterns: Gang of Four and Modern Patterns](/quests/level-1110-design-patterns/) | main_quest | 🔴 Hard | 5-6 hours | System Design Mastery | 🔮 Draft |
+| [System Design Interview Mastery: Ace Technical Interviews](/quests/level-1110-system-design-interviews/) | main_quest | ⚔️ Epic | 6-8 hours | System Design Mastery | 🔮 Draft |
+
+### Level 1111
+
+| Quest | Type | Difficulty | Time | Series | Status |
+| --- | --- | --- | --- | --- | --- |
+| [Architecture Reviews: Leading Technical Design Discussions](/quests/level-1111-architecture-reviews/) | main_quest | 🔴 Hard | 4-5 hours | Leadership Mastery | 🔮 Draft |
+| [Building Technical Communities: Growing Developer Ecosystems](/quests/level-1111-building-technical-communities/) | main_quest | 🔴 Hard | 5-6 hours | Leadership Mastery | 🔮 Draft |
+| [Career Advancement Strategies: Growing from Engineer to Leader](/quests/level-1111-career-advancement/) | main_quest | 🔴 Hard | 4-5 hours | Leadership Mastery | 🔮 Draft |
+| [Innovation and R&D: Driving Technical Innovation](/quests/level-1111-innovation-rnd/) | main_quest | ⚔️ Epic | 6-8 hours | Leadership Mastery | 🔮 Draft |
+| [Mentorship Programs: Developing and Growing Engineering Talent](/quests/level-1111-mentorship-programs/) | main_quest | 🔴 Hard | 4-5 hours | Leadership Mastery | 🔮 Draft |
+| [Open Source Contribution: Leading and Maintaining Projects](/quests/level-1111-open-source-contribution/) | main_quest | 🔴 Hard | 5-6 hours | Leadership Mastery | 🔮 Draft |
+| [Tech Speaking and Writing: Building Your Technical Brand](/quests/level-1111-tech-speaking-writing/) | main_quest | 🔴 Hard | 4-5 hours | Leadership Mastery | 🔮 Draft |
+| [Technical Leadership: Building High-Performance Engineering Teams](/quests/level-1111-technical-leadership/) | main_quest | ⚔️ Epic | 6-8 hours | Leadership Mastery | 🔮 Draft |
+<!-- QUEST_INDEX:END -->

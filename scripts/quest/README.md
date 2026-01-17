@@ -1,3 +1,10 @@
+---
+title: Quest Scripts
+description: Automation tools for quest generation, validation, and maintenance.
+permalink: /scripts/quest/readme/
+lastmod: 2026-01-16T00:00:00.000Z
+---
+
 # Quest Scripts
 
 Tools for quest generation, validation, and network maintenance.
@@ -12,6 +19,16 @@ Tools for quest generation, validation, and network maintenance.
 ```bash
 python3 scripts/quest/update-quest-links.py --dry-run
 python3 scripts/quest/update-quest-links.py
+```
+
+### update-quest-home.py
+
+**Purpose**: Generate and inject an auto-updated quest index into pages/_quests/home.md.
+
+**Usage**:
+```bash
+python3 scripts/quest/update-quest-home.py --dry-run
+python3 scripts/quest/update-quest-home.py
 ```
 
 ### remove-placeholder-deps.py
