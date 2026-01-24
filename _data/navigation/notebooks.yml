@@ -1,14 +1,14 @@
 - title: Notebooks
-  icon: book
+  icon: bi-journal-richtext
   url: /notes/
-  sublinks:
+  children:
     - title: Notes Index
       url: /notes/
     - title: Jupyter
       url: /notes/jupyter/
 - title: Cheatsheets
-  icon: list
-  sublinks:
+  icon: bi-list-check
+  children:
     - title: Bash
       url: /notes/cheetsheets/bash
     - title: PowerShell
@@ -20,13 +20,13 @@
     - title: Mac Shortcuts
       url: /notes/cheetsheets/mac-shortcuts
 - title: Code Snippets
-  icon: code
-  sublinks:
+  icon: bi-code-square
+  children:
     - title: Code Snippets Index
       url: /notes/code-snippets/
 - title: Development Notes
-  icon: terminal
-  sublinks:
+  icon: bi-terminal
+  children:
     - title: Dev Notes
       url: /notes/dev/
     - title: Projects

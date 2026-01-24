@@ -8,6 +8,7 @@ The repository now includes two automated workflows that help maintain content q
 
 1. **AI Content Review Workflow** - Analyzes content quality using AI and provides improvement suggestions
 2. **Frontmatter Validation Workflow** - Validates and automatically fixes frontmatter issues
+3. **Link Health Guardian Workflow** - Checks links and produces a summarized health report
 
 ## AI Content Review Workflow
 
@@ -138,6 +139,23 @@ When enabled, the workflow can automatically:
 | Content too short | ❌ | Expand with more details |
 | Missing headers | ❌ | Add section headers |
 | Broken links | ❌ | Fix or remove broken links |
+
+## Link Health Guardian Workflow
+
+### File: `.github/workflows/link-checker.yml`
+
+This workflow runs the Link Health Guardian to validate links across the site and generate a workflow summary, even when link checks fail.
+
+### Triggers
+
+- **Schedule**: Mondays at 6 AM UTC, Fridays at 6 PM UTC
+- **Manual Trigger**: Configurable scope, analysis level, timeouts, and AI analysis
+
+### Output
+
+- Link statistics exported via `statistics.env`
+- Markdown summary in the Actions run summary
+- Artifact archive under `link-check-results/`
 
 ## Best Practices
 

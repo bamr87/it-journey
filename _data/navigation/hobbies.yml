@@ -1,5 +1,6 @@
 - title: Hobbies
   url: /hobbies/
-  sublinks:
+  icon: bi-controller
+  children:
     - title: Home
       url: /hobbies/

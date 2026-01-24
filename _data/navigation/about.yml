@@ -1,9 +1,10 @@
 - title: Home
-  icon: home
+  icon: bi-house
   url: /home/
 - title: About
   url: /about/
-  sublinks:
+  icon: bi-info-circle
+  children:
     - title: Home
       url: /about/
     - title: Purpose

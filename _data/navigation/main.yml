@@ -1,6 +1,7 @@
 - title: Quick-Start
   url: /quickstart/
-  sublinks:
+  icon: bi-rocket-takeoff
+  children:
     - title: Machine Setup
       url: /quickstart/machine-setup
     - title: GitHub Setup
@@ -11,7 +12,8 @@
       url: /quickstart/charm-setup/
 - title: Journey
   url: /posts/
-  sublinks:
+  icon: bi-journal-text
+  children:
     - title: Posts Index
       url: /posts/
     - title: Quests
@@ -20,14 +22,16 @@
       url: /stats/
 - title: Library
   url: /docs/
-  sublinks:
+  icon: bi-journal-bookmark
+  children:
     - title: Jekyll
       url: /docs/jekyll/
     - title: Terminal
       url: /docs/terminal-shortcuts-cheat-sheet/
 - title: Notebook
   url: /notes/
-  sublinks:
+  icon: bi-journal-code
+  children:
     - title: Notes Index
       url: /notes/
     - title: Jupyter
@@ -36,7 +40,8 @@
       url: /notes/cheetsheets/
 - title: About
   url: /about/
-  sublinks:
+  icon: bi-info-circle
+  children:
     - title: Features
       url: /about/features/
     - title: Config

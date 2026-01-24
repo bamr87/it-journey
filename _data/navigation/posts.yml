@@ -1,52 +1,39 @@
 - title: Home
-  icon: home
+  icon: bi-house
   url: /posts/
-  sublinks: []
 - title: AI & Machine Learning
-  icon: ai
+  icon: bi-robot
   url: /posts/ai/
-  sublinks: []
 - title: Web Development
-  icon: web
+  icon: bi-browser-chrome
   url: /posts/web/
-  sublinks: []
 - title: DevOps
-  icon: devops
+  icon: bi-gear-wide-connected
   url: /posts/devops/
-  sublinks: []
 - title: Programming
-  icon: code
+  icon: bi-code-slash
   url: /posts/programming/
-  sublinks: []
 - title: System Administration
-  icon: server
+  icon: bi-server
   url: /posts/sysadmin/
-  sublinks: []
 - title: Data & Analytics
-  icon: data
+  icon: bi-bar-chart-line
   url: /posts/data/
-  sublinks: []
 - title: Tools & Environment
-  icon: tools
+  icon: bi-tools
   url: /posts/tools/
-  sublinks: []
 - title: Creative & Experimental
-  icon: art
+  icon: bi-palette
   url: /posts/creative/
-  sublinks: []
 - title: Culture & Society
-  icon: globe
+  icon: bi-globe
   url: /posts/culture/
-  sublinks: []
 - title: Trends & Ideas
-  icon: trend
+  icon: bi-graph-up-arrow
   url: /posts/trends/
-  sublinks: []
 - title: Learning
-  icon: learn
+  icon: bi-mortarboard
   url: /posts/learning/
-  sublinks: []
 - title: Business
-  icon: cash
+  icon: bi-briefcase
   url: /posts/business/
-  sublinks: []

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "generated": "2026-01-17T00:46:22.822778Z",
+    "scope": "pages",
+    "version": "2.0.0"
+  },
+  "summary": {
+    "total_links": 3136,
+    "broken_links": 0,
+    "success_rate": 100.0
+  },
+  "categories": {
+    "internal_404": [],
+    "external_broken": [],
+    "ssl_errors": [],
+    "timeouts": [],
+    "rate_limited": [],
+    "dns_errors": []
+  },
+  "by_domain": {},
+  "top_issues": []
+}

@@ -1,16 +1,18 @@
 - title: Home
-  icon: home
+  icon: bi-house
   url: /home/
 - title: Documentation
   url: /docs/
-  sublinks:
+  icon: bi-book
+  children:
     - title: Library Index
       url: /docs/
     - title: Frontmatter Preview
       url: /docs/frontmatter-preview-solution/
 - title: Jekyll
   url: /docs/jekyll/
-  sublinks:
+  icon: bi-gem
+  children:
     - title: Jekyll Overview
       url: /docs/jekyll/
     - title: Jekyll Configuration
@@ -26,7 +28,8 @@
     - title: Mermaid Migration
       url: /docs/jekyll/mermaid-migration
 - title: Terminal
-  sublinks:
+  icon: bi-terminal
+  children:
     - title: Terminal Shortcuts
       url: /docs/terminal-shortcuts-cheat-sheet/
 

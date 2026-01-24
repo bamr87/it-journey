@@ -112,6 +112,14 @@ The workflow can be triggered:
 | `create-issue` | Create GitHub issue | `true`, `false` |
 | `ai-analysis` | Enable AI analysis | `true`, `false` |
 
+#### Exclusions (Noise Reduction)
+
+The link checker intentionally excludes non-site directories to avoid false positives, including:
+
+- `.crush/`, `.github/`, `.devcontainer/`
+- `.venv/`, `node_modules/`, `vendor/`
+- `_site/`, `link-check-results/`, `logs/`, `work/`
+
 ### 🧠 AI Analysis
 
 When enabled, the AI analysis provides:

@@ -205,6 +205,15 @@ class LinkHealthGuardian:
             '--exclude', 'https://url/',  # Exclude placeholder URLs
             '--exclude', 'https://github.com/.*/blob/.*',  # Exclude GitHub file links (rate limited)
             '--exclude', 'https://reddit.com/submit.*',  # Exclude Reddit share buttons (rate limited)
+            '--exclude-path', '.crush/',  # Exclude Crush workflow docs
+            '--exclude-path', '.devcontainer/',  # Exclude devcontainer docs
+            '--exclude-path', '.github/',  # Exclude GitHub metadata
+            '--exclude-path', '.venv/',  # Exclude virtual environments
+            '--exclude-path', '_site/',  # Exclude built site output
+            '--exclude-path', 'link-check-results/',  # Exclude previous run artifacts
+            '--exclude-path', 'logs/',  # Exclude local logs
+            '--exclude-path', 'node_modules/',  # Exclude Node dependencies
+            '--exclude-path', 'vendor/',  # Exclude vendored files
             '--exclude-path', '_site/preview/',  # Exclude preview builds
             '--exclude-path', 'work/',  # Exclude work directory
         ]

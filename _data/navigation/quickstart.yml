@@ -1,6 +1,7 @@
 - title: Quick-Start
   url: /quickstart/
-  sublinks:
+  icon: bi-rocket-takeoff
+  children:
     - title: Index
       url: /quickstart/
     - title: Machine Setup
@@ -12,7 +13,8 @@
     - title: Charm Tools
       url: /quickstart/charm-setup/
 - title: Related Guides
-  sublinks:
+  icon: bi-signpost-2
+  children:
     - title: VS Code for Neuroscience
       url: /quickstart/vscode-for-neuroscience
     - title: Django and Git

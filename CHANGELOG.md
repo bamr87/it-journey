@@ -9,9 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - **`scripts/quest/update-quest-home.py`** - Generate and inject an auto-updated quest index into `pages/_quests/home.md`.
+- **`_data/navigation/README.md`** - New documentation for navigation schema with zer0-mistakes v0.17+ compatibility notes
 
 ### Changed
 - **`pages/_quests/home.md`** - Added auto-generated quest index section with markers and refreshed `lastmod`.
+
+### Updated
+
+#### Navigation Schema Migration (zer0-mistakes v0.17+)
+Complete migration of all navigation files to new schema format.
+
+- **`_data/navigation/about.yml`** - Changed `sublinks` to `children`, fixed icon format to `bi-*` prefix
+- **`_data/navigation/main.yml`** - Changed `sublinks` to `children`, added Bootstrap Icons to all items
+- **`_data/navigation/home.yml`** - Changed `sublinks` to `children`, fixed icon format
+- **`_data/navigation/docs.yml`** - Changed `sublinks` to `children`, added icons, fixed icon prefix
+- **`_data/navigation/quickstart.yml`** - Changed `sublinks` to `children`, added icons
+- **`_data/navigation/posts.yml`** - Changed `sublinks` to `children`, fixed all icons to use `bi-*` format, removed empty `sublinks: []`
+- **`_data/navigation/quests.yml`** - Changed `sublinks` to `children`, fixed icons to use `bi-*` format
+- **`_data/navigation/notebooks.yml`** - Changed `sublinks` to `children`, fixed icon format
+- **`_data/navigation/hobbies.yml`** - Changed `sublinks` to `children`, added icon
 
 ### Documentation
 - **`scripts/quest/README.md`** - Added front matter and documented quest index generation script usage.

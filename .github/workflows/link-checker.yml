@@ -94,6 +94,7 @@ jobs:
           pip install requests
       
       - name: 🔍 Run Link Health Guardian
+        continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -109,6 +110,7 @@ jobs:
         
       - name: 📊 Extract Results for Summary
         id: extract-results
+        if: always()
         run: |
           # Extract statistics from the generated files
           if [[ -f "${{ env.OUTPUT_DIR }}/statistics.env" ]]; then
