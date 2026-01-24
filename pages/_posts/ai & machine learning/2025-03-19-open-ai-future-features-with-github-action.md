@@ -163,7 +163,7 @@ jobs:
   process-issue:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_ORG_ID: ${{ secrets.OPENAI_ORG_ID }}
     steps:

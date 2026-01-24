@@ -57,7 +57,7 @@ jobs:
       id: ai-review
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         cat > review_content.py << 'EOF'
         import os
@@ -272,7 +272,7 @@ jobs:
     - name: Comment on PR (if applicable)
       if: github.event_name == 'pull_request'
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         if [ -f "/tmp/review_summary.md" ]; then
           # Post comment on PR
@@ -288,7 +288,7 @@ jobs:
     - name: Create improvement PR (if push to main)
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         # Check if we have significant issues to address
         if [ -f "/tmp/ai_review_results.json" ]; then
