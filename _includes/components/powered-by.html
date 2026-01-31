@@ -1,0 +1,31 @@
+<!-- 
+  file: powered-by.html
+  path: _includes/components/powered-by.html
+  description: This file displays the "Powered by" section showing technologies used.
+  IT-Journey Override: Handles empty version numbers gracefully
+-->
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for power in site.powered_by %}
+  <div class="col">
+    <div class="card h-100 border-0 shadow-sm">
+      <div class="card-body d-flex align-items-start">
+        <div>
+          <h5 class="card-title fw-semibold">
+            <i class="{{ power.icon }} me-2 text-primary"></i>{{ power.name }}
+          </h5>
+          {% if power.version and power.version != "" %}
+          <p class="card-text text-body-secondary small mb-2">
+            <span class="badge bg-secondary">v{{ power.version }}</span>
+          </p>
+          {% endif %}
+          <a href="{{ power.url }}" class="btn btn-sm btn-outline-primary" rel="nofollow" target="_blank">
+            <i class="bi bi-box-arrow-up-right me-1"></i>Learn More
+          </a>
+        </div>
+        <i class="{{ power.icon }} fs-1 ms-auto text-body-tertiary opacity-50"></i>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

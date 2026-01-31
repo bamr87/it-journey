@@ -141,6 +141,20 @@ youtube:
     icon: "bi-youtube"
     url: "https://www.youtube.com/channel/UCO0j3Opg3J9i2iWnDwHUsXQ"
 
+## Resources & External Links ####################################################
+# These are used by the landing page install cards and navigation
+
+resources:
+  github_repo: "https://github.com/bamr87/it-journey"
+  github_fork: "https://github.com/bamr87/it-journey/fork"
+  rubygems:
+    name: "jekyll-theme-zer0"
+    url: "https://rubygems.org/gems/jekyll-theme-zer0"
+  docker:
+    image: "bamr87/zer0-mistakes"
+    hub_url: "https://hub.docker.com/r/bamr87/zer0-mistakes"
+  contributing: "/CONTRIBUTING/"
+
 ## Build Framework ##############################################################
 
 powered_by:
@@ -156,15 +170,12 @@ powered_by:
     version: "5.2.0"
     url: "https://getbootstrap.com/"
     icon: "bi-bootstrap"
-  - name: "Algolia"
-    version: 
-    url: "https://algolia.com/"
-    icon: "bi-search"
-  - name: "JQuery"
+  - name: "jQuery"
+    version: "3.7"
     url: "https://jquery.com/"
     icon: "bi-filetype-js"
   - name: "MathJax"
-    version: "1.0"
+    version: "3.2"
     url: "https://www.mathjax.org/"
     icon: "bi-calculator"
   - name: "GitHub Pages"

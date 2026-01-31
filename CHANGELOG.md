@@ -8,8 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **`_includes/components/powered-by.html`** - New reusable component for displaying "Powered by" technology cards
+  - Bootstrap 5 responsive card grid (1 column mobile, 3 columns desktop)
+  - Graceful handling of empty/null version numbers
+  - Dynamic Bootstrap icons support
+- **`_includes/components/README.md`** - Documentation for the new components directory
+- **`site.resources`** configuration block - External resource links for GitHub, RubyGems, Docker Hub
 - **`scripts/quest/update-quest-home.py`** - Generate and inject an auto-updated quest index into `pages/_quests/home.md`.
 - **`_data/navigation/README.md`** - New documentation for navigation schema with zer0-mistakes v0.17+ compatibility notes
+
+### Changed
+- **`_config.yml`** - Updated `powered_by` configuration:
+  - Removed Algolia (not currently in use)
+  - Updated jQuery version to 3.7
+  - Updated MathJax version to 3.2
+  - Added Docker to powered_by list
+  - Fixed jQuery capitalization
 
 ### Changed
 - **`pages/_quests/home.md`** - Added auto-generated quest index section with markers and refreshed `lastmod`.
