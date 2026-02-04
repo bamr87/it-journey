@@ -1,3 +1,6 @@
+---
+draft: draft
+---
 # Jekyll Include Components
 
 This directory contains reusable Jekyll include components for the IT-Journey site.
