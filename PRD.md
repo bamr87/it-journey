@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-02-14T20:37:00.000Z
-lastmod: 2026-02-14T20:37:00.000Z
+date: 2026-02-14T20:50:58.000Z
+lastmod: 2026-02-14T20:50:58.000Z
 status: Living
 version: 2026-02-14
 auto_generated: true
@@ -45,9 +45,9 @@ As a **learner / contributor / educator**, I want:
 | Learning Quests | 6 | ✅ Published |
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 42 | ✅ Indexed |
-| Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 10 | ✅ Analyzed |
-| Detected Issues | 4 | ⚠️ Review needed |
+| Implemented Features | 1 | ✅ Tracked |
+| Recent Commits | 2 | ✅ Analyzed |
+| Detected Issues | 1 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -170,13 +170,7 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(launch): correct emoji in Docker debug configuration name
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(workflows): update GITHUB_TOKEN references to use PAT_TOKEN
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(ci): fix bash backtick interpretation and missing labels in dependency checker
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)

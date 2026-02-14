@@ -211,26 +211,69 @@ class PRDMachine:
         
         conflicts = []
         
+        # Patterns that indicate trivial fixes (not requirement conflicts)
+        trivial_patterns = [
+            r'\btypo\b',
+            r'\bspelling\b',
+            r'\bformatting\b',
+            r'\bindentation\b',
+            r'\bwhitespace\b',
+            r'\bemoji\b',
+            r'\bicon\b',
+            r'\bcomment\b',
+            r'\bdocstring\b',
+            r'\blink\b.*\bbroken\b',
+            r'\bupdate.*\bdependenc',  # dependency updates
+            r'\bversion\s+bump\b',
+            r'\bminor\s+fix\b',
+            r'\bsmall\s+fix\b',
+        ]
+        
+        # Patterns that suggest actual requirement issues
+        significant_patterns = [
+            r'\bworkflow\b.*\bfail',
+            r'\bci\b.*\bfail',
+            r'\btoken\b',
+            r'\bauth',
+            r'\bpermission\b',
+            r'\bsecurity\b',
+            r'\bcrash\b',
+            r'\berror\b.*\bhandl',
+            r'\bvalidation\b.*\bfail',
+        ]
+        
         # Simple conflict detection based on commit messages
         for commit in self.signals.get("git_commits", []):
             subject = commit.get("subject", "").lower()
+            original_subject = commit.get("subject", "")
+            
             # Look for revert or conflicting patterns
             if "revert" in subject or "rollback" in subject:
                 conflicts.append({
                     "type": "revert",
                     "source": f"commit:{commit['hash']}",
-                    "description": f"Reverted change: {commit['subject']}",
+                    "description": f"Reverted change: {original_subject}",
                     "resolution": "Review if revert addresses a conflicting requirement"
                 })
+                continue
             
             # Look for "fix" that might indicate previous requirement was incomplete
             if subject.startswith("fix:") or subject.startswith("fix("):
-                conflicts.append({
-                    "type": "fix",
-                    "source": f"commit:{commit['hash']}",
-                    "description": f"Bug fix suggests incomplete requirement: {commit['subject']}",
-                    "resolution": "Consider if original requirement needs clarification"
-                })
+                # Check if this is a trivial fix
+                is_trivial = any(re.search(pattern, subject) for pattern in trivial_patterns)
+                
+                # Check if this is a significant fix
+                is_significant = any(re.search(pattern, subject) for pattern in significant_patterns)
+                
+                # Only flag significant fixes or fixes that aren't trivial
+                if is_significant or not is_trivial:
+                    conflicts.append({
+                        "type": "fix",
+                        "source": f"commit:{commit['hash']}",
+                        "description": f"Bug fix suggests incomplete requirement: {original_subject}",
+                        "resolution": "Consider if original requirement needs clarification",
+                        "severity": "high" if is_significant else "medium"
+                    })
         
         self.signals["conflicts"] = conflicts
         
@@ -399,8 +442,12 @@ python3 scripts/validation/link-checker.py --scope website
         
         if conflicts:
             conflict_text = "\n### Recent Issues Detected\n\n"
-            for c in conflicts[:5]:  # Show top 5 conflicts
-                conflict_text += f"- **{c['type'].upper()}**: {c['description']}\n"
+            # Sort by severity (high first)
+            sorted_conflicts = sorted(conflicts, key=lambda x: 0 if x.get('severity') == 'high' else 1)
+            for c in sorted_conflicts[:5]:  # Show top 5 conflicts
+                severity = c.get('severity', 'medium')
+                severity_icon = "🔴" if severity == "high" else "🟡"
+                conflict_text += f"- {severity_icon} **{c['type'].upper()}**: {c['description']}\n"
                 conflict_text += f"  - *Action*: {c['resolution']}\n"
         
         return f"""## 5. EDGE (Exceptions, Dependencies, Gotchas)
@@ -718,7 +765,9 @@ Examples:
         if conflicts:
             machine.log("WARNING", f"Found {len(conflicts)} conflicts:")
             for c in conflicts:
-                print(f"  - [{c['type']}] {c['description']}")
+                severity = c.get('severity', 'medium')
+                severity_icon = "🔴" if severity == "high" else "🟡"
+                print(f"  {severity_icon} [{c['type']}] {c['description']}")
                 print(f"    Resolution: {c['resolution']}")
         else:
             machine.log("SUCCESS", "No conflicts detected")
