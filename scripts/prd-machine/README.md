@@ -84,6 +84,13 @@ prd-machine conflicts
 - Bug fixes that suggest incomplete initial requirements
 - Contradictory signals from different sources
 
+**Conflict Severity:**
+- 🔴 **High**: Significant issues (CI failures, auth problems, security issues)
+- 🟡 **Medium**: Standard bug fixes that may indicate requirement gaps
+
+**Smart Filtering:**
+The conflict detection automatically filters out trivial fixes (typos, formatting, emoji corrections, broken links) to reduce false positives and focus on meaningful requirement issues.
+
 ## PRD Structure
 
 The generated PRD.md follows a standardized structure:
