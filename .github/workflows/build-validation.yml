@@ -244,11 +244,13 @@ jobs:
         bundler-cache: true
     
     - name: 📊 Cross-Platform Bundle Test
+      shell: bash
       run: |
         echo "Testing on ${{ matrix.os }} with Ruby ${{ matrix.ruby-version }}"
         bundle install
         bundle exec jekyll --version
-        bundle exec jekyll doctor || echo "Doctor check completed with warnings"
+        bundle exec jekyll doctor 2>&1 || true
+        echo "Doctor check completed"
     
     - name: 📊 Report Platform Results
       run: |

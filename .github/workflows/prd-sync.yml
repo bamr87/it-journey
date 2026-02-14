@@ -129,12 +129,12 @@ jobs:
         
         COMMIT_MSG="chore(prd): auto-sync PRD.md
 
-Automated PRD synchronization by PRD Machine.
-- Ingested signals from git commits, markdown files, and features
-- Updated all sections to reflect current repository state
+        Automated PRD synchronization by PRD Machine.
+        - Ingested signals from git commits, markdown files, and features
+        - Updated all sections to reflect current repository state
 
-Triggered by: ${{ github.event_name }}
-Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        Triggered by: ${{ github.event_name }}
+        Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
         
         git commit -m "$COMMIT_MSG"
         git push

@@ -135,35 +135,41 @@ jobs:
       - name: Comment on PR
         if: steps.changed.outputs.has_changes == 'true'
         uses: actions/github-script@v7
+        env:
+          PASSED: ${{ steps.validate.outputs.passed }}
+          FAILED: ${{ steps.validate.outputs.failed }}
+          RESULTS: ${{ steps.validate.outputs.RESULTS }}
         with:
           script: |
-            const passed = '${{ steps.validate.outputs.passed }}' || '0';
-            const failed = '${{ steps.validate.outputs.failed }}' || '0';
-            const results = `${{ steps.validate.outputs.RESULTS }}` || '';
+            const passed = process.env.PASSED || '0';
+            const failed = process.env.FAILED || '0';
+            const results = process.env.RESULTS || '';
 
-            const body = `## 🎯 Quest Validation Results
-
-            | Status | Quest | Score |
-            |--------|-------|-------|
-            ${results}
-
-            **Summary**: ${passed} passed, ${failed} failed
-
-            <details>
-            <summary>ℹ️ About Quest Validation</summary>
-
-            This check validates quest files against IT-Journey standards:
-            - Required frontmatter fields (16 fields)
-            - Quest hierarchy metadata (8 fields)
-            - Content structure (objectives, prerequisites, platform sections)
-            - Code block language specifications
-            - Interactive checkboxes
-            - Fantasy theme integration
-            - Accessibility (image alt text)
-            - Citations/references
-
-            Run locally: \`python3 test/quest-validator/quest_validator.py <file.md> --summary\`
-            </details>`;
+            const body = [
+              '## 🎯 Quest Validation Results',
+              '',
+              '| Status | Quest | Score |',
+              '|--------|-------|-------|',
+              results,
+              '',
+              `**Summary**: ${passed} passed, ${failed} failed`,
+              '',
+              '<details>',
+              '<summary>ℹ️ About Quest Validation</summary>',
+              '',
+              'This check validates quest files against IT-Journey standards:',
+              '- Required frontmatter fields (16 fields)',
+              '- Quest hierarchy metadata (8 fields)',
+              '- Content structure (objectives, prerequisites, platform sections)',
+              '- Code block language specifications',
+              '- Interactive checkboxes',
+              '- Fantasy theme integration',
+              '- Accessibility (image alt text)',
+              '- Citations/references',
+              '',
+              'Run locally: `python3 test/quest-validator/quest_validator.py <file.md> --summary`',
+              '</details>'
+            ].join('\n');
 
             // Find existing comment to update
             const { data: comments } = await github.rest.issues.listComments({
