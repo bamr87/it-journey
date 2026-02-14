@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-02-14T20:33:09.000Z
-lastmod: 2026-02-14T20:33:09.000Z
+date: 2026-02-14T20:37:00.000Z
+lastmod: 2026-02-14T20:37:00.000Z
 status: Living
 version: 2026-02-14
 auto_generated: true
@@ -46,8 +46,8 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 42 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 8 | ✅ Analyzed |
-| Detected Issues | 3 | ⚠️ Review needed |
+| Recent Commits | 10 | ✅ Analyzed |
+| Detected Issues | 4 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -170,6 +170,8 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
+- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
+  - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(launch): correct emoji in Docker debug configuration name
