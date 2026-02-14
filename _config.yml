@@ -468,7 +468,7 @@ exclude:
   - .lycheeignore
   - .markdownlint.json
   - .yamllint.yml
-  
+
   # Documentation and project files
   - docs/
   - logs/

@@ -31,6 +31,24 @@ test/
 │       ├── setup.md                  # Setup and configuration guide
 │       ├── usage.md                  # Usage examples and patterns
 │       └── troubleshooting.md        # Common issues and solutions
+├── quest-solutions/                    # Quest completion validation framework
+│   ├── README.md                      # Framework guide and authoring instructions
+│   ├── validate-quest-solution.sh     # Main validation entry point
+│   ├── _shared/                       # Shared toolkit and templates
+│   │   ├── lib/                       # Common library functions
+│   │   │   ├── common.sh             # Assertions, logging, platform detection
+│   │   │   └── scoring.sh            # Point-based scoring engine
+│   │   └── templates/                 # Templates for new quest solutions
+│   │       ├── quest-solution-readme-template.md
+│   │       ├── answer-key-template.md
+│   │       └── validation-script-template.sh
+│   ├── 0000/                          # Level 0000 solutions
+│   ├── 0001/                          # Level 0001 solutions
+│   ├── 0010/                          # Level 0010 solutions
+│   │   └── oh-my-zsh-terminal-enchantment/  # Complete solution set
+│   ├── 0011/                          # Level 0011 solutions
+│   ├── 0100/                          # Level 0100 solutions
+│   └── 0101/                          # Level 0101 solutions
 └── [future-test-frameworks]/          # Additional testing systems
 ```
 
@@ -67,18 +85,59 @@ The system uses a layered configuration approach:
 3. **Environment Variables**: Runtime overrides
 4. **Command Line Arguments**: Per-execution customization
 
+## 🧪 Quest Solutions Framework
+
+Validates quest completion through answer keys, validation scripts, and reference reports. Organized by level (0000–0101) with a shared toolkit.
+
+### Quick Start
+
+```bash
+# Validate all quest solutions (structural checks)
+./test/quest-solutions/validate-quest-solution.sh --all
+
+# Validate a specific quest solution
+./test/quest-solutions/validate-quest-solution.sh 0010/oh-my-zsh-terminal-enchantment
+
+# Validate all solutions in a level
+./test/quest-solutions/validate-quest-solution.sh --level 0010
+```
+
+### Key Features
+
+- **Shared Validation Toolkit**: Common library with assertions, logging, and scoring engine
+- **Structural Checks**: File presence, script syntax, link integrity (CI-safe)
+- **Scoring Engine**: Point-based scoring with rank determination (LEGENDARY → Keep Questing)
+- **Two Challenge Patterns**: Supports both Template-style (Novice/Intermediate/Advanced) and Implementation Challenge + Boss Battle quests
+- **Templates**: Ready-to-use templates for creating new quest solutions
+
+### Creating New Quest Solutions
+
+```bash
+# Scaffold a new quest solution
+mkdir -p test/quest-solutions/<LEVEL>/<quest-slug>/{scripts,reports}
+
+# Copy templates
+cp test/quest-solutions/_shared/templates/quest-solution-readme-template.md \
+   test/quest-solutions/<LEVEL>/<quest-slug>/README.md
+cp test/quest-solutions/_shared/templates/answer-key-template.md \
+   test/quest-solutions/<LEVEL>/<quest-slug>/answer-key.md
+```
+
+See the [Quest Solutions Framework README](quest-solutions/README.md) for the full authoring guide.
+
 ## 🚀 GitHub Actions Integration
 
 The testing framework integrates seamlessly with GitHub Actions:
 
-**Workflow Location**: `.github/workflows/hyperlink-guardian.yml`
+**Workflows**:
+- `.github/workflows/hyperlink-guardian.yml` — Link health monitoring
+- `.github/workflows/validate-solutions.yml` — Quest solution structural validation
 
-**Schedule**: Daily at 3:00 AM UTC (configurable)
+**Hyperlink Guardian Schedule**: Daily at 3:00 AM UTC (configurable)
 
-**Triggers**:
-- Scheduled runs for proactive monitoring
-- Manual triggers for on-demand testing
-- Pull request validation (optional)
+**Solution Validation Triggers**:
+- Push/PR changes to `test/quest-solutions/`
+- Manual dispatch with optional level filter
 
 **Outputs**:
 - Automated GitHub issues with analysis

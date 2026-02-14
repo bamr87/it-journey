@@ -1,0 +1,165 @@
+name: Validate Quest Solutions
+
+on:
+  push:
+    paths:
+      - 'test/quest-solutions/**'
+  pull_request:
+    paths:
+      - 'test/quest-solutions/**'
+  workflow_dispatch:
+    inputs:
+      level:
+        description: 'Specific level to validate (e.g., 0010). Leave empty for all.'
+        required: false
+        default: ''
+
+jobs:
+  validate-solutions:
+    name: Structural Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Discover quest solutions
+        id: discover
+        run: |
+          echo "=== Quest Solutions Discovery ==="
+          total=0
+          for level_dir in test/quest-solutions/[01][01][01][01]; do
+            [ -d "$level_dir" ] || continue
+            level=$(basename "$level_dir")
+            for quest_dir in "$level_dir"/*/; do
+              [ -d "$quest_dir" ] || continue
+              quest=$(basename "$quest_dir")
+              echo "Found: $level/$quest"
+              ((total++)) || true
+            done
+          done
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+          echo "Total solutions found: $total"
+
+      - name: Validate solution structure
+        run: |
+          echo "=== Structural Validation ==="
+          errors=0
+
+          for level_dir in test/quest-solutions/[01][01][01][01]; do
+            [ -d "$level_dir" ] || continue
+            level=$(basename "$level_dir")
+
+            # Apply level filter from workflow_dispatch
+            if [ -n "${{ github.event.inputs.level }}" ] && [ "$level" != "${{ github.event.inputs.level }}" ]; then
+              continue
+            fi
+
+            for quest_dir in "$level_dir"/*/; do
+              [ -d "$quest_dir" ] || continue
+              quest=$(basename "$quest_dir")
+              echo ""
+              echo "--- Validating $level/$quest ---"
+
+              # Check required files
+              if [ ! -f "$quest_dir/README.md" ]; then
+                echo "::error file=$quest_dir::Missing README.md in $level/$quest"
+                ((errors++)) || true
+              else
+                echo "✅ README.md exists"
+              fi
+
+              if [ ! -f "$quest_dir/answer-key.md" ]; then
+                echo "::error file=$quest_dir::Missing answer-key.md in $level/$quest"
+                ((errors++)) || true
+              else
+                echo "✅ answer-key.md exists"
+              fi
+
+              # Validate shell scripts have proper shebang
+              # Note: bash -n can hang on scripts with complex heredocs,
+              # so we check for valid shebang instead
+              if [ -d "$quest_dir/scripts" ]; then
+                for script in "$quest_dir"/scripts/*.sh; do
+                  [ -f "$script" ] || continue
+                  if head -1 "$script" | grep -q '^#!/'; then
+                    echo "✅ $(basename "$script") has valid shebang"
+                  else
+                    echo "::error file=$script::Missing shebang in $(basename "$script")"
+                    ((errors++)) || true
+                  fi
+                done
+              fi
+
+              # Check report files are non-empty
+              if [ -d "$quest_dir/reports" ]; then
+                for report in "$quest_dir"/reports/*.md; do
+                  [ -f "$report" ] || continue
+                  lines=$(wc -l < "$report" | tr -d ' ')
+                  if [ "$lines" -lt 5 ]; then
+                    echo "::warning file=$report::$(basename "$report") has only $lines lines"
+                  else
+                    echo "✅ $(basename "$report") ($lines lines)"
+                  fi
+                done
+              fi
+            done
+          done
+
+          echo ""
+          echo "=== Validation Complete ==="
+          if [ $errors -gt 0 ]; then
+            echo "::error::$errors structural error(s) found"
+            exit 1
+          else
+            echo "✅ All structural checks passed"
+          fi
+
+      - name: Validate internal links
+        run: |
+          echo "=== Link Validation ==="
+          errors=0
+
+          for md_file in $(find test/quest-solutions -name "*.md" -not -path "*/_shared/templates/*"); do
+            # Extract relative markdown links
+            links=$(grep -oE '\[.*?\]\(([^)]+)\)' "$md_file" | grep -oE '\(([^)]+)\)' | tr -d '()' | grep -v '^http' | grep -v '^#' || true)
+
+            for link in $links; do
+              dir=$(dirname "$md_file")
+              resolved="$dir/$link"
+              if [ ! -e "$resolved" ]; then
+                echo "::warning file=$md_file::Broken link: $link"
+                ((errors++)) || true
+              fi
+            done
+          done
+
+          if [ $errors -gt 0 ]; then
+            echo "⚠️ $errors broken internal link(s) found"
+          else
+            echo "✅ All internal links valid"
+          fi
+
+      - name: Generate summary
+        if: always()
+        run: |
+          echo "## Quest Solutions Validation Report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          total=0
+          for level_dir in test/quest-solutions/[01][01][01][01]; do
+            [ -d "$level_dir" ] || continue
+            level=$(basename "$level_dir")
+            count=0
+            for quest_dir in "$level_dir"/*/; do
+              [ -d "$quest_dir" ] || continue
+              ((count++)) || true
+              ((total++)) || true
+            done
+            if [ $count -gt 0 ]; then
+              echo "- **Level $level**: $count solution(s)" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Total**: $total quest solution(s) validated" >> "$GITHUB_STEP_SUMMARY"

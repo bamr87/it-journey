@@ -477,6 +477,25 @@ docker run -it [image-name] [command]
 - [Helpful Tool 1](https://url) - [Description]
 - [Helpful Tool 2](https://url) - [Description]
 
+## 🧪 Solutions & Validation
+
+After completing this quest, validate your work using the **Quest Solutions Framework**:
+
+```bash
+# Run the structural validator
+./test/quest-solutions/validate-quest-solution.sh <LEVEL>/<quest-slug>
+
+# Run quest-specific validation scripts (if available)
+zsh test/quest-solutions/<LEVEL>/<quest-slug>/scripts/validate-*.sh
+```
+
+**Solution materials** (answer keys, validation scripts, reference reports) are in:
+`test/quest-solutions/<LEVEL>/<quest-slug>/`
+
+> Complete the quest before consulting solutions. The learning is in the journey!
+
+See the [Quest Solutions Framework](../../../test/quest-solutions/README.md) for creating new quest solutions.
+
 ## 🤝 Quest Completion Checklist
 
 Before marking this quest as complete, ensure you've:

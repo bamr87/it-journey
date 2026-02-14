@@ -4,7 +4,7 @@ title: Level 0010 - Terminal Enhancement & Shell Mastery
 description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and advanced shell customization
 preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
 permalink: /quests/level-0010/
-lastmod: 2025-11-29T23:41:31.766Z
+lastmod: 2026-02-14T00:00:00.000Z
 
 layout: quest-collection
 level: 0010
@@ -183,6 +183,23 @@ graph TD
     G --> F
     B --> H[📊 Jekyll Mermaid]
 ```
+
+## Solutions & Validation Manual
+
+Each quest has a corresponding **Solutions & Validation Manual** in the centralized [test/quest-solutions/0010/](../../../test/quest-solutions/0010/) directory with:
+
+- **Validation scripts** — Automated checks to verify your environment
+- **Reference reports** — Expected outputs and audit findings
+- **Answer keys** — Full solutions with expected results
+- **Setup scripts** — Reproducible automation from Boss Battles
+
+| Quest | Solutions |
+|-------|----------|
+| Oh-My-Zsh Terminal Enchantment | [test/quest-solutions/0010/oh-my-zsh-terminal-enchantment/](../../../test/quest-solutions/0010/oh-my-zsh-terminal-enchantment/) |
+
+> Use solutions **after** attempting quests to cross-check your work, not as shortcuts.
+>
+> See the [Quest Solutions Framework](../../../test/quest-solutions/README.md) for the complete guide.
 
 ## Quest Completion Benefits
 
