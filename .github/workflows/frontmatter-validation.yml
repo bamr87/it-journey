@@ -65,8 +65,15 @@ jobs:
         import re
         import json
         from pathlib import Path
-        from datetime import datetime
+        from datetime import datetime, date
         from typing import Dict, List, Any, Optional
+
+        class DateTimeEncoder(json.JSONEncoder):
+            """Custom JSON encoder that handles datetime and date objects."""
+            def default(self, obj):
+                if isinstance(obj, (datetime, date)):
+                    return obj.isoformat()
+                return super().default(obj)
 
         class FrontmatterValidator:
             def __init__(self):
@@ -301,7 +308,7 @@ jobs:
                     'validation_results': validation_results,
                     'fix_results': fix_results,
                     'apply_fixes': apply_fixes
-                }, f, indent=2)
+                }, f, indent=2, cls=DateTimeEncoder)
             
             # Print summary
             total_files = len(validation_results)
