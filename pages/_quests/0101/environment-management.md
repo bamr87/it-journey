@@ -23,13 +23,9 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests:
-  - /quests/level-0101-side-quest-1/
-  - /quests/level-0101-side-quest-2/
-  parallel_quests:
-  - /quests/level-0101-alternative-path/
-  sequel_quests:
-  - /quests/level-0101-continuation/
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
   - Software Development

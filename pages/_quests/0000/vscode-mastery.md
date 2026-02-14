@@ -11,10 +11,35 @@ date: 2025-07-21 00:00:00+00:00
 lastmod: 2025-11-30 05:46:59.334000+00:00
 level: '0000'
 difficulty: 🟢 Easy
-estimated_time: 45 minutes
+estimated_time: 45-60 minutes
 primary_technology: vscode
 quest_type: main_quest
 quest_series: Level 0000 Quest Line
+quest_line: Foundation Path
+quest_arc: Tool Mastery Arc
+quest_dependencies:
+  required_quests: []
+  recommended_quests:
+  - /quests/init_world/hello-noob/
+  unlocks_quests: []
+quest_relationships:
+  child_quests: []
+  sequel_quests: []
+  parallel_quests:
+  - /quests/hello-windows/
+  - /quests/hello-macos/
+learning_paths:
+  primary_paths:
+  - Software Development
+  - Data Science
+  - DevOps
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  - 📊 Data Scientist
+  skill_trees:
+  - IDE Mastery
+  - Developer Productivity
 skill_focus:
 - Quests
 - Tools
@@ -22,8 +47,27 @@ skill_focus:
 - IDE-Setup
 learning_style: hands-on
 prerequisites:
-- Basic computer navigation skills
-- Admin privileges on your system
+  knowledge_requirements:
+  - Basic computer navigation skills
+  - Understanding of file types and folders
+  system_requirements:
+  - Modern OS (Windows 10+, macOS 10.14+, or Linux)
+  - Admin privileges on your system
+  - Internet connection for extension downloads
+  skill_level_indicators:
+  - Comfortable using a computer and installing software
+validation_criteria:
+  completion_requirements:
+  - Successfully install and configure VS Code
+  - Install at least 5 essential extensions
+  - Configure settings.json with custom preferences
+  - Complete all three quest challenges
+  skill_demonstrations:
+  - Can navigate VS Code using keyboard shortcuts
+  - Can set up debugging for at least one language
+  knowledge_checks:
+  - Understands the extension ecosystem
+  - Can configure workspace-specific settings
 layout: journals
 permalink: /quests/vscode-mastery/
 categories:
@@ -48,13 +92,21 @@ keywords:
 - quest
 - init-world
 fmContentType: quest
+draft: false
 comments: true
 attachments: ''
 sub-title: 'Level 0001 Quest: Essential Development Arsenal'
 rewards:
-- 🏆 IDE Master Badge
-- ⚡ Enhanced coding productivity
-- 🛠️ Professional development setup
+  badges:
+  - 🏆 IDE Master Badge
+  - ⚡ Enhanced coding productivity
+  skills_unlocked:
+  - 🛠️ Professional development setup
+  - 🎯 Keyboard shortcut mastery
+  progression_points: 75
+  unlocks_features:
+  - Professional development workflow
+  - Advanced debugging capabilities
 ---
 *Greetings, aspiring code warrior! You stand before one of the most crucial quests in your IT journey. Visual Studio Code is not just a text editor—it's a magical artifact that, when properly enchanted, becomes the ultimate weapon in any developer's arsenal.*
 
@@ -172,13 +224,12 @@ Install these essential extensions to unlock VS Code's true potential:
 code --install-extension ms-python.python
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-toolsai.jupyter
-code --install-extension ms-python.pylance
+code --install-extension ms-python.vscode-pylance
 code --install-extension ms-vscode.powershell
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-ssh
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension eamodio.gitlens
-code --install-extension ms-vscode.vscode-json
 ```
 
 ### Manual Installation (Alternative Method)
@@ -216,7 +267,7 @@ code --install-extension ms-vscode.vscode-json
 ### ✅ Quest Checkpoint: Extension Verification
 
 Open Command Palette (`Cmd/Ctrl + Shift + P`) and run:
-```
+```text
 Extensions: Show Installed Extensions
 ```
 
@@ -247,7 +298,6 @@ Access settings via `Cmd/Ctrl + ,` or `Cmd/Ctrl + Shift + P` → "Open Settings 
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.indent": 20,
-    "workbench.activityBar.visible": true,
     
     // File Management
     "files.autoSave": "afterDelay",
@@ -262,8 +312,8 @@ Access settings via `Cmd/Ctrl + ,` or `Cmd/Ctrl + Shift + P` → "Open Settings 
     
     // Terminal Configuration
     "terminal.integrated.fontSize": 13,
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
     
     // Git Integration
     "git.enableSmartCommit": true,
@@ -272,13 +322,10 @@ Access settings via `Cmd/Ctrl + ,` or `Cmd/Ctrl + Shift + P` → "Open Settings 
     
     // Python Specific
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
-    "python.formatting.provider": "black",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
     
     // Performance Optimizations
     "extensions.autoUpdate": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "update.mode": "manual"
 }
 ```
@@ -289,7 +336,7 @@ Create `.vscode/settings.json` in project root for project-specific configuratio
 
 ```json
 {
-    "python.pythonPath": "./venv/bin/python",
+    "python.defaultInterpreterPath": "./venv/bin/python",
     "editor.tabSize": 2,
     "files.associations": {
         "*.jsx": "javascriptreact",
@@ -340,7 +387,7 @@ Practice these shortcuts by:
 ```bash
 # Install Python extension pack
 code --install-extension ms-python.python
-code --install-extension ms-python.pylance
+code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 
 # Additional Python tools
@@ -352,9 +399,10 @@ code --install-extension ms-python.pylint
 **Python-specific settings.json additions:**
 ```json
 {
-    "python.formatting.provider": "black",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
     "python.testing.pytestEnabled": true,
     "jupyter.askForKernelRestart": false
 }
@@ -367,7 +415,7 @@ code --install-extension ms-python.pylint
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension esbenp.prettier-vscode
-code --install-extension ms-vscode.vscode-eslint
+code --install-extension dbaeumer.vscode-eslint
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension christian-kohler.path-intellisense
 ```
@@ -546,7 +594,7 @@ For large codebases, optimize VS Code performance:
 {
     "extensions.autoUpdate": false,
     "extensions.autoCheckUpdates": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "workbench.settings.enableNaturalLanguageSearch": false,
     "typescript.disableAutomaticTypeAcquisition": true
 }

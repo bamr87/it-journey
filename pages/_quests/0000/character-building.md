@@ -16,20 +16,78 @@ estimated_time: 45-60 minutes
 primary_technology: character-building
 quest_type: main_quest
 quest_series: Init World - Character Creation
+quest_line: Foundation Path
+quest_arc: Character Creation Arc
+quest_dependencies:
+  required_quests:
+  - /quests/init_world/hello-noob/
+  recommended_quests:
+  - /quests/lvl_000/begin-your-it-journey/
+  unlocks_quests:
+  - /quests/lvl_000/character-selection/
+  - /quests/lvl_000/os-selection/
+quest_relationships:
+  child_quests: []
+  sequel_quests:
+  - /quests/lvl_000/character-selection/
+  - /quests/lvl_000/os-selection/
+  parallel_quests: []
+learning_paths:
+  primary_paths:
+  - Software Development
+  - System Administration
+  - Data Science
+  - Cybersecurity
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  - 🛡️ Security Specialist
+  - 📊 Data Scientist
+  - 🤝 DevOps Facilitator
+  skill_trees:
+  - Career Planning
+  - Development Environment
+  - Self-Assessment
 skill_focus:
 - Quests
 - Init-World
 - Career-Development
 learning_style: hands-on
 prerequisites:
-- Completed hello-noob quest or basic GitHub familiarity
-- Basic understanding of different operating systems
-- Clear motivation to learn IT skills
+  knowledge_requirements:
+  - Completed hello-noob quest or basic GitHub familiarity
+  - Basic understanding of different operating systems
+  - Clear motivation to learn IT skills
+  system_requirements:
+  - Computer with internet access for research and setup
+  - Note-taking tools (digital or physical) for planning
+  - Access to create online profiles (LinkedIn, GitHub, etc.)
+  skill_level_indicators:
+  - Curious about technology career paths
+  - Ready for self-reflection and strategic planning
 validation_criteria:
-- Complete personal IT character profile
-- Choose primary and secondary specialization areas
-- Configure basic development environment
-- Set clear learning goals and milestones
+  completion_requirements:
+  - Complete personal IT character profile
+  - Choose primary and secondary specialization areas
+  - Configure basic development environment
+  - Set clear learning goals and milestones
+  skill_demonstrations:
+  - Can articulate career goals and the path to achieve them
+  - Can navigate chosen development environment
+  knowledge_checks:
+  - Understands why specialization focus matters
+  - Can explain the skills required for target role
+rewards:
+  badges:
+  - 🏆 Character Identity Badge
+  - ⚡ Clear Career Direction
+  skills_unlocked:
+  - 🛠️ Customized Learning Path
+  - 🎯 Professional Development Foundation
+  progression_points: 75
+  unlocks_features:
+  - Access to specialization-specific quests
+  - Development environment configured
 layout: journals
 permalink: /quests/character-building/
 categories:
@@ -58,11 +116,6 @@ sub-title: 'Level 001 Quest: Defining Your Digital Identity'
 meta:
   quest_type: character_development
   skill_focus: career_planning
-rewards:
-- 🏆 Character Identity Badge
-- ⚡ Clear Career Direction
-- 🛠️ Customized Learning Path
-- 🎯 Professional Development Foundation
 related_quests:
 - hello-noob.md - First Steps into IT
 - character-selection.md - Choose Your IT Specialization

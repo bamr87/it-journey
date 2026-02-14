@@ -8,6 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Quest Validation CI Workflow** (`quest-validation.yml`) - New GitHub Actions workflow for automated quest validation on PRs and pushes
+- **Full Audit Report** (`test/quest-validator/full-audit-report.json`) - Comprehensive quest audit results (136 quests, 0 errors, 93.9% avg score)
+
+### Changed
+- **Quest Validator v2.0.0** (`test/quest-validator/quest_validator.py`) - Major upgrade:
+  - Added placeholder content detection (brackets, TODO/TBD, lorem ipsum)
+  - Added `--exclude-drafts` and `--fail-threshold` CLI options
+  - Enhanced permalink validation supporting multiple valid patterns
+  - Improved scoring with complete vs placeholder quest classification
+  - Added JSON report output support for CI integration
+- **Placeholder Dependency Remover** (`scripts/quest/remove-placeholder-deps.py`) - Improved regex patterns to dynamically match any level (e.g., `level-\d{4}-side-quest-\d+`) instead of hardcoded level lists
+- **Quest Frontmatter Enhancements** (93 quest files across all levels) - Comprehensive frontmatter improvements:
+  - Level 0000 quests: Added `quest_line`, `quest_arc`, `quest_dependencies`, `quest_relationships`, `learning_paths`, structured `prerequisites` (knowledge/system requirements), structured `rewards` (badges/skills/progression points), expanded quest objectives and content sections
+  - Levels 0001–1111 quests: Removed placeholder dependency values (`side-quest-1`, `alternative-path`, `continuation`) replaced with empty arrays for accurate relationship tracking
+
+## [Unreleased - Previous]
+
+### Added
 - **`_includes/components/powered-by.html`** - New reusable component for displaying "Powered by" technology cards
   - Bootstrap 5 responsive card grid (1 column mobile, 3 columns desktop)
   - Graceful handling of empty/null version numbers

@@ -32,7 +32,7 @@ validation_criteria:
 - Build a personal script library for common operations
 - Troubleshoot and debug script errors independently
 layout: journals
-permalink: ../README.mdlevel-0010-bash-scripting/
+permalink: /quests/0010/bash-scripting/
 categories:
 - Quests
 - Foundation

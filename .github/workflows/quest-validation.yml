@@ -1,0 +1,277 @@
+name: 🎯 Quest Content Validation
+
+on:
+  # Run on PRs that modify quest content or validation tooling
+  pull_request:
+    paths:
+      - 'pages/_quests/**/*.md'
+      - 'test/quest-validator/**'
+      - 'scripts/quest/**'
+
+  # Run on pushes to main that touch quests
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'pages/_quests/**/*.md'
+
+  # Scheduled weekly full audit (Sunday 3 AM UTC)
+  schedule:
+    - cron: '0 3 * * 0'
+
+  # Manual trigger with options
+  workflow_dispatch:
+    inputs:
+      full_audit:
+        description: 'Run full audit across all quests (not just changed files)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+      fail_threshold:
+        description: 'Minimum score percentage to pass (0=disabled)'
+        required: false
+        default: '0'
+      exclude_drafts:
+        description: 'Skip draft quests'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # ── Job 1: Validate changed quest files on PR ──
+  validate-changed:
+    name: Validate Changed Quests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Get changed quest files
+        id: changed
+        run: |
+          # Get list of changed .md files under pages/_quests/
+          CHANGED=$(git diff --name-only --diff-filter=ACMR \
+            ${{ github.event.pull_request.base.sha }} \
+            ${{ github.event.pull_request.head.sha }} \
+            -- 'pages/_quests/**/*.md' | grep -v 'README.md' | grep -v 'home.md' || true)
+
+          if [ -z "$CHANGED" ]; then
+            echo "No quest files changed"
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changed quest files:"
+            echo "$CHANGED"
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            # Save to file for iteration
+            echo "$CHANGED" > /tmp/changed_quests.txt
+          fi
+
+      - name: Validate changed quests
+        id: validate
+        if: steps.changed.outputs.has_changes == 'true'
+        run: |
+          PASSED=0
+          FAILED=0
+          RESULTS=""
+
+          while IFS= read -r quest_file; do
+            [ -f "$quest_file" ] || continue
+            echo "============================================"
+            echo "Validating: $quest_file"
+            echo "============================================"
+
+            OUTPUT=$(python3 test/quest-validator/quest_validator.py "$quest_file" --summary 2>&1) || true
+            SCORE=$(echo "$OUTPUT" | grep -o 'Quality Score: [0-9]*/[0-9]* ([0-9.]*%)' | head -1 || echo "N/A")
+            STATUS=$(echo "$OUTPUT" | grep -E '(PASSED|FAILED)' | head -1 || echo "UNKNOWN")
+
+            if echo "$STATUS" | grep -q "PASSED"; then
+              ((PASSED++)) || true
+              ICON="✅"
+            else
+              ((FAILED++)) || true
+              ICON="❌"
+            fi
+
+            RESULTS="${RESULTS}\n| ${ICON} | \`${quest_file}\` | ${SCORE} |"
+            echo "$OUTPUT"
+          done < /tmp/changed_quests.txt
+
+          echo "passed=$PASSED" >> "$GITHUB_OUTPUT"
+          echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
+
+          # Write results for PR comment
+          {
+            echo "RESULTS<<ENDOFRESULTS"
+            echo -e "$RESULTS"
+            echo "ENDOFRESULTS"
+          } >> "$GITHUB_OUTPUT"
+
+          # Set exit code
+          if [ "$FAILED" -gt 0 ]; then
+            echo "::warning::${FAILED} quest(s) failed validation"
+          fi
+
+      - name: Comment on PR
+        if: steps.changed.outputs.has_changes == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const passed = '${{ steps.validate.outputs.passed }}' || '0';
+            const failed = '${{ steps.validate.outputs.failed }}' || '0';
+            const results = `${{ steps.validate.outputs.RESULTS }}` || '';
+
+            const body = `## 🎯 Quest Validation Results
+
+            | Status | Quest | Score |
+            |--------|-------|-------|
+            ${results}
+
+            **Summary**: ${passed} passed, ${failed} failed
+
+            <details>
+            <summary>ℹ️ About Quest Validation</summary>
+
+            This check validates quest files against IT-Journey standards:
+            - Required frontmatter fields (16 fields)
+            - Quest hierarchy metadata (8 fields)
+            - Content structure (objectives, prerequisites, platform sections)
+            - Code block language specifications
+            - Interactive checkboxes
+            - Fantasy theme integration
+            - Accessibility (image alt text)
+            - Citations/references
+
+            Run locally: \`python3 test/quest-validator/quest_validator.py <file.md> --summary\`
+            </details>`;
+
+            // Find existing comment to update
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Quest Validation Results')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+  # ── Job 2: Full audit (scheduled or manual) ──
+  full-audit:
+    name: Full Quest Audit
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'schedule' ||
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.full_audit == 'true')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run full quest validation
+        run: |
+          EXTRA_ARGS=""
+
+          if [ "${{ github.event.inputs.exclude_drafts }}" = "true" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --exclude-drafts"
+          fi
+
+          THRESHOLD="${{ github.event.inputs.fail_threshold }}"
+          if [ -n "$THRESHOLD" ] && [ "$THRESHOLD" != "0" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --fail-threshold $THRESHOLD"
+          fi
+
+          python3 test/quest-validator/quest_validator.py \
+            -d pages/_quests/ \
+            --summary \
+            --report test/quest-validator/full-audit-report.json \
+            $EXTRA_ARGS 2>&1 || true
+
+          echo ""
+          echo "============================================"
+          echo "Report saved to test/quest-validator/full-audit-report.json"
+          echo "============================================"
+
+      - name: Run quest network validation
+        run: |
+          python3 scripts/quest/validate-quest-network.py 2>&1 || true
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: quest-audit-report-${{ github.run_number }}
+          path: test/quest-validator/full-audit-report.json
+          retention-days: 90
+
+      - name: Generate audit summary
+        run: |
+          python3 -c "
+          import json
+          with open('test/quest-validator/full-audit-report.json') as f:
+              data = json.load(f)
+
+          print('## Quest Audit Summary')
+          print(f\"- **Total quests**: {data['total']}\")
+          print(f\"- **Complete**: {data['complete']}\")
+          print(f\"- **Placeholders**: {data['placeholders']}\")
+          print(f\"- **Passed**: {data['passed']}\")
+          print(f\"- **Failed**: {data['failed']}\")
+          print(f\"- **Average score**: {data['average_score']:.1f}%\")
+          print()
+          print('### Score Distribution')
+          for bucket, count in data.get('score_distribution', {}).items():
+              bar = '█' * count
+              print(f\"  {bucket:>7}: {count:3d} {bar}\")
+          print()
+          print('### Per-Level Breakdown')
+          print(f\"{'Level':<8} {'Total':>5} {'Pass':>5} {'Fail':>5} {'Avg%':>6} {'Placeholders':>12}\")
+          print('-' * 46)
+          for level, stats in sorted(data.get('level_stats', {}).items()):
+              avg = stats.get('avg_score', 0)
+              print(f\"{level:<8} {stats['total']:>5} {stats['passed']:>5} {stats['failed']:>5} {avg:>5.1f}% {stats['placeholders']:>12}\")
+          " >> "$GITHUB_STEP_SUMMARY"

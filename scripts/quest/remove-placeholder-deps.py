@@ -32,20 +32,12 @@ def print_success(msg): print(f"{GREEN}[SUCCESS]{NC} {msg}")
 def print_warning(msg): print(f"{YELLOW}[WARNING]{NC} {msg}")
 def print_error(msg): print(f"{RED}[ERROR]{NC} {msg}")
 
-# Placeholder patterns to remove
+# Placeholder patterns to remove (regex patterns matching any level)
 PLACEHOLDER_PATTERNS = [
-    r'level-XXXX-side-quest-1',
-    r'level-XXXX-side-quest-2',
-    r'level-XXXX-alternative-path',
-    r'level-XXXX-continuation',
-    r'level-0000-side-quest-1',
-    r'level-0000-side-quest-2',
-    r'level-0001-side-quest-1',
-    r'level-0001-side-quest-2',
-    r'level-0010-side-quest-1',
-    r'level-0010-side-quest-2',
-    r'level-0011-side-quest-1',
-    r'level-0011-side-quest-2',
+    r'level-\d{4}-side-quest-\d+',       # /quests/level-XXXX-side-quest-1/
+    r'level-\d{4}-alternative-path',      # /quests/level-XXXX-alternative-path/
+    r'level-\d{4}-continuation',          # /quests/level-XXXX-continuation/
+    r'level-XXXX',                        # Template placeholders with literal XXXX
 ]
 
 class PlaceholderRemover:

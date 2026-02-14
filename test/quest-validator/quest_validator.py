@@ -5,7 +5,7 @@ Validates quest structure, content, and quality standards
 
 Author: IT-Journey Team
 Created: 2025-10-08
-Version: 1.0.0
+Version: 2.0.0
 """
 
 import argparse
@@ -54,8 +54,21 @@ class QuestValidator:
     # Level format pattern (binary)
     LEVEL_PATTERN = re.compile(r'^\d{4}$')
     
-    def __init__(self, verbose: bool = False):
+    # Placeholder indicators in frontmatter values
+    PLACEHOLDER_PATTERNS = [
+        r'\[.*?\]',           # [Primary Skill Tree], [Your Name], etc.
+        r'XXXX',              # Template level placeholder
+        r'your-.*-here',      # your-quest-here, your-name-here
+        r'Add .* here',       # Add quest description here
+        r'TBD|TODO|FIXME',    # Common placeholder markers
+        r'lorem ipsum',       # Lorem ipsum text
+        r'placeholder',       # Explicit placeholder text
+    ]
+
+    def __init__(self, verbose: bool = False, exclude_drafts: bool = False, fail_threshold: int = 0):
         self.verbose = verbose
+        self.exclude_drafts = exclude_drafts
+        self.fail_threshold = fail_threshold
         self.results: List[ValidationResult] = []
     
     def log_info(self, message: str):
@@ -164,16 +177,26 @@ class QuestValidator:
             return
         
         permalink = fm['permalink']
-        level = fm.get('level', '')
+        level = str(fm.get('level', ''))
         
-        # Should include /quests/ and level
+        # Must start with /quests/
         if not permalink.startswith('/quests/'):
             result.errors.append(f"Permalink should start with '/quests/': {permalink}")
             result.passed = False
-        elif level and f"level-{level}" not in permalink:
-            result.warnings.append(f"Permalink doesn't include level {level}: {permalink}")
         else:
-            result.score += 5
+            # Accept multiple valid permalink patterns:
+            # 1. /quests/level-XXXX/slug/  (template style)
+            # 2. /quests/{level_dir}/slug/ (e.g., /quests/0000/hello-noob/)
+            # 3. /quests/{theme}/slug/     (e.g., /quests/init_world/hello-noob/)
+            # 4. /quests/slug/             (standalone quests)
+            # Check for broken patterns like ../README.md concatenation
+            if '../' in permalink or 'README' in permalink:
+                result.errors.append(f"Broken permalink (contains relative path or README): {permalink}")
+                result.passed = False
+            else:
+                result.score += 5
+                if level and f"level-{level}" not in permalink and f"/{level}/" not in permalink:
+                    result.info.append(f"Permalink uses descriptive path (level {level}): {permalink}")
         result.max_score += 5
     
     def validate_content_structure(self, body: str, result: ValidationResult):
@@ -199,16 +222,39 @@ class QuestValidator:
         """Validate code blocks have language specifications"""
         self.log_info("Validating code blocks...")
         
-        # Find all code blocks
-        code_blocks = re.findall(r'```(\w*)\n', body)
+        # Find opening code fences only (not closing fences)
+        # Handles nested fences: a fence opened with N backticks is only closed
+        # by a line with >= N backticks and no language identifier.
+        # Lines inside a higher-level fence are treated as content, not fences.
+        lines = body.split('\n')
+        fence_stack = []  # stack of backtick counts for nested fences
+        total_blocks = 0
+        unspecified_count = 0
+        for line in lines:
+            stripped = line.strip()
+            # Match lines that are only backticks (3+) optionally followed by a language id
+            m = re.match(r'^(`{3,})(.*)', stripped)
+            if m:
+                tick_count = len(m.group(1))
+                lang = m.group(2).strip()
+                if fence_stack and tick_count >= fence_stack[-1] and not lang:
+                    # Closing fence: >= same backtick count and no language
+                    fence_stack.pop()
+                elif not fence_stack or tick_count < fence_stack[-1]:
+                    # Opening fence at top level or nested inside a higher fence
+                    if not fence_stack:
+                        # Only count top-level fences for validation
+                        total_blocks += 1
+                        if not lang:
+                            unspecified_count += 1
+                    fence_stack.append(tick_count)
         
-        if code_blocks:
-            unspecified = [i for i, lang in enumerate(code_blocks) if not lang]
-            if unspecified:
-                result.warnings.append(f"{len(unspecified)} code blocks without language specification")
+        if total_blocks > 0:
+            if unspecified_count > 0:
+                result.warnings.append(f"{unspecified_count} code blocks without language specification")
             else:
                 result.score += 5
-                result.info.append(f"All {len(code_blocks)} code blocks have language specification")
+                result.info.append(f"All {total_blocks} code blocks have language specification")
             result.max_score += 5
     
     def validate_checkboxes(self, body: str, result: ValidationResult):
@@ -307,6 +353,12 @@ class QuestValidator:
             result.passed = False
             return result
         
+        # Check if this is a draft and we should skip it
+        is_draft = frontmatter.get('draft', False)
+        if is_draft and self.exclude_drafts:
+            result.info.append("Skipped: draft quest (--exclude-drafts)")
+            return result
+        
         # Run all validations
         self.validate_frontmatter_required(frontmatter, result)
         self.validate_frontmatter_hierarchy(frontmatter, result)
@@ -320,6 +372,14 @@ class QuestValidator:
         self.validate_fantasy_theme(body, frontmatter, result)
         self.validate_accessibility(body, result)
         self.validate_citations(body, result)
+        self.validate_placeholder_status(frontmatter, body, result)
+        
+        # Check against fail threshold
+        if self.fail_threshold > 0 and result.max_score > 0:
+            score_pct = (result.score / result.max_score) * 100
+            if score_pct < self.fail_threshold:
+                result.errors.append(f"Score {score_pct:.1f}% below threshold {self.fail_threshold}%")
+                result.passed = False
         
         return result
     
@@ -374,9 +434,61 @@ class QuestValidator:
                 except Exception:
                     print(f"   • [Info message contains invalid characters]")
     
-    def validate_directory(self, directory: Path, pattern: str = "*.md") -> List[ValidationResult]:
+    def validate_placeholder_status(self, fm: Dict, body: str, result: ValidationResult):
+        """Detect if a quest is a placeholder with template boilerplate"""
+        placeholder_hits = 0
+        
+        # Check frontmatter values for placeholder patterns
+        for key, value in fm.items():
+            if isinstance(value, str):
+                for pattern in self.PLACEHOLDER_PATTERNS:
+                    if re.search(pattern, value, re.IGNORECASE):
+                        placeholder_hits += 1
+                        break
+        
+        # Check quest_relationships for placeholder paths like /quests/level-XXXX-side-quest-1/
+        for rel_key in ['quest_relationships', 'quest_dependencies']:
+            rel = fm.get(rel_key, {})
+            if isinstance(rel, dict):
+                for sub_key, sub_val in rel.items():
+                    if isinstance(sub_val, list):
+                        for item in sub_val:
+                            if isinstance(item, str) and re.search(r'level-\d{4}-(side-quest|alternative|continuation)', item):
+                                placeholder_hits += 1
+        
+        # Check body for template bracket placeholders like [Requirement 1], [Badge Name]
+        body_bracket_placeholders = re.findall(
+            r'\[(?:Requirement \d|Badge Name|Next Quest|Side Quest|Achievement|'
+            r'Brief description|Complex Implementation|How to verify|'
+            r'What to build|Suggested Quest|Related|Your |Technology|'
+            r'Advanced Skill|Integration Skill|Campaign|Story arc)\b[^\]]*\]',
+            body, re.IGNORECASE
+        )
+        if len(body_bracket_placeholders) >= 5:
+            placeholder_hits += 3  # Strong signal: many template brackets in body
+        elif len(body_bracket_placeholders) >= 2:
+            placeholder_hits += 1
+        
+        # Check body for minimal content
+        body_stripped = body.strip()
+        body_lines = [l for l in body_stripped.split('\n') if l.strip()]
+        if len(body_lines) < 20:
+            placeholder_hits += 2  # Very short body is a strong placeholder signal
+        
+        if placeholder_hits >= 3:
+            result.info.append(f"PLACEHOLDER_QUEST: {placeholder_hits} placeholder indicators found")
+        elif placeholder_hits >= 1:
+            result.info.append(f"PARTIAL_CONTENT: {placeholder_hits} placeholder indicators found")
+
+    def validate_directory(self, directory: Path, pattern: str = "*.md", recursive: bool = True) -> List[ValidationResult]:
         """Validate all quest files in a directory"""
-        quest_files = sorted(directory.glob(pattern))
+        # Skip directories that are not quest content
+        skip_dirs = {'templates', 'tools', 'docs', 'inventory', 'codex', 'scripts'}
+        
+        if recursive:
+            quest_files = sorted(directory.rglob(pattern))
+        else:
+            quest_files = sorted(directory.glob(pattern))
         
         if not quest_files:
             self.log_warning(f"No quest files found in {directory}")
@@ -385,12 +497,27 @@ class QuestValidator:
         self.log_info(f"Found {len(quest_files)} quest files to validate")
         
         for quest_file in quest_files:
-            # Skip README and similar files
+            # Skip README, INDEX, HOME files
             if quest_file.name.upper() in ['README.MD', 'INDEX.MD', 'HOME.MD']:
                 self.log_info(f"Skipping: {quest_file.name}")
                 continue
             
+            # Skip non-quest directories
+            rel_parts = quest_file.relative_to(directory).parts
+            if any(part in skip_dirs for part in rel_parts[:-1]):
+                self.log_info(f"Skipping (non-quest dir): {quest_file}")
+                continue
+            
+            # Skip files that don't have frontmatter (like NETWORK_REPORT.md)
+            if quest_file.stem.isupper() and '_' in quest_file.stem:
+                self.log_info(f"Skipping (non-quest file): {quest_file.name}")
+                continue
+            
             result = self.validate_quest_file(quest_file)
+            # Skip adding draft results when --exclude-drafts is active
+            if self.exclude_drafts and any('Skipped: draft quest' in i for i in result.info):
+                self.log_info(f"Skipping draft: {quest_file.name}")
+                continue
             self.results.append(result)
             self.print_result(result)
         
@@ -407,17 +534,76 @@ class QuestValidator:
         scores = [r.score / r.max_score * 100 for r in self.results if r.max_score > 0]
         avg_score = sum(scores) / len(scores) if scores else 0
         
+        # Count placeholders vs complete quests
+        placeholders = sum(1 for r in self.results
+                          if any('PLACEHOLDER_QUEST' in i for i in r.info))
+        complete = total - placeholders
+        
+        # Per-level breakdown
+        level_stats = {}
+        for r in self.results:
+            # Extract level from path (e.g., pages/_quests/0010/file.md → 0010)
+            parts = Path(r.quest_file).parts
+            level = 'root'
+            for part in parts:
+                if re.match(r'^\d{4}$', part):
+                    level = part
+                    break
+            if level not in level_stats:
+                level_stats[level] = {'total': 0, 'passed': 0, 'failed': 0, 'scores': [], 'placeholders': 0}
+            level_stats[level]['total'] += 1
+            if r.passed:
+                level_stats[level]['passed'] += 1
+            else:
+                level_stats[level]['failed'] += 1
+            if r.max_score > 0:
+                level_stats[level]['scores'].append(r.score / r.max_score * 100)
+            if any('PLACEHOLDER_QUEST' in i for i in r.info):
+                level_stats[level]['placeholders'] += 1
+        
+        # Score distribution buckets
+        score_distribution = {'90-100': 0, '80-89': 0, '70-79': 0, '60-69': 0, '50-59': 0, '<50': 0}
+        for s in scores:
+            if s >= 90: score_distribution['90-100'] += 1
+            elif s >= 80: score_distribution['80-89'] += 1
+            elif s >= 70: score_distribution['70-79'] += 1
+            elif s >= 60: score_distribution['60-69'] += 1
+            elif s >= 50: score_distribution['50-59'] += 1
+            else: score_distribution['<50'] += 1
+        
+        # Most common errors and warnings
+        error_counts = {}
+        warning_counts = {}
+        for r in self.results:
+            for e in r.errors:
+                # Normalize error messages (strip variable parts)
+                key = re.sub(r': .*$', '', e)
+                error_counts[key] = error_counts.get(key, 0) + 1
+            for w in r.warnings:
+                key = re.sub(r': .*$', '', w)
+                warning_counts[key] = warning_counts.get(key, 0) + 1
+        
+        top_errors = sorted(error_counts.items(), key=lambda x: -x[1])[:10]
+        top_warnings = sorted(warning_counts.items(), key=lambda x: -x[1])[:10]
+        
         return {
             'total': total,
             'passed': passed,
             'failed': failed,
+            'complete': complete,
+            'placeholders': placeholders,
             'total_errors': total_errors,
             'total_warnings': total_warnings,
             'average_score': avg_score,
+            'score_distribution': score_distribution,
+            'level_stats': {k: {**v, 'avg_score': sum(v['scores'])/len(v['scores']) if v['scores'] else 0}
+                           for k, v in sorted(level_stats.items())},
+            'top_errors': top_errors,
+            'top_warnings': top_warnings,
             'results': self.results
         }
     
-    def print_summary(self):
+    def print_summary(self, detailed: bool = False):
         """Print validation summary"""
         report = self.generate_report()
         
@@ -425,12 +611,47 @@ class QuestValidator:
         print("VALIDATION SUMMARY")
         print(f"{'='*60}")
         print(f"Total Quests:     {report['total']}")
+        print(f"  Complete:       {report['complete']}")
+        print(f"  Placeholders:   {report['placeholders']}")
         print(f"Passed:           {report['passed']} ✅")
         print(f"Failed:           {report['failed']} ❌")
         print(f"Total Errors:     {report['total_errors']}")
         print(f"Total Warnings:   {report['total_warnings']}")
         print(f"Average Score:    {report['average_score']:.1f}%")
-        print(f"{'='*60}\n")
+        print(f"{'='*60}")
+        
+        if detailed:
+            print(f"\n{'='*60}")
+            print("SCORE DISTRIBUTION")
+            print(f"{'='*60}")
+            for bucket, count in report['score_distribution'].items():
+                bar = '█' * count
+                print(f"  {bucket:>7}: {count:3d} {bar}")
+            
+            print(f"\n{'='*60}")
+            print("PER-LEVEL BREAKDOWN")
+            print(f"{'='*60}")
+            print(f"{'Level':<8} {'Total':>5} {'Pass':>5} {'Fail':>5} {'Avg%':>6} {'Placeholders':>12}")
+            print(f"{'-'*46}")
+            for level, stats in report.get('level_stats', {}).items():
+                avg = stats.get('avg_score', 0)
+                print(f"{level:<8} {stats['total']:>5} {stats['passed']:>5} {stats['failed']:>5} {avg:>5.1f}% {stats['placeholders']:>12}")
+            
+            if report['top_errors']:
+                print(f"\n{'='*60}")
+                print("TOP ERRORS")
+                print(f"{'='*60}")
+                for err, count in report['top_errors']:
+                    print(f"  [{count:3d}x] {err}")
+            
+            if report['top_warnings']:
+                print(f"\n{'='*60}")
+                print("TOP WARNINGS")
+                print(f"{'='*60}")
+                for warn, count in report['top_warnings']:
+                    print(f"  [{count:3d}x] {warn}")
+        
+        print()
 
 def main():
     """Main entry point"""
@@ -451,6 +672,11 @@ Examples:
     parser.add_argument('-v', '--verbose', action='store_true', help='Verbose output')
     parser.add_argument('-r', '--report', help='Generate JSON report to file')
     parser.add_argument('--pattern', default='*.md', help='File pattern to match (default: *.md)')
+    parser.add_argument('--no-recursive', action='store_true', help='Do not recurse into subdirectories')
+    parser.add_argument('--exclude-drafts', action='store_true', help='Skip quests with draft: true')
+    parser.add_argument('--fail-threshold', type=int, default=0,
+                        help='Minimum score percentage to pass (0=disabled, e.g. 60 or 80)')
+    parser.add_argument('--summary', action='store_true', help='Show detailed aggregate summary with per-level stats')
     
     args = parser.parse_args()
     
@@ -459,7 +685,11 @@ Examples:
         parser.error("Either quest_file or --directory must be specified")
     
     # Create validator
-    validator = QuestValidator(verbose=args.verbose)
+    validator = QuestValidator(
+        verbose=args.verbose,
+        exclude_drafts=args.exclude_drafts,
+        fail_threshold=args.fail_threshold
+    )
     
     # Validate
     if args.directory:
@@ -467,7 +697,7 @@ Examples:
         if not directory.exists():
             print(f"❌ Directory not found: {directory}")
             sys.exit(1)
-        validator.validate_directory(directory, args.pattern)
+        validator.validate_directory(directory, args.pattern, recursive=not args.no_recursive)
     else:
         quest_file = Path(args.quest_file)
         if not quest_file.exists():
@@ -478,7 +708,7 @@ Examples:
         validator.print_result(result)
     
     # Print summary
-    validator.print_summary()
+    validator.print_summary(detailed=args.summary)
     
     # Generate report if requested
     if args.report:
@@ -491,11 +721,17 @@ Examples:
                 'passed': r.passed,
                 'errors': r.errors,
                 'warnings': r.warnings,
+                'info': r.info,
                 'score': r.score,
-                'max_score': r.max_score
+                'max_score': r.max_score,
+                'score_pct': round(r.score / r.max_score * 100, 1) if r.max_score > 0 else 0,
+                'is_placeholder': any('PLACEHOLDER_QUEST' in i for i in r.info)
             }
             for r in report['results']
         ]
+        # Remove non-serializable score lists from level_stats
+        for level, stats in report.get('level_stats', {}).items():
+            stats.pop('scores', None)
         with open(args.report, 'w') as f:
             json.dump(report, f, indent=2)
         print(f"✅ Report generated: {args.report}")

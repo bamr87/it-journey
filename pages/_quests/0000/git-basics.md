@@ -24,10 +24,8 @@ quest_dependencies:
 quest_relationships:
   parent_quest: null
   child_quests: []
-  parallel_quests:
-  - /quests/level-0000-alternative-path/
-  sequel_quests:
-  - /quests/level-0000-continuation/
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
   - Software Development
@@ -35,35 +33,36 @@ learning_paths:
   - 💻 Software Developer
   - 🏗️ System Engineer
   skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  - Version Control
+  - Collaboration Tools
 skill_focus:
 - devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic command line navigation (cd, ls, mkdir)
+  - Understanding of files and directories
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Git installed (git --version)
+  - Text editor (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Beginner-friendly, no prior Git experience required
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - Git repository with multiple commits created
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can initialize repos and make commits
+  - Can create and merge branches
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
+  - Understands staging area vs working directory
+  - Can resolve a basic merge conflict
 quest_mapping:
-  coordinates: '[x, y]'
+  coordinates: [3, 1]
   region: Foundation
   realm: Development
-  biome: Terminal
+  biome: Version Control
 layout: journals
 permalink: /quests/level-0000-git-basics/
 categories:
@@ -85,410 +84,362 @@ keywords:
 - hands-on
 - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0000 (0) Quest: Main Quest - Git'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Version Control Initiate
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Git Repository Management
+  - 🛠️ Branch & Merge Operations
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Collaborative development workflows
+  - Code review via pull requests
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
-
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
-
-## 📖 The Legend Behind This Quest
-
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Greetings, brave adventurer! Welcome to the Git Basics quest — where you'll learn the version control system that powers nearly every software project on the planet. Git lets you track changes, collaborate with others, and fearlessly experiment with code knowing you can always roll back. This is the single most important tool in any developer's inventory.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
-
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Initialize a Git Repository** — Create a new repo and understand the `.git` directory
+- [ ] **Track Changes with Commits** — Stage files and write meaningful commit messages
+- [ ] **Work with Branches** — Create, switch, and merge branches
+- [ ] **Collaborate with Remotes** — Push to and pull from a remote repository (GitHub)
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Resolve a Merge Conflict** — Handle conflicting changes between branches
+- [ ] **Use `.gitignore`** — Exclude files from version control
+- [ ] **Explore Git Log** — Navigate commit history with various log formats
+- [ ] **Undo Mistakes** — Use `git restore`, `git reset`, and `git revert`
 
 ### Mastery Indicators
-You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Can explain the difference between working directory, staging area, and repository
+- [ ] Can create a feature branch, make changes, and merge it back
+- [ ] Can push code to GitHub and clone a remote repository
+- [ ] Can resolve a merge conflict manually
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Terminal navigation basics (`cd`, `ls`, `mkdir`)
+- [ ] Understanding of files and directories
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Git installed (`git --version` to verify)
+- [ ] GitHub account (free at [github.com](https://github.com))
+- [ ] Text editor (VS Code recommended)
 
-### 🧠 Skill Level Indicators
-This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 60-75 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+## 🌍 Install Git on Your Platform
 
-## 🌍 Choose Your Adventure Platform
-
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
-
-### 🍎 macOS Kingdom Path
-
-<details>
-<summary>Click to expand macOS instructions</summary>
+### 🍎 macOS
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
+# Git comes with Xcode CLI tools, or install via Homebrew
+brew install git
 
 # Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+git --version
 ```
 
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
-
-</details>
-
-### 🪟 Windows Empire Path
-
-<details>
-<summary>Click to expand Windows instructions</summary>
+### 🪟 Windows
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install with winget
+winget install Git.Git
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
+# Or download from https://git-scm.com/download/win
+# Verify installation
+git --version
+```
+
+### 🐧 Linux
+
+```bash
+# Ubuntu/Debian
+sudo apt update && sudo apt install git
+
+# Fedora
+sudo dnf install git
 
 # Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+git --version
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
-
-</details>
-
-### 🐧 Linux Territory Path
-
-<details>
-<summary>Click to expand Linux instructions</summary>
-
-```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
-```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
-
-</details>
-
-### ☁️ Cloud Realms Path
-
-<details>
-<summary>Click to expand Cloud/Container instructions</summary>
-
-```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
-```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
-
-</details>
-
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
-
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
-
-### 🏗️ Building Your Knowledge Foundation
-
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
-```
-
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
-
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
-
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
-
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
-
-### 🏗️ Advanced Implementations
-
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
-
-### 🏗️ Building Your Real-World Solution
-
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🎮 Mastery Challenges
-
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-
-**Validation**: Run `[command]` to verify your implementation works correctly.
-
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
-
-**Validation**: [How to verify success]
-
-## 🏆 Quest Rewards & Achievements
-
-### Upon Quest Completion, You'll Unlock:
-
-**🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
-
-**🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
-
-**🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
-
-**📊 Progression Points**: +50 XP
-
-## 🗺️ Next Steps in Your Journey
-
-### Recommended Quest Paths
-
-**Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
-
-**Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
-
-### Character Class Recommendations
-
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
-
-## 📚 Resource Library
-
-### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
-
-### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
-
-## 🤝 Quest Completion Checklist
-
-Before marking this quest as complete, ensure you've:
-
-- [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
-- [ ] ✅ Identified your next quest in the journey
 
 ---
 
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
+## 🧙‍♂️ Chapter 1: Your First Repository — The Origin Story
 
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
+*Every great codebase starts with `git init`. In this chapter, you'll create your first repository and learn the fundamental rhythm of Git: edit → stage → commit.*
+
+### ⚙️ Initial Configuration
+
+Before your first commit, tell Git who you are:
+
+```bash
+# Set your identity (used in every commit)
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# Set default branch name to 'main' (recommended)
+git config --global init.defaultBranch main
+
+# Verify your settings
+git config --list
+```
+
+### 🏗️ Creating a Repository
+
+```bash
+# Create a new project directory
+mkdir my-first-repo
+cd my-first-repo
+
+# Initialize Git tracking
+git init
+```
+
+**Expected Output:**
+```text
+Initialized empty Git repository in /path/to/my-first-repo/.git/
+```
+
+### 📝 The Git Workflow: Edit → Stage → Commit
+
+```bash
+# 1. Create a file
+echo "# My First Project" > README.md
+
+# 2. Check status — see untracked files
+git status
+
+# 3. Stage the file (add to staging area)
+git add README.md
+
+# 4. Commit with a descriptive message
+git commit -m "docs: add initial README"
+```
+
+### 🔍 Understanding the Three Areas
+
+```text
+Working Directory    →    Staging Area    →    Repository
+   (your files)          (git add)           (git commit)
+   
+   Edit files here      Preview what        Permanent snapshot
+                         will be committed   in project history
+```
+
+### ⚡ Quick Wins
+- [ ] Run `git init` to create a repository
+- [ ] Create a file, `git add` it, and `git commit` it
+- [ ] Run `git status` before and after staging to see the difference
+- [ ] Run `git log` to see your first commit
+
+---
+
+## 🧙‍♂️ Chapter 2: Branching — Parallel Universes
+
+*Branches let you work on features in isolation without affecting the main codebase. Think of them as parallel timelines you can merge together when ready.*
+
+### 🌿 Creating and Switching Branches
+
+```bash
+# Create a new branch
+git branch feature/greeting
+
+# Switch to it
+git switch feature/greeting
+
+# Or create and switch in one command
+git switch -c feature/greeting
+```
+
+### 📝 Making Changes on a Branch
+
+```bash
+# Add a new file on the feature branch
+echo "Hello, World!" > greeting.txt
+git add greeting.txt
+git commit -m "feat: add greeting message"
+
+# See all branches (* marks current)
+git branch
+```
+
+### 🔀 Merging Branches
+
+```bash
+# Switch back to main
+git switch main
+
+# Merge the feature branch into main
+git merge feature/greeting
+
+# Delete the branch (optional, it's merged)
+git branch -d feature/greeting
+```
+
+### ⚠️ Handling Merge Conflicts
+
+When two branches modify the same lines, Git asks you to resolve the conflict:
+
+```bash
+# Git marks conflicts in the file like this:
+<<<<<<< HEAD
+Current content on main
+=======
+Different content from feature branch
+>>>>>>> feature/greeting
+```
+
+**To resolve:**
+1. Open the file in your editor
+2. Choose which content to keep (or combine both)
+3. Remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+4. Stage and commit:
+
+```bash
+git add conflicted-file.txt
+git commit -m "fix: resolve merge conflict in greeting"
+```
+
+### ⚡ Quick Wins
+- [ ] Create a branch with `git switch -c feature/test`
+- [ ] Make a commit on that branch
+- [ ] Switch back to `main` and merge it
+- [ ] Intentionally create and resolve a merge conflict
+
+---
+
+## 🧙‍♂️ Chapter 3: Remote Repositories — Connecting to the World
+
+*Local Git is powerful, but the real magic happens when you connect to a remote like GitHub. This enables collaboration, backup, and sharing.*
+
+### 🔗 Connecting to GitHub
+
+```bash
+# Add a remote repository
+git remote add origin https://github.com/yourusername/my-first-repo.git
+
+# Verify the remote
+git remote -v
+
+# Push your local commits to GitHub
+git push -u origin main
+```
+
+### 📥 Cloning an Existing Repository
+
+```bash
+# Clone a repository from GitHub
+git clone https://github.com/username/repository.git
+
+# This creates a local copy with full history
+cd repository
+git log --oneline
+```
+
+### 🔄 Staying in Sync
+
+```bash
+# Pull latest changes from remote
+git pull origin main
+
+# Push your changes to remote
+git push origin main
+```
+
+### 📄 The `.gitignore` File
+
+Tell Git to ignore files that shouldn't be tracked:
+
+```bash
+# Create a .gitignore file
+cat > .gitignore << 'EOF'
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+__pycache__/
+
+# Environment files
+.env
+*.log
+EOF
+
+git add .gitignore
+git commit -m "chore: add gitignore for common files"
+```
+
+### 📜 Exploring History
+
+```bash
+# View commit log
+git log
+
+# Compact one-line format
+git log --oneline
+
+# Visual branch graph
+git log --oneline --graph --all
+
+# Show changes in a specific commit
+git show abc1234
+```
+
+### ⚡ Quick Wins
+- [ ] Create a repository on GitHub and push your local repo to it
+- [ ] Clone a public repository and explore its history
+- [ ] Create a `.gitignore` and verify ignored files don't appear in `git status`
+- [ ] Use `git log --oneline --graph` to visualize history
+
+---
+
+## 🎮 Mastery Challenges
+
+### 🟢 Novice Challenge: Personal Project Tracker
+- [ ] Initialize a repository for a personal project
+- [ ] Make at least 5 commits with descriptive messages
+- [ ] Create a `.gitignore` file
+- [ ] Push the repository to GitHub
+
+### 🟡 Intermediate Challenge: Feature Branch Workflow
+- [ ] Create a `main` branch with initial project files
+- [ ] Create two feature branches from `main`
+- [ ] Make different commits on each branch
+- [ ] Merge both branches back into `main`
+- [ ] Resolve at least one merge conflict
+
+### 🔴 Advanced Challenge: Collaborative Simulation
+- [ ] Fork a public repository on GitHub
+- [ ] Clone your fork locally
+- [ ] Create a feature branch with improvements
+- [ ] Push the branch and open a Pull Request (on your own fork)
+- [ ] Use `git log --graph` to visualize the complete branch history
+
+## 🏆 Quest Completion Validation
+
+### Portfolio Artifacts Created
+- [ ] **Git Repository** — Local repo with multiple commits and branches
+- [ ] **GitHub Repository** — Remote repo with pushed code
+- [ ] **`.gitignore`** — Properly configured ignore rules
+- [ ] **Merge History** — At least one successful branch merge
+
+### Skills Demonstrated
+- [ ] **Repository Management** — init, clone, remote add
+- [ ] **Change Tracking** — add, commit, status, diff
+- [ ] **Branching** — branch, switch, merge, conflict resolution
+- [ ] **Remote Collaboration** — push, pull, clone
+
+## 📚 References & Resources
+
+- [Git Official Documentation](https://git-scm.com/doc)
+- [GitHub Skills — Interactive Tutorials](https://skills.github.com/)
+- [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
+- [Learn Git Branching — Visual Interactive](https://learngitbranching.js.org/)
+- [Oh My Git! — Game-Based Learning](https://ohmygit.org/)
+- [Pro Git Book (free)](https://git-scm.com/book/en/v2)

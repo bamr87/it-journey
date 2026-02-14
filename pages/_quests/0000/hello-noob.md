@@ -73,7 +73,7 @@ validation_criteria:
   - Explain what GitHub is and why it's important
   - Describe the concept of forking and open source collaboration
 quest_mapping:
-  coordinates: '[0, 0]'
+  coordinates: [0, 0]
   region: Entry
   realm: Community
   biome: GitHub

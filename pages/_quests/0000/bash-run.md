@@ -19,15 +19,44 @@ estimated_time: 90-120 minutes
 primary_technology: bash
 quest_type: side_quest
 quest_series: Level 000 - Foundation Skills
+quest_line: Foundation Path
+quest_arc: Terminal Mastery Arc
+quest_dependencies:
+  required_quests:
+  - /quests/hello-linux/linux-fundamentals/
+  recommended_quests:
+  - /quests/level-0000-terminal-fundamentals/
+  unlocks_quests: []
+quest_relationships:
+  child_quests: []
+  sequel_quests: []
+  parallel_quests: []
+learning_paths:
+  primary_paths:
+  - Software Development
+  - System Administration
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
+  - Shell Scripting
 skill_focus:
 - Quests
 - Terminal
 - Level-000
 learning_style: hands-on
 prerequisites:
-- Basic bash command knowledge
-- Terminal navigation skills
-- Text editor familiarity (nano, vim, or VS Code)
+  knowledge_requirements:
+  - Basic bash command knowledge
+  - Terminal navigation skills
+  - Text editor familiarity (nano, vim, or VS Code)
+  system_requirements:
+  - Unix/Linux terminal (or WSL on Windows)
+  - Bash shell installed
+  skill_level_indicators:
+  - Comfortable running commands in the terminal
+  - Can create and edit files from the command line
 validation_criteria:
 - Complete the terminal game development
 - Successfully run the enhanced bashrun game
@@ -54,14 +83,56 @@ fmContentType: quest
 draft: false
 sub-title: 'Level 000 Quest: Advanced Terminal Game Development'
 rewards:
-- 🏆 Bash Scripting Badge
-- ⚡ Advanced Terminal Skills
-- 🛠️ Game Development Foundation
-- 🎯 Shell Programming Mastery
+  badges:
+  - 🏆 Bash Scripting Badge
+  - ⚡ Advanced Terminal Skills
+  skills_unlocked:
+  - 🛠️ Game Development Foundation
+  - 🎯 Shell Programming Mastery
+  progression_points: 100
+  unlocks_features:
+  - Advanced scripting quest access
+  - Terminal automation capabilities
 related_quests:
 - bashcrawl/README.md - Terminal Adventure RPG
 - hello-noob.md - Beginner's IT Journey
 ---
+*Greetings, aspiring script mage! In this side quest, you will forge a terminal-based game using the arcane arts of Bash scripting. Starting with bashrun as your foundation, you will enhance and expand it into a fully interactive adventure — complete with inventory, combat, and save systems.*
+
+## 🎯 Quest Objectives
+
+### Primary Objectives (Required for Quest Completion)
+- [ ] **Clone and explore the bashrun repository** — Understand the game's structure and components
+- [ ] **Enhance the storyline and levels** — Add new levels with puzzles and objectives
+- [ ] **Implement an inventory system** — Create item collection and management mechanics
+- [ ] **Add save/load functionality** — Allow players to preserve and restore progress
+
+### Secondary Objectives (Bonus Achievements)
+- [ ] **Build a combat system** — Create enemy encounters with attack/run mechanics
+- [ ] **Add ASCII art and UI polish** — Improve the visual presentation of the game
+- [ ] **Create a comprehensive tutorial** — Help new players learn the game mechanics
+- [ ] **Write unit tests for game functions** — Validate game logic with automated tests
+
+### Mastery Indicators
+- [ ] Can explain Bash function syntax and variable scoping
+- [ ] Can create interactive terminal applications from scratch
+- [ ] Can implement file-based persistence in shell scripts
+- [ ] Can debug and troubleshoot Bash scripts independently
+
+## 🗺️ Quest Prerequisites
+
+### 📋 Knowledge Requirements
+- [ ] Basic bash command knowledge (`cd`, `ls`, `cat`, `echo`)
+- [ ] Terminal navigation skills
+- [ ] Text editor familiarity (nano, vim, or VS Code)
+
+### 🛠️ System Requirements
+- [ ] macOS, Linux, or WSL on Windows
+- [ ] Git installed and configured
+- [ ] Bash shell access
+
+---
+
 Starting with bashrun as a base and building upon it is a great way to create an advanced terminal-based game. bashrun is typically built using shell scripts, which can be a bit limiting but also provides a good foundation for learning and expanding.
 
 Here's a step-by-step guide to start with bashrun and build upon it:
@@ -71,9 +142,11 @@ Here's a step-by-step guide to start with bashrun and build upon it:
 1. **Clone the bashrun Repository:**
    If bashrun is hosted on a repository, you can clone it using:
    ```bash
-   git clone https://gitlab.com/slackermedia/bashrun.git bashrun
+   git clone https://github.com/commandlineadventure/bashrun.git bashrun
    cd bashrun
    ```
+
+   > **Note**: If the above repository is unavailable, you can create your own bashrun project from scratch using the code examples below, or search for "bash text adventure" on GitHub for similar projects.
 
 2. **Understand the Structure:**
    Explore the directory structure and understand how the game is organized. Typically, it might include directories for maps, scripts for different levels, and resources for the game.
@@ -207,7 +280,7 @@ Here's a step-by-step guide to start with bashrun and build upon it:
 
 ### Example Directory Structure
 
-```
+```text
 bashrun/
 ├── maps/
 │   ├── level1.txt
@@ -291,3 +364,25 @@ function load_game {
 ```
 
 This guide should help you get started with building upon bashrun to create a more advanced and engaging terminal game. Enjoy the process and happy coding!
+
+## 🏆 Quest Completion Validation
+
+### Portfolio Artifacts Created
+- [ ] **Enhanced bashrun game** — Working game with multiple levels and features
+- [ ] **Inventory system** — Functional item collection and management
+- [ ] **Combat system** — Enemy encounter mechanics
+- [ ] **Save/load system** — File-based game state persistence
+
+### Skills Demonstrated
+- [ ] **Bash Scripting Proficiency** — Functions, variables, control flow, and I/O
+- [ ] **Game Design Thinking** — Level progression, mechanics, and player engagement
+- [ ] **File System Interaction** — Reading and writing game data
+- [ ] **Code Organization** — Modular script structure with reusable functions
+
+## 📚 References & Resources
+
+- [Bash Reference Manual (GNU)](https://www.gnu.org/software/bash/manual/bash.html)
+- [Advanced Bash-Scripting Guide (TLDP)](https://tldp.org/LDP/abs/html/)
+- [bashrun on GitLab](https://gitlab.com/slackermedia/bashrun)
+- [bashcrawl — Learn Bash through a dungeon adventure](https://gitlab.com/slackermedia/bashcrawl)
+- [ShellCheck — Shell script linter](https://www.shellcheck.net/)

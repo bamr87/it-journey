@@ -24,10 +24,8 @@ quest_dependencies:
 quest_relationships:
   parent_quest: null
   child_quests: []
-  parallel_quests:
-  - /quests/level-0001-alternative-path/
-  sequel_quests:
-  - /quests/level-0001-continuation/
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
   - Software Development

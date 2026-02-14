@@ -24,10 +24,8 @@ quest_dependencies:
 quest_relationships:
   parent_quest: null
   child_quests: []
-  parallel_quests:
-  - /quests/level-0000-alternative-path/
-  sequel_quests:
-  - /quests/level-0000-continuation/
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
   - Software Development
@@ -35,35 +33,35 @@ learning_paths:
   - 💻 Software Developer
   - 🏗️ System Engineer
   skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  - Documentation
+  - Content Creation
 skill_focus:
 - documentation
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic text editing skills
+  - Ability to open and save files
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Text editor with Markdown preview (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Beginner-friendly, no prior Markdown experience required
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - Markdown document with all formatting types created
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write formatted documentation in Markdown
+  - Can create tables, code blocks, and links
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
+  - Understands Markdown syntax vs rendered output
+  - Can structure a README with proper headings
 quest_mapping:
-  coordinates: '[x, y]'
+  coordinates: [3, 2]
   region: Foundation
   realm: Development
-  biome: Terminal
+  biome: Documentation
 layout: journals
 permalink: /quests/level-0000-markdown-mastery/
 categories:
@@ -85,410 +83,325 @@ keywords:
 - hands-on
 - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0000 (0) Quest: Main Quest - Markdown'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Documentation Scribe
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Markdown Formatting
+  - 🛠️ Technical Writing Basics
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - README creation for projects
+  - Blog post and quest authoring
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
-
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
-
-## 📖 The Legend Behind This Quest
-
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Greetings, brave adventurer! Welcome to Markdown Mastery — the quest that teaches you the universal language of technical documentation. Markdown is used everywhere: README files, blog posts, wikis, chat messages, and even this very quest you're reading. Once you master it, you'll be able to create beautifully formatted content with nothing but plain text.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
-
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Master Text Formatting** — Use headings, bold, italic, and lists
+- [ ] **Create Links and Images** — Add hyperlinks and embed images
+- [ ] **Write Code Blocks** — Format inline code and fenced code blocks with syntax highlighting
+- [ ] **Build Tables** — Structure data in Markdown tables
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Use Blockquotes and Callouts** — Highlight important information
+- [ ] **Create Task Lists** — Add interactive checkboxes
+- [ ] **Master Extended Syntax** — Footnotes, abbreviations, definition lists
+- [ ] **Write a Complete README** — Create a project README from scratch
 
 ### Mastery Indicators
-You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Can write a well-structured document using only Markdown
+- [ ] Can format code examples with proper language highlighting
+- [ ] Can create tables and organize information visually
+- [ ] Can write a professional README for any project
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic text editing skills (typing, copying, saving files)
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
-
-### 🧠 Skill Level Indicators
-This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 30-45 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
-
-## 🌍 Choose Your Adventure Platform
-
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
-
-### 🍎 macOS Kingdom Path
-
-<details>
-<summary>Click to expand macOS instructions</summary>
-
-```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
-```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
-
-</details>
-
-### 🪟 Windows Empire Path
-
-<details>
-<summary>Click to expand Windows instructions</summary>
-
-```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
-```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
-
-</details>
-
-### 🐧 Linux Territory Path
-
-<details>
-<summary>Click to expand Linux instructions</summary>
-
-```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
-```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
-
-</details>
-
-### ☁️ Cloud Realms Path
-
-<details>
-<summary>Click to expand Cloud/Container instructions</summary>
-
-```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
-```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
-
-</details>
-
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
-
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
-
-### 🏗️ Building Your Knowledge Foundation
-
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
-```
-
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
-
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
-
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
-
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
-
-### 🏗️ Advanced Implementations
-
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
-
-### 🏗️ Building Your Real-World Solution
-
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🎮 Mastery Challenges
-
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-
-**Validation**: Run `[command]` to verify your implementation works correctly.
-
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
-
-**Validation**: [How to verify success]
-
-## 🏆 Quest Rewards & Achievements
-
-### Upon Quest Completion, You'll Unlock:
-
-**🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
-
-**🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
-
-**🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
-
-**📊 Progression Points**: +50 XP
-
-## 🗺️ Next Steps in Your Journey
-
-### Recommended Quest Paths
-
-**Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
-
-**Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
-
-### Character Class Recommendations
-
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
-
-## 📚 Resource Library
-
-### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
-
-### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
-
-## 🤝 Quest Completion Checklist
-
-Before marking this quest as complete, ensure you've:
-
-- [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
-- [ ] ✅ Identified your next quest in the journey
+- [ ] Text editor with Markdown preview (VS Code with built-in preview recommended)
+- [ ] Alternatively: any text editor + a browser for previewing
+
+### 💡 VS Code Markdown Preview
+Open any `.md` file and press `Cmd+Shift+V` (macOS) or `Ctrl+Shift+V` (Windows/Linux) to see the rendered preview side-by-side.
 
 ---
 
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
+## 🧙‍♂️ Chapter 1: Text Formatting — The Building Blocks
 
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
+*Every great document starts with well-organized text. Headings, emphasis, and lists form the skeleton of all Markdown content.*
+
+### 📝 Headings
+
+```markdown
+# Heading 1 (Page Title)
+## Heading 2 (Major Section)
+### Heading 3 (Subsection)
+#### Heading 4 (Detail)
+##### Heading 5 (Minor Detail)
+###### Heading 6 (Smallest)
+```
+
+**Rule of thumb**: Use headings in order — never skip levels (e.g., don't jump from `#` to `###`).
+
+### ✨ Text Emphasis
+
+```markdown
+**bold text**
+*italic text*
+***bold and italic***
+~~strikethrough~~
+`inline code`
+```
+
+**Renders as:**
+- **bold text**
+- *italic text*
+- ***bold and italic***
+- ~~strikethrough~~
+- `inline code`
+
+### 📋 Lists
+
+**Unordered (bullet) lists:**
+```markdown
+- Item one
+- Item two
+  - Nested item
+  - Another nested item
+- Item three
+```
+
+**Ordered (numbered) lists:**
+```markdown
+1. First step
+2. Second step
+3. Third step
+   1. Sub-step a
+   2. Sub-step b
+```
+
+**Task lists (checkboxes):**
+```markdown
+- [ ] Incomplete task
+- [x] Completed task
+- [ ] Another task
+```
+
+### ⚡ Quick Wins
+- [ ] Create a file called `practice.md`
+- [ ] Add a heading hierarchy (H1 through H3)
+- [ ] Write a paragraph with **bold** and *italic* text
+- [ ] Create an unordered list with nested items
+- [ ] Add a task list with at least 3 items
+
+---
+
+## 🧙‍♂️ Chapter 2: Links, Images, and Code — Connecting Content
+
+*Now you'll learn to link to external resources, embed images, and format code — the elements that make documentation truly useful.*
+
+### 🔗 Links
+
+```markdown
+<!-- Inline link -->
+[GitHub](https://github.com)
+
+<!-- Link with title (shows on hover) -->
+[GitHub](https://github.com "Visit GitHub")
+
+<!-- Reference-style link -->
+[GitHub][gh-link]
+
+[gh-link]: https://github.com
+
+<!-- Auto-linked URL -->
+<https://github.com>
+```
+
+### 🖼️ Images
+
+```markdown
+<!-- Inline image -->
+![Alt text describing the image](path/to/image.png)
+
+<!-- Image with title -->
+![Logo](images/logo.png "Company Logo")
+
+<!-- External image -->
+![Octocat](https://github.githubassets.com/images/modules/logos_page/Octocat.png)
+```
+
+### 💻 Code Blocks
+
+**Inline code** — wrap with single backticks:
+```markdown
+Use the `git commit` command to save changes.
+```
+
+**Fenced code blocks** — wrap with triple backticks and specify the language:
+
+````markdown
+```python
+def hello():
+    print("Hello, World!")
+```
+
+```bash
+echo "Hello from the terminal"
+```
+
+```javascript
+console.log("Hello, JavaScript!");
+```
+````
+
+The language identifier enables syntax highlighting — always include it!
+
+### 💬 Blockquotes
+
+```markdown
+> This is a blockquote.
+> It can span multiple lines.
+>
+> > Nested blockquotes work too.
+```
+
+> This is a blockquote.
+> It can span multiple lines.
+
+### ⚡ Quick Wins
+- [ ] Add a link to your favorite website
+- [ ] Insert an image (use any URL or local path)
+- [ ] Write a Python code block with syntax highlighting
+- [ ] Create a blockquote with a meaningful quote
+
+---
+
+## 🧙‍♂️ Chapter 3: Tables, Separators, and Advanced Formatting
+
+*With the basics mastered, you're ready for the advanced formatting that makes documentation professional and scannable.*
+
+### 📊 Tables
+
+```markdown
+| Feature    | Markdown     | HTML         |
+|------------|--------------|--------------|
+| Bold       | `**text**`   | `<b>text</b>`|
+| Italic     | `*text*`     | `<i>text</i>`|
+| Code       | `` `code` `` | `<code>`     |
+```
+
+**Renders as:**
+
+| Feature    | Markdown     | HTML         |
+|------------|--------------|--------------|
+| Bold       | `**text**`   | `<b>text</b>`|
+| Italic     | `*text*`     | `<i>text</i>`|
+| Code       | `` `code` `` | `<code>`     |
+
+**Column alignment:**
+```markdown
+| Left-aligned | Center-aligned | Right-aligned |
+|:-------------|:--------------:|--------------:|
+| Left         |    Center      |         Right |
+```
+
+### ➖ Horizontal Rules
+
+```markdown
+---
+***
+___
+```
+
+All three produce a horizontal line — use `---` for consistency.
+
+### 📝 Escaping Special Characters
+
+To show Markdown symbols literally, use a backslash:
+
+```markdown
+\*not italic\*
+\# not a heading
+\[not a link\]
+```
+
+### 🔢 Footnotes (Extended Syntax)
+
+```markdown
+Here is a statement that needs a source[^1].
+
+[^1]: This is the footnote with the reference.
+```
+
+### 🖼️ HTML in Markdown
+
+When Markdown isn't enough, you can use raw HTML:
+
+```markdown
+<details>
+<summary>Click to expand</summary>
+
+Hidden content goes here. Supports **Markdown** inside!
+
+</details>
+```
+
+### ⚡ Quick Wins
+- [ ] Create a table with at least 3 columns and 3 rows
+- [ ] Add a horizontal rule between two sections
+- [ ] Use a collapsible `<details>` section
+- [ ] Escape a Markdown character to display it literally
+
+---
+
+## 🎮 Mastery Challenges
+
+### 🟢 Novice Challenge: Personal Profile Page
+- [ ] Create a `profile.md` with your name as H1
+- [ ] Add a short bio paragraph with bold and italic text
+- [ ] Include a list of your skills
+- [ ] Add links to your social profiles or projects
+
+### 🟡 Intermediate Challenge: Project README
+- [ ] Create a complete `README.md` for a real or imaginary project
+- [ ] Include: project title, description, installation steps, usage examples
+- [ ] Add a table of features or commands
+- [ ] Include at least one code block with the correct language spec
+- [ ] Add a "Contributing" section with a task list
+
+### 🔴 Advanced Challenge: Technical Tutorial
+- [ ] Write a 500+ word tutorial in Markdown on any technical topic
+- [ ] Use all elements learned: headings, lists, code blocks, tables, links, images
+- [ ] Include a table of contents with anchor links
+- [ ] Use blockquotes for tips and warnings
+- [ ] Add footnotes for references
+
+## 🏆 Quest Completion Validation
+
+### Portfolio Artifacts Created
+- [ ] **Practice File** — `practice.md` with all basic formatting
+- [ ] **Project README** — Complete README.md for a project
+- [ ] **Code Examples** — Properly formatted code blocks with language highlighting
+
+### Skills Demonstrated
+- [ ] **Text Formatting** — Headings, bold, italic, lists
+- [ ] **Rich Content** — Links, images, blockquotes
+- [ ] **Code Documentation** — Inline code and fenced blocks
+- [ ] **Data Presentation** — Tables with alignment
+
+## 📚 References & Resources
+
+- [Markdown Guide — Comprehensive Reference](https://www.markdownguide.org/)
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+- [CommonMark Specification](https://commonmark.org/)
+- [Dillinger — Online Markdown Editor](https://dillinger.io/)
+- [Markdown Tutorial — Interactive Practice](https://www.markdowntutorial.com/)
+- [VS Code Markdown Features](https://code.visualstudio.com/docs/languages/markdown)

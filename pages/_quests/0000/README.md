@@ -4,7 +4,7 @@ title: Level 0000 - Foundation & Init World
 description: Your starting point in the IT-Journey. Character creation, OS selection, terminal basics, and first steps into the digital realm
 preview: images/previews/level-0000-foundation-init-world.png
 permalink: /quests/level-0000/
-lastmod: 2025-11-29T23:41:31.765Z
+lastmod: 2025-12-20T00:00:00.000Z
 
 layout: quest-collection
 level: 0000
@@ -32,17 +32,17 @@ Level 0000 quests focus on:
 | [Hello Cloud: First Steps into the Sky Realm](/quests/hello-cloud/) | ⚔️ Epic | 120-180 minutes | main_quest | ✅ Complete |
 | [Linux Fundamentals](/quests/hello-linux/linux-fundamentals/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
 | [Hello macOS: Setting Up the Apple Kingdom](/quests/hello-macos/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
-| [Hello Windows: Mastering the Windows Development Environment](/quests/hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Hello Windows: Mastering the Windows Development Environment](/quests/hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
 | [Hello n00b: Your First Steps into the IT Journey](/quests/init_world/hello-noob/) | 🟢 Easy | 15-30 minutes | main_quest | ✅ Complete |
-| [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
-| [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | ✅ Complete |
+| [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
 | [bashrun and Beyond: Building an Advanced Terminal Game](/quests/lvl_000/bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
-| [Begin your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
-| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | 🔮 Placeholder |
-| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
-| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
-| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | 🔮 Placeholder |
+| [Begin your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | ✅ Complete |
+| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | ✅ Complete |
 
 
 ### 🌱 Character Creation & Identity
@@ -195,7 +195,52 @@ Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundam
 
 **Prerequisites:** [IT Fundamentals](it-fundamentals.md), one platform-specific Hello quest
 
-### 🔧 Terminal & Scripting Foundations
+### 🔧 Terminal, Tools & Scripting Foundations
+
+#### [Terminal Fundamentals](terminal-fundamentals.md)
+**Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 45-60 minutes
+
+Master the command line — the most powerful interface in any IT hero's arsenal. Learn to navigate the file system, manage files, and chain commands with pipes and redirection.
+
+**Skills You'll Master:**
+- File system navigation (cd, ls, pwd)
+- File operations (cp, mv, rm, mkdir, touch)
+- Input/output redirection and pipes
+- Command history and search (grep, find)
+
+**Prerequisites:** Basic computer operation
+
+---
+
+#### [Git Basics](git-basics.md)
+**Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-75 minutes
+
+Learn the version control system that powers nearly every software project on the planet. Track changes, collaborate with others, and experiment fearlessly.
+
+**Skills You'll Master:**
+- Repository initialization and management
+- Staging, committing, and commit messages
+- Branching, merging, and conflict resolution
+- Remote repositories and GitHub collaboration
+
+**Prerequisites:** [Terminal Fundamentals](terminal-fundamentals.md)
+
+---
+
+#### [Markdown Mastery](markdown-mastery.md)
+**Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 30-45 minutes
+
+Learn the universal language of technical documentation. Markdown is used in README files, blog posts, wikis, and everywhere developers write.
+
+**Skills You'll Master:**
+- Text formatting (headings, bold, italic, lists)
+- Links, images, and blockquotes
+- Code blocks with syntax highlighting
+- Tables and advanced formatting
+
+**Prerequisites:** Basic text editing skills
+
+---
 
 #### [VS Code Mastery Quest](vscode-mastery.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
@@ -268,15 +313,20 @@ See the [tools collection](../tools/README.md) for beginner tool guides and gett
 3. [IT Fundamentals](it-fundamentals.md) - Build foundation knowledge
 4. [OS Selection](os-selection.md) - Choose your platform
 5. Platform-specific Hello quest
+6. [Terminal Fundamentals](terminal-fundamentals.md) - Command line basics
+7. [Git Basics](git-basics.md) - Version control
+8. [Markdown Mastery](markdown-mastery.md) - Documentation formatting
 
 ### For Those with Some Experience
 1. [Character Selection](character-selection.md) - Confirm your specialization
 2. Platform-specific Hello quest
 3. [VS Code Mastery Quest](vscode-mastery.md) - Set up your IDE
-4. [Bash Fundamentals](bash-run.md) - Terminal proficiency
+4. [Terminal Fundamentals](terminal-fundamentals.md) - Solidify CLI skills
+5. [Git Basics](git-basics.md) - Version control workflow
+6. [Bash Fundamentals](bash-run.md) - Advanced terminal proficiency
 
 ### For Quick Setup
-1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](vscode-mastery.md)
+1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](vscode-mastery.md) → [Terminal Fundamentals](terminal-fundamentals.md) → [Git Basics](git-basics.md)
 
 ## Quest Dependencies & Progression
 
@@ -294,8 +344,13 @@ graph TD
     G --> K[⚡ VS Code Mastery]
     H --> K
     I --> K
-    K --> L[📝 Bash Fundamentals]
-    L --> M[Level 0001 Quests]
+    K --> N[🖥️ Terminal Fundamentals]
+    N --> O[📝 Git Basics]
+    N --> P[📄 Markdown Mastery]
+    N --> L[📝 Bash Fundamentals]
+    O --> M[Level 0001 Quests]
+    P --> M
+    L --> M
 ```
 
 ## Next Level: Level 0001

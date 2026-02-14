@@ -1,0 +1,4307 @@
+{
+  "total": 136,
+  "passed": 136,
+  "failed": 0,
+  "complete": 47,
+  "placeholders": 89,
+  "total_errors": 0,
+  "total_warnings": 433,
+  "average_score": 86.27424046541694,
+  "score_distribution": {
+    "90-100": 91,
+    "80-89": 21,
+    "70-79": 6,
+    "60-69": 4,
+    "50-59": 11,
+    "<50": 3
+  },
+  "level_stats": {
+    "0000": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "placeholders": 3,
+      "avg_score": 73.03052503052503
+    },
+    "0001": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "placeholders": 5,
+      "avg_score": 77.45396825396826
+    },
+    "0010": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0,
+      "placeholders": 5,
+      "avg_score": 87.7948717948718
+    },
+    "0011": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "placeholders": 6,
+      "avg_score": 91.6190476190476
+    },
+    "0100": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "placeholders": 2,
+      "avg_score": 66.32804232804233
+    },
+    "0101": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0,
+      "placeholders": 8,
+      "avg_score": 91.75757575757575
+    },
+    "0110": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "placeholders": 8,
+      "avg_score": 93.33333333333333
+    },
+    "0111": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "placeholders": 7,
+      "avg_score": 93.33333333333333
+    },
+    "1000": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "placeholders": 3,
+      "avg_score": 93.33333333333333
+    },
+    "1001": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "placeholders": 4,
+      "avg_score": 93.33333333333333
+    },
+    "1010": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "placeholders": 5,
+      "avg_score": 91.55555555555554
+    },
+    "1011": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "placeholders": 5,
+      "avg_score": 92.22222222222221
+    },
+    "1100": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "placeholders": 5,
+      "avg_score": 89.83333333333333
+    },
+    "1101": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "placeholders": 8,
+      "avg_score": 93.33333333333333
+    },
+    "1110": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "placeholders": 7,
+      "avg_score": 92.0
+    },
+    "1111": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "placeholders": 8,
+      "avg_score": 93.33333333333333
+    },
+    "root": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "placeholders": 0,
+      "avg_score": 79.33333333333333
+    }
+  },
+  "top_errors": [],
+  "top_warnings": [
+    [
+      "Missing enhanced field",
+      237
+    ],
+    [
+      "7 code blocks without language specification",
+      89
+    ],
+    [
+      "Missing recommended section",
+      19
+    ],
+    [
+      "No interactive checkboxes found. Consider adding checklist items.",
+      17
+    ],
+    [
+      "No citations/references section found. Consider adding external resources.",
+      17
+    ],
+    [
+      "Moderate fantasy theme integration (score",
+      9
+    ],
+    [
+      "9 code blocks without language specification",
+      4
+    ],
+    [
+      "Limited fantasy theme integration. Consider adding more gamification elements.",
+      4
+    ],
+    [
+      "16 code blocks without language specification",
+      4
+    ],
+    [
+      "8 code blocks without language specification",
+      3
+    ]
+  ],
+  "results": [
+    {
+      "quest_file": "pages/_quests/0000/bash-run.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing recommended section: Quest Objectives section",
+        "9 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Limited fantasy theme integration. Consider adding more gamification elements.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Permalink uses descriptive path (level 0000): /quests/lvl_000/bash-run/"
+      ],
+      "score": 36,
+      "max_score": 75,
+      "score_pct": 48.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/begin-your-it-journey.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/lvl_000/begin-your-it-journey/",
+        "Strong fantasy theme integration (score: 6/6)"
+      ],
+      "score": 43,
+      "max_score": 70,
+      "score_pct": 61.4,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/character-building.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "3 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/character-building/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found 45 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/character-selection.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/lvl_000/character-selection/",
+        "Strong fantasy theme integration (score: 4/6)"
+      ],
+      "score": 43,
+      "max_score": 70,
+      "score_pct": 61.4,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/git-basics.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0000/hello-cloud/hello-cloud.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "4 code blocks without language specification",
+        "Moderate fantasy theme integration (score: 3/6)"
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Permalink uses descriptive path (level 0000): /quests/hello-cloud/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 14 interactive checkboxes for learner engagement",
+        "Citations/references section found"
+      ],
+      "score": 57,
+      "max_score": 75,
+      "score_pct": 76.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/hello-linux/linux-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Limited fantasy theme integration. Consider adding more gamification elements."
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Permalink uses descriptive path (level 0000): /quests/hello-linux/linux-fundamentals/",
+        "Citations/references section found"
+      ],
+      "score": 38,
+      "max_score": 70,
+      "score_pct": 54.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/hello-mac/hello-mac.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "8 code blocks without language specification",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/hello-macos/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 15 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 4/6)"
+      ],
+      "score": 57,
+      "max_score": 75,
+      "score_pct": 76.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/hello-noob.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "2 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/init_world/hello-noob/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found 29 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 5/6)",
+        "All 2 images have alt text",
+        "Citations/references section found"
+      ],
+      "score": 70,
+      "max_score": 78,
+      "score_pct": 89.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/hello-win/hello-win.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "14 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Permalink uses descriptive path (level 0000): /quests/hello-windows/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found 47 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/it-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 2/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/lvl_000/it-fundamentals/"
+      ],
+      "score": 38,
+      "max_score": 70,
+      "score_pct": 54.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/markdown-mastery.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0000/os-selection.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 3/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/lvl_000/os-selection/"
+      ],
+      "score": 38,
+      "max_score": 70,
+      "score_pct": 54.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0000/terminal-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0000/vscode-mastery.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: validation_criteria",
+        "Estimated time format unusual: 45 minutes. Recommended: 'XX-XX minutes' or 'X-X hours'",
+        "22 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Level 0000 (decimal: 0) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0000): /quests/vscode-mastery/",
+        "Found: Quest Objectives section",
+        "Found 20 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 56,
+      "max_score": 75,
+      "score_pct": 74.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/building-testing-git-init-script.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "5 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Limited fantasy theme integration. Consider adding more gamification elements.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid"
+      ],
+      "score": 33,
+      "max_score": 75,
+      "score_pct": 44.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/docs-in-a-row.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing recommended section: Quest Objectives section",
+        "16 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items."
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Strong fantasy theme integration (score: 5/6)",
+        "Citations/references section found"
+      ],
+      "score": 51,
+      "max_score": 75,
+      "score_pct": 68.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/git-workflow-mastery.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0001/github-pages-basics.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0001/github-pages-portal.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: learning_paths",
+        "16 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0001): /quests/level-001-github-pages-portal/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 66 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 69,
+      "max_score": 75,
+      "score_pct": 92.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/jekyll-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0001/kaizen.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "36 code blocks without language specification",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found 72 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "PARTIAL_CONTENT: 1 placeholder indicators found"
+      ],
+      "score": 59,
+      "max_score": 75,
+      "score_pct": 78.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/liquid-templating.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0001/personal-site.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Limited fantasy theme integration. Consider adding more gamification elements.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid"
+      ],
+      "score": 33,
+      "max_score": 70,
+      "score_pct": 47.1,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/stack-attack.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "36 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found 63 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PARTIAL_CONTENT: 1 placeholder indicators found"
+      ],
+      "score": 64,
+      "max_score": 75,
+      "score_pct": 85.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/stacks/barodybroject-stack-analysis.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "32 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 3/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid"
+      ],
+      "score": 38,
+      "max_score": 75,
+      "score_pct": 50.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/stacks/it-journey-stack-analysis.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "19 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 3/6)"
+      ],
+      "info": [
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Citations/references section found"
+      ],
+      "score": 43,
+      "max_score": 75,
+      "score_pct": 57.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/stating-the-stats.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "21 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0001): /quests/stating-the-stats/",
+        "Found: Quest Objectives section",
+        "Found 73 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 4/6)",
+        "Citations/references section found"
+      ],
+      "score": 64,
+      "max_score": 75,
+      "score_pct": 85.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/terminal-mastery.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "21 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 72 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 65,
+      "max_score": 75,
+      "score_pct": 86.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0001/yaml-configuration.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0001 (decimal: 1) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0010/advanced-markdown.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0010/bash-scripting.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "10 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 65 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 65,
+      "max_score": 75,
+      "score_pct": 86.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0010/bootstrap-framework.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0010/css-styling-basics.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0010/javascript-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0010/jekyll-mermaid-integration.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing recommended section: Quest Objectives section",
+        "16 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found 6 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 56,
+      "max_score": 75,
+      "score_pct": 74.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0010/nerd-font-enchantment.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "20 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Permalink uses descriptive path (level 0010): /quests/side-quest-nerd-font-enchantment/",
+        "Found: Quest Objectives section",
+        "Found 57 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 59,
+      "max_score": 75,
+      "score_pct": 78.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0010/oh-my-zsh-terminal-enchantment.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "34 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found 96 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PARTIAL_CONTENT: 1 placeholder indicators found"
+      ],
+      "score": 64,
+      "max_score": 75,
+      "score_pct": 85.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0010/prompt-engineering.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "91 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found 49 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 64,
+      "max_score": 75,
+      "score_pct": 85.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0010/terminal-artificer-frontend-building.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "9 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 32 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "All 1 images have alt text",
+        "Citations/references section found"
+      ],
+      "score": 70,
+      "max_score": 78,
+      "score_pct": 89.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0010/testing-quests-with-recursive-questing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_relationships",
+        "8 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0010 (decimal: 2) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 29 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 69,
+      "max_score": 75,
+      "score_pct": 92.0,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0011/advanced-git-workflows.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0011/analytics-integration.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0011/custom-domains.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0011/github-pages-hidden-gem.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing recommended section: Quest Objectives section",
+        "11 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe2 Easy valid",
+        "Found: Platform-specific instructions (optional)",
+        "Found 49 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 64,
+      "max_score": 75,
+      "score_pct": 85.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0011/jekyll-plugins.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0011/prompt-crystal-mastery-vscode-copilot.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "42 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 106 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 67,
+      "max_score": 75,
+      "score_pct": 89.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0011/seo-optimization.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0100/container-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0100/docker-compose-orchestration.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0100/frontend-docker-level-000.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "1 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 3/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid"
+      ],
+      "score": 38,
+      "max_score": 75,
+      "score_pct": 50.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0100/frontend-docker-level-001.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "6 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Strong fantasy theme integration (score: 4/6)"
+      ],
+      "score": 43,
+      "max_score": 75,
+      "score_pct": 57.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0100/frontend-docker-level-010.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "4 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Strong fantasy theme integration (score: 4/6)"
+      ],
+      "score": 43,
+      "max_score": 75,
+      "score_pct": 57.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0100/frontend-docker.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "8 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 2/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Permalink uses descriptive path (level 0100): /quests/frontend-docker/"
+      ],
+      "score": 38,
+      "max_score": 75,
+      "score_pct": 50.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0100/frontend-levels.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "10 code blocks without language specification",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Strong fantasy theme integration (score: 4/6)"
+      ],
+      "score": 43,
+      "max_score": 75,
+      "score_pct": 57.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0100/frontend.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "Missing recommended section: Quest Objectives section",
+        "No interactive checkboxes found. Consider adding checklist items.",
+        "Moderate fantasy theme integration (score: 3/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Permalink uses descriptive path (level 0100): /quests/frontend/"
+      ],
+      "score": 38,
+      "max_score": 70,
+      "score_pct": 54.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0100/sourcery-code-methods.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "10 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0100 (decimal: 4) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 67 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0101/artifact-management.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/cicd-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/deployment-pipelines.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/docker-mastery-example.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "6 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 54 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 65,
+      "max_score": 75,
+      "score_pct": 86.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0101/environment-management.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/github-actions-basics.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/jekyll-quest-tracking.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "22 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 85 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0101/secrets-management.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/testing-integration.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0101/the-lazytex-of-building-a-curriculum-vitae.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 22 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/0101/workflow-optimization.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0101 (decimal: 5) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/backup-recovery.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/connection-pooling.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/data-modeling.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/database-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 3 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/database-migrations.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/database-security.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/query-optimization.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0110/sql-mastery.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0110 (decimal: 6) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/api-authentication.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/api-documentation.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/api-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/api-versioning.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/error-handling.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/rate-limiting.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/0111/rest-principles.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0111 (decimal: 7) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1000/aws-essentials.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1000 (decimal: 8) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1000/cloud-computing-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1000 (decimal: 8) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1000/infrastructure-as-code.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1000 (decimal: 8) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1001/k8s-config-secrets.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1001 (decimal: 9) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1001/k8s-pods-workloads.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1001 (decimal: 9) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1001/k8s-services-networking.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1001 (decimal: 9) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1001/kubernetes-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1001 (decimal: 9) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1010/alerting-systems.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1010 (decimal: 10) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1010/distributed-tracing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1010 (decimal: 10) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1010/elk-stack.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1010 (decimal: 10) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1010 (decimal: 10) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 57 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/1010/monitoring-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1010 (decimal: 10) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1010/prometheus-grafana.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1010 (decimal: 10) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1011/ai-feature-pipeline-architect.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "12 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1011 (decimal: 11) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 90 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 65,
+      "max_score": 75,
+      "score_pct": 86.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/1011/compliance-standards.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1011 (decimal: 11) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1011/penetration-testing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1011 (decimal: 11) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1011/secure-coding.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1011 (decimal: 11) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1011/security-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1011 (decimal: 11) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1011/threat-modeling.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1011 (decimal: 11) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1100/apache-spark.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1100/data-quality.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1100/data-warehousing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1100/edgar.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "9 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 31 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 65,
+      "max_score": 75,
+      "score_pct": 86.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/1100/etl-pipeline-design.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1100/sec-edgar.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "9 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 35 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 5/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/1100/stream-processing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1100/the-temple-of-templates.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "15 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1100 (decimal: 12) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 21 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/1101/ai-ethics.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/computer-vision.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/deep-learning-frameworks.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/ml-fundamentals.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/mlops.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/natural-language-processing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/neural-networks.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1101/python-data-science.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1101 (decimal: 13) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/404-hunting.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "16 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Platform-specific instructions (optional)",
+        "Found 28 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found"
+      ],
+      "score": 62,
+      "max_score": 75,
+      "score_pct": 82.7,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/1110/api-gateway-patterns.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/design-patterns.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/domain-driven-design.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/event-driven-design.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/microservices-architecture.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/scaling-strategies.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1110/system-design-interviews.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1110 (decimal: 14) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/architecture-reviews.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/building-technical-communities.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/career-advancement.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/innovation-rnd.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/mentorship-programs.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/open-source-contribution.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/tech-speaking-writing.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/1111/technical-leadership.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "7 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 1111 (decimal: 15) valid",
+        "Difficulty \u2694\ufe0f Epic valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 56 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 6/6)",
+        "Citations/references section found",
+        "PLACEHOLDER_QUEST: 5 placeholder indicators found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": true
+    },
+    {
+      "quest_file": "pages/_quests/2025-11-17-azure-ascension-jekyll-deployment-quest.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Missing enhanced field: quest_line",
+        "Missing enhanced field: quest_arc",
+        "Missing enhanced field: prerequisites",
+        "Missing enhanced field: quest_dependencies",
+        "Missing enhanced field: quest_relationships",
+        "Missing enhanced field: learning_paths",
+        "Missing enhanced field: rewards",
+        "Missing enhanced field: validation_criteria",
+        "3 code blocks without language specification",
+        "Moderate fantasy theme integration (score: 2/6)",
+        "No citations/references section found. Consider adding external resources."
+      ],
+      "info": [
+        "Level 1001 (decimal: 9) valid",
+        "Difficulty \ud83d\udd34 Hard valid",
+        "Permalink uses descriptive path (level 1001): /quests/azure-ascension-jekyll-deployment/",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found 15 interactive checkboxes for learner engagement"
+      ],
+      "score": 49,
+      "max_score": 75,
+      "score_pct": 65.3,
+      "is_placeholder": false
+    },
+    {
+      "quest_file": "pages/_quests/2025-11-29-prd-codex-mastering-product-reality-distillation.md",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "23 code blocks without language specification"
+      ],
+      "info": [
+        "Enhanced field present: quest_line",
+        "Enhanced field present: quest_arc",
+        "Enhanced field present: prerequisites",
+        "Enhanced field present: quest_dependencies",
+        "Enhanced field present: quest_relationships",
+        "Enhanced field present: learning_paths",
+        "Enhanced field present: rewards",
+        "Enhanced field present: validation_criteria",
+        "Level 0011 (decimal: 3) valid",
+        "Difficulty \ud83d\udfe1 Medium valid",
+        "Found: Quest Objectives section",
+        "Found: Quest Prerequisites section (optional but recommended)",
+        "Found: Platform-specific instructions (optional)",
+        "Found 73 interactive checkboxes for learner engagement",
+        "Strong fantasy theme integration (score: 5/6)",
+        "Citations/references section found"
+      ],
+      "score": 70,
+      "max_score": 75,
+      "score_pct": 93.3,
+      "is_placeholder": false
+    }
+  ]
+}

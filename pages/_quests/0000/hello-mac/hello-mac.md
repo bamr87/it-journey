@@ -10,6 +10,35 @@ estimated_time: 60-90 minutes
 primary_technology: macOS
 quest_type: main_quest
 quest_series: Init World - Platform Mastery
+quest_line: Foundation Path
+quest_arc: Platform Mastery Arc
+quest_dependencies:
+  required_quests: []
+  recommended_quests:
+  - /quests/init_world/hello-noob/
+  - /quests/lvl_000/os-selection/
+  unlocks_quests:
+  - /quests/vscode-mastery/
+  - /quests/level-0000-terminal-fundamentals/
+quest_relationships:
+  child_quests: []
+  sequel_quests:
+  - /quests/vscode-mastery/
+  parallel_quests:
+  - /quests/hello-windows/
+  - /quests/hello-linux/linux-fundamentals/
+learning_paths:
+  primary_paths:
+  - Software Development
+  - iOS Development
+  - Full-Stack Development
+  character_classes:
+  - 💻 Software Developer
+  - 🎨 Digital Artist
+  - 🏗️ System Engineer
+  skill_trees:
+  - macOS Administration
+  - Package Management
 skill_focus:
 - macOS
 - terminal
@@ -36,6 +65,39 @@ keywords:
 - developer-tools
 - init-world
 fmContentType: quest
+prerequisites:
+  knowledge_requirements:
+  - Comfortable using Finder and System Settings
+  - Basic understanding of command line usage
+  system_requirements:
+  - macOS 12+ recommended
+  - Administrator access for installs
+  - Stable internet connection
+  skill_level_indicators:
+  - Familiar with macOS basics and ready to learn developer tooling
+validation_criteria:
+  completion_requirements:
+  - Install Xcode Command Line Tools
+  - Install and verify Homebrew
+  - Configure a modern terminal (iTerm2 or similar)
+  - Verify Git, SSH, and common utilities
+  skill_demonstrations:
+  - Can install packages via Homebrew
+  - Can navigate the terminal confidently
+  knowledge_checks:
+  - Understands the role of Xcode CLI tools
+  - Can explain what Homebrew does and why it is useful
+rewards:
+  badges:
+  - 🏆 Apple Kingdom Badge
+  - ⚡ Homebrew Mastery Achievement
+  skills_unlocked:
+  - 🛠️ macOS Package Management
+  - 🎯 Terminal Configuration
+  progression_points: 75
+  unlocks_features:
+  - Access to VS Code Mastery quest
+  - Professional macOS development workflow
 draft: false
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
@@ -89,7 +151,7 @@ xcode-select -p
 Run the official installer:
 
 ```bash
-/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Then validate:
@@ -148,3 +210,13 @@ You should see valid versions for each command.
 - [Hello n00b](../hello-noob.md)
 - [OS Selection](../os-selection.md)
 - [VS Code Mastery Quest](../vscode-mastery.md)
+
+## 📚 References & Resources
+
+- [Xcode Command Line Tools - Apple Developer](https://developer.apple.com/xcode/resources/)
+- [Homebrew - The Missing Package Manager for macOS](https://brew.sh/)
+- [iTerm2 - macOS Terminal Replacement](https://iterm2.com/)
+- [Oh My Zsh - Zsh Framework](https://ohmyz.sh/)
+- [Git Documentation](https://git-scm.com/doc)
+- [GitHub SSH Key Setup Guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+- [Apple macOS User Guide](https://support.apple.com/guide/mac-help/welcome/mac)

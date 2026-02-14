@@ -26,16 +26,72 @@ categories:
 - Development-Environment
 tags: *id001
 prerequisites:
-- Windows 10 version 2004 or higher (or Windows 11)
-- Administrator access to your Windows machine
-- Basic familiarity with command line concepts
-- Stable internet connection for downloads
+  knowledge_requirements:
+  - Basic Windows navigation and system administration
+  - Understanding of command line interfaces
+  - Familiarity with software installation processes
+  system_requirements:
+  - Windows 10 version 2004 or higher (or Windows 11)
+  - Administrator access to your Windows machine
+  - Stable internet connection for downloads
+  - 64-bit processor, 4GB+ RAM, 20GB+ free storage
+  skill_level_indicators:
+  - Comfortable using Windows Settings and Control Panel
+  - Can open and use Command Prompt or PowerShell
+validation_criteria:
+  completion_requirements:
+  - Successfully enable and configure WSL2
+  - Install and configure essential development tools
+  - Demonstrate PowerShell automation capabilities
+  - Set up complete Windows development workflow
+  skill_demonstrations:
+  - Can switch between PowerShell and Linux bash
+  - Can install packages using WinGet
+  knowledge_checks:
+  - Understands the purpose of WSL2
+  - Can explain the benefits of cross-platform development
 rewards:
-- 🏆 Windows Power User Badge
-- ⚡ Dual-Environment Mastery (Windows + Linux)
-- 🛠️ Advanced Development Toolkit
-- 🎯 Professional Windows Setup
+  badges:
+  - 🏆 Windows Power User Badge
+  - ⚡ Dual-Environment Mastery (Windows + Linux)
+  skills_unlocked:
+  - 🛠️ Advanced Development Toolkit
+  - 🎯 Professional Windows Setup
+  progression_points: 100
+  unlocks_features:
+  - Cross-platform development capability
+  - Access to VS Code Mastery quest
 quest_series: Init World - Platform Mastery
+quest_line: Foundation Path
+quest_arc: Platform Mastery Arc
+quest_dependencies:
+  required_quests: []
+  recommended_quests:
+  - /quests/init_world/hello-noob/
+  - /quests/lvl_000/os-selection/
+  unlocks_quests:
+  - /quests/vscode-mastery/
+  - /quests/level-0000-terminal-fundamentals/
+quest_relationships:
+  child_quests: []
+  sequel_quests:
+  - /quests/vscode-mastery/
+  parallel_quests:
+  - /quests/hello-macos/
+  - /quests/hello-linux/linux-fundamentals/
+learning_paths:
+  primary_paths:
+  - Software Development
+  - System Administration
+  - DevOps
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  - 🛡️ Security Specialist
+  skill_trees:
+  - Windows Development
+  - PowerShell Mastery
+  - Cross-Platform Workflow
 related_quests:
 - hello-noob.md - Beginner's First Steps
 - 2023-11-24-os-selection.md - Operating System Selection Guide
@@ -58,6 +114,7 @@ skill_focus:
 - Development-Environment
 learning_style: hands-on
 fmContentType: quest
+draft: false
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 
@@ -116,8 +173,8 @@ Before diving into system configuration, master these fundamental PowerShell spe
 ```powershell
 # System Information Gathering
 Get-ComputerInfo
-Get-SystemInfo | Select-Object TotalPhysicalMemory, AvailablePhysicalMemory
-Get-WmiObject Win32_OperatingSystem
+Get-ComputerInfo | Select-Object CsTotalPhysicalMemory, OsFreePhysicalMemory
+Get-CimInstance Win32_OperatingSystem
 
 # Package Management
 Get-Command *Package*
@@ -181,12 +238,11 @@ wsl --update
 
 **Option B: Manual Installation (Advanced)**
 ```powershell
-# Download Debian (example)
-Invoke-WebRequest -Uri https://aka.ms/wsl-debian-gnulinux -OutFile ~/Downloads/Debian.appx -UseBasicParsing
+# Install Debian via wsl command (recommended)
+wsl --install -d Debian
 
-# Navigate to downloads and install
-Set-Location ~/Downloads
-Add-AppxPackage .\Debian.appx
+# Or list all available distributions first
+wsl --list --online
 ```
 
 ### 👤 Step 4: Initialize Your Linux Environment
@@ -246,9 +302,9 @@ winget install ShareX.ShareX
 **Google Cloud SDK Installation**:
 ```powershell
 # Download and install Google Cloud SDK
-(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
+Invoke-WebRequest -Uri "https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe" -OutFile "$env:Temp\GoogleCloudSDKInstaller.exe"
 
-& $env:Temp\GoogleCloudSDKInstaller.exe
+Start-Process -FilePath "$env:Temp\GoogleCloudSDKInstaller.exe" -Wait
 ```
 
 **Additional Cloud Tools**:
@@ -257,7 +313,7 @@ winget install ShareX.ShareX
 winget install Microsoft.AzureCLI
 
 # AWS CLI
-winget install Amazon.AWSCLI
+winget install Amazon.AWSCLI.v2
 
 # Terraform
 winget install Hashicorp.Terraform
@@ -321,7 +377,7 @@ function wsl-home {
 # Git shortcuts
 function gs { git status }
 function ga { git add . }
-function gc { git commit -m $args }
+function gcm($msg) { git commit -m $msg }
 ```
 
 ## 🎮 Chapter 5: Advanced Configuration and Optimization
@@ -343,7 +399,9 @@ Configure Windows Terminal for optimal development:
     "startingDirectory": "//wsl$/Ubuntu-20.04/home/yourusername",
     "colorScheme": "Campbell",
     "fontSize": 12,
-    "fontFace": "Cascadia Code"
+    "font": {
+        "face": "Cascadia Code"
+    }
 }
 ```
 

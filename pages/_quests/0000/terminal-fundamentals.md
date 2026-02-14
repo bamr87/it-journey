@@ -23,10 +23,8 @@ quest_dependencies:
 quest_relationships:
   parent_quest: null
   child_quests: []
-  parallel_quests:
-  - /quests/level-0000-alternative-path/
-  sequel_quests:
-  - /quests/level-0000-continuation/
+  parallel_quests: []
+  sequel_quests: []
 learning_paths:
   primary_paths:
   - Software Development
@@ -34,32 +32,34 @@ learning_paths:
   - 💻 Software Developer
   - 🏗️ System Engineer
   skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  - Terminal Navigation
+  - File Management
+  - Shell Basics
 skill_focus:
 - devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic computer operation (files, folders, applications)
+  - Ability to type commands and follow instructions
   system_requirements:
-  - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Modern OS (macOS, Windows 10+, or Linux)
+  - Terminal application (Terminal, PowerShell, or Windows Terminal)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Absolute beginner comfortable using a computer
 validation_criteria:
   completion_requirements:
-  - All primary objectives completed
-  - '[Specific deliverable created]'
+  - Navigate the file system using terminal commands
+  - Create, copy, move, and delete files and directories
+  - Use command history and tab completion effectively
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can use cd, ls, pwd, mkdir, cp, mv, rm confidently
+  - Can redirect output and use pipes
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
+  - Understands the difference between absolute and relative paths
+  - Can explain what standard input, output, and error are
 quest_mapping:
-  coordinates: '[x, y]'
+  coordinates: [2, 1]
   region: Foundation
   realm: Development
   biome: Terminal
@@ -84,410 +84,322 @@ keywords:
 - hands-on
 - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0000 (0) Quest: Main Quest - Terminal'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Terminal Navigator Badge
+  - ⚡ Command Line Warrior
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ File System Navigation Mastery
+  - 🎯 Shell Command Proficiency
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Foundation for all scripting and development quests
+  - Confident terminal usage across platforms
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
-
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
-
-## 📖 The Legend Behind This Quest
-
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
-
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Navigate the File System** — Use `cd`, `ls`, and `pwd` to explore directories
+- [ ] **Manage Files and Directories** — Create, copy, move, rename, and delete with confidence
+- [ ] **Master Command Syntax** — Understand flags, arguments, and command structure
+- [ ] **Use Input/Output Redirection** — Redirect output to files and chain commands with pipes
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Customize Your Prompt** — Modify your shell prompt to show useful information
+- [ ] **Use Command History** — Search and reuse previous commands efficiently
+- [ ] **Explore Man Pages** — Read documentation directly in the terminal
+- [ ] **Write Your First One-Liner** — Combine multiple commands in a single pipeline
 
 ### Mastery Indicators
-You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Can navigate to any directory using both absolute and relative paths
+- [ ] Can manage files without a graphical file manager
+- [ ] Can chain commands with pipes to transform data
+- [ ] Can explain the difference between `stdout`, `stderr`, and `stdin`
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic computer operation (files, folders, applications)
+- [ ] Ability to type commands and follow instructions
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Modern operating system (macOS, Windows 10+, or Linux)
+- [ ] Terminal application (Terminal.app, PowerShell, Windows Terminal, or any Linux terminal)
 
-### 🧠 Skill Level Indicators
-This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 45-60 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+## 🌍 Choose Your Terminal
 
-## 🌍 Choose Your Adventure Platform
+### 🍎 macOS
+Open **Terminal.app** (Applications → Utilities → Terminal) or install [iTerm2](https://iterm2.com/) for an enhanced experience.
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
-
-### 🍎 macOS Kingdom Path
-
-<details>
-<summary>Click to expand macOS instructions</summary>
-
-```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
-```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
-
-</details>
-
-### 🪟 Windows Empire Path
-
-<details>
-<summary>Click to expand Windows instructions</summary>
-
+### 🪟 Windows
+Open **Windows Terminal** or **PowerShell**. For a Unix-like experience, install [WSL](https://docs.microsoft.com/en-us/windows/wsl/install):
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+wsl --install
 ```
 
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
-
-</details>
-
-### 🐧 Linux Territory Path
-
-<details>
-<summary>Click to expand Linux instructions</summary>
-
-```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
-```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
-
-</details>
-
-### ☁️ Cloud Realms Path
-
-<details>
-<summary>Click to expand Cloud/Container instructions</summary>
-
-```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
-```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
-
-</details>
-
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
-
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
-
-### 🏗️ Building Your Knowledge Foundation
-
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
-```
-
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
-
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
-
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
-
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
-
-### 🏗️ Advanced Implementations
-
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
-
-### 🏗️ Building Your Real-World Solution
-
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🎮 Mastery Challenges
-
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-
-**Validation**: Run `[command]` to verify your implementation works correctly.
-
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
-
-**Validation**: [How to verify success]
-
-## 🏆 Quest Rewards & Achievements
-
-### Upon Quest Completion, You'll Unlock:
-
-**🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
-
-**🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
-
-**🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
-
-**📊 Progression Points**: +50 XP
-
-## 🗺️ Next Steps in Your Journey
-
-### Recommended Quest Paths
-
-**Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
-
-**Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
-
-### Character Class Recommendations
-
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
-
-## 📚 Resource Library
-
-### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
-
-### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
-
-## 🤝 Quest Completion Checklist
-
-Before marking this quest as complete, ensure you've:
-
-- [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
-- [ ] ✅ Identified your next quest in the journey
+### 🐧 Linux
+Open your distribution's terminal emulator (GNOME Terminal, Konsole, or xterm).
 
 ---
 
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
+## 🧙‍♂️ Chapter 1: Your First Commands — Finding Your Bearings
 
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
+*Every adventurer must first learn to read a map. In the terminal, your map is the file system, and these commands are your compass.*
+
+### 📍 Where Am I?
+
+```bash
+# Print your current working directory
+pwd
+```
+
+**Expected Output:**
+```text
+/Users/yourusername
+```
+
+### 👀 What's Here?
+
+```bash
+# List files and directories
+ls
+
+# List with details (permissions, size, date)
+ls -l
+
+# Show hidden files too (files starting with .)
+ls -la
+
+# Human-readable file sizes
+ls -lh
+```
+
+### 🚶 Moving Around
+
+```bash
+# Go to a directory
+cd Documents
+
+# Go up one level
+cd ..
+
+# Go to your home directory
+cd ~
+
+# Go to the previous directory
+cd -
+
+# Go to an absolute path
+cd /usr/local/bin
+```
+
+### ⚡ Quick Wins
+- [ ] Run `pwd` to see where you are
+- [ ] Run `ls -la` to see all files including hidden ones
+- [ ] Navigate to your Documents folder and back using `cd`
+
+---
+
+## 🧙‍♂️ Chapter 2: File Operations — Managing Your Inventory
+
+*A hero must organize their inventory. Learn to create, copy, move, and remove items in the file system.*
+
+### 📁 Creating Files and Directories
+
+```bash
+# Create a new directory
+mkdir my-project
+
+# Create nested directories at once
+mkdir -p my-project/src/components
+
+# Create an empty file
+touch my-project/README.md
+
+# Create a file with content
+echo "Hello, World!" > my-project/hello.txt
+```
+
+### 📋 Copying and Moving
+
+```bash
+# Copy a file
+cp hello.txt hello-backup.txt
+
+# Copy a directory (recursive)
+cp -r my-project my-project-backup
+
+# Move (or rename) a file
+mv hello.txt greeting.txt
+
+# Move a file into a directory
+mv greeting.txt my-project/
+```
+
+### 🗑️ Removing Files
+
+```bash
+# Remove a file
+rm unwanted-file.txt
+
+# Remove an empty directory
+rmdir empty-folder
+
+# Remove a directory and all its contents (use with caution!)
+rm -r old-project
+
+# Interactive mode — asks before each deletion
+rm -i important-file.txt
+```
+
+**⚠️ Warning**: `rm` is permanent. There is no trash can in the terminal!
+
+### 📖 Reading File Content
+
+```bash
+# Display entire file content
+cat README.md
+
+# Display with line numbers
+cat -n README.md
+
+# View first 10 lines
+head README.md
+
+# View last 10 lines
+tail README.md
+
+# Page through a long file (press q to quit)
+less long-file.txt
+```
+
+### ⚡ Quick Wins
+- [ ] Create a directory called `terminal-practice`
+- [ ] Create 3 files inside it using `touch`
+- [ ] Copy one file to a new name
+- [ ] Move one file to a subdirectory
+- [ ] Display a file's content with `cat`
+
+---
+
+## 🧙‍♂️ Chapter 3: Command Mastery — Flags, Pipes, and Redirection
+
+*Now you'll learn the advanced incantations that chain simple commands into powerful spells.*
+
+### 🏳️ Understanding Command Structure
+
+```text
+command [flags/options] [arguments]
+
+Examples:
+  ls -la /home          # command: ls, flags: -la, argument: /home
+  grep -i "error" log   # command: grep, flags: -i, arguments: "error" log
+  cp -r src/ dest/      # command: cp, flag: -r, arguments: src/ dest/
+```
+
+### 🔀 Pipes — Chaining Commands
+
+Pipes (`|`) send the output of one command as input to the next:
+
+```bash
+# List files and search for a pattern
+ls -la | grep ".md"
+
+# Count the number of files in a directory
+ls | wc -l
+
+# Sort files by size (largest first)
+ls -lS | head -5
+
+# Find all unique file extensions
+ls | sed 's/.*\.//' | sort | uniq
+```
+
+### 📤 Output Redirection
+
+```bash
+# Write output to a file (overwrites existing content)
+echo "Hello" > output.txt
+
+# Append output to a file
+echo "World" >> output.txt
+
+# Redirect errors to a file
+command-that-fails 2> errors.txt
+
+# Redirect both output and errors
+command 2>&1 > all-output.txt
+```
+
+### 🔍 Searching and Finding
+
+```bash
+# Search for text inside files
+grep "TODO" *.md
+
+# Search recursively in directories
+grep -r "function" src/
+
+# Case-insensitive search
+grep -i "error" logfile.txt
+
+# Find files by name
+find . -name "*.md"
+
+# Find files modified in the last 24 hours
+find . -mtime -1
+```
+
+### ⚡ Quick Wins
+- [ ] Use `ls | wc -l` to count files in your home directory
+- [ ] Use `grep` to search for a word in a file you created
+- [ ] Redirect the output of `ls -la` to a file called `file-list.txt`
+- [ ] Use `find` to locate all `.md` files in a directory
+
+---
+
+## 🎮 Mastery Challenges
+
+### 🟢 Novice Challenge: Directory Explorer
+- [ ] Create a project directory structure: `project/{src,docs,tests}`
+- [ ] Create a README.md in the project root
+- [ ] List all files recursively with `ls -R`
+- [ ] Copy the project to a backup directory
+
+### 🟡 Intermediate Challenge: Log Analyzer
+- [ ] Create a sample log file with 20+ lines of text
+- [ ] Use `grep` to find lines containing "error" or "warning"
+- [ ] Use `wc -l` to count how many errors exist
+- [ ] Sort the results and save to a report file
+
+### 🔴 Advanced Challenge: File Organizer
+- [ ] Write a sequence of commands that sorts files by extension into folders
+- [ ] Use `find` and pipes to locate and process files
+- [ ] Create a summary file listing file counts per extension
+- [ ] Chain at least 4 commands in a single pipeline
+
+## 🏆 Quest Completion Validation
+
+### Portfolio Artifacts Created
+- [ ] **Practice Directory** — Organized file structure created via terminal
+- [ ] **File List Report** — Output of `ls -la` redirected to a file
+- [ ] **Search Results** — grep output saved to a report file
+
+### Skills Demonstrated
+- [ ] **Navigation** — Moving between directories using `cd` with relative and absolute paths
+- [ ] **File Management** — Creating, copying, moving, and deleting files
+- [ ] **Command Chaining** — Using pipes to combine commands
+- [ ] **Redirection** — Sending output to files and reading from files
+
+## 📚 References & Resources
+
+- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/)
+- [Linux Command Line Basics — Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners)
+- [ExplainShell — Visualize Shell Commands](https://explainshell.com/)
+- [The Art of Command Line (GitHub)](https://github.com/jlevy/the-art-of-command-line)
+- [tldr pages — Simplified Man Pages](https://tldr.sh/)

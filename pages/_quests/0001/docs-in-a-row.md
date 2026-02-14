@@ -33,7 +33,7 @@ validation_criteria:
 - YAML front matter correctly added to documents
 - Workflow runs on schedule and manual trigger
 layout: journals
-permalink: ../README.mdlevel-0001/docs-in-a-row/
+permalink: /quests/0001/docs-in-a-row/
 categories:
 - Automation
 - DevOps
