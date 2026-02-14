@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2025-11-29T06:40:21.000Z
-lastmod: 2025-11-29T06:40:21.000Z
+date: 2026-02-14T20:33:09.000Z
+lastmod: 2026-02-14T20:33:09.000Z
 status: Living
-version: 2025-11-29
+version: 2026-02-14
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2025-11-29 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-02-14 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -42,12 +42,12 @@ As a **learner / contributor / educator**, I want:
 
 | Source | Count | Status |
 |--------|-------|--------|
-| Learning Quests | 31 | ✅ Published |
-| Educational Posts | 29 | ✅ Published |
-| Total Markdown Files | 81 | ✅ Indexed |
-| Implemented Features | 1 | ✅ Tracked |
-| Recent Commits | 60 | ✅ Analyzed |
-| Detected Issues | 4 | ⚠️ Review needed |
+| Learning Quests | 6 | ✅ Published |
+| Educational Posts | 15 | ✅ Published |
+| Total Markdown Files | 42 | ✅ Indexed |
+| Implemented Features | 0 | ✅ Tracked |
+| Recent Commits | 8 | ✅ Analyzed |
+| Detected Issues | 3 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -170,13 +170,11 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
-- **FIX**: Bug fix suggests incomplete requirement: fix(quest): correct invalid Liquid template in bash-scripting permalink
+- **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
   - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix: replace invalid Liquid template syntax in bash-scripting quest permalink
+- **FIX**: Bug fix suggests incomplete requirement: fix(launch): correct emoji in Docker debug configuration name
   - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix: update last modified date in CONTRIBUTING.md and add first-time contributor fast track section
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix: update last modified date and permalink format in bash scripting quest
+- **FIX**: Bug fix suggests incomplete requirement: fix(workflows): update GITHUB_TOKEN references to use PAT_TOKEN
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
