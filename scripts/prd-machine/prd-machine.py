@@ -233,7 +233,7 @@ class PRDMachine:
         significant_patterns = [
             r'\bworkflow\b.*\bfail',
             r'\bci\b.*\bfail',
-            r'\btoken\b',
+            r'token',  # Any token-related issue (PAT_TOKEN, GITHUB_TOKEN, etc.)
             r'\bauth',
             r'\bpermission\b',
             r'\bsecurity\b',
