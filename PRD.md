@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-02-15T18:10:02.000Z
-lastmod: 2026-02-15T18:10:02.000Z
+date: 2026-02-16T00:30:47.000Z
+lastmod: 2026-02-16T00:30:47.000Z
 status: Living
-version: 2026-02-15
+version: 2026-02-16
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-02-15 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-02-16 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
