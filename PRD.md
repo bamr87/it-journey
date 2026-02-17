@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-02-17T00:31:01.000Z
-lastmod: 2026-02-17T00:31:01.000Z
+date: 2026-02-17T03:10:07.000Z
+lastmod: 2026-02-17T03:10:07.000Z
 status: Living
 version: 2026-02-17
 auto_generated: true
@@ -46,7 +46,7 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 42 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 23 | ✅ Analyzed |
+| Recent Commits | 25 | ✅ Analyzed |
 | Detected Issues | 7 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
@@ -176,13 +176,9 @@ python3 scripts/validation/link-checker.py --scope website
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): handle datetime serialization in frontmatter validator
   - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_PAT in workflows
+- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(launch): correct emoji in Docker debug configuration name
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(workflows): update GITHUB_TOKEN references to use GITHUB_PAT
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
