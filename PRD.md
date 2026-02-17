@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-02-16T18:15:27.000Z
-lastmod: 2026-02-16T18:15:27.000Z
+date: 2026-02-17T00:31:01.000Z
+lastmod: 2026-02-17T00:31:01.000Z
 status: Living
-version: 2026-02-16
+version: 2026-02-17
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-02-16 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-02-17 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -46,8 +46,8 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 42 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 19 | ✅ Analyzed |
-| Detected Issues | 6 | ⚠️ Review needed |
+| Recent Commits | 23 | ✅ Analyzed |
+| Detected Issues | 7 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -170,6 +170,8 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
+- **FIX**: Bug fix suggests incomplete requirement: fix: add permalink to github-setup.md to resolve 404 error on /quickstart/github
+  - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): fix bash backtick interpretation and missing labels in dependency checker
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): handle datetime serialization in frontmatter validator
@@ -177,8 +179,6 @@ python3 scripts/validation/link-checker.py --scope website
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(launch): correct emoji in Docker debug configuration name
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
