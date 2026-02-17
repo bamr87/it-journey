@@ -176,9 +176,13 @@ python3 scripts/validation/link-checker.py --scope website
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): handle datetime serialization in frontmatter validator
   - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
+- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_PAT in workflows
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
+  - *Action*: Consider if original requirement needs clarification
+- **FIX**: Bug fix suggests incomplete requirement: fix(launch): correct emoji in Docker debug configuration name
+  - *Action*: Consider if original requirement needs clarification
+- **FIX**: Bug fix suggests incomplete requirement: fix(workflows): update GITHUB_TOKEN references to use GITHUB_PAT
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)

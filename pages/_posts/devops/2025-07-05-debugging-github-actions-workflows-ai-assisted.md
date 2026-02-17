@@ -207,7 +207,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.GITHUB_PAT }}
           
       - name: 🛠️ Setup Environment
         run: |

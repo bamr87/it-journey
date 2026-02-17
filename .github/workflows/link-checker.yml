@@ -168,18 +168,15 @@ jobs:
           # Health status
           broken_count=${{ needs.link-health-check.outputs.broken-links }}
           success_rate=${{ needs.link-health-check.outputs.success-rate }}
-          # Truncate floating point to integer for bash comparison
-          success_rate_int=${success_rate%.*}
-          success_rate_int=${success_rate_int:-0}
           
           echo "## 📈 Health Status" >> $GITHUB_STEP_SUMMARY
           if [[ "$broken_count" -eq 0 ]]; then
             echo "✅ **Excellent**: All links are healthy!" >> $GITHUB_STEP_SUMMARY
-          elif [[ "$success_rate_int" -ge 95 ]]; then
+          elif [[ "$success_rate" -ge 95 ]]; then
             echo "⚠️ **Good**: Minor issues detected ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
-          elif [[ "$success_rate_int" -ge 90 ]]; then
+          elif [[ "$success_rate" -ge 90 ]]; then
             echo "🟡 **Fair**: Some issues need attention ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
-          elif [[ "$success_rate_int" -ge 80 ]]; then
+          elif [[ "$success_rate" -ge 80 ]]; then
             echo "🟠 **Poor**: Multiple issues detected ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
           else
             echo "🔴 **Critical**: Major link health problems ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY

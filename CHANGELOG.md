@@ -5,7 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Unreleased] - 2026-02-16
+
+### Added
+- **Quest Registry** (`scripts/quest/quest_registry.py`) - New single source of truth for quest level metadata including level order, tier groupings, canonical metadata, and permalink utilities
+- **Git Basics Quest Enhancement** (`pages/_quests/0000/git-basics.md`) - Major content expansion:
+  - Added Mermaid diagrams: quest network position, three areas flowchart, branch lifecycle, local-remote sync, undo decision flowchart, and full quest flow
+  - Added Chapter 4: "Undoing Mistakes — The Time-Travel Spells" covering restore, reset, and revert
+  - Added checkpoints with validation commands and knowledge checks for Chapters 1–3
+  - Replaced generic challenges with structured Implementation Challenges (Chronicle Keeper, Branch Weaver, Remote Ranger)
+  - Added Boss Battle: "The Git Gauntlet" — a multi-phase capstone exercise with verification script
+  - Expanded Quest Rewards with achievement badges, skills unlocked, and journey progress
+  - Enhanced References section with categorized resources (documentation, interactive, quick references)
+
+### Changed
+- **CI/CD Token Standardization** - Renamed `PAT_TOKEN` secret to `GITHUB_PAT` across all workflows and documentation for consistency:
+  - `ai-content-review.yml` — 3 references updated
+  - `dependency-checker.yml` — 2 references updated (also switched checkout token from `GITHUB_TOKEN` to `GITHUB_PAT` for write permissions)
+  - `frontmatter-validation.yml` — 2 references updated
+  - `action-triggers.md` quest — 1 reference updated
+  - Blog posts updated to reflect new token naming
+  - `PRD.md` — Issue descriptions updated
+
+### Fixed
+- **`dependency-checker.yml`** — Replaced nested YAML-unsafe heredoc labels (`ISSUE_EOF`) with standard `EOF`, removed fragile `continue-on-error`, fixed backtick quoting in markdown code fences, removed unnecessary label creation step
+- **`frontmatter-validation.yml`** — Removed unused `DateTimeEncoder` class and redundant `date` import
+- **`link-checker.yml`** — Removed broken float-to-integer truncation of `success_rate` variable; bash `[[ -ge ]]` already handles integer comparison
+- **`prd-sync.yml`** — Fixed YAML block scalar indentation that broke workflow parsing, removed unnecessary `issues: write` permission
+
+## [Previous Unreleased]
 
 ### Added
 - **Quest Validation CI Workflow** (`quest-validation.yml`) - New GitHub Actions workflow for automated quest validation on PRs and pushes

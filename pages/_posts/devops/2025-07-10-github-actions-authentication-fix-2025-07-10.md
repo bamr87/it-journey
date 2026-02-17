@@ -41,7 +41,7 @@ The AI Evolution Engine GitHub Actions workflow was failing consistently with th
 💀 Some required prerequisites are missing.
 ```
 
-**Root Cause Analysis**: The prerequisite checker script (`check-prereqs.sh`) was looking for `GH_TOKEN` or `PAT_TOKEN` environment variables in the CI environment, but the GitHub Actions workflow was only providing `secrets.GITHUB_TOKEN` to the checkout action without setting it as an environment variable for the GitHub CLI to use.
+**Root Cause Analysis**: The prerequisite checker script (`check-prereqs.sh`) was looking for `GH_TOKEN` or `GITHUB_PAT` environment variables in the CI environment, but the GitHub Actions workflow was only providing `secrets.GITHUB_TOKEN` to the checkout action without setting it as an environment variable for the GitHub CLI to use.
 
 ## AI-Assisted Problem Solving Process
 
@@ -56,7 +56,7 @@ The AI Evolution Engine GitHub Actions workflow was failing consistently with th
 
 ### 3. **Code Investigation**: Tracing Authentication Logic
 - Analyzed the prerequisite checker script's authentication detection logic
-- Found that script only checked for `GH_TOKEN` and `PAT_TOKEN` variables
+- Found that script only checked for `GH_TOKEN` and `GITHUB_PAT` variables
 - Discovered missing support for GitHub Actions' standard `GITHUB_TOKEN`
 
 ## Step-by-Step Implementation
@@ -79,24 +79,24 @@ env:
 
 ### Fix 2: Enhanced Token Detection in Prerequisite Script
 
-**Problem**: The script only checked for `GH_TOKEN` and `PAT_TOKEN`, missing GitHub Actions' standard `GITHUB_TOKEN`.
+**Problem**: The script only checked for `GH_TOKEN` and `GITHUB_PAT`, missing GitHub Actions' standard `GITHUB_TOKEN`.
 
 **Solution**: Updated the authentication check logic:
 
 ```bash
 # In CI, check for token availability (multiple possible token variables)
-if [ -n "${GH_TOKEN:-}" ] || [ -n "${PAT_TOKEN:-}" ] || [ -n "${GITHUB_TOKEN:-}" ]; then
+if [ -n "${GH_TOKEN:-}" ] || [ -n "${GITHUB_PAT:-}" ] || [ -n "${GITHUB_TOKEN:-}" ]; then
     token_source=""
     if [ -n "${GH_TOKEN:-}" ]; then
         token_source="GH_TOKEN"
-    elif [ -n "${PAT_TOKEN:-}" ]; then
-        token_source="PAT_TOKEN"
+    elif [ -n "${GITHUB_PAT:-}" ]; then
+        token_source="GITHUB_PAT"
     elif [ -n "${GITHUB_TOKEN:-}" ]; then
         token_source="GITHUB_TOKEN"
     fi
     print_status "pass" "GitHub authentication configured" "Token available in environment ($token_source)"
 else
-    print_status "fail" "GitHub authentication not configured" "Set GH_TOKEN, PAT_TOKEN, or GITHUB_TOKEN secret"
+    print_status "fail" "GitHub authentication not configured" "Set GH_TOKEN, GITHUB_PAT, or GITHUB_TOKEN secret"
 fi
 ```
 
@@ -131,7 +131,7 @@ fi
 1. ✅ **Workflow Syntax Validation**: Confirmed YAML syntax is correct
 2. ✅ **Environment Variable Check**: Verified `GH_TOKEN` is properly set from `secrets.GITHUB_TOKEN`
 3. ✅ **Script Logic Testing**: Confirmed prerequisite script accepts `GITHUB_TOKEN`
-4. ✅ **Backward Compatibility**: Ensured existing `GH_TOKEN` and `PAT_TOKEN` usage still works
+4. ✅ **Backward Compatibility**: Ensured existing `GH_TOKEN` and `GITHUB_PAT` usage still works
 
 ### Test Results
 ```bash
