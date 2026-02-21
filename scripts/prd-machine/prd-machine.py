@@ -78,7 +78,11 @@ class PRDMachine:
         print(f"{color}[{timestamp}] [{level}]{nc} {message}")
     
     def ingest_git_commits(self, days: int = 30) -> List[Dict[str, str]]:
-        """Ingest recent git commits as signals."""
+        """Ingest recent git commits as signals.
+        
+        Filters out PRD Machine's own auto-sync commits to prevent
+        self-referential counting that causes recursive commit loops.
+        """
         self.log("INFO", f"Ingesting git commits from last {days} days...")
         
         try:
@@ -93,13 +97,20 @@ class PRDMachine:
             )
             
             commits = []
+            skipped = 0
             for line in result.stdout.strip().split('\n'):
                 if line:
                     parts = line.split('|', 4)
                     if len(parts) >= 4:
+                        subject = parts[1]
+                        # Skip PRD Machine's own auto-sync commits to prevent
+                        # self-referential counting and recursive commit loops
+                        if subject.strip().startswith("chore(prd): auto-sync"):
+                            skipped += 1
+                            continue
                         commit = {
                             "hash": parts[0][:8],
-                            "subject": parts[1],
+                            "subject": subject,
                             "author": parts[2],
                             "date": parts[3],
                             "body": parts[4] if len(parts) > 4 else ""
@@ -107,7 +118,7 @@ class PRDMachine:
                         commits.append(commit)
             
             self.signals["git_commits"] = commits
-            self.log("SUCCESS", f"Ingested {len(commits)} commits")
+            self.log("SUCCESS", f"Ingested {len(commits)} commits (skipped {skipped} auto-sync commits)")
             return commits
             
         except subprocess.CalledProcessError as e:
@@ -590,12 +601,39 @@ repository: https://github.com/bamr87/it-journey
         
         return "".join(sections)
     
+    def _strip_volatile_metadata(self, content: str) -> str:
+        """Strip volatile metadata (timestamps, version dates) from PRD content for comparison.
+        
+        This allows us to detect meaningful content changes while ignoring
+        fields that change on every run (date, lastmod, version).
+        """
+        # Strip frontmatter date/lastmod/version lines
+        content = re.sub(r'^(date|lastmod|version):.*$', '', content, flags=re.MULTILINE)
+        # Strip inline version/date references in the status line
+        content = re.sub(r'\*\*Version:\*\*\s*\S+', '**Version:** STRIPPED', content)
+        return content
+    
     def sync(self, output_path: Optional[Path] = None) -> bool:
-        """Sync and generate/update the PRD."""
+        """Sync and generate/update the PRD.
+        
+        Only writes PRD.md if meaningful content has changed (ignoring
+        volatile metadata like timestamps), preventing recursive commits.
+        """
         output_path = output_path or self.prd_path
         
         try:
             prd_content = self.generate_prd()
+            
+            # Check if meaningful content actually changed
+            if output_path.exists():
+                existing_content = output_path.read_text(encoding='utf-8')
+                existing_stripped = self._strip_volatile_metadata(existing_content)
+                new_stripped = self._strip_volatile_metadata(prd_content)
+                
+                if existing_stripped == new_stripped:
+                    self.log("INFO", "No meaningful content changes detected -- skipping write")
+                    self.log("INFO", f"Total signals processed: {sum(len(v) for v in self.signals.values())}")
+                    return True
             
             # Write to file
             output_path.write_text(prd_content, encoding='utf-8')

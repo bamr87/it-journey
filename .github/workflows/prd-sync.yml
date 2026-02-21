@@ -127,7 +127,7 @@ jobs:
         
         git add PRD.md
         
-        COMMIT_MSG="chore(prd): auto-sync PRD.md
+        COMMIT_MSG="chore(prd): auto-sync PRD.md [skip ci]
 
         Automated PRD synchronization by PRD Machine.
         - Ingested signals from git commits, markdown files, and features
