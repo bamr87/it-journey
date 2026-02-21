@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2026-02-21
+
+### Added
+- **Complete BASH Reference** (`pages/_docs/terminal/bash-complete-reference.md`) - Exhaustive 4600+ line GNU Bash reference covering built-in commands, parameter expansion, arrays, string manipulation, arithmetic, conditionals, loops, functions, process control, text processing, networking, and advanced scripting techniques
+- **Docs navigation entry** (`_data/navigation/docs.yml`) - Added "Complete BASH Reference" link under Terminal section
+- **Cursor command** (`.cursor/commands/commit-publish.md`) - Workflow command aligned with IT-Journey commit/publish standards
+
+### Changed
+- **Quests home page** (`pages/_quests/home.md`) - Added `mermaid: true` front matter to enable Mermaid diagram rendering
+- **Docs library index** (`pages/_docs/index.md`) - Added Terminal section listing available reference guides
+
 ## [Unreleased] - 2026-02-16
 
 ### Added

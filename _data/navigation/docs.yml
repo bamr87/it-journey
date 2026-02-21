@@ -32,4 +32,6 @@
   children:
     - title: Terminal Shortcuts
       url: /docs/terminal-shortcuts-cheat-sheet/
+    - title: Complete BASH Reference
+      url: /docs/bash-complete-reference/
 
