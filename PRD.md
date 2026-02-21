@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-02-21T20:36:17.000Z
-lastmod: 2026-02-21T20:36:17.000Z
+date: 2026-02-21T21:48:17.000Z
+lastmod: 2026-02-21T21:48:17.000Z
 status: Living
 version: 2026-02-21
 auto_generated: true
@@ -46,8 +46,8 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 42 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 46 | ✅ Analyzed |
-| Detected Issues | 7 | ⚠️ Review needed |
+| Recent Commits | 18 | ✅ Analyzed |
+| Detected Issues | 8 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -170,6 +170,8 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
+- **FIX**: Bug fix suggests incomplete requirement: fix: prevent PRD Machine recursive commit loop
+  - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix: add permalink to github-setup.md to resolve 404 error on /quickstart/github
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): fix bash backtick interpretation and missing labels in dependency checker
@@ -177,8 +179,6 @@ python3 scripts/validation/link-checker.py --scope website
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): handle datetime serialization in frontmatter validator
   - *Action*: Consider if original requirement needs clarification
 - **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): resolve workflow failures across 7 workflows
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
