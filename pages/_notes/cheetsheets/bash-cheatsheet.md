@@ -1,18 +1,17 @@
 ---
 title: Bash Cheatsheet
 author: bamr87
-description: BASH cheatsheet - Quick reference guide for Linux bash shell scripting
-intro: This is a quick reference cheat sheet to getting started with linux bash shell
-  scripting.
+description: Essential bash commands and scripting techniques for system administration and automation
+excerpt: Quick reference for bash shell commands, scripting patterns, and Linux system administration
 categories:
   - notes
   - cheatsheets
   - shell
 tags:
-  - shell
-  - script
-  - linux
   - bash
+  - linux
+  - script
+  - shell
   - cheatsheet
   - reference
 keywords:
@@ -25,8 +24,11 @@ keywords:
   - Command substitution
 layout: default
 slug: /shell/
-lastmod: 2022-08-07T14:49:51.999Z
+lastmod: 2024-05-14T15:14:49.051Z
 draft: false
+related_quests:
+  - /quests/bashcrawl-terminal-adventure/
+  - /quests/lvl_000/bash-run/
 ---
 
 [![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)

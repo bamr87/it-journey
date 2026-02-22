@@ -18,8 +18,26 @@ tags:
     - lvl-000
 author: IT-Journey Team
 layout: journals
+level: '0000'
+quest_type: main_quest
+quest_line: Foundation Path
+quest_arc: Terminal Mastery Arc
+fmContentType: quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
+primary_technology: bash
+skill_focus:
+    - Terminal
+    - Navigation
+    - File System
+learning_style: hands-on
+keywords:
+    - bash
+    - terminal
+    - command-line
+    - adventure-game
+    - learning
+    - lvl-000
 prerequisites:
     - Basic computer navigation
     - Terminal access (bash/zsh shell)
@@ -30,6 +48,23 @@ rewards:
     - 🛠️ File System Understanding
     - 🎯 Shell Command Mastery
 quest_series: "Level 000 - Foundation Skills"
+quest_dependencies:
+    unlocks_quests:
+        - /quests/lvl_000/bash-run/
+quest_relationships:
+    child_quests: []
+    sequel_quests:
+        - /quests/lvl_000/bash-run/
+    parallel_quests: []
+learning_paths:
+    primary_paths:
+        - System Administration
+        - Software Development
+    character_classes:
+        - 💻 Software Developer
+        - 🏗️ System Engineer
+    skill_trees:
+        - Terminal Mastery
 related_quests:
     - "bash-run.md - Shell Scripting Fundamentals"
     - "hello-noob.md - Beginner's IT Journey Start"
@@ -87,12 +122,18 @@ You'll know you've truly conquered this quest when you can:
 - [ ] Can type commands without fear of "breaking" something
 - [ ] Ready to learn through experimentation and exploration
 
+## 📚 Resource Codex
+
+To aid you in your quest, consult these ancient tomes of knowledge:
+- [The Spellbook: Bash Cheatsheet](/shell/) - Quick reference for essential commands and scripting techniques.
+- [The Grand Grimoire: Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive guide covering every aspect of GNU Bash.
+
 ## 🌍 Adventure Setup Guide
 
 ### 🐧 Linux Territory Setup
 ```bash
 # Clone or download the bashcrawl adventure
-git clone https://gitlab.com/slackermedia/bashcrawl.git
+git clone https://github.com/bamr87/bashcrawl.git
 cd bashcrawl
 chmod +x entrance.sh
 ./entrance.sh
@@ -104,7 +145,7 @@ chmod +x entrance.sh
 brew install bashcrawl
 
 # Or clone directly
-git clone https://gitlab.com/slackermedia/bashcrawl.git
+git clone https://github.com/bamr87/bashcrawl.git
 cd bashcrawl
 chmod +x entrance.sh
 ./entrance.sh
@@ -116,7 +157,7 @@ chmod +x entrance.sh
 wsl --install
 
 # Then in WSL terminal:
-git clone https://gitlab.com/slackermedia/bashcrawl.git
+git clone https://github.com/bamr87/bashcrawl.git
 cd bashcrawl
 chmod +x entrance.sh
 ./entrance.sh

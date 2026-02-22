@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2026-02-22
+
+### Added
+- **Resource Codex** (`pages/_quests/0000/bashcrawl/README.md`) - Added links to the Bash Cheatsheet and Complete BASH Reference in the bashcrawl quest.
+- **Practical Application Section** (`pages/_docs/terminal/bash-complete-reference.md`) - Added links to interactive quests (`bashcrawl` and `bash-run`) to practice bash commands.
+
+### Changed
+- **Consolidated Bash Cheatsheets** (`pages/_notes/cheetsheets/bash-cheatsheet.md`) - Merged duplicate bash cheatsheets into a single file and updated frontmatter with related quests.
+- **Bashcrawl Quest Enhancement** (`pages/_quests/0000/bashcrawl/README.md`) - Upgraded to a main quest with enhanced frontmatter (`level: '0000'`, `quest_type: main_quest`), added quest dependencies, and updated the setup guide to clone from `bamr87/bashcrawl`.
+- **Bash-run Side Quest** (`pages/_quests/0000/bash-run.md`) - Updated frontmatter to correctly point to `bashcrawl` as its parent/required quest and added resource links.
+
+### Fixed
+- **Bashcrawl Launcher** (`pages/_quests/0000/bashcrawl/bash_crawl.sh`) - Rewrote the script to properly clone the `bashcrawl` repository and execute `entrance.sh`, removing unreachable code and adding error handling.
+
 ## [Unreleased] - 2026-02-21
 
 ### Added

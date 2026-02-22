@@ -44,6 +44,12 @@ draft: false
 
 > **Everything you need** to master GNU Bash — from basic commands to advanced scripting, process management, text processing, networking, and system administration.
 
+## 🎮 Practical Application
+
+Want to put these commands into practice? Try these interactive quests:
+- **[Bashcrawl Quest: Terminal Adventure RPG](/quests/bashcrawl-terminal-adventure/)**: Learn basic navigation and file commands through a dungeon exploration game.
+- **[bashrun and Beyond](/quests/lvl_000/bash-run/)**: Build your own advanced terminal game using bash scripting.
+
 ---
 
 ## Table of Contents

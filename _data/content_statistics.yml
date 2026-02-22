@@ -1,75 +1,59 @@
 # Auto-generated content statistics for IT-Journey
-# Generated at: 2025-10-08T19:20:30.442-0600
+# Generated at: 2026-02-22T15:16:55.016-0700
 ---
-generated_at: '2025-10-08T19:20:30.442-0600'
-total_posts: 23
+generated_at: '2026-02-22T15:16:55.016-0700'
+total_posts: 15
 categories:
-  posts: 9
-  development: 4
-  devops: 2
-  finance: 2
-  economics: 1
-  social impact: 1
-  breaking: 1
-  ai-analysis: 1
-  design: 1
-  debugging: 1
-  data analytics: 1
-  it consulting: 1
-  programming: 1
-  tutorials: 1
-  web development: 1
-  javascript: 1
-  jekyll: 1
+  posts: 8
+  devops: 5
+  tutorials: 3
+  ai & machine learning: 2
+  macos: 1
+  system-administration: 1
+  web-development: 1
+  development tools: 1
   notes: 1
-  research: 1
-  cultural-education: 1
-  social-issues: 1
-  guides: 1
-  ide-setup: 1
-  open source: 1
-  tools: 1
-  automation: 1
-  git: 1
-  creative & experimental: 1
+  finance: 1
+  windows: 1
+  customization: 1
+  culture: 1
+  tools & environment: 1
+  web development: 1
 tags:
-  article: 3
-  github-actions: 3
-  ai-assisted-development: 2
-  devops: 2
-  link-checking: 2
-  gpt-4: 2
+  devops: 4
+  ci-cd: 3
+  article: 2
+  automation: 2
   jekyll: 2
-  wizard-magic: 1
-  global-transformation: 1
-  shareholder-value: 1
-  economic-revolution: 1
-  chatgpt: 1
-  ai-limitations: 1
-  penrose-triangle: 1
-  svg: 1
-  3d-geometry: 1
-  optical-illusions: 1
-  design-analysis: 1
-  debugging: 1
+  cli-tools: 1
+  documentation: 1
   python: 1
-  error-handling: 1
-  arbitrage: 1
-  complexity: 1
-  excel: 1
-  financial: 1
-  modeling: 1
+  ai-development: 1
+  product-management: 1
+  crush: 1
+  vscode: 1
+  github-pages: 1
+  ai-assisted-writing: 1
+  macos: 1
+  bootable-usb: 1
+  system-recovery: 1
+  terminal: 1
+  installation: 1
+  apple: 1
+  system-administration: 1
+  azure: 1
+  static-web-apps: 1
+  deployment: 1
+  cloud-hosting: 1
+  web-development: 1
+  prompt-engineering: 1
+  ai-assisted-development: 1
+  vscode-copilot: 1
   tutorial: 1
   intermediate: 1
-  workflow-automation: 1
-  modular-architecture: 1
-  script-refactoring: 1
-  javascript: 1
-  web-development: 1
-  interactive: 1
-  frontend: 1
-  layouts: 1
-  dynamic-content: 1
+  build-systems: 1
+  best-practices: 1
+  performance-optimization: 1
   raspberrypi: 1
   it consulting: 1
   enterprise systems: 1
@@ -77,81 +61,70 @@ tags:
   data analytics: 1
   project management: 1
   cv: 1
-  arab-americans: 1
-  cultural-understanding: 1
-  journalism-guide: 1
-  demographics: 1
-  religion: 1
-  stereotypes: 1
-  middle-east: 1
-  islam: 1
-  christianity: 1
-  vscode-extension: 1
-  front-matter-cms: 1
-  development-setup: 1
-  open-source-contribution: 1
-  content-management: 1
-  fork-workflow: 1
-  typescript: 1
-  git: 1
-  webpack: 1
-  automation: 1
-  versioning: 1
-  frontmatter: 1
-  git-hooks: 1
-  capitalism-reform: 1
-  ethical-economics: 1
+  gpt-4: 1
+  rainmeter: 1
+  windows: 1
+  desktop-widgets: 1
+  customization: 1
+  winget: 1
+  system-monitor: 1
+  windows-11: 1
+  windows-10: 1
+  psychology: 1
+  productivity: 1
+  developer-experience: 1
+  flow: 1
 authors:
-  IT-Journey Team: 6
-  bamr87: 3
-  Amr Abdel-Motaleb: 1
+  IT-Journey Team: 7
+  IT-Journey AI Assistant: 1
   ChatGPT: 1
-  Detroit Free Press (via IT-Journey Archives): 1
   Amr and ChatGPT: 1
 years:
-  '2024': 2
+  '2024': 1
+  '2025': 1
 date_range:
   earliest: 2024
-  latest: 2024
-  span_years: 1
+  latest: 2025
+  span_years: 2
 skill_levels:
-  advanced: 3
+  advanced: 4
   expert: 2
   intermediate: 2
   beginner: 1
 focus_areas:
   AI & Machine Learning: 8
-  Programming & Scripting: 6
-  Web Development: 5
-  Creative & Experimental: 5
-  System Administration: 5
-  Data & Analytics: 4
-  DevOps & Infrastructure: 3
-  Tools & Development Environment: 3
+  System Administration: 6
+  DevOps & Infrastructure: 5
+  Programming & Scripting: 4
+  Tools & Development Environment: 4
+  Creative & Experimental: 4
+  Web Development: 3
+  Data & Analytics: 2
 content_types:
-  Journal Entry: 11
-  Article: 3
-  Tutorial: 3
+  Journal Entry: 8
+  Article: 4
+  Tutorial: 4
   Documentation: 1
-drafts: 11
-published: 11
-category_count: 28
-tag_count: 68
-author_count: 6
+  Creative Writing: 1
+drafts: 6
+published: 9
+category_count: 15
+tag_count: 54
+author_count: 4
 top_categories:
-  posts: 9
-  development: 4
-  devops: 2
-  finance: 2
-  economics: 1
+  posts: 8
+  devops: 5
+  tutorials: 3
+  ai & machine learning: 2
+  macos: 1
 top_tags:
-  article: 3
-  github-actions: 3
-  ai-assisted-development: 2
-  devops: 2
-  link-checking: 2
-  gpt-4: 2
+  devops: 4
+  ci-cd: 3
+  article: 2
+  automation: 2
   jekyll: 2
-  wizard-magic: 1
-  global-transformation: 1
-  shareholder-value: 1
+  cli-tools: 1
+  documentation: 1
+  python: 1
+  ai-development: 1
+  product-management: 1
