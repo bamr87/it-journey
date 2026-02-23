@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2026-02-23
+
+### Added
+- **New Post: `terminal-bash-finance-accounting.md`** (`pages/_posts/business/`) - Comprehensive blog post targeting finance and accounting professionals, teaching terminal and bash scripting through relatable spreadsheet analogies. Includes real-world month-end automation script, Excel-to-Bash translation table, and links to Terminal Fundamentals, Bashcrawl, and Bashrun quests.
+
 ## [Unreleased] - 2026-02-22
 
 ### Added
