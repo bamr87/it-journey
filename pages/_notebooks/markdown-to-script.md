@@ -2,7 +2,6 @@
 title: Markdown to Script Converter
 description: Python utilities to convert markdown files to executable scripts
 author: bamr87
-layout: default
 categories:
   - notebooks
   - utilities

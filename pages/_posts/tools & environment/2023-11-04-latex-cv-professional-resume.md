@@ -25,7 +25,6 @@ tags:
     - career
 title: "LaTex your CV"
 type: Article
-layout: journals
 keywords:
     primary:
         - latex cv

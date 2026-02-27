@@ -18,7 +18,6 @@ sub-title: Transform your CI/CD with ephemeral, cacheable, high-speed workspaces
 excerpt: The work/ directory pattern provides a structured, performance-optimized approach to CI/CD builds—separating persistent caches from disposable artifacts while maintaining reproducibility and speed.
 snippet: In CI/CD, work/ is your high-speed conveyor belt—feed it materials, cache tools, produce goods, ship reports, wipe clean.
 author: IT-Journey Team
-layout: journals
 section: DevOps
 keywords:
   primary:

@@ -17,7 +17,6 @@ sub-title: How AI Acceleration Mirrors Nature's Growth Patterns
 excerpt: Just as seeds contain the DNA for infinite growth potential, our software development practices are evolving to encode wisdom that enables exponential innovation.
 snippet: The future of software lies not in the tools we use today, but in the wisdom we encode into our development seeds.
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - AI development

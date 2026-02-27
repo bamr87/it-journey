@@ -1,7 +1,6 @@
 ---
 title: "IT-Journey Statistics Portal"
 description: "Comprehensive analytics and metrics for the IT-Journey knowledge base"
-layout: default
 permalink: /stats/
 ---
 

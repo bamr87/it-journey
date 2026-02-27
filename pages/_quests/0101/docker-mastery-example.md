@@ -27,7 +27,6 @@ validation_criteria:
 - Build multi-container applications using Docker Compose
 - Implement Docker security best practices and optimization techniques
 - Deploy containerized applications to cloud platforms
-layout: journals
 permalink: /quests/level-0101-docker-mastery/
 categories:
 - Quests

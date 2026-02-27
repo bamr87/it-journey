@@ -29,7 +29,6 @@ draft: false
 date: 2023-03-26T00:00:00.000Z
 lastmod: 2025-11-01T03:51:36.000Z
 section: AI & Machine Learning
-layout: journals
 keywords:
   primary:
     - Chat GPT

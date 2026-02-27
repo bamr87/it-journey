@@ -1,7 +1,6 @@
 ---
 title: Github Setup
 author: null
-layout: default
 description: null
 categories: null
 slug: github

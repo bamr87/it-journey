@@ -9,7 +9,6 @@ sub-title: null
 excerpt: null
 snippet: null
 author: ""
-layout: null
 keywords: {}
 lastmod: 2025-08-19T21:58:40.258Z
 permalink: null

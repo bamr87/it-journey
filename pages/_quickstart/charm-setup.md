@@ -2,7 +2,6 @@
 title: "Setting Up Charm & Building a Terminal Interface"
 description: "Quickstart guide for installing Charm tools (Gum, Glow) and building a custom terminal dashboard for the IT-Journey repository."
 permalink: /quickstart/charm-setup/
-layout: default
 tags: [charm, gum, glow, terminal, cli, quickstart]
 lastmod: 2025-11-19
 ---

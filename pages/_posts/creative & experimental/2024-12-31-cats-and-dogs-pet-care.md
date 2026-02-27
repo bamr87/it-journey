@@ -17,7 +17,6 @@ sub-title: "Adventures in Pet Companionship"
 excerpt: "Discover the joy, challenges, and rewards of sharing your life with cats and dogs"
 snippet: "Every pet brings unique personality and unconditional love to our homes"
 author: bamr87
-layout: journals
 keywords:
     primary:
         - pet care

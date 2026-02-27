@@ -17,7 +17,6 @@ tags:
     - bash
     - lvl-000
 author: IT-Journey Team
-layout: journals
 level: '0000'
 quest_type: main_quest
 quest_line: Foundation Path

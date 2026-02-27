@@ -6,7 +6,6 @@ preview: images/previews/level-1011-feature-development.png
 permalink: /quests/level-1011/
 lastmod: 2025-11-29T23:41:31.773Z
 
-layout: quest-collection
 level: 1011
 categories: quests
 ---

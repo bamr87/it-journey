@@ -45,7 +45,6 @@ skill_focus:
 - package-management
 - developer-tools
 learning_style: hands-on
-layout: journals
 permalink: /quests/hello-macos/
 categories:
 - Quests

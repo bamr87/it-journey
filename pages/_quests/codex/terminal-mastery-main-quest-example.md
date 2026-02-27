@@ -20,7 +20,6 @@ excerpt: Transform from terminal novice to command-line champion through hands-o
   practice with essential navigation and file operations
 snippet: Where digital adventures begin - master the gateway to all development power
 author: Quest Master IT-Journey Team
-layout: journals
 keywords:
 - lvl-0001
 - terminal

@@ -18,7 +18,6 @@ toc_sticky: true
 date: 2021-10-27T21:42:21.287Z
 lastmod: 2024-05-20T17:47:12.251Z
 draft: false
-layout: journals
 section: Technology
 excerpt: "Discover why the cycle of building, destroying, and rebuilding is the most effective path to technical mastery and deep understanding"
 sub-title: "The Iterative Path to Technical Excellence"

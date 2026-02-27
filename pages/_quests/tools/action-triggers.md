@@ -21,7 +21,6 @@ skill_focus:
 - GitHub Actions
 - Programming
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0010-action-triggers/
 categories:
 - Automation

@@ -78,7 +78,6 @@ rewards:
   unlocks_features:
   - Access to platform-specific Hello quests
   - Foundation for development environment setup
-layout: journals
 permalink: /quests/lvl_000/os-selection/
 categories:
 - Quests

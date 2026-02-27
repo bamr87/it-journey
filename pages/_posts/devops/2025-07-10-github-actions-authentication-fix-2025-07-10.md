@@ -16,7 +16,6 @@ sub-title: Systematic resolution of workflow authentication failures
 excerpt: Successfully resolved GitHub Actions workflow failures by implementing proper token environment variable configuration and enhanced authentication detection logic.
 snippet: "The key was understanding that GitHub Actions provides secrets.GITHUB_TOKEN but the CLI expects GH_TOKEN environment variable"
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - github actions

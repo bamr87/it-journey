@@ -22,7 +22,6 @@ level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
 author: IT-Journey Team
-layout: journals
 quest_series: Quest Documentation
 primary_technology: documentation
 skill_focus:

@@ -32,7 +32,6 @@ validation_criteria:
 - Evidence of rate limiting and error handling
 - Transformed output (CSV/JSON) suitable for analysis
 - Short write-up of insights learned
-layout: journals
 permalink: /quests/level-1100-sec-edgar-siege/
 categories:
 - Quests

@@ -62,7 +62,6 @@ validation_criteria:
 - Complete the terminal game development
 - Successfully run the enhanced bashrun game
 - Demonstrate understanding of shell scripting concepts
-layout: journals
 permalink: /quests/lvl_000/bash-run/
 categories:
 - Quests

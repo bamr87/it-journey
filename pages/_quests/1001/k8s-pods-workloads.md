@@ -61,7 +61,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-layout: journals
 permalink: /quests/level-1001-k8s-pods-workloads/
 categories:
 - Quests

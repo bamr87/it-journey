@@ -16,7 +16,6 @@ skill_focus:
 - static-sites
 - azure
 learning_style: hands-on
-layout: journals
 permalink: /quests/azure-ascension-jekyll-deployment/
 categories:
 - Quests

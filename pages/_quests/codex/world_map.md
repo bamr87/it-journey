@@ -15,7 +15,6 @@ tags:
 categories:
 - Codex
 - Navigation
-layout: default
 toc: true
 toc_sticky: true
 permalink: /quests/codex/world-map/

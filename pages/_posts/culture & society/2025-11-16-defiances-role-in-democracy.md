@@ -1,7 +1,6 @@
 ---
 assistant: Title Generator
 categories: gpt
-layout: journals
 prompt: "Write an article about defiance and its importance in promoting a healthy democracy in today's world. Also talk about how there has been a downward trend in the usage of the word defiance in books and articles over the decades. Also add a perspective piece of how life would be if there was no defiance, and then explain how life would be like if there's complete defiance. end with a satirical and bleak cliff hanger. contrast that life "
 section: Culture & Society
 title: Defiance's Role in Democracy

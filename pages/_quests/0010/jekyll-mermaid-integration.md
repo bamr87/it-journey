@@ -34,7 +34,6 @@ validation_criteria:
 - Responsive design works across devices
 - Dark mode compatibility confirmed
 - Documentation is comprehensive and accurate
-layout: journals
 permalink: /quests/level-0010-jekyll-mermaid-integration/
 categories:
 - Quests
@@ -357,7 +356,6 @@ Create `mermaid-test.md` in your site root:
 title: "Mermaid Diagram Test Suite"
 description: "Comprehensive test of all Mermaid diagram types"
 date: 2025-01-27
-layout: default
 mermaid: true
 ---
 
@@ -484,7 +482,6 @@ Create `docs/mermaid-integration.md`:
 ---
 title: "Mermaid Diagram Integration Guide"
 description: "Complete guide to using Mermaid diagrams in Jekyll"
-layout: default
 mermaid: true
 ---
 

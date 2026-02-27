@@ -18,7 +18,6 @@ sub-title: Bridging the Gap Between Wizard and Machine
 excerpt: Learn how to layer a 'Glass Interface' over your raw shell scripts to improve usability, safety, and aesthetics without sacrificing power.
 snippet: Power without control is chaos. Give your scripts a face.
 author: Quest Master Copilot
-layout: journals
 keywords:
     primary:
         - terminal-frontend

@@ -28,7 +28,6 @@ validation_criteria:
 - CI link checks pass on PRs and on a weekly schedule
 - 404 page provides helpful exits, recent content, and an issue link
 - Moved pages redirect via jekyll-redirect-from without loops
-layout: journals
 permalink: /quests/level-1110-404-hunting-quest/
 categories:
 - Quests
@@ -148,7 +147,6 @@ Create an inviting `404.html`:
 ```html
 ---
 permalink: /404.html
-layout: default
 ---
 <main class="not-found">
   <h1>🧭 Lost in the Linkwood</h1>
@@ -207,7 +205,6 @@ Or create a dedicated redirect stub:
 
 ```markdown
 ---
-layout: redirect
 redirect_to: /posts/new-canonical-title/
 permalink: /legacy-path/
 ---

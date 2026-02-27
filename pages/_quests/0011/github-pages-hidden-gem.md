@@ -75,7 +75,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-layout: journals
 permalink: /quests/level-0011-github-pages-hidden-gem/
 categories:
 - Quests
@@ -308,7 +307,6 @@ plugins:
 **AI Conversation Capture Format:**
 ```markdown
 ---
-layout: post
 title: "Your Chat Title"
 date: YYYY-MM-DD HH:MM
 categories: [ai, conversation]

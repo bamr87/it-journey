@@ -12,7 +12,6 @@ skill_focus:
 - documentation
 learning_style: reading
 quest_series: Quest Documentation
-layout: journals
 permalink: /quests/docs/validation-fixes-summary/
 keywords:
 - documentation

@@ -23,7 +23,6 @@ categories:
 schema: sophisticated, intriguing, and humorous
 target-audience: analysts, financial modelers, economists, tech enthusiasts
 snippet: null
-layout: null
 keywords: {}
 lastmod: 2025-03-13T16:53:56.445Z
 permalink: null

@@ -3,7 +3,6 @@ title: Sidebar Folder Structure
 author: bamr87
 description: Jekyll Liquid template code for generating dynamic sidebar navigation with folder structures from collections
 excerpt: Implementation guide for creating organized sidebar navigation that displays collection files in a hierarchical folder structure
-layout: default
 categories:
    - notes
    - dev

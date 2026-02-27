@@ -7,7 +7,6 @@ version: 1.0.0
 categories: [ai & machine learning, devops, web development]
 tags: [crush, vscode, github-pages, ci-cd, jekyll, ai-assisted-writing]
 permalink: /posts/2025-11-20-using-crush-vscode-github-pages/
-layout: journals
 author: IT-Journey AI Assistant
 ---
 

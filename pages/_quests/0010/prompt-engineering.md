@@ -68,7 +68,6 @@ quest_mapping:
   region: Foundation
   realm: AI-Enhanced
   biome: Communication
-layout: journals
 permalink: /quests/level-0010-prompt-engineering-mastery/
 categories:
 - Quests

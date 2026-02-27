@@ -4,7 +4,6 @@ description: "Complete reference guide for terminal keyboard shortcuts across ma
 date: 2025-12-20T00:00:00.000Z
 lastmod: 2025-12-20T00:00:00.000Z
 author: "IT-Journey Team"
-layout: journals
 permalink: /docs/terminal-shortcuts-cheat-sheet/
 tags:
     - terminal

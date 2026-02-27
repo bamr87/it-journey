@@ -62,7 +62,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-layout: journals
 permalink: /quests/level-0110-database-security/
 categories:
 - Quests

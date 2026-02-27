@@ -79,7 +79,6 @@ quest_mapping:
   region: Foundation
   realm: AI-Enhanced
   biome: Development Tools
-layout: journals
 permalink: /quests/level-0011-prompt-crystal-vscode-copilot/
 categories:
 - Quests

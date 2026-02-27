@@ -1,7 +1,6 @@
 ---
 title: Quick Start (~) Index
 author: null
-layout: default
 description: null
 permalink: /quickstart/
 sidebar:

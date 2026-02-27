@@ -19,7 +19,6 @@ sub-title: "Automating Product Requirements Documentation with Signal-Driven Gen
 excerpt: "The PRD Machine transforms scattered repository signals—git commits, markdown files, and feature definitions—into a continuously fresh, perfectly structured PRD that never goes stale."
 snippet: "The distillery now distills distilleries."
 author: IT-Journey Team
-layout: journals
 section: DevOps
 keywords:
   primary:

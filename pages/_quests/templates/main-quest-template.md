@@ -16,7 +16,6 @@ quest_series: '[series-name]'
 sub_title: 'Level XXXX (XX) Quest: Main Quest - [Technology]'
 excerpt: One-sentence summary of the quest's core learning objective
 author: IT-Journey Team
-layout: journals
 tags:
 - lvl-XXXX
 - - primary-technology

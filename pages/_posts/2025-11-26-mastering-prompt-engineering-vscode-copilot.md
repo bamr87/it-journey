@@ -4,7 +4,6 @@ description: Learn systematic prompt engineering techniques to maximize AI-assis
 date: 2025-11-26T00:00:00.000Z
 lastmod: 2025-11-27T05:01:33.326Z
 author: IT-Journey Team
-layout: journals
 permalink: /posts/mastering-prompt-engineering-vscode-copilot/
 tags:
     - prompt-engineering

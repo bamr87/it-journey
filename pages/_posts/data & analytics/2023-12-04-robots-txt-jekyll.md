@@ -22,7 +22,6 @@ tags:
     - web-development
 title: "robots dot txt"
 type: Article
-layout: journals
 keywords:
     primary:
         - robots.txt

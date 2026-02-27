@@ -17,7 +17,6 @@ sub-title: From Script Chaos to Organized Excellence Using AI-Powered Developmen
 excerpt: A comprehensive AI-assisted refactoring session that transformed scattered, redundant scripts into a unified, principle-driven automation system following IT-Journey development practices.
 snippet: 25+ scattered scripts → unified automation system through AI-assisted development
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - script consolidation

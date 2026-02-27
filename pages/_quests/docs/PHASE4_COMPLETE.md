@@ -1,5 +1,4 @@
 ---
-layout: page
 title: 'Phase 4 Complete: Expert Tier Quests Generated'
 preview: images/previews/phase-4-complete-expert-tier-quests-generated.png
 permalink: /quests/phase4-complete/

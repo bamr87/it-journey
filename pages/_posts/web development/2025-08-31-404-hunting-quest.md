@@ -17,7 +17,6 @@ sub-title: A fantasy-themed, practical guide to links that always resolve
 excerpt: Tame 404 wraiths in your Jekyll realm with permalink magic, redirect runes, automated link guardians, and living resource endpoints—all powered by GitHub CI/CD.
 snippet: May your links never stray and your redirects never loop.
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - jekyll-404
@@ -119,7 +118,6 @@ Your repo already has `404.html`. Enhance it with helpful trails:
 ```html
 ---
 permalink: /404.html
-layout: default
 ---
 <main class="not-found">
   <h1>🧭 Lost in the Linkwood</h1>
@@ -185,7 +183,6 @@ Or create a dedicated redirect file:
 
 ```markdown
 ---
-layout: redirect
 redirect_to: /posts/new-canonical-path/
 permalink: /legacy-path/
 ---
@@ -341,7 +338,6 @@ redirect_from:
   - /2023/11/04/old-title/
   - /posts/old-title/
 permalink: /posts/new-canonical-title/
-layout: journals
 ---
 
 Your updated content lives here.

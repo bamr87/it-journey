@@ -22,7 +22,6 @@ sub-title: "From Fork to Feature: Your Complete Development Journey"
 excerpt: Step-by-step guide to fork, setup, and extend the powerful VSCode Front Matter CMS extension for enhanced content management workflows
 snippet: Transform your content management experience by contributing to the VSCode Front Matter ecosystem
 author: IT-Journey Team
-layout: journals
 keywords:
    primary:
       - vscode-front-matter

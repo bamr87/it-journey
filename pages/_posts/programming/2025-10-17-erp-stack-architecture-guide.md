@@ -16,7 +16,6 @@ sub-title: Building Enterprise-Grade Business Management Systems
 excerpt: Explore the complete architecture of modern ERP systems, from frontend frameworks to database design, infrastructure, and integration patterns
 snippet: A comprehensive guide to designing and implementing scalable enterprise resource planning systems
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - erp architecture

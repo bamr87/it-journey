@@ -17,7 +17,6 @@ date: 2025-07-03T16:39:35.046Z
 draft: false
 lastmod: 2025-07-17T00:00:00.000Z
 slug: music
-layout: journals
 excerpt: "Discover the best sources for free sheet music, from public domain collections to modern digital archives, perfect for musicians and music students"
 sub-title: "Your Complete Guide to Free Musical Resources"
 snippet: "Music is the universal language - and these resources ensure everyone can access its written form"

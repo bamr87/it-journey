@@ -16,7 +16,6 @@ quest_series: "Terminal Mastery Path"
 skill_focus: devops
 learning_style: hands-on
 fmContentType: quest
-layout: journals
 permalink: /quests/level-0010-oh-my-zsh-mastery/
 
 # === QUEST HIERARCHY ===

@@ -30,7 +30,6 @@ validation_criteria:
 - Create professional pull request with proper documentation
 - Implement automated GitHub Actions workflow
 - Execute complete feature development cycle using best practices
-layout: journals
 permalink: /quests/level-0100-source-control-sorcery/
 categories:
 - Quests

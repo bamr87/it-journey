@@ -27,7 +27,6 @@ level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
 author: IT-Journey Team
-layout: journals
 quest_series: Quest Documentation
 primary_technology: planning
 skill_focus:
@@ -545,7 +544,6 @@ categories:
 sub-title: "Level [BINARY] ([DECIMAL]) Quest: [Classification]"
 excerpt: "One-sentence summary of the quest's core learning objective"
 author: "IT-Journey Team"
-layout: journals
 keywords:
     primary:
         - [main-technology-skill]

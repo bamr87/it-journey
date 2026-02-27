@@ -16,7 +16,6 @@ sub-title: Resolving workflow failures through systematic AI-powered analysis
 excerpt: A hands-on debugging session that uncovered character encoding issues and script timeouts in GitHub Actions workflows
 snippet: The best debugging happens when human intuition meets AI-powered systematic analysis
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - github actions debugging

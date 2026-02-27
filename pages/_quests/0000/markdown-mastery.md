@@ -62,7 +62,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Documentation
-layout: journals
 permalink: /quests/level-0000-markdown-mastery/
 categories:
 - Quests

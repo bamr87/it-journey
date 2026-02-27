@@ -20,7 +20,6 @@ quest_type: side_quest
 keywords:
 - notes
 date: *id001
-layout: journals
 quest_series: Codex Reference
 primary_technology: reference
 skill_focus:

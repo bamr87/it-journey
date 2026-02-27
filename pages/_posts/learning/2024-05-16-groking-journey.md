@@ -14,7 +14,6 @@ categories:
 sub-title: null
 snippet: null
 author: bamr87 and grok
-layout: null
 keywords: {}
 lastmod: 2024-05-16T16:11:20.289Z
 sort_by: null

@@ -17,7 +17,6 @@ sub-title: Implementing backward compatibility for legacy bash environments in C
 excerpt: Fixed critical GitHub Actions failure by implementing bash 3.2 compatibility fallback in AI Evolution Engine health analysis scripts
 snippet: "When GitHub Actions meets bash 3.2: a tale of associative arrays and compatibility challenges"
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - github actions bash compatibility

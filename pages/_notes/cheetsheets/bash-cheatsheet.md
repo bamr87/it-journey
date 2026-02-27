@@ -22,7 +22,6 @@ keywords:
   - Loops
   - Conditional execution
   - Command substitution
-layout: default
 slug: /shell/
 lastmod: 2024-05-14T15:14:49.051Z
 draft: false

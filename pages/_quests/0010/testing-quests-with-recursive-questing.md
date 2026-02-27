@@ -41,7 +41,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Testing
-layout: journals
 permalink: /quests/level-0010-recursive-realms-testing/
 categories:
 - Quests

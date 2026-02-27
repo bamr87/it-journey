@@ -18,7 +18,6 @@ skill_focus:
 - Quests
 - Development
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0001-git-init-testing/
 categories:
 - Quests

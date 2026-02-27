@@ -79,7 +79,6 @@ quest_mapping:
   region: Adventurer
   realm: Development
   biome: Web
-layout: journals
 permalink: /quests/level-0101-jekyll-quest-tracking/
 categories:
 - Quests
@@ -384,7 +383,6 @@ Create `_layouts/quest-collection.html`:
 ```liquid
 {% raw %}
 ---
-layout: default
 ---
 {%- comment -%}
 Quest Collection Layout

@@ -19,7 +19,6 @@ sub-title: null
 excerpt: null
 snippet: null
 author: Cloud Quest Guide
-layout: null
 keywords: {}
 lastmod: 2025-03-12T18:24:53.477Z
 permalink: null

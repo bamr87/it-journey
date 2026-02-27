@@ -74,7 +74,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-layout: journals
 permalink: /quests/stating-the-stats/
 categories:
 - Quests
@@ -509,7 +508,6 @@ Create a new page for your statistics:
 # pages/stats.md
 title: "IT-Journey Statistics Portal"
 description: "Comprehensive analytics and metrics for the IT-Journey knowledge base"
-layout: default
 permalink: /stats/
 ---
 

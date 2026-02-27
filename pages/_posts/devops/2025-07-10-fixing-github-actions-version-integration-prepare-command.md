@@ -16,7 +16,6 @@ sub-title: Solving CI/CD Pipeline Failures Through Missing Command Implementatio
 excerpt: Diagnosed and fixed a GitHub Actions workflow failure caused by a missing 'prepare' command in the version integration script
 snippet: When automation breaks, the solution often lies in understanding what the system expects versus what it finds
 author: IT-Journey Team
-layout: journals
 keywords:
   primary:
     - github actions debugging

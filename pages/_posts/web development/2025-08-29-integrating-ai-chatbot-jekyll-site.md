@@ -18,7 +18,6 @@ sub-title: Building Interactive Static Sites with AI-Powered Assistance
 excerpt: Learn how to seamlessly integrate AI chatbots into Jekyll sites to provide real-time user assistance and enhance the learning experience
 snippet: "Static sites don't have to be static experiences - AI chatbots bridge the gap between simplicity and interactivity"
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - ai chatbot integration

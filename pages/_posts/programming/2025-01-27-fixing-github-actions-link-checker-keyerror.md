@@ -17,7 +17,6 @@ sub-title: "From Error to Excellence: Defensive Programming in CI/CD Workflows"
 excerpt: Resolved a critical KeyError in link checking automation through defensive programming and better error handling
 snippet: When automation fails, defensive programming saves the day
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - github actions debugging

@@ -21,7 +21,6 @@ toc: true
 toc_sticky: true
 draft: false
 
-layout: quest-collection
 level: 1001
 ---
 

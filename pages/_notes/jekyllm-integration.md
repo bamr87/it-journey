@@ -4,7 +4,6 @@ description: Exploring ideas and implementation strategies for integrating Large
 date: 2024-06-01T17:49:08.293Z
 excerpt: A comprehensive exploration of integrating LLMs into Jekyll workflows for content automation, review, and enhancement
 author: bamr87
-layout: default
 categories:
   - notes
   - jekyll

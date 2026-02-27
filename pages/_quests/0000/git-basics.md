@@ -63,7 +63,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Version Control
-layout: journals
 permalink: /quests/level-0000-git-basics/
 categories:
 - Quests

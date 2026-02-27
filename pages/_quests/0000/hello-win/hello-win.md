@@ -4,7 +4,6 @@ description: Set up a complete Windows development environment with WSL, PowerSh
   mastery, and essential development tools for the modern Windows developer
 preview: images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
-layout: journals
 permalink: /quests/hello-windows/
 keywords: &id001
 - windows

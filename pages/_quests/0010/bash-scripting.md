@@ -31,7 +31,6 @@ validation_criteria:
 - Demonstrate automation of repetitive tasks
 - Build a personal script library for common operations
 - Troubleshoot and debug script errors independently
-layout: journals
 permalink: /quests/0010/bash-scripting/
 categories:
 - Quests

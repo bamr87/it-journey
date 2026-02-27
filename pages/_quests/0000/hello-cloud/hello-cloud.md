@@ -43,7 +43,6 @@ skill_focus:
 - cli-tools
 - security-basics
 learning_style: hands-on
-layout: journals
 permalink: /quests/hello-cloud/
 categories:
 - Quests

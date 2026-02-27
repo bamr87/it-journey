@@ -19,7 +19,6 @@ sub-title: "Trading VLOOKUPs for grep: Why the command line is your new best fri
 excerpt: "Learn why the terminal is the ultimate productivity hack for finance and accounting professionals — and how to start using it today."
 snippet: "Automate your financial workflows with bash scripting — from month-end close to audit prep."
 author: "IT-Journey Team"
-layout: journals
 keywords:
     primary:
         - bash

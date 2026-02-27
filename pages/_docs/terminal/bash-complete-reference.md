@@ -4,7 +4,6 @@ description: "Exhaustive reference guide covering every aspect of GNU Bash — b
 date: 2026-02-20T00:00:00.000Z
 lastmod: 2026-02-20T00:00:00.000Z
 author: "IT-Journey Team"
-layout: journals
 permalink: /docs/bash-complete-reference/
 tags:
     - bash

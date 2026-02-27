@@ -15,7 +15,6 @@ categories: []
 sub-title: null
 snippet: null
 author: null
-layout: null
 keywords: {}
 slug: dynamic-sidebar-tree
 type: posts

@@ -1,7 +1,6 @@
 ---
 categories: gpt
 date: '2024-06-16 20:12:52'
-layout: journals
 section: Creative & Experimental
 title: Unwavering Joy of Fetch
 ---

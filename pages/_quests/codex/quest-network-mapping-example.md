@@ -13,7 +13,6 @@ tags:
 - learning-paths
 - hierarchy-system
 - mermaid-diagrams
-layout: default
 permalink: /quests/level-codex/quest-network-mapping-example/
 level: '0000'
 difficulty: 🟢 Easy

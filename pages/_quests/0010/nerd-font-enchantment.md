@@ -34,7 +34,6 @@ validation_criteria:
 - Configure VSCode to use Nerd Font
 - Verify icons display correctly
 - Test with Oh-My-Zsh themes
-layout: journals
 permalink: /quests/side-quest-nerd-font-enchantment/
 categories:
 - Quests

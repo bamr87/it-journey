@@ -1,6 +1,5 @@
 ---
 title: Quests (~) Index
-layout: quest-collection
 keywords:
     - init
     - hello world

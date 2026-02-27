@@ -60,7 +60,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-layout: journals
 permalink: /quests/level-1111-open-source-contribution/
 categories:
 - Quests

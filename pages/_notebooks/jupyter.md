@@ -6,7 +6,6 @@ date: '2025-07-03T16:39:35.0471Z'
 description: This is the Jupyter Notebook page
 draft: false
 lastmod: '2025-07-03T16:47:08.3124Z'
-layout: collection
 permalink: /notes/jupyter/
 title: Jupyter
 ---

@@ -27,7 +27,6 @@ level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
 author: IT-Journey Team
-layout: journals
 quest_series: Quest Templates
 primary_technology: template
 skill_focus:

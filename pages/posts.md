@@ -1,7 +1,6 @@
 ---
 title: Journey (~) Index
 author: Amr
-layout: blog
 description: Comprehensive collection of educational blog posts covering web development, DevOps, system administration, AI & machine learning, and emerging technologies - documenting the learning journey from zero to hero
 excerpt: A complete index of posts documenting this journey, organized into categories, journal entries, and articles
 date: 2025-11-16T00:00:00.000Z

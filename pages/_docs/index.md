@@ -1,7 +1,6 @@
 ---
 title: Learning Resources Library
 author: Amr Abdel Eissa
-layout: collection
 permalink: /docs/
 description: Reference documentation and learning resources for tools and technologies used in IT-Journey
 categories:
