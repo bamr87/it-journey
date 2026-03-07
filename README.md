@@ -72,11 +72,11 @@ The IT-Journey now features **Guardian 2.0**, a comprehensive testing framework 
 A: According to Ahrefs' 2024 SEO study, websites with broken links experience 23% lower search rankings. For educational platforms, dead links directly impact learning outcomes.
 
 > **Q: But isn't link checking simple?**
-> A: Basic link checking is simple, but intelligent analysis isn't. Guardian 2.0 goes beyond HTTP status codes—it categorizes failures, suggests fixes, and provides educational context. This transforms a maintenance task into a learning opportunity.
+> A: Basic link checking is simple, but intelligent analysis isn't. Link Health Guardian v3.0 goes beyond HTTP status codes—it categorizes failures, suggests fixes via AI, computes delta trends, and provides educational context. This transforms a maintenance task into a learning opportunity.
 
 **Get Started**: 
-- **Setup**: [Guardian 2.0 Setup Guide](test/hyperlink-guardian/docs/setup.md)
-- **Usage**: [Guardian 2.0 Usage Guide](test/hyperlink-guardian/docs/usage.md)
+- **Tool**: [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) — Link Health Guardian v3.0
+- **CI/CD**: [`.github/workflows/link-checker.yml`](.github/workflows/link-checker.yml) — Automated PR & scheduled checks
 - **Quest**: [Hyperlink Guardian Quest](pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
 
 ---

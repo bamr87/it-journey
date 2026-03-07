@@ -15,22 +15,6 @@ The IT-Journey testing framework follows modern DevOps practices with emphasis o
 ```
 test/
 ├── README.md                           # This comprehensive guide
-├── hyperlink-guardian/                 # Complete link health monitoring system
-│   ├── scripts/                       # Core testing scripts
-│   │   ├── guardian.sh               # Main link testing engine
-│   │   ├── ai-analyzer.py            # AI-powered failure analysis
-│   │   └── validate.sh               # Local validation and testing
-│   ├── config/                       # Configuration files
-│   │   ├── guardian-config.yml       # Main configuration
-│   │   ├── exclusions.txt           # URL exclusion patterns
-│   │   └── test-config.json         # Test environment settings
-│   ├── templates/                    # Output and report templates
-│   │   ├── issue-template.md         # GitHub issue template
-│   │   └── report-template.html      # HTML report template
-│   └── docs/                         # Testing documentation
-│       ├── setup.md                  # Setup and configuration guide
-│       ├── usage.md                  # Usage examples and patterns
-│       └── troubleshooting.md        # Common issues and solutions
 ├── quest-solutions/                    # Quest completion validation framework
 │   ├── README.md                      # Framework guide and authoring instructions
 │   ├── validate-quest-solution.sh     # Main validation entry point
@@ -52,38 +36,29 @@ test/
 └── [future-test-frameworks]/          # Additional testing systems
 ```
 
-## 🔗 Hyperlink Guardian System
+## 🔗 Link Health Monitoring
 
-The flagship testing system that provides comprehensive link health monitoring with AI-powered analysis.
+Link health monitoring is now handled by **Link Health Guardian v3.0** (`scripts/validation/link-checker.py`), which consolidates all link checking into a single Python tool with lychee and curl engines, AI-powered analysis, and GitHub Actions integration.
 
 ### Quick Start
 
 ```bash
-# Run basic link health check
-./test/hyperlink-guardian/scripts/guardian.sh
+# Run link health check (uses lychee engine by default)
+python3 scripts/validation/link-checker.py --scope repo
 
-# Run with verbose output and custom settings
-./test/hyperlink-guardian/scripts/guardian.sh --verbose --parallel 15
+# Run with curl fallback engine
+python3 scripts/validation/link-checker.py --engine curl --scope repo
 
-# Validate the system locally
-./test/hyperlink-guardian/scripts/validate.sh
+# Full check with AI analysis
+python3 scripts/validation/link-checker.py --scope repo --ai-analyze
 ```
 
-### Key Features
+### Key Resources
 
-- **Comprehensive Link Detection**: Scans all markdown and HTML files
-- **Intelligent Analysis**: AI-powered failure categorization and recommendations
-- **Automated Reporting**: GitHub issue creation with detailed insights
-- **Performance Optimized**: Parallel processing with configurable limits
-- **Educational Focus**: Specialized analysis for learning platforms
-
-### Configuration
-
-The system uses a layered configuration approach:
-1. **Default Settings**: Built into the scripts
-2. **Configuration Files**: YAML and JSON config files
-3. **Environment Variables**: Runtime overrides
-4. **Command Line Arguments**: Per-execution customization
+- **Tool**: [`scripts/validation/link-checker.py`](../scripts/validation/link-checker.py) — Link Health Guardian v3.0
+- **Config**: [`.lychee.toml`](../.lychee.toml) — Declarative lychee configuration
+- **CI/CD**: [`.github/workflows/link-checker.yml`](../.github/workflows/link-checker.yml) — PR + scheduled checks
+- **Results**: `link-check-results/` — Runtime output directory
 
 ## 🧪 Quest Solutions Framework
 
@@ -130,10 +105,10 @@ See the [Quest Solutions Framework README](quest-solutions/README.md) for the fu
 The testing framework integrates seamlessly with GitHub Actions:
 
 **Workflows**:
-- `.github/workflows/hyperlink-guardian.yml` — Link health monitoring
+- `.github/workflows/link-checker.yml` — Link health monitoring (PR + scheduled)
 - `.github/workflows/validate-solutions.yml` — Quest solution structural validation
 
-**Hyperlink Guardian Schedule**: Daily at 3:00 AM UTC (configurable)
+**Link Checker Schedule**: Weekly (configurable via workflow_dispatch)
 
 **Solution Validation Triggers**:
 - Push/PR changes to `test/quest-solutions/`
@@ -148,17 +123,18 @@ The testing framework integrates seamlessly with GitHub Actions:
 
 ### Test Results Structure
 
+Link check results are stored in `link-check-results/` (gitignored runtime outputs):
+
 ```
-test-results/
-├── summary.json              # High-level statistics and metadata
-├── detailed-results.csv      # Complete test results with timestamps
-├── broken-links.json        # Categorized broken link analysis
-├── ai-analysis.json         # AI-generated insights and recommendations
-├── performance-metrics.json  # Execution timing and resource usage
-└── artifacts/               # Supporting files and logs
-    ├── raw-links.txt        # All discovered links
-    ├── test-log.txt        # Execution log with debug info
-    └── screenshots/         # Visual evidence (future enhancement)
+link-check-results/
+├── .gitkeep                  # Preserves directory in git
+├── lychee_results.json       # Raw lychee output
+├── statistics.env            # Machine-readable stats
+├── summary.md                # Human-readable summary
+├── detailed_analysis.md      # Failure categorization report
+├── broken_links_baseline.json # Delta comparison baseline
+├── ai_analysis.md            # AI-generated insights
+└── ai_analysis_summary.env   # AI summary metrics
 ```
 
 ### AI Analysis Output
@@ -180,28 +156,30 @@ The AI analysis provides:
 3. Update this README with documentation
 4. Add GitHub Actions integration if needed
 
-### Extending the Hyperlink Guardian
+### Extending Link Health Guardian
 
-The system is designed for extensibility:
+The v3.0 tool at `scripts/validation/link-checker.py` is designed for extensibility:
 
-**Custom Link Types**: Add new URL patterns and validation rules
-**Enhanced AI Analysis**: Extend prompts and analysis categories  
+**Custom Engines**: Add new link checking engines beyond lychee/curl
+**Enhanced AI Analysis**: Extend OpenAI/Anthropic prompts and analysis categories  
 **Additional Outputs**: Create new report formats and destinations
 **Integration Points**: Connect with external monitoring systems
 
 ### Local Development
 
 ```bash
-# Set up development environment
-cd test/hyperlink-guardian
-./scripts/validate.sh --setup
+# Install dependencies
+pip install -r scripts/validation/requirements.txt
 
-# Run tests with development settings
-./scripts/guardian.sh --config config/test-config.json --verbose
+# Run link checker locally
+python3 scripts/validation/link-checker.py --scope repo --verbose
 
-# Test AI analysis locally (requires OPENAI_API_KEY)
+# Run with AI analysis (requires API key)
 export OPENAI_API_KEY="your-key-here"
-./scripts/ai-analyzer.py --input ./test-results --verbose
+python3 scripts/validation/link-checker.py --scope repo --ai-analyze
+
+# Run unit tests
+python3 -m pytest scripts/validation/ -v
 ```
 
 ## 📚 Educational Value
@@ -238,48 +216,41 @@ The testing framework serves multiple educational purposes:
 | `TIMEOUT` | Request timeout in seconds | 30 | No |
 | `VERBOSE` | Enable verbose logging | false | No |
 
-### Configuration Files
+### Configuration
 
-**Guardian Config** (`config/guardian-config.yml`):
-```yaml
-site:
-  url: "https://bamr87.github.io/it-journey"
-  timeout: 30
-  retry_count: 2
-
-testing:
-  max_parallel: 10
-  exclude_patterns: 
-    - "localhost"
-    - "127.0.0.1"
-  
-ai_analysis:
-  model: "gpt-4"
-  max_tokens: 3000
-  temperature: 0.3
+**Lychee Config** (`.lychee.toml`):
+```toml
+max_concurrency = 32
+timeout = 20
+cache = true
+max_cache_age = "7d"
+exclude = [
+  "https://url/",
+  "https://github\\.com/.*/blob/.*",
+]
 ```
+
+See [`.lychee.toml`](../.lychee.toml) for complete configuration.
 
 ## 🚨 Troubleshooting
 
 ### Common Issues
 
-**No Links Found**: Check file patterns and exclusion rules
-**Permission Denied**: Ensure scripts are executable (`chmod +x`)
-**AI Analysis Fails**: Verify OPENAI_API_KEY is set correctly
-**Timeout Errors**: Increase timeout values for slow connections
+**No Links Found**: Check `.lychee.toml` exclude patterns and path settings
+**AI Analysis Fails**: Verify OPENAI_API_KEY or ANTHROPIC_API_KEY is set
+**Timeout Errors**: Increase timeout in `.lychee.toml`
+**Lychee Not Found**: Install via `brew install lychee` or `cargo install lychee`
 
 ### Debug Mode
 
 ```bash
-# Enable comprehensive debugging
-export VERBOSE=true
-export DEBUG=true
-./test/hyperlink-guardian/scripts/guardian.sh --verbose
+# Enable verbose output
+python3 scripts/validation/link-checker.py --scope repo --verbose
 ```
 
 ### Getting Help
 
-1. **Documentation**: Check `test/hyperlink-guardian/docs/` for detailed guides
+1. **Tool Docs**: See `scripts/validation/link-checker.py --help` for usage
 2. **Issues**: Report problems via GitHub Issues with the `testing` label
 3. **Discussions**: Join community discussions for questions and improvements
 4. **Quest Guide**: Follow the [Hyperlink Guardian Quest](../pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)

@@ -137,7 +137,7 @@ class LinkHealthGuardian:
             self.log("ERROR", "lychee not found -- install it or use --engine curl")
             return False
 
-    # -- Engine: curl (guardian.sh port) ------------------------------------
+    # -- Engine: curl (fallback) ---------------------------------------------
     def run_curl(self, files):
         self.log("INFO", "Using curl engine (fallback)")
         url_pattern = re.compile(r'https?://[^\s\)\]>"' + "'" + r']+')

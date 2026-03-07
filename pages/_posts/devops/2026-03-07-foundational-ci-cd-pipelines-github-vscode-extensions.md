@@ -2,58 +2,58 @@
 title: Foundational CI/CD Pipelines with GitHub Actions for VS Code Extensions
 description: Learn how to build robust CI/CD pipelines using GitHub Actions for VS Code extension development. A real-world walkthrough using the vs-sonic-pi extension, covering linting, testing, building, and automated marketplace publishing.
 date: 2026-03-07T00:00:00.000Z
-lastmod: 2026-03-07T22:17:54.356Z
+lastmod: 2026-03-07T23:22:34.701Z
 author: IT-Journey Team
 permalink: /posts/foundational-ci-cd-pipelines-github-vscode-extensions/
 tags:
-    - github-actions
-    - ci-cd
-    - vscode-extension
-    - devops
-    - automation
-    - tutorial
-    - intermediate
+  - github-actions
+  - ci-cd
+  - vscode-extension
+  - devops
+  - automation
+  - tutorial
+  - intermediate
 categories:
-    - DevOps
-    - Tutorials
+  - DevOps
+  - Tutorials
 sub-title: From lint and test to automated Marketplace publishing with real-world examples
 section: DevOps
 keywords:
-    primary:
-        - github actions ci cd
-        - vscode extension ci cd
-        - github actions tutorial
-    secondary:
-        - continuous integration
-        - continuous deployment
-        - vsce publish
-        - automated testing
-        - node.js ci pipeline
+  primary:
+    - github actions ci cd
+    - vscode extension ci cd
+    - github actions tutorial
+  secondary:
+    - continuous integration
+    - continuous deployment
+    - vsce publish
+    - automated testing
+    - node.js ci pipeline
 excerpt: Build a production-ready CI/CD pipeline for a VS Code extension using GitHub Actions — from lint and test to automated marketplace publishing.
 preview: images/previews/foundational-ci-cd-pipelines-github-vscode-extensions.png
 snippet: Ship your VS Code extension with confidence using a two-workflow CI/CD pipeline on GitHub Actions.
 difficulty: 🟡 Intermediate
 estimated_reading_time: 15-20 minutes
 prerequisites:
-    - Basic Git and GitHub knowledge
-    - Familiarity with Node.js and npm
-    - A VS Code extension project (or willingness to follow along)
-    - A GitHub repository
+  - Basic Git and GitHub knowledge
+  - Familiarity with Node.js and npm
+  - A VS Code extension project (or willingness to follow along)
+  - A GitHub repository
 learning_outcomes:
-    - 🎯 Understand the role of CI and CD in extension development
-    - ⚡ Create a multi-version Node.js CI workflow with GitHub Actions
-    - 🛠️ Automate linting, building, testing, and packaging with vsce
-    - 🔗 Configure tag-based releases that publish to the VS Code Marketplace
+  - 🎯 Understand the role of CI and CD in extension development
+  - ⚡ Create a multi-version Node.js CI workflow with GitHub Actions
+  - 🛠️ Automate linting, building, testing, and packaging with vsce
+  - 🔗 Configure tag-based releases that publish to the VS Code Marketplace
 content_series: CI/CD Fundamentals
 related_posts:
-    - /posts/docker-beginners-tutorial/
-    - /debugging-github-actions-workflows-ai-assisted/
-    - /fixing-github-actions-bash-compatibility-ai-evolution-engine/
+  - /posts/docker-beginners-tutorial/
+  - /debugging-github-actions-workflows-ai-assisted/
+  - /fixing-github-actions-bash-compatibility-ai-evolution-engine/
 validation_methods:
-    - Fork the vs-sonic-pi repo and trigger a CI run by opening a PR
-    - Create a tag and watch the release workflow execute
-    - Verify the .vsix artifact is downloadable from the Actions tab
-layout: journals
+  - Fork the vs-sonic-pi repo and trigger a CI run by opening a PR
+  - Create a tag and watch the release workflow execute
+  - Verify the .vsix artifact is downloadable from the Actions tab
+layout: posts
 attachments: ""
 comments: true
 draft: false
