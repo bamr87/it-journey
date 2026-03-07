@@ -14,6 +14,9 @@
 #   -f, --file FILE         Process a specific file only
 #   -c, --collection NAME   Process specific collection (posts, quickstart, docs)
 #   -p, --provider PROVIDER AI provider (openai, stability, local)
+#   -e, --enhance           Enhance/improve existing preview images using AI
+#   --enhance-prompt TEXT    Custom enhancement prompt (implies --enhance)
+#   --enhance-model MODEL   Model for enhancement (default: gpt-image-1)
 #   --output-dir DIR        Output directory for images (default: assets/images/previews)
 #   --force                 Regenerate images even if preview exists
 #   --list-missing          Only list files with missing previews
@@ -29,19 +32,26 @@
 #   STABILITY_API_KEY       Stability AI API key for Stable Diffusion
 #   IMAGE_STYLE             Default image style (default: "digital art, professional")
 #   IMAGE_SIZE              Image dimensions (default: "1024x1024")
+#   ENHANCE_MODEL           Model for image enhancement (default: "gpt-image-1")
+#   ENHANCE_QUALITY         Quality for enhancement: low, medium, high, auto (default: "auto")
+#   ENHANCE_FIDELITY        Input fidelity for edits: high, low (default: "high")
+#   ENHANCE_FORMAT          Output format for edits: png, jpeg, webp (default: "png")
 #
 # Examples:
 #   ./scripts/generation/generate-preview-images.sh --dry-run
 #   ./scripts/generation/generate-preview-images.sh --collection posts
 #   ./scripts/generation/generate-preview-images.sh --file pages/_posts/my-post.md
 #   ./scripts/generation/generate-preview-images.sh --provider openai --verbose
+#   ./scripts/generation/generate-preview-images.sh --enhance --file pages/_posts/my-post.md
+#   ./scripts/generation/generate-preview-images.sh --enhance-prompt "fix all text" --file my-post.md
+#   ./scripts/generation/generate-preview-images.sh --enhance --enhance-fidelity high -f my-post.md
 #
 
 set -euo pipefail
 
 # Get script directory and source common utilities
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 # Load environment variables from .env file if it exists
 if [[ -f "$PROJECT_ROOT/.env" ]]; then
@@ -168,9 +178,19 @@ IMAGE_SIZE="${IMAGE_SIZE:-$CONFIG_SIZE}"
 IMAGE_QUALITY="${IMAGE_QUALITY:-$CONFIG_QUALITY}"
 IMAGE_MODEL="${IMAGE_MODEL:-$CONFIG_MODEL}"
 
+# Enhancement configuration
+ENHANCE="${ENHANCE:-false}"
+ENHANCE_PROMPT=""
+ENHANCE_MODEL="${ENHANCE_MODEL:-gpt-image-1}"
+ENHANCE_QUALITY="${ENHANCE_QUALITY:-auto}"
+ENHANCE_FIDELITY="${ENHANCE_FIDELITY:-high}"
+ENHANCE_FORMAT="${ENHANCE_FORMAT:-png}"
+DEFAULT_ENHANCE_PROMPT="Improve this preview banner image: fix any misspelled, garbled, or incorrect text so it reads clearly and accurately. Sharpen visual details and improve composition while preserving the original art style, color palette, and theme. Ensure the image is clean and professional."
+
 # Counters
 PROCESSED=0
 GENERATED=0
+ENHANCED=0
 SKIPPED=0
 ERRORS=0
 
@@ -188,6 +208,11 @@ OPTIONS:
     -f, --file FILE         Process a specific file only
     -c, --collection NAME   Process specific collection (posts, quickstart, docs)
     -p, --provider PROVIDER AI provider: openai, stability, local (default: openai)
+    -e, --enhance           Enhance/improve existing preview images using AI
+    --enhance-prompt TEXT   Custom enhancement prompt (implies --enhance)
+    --enhance-model MODEL  Model for enhancement (default: gpt-image-1)
+    --enhance-fidelity VAL Input fidelity: high or low (default: high)
+    --enhance-format FMT   Output format: png, jpeg, webp (default: png)
     --output-dir DIR        Output directory for images (default: assets/images/previews)
     --force                 Regenerate images even if preview exists
     --list-missing          Only list files with missing previews
@@ -198,6 +223,10 @@ ENVIRONMENT VARIABLES:
     IMAGE_STYLE             Override style from _config.yml
     IMAGE_SIZE              Override size (default: 1792x1024 landscape)
     IMAGE_MODEL             OpenAI model (default: dall-e-3)
+    ENHANCE_MODEL           Model for enhancement (default: gpt-image-1)
+    ENHANCE_QUALITY         Quality: low, medium, high, auto (default: auto)
+    ENHANCE_FIDELITY        Input fidelity: high or low (default: high)
+    ENHANCE_FORMAT          Output format: png, jpeg, webp (default: png)
 
 CONFIGURATION:
     Default settings are loaded from _config.yml under 'preview_images' section.
@@ -218,6 +247,18 @@ EXAMPLES:
 
     # Force regenerate all images
     ./scripts/generation/generate-preview-images.sh --force
+
+    # Enhance an existing preview image with default improvements
+    ./scripts/generation/generate-preview-images.sh --enhance -f pages/_posts/my-post.md
+
+    # Enhance with a custom prompt
+    ./scripts/generation/generate-preview-images.sh --enhance-prompt "Fix the text to read 'CI/CD Pipeline' and sharpen the icons" -f my-post.md
+
+    # Enhance with high fidelity and JPEG output
+    ./scripts/generation/generate-preview-images.sh --enhance --enhance-fidelity high --enhance-format jpeg -f my-post.md
+
+    # Enhance all images in a collection
+    ./scripts/generation/generate-preview-images.sh --enhance --collection posts
 
 EOF
 }
@@ -257,6 +298,28 @@ parse_args() {
                 ;;
             --list-missing)
                 LIST_ONLY="true"
+                ;;
+            -e|--enhance)
+                ENHANCE="true"
+                ;;
+            --enhance-prompt)
+                ENHANCE_PROMPT="$2"
+                ENHANCE="true"
+                shift
+                ;;
+            --enhance-model)
+                ENHANCE_MODEL="$2"
+                shift
+                ;;
+            --enhance-fidelity)
+                ENHANCE_FIDELITY="$2"
+                ENHANCE="true"
+                shift
+                ;;
+            --enhance-format)
+                ENHANCE_FORMAT="$2"
+                ENHANCE="true"
+                shift
                 ;;
             *)
                 error "Unknown option: $1. Use --help for usage."
@@ -329,8 +392,8 @@ validate_environment() {
 extract_front_matter() {
     local file="$1"
     
-    # Extract content between --- markers
-    sed -n '/^---$/,/^---$/p' "$file" | sed '1d;$d'
+    # Extract content between first two --- markers only
+    awk 'BEGIN{p=0} /^---$/{if(p==0){p=1;next}else{exit}} p{print}' "$file"
 }
 
 # Get YAML value using available parser
@@ -347,19 +410,19 @@ get_yaml_value() {
             result=""
         fi
     else
-        # Python fallback
-        result=$(python3 -c "
-import yaml
-import sys
+        # Python fallback - pipe YAML via stdin to avoid quoting issues
+        result=$(echo "$yaml" | python3 -c "
+import yaml, sys
 try:
-    data = yaml.safe_load('''$yaml''')
-    if data and '$key' in data:
-        val = data['$key']
+    data = yaml.safe_load(sys.stdin.read())
+    key = sys.argv[1]
+    if data and key in data:
+        val = data[key]
         if val is not None:
             print(val)
 except:
     pass
-" 2>/dev/null || echo "")
+" "$key" 2>/dev/null || echo "")
     fi
     
     echo "$result"
@@ -562,6 +625,177 @@ generate_image() {
     esac
 }
 
+# =============================================================================
+# Image Enhancement Functions
+# =============================================================================
+
+# Build the enhancement prompt from context and user input
+build_enhance_prompt() {
+    local title="$1"
+    local description="$2"
+    local custom_prompt="$3"
+    
+    local prompt=""
+    
+    if [[ -n "$custom_prompt" ]]; then
+        prompt="$custom_prompt"
+    else
+        prompt="$DEFAULT_ENHANCE_PROMPT"
+    fi
+    
+    # Add article context
+    if [[ -n "$title" ]]; then
+        prompt="$prompt Context: This is a preview banner for an article titled '$title'."
+    fi
+    
+    if [[ -n "$description" ]]; then
+        prompt="$prompt Article topic: $description."
+    fi
+    
+    # Add style consistency instruction
+    prompt="$prompt Maintain the $IMAGE_STYLE artistic style."
+    
+    echo "$prompt"
+}
+
+# Enhance an existing image using OpenAI's /v1/images/edits endpoint
+# API Reference: https://developers.openai.com/api/reference/resources/images/methods/edit
+# Guide: https://developers.openai.com/api/docs/guides/image-generation#edit-images
+enhance_image_openai() {
+    local image_file="$1"
+    local prompt="$2"
+    local output_file="$3"
+    local model="${ENHANCE_MODEL}"
+    
+    debug "Enhancing image with OpenAI ($model)..."
+    debug "Source image: $image_file"
+    debug "Enhancement prompt: ${prompt:0:200}..."
+    debug "Input fidelity: $ENHANCE_FIDELITY"
+    debug "Output format: $ENHANCE_FORMAT"
+    debug "Quality: $ENHANCE_QUALITY"
+    
+    # Build curl command per official API:
+    # POST /v1/images/edits
+    # Form params: image[]=@file, prompt, model, n, size, quality,
+    #              input_fidelity, output_format
+    local response
+    response=$(curl -s -X POST "https://api.openai.com/v1/images/edits" \
+        -H "Authorization: Bearer $OPENAI_API_KEY" \
+        -F "image[]=@$image_file" \
+        -F "prompt=$prompt" \
+        -F "model=$model" \
+        -F "n=1" \
+        -F "size=auto" \
+        -F "quality=$ENHANCE_QUALITY" \
+        -F "input_fidelity=$ENHANCE_FIDELITY" \
+        -F "output_format=$ENHANCE_FORMAT")
+    
+    # Check for errors
+    local error_msg
+    error_msg=$(echo "$response" | jq -r '.error.message // empty')
+    if [[ -n "$error_msg" ]]; then
+        warn "OpenAI enhance API error: $error_msg"
+        debug "Full response: $response"
+        return 1
+    fi
+    
+    # Log token usage if available
+    local total_tokens
+    total_tokens=$(echo "$response" | jq -r '.usage.total_tokens // empty')
+    if [[ -n "$total_tokens" ]]; then
+        debug "Token usage: $total_tokens total (input: $(echo "$response" | jq -r '.usage.input_tokens // "?"'), output: $(echo "$response" | jq -r '.usage.output_tokens // "?"'))"
+    fi
+    
+    # Response returns b64_json by default for GPT Image models
+    local b64_data
+    b64_data=$(echo "$response" | jq -r '.data[0].b64_json // empty')
+    
+    if [[ -n "$b64_data" ]]; then
+        debug "Decoding base64 enhanced image..."
+        echo "$b64_data" | base64 -d > "$output_file"
+    else
+        # Fallback: try URL (returned by DALL-E 2)
+        local image_url
+        image_url=$(echo "$response" | jq -r '.data[0].url // empty')
+        if [[ -n "$image_url" ]]; then
+            debug "Downloading enhanced image from URL..."
+            curl -s -o "$output_file" "$image_url"
+        else
+            warn "No image data in enhance response"
+            debug "Response: $(echo "$response" | jq -c '.' 2>/dev/null || echo "$response")"
+            return 1
+        fi
+    fi
+    
+    # Log revised prompt if available
+    local revised_prompt
+    revised_prompt=$(echo "$response" | jq -r '.data[0].revised_prompt // empty')
+    if [[ -n "$revised_prompt" ]]; then
+        debug "Revised prompt: ${revised_prompt:0:200}..."
+    fi
+    
+    if [[ -f "$output_file" && -s "$output_file" ]]; then
+        local file_size
+        file_size=$(du -h "$output_file" | cut -f1)
+        success "Enhanced image saved to: $output_file ($file_size)"
+        return 0
+    else
+        warn "Failed to save enhanced image"
+        return 1
+    fi
+}
+
+# Find the existing preview image file on disk
+find_preview_image() {
+    local preview_path="$1"
+    local result=""
+    
+    if [[ -z "$preview_path" ]]; then
+        return 1
+    fi
+    
+    # Try various path resolutions
+    local clean_path="${preview_path#/}"
+    local candidates=(
+        "$PROJECT_ROOT/$clean_path"
+        "$PROJECT_ROOT/assets/$clean_path"
+        "$PROJECT_ROOT/$OUTPUT_DIR/$(basename "$clean_path")"
+    )
+    
+    for candidate in "${candidates[@]}"; do
+        if [[ -f "$candidate" ]]; then
+            echo "$candidate"
+            return 0
+        fi
+    done
+    
+    return 1
+}
+
+# Enhance image using selected provider
+enhance_image() {
+    local image_file="$1"
+    local prompt="$2"
+    local output_file="$3"
+    
+    case "$AI_PROVIDER" in
+        openai)
+            enhance_image_openai "$image_file" "$prompt" "$output_file"
+            ;;
+        local)
+            warn "Local provider: No actual enhancement. Logging prompt..."
+            debug "Enhancement prompt: ${prompt:0:400}..."
+            info "Placeholder: would enhance $image_file"
+            cp "$image_file" "$output_file" 2>/dev/null || true
+            return 0
+            ;;
+        *)
+            warn "Enhancement not supported for provider: $AI_PROVIDER (falling back to OpenAI)"
+            enhance_image_openai "$image_file" "$prompt" "$output_file"
+            ;;
+    esac
+}
+
 # Update front matter with new preview path
 update_front_matter() {
     local file="$1"
@@ -642,6 +876,66 @@ process_file() {
     debug "Title: $title"
     debug "Preview: $preview"
     
+    # =========================================================================
+    # ENHANCE MODE: improve an existing preview image
+    # =========================================================================
+    if [[ "$ENHANCE" == "true" ]]; then
+        # Find the existing preview image on disk
+        local existing_image
+        existing_image=$(find_preview_image "$preview" 2>/dev/null || echo "")
+        
+        if [[ -z "$existing_image" || ! -f "$existing_image" ]]; then
+            warn "No existing preview image found for: $title"
+            warn "  Expected at: $preview"
+            warn "  Use without --enhance to generate a new image first."
+            SKIPPED=$((SKIPPED + 1))
+            return 0
+        fi
+        
+        info "Enhancing preview for: $title"
+        debug "Source image: $existing_image ($(du -h "$existing_image" | cut -f1))"
+        
+        # Build enhancement prompt
+        local enhance_prompt
+        enhance_prompt=$(build_enhance_prompt "$title" "$description" "$ENHANCE_PROMPT")
+        
+        debug "Enhancement prompt: ${enhance_prompt:0:400}..."
+        
+        if [[ "$DRY_RUN" == "true" ]]; then
+            info "[DRY RUN] Would enhance image:"
+            echo "  Source: $existing_image"
+            echo "  Model: $ENHANCE_MODEL"
+            echo "  Prompt: ${enhance_prompt:0:400}..."
+            echo ""
+            ENHANCED=$((ENHANCED + 1))
+            return 0
+        fi
+        
+        # Backup original before overwriting
+        local backup_file="${existing_image%.png}_pre-enhance.png"
+        if [[ ! -f "$backup_file" ]]; then
+            cp "$existing_image" "$backup_file"
+            info "Original backed up to: $(basename "$backup_file")"
+        else
+            debug "Backup already exists: $backup_file"
+        fi
+        
+        # Enhance the image (output overwrites original)
+        if enhance_image "$existing_image" "$enhance_prompt" "$existing_image"; then
+            ENHANCED=$((ENHANCED + 1))
+        else
+            warn "Failed to enhance image for: $title"
+            info "Original preserved at: $backup_file"
+            ERRORS=$((ERRORS + 1))
+        fi
+        
+        return 0
+    fi
+    
+    # =========================================================================
+    # GENERATE MODE: create new preview image (default)
+    # =========================================================================
+    
     # Check if preview exists and is valid
     if [[ -n "$preview" ]] && check_preview_exists "$preview"; then
         if [[ "$FORCE" != "true" ]]; then
@@ -672,8 +966,9 @@ process_file() {
     safe_filename="${safe_filename:0:50}"  # Limit length
     
     local output_file="$PROJECT_ROOT/$OUTPUT_DIR/${safe_filename}.png"
-    # Preview path should NOT include /assets/ prefix since the template adds it
-    local preview_path="/images/previews/${safe_filename}.png"
+    # Preview path uses relative 'images/previews/' prefix (no leading / or /assets/)
+    # Actual file lives in assets/images/previews/ on disk
+    local preview_path="images/previews/${safe_filename}.png"
     
     # Extract content for prompt generation
     local content
@@ -738,6 +1033,18 @@ main() {
     echo "  Dry Run: $DRY_RUN"
     echo "  Force: $FORCE"
     echo "  List Only: $LIST_ONLY"
+    if [[ "$ENHANCE" == "true" ]]; then
+        echo "  Mode: ENHANCE (improve existing images)"
+        echo "  Enhance Model: $ENHANCE_MODEL"
+        echo "  Enhance Quality: $ENHANCE_QUALITY"
+        echo "  Input Fidelity: $ENHANCE_FIDELITY"
+        echo "  Output Format: $ENHANCE_FORMAT"
+        if [[ -n "$ENHANCE_PROMPT" ]]; then
+            echo "  Custom Prompt: ${ENHANCE_PROMPT:0:80}..."
+        else
+            echo "  Prompt: (default improvement prompt)"
+        fi
+    fi
     echo ""
     
     # Get configured collections from _config.yml
@@ -825,6 +1132,7 @@ main() {
     print_header "📊 Summary"
     echo "  Files processed: $PROCESSED"
     echo "  Images generated: $GENERATED"
+    echo "  Images enhanced: $ENHANCED"
     echo "  Files skipped: $SKIPPED"
     echo "  Errors: $ERRORS"
     echo ""

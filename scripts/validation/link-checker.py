@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """
-IT-Journey Link Health Guardian - Comprehensive Link Checker
-A unified script for link checking, analysis, and AI-powered insights
+IT-Journey Link Health Guardian v3.0 — Optimized Link Checker
+
+Unified link checking with:
+- Lychee (primary, via .lychee.toml) or curl (fallback) engines
+- Persistent caching via .lycheecache (cross-run)
+- Incremental --changed-only mode for PR checks
+- Delta-only AI analysis (only new broken links sent to AI)
+- Multi-provider AI (OpenAI, Anthropic, or none)
+- --include-site flag for opt-in _site/ scanning
+- Timing instrumentation for performance tracking
 """
 
 import argparse
@@ -12,1060 +20,664 @@ import subprocess
 import sys
 import time
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
-import shutil
+try:
+    import requests
+except ImportError:
+    requests = None  # AI analysis unavailable without requests
 
 
 class LinkHealthGuardian:
+    VERSION = "3.0.0"
+
     def __init__(self, config):
         self.config = config
-        self.output_dir = config.get('output_dir', 'link-check-results')
+        self.output_dir = config.get("output_dir", "link-check-results")
         self.results = {}
         self.analysis = {}
-        self.ai_analysis = {}
-        
-        # Ensure output directory exists
+        self.timings = {}
+        self._colors = {
+            "INFO": "\033[0;34m",
+            "SUCCESS": "\033[0;32m",
+            "WARNING": "\033[1;33m",
+            "ERROR": "\033[0;31m",
+            "NC": "\033[0m",
+        }
         Path(self.output_dir).mkdir(parents=True, exist_ok=True)
-        
-        # Initialize logging
-        self.setup_logging()
-    
-    def setup_logging(self):
-        """Setup colored logging for better output visibility."""
-        self.colors = {
-            'INFO': '\033[0;34m',
-            'SUCCESS': '\033[0;32m',
-            'WARNING': '\033[1;33m',
-            'ERROR': '\033[0;31m',
-            'NC': '\033[0m'  # No Color
-        }
-    
-    def log(self, level, message):
-        """Log a message with color coding."""
-        color = self.colors.get(level, '')
-        nc = self.colors['NC']
-        print(f"{color}[{level}]{nc} {message}")
-    
-    def install_dependencies(self):
-        """Install required dependencies for link checking."""
-        self.log('INFO', 'Installing link checking dependencies...')
-        
-        try:
-            # Check if lychee is already installed
-            result = subprocess.run(['lychee', '--version'], capture_output=True, text=True)
-            if result.returncode == 0:
-                self.log('SUCCESS', f'Lychee already installed: {result.stdout.strip()}')
-                return True
-        except FileNotFoundError:
-            pass
-        
-        # Install lychee
-        self.log('INFO', 'Installing Lychee link checker...')
-        try:
-            # Choose install method by platform
-            platform = sys.platform
 
-            # Prefer package managers if available
-            if platform == 'darwin' and shutil.which('brew'):
-                self.log('INFO', 'Installing lychee with Homebrew (macOS)')
-                subprocess.run(['brew', 'install', 'lychee'], check=True)
-            elif platform.startswith('linux'):
-                # Try cargo install as primary method (most reliable)
-                if shutil.which('cargo'):
-                    self.log('INFO', 'Installing lychee with cargo')
-                    try:
-                        subprocess.run(['cargo', 'install', 'lychee', '--locked'], check=True, timeout=300)
-                        return True
-                    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
-                        self.log('WARNING', 'Cargo install failed or timed out, trying alternative methods')
-                
-                # Try downloading pre-built binary with retries and fallback versions
-                self.log('INFO', 'Downloading lychee pre-built binary')
-                
-                # Try multiple versions for resilience
-                versions_to_try = [
-                    'latest',
-                    'v0.16.1',  # Known stable version
-                    'v0.15.1'   # Fallback
-                ]
-                
-                for version in versions_to_try:
-                    try:
-                        if version == 'latest':
-                            tarball_url = 'https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz'
-                        else:
-                            tarball_url = f'https://github.com/lycheeverse/lychee/releases/download/{version}/lychee-x86_64-unknown-linux-gnu.tar.gz'
-                        
-                        self.log('INFO', f'Attempting download from {version}')
-                        
-                        # Download with retries
-                        max_retries = 3
-                        for attempt in range(max_retries):
-                            try:
-                                subprocess.run(['curl', '-sSfL', '--retry', '3', '--retry-delay', '2', 
-                                              tarball_url, '-o', '/tmp/lychee.tar.gz'], 
-                                              check=True, timeout=60)
-                                break
-                            except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as e:
-                                if attempt == max_retries - 1:
-                                    raise
-                                self.log('WARNING', f'Download attempt {attempt + 1} failed, retrying...')
-                                time.sleep(2)
-                        
-                        subprocess.run(['tar', '-xzf', '/tmp/lychee.tar.gz', '-C', '/tmp'], check=True)
-                        
-                        # Install to /usr/local/bin or ~/.local/bin
-                        if shutil.which('sudo'):
-                            subprocess.run(['sudo', 'mv', '/tmp/lychee', '/usr/local/bin/'], check=True)
-                            subprocess.run(['sudo', 'chmod', '+x', '/usr/local/bin/lychee'], check=True)
-                        else:
-                            # Fall back to user-local install
-                            local_bin = os.path.expanduser('~/.local/bin')
-                            os.makedirs(local_bin, exist_ok=True)
-                            subprocess.run(['mv', '/tmp/lychee', local_bin], check=True)
-                            subprocess.run(['chmod', '+x', f'{local_bin}/lychee'], check=True)
-                            # Add to PATH if not already there
-                            if local_bin not in os.environ.get('PATH', ''):
-                                os.environ['PATH'] = f"{local_bin}:{os.environ.get('PATH', '')}"
-                        
-                        self.log('SUCCESS', f'Successfully installed lychee from {version}')
-                        return True
-                    except Exception as e:
-                        self.log('WARNING', f'Failed to install from {version}: {e}')
-                        continue
-                
-                # If all else fails, log error and return False
-                self.log('ERROR', 'All installation methods failed')
-                return False
-            
-            # Verify installation
-            result = subprocess.run(['lychee', '--version'], 
-                                  capture_output=True, text=True, check=True)
-            self.log('SUCCESS', f'Lychee installed successfully: {result.stdout.strip()}')
-            return True
-            
-        except subprocess.CalledProcessError as e:
-            self.log('ERROR', f'Failed to install Lychee: {e}')
-            return False
-        except Exception as e:
-            self.log('ERROR', f'Unexpected error during installation: {e}')
-            return False
-    
-    def determine_scope_files(self, scope):
-        """Determine which files to check based on scope."""
-        scope_mapping = {
-            'website': '.',
-            'all': '.',
-            'docs': 'docs/',
-            'posts': 'pages/_posts/',
-            'quests': 'pages/_quests/',
-            'internal': '.',
-            'external': '.'
+    # -- Logging -----------------------------------------------------------
+    def log(self, level, message):
+        c = self._colors.get(level, "")
+        nc = self._colors["NC"]
+        print(f"{c}[{level}]{nc} {message}")
+
+    # -- Timing helpers ----------------------------------------------------
+    def _start(self, label):
+        self.timings[label] = {"start": time.monotonic()}
+
+    def _stop(self, label):
+        t = self.timings.get(label, {})
+        t["end"] = time.monotonic()
+        t["elapsed"] = t["end"] - t.get("start", t["end"])
+        self.timings[label] = t
+
+    def _elapsed(self, label):
+        return self.timings.get(label, {}).get("elapsed", 0)
+
+    # -- Scope / file selection --------------------------------------------
+    def determine_scope_files(self):
+        scope = self.config.get("scope", "website")
+        scope_map = {
+            "website": ".", "all": ".", "docs": "docs/",
+            "posts": "pages/_posts/", "quests": "pages/_quests/",
+            "internal": ".", "external": ".",
         }
-        
-        base_path = scope_mapping.get(scope, '.')
-        
-        # Find all markdown & HTML files in the specified path
-        files = []
-        for ext in ['*.md', '*.html', '*.htm']:
-            if os.path.exists(base_path):
-                files.extend(Path(base_path).rglob(ext))
-        
-        # Convert to strings and filter
-        file_list = [str(f) for f in files]
-        
-        # For internal/external scope, we'll filter during analysis
-        self.log('INFO', f'Scope "{scope}" includes {len(file_list)} files')
-        # Return an empty list if no files found - caller will handle default '.'
-        return file_list
-    
-    def run_link_check(self):
-        """Execute the main link checking with Lychee."""
-        self.log('INFO', 'Starting comprehensive link health check...')
-        
-        scope = self.config.get('scope', 'website')
-        files = self.determine_scope_files(scope)
-        
-        # Build lychee command
-        output_file = os.path.join(self.output_dir, 'lychee_results.json')
-        cmd = [
-            'lychee',
-            '--format', 'json',
-            '--output', output_file,
-            '--timeout', str(self.config.get('timeout', 30)),
-            '--max-retries', str(self.config.get('max_retries', 3)),
-            '--user-agent', 'IT-Journey-LinkChecker/2.0 (GitHub Actions)',
-            '--verbose',
-            '--no-progress',
-            '--accept', '200,204,206,300,301,302,303,307,308',  # Accept common redirect codes
-            '--base', 'https://it-journey.dev',  # Base URL for resolving root-relative links
-            '--exclude', 'https://url/',  # Exclude placeholder URLs
-            '--exclude', 'https://github.com/.*/blob/.*',  # Exclude GitHub file links (rate limited)
-            '--exclude', 'https://reddit.com/submit.*',  # Exclude Reddit share buttons (rate limited)
-            '--exclude-path', '.crush/',  # Exclude Crush workflow docs
-            '--exclude-path', '.devcontainer/',  # Exclude devcontainer docs
-            '--exclude-path', '.github/',  # Exclude GitHub metadata
-            '--exclude-path', '.venv/',  # Exclude virtual environments
-            '--exclude-path', '_site/',  # Exclude built site output
-            '--exclude-path', 'link-check-results/',  # Exclude previous run artifacts
-            '--exclude-path', 'logs/',  # Exclude local logs
-            '--exclude-path', 'node_modules/',  # Exclude Node dependencies
-            '--exclude-path', 'vendor/',  # Exclude vendored files
-            '--exclude-path', '_site/preview/',  # Exclude preview builds
-            '--exclude-path', 'work/',  # Exclude work directory
-        ]
-        
-        # Add scope-specific options
-        if scope == 'internal':
-            cmd.extend(['--exclude-all-private'])
-        elif scope == 'external':
-            cmd.extend(['--include-verbatim', 'http'])
-        
-        # Note: Removed --remap option as it was causing errors
-        # --remap is for URL pattern remapping, not for following redirects
-        # Lychee follows redirects by default
-        
-        # Add files to check
-        # If no files were found, use repository root (lychee expects at least one path)
-        if not files:
-            files = ['.']
-        cmd.extend(files)
-        
-        self.log('INFO', f'Running: {" ".join(cmd)}')
-        
+        base = scope_map.get(scope, ".")
+
+        if self.config.get("changed_only"):
+            files = self._get_changed_files()
+            if files:
+                self.log("INFO", f"--changed-only: {len(files)} changed file(s)")
+                return files
+            self.log("WARNING", "--changed-only found no changes; falling back to full scan")
+
+        self.log("INFO", f'Scope "{scope}" -> base path: {base}')
+        return [base]
+
+    def _get_changed_files(self):
+        diff_range = self.config.get("diff_range", "origin/main...HEAD")
         try:
-            # Run lychee and capture output
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)  # 30 min timeout
-            
-            # Log the result for debugging
-            self.log('INFO', f'Lychee exit code: {result.returncode}')
-            if result.stdout:
-                self.log('INFO', f'Lychee stdout: {result.stdout[:500]}...')
+            result = subprocess.run(
+                ["git", "diff", "--name-only", "--diff-filter=ACMR", diff_range],
+                capture_output=True, text=True, check=True,
+            )
+            all_changed = result.stdout.strip().splitlines()
+            exts = {".md", ".html", ".htm"}
+            return [f for f in all_changed if Path(f).suffix.lower() in exts and os.path.isfile(f)]
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            return []
+
+    # -- Engine: Lychee ----------------------------------------------------
+    def run_lychee(self, files):
+        output_file = os.path.join(self.output_dir, "lychee_results.json")
+        cmd = ["lychee", "--output", output_file]
+
+        if self.config.get("include_site"):
+            cmd.extend(["--include-path", "_site/"])
+
+        cmd.extend(files)
+        self.log("INFO", f"Running: {' '.join(cmd[:8])}{'...' if len(cmd) > 8 else ''}")
+
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+            self.log("INFO", f"Lychee exit code: {result.returncode}")
             if result.stderr:
-                self.log('INFO', f'Lychee stderr: {result.stderr[:500]}...')
-            
-            # Check if output file was created
+                for line in result.stderr.strip().splitlines()[:5]:
+                    self.log("INFO", f"  stderr: {line}")
+
             if not os.path.exists(output_file):
-                self.log('WARNING', f'Lychee output file not created: {output_file}')
-                
-                # Try to parse stdout as JSON if file wasn't created
                 if result.stdout.strip():
                     try:
-                        json_data = json.loads(result.stdout)
-                        with open(output_file, 'w') as f:
-                            json.dump(json_data, f, indent=2)
-                        self.log('INFO', 'Created results file from stdout')
+                        data = json.loads(result.stdout)
+                        with open(output_file, "w") as f:
+                            json.dump(data, f, indent=2)
                     except json.JSONDecodeError:
-                        self.log('WARNING', 'Could not parse stdout as JSON')
-                        
-                # If still no file, create a minimal results file
+                        pass
                 if not os.path.exists(output_file):
-                    minimal_results = {
-                        "total": 0,
-                        "successful": 0,
-                        "errors": 0,
-                        "error_details": [],
-                        "warnings": ["Lychee output file was not created"],
-                        "stdout": result.stdout[:1000] if result.stdout else "",
-                        "stderr": result.stderr[:1000] if result.stderr else ""
-                    }
-                    with open(output_file, 'w') as f:
-                        json.dump(minimal_results, f, indent=2)
-                    self.log('INFO', 'Created minimal results file for parsing')
-            
-            # Also generate markdown summary if requested
-            if self.config.get('generate_summary', True):
-                summary_cmd = cmd.copy()
-                summary_cmd[summary_cmd.index('--format') + 1] = 'markdown'
-                summary_cmd[summary_cmd.index('--output') + 1] = os.path.join(self.output_dir, 'summary.md')
-                summary_result = subprocess.run(summary_cmd, capture_output=True, text=True)
-                if summary_result.returncode != 0:
-                    self.log('WARNING', f'Markdown summary generation failed: {summary_result.stderr}')
-            
-            self.log('SUCCESS', 'Link checking completed')
+                    with open(output_file, "w") as f:
+                        json.dump({"fail_map": {}, "error_map": {}}, f)
+
             return True
-            
         except subprocess.TimeoutExpired:
-            self.log('ERROR', 'Link checking timed out after 30 minutes')
-            return False
-        except subprocess.CalledProcessError as e:
-            self.log('WARNING', f'Link checking completed with some failures: {e}')
-            return True  # Continue with analysis even if some links failed
-        except Exception as e:
-            self.log('ERROR', f'Link checking failed: {e}')
-            return False
-    
-    def parse_lychee_results(self):
-        """Parse Lychee JSON results and extract statistics."""
-        results_file = os.path.join(self.output_dir, 'lychee_results.json')
-        
-        if not os.path.exists(results_file):
-            self.log('WARNING', 'No Lychee results file found')
-            return False
-        
-        try:
-            with open(results_file, 'r') as f:
-                content = f.read().strip()
-                if not content:
-                    self.log('WARNING', 'Lychee results file is empty')
-                    return False
-                data = json.loads(content)
-            
-            # Log file content for debugging
-            self.log('INFO', f'Lychee results file size: {len(content)} characters')
-            
-            # Extract statistics - handle different lychee output formats
-            if isinstance(data, list):
-                # If data is a list of link results
-                total = len(data)
-                successful = sum(1 for item in data if item.get('status') == 'ok' or item.get('status') == 'success')
-                errors = total - successful
-                error_details = [item for item in data if item.get('status') not in ['ok', 'success']]
-            elif isinstance(data, dict):
-                # If data is a summary object
-                total = data.get('total', data.get('total_links', 0))
-                successful = data.get('successful', data.get('success_count', 0))
-                errors = data.get('errors', data.get('error_count', total - successful))
-                error_details = data.get('error_details', data.get('failures', []))
-            else:
-                self.log('WARNING', f'Unexpected data format in lychee results: {type(data)}')
-                return False
-
-            # If the raw output doesn't contain a canonical error_map, build one
-            if isinstance(data, dict) and 'error_map' not in data:
-                # Lychee may provide 'failures' or 'error_details' as a list
-                if isinstance(data.get('error_details'), list) and data.get('error_details'):
-                    failures = data.get('error_details')
-                elif isinstance(data.get('failures'), list) and data.get('failures'):
-                    failures = data.get('failures')
-                elif isinstance(data, dict) and data.get('failed'):  # summary with nested
-                    failures = data.get('failed')
-                else:
-                    failures = []
-
-                error_map = defaultdict(list)
-                for item in failures:
-                    file_path = item.get('file', item.get('source', 'unknown'))
-                    error_map[file_path].append(item)
-
-                # Attach built map back to raw data for analysis
-                data['error_map'] = dict(error_map)
-            
-            success_rate = (successful / total * 100) if total > 0 else 100
-            
-            # Store basic stats
-            self.results = {
-                'total_links': total,
-                'successful_links': successful,
-                'broken_links': errors,
-                'success_rate': round(success_rate, 1),
-                'raw_data': data
-            }
-            
-            # Save statistics for GitHub Actions
-            stats_file = os.path.join(self.output_dir, 'statistics.env')
-            with open(stats_file, 'w') as f:
-                f.write(f"TOTAL_COUNT={total}\n")
-                f.write(f"BROKEN_COUNT={errors}\n")
-                f.write(f"SUCCESS_RATE={success_rate:.1f}\n")
-            
-            self.log('SUCCESS', f'Parsed results: {total} total, {errors} broken, {success_rate:.1f}% success')
-            return True
-            
-        except Exception as e:
-            self.log('ERROR', f'Failed to parse Lychee results: {e}')
-            return False
-    
-    def analyze_link_failures(self):
-        """Analyze link failures and categorize them."""
-        self.log('INFO', 'Analyzing link health patterns and trends...')
-        
-        if not self.results or not self.results.get('raw_data'):
-            self.log('WARNING', 'No results data available for analysis')
-            return False
-        
-        data = self.results['raw_data']
-        
-        # Initialize categories
-        categories = {
-            'broken_external': [],
-            'broken_internal': [],
-            'ssl_errors': [],
-            'dns_errors': [],
-            'timeouts': [],
-            'rate_limited': [],
-            'certificate_errors': [],
-            'network_errors': [],
-            'redirects': [],
-            'unknown': []
-        }
-        
-        # Process error map
-        # Normalize data: lychee sometimes returns a list of results or nested failure
-        if isinstance(data, list):
-            # Convert list to error_map keyed by file
-            error_map = defaultdict(list)
-            for item in data:
-                if item.get('status') in ['ok', 'success']:
-                    continue
-                file_key = item.get('file', 'unknown')
-                error_map[file_key].append(item)
-            error_map = dict(error_map)
-        else:
-            error_map = data.get('error_map', {}) or data.get('errors', {})
-        for file_path, errors in (error_map or {}).items():
-            for error in errors:
-                try:
-                    url = error.get('url', '')
-                    error_msg = str(error.get('status', '')).lower()
-                    
-                    # Create result object
-                    result = {
-                        'url': url,
-                        'error': error_msg,
-                        'file': file_path,
-                        'status': 'Failed'
-                    }
-                    
-                    # Categorize by error type
-                    if any(term in error_msg for term in ['ssl', 'tls', 'certificate']):
-                        if 'ssl' in error_msg or 'tls' in error_msg:
-                            categories['ssl_errors'].append(result)
-                        else:
-                            categories['certificate_errors'].append(result)
-                    elif any(term in error_msg for term in ['dns', 'resolve', 'hostname']):
-                        categories['dns_errors'].append(result)
-                    elif any(term in error_msg for term in ['timeout', 'timed out']):
-                        categories['timeouts'].append(result)
-                    elif any(term in error_msg for term in ['429', 'rate limit', 'too many']):
-                        categories['rate_limited'].append(result)
-                    elif any(term in error_msg for term in ['network', 'connection', 'refused']):
-                        categories['network_errors'].append(result)
-                    elif url.startswith('http'):
-                        categories['broken_external'].append(result)
-                    elif url.startswith('/') or not url.startswith('http'):
-                        categories['broken_internal'].append(result)
-                    else:
-                        categories['unknown'].append(result)
-                        
-                except Exception as e:
-                    self.log('WARNING', f'Error processing error entry: {e}')
-                    continue
-        
-        # Analyze patterns
-        patterns = self.identify_patterns(categories)
-        
-        # Store analysis
-        self.analysis = {
-            'categories': categories,
-            'patterns': patterns,
-            'summary': {
-                'total_broken': sum(len(cat) for cat in categories.values()),
-                'most_common_error': self.get_most_common_error(categories),
-                'problematic_domains': self.get_problematic_domains(categories)
-            },
-            'analysis_timestamp': datetime.utcnow().isoformat() + 'Z'
-        }
-        
-        # Generate detailed report
-        self.generate_analysis_report()
-        
-        self.log('SUCCESS', f'Analysis completed: {len(patterns)} patterns identified')
-        return True
-    
-    def identify_patterns(self, categories):
-        """Identify patterns in link failures."""
-        patterns = []
-        
-        # Domain failure analysis
-        domain_failures = defaultdict(int)
-        for category in ['broken_external', 'timeouts', 'rate_limited', 'ssl_errors', 'dns_errors']:
-            for item in categories[category]:
-                url = item.get('url', '')
-                if url.startswith('http'):
-                    try:
-                        domain = url.split('/')[2]
-                        domain_failures[domain] += 1
-                    except:
-                        pass
-        
-        if domain_failures:
-            top_domains = sorted(domain_failures.items(), key=lambda x: x[1], reverse=True)[:3]
-            patterns.append(f"Top failing domains: {', '.join([f'{d}({c})' for d, c in top_domains])}")
-        
-        # Category-specific patterns
-        internal_count = len(categories['broken_internal'])
-        if internal_count > 0:
-            patterns.append(f"Found {internal_count} broken internal links - check Jekyll configuration")
-        
-        timeout_count = len(categories['timeouts'])
-        if timeout_count > 5:
-            patterns.append(f"High timeout rate ({timeout_count}) - network or slow sites")
-        
-        ssl_count = len(categories['ssl_errors'])
-        if ssl_count > 0:
-            patterns.append(f"SSL/TLS issues on {ssl_count} links - certificate problems")
-        
-        dns_count = len(categories['dns_errors'])
-        if dns_count > 0:
-            patterns.append(f"DNS resolution errors on {dns_count} links - domain issues")
-        
-        return patterns
-    
-    def get_most_common_error(self, categories):
-        """Find the most common error category."""
-        category_counts = {k: len(v) for k, v in categories.items()}
-        if category_counts:
-            return max(category_counts, key=category_counts.get)
-        return 'none'
-    
-    def get_problematic_domains(self, categories):
-        """Get list of problematic domains."""
-        domains = set()
-        for category in categories.values():
-            for item in category:
-                url = item.get('url', '')
-                if url.startswith('http'):
-                    try:
-                        domain = url.split('/')[2]
-                        domains.add(domain)
-                    except:
-                        pass
-        return list(domains)[:5]  # Top 5
-    
-    def generate_analysis_report(self):
-        """Generate detailed analysis report in markdown."""
-        report_file = os.path.join(self.output_dir, 'detailed_analysis.md')
-        
-        with open(report_file, 'w') as f:
-            f.write("# IT-Journey Link Health Analysis Report\n\n")
-            f.write(f"**Analysis Date**: {self.analysis['analysis_timestamp']}\n")
-            f.write(f"**Total Links**: {self.results['total_links']}\n")
-            f.write(f"**Broken Links**: {self.results['broken_links']}\n")
-            f.write(f"**Success Rate**: {self.results['success_rate']}%\n\n")
-            
-            if self.results['broken_links'] > 0:
-                f.write("## Failure Categories\n\n")
-                for category, items in self.analysis['categories'].items():
-                    if items:
-                        f.write(f"### {category.replace('_', ' ').title()}\n")
-                        f.write(f"**Count**: {len(items)}\n\n")
-                        for item in items[:5]:  # Show first 5
-                            f.write(f"- **URL**: {item.get('url', 'Unknown')}\n")
-                            f.write(f"  - **File**: {item.get('file', 'Unknown')}\n")
-                            f.write(f"  - **Error**: {item.get('error', 'Unknown')}\n\n")
-                        if len(items) > 5:
-                            f.write(f"... and {len(items) - 5} more\n\n")
-            
-            if self.analysis['patterns']:
-                f.write("## Identified Patterns\n\n")
-                for pattern in self.analysis['patterns']:
-                    f.write(f"- {pattern}\n")
-                f.write("\n")
-            
-            f.write("## Recommendations\n\n")
-            if self.results['broken_links'] == 0:
-                f.write("🎉 Excellent! No broken links found.\n")
-            else:
-                f.write("### Priority Actions\n\n")
-                f.write("1. **Fix Internal Links**: Address broken internal navigation first\n")
-                f.write("2. **Update External Links**: Replace or remove broken external references\n")
-                f.write("3. **Monitor SSL/DNS Issues**: Review certificate and domain problems\n")
-                f.write("4. **Consider Rate Limiting**: Add problematic domains to ignore list\n")
-        
-        # Save analysis summary for GitHub Actions
-        summary_file = os.path.join(self.output_dir, 'analysis_summary.env')
-        with open(summary_file, 'w') as f:
-            f.write(f"ANALYSIS_AVAILABLE=true\n")
-            f.write(f"PATTERNS_COUNT={len(self.analysis['patterns'])}\n")
-            f.write(f"MOST_COMMON_ERROR={self.analysis['summary']['most_common_error']}\n")
-        
-        self.log('SUCCESS', f'Analysis report generated: {report_file}')
-    
-    def run_ai_analysis(self):
-        """Run AI-powered analysis if OpenAI API key is available."""
-        if not self.config.get('ai_analysis', False):
-            self.log('INFO', 'AI analysis disabled')
-            return False
-        
-        api_key = os.environ.get('OPENAI_API_KEY')
-        if not api_key:
-            self.log('WARNING', 'OPENAI_API_KEY not found - skipping AI analysis')
-            return self.generate_fallback_ai_analysis()
-        
-        self.log('INFO', 'Generating AI-powered insights...')
-        
-        try:
-            # Prepare context for AI
-            context = self.prepare_ai_context()
-            
-            # Make API request
-            headers = {
-                'Authorization': f'Bearer {api_key}',
-                'Content-Type': 'application/json'
-            }
-            
-            data = {
-                'model': 'gpt-3.5-turbo',
-                'messages': [
-                    {
-                        'role': 'user',
-                        'content': self.build_ai_prompt(context)
-                    }
-                ],
-                'max_tokens': 2000,
-                'temperature': 0.3
-            }
-            
-            response = requests.post(
-                'https://api.openai.com/v1/chat/completions',
-                headers=headers,
-                json=data,
-                timeout=60
-            )
-            
-            if response.status_code == 200:
-                result = response.json()
-                ai_content = result['choices'][0]['message']['content']
-                
-                # Save AI analysis
-                self.save_ai_analysis(ai_content, True)
-                self.log('SUCCESS', 'AI analysis completed successfully')
-                return True
-            else:
-                try:
-                    err = response.json()
-                except Exception:
-                    err = response.text
-                self.log('ERROR', f'OpenAI API error: {response.status_code} - {err}')
-                return self.generate_fallback_ai_analysis()
-                
-        except requests.exceptions.RequestException as e:
-            # Network or timeout related exceptions
-            self.log('ERROR', f'AI request failed: {e}')
-            return self.generate_fallback_ai_analysis()
-        except Exception as e:
-            self.log('ERROR', f'AI analysis failed: {e}')
-            return self.generate_fallback_ai_analysis()
-    
-    def prepare_ai_context(self):
-        """Prepare context data for AI analysis."""
-        return {
-            'results': self.results,
-            'analysis': self.analysis,
-            'config': self.config,
-            'repository': self.config.get('repository', 'IT-Journey'),
-            'scope': self.config.get('scope', 'website')
-        }
-    
-    def build_ai_prompt(self, context):
-        """Build the AI analysis prompt."""
-        results = context['results']
-        analysis = context['analysis']
-        
-        prompt = f"""
-Analyze this link health check for the IT-Journey educational repository:
-
-## Summary Statistics
-- Total links: {results['total_links']}
-- Broken links: {results['broken_links']}
-- Success rate: {results['success_rate']}%
-- Scope: {context['scope']}
-
-## Failure Categories
-"""
-        
-        for category, items in analysis['categories'].items():
-            if items:
-                prompt += f"- {category.replace('_', ' ').title()}: {len(items)} links\n"
-        
-        if analysis['patterns']:
-            prompt += f"\n## Identified Patterns\n"
-            for pattern in analysis['patterns']:
-                prompt += f"- {pattern}\n"
-        
-        prompt += """
-
-## Analysis Request
-Please provide a comprehensive analysis including:
-
-1. **Root Cause Analysis**: Most likely causes for these link failures
-2. **Educational Impact**: How these issues affect learning experience
-3. **Priority Recommendations**: Specific actions ranked by importance
-4. **Prevention Strategies**: How to avoid similar issues
-5. **Technical Solutions**: Jekyll/GitHub Pages specific fixes
-
-Focus on actionable insights for maintaining an educational platform.
-Format your response in clear markdown sections.
-"""
-        
-        return prompt
-    
-    def generate_fallback_ai_analysis(self):
-        """Generate fallback analysis when AI is not available."""
-        self.log('INFO', 'Generating fallback analysis...')
-        
-        results = self.results
-        analysis = self.analysis
-        
-        content = f"""# AI-Powered Link Analysis (Fallback Mode)
-
-## Executive Summary
-Analyzed {results['total_links']} links with {results['broken_links']} failures ({results['success_rate']}% success rate).
-
-## Root Cause Analysis
-Based on failure patterns, the most common issues are:
-- **{analysis['summary']['most_common_error'].replace('_', ' ').title()}**: Primary failure category
-- **External Dependencies**: Third-party sites may have availability issues
-- **Configuration Issues**: Internal links may reflect Jekyll setup problems
-
-## Educational Impact Assessment
-Link failures impact the learning experience by:
-- Disrupting learning flow when students encounter broken references
-- Reducing credibility of educational content
-- Creating frustration during self-paced learning
-
-## Priority Recommendations
-1. **Fix Internal Links**: Highest priority - affects site navigation
-2. **Review External Sources**: Update or replace unreliable external references
-3. **Implement Monitoring**: Regular automated checks to catch issues early
-4. **Documentation Updates**: Keep resource links current and valid
-
-## Prevention Strategies
-- Regular link health monitoring (weekly checks)
-- Use archived links for critical external resources
-- Implement redirect management for moved content
-- Test links before publishing new content
-
-*Note: Enhanced AI analysis requires OPENAI_API_KEY configuration.*
-"""
-        
-        self.save_ai_analysis(content, False)
-        return True
-    
-    def save_ai_analysis(self, content, is_ai_powered):
-        """Save AI analysis results."""
-        ai_file = os.path.join(self.output_dir, 'ai_analysis.md')
-        with open(ai_file, 'w') as f:
-            f.write(content)
-        
-        # Save summary for GitHub Actions
-        ai_summary_file = os.path.join(self.output_dir, 'ai_analysis_summary.env')
-        with open(ai_summary_file, 'w') as f:
-            f.write(f"AI_ANALYSIS_AVAILABLE=true\n")
-            f.write(f"AI_POWERED={str(is_ai_powered).lower()}\n")
-            f.write(f"AI_ANALYSIS_TYPE={'openai' if is_ai_powered else 'fallback'}\n")
-        
-        self.log('SUCCESS', f'AI analysis saved: {ai_file}')
-    
-    def create_github_issue(self):
-        """Create GitHub issue with comprehensive results."""
-        if not self.config.get('create_issue', False):
-            self.log('INFO', 'GitHub issue creation disabled')
-            return False
-        
-        self.log('INFO', 'Creating GitHub issue with comprehensive results...')
-        
-        # Generate issue content
-        issue_title = self.generate_issue_title()
-        issue_body = self.generate_issue_body()
-        
-        # Save issue body for manual creation if needed
-        issue_file = os.path.join(self.output_dir, 'issue_body.md')
-        with open(issue_file, 'w') as f:
-            f.write(issue_body)
-        
-        # Try to create issue using GitHub CLI
-        try:
-            cmd = [
-                'gh', 'issue', 'create',
-                '--title', issue_title,
-                '--body-file', issue_file,
-                '--label', self.get_issue_labels(),
-                '--assignee', '@me'
-            ]
-            
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-            issue_url = result.stdout.strip()
-            
-            # Save issue URL
-            with open(os.path.join(self.output_dir, 'issue_url.txt'), 'w') as f:
-                f.write(issue_url)
-            
-            self.log('SUCCESS', f'GitHub issue created: {issue_url}')
-            return True
-            
-        except subprocess.CalledProcessError as e:
-            self.log('ERROR', f'Failed to create GitHub issue: {e}')
-            self.log('INFO', f'Issue body saved to: {issue_file}')
+            self.log("ERROR", "Lychee timed out after 30 minutes")
             return False
         except FileNotFoundError:
-            self.log('ERROR', 'GitHub CLI not found - issue body saved for manual creation')
-            self.log('INFO', f'Issue body saved to: {issue_file}')
+            self.log("ERROR", "lychee not found -- install it or use --engine curl")
             return False
-    
-    def generate_issue_title(self):
-        """Generate appropriate issue title."""
-        broken_count = self.results['broken_links']
-        date_str = datetime.now().strftime('%Y-%m-%d')
-        
-        if broken_count == 0:
-            return f"🔗 Link Health Report - All Links Healthy ({date_str})"
-        else:
-            return f"🔗 Link Health Report - {broken_count} broken links found ({date_str})"
-    
-    def generate_issue_body(self):
-        """Generate comprehensive issue body."""
-        results = self.results
-        timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
-        
-        body = f"""# 🔗 IT-Journey Link Health Report
 
-**Scan Date**: {timestamp}
-**Repository**: {self.config.get('repository', 'IT-Journey')}
-**Scope**: {self.config.get('scope', 'website')}
-**Guardian Version**: 2.0.0
+    # -- Engine: curl (guardian.sh port) ------------------------------------
+    def run_curl(self, files):
+        self.log("INFO", "Using curl engine (fallback)")
+        url_pattern = re.compile(r'https?://[^\s\)\]>"' + "'" + r']+')
+        urls_by_file = defaultdict(set)
 
-## 📊 Summary Statistics
-
-- **Total links checked**: {results['total_links']}
-- **Working links**: {results['successful_links']}
-- **Broken links**: {results['broken_links']}
-- **Success rate**: {results['success_rate']}%
-
-"""
-        
-        if results['broken_links'] == 0:
-            body += """## ✅ Status: Excellent
-
-🎉 **All links are healthy!** Your IT-Journey site maintains perfect link integrity.
-
-This demonstrates excellent maintenance practices and ensures a seamless learning experience for all users.
-"""
-        else:
-            # Add status based on success rate
-            success_rate = results['success_rate']
-            if success_rate >= 95:
-                status = "⚠️ Good (minor issues)"
-            elif success_rate >= 90:
-                status = "🟡 Fair (some issues)"
-            elif success_rate >= 80:
-                status = "🟠 Poor (multiple issues)"
+        for fpath in files:
+            p = Path(fpath)
+            if p.is_dir():
+                targets = list(p.rglob("*.md")) + list(p.rglob("*.html"))
+            elif p.is_file():
+                targets = [p]
             else:
-                status = "🔴 Critical (major issues)"
-            
-            body += f"""## {status.split()[0]} Status: {status.split()[1:]}
+                continue
+            for target in targets:
+                try:
+                    text = target.read_text(errors="replace")
+                    for url in url_pattern.findall(text):
+                        urls_by_file[str(target)].add(url)
+                except OSError:
+                    pass
 
-**{results['broken_links']} broken links** were detected that may impact the learning experience.
-"""
-        
-        # Add detailed analysis if available
-        analysis_file = os.path.join(self.output_dir, 'detailed_analysis.md')
-        if os.path.exists(analysis_file):
-            body += "\n## 🔍 Detailed Analysis\n\n"
-            with open(analysis_file, 'r') as f:
-                body += f.read()
-            body += "\n"
-        
-        # Add AI analysis if available
-        ai_file = os.path.join(self.output_dir, 'ai_analysis.md')
-        if os.path.exists(ai_file):
-            body += "\n## 🤖 AI-Powered Insights\n\n"
-            with open(ai_file, 'r') as f:
-                body += f.read()
-            body += "\n"
-        
-        # Add action items if there are broken links
-        if results['broken_links'] > 0:
-            body += """## 🛠️ Recommended Actions
+        total = sum(len(v) for v in urls_by_file.values())
+        self.log("INFO", f"Found {total} URLs across {len(urls_by_file)} files")
 
-### Immediate Actions
-1. **Review Broken Links**: Check the detailed results above for specific URLs and errors
-2. **Fix Internal Links**: Priority should be given to broken internal navigation
-3. **Update External References**: Replace or remove broken external links
-4. **Test Changes**: Verify fixes don't introduce new issues
+        fail_map = {}
+        ok_count = 0
+        for fpath, urls in urls_by_file.items():
+            failures = []
+            for url in urls:
+                try:
+                    r = subprocess.run(
+                        ["curl", "-sSf", "-o", "/dev/null", "-w", "%{http_code}",
+                         "--max-time", "15", "-L", url],
+                        capture_output=True, text=True, timeout=20,
+                    )
+                    code = r.stdout.strip()
+                    if r.returncode != 0:
+                        failures.append({"url": url, "status": {"code": int(code) if code.isdigit() else 0, "details": "Failed"}})
+                    else:
+                        ok_count += 1
+                except (subprocess.TimeoutExpired, subprocess.CalledProcessError):
+                    failures.append({"url": url, "status": {"code": 0, "details": "Timeout"}})
+            if failures:
+                fail_map[fpath] = failures
 
-### Preventive Measures
-1. **Regular Monitoring**: Schedule weekly link health checks
-2. **Content Guidelines**: Establish link validation procedures for new content
-3. **Automated Testing**: Integrate link checking into CI/CD pipeline
-4. **Documentation**: Update link maintenance procedures
-"""
-        
-        body += f"""## 🔄 Re-running This Check
-
-You can manually trigger another link check by:
-1. Going to the [Actions tab](../../actions/workflows/link-health-guardian.yml)
-2. Clicking "Run workflow"
-3. Selecting your preferred scope and options
-
----
-
-**Technical Details:**
-- **Workflow**: Link Health Guardian v2.0
-- **Scope**: {self.config.get('scope', 'website')}
-- **Analysis Level**: {self.config.get('analysis_level', 'comprehensive')}
-- **AI Analysis**: {'Enabled' if self.config.get('ai_analysis') else 'Disabled'}
-
-*This issue was created automatically by the IT-Journey Link Health Guardian. 🤖*
-"""
-        
-        return body
-    
-    def get_issue_labels(self):
-        """Get appropriate labels for the GitHub issue."""
-        labels = ['automated', 'link-checker', 'maintenance']
-        
-        if self.results['broken_links'] > 0:
-            labels.append('bug')
-        
-        if os.path.exists(os.path.join(self.output_dir, 'ai_analysis.md')):
-            labels.append('ai-analysis')
-        
-        return ','.join(labels)
-    
-    def run_full_workflow(self):
-        """Run the complete link checking workflow."""
-        self.log('INFO', 'IT-Journey Link Health Guardian v2.0')
-        self.log('INFO', '=' * 50)
-        
-        # Step 1: Install dependencies (only on systems that need it)
-        if not self.config.get('skip_install', False):
-            if not self.install_dependencies():
-                self.log('ERROR', 'Failed to install dependencies')
-                return False
-        
-        # Step 2: Run link checking
-        if self.config.get('analysis_level') != 'ai-only':
-            if not self.run_link_check():
-                self.log('ERROR', 'Link checking failed')
-                return False
-            
-            if not self.parse_lychee_results():
-                self.log('WARNING', 'Failed to parse link check results, but continuing...')
-                # Create minimal results for continuation
-                self.results = {
-                    'total_links': 0,
-                    'successful_links': 0,
-                    'broken_links': 0,
-                    'success_rate': 100.0,
-                    'raw_data': {}
-                }
-        else:
-            self.log('INFO', 'Skipping link checking (AI-only mode)')
-        
-        # Step 3: Analyze results (if analysis level requires it)
-        analysis_level = self.config.get('analysis_level', 'comprehensive')
-        if analysis_level in ['standard', 'comprehensive']:
-            if not self.analyze_link_failures():
-                self.log('WARNING', 'Analysis failed but continuing...')
-        
-        # Step 4: Run AI analysis (if enabled and level requires it)
-        if analysis_level in ['comprehensive', 'ai-only']:
-            if not self.run_ai_analysis():
-                self.log('WARNING', 'AI analysis failed but continuing...')
-        
-        # Step 5: Create GitHub issue (if enabled)
-        if self.config.get('create_issue', False):
-            if not self.create_github_issue():
-                self.log('WARNING', 'GitHub issue creation failed but continuing...')
-        
-        # Final summary
-        self.log('INFO', 'Workflow Summary:')
-        if hasattr(self, 'results') and self.results:
-            self.log('INFO', f'  Total links: {self.results.get("total_links", 0)}')
-            self.log('INFO', f'  Broken links: {self.results.get("broken_links", 0)}')
-            self.log('INFO', f'  Success rate: {self.results.get("success_rate", 0)}%')
-        
-        self.log('SUCCESS', 'Link Health Guardian workflow completed!')
-        
-        # Return appropriate exit code
-        if hasattr(self, 'results') and self.results.get('broken_links', 0) > 0:
-            return False  # Indicate broken links found
+        output_file = os.path.join(self.output_dir, "lychee_results.json")
+        data = {"fail_map": fail_map, "total": total, "successful": ok_count, "failures": total - ok_count}
+        with open(output_file, "w") as f:
+            json.dump(data, f, indent=2)
         return True
+
+    # -- Parse results -----------------------------------------------------
+    def parse_results(self):
+        results_file = os.path.join(self.output_dir, "lychee_results.json")
+        if not os.path.exists(results_file):
+            self.log("WARNING", "No results file found")
+            return False
+
+        try:
+            with open(results_file) as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError) as e:
+            self.log("ERROR", f"Failed to read results: {e}")
+            return False
+
+        fail_map = data.get("fail_map", {})
+        error_map = data.get("error_map", {})
+        all_failures = defaultdict(list)
+        for m in (fail_map, error_map):
+            for fpath, entries in m.items():
+                all_failures[fpath].extend(entries)
+
+        broken = sum(len(v) for v in all_failures.values())
+        total = data.get("total", broken)
+        successful = data.get("successful", total - broken)
+        if total == 0 and broken == 0:
+            total = broken
+            successful = 0
+        rate = (successful / total * 100) if total > 0 else 100.0
+
+        self.results = {
+            "total_links": total,
+            "successful_links": successful,
+            "broken_links": broken,
+            "success_rate": round(rate, 1),
+            "fail_map": dict(all_failures),
+            "raw_data": data,
+        }
+
+        stats_file = os.path.join(self.output_dir, "statistics.env")
+        with open(stats_file, "w") as f:
+            f.write(f"TOTAL_COUNT={total}\n")
+            f.write(f"BROKEN_COUNT={broken}\n")
+            f.write(f"SUCCESS_RATE={rate:.1f}\n")
+
+        self.log("SUCCESS", f"Parsed: {total} total, {broken} broken, {rate:.1f}% success")
+        return True
+
+    # -- Generate markdown summary -----------------------------------------
+    def generate_markdown_summary(self):
+        summary_path = os.path.join(self.output_dir, "summary.md")
+        fail_map = self.results.get("fail_map", {})
+
+        lines = [
+            "# Link Health Summary\n",
+            f"**Date**: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}  ",
+            f"**Total**: {self.results['total_links']}  ",
+            f"**Broken**: {self.results['broken_links']}  ",
+            f"**Success rate**: {self.results['success_rate']}%\n",
+        ]
+
+        if fail_map:
+            lines.append("## Failures by file\n")
+            for fpath, entries in sorted(fail_map.items()):
+                lines.append(f"### {fpath}\n")
+                for e in entries[:20]:
+                    url = e.get("url", "?")
+                    status = e.get("status", "")
+                    if isinstance(status, dict):
+                        status = status.get("details", status.get("code", ""))
+                    lines.append(f"- [{status}] {url}")
+                if len(entries) > 20:
+                    lines.append(f"- ... and {len(entries) - 20} more\n")
+                lines.append("")
+
+        with open(summary_path, "w") as f:
+            f.write("\n".join(lines))
+        self.log("INFO", f"Summary written to {summary_path}")
+
+    # -- Analyze failures --------------------------------------------------
+    def analyze_failures(self):
+        self.log("INFO", "Analyzing failure patterns...")
+        fail_map = self.results.get("fail_map", {})
+
+        categories = defaultdict(list)
+        for fpath, entries in fail_map.items():
+            for entry in entries:
+                url = entry.get("url", "")
+                status = entry.get("status", "")
+                if isinstance(status, dict):
+                    msg = str(status.get("details", status.get("code", ""))).lower()
+                else:
+                    msg = str(status).lower()
+                rec = {"url": url, "error": msg, "file": fpath}
+
+                if any(t in msg for t in ("ssl", "tls", "certificate")):
+                    categories["ssl_errors"].append(rec)
+                elif any(t in msg for t in ("dns", "resolve", "hostname")):
+                    categories["dns_errors"].append(rec)
+                elif any(t in msg for t in ("timeout", "timed out")):
+                    categories["timeouts"].append(rec)
+                elif any(t in msg for t in ("429", "rate limit", "too many")):
+                    categories["rate_limited"].append(rec)
+                elif any(t in msg for t in ("network", "connection", "refused")):
+                    categories["network_errors"].append(rec)
+                elif url.startswith("http"):
+                    categories["broken_external"].append(rec)
+                elif url.startswith("/") or not url.startswith("http"):
+                    categories["broken_internal"].append(rec)
+                else:
+                    categories["unknown"].append(rec)
+
+        domain_counts = defaultdict(int)
+        for cat in ("broken_external", "timeouts", "rate_limited", "ssl_errors", "dns_errors"):
+            for item in categories.get(cat, []):
+                try:
+                    domain_counts[item["url"].split("/")[2]] += 1
+                except (IndexError, AttributeError):
+                    pass
+
+        patterns = []
+        if domain_counts:
+            top = sorted(domain_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+            patterns.append(f"Top failing domains: {', '.join(f'{d} ({c})' for d, c in top)}")
+        n_internal = len(categories.get("broken_internal", []))
+        if n_internal:
+            patterns.append(f"{n_internal} broken internal links -- check Jekyll config")
+        n_timeout = len(categories.get("timeouts", []))
+        if n_timeout > 5:
+            patterns.append(f"High timeout rate ({n_timeout}) -- network or slow sites")
+
+        cat_counts = {k: len(v) for k, v in categories.items()}
+        most_common = max(cat_counts, key=cat_counts.get) if cat_counts else "none"
+
+        self.analysis = {
+            "categories": dict(categories),
+            "patterns": patterns,
+            "summary": {
+                "total_broken": sum(cat_counts.values()),
+                "most_common_error": most_common,
+                "problematic_domains": [d for d, _ in sorted(domain_counts.items(), key=lambda x: x[1], reverse=True)[:5]],
+            },
+            "analysis_timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+
+        self._write_analysis_report()
+
+        with open(os.path.join(self.output_dir, "analysis_summary.env"), "w") as f:
+            f.write(f"ANALYSIS_AVAILABLE=true\n")
+            f.write(f"PATTERNS_COUNT={len(patterns)}\n")
+            f.write(f"MOST_COMMON_ERROR={most_common}\n")
+
+        self.log("SUCCESS", f"Analysis done: {len(patterns)} patterns identified")
+        return True
+
+    def _write_analysis_report(self):
+        path = os.path.join(self.output_dir, "detailed_analysis.md")
+        with open(path, "w") as f:
+            f.write("# Link Health Analysis Report\n\n")
+            f.write(f"**Date**: {self.analysis['analysis_timestamp']}\n")
+            f.write(f"**Total**: {self.results['total_links']} | ")
+            f.write(f"**Broken**: {self.results['broken_links']} | ")
+            f.write(f"**Rate**: {self.results['success_rate']}%\n\n")
+
+            for cat, items in self.analysis["categories"].items():
+                if not items:
+                    continue
+                f.write(f"## {cat.replace('_', ' ').title()} ({len(items)})\n\n")
+                for item in items[:10]:
+                    f.write(f"- `{item['url']}` in {item['file']} -- {item['error']}\n")
+                if len(items) > 10:
+                    f.write(f"- ... and {len(items) - 10} more\n")
+                f.write("\n")
+
+            if self.analysis["patterns"]:
+                f.write("## Patterns\n\n")
+                for p in self.analysis["patterns"]:
+                    f.write(f"- {p}\n")
+
+    # -- Delta computation -------------------------------------------------
+    def compute_delta(self):
+        baseline_path = os.path.join(self.output_dir, "broken_links_baseline.json")
+        current_broken = set()
+        for entries in self.results.get("fail_map", {}).values():
+            for e in entries:
+                current_broken.add(e.get("url", ""))
+
+        previous_broken = set()
+        if os.path.exists(baseline_path):
+            try:
+                with open(baseline_path) as f:
+                    previous_broken = set(json.load(f))
+            except (json.JSONDecodeError, OSError):
+                pass
+
+        new_broken = current_broken - previous_broken
+        fixed = previous_broken - current_broken
+
+        with open(baseline_path, "w") as f:
+            json.dump(sorted(current_broken), f, indent=2)
+
+        self.log("INFO", f"Delta: {len(new_broken)} new broken, {len(fixed)} fixed since last run")
+        return new_broken, fixed
+
+    # -- AI analysis (delta-only, multi-provider) --------------------------
+    def run_ai_analysis(self, new_broken, fixed):
+        if self.config.get("dry_run_ai"):
+            self.log("INFO", "--dry-run-ai: skipping AI call")
+            prompt = self._build_prompt(new_broken, fixed)
+            self.log("INFO", f"Prompt would be ({len(prompt)} chars):\n{prompt[:500]}...")
+            return self._fallback_ai(new_broken, fixed)
+
+        provider = self.config.get("ai_provider", "none")
+        if provider == "none":
+            return self._fallback_ai(new_broken, fixed)
+
+        if not new_broken:
+            self.log("INFO", "No new broken links -- skipping AI analysis")
+            content = f"# AI Analysis\n\nNo **new** broken links since last run. {len(fixed)} link(s) fixed.\n"
+            self._save_ai(content, False)
+            return True
+
+        prompt = self._build_prompt(new_broken, fixed)
+        self.log("INFO", f"Sending {len(new_broken)} new broken link(s) to {provider}...")
+
+        if provider == "openai":
+            return self._call_openai(prompt)
+        if provider == "anthropic":
+            return self._call_anthropic(prompt)
+
+        self.log("WARNING", f"Unknown AI provider '{provider}' -- using fallback")
+        return self._fallback_ai(new_broken, fixed)
+
+    def _build_prompt(self, new_broken, fixed):
+        sample = sorted(new_broken)[:10]
+        lines = ["New broken links found on it-journey.dev (educational Jekyll site):", ""]
+        for url in sample:
+            lines.append(f"- {url}")
+        if len(new_broken) > 10:
+            lines.append(f"... and {len(new_broken) - 10} more")
+        lines.append("")
+        lines.append(f"Links fixed since last run: {len(fixed)}")
+        lines.append("")
+        lines.append("Give 3 concise prioritized actions to fix these. Markdown format.")
+        return "\n".join(lines)
+
+    def _call_openai(self, prompt):
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            self.log("WARNING", "OPENAI_API_KEY not set -- using fallback")
+            return self._fallback_ai(set(), set())
+        if requests is None:
+            self.log("WARNING", "requests library not available -- using fallback")
+            return self._fallback_ai(set(), set())
+
+        model = self.config.get("ai_model") or "gpt-4o-mini"
+        try:
+            resp = requests.post(
+                "https://api.openai.com/v1/chat/completions",
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+                json={
+                    "model": model,
+                    "messages": [
+                        {"role": "system", "content": "You are a concise link-health advisor for a Jekyll educational site. Be brief."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    "max_tokens": 500,
+                    "temperature": 0.2,
+                },
+                timeout=30,
+            )
+            if resp.status_code == 200:
+                content = resp.json()["choices"][0]["message"]["content"]
+                self._save_ai(content, True)
+                self.log("SUCCESS", "OpenAI analysis complete")
+                return True
+            self.log("ERROR", f"OpenAI API error {resp.status_code}")
+            return self._fallback_ai(set(), set())
+        except Exception as e:
+            self.log("ERROR", f"OpenAI request failed: {e}")
+            return self._fallback_ai(set(), set())
+
+    def _call_anthropic(self, prompt):
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            self.log("WARNING", "ANTHROPIC_API_KEY not set -- using fallback")
+            return self._fallback_ai(set(), set())
+        if requests is None:
+            self.log("WARNING", "requests library not available -- using fallback")
+            return self._fallback_ai(set(), set())
+
+        model = self.config.get("ai_model") or "claude-sonnet-4-20250514"
+        try:
+            resp = requests.post(
+                "https://api.anthropic.com/v1/messages",
+                headers={
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "max_tokens": 500,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "system": "You are a concise link-health advisor for a Jekyll educational site. Be brief.",
+                },
+                timeout=30,
+            )
+            if resp.status_code == 200:
+                content = resp.json()["content"][0]["text"]
+                self._save_ai(content, True)
+                self.log("SUCCESS", "Anthropic analysis complete")
+                return True
+            self.log("ERROR", f"Anthropic API error {resp.status_code}")
+            return self._fallback_ai(set(), set())
+        except Exception as e:
+            self.log("ERROR", f"Anthropic request failed: {e}")
+            return self._fallback_ai(set(), set())
+
+    def _fallback_ai(self, new_broken=None, fixed=None):
+        r = self.results
+        a = self.analysis
+        most_common = a.get("summary", {}).get("most_common_error", "unknown")
+        content = (
+            "# Link Analysis (Template)\n\n"
+            f"**Total**: {r.get('total_links', 0)} | "
+            f"**Broken**: {r.get('broken_links', 0)} | "
+            f"**Rate**: {r.get('success_rate', 0)}%\n\n"
+            f"## Top Issue: {most_common.replace('_', ' ').title()}\n\n"
+            "### Recommended Actions\n"
+            "1. Fix internal broken links first (navigation impact)\n"
+            "2. Update or remove broken external references\n"
+            "3. Add flaky domains to `.lycheeignore`\n\n"
+            "*Enhanced analysis requires `--ai-provider openai` or "
+            "`--ai-provider anthropic` with the corresponding API key.*\n"
+        )
+        self._save_ai(content, False)
+        return True
+
+    def _save_ai(self, content, is_ai_powered):
+        with open(os.path.join(self.output_dir, "ai_analysis.md"), "w") as f:
+            f.write(content)
+        with open(os.path.join(self.output_dir, "ai_analysis_summary.env"), "w") as f:
+            f.write(f"AI_ANALYSIS_AVAILABLE=true\n")
+            f.write(f"AI_POWERED={str(is_ai_powered).lower()}\n")
+        self.log("INFO", "AI analysis saved")
+
+    # -- GitHub issue creation ---------------------------------------------
+    def create_github_issue(self):
+        if not self.config.get("create_issue"):
+            return False
+        broken = self.results.get("broken_links", 0)
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        title = f"Link Health: {broken} broken ({date_str})" if broken else f"Links healthy ({date_str})"
+
+        body_file = os.path.join(self.output_dir, "issue_body.md")
+        with open(body_file, "w") as f:
+            f.write("# Link Health Report\n\n")
+            f.write(f"- Total: {self.results['total_links']}\n")
+            f.write(f"- Broken: {broken}\n")
+            f.write(f"- Rate: {self.results['success_rate']}%\n\n")
+            f.write("See attached artifacts for details.\n")
+
+        try:
+            subprocess.run(
+                ["gh", "issue", "create", "--title", title, "--body-file", body_file,
+                 "--label", "automated,link-checker"],
+                check=True, capture_output=True, text=True,
+            )
+            self.log("SUCCESS", "GitHub issue created")
+            return True
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
+            self.log("WARNING", f"Issue creation failed: {e}")
+            return False
+
+    # -- Timing report -----------------------------------------------------
+    def _write_timings(self):
+        stats_file = os.path.join(self.output_dir, "statistics.env")
+        with open(stats_file, "a") as f:
+            for label in ("lychee", "parse", "analysis", "ai", "total"):
+                val = self._elapsed(label)
+                if val:
+                    f.write(f"TIME_{label.upper()}={val:.1f}\n")
+
+    # -- Main workflow -----------------------------------------------------
+    def run(self):
+        self.log("INFO", f"IT-Journey Link Health Guardian v{self.VERSION}")
+        self.log("INFO", "=" * 50)
+        self._start("total")
+
+        # 1. Determine files
+        files = self.determine_scope_files()
+
+        # 2. Run engine
+        engine = self.config.get("engine", "lychee")
+        self._start("lychee")
+        if engine == "curl":
+            ok = self.run_curl(files)
+        else:
+            ok = self.run_lychee(files)
+        self._stop("lychee")
+        if not ok:
+            return False
+
+        # 3. Parse results
+        self._start("parse")
+        if not self.parse_results():
+            self.log("WARNING", "Parse failed -- creating minimal results")
+            self.results = {"total_links": 0, "successful_links": 0, "broken_links": 0,
+                            "success_rate": 100.0, "fail_map": {}, "raw_data": {}}
+        self._stop("parse")
+
+        # 4. Generate markdown summary (no 2nd lychee run)
+        self.generate_markdown_summary()
+
+        # 5. Analyze failures
+        self._start("analysis")
+        analysis_level = self.config.get("analysis_level", "comprehensive")
+        if analysis_level in ("standard", "comprehensive"):
+            self.analyze_failures()
+        self._stop("analysis")
+
+        # 6. Delta + AI
+        self._start("ai")
+        new_broken, fixed = self.compute_delta()
+        if analysis_level in ("comprehensive", "ai-only"):
+            self.run_ai_analysis(new_broken, fixed)
+        self._stop("ai")
+
+        # 7. Issue
+        self.create_github_issue()
+
+        # 8. Timings
+        self._stop("total")
+        self._write_timings()
+
+        self.log("INFO", f"Total time: {self._elapsed('total'):.1f}s")
+        self.log("SUCCESS", "Link Health Guardian complete!")
+        return self.results.get("broken_links", 0) == 0
 
 
 def main():
-    """Main function with argument parsing."""
     parser = argparse.ArgumentParser(
-        description='IT-Journey Link Health Guardian v2.0',
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-    python3 link-checker.py --scope website --analysis-level comprehensive
-    python3 link-checker.py --scope docs --analysis-level basic --no-ai
-    python3 link-checker.py --scope posts --create-issue --timeout 60
-    python3 link-checker.py --analysis-level ai-only --ai-analysis
-        """
+        description=f"IT-Journey Link Health Guardian v{LinkHealthGuardian.VERSION}",
     )
-    
-    # Core options
-    parser.add_argument('--scope', default='website',
-                       choices=['website', 'internal', 'external', 'docs', 'posts', 'quests', 'all'],
-                       help='Scope of link checking')
-    
-    parser.add_argument('--analysis-level', default='comprehensive',
-                       choices=['basic', 'standard', 'comprehensive', 'ai-only'],
-                       help='Level of analysis to perform')
-    
-    parser.add_argument('--output-dir', default='link-check-results',
-                       help='Output directory for results')
-    
-    # Link checking options
-    parser.add_argument('--timeout', type=int, default=30,
-                       help='Request timeout in seconds')
-    
-    parser.add_argument('--max-retries', type=int, default=3,
-                       help='Maximum retry attempts for failed links')
-    
-    parser.add_argument('--follow-redirects', action='store_true', default=True,
-                       help='Follow HTTP redirects')
-    
-    parser.add_argument('--no-follow-redirects', dest='follow_redirects', action='store_false',
-                       help='Do not follow HTTP redirects')
-    
-    # Analysis options
-    parser.add_argument('--ai-analysis', action='store_true', default=True,
-                       help='Enable AI-powered analysis')
-    
-    parser.add_argument('--no-ai', dest='ai_analysis', action='store_false',
-                       help='Disable AI-powered analysis')
-    
-    # GitHub integration
-    parser.add_argument('--create-issue', action='store_true', default=False,
-                       help='Create GitHub issue with results')
-    
-    parser.add_argument('--repository',
-                       help='Repository in format owner/repo')
-    
-    # System options
-    parser.add_argument('--skip-install', action='store_true',
-                       help='Skip dependency installation')
-    
+    parser.add_argument("--scope", default="website",
+                        choices=["website", "internal", "external", "docs", "posts", "quests", "all"])
+    parser.add_argument("--analysis-level", default="comprehensive",
+                        choices=["basic", "standard", "comprehensive", "ai-only"])
+    parser.add_argument("--output-dir", default="link-check-results")
+
+    parser.add_argument("--engine", default="lychee", choices=["lychee", "curl"],
+                        help="Link checking engine")
+
+    parser.add_argument("--changed-only", action="store_true",
+                        help="Only check files changed vs main branch")
+    parser.add_argument("--diff-range", default="origin/main...HEAD",
+                        help="Git diff range for --changed-only")
+
+    parser.add_argument("--include-site", action="store_true",
+                        help="Also scan _site/ directory")
+
+    parser.add_argument("--ai-provider", default="none",
+                        choices=["openai", "anthropic", "none"],
+                        help="AI provider for analysis")
+    parser.add_argument("--ai-model", default=None,
+                        help="Override default AI model")
+    parser.add_argument("--dry-run-ai", action="store_true",
+                        help="Show AI prompt without calling API")
+
+    parser.add_argument("--create-issue", action="store_true")
+
     args = parser.parse_args()
-    
-    # Convert args to config dict
+
     config = {
-        'scope': args.scope,
-        'analysis_level': args.analysis_level,
-        'output_dir': args.output_dir,
-        'timeout': args.timeout,
-        'max_retries': args.max_retries,
-        'follow_redirects': args.follow_redirects,
-        'ai_analysis': args.ai_analysis,
-        'create_issue': args.create_issue,
-        'repository': args.repository,
-        'skip_install': args.skip_install
+        "scope": args.scope,
+        "analysis_level": args.analysis_level,
+        "output_dir": args.output_dir,
+        "engine": args.engine,
+        "changed_only": args.changed_only,
+        "diff_range": args.diff_range,
+        "include_site": args.include_site,
+        "ai_provider": args.ai_provider,
+        "ai_model": args.ai_model,
+        "dry_run_ai": args.dry_run_ai,
+        "create_issue": args.create_issue,
     }
-    
-    # Run the workflow
+
     guardian = LinkHealthGuardian(config)
-    success = guardian.run_full_workflow()
-    
-    # Exit with appropriate code
+    success = guardian.run()
     sys.exit(0 if success else 1)
 
 

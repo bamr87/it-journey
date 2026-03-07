@@ -1,4 +1,8 @@
 #!/bin/bash
+# ⚠️  DEPRECATED — This script is superseded by scripts/validation/link-checker.py v3.0
+#     Curl-based checking is available via: python3 scripts/validation/link-checker.py --engine curl
+#     This file is preserved for educational reference only.
+#
 # guardian.sh - Hyperlink Guardian Main Testing Engine
 # Comprehensive link detection and testing for Jekyll sites
 # Part of the IT-Journey Testing Framework

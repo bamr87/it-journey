@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2026-03-07
+
+### Added
+- **New Post: `foundational-ci-cd-pipelines-github-vscode-extensions.md`** (`pages/_posts/devops/`) - Tutorial on building production-ready CI/CD pipelines for VS Code extensions with GitHub Actions, covering linting, testing, building, and automated Marketplace publishing
+- **Lychee Configuration** (`.lychee.toml`) - Declarative configuration for lychee link checker with cross-run caching, performance tuning, and URL exclusions
+- **Broken Links Baseline** (`link-check-results/broken_links_baseline.json`) - Baseline of known broken links for delta-based AI analysis
+- **Preview Images** - Generated preview banner for the new CI/CD pipelines blog post (original + enhanced variant)
+
+### Changed
+- **Link Health Guardian v3.0** (`scripts/validation/link-checker.py`) - Major rewrite:
+  - Dual engine support: lychee (primary, via `.lychee.toml`) or curl (fallback)
+  - Persistent caching via `.lycheecache` for cross-run URL skip
+  - Incremental `--changed-only` mode for fast PR checks
+  - Delta-only AI analysis (only new broken links sent to AI)
+  - Multi-provider AI support (OpenAI, Anthropic, or none via `--ai-provider`)
+  - `--include-site` flag for opt-in `_site/` scanning
+  - Timing instrumentation for performance tracking
+- **Link Checker Workflow** (`.github/workflows/link-checker.yml`) - Simplified and optimized:
+  - Added `pull_request` trigger with fast incremental check (changed files only, no AI)
+  - Removed redundant Friday schedule (keep Monday only)
+  - Added AI provider selection (OpenAI, Anthropic, or none)
+  - Removed obsolete input options (timeout, ai-analysis toggle)
+- **Preview Image Generator Plugin** (`_plugins/preview_image_generator.rb`) - Fixed `has_preview?` to reject non-path strings (text descriptions) and added multi-candidate file path checking for both absolute and relative paths
+- **Preview Image Script** (`scripts/generation/generate-preview-images.sh`) - Added `--enhance` mode for AI-powered image improvement with configurable model, fidelity, and format options; fixed `PROJECT_ROOT` path resolution
+- **Scripts README** (`scripts/README.md`) - Updated Link Health Guardian documentation for v3.0 features, configuration options, and dual-engine architecture
+- **Guardian Script** (`test/hyperlink-guardian/scripts/guardian.sh`) - Marked as deprecated in favor of `link-checker.py --engine curl`
+
+### Fixed
+- **Link Check Results** - Cleaned up oversized `lychee_results.json` (reduced ~128K lines of stale data) and regenerated analysis reports
+
 ## [Unreleased] - 2026-02-23
 
 ### Added

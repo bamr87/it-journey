@@ -1,0 +1,67 @@
+# Lychee Link Checker Configuration
+# https://lychee.cli.rs/usage/config/
+#
+# Used by both local runs (scripts/validation/link-checker.py)
+# and CI (lycheeverse/lychee-action@v2 in .github/workflows/link-checker.yml)
+
+################################################################################
+# Caching — persist results across runs to skip already-checked URLs
+################################################################################
+cache = true
+max_cache_age = "7d"          # Re-check URLs older than 7 days
+
+################################################################################
+# Performance
+################################################################################
+max_concurrency = 32          # Parallel requests (up from default ~10)
+timeout = 20                  # Per-request timeout in seconds
+max_retries = 1               # Retry count (transient failures are low-value for static analysis)
+retry_wait = 5                # Seconds between retries
+
+################################################################################
+# HTTP behavior
+################################################################################
+user_agent = "IT-Journey-LinkChecker/3.0 (https://github.com/bamr87/it-journey)"
+accept = ["200", "204", "206", "301", "302", "303", "307", "308"]
+insecure = false              # Don't skip TLS verification
+include_fragments = false     # Don't check anchor fragments (saves time)
+
+################################################################################
+# Base URL for resolving root-relative links in source markdown
+################################################################################
+base = "https://it-journey.dev"
+
+################################################################################
+# Excluded paths — directories to skip entirely
+# Note: .lycheeignore handles URL-pattern exclusions (social media, templates, etc.)
+################################################################################
+exclude_path = [
+  "_site/",
+  ".crush/",
+  ".devcontainer/",
+  ".github/",
+  ".venv/",
+  "link-check-results/",
+  "logs/",
+  "node_modules/",
+  "vendor/",
+  "work/",
+  "test/",
+]
+
+################################################################################
+# Excluded URL patterns (supplement .lycheeignore)
+################################################################################
+exclude = [
+  "https://url/",                        # Placeholder URLs
+  "https://github\\.com/.*/blob/.*",     # GitHub file links (rate limited)
+  "https://reddit\\.com/submit.*",       # Reddit share buttons
+  "http://0\\.0\\.0\\.0:.*",            # Local dev servers
+]
+
+################################################################################
+# Output
+################################################################################
+verbose = true
+no_progress = true
+format = "json"
