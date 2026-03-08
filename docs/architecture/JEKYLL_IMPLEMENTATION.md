@@ -178,7 +178,7 @@ defaults:
   - scope:
       path: pages/_posts
     values:
-      layout: journals
+      layout: articles
       sidebar:
         nav: dynamic
 
@@ -353,7 +353,7 @@ root.html (theme)
 Specified in frontmatter:
 ```yaml
 ---
-layout: journals
+layout: articles
 ---
 ```
 

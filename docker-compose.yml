@@ -2,9 +2,10 @@ services:
 
   jekyll:
     image: jekyll/jekyll:latest
-    command: jekyll serve --watch --force_polling --config "_config.yml,_config_dev.yml"
+    command: jekyll serve --watch --force_polling --incremental --config "_config.yml,_config_dev.yml"
     volumes:
       - ./:/app
+      - jekyll-cache:/app/.jekyll-cache
     ports:
       - "4002:4002"
     working_dir: /app
@@ -34,6 +35,7 @@ services:
     volumes:
       - ./:/app
       - ./.git:/app/.git
+
   quest-network-validator:
     build:
       context: .
@@ -46,4 +48,7 @@ services:
       PYTHONPATH: /app
       PYTHONUNBUFFERED: 1
       PATH: "/opt/venv/bin:$PATH"
+
+volumes:
+  jekyll-cache:
 

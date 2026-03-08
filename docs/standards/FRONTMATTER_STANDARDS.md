@@ -45,7 +45,7 @@ excerpt: "Short summary"        # Manual excerpt (auto-generated if not set)
 ---
 title: "Post Title"
 date: 2025-10-13T00:00:00.000Z
-layout: journals
+layout: articles
 ---
 ```
 
@@ -55,7 +55,7 @@ layout: journals
 title: "Understanding Jekyll Collections"
 description: "A deep dive into Jekyll's collection system"
 author: "Amr Abdel-Motaleb"
-layout: journals
+layout: articles
 date: 2025-10-13T12:00:00.000Z
 lastmod: 2025-10-13T15:30:00.000Z
 categories:

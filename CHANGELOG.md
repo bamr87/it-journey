@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2026-03-08
+
+### Changed
+- **Layout Rename: `journals` → `articles`** - Renamed layout references across all post instructions, prompt templates, SEO templates, documentation standards, architecture docs, and quest content for consistency with `_config.yml` default
+- **Dev Performance: Incremental Builds** (`_config_dev.yml`) - Added incremental build support, reduced plugin set, disabled preview image generation during development for faster iteration
+- **Docker Dev Environment** (`docker-compose.yml`) - Added `--incremental` flag to Jekyll serve command and persistent `jekyll-cache` volume for faster rebuilds
+- **Preview Generator** (`_plugins/preview_generator.rb`) - Skip preview generation during incremental builds to avoid full rebuild overhead
+- **Quest YAML Formatting** (`pages/_quests/0101/jekyll-quest-tracking.md`) - Normalized YAML indentation and quoting for consistency
+- **Post Metadata** (`pages/_posts/devops/2026-03-07-foundational-ci-cd-pipelines-github-vscode-extensions.md`) - Updated lastmod, removed duplicate layout field
+
+### Removed
+- **Empty Duplicate Post** (`pages/_posts/2025-07-10-github-actions-authentication-fix-2025-07-10.md`) - Removed empty duplicate of existing post in `devops/` subdirectory
+
 ## [Unreleased] - 2026-03-07
 
 ### Added

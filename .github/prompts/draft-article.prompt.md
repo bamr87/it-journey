@@ -88,7 +88,7 @@ description: "[150-300 char description of article value]"
 date: {{ current_date }}
 lastmod: {{ current_date }}
 author: "IT-Journey Team"
-layout: journals
+layout: articles
 permalink: /posts/[url-slug]/
 tags:
   - [primary-technology]

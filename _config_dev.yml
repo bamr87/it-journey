@@ -2,3 +2,22 @@
 
 remote_theme             : false
 theme                    : "jekyll-theme-zer0"
+
+# Performance: enable incremental builds for development
+incremental: true
+
+# Performance: disable feed/sitemap regeneration during dev
+# These plugins regenerate fully on every change, adding ~10-20s
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Performance: reduce Liquid processing overhead
+liquid:
+  error_mode: warn
+  strict_filters: false
+
+# Preview images: disable auto-generation during dev
+preview_images:
+  enabled: false

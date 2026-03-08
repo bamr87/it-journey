@@ -2,7 +2,7 @@
 title: Foundational CI/CD Pipelines with GitHub Actions for VS Code Extensions
 description: Learn how to build robust CI/CD pipelines using GitHub Actions for VS Code extension development. A real-world walkthrough using the vs-sonic-pi extension, covering linting, testing, building, and automated marketplace publishing.
 date: 2026-03-07T00:00:00.000Z
-lastmod: 2026-03-07T23:22:34.701Z
+lastmod: 2026-03-08T02:59:00.430Z
 author: IT-Journey Team
 permalink: /posts/foundational-ci-cd-pipelines-github-vscode-extensions/
 tags:
@@ -53,7 +53,6 @@ validation_methods:
   - Fork the vs-sonic-pi repo and trigger a CI run by opening a PR
   - Create a tag and watch the release workflow execute
   - Verify the .vsix artifact is downloadable from the Actions tab
-layout: posts
 attachments: ""
 comments: true
 draft: false
