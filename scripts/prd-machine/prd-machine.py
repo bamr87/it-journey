@@ -269,12 +269,15 @@ class PRDMachine:
             if len(scope_fixes) >= min_fixes:
                 # Multiple fixes on the same scope suggest a contradiction
                 descriptions = [f["commit"]["subject"] for f in scope_fixes]
+                shown = " vs ".join(descriptions[:3])
+                if len(descriptions) > 3:
+                    shown += f" ... and {len(descriptions) - 3} more"
                 conflicts.append({
                     "type": "contradiction",
                     "source": f"scope:{scope}",
                     "description": (
                         f"Multiple fixes on scope '{scope}' suggest contradictory requirements: "
-                        + " vs ".join(descriptions[:3])
+                        + shown
                     ),
                     "resolution": "Review these fixes to ensure requirements are consistent"
                 })

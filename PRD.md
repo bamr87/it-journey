@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-03-12T14:24:46.000Z
-lastmod: 2026-03-12T14:24:46.000Z
+date: 2026-03-12T14:27:34.000Z
+lastmod: 2026-03-12T14:27:34.000Z
 status: Living
 version: 2026-03-12
 auto_generated: true
@@ -46,7 +46,7 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
 | Implemented Features | 1 | ✅ Tracked |
-| Recent Commits | 24 | ✅ Analyzed |
+| Recent Commits | 25 | ✅ Analyzed |
 | Detected Issues | 1 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
@@ -170,7 +170,7 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
-- **CONTRADICTION**: Multiple fixes on scope 'ci' suggest contradictory requirements: fix(ci): standardize workflow tokens to use GITHUB_TOKEN across all workflows vs fix(ci): fix bash backtick interpretation and missing labels in dependency checker vs fix(ci): handle datetime serialization in frontmatter validator
+- **CONTRADICTION**: Multiple fixes on scope 'ci' suggest contradictory requirements: fix(ci): standardize workflow tokens to use GITHUB_TOKEN across all workflows vs fix(ci): fix bash backtick interpretation and missing labels in dependency checker vs fix(ci): handle datetime serialization in frontmatter validator ... and 2 more
   - *Action*: Review these fixes to ensure requirements are consistent
 
 ## 6. OOS (Out Of Scope)
