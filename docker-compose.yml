@@ -2,7 +2,7 @@ services:
 
   jekyll:
     image: jekyll/jekyll:latest
-    command: jekyll serve --watch --force_polling --incremental --config "_config.yml,_config_dev.yml"
+    command: jekyll serve --watch --force_polling --config "_config.yml,_config_dev.yml"
     volumes:
       - ./:/app
       - jekyll-cache:/app/.jekyll-cache

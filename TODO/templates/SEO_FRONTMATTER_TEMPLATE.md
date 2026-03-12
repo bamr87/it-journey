@@ -98,7 +98,7 @@ excerpt: "[Extended description for previews - mention platforms and key outcome
 snippet: "[One compelling sentence summary]"
 
 author: IT-Journey Team
-layout: articles
+layout: article
 
 keywords:
   primary:

@@ -456,7 +456,7 @@ tags:
   - [key-technologies]
 categories:
   - Stack Analysis
-layout: articles
+layout: article
 lastmod: [Current Date]
 ---
 

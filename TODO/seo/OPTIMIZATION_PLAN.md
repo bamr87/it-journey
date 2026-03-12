@@ -93,7 +93,7 @@ keywords:
   primary: [main-search-term, secondary-search-term]
   secondary: [supporting-keywords]
 author: "IT-Journey Team"
-layout: articles
+layout: article
 estimated_time: "X minutes"
 difficulty: "🟢 Easy | 🟡 Intermediate | 🔴 Advanced"
 lastmod: [current-date]

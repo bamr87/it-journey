@@ -178,7 +178,7 @@ defaults:
   - scope:
       path: pages/_posts
     values:
-      layout: articles
+      layout: article
       sidebar:
         nav: dynamic
 

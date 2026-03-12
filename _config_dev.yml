@@ -17,7 +17,3 @@ plugins:
 liquid:
   error_mode: warn
   strict_filters: false
-
-# Preview images: disable auto-generation during dev
-preview_images:
-  enabled: false
