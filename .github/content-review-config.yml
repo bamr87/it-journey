@@ -34,6 +34,9 @@ ai_review:
   model: "gpt-4"
   max_tokens: 1500
   temperature: 0.3
+  max_retries: 3              # Number of retry attempts for failed API calls
+  initial_backoff: 5          # Initial backoff in seconds for retries
+  delay_between_files: 2      # Delay in seconds between file reviews
   
 # SEO optimization settings
 seo:

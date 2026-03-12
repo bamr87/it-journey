@@ -63,9 +63,15 @@ jobs:
         import os
         import sys
         import json
+        import time
         import yaml
         import requests
         from pathlib import Path
+
+        # Retry settings
+        MAX_RETRIES = 3
+        INITIAL_BACKOFF = 5  # seconds
+        DELAY_BETWEEN_FILES = 2  # seconds between API calls
 
         def extract_frontmatter_and_content(file_path):
             """Extract YAML frontmatter and content from markdown file."""
@@ -88,7 +94,7 @@ jobs:
                 return {}, ""
 
         def call_openai_api(content, filename):
-            """Call OpenAI API to review content."""
+            """Call OpenAI API to review content with retry logic for rate limits."""
             api_key = os.getenv('OPENAI_API_KEY')
             if not api_key:
                 return {"error": "OpenAI API key not found"}
@@ -122,43 +128,72 @@ jobs:
             }}
             """
             
-            try:
-                response = requests.post(
-                    'https://api.openai.com/v1/chat/completions',
-                    headers={
-                        'Authorization': f'Bearer {api_key}',
-                        'Content-Type': 'application/json'
-                    },
-                    json={
-                        'model': 'gpt-4',
-                        'messages': [
-                            {'role': 'user', 'content': prompt}
-                        ],
-                        'max_tokens': 1500,
-                        'temperature': 0.3
-                    }
-                )
-                
-                if response.status_code == 200:
-                    result = response.json()
-                    content_text = result['choices'][0]['message']['content']
+            last_status = None
+            for attempt in range(MAX_RETRIES):
+                try:
+                    response = requests.post(
+                        'https://api.openai.com/v1/chat/completions',
+                        headers={
+                            'Authorization': f'Bearer {api_key}',
+                            'Content-Type': 'application/json'
+                        },
+                        json={
+                            'model': 'gpt-4',
+                            'messages': [
+                                {'role': 'user', 'content': prompt}
+                            ],
+                            'max_tokens': 1500,
+                            'temperature': 0.3
+                        },
+                        timeout=60
+                    )
                     
-                    # Try to extract JSON from the response
-                    try:
-                        # Look for JSON block in the response
-                        import re
-                        json_match = re.search(r'\{.*\}', content_text, re.DOTALL)
-                        if json_match:
-                            return json.loads(json_match.group())
-                        else:
-                            return {"error": "No JSON found in response", "raw_response": content_text}
-                    except json.JSONDecodeError:
-                        return {"error": "Invalid JSON in response", "raw_response": content_text}
-                else:
-                    return {"error": f"API call failed: {response.status_code}"}
-                    
-            except Exception as e:
-                return {"error": f"Exception during API call: {str(e)}"}
+                    if response.status_code == 200:
+                        result = response.json()
+                        content_text = result['choices'][0]['message']['content']
+                        
+                        # Try to extract JSON from the response
+                        try:
+                            import re
+                            json_match = re.search(r'\{.*\}', content_text, re.DOTALL)
+                            if json_match:
+                                return json.loads(json_match.group())
+                            else:
+                                return {"error": "No JSON found in response", "raw_response": content_text}
+                        except json.JSONDecodeError:
+                            return {"error": "Invalid JSON in response", "raw_response": content_text}
+                    elif response.status_code == 429:
+                        # Rate limited - use Retry-After header or exponential backoff
+                        last_status = "rate limited (429)"
+                        default_wait = INITIAL_BACKOFF * (2 ** attempt)
+                        try:
+                            retry_after = int(response.headers.get('Retry-After', default_wait))
+                        except (ValueError, TypeError):
+                            retry_after = default_wait
+                        wait_time = min(retry_after, 120)
+                        print(f"  Rate limited (429). Retrying in {wait_time}s (attempt {attempt + 1}/{MAX_RETRIES})")
+                        time.sleep(wait_time)
+                        continue
+                    elif response.status_code >= 500:
+                        # Server error - retry with backoff
+                        last_status = f"server error ({response.status_code})"
+                        wait_time = INITIAL_BACKOFF * (2 ** attempt)
+                        print(f"  Server error ({response.status_code}). Retrying in {wait_time}s (attempt {attempt + 1}/{MAX_RETRIES})")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        return {"error": f"API call failed: {response.status_code}"}
+                        
+                except requests.exceptions.Timeout:
+                    last_status = "request timed out"
+                    wait_time = INITIAL_BACKOFF * (2 ** attempt)
+                    print(f"  Request timed out. Retrying in {wait_time}s (attempt {attempt + 1}/{MAX_RETRIES})")
+                    time.sleep(wait_time)
+                    continue
+                except Exception as e:
+                    return {"error": f"Exception during API call: {str(e)}"}
+            
+            return {"error": f"API {last_status} after {MAX_RETRIES} retries"}
 
         def main():
             changed_files_str = os.getenv('CHANGED_FILES', '')
@@ -166,10 +201,16 @@ jobs:
             
             all_reviews = {}
             
+            api_call_count = 0
             for file_path in changed_files:
                 if not os.path.exists(file_path):
                     continue
-                    
+                
+                # Add delay between API calls to avoid rate limiting
+                if api_call_count > 0:
+                    print(f"  Waiting {DELAY_BETWEEN_FILES}s before next review...")
+                    time.sleep(DELAY_BETWEEN_FILES)
+                
                 print(f"Reviewing: {file_path}")
                 frontmatter, content = extract_frontmatter_and_content(file_path)
                 
@@ -178,6 +219,7 @@ jobs:
                 
                 review = call_openai_api(full_content, file_path)
                 all_reviews[file_path] = review
+                api_call_count += 1
             
             # Save reviews to file
             with open('/tmp/ai_review_results.json', 'w') as f:
