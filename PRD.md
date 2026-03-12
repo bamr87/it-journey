@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-03-12T00:41:08.000Z
-lastmod: 2026-03-12T00:41:08.000Z
+date: 2026-03-12T14:24:46.000Z
+lastmod: 2026-03-12T14:24:46.000Z
 status: Living
 version: 2026-03-12
 auto_generated: true
@@ -45,9 +45,9 @@ As a **learner / contributor / educator**, I want:
 | Learning Quests | 6 | ✅ Published |
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
-| Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 22 | ✅ Analyzed |
-| Detected Issues | 6 | ⚠️ Review needed |
+| Implemented Features | 1 | ✅ Tracked |
+| Recent Commits | 24 | ✅ Analyzed |
+| Detected Issues | 1 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -170,16 +170,8 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
-- **FIX**: Bug fix suggests incomplete requirement: fix: prevent PRD Machine recursive commit loop
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix: add permalink to github-setup.md to resolve 404 error on /quickstart/github
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): fix bash backtick interpretation and missing labels in dependency checker
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): handle datetime serialization in frontmatter validator
-  - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix(ci): replace expired PAT_TOKEN with GITHUB_TOKEN in workflows
-  - *Action*: Consider if original requirement needs clarification
+- **CONTRADICTION**: Multiple fixes on scope 'ci' suggest contradictory requirements: fix(ci): standardize workflow tokens to use GITHUB_TOKEN across all workflows vs fix(ci): fix bash backtick interpretation and missing labels in dependency checker vs fix(ci): handle datetime serialization in frontmatter validator
+  - *Action*: Review these fixes to ensure requirements are consistent
 
 ## 6. OOS (Out Of Scope)
 

@@ -217,15 +217,22 @@ class PRDMachine:
         return result
     
     def detect_conflicts(self) -> List[Dict[str, Any]]:
-        """Detect conflicting requirements or signals."""
+        """Detect conflicting requirements or signals.
+        
+        Identifies actual contradictions between commits rather than
+        treating every bug fix as a conflict. True conflicts are:
+        - Explicit reverts or rollbacks
+        - Pairs of fix commits on the same scope that contradict each other
+          (e.g., changing A→B then B→A)
+        """
         self.log("INFO", "Detecting conflicts in requirements...")
         
         conflicts = []
+        commits = self.signals.get("git_commits", [])
         
-        # Simple conflict detection based on commit messages
-        for commit in self.signals.get("git_commits", []):
+        # Detect explicit reverts or rollbacks
+        for commit in commits:
             subject = commit.get("subject", "").lower()
-            # Look for revert or conflicting patterns
             if "revert" in subject or "rollback" in subject:
                 conflicts.append({
                     "type": "revert",
@@ -233,14 +240,43 @@ class PRDMachine:
                     "description": f"Reverted change: {commit['subject']}",
                     "resolution": "Review if revert addresses a conflicting requirement"
                 })
-            
-            # Look for "fix" that might indicate previous requirement was incomplete
-            if subject.startswith("fix:") or subject.startswith("fix("):
+        
+        # Detect contradictory fix commits on the same scope
+        # Group fix commits by their scope (e.g., "ci", "launch", "workflows")
+        fix_commits = []
+        for commit in commits:
+            subject = commit.get("subject", "").strip()
+            match = re.match(r'^fix(?:\(([^)]+)\))?:\s*(.+)', subject, re.IGNORECASE)
+            if match:
+                scope = match.group(1) or "general"
+                description = match.group(2).lower()
+                fix_commits.append({
+                    "scope": scope.lower(),
+                    "description": description,
+                    "commit": commit
+                })
+        
+        # Look for contradictions: multiple fixes on the same scope
+        # that appear to reverse each other
+        scopes = {}
+        for fc in fix_commits:
+            scopes.setdefault(fc["scope"], []).append(fc)
+        
+        for scope, scope_fixes in scopes.items():
+            # Require more evidence for unscoped ("general") fixes since they
+            # are more likely to be unrelated to each other
+            min_fixes = 3 if scope == "general" else 2
+            if len(scope_fixes) >= min_fixes:
+                # Multiple fixes on the same scope suggest a contradiction
+                descriptions = [f["commit"]["subject"] for f in scope_fixes]
                 conflicts.append({
-                    "type": "fix",
-                    "source": f"commit:{commit['hash']}",
-                    "description": f"Bug fix suggests incomplete requirement: {commit['subject']}",
-                    "resolution": "Consider if original requirement needs clarification"
+                    "type": "contradiction",
+                    "source": f"scope:{scope}",
+                    "description": (
+                        f"Multiple fixes on scope '{scope}' suggest contradictory requirements: "
+                        + " vs ".join(descriptions[:3])
+                    ),
+                    "resolution": "Review these fixes to ensure requirements are consistent"
                 })
         
         self.signals["conflicts"] = conflicts
