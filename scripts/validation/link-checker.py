@@ -28,6 +28,13 @@ try:
 except ImportError:
     requests = None  # AI analysis unavailable without requests
 
+# Allow importing the shared AI client from scripts/lib/
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.pardir, "lib"))
+try:
+    from ai_client import AIClient
+except ImportError:
+    AIClient = None  # Fallback if module not available
+
 
 class LinkHealthGuardian:
     VERSION = "3.0.0"
@@ -392,7 +399,7 @@ class LinkHealthGuardian:
         self.log("INFO", f"Delta: {len(new_broken)} new broken, {len(fixed)} fixed since last run")
         return new_broken, fixed
 
-    # -- AI analysis (delta-only, multi-provider) --------------------------
+    # -- AI analysis (delta-only, vendor-agnostic via AIClient) -------------
     def run_ai_analysis(self, new_broken, fixed):
         if self.config.get("dry_run_ai"):
             self.log("INFO", "--dry-run-ai: skipping AI call")
@@ -410,15 +417,30 @@ class LinkHealthGuardian:
             self._save_ai(content, False)
             return True
 
+        if AIClient is None:
+            self.log("WARNING", "AIClient module not available -- using fallback")
+            return self._fallback_ai(new_broken, fixed)
+
         prompt = self._build_prompt(new_broken, fixed)
         self.log("INFO", f"Sending {len(new_broken)} new broken link(s) to {provider}...")
 
-        if provider == "openai":
-            return self._call_openai(prompt)
-        if provider == "anthropic":
-            return self._call_anthropic(prompt)
+        client = AIClient(
+            provider=provider,
+            model=self.config.get("ai_model"),
+        )
+        result = client.chat(
+            prompt=prompt,
+            system="You are a concise link-health advisor for a Jekyll educational site. Be brief.",
+            max_tokens=500,
+            temperature=0.2,
+        )
 
-        self.log("WARNING", f"Unknown AI provider '{provider}' -- using fallback")
+        if result.success:
+            self._save_ai(result.content, True)
+            self.log("SUCCESS", f"{result.provider} analysis complete (model: {result.model})")
+            return True
+
+        self.log("WARNING", f"AI call failed: {result.error} -- using fallback")
         return self._fallback_ai(new_broken, fixed)
 
     def _build_prompt(self, new_broken, fixed):
@@ -433,79 +455,6 @@ class LinkHealthGuardian:
         lines.append("")
         lines.append("Give 3 concise prioritized actions to fix these. Markdown format.")
         return "\n".join(lines)
-
-    def _call_openai(self, prompt):
-        api_key = os.environ.get("OPENAI_API_KEY")
-        if not api_key:
-            self.log("WARNING", "OPENAI_API_KEY not set -- using fallback")
-            return self._fallback_ai(set(), set())
-        if requests is None:
-            self.log("WARNING", "requests library not available -- using fallback")
-            return self._fallback_ai(set(), set())
-
-        model = self.config.get("ai_model") or "gpt-4o-mini"
-        try:
-            resp = requests.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-                json={
-                    "model": model,
-                    "messages": [
-                        {"role": "system", "content": "You are a concise link-health advisor for a Jekyll educational site. Be brief."},
-                        {"role": "user", "content": prompt},
-                    ],
-                    "max_tokens": 500,
-                    "temperature": 0.2,
-                },
-                timeout=30,
-            )
-            if resp.status_code == 200:
-                content = resp.json()["choices"][0]["message"]["content"]
-                self._save_ai(content, True)
-                self.log("SUCCESS", "OpenAI analysis complete")
-                return True
-            self.log("ERROR", f"OpenAI API error {resp.status_code}")
-            return self._fallback_ai(set(), set())
-        except Exception as e:
-            self.log("ERROR", f"OpenAI request failed: {e}")
-            return self._fallback_ai(set(), set())
-
-    def _call_anthropic(self, prompt):
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
-        if not api_key:
-            self.log("WARNING", "ANTHROPIC_API_KEY not set -- using fallback")
-            return self._fallback_ai(set(), set())
-        if requests is None:
-            self.log("WARNING", "requests library not available -- using fallback")
-            return self._fallback_ai(set(), set())
-
-        model = self.config.get("ai_model") or "claude-sonnet-4-20250514"
-        try:
-            resp = requests.post(
-                "https://api.anthropic.com/v1/messages",
-                headers={
-                    "x-api-key": api_key,
-                    "anthropic-version": "2023-06-01",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "model": model,
-                    "max_tokens": 500,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "system": "You are a concise link-health advisor for a Jekyll educational site. Be brief.",
-                },
-                timeout=30,
-            )
-            if resp.status_code == 200:
-                content = resp.json()["content"][0]["text"]
-                self._save_ai(content, True)
-                self.log("SUCCESS", "Anthropic analysis complete")
-                return True
-            self.log("ERROR", f"Anthropic API error {resp.status_code}")
-            return self._fallback_ai(set(), set())
-        except Exception as e:
-            self.log("ERROR", f"Anthropic request failed: {e}")
-            return self._fallback_ai(set(), set())
 
     def _fallback_ai(self, new_broken=None, fixed=None):
         r = self.results
