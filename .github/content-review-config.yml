@@ -30,8 +30,12 @@ quality_thresholds:
   max_sentence_length: 25    # Maximum average sentence length
 
 # AI review settings
+# provider: "openai", "anthropic", or "none" (can also be set via AI_PROVIDER env var)
+# model: provider-specific model name (can also be set via AI_MODEL env var)
+#   - openai default: "gpt-4o-mini"
+#   - anthropic default: "claude-sonnet-4-20250514"
 ai_review:
-  model: "gpt-4"
+  provider: "none"
   max_tokens: 1500
   temperature: 0.3
   
