@@ -221,7 +221,7 @@ def ai_review(
 
     ai_cfg = config.get("ai_review", {})
     provider = ai_cfg.get("provider", os.environ.get("AI_PROVIDER", "none"))
-    model = ai_cfg.get("model") if "provider" in ai_cfg else None
+    model = ai_cfg.get("model")  # None → AIClient uses env var or default
 
     client = AIClient(
         provider=provider,

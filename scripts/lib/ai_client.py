@@ -98,9 +98,11 @@ class AIClient:
         api_key: Optional[str] = None,
         timeout: int = 30,
     ):
-        # Allow env-var overrides for easy CI configuration
+        # Allow env-var overrides for easy CI configuration.
+        # Priority: non-empty env var  >  explicit parameter  >  provider default
         self.provider = os.environ.get("AI_PROVIDER", provider).lower()
-        self.model = os.environ.get("AI_MODEL", model) or DEFAULT_MODELS.get(self.provider)
+        env_model = os.environ.get("AI_MODEL")
+        self.model = env_model or model or DEFAULT_MODELS.get(self.provider)
         self._api_key = api_key
         self.timeout = timeout
 
