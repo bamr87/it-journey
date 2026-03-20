@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-03-19T06:25:02.000Z
-lastmod: 2026-03-19T06:25:02.000Z
+date: 2026-03-20T06:21:54.000Z
+lastmod: 2026-03-20T06:21:54.000Z
 status: Living
-version: 2026-03-19
+version: 2026-03-20
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-03-19 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-03-20 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -46,7 +46,7 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 18 | ✅ Analyzed |
+| Recent Commits | 20 | ✅ Analyzed |
 | Detected Issues | 2 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
@@ -170,9 +170,9 @@ python3 scripts/validation/link-checker.py --scope website
 
 ### Recent Issues Detected
 
-- **FIX**: Bug fix suggests incomplete requirement: fix: address code review - model priority, config docs, YAML guard
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix: address code review - model priority, config docs, YAML guard
   - *Action*: Consider if original requirement needs clarification
-- **FIX**: Bug fix suggests incomplete requirement: fix: prevent PRD Machine recursive commit loop
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix: prevent PRD Machine recursive commit loop
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
