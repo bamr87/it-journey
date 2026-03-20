@@ -18,7 +18,6 @@ sub-title: Transforming Shell Scripts with AI-Powered Modular Architecture
 excerpt: How AI collaboration enabled the systematic refactoring of 20+ shell scripts into a maintainable, testable modular architecture
 snippet: '"The system learns and refines its growth patterns" - AI Evolution Engine'
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - ai-assisted development

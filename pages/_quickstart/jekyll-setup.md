@@ -1,7 +1,6 @@
 ---
 title: Jekyll Setup
 author: null
-layout: default
 description: null
 categories:
   - quickstart

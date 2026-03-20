@@ -29,7 +29,6 @@ validation_criteria:
 - Execute file operations (create, copy, move, delete) with confidence
 - Demonstrate text manipulation and search capabilities
 - Show proficiency with process management and system information commands
-layout: journals
 permalink: /quests/level-0001-terminal-mastery/
 categories:
 - Quests

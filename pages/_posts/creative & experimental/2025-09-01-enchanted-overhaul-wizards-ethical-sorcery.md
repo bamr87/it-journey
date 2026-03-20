@@ -19,7 +19,6 @@ sub-title: The Complete Saga of Alaric Fairwind's Ethical Revolution
 excerpt: One year after the wizard's groundbreaking reforms, explore the full impact of his non-arcane magic that dismantled capitalism's evils while creating unprecedented prosperity.
 snippet: A wizard's ethical sorcery proves that capitalism can be reformed without sacrificing shareholder value.
 author: IT-Journey Team
-layout: journals
 section: Creative & Experimental
 keywords:
     primary:

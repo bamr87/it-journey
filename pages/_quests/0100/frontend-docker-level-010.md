@@ -20,7 +20,6 @@ skill_focus:
 - Quests
 - Frontend
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0100-lvl-010-frontend-docker/
 categories:
 - Quests

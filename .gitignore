@@ -56,6 +56,15 @@ logs/
 test-results/
 
 ##############################
+# Link Check Results (runtime outputs)
+##############################
+link-check-results/*.json
+link-check-results/*.env
+link-check-results/ai_analysis.md
+link-check-results/summary.md
+link-check-results/detailed_analysis.md
+
+##############################
 # Work Directory Pattern (disposable)
 ##############################
 work/

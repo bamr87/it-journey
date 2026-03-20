@@ -81,7 +81,6 @@ rewards:
   unlocks_features:
   - Access to Character Building quest
   - Specialization-specific quest recommendations
-layout: journals
 permalink: /quests/lvl_000/character-selection/
 categories: []
 tags:

@@ -24,7 +24,6 @@ tags:
     - svg
 title: "penrose triangle"
 type: Article
-layout: journals
 keywords:
     primary:
         - penrose triangle

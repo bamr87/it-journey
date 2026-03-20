@@ -19,7 +19,6 @@ sub-title: null
 excerpt: null
 snippet: null
 author: Amr
-layout: null
 keywords:
     - tips
     - iTerm

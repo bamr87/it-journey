@@ -32,7 +32,6 @@ validation_criteria:
 - Files organized into logical directory structure
 - YAML front matter correctly added to documents
 - Workflow runs on schedule and manual trigger
-layout: journals
 permalink: /quests/0001/docs-in-a-row/
 categories:
 - Automation

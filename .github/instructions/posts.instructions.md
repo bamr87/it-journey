@@ -153,7 +153,7 @@ sub-title: "Practical subtitle that clarifies the specific focus or approach"
 excerpt: "One-sentence summary of the post's core value proposition and key takeaway"
 snippet: "Brief, memorable summary that captures the essence of the content"
 author: "Author Name or IT-Journey Team"
-layout: journals
+layout: article
 keywords:
     primary:
         - main-technology-focus

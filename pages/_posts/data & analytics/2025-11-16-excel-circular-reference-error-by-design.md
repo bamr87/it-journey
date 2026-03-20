@@ -6,7 +6,6 @@ excerpt: null
 preview: /
 snippet: null
 author: null
-layout: default
 keywords: []
 tags:
   - arbitrage opportunities

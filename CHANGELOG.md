@@ -5,7 +5,108 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Unreleased] - 2026-03-08
+
+### Changed
+- **Layout Rename: `journals` → `articles`** - Renamed layout references across all post instructions, prompt templates, SEO templates, documentation standards, architecture docs, and quest content for consistency with `_config.yml` default
+- **Dev Performance: Incremental Builds** (`_config_dev.yml`) - Added incremental build support, reduced plugin set, disabled preview image generation during development for faster iteration
+- **Docker Dev Environment** (`docker-compose.yml`) - Added `--incremental` flag to Jekyll serve command and persistent `jekyll-cache` volume for faster rebuilds
+- **Preview Generator** (`_plugins/preview_generator.rb`) - Skip preview generation during incremental builds to avoid full rebuild overhead
+- **Quest YAML Formatting** (`pages/_quests/0101/jekyll-quest-tracking.md`) - Normalized YAML indentation and quoting for consistency
+- **Post Metadata** (`pages/_posts/devops/2026-03-07-foundational-ci-cd-pipelines-github-vscode-extensions.md`) - Updated lastmod, removed duplicate layout field
+
+### Removed
+- **Empty Duplicate Post** (`pages/_posts/2025-07-10-github-actions-authentication-fix-2025-07-10.md`) - Removed empty duplicate of existing post in `devops/` subdirectory
+
+## [Unreleased] - 2026-03-07
+
+### Added
+- **New Post: `foundational-ci-cd-pipelines-github-vscode-extensions.md`** (`pages/_posts/devops/`) - Tutorial on building production-ready CI/CD pipelines for VS Code extensions with GitHub Actions, covering linting, testing, building, and automated Marketplace publishing
+- **Lychee Configuration** (`.lychee.toml`) - Declarative configuration for lychee link checker with cross-run caching, performance tuning, and URL exclusions
+- **Broken Links Baseline** (`link-check-results/broken_links_baseline.json`) - Baseline of known broken links for delta-based AI analysis
+- **Preview Images** - Generated preview banner for the new CI/CD pipelines blog post (original + enhanced variant)
+
+### Changed
+- **Link Health Guardian v3.0** (`scripts/validation/link-checker.py`) - Major rewrite:
+  - Dual engine support: lychee (primary, via `.lychee.toml`) or curl (fallback)
+  - Persistent caching via `.lycheecache` for cross-run URL skip
+  - Incremental `--changed-only` mode for fast PR checks
+  - Delta-only AI analysis (only new broken links sent to AI)
+  - Multi-provider AI support (OpenAI, Anthropic, or none via `--ai-provider`)
+  - `--include-site` flag for opt-in `_site/` scanning
+  - Timing instrumentation for performance tracking
+- **Link Checker Workflow** (`.github/workflows/link-checker.yml`) - Simplified and optimized:
+  - Added `pull_request` trigger with fast incremental check (changed files only, no AI)
+  - Removed redundant Friday schedule (keep Monday only)
+  - Added AI provider selection (OpenAI, Anthropic, or none)
+  - Removed obsolete input options (timeout, ai-analysis toggle)
+- **Preview Image Generator Plugin** (`_plugins/preview_image_generator.rb`) - Fixed `has_preview?` to reject non-path strings (text descriptions) and added multi-candidate file path checking for both absolute and relative paths
+- **Preview Image Script** (`scripts/generation/generate-preview-images.sh`) - Added `--enhance` mode for AI-powered image improvement with configurable model, fidelity, and format options; fixed `PROJECT_ROOT` path resolution
+- **Scripts README** (`scripts/README.md`) - Updated Link Health Guardian documentation for v3.0 features, configuration options, and dual-engine architecture
+- **Guardian Script** (`test/hyperlink-guardian/scripts/guardian.sh`) - Marked as deprecated in favor of `link-checker.py --engine curl`
+
+### Fixed
+- **Link Check Results** - Cleaned up oversized `lychee_results.json` (reduced ~128K lines of stale data) and regenerated analysis reports
+
+## [Unreleased] - 2026-02-23
+
+### Added
+- **New Post: `terminal-bash-finance-accounting.md`** (`pages/_posts/business/`) - Comprehensive blog post targeting finance and accounting professionals, teaching terminal and bash scripting through relatable spreadsheet analogies. Includes real-world month-end automation script, Excel-to-Bash translation table, and links to Terminal Fundamentals, Bashcrawl, and Bashrun quests.
+
+## [Unreleased] - 2026-02-22
+
+### Added
+- **Resource Codex** (`pages/_quests/0000/bashcrawl/README.md`) - Added links to the Bash Cheatsheet and Complete BASH Reference in the bashcrawl quest.
+- **Practical Application Section** (`pages/_docs/terminal/bash-complete-reference.md`) - Added links to interactive quests (`bashcrawl` and `bash-run`) to practice bash commands.
+
+### Changed
+- **Consolidated Bash Cheatsheets** (`pages/_notes/cheetsheets/bash-cheatsheet.md`) - Merged duplicate bash cheatsheets into a single file and updated frontmatter with related quests.
+- **Bashcrawl Quest Enhancement** (`pages/_quests/0000/bashcrawl/README.md`) - Upgraded to a main quest with enhanced frontmatter (`level: '0000'`, `quest_type: main_quest`), added quest dependencies, and updated the setup guide to clone from `bamr87/bashcrawl`.
+- **Bash-run Side Quest** (`pages/_quests/0000/bash-run.md`) - Updated frontmatter to correctly point to `bashcrawl` as its parent/required quest and added resource links.
+
+### Fixed
+- **Bashcrawl Launcher** (`pages/_quests/0000/bashcrawl/bash_crawl.sh`) - Rewrote the script to properly clone the `bashcrawl` repository and execute `entrance.sh`, removing unreachable code and adding error handling.
+
+## [Unreleased] - 2026-02-21
+
+### Added
+- **Complete BASH Reference** (`pages/_docs/terminal/bash-complete-reference.md`) - Exhaustive 4600+ line GNU Bash reference covering built-in commands, parameter expansion, arrays, string manipulation, arithmetic, conditionals, loops, functions, process control, text processing, networking, and advanced scripting techniques
+- **Docs navigation entry** (`_data/navigation/docs.yml`) - Added "Complete BASH Reference" link under Terminal section
+- **Cursor command** (`.cursor/commands/commit-publish.md`) - Workflow command aligned with IT-Journey commit/publish standards
+
+### Changed
+- **Quests home page** (`pages/_quests/home.md`) - Added `mermaid: true` front matter to enable Mermaid diagram rendering
+- **Docs library index** (`pages/_docs/index.md`) - Added Terminal section listing available reference guides
+
+## [Unreleased] - 2026-02-16
+
+### Added
+- **Quest Registry** (`scripts/quest/quest_registry.py`) - New single source of truth for quest level metadata including level order, tier groupings, canonical metadata, and permalink utilities
+- **Git Basics Quest Enhancement** (`pages/_quests/0000/git-basics.md`) - Major content expansion:
+  - Added Mermaid diagrams: quest network position, three areas flowchart, branch lifecycle, local-remote sync, undo decision flowchart, and full quest flow
+  - Added Chapter 4: "Undoing Mistakes — The Time-Travel Spells" covering restore, reset, and revert
+  - Added checkpoints with validation commands and knowledge checks for Chapters 1–3
+  - Replaced generic challenges with structured Implementation Challenges (Chronicle Keeper, Branch Weaver, Remote Ranger)
+  - Added Boss Battle: "The Git Gauntlet" — a multi-phase capstone exercise with verification script
+  - Expanded Quest Rewards with achievement badges, skills unlocked, and journey progress
+  - Enhanced References section with categorized resources (documentation, interactive, quick references)
+
+### Changed
+- **CI/CD Token Standardization** - Renamed `PAT_TOKEN` secret to `GITHUB_PAT` across all workflows and documentation for consistency:
+  - `ai-content-review.yml` — 3 references updated
+  - `dependency-checker.yml` — 2 references updated (also switched checkout token from `GITHUB_TOKEN` to `GITHUB_PAT` for write permissions)
+  - `frontmatter-validation.yml` — 2 references updated
+  - `action-triggers.md` quest — 1 reference updated
+  - Blog posts updated to reflect new token naming
+  - `PRD.md` — Issue descriptions updated
+
+### Fixed
+- **`dependency-checker.yml`** — Replaced nested YAML-unsafe heredoc labels (`ISSUE_EOF`) with standard `EOF`, removed fragile `continue-on-error`, fixed backtick quoting in markdown code fences, removed unnecessary label creation step
+- **`frontmatter-validation.yml`** — Removed unused `DateTimeEncoder` class and redundant `date` import
+- **`link-checker.yml`** — Removed broken float-to-integer truncation of `success_rate` variable; bash `[[ -ge ]]` already handles integer comparison
+- **`prd-sync.yml`** — Fixed YAML block scalar indentation that broke workflow parsing, removed unnecessary `issues: write` permission
+
+## [Previous Unreleased]
 
 ### Added
 - **Quest Validation CI Workflow** (`quest-validation.yml`) - New GitHub Actions workflow for automated quest validation on PRs and pushes

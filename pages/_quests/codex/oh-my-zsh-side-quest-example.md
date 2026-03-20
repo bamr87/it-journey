@@ -21,7 +21,6 @@ excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved pro
   and visual appeal
 snippet: Transform your terminal from tool to weapon with Oh-My-Zsh magic
 author: Quest Master IT-Journey Team
-layout: journals
 keywords:
 - lvl-0010
 - terminal-enhancement

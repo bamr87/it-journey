@@ -6,7 +6,6 @@ preview: images/previews/level-0000-foundation-init-world.png
 permalink: /quests/level-0000/
 lastmod: 2025-12-20T00:00:00.000Z
 
-layout: quest-collection
 level: 0000
 categories: quests
 ---

@@ -68,7 +68,6 @@ validation_criteria:
   knowledge_checks:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
-layout: journals
 permalink: /quests/vscode-mastery/
 categories:
 - Quests

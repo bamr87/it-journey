@@ -3,7 +3,6 @@ title: "Complete Machine Setup Guide: Jekyll Development Environment"
 author: bamr87
 description: Step-by-step guide to setting up Jekyll development environment across Windows, macOS, and Linux with automation scripts.
 excerpt: Master the complete setup process for Jekyll development across all major operating systems with our comprehensive, platform-specific guide.
-layout: default
 keywords:
     primary:
         - machine setup

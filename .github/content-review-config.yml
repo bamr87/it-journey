@@ -29,9 +29,14 @@ quality_thresholds:
   min_headers: 1             # Minimum number of headers recommended
   max_sentence_length: 25    # Maximum average sentence length
 
-# AI review settings
+# AI review settings (vendor-agnostic via scripts/lib/ai_client.py)
+# provider: "openai", "anthropic", or "none" to disable AI review (default: "none")
+#   Can also be set via AI_PROVIDER env var (env var takes precedence).
+# model: provider-specific model name (optional; sensible defaults used when omitted)
+#   Can also be set via AI_MODEL env var (env var takes precedence).
+#   Defaults: openai → "gpt-4o-mini", anthropic → "claude-sonnet-4-20250514"
 ai_review:
-  model: "gpt-4"
+  provider: "none"  # "none" disables AI; set to "openai" or "anthropic" to enable
   max_tokens: 1500
   temperature: 0.3
   

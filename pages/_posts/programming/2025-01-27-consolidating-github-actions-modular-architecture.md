@@ -18,7 +18,6 @@ sub-title: Transforming workflow complexity into elegant simplicity
 excerpt: From debugging KeyErrors to building a comprehensive modular link checking system
 snippet: Sometimes the best way forward is to step back and rebuild with better foundations
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - github actions workflow consolidation

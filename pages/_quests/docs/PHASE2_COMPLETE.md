@@ -12,7 +12,6 @@ skill_focus:
 - documentation
 learning_style: reading
 quest_series: Quest Documentation
-layout: journals
 permalink: /quests/docs/phase-2-complete/
 keywords:
 - documentation

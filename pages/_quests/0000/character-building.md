@@ -88,7 +88,6 @@ rewards:
   unlocks_features:
   - Access to specialization-specific quests
   - Development environment configured
-layout: journals
 permalink: /quests/character-building/
 categories:
 - Quests

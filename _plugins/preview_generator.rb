@@ -11,6 +11,12 @@ Jekyll::Hooks.register :site, :post_write do |site|
     puts "Preview Generator: Skipping (not development environment)"
     next
   end
+
+  # Skip during incremental regenerations to avoid full rebuild overhead
+  if site.config['incremental']
+    puts "Preview Generator: Skipping (incremental regeneration)"
+    next
+  end
   
   puts "Preview Generator: Starting preview directory generation..."
   

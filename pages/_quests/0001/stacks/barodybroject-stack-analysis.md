@@ -20,7 +20,6 @@ tags:
 categories:
 - Stack Analysis
 - Django Applications
-layout: default
 lastmod: &id001 2025-11-02 21:54:51.383000+00:00
 level: '0001'
 quest_type: side_quest

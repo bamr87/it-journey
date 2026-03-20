@@ -15,7 +15,6 @@ sub-title: null
 excerpt: In the grand theater of technological evolution, programmers have danced a peculiar jig—from rigid automatons to frantic coders, and now, to blissful grokkers who might just be one prompt away from obsolescence.
 snippet: null
 author: bamr87
-layout: null
 keywords: {}
 lastmod: 2025-08-19T21:42:52.468Z
 permalink: null

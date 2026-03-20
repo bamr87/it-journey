@@ -17,7 +17,6 @@ sub-title: How current directories quietly shape your tools, tests, and CI pipel
 excerpt: Working directories look trivial—`cd` and forget—but they define how tools resolve paths, load configs, cache artifacts, and can make builds reproducible or fragile. This article dissects their power, pitfalls, and best practices.
 snippet: Every build has a working directory; the best ones don’t surprise you.
 author: IT-Journey Team
-layout: journals
 section: Programming
 keywords:
     primary:

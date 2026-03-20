@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pytest unit tests for LinkHealthGuardian.analyze_link_failures
+"""Pytest unit tests for LinkHealthGuardian.analyze_failures
 
 These tests validate categorization and pattern detection for various
 lychee output shapes. Run with pytest from the project venv.
@@ -37,9 +37,17 @@ def test_categorization_and_patterns(tmp_path):
         ]
     }
 
-    guardian.results = {'raw_data': {'error_map': error_map}}
+    broken = sum(len(v) for v in error_map.values())
+    guardian.results = {
+        'total_links': broken + 4,
+        'successful_links': 4,
+        'broken_links': broken,
+        'success_rate': 40.0,
+        'fail_map': error_map,
+        'raw_data': {'fail_map': error_map},
+    }
 
-    ok = guardian.analyze_link_failures()
+    ok = guardian.analyze_failures()
     assert ok is True
 
     cats = guardian.analysis['categories']
@@ -50,8 +58,8 @@ def test_categorization_and_patterns(tmp_path):
     assert len(cats['dns_errors']) == 1
     # internal should have one '/internal/404'
     assert len(cats['broken_internal']) == 1
-    # external due to http link
-    assert len(cats['broken_external']) == 1
+    # 'connection refused' routes to network_errors in v3.0
+    assert len(cats.get('network_errors', [])) == 1
 
     # Patterns should include internal link message and SSL/TLS issues
     patterns = guardian.analysis['patterns']
@@ -76,9 +84,17 @@ def test_top_failing_domains_and_timeouts(tmp_path):
         error_map['pages/timeouts.md'] = error_map.get('pages/timeouts.md', [])
         error_map['pages/timeouts.md'].append({'url': f'https://slow{i}.example', 'status': 'timeout'})
 
-    guardian.results = {'raw_data': {'error_map': error_map}}
+    broken = sum(len(v) for v in error_map.values())
+    guardian.results = {
+        'total_links': broken + 5,
+        'successful_links': 5,
+        'broken_links': broken,
+        'success_rate': 31.3,
+        'fail_map': error_map,
+        'raw_data': {'fail_map': error_map},
+    }
 
-    ok = guardian.analyze_link_failures()
+    ok = guardian.analyze_failures()
     assert ok is True
 
     patterns = guardian.analysis['patterns']

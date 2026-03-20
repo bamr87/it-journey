@@ -4,7 +4,6 @@ description: "Learn Docker from scratch with this beginner-friendly tutorial. Un
 date: 2025-12-20T00:00:00.000Z
 lastmod: 2025-12-20T00:00:00.000Z
 author: "IT-Journey Team"
-layout: journals
 permalink: /posts/docker-beginners-tutorial/
 tags:
     - docker

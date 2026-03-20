@@ -15,6 +15,7 @@ tags:
   - achievement
 sidebar:
   nav: home
+mermaid: true
 toc: true
 toc_sticky: true
 date: 2021-11-29T03:41:20.614Z

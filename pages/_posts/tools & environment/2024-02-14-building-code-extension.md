@@ -115,7 +115,6 @@ Here's a basic example of how you could create a form with Jekyll and Formspree:
 
 ```html
 ---
-layout: page
 title: Submit Conversation
 ---
 

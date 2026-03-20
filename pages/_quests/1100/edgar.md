@@ -32,7 +32,6 @@ validation_criteria:
 - Call frames API for one period and compare at least 2 entities
 - Respect rate limits (no 429s in final run) and implement basic backoff
 - Write a short readme summarizing findings
-layout: journals
 permalink: /quests/level-1100-conquer-king-edgar/
 categories:
 - Quests

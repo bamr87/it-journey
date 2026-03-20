@@ -16,7 +16,6 @@ quest_series: Tools Collection
 skill_focus:
 - Foundations
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0010-change-logs/
 categories: []
 tags: []

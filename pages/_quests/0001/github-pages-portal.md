@@ -45,7 +45,6 @@ quest_mapping:
   binary_level: '001'
   decimal_level: 1
   skill_tree: Web Development
-layout: quests
 permalink: /quests/level-001-github-pages-portal/
 categories:
 - Quests

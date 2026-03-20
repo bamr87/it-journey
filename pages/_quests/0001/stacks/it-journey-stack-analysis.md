@@ -24,7 +24,6 @@ tags:
 - ai-integration
 categories:
 - Stack Analysis
-layout: journals
 lastmod: 2025-11-02 21:37:25.394000+00:00
 level: '0001'
 quest_type: side_quest

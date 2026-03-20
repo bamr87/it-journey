@@ -17,7 +17,6 @@ toc_sticky: true
 date: 2025-08-20T12:00:00.000Z
 lastmod: 2025-08-22T04:00:02.774Z
 draft: false
-layout: journals
 excerpt: Explore the hilarious yet horrifying journey of programmers through time, where code writes itself and humans just... grok off.
 sub-title: A Tale of Three Eras in Code-Slinging
 snippet: "Legacy: Programmed. Contemporary: Programming. Future: Grokking off all day."

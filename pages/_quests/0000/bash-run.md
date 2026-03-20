@@ -23,6 +23,7 @@ quest_line: Foundation Path
 quest_arc: Terminal Mastery Arc
 quest_dependencies:
   required_quests:
+  - /quests/bashcrawl-terminal-adventure/
   - /quests/hello-linux/linux-fundamentals/
   recommended_quests:
   - /quests/level-0000-terminal-fundamentals/
@@ -61,7 +62,6 @@ validation_criteria:
 - Complete the terminal game development
 - Successfully run the enhanced bashrun game
 - Demonstrate understanding of shell scripting concepts
-layout: journals
 permalink: /quests/lvl_000/bash-run/
 categories:
 - Quests
@@ -381,6 +381,8 @@ This guide should help you get started with building upon bashrun to create a mo
 
 ## 📚 References & Resources
 
+- [The Spellbook: Bash Cheatsheet](/shell/) - Quick reference for essential commands and scripting techniques.
+- [The Grand Grimoire: Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive guide covering every aspect of GNU Bash.
 - [Bash Reference Manual (GNU)](https://www.gnu.org/software/bash/manual/bash.html)
 - [Advanced Bash-Scripting Guide (TLDP)](https://tldp.org/LDP/abs/html/)
 - [bashrun on GitLab](https://gitlab.com/slackermedia/bashrun)

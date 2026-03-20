@@ -78,7 +78,6 @@ rewards:
   unlocks_features:
   - Access to Character Building quest
   - Access to specialization selection
-layout: journals
 permalink: /quests/lvl_000/begin-your-it-journey/
 categories: []
 tags:

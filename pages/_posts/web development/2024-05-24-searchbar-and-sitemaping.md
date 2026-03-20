@@ -10,7 +10,6 @@ sub-title: null
 excerpt: Chat with GitHub Copilot to add a search bar and sitemap to your Jekyll site
 snippet: null
 author: bamr87
-layout: null
 keywords: {}
 lastmod: 2024-05-24T03:19:52.363Z
 slug: null

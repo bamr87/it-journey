@@ -4,7 +4,6 @@ description: "Curated list of must-have VS Code extensions for web developers, D
 date: 2025-12-20T00:00:00.000Z
 lastmod: 2025-12-20T00:00:00.000Z
 author: "IT-Journey Team"
-layout: journals
 permalink: /posts/essential-vscode-extensions-developers/
 tags:
     - vscode

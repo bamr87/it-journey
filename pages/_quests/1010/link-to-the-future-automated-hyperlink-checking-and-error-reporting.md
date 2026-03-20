@@ -31,7 +31,6 @@ validation_criteria:
 - Working link testing script with comprehensive coverage
 - AI analysis component that provides meaningful insights
 - Automated issue creation with detailed reports and recommendations
-layout: journals
 permalink: /quests/level-1010-automated-hyperlink-guardian/
 categories:
 - Quests

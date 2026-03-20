@@ -1,7 +1,6 @@
 ---
 title: Markdown Cheatsheet
 author: bamr87
-layout: default
 description: Quick reference guide for Markdown syntax including basic formatting, Jekyll-specific features, and Kramdown extensions
 excerpt: Essential Markdown syntax reference for content creation
 categories:
@@ -90,7 +89,6 @@ Finally, horizontal lines
 ####See below for how it beautifully renders in `HTML` 😉
 
 ---
-layout: post
 title: Markdown Style Guide
 ---
 

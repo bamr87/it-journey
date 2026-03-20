@@ -71,7 +71,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: AI-Enhanced
-layout: journals
 permalink: /quests/level-0001/stack-attack/
 categories:
 - Quests

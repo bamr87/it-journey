@@ -78,7 +78,6 @@ rewards:
   unlocks_features:
   - Access to OS Selection quest
   - Foundation for all technical quests
-layout: journals
 permalink: /quests/lvl_000/it-fundamentals/
 categories: []
 tags:

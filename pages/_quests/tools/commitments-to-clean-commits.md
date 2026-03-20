@@ -21,7 +21,6 @@ skill_focus:
 - Programming
 - Project Management
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0010-commitments-to-clean-commits/
 categories:
 - Development

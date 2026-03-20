@@ -18,7 +18,6 @@ tags:
 date: 2021-11-08T19:50:20.168Z
 lastmod: 2025-08-27T01:40:11.248Z
 draft: false
-layout: journals
 excerpt: "The mission statement and philosophical foundation of IT-Journey: building a comprehensive repository of IT knowledge that serves learners at every level"
 sub-title: Building a Universal IT Knowledge Repository
 snippet: In a fragmented digital world, we create order through shared knowledge

@@ -17,7 +17,6 @@ sub-title: From Basic Commands to Comprehensive Learning Experience
 excerpt: How AI assistance transformed a basic ls -F tutorial into a comprehensive terminal education experience
 snippet: Teaching through adventure - where every command becomes a spell and every file type becomes a mystical entity
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - terminal education

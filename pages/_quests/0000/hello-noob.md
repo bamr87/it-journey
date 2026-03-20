@@ -77,7 +77,6 @@ quest_mapping:
   region: Entry
   realm: Community
   biome: GitHub
-layout: journals
 permalink: /quests/init_world/hello-noob/
 categories:
 - Quests

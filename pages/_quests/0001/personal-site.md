@@ -15,7 +15,6 @@ skill_focus:
 - Quests
 - GitHub-Pages
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0001/personal-site/
 categories:
 - Quests

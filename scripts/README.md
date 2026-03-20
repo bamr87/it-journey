@@ -40,17 +40,20 @@ scripts/
 
 ## 🔗 Link Health Guardian
 
-The Link Health Guardian is a unified, comprehensive link checking system for the IT-Journey website. It provides automated link validation, intelligent analysis, and GitHub integration with minimal workflow complexity.
+The Link Health Guardian is a unified, comprehensive link checking system for the IT-Journey website. It provides automated link validation, cross-run caching, delta-based AI analysis, and GitHub integration with minimal workflow complexity.
 
 ### 🚀 Features
 
 - **Unified Script Architecture**: Single Python script contains all functionality
-- **Minimal Workflow Logic**: GitHub Actions workflow simply calls the Python script
-- **Comprehensive Link Checking**: Uses Lychee link checker for robust validation
-- **AI-Powered Analysis**: OpenAI integration for intelligent failure analysis
+- **Declarative Configuration**: `.lychee.toml` for all lychee settings (no hardcoded CLI args)
+- **Cross-Run Caching**: `.lycheecache` persists via `actions/cache` — unchanged URLs skip re-checking
+- **Delta-Based AI Analysis**: Only new broken links are sent to AI, saving tokens
+- **Multi-Provider AI**: Supports OpenAI, Anthropic, or no AI (`--ai-provider`)
+- **Dual Engine**: `--engine lychee` (default) or `--engine curl` (fallback, ported from guardian.sh)
+- **Incremental PR Checks**: `--changed-only` checks only files modified in a PR
+- **Opt-In `_site/` Scanning**: `--include-site` flag to scan build output
 - **Automatic Issue Creation**: Creates detailed GitHub issues with results
 - **Multiple Scope Options**: Check website, internal links, docs, posts, quests, or all content
-- **Flexible Analysis Levels**: Basic, standard, comprehensive, or AI-only analysis
 
 ### 📁 File Structure
 
@@ -78,29 +81,38 @@ scripts/
 #### Manual Execution
 
 ```bash
-# Basic website check
+# Basic website check (uses lychee + .lychee.toml)
 python3 scripts/validation/link-checker.py --scope website
 
-# Comprehensive analysis with AI
-python3 scripts/validation/link-checker.py --scope website --analysis-level comprehensive
+# Comprehensive analysis with AI (OpenAI)
+python3 scripts/validation/link-checker.py --scope website --ai-provider openai
+
+# Comprehensive analysis with AI (Anthropic)
+python3 scripts/validation/link-checker.py --scope website --ai-provider anthropic
 
 # Create GitHub issue with results
-python3 scripts/validation/link-checker.py --scope website --create-issue --repository bamr87/it-journey
+python3 scripts/validation/link-checker.py --scope website --create-issue
 
-# Check specific content types
-python3 scripts/validation/link-checker.py --scope posts
-python3 scripts/validation/link-checker.py --scope quests  
-python3 scripts/validation/link-checker.py --scope docs
+# Check only files changed vs main branch
+python3 scripts/validation/link-checker.py --changed-only
+
+# Use curl fallback engine
+python3 scripts/validation/link-checker.py --engine curl --scope docs
+
+# Include _site/ directory
+python3 scripts/validation/link-checker.py --scope website --include-site
+
+# Dry-run AI (see prompt without calling API)
+python3 scripts/validation/link-checker.py --scope website --dry-run-ai
 ```
 
 #### GitHub Actions Workflow
 
-The workflow can be triggered:
+The workflow runs in two modes:
 
-1. **Manually** via GitHub Actions UI with configurable options
-2. **Scheduled** runs:
-   - Monday at 6 AM UTC (weekly comprehensive check)
-   - Friday at 6 PM UTC (end-of-week validation)
+1. **Pull Request**: Fast incremental check (changed files only, no AI) — 10 min timeout
+2. **Scheduled**: Full scan every Monday at 6 AM UTC — 30 min timeout
+3. **Manual dispatch**: Configurable scope, analysis level, AI provider, and issue creation
 
 #### Configuration Options
 
@@ -108,9 +120,13 @@ The workflow can be triggered:
 |-----------|-------------|---------|
 | `scope` | Content to check | `website`, `internal`, `external`, `docs`, `posts`, `quests`, `all` |
 | `analysis-level` | Analysis depth | `basic`, `standard`, `comprehensive`, `ai-only` |
-| `timeout` | Request timeout | `10`, `20`, `30`, `45`, `60` seconds |
-| `create-issue` | Create GitHub issue | `true`, `false` |
-| `ai-analysis` | Enable AI analysis | `true`, `false` |
+| `engine` | Link checking engine | `lychee` (default), `curl` (fallback) |
+| `ai-provider` | AI provider | `openai`, `anthropic`, `none` |
+| `ai-model` | Override AI model | e.g. `gpt-4o`, `claude-sonnet-4-20250514` |
+| `changed-only` | Only check changed files | Flag (no value) |
+| `include-site` | Also scan `_site/` | Flag (no value) |
+| `create-issue` | Create GitHub issue | Flag (no value) |
+| `dry-run-ai` | Show AI prompt without calling | Flag (no value) |
 
 #### Exclusions (Noise Reduction)
 
@@ -122,22 +138,25 @@ The link checker intentionally excludes non-site directories to avoid false posi
 
 ### 🧠 AI Analysis
 
-When enabled, the AI analysis provides:
+When enabled (`--ai-provider openai` or `--ai-provider anthropic`), the AI analysis:
 
-- **Root Cause Identification**: Analyzes patterns in link failures
-- **Jekyll-Specific Insights**: Identifies GitHub Pages and Jekyll-related issues
+- **Delta-Only**: Only sends *new* broken links (compared to baseline) to save tokens
+- **Compact Prompts**: Top 10 new broken links, max 500 tokens response
+- **Multi-Provider**: OpenAI (default `gpt-4o-mini`) or Anthropic (default `claude-sonnet-4-20250514`)
+- **Fallback Template**: When no AI key is available, generates a template report
 - **Prioritized Recommendations**: Actionable steps for fixing issues
-- **Prevention Strategies**: Suggestions for avoiding future problems
 
 ### 📊 Output Files
 
 The script generates comprehensive output in the specified directory:
 
 - `lychee_results.json` - Raw link checker results
+- `summary.md` - Human-readable markdown summary
 - `link_analysis.json` - Categorized failure analysis
+- `broken_links_baseline.json` - Baseline for delta computation (cached across CI runs)
 - `ai_analysis.md` - AI-generated insights (if enabled)
 - `github_issue.md` - GitHub issue content
-- `statistics.env` - Key metrics for workflow integration
+- `statistics.env` - Key metrics for workflow integration (includes timing data)
 - `issue_url.txt` - Created issue URL (if applicable)
 
 ### 🔄 Workflow Integration
@@ -167,20 +186,21 @@ The unified approach provides:
 
 #### Environment Variables
 
-- `OPENAI_API_KEY` - For AI analysis (optional)
+- `OPENAI_API_KEY` - For OpenAI AI analysis (optional)
+- `ANTHROPIC_API_KEY` - For Anthropic AI analysis (optional)
 - `GITHUB_TOKEN` - For GitHub issue creation
 
 #### Testing
 
 ```bash
-# Test with dry run (no actual changes)
-python3 scripts/validation/link-checker.py --scope website --dry-run
+# Test with dry-run AI (no actual API calls)
+python3 scripts/validation/link-checker.py --scope website --dry-run-ai
 
-# Test specific analysis level
-python3 scripts/validation/link-checker.py --scope internal --analysis-level basic
+# Test curl engine on a small scope
+python3 scripts/validation/link-checker.py --engine curl --scope docs
 
-# Test without AI (faster execution)
-python3 scripts/validation/link-checker.py --scope docs --no-ai
+# Test changed-only mode
+python3 scripts/validation/link-checker.py --changed-only --dry-run-ai
 ```
 
 #### Unit Tests

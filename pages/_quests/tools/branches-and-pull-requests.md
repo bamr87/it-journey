@@ -21,7 +21,6 @@ skill_focus:
 - Version Control
 - Web Development
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0010-branches-and-pull-requests/
 categories:
 - Development

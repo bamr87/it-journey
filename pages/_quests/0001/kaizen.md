@@ -72,7 +72,6 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Process
-layout: journals
 permalink: /quests/level-0001-kaizen-continuous-improvement/
 categories:
 - Quests

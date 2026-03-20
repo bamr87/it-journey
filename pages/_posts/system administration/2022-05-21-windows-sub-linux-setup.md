@@ -18,7 +18,6 @@ draft: false
 section: System Administration
 lastmod: 2025-10-19T22:33:21.685Z
 date: 2022-05-21T23:56:40.448Z
-layout: journals
 ---
 
 # Windows Subsystem for Linux (WSL) Setup Guide

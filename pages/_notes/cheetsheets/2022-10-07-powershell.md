@@ -14,7 +14,6 @@ tags:
   - administration
   - cheatsheet
   - reference
-layout: default
 lastmod: 2022-01-10T21:54:00.053Z
 draft: false
 ---

@@ -6,7 +6,6 @@ preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
 permalink: /quests/level-0010/
 lastmod: 2026-02-14T00:00:00.000Z
 
-layout: quest-collection
 level: 0010
 categories: quests
 ---

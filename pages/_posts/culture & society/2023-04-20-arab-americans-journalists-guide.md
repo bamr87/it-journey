@@ -17,7 +17,6 @@ tags:
     - islam
     - christianity
 author: Detroit Free Press (via IT-Journey Archives)
-layout: journals
 excerpt: An essential resource from December 2001 providing journalists and the public with factual information about Arab-Americans, their diverse backgrounds, and addressing common misconceptions
 sub-title: Post-9/11 Educational Resource for Cultural Understanding
 snippet: Understanding replaces fear when we take time to learn about our neighbors

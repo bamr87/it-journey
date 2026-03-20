@@ -1,12 +1,18 @@
 name: 🔗 Link Health Guardian
 
 on:
-  # Scheduled runs for proactive monitoring
+  # PRs: fast incremental check (changed files only, no AI)
+  pull_request:
+    paths:
+      - '**.md'
+      - '**.html'
+      - '**.htm'
+
+  # Scheduled full scan with AI analysis
   schedule:
     - cron: '0 6 * * 1'  # Every Monday at 6 AM UTC
-    - cron: '0 18 * * 5' # Every Friday at 6 PM UTC
-  
-  # Manual trigger with comprehensive options
+
+  # Manual trigger with options
   workflow_dispatch:
     inputs:
       scope:
@@ -15,104 +21,144 @@ on:
         default: 'website'
         type: choice
         options:
-          - 'website'      # Full website check
-          - 'internal'     # Internal links only
-          - 'external'     # External links only
-          - 'docs'         # Documentation only
-          - 'posts'        # Blog posts only
-          - 'quests'       # Quest content only
-          - 'all'          # Everything including experimental
-      
+          - 'website'
+          - 'internal'
+          - 'external'
+          - 'docs'
+          - 'posts'
+          - 'quests'
+          - 'all'
+
       analysis_level:
-        description: 'Analysis depth and features'
+        description: 'Analysis depth'
         required: false
         default: 'comprehensive'
         type: choice
         options:
-          - 'basic'        # Link checking only
-          - 'standard'     # Link checking + analysis
-          - 'comprehensive' # Full analysis + AI insights
-          - 'ai-only'      # Skip link checking, analyze existing results
-      
+          - 'basic'
+          - 'standard'
+          - 'comprehensive'
+
+      ai_provider:
+        description: 'AI provider for analysis'
+        required: false
+        default: 'none'
+        type: choice
+        options:
+          - 'none'
+          - 'openai'
+          - 'anthropic'
+
       create_issue:
         description: 'Create GitHub issue with results'
         required: false
-        default: true
+        default: false
         type: boolean
-      
-      ai_analysis:
-        description: 'Enable AI-powered analysis (requires OpenAI token)'
-        required: false
-        default: true
-        type: boolean
-      
-      timeout:
-        description: 'Request timeout in seconds'
-        required: false
-        default: '30'
-        type: choice
-        options:
-          - '10'
-          - '20'
-          - '30'
-          - '45'
-          - '60'
 
 env:
   OUTPUT_DIR: 'link-check-results'
-  RESULTS_RETENTION_DAYS: 30
+  LYCHEE_CACHE: '.lycheecache'
 
 jobs:
-  link-health-check:
-    name: 🔍 Link Health Assessment
+  # ── PR check: fast, incremental, no AI ─────────────────────────────
+  pr-link-check:
+    name: 🔍 PR Link Check (incremental)
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 10
     permissions:
       contents: read
-      issues: write
-    
-    outputs:
-      total-links: ${{ steps.extract-results.outputs.total-links }}
-      broken-links: ${{ steps.extract-results.outputs.broken-links }}
-      success-rate: ${{ steps.extract-results.outputs.success-rate }}
-      issue-created: ${{ steps.extract-results.outputs.issue-created }}
-    
+
     steps:
-      - name: 📥 Checkout Repository
+      - name: 📥 Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
-      - name: 🐍 Setup Python Environment
+
+      - name: 🗄️ Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.LYCHEE_CACHE }}
+          key: lychee-cache-${{ runner.os }}-${{ github.sha }}
+          restore-keys: lychee-cache-${{ runner.os }}-
+
+      - name: 🔗 Lychee link check (changed files)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            $(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- '*.md' '*.html')
+          fail: false
+          jobSummary: true
+
+  # ── Scheduled / manual: full scan with analysis ─────────────────────
+  full-link-check:
+    name: 🔍 Full Link Health Assessment
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
+
+    outputs:
+      total-links: ${{ steps.results.outputs.total-links }}
+      broken-links: ${{ steps.results.outputs.broken-links }}
+      success-rate: ${{ steps.results.outputs.success-rate }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🗄️ Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.LYCHEE_CACHE }}
+          key: lychee-cache-${{ runner.os }}-${{ github.sha }}
+          restore-keys: lychee-cache-${{ runner.os }}-
+
+      - name: 🗄️ Restore baseline
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.OUTPUT_DIR }}/broken_links_baseline.json
+          key: link-baseline-${{ runner.os }}-${{ github.sha }}
+          restore-keys: link-baseline-${{ runner.os }}-
+
+      - name: 🐍 Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
-      - name: 📦 Install Python Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
-      
-      - name: 🔍 Run Link Health Guardian
+
+      - name: 📦 Install dependencies
+        run: pip install requests
+
+      - name: 🔗 Lychee link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --output ${{ env.OUTPUT_DIR }}/lychee_results.json .
+          fail: false
+          jobSummary: true
+
+      - name: 📊 Run analysis
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          # Run the Python analysis/delta/AI script on lychee's JSON output
           python3 scripts/validation/link-checker.py \
             --scope "${{ github.event.inputs.scope || 'website' }}" \
             --analysis-level "${{ github.event.inputs.analysis_level || 'comprehensive' }}" \
-            --timeout ${{ github.event.inputs.timeout || '30' }} \
             --output-dir "${{ env.OUTPUT_DIR }}" \
-            --repository "${{ github.repository }}" \
-            ${{ github.event.inputs.create_issue == 'true' && '--create-issue' || '' }} \
-            ${{ github.event.inputs.ai_analysis == 'false' && '--no-ai' || '' }}
-        
-      - name: 📊 Extract Results for Summary
-        id: extract-results
+            --ai-provider "${{ github.event.inputs.ai_provider || 'none' }}" \
+            ${{ github.event.inputs.create_issue == 'true' && '--create-issue' || '' }}
+
+      - name: 📊 Extract results
+        id: results
         if: always()
         run: |
-          # Extract statistics from the generated files
           if [[ -f "${{ env.OUTPUT_DIR }}/statistics.env" ]]; then
             source "${{ env.OUTPUT_DIR }}/statistics.env"
             echo "total-links=${TOTAL_COUNT:-0}" >> $GITHUB_OUTPUT
@@ -123,84 +169,49 @@ jobs:
             echo "broken-links=0" >> $GITHUB_OUTPUT
             echo "success-rate=0" >> $GITHUB_OUTPUT
           fi
-          
-          # Check if issue was created
-          if [[ -f "${{ env.OUTPUT_DIR }}/issue_url.txt" ]]; then
-            echo "issue-created=true" >> $GITHUB_OUTPUT
-            echo "Issue URL: $(cat ${{ env.OUTPUT_DIR }}/issue_url.txt)"
-          else
-            echo "issue-created=false" >> $GITHUB_OUTPUT
-          fi
-        
-      - name: 📦 Archive Results
+
+      - name: 📦 Upload artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: link-health-results-${{ github.run_number }}
           path: ${{ env.OUTPUT_DIR }}/
-          retention-days: ${{ env.RESULTS_RETENTION_DAYS }}
+          retention-days: 30
           if-no-files-found: warn
 
+  # ── Summary ─────────────────────────────────────────────────────────
   workflow-summary:
     name: 📊 Workflow Summary
     runs-on: ubuntu-latest
-    needs: link-health-check
-    if: always()
-    
-    steps:
-      - name: 📊 Display Workflow Summary
-        run: |
-          echo "# 🔗 IT-Journey Link Health Guardian - Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## 📋 Results Overview" >> $GITHUB_STEP_SUMMARY
-          echo "- **Total Links Checked**: ${{ needs.link-health-check.outputs.total-links }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Broken Links Found**: ${{ needs.link-health-check.outputs.broken-links }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Success Rate**: ${{ needs.link-health-check.outputs.success-rate }}%" >> $GITHUB_STEP_SUMMARY
-          echo "- **GitHub Issue Created**: ${{ needs.link-health-check.outputs.issue-created }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## 🎯 Configuration" >> $GITHUB_STEP_SUMMARY
-          echo "- **Scope**: ${{ github.event.inputs.scope || 'website' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Analysis Level**: ${{ github.event.inputs.analysis_level || 'comprehensive' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **AI Analysis**: ${{ github.event.inputs.ai_analysis || 'true' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Timeout**: ${{ github.event.inputs.timeout || '30' }}s" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          # Health status
-          broken_count=${{ needs.link-health-check.outputs.broken-links }}
-          success_rate=${{ needs.link-health-check.outputs.success-rate }}
-          # Truncate floating point to integer for bash comparison
-          success_rate_int=${success_rate%.*}
-          success_rate_int=${success_rate_int:-0}
-          
-          echo "## 📈 Health Status" >> $GITHUB_STEP_SUMMARY
-          if [[ "$broken_count" -eq 0 ]]; then
-            echo "✅ **Excellent**: All links are healthy!" >> $GITHUB_STEP_SUMMARY
-          elif [[ "$success_rate_int" -ge 95 ]]; then
-            echo "⚠️ **Good**: Minor issues detected ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
-          elif [[ "$success_rate_int" -ge 90 ]]; then
-            echo "🟡 **Fair**: Some issues need attention ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
-          elif [[ "$success_rate_int" -ge 80 ]]; then
-            echo "🟠 **Poor**: Multiple issues detected ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "🔴 **Critical**: Major link health problems ($broken_count broken links)" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "*Generated by IT-Journey Link Health Guardian v2.0*" >> $GITHUB_STEP_SUMMARY
+    needs: full-link-check
+    if: always() && github.event_name != 'pull_request'
 
-      - name: 🚨 Set Workflow Status
+    steps:
+      - name: 📊 Display summary
         run: |
-          broken_count=${{ needs.link-health-check.outputs.broken-links }}
-          
+          cat >> $GITHUB_STEP_SUMMARY << 'EOF'
+          # 🔗 Link Health Guardian — Summary
+
+          | Metric | Value |
+          |--------|-------|
+          | Total links | ${{ needs.full-link-check.outputs.total-links }} |
+          | Broken links | ${{ needs.full-link-check.outputs.broken-links }} |
+          | Success rate | ${{ needs.full-link-check.outputs.success-rate }}% |
+          | Scope | ${{ github.event.inputs.scope || 'website' }} |
+          | AI provider | ${{ github.event.inputs.ai_provider || 'none' }} |
+
+          *Generated by Link Health Guardian v3.0*
+          EOF
+
+      - name: 🚨 Set status
+        run: |
+          broken_count=${{ needs.full-link-check.outputs.broken-links }}
           if [[ "$broken_count" -eq 0 ]]; then
-            echo "✅ Workflow completed successfully - no broken links found"
-            exit 0
+            echo "✅ No broken links found"
           elif [[ "$broken_count" -le 5 ]]; then
-            echo "⚠️ Workflow completed with minor issues - $broken_count broken links"
-            exit 0
+            echo "⚠️ $broken_count broken links (minor)"
           else
-            echo "🚨 Workflow completed with significant issues - $broken_count broken links"
+            echo "🚨 $broken_count broken links"
             echo "This may require immediate attention to maintain site quality"
             exit 1
           fi

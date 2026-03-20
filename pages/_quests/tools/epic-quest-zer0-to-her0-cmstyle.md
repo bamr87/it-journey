@@ -21,7 +21,6 @@ skill_focus:
 - Open Source
 - Quests
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
 categories:
 - AI/ML

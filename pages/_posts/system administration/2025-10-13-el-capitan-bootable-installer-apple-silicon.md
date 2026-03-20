@@ -18,7 +18,6 @@ sub-title: Bypass compatibility checks and create legacy bootable media from App
 excerpt: Learn how to manually extract and process OS X El Capitan installer files on Apple Silicon Macs to create bootable media for restoring legacy Intel-based systems
 snippet: Create El Capitan bootable installers on modern Macs using manual extraction techniques
 author: IT-Journey Team
-layout: journals
 section: System Administration
 keywords:
     primary:

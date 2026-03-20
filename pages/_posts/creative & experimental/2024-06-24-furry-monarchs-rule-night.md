@@ -2,7 +2,6 @@
 assistant: Title Generator
 categories: gpt
 date: 2024-06-24 16:26:13
-layout: journals
 prompt: write an article in the form of a riddle about dogs and cats ruling humans. End it with a haiku.
 title: Furry Monarchs Rule Night
 lastmod: 2024-06-24T16:43:13.205Z

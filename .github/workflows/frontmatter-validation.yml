@@ -29,7 +29,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_PAT }}
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -65,15 +65,8 @@ jobs:
         import re
         import json
         from pathlib import Path
-        from datetime import datetime, date
+        from datetime import datetime
         from typing import Dict, List, Any, Optional
-
-        class DateTimeEncoder(json.JSONEncoder):
-            """Custom JSON encoder that handles datetime and date objects."""
-            def default(self, obj):
-                if isinstance(obj, (datetime, date)):
-                    return obj.isoformat()
-                return super().default(obj)
 
         class FrontmatterValidator:
             def __init__(self):
@@ -308,7 +301,7 @@ jobs:
                     'validation_results': validation_results,
                     'fix_results': fix_results,
                     'apply_fixes': apply_fixes
-                }, f, indent=2, cls=DateTimeEncoder)
+                }, f, indent=2)
             
             # Print summary
             total_files = len(validation_results)
@@ -436,7 +429,7 @@ jobs:
     - name: Comment on PR
       if: github.event_name == 'pull_request'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
       run: |
         if [ -f "/tmp/validation_report.md" ]; then
           curl -X POST \

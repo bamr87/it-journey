@@ -6,7 +6,6 @@ preview: null
 tags: []
 categories: []
 author: 2024-04-25T16:19:09.808Z
-layout: default
 sort_by: null
 lastmod: 2024-05-16T18:50:38.895Z
 type: default

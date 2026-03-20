@@ -20,7 +20,6 @@ quest_series: Level 0100 Quest Line
 skill_focus:
 - Foundations
 learning_style: hands-on
-layout: journals
 permalink: /quests/frontend/
 categories: []
 tags: []

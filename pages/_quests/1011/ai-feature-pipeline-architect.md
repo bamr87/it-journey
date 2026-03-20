@@ -32,7 +32,6 @@ validation_criteria:
 - Deploy a feature from request to production using AI assistance
 - Demonstrate multi-agent system coordination
 - Document the entire pipeline with architectural decision records
-layout: journals
 permalink: /quests/level-1011-ai-feature-pipeline-architect/
 categories:
 - Quests

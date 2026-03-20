@@ -22,7 +22,6 @@ sub-title: Unleashing the power of free, version-controlled web hosting with Jek
 excerpt: GitHub Pages democratizes web publishing by combining free hosting, Jekyll static site generation, and Git version control into a powerful platform for developers, educators, and content creators.
 snippet: Free hosting + Git + Jekyll = Web publishing magic
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - github-pages
@@ -406,7 +405,6 @@ cd username.github.io
 **Jekyll Markdown Implementation**:
 ```markdown
 ---
-layout: default
 title: Home
 ---
 
@@ -479,7 +477,6 @@ your-site/
 **Blog Post Template**:
 ```markdown
 ---
-layout: post
 title: "My First GitHub Pages Post"
 date: 2025-11-16 10:00:00 +0000
 categories: [blog, github-pages]

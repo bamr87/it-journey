@@ -22,7 +22,6 @@ sub-title: "From Zero to Interactive Components: A Practical React Tutorial"
 excerpt: Learn React fundamentals through hands-on examples - build your first components, manage state with hooks, and create interactive UIs with this comprehensive beginner's guide.
 snippet: "Master React basics: components, JSX, props, state, and interactivity"
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - react tutorial

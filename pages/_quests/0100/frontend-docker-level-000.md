@@ -20,7 +20,6 @@ skill_focus:
 - jekyll
 - bootstrap
 learning_style: hands-on
-layout: default
 permalink: /quests/level-0100/lvl-000-frontend-docker/
 tags:
 - level-000

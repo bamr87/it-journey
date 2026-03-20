@@ -339,7 +339,7 @@ defaults:
     scope:
       path: pages/_posts
     values:
-      layout: journals
+      layout: article
       author_profile: true
       read_time: true
       comments: # true

@@ -21,7 +21,6 @@ skill_focus:
 - GitHub Actions
 - Programming
 learning_style: hands-on
-layout: journals
 permalink: /quests/level-0010-action-triggers/
 categories:
 - Automation
@@ -114,7 +113,7 @@ jobs:
       with:
         config-name: release-drafter.yml
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
 ```
 
 🧪 **Translation**: Every PR to main triggers tests. If those pass and you're on main, the release process begins. All while you sip coffee or battle CSS dragons.

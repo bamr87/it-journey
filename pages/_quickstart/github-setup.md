@@ -1,11 +1,11 @@
 ---
 title: Github Setup
 author: null
-layout: default
 description: null
 categories: null
 slug: github
-lastmod: 2024-05-20T14:58:30.179Z
+permalink: /quickstart/github/
+lastmod: 2026-02-16T22:49:36.446Z
 draft: false
 ---
 

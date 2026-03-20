@@ -1,7 +1,6 @@
 ---
 title: Learning Resources Library
 author: Amr Abdel Eissa
-layout: collection
 permalink: /docs/
 description: Reference documentation and learning resources for tools and technologies used in IT-Journey
 categories:
@@ -11,7 +10,7 @@ sidebar:
   nav: docs
 toc_sticky: true
 date: 2021-09-24T19:32:44.876Z
-lastmod: 2025-10-19T22:33:21.677Z
+lastmod: 2026-02-21T00:00:00.000Z
 draft: false
 ---
 
@@ -37,6 +36,14 @@ Welcome to the IT-Journey Learning Resources Library - your reference documentat
 - [Frontmatter Standards](../../docs/standards/FRONTMATTER_STANDARDS.md)
 
 ## Available Documentation
+
+### Terminal
+
+Command-line reference and productivity guides for working effectively in the terminal.
+
+**Topics:**
+- [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/) - Keyboard shortcuts for macOS, Linux, and Windows
+- [Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive GNU Bash reference: built-ins, scripting, text processing, and advanced techniques
 
 ### Jekyll
 

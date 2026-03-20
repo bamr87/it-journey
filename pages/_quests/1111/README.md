@@ -31,7 +31,6 @@ toc_sticky: true
 sidebar:
   nav: quests
 
-layout: quest-collection
 ---
 
 # 👑 Level 1111: Leadership & Innovation

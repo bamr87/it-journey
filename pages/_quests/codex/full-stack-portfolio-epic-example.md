@@ -22,7 +22,6 @@ excerpt: Create a professional portfolio website that showcases your IT journey 
   mastering full-stack development, deployment, and project management
 snippet: From concept to production - build the digital castle that tells your story
 author: Quest Master IT-Journey Team
-layout: journals
 keywords:
 - lvl-1111
 - full-stack-development

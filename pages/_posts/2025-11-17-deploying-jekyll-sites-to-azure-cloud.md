@@ -20,7 +20,6 @@ sub-title: Transform your Jekyll site into a globally distributed web applicatio
 excerpt: Learn how to deploy your Jekyll-generated static site to Azure Static Web Apps for scalable, secure, and cost-effective hosting with built-in CI/CD
 snippet: Deploy Jekyll to Azure in minutes with Static Web Apps - serverless hosting that scales automatically
 author: IT-Journey Team
-layout: journals
 keywords:
     primary:
         - azure-static-web-apps

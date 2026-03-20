@@ -31,7 +31,6 @@ validation_criteria:
 - VS Code compiles cv.tex to a PDF without errors
 - Contact, Education, Experience, Skills sections are populated
 - Clickable links for email, LinkedIn, and GitHub
-layout: journals
 permalink: /quests/level-0101-latex-cv-forging/
 categories:
 - Quests

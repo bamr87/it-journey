@@ -6,7 +6,6 @@ preview: images/previews/level-1010-automation-testing.png
 permalink: /quests/level-1010/
 lastmod: 2025-11-29T23:41:31.772Z
 
-layout: quest-collection
 level: 1010
 categories: quests
 ---

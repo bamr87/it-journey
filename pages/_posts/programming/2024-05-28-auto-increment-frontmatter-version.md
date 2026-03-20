@@ -3,7 +3,6 @@ title: Auto Increment Frontmatter Version
 description: How to automatically increment the version number in the frontmatter of a markdown file after every commit.
 date: 2024-05-28T21:36:50.132Z
 author: bamr87
-layout: default
 excerpt: Learn how to use Git hooks to automatically increment version numbers in frontmatter for better content versioning
 categories:
   - posts

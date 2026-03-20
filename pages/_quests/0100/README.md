@@ -6,7 +6,6 @@ preview: images/previews/level-0100-frontend-development-docker.png
 permalink: /quests/level-0100/
 lastmod: 2025-11-29T23:41:31.769Z
 
-layout: quest-collection
 level: 0100
 categories: quests
 ---
