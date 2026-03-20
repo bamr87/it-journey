@@ -210,5 +210,8 @@
     "barodybroject",
     "parodynews"
   ],
-  "containers.images.label": "latest"
+  "containers.images.label": "latest",
+  "github-actions.workflows.pinned.workflows": [
+    ".github/workflows/frontmatter-validation.yml"
+  ]
 }

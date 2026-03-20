@@ -24,7 +24,7 @@ keywords:
         - ai assisted debugging
         - character encoding issues
         - script timeout problems
-lastmod: 2025-07-06T00:43:55.178Z
+lastmod: 2026-03-20T22:22:55.867Z
 permalink: /debugging-github-actions-workflows-ai-assisted/
 attachments: ""
 comments: true
@@ -206,7 +206,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: 🛠️ Setup Environment
         run: |

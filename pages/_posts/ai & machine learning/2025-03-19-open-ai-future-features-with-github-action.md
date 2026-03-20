@@ -10,7 +10,7 @@ excerpt: null
 snippet: null
 author: ""
 keywords: {}
-lastmod: 2025-07-04T23:01:15.321Z
+lastmod: 2026-03-20T22:22:52.851Z
 permalink: null
 attachments: ""
 comments: false
@@ -162,7 +162,7 @@ jobs:
   process-issue:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_ORG_ID: ${{ secrets.OPENAI_ORG_ID }}
     steps:
