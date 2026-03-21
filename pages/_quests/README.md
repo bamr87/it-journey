@@ -11,13 +11,12 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2025-12-01T06:43:04.446Z
+lastmod: 2026-03-21T15:12:32.275Z
 mermaid: true
 draft: false
 toc: true
 toc_sticky: true
 date: 2020-08-25T19:31:22.000Z
-
 ---
 
 *Ah, brave adventurer! You've entered the mystical realm of IT knowledge, where code flows like magic, systems rise like castles, and every bug is but a dragon to be slain.*
@@ -371,11 +370,17 @@ Web technologies, HTML/CSS/JS basics, and static sites
 - [x] [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle*
 - [x] [Docs in a Row](0001/docs-in-a-row.md) - *Documentation Basics*
 - [x] [Stack Attack](0001/stack-attack.md) - *Understanding Tech Stacks*
+- [x] [Forge Your Character](0001/forge-your-character.md) - *Create Your Contributor Profile*
 - [ ] HTML Foundations - *The Structure of the Web*
 - [ ] CSS Styling - *Visual Magic & Design*
 - [ ] JavaScript Basics - *Adding Interactivity*
 - [ ] Responsive Design - *Mobile-First Thinking*
 - [ ] Static Site Generators - *Jekyll & Hugo Basics*
+
+**Contributor Side Quests:**
+
+- [x] [Avatar Forge](0001/side-quest-avatar-forge.md) - *Craft Your Digital Portrait* (🟢 Easy)
+- [x] [Badge Collector](0001/side-quest-badge-collector.md) - *Showcase Your Achievements* (🟡 Medium)
 
 📁 **[Level 0001 Directory Guide](0001/README.md)** - Complete quest listing and learning paths
 
@@ -391,6 +396,12 @@ Advanced terminal customization and shell scripting
 - [x] [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal*
 - [x] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration.md) - *Diagram Magic*
 - [ ] Advanced Shell Scripting - *Complex Automation Spells*
+
+**Contributor Side Quests:**
+
+- [x] [Stats Dashboard](0010/side-quest-stats-dashboard.md) - *Enhanced Data Visualization* (🟡 Medium)
+- [x] [Contribution Calendar](0010/side-quest-contribution-calendar.md) - *Activity Heatmap* (🟡 Medium)
+
 - [ ] Regular Expressions - *Pattern Matching Sorcery*
 - [ ] Terminal Multiplexing - *tmux & screen Mastery*
 - [ ] SSH & Remote Connections - *Portal Magic*
@@ -434,6 +445,10 @@ User interface development and Docker containerization
 - [ ] Docker Fundamentals - *Container Basics*
 - [ ] CSS Frameworks - *Bootstrap & Tailwind*
 - [ ] Build Tools - *Webpack, Vite, Parcel*
+
+**Contributor Side Quests:**
+
+- [x] [Profile Themes](0100/side-quest-profile-themes.md) - *Custom CSS Profile Themes* (🔴 Hard)
 
 📁 **[Level 0100 Directory Guide](0100/README.md)** - Complete quest listing and learning paths
 
