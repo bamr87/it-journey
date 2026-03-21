@@ -2,7 +2,7 @@
 author: bamr87
 categories:
 - notebooks
-date: '2025-07-03T16:39:35.0471Z'
+date: 2024-06-18T16:18:46.000Z
 description: This notebook demonstrates how to use the Chat GPT model for text generation.
 draft: false
 lastmod: '2025-07-03T16:47:08.3131Z'

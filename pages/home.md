@@ -8,7 +8,7 @@ keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
 sidebar:
    nav: home
-date: 2024-05-15T03:54:48.681Z
+date: 2020-07-30T10:19:45.000Z
 lastmod: 2025-07-22T16:40:00.000Z
 categories:
   - home

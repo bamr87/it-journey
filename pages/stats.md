@@ -2,6 +2,8 @@
 title: "IT-Journey Statistics Portal"
 description: "Comprehensive analytics and metrics for the IT-Journey knowledge base"
 permalink: /stats/
+date: 2025-10-09T18:25:11.000Z
+
 ---
 
 <div class="container my-5">

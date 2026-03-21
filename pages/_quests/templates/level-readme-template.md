@@ -22,7 +22,7 @@ keywords:
 - '[''theme-tag'']'
 - '[''skill-area'']'
 - quest-collection
-date: *id001
+date: 2025-11-29T22:51:57.000Z
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes

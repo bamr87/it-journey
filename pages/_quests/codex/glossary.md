@@ -19,7 +19,7 @@ estimated_time: Variable
 quest_type: side_quest
 keywords:
 - notes
-date: *id001
+date: 2023-11-25T14:12:43.000Z
 quest_series: Codex Reference
 primary_technology: reference
 skill_focus:

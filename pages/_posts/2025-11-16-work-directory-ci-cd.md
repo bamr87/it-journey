@@ -1,7 +1,7 @@
 ---
 title: "The work/ Directory: CI/CD Integration Best Practices"
 description: Master the work/ directory pattern for fast, isolated, cacheable, and disposable CI/CD workspaces that maximize build speed and minimize flakiness across any pipeline.
-date: 2025-11-16T03:00:00.000Z
+date: 2025-11-16T08:17:59.000Z
 preview: /images/post-preview-work-cicd.png
 tags:
   - ci-cd

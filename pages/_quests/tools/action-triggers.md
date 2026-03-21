@@ -5,7 +5,7 @@ description: Unlock the power of automation with GitHub Actions! Streamline your
 excerpt: null
 snippet: null
 preview: images/previews/understanding-action-triggers-in-depth.png
-date: 2025-04-18 19:39:18.958000+00:00
+date: 2025-04-18T13:43:43.000Z
 lastmod: 2026-03-20T22:23:36.683Z
 level: "0010"
 difficulty: 🟢 Easy

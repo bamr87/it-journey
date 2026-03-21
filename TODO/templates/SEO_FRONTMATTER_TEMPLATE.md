@@ -9,6 +9,8 @@ tags:
   - template
   - seo
   - frontmatter
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 📝 SEO Frontmatter Template

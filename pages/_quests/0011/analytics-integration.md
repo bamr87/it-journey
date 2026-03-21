@@ -7,7 +7,7 @@ description: Add Google Analytics 4 to your Jekyll site. Learn event tracking, c
 excerpt: Implement Google Analytics 4 on your Jekyll site to track visitors, events,
   and user engagement metrics
 preview: images/previews/analytics-integration-tracking-user-engagement-des.png
-date: 2025-11-30 05:00:25+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:00:25+00:00
 level: '0011'
 difficulty: 🟡 Medium

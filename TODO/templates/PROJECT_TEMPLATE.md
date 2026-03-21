@@ -15,6 +15,8 @@ tags:
   - todo
   - [category]
   - [additional-tags]
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 📁 [Project Name]

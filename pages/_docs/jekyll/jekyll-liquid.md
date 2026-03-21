@@ -4,7 +4,7 @@ key: tutorial
 index: 8111
 subcategory: jekyll
 status: published
-date: 2016-01-19
+date: 2022-06-05T13:48:57.000Z
 tags:
   - Jekyll
   - Liquid

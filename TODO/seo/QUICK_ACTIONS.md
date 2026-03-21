@@ -12,6 +12,8 @@ tags:
   - todo
   - seo
   - quick-actions
+date: 2025-11-15T16:34:42.000Z
+
 ---
 
 # 🚀 SEO Quick Action Items

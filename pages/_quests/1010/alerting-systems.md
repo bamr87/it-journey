@@ -7,7 +7,7 @@ description: Build production-ready alerting systems with PagerDuty and incident
 excerpt: Implement production alerting with PagerDuty, escalation policies, and incident
   management workflows
 preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
-date: 2025-11-30 05:44:12+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:12+00:00
 level: '1010'
 difficulty: 🔴 Hard

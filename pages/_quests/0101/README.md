@@ -6,6 +6,8 @@ permalink: /quests/level-0101/
 lastmod: 2025-12-02T04:46:12.277Z
 level: "0101"
 categories: quests
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # Level 0101: Advanced Docker & DevOps

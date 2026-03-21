@@ -6,7 +6,7 @@ description: Optimize CI/CD workflows for speed and efficiency. Implement depend
 excerpt: Speed up your CI/CD pipelines with caching strategies and parallel execution
   techniques
 preview: images/previews/workflow-optimization-caching-quest-title-parallel.png
-date: 2025-11-30 05:06:25+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:06:25+00:00
 level: '0101'
 difficulty: 🟡 Medium

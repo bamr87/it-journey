@@ -6,7 +6,7 @@ description: Master recursion, unit testing, and AI integration by navigating se
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
 snippet: Beware the stack overflow curse—always define your base cases!
 preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
-date: 2025-10-08 18:11:38.267000+00:00
+date: 2025-10-08T19:11:31.000Z
 lastmod: 2025-10-09 00:09:00.916000+00:00
 level: '0010'
 difficulty: 🟡 Medium

@@ -1,7 +1,7 @@
 ---
 title: Jekyll LLM Integration Ideas
 description: Exploring ideas and implementation strategies for integrating Large Language Models (LLMs) into Jekyll static sites for automated content generation and enhancement
-date: 2024-06-01T17:49:08.293Z
+date: 2024-06-01T22:03:24.000Z
 excerpt: A comprehensive exploration of integrating LLMs into Jekyll workflows for content automation, review, and enhancement
 author: bamr87
 categories:

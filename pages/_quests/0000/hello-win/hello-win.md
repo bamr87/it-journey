@@ -13,7 +13,7 @@ keywords: &id001
 - package-management
 - init-world
 - lvl-001
-date: 2023-12-03 00:00:00+00:00
+date: 2020-08-17T15:28:44.000Z
 level: '0000'
 quest_type: main_quest
 difficulty: 🟡 Medium

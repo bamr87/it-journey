@@ -5,7 +5,7 @@ categories:
     - Posts
     - Design
     - Mathematics
-date: '2023-03-17T00:00:00.000Z'
+date: 2023-03-19T11:36:51.000Z
 description: "Explore the fascinating world of impossible geometry through the iconic Penrose Triangle, a symbol that challenges perception and mathematical logic"
 draft: false
 section: Trends & Ideas

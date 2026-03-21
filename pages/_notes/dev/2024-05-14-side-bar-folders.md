@@ -17,7 +17,7 @@ tags:
    - file-structure
 slug: side-bar-folders
 lastmod: 2024-05-16T01:45:59.214Z
-date: 2024-05-14T15:47:06.342Z
+date: 2024-05-14T22:06:19.000Z
 type: default
 draft: false
 ---

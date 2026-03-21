@@ -6,7 +6,7 @@ description: Learn to create and manage GitHub Actions workflows for CI/CD autom
 excerpt: Master GitHub Actions workflow creation for automating your software development
   lifecycle
 preview: images/previews/github-actions-basics-workflow-automation-descript.png
-date: 2025-11-30 05:05:22+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:22+00:00
 level: '0101'
 difficulty: 🟡 Medium

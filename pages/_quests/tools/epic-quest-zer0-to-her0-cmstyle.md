@@ -6,7 +6,7 @@ description: Discover how one nerd transformed from zero to hero by building an 
 excerpt: null
 snippet: null
 preview: images/previews/epic-quest-zer0-to-her0-cmstyle.png
-date: 2025-08-22 04:58:03.625000+00:00
+date: 2025-08-24T18:46:40.000Z
 lastmod: 2025-08-25 00:46:40.810000+00:00
 level: '0010'
 difficulty: 🟢 Easy

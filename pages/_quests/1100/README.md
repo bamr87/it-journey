@@ -6,6 +6,8 @@ permalink: /quests/level-1100/
 lastmod: 2025-12-02T04:46:12.249Z
 level: 1100
 categories: quests
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # Level 1100: Data & Templates

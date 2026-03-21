@@ -8,7 +8,7 @@ excerpt: Begin your transformation from IT novice to digital hero by building yo
   development environment
 snippet: Every hero needs an origin story - craft yours with intention and purpose
 preview: images/previews/character-building-forge-your-it-identity-and-deve.png
-date: 2023-11-23 18:10:54.834000+00:00
+date: 2023-11-25T14:12:43.000Z
 lastmod: 2025-11-30 05:46:59.330000+00:00
 level: '0000'
 difficulty: 🟢 Easy

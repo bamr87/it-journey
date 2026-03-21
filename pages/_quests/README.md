@@ -16,6 +16,8 @@ mermaid: true
 draft: false
 toc: true
 toc_sticky: true
+date: 2020-08-25T19:31:22.000Z
+
 ---
 
 *Ah, brave adventurer! You've entered the mystical realm of IT knowledge, where code flows like magic, systems rise like castles, and every bug is but a dragon to be slain.*

@@ -5,7 +5,7 @@ description: Navigate career advancement in tech from IC to leadership. Learn pr
   strategies, personal branding, networking, and building executive presence.
 excerpt: Navigate career advancement from individual contributor to technical leadership
 preview: images/previews/career-advancement-strategies-descriptive-subtitle.png
-date: 2025-12-01 04:23:09+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard

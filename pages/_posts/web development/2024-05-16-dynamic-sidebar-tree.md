@@ -1,7 +1,7 @@
 ---
 title: Dynamic Sidebar Tree
 lastmod: 2024-05-16T16:15:26.771Z
-date: 2024-05-16T16:15:25.503Z
+date: 2024-05-14T22:06:19.000Z
 tags:
   - copilot
   - jekyll

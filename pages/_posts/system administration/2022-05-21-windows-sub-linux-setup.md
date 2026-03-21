@@ -17,7 +17,7 @@ meta: null
 draft: false
 section: System Administration
 lastmod: 2025-10-19T22:33:21.685Z
-date: 2022-05-21T23:56:40.448Z
+date: 2023-04-20T23:25:49.000Z
 ---
 
 # Windows Subsystem for Linux (WSL) Setup Guide

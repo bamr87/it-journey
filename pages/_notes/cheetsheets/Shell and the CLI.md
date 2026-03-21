@@ -4,6 +4,8 @@ updated: 2022-01-05 07:55:00Z
 created: 2023-12-15 04:10:54Z
 lastmod: 2024-05-17T01:52:39.490Z
 draft: draft
+date: 2021-11-06T10:42:04.000Z
+
 ---
 
 # Command Line

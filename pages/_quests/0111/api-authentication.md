@@ -5,7 +5,7 @@ description: Implement secure API authentication with OAuth 2.0, JWT tokens, and
   keys. Learn token-based auth, refresh tokens, scopes, and security best practices.
 excerpt: Secure your APIs with OAuth 2.0, JWT tokens, and API key authentication methods
 preview: images/previews/api-authentication-oauth-jwt-quest-title-api-keys-.png
-date: 2025-11-30 05:09:08+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:09:08+00:00
 level: '0111'
 difficulty: 🔴 Hard

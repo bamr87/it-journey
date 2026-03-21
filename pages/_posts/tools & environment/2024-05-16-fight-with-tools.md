@@ -1,7 +1,7 @@
 ---
 title: fight with tools
 description: null
-date: 2024-05-16T17:58:26.133Z
+date: 2024-05-16T14:03:26.000Z
 preview: null
 draft: true
 tags: []

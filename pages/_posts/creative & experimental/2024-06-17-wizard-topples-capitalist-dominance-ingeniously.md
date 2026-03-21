@@ -1,6 +1,6 @@
 ---
 categories: gpt
-date: 2024-06-17 20:03:39
+date: 2024-06-18T16:17:18.000Z
 title: Wizard Topples Capitalist Dominance Ingeniously
 lastmod: 2025-09-01T00:59:51.883Z
 draft: true

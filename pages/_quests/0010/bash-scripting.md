@@ -8,7 +8,7 @@ excerpt: Transform from a terminal novice into a bash scripting wizard through h
   automation magic and command-line mastery.
 snippet: When the shell speaks, the system listens - master the ancient bash incantations!
 preview: images/previews/mastering-the-bash-incantations-binary-level-0010-.png
-date: 2025-07-28 10:30:00+00:00
+date: 2025-07-28T23:34:51.000Z
 lastmod: 2025-11-08 15:07:21.509000+00:00
 level: '0010'
 difficulty: 🟡 Medium

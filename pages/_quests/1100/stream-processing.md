@@ -7,7 +7,7 @@ description: Build real-time data streaming pipelines with Kafka and Flink. Lear
 excerpt: Build real-time data pipelines with Kafka, stream processing patterns, and
   event-driven architecture
 preview: images/previews/stream-processing-descriptive-subtitle.png
-date: 2025-12-01 04:21:46+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1100'
 difficulty: 🔴 Hard

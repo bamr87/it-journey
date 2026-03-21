@@ -1,5 +1,7 @@
 ---
 applyTo: 'pages/_quests/**/*.md'
+date: 2025-07-21T23:30:21.000Z
+
 ---
 
 # Quest Creation Instructions for IT-Journey

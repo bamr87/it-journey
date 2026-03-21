@@ -7,7 +7,7 @@ excerpt: Transform from coding apprentice to git wizard by mastering the ancient
   of version control, branch sorcery, and collaborative development magic
 snippet: Every line of code tells a story - learn to chronicle your digital adventures
 preview: images/previews/quest-mastering-the-ancient-arts-of-source-control.png
-date: 2025-04-18 19:00:55.950000+00:00
+date: 2025-07-28T23:34:51.000Z
 lastmod: 2025-07-29 05:15:57.715000+00:00
 level: '0100'
 difficulty: 🟡 Medium

@@ -1,5 +1,7 @@
 ---
 applyTo: '**/prompts/**/*.md'
+date: 2025-11-02T22:15:37.000Z
+
 ---
 
 # Prompt Engineering Instructions with Kaizen Integration

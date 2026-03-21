@@ -1,7 +1,7 @@
 ---
 title: Bootstrap your theme and character
 description: null
-date: 2024-05-09T18:59:41.622Z
+date: 2024-05-09T22:24:22.000Z
 section: Trends & Ideas
 preview: null
 tags: []

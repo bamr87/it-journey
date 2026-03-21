@@ -8,7 +8,7 @@ excerpt: Embark on an epic journey to master Kaizen principles and forge a cultu
   of continuous improvement in software development
 snippet: Small steps, infinite progress - the way of the Code Alchemist
 preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
-date: 2025-11-02 21:38:25.194000+00:00
+date: 2025-11-02T18:34:05.000Z
 lastmod: 2025-11-02 22:13:30.306000+00:00
 level: '0001'
 difficulty: 🟡 Medium

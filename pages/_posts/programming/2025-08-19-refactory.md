@@ -1,7 +1,7 @@
 ---
 title: Refactory
 description: ""
-date: 2025-08-19T21:57:31.288Z
+date: 2025-08-21T22:00:59.000Z
 preview: ""
 tags: []
 categories: []

@@ -5,7 +5,7 @@ description: Master essential software design patterns including creational, str
   and behavioral patterns. Learn when and how to apply patterns for maintainable code.
 excerpt: Master essential design patterns for writing maintainable, scalable software
 preview: images/previews/software-design-patterns-descriptive-subtitle.png
-date: 2025-12-01 04:22:28+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1110'
 difficulty: 🔴 Hard

@@ -7,6 +7,8 @@ categories:
 slug: jekyll
 lastmod: 2023-11-20T04:55:27.266Z
 draft: false
+date: 2021-11-09T17:30:29.000Z
+
 ---
 
 Jekyll is a static site generator. It takes text written in your

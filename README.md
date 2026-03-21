@@ -28,6 +28,8 @@ keywords:
     - jupyter-notebooks
 permalink: /readme/
 layout: home
+date: 2020-07-30T10:19:45.000Z
+
 ---
 
 # IT-Journey

@@ -5,7 +5,7 @@ description: Prepare for system design interviews with frameworks for designing 
   systems. Practice URL shorteners, social networks, and distributed systems problems.
 excerpt: Master system design interview techniques and frameworks for technical interviews
 preview: images/previews/system-design-interview-mastery-descriptive-subtit.png
-date: 2025-12-01 04:22:39+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1110'
 difficulty: ⚔️ Epic

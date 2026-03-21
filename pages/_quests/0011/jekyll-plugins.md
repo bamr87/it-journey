@@ -7,7 +7,7 @@ description: Master Jekyll plugins to extend your site's functionality. Learn to
 excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps,
   and custom functionality
 preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
-date: 2025-11-30 05:00:15+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:00:15+00:00
 level: '0011'
 difficulty: 🟡 Medium

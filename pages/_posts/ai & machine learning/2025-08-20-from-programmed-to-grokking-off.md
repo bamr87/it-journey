@@ -14,7 +14,7 @@ tags:
 sidebar:
   nav: docs
 toc_sticky: true
-date: 2025-08-20T12:00:00.000Z
+date: 2025-08-21T22:00:59.000Z
 lastmod: 2025-08-22T04:00:02.774Z
 draft: false
 excerpt: Explore the hilarious yet horrifying journey of programmers through time, where code writes itself and humans just... grok off.

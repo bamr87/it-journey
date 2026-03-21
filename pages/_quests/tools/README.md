@@ -4,6 +4,8 @@ description: Quests focused on development tools, version control, CI/CD, and pr
 preview: images/previews/tools-collection-development-tools-workflows.png
 permalink: /quests/tools/
 lastmod: 2025-11-29T23:41:31.777Z
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # Tools Collection: Development Tools & Workflows

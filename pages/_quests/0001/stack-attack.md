@@ -7,7 +7,7 @@ excerpt: Learn to systematically dissect and document any technology stack using
   assistance and investigative techniques
 snippet: Knowledge is power; understanding the stack is mastery
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
-date: 2025-11-02 21:00:31.059000+00:00
+date: 2025-11-02T14:45:16.000Z
 lastmod: 2025-11-30 05:46:59.350000+00:00
 level: '0001'
 difficulty: 🟡 Medium

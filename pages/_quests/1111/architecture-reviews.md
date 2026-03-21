@@ -6,7 +6,7 @@ description: Lead effective architecture reviews and design discussions. Master 
   records.
 excerpt: Lead effective architecture reviews and technical design discussions
 preview: images/previews/architecture-reviews-descriptive-subtitle.png
-date: 2025-12-01 04:23:04+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard

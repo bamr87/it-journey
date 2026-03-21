@@ -1,5 +1,7 @@
 ---
 applyTo: '**/*'
+date: 2025-11-16T08:17:59.000Z
+
 ---
 
 # Work Directory Instructions for AI Agents

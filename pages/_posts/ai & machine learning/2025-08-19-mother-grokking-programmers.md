@@ -1,7 +1,7 @@
 ---
 title: Mother Grokking Programmers
 description: A satirical take on the evolution of programmers from being programmed to grokking off all day.
-date: 2025-08-19T21:41:57.770Z
+date: 2025-08-21T22:00:59.000Z
 preview: ""
 tags:
     - satire

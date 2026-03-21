@@ -3,6 +3,8 @@ title: Contributing
 description: How to contribute to IT-Journey
 slug: contributing
 lastmod: 2025-11-02T00:00:00.000Z
+date: 2021-09-03T18:09:27.000Z
+
 ---
 
 # Contributing to IT-Journey

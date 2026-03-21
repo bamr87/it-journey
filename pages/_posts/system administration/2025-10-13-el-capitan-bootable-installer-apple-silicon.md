@@ -1,7 +1,7 @@
 ---
 title: Creating El Capitan Bootable Installer on Apple Silicon
 description: Step-by-step guide to creating a bootable OS X El Capitan installer on modern Apple Silicon Macs for restoring legacy Intel-based systems
-date: 2025-10-13T01:00:25.207Z
+date: 2025-10-12T20:17:00.000Z
 preview: /assets/images/posts/el-capitan-bootloader.png
 tags:
     - macos

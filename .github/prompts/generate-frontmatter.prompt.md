@@ -9,6 +9,8 @@ inputs:
   - description
 outputs:
   - frontmatter
+date: 2025-11-22T16:10:21.000Z
+
 ---
 
 # Generate Jekyll Frontmatter

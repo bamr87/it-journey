@@ -1,7 +1,7 @@
 ---
 title: "100 Questions & Answers About Arab-Americans: A Journalist's Guide"
 description: Comprehensive guide to understanding Arab-American culture, demographics, religion, and addressing common stereotypes - published post-9/11 to promote better understanding
-date: 2023-04-20T00:00:00.000Z
+date: 2025-08-21T22:00:59.000Z
 categories:
     - Research
     - Cultural-Education

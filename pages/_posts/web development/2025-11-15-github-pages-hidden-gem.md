@@ -1,7 +1,7 @@
 ---
 title: "GitHub Pages: The Hidden Gem Revolutionizing Web Publishing"
 description: Learn how GitHub Pages transforms repositories into hosted websites with Jekyll, offering free hosting and version control integration.
-date: 2025-11-15T03:46:15.399Z
+date: 2025-11-15T16:34:42.000Z
 preview: /assets/images/github-pages-hero.png
 tags:
     - github-pages

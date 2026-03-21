@@ -7,7 +7,7 @@ description: Deploy Prometheus for metrics collection and Grafana for visualizat
 excerpt: Build complete monitoring with Prometheus metrics collection and Grafana
   visualization dashboards
 preview: images/previews/prometheus-quest-title-grafana-metrics-collection-.png
-date: 2025-11-30 05:44:08+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:08+00:00
 level: '1010'
 difficulty: 🔴 Hard

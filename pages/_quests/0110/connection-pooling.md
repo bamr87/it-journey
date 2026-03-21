@@ -6,7 +6,7 @@ description: Learn database connection pooling for optimal resource management. 
 excerpt: Optimize database connections with efficient pooling strategies and resource
   management
 preview: images/previews/connection-pooling-efficient-resource-management-d.png
-date: 2025-11-30 05:08:33+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:33+00:00
 level: '0110'
 difficulty: 🔴 Hard

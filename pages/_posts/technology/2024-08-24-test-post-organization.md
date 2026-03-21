@@ -11,7 +11,7 @@ tags:
 sidebar:
   nav: docs
 toc_sticky: true
-date: 2024-08-24T19:30:00.000Z
+date: 2025-08-25T23:07:01.000Z
 draft: false
 section: Technology
 slug: test-post-organization

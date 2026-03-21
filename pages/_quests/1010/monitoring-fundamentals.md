@@ -7,7 +7,7 @@ description: 'Learn the three pillars of observability: metrics, logs, and trace
 excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade
   monitoring
 preview: images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
-date: 2025-11-30 05:43:59+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:43:59+00:00
 level: '1010'
 difficulty: 🔴 Hard

@@ -1,7 +1,7 @@
 ---
 title: Streamlining Content Creation - Using Crush in VSCode for Instant GitHub Pages Publishing
 description: Discover how to leverage Crush AI in VSCode to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines.
-date: 2025-11-20
+date: 2025-11-20T18:53:39.000Z
 lastmod: 2025-11-20
 version: 1.0.0
 categories: [ai & machine learning, devops, web development]

@@ -6,7 +6,7 @@ description: Navigate security compliance frameworks including SOC 2, GDPR, HIPA
 excerpt: Implement and maintain compliance with SOC 2, GDPR, HIPAA, and other security
   standards
 preview: images/previews/compliance-standards-soc-2-gdpr-quest-title-hipaa-.png
-date: 2025-11-30 05:44:55+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:55+00:00
 level: '1011'
 difficulty: 🔴 Hard

@@ -56,6 +56,8 @@ validation_methods:
   - Test all interactive features in the demo below
   - Inspect the page source to understand Jekyll rendering
   - Experiment with the JavaScript console for deeper insights
+date: 2022-05-10T19:27:49.000Z
+
 ---
 
 # 🎉 Interactive JavaScript & Jekyll Layout Integration Demo

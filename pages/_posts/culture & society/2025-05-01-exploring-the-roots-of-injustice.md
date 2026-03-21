@@ -1,7 +1,7 @@
 ---
 title: Exploring the Roots of Injustice
 description: Explore the layers of injustice in corporate America through a case study of betrayal, racial marginalization, and the fight for recognition.
-date: 2025-05-01T23:36:57.321Z
+date: 2025-05-01T18:48:47.000Z
 preview: /images/pixel_art_diptych_1920x1080.png
 tags:
     - corporate betrayal

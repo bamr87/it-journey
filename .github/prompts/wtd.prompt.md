@@ -1,6 +1,8 @@
 ---
 mode: 'agent'
 description: 'What To Do (WTD) - AI agent for working on TODO directory items using PDCA methodology'
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 🎯 What To Do (WTD) Agent

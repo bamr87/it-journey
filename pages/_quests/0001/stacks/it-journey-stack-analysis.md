@@ -3,7 +3,7 @@ title: 'Stack Attack Analysis: IT-Journey'
 description: Comprehensive technology stack analysis and documentation for the IT-Journey
   educational platform
 preview: images/previews/stack-attack-analysis-it-journey.png
-date: 2025-11-02 00:00:00+00:00
+date: 2025-11-02T14:45:16.000Z
 repository: https://github.com/bamr87/it-journey
 repository_name: it-journey
 repository_owner: bamr87

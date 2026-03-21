@@ -10,6 +10,8 @@ twitter: bamr42
 linkedin: amrabdel
 lastmod: 2025-01-21T23:09:20.504Z
 permalink: /about/bamr87/
+date: 2024-05-09T22:24:22.000Z
+
 ---
 
 # Navigate to your current repository

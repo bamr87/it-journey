@@ -7,7 +7,7 @@ description: Master Python data science libraries. Learn NumPy for numerical com
 excerpt: Master NumPy, Pandas, and Matplotlib for Python data science and analysis
   workflows
 preview: images/previews/python-for-data-science-descriptive-subtitle.png
-date: 2025-12-01 04:21:59+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🟡 Medium

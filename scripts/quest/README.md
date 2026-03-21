@@ -3,6 +3,8 @@ title: Quest Scripts
 description: Automation tools for quest generation, validation, and maintenance.
 permalink: /scripts/quest/readme/
 lastmod: 2026-01-16T00:00:00.000Z
+date: 2026-01-14T22:23:32.000Z
+
 ---
 
 # Quest Scripts

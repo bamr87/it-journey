@@ -7,7 +7,7 @@ description: Learn responsible AI practices and ethics frameworks. Understand bi
 excerpt: Build responsible AI systems with bias detection, fairness metrics, and model
   explainability
 preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
-date: 2025-12-01 04:22:13+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🟡 Medium

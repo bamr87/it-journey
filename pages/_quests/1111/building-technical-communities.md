@@ -5,7 +5,7 @@ description: Build and grow technical communities around your projects. Learn co
   management, developer relations, event organization, and engagement strategies.
 excerpt: Build thriving technical communities and developer ecosystems
 preview: images/previews/building-technical-communities-descriptive-subtitl.png
-date: 2025-12-01 04:23:09+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard

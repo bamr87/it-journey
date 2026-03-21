@@ -7,7 +7,7 @@ description: Master the fundamentals of databases, including data storage, retri
 excerpt: Learn how databases store and retrieve data, and gain hands-on experience
   with SQL and relational database design.
 preview: images/previews/database-fundamentals-data-storage-quest-title-ret.png
-date: 2025-11-30 05:07:24+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:07:24+00:00
 level: '0110'
 difficulty: 🔴 Hard

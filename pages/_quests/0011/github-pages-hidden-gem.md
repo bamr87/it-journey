@@ -9,7 +9,7 @@ excerpt: Transform your GitHub repositories into powerful websites and learn to 
   AI conversations forever
 snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
 preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
-date: 2025-11-14 00:00:00+00:00
+date: 2025-11-15T16:34:42.000Z
 lastmod: 2025-11-15 03:52:35.140000+00:00
 level: '0011'
 difficulty: 🟢 Easy

@@ -8,7 +8,7 @@ excerpt: Master the sacred art of templates to build elegant, reusable systems a
   languages.
 snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
 preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
-date: 2025-08-24 22:40:52.276000+00:00
+date: 2025-08-24T18:46:40.000Z
 lastmod: 2025-08-25 00:43:51.189000+00:00
 level: '1100'
 difficulty: 🟡 Medium

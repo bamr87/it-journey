@@ -15,7 +15,7 @@ tags:
 sidebar:
   nav: docs
 toc_sticky: true
-date: 2021-10-27T21:42:21.287Z
+date: 2021-10-27T16:23:18.000Z
 lastmod: 2024-05-20T17:47:12.251Z
 draft: false
 section: Technology

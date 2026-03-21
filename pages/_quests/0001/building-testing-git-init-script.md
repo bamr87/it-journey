@@ -6,7 +6,7 @@ description: Hands-on quest to build, extend, and test `git_init.sh` — an inte
 excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable
   in both interactive and headless modes.
 preview: images/previews/building-testing-the-git-init-script-headless-inte.png
-date: 2025-11-13 10:00:00+00:00
+date: 2025-11-13T23:38:22.000Z
 lastmod: 2025-11-13 10:30:00+00:00
 level: '0001'
 difficulty: 🟢 Easy

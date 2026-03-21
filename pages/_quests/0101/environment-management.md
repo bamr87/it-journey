@@ -7,7 +7,7 @@ description: Learn to manage multiple deployment environments effectively. Confi
 excerpt: Master multi-environment configuration and management for reliable software
   delivery
 preview: images/previews/environment-management-dev-staging-quest-title-pro.png
-date: 2025-11-30 05:05:35+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:35+00:00
 level: '0101'
 difficulty: 🟡 Medium

@@ -1,7 +1,7 @@
 ---
 title: Set Up Azure for Jekyll Contact Us Form
 description: Learn how to easily set up Azure for your Jekyll Contact Us form and enhance user engagement on your website.
-date: 2025-01-24T18:06:04.177Z
+date: 2025-02-05T14:08:47.000Z
 preview: ""
 tags:
     - Azure

@@ -2,7 +2,7 @@
 author: bamr87
 categories:
 - notes
-date: '2025-07-03T16:39:35.0501Z'
+date: 2021-11-07T17:20:34.000Z
 description: Notes Index
 draft: false
 lastmod: 2024-05-24 04:34:37.380000+00:00

@@ -1,7 +1,7 @@
 ---
 title: "Texan Cowboys Learn History: Pyramid Scheme Revealed"
 description: null
-date: 2024-07-18T15:07:37.240Z
+date: 2024-10-02T15:35:35.000Z
 preview: null
 draft: true
 tags: []

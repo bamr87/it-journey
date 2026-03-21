@@ -7,7 +7,7 @@ description: Implement distributed tracing with Jaeger and OpenTelemetry. Learn 
 excerpt: Implement distributed tracing with Jaeger and OpenTelemetry for microservices
   debugging
 preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
-date: 2025-11-30 05:44:22+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:22+00:00
 level: '1010'
 difficulty: 🔴 Hard

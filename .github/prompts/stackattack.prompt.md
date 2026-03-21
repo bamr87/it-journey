@@ -1,6 +1,8 @@
 ---
 mode: agent
 description: Stack Attack - Systematic technology stack analysis and documentation for any GitHub repository
+date: 2025-11-02T14:45:16.000Z
+
 ---
 
 # 🔍 Stack Attack: Repository Analysis Protocol

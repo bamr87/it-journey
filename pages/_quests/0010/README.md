@@ -8,6 +8,8 @@ lastmod: 2026-02-14T00:00:00.000Z
 
 level: 0010
 categories: quests
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # Level 0010: Terminal Enhancement & Shell Mastery

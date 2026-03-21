@@ -1,7 +1,7 @@
 ---
 title: Web Development Posts - IT-Journey
 description: Educational blog posts covering web technologies, frontend frameworks, static site generators, and modern web development practices
-date: 2025-11-24T00:00:00.000Z
+date: 2025-11-24T14:13:40.000Z
 lastmod: 2025-11-24T21:13:28.515Z
 version: 1.0.0
 permalink: /posts/web-development/

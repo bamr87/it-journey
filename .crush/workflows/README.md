@@ -3,6 +3,8 @@ title: "Crush Workflow System"
 description: "AI-powered sequential prompt execution for multi-step content creation and refinement"
 permalink: /crush/workflows/readme/
 lastmod: 2025-11-20T00:00:00.000Z
+date: 2025-11-22T16:10:21.000Z
+
 ---
 
 # 🔮 Crush Workflow System

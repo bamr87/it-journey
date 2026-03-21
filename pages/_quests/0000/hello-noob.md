@@ -8,7 +8,7 @@ excerpt: Begin your epic adventure in the world of IT with your very first quest
   setting up GitHub and joining the community
 snippet: Every expert was once a beginner - every hero was once a n00b
 preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
-date: 2022-05-24 00:00:00+00:00
+date: 2022-06-05T13:48:57.000Z
 lastmod: 2025-11-30 05:46:59.323000+00:00
 level: '0000'
 difficulty: 🟢 Easy

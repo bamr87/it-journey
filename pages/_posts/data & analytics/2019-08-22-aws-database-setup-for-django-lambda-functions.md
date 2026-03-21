@@ -3,7 +3,7 @@ title: AWS Database Setup for Django Lambda Functions
 description: null
 author: null
 excerpt: null
-date: 2019-08-22T15:20:28.000Z
+date: 2024-12-03T10:42:33.000Z
 lastmod: 2024-10-14T16:00:26.339Z
 draft: true
 tags: []

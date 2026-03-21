@@ -21,6 +21,8 @@ toc_sticky: true
 draft: false
 
 level: 0110
+date: 2025-12-20T20:02:51.000Z
+
 ---
 
 # Level 0110 (6) - Database Mastery

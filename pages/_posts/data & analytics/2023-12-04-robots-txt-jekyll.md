@@ -5,7 +5,7 @@ categories:
     - Posts
     - Web-Development
     - SEO
-date: '2023-12-04T00:00:00.000Z'
+date: 2023-12-04T15:42:39.000Z
 description: "Learn how to properly configure robots.txt files for Jekyll websites to control search engine crawlers and optimize SEO"
 draft: false
 section: Data & Analytics

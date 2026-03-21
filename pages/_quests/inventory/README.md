@@ -5,6 +5,8 @@ preview: images/previews/inventory-learner-collection-tracker.png
 permalink: /quests/inventory/
 lastmod: 2025-11-29T23:41:31.763Z
 draft: true
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # 🎒 Inventory - Learner Collection Tracker

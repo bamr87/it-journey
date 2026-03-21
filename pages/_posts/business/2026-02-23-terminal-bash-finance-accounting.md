@@ -1,7 +1,7 @@
 ---
 title: "From Spreadsheets to Shell Scripts: A Finance Professional's Guide to the Terminal"
 description: "Discover how finance and accounting professionals can leverage the terminal and bash scripting to automate tedious tasks, process massive datasets, and level up their careers — no CS degree required."
-date: 2026-02-23T00:00:00.000Z
+date: 2026-02-23T12:40:05.000Z
 preview: "/images/post-preview-image.png"
 tags:
     - bash

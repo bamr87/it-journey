@@ -8,7 +8,7 @@ excerpt: Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings int
   wisdom—ethically, safely, and with proper headers.
 snippet: All hail transparency—storm the gates, free the filings, enlighten the realm.
 preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
-date: 2025-08-20 04:18:02.180000+00:00
+date: 2025-08-21T22:00:59.000Z
 lastmod: 2025-08-20 04:18:02.180000+00:00
 level: '1100'
 difficulty: 🟡 Medium

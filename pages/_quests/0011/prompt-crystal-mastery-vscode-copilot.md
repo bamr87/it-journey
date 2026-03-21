@@ -9,7 +9,7 @@ excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wie
   your development workflow
 snippet: Your prompts are code—version them, test them, perfect them
 preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
-date: 2025-11-26 00:00:00+00:00
+date: 2025-11-26T22:17:42.000Z
 lastmod: 2025-11-27 05:11:44.573000+00:00
 level: '0011'
 difficulty: 🟡 Medium

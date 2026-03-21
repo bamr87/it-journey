@@ -26,7 +26,7 @@ quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
 permalink: /quests/level-0001/barodybroject-stack-analysis/
-date: *id001
+date: 2025-11-02T18:34:05.000Z
 primary_technology: stack-analysis
 skill_focus:
 - Stack Analysis

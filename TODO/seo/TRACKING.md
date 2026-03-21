@@ -12,6 +12,8 @@ tags:
   - seo
   - tracking
   - metrics
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 📊 SEO Performance Tracking

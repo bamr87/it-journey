@@ -8,6 +8,8 @@ tags:
   - sitemap
   - structure
   - automation
+date: 2022-02-12T17:37:05.000Z
+
 ---
 
 ## Site Navigation Overview

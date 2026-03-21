@@ -1,5 +1,7 @@
 ---
 applyTo: '**/README.md'
+date: 2025-10-17T17:25:30.000Z
+
 ---
 
 # README.md Maintenance & Evolution Guidelines

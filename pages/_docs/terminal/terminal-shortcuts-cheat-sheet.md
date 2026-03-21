@@ -1,7 +1,7 @@
 ---
 title: "Essential Terminal Shortcuts: macOS, Linux & Windows Cheat Sheet"
 description: "Complete reference guide for terminal keyboard shortcuts across macOS, Linux, and Windows. Master command line navigation, editing, and productivity shortcuts for Bash, Zsh, and PowerShell."
-date: 2025-12-20T00:00:00.000Z
+date: 2025-12-20T10:05:28.000Z
 lastmod: 2025-12-20T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /docs/terminal-shortcuts-cheat-sheet/

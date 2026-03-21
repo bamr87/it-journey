@@ -5,7 +5,7 @@ description: Implement API rate limiting for traffic control and protection. Lea
   throttling algorithms, quota management, rate limit headers, and DDoS protection.
 excerpt: Protect your APIs with rate limiting, throttling, and traffic control strategies
 preview: images/previews/rate-limiting-api-traffic-control-descriptive-subt.png
-date: 2025-11-30 05:08:59+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:59+00:00
 level: '0111'
 difficulty: 🔴 Hard

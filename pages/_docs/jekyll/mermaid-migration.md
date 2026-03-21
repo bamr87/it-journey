@@ -1,7 +1,7 @@
 ---
 title: Mermaid Auto-Detection Migration Guide
 subcategory: jekyll
-date: 2025-01-27
+date: 2025-11-08T21:04:54.000Z
 tags:
   - Mermaid
   - Migration

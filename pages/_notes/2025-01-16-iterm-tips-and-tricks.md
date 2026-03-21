@@ -1,7 +1,7 @@
 ---
 title: iTerm Tips and Tricks
 description: Unlock your productivity with essential iTerm2 tips for customizing keybindings and navigating text efficiently in the terminal.
-date: 2025-01-16T22:27:04.957Z
+date: 2025-02-05T14:08:47.000Z
 preview: /assets/images/iTerm-shortcuts-2.png
 tags:
     - customization

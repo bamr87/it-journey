@@ -10,7 +10,7 @@ tier_emoji: 👑
 theme: Realm Shaper
 xp_range: 10000+
 permalink: /quests/1111/
-date: 2025-11-30
+date: 2025-11-30T22:12:13.000Z
 lastmod: 2025-12-01T04:36:39.408Z
 categories:
   - quests

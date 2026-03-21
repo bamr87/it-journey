@@ -14,6 +14,8 @@ tags:
   - seo
   - optimization
   - analytics
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 🔍 SEO Optimization Project

@@ -1,7 +1,7 @@
 ---
 title: "Host Django on Raspberry Pi: A Complete Guide"
 description: ""
-date: 2025-02-05T21:01:31.550Z
+date: 2025-02-05T14:08:47.000Z
 preview: ""
 tags: []
 categories: []

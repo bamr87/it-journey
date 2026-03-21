@@ -20,7 +20,7 @@ tags:
 - networking
 lastmod: &id001 2025-11-30 05:46:59.343000+00:00
 draft: false
-date: *id001
+date: 2021-03-13T15:24:06.000Z
 primary_technology: linux
 skill_focus:
 - quests

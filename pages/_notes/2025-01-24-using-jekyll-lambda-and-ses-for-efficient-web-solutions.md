@@ -1,7 +1,7 @@
 ---
 title: Using Jekyll, Lambda, and SES for Efficient Web Solutions
 description: ""
-date: 2025-01-24T17:04:43.040Z
+date: 2025-02-05T14:08:47.000Z
 preview: ""
 tags: []
 categories: []

@@ -1,7 +1,7 @@
 ---
 title: ERP Systems as the Engine of Modern Economic Design
 description: Explore how ERP systems drive modern economic design, integrating AI and data for strategic enterprise management and competitive advantage.
-date: 2025-05-02T01:32:03.092Z
+date: 2025-06-22T11:09:58.000Z
 preview: /images/ai-erp-control.png
 tags:
     - AI integration

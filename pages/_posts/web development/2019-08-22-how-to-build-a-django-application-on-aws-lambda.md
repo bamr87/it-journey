@@ -3,7 +3,7 @@ title: How to build a Django Application on AWS Lambda
 description: Learn how to build a Django application on AWS Lambda, including database integration, networking, and security considerations.
 author: Amr
 excerpt: null
-date: 2019-08-22T15:20:28.000Z
+date: 2024-12-03T10:42:33.000Z
 lastmod: 2024-10-07T22:07:48.452Z
 draft: true
 tags: []

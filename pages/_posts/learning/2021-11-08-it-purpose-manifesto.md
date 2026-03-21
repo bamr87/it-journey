@@ -15,7 +15,7 @@ tags:
   - technical-documentation
   - community-building
   - digital-literacy
-date: 2021-11-08T19:50:20.168Z
+date: 2021-11-08T14:23:05.000Z
 lastmod: 2025-08-27T01:40:11.248Z
 draft: false
 excerpt: "The mission statement and philosophical foundation of IT-Journey: building a comprehensive repository of IT knowledge that serves learners at every level"

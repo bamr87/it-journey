@@ -3,6 +3,8 @@ title: IT-Journey About Section
 description: Organization of the IT-Journey about pages and content structure
 permalink: /about/readme/
 lastmod: 2025-01-13T00:00:00.000Z
+date: 2025-10-12T20:17:00.000Z
+
 ---
 
 # IT-Journey About Section

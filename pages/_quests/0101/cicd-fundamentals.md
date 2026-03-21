@@ -7,7 +7,7 @@ description: Master the fundamentals of CI/CD pipelines including automated buil
 excerpt: Learn the core concepts and practices of continuous integration and continuous
   deployment for automated software delivery
 preview: images/previews/ci-cd-fundamentals-continuous-integration-quest-ti.png
-date: 2025-11-30 05:05:18+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:18+00:00
 level: '0101'
 difficulty: 🟡 Medium

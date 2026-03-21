@@ -14,6 +14,8 @@ sidebar:
 draft: true
 lastmod: 2024-05-20T17:37:08.794Z
 section: Tools & Environment
+date: 2023-04-20T23:25:49.000Z
+
 ---
 
 ## Krita Settings - Pen Pressure

@@ -8,7 +8,7 @@ excerpt: Master the art of Jekyll data generation and Bootstrap visualization to
   a dynamic statistics portal
 snippet: Transform raw site data into compelling visual insights
 preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
-date: 2025-10-08 15:02:55.070000+00:00
+date: 2025-10-09T18:25:11.000Z
 lastmod: 2025-10-08 18:10:29.972000+00:00
 level: '0001'
 difficulty: 🟢 Easy

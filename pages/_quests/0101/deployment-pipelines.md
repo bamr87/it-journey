@@ -6,7 +6,7 @@ description: Build robust deployment pipelines for production releases. Learn bl
 excerpt: Design and implement production-grade deployment pipelines with automated
   release strategies
 preview: images/previews/deployment-pipelines-production-release-automation.png
-date: 2025-11-30 05:05:30+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:30+00:00
 level: '0101'
 difficulty: 🟡 Medium

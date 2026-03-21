@@ -6,6 +6,8 @@ section: Culture & Society
 title: Defiance's Role in Democracy
 lastmod: 2024-06-30T14:18:11.244Z
 draft: true
+date: 2024-10-02T15:35:35.000Z
+
 ---
 # The Spirit of Defiance: A Pillar of Healthy Democracies
 

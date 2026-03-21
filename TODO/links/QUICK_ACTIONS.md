@@ -3,6 +3,8 @@ title: "Link Health Quick Actions"
 description: "Prioritized broken link fixes"
 lastmod: 2026-01-17T00:46:22.822778Z
 status: "HEALTHY"
+date: 2026-01-24T14:27:39.000Z
+
 ---
 
 # Link Health Quick Actions

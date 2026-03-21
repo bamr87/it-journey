@@ -1,7 +1,7 @@
 ---
 title: Millennials AI Takeover
 description: Exploring how millennials are leading the charge in integrating AI into consulting, reshaping the industry, and outpacing traditional models.
-date: 2025-08-22T05:21:49.879Z
+date: 2025-08-24T18:46:40.000Z
 preview: ""
 tags:
     - countdown

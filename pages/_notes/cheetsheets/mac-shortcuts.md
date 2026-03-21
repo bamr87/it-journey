@@ -16,6 +16,8 @@ tags:
 lastmod: 2024-04-29T16:26:31.967Z
 source: https://support.apple.com/en-us/HT201236
 draft: false
+date: 2024-05-01T22:44:19.000Z
+
 ---
 
 By pressing certain key combinations, you can do things that normally need a mouse, trackpad, or other input device.

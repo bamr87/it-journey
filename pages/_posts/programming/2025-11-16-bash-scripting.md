@@ -12,6 +12,8 @@ meta: null
 draft: true
 lastmod: 2023-03-17T04:54:35.711Z
 section: Programming
+date: 2023-03-16T23:24:45.000Z
+
 ---
 
 ## What is Bash Scripting?

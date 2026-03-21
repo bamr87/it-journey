@@ -50,6 +50,8 @@ relatedDocs:
       url: ./git-setup.md
     - title: VS Code Extensions for Jekyll
       url: ./vscode-extensions.md
+date: 2021-12-05T18:52:20.000Z
+
 ---
 
 ## 🎯 Mission Overview

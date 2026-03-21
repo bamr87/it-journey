@@ -1,7 +1,7 @@
 ---
 title: "Docker for Beginners: Complete Tutorial to Get Started with Containers"
 description: "Learn Docker from scratch with this beginner-friendly tutorial. Understand containers, images, and basic commands with hands-on examples. Perfect for developers new to containerization."
-date: 2025-12-20T00:00:00.000Z
+date: 2025-12-20T10:05:28.000Z
 lastmod: 2025-12-20T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /posts/docker-beginners-tutorial/

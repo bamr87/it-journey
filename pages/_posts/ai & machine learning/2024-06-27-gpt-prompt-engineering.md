@@ -1,7 +1,7 @@
 ---
 title: GPT Prompt Engineering
 description: null
-date: 2024-06-27T14:09:15.287Z
+date: 2024-10-02T15:35:35.000Z
 preview: null
 draft: true
 tags: []

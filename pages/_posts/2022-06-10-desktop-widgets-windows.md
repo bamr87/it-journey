@@ -27,7 +27,7 @@ keywords:
 meta: "Quick guide to installing Rainmeter desktop widgets on Windows using winget package manager"
 draft: false
 lastmod: 2025-12-19T00:00:00.000Z
-date: 2022-06-10T20:22:55.675Z
+date: 2022-06-11T12:42:20.000Z
 section: System Administration
 difficulty: beginner
 estimated_time: "5 minutes"

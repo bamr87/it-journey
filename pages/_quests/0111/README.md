@@ -21,6 +21,8 @@ toc_sticky: true
 draft: false
 
 level: 0111
+date: 2025-12-20T20:02:51.000Z
+
 ---
 
 # Level 0111 (7) - API Development

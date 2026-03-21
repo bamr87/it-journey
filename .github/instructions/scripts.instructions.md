@@ -1,5 +1,7 @@
 ---
 applyTo: 'scripts/**/*'
+date: 2025-11-19T22:51:22.000Z
+
 ---
 
 # Scripts Directory Standards & Best Practices

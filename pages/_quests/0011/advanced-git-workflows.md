@@ -7,7 +7,7 @@ description: Level up your Git skills with advanced techniques. Learn interactiv
 excerpt: Master advanced Git operations including rebase, cherry-pick, and stash for
   professional version control
 preview: images/previews/advanced-git-workflows-rebase-cherry-pick-quest-ti.png
-date: 2025-11-30 04:59:58+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 04:59:58+00:00
 level: '0011'
 difficulty: 🟡 Medium

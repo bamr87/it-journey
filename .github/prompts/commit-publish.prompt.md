@@ -2,6 +2,8 @@
 agent: agent
 mode: agent
 description: "Review changes, run tests, update documentation, and publish IT-Journey Jekyll site via PR to gh-pages branch"
+date: 2025-11-26T22:17:42.000Z
+
 ---
 
 # Commit & Publish Workflow for IT-Journey Jekyll Site

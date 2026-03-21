@@ -28,6 +28,8 @@ draft: false
 related_quests:
   - /quests/bashcrawl-terminal-adventure/
   - /quests/lvl_000/bash-run/
+date: 2021-12-28T13:35:40.000Z
+
 ---
 
 [![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)

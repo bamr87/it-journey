@@ -2,6 +2,8 @@
 title: Programming
 description: Collection of programming languages notes
 lastmod: '2022-01-02T03:39:23.888Z'
+date: 2021-11-06T10:42:04.000Z
+
 ---
 
 ## python

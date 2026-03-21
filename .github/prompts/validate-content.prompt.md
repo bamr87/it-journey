@@ -12,6 +12,8 @@ outputs:
   - validation_report
   - article_score
   - quest_score
+date: 2025-11-22T16:10:21.000Z
+
 ---
 
 # Validate Content Quality

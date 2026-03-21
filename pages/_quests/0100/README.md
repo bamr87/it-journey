@@ -8,6 +8,8 @@ lastmod: 2025-11-29T23:41:31.769Z
 
 level: 0100
 categories: quests
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # Level 0100: Frontend Development & Docker

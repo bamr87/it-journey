@@ -37,6 +37,8 @@ related_prompts:
 related_instructions:
   - posts.instructions.md
   - prompts.instructions.md
+date: 2025-11-22T16:10:21.000Z
+
 ---
 
 # 📝 Draft Article Outline Protocol

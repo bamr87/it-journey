@@ -8,6 +8,8 @@ lastmod: 2025-12-20T00:00:00.000Z
 
 level: 0000
 categories: quests
+date: 2025-11-29T16:46:02.000Z
+
 ---
 
 # Level 0000: Foundation & Init World

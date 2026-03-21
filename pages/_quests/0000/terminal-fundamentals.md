@@ -6,7 +6,7 @@ description: Master essential command line skills including navigation, file man
 excerpt: Learn essential command line skills for navigating and managing files in
   any operating system.
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
-date: 2025-11-30 04:54:33+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-20 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy

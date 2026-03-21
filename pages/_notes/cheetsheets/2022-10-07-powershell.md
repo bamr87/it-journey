@@ -16,6 +16,8 @@ tags:
   - reference
 lastmod: 2022-01-10T21:54:00.053Z
 draft: false
+date: 2022-12-21T22:07:25.000Z
+
 ---
 
 Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS).

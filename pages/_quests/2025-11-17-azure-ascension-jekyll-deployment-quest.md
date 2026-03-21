@@ -2,7 +2,7 @@
 title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
 description: Deploy the IT-Journey Jekyll site to Azure Static Web Apps with a clean CI/CD pipeline and safe secrets handling.
 author: IT-Journey Team
-date: 2025-11-17
+date: 2025-07-05T12:12:17.000Z
 lastmod: 2026-01-14
 level: '1001'
 difficulty: 🔴 Hard

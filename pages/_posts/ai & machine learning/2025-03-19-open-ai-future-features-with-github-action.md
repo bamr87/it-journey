@@ -1,7 +1,7 @@
 ---
 title: Open AI Future Features with Github Action
 description: Automate GitHub Issues with OpenAI and GitHub Actions for structured feature requests and bug reports. Enhance your workflow effortlessly!
-date: 2025-03-19T20:11:12.776Z
+date: 2025-04-18T13:43:43.000Z
 preview: ""
 tags: []
 categories: []

@@ -3,7 +3,7 @@ key: tutorial
 title: "Jekyll Mermaid Diagrams: Auto-Detection Guide for Flowcharts & More"
 description: "Complete guide to adding Mermaid diagrams to Jekyll sites with zero configuration. Create flowcharts, sequence diagrams, Gantt charts, and more with automatic detection and rendering."
 subcategory: jekyll
-date: 2025-01-27
+date: 2022-06-05T13:48:57.000Z
 excerpt: "Add beautiful Mermaid diagrams to your Jekyll site without any configuration. Automatic detection renders flowcharts, sequence diagrams, and more from simple markdown code blocks."
 tags:
   - mermaid

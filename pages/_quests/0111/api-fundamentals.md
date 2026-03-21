@@ -6,7 +6,7 @@ description: Master the fundamentals of API development including HTTP methods, 
 excerpt: Learn the core concepts of API development including HTTP, request patterns,
   and web services
 preview: images/previews/api-fundamentals-building-web-services-descriptive.png
-date: 2025-11-30 05:08:50+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:50+00:00
 level: '0111'
 difficulty: 🔴 Hard

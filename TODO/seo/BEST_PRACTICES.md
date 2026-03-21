@@ -11,6 +11,8 @@ tags:
   - documentation
   - best-practices
   - guidelines
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 🔍 IT-Journey SEO Best Practices Guide

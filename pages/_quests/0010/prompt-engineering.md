@@ -7,7 +7,7 @@ excerpt: Transform from novice prompter to master prompt engineer, wielding the 
   to communicate with AI systems through precisely crafted instructions
 snippet: Words become code, instructions become reality - the way of the Prompt Alchemist
 preview: images/previews/forging-the-prompt-crystal-master-ai-communication.png
-date: 2025-11-02 22:09:57.431000+00:00
+date: 2025-11-02T18:34:05.000Z
 lastmod: 2025-11-03 01:10:01.141000+00:00
 level: '0010'
 difficulty: 🟡 Medium

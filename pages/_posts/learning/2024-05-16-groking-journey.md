@@ -1,7 +1,7 @@
 ---
 title: Groking About IT Journey
 description: Groking About IT Journey. A personal blog with a focus on IT and software development.
-date: 2024-05-16T02:07:27.384Z
+date: 2024-05-15T20:51:52.000Z
 preview: null
 tags:
   - jekyll

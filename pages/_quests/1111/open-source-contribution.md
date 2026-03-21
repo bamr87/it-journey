@@ -5,7 +5,7 @@ description: Lead and maintain open source projects effectively. Learn project g
   contributor management, release processes, and sustainable OSS practices.
 excerpt: Lead and maintain open source projects with sustainable practices
 preview: images/previews/open-source-contribution-descriptive-subtitle.png
-date: 2025-12-01 04:22:54+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard

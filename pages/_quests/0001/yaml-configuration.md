@@ -6,7 +6,7 @@ description: Master YAML syntax and Jekyll configuration to customize site setti
 excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional
   static websites.
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
-date: 2025-11-30 04:59:04+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-20 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy

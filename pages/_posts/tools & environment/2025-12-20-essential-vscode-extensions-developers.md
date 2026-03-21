@@ -1,7 +1,7 @@
 ---
 title: "Essential VS Code Extensions for Developers: The Ultimate 2025 Guide"
 description: "Curated list of must-have VS Code extensions for web developers, DevOps engineers, and data scientists. Boost productivity with these essential tools for coding, debugging, and collaboration."
-date: 2025-12-20T00:00:00.000Z
+date: 2025-12-20T10:05:28.000Z
 lastmod: 2025-12-20T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /posts/essential-vscode-extensions-developers/

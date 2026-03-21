@@ -1,5 +1,7 @@
 ---
 applyTo: 'TODO/**/*'
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # TODO Directory Instructions for AI Agents

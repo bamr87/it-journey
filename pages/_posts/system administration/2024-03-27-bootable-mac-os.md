@@ -3,7 +3,7 @@ title: Bootable mac os
 description: null
 author: null
 excerpt: null
-date: 2024-03-27T22:53:26.161Z
+date: 2024-03-27T16:53:55.000Z
 lastmod: 2024-03-28T20:36:30.045Z
 draft: true
 tags: []

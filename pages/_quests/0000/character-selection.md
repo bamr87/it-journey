@@ -6,7 +6,7 @@ excerpt: Select from six unique character classes, each with distinct skills and
   paths
 snippet: null
 preview: images/previews/character-selection.png
-date: 2023-11-24 18:53:11.166000+00:00
+date: 2023-11-25T14:12:43.000Z
 lastmod: 2025-11-29 21:40:00+00:00
 level: '0000'
 difficulty: 🟢 Easy

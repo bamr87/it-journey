@@ -15,6 +15,8 @@ lastmod: 2022-01-13T17:30:34.958Z
 draft: false
 slug: jekyll-and-travis
 section: Web Development
+date: 2022-01-13T10:32:07.000Z
+
 ---
 
 # Overview

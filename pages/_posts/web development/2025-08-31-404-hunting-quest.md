@@ -1,7 +1,7 @@
 ---
 title: "404 Hunting: The Quest for Resources"
 description: "Mystical Jekyll + GitHub Actions guide to banish 404s: stable permalinks, redirects, CI link checks, and organic resource endpoints."
-date: 2025-08-31T12:00:00.000Z
+date: 2025-08-31T18:32:58.000Z
 preview: /images/post-preview-image.png
 tags:
     - jekyll

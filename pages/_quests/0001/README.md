@@ -8,6 +8,8 @@ lastmod: 2025-11-15T04:27:16.791Z
 
 level: 0001
 categories: quests
+date: 2025-11-15T16:34:42.000Z
+
 ---
 
 # Level 001: Journeyman Challenges

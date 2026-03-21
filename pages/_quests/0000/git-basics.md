@@ -6,7 +6,7 @@ description: Learn Git fundamentals including repositories, commits, branches, a
 excerpt: Master Git fundamentals to track changes, manage versions, and collaborate
   effectively with teams.
 preview: images/previews/git-basics-version-control-introduction-descriptiv.png
-date: 2025-11-30 04:57:55+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2026-02-14 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy

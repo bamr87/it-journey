@@ -10,7 +10,7 @@ excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your termi
 snippet: Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual
   themes on any platform
 preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
-date: 2025-08-31 13:00:00+00:00
+date: 2025-09-03T22:19:06.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'
 difficulty: 🟢 Easy

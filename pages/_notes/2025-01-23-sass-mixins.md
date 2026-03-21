@@ -1,7 +1,7 @@
 ---
 title: Sass mixins
 description: Learn how to use SASS mixins for modular CSS in Bootstrap 5, enhancing your front-end development with reusable styles.
-date: 2025-01-23T23:13:51.778Z
+date: 2025-02-05T14:08:47.000Z
 preview: ""
 tags:
     - Bootstrap

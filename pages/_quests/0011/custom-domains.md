@@ -7,7 +7,7 @@ description: Configure custom domains for GitHub Pages sites. Learn DNS setup, C
 excerpt: Transform your GitHub Pages site with a custom domain, SSL, and professional
   DNS configuration
 preview: images/previews/custom-domains-professional-site-setup-descriptive.png
-date: 2025-11-30 05:00:31+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:00:31+00:00
 level: '0011'
 difficulty: 🟡 Medium

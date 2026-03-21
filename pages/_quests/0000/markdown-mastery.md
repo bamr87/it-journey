@@ -6,7 +6,7 @@ description: Master Markdown syntax for creating rich documentation, blog posts,
 excerpt: Learn essential Markdown syntax to create beautifully formatted documentation
   and technical content.
 preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
-date: 2025-11-30 04:58:05+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-20 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy

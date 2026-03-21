@@ -2,7 +2,7 @@
 title: Quest Build Plan - Complete Placeholder Quest System
 description: Comprehensive plan for building all placeholder quests across all levels
   with complete linking and mapping
-date: 2025-11-29 00:00:00+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-01-27
 categories:
 

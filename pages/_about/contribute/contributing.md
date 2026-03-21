@@ -16,6 +16,8 @@ meta:
 draft: false
 lastmod: 2025-11-07T23:46:32.545Z
 permalink: /about/contributing/
+date: 2024-05-11T16:54:12.000Z
+
 ---
 
 # Contributing to IT-Journey

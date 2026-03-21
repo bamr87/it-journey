@@ -5,7 +5,7 @@ description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
 snippet: null
 preview: images/previews/it-fundamentals.png
-date: 2023-11-23 17:51:07.025000+00:00
+date: 2023-11-25T14:12:43.000Z
 lastmod: 2025-11-29 21:40:00+00:00
 level: '0000'
 difficulty: 🟢 Easy

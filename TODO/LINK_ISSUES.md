@@ -5,6 +5,8 @@ created: 2026-01-17T00:00:00.000Z
 lastmod: 2026-01-17T00:00:00.000Z
 status: "PENDING_SCAN"
 priority: "HIGH"
+date: 2026-01-24T14:27:39.000Z
+
 ---
 
 # Link Issues Summary

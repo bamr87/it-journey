@@ -4,7 +4,7 @@ description: Convert Jupyter Notebooks to Markdown
 author: "Amr Abdel-Motaleb"
 featured: true
 tags: ["jupyter", "markdown", "converter", "jekyll"]
-date: "2024-05-24"
+date: 2024-05-25T16:54:18.000Z
 ---
 
 

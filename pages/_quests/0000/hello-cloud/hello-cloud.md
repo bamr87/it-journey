@@ -2,7 +2,7 @@
 title: 'Hello Cloud: First Steps into the Sky Realm'
 description: Create your first cloud account, install a cloud CLI, and deploy a simple resource safely.
 author: IT-Journey Team
-date: 2026-01-14
+date: 2026-01-14T22:23:32.000Z
 lastmod: 2026-01-14
 level: '0000'
 difficulty: ⚔️ Epic

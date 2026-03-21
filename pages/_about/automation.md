@@ -9,6 +9,8 @@ tags:
     - ci-cd
     - github-actions
     - documentation
+date: 2025-07-03T10:59:01.000Z
+
 ---
 
 # Configuration Automation System

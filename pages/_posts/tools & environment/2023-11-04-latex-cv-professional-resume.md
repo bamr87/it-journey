@@ -5,7 +5,7 @@ categories:
     - Posts
     - Professional-Development
     - Documentation
-date: '2023-11-04T00:00:00.000Z'
+date: 2023-11-27T04:08:17.000Z
 description: "Complete guide to creating professional CVs and resumes using LaTeX with Visual Studio Code integration and GitHub version control"
 draft: false
 section: Tools & Environment

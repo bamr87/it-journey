@@ -1,7 +1,7 @@
 ---
 title: Excel to Python
 description: Learn how to seamlessly transition from Excel to Python for data analysis and automation. Unlock powerful tools for your data-driven projects.
-date: 2025-03-13T18:41:29.200Z
+date: 2025-03-13T14:00:43.000Z
 preview: ""
 tags:
   - Excel

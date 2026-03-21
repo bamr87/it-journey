@@ -6,7 +6,7 @@ description: Master Kubernetes networking with Services, Ingress controllers, DN
 excerpt: Configure Kubernetes networking with Services, Ingress, and DNS for scalable
   applications
 preview: images/previews/kubernetes-services-quest-title-networking-ingress.png
-date: 2025-11-30 05:41:56+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:41:56+00:00
 level: '1001'
 difficulty: 🔴 Hard

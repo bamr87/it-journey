@@ -2,7 +2,7 @@
 title: Building a VS Code Extension
 description: A step-by-step guide to building a VS Code extension to save/publish/export Copilot conversations as markdown files.
 excerpt: A step-by-step guide to building a VS Code extension to save/publish/export Copilot conversations as markdown files.
-date: 2024-02-14
+date: 2024-02-20T09:39:19.000Z
 categories:
   - Programming
 tags:

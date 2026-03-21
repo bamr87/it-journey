@@ -7,7 +7,7 @@ description: Master Docker Compose for orchestrating multi-container application
 excerpt: Build and orchestrate multi-container applications with Docker Compose YAML
   configuration and networking
 preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
-date: 2025-11-30 05:04:44+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:04:44+00:00
 level: '0100'
 difficulty: 🟡 Medium

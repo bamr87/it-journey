@@ -5,7 +5,7 @@ description: "Transform your terminal into a powerful development weapon by mast
 excerpt: "Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple tool into a powerful development artifact"
 snippet: "Unleash the true power of your terminal with Oh-My-Zsh - where every command becomes a spell of productivity"
 preview: "/images/previews/terminal-enchantment-oh-my-zsh-mastery.png"
-date: 2025-08-31T12:00:00.000Z
+date: 2025-09-03T22:19:06.000Z
 lastmod: 2026-02-13T00:00:00.000Z
 level: "0010"
 difficulty: "🟡 Medium"

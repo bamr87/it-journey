@@ -4,6 +4,8 @@ description: "AI agent prompt collection powering IT-Journey automation flows"
 permalink: /github/prompts/readme/
 lastmod: 2025-12-19T00:00:00.000Z
 layout: default
+date: 2025-11-15T16:34:42.000Z
+
 ---
 
 # .github/prompts

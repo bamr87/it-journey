@@ -12,6 +12,8 @@ tags:
   - automation
 lastmod: 2024-05-15T03:54:48.681Z
 draft: false
+date: 2024-06-02T16:16:33.000Z
+
 ---
 
 ```python

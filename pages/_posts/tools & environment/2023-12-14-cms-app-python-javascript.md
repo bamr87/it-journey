@@ -1,7 +1,7 @@
 ---
 title: CMS App with Python and JavaScript
 description: A step-by-step guide to building a CMS application in Python as the backend and JavaScript for the frontend.
-date: 2023-12-14T22:02:47.000Z
+date: 2024-02-20T09:39:19.000Z
 tags:
     - python
     - javascript

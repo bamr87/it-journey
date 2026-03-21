@@ -7,7 +7,7 @@ excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and 
   in the Frontend Forests
 snippet: null
 preview: /images/frontend-forests.png
-date: 2024-05-28 02:17:12.672000+00:00
+date: 2024-05-28T15:23:32.000Z
 lastmod: 2024-05-28 04:13:59.660000+00:00
 level: '0100'
 difficulty: 🟡 Medium

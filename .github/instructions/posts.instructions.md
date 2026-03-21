@@ -1,5 +1,7 @@
 ---
 applyTo: 'pages/_posts/**/*.md'
+date: 2025-08-25T23:07:01.000Z
+
 ---
 
 # Post Creation Instructions for IT-Journey

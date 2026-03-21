@@ -7,7 +7,7 @@ excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hy
   guardians, and organic resource endpoints.
 snippet: May your links never stray and your redirects never loop.
 preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
-date: 2025-08-31 23:10:14.466000+00:00
+date: 2025-08-31T18:32:58.000Z
 lastmod: 2025-08-31 23:16:16.119000+00:00
 level: '1110'
 difficulty: 🟡 Medium

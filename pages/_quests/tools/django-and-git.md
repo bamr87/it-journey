@@ -6,7 +6,7 @@ description: Learn how to efficiently set up Django with Git for seamless versio
 excerpt: null
 snippet: null
 preview: /images/git-django.png
-date: 2025-03-08 17:00:07.564000+00:00
+date: 2025-03-13T14:00:43.000Z
 lastmod: 2025-03-12 15:24:58.701000+00:00
 level: '0010'
 difficulty: 🟢 Easy

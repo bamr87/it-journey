@@ -1,7 +1,7 @@
 ---
 title: "The Complete BASH Reference: Commands, Functions, Snippets & Techniques"
 description: "Exhaustive reference guide covering every aspect of GNU Bash — built-in commands, parameter expansion, process control, scripting patterns, text processing, networking, and advanced techniques."
-date: 2026-02-20T00:00:00.000Z
+date: 2026-02-21T14:34:24.000Z
 lastmod: 2026-02-20T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /docs/bash-complete-reference/

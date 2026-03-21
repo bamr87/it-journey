@@ -5,6 +5,8 @@ created: 2023-12-15 04:10:54Z
 author: null
 tags:
   - notes
+date: 2022-01-10T17:00:49.000Z
+
 ---
 
 [AWS vs Azure vs GCP](https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/)

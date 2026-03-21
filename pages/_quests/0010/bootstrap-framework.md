@@ -7,7 +7,7 @@ description: Learn Bootstrap 5 for rapid web development. Master the grid system
 excerpt: Build professional responsive websites quickly with Bootstrap's grid, components,
   and utilities.
 preview: images/previews/bootstrap-framework-responsive-design-toolkit-desc.png
-date: 2025-11-30 04:59:43+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'
 difficulty: 🟡 Medium

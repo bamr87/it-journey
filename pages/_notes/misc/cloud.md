@@ -12,6 +12,8 @@ meta: null
 draft: true
 slug: /aws-practice/
 lastmod: '2022-01-12T03:07:05.038Z'
+date: 2022-01-10T17:00:49.000Z
+
 ---
 
 [AWS vs Azure vs GCP](https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/)

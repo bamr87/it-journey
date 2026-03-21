@@ -2,7 +2,7 @@
 title: Quest Organization Summary
 description: Reference - quest organization summary and structure notes.
 author: IT-Journey Team
-date: 2026-01-14
+date: 2025-10-04T15:52:00.000Z
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes

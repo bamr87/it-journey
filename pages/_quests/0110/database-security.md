@@ -7,7 +7,7 @@ description: Implement robust database security with access control, encryption,
 excerpt: Secure your databases with access control, encryption, and SQL injection
   prevention
 preview: images/previews/database-security-access-control-quest-title-encry.png
-date: 2025-11-30 05:08:26+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:26+00:00
 level: '0110'
 difficulty: 🔴 Hard

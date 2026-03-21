@@ -5,7 +5,7 @@ description: Master threat modeling with STRIDE methodology, attack trees, data 
   diagrams, and systematic security analysis techniques for identifying vulnerabilities.
 excerpt: Identify security threats systematically using STRIDE and attack tree methodologies
 preview: images/previews/threat-modeling-stride-quest-title-attack-trees-de.png
-date: 2025-11-30 05:44:40+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:40+00:00
 level: '1011'
 difficulty: 🔴 Hard

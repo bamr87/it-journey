@@ -8,7 +8,7 @@ excerpt: Build an intelligent hyperlink guardian that automatically tests, analy
 snippet: Even the most magnificent digital fortress is only as strong as its weakest
   link
 preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
-date: 2025-01-27 04:06:49.176000+00:00
+date: 2025-08-12T22:51:06.000Z
 lastmod: 2025-08-16 04:06:22.859000+00:00
 level: '1010'
 difficulty: 🟡 Medium

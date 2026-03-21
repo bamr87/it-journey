@@ -6,7 +6,7 @@ description: Implement comprehensive backup and recovery strategies for database
   planning.
 excerpt: Protect your data with comprehensive backup strategies and recovery procedures
 preview: images/previews/backup-quest-title-recovery-data-protection-strate.png
-date: 2025-11-30 05:08:21+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:21+00:00
 level: '0110'
 difficulty: 🔴 Hard

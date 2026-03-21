@@ -1,5 +1,7 @@
 ---
 applyTo: '**/*.py,**/*.js,**/*.ts,**/*.jsx,**/*.tsx,**/*.sh,**/*.bash,.github/workflows/*.yml,.github/workflows/*.yaml'
+date: 2025-10-17T17:25:30.000Z
+
 ---
 
 # Enhanced VS Code Copilot Instructions for Feature Building Pipeline with End-to-End CI/CD in it-journey Repo

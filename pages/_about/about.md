@@ -4,7 +4,7 @@ excerpt: Discover the vision behind IT-Journey - a comprehensive learning platfo
 permalink: /about/
 lastmod: 2025-11-02T15:57:16.201Z
 slug: about
-date: 2024-05-31T01:35:49.414Z
+date: 2021-09-29T15:48:23.000Z
 description: Learn about IT-Journey's mission to democratize IT education through open-source technologies and collaborative learning.
 categories:
   - about

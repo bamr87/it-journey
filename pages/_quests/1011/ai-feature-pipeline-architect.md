@@ -7,7 +7,7 @@ excerpt: Transform feature requests into deployed applications using AI-assisted
   pipelines with dual-format artifacts for both humans and AI agents
 snippet: From idea to deployment - let AI magic guide your development journey
 preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.png
-date: 2025-01-27 10:00:00+00:00
+date: 2022-02-27T12:00:00.000Z
 lastmod: 2025-09-29 14:28:35.904000+00:00
 level: '1011'
 difficulty: 🔴 Hard

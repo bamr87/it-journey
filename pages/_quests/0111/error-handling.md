@@ -6,7 +6,7 @@ description: Implement robust API error handling with proper HTTP status codes, 
 excerpt: Implement professional API error handling with proper status codes and response
   patterns
 preview: images/previews/error-handling-api-response-quest-title-status-cod.png
-date: 2025-11-30 05:09:37+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:09:37+00:00
 level: '0111'
 difficulty: 🔴 Hard

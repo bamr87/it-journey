@@ -9,7 +9,7 @@ excerpt: Craft a professional CV from the cv.tex template using VS Code + LaTeX�
 snippet: From blank page to battle-ready CV—forge, compile, and level up your professional
   codex.
 preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
-date: 2025-08-17 21:11:48.247000+00:00
+date: 2025-08-21T22:00:59.000Z
 lastmod: 2025-08-17 21:36:08.855000+00:00
 level: '0101'
 difficulty: 🟡 Medium

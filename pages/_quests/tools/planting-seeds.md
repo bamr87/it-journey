@@ -5,7 +5,7 @@ description: Quest covering planting seeds.
 excerpt: null
 snippet: null
 preview: images/previews/planting-seeds.png
-date: 2025-08-10 19:50:15.940000+00:00
+date: 2025-02-05T14:08:47.000Z
 lastmod: null
 level: '0010'
 difficulty: 🟢 Easy

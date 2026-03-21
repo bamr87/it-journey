@@ -2,7 +2,7 @@
 title: Learning Platform Features
 description: User-facing features and educational tools available on IT-Journey platform.
 excerpt: Comprehensive list of learning features, educational tools, and community capabilities.
-date: 2024-03-12T21:42:28.963Z
+date: 2024-03-12T19:51:39.000Z
 preview: null
 tags:
   - features

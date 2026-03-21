@@ -6,6 +6,8 @@ lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 status: "ACTIVE"
 category: "[category]"
 owner: "IT-Journey Team"
+date: 2025-12-20T10:05:28.000Z
+
 ---
 
 # 📊 [Project Name] Progress Tracking

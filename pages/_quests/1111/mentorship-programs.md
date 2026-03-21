@@ -5,7 +5,7 @@ description: Create effective mentorship programs for engineering teams. Learn m
   techniques, career development guidance, knowledge transfer, and talent growth strategies.
 excerpt: Build effective mentorship programs for growing engineering talent and teams
 preview: images/previews/mentorship-programs-descriptive-subtitle.png
-date: 2025-12-01 04:22:59+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard

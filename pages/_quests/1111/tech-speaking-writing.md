@@ -5,7 +5,7 @@ description: Master technical communication through speaking and writing. Learn 
   speaking, technical blogging, documentation, and building thought leadership.
 excerpt: Develop technical speaking and writing skills for thought leadership
 preview: images/previews/tech-speaking-and-writing-descriptive-subtitle.png
-date: 2025-12-01 04:22:59+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard

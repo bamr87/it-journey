@@ -4,6 +4,8 @@ description: "Quickstart guide for installing Charm tools (Gum, Glow) and buildi
 permalink: /quickstart/charm-setup/
 tags: [charm, gum, glow, terminal, cli, quickstart]
 lastmod: 2025-11-19
+date: 2025-11-20T18:53:39.000Z
+
 ---
 
 # Setting Up Charm & Building a Terminal Interface

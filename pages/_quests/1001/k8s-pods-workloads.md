@@ -6,7 +6,7 @@ description: Master Kubernetes workloads including Pods, Deployments, StatefulSe
 excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and
   DaemonSets
 preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
-date: 2025-11-30 05:41:52+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:41:52+00:00
 level: '1001'
 difficulty: 🔴 Hard

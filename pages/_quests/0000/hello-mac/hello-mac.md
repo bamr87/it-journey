@@ -2,7 +2,7 @@
 title: 'Hello macOS: Setting Up the Apple Kingdom'
 description: Set up a macOS development environment with Homebrew, Xcode Command Line Tools, and a modern terminal workflow.
 author: IT-Journey Team
-date: 2026-01-14
+date: 2026-01-14T22:23:32.000Z
 lastmod: 2026-01-14
 level: '0000'
 difficulty: 🟢 Easy

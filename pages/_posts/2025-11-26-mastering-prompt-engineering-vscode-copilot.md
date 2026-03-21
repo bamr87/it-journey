@@ -1,7 +1,7 @@
 ---
 title: "Mastering Prompt Engineering: A Practical Guide to VS Code Copilot"
 description: Learn systematic prompt engineering techniques to maximize AI-assisted development with VS Code Copilot, from structured patterns to reusable templates
-date: 2025-11-26T00:00:00.000Z
+date: 2025-11-26T22:17:42.000Z
 lastmod: 2025-11-27T05:01:33.326Z
 author: IT-Journey Team
 permalink: /posts/mastering-prompt-engineering-vscode-copilot/

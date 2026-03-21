@@ -1,6 +1,8 @@
 ---
 agent: bash-it
 description: Bash-It Protocol - Comprehensive bash script generation agent that transforms articles, quests, and documentation into production-ready shell automation
+date: 2025-11-19T22:51:22.000Z
+
 ---
 
 # ⚔️ Bash-It Protocol: Epic Shell Script Forging Agent

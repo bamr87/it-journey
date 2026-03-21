@@ -1,7 +1,7 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-03-20T06:21:54.000Z
+date: 2025-11-28T21:29:03.000Z
 lastmod: 2026-03-20T06:21:54.000Z
 status: Living
 version: 2026-03-20

@@ -6,7 +6,7 @@ description: Master Kubernetes configuration with ConfigMaps and Secrets. Learn 
   practices.
 excerpt: Manage Kubernetes configuration securely with ConfigMaps and Secrets
 preview: images/previews/kubernetes-configmaps-quest-title-secrets-configur.png
-date: 2025-11-30 05:42:00+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:42:00+00:00
 level: '1001'
 difficulty: 🔴 Hard

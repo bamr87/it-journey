@@ -1,7 +1,7 @@
 ---
 title: GPT - CV Analysis
 author: ChatGPT
-date: 2024-03-11T20:53:40.280Z
+date: 2024-03-12T19:51:39.000Z
 excerpt: An analysis of a CV and recommendations for career paths and growth.
 description: An analysis of a CV and recommendations for career paths and growth.
 snippet: null

@@ -1,7 +1,7 @@
 ---
 title: "Working Directories: Backbone of Software Builds"
 description: How working directories shape tooling, builds, tests, deployments—and how directory assumptions can break or harden pipelines.
-date: 2025-11-16T00:50:00.488Z
+date: 2025-11-15T18:04:42.000Z
 preview: /images/post-preview-working-directory.png
 tags:
     - devops

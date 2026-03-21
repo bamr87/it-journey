@@ -5,7 +5,7 @@ description: Quest covering Change Logs.
 excerpt: null
 snippet: null
 preview: /svg/penrose-gpt-vs-human.png
-date: 2025-04-18 19:36:19.164000+00:00
+date: 2025-04-18T13:43:43.000Z
 lastmod: 2025-04-18 19:43:43.286000+00:00
 level: '0010'
 difficulty: 🟢 Easy

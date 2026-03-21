@@ -1,7 +1,7 @@
 ---
 title: Setting up Django and Git
 description: Learn how to efficiently set up Django with Git for seamless version control and project management in your web development journey.
-date: 2025-03-08T17:00:07.564Z
+date: 2025-03-13T14:00:43.000Z
 preview: /images/git-django.png
 tags:
     - Django

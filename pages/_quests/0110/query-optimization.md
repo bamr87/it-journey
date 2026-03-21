@@ -6,7 +6,7 @@ description: Learn to optimize SQL queries for maximum performance. Master query
 excerpt: Optimize database query performance with indexing, execution plans, and query
   tuning techniques
 preview: images/previews/query-optimization-performance-tuning-descriptive-.png
-date: 2025-11-30 05:08:02+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:02+00:00
 level: '0110'
 difficulty: 🔴 Hard

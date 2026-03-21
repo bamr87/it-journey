@@ -7,6 +7,8 @@ slug: github
 permalink: /quickstart/github/
 lastmod: 2026-02-16T22:49:36.446Z
 draft: false
+date: 2022-01-10T18:47:51.000Z
+
 ---
 
 ## Base setup

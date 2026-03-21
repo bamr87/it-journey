@@ -1,7 +1,7 @@
 ---
 title: "HTML to markdown web scraping"
 description: "A simple web scraping project to convert HTML to markdown using Python"
-date: 2024-05-20
+date: 2024-05-21T12:29:08.000Z
 tags: ["python", "web scraping", "html", "markdown"]
 ---
 

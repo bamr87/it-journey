@@ -22,6 +22,8 @@ toc_sticky: true
 draft: false
 
 level: 1000
+date: 2025-12-20T20:02:51.000Z
+
 ---
 
 # Level 1000 (8) - Cloud Computing Fundamentals

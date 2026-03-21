@@ -7,7 +7,7 @@ description: Deploy the complete ELK stack for centralized logging. Learn Elasti
 excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana
   visualization
 preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.png
-date: 2025-11-30 05:44:18+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:18+00:00
 level: '1010'
 difficulty: 🔴 Hard

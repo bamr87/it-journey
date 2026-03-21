@@ -5,7 +5,7 @@ description: Lead innovation and R&D initiatives in engineering organizations. L
   innovation frameworks, prototyping, research methodologies, and technology evaluation.
 excerpt: Lead innovation and R&D initiatives to drive technical advancement
 preview: images/previews/innovation-and-r-quest-title-d-descriptive-subtitl.png
-date: 2025-12-01 04:23:04+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: ⚔️ Epic

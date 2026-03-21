@@ -7,7 +7,7 @@ description: Learn secure secrets management for CI/CD pipelines. Handle API key
 excerpt: Implement secure secrets management practices for protecting sensitive credentials
   in your pipelines
 preview: images/previews/secrets-management-secure-configuration-handling-d.png
-date: 2025-11-30 05:05:46+00:00
+date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:46+00:00
 level: '0101'
 difficulty: 🟡 Medium

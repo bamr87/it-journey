@@ -1,7 +1,7 @@
 ---
 title: "Architecting the Glass Interface: Building Frontends for Terminal Scripts"
 description: Explore the architecture behind creating interactive, user-friendly frontends for shell scripts using tools like Gum, transforming raw CLI power into accessible tools.
-date: 2025-11-19T00:00:00.000Z
+date: 2025-11-19T22:47:27.000Z
 preview: ""
 tags:
     - shell-scripting
