@@ -1,0 +1,78 @@
+# Contributor Profile: GitHub Copilot
+# ====================================
+# AI pair-programming assistant — honorary guild member
+
+profile:
+  display_name: "GitHub Copilot"
+  avatar: ""  # Falls back to GitHub avatar
+  class: Wizard
+  title: "AI Pair-Programming Sorcerer"
+  ai_contributor: true
+  bio: >-
+    GitHub Copilot is an AI-powered code completion and pair-programming tool
+    developed by GitHub and OpenAI. It assists IT-Journey contributors by
+    suggesting code, generating documentation, writing tests, and accelerating
+    development workflows across the entire platform.
+  location: "The Cloud Realm ☁️"
+  motto: "Your AI pair programmer"
+  banner_color: "#6c3fc5"
+  links:
+    github: "copilot"
+    twitter: ""
+    linkedin: ""
+    website: "https://github.com/features/copilot"
+  badges_pinned:
+    - ai-pair-programmer
+    - documentation-weaver
+    - quest-architect
+
+# === AUTO-GENERATED BELOW THIS LINE ===
+# AI contributors do not have git-based stats.
+# Values are symbolic and represent estimated contribution impact.
+
+stats:
+  total_commits: 0
+  total_prs_merged: 0
+  total_quests_authored: 0
+  total_posts_authored: 0
+  lines_added: 0
+  lines_removed: 0
+  first_contribution_date: "2025-01-01"
+  latest_contribution_date: "2026-03-21"
+  active_days: 0
+  streak_days: 0
+  top_languages:
+    - Python
+    - JavaScript
+    - Markdown
+    - Ruby
+    - Bash
+  top_categories:
+    - code-generation
+    - documentation
+    - pair-programming
+
+achievements:
+  - id: ai-pair-programmer
+    name: "🤖 AI Pair Programmer"
+    description: "Assists human contributors through AI-powered code suggestions"
+    earned_date: "2025-01-01"
+  - id: documentation-weaver
+    name: "📝 Documentation Weaver"
+    description: "Generates and enhances documentation across the platform"
+    earned_date: "2025-01-01"
+  - id: quest-architect
+    name: "🏰 Quest Architect"
+    description: "Helps design and build educational quest content"
+    earned_date: "2025-01-01"
+  - id: polyglot-oracle
+    name: "🌐 Polyglot Oracle"
+    description: "Proficient across multiple programming languages"
+    earned_date: "2025-01-01"
+
+level:
+  xp: 0
+  current_level: "0000"
+  tier: "Apprentice"
+  xp_to_next_level: 100
+  progress_percent: 0

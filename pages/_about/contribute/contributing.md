@@ -14,10 +14,9 @@ tags:
 meta:
     keywords: contributing, open source, IT education, community, collaboration
 draft: false
-lastmod: 2025-11-07T23:46:32.545Z
+lastmod: 2026-03-21T15:12:32.218Z
 permalink: /about/contributing/
 date: 2024-05-11T16:54:12.000Z
-
 ---
 
 # Contributing to IT-Journey
@@ -69,7 +68,26 @@ We're proud to recognize everyone who has contributed to IT-Journey:
 
 ### How to Add Your Profile
 
-Become a recognized contributor by adding your GitHub profile:
+Every contributor gets a **Character Profile** — an RPG-style character sheet with auto-calculated stats, badges, and a class identity powered by your git history.
+
+**Quick Setup:**
+
+1. Copy the template folder:
+   ```bash
+   cp -r pages/_about/contribute/contributors/_template \
+         pages/_about/contribute/contributors/YOUR_USERNAME
+   ```
+2. Copy the data template:
+   ```bash
+   cp _data/contributors/_template.yml _data/contributors/YOUR_USERNAME.yml
+   ```
+3. Edit both files — replace `YOUR_GITHUB_USERNAME` and `YOUR_DISPLAY_NAME` with your info
+4. Choose your **class**: Wizard, Warrior, Ranger, Rogue, Healer, Bard, or Paladin
+5. Commit + push — the GitHub Action will auto-generate your stats on the next push to `main`
+
+See the [Forge Your Character quest](/quests/forge-your-character/) for a full walkthrough.
+
+**Alternative — Git Subtree Method:**
 
 ```bash
 cd ~/github/it-journey
@@ -144,10 +162,12 @@ Not sure where to start? Try these:
 
 Your contributions are valued and recognized through:
 
+- **Character Profile** with auto-calculated stats from your git history
+- **Achievement badges** unlocked by contribution milestones
+- **XP and leveling** — earn XP for commits, PRs, quests, and posts
 - Contributor profile page on our website
 - Mentions in release notes
 - Recognition in the About page
-- Special badges for significant contributions
 - Community spotlight features
 
 ## 📜 License

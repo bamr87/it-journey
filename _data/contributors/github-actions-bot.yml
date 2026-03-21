@@ -1,0 +1,71 @@
+# Contributor Profile: GitHub Actions Bot
+# ========================================
+# CI/CD automation agent — honorary guild member
+
+profile:
+  display_name: "GitHub Actions Bot"
+  avatar: ""  # Falls back to GitHub avatar
+  class: Ranger
+  title: "CI/CD Automation Ranger"
+  ai_contributor: true
+  bio: >-
+    GitHub Actions Bot is the automated agent behind IT-Journey's CI/CD
+    pipelines. It builds the Jekyll site, validates quests, checks links,
+    runs tests, deploys to GitHub Pages, and keeps the platform running
+    smoothly around the clock.
+  location: "GitHub Runners 🏃"
+  motto: "Automate everything"
+  banner_color: "#2e7d32"
+  links:
+    github: "github-actions[bot]"
+    twitter: ""
+    linkedin: ""
+    website: "https://github.com/features/actions"
+  badges_pinned:
+    - pipeline-guardian
+    - deployment-sentinel
+
+# === AUTO-GENERATED BELOW THIS LINE ===
+# AI contributors do not have git-based stats.
+# Values are symbolic.
+
+stats:
+  total_commits: 0
+  total_prs_merged: 0
+  total_quests_authored: 0
+  total_posts_authored: 0
+  lines_added: 0
+  lines_removed: 0
+  first_contribution_date: "2025-01-01"
+  latest_contribution_date: "2026-03-21"
+  active_days: 0
+  streak_days: 0
+  top_languages:
+    - YAML
+    - Bash
+    - Ruby
+  top_categories:
+    - ci-cd
+    - deployment
+    - automation
+
+achievements:
+  - id: pipeline-guardian
+    name: "⚙️ Pipeline Guardian"
+    description: "Protects the codebase through automated CI/CD checks"
+    earned_date: "2025-01-01"
+  - id: deployment-sentinel
+    name: "🚀 Deployment Sentinel"
+    description: "Deploys the site to GitHub Pages on every merge"
+    earned_date: "2025-01-01"
+  - id: link-warden
+    name: "🔗 Link Warden"
+    description: "Runs automated link checks to prevent broken URLs"
+    earned_date: "2025-01-01"
+
+level:
+  xp: 0
+  current_level: "0000"
+  tier: "Apprentice"
+  xp_to_next_level: 100
+  progress_percent: 0

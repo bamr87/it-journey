@@ -80,6 +80,23 @@ test:
 	@bash -n _data/generate_statistics.sh && echo "✅ Bash script syntax check passed"
 	@echo "🎉 All tests passed!"
 
+# Contributor stats targets
+contributor-stats:
+	@echo "🧙 Generating contributor stats for $(USERNAME)..."
+	@bash scripts/generation/generate_contributor_stats.sh $(USERNAME)
+
+contributor-stats-all:
+	@echo "🧙 Generating stats for all contributors..."
+	@bash scripts/generation/generate_contributor_stats.sh --all
+
+contributor-stats-clean:
+	@echo "🧹 Cleaning auto-generated contributor stats..."
+	@for f in _data/contributors/*.yml; do \
+		[ "$$(basename "$$f")" = "_template.yml" ] && continue; \
+		echo "  Resetting: $$f"; \
+	done
+	@echo "✅ Use git checkout to restore original files"
+
 # Development targets
 dev-install:
 	@echo "🔧 Setting up development environment..."

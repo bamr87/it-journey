@@ -1,0 +1,162 @@
+# Contributor Profile: bamr87
+# ============================
+# Fields under `profile` are user-editable. Customize freely!
+# Fields under `stats`, `achievements`, and `level` are auto-generated
+# by the contributor stats generator and overwritten on each CI run.
+#
+# Generated at: 2026-03-20T23:11:20-0500
+
+---
+profile:
+  display_name: Bamr87
+  avatar: "/assets/images/bamr-avatar.png"
+  class: Wizard
+  title: IT Wizard & Software Architect
+  bio: Founder of IT-Journey. Interested in the architecture of information systems
+    that facilitate the production of goods and services. Currently learning front-end
+    development for Content Management Systems.
+  location: Denver, CO
+  motto: zer0 to her0
+  banner_color: "#6c3fc5"
+  links:
+    github: bamr87
+    twitter: bamr42
+    linkedin: amrabdel
+    website: https://it-journey.dev
+  badges_pinned:
+  - guild_founder
+  - centurion
+  - quest_forger
+stats:
+  total_commits: 510
+  total_prs_merged: 66
+  total_quests_authored: 7
+  total_posts_authored: 16
+  lines_added: 555762
+  lines_removed: 349061
+  first_contribution_date: '2021-03-13'
+  latest_contribution_date: '2026-03-20'
+  active_days: 218
+  streak_days: 1
+  top_languages:
+  - name: md
+    count: 3427
+  - name: png
+    count: 344
+  - name: html
+    count: 340
+  - name: sh
+    count: 194
+  - name: scss
+    count: 191
+  top_categories:
+  - name: Posts
+    count: 3
+  - name: posts
+    count: 3
+  - name: Quests
+    count: 2
+  - name: Pet-Care
+    count: 1
+  - name: tech
+    count: 1
+  contribution_calendar:
+  - 0
+  - 0
+  - 0
+  - 4
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 10
+  - 2
+  - 0
+  - 4
+  - 2
+  - 0
+  - 4
+  - 1
+  - 3
+  - 12
+  - 0
+  - 0
+  - 0
+  - 15
+  - 3
+  - 6
+  - 1
+  - 0
+  - 13
+  - 4
+  - 13
+  - 9
+  - 9
+  - 6
+  - 5
+  - 0
+  - 1
+  - 0
+  - 5
+  - 3
+  - 1
+  - 0
+  - 6
+  - 2
+  - 3
+  - 2
+  - 3
+  - 3
+achievements:
+- id: first_blood
+  name: First Blood
+  icon: "⚔️"
+  description: Made your first commit
+  earned_date: '2026-03-20'
+- id: ten_commits
+  name: Dedicated
+  icon: "\U0001F51F"
+  description: Reached 10 commits
+  earned_date: '2026-03-20'
+- id: centurion
+  name: Centurion
+  icon: "\U0001F4AF"
+  description: Reached 100 commits
+  earned_date: '2026-03-20'
+- id: guild_founder
+  name: Guild Founder
+  icon: "\U0001F3DB️"
+  description: Reached 500 commits — founder level
+  earned_date: '2026-03-20'
+- id: quest_forger
+  name: Quest Forger
+  icon: "\U0001F3F0"
+  description: Authored your first quest
+  earned_date: '2026-03-20'
+- id: chronicler
+  name: Chronicler
+  icon: "\U0001F4DC"
+  description: Published your first post
+  earned_date: '2026-03-20'
+- id: five_posts
+  name: Prolific Writer
+  icon: "✍️"
+  description: Published 5 posts
+  earned_date: '2026-03-20'
+- id: polyglot
+  name: Polyglot
+  icon: "\U0001F310"
+  description: Commits touching 5+ languages
+  earned_date: '2026-03-20'
+level:
+  xp: 11400
+  current_level: '0110'
+  tier: Adventurer
+  xp_to_next_level: 1400
+  progress_percent: 78

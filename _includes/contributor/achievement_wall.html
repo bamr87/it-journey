@@ -1,0 +1,58 @@
+{% comment %}
+  Contributor Achievement Wall Component
+  Displays earned badges and pinned achievements.
+
+  Parameters:
+  - username: The contributor's username (key in site.data.contributors)
+{% endcomment %}
+
+{% assign contributor = site.data.contributors[include.username] %}
+{% assign achievements = contributor.achievements %}
+{% assign pinned_ids = contributor.profile.badges_pinned %}
+
+<div class="contributor-achievements">
+  <h3 class="contributor-achievements__heading">🏆 Achievement Wall</h3>
+
+  {% if achievements and achievements.size > 0 %}
+
+    {% comment %} Pinned Badges Section {% endcomment %}
+    {% if pinned_ids and pinned_ids.size > 0 %}
+      <div class="contributor-achievements__pinned">
+        <h4 class="contributor-achievements__subheading">⭐ Featured</h4>
+        <div class="contributor-achievements__grid contributor-achievements__grid--pinned">
+          {% for pin_id in pinned_ids %}
+            {% for achievement in achievements %}
+              {% if achievement.id == pin_id %}
+                <div class="contributor-achievements__badge contributor-achievements__badge--pinned">
+                  <span class="contributor-achievements__icon">{{ achievement.icon }}</span>
+                  <span class="contributor-achievements__name">{{ achievement.name }}</span>
+                  <span class="contributor-achievements__date">{{ achievement.earned_date }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} All Earned Badges {% endcomment %}
+    <div class="contributor-achievements__all">
+      <h4 class="contributor-achievements__subheading">All Badges ({{ achievements.size }})</h4>
+      <div class="contributor-achievements__grid">
+        {% for achievement in achievements %}
+          <div class="contributor-achievements__badge">
+            <span class="contributor-achievements__icon">{{ achievement.icon }}</span>
+            <span class="contributor-achievements__name">{{ achievement.name }}</span>
+            <span class="contributor-achievements__desc">{{ achievement.description }}</span>
+            <span class="contributor-achievements__date">{{ achievement.earned_date }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  {% else %}
+    <p class="contributor-achievements__empty">
+      No achievements earned yet. Start contributing to unlock badges! ⚔️
+    </p>
+  {% endif %}
+</div>

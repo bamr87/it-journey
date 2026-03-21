@@ -1,0 +1,22 @@
+{% comment %}
+  Contributor Character Sheet — Master Component
+  Composes all sub-includes into a full character profile.
+
+  Parameters:
+  - username: The contributor's username (key in site.data.contributors)
+{% endcomment %}
+
+{% assign contributor = site.data.contributors[include.username] %}
+
+{% if contributor %}
+  <div class="character-sheet">
+    {% include contributor/profile_card.html username=include.username %}
+    {% include contributor/stats_panel.html username=include.username %}
+    {% include contributor/achievement_wall.html username=include.username %}
+  </div>
+{% else %}
+  <div class="character-sheet character-sheet--empty">
+    <p>⚠️ Contributor data not found for <strong>{{ include.username }}</strong>.</p>
+    <p>Create a data file at <code>_data/contributors/{{ include.username }}.yml</code> to get started.</p>
+  </div>
+{% endif %}
