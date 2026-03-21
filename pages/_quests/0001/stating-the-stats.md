@@ -272,14 +272,14 @@ Answer these questions to verify your understanding:
 Create a Ruby script to analyze your Jekyll site and generate statistics:
 
 ```ruby
-# _data/generate_statistics.rb
+# scripts/generation/generate_statistics.rb
 #!/usr/bin/env ruby
 
 require 'yaml'
 require 'date'
 
 # This script generates comprehensive site statistics
-# Run during Jekyll build or manually: ruby _data/generate_statistics.rb
+# Run during Jekyll build or manually: ruby scripts/generation/generate_statistics.rb
 
 class StatisticsGenerator
   def initialize
@@ -436,10 +436,10 @@ end
 cd /path/to/it-journey
 
 # Make the script executable
-chmod +x _data/generate_statistics.rb
+chmod +x scripts/generation/generate_statistics.rb
 
 # Test the script
-ruby _data/generate_statistics.rb
+ruby scripts/generation/generate_statistics.rb
 ```
 
 **Expected Output:**
@@ -454,11 +454,11 @@ ruby _data/generate_statistics.rb
 You can run this script manually or automate it as part of your build process. Let's create a helper script:
 
 ```bash
-# _data/update_statistics.sh
+# scripts/generation/update_statistics.sh
 #!/bin/bash
 
 echo "🔄 Generating site statistics..."
-ruby _data/generate_statistics.rb
+ruby scripts/generation/generate_statistics.rb
 
 if [ $? -eq 0 ]; then
     echo "✅ Statistics updated successfully"
@@ -470,10 +470,10 @@ fi
 
 ```bash
 # Make it executable
-chmod +x _data/update_statistics.sh
+chmod +x scripts/generation/update_statistics.sh
 
 # Run it
-./_data/update_statistics.sh
+./scripts/generation/update_statistics.sh
 ```
 
 ### 🔍 Knowledge Check: Data Collection
@@ -529,7 +529,7 @@ permalink: /stats/
       {% else %}
         <div class="alert alert-warning" role="alert">
           <i class="bi bi-exclamation-triangle"></i>
-          Statistics not yet generated. Run <code>ruby _data/generate_statistics.rb</code> to create statistics.
+          Statistics not yet generated. Run <code>ruby scripts/generation/generate_statistics.rb</code> to create statistics.
         </div>
       {% endif %}
     </div>
@@ -814,7 +814,7 @@ main:
 
 ```bash
 # Regenerate statistics
-ruby _data/generate_statistics.rb
+ruby scripts/generation/generate_statistics.rb
 
 # Start Jekyll server
 docker-compose up
@@ -1044,7 +1044,7 @@ Your completed Stats Portal must demonstrate:
 Error: undefined method `[]' for nil:NilClass
 ```
 **Solution**: 
-- Run `ruby _data/generate_statistics.rb` to create the file
+- Run `ruby scripts/generation/generate_statistics.rb` to create the file
 - Verify file exists at `_data/content_statistics.yml`
 - Check file permissions (should be readable)
 
@@ -1056,7 +1056,7 @@ Shows 0 posts but I have posts
 - Verify posts are in `pages/_posts/` directory
 - Check frontmatter is valid YAML
 - Ensure posts have proper date format
-- Run script with debugging: `ruby -d _data/generate_statistics.rb`
+- Run script with debugging: `ruby -d scripts/generation/generate_statistics.rb`
 
 **Issue: Page styling broken**
 ```

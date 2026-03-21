@@ -1,30 +1,36 @@
 
 # IT-Journey Data Directory
 
-This directory contains data files and scripts for the IT-Journey Jekyll site, including dynamic content statistics generation.
+This directory contains data files for the IT-Journey Jekyll site. These YAML files are consumed by Jekyll's Liquid templates via `site.data.*`.
+
+> **Note:** Generation scripts have been moved to `scripts/generation/`. See the [scripts README](../scripts/README.md) for details.
 
 ## 📊 Content Statistics System
 
 The content statistics system automatically analyzes all posts and generates comprehensive metrics that can be displayed throughout the site.
 
-### Files
+### Data Files
 
-- **`generate_statistics.rb`** - Ruby script that analyzes all posts and generates statistics
-- **`generate_statistics.sh`** - Bash wrapper script for easy execution
-- **`statistics_config.yml`** - Configuration file defining categories, mappings, and display preferences
-- **`content_statistics.yml`** - Auto-generated statistics data file (updated when script runs)
+- **`content_statistics.yml`** — Auto-generated statistics data file (updated when scripts run)
+- **`statistics_config.yml`** — Configuration file defining categories, mappings, and display preferences
+- **`posts_organization.yml`** — Configuration for organizing posts by section/category
+- **`prerequisites.yml`** — Prerequisite definitions for quests and content
+- **`ui-text.yml`** — UI text strings and labels for the site theme
 
 ### Usage
 
 #### Generating Statistics
 
-Run the statistics generator:
+Run the statistics generator from the project root:
 ```bash
-# From the project root
-bash _data/generate_statistics.sh
+# Using Make
+make stats
 
-# Or directly with Ruby
-ruby _data/generate_statistics.rb
+# Or directly
+bash scripts/generation/generate_statistics.sh
+
+# Or with Ruby
+ruby scripts/generation/generate_statistics.rb
 ```
 
 #### Displaying Statistics
@@ -102,7 +108,7 @@ To automatically update statistics:
    ```bash
    #!/bin/bash
    cd "$(git rev-parse --show-toplevel)"
-   bash _data/generate_statistics.sh
+   bash scripts/generation/generate_statistics.sh
    git add _data/content_statistics.yml
    ```
 
@@ -110,19 +116,14 @@ To automatically update statistics:
    ```yaml
    - name: Generate Statistics
      run: |
-       bash _data/generate_statistics.sh
+       bash scripts/generation/generate_statistics.sh
        git add _data/content_statistics.yml
        git commit -m "Update content statistics" || exit 0
    ```
 
-3. **With Jekyll Build** - Add to `_config.yml`:
-   ```yaml
-   plugins:
-     - jekyll-hook
-   
-   # Custom hook to run before build
-   hooks:
-     before_build: bash _data/generate_statistics.sh
+3. **With Make** - Use the convenience command:
+   ```bash
+   make stats-update
    ```
 
 ### Extending the System
@@ -175,7 +176,7 @@ Create custom templates in `_includes/content_statistics/`:
 
 Enable verbose output:
 ```bash
-VERBOSE=1 ruby _data/generate_statistics.rb
+VERBOSE=1 ruby scripts/generation/generate_statistics.rb
 ```
 
 ### Performance
