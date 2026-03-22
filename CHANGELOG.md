@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2026-03-21
+
+### Added
+- **Contributor Profile System** — Complete gamified RPG contributor profiles with character sheets, achievement walls, stats panels, and CSS styling (#167)
+- **Contributor Quest Line** — 6 new quests: forge-your-character, avatar-forge, badge-collector, contribution-calendar, stats-dashboard, profile-themes (#168)
+- **Bash-Run Quest Rewrite** — Rewrote bash-run quest (bashrun → bashcrawl) with improved educational content (#168)
+- **Contributor GitHub Actions Workflow** — Automated contributor profile updates via CI/CD (#167)
+- **Contributor Generation Scripts** — Makefile targets and generation scripts for contributor stats (#167)
+- **Advanced Version Control Quest** — Level 1100 quest teaching semantic versioning, branch strategies, PR orchestration, and release management using real-world examples
+
+### Changed
+- **Script Relocation** — Moved `generate_statistics.rb`, `generate_statistics.sh`, `update_statistics.sh` from `_data/` to `scripts/generation/` for better project organization (#166)
+- **Path References Updated** — Updated Makefile, AGENTS.md, _data/README.md, scripts/README.md, pages/stats.md, and stating-the-stats quest to use new script paths (#166)
+- **Quest Validator** — Added `--config` / `-c` CLI argument to respect Jekyll `_config.yml` default values, preventing false validation failures for fields with collection-level defaults (#169)
+- **YAML Anchor Handling** — Quest validator now handles YAML anchors/aliases via regex fallback parser (#169)
+- **About Navigation** — Added Contributors link to about navigation menu (#167)
+- **Quests README and Navigation** — Updated quest collection docs with new contributor quest line (#168)
+
+### Removed
+- **Obsolete Data Files** — Removed `_data/SOLUTION_SUMMARY.md` and `_data/github-actions-example.yml` (#166)
+
+### Fixed
+- **Quest Validator False Positives** — Skips required field errors for fields that have `_config.yml` defaults (e.g., `layout`), resolving 142/142 quest validation (#169)
+
 ## [Unreleased] - 2026-03-08
 
 ### Changed
