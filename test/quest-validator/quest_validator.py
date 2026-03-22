@@ -65,11 +65,88 @@ class QuestValidator:
         r'placeholder',       # Explicit placeholder text
     ]
 
-    def __init__(self, verbose: bool = False, exclude_drafts: bool = False, fail_threshold: int = 0):
+    def __init__(self, verbose: bool = False, exclude_drafts: bool = False, fail_threshold: int = 0, config_path: Optional[str] = None):
         self.verbose = verbose
         self.exclude_drafts = exclude_drafts
         self.fail_threshold = fail_threshold
         self.results: List[ValidationResult] = []
+        self.config_defaults: Dict[str, set] = {}  # path -> set of default field names
+        if config_path:
+            self._load_config_defaults(config_path)
+
+    def _load_config_defaults(self, config_path: str):
+        """Load default values from _config.yml to exclude from required field checks.
+
+        Parses the 'defaults' section and maps each scope path to the set of
+        field names that have values defined, so the validator can skip those
+        fields when checking individual files.
+        """
+        try:
+            with open(config_path, 'r') as f:
+                raw = f.read()
+            try:
+                config = yaml.safe_load(raw)
+            except yaml.YAMLError:
+                # _config.yml may use YAML anchors/aliases that safe_load can't handle.
+                # Fall back to extracting the defaults section via regex.
+                config = self._parse_defaults_fallback(raw)
+            if not config or 'defaults' not in config:
+                return
+            for entry in config['defaults']:
+                scope = entry.get('scope', {})
+                values = entry.get('values', {})
+                path = scope.get('path', '')
+                if path and values:
+                    fields_with_defaults = {k for k, v in values.items() if v}
+                    if path in self.config_defaults:
+                        self.config_defaults[path] |= fields_with_defaults
+                    else:
+                        self.config_defaults[path] = fields_with_defaults
+            if self.verbose:
+                for p, fields in self.config_defaults.items():
+                    self.log_info(f"Config defaults for '{p}': {sorted(fields)}")
+        except Exception as e:
+            self.log_warning(f"Could not load config defaults from {config_path}: {e}")
+
+    def _parse_defaults_fallback(self, raw: str) -> Optional[Dict]:
+        """Extract the defaults section from _config.yml when full YAML parsing fails.
+
+        Uses line-by-line parsing to extract scope paths and their value keys,
+        handling YAML anchors by stripping anchor/alias syntax before parsing.
+        """
+        # Find defaults: up to the next top-level key (non-indented, non-blank, non-comment line)
+        defaults_match = re.search(
+            r'^(defaults:\s*\n(?:(?:[ \t#].*|)\n)*)',
+            raw, re.MULTILINE
+        )
+        if not defaults_match:
+            return None
+
+        defaults_text = defaults_match.group(1)
+        # Strip YAML anchors (&name) and aliases (*name) so safe_load can handle it
+        cleaned = re.sub(r'&\w+\s*', '', defaults_text)
+        cleaned = re.sub(r'\*\w+', '""', cleaned)
+        try:
+            parsed = yaml.safe_load(cleaned)
+            if isinstance(parsed, dict):
+                return parsed
+        except yaml.YAMLError:
+            pass
+        return None
+
+    def _get_config_default_fields(self, filepath: Path) -> set:
+        """Return the set of frontmatter fields that have defaults in _config.yml for the given file path.
+
+        Matches are based on the file path containing the scope path from _config.yml,
+        with more specific paths (longer) taking priority via accumulation.
+        """
+        defaults = set()
+        file_str = str(filepath)
+        # Sort by path length so broader scopes are applied first, then narrower scopes add on top
+        for scope_path in sorted(self.config_defaults, key=len):
+            if scope_path in file_str:
+                defaults |= self.config_defaults[scope_path]
+        return defaults
     
     def log_info(self, message: str):
         """Log info message"""
@@ -105,11 +182,18 @@ class QuestValidator:
             self.log_error(f"YAML parsing error: {e}")
             return None, content
     
-    def validate_frontmatter_required(self, fm: Dict, result: ValidationResult):
-        """Validate required frontmatter fields"""
+    def validate_frontmatter_required(self, fm: Dict, result: ValidationResult, filepath: Optional[Path] = None):
+        """Validate required frontmatter fields, excluding those with defaults in _config.yml"""
         self.log_info("Validating required frontmatter fields...")
         
+        config_defaults = self._get_config_default_fields(filepath) if filepath else set()
+        
         for field in self.REQUIRED_FIELDS:
+            if field in config_defaults and (field not in fm or not fm[field]):
+                result.info.append(f"Field '{field}' has default in _config.yml, skipping requirement")
+                result.score += 1
+                result.max_score += 1
+                continue
             if field not in fm or not fm[field]:
                 result.errors.append(f"Missing required field: {field}")
                 result.passed = False
@@ -360,7 +444,7 @@ class QuestValidator:
             return result
         
         # Run all validations
-        self.validate_frontmatter_required(frontmatter, result)
+        self.validate_frontmatter_required(frontmatter, result, filepath)
         self.validate_frontmatter_hierarchy(frontmatter, result)
         self.validate_level_format(frontmatter, result)
         self.validate_difficulty(frontmatter, result)
@@ -677,6 +761,7 @@ Examples:
     parser.add_argument('--fail-threshold', type=int, default=0,
                         help='Minimum score percentage to pass (0=disabled, e.g. 60 or 80)')
     parser.add_argument('--summary', action='store_true', help='Show detailed aggregate summary with per-level stats')
+    parser.add_argument('-c', '--config', help='Path to _config.yml to load default field values (fields with defaults are excluded from required checks)')
     
     args = parser.parse_args()
     
@@ -684,11 +769,20 @@ Examples:
     if not args.quest_file and not args.directory:
         parser.error("Either quest_file or --directory must be specified")
     
+    # Auto-detect _config.yml if not explicitly provided
+    config_path = args.config
+    if not config_path:
+        for candidate in [Path('_config.yml'), Path('../_config.yml'), Path('../../_config.yml')]:
+            if candidate.exists():
+                config_path = str(candidate)
+                break
+
     # Create validator
     validator = QuestValidator(
         verbose=args.verbose,
         exclude_drafts=args.exclude_drafts,
-        fail_threshold=args.fail_threshold
+        fail_threshold=args.fail_threshold,
+        config_path=config_path
     )
     
     # Validate
