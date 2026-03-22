@@ -4,9 +4,18 @@ author: Amr
 excerpt: IT Wizard, Software Architect, Tech Enthusiast.
 class: Wizard
 username: bamr87
+contributor_data: bamr87
 permalink: /contributors/bamr87/
-lastmod: 2024-05-25T19:07:27.095Z
+lastmod: 2026-03-21T15:12:32.206Z
 ---
+
+<link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
+
+{% include contributor/character_sheet.html username="bamr87" %}
+
+---
+
+## 📜 Personal Scroll
 
 - 👋 Hi, I’m @bamr87
 - 🤖 I’m interested in the achitecture of information systems that facilitate to production of goods and services

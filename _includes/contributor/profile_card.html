@@ -1,0 +1,120 @@
+{% comment %}
+  Contributor Profile Card Component
+  Renders the hero section of a contributor's character sheet.
+
+  Parameters:
+  - username: The contributor's username (key in site.data.contributors)
+{% endcomment %}
+
+{% assign contributor = site.data.contributors[include.username] %}
+{% assign p = contributor.profile %}
+{% assign lvl = contributor.level %}
+
+{% comment %} Determine avatar URL with GitHub fallback {% endcomment %}
+{% if p.avatar and p.avatar != "" %}
+  {% assign avatar_url = p.avatar | relative_url %}
+{% else %}
+  {% assign avatar_url = "https://github.com/" | append: p.links.github | append: ".png?size=200" %}
+{% endif %}
+
+{% comment %} Map class to icon {% endcomment %}
+{% case p.class %}
+  {% when 'Wizard' %}
+    {% assign class_icon = "🧙" %}
+  {% when 'Warrior' %}
+    {% assign class_icon = "⚔️" %}
+  {% when 'Ranger' %}
+    {% assign class_icon = "🏹" %}
+  {% when 'Healer' %}
+    {% assign class_icon = "💚" %}
+  {% when 'Rogue' %}
+    {% assign class_icon = "🗡️" %}
+  {% when 'Bard' %}
+    {% assign class_icon = "🎵" %}
+  {% else %}
+    {% assign class_icon = "🛡️" %}
+{% endcase %}
+
+{% comment %} Map tier to icon {% endcomment %}
+{% case lvl.tier %}
+  {% when 'Apprentice' %}
+    {% assign tier_icon = "🌱" %}
+  {% when 'Adventurer' %}
+    {% assign tier_icon = "⚔️" %}
+  {% when 'Warrior' %}
+    {% assign tier_icon = "🔥" %}
+  {% when 'Master' %}
+    {% assign tier_icon = "👑" %}
+  {% else %}
+    {% assign tier_icon = "🌱" %}
+{% endcase %}
+
+<div class="contributor-card contributor-card--{{ p.class | downcase | default: 'warrior' }}"
+     {% if p.banner_color %}style="--contributor-accent: {{ p.banner_color }};"{% endif %}>
+
+  <div class="contributor-card__banner"></div>
+
+  <div class="contributor-card__body">
+    <div class="contributor-card__avatar-wrapper">
+      <img src="{{ avatar_url }}" alt="{{ p.display_name }}" class="contributor-card__avatar" loading="lazy" />
+      <span class="contributor-card__class-badge" title="{{ p.class }}">{{ class_icon }}</span>
+    </div>
+
+    <div class="contributor-card__info">
+      <h2 class="contributor-card__name">{{ p.display_name }}</h2>
+
+      {% if p.title %}
+        <p class="contributor-card__title">{{ p.title }}</p>
+      {% endif %}
+
+      {% if p.motto %}
+        <p class="contributor-card__motto"><em>"{{ p.motto }}"</em></p>
+      {% endif %}
+
+      <div class="contributor-card__level">
+        <span class="contributor-card__tier-badge">
+          {{ tier_icon }} Level {{ lvl.current_level }} — {{ lvl.tier }}
+        </span>
+      </div>
+
+      <div class="contributor-card__xp-bar">
+        <div class="contributor-card__xp-fill" style="width: {{ lvl.progress_percent }}%;">
+          {{ lvl.xp }} XP
+        </div>
+      </div>
+
+      {% if p.bio %}
+        <p class="contributor-card__bio">{{ p.bio }}</p>
+      {% endif %}
+
+      <div class="contributor-card__meta">
+        {% if p.location %}
+          <span class="contributor-card__location">📍 {{ p.location }}</span>
+        {% endif %}
+      </div>
+
+      <div class="contributor-card__links">
+        {% if p.links.github %}
+          <a href="https://github.com/{{ p.links.github }}" class="contributor-card__link" title="GitHub" rel="noopener noreferrer" target="_blank">
+            GitHub
+          </a>
+        {% endif %}
+        {% if p.links.twitter %}
+          <a href="https://twitter.com/{{ p.links.twitter }}" class="contributor-card__link" title="Twitter" rel="noopener noreferrer" target="_blank">
+            Twitter
+          </a>
+        {% endif %}
+        {% if p.links.linkedin %}
+          <a href="https://linkedin.com/in/{{ p.links.linkedin }}" class="contributor-card__link" title="LinkedIn" rel="noopener noreferrer" target="_blank">
+            LinkedIn
+          </a>
+        {% endif %}
+        {% if p.links.website %}
+          <a href="{{ p.links.website }}" class="contributor-card__link" title="Website" rel="noopener noreferrer" target="_blank">
+            Website
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

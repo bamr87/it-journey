@@ -1,0 +1,369 @@
+/* ==========================================================================
+   Contributor Character Profile Styles
+   Gamified RPG character sheet for IT-Journey contributors.
+   ========================================================================== */
+
+/* ---------- Variables & Class Themes ---------- */
+:root {
+  --contributor-accent: #6c3fc5;
+  --contributor-bg: #1a1a2e;
+  --contributor-card-bg: #16213e;
+  --contributor-text: #e0e0e0;
+  --contributor-text-muted: #8892a4;
+  --contributor-border: #2a2a4a;
+  --contributor-badge-bg: #0f3460;
+  --contributor-xp-bg: #2a2a4a;
+  --contributor-xp-fill: #e94560;
+  --contributor-green: #4caf50;
+  --contributor-red: #e94560;
+}
+
+/* Class-specific accent colors */
+.contributor-card--wizard  { --contributor-accent: #6c3fc5; }
+.contributor-card--warrior { --contributor-accent: #c5221f; }
+.contributor-card--ranger  { --contributor-accent: #2e7d32; }
+.contributor-card--healer  { --contributor-accent: #00796b; }
+.contributor-card--rogue   { --contributor-accent: #4a148c; }
+.contributor-card--bard    { --contributor-accent: #e65100; }
+
+/* ---------- Character Sheet Container ---------- */
+.character-sheet {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.character-sheet--empty {
+  text-align: center;
+  padding: 3rem;
+  border: 2px dashed var(--contributor-border);
+  border-radius: 12px;
+}
+
+/* ---------- Profile Card ---------- */
+.contributor-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--contributor-border);
+  background: var(--contributor-card-bg);
+}
+
+.contributor-card__banner {
+  height: 80px;
+  background: linear-gradient(135deg, var(--contributor-accent), transparent 80%);
+}
+
+.contributor-card__body {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
+  margin-top: -40px;
+  flex-wrap: wrap;
+}
+
+.contributor-card__avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contributor-card__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--contributor-accent);
+  object-fit: cover;
+  background: var(--contributor-bg);
+}
+
+.contributor-card__class-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5rem;
+  background: var(--contributor-card-bg);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--contributor-accent);
+}
+
+.contributor-card__info {
+  flex: 1;
+  min-width: 200px;
+  padding-top: 44px;
+}
+
+.contributor-card__name {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  color: var(--contributor-text);
+}
+
+.contributor-card__title {
+  margin: 0 0 0.25rem;
+  color: var(--contributor-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contributor-card__motto {
+  margin: 0 0 0.5rem;
+  color: var(--contributor-text-muted);
+  font-size: 0.85rem;
+}
+
+.contributor-card__level {
+  margin-bottom: 0.5rem;
+}
+
+.contributor-card__tier-badge {
+  display: inline-block;
+  padding: 0.2em 0.75em;
+  border-radius: 20px;
+  background: var(--contributor-badge-bg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--contributor-text);
+}
+
+.contributor-card__xp-bar {
+  height: 22px;
+  background: var(--contributor-xp-bg);
+  border-radius: 11px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.contributor-card__xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--contributor-accent), var(--contributor-xp-fill));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  min-width: 60px;
+  transition: width 0.6s ease;
+}
+
+.contributor-card__bio {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--contributor-text-muted);
+  line-height: 1.5;
+}
+
+.contributor-card__meta {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--contributor-text-muted);
+}
+
+.contributor-card__links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.contributor-card__link {
+  padding: 0.3em 0.75em;
+  border-radius: 6px;
+  background: var(--contributor-badge-bg);
+  color: var(--contributor-text);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+
+.contributor-card__link:hover {
+  background: var(--contributor-accent);
+  color: #fff;
+}
+
+/* ---------- Stats Panel ---------- */
+.contributor-stats {
+  border-radius: 12px;
+  border: 1px solid var(--contributor-border);
+  background: var(--contributor-card-bg);
+  padding: 1.5rem;
+}
+
+.contributor-stats__heading {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--contributor-text);
+}
+
+.contributor-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contributor-stats__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  background: var(--contributor-bg);
+  text-align: center;
+}
+
+.contributor-stats__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.contributor-stats__value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--contributor-text);
+}
+
+.contributor-stats__label {
+  font-size: 0.75rem;
+  color: var(--contributor-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contributor-stats__details {
+  font-size: 0.85rem;
+  color: var(--contributor-text-muted);
+}
+
+.contributor-stats__lines {
+  margin-bottom: 0.5rem;
+}
+
+.contributor-stats__added { color: var(--contributor-green); font-weight: 600; }
+.contributor-stats__removed { color: var(--contributor-red); font-weight: 600; }
+
+.contributor-stats__languages,
+.contributor-stats__categories {
+  margin-bottom: 0.5rem;
+}
+
+.contributor-stats__badge {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  margin: 0.15em;
+  border-radius: 4px;
+  background: var(--contributor-badge-bg);
+  color: var(--contributor-text);
+  font-size: 0.8rem;
+}
+
+/* ---------- Achievement Wall ---------- */
+.contributor-achievements {
+  border-radius: 12px;
+  border: 1px solid var(--contributor-border);
+  background: var(--contributor-card-bg);
+  padding: 1.5rem;
+}
+
+.contributor-achievements__heading {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--contributor-text);
+}
+
+.contributor-achievements__subheading {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--contributor-text-muted);
+}
+
+.contributor-achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.contributor-achievements__grid--pinned {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.contributor-achievements__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: var(--contributor-bg);
+  border: 1px solid var(--contributor-border);
+  transition: transform 0.2s;
+}
+
+.contributor-achievements__badge:hover {
+  transform: translateY(-2px);
+}
+
+.contributor-achievements__badge--pinned {
+  border-color: var(--contributor-accent);
+  box-shadow: 0 0 8px rgba(108, 63, 197, 0.3);
+}
+
+.contributor-achievements__icon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.contributor-achievements__name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--contributor-text);
+}
+
+.contributor-achievements__desc {
+  font-size: 0.7rem;
+  color: var(--contributor-text-muted);
+  margin-top: 0.15rem;
+}
+
+.contributor-achievements__date {
+  font-size: 0.65rem;
+  color: var(--contributor-text-muted);
+  margin-top: 0.25rem;
+}
+
+.contributor-achievements__empty {
+  text-align: center;
+  color: var(--contributor-text-muted);
+  padding: 2rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .contributor-card__body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contributor-card__info {
+    padding-top: 0.5rem;
+  }
+
+  .contributor-card__links {
+    justify-content: center;
+  }
+
+  .contributor-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contributor-achievements__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
