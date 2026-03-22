@@ -9,9 +9,10 @@ require 'date'
 # comprehensive statistics that can be rendered using Liquid templates
 
 class ContentStatisticsGenerator
-  POSTS_DIR = File.join(__dir__, '..', 'pages', '_posts')
-  OUTPUT_FILE = File.join(__dir__, '..', '_data', 'content_statistics.yml')
-  CONFIG_FILE = File.join(__dir__, 'statistics_config.yml')
+  PROJECT_ROOT = File.join(__dir__, '..', '..')
+  POSTS_DIR = File.join(PROJECT_ROOT, 'pages', '_posts')
+  OUTPUT_FILE = File.join(PROJECT_ROOT, '_data', 'content_statistics.yml')
+  CONFIG_FILE = File.join(PROJECT_ROOT, '_data', 'statistics_config.yml')
   INDEX_FILE = '2000-01-01-index.md'
 
   def initialize

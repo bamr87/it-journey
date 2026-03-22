@@ -20,11 +20,11 @@ help:
 # Generate statistics
 stats:
 	@echo "🔄 Generating content statistics..."
-	@bash _data/generate_statistics.sh
+	@bash scripts/generation/generate_statistics.sh
 
 # Update and show summary
 stats-update:
-	@bash _data/update_statistics.sh
+	@bash scripts/generation/update_statistics.sh
 
 # Show current statistics
 stats-show:
@@ -70,14 +70,14 @@ stats-config:
 # Test the generator
 test:
 	@echo "🧪 Testing statistics generator..."
-	@ruby -c _data/generate_statistics.rb && echo "✅ Ruby syntax check passed"
+	@ruby -c scripts/generation/generate_statistics.rb && echo "✅ Ruby syntax check passed"
 	@if [ -d "pages/_posts" ]; then \
 		echo "✅ Posts directory found"; \
 	else \
 		echo "❌ Posts directory not found"; \
 		exit 1; \
 	fi
-	@bash -n _data/generate_statistics.sh && echo "✅ Bash script syntax check passed"
+	@bash -n scripts/generation/generate_statistics.sh && echo "✅ Bash script syntax check passed"
 	@echo "🎉 All tests passed!"
 
 # Development targets
