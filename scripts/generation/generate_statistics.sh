@@ -14,9 +14,9 @@ NC='\033[0m' # No Color
 
 # Script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 RUBY_SCRIPT="$SCRIPT_DIR/generate_statistics.rb"
-OUTPUT_FILE="$SCRIPT_DIR/content_statistics.yml"
+OUTPUT_FILE="$PROJECT_ROOT/_data/content_statistics.yml"
 
 echo -e "${BLUE}📊 IT-Journey Content Statistics Generator${NC}"
 echo "=================================================="
@@ -90,4 +90,4 @@ echo "   3. Use {% include content_statistics/summary.html %} for detailed cards
 echo "   4. Use {% include content_statistics/detailed.html %} for full analysis"
 echo ""
 echo "🔄 To regenerate statistics, run this script again:"
-echo "   bash _data/generate_statistics.sh"
+echo "   bash scripts/generation/generate_statistics.sh"

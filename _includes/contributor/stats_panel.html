@@ -1,0 +1,78 @@
+{% comment %}
+  Contributor Stats Panel Component
+  Renders contribution statistics as a grid of tiles.
+
+  Parameters:
+  - username: The contributor's username (key in site.data.contributors)
+{% endcomment %}
+
+{% assign contributor = site.data.contributors[include.username] %}
+{% assign s = contributor.stats %}
+
+<div class="contributor-stats">
+  <h3 class="contributor-stats__heading">📊 Contribution Stats</h3>
+
+  <div class="contributor-stats__grid">
+    <div class="contributor-stats__tile">
+      <span class="contributor-stats__icon">💻</span>
+      <span class="contributor-stats__value">{{ s.total_commits | default: 0 }}</span>
+      <span class="contributor-stats__label">Commits</span>
+    </div>
+
+    <div class="contributor-stats__tile">
+      <span class="contributor-stats__icon">🔀</span>
+      <span class="contributor-stats__value">{{ s.total_prs_merged | default: 0 }}</span>
+      <span class="contributor-stats__label">PRs Merged</span>
+    </div>
+
+    <div class="contributor-stats__tile">
+      <span class="contributor-stats__icon">🏰</span>
+      <span class="contributor-stats__value">{{ s.total_quests_authored | default: 0 }}</span>
+      <span class="contributor-stats__label">Quests Forged</span>
+    </div>
+
+    <div class="contributor-stats__tile">
+      <span class="contributor-stats__icon">📝</span>
+      <span class="contributor-stats__value">{{ s.total_posts_authored | default: 0 }}</span>
+      <span class="contributor-stats__label">Posts Written</span>
+    </div>
+
+    <div class="contributor-stats__tile">
+      <span class="contributor-stats__icon">📅</span>
+      <span class="contributor-stats__value">{{ s.active_days | default: 0 }}</span>
+      <span class="contributor-stats__label">Active Days</span>
+    </div>
+
+    <div class="contributor-stats__tile">
+      <span class="contributor-stats__icon">🔥</span>
+      <span class="contributor-stats__value">{{ s.streak_days | default: 0 }}</span>
+      <span class="contributor-stats__label">Day Streak</span>
+    </div>
+  </div>
+
+  <div class="contributor-stats__details">
+    <div class="contributor-stats__lines">
+      <span class="contributor-stats__added">+{{ s.lines_added | default: 0 }}</span>
+      <span class="contributor-stats__removed">-{{ s.lines_removed | default: 0 }}</span>
+      lines changed
+    </div>
+
+    {% if s.top_languages and s.top_languages.size > 0 %}
+      <div class="contributor-stats__languages">
+        <strong>Top Languages:</strong>
+        {% for lang in s.top_languages %}
+          <span class="contributor-stats__badge">{{ lang.name }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if s.top_categories and s.top_categories.size > 0 %}
+      <div class="contributor-stats__categories">
+        <strong>Top Categories:</strong>
+        {% for cat in s.top_categories %}
+          <span class="contributor-stats__badge">{{ cat.name }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

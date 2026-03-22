@@ -81,8 +81,8 @@ Observed from Makefile, scripts, Gemfile, and workflows:
   - Clean: `bundle exec jekyll clean`
 
 - **Content Statistics** (from Makefile in root):
-  - Generate stats: `make stats` (runs _data/generate_statistics.sh)
-  - Update and show: `make stats-update` (runs _data/update_statistics.sh)
+  - Generate stats: `make stats` (runs scripts/generation/generate_statistics.sh)
+  - Update and show: `make stats-update` (runs scripts/generation/update_statistics.sh)
   - Show current: `make stats-show`
   - Clean stats: `make stats-clean`
   - Show config: `make stats-config`

@@ -7,8 +7,8 @@ set -euo pipefail
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-STATS_FILE="$SCRIPT_DIR/content_statistics.yml"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+STATS_FILE="$PROJECT_ROOT/_data/content_statistics.yml"
 
 # Colors for output (if terminal supports it)
 if [[ -t 1 ]]; then

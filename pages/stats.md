@@ -24,7 +24,7 @@ date: 2025-10-09T18:25:11.000Z
       {% else %}
         <div class="alert alert-warning" role="alert">
           <i class="bi bi-exclamation-triangle"></i>
-          Statistics not yet generated. Run <code>ruby _data/generate_statistics.rb</code> to create statistics.
+          Statistics not yet generated. Run <code>ruby scripts/generation/generate_statistics.rb</code> to create statistics.
         </div>
       {% endif %}
     </div>
@@ -178,7 +178,7 @@ date: 2025-10-09T18:25:11.000Z
         <h4 class="alert-heading">No Statistics Available</h4>
         <p>Statistics haven't been generated yet. To create the statistics data:</p>
         <ol>
-          <li>Run the statistics generator: <code>ruby _data/generate_statistics.rb</code></li>
+          <li>Run the statistics generator: <code>ruby scripts/generation/generate_statistics.rb</code></li>
           <li>Refresh this page to see the results</li>
         </ol>
       </div>

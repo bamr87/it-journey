@@ -17,6 +17,11 @@ scripts/
 │   ├── content/            # Content management
 │   └── testing/            # Testing utilities
 ├── generation/             # Content generation scripts
+│   ├── generate_statistics.rb          # Content statistics generator (Ruby)
+│   ├── generate_statistics.sh          # Statistics generator wrapper (Bash)
+│   ├── generate_contributor_stats.rb   # Contributor stats generator (Ruby)
+│   ├── generate_contributor_stats.sh   # Contributor stats wrapper (Bash)
+│   ├── update_statistics.sh            # CI/CD statistics updater (Bash)
 │   ├── generate-preview-images.sh
 │   ├── generate-zer0-script.sh
 │   └── zer0-to-hero-*.sh
