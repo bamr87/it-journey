@@ -34,6 +34,12 @@
       url: /quests/0001/liquid-templating
     - title: Git Workflow Mastery
       url: /quests/0001/git-workflow-mastery
+    - title: "⚔️ Forge Your Character"
+      url: /quests/forge-your-character/
+    - title: "⚔️ Avatar Forge (Side)"
+      url: /quests/side-quest-avatar-forge/
+    - title: "⚔️ Badge Collector (Side)"
+      url: /quests/side-quest-badge-collector/
 - title: "Level 0010 - Intermediate"
   icon: bi-tree
   url: /quests/0010/
@@ -48,6 +54,10 @@
       url: /quests/0010/bootstrap-framework
     - title: Prompt Engineering
       url: /quests/0010/prompt-engineering
+    - title: "⚔️ Contribution Calendar (Side)"
+      url: /quests/side-quest-contribution-calendar/
+    - title: "⚔️ Stats Dashboard (Side)"
+      url: /quests/side-quest-stats-dashboard/
 - title: "Level 0011 - Advanced"
   icon: bi-lightning-charge
   url: /quests/0011/
@@ -70,6 +80,8 @@
       url: /quests/0100/docker-compose-orchestration
     - title: Frontend Docker
       url: /quests/0100/frontend-docker
+    - title: "⚔️ Profile Themes (Side)"
+      url: /quests/side-quest-profile-themes/
 - title: "Level 0101 - CI/CD"
   icon: bi-rocket-takeoff
   url: /quests/0101/
