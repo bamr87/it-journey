@@ -215,9 +215,191 @@ class PRDMachine:
                     result[key] = current_list
         
         return result
-    
+
+    # ------------------------------------------------------------------
+    # AI-powered alignment analysis
+    # ------------------------------------------------------------------
+
+    def _build_ai_context(self) -> str:
+        """Build a structured context string for the AI alignment analysis."""
+        commits = self.signals.get("git_commits", [])
+        md_files = self.signals.get("markdown_files", [])
+        features = self.signals.get("features", [])
+
+        # Summarise recent commits (cap at 40 to stay well within token limits)
+        commit_lines = []
+        for c in commits[:40]:
+            commit_lines.append(f"  [{c['hash'][:8]}] {c.get('date', '')[:10]}: {c.get('subject', '')}")
+            body = (c.get("body") or "").strip().replace("\n", " ")[:120]
+            if body:
+                commit_lines.append(f"    ↳ {body}")
+        commit_summary = "\n".join(commit_lines) or "  (no recent commits)"
+
+        # Content inventory
+        quest_count = sum(1 for f in md_files if "_quests" in f.get("path", ""))
+        post_count  = sum(1 for f in md_files if "_posts"  in f.get("path", ""))
+        doc_count   = sum(1 for f in md_files if "docs/"   in f.get("path", ""))
+
+        # Feature list (up to 20 names)
+        feature_names = [f.get("name", "unknown") for f in features[:20]]
+        features_text = ", ".join(feature_names) if feature_names else "(none indexed)"
+
+        # Current PRD excerpt (first 2 500 chars for context)
+        prd_excerpt = ""
+        if self.prd_path.exists():
+            raw = self.prd_path.read_text(encoding="utf-8")
+            prd_excerpt = raw[:2500] + ("…" if len(raw) > 2500 else "")
+
+        return f"""## Repository Context for PRD Alignment Review
+
+### Recent Commits ({len(commits)} captured, last 30 days)
+{commit_summary}
+
+### Content Inventory
+- Learning Quests  : {quest_count}
+- Educational Posts: {post_count}
+- Documentation    : {doc_count}
+- Feature Defs     : {len(features)}
+- Named features   : {features_text}
+
+### Current PRD (excerpt – first 2 500 chars)
+```
+{prd_excerpt}
+```"""
+
+    def analyze_alignment_with_ai(self) -> Dict[str, Any]:
+        """Use the shared AI client to assess PRD alignment with recent changes.
+
+        Always runs — whether or not rule-based detection found conflicts.
+        Returns a dict with:
+          success        : bool
+          alignment_score: int 1-10
+          alignment_summary: str
+          conflicts      : list[dict]  – genuine functional gaps only
+          recommendations: list[str]
+          model          : str
+          provider       : str
+          error          : str (only when success=False)
+        """
+        # Resolve the shared lib directory relative to this script
+        lib_dir = Path(__file__).parent.parent / "lib"
+        if str(lib_dir) not in sys.path:
+            sys.path.insert(0, str(lib_dir))
+
+        try:
+            from ai_client import AIClient  # type: ignore[import]
+        except ImportError:
+            self.log("WARNING", "ai_client not available — skipping AI alignment analysis")
+            return {"success": False, "error": "ai_client module not found"}
+
+        client = AIClient()
+
+        if client.provider == "none":
+            self.log("INFO", "AI provider is 'none' — skipping AI alignment analysis")
+            return {"success": False, "error": "AI disabled (provider='none')"}
+
+        self.log("INFO", f"Running AI alignment analysis ({client.provider}/{client.model})…")
+
+        context = self._build_ai_context()
+
+        prompt = f"""You are a senior product requirements analyst reviewing PRD.md for
+**IT-Journey**, an open-source IT education platform hosted on GitHub Pages.
+
+{context}
+
+---
+
+Analyse the recent commits and current PRD excerpt, then respond with ONLY a
+JSON object (no markdown fences, no extra text) matching this exact schema:
+
+{{
+  "alignment_score": <integer 1-10, where 10 = perfectly aligned>,
+  "alignment_summary": "<2-4 sentence high-level assessment>",
+  "conflicts": [
+    {{
+      "type": "<feature|api|nfr|ux|security|other>",
+      "severity": "<high|medium|low>",
+      "description": "<concise description of the gap or misalignment>",
+      "resolution": "<specific, actionable PRD update>"
+    }}
+  ],
+  "recommendations": [
+    "<actionable recommendation targeting a specific PRD section>"
+  ]
+}}
+
+Rules:
+- Only include *functional* gaps — changes that affect features, user experience,
+  or platform capabilities.
+- Ignore routine maintenance: typos, lastmod bumps, formatting, token renames,
+  adding CI permissions, code-review follow-ups, version/dependency bumps.
+- If PRD is already well-aligned, return an empty conflicts array.
+- Return at most 5 conflicts and 5 recommendations."""
+
+        result = client.chat(
+            prompt=prompt,
+            system=(
+                "You are a concise, accurate product requirements analyst. "
+                "Return ONLY valid JSON — no markdown, no preamble."
+            ),
+            max_tokens=1800,
+            temperature=0.2,
+        )
+
+        if not result.success:
+            self.log("WARNING", f"AI analysis failed: {result.error}")
+            return {"success": False, "error": result.error}
+
+        # Parse the JSON response robustly
+        raw_content = (result.content or "").strip()
+
+        # Strip accidental code fences
+        fence_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", raw_content, re.DOTALL)
+        if fence_match:
+            raw_content = fence_match.group(1)
+        elif not raw_content.startswith("{"):
+            obj_match = re.search(r"\{.*\}", raw_content, re.DOTALL)
+            if obj_match:
+                raw_content = obj_match.group(0)
+
+        try:
+            analysis: Dict[str, Any] = json.loads(raw_content)
+        except json.JSONDecodeError as exc:
+            self.log("WARNING", f"AI response was not valid JSON: {exc}")
+            # Surface the raw text as a plain-text summary so it's still useful
+            return {
+                "success": True,
+                "alignment_score": None,
+                "alignment_summary": result.content,
+                "conflicts": [],
+                "recommendations": [],
+                "model": result.model,
+                "provider": result.provider,
+                "raw_text": True,
+            }
+
+        analysis["success"]  = True
+        analysis["model"]    = result.model
+        analysis["provider"] = result.provider
+
+        score = analysis.get("alignment_score", "N/A")
+        n_conflicts = len(analysis.get("conflicts", []))
+        self.log(
+            "SUCCESS",
+            f"AI analysis complete — score: {score}/10, "
+            f"gaps identified: {n_conflicts} (model: {result.model})",
+        )
+        return analysis
+
     def detect_conflicts(self) -> List[Dict[str, Any]]:
-        """Detect conflicting requirements or signals."""
+        """Detect conflicting requirements or signals.
+
+        First runs rule-based pattern matching on commit messages, then
+        *always* defers to the AI agent for a holistic alignment review —
+        regardless of whether the rule-based pass found anything.  The AI
+        result is stored in ``self.signals["ai_analysis"]`` and merged into
+        the conflict list so the EDGE section can surface both.
+        """
         self.log("INFO", "Detecting conflicts in requirements...")
         
         conflicts = []
@@ -314,13 +496,36 @@ class PRDMachine:
                         "severity": "medium",
                     })
         
+        # ---------------------------------------------------------------
+        # AI alignment analysis — always runs, regardless of rule-based
+        # results.  The AI is the primary authority; rule-based hits are
+        # kept as supplementary context only.
+        # ---------------------------------------------------------------
+        ai_analysis = self.analyze_alignment_with_ai()
+        self.signals["ai_analysis"] = ai_analysis
+
+        if ai_analysis.get("success"):
+            ai_conflicts = ai_analysis.get("conflicts", [])
+            # Merge AI conflicts in (avoid duplicating rule-based items with
+            # a meaningful description already present from the AI).
+            if ai_conflicts:
+                # Prefer AI conflicts as the canonical list; rule-based items
+                # become supplementary.
+                for rule_hit in conflicts:
+                    ai_conflicts.append({**rule_hit, "source_type": "rule"})
+                conflicts = ai_conflicts
+            # If the AI found no functional gaps, keep any rule-based HIGH
+            # severity items as a safety net but discard MEDIUM noise.
+            else:
+                conflicts = [c for c in conflicts if c.get("severity") == "high"]
+
         self.signals["conflicts"] = conflicts
-        
+
         if conflicts:
             self.log("WARNING", f"Detected {len(conflicts)} potential conflicts")
         else:
             self.log("SUCCESS", "No conflicts detected")
-        
+
         return conflicts
     
     def generate_section_why(self) -> str:
@@ -478,19 +683,67 @@ python3 scripts/validation/link-checker.py --scope website
     
     def generate_section_edge(self) -> str:
         """Generate the EDGE section (Section 5) for IT-Journey."""
-        conflicts = self.signals.get("conflicts", [])
+        conflicts   = self.signals.get("conflicts", [])
+        ai_analysis = self.signals.get("ai_analysis", {})
+
+        # ------------------------------------------------------------------
+        # Build the AI alignment block (always rendered; shows "pending" if
+        # the AI provider was disabled or the call failed).
+        # ------------------------------------------------------------------
+        ai_block = "\n### AI Alignment Review\n\n"
+
+        if ai_analysis.get("success"):
+            score   = ai_analysis.get("alignment_score")
+            summary = ai_analysis.get("alignment_summary", "")
+            model   = ai_analysis.get("model", "unknown")
+            provider= ai_analysis.get("provider", "unknown")
+
+            score_str  = f"{score}/10" if score is not None else "N/A"
+            score_icon = (
+                "🟢" if (score or 0) >= 8 else
+                "🟡" if (score or 0) >= 5 else
+                "🔴"
+            )
+
+            ai_block += f"**Alignment Score**: {score_icon} {score_str} "
+            ai_block += f"*(assessed by `{provider}/{model}`)*\n\n"
+
+            # Raw text fall-back (non-JSON response)
+            if ai_analysis.get("raw_text"):
+                ai_block += f"> {summary}\n\n"
+            else:
+                if summary:
+                    ai_block += f"**Summary**: {summary}\n\n"
+
+                # Recommendations
+                recs = ai_analysis.get("recommendations", [])
+                if recs:
+                    ai_block += "**Recommendations**:\n\n"
+                    for rec in recs:
+                        ai_block += f"- {rec}\n"
+                    ai_block += "\n"
+        else:
+            err = ai_analysis.get("error", "AI provider not configured")
+            ai_block += f"> ⚠️ *AI analysis unavailable: {err}*\n\n"
+
+        # ------------------------------------------------------------------
+        # Build the conflicts block (from merged rule-based + AI results).
+        # ------------------------------------------------------------------
         conflict_text = ""
-        
         if conflicts:
-            conflict_text = "\n### Recent Issues Detected\n\n"
-            # Sort by severity (high first)
-            sorted_conflicts = sorted(conflicts, key=lambda x: 0 if x.get('severity') == 'high' else 1)
-            for c in sorted_conflicts[:5]:  # Show top 5 conflicts
-                severity = c.get('severity', 'medium')
+            conflict_text = "\n### Detected Alignment Gaps\n\n"
+            sorted_conflicts = sorted(
+                conflicts,
+                key=lambda x: 0 if x.get("severity") == "high" else 1,
+            )
+            for c in sorted_conflicts[:5]:
+                severity      = c.get("severity", "medium")
                 severity_icon = "🔴" if severity == "high" else "🟡"
                 conflict_text += f"- {severity_icon} **{c['type'].upper()}**: {c['description']}\n"
-                conflict_text += f"  - *Action*: {c['resolution']}\n"
-        
+                conflict_text += f"  - *Action*: {c.get('resolution', 'Review PRD section')}\n"
+        else:
+            conflict_text = "\n### Detected Alignment Gaps\n\n✅ *No functional gaps identified.*\n"
+
         return f"""## 5. EDGE (Exceptions, Dependencies, Gotchas)
 
 ### Dependencies
@@ -521,7 +774,7 @@ python3 scripts/validation/link-checker.py --scope website
 - **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
 - **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
 - **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
-{conflict_text}
+{ai_block}{conflict_text}
 """
     
     def generate_section_oos(self) -> str:

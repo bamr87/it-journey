@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-03-30T18:32:21.000Z
-lastmod: 2026-03-30T18:32:21.000Z
+date: 2026-03-30T19:01:29.000Z
+lastmod: 2026-03-30T19:01:29.000Z
 status: Living
 version: 2026-03-30
 auto_generated: true
@@ -46,8 +46,8 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
 | Implemented Features | 1 | ✅ Tracked |
-| Recent Commits | 1 | ✅ Analyzed |
-| Detected Issues | 0 | ✅ None |
+| Recent Commits | 2 | ✅ Analyzed |
+| Detected Issues | 1 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -172,6 +172,16 @@ python3 scripts/validation/link-checker.py --scope website
 - **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
 - **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
 - **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
+
+### AI Alignment Review
+
+> ⚠️ *AI analysis unavailable: AI disabled (provider='none')*
+
+
+### Detected Alignment Gaps
+
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(prd-machine): eliminate false-positive requirement conflicts
+  - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
 
