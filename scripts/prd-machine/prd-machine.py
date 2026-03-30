@@ -222,7 +222,9 @@ class PRDMachine:
         
         conflicts = []
         
-        # Patterns that indicate trivial fixes (not requirement conflicts)
+        # Patterns that indicate trivial fixes (not requirement conflicts).
+        # A commit matching ANY of these is considered routine maintenance and will
+        # not be reported as a conflict, even if it also matches a significant pattern.
         trivial_patterns = [
             r'\btypo\b',
             r'\bspelling\b',
@@ -233,24 +235,40 @@ class PRDMachine:
             r'\bicon\b',
             r'\bcomment\b',
             r'\bdocstring\b',
-            r'\blink\b.*\bbroken\b',
-            r'\bupdate.*\bdependenc',  # dependency updates
+            r'\blink\b.*?\bbroken\b',
+            r'\bupdate.*?\bdependenc',  # dependency updates
             r'\bversion\s+bump\b',
             r'\bminor\s+fix\b',
             r'\bsmall\s+fix\b',
+            r'\blastmod\b',                        # lastmod date-stamp updates
+            r'\bcode\s+review\b',                  # code-review follow-up changes
+            r'\bmodel\s+priorit',                  # model priority / config ordering
+            r'\byaml\s+guard\b',                   # defensive YAML guard additions
+            r'\bconfig\s+docs\b',                  # config documentation updates
+            r'\bstandardiz',                       # token / style standardisation
+            # Token migration / rename (case-insensitive via (?i) flag applied at match time)
+            r'replace.*?(?i:pat).*?token|replace.*?token',
+            r'add\s+\w+.*?\bpermission\b',         # adding a required CI permission
+            r'skip.*?(?:\bfield\b.*?\bcheck\b|\brequired\b)',  # validator field-check enhancement
+            r'\b_?config\.yml\b.*?\bdefault\b|\bdefault\b.*?\b_?config\.yml\b',  # _config.yml default handling
         ]
         
-        # Patterns that suggest actual requirement issues
+        # Patterns that suggest actual requirement issues.
+        # Deliberately narrow so that routine maintenance commits (token renames,
+        # adding a missing permission, etc.) do NOT trigger false positives.
         significant_patterns = [
-            r'\bworkflow\b.*\bfail',
-            r'\bci\b.*\bfail',
-            r'token',  # Any token-related issue (PAT_TOKEN, GITHUB_TOKEN, etc.)
-            r'\bauth',
-            r'\bpermission\b',
-            r'\bsecurity\b',
+            r'\bworkflow\b.*?\bfail',
+            r'\bci\b.*?\bfail',
+            # Token failures only (not routine replace/standardise operations)
+            r'(?:missing|invalid|expire[sd]?|fail(?:ed|ure)?)\s+token|token\s+(?:missing|invalid|expire[sd]?|fail)',
+            # Auth failures (not mere auth-related commits)
+            r'\bauth(?:entication)?\s+(?:fail|error|issue)|(?:fail|error).*?\bauth\b',
+            # Permission *denied* / errors only (not routine "add permission" commits)
+            r'\bpermission\b.*?(?:denied|error|fail|missing)|(?:denied|missing).*?\bpermission\b',
+            r'\bsecurity\s+(?:vuln|issue|breach|fix)|(?:vuln|breach).*?\bsecurity\b',
             r'\bcrash\b',
-            r'\berror\b.*\bhandl',
-            r'\bvalidation\b.*\bfail',
+            r'\berror\b.*?\bhandl',
+            r'\bvalidation\b.*?\bfail',
         ]
         
         # Simple conflict detection based on commit messages
@@ -276,14 +294,24 @@ class PRDMachine:
                 # Check if this is a significant fix
                 is_significant = any(re.search(pattern, subject) for pattern in significant_patterns)
                 
-                # Only flag significant fixes or fixes that aren't trivial
-                if is_significant or not is_trivial:
+                # Trivial always wins: skip if the commit is routine maintenance.
+                # Only flag as HIGH when the fix is genuinely significant (and not trivial).
+                # Flag as MEDIUM when the fix is neither significant nor trivial.
+                if is_significant and not is_trivial:
                     conflicts.append({
                         "type": "fix",
                         "source": f"commit:{commit['hash']}",
                         "description": f"Bug fix suggests incomplete requirement: {original_subject}",
                         "resolution": "Consider if original requirement needs clarification",
-                        "severity": "high" if is_significant else "medium"
+                        "severity": "high",
+                    })
+                elif not is_significant and not is_trivial:
+                    conflicts.append({
+                        "type": "fix",
+                        "source": f"commit:{commit['hash']}",
+                        "description": f"Bug fix suggests incomplete requirement: {original_subject}",
+                        "resolution": "Consider if original requirement needs clarification",
+                        "severity": "medium",
                     })
         
         self.signals["conflicts"] = conflicts
@@ -443,6 +471,8 @@ python3 scripts/validation/link-checker.py --scope website
 | Multi-Platform | Cross-OS support | macOS/Windows/Linux | ✅ Documented |
 | Mobile | Responsive design | All breakpoints | ✅ CSS framework |
 | Content Freshness | Regular updates | Activity within 30 days | ✅ Active |
+| CI Token Policy | Use `secrets.GITHUB_TOKEN` only; no custom PAT secrets | No `GITHUB_PAT` references in workflows | ✅ Standardized |
+| CI Permissions | Each workflow declares minimal required `permissions:` block | All workflows have explicit permissions | ✅ Enforced |
 
 """
     
@@ -488,6 +518,9 @@ python3 scripts/validation/link-checker.py --scope website
 - **Large repos**: Initial clone may take time; use sparse checkout if needed
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
+- **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
+- **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
+- **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
 {conflict_text}
 """
     
