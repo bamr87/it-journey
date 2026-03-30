@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-03-30T00:35:29.000Z
-lastmod: 2026-03-30T00:35:29.000Z
+date: 2026-03-30T19:01:29.000Z
+lastmod: 2026-03-30T19:01:29.000Z
 status: Living
 version: 2026-03-30
 auto_generated: true
@@ -45,9 +45,9 @@ As a **learner / contributor / educator**, I want:
 | Learning Quests | 6 | ✅ Published |
 | Educational Posts | 15 | ✅ Published |
 | Total Markdown Files | 45 | ✅ Indexed |
-| Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 24 | ✅ Analyzed |
-| Detected Issues | 4 | ⚠️ Review needed |
+| Implemented Features | 1 | ✅ Tracked |
+| Recent Commits | 2 | ✅ Analyzed |
+| Detected Issues | 1 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -139,6 +139,8 @@ python3 scripts/validation/link-checker.py --scope website
 | Multi-Platform | Cross-OS support | macOS/Windows/Linux | ✅ Documented |
 | Mobile | Responsive design | All breakpoints | ✅ CSS framework |
 | Content Freshness | Regular updates | Activity within 30 days | ✅ Active |
+| CI Token Policy | Use `secrets.GITHUB_TOKEN` only; no custom PAT secrets | No `GITHUB_PAT` references in workflows | ✅ Standardized |
+| CI Permissions | Each workflow declares minimal required `permissions:` block | All workflows have explicit permissions | ✅ Enforced |
 
 ## 5. EDGE (Exceptions, Dependencies, Gotchas)
 
@@ -167,16 +169,18 @@ python3 scripts/validation/link-checker.py --scope website
 - **Large repos**: Initial clone may take time; use sparse checkout if needed
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
+- **Workflow tokens**: All GitHub Actions workflows use `secrets.GITHUB_TOKEN` (the built-in token); no custom PAT secrets (`GITHUB_PAT`, `PAT_TOKEN`) are needed or supported
+- **Workflow permissions**: Each workflow must include a minimal `permissions:` block; `prd-sync.yml` requires `issues: write` to open conflict-detection tickets
+- **Validator field checks**: The quest validator skips *required*-field checks for fields that have site-level defaults in `_config.yml`, preventing false positives on optional fields that are always populated by Jekyll
 
-### Recent Issues Detected
+### AI Alignment Review
 
-- 🔴 **FIX**: Bug fix suggests incomplete requirement: fix(ci): add issues: write permission to prd-sync workflow
-  - *Action*: Consider if original requirement needs clarification
-- 🔴 **FIX**: Bug fix suggests incomplete requirement: fix: replace GITHUB_PAT with GITHUB_TOKEN in workflows and update lastmod dates
-  - *Action*: Consider if original requirement needs clarification
-- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(validator): skip required field checks for fields with _config.yml defaults (#169)
-  - *Action*: Consider if original requirement needs clarification
-- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix: address code review - model priority, config docs, YAML guard
+> ⚠️ *AI analysis unavailable: AI disabled (provider='none')*
+
+
+### Detected Alignment Gaps
+
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(prd-machine): eliminate false-positive requirement conflicts
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
