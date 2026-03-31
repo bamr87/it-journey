@@ -12,7 +12,7 @@ source "https://rubygems.org"
 gem 'github-pages'
 
 # Jekyll Theme - Using remote theme for production, gem for local dev
-gem 'jekyll-theme-zer0', '~> 0.21'
+gem 'jekyll-theme-zer0'
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
