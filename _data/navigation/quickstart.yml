@@ -1,21 +1,52 @@
-- title: Quick-Start
+- title: Getting Started
   url: /quickstart/
   icon: bi-rocket-takeoff
   children:
-    - title: Index
+    - title: Overview
       url: /quickstart/
     - title: Machine Setup
-      url: /quickstart/machine-setup
+      url: /quickstart/machine-setup/
     - title: GitHub Setup
-      url: /quickstart/github
+      url: /quickstart/github/
     - title: Jekyll Setup
-      url: /quickstart/jekyll
+      url: /quickstart/jekyll/
     - title: Charm Tools
       url: /quickstart/charm-setup/
+
+- title: Development Environment
+  icon: bi-tools
+  children:
+    - title: Site Configuration
+      url: /quickstart/site-configuration/
+    - title: VS Code & CMS
+      url: /quickstart/vscode-setup/
+    - title: Theme Architecture
+      url: /quickstart/theme-architecture/
+
+- title: Building Your Site
+  icon: bi-building
+  children:
+    - title: Content Creation
+      url: /quickstart/content-creation/
+    - title: Styling & Navigation
+      url: /quickstart/styling-navigation/
+
+- title: Operations
+  icon: bi-gear
+  children:
+    - title: Local Development
+      url: /quickstart/local-development/
+    - title: Deployment
+      url: /quickstart/deployment/
+    - title: CI/CD & Automation
+      url: /quickstart/cicd-automation/
+    - title: Optimization & Maintenance
+      url: /quickstart/optimization-maintenance/
+
 - title: Related Guides
   icon: bi-signpost-2
   children:
     - title: VS Code for Neuroscience
-      url: /quickstart/vscode-for-neuroscience
+      url: /quickstart/vscode-for-neuroscience/
     - title: Django and Git
-      url: /quickstart/setting-up-django-and-git
+      url: /quickstart/setting-up-django-and-git/

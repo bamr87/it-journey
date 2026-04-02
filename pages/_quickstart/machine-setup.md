@@ -44,12 +44,15 @@ prerequisites:
     - Administrator access to your computer
     - Internet connection for downloads
 relatedDocs:
-    - title: Jekyll Quickstart Guide
-      url: ./jekyll-quickstart.md
-    - title: Git Configuration Guide
-      url: ./git-setup.md
-    - title: VS Code Extensions for Jekyll
-      url: ./vscode-extensions.md
+    - title: GitHub & Repository Setup
+      url: /quickstart/github/
+    - title: Jekyll & Theme Installation
+      url: /quickstart/jekyll/
+    - title: VS Code & CMS Setup
+      url: /quickstart/vscode-setup/
+permalink: /quickstart/machine-setup/
+sidebar:
+  nav: quickstart
 date: 2021-12-05T18:52:20.000Z
 
 ---
