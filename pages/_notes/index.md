@@ -1,11 +1,11 @@
 ---
 author: bamr87
 categories:
-- notes
+  - notes
 date: 2021-11-07T17:20:34.000Z
 description: Working notes, code snippets, and quick references collected during development — PowerShell, Linux, macOS tips, and more.
 draft: false
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:24:28.798Z
 permalink: /notes/
 title: Notes Index
 sidebar:
