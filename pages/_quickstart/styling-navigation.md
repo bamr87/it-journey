@@ -234,7 +234,7 @@ comments: true
 In `_config.yml`:
 
 ```yaml
-giscus:
+gisgus:
   enabled: true
   data-repo: "bamr87/it-journey"
   data-repo-id: "your-repo-id"

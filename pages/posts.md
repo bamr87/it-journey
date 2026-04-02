@@ -348,4 +348,4 @@ Posts are designed to work together as an interconnected learning system:
 
 *This index is continuously updated as new content is added to the journey. Each post represents a step in the ongoing quest to master modern information technology.*
 
-**Last Updated**: December 14, 2025 | **Total Posts**: 70+ | **Active Categories**: 10+
+**Last Updated**: April 2, 2026 | **Total Posts**: 70+ | **Active Categories**: 10+
