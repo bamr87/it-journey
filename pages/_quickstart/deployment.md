@@ -1,12 +1,12 @@
 ---
-title: "Deployment"
+title: Deployment
 author: bamr87
-description: "Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or any static hosting provider — with custom domain configuration."
+description: Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or any static hosting provider — with custom domain configuration.
 permalink: /quickstart/deployment/
 categories:
   - quickstart
 slug: deployment
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:14:50.958Z
 draft: false
 date: 2026-04-01T00:00:00.000Z
 difficulty: 🟡 Medium

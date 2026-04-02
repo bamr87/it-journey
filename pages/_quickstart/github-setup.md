@@ -1,12 +1,12 @@
 ---
-title: "Repository & GitHub Setup"
+title: Repository & GitHub Setup
 author: bamr87
-description: "Create your Git repository, configure GitHub CLI, and set up the IT-Journey project structure for Jekyll development."
+description: Create your Git repository, configure GitHub CLI, and set up the IT-Journey project structure for Jekyll development.
 permalink: /quickstart/github/
 categories:
   - quickstart
 slug: github
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:14:50.885Z
 draft: false
 date: 2022-01-10T18:47:51.000Z
 difficulty: 🟢 Easy

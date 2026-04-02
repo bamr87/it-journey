@@ -1,12 +1,12 @@
 ---
-title: "Theme Architecture"
+title: Theme Architecture
 author: bamr87
-description: "Understand how the zer0-mistakes theme builds pages — layouts, includes, Liquid templating, data files, and the Jekyll build pipeline."
+description: Understand how the zer0-mistakes theme builds pages — layouts, includes, Liquid templating, data files, and the Jekyll build pipeline.
 permalink: /quickstart/theme-architecture/
 categories:
   - quickstart
 slug: theme-architecture
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:14:50.920Z
 draft: false
 date: 2026-04-01T00:00:00.000Z
 difficulty: 🟡 Medium

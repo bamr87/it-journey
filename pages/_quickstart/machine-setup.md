@@ -4,57 +4,56 @@ author: bamr87
 description: Step-by-step guide to setting up Jekyll development environment across Windows, macOS, and Linux with automation scripts.
 excerpt: Master the complete setup process for Jekyll development across all major operating systems with our comprehensive, platform-specific guide.
 keywords:
-    primary:
-        - machine setup
-        - jekyll development
-        - development environment
-        - cross-platform setup
-    secondary:
-        - ruby installation
-        - github setup
-        - visual studio code
-        - package managers
-        - homebrew
-        - winget
-        - apt
-lastmod: 2025-07-22T04:33:04.464Z
+  primary:
+    - machine setup
+    - jekyll development
+    - development environment
+    - cross-platform setup
+  secondary:
+    - ruby installation
+    - github setup
+    - visual studio code
+    - package managers
+    - homebrew
+    - winget
+    - apt
+lastmod: 2026-04-02T03:14:50.987Z
 draft: false
 slug: machine-setup
 comments: true
 fmContentType: default
 preview: /assets/images/building-machines.png
 tags:
-    - development
-    - Jekyll
-    - machine-setup
-    - Ruby
-    - Visual-Studio-Code
-    - cross-platform
-    - automation
+  - development
+  - Jekyll
+  - machine-setup
+  - Ruby
+  - Visual-Studio-Code
+  - cross-platform
+  - automation
 categories:
-    - Development
-    - Guides
-    - Jekyll
-    - Programming
-    - Web-Development
+  - Development
+  - Guides
+  - Jekyll
+  - Programming
+  - Web-Development
 difficulty: 🟡 Medium
 estimatedTime: 60-90 minutes
 prerequisites:
-    - Basic familiarity with command line/terminal
-    - Administrator access to your computer
-    - Internet connection for downloads
+  - Basic familiarity with command line/terminal
+  - Administrator access to your computer
+  - Internet connection for downloads
 relatedDocs:
-    - title: GitHub & Repository Setup
-      url: /quickstart/github/
-    - title: Jekyll & Theme Installation
-      url: /quickstart/jekyll/
-    - title: VS Code & CMS Setup
-      url: /quickstart/vscode-setup/
+  - title: GitHub & Repository Setup
+    url: /quickstart/github/
+  - title: Jekyll & Theme Installation
+    url: /quickstart/jekyll/
+  - title: VS Code & CMS Setup
+    url: /quickstart/vscode-setup/
 permalink: /quickstart/machine-setup/
 sidebar:
   nav: quickstart
 date: 2021-12-05T18:52:20.000Z
-
 ---
 
 ## 🎯 Mission Overview

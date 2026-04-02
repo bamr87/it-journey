@@ -1,12 +1,12 @@
 ---
-title: "CI/CD & Automation"
+title: CI/CD & Automation
 author: bamr87
-description: "Set up GitHub Actions workflows for automated building, testing, link checking, frontmatter validation, and deployment of your Jekyll site."
+description: Set up GitHub Actions workflows for automated building, testing, link checking, frontmatter validation, and deployment of your Jekyll site.
 permalink: /quickstart/cicd-automation/
 categories:
   - quickstart
 slug: cicd-automation
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:14:50.968Z
 draft: false
 date: 2026-04-01T00:00:00.000Z
 difficulty: 🟡 Medium

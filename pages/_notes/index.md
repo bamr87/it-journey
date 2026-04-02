@@ -3,14 +3,35 @@ author: bamr87
 categories:
 - notes
 date: 2021-11-07T17:20:34.000Z
-description: Notes Index
+description: Working notes, code snippets, and quick references collected during development — PowerShell, Linux, macOS tips, and more.
 draft: false
-lastmod: 2024-05-24 04:34:37.380000+00:00
+lastmod: 2026-04-01T00:00:00.000Z
 permalink: /notes/
-title: Notes (~) Index
+title: Notes Index
+sidebar:
+  nav: notes
+toc: true
+toc_sticky: true
 ---
 
-## Randmon Notes
+# Notes
+
+Working notes, code snippets, and quick references collected during IT-Journey development. These are informal — think scratch pad, not polished guide. For structured learning, see the [Quick Start Guide](/quickstart/) or [Docs Library](/docs/).
+
+---
+
+## Other IT-Journey Collections
+
+| Collection | What It Is |
+|------------|------------|
+| [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
+| [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
+| [📚 Docs Library](/docs/) | Reference documentation — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax |
+| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
+
+---
+
+## Random Notes
 
 [Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)
 

@@ -4,8 +4,8 @@ author: bamr87
 description: End-to-end guide to establishing a development environment, implementing the zer0-mistakes Jekyll theme, and building a CMS-powered site like it-journey.dev — from first install to full deployment.
 permalink: /quickstart/
 sidebar:
-   nav: quickstart
-lastmod: 2026-04-01T04:21:56.599Z
+  nav: quickstart
+lastmod: 2026-04-02T03:14:50.991Z
 date: 2021-12-05T18:52:20.000Z
 ---
 
@@ -313,6 +313,22 @@ The IT-Journey quest system uses binary level codes. Here's the full progression
 
 ## What's Next
 
-You now have the complete blueprint for building and running a Jekyll site with the zer0-mistakes theme. The best way forward is to pick one phase, work through it, and keep going. If you get stuck, check the linked guides, quests, and docs — they go deeper into every topic covered here.
+You now have the complete blueprint for building and running a Jekyll site with the zer0-mistakes theme. The best way forward is to pick one phase, work through it, and keep going.
 
-For questions or contributions, visit the [IT-Journey Discussions](https://github.com/bamr87/it-journey/discussions) or check the [Contributing Guide](/CONTRIBUTING/).
+### Continue Your Journey
+
+Now that you can build and deploy a Jekyll site, explore the rest of IT-Journey:
+
+| Collection | What It Is | Start Here |
+|------------|-----------|------------|
+| [🏰 Quest Map](/quests/home/) | Gamified learning adventures across 16 binary levels (0000–1111) — from terminal basics to system architecture. Track XP, unlock tiers, and follow character-class paths. | [Hello n00b](/quests/init_world/hello-noob/) | 
+| [📚 Docs Library](/docs/) | Reference documentation for the tools powering IT-Journey — terminal shortcuts, Bash reference, Jekyll configuration, Liquid templating, Mermaid diagrams, and MathJax. | [Terminal Shortcuts](/docs/terminal-shortcuts-cheat-sheet/) |
+| [📝 Notes](/notes/) | Working notes, code snippets, and quick references collected during development — PowerShell, Linux, macOS tips, and more. | [Notes Index](/notes/) |
+| [📰 Blog Posts](/posts/) | Tutorials, AI-assisted development chronicles, and technical write-ups organized across 10 categories — from web development to DevOps to data analytics. | [Posts Index](/posts/) |
+| [🏠 Site Home](/home/) | The main IT-Journey hub with links to every section of the platform. | [Home](/home/) |
+
+### Get Involved
+
+- **Questions or ideas?** Start a thread in [IT-Journey Discussions](https://github.com/bamr87/it-journey/discussions)
+- **Want to contribute?** Read the [Contributing Guide](/CONTRIBUTING/)
+- **Found a bug?** Open an [issue on GitHub](https://github.com/bamr87/it-journey/issues/new)

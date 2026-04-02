@@ -43,10 +43,18 @@
     - title: Optimization & Maintenance
       url: /quickstart/optimization-maintenance/
 
-- title: Related Guides
-  icon: bi-signpost-2
+- title: IT-Journey Collections
+  icon: bi-collection
   children:
-    - title: VS Code for Neuroscience
-      url: /quickstart/vscode-for-neuroscience/
-    - title: Django and Git
-      url: /quickstart/setting-up-django-and-git/
+    - title: 🏰 Quest Map
+      url: /quests/home/
+      description: 144 gamified quests across 16 binary levels — track XP, unlock tiers, follow class paths
+    - title: 📚 Docs Library
+      url: /docs/
+      description: Reference docs — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax
+    - title: 📝 Notes
+      url: /notes/
+      description: Working notes, code snippets, and quick references from development
+    - title: 📰 Blog Posts
+      url: /posts/
+      description: Tutorials, AI development chronicles, and write-ups across 10 categories

@@ -1,10 +1,10 @@
 ---
-title: Journey (~) Index
+title: Blog Posts
 author: Amr
-description: Comprehensive collection of educational blog posts covering web development, DevOps, system administration, AI & machine learning, and emerging technologies - documenting the learning journey from zero to hero
+description: Comprehensive collection of educational blog posts covering web development, DevOps, system administration, AI & machine learning, and emerging technologies — documenting the learning journey from zero to hero.
 excerpt: A complete index of posts documenting this journey, organized into categories, journal entries, and articles
 date: 2025-12-17T19:56:57.000Z
-lastmod: 2025-12-14T00:00:00.000Z
+lastmod: 2026-04-01T00:00:00.000Z
 version: 2.0.0
 draft: false
 sidebar:
@@ -27,7 +27,7 @@ permalink: /posts/
 
 # IT-Journey Blog Posts
 
-Welcome to the IT-Journey Posts Index - a comprehensive collection documenting the evolution from zero to hero in the world of information technology. This curated library contains practical tutorials, deep-dive technical articles, AI-assisted development chronicles, and professional insights organized into logical categories for progressive learning.
+Practical tutorials, deep-dive technical articles, AI-assisted development chronicles, and professional insights organized into 10 categories for progressive learning. Each post documents a real step in the journey from zero to hero.
 
 ---
 
@@ -332,6 +332,17 @@ Posts are designed to work together as an interconnected learning system:
 - **Success Stories**: Document how content helped solve real problems
 - **Resource Compilation**: Community-curated lists of helpful tools
 - **Mentorship**: Experienced practitioners helping newcomers
+
+---
+
+## Other IT-Journey Collections
+
+| Collection | What It Is |
+|------------|------------|
+| [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
+| [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
+| [📚 Docs Library](/docs/) | Reference documentation — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax |
+| [📝 Notes](/notes/) | Working notes, code snippets, and quick references collected during development |
 
 ---
 

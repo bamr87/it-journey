@@ -1,12 +1,12 @@
 ---
-title: "VS Code & CMS Setup"
+title: VS Code & CMS Setup
 author: bamr87
-description: "Set up Visual Studio Code with recommended extensions, Front Matter CMS, pre-configured tasks, and debug configurations for Jekyll development."
+description: Set up Visual Studio Code with recommended extensions, Front Matter CMS, pre-configured tasks, and debug configurations for Jekyll development.
 permalink: /quickstart/vscode-setup/
 categories:
   - quickstart
 slug: vscode-setup
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:14:50.912Z
 draft: false
 date: 2026-04-01T00:00:00.000Z
 difficulty: 🟢 Easy

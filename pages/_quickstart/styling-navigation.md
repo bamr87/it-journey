@@ -1,12 +1,12 @@
 ---
-title: "Styling & Navigation"
+title: Styling & Navigation
 author: bamr87
-description: "Customize your site's look with theme skins, colors, and CSS — then configure navigation menus, sidebars, search, and comments."
+description: Customize your site's look with theme skins, colors, and CSS — then configure navigation menus, sidebars, search, and comments.
 permalink: /quickstart/styling-navigation/
 categories:
   - quickstart
 slug: styling-navigation
-lastmod: 2026-04-01T00:00:00.000Z
+lastmod: 2026-04-02T03:14:50.937Z
 draft: false
 date: 2026-04-01T00:00:00.000Z
 difficulty: 🟡 Medium
