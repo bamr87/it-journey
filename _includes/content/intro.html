@@ -96,7 +96,7 @@
     </div>
 
     <!-- Copilot Agent Session Button -->
-    <a href="https://github.com/{{ site.repository }}/issues/new?assignees=copilot&title={{ agent_title | url_encode }}&body={{ agent_body | url_encode }}" class="btn btn-success" target="_blank" title="Create a Copilot agent session for this page">
+    <a href="https://github.com/{{ site.repository }}/issues/new?assignees=copilot&title={{ agent_title | url_encode }}&body={{ agent_body | url_encode }}" class="btn btn-success" target="_blank" rel="noopener noreferrer" title="Create a Copilot agent session for this page">
       <i class="bi bi-robot"></i>
       <span class="d-none d-sm-inline ms-1">Copilot Agent</span>
     </a>
