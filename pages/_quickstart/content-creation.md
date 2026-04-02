@@ -72,7 +72,7 @@ The date in the filename is used as the post's publication date. The slug become
 ```yaml
 ---
 title: "Deploying Jekyll to Azure Cloud"
-layout: articles
+layout: article
 description: "Step-by-step guide to deploying a Jekyll site on Azure Static Web Apps."
 date: 2026-03-31
 lastmod: 2026-03-31
@@ -151,14 +151,27 @@ pages/_quests/
 ---
 title: "Docker Container Fundamentals"
 layout: quest
-description: "Master Docker container images, volumes, and networking."
+fmContentType: quest
+description: "Master Docker container images, volumes, and networking. Learn to build, run, and orchestrate containers for modern application development."
+date: 2026-03-31
+lastmod: 2026-03-31
+author: bamr87
+permalink: /quests/0100/docker-container-fundamentals/
 level: "0100"              # Binary level code
-difficulty: "intermediate"  # beginner, intermediate, advanced, expert
-quest_type: "containers"
+difficulty: "🟡 Medium"    # 🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic
+quest_type: "main_quest"   # main_quest | side_quest | bonus_quest | epic_quest
+primary_technology: "docker"
+skill_focus: "devops"      # frontend | backend | devops | security | data-engineering
+learning_style: "hands-on" # hands-on | conceptual | project-based
+quest_series: "Container Mastery"
 estimated_time: "60-75 min"
-xp: 500
-achievements:
-  - "Container Commander"
+keywords:
+  primary:
+    - docker
+    - containers
+  secondary:
+    - docker-compose
+    - container-networking
 platforms:
   - macOS
   - Windows
@@ -224,7 +237,7 @@ Quickstart guides like this one use the `default` layout with a `quickstart` sid
 pages/_notebooks/
 ```
 
-Jupyter notebooks converted to Markdown, using the `journals` layout.
+Jupyter notebooks converted to Markdown. By default they use the `default` layout (via `_config.yml`), but individual notebooks can set `layout: journals` in their frontmatter to use the journals layout instead.
 
 ### Notes
 

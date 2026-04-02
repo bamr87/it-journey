@@ -9,7 +9,7 @@ lastmod: 2026-04-01T00:00:00.000Z
 permalink: /notes/
 title: Notes Index
 sidebar:
-  nav: notes
+  nav: docs
 toc: true
 toc_sticky: true
 ---

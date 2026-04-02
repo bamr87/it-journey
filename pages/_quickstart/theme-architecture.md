@@ -44,7 +44,7 @@ Every page follows this pipeline:
 ```
 Markdown file (content + frontmatter)
         ↓
-Layout template (_layouts/articles.html)
+Layout template (_layouts/article.html)
         ↓
 Includes (_includes/header.html, sidebar.html, etc.)
         ↓
@@ -63,7 +63,7 @@ Layouts are HTML templates that wrap your content. Set the layout in front matte
 
 ```yaml
 ---
-layout: articles
+layout: article
 title: "My Blog Post"
 ---
 ```
@@ -74,7 +74,7 @@ title: "My Blog Post"
 |--------|---------|---------|
 | `root` | Base HTML shell — `<head>`, `<body>`, scripts, stylesheets | Everything (parent of other layouts) |
 | `default` | Standard page with header, footer, and sidebar | General pages, docs, notes |
-| `articles` | Blog post layout with date, author, tags, reading time | Posts |
+| `article` | Blog post layout with date, author, tags, reading time | Posts |
 | `quest` | Quest layout with level badge, XP, achievements, prerequisites | Quests |
 | `quest-collection` | Groups quests by tier in a filterable grid | Quest index pages |
 | `journals` | Journal/notebook layout for dated entries | Notebooks |
@@ -85,7 +85,7 @@ title: "My Blog Post"
 Layouts chain together. For example:
 
 ```
-articles.html  →  default.html  →  root.html
+article.html   →  default.html  →  root.html
 (post content)    (header/footer)   (HTML skeleton)
 ```
 
@@ -176,7 +176,7 @@ Iterate over collections and arrays:
 {% endfor %}
 
 {% for quest in site.quests %}
-  {% if quest.difficulty == "beginner" %}
+  {% if quest.difficulty == "🟢 Easy" %}
     {% include quest-card.html quest=quest %}
   {% endif %}
 {% endfor %}{% endraw %}
@@ -189,7 +189,7 @@ Iterate over collections and arrays:
 | `date` | `{% raw %}{{ page.date \| date: "%B %d, %Y" }}{% endraw %}` | "March 31, 2026" |
 | `upcase` | `{% raw %}{{ "hello" \| upcase }}{% endraw %}` | "HELLO" |
 | `slugify` | `{% raw %}{{ "My Title" \| slugify }}{% endraw %}` | "my-title" |
-| `where` | `{% raw %}{{ site.quests \| where: "difficulty", "beginner" }}{% endraw %}` | Filtered array |
+| `where` | `{% raw %}{{ site.quests \| where: "difficulty", "🟢 Easy" }}{% endraw %}` | Filtered array |
 | `sort` | `{% raw %}{{ site.posts \| sort: "date" \| reverse }}{% endraw %}` | Sorted array |
 | `markdownify` | `{% raw %}{{ page.description \| markdownify }}{% endraw %}` | HTML from markdown |
 | `number_of_words` | `{% raw %}{{ page.content \| number_of_words }}{% endraw %}` | Word count |

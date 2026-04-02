@@ -179,7 +179,7 @@ defaults:
       path: pages/_posts
       type: posts
     values:
-      layout: articles
+      layout: article
       sidebar:
         nav: posts
 
@@ -259,7 +259,7 @@ paginate_path: "/pages/:num/"
 [Giscus](https://giscus.app/) uses GitHub Discussions as a comments backend. Enable it globally:
 
 ```yaml
-giscus:
+gisgus:
   enabled: true
   data-repo: "bamr87/it-journey"
   data-repo-id: "your-repo-id"

@@ -23,8 +23,8 @@ The `_quickstart/` collection contains the complete setup and configuration guid
 
 ## Supplementary Guides
 
-- `vscode-for-neuroscience.md` — VS Code for neuroscience workflows
-- `setting-up-django-and-git.md` — Django project with Git
+- `2025-07-22-vscode-for-neuroscience.md` — VS Code for neuroscience workflows
+- `2025-03-08-setting-up-django-and-git.md` — Django project with Git
 
 ## Navigation
 
@@ -39,4 +39,4 @@ The sidebar navigation for this collection is defined in `_data/navigation/quick
 
 ---
 
-**Last Updated:** 2025-07-11
+**Last Updated:** 2026-04-02
