@@ -2,11 +2,29 @@
 title: "Quick Start: Build a Jekyll Site from Scratch"
 author: bamr87
 description: End-to-end guide to establishing a development environment, implementing the zer0-mistakes Jekyll theme, and building a CMS-powered site like it-journey.dev — from first install to full deployment.
+excerpt: "Step-by-step guide to building a Jekyll site with the zer0-mistakes theme — from machine setup to deployment, CI/CD, and optimization."
 permalink: /quickstart/
+categories:
+  - quickstart
+tags:
+  - quickstart
+  - jekyll
+  - getting-started
+  - zer0-mistakes
+  - github-pages
 sidebar:
   nav: quickstart
 lastmod: 2026-04-02T03:24:28.768Z
 date: 2021-12-05T18:52:20.000Z
+draft: false
+keywords:
+  primary:
+    - quickstart guide
+    - jekyll setup
+  secondary:
+    - zer0-mistakes theme
+    - github pages
+    - front matter cms
 ---
 
 This guide walks you through everything you need to build, configure, and maintain a Jekyll site like [it-journey.dev](https://it-journey.dev) — from installing your first tool to deploying a fully themed, CMS-powered site with CI/CD automation. We're using the [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) theme, [VS Code](https://code.visualstudio.com/) as the editor, [Front Matter CMS](https://frontmatter.codes/) for content management, and [GitHub Pages](https://pages.github.com/) for free hosting.

@@ -1,7 +1,8 @@
 ---
-title: Optimization & Maintenance
+title: "Site Optimization & Ongoing Maintenance"
 author: bamr87
 description: Optimize your Jekyll site for SEO, performance, and accessibility — then maintain it with dependency updates, content reviews, and scaling patterns.
+excerpt: "Optimize your Jekyll site for SEO, performance, and accessibility, then maintain it with dependency updates, content reviews, and scaling tips."
 permalink: /quickstart/optimization-maintenance/
 categories:
   - quickstart

@@ -1,7 +1,8 @@
 ---
-title: Deployment
+title: "Deployment to GitHub Pages and Azure"
 author: bamr87
 description: Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or any static hosting provider — with custom domain configuration.
+excerpt: "Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or a custom hosting provider, with optional custom domain configuration."
 permalink: /quickstart/deployment/
 categories:
   - quickstart

@@ -4,10 +4,26 @@ categories:
   - notes
 date: 2021-11-07T17:20:34.000Z
 description: Working notes, code snippets, and quick references collected during development — PowerShell, Linux, macOS tips, and more.
+excerpt: "Working notes, code snippets, and quick references for PowerShell, Linux, macOS, and development tips collected during IT-Journey development."
 draft: false
 lastmod: 2026-04-02T03:24:28.798Z
 permalink: /notes/
 title: Notes Index
+tags:
+  - notes
+  - snippets
+  - reference
+  - powershell
+  - linux
+  - macos
+keywords:
+  primary:
+    - notes
+    - code snippets
+  secondary:
+    - powershell reference
+    - linux tips
+    - development notes
 sidebar:
   nav: docs
 toc: true

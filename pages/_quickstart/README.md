@@ -1,3 +1,29 @@
+---
+title: "Quickstart Collection Index"
+description: "Index of all quickstart guides for building and deploying a Jekyll site with the zer0-mistakes theme — from machine setup to CI/CD automation."
+date: 2026-04-02T00:00:00.000Z
+lastmod: 2026-04-02T00:00:00.000Z
+author: bamr87
+categories:
+  - quickstart
+tags:
+  - quickstart
+  - index
+  - readme
+  - jekyll
+  - zer0-mistakes
+excerpt: "Overview of every quickstart guide in this collection, covering machine setup, GitHub, Jekyll, content creation, deployment, and CI/CD."
+draft: false
+keywords:
+  primary:
+    - quickstart
+    - jekyll setup
+  secondary:
+    - zer0-mistakes
+    - github pages
+    - documentation index
+---
+
 # Quickstart Collection
 
 The `_quickstart/` collection contains the complete setup and configuration guides for building a Jekyll site with the zer0-mistakes theme, VS Code, Front Matter CMS, and GitHub Pages.

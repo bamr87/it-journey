@@ -1,7 +1,8 @@
 ---
-title: Theme Architecture
+title: "Theme Architecture & Liquid Templating"
 author: bamr87
 description: Understand how the zer0-mistakes theme builds pages — layouts, includes, Liquid templating, data files, and the Jekyll build pipeline.
+excerpt: "Explore the zer0-mistakes theme's layout hierarchy, includes, Liquid templating, and YAML data files — and how Jekyll assembles your pages."
 permalink: /quickstart/theme-architecture/
 categories:
   - quickstart

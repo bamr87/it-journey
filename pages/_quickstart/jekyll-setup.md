@@ -1,7 +1,8 @@
 ---
-title: Jekyll & Theme Installation
+title: "Jekyll & zer0-mistakes Theme Installation"
 author: bamr87
-description: Install Jekyll with the zer0-mistakes theme — via Gemfile or Docker — and verify your site builds correctly.
+description: Install Jekyll with the zer0-mistakes theme — via Gemfile or Docker — then verify your site builds and serves correctly.
+excerpt: "Install Jekyll with the zer0-mistakes theme via Gemfile or Docker, configure Bundler, and verify your local site builds and serves correctly."
 permalink: /quickstart/jekyll/
 categories:
   - quickstart

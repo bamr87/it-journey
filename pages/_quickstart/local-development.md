@@ -1,7 +1,8 @@
 ---
-title: Local Development
+title: "Local Development with Docker and Ruby"
 author: bamr87
 description: Run your Jekyll site locally with Docker, native Ruby, or VS Code tasks — with live reload, development config overrides, and debugging.
+excerpt: "Run your Jekyll site locally using Docker, native Ruby, or VS Code tasks — with live reload, config overrides, and debugging support."
 permalink: /quickstart/local-development/
 categories:
   - quickstart

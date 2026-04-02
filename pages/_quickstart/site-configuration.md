@@ -1,7 +1,8 @@
 ---
-title: Site Configuration
+title: "Configuring Your Site with _config.yml"
 author: bamr87
-description: Complete walkthrough of _config.yml — site identity, theme skins, collections, default frontmatter, plugins, comments, and analytics for the zer0-mistakes theme.
+description: Complete walkthrough of _config.yml — site identity, theme skins, collections, default frontmatter, plugins, comments, and analytics.
+excerpt: "Walkthrough of _config.yml covering site identity, theme skins, collections, frontmatter defaults, plugins, comments, and analytics configuration."
 permalink: /quickstart/site-configuration/
 categories:
   - quickstart

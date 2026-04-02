@@ -1,7 +1,8 @@
 ---
-title: Styling & Navigation
+title: "Styling, Navigation & Comment Systems"
 author: bamr87
 description: Customize your site's look with theme skins, colors, and CSS — then configure navigation menus, sidebars, search, and comments.
+excerpt: "Customize your site's look with theme skins, CSS, and colors — then configure navigation menus, sidebars, search, and comment systems."
 permalink: /quickstart/styling-navigation/
 categories:
   - quickstart

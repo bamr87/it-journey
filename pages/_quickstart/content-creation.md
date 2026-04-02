@@ -1,7 +1,8 @@
 ---
-title: Content Creation
+title: "Content Creation & Frontmatter Standards"
 author: bamr87
 description: Create blog posts, quests, documentation, and other content types with proper frontmatter, naming conventions, and file organization.
+excerpt: "Create blog posts, quests, and documentation with proper frontmatter, naming conventions, and file organization for Jekyll collections."
 permalink: /quickstart/content-creation/
 categories:
   - quickstart
