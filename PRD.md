@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-04-01T06:39:21.000Z
-lastmod: 2026-04-01T06:39:21.000Z
+date: 2026-04-03T03:22:55.000Z
+lastmod: 2026-04-03T03:22:55.000Z
 status: Living
-version: 2026-04-01
+version: 2026-04-03
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-04-01 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-04-03 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -43,11 +43,11 @@ As a **learner / contributor / educator**, I want:
 | Source | Count | Status |
 |--------|-------|--------|
 | Learning Quests | 6 | ✅ Published |
-| Educational Posts | 15 | ✅ Published |
-| Total Markdown Files | 45 | ✅ Indexed |
+| Educational Posts | 16 | ✅ Published |
+| Total Markdown Files | 46 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 26 | ✅ Analyzed |
-| Detected Issues | 4 | ⚠️ Review needed |
+| Recent Commits | 33 | ✅ Analyzed |
+| Detected Issues | 6 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -174,9 +174,11 @@ python3 scripts/validation/link-checker.py --scope website
   - *Action*: Consider if original requirement needs clarification
 - 🔴 **FIX**: Bug fix suggests incomplete requirement: fix: replace GITHUB_PAT with GITHUB_TOKEN in workflows and update lastmod dates
   - *Action*: Consider if original requirement needs clarification
-- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(validator): skip required field checks for fields with _config.yml defaults (#169)
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(posts): add draft:false and trim over-length description to address AI review scores
   - *Action*: Consider if original requirement needs clarification
-- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix: address code review - model priority, config docs, YAML guard
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(docs): correct layout names, difficulty values, gisgus key, sidebar nav, and stale dates in quickstart guides
+  - *Action*: Consider if original requirement needs clarification
+- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(validator): skip required field checks for fields with _config.yml defaults (#169)
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
