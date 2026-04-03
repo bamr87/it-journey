@@ -10,12 +10,20 @@
       url: /quickstart/jekyll
     - title: Charm Tools
       url: /quickstart/charm-setup/
-- title: Journey
-  url: /posts/
-  icon: bi-journal-text
+- title: News
+  url: /news/
+  icon: bi-newspaper
   children:
-    - title: Posts Index
-      url: /posts/
+    - title: All News
+      url: /news/
+    - title: AI & ML
+      url: /news/ai-machine-learning/
+    - title: DevOps
+      url: /news/devops/
+    - title: Web Development
+      url: /news/web-development/
+    - title: Technology
+      url: /news/technology/
     - title: Quests
       url: /quests/home/
     - title: Stats
