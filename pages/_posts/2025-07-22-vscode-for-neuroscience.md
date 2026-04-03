@@ -20,6 +20,7 @@ sub-title: A researcher's guide to productive neuroscience coding
 excerpt: Learn how to configure VS Code as the ultimate development environment for neuroscience research, with support for PsychoPy experiments, computational models, and data analysis
 snippet: Transform VS Code into a powerful neuroscience research platform
 author: IT-Journey Team
+draft: false
 keywords:
     primary:
         - visual studio code

@@ -1,11 +1,38 @@
 ---
-title: "Setting Up Charm & Building a Terminal Interface"
-description: "Quickstart guide for installing Charm tools (Gum, Glow) and building a custom terminal dashboard for the IT-Journey repository."
+title: Setting Up Charm & Building a Terminal Interface
+description: Quickstart guide for installing Charm tools (Gum, Glow) and building a custom terminal dashboard for the IT-Journey repository.
+excerpt: "Install and configure Charm terminal tools (Gum and Glow) to build a custom interactive dashboard for the IT-Journey repository."
+author: bamr87
 permalink: /quickstart/charm-setup/
-tags: [charm, gum, glow, terminal, cli, quickstart]
-lastmod: 2025-11-19
+tags:
+  - charm
+  - gum
+  - glow
+  - terminal
+  - cli
+  - quickstart
+categories:
+  - quickstart
+draft: false
+lastmod: 2026-04-02T03:14:50.894Z
 date: 2025-11-20T18:53:39.000Z
-
+difficulty: 🟡 Medium
+estimatedTime: 20-30 minutes
+prerequisites:
+  - A terminal emulator (Terminal.app, iTerm2, Windows Terminal, etc.)
+  - Homebrew (macOS), Scoop/Winget (Windows), or APT (Linux)
+  - IT-Journey repository cloned locally (see [GitHub Setup](/quickstart/github/))
+keywords:
+  primary:
+    - charm tools
+    - terminal interface
+    - gum cli
+  secondary:
+    - glow markdown
+    - terminal dashboard
+    - interactive cli
+sidebar:
+  nav: quickstart
 ---
 
 # Setting Up Charm & Building a Terminal Interface

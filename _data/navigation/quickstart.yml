@@ -1,21 +1,60 @@
-- title: Quick-Start
+- title: Getting Started
   url: /quickstart/
   icon: bi-rocket-takeoff
   children:
-    - title: Index
+    - title: Overview
       url: /quickstart/
     - title: Machine Setup
-      url: /quickstart/machine-setup
+      url: /quickstart/machine-setup/
     - title: GitHub Setup
-      url: /quickstart/github
+      url: /quickstart/github/
     - title: Jekyll Setup
-      url: /quickstart/jekyll
+      url: /quickstart/jekyll/
     - title: Charm Tools
       url: /quickstart/charm-setup/
-- title: Related Guides
-  icon: bi-signpost-2
+
+- title: Development Environment
+  icon: bi-tools
   children:
-    - title: VS Code for Neuroscience
-      url: /quickstart/vscode-for-neuroscience
-    - title: Django and Git
-      url: /quickstart/setting-up-django-and-git
+    - title: Site Configuration
+      url: /quickstart/site-configuration/
+    - title: VS Code & CMS
+      url: /quickstart/vscode-setup/
+    - title: Theme Architecture
+      url: /quickstart/theme-architecture/
+
+- title: Building Your Site
+  icon: bi-building
+  children:
+    - title: Content Creation
+      url: /quickstart/content-creation/
+    - title: Styling & Navigation
+      url: /quickstart/styling-navigation/
+
+- title: Operations
+  icon: bi-gear
+  children:
+    - title: Local Development
+      url: /quickstart/local-development/
+    - title: Deployment
+      url: /quickstart/deployment/
+    - title: CI/CD & Automation
+      url: /quickstart/cicd-automation/
+    - title: Optimization & Maintenance
+      url: /quickstart/optimization-maintenance/
+
+- title: IT-Journey Collections
+  icon: bi-collection
+  children:
+    - title: 🏰 Quest Map
+      url: /quests/home/
+      description: 144 gamified quests across 16 binary levels — track XP, unlock tiers, follow class paths
+    - title: 📚 Docs Library
+      url: /docs/
+      description: Reference docs — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax
+    - title: 📝 Notes
+      url: /notes/
+      description: Working notes, code snippets, and quick references from development
+    - title: 📰 Blog Posts
+      url: /posts/
+      description: Tutorials, AI development chronicles, and write-ups across 10 categories

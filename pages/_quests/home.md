@@ -19,10 +19,22 @@ mermaid: true
 toc: true
 toc_sticky: true
 date: 2021-11-30T14:41:59.000Z
-lastmod: 2026-01-15T20:39:18.803Z
+lastmod: 2026-04-02T03:24:28.781Z
 draft: false
+excerpt: "Your central command hub for tracking progress through the IT mastery quest system — navigate learning paths, monitor achievements, and plan next adventures."
+keywords:
+  primary:
+    - quest map
+    - it journey progress
+  secondary:
+    - overworld
+    - quest navigation
+    - learning tracker
 ---
-*Behold, brave adventurer! This is your personal overworld map—the mystical realm where all paths converge and all journeys begin. Here you can track your progress, plan your next adventures, and survey the vast landscape of IT mastery that awaits.*
+
+This is your central hub for the IT-Journey quest system — a gamified learning framework with 144 quests organized across 16 binary levels (0000–1111). Pick a starting realm, choose a character class, and work through progressively harder challenges to build real IT skills.
+
+> *Behold, brave adventurer! This is your personal overworld map — the mystical realm where all paths converge and all journeys begin. Track your progress, plan your next adventures, and survey the vast landscape of IT mastery that awaits.*
 
 ## Quest System Overview
 
@@ -64,11 +76,11 @@ graph TB
 
 | 🌍 Realm | 🎯 Difficulty | 📍 Starting Point | 📊 Progress |
 |-----------|---------------|-------------------|-------------|
-| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](0000/hello-mac/hello-mac.md) | [ ] |
-| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](0000/hello-win/hello-win.md) | [ ] |
-| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](0000/hello-linux/linux-fundamentals.md) | [ ] |
-| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](0000/hello-cloud/hello-cloud.md) | [ ] |
-| 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](0000/hello-noob.md) | [ ] |
+| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](/quests/hello-macos/) | [ ] |
+| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](/quests/hello-windows/) | [ ] |
+| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](/quests/hello-linux/linux-fundamentals/) | [ ] |
+| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](/quests/hello-cloud/) | [ ] |
+| 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](/quests/init_world/hello-noob/) | [ ] |
 
 ### Character Class Selection
 
@@ -1004,6 +1016,19 @@ Follow the [contribution guidelines](README.md#contributing-to-the-quest-realm) 
 2. Create new quest content
 3. Improve existing adventures
 4. Help fellow adventurers
+
+---
+
+## Explore Other IT-Journey Collections
+
+The quest system is one part of the IT-Journey platform. These collections complement your learning:
+
+| Collection | What It Is |
+|------------|------------|
+| [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
+| [📚 Docs Library](/docs/) | Reference documentation — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax |
+| [📝 Notes](/notes/) | Working notes, code snippets, and quick references collected during development |
+| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
 
 ---
 

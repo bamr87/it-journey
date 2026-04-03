@@ -3,30 +3,45 @@ title: Learning Resources Library
 author: Amr Abdel Eissa
 permalink: /docs/
 description: Reference documentation and learning resources for tools and technologies used in IT-Journey
+excerpt: "Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey."
 categories:
   - docs
   - home
+tags:
+  - docs
+  - reference
+  - learning-resources
+  - jekyll
+  - terminal
 sidebar:
   nav: docs
 toc_sticky: true
 date: 2021-12-03T09:05:06.000Z
-lastmod: 2026-02-21T00:00:00.000Z
+lastmod: 2026-04-02T03:24:28.792Z
 draft: false
+keywords:
+  primary:
+    - learning resources
+    - documentation
+  secondary:
+    - terminal reference
+    - jekyll docs
+    - bash guide
 ---
 
 # Learning Resources Library
 
-Welcome to the IT-Journey Learning Resources Library - your reference documentation for the tools and technologies that power the IT-Journey platform.
+Reference documentation and educational resources for the tools and technologies powering IT-Journey. Browse by topic below, or use the sidebar to navigate directly to a specific technology.
 
 ## About This Library
 
-**Purpose:** This library contains educational content and reference documentation for external tools, frameworks, and technologies used in IT-Journey. It serves as a learning resource for IT-Journey users and contributors.
+**Purpose:** Educational content and reference documentation for external tools, frameworks, and technologies used in IT-Journey.
 
 **Audience:** Learners, students, and anyone exploring the technologies used in building and maintaining the IT-Journey platform.
 
 ## Developer Documentation
 
-> **Note for Contributors:** If you're looking for technical documentation about the IT-Journey repository structure, contribution workflows, or development setup, please see the **[Developer Documentation](/docs/)** in the repository root (`/docs/` directory).
+> **Note for Contributors:** If you're looking for technical documentation about the IT-Journey repository structure, contribution workflows, or development setup, see the **Developer Documentation** in the repository root (`/docs/` directory on GitHub).
 
 ### Quick Links for Developers
 - [Repository Structure](../../docs/architecture/REPOSITORY_STRUCTURE.md)
@@ -208,11 +223,14 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 
 ## Additional Resources
 
-### IT-Journey Resources
-- [Main README](../../README.md) - Project overview
-- [Quests](../../pages/_quests/) - Gamified learning experiences
-- [Blog Posts](../../pages/_posts/) - Technical articles and tutorials
-- [About IT-Journey](../../pages/_about/) - Project information
+### Other IT-Journey Collections
+
+| Collection | What It Is |
+|------------|------------|
+| [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
+| [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
+| [📝 Notes](/notes/) | Working notes, code snippets, and quick references from development |
+| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
 
 ### External Resources
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
