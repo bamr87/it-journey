@@ -1,0 +1,110 @@
+<!--
+  file: _includes/content/intro.html
+  description: Enhanced intro section with share, edit, and Copilot agent session buttons
+  path: _includes/content/intro.html
+  features:
+    - Responsive share dropdown with multiple social platforms
+    - Edit on GitHub quick link
+    - Copilot agent session quick link
+    - Properly aligned action buttons at bottom right
+    - Improved accessibility with icons and labels
+    - Clean button grouping with consistent spacing
+-->
+{% if page.collection %}
+  {% capture page_dir %}{{ site.collections_dir }}{% endcapture %}
+  {% assign testvar = "collection exists" %}
+{% endif %}
+
+<!-- Intro Section -->
+
+{% comment %}
+  Determine the preview image path. Preview paths can omit the /assets/ prefix.
+  The component will auto-prepend the assets_prefix from _config.yml.
+{% endcomment %}
+{% assign preview_image = page.preview | default: site.info_banner %}
+{% assign assets_prefix = site.preview_images.assets_prefix | default: '/assets' %}
+{% assign auto_prefix = site.preview_images.auto_prefix | default: true %}
+
+{% if preview_image contains '://' %}
+  {% assign preview_path = preview_image %}
+{% elsif auto_prefix and preview_image != blank %}
+  {% if preview_image contains assets_prefix %}
+    {% assign preview_path = preview_image | relative_url %}
+  {% else %}
+    {% assign preview_path = assets_prefix | append: preview_image | relative_url %}
+  {% endif %}
+{% else %}
+  {% assign preview_path = preview_image | relative_url %}
+{% endif %}
+
+{% comment %}
+  Build the file path and branch for action buttons.
+{% endcomment %}
+{% assign repo_branch = site.branch | default: "main" %}
+{% assign file_path = page_dir | append: "/" | append: page.path %}
+
+{% comment %}
+  Build the Copilot agent session URL.
+  Creates a new GitHub issue assigned to @copilot with context about the page.
+{% endcomment %}
+{% capture agent_title %}Update: {{ page.title }}{% endcapture %}
+{% capture agent_body %}Update this page.
+
+**File:** `{{ file_path }}`
+**URL:** {{ site.url | append: page.url }}{% endcapture %}
+
+<div class="bd-intro pt-5 ps-lg-2 position-relative" style="
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ preview_path | relative_url }}') no-repeat center center / cover;
+  color: #fff;">
+
+  <br>
+  <h1>{{ page.title }}</h1>
+  <p>By {{ page.author | default: site.author.name }}</p>
+  <p>{{ page.description }}</p>
+  <p>Estimated reading time: {{ content | number_of_words | divided_by:200 }} minutes</p>
+  <!-- Action Buttons Group -->
+  <div class="position-absolute bottom-0 end-0 m-3 d-flex gap-2">
+    <!-- Share Button -->
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button" id="shareDropdownBottom" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-share"></i>
+        <span class="d-none d-sm-inline ms-1">Share</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="shareDropdownBottom">
+        <li>
+          <a class="dropdown-item" href="https://reddit.com/submit?url={{ site.url | append: page.url | url_encode }}&amp;title={{ page.title | url_encode }}" target="_blank">
+            <i class="bi bi-reddit me-2"></i>Share on Reddit
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url | append: page.url | url_encode }}" target="_blank">
+            <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://twitter.com/intent/tweet?url={{ site.url | append: page.url | url_encode }}&text={{ page.title | url_encode }}" target="_blank">
+            <i class="bi bi-twitter me-2"></i>Share on Twitter
+          </a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <button class="dropdown-item" onclick='navigator.clipboard.writeText("{{ site.url | append: page.url }}"); alert("Link copied to clipboard!");'>
+            <i class="bi bi-clipboard me-2"></i>Copy Link
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Copilot Agent Session Button -->
+    <a href="https://github.com/{{ site.repository }}/issues/new?assignees=copilot&title={{ agent_title | url_encode }}&body={{ agent_body | url_encode }}" class="btn btn-success" target="_blank" rel="noopener noreferrer" title="Create a Copilot agent session for this page">
+      <i class="bi bi-robot"></i>
+      <span class="d-none d-sm-inline ms-1">Copilot Agent</span>
+    </a>
+
+    <!-- Edit on Github Button -->
+    <a href="https://github.com/{{ site.repository }}/blob/{{ repo_branch }}/{{ file_path }}" class="btn btn-dark">
+      <i class="bi bi-github"></i>
+      <span class="d-none d-sm-inline ms-1">Edit on GitHub</span>
+    </a>
+  </div>
+</div>
