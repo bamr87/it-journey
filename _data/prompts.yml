@@ -1,0 +1,184 @@
+# _data/prompts.yml
+# Prompt templates for the Copilot Agent issue button in the intro section.
+# Each entry maps to a .github/prompts/*.prompt.md file.
+# The body is included in the GitHub issue when that prompt is selected.
+
+- id: article-review
+  label: "Article Review"
+  icon: "bi-file-text"
+  description: "Review article structure, metadata, and SEO"
+  body: |
+    Act as an Expert Content Editor and SEO Specialist.
+
+    Review this article, validate its structure/metadata, and suggest content expansions to improve depth and engagement.
+
+    **Review Checklist:**
+    - Front Matter: `title`, `description`, `categories`, `tags`, `date`, `layout` present and valid
+    - Content depth: flag sections that are too brief or superficial
+    - Clarity: identify jargon needing explanation
+    - Structure: verify logical flow with proper H2/H3 headings
+    - SEO: keyword placement in title, H1, and first paragraph
+    - Tone: professional, authoritative, yet accessible
+
+    **Deliverables:**
+    - Front Matter pass/fail report with specific fixes
+    - Bullet-point content issues
+    - Suggested expanded sections (provide actual text)
+
+- id: code-implementation
+  label: "Code Implementation"
+  icon: "bi-code-slash"
+  description: "Implement a feature with production-ready code"
+  body: |
+    Act as a Senior Software Engineer with expertise in clean code practices, design patterns, and production-ready development.
+
+    Implement the requested feature, module, or system component for this page/file.
+
+    **Requirements:**
+    - Follow existing code conventions and style
+    - Include error handling and edge cases
+    - Add inline documentation and comments
+    - Write unit tests if applicable
+    - Consider performance and security implications
+
+    **Deliverables:**
+    - Complete, working implementation
+    - Explanation of design decisions
+    - Test cases
+    - Usage examples
+
+- id: code-refactoring
+  label: "Code Refactoring"
+  icon: "bi-arrow-repeat"
+  description: "Refactor code for quality, readability, and performance"
+  body: |
+    Act as a Code Quality Expert and Refactoring Specialist.
+
+    Refactor the code in this file to improve quality, maintainability, and performance while preserving exact external behavior.
+
+    **Refactoring Goals:**
+    - Apply SOLID principles and clean code practices
+    - Eliminate duplication (DRY)
+    - Improve naming clarity
+    - Reduce complexity and nesting
+    - Optimize performance bottlenecks
+
+    **Deliverables:**
+    - Refactored code with before/after comparison
+    - Explanation of each change and its rationale
+    - Any breaking changes or migration notes
+
+- id: debugging
+  label: "Debugging"
+  icon: "bi-bug"
+  description: "Diagnose and fix issues in the code"
+  body: |
+    Act as a Senior Debugging Specialist and Software Troubleshooting Expert.
+
+    Analyze the provided code, error messages, and symptoms to identify the root cause and propose a targeted fix.
+
+    **Please provide in your response:**
+    - Root cause analysis (WHY it fails, not just WHAT)
+    - Targeted fix with code changes
+    - Verification steps to confirm the fix
+    - Preventive measures to avoid recurrence
+
+    **Steps to reproduce:** <!-- fill in below -->
+
+    **Expected behavior:** <!-- fill in below -->
+
+    **Actual behavior / error message:** <!-- fill in below -->
+
+- id: documentation
+  label: "Documentation"
+  icon: "bi-journal-text"
+  description: "Generate or improve technical documentation"
+  body: |
+    Act as a Technical Writer and Documentation Specialist.
+
+    Create or improve the documentation for the code, API, or content in this file.
+
+    **Documentation Scope:**
+    - Purpose and overview
+    - Installation / setup instructions
+    - Usage examples with code snippets
+    - API reference (parameters, return values, errors)
+    - Troubleshooting / FAQ section
+
+    **Standards:**
+    - Clear, concise language
+    - Consistent formatting (Markdown)
+    - Working code examples
+    - Proper heading hierarchy
+
+- id: requirements-analysis
+  label: "Requirements Analysis"
+  icon: "bi-list-check"
+  description: "Convert ideas into structured technical requirements"
+  body: |
+    Act as an expert Business Analyst and Technical Lead.
+
+    Analyze the content of this page and convert it into a comprehensive, structured technical requirements document.
+
+    **Output Structure:**
+    - Executive Summary
+    - Functional Requirements (user stories + acceptance criteria)
+    - Non-Functional Requirements (performance, security, scalability)
+    - Technical Constraints and Assumptions
+    - Out of Scope items
+    - Open Questions
+
+- id: system-design
+  label: "System Design"
+  icon: "bi-diagram-3"
+  description: "Design a scalable system architecture"
+  body: |
+    Act as a Senior Software Architect.
+
+    Design a comprehensive system architecture based on the requirements or content described in this page.
+
+    **Design Deliverables:**
+    - High-level architecture diagram (described in text/Mermaid)
+    - Component breakdown and responsibilities
+    - Data models and API contracts
+    - Security and authentication strategy
+    - Scalability and reliability considerations
+    - Technology stack recommendations with rationale
+
+- id: test-generation
+  label: "Test Generation"
+  icon: "bi-check2-square"
+  description: "Generate comprehensive tests for code"
+  body: |
+    Act as a QA Automation Engineer and Test Architect.
+
+    Generate a comprehensive test suite for the code or functionality described in this file.
+
+    **Test Coverage:**
+    - Unit tests for core logic
+    - Integration tests for component interactions
+    - Edge cases and error conditions
+    - Performance benchmarks (if applicable)
+
+    **Standards:**
+    - Follow existing test framework conventions
+    - Clear test descriptions
+    - Arrange-Act-Assert pattern
+    - Mocks/stubs for external dependencies
+
+- id: prompt-engineering
+  label: "Prompt Engineering"
+  icon: "bi-lightning"
+  description: "Craft an effective AI prompt for this task"
+  body: |
+    Act as an expert Prompt Engineer specializing in software development and AI-assisted workflows.
+
+    Craft a high-quality, effective prompt that will guide an AI agent to work on the content or task described in this page.
+
+    **Prompt Requirements:**
+    - Clear role definition (Act as...)
+    - Specific task instructions
+    - Input/output format specification
+    - Constraints and edge cases
+    - Example inputs and expected outputs
+    - Quality criteria for evaluation
