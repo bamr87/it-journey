@@ -11,12 +11,12 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages'
 
-# Jekyll Theme - Using remote theme instead
+# Jekyll Theme - Using remote theme for production, gem for local dev
 gem 'jekyll-theme-zer0'
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
-  
+  gem 'jekyll-include-cache'
   # these are all part of the github-pages gem - updated versions
   # gem 'jekyll-remote-theme', "~> 0.4.3"
   # gem 'jekyll-feed', "~> 0.17"
