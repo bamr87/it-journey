@@ -1,39 +1,69 @@
-- title: Home
-  icon: bi-house
-  url: /posts/
+# News Section Navigation Configuration
+# Used by: News layout, section pages, and article navigation
+# Purpose: Section-based navigation for news content
+# Note: Sections match folders in pages/_posts/
+
 - title: AI & Machine Learning
   icon: bi-robot
-  url: /posts/ai/
+  url: /news/ai-machine-learning/
+  description: "AI-assisted development, ML applications, and intelligent automation"
+
 - title: Web Development
   icon: bi-browser-chrome
-  url: /posts/web/
+  url: /news/web-development/
+  description: "Jekyll, frameworks, static sites, and full-stack web development"
+
 - title: DevOps
   icon: bi-gear-wide-connected
-  url: /posts/devops/
+  url: /news/devops/
+  description: "CI/CD, containers, infrastructure as code, and automation"
+
 - title: Programming
   icon: bi-code-slash
-  url: /posts/programming/
+  url: /news/programming/
+  description: "Bash, Python, JavaScript, and scripting tutorials"
+
 - title: System Administration
   icon: bi-server
-  url: /posts/sysadmin/
+  url: /news/system-administration/
+  description: "Linux, macOS, Windows, and server management"
+
 - title: Data & Analytics
   icon: bi-bar-chart-line
-  url: /posts/data/
+  url: /news/data-analytics/
+  description: "Databases, APIs, data processing, and analytics tools"
+
+- title: Technology
+  icon: bi-cpu
+  url: /news/technology/
+  description: "Tech news, tools, hardware, and software reviews"
+
 - title: Tools & Environment
   icon: bi-tools
-  url: /posts/tools/
+  url: /news/tools-environment/
+  description: "VS Code, terminal setup, productivity, and dotfiles"
+
 - title: Creative & Experimental
   icon: bi-palette
-  url: /posts/creative/
+  url: /news/creative-experimental/
+  description: "AI-generated content, experiments, and exploratory projects"
+
 - title: Culture & Society
   icon: bi-globe
-  url: /posts/culture/
+  url: /news/culture-society/
+  description: "Identity, social analysis, and cultural commentary"
+
 - title: Trends & Ideas
   icon: bi-graph-up-arrow
-  url: /posts/trends/
+  url: /news/trends-ideas/
+  description: "Emerging technologies, innovation, and forward-looking IT perspectives"
+
 - title: Learning
   icon: bi-mortarboard
-  url: /posts/learning/
+  url: /news/learning/
+  description: "Learning paths, educational resources, and skill-building"
+
 - title: Business
   icon: bi-briefcase
-  url: /posts/business/
+  url: /news/business/
+  description: "Business strategies, startups, and professional development"
