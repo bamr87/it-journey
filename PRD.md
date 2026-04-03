@@ -1,8 +1,8 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-04-03T03:22:55.000Z
-lastmod: 2026-04-03T03:22:55.000Z
+date: 2026-04-03T03:35:27.000Z
+lastmod: 2026-04-03T03:35:27.000Z
 status: Living
 version: 2026-04-03
 auto_generated: true
@@ -43,10 +43,10 @@ As a **learner / contributor / educator**, I want:
 | Source | Count | Status |
 |--------|-------|--------|
 | Learning Quests | 6 | ✅ Published |
-| Educational Posts | 16 | ✅ Published |
-| Total Markdown Files | 46 | ✅ Indexed |
+| Educational Posts | 17 | ✅ Published |
+| Total Markdown Files | 47 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 33 | ✅ Analyzed |
+| Recent Commits | 35 | ✅ Analyzed |
 | Detected Issues | 6 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
