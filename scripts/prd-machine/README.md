@@ -1,12 +1,17 @@
-# PRD MACHINE
+# PRD MACHINE v2
 
-*The Self-Writing, Self-Evolving Product Reality Distillery*
+*PR-Driven Product Reality Distillery*
 
 ## Overview
 
-PRD MACHINE is an autonomous agent that writes, maintains, and evolves perfect PRDs (Product Requirements Documents) faster and more accurately than any human PM.
+PRD Machine maintains a living PRD.md by updating only **marker-delimited dynamic sections** while preserving all human-authored content. It runs on PR merges (not a cron), does a quick check first to avoid unnecessary work, and optionally uses the GitHub Models API for semantic analysis.
 
-**Key Feature Indicator (KFI):** 100% of shipped features trace directly to a machine-maintained PRD that was never out of date by more than 6 hours.
+**Key changes in v2:**
+- **Hybrid content model** — human sections are never overwritten
+- **PR-merge trigger** — replaces 6-hour cron schedule
+- **Quick check** — determines if updates are needed before running sync
+- **AI analysis** — optional GitHub Models API integration
+- **PR-based updates** — opens a PR instead of committing directly to main
 
 ## Quick Start
 
@@ -14,10 +19,16 @@ PRD MACHINE is an autonomous agent that writes, maintains, and evolves perfect P
 # Navigate to the repository root
 cd /path/to/it-journey
 
-# Generate or update PRD.md
+# Initialize a new PRD.md with markers (first time only)
+./scripts/prd-machine/prd-machine init
+
+# Quick check: does PRD need updating?
+./scripts/prd-machine/prd-machine check
+
+# Update dynamic sections
 ./scripts/prd-machine/prd-machine sync
 
-# Check PRD health status
+# Check PRD health
 ./scripts/prd-machine/prd-machine status
 
 # Show detected conflicts
@@ -26,70 +37,123 @@ cd /path/to/it-journey
 
 ## Installation
 
-The PRD Machine is a Python-based CLI tool. No external dependencies are required beyond Python 3.8+.
-
-### Make it Available System-wide (Optional)
-
-```bash
-# Add to PATH
-export PATH="${PATH}:/path/to/it-journey/scripts/prd-machine"
-
-# Or create a symlink
-ln -sf /path/to/it-journey/scripts/prd-machine/prd-machine /usr/local/bin/prd-machine
-```
+Python 3.8+ with no external dependencies. PyYAML is optional (for `features/features.yml` parsing).
 
 ## Commands
 
-### `sync`
+### `init`
 
-Generate or update the PRD.md file by ingesting signals from the repository.
+Create a new PRD.md with marker scaffolding and static section templates.
 
 ```bash
-prd-machine sync                    # Generate PRD with default settings
-prd-machine sync --days 7           # Use only last 7 days of commits
-prd-machine sync --output my-prd.md # Custom output path
+prd-machine init                     # Create PRD.md in repo root
+prd-machine init -o docs/PRD.md      # Custom output path
 ```
 
-**What it does:**
-1. Ingests git commits from the repository
-2. Scans markdown files for feature and documentation signals
-3. Parses feature definitions from `features/features.yml`
-4. Detects conflicts and potential issues
-5. Generates a complete PRD.md with all sections
+### `sync`
+
+Update only the marker-delimited dynamic sections in an existing PRD.md.
+
+```bash
+prd-machine sync                     # Update dynamic sections
+prd-machine sync --days 7            # Analyze last 7 days of commits
+prd-machine sync -o my-prd.md        # Custom output path
+```
+
+**What it updates (marker-delimited):**
+- `metadata` — frontmatter timestamps and version
+- `status_line` — version badge
+- `mvp_status` — content counts (quests, posts, features, commits)
+- `edge_issues` — recently detected requirement issues
+
+**What it preserves (human-authored):**
+- WHY, UX, API, NFR, OOS, ROAD, RISK, DONE sections
+
+### `check`
+
+Determine if the PRD needs updating based on changed files. Returns JSON and uses exit codes for CI integration.
+
+```bash
+prd-machine check                    # Check since last PRD modification
+prd-machine check --pr-json ev.json  # Analyze a specific PR event
+prd-machine check --ai               # Enable AI analysis via GitHub Models
+prd-machine check --ai --model openai/gpt-4o  # Use a specific model
+```
+
+**Exit codes:**
+- `0` — No update needed
+- `1` — Update recommended
+
+**Environment variables:**
+- `GITHUB_TOKEN` / `GH_TOKEN` — Required for AI analysis
+- `PRD_AI_MODEL` — Override default AI model (default: `openai/gpt-4o-mini`)
 
 ### `status`
 
-Check the health and freshness of the current PRD.
+Check PRD health and freshness.
 
 ```bash
 prd-machine status
 ```
 
-**Output includes:**
-- PRD existence and location
-- Last modification time
-- Age in hours
-- Health status (healthy < 6h, stale < 24h, outdated > 24h)
-
 ### `conflicts`
 
-Analyze signals and show detected requirement conflicts.
+Detect requirement conflicts from recent commits.
 
 ```bash
-prd-machine conflicts
+prd-machine conflicts                # Last 30 days
+prd-machine conflicts --days 7       # Last 7 days
 ```
 
-**Detects:**
-- Reverted changes that may indicate conflicting requirements
-- Bug fixes that suggest incomplete initial requirements
-- Contradictory signals from different sources
+## Marker System
 
-**Conflict Severity:**
-- 🔴 **High**: Significant issues (CI failures, auth problems, security issues)
-- 🟡 **Medium**: Standard bug fixes that may indicate requirement gaps
+PRD Machine uses HTML comment markers to delineate auto-updated sections:
 
-**Smart Filtering:**
-The conflict detection automatically filters out trivial fixes (typos, formatting, emoji corrections, broken links) to reduce false positives and focus on meaningful requirement issues.
+```markdown
+<!-- AUTO:BEGIN:section_name -->
+Auto-generated content goes here...
+<!-- AUTO:END:section_name -->
+```
+
+Markers are invisible in rendered markdown. Everything outside markers is human-owned and never touched by the machine.
+
+### Section Relevance Map
+
+The `check` command maps file-path patterns to PRD sections:
+
+| File Pattern | Affected Sections |
+|-------------|-------------------|
+| `pages/_quests/**` | mvp |
+| `pages/_posts/**` | mvp |
+| `features/**` | mvp, edge |
+| `scripts/**` | mvp |
+| `.github/workflows/**` | mvp |
+| `Gemfile*`, `Dockerfile*` | edge |
+
+## CI/CD Integration
+
+The workflow (`.github/workflows/prd-sync.yml`) triggers on PR merges:
+
+```
+PR merged → check (needs update?) → sync → open PR with changes
+```
+
+| Job | Purpose |
+|-----|---------|
+| `check` | Quick check — should we update? |
+| `sync` | Update dynamic sections, open PR |
+| `check-conflicts` | Detect requirement issues, create GitHub issue |
+
+Manual dispatch is available with options for force sync and AI analysis.
+
+## Architecture
+
+```
+820 lines (v1) → ~500 lines (v2)
+
+v1: Full regeneration of all 10 sections every run
+v2: Marker-based partial updates of 4 dynamic sections only
+```
 
 ## PRD Structure
 
@@ -108,102 +172,24 @@ The generated PRD.md follows a standardized structure:
 | **8. RISK** | Top risks with mitigation strategies |
 | **9. DONE** | Definition of done and success criteria |
 
-## Signal Sources
-
-PRD Machine ingests signals from:
-
-| Source | Type | Description |
-|--------|------|-------------|
-| Git Commits | Active | Subject, body, author, date |
-| Markdown Files | Active | Quests, posts, docs with frontmatter |
-| Features YAML | Active | Feature definitions and status |
-| Issues | Planned | GitHub/Linear issue tracking |
-| Slack | Planned | Thread and message content |
-| Figma | Planned | Comment and annotation data |
-
-## Configuration
-
-PRD Machine uses sensible defaults but can be configured:
-
-```yaml
-# Future: .prd-machine.yml
-signals:
-  git:
-    days: 30
-    branches: [main, develop]
-  markdown:
-    patterns:
-      - "pages/_quests/*.md"
-      - "pages/_posts/*.md"
-      - "docs/**/*.md"
-  features:
-    path: "features/features.yml"
-
-output:
-  path: "PRD.md"
-  sections:
-    - why
-    - mvp
-    - ux
-    - api
-    - nfr
-    - edge
-    - oos
-    - road
-    - risk
-    - done
-```
-
-## CI/CD Integration
-
-PRD Machine can be integrated into your CI/CD pipeline:
-
-```yaml
-# .github/workflows/prd-sync.yml
-name: PRD Sync
-
-on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
-
-jobs:
-  sync-prd:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Sync PRD
-        run: ./scripts/prd-machine/prd-machine sync
-      - name: Commit Changes
-        run: |
-          git config user.name "PRD Machine"
-          git config user.email "prd-machine@it-journey.dev"
-          git add PRD.md
-          git diff --staged --quiet || git commit -m "chore(prd): auto-sync PRD.md"
-          git push
-```
-
 ## Roadmap
 
 | Milestone | Objective | Status |
 |-----------|-----------|--------|
-| Alpha | Single-repo, CLI-based sync | ✅ Complete |
-| Beta | GitHub Actions integration | 🔄 In Progress |
-| 1.0 | Multi-source signal ingestion | 📋 Planned |
-| 2.0 | Zero-touch autonomous mode | 🔮 Vision |
+| v1.0 | Single-repo, CLI-based full regeneration | ✅ Complete |
+| v2.0 | Hybrid model, PR-trigger, check command, AI | ✅ Complete |
+| v2.1 | Config file (`.prd-machine.yml`) support | 📋 Planned |
+| v3.0 | Multi-source signal ingestion (issues, PRs) | 🔮 Vision |
 
 ## Philosophy
 
 The PRD Machine embodies several core principles:
 
-1. **Automation Over Manual Work**: Requirements should write themselves from signals
-2. **Data-Backed Reality**: The machine uses actual evidence, not opinions
-3. **Human Veto Power**: Humans always have final say via the conflict resolution system
-4. **Continuous Freshness**: PRDs should never be stale by more than 6 hours
+1. **Hybrid Ownership**: Machines update data; humans own strategy and narrative
+2. **PR-Driven**: Changes flow through PRs for review, not direct commits
+3. **Check Before Acting**: Quick check avoids unnecessary CI noise
+4. **Zero Dependencies**: stdlib-only Python — no pip install needed
+5. **Marker Boundaries**: Clear, invisible delimiters separate human and machine content
 
 ## Contributing
 
@@ -212,23 +198,26 @@ Contributions are welcome! The PRD Machine is part of the IT-Journey ecosystem.
 ### Development
 
 ```bash
-# Run tests
-python3 -m pytest scripts/prd-machine/tests/
+# Syntax check
+python3 -c "import py_compile; py_compile.compile('scripts/prd-machine/prd-machine.py', doraise=True)"
 
-# Run linting
-python3 -m pylint scripts/prd-machine/prd-machine.py
+# Run locally
+python3 scripts/prd-machine/prd-machine.py check
+python3 scripts/prd-machine/prd-machine.py sync
 ```
 
-### Adding New Signal Sources
+### Adding New Dynamic Sections
 
-1. Create a new `ingest_*` method in `PRDMachine` class
-2. Store signals in `self.signals` dictionary
-3. Update relevant sections to use the new signals
-4. Add tests for the new ingestion logic
+1. Add a `_gen_<name>()` method to `PRDMachine`
+2. Add the section name to the `updates` dict in `sync()`
+3. Add `<!-- AUTO:BEGIN:<name> -->` / `<!-- AUTO:END:<name> -->` markers to PRD.md
+4. Update `SECTION_RELEVANCE` map if new file patterns affect the section
 
 ## License
 
 MIT License - Part of the IT-Journey project.
+
+**Last Modified:** 2025-07-08
 
 ---
 

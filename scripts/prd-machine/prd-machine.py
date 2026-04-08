@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 """
-PRD MACHINE - The Self-Writing, Self-Evolving Product Reality Distillery
+PRD MACHINE v2 - PR-Driven Product Reality Distillery
 
-A CLI tool that autonomously writes, maintains, and evolves PRDs.
-Run with: prd-machine sync
+Maintains PRD.md by updating only dynamic sections (marker-delimited)
+while preserving human-authored content. Analyzes merged PRs to decide
+if updates are warranted, optionally using GitHub Models API for
+semantic analysis.
 
-KFI: 100% of shipped features trace directly to a machine-maintained PRD
-that was never out of date by more than 6 hours.
+Commands:
+  init       Generate a new PRD.md with markers + scaffolding
+  sync       Update dynamic sections in existing PRD.md
+  check      Determine if PRD needs updating (exit 0=no, 1=yes)
+  status     Show PRD health and freshness
+  conflicts  Show detected requirement conflicts
 """
 
 import argparse
@@ -16,336 +22,570 @@ import re
 import subprocess
 import sys
 from datetime import datetime, timezone
+from fnmatch import fnmatch
 from pathlib import Path
-from typing import Dict, List, Optional, Any, Tuple
+from typing import Dict, List, Optional, Any
+from urllib.error import URLError
+from urllib.request import Request, urlopen
 
-# Optional YAML support - try to import, use basic parsing as fallback
+# Optional YAML support
 try:
     import yaml
     YAML_AVAILABLE = True
 except ImportError:
     YAML_AVAILABLE = False
 
+VERSION = "2.0.0"
 
+# ── Marker constants ────────────────────────────────────────────
+MARKER_BEGIN = "<!-- AUTO:BEGIN:{name} -->"
+MARKER_END = "<!-- AUTO:END:{name} -->"
+MARKER_RE = re.compile(
+    r"<!-- AUTO:BEGIN:(\w+) -->\n(.*?)<!-- AUTO:END:\1 -->",
+    re.DOTALL,
+)
+
+# ── Section relevance map ───────────────────────────────────────
+# Maps file-path glob patterns to the dynamic PRD sections they affect.
+SECTION_RELEVANCE: Dict[str, List[str]] = {
+    "pages/_quests/**":        ["mvp"],
+    "pages/_posts/**":         ["mvp"],
+    "features/**":             ["mvp", "edge"],
+    "scripts/**":              ["mvp"],
+    ".github/workflows/**":    ["mvp"],
+    "Gemfile*":                ["edge"],
+    "Dockerfile*":             ["edge"],
+    "docker-compose*":         ["edge"],
+    "docs/**":                 [],  # informational only
+}
+
+# Patterns that indicate trivial (non-requirement) fixes
+TRIVIAL_PATTERNS = [
+    r"\btypo\b", r"\bspelling\b", r"\bformatting\b", r"\bindentation\b",
+    r"\bwhitespace\b", r"\bemoji\b", r"\bicon\b", r"\bcomment\b",
+    r"\bdocstring\b", r"\blink\b.*\bbroken\b", r"\bupdate.*\bdependenc",
+    r"\bversion\s+bump\b", r"\bminor\s+fix\b", r"\bsmall\s+fix\b",
+]
+
+# Patterns that indicate significant requirement issues
+SIGNIFICANT_PATTERNS = [
+    r"\bworkflow\b.*\bfail", r"\bci\b.*\bfail", r"token",
+    r"\bauth", r"\bpermission\b", r"\bsecurity\b", r"\bcrash\b",
+    r"\berror\b.*\bhandl", r"\bvalidation\b.*\bfail",
+]
+
+
+# ════════════════════════════════════════════════════════════════
 class PRDMachine:
-    """
-    The PRD Machine: Autonomous Product Requirements Document Generator.
-    
-    Ingests signals from:
-    - Git commits
-    - Markdown files
-    - Issue trackers
-    - Feature files
-    
-    Outputs: A perfect PRD.md that stays correct forever.
-    """
-    
+    """PR-driven PRD maintainer with marker-based partial updates."""
+
     def __init__(self, repo_root: Optional[Path] = None):
         self.repo_root = repo_root or self._find_repo_root()
         self.prd_path = self.repo_root / "PRD.md"
         self.signals: Dict[str, List[Any]] = {
-            "git_commits": [],
-            "markdown_files": [],
-            "features": [],
-            "issues": [],
-            "conflicts": []
+            "git_commits": [], "markdown_files": [],
+            "features": [],    "conflicts": [],
         }
-        self.colors = {
-            'INFO': '\033[0;34m',
-            'SUCCESS': '\033[0;32m',
-            'WARNING': '\033[1;33m',
-            'ERROR': '\033[0;31m',
-            'HEADER': '\033[0;35m',
-            'NC': '\033[0m'
+        self._colors = {
+            "INFO": "\033[0;34m", "SUCCESS": "\033[0;32m",
+            "WARNING": "\033[1;33m", "ERROR": "\033[0;31m",
+            "HEADER": "\033[0;35m", "NC": "\033[0m",
         }
-    
-    def _find_repo_root(self) -> Path:
-        """Find the repository root directory."""
+
+    # ── helpers ──────────────────────────────────────────────────
+    @staticmethod
+    def _find_repo_root() -> Path:
         try:
-            result = subprocess.run(
+            out = subprocess.run(
                 ["git", "rev-parse", "--show-toplevel"],
-                capture_output=True, text=True, check=True
+                capture_output=True, text=True, check=True,
             )
-            return Path(result.stdout.strip())
+            return Path(out.stdout.strip())
         except subprocess.CalledProcessError:
             return Path.cwd()
-    
-    def log(self, level: str, message: str) -> None:
-        """Log a message with color coding."""
-        color = self.colors.get(level, '')
-        nc = self.colors['NC']
-        timestamp = datetime.now().strftime('%H:%M:%S')
-        print(f"{color}[{timestamp}] [{level}]{nc} {message}")
-    
+
+    def log(self, level: str, msg: str) -> None:
+        c = self._colors.get(level, "")
+        nc = self._colors["NC"]
+        ts = datetime.now().strftime("%H:%M:%S")
+        print(f"{c}[{ts}] [{level}]{nc} {msg}")
+
+    # ── signal ingestion ─────────────────────────────────────────
     def ingest_git_commits(self, days: int = 30) -> List[Dict[str, str]]:
-        """Ingest recent git commits as signals.
-        
-        Filters out PRD Machine's own auto-sync commits to prevent
-        self-referential counting that causes recursive commit loops.
-        """
         self.log("INFO", f"Ingesting git commits from last {days} days...")
-        
         try:
             result = subprocess.run(
-                [
-                    "git", "log",
-                    f"--since={days} days ago",
-                    "--pretty=format:%H|%s|%an|%ad|%b",
-                    "--date=iso"
-                ],
-                capture_output=True, text=True, cwd=self.repo_root
+                ["git", "log", f"--since={days} days ago",
+                 "--pretty=format:%H|%s|%an|%ad|%b", "--date=iso"],
+                capture_output=True, text=True, cwd=self.repo_root,
             )
-            
-            commits = []
-            skipped = 0
-            for line in result.stdout.strip().split('\n'):
-                if line:
-                    parts = line.split('|', 4)
-                    if len(parts) >= 4:
-                        subject = parts[1]
-                        # Skip PRD Machine's own auto-sync commits to prevent
-                        # self-referential counting and recursive commit loops
-                        if subject.strip().startswith("chore(prd): auto-sync"):
-                            skipped += 1
-                            continue
-                        commit = {
-                            "hash": parts[0][:8],
-                            "subject": subject,
-                            "author": parts[2],
-                            "date": parts[3],
-                            "body": parts[4] if len(parts) > 4 else ""
-                        }
-                        commits.append(commit)
-            
+            commits, skipped = [], 0
+            for line in result.stdout.strip().split("\n"):
+                if not line:
+                    continue
+                parts = line.split("|", 4)
+                if len(parts) < 4:
+                    continue
+                subject = parts[1]
+                if subject.strip().startswith("chore(prd): auto-sync"):
+                    skipped += 1
+                    continue
+                commits.append({
+                    "hash": parts[0][:8], "subject": subject,
+                    "author": parts[2], "date": parts[3],
+                    "body": parts[4] if len(parts) > 4 else "",
+                })
             self.signals["git_commits"] = commits
-            self.log("SUCCESS", f"Ingested {len(commits)} commits (skipped {skipped} auto-sync commits)")
+            self.log("SUCCESS", f"Ingested {len(commits)} commits (skipped {skipped} auto-sync)")
             return commits
-            
         except subprocess.CalledProcessError as e:
             self.log("WARNING", f"Failed to get git commits: {e}")
             return []
-    
-    def ingest_markdown_files(self, patterns: List[str] = None) -> List[Dict[str, Any]]:
-        """Ingest markdown files for feature and documentation signals."""
+
+    def ingest_markdown_files(self) -> List[Dict[str, Any]]:
         self.log("INFO", "Ingesting markdown files...")
-        
-        patterns = patterns or ["pages/_quests/*.md", "pages/_posts/*.md", "docs/**/*.md"]
+        patterns = ["pages/_quests/**/*.md", "pages/_posts/**/*.md", "docs/**/*.md"]
         md_files = []
-        
         for pattern in patterns:
             for path in self.repo_root.glob(pattern):
                 if path.is_file():
                     try:
-                        content = path.read_text(encoding='utf-8')
-                        frontmatter = self._parse_frontmatter(content)
+                        fm = self._parse_frontmatter(path.read_text(encoding="utf-8"))
                         md_files.append({
                             "path": str(path.relative_to(self.repo_root)),
-                            "title": frontmatter.get("title", path.stem),
-                            "description": frontmatter.get("description", ""),
-                            "date": frontmatter.get("date", ""),
-                            "tags": frontmatter.get("tags", []),
-                            "categories": frontmatter.get("categories", []),
+                            "title": fm.get("title", path.stem),
                         })
-                    except Exception as e:
-                        self.log("WARNING", f"Failed to parse {path}: {e}")
-        
+                    except Exception:
+                        pass
         self.signals["markdown_files"] = md_files
         self.log("SUCCESS", f"Ingested {len(md_files)} markdown files")
         return md_files
-    
+
     def ingest_features(self) -> List[Dict[str, Any]]:
-        """Ingest feature definitions from features.yml or similar."""
         self.log("INFO", "Ingesting feature definitions...")
-        
         features_file = self.repo_root / "features" / "features.yml"
-        features = []
-        
-        if features_file.exists():
+        features: list = []
+        if features_file.exists() and YAML_AVAILABLE:
             try:
-                if YAML_AVAILABLE:
-                    content = features_file.read_text(encoding='utf-8')
-                    features = yaml.safe_load(content) or []
-                    self.log("SUCCESS", f"Ingested {len(features)} features")
-                else:
-                    self.log("WARNING", "PyYAML not available, using basic parsing")
+                data = yaml.safe_load(features_file.read_text(encoding="utf-8")) or {}
+                features = data.get("features", data) if isinstance(data, dict) else data
+                self.log("SUCCESS", f"Ingested {len(features)} features")
             except Exception as e:
                 self.log("WARNING", f"Failed to parse features file: {e}")
-        else:
-            self.log("INFO", "No features.yml found, scanning for feature indicators")
-        
         self.signals["features"] = features
         return features
-    
-    def _parse_frontmatter(self, content: str) -> Dict[str, Any]:
-        """Parse YAML frontmatter from markdown content."""
-        match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-        if not match:
+
+    @staticmethod
+    def _parse_frontmatter(content: str) -> Dict[str, Any]:
+        m = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
+        if not m:
             return {}
-        
-        frontmatter_text = match.group(1)
-        result = {}
-        
-        # Simple YAML-like parsing
-        current_key = None
-        current_list = None
-        
-        for line in frontmatter_text.split('\n'):
-            if not line.strip():
+        result: Dict[str, Any] = {}
+        cur_key, cur_list = None, None
+        for line in m.group(1).split("\n"):
+            stripped = line.strip()
+            if not stripped:
                 continue
-            
-            # Handle list items
-            if line.strip().startswith('- '):
-                if current_key and current_list is not None:
-                    current_list.append(line.strip()[2:].strip())
+            if stripped.startswith("- ") and cur_key and cur_list is not None:
+                cur_list.append(stripped[2:].strip())
                 continue
-            
-            # Handle key-value pairs
-            if ':' in line:
-                key, *value_parts = line.split(':', 1)
-                key = key.strip()
-                value = value_parts[0].strip() if value_parts else ""
-                
-                if value:
-                    result[key] = value.strip('"\'')
-                    current_key = None
-                    current_list = None
+            if ":" in stripped:
+                key, _, val = stripped.partition(":")
+                key, val = key.strip(), val.strip()
+                if val:
+                    result[key] = val.strip("\"'")
+                    cur_key = cur_list = None
                 else:
-                    current_key = key
-                    current_list = []
-                    result[key] = current_list
-        
+                    cur_list = []
+                    result[key] = cur_list
+                    cur_key = key
         return result
-    
+
     def detect_conflicts(self) -> List[Dict[str, Any]]:
-        """Detect conflicting requirements or signals."""
         self.log("INFO", "Detecting conflicts in requirements...")
-        
         conflicts = []
-        
-        # Patterns that indicate trivial fixes (not requirement conflicts)
-        trivial_patterns = [
-            r'\btypo\b',
-            r'\bspelling\b',
-            r'\bformatting\b',
-            r'\bindentation\b',
-            r'\bwhitespace\b',
-            r'\bemoji\b',
-            r'\bicon\b',
-            r'\bcomment\b',
-            r'\bdocstring\b',
-            r'\blink\b.*\bbroken\b',
-            r'\bupdate.*\bdependenc',  # dependency updates
-            r'\bversion\s+bump\b',
-            r'\bminor\s+fix\b',
-            r'\bsmall\s+fix\b',
-        ]
-        
-        # Patterns that suggest actual requirement issues
-        significant_patterns = [
-            r'\bworkflow\b.*\bfail',
-            r'\bci\b.*\bfail',
-            r'token',  # Any token-related issue (PAT_TOKEN, GITHUB_TOKEN, etc.)
-            r'\bauth',
-            r'\bpermission\b',
-            r'\bsecurity\b',
-            r'\bcrash\b',
-            r'\berror\b.*\bhandl',
-            r'\bvalidation\b.*\bfail',
-        ]
-        
-        # Simple conflict detection based on commit messages
         for commit in self.signals.get("git_commits", []):
-            subject = commit.get("subject", "").lower()
-            original_subject = commit.get("subject", "")
-            
-            # Look for revert or conflicting patterns
-            if "revert" in subject or "rollback" in subject:
+            subj = commit["subject"].lower()
+            orig = commit["subject"]
+            if "revert" in subj or "rollback" in subj:
                 conflicts.append({
-                    "type": "revert",
-                    "source": f"commit:{commit['hash']}",
-                    "description": f"Reverted change: {original_subject}",
-                    "resolution": "Review if revert addresses a conflicting requirement"
+                    "type": "revert", "source": f"commit:{commit['hash']}",
+                    "description": f"Reverted change: {orig}",
+                    "resolution": "Review if revert addresses a conflicting requirement",
+                    "severity": "high",
                 })
                 continue
-            
-            # Look for "fix" that might indicate previous requirement was incomplete
-            if subject.startswith("fix:") or subject.startswith("fix("):
-                # Check if this is a trivial fix
-                is_trivial = any(re.search(pattern, subject) for pattern in trivial_patterns)
-                
-                # Check if this is a significant fix
-                is_significant = any(re.search(pattern, subject) for pattern in significant_patterns)
-                
-                # Only flag significant fixes or fixes that aren't trivial
-                if is_significant or not is_trivial:
+            if subj.startswith("fix:") or subj.startswith("fix("):
+                is_trivial = any(re.search(p, subj) for p in TRIVIAL_PATTERNS)
+                is_sig = any(re.search(p, subj) for p in SIGNIFICANT_PATTERNS)
+                if is_sig or not is_trivial:
                     conflicts.append({
-                        "type": "fix",
-                        "source": f"commit:{commit['hash']}",
-                        "description": f"Bug fix suggests incomplete requirement: {original_subject}",
+                        "type": "fix", "source": f"commit:{commit['hash']}",
+                        "description": f"Bug fix suggests incomplete requirement: {orig}",
                         "resolution": "Consider if original requirement needs clarification",
-                        "severity": "high" if is_significant else "medium"
+                        "severity": "high" if is_sig else "medium",
                     })
-        
         self.signals["conflicts"] = conflicts
-        
-        if conflicts:
-            self.log("WARNING", f"Detected {len(conflicts)} potential conflicts")
-        else:
-            self.log("SUCCESS", "No conflicts detected")
-        
+        lvl = "WARNING" if conflicts else "SUCCESS"
+        self.log(lvl, f"Detected {len(conflicts)} potential conflicts")
         return conflicts
-    
-    def generate_section_why(self) -> str:
-        """Generate the WHY section (Section 0) for IT-Journey."""
-        return """## 0. WHY
 
-Build **IT-Journey** — an open-source educational platform that democratizes IT education 
-through gamified quests, practical tutorials, and AI-enhanced learning experiences, 
+    # ── dynamic section generators ───────────────────────────────
+    def _gen_metadata(self) -> str:
+        now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        ver = datetime.now().strftime("%Y-%m-%d")
+        return (
+            f"---\n"
+            f'title: "PRD: IT-Journey – Open-Source IT Education Platform"\n'
+            f'description: "Product requirements for IT-Journey"\n'
+            f"date: {now}\nlastmod: {now}\nstatus: Living\nversion: {ver}\n"
+            f"auto_generated: true\ngenerator: prd-machine\n"
+            f"repository: https://github.com/bamr87/it-journey\n---\n"
+        )
+
+    def _gen_mvp_status(self) -> str:
+        quest_n = sum(1 for f in self.signals["markdown_files"] if "_quests" in f["path"])
+        post_n = sum(1 for f in self.signals["markdown_files"] if "_posts" in f["path"])
+        md_n = len(self.signals["markdown_files"])
+        feat_n = len(self.signals["features"])
+        commit_n = len(self.signals["git_commits"])
+        conflict_n = len(self.signals["conflicts"])
+        c_status = "⚠️ Review needed" if conflict_n else "✅ None"
+        return (
+            f"### Current Content Status\n\n"
+            f"| Source | Count | Status |\n|--------|-------|--------|\n"
+            f"| Learning Quests | {quest_n} | ✅ Published |\n"
+            f"| Educational Posts | {post_n} | ✅ Published |\n"
+            f"| Total Markdown Files | {md_n} | ✅ Indexed |\n"
+            f"| Implemented Features | {feat_n} | ✅ Tracked |\n"
+            f"| Recent Commits | {commit_n} | ✅ Analyzed |\n"
+            f"| Detected Issues | {conflict_n} | {c_status} |\n"
+        )
+
+    def _gen_edge_issues(self) -> str:
+        conflicts = self.signals.get("conflicts", [])
+        if not conflicts:
+            return ""
+        lines = ["\n### Recent Issues Detected\n"]
+        sorted_c = sorted(conflicts, key=lambda c: 0 if c.get("severity") == "high" else 1)
+        for c in sorted_c[:5]:
+            icon = "🔴" if c.get("severity") == "high" else "🟡"
+            lines.append(f"- {icon} **{c['type'].upper()}**: {c['description']}")
+            lines.append(f"  - *Action*: {c['resolution']}")
+        return "\n".join(lines) + "\n"
+
+    # ── marker-based update engine ───────────────────────────────
+    def _wrap(self, name: str, content: str) -> str:
+        """Wrap content in AUTO markers."""
+        begin = MARKER_BEGIN.format(name=name)
+        end = MARKER_END.format(name=name)
+        return f"{begin}\n{content}{end}"
+
+    def _update_markers(self, doc: str, updates: Dict[str, str]) -> str:
+        """Replace marker-delimited sections in doc with new content."""
+        def _replacer(m: re.Match) -> str:
+            name = m.group(1)
+            if name in updates:
+                begin = MARKER_BEGIN.format(name=name)
+                end = MARKER_END.format(name=name)
+                return f"{begin}\n{updates[name]}{end}"
+            return m.group(0)  # preserve unknown markers
+        return MARKER_RE.sub(_replacer, doc)
+
+    # ── commands ─────────────────────────────────────────────────
+    def init(self, output_path: Optional[Path] = None) -> bool:
+        """Generate a new PRD.md with markers + static scaffolding."""
+        output_path = output_path or self.prd_path
+        self.log("HEADER", "═" * 50)
+        self.log("HEADER", "   PRD MACHINE - Initializing PRD.md")
+        self.log("HEADER", "═" * 50)
+
+        self.ingest_git_commits()
+        self.ingest_markdown_files()
+        self.ingest_features()
+        self.detect_conflicts()
+
+        sections = [
+            self._wrap("metadata", self._gen_metadata()),
+            "",
+            "# IT-Journey",
+            "",
+            "*Open-Source IT Education Platform*",
+            "",
+            self._wrap("status_line",
+                f"> **Status:** Living | **Version:** {datetime.now().strftime('%Y-%m-%d')} | **Auto-Generated:** ✅\n"),
+            "",
+            _STATIC_SECTION_WHY,
+            self._wrap("mvp_status", self._gen_mvp_status()),
+            "",
+            _STATIC_SECTION_UX,
+            _STATIC_SECTION_API,
+            _STATIC_SECTION_NFR,
+            _STATIC_SECTION_EDGE_HEADER,
+            self._wrap("edge_issues", self._gen_edge_issues()),
+            "",
+            _STATIC_SECTION_OOS,
+            _STATIC_SECTION_ROAD,
+            _STATIC_SECTION_RISK,
+            _STATIC_SECTION_DONE,
+        ]
+
+        output_path.write_text("\n".join(sections), encoding="utf-8")
+        self.log("SUCCESS", f"PRD initialized: {output_path}")
+        return True
+
+    def sync(self, output_path: Optional[Path] = None, days: int = 30) -> bool:
+        """Update only marker-delimited sections in existing PRD.md."""
+        output_path = output_path or self.prd_path
+
+        if not output_path.exists():
+            self.log("WARNING", "No PRD.md found — running init instead")
+            return self.init(output_path)
+
+        self.log("HEADER", "═" * 50)
+        self.log("HEADER", "   PRD MACHINE - Syncing PRD.md")
+        self.log("HEADER", "═" * 50)
+
+        self.ingest_git_commits(days)
+        self.ingest_markdown_files()
+        self.ingest_features()
+        self.detect_conflicts()
+
+        now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        ver = datetime.now().strftime("%Y-%m-%d")
+
+        updates = {
+            "metadata": self._gen_metadata(),
+            "status_line": f"> **Status:** Living | **Version:** {ver} | **Auto-Generated:** ✅\n",
+            "mvp_status": self._gen_mvp_status(),
+            "edge_issues": self._gen_edge_issues(),
+        }
+
+        existing = output_path.read_text(encoding="utf-8")
+        updated = self._update_markers(existing, updates)
+
+        # Compare ignoring volatile metadata (dates inside markers)
+        def _strip_volatile(s: str) -> str:
+            s = re.sub(r"^(date|lastmod|version):.*$", "", s, flags=re.MULTILINE)
+            return re.sub(r"\*\*Version:\*\*\s*\S+", "", s)
+
+        if _strip_volatile(existing) == _strip_volatile(updated):
+            self.log("INFO", "No meaningful changes — skipping write")
+            return True
+
+        output_path.write_text(updated, encoding="utf-8")
+        self.log("SUCCESS", f"PRD synced: {output_path}")
+        total = sum(len(v) for v in self.signals.values())
+        self.log("INFO", f"Total signals processed: {total}")
+        return True
+
+    def check(self, pr_json_path: Optional[str] = None,
+              ai: bool = False, model: str = "") -> Dict[str, Any]:
+        """Determine if PRD needs updating. Returns analysis dict.
+
+        Exit semantics (for CI):
+          - result["needs_update"] == False  → exit 0
+          - result["needs_update"] == True   → exit 1
+        """
+        self.log("HEADER", "═" * 50)
+        self.log("HEADER", "   PRD MACHINE - Quick Check")
+        self.log("HEADER", "═" * 50)
+
+        result: Dict[str, Any] = {
+            "needs_update": False,
+            "affected_sections": [],
+            "reason": "",
+            "changed_files": [],
+            "ai_analysis": None,
+        }
+
+        # 1. Gather changed files — from PR JSON or git log
+        changed_files = self._get_changed_files(pr_json_path)
+        result["changed_files"] = changed_files
+
+        if not changed_files:
+            result["reason"] = "No relevant file changes detected"
+            self.log("INFO", result["reason"])
+            return result
+
+        # 2. Map changed files → affected sections via relevance map
+        affected: set = set()
+        for fpath in changed_files:
+            for pattern, sections in SECTION_RELEVANCE.items():
+                if fnmatch(fpath, pattern):
+                    affected.update(sections)
+
+        result["affected_sections"] = sorted(affected)
+
+        if not affected:
+            result["reason"] = f"{len(changed_files)} files changed but none affect dynamic PRD sections"
+            self.log("INFO", result["reason"])
+            return result
+
+        result["needs_update"] = True
+        result["reason"] = (
+            f"{len(changed_files)} files changed affecting sections: "
+            + ", ".join(sorted(affected))
+        )
+        self.log("WARNING", result["reason"])
+
+        # 3. Optional AI analysis
+        if ai and affected:
+            analysis = self._ai_analyze(changed_files, list(affected), model)
+            result["ai_analysis"] = analysis
+
+        return result
+
+    def _get_changed_files(self, pr_json_path: Optional[str] = None) -> List[str]:
+        """Get list of changed files from PR JSON or git log."""
+        # Try PR JSON first
+        pr_path = pr_json_path or os.environ.get("GITHUB_EVENT_PATH")
+        if pr_path and Path(pr_path).exists():
+            try:
+                event = json.loads(Path(pr_path).read_text(encoding="utf-8"))
+                pr = event.get("pull_request", {})
+                base_sha = pr.get("base", {}).get("sha", "")
+                head_sha = pr.get("head", {}).get("sha", "")
+                if base_sha and head_sha:
+                    out = subprocess.run(
+                        ["git", "diff", "--name-only", base_sha, head_sha],
+                        capture_output=True, text=True, cwd=self.repo_root,
+                    )
+                    files = [f for f in out.stdout.strip().split("\n") if f]
+                    self.log("INFO", f"Got {len(files)} changed files from PR event")
+                    return files
+            except Exception as e:
+                self.log("WARNING", f"Failed to read PR event: {e}")
+
+        # Fallback: files changed since last PRD modification
+        if self.prd_path.exists():
+            mtime = self.prd_path.stat().st_mtime
+            since = datetime.fromtimestamp(mtime, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
+            try:
+                out = subprocess.run(
+                    ["git", "log", f"--since={since}", "--name-only",
+                     "--pretty=format:", "--diff-filter=ACMR"],
+                    capture_output=True, text=True, cwd=self.repo_root,
+                )
+                files = sorted(set(f for f in out.stdout.strip().split("\n") if f))
+                self.log("INFO", f"Got {len(files)} changed files since last PRD update")
+                return files
+            except subprocess.CalledProcessError:
+                pass
+
+        return []
+
+    # ── AI analysis via GitHub Models API ────────────────────────
+    def _ai_analyze(self, changed_files: List[str],
+                    affected_sections: List[str],
+                    model: str = "") -> Optional[Dict[str, Any]]:
+        """Use GitHub Models API for semantic analysis of changes."""
+        token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+        if not token:
+            self.log("INFO", "No GITHUB_TOKEN — skipping AI analysis")
+            return None
+
+        model = model or os.environ.get("PRD_AI_MODEL", "openai/gpt-4o-mini")
+        endpoint = "https://models.github.ai/inference/chat/completions"
+
+        prompt = self._build_analysis_prompt(changed_files, affected_sections)
+
+        payload = json.dumps({
+            "model": model,
+            "messages": [
+                {"role": "system", "content":
+                    "You are a product requirements analyst. Given a list of "
+                    "changed files and affected PRD sections, provide a brief "
+                    "JSON analysis with: needs_update (bool), summary (string), "
+                    "and suggestions (list of strings for human-editable sections "
+                    "that might need manual review). Be concise."},
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0.3,
+            "max_tokens": 500,
+        }).encode("utf-8")
+
+        req = Request(endpoint, data=payload, method="POST")
+        req.add_header("Authorization", f"Bearer {token}")
+        req.add_header("Content-Type", "application/json")
+
+        try:
+            self.log("INFO", f"Calling GitHub Models API ({model})...")
+            with urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            content = data["choices"][0]["message"]["content"]
+            # Try to parse JSON from response
+            json_match = re.search(r"\{.*\}", content, re.DOTALL)
+            if json_match:
+                analysis = json.loads(json_match.group())
+                self.log("SUCCESS", f"AI analysis: {analysis.get('summary', 'done')}")
+                return analysis
+            return {"summary": content, "needs_update": True, "suggestions": []}
+        except (URLError, json.JSONDecodeError, KeyError) as e:
+            self.log("WARNING", f"AI analysis failed (falling back to rule-based): {e}")
+            return None
+
+    def _build_analysis_prompt(self, changed_files: List[str],
+                               sections: List[str]) -> str:
+        return (
+            f"Changed files in this PR:\n"
+            + "\n".join(f"- {f}" for f in changed_files[:30])
+            + f"\n\nAffected dynamic PRD sections: {', '.join(sections)}\n\n"
+            f"Human-editable PRD sections (not auto-updated): "
+            f"WHY, UX, API, NFR, OOS, ROAD, RISK, DONE\n\n"
+            f"Should any human-editable sections be reviewed or updated "
+            f"based on these changes? Respond with JSON."
+        )
+
+    # ── status / conflicts ───────────────────────────────────────
+    def show_status(self) -> None:
+        self.log("HEADER", "═" * 50)
+        self.log("HEADER", "   PRD MACHINE - Status")
+        self.log("HEADER", "═" * 50)
+        if not self.prd_path.exists():
+            self.log("WARNING", "No PRD.md found. Run 'prd-machine init'.")
+            return
+        stat = self.prd_path.stat()
+        age_h = (datetime.now(timezone.utc).timestamp() - stat.st_mtime) / 3600
+        health = "healthy" if age_h < 6 else ("stale" if age_h < 24 else "outdated")
+        lvl = {"healthy": "SUCCESS", "stale": "WARNING", "outdated": "ERROR"}[health]
+        self.log("INFO", f"PRD Path: {self.prd_path}")
+        mod = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc).isoformat()
+        self.log("INFO", f"Last Modified: {mod}")
+        self.log("INFO", f"Age: {round(age_h, 1)} hours")
+        self.log(lvl, f"Health: {health.upper()}")
+
+    def show_conflicts(self, days: int = 30) -> int:
+        self.ingest_git_commits(days)
+        conflicts = self.detect_conflicts()
+        if not conflicts:
+            self.log("SUCCESS", "No conflicts detected")
+            return 0
+        self.log("WARNING", f"Found {len(conflicts)} conflicts:")
+        for c in conflicts:
+            icon = "🔴" if c.get("severity") == "high" else "🟡"
+            print(f"  {icon} [{c['type']}] {c['description']}")
+            print(f"    Resolution: {c['resolution']}")
+        return 0
+
+
+# ════════════════════════════════════════════════════════════════
+# Static section templates (used only by `init`)
+# ════════════════════════════════════════════════════════════════
+
+_STATIC_SECTION_WHY = """\
+## 0. WHY
+
+Build **IT-Journey** — an open-source educational platform that democratizes IT education
+through gamified quests, practical tutorials, and AI-enhanced learning experiences,
 transforming complete beginners into skilled IT professionals.
 
-**KFI:** 100% of learners who complete a quest path can demonstrate measurable skill 
+**KFI:** 100% of learners who complete a quest path can demonstrate measurable skill
 improvement through hands-on projects in their portfolio.
-
 """
-    
-    def generate_section_mvp(self) -> str:
-        """Generate the MVP section (Section 1) for IT-Journey."""
-        feature_count = len(self.signals.get("features", []))
-        md_count = len(self.signals.get("markdown_files", []))
-        
-        # Count quests and posts from markdown files
-        quest_count = sum(1 for f in self.signals.get("markdown_files", []) if "_quests" in f.get("path", ""))
-        post_count = sum(1 for f in self.signals.get("markdown_files", []) if "_posts" in f.get("path", ""))
-        
-        return f"""## 1. MVP (Minimum Viable Promise)
 
-As a **learner / contributor / educator**, I want:
-
-- ✅ Gamified learning quests with progressive difficulty (Level 0000 → advanced)
-- ✅ Practical tutorials that build real-world portfolio projects
-- ✅ Multi-platform support (macOS, Windows, Linux, Cloud)
-- ✅ AI-enhanced development workflows and automation
-- ✅ Jekyll-based static site with GitHub Pages deployment
-- ✅ Automated quality assurance (link checking, content validation)
-- 🔄 Interactive terminal interface (`journey.sh`) for navigation
-- 🔜 Certification tracking and skill progression metrics
-
-### Current Content Status
-
-| Source | Count | Status |
-|--------|-------|--------|
-| Learning Quests | {quest_count} | ✅ Published |
-| Educational Posts | {post_count} | ✅ Published |
-| Total Markdown Files | {md_count} | ✅ Indexed |
-| Implemented Features | {feature_count} | ✅ Tracked |
-| Recent Commits | {len(self.signals.get('git_commits', []))} | ✅ Analyzed |
-| Detected Issues | {len(self.signals.get('conflicts', []))} | {'⚠️ Review needed' if self.signals.get('conflicts') else '✅ None'} |
-
-"""
-    
-    def generate_section_ux(self) -> str:
-        """Generate the UX section (Section 2) for IT-Journey."""
-        return """## 2. UX (User eXperience Flow)
+_STATIC_SECTION_UX = """\
+## 2. UX (User eXperience Flow)
 
 ```mermaid
 graph TD
@@ -378,12 +618,10 @@ graph TD
 2. **Create**: Write new quests/tutorials → Follow content guidelines
 3. **Submit**: Open PR → Get community feedback
 4. **Iterate**: Refine based on learner outcomes
-
 """
-    
-    def generate_section_api(self) -> str:
-        """Generate the API section (Section 3) for IT-Journey."""
-        return """## 3. API (Atomic Programmable Interface)
+
+_STATIC_SECTION_API = """\
+## 3. API (Atomic Programmable Interface)
 
 ### Site Navigation
 
@@ -412,7 +650,7 @@ docker compose up jekyll
 docker compose run quest-validator
 
 # PRD synchronization
-docker compose run prd-machine ./scripts/prd-machine/prd-machine sync
+python3 scripts/prd-machine/prd-machine.py sync
 
 # Link health check
 python3 scripts/validation/link-checker.py --scope website
@@ -424,14 +662,12 @@ python3 scripts/validation/link-checker.py --scope website
 |----------|---------|---------|
 | `build-validation.yml` | Push/PR | Validate Jekyll build |
 | `link-checker.yml` | Schedule/Manual | Check link health |
-| `prd-sync.yml` | Schedule/Push | Update PRD.md |
+| `prd-sync.yml` | PR merge/Manual | Update PRD.md |
 | `frontmatter-validation.yml` | Push | Validate content metadata |
-
 """
-    
-    def generate_section_nfr(self) -> str:
-        """Generate the NFR section (Section 4) for IT-Journey."""
-        return """## 4. NFR (Non-Functional Realities)
+
+_STATIC_SECTION_NFR = """\
+## 4. NFR (Non-Functional Realities)
 
 | Category | Requirement | Metric | Current |
 |----------|-------------|--------|---------|
@@ -443,25 +679,10 @@ python3 scripts/validation/link-checker.py --scope website
 | Multi-Platform | Cross-OS support | macOS/Windows/Linux | ✅ Documented |
 | Mobile | Responsive design | All breakpoints | ✅ CSS framework |
 | Content Freshness | Regular updates | Activity within 30 days | ✅ Active |
-
 """
-    
-    def generate_section_edge(self) -> str:
-        """Generate the EDGE section (Section 5) for IT-Journey."""
-        conflicts = self.signals.get("conflicts", [])
-        conflict_text = ""
-        
-        if conflicts:
-            conflict_text = "\n### Recent Issues Detected\n\n"
-            # Sort by severity (high first)
-            sorted_conflicts = sorted(conflicts, key=lambda x: 0 if x.get('severity') == 'high' else 1)
-            for c in sorted_conflicts[:5]:  # Show top 5 conflicts
-                severity = c.get('severity', 'medium')
-                severity_icon = "🔴" if severity == "high" else "🟡"
-                conflict_text += f"- {severity_icon} **{c['type'].upper()}**: {c['description']}\n"
-                conflict_text += f"  - *Action*: {c['resolution']}\n"
-        
-        return f"""## 5. EDGE (Exceptions, Dependencies, Gotchas)
+
+_STATIC_SECTION_EDGE_HEADER = """\
+## 5. EDGE (Exceptions, Dependencies, Gotchas)
 
 ### Dependencies
 
@@ -488,12 +709,10 @@ python3 scripts/validation/link-checker.py --scope website
 - **Large repos**: Initial clone may take time; use sparse checkout if needed
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
-{conflict_text}
 """
-    
-    def generate_section_oos(self) -> str:
-        """Generate the OOS section (Section 6) for IT-Journey."""
-        return """## 6. OOS (Out Of Scope)
+
+_STATIC_SECTION_OOS = """\
+## 6. OOS (Out Of Scope)
 
 IT-Journey explicitly does NOT:
 
@@ -512,19 +731,17 @@ The platform focuses on:
 - ✅ Open-source community contributions
 - ✅ Practical, portfolio-building projects
 - ✅ Free, accessible educational content
-
 """
-    
-    def generate_section_road(self) -> str:
-        """Generate the ROAD section (Section 7) for IT-Journey."""
-        return """## 7. ROAD (Roadmap)
+
+_STATIC_SECTION_ROAD = """\
+## 7. ROAD (Roadmap)
 
 | Milestone | Objective | Target | Status |
 |-----------|-----------|--------|--------|
 | **Foundation** | Jekyll site + GitHub Pages deployment | 2024 Q1 | ✅ Complete |
 | **Content** | Initial quest collection + tutorials | 2024 Q2 | ✅ Complete |
 | **Guardian 2.0** | Advanced link monitoring + AI analysis | 2025 Q1 | ✅ Complete |
-| **PRD Machine** | Automated requirements documentation | 2025 Q4 | 🔄 In Progress |
+| **PRD Machine** | Automated requirements documentation | 2025 Q4 | ✅ Complete |
 | **Interactive** | Enhanced terminal interface + CLI tools | 2025 Q4 | 🔄 In Progress |
 | **Community** | Contributor growth + content expansion | 2026 Q1 | 📋 Planned |
 | **Certification** | Skill tracking + progress metrics | 2026 Q2 | 📋 Planned |
@@ -538,12 +755,10 @@ The platform focuses on:
 - [ ] Mobile-optimized experience
 - [ ] AI-powered content recommendations
 - [ ] Integration with external learning platforms
-
 """
-    
-    def generate_section_risk(self) -> str:
-        """Generate the RISK section (Section 8) for IT-Journey."""
-        return """## 8. RISK (Top Risks)
+
+_STATIC_SECTION_RISK = """\
+## 8. RISK (Top Risks)
 
 | Risk | Impact | Likelihood | Mitigation |
 |------|--------|------------|------------|
@@ -562,12 +777,10 @@ The platform monitors health through:
 - **PRD Machine**: Automated requirements freshness tracking
 - **GitHub Actions**: Build validation and content checks
 - **Community feedback**: Issue tracking and discussion monitoring
-
 """
-    
-    def generate_section_done(self) -> str:
-        """Generate the DONE section (Section 9) for IT-Journey."""
-        return """## 9. DONE (Definition of Done)
+
+_STATIC_SECTION_DONE = """\
+## 9. DONE (Definition of Done)
 
 ### Success Criteria
 
@@ -595,223 +808,88 @@ The platform monitors health through:
 > *gamified experiences, and community-driven content.*
 
 **Keep learning. Keep building. Keep sharing.** 🚀
-
 """
-    
-    def generate_metadata_section(self) -> str:
-        """Generate the metadata/frontmatter for the PRD."""
-        now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
-        
-        return f"""---
-title: "PRD: IT-Journey – Open-Source IT Education Platform"
-description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: {now}
-lastmod: {now}
-status: Living
-version: {datetime.now().strftime('%Y-%m-%d')}
-auto_generated: true
-generator: prd-machine
-repository: https://github.com/bamr87/it-journey
----
-
-"""
-    
-    def generate_prd(self) -> str:
-        """Generate the complete PRD document."""
-        self.log("HEADER", "═" * 50)
-        self.log("HEADER", "   PRD MACHINE - Generating PRD.md")
-        self.log("HEADER", "═" * 50)
-        
-        # Ingest all signals
-        self.ingest_git_commits()
-        self.ingest_markdown_files()
-        self.ingest_features()
-        self.detect_conflicts()
-        
-        # Generate sections
-        sections = [
-            self.generate_metadata_section(),
-            "# IT-Journey\n\n",
-            "*Open-Source IT Education Platform*\n\n",
-            f"> **Status:** Living | **Version:** {datetime.now().strftime('%Y-%m-%d')} | **Auto-Generated:** ✅\n\n",
-            self.generate_section_why(),
-            self.generate_section_mvp(),
-            self.generate_section_ux(),
-            self.generate_section_api(),
-            self.generate_section_nfr(),
-            self.generate_section_edge(),
-            self.generate_section_oos(),
-            self.generate_section_road(),
-            self.generate_section_risk(),
-            self.generate_section_done(),
-        ]
-        
-        return "".join(sections)
-    
-    def _strip_volatile_metadata(self, content: str) -> str:
-        """Strip volatile metadata (timestamps, version dates) from PRD content for comparison.
-        
-        This allows us to detect meaningful content changes while ignoring
-        fields that change on every run (date, lastmod, version).
-        """
-        # Strip frontmatter date/lastmod/version lines
-        content = re.sub(r'^(date|lastmod|version):.*$', '', content, flags=re.MULTILINE)
-        # Strip inline version/date references in the status line
-        content = re.sub(r'\*\*Version:\*\*\s*\S+', '**Version:** STRIPPED', content)
-        return content
-    
-    def sync(self, output_path: Optional[Path] = None) -> bool:
-        """Sync and generate/update the PRD.
-        
-        Only writes PRD.md if meaningful content has changed (ignoring
-        volatile metadata like timestamps), preventing recursive commits.
-        """
-        output_path = output_path or self.prd_path
-        
-        try:
-            prd_content = self.generate_prd()
-            
-            # Check if meaningful content actually changed
-            if output_path.exists():
-                existing_content = output_path.read_text(encoding='utf-8')
-                existing_stripped = self._strip_volatile_metadata(existing_content)
-                new_stripped = self._strip_volatile_metadata(prd_content)
-                
-                if existing_stripped == new_stripped:
-                    self.log("INFO", "No meaningful content changes detected -- skipping write")
-                    self.log("INFO", f"Total signals processed: {sum(len(v) for v in self.signals.values())}")
-                    return True
-            
-            # Write to file
-            output_path.write_text(prd_content, encoding='utf-8')
-            
-            self.log("SUCCESS", f"PRD generated successfully: {output_path}")
-            self.log("INFO", f"Total signals processed: {sum(len(v) for v in self.signals.values())}")
-            
-            return True
-            
-        except Exception as e:
-            self.log("ERROR", f"Failed to generate PRD: {e}")
-            return False
-    
-    def status(self) -> Dict[str, Any]:
-        """Get current PRD status and health metrics."""
-        status = {
-            "prd_exists": self.prd_path.exists(),
-            "last_modified": None,
-            "signals": {},
-            "health": "unknown"
-        }
-        
-        if self.prd_path.exists():
-            stat = self.prd_path.stat()
-            status["last_modified"] = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc).isoformat()
-            
-            # Check freshness (should be < 6 hours old)
-            age_hours = (datetime.now(timezone.utc).timestamp() - stat.st_mtime) / 3600
-            if age_hours < 6:
-                status["health"] = "healthy"
-            elif age_hours < 24:
-                status["health"] = "stale"
-            else:
-                status["health"] = "outdated"
-            
-            status["age_hours"] = round(age_hours, 1)
-        
-        return status
-    
-    def show_status(self) -> None:
-        """Display current PRD status."""
-        status = self.status()
-        
-        self.log("HEADER", "═" * 50)
-        self.log("HEADER", "   PRD MACHINE - Status")
-        self.log("HEADER", "═" * 50)
-        
-        if status["prd_exists"]:
-            health_color = {
-                "healthy": "SUCCESS",
-                "stale": "WARNING",
-                "outdated": "ERROR"
-            }.get(status["health"], "INFO")
-            
-            self.log("INFO", f"PRD Path: {self.prd_path}")
-            self.log("INFO", f"Last Modified: {status['last_modified']}")
-            self.log("INFO", f"Age: {status['age_hours']} hours")
-            self.log(health_color, f"Health: {status['health'].upper()}")
-        else:
-            self.log("WARNING", "No PRD.md found. Run 'prd-machine sync' to generate.")
 
 
-def main():
-    """Main entry point for the PRD Machine CLI."""
+# ════════════════════════════════════════════════════════════════
+# CLI
+# ════════════════════════════════════════════════════════════════
+
+def main() -> int:
     parser = argparse.ArgumentParser(
-        description="PRD MACHINE - The Self-Writing, Self-Evolving Product Reality Distillery",
+        description="PRD MACHINE v2 - PR-Driven Product Reality Distillery",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
+        epilog="""\
 Examples:
-  prd-machine sync              # Generate or update PRD.md
-  prd-machine sync --days 7     # Use commits from last 7 days
-  prd-machine status            # Check PRD health
-  prd-machine conflicts         # Show detected conflicts
-        """
+  prd-machine init                    # Create PRD.md with markers
+  prd-machine sync                    # Update dynamic sections
+  prd-machine check                   # Quick: does PRD need updating?
+  prd-machine check --ai              # AI-enhanced analysis
+  prd-machine check --pr-json ev.json # Analyze a specific PR
+  prd-machine status                  # Health check
+  prd-machine conflicts               # Show conflicts
+""",
     )
-    
-    subparsers = parser.add_subparsers(dest="command", help="Available commands")
-    
-    # Sync command
-    sync_parser = subparsers.add_parser("sync", help="Generate or update PRD.md")
-    sync_parser.add_argument(
-        "--days", type=int, default=30,
-        help="Number of days of git history to ingest (default: 30)"
-    )
-    sync_parser.add_argument(
-        "--output", "-o", type=str, default=None,
-        help="Output path for PRD.md (default: ./PRD.md)"
-    )
-    
-    # Status command
-    subparsers.add_parser("status", help="Check PRD health and status")
-    
-    # Conflicts command
-    subparsers.add_parser("conflicts", help="Show detected requirement conflicts")
-    
-    # Version
-    parser.add_argument("--version", action="version", version="prd-machine 1.0.0")
-    
+    sub = parser.add_subparsers(dest="command")
+
+    # init
+    init_p = sub.add_parser("init", help="Create PRD.md with markers + scaffolding")
+    init_p.add_argument("-o", "--output", type=str, default=None)
+
+    # sync
+    sync_p = sub.add_parser("sync", help="Update dynamic sections in PRD.md")
+    sync_p.add_argument("--days", type=int, default=30)
+    sync_p.add_argument("-o", "--output", type=str, default=None)
+    sync_p.add_argument("--ai", action="store_true", help="Enable AI analysis")
+    sync_p.add_argument("--model", type=str, default="", help="AI model override")
+
+    # check
+    check_p = sub.add_parser("check", help="Quick check: does PRD need updating?")
+    check_p.add_argument("--pr-json", type=str, default=None, help="Path to PR event JSON")
+    check_p.add_argument("--ai", action="store_true", help="Enable AI analysis")
+    check_p.add_argument("--model", type=str, default="", help="AI model override")
+
+    # status
+    sub.add_parser("status", help="Show PRD health")
+
+    # conflicts
+    conflicts_p = sub.add_parser("conflicts", help="Show detected conflicts")
+    conflicts_p.add_argument("--days", type=int, default=30)
+
+    parser.add_argument("--version", action="version", version=f"prd-machine {VERSION}")
+
     args = parser.parse_args()
-    
     if not args.command:
         parser.print_help()
         return 0
-    
+
     machine = PRDMachine()
-    
+
+    if args.command == "init":
+        out = Path(args.output) if args.output else None
+        return 0 if machine.init(out) else 1
+
     if args.command == "sync":
-        output_path = Path(args.output) if args.output else None
-        success = machine.sync(output_path)
-        return 0 if success else 1
-    
-    elif args.command == "status":
+        out = Path(args.output) if args.output else None
+        return 0 if machine.sync(out, days=args.days) else 1
+
+    if args.command == "check":
+        result = machine.check(
+            pr_json_path=args.pr_json,
+            ai=args.ai,
+            model=args.model,
+        )
+        # Output JSON for CI consumption
+        print(json.dumps(result, indent=2))
+        return 1 if result["needs_update"] else 0
+
+    if args.command == "status":
         machine.show_status()
         return 0
-    
-    elif args.command == "conflicts":
-        machine.ingest_git_commits()
-        conflicts = machine.detect_conflicts()
-        
-        if conflicts:
-            machine.log("WARNING", f"Found {len(conflicts)} conflicts:")
-            for c in conflicts:
-                severity = c.get('severity', 'medium')
-                severity_icon = "🔴" if severity == "high" else "🟡"
-                print(f"  {severity_icon} [{c['type']}] {c['description']}")
-                print(f"    Resolution: {c['resolution']}")
-        else:
-            machine.log("SUCCESS", "No conflicts detected")
-        
-        return 0
-    
+
+    if args.command == "conflicts":
+        return machine.show_conflicts(days=args.days)
+
     return 0
 
 
