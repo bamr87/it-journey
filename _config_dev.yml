@@ -9,6 +9,7 @@ incremental: true
 # Performance: disable feed/sitemap regeneration during dev
 # These plugins regenerate fully on every change, adding ~10-20s
 plugins:
+  - jekyll-include-cache
   - jekyll-relative-links
   - jekyll-seo-tag
   - jekyll-paginate

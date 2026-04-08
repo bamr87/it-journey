@@ -46,7 +46,7 @@ keywords:
     - pull request orchestration
     - CI/CD pipelines
     - conventional commits
-layout: journals
+layout: article
 fmContentType: quest
 comments: false
 attachments: ""

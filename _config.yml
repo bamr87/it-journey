@@ -159,31 +159,24 @@ resources:
 
 powered_by:
   - name: "Ruby"
-    version: "3.2.3"
     url: "https://www.ruby-lang.org/"
     icon: "bi-gem"
   - name: "Jekyll"
-    version: "3.9.5"
     url: "https://jekyllrb.com/"
     icon: "bi-joystick"
   - name: "Bootstrap"
-    version: "5.2.0"
     url: "https://getbootstrap.com/"
     icon: "bi-bootstrap"
   - name: "jQuery"
-    version: "3.7"
     url: "https://jquery.com/"
     icon: "bi-filetype-js"
   - name: "MathJax"
-    version: "3.2"
     url: "https://www.mathjax.org/"
     icon: "bi-calculator"
   - name: "GitHub Pages"
-    version: "232"
     url: "https://pages.github.com/"
     icon: "bi-github"
-  - name: "docker"
-    version: "20.10.8"
+  - name: "Docker"
     url: "https://www.docker.com/"
     icon: "bi-docker"
 
@@ -196,6 +189,7 @@ powered_by:
 
 plugins:
   - github-pages
+  - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
@@ -210,7 +204,16 @@ gisgus:
   data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
   data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
 
-# https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
+## Mermaid Diagram Configuration #################################################
+# Mermaid diagrams support both native markdown code blocks and div syntax
+# Usage:
+#   1. Add 'mermaid: true' to page front matter
+#   2. Use ```mermaid ... ``` code blocks OR <div class="mermaid">...</div>
+#
+# GitHub Pages Compatible: Yes (client-side; assets served via remote_theme)
+
+mermaid:
+  src: '/assets/vendor/mermaid/mermaid.min.js'
 
 ## Conversion
 # Markdown Options https://jekyllrb.com/docs/configuration/markdown/
