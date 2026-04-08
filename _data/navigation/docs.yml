@@ -5,33 +5,38 @@
   url: /docs/
   icon: bi-book
   children:
-    - title: Library Index
-      url: /docs/
-    - title: Frontmatter Preview
-      url: /docs/frontmatter-preview-solution/
+  - title: Library Index
+    url: /docs/
+  - title: Frontmatter Preview
+    url: /docs/frontmatter-preview-solution/
 - title: Jekyll
   url: /docs/jekyll/
   icon: bi-gem
   children:
-    - title: Jekyll Overview
-      url: /docs/jekyll/
-    - title: Jekyll Configuration
-      url: /docs/jekyll/jekyll-config
-    - title: Frontmatter CMS
-      url: /docs/jekyll/jekyll-frontmatter-cms
-    - title: Liquid Templating
-      url: /docs/jekyll/jekyll-liquid
-    - title: Mermaid Diagrams
-      url: /docs/jekyll/jekyll-diagram-with-mermaid
-    - title: MathJax Symbols
-      url: /docs/jekyll/jekyll-math-symbols-with-mathjax
-    - title: Mermaid Migration
-      url: /docs/jekyll/mermaid-migration
+  - title: Jekyll Overview
+    url: /docs/jekyll/
+  - title: Jekyll Configuration
+    url: /docs/jekyll/jekyll-config
+  - title: Frontmatter CMS
+    url: /docs/jekyll/jekyll-frontmatter-cms
+  - title: Liquid Templating
+    url: /docs/jekyll/jekyll-liquid
+  - title: Mermaid Diagrams
+    url: /docs/jekyll/jekyll-diagram-with-mermaid
+  - title: MathJax Symbols
+    url: /docs/jekyll/jekyll-math-symbols-with-mathjax
+  - title: Mermaid Migration
+    url: /docs/jekyll/mermaid-migration
 - title: Terminal
   icon: bi-terminal
   children:
-    - title: Terminal Shortcuts
-      url: /docs/terminal-shortcuts-cheat-sheet/
-    - title: Complete BASH Reference
-      url: /docs/bash-complete-reference/
-
+  - title: Terminal Shortcuts
+    url: /docs/terminal-shortcuts-cheat-sheet/
+  - title: Complete BASH Reference
+    url: /docs/bash-complete-reference/
+- title: Wargames
+  url: /docs/wargames/
+  icon: bi-shield-lock
+  children:
+  - title: Wargames Overview
+    url: /docs/wargames/

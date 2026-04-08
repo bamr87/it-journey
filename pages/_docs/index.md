@@ -3,7 +3,7 @@ title: Learning Resources Library
 author: Amr Abdel Eissa
 permalink: /docs/
 description: Reference documentation and learning resources for tools and technologies used in IT-Journey
-excerpt: "Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey."
+excerpt: Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey.
 categories:
   - docs
   - home
@@ -13,11 +13,9 @@ tags:
   - learning-resources
   - jekyll
   - terminal
-sidebar:
-  nav: docs
 toc_sticky: true
 date: 2021-12-03T09:05:06.000Z
-lastmod: 2026-04-02T03:24:28.792Z
+lastmod: 2026-04-07T02:46:45.139Z
 draft: false
 keywords:
   primary:
@@ -72,6 +70,15 @@ The IT-Journey platform is built with Jekyll, a static site generator. The Jekyl
 - [Liquid Templating](jekyll/jekyll-liquid.md) - Liquid template language
 - [Mermaid Diagrams](jekyll/jekyll-diagram-with-mermaid.md) - Creating diagrams
 - [Math Symbols](jekyll/jekyll-math-symbols-with-mathjax.md) - Mathematical notation
+
+### Wargames (External)
+
+Security challenges aggregated from the [OverTheWire](https://overthewire.org/wargames/) community project. Learn and practice security concepts through gamified challenges.
+
+**Topics:**
+- [Wargames Overview](/docs/wargames/) - Introduction, game list, and how to get started
+
+> This section is populated by the [docs aggregation pipeline](/it-journey/scripts/docs-aggregator/). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
 
 ### Future Documentation Areas
 
@@ -159,9 +166,19 @@ See [Content Guidelines](../../docs/standards/CONTENT_GUIDELINES.md) for detaile
 
 ## Documentation Sources
 
-### Git Submodules (Future)
+### Git Submodules & Aggregation
 
-The goal is to integrate official documentation from tool repositories using Git submodules:
+The documentation library supports two approaches for integrating external content:
+
+**Docs Aggregation Pipeline** (Active):
+```bash
+# Aggregate external documentation into _docs
+bash scripts/docs-aggregator/aggregate_docs.sh
+```
+
+The aggregation pipeline clones external repos, extracts documentation, transforms it to Jekyll-compatible format with it-journey frontmatter, and places it under `pages/_docs/`. See [docs-aggregator README](../../scripts/docs-aggregator/README.md) for details and how to add new sources.
+
+**Git Submodules** (Future alternative):
 
 ```bash
 # Example: Adding Jekyll official docs

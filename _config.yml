@@ -362,7 +362,7 @@ defaults:
       share: true
       related: true
       sidebar:
-        nav: docs
+        nav: auto
     # permalink: /docs/:category/:name/
 
   # pages/_quests
