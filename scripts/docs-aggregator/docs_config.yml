@@ -1,0 +1,67 @@
+# Documentation Aggregator - Source Repository Registry
+#
+# Each source defines an external repository whose documentation
+# will be aggregated, transformed, and integrated into the
+# it-journey _docs collection.
+#
+# Fields:
+#   name          - Short identifier (used as subdirectory name)
+#   repo          - Git clone URL
+#   branch        - Branch to checkout (default: main)
+#   content_paths - List of paths within the repo to extract
+#   framework     - Source site framework: jekyll | hugo | mkdocs | plain
+#   category      - Target subdirectory under pages/_docs/
+#   description   - Human-readable description
+#   tags          - Tags applied to all aggregated pages
+#   license       - SPDX license identifier
+#   license_url   - URL to the license file
+#   exclude_patterns - Glob patterns to skip during extraction
+#   include_extensions - File extensions to include (default: [.md])
+
+sources:
+  - name: overthewire
+    repo: https://github.com/OverTheWireOrg/OverTheWire-website
+    branch: gh-pages
+    content_paths:
+      - wargames/
+    framework: jekyll
+    category: wargames
+    description: >-
+      Security wargames from the OverTheWire community. Learn and practice
+      security concepts through gamified challenges, from basic Unix/Linux
+      commands (Bandit) to advanced binary exploitation (Narnia, Behemoth).
+    tags:
+      - security
+      - wargames
+      - linux
+      - ctf
+      - cybersecurity
+    license: MIT
+    license_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE
+    exclude_patterns:
+      - "*.html"
+      - "*.css"
+      - "*.js"
+      - "img/"
+      - "css/"
+      - "js/"
+      - "_includes/"
+      - "_layouts/"
+      - "patreon/"
+    include_extensions:
+      - .md
+
+# Example: Adding another source (uncomment to enable)
+#
+#  - name: linuxjourney
+#    repo: https://github.com/cindyq/linuxjourney
+#    branch: master
+#    content_paths:
+#      - lessons/
+#    framework: plain
+#    category: linux-fundamentals
+#    description: "Learn the fundamentals of Linux"
+#    tags: [linux, fundamentals, beginner]
+#    license: MIT
+#    exclude_patterns: []
+#    include_extensions: [.md]
