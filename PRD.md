@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-04-07T19:15:17.000Z
-lastmod: 2026-04-07T19:15:17.000Z
+date: 2026-04-11T02:51:25.000Z
+lastmod: 2026-04-11T02:51:25.000Z
 status: Living
-version: 2026-04-07
+version: 2026-04-11
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-04-07 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-04-11 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -46,7 +46,7 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 17 | ✅ Published |
 | Total Markdown Files | 47 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 32 | ✅ Analyzed |
+| Recent Commits | 30 | ✅ Analyzed |
 | Detected Issues | 6 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
