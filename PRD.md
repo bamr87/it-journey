@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-04-19T03:36:02.000Z
-lastmod: 2026-04-19T03:36:02.000Z
+date: 2026-04-20T03:37:55.000Z
+lastmod: 2026-04-20T03:37:55.000Z
 status: Living
-version: 2026-04-19
+version: 2026-04-20
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-04-19 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-04-20 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -46,8 +46,8 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 17 | ✅ Published |
 | Total Markdown Files | 47 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 22 | ✅ Analyzed |
-| Detected Issues | 5 | ⚠️ Review needed |
+| Recent Commits | 21 | ✅ Analyzed |
+| Detected Issues | 4 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -171,8 +171,6 @@ python3 scripts/validation/link-checker.py --scope website
 ### Recent Issues Detected
 
 - 🔴 **FIX**: Bug fix suggests incomplete requirement: fix(ci): add issues: write permission to prd-sync workflow
-  - *Action*: Consider if original requirement needs clarification
-- 🔴 **FIX**: Bug fix suggests incomplete requirement: fix: replace GITHUB_PAT with GITHUB_TOKEN in workflows and update lastmod dates
   - *Action*: Consider if original requirement needs clarification
 - 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(posts): add draft:false and trim over-length description to address AI review scores
   - *Action*: Consider if original requirement needs clarification
