@@ -1,11 +1,11 @@
 <!-- AUTO:BEGIN:metadata -->
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
-description: "Product requirements for IT-Journey"
-date: 2026-04-08T01:14:03.000Z
-lastmod: 2026-04-08T01:14:03.000Z
+description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
+date: 2026-04-21T08:03:55.000Z
+lastmod: 2026-04-21T08:03:55.000Z
 status: Living
-version: 2026-04-07
+version: 2026-04-21
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -16,9 +16,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-<!-- AUTO:BEGIN:status_line -->
-> **Status:** Living | **Version:** 2026-04-07 | **Auto-Generated:** ✅
-<!-- AUTO:END:status_line -->
+> **Status:** Living | **Version:** 2026-04-21 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -47,13 +45,12 @@ As a **learner / contributor / educator**, I want:
 
 | Source | Count | Status |
 |--------|-------|--------|
-| Learning Quests | 193 | ✅ Published |
-| Educational Posts | 124 | ✅ Published |
-| Total Markdown Files | 341 | ✅ Indexed |
-| Implemented Features | 3 | ✅ Tracked |
-| Recent Commits | 32 | ✅ Analyzed |
-| Detected Issues | 6 | ⚠️ Review needed |
-<!-- AUTO:END:mvp_status -->
+| Learning Quests | 6 | ✅ Published |
+| Educational Posts | 17 | ✅ Published |
+| Total Markdown Files | 47 | ✅ Indexed |
+| Implemented Features | 0 | ✅ Tracked |
+| Recent Commits | 14 | ✅ Analyzed |
+| Detected Issues | 3 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -180,15 +177,10 @@ python3 scripts/validation/link-checker.py --scope website
 
 - 🔴 **FIX**: Bug fix suggests incomplete requirement: fix(ci): add issues: write permission to prd-sync workflow
   - *Action*: Consider if original requirement needs clarification
-- 🔴 **FIX**: Bug fix suggests incomplete requirement: fix: replace GITHUB_PAT with GITHUB_TOKEN in workflows and update lastmod dates
-  - *Action*: Consider if original requirement needs clarification
 - 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(posts): add draft:false and trim over-length description to address AI review scores
   - *Action*: Consider if original requirement needs clarification
 - 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(docs): correct layout names, difficulty values, gisgus key, sidebar nav, and stale dates in quickstart guides
   - *Action*: Consider if original requirement needs clarification
-- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(validator): skip required field checks for fields with _config.yml defaults (#169)
-  - *Action*: Consider if original requirement needs clarification
-<!-- AUTO:END:edge_issues -->
 
 ## 6. OOS (Out Of Scope)
 
