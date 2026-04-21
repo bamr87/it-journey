@@ -1,10 +1,10 @@
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
-date: 2026-04-20T08:21:31.000Z
-lastmod: 2026-04-20T08:21:31.000Z
+date: 2026-04-21T03:30:16.000Z
+lastmod: 2026-04-21T03:30:16.000Z
 status: Living
-version: 2026-04-20
+version: 2026-04-21
 auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
@@ -14,7 +14,7 @@ repository: https://github.com/bamr87/it-journey
 
 *Open-Source IT Education Platform*
 
-> **Status:** Living | **Version:** 2026-04-20 | **Auto-Generated:** ✅
+> **Status:** Living | **Version:** 2026-04-21 | **Auto-Generated:** ✅
 
 ## 0. WHY
 
@@ -46,8 +46,8 @@ As a **learner / contributor / educator**, I want:
 | Educational Posts | 17 | ✅ Published |
 | Total Markdown Files | 47 | ✅ Indexed |
 | Implemented Features | 0 | ✅ Tracked |
-| Recent Commits | 20 | ✅ Analyzed |
-| Detected Issues | 4 | ⚠️ Review needed |
+| Recent Commits | 15 | ✅ Analyzed |
+| Detected Issues | 3 | ⚠️ Review needed |
 
 ## 2. UX (User eXperience Flow)
 
@@ -175,8 +175,6 @@ python3 scripts/validation/link-checker.py --scope website
 - 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(posts): add draft:false and trim over-length description to address AI review scores
   - *Action*: Consider if original requirement needs clarification
 - 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(docs): correct layout names, difficulty values, gisgus key, sidebar nav, and stale dates in quickstart guides
-  - *Action*: Consider if original requirement needs clarification
-- 🟡 **FIX**: Bug fix suggests incomplete requirement: fix(validator): skip required field checks for fields with _config.yml defaults (#169)
   - *Action*: Consider if original requirement needs clarification
 
 ## 6. OOS (Out Of Scope)
