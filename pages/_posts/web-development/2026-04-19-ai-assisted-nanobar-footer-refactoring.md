@@ -199,7 +199,7 @@ In `header.html`, removed the old hardcoded bar and added a conditional mount:
 
 Replaced ~60 lines with one line:
 ```liquid
-{% include components/nanobar.html %}
+{% raw %}{% include components/nanobar.html %}{% endraw %}
 ```
 
 ---
