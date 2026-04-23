@@ -1,20 +1,21 @@
 ---
 title: Markdown Code to Scripts
-description: null
-date: 2024-06-02T16:17:06.000Z
+description: 'bamr87: how would i convert a markdown file into a bash script? essentially, i just want all the text outside of the "shell" code blocks to be commented…'
+date: 2024-06-02 16:17:06+00:00
 preview: null
 draft: true
 tags: []
-categories: []
+categories:
+- Programming
 sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-06-02T21:11:53.991Z
+lastmod: 2024-06-02 21:11:53.991000+00:00
 slug: null
 permalink: null
-attachments: ""
+attachments: ''
 type: posts
 section: Programming
 ---

@@ -1,18 +1,19 @@
 ---
 title: AI to create AI
-description: ""
-date: 2025-04-18T13:43:43.000Z
-preview: ""
+description: "Configuration examples and prompts for building specialized AI assistants — including a Diagram and Mind Map Assistant defined via JSON schema."
+date: 2025-04-18 13:43:43+00:00
+preview: ''
 tags: []
-categories: []
+categories:
+- AI & Machine Learning
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-03-20T15:07:48.277Z
+lastmod: 2025-03-20 15:07:48.277000+00:00
 permalink: null
-attachments: ""
+attachments: ''
 comments: false
 section: AI & Machine Learning
 ---

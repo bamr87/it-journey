@@ -1,20 +1,21 @@
 ---
 title: Sandle Tuesday
-description: null
-date: 2024-10-02T15:35:35.000Z
+description: In a quiet little village in the heart of Egypt, where the Nile whispered secrets to anyone who would listen and pyramids stood as dusty sentinels of…
+date: 2024-10-02 15:35:35+00:00
 preview: null
 draft: true
 tags: []
-categories: []
+categories:
+- Creative & Experimental
 sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-06-30T14:18:09.225Z
+lastmod: 2024-06-30 14:18:09.225000+00:00
 slug: null
 permalink: null
-attachments: ""
+attachments: ''
 type: posts
 section: Creative & Experimental
 ---

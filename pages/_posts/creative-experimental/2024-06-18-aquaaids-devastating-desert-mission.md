@@ -1,14 +1,11 @@
 ---
 assistant: Title Generator
 categories: gpt
-date: 2024-06-18T16:17:18.000Z
+date: 2024-06-18 16:17:18+00:00
 section: Creative & Experimental
-prompt: write me a satirical article about a company with good intentions to help
-  poor countires irrigate their dessert land but only to have their equipment fail
-  and polute the land that was intended to be used to grow wheat. Eventually, the
-  cost to grow wheat increased and the water supply became polluted, which sparked
-  a revolution and stance against western imperialism..
+prompt: write me a satirical article about a company with good intentions to help poor countires irrigate their dessert land but only to have their equipment fail and polute the land that was intended to be used to grow wheat. Eventually, the cost to grow wheat increased and the water supply became polluted, which sparked a revolution and stance against western imperialism..
 title: AquaAid's Devastating Desert Mission
+description: In a classic case of good intentions gone awry, the company "AquaAid" embarked on a mission to help impoverished desert countries irrigate their arid…
 ---
 In a classic case of good intentions gone awry, the company "AquaAid" embarked on a mission to help impoverished desert countries irrigate their arid lands and transform them into fertile wheat fields. With grand promises of ending hunger and poverty, AquaAid brought in state-of-the-art irrigation equipment and set to work in the vast desert landscapes.
 

@@ -1,19 +1,20 @@
 ---
 title: fight with tools
-description: null
-date: 2024-05-16T14:03:26.000Z
+description: 'Here is an original set of lyrics inspired by the themes and messages of "Fight With Tools" by Flobots:'
+date: 2024-05-16 14:03:26+00:00
 preview: null
 draft: true
 tags: []
-categories: []
+categories:
+- Tools & Environment
 sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-06-02T21:49:51.134Z
+lastmod: 2024-06-02 21:49:51.134000+00:00
 slug: null
-attachments: ""
+attachments: ''
 type: posts
 section: Tools & Environment
 ---

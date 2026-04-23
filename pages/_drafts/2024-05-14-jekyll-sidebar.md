@@ -1,12 +1,12 @@
 ---
 title: jekyll sidebar
-date: 2024-05-14T22:06:19.000Z
+date: 2024-05-14 22:06:19+00:00
 tags: []
-lastmod: 2024-05-19T16:02:26.577Z
-description: null
+lastmod: 2024-05-19 16:02:26.577000+00:00
+description: This guide will show you how to display files and folders in a sidebar in Jekyll, and how to create a hyperlink for each file.
 preview: null
 categories:
-   - jekyll
+- jekyll
 sub-title: null
 excerpt: test
 snippet: null
@@ -17,7 +17,6 @@ type: posts
 published: false
 draft: true
 section: Web Development
-
 ---
 
 {% raw %}

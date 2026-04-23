@@ -1,11 +1,12 @@
 ---
 assistant: Title Generator
 categories: gpt
-date: 2024-10-02T15:35:35.000Z
+date: 2024-10-02 15:35:35+00:00
 prompt: write an article in the form of a riddle about dogs and cats ruling humans. End it with a haiku.
 title: Furry Monarchs Rule Night
-lastmod: 2024-06-24T16:43:13.205Z
+lastmod: 2024-06-24 16:43:13.205000+00:00
 section: Creative & Experimental
+description: I am a creature beloved by many, Some say I'm cute, some say I'm smelly. With a wag of my tail and a purr of delight, I rule over humans day and night.
 ---
 
 I am a creature beloved by many,

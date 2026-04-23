@@ -1,17 +1,18 @@
 ---
 title: Dynamic Sidebar Tree
-lastmod: 2024-05-16T16:15:26.771Z
-date: 2024-05-14T22:06:19.000Z
+lastmod: 2024-05-16 16:15:26.771000+00:00
+date: 2024-05-14 22:06:19+00:00
 tags:
-  - copilot
-  - jekyll
-  - liquid
-  - sidebar
-  - tree
-  - folder
+- copilot
+- jekyll
+- liquid
+- sidebar
+- tree
+- folder
 description: Update code to display sub-folders and files in a sidebar tree structure.
 preview: null
-categories: []
+categories:
+- Web Development
 sub-title: null
 snippet: null
 author: null

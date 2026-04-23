@@ -1,9 +1,10 @@
 ---
 categories: gpt
-date: 2024-06-18T16:17:02.000Z
-title: "Enchanted Baking: Unicorn Delights"
+date: 2024-06-18 16:17:02+00:00
+title: 'Enchanted Baking: Unicorn Delights'
 section: Creative & Experimental
-lastmod: 2024-06-18T17:08:00.151Z
+lastmod: 2024-06-18 17:08:00.151000+00:00
+description: 'Episode 1: Rainbow Cupcake Extravaganza'
 ---
 
 Episode 1: Rainbow Cupcake Extravaganza

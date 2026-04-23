@@ -1,10 +1,11 @@
 ---
 title: Latest Trends in Manufacturing Technology
 categories: blog
-date: 2024-06-01T22:03:24.000Z
-lastmod: 2024-06-02T01:52:54.687Z
+date: 2024-06-01 22:03:24+00:00
+lastmod: 2024-06-02 01:52:54.687000+00:00
 section: Trends & Ideas
 draft: true
+description: 'Latest Trends in Manufacturing Technology: The Role of ERP Systems ------------------------------------------------------------------'
 ---
 
 Latest Trends in Manufacturing Technology: The Role of ERP Systems

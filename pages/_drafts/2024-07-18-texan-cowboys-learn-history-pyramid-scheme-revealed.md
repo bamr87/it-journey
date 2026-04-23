@@ -1,20 +1,21 @@
 ---
-title: "Texan Cowboys Learn History: Pyramid Scheme Revealed"
-description: null
-date: 2024-10-02T15:35:35.000Z
+title: 'Texan Cowboys Learn History: Pyramid Scheme Revealed'
+description: Dallas, TX – In an age where historical grievances usually serve as fodder for dusty textbooks, one American-Egyptian family found themselves in an…
+date: 2024-10-02 15:35:35+00:00
 preview: null
 draft: true
 tags: []
-categories: []
+categories:
+- Culture & Society
 sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-07-18T15:08:34.765Z
+lastmod: 2024-07-18 15:08:34.765000+00:00
 slug: null
 permalink: null
-attachments: ""
+attachments: ''
 type: posts
 section: Culture & Society
 ---

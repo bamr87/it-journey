@@ -1,10 +1,11 @@
 ---
 title: doc scraper
-description: ""
-date: 2024-07-27T19:27:05.000Z
-preview: ""
+description: "Notes and exploration around document scraping techniques for extracting structured data from web sources."
+date: 2024-07-27 19:27:05+00:00
+preview: ''
 tags: []
-categories: []
+categories:
+- Data & Analytics
 section: Data & Analytics
 type: default
 ---

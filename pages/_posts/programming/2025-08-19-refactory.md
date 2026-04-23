@@ -1,18 +1,19 @@
 ---
 title: Refactory
-description: ""
-date: 2025-08-21T22:00:59.000Z
-preview: ""
+description: In the digital age, the term "refactory" emerges as a powerful portmanteau, blending "refactor"—the software engineering practice of restructuring code…
+date: 2025-08-21 22:00:59+00:00
+preview: ''
 tags: []
-categories: []
+categories:
+- Programming
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-08-19T21:58:40.258Z
+lastmod: 2025-08-19 21:58:40.258000+00:00
 permalink: null
-attachments: ""
+attachments: ''
 comments: false
 section: Programming
 ---

@@ -1,20 +1,21 @@
 ---
 title: Searchbar and sitemaping
-description: null
-date: 2024-05-23T22:35:18.000Z
+description: 'bamr87: add the page excerpt, page tags, absolute url, and author as new columns'
+date: 2024-05-23 22:35:18+00:00
 preview: null
 draft: true
 tags: []
-categories: []
+categories:
+- Web Development
 sub-title: null
 excerpt: Chat with GitHub Copilot to add a search bar and sitemap to your Jekyll site
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-05-24T03:19:52.363Z
+lastmod: 2024-05-24 03:19:52.363000+00:00
 slug: null
 permalink: null
-attachments: ""
+attachments: ''
 type: posts
 section: Web Development
 ---

@@ -1,20 +1,21 @@
 ---
 title: GPT Prompt Engineering
-description: null
-date: 2024-10-02T15:35:35.000Z
+description: 'Role: You are a content generator for a satirical news site. Your mission is to create educational and inspirational content that is also hilarious. Your…'
+date: 2024-10-02 15:35:35+00:00
 preview: null
 draft: true
 tags: []
-categories: []
+categories:
+- AI & Machine Learning
 sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-06-30T14:18:02.896Z
+lastmod: 2024-06-30 14:18:02.896000+00:00
 slug: gpt-prompt-engineering
 permalink: null
-attachments: ""
+attachments: ''
 type: posts
 section: AI & Machine Learning
 ---

@@ -3,11 +3,12 @@ author: bamr87
 categories:
 - posts
 category: parody
-date: 2024-05-22T08:39:24.000Z
+date: 2024-05-22 08:39:24+00:00
 draft: false
 lastmod: 2024-05-22 15:28:30.002000+00:00
 title: 'Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale'
 section: Culture & Society
+description: 'Title:'
 ---
 
 Title: 

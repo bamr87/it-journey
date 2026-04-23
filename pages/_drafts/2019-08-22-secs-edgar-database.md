@@ -3,11 +3,12 @@ title: SEC's Edgar Database
 description: The SEC's Edgar database provides insights into the financial health and operational performance of publicly-traded companies in the U.S.
 author: Amr and ChatGPT
 excerpt: null
-date: 2024-04-16T22:40:14.000Z
-lastmod: 2024-04-16T16:36:04.294Z
+date: 2024-04-16 22:40:14+00:00
+lastmod: 2024-04-16 16:36:04.294000+00:00
 draft: true
 tags: []
-categories: []
+categories:
+- Data & Analytics
 meta: null
 snippet: null
 slug: null
