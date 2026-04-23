@@ -58,6 +58,7 @@ validation_methods:
     - Test custom domain configuration
     - Validate CI/CD pipeline execution
     - Check site performance with Azure monitoring
+section: DevOps
 ---
 
 ## Introduction

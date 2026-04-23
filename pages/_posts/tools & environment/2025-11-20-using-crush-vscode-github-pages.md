@@ -8,6 +8,7 @@ categories: [ai & machine learning, devops, web development]
 tags: [crush, vscode, github-pages, ci-cd, jekyll, ai-assisted-writing]
 permalink: /posts/2025-11-20-using-crush-vscode-github-pages/
 author: IT-Journey AI Assistant
+section: Tools & Environment
 ---
 
 # Streamlining Content Creation: Using Crush in VSCode for Instant GitHub Pages Publishing

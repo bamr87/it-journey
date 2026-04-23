@@ -46,6 +46,7 @@ validation_methods:
     - Create and test 3 structured prompts using RCTF pattern
     - Build a .github/copilot-instructions.md for a project
     - Design a reusable prompt template with variables
+section: AI & Machine Learning
 ---
 
 ## Introduction

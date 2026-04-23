@@ -170,39 +170,48 @@ class PostOrganizer:
         return datetime.now().strftime('%Y-%m-%d')
     
     def extract_slug(self, frontmatter: Dict, filename: str) -> Optional[str]:
-        """Extract slug from frontmatter or generate from filename/title, preserving date prefix."""
-        # Get the date prefix
+        """Extract slug, preferring the existing filename slug to preserve URLs.
+
+        Order of precedence:
+        1. Existing filename slug (preserves established URLs / inbound links).
+        2. Explicit ``slug`` frontmatter field.
+        3. ``permalink`` last segment.
+        4. Title-derived slug (last resort, may change URLs).
+
+        Special characters in the filename slug (e.g. apostrophes) are sanitized.
+        """
         date_prefix = self.extract_date_prefix(frontmatter, filename)
-        
-        # Try to get slug from permalink first
-        if 'permalink' in frontmatter and frontmatter['permalink']:
-            permalink = frontmatter['permalink']
-            # Extract the last part of the permalink as slug
+
+        # 1. Existing filename slug (URL-preserving default)
+        base_name = Path(filename).stem
+        date_pattern = r'^\d{4}-\d{2}-\d{2}-'
+        existing_slug = re.sub(date_pattern, '', base_name)
+        if existing_slug:
+            # Sanitize: strip apostrophes and other punctuation, collapse dashes
+            sanitized = re.sub(r"[^\w\s-]", '', existing_slug.lower())
+            sanitized = re.sub(r'[-\s]+', '-', sanitized).strip('-')
+            if sanitized:
+                return f"{date_prefix}-{sanitized}"
+
+        # 2. Explicit slug field
+        if frontmatter.get('slug'):
+            return f"{date_prefix}-{frontmatter['slug']}"
+
+        # 3. Permalink last segment
+        permalink = frontmatter.get('permalink')
+        if permalink:
             slug_part = Path(permalink).name
             if slug_part and slug_part != '/':
                 return f"{date_prefix}-{slug_part}"
-        
-        # Try to get slug from explicit slug field
-        if 'slug' in frontmatter and frontmatter['slug']:
-            slug_part = frontmatter['slug']
-            return f"{date_prefix}-{slug_part}"
-        
-        # Generate slug from title
-        if 'title' in frontmatter and frontmatter['title']:
-            title = frontmatter['title']
-            # Convert title to slug format
+
+        # 4. Title-derived slug (last resort)
+        title = frontmatter.get('title')
+        if title:
             slug_part = re.sub(r'[^\w\s-]', '', title.lower())
-            slug_part = re.sub(r'[-\s]+', '-', slug_part)
-            slug_part = slug_part.strip('-')
-            return f"{date_prefix}-{slug_part}"
-        
-        # Fallback: use filename without date prefix and extension, then re-add date
-        base_name = Path(filename).stem
-        date_pattern = r'^\d{4}-\d{2}-\d{2}-'
-        slug_part = re.sub(date_pattern, '', base_name)
-        if slug_part:
-            return f"{date_prefix}-{slug_part}"
-        
+            slug_part = re.sub(r'[-\s]+', '-', slug_part).strip('-')
+            if slug_part:
+                return f"{date_prefix}-{slug_part}"
+
         return None
     
     def get_section(self, frontmatter: Dict) -> Optional[str]:
