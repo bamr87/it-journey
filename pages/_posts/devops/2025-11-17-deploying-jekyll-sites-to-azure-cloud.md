@@ -711,7 +711,7 @@ Your Jekyll site is now running on Azure Cloud with professional-grade hosting, 
 ### Official Documentation
 
 - [Azure Static Web Apps Overview](https://docs.microsoft.com/azure/static-web-apps/overview)
-- [Jekyll Deployment Methods](https://jekyllrb.com/docs/deployment/methods/)
+- [Jekyll Deployment Methods](https://jekyllrb.com/docs/deployment/)
 - [GitHub Actions for Azure](https://github.com/Azure/actions)
 
 ### Community Resources
