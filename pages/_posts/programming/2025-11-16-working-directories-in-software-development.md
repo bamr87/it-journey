@@ -555,6 +555,7 @@ To cement this knowledge, try a few exercises in a project you care about.
 - What is the expected working directory?
 - Which config files does it load from there?
 - Where do logs and artifacts go?
+
 1. Document this in your project’s README or CONTRIBUTING guide.
 
 ### Exercise 2: Make a Script Caller-Agnostic
@@ -565,6 +566,7 @@ To cement this knowledge, try a few exercises in a project you care about.
 - Compute its own directory.
 - Anchor to repo root or a known base.
 - Use absolute paths internally.
+
 1. Test it by calling it from:
 
 - Repo root

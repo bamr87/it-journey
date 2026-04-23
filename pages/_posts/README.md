@@ -140,9 +140,11 @@ SVG/multimedia/table elements posts legitimately use.
 
 - Frontmatter `preview:` should reference a PNG under `assets/images/previews/`.
 - Generate with:
+
   ```bash
   ./scripts/generation/generate-preview-images.sh -f pages/_posts/<file>.md
   ```
+
 - Requires `OPENAI_API_KEY` in `.env`.
 - Default size: `1792x1024` (DALL-E 3 landscape).
 
