@@ -28,7 +28,7 @@ keywords:
         - containerization
         - it-journey
 excerpt: "Master Docker basics in 30 minutes with this beginner-friendly tutorial. Learn containers, images, and essential commands to start your containerization journey."
-preview: "Complete Docker tutorial for beginners - learn containers, images, and commands step by step"
+preview: images/previews/docker-for-beginners-complete-tutorial-to-get-star.png
 difficulty: "🟢 Easy"
 estimated_time: "30 minutes"
 draft: false

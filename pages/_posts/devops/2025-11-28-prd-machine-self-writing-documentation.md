@@ -2,7 +2,7 @@
 title: "PRD Machine: Building a Self-Writing Product Requirements Distillery"
 description: "Learn how we built an autonomous CLI tool that writes, maintains, and evolves perfect PRDs from repository signals, ensuring documentation never goes stale."
 date: 2025-11-28T23:00:21.000Z
-preview: /images/post-preview-prd-machine.png
+preview: images/previews/prd-machine-building-a-self-writing-product-requir.png
 tags:
   - automation
   - cli-tools

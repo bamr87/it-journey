@@ -2,7 +2,7 @@
 title: "Debugging GitHub Actions Workflows: AI-Assisted Troubleshooting Session"
 description: Chronicle of debugging failing GitHub Actions workflows using AI assistance, identifying character encoding issues and script hanging problems
 date: 2025-07-12T14:26:45.000Z
-preview: How AI collaboration helped identify and fix workflow failures in the AI Evolution Engine repository
+preview: images/previews/debugging-github-actions-workflows-ai-assisted-tro.png
 tags:
     - ai-assisted-development
     - github-actions
