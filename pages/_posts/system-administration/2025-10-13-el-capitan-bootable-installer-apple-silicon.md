@@ -65,6 +65,7 @@ Fortunately, you can bypass these limitations by manually extracting and process
 ### 🌟 Why This Matters
 
 Legacy Mac systems (2006-2010 era) often require older operating systems like El Capitan for optimal performance or compatibility with specific software. Whether you're:
+
 - Restoring a vintage Mac to working condition
 - Supporting legacy hardware in educational or professional environments
 - Archiving and preserving older systems
@@ -75,6 +76,7 @@ Legacy Mac systems (2006-2010 era) often require older operating systems like El
 ### 🎯 What You'll Learn
 
 By following this guide, you'll be able to:
+
 - Extract installer components from DMG files manually
 - Manipulate disk images using `hdiutil` for custom bootable media
 - Restore images to physical media using Apple Software Restore
@@ -84,6 +86,7 @@ By following this guide, you'll be able to:
 ### 📋 Before We Begin
 
 **Important Warnings:**
+
 - ⚠️ This process will **completely erase** your SD card or USB drive
 - 📦 Back up any existing data before proceeding
 - 💾 Requires at least 8GB of storage on your target media
@@ -91,6 +94,7 @@ By following this guide, you'll be able to:
 - 🔐 Requires administrator privileges on your Mac
 
 **What You'll Need:**
+
 - Modern Apple Silicon Mac (M1 or later)
 - OS X El Capitan installer DMG (typically named "InstallMacOSX.dmg")
 - 8GB+ SD card or USB drive
@@ -113,10 +117,10 @@ First, ensure you have the correct El Capitan installer file:
 #### Using Disk Utility
 
 1. **Insert your media**: Connect the SD card (via card reader if needed) or USB drive to your Mac
-2. **Open Disk Utility**: 
+2. **Open Disk Utility**:
    - Navigate to `Applications > Utilities > Disk Utility`
    - Or press `⌘ + Space`, type "Disk Utility", and press Enter
-3. **Select the device**: 
+3. **Select the device**:
    - In the sidebar, select the **top-level device** (not a partition)
    - Look for the physical device name (e.g., "Generic SD Card" or "USB Drive")
 4. **Erase and format**:
@@ -168,6 +172,7 @@ hdiutil attach ~/Downloads/InstallMacOSX.dmg -noverify -nobrowse
 **Objective**: Extract the installer package to a working location
 
 **Via Finder**:
+
 1. Open Finder and locate the mounted volume "OS X El Capitan Install"
 2. Drag the `InstallMacOSX.pkg` file to your Desktop
 
@@ -212,6 +217,7 @@ tar -xvf Payload
 ```
 
 **Expected Result**: You'll see extraction progress for numerous files. The `-xvf` flags mean:
+
 - `x`: Extract files
 - `v`: Verbose output (show file names)
 - `f`: Read from file (not stdin)
@@ -328,10 +334,12 @@ cp -av /Volumes/install_app/Packages /Volumes/install_build/System/Installation/
 **Expected Result**: Progress output showing copied files (approximately 5.5 GB)
 
 **Understanding -av flags**:
+
 - `a`: Archive mode (preserves permissions, timestamps, etc.)
 - `v`: Verbose output (shows what's being copied)
 
 **Troubleshooting**: If the copy fails with "Operation not permitted", ensure Terminal has Full Disk Access:
+
 - System Settings > Privacy & Security > Full Disk Access
 - Enable Terminal
 
@@ -352,6 +360,7 @@ cp -av /Volumes/install_app/BaseSystem.dmg /Volumes/install_build/
 **Expected Result**: Two additional files copied to the root of the installer
 
 **What Are These Files?**:
+
 - `BaseSystem.chunklist`: Cryptographic verification data for secure boot
 - `BaseSystem.dmg`: The minimal system needed to boot and run the installer
 
@@ -387,6 +396,7 @@ hdiutil resize -size $(hdiutil resize -limits /tmp/Installer.sparseimage | tail 
 **Expected Result**: Image size reduces to approximately 6.2 GB (just enough for the content)
 
 **Command Breakdown**:
+
 - `hdiutil resize -limits`: Reports minimum, current, and maximum sizes
 - `tail -n 1`: Gets the last line (the actual numbers)
 - `awk '{print $1}'`: Extracts the first column (minimum size in sectors)
@@ -406,6 +416,7 @@ hdiutil convert /tmp/Installer.sparseimage -format UDZO -o /tmp/Installer
 **Expected Result**: Creates `/tmp/Installer.dmg` (approximately 5.8 GB compressed)
 
 **Format Details**:
+
 - `UDZO`: UDIF zlib-compressed (read-only, maximum compression)
 - This format is optimal for distribution and restoration
 
@@ -450,6 +461,7 @@ ls -la /Volumes/SDCard
 **Expected Result**: You should see your formatted SD card listed (we named it "SDCard" earlier)
 
 **Troubleshooting**: If not found:
+
 - Check Finder to confirm the media is mounted
 - Use `diskutil list` to see all devices
 - Remount the media if necessary
@@ -467,12 +479,14 @@ sudo asr restore --source ~/Desktop/ElCapitan-Bootable.dmg --target /Volumes/SDC
 
 **You'll Be Asked For**: Your administrator password
 
-**Expected Result**: 
+**Expected Result**:
+
 - Progress updates showing data being copied
 - Verification phase (even with `--noverify`, basic checks occur)
 - Total time: 10-20 minutes depending on media speed
 
 **Command Breakdown**:
+
 - `sudo`: Required for low-level disk operations
 - `asr restore`: Apple Software Restore in restore mode
 - `--source`: Path to your bootable DMG
@@ -482,6 +496,7 @@ sudo asr restore --source ~/Desktop/ElCapitan-Bootable.dmg --target /Volumes/SDC
 - `--erase`: Ensures clean write to destination
 
 **Progress Indicators**:
+
 ```
 Validating target...done
 Validating source...done
@@ -506,7 +521,8 @@ ls -la /Volumes/
 ls -la "/Volumes/OS X Base System/"
 ```
 
-**Expected Result**: 
+**Expected Result**:
+
 - Volume renamed to "OS X Base System" (automatic during restoration)
 - Contains system files including `System/`, `Library/`, `BaseSystem.dmg`, etc.
 
@@ -524,6 +540,7 @@ This should show blessing information confirming the volume is bootable.
 **Objective**: Properly unmount the media before physical removal
 
 **Via Finder**:
+
 1. Locate "OS X Base System" in Finder sidebar
 2. Click the eject icon next to it
 3. Wait for the volume to disappear
@@ -592,12 +609,14 @@ rm ~/Desktop/InstallMacOSX.pkg
    - Eventually reaches OS X Utilities window
 
 **Expected Result**: OS X Utilities menu with options:
+
 - Restore From Time Machine Backup
 - Reinstall OS X
 - Get Help Online
 - Disk Utility
 
 **Success Indicators**:
+
 - ✅ Boots without kernel panic
 - ✅ Mouse/trackpad work correctly
 - ✅ Can access Disk Utility
@@ -609,9 +628,11 @@ rm ~/Desktop/InstallMacOSX.pkg
 
 1. Power on while holding `Command (⌘) + Option (⌥) + O + F`
 2. At the OpenFirmware prompt, type:
+
    ```
    boot usb0/disk@1:2,\\:tbxi
    ```
+
    Or try variations: `usb1`, `sd0`, etc.
 
 **Target Disk Mode Test** (advanced):
@@ -627,16 +648,19 @@ rm ~/Desktop/InstallMacOSX.pkg
 
 **Symptoms**: SD card doesn't appear in Startup Manager
 
-**Causes**: 
+**Causes**:
+
 - Some 2009 Macs don't support SD card booting
 - Firmware limitations on certain models
 
 **Solutions**:
+
 1. **Use USB drive instead**: Repeat process with USB drive (higher compatibility)
 2. **Check Apple Support**: Verify your Mac model supports SD card booting
 3. **Test the card**: Try the SD card in Disk Utility on a working Mac
 
 **Command to check**:
+
 ```bash
 # See if your Mac's model identifier supports SD boot
 system_profiler SPHardwareDataType | grep "Model Identifier"
@@ -649,27 +673,31 @@ Then search Apple's support database for your specific model.
 **Symptoms**: Circle with line through it (🚫) appears when booting
 
 **Causes**:
+
 - Corrupted installer files
 - Incompatible Mac model
 - Damaged boot files
 
 **Solutions**:
+
 1. **Re-create the installer**: Start the process fresh
 2. **Verify source DMG**: Re-download from Apple if suspect
 3. **Check target Mac**: Confirm El Capitan compatibility
    - Supported models: Late 2007 - Mid 2010 approximately
-   - Check: https://support.apple.com/en-us/HT206886
+   - Check: <https://support.apple.com/en-us/HT206886>
 
 #### Issue 3: Kernel Panic During Boot
 
 **Symptoms**: Multi-language panic message appears
 
 **Causes**:
+
 - Hardware incompatibility
 - Bad RAM in target Mac
 - Corrupted installer
 
 **Solutions**:
+
 1. **Test RAM**: Run Apple Hardware Test on target Mac
 2. **Try different media**: USB vs SD card
 3. **Reset NVRAM**: Boot holding `Command + Option + P + R`
@@ -679,11 +707,13 @@ Then search Apple's support database for your specific model.
 **Symptoms**: Progress bar freezes, Mac doesn't respond
 
 **Causes**:
+
 - Slow or failing media
 - Bad sectors on SD card/USB
 - Insufficient target Mac specs
 
 **Solutions**:
+
 1. **Wait longer**: First boot can take 10-15 minutes
 2. **Use faster media**: Try USB 3.0 drive if available
 3. **Check connections**: Ensure solid contact in ports
@@ -695,6 +725,7 @@ Then search Apple's support database for your specific model.
 **Causes**: Terminal lacks Full Disk Access
 
 **Solutions**:
+
 1. **Grant Terminal access**:
    - Open System Settings
    - Go to Privacy & Security > Full Disk Access
@@ -703,6 +734,7 @@ Then search Apple's support database for your specific model.
    - Restart Terminal and try again
 
 2. **Alternative approach**:
+
    ```bash
    # Run with explicit sudo if needed
    sudo bash -c 'cp -av /source /destination'
@@ -752,11 +784,13 @@ If you have access to VMware Fusion or Parallels:
 ### Why Manual Extraction Is Necessary
 
 Apple's installer packages include built-in compatibility checks that verify:
+
 - **Architecture compatibility**: ARM vs Intel (x86_64)
 - **OS version requirements**: Minimum and maximum macOS versions
 - **Hardware requirements**: Specific Mac models and firmware
 
 When you try to run `InstallMacOSX.pkg` on an Apple Silicon Mac, these checks fail because:
+
 1. The package expects Intel architecture
 2. Your Mac is running macOS 11+ (El Capitan is 10.11)
 3. The installer binary itself is Intel-only
@@ -778,18 +812,21 @@ Understanding what each component does helps troubleshoot issues:
 ### Image Format Deep Dive
 
 **Sparse Images (UDSP)**:
+
 - Dynamically allocated storage
 - Only uses disk space for actual data
 - Can grow and shrink as needed
 - Perfect for building custom images
 
 **Compressed Images (UDZO)**:
+
 - Read-only, zlib-compressed format
 - Maximum space efficiency
 - Standard for distribution
 - Requires decompression to modify
 
 **Conversion Process**:
+
 ```
 Read/Write DMG → Sparse Image → Modified Sparse → Compressed DMG
 (BaseSystem.dmg) → (Working copy) → (Added packages) → (Final installer)
@@ -805,6 +842,7 @@ ASR performs block-level copying with several advantages:
 4. **Metadata preservation**: Keeps all extended attributes
 
 **Why not just copy files?**: Simple file copying misses:
+
 - Boot sector information
 - Partition scheme configuration
 - Blessing data (what tells firmware the disk is bootable)
@@ -956,11 +994,13 @@ sudo asr restore --source ~/Desktop/Sierra-Bootable.dmg \
 ### Related Tools and Utilities
 
 **Disk Utility Alternatives**:
+
 - [DiskMaker X](https://diskmakerx.com/): GUI tool for creating installers
 - [Install Disk Creator](https://macdaddy.io/install-disk-creator/): Drag-and-drop installer creation
 - [createinstallmedia](https://support.apple.com/en-us/HT201372): Apple's official CLI tool (newer macOS)
 
 **Verification Tools**:
+
 ```bash
 # Verify bootability
 bless --info "/Volumes/OS X Base System" --getBless
@@ -982,6 +1022,7 @@ shasum -a 256 ~/Desktop/ElCapitan-Bootable.dmg
 ### Video Tutorials
 
 Search for these topics on YouTube:
+
 - "Create bootable El Capitan USB"
 - "macOS El Capitan installation guide"
 - "Legacy Mac restoration tutorial"
@@ -1010,12 +1051,14 @@ Through this guide, you've learned:
 **Architecture Limitations**: Understanding why certain software won't run on incompatible hardware architecture (ARM vs Intel).
 
 **Installer Anatomy**: Modern macOS installers are multi-layered with:
+
 - Wrapper package (compatibility checks)
 - Installation payload (actual files)
 - Base system (minimal bootable environment)
 - Full packages (complete OS components)
 
 **Bootability Requirements**: For media to boot a Mac, it needs:
+
 - Proper partition scheme (GUID for Intel Macs)
 - Blessed system folder (firmware pointer)
 - Valid kernel and boot files
@@ -1026,6 +1069,7 @@ Through this guide, you've learned:
 **You've completed**: 🟡 Intermediate system administration
 
 **Next challenges to tackle**:
+
 - 🔴 **Advanced**: Custom kernel extension installation on legacy systems
 - 🔴 **Advanced**: Building NetBoot environments for network installation
 - ⚫ **Expert**: Creating custom macOS images with pre-configured settings
@@ -1035,16 +1079,19 @@ Through this guide, you've learned:
 These skills are valuable for:
 
 **IT Support Roles**:
+
 - Legacy system maintenance in enterprise environments
 - Supporting long-term hardware deployments
 - Educational institutions with older Mac labs
 
 **Personal Projects**:
+
 - Vintage computer restoration and preservation
 - Retro software development and testing
 - Digital archaeology and computing history
 
 **Professional Development**:
+
 - Understanding macOS internals and architecture
 - System administration and deployment workflows
 - Troubleshooting skills transferable to modern systems
@@ -1088,12 +1135,14 @@ hdiutil verify ~/Desktop/ElCapitan-Bootable.dmg
 **If the process fails mid-way**:
 
 1. **Unmount all volumes**:
+
    ```bash
    hdiutil detach /Volumes/install_app
    hdiutil detach /Volumes/install_build
    ```
 
 2. **Clean up temp files**:
+
    ```bash
    rm -rf /tmp/Installer*
    rm -rf ~/Desktop/Installer
@@ -1102,6 +1151,7 @@ hdiutil verify ~/Desktop/ElCapitan-Bootable.dmg
 3. **Start fresh**: Re-download the source DMG if suspect corruption
 
 4. **Check system logs** for detailed errors:
+
    ```bash
    log show --predicate 'process == "hdiutil"' --last 10m
    ```
@@ -1121,6 +1171,7 @@ Did this guide help you successfully create an El Capitan installer? Encounter a
 ### What's Next?
 
 Continue your legacy Mac journey:
+
 - **Optimize El Capitan**: Tweaking performance on older hardware
 - **Legacy Application Compatibility**: Running PowerPC apps via Rosetta
 - **Building a NetBoot Server**: Network-based installations for multiple Macs

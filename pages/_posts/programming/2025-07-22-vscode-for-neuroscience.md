@@ -54,6 +54,7 @@ Visual Studio Code is a powerful, free code editor that's perfect for neuroscien
 ### 2. The Essentials
 
 You'll need three main components:
+
 - **VS Code** - Your code editor
 - **Python** (via Anaconda) - Programming environment
 - **Key Extensions** - Python support and scientific tools
@@ -63,8 +64,9 @@ You'll need three main components:
 ### Install VS Code (2 minutes)
 
 **Easiest method**: Direct download
+
 1. Go to [code.visualstudio.com](https://code.visualstudio.com/)
-2. Click "Download for Mac" 
+2. Click "Download for Mac"
 3. Drag the downloaded app to your Applications folder
 4. Open VS Code from Applications or Spotlight search
 
@@ -102,6 +104,7 @@ pip install psychopy mne nibabel
 Extensions add functionality to VS Code. Install these must-have extensions for neuroscience:
 
 **Quick install via VS Code**:
+
 1. Open VS Code
 2. Click the Extensions icon (puzzle piece) in the left sidebar
 3. Search for and install these extensions:
@@ -119,6 +122,7 @@ code --install-extension ms-python.pylance
 ```
 
 **Optional but useful**:
+
 - **GitLens** - Enhanced Git capabilities
 - **Markdown All in One** - Better markdown editing
 - **Material Icon Theme** - Nice file icons
@@ -166,20 +170,23 @@ win.close()
 core.quit()
 ```
 
-3. **Run the experiment**: Press `F5` or click the "Run Python File" button
+1. **Run the experiment**: Press `F5` or click the "Run Python File" button
 
 ### Key VS Code Features for PsychoPy
 
-**Interactive Development**: 
+**Interactive Development**:
+
 - Use `# %%` to create code cells that you can run individually
 - Press `Shift+Enter` to run a cell and move to the next one
 
-**Debugging**: 
+**Debugging**:
+
 - Set breakpoints by clicking next to line numbers
 - Press `F5` to start debugging
 - Use the debug console to inspect variables
 
-**Code Completion**: 
+**Code Completion**:
+
 - VS Code will suggest PsychoPy functions as you type
 - Press `Ctrl+Space` to manually trigger suggestions
 
@@ -196,14 +203,17 @@ VS Code has excellent built-in support for Jupyter notebooks - perfect for neuro
 ### Key Features You'll Love
 
 **Variable Explorer**: See all your variables in the sidebar while working
+
 - Click the "Variables" tab when running notebook cells
 - Inspect DataFrames, arrays, and other objects interactively
 
 **Interactive Plots**: Matplotlib and seaborn plots display inline
+
 - No need for `plt.show()` in notebooks
 - Plots are saved with your notebook automatically
 
 **Code Cells in Python Files**: Add `# %%` to create notebook-like cells in `.py` files
+
 - Run individual cells with `Shift+Enter`
 - Perfect for iterative data exploration
 
@@ -234,17 +244,21 @@ raw.set_eeg_reference('average')
 Many neuroscientists love Spyder's interface. Here's how to get similar functionality in VS Code:
 
 ### Variable Explorer
+
 - Install: **Python** extension (included in our setup)
 - Access: Variables panel appears automatically when running code
 - Features: View arrays, DataFrames, plots, and objects
 
 ### Interactive Console
+
 - Open: `View` → `Terminal` → New Terminal
 - Run: Type `python` to start interactive session
 - Use: Test code quickly without creating files
 
 ### Key Shortcuts (Spyder-style)
+
 VS Code will automatically recognize these patterns:
+
 - **F9**: Run current line or selection  
 - **Shift+Enter**: Run cell and advance
 - **F5**: Run entire file
@@ -329,26 +343,31 @@ plt.show()
 ### Common Issues and Solutions
 
 **VS Code can't find Python packages**
+
 - Check your interpreter: `Cmd+Shift+P` → "Python: Select Interpreter"
 - Choose: `~/anaconda3/envs/neuroscience/bin/python`
 - Reload window: `Cmd+Shift+P` → "Developer: Reload Window"
 
 **PsychoPy experiments won't run**
+
 - Ensure your conda environment is activated: `conda activate neuroscience`
 - On Apple Silicon Macs, try: `arch -x86_64 python experiment.py`
 
 **Jupyter notebooks won't start**
+
 - Install ipykernel: `pip install ipykernel`
 - Register kernel: `python -m ipykernel install --user --name neuroscience`
 
 **Slow performance with large data**
+
 - Exclude data folders from VS Code search:
-  - Go to Settings → Search → "files.exclude" 
+  - Go to Settings → Search → "files.exclude"
   - Add patterns like `**/data/**` and `**/*.nii.gz`
 
 ### Best Practices for Neuroscience Research
 
 **Project Organization**:
+
 ```
 my_experiment/
 ├── data/           # Raw data (never commit to git)
@@ -358,12 +377,14 @@ my_experiment/
 └── results/        # Generated figures and results
 ```
 
-**Version Control**: 
+**Version Control**:
+
 - Use Git to track your code (not data)
 - `.gitignore` large files: `*.nii.gz`, `*.edf`, `*.h5`
 - Commit frequently with descriptive messages
 
 **Reproducibility**:
+
 - Include `requirements.txt` with package versions
 - Use random seeds in analyses: `np.random.seed(42)`
 - Document analysis parameters in notebooks
@@ -371,11 +392,13 @@ my_experiment/
 ## Learning Resources
 
 **Official Documentation**:
+
 - [VS Code Python Tutorial](https://code.visualstudio.com/docs/python/python-tutorial)
 - [Jupyter in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
 - [VS Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
 
 **Neuroscience-Specific**:
+
 - [PsychoPy Documentation](https://psychopy.org/documentation.html)
 - [MNE Python Tutorials](https://mne.tools/stable/auto_tutorials/index.html)
 - [Nilearn Examples](https://nilearn.github.io/stable/auto_examples/index.html)
@@ -392,6 +415,7 @@ You now have a powerful VS Code setup for neuroscience research! This configurat
 Start with the basics and gradually explore more advanced features as your projects grow. VS Code's flexibility allows you to customize your environment as your research needs evolve.
 
 **Next Steps**:
+
 1. Create your first experiment or analysis script
 2. Explore VS Code's [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (`Cmd+Shift+P`)
 3. Learn [keyboard shortcuts](https://code.visualstudio.com/docs/getstarted/keybindings) to boost productivity

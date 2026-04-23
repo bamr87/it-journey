@@ -18,6 +18,7 @@ This directory contains IT-Journey's collection of web development articles, tut
 ### Frontend Frameworks & Libraries
 
 #### React Development
+
 - **[Mastering React: A Beginner's Guide](2025-11-24-mastering-react-beginners-guide.md)** *(2025-11-24)*
   - Comprehensive introduction to React fundamentals
   - Components, JSX, props, and state management
@@ -30,6 +31,7 @@ This directory contains IT-Journey's collection of web development articles, tut
   - TypeScript integration
 
 #### JavaScript & Interactivity
+
 - **[JavaScript & Jekyll Interactive Demo](2025-11-16-javascript-jekyll-interactive-demo.md)** *(2025-11-16)*
   - Integrating JavaScript with static sites
   - Creating interactive components
@@ -43,6 +45,7 @@ This directory contains IT-Journey's collection of web development articles, tut
 ### Static Site Generators & Hosting
 
 #### Jekyll & GitHub Pages
+
 - **[GitHub Pages: The Hidden Gem](2025-11-15-github-pages-hidden-gem.md)** *(2025-11-15)*
   - Comprehensive guide to GitHub Pages
   - Free web hosting with Jekyll
@@ -54,6 +57,7 @@ This directory contains IT-Journey's collection of web development articles, tut
   - Travis CI configuration
 
 #### Cloud Hosting & Deployment
+
 - **[Deploying Jekyll Sites to Azure Cloud](../2025-11-17-deploying-jekyll-sites-to-azure-cloud.md)** *(2025-11-17)*
   - Complete Azure Static Web Apps deployment guide
   - CI/CD pipeline setup
@@ -63,6 +67,7 @@ This directory contains IT-Journey's collection of web development articles, tut
 ### UI/UX & Navigation
 
 #### Dynamic Components
+
 - **[Dynamic Sidebar Tree](2024-05-16-dynamic-sidebar-tree.md)** *(2024-05-16)*
   - Building dynamic navigation components
   - Tree structure implementation
@@ -74,6 +79,7 @@ This directory contains IT-Journey's collection of web development articles, tut
   - Responsive design considerations
 
 #### Navigation & Discoverability
+
 - **[Auto-Hide Navbar](2019-08-22-auto-hide-navbar.md)** *(2019-08-22)*
   - Implementing auto-hiding navigation bars
   - Scroll-based UI behavior
@@ -87,12 +93,14 @@ This directory contains IT-Journey's collection of web development articles, tut
 ### Modern Web Applications
 
 #### AI Integration
+
 - **[Integrating AI Chatbot into Jekyll Site](2025-08-29-integrating-ai-chatbot-jekyll-site.md)** *(2025-08-29)*
   - Adding AI-powered chatbots to static sites
   - Integration strategies
   - User experience enhancement
 
 #### Error Handling & Pages
+
 - **[404 Hunting Quest](2025-08-31-404-hunting-quest.md)** *(2025-08-31)*
   - Creative 404 error page design
   - User engagement strategies
@@ -101,6 +109,7 @@ This directory contains IT-Journey's collection of web development articles, tut
 ### Full-Stack Development
 
 #### AWS & Serverless
+
 - **[Building Django on AWS Lambda](2019-08-22-how-to-build-a-django-application-on-aws-lambda.md)** *(2019-08-22)*
   - Deploying Django applications to serverless infrastructure
   - AWS Lambda configuration
@@ -117,10 +126,10 @@ This directory contains IT-Journey's collection of web development articles, tut
 
 ### Frontend Development Progression
 
-1. **Foundation** 
+1. **Foundation**
    - JavaScript fundamentals and testing
    - Basic HTML/CSS knowledge
-   
+
 2. **Static Sites**
    - Jekyll and GitHub Pages basics
    - Site structure and navigation
@@ -146,12 +155,14 @@ This directory contains IT-Journey's collection of web development articles, tut
 ## 🚀 Getting Started
 
 ### For Readers
+
 - **Browse by Technology**: Find articles on your preferred framework or tool
 - **Follow Learning Paths**: Use the recommended reading order above
 - **Practice Examples**: All posts include working code examples
 - **Build Projects**: Apply knowledge through hands-on practice
 
 ### For Contributors
+
 - **Review Standards**: Check [post creation instructions](../../../.github/instructions/posts.instructions.md)
 - **Focus Areas**: Frontend frameworks, modern web tools, deployment strategies
 - **Educational Value**: Ensure clear learning objectives and practical examples
@@ -160,11 +171,13 @@ This directory contains IT-Journey's collection of web development articles, tut
 ## 🔗 Related Resources
 
 ### IT-Journey Collections
+
 - **[All Posts](../)** - Complete blog post collection
 - **[Learning Quests](../../_quests/)** - Gamified tutorials
 - **[Documentation](../../_docs/)** - Technical references
 
 ### External Resources
+
 - [MDN Web Docs](https://developer.mozilla.org/) - Web technology documentation
 - [React Documentation](https://react.dev/) - Official React guides
 - [Jekyll Documentation](https://jekyllrb.com/) - Static site generator
@@ -182,12 +195,14 @@ Have a web development tutorial or insight to share?
 ## 📈 Growth & Evolution
 
 This category grows with the web development ecosystem. Recent additions focus on:
+
 - Modern frontend frameworks (React, Angular, Vue)
 - Static site generation and JAMstack
 - Cloud deployment and CI/CD
 - AI integration and modern web features
 
 **Next Planned Content:**
+
 - Vue.js fundamentals guide
 - TypeScript best practices
 - Web performance optimization

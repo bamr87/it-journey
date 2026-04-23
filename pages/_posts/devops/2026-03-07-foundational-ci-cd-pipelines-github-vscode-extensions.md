@@ -427,6 +427,7 @@ git push --follow-tags
 ```
 
 `npm version patch` does three things:
+
 1. Bumps `"version"` in `package.json` (e.g., `0.1.0` → `0.1.1`)
 2. Creates a git commit: `v0.1.1`
 3. Creates a git tag: `v0.1.1`
@@ -573,10 +574,12 @@ The best way to internalize a CI/CD pipeline is to trigger one yourself. Try the
 2. **Break and fix the pipeline**: In your fork, introduce a deliberate lint error (e.g., an unused variable). Push, watch CI fail, read the error log, fix it, push again, and confirm it passes.
 
 3. **Simulate a release**: Create a tag on your fork:
+
    ```bash
    git tag v0.0.1-test
    git push origin v0.0.1-test
    ```
+
    Watch the release workflow run. It will build and package (the publish step will skip since you won't have a `VSCE_PAT` secret — that's expected).
 
 4. **Inspect the artifact**: After the release workflow completes, go to the workflow run and download the `.vsix` artifact. Install it in VS Code with `code --install-extension <file>.vsix` to confirm the package is valid.

@@ -83,6 +83,7 @@ Component modularization and config-driven design are foundational practices for
 ### 📋 Before We Begin
 
 **Prerequisites:**
+
 - Jekyll 3.9+ or 4.x with a working Docker development environment
 - Bootstrap 5.x integrated in your theme
 - Basic Liquid template knowledge
@@ -147,6 +148,7 @@ Every value that was previously hardcoded now lives here.
 `_includes/components/nanobar.html` contains three sections:
 
 **CSS custom properties** — map config → CSS variables:
+
 ```liquid
 <style id="nanobar-theme">
   :root {
@@ -159,6 +161,7 @@ Every value that was previously hardcoded now lives here.
 ```
 
 **Config bridge** — pass values to JS:
+
 ```html
 <script>
   window.zer0Nanobar = {
@@ -173,6 +176,7 @@ Every value that was previously hardcoded now lives here.
 ```
 
 **JS loading** — library + initializer:
+
 ```html
 <script defer src="/assets/js/nanobar.min.js"></script>
 <script defer src="/assets/js/nanobar-init.js"></script>
@@ -181,6 +185,7 @@ Every value that was previously hardcoded now lives here.
 ### ⚡ Step 3: Create the Initializer
 
 `assets/js/nanobar-init.js` reads `window.zer0Nanobar` and:
+
 1. Determines the mount target based on `position`
 2. Instantiates `new Nanobar(opts)`
 3. Runs the step animation on `DOMContentLoaded`
@@ -198,6 +203,7 @@ In `header.html`, removed the old hardcoded bar and added a conditional mount:
 ### ✅ Step 5: Clean Up head.html
 
 Replaced ~60 lines with one line:
+
 ```liquid
 {% raw %}{% include components/nanobar.html %}{% endraw %}
 ```
@@ -247,6 +253,7 @@ Each Bootstrap `.container` class adds `max-width` + `auto` margins, preventing 
 ```
 
 **Key changes:**
+
 - Removed `container-xl` from `<footer>` — the footer element now spans full viewport width
 - Dark section uses `bg-dark` at full width with `container-xl` inside for content centering
 - Reduced nesting from 4 levels to 2
@@ -279,6 +286,7 @@ grep '<footer' _site/index.html              # → class="bd-footer border-top"
 ### Visual Verification
 
 Screenshots confirmed:
+
 - Nanobar renders as a thin blue strip under the navbar
 - Footer dark section extends edge-to-edge
 - No CSS side-effects on other components
@@ -298,11 +306,13 @@ Screenshots confirmed:
 ## 🚀 Next Steps
 
 ### 📚 Further Learning
+
 - [Bootstrap 5 Container docs](https://getbootstrap.com/docs/5.3/layout/containers/) — understand `container` vs `container-fluid` vs `container-xl`
 - [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) — bridging config to styles
 - [Jekyll Includes](https://jekyllrb.com/docs/includes/) — modular template composition
 
 ### 🎯 Apply It Yourself
+
 - **Beginner**: Find an inline `<style>` block in your Jekyll theme and extract it into a separate include
 - **Intermediate**: Create a config-driven component where all values come from `_config.yml`
 - **Advanced**: Build a component with multiple position modes (like the nanobar's `top`/`bottom`/`navbar`)

@@ -333,6 +333,7 @@ panel (webpack 5.90.1) compiled successfully
 **Example Change - Add a Custom Command**:
 
 1. **Create a New Command File**:
+
    ```typescript
    // src/commands/myCustomCommand.ts
    import { window } from 'vscode';
@@ -343,6 +344,7 @@ panel (webpack 5.90.1) compiled successfully
    ```
 
 2. **Register the Command**:
+
    ```typescript
    // In src/extension.ts (find the activate function)
    import { myCustomCommand } from './commands/myCustomCommand';
@@ -353,6 +355,7 @@ panel (webpack 5.90.1) compiled successfully
    ```
 
 3. **Add Command to Package.json**:
+
    ```json
    // In package.json, find the "contributes.commands" section
    {
@@ -375,6 +378,7 @@ panel (webpack 5.90.1) compiled successfully
    - Or use Command Palette: "Developer: Reload Window"
 
 3. **Test Your Change**:
+
    ```
    # In Extension Development Host:
    # Cmd+Shift+P → "Front Matter: My Custom Command"
@@ -382,6 +386,7 @@ panel (webpack 5.90.1) compiled successfully
    ```
 
 **Debugging Tips**:
+
 - **Breakpoints**: Set breakpoints in your TypeScript source files
 - **Console Logging**: Use `console.log()` - output appears in the original VS Code's Debug Console
 - **Error Inspection**: Check the Developer Tools in Extension Development Host (`Help → Toggle Developer Tools`)
@@ -391,6 +396,7 @@ panel (webpack 5.90.1) compiled successfully
 **Objective**: Understand how to modify the React-based interfaces
 
 **Dashboard Development**:
+
 ```bash
 # Dashboard runs at http://localhost:9000/
 # Source files in: src/dashboard/
@@ -398,6 +404,7 @@ panel (webpack 5.90.1) compiled successfully
 ```
 
 **Panel Development**:
+
 ```bash
 # Panel runs at http://localhost:9001/  
 # Source files in: src/panels/
@@ -451,6 +458,7 @@ npm run localization:sync
 ```
 
 **Adding New Localizable Strings**:
+
 1. Add key to `package.nls.json`
 2. Add translations to language-specific files (`package.nls.de.json`, etc.)
 3. Use in code: `vscode.l10n.t('your.key')`
@@ -467,6 +475,7 @@ npm run localization:sync
 4. **User Scenario Testing**: Test complete user workflows
 
 **Test File Structure**:
+
 ```
 src/
 ├── commands/
@@ -500,6 +509,7 @@ npm run prod:panel      # Panel only
 ```
 
 **Build Verification**:
+
 ```bash
 # Check build output
 ls -la dist/
@@ -516,12 +526,14 @@ ls -la dist/
 **Objective**: Package the extension for installation or distribution
 
 **Prerequisites**:
+
 ```bash
 # Install VS Code Extension Manager
 npm install -g vsce
 ```
 
 **Packaging Process**:
+
 ```bash
 # Package the extension
 vsce package
@@ -531,6 +543,7 @@ vsce package
 ```
 
 **Testing Packaged Extension**:
+
 ```bash
 # Install the packaged extension
 code --install-extension vscode-front-matter-beta-X.X.X.vsix
@@ -548,16 +561,20 @@ code --uninstall-extension eliostruyf.vscode-front-matter-beta
 **Objective**: Follow best practices for open-source contributions
 
 **Pre-Contribution Checklist**:
+
 - [ ] **Code Quality**: Run linting and formatting
+
   ```bash
   npm run lint
   npm run prettier
   ```
+
 - [ ] **Testing**: Ensure all tests pass
 - [ ] **Documentation**: Update relevant documentation
 - [ ] **Commit Messages**: Follow conventional commit format
 
 **Creating a Feature Branch**:
+
 ```bash
 # Create and switch to a new feature branch
 git checkout -b feature/your-feature-name
@@ -575,6 +592,7 @@ git push origin feature/your-feature-name
 **Objective**: Maintain synchronization with the upstream repository
 
 **Sync Workflow**:
+
 ```bash
 # Fetch latest changes from upstream
 git fetch upstream
@@ -606,6 +624,7 @@ git rebase main
    - Select compare: `bamr87/vscode-front-matter` feature-branch
 
 2. **PR Description Template**:
+
    ```markdown
    ## Description
    Brief description of the changes made.
@@ -642,15 +661,18 @@ Before proceeding, ensure you understand:
 ### 🎮 Practice Exercises
 
 #### Exercise 1: Environment Setup Verification
+
 **Objective**: Confirm your development environment is fully functional
 
-**Challenge**: 
+**Challenge**:
+
 1. Fork the repository (if not already done)
 2. Set up the development environment
 3. Successfully launch the Extension Development Host
 4. Access both dashboard (localhost:9000) and panel (localhost:9001)
 
 **Success Criteria**:
+
 - [ ] All webpack builds complete without errors
 - [ ] Extension loads in Development Host
 - [ ] Front Matter commands appear in Command Palette
@@ -658,11 +680,13 @@ Before proceeding, ensure you understand:
 - [ ] Panel loads correctly in sidebar
 
 #### Exercise 2: Simple Feature Implementation
+
 **Objective**: Implement a basic feature to understand the development workflow
 
 **Challenge**: Create a new command that displays workspace statistics
 
 **Requirements**:
+
 1. Add a new command file: `src/commands/workspaceStats.ts`
 2. Implement functionality to count files in workspace
 3. Register the command in the extension
@@ -670,6 +694,7 @@ Before proceeding, ensure you understand:
 5. Test the feature in Extension Development Host
 
 **Implementation Guidance**:
+
 ```typescript
 // Example implementation structure
 import { workspace, window } from 'vscode';
@@ -700,9 +725,11 @@ export const showWorkspaceStats = async () => {
 ### Common Issues and Solutions
 
 #### Issue 1: Extension Fails to Load in Development Host
+
 **Symptoms**: Extension Development Host opens but Front Matter commands don't appear
 **Causes**: Build errors, configuration issues, or dependency problems
 **Solutions**:
+
 ```bash
 # Check for build errors
 npm run dev:ext
@@ -716,9 +743,11 @@ npm run build:ext
 ```
 
 #### Issue 2: Hot Reload Not Working
+
 **Symptoms**: Changes to code don't reflect in the running extension
 **Diagnosis**: Webpack watch mode issues or file permission problems
 **Resolution**:
+
 ```bash
 # Restart the development server
 # Stop with Ctrl+C, then restart
@@ -732,9 +761,11 @@ ls -la src/
 ```
 
 #### Issue 3: Dashboard/Panel Not Loading
+
 **Symptoms**: Localhost:9000 or localhost:9001 show errors or won't load
 **Causes**: Port conflicts, webpack-dev-server issues, or build failures
 **Solutions**:
+
 ```bash
 # Check if ports are in use
 lsof -i :9000
@@ -748,9 +779,11 @@ npm run dev:ext
 ```
 
 #### Issue 4: TypeScript Compilation Errors
+
 **Symptoms**: Build fails with TypeScript errors
 **Causes**: Type mismatches, missing imports, or configuration issues
 **Resolution**:
+
 ```bash
 # Run TypeScript compiler directly
 npx tsc --noEmit
@@ -763,9 +796,11 @@ cat tsconfig.json
 ```
 
 #### Issue 5: Git Remote Issues
+
 **Symptoms**: Cannot push to fork or sync with upstream
 **Causes**: Authentication problems or incorrect remote configuration
 **Solutions**:
+
 ```bash
 # Verify remote configuration
 git remote -v
@@ -783,11 +818,13 @@ git push origin main
 ### Performance Optimization Tips
 
 #### Build Performance
+
 - **Incremental Builds**: Use `npm run dev:ext` for development
 - **Selective Building**: Use individual build commands when working on specific components
 - **Clean Builds**: Run `npm run clean` when switching between development and production builds
 
 #### Development Workflow
+
 - **Extension Host Management**: Close unused Extension Development Host windows
 - **Resource Monitoring**: Monitor memory usage during long development sessions
 - **Code Organization**: Keep changes focused to minimize rebuild times
@@ -808,18 +845,21 @@ After mastering this setup, consider exploring:
 ### 🔮 Advanced Development Paths
 
 #### Path 1: Extension Architecture Mastery
+
 - **Command System**: Deep dive into VS Code command architecture
 - **Webview Communication**: Master extension-to-webview messaging
 - **State Management**: Implement complex application state handling
 - **Performance Optimization**: Optimize extension startup and runtime performance
 
 #### Path 2: React Component Development
+
 - **Component Library**: Build reusable UI components for the dashboard
 - **State Management**: Implement Redux or Context API for complex state
 - **Testing**: Add comprehensive React component testing
 - **Accessibility**: Ensure WCAG compliance for all UI components
 
 #### Path 3: Content Management Innovation
+
 - **Workflow Automation**: Build automated content publishing pipelines
 - **Integration Development**: Connect to headless CMS platforms
 - **AI Enhancement**: Integrate AI-powered content suggestions
@@ -828,18 +868,21 @@ After mastering this setup, consider exploring:
 ### 🌐 Community and Resources
 
 #### Documentation and Learning
+
 - **Official Docs**: [Front Matter Documentation](https://frontmatter.codes)
 - **VS Code Extension API**: [Official Extension Documentation](https://code.visualstudio.com/api)
 - **TypeScript**: [Official TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - **React**: [Official React Documentation](https://react.dev)
 
 #### Community Support
+
 - **GitHub Discussions**: Engage with the Front Matter community
 - **Discord/Slack**: Join extension development communities
 - **Stack Overflow**: Search for VS Code extension development questions
 - **Reddit**: r/vscode and related development communities
 
 #### Contributing Guidelines
+
 - **Code Style**: Follow the project's ESLint and Prettier configurations
 - **Testing Standards**: Include tests for new functionality
 - **Documentation**: Update relevant documentation with changes
@@ -852,6 +895,7 @@ After mastering this setup, consider exploring:
 ## Summary
 
 You've now learned how to:
+
 - ✅ Fork and set up the VSCode Front Matter development environment
 - ✅ Understand the multi-target build system architecture
 - ✅ Implement changes and test them effectively

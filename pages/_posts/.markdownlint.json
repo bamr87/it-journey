@@ -1,0 +1,21 @@
+{
+  "extends": "../../.markdownlint.json",
+  "MD025": false,
+  "MD060": false,
+  "MD036": false,
+  "MD040": false,
+  "MD033": {
+    "allowed_elements": [
+      "details", "summary", "img", "div", "span", "br",
+      "kbd", "sub", "sup", "ins", "del", "mark",
+      "table", "thead", "tbody", "tr", "th", "td",
+      "a", "p", "h1", "h2", "h3", "h4", "h5", "h6",
+      "iframe", "video", "audio", "source", "picture",
+      "ol", "ul", "li", "code", "pre", "blockquote", "hr",
+      "svg", "g", "rect", "polygon", "circle", "ellipse", "line",
+      "polyline", "path", "text", "tspan", "defs", "use", "symbol",
+      "linearGradient", "radialGradient", "stop", "clipPath", "mask",
+      "pattern", "filter", "marker", "foreignObject"
+    ]
+  }
+}

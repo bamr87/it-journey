@@ -59,15 +59,18 @@ The problem isn't the power; it's the interface. Raw shell scripts often rely on
 This article explores the architecture of a **Terminal Frontend**—a "Glass Interface" that sits between the user and the raw logic of your scripts. By treating the terminal as a UI platform, we can build tools that are safe, discoverable, and even beautiful.
 
 ### 🌟 Why This Matters
+
 As our toolchains grow more complex, the cognitive load of remembering every flag and argument increases. Building a frontend for your scripts:
-*   **Reduces Errors**: By constraining choices to valid options.
-*   **Improves Onboarding**: New team members can use tools without memorizing the docs.
-*   **Enhances Safety**: Confirmation dialogs and input validation prevent accidents.
+
+* **Reduces Errors**: By constraining choices to valid options.
+* **Improves Onboarding**: New team members can use tools without memorizing the docs.
+* **Enhances Safety**: Confirmation dialogs and input validation prevent accidents.
 
 ### 🎯 What You'll Learn
-*   The three-layer architecture of a CLI tool.
-*   How to use tools like **Gum** to implement the interface layer.
-*   Best practices for decoupling logic from presentation.
+
+* The three-layer architecture of a CLI tool.
+* How to use tools like **Gum** to implement the interface layer.
+* Best practices for decoupling logic from presentation.
 
 ## The Architecture of a Glass Interface
 
@@ -75,9 +78,9 @@ Just like a web application has a frontend (React/Vue) and a backend (API/Databa
 
 We can visualize this architecture in three distinct layers:
 
-1.  **The Interface Layer (Presentation)**: Handles user input, menus, and visual feedback.
-2.  **The Orchestration Layer (Controller)**: Glues the interface to the logic, managing flow and state.
-3.  **The Core Layer (Logic)**: The actual commands or scripts that perform the work.
+1. **The Interface Layer (Presentation)**: Handles user input, menus, and visual feedback.
+2. **The Orchestration Layer (Controller)**: Glues the interface to the logic, managing flow and state.
+3. **The Core Layer (Logic)**: The actual commands or scripts that perform the work.
 
 ### 🏗️ Architectural Diagram
 
@@ -107,14 +110,16 @@ graph TD
 This layer is responsible for **asking questions** and **showing results**. It should know *nothing* about how to deploy a server or commit code. Its only job is to get valid input from the user.
 
 **Tools of the Trade:**
-*   **Gum**: A modern, composable tool for glamorous shell scripts. (Our focus today).
-*   **FZF**: A command-line fuzzy finder, great for filtering lists.
-*   **Dialog / Whiptail**: Classic, ncurses-based dialog boxes.
+
+* **Gum**: A modern, composable tool for glamorous shell scripts. (Our focus today).
+* **FZF**: A command-line fuzzy finder, great for filtering lists.
+* **Dialog / Whiptail**: Classic, ncurses-based dialog boxes.
 
 **Example Responsibility:**
-*   "Ask the user to select an environment (Dev, Stage, Prod)."
-*   "Ask the user for a commit message."
-*   "Show a spinner while work is happening."
+
+* "Ask the user to select an environment (Dev, Stage, Prod)."
+* "Ask the user for a commit message."
+* "Show a spinner while work is happening."
 
 ## Layer 2: The Core Layer (Logic)
 
@@ -124,9 +129,10 @@ This layer does the heavy lifting. It should be **headless** and **non-interacti
 If your logic is mixed with your interface (e.g., `read -p "Enter name: " name` inside your deployment function), you can never automate that function. By keeping the core logic pure (accepting arguments), you can use it in CI/CD pipelines *and* your interactive frontend.
 
 **Example Responsibility:**
-*   `git commit -m "$message"`
-*   `docker-compose up -d`
-*   `aws s3 cp ...`
+
+* `git commit -m "$message"`
+* `docker-compose up -d`
+* `aws s3 cp ...`
 
 ## Layer 3: The Orchestration Layer (The Glue)
 
@@ -186,20 +192,23 @@ gum style --foreground 46 "✅ Deployment Successful!"
 ## Benefits of this Architecture
 
 ### 1. Composable & Reusable
+
 Because `gum` commands are just binaries, you can pipe them together or use them in subshells. Your "Core Logic" remains pure bash functions that can be tested independently.
 
 ### 2. Progressive Enhancement
+
 You don't need to rewrite your entire toolkit. You can wrap existing scripts. Have a complex Python script that takes 10 arguments? Write a 10-line Bash wrapper with Gum that asks for those arguments interactively and then calls the Python script.
 
 ### 3. The "Glass" Metaphor
+
 We call it a "Glass Interface" because it's transparent. It doesn't hide the underlying power; it just provides a smooth surface to touch. Advanced users can still bypass the frontend and call the core logic directly if they want to (e.g., in a CI environment).
 
 ## 🚀 Next Steps
 
 Ready to forge your own Glass Interface? We have prepared a dedicated quest to help you master these tools.
 
-*   **Start the Quest**: [Terminal Artificer: Forging the Glass Interface](/quests/level-0010-terminal-artificer/)
-*   **Explore the Tools**: Check out [Charm.sh](https://charm.sh/) for more TUI magic.
+* **Start the Quest**: [Terminal Artificer: Forging the Glass Interface](/quests/level-0010-terminal-artificer/)
+* **Explore the Tools**: Check out [Charm.sh](https://charm.sh/) for more TUI magic.
 
 By architecting your scripts with intention—separating the *asking* from the *doing*—you transform your terminal from a black box of mystery into a cockpit of control.
 

@@ -850,6 +850,7 @@ CMD ["node", "dist/server.js"]
 5. Test cache invalidation by modifying a lock file
 
 **Success Criteria**:
+
 - [ ] Build time reduced by >30% on cached runs
 - [ ] No build outputs committed to git
 - [ ] Cache hit rate >80% over 10 runs
@@ -862,6 +863,7 @@ CMD ["node", "dist/server.js"]
 4. Set up build time alerting (if build > 10 minutes)
 
 **Success Criteria**:
+
 - [ ] Attempting to commit `work/` fails in pre-commit hook
 - [ ] Disk usage warnings appear when >85% full
 - [ ] Cache busting is detected and logged
@@ -876,6 +878,7 @@ CMD ["node", "dist/server.js"]
 3. Re-benchmark and compare
 
 **Success Criteria**:
+
 - [ ] Documented before/after metrics
 - [ ] >50% speedup on at least one stage
 - [ ] Reproducibility maintained (same outputs)
@@ -885,9 +888,11 @@ CMD ["node", "dist/server.js"]
 ### Common Issues and Solutions
 
 #### Issue 1: Cache Restored But Build Still Slow
+
 **Symptoms**: Cache shows as "restored" but dependencies still download
 **Causes**: Cache key collision, cache corruption, or wrong cache path
 **Solution**:
+
 ```yaml
 # Add debug logging
 - name: Debug cache
@@ -896,24 +901,30 @@ CMD ["node", "dist/server.js"]
     ls -lah $CACHE_DIR/npm || echo "Cache empty!"
     npm config get cache
 ```
+
 **Prevention**: Use specific cache keys, validate cache after restore
 
 #### Issue 2: Disk Space Exhausted
+
 **Symptoms**: "No space left on device" errors
 **Causes**: Large caches, accumulating `work/` directories, Docker layer bloat
 **Solution**:
+
 ```bash
 # Emergency cleanup
 find work/ -type f -mtime +1 -delete  # Delete files >1 day old
 docker system prune -af               # Clean Docker
 df -h                                 # Verify space freed
 ```
+
 **Prevention**: Add disk monitoring, set TTLs on caches, use cleanup jobs
 
 #### Issue 3: Flaky Builds After work/ Migration
+
 **Symptoms**: Tests pass locally, fail in CI, or vice versa
 **Causes**: Incorrect paths, missing environment variables, cache pollution
 **Diagnosis**:
+
 ```bash
 # Compare environments
 echo "=== Local ==="
@@ -924,6 +935,7 @@ ls -R work/
 echo "=== CI ==="
 # (copy output from CI logs)
 ```
+
 **Resolution**: Make all paths absolute, use environment variables consistently
 
 ## 🚀 Next Steps and Further Learning
@@ -957,26 +969,31 @@ echo "=== CI ==="
 ## 📚 Resources and References
 
 ### 📖 Essential Documentation
+
 - [GitHub Actions: Caching Dependencies](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
 - [GitLab CI: Cache](https://docs.gitlab.com/ee/ci/caching/)
 - [CircleCI: Caching Strategies](https://circleci.com/docs/caching/)
 - [Docker BuildKit Cache Mounts](https://docs.docker.com/build/building/cache/)
 
 ### 🎥 Video and Interactive Resources
+
 - [GitHub Actions: Optimizing Workflows](https://www.youtube.com/results?search_query=github+actions+caching)
 - [DevOps CI/CD Best Practices](https://www.youtube.com/results?search_query=cicd+best+practices)
 
 ### 💬 Community Support
+
 - [Stack Overflow: CI/CD](https://stackoverflow.com/questions/tagged/continuous-integration)
 - [r/devops](https://reddit.com/r/devops) - CI/CD discussions and troubleshooting
 - [DevOps Discord Communities](https://discord.gg/devops)
 
 ### 🔧 Tools and Utilities
+
 - [actions/cache](https://github.com/actions/cache) - GitHub Actions caching action
 - [cache-buildkit](https://github.com/moby/buildkit) - Docker BuildKit with advanced caching
 - [turbo](https://turbo.build/) - High-performance build system with intelligent caching
 
 ### 📄 Templates and Examples
+
 - [GitHub Actions Examples](https://github.com/actions/starter-workflows)
 - [GitLab CI Templates](https://gitlab.com/gitlab-org/gitlab/-/tree/master/lib/gitlab/ci/templates)
 - [CircleCI Orbs](https://circleci.com/developer/orbs)

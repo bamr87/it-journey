@@ -104,11 +104,13 @@ Vague ←───────────────────────�
 ### 💻 Code Example: Basic vs. Structured Prompt
 
 **❌ Unstructured Prompt**:
+
 ```
 Write a function to validate email
 ```
 
 **✅ Structured Prompt**:
+
 ```markdown
 [ROLE] You are a senior Python developer specializing in input validation.
 
@@ -136,6 +138,7 @@ Write a function to validate email
 > "Make a script that organizes my files"
 
 **Success Criteria**:
+
 - [ ] Role defined (what expertise is needed)
 - [ ] Context provided (what's the situation)
 - [ ] Task specified with 3+ specific requirements
@@ -204,6 +207,7 @@ Output:
 ```
 
 **When to Use Few-Shot**:
+
 - Custom output formats
 - Domain-specific patterns
 - Consistent style across outputs
@@ -226,6 +230,7 @@ For each step, explain your reasoning before moving to the next.
 ```
 
 **When to Use CoT**:
+
 - Multi-step logic problems
 - Debugging complex issues
 - Architecture decisions
@@ -262,6 +267,7 @@ Think step-by-step:
 > "I need to refactor a 500-line function into smaller units"
 
 **Success Criteria**:
+
 - [ ] Pattern selection justified (why this pattern?)
 - [ ] Complete prompt using chosen pattern
 - [ ] Expected output structure defined
@@ -307,16 +313,19 @@ Create `.github/copilot-instructions.md` to give Copilot persistent context:
 ### Workspace Agents and References
 
 **Using @workspace for codebase context**:
+
 ```
 @workspace How is authentication handled in this project?
 ```
 
 **Using #file for specific file context**:
+
 ```
 #file:src/auth/login.ts Review this for security vulnerabilities
 ```
 
 **Using #selection for highlighted code**:
+
 ```
 #selection Refactor this to use async/await instead of callbacks
 ```
@@ -358,6 +367,7 @@ When generating code for this project:
 **Challenge**: Write a `.github/copilot-instructions.md` for your current project
 
 **Success Criteria**:
+
 - [ ] Code style section with 3+ rules
 - [ ] Architecture section with file organization
 - [ ] Testing section with framework and patterns
@@ -465,7 +475,9 @@ Analyze the provided code and error, then:
 ```
 
 ## 🛡️ Prevention
+
 [How to avoid this in the future]
+
 ```
 
 ### 🔧 Hands-On Exercise 4: Create a Prompt Template
@@ -491,6 +503,7 @@ Analyze the provided code and error, then:
 ### The Prompt Development Cycle
 
 ```
+
 ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
 │  PLAN   │───▶│   DO    │───▶│  CHECK  │───▶│   ACT   │
 │         │    │         │    │         │    │         │
@@ -500,6 +513,7 @@ Analyze the provided code and error, then:
 └─────────┘    └─────────┘    └─────────┘    └─────────┘
       ▲                                            │
       └────────────────────────────────────────────┘
+
 ```
 
 ### Quality Scoring Framework
@@ -544,17 +558,20 @@ Rate each prompt output (0-10):
 ### 💻 Code Example: Iteration in Action
 
 **Version 1** (Score: 3/10):
+
 ```
 Write a function to parse dates
 ```
 
 **Version 2** (Score: 6/10):
+
 ```
 Write a Python function that parses date strings into datetime objects.
 Handle multiple formats. Include error handling.
 ```
 
 **Version 3** (Score: 9/10):
+
 ```markdown
 [ROLE] You are a Python developer specializing in date/time handling.
 
@@ -581,12 +598,14 @@ Input: "invalid" → None
 
 **Objective**: Experience the improvement cycle firsthand
 
-**Challenge**: 
+**Challenge**:
+
 1. Start with this vague prompt: "Help me write better code"
 2. Iterate 3 times, scoring each version
 3. Document what changed and why
 
 **Success Criteria**:
+
 - [ ] 3 versions documented with scores
 - [ ] Each iteration addresses specific issues
 - [ ] Final version scores 8+ on quality criteria
@@ -659,6 +678,7 @@ Before completing, verify you can:
 **Symptoms**: Suggestions don't follow `.github/copilot-instructions.md`
 
 **Solution**:
+
 1. Verify file location: Must be `.github/copilot-instructions.md` (not `.github/copilot/`)
 2. Check file syntax: Valid Markdown without YAML frontmatter
 3. Reload VS Code window: `Cmd/Ctrl + Shift + P` → "Reload Window"
@@ -670,6 +690,7 @@ Before completing, verify you can:
 **Symptoms**: Same prompt produces varying quality results
 
 **Solution**:
+
 1. Add more specific constraints
 2. Include examples (few-shot)
 3. Specify output format explicitly
@@ -682,6 +703,7 @@ Before completing, verify you can:
 **Symptoms**: Response length doesn't match needs
 
 **Solution**:
+
 - Too verbose: Add "Be concise" or "Maximum X lines"
 - Too brief: Add "Provide detailed explanation" or "Include examples"
 

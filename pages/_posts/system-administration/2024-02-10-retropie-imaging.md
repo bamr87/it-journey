@@ -54,9 +54,9 @@ This method directly writes the decompressed image to the microSD card in one st
 
 Download img
 
-https://retropie.org.uk/download/
+<https://retropie.org.uk/download/>
 
-https://github.com/RetroPie/RetroPie-Setup/releases/download/4.8/retropie-buster-4.8-rpi4_400.img.gz
+<https://github.com/RetroPie/RetroPie-Setup/releases/download/4.8/retropie-buster-4.8-rpi4_400.img.gz>
 
 ```bash
 
@@ -121,4 +121,4 @@ sudo eject "$device_path"
 echo "Done. You can safely remove the microSD card."
 ```
 
-https://code.visualstudio.com/docs/remote/wsl
+<https://code.visualstudio.com/docs/remote/wsl>

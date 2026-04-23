@@ -75,6 +75,7 @@ The workflow uses Lychee link checker to scan all markdown files in the IT-Journ
 ### Problem: Rigid Data Structure Assumptions
 
 **Before (Problematic Code):**
+
 ```python
 # Convert error map to individual result format
 for file_path, errors in error_map.items():
@@ -88,6 +89,7 @@ for file_path, errors in error_map.items():
 ```
 
 This code assumed:
+
 - `error['status']` always exists
 - `error['status']` is always a dictionary
 - `error['status']['details']` always exists
@@ -95,6 +97,7 @@ This code assumed:
 ### Solution: Defensive Programming Approach
 
 **After (Robust Code):**
+
 ```python
 # Convert error map to individual result format
 for file_path, errors in error_map.items():
@@ -124,6 +127,7 @@ for file_path, errors in error_map.items():
 We also improved the success map handling to be more defensive:
 
 **Before:**
+
 ```python
 for success in successes:
     results.append({
@@ -134,6 +138,7 @@ for success in successes:
 ```
 
 **After:**
+
 ```python
 for success in successes:
     # Handle both object and string URL formats
@@ -209,6 +214,7 @@ This fix demonstrates how external tools (like Lychee) can change their output f
 ### Enhanced Error Handling
 
 This fix opens paths for further improvements:
+
 - JSON schema validation for Lychee outputs
 - Structured error reporting with categories
 - Better integration testing for external tools
@@ -224,6 +230,7 @@ This fix opens paths for further improvements:
 ### Integration with IT-Journey Ecosystem
 
 This defensive programming approach will be applied to:
+
 - Other GitHub Actions workflows
 - External API integrations
 - Data processing pipelines

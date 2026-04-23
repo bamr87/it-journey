@@ -87,7 +87,7 @@ Tip: This repository already includes helpful workflows like `link-checker.yml` 
 The first spell of stability is consistency. Give every artifact a predictable trail.
 
 #### Step 1: Set sane permalinks
- 
+
 **Objective**: Ensure URLs remain stable and readable.
 
 Add or confirm in `_config.yml`:
@@ -110,7 +110,7 @@ Troubleshooting:
 - Mixed trailing slashes? Standardize on trailing slashes to align with `pretty`.
 
 #### Step 2: Establish a purposeful 404 page
- 
+
 **Objective**: Turn a dead end into a guidepost.
 
 Your repo already has `404.html`. Enhance it with helpful trails:
@@ -155,7 +155,7 @@ Expected Result: A friendly 404 with clear exits and recent content.
 Refactors happen. Preserve the old trails.
 
 #### Step 3: Enable `jekyll-redirect-from`
- 
+
 **Objective**: Add redirects without a server.
 
 1. In `Gemfile` (GitHub Pages supports this gem):
@@ -191,7 +191,7 @@ permalink: /legacy-path/
 SEO Note: Keep content canonicalized (one true URL) and use redirects sparingly but decisively.
 
 #### Step 4: Maintain a realm-wide redirect map (optional)
- 
+
 **Objective**: Centralize migrations.
 
 Create `_data/redirects.yml`:
@@ -281,7 +281,7 @@ Tips:
 When guardians report a missing path, harvest the error and plant a resource.
 
 Playbook:
- 
+
 1. If it’s a moved article: add `redirect_from` on the new canonical.
 1. If it’s a true gap: scaffold a stub page with clear TODOs and publish a minimal viable resource (MVR) to de-404 the link.
 1. If it’s external: switch to the canonical source, or mirror a citation with context.

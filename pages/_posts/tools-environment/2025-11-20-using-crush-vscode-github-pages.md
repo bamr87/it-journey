@@ -20,6 +20,7 @@ In the fast-paced world of technical content creation, efficiency is key. As par
 Crush is a powerful AI assistant that operates through CLI commands and function calls, enabling tasks like file editing, bash execution, web fetching, and more. In the context of IT-Journey, it's used for autonomous code and content generation without constant user intervention. When integrated into VSCode's terminal, it becomes a potent tool for content creators.
 
 Key features observed in Crush:
+
 - Autonomous decision-making: Breaks down tasks, searches codebase, edits files.
 - Tool usage: Bash, edit, write, view, grep, glob for file operations.
 - Safety-focused: Adheres to strict rules, never invents information.
@@ -28,7 +29,7 @@ Key features observed in Crush:
 
 To get started:
 
-1. **Install Crush CLI**: Follow the setup from Charm (crush@charm.land) tools. Ensure it's available in your PATH.
+1. **Install Crush CLI**: Follow the setup from Charm (<crush@charm.land>) tools. Ensure it's available in your PATH.
 
 2. **VSCode Configuration**:
    - Open VSCode in the IT-Journey repo.
@@ -72,6 +73,7 @@ The magic lies in the repo's GitHub Actions setup (from .github/workflows/):
   - Validate front matter, links, dependencies.
 
 From azure-jekyll-deploy.yml:
+
 - Uses Ruby setup, bundle install, jekyll build.
 - Deploys via Azure static-web-apps-deploy.
 - Post-deployment link checking.
@@ -79,6 +81,7 @@ From azure-jekyll-deploy.yml:
 Pushing changes triggers near-instant builds (typically <1 minute), making content live quickly.
 
 Gotchas:
+
 - Always read before editing (from critical rules).
 - Use exact matches for edits.
 - Test after changes.

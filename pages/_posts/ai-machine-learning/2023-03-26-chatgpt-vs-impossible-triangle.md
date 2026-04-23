@@ -52,7 +52,7 @@ Even though this tool will lead you to an answer quickly, users must understand 
 
 ![](../../assets/images/google-gpt-results.png){: .img-fluid }
 
-Chat GPT can easily sift through the noise with very little guidance to find you the "right" answer quickly, which is great for quick questions and basic facts. However, once you start asking hard questions, it becomes obvious there's a mysteriousness of ths tool  that only data scientists understand. For the consumers of this information, we should still exercise caution about what "it" tells you to be "truth". 
+Chat GPT can easily sift through the noise with very little guidance to find you the "right" answer quickly, which is great for quick questions and basic facts. However, once you start asking hard questions, it becomes obvious there's a mysteriousness of ths tool  that only data scientists understand. For the consumers of this information, we should still exercise caution about what "it" tells you to be "truth".
 
 ![](../../assets/images/ai-gpt-results.png){: .img-fluid }
 
@@ -74,7 +74,7 @@ Or you can ask Chat GPT.
 
 ![](../../assets/images/gpt-site-uptime.png){: .img-fluid }
 
-Those who code all the time, you may not be impressed with this example, but imagine if you had this tool during the early stages of your programming journey and avoiding all those hours dealing with syntax errors. 
+Those who code all the time, you may not be impressed with this example, but imagine if you had this tool during the early stages of your programming journey and avoiding all those hours dealing with syntax errors.
 
 Don't get me wrong. This tool by no means will make anyone a programmer overnight, but there's a lot of potential for this tool to accelerate the learning process tremendously, and debug with ease. But of course, not all programmers can tap into this evolving technology just yet, and if you in graphic design, you might have to wait awhile...  
 
@@ -112,12 +112,12 @@ The science behind AI is not new and the term has been used since the 60's, but 
 
 To reallly understand the impact, you might want to ask yourself:
 
-1.  How do I know the responses are correct, unbiased, scientific, and does not harm others?
-2.  Who should control the AI algorithms and source code? Private or public
-3.  How is this tool regulated to ensure information is democratized and accessible?
-4.  Are we living the prequel of Minority report?
+1. How do I know the responses are correct, unbiased, scientific, and does not harm others?
+2. Who should control the AI algorithms and source code? Private or public
+3. How is this tool regulated to ensure information is democratized and accessible?
+4. Are we living the prequel of Minority report?
 
-One good documentary to catch up on some of the negative consequences of AI/ML is titled "Coded Bias" on [Netflix](https://www.netflix.com/title/81328723). This movie provides a bleak view of how AI technology has gone wrong today... 
+One good documentary to catch up on some of the negative consequences of AI/ML is titled "Coded Bias" on [Netflix](https://www.netflix.com/title/81328723). This movie provides a bleak view of how AI technology has gone wrong today...
 
 ## Summary Outlook, not email
 
@@ -142,6 +142,7 @@ But, on the plus side, this bot is programed to be very polite.
 When the original article was written, ChatGPT-3.5 and early GPT-4 were the cutting edge. The inability to generate a proper Penrose Triangle wasn't just a quirky limitation—it represented a fundamental gap in AI spatial reasoning and geometric understanding. Fast forward to November 2025, and the AI ecosystem has exploded:
 
 **New Players on the Field:**
+
 - **GPT-4 Turbo & GPT-4o**: Enhanced reasoning and multimodal capabilities
 - **Claude 3 (Opus, Sonnet, Haiku)**: Anthropic's sophisticated language models with improved spatial understanding
 - **Google Gemini**: Deep integration with visual processing
@@ -169,12 +170,14 @@ The answer is... *complicated*.
 Despite these advances, the **fundamental conceptual challenge persists**: truly understanding and representing impossible 3D geometry requires a type of visual-spatial reasoning that current AI architectures still struggle with.
 
 Modern AI can:
+
 - ✅ Explain what a Penrose Triangle is
 - ✅ Describe how the optical illusion works
 - ✅ Generate SVG code with proper syntax
 - ✅ Create geometric shapes that *approximate* the concept
 
 But it still struggles to:
+
 - ❌ Internalize the "impossible" nature of the geometry
 - ❌ Consistently place the visual elements to create the proper illusion
 - ❌ Understand the precise depth cues and perspective tricks required
@@ -185,12 +188,14 @@ But it still struggles to:
 The Penrose Triangle challenge reveals something profound about AI: **it processes information fundamentally differently than human brains**.
 
 **Human Approach:**
+
 - We "see" the impossible object in our mind's eye
 - We understand the visual trick intuitively
 - We can imagine rotating it and examining it from different angles
 - We grasp the concept of "impossible" in a visceral way
 
 **AI Approach:**
+
 - Processes geometric relationships as abstract patterns
 - Lacks the phenomenological experience of visual perception
 - Works through mathematical relationships and learned associations
@@ -203,18 +208,21 @@ This isn't a failing of AI—it's a fundamental difference in how machine and bi
 While the Penrose Triangle remains a fascinating edge case, AI has made tremendous strides in practical applications:
 
 **Code Generation Has Matured:**
+
 - Modern AI assistants can generate production-ready code across dozens of languages
 - They handle complex architectural decisions and design patterns
 - Error detection and debugging capabilities have improved exponentially
 - Integration with development environments is seamless
 
 **Design and Creativity:**
+
 - AI-powered design tools have revolutionized digital art creation
 - Text-to-image generation produces stunning, professional-quality results
 - UI/UX design assistance has become mainstream
 - Animation and video generation are now within reach
 
 **Problem-Solving Capabilities:**
+
 - Mathematical reasoning has improved significantly
 - Scientific research assistance is increasingly valuable
 - Complex data analysis and interpretation
@@ -225,6 +233,7 @@ While the Penrose Triangle remains a fascinating edge case, AI has made tremendo
 The 2023 concerns about AI limitations haven't disappeared—they've evolved:
 
 **New Challenges:**
+
 1. **Hallucination at Scale**: More sophisticated models can generate more convincing but still incorrect information
 2. **Overconfidence**: AI systems remain confidently wrong, now with better vocabulary
 3. **Ethical Concerns**: Deepfakes, misinformation, and bias have become more sophisticated
@@ -232,6 +241,7 @@ The 2023 concerns about AI limitations haven't disappeared—they've evolved:
 5. **Job Displacement**: The productivity gains are now tangibly affecting employment markets
 
 **Persistent Questions (Updated for 2025):**
+
 1. How do we verify AI-generated content for accuracy and bias?
 2. Who controls the increasingly powerful AI systems? (Now with AGI discussions mainstream)
 3. How do we regulate AI while maintaining innovation and accessibility?
@@ -276,6 +286,7 @@ The Penrose Triangle remains a valuable litmus test—not because it's a critica
 As we stand in late 2025, the conversation has shifted from "Will AI replace humans?" to "How do we ensure AI benefits humanity?"
 
 **Key Focus Areas:**
+
 - **Interpretability**: Understanding how AI makes decisions
 - **Safety**: Ensuring AI systems remain aligned with human values
 - **Accessibility**: Democratizing AI tools and benefits

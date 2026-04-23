@@ -62,6 +62,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ## 🌟 Must-Have Extensions (Everyone)
 
 ### 1. **Prettier - Code Formatter**
+>
 > *The opinionated code formatter*
 
 | Attribute | Value |
@@ -73,6 +74,7 @@ code --install-extension bradlc.vscode-tailwindcss
 **Why You Need It**: Automatically formats your code on save, ensuring consistent style across your entire project and team.
 
 **Setup**:
+
 ```json
 // settings.json
 {
@@ -84,6 +86,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 2. **GitLens — Git Supercharged**
+>
 > *Visualize code authorship and history*
 
 | Attribute | Value |
@@ -95,6 +98,7 @@ code --install-extension bradlc.vscode-tailwindcss
 **Why You Need It**: See who changed what code and when, with inline blame annotations and powerful Git history exploration.
 
 **Key Features**:
+
 - Inline blame annotations
 - File and line history
 - Visual file comparison
@@ -103,6 +107,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 3. **Material Icon Theme**
+>
 > *Beautiful file icons*
 
 | Attribute | Value |
@@ -116,6 +121,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 4. **Error Lens**
+>
 > *See errors inline*
 
 | Attribute | Value |
@@ -129,6 +135,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 5. **GitHub Copilot**
+>
 > *AI pair programmer*
 
 | Attribute | Value |
@@ -146,6 +153,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ## 🌐 Web Development Extensions
 
 ### 6. **Live Server**
+>
 > *Launch a local development server*
 
 | Attribute | Value |
@@ -161,6 +169,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 7. **Auto Rename Tag**
+>
 > *Automatically rename paired HTML/XML tags*
 
 | Attribute | Value |
@@ -174,6 +183,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 8. **Tailwind CSS IntelliSense**
+>
 > *Intelligent Tailwind class suggestions*
 
 | Attribute | Value |
@@ -187,6 +197,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 9. **ESLint**
+>
 > *JavaScript/TypeScript linting*
 
 | Attribute | Value |
@@ -200,6 +211,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 10. **CSS Peek**
+>
 > *Jump to CSS definitions*
 
 | Attribute | Value |
@@ -215,6 +227,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ## 🐍 Python Development Extensions
 
 ### 11. **Python**
+>
 > *Official Python extension*
 
 | Attribute | Value |
@@ -228,6 +241,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 12. **Pylance**
+>
 > *Fast Python language server*
 
 | Attribute | Value |
@@ -241,6 +255,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 13. **Jupyter**
+>
 > *Interactive notebooks in VS Code*
 
 | Attribute | Value |
@@ -256,6 +271,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ## 🐳 DevOps & Infrastructure Extensions
 
 ### 14. **Docker**
+>
 > *Docker container management*
 
 | Attribute | Value |
@@ -269,6 +285,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 15. **Remote - SSH**
+>
 > *Develop on remote machines*
 
 | Attribute | Value |
@@ -282,6 +299,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 16. **YAML**
+>
 > *YAML language support*
 
 | Attribute | Value |
@@ -295,6 +313,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 17. **HashiCorp Terraform**
+>
 > *Terraform language support*
 
 | Attribute | Value |
@@ -310,6 +329,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ## 📝 Markdown & Documentation Extensions
 
 ### 18. **Markdown All in One**
+>
 > *All-in-one Markdown support*
 
 | Attribute | Value |
@@ -323,6 +343,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 19. **markdownlint**
+>
 > *Markdown linting and style checking*
 
 | Attribute | Value |
@@ -336,6 +357,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 20. **Front Matter CMS**
+>
 > *Static site content management*
 
 | Attribute | Value |
@@ -351,6 +373,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ## 🎨 Theme Extensions
 
 ### 21. **One Dark Pro**
+>
 > *Atom's iconic One Dark theme*
 
 | Attribute | Value |
@@ -362,6 +385,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 22. **Dracula Official**
+>
 > *Dark theme for vampires*
 
 | Attribute | Value |
@@ -373,6 +397,7 @@ code --install-extension bradlc.vscode-tailwindcss
 ---
 
 ### 23. **GitHub Theme**
+>
 > *GitHub's official themes*
 
 | Attribute | Value |
@@ -422,6 +447,7 @@ Add these to your `settings.json` for the best experience:
 ## 📦 Extension Packs by Role
 
 ### For Web Developers
+
 ```bash
 code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
@@ -432,6 +458,7 @@ code --install-extension pranaygp.vscode-css-peek
 ```
 
 ### For Python Developers
+
 ```bash
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
@@ -440,6 +467,7 @@ code --install-extension njpwerner.autodocstring
 ```
 
 ### For DevOps Engineers
+
 ```bash
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode-remote.remote-ssh

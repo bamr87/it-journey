@@ -56,7 +56,7 @@ draft: false
 
 **Docker** is a tool that makes it easy to create, deploy, and run applications in **containers**.
 
-### Think of it like this:
+### Think of it like this
 
 | Without Docker | With Docker |
 |---------------|-------------|
@@ -122,6 +122,7 @@ docker --version
 ```
 
 You should see something like:
+
 ```
 Docker version 24.0.6, build ed223bc
 ```
@@ -139,6 +140,7 @@ docker run hello-world
 ```
 
 **What happens:**
+
 1. Docker looks for the `hello-world` image locally
 2. Doesn't find it, downloads from Docker Hub
 3. Creates a container from the image
@@ -146,6 +148,7 @@ docker run hello-world
 5. Container prints a message and exits
 
 **Output:**
+
 ```
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -163,6 +166,7 @@ docker run -it ubuntu bash
 ```
 
 **Flags explained:**
+
 - `-i` = Interactive (keep STDIN open)
 - `-t` = Allocate a terminal
 - `ubuntu` = The image name
@@ -190,11 +194,12 @@ docker run -d -p 8080:80 nginx
 ```
 
 **Flags explained:**
+
 - `-d` = Detached (run in background)
 - `-p 8080:80` = Map port 8080 on your machine to port 80 in container
 
 **Test it:**
-Open http://localhost:8080 in your browser
+Open <http://localhost:8080> in your browser
 
 You should see "Welcome to nginx!"
 
@@ -205,6 +210,7 @@ You should see "Welcome to nginx!"
 ### What is an Image?
 
 An **image** is a read-only template for creating containers. Think of it like:
+
 - A **class** in programming (image) vs. an **object** (container)
 - A **recipe** (image) vs. a **cooked meal** (container)
 
@@ -240,6 +246,7 @@ docker images
 ```
 
 Output:
+
 ```
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 nginx        latest    a6bd71f48f68   2 weeks ago    187MB
@@ -296,6 +303,7 @@ docker run -v $(pwd):/app -w /app python:3.11 python hello.py
 ```
 
 **Flags explained:**
+
 - `-v $(pwd):/app` = Mount current directory to /app in container
 - `-w /app` = Set working directory to /app
 
@@ -381,6 +389,7 @@ Ready to level up? Continue your Docker journey:
 ### "Permission denied"
 
 **Linux Solution**:
+
 ```bash
 sudo usermod -aG docker $USER
 # Then log out and back in
@@ -389,13 +398,14 @@ sudo usermod -aG docker $USER
 ### "Port already in use"
 
 **Solution**: Use a different port:
+
 ```bash
 docker run -p 8081:80 nginx  # Use 8081 instead of 8080
 ```
 
 ---
 
-## 🎉 Congratulations!
+## 🎉 Congratulations
 
 You've learned the Docker basics! You can now:
 

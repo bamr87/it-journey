@@ -258,9 +258,9 @@ abstract: "{{ page.abstract }}"
 #### Example
 
 1. : Excel as a Proxy for Economic Complexity
-	•	Brief overview of financial modeling complexity.
-	•	Introduce Excel as the ubiquitous tool for modeling financial and economic scenarios.
-	•	Describe the familiar frustration: circular reference errors, computational limitations, and perceived flaws.
+ • Brief overview of financial modeling complexity.
+ • Introduce Excel as the ubiquitous tool for modeling financial and economic scenarios.
+ • Describe the familiar frustration: circular reference errors, computational limitations, and perceived flaws.
 
 ### Body
 
@@ -286,29 +286,29 @@ schema: article_body
 #### Example
 
 1. Circular References: Errors or Market Signals?
-	•	Define circular references clearly for the reader.
-	•	Illustrate how these errors reflect the real-world nature of financial interdependencies and iterative market processes.
-	•	Propose that these errors, often dismissed, may metaphorically represent the financial model seeking an “equilibrium at infinity.”
+ • Define circular references clearly for the reader.
+ • Illustrate how these errors reflect the real-world nature of financial interdependencies and iterative market processes.
+ • Propose that these errors, often dismissed, may metaphorically represent the financial model seeking an “equilibrium at infinity.”
 
 2. Abstracting Financial Models into a Formulaic Infinity
-	•	Discuss how financial models, at high complexity, resemble algorithms that attempt to solve infinite regressions.
-	•	Explain how financial markets themselves are recursive and iterative, thus naturally creating conditions similar to circular references.
-	•	Suggest a conceptual formula or framework (in plain terms) reflecting this infinite recursion as a legitimate market phenomenon, rather than a computational limitation.
+ • Discuss how financial models, at high complexity, resemble algorithms that attempt to solve infinite regressions.
+ • Explain how financial markets themselves are recursive and iterative, thus naturally creating conditions similar to circular references.
+ • Suggest a conceptual formula or framework (in plain terms) reflecting this infinite recursion as a legitimate market phenomenon, rather than a computational limitation.
 
-2. Hidden Arbitrage Opportunities and Market Gaps
-	•	Propose the humorous yet insightful thesis: circular reference errors in complex financial models might indicate hidden arbitrage opportunities.
-	•	Explain arbitrage in lay terms and how the complexity of economic activities obscures these opportunities.
-	•	Discuss the irony that Excel’s limitations inadvertently protect certain market inefficiencies by rendering them inaccessible to most analysts.
+3. Hidden Arbitrage Opportunities and Market Gaps
+ • Propose the humorous yet insightful thesis: circular reference errors in complex financial models might indicate hidden arbitrage opportunities.
+ • Explain arbitrage in lay terms and how the complexity of economic activities obscures these opportunities.
+ • Discuss the irony that Excel’s limitations inadvertently protect certain market inefficiencies by rendering them inaccessible to most analysts.
 
-3. Microsoft’s Computational Irony
-	•	Humorously posit that Microsoft alone, given its vast computational infrastructure (Azure, OpenAI investments, etc.), could theoretically resolve these infinite loops.
-	•	Discuss the paradox that Microsoft might leverage this infinite computational capability, provided by its cloud computing prowess, to discover and exploit hidden market gaps first flagged by its own software limitations.
-	•	Reflect humorously on the irony of Microsoft’s potential advantage in identifying and profiting from complexities that its users cannot solve.
+4. Microsoft’s Computational Irony
+ • Humorously posit that Microsoft alone, given its vast computational infrastructure (Azure, OpenAI investments, etc.), could theoretically resolve these infinite loops.
+ • Discuss the paradox that Microsoft might leverage this infinite computational capability, provided by its cloud computing prowess, to discover and exploit hidden market gaps first flagged by its own software limitations.
+ • Reflect humorously on the irony of Microsoft’s potential advantage in identifying and profiting from complexities that its users cannot solve.
 
-4. Implications and Thought Experiment
-	•	Speculate on the potential for new forms of financial modeling that deliberately utilize complexity and circular logic to uncover arbitrage.
-	•	Suggest a thought experiment: what if financial modeling software embraced complexity rather than restricting it?
-	•	Explore hypothetical scenarios where AI-driven financial modeling tools actively search for these abstract market inefficiencies.
+5. Implications and Thought Experiment
+ • Speculate on the potential for new forms of financial modeling that deliberately utilize complexity and circular logic to uncover arbitrage.
+ • Suggest a thought experiment: what if financial modeling software embraced complexity rather than restricting it?
+ • Explore hypothetical scenarios where AI-driven financial modeling tools actively search for these abstract market inefficiencies.
 
 ### Conclusion
 
@@ -328,11 +328,9 @@ prompt: "Generate an outline for the conclusion of this article in a structured 
 
 #### Example
 
-7. Conclusion: A Humorous Reflection on Complexity and Market Reality
-	•	Summarize the comedic yet insightful paradox explored.
-	•	Encourage a reconsideration of how we perceive computational limitations in financial modeling—as not just errors, but as indicators of deeper economic truths.
-
-
+1. Conclusion: A Humorous Reflection on Complexity and Market Reality
+ • Summarize the comedic yet insightful paradox explored.
+ • Encourage a reconsideration of how we perceive computational limitations in financial modeling—as not just errors, but as indicators of deeper economic truths.
 
 ## Call to Action
 

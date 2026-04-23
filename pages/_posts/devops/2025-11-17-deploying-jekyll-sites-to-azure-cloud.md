@@ -70,6 +70,7 @@ Whether you're migrating from GitHub Pages, looking to scale your Jekyll site, o
 ### 🌟 Why Azure Static Web Apps for Jekyll?
 
 **Key Benefits:**
+
 - **Serverless Architecture**: No server management or scaling concerns
 - **Global CDN**: Automatic content distribution for lightning-fast loading
 - **Built-in CI/CD**: Integrated GitHub/GitLab/Azure DevOps pipelines
@@ -78,6 +79,7 @@ Whether you're migrating from GitHub Pages, looking to scale your Jekyll site, o
 - **Cost-Effective**: Pay only for what you use, with generous free tier
 
 **Perfect for Jekyll Sites:**
+
 - Static content generation aligns perfectly with serverless hosting
 - No database requirements for most Jekyll sites
 - Excellent performance for content-heavy sites
@@ -86,6 +88,7 @@ Whether you're migrating from GitHub Pages, looking to scale your Jekyll site, o
 ### 🎯 What You'll Learn
 
 By the end of this guide, you'll be able to:
+
 - Set up Azure Static Web Apps for your Jekyll site
 - Configure automated deployment pipelines
 - Implement custom domains and SSL
@@ -101,17 +104,20 @@ By the end of this guide, you'll be able to:
 Azure Static Web Apps provides a complete hosting solution that transforms your Jekyll development workflow into a production-ready cloud application. Here's how the components work together:
 
 **Development Layer:**
+
 - **Jekyll Site**: Your local development environment with Markdown content and Liquid templates
 - **Git Repository**: Version control and collaboration platform (GitHub, GitLab, Azure DevOps)
 - **Build Process**: Static site generation and asset optimization
 
 **Cloud Infrastructure Layer:**
+
 - **Azure Static Web Apps**: Serverless hosting service with global CDN
 - **Azure Front Door**: Optional advanced CDN and routing capabilities
 - **Azure DNS**: Custom domain management and SSL certificates
 - **Azure Monitor**: Performance monitoring and logging
 
 **Deployment Pipeline:**
+
 - **GitHub Actions/Azure DevOps**: Automated build and deployment triggers
 - **Azure CLI**: Infrastructure management and configuration
 - **Azure Portal**: Web-based management interface
@@ -168,6 +174,7 @@ graph TB
 Before we begin, ensure you have the following:
 
 **Azure Account & Tools:**
+
 ```bash
 # Install Azure CLI
 brew install azure-cli  # macOS
@@ -183,6 +190,7 @@ gh auth login
 ```
 
 **Jekyll Site Requirements:**
+
 - Valid Jekyll site with `_config.yml`
 - `Gemfile` with Jekyll dependencies
 - Build output in `_site/` directory (default)
@@ -193,6 +201,7 @@ gh auth login
 First, let's configure your Jekyll site for optimal Azure deployment:
 
 **Update `_config.yml` for Azure:**
+
 ```yaml
 # Add Azure-specific configuration
 url: "https://your-app-name.azurestaticapps.net"  # Replace with your actual URL
@@ -210,6 +219,7 @@ azure_static_web_apps:
 ```
 
 **Create Azure Static Web Apps configuration:**
+
 ```json
 // .github/workflows/azure-static-web-apps.yml
 {
@@ -276,6 +286,7 @@ azure_static_web_apps:
 Now let's create the Azure infrastructure:
 
 **Using Azure CLI:**
+
 ```bash
 # Set your subscription
 az account set --subscription "your-subscription-id"
@@ -302,6 +313,7 @@ az staticwebapp secrets list \
 ```
 
 **Alternative: Azure Portal Method:**
+
 1. Navigate to [Azure Portal](https://portal.azure.com)
 2. Search for "Static Web Apps"
 3. Click "Create"
@@ -325,12 +337,14 @@ az staticwebapp secrets list \
 Set up the CI/CD pipeline:
 
 **Add GitHub Secrets:**
+
 ```bash
 # In your GitHub repository settings, add:
 # AZURE_STATIC_WEB_APPS_API_TOKEN = [token from Azure CLI above]
 ```
 
 **Complete GitHub Actions Workflow:**
+
 ```yaml
 name: Azure Static Web Apps CI/CD
 
@@ -397,6 +411,7 @@ jobs:
 Add your custom domain:
 
 **Azure Portal Method:**
+
 1. Go to your Static Web App in Azure Portal
 2. Navigate to "Custom domains"
 3. Click "Add custom domain"
@@ -405,6 +420,7 @@ Add your custom domain:
 6. Follow DNS configuration instructions
 
 **DNS Configuration (Example for Cloudflare):**
+
 ```txt
 # Add CNAME record
 Type: CNAME
@@ -418,6 +434,7 @@ Value: [validation token from Azure]
 ```
 
 **Azure CLI Method:**
+
 ```bash
 # Validate custom domain
 az staticwebapp hostname validate \
@@ -437,6 +454,7 @@ az staticwebapp hostname set \
 Enhance your site's performance:
 
 **Enable Azure CDN (Front Door):**
+
 ```bash
 # Create Azure Front Door profile
 az afd profile create \
@@ -463,6 +481,7 @@ az afd route create \
 ```
 
 **Jekyll Performance Optimizations:**
+
 ```yaml
 # _config.yml additions
 # Enable compression and optimization
@@ -494,6 +513,7 @@ jekyll-minifier:
 Set up monitoring for your site:
 
 **Enable Application Insights:**
+
 ```bash
 # Create Application Insights resource
 az monitor app-insights component create \
@@ -512,7 +532,9 @@ az staticwebapp appsettings set \
 ### Common Issues and Solutions
 
 #### Build Failures
+
 **Issue:** Jekyll build fails in GitHub Actions
+
 ```bash
 # Check build logs in GitHub Actions
 # Common fixes:
@@ -521,7 +543,9 @@ bundle exec jekyll build --trace  # Verbose error output
 ```
 
 #### Custom Domain Issues
+
 **Issue:** Domain validation fails
+
 ```bash
 # Check DNS propagation
 nslookup your-domain.com
@@ -535,7 +559,9 @@ az staticwebapp hostname validate \
 ```
 
 #### Performance Problems
+
 **Issue:** Slow loading times
+
 ```bash
 # Check Azure CDN status
 az afd endpoint show \
@@ -567,11 +593,13 @@ webrick:
 ### Scaling Strategies
 
 **Global Distribution:**
+
 - Use Azure Front Door for worldwide CDN
 - Configure geo-redundancy for high availability
 - Implement caching strategies for dynamic content
 
 **Cost Monitoring:**
+
 ```bash
 # Monitor costs
 az costmanagement query \
@@ -590,6 +618,7 @@ az costmanagement query \
 If your Jekyll site needs dynamic functionality:
 
 **Azure Functions Integration:**
+
 ```javascript
 // api/hello.js (in your repository)
 module.exports = async function (context, req) {
@@ -604,6 +633,7 @@ module.exports = async function (context, req) {
 ```
 
 **Update Configuration:**
+
 ```yaml
 # In .github/workflows/azure-static-web-apps.yml
 # Add api_location for Functions
@@ -613,6 +643,7 @@ api_location: "api"
 ### Authentication and Security
 
 **Azure AD Integration:**
+
 ```yaml
 # _config.yml additions for auth
 azure_static_web_apps:
@@ -637,12 +668,14 @@ Deploying your Jekyll site to Azure Static Web Apps combines the simplicity of s
 ### Key Takeaways
 
 **Architecture Benefits:**
+
 - Serverless hosting eliminates infrastructure management
 - Global CDN ensures fast loading worldwide
 - Built-in CI/CD reduces deployment complexity
 - Enterprise security features protect your content
 
 **Development Workflow:**
+
 - Push to main branch triggers automatic deployment
 - Staging environments for testing changes
 - Rollback capabilities for quick issue resolution
@@ -651,17 +684,20 @@ Deploying your Jekyll site to Azure Static Web Apps combines the simplicity of s
 ### Next Steps
 
 **Explore Advanced Features:**
+
 - Add Azure Functions for dynamic content
 - Implement Azure Front Door for advanced routing
 - Set up Azure Monitor for comprehensive analytics
 - Integrate with Azure Cognitive Services for AI features
 
 **Community Resources:**
+
 - [Azure Static Web Apps Documentation](https://docs.microsoft.com/azure/static-web-apps/)
 - [Jekyll Deployment Guides](https://jekyllrb.com/docs/deployment/)
 - [Azure DevOps Integration](https://azure.microsoft.com/products/devops/)
 
 **Cost Estimation:**
+
 - Free tier: Perfect for personal blogs and small sites
 - Standard tier: Scales with traffic growth
 - Enterprise tier: Advanced security and compliance features
@@ -673,16 +709,19 @@ Your Jekyll site is now running on Azure Cloud with professional-grade hosting, 
 ## 📚 Resources and Further Reading
 
 ### Official Documentation
+
 - [Azure Static Web Apps Overview](https://docs.microsoft.com/azure/static-web-apps/overview)
 - [Jekyll Deployment Methods](https://jekyllrb.com/docs/deployment/methods/)
 - [GitHub Actions for Azure](https://github.com/Azure/actions)
 
 ### Community Resources
+
 - [Azure Static Web Apps Samples](https://github.com/staticwebdev)
 - [Jekyll Themes with Azure Integration](https://jekyllthemes.io/)
 - [Azure DevOps Pipelines](https://azure.microsoft.com/products/devops/pipelines/)
 
 ### Related IT-Journey Content
+
 - [GitHub Pages: The Hidden Gem Revolutionizing Web Publishing](/posts/github-pages-hidden-gem/)
 - [Dockering Your IT Journey](/posts/dockering-your-it-journey/)
 - [AI-Powered Development Workflows](/posts/ai-powered-development-workflows/)

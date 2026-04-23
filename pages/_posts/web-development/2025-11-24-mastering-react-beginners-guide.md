@@ -78,6 +78,7 @@ You do not need prior React experience. Basic HTML, CSS, and JavaScript familiar
 React is a JavaScript library for building user interfaces. Instead of manually updating the DOM with `document.getElementById(...)` calls, you describe what the UI should look like for a given state, and React updates the page for you when that state changes.
 
 Key ideas:
+
 - **Components**: Reusable building blocks (like custom HTML tags).
 - **JSX**: A syntax that lets you write HTML-like code inside JavaScript.
 - **Props**: Data you pass into components.
@@ -148,9 +149,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>
+ <React.StrictMode>
+  <App />
+ </React.StrictMode>
 );
 ```
 
@@ -164,12 +165,12 @@ Now open `src/App.jsx` and replace its contents with a very simple component:
 
 ```jsx
 function App() {
-	return (
-		<div>
-			<h1>Mastering React: A Beginner's Guide</h1>
-			<p>Welcome to your first React component!</p>
-		</div>
-	);
+ return (
+  <div>
+   <h1>Mastering React: A Beginner's Guide</h1>
+   <p>Welcome to your first React component!</p>
+  </div>
+ );
 }
 
 export default App;
@@ -190,7 +191,7 @@ Example:
 const name = "Ada";
 
 function Greeting() {
-	return <p>Hello, {name}!</p>;
+ return <p>Hello, {name}!</p>;
 }
 ```
 
@@ -206,15 +207,15 @@ Update `src/App.jsx`:
 import { useState } from "react";
 
 function App() {
-	const [count, setCount] = useState(0);
+ const [count, setCount] = useState(0);
 
-	return (
-		<div>
-			<h1>React Counter</h1>
-			<p>Current count: {count}</p>
-			<button onClick={() => setCount(count + 1)}>Increment</button>
-		</div>
-	);
+ return (
+  <div>
+   <h1>React Counter</h1>
+   <p>Current count: {count}</p>
+   <button onClick={() => setCount(count + 1)}>Increment</button>
+  </div>
+ );
 }
 
 export default App;
@@ -240,15 +241,15 @@ Create a new file `src/Counter.jsx`:
 import { useState } from "react";
 
 function Counter({ label }) {
-	const [value, setValue] = useState(0);
+ const [value, setValue] = useState(0);
 
-	return (
-		<div>
-			<h2>{label}</h2>
-			<p>Value: {value}</p>
-			<button onClick={() => setValue(value + 1)}>+1</button>
-		</div>
-	);
+ return (
+  <div>
+   <h2>{label}</h2>
+   <p>Value: {value}</p>
+   <button onClick={() => setValue(value + 1)}>+1</button>
+  </div>
+ );
 }
 
 export default Counter;
@@ -260,13 +261,13 @@ Now update `src/App.jsx` to use this new component:
 import Counter from "./Counter.jsx";
 
 function App() {
-	return (
-		<div>
-			<h1>React Components</h1>
-			<Counter label="First counter" />
-			<Counter label="Second counter" />
-		</div>
-	);
+ return (
+  <div>
+   <h1>React Components</h1>
+   <Counter label="First counter" />
+   <Counter label="Second counter" />
+  </div>
+ );
 }
 
 export default App;
@@ -302,15 +303,15 @@ Most importantly, build something small but real: a todo list, a notes app, or a
 If you run into issues:
 
 - **The browser shows a blank page**
-	- Check the browser console for errors (Developer Tools → Console).
-	- Ensure `ReactDOM.createRoot(...).render(<App />)` in `main.jsx` refers to an element with `id="root"` in `index.html`.
+  - Check the browser console for errors (Developer Tools → Console).
+  - Ensure `ReactDOM.createRoot(...).render(<App />)` in `main.jsx` refers to an element with `id="root"` in `index.html`.
 
 - **The dev server will not start**
-	- Make sure you are in the project folder when running `npm run dev`.
-	- Delete `node_modules` and lock files (`package-lock.json` or `yarn.lock`) and reinstall dependencies.
+  - Make sure you are in the project folder when running `npm run dev`.
+  - Delete `node_modules` and lock files (`package-lock.json` or `yarn.lock`) and reinstall dependencies.
 
 - **JSX errors like "Adjacent JSX elements must be wrapped in an enclosing tag"**
-	- Ensure your component returns a single root element (wrap siblings in a `<div>` or `<>...</>` fragment).
+  - Ensure your component returns a single root element (wrap siblings in a `<div>` or `<>...</>` fragment).
 
 Use these errors as learning opportunities—reading and solving them is a big part of mastering React.
 
@@ -319,23 +320,27 @@ Use these errors as learning opportunities—reading and solving them is a big p
 ## 🚀 Next Steps and Advanced Topics
 
 ### 🔮 Advanced Applications
+
 - Build a todo list application to practice state management
 - Create a weather app using a public API
 - Explore React Router for multi-page applications
 - Learn about useEffect for side effects and data fetching
 
 ### 📚 Recommended Learning Path
+
 - **Foundation Building**: JavaScript ES6+ features (arrow functions, destructuring, modules)
 - **Skill Expansion**: CSS-in-JS solutions, styled-components, or Tailwind CSS
 - **Specialization Options**: React Native for mobile apps, Next.js for server-side rendering
 
 ### 🌐 Community and Resources
+
 - [React Official Documentation](https://react.dev/) - Best resource for learning React
 - [React Discord Community](https://discord.gg/react) - Get help from other developers
 - [Stack Overflow - React Tag](https://stackoverflow.com/questions/tagged/reactjs) - Q&A community
 - [FreeCodeCamp React Course](https://www.freecodecamp.org/learn/front-end-development-libraries/) - Free structured learning
 
 ### 🎯 Project Ideas
+
 - **Beginner Project**: Simple calculator with React components
 - **Intermediate Project**: Blog with dynamic posts and routing
 - **Advanced Project**: E-commerce site with cart management and checkout flow
@@ -345,21 +350,25 @@ Use these errors as learning opportunities—reading and solving them is a big p
 ## 📚 Resources and References
 
 ### 📖 Essential Documentation
+
 - [React Official Documentation](https://react.dev/) - Primary reference for all React features
 - [Vite Documentation](https://vitejs.dev/) - Fast build tool and dev server
 - [MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - JavaScript fundamentals
 
 ### 🎥 Video and Interactive Resources
+
 - [React Tutorial for Beginners](https://www.youtube.com/results?search_query=react+tutorial+beginners) - Various video tutorials
 - [Scrimba React Course](https://scrimba.com/learn/learnreact) - Interactive coding tutorials
 - [React Beta Docs](https://react.dev/learn) - Modern React learning path
 
 ### 💬 Community Support
+
 - [React Discord](https://discord.gg/react) - Real-time community support
 - [Reactiflux](https://www.reactiflux.com/) - React developer community
 - [Reddit r/reactjs](https://www.reddit.com/r/reactjs/) - Discussion and questions
 
 ### 🔧 Tools and Utilities
+
 - [React Developer Tools](https://react.dev/learn/react-developer-tools) - Browser extension for debugging
 - [VS Code React Extension Pack](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) - Code snippets and tooling
 - [Create React App](https://create-react-app.dev/) - Alternative project starter (heavier than Vite)

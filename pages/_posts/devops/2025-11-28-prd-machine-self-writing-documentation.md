@@ -129,6 +129,7 @@ def main():
 ```
 
 **Usage:**
+
 ```bash
 prd-machine sync          # Generate PRD.md
 prd-machine status        # Check health
@@ -450,6 +451,7 @@ After implementation:
 ## What's Next?
 
 The roadmap includes:
+
 - Issue tracking integration (GitHub, Linear)
 - Communication ingestion (Slack threads)
 - Design signal ingestion (Figma comments)
@@ -476,6 +478,7 @@ cat PRD.md
 ---
 
 **Related Resources:**
+
 - [PRD Machine Documentation](/docs/scripts/PRD_MACHINE.md)
 - [GitHub Workflow Configuration](/.github/workflows/prd-sync.yml)
 - [Scripts Guide](/docs/scripts/SCRIPTS_GUIDE.md)

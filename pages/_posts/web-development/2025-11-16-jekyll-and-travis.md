@@ -19,7 +19,7 @@ date: 2022-01-13 10:32:07+00:00
 ---
 
 # Overview
- 
+
 Jekyll compiles your website into a `_site` available for FTP to your web server. This can be automated if your source code is already on GitHub.
 
 Travis CI is a free Continuous Integration service for testing and deploying your open source GitHub projects.
@@ -118,10 +118,10 @@ addons:
       - ncftp
 ```
 
-This section is telling Travis CI to find and execute the file located at _scripts/build.sh and on success execute the file at _scripts/deploy.sh.
+This section is telling Travis CI to find and execute the file located at _scripts/build.sh and on success execute the file at_scripts/deploy.sh.
 The addons section tells Travis CI to also install an FTP client called ncftp. This will be used to deploy your site.
 
-## Create a folder in the root called _scripts and inside create a build and deploy shell script.
+## Create a folder in the root called _scripts and inside create a build and deploy shell script
 
 **build.sh**
 
@@ -192,5 +192,4 @@ Deploying your Jekyll website using Travis CI is simple, fast and secure. The Pu
 
 All of the build process is handled by Travis CI which means you can commit changes to your repository from anywhere, have your code tested and validated and then merge to push your content live. Travis CI will also notify you when the build is successful or fails.
 
-## References:
-
+## References
