@@ -1,0 +1,78 @@
+name: Posts Markdown Lint
+
+# Phase 7 (CI hardening) — runs markdownlint only against pages/_posts/.
+# Uses the posts-scoped relaxed config at pages/_posts/.markdownlint.json,
+# which extends the project root .markdownlint.json and disables a small
+# number of rules (MD025, MD036, MD040, MD060) that produce excessive noise
+# on legitimate blog content. See pages/_posts/README.md for the rationale.
+
+on:
+  pull_request:
+    paths:
+      - 'pages/_posts/**/*.md'
+      - 'pages/_posts/.markdownlint.json'
+      - '.markdownlint.json'
+      - '.github/workflows/posts-markdown-lint.yml'
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      apply_fixes:
+        description: 'Run markdownlint --fix and commit results'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['true', 'false']
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2@0.13.0
+
+      - name: Run markdownlint (check mode)
+        if: github.event.inputs.apply_fixes != 'true'
+        run: |
+          set -o pipefail
+          markdownlint-cli2 "pages/_posts/**/*.md" 2>&1 | tee markdownlint-report.txt
+        continue-on-error: false
+
+      - name: Run markdownlint --fix
+        if: github.event.inputs.apply_fixes == 'true'
+        run: |
+          markdownlint-cli2 --fix "pages/_posts/**/*.md" || true
+
+      - name: Commit fixes (workflow_dispatch only)
+        if: github.event.inputs.apply_fixes == 'true'
+        run: |
+          if [ -n "$(git status --porcelain pages/_posts/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add pages/_posts/
+            git commit -m "chore(posts): apply markdownlint --fix [skip ci]"
+            git push
+          else
+            echo "No changes after --fix"
+          fi
+
+      - name: Upload report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-report
+          path: markdownlint-report.txt
+          retention-days: 14

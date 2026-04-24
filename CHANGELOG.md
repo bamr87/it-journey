@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **Posts authoring standards** — `pages/_posts/README.md` documents directory layout, file naming, required frontmatter, validation tooling, link hygiene, draft lifecycle, and the cleanup metrics history (#239)
+- **Posts CI workflow** — `.github/workflows/posts-markdown-lint.yml` runs `markdownlint-cli2` on PRs touching `pages/_posts/**`; supports manual `--fix` mode (#239)
+- **Posts-scoped lint config** — `pages/_posts/.markdownlint.json` extends repo-root config, disabling MD025/MD036/MD040/MD060 and widening MD033 allowed elements for legitimate blog-content patterns (#239)
+- **Frontmatter auto-fix script** — `scripts/validation/fix-frontmatter.py` idempotently fills missing `date` (from filename), `categories` (from folder), and `description` (from first prose paragraph) (#239)
+- **External link-rot baseline** — `link-check-results/posts-external-baseline.md` catalogs 18 known-broken external links with status and remediation strategy (#239)
+- **AI-generated preview images** — 11 DALL-E previews under `assets/images/previews/` for `devops/` posts that previously had empty `preview:` fields (#239)
+
+### Changed
+- **Posts mass cleanup** (8-phase, #239):
+  - Files: 124 → 86 (+ 34 stub/draft posts moved to `pages/_drafts/`)
+  - Frontmatter valid: 73/124 (59%) → 86/86 (100%)
+  - Frontmatter errors: 102 → 0
+  - SEO score (avg): 54.5 → 65.5
+  - Markdownlint issues: 1,790 → 21 (98.8% reduction)
+  - Internal links: 0/287 broken (verified via `lychee --offline --base _site`)
+- **Posts directory layout** — All posts now reside in 13 kebab-case category folders (e.g. `ai-machine-learning/`, `creative-experimental/`); previous folder names with spaces and `&` renamed via `git mv` to preserve history
+- **Frontmatter normalized** — Auto-filled `date`, `categories`, and `description` across the collection per `posts.instructions.md` schema
+
+### Fixed
+- **Broken Jekyll docs link** — `https://jekyllrb.com/docs/deployment/methods/` → `https://jekyllrb.com/docs/deployment/` in `devops/2025-11-17-deploying-jekyll-sites-to-azure-cloud.md` (#239)
+
 ## [2.2.0] - 2026-03-21
 
 ### Added

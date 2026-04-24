@@ -3,13 +3,13 @@
 
 sections:
   "AI & Machine Learning":
-    directory: "ai & machine learning"
+    directory: "ai-machine-learning"
     aliases:
       - "ai"
       - "machine learning"
       - "artificial intelligence"
   "Web Development":
-    directory: "web development"
+    directory: "web-development"
     aliases:
       - "web"
       - "frontend"
@@ -27,37 +27,37 @@ sections:
       - "development"
       - "software"
   "System Administration":
-    directory: "system administration"
+    directory: "system-administration"
     aliases:
       - "sysadmin"
       - "administration"
       - "systems"
   "Data & Analytics":
-    directory: "data & analytics"
+    directory: "data-analytics"
     aliases:
       - "data"
       - "analytics"
       - "analysis"
   "Tools & Environment":
-    directory: "tools & environment"
+    directory: "tools-environment"
     aliases:
       - "tools"
       - "environment"
       - "setup"
   "Creative & Experimental":
-    directory: "creative & experimental"
+    directory: "creative-experimental"
     aliases:
       - "creative"
       - "experimental"
       - "art"
   "Culture & Society":
-    directory: "culture & society"
+    directory: "culture-society"
     aliases:
       - "culture"
       - "society"
       - "social"
   "Trends & Ideas":
-    directory: "trends & ideas"
+    directory: "trends-ideas"
     aliases:
       - "trends"
       - "ideas"

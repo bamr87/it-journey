@@ -132,6 +132,7 @@ Let's translate some common financial workflows from spreadsheet-speak to termin
 **In Excel**: Open file → Wait for it to load → Click Data tab → Click Filter → Click dropdown on Category column → Scroll to "Office Supplies" → Check the box → Click OK → Copy filtered results → Open new workbook → Paste → Save As.
 
 **In Terminal**:
+
 ```bash
 grep "Office Supplies" expenses.csv > office_supplies.csv
 ```
@@ -145,6 +146,7 @@ That's it. One line. The `>` operator sends the output to a new file. Done in 0.
 **In Excel**: Look at the status bar at the bottom. Hope it says "Count." If it says "Average" instead, right-click, change it. Squint at the number.
 
 **In Terminal**:
+
 ```bash
 grep "Office Supplies" expenses.csv | wc -l
 ```
@@ -158,6 +160,7 @@ The `|` (pipe) takes the output of `grep` and feeds it into `wc -l` (word count,
 **In Excel**: Scroll to the bottom of column E. Type `=SUM(E2:E1000000)`. Press Enter. Wait. Wait more. Okay, done.
 
 **In Terminal**:
+
 ```bash
 awk -F',' '{sum += $5} END {printf "$%.2f\n", sum}' expenses.csv
 ```
@@ -171,6 +174,7 @@ awk -F',' '{sum += $5} END {printf "$%.2f\n", sum}' expenses.csv
 **In Excel**: Click column → Data → Sort → Largest to Smallest → OK → Wait for Excel to rearrange a million rows in memory.
 
 **In Terminal**:
+
 ```bash
 sort -t',' -k5 -nr expenses.csv | head -20
 ```
@@ -184,6 +188,7 @@ This sorts by the 5th column (`-k5`), numerically (`-n`), in reverse/descending 
 **In Excel**: Conditional Formatting → Highlight Duplicates → Scroll through 50,000 rows looking for pink cells → Contemplate existence.
 
 **In Terminal**:
+
 ```bash
 awk -F',' '{print $3}' invoices.csv | sort | uniq -d
 ```
@@ -243,6 +248,7 @@ echo "=========================================="
 ```
 
 To run this script:
+
 1. Save it as `month_end_close.sh`
 2. Make it executable: `chmod +x month_end_close.sh`
 3. Run it: `./month_end_close.sh`
@@ -285,33 +291,43 @@ That's the whole list. Fifteen commands. You probably learned more than that in 
 Here are a few more one-liners you can try right away. Think of these as "terminal tapas" — small bites that show you what's possible.
 
 ### Extract Unique Vendor Names
+
 ```bash
 awk -F',' '{print $2}' expenses.csv | sort -u
 ```
+
 Pulls the second column (vendor name), sorts it, and removes duplicates (`-u` = unique). Instant vendor master list.
 
 ### Find All Transactions on a Specific Date
+
 ```bash
 grep "2026-01-15" ledger.csv
 ```
+
 Every line containing that date, printed to your screen in milliseconds.
 
 ### Calculate Average Transaction Amount
+
 ```bash
 awk -F',' '{sum += $5; count++} END {printf "Average: $%.2f\n", sum/count}' transactions.csv
 ```
+
 Running average across an entire file. No formulas. No cell references. No circular reference errors.
 
 ### Split a Huge File by Month
+
 ```bash
 awk -F',' '{print > substr($1,1,7)".csv"}' transactions.csv
 ```
+
 This reads the date in column 1, extracts the year-month portion, and writes each row to a corresponding file (`2026-01.csv`, `2026-02.csv`, etc.). One line. Millions of rows. Separate files per month.
 
 ### Compare Two Files for Differences (Bank Reconciliation, Anyone?)
+
 ```bash
 diff <(sort bank_statement.csv) <(sort gl_extract.csv)
 ```
+
 Shows you every line that exists in one file but not the other. That's a bank reconciliation starter kit in a single command.
 
 ---
