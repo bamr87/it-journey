@@ -253,21 +253,22 @@ touch _sass/components/_nanobar.scss
 
 ### Step 3.3: CSS Custom Properties from Config
 
-In the include file, output CSS custom properties from the YAML values:
+Bridge your YAML config values into the stylesheet by setting CSS custom properties via a `style` attribute directly on the nanobar root element — keeping all CSS in the stylesheet where it belongs:
 
 ```liquid
 {% raw %}{% if site.nanobar.enabled %}
-<style>
-  :root {
-    --nanobar-height: {{ site.nanobar.height | default: '3px' }};
-    --nanobar-color: {{ site.nanobar.color | default: '#0d6efd' }};
-    --nanobar-z-index: {{ site.nanobar.z_index | default: 1050 }};
-  }
-</style>
+<div class="nanobar nanobar--{{ site.nanobar.position | default: 'top' }}"
+     role="progressbar"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="0"
+     style="--nanobar-height: {{ site.nanobar.height | default: '3px' }}; --nanobar-color: {{ site.nanobar.color | default: '#0d6efd' }}; --nanobar-z-index: {{ site.nanobar.z_index | default: 1050 }};">
+  <div class="nanobar__bar"></div>
+</div>
 {% endif %}{% endraw %}
 ```
 
-> **🧙 Artisan's Tip:** CSS custom properties let you bridge YAML config values into the stylesheet without Sass compilation tricks.
+> **🧙 Artisan's Tip:** Setting CSS custom properties on the component's root element (not in a `<style>` block) keeps all CSS rules in the stylesheet where they belong. The `style` attribute only carries *values*, while the stylesheet owns the *rules* — no inline styles, no duplication.
 
 ---
 
@@ -418,3 +419,14 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 ---
 
 *Go forth, artisan, and may your components be modular, your styles scoped, and your layouts ever full-width when they need to be.* ⚒️
+
+---
+
+## 📚 Resources
+
+- [Jekyll Includes](https://jekyllrb.com/docs/includes/) - Official guide to reusable Liquid include files
+- [Jekyll Configuration](https://jekyllrb.com/docs/configuration/) - Official reference for `_config.yml` and site-level settings
+- [Liquid Tags and Filters](https://shopify.github.io/liquid/) - Reference for the templating syntax used in Jekyll includes
+- [MDN: Layout and the Containing Block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) - Helpful background for understanding width constraints in layouts
+- [MDN: CSS width](https://developer.mozilla.org/en-US/docs/Web/CSS/width) - Reference for width behavior when building full-width or full-bleed sections
+
