@@ -3,30 +3,30 @@ title: Learning Resources Library
 author: Amr Abdel Eissa
 permalink: /docs/
 description: Reference documentation and learning resources for tools and technologies used in IT-Journey
-excerpt: "Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey."
+excerpt: Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey.
 categories:
-  - docs
-  - home
+    - docs
+    - home
 tags:
-  - docs
-  - reference
-  - learning-resources
-  - jekyll
-  - terminal
+    - docs
+    - reference
+    - learning-resources
+    - jekyll
+    - terminal
 sidebar:
-  nav: docs
+    nav: docs
 toc_sticky: true
 date: 2021-12-03T09:05:06.000Z
-lastmod: 2026-04-25T00:00:00.000Z
+lastmod: 2026-04-25T19:27:00.093Z
 draft: false
 keywords:
-  primary:
-    - learning resources
-    - documentation
-  secondary:
-    - terminal reference
-    - jekyll docs
-    - bash guide
+    primary:
+        - learning resources
+        - documentation
+    secondary:
+        - terminal reference
+        - jekyll docs
+        - bash guide
 ---
 
 # Learning Resources Library

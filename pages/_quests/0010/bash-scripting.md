@@ -1,73 +1,70 @@
 ---
-title: 'Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery
-  Quest'
+title: "Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest"
 author: Quest Master IT-Journey Team
-description: Master the ancient art of bash scripting and unlock the power of automation
-  through command-line incantations and shell magic.
-excerpt: Transform from a terminal novice into a bash scripting wizard through hands-on
-  automation magic and command-line mastery.
+description: Master the ancient art of bash scripting and unlock the power of automation through command-line incantations and shell magic.
+excerpt: Transform from a terminal novice into a bash scripting wizard through hands-on automation magic and command-line mastery.
 snippet: When the shell speaks, the system listens - master the ancient bash incantations!
 preview: images/previews/mastering-the-bash-incantations-binary-level-0010-.png
 date: 2025-07-28T23:34:51.000Z
-lastmod: 2026-04-25T00:00:00.000Z
-level: '0010'
+lastmod: 2026-04-25T19:27:00.075Z
+level: "0010"
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: bash
 quest_type: main_quest
 quest_series: Foundation Binary Mastery Path
 skill_focus:
-- Quests
-- Foundation
-- System-Administration
+    - Quests
+    - Foundation
+    - System-Administration
 learning_style: hands-on
 prerequisites:
-- Basic terminal navigation and command execution
-- Familiarity with file system structure (directories, files, paths)
-- Text editor comfort (nano, vim, or VS Code)
-- Understanding of basic computing concepts
-- Recommended: play the no-install Bashcrawl web adventure before studying its scripts
+    - Basic terminal navigation and command execution
+    - Familiarity with file system structure (directories, files, paths)
+    - Text editor comfort (nano, vim, or VS Code)
+    - Understanding of basic computing concepts
+    - Recommended: play the no-install Bashcrawl web adventure before studying its scripts
 validation_criteria:
-- Create functional bash scripts with error handling
-- Demonstrate automation of repetitive tasks
-- Build a personal script library for common operations
-- Troubleshoot and debug script errors independently
+    - Create functional bash scripts with error handling
+    - Demonstrate automation of repetitive tasks
+    - Build a personal script library for common operations
+    - Troubleshoot and debug script errors independently
 permalink: /quests/0010/bash-scripting/
 categories:
-- Quests
-- Foundation
-- System-Administration
+    - Quests
+    - Foundation
+    - System-Administration
 tags:
-- lvl-0010
-- bash
-- shell-scripting
-- command-line
-- automation
-- system-administration
-- gamified-learning
+    - lvl-0010
+    - bash
+    - shell-scripting
+    - command-line
+    - automation
+    - system-administration
+    - gamified-learning
 keywords:
-- lvl-0010
-- bash
-- shell-scripting
-- command-line
-- automation
-- system-administration
-- gamified-learning
+    - lvl-0010
+    - bash
+    - shell-scripting
+    - command-line
+    - automation
+    - system-administration
+    - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
-sub-title: 'Level 0010 (2) Quest: Shell Scripting Mastery and Automation Arts'
+attachments: ""
+sub-title: "Level 0010 (2) Quest: Shell Scripting Mastery and Automation Arts"
 rewards:
-- 🏆 Shell Script Wizard Badge - Command line automation mastery
-- ⚡ Automation Powers - Ability to create time-saving scripts
-- 🛠️ Bash Mastery - Advanced shell scripting capabilities
-- 🎯 System Administration Skills - Foundation for DevOps practices
+    - 🏆 Shell Script Wizard Badge - Command line automation mastery
+    - ⚡ Automation Powers - Ability to create time-saving scripts
+    - 🛠️ Bash Mastery - Advanced shell scripting capabilities
+    - 🎯 System Administration Skills - Foundation for DevOps practices
 related_quests:
-- 'Level 0001: Terminal Navigation Quest - Essential prerequisite'
-- 'Level 0011: File Management Mastery - Builds on this quest'
-- 'Level 0100: Version Control with Git - Natural progression'
-- 'Level 0101: Environment Setup Quest - Development workflow'
+    - "Level 0001: Terminal Navigation Quest - Essential prerequisite"
+    - "Level 0011: File Management Mastery - Builds on this quest"
+    - "Level 0100: Version Control with Git - Natural progression"
+    - "Level 0101: Environment Setup Quest - Development workflow"
 ---
 *Greetings, aspiring Digital Sorcerer! Welcome to the realm of Bash Incantations - an epic journey that will transform you from a mere terminal user into a powerful automation wizard. In this quest, you'll master the ancient art of shell scripting, learning to weave commands into powerful spells that can automate tasks, manage systems, and bend the digital realm to your will.*
 

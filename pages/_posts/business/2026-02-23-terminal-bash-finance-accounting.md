@@ -1,8 +1,8 @@
 ---
 title: "From Spreadsheets to Shell Scripts: A Finance Professional's Guide to the Terminal"
-description: "Discover how finance and accounting professionals can leverage the terminal and bash scripting to automate tedious tasks, process massive datasets, and level up their careers — no CS degree required."
+description: Discover how finance and accounting professionals can leverage the terminal and bash scripting to automate tedious tasks, process massive datasets, and level up their careers — no CS degree required.
 date: 2026-02-23T12:40:05.000Z
-preview: "/images/post-preview-image.png"
+preview: /images/post-preview-image.png
 tags:
     - bash
     - terminal
@@ -16,9 +16,9 @@ categories:
     - Business
     - Tools & Environment
 sub-title: "Trading VLOOKUPs for grep: Why the command line is your new best friend"
-excerpt: "Learn why the terminal is the ultimate productivity hack for finance and accounting professionals — and how to start using it today."
-snippet: "Automate your financial workflows with bash scripting — from month-end close to audit prep."
-author: "IT-Journey Team"
+excerpt: Learn why the terminal is the ultimate productivity hack for finance and accounting professionals — and how to start using it today.
+snippet: Automate your financial workflows with bash scripting — from month-end close to audit prep.
+author: IT-Journey Team
 keywords:
     primary:
         - bash
@@ -31,25 +31,25 @@ keywords:
         - csv-processing
         - data-analysis
         - month-end-close
-lastmod: 2026-04-25T00:00:00.000Z
+lastmod: 2026-04-25T19:27:00.307Z
 permalink: /posts/terminal-bash-finance-accounting/
 comments: true
-difficulty: "🟢 Beginner"
-estimated_reading_time: "12-15 minutes"
+difficulty: 🟢 Beginner
+estimated_reading_time: 12-15 minutes
 prerequisites:
-    - "A desire to automate tedious spreadsheet tasks"
-    - "Basic understanding of data organization (rows, columns, CSV files)"
-    - "Access to a computer with a terminal (macOS, Windows, or Linux)"
+    - A desire to automate tedious spreadsheet tasks
+    - Basic understanding of data organization (rows, columns, CSV files)
+    - Access to a computer with a terminal (macOS, Windows, or Linux)
 learning_outcomes:
-    - "🎯 Understand the value of the terminal for financial data processing"
-    - "⚡ Learn basic bash commands to replace manual spreadsheet work"
-    - "🛠️ Build a real bash script that automates a financial workflow"
-    - "🔗 Connect terminal skills to career advancement in finance and accounting"
-    - "📊 Process CSV data faster than any spreadsheet application"
+    - 🎯 Understand the value of the terminal for financial data processing
+    - ⚡ Learn basic bash commands to replace manual spreadsheet work
+    - 🛠️ Build a real bash script that automates a financial workflow
+    - 🔗 Connect terminal skills to career advancement in finance and accounting
+    - 📊 Process CSV data faster than any spreadsheet application
 related_posts:
-    - "/quests/level-0000-terminal-fundamentals/"
-    - "/quests/bashcrawl-terminal-adventure/"
-    - "/quests/lvl_000/bash-run/"
+    - /quests/level-0000-terminal-fundamentals/
+    - /quests/bashcrawl-terminal-adventure/
+    - /quests/lvl_000/bash-run/
 ---
 
 ## Introduction: The Spinning Wheel of Death

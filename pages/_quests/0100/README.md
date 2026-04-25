@@ -37,6 +37,7 @@ Level 0100 quests focus on:
 | [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/level-0100-lvl-010-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
 | [Quest: Mastering the Ancient Arts of Source Control Sorcery](/quests/level-0100-source-control-sorcery/) | 🟡 Medium | 120-180 minutes | main_quest | 🔮 Placeholder |
 | [Frontend Docker - level 000](/quests/level-0100/lvl-000-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [The Artisan's Forge: Refactoring Jekyll Theme Components](/quests/jekyll-component-refactoring/) | 🟡 Medium | 45-60 minutes | side_quest | ✅ Ready |
 
 
 ### 🐳 Docker & Containers

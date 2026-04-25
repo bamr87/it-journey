@@ -6,7 +6,7 @@ excerpt: Starting with bashcrawl as a base and building upon it is a great way t
 snippet: Transform basic shell commands into an interactive gaming experience
 preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
 date: 2024-05-29T10:39:06.000Z
-lastmod: 2026-04-25T00:00:00.000Z
+lastmod: 2026-04-25T19:27:00.033Z
 level: "0000"
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes

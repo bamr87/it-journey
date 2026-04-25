@@ -1,9 +1,9 @@
 ---
 title: "Complete BASH Reference: Commands & Techniques"
-description: "Deep GNU Bash reference for built-ins, expansion, process control, scripting patterns, text processing, networking, and advanced techniques."
+description: Deep GNU Bash reference for built-ins, expansion, process control, scripting patterns, text processing, networking, and advanced techniques.
 date: 2026-02-21T14:34:24.000Z
-lastmod: 2026-04-25T00:00:00.000Z
-author: "IT-Journey Team"
+lastmod: 2026-04-25T19:27:00.171Z
+author: IT-Journey Team
 permalink: /docs/bash-complete-reference/
 tags:
     - bash
@@ -32,10 +32,10 @@ keywords:
         - bash built-ins
         - command line reference
         - it-journey
-excerpt: "The definitive Bash reference — every built-in command, expansion, operator, scripting pattern, and real-world snippet you'll ever need."
-preview: "Complete Bash reference covering commands, scripting, text processing, process control, networking, and advanced techniques."
-difficulty: "🟡 Intermediate to Advanced"
-estimated_time: "60+ minutes to read"
+excerpt: The definitive Bash reference — every built-in command, expansion, operator, scripting pattern, and real-world snippet you'll ever need.
+preview: Complete Bash reference covering commands, scripting, text processing, process control, networking, and advanced techniques.
+difficulty: 🟡 Intermediate to Advanced
+estimated_time: 60+ minutes to read
 draft: false
 ---
 

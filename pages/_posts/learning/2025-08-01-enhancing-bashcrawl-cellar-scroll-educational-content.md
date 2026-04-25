@@ -27,7 +27,7 @@ keywords:
         - shell aliases
         - progressive learning
         - gamified education
-lastmod: 2026-04-25T00:00:00.000Z
+lastmod: 2026-04-25T19:27:00.292Z
 permalink: /enhancing-bashcrawl-cellar-scroll-educational-content/
 attachments: ""
 comments: true
