@@ -122,5 +122,5 @@ Navigation YAML files are validated at build time. Invalid schemas will produce 
 
 ---
 
-**Last Updated**: 2026-01-24  
+**Last Updated**: 2026-04-25
 **Theme Compatibility**: zer0-mistakes v0.17+

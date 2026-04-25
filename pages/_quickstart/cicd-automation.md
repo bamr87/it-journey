@@ -7,7 +7,7 @@ permalink: /quickstart/cicd-automation/
 categories:
   - quickstart
 slug: cicd-automation
-lastmod: 2026-04-02T03:14:50.968Z
+lastmod: 2026-04-25T00:00:00.000Z
 draft: false
 date: 2026-04-01T00:00:00.000Z
 difficulty: 🟡 Medium
@@ -223,7 +223,7 @@ Access in workflows with `${{ secrets.SECRET_NAME }}`.
 |-----------|-------|
 | Optimize for SEO, performance, and accessibility | [Optimization & Maintenance](/quickstart/optimization-maintenance/) |
 
-> **IT-Journey Quests:** [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/) · [GitHub Actions Basics](/quests/cicd/github-actions-basics/) · [Bash Scripting](/quests/intermediate/bash-scripting/)
+> **IT-Journey Quests:** [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/) · [GitHub Actions Basics](/quests/cicd/github-actions-basics/) · [Bash Scripting](/quests/0010/bash-scripting/)
 >
 > **IT-Journey Docs:** [GitHub Actions Workflows](/docs/workflows/GITHUB_ACTIONS/) · [Testing Frameworks](/docs/testing/TESTING_FRAMEWORKS/) · [Scripts Guide](/docs/scripts/SCRIPTS_GUIDE/)
 >

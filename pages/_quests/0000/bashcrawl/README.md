@@ -75,7 +75,7 @@ sub-title: "Level 000 Quest: Terminal Dungeon Adventure"
 excerpt: "Embark on an epic terminal adventure that teaches command line skills through interactive dungeon exploration and puzzle-solving"
 snippet: "Learn bash through adventure - where every command is a spell and every directory is a new realm to explore"
 permalink: /quests/bashcrawl-terminal-adventure/
-lastmod: 2024-05-28T00:00:00.000Z
+lastmod: 2026-04-25T00:00:00.000Z
 ---
 
 *Welcome, brave adventurer, to the mystical realm of Bashcrawl! This is no ordinary quest - it's an interactive terminal-based adventure that will transform you from a command line novice into a seasoned digital explorer.*
@@ -124,33 +124,49 @@ You'll know you've truly conquered this quest when you can:
 ## 📚 Resource Codex
 
 To aid you in your quest, consult these ancient tomes of knowledge:
+
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) - Start instantly in your browser with no local setup.
+- [Bashcrawl GitHub Repository](https://github.com/bamr87/bashcrawl/) - Clone the full game for local play, scripting practice, and contributions.
 - [The Spellbook: Bash Cheatsheet](/shell/) - Quick reference for essential commands and scripting techniques.
 - [The Grand Grimoire: Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive guide covering every aspect of GNU Bash.
 
+## ☁️ Instant Play Online
+
+The fastest way to begin is the web version:
+
+1. Open [Bashcrawl Web](https://bamr87.github.io/bashcrawl/).
+2. Start with `pwd`, `ls -F`, `cat scroll`, and `cd cellar`.
+3. Use the **Docs** panel or press `F1` when you need help.
+4. Let the quest tracker guide you through the first objectives.
+
+The web game runs fully in your browser, stores progress locally, and keeps you inside a safe simulated terminal. Use it as your first playthrough before installing the full repository.
+
 ## 🌍 Adventure Setup Guide
 
+Use the local repository when you want the complete Bashcrawl experience, including the Textual TUI, classic Bash emulator, native terminal mode, tutorial mode, agent mode, screenshots, tests, and contribution workflow.
+
 ### 🐧 Linux Territory Setup
+
 ```bash
-# Clone or download the bashcrawl adventure
 git clone https://github.com/bamr87/bashcrawl.git
 cd bashcrawl
-chmod +x entrance.sh
-./entrance.sh
+./setup.sh
+./main.sh --interactive
 ```
 
 ### 🍎 macOS Kingdom Setup
-```bash
-# Install via Homebrew (recommended)
-brew install bashcrawl
 
-# Or clone directly
+```bash
 git clone https://github.com/bamr87/bashcrawl.git
 cd bashcrawl
-chmod +x entrance.sh
-./entrance.sh
+./setup.sh
+./main.sh --interactive
 ```
 
+> **macOS note:** If you download a ZIP, Archive Utility can strip executable permissions. `git clone` is the recommended path.
+
 ### 🪟 Windows Empire Setup (WSL)
+
 ```powershell
 # First ensure WSL is installed
 wsl --install
@@ -158,8 +174,29 @@ wsl --install
 # Then in WSL terminal:
 git clone https://github.com/bamr87/bashcrawl.git
 cd bashcrawl
-chmod +x entrance.sh
-./entrance.sh
+./setup.sh
+./main.sh --interactive
+```
+
+### 🎮 Choose Your Play Mode
+
+| Mode | Command or Link | Best For |
+|------|-----------------|----------|
+| Web TUI | [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/) | First playthrough, classrooms, no-install practice |
+| Textual TUI | `./main.sh --interactive` | Beginners who want a rich local interface |
+| Classic Bash Emulator | `./main.sh --classic` | Systems without Python/Textual dependencies |
+| Native Terminal | `./main.sh --native` | Experienced users who want the traditional filesystem adventure |
+| Tutorial Mode | `./main.sh --tutorial` | Step-by-step guided learning |
+| Agent Mode | `./main.sh --agent` | AI playtesting, screenshots, and automation workflows |
+
+### 🛠️ Local Maintenance Commands
+
+```bash
+./setup.sh --verify        # Check installation health
+./setup.sh --repair        # Fix common permission/setup issues
+./setup.sh --health-check  # Run diagnostics
+./main.sh --status         # Show current game progress
+./main.sh --reset          # Reset progress for a fresh run
 ```
 
 ## 🧙‍♂️ Chapter 1: Entering the Digital Dungeon
@@ -195,10 +232,10 @@ When you cast `ls -F`, you'll see these magical markers:
 Start your journey by running the entrance script:
 
 ```bash
-./entrance.sh
+./main.sh --interactive
 ```
 
-This will transport you to the beginning of your adventure!
+This will launch the safe local TUI and transport you to the beginning of your adventure. If you are playing online, use the browser prompt instead and begin with `pwd`.
 
 ### 🗝️ Step 2: Read Everything Carefully
 
@@ -292,6 +329,7 @@ When you encounter challenges:
 
 **Follow-Up Quests**:
 - [Bash Run Quest](../bash-run.md) - Shell Scripting Fundamentals
+- [Bash Scripting Mastery](/quests/0010/bash-scripting/) - Automation and reusable scripts
 - [Hello n00b Quest](../hello-noob.md) - Continuing Your IT Journey
 - [VS Code Mastery](../vscode-mastery.md) - Development Environment Setup
 
@@ -314,7 +352,9 @@ Your newfound terminal mastery opens several exciting paths:
 
 ### 📚 Additional Resources
 
-- **Official Bashcrawl Repository**: [GitLab](https://gitlab.com/slackermedia/bashcrawl)
+- **Play Online**: [Bashcrawl Web](https://bamr87.github.io/bashcrawl/)
+- **Current IT-Journey Fork**: [GitHub — bamr87/bashcrawl](https://github.com/bamr87/bashcrawl/)
+- **Original Upstream Repository**: [GitLab — slackermedia/bashcrawl](https://gitlab.com/slackermedia/bashcrawl)
 - **Command Line Learning**: [The Linux Command Line](http://linuxcommand.org/)
 - **Terminal Games**: [Other CLI adventure games](https://github.com/topics/terminal-game)
 - **Advanced Bash**: [Advanced Bash Scripting Guide](https://tldp.org/LDP/abs/html/)

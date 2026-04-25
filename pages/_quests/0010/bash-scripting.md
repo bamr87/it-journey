@@ -9,11 +9,11 @@ excerpt: Transform from a terminal novice into a bash scripting wizard through h
 snippet: When the shell speaks, the system listens - master the ancient bash incantations!
 preview: images/previews/mastering-the-bash-incantations-binary-level-0010-.png
 date: 2025-07-28T23:34:51.000Z
-lastmod: 2025-11-08 15:07:21.509000+00:00
+lastmod: 2026-04-25T00:00:00.000Z
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0010
+primary_technology: bash
 quest_type: main_quest
 quest_series: Foundation Binary Mastery Path
 skill_focus:
@@ -26,6 +26,7 @@ prerequisites:
 - Familiarity with file system structure (directories, files, paths)
 - Text editor comfort (nano, vim, or VS Code)
 - Understanding of basic computing concepts
+- Recommended: play the no-install Bashcrawl web adventure before studying its scripts
 validation_criteria:
 - Create functional bash scripts with error handling
 - Demonstrate automation of repetitive tasks
@@ -232,6 +233,29 @@ cd /workspace/bash-quest
 ```
 
 *Web-specific notes: Great for quick experimentation and learning. Limited file persistence and system access.*
+
+## 🎮 Bashcrawl as Your Capstone Lab
+
+Before writing larger scripts from scratch, play [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) and notice how a terminal lesson can become a guided system. Then clone the [Bashcrawl repository](https://github.com/bamr87/bashcrawl/) and study it as a real Bash project.
+
+```bash
+git clone https://github.com/bamr87/bashcrawl.git
+cd bashcrawl
+./setup.sh --verify
+./main.sh --interactive
+```
+
+Use Bashcrawl as a running example throughout this quest:
+
+| Bash Skill | Bashcrawl Example to Study |
+|------------|----------------------------|
+| Functions and reuse | `src/help/` and shared helper scripts |
+| State management | `.bashcrawl_save.json` and `lib/state.sh` |
+| Argument parsing | `main.sh` launcher flags such as `--classic`, `--native`, and `--agent` |
+| Error handling | `setup.sh --verify`, `--repair`, and `--health-check` |
+| Testing and parity | `make web-test` and command validation scripts |
+
+The goal is not to memorize every file. The goal is to learn how readable Bash scripts are structured, guarded, documented, and tested in a living project.
 
 ## 🧙‍♂️ Chapter 1: The Foundation Incantations
 
@@ -842,6 +866,28 @@ main "$@"
 
 ## 🎮 Quest Implementation Challenges
 
+### 🧩 Capstone Challenge: Bashcrawl Room Automation (🕐 Estimated Time: 45-75 minutes)
+
+*Use a real educational game as your scripting laboratory.*
+
+**Objective**: Add a small Bashcrawl helper or room extension that teaches one command clearly.
+
+**Requirements**:
+
+- [ ] Start with a complete playthrough of [Bashcrawl Web](https://bamr87.github.io/bashcrawl/)
+- [ ] Clone the [Bashcrawl repository](https://github.com/bamr87/bashcrawl/) locally
+- [ ] Add a room, scroll, or helper script that teaches one command or scripting concept
+- [ ] Include defensive checks and helpful error messages
+- [ ] Run `./setup.sh --verify` and launch the game with `./main.sh --classic`
+- [ ] Document where your addition fits in the command progression
+
+**Success Criteria**:
+
+- [ ] A learner can discover your addition by navigating normally
+- [ ] Your script exits cleanly and does not modify files outside the game tree
+- [ ] The room links the fantasy action to a real terminal skill
+- [ ] Your implementation can be explained using functions, variables, conditionals, and exit codes
+
 ### 🟢 Novice Challenge: Personal File Organizer (🕐 Estimated Time: 30-45 minutes)
 
 *Create a script that organizes files in a directory by type.*
@@ -994,6 +1040,9 @@ main "$@"
 
 ### 📖 Essential Documentation
 
+- [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) - No-install terminal dungeon for practicing commands before scripting
+- [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/) - Complete Bash, Python TUI, static web, and testing project to study and extend
+- [Complete BASH Reference](/docs/bash-complete-reference/) - IT-Journey's reference guide for command syntax and scripting patterns
 - [Bash Manual](https://www.gnu.org/software/bash/manual/) - Official GNU Bash reference
 - [Advanced Bash Scripting Guide](https://tldp.org/LDP/abs/html/) - Comprehensive tutorial resource
 - [ShellCheck Wiki](https://github.com/koalaman/shellcheck/wiki) - Best practices and common mistakes

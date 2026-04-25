@@ -6,7 +6,7 @@ excerpt: Starting with bashcrawl as a base and building upon it is a great way t
 snippet: Transform basic shell commands into an interactive gaming experience
 preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
 date: 2024-05-29T10:39:06.000Z
-lastmod: 2026-03-21T20:13:00.576Z
+lastmod: 2026-04-25T00:00:00.000Z
 level: "0000"
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
@@ -93,10 +93,12 @@ related_quests:
 ---
 *Greetings, aspiring script mage! In this side quest, you will study how [bashcrawl](https://github.com/bamr87/bashcrawl) is built and then extend it with new rooms, encounters, and game mechanics. bashcrawl is an elegant dungeon crawler that uses the file system itself as the game world — directories are rooms, text files are scrolls, and executable scripts are interactive items. By the end, you will have forged your own additions to this adventure.*
 
+*If you have not played yet, begin with the no-install web version at [Bashcrawl Web](https://bamr87.github.io/bashcrawl/). Treat the browser game as your first scouting run, then clone the repository when you are ready to read and modify the actual Bash scripts.*
+
 ## 🎯 Quest Objectives
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **Clone and explore the bashcrawl repository** — Understand how directories, scrolls, and executables form the game
+- [ ] **Play online, then clone and explore the bashcrawl repository** — Understand how directories, scrolls, and executables form the game
 - [ ] **Add a new room with a scroll and treasure** — Extend the dungeon with your own content
 - [ ] **Create an interactive encounter script** — Build an executable item using `read`, `case`, and environment variables
 - [ ] **Implement a hidden room mechanic** — Use dot-prefixed directories to create discoverable secrets
@@ -139,13 +141,19 @@ Here's a step-by-step guide to understanding bashcrawl's design and building upo
 
 ### Step 1: Setting Up bashcrawl
 
-1. **Clone the Repository:**
+1. **Scout the Dungeon Online:**
+
+    Open [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) and complete the first objectives with `pwd`, `ls -F`, `cat scroll`, and `cd cellar`. This gives you the player experience before you inspect the code.
+
+2. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/bamr87/bashcrawl.git
    cd bashcrawl
    ```
 
-2. **Run the Setup and Start Playing:**
+3. **Run the Setup and Start Playing Locally:**
+
    ```bash
    ./setup.sh       # One-time setup: sets permissions, creates game state
    ./main.sh        # Launch the game (multiple modes available)
@@ -153,7 +161,18 @@ Here's a step-by-step guide to understanding bashcrawl's design and building upo
 
    > **Tip**: Before modifying anything, play through the game first! Navigate with `cd`, read scrolls with `cat scroll`, and run items with `./treasure`. Understanding the player experience is essential before extending it.
 
-3. **Understand the Architecture:**
+4. **Choose the Right Mode for Your Work:**
+
+    | Goal | Command |
+    |------|---------|
+    | Beginner-safe local play | `./main.sh --interactive` |
+    | Pure Bash fallback | `./main.sh --classic` |
+    | Traditional filesystem adventure | `./main.sh --native` |
+    | Guided onboarding | `./main.sh --tutorial` |
+    | AI/headless playtesting | `./main.sh --agent` |
+    | Run one command for tests | `./main.sh --command "pwd"` |
+
+5. **Understand the Architecture:**
 
    The game world lives inside the `entrance/` directory. Each subdirectory is a room:
 
@@ -518,6 +537,16 @@ cat lib/state.sh
 cat .bashcrawl_save.json
 ```
 
+### Step 7: Extension Workflow Checklist
+
+Before opening a pull request or sharing your mod, verify your addition like a maintainer:
+
+- [ ] Play the room in [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) or local TUI to compare the learner experience
+- [ ] Run `./setup.sh --verify` after changing executable files or permissions
+- [ ] Run `./main.sh --classic` and navigate to your new room without errors
+- [ ] Keep generated web data in sync with the Bashcrawl repo workflow (`make web-build`, then `make web-test`)
+- [ ] Document the command your room teaches and where it fits in the skill progression
+
 ## 🏆 Quest Completion Validation
 
 ### Portfolio Artifacts Created
@@ -536,6 +565,7 @@ cat .bashcrawl_save.json
 
 - [The Spellbook: Bash Cheatsheet](/shell/) - Quick reference for essential commands and scripting techniques.
 - [The Grand Grimoire: Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive guide covering every aspect of GNU Bash.
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) — No-install first playthrough with local browser saves
 - [bashcrawl on GitHub](https://github.com/bamr87/bashcrawl) — The game repository this quest is based on
 - [Bash Reference Manual (GNU)](https://www.gnu.org/software/bash/manual/bash.html)
 - [Advanced Bash-Scripting Guide (TLDP)](https://tldp.org/LDP/abs/html/)

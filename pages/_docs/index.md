@@ -17,7 +17,7 @@ sidebar:
   nav: docs
 toc_sticky: true
 date: 2021-12-03T09:05:06.000Z
-lastmod: 2026-04-02T03:24:28.792Z
+lastmod: 2026-04-25T00:00:00.000Z
 draft: false
 keywords:
   primary:
@@ -57,8 +57,10 @@ Reference documentation and educational resources for the tools and technologies
 Command-line reference and productivity guides for working effectively in the terminal.
 
 **Topics:**
+- [Terminal and Bash Learning Path](/docs/terminal/) - Complete path connecting Bashcrawl, terminal basics, cheatsheets, references, and scripting quests
 - [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/) - Keyboard shortcuts for macOS, Linux, and Windows
 - [Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive GNU Bash reference: built-ins, scripting, text processing, and advanced techniques
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) - Browser-based terminal dungeon for no-install command practice
 
 ### Jekyll
 

@@ -7,7 +7,7 @@ excerpt: Learn essential command line skills for navigating and managing files i
   any operating system.
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
 date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-12-20 00:00:00+00:00
+lastmod: 2026-04-25T00:00:00.000Z
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -19,7 +19,9 @@ quest_arc: Terminal Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
+  unlocks_quests:
+    - /quests/bashcrawl-terminal-adventure/
+    - /quests/0010/bash-scripting/
 quest_relationships:
   parent_quest: null
   child_quests: []
@@ -362,6 +364,20 @@ find . -mtime -1
 
 ---
 
+## 🎮 Practice Path: Enter Bashcrawl
+
+Once you can use `pwd`, `ls`, `cd`, and `cat`, reinforce those skills in [Bashcrawl Web](https://bamr87.github.io/bashcrawl/). The browser game gives you a safe terminal-inspired dungeon where:
+
+- `pwd` reveals your current room
+- `ls -F` shows directories, files, and executable encounters
+- `cat scroll` reads the lesson in each chamber
+- `cd cellar` moves you deeper into the adventure
+- `F1` opens in-game documentation when you need a hint
+
+After your first online run, continue with the [Bashcrawl Terminal Adventure Quest](/quests/bashcrawl-terminal-adventure/) for the full quest checklist and then [Bash Scripting Mastery](/quests/0010/bash-scripting/) when you are ready to automate.
+
+---
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Directory Explorer
@@ -402,3 +418,5 @@ find . -mtime -1
 - [ExplainShell — Visualize Shell Commands](https://explainshell.com/)
 - [The Art of Command Line (GitHub)](https://github.com/jlevy/the-art-of-command-line)
 - [tldr pages — Simplified Man Pages](https://tldr.sh/)
+- [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) - Browser-based terminal dungeon for practicing the commands in this quest
+- [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/) - Full local game, scripts, docs, and contribution path

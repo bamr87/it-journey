@@ -29,7 +29,10 @@
       url: /docs/jekyll/mermaid-migration
 - title: Terminal
   icon: bi-terminal
+  url: /docs/terminal/
   children:
+    - title: Terminal Learning Path
+      url: /docs/terminal/
     - title: Terminal Shortcuts
       url: /docs/terminal-shortcuts-cheat-sheet/
     - title: Complete BASH Reference

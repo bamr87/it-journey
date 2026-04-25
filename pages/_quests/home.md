@@ -19,7 +19,7 @@ mermaid: true
 toc: true
 toc_sticky: true
 date: 2021-11-30T14:41:59.000Z
-lastmod: 2026-04-02T03:24:28.781Z
+lastmod: 2026-04-25T00:00:00.000Z
 draft: false
 excerpt: "Your central command hub for tracking progress through the IT mastery quest system — navigate learning paths, monitor achievements, and plan next adventures."
 keywords:
@@ -160,10 +160,11 @@ Terminal Mastery & Basic Setup
 **Available Quests:**
 
 - [ ] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Forge Your Ultimate Development Weapon* (50 XP)
-- [ ] [Bash Fundamentals](0000/bash-run.md) - *Terminal Incantations* (40 XP)
+- [ ] [Terminal Fundamentals](0000/terminal-fundamentals.md) - *Command Line Mastery* (40 XP)
+- [ ] [Bashcrawl Adventure](0000/bashcrawl/) - *Browser Dungeon Practice* (40 XP)
+- [ ] [Bash-run Extension Lab](0000/bash-run.md) - *Terminal Game Scripting* (40 XP)
 - [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call* (30 XP)
 - [ ] [Hello n00b](0000/hello-noob.md) - *First Steps* (20 XP)
-- [ ] [Terminal Fundamentals](0000/terminal-fundamentals.md) - *Command Line Mastery* (40 XP)
 - [ ] [Git Basics](0000/git-basics.md) - *Version Control Foundation* (40 XP)
 - [ ] [Markdown Mastery](0000/markdown-mastery.md) - *Documentation Magic* (30 XP)
 - [ ] [Character Building](0000/character-building.md) - *Forge Your Identity* (30 XP)
@@ -711,9 +712,10 @@ Fast Track Adventures
 3. [Personal Site](0001/personal-site.md) - First Project
 
 #### 🏗️ Engineer Quick Start
-1. [Bash Fundamentals](0000/bash-run.md) - Terminal Basics
-2. [Oh My Zsh](0010/oh-my-zsh-terminal-enchantment.md) - Terminal Enhancement
-3. [Bash Scripting](0010/bash-scripting.md) - Automation
+1. [Terminal Fundamentals](0000/terminal-fundamentals.md) - Terminal Basics
+2. [Bashcrawl Adventure](0000/bashcrawl/) - Browser command practice
+3. [Bash-run Extension Lab](0000/bash-run.md) - Local Bash project extension
+4. [Bash Scripting](0010/bash-scripting.md) - Automation
 
 #### 🛡️ Security Quick Start
 1. [Terminal Mastery](0000/) - Command Line Foundation
@@ -990,8 +992,9 @@ Based on your current progress:
 
 1. **Start Here:** [Hello n00b](0000/hello-noob.md) - Begin your journey
 2. **Then:** [VS Code Mastery](0000/vscode-mastery.md) - Set up your tools
-3. **Next:** [Bash Fundamentals](0000/bash-run.md) - Learn the terminal
-4. **Goal:** Complete Apprentice Tier (Levels 0000-0011)
+3. **Next:** [Terminal Fundamentals](0000/terminal-fundamentals.md) - Learn the terminal
+4. **Practice:** [Bashcrawl Adventure](0000/bashcrawl/) - Reinforce commands through play
+5. **Goal:** Complete Apprentice Tier (Levels 0000-0011)
 
 ## Community & Support
 
@@ -1099,7 +1102,7 @@ _Last generated: 2026-01-15T20:39:18Z_
 | [Forging the Prompt Crystal: Master AI Communication](/quests/level-0010-prompt-engineering-mastery/) | main_quest | 🟡 Medium | 90-120 minutes | AI Development Mastery | ✅ Complete |
 | [JavaScript Fundamentals: DOM Manipulation & Events](/quests/level-0010-javascript-fundamentals/) | main_quest | 🟡 Medium | 75-90 minutes | Web Development Fundamentals | 🔮 Draft |
 | [Mastering Branches and Pull Requests for Developers](/quests/level-0010-branches-and-pull-requests/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
-| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](../README.mdlevel-0010-bash-scripting/) | main_quest | 🟡 Medium | 90-120 minutes | Foundation Binary Mastery Path | ✅ Complete |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | main_quest | 🟡 Medium | 90-120 minutes | Foundation Binary Mastery Path | ✅ Complete |
 | [Nerd Font Enchantment: Terminal Icon Mastery](/quests/side-quest-nerd-font-enchantment/) | side_quest | 🟢 Easy | 20-30 minutes | Terminal Mastery Path | ✅ Complete |
 | [planting seeds](/quests/level-0010-planting-seeds/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
 | [Recursive Realms: Testing Infinite Loops with AI](/quests/level-0010-recursive-realms-testing/) | main_quest | 🟡 Medium | 90-120 minutes | Python Mastery Path | ✅ Complete |
