@@ -17,7 +17,7 @@ tags:
     - bash
     - lvl-000
 author: IT-Journey Team
-level: '0000'
+level: "0000"
 quest_type: main_quest
 quest_line: Foundation Path
 quest_arc: Terminal Mastery Arc
@@ -46,7 +46,7 @@ rewards:
     - ⚡ Command Line Navigation Skills
     - 🛠️ File System Understanding
     - 🎯 Shell Command Mastery
-quest_series: "Level 000 - Foundation Skills"
+quest_series: Level 000 - Foundation Skills
 quest_dependencies:
     unlocks_quests:
         - /quests/lvl_000/bash-run/
@@ -65,17 +65,17 @@ learning_paths:
     skill_trees:
         - Terminal Mastery
 related_quests:
-    - "bash-run.md - Shell Scripting Fundamentals"
-    - "hello-noob.md - Beginner's IT Journey Start"
+    - bash-run.md - Shell Scripting Fundamentals
+    - hello-noob.md - Beginner's IT Journey Start
 validation_criteria:
-    - "Complete the dungeon exploration"
-    - "Demonstrate understanding of file navigation commands"
-    - "Successfully solve terminal-based puzzles"
+    - Complete the dungeon exploration
+    - Demonstrate understanding of file navigation commands
+    - Successfully solve terminal-based puzzles
 sub-title: "Level 000 Quest: Terminal Dungeon Adventure"
-excerpt: "Embark on an epic terminal adventure that teaches command line skills through interactive dungeon exploration and puzzle-solving"
-snippet: "Learn bash through adventure - where every command is a spell and every directory is a new realm to explore"
+excerpt: Embark on an epic terminal adventure that teaches command line skills through interactive dungeon exploration and puzzle-solving
+snippet: Learn bash through adventure - where every command is a spell and every directory is a new realm to explore
 permalink: /quests/bashcrawl-terminal-adventure/
-lastmod: 2026-04-25T00:00:00.000Z
+lastmod: 2026-04-25T19:27:00.007Z
 ---
 
 *Welcome, brave adventurer, to the mystical realm of Bashcrawl! This is no ordinary quest - it's an interactive terminal-based adventure that will transform you from a command line novice into a seasoned digital explorer.*

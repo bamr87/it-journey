@@ -1,34 +1,34 @@
 ---
-title: "Terminal and Bash Learning Path"
-description: "A complete guide to learning the terminal, Bash commands, Bash scripting, and Bashcrawl through IT-Journey quests, notes, and references."
+title: Terminal and Bash Learning Path
+description: A complete guide to learning the terminal, Bash commands, Bash scripting, and Bashcrawl through IT-Journey quests, notes, and references.
 date: 2026-04-25T00:00:00.000Z
-lastmod: 2026-04-25T00:00:00.000Z
-author: "IT-Journey Team"
+lastmod: 2026-04-25T19:27:00.159Z
+author: IT-Journey Team
 permalink: /docs/terminal/
 tags:
-  - terminal
-  - bash
-  - bashcrawl
-  - command-line
-  - learning-path
-  - reference
+    - terminal
+    - bash
+    - bashcrawl
+    - command-line
+    - learning-path
+    - reference
 categories:
-  - Documentation
-  - Terminal
-  - Learning Path
+    - Documentation
+    - Terminal
+    - Learning Path
 keywords:
-  primary:
-    - terminal learning path
-    - bash learning path
-    - bashcrawl guide
-  secondary:
-    - command line beginner guide
-    - bash scripting resources
-    - terminal quests
-excerpt: "Start with Bashcrawl online, build terminal fundamentals, use the Bash reference and cheatsheet, then write and extend real Bash scripts."
+    primary:
+        - terminal learning path
+        - bash learning path
+        - bashcrawl guide
+    secondary:
+        - command line beginner guide
+        - bash scripting resources
+        - terminal quests
+excerpt: Start with Bashcrawl online, build terminal fundamentals, use the Bash reference and cheatsheet, then write and extend real Bash scripts.
 draft: false
 sidebar:
-  nav: docs
+    nav: docs
 toc: true
 toc_sticky: true
 ---

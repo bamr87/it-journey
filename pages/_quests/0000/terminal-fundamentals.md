@@ -1,14 +1,12 @@
 ---
-title: 'Terminal Fundamentals: Command Line Navigation Quest'
+title: "Terminal Fundamentals: Command Line Navigation Quest"
 author: IT-Journey Team
-description: Master essential command line skills including navigation, file management,
-  and basic shell commands across macOS, Linux, and Windows terminals.
-excerpt: Learn essential command line skills for navigating and managing files in
-  any operating system.
+description: Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals.
+excerpt: Learn essential command line skills for navigating and managing files in any operating system.
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
 date: 2025-11-29T22:51:57.000Z
-lastmod: 2026-04-25T00:00:00.000Z
-level: '0000'
+lastmod: 2026-04-25T19:27:00.051Z
+level: "0000"
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 primary_technology: bash
@@ -17,88 +15,90 @@ quest_series: Terminal Arts
 quest_line: Init World
 quest_arc: Terminal Mastery Arc
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests:
-    - /quests/bashcrawl-terminal-adventure/
-    - /quests/0010/bash-scripting/
+    required_quests: []
+    recommended_quests: []
+    unlocks_quests:
+        - /quests/bashcrawl-terminal-adventure/
+        - /quests/0010/bash-scripting/
 quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
+    parent_quest: null
+    child_quests: []
+    parallel_quests: []
+    sequel_quests: []
 learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Navigation
-  - File Management
-  - Shell Basics
+    primary_paths:
+        - Software Development
+    character_classes:
+        - 💻 Software Developer
+        - 🏗️ System Engineer
+    skill_trees:
+        - Terminal Navigation
+        - File Management
+        - Shell Basics
 skill_focus:
-- devops
+    - devops
 learning_style: hands-on
 prerequisites:
-  knowledge_requirements:
-  - Basic computer operation (files, folders, applications)
-  - Ability to type commands and follow instructions
-  system_requirements:
-  - Modern OS (macOS, Windows 10+, or Linux)
-  - Terminal application (Terminal, PowerShell, or Windows Terminal)
-  skill_level_indicators:
-  - Absolute beginner comfortable using a computer
+    knowledge_requirements:
+        - Basic computer operation (files, folders, applications)
+        - Ability to type commands and follow instructions
+    system_requirements:
+        - Modern OS (macOS, Windows 10+, or Linux)
+        - Terminal application (Terminal, PowerShell, or Windows Terminal)
+    skill_level_indicators:
+        - Absolute beginner comfortable using a computer
 validation_criteria:
-  completion_requirements:
-  - Navigate the file system using terminal commands
-  - Create, copy, move, and delete files and directories
-  - Use command history and tab completion effectively
-  skill_demonstrations:
-  - Can use cd, ls, pwd, mkdir, cp, mv, rm confidently
-  - Can redirect output and use pipes
-  knowledge_checks:
-  - Understands the difference between absolute and relative paths
-  - Can explain what standard input, output, and error are
+    completion_requirements:
+        - Navigate the file system using terminal commands
+        - Create, copy, move, and delete files and directories
+        - Use command history and tab completion effectively
+    skill_demonstrations:
+        - Can use cd, ls, pwd, mkdir, cp, mv, rm confidently
+        - Can redirect output and use pipes
+    knowledge_checks:
+        - Understands the difference between absolute and relative paths
+        - Can explain what standard input, output, and error are
 quest_mapping:
-  coordinates: [2, 1]
-  region: Foundation
-  realm: Development
-  biome: Terminal
+    coordinates:
+        - 2
+        - 1
+    region: Foundation
+    realm: Development
+    biome: Terminal
 permalink: /quests/level-0000-terminal-fundamentals/
 categories:
-- Quests
-- DevOps
-- Beginner
+    - Quests
+    - DevOps
+    - Beginner
 tags:
-- lvl-0000
-- bash
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+    - lvl-0000
+    - bash
+    - main_quest
+    - devops
+    - hands-on
+    - gamified-learning
 keywords:
-- lvl-0000
-- bash
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+    - lvl-0000
+    - bash
+    - main_quest
+    - devops
+    - hands-on
+    - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
-sub_title: 'Level 0000 (0) Quest: Main Quest - Terminal'
+sub_title: "Level 0000 (0) Quest: Main Quest - Terminal"
 rewards:
-  badges:
-  - 🏆 Terminal Navigator Badge
-  - ⚡ Command Line Warrior
-  skills_unlocked:
-  - 🛠️ File System Navigation Mastery
-  - 🎯 Shell Command Proficiency
-  progression_points: 75
-  unlocks_features:
-  - Foundation for all scripting and development quests
-  - Confident terminal usage across platforms
+    badges:
+        - 🏆 Terminal Navigator Badge
+        - ⚡ Command Line Warrior
+    skills_unlocked:
+        - 🛠️ File System Navigation Mastery
+        - 🎯 Shell Command Proficiency
+    progression_points: 75
+    unlocks_features:
+        - Foundation for all scripting and development quests
+        - Confident terminal usage across platforms
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 

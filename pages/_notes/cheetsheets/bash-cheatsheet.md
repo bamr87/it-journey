@@ -4,32 +4,31 @@ author: bamr87
 description: Essential bash commands and scripting techniques for system administration and automation
 excerpt: Quick reference for bash shell commands, scripting patterns, and Linux system administration
 categories:
-  - notes
-  - cheatsheets
-  - shell
+    - notes
+    - cheatsheets
+    - shell
 tags:
-  - bash
-  - linux
-  - script
-  - shell
-  - cheatsheet
-  - reference
+    - bash
+    - linux
+    - script
+    - shell
+    - cheatsheet
+    - reference
 keywords:
-  - Variables
-  - Functions
-  - Interpolation
-  - Brace expansions
-  - Loops
-  - Conditional execution
-  - Command substitution
+    - Variables
+    - Functions
+    - Interpolation
+    - Brace expansions
+    - Loops
+    - Conditional execution
+    - Command substitution
 slug: /shell/
-lastmod: 2026-04-25T00:00:00.000Z
+lastmod: 2026-04-25T19:27:00.209Z
 draft: false
 related_quests:
-  - /quests/bashcrawl-terminal-adventure/
-  - /quests/lvl_000/bash-run/
+    - /quests/bashcrawl-terminal-adventure/
+    - /quests/lvl_000/bash-run/
 date: 2021-12-28T13:35:40.000Z
-
 ---
 
 [![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)
