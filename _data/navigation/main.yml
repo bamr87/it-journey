@@ -35,7 +35,7 @@
     - title: Jekyll
       url: /docs/jekyll/
     - title: Terminal
-      url: /docs/terminal-shortcuts-cheat-sheet/
+      url: /docs/terminal/
 - title: Notebook
   url: /notes/
   icon: bi-journal-code

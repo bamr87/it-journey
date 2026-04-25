@@ -4,7 +4,7 @@ title: Level 0010 - Terminal Enhancement & Shell Mastery
 description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and advanced shell customization
 preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
 permalink: /quests/level-0010/
-lastmod: 2026-02-14T00:00:00.000Z
+lastmod: 2026-04-25T00:00:00.000Z
 
 level: 0010
 categories: quests
@@ -22,13 +22,14 @@ Level 0010 quests focus on:
 - **Shell Framework Mastery** - Oh My Zsh and plugin ecosystems
 - **Visual Enhancements** - Nerd Fonts, themes, and prompt customization
 - **Terminal Configuration** - Advanced shell scripting and optimization
+- **Project-Based Bash Practice** - Study Bashcrawl locally and extend a working terminal learning game
 - **Developer Productivity** - Tools and workflows for efficient development
 
 ## Available Quests
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](../README.mdlevel-0010-bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
 | [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](../README.mdlevel-0010-oh-my-zsh-mastery/) | 🟡 Medium | 45-90 minutes | main_quest | 🔮 Placeholder |
 | [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](../README.mdlevel-0010/jekyll-mermaid-integration-quest/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
 | [Understanding Action Triggers in Depth](/quests/level-0010-action-triggers/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
@@ -99,15 +100,16 @@ Master the art of terminal-based frontend development workflows. Build, test, an
 #### [Bash Scripting Mastery](bash-scripting.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 90-120 minutes
 
-Advance beyond basic commands to write powerful, reusable Bash scripts. Learn control flow, error handling, and best practices.
+Advance beyond basic commands to write powerful, reusable Bash scripts. Use Bashcrawl as a capstone project for studying launchers, setup checks, state, and testable command workflows.
 
 **Skills You'll Master:**
 - Advanced Bash scripting patterns
 - Error handling and exit codes
 - Script parameterization and validation
 - Cross-platform compatibility
+- Bashcrawl extension and local project analysis
 
-**Prerequisites:** [Bash Fundamentals](../0000/bash-run.md)
+**Prerequisites:** [Terminal Fundamentals](../0000/terminal-fundamentals.md), [Bashcrawl Adventure](../0000/bashcrawl/), and [Bash-run Extension Lab](../0000/bash-run.md)
 
 ---
 

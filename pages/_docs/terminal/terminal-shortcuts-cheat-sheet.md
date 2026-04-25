@@ -2,7 +2,7 @@
 title: "Essential Terminal Shortcuts: macOS, Linux & Windows Cheat Sheet"
 description: "Complete reference guide for terminal keyboard shortcuts across macOS, Linux, and Windows. Master command line navigation, editing, and productivity shortcuts for Bash, Zsh, and PowerShell."
 date: 2025-12-20T10:05:28.000Z
-lastmod: 2025-12-20T00:00:00.000Z
+lastmod: 2026-04-25T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /docs/terminal-shortcuts-cheat-sheet/
 tags:
@@ -51,6 +51,22 @@ draft: false
 | **Exit terminal** | `Ctrl + D` | `exit` |
 | **Previous command** | `↑` or `Ctrl + P` | `↑` |
 | **Search history** | `Ctrl + R` | `Ctrl + R` |
+
+---
+
+## 🎮 Practice These in Bashcrawl Web
+
+[Bashcrawl Web](https://bamr87.github.io/bashcrawl/) includes a browser terminal that reinforces the same muscle memory safely:
+
+| Browser Terminal Action | Shortcut |
+|-------------------------|----------|
+| Run command | `Enter` |
+| Previous/next command | `Up` / `Down` |
+| Complete command or path | `Tab` |
+| Open in-game docs | `F1` |
+| Clear terminal | `Ctrl + L` |
+
+Use the online game for first practice, then keep this sheet open when you move into your local macOS, Linux, WSL, or PowerShell terminal.
 
 ---
 

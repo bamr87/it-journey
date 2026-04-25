@@ -31,7 +31,7 @@ keywords:
         - csv-processing
         - data-analysis
         - month-end-close
-lastmod: 2026-02-23T00:00:00.000Z
+lastmod: 2026-04-25T00:00:00.000Z
 permalink: /posts/terminal-bash-finance-accounting/
 comments: true
 difficulty: "🟢 Beginner"
@@ -356,7 +356,7 @@ Start with the [Terminal Fundamentals: Command Line Navigation Quest](/quests/le
 
 ### 🎮 Quest 2: Learn by Playing
 
-Memorizing syntax can feel like studying for the CPA exam all over again. So instead, learn by playing a game. The [Bashcrawl Terminal Adventure](/quests/bashcrawl-terminal-adventure/) quest drops you into a text-based dungeon where you navigate rooms, read scrolls, and battle monsters — all using real Bash commands. You'll learn `cd`, `ls`, `cat`, and more without even realizing you're studying. It's like Zork, but educational and on your resume.
+Memorizing syntax can feel like studying for the CPA exam all over again. So instead, learn by playing a game. Start with [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) for a no-install browser version, then use the [Bashcrawl Terminal Adventure](/quests/bashcrawl-terminal-adventure/) quest for the full checklist. You'll navigate rooms, read scrolls, and battle monsters using real Bash commands such as `cd`, `ls`, `cat`, and `grep`. It's like Zork, but educational and on your resume.
 
 ### ⚔️ Quest 3: Level Up Your Scripting
 

@@ -27,7 +27,7 @@ keywords:
         - shell aliases
         - progressive learning
         - gamified education
-lastmod: 2025-08-02T04:47:31.045Z
+lastmod: 2026-04-25T00:00:00.000Z
 permalink: /enhancing-bashcrawl-cellar-scroll-educational-content/
 attachments: ""
 comments: true
@@ -35,6 +35,8 @@ section: Learning
 ---
 
 ## The Challenge: Transforming Basic Terminal Instructions into Comprehensive Learning
+
+> **2026 update:** Bashcrawl now has a no-install web version at [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/) and a comprehensive IT-Journey fork at [github.com/bamr87/bashcrawl](https://github.com/bamr87/bashcrawl/). This post remains the content-design story behind the cellar scroll, while the current learner path begins online and continues into the full local repository.
 
 When encountering the original Bashcrawl cellar scroll, I found a functional but minimal tutorial that introduced `ls -F` and shell aliases. While the content was accurate, it missed opportunities to create a truly engaging and comprehensive learning experience that could serve beginners while building toward advanced concepts.
 

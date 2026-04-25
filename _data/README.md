@@ -233,7 +233,7 @@ When adding new pages or collections:
 3. If needed, update sidebar configuration in `_config.yml` defaults
 4. Test navigation rendering locally with `bundle exec jekyll serve`
 
-**Last Updated:** 2025-12-20
+**Last Updated:** 2026-04-25
 
 ## Schema Data
 

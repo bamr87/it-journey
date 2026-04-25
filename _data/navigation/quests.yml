@@ -13,7 +13,11 @@
     - title: Begin Your Journey
       url: /quests/0000/begin-your-it-journey
     - title: Terminal Fundamentals
-      url: /quests/0000/terminal-fundamentals
+      url: /quests/level-0000-terminal-fundamentals/
+    - title: Bashcrawl Adventure
+      url: /quests/bashcrawl-terminal-adventure/
+    - title: Bash-run Extension
+      url: /quests/lvl_000/bash-run/
     - title: Git Basics
       url: /quests/0000/git-basics
     - title: Markdown Mastery
@@ -45,7 +49,7 @@
   url: /quests/0010/
   children:
     - title: Bash Scripting
-      url: /quests/0010/bash-scripting
+      url: /quests/0010/bash-scripting/
     - title: JavaScript Fundamentals
       url: /quests/0010/javascript-fundamentals
     - title: CSS Styling Basics
