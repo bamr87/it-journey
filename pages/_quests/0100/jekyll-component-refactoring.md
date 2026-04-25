@@ -416,6 +416,13 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 - **Main Quest:** [Frontend Docker](/quests/frontend-docker/) — Containerise your development environment for cross-platform consistency
 - **Challenge:** Find another inline element in your theme and refactor it using the same pattern
 
+## 📚 Resources
+
+- [Jekyll Includes](https://jekyllrb.com/docs/includes/) - Official guide to reusable Liquid include files
+- [Jekyll Configuration](https://jekyllrb.com/docs/configuration/) - Official reference for `_config.yml` and site-level settings
+- [Liquid Tags and Filters](https://shopify.github.io/liquid/) - Reference for the templating syntax used in Jekyll includes
+- [MDN: Layout and the Containing Block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) - Helpful background for understanding width constraints in layouts
+- [MDN: CSS width](https://developer.mozilla.org/en-US/docs/Web/CSS/width) - Reference for width behavior when building full-width or full-bleed sections
 ---
 
 *Go forth, artisan, and may your components be modular, your styles scoped, and your layouts ever full-width when they need to be.* ⚒️
