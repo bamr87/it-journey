@@ -9,6 +9,14 @@
       url: /docs/
     - title: Frontmatter Preview
       url: /docs/frontmatter-preview-solution/
+- title: Obsidian
+  url: /docs/obsidian/
+  icon: bi-diagram-3
+  children:
+    - title: Knowledge Graph
+      url: /docs/obsidian/
+    - title: Graph View
+      url: /docs/obsidian/graph/
 - title: Jekyll
   url: /docs/jekyll/
   icon: bi-gem

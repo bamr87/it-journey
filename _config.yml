@@ -196,6 +196,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-relative-links
+  - jekyll-redirect-from
 
 ## Gisgus Plugin #################################################################
 
@@ -214,6 +215,12 @@ gisgus:
 
 mermaid:
   src: '/assets/vendor/mermaid/mermaid.min.js'
+
+## Obsidian Knowledge Graph #######################################################
+# Keep implementation in the zer0-mistakes theme; configure only site paths here.
+
+obsidian:
+  attachments_path: '/assets/images/notes'
 
 ## Conversion
 # Markdown Options https://jekyllrb.com/docs/configuration/markdown/
