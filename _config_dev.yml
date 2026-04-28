@@ -1,7 +1,7 @@
 # Dev config override
 
-remote_theme             : false
-theme                    : "jekyll-theme-zer0"
+remote_theme             : "bamr87/zer0-mistakes"
+# theme                  : "jekyll-theme-zer0"
 
 # Performance: enable incremental builds for development
 incremental: true
@@ -9,8 +9,10 @@ incremental: true
 # Performance: disable feed/sitemap regeneration during dev
 # These plugins regenerate fully on every change, adding ~10-20s
 plugins:
+  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-relative-links
+  - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-paginate
 

@@ -75,6 +75,14 @@ The IT-Journey platform is built with Jekyll, a static site generator. The Jekyl
 - [Mermaid Diagrams](jekyll/jekyll-diagram-with-mermaid.md) - Creating diagrams
 - [Math Symbols](jekyll/jekyll-math-symbols-with-mathjax.md) - Mathematical notation
 
+### Obsidian
+
+Obsidian-style links help connect notes, docs, quests, and posts into a lightweight learning graph powered by the `zer0-mistakes` theme.
+
+**Topics:**
+- [Obsidian Knowledge Graph](/docs/obsidian/) - How IT-Journey uses theme-owned wiki links and graph views
+- [Obsidian Graph View](/docs/obsidian/graph/) - Interactive map of linked content across the site
+
 ### Future Documentation Areas
 
 This library will expand to include reference documentation for:

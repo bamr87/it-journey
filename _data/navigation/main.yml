@@ -36,6 +36,8 @@
       url: /docs/jekyll/
     - title: Terminal
       url: /docs/terminal/
+    - title: Obsidian Graph
+      url: /docs/obsidian/graph/
 - title: Notebook
   url: /notes/
   icon: bi-journal-code
