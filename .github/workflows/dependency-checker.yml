@@ -73,15 +73,30 @@ jobs:
         echo "## 💎 Ruby Dependency Analysis" >> dependency-check-results/summary.md
         echo "" >> dependency-check-results/summary.md
         
+        echo "### Dependency Status:" >> dependency-check-results/summary.md
+        
+        # Install dependencies first so Gemfile.lock exists for security audit
+        if bundle install 2>&1 | tee dependency-check-results/bundle-install.log; then
+          echo "✅ Bundle install successful" >> dependency-check-results/summary.md
+          echo "bundle_install=success" >> $GITHUB_OUTPUT
+        else
+          echo "❌ Bundle install failed!" >> dependency-check-results/summary.md
+          echo "bundle_install=failed" >> $GITHUB_OUTPUT
+          echo "```" >> dependency-check-results/summary.md
+          tail -20 dependency-check-results/bundle-install.log >> dependency-check-results/summary.md
+          echo "```" >> dependency-check-results/summary.md
+        fi
+        
         # Install bundler-audit for security checking
         gem install bundler-audit
         
         # Update vulnerability database
         bundle-audit update
         
+        echo "" >> dependency-check-results/summary.md
         echo "### Security Vulnerabilities:" >> dependency-check-results/summary.md
         
-        # Check for security vulnerabilities
+        # Check for security vulnerabilities (Gemfile.lock now exists from bundle install above)
         if bundle-audit check --format json > dependency-check-results/security-audit.json 2>&1; then
           echo "✅ No security vulnerabilities found" >> dependency-check-results/summary.md
           echo "security_issues=false" >> $GITHUB_OUTPUT
@@ -95,21 +110,6 @@ jobs:
             cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
             echo "```" >> dependency-check-results/summary.md
           fi
-        fi
-        
-        echo "" >> dependency-check-results/summary.md
-        echo "### Dependency Status:" >> dependency-check-results/summary.md
-        
-        # Try to install dependencies and capture any issues
-        if bundle install 2>&1 | tee dependency-check-results/bundle-install.log; then
-          echo "✅ Bundle install successful" >> dependency-check-results/summary.md
-          echo "bundle_install=success" >> $GITHUB_OUTPUT
-        else
-          echo "❌ Bundle install failed!" >> dependency-check-results/summary.md
-          echo "bundle_install=failed" >> $GITHUB_OUTPUT
-          echo "```" >> dependency-check-results/summary.md
-          tail -20 dependency-check-results/bundle-install.log >> dependency-check-results/summary.md
-          echo "```" >> dependency-check-results/summary.md
         fi
         
         # Check for outdated gems
