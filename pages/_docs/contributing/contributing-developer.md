@@ -597,7 +597,7 @@ When working on this repository, AI agents should:
 2. In the **Assignees** panel on the right sidebar, click the gear icon and select **Copilot**.
 3. Copilot will automatically open a pull request on a new branch and begin working on the issue.
 
-> **Tip:** Write clear, detailed issue descriptions. The more context you provide (acceptance criteria, affected files, expected behaviour), the better the agent's output will be.
+> **Tip:** Write clear, detailed issue descriptions. The more context you provide (acceptance criteria, affected files, expected behavior), the better the agent's output will be.
 
 #### 2. Monitor the Agent's Work
 
