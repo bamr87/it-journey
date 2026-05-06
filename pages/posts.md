@@ -1,7 +1,7 @@
 ---
-title: Blog Posts
+title: IT-Journey Blog Posts: Tutorials and Learning Articles
 author: Amr
-description: Comprehensive collection of educational blog posts covering web development, DevOps, system administration, AI & machine learning, and emerging technologies — documenting the learning journey from zero to hero.
+description: Educational blog posts covering web development, DevOps, system administration, AI & ML, and emerging tech — documenting the IT journey from zero to hero.
 excerpt: A complete index of posts documenting this journey, organized into categories, journal entries, and articles
 date: 2025-12-17T19:56:57.000Z
 lastmod: 2026-04-25T00:00:00.000Z
@@ -23,6 +23,12 @@ tags:
   - system-administration
 section: Home
 permalink: /posts/
+keywords:
+    - blog posts
+    - tutorials
+    - devops
+    - web development
+    - it journey
 ---
 
 # IT-Journey Blog Posts
