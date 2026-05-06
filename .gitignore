@@ -11,8 +11,8 @@ vendor/bundle/
 # Project-specific secrets / generated files
 _algolia_api_key
 
-# Gemfile.lock is tracked to ensure reproducible, security-audited builds.
-# This prevents CI from resolving vulnerable gem versions on each run.
+# NOTE: Many Ruby projects DO commit this, but this repo currently does not.
+Gemfile.lock
 
 ##############################
 # Environment / Secrets
