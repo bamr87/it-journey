@@ -1,7 +1,7 @@
 ---
 title: "bashcrawl and Beyond: Extending a Terminal Dungeon Adventure"
 author: IT-Journey Team
-description: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
+description: Extend bashcrawl's terminal dungeon by building advanced shell scripts. Explore directories as rooms, scrolls as text files, and scripts as interactive items.
 excerpt: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
 snippet: Transform basic shell commands into an interactive gaming experience
 preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
