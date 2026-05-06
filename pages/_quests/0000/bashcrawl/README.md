@@ -76,6 +76,7 @@ excerpt: Embark on an epic terminal adventure that teaches command line skills t
 snippet: Learn bash through adventure - where every command is a spell and every directory is a new realm to explore
 permalink: /quests/bashcrawl-terminal-adventure/
 lastmod: 2026-04-25T19:27:00.007Z
+draft: false
 ---
 
 *Welcome, brave adventurer, to the mystical realm of Bashcrawl! This is no ordinary quest - it's an interactive terminal-based adventure that will transform you from a command line novice into a seasoned digital explorer.*
