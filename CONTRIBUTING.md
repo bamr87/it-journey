@@ -13,10 +13,10 @@ Thank you for your interest in contributing to IT-Journey! We welcome contributi
 
 ## Quick Start
 
-1. **Read the Developer Guide**: See the comprehensive [Developer Contributing Guide](/docs/contributing/contributing-developer/)
-2. **Setup Your Environment**: Follow the [Development Environment Setup](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)
-3. **Understand the Structure**: Review [Repository Structure](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md)
-4. **Follow Standards**: Check [Content Guidelines](https://github.com/bamr87/it-journey/blob/main/docs/standards/CONTENT_GUIDELINES.md) and [Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md)
+1. **Read the Developer Guide**: See the comprehensive [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md)
+2. **Setup Your Environment**: Follow the [Development Environment Setup](docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+3. **Understand the Structure**: Review [Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)
+4. **Follow Standards**: Check [Content Guidelines](docs/standards/CONTENT_GUIDELINES.md) and [Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)
 
 ## 🚀 First-Time Contributor Fast Track
 
@@ -46,19 +46,19 @@ git push origin fix/my-first-contribution
 # 5. Create Pull Request on GitHub
 ```
 
-**That's it!** Once you've made your first contribution, explore the [full developer guide](/docs/contributing/contributing-developer/) for more complex contributions.
+**That's it!** Once you've made your first contribution, explore the [full developer guide](docs/CONTRIBUTING_DEVELOPER.md) for more complex contributions.
 
 ## Documentation
 
 All technical documentation for contributors has been organized as follows:
 
 ### For Human Contributors
-- **[Developer Contributing Guide](/docs/contributing/contributing-developer/)** - Complete contribution workflow
+- **[Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md)** - Complete contribution workflow
 - **[Web Contributing Page](/about/contributing/)** - User-facing guide on it-journey.dev
-- **[Repository Structure](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md)** - Directory organization
-- **[Development Environment](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)** - Setup instructions
-- **[Content Guidelines](https://github.com/bamr87/it-journey/blob/main/docs/standards/CONTENT_GUIDELINES.md)** - Writing standards
-- **[Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md)** - Metadata requirements
+- **[Repository Structure](docs/architecture/REPOSITORY_STRUCTURE.md)** - Directory organization
+- **[Development Environment](docs/setup/DEVELOPMENT_ENVIRONMENT.md)** - Setup instructions
+- **[Content Guidelines](docs/standards/CONTENT_GUIDELINES.md)** - Writing standards
+- **[Frontmatter Standards](docs/standards/FRONTMATTER_STANDARDS.md)** - Metadata requirements
 
 ### For AI Agents (VS Code Copilot)
 AI agents assisting with contributions should reference:
@@ -72,10 +72,10 @@ AI agents assisting with contributions should reference:
 The `.github/instructions/` directory contains AI-optimized instructions that help VS Code Copilot and other AI agents assist contributors more effectively while maintaining project standards and quality.
 
 ### Additional Documentation
-- **[Jekyll Implementation](https://github.com/bamr87/it-journey/blob/main/docs/architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll details
-- **[GitHub Actions](https://github.com/bamr87/it-journey/blob/main/docs/workflows/GITHUB_ACTIONS.md)** - CI/CD workflows
-- **[Scripts Guide](https://github.com/bamr87/it-journey/blob/main/docs/scripts/SCRIPTS_GUIDE.md)** - Automation tools
-- **[Testing Frameworks](https://github.com/bamr87/it-journey/blob/main/docs/testing/TESTING_FRAMEWORKS.md)** - Quality assurance
+- **[Jekyll Implementation](docs/architecture/JEKYLL_IMPLEMENTATION.md)** - Jekyll details
+- **[GitHub Actions](docs/workflows/GITHUB_ACTIONS.md)** - CI/CD workflows
+- **[Scripts Guide](docs/scripts/SCRIPTS_GUIDE.md)** - Automation tools
+- **[Testing Frameworks](docs/testing/TESTING_FRAMEWORKS.md)** - Quality assurance
 
 ## Types of Contributions
 
@@ -108,10 +108,10 @@ The `.github/instructions/` directory contains AI-optimized instructions that he
 Before contributing, you should have:
 
 - [ ] Git and GitHub account
-- [ ] Development environment set up (see [setup guide](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md))
-- [ ] Familiarity with Jekyll (see [Jekyll docs](/docs/jekyll/))
-- [ ] Understanding of repository structure (see [architecture docs](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md))
-- [ ] Knowledge of contribution standards (see [contributing guide](/docs/contributing/contributing-developer/))
+- [ ] Development environment set up (see [setup guide](docs/setup/DEVELOPMENT_ENVIRONMENT.md))
+- [ ] Familiarity with Jekyll (see [Jekyll docs](pages/_docs/jekyll/))
+- [ ] Understanding of repository structure (see [architecture docs](docs/architecture/REPOSITORY_STRUCTURE.md))
+- [ ] Knowledge of contribution standards (see [contributing guide](docs/CONTRIBUTING_DEVELOPER.md))
 
 ## Contribution Workflow
 
@@ -150,7 +150,7 @@ git push origin feature/your-feature-name
 - **Scope**: Component affected (quest, post, ci, script, etc.)
 - **Description**: Brief summary in present tense
 
-See the [Developer Contributing Guide](/docs/contributing/contributing-developer/) for detailed workflow instructions.
+See the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md) for detailed workflow instructions.
 
 ## Code of Conduct
 
@@ -164,7 +164,7 @@ See the [Developer Contributing Guide](/docs/contributing/contributing-developer
 ## Getting Help
 
 ### Questions
-- Check [documentation](https://github.com/bamr87/it-journey/blob/main/docs/README.md) first
+- Check [documentation](docs/README.md) first
 - Search existing issues
 - Create discussion in GitHub Discussions
 - Ask in pull request comments
@@ -195,6 +195,6 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ---
 
-For complete contribution guidelines, please see the [Developer Contributing Guide](/docs/contributing/contributing-developer/).
+For complete contribution guidelines, please see the [Developer Contributing Guide](docs/CONTRIBUTING_DEVELOPER.md).
 
 **Last Updated**: 2025-11-07 | **Next Review**: 2025-12-07
