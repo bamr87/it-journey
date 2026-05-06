@@ -1,6 +1,7 @@
 ---
-title: Developer Contribution Guide
+title: "Complete Developer Contribution Guide"
 description: Comprehensive instructions for developers and AI agents contributing to the IT-Journey repository
+excerpt: Step-by-step contribution guide for developers and AI agents — covering setup, branching, code standards, testing, pull requests, and AI-assisted workflows for the IT-Journey project.
 author: IT-Journey Team
 date: 2025-10-13T00:00:00.000Z
 lastmod: 2026-05-06T00:00:00.000Z
@@ -12,6 +13,8 @@ tags:
   - workflow
   - git
   - pull-request
+  - ai-agents
+  - github-copilot
 draft: false
 permalink: /docs/contributing/contributing-developer/
 redirect_from:
@@ -21,6 +24,16 @@ redirect_from:
 sidebar:
   nav: docs
 toc_sticky: true
+keywords:
+  primary:
+    - developer contribution guide
+    - contributing to it-journey
+    - ai agent contribution
+  secondary:
+    - github copilot contribution
+    - pull request workflow
+    - jekyll contribution
+    - open source contributing
 ---
 
 # Developer Contribution Guide
@@ -35,6 +48,9 @@ This guide provides comprehensive instructions for developers and AI agents cont
 - [Testing Requirements](#testing-requirements)
 - [Pull Request Process](#pull-request-process)
 - [AI Agent Guidelines](#ai-agent-guidelines)
+  - [Contributing with GitHub Copilot](#contributing-with-github-copilot)
+  - [Contributing with Other AI Agents](#contributing-with-other-ai-agents)
+  - [AI-Specific Workflows](#ai-specific-workflows)
 
 ## Getting Started
 
@@ -571,6 +587,96 @@ When working on this repository, AI agents should:
    - Document decisions in PRs
    - Link to relevant documentation
 
+### Contributing with GitHub Copilot
+
+[GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-claude-sonnet-in-github-copilot) lets you delegate GitHub issues directly to an AI agent that operates within the repository's own CI environment. Here is how to use it for IT-Journey contributions:
+
+#### 1. Assign an Issue to Copilot
+
+1. Open any open GitHub issue in the [it-journey repository](https://github.com/bamr87/it-journey/issues).
+2. In the **Assignees** panel on the right sidebar, click the gear icon and select **Copilot**.
+3. Copilot will automatically open a pull request on a new branch and begin working on the issue.
+
+> **Tip:** Write clear, detailed issue descriptions. The more context you provide (acceptance criteria, affected files, expected behaviour), the better the agent's output will be.
+
+#### 2. Monitor the Agent's Work
+
+- Watch the pull request created by Copilot. Each time it pushes a commit, GitHub Actions will run the standard CI checks (build validation, frontmatter validation, CodeQL).
+- The agent posts progress updates as comments on the PR. Review these to understand what it has done and what remains.
+
+#### 3. Review and Collaborate
+
+- Read the diff carefully — AI agents can occasionally miss project-specific conventions.
+- Leave review comments as you would for any human contributor; Copilot can respond to and address feedback.
+- Check that all CI checks are green before approving.
+
+#### 4. Merge
+
+- Once the PR is approved and all checks pass, merge using the standard **Squash and merge** strategy.
+- Delete the agent's branch after merging.
+
+#### 5. Copilot Setup Steps
+
+IT-Journey maintains a `copilot-setup-steps.yml` workflow that pre-installs Ruby, Bundler, and other dependencies so the agent's environment matches local development. You do **not** need to configure anything extra — it is applied automatically when Copilot runs.
+
+### Contributing with Other AI Agents
+
+You can also use AI coding assistants (Claude, ChatGPT, Gemini, etc.) locally via your editor to prepare contributions:
+
+#### Recommended Workflow
+
+```bash
+# 1. Fork and clone the repository
+git clone https://github.com/<your-username>/it-journey.git
+cd it-journey
+
+# 2. Create a feature branch
+git switch -c feature/my-ai-assisted-contribution
+
+# 3. Install dependencies
+bundle install
+
+# 4. Use your AI assistant to draft changes
+#    (VS Code + GitHub Copilot, Cursor, Continue.dev, etc.)
+
+# 5. Verify the site builds locally
+bundle exec jekyll build --config _config.yml,_config_dev.yml
+
+# 6. Run frontmatter validation
+#    (check pages/_docs/ and pages/_posts/ for required fields)
+
+# 7. Commit following Conventional Commits
+git add .
+git commit -m "feat(docs): add AI agent contribution instructions"
+
+# 8. Push and open a pull request
+git push origin feature/my-ai-assisted-contribution
+```
+
+#### Using AI Assistants Effectively
+
+| Task | Prompt strategy |
+|------|----------------|
+| **Create a new doc page** | "Create a Jekyll Markdown file in `pages/_docs/<topic>/` with the required frontmatter fields: title (≥30 chars), description, excerpt, keywords, author, date, lastmod, categories, tags, sidebar nav, toc_sticky, and permalink." |
+| **Fix frontmatter issues** | "Audit this file's YAML frontmatter against the [Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md) and add any missing required or recommended fields." |
+| **Improve content quality** | "Review this doc for clarity, accuracy, and completeness. Suggest additions that would help a developer contributor understand the workflow." |
+| **Update an existing guide** | "Update this file to reflect [change]. Maintain the existing voice and structure. Update the `lastmod` date to today." |
+| **Write a blog post** | "Draft a Jekyll post following the template in `.github/instructions/posts.instructions.md`. Include all required frontmatter." |
+
+#### AI Agent Do's and Don'ts
+
+✅ Always update `lastmod` when modifying a file  
+✅ Run `bundle exec jekyll build` to verify the site compiles  
+✅ Provide clear PR descriptions explaining what was changed and why  
+✅ Follow the [README-First, README-Last principle](/docs/contributing/contributing-developer/#readme-first-readme-last)  
+✅ Respect the [Conventional Commits](https://www.conventionalcommits.org/) format  
+
+❌ Do not commit secrets, API keys, or credentials  
+❌ Do not modify CI workflow files unless explicitly asked  
+❌ Do not remove or reorder existing frontmatter fields without understanding the impact  
+❌ Do not hard-code absolute local paths  
+❌ Do not bypass branch-protection rules with force pushes  
+
 ### AI-Specific Workflows
 
 **For Content Creation:**
@@ -578,7 +684,7 @@ When working on this repository, AI agents should:
 1. Review existing content in same collection
 2. Follow frontmatter template exactly
 3. Match writing style and tone
-4. Include all required fields
+4. Include all required fields (title ≥30 chars, excerpt, keywords)
 5. Test markdown rendering
 ```
 
@@ -597,7 +703,7 @@ When working on this repository, AI agents should:
 2. Update cross-references
 3. Maintain formatting standards
 4. Test all links
-5. Update "Last Updated" date
+5. Update "Last Updated" date and lastmod frontmatter field
 ```
 
 ## Communication
