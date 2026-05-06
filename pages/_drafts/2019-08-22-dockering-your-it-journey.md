@@ -1,6 +1,6 @@
 ---
-title: Dockering Your IT Journey
-description: How to use Docker to run Jekyll with Ruby 2.7
+title: "Dockerizing Your IT Journey: Jekyll with Docker"
+description: How to use Docker to run your IT Journey Jekyll site with Ruby 2.7, including Dockerfile setup, container configuration, and running the site locally.
 author: Amr and Co-pilot
 excerpt: If you must use Ruby 2.7, you can specify the versions of Jekyll and Bundler that are compatible with Ruby 2.7 in your Dockerfile.
 date: 2024-04-04T15:57:37.000Z
@@ -10,8 +10,15 @@ tags:
     - Docker
     - Jekyll
     - Ruby
+    - containerization
 categories:
     - Development
+keywords:
+  - docker jekyll ruby 2.7
+  - run jekyll in docker
+  - jekyll docker container setup
+  - dockerfile jekyll site
+  - dockerize jekyll blog
 meta: null
 snippet: null
 section: DevOps

@@ -1,5 +1,5 @@
 ---
-title: Dynamic Sidebar Tree
+title: "Dynamic Sidebar Tree: Jekyll Navigation Guide"
 lastmod: 2024-05-16 16:15:26.771000+00:00
 date: 2024-05-14 22:06:19+00:00
 tags:
@@ -9,14 +9,20 @@ tags:
 - sidebar
 - tree
 - folder
-description: Update code to display sub-folders and files in a sidebar tree structure.
+description: Update Jekyll code to display sub-folders and files in a dynamic sidebar tree structure using Liquid templating and recursive navigation.
 preview: null
 categories:
 - Web Development
 sub-title: null
+excerpt: A guide to building a dynamic sidebar tree in Jekyll using Liquid, displaying nested sub-folders and files with proper hierarchy and navigation links.
 snippet: null
-author: null
-keywords: {}
+author: bamr87
+keywords:
+  - jekyll dynamic sidebar tree
+  - liquid sidebar navigation
+  - jekyll folder tree structure
+  - dynamic navigation jekyll
+  - jekyll sub-folder display
 slug: dynamic-sidebar-tree
 type: posts
 FIXME: need code blocks to be raw liquid maybe vscode plugin?
