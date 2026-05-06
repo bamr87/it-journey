@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # For more detailed instructions, look here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 
 # Github Pages Gems - Use latest compatible version:
-gem 'github-pages'
+gem 'github-pages', '~> 232'
 
 # Jekyll Theme is loaded via `remote_theme` in `_config.yml` and `_config_dev.yml`.
 

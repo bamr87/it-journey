@@ -11,9 +11,6 @@ vendor/bundle/
 # Project-specific secrets / generated files
 _algolia_api_key
 
-# NOTE: Many Ruby projects DO commit this, but this repo currently does not.
-Gemfile.lock
-
 ##############################
 # Environment / Secrets
 ##############################
