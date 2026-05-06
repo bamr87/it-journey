@@ -83,6 +83,15 @@ Obsidian-style links help connect notes, docs, quests, and posts into a lightwei
 - [Obsidian Knowledge Graph](/docs/obsidian/) - How IT-Journey uses theme-owned wiki links and graph views
 - [Obsidian Graph View](/docs/obsidian/graph/) - Interactive map of linked content across the site
 
+### Wargames (External)
+
+Security challenges aggregated from the [OverTheWire](https://overthewire.org/wargames/) community project. Learn and practice security concepts through gamified challenges.
+
+**Topics:**
+- [Wargames Overview](/docs/wargames/) - Introduction, game list, and how to get started
+
+> This section is populated by the [docs aggregation pipeline](/it-journey/scripts/docs-aggregator/). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
+
 ### Future Documentation Areas
 
 This library will expand to include reference documentation for:
@@ -169,9 +178,19 @@ See [Content Guidelines](https://github.com/bamr87/it-journey/blob/main/docs/sta
 
 ## Documentation Sources
 
-### Git Submodules (Future)
+### Git Submodules & Aggregation
 
-The goal is to integrate official documentation from tool repositories using Git submodules:
+The documentation library supports two approaches for integrating external content:
+
+**Docs Aggregation Pipeline** (Active):
+```bash
+# Aggregate external documentation into _docs
+bash scripts/docs-aggregator/aggregate_docs.sh
+```
+
+The aggregation pipeline clones external repos, extracts documentation, transforms it to Jekyll-compatible format with it-journey frontmatter, and places it under `pages/_docs/`. See [docs-aggregator README](../../scripts/docs-aggregator/README.md) for details and how to add new sources.
+
+**Git Submodules** (Future alternative):
 
 ```bash
 # Example: Adding Jekyll official docs

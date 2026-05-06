@@ -1,0 +1,442 @@
+- title: Overthewire
+  url: /docs/wargames/
+  icon: bi-globe
+  children:
+  - title: Index
+    url: /docs/wargames/abraxas/
+  - title: Bandit0
+    url: /docs/wargames/overthewire/bandit0/
+  - title: Bandit1
+    url: /docs/wargames/overthewire/bandit1/
+  - title: Bandit10
+    url: /docs/wargames/overthewire/bandit10/
+  - title: Bandit11
+    url: /docs/wargames/overthewire/bandit11/
+  - title: Bandit12
+    url: /docs/wargames/overthewire/bandit12/
+  - title: Bandit13
+    url: /docs/wargames/bandit/bandit13/
+  - title: Bandit14
+    url: /docs/wargames/overthewire/bandit14/
+  - title: Bandit15
+    url: /docs/wargames/overthewire/bandit15/
+  - title: Bandit16
+    url: /docs/wargames/overthewire/bandit16/
+  - title: Bandit17
+    url: /docs/wargames/overthewire/bandit17/
+  - title: Bandit18
+    url: /docs/wargames/overthewire/bandit18/
+  - title: Bandit19
+    url: /docs/wargames/overthewire/bandit19/
+  - title: Bandit2
+    url: /docs/wargames/overthewire/bandit2/
+  - title: Bandit20
+    url: /docs/wargames/overthewire/bandit20/
+  - title: Bandit21
+    url: /docs/wargames/overthewire/bandit21/
+  - title: Bandit22
+    url: /docs/wargames/overthewire/bandit22/
+  - title: Bandit23
+    url: /docs/wargames/overthewire/bandit23/
+  - title: Bandit24
+    url: /docs/wargames/overthewire/bandit24/
+  - title: Bandit25
+    url: /docs/wargames/overthewire/bandit25/
+  - title: Bandit26
+    url: /docs/wargames/overthewire/bandit26/
+  - title: Bandit27
+    url: /docs/wargames/overthewire/bandit27/
+  - title: Bandit28
+    url: /docs/wargames/overthewire/bandit28/
+  - title: Bandit29
+    url: /docs/wargames/overthewire/bandit29/
+  - title: Bandit3
+    url: /docs/wargames/overthewire/bandit3/
+  - title: Bandit30
+    url: /docs/wargames/overthewire/bandit30/
+  - title: Bandit31
+    url: /docs/wargames/overthewire/bandit31/
+  - title: Bandit32
+    url: /docs/wargames/overthewire/bandit32/
+  - title: Bandit33
+    url: /docs/wargames/overthewire/bandit33/
+  - title: Bandit34
+    url: /docs/wargames/bandit/bandit34/
+  - title: Bandit4
+    url: /docs/wargames/overthewire/bandit4/
+  - title: Bandit5
+    url: /docs/wargames/overthewire/bandit5/
+  - title: Bandit6
+    url: /docs/wargames/overthewire/bandit6/
+  - title: Bandit7
+    url: /docs/wargames/overthewire/bandit7/
+  - title: Bandit8
+    url: /docs/wargames/overthewire/bandit8/
+  - title: Bandit9
+    url: /docs/wargames/overthewire/bandit9/
+  - title: Bandit
+    url: /docs/wargames/bandit/
+  - title: Behemoth0
+    url: /docs/wargames/behemoth/behemoth0/
+  - title: Behemoth1
+    url: /docs/wargames/behemoth/behemoth1/
+  - title: Behemoth2
+    url: /docs/wargames/behemoth/behemoth2/
+  - title: Behemoth3
+    url: /docs/wargames/behemoth/behemoth3/
+  - title: Behemoth4
+    url: /docs/wargames/behemoth/behemoth4/
+  - title: Behemoth5
+    url: /docs/wargames/behemoth/behemoth5/
+  - title: Behemoth6
+    url: /docs/wargames/behemoth/behemoth6/
+  - title: Behemoth7
+    url: /docs/wargames/behemoth/behemoth7/
+  - title: Behemoth8
+    url: /docs/wargames/behemoth/behemoth8/
+  - title: Behemoth
+    url: /docs/wargames/behemoth/
+  - title: Blacksun0
+    url: /docs/wargames/blacksun/blacksun0/
+  - title: Blacksun1
+    url: /docs/wargames/blacksun/blacksun1/
+  - title: Blacksun2
+    url: /docs/wargames/blacksun/blacksun2/
+  - title: Blacksun3
+    url: /docs/wargames/blacksun/blacksun3/
+  - title: Blacksun4
+    url: /docs/wargames/blacksun/blacksun4/
+  - title: Index
+    url: /docs/wargames/blacksun/
+  - title: Reading material
+    url: /docs/wargames/blacksun/reading_material/
+  - title: Drifter0
+    url: /docs/wargames/drifter/drifter0/
+  - title: Drifter1
+    url: /docs/wargames/drifter/drifter1/
+  - title: Drifter10
+    url: /docs/wargames/drifter/drifter10/
+  - title: Drifter11
+    url: /docs/wargames/drifter/drifter11/
+  - title: Drifter12
+    url: /docs/wargames/drifter/drifter12/
+  - title: Drifter13
+    url: /docs/wargames/drifter/drifter13/
+  - title: Drifter14
+    url: /docs/wargames/drifter/drifter14/
+  - title: Drifter15
+    url: /docs/wargames/drifter/drifter15/
+  - title: Drifter2
+    url: /docs/wargames/drifter/drifter2/
+  - title: Drifter3
+    url: /docs/wargames/drifter/drifter3/
+  - title: Drifter4
+    url: /docs/wargames/drifter/drifter4/
+  - title: Drifter5
+    url: /docs/wargames/drifter/drifter5/
+  - title: Drifter6
+    url: /docs/wargames/drifter/drifter6/
+  - title: Drifter7
+    url: /docs/wargames/drifter/drifter7/
+  - title: Drifter8
+    url: /docs/wargames/drifter/drifter8/
+  - title: Drifter9
+    url: /docs/wargames/drifter/drifter9/
+  - title: Drifter
+    url: /docs/wargames/drifter/
+  - title: Formulaone0
+    url: /docs/wargames/formulaone/formulaone0/
+  - title: Formulaone1
+    url: /docs/wargames/formulaone/formulaone1/
+  - title: Formulaone2
+    url: /docs/wargames/formulaone/formulaone2/
+  - title: Formulaone3
+    url: /docs/wargames/formulaone/formulaone3/
+  - title: Formulaone4
+    url: /docs/wargames/formulaone/formulaone4/
+  - title: Formulaone5
+    url: /docs/wargames/formulaone/formulaone5/
+  - title: Formulaone6
+    url: /docs/wargames/formulaone/formulaone6/
+  - title: FormulaOne
+    url: /docs/wargames/formulaone/
+  - title: Index
+    url: /docs/wargames/hes2010/
+  - title: Wargames
+    url: /docs/wargames/
+  - title: Index
+    url: /docs/wargames/kishi/
+  - title: Krypton
+    url: /docs/wargames/krypton/
+  - title: Krypton0
+    url: /docs/wargames/overthewire/krypton0/
+  - title: Krypton1
+    url: /docs/wargames/overthewire/krypton1/
+  - title: Krypton2
+    url: /docs/wargames/overthewire/krypton2/
+  - title: Krypton3
+    url: /docs/wargames/overthewire/krypton3/
+  - title: Krypton4
+    url: /docs/wargames/overthewire/krypton4/
+  - title: Krypton5
+    url: /docs/wargames/overthewire/krypton5/
+  - title: Krypton6
+    url: /docs/wargames/overthewire/krypton6/
+  - title: Leviathan
+    url: /docs/wargames/leviathan/
+  - title: Leviathan0
+    url: /docs/wargames/leviathan/leviathan0/
+  - title: Leviathan1
+    url: /docs/wargames/leviathan/leviathan1/
+  - title: Leviathan2
+    url: /docs/wargames/leviathan/leviathan2/
+  - title: Leviathan3
+    url: /docs/wargames/leviathan/leviathan3/
+  - title: Leviathan4
+    url: /docs/wargames/leviathan/leviathan4/
+  - title: Leviathan5
+    url: /docs/wargames/leviathan/leviathan5/
+  - title: Leviathan6
+    url: /docs/wargames/leviathan/leviathan6/
+  - title: Leviathan7
+    url: /docs/wargames/leviathan/leviathan7/
+  - title: Manpage
+    url: /docs/wargames/manpage/
+  - title: Manpage0
+    url: /docs/wargames/manpage/manpage0/
+  - title: Manpage1
+    url: /docs/wargames/manpage/manpage1/
+  - title: Manpage2
+    url: /docs/wargames/manpage/manpage2/
+  - title: Manpage3
+    url: /docs/wargames/manpage/manpage3/
+  - title: Manpage4
+    url: /docs/wargames/manpage/manpage4/
+  - title: Manpage5
+    url: /docs/wargames/manpage/manpage5/
+  - title: Manpage6
+    url: /docs/wargames/manpage/manpage6/
+  - title: Manpage7
+    url: /docs/wargames/manpage/manpage7/
+  - title: Maze
+    url: /docs/wargames/maze/
+  - title: Maze0
+    url: /docs/wargames/maze/maze0/
+  - title: Maze1
+    url: /docs/wargames/maze/maze1/
+  - title: Maze2
+    url: /docs/wargames/maze/maze2/
+  - title: Maze3
+    url: /docs/wargames/maze/maze3/
+  - title: Maze4
+    url: /docs/wargames/maze/maze4/
+  - title: Maze5
+    url: /docs/wargames/maze/maze5/
+  - title: Maze6
+    url: /docs/wargames/maze/maze6/
+  - title: Maze7
+    url: /docs/wargames/maze/maze7/
+  - title: Maze8
+    url: /docs/wargames/maze/maze8/
+  - title: Maze9
+    url: /docs/wargames/maze/maze9/
+  - title: Index
+    url: /docs/wargames/monxla/
+  - title: Narnia
+    url: /docs/wargames/narnia/
+  - title: Narnia0
+    url: /docs/wargames/narnia/narnia0/
+  - title: Narnia1
+    url: /docs/wargames/narnia/narnia1/
+  - title: Narnia2
+    url: /docs/wargames/narnia/narnia2/
+  - title: Narnia3
+    url: /docs/wargames/narnia/narnia3/
+  - title: Narnia4
+    url: /docs/wargames/narnia/narnia4/
+  - title: Narnia5
+    url: /docs/wargames/narnia/narnia5/
+  - title: Narnia6
+    url: /docs/wargames/narnia/narnia6/
+  - title: Narnia7
+    url: /docs/wargames/narnia/narnia7/
+  - title: Narnia8
+    url: /docs/wargames/narnia/narnia8/
+  - title: Narnia9
+    url: /docs/wargames/narnia/narnia9/
+  - title: Natas
+    url: /docs/wargames/natas/
+  - title: Natas0
+    url: /docs/wargames/natas/natas0/
+  - title: Natas1
+    url: /docs/wargames/natas/natas1/
+  - title: Natas10
+    url: /docs/wargames/natas/natas10/
+  - title: Natas11
+    url: /docs/wargames/natas/natas11/
+  - title: Natas12
+    url: /docs/wargames/natas/natas12/
+  - title: Natas13
+    url: /docs/wargames/natas/natas13/
+  - title: Natas14
+    url: /docs/wargames/natas/natas14/
+  - title: Natas15
+    url: /docs/wargames/natas/natas15/
+  - title: Natas16
+    url: /docs/wargames/natas/natas16/
+  - title: Natas17
+    url: /docs/wargames/natas/natas17/
+  - title: Natas18
+    url: /docs/wargames/natas/natas18/
+  - title: Natas19
+    url: /docs/wargames/natas/natas19/
+  - title: Natas2
+    url: /docs/wargames/natas/natas2/
+  - title: Natas20
+    url: /docs/wargames/natas/natas20/
+  - title: Natas21
+    url: /docs/wargames/natas/natas21/
+  - title: Natas22
+    url: /docs/wargames/natas/natas22/
+  - title: Natas23
+    url: /docs/wargames/natas/natas23/
+  - title: Natas24
+    url: /docs/wargames/natas/natas24/
+  - title: Natas25
+    url: /docs/wargames/natas/natas25/
+  - title: Natas26
+    url: /docs/wargames/natas/natas26/
+  - title: Natas27
+    url: /docs/wargames/natas/natas27/
+  - title: Natas28
+    url: /docs/wargames/natas/natas28/
+  - title: Natas29
+    url: /docs/wargames/natas/natas29/
+  - title: Natas3
+    url: /docs/wargames/natas/natas3/
+  - title: Natas30
+    url: /docs/wargames/natas/natas30/
+  - title: Natas31
+    url: /docs/wargames/natas/natas31/
+  - title: Natas32
+    url: /docs/wargames/natas/natas32/
+  - title: Natas33
+    url: /docs/wargames/natas/natas33/
+  - title: Natas34
+    url: /docs/wargames/natas/natas34/
+  - title: Natas4
+    url: /docs/wargames/natas/natas4/
+  - title: Natas5
+    url: /docs/wargames/natas/natas5/
+  - title: Natas6
+    url: /docs/wargames/natas/natas6/
+  - title: Natas7
+    url: /docs/wargames/natas/natas7/
+  - title: Natas8
+    url: /docs/wargames/natas/natas8/
+  - title: Natas9
+    url: /docs/wargames/natas/natas9/
+  - title: Semtex
+    url: /docs/wargames/semtex/
+  - title: Semtex0
+    url: /docs/wargames/overthewire/semtex0/
+  - title: Semtex1
+    url: /docs/wargames/overthewire/semtex1/
+  - title: Semtex10
+    url: /docs/wargames/overthewire/semtex10/
+  - title: Semtex11
+    url: /docs/wargames/overthewire/semtex11/
+  - title: Semtex12
+    url: /docs/wargames/overthewire/semtex12/
+  - title: Semtex2
+    url: /docs/wargames/overthewire/semtex2/
+  - title: Semtex3
+    url: /docs/wargames/overthewire/semtex3/
+  - title: Semtex4
+    url: /docs/wargames/overthewire/semtex4/
+  - title: Semtex5
+    url: /docs/wargames/overthewire/semtex5/
+  - title: Semtex6
+    url: /docs/wargames/overthewire/semtex6/
+  - title: Semtex7
+    url: /docs/wargames/overthewire/semtex7/
+  - title: Semtex8
+    url: /docs/wargames/overthewire/semtex8/
+  - title: Semtex9
+    url: /docs/wargames/overthewire/semtex9/
+  - title: Utumno
+    url: /docs/wargames/utumno/
+  - title: Utumno0
+    url: /docs/wargames/utumno/utumno0/
+  - title: Utumno1
+    url: /docs/wargames/utumno/utumno1/
+  - title: Utumno2
+    url: /docs/wargames/utumno/utumno2/
+  - title: Utumno3
+    url: /docs/wargames/utumno/utumno3/
+  - title: Utumno4
+    url: /docs/wargames/utumno/utumno4/
+  - title: Utumno5
+    url: /docs/wargames/utumno/utumno5/
+  - title: Utumno6
+    url: /docs/wargames/utumno/utumno6/
+  - title: Utumno7
+    url: /docs/wargames/utumno/utumno7/
+  - title: Utumno8
+    url: /docs/wargames/utumno/utumno8/
+  - title: Vortex
+    url: /docs/wargames/vortex/
+  - title: Vortex0
+    url: /docs/wargames/overthewire/vortex0/
+  - title: Vortex1
+    url: /docs/wargames/overthewire/vortex1/
+  - title: Vortex10
+    url: /docs/wargames/overthewire/vortex10/
+  - title: Vortex11
+    url: /docs/wargames/overthewire/vortex11/
+  - title: Vortex12
+    url: /docs/wargames/overthewire/vortex12/
+  - title: Vortex13
+    url: /docs/wargames/overthewire/vortex13/
+  - title: Vortex14
+    url: /docs/wargames/overthewire/vortex14/
+  - title: Vortex15
+    url: /docs/wargames/overthewire/vortex15/
+  - title: Vortex16
+    url: /docs/wargames/overthewire/vortex16/
+  - title: Vortex17
+    url: /docs/wargames/overthewire/vortex17/
+  - title: Vortex18
+    url: /docs/wargames/overthewire/vortex18/
+  - title: Vortex19
+    url: /docs/wargames/overthewire/vortex19/
+  - title: Vortex2
+    url: /docs/wargames/overthewire/vortex2/
+  - title: Vortex20
+    url: /docs/wargames/overthewire/vortex20/
+  - title: Vortex21
+    url: /docs/wargames/overthewire/vortex21/
+  - title: Vortex22
+    url: /docs/wargames/overthewire/vortex22/
+  - title: Vortex23
+    url: /docs/wargames/overthewire/vortex23/
+  - title: Vortex24
+    url: /docs/wargames/overthewire/vortex24/
+  - title: Vortex25
+    url: /docs/wargames/overthewire/vortex25/
+  - title: Vortex26
+    url: /docs/wargames/overthewire/vortex26/
+  - title: Vortex3
+    url: /docs/wargames/overthewire/vortex3/
+  - title: Vortex4
+    url: /docs/wargames/overthewire/vortex4/
+  - title: Vortex5
+    url: /docs/wargames/overthewire/vortex5/
+  - title: Vortex6
+    url: /docs/wargames/overthewire/vortex6/
+  - title: Vortex7
+    url: /docs/wargames/overthewire/vortex7/
+  - title: Vortex8
+    url: /docs/wargames/overthewire/vortex8/
+  - title: Vortex9
+    url: /docs/wargames/overthewire/vortex9/
