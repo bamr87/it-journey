@@ -44,11 +44,11 @@ Reference documentation and educational resources for the tools and technologies
 > **Note for Contributors:** If you're looking for technical documentation about the IT-Journey repository structure, contribution workflows, or development setup, see the **Developer Documentation** in the repository root (`/docs/` directory on GitHub).
 
 ### Quick Links for Developers
-- [Repository Structure](../../docs/architecture/REPOSITORY_STRUCTURE.md)
-- [Jekyll Implementation](../../docs/architecture/JEKYLL_IMPLEMENTATION.md)
-- [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md)
-- [Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)
-- [Frontmatter Standards](../../docs/standards/FRONTMATTER_STANDARDS.md)
+- [Repository Structure](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md)
+- [Jekyll Implementation](https://github.com/bamr87/it-journey/blob/main/docs/architecture/JEKYLL_IMPLEMENTATION.md)
+- [Development Environment Setup](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+- [Contributing Guide](https://github.com/bamr87/it-journey/blob/main/docs/CONTRIBUTING_DEVELOPER.md)
+- [Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md)
 
 ## Available Documentation
 
@@ -153,7 +153,7 @@ To add documentation for a new tool or technology:
    touch pages/_docs/new-tool/getting-started.md
    ```
 
-4. **Follow Standards** - Use [Frontmatter Standards](../../docs/standards/FRONTMATTER_STANDARDS.md)
+4. **Follow Standards** - Use [Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md)
 
 5. **Update Navigation** - Add to `_data/navigation/docs.yml`
 
@@ -165,7 +165,7 @@ To add documentation for a new tool or technology:
 - **Keep It Current** - Update when technologies change
 - **Be Educational** - Write for learners, not just reference
 
-See [Content Guidelines](../../docs/standards/CONTENT_GUIDELINES.md) for detailed writing standards.
+See [Content Guidelines](https://github.com/bamr87/it-journey/blob/main/docs/standards/CONTENT_GUIDELINES.md) for detailed writing standards.
 
 ## Documentation Sources
 
@@ -217,7 +217,7 @@ IT-Journey is built with:
 - **OpenAI GPT-4** - AI-powered analysis
 - **Giscus** - Comments via GitHub Discussions
 
-For detailed information, see [Jekyll Implementation](../../docs/architecture/JEKYLL_IMPLEMENTATION.md).
+For detailed information, see [Jekyll Implementation](https://github.com/bamr87/it-journey/blob/main/docs/architecture/JEKYLL_IMPLEMENTATION.md).
 
 ## Getting Help
 
@@ -227,9 +227,9 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 - Start discussion in GitHub Discussions
 
 ### Questions About Contributing
-- See [Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)
-- Check [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md)
-- Review [Repository Structure](../../docs/architecture/REPOSITORY_STRUCTURE.md)
+- See [Contributing Guide](https://github.com/bamr87/it-journey/blob/main/docs/CONTRIBUTING_DEVELOPER.md)
+- Check [Development Environment Setup](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+- Review [Repository Structure](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md)
 
 ## Additional Resources
 
@@ -253,4 +253,4 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 **Last Updated:** 2025-10-13  
 **Version:** 2.0.0
 
-*The Learning Resources Library is part of the IT-Journey project. For technical developer documentation, see the [`/docs/` directory](../../docs/).*
+*The Learning Resources Library is part of the IT-Journey project. For technical developer documentation, see the [`/docs/` directory](https://github.com/bamr87/it-journey/tree/main/docs/).*
