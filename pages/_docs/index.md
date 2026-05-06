@@ -70,7 +70,7 @@ The IT-Journey platform is built with Jekyll, a static site generator. The Jekyl
 - [Jekyll Overview](jekyll/) - Jekyll as used in IT-Journey
 - [Configuration Options](jekyll/jekyll-config.md) - Jekyll configuration reference
 - [Frontmatter CMS](jekyll/jekyll-frontmatter-cms.md) - Using frontmatter as a CMS
-- [Frontmatter Preview Configuration](jekyll/jekyll-frontmatter-preview-configuration.md) - Configure VS Code preview with permalinks
+- [Frontmatter Preview Configuration](frontmatter-preview-solution.md) - Configure VS Code preview with permalinks
 - [Liquid Templating](jekyll/jekyll-liquid.md) - Liquid template language
 - [Mermaid Diagrams](jekyll/jekyll-diagram-with-mermaid.md) - Creating diagrams
 - [Math Symbols](jekyll/jekyll-math-symbols-with-mathjax.md) - Mathematical notation
@@ -240,7 +240,7 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 | [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
 | [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
 | [📝 Notes](/notes/) | Working notes, code snippets, and quick references from development |
-| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
+| [📰 Blog Posts](/news/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
 
 ### External Resources
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
