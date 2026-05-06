@@ -14,7 +14,18 @@ tags:
 sidebar:
   nav: docs
 toc_sticky: true
+date: 2026-04-25T00:00:00.000Z
 lastmod: 2026-04-25T00:00:00.000Z
+author: Amr Abdel Eissa
+draft: false
+keywords:
+  primary:
+    - obsidian
+    - knowledge graph
+  secondary:
+    - wiki links
+    - backlinks
+    - notes
 ---
 
 # Obsidian Knowledge Graph

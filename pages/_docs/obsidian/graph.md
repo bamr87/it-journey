@@ -16,7 +16,17 @@ toc_sticky: true
 backlinks: false
 local_graph: false
 sitemap: false
+date: 2026-04-25T00:00:00.000Z
 lastmod: 2026-04-25T00:00:00.000Z
+author: Amr Abdel Eissa
+draft: false
+keywords:
+  primary:
+    - obsidian graph
+    - knowledge graph
+  secondary:
+    - wiki links
+    - it-journey navigation
 ---
 
 <style>
