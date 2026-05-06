@@ -9,6 +9,12 @@
       url: /docs/
     - title: Frontmatter Preview
       url: /docs/frontmatter-preview-solution/
+- title: Contributing
+  url: /docs/contributing/contributing-developer/
+  icon: bi-people
+  children:
+    - title: Developer Guide
+      url: /docs/contributing/contributing-developer/
 - title: Obsidian
   url: /docs/obsidian/
   icon: bi-diagram-3
