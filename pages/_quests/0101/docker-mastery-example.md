@@ -6,7 +6,7 @@ description: Master Docker containerization to build, deploy, and manage applica
 excerpt: Learn to containerize applications and manage Docker environments for consistent,
   scalable deployments
 snippet: Master the art of digital containerization and unlock deployment freedom
-preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
+preview: /images/previews/docker-containerization-mastery-level-0101-5-quest.png
 date: 2025-09-28T14:23:01.000Z
 lastmod: 2025-09-28 18:49:08.719000+00:00
 level: '0101'

@@ -9,7 +9,7 @@ excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-gra
   tooling available today.
 snippet: The stack you choose defines the ceiling of what you can build — choose wisely,
   build boldly.
-preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
+preview: /images/previews/stack-attack-deciphering-the-technology-matrix.png
 date: 2025-11-02T14:45:16.000Z
 lastmod: 2026-04-13T00:00:00.000Z
 level: '0001'

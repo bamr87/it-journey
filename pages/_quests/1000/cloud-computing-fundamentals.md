@@ -6,7 +6,7 @@ description: Master cloud computing fundamentals including service models (IaaS,
   applications.
 excerpt: Understand cloud computing service models, deployment patterns, and provider
   ecosystems
-preview: images/previews/cloud-computing-fundamentals-iaas-paas-quest-title.png
+preview: /images/previews/cloud-computing-fundamentals-iaas-paas-quest-title.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:30:00+00:00
 level: '1000'

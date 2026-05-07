@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Integrate automated testing into your CI/CD pipeline. Learn unit testing,
   integration testing, E2E testing, and code coverage reporting for quality assurance.
 excerpt: Implement comprehensive automated testing strategies in your CI/CD workflows
-preview: images/previews/testing-integration-automated-quality-assurance-de.png
+preview: /images/previews/testing-integration-automated-quality-assurance-de.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:26+00:00
 level: '0101'

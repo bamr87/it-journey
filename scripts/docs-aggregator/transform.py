@@ -6,7 +6,7 @@ Reads raw documentation files staged by aggregate.py, generates
 it-journey-compatible Jekyll frontmatter, rewrites links, and writes
 the final output into pages/_docs/<category>/<source>/.
 
-Also generates a navigation YAML fragment for _data/navigation/docs.yml.
+Can optionally generate a navigation YAML fragment if explicitly requested.
 
 Usage:
     python3 transform.py [--work-dir ../../work/docs-aggregator] [--output-dir ../../pages/_docs]
@@ -99,6 +99,10 @@ def build_jekyll_frontmatter(
     source_file_path = "/".join(rel_path.parts)
     source_url = f"{repo_url.rstrip('/')}/blob/{branch}/{source_file_path}"
 
+    # Wargames pages should use dynamic sidebar navigation instead of
+    # static YAML sidebar entries.
+    sidebar_nav = "auto" if category == "wargames" else "docs"
+
     fm: Dict[str, Any] = {
         "title": title,
         "description": description,
@@ -107,7 +111,7 @@ def build_jekyll_frontmatter(
         "lastmod": now,
         "categories": [category],
         "tags": list(dict.fromkeys(source_tags + existing_fm.get("tags", []))),
-        "sidebar": {"nav": "docs"},
+        "sidebar": {"nav": sidebar_nav},
         "toc_sticky": True,
         "source_repo": repo_url,
         "source_url": source_url,
@@ -273,8 +277,6 @@ def main():
     print(f"Output : {output_dir}")
     print(f"Sources: {len(sources)}\n")
 
-    nav_fragments: List[Dict] = []
-
     for source in sources:
         name = source["name"]
         category = source["category"]
@@ -303,15 +305,17 @@ def main():
 
         print(f"  Transformed: {transformed}  |  Failed: {failed}\n")
 
-        # Build nav fragment
-        nav_entry = generate_nav_fragment(source, output_dir, category)
-        nav_fragments.append(nav_entry)
+    # Write navigation fragment only when explicitly requested.
+    if args.nav_output:
+        nav_fragments: List[Dict] = []
+        for source in sources:
+            nav_entry = generate_nav_fragment(source, output_dir, source["category"])
+            nav_fragments.append(nav_entry)
 
-    # Write navigation fragment
-    nav_out = Path(args.nav_output) if args.nav_output else work / "nav_fragment.yml"
-    with open(nav_out, "w") as f:
-        yaml.dump(nav_fragments, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-    print(f"Navigation fragment written to {nav_out}")
+        nav_out = Path(args.nav_output)
+        with open(nav_out, "w") as f:
+            yaml.dump(nav_fragments, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+        print(f"Navigation fragment written to {nav_out}")
 
     print("\n=== Transformation complete ===")
 

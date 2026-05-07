@@ -6,7 +6,7 @@ description: Master data warehouse design with dimensional modeling. Learn star 
   cloud data warehouse patterns.
 excerpt: Design data warehouses with dimensional modeling, star schemas, and modern
   cloud analytics patterns
-preview: images/previews/data-warehousing-descriptive-subtitle.png
+preview: /images/previews/data-warehousing-descriptive-subtitle.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1100'

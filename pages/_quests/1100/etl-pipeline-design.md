@@ -6,7 +6,7 @@ description: Design and implement production ETL pipelines. Learn data extractio
   orchestration with Airflow or Prefect.
 excerpt: Build production-grade ETL pipelines with Python, including extraction, transformation,
   and orchestration patterns
-preview: images/previews/etl-pipeline-design-descriptive-subtitle.png
+preview: /images/previews/etl-pipeline-design-descriptive-subtitle.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1100'

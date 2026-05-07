@@ -6,7 +6,7 @@ description: Master Jekyll static site generation from scratch. Learn installati
   databases or servers.
 excerpt: Build fast, secure static websites with Jekyll - no databases or servers
   required.
-preview: images/previews/jekyll-fundamentals-static-site-generation-descrip.png
+preview: /images/previews/jekyll-fundamentals-static-site-generation-descrip.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'

@@ -2,7 +2,7 @@
 title: "VS Code for Neuroscience: Complete Setup Guide for macOS"
 description: Complete VS Code setup guide for neuroscience researchers with PsychoPy, Spyder, and computational modeling tools on macOS
 date: 2025-07-21T23:30:21.000Z
-preview: Master VS Code setup for neuroscience research with Python, PsychoPy, Jupyter, and decision-making computational models
+preview: /images/favicon_gpt_computer_retro.png
 tags:
     - psychopy
     - neuroscience

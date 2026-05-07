@@ -966,9 +966,8 @@ process_file() {
     safe_filename="${safe_filename:0:50}"  # Limit length
     
     local output_file="$PROJECT_ROOT/$OUTPUT_DIR/${safe_filename}.png"
-    # Preview path uses relative 'images/previews/' prefix (no leading / or /assets/)
-    # Actual file lives in assets/images/previews/ on disk
-    local preview_path="images/previews/${safe_filename}.png"
+    # Preview path should be absolute from site root; physical file lives in assets/images/previews/.
+    local preview_path="/images/previews/${safe_filename}.png"
     
     # Extract content for prompt generation
     local content

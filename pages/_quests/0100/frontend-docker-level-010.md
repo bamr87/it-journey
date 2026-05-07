@@ -7,7 +7,7 @@ description: Integrate Bootstrap 5 CSS framework into your Docker-containerized 
 excerpt: Integrate Bootstrap 5 into your Docker-containerized Jekyll site for responsive,
   professional styling
 snippet: Style your Jekyll site with Bootstrap 5 in a containerized environment
-preview: images/previews/level-010-frontend-docker.png
+preview: /images/previews/level-010-frontend-docker.png
 date: 2024-05-28T15:23:32.000Z
 lastmod: 2024-05-28 04:25:00.957000+00:00
 level: '0100'

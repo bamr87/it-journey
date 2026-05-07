@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Quest covering planting seeds.
 excerpt: null
 snippet: null
-preview: images/previews/planting-seeds.png
+preview: /images/previews/planting-seeds.png
 date: 2025-02-05T14:08:47.000Z
 lastmod: null
 level: '0010'

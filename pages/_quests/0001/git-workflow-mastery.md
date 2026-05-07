@@ -6,7 +6,7 @@ description: Learn Git branching, merging, and collaboration workflows. Master f
   hands-on tutorial.
 excerpt: Master Git branching strategies, merging techniques, and pull request workflows
   for effective team collaboration.
-preview: images/previews/git-workflow-mastery-branches-and-collaboration-de.png
+preview: /images/previews/git-workflow-mastery-branches-and-collaboration-de.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'

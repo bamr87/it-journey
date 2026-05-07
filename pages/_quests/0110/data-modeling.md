@@ -5,7 +5,7 @@ description: Learn data modeling techniques for designing efficient database sch
   Master ER diagrams, normalization, relationships, and data architecture best practices.
 excerpt: Design efficient database schemas with normalization, relationships, and
   ER diagrams
-preview: images/previews/data-modeling-schema-design-quest-title-relationsh.png
+preview: /images/previews/data-modeling-schema-design-quest-title-relationsh.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:07:55+00:00
 level: '0110'

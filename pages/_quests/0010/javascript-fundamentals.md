@@ -6,7 +6,7 @@ description: Learn JavaScript essentials for web interactivity. Master DOM manip
   examples.
 excerpt: Build interactive web pages with JavaScript DOM manipulation, events, and
   dynamic content.
-preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
+preview: /images/previews/javascript-fundamentals-interactive-web-elements-d.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'

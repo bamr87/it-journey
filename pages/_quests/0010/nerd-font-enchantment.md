@@ -9,7 +9,7 @@ excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your termi
   Code integration.
 snippet: Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual
   themes on any platform
-preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
+preview: /images/previews/nerd-font-enchantment-terminal-icon-mastery.png
 date: 2025-09-03T22:19:06.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'

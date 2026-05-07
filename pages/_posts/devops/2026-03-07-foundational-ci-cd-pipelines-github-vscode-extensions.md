@@ -30,7 +30,7 @@ keywords:
     - automated testing
     - node.js ci pipeline
 excerpt: Build a production-ready CI/CD pipeline for a VS Code extension using GitHub Actions — from lint and test to automated marketplace publishing.
-preview: images/previews/foundational-ci-cd-pipelines-github-vscode-extensions.png
+preview: /images/previews/foundational-ci-cd-pipelines-github-vscode-extensions.png
 snippet: Ship your VS Code extension with confidence using a two-workflow CI/CD pipeline on GitHub Actions.
 difficulty: 🟡 Intermediate
 estimated_reading_time: 15-20 minutes

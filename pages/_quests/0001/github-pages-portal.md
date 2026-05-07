@@ -6,7 +6,7 @@ description: Master the art of deploying static websites using GitHub Pages, tra
 excerpt: Transform your code into a live website using GitHub Pages - the free hosting
   solution for developers.
 snippet: 'From repository to website: Deploy with GitHub Pages!'
-preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
+preview: /images/previews/the-github-pages-portal-forging-your-digital-realm.png
 date: 2025-11-15T16:34:42.000Z
 lastmod: 2025-11-15 04:27:16.771000+00:00
 level: '0001'

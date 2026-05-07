@@ -6,7 +6,7 @@ description: Learn to deploy static websites for free with GitHub Pages. Step-by
   for portfolios and projects.
 excerpt: Deploy your first website for free using GitHub Pages with custom domains
   and HTTPS.
-preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
+preview: /images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'

@@ -7,7 +7,7 @@ description: Set up a Docker-containerized Jekyll development environment. Learn
 excerpt: Build a Docker-containerized Jekyll development environment with Dockerfile
   and docker-compose configuration
 snippet: Containerize your Jekyll development workflow with Docker
-preview: images/previews/level-001-frontend-docker.png
+preview: /images/previews/level-001-frontend-docker.png
 date: 2024-05-28T15:23:32.000Z
 lastmod: 2024-05-28 04:24:59.730000+00:00
 level: '0100'

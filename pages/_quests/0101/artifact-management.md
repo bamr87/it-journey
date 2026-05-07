@@ -5,7 +5,7 @@ description: Master artifact management in CI/CD pipelines. Learn to store build
   manage dependencies, implement caching strategies, and version artifacts effectively.
 excerpt: Learn to manage build artifacts and dependencies efficiently in your CI/CD
   pipelines
-preview: images/previews/artifact-management-build-output-quest-title-depen.png
+preview: /images/previews/artifact-management-build-output-quest-title-depen.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:05:59+00:00
 level: '0101'

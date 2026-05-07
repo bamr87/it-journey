@@ -14,7 +14,6 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 CONFIG="${SCRIPT_DIR}/docs_config.yml"
 WORK_DIR="${REPO_ROOT}/work/docs-aggregator"
 OUTPUT_DIR="${REPO_ROOT}/pages/_docs"
-NAV_OUTPUT="${REPO_ROOT}/_data/navigation/docs_aggregated.yml"
 CLEAN=false
 
 # Colors
@@ -39,9 +38,8 @@ Options:
   --help          Show this help message
 
 Pipeline:
-  1. aggregate.py  — Clone repos and extract documentation files
-  2. transform.py  — Add Jekyll frontmatter, rewrite links, stage output
-  3. Navigation    — Generate sidebar navigation fragment
+    1. aggregate.py  — Clone repos and extract documentation files
+    2. transform.py  — Add Jekyll frontmatter, rewrite links, stage output
 
 Output:
   pages/_docs/<category>/<source>/   — Transformed Jekyll pages (committed)
@@ -89,8 +87,7 @@ python3 "${SCRIPT_DIR}/aggregate.py" \
 log_info "=== Step 2: Transforming to Jekyll format ==="
 python3 "${SCRIPT_DIR}/transform.py" \
     --work-dir "$WORK_DIR" \
-    --output-dir "$OUTPUT_DIR" \
-    --nav-output "$NAV_OUTPUT"
+    --output-dir "$OUTPUT_DIR"
 
 # Step 3: Summary
 log_info "=== Pipeline Complete ==="
@@ -99,10 +96,7 @@ if [[ -d "$OUTPUT_DIR" ]]; then
     log_info "Aggregated files: $file_count"
 fi
 
-if [[ -f "$NAV_OUTPUT" ]]; then
-    log_info "Navigation fragment: $NAV_OUTPUT"
-    log_warn "To integrate navigation, merge $NAV_OUTPUT into _data/navigation/docs.yml"
-fi
+log_info "Wargames pages use dynamic sidebar navigation (no static docs_aggregated.yml output)."
 
 # Cleanup temp files (keep repos for incremental updates)
 rm -rf "${WORK_DIR}/raw" 2>/dev/null || true

@@ -2,7 +2,7 @@
 title: 'Phase 6: Polish & Integration'
 description: Final phase of quest development - content filling, network linking,
   and validation
-preview: images/previews/phase-6-polish-integration.png
+preview: /images/previews/phase-6-polish-integration.png
 date: 2025-12-20T20:02:51.000Z
 lastmod: 2025-12-20
 categories:

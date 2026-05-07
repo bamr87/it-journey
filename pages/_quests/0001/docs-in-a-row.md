@@ -7,7 +7,7 @@ excerpt: Build a powerful automation system that collects, organizes, and mainta
   documentation from multiple GitHub repositories using GitHub Actions, Bash, and
   Python
 snippet: Transform scattered docs into organized knowledge with automation magic
-preview: images/previews/the-knowledge-vault-building-an-automated-document.png
+preview: /images/previews/the-knowledge-vault-building-an-automated-document.png
 date: 2025-10-04T15:52:00.000Z
 lastmod: 2025-10-03 21:57:41.816000+00:00
 level: '0001'

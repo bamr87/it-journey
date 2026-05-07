@@ -2,7 +2,7 @@
 title: "A Finance Professional's Guide to the Terminal"
 description: How finance and accounting professionals can leverage bash scripting to automate tasks, process datasets, and level up their careers — no CS degree required.
 date: 2026-02-23T12:40:05.000Z
-preview: /images/post-preview-image.png
+preview: /images/ai-erp-control.png
 tags:
     - bash
     - terminal

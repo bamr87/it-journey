@@ -5,7 +5,7 @@ description: Discover how AI automation can transform your workflow, enhancing c
   reviews, documentation, and PR summaries for a smarter coding experience.
 excerpt: null
 snippet: null
-preview: images/previews/revolutionizing-work-with-ai-automation.png
+preview: /images/previews/revolutionizing-work-with-ai-automation.png
 date: 2025-04-18T13:43:43.000Z
 lastmod: 2025-04-18 19:43:43.298000+00:00
 level: '0010'
