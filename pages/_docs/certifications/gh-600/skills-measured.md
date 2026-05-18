@@ -18,6 +18,22 @@ toc_sticky: true
 
 Each sub-skill maps to exactly one quest. Click the quest link to start practising that skill immediately.
 
+> **How to use this page:** Work through each domain in order. After reading each sub-skill, rate your confidence (1–5). Return to this page before your exam and ensure every sub-skill is ≥ 4. The [Skills Checklist](/notes/gh-600/skills-checklist/) provides a printable version.
+
+---
+
+## Exam Question Archetypes
+
+Understanding the question *type* is as important as knowing the content. GH-600 uses three primary patterns:
+
+| Archetype | Description | Example stem |
+|---|---|---|
+| **Scenario → Diagnosis** | A failing or misbehaving agent is described — identify root cause | "An agent repeatedly requests the same API endpoint. What is the most likely cause?" |
+| **Config Selection** | Choose the YAML/config that satisfies a stated constraint | "Which `permissions:` block grants the minimum privilege for an agent to open a PR?" |
+| **Best Practice** | Select the *most* appropriate design decision from four plausible options | "Which guardrail approach best preserves velocity while preventing irreversible file deletions?" |
+
+Keep these archetypes in mind as you read each sub-skill below.
+
 ---
 
 ## Domain 1 — Prepare Agent Architecture & SDLC Processes (15–20%)
@@ -192,3 +208,25 @@ Each sub-skill maps to exactly one quest. Click the quest link to start practisi
 | **Capstone** | All 6 domains | 1100 |
 
 **Coverage: 19/19 (100%)** — no gaps, no duplicates.
+
+---
+
+## Domain-by-Domain Exam Tips
+
+### Domain 1 — What to watch for
+Questions tend to be **best-practice selection**: given a scenario where an agent is "doing too much" or "acting before planning," choose the architecture fix. Know the difference between planning output (structured plan artifact) and action execution — and know what a valid "approval gate" looks like.
+
+### Domain 2 — What to watch for
+The highest-weight domain. Expect **config selection** questions (MCP server YAML, `permissions:` blocks, scope constraints) alongside **scenario → diagnosis** questions where a CI-triggered agent fails silently. Know the exact structure of an MCP tool definition and the allow-list syntax.
+
+### Domain 3 — What to watch for
+Questions often appear embedded in Domain 4 or 5 scenarios. The key pattern: an agent "forgets" a prior decision — which memory strategy would have prevented it? Understand the difference between short-term context, long-term store, and external memory, and when each is appropriate.
+
+### Domain 4 — What to watch for
+Expect **scenario → diagnosis**: a trace or log excerpt is shown, and you must classify the root cause (reasoning error vs tool misuse vs environment issue). Also expect **best-practice** questions on how to revise instructions vs tool access vs memory when a particular pattern of failure is shown.
+
+### Domain 5 — What to watch for
+Orchestration questions test whether you can distinguish *sequential*, *parallel*, and *hierarchical* patterns — and when to use each. Failure-recovery questions ask what signal indicates a stalled sub-agent vs a conflicting sub-agent, and how to respond differently.
+
+### Domain 6 — What to watch for
+The Autonomy Levels Matrix is heavily tested. Be able to **classify** an action by risk level and **select** the correct human-in-the-loop gate. Know what "least-privilege" means in the context of agent permissions and how it differs from traditional RBAC.

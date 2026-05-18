@@ -64,3 +64,56 @@ toc: true
 | `work/gh-600/` in this repo | Starter MCP server, Actions workflow, eval harness |
 | [GitHub Skills](https://skills.github.com/) | Free interactive GitHub courses |
 | [GitHub Codespaces](https://github.com/features/codespaces) | Cloud dev environment for all quests |
+
+---
+
+## Video & Talk Resources
+
+| Resource | Type | Relevant Domains |
+|---|---|---|
+| [GitHub Universe keynotes (youtube.com/@GitHub)](https://www.youtube.com/@GitHub) | Conference talks | D1–D6 |
+| [GitHub Copilot — What's new (GitHub Blog)](https://github.blog/tag/github-copilot/) | Changelog deep-dives | D1, D2 |
+| [Model Context Protocol Explained (modelcontextprotocol.io)](https://modelcontextprotocol.io/) | Spec walkthrough | D2 |
+| [GitHub Actions: CI/CD for beginners (GitHub Skills)](https://skills.github.com/) | Interactive course | D2, D5 |
+
+---
+
+## GitHub Blog Deep-Dives
+
+These posts cover real-world agentic AI patterns directly relevant to GH-600 exam domains:
+
+| Post | Domain(s) |
+|---|---|
+| [How GitHub Copilot coding agent works](https://github.blog/engineering/infrastructure/how-github-copilot-coding-agent-works/) | D1, D2 |
+| [Inside GitHub: Working with the LLMs](https://github.blog/ai-and-ml/generative-ai/inside-github-working-with-the-llms-behind-github-copilot/) | D3, D4 |
+| [The architecture of today's LLM applications](https://github.blog/ai-and-ml/generative-ai/the-architecture-of-todays-llm-applications/) | D1, D3, D5 |
+| [How to build a CI/CD pipeline with GitHub Actions in four steps](https://github.blog/enterprise-software/ci-cd/build-ci-cd-pipeline-github-actions-four-steps/) | D2, D5 |
+
+---
+
+## Exam Strategy
+
+### Scoring & Format
+
+- **700 / 1000** passing threshold
+- Expect a mix of **scenario-based questions** ("an agent produces X output — which root cause is most likely?"), **configuration questions** ("which YAML block correctly scopes the agent to a single repo?"), and **best-practice selection** ("which approach preserves least-privilege while enabling autonomous PRs?")
+- **Domain 2 (20–25%)** and **Domain 1 (15–20%)** are the highest-weight areas — prioritize if short on time
+
+### Weak-Area Triage
+
+Use the [Skills Checklist](/notes/gh-600/skills-checklist/) to identify gaps, then:
+
+1. Re-do the corresponding quest for any sub-skill below confidence
+2. Re-read the chronicle post that covers the domain
+3. Use the [Evaluation Signals Table](/notes/gh-600/evaluation-signals-table/) or [Autonomy Levels Matrix](/notes/gh-600/autonomy-levels-matrix/) reference notes to solidify decision-making frameworks
+
+### Common Mistakes to Avoid
+
+| Mistake | Better Approach |
+|---|---|
+| Skipping Domain 3 (only 10–15%) | Memory & drift are tested implicitly in D4 and D5 scenarios too |
+| Memorising commands without context | Focus on *why* a config choice matters, not just *what* the syntax is |
+| Treating the capstone as a final exam | Use it as a diagnostic two days before — there's still time to fix gaps |
+| Studying only from this repo | Cross-check with the [official Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) for language alignment |
+
+---
