@@ -1,8 +1,10 @@
 ---
 title: "The Agentic Codex: GH-600 Study Hub"
 description: "Comprehensive study guide and quest map for Microsoft Exam GH-600: Developing in Agentic AI Systems. 20 quests, 7 chronicle posts, 8 reference notes — all GitHub-native."
+excerpt: "The complete GitHub-native study track for Exam GH-600: Developing in Agentic AI Systems — 20 quests, 7 chronicles, 8 reference notes."
 permalink: /docs/certifications/gh-600/
 layout: default
+draft: false
 categories:
   - Docs
   - Certifications
@@ -14,6 +16,9 @@ tags:
   - mcp
   - certifications
   - study-guide
+keywords:
+  primary: ["gh-600", "agentic ai certification"]
+  secondary: ["github copilot coding agent", "model context protocol", "multi-agent orchestration"]
 lastmod: 2026-05-17T00:00:00.000Z
 date: 2026-05-17T00:00:00.000Z
 toc: true
@@ -192,7 +197,7 @@ graph TD
 | Note | Purpose |
 |---|---|
 | [Exam Overview & Logistics](/notes/gh-600/exam-overview/) | Scoring, scheduling, renewal |
-| [Skills Checklist (Printable)](/notes/gh-600/skills-checklist/) | All 17 sub-skills as checkboxes |
+| [Skills Checklist (Printable)](/notes/gh-600/skills-checklist/) | All 19 sub-skills as checkboxes |
 | [Copilot Coding Agent Cheatsheet](/notes/gh-600/copilot-coding-agent-cheatsheet/) | Invocation, scopes, autonomous-PR pattern |
 | [MCP Quick Reference](/notes/gh-600/mcp-quickref/) | Server config, registries, allow-list syntax |
 | [Autonomy Levels Matrix](/notes/gh-600/autonomy-levels-matrix/) | Risk classification decision table |
@@ -226,3 +231,51 @@ See the [Week-by-Week Learning Path](learning-path/) for a structured study sche
 **Domain 6 — Guardrails:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]] · [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]] · [[Trial of the Agentic Codex: The Grand Capstone]]
 
 **Reference Notes:** [[GH-600 Exam Overview]] · [[GH-600 Skills Checklist]] · [[GitHub Copilot Coding Agent Cheatsheet]] · [[MCP Quick Reference]] · [[Autonomy Levels Matrix]] · [[Evaluation Signals Table]] · [[GH-600 Glossary]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+
+---
+
+## 🚀 Getting Started
+
+**New to this track?** Follow these four steps in order:
+
+1. **Read** the [Exam Overview](/notes/gh-600/exam-overview/) (5 min) to understand format and scoring.
+2. **Self-assess** with the [Skills Checklist](/notes/gh-600/skills-checklist/) — tick off what you already know.
+3. **Pick your pace** from the [Week-by-Week Learning Path](learning-path/) (default: 6 weeks at ~7 hrs/week).
+4. **Begin** with [Q1: Initiation Rites](/quests/gh-600/agentic-sdlc-integration/) — the first quest of Domain 1.
+
+**Already comfortable with Copilot agents?** Jump to [Domain 4 — Evaluation & Tuning](#domain-4) for the deepest material.
+
+**Cramming for an upcoming exam?** Read the [Skills Measured](skills-measured/) breakdown, then attempt the [Capstone Trial](/quests/gh-600/agentic-codex-capstone-exam-trial/) as a diagnostic.
+
+---
+
+## ❓ Frequently Asked Questions
+
+**Do I need a paid GitHub Copilot subscription?**  
+Most quests work with the free Copilot trial. A small number of multi-agent and coding-agent quests benefit from an active Copilot Business or Enterprise plan but are not blocked without one.
+
+**How long does the full track take?**  
+About 40 hours of focused study spread over 6 weeks. Faster if you skip the chronicle posts; slower if you build out the optional sandbox in `work/gh-600/`.
+
+**What if the official exam updates?**  
+We track the official [GH-600 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) and refresh quests when sub-skills change. The PR that introduced this track ([#272](https://github.com/bamr87/it-journey/pull/272)) is the baseline; subsequent updates live in the repository's release notes.
+
+**Is the capstone equivalent to the real exam?**  
+No — it is a *diagnostic*, not a practice exam. It surfaces blind spots; it does not predict your score.
+
+**Can I contribute fixes or additional quests?**  
+Yes. See the contribution guidance on the [certifications hub](../) and open an issue first to align scope.
+
+---
+
+## 📜 Track Maintenance
+
+| | |
+|---|---|
+| Last reviewed | 2026-05-17 |
+| Validator status | 21/21 quests passing |
+| Mermaid rendering | Enabled on all 20 quest pages |
+| Wiki-link graph | 28 edges from hub, 2–3 per note |
+| Issue tracker label | [`cert:gh-600`](https://github.com/bamr87/it-journey/labels/cert%3Agh-600) |
+
+Spotted a stale link or outdated reference? Open an issue with the `cert:gh-600` label so it joins the next maintenance pass.

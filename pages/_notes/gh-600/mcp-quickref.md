@@ -6,6 +6,8 @@ layout: default
 permalink: /notes/gh-600/mcp-quickref/
 author: IT-Journey Team
 tags: [gh-600, mcp, model-context-protocol, quick-reference]
+categories:
+  - Notes
 lastmod: 2026-05-17T00:00:00.000Z
 ---
 
@@ -38,6 +40,9 @@ npx @modelcontextprotocol/server-github
 ```
 
 ### User Settings (`settings.json` or Copilot MCP settings)
+
+> **Never** commit a literal PAT (`ghp_...`) into `settings.json`. Use a VS Code input prompt (‘`${input:github-token}`‘), an environment variable (‘`${env:GITHUB_TOKEN}`‘), or a secret manager. The example below shows the safe environment-variable pattern.
+
 ```json
 {
   "github.copilot.chat.mcp.servers": {
@@ -45,7 +50,7 @@ npx @modelcontextprotocol/server-github
       "command": "npx",
       "args": ["@modelcontextprotocol/server-github"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_..."
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_TOKEN}"
       }
     }
   }

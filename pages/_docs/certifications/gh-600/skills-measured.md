@@ -1,12 +1,13 @@
 ---
 title: "GH-600 Skills Measured — Full Breakdown"
-description: "Complete breakdown of all 6 domains and 17 sub-skills for GH-600, each linked to its corresponding quest."
+description: "Complete breakdown of all 6 domains and 19 sub-skills for GH-600, each linked to its corresponding quest."
 permalink: /docs/certifications/gh-600/skills-measured/
 layout: default
 categories: [Docs, Certifications, Agentic-AI]
 tags: [gh-600, agentic-ai, skills-measured, certifications]
 lastmod: 2026-05-17T00:00:00.000Z
 date: 2026-05-17T00:00:00.000Z
+author: IT-Journey Team
 toc: true
 toc_sticky: true
 ---

@@ -1,6 +1,8 @@
 ---
 title: "Agent Guardrails and Responsible Autonomy: The GH-600 View"
-description: "How to design responsible agentic AI systems using autonomy levels, GitHub guardrails, and human-in-the-loop checkpoints — the practical implementation of GH-600 Domain 6."
+description: "Design responsible agents using autonomy levels, GitHub guardrails, and human-in-the-loop checkpoints — GH-600 Domain 6 in practice."
+permalink: /posts/agent-guardrails-and-responsible-autonomy/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/agent-guardrails-and-responsible-autonomy.png
 sub-title: "Domain 6 deep-dive for GH-600 candidates"

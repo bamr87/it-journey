@@ -181,9 +181,15 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const pr = context.payload.pull_request;
+            // Resolve the PR for both 'pull_request' and 'workflow_run' triggers.
+            // workflow_run fires after a workflow completes; payload.pull_request is
+            // null, but workflow_run.pull_requests carries the associated PR(s).
+            let pr = context.payload.pull_request;
+            if (!pr && context.payload.workflow_run) {
+              pr = context.payload.workflow_run.pull_requests?.[0];
+            }
             if (!pr) {
-              console.log('Not a PR event — skipping');
+              console.log('No PR associated with this event — skipping');
               return;
             }
             

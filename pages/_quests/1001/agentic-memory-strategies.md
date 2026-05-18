@@ -212,11 +212,14 @@ jobs:
           EOF
 
       - name: Save session memory
-        uses: actions/cache/save@v4
+        uses: actions/upload-artifact@v4
         with:
+          name: agent-session-${{ github.event.issue.number }}-${{ github.run_id }}
           path: .agent-memory/session.json
-          key: agent-session-${{ github.event.issue.number }}
+          retention-days: 1
 ```
+
+> **Why upload-artifact instead of `actions/cache/save`?** GitHub Actions caches are **immutable** — once a key is written, later writes for the same key are silently ignored, so the agent can restore stale session memory. For *mutable* same-run handoff, use upload/download artifacts (per-run). For *cross-run* mutable state, write to a repo file in a PR, or post the JSON as an issue comment and re-read it.
 
 ---
 

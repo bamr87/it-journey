@@ -1,6 +1,8 @@
 ---
 title: "MCP Servers and Agent Tooling in Practice"
-description: "A practical guide to the Model Context Protocol and the GitHub-native tooling ecosystem for agentic AI — what MCP servers do, how to configure them, and how they fit into the GH-600 exam."
+description: "A practical guide to the Model Context Protocol and GitHub-native agent tooling — what MCP servers do and how GH-600 tests them."
+permalink: /posts/mcp-servers-and-agent-tooling-in-practice/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/mcp-servers-and-agent-tooling-in-practice.png
 sub-title: "Domain 2 deep-dive for GH-600 candidates"

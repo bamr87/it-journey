@@ -1,6 +1,8 @@
 ---
 title: "Launching the Agentic Codex: A GH-600 Learning Track for the IT-Journey"
-description: "Introducing the Agentic Codex — a 20-quest learning track covering all six domains of the GH-600 GitHub Copilot certification. Here's what we built, why we built it, and how to begin."
+description: "The Agentic Codex — a 20-quest learning track covering all six domains of the GH-600 GitHub Copilot certification, now open."
+permalink: /posts/launching-agentic-codex-gh-600-track/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/launching-agentic-codex-gh-600-track.png
 sub-title: "The first comprehensive quest-based path to GitHub Copilot certification"

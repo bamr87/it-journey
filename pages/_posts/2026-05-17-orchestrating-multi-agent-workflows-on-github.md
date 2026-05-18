@@ -1,6 +1,8 @@
 ---
 title: "Orchestrating Multi-Agent Workflows on GitHub"
-description: "How to design, observe, and operate multi-agent systems using GitHub Actions — covering fan-out patterns, correlation tracking, failure recovery, and the agent lifecycle. GH-600 Domain 5."
+description: "Design and operate multi-agent systems on GitHub Actions — fan-out, correlation, failure recovery, and lifecycle. GH-600 Domain 5."
+permalink: /posts/orchestrating-multi-agent-workflows-on-github/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/orchestrating-multi-agent-workflows-on-github.png
 sub-title: "Domain 5 deep-dive for GH-600 candidates"

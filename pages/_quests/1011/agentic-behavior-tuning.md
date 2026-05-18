@@ -170,7 +170,7 @@ Based on common agent failure patterns, here are the most impactful instruction 
 # Iteration 1 — Branch Naming
 
 ## Observation (from RCA)
-Agent created a branch called `fix-the-thing` — untraceble to the original issue.
+Agent created a branch called `fix-the-thing` — untraceable to the original issue.
 
 ## Hypothesis
 Adding explicit branch naming instructions to AGENTS.md will fix this.

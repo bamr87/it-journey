@@ -204,7 +204,7 @@ The failure point is usually one of:
 
 > **Exercise 12.3:** Update your AGENTS.md based on your RCA recommendation.
 
-```markdown
+````markdown
 # In AGENTS.md — add explicit branch creation protocol
 
 ## Branch Creation Protocol
@@ -225,7 +225,7 @@ git push -u origin "$BRANCH_NAME"
 
 Never commit directly to `main` or any protected branch.
 If a push to a protected branch is rejected, STOP immediately and escalate.
-```
+````
 
 ---
 

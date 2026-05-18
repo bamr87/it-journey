@@ -6,6 +6,8 @@ layout: default
 permalink: /notes/gh-600/copilot-coding-agent-cheatsheet/
 author: IT-Journey Team
 tags: [gh-600, copilot, coding-agent, quick-reference]
+categories:
+  - Notes
 lastmod: 2026-05-17T00:00:00.000Z
 ---
 

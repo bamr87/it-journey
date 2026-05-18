@@ -1,6 +1,8 @@
 ---
 title: "Evaluating and Tuning Agents with GitHub Signals"
-description: "How to define machine-verifiable success criteria, debug agent failures with root cause analysis, and iteratively improve agent behaviour using GitHub-native evaluation signals — GH-600 Domain 4."
+description: "Define machine-verifiable success criteria, debug agent failures, and tune behaviour using GitHub-native signals — GH-600 Domain 4."
+permalink: /posts/evaluating-and-tuning-agents-with-github-signals/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/evaluating-and-tuning-agents-with-github-signals.png
 sub-title: "Domain 4 deep-dive for GH-600 candidates"

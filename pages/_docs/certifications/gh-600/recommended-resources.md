@@ -5,6 +5,8 @@ permalink: /docs/certifications/gh-600/recommended-resources/
 layout: default
 categories: [Docs, Certifications, Agentic-AI]
 tags: [gh-600, agentic-ai, resources, microsoft-learn, mcp]
+author: IT-Journey Team
+draft: false
 lastmod: 2026-05-17T00:00:00.000Z
 date: 2026-05-17T00:00:00.000Z
 toc: true
@@ -21,9 +23,11 @@ toc: true
 | Resource | Type | Relevant Domains |
 |---|---|---|
 | [GH-600 Study Guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) | Study Guide | All |
-| [Foundations of Agentic AI in GitHub](https://learn.microsoft.com/training/) | Learning Path | D1, D2 |
-| [Designing Agent Architecture and SDLC Integration](https://learn.microsoft.com/training/) | Module | D1 |
-| [Tooling, MCP, and Agent Execution Environments](https://learn.microsoft.com/training/) | Module | D2 |
+| [GH-600 Exam page](https://learn.microsoft.com/en-us/credentials/certifications/exams/gh-600/) | Exam Overview | All |
+| [Microsoft Learn — GitHub Copilot collection](https://learn.microsoft.com/en-us/training/browse/?products=github-copilot) | Catalog | D1–D6 |
+| [Microsoft Learn — Agentic AI search](https://learn.microsoft.com/en-us/training/browse/?terms=agentic) | Catalog | D1, D3, D5 |
+
+> **Note:** Microsoft Learn does not yet ship a dedicated "GH-600 learning path." The two catalog links above are the closest official curation. We mirror the same material in the GH-600 quest line and chronicle posts below — use those as the structured path and refer to Microsoft Learn when you want the official source on a single concept.
 
 ## GitHub Documentation
 

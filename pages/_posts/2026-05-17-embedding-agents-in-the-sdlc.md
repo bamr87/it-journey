@@ -1,6 +1,8 @@
 ---
 title: "Embedding Agents in the SDLC: From Tool to Collaborator"
-description: "How GitHub Copilot agents change the way software development works — and how to design an SDLC where agents have bounded, observable roles at each stage."
+description: "Design an SDLC where GitHub Copilot agents have bounded, observable roles at each stage — from planning through deploy."
+permalink: /posts/embedding-agents-in-the-sdlc/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/embedding-agents-in-the-sdlc.png
 sub-title: "Domain 1 deep-dive for GH-600 candidates"

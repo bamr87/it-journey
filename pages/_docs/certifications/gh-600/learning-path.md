@@ -5,6 +5,8 @@ permalink: /docs/certifications/gh-600/learning-path/
 layout: default
 categories: [Docs, Certifications, Agentic-AI]
 tags: [gh-600, agentic-ai, learning-path, study-plan]
+author: IT-Journey Team
+draft: false
 lastmod: 2026-05-17T00:00:00.000Z
 date: 2026-05-17T00:00:00.000Z
 toc: true

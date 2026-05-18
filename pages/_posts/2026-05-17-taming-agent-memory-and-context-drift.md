@@ -1,6 +1,8 @@
 ---
 title: "Taming Agent Memory and Context Drift"
-description: "A practical guide to the three tiers of agent memory, how state persistence works in GitHub Actions, and how to detect and recover from context drift — covering GH-600 Domain 3."
+description: "The three tiers of agent memory, how to persist state in GitHub Actions, and how to detect and recover from context drift. GH-600 Domain 3."
+permalink: /posts/taming-agent-memory-and-context-drift/
+draft: false
 date: 2026-05-17T00:00:00.000Z
 preview: images/previews/taming-agent-memory-and-context-drift.png
 sub-title: "Domain 3 deep-dive for GH-600 candidates"
