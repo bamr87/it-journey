@@ -9,6 +9,20 @@
       url: /docs/
     - title: Frontmatter Preview
       url: /docs/frontmatter-preview-solution/
+- title: Certifications
+  url: /docs/certifications/
+  icon: bi-award
+  children:
+    - title: Certifications Index
+      url: /docs/certifications/
+    - title: "GH-600: Agentic AI Systems"
+      url: /docs/certifications/gh-600/
+    - title: GH-600 Skills Measured
+      url: /docs/certifications/gh-600/skills-measured/
+    - title: GH-600 Learning Path
+      url: /docs/certifications/gh-600/learning-path/
+    - title: GH-600 Resources
+      url: /docs/certifications/gh-600/recommended-resources/
 - title: Contributing
   url: /docs/contributing/contributing-developer/
   icon: bi-people

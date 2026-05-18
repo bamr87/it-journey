@@ -3,6 +3,9 @@
 remote_theme             : "bamr87/zer0-mistakes"
 # theme                  : "jekyll-theme-zer0"
 
+# Allow future-dated posts to be rendered in development
+future: true
+
 # Performance: enable incremental builds for development
 incremental: true
 

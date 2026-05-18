@@ -238,7 +238,7 @@ Quickstart guides like this one use the `default` layout with a `quickstart` sid
 pages/_notebooks/
 ```
 
-Jupyter notebooks converted to Markdown. By default they use the `default` layout (via `_config.yml`), but individual notebooks can set `layout: journals` in their frontmatter to use the journals layout instead.
+Jupyter notebooks converted to Markdown. By default they use the `default` layout (via `_config.yml`), but individual notebooks can set `layout: article` in their frontmatter to use the journals layout instead.
 
 ### Notes
 
