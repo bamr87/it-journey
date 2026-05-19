@@ -1,8 +1,8 @@
 ---
-title: Learning Resources Library
+title: IT-Journey Learning Resources Library
 author: Amr Abdel Eissa
 permalink: /docs/
-description: Reference documentation and learning resources for tools and technologies used in IT-Journey
+description: Comprehensive reference documentation and learning resources for tools and technologies used throughout the IT-Journey educational platform.
 excerpt: Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey.
 categories:
     - docs
