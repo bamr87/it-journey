@@ -1,8 +1,8 @@
 ---
 title: "Deploy Django on AWS Lambda with SAM: A Step-by-Step Guide"
-description: Learn how to deploy a serverless Django application on AWS Lambda using the Serverless Application Model (SAM).
-author: null
-excerpt: null
+description: Learn how to deploy a serverless Django application on AWS Lambda using the Serverless Application Model (SAM), with infrastructure-as-code templates.
+author: bamr87
+excerpt: Step-by-step guide to packaging and deploying Django on AWS Lambda using SAM templates, including API Gateway, VPC, and RDS configuration.
 date: 2024-12-03T10:42:33.000Z
 lastmod: 2024-10-14T15:53:39.822Z
 draft: true
@@ -16,6 +16,12 @@ categories:
     - Serverless
     - Django
     - AWS
+keywords:
+  - deploy django aws lambda
+  - aws sam django serverless
+  - serverless application model django
+  - django lambda deployment guide
+  - aws lambda python django
 meta: null
 snippet: null
 slug: null

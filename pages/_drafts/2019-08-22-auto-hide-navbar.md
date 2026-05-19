@@ -1,6 +1,6 @@
 ---
-title: Auto Hide Navbar
-description: How to update the navbar HTML file to automatically hide while scrolling down and reappear when scrolling up.
+title: "Auto Hide Navbar: Dynamic Scroll Detection"
+description: How to update the navbar HTML file to automatically hide while scrolling down and reappear when scrolling up using JavaScript and CSS.
 author: Github Copilot
 excerpt: 'To achieve this, you will need to use JavaScript along with CSS. Here''s a step-by-step plan:'
 date: 2024-03-07 00:39:52+00:00
@@ -8,8 +8,18 @@ lastmod: 2024-03-06 23:56:19.751000+00:00
 draft: true
 tags:
 - feature
+- javascript
+- css
+- navbar
+- ux
 categories:
 - Web Development
+keywords:
+  - auto hide navbar on scroll
+  - hide navbar scrolling down
+  - javascript scroll navbar
+  - responsive navbar behavior
+  - navbar scroll detection
 meta: null
 snippet: null
 slug: auto-hide-navbar

@@ -1,17 +1,27 @@
 ---
-title: Searchbar and sitemaping
-description: 'bamr87: add the page excerpt, page tags, absolute url, and author as new columns'
+title: "Searchbar and Sitemapping in Jekyll: A Complete Guide"
+description: Add a search bar and sitemap to your Jekyll site, including page excerpts, tags, absolute URLs, and author columns for a fully indexed site directory.
 date: 2024-05-23 22:35:18+00:00
 preview: null
 draft: true
-tags: []
+tags:
+  - jekyll
+  - search
+  - sitemap
+  - liquid
+  - navigation
 categories:
 - Web Development
 sub-title: null
 excerpt: Chat with GitHub Copilot to add a search bar and sitemap to your Jekyll site
 snippet: null
 author: bamr87
-keywords: {}
+keywords:
+  - jekyll search bar implementation
+  - jekyll sitemap generation
+  - jekyll site index with search
+  - liquid template sitemap jekyll
+  - jekyll searchable content
 lastmod: 2024-05-24 03:19:52.363000+00:00
 slug: null
 permalink: null

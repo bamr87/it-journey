@@ -1,14 +1,24 @@
 ---
-title: dual boot win linux
-author: 
-excerpt: 
-description: 
-snippet: 
+title: "Dual Boot Windows and Linux: Setup Guide"
+author: bamr87
+excerpt: A step-by-step guide to setting up a dual boot system with Windows and Linux, including partitioning and bootloader configuration.
+description: Learn how to configure a dual boot environment with Windows and Linux, including installing VS Code on Linux and managing the bootloader for seamless switching.
+snippet: null
 categories:
-  - posts
+  - System Administration
 tags:
-  - article
-meta: 
+  - dual-boot
+  - windows
+  - linux
+  - bootloader
+  - setup
+keywords:
+  - dual boot windows linux
+  - install linux alongside windows
+  - linux windows bootloader
+  - ubuntu windows dual boot
+  - dual boot setup guide
+meta: null
 draft: true
 lastmod: 2022-03-07T00:48:22.406Z
 section: System Administration
