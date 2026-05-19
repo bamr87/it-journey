@@ -1,12 +1,29 @@
 ---
 title: Level 0000 - Foundation & Init World
 description: Your starting point in the IT-Journey. Character creation, OS selection, terminal basics, and first steps into the digital realm
+author: IT-Journey Team
 preview: images/previews/level-0000-foundation-init-world.png
 permalink: /quests/level-0000/
 lastmod: 2026-04-25T19:27:00.230Z
 level: "0000"
 categories: quests
+tags:
+    - foundation
+    - level-0000
+    - quests
+    - terminal
+    - beginner
 date: 2025-11-29T16:46:02.000Z
+draft: false
+excerpt: Your starting point in the IT-Journey — character creation, OS selection, terminal basics, and first steps into the digital realm.
+keywords:
+    primary:
+        - level 0000
+        - foundation quests
+    secondary:
+        - terminal basics
+        - character creation
+        - init world
 ---
 
 # Level 0000: Foundation & Init World
