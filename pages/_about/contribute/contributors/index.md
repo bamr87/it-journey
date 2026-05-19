@@ -64,9 +64,9 @@ Welcome to the IT-Journey Contributor Guild Hall. Every contributor earns an RPG
     {% else %}{% assign tier_icon = "🌱" %}
   {% endcase %}
 
-<div class="contributor-card contributor-card--{{ p.class | downcase | default: 'warrior' }}" style="margin-bottom: 1.5rem; {% if p.banner_color %}--contributor-accent: {{ p.banner_color }};{% endif %}">
+<div class="contributor-card contributor-card--{{ p.class | downcase | default: 'warrior' }} contributor-card--compact" style="{% if p.banner_color %}--contributor-accent: {{ p.banner_color }};{% endif %}">
   <div class="contributor-card__banner" style="height: 6px;"></div>
-  <div class="contributor-card__body" style="padding: 1rem;">
+  <div class="contributor-card__body" style="padding: 1rem; margin-top: 0;">
     <div style="display: flex; align-items: center; gap: 1rem;">
       <div class="contributor-card__avatar-wrapper" style="flex-shrink: 0;">
         <img class="contributor-card__avatar" src="{{ avatar_url }}" alt="{{ p.display_name }}" style="width: 64px; height: 64px;">
@@ -122,9 +122,9 @@ These AI agents assist in building, reviewing, and maintaining IT-Journey conten
     {% else %}{% assign ai_class_icon = "🤖" %}
   {% endcase %}
 
-<div class="contributor-card contributor-card--{{ p.class | downcase | default: 'bard' }}" style="margin-bottom: 1.5rem; {% if p.banner_color %}--contributor-accent: {{ p.banner_color }};{% endif %}">
+<div class="contributor-card contributor-card--{{ p.class | downcase | default: 'bard' }} contributor-card--compact" style="{% if p.banner_color %}--contributor-accent: {{ p.banner_color }};{% endif %}">
   <div class="contributor-card__banner" style="height: 6px;"></div>
-  <div class="contributor-card__body" style="padding: 1rem;">
+  <div class="contributor-card__body" style="padding: 1rem; margin-top: 0;">
     <div style="display: flex; align-items: center; gap: 1rem;">
       <div class="contributor-card__avatar-wrapper" style="flex-shrink: 0;">
         <img class="contributor-card__avatar" src="{{ ai_avatar }}" alt="{{ p.display_name }}" style="width: 64px; height: 64px;">

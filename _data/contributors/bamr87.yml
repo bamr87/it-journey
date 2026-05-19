@@ -4,7 +4,7 @@
 # Fields under `stats`, `achievements`, and `level` are auto-generated
 # by the contributor stats generator and overwritten on each CI run.
 #
-# Generated at: 2026-05-19T02:39:23+0000
+# Generated at: 2026-05-18T20:40:12-0600
 
 ---
 profile:
@@ -56,9 +56,9 @@ stats:
     count: 2
   - name: Quests
     count: 2
-  - name: humor
+  - name: Music
     count: 1
-  - name: tech
+  - name: Resources
     count: 1
   contribution_calendar:
   - 0

@@ -273,6 +273,9 @@ These mistakes have each generated dedicated corrective PRs — do not repeat th
 5. **Update `lastmod` on every meaningful edit** (this is enforced by the README-First / README-Last principle below).
 6. **Do not link from `pages/_docs/` to `../../docs/...`.** The repo's `docs/` directory is excluded from Jekyll processing (`_config.yml` exclude list); use a full GitHub URL instead.
 7. **Trim long descriptions by removing words, not by adding ellipses or cutting mid-sentence.** Aim for the 120–155 char optimal band.
+8. **Posts linked from non-post content need an explicit `permalink:` override.** The default in `_config.yml` is `/:collection/:year/:month/:day/:slug/`, so a quest or doc that links to `/posts/<slug>/` will 404 unless the post's frontmatter sets `permalink: /posts/<slug>/` (see PR #272, where 7 chronicle posts broke 15+ cross-references).
+9. **Never commit literal secret prefixes in code examples.** Strings starting with `ghp_`, `gho_`, `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`, etc. trigger reviewer + scanner alerts. Always show env-var or input-prompt placeholders instead: `"${env:GITHUB_TOKEN}"`, `"${input:openai-key}"` (see PR #272, `pages/_notes/gh-600/mcp-quickref.md`).
+10. **Nested fenced code blocks need a longer outer fence.** If an example contains an inner ```` ```bash ```` block, the outer fence must be at least one backtick longer (4 backticks) — otherwise the inner closing fence terminates the outer block and the rest renders as prose (see PR #272, `pages/_quests/1010/agentic-failure-root-cause-analysis.md`).
 
 ### 🔁 Closing the Loop
 

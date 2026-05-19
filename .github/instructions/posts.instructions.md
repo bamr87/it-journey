@@ -1,6 +1,6 @@
 ---
 applyTo: 'pages/_posts/**/*.md'
-date: 2025-08-25T23:07:01.000Z
+date: 2026-05-18T00:00:00.000Z
 
 ---
 
@@ -166,7 +166,7 @@ keywords:
         - tool-categories
         - methodology-keywords
 lastmod: YYYY-MM-DDTHH:MM:SS.000Z
-permalink: /posts/descriptive-url-slug/
+permalink: /posts/descriptive-url-slug/   # REQUIRED whenever the post is linked from quests, docs, or notes — _config.yml's default post permalink is date-based and date-less links 404 without this override (see PR #272)
 attachments: ""
 comments: true
 difficulty: "🟢 Beginner | 🟡 Intermediate | 🔴 Advanced | ⚫ Expert"
