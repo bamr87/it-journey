@@ -1,16 +1,8 @@
 ---
-name: "Expand Content"
-description: "Expand content with detailed explanations, multi-platform code examples, and hands-on exercises"
-version: "1.0.0"
-category: "content-creation"
-inputs:
-  - outline
-  - target_audience
-outputs:
-  - expanded_content
-  - code_examples
+mode: agent
+description: "Expand an article outline with multi-platform code examples, explanations, and hands-on exercises"
 date: 2025-11-22T16:10:21.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Expand Content

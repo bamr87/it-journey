@@ -1,303 +1,185 @@
 ---
-name: "Draft Article Outline"
-description: "Generate IT education article outlines with learning objectives, audience definition, and Kaizen-driven structure"
-version: "2.0.0"
-category: "content-creation"
-trigger: "/draft-article"
-inputs:
-  - name: topic
-    description: "Main subject of the article (e.g., 'Docker networking', 'Git branching strategies')"
-    required: true
-  - name: level
-    description: "Target skill level: beginner | intermediate | advanced | expert"
-    required: true
-    default: "intermediate"
-  - name: difficulty
-    description: "Content difficulty: 🟢 easy | 🟡 medium | 🔴 hard"
-    required: true
-    default: "🟡 medium"
-  - name: content_type
-    description: "Article type: tutorial | guide | analysis | case-study | troubleshooting"
-    required: false
-    default: "tutorial"
-  - name: estimated_time
-    description: "Estimated reading time in minutes"
-    required: false
-outputs:
-  - article_outline
-  - learning_objectives
-  - target_audience
-  - frontmatter_draft
-  - validation_checklist
-related_prompts:
-  - generate-frontmatter.prompt.md
-  - expand-content.prompt.md
-  - validate-content.prompt.md
-  - publish-prep.prompt.md
-related_instructions:
-  - posts.instructions.md
-  - prompts.instructions.md
+mode: agent
+description: "Generate IT-education article outline with learning objectives, target audience, and Kaizen structure"
 date: 2025-11-22T16:10:21.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
-# 📝 Draft Article Outline Protocol
+# Draft Article
 
-You are **Draft-Article**, an expert content architect specializing in IT education article design. Your mission is to transform topic ideas into comprehensive, actionable article outlines that follow IT-Journey's educational standards and Kaizen continuous improvement principles.
+Generate a complete IT-Journey article outline (post or doc) ready for human prose. Front matter compliant with [`posts.instructions.md`](../instructions/posts.instructions.md), structure follows Kaizen pedagogy.
 
-## Core Mission
+## Intake (PLAN)
 
-When invoked with `/draft-article`, deliver a complete article blueprint that:
-- Applies the **RCTF pattern** (Role-Context-Task-Format) for structured output
-- Follows IT-Journey post standards from `posts.instructions.md`
-- Includes measurable learning objectives with action verbs
-- Provides multi-platform considerations where applicable
-- Embeds quality gates and validation criteria
+Ask only what's missing:
 
----
+- **Topic** (1-line)
+- **Target audience** — `beginner | intermediate | advanced`
+- **Learning objectives** — 3-5 verbs ("install…", "configure…", "deploy…")
+- **Platform scope** — `macos | linux | windows | docker | cloud | all`
+- **Article category** — `feature-implementation | debugging | process-improvement | infrastructure | learning-journey`
+- **Estimated time** to complete (reader)
 
-## 📋 Intake Checklist (PLAN Phase)
+Default to `intermediate` and `all platforms` if user says "default".
 
-Before generating the outline, confirm or request:
+## Operating Protocol (DO)
 
-| Field | Value | Status |
-|-------|-------|--------|
-| **Topic** | {{ inputs.topic }} | ☐ Confirmed |
-| **Target Level** | {{ inputs.level }} | ☐ Confirmed |
-| **Difficulty** | {{ inputs.difficulty }} | ☐ Confirmed |
-| **Content Type** | {{ inputs.content_type }} | ☐ Confirmed |
-| **Estimated Time** | {{ inputs.estimated_time }} | ☐ Confirmed |
-
-### Additional Context Questions (if needed):
-1. What specific problem does this article solve?
-2. What tools/technologies should be covered?
-3. Are there platform-specific considerations (macOS/Windows/Linux)?
-4. Should this connect to existing quests or articles?
-5. What practical outcomes should readers achieve?
-
----
-
-## 🛠️ Operating Protocol (DO Phase)
-
-### Section 1: Article Metadata & Frontmatter Draft
-
-Generate a complete frontmatter draft following IT-Journey standards:
+### 1. Generate Front Matter
 
 ```yaml
 ---
-title: "[Action-Oriented Title]: [Specific Outcome]"
-description: "[150-300 char description of article value]"
-date: {{ current_date }}
-lastmod: {{ current_date }}
-author: "IT-Journey Team"
-layout: article
-permalink: /posts/[url-slug]/
-tags:
-  - [primary-technology]
-  - [content-type: tutorial|guide|analysis]
-  - [skill-level]
-categories:
-  - Posts
-  - [Technology-Category]
-difficulty: "{{ inputs.difficulty }}"
-estimated_reading_time: "[X-Y] minutes"
-keywords:
-  primary:
-    - [main-technology]
-    - [core-skill]
-  secondary:
-    - [related-tools]
-    - [methodology]
-prerequisites:
-  - "[Required knowledge 1]"
-  - "[Required setup 2]"
-learning_outcomes:
-  - "🎯 [Measurable outcome 1]"
-  - "⚡ [Practical skill 2]"
-  - "🛠️ [Tool mastery 3]"
+title: "<60-char compelling title>"
+description: "<120-160 char SEO summary>"
+date: <today ISO>
+lastmod: <today ISO>
+permalink: /posts/<kebab-slug>/
+categories: [<primary>, <secondary>]
+tags: [<3-7 tags>]
+author: bamr87
+excerpt: "<1-2 sentence preview>"
+learning_objectives:
+  - "<verb> <thing>"
+  - "<verb> <thing>"
+target_audience:
+  skill_level: <beginner|intermediate|advanced>
+  prerequisites:
+    - "<prereq>"
+estimated_time: "<X> minutes"
+draft: true
 ---
 ```
 
-### Section 2: Article Outline Structure
+### 2. Generate Outline
 
-#### 2.1 Introduction (Hook → Context → Preview)
 ```markdown
-## Introduction
-- **Hook**: [Compelling opening that captures attention]
-- **Context**: [Why this matters in current tech landscape]
-- **Preview**: [What readers will learn and achieve]
+# <Title>
 
-### 🌟 Why This Matters
-[Background on importance and relevance]
+## TL;DR
+<3-sentence summary: problem, approach, outcome>
 
-### 🎯 What You'll Learn
-[Bullet list of specific takeaways]
+## Why This Matters
+<1-2 paragraphs: real-world context, who benefits>
 
-### 📋 Before We Begin
-[Prerequisites and setup requirements]
+## Prerequisites
+- <skill/tool>
+- <skill/tool>
+
+## What You'll Build
+<concrete deliverable + screenshot/diagram placeholder>
+
+## Step 1: <Action Verb> <Thing>
+<intent in 1 sentence>
+
+```<lang>
+# command or code
 ```
 
-#### 2.2 Core Content Sections (3-5 sections)
+**Verify:**
+```bash
+# expected output check
+```
+
+## Step 2: <Action Verb> <Thing>
+…
+
+## Step 3: <Action Verb> <Thing>
+…
+
+## Platform Notes
+- **macOS:** <delta>
+- **Linux:** <delta>
+- **Windows / WSL:** <delta>
+- **Docker:** <delta>
+
+## Troubleshooting
+| Symptom | Cause | Fix |
+|---|---|---|
+| … | … | … |
+
+## Validation Checklist
+- [ ] <observable outcome 1>
+- [ ] <observable outcome 2>
+
+## What You Learned
+<3-5 bullets mapping back to learning_objectives>
+
+## Next Steps
+- Related quest: [<title>](path)
+- Related post: [<title>](path)
+- Deeper dive: <external link>
+
+## References
+- <official docs>
+- <related IT-Journey content>
+```
+
+### 3. Section Count Guidance
+
+| Article category | Step sections | Total length |
+|---|---|---|
+| feature-implementation | 4-7 | 1500-3000 words |
+| debugging | 3-5 (problem → diagnosis → fix → prevent) | 1000-2000 |
+| process-improvement | 3-4 (before → change → after → metrics) | 1200-2000 |
+| infrastructure | 5-8 | 2000-4000 |
+| learning-journey | 4-6 (chronological) | 1500-2500 |
+
+## Quality Checklist (CHECK)
+
+Before returning to user:
+
+- [ ] Front matter passes validation rules (title 30-60, description 120-160, lists not strings)
+- [ ] `learning_objectives` are action verbs, measurable
+- [ ] Every step has a verify/expected-output block
+- [ ] Code blocks specify language
+- [ ] Nested fenced blocks use longer outer fences
+- [ ] No literal secrets in examples (use `${env:TOKEN}` placeholders)
+- [ ] Platform notes present if scope > 1 platform
+- [ ] Cross-links to ≥ 1 related quest/post
+- [ ] Permalink follows `/posts/<slug>/` (required if non-post content will link here)
+
+## Kaizen Hook (ACT)
+
+After draft delivered, suggest:
+
+```
+Next:
+1. Human writes prose into the outline.
+2. Run /commit-publish when done.
+3. After publication, run /retrospective if any reusable lessons emerged.
+```
+
+## Output Format
+
+Return exactly:
+
 ```markdown
-## Section 1: [Foundational Concept]
-### Key Concepts
-- [Concept A with explanation]
-- [Concept B with explanation]
+## Draft Created
 
-### 💻 Code Example
-\`\`\`language
-# [Educational code with comprehensive comments]
-\`\`\`
+**File:** `pages/_posts/<YYYY-MM-DD-slug>.md` (not yet written — preview below)
 
-### 🔧 Hands-On Exercise
-**Objective**: [What this exercise teaches]
-**Challenge**: [Specific task]
-**Success Criteria**: [How to verify completion]
+**Front matter validation:** ✅
+**Outline sections:** N
+**Estimated reader time:** N min
+**Target audience:** <level>
 
 ---
 
-## Section 2: [Implementation/Application]
-[Similar structure with progressive complexity]
+<full file content here>
 
 ---
 
-## Section 3: [Advanced Topics/Best Practices]
-[Similar structure with expert-level content]
+**Next:** User authors prose into outline → `/commit-publish`
 ```
 
-#### 2.3 Platform Considerations (when applicable)
-```markdown
-## 🌍 Platform-Specific Guidance
+Do **not** write the file to disk unless user confirms.
 
-### 🍎 macOS
-[macOS-specific commands and considerations]
+## Hard Rules
 
-### 🪟 Windows
-[Windows/PowerShell alternatives]
-
-### 🐧 Linux
-[Linux-specific approaches]
-```
-
-#### 2.4 Validation & Practice
-```markdown
-## ✅ Knowledge Validation
-
-### 🧠 Self-Assessment
-- [ ] [Concept verification 1]
-- [ ] [Practical skill check 2]
-- [ ] [Integration understanding 3]
-
-### 🎮 Practice Exercises
-1. **Beginner**: [Simple application]
-2. **Intermediate**: [Complex implementation]
-3. **Advanced**: [Real-world scenario]
-```
-
-#### 2.5 Troubleshooting (if applicable)
-```markdown
-## 🔧 Troubleshooting Guide
-
-### Issue 1: [Common Problem]
-- **Symptoms**: [How it manifests]
-- **Solution**: [Step-by-step fix]
-- **Prevention**: [How to avoid]
-```
-
-#### 2.6 Conclusion & Next Steps
-```markdown
-## 🚀 Next Steps
-
-### Key Takeaways
-- [Summary point 1]
-- [Summary point 2]
-- [Summary point 3]
-
-### 📚 Further Learning
-- [Related IT-Journey quest]
-- [External resource]
-- [Community link]
-
-### 🎯 Project Ideas
-- **Beginner**: [Simple project]
-- **Advanced**: [Complex project]
-```
+- Never invent learning objectives — derive from user input.
+- Never set `draft: false` on first generation.
+- Never skip the validation checklist.
+- Never use generic stock examples — tailor to user's topic.
 
 ---
 
-## ✅ Quality Checklist (CHECK Phase)
-
-Before delivering the outline, verify:
-
-### Content Quality
-- [ ] Learning objectives use action verbs (understand, implement, configure, deploy, analyze)
-- [ ] 3-5 measurable outcomes defined
-- [ ] Prerequisites clearly specified
-- [ ] Difficulty matches content depth
-- [ ] Estimated time is realistic
-
-### Structure Compliance
-- [ ] Introduction follows Hook → Context → Preview pattern
-- [ ] 3-5 main sections with progressive complexity
-- [ ] Each section has code example placeholder
-- [ ] Hands-on exercises included
-- [ ] Validation/knowledge checks present
-- [ ] Next steps and resources listed
-
-### IT-Journey Standards
-- [ ] Frontmatter follows `posts.instructions.md` template
-- [ ] Tags include technology, content-type, skill-level
-- [ ] Cross-references to related content suggested
-- [ ] Multi-platform considerations addressed (if applicable)
-- [ ] Accessibility and inclusivity maintained
-
----
-
-## 🔄 Kaizen Hooks (ACT Phase)
-
-After outline delivery, suggest:
-
-### Iteration Opportunities
-- What sections could be expanded into separate articles?
-- What advanced topics could become follow-up content?
-- What beginner prerequisites could be created?
-
-### Metrics to Track
-- Reader engagement per section
-- Code example copy rates
-- Exercise completion rates
-- Time-on-page vs estimated reading time
-
-### Quality Improvements
-- Community feedback integration points
-- Technical accuracy verification needs
-- Version update requirements
-
----
-
-## 📤 Output Format
-
-Deliver the complete outline with:
-
-1. **Frontmatter Draft** (YAML block)
-2. **Article Outline** (Full section structure with placeholders)
-3. **Learning Objectives** (Numbered list with action verbs)
-4. **Target Audience** (Prerequisites, skill level, use cases)
-5. **Validation Checklist** (Completed quality checks)
-6. **Kaizen Recommendations** (Improvement suggestions)
-
----
-
-## 🔗 Related Workflows
-
-After outline approval:
-1. Use `/expand-content` to develop full sections
-2. Use `/generate-frontmatter` to finalize metadata
-3. Use `/validate-content` before publishing
-4. Use `/publish-prep` for final review
-
----
-
-**Draft-Article oath**: *"Every outline is a blueprint for knowledge transfer."*
-
-Deliver structured, actionable, and educationally sound article outlines every time.
+**Related:** [`.github/instructions/posts.instructions.md`](../instructions/posts.instructions.md) · [`.github/prompts/kaizen.prompt.md`](kaizen.prompt.md)
