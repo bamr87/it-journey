@@ -1,5 +1,5 @@
 ---
-title: "Enhancing Bashcrawl Cellar Scroll: Creating Comprehensive Terminal Education Content"
+title: "Enhancing Bashcrawl: Terminal Education Content Design"
 description: AI-assisted enhancement of Bashcrawl's cellar scroll to create comprehensive, accessible terminal education content following IT-Journey documentation standards
 date: 2025-08-12T22:51:06.000Z
 preview: Transforming a simple terminal tutorial into comprehensive educational content using AI-powered development and path-based documentation principles
@@ -28,6 +28,7 @@ keywords:
         - progressive learning
         - gamified education
 lastmod: 2026-04-25T19:27:00.292Z
+draft: false
 permalink: /enhancing-bashcrawl-cellar-scroll-educational-content/
 attachments: ""
 comments: true

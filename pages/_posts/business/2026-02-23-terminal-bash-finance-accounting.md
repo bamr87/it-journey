@@ -1,6 +1,6 @@
 ---
-title: "From Spreadsheets to Shell Scripts: A Finance Professional's Guide to the Terminal"
-description: Discover how finance and accounting professionals can leverage the terminal and bash scripting to automate tedious tasks, process massive datasets, and level up their careers — no CS degree required.
+title: "Terminal & Bash for Finance Pros: From Spreadsheets to Shell"
+description: How finance and accounting pros can use the terminal and bash scripting to automate tasks, process datasets, and level up — no CS degree required.
 date: 2026-02-23T12:40:05.000Z
 preview: /images/post-preview-image.png
 tags:
@@ -32,6 +32,7 @@ keywords:
         - data-analysis
         - month-end-close
 lastmod: 2026-04-25T19:27:00.307Z
+draft: false
 permalink: /posts/terminal-bash-finance-accounting/
 comments: true
 difficulty: 🟢 Beginner

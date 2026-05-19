@@ -1,7 +1,7 @@
 ---
-title: Bash Cheatsheet
+title: Bash Shell Commands Quick Reference Cheatsheet
 author: bamr87
-description: Essential bash commands and scripting techniques for system administration and automation
+description: Essential bash shell commands and scripting techniques for system administration, automation, and daily command-line productivity in Linux and macOS.
 excerpt: Quick reference for bash shell commands, scripting patterns, and Linux system administration
 categories:
     - notes
