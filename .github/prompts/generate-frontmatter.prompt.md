@@ -1,16 +1,8 @@
 ---
 mode: agent
-name: "Generate Frontmatter"
-description: "Generate validated Jekyll frontmatter for IT-Journey posts, quests, docs, and READMEs — enforces the same length and field rules as CI"
-version: "2.0.0"
-category: "content-creation"
-inputs:
-  - content_type   # one of: post | quest | doc | readme | note
-  - title          # raw title intent (will be normalized to 30–60 chars)
-  - description    # raw description intent (will be normalized to 120–160 chars)
+description: "Generate Jekyll frontmatter for posts, quests, docs, and READMEs that passes IT-Journey CI validation"
 date: 2026-05-18T17:21:39.000Z
-lastmod: 2026-05-18T17:21:39.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Generate Jekyll Frontmatter (validator-aligned)

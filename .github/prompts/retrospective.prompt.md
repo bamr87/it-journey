@@ -1,15 +1,8 @@
 ---
 mode: agent
-name: "Retrospective"
-description: "Review an AI agent conversation/PR thread and fold the lessons learned back into IT-Journey instructions and prompts — incrementally, with citations, so the instruction set evolves from every session."
-version: "1.0.0"
-category: "meta-improvement"
-inputs:
-  - conversation_source   # one of: current-thread | pr:<number> | issue:<number> | path:<file>
-  - scope                 # optional: instructions | prompts | both (default: both)
+description: "Review an AI conversation/PR and fold lessons back into instructions and prompts with citations"
 date: 2026-05-18T17:21:39.000Z
-lastmod: 2026-05-18T17:21:39.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # 🔁 Retrospective: Close the AI Learning Loop

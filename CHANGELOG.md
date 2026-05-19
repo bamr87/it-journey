@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Canonical frontmatter reference** — `.github/FRONTMATTER.md` documents the required schema for `.prompt.md` and `.instructions.md` files
 - **Posts authoring standards** — `pages/_posts/README.md` documents directory layout, file naming, required frontmatter, validation tooling, link hygiene, draft lifecycle, and the cleanup metrics history (#239)
 - **Posts CI workflow** — `.github/workflows/posts-markdown-lint.yml` runs `markdownlint-cli2` on PRs touching `pages/_posts/**`; supports manual `--fix` mode (#239)
 - **Posts-scoped lint config** — `pages/_posts/.markdownlint.json` extends repo-root config, disabling MD025/MD036/MD040/MD060 and widening MD033 allowed elements for legitimate blog-content patterns (#239)
@@ -16,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **AI-generated preview images** — 11 DALL-E previews under `assets/images/previews/` for `devops/` posts that previously had empty `preview:` fields (#239)
 
 ### Changed
+- **`.github/` instructions and prompts slashed** — `.github/instructions/*.md` and `.github/prompts/*.md` compressed ~70%: removed generic AI-padding, duplicate examples, and motivational filler; kept only actionable rules and one canonical example per concept. All files tightened to ≤200 lines.
+- **`.github/instructions/DONTREADME.md` removed** — 235-line fantasy filler with no inbound references; superseded by tightened instruction set.
 - **Posts mass cleanup** (8-phase, #239):
   - Files: 124 → 86 (+ 34 stub/draft posts moved to `pages/_drafts/`)
   - Frontmatter valid: 73/124 (59%) → 86/86 (100%)

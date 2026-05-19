@@ -1,450 +1,174 @@
 ---
-applyTo: '**/*'
+applyTo: "**/*"
+description: "Guide AI agents in assisting human contributors to IT-Journey (content, code, docs, community)"
 date: 2025-11-07T16:47:19.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Contributing Instructions for AI Agents
 
-These instructions guide AI agents (like VS Code Copilot) in assisting contributors to the IT-Journey project. The goal is to make contributions easier, faster, and higher quality while maintaining human oversight and creativity.
+How AI agents help humans contribute to IT-Journey. Goal: lower friction, raise quality, preserve human authorship.
 
-## 🤖 AI Agent Role in Contributions
+## Agent Role
 
-### Primary Objectives
-- **Assist, Don't Replace**: Help humans contribute better, faster, and with higher quality
-- **Educate While Helping**: Teach contributors IT-Journey standards and best practices
-- **Maintain Quality**: Ensure contributions follow project conventions and principles
-- **Facilitate Collaboration**: Help contributors work effectively with the community
+- ✅ Detect intent, route to the right workflow, scaffold structure.
+- ✅ Validate against checklists before suggesting commit.
+- ✅ Generate commit messages and PR descriptions.
+- ❌ Never push, merge, or comment on behalf of the user.
+- ❌ Never decide product/editorial direction — surface options, let the human choose.
 
-### Assistance Boundaries
-- **AI Does**: Generate drafts, suggest improvements, validate standards, automate repetitive tasks
-- **AI Doesn't**: Make final creative decisions, bypass human review, publish without approval
-- **Human Does**: Provide creative direction, make final decisions, approve changes, engage with community
+## Contribution Type Detection
 
-## 📋 Contribution Type Detection
+Read the user's intent against this table; ask one clarifying question only if ambiguous.
 
-### Identifying Contribution Intent
+| Signal | Type | Route to |
+|---|---|---|
+| "new quest" / files under `pages/_quests/` | Quest | `quest.instructions.md` |
+| "blog post" / files under `pages/_posts/` | Post | `posts.instructions.md` |
+| "fix doc" / `README.md`, `docs/**` edit | Documentation | `README.instructions.md` |
+| "feature" / source under `scripts/`, `_includes/`, `assets/` | Code | `features.instructions.md` |
+| "fix" / single-file edit + bug report | Bug fix | `features.instructions.md` |
+| `.github/workflows/**` edit | CI/CD | `features.instructions.md` |
 
-**When a user expresses intent to contribute, determine the type:**
+## Workflows
 
-1. **Content Contribution**
-   - Keywords: "write", "create post", "add quest", "tutorial", "documentation"
-   - Guide to: quest.instructions.md, posts.instructions.md, or README.instructions.md
+### Content (Quest / Post)
 
-2. **Code Contribution**
-   - Keywords: "implement", "fix bug", "add feature", "optimize", "refactor"
-   - Guide to: features.instructions.md, appropriate language standards
+1. Confirm: title, audience level, learning objectives (or article angle).
+2. Scaffold front matter per `quest.instructions.md` or `posts.instructions.md`.
+3. Draft structure (sections + checkpoints, no filler prose).
+4. User authors the actual prose. Agent assists with examples, code, validation.
+5. Run validation (`scripts/validation/frontmatter-validator.py` etc.).
+6. Generate commit message + PR description.
 
-3. **Documentation Contribution**
-   - Keywords: "improve docs", "fix typo", "clarify", "add example"
-   - Guide to: README.instructions.md, documentation standards
+### Code (Feature / Fix)
 
-4. **Community Contribution**
-   - Keywords: "answer question", "review PR", "help", "mentor"
-   - Guide to: community engagement practices
+1. Locate relevant files — read them before suggesting changes.
+2. Confirm change scope and acceptance criteria.
+3. Branch: `feature/<slug>` or `bugfix/<slug>`.
+4. Implement minimum viable change. No unrelated refactors.
+5. Add/update tests. Run them.
+6. Update `CHANGELOG.md` and any touched READMEs (README-First/Last).
+7. Generate commit + PR.
 
-### AI Prompt for Contribution Type Detection
+### Documentation
 
-```markdown
-// Analyze user intent to identify contribution type:
-// - Content Creation: quest, post, tutorial, educational content
-// - Code Development: feature, bug fix, optimization, refactoring
-// - Documentation: README, guides, examples, clarifications
-// - Community: support, review, mentoring, discussions
-//
-// Once identified, guide the user to appropriate resources and workflows
-```
+1. Read existing doc + linked docs to understand context.
+2. Apply edits with conservative scope.
+3. Verify links, frontmatter, `lastmod`.
+4. Cross-update sibling docs if relationships changed.
 
-## 🎯 AI-Assisted Contribution Workflows
+## Pre-Submission Checklist
 
-### Workflow 1: Content Contribution (Quest/Post)
+Run before suggesting commit:
 
-**Step 1: Planning Assistance**
-```markdown
-// Prompt: "Generate a quest/post outline for [topic] that:
-// - Targets [skill level] learners
-// - Teaches [specific skills]
-// - Follows IT-Journey quest/post structure
-// - Includes proper frontmatter
-// - Maintains fantasy theme (for quests)"
-```
+- [ ] Front matter complete & valid (see file-specific instructions)
+- [ ] `lastmod` updated on every edited file
+- [ ] Links tested (`markdown-link-check` or equivalent)
+- [ ] No literal secrets (`ghp_…`, `sk-…`, `AKIA…`)
+- [ ] Tests pass (if code change)
+- [ ] CHANGELOG entry added (user-visible changes)
+- [ ] Related READMEs updated (README-First / README-Last)
+- [ ] Branch name follows convention
+- [ ] One logical change per PR
 
-**Step 2: Content Generation**
-```markdown
-// Generate initial draft following:
-// - quest.instructions.md for quests
-// - posts.instructions.md for blog posts
-// - IT-Journey educational principles (DFF, DRY, KIS, etc.)
-// - Proper frontmatter with all required fields
-// - Cross-platform compatibility notes
-```
+## Commit Message Generation
 
-**Step 3: Quality Enhancement**
-```markdown
-// Review and enhance draft for:
-// - Educational value and clear learning objectives
-// - Technical accuracy and completeness
-// - Accessibility and inclusive language
-// - Cross-references to related content
-// - Proper markdown formatting and structure
-```
-
-**Step 4: Submission Preparation**
-```markdown
-// Prepare for submission:
-// - Validate frontmatter completeness
-// - Check internal/external links
-// - Ensure proper file placement
-// - Generate commit message following conventions
-// - Create PR description with context
-```
-
-### Workflow 2: Code Contribution (Feature/Fix)
-
-**Step 1: Code Planning**
-```markdown
-// Prompt: "Plan implementation for [feature/fix] that:
-// - Follows IT-Journey coding standards
-// - Includes comprehensive error handling (DFF)
-// - Uses DRY principles for code reuse
-// - Maintains simplicity (KIS)
-// - Includes test coverage
-// - Documents changes appropriately"
-```
-
-**Step 2: Implementation Guidance**
-```markdown
-// Generate code following:
-// - Language-specific best practices
-// - IT-Journey architectural patterns
-// - Proper file organization (space.instructions.md)
-// - Container-first development principles
-// - Security and performance considerations
-```
-
-**Step 3: Testing & Validation**
-```markdown
-// Assist with:
-// - Unit test generation
-// - Integration test scenarios
-// - Cross-platform testing considerations
-// - CI/CD workflow validation
-// - Manual testing checklists
-```
-
-**Step 4: Documentation Updates**
-```markdown
-// Ensure documentation updates:
-// - README.md files affected by changes
-// - Code comments and docstrings
-// - Feature documentation if applicable
-// - CHANGELOG.md entry
-// - Migration guides if breaking changes
-```
-
-### Workflow 3: Documentation Contribution
-
-**Step 1: Documentation Assessment**
-```markdown
-// Analyze existing documentation for:
-// - Completeness and accuracy
-// - Clarity and accessibility
-// - Broken links or outdated information
-// - Missing examples or context
-// - Consistency with project standards
-```
-
-**Step 2: Improvement Suggestions**
-```markdown
-// Generate improvements that:
-// - Follow README.instructions.md standards
-// - Enhance readability and scannability
-// - Add practical examples and use cases
-// - Fix technical inaccuracies
-// - Update cross-references and links
-// - Improve accessibility
-```
-
-**Step 3: Style & Formatting**
-```markdown
-// Ensure documentation:
-// - Uses proper markdown syntax
-// - Follows heading hierarchy (H1 → H2 → H3)
-// - Includes code blocks with language specification
-// - Has descriptive link text
-// - Uses consistent terminology
-// - Maintains IT-Journey voice and style
-```
-
-## 🔍 Quality Assurance Guidelines
-
-### Pre-Submission Checklist
-
-**AI should validate before suggesting submission:**
-
-```yaml
-content_validation:
-  - [ ] Frontmatter complete and valid
-  - [ ] Educational objectives clear
-  - [ ] Technical accuracy verified
-  - [ ] Cross-platform compatibility noted
-  - [ ] Accessibility considerations met
-  - [ ] Fantasy theme consistent (for quests)
-
-code_validation:
-  - [ ] Follows language best practices
-  - [ ] Includes error handling (DFF)
-  - [ ] Reuses existing code (DRY)
-  - [ ] Maintains simplicity (KIS)
-  - [ ] Test coverage adequate
-  - [ ] Documentation updated
-
-documentation_validation:
-  - [ ] No broken links
-  - [ ] Proper markdown syntax
-  - [ ] Consistent formatting
-  - [ ] Examples tested and working
-  - [ ] Cross-references updated
-  - [ ] lastmod date current
-
-general_validation:
-  - [ ] Follows IT-Journey principles
-  - [ ] Commit message follows conventions
-  - [ ] PR description includes context
-  - [ ] Related issues referenced
-  - [ ] Community guidelines followed
-```
-
-### AI Validation Prompts
-
-**For Content:**
-```markdown
-// Validate this [quest/post] for:
-// - Educational value and learning objectives
-// - Technical accuracy and completeness
-// - Frontmatter requirements
-// - IT-Journey style and voice
-// - Cross-platform considerations
-// - Accessibility compliance
-```
-
-**For Code:**
-```markdown
-// Review this code for:
-// - IT-Journey coding standards
-// - Error handling and resilience (DFF)
-// - Code reuse and modularity (DRY)
-// - Simplicity and maintainability (KIS)
-// - Test coverage and quality
-// - Documentation completeness
-```
-
-**For Documentation:**
-```markdown
-// Check this documentation for:
-// - Accuracy and completeness
-// - Clarity and readability
-// - Proper markdown formatting
-// - Working links and references
-// - Consistent terminology
-// - Accessibility features
-```
-
-## 📝 Commit Message Guidance
-
-### Conventional Commits Format
-
-**AI should generate commit messages following:**
+Conventional Commits, scopes match repo areas:
 
 ```
-<type>(<scope>): <description>
+<type>(<scope>): <imperative subject ≤ 50>
 
-[optional body]
+<body explaining WHY, wrapped at 72>
 
-[optional footer]
+Closes #<issue>
 ```
 
-**Types:**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Formatting, no code change
-- `refactor`: Code restructuring
-- `test`: Adding/updating tests
-- `chore`: Maintenance tasks
+Types: `feat fix docs style refactor perf test chore ci`.
+Common scopes: `quest post docs scripts workflows config`.
 
-**Scopes (examples):**
-- `quest`: Quest-related changes
-- `post`: Blog post changes
-- `ci`: CI/CD workflow changes
-- `script`: Automation script changes
-- `docs`: Documentation changes
+Example:
 
-**Examples:**
-```bash
-feat(quest): add Docker fundamentals quest for beginners
-fix(ci): resolve Jekyll build timeout in GitHub Actions
-docs(readme): improve installation instructions for macOS
-refactor(script): simplify hyperlink guardian validation logic
-test(quest): add validation tests for quest metadata
+```
+feat(quest): add docker-fundamentals quest at level 1010
+
+Introduces 6-checkpoint quest covering image vs container,
+volume mounts, and compose. Links to existing devcontainer post.
+
+Closes #234
 ```
 
-### AI Commit Message Generation
-
-**Prompt template:**
-```markdown
-// Generate a conventional commit message for:
-// Changes: [summary of changes]
-// Files affected: [list of files]
-// Type: [feat/fix/docs/style/refactor/test/chore]
-// Scope: [quest/post/ci/script/docs/etc]
-// Impact: [what this changes or fixes]
-```
-
-## 🤝 Pull Request Assistance
-
-### PR Description Template
-
-**AI should help generate PR descriptions:**
+## Pull Request Template
 
 ```markdown
 ## Description
-[Clear explanation of what this PR does and why]
+<what & why in 2-3 sentences>
 
-## Type of Change
-- [ ] New feature (non-breaking change adding functionality)
-- [ ] Bug fix (non-breaking change fixing an issue)
-- [ ] Documentation update
-- [ ] Breaking change (fix or feature causing existing functionality to change)
+## Type
+- [ ] Feature
+- [ ] Fix
+- [ ] Docs
+- [ ] Refactor
+- [ ] CI
 
-## Changes Made
-- [Specific change 1]
-- [Specific change 2]
-- [Specific change 3]
+## Changes
+- <bullet 1>
+- <bullet 2>
 
 ## Related Issues
-Closes issue number (if applicable)
-Related to issue number (if applicable)
+Closes #<n>
 
 ## Testing
-- [ ] Tested locally
-- [ ] Cross-platform tested (if applicable)
-- [ ] Existing tests pass
-- [ ] New tests added (if applicable)
+- How verified
+- Commands run
 
 ## Checklist
-- [ ] Follows IT-Journey contribution guidelines
-- [ ] Code/content follows project style standards
-- [ ] Documentation updated
-- [ ] Commit messages follow conventional format
-- [ ] Self-review completed
-
-## Screenshots (if applicable)
-[Add screenshots for UI/visual changes]
-
-## Additional Context
-[Any additional information reviewers should know]
+- [ ] Tests pass
+- [ ] Docs/README updated
+- [ ] CHANGELOG updated
+- [ ] Lighthouse / a11y unchanged or improved (UI)
 ```
 
-### PR Review Assistance
+## PR Review Assistance
 
-**When assisting with PR reviews, AI should:**
+When asked to review a PR:
 
-1. **Check Standards Compliance**
-   - Validates against project guidelines
-   - Identifies style inconsistencies
-   - Checks frontmatter completeness
+1. Read changed files in full, not just the diff.
+2. Check against the relevant file-specific instructions.
+3. Surface: missing tests, broken cross-refs, frontmatter issues, security risks.
+4. Distinguish ❗ blocking from 💡 suggestion.
 
-2. **Provide Constructive Feedback**
-   - Suggest improvements with examples
-   - Explain reasoning behind suggestions
-   - Offer alternative approaches
+## Community Engagement
 
-3. **Highlight Positive Aspects**
-   - Recognize good practices
-   - Acknowledge quality contributions
-   - Encourage continued participation
+When directing users to community resources:
 
-## 🌟 Community Engagement Support
+- Link to issues for bugs, discussions for questions, PRs for proposals.
+- Reference `CODE_OF_CONDUCT.md` when behaviour issues arise.
+- Suggest "good first issue" labelled items for newcomers.
 
-### Helping Users Help Others
+## Continuous Improvement
 
-**When users want to contribute through community support:**
+After any contribution session, if a recurring friction is detected:
 
-```markdown
-// AI can assist with:
-// - Searching documentation for answers
-// - Drafting clear, helpful responses
-// - Identifying relevant resources
-// - Suggesting diagnostic steps
-// - Formulating clarifying questions
-```
+1. Suggest invoking `/retrospective` to capture the lesson.
+2. Propose a one-line update to the relevant `.instructions.md` file.
+3. Never modify instructions silently — always get user confirmation.
 
-**Community Response Template:**
-```markdown
-Hi [username]! 👋
+## Key Resources
 
-Thanks for your question about [topic].
+- `.github/copilot-instructions.md` — core principles
+- `.github/instructions/` — file-scoped rules
+- `.github/prompts/` — reusable workflows
+- `CONTRIBUTING.md` — human-facing contribution guide
+- `CODE_OF_CONDUCT.md` — community standards
 
-[Clear explanation or answer]
+## Hard Rules
 
-Here are some resources that might help:
-- [Link to relevant documentation]
-- [Link to related quest/post]
-- [Link to similar discussion]
-
-If you need more help, feel free to ask!
-
-Happy learning! 🎯
-```
-
-## 🔄 Continuous Improvement
-
-### Contribution Workflow Evolution
-
-**AI should suggest improvements when:**
-- Patterns in common issues emerge
-- Documentation gaps are identified
-- Workflow inefficiencies are noticed
-- New best practices are established
-
-**Improvement Suggestion Format:**
-```markdown
-// Observed pattern: [description]
-// Impact: [who/what is affected]
-// Suggested improvement: [proposed solution]
-// Benefits: [expected outcomes]
-// Implementation: [how to implement]
-```
-
-## 📚 Key Resources for AI Agents
-
-**Always reference these when assisting:**
-
-- **README.instructions.md** - Documentation standards
-- **quest.instructions.md** - Quest creation guidelines
-- **posts.instructions.md** - Blog post standards
-- **features.instructions.md** - Feature development pipeline
-- **space.instructions.md** - Project organization principles
-- **Main copilot-instructions.md** (in .github/) - Core principles and AI integration guidelines
-
-## 🎯 Success Metrics
-
-**Contributions assisted by AI should result in:**
-- ✅ Higher quality submissions on first attempt
-- ✅ Faster contribution process for contributors
-- ✅ Better adherence to project standards
-- ✅ More comprehensive documentation
-- ✅ Increased contributor confidence
-- ✅ Reduced reviewer workload
-- ✅ Stronger community engagement
+- Never assume push permissions — always produce a PR.
+- Never auto-resolve review threads.
+- Never edit files outside the declared scope of the PR.
+- Never bypass the pre-submission checklist.
 
 ---
 
-**Remember**: AI assists contributors, but humans make creative decisions, provide final approval, and build community relationships. The goal is to make contributing easier and more rewarding, not to automate away the human element of open-source collaboration.
-
----
-
-**Version:** 1.0.0 | **Last Modified:** 2025-11-07 | **Author:** IT-Journey Team
-
-**Usage:** VS Code Copilot instructions for guiding IT-Journey contributors through creation, code, documentation, and community contributions.
+**Related:** [`README.instructions.md`](README.instructions.md) · [`features.instructions.md`](features.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · [`posts.instructions.md`](posts.instructions.md)

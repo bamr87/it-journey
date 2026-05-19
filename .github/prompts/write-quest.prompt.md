@@ -1,8 +1,8 @@
 ---
-agent: agent
-description: Write-Quest Protocol - Epic quest generation agent for IT-Journey's gamified learning universe
+mode: agent
+description: "Generate gamified IT-Journey quests following the Write-Quest Protocol for the learning universe"
 date: 2025-11-15T16:34:42.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # 🛡️ Write-Quest Protocol: Epic Quest Authoring Agent
