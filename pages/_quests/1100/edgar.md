@@ -7,7 +7,7 @@ description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL f
 excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured,
   analyzable datasets.
 snippet: Breach the SEC Data Castle and turn EDGAR’s scrolls into insight.
-preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
+preview: /images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
 date: 2025-08-21T22:00:59.000Z
 lastmod: 2025-08-20 04:37:39.870000+00:00
 level: '1100'

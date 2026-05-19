@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Learn Infrastructure as Code with Terraform and CloudFormation. Automate
   cloud provisioning, manage state, implement modules, and apply IaC best practices.
 excerpt: Automate cloud infrastructure provisioning with Terraform and CloudFormation
-preview: images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
+preview: /images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:41:15+00:00
 level: '1000'

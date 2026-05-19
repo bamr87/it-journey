@@ -5,7 +5,7 @@ description: Master information security fundamentals including the CIA triad, d
   in depth, security controls, risk management, and foundational security concepts.
 excerpt: Learn foundational security concepts including CIA triad, defense in depth,
   and risk management
-preview: images/previews/security-fundamentals-cia-triad-quest-title-defens.png
+preview: /images/previews/security-fundamentals-cia-triad-quest-title-defens.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:44:36+00:00
 level: '1011'

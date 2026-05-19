@@ -1,7 +1,7 @@
 ---
 title: "Quick Start: Build a Jekyll Site from Scratch"
 author: bamr87
-description: End-to-end guide to establishing a development environment, implementing the zer0-mistakes Jekyll theme, and building a CMS-powered site like it-journey.dev — from first install to full deployment.
+description: End-to-end guide to setting up a development environment, implementing the zer0-mistakes theme, and building a Jekyll site from first install to deployment.
 excerpt: Step-by-step guide to building a Jekyll site with the zer0-mistakes theme — from machine setup to deployment, CI/CD, and optimization.
 permalink: /quickstart/
 categories:

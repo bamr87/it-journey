@@ -5,7 +5,7 @@ description: Learn how branches and pull requests streamline collaboration and e
   code quality in software development.
 excerpt: null
 snippet: null
-preview: images/previews/mastering-branches-and-pull-requests-for-developer.png
+preview: /images/previews/mastering-branches-and-pull-requests-for-developer.png
 date: 2025-04-18T13:43:43.000Z
 lastmod: 2025-04-18 19:24:06.552000+00:00
 level: '0010'

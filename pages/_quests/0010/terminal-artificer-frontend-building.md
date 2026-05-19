@@ -6,7 +6,7 @@ description: Master the art of crafting beautiful, interactive frontends for you
 excerpt: Transform your raw shell scripts into interactive, user-friendly tools with
   menus, inputs, and beautiful styling.
 snippet: Forge the glass interface between wizard and machine.
-preview: images/previews/terminal-artificer-forging-the-glass-interface.png
+preview: /images/previews/terminal-artificer-forging-the-glass-interface.png
 date: 2025-11-19T22:47:27.000Z
 lastmod: 2025-11-29 01:07:17.270000+00:00
 level: '0010'

@@ -1,7 +1,7 @@
 ---
 title: Linux Fundamentals
 description: Basic Linux concepts including navigation, scripting, security, and networking
-preview: images/previews/linux-fundamentals.png
+preview: /images/previews/linux-fundamentals.png
 author: bamr87
 permalink: /quests/hello-linux/linux-fundamentals/
 level: '0000'

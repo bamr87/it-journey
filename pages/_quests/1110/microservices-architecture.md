@@ -5,7 +5,7 @@ description: Master microservices architecture patterns for building scalable, m
   systems. Learn service decomposition, communication patterns, and deployment strategies.
 excerpt: Design and implement microservices architectures for scalable distributed
   systems
-preview: images/previews/microservices-architecture-descriptive-subtitle.png
+preview: /images/previews/microservices-architecture-descriptive-subtitle.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1110'

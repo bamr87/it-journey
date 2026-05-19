@@ -6,7 +6,7 @@ description: Master prompt engineering to craft optimal AI instructions. Learn s
 excerpt: Transform from novice prompter to master prompt engineer, wielding the power
   to communicate with AI systems through precisely crafted instructions
 snippet: Words become code, instructions become reality - the way of the Prompt Alchemist
-preview: images/previews/forging-the-prompt-crystal-master-ai-communication.png
+preview: /images/previews/forging-the-prompt-crystal-master-ai-communication.png
 date: 2025-11-02T18:34:05.000Z
 lastmod: 2025-11-03 01:10:01.141000+00:00
 level: '0010'

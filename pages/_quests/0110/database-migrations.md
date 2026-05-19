@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Master database migration strategies for evolving schemas safely. Learn
   migration tools, versioning, rollback strategies, and zero-downtime schema changes.
 excerpt: Implement safe database migrations with versioning and rollback strategies
-preview: images/previews/database-migrations-schema-evolution-descriptive-s.png
+preview: /images/previews/database-migrations-schema-evolution-descriptive-s.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:08:08+00:00
 level: '0110'

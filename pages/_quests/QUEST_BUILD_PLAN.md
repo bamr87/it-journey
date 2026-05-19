@@ -531,7 +531,7 @@ Examples:
 title: "[Quest Title]: [Descriptive Subtitle]"
 description: "Complete description of what the quest teaches (150-300 characters)"
 date: YYYY-MM-DDTHH:MM:SS.000Z
-preview: images/previews/quest-build-plan-complete-placeholder-quest-system.png
+preview: /images/previews/quest-build-plan-complete-placeholder-quest-system.png
 tags:
     - lvl-[BINARY]
     - [primary-technology]

@@ -7,7 +7,7 @@ excerpt: Transform from terminal novice to command-line champion through hands-o
   practice with essential shell commands and navigation techniques
 snippet: Where code meets the metal, heroes are forged in the fire of the command
   line
-preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
+preview: /images/previews/terminal-mastery-conquering-the-command-line-realm.png
 date: 2025-07-28T23:34:51.000Z
 lastmod: 2025-09-27 19:59:13.794000+00:00
 level: '0001'

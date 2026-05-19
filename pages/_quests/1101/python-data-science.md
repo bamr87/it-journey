@@ -6,7 +6,7 @@ description: Master Python data science libraries. Learn NumPy for numerical com
   notebooks for analysis workflows.
 excerpt: Master NumPy, Pandas, and Matplotlib for Python data science and analysis
   workflows
-preview: images/previews/python-for-data-science-descriptive-subtitle.png
+preview: /images/previews/python-for-data-science-descriptive-subtitle.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'

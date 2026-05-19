@@ -6,7 +6,7 @@ description: Master CSS fundamentals for beautiful web pages. Learn selectors, f
   practices.
 excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and
   grid.
-preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
+preview: /images/previews/css-styling-basics-visual-design-fundamentals-desc.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'

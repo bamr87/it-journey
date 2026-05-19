@@ -1,10 +1,10 @@
 ---
 title: "Mastering Version Control Workflows: The Grand Merge Ritual"
 author: IT-Journey Team
-description: "Master advanced Git workflows including semantic versioning, branch strategies, CI/CD automation, and pull request orchestration using real-world examples from an active open-source project."
+description: "Master advanced Git workflows: semantic versioning, branch strategies, CI/CD automation, and PR orchestration from real open-source examples."
 excerpt: null
 snippet: null
-preview: images/previews/mastering-version-control-workflows.png
+preview: /images/previews/mastering-version-control-workflows.png
 date: 2026-03-21T00:00:00.000Z
 lastmod: 2026-03-21T00:00:00.000Z
 level: "1100"
@@ -48,6 +48,7 @@ keywords:
     - conventional commits
 layout: article
 fmContentType: quest
+draft: false
 comments: false
 attachments: ""
 sub-title: "Level 1100 (12) Quest: Main Quest - Advanced Git Mastery"

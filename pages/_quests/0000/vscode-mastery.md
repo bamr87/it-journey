@@ -6,7 +6,7 @@ description: Master Visual Studio Code setup and configuration to create the ult
 excerpt: Learn to configure VS Code as your primary development weapon, mastering
   extensions, shortcuts, and specialized setups for maximum productivity
 snippet: Forge the ultimate coding weapon with VS Code mastery
-preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
+preview: /images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
 date: 2025-07-21T23:30:21.000Z
 lastmod: 2025-11-30 05:46:59.334000+00:00
 level: '0000'

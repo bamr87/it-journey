@@ -5,7 +5,7 @@ description: Master advanced Markdown features beyond basics. Learn tables, foot
   task lists, and GitHub-flavored extensions. Documentation and content creation tutorial.
 excerpt: Level up your Markdown with tables, footnotes, task lists, and GitHub-flavored
   extensions.
-preview: images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
+preview: /images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'

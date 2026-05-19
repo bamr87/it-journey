@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Unlock the power of automation with GitHub Actions! Streamline your workflows and enhance your CI/CD processes effortlessly.
 excerpt: null
 snippet: null
-preview: images/previews/understanding-action-triggers-in-depth.png
+preview: /images/previews/understanding-action-triggers-in-depth.png
 date: 2025-04-18T13:43:43.000Z
 lastmod: 2026-03-20T22:23:36.683Z
 level: "0010"

@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Choose your operating system and understand the unique strengths of Windows,
   macOS, and Linux for your IT journey
 excerpt: Selecting the right operating system is a crucial first step in your IT adventure
-preview: images/previews/os-selection.png
+preview: /images/previews/os-selection.png
 date: 2023-11-25T14:12:43.000Z
 lastmod: 2025-11-30 05:46:59.328000+00:00
 level: '0000'

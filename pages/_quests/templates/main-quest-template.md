@@ -3,7 +3,7 @@ title: '[Quest Title]: [Descriptive Subtitle]'
 description: Complete description of what the quest teaches and accomplishes (150-300
   characters for SEO)
 date: 2025-11-29T22:51:57.000Z
-preview: images/previews/quest-title-descriptive-subtitle.png
+preview: /images/previews/quest-title-descriptive-subtitle.png
 level: XXXX
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes

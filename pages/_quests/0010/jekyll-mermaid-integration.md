@@ -8,7 +8,7 @@ excerpt: Transform any Jekyll site into a powerful diagramming platform with Mer
   integration, conditional loading, and comprehensive documentation
 snippet: Master the art of diagrammatic magic and bring your Jekyll documentation
   to life
-preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
+preview: /images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
 date: 2025-10-04T15:25:33.000Z
 lastmod: 2025-01-27 15:00:00+00:00
 level: '0010'

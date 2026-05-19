@@ -1,9 +1,9 @@
 ---
-title: GPT - CV Analysis
+title: "GPT-4 CV Analysis: Career Path Recommendations"
 author: ChatGPT
 date: 2024-03-12T19:51:39.000Z
-excerpt: An analysis of a CV and recommendations for career paths and growth.
-description: An analysis of a CV and recommendations for career paths and growth.
+excerpt: An analysis of a CV and recommendations for career paths and growth based on a background in finance, IT consulting, and enterprise systems.
+description: A GPT-4 powered analysis of a finance and IT consulting CV, providing career path recommendations, skill gap insights, and professional growth strategies.
 snippet: null
 categories:
     - Finance
@@ -15,6 +15,12 @@ tags:
     - Project Management
     - CV
     - GPT-4
+keywords:
+  - gpt cv analysis career advice
+  - ai career path recommendations
+  - cv review gpt-4
+  - it consulting career growth
+  - erp systems career path
 meta: null
 draft: true
 section: Data & Analytics

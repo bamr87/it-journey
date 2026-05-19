@@ -1,14 +1,25 @@
 ---
-title: SEC's Edgar Database
+title: "SEC's Edgar Database: Financial Filings Guide"
 description: The SEC's Edgar database provides insights into the financial health and operational performance of publicly-traded companies in the U.S.
 author: Amr and ChatGPT
-excerpt: null
+excerpt: A deep dive into the SEC's Edgar database, covering types of filings, company valuation insights, and how to extract meaningful financial data.
 date: 2024-04-16 22:40:14+00:00
 lastmod: 2024-04-16 16:36:04.294000+00:00
 draft: true
-tags: []
+tags:
+  - sec
+  - edgar
+  - finance
+  - data-analytics
+  - financial-data
 categories:
 - Data & Analytics
+keywords:
+  - sec edgar database guide
+  - edgar financial filings
+  - sec edgar 10-K 10-Q
+  - public company financial data
+  - edgar database analysis
 meta: null
 snippet: null
 slug: null

@@ -5,7 +5,7 @@ description: Create excellent API documentation with OpenAPI/Swagger. Learn spec
   writing, interactive docs, SDK generation, and developer portal best practices.
 excerpt: Create comprehensive API documentation with OpenAPI specification and developer
   portals
-preview: images/previews/api-documentation-openapi-quest-title-developer-ex.png
+preview: /images/previews/api-documentation-openapi-quest-title-developer-ex.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-11-30 05:09:31+00:00
 level: '0111'

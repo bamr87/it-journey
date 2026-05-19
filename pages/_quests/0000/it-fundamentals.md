@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
 snippet: null
-preview: images/previews/it-fundamentals.png
+preview: /images/previews/it-fundamentals.png
 date: 2023-11-25T14:12:43.000Z
 lastmod: 2025-11-29 21:40:00+00:00
 level: '0000'

@@ -2,7 +2,7 @@
 title: Comprehensive Guide to Modern ERP Stack Architecture
 description: Deep dive into enterprise resource planning system architecture, exploring frontend, backend, data layers, and infrastructure components
 date: 2025-11-02T14:54:24.000Z
-preview: Complete architectural blueprint for building scalable ERP systems with modern technology stacks
+preview: /images/favicon_gpt_computer_retro.png
 tags:
     - erp
     - architecture

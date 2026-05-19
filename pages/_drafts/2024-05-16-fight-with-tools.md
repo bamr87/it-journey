@@ -1,17 +1,26 @@
 ---
-title: fight with tools
-description: 'Here is an original set of lyrics inspired by the themes and messages of "Fight With Tools" by Flobots:'
+title: "Fight With Tools: Original Flobots-Inspired Lyrics"
+description: "Here is an original set of lyrics inspired by the themes and messages of \"Fight With Tools\" by Flobots: a call to action for technology, justice, and empowerment."
 date: 2024-05-16 14:03:26+00:00
 preview: null
 draft: true
-tags: []
+tags:
+  - music
+  - lyrics
+  - creative-writing
+  - flobots
 categories:
 - Tools & Environment
 sub-title: null
-excerpt: null
+excerpt: Original lyrics inspired by the Flobots song "Fight With Tools," exploring themes of using technology as a force for justice and positive change.
 snippet: null
 author: bamr87
-keywords: {}
+keywords:
+  - fight with tools flobots inspired
+  - original song lyrics technology
+  - flobots themes fight with tools
+  - technology justice lyrics
+  - creative writing music inspiration
 lastmod: 2024-06-02 21:49:51.134000+00:00
 slug: null
 attachments: ''

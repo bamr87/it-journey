@@ -209,6 +209,56 @@
       },
       "problemMatcher": [],
       "detail": "Update Jekyll dependencies in Docker container"
+    },
+
+    // ==========================================
+    // PERFORMANCE & PROFILING TASKS
+    // ==========================================
+    {
+      "label": "Jekyll: Build with Profile",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec", "jekyll", "bundle", "exec", "jekyll", "build",
+        "--config", "_config.yml,_config_dev.yml",
+        "--profile"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "dependsOn": "Docker: Compose Up (Detached)",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Build site with per-template timing report to identify slow Liquid templates"
+    },
+
+    {
+      "label": "Jekyll: Serve (Limit Posts)",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec", "jekyll", "bundle", "exec", "jekyll", "serve",
+        "--watch", "--force_polling",
+        "--config", "_config.yml,_config_dev.yml",
+        "--limit_posts", "10"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "dependsOn": "Docker: Compose Up (Detached)",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Serve with only 10 posts - fastest possible rebuild for non-post development"
     }
   ]
 }

@@ -6,7 +6,7 @@ description: Learn Liquid templating language for Jekyll. Master variables, filt
   with examples.
 excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters,
   and control flow.
-preview: images/previews/liquid-templating-dynamic-content-basics-descripti.png
+preview: /images/previews/liquid-templating-dynamic-content-basics-descripti.png
 date: 2025-11-29T22:51:57.000Z
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'

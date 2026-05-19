@@ -2,7 +2,7 @@
 
 title: Level 1011 - Feature Development
 description: Advanced feature development patterns and project management workflows
-preview: images/previews/level-1011-feature-development.png
+preview: /images/previews/level-1011-feature-development.png
 permalink: /quests/level-1011/
 lastmod: 2025-11-29T23:41:31.773Z
 

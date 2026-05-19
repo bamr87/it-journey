@@ -7,7 +7,7 @@ description: Embark on a fantasy-themed quest to master software templates and r
 excerpt: Master the sacred art of templates to build elegant, reusable systems across
   languages.
 snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
-preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
+preview: /images/previews/the-temple-of-templates-binary-abstractions-and-re.png
 date: 2025-08-24T18:46:40.000Z
 lastmod: 2025-08-25 00:43:51.189000+00:00
 level: '1100'

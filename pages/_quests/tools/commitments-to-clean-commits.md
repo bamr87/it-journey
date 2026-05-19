@@ -5,7 +5,7 @@ description: Learn how to maintain clean commits in your projects for better col
   and version control efficiency.
 excerpt: null
 snippet: null
-preview: images/previews/commitments-to-clean-commits.png
+preview: /images/previews/commitments-to-clean-commits.png
 date: 2025-04-18T13:43:43.000Z
 lastmod: 2025-04-18 19:27:42.681000+00:00
 level: '0010'

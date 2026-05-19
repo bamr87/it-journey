@@ -1,8 +1,8 @@
 ---
-title: "From Spreadsheets to Shell Scripts: A Finance Professional's Guide to the Terminal"
-description: Discover how finance and accounting professionals can leverage the terminal and bash scripting to automate tedious tasks, process massive datasets, and level up their careers — no CS degree required.
+title: "A Finance Professional's Guide to the Terminal"
+description: How finance and accounting professionals can leverage bash scripting to automate tasks, process datasets, and level up their careers — no CS degree required.
 date: 2026-02-23T12:40:05.000Z
-preview: /images/post-preview-image.png
+preview: /images/ai-erp-control.png
 tags:
     - bash
     - terminal
@@ -34,9 +34,9 @@ keywords:
 lastmod: 2026-04-25T19:27:00.307Z
 permalink: /posts/terminal-bash-finance-accounting/
 comments: true
+draft: false
 difficulty: 🟢 Beginner
 estimated_reading_time: 12-15 minutes
-prerequisites:
     - A desire to automate tedious spreadsheet tasks
     - Basic understanding of data organization (rows, columns, CSV files)
     - Access to a computer with a terminal (macOS, Windows, or Linux)

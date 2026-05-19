@@ -1,7 +1,7 @@
 ---
 title: "Bashcrawl Quest: Terminal Adventure RPG"
 description: An interactive terminal-based adventure game that teaches command line skills through exploration and puzzle-solving in a mystical dungeon
-preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
+preview: /images/previews/bashcrawl-quest-terminal-adventure-rpg.png
 date: 2025-07-05T12:12:17.000Z
 categories:
     - Quests
@@ -76,6 +76,7 @@ excerpt: Embark on an epic terminal adventure that teaches command line skills t
 snippet: Learn bash through adventure - where every command is a spell and every directory is a new realm to explore
 permalink: /quests/bashcrawl-terminal-adventure/
 lastmod: 2026-04-25T19:27:00.007Z
+draft: false
 ---
 
 *Welcome, brave adventurer, to the mystical realm of Bashcrawl! This is no ordinary quest - it's an interactive terminal-based adventure that will transform you from a command line novice into a seasoned digital explorer.*

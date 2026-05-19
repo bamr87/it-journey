@@ -3,7 +3,7 @@ title: 'The Digital Portfolio Fortress: Full-Stack Epic Construction'
 description: Build a complete portfolio website from design to deployment, integrating
   frontend, backend, database, and DevOps practices in one comprehensive project
 date: 2025-10-04T15:25:33.000Z
-preview: images/previews/the-digital-portfolio-fortress-full-stack-epic-con.png
+preview: /images/previews/the-digital-portfolio-fortress-full-stack-epic-con.png
 tags:
 - lvl-1111
 - full-stack-development

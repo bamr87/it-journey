@@ -1,6 +1,6 @@
 ---
-title: Groking About IT Journey
-description: Groking About IT Journey. A personal blog with a focus on IT and software development.
+title: "Groking About IT Journey: A Developer's Blog"
+description: A personal blog exploring IT and software development topics through the lens of an experienced developer, featuring Jekyll, Bootstrap, and modern web tools.
 date: 2024-05-15T20:51:52.000Z
 preview: null
 tags:
@@ -14,7 +14,13 @@ categories:
 sub-title: null
 snippet: null
 author: bamr87 and grok
-keywords: {}
+excerpt: Grok AI's take on the IT Journey website built with Jekyll and Bootstrap, analyzing the site structure, navigation, and content organization.
+keywords:
+  - it journey developer blog
+  - jekyll bootstrap personal blog
+  - it journey website analysis
+  - jekyll site grok review
+  - software development blog jekyll
 lastmod: 2024-05-16T16:11:20.289Z
 sort_by: null
 type: posts
