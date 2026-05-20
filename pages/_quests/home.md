@@ -19,7 +19,7 @@ mermaid: true
 toc: true
 toc_sticky: true
 date: 2021-11-30T14:41:59.000Z
-lastmod: 2026-04-25T19:27:00.362Z
+lastmod: 2026-05-20T20:57:50.000Z
 draft: false
 excerpt: Your central command hub for tracking progress through the IT mastery quest system — navigate learning paths, monitor achievements, and plan next adventures.
 keywords:
@@ -159,7 +159,7 @@ Terminal Mastery & Basic Setup
 
 **Available Quests:**
 
-- [ ] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Forge Your Ultimate Development Weapon* (50 XP)
+- [ ] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Forge Your Ultimate Development Weapon* (50 XP)
 - [ ] [Terminal Fundamentals](0000/terminal-fundamentals.md) - *Command Line Mastery* (40 XP)
 - [ ] [Bashcrawl Adventure](0000/bashcrawl/) - *Browser Dungeon Practice* (40 XP)
 - [ ] [Bash-run Extension Lab](0000/bash-run.md) - *Terminal Game Scripting* (40 XP)
@@ -695,7 +695,7 @@ graph TB
 
 Essential Starting Adventures
 
-- [ ] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Forge Your Ultimate Development Weapon*
+- [ ] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Forge Your Ultimate Development Weapon*
 - [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
 - [ ] [Character Building](0000/character-building.md) - *Forge Your Identity*
 - [ ] [IT Fundamentals](0000/it-fundamentals.md) - *Ancient Arts Foundation*
@@ -708,7 +708,7 @@ Fast Track Adventures
 
 #### 💻 Developer Quick Start
 1. [Hello n00b](0000/hello-noob.md) - First Steps
-2. [VS Code Mastery](0000/vscode-mastery.md) - Tool Setup
+2. [VS Code Mastery](/quests/vscode-mastery/) - Tool Setup
 3. [Personal Site](0001/personal-site.md) - First Project
 
 #### 🏗️ Engineer Quick Start
@@ -789,7 +789,7 @@ Universal Tools for All Classes
 
 #### Cross-Platform Essentials
 
-- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](0000/vscode-mastery.md)
+- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](/quests/vscode-mastery/)
 - [ ] **Git** - *Version Control Magic*
 - [ ] **Docker** - *Container Summoning*
 - [ ] **Terminal** - *Command Line Mastery*
@@ -810,7 +810,7 @@ Proven Magical Combinations
 Epic Campaign Objectives
 
 1. [ ] **Build Your Digital Castle**
-   - [ ] Master your IDE with [VS Code Mastery Quest](0000/vscode-mastery.md)
+   - [ ] Master your IDE with [VS Code Mastery Quest](/quests/vscode-mastery/)
    - [ ] Set up development environment
    - [ ] Configure essential tools
    - [ ] Establish workflow processes
@@ -991,7 +991,7 @@ graph TB
 Based on your current progress:
 
 1. **Start Here:** [Hello n00b](0000/hello-noob.md) - Begin your journey
-2. **Then:** [VS Code Mastery](0000/vscode-mastery.md) - Set up your tools
+2. **Then:** [VS Code Mastery](/quests/vscode-mastery/) - Set up your tools
 3. **Next:** [Terminal Fundamentals](0000/terminal-fundamentals.md) - Learn the terminal
 4. **Practice:** [Bashcrawl Adventure](0000/bashcrawl/) - Reinforce commands through play
 5. **Goal:** Complete Apprentice Tier (Levels 0000-0011)
