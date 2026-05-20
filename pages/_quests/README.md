@@ -11,7 +11,7 @@ categories: quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2026-03-21T15:12:32.275Z
+lastmod: 2026-05-20T20:57:50.000Z
 mermaid: true
 draft: false
 toc: true
@@ -345,7 +345,7 @@ Basic scripting, terminal navigation, and environment setup
 **Available Quests:**
 
 - [x] [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
-- [x] [VS Code Mastery Quest](0000/vscode-mastery.md) - *Master Your Primary IDE*
+- [x] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Master Your Primary IDE*
 - [x] [Bash Fundamentals](0000/bash-run.md) - *Learn the Terminal Incantations*
 - [x] [Bashcrawl Adventure](0000/bashcrawl/) - *Your First Automation Spell*
 - [x] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
@@ -1004,4 +1004,3 @@ Total Quests: **144**
 | 1101 | 8 | Machine Learning |
 | 1110 | 8 | Architecture |
 | 1111 | 8 | Leadership |
-

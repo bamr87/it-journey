@@ -3,7 +3,7 @@ title: Level 0000 - Foundation & Init World
 description: Your starting point in the IT-Journey. Character creation, OS selection, terminal basics, and first steps into the digital realm
 preview: images/previews/level-0000-foundation-init-world.png
 permalink: /quests/level-0000/
-lastmod: 2026-04-25T19:27:00.230Z
+lastmod: 2026-05-20T20:57:50.000Z
 level: "0000"
 categories: quests
 date: 2025-11-29T16:46:02.000Z
@@ -257,7 +257,7 @@ Learn the universal language of technical documentation. Markdown is used in REA
 
 ---
 
-#### [VS Code Mastery Quest](vscode-mastery.md)
+#### [VS Code Mastery Quest](/quests/vscode-mastery/)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Forge your ultimate development weapon. Master VS Code setup, extensions, and productivity features.
@@ -336,14 +336,14 @@ See the [tools collection](../tools/README.md) for beginner tool guides and gett
 ### For Those with Some Experience
 1. [Character Selection](character-selection.md) - Confirm your specialization
 2. Platform-specific Hello quest
-3. [VS Code Mastery Quest](vscode-mastery.md) - Set up your IDE
+3. [VS Code Mastery Quest](/quests/vscode-mastery/) - Set up your IDE
 4. [Terminal Fundamentals](terminal-fundamentals.md) - Solidify CLI skills
 5. [Bashcrawl Adventure](bashcrawl/) - Reinforce commands through play
 6. [Git Basics](git-basics.md) - Version control workflow
 7. [Bash-run Extension Lab](bash-run.md) - Extend a real Bash learning game
 
 ### For Quick Setup
-1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](vscode-mastery.md) → [Terminal Fundamentals](terminal-fundamentals.md) → [Bashcrawl Adventure](bashcrawl/) → [Git Basics](git-basics.md)
+1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](/quests/vscode-mastery/) → [Terminal Fundamentals](terminal-fundamentals.md) → [Bashcrawl Adventure](bashcrawl/) → [Git Basics](git-basics.md)
 
 ## Quest Dependencies & Progression
 
