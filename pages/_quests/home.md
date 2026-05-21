@@ -160,25 +160,25 @@ Terminal Mastery & Basic Setup
 **Available Quests:**
 
 - [ ] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Forge Your Ultimate Development Weapon* (50 XP)
-- [ ] [Terminal Fundamentals](0000/terminal-fundamentals.md) - *Command Line Mastery* (40 XP)
-- [ ] [Bashcrawl Adventure](0000/bashcrawl/) - *Browser Dungeon Practice* (40 XP)
-- [ ] [Bash-run Extension Lab](0000/bash-run.md) - *Terminal Game Scripting* (40 XP)
-- [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call* (30 XP)
-- [ ] [Hello n00b](0000/hello-noob.md) - *First Steps* (20 XP)
-- [ ] [Git Basics](0000/git-basics.md) - *Version Control Foundation* (40 XP)
-- [ ] [Markdown Mastery](0000/markdown-mastery.md) - *Documentation Magic* (30 XP)
-- [ ] [Character Building](0000/character-building.md) - *Forge Your Identity* (30 XP)
-- [ ] [Character Selection](0000/character-selection.md) - *Choose Your Path* (20 XP)
-- [ ] [OS Selection](0000/os-selection.md) - *Pick Your Realm* (20 XP)
-- [ ] [IT Fundamentals](0000/it-fundamentals.md) - *Core Concepts* (40 XP)
+- [ ] [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - *Command Line Mastery* (40 XP)
+- [ ] [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) - *Browser Dungeon Practice* (40 XP)
+- [ ] [Bash-run Extension Lab](/quests/lvl_000/bash-run/) - *Terminal Game Scripting* (40 XP)
+- [ ] [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) - *The Hero's Call* (30 XP)
+- [ ] [Hello n00b](/quests/init_world/hello-noob/) - *First Steps* (20 XP)
+- [ ] [Git Basics](/quests/level-0000-git-basics/) - *Version Control Foundation* (40 XP)
+- [ ] [Markdown Mastery](/quests/level-0000-markdown-mastery/) - *Documentation Magic* (30 XP)
+- [ ] [Character Building](/quests/character-building/) - *Forge Your Identity* (30 XP)
+- [ ] [Character Selection](/quests/lvl_000/character-selection/) - *Choose Your Path* (20 XP)
+- [ ] [OS Selection](/quests/lvl_000/os-selection/) - *Pick Your Realm* (20 XP)
+- [ ] [IT Fundamentals](/quests/lvl_000/it-fundamentals/) - *Core Concepts* (40 XP)
 
 **Platform-Specific Tracks:**
 
 | Platform | Quest | Status | XP |
 |----------|-------|--------|-----|
-| 🪟 Windows | [Hello Windows](0000/hello-win/hello-win.md) | [ ] | 50 |
+| 🪟 Windows | [Hello Windows](/quests/hello-windows/) | [ ] | 50 |
 | 🍎 macOS | Hello macOS (Coming Soon) | 🔮 | 50 |
-| 🐧 Linux | [Hello Linux](0000/hello-linux/linux-fundamentals.md) | [ ] | 50 |
+| 🐧 Linux | [Hello Linux](/quests/hello-linux/linux-fundamentals/) | [ ] | 50 |
 | ☁️ Cloud | Hello Cloud (Coming Soon) | 🔮 | 50 |
 
 ### Level 0001 - Web Fundamentals
@@ -197,19 +197,19 @@ Web Technologies & Programming Fundamentals
 
 **Available Quests:**
 
-- [ ] [Personal Site Creation](0001/personal-site.md) - *Build Your Digital Castle* (60 XP)
-- [ ] [GitHub Pages Portal](0001/github-pages-portal.md) - *Deploy Your First Website* (50 XP)
-- [ ] [GitHub Pages Basics](0001/github-pages-basics.md) - *Static Site Hosting* (40 XP)
-- [ ] [Docs in a Row](0001/docs-in-a-row.md) - *Documentation Basics* (40 XP)
-- [ ] [Stack Attack](0001/stack-attack.md) - *Understanding Tech Stacks* (30 XP)
-- [ ] [Jekyll Fundamentals](0001/jekyll-fundamentals.md) - *Static Site Generation* (50 XP)
-- [ ] [Liquid Templating](0001/liquid-templating.md) - *Dynamic Content Magic* (40 XP)
-- [ ] [YAML Configuration](0001/yaml-configuration.md) - *Data Structuring* (30 XP)
-- [ ] [Git Workflow Mastery](0001/git-workflow-mastery.md) - *Collaboration Patterns* (50 XP)
-- [ ] [Kaizen](0001/kaizen.md) - *Continuous Improvement* (40 XP)
-- [ ] [Stating the Stats](0001/stating-the-stats.md) - *Data Tracking* (30 XP)
-- [ ] [Terminal Mastery](0001/terminal-mastery.md) - *Advanced Terminal Skills* (40 XP)
-- [ ] [Building Testing Git Init Script](0001/building-testing-git-init-script.md) - *Automation Testing* (50 XP)
+- [ ] [Personal Site Creation](/quests/level-0001/personal-site/) - *Build Your Digital Castle* (60 XP)
+- [ ] [GitHub Pages Portal](/quests/level-001-github-pages-portal/) - *Deploy Your First Website* (50 XP)
+- [ ] [GitHub Pages Basics](/quests/level-0001-github-pages-basics/) - *Static Site Hosting* (40 XP)
+- [ ] [Docs in a Row](/quests/0001/docs-in-a-row/) - *Documentation Basics* (40 XP)
+- [ ] [Stack Attack](/quests/level-0001/stack-attack/) - *Understanding Tech Stacks* (30 XP)
+- [ ] [Jekyll Fundamentals](/quests/level-0001-jekyll-fundamentals/) - *Static Site Generation* (50 XP)
+- [ ] [Liquid Templating](/quests/level-0001-liquid-templating/) - *Dynamic Content Magic* (40 XP)
+- [ ] [YAML Configuration](/quests/level-0001-yaml-configuration/) - *Data Structuring* (30 XP)
+- [ ] [Git Workflow Mastery](/quests/level-0001-git-workflow-mastery/) - *Collaboration Patterns* (50 XP)
+- [ ] [Kaizen](/quests/level-0001-kaizen-continuous-improvement/) - *Continuous Improvement* (40 XP)
+- [ ] [Stating the Stats](/quests/stating-the-stats/) - *Data Tracking* (30 XP)
+- [ ] [Terminal Mastery](/quests/level-0001-terminal-mastery/) - *Advanced Terminal Skills* (40 XP)
+- [ ] [Building Testing Git Init Script](/quests/level-0001-git-init-testing/) - *Automation Testing* (50 XP)
 
 ### Level 0010 - Terminal Mastery
 
@@ -227,17 +227,17 @@ Advanced Terminal & Shell Scripting
 
 **Available Quests:**
 
-- [ ] [Bash Scripting Mastery](0010/bash-scripting.md) - *Ancient Bash Incantations* (70 XP)
-- [ ] [Oh My Zsh Enchantment](0010/oh-my-zsh-terminal-enchantment.md) - *Transform Your Terminal* (50 XP)
-- [ ] [Nerd Font Enchantment](0010/nerd-font-enchantment.md) - *Visual Terminal Magic* (30 XP)
-- [ ] [Prompt Engineering](0010/prompt-engineering.md) - *Forge the Prompt Crystal* (40 XP)
-- [ ] [Jekyll Mermaid Integration](0010/jekyll-mermaid-integration.md) - *Diagram Magic* (40 XP)
-- [ ] [Advanced Markdown](0010/advanced-markdown.md) - *Documentation Mastery* (40 XP)
-- [ ] [JavaScript Fundamentals](0010/javascript-fundamentals.md) - *Interactive Web Programming* (60 XP)
-- [ ] [CSS Styling Basics](0010/css-styling-basics.md) - *Visual Design Magic* (50 XP)
-- [ ] [Bootstrap Framework](0010/bootstrap-framework.md) - *Rapid UI Development* (40 XP)
-- [ ] [Terminal Artificer Frontend Building](0010/terminal-artificer-frontend-building.md) - *Command Line UI* (50 XP)
-- [ ] [Testing Quests with Recursive Questing](0010/testing-quests-with-recursive-questing.md) - *Quest Validation* (40 XP)
+- [ ] [Bash Scripting Mastery](/quests/0010/bash-scripting/) - *Ancient Bash Incantations* (70 XP)
+- [ ] [Oh My Zsh Enchantment](/quests/level-0010-oh-my-zsh-mastery/) - *Transform Your Terminal* (50 XP)
+- [ ] [Nerd Font Enchantment](/quests/side-quest-nerd-font-enchantment/) - *Visual Terminal Magic* (30 XP)
+- [ ] [Prompt Engineering](/quests/level-0010-prompt-engineering-mastery/) - *Forge the Prompt Crystal* (40 XP)
+- [ ] [Jekyll Mermaid Integration](/quests/level-0010-jekyll-mermaid-integration/) - *Diagram Magic* (40 XP)
+- [ ] [Advanced Markdown](/quests/level-0010-advanced-markdown/) - *Documentation Mastery* (40 XP)
+- [ ] [JavaScript Fundamentals](/quests/level-0010-javascript-fundamentals/) - *Interactive Web Programming* (60 XP)
+- [ ] [CSS Styling Basics](/quests/level-0010-css-styling-basics/) - *Visual Design Magic* (50 XP)
+- [ ] [Bootstrap Framework](/quests/level-0010-bootstrap-framework/) - *Rapid UI Development* (40 XP)
+- [ ] [Terminal Artificer Frontend Building](/quests/level-0010-terminal-artificer/) - *Command Line UI* (50 XP)
+- [ ] [Testing Quests with Recursive Questing](/quests/level-0010-recursive-realms-testing/) - *Quest Validation* (40 XP)
 
 ### Level 0011 - AI-Assisted Development
 
@@ -255,13 +255,13 @@ AI Tools & Productivity Workflows
 
 **Available Quests:**
 
-- [ ] [GitHub Code Search Quest](0011/github-pages-hidden-gem.md) - *Master Code Discovery* (50 XP)
-- [ ] [VS Code Copilot Mastery](0011/prompt-crystal-mastery-vscode-copilot.md) - *AI Pair Programming* (70 XP)
-- [ ] [Advanced Git Workflows](0011/advanced-git-workflows.md) - *Version Control Mastery* (60 XP)
-- [ ] [Custom Domains](0011/custom-domains.md) - *Professional Web Presence* (40 XP)
-- [ ] [SEO Optimization](0011/seo-optimization.md) - *Search Engine Magic* (50 XP)
-- [ ] [Analytics Integration](0011/analytics-integration.md) - *Data Tracking* (40 XP)
-- [ ] [Jekyll Plugins](0011/jekyll-plugins.md) - *Extending Functionality* (50 XP)
+- [ ] [GitHub Code Search Quest](/quests/level-0011-github-pages-hidden-gem/) - *Master Code Discovery* (50 XP)
+- [ ] [VS Code Copilot Mastery](/quests/level-0011-prompt-crystal-vscode-copilot/) - *AI Pair Programming* (70 XP)
+- [ ] [Advanced Git Workflows](/quests/level-0011-advanced-git-workflows/) - *Version Control Mastery* (60 XP)
+- [ ] [Custom Domains](/quests/level-0011-custom-domains/) - *Professional Web Presence* (40 XP)
+- [ ] [SEO Optimization](/quests/level-0011-seo-optimization/) - *Search Engine Magic* (50 XP)
+- [ ] [Analytics Integration](/quests/level-0011-analytics-integration/) - *Data Tracking* (40 XP)
+- [ ] [Jekyll Plugins](/quests/level-0011-jekyll-plugins/) - *Extending Functionality* (50 XP)
 
 ---
 
@@ -285,15 +285,15 @@ User Interface & Docker Fundamentals
 
 **Available Quests:**
 
-- [ ] [Frontend Fundamentals](0100/frontend.md) - *Digital Presentation Arts* (60 XP)
-- [ ] [Frontend Docker](0100/frontend-docker.md) - *Containerized UI Magic* (70 XP)
-- [ ] [Sourcery Code Methods](0100/sourcery-code-methods.md) - *Advanced Coding Arts* (50 XP)
-- [ ] [Container Fundamentals](0100/container-fundamentals.md) - *Docker Basics* (60 XP)
-- [ ] [Docker Compose Orchestration](0100/docker-compose-orchestration.md) - *Multi-Container Magic* (70 XP)
-- [ ] [Frontend Levels](0100/frontend-levels.md) - *Progressive Learning* (50 XP)
-- [ ] [Level 000 Frontend Docker](0100/frontend-docker-level-000.md) - *Beginner Containers* (40 XP)
-- [ ] [Level 001 Frontend Docker](0100/frontend-docker-level-001.md) - *Intermediate Containers* (50 XP)
-- [ ] [Level 010 Frontend Docker](0100/frontend-docker-level-010.md) - *Advanced Containers* (60 XP)
+- [ ] [Frontend Fundamentals](/quests/frontend/) - *Digital Presentation Arts* (60 XP)
+- [ ] [Frontend Docker](/quests/frontend-docker/) - *Containerized UI Magic* (70 XP)
+- [ ] [Sourcery Code Methods](/quests/level-0100-source-control-sorcery/) - *Advanced Coding Arts* (50 XP)
+- [ ] [Container Fundamentals](/quests/level-0100-container-fundamentals/) - *Docker Basics* (60 XP)
+- [ ] [Docker Compose Orchestration](/quests/level-0100-docker-compose-orchestration/) - *Multi-Container Magic* (70 XP)
+- [ ] [Frontend Levels](/quests/level-0100-frontend-levels/) - *Progressive Learning* (50 XP)
+- [ ] [Level 000 Frontend Docker](/quests/level-0100/lvl-000-frontend-docker/) - *Beginner Containers* (40 XP)
+- [ ] [Level 001 Frontend Docker](/quests/level-0100-lvl-001-frontend-docker/) - *Intermediate Containers* (50 XP)
+- [ ] [Level 010 Frontend Docker](/quests/level-0100-lvl-010-frontend-docker/) - *Advanced Containers* (60 XP)
 
 ### Level 0101 - Backend Systems
 
@@ -311,16 +311,16 @@ Server-Side Development & APIs
 
 **Available Quests:**
 
-- [ ] [Docker Mastery Example](0101/docker-mastery-example.md) - *Advanced Container Patterns* (70 XP)
-- [ ] [LazyTeX CV Building](0101/the-lazytex-of-building-a-curriculum-vitae.md) - *Document Automation* (50 XP)
-- [ ] [CI/CD Fundamentals](0101/cicd-fundamentals.md) - *Continuous Integration Basics* (60 XP)
-- [ ] [GitHub Actions Basics](0101/github-actions-basics.md) - *Workflow Automation* (60 XP)
-- [ ] [Deployment Pipelines](0101/deployment-pipelines.md) - *Automated Deployments* (70 XP)
-- [ ] [Environment Management](0101/environment-management.md) - *Configuration Control* (50 XP)
-- [ ] [Secrets Management](0101/secrets-management.md) - *Secure Configuration* (50 XP)
-- [ ] [Artifact Management](0101/artifact-management.md) - *Build Outputs* (40 XP)
-- [ ] [Testing Integration](0101/testing-integration.md) - *Automated Testing* (60 XP)
-- [ ] [Workflow Optimization](0101/workflow-optimization.md) - *Pipeline Efficiency* (50 XP)
+- [ ] [Docker Mastery Example](/quests/level-0101-docker-mastery/) - *Advanced Container Patterns* (70 XP)
+- [ ] [LazyTeX CV Building](/quests/level-0101-latex-cv-forging/) - *Document Automation* (50 XP)
+- [ ] [CI/CD Fundamentals](/quests/level-0101-cicd-fundamentals/) - *Continuous Integration Basics* (60 XP)
+- [ ] [GitHub Actions Basics](/quests/level-0101-github-actions-basics/) - *Workflow Automation* (60 XP)
+- [ ] [Deployment Pipelines](/quests/level-0101-deployment-pipelines/) - *Automated Deployments* (70 XP)
+- [ ] [Environment Management](/quests/level-0101-environment-management/) - *Configuration Control* (50 XP)
+- [ ] [Secrets Management](/quests/level-0101-secrets-management/) - *Secure Configuration* (50 XP)
+- [ ] [Artifact Management](/quests/level-0101-artifact-management/) - *Build Outputs* (40 XP)
+- [ ] [Testing Integration](/quests/level-0101-testing-integration/) - *Automated Testing* (60 XP)
+- [ ] [Workflow Optimization](/quests/level-0101-workflow-optimization/) - *Pipeline Efficiency* (50 XP)
 
 ### Level 0110 - Database Mastery
 
@@ -338,14 +338,14 @@ Data Storage & Retrieval
 
 **Available Quests:**
 
-- [ ] [Database Fundamentals](0110/database-fundamentals.md) - *Data Storage Basics* (60 XP)
-- [ ] [SQL Mastery](0110/sql-mastery.md) - *Query Language Power* (70 XP)
-- [ ] [Data Modeling](0110/data-modeling.md) - *Structure Design* (60 XP)
-- [ ] [Query Optimization](0110/query-optimization.md) - *Performance Tuning* (70 XP)
-- [ ] [Database Migrations](0110/database-migrations.md) - *Schema Evolution* (50 XP)
-- [ ] [Database Security](0110/database-security.md) - *Access Control* (60 XP)
-- [ ] [Connection Pooling](0110/connection-pooling.md) - *Resource Management* (40 XP)
-- [ ] [Backup Recovery](0110/backup-recovery.md) - *Data Protection* (50 XP)
+- [ ] [Database Fundamentals](/quests/level-0110-database-fundamentals/) - *Data Storage Basics* (60 XP)
+- [ ] [SQL Mastery](/quests/level-0110-sql-mastery/) - *Query Language Power* (70 XP)
+- [ ] [Data Modeling](/quests/level-0110-data-modeling/) - *Structure Design* (60 XP)
+- [ ] [Query Optimization](/quests/level-0110-query-optimization/) - *Performance Tuning* (70 XP)
+- [ ] [Database Migrations](/quests/level-0110-database-migrations/) - *Schema Evolution* (50 XP)
+- [ ] [Database Security](/quests/level-0110-database-security/) - *Access Control* (60 XP)
+- [ ] [Connection Pooling](/quests/level-0110-connection-pooling/) - *Resource Management* (40 XP)
+- [ ] [Backup Recovery](/quests/level-0110-backup-recovery/) - *Data Protection* (50 XP)
 
 ### Level 0111 - Full-Stack Integration
 
@@ -363,13 +363,13 @@ Complete Application Development
 
 **Available Quests:**
 
-- [ ] [API Fundamentals](0111/api-fundamentals.md) - *Service Communication* (60 XP)
-- [ ] [REST Principles](0111/rest-principles.md) - *RESTful Design* (50 XP)
-- [ ] [API Authentication](0111/api-authentication.md) - *Security Keys* (70 XP)
-- [ ] [API Documentation](0111/api-documentation.md) - *Clear Contracts* (40 XP)
-- [ ] [API Versioning](0111/api-versioning.md) - *Evolution Management* (50 XP)
-- [ ] [Error Handling](0111/error-handling.md) - *Graceful Failures* (50 XP)
-- [ ] [Rate Limiting](0111/rate-limiting.md) - *Traffic Control* (40 XP)
+- [ ] [API Fundamentals](/quests/level-0111-api-fundamentals/) - *Service Communication* (60 XP)
+- [ ] [REST Principles](/quests/level-0111-rest-principles/) - *RESTful Design* (50 XP)
+- [ ] [API Authentication](/quests/level-0111-api-authentication/) - *Security Keys* (70 XP)
+- [ ] [API Documentation](/quests/level-0111-api-documentation/) - *Clear Contracts* (40 XP)
+- [ ] [API Versioning](/quests/level-0111-api-versioning/) - *Evolution Management* (50 XP)
+- [ ] [Error Handling](/quests/level-0111-error-handling/) - *Graceful Failures* (50 XP)
+- [ ] [Rate Limiting](/quests/level-0111-rate-limiting/) - *Traffic Control* (40 XP)
 
 ---
 
@@ -393,9 +393,9 @@ Cloud Computing Basics
 
 **Available Quests:**
 
-- [ ] [Cloud Computing Fundamentals](1000/cloud-computing-fundamentals.md) - *Understanding the Cloud* (60 XP)
-- [ ] [Infrastructure as Code](1000/infrastructure-as-code.md) - *Code-Based Infrastructure* (70 XP)
-- [ ] [AWS Essentials](1000/aws-essentials.md) - *Amazon Web Services* (80 XP)
+- [ ] [Cloud Computing Fundamentals](/quests/level-1000-cloud-computing-fundamentals/) - *Understanding the Cloud* (60 XP)
+- [ ] [Infrastructure as Code](/quests/level-1000-infrastructure-as-code/) - *Code-Based Infrastructure* (70 XP)
+- [ ] [AWS Essentials](/quests/level-1000-aws-essentials/) - *Amazon Web Services* (80 XP)
 
 ### Level 1001 - Kubernetes & Orchestration
 
@@ -413,10 +413,10 @@ Kubernetes & Container Management
 
 **Available Quests:**
 
-- [ ] [Kubernetes Fundamentals](1001/kubernetes-fundamentals.md) - *Container Orchestration Basics* (80 XP)
-- [ ] [K8s Pods & Workloads](1001/k8s-pods-workloads.md) - *Managing Applications* (70 XP)
-- [ ] [K8s Services & Networking](1001/k8s-services-networking.md) - *Cluster Communication* (70 XP)
-- [ ] [K8s Config & Secrets](1001/k8s-config-secrets.md) - *Configuration Management* (60 XP)
+- [ ] [Kubernetes Fundamentals](/quests/level-1001-kubernetes-fundamentals/) - *Container Orchestration Basics* (80 XP)
+- [ ] [K8s Pods & Workloads](/quests/level-1001-k8s-pods-workloads/) - *Managing Applications* (70 XP)
+- [ ] [K8s Services & Networking](/quests/level-1001-k8s-services-networking/) - *Cluster Communication* (70 XP)
+- [ ] [K8s Config & Secrets](/quests/level-1001-k8s-config-secrets/) - *Configuration Management* (60 XP)
 
 ### Level 1010 - Automation & CI/CD
 
@@ -434,12 +434,12 @@ Testing & Continuous Integration
 
 **Available Quests:**
 
-- [ ] [Link to the Future](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md) - *Automated Validation* (70 XP)
-- [ ] [Monitoring Fundamentals](1010/monitoring-fundamentals.md) - *System Observability* (60 XP)
-- [ ] [Prometheus & Grafana](1010/prometheus-grafana.md) - *Metrics & Dashboards* (80 XP)
-- [ ] [ELK Stack](1010/elk-stack.md) - *Elasticsearch, Logstash, Kibana* (90 XP)
-- [ ] [Distributed Tracing](1010/distributed-tracing.md) - *Request Tracking* (70 XP)
-- [ ] [Alerting Systems](1010/alerting-systems.md) - *Incident Detection* (60 XP)
+- [ ] [Link to the Future](/quests/level-1010-automated-hyperlink-guardian/) - *Automated Validation* (70 XP)
+- [ ] [Monitoring Fundamentals](/quests/level-1010-monitoring-fundamentals/) - *System Observability* (60 XP)
+- [ ] [Prometheus & Grafana](/quests/level-1010-prometheus-grafana/) - *Metrics & Dashboards* (80 XP)
+- [ ] [ELK Stack](/quests/level-1010-elk-stack/) - *Elasticsearch, Logstash, Kibana* (90 XP)
+- [ ] [Distributed Tracing](/quests/level-1010-distributed-tracing/) - *Request Tracking* (70 XP)
+- [ ] [Alerting Systems](/quests/level-1010-alerting-systems/) - *Incident Detection* (60 XP)
 
 ### Level 1011 - DevOps & Infrastructure
 
@@ -457,12 +457,12 @@ Infrastructure & Operations
 
 **Available Quests:**
 
-- [ ] [Feature Re-Quest](1011/ai-feature-pipeline-architect.md) - *Feature Workflows* (60 XP)
-- [ ] [Security Fundamentals](1011/security-fundamentals.md) - *Cybersecurity Basics* (70 XP)
-- [ ] [Secure Coding](1011/secure-coding.md) - *Defensive Programming* (80 XP)
-- [ ] [Threat Modeling](1011/threat-modeling.md) - *Risk Assessment* (70 XP)
-- [ ] [Penetration Testing](1011/penetration-testing.md) - *Ethical Hacking* (90 XP)
-- [ ] [Compliance Standards](1011/compliance-standards.md) - *Regulatory Requirements* (60 XP)
+- [ ] [Feature Re-Quest](/quests/level-1011-ai-feature-pipeline-architect/) - *Feature Workflows* (60 XP)
+- [ ] [Security Fundamentals](/quests/level-1011-security-fundamentals/) - *Cybersecurity Basics* (70 XP)
+- [ ] [Secure Coding](/quests/level-1011-secure-coding/) - *Defensive Programming* (80 XP)
+- [ ] [Threat Modeling](/quests/level-1011-threat-modeling/) - *Risk Assessment* (70 XP)
+- [ ] [Penetration Testing](/quests/level-1011-penetration-testing/) - *Ethical Hacking* (90 XP)
+- [ ] [Compliance Standards](/quests/level-1011-compliance-standards/) - *Regulatory Requirements* (60 XP)
 
 ---
 
@@ -486,14 +486,14 @@ Data Pipelines & Analytics
 
 **Available Quests:**
 
-- [ ] [EDGAR API Integration](1100/edgar.md) - *Financial Data Access* (70 XP)
-- [ ] [SEC EDGAR Deep Dive](1100/sec-edgar.md) - *Advanced Financial Analysis* (80 XP)
-- [ ] [Temple of Templates](1100/the-temple-of-templates.md) - *Reusable Systems* (60 XP)
-- [ ] [ETL Pipeline Design](1100/etl-pipeline-design.md) - *Data Transformation* (80 XP)
-- [ ] [Data Warehousing](1100/data-warehousing.md) - *Grand Data Library* (90 XP)
-- [ ] [Stream Processing](1100/stream-processing.md) - *Real-time Data Rivers* (80 XP)
-- [ ] [Apache Spark Mastery](1100/apache-spark.md) - *Big Data Processing* (100 XP)
-- [ ] [Data Quality Engineering](1100/data-quality.md) - *Information Integrity* (70 XP)
+- [ ] [EDGAR API Integration](/quests/level-1100-conquer-king-edgar/) - *Financial Data Access* (70 XP)
+- [ ] [SEC EDGAR Deep Dive](/quests/level-1100-sec-edgar-siege/) - *Advanced Financial Analysis* (80 XP)
+- [ ] [Temple of Templates](/quests/level-1100-temple-of-templates/) - *Reusable Systems* (60 XP)
+- [ ] [ETL Pipeline Design](/quests/level-1100-etl-pipeline-design/) - *Data Transformation* (80 XP)
+- [ ] [Data Warehousing](/quests/level-1100-data-warehousing/) - *Grand Data Library* (90 XP)
+- [ ] [Stream Processing](/quests/level-1100-stream-processing/) - *Real-time Data Rivers* (80 XP)
+- [ ] [Apache Spark Mastery](/quests/level-1100-apache-spark/) - *Big Data Processing* (100 XP)
+- [ ] [Data Quality Engineering](/quests/level-1100-data-quality/) - *Information Integrity* (70 XP)
 
 ### Level 1101 - Machine Learning & AI
 
@@ -511,14 +511,14 @@ AI & Machine Learning
 
 **Available Quests:**
 
-- [ ] [Machine Learning Fundamentals](1101/ml-fundamentals.md) - *Teaching Machines to Learn* (80 XP)
-- [ ] [Python for Data Science](1101/python-data-science.md) - *Pythonic Prophecies* (70 XP)
-- [ ] [Neural Networks Deep Dive](1101/neural-networks.md) - *Digital Brain Construction* (100 XP)
-- [ ] [Deep Learning Frameworks](1101/deep-learning-frameworks.md) - *TensorFlow & PyTorch* (90 XP)
-- [ ] [Natural Language Processing](1101/natural-language-processing.md) - *Understanding Speech* (90 XP)
-- [ ] [Computer Vision Mastery](1101/computer-vision.md) - *Machine Sight* (90 XP)
-- [ ] [MLOps Engineering](1101/mlops.md) - *Deploying Intelligence* (80 XP)
-- [ ] [AI Ethics and Responsible AI](1101/ai-ethics.md) - *Responsible Creation* (50 XP)
+- [ ] [Machine Learning Fundamentals](/quests/level-1101-ml-fundamentals/) - *Teaching Machines to Learn* (80 XP)
+- [ ] [Python for Data Science](/quests/level-1101-python-data-science/) - *Pythonic Prophecies* (70 XP)
+- [ ] [Neural Networks Deep Dive](/quests/level-1101-neural-networks/) - *Digital Brain Construction* (100 XP)
+- [ ] [Deep Learning Frameworks](/quests/level-1101-deep-learning-frameworks/) - *TensorFlow & PyTorch* (90 XP)
+- [ ] [Natural Language Processing](/quests/level-1101-natural-language-processing/) - *Understanding Speech* (90 XP)
+- [ ] [Computer Vision Mastery](/quests/level-1101-computer-vision/) - *Machine Sight* (90 XP)
+- [ ] [MLOps Engineering](/quests/level-1101-mlops/) - *Deploying Intelligence* (80 XP)
+- [ ] [AI Ethics and Responsible AI](/quests/level-1101-ai-ethics/) - *Responsible Creation* (50 XP)
 
 ### Level 1110 - Architecture & Design
 
@@ -536,14 +536,14 @@ System Architecture & Design Patterns
 
 **Available Quests:**
 
-- [ ] [404 Hunting Quest](1110/404-hunting.md) - *Error Handling Mastery* (60 XP)
-- [ ] [Software Design Patterns](1110/design-patterns.md) - *Architectural Blueprints* (90 XP)
-- [ ] [Microservices Architecture](1110/microservices-architecture.md) - *Distributed Kingdoms* (100 XP)
-- [ ] [Event-Driven Architecture](1110/event-driven-design.md) - *Reactive Systems* (80 XP)
-- [ ] [Domain-Driven Design](1110/domain-driven-design.md) - *Business Logic Mastery* (90 XP)
-- [ ] [System Design Interview Mastery](1110/system-design-interviews.md) - *Architect Certification* (100 XP)
-- [ ] [API Gateway Patterns](1110/api-gateway-patterns.md) - *Traffic Control* (70 XP)
-- [ ] [Scaling Strategies](1110/scaling-strategies.md) - *Handling Growth* (80 XP)
+- [ ] [404 Hunting Quest](/quests/level-1110-404-hunting-quest/) - *Error Handling Mastery* (60 XP)
+- [ ] [Software Design Patterns](/quests/level-1110-design-patterns/) - *Architectural Blueprints* (90 XP)
+- [ ] [Microservices Architecture](/quests/level-1110-microservices-architecture/) - *Distributed Kingdoms* (100 XP)
+- [ ] [Event-Driven Architecture](/quests/level-1110-event-driven-design/) - *Reactive Systems* (80 XP)
+- [ ] [Domain-Driven Design](/quests/level-1110-domain-driven-design/) - *Business Logic Mastery* (90 XP)
+- [ ] [System Design Interview Mastery](/quests/level-1110-system-design-interviews/) - *Architect Certification* (100 XP)
+- [ ] [API Gateway Patterns](/quests/level-1110-api-gateway-patterns/) - *Traffic Control* (70 XP)
+- [ ] [Scaling Strategies](/quests/level-1110-scaling-strategies/) - *Handling Growth* (80 XP)
 
 ---
 
@@ -567,14 +567,14 @@ Technical Leadership & Industry Impact
 
 **Available Quests:**
 
-- [ ] [Technical Leadership](1111/technical-leadership.md) - *Leading the Guild* (100 XP)
-- [ ] [Open Source Contribution](1111/open-source-contribution.md) - *Community Building* (120 XP)
-- [ ] [Tech Speaking and Writing](1111/tech-speaking-writing.md) - *Spreading Knowledge* (80 XP)
-- [ ] [Mentorship Programs](1111/mentorship-programs.md) - *Training the Next Generation* (100 XP)
-- [ ] [Innovation and R&D](1111/innovation-rnd.md) - *Pushing Boundaries* (150 XP)
-- [ ] [Architecture Reviews](1111/architecture-reviews.md) - *System Evaluation* (100 XP)
-- [ ] [Building Technical Communities](1111/building-technical-communities.md) - *Guild Formation* (100 XP)
-- [ ] [Career Advancement Strategies](1111/career-advancement.md) - *Creating Lasting Impact* (100 XP)
+- [ ] [Technical Leadership](/quests/level-1111-technical-leadership/) - *Leading the Guild* (100 XP)
+- [ ] [Open Source Contribution](/quests/level-1111-open-source-contribution/) - *Community Building* (120 XP)
+- [ ] [Tech Speaking and Writing](/quests/level-1111-tech-speaking-writing/) - *Spreading Knowledge* (80 XP)
+- [ ] [Mentorship Programs](/quests/level-1111-mentorship-programs/) - *Training the Next Generation* (100 XP)
+- [ ] [Innovation and R&D](/quests/level-1111-innovation-rnd/) - *Pushing Boundaries* (150 XP)
+- [ ] [Architecture Reviews](/quests/level-1111-architecture-reviews/) - *System Evaluation* (100 XP)
+- [ ] [Building Technical Communities](/quests/level-1111-building-technical-communities/) - *Guild Formation* (100 XP)
+- [ ] [Career Advancement Strategies](/quests/level-1111-career-advancement/) - *Creating Lasting Impact* (100 XP)
 
 ## Character Class Paths
 
@@ -696,36 +696,36 @@ graph TB
 Essential Starting Adventures
 
 - [ ] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Forge Your Ultimate Development Weapon*
-- [ ] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*
-- [ ] [Character Building](0000/character-building.md) - *Forge Your Identity*
-- [ ] [IT Fundamentals](0000/it-fundamentals.md) - *Ancient Arts Foundation*
-- [ ] [Character Selection](0000/character-selection.md) - *Choose Your Destiny*
-- [ ] [OS Selection](0000/os-selection.md) - *Pick Your Realm*
+- [ ] [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) - *The Hero's Call*
+- [ ] [Character Building](/quests/character-building/) - *Forge Your Identity*
+- [ ] [IT Fundamentals](/quests/lvl_000/it-fundamentals/) - *Ancient Arts Foundation*
+- [ ] [Character Selection](/quests/lvl_000/character-selection/) - *Choose Your Destiny*
+- [ ] [OS Selection](/quests/lvl_000/os-selection/) - *Pick Your Realm*
 
 ### Quick Start Paths by Class
 
 Fast Track Adventures
 
 #### 💻 Developer Quick Start
-1. [Hello n00b](0000/hello-noob.md) - First Steps
+1. [Hello n00b](/quests/init_world/hello-noob/) - First Steps
 2. [VS Code Mastery](/quests/vscode-mastery/) - Tool Setup
-3. [Personal Site](0001/personal-site.md) - First Project
+3. [Personal Site](/quests/level-0001/personal-site/) - First Project
 
 #### 🏗️ Engineer Quick Start
-1. [Terminal Fundamentals](0000/terminal-fundamentals.md) - Terminal Basics
-2. [Bashcrawl Adventure](0000/bashcrawl/) - Browser command practice
-3. [Bash-run Extension Lab](0000/bash-run.md) - Local Bash project extension
-4. [Bash Scripting](0010/bash-scripting.md) - Automation
+1. [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - Terminal Basics
+2. [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) - Browser command practice
+3. [Bash-run Extension Lab](/quests/lvl_000/bash-run/) - Local Bash project extension
+4. [Bash Scripting](/quests/0010/bash-scripting/) - Automation
 
 #### 🛡️ Security Quick Start
-1. [Terminal Mastery](0000/) - Command Line Foundation
-2. [GitHub Security](0011/) - AI-Assisted Security
+1. [Terminal Mastery](/quests/level-0000/) - Command Line Foundation
+2. [GitHub Security](/quests/level-0011/) - AI-Assisted Security
 3. Security Fundamentals (Level 1000) - Defense Training
 
 #### 📊 Data Science Quick Start
-1. [Python Basics](0001/) - Programming Foundation
-2. [AI Tools](0011/prompt-crystal-mastery-vscode-copilot.md) - AI Assistance
-3. [EDGAR Quest](1100/edgar.md) - Data Analysis
+1. [Python Basics](/quests/level-001/) - Programming Foundation
+2. [AI Tools](/quests/level-0011-prompt-crystal-vscode-copilot/) - AI Assistance
+3. [EDGAR Quest](/quests/level-1100-conquer-king-edgar/) - Data Analysis
 
 ### Platform-Specific Paths
 
@@ -767,19 +767,19 @@ Latest Magical Discoveries
 
 Advanced productivity and workflow mastery quests:
 
-- [ ] [Django & Git Mastery](tools/django-and-git.md) - *Web Framework Sorcery* (70 XP)
-- [ ] [Action Triggers](tools/action-triggers.md) - *Automation Spell Casting* (50 XP)
-- [ ] [Branches & Pull Requests](tools/branches-and-pull-requests.md) - *Version Control Mastery* (60 XP)
-- [ ] [Change Log Chronicles](tools/change-logs.md) - *Document Your Journey* (40 XP)
-- [ ] [Clean Commit Commitments](tools/commitments-to-clean-commits.md) - *Perfect Git Rituals* (50 XP)
-- [ ] [AI Automation Revolution](tools/revolutionizing-work-with-ai-automation.md) - *Summon AI Familiars* (80 XP)
-- [ ] [Planting Seeds](tools/planting-seeds.md) - *Project Initialization* (40 XP)
-- [ ] [Epic Quest: Zer0 to Her0 CM Style](tools/epic-quest-zer0-to-her0-cmstyle.md) - *Complete Journey* (200 XP)
+- [ ] [Django & Git Mastery](/quests/level-0010-django-and-git/) - *Web Framework Sorcery* (70 XP)
+- [ ] [Action Triggers](/quests/level-0010-action-triggers/) - *Automation Spell Casting* (50 XP)
+- [ ] [Branches & Pull Requests](/quests/level-0010-branches-and-pull-requests/) - *Version Control Mastery* (60 XP)
+- [ ] [Change Log Chronicles](/quests/level-0010-change-logs/) - *Document Your Journey* (40 XP)
+- [ ] [Clean Commit Commitments](/quests/level-0010-commitments-to-clean-commits/) - *Perfect Git Rituals* (50 XP)
+- [ ] [AI Automation Revolution](/quests/level-0010-revolutionizing-work-with-ai-automation/) - *Summon AI Familiars* (80 XP)
+- [ ] [Planting Seeds](/quests/level-0010-planting-seeds/) - *Project Initialization* (40 XP)
+- [ ] [Epic Quest: Zer0 to Her0 CM Style](/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/) - *Complete Journey* (200 XP)
 
 #### Featured Chronicles
 
-- [ ] [Sourcery Code Methods](0100/sourcery-code-methods.md) - *Advanced Coding Arts* (50 XP)
-- [ ] [Siege of King EDGAR: Storming the SEC Data Castle](1100/sec-edgar.md) - *Data Liberation Trail* (80 XP)
+- [ ] [Sourcery Code Methods](/quests/level-0100-source-control-sorcery/) - *Advanced Coding Arts* (50 XP)
+- [ ] [Siege of King EDGAR: Storming the SEC Data Castle](/quests/level-1100-sec-edgar-siege/) - *Data Liberation Trail* (80 XP)
 
 ## Essential Equipment & Spell Components
 
@@ -872,9 +872,9 @@ Proof of Your Growing Power
 
 Your Mystical Library
 
-- [ ] [World Map](codex/world_map.md) - *Navigate All Realms*
-- [ ] [Glossary](codex/glossary.md) - *Dictionary of Digital Spells*
-- [ ] [Quest Index](README.md) - *Complete Adventure Catalog*
+- [ ] [World Map](/quests/codex/world-map/) - *Navigate All Realms*
+- [ ] [Glossary](/quests/level-codex/glossary/) - *Dictionary of Digital Spells*
+- [ ] [Quest Index](/quests/) - *Complete Adventure Catalog*
 
 ### Learning Resources
 
@@ -990,10 +990,10 @@ graph TB
 
 Based on your current progress:
 
-1. **Start Here:** [Hello n00b](0000/hello-noob.md) - Begin your journey
+1. **Start Here:** [Hello n00b](/quests/init_world/hello-noob/) - Begin your journey
 2. **Then:** [VS Code Mastery](/quests/vscode-mastery/) - Set up your tools
-3. **Next:** [Terminal Fundamentals](0000/terminal-fundamentals.md) - Learn the terminal
-4. **Practice:** [Bashcrawl Adventure](0000/bashcrawl/) - Reinforce commands through play
+3. **Next:** [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - Learn the terminal
+4. **Practice:** [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) - Reinforce commands through play
 5. **Goal:** Complete Apprentice Tier (Levels 0000-0011)
 
 ## Community & Support
@@ -1002,8 +1002,8 @@ Based on your current progress:
 
 When You're Stuck on a Quest
 
-- 📖 **Research**: Check [Glossary](codex/glossary.md) for term definitions
-- 🗺️ **Navigate**: Consult [World Map](codex/world_map.md) for orientation
+- 📖 **Research**: Check [Glossary](/quests/level-codex/glossary/) for term definitions
+- 🗺️ **Navigate**: Consult [World Map](/quests/codex/world-map/) for orientation
 - 💬 **Discuss**: Join community discussions via Giscus comments
 - 🐛 **Report**: Submit issues or suggestions via GitHub Issues
 - 🤝 **Collaborate**: Connect with fellow adventurers in the community
@@ -1013,7 +1013,7 @@ When You're Stuck on a Quest
 Become a Quest Creator
 
 Interested in adding your own adventures to the quest system?
-Follow the [contribution guidelines](README.md#contributing-to-the-quest-realm) to:
+Follow the [contribution guidelines](/quests/#contributing-to-the-quest-realm) to:
 
 1. Share your learning journey
 2. Create new quest content
@@ -1086,7 +1086,7 @@ _Last generated: 2026-01-15T20:39:18Z_
 | [Technology Stack Analysis: Barodybroject](/quests/level-0001/barodybroject-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
 | [Terminal Mastery: Conquering the Command-Line Realm](/quests/level-0001-terminal-mastery/) | main_quest | 🟢 Easy | 45-90 minutes | Foundation Path: Digital Literacy Mastery | ✅ Complete |
 | [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-001-github-pages-portal/) | main_quest | 🟢 Easy | 2-4 hours | Web Development Fundamentals | ✅ Complete |
-| [The Knowledge Vault: Building an Automated Documentation Hub](../README.mdlevel-0001/docs-in-a-row/) | main_quest | 🟡 Medium | 2-3 hours | Automation Mastery | ✅ Complete |
+| [The Knowledge Vault: Building an Automated Documentation Hub](/quests/0001/docs-in-a-row/) | main_quest | 🟡 Medium | 2-3 hours | Automation Mastery | ✅ Complete |
 | [YAML Configuration: Site Settings Mastery](/quests/level-0001-yaml-configuration/) | main_quest | 🟢 Easy | 30-45 minutes | Jekyll Foundations | 🔮 Draft |
 
 ### Level 0010
@@ -1109,7 +1109,7 @@ _Last generated: 2026-01-15T20:39:18Z_
 | [Revolutionizing Work with AI Automation](/quests/level-0010-revolutionizing-work-with-ai-automation/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
 | [Setting up Django and Git](/quests/level-0010-django-and-git/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
 | [Terminal Artificer: Forging the Glass Interface](/quests/level-0010-terminal-artificer/) | side_quest | 🟢 Easy | 30-45 minutes | Terminal Mastery Path | ✅ Complete |
-| [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](../README.mdlevel-0010-oh-my-zsh-mastery/) | main_quest | 🟡 Medium | 45-90 minutes | Terminal Mastery Path | ✅ Complete |
+| [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](/quests/level-0010-oh-my-zsh-mastery/) | main_quest | 🟡 Medium | 45-90 minutes | Terminal Mastery Path | ✅ Complete |
 | [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](/quests/level-0010-jekyll-mermaid-integration/) | main_quest | 🟡 Medium | 2-3 hours | Jekyll Mastery | ✅ Complete |
 | [Understanding Action Triggers in Depth](/quests/level-0010-action-triggers/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
 
