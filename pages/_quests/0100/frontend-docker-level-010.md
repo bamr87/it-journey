@@ -42,8 +42,6 @@ attachments: ''
 sub-title: 'Level 010: Adding Bootstrap 5 to Jekyll'
 slug: null
 type: default
-redirect_from:
-- /quests/level-0100-lvl-010-frontend-docker/
 ---
 Awesome! You’ve laid a strong foundation by setting up Docker and creating your Jekyll site. Now, let’s journey further into Level 010, where we will add Bootstrap 5 to enhance the visual appeal and functionality of your site.
 

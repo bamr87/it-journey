@@ -99,8 +99,6 @@ rewards:
   progression_points: 50
   unlocks_features:
   - Ability to create user-friendly CLI tools
-redirect_from:
-- /quests/level-0010-terminal-artificer/
 ---
 *In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
 

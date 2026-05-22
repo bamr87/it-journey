@@ -125,8 +125,6 @@ related_quests:
 - 'Level 0010: Nerd Font Enchantment'
 - 'Level 0010: Bash Scripting'
 - VSCode Mastery Quest
-redirect_from:
-- /quests/level-0010-oh-my-zsh-mastery/
 ---
 ## 🌟 The Legend of Terminal Enchantment
 

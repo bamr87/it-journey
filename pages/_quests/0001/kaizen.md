@@ -108,8 +108,6 @@ rewards:
   unlocks_features:
   - Access to advanced Lean Software Development quests
   - Team leadership and culture transformation paths
-redirect_from:
-- /quests/level-0001-kaizen-continuous-improvement/
 ---
 *In the ancient forges of the Digital Kingdom, where lines of code shimmer like molten steel and bugs lurk in shadowy caverns like dragons, a legendary call echoes across the realm. You, the valiant Code Alchemist—a master of algorithms and architect of systems—have been summoned by the High Council of Efficiency. The realm faces a dire threat: **stagnation**, the foul blight that turns innovative projects into bloated monoliths of inefficiency, riddled with waste and rework.*
 

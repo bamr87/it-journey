@@ -85,7 +85,7 @@ Every contributor gets a **Character Profile** — an RPG-style character sheet 
 4. Choose your **class**: Wizard, Warrior, Ranger, Rogue, Healer, Bard, or Paladin
 5. Commit + push — the GitHub Action will auto-generate your stats on the next push to `main`
 
-See the [Forge Your Character quest](/quests/forge-your-character/) for a full walkthrough.
+See the [Forge Your Character quest](/quests/0001/forge-your-character/) for a full walkthrough.
 
 **Alternative — Git Subtree Method:**
 

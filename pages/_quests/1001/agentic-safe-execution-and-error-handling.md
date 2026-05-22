@@ -2,7 +2,7 @@
 title: "The Shield of Retries: Safe Execution and Error Handling"
 description: "Design agent workflows that survive tool failures, API errors, and unexpected outputs — implement retry logic, timeouts, fallback strategies, and graceful error reporting for GitHub Copilot agents."
 date: 2026-05-17T00:00:00.000Z
-preview: images/previews/agentic-safe-execution-and-error-handling.png
+preview: /assets/images/previews/agentic-safe-execution-and-error-handling.png
 level: "1001"
 difficulty: 🔴 Hard
 estimated_time: 120 minutes

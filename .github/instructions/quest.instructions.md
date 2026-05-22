@@ -124,15 +124,9 @@ Do **not** create single-file subdirectories like `0000/hello-cloud/hello-cloud.
 
 Asset files (scripts, images) may remain in subdirectories (e.g. `0000/hello-cloud/install.sh`).
 
-### `redirect_from` hygiene
+### No `redirect_from`
 
-When a quest's permalink changes, add the old URL(s) to `redirect_from:` so existing links continue to resolve:
-
-```yaml
-redirect_from:
-  - /quests/old-path/
-  - /quests/another-old-path/
-```
+Do **not** add `redirect_from:` entries. The project policy is canonical URLs only — when a permalink changes, every internal reference must be updated globally to point at the new canonical URL. External inbound links to old URLs are accepted as broken.
 
 ### Dependency URLs
 

@@ -202,7 +202,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe1 Medium valid",
-        "Permalink uses descriptive path (level 0000): /quests/lvl_000/bash-run/"
+        "Permalink uses descriptive path (level 0000): /quests/0000/side-quests/bash-run/"
       ],
       "score": 36,
       "max_score": 75,
@@ -229,7 +229,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/lvl_000/begin-your-it-journey/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/begin-your-it-journey/",
         "Strong fantasy theme integration (score: 6/6)"
       ],
       "score": 43,
@@ -255,7 +255,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/character-building/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/character-building/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found 45 interactive checkboxes for learner engagement",
@@ -287,7 +287,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/lvl_000/character-selection/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/character-selection/",
         "Strong fantasy theme integration (score: 4/6)"
       ],
       "score": 43,
@@ -345,7 +345,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \u2694\ufe0f Epic valid",
-        "Permalink uses descriptive path (level 0000): /quests/hello-cloud/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/hello-cloud/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found: Platform-specific instructions (optional)",
@@ -377,7 +377,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe1 Medium valid",
-        "Permalink uses descriptive path (level 0000): /quests/hello-linux/linux-fundamentals/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/linux-fundamentals/",
         "Citations/references section found"
       ],
       "score": 38,
@@ -404,7 +404,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/hello-macos/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/hello-macos/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found: Platform-specific instructions (optional)",
@@ -434,7 +434,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/init_world/hello-noob/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/hello-noob/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found 29 interactive checkboxes for learner engagement",
@@ -465,7 +465,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe1 Medium valid",
-        "Permalink uses descriptive path (level 0000): /quests/hello-windows/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/hello-windows/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found 47 interactive checkboxes for learner engagement",
@@ -498,7 +498,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/lvl_000/it-fundamentals/"
+        "Permalink uses descriptive path (level 0000): /quests/0000/it-fundamentals/"
       ],
       "score": 38,
       "max_score": 70,
@@ -557,7 +557,7 @@
       "info": [
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/lvl_000/os-selection/"
+        "Permalink uses descriptive path (level 0000): /quests/0000/os-selection/"
       ],
       "score": 38,
       "max_score": 70,
@@ -614,7 +614,7 @@
         "Enhanced field present: rewards",
         "Level 0000 (decimal: 0) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0000): /quests/vscode-mastery/",
+        "Permalink uses descriptive path (level 0000): /quests/0000/vscode-mastery/",
         "Found: Quest Objectives section",
         "Found 20 interactive checkboxes for learner engagement",
         "Strong fantasy theme integration (score: 6/6)",
@@ -761,7 +761,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0001 (decimal: 1) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0001): /quests/level-001-github-pages-portal/",
+        "Permalink uses descriptive path (level 0001): /quests/0001/github-pages-portal/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found: Platform-specific instructions (optional)",
@@ -995,7 +995,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0001 (decimal: 1) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0001): /quests/stating-the-stats/",
+        "Permalink uses descriptive path (level 0001): /quests/0001/stating-the-stats/",
         "Found: Quest Objectives section",
         "Found 73 interactive checkboxes for learner engagement",
         "Strong fantasy theme integration (score: 4/6)",
@@ -1267,7 +1267,7 @@
         "Enhanced field present: validation_criteria",
         "Level 0010 (decimal: 2) valid",
         "Difficulty \ud83d\udfe2 Easy valid",
-        "Permalink uses descriptive path (level 0010): /quests/side-quest-nerd-font-enchantment/",
+        "Permalink uses descriptive path (level 0010): /quests/0010/side-quests/nerd-font-enchantment/",
         "Found: Quest Objectives section",
         "Found 57 interactive checkboxes for learner engagement",
         "Strong fantasy theme integration (score: 6/6)",
@@ -1778,7 +1778,7 @@
       "info": [
         "Level 0100 (decimal: 4) valid",
         "Difficulty \ud83d\udfe1 Medium valid",
-        "Permalink uses descriptive path (level 0100): /quests/frontend-docker/"
+        "Permalink uses descriptive path (level 0100): /quests/0100/frontend-docker/"
       ],
       "score": 38,
       "max_score": 75,
@@ -1834,7 +1834,7 @@
       "info": [
         "Level 0100 (decimal: 4) valid",
         "Difficulty \ud83d\udfe1 Medium valid",
-        "Permalink uses descriptive path (level 0100): /quests/frontend/"
+        "Permalink uses descriptive path (level 0100): /quests/0100/frontend/"
       ],
       "score": 38,
       "max_score": 70,
@@ -4263,7 +4263,7 @@
       "info": [
         "Level 1001 (decimal: 9) valid",
         "Difficulty \ud83d\udd34 Hard valid",
-        "Permalink uses descriptive path (level 1001): /quests/azure-ascension-jekyll-deployment/",
+        "Permalink uses descriptive path (level 1001): /quests/1000/azure-ascension-jekyll-deployment/",
         "Found: Quest Objectives section",
         "Found: Quest Prerequisites section (optional but recommended)",
         "Found 15 interactive checkboxes for learner engagement"

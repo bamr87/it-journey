@@ -66,8 +66,6 @@ related_quests:
 - 2025-04-18-revolutionizing-work-with-ai-automation.md
 - frontend/frontend-docker.md
 - lvl_001/personal-site.md
-redirect_from:
-- /quests/level-1100-sec-edgar-siege/
 ---
 *In the twilight of the Digital Realm, a stern monarch sits upon a throne of filings—King EDGAR,
 custodian of truths encoded in structured scrolls and cryptic XBRL sigils. His castle is vast, his

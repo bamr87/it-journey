@@ -7,8 +7,6 @@ lastmod: 2025-11-29 23:41:31.776000+00:00
 level: 1110
 categories: quests
 date: 2025-11-29 16:46:02+00:00
-redirect_from:
-- /quests/level-1110/
 ---
 # Level 1110: Quality Assurance
 
@@ -26,14 +24,14 @@ Level 1110 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [404 Hunting: Binary Wards for Unbreakable Links](/quests/level-1110-404-hunting-quest/) | 🟡 Medium | 60-90 minutes | main_quest | 🔮 Placeholder |
-| [API Gateway Patterns: Routing, Load Balancing and Security](/quests/level-1110-api-gateway-patterns/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Software Design Patterns: Gang of Four and Modern Patterns](/quests/level-1110-design-patterns/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Domain-Driven Design: Strategic and Tactical Patterns](/quests/level-1110-domain-driven-design/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Event-Driven Architecture: Message Queues and Event Sourcing](/quests/level-1110-event-driven-design/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Microservices Architecture: Building Scalable Distributed Systems](/quests/level-1110-microservices-architecture/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
-| [Scaling Strategies: Horizontal and Vertical Scaling Patterns](/quests/level-1110-scaling-strategies/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [System Design Interview Mastery: Ace Technical Interviews](/quests/level-1110-system-design-interviews/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [404 Hunting: Binary Wards for Unbreakable Links](/quests/1110/404-hunting-quest/) | 🟡 Medium | 60-90 minutes | main_quest | 🔮 Placeholder |
+| [API Gateway Patterns: Routing, Load Balancing and Security](/quests/1110/api-gateway-patterns/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Software Design Patterns: Gang of Four and Modern Patterns](/quests/1110/design-patterns/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Domain-Driven Design: Strategic and Tactical Patterns](/quests/1110/domain-driven-design/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Event-Driven Architecture: Message Queues and Event Sourcing](/quests/1110/event-driven-design/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Microservices Architecture: Building Scalable Distributed Systems](/quests/1110/microservices-architecture/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Scaling Strategies: Horizontal and Vertical Scaling Patterns](/quests/1110/scaling-strategies/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [System Design Interview Mastery: Ace Technical Interviews](/quests/1110/system-design-interviews/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
 
 
 ### 🔍 Error Handling

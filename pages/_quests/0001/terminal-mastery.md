@@ -67,8 +67,6 @@ related_quests:
 - 'Level 0000: Digital Awakening - Computer Fundamentals'
 - 'Level 0010: File System Sorcery - Directory Navigation'
 - 'Level 0011: Version Control Magic - Git Fundamentals'
-redirect_from:
-- /quests/level-0001-terminal-mastery/
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 

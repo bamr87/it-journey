@@ -123,6 +123,7 @@ graph LR
 
 > **Exercise 14.1:** Create an orchestrator workflow that fans out to parallel sub-agents.
 
+{% raw %}
 ```yaml
 # .github/workflows/orchestrator-fan-out.yml
 name: Multi-Agent Orchestrator (Fan-Out)
@@ -211,6 +212,7 @@ jobs:
               body: `## Multi-Agent Task Complete\n\n${report.summary}\n\n${report.details}`
             });
 ```
+{% endraw %}
 
 ---
 

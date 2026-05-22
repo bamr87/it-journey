@@ -114,8 +114,6 @@ quest_mapping:
   biome: Terminal
 draft: false
 fmContentType: quest
-redirect_from:
-- /quests/level-0011-prd-codex-mastery/
 ---
 *Greetings, brave Scribe of the Digital Realm! You stand at the threshold of an ancient art—the distillation of scattered signals into crystalline Product Requirements. In ages past, Product Managers toiled endlessly, their PRDs growing stale mere moments after quill touched parchment. But you shall learn the secrets of the PRD MACHINE—an autonomous oracle that writes, maintains, and evolves perfect PRDs faster than any mortal hand.*
 

@@ -99,9 +99,6 @@ rewards:
   - Access to advanced cloud quests
   - Foundation for infrastructure-as-code learning
 draft: false
-redirect_from:
-- /quests/hello-cloud/
-- /quests/level-0000-hello-cloud/
 ---
 *Welcome, skybound adventurer! You stand at the edge of the mortal realm, gazing up at the shimmering **Sky Realm** — a vast kingdom of infinite compute power, boundless storage vaults, and magical services that can scale from a whisper to a thunderclap. Today, you claim your first foothold in the clouds.*
 

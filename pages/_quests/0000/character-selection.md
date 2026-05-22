@@ -95,9 +95,6 @@ fmContentType: quest
 draft: false
 meta: null
 slug: character-selection
-redirect_from:
-- /quests/lvl_000/character-selection/
-- /quests/level-0000-character-selection/
 ---
 *Welcome to the Character Selection chamber, brave adventurer! Just as every RPG hero must choose their class before venturing into the world, you must select your IT specialization to focus your training and skills. Each character class offers a unique path through the digital realm.*
 

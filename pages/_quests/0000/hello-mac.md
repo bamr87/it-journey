@@ -99,9 +99,6 @@ rewards:
   - Access to VS Code Mastery quest
   - Professional macOS development workflow
 draft: false
-redirect_from:
-- /quests/hello-macos/
-- /quests/level-0000-hello-macos/
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
 

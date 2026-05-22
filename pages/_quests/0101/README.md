@@ -8,8 +8,6 @@ lastmod: 2025-12-02 04:46:12.277000+00:00
 level: '0101'
 categories: quests
 date: 2025-11-29 16:46:02+00:00
-redirect_from:
-- /quests/level-0101/
 ---
 # Level 0101: Advanced Docker & DevOps
 
@@ -27,17 +25,17 @@ Level 0101 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Artifact Management: Build Output Storage and Dependency Caching](/quests/level-0101-artifact-management/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials](/quests/level-0101-cicd-fundamentals/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
-| [Deployment Pipelines: Production Release Automation Strategies](/quests/level-0101-deployment-pipelines/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Docker Containerization Mastery: Level 0101 (5) Quest](/quests/level-0101-docker-mastery/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
-| [Environment Management: Dev, Staging, and Production Configuration](/quests/level-0101-environment-management/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [GitHub Actions Basics: Workflow Automation for Modern DevOps](/quests/level-0101-github-actions-basics/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Jekyll Quest Tracking: Building Dynamic Collection Layouts](/quests/level-0101-jekyll-quest-tracking/) | 🔴 Hard | 4-6 hours | side_quest | ✅ Complete |
-| [Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest](/quests/level-0101-latex-cv-forging/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Secrets Management: Secure Configuration and Credential Handling](/quests/level-0101-secrets-management/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [Testing Integration: Automated Quality Assurance in CI/CD Pipelines](/quests/level-0101-testing-integration/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
-| [Workflow Optimization: Caching Strategies and Pipeline Parallelization](/quests/level-0101-workflow-optimization/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Artifact Management: Build Output Storage and Dependency Caching](/quests/0101/artifact-management/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials](/quests/0101/cicd-fundamentals/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Deployment Pipelines: Production Release Automation Strategies](/quests/0101/deployment-pipelines/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Docker Containerization Mastery: Level 0101 (5) Quest](/quests/0101/docker-mastery/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
+| [Environment Management: Dev, Staging, and Production Configuration](/quests/0101/environment-management/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [GitHub Actions Basics: Workflow Automation for Modern DevOps](/quests/0101/github-actions-basics/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Jekyll Quest Tracking: Building Dynamic Collection Layouts](/quests/0101/side-quests/jekyll-quest-tracking/) | 🔴 Hard | 4-6 hours | side_quest | ✅ Complete |
+| [Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest](/quests/0101/latex-cv-forging/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Secrets Management: Secure Configuration and Credential Handling](/quests/0101/secrets-management/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Testing Integration: Automated Quality Assurance in CI/CD Pipelines](/quests/0101/testing-integration/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Workflow Optimization: Caching Strategies and Pipeline Parallelization](/quests/0101/workflow-optimization/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 
 
 ### 🐳 Advanced Containers

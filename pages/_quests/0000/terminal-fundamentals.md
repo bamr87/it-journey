@@ -101,8 +101,6 @@ rewards:
   unlocks_features:
   - Foundation for all scripting and development quests
   - Confident terminal usage across platforms
-redirect_from:
-- /quests/level-0000-terminal-fundamentals/
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 
@@ -378,7 +376,7 @@ Once you can use `pwd`, `ls`, `cd`, and `cat`, reinforce those skills in [Bashcr
 - `cd cellar` moves you deeper into the adventure
 - `F1` opens in-game documentation when you need a hint
 
-After your first online run, continue with the [Bashcrawl Terminal Adventure Quest](/quests/level-0000-bashcrawl/) for the full quest checklist and then [Bash Scripting Mastery](/quests/level-0010-bash-scripting/) when you are ready to automate.
+After your first online run, continue with the [Bashcrawl Terminal Adventure Quest](/quests/0000/bashcrawl/) for the full quest checklist and then [Bash Scripting Mastery](/quests/0010/bash-scripting/) when you are ready to automate.
 
 ---
 

@@ -99,8 +99,6 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
-redirect_from:
-- /quests/level-1110-design-patterns/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

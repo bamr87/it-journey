@@ -26,8 +26,8 @@ slug: /shell/
 lastmod: 2026-04-25T19:27:00.209Z
 draft: false
 related_quests:
-    - /quests/bashcrawl-terminal-adventure/
-    - /quests/lvl_000/bash-run/
+    - /quests/0000/bashcrawl/
+    - /quests/0000/side-quests/bash-run/
 date: 2021-12-28T13:35:40.000Z
 ---
 

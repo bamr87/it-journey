@@ -133,7 +133,7 @@ rewards:
   - Enterprise architecture pattern library
 related_quests:
   prerequisites:
-  - /quests/level-0000-hello-noob/
+  - /quests/0000/hello-noob/
   - /quests/terminal-fundamentals/
   followups:
   - /quests/django-api-design/
@@ -142,9 +142,6 @@ related_quests:
   parallel:
   - /quests/docker-fundamentals/
   - /quests/postgresql-mastery/
-redirect_from:
-- /quests/level-0001/stack-attack/
-- /quests/level-0001-stack-attack/
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 
@@ -1299,6 +1296,7 @@ Output: A generic <DataTable> component in src/components/ui/data-table.tsx
 
 **Sample Agent Output — ERP Sales Orders Page:**
 
+{% raw %}
 ```tsx
 // src/pages/sales/orders/index.tsx
 import { useGetSalesOrdersList } from "@/api/generated/sales";
@@ -1384,6 +1382,7 @@ export function SalesOrdersPage() {
   );
 }
 ```
+{% endraw %}
 
 ### 🎮 Challenge 3: First Full-Stack Feature
 

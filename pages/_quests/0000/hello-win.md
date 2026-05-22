@@ -102,9 +102,6 @@ skill_focus:
 learning_style: hands-on
 fmContentType: quest
 draft: false
-redirect_from:
-- /quests/hello-windows/
-- /quests/level-0000-hello-windows/
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 

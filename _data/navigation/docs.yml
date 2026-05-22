@@ -24,11 +24,11 @@
     - title: GH-600 Resources
       url: /docs/certifications/gh-600/recommended-resources/
 - title: Contributing
-  url: /docs/contributing/contributing-developer/
+  url: /docs/contributing/contributing-developer/contributing-developer/
   icon: bi-people
   children:
     - title: Developer Guide
-      url: /docs/contributing/contributing-developer/
+      url: /docs/contributing/contributing-developer/contributing-developer/
 - title: Obsidian
   url: /docs/obsidian/
   icon: bi-diagram-3

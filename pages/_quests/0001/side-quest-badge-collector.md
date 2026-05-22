@@ -70,8 +70,6 @@ validation_criteria:
   - badges_pinned array has 1-3 valid badge IDs
   - Pinned badges display in the Featured section
   - Understand how achievement thresholds work
-redirect_from:
-- /quests/side-quest-badge-collector/
 ---
 # 🏅 Badge Collector: Showcasing Your Achievements
 

@@ -45,7 +45,7 @@ Navigate through our comprehensive quest system designed to take you from comple
 *Character creation and foundational skills*
 
 **Start Your Journey:**
-- **[What is OS?](/quests/init_world/hello-noob/)** - 🌱 n00b Quest for absolute beginners
+- **[What is OS?](/quests/0000/hello-noob/)** - 🌱 n00b Quest for absolute beginners
 - **[Hello Windows](/quests/init_world/hello-win/)** - 🪟 Mastering the Microsoft Kingdom  
 - **[Hello macOS](/quests/init_world/hello-mac/)** - 🍎 Conquering the Apple Empire
 - **[Hello Linux](/quests/init_world/hello-linux/)** - 🐧 Taming the Penguin's Domain
@@ -54,13 +54,13 @@ Navigate through our comprehensive quest system designed to take you from comple
 **Foundation Quests:**
 - [IT Fundamentals](/quests/init_world/2023-11-23-it-fundamentals/) - Learn the Ancient Arts
 - [Character Building](/quests/init_world/2023-11-23-character-building/) - Forge Your Identity  
-- [VS Code Mastery](/quests/vscode-mastery/) - Craft Your Ultimate Development Weapon
+- [VS Code Mastery](/quests/0000/vscode-mastery/) - Craft Your Ultimate Development Weapon
 
 ### ⚔️ Progressive Skill Levels
 
 #### 🟢 Level 000 - Apprentice Trials
 *Basic scripting and automation magic*
-- [Bash Fundamentals](/quests/lvl_000/bash-run/) - Terminal Incantations
+- [Bash Fundamentals](/quests/0000/side-quests/bash-run/) - Terminal Incantations
 - Calculator Scripts - Mathematical Magic Basics
 - Profile Customization - Digital Presence Setup
 
@@ -79,12 +79,12 @@ Navigate through our comprehensive quest system designed to take you from comple
 
 #### Frontend Mastery Path
 *Become a User Interface Wizard*
-- [Frontend Fundamentals](/quests/frontend/) - The Art of Visual Creation
+- [Frontend Fundamentals](/quests/0100/frontend/) - The Art of Visual Creation
 - CSS Enchantments - Styling Magic and Responsive Design
 - JavaScript Kingdoms - Interactive Experience Crafting
 - Modern Framework Mastery - React, Vue, Angular Adventures
 
-[Explore All Frontend Quests](/quests/frontend/)
+[Explore All Frontend Quests](/quests/0100/frontend/)
 
 #### Backend Mastery Path
 *Master the art of server-side sorcery*

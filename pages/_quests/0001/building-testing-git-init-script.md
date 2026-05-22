@@ -35,8 +35,6 @@ keywords:
 fmContentType: quest
 comments: true
 sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
-redirect_from:
-- /quests/level-0001-git-init-testing/
 ---
 ## The Challenge: Safe automation without surprises
 

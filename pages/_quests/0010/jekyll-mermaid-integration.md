@@ -76,8 +76,6 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
-redirect_from:
-- /quests/level-0010-jekyll-mermaid-integration/
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 

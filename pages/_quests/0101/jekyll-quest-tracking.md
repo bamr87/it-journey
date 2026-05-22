@@ -133,8 +133,6 @@ rewards:
   - Custom collection layouts
   - Dynamic filtering systems
   - Automated frontmatter management
-redirect_from:
-- /quests/level-0101-jekyll-quest-tracking/
 ---
 *Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging powerful layouts that respond to frontmatter incantations and user interactions alike.*
 

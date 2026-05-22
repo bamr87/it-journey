@@ -374,9 +374,9 @@ Ready to level up? Continue your Docker journey:
 
 ### Related Quests
 
-- [Container Fundamentals Quest](/quests/level-0100-container-fundamentals/) - Deep dive into Docker
-- [Docker Compose Orchestration](/quests/level-0100-docker-compose-orchestration/) - Multi-container apps
-- [Frontend Docker Quest](/quests/level-0100/lvl-000-frontend-docker/) - Docker for web development
+- [Container Fundamentals Quest](/quests/0100/container-fundamentals/) - Deep dive into Docker
+- [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/) - Multi-container apps
+- [Frontend Docker Quest](/quests/0100/frontend-docker-lvl-000/) - Docker for web development
 
 ---
 
@@ -419,4 +419,4 @@ You've learned the Docker basics! You can now:
 
 **Last Updated**: December 2025 | **Author**: IT-Journey Team
 
-*Found this helpful? Check out our [Docker Mastery Quest Series](/quests/level-0100-container-fundamentals/) for advanced topics! 🚀*
+*Found this helpful? Check out our [Docker Mastery Quest Series](/quests/0100/container-fundamentals/) for advanced topics! 🚀*

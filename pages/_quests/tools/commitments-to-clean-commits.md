@@ -44,8 +44,6 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
-redirect_from:
-- /quests/level-0010-commitments-to-clean-commits/
 ---
 **Ah, brave adventurer!** You've mastered the sacred art of branching and the scroll-writing ritual known as the Pull Request. Now, prepare thyself for the next enchanted trial:
 

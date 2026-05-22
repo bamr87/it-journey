@@ -75,8 +75,6 @@ validation_criteria:
   - 52 weeks of data render as colored cells
   - Color intensity reflects commit count
   - Calendar is responsive
-redirect_from:
-- /quests/side-quest-contribution-calendar/
 ---
 # 📆 Contribution Calendar: Mapping Your Journey Through Time
 

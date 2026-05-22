@@ -30,9 +30,6 @@ toc: true
 toc_sticky: true
 sidebar:
   nav: quests
-redirect_from:
-- /quests/1111/
-- /quests/level-1111/
 ---
 # 👑 Level 1111: Leadership & Innovation
 
@@ -204,13 +201,13 @@ To achieve Legendary Status, you must:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Architecture Reviews: Leading Technical Design Discussions](/quests/level-1111-architecture-reviews/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Building Technical Communities: Growing Developer Ecosystems](/quests/level-1111-building-technical-communities/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Career Advancement Strategies: Growing from Engineer to Leader](/quests/level-1111-career-advancement/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Innovation and R&D: Driving Technical Innovation](/quests/level-1111-innovation-rnd/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
-| [Mentorship Programs: Developing and Growing Engineering Talent](/quests/level-1111-mentorship-programs/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Open Source Contribution: Leading and Maintaining Projects](/quests/level-1111-open-source-contribution/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Tech Speaking and Writing: Building Your Technical Brand](/quests/level-1111-tech-speaking-writing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Technical Leadership: Building High-Performance Engineering Teams](/quests/level-1111-technical-leadership/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Architecture Reviews: Leading Technical Design Discussions](/quests/1111/architecture-reviews/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Building Technical Communities: Growing Developer Ecosystems](/quests/1111/building-technical-communities/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Career Advancement Strategies: Growing from Engineer to Leader](/quests/1111/career-advancement/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Innovation and R&D: Driving Technical Innovation](/quests/1111/innovation-rnd/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Mentorship Programs: Developing and Growing Engineering Talent](/quests/1111/mentorship-programs/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Open Source Contribution: Leading and Maintaining Projects](/quests/1111/open-source-contribution/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Tech Speaking and Writing: Building Your Technical Brand](/quests/1111/tech-speaking-writing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Technical Leadership: Building High-Performance Engineering Teams](/quests/1111/technical-leadership/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
 
 

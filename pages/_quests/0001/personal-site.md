@@ -31,10 +31,6 @@ fmContentType: quest
 key: tutorial
 index: 8199
 subcategory: jekyll
-redirect_from:
-- /quests/level-0001/personal-site/
-- /quests/level-0001-personal-site/
-- /quests/side-quest-personal-site/
 ---
 > Services/tools used for building personal site.
 

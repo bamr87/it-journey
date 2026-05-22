@@ -128,8 +128,6 @@ quest_mapping:
   region: Intermediate
   realm: Development
   biome: Version Control
-redirect_from:
-- /quests/level-1100-mastering-version-control-workflows/
 ---
 *Greetings, battle-hardened code warrior! You have survived the introductory enchantments of branching and the clean-commit oath. But the realm of version control runs far deeper than a single `git push`. Today you face the Grand Merge Ritual — a trial reserved for those who would command entire release kingdoms, orchestrate fleets of pull requests, and bend the timeline of code to their will.*
 
@@ -167,8 +165,8 @@ You'll know you've truly mastered this quest when you can:
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Completed [Branches and Pull Requests quest](/quests/level-0010-branches-and-pull-requests/)
-- [ ] Completed [Commitments to Clean Commits quest](/quests/level-0010-commitments-to-clean-commits/)
+- [ ] Completed [Branches and Pull Requests quest](/quests/0010/branches-and-pull-requests/)
+- [ ] Completed [Commitments to Clean Commits quest](/quests/0010/commitments-to-clean-commits/)
 - [ ] Comfortable with `git log`, `git diff`, and `git stash`
 
 ### 🛠️ System Requirements

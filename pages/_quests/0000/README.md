@@ -8,8 +8,6 @@ lastmod: 2026-05-20 20:57:50+00:00
 level: '0000'
 categories: quests
 date: 2025-11-29 16:46:02+00:00
-redirect_from:
-- /quests/level-0000/
 ---
 # Level 0000: Foundation & Init World
 
@@ -29,22 +27,22 @@ Level 0000 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Character Building: Forge Your IT Identity and Development Environment](/quests/level-0000-character-building/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
-| [Hello Cloud: First Steps into the Sky Realm](/quests/level-0000-hello-cloud/) | ⚔️ Epic | 120-180 minutes | main_quest | ✅ Complete |
-| [Linux Fundamentals](/quests/level-0000-linux-fundamentals/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
-| [Hello macOS: Setting Up the Apple Kingdom](/quests/level-0000-hello-macos/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
-| [Hello Windows: Mastering the Windows Development Environment](/quests/level-0000-hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [Hello n00b: Your First Steps into the IT Journey](/quests/level-0000-hello-noob/) | 🟢 Easy | 15-30 minutes | main_quest | ✅ Complete |
-| [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | ✅ Complete |
-| [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
-| [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
+| [Character Building: Forge Your IT Identity and Development Environment](/quests/0000/character-building/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
+| [Hello Cloud: First Steps into the Sky Realm](/quests/0000/hello-cloud/) | ⚔️ Epic | 120-180 minutes | main_quest | ✅ Complete |
+| [Linux Fundamentals](/quests/0000/linux-fundamentals/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
+| [Hello macOS: Setting Up the Apple Kingdom](/quests/0000/hello-macos/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [Hello Windows: Mastering the Windows Development Environment](/quests/0000/hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Hello n00b: Your First Steps into the IT Journey](/quests/0000/hello-noob/) | 🟢 Easy | 15-30 minutes | main_quest | ✅ Complete |
+| [Git Basics: Version Control Introduction](/quests/0000/git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | ✅ Complete |
+| [Markdown Mastery: Content Formatting Fundamentals](/quests/0000/markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [Terminal Fundamentals: Command Line Navigation Quest](/quests/0000/terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
 | [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
-| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/level-0000-bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
-| [Begin your IT Journey](/quests/level-0000-begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
-| [Character Selection](/quests/level-0000-character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | ✅ Complete |
-| [IT Fundamentals](/quests/level-0000-it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
-| [OS Selection](/quests/level-0000-os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
-| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/level-0000-vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | ✅ Complete |
+| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/0000/side-quests/bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
+| [Begin your IT Journey](/quests/0000/begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [Character Selection](/quests/0000/character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | ✅ Complete |
+| [IT Fundamentals](/quests/0000/it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [OS Selection](/quests/0000/os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/0000/vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | ✅ Complete |
 
 
 ### 🌱 Character Creation & Identity
@@ -259,7 +257,7 @@ Learn the universal language of technical documentation. Markdown is used in REA
 
 ---
 
-#### [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/)
+#### [VS Code Mastery Quest](/quests/0000/vscode-mastery/)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Forge your ultimate development weapon. Master VS Code setup, extensions, and productivity features.
@@ -338,14 +336,14 @@ See the [tools collection](../tools/README.md) for beginner tool guides and gett
 ### For Those with Some Experience
 1. [Character Selection](character-selection.md) - Confirm your specialization
 2. Platform-specific Hello quest
-3. [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/) - Set up your IDE
+3. [VS Code Mastery Quest](/quests/0000/vscode-mastery/) - Set up your IDE
 4. [Terminal Fundamentals](terminal-fundamentals.md) - Solidify CLI skills
 5. [Bashcrawl Adventure](bashcrawl/) - Reinforce commands through play
 6. [Git Basics](git-basics.md) - Version control workflow
 7. [Bash-run Extension Lab](bash-run.md) - Extend a real Bash learning game
 
 ### For Quick Setup
-1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/) → [Terminal Fundamentals](terminal-fundamentals.md) → [Bashcrawl Adventure](bashcrawl/) → [Git Basics](git-basics.md)
+1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](/quests/0000/vscode-mastery/) → [Terminal Fundamentals](terminal-fundamentals.md) → [Bashcrawl Adventure](bashcrawl/) → [Git Basics](git-basics.md)
 
 ## Quest Dependencies & Progression
 

@@ -115,8 +115,6 @@ rewards:
   unlocks_features:
   - Access to advanced Jekyll customization quests
   - Eligibility for web development learning paths
-redirect_from:
-- /quests/level-0011-github-pages-hidden-gem/
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 

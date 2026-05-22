@@ -81,8 +81,6 @@ validation_criteria:
   - Theme includes light and dark mode support
   - Theme passes accessibility contrast checks (WCAG AA)
   - Pull request submitted with theme preview screenshots
-redirect_from:
-- /quests/side-quest-profile-themes/
 ---
 # 🎭 Profile Themes: Unleashing the Style Sorcerer
 

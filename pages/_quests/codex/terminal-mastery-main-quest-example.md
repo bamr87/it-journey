@@ -109,8 +109,6 @@ skill_focus:
 - reference
 learning_style: reading
 fmContentType: codex
-redirect_from:
-- /quests/level-0001-terminal-navigation-mastery/
 ---
 *Greetings, brave digital explorer! Welcome to the Terminal Navigation Mastery Quest - the foundational adventure that transforms you from a point-and-click apprentice into a command-line champion. This main quest forms the cornerstone of your IT journey, providing essential skills that every developer, system administrator, and digital craftsperson must master.*
 

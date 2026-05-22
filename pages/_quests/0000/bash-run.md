@@ -96,10 +96,6 @@ rewards:
 related_quests:
 - bashcrawl/README.md - Terminal Adventure RPG
 - hello-noob.md - Beginner's IT Journey
-redirect_from:
-- /quests/lvl_000/bash-run/
-- /quests/level-0000-bash-run/
-- /quests/side-quest-bash-run/
 ---
 *Greetings, aspiring script mage! In this side quest, you will study how [bashcrawl](https://github.com/bamr87/bashcrawl) is built and then extend it with new rooms, encounters, and game mechanics. bashcrawl is an elegant dungeon crawler that uses the file system itself as the game world — directories are rooms, text files are scrolls, and executable scripts are interactive items. By the end, you will have forged your own additions to this adventure.*
 

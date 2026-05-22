@@ -79,12 +79,8 @@ validation_criteria:
 - All refactored components pass Jekyll build without errors
 - CSS is scoped to avoid leaking into unrelated elements
 related_quests:
-- /quests/level-0100-frontend-docker/
-- /quests/side-quest-profile-themes/
-redirect_from:
-- /quests/jekyll-component-refactoring/
-- /quests/level-0100-jekyll-component-refactoring/
-- /quests/side-quest-jekyll-component-refactoring/
+- /quests/0100/frontend-docker/
+- /quests/0100/side-quests/profile-themes/
 ---
 *Greetings, brave artisan! Welcome to The Artisan's Forge — an epic journey that will transform you from a coder who patches things together into a true component architect. This quest guides you through the real-world process of turning hard-coded, inline Jekyll theme elements into modular, configurable, and reusable components.*
 
@@ -418,8 +414,8 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 
 ### What's Next?
 
-- **Side Quest:** [Profile Themes](/quests/side-quest-profile-themes/) — Apply your CSS scoping skills to build full theme variants
-- **Main Quest:** [Frontend Docker](/quests/level-0100-frontend-docker/) — Containerise your development environment for cross-platform consistency
+- **Side Quest:** [Profile Themes](/quests/0100/side-quests/profile-themes/) — Apply your CSS scoping skills to build full theme variants
+- **Main Quest:** [Frontend Docker](/quests/0100/frontend-docker/) — Containerise your development environment for cross-platform consistency
 - **Challenge:** Find another inline element in your theme and refactor it using the same pattern
 
 ## 📚 Resources

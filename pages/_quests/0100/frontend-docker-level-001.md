@@ -40,8 +40,6 @@ attachments: ''
 sub-title: 'Level 001: Create Jekyll Site with Docker'
 slug: null
 type: default
-redirect_from:
-- /quests/level-0100-lvl-001-frontend-docker/
 ---
 You've successfully set up your Docker environment, and now you're ready to delve deeper into the mystical realms of Level 001. This level involves creating your Jekyll site with the power of Docker, setting the stage for our enchanted journey ahead.
 

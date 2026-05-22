@@ -47,9 +47,9 @@ learning_outcomes:
     - 🔗 Connect terminal skills to career advancement in finance and accounting
     - 📊 Process CSV data faster than any spreadsheet application
 related_posts:
-    - /quests/level-0000-terminal-fundamentals/
-    - /quests/bashcrawl-terminal-adventure/
-    - /quests/lvl_000/bash-run/
+    - /quests/0000/terminal-fundamentals/
+    - /quests/0000/bashcrawl/
+    - /quests/0000/side-quests/bash-run/
 ---
 
 ## Introduction: The Spinning Wheel of Death
@@ -352,15 +352,15 @@ We've designed a series of gamified quests — yes, *quests*, like a video game 
 
 ### 🗺️ Quest 1: Get Your Bearings
 
-Start with the [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/). This quest introduces the absolute basics: how to move around the file system, create and manage files, and understand command structure. Think of it as learning to read the map before you head into the wilderness. You'll master `cd`, `ls`, `pwd`, pipes, and redirection — the exact same building blocks used in every example in this article.
+Start with the [Terminal Fundamentals: Command Line Navigation Quest](/quests/0000/terminal-fundamentals/). This quest introduces the absolute basics: how to move around the file system, create and manage files, and understand command structure. Think of it as learning to read the map before you head into the wilderness. You'll master `cd`, `ls`, `pwd`, pipes, and redirection — the exact same building blocks used in every example in this article.
 
 ### 🎮 Quest 2: Learn by Playing
 
-Memorizing syntax can feel like studying for the CPA exam all over again. So instead, learn by playing a game. Start with [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) for a no-install browser version, then use the [Bashcrawl Terminal Adventure](/quests/bashcrawl-terminal-adventure/) quest for the full checklist. You'll navigate rooms, read scrolls, and battle monsters using real Bash commands such as `cd`, `ls`, `cat`, and `grep`. It's like Zork, but educational and on your resume.
+Memorizing syntax can feel like studying for the CPA exam all over again. So instead, learn by playing a game. Start with [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) for a no-install browser version, then use the [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) quest for the full checklist. You'll navigate rooms, read scrolls, and battle monsters using real Bash commands such as `cd`, `ls`, `cat`, and `grep`. It's like Zork, but educational and on your resume.
 
 ### ⚔️ Quest 3: Level Up Your Scripting
 
-Once you're comfortable with the basics, take on [bashrun and Beyond: Building an Advanced Terminal Game](/quests/lvl_000/bash-run/). This quest goes deeper into Bash scripting: variables, functions, loops, conditionals, and file I/O. By the end, you won't just be *using* the terminal — you'll be *programming* it. These are the exact skills you need to write scripts like the month-end automation example above.
+Once you're comfortable with the basics, take on [bashrun and Beyond: Building an Advanced Terminal Game](/quests/0000/side-quests/bash-run/). This quest goes deeper into Bash scripting: variables, functions, loops, conditionals, and file I/O. By the end, you won't just be *using* the terminal — you'll be *programming* it. These are the exact skills you need to write scripts like the month-end automation example above.
 
 ---
 

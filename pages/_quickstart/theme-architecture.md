@@ -276,6 +276,6 @@ Add them to `_layouts/` or `_includes/` in your project. They're automatically a
 | Style your site with skins and CSS | [Styling & Navigation](/quickstart/styling-navigation/) |
 | Run the site locally | [Local Development](/quickstart/local-development/) |
 
-> **IT-Journey Quests:** [Liquid Templating](/quests/frontend/liquid-templating/) · [Jekyll Fundamentals](/quests/frontend/jekyll-fundamentals/)
+> **IT-Journey Quests:** [Liquid Templating](/quests/0100/frontend/liquid-templating/) · [Jekyll Fundamentals](/quests/0100/frontend/jekyll-fundamentals/)
 >
 > **External Docs:** [Jekyll Layouts](https://jekyllrb.com/docs/layouts/) · [Jekyll Includes](https://jekyllrb.com/docs/includes/) · [Liquid Reference](https://shopify.github.io/liquid/) · [Jekyll Data Files](https://jekyllrb.com/docs/datafiles/)

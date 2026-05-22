@@ -31,8 +31,6 @@ attachments: ''
 sub-title: null
 slug: frontend-forests-levels
 type: default
-redirect_from:
-- /quests/level-0100-frontend-levels/
 ---
 Absolutely! Let's structure our adventure with binary-coded levels, making our journey both organized and fun. Each level will have specific tasks and goals to help you progress step by step. Here’s our quest map in binary-coded levels:
 

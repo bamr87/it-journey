@@ -42,13 +42,13 @@ This guide connects the terminal, Bash, command references, and Bashcrawl into o
 | Stage | Resource | Outcome |
 |-------|----------|---------|
 | 1 | [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) | Try `pwd`, `ls`, `cd`, and `cat` without installing anything |
-| 2 | [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) | Learn navigation, files, pipes, redirection, and search |
-| 3 | [Bashcrawl Terminal Adventure](/quests/bashcrawl-terminal-adventure/) | Turn command practice into a guided quest checklist |
+| 2 | [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) | Learn navigation, files, pipes, redirection, and search |
+| 3 | [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) | Turn command practice into a guided quest checklist |
 | 4 | [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/) | Build speed with history, completion, clearing, and editing shortcuts |
 | 5 | [Bash Cheatsheet](/shell/) | Keep everyday commands and syntax close while practicing |
 | 6 | [Complete BASH Reference](/docs/bash-complete-reference/) | Deepen your understanding of Bash built-ins, expansions, scripts, and patterns |
 | 7 | [Bash Scripting Mastery](/quests/0010/bash-scripting/) | Write reusable scripts with functions, validation, error handling, and tests |
-| 8 | [Bash-run Extension Quest](/quests/lvl_000/bash-run/) | Clone Bashcrawl and extend a real terminal learning game |
+| 8 | [Bash-run Extension Quest](/quests/0000/side-quests/bash-run/) | Clone Bashcrawl and extend a real terminal learning game |
 
 ## Bashcrawl Paths
 
@@ -74,8 +74,8 @@ cd bashcrawl
 
 | Command | Practice in Bashcrawl | Reference |
 |---------|-----------------------|-----------|
-| `pwd` | Confirm your current room | [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) |
-| `ls -F` | Identify rooms, scrolls, and executable encounters | [Bashcrawl Quest](/quests/bashcrawl-terminal-adventure/) |
+| `pwd` | Confirm your current room | [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) |
+| `ls -F` | Identify rooms, scrolls, and executable encounters | [Bashcrawl Quest](/quests/0000/bashcrawl/) |
 | `cat scroll` | Read room instructions and lore | [Bash Cheatsheet](/shell/) |
 | `cd cellar` | Move through the dungeon | [Complete BASH Reference](/docs/bash-complete-reference/) |
 | `less`, `head`, `tail` | Inspect longer scrolls and logs | [Terminal Shortcuts](/docs/terminal-shortcuts-cheat-sheet/) |
@@ -85,19 +85,19 @@ cd bashcrawl
 
 | Learner | Best First Step | Next Step |
 |---------|-----------------|-----------|
-| Absolute beginner | [Play online](https://bamr87.github.io/bashcrawl/) | [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) |
+| Absolute beginner | [Play online](https://bamr87.github.io/bashcrawl/) | [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) |
 | Finance or operations learner | [Finance terminal guide](/posts/terminal-bash-finance-accounting/) | [Bash Scripting Mastery](/quests/0010/bash-scripting/) |
-| Developer or contributor | [Bashcrawl GitHub repo](https://github.com/bamr87/bashcrawl/) | [Bash-run Extension Quest](/quests/lvl_000/bash-run/) |
-| Teacher or mentor | [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) | [Bashcrawl Terminal Adventure](/quests/bashcrawl-terminal-adventure/) |
+| Developer or contributor | [Bashcrawl GitHub repo](https://github.com/bamr87/bashcrawl/) | [Bash-run Extension Quest](/quests/0000/side-quests/bash-run/) |
+| Teacher or mentor | [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) | [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) |
 
 ## Reference Shelf
 
 - [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) - No-install browser game with local browser saves.
 - [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/) - Current comprehensive repo with TUI, static web, agent, and tests.
 - [Original Bashcrawl Upstream](https://gitlab.com/slackermedia/bashcrawl) - Historical upstream project.
-- [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - Foundation command-line quest.
-- [Bashcrawl Terminal Adventure](/quests/bashcrawl-terminal-adventure/) - Gamified Bashcrawl quest.
-- [Bash-run Extension Quest](/quests/lvl_000/bash-run/) - Extend Bashcrawl locally.
+- [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) - Foundation command-line quest.
+- [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) - Gamified Bashcrawl quest.
+- [Bash-run Extension Quest](/quests/0000/side-quests/bash-run/) - Extend Bashcrawl locally.
 - [Bash Scripting Mastery](/quests/0010/bash-scripting/) - Script automation quest.
 - [Bash Cheatsheet](/shell/) - Quick command and syntax notes.
 - [Complete BASH Reference](/docs/bash-complete-reference/) - Deep reference guide.

@@ -66,8 +66,6 @@ related_quests:
 - 'Level 1100: API Design and Integration - Service communication patterns'
 - 'Level 1101: Testing Methodologies - Quality assurance foundations'
 - 'Level 10010: DevOps and Infrastructure Automation - Advanced deployment strategies'
-redirect_from:
-- /quests/level-1011-ai-feature-pipeline-architect/
 ---
 *Greetings, master architect! Welcome to the **AI Feature Pipeline Architect Quest** - an epic journey that will transform you into a wizard of AI-orchestrated development pipelines. This quest will guide you through building intelligent systems that seamlessly convert user ideas into deployed applications, preparing you for the future of software engineering where AI and human creativity work in perfect harmony.*
 

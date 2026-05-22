@@ -124,7 +124,7 @@ SVG/multimedia/table elements posts legitimately use.
 
 ## 5. Link hygiene
 
-- **Prefer Jekyll absolute paths** for internal links: `/quests/level-0000-git-basics/`,
+- **Prefer Jekyll absolute paths** for internal links: `/quests/0000/git-basics/`,
   `/categories/architecture/`. Lychee resolves them against `_site/` after build.
 - **Use HTTPS** for all external links.
 - **Don't hard-code GitHub line numbers** unless the file is stable; prefer

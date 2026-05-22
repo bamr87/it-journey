@@ -92,9 +92,6 @@ fmContentType: quest
 draft: false
 meta: null
 slug: fundamentals
-redirect_from:
-- /quests/lvl_000/it-fundamentals/
-- /quests/level-0000-it-fundamentals/
 ---
 *Welcome, aspiring IT adventurer! Before you can cast powerful spells or build grand digital fortresses, you must understand the fundamental building blocks of the IT realm. This quest covers the essential skills every technology professional needs — from organizing files to understanding networks and cloud computing.*
 

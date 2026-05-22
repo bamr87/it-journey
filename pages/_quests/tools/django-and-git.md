@@ -44,8 +44,6 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
-redirect_from:
-- /quests/level-0010-django-and-git/
 ---
 **Setting Up a GitHub Repository for Your Django Project**
 

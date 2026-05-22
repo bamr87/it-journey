@@ -92,9 +92,6 @@ fmContentType: quest
 draft: false
 meta: null
 slug: journey
-redirect_from:
-- /quests/lvl_000/begin-your-it-journey/
-- /quests/level-0000-begin-your-it-journey/
 ---
 *Welcome, brave newcomer, to the threshold of the IT realm! Every legendary wizard, architect, and guardian began exactly where you stand now — with curiosity as their compass and determination as their shield. This quest will illuminate the vast landscape of Information Technology and help you chart your first steps.*
 
