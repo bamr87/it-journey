@@ -23,7 +23,8 @@ This workflow automatically reviews markdown files in the `pages/` directory usi
 - **Automatic Trigger**: Runs on PR creation/updates and pushes to main
 - **AI Analysis**: Uses GPT-4 to analyze content quality, SEO, and technical accuracy
 - **PR Comments**: Posts review results as comments on pull requests
-- **Issue Creation**: Creates improvement suggestion issues for main branch pushes
+- **Issue Creation**: Creates one issue per Jekyll collection for content fixes on main branch pushes
+- **Standards Follow-up Issue**: Creates/updates a separate Copilot-assigned issue for instruction + prompt hardening
 - **Artifact Storage**: Saves review results for 30 days
 
 ### Setup Requirements
@@ -34,6 +35,11 @@ This workflow automatically reviews markdown files in the `pages/` directory usi
    - Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
 
 2. **GitHub Token**: Uses built-in `GITHUB_TOKEN` (automatically available)
+
+3. **Optional Repository Variables**:
+   - `ASSIGN_TO_COPILOT` (`true`/`false`) — assign generated issues to Copilot
+   - `COPILOT_ASSIGNEE` (default `Copilot`) — override assignee login
+   - `CREATE_STANDARDS_FOLLOWUP` (`true`/`false`) — control creation of the separate instruction/prompt hardening issue
 
 ### Review Criteria
 

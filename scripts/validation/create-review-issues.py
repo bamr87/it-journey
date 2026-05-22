@@ -27,6 +27,9 @@ Environment variables:
     ASSIGN_TO_COPILOT   ``"true"`` (default) to attempt assigning the issue to
                         the Copilot coding agent. Set ``"false"`` to skip.
     COPILOT_ASSIGNEE    Override the Copilot assignee login (default ``Copilot``).
+    CREATE_STANDARDS_FOLLOWUP
+                        ``"true"`` (default) to upsert a separate issue assigned
+                        to Copilot for instruction/prompt hardening follow-up.
 """
 
 from __future__ import annotations
@@ -46,6 +49,8 @@ INSTRUCTIONS_PATH = ".github/instructions/ai-content-review.instructions.md"
 INSTRUCTIONS_URL_TEMPLATE = (
     "https://github.com/{repo}/blob/main/" + INSTRUCTIONS_PATH
 )
+PROMPTS_PATH = ".github/prompts/"
+PROMPTS_URL_TEMPLATE = "https://github.com/{repo}/tree/main/" + PROMPTS_PATH
 
 DEFAULT_LABELS = ["ai-review", "content-improvement", "automated"]
 
@@ -311,6 +316,91 @@ def format_issue_body(
     return "\n".join(header + sections + footer)
 
 
+def collect_standards_gaps(reviews: Dict[str, Dict[str, Any]]) -> List[str]:
+    """Collect de-duplicated high-signal standards gaps from review output."""
+    seen: set[str] = set()
+    gaps: List[str] = []
+    fields = (
+        "action_items",
+        "frontmatter_issues",
+        "seo_improvements",
+        "technical_issues",
+        "accessibility_issues",
+    )
+    for review in reviews.values():
+        for field in fields:
+            for item in review.get(field) or []:
+                text = str(item).strip()
+                if not text:
+                    continue
+                key = text.lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                gaps.append(text)
+                if len(gaps) >= 20:
+                    return gaps
+    return gaps
+
+
+def format_standards_issue_body(
+    reviews: Dict[str, Dict[str, Any]],
+    repo: str,
+    commit_sha: Optional[str],
+) -> str:
+    """Build the markdown body for the instructions/prompt hardening issue."""
+    instructions_url = INSTRUCTIONS_URL_TEMPLATE.format(repo=repo)
+    prompts_url = PROMPTS_URL_TEMPLATE.format(repo=repo)
+    collections = sorted(
+        {
+            (review.get("collection") or "other")
+            for review in reviews.values()
+        }
+    )
+    gaps = collect_standards_gaps(reviews)
+
+    lines = [
+        "## 🧭 Follow-up Task — Harden Instructions & Prompts",
+        "",
+        "Create a **separate PR** that updates repository instructions and prompts "
+        "so recurring AI content-review misses are prevented going forward.",
+        "",
+        "### Scope",
+        f"- Review rules in [`{INSTRUCTIONS_PATH}`]({instructions_url})",
+        f"- Update prompt(s) under [`{PROMPTS_PATH}`]({prompts_url}) that guide AI content creation/review",
+        "- Keep this work in its own PR (do not mix with collection content fixes)",
+        "",
+        "### Suggested checklist",
+        "- [ ] Add or tighten rule text for the recurring misses listed below",
+        "- [ ] Update relevant `.github/prompts/*.prompt.md` files to reinforce those rules",
+        "- [ ] Add citations to validators/workflows for each new rule",
+        "- [ ] Run targeted validation for changed prompt/instruction files",
+        "- [ ] Open PR titled `docs(ai-review): harden instructions and prompts`",
+        "",
+        "### Context from this run",
+        f"- Collections reviewed: {', '.join(f'`_{name}`' for name in collections)}",
+        f"- Files reviewed: {len(reviews)}",
+    ]
+    if commit_sha:
+        lines.append(
+            f"- Source commit: [`{commit_sha[:8]}`](https://github.com/{repo}/commit/{commit_sha})"
+        )
+
+    lines.extend(["", "### Recurring gaps to codify", ""])
+    if gaps:
+        for gap in gaps:
+            lines.append(f"- [ ] {gap}")
+    else:
+        lines.append("- [ ] No explicit gaps found; review low-scoring files and tighten general guidance.")
+
+    lines.extend([
+        "",
+        "> This issue is auto-updated in place each run; use it as the standing",
+        "> governance task for instruction/prompt hardening.",
+    ])
+    return "\n".join(lines)
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -375,6 +465,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     assign_copilot = os.environ.get("ASSIGN_TO_COPILOT", "true").lower() == "true"
     copilot_login = os.environ.get("COPILOT_ASSIGNEE", "Copilot")
     assignees = [copilot_login] if assign_copilot else []
+    create_standards_followup = (
+        os.environ.get("CREATE_STANDARDS_FOLLOWUP", "true").lower() == "true"
+    )
 
     created = 0
     updated = 0
@@ -418,6 +511,41 @@ def main(argv: Optional[List[str]] = None) -> int:
             )
             print(f"  Created issue #{issue.get('number')}: {issue.get('html_url')}")
             created += 1
+
+    if create_standards_followup:
+        standards_title = "🤖 AI Content Review — Instructions & prompts hardening"
+        standards_body = format_standards_issue_body(
+            reviews=reviews,
+            repo=args.repo or "OWNER/REPO",
+            commit_sha=args.commit_sha,
+        )
+        print("\n— Standards hardening follow-up —")
+        if args.dry_run:
+            print(f"  [dry-run] Would upsert issue: {standards_title}")
+            print(f"  [dry-run] Labels: {DEFAULT_LABELS}")
+            print(f"  [dry-run] Assignees: {assignees}")
+            print(f"  [dry-run] Body preview ({len(standards_body)} chars):")
+            print("    " + standards_body.splitlines()[0])
+        else:
+            existing = find_existing_issue(args.repo, token, standards_title)
+            if existing:
+                number = existing["number"]
+                print(f"  Updating existing issue #{number}")
+                update_issue(args.repo, token, number, standards_body, DEFAULT_LABELS)
+                if assignees:
+                    add_assignees(args.repo, token, number, assignees)
+                updated += 1
+            else:
+                issue = create_issue(
+                    args.repo,
+                    token,
+                    standards_title,
+                    standards_body,
+                    DEFAULT_LABELS,
+                    assignees,
+                )
+                print(f"  Created issue #{issue.get('number')}: {issue.get('html_url')}")
+                created += 1
 
     print(
         f"\nDone. created={created} updated={updated} "

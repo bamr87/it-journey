@@ -93,6 +93,8 @@ jobs:
         # Set ASSIGN_TO_COPILOT=false in repo vars to opt out of Copilot assignment.
         ASSIGN_TO_COPILOT: ${{ vars.ASSIGN_TO_COPILOT || 'true' }}
         COPILOT_ASSIGNEE: ${{ vars.COPILOT_ASSIGNEE || 'Copilot' }}
+        # Set CREATE_STANDARDS_FOLLOWUP=false to skip the separate standards hardening issue.
+        CREATE_STANDARDS_FOLLOWUP: ${{ vars.CREATE_STANDARDS_FOLLOWUP || 'true' }}
       run: |
         python scripts/validation/create-review-issues.py \
           --results /tmp/ai_review_results.json
