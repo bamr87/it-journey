@@ -1,87 +1,91 @@
 ---
-title: "The Artisan's Forge: Refactoring Jekyll Theme Components"
+title: 'The Artisan''s Forge: Refactoring Jekyll Theme Components'
 author: Quest Master IT-Journey Team
 keywords:
-    primary:
-        - jekyll theme
-        - component refactoring
-    secondary:
-        - nanobar
-        - css layout
-        - modular includes
-        - ai-assisted development
-description: "Learn to refactor inline Jekyll theme elements into modular, config-driven components — using a real-world nanobar and footer case study."
-excerpt: "The Artisan's Forge teaches the craft of reshaping raw, tangled code into elegant, reusable components."
-snippet: "A true artisan does not merely write code — they forge tools that others can wield."
-date: 2026-04-19T00:00:00.000Z
-lastmod: 2026-04-19T00:00:00.000Z
-level: "0100"
-difficulty: "🟡 Medium"
-estimated_time: "45-60 minutes"
+  primary:
+  - jekyll theme
+  - component refactoring
+  secondary:
+  - nanobar
+  - css layout
+  - modular includes
+  - ai-assisted development
+description: Learn to refactor inline Jekyll theme elements into modular, config-driven
+  components — using a real-world nanobar and footer case study.
+excerpt: The Artisan's Forge teaches the craft of reshaping raw, tangled code into
+  elegant, reusable components.
+snippet: A true artisan does not merely write code — they forge tools that others
+  can wield.
+date: 2026-04-19 00:00:00+00:00
+lastmod: 2026-04-19 00:00:00+00:00
+level: '0100'
+difficulty: 🟡 Medium
+estimated_time: 45-60 minutes
 primary_technology: jekyll
 quest_type: side_quest
 skill_focus:
-    - frontend
-    - theme-development
+- frontend
+- theme-development
 learning_style: hands-on
-quest_series: "Theme Crafting: Zer0-Mistakes"
+quest_series: 'Theme Crafting: Zer0-Mistakes'
 quest_line: Theme Artisan Path
-quest_arc: "Act II: The Refactorer's Journey"
+quest_arc: 'Act II: The Refactorer''s Journey'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/level-0100-jekyll-component-refactoring/
-sub_title: "Level 0100 (4) Quest: Side Quest - Jekyll Theme Refactoring"
+permalink: /quests/0100/side-quests/jekyll-component-refactoring/
+sub_title: 'Level 0100 (4) Quest: Side Quest - Jekyll Theme Refactoring'
 layout: journals
 categories:
-    - Quests
-    - Frontend
-    - Medium
+- Quests
+- Frontend
+- Medium
 tags:
-    - lvl-0100
-    - jekyll
-    - side_quest
-    - frontend
-    - theme-development
-    - hands-on
-    - refactoring
-    - gamified-learning
+- lvl-0100
+- jekyll
+- side_quest
+- frontend
+- theme-development
+- hands-on
+- refactoring
+- gamified-learning
 prerequisites:
-    knowledge_requirements:
-        - Basic understanding of Jekyll layouts and includes
-        - Familiarity with HTML and CSS
-        - Comfort with Liquid template syntax
-        - Basic Git knowledge for version control
-    system_requirements:
-        - Jekyll development environment (Docker recommended)
-        - Text editor with Liquid/HTML support
-        - Browser with DevTools for layout inspection
+  knowledge_requirements:
+  - Basic understanding of Jekyll layouts and includes
+  - Familiarity with HTML and CSS
+  - Comfort with Liquid template syntax
+  - Basic Git knowledge for version control
+  system_requirements:
+  - Jekyll development environment (Docker recommended)
+  - Text editor with Liquid/HTML support
+  - Browser with DevTools for layout inspection
 quest_dependencies:
-    required_quests: []
-    recommended_quests:
-        - /quests/level-0100-frontend-docker/
+  required_quests: []
+  recommended_quests:
+  - /quests/0100/frontend-docker/
 rewards:
-    skills:
-        - Jekyll component architecture
-        - Config-driven design patterns
-        - CSS scoping and specificity management
-        - Full-width layout techniques
-    items:
-        - Modular nanobar component
-        - Full-width footer template
-        - Reusable refactoring checklist
+  skills:
+  - Jekyll component architecture
+  - Config-driven design patterns
+  - CSS scoping and specificity management
+  - Full-width layout techniques
+  items:
+  - Modular nanobar component
+  - Full-width footer template
+  - Reusable refactoring checklist
 validation_criteria:
-    - Nanobar renders from _config.yml settings without inline code
-    - Footer section spans the full viewport width
-    - All refactored components pass Jekyll build without errors
-    - CSS is scoped to avoid leaking into unrelated elements
+- Nanobar renders from _config.yml settings without inline code
+- Footer section spans the full viewport width
+- All refactored components pass Jekyll build without errors
+- CSS is scoped to avoid leaking into unrelated elements
 related_quests:
-    - /quests/level-0100-frontend-docker/
-    - /quests/side-quest-profile-themes/
+- /quests/level-0100-frontend-docker/
+- /quests/side-quest-profile-themes/
 redirect_from:
-  - /quests/jekyll-component-refactoring/
+- /quests/jekyll-component-refactoring/
+- /quests/level-0100-jekyll-component-refactoring/
+- /quests/side-quest-jekyll-component-refactoring/
 ---
-
 *Greetings, brave artisan! Welcome to The Artisan's Forge — an epic journey that will transform you from a coder who patches things together into a true component architect. This quest guides you through the real-world process of turning hard-coded, inline Jekyll theme elements into modular, configurable, and reusable components.*
 
 *Whether you are a novice learning your first Liquid incantation or a seasoned theme-smith looking to sharpen your craft, this adventure will reward you with practical, production-tested knowledge.*

@@ -7,7 +7,7 @@ excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and 
   in the Frontend Forests
 snippet: null
 preview: /images/frontend-forests.png
-date: 2024-05-28T15:23:32.000Z
+date: 2024-05-28 15:23:32+00:00
 lastmod: 2024-05-28 04:13:59.660000+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -18,7 +18,7 @@ quest_series: Level 0100 Quest Line
 skill_focus:
 - Foundations
 learning_style: hands-on
-permalink: /quests/level-0100-frontend-levels/
+permalink: /quests/0100/frontend-levels/
 categories: []
 tags: []
 keywords:
@@ -31,6 +31,8 @@ attachments: ''
 sub-title: null
 slug: frontend-forests-levels
 type: default
+redirect_from:
+- /quests/level-0100-frontend-levels/
 ---
 Absolutely! Let's structure our adventure with binary-coded levels, making our journey both organized and fun. Each level will have specific tasks and goals to help you progress step by step. Here’s our quest map in binary-coded levels:
 

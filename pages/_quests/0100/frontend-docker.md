@@ -10,7 +10,7 @@ excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and 
   ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting
   website.
 preview: images/previews/dockering-jekyll-with-bootstrap-5.png
-date: 2024-05-28T15:23:32.000Z
+date: 2024-05-28 15:23:32+00:00
 lastmod: 2024-05-28 04:11:52.774000+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -21,7 +21,7 @@ quest_series: Level 0100 Quest Line
 skill_focus:
 - Foundations
 learning_style: hands-on
-permalink: /quests/level-0100-frontend-docker/
+permalink: /quests/0100/frontend-docker/
 keywords:
 - dockering
 - jekyll
@@ -31,7 +31,8 @@ keywords:
 fmContentType: quest
 draft: true
 redirect_from:
-  - /quests/frontend-docker/
+- /quests/frontend-docker/
+- /quests/level-0100-frontend-docker/
 ---
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.
 

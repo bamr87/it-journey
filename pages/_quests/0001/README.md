@@ -1,18 +1,16 @@
 ---
-
 title: Level 001 - Journeyman Challenges
 description: Web technologies and advanced scripting quests for intermediate learners
 preview: images/previews/level-001-journeyman-challenges.png
-permalink: /quests/level-0001/
-lastmod: 2025-11-15T04:27:16.791Z
-
-level: 0001
+permalink: /quests/0001/
+lastmod: 2025-11-15 04:27:16.791000+00:00
+level: 1
 categories: quests
-date: 2025-11-15T16:34:42.000Z
+date: 2025-11-15 16:34:42+00:00
 redirect_from:
-  - /quests/level-001/
+- /quests/level-001/
+- /quests/level-0001/
 ---
-
 # Level 001: Journeyman Challenges
 
 *Welcome to the Journeyman tier, where basic concepts transform into practical skills! At Level 001, you'll move beyond theory and start building real applications, mastering web technologies, and developing the confidence to tackle complex challenges.*

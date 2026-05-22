@@ -1,80 +1,83 @@
 ---
-title: "Contribution Calendar: Mapping Your Journey Through Time"
+title: 'Contribution Calendar: Mapping Your Journey Through Time'
 author: Quest Master IT-Journey Team
 keywords:
-    - contribution calendar
-    - heatmap
-    - CSS grid
-    - data visualization
-description: Build a GitHub-style contribution heatmap for your character profile using the 52-week calendar data
-excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in light.
+- contribution calendar
+- heatmap
+- CSS grid
+- data visualization
+description: Build a GitHub-style contribution heatmap for your character profile
+  using the 52-week calendar data
+excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in
+  light.
 snippet: Time is the truest measure of an adventurer's resolve
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.256Z
-level: "0010"
+date: 2026-03-20 00:00:00+00:00
+lastmod: 2026-03-21 15:12:32.256000+00:00
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: css
 quest_type: side_quest
 skill_focus:
-    - frontend
+- frontend
 learning_style: project-based
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act II: Mastering the Craft"
+quest_arc: 'Act II: Mastering the Craft'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-contribution-calendar/
+permalink: /quests/0010/side-quests/contribution-calendar/
 categories:
-    - Quests
-    - Community
-    - Frontend
+- Quests
+- Community
+- Frontend
 tags:
-    - lvl-0010
-    - contributor
-    - calendar
-    - heatmap
-    - css-grid
-    - liquid
-    - gamified-learning
-    - project-based
+- lvl-0010
+- contributor
+- calendar
+- heatmap
+- css-grid
+- liquid
+- gamified-learning
+- project-based
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - CSS Grid basics
-        - Jekyll Liquid template syntax
-    system_requirements:
-        - Text editor or IDE
-        - Local Jekyll development environment
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - CSS Grid basics
+  - Jekyll Liquid template syntax
+  system_requirements:
+  - Text editor or IDE
+  - Local Jekyll development environment
 quest_dependencies:
-    required_quests:
-        - /quests/level-0001-forge-your-character/
-    recommended_quests:
-        - /quests/side-quest-stats-dashboard/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests:
+  - /quests/0010/side-quests/stats-dashboard/
+  unlocks_quests: []
 learning_paths:
-    primary_paths:
-        - Frontend Developer
-        - Community Contributor
-    character_classes:
-        - 🧙 Wizard
-        - 🏹 Ranger
-    skill_trees:
-        - Frontend Development
-        - CSS Layout
+  primary_paths:
+  - Frontend Developer
+  - Community Contributor
+  character_classes:
+  - 🧙 Wizard
+  - 🏹 Ranger
+  skill_trees:
+  - Frontend Development
+  - CSS Layout
 rewards:
-    badges:
-        - 📆 Timekeeper — Contribution calendar displayed on character sheet
-    progression_points: 100
+  badges:
+  - 📆 Timekeeper — Contribution calendar displayed on character sheet
+  progression_points: 100
 validation_criteria:
-    completion_requirements:
-        - Calendar heatmap include created
-        - 52 weeks of data render as colored cells
-        - Color intensity reflects commit count
-        - Calendar is responsive
+  completion_requirements:
+  - Calendar heatmap include created
+  - 52 weeks of data render as colored cells
+  - Color intensity reflects commit count
+  - Calendar is responsive
+redirect_from:
+- /quests/side-quest-contribution-calendar/
 ---
-
 # 📆 Contribution Calendar: Mapping Your Journey Through Time
 
 > *"The calendar does not lie. Each square is a day — each shade, a measure of your will."*

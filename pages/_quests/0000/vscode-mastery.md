@@ -7,8 +7,8 @@ excerpt: Learn to configure VS Code as your primary development weapon, masterin
   extensions, shortcuts, and specialized setups for maximum productivity
 snippet: Forge the ultimate coding weapon with VS Code mastery
 preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
-date: 2025-07-21T23:30:21.000Z
-lastmod: 2026-05-20T20:57:50.000Z
+date: 2025-07-21 23:30:21+00:00
+lastmod: 2026-05-20 20:57:50+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -20,14 +20,14 @@ quest_arc: Tool Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/level-0000-hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests: []
 quest_relationships:
   child_quests: []
   sequel_quests: []
   parallel_quests:
-  - /quests/level-0000-hello-windows/
-  - /quests/level-0000-hello-macos/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
 learning_paths:
   primary_paths:
   - Software Development
@@ -68,11 +68,12 @@ validation_criteria:
   knowledge_checks:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
-permalink: /quests/level-0000-vscode-mastery/
+permalink: /quests/0000/vscode-mastery/
 redirect_from:
-  - /quests/vscode-mastery/
-  - /quests/home/0000/vscode-mastery.md
-  - /quests/home/0000/vscode-mastery/
+- /quests/vscode-mastery/
+- /quests/home/0000/vscode-mastery.md
+- /quests/home/0000/vscode-mastery/
+- /quests/level-0000-vscode-mastery/
 categories:
 - Quests
 - Tools

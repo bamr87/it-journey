@@ -1,31 +1,30 @@
 ---
-
 title: Level 0111 (7) - API Development
-description: Master the craft of building robust, secure, and well-documented APIs that power modern applications
+description: Master the craft of building robust, secure, and well-documented APIs
+  that power modern applications
 preview: images/previews/level-0111-api-development.png
-permalink: /quests/level-0111/
+permalink: /quests/0111/
 categories:
-  - Quests
-  - Level-0111
-  - Backend-Development
+- Quests
+- Level-0111
+- Backend-Development
 tags:
-  - lvl-0111
-  - api
-  - rest
-  - authentication
-  - backend
-  - quest-collection
+- lvl-0111
+- api
+- rest
+- authentication
+- backend
+- quest-collection
 lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-
-level: 0111
-date: 2025-12-20T20:02:51.000Z
+level: 73
+date: 2025-12-20 20:02:51+00:00
 redirect_from:
-  - /quests/0111/
+- /quests/0111/
+- /quests/level-0111/
 ---
-
 # Level 0111 (7) - API Development
 
 *At the crossroads of the Digital Realm stand the great API Gateways—magical interfaces that allow disparate systems to communicate in harmony. Here, adventurers learn the ancient protocols of REST, master the arcane arts of authentication, and forge the secure bridges that connect the modern digital world.*

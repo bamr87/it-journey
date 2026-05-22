@@ -29,7 +29,7 @@ Use the canonical template at `.frontmatter/templates/quests.md`. These fields a
 | `author` | non-empty | `"IT-Journey Team"` |
 | `layout` | must equal | `journals` |
 | `keywords` | object | `{primary: [...], secondary: [...]}` |
-| `permalink` | pattern | `/quests/level-XXXX-slug/` |
+| `permalink` | pattern | `/quests/XXXX/slug/` (main) · `/quests/XXXX/side-quests/slug/` (side) |
 | `fmContentType` | must equal | `quest` |
 
 **Recommended** (warnings if missing): `quest_line`, `quest_arc`, `prerequisites`, `quest_dependencies`, `quest_relationships`, `learning_paths`, `rewards`, `validation_criteria`.
@@ -52,7 +52,7 @@ quest_series: "Container Mastery"
 author: "IT-Journey Team"
 layout: journals
 fmContentType: quest
-permalink: /quests/level-1100-docker-mastery/
+permalink: /quests/1100/docker-mastery/
 keywords:
   primary: ["docker", "containers", "orchestration"]
   secondary: ["devops", "deployment"]
@@ -83,7 +83,70 @@ Levels are 4-bit binary (`0000`–`1111`) encoding difficulty:
 
 Higher levels use 5+ bits (`10000`+) for expert specializations.
 
-## 3. Required Content Structure
+## 3. Permalink Convention
+
+Every quest must have a `permalink` that follows the canonical pattern. The type of permalink **must match** the `quest_type` frontmatter field.
+
+### Mapping table
+
+| `quest_type` | Permalink pattern | Example |
+|---|---|---|
+| `main_quest` | `/quests/XXXX/<slug>/` | `/quests/0001/docker-fundamentals/` |
+| `side_quest` | `/quests/XXXX/side-quests/<slug>/` | `/quests/0000/side-quests/bash-run/` |
+| `bonus_quest` | `/quests/codex/<slug>/` | `/quests/codex/cheat-sheet-git/` |
+| `epic_quest` | `/quests/codex/<slug>/` | `/quests/codex/full-stack-epic/` |
+| Level README | `/quests/XXXX/` | `/quests/0001/` |
+
+Where `XXXX` is the 4-digit binary level (e.g. `0000`, `0001`, `0100`), and `<slug>` is lowercase kebab-case.
+
+### Full regex (used by the validator)
+
+```
+^/quests/([01]{4}/side-quests/[a-z0-9][a-z0-9-]*|[01]{4}/[a-z0-9][a-z0-9-]*|[01]{4}|codex/[a-z0-9][a-z0-9-]*|templates/[a-z0-9][a-z0-9-]*)/$
+```
+
+### Filesystem layout
+
+Quest `.md` files live directly inside their level directory:
+
+```
+pages/_quests/
+  0000/                       # level directory
+    README.md                 # permalink: /quests/0000/
+    terminal-fundamentals.md  # permalink: /quests/0000/terminal-fundamentals/
+    bash-run.md               # side_quest → /quests/0000/side-quests/bash-run/
+  0001/
+    docker-fundamentals.md    # permalink: /quests/0001/docker-fundamentals/
+    side-quest-avatar-forge.md  # side_quest → /quests/0001/side-quests/avatar-forge/
+```
+
+Do **not** create single-file subdirectories like `0000/hello-cloud/hello-cloud.md` — the file belongs directly at `0000/hello-cloud.md`.
+
+Asset files (scripts, images) may remain in subdirectories (e.g. `0000/hello-cloud/install.sh`).
+
+### `redirect_from` hygiene
+
+When a quest's permalink changes, add the old URL(s) to `redirect_from:` so existing links continue to resolve:
+
+```yaml
+redirect_from:
+  - /quests/old-path/
+  - /quests/another-old-path/
+```
+
+### Dependency URLs
+
+URLs in `quest_dependencies.required_quests`, `recommended_quests`, and `unlocks_quests` must also follow the canonical pattern. Use `# planned quest` comments for quests that do not exist yet:
+
+```yaml
+quest_dependencies:
+  required_quests:
+    - /quests/0000/terminal-fundamentals/
+  unlocks_quests:
+    - /quests/0010/advanced-networking/ # planned quest
+```
+
+## 4. Required Content Structure
 
 The validator checks for these sections. Every quest **must** contain:
 
@@ -167,8 +230,6 @@ graph LR
 ````
 
 ## 5. Quest Types
-
-- **`main_quest`** 🏰 — Core skill, 60+ min, unlocks new quest lines.
 - **`side_quest`** ⚔️ — Focused enhancement, 15–60 min, complements a main quest.
 - **`bonus_quest`** 🎁 — Optional exploration of advanced or experimental topics.
 - **`epic_quest`** 👑 — Multi-session (4+ h) portfolio project integrating many skills.
@@ -234,7 +295,7 @@ python3 test/quest-validator/quest_validator.py -d pages/_quests/
 | Bad `difficulty` format | Use exact `"⚔️ Epic"` (emoji + label, quoted) |
 | Code block without language | Change ` ``` ` to ` ```bash ` (or appropriate) |
 | Missing `## 🎯 Quest Objectives` | Add the section with `- [ ]` checkboxes |
-| Bad `permalink` | Match `/quests/level-XXXX-slug/` |
+| Bad `permalink` | Match `/quests/XXXX/slug/` or `/quests/XXXX/side-quests/slug/` |
 | Wrong `layout` | Must be `journals` |
 
 ## 10. Integration Requirements

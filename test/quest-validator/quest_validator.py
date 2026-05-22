@@ -53,6 +53,32 @@ class QuestValidator:
     
     # Level format pattern (binary)
     LEVEL_PATTERN = re.compile(r'^\d{4}$')
+
+    # Canonical permalink regex per quest_type
+    #   main_quest : /quests/XXXX/slug/
+    #   side_quest : /quests/XXXX/side-quests/slug/
+    #   codex      : /quests/codex/slug/
+    #   template   : /quests/templates/slug/
+    PERMALINK_PATTERNS = {
+        'main_quest': re.compile(r'^/quests/[01]{4}/[a-z0-9][a-z0-9-]*/$'),
+        'side_quest': re.compile(r'^/quests/[01]{4}/side-quests/[a-z0-9][a-z0-9-]*/$'),
+        'codex':      re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
+        'template':   re.compile(r'^/quests/templates/[a-z0-9][a-z0-9-]*/$'),
+    }
+
+    # Generic canonical permalink regex (any valid quest path)
+    PERMALINK_RE = re.compile(
+        r'^/quests/'
+        r'('
+        r'[01]{4}/side-quests/[a-z0-9][a-z0-9-]*'  # side_quest: /quests/XXXX/side-quests/slug/
+        r'|[01]{4}/[a-z0-9][a-z0-9-]*'              # main_quest: /quests/XXXX/slug/
+        r'|[01]{4}'                                  # level index: /quests/XXXX/
+        r'|codex/[a-z0-9][a-z0-9-]*'                # codex:       /quests/codex/slug/
+        r'|templates/[a-z0-9][a-z0-9-]*'            # template:    /quests/templates/slug/
+        r'|tools/[a-z0-9][a-z0-9-]*'                # tools:       /quests/tools/slug/
+        r'|docs/[a-z0-9][a-z0-9-]*'                 # docs:        /quests/docs/slug/
+        r')/$'
+    )
     
     # Placeholder indicators in frontmatter values
     PLACEHOLDER_PATTERNS = [
@@ -255,33 +281,95 @@ class QuestValidator:
             result.score += 2
         result.max_score += 2
     
-    def validate_permalink(self, fm: Dict, result: ValidationResult):
-        """Validate permalink structure"""
+    def validate_permalink(self, fm: Dict, result: ValidationResult, filepath: Optional[Path] = None):
+        """Validate permalink against canonical pattern based on quest_type"""
         if 'permalink' not in fm or fm['permalink'] is None:
             return
-        
+
         permalink = fm['permalink']
+        quest_type = fm.get('quest_type', 'main_quest')
         level = str(fm.get('level', ''))
-        
+
         # Must start with /quests/
         if not permalink.startswith('/quests/'):
             result.errors.append(f"Permalink should start with '/quests/': {permalink}")
             result.passed = False
-        else:
-            # Accept multiple valid permalink patterns:
-            # 1. /quests/level-XXXX/slug/  (template style)
-            # 2. /quests/{level_dir}/slug/ (e.g., /quests/0000/hello-noob/)
-            # 3. /quests/{theme}/slug/     (e.g., /quests/init_world/hello-noob/)
-            # 4. /quests/slug/             (standalone quests)
-            # Check for broken patterns like ../README.md concatenation
-            if '../' in permalink or 'README' in permalink:
-                result.errors.append(f"Broken permalink (contains relative path or README): {permalink}")
+            result.max_score += 5
+            return
+
+        # Reject broken paths (relative or literal README)
+        if '../' in permalink or 'README' in permalink:
+            result.errors.append(f"Broken permalink (contains relative path or README): {permalink}")
+            result.passed = False
+            result.max_score += 5
+            return
+
+        # Level-index README files (e.g., /quests/level-0000/)
+        if re.match(r'^/quests/level-[01]{4}/$', permalink):
+            result.score += 5
+            result.max_score += 5
+            result.info.append(f"Level-index permalink: {permalink}")
+            return
+
+        # Validate quest_type ↔ permalink prefix
+        pattern = self.PERMALINK_PATTERNS.get(quest_type)
+        if pattern:
+            if not pattern.match(permalink):
+                if quest_type == 'main_quest':
+                    expected = f"/quests/level-{level or 'XXXX'}-<slug>/"
+                elif quest_type == 'side_quest':
+                    expected = "/quests/side-quest-<slug>/"
+                elif quest_type == 'codex':
+                    expected = "/quests/codex/<slug>/"
+                else:
+                    expected = f"canonical pattern for quest_type='{quest_type}'"
+                result.errors.append(
+                    f"Permalink '{permalink}' does not match expected pattern for "
+                    f"quest_type='{quest_type}'. Expected: {expected}"
+                )
                 result.passed = False
             else:
                 result.score += 5
-                if level and f"level-{level}" not in permalink and f"/{level}/" not in permalink:
-                    result.info.append(f"Permalink uses descriptive path (level {level}): {permalink}")
+                result.info.append(f"Permalink canonical for {quest_type}: {permalink}")
+        else:
+            # Unknown quest_type — use generic regex, warn only
+            if not self.PERMALINK_RE.match(permalink):
+                result.warnings.append(
+                    f"Permalink '{permalink}' may not follow canonical convention for quest_type='{quest_type}'"
+                )
+            else:
+                result.score += 5
+
+        # For main_quest / side_quest: cross-check level in permalink against level field
+        # New format: /quests/XXXX/... or /quests/XXXX/side-quests/...
+        if quest_type in ('main_quest', 'side_quest') and level:
+            level_str = str(level).zfill(4)
+            if not permalink.startswith(f"/quests/{level_str}/"):
+                result.warnings.append(
+                    f"Permalink level does not match frontmatter level. "
+                    f"level={level}, permalink={permalink}"
+                )
+
         result.max_score += 5
+
+    def validate_dir_level_match(self, fm: Dict, result: ValidationResult, filepath: Optional[Path] = None):
+        """Validate that the file's directory name (4-digit binary) matches frontmatter level"""
+        if filepath is None or 'level' not in fm:
+            return
+
+        level = str(fm.get('level', ''))
+        dir_level = None
+        for part in filepath.parts:
+            if re.match(r'^\d{4}$', part):
+                dir_level = part
+                break
+
+        if dir_level and level and dir_level != level:
+            result.warnings.append(
+                f"Directory level '{dir_level}' does not match frontmatter level '{level}'"
+            )
+        elif dir_level and level:
+            result.info.append(f"Directory level matches frontmatter level: {level}")
     
     def validate_content_structure(self, body: str, result: ValidationResult):
         """Validate quest content structure"""
@@ -449,7 +537,8 @@ class QuestValidator:
         self.validate_level_format(frontmatter, result)
         self.validate_difficulty(frontmatter, result)
         self.validate_estimated_time(frontmatter, result)
-        self.validate_permalink(frontmatter, result)
+        self.validate_permalink(frontmatter, result, filepath)
+        self.validate_dir_level_match(frontmatter, result, filepath)
         self.validate_content_structure(body, result)
         self.validate_code_blocks(body, result)
         self.validate_checkboxes(body, result)
@@ -762,6 +851,8 @@ Examples:
                         help='Minimum score percentage to pass (0=disabled, e.g. 60 or 80)')
     parser.add_argument('--summary', action='store_true', help='Show detailed aggregate summary with per-level stats')
     parser.add_argument('-c', '--config', help='Path to _config.yml to load default field values (fields with defaults are excluded from required checks)')
+    parser.add_argument('--json', help='Output full results as JSON to file (alias for --report)')
+    parser.add_argument('--strict', action='store_true', help='Exit non-zero if any warnings exist (in addition to errors)')
     
     args = parser.parse_args()
     
@@ -805,7 +896,8 @@ Examples:
     validator.print_summary(detailed=args.summary)
     
     # Generate report if requested
-    if args.report:
+    report_path = args.report or args.json
+    if report_path:
         import json
         report = validator.generate_report()
         # Convert results to dict for JSON serialization
@@ -826,12 +918,15 @@ Examples:
         # Remove non-serializable score lists from level_stats
         for level, stats in report.get('level_stats', {}).items():
             stats.pop('scores', None)
-        with open(args.report, 'w') as f:
+        with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
-        print(f"✅ Report generated: {args.report}")
-    
+        print(f"✅ Report generated: {report_path}")
+
     # Exit with appropriate code
     report = validator.generate_report()
+    has_warnings = report['total_warnings'] > 0
+    if args.strict and has_warnings:
+        sys.exit(1)
     sys.exit(0 if report['failed'] == 0 else 1)
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ excerpt: Learn to containerize applications and manage Docker environments for c
   scalable deployments
 snippet: Master the art of digital containerization and unlock deployment freedom
 preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
-date: 2025-09-28T14:23:01.000Z
+date: 2025-09-28 14:23:01+00:00
 lastmod: 2025-09-28 18:49:08.719000+00:00
 level: '0101'
 difficulty: 🟡 Medium
@@ -27,7 +27,7 @@ validation_criteria:
 - Build multi-container applications using Docker Compose
 - Implement Docker security best practices and optimization techniques
 - Deploy containerized applications to cloud platforms
-permalink: /quests/level-0101-docker-mastery/
+permalink: /quests/0101/docker-mastery/
 categories:
 - Quests
 - Devops
@@ -66,6 +66,8 @@ related_quests:
   parallel:
   - 'Level 0101: Linux System Administration'
   - 'Level 0100: Web Server Configuration'
+redirect_from:
+- /quests/level-0101-docker-mastery/
 ---
 *Greetings, brave adventurer! Welcome to **Docker Containerization Mastery: Level 0101 (5) Quest** - an epic 🟡 Medium journey that will transform your docker mastery. This quest will guide you through tool-mastery adventures in devops, preparing you for the next level of your IT journey.*
 

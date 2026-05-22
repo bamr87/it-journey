@@ -7,7 +7,7 @@ description: Master the fundamentals of CI/CD pipelines including automated buil
 excerpt: Learn the core concepts and practices of continuous integration and continuous
   deployment for automated software delivery
 preview: images/previews/ci-cd-fundamentals-continuous-integration-quest-ti.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:05:18+00:00
 level: '0101'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0101-cicd-fundamentals/
+permalink: /quests/0101/cicd-fundamentals/
 categories:
 - Quests
 - DevOps
@@ -93,6 +93,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0101-cicd-fundamentals/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

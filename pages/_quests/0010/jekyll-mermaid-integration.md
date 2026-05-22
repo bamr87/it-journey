@@ -9,7 +9,7 @@ excerpt: Transform any Jekyll site into a powerful diagramming platform with Mer
 snippet: Master the art of diagrammatic magic and bring your Jekyll documentation
   to life
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
-date: 2025-10-04T15:25:33.000Z
+date: 2025-10-04 15:25:33+00:00
 lastmod: 2025-01-27 15:00:00+00:00
 level: '0010'
 difficulty: 🟡 Medium
@@ -34,7 +34,7 @@ validation_criteria:
 - Responsive design works across devices
 - Dark mode compatibility confirmed
 - Documentation is comprehensive and accurate
-permalink: /quests/level-0010-jekyll-mermaid-integration/
+permalink: /quests/0010/jekyll-mermaid-integration/
 categories:
 - Quests
 - Jekyll
@@ -76,6 +76,8 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
+redirect_from:
+- /quests/level-0010-jekyll-mermaid-integration/
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 

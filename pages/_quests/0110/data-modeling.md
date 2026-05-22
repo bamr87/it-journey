@@ -6,7 +6,7 @@ description: Learn data modeling techniques for designing efficient database sch
 excerpt: Design efficient database schemas with normalization, relationships, and
   ER diagrams
 preview: images/previews/data-modeling-schema-design-quest-title-relationsh.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:07:55+00:00
 level: '0110'
 difficulty: 🔴 Hard
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0110-data-modeling/
+permalink: /quests/0110/data-modeling/
 categories:
 - Quests
 - Data-Engineering
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0110-data-modeling/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

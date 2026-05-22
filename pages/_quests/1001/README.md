@@ -1,32 +1,31 @@
 ---
-
 title: Level 1001 (9) - Kubernetes Orchestration
-description: Command the container orchestration platform that powers enterprise-scale deployments
+description: Command the container orchestration platform that powers enterprise-scale
+  deployments
 preview: images/previews/level-1001-kubernetes.png
-permalink: /quests/level-1001/
+permalink: /quests/1001/
 categories:
-  - Quests
-  - Level-1001
-  - Container-Orchestration
+- Quests
+- Level-1001
+- Container-Orchestration
 tags:
-  - lvl-1001
-  - kubernetes
-  - k8s
-  - containers
-  - orchestration
-  - devops
-  - quest-collection
+- lvl-1001
+- kubernetes
+- k8s
+- containers
+- orchestration
+- devops
+- quest-collection
 lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-
 level: 1001
-date: 2025-12-20T20:02:51.000Z
+date: 2025-12-20 20:02:51+00:00
 redirect_from:
-  - /quests/1001/
+- /quests/1001/
+- /quests/level-1001/
 ---
-
 # Level 1001 (9) - Kubernetes Orchestration
 
 *Beyond the realm of single containers lies a vast federation of pods, services, and deployments. Welcome to the Kubernetes Dominion—where container orchestration transforms chaos into harmony and applications scale to meet the demands of millions. Here, Expert-tier adventurers learn to command the most powerful orchestration platform in the realm.*

@@ -20,13 +20,13 @@ tags:
 categories:
 - Stack Analysis
 - Django Applications
-lastmod: &id001 2025-11-02 21:54:51.383000+00:00
+lastmod: 2025-11-02 21:54:51.383000+00:00
 level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/level-0001-barodybroject-stack-analysis/
-date: 2025-11-02T18:34:05.000Z
+permalink: /quests/0001/side-quests/barodybroject-stack-analysis/
+date: 2025-11-02 18:34:05+00:00
 primary_technology: stack-analysis
 skill_focus:
 - Stack Analysis
@@ -45,7 +45,9 @@ keywords:
 - postgresql
 author: IT-Journey Team
 redirect_from:
-  - /quests/level-0001/barodybroject-stack-analysis/
+- /quests/level-0001/barodybroject-stack-analysis/
+- /quests/level-0001-barodybroject-stack-analysis/
+- /quests/side-quest-barodybroject-stack-analysis/
 ---
 # Technology Stack Analysis: Barodybroject
 

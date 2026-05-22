@@ -7,7 +7,7 @@ description: Learn Docker container fundamentals including images, containers, v
 excerpt: Master Docker container fundamentals including images, volumes, and networking
   for portable application deployment
 preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:04:39+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0100-container-fundamentals/
+permalink: /quests/0100/container-fundamentals/
 categories:
 - Quests
 - DevOps
@@ -95,6 +95,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0100-container-fundamentals/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

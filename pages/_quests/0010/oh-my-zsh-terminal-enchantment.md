@@ -1,139 +1,133 @@
 ---
-title: "Terminal Enchantment: Oh-My-Zsh Mastery"
+title: 'Terminal Enchantment: Oh-My-Zsh Mastery'
 author: IT-Journey Team
-description: "Transform your terminal into a powerful development weapon by mastering Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity and workflow efficiency"
-excerpt: "Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple tool into a powerful development artifact"
-snippet: "Unleash the true power of your terminal with Oh-My-Zsh - where every command becomes a spell of productivity"
-preview: "/images/previews/terminal-enchantment-oh-my-zsh-mastery.png"
-date: 2025-09-03T22:19:06.000Z
-lastmod: 2026-02-13T00:00:00.000Z
-level: "0010"
-difficulty: "🟡 Medium"
-estimated_time: "45-90 minutes"
+description: Transform your terminal into a powerful development weapon by mastering
+  Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity
+  and workflow efficiency
+excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple
+  tool into a powerful development artifact
+snippet: Unleash the true power of your terminal with Oh-My-Zsh - where every command
+  becomes a spell of productivity
+preview: /images/previews/terminal-enchantment-oh-my-zsh-mastery.png
+date: 2025-09-03 22:19:06+00:00
+lastmod: 2026-02-13 00:00:00+00:00
+level: '0010'
+difficulty: 🟡 Medium
+estimated_time: 45-90 minutes
 primary_technology: zsh
 quest_type: main_quest
-quest_series: "Terminal Mastery Path"
+quest_series: Terminal Mastery Path
 skill_focus: devops
 learning_style: hands-on
 fmContentType: quest
-permalink: /quests/level-0010-oh-my-zsh-mastery/
-
-# === QUEST HIERARCHY ===
-quest_line: "Foundation Path"
-quest_arc: "Tool Mastery Arc"
-
+permalink: /quests/0010/oh-my-zsh-mastery/
+quest_line: Foundation Path
+quest_arc: Tool Mastery Arc
 quest_dependencies:
-    required_quests:
-        - "/quests/level-0001-terminal-fundamentals/"
-    recommended_quests:
-        - "/quests/level-0010-nerd-font-enchantment/"
-    unlocks_quests:
-        - "/quests/level-0010-bash-scripting/"
-        - "/quests/level-0100-advanced-shell-scripting/"
-
+  required_quests:
+  - /quests/0001/terminal-fundamentals/
+  recommended_quests:
+  - /quests/0010/nerd-font-enchantment/
+  unlocks_quests:
+  - /quests/0010/bash-scripting/
+  - /quests/0100/advanced-shell-scripting/
 quest_relationships:
-    child_quests:
-        - "/quests/level-0010-nerd-font-enchantment/"
-    parallel_quests:
-        - "/quests/level-0010-advanced-markdown/"
-    sequel_quests:
-        - "/quests/level-0010-bash-scripting/"
-
+  child_quests:
+  - /quests/0010/nerd-font-enchantment/
+  parallel_quests:
+  - /quests/0010/advanced-markdown/
+  sequel_quests:
+  - /quests/0010/bash-scripting/
 learning_paths:
-    primary_paths:
-        - "Software Development"
-        - "System Administration"
-    character_classes:
-        - "💻 Software Developer"
-        - "🏗️ System Engineer"
-    skill_trees:
-        - "Terminal Mastery"
-        - "Development Environment"
-        - "Productivity Tools"
-
+  primary_paths:
+  - Software Development
+  - System Administration
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
+  - Development Environment
+  - Productivity Tools
 quest_mapping:
-    coordinates: "[1, 3]"
-    region: "Foundation"
-    realm: "Development"
-    biome: "Terminal"
-
+  coordinates: '[1, 3]'
+  region: Foundation
+  realm: Development
+  biome: Terminal
 prerequisites:
-    knowledge_requirements:
-        - "Basic terminal/command-line knowledge (Level 0001 or equivalent)"
-        - "Understanding of file system navigation"
-    system_requirements:
-        - "Zsh shell installed on your system"
-        - "VSCode editor with terminal integration"
-        - "Internet connection for downloading scripts and plugins"
-    skill_level_indicators:
-        - "Can navigate directories and run basic commands"
-        - "Comfortable editing text files"
-
+  knowledge_requirements:
+  - Basic terminal/command-line knowledge (Level 0001 or equivalent)
+  - Understanding of file system navigation
+  system_requirements:
+  - Zsh shell installed on your system
+  - VSCode editor with terminal integration
+  - Internet connection for downloading scripts and plugins
+  skill_level_indicators:
+  - Can navigate directories and run basic commands
+  - Comfortable editing text files
 validation_criteria:
-    completion_requirements:
-        - "Successfully install Oh-My-Zsh framework"
-        - "Configure at least one custom theme"
-        - "Install and activate 5+ plugins"
-    skill_demonstrations:
-        - "Customize terminal with themes and plugins"
-        - "Integrate enhanced terminal with VSCode"
-        - "Demonstrate improved development workflow"
-    knowledge_checks:
-        - "Explain the .zshrc configuration file structure"
-        - "Troubleshoot common Oh-My-Zsh issues"
-
+  completion_requirements:
+  - Successfully install Oh-My-Zsh framework
+  - Configure at least one custom theme
+  - Install and activate 5+ plugins
+  skill_demonstrations:
+  - Customize terminal with themes and plugins
+  - Integrate enhanced terminal with VSCode
+  - Demonstrate improved development workflow
+  knowledge_checks:
+  - Explain the .zshrc configuration file structure
+  - Troubleshoot common Oh-My-Zsh issues
 rewards:
-    badges:
-        - "🏆 Terminal Sorcerer - Master of Shell Customization"
-        - "⚡ Productivity Surge - 40% faster command-line workflows"
-        - "🛠️ Plugin Artisan - Custom terminal tool creation skills"
-        - "🎯 VSCode Alchemist - Seamless editor-terminal synergy"
-    skills_unlocked:
-        - "🛠️ Advanced Shell Customization"
-        - "🎯 Plugin Management and Development"
-        - "⚡ Workflow Optimization Techniques"
-    progression_points: 150
-    unlocks_features:
-        - "Access to advanced shell scripting quests"
-        - "Eligibility for DevOps automation quest line"
-
+  badges:
+  - 🏆 Terminal Sorcerer - Master of Shell Customization
+  - ⚡ Productivity Surge - 40% faster command-line workflows
+  - 🛠️ Plugin Artisan - Custom terminal tool creation skills
+  - 🎯 VSCode Alchemist - Seamless editor-terminal synergy
+  skills_unlocked:
+  - 🛠️ Advanced Shell Customization
+  - 🎯 Plugin Management and Development
+  - ⚡ Workflow Optimization Techniques
+  progression_points: 150
+  unlocks_features:
+  - Access to advanced shell scripting quests
+  - Eligibility for DevOps automation quest line
 categories:
-    - Quests
-    - Development
-    - Tools
-    - Terminal-Mastery
+- Quests
+- Development
+- Tools
+- Terminal-Mastery
 tags:
-    - lvl-0010
-    - zsh
-    - terminal-mastery
-    - oh-my-zsh
-    - productivity-tools
-    - shell-customization
-    - vscode-integration
-    - development-workflow
-    - command-line-efficiency
-    - gamified-learning
+- lvl-0010
+- zsh
+- terminal-mastery
+- oh-my-zsh
+- productivity-tools
+- shell-customization
+- vscode-integration
+- development-workflow
+- command-line-efficiency
+- gamified-learning
 keywords:
-    primary:
-        - zsh
-        - oh-my-zsh
-        - terminal-customization
-    secondary:
-        - shell-plugins
-        - vscode-integration
-        - development-workflow
-        - productivity-tools
-        - command-line-efficiency
-
+  primary:
+  - zsh
+  - oh-my-zsh
+  - terminal-customization
+  secondary:
+  - shell-plugins
+  - vscode-integration
+  - development-workflow
+  - productivity-tools
+  - command-line-efficiency
 comments: true
-attachments: ""
-sub-title: "Level 0010 (2) Quest: Terminal Supercharging and Customization"
-
+attachments: ''
+sub-title: 'Level 0010 (2) Quest: Terminal Supercharging and Customization'
 related_quests:
-    - "Level 0001: Terminal Fundamentals"
-    - "Level 0010: Nerd Font Enchantment"
-    - "Level 0010: Bash Scripting"
-    - "VSCode Mastery Quest"
+- 'Level 0001: Terminal Fundamentals'
+- 'Level 0010: Nerd Font Enchantment'
+- 'Level 0010: Bash Scripting'
+- VSCode Mastery Quest
+redirect_from:
+- /quests/level-0010-oh-my-zsh-mastery/
 ---
 ## 🌟 The Legend of Terminal Enchantment
 
