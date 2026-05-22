@@ -37,8 +37,7 @@ estimated_time: "30 minutes"
 ---
 
 
-Create a bootable installer for macOS
-=====================================
+# Create a bootable installer for macOS
 
 You can use an external drive or secondary volume as a startup disk from which to install the Mac operating system.
 
@@ -46,8 +45,7 @@ These advanced steps are primarily for system administrators and other experienc
 
 You don't need a bootable installer to [upgrade macOS](https://support.apple.com/kb/HT201541) or [reinstall macOS](https://support.apple.com/kb/HT204904), but it can be useful if you want to install macOS on multiple computers without downloading the installer each time, or you're unable to install a compatible macOS from the Finder or macOS Recovery.
 
-What you need to create a bootable installer
---------------------------------------------
+## What you need to create a bootable installer
 
 - A USB flash drive or other secondary volume with at least 14GB of available storage, formatted as Mac OS Extended
 
@@ -57,8 +55,7 @@ To download a full installer, your Mac must be using macOS High Sierra or later,
 
 [Download a macOS installer using the App Store or your browser](https://support.apple.com/kb/HT211683)
 
-Use Terminal to create the bootable installer
----------------------------------------------
+## Use Terminal to create the bootable installer
 
 ![Terminal window showing the completed process](https://cdsassets.apple.com/live/7WUAS350/images/macos/ventura/macos-ventura-terminal-command-createinstallmedia.png)
 
@@ -76,8 +73,7 @@ Use Terminal to create the bootable installer
 
 7. When Terminal says that it's done, the volume will have the same name as the installer you downloaded, such as Install macOS Sonoma. You can now quit Terminal and eject the volume.
 
-Commands
---------
+## Commands
 
 Depending on which macOS you downloaded, enter one of the following commands in Terminal as instructed above.
 
@@ -117,8 +113,7 @@ Depending on which macOS you downloaded, enter one of the following commands in 
 
 `sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app`
 
-Use the bootable installer
---------------------------
+## Use the bootable installer
 
 [Determine whether you're using a Mac with Apple silicon](https://support.apple.com/kb/HT211814), then follow the appropriate steps. Remember that the Mac you're starting up with the bootable installer must be compatible with the macOS on the bootable installer. If not, the Mac might [start up to a circle with a line through it](https://support.apple.com/101666).
 
@@ -148,8 +143,7 @@ Use the bootable installer
 
 7. Select Install macOS (or Install OS X) from the Utilities window, then click Continue and follow the onscreen instructions.
 
-Learn more
-----------
+## Learn more
 
 For information about the `createinstallmedia` command and the arguments you can use with it, make sure that the macOS installer is in your Applications folder, then enter the appropriate path in Terminal:
 

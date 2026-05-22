@@ -199,6 +199,7 @@ As for public performance, you're warned that the "right to print the music does
 
 While it's likely that some arrangements of the public domain works here are copyrightable, it's equally likely that some arrangements *don't* merit their own copyright. The records for some pieces merely state that the piece was "edited by" someone. Did the edits rise to the level of copyrightability? Hard to say without investigating. For more info about the copyrightability of arrangements, see [this page](http://www.publicdomainsherpa.com/public-domain-music.html).
 
-## Source
+Source
+------
 
 [Source](http://www.publicdomainsherpa.com/free-sheet-music.html)

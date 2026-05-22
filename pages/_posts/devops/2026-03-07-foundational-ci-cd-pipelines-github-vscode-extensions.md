@@ -142,7 +142,7 @@ If your project doesn't have these scripts yet, add them before proceeding. The 
 
 The CI workflow runs on every push to `main` and on every pull request. Its job: **confirm the code is clean, compiles, and passes tests**.
 
-### The Full Workflow File
+### Release Workflow File
 
 Create `.github/workflows/ci.yml`:
 
@@ -186,7 +186,7 @@ jobs:
 
 > **Note**: The original vs-sonic-pi repo uses Node 18 + 20 in its matrix. Node.js 18 reached end-of-life in April 2025, so for new projects you should use the current LTS versions (20 and 22). Always check the [Node.js release schedule](https://nodejs.org/en/about/previous-releases) and align your matrix with active LTS versions.
 
-### Breaking It Down
+### Release Workflow Breakdown
 
 #### Triggers
 

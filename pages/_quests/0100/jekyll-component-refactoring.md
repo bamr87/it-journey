@@ -442,4 +442,3 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 - [Liquid Tags and Filters](https://shopify.github.io/liquid/) - Reference for the templating syntax used in Jekyll includes
 - [MDN: Layout and the Containing Block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) - Helpful background for understanding width constraints in layouts
 - [MDN: CSS width](https://developer.mozilla.org/en-US/docs/Web/CSS/width) - Reference for width behavior when building full-width or full-bleed sections
-

@@ -255,7 +255,7 @@ abstract: "{{ page.abstract }}"
 
 ```
 
-#### Example
+#### Body Outline Example
 
 1. : Excel as a Proxy for Economic Complexity
  • Brief overview of financial modeling complexity.
@@ -283,7 +283,7 @@ schema: article_body
 
 "Generate an outline for the body of this article in a structured format. The article should follow a **narrative** style with a **humorous and insightful** tone. The outline must consist of **five sections**, each containing **three key points** that develop the argument progressively and logically. The article should have a **satirical undertone**, with **moderate intensity** and **provocative** elements that challenge conventional thinking without being overly extreme. Ensure the humor is sharp and the insights are thought-provoking, keeping the reader engaged while subtly critiquing the subject matter."
 
-#### Example
+#### Conclusion Outline Example
 
 1. Circular References: Errors or Market Signals?
  • Define circular references clearly for the reader.
