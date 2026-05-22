@@ -27,6 +27,16 @@ source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/bandit/bandit20.md
 source_name: overthewire
 license: MIT
+author: bamr87
+excerpt: "OverTheWire Bandit level 20 — practice Linux command-line and security skills through hands-on challenges."
+draft: false
+keywords:
+  - security
+  - wargames
+  - linux
+  - overthewire
+  - ctf
+  - cybersecurity
 ---
 
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.

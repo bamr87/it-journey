@@ -1,7 +1,7 @@
 ---
-title: Obsidian Knowledge Graph
+title: Obsidian Knowledge Graph and Wiki Links
 permalink: /docs/obsidian/
-description: Use Obsidian-style wiki links, backlinks, embeds, and graph views across IT-Journey content.
+description: Use Obsidian-style wiki links, backlinks, embeds, and interactive graph views across all IT-Journey docs, quests, notes, and posts.
 excerpt: Lightweight guide to the Obsidian-style knowledge features provided by the zer0-mistakes theme.
 categories:
   - docs

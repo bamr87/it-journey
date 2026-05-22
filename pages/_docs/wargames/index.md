@@ -16,6 +16,16 @@ toc_sticky: true
 source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_name: overthewire
 license: MIT
+author: bamr87
+excerpt: "Security wargame challenges to practice Linux, CTF, and cybersecurity skills."
+draft: false
+keywords:
+  - security
+  - wargames
+  - linux
+  - overthewire
+  - ctf
+  - cybersecurity
 ---
 
 # Wargames — Security Challenges
