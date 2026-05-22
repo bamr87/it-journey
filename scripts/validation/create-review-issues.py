@@ -41,7 +41,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
 
 API_ROOT = "https://api.github.com"
 
@@ -320,7 +320,7 @@ def format_issue_body(
 
 def collect_standards_gaps(reviews: Dict[str, Dict[str, Any]]) -> List[str]:
     """Collect de-duplicated high-signal standards gaps from review output."""
-    seen: set[str] = set()
+    seen: Set[str] = set()
     gaps: List[str] = []
     fields = (
         "action_items",
@@ -400,8 +400,7 @@ def format_standards_issue_body(
 
     lines.extend([
         "",
-        "> This issue is auto-updated in place each run; use it as the standing",
-        "> governance task for instruction/prompt hardening.",
+        "> This issue is auto-updated in place each run; use it as the standing governance task for instruction/prompt hardening.",
     ])
     return "\n".join(lines)
 

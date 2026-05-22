@@ -23,7 +23,7 @@ This workflow automatically reviews markdown files in the `pages/` directory usi
 - **Automatic Trigger**: Runs on PR creation/updates and pushes to main
 - **AI Analysis**: Uses GPT-4 to analyze content quality, SEO, and technical accuracy
 - **PR Comments**: Posts review results as comments on pull requests
-- **Issue Creation**: Creates one issue per Jekyll collection for content fixes on main branch pushes
+- **Issue Creation**: Creates one issue per Jekyll collection for content fixes
 - **Standards Follow-up Issue**: Creates/updates a separate Copilot-assigned issue for instruction + prompt hardening
 - **Artifact Storage**: Saves review results for 30 days
 
