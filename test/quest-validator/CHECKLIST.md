@@ -10,8 +10,7 @@
 - [ ] `date` - ISO 8601 format (YYYY-MM-DDTHH:MM:SS.000Z)
 - [ ] `preview` - Image path
 - [ ] `author` - Quest creator name
-- [ ] `layout` - Should be "journals"
-- [ ] `permalink` - Start with `/quests/level-XXXX-name/`
+- [ ] `permalink` - Start with `/quests/XXXX/name/`
 - [ ] `fmContentType` - Should be "quest"
 
 ### Quest Classification
@@ -25,7 +24,7 @@
 - [ ] `quest_series` - Series name or "Standalone Quest"
 
 ### Metadata
-- [ ] `tags` - Include level tag (lvl-XXXX) + relevant tags
+- [ ] `tags` - Include level tag (XXXX) + relevant tags
 - [ ] `categories` - [Quests, Tech-Category, Skill-Level]
 - [ ] `keywords` - primary and secondary keywords
 

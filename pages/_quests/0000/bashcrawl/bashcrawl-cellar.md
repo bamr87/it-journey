@@ -6,7 +6,6 @@ date: 2026-05-22T00:00:00.000Z
 lastmod: 2026-05-22T00:00:00.000Z
 author: IT-Journey Team
 level: '0000'
-layout: journals
 fmContentType: quest
 quest_type: side_quest
 quest_series: Bashcrawl Adventure Path

@@ -22,7 +22,6 @@ sub_title: "Level {{fm.level}} ({{fm.level | decimal}}) Quest: {{fm.quest_type |
 excerpt: "{{fm.excerpt}}"
 snippet: "{{fm.snippet}}"
 author: "{{fm.author}}"
-layout: {{fm.layout}}
 tags:
     - {{fm.level}}
     - {{fm.primary_technology}}

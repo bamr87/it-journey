@@ -27,7 +27,6 @@ Use the canonical template at `.frontmatter/templates/quests.md`. These fields a
 | `learning_style` | enum | `hands-on` \| `conceptual` \| `project-based` |
 | `quest_series` | non-empty | `"Container Mastery"` |
 | `author` | non-empty | `"IT-Journey Team"` |
-| `layout` | must equal | `journals` |
 | `keywords` | object | `{primary: [...], secondary: [...]}` |
 | `permalink` | pattern | `/quests/XXXX/slug/` (main) · `/quests/XXXX/side-quests/slug/` (side) |
 | `fmContentType` | must equal | `quest` |
@@ -50,13 +49,12 @@ skill_focus: devops
 learning_style: hands-on
 quest_series: "Container Mastery"
 author: "IT-Journey Team"
-layout: journals
 fmContentType: quest
 permalink: /quests/1100/docker-mastery/
 keywords:
   primary: ["docker", "containers", "orchestration"]
   secondary: ["devops", "deployment"]
-tags: [lvl-1100, docker, main_quest, devops, hands-on, gamified-learning]
+tags: [1100, docker, main_quest, devops, hands-on, gamified-learning]
 categories: [Quests, DevOps, Containers]
 prerequisites:
   knowledge_requirements: ["Basic CLI usage", "Linux fundamentals"]
@@ -290,7 +288,6 @@ python3 test/quest-validator/quest_validator.py -d pages/_quests/
 | Code block without language | Change ` ``` ` to ` ```bash ` (or appropriate) |
 | Missing `## 🎯 Quest Objectives` | Add the section with `- [ ]` checkboxes |
 | Bad `permalink` | Match `/quests/XXXX/slug/` or `/quests/XXXX/side-quests/slug/` |
-| Wrong `layout` | Must be `journals` |
 
 ## 10. Integration Requirements
 

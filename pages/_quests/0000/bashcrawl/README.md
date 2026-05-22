@@ -19,7 +19,6 @@ tags:
 - 0000
 author: IT-Journey Team
 level: '0000'
-layout: journals
 fmContentType: quest
 quest_type: main_quest
 quest_line: Foundation Path

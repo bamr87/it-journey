@@ -35,7 +35,6 @@ draft: false
 comments: true
 permalink: /quests/0100/side-quests/jekyll-component-refactoring/
 sub_title: 'Level 0100 (4) Quest: Side Quest - Jekyll Theme Refactoring'
-layout: journals
 categories:
 - Quests
 - Frontend
