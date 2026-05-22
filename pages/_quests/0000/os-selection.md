@@ -4,8 +4,8 @@ author: IT-Journey Team
 description: Choose your operating system and understand the unique strengths of Windows,
   macOS, and Linux for your IT journey
 excerpt: Selecting the right operating system is a crucial first step in your IT adventure
-preview: /images/previews/os-selection.png
-date: 2023-11-25T14:12:43.000Z
+preview: images/previews/os-selection.png
+date: 2023-11-25 14:12:43+00:00
 lastmod: 2025-11-30 05:46:59.328000+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -18,19 +18,19 @@ quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/0000/it-fundamentals/
   unlocks_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
   parallel_quests:
-  - /quests/lvl_000/character-selection/
+  - /quests/0000/character-selection/
 learning_paths:
   primary_paths:
   - Software Development
@@ -78,7 +78,7 @@ rewards:
   unlocks_features:
   - Access to platform-specific Hello quests
   - Foundation for development environment setup
-permalink: /quests/lvl_000/os-selection/
+permalink: /quests/0000/os-selection/
 categories:
 - Quests
 - Init-World
@@ -93,6 +93,9 @@ keywords:
 fmContentType: quest
 draft: false
 slug: os-selection
+redirect_from:
+- /quests/lvl_000/os-selection/
+- /quests/level-0000-os-selection/
 ---
 *Welcome to the Realm Selection Chamber, brave adventurer! Choosing the right operating system is like selecting the right wand in the wizarding world — it's a deeply personal choice that shapes every spell you cast on your IT journey.*
 

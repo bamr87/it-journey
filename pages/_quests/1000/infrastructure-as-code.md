@@ -4,8 +4,8 @@ author: IT-Journey Team
 description: Learn Infrastructure as Code with Terraform and CloudFormation. Automate
   cloud provisioning, manage state, implement modules, and apply IaC best practices.
 excerpt: Automate cloud infrastructure provisioning with Terraform and CloudFormation
-preview: /images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:41:15+00:00
 level: '1000'
 difficulty: 🔴 Hard
@@ -60,7 +60,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1000-infrastructure-as-code/
+permalink: /quests/1000/infrastructure-as-code/
 categories:
 - Quests
 - Cloud-Engineering
@@ -91,6 +91,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1000-infrastructure-as-code/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

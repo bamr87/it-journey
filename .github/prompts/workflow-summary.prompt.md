@@ -1,17 +1,8 @@
 ---
-name: "Workflow Summary"
-description: "Generate comprehensive workflow execution summary"
-version: "1.0.0"
-category: "reporting"
-inputs:
-  - workflow_name
-  - execution_id
-  - all_outputs
-outputs:
-  - summary_report
-  - next_steps
+mode: agent
+description: "Generate a comprehensive workflow execution summary with outputs and next steps"
 date: 2025-11-22T16:10:21.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Workflow Execution Summary

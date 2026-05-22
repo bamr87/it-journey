@@ -1,32 +1,16 @@
 ---
-
 title: Level 0010 - Terminal Enhancement & Shell Mastery
-description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and advanced shell customization
-author: IT-Journey Team
-preview: /images/previews/level-0010-terminal-enhancement-shell-mastery.png
-permalink: /quests/level-0010/
-lastmod: 2026-04-25T19:27:00.244Z
-level: "0010"
+description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and advanced
+  shell customization
+preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
+permalink: /quests/0010/
+lastmod: 2026-04-25 19:27:00.244000+00:00
+level: '0010'
 categories: quests
-tags:
-    - terminal
-    - level-0010
-    - zsh
-    - oh-my-zsh
-    - shell-customization
-date: 2025-11-29T16:46:02.000Z
-draft: false
-excerpt: Enhance your terminal with Oh My Zsh, Nerd Fonts, and advanced shell customization for a beautifully powerful command line.
-keywords:
-    primary:
-        - level 0010
-        - oh-my-zsh
-    secondary:
-        - terminal enhancement
-        - shell customization
-        - nerd fonts
+date: 2025-11-29 16:46:02+00:00
+redirect_from:
+- /quests/level-0010/
 ---
-
 # Level 0010: Terminal Enhancement & Shell Mastery
 
 *Having conquered the basic incantations, you now seek to augment your terminal with powerful enchantments. Level 0010 transforms your command line from a simple tool into a beautifully customized powerhouse that enhances your productivity and delights the eye.*
@@ -44,7 +28,7 @@ Level 0010 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/level-0010-bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
 | [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](../README.mdlevel-0010-oh-my-zsh-mastery/) | 🟡 Medium | 45-90 minutes | main_quest | 🔮 Placeholder |
 | [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](../README.mdlevel-0010/jekyll-mermaid-integration-quest/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
 | [Understanding Action Triggers in Depth](/quests/level-0010-action-triggers/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |

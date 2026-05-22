@@ -5,8 +5,8 @@ description: Learn to create and manage GitHub Actions workflows for CI/CD autom
   Build automated testing, deployment, and code quality pipelines using YAML workflows.
 excerpt: Master GitHub Actions workflow creation for automating your software development
   lifecycle
-preview: /images/previews/github-actions-basics-workflow-automation-descript.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/github-actions-basics-workflow-automation-descript.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:05:22+00:00
 level: '0101'
 difficulty: 🟡 Medium
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0101-github-actions-basics/
+permalink: /quests/0101/github-actions-basics/
 categories:
 - Quests
 - DevOps
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0101-github-actions-basics/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

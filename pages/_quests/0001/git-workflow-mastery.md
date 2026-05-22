@@ -6,8 +6,8 @@ description: Learn Git branching, merging, and collaboration workflows. Master f
   hands-on tutorial.
 excerpt: Master Git branching strategies, merging techniques, and pull request workflows
   for effective team collaboration.
-preview: /images/previews/git-workflow-mastery-branches-and-collaboration-de.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/git-workflow-mastery-branches-and-collaboration-de.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0001-git-workflow-mastery/
+permalink: /quests/0001/git-workflow-mastery/
 categories:
 - Quests
 - DevOps
@@ -100,6 +100,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0001-git-workflow-mastery/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

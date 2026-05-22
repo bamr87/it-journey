@@ -1,38 +1,39 @@
 ---
-
-title: "Level 1111: Leadership & Innovation"
-description: Achieve mastery in technical leadership, community building, and driving innovation to shape the future of technology
-preview: /images/previews/level-1111-leadership-innovation.png
-level: "1111"
+title: 'Level 1111: Leadership & Innovation'
+description: Achieve mastery in technical leadership, community building, and driving
+  innovation to shape the future of technology
+preview: images/previews/level-1111-leadership-innovation.png
+level: '1111'
 level_decimal: 15
 tier: Legend
 tier_emoji: 👑
 theme: Realm Shaper
 xp_range: 10000+
 permalink: /quests/1111/
-date: 2025-11-30T22:12:13.000Z
-lastmod: 2025-12-01T04:36:39.408Z
+date: 2025-11-30 22:12:13+00:00
+lastmod: 2025-12-01 04:36:39.408000+00:00
 categories:
-  - quests
-  - level-1111
-  - legend-tier
-  - leadership
-  - innovation
+- quests
+- level-1111
+- legend-tier
+- leadership
+- innovation
 tags:
-  - leadership
-  - innovation
-  - mentorship
-  - open-source
-  - community
-  - architecture
-  - career
+- leadership
+- innovation
+- mentorship
+- open-source
+- community
+- architecture
+- career
 toc: true
 toc_sticky: true
 sidebar:
   nav: quests
-
+redirect_from:
+- /quests/1111/
+- /quests/level-1111/
 ---
-
 # 👑 Level 1111: Leadership & Innovation
 
 *Congratulations, legendary hero! You have ascended to the highest realm—the domain of Realm Shapers. Here, you will transcend individual mastery to lead teams, build communities, drive innovation, and leave a lasting impact on the technology landscape.*

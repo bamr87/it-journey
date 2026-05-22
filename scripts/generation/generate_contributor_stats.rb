@@ -4,6 +4,7 @@
 require 'yaml'
 require 'date'
 require 'open3'
+require 'shellwords'
 
 # Generates contributor statistics from git history and content files.
 # Merges auto-generated stats into _data/contributors/{username}.yml
@@ -349,14 +350,13 @@ class ContributorStatsGenerator
 end
 
 # --- Main ---
-require 'shellwords'
 
 if ARGV.empty?
   puts "Usage: ruby generate_contributor_stats.rb <username> | --all"
   exit 1
 end
 
-contributors_dir = File.join(__dir__, 'contributors')
+contributors_dir = ContributorStatsGenerator::CONTRIBUTORS_DIR
 
 if ARGV[0] == '--all'
   files = Dir.glob(File.join(contributors_dir, '*.yml')).reject { |f| File.basename(f).start_with?('_') }

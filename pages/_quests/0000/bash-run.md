@@ -1,13 +1,19 @@
 ---
-title: "bashcrawl and Beyond: Extending a Terminal Dungeon Adventure"
+title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
 author: IT-Journey Team
-description: Extend bashcrawl's terminal dungeon by building advanced shell scripts. Explore directories as rooms, scrolls as text files, and scripts as interactive items.
-excerpt: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
+description: Starting with bashcrawl as a base and building upon it is a great way
+  to learn advanced shell scripting. bashcrawl uses directories as rooms, text files
+  as scrolls, and executable scripts as interactive items — a brilliant architecture
+  for learning and expanding.
+excerpt: Starting with bashcrawl as a base and building upon it is a great way to
+  learn advanced shell scripting. bashcrawl uses directories as rooms, text files
+  as scrolls, and executable scripts as interactive items — a brilliant architecture
+  for learning and expanding.
 snippet: Transform basic shell commands into an interactive gaming experience
-preview: /images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
-date: 2024-05-29T10:39:06.000Z
-lastmod: 2026-04-25T19:27:00.033Z
-level: "0000"
+preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
+date: 2024-05-29 10:39:06+00:00
+lastmod: 2026-04-25 19:27:00.033000+00:00
+level: '0000'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: bash
@@ -16,80 +22,84 @@ quest_series: Level 000 - Foundation Skills
 quest_line: Foundation Path
 quest_arc: Terminal Mastery Arc
 quest_dependencies:
-    required_quests:
-        - /quests/bashcrawl-terminal-adventure/
-        - /quests/hello-linux/linux-fundamentals/
-    recommended_quests:
-        - /quests/level-0000-terminal-fundamentals/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0000/bashcrawl/
+  - /quests/0000/linux-fundamentals/
+  recommended_quests:
+  - /quests/0000/terminal-fundamentals/
+  unlocks_quests: []
 quest_relationships:
-    child_quests: []
-    sequel_quests: []
-    parallel_quests: []
+  child_quests: []
+  sequel_quests: []
+  parallel_quests: []
 learning_paths:
-    primary_paths:
-        - Software Development
-        - System Administration
-    character_classes:
-        - 💻 Software Developer
-        - 🏗️ System Engineer
-    skill_trees:
-        - Terminal Mastery
-        - Shell Scripting
+  primary_paths:
+  - Software Development
+  - System Administration
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
+  - Shell Scripting
 skill_focus:
-    - Quests
-    - Terminal
-    - Level-000
+- Quests
+- Terminal
+- Level-000
 learning_style: hands-on
 prerequisites:
-    knowledge_requirements:
-        - Basic bash command knowledge
-        - Terminal navigation skills
-        - Text editor familiarity (nano, vim, or VS Code)
-    system_requirements:
-        - Unix/Linux terminal (or WSL on Windows)
-        - Bash shell installed
-    skill_level_indicators:
-        - Comfortable running commands in the terminal
-        - Can create and edit files from the command line
+  knowledge_requirements:
+  - Basic bash command knowledge
+  - Terminal navigation skills
+  - Text editor familiarity (nano, vim, or VS Code)
+  system_requirements:
+  - Unix/Linux terminal (or WSL on Windows)
+  - Bash shell installed
+  skill_level_indicators:
+  - Comfortable running commands in the terminal
+  - Can create and edit files from the command line
 validation_criteria:
-    - Add a new room with a scroll and interactive treasure to bashcrawl
-    - Create a hidden room mechanic using dot-prefixed directories
-    - Demonstrate understanding of bashcrawl patterns (env vars, executables, shared functions)
-permalink: /quests/lvl_000/bash-run/
+- Add a new room with a scroll and interactive treasure to bashcrawl
+- Create a hidden room mechanic using dot-prefixed directories
+- Demonstrate understanding of bashcrawl patterns (env vars, executables, shared functions)
+permalink: /quests/0000/side-quests/bash-run/
 categories:
-    - Quests
-    - Terminal
-    - Level-000
+- Quests
+- Terminal
+- Level-000
 tags:
-    - bash
-    - terminal
-    - game-development
-    - shell-scripting
-    - lvl-000
+- bash
+- terminal
+- game-development
+- shell-scripting
+- lvl-000
 keywords:
-    - bash
-    - terminal
-    - game-development
-    - shell-scripting
-    - lvl-000
+- bash
+- terminal
+- game-development
+- shell-scripting
+- lvl-000
 fmContentType: quest
 draft: false
-sub-title: "Level 000 Quest: Extending bashcrawl's Terminal Dungeon"
+sub-title: 'Level 000 Quest: Extending bashcrawl''s Terminal Dungeon'
 rewards:
-    badges:
-        - 🏆 Bash Scripting Badge
-        - ⚡ Advanced Terminal Skills
-    skills_unlocked:
-        - 🛠️ Game Development Foundation
-        - 🎯 Shell Programming Mastery
-    progression_points: 100
-    unlocks_features:
-        - Advanced scripting quest access
-        - Terminal automation capabilities
+  badges:
+  - 🏆 Bash Scripting Badge
+  - ⚡ Advanced Terminal Skills
+  skills_unlocked:
+  - 🛠️ Game Development Foundation
+  - 🎯 Shell Programming Mastery
+  progression_points: 100
+  unlocks_features:
+  - Advanced scripting quest access
+  - Terminal automation capabilities
 related_quests:
-    - bashcrawl/README.md - Terminal Adventure RPG
-    - hello-noob.md - Beginner's IT Journey
+- bashcrawl/README.md - Terminal Adventure RPG
+- hello-noob.md - Beginner's IT Journey
+redirect_from:
+- /quests/lvl_000/bash-run/
+- /quests/level-0000-bash-run/
+- /quests/side-quest-bash-run/
 ---
 *Greetings, aspiring script mage! In this side quest, you will study how [bashcrawl](https://github.com/bamr87/bashcrawl) is built and then extend it with new rooms, encounters, and game mechanics. bashcrawl is an elegant dungeon crawler that uses the file system itself as the game world — directories are rooms, text files are scrolls, and executable scripts are interactive items. By the end, you will have forged your own additions to this adventure.*
 

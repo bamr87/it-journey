@@ -38,16 +38,19 @@ Brief description of the instruction file's purpose and scope.
 
 ### Available Instruction Files
 
-| File | Purpose | Target Audience |
-|------|---------|-----------------|
-| `contributing.instructions.md` | Guide AI agents in assisting contributors | All contribution types |
-| `README.instructions.md` | Standards for creating and maintaining README files | Documentation contributors |
-| `quest.instructions.md` | Quest creation standards and patterns | Educational content creators |
-| `posts.instructions.md` | Blog post creation and chronicle standards | Content authors |
-| `features.instructions.md` | Feature development pipeline and CI/CD | Code contributors |
-| `space.instructions.md` | Project organization and workspace structure | All contributors |
-| `prompts.instructions.md` | Prompt engineering for AI development | AI-assisted development |
-| `scripts.instructions.md` | Script development standards and best practices | Script developers and automation engineers |
+| File | Applies To | Purpose |
+|------|------------|---------|
+| `contributing.instructions.md` | `**/*` | Guide AI agents in assisting contributors across content, code, docs, community |
+| `README.instructions.md` | `**/README.md` | Maintain README.md files: structure, frontmatter, lastmod hygiene, cross-references |
+| `quest.instructions.md` | `pages/_quests/**/*.md` | Quest creation standards: fantasy theme, progressive learning, multi-platform |
+| `posts.instructions.md` | `pages/_posts/**/*.md` | Blog post / chronicle standards for AI-assisted development sessions |
+| `features.instructions.md` | code + workflows | Feature development pipeline and CI/CD patterns |
+| `prompts.instructions.md` | `**/prompts/**/*.md` | Prompt engineering schema and conventions |
+| `scripts.instructions.md` | `scripts/**/*` | Script structure, naming, logging, cross-platform safety |
+| `todo.instructions.md` | `TODO/**/*` | TODO directory conventions |
+| `work.instructions.md` | `**/*` | Work/ directory patterns for fast, isolated, cacheable, disposable workspaces |
+
+> Canonical frontmatter schema for every file in this directory lives in [`../FRONTMATTER.md`](../FRONTMATTER.md).
 
 ## How AI Agents Use These Instructions
 
@@ -139,7 +142,7 @@ All instruction files emphasize:
 
 **Human reads:** `docs/CONTRIBUTING_DEVELOPER.md`, `docs/setup/DEVELOPMENT_ENVIRONMENT.md`
 
-**AI agent reads:** `features.instructions.md`, `space.instructions.md`
+**AI agent reads:** `features.instructions.md`, `work.instructions.md`
 
 **Result:** Human understands development workflow; AI helps generate code following project patterns, creates tests, updates documentation
 

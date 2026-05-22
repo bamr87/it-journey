@@ -48,6 +48,15 @@
   overflow: hidden;
   border: 1px solid var(--contributor-border);
   background: var(--contributor-card-bg);
+  color: var(--contributor-text);
+}
+
+.contributor-card a {
+  color: var(--contributor-accent);
+}
+
+.contributor-card a:hover {
+  color: var(--contributor-text);
 }
 
 .contributor-card__banner {
@@ -343,7 +352,26 @@
   padding: 2rem;
 }
 
+/* ---------- Contributor Directory Grid ---------- */
+.contributor-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Compact card variant used in the directory listing */
+.contributor-card--compact .contributor-card__body {
+  margin-top: 0;
+}
+
 /* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .contributor-directory {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   .contributor-card__body {
     flex-direction: column;

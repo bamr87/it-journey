@@ -6,8 +6,8 @@ description: Build production-ready alerting systems with PagerDuty and incident
   automation for SRE teams.
 excerpt: Implement production alerting with PagerDuty, escalation policies, and incident
   management workflows
-preview: /images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:44:12+00:00
 level: '1010'
 difficulty: 🔴 Hard
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1010-alerting-systems/
+permalink: /quests/1010/alerting-systems/
 categories:
 - Quests
 - DevOps
@@ -95,6 +95,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1010-alerting-systems/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

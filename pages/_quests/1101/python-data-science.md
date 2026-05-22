@@ -6,8 +6,8 @@ description: Master Python data science libraries. Learn NumPy for numerical com
   notebooks for analysis workflows.
 excerpt: Master NumPy, Pandas, and Matplotlib for Python data science and analysis
   workflows
-preview: /images/previews/python-for-data-science-descriptive-subtitle.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/python-for-data-science-descriptive-subtitle.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1101-python-data-science/
+permalink: /quests/1101/python-data-science/
 categories:
 - Quests
 - Data-Science
@@ -99,6 +99,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1101-python-data-science/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

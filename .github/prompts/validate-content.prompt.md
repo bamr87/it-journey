@@ -1,19 +1,8 @@
 ---
-name: "Validate Content"
-description: "Validate article and quest content against IT-Journey standards"
-version: "1.0.0"
-category: "quality-assurance"
-inputs:
-  - article_content
-  - article_frontmatter
-  - quest_content
-  - quest_frontmatter
-outputs:
-  - validation_report
-  - article_score
-  - quest_score
+mode: agent
+description: "Validate article and quest content against IT-Journey standards and frontmatter rules"
 date: 2025-11-22T16:10:21.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Validate Content Quality

@@ -9,8 +9,8 @@ excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your termi
   Code integration.
 snippet: Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual
   themes on any platform
-preview: /images/previews/nerd-font-enchantment-terminal-icon-mastery.png
-date: 2025-09-03T22:19:06.000Z
+preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
+date: 2025-09-03 22:19:06+00:00
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0010'
 difficulty: 🟢 Easy
@@ -34,7 +34,7 @@ validation_criteria:
 - Configure VSCode to use Nerd Font
 - Verify icons display correctly
 - Test with Oh-My-Zsh themes
-permalink: /quests/side-quest-nerd-font-enchantment/
+permalink: /quests/0010/side-quests/nerd-font-enchantment/
 categories:
 - Quests
 - Side-Quests
@@ -76,6 +76,8 @@ rewards:
 related_quests:
 - 'Level 0010: Terminal Enchantment - Oh-My-Zsh Mastery'
 - 'Level 0001: Terminal Fundamentals'
+redirect_from:
+- /quests/side-quest-nerd-font-enchantment/
 ---
 ## 🌟 The Legend of Font Enchantment
 

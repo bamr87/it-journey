@@ -9,6 +9,12 @@ on:
     branches: [main]
     paths:
       - 'pages/**/*.md'
+  workflow_dispatch:
+    inputs:
+      files:
+        description: 'Newline-separated list of markdown files to review (leave blank to scan last commit)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -36,7 +42,9 @@ jobs:
     - name: Get changed markdown files
       id: changed-files
       run: |
-        if [ "${{ github.event_name }}" = "pull_request" ]; then
+        if [ -n "${{ github.event.inputs.files }}" ]; then
+          changed_files="${{ github.event.inputs.files }}"
+        elif [ "${{ github.event_name }}" = "pull_request" ]; then
           changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep -E '^pages/.*\.md$' | head -20)
         else
           changed_files=$(git diff --name-only HEAD~1 HEAD | grep -E '^pages/.*\.md$' | head -20)
@@ -76,23 +84,18 @@ jobs:
             "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
         fi
 
-    - name: Create issue (if push to main)
+    - name: Create per-collection issues (if push to main)
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_SHA: ${{ github.sha }}
+        # Set ASSIGN_TO_COPILOT=false in repo vars to opt out of Copilot assignment.
+        ASSIGN_TO_COPILOT: ${{ vars.ASSIGN_TO_COPILOT || 'true' }}
+        COPILOT_ASSIGNEE: ${{ vars.COPILOT_ASSIGNEE || 'Copilot' }}
       run: |
-        if [ -f "/tmp/review_summary.md" ]; then
-          jq -n --rawfile body /tmp/review_summary.md '{
-            "title": "🤖 AI Content Review - Improvement Suggestions",
-            "body": $body,
-            "labels": ["ai-review", "content-improvement", "automated"]
-          }' | \
-          curl -s -X POST \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d @- \
-            "https://api.github.com/repos/${{ github.repository }}/issues"
-        fi
+        python scripts/validation/create-review-issues.py \
+          --results /tmp/ai_review_results.json
 
     - name: Upload review artifacts
       uses: actions/upload-artifact@v4

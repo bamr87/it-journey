@@ -7,8 +7,8 @@ description: Build a comprehensive statistics page that reveals the hidden metri
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create
   a dynamic statistics portal
 snippet: Transform raw site data into compelling visual insights
-preview: /images/previews/forging-the-stats-portal-data-analytics-quest.png
-date: 2025-10-09T18:25:11.000Z
+preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
+date: 2025-10-09 18:25:11+00:00
 lastmod: 2025-10-08 18:10:29.972000+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -74,7 +74,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-permalink: /quests/stating-the-stats/
+permalink: /quests/0001/stating-the-stats/
 categories:
 - Quests
 - Development
@@ -113,6 +113,9 @@ rewards:
   unlocks_features:
   - Access to advanced analytics quest line
   - Data-driven site optimization capabilities
+redirect_from:
+- /quests/stating-the-stats/
+- /quests/level-0001-stating-the-stats/
 ---
 *In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 

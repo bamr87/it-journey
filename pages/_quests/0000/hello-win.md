@@ -4,7 +4,7 @@ description: Set up a complete Windows development environment with WSL, PowerSh
   mastery, and essential development tools for the modern Windows developer
 preview: /images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
-permalink: /quests/hello-windows/
+permalink: /quests/0000/hello-windows/
 keywords: &id001
 - windows
 - powershell
@@ -13,7 +13,7 @@ keywords: &id001
 - package-management
 - init-world
 - lvl-001
-date: 2020-08-17T15:28:44.000Z
+date: 2020-08-17 15:28:44+00:00
 level: '0000'
 quest_type: main_quest
 difficulty: 🟡 Medium
@@ -38,17 +38,10 @@ prerequisites:
   - Comfortable using Windows Settings and Control Panel
   - Can open and use Command Prompt or PowerShell
 validation_criteria:
-  completion_requirements:
-  - Successfully enable and configure WSL2
-  - Install and configure essential development tools
-  - Demonstrate PowerShell automation capabilities
-  - Set up complete Windows development workflow
-  skill_demonstrations:
-  - Can switch between PowerShell and Linux bash
-  - Can install packages using WinGet
-  knowledge_checks:
-  - Understands the purpose of WSL2
-  - Can explain the benefits of cross-platform development
+- Successfully enable and configure WSL2
+- Install and configure essential development tools
+- Demonstrate PowerShell automation capabilities
+- Set up complete Windows development workflow
 rewards:
   badges:
   - 🏆 Windows Power User Badge
@@ -66,18 +59,18 @@ quest_arc: Platform Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/hello-noob/
+  - /quests/0000/os-selection/
   unlocks_quests:
-  - /quests/vscode-mastery/
-  - /quests/level-0000-terminal-fundamentals/
+  - /quests/0000/vscode-mastery/
+  - /quests/0000/terminal-fundamentals/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/vscode-mastery/
+  - /quests/0000/vscode-mastery/
   parallel_quests:
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -95,11 +88,6 @@ related_quests:
 - hello-noob.md - Beginner's First Steps
 - 2023-11-24-os-selection.md - Operating System Selection Guide
 - ../../tools/README.md - Essential Development Tools
-validation_criteria:
-- Successfully enable and configure WSL2
-- Install and configure essential development tools
-- Demonstrate PowerShell automation capabilities
-- Set up complete Windows development workflow
 sub-title: 'Level 001 Quest: Windows Development Environment Mastery'
 excerpt: Transform your Windows machine into a powerful development environment with
   WSL, modern PowerShell, and professional-grade tools
@@ -114,6 +102,9 @@ skill_focus:
 learning_style: hands-on
 fmContentType: quest
 draft: false
+redirect_from:
+- /quests/hello-windows/
+- /quests/level-0000-hello-windows/
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 

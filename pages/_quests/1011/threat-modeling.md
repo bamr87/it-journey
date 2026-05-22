@@ -4,8 +4,8 @@ author: IT-Journey Team
 description: Master threat modeling with STRIDE methodology, attack trees, data flow
   diagrams, and systematic security analysis techniques for identifying vulnerabilities.
 excerpt: Identify security threats systematically using STRIDE and attack tree methodologies
-preview: /images/previews/threat-modeling-stride-quest-title-attack-trees-de.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/threat-modeling-stride-quest-title-attack-trees-de.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:44:40+00:00
 level: '1011'
 difficulty: 🔴 Hard
@@ -60,7 +60,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1011-threat-modeling/
+permalink: /quests/1011/threat-modeling/
 categories:
 - Quests
 - Security
@@ -91,6 +91,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1011-threat-modeling/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

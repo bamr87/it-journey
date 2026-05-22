@@ -8,8 +8,8 @@ excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wie
   precision-crafted prompts that unlock consistent, high-quality AI assistance in
   your development workflow
 snippet: Your prompts are code—version them, test them, perfect them
-preview: /images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
-date: 2025-11-26T22:17:42.000Z
+preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
+date: 2025-11-26 22:17:42+00:00
 lastmod: 2025-11-27 05:11:44.573000+00:00
 level: '0011'
 difficulty: 🟡 Medium
@@ -24,7 +24,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/level-0010-prompt-engineering-mastery/
+  parent_quest: /quests/0010/prompt-engineering-mastery/
   child_quests: []
   parallel_quests: []
   sequel_quests: []
@@ -79,7 +79,7 @@ quest_mapping:
   region: Foundation
   realm: AI-Enhanced
   biome: Development Tools
-permalink: /quests/level-0011-prompt-crystal-vscode-copilot/
+permalink: /quests/0011/prompt-crystal-vscode-copilot/
 categories:
 - Quests
 - AI-Development
@@ -121,6 +121,8 @@ rewards:
   - Access to advanced AI agent development quests
   - Ability to create team-wide prompt standards
   - Foundation for MCP server prompt patterns
+redirect_from:
+- /quests/level-0011-prompt-crystal-vscode-copilot/
 ---
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 

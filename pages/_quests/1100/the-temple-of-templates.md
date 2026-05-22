@@ -7,8 +7,8 @@ description: Embark on a fantasy-themed quest to master software templates and r
 excerpt: Master the sacred art of templates to build elegant, reusable systems across
   languages.
 snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
-preview: /images/previews/the-temple-of-templates-binary-abstractions-and-re.png
-date: 2025-08-24T18:46:40.000Z
+preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
+date: 2025-08-24 18:46:40+00:00
 lastmod: 2025-08-25 00:43:51.189000+00:00
 level: '1100'
 difficulty: 🟡 Medium
@@ -29,7 +29,7 @@ validation_criteria:
 - Implements one working template per stack (C++ or Jinja or React)—two for bonus
 - Explains abstraction benefits and trade-offs
 - Publishes a small repo or gist with README and examples
-permalink: /quests/level-1100-temple-of-templates/
+permalink: /quests/1100/temple-of-templates/
 categories:
 - Quests
 - Development
@@ -61,6 +61,8 @@ related_quests:
 - 'Level 0011: Programming Foundations'
 - 'Level 0100: Version Control with Git'
 - 'Level 1111: Testing and Verification Rites'
+redirect_from:
+- /quests/level-1100-temple-of-templates/
 ---
 ## 🧙‍♂️ Epic Introduction
 

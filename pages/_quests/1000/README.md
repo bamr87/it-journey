@@ -1,31 +1,31 @@
 ---
-
 title: Level 1000 (8) - Cloud Computing Fundamentals
-description: Ascend to the clouds and master the infrastructure that powers global-scale applications
-preview: /images/previews/level-1000-cloud-computing.png
+description: Ascend to the clouds and master the infrastructure that powers global-scale
+  applications
+preview: images/previews/level-1000-cloud-computing.png
 permalink: /quests/1000/
 categories:
-  - Quests
-  - Level-1000
-  - Cloud-Computing
+- Quests
+- Level-1000
+- Cloud-Computing
 tags:
-  - lvl-1000
-  - cloud
-  - aws
-  - infrastructure
-  - iaas
-  - paas
-  - quest-collection
+- lvl-1000
+- cloud
+- aws
+- infrastructure
+- iaas
+- paas
+- quest-collection
 lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-
 level: 1000
-date: 2025-12-20T20:02:51.000Z
-
+date: 2025-12-20 20:02:51+00:00
+redirect_from:
+- /quests/1000/
+- /quests/level-1000/
 ---
-
 # Level 1000 (8) - Cloud Computing Fundamentals
 
 *High above the mortal realm, floating citadels of computation await. Welcome to the Cloud Domain—where infinite resources stretch across virtual horizons and infrastructure bends to the will of code. Here, Expert-tier adventurers learn to command vast computing empires with mere configuration files.*

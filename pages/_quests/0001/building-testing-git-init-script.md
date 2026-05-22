@@ -5,8 +5,8 @@ description: Hands-on quest to build, extend, and test `git_init.sh` — an inte
   and headless repo initializer with programmatic scaffolding.
 excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable
   in both interactive and headless modes.
-preview: /images/previews/building-testing-the-git-init-script-headless-inte.png
-date: 2025-11-13T23:38:22.000Z
+preview: images/previews/building-testing-the-git-init-script-headless-inte.png
+date: 2025-11-13 23:38:22+00:00
 lastmod: 2025-11-13 10:30:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -18,7 +18,7 @@ skill_focus:
 - Quests
 - Development
 learning_style: hands-on
-permalink: /quests/level-0001-git-init-testing/
+permalink: /quests/0001/git-init-testing/
 categories:
 - Quests
 - Development
@@ -35,6 +35,8 @@ keywords:
 fmContentType: quest
 comments: true
 sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
+redirect_from:
+- /quests/level-0001-git-init-testing/
 ---
 ## The Challenge: Safe automation without surprises
 

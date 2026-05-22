@@ -7,8 +7,8 @@ excerpt: Transform from terminal novice to command-line champion through hands-o
   practice with essential shell commands and navigation techniques
 snippet: Where code meets the metal, heroes are forged in the fire of the command
   line
-preview: /images/previews/terminal-mastery-conquering-the-command-line-realm.png
-date: 2025-07-28T23:34:51.000Z
+preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
+date: 2025-07-28 23:34:51+00:00
 lastmod: 2025-09-27 19:59:13.794000+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -29,7 +29,7 @@ validation_criteria:
 - Execute file operations (create, copy, move, delete) with confidence
 - Demonstrate text manipulation and search capabilities
 - Show proficiency with process management and system information commands
-permalink: /quests/level-0001-terminal-mastery/
+permalink: /quests/0001/terminal-mastery/
 categories:
 - Quests
 - Development - Foundation
@@ -67,6 +67,8 @@ related_quests:
 - 'Level 0000: Digital Awakening - Computer Fundamentals'
 - 'Level 0010: File System Sorcery - Directory Navigation'
 - 'Level 0011: Version Control Magic - Git Fundamentals'
+redirect_from:
+- /quests/level-0001-terminal-mastery/
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 

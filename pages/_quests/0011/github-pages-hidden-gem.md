@@ -8,8 +8,8 @@ description: Embark on an epic journey to master GitHub Pages, the hidden gem of
 excerpt: Transform your GitHub repositories into powerful websites and learn to preserve
   AI conversations forever
 snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
-preview: /images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
-date: 2025-11-15T16:34:42.000Z
+preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
+date: 2025-11-15 16:34:42+00:00
 lastmod: 2025-11-15 03:52:35.140000+00:00
 level: '0011'
 difficulty: 🟢 Easy
@@ -75,7 +75,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-permalink: /quests/level-0011-github-pages-hidden-gem/
+permalink: /quests/0011/github-pages-hidden-gem/
 categories:
 - Quests
 - Development
@@ -115,6 +115,8 @@ rewards:
   unlocks_features:
   - Access to advanced Jekyll customization quests
   - Eligibility for web development learning paths
+redirect_from:
+- /quests/level-0011-github-pages-hidden-gem/
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 

@@ -1,20 +1,8 @@
 ---
-name: "Publish Preparation"
-description: "Prepare final files for publication including file naming, README updates, and navigation"
-version: "1.0.0"
-category: "publishing"
-inputs:
-  - article_content
-  - article_frontmatter
-  - quest_content
-  - quest_frontmatter
-outputs:
-  - final_article_file
-  - final_quest_file
-  - readme_updates
-  - navigation_updates
+mode: agent
+description: "Prepare final files for publication: file naming, READMEs, navigation, and cross-references"
 date: 2025-11-22T16:10:21.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Publish Preparation

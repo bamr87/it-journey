@@ -1,75 +1,77 @@
 ---
-title: "Avatar Forge: Crafting Your Digital Portrait"
+title: 'Avatar Forge: Crafting Your Digital Portrait'
 author: Quest Master IT-Journey Team
 keywords:
-    - avatar
-    - profile image
-    - contributor
-    - customization
+- avatar
+- profile image
+- contributor
+- customization
 description: Design and integrate a custom avatar for your contributor character profile
-excerpt: Visit the Portrait Studio and commission a visual identity worthy of your class.
+excerpt: Visit the Portrait Studio and commission a visual identity worthy of your
+  class.
 snippet: The Portrait Artist awaits — every hero deserves a face
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.233Z
-level: "0001"
+date: 2026-03-20 00:00:00+00:00
+lastmod: 2026-03-21 15:12:32.233000+00:00
+level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
 primary_technology: html
 quest_type: side_quest
 skill_focus:
-    - frontend
+- frontend
 learning_style: hands-on
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act I: Arrival at the Guild"
+quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-avatar-forge/
+permalink: /quests/0001/side-quests/avatar-forge/
 categories:
-    - Quests
-    - Community
-    - Customization
+- Quests
+- Community
+- Customization
 tags:
-    - lvl-0001
-    - contributor
-    - avatar
-    - profile
-    - customization
-    - hands-on
-    - gamified-learning
+- lvl-0001
+- contributor
+- avatar
+- profile
+- customization
+- hands-on
+- gamified-learning
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - Basic understanding of image URLs and HTML
-    system_requirements:
-        - Text editor or IDE
-        - An image hosting service or local image file
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - Basic understanding of image URLs and HTML
+  system_requirements:
+  - Text editor or IDE
+  - An image hosting service or local image file
 quest_dependencies:
-    required_quests:
-        - /quests/forge-your-character/
-    recommended_quests: []
-    unlocks_quests: []
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests: []
+  unlocks_quests: []
 learning_paths:
-    primary_paths:
-        - Community Contributor
-    character_classes:
-        - 🎵 Bard
-        - 💚 Healer
-    skill_trees:
-        - Community & Collaboration
-        - Frontend Basics
+  primary_paths:
+  - Community Contributor
+  character_classes:
+  - 🎵 Bard
+  - 💚 Healer
+  skill_trees:
+  - Community & Collaboration
+  - Frontend Basics
 rewards:
-    badges:
-        - 🎨 Portrait Artist — Custom avatar displayed on character sheet
-    progression_points: 50
+  badges:
+  - 🎨 Portrait Artist — Custom avatar displayed on character sheet
+  progression_points: 50
 validation_criteria:
-    completion_requirements:
-        - Avatar URL set in contributor data file
-        - Avatar renders on character sheet
-        - Image is appropriate and accessible (has alt text context)
+  completion_requirements:
+  - Avatar URL set in contributor data file
+  - Avatar renders on character sheet
+  - Image is appropriate and accessible (has alt text context)
+redirect_from:
+- /quests/side-quest-avatar-forge/
 ---
-
 # 🎨 Avatar Forge: Crafting Your Digital Portrait
 
 > *"A blurred silhouette does not inspire fear — or trust. Let us give you a face."*

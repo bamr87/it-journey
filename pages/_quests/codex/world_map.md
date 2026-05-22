@@ -150,65 +150,65 @@ graph TD
 
 #### 🏰 Init World - Character Creation & Foundation
 
-**Location:** `/quests/init_world/`  
+**Location:** `/quests/level-0000/` (Init World)  
 **Purpose:** Begin your journey and establish your digital identity
 
 | Quest | Difficulty | Description |
 |-------|------------|-------------|
-| [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🌱 n00b | The Hero's Call |
-| [Character Building](/quests/character-building/) | 🌱 n00b | Forge Your Identity |
-| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🌱 n00b | Learn the Ancient Arts |
-| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | Choose Your Destiny |
-| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | Pick Your Realm |
+| [Begin Your IT Journey](/quests/level-0000-begin-your-it-journey/) | 🌱 n00b | The Hero's Call |
+| [Character Building](/quests/level-0000-character-building/) | 🌱 n00b | Forge Your Identity |
+| [IT Fundamentals](/quests/level-0000-it-fundamentals/) | 🌱 n00b | Learn the Ancient Arts |
+| [Character Selection](/quests/level-0000-character-selection/) | 🟢 Easy | Choose Your Destiny |
+| [OS Selection](/quests/level-0000-os-selection/) | 🟢 Easy | Pick Your Realm |
 
 **Platform-Specific Quests:**
 
-- [Hello n00b](/quests/init_world/hello-noob/) - Your first steps into the digital realm
-- [Hello Windows](/quests/hello-windows/) - Mastering the Microsoft Kingdom
-- [Hello macOS](/quests/hello-macos/) - Conquering the Apple Empire
-- [Hello Linux](/quests/hello-linux/linux-fundamentals/) - Taming the Penguin's Domain
-- [Hello Cloud](/quests/hello-cloud/) - Ascending to the Digital Heavens
+- [Hello n00b](/quests/level-0000-hello-noob/) - Your first steps into the digital realm
+- [Hello Windows](/quests/level-0000-hello-windows/) - Mastering the Microsoft Kingdom
+- [Hello macOS](/quests/level-0000-hello-macos/) - Conquering the Apple Empire
+- [Hello Linux](/quests/level-0000-linux-fundamentals/) - Taming the Penguin's Domain
+- [Hello Cloud](/quests/level-0000-hello-cloud/) - Ascending to the Digital Heavens
 
 #### ⚡ Level Progression System
 
-**Level 000 - Apprentice Trials** (`/quests/lvl_000/`)  
+**Level 000 - Apprentice Trials** (`/quests/level-0000/`)  
 Basic scripting and automation magic
 
-- [Bash Fundamentals](/quests/lvl_000/bash-run/) - Learn the Terminal Incantations
+- [Bash Fundamentals](/quests/level-0000-bash-run/) - Learn the Terminal Incantations
 - `bash_crawl.sh` - Your First Automation Spell
 - `calculator.sh` - Mathematical Magic Basics
 - `profile.sh` - Customize Your Digital Presence
 
-**Level 001 - Journeyman Challenges** (`/quests/lvl_001/`)  
+**Level 001 - Journeyman Challenges** (`/quests/level-0001/`)  
 Web technologies and advanced scripting
 
-- [Personal Site Creation](/quests/level-0001/personal-site/) - Build Your Digital Castle
+- [Personal Site Creation](/quests/level-0001-personal-site/) - Build Your Digital Castle
 - `js-examples.js` - JavaScript Spell Components
 - `js_testing.js` - Test Your Magical Constructs
 - `python.py` - Pythonic Sorcery Basics
 
-**Level 010 - Master Tier Quests** (`/quests/lvl_0010/`)  
+**Level 010 - Master Tier Quests** (`/quests/level-0010/`)  
 Complex application development
 
 - Bookstore Application (planned) - Craft a Complete Magical Marketplace
 
-#### 🎨 Frontend Mastery Path (`/quests/frontend/`)
+#### 🎨 Frontend Mastery Path (`/quests/level-0100-frontend/`)
 
 Become a master of user interfaces and digital aesthetics
 
-- [Frontend Fundamentals](/quests/frontend/) - The Art of Digital Presentation
-- [Frontend Docker Adventures](/quests/frontend-docker/) - Containerized UI Magic
+- [Frontend Fundamentals](/quests/level-0100-frontend/) - The Art of Digital Presentation
+- [Frontend Docker Adventures](/quests/level-0100-frontend-docker/) - Containerized UI Magic
 - [Frontend Level Progression](/quests/level-0100-frontend-levels/) - Structured Learning Path
-- [Level 000 Frontend](/quests/level-0100/frontend-docker-level-000/) - Beginner Container Magic
-- [Level 001 Frontend](/quests/level-0100/frontend-docker-level-001/) - Intermediate UI Sorcery
-- [Level 010 Frontend](/quests/level-0100/frontend-docker-level-010/) - Advanced Interface Wizardry
+- [Level 000 Frontend](/quests/level-0100-frontend-docker-lvl-000/) - Beginner Container Magic
+- [Level 001 Frontend](/quests/level-0100-lvl-001-frontend-docker/) - Intermediate UI Sorcery
+- [Level 010 Frontend](/quests/level-0100-lvl-010-frontend-docker/) - Advanced Interface Wizardry
 
 #### 📚 Quest Codex (`/quests/codex/`)
 
 Reference materials and navigation aids
 
 - [🗺️ World Map](/quests/codex/world-map/) - This comprehensive navigation guide
-- [📖 Glossary](/quests/codex/glossary/) - Dictionary of Digital Spells and Terms
+- [📖 Glossary](/quests/level-codex/glossary/) - Dictionary of Digital Spells and Terms
 
 #### 🕰️ Recent Quest Chronicles (2025)
 
@@ -344,16 +344,16 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 ### 🎯 For Complete Beginners
 
-1. **Start Here:** [Hello n00b Quest](/quests/init_world/hello-noob/)
+1. **Start Here:** [Hello n00b Quest](/quests/level-0000-hello-noob/)
 2. **Setup Environment:** [Machine Setup Guide](/quickstart/machine-setup/)
-3. **Choose Platform:** [OS Selection Quest](/quests/lvl_000/os-selection/)
-4. **Begin Journey:** [Character Creation](/quests/character-building/)
+3. **Choose Platform:** [OS Selection Quest](/quests/level-0000-os-selection/)
+4. **Begin Journey:** [Character Creation](/quests/level-0000-character-building/)
 
 ### ⚡ For Experienced Developers
 
 1. **Skill Assessment:** [Browse Quest Levels](/quests/#level-progression-system)
-2. **Specialization:** [Choose Frontend](/quests/frontend/) or [Backend Path](/quests/lvl_001/)
-3. **Advanced Challenges:** [Level 010 Quests](/quests/lvl_0010/)
+2. **Specialization:** [Choose Frontend](/quests/level-0100-frontend/) or [Backend Path](/quests/level-0001/)
+3. **Advanced Challenges:** [Level 010 Quests](/quests/level-0010/)
 4. **Contribute Content:** [Contributing Guide](/about/contributing/)
 
 ### 🔧 For System Administrators

@@ -7,8 +7,8 @@ description: The perfect starting quest for absolute beginners. Learn to create 
 excerpt: Begin your epic adventure in the world of IT with your very first quest -
   setting up GitHub and joining the community
 snippet: Every expert was once a beginner - every hero was once a n00b
-preview: /images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
-date: 2022-06-05T13:48:57.000Z
+preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
+date: 2022-06-05 13:48:57+00:00
 lastmod: 2025-11-30 05:46:59.323000+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -73,11 +73,13 @@ validation_criteria:
   - Explain what GitHub is and why it's important
   - Describe the concept of forking and open source collaboration
 quest_mapping:
-  coordinates: [0, 0]
+  coordinates:
+  - 0
+  - 0
   region: Entry
   realm: Community
   biome: GitHub
-permalink: /quests/init_world/hello-noob/
+permalink: /quests/0000/hello-noob/
 categories:
 - Quests
 - Init-World
@@ -111,6 +113,9 @@ rewards:
   - Access to all Foundation Path quests
   - Ability to participate in community discussions
   - Foundation for version control learning
+redirect_from:
+- /quests/init_world/hello-noob/
+- /quests/level-0000-hello-noob/
 ---
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 

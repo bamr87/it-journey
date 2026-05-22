@@ -1,30 +1,30 @@
 ---
-
 title: Level 0110 (6) - Database Mastery
-description: Master the arts of data storage, retrieval, and management through SQL sorcery and NoSQL adventures
-preview: /images/previews/level-0110-database-mastery.png
+description: Master the arts of data storage, retrieval, and management through SQL
+  sorcery and NoSQL adventures
+preview: images/previews/level-0110-database-mastery.png
 permalink: /quests/0110/
 categories:
-  - Quests
-  - Level-0110
-  - Data-Engineering
+- Quests
+- Level-0110
+- Data-Engineering
 tags:
-  - lvl-0110
-  - databases
-  - sql
-  - nosql
-  - data-modeling
-  - quest-collection
+- lvl-0110
+- databases
+- sql
+- nosql
+- data-modeling
+- quest-collection
 lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-
-level: 0110
-date: 2025-12-20T20:02:51.000Z
-
+level: 72
+date: 2025-12-20 20:02:51+00:00
+redirect_from:
+- /quests/0110/
+- /quests/level-0110/
 ---
-
 # Level 0110 (6) - Database Mastery
 
 *Deep within the Data Vaults of the Digital Realm lies ancient knowledge of data persistence and retrieval. Here, brave adventurers learn the sacred arts of SQL sorcery, master the flexible powers of NoSQL databases, and discover the secrets of efficient data storage that power the world's greatest applications.*

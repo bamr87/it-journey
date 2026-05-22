@@ -5,8 +5,8 @@ description: Learn essential AWS services including EC2, S3, RDS, Lambda, and VP
   Build scalable cloud architectures using AWS best practices and Well-Architected
   Framework.
 excerpt: Master essential AWS services and build scalable cloud architectures
-preview: /images/previews/aws-essentials-core-services-quest-title-architect.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/aws-essentials-core-services-quest-title-architect.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:41:10+00:00
 level: '1000'
 difficulty: 🔴 Hard
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1000-aws-essentials/
+permalink: /quests/1000/aws-essentials/
 categories:
 - Quests
 - Cloud-Engineering
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1000-aws-essentials/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

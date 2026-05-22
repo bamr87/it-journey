@@ -5,8 +5,8 @@ description: Learn how branches and pull requests streamline collaboration and e
   code quality in software development.
 excerpt: null
 snippet: null
-preview: /images/previews/mastering-branches-and-pull-requests-for-developer.png
-date: 2025-04-18T13:43:43.000Z
+preview: images/previews/mastering-branches-and-pull-requests-for-developer.png
+date: 2025-04-18 13:43:43+00:00
 lastmod: 2025-04-18 19:24:06.552000+00:00
 level: '0010'
 difficulty: 🟢 Easy
@@ -21,7 +21,7 @@ skill_focus:
 - Version Control
 - Web Development
 learning_style: hands-on
-permalink: /quests/level-0010-branches-and-pull-requests/
+permalink: /quests/0010/branches-and-pull-requests/
 categories:
 - Development
 - Git
@@ -44,6 +44,8 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+redirect_from:
+- /quests/level-0010-branches-and-pull-requests/
 ---
 * * * *
 

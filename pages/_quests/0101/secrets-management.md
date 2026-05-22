@@ -6,8 +6,8 @@ description: Learn secure secrets management for CI/CD pipelines. Handle API key
   variables.
 excerpt: Implement secure secrets management practices for protecting sensitive credentials
   in your pipelines
-preview: /images/previews/secrets-management-secure-configuration-handling-d.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/secrets-management-secure-configuration-handling-d.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:05:46+00:00
 level: '0101'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0101-secrets-management/
+permalink: /quests/0101/secrets-management/
 categories:
 - Quests
 - DevOps
@@ -93,6 +93,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0101-secrets-management/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

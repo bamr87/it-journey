@@ -5,8 +5,8 @@ description: Discover how AI automation can transform your workflow, enhancing c
   reviews, documentation, and PR summaries for a smarter coding experience.
 excerpt: null
 snippet: null
-preview: /images/previews/revolutionizing-work-with-ai-automation.png
-date: 2025-04-18T13:43:43.000Z
+preview: images/previews/revolutionizing-work-with-ai-automation.png
+date: 2025-04-18 13:43:43+00:00
 lastmod: 2025-04-18 19:43:43.298000+00:00
 level: '0010'
 difficulty: 🟢 Easy
@@ -21,7 +21,7 @@ skill_focus:
 - Programming
 - Project Management
 learning_style: hands-on
-permalink: /quests/level-0010-revolutionizing-work-with-ai-automation/
+permalink: /quests/0010/revolutionizing-work-with-ai-automation/
 categories:
 - AI Automation
 - Development
@@ -44,6 +44,8 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+redirect_from:
+- /quests/level-0010-revolutionizing-work-with-ai-automation/
 ---
 **Ah, the final frontier... the arcane fusion of human cleverness and artificial intelligence.** You've set up branches, written perfect commits, documented your journey, and summoned automation spells---but now it's time to meet your **AI familiars**.
 

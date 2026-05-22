@@ -180,40 +180,77 @@ def local_review(
 # AI-enhanced review
 # ---------------------------------------------------------------------------
 
-_REVIEW_PROMPT_TEMPLATE = """\
-You are an expert content reviewer for a technical blog/documentation site called "IT-Journey".
-Please review the following markdown file and provide feedback on:
+_REVIEW_SYSTEM_PROMPT = """\
+You are an expert technical-content reviewer for the IT-Journey educational
+platform. Your reviews drive GitHub issues that are assigned to GitHub Copilot
+for automated remediation, so every action item MUST be:
 
-1. **Frontmatter completeness**: Check if required fields are present and properly formatted
-2. **Content quality**: Assess writing quality, structure, and technical accuracy
-3. **SEO optimization**: Suggest improvements for discoverability
-4. **Accessibility**: Check for proper heading structure and alt text
-5. **Technical accuracy**: Review any code examples or technical content
+  - Specific (name the field, the line, or the section)
+  - Actionable (a contributor can fix it without further clarification)
+  - Bounded (no "consider rewriting the article")
+
+Resolution rules for fixers are documented at
+`.github/instructions/ai-content-review.instructions.md`. Align your suggestions
+with those rules — especially the frontmatter constraints (title 30–60 chars,
+description 120–160 chars, YAML-list categories/tags, ISO-8601 dates).
+
+Respond ONLY with a JSON object — no prose, no markdown code fences around it.
+"""
+
+_REVIEW_PROMPT_TEMPLATE = """\
+Review this markdown file from the IT-Journey `{collection}` collection.
 
 Required frontmatter fields: {required}
-Preferred frontmatter fields: {recommended}
+Recommended frontmatter fields: {recommended}
+
+Assess:
+  1. Frontmatter completeness & constraint compliance
+  2. Content quality (structure, headings, length, clarity)
+  3. SEO (title/description length, keyword usage)
+  4. Accessibility (heading hierarchy, alt text)
+  5. Technical accuracy (code blocks have language tags, commands are correct,
+     no literal secrets such as `ghp_*`, `sk-*`, `AKIA*`)
 
 File: {filename}
+Collection: {collection}
+
 Content:
 {content}
 
-Please provide a JSON response with the following structure:
+Return ONLY this JSON shape (no other text):
 {{
-  "overall_score": <1-10>,
-  "frontmatter_issues": ["list of issues"],
-  "content_suggestions": ["list of suggestions"],
-  "seo_improvements": ["list of SEO suggestions"],
-  "technical_issues": ["list of technical issues"],
-  "positive_aspects": ["list of good things"],
-  "action_items": ["prioritized list of actions to take"]
+  "overall_score": <integer 1-10>,
+  "frontmatter_issues": ["..."],
+  "content_suggestions": ["..."],
+  "seo_improvements": ["..."],
+  "technical_issues": ["..."],
+  "accessibility_issues": ["..."],
+  "positive_aspects": ["..."],
+  "action_items": ["prioritized, specific, actionable items"]
 }}
 """
+
+
+def detect_collection(file_path: str) -> str:
+    """Infer the Jekyll collection from a `pages/_<collection>/...` path.
+
+    Falls back to ``"other"`` when the path does not match the expected layout.
+    """
+    norm = file_path.replace("\\", "/")
+    m = re.search(r"(?:^|/)pages/_([a-zA-Z0-9-]+)/", norm)
+    if m:
+        return m.group(1)
+    # Top-level files like pages/index.html → "root"
+    if norm.startswith("pages/") and "/_" not in norm:
+        return "root"
+    return "other"
 
 
 def ai_review(
     full_content: str,
     filename: str,
     config: Dict[str, Any],
+    collection: str = "other",
 ) -> Dict[str, Any]:
     """Call the shared AIClient to get an AI-powered review."""
     if AIClient is None:
@@ -242,11 +279,13 @@ def ai_review(
         required=required,
         recommended=recommended,
         filename=filename,
+        collection=collection,
         content=truncated,
     )
 
     result = client.chat(
         prompt=prompt,
+        system=_REVIEW_SYSTEM_PROMPT,
         max_tokens=ai_cfg.get("max_tokens", 1500),
         temperature=ai_cfg.get("temperature", 0.3),
     )
@@ -383,6 +422,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             continue
 
         print(f"  Reviewing: {fpath}")
+        collection = detect_collection(fpath)
         fm, body = extract_frontmatter_and_content(fpath)
 
         # Always run local checks
@@ -391,12 +431,14 @@ def main(argv: Optional[List[str]] = None) -> int:
         # Optionally enhance with AI
         if use_ai and yaml is not None:
             full = f"---\n{yaml.dump(fm)}---\n{body}"
-            ai_result = ai_review(full, fpath, config)
+            ai_result = ai_review(full, fpath, config, collection=collection)
             if "error" not in ai_result:
                 review = ai_result  # AI review replaces local review
             else:
                 review["ai_error"] = ai_result.get("error")
 
+        # Always tag with collection so downstream tooling can group by it
+        review["collection"] = collection
         reviews[fpath] = review
         score = review.get("overall_score", "N/A")
         rtype = review.get("review_type", "local")

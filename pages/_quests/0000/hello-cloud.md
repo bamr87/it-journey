@@ -1,8 +1,9 @@
 ---
 title: 'Hello Cloud: First Steps into the Sky Realm'
-description: Create your first cloud account, install a cloud CLI, and deploy a simple resource safely.
+description: Create your first cloud account, install a cloud CLI, and deploy a simple
+  resource safely.
 author: IT-Journey Team
-date: 2026-01-14T22:23:32.000Z
+date: 2026-01-14 22:23:32+00:00
 lastmod: 2026-01-14
 level: '0000'
 difficulty: ⚔️ Epic
@@ -14,17 +15,17 @@ quest_line: Foundation Path
 quest_arc: Platform Mastery Arc
 quest_dependencies:
   required_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/0000/it-fundamentals/
   recommended_quests:
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/os-selection/
   unlocks_quests: []
 quest_relationships:
   child_quests: []
   sequel_quests: []
   parallel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
 learning_paths:
   primary_paths:
   - Cloud Computing
@@ -43,7 +44,7 @@ skill_focus:
 - cli-tools
 - security-basics
 learning_style: hands-on
-permalink: /quests/hello-cloud/
+permalink: /quests/0000/hello-cloud/
 categories:
 - Quests
 - Init-World
@@ -98,6 +99,9 @@ rewards:
   - Access to advanced cloud quests
   - Foundation for infrastructure-as-code learning
 draft: false
+redirect_from:
+- /quests/hello-cloud/
+- /quests/level-0000-hello-cloud/
 ---
 *Welcome, skybound adventurer! You stand at the edge of the mortal realm, gazing up at the shimmering **Sky Realm** — a vast kingdom of infinite compute power, boundless storage vaults, and magical services that can scale from a whisper to a thunderclap. Today, you claim your first foothold in the clouds.*
 

@@ -4,8 +4,8 @@ author: IT-Journey Team
 description: Take your first steps into the world of information technology
 excerpt: Start your adventure with the essential skills and mindset for IT success
 snippet: null
-preview: /images/previews/begin-your-it-journey.png
-date: 2023-11-25T14:12:43.000Z
+preview: images/previews/begin-your-it-journey.png
+date: 2023-11-25 14:12:43+00:00
 lastmod: 2025-11-29 21:40:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -18,16 +18,16 @@ quest_arc: Digital Awakening Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests:
-  - /quests/character-building/
-  - /quests/lvl_000/character-selection/
+  - /quests/0000/character-building/
+  - /quests/0000/character-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/character-building/
+  - /quests/0000/character-building/
   parallel_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/0000/it-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -78,7 +78,7 @@ rewards:
   unlocks_features:
   - Access to Character Building quest
   - Access to specialization selection
-permalink: /quests/lvl_000/begin-your-it-journey/
+permalink: /quests/0000/begin-your-it-journey/
 categories: []
 tags:
 - getting-started
@@ -92,6 +92,9 @@ fmContentType: quest
 draft: false
 meta: null
 slug: journey
+redirect_from:
+- /quests/lvl_000/begin-your-it-journey/
+- /quests/level-0000-begin-your-it-journey/
 ---
 *Welcome, brave newcomer, to the threshold of the IT realm! Every legendary wizard, architect, and guardian began exactly where you stand now — with curiosity as their compass and determination as their shield. This quest will illuminate the vast landscape of Information Technology and help you chart your first steps.*
 

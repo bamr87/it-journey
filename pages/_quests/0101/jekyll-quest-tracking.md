@@ -1,13 +1,17 @@
 ---
-title: "Jekyll Quest Tracking: Building Dynamic Collection Layouts"
+title: 'Jekyll Quest Tracking: Building Dynamic Collection Layouts'
 author: IT-Journey Team
-description: Master Jekyll's collection system by building a quest tracking interface with dynamic filtering, statistics, and level-aware displays using Liquid templating and frontmatter data
-excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections, Liquid templating, and JavaScript filtering
-snippet: Learn to build interactive collection displays with filters, statistics, and level-aware content using Jekyll's powerful templating system
-preview: /images/previews/jekyll-quest-tracking-building-dynamic-collection-.png
-date: 2025-12-01T21:51:02.000Z
-lastmod: 2026-03-08T02:48:58.441Z
-level: "0101"
+description: Master Jekyll's collection system by building a quest tracking interface
+  with dynamic filtering, statistics, and level-aware displays using Liquid templating
+  and frontmatter data
+excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections,
+  Liquid templating, and JavaScript filtering
+snippet: Learn to build interactive collection displays with filters, statistics,
+  and level-aware content using Jekyll's powerful templating system
+preview: images/previews/jekyll-quest-tracking-building-dynamic-collection-.png
+date: 2025-12-01 21:51:02+00:00
+lastmod: 2026-03-08 02:48:58.441000+00:00
+level: '0101'
 difficulty: 🔴 Hard
 estimated_time: 4-6 hours
 primary_technology: jekyll
@@ -26,109 +30,111 @@ quest_relationships:
   sequel_quests: []
 learning_paths:
   primary_paths:
-    - Frontend Development
-    - Static Site Engineering
+  - Frontend Development
+  - Static Site Engineering
   character_classes:
-    - 💻 Software Developer
-    - 🎨 Digital Artist
-    - 📊 Data Scientist
+  - 💻 Software Developer
+  - 🎨 Digital Artist
+  - 📊 Data Scientist
   skill_trees:
-    - Jekyll & Static Sites
-    - Templating Systems
-    - Frontend Automation
+  - Jekyll & Static Sites
+  - Templating Systems
+  - Frontend Automation
 skill_focus:
-  - frontend
+- frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-    - Basic Jekyll site structure and configuration
-    - Understanding of YAML frontmatter format
-    - Familiarity with HTML and CSS
-    - Basic JavaScript for DOM manipulation
+  - Basic Jekyll site structure and configuration
+  - Understanding of YAML frontmatter format
+  - Familiarity with HTML and CSS
+  - Basic JavaScript for DOM manipulation
   system_requirements:
-    - Jekyll development environment (Docker recommended)
-    - Text editor with YAML/Liquid support
-    - Python 3.x for automation scripts
-    - Git for version control
+  - Jekyll development environment (Docker recommended)
+  - Text editor with YAML/Liquid support
+  - Python 3.x for automation scripts
+  - Git for version control
   skill_level_indicators:
-    - Comfortable with Jekyll's Liquid templating basics
-    - Can read and modify YAML configuration files
-    - Ready for 4-6 hours of focused learning
+  - Comfortable with Jekyll's Liquid templating basics
+  - Can read and modify YAML configuration files
+  - Ready for 4-6 hours of focused learning
 validation_criteria:
   completion_requirements:
-    - Create a quest-collection.html layout that displays quests by tier
-    - Build quest-card.html include with data attributes for filtering
-    - Implement quest-filters.html with JavaScript filtering logic
-    - Create quest-stats.html for collection statistics
-    - Write Python script to batch update frontmatter
+  - Create a quest-collection.html layout that displays quests by tier
+  - Build quest-card.html include with data attributes for filtering
+  - Implement quest-filters.html with JavaScript filtering logic
+  - Create quest-stats.html for collection statistics
+  - Write Python script to batch update frontmatter
   skill_demonstrations:
-    - Use Liquid loops and conditionals effectively
-    - Implement client-side filtering with JavaScript
-    - Handle YAML frontmatter programmatically
-    - Create responsive, accessible UI components
+  - Use Liquid loops and conditionals effectively
+  - Implement client-side filtering with JavaScript
+  - Handle YAML frontmatter programmatically
+  - Create responsive, accessible UI components
   knowledge_checks:
-    - Explain Jekyll collection configuration
-    - Describe Liquid variable assignment and filtering
-    - Troubleshoot common Jekyll build errors
+  - Explain Jekyll collection configuration
+  - Describe Liquid variable assignment and filtering
+  - Troubleshoot common Jekyll build errors
 quest_mapping:
-  coordinates: "[5, 3]"
+  coordinates: '[5, 3]'
   region: Adventurer
   realm: Development
   biome: Web
-permalink: /quests/level-0101-jekyll-quest-tracking/
+permalink: /quests/0101/side-quests/jekyll-quest-tracking/
 categories:
-  - Quests
-  - Frontend
-  - Hard
+- Quests
+- Frontend
+- Hard
 tags:
-  - lvl-0101
-  - jekyll
-  - liquid
-  - collections
-  - frontmatter
-  - javascript
-  - side_quest
-  - frontend
-  - hands-on
-  - gamified-learning
-  - static-sites
-  - python-automation
+- lvl-0101
+- jekyll
+- liquid
+- collections
+- frontmatter
+- javascript
+- side_quest
+- frontend
+- hands-on
+- gamified-learning
+- static-sites
+- python-automation
 keywords:
-  - lvl-0101
-  - jekyll
-  - liquid
-  - collections
-  - frontmatter
-  - javascript
-  - side_quest
-  - frontend
-  - hands-on
-  - gamified-learning
-  - static-sites
-  - python-automation
+- lvl-0101
+- jekyll
+- liquid
+- collections
+- frontmatter
+- javascript
+- side_quest
+- frontend
+- hands-on
+- gamified-learning
+- static-sites
+- python-automation
 fmContentType: quest
 draft: false
 toc: true
 toc_sticky: true
 comments: true
-attachments: ""
-sub_title: "Level 0101 (5) Quest: Side Quest - Jekyll Collections & Dynamic Layouts"
+attachments: ''
+sub_title: 'Level 0101 (5) Quest: Side Quest - Jekyll Collections & Dynamic Layouts'
 mermaid: true
 rewards:
   badges:
-    - 🏆 Collection Architect
-    - ⚡ Liquid Wizard
-    - 🛠️ Template Forger
+  - 🏆 Collection Architect
+  - ⚡ Liquid Wizard
+  - 🛠️ Template Forger
   skills_unlocked:
-    - 🛠️ Jekyll Collections Mastery
-    - 🎯 Liquid Templating Proficiency
-    - 🔧 Python Automation Integration
-    - 📊 Data-Driven UI Development
+  - 🛠️ Jekyll Collections Mastery
+  - 🎯 Liquid Templating Proficiency
+  - 🔧 Python Automation Integration
+  - 📊 Data-Driven UI Development
   progression_points: 350
   unlocks_features:
-    - Custom collection layouts
-    - Dynamic filtering systems
-    - Automated frontmatter management
+  - Custom collection layouts
+  - Dynamic filtering systems
+  - Automated frontmatter management
+redirect_from:
+- /quests/level-0101-jekyll-quest-tracking/
 ---
 *Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging powerful layouts that respond to frontmatter incantations and user interactions alike.*
 

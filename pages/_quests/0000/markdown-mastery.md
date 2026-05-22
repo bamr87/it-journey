@@ -5,8 +5,8 @@ description: Master Markdown syntax for creating rich documentation, blog posts,
   technical content with proper formatting, links, images, and code blocks.
 excerpt: Learn essential Markdown syntax to create beautifully formatted documentation
   and technical content.
-preview: /images/previews/markdown-mastery-content-formatting-fundamentals-d.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-12-20 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -19,7 +19,7 @@ quest_arc: Documentation Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/level-0000-terminal-fundamentals/
+  - /quests/0000/terminal-fundamentals/
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
@@ -58,11 +58,13 @@ validation_criteria:
   - Understands Markdown syntax vs rendered output
   - Can structure a README with proper headings
 quest_mapping:
-  coordinates: [3, 2]
+  coordinates:
+  - 3
+  - 2
   region: Foundation
   realm: Development
   biome: Documentation
-permalink: /quests/level-0000-markdown-mastery/
+permalink: /quests/0000/markdown-mastery/
 categories:
 - Quests
 - Documentation
@@ -95,6 +97,8 @@ rewards:
   unlocks_features:
   - README creation for projects
   - Blog post and quest authoring
+redirect_from:
+- /quests/level-0000-markdown-mastery/
 ---
 *Greetings, brave adventurer! Welcome to Markdown Mastery — the quest that teaches you the universal language of technical documentation. Markdown is used everywhere: README files, blog posts, wikis, chat messages, and even this very quest you're reading. Once you master it, you'll be able to create beautifully formatted content with nothing but plain text.*
 

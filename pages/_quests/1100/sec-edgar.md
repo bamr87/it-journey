@@ -7,8 +7,8 @@ description: Embark on a satirical, mystical quest to liberate financial knowled
 excerpt: Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings into actionable
   wisdom—ethically, safely, and with proper headers.
 snippet: All hail transparency—storm the gates, free the filings, enlighten the realm.
-preview: /images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
-date: 2025-08-21T22:00:59.000Z
+preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
+date: 2025-08-21 22:00:59+00:00
 lastmod: 2025-08-20 04:18:02.180000+00:00
 level: '1100'
 difficulty: 🟡 Medium
@@ -32,7 +32,7 @@ validation_criteria:
 - Evidence of rate limiting and error handling
 - Transformed output (CSV/JSON) suitable for analysis
 - Short write-up of insights learned
-permalink: /quests/level-1100-sec-edgar-siege/
+permalink: /quests/1100/sec-edgar-siege/
 categories:
 - Quests
 - Data-Engineering
@@ -66,6 +66,8 @@ related_quests:
 - 2025-04-18-revolutionizing-work-with-ai-automation.md
 - frontend/frontend-docker.md
 - lvl_001/personal-site.md
+redirect_from:
+- /quests/level-1100-sec-edgar-siege/
 ---
 *In the twilight of the Digital Realm, a stern monarch sits upon a throne of filings—King EDGAR,
 custodian of truths encoded in structured scrolls and cryptic XBRL sigils. His castle is vast, his

@@ -5,8 +5,8 @@ description: Discover how one nerd transformed from zero to hero by building an 
   open source CMS using VS Code and Jekyll. Join the epic journey!
 excerpt: null
 snippet: null
-preview: /images/previews/epic-quest-zer0-to-her0-cmstyle.png
-date: 2025-08-24T18:46:40.000Z
+preview: images/previews/epic-quest-zer0-to-her0-cmstyle.png
+date: 2025-08-24 18:46:40+00:00
 lastmod: 2025-08-25 00:46:40.810000+00:00
 level: '0010'
 difficulty: 🟢 Easy
@@ -21,7 +21,7 @@ skill_focus:
 - Open Source
 - Quests
 learning_style: hands-on
-permalink: /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
+permalink: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
 categories:
 - AI/ML
 - CMS
@@ -45,6 +45,8 @@ draft: draft
 comments: false
 attachments: ''
 sub-title: null
+redirect_from:
+- /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
 ---
 # Zer0 to Her0: How One Nerd Built an Open Source CMS Out of VS Code and Integrated AI to Do All the Heavy Lifting
 

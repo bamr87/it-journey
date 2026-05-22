@@ -11,15 +11,15 @@ tags:
 - notes
 meta: null
 draft: true
-lastmod: &id001 2023-11-25 11:31:20.728000+00:00
-permalink: /quests/level-codex/glossary/
+lastmod: 2023-11-25 11:31:20.728000+00:00
+permalink: /quests/codex/glossary/
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
 keywords:
 - notes
-date: 2023-11-25T14:12:43.000Z
+date: 2023-11-25 14:12:43+00:00
 quest_series: Codex Reference
 primary_technology: reference
 skill_focus:
@@ -27,6 +27,8 @@ skill_focus:
 - reference
 learning_style: reading
 fmContentType: codex
+redirect_from:
+- /quests/level-codex/glossary/
 ---
 Enterprise
 

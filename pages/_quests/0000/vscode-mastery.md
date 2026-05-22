@@ -6,9 +6,9 @@ description: Master Visual Studio Code setup and configuration to create the ult
 excerpt: Learn to configure VS Code as your primary development weapon, mastering
   extensions, shortcuts, and specialized setups for maximum productivity
 snippet: Forge the ultimate coding weapon with VS Code mastery
-preview: /images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
-date: 2025-07-21T23:30:21.000Z
-lastmod: 2025-11-30 05:46:59.334000+00:00
+preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
+date: 2025-07-21 23:30:21+00:00
+lastmod: 2026-05-20 20:57:50+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -20,14 +20,14 @@ quest_arc: Tool Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests: []
 quest_relationships:
   child_quests: []
   sequel_quests: []
   parallel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
 learning_paths:
   primary_paths:
   - Software Development
@@ -68,7 +68,12 @@ validation_criteria:
   knowledge_checks:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
-permalink: /quests/vscode-mastery/
+permalink: /quests/0000/vscode-mastery/
+redirect_from:
+- /quests/vscode-mastery/
+- /quests/home/0000/vscode-mastery.md
+- /quests/home/0000/vscode-mastery/
+- /quests/level-0000-vscode-mastery/
 categories:
 - Quests
 - Tools
@@ -615,6 +620,48 @@ Create different profiles for different types of work:
 - **DevOps**: Docker, Kubernetes, Terraform tools
 - **Mobile Development**: React Native, Flutter tools
 
+## 🛠️ Troubleshooting Scrolls
+
+If your VS Code setup spell fails, use these quick recovery runes:
+
+### `code` command not found
+
+```bash
+# Verify executable path and shell profile
+which code
+echo $PATH
+```
+
+- **macOS**: Run **Shell Command: Install 'code' command in PATH** from the Command Palette.
+- **Windows**: Re-run installer and keep **Add to PATH** enabled.
+- **Linux**: Confirm package install with `apt list --installed | grep code` (or your distro equivalent).
+
+### Extensions fail to install
+
+```bash
+code --list-extensions
+code --install-extension ms-python.python
+```
+
+- Check network/proxy access.
+- Temporarily disable strict firewall rules for extension marketplace access.
+- Restart VS Code and retry extension installation.
+
+### Slow startup on larger projects
+
+```json
+{
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  }
+}
+```
+
+- Exclude very large generated folders.
+- Disable unused extensions in the current workspace profile.
+- Use one profile per domain to keep extension loadouts focused.
+
 ## 🏆 Quest Completion Challenges
 
 ### Challenge 1: Speed Setup (10 minutes)
@@ -689,4 +736,3 @@ Now that you've mastered VS Code, consider these advanced quests:
 
 **Achievement Unlocked: VS Code Master** 🏆  
 *Continue your adventure with the next quest in your chosen specialization path!*
-

@@ -5,8 +5,8 @@ description: Learn REST architectural principles for designing clean, scalable A
   Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
 excerpt: Design clean, scalable RESTful APIs following architectural principles and
   best practices
-preview: /images/previews/rest-principles-restful-api-design-descriptive-sub.png
-date: 2025-11-29T22:51:57.000Z
+preview: images/previews/rest-principles-restful-api-design-descriptive-sub.png
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:08:54+00:00
 level: '0111'
 difficulty: 🔴 Hard
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0111-rest-principles/
+permalink: /quests/0111/rest-principles/
 categories:
 - Quests
 - Backend
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0111-rest-principles/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
