@@ -344,21 +344,65 @@ class QuestValidator:
 
 def main():
     """Main entry point."""
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='IT-Journey Quest Network Validator',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        '-d', '--directory',
+        help='Quest directory (default: auto-detect from script location)',
+    )
+    parser.add_argument(
+        '--json',
+        metavar='FILE',
+        help='Write validation results as JSON to FILE',
+    )
+    parser.add_argument(
+        '--strict',
+        action='store_true',
+        help='Exit non-zero when warnings exist (in addition to errors)',
+    )
+    args = parser.parse_args()
+
     # Get quest directory
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent.parent
-    quest_dir = project_root / 'pages' / '_quests'
-    
+    if args.directory:
+        quest_dir = Path(args.directory)
+    else:
+        script_dir = Path(__file__).parent
+        project_root = script_dir.parent.parent
+        quest_dir = project_root / 'pages' / '_quests'
+
     if not quest_dir.exists():
         print_error(f"Quest directory not found: {quest_dir}")
         return 1
-    
+
     print_info(f"Quest directory: {quest_dir}")
     print()
-    
+
     # Run validator
     validator = QuestValidator(str(quest_dir))
-    return validator.run()
+    exit_code = validator.run()
+
+    # Write JSON report if requested
+    if args.json:
+        import json
+        report = {
+            'stats': validator.stats,
+            'errors': validator.errors,
+            'warnings': validator.warnings,
+            'passed': exit_code == 0,
+        }
+        with open(args.json, 'w') as f:
+            json.dump(report, f, indent=2, default=str)
+        print_success(f"Network report written to {args.json}")
+
+    # --strict: treat warnings as failure
+    if args.strict and validator.warnings:
+        return 1
+
+    return exit_code
 
 if __name__ == '__main__':
     sys.exit(main())
