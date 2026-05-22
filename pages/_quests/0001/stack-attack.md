@@ -1303,6 +1303,7 @@ Output: A generic <DataTable> component in src/components/ui/data-table.tsx
 
 **Sample Agent Output — ERP Sales Orders Page:**
 
+{% raw %}
 ```tsx
 // src/pages/sales/orders/index.tsx
 import { useGetSalesOrdersList } from "@/api/generated/sales";
@@ -1388,6 +1389,7 @@ export function SalesOrdersPage() {
   );
 }
 ```
+{% endraw %}
 
 ### 🎮 Challenge 3: First Full-Stack Feature
 

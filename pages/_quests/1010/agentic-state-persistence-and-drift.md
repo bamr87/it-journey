@@ -129,6 +129,7 @@ Context drift occurs when an agent's understanding of its task shifts as its con
 
 > **Exercise 9.1:** Add periodic checkpointing to your agent workflow.
 
+{% raw %}
 ```yaml
 # .github/workflows/agent-with-checkpointing.yml
 name: Agent with State Checkpointing
@@ -185,6 +186,7 @@ jobs:
           path: .agent-memory/
           retention-days: 30
 ```
+{% endraw %}
 
 ---
 
