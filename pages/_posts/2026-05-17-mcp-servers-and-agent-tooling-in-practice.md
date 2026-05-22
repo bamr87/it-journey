@@ -32,6 +32,7 @@ Domain 2 of GH-600 (18% of the exam) covers the tools, environments, and capabil
 MCP is an open standard that allows AI models to connect to external tools in a structured, predictable way. Think of it as a universal adapter. Without MCP, every tool integration requires custom code. With MCP, a tool exposes a standard interface, and any MCP-compatible model can use it.
 
 The GitHub MCP server is one of the most important implementations. It gives agents the ability to:
+
 - Read and create issues
 - Read and update pull requests
 - Query repository contents
@@ -65,6 +66,7 @@ The `${input:github-token}` pattern prompts for the token securely, rather than 
 Domain 2 sub-skill 2.1 covers **tool selection and permissions**. The principle: agents should only have access to tools they need for the current task. This is analogous to least-privilege in security.
 
 For a code review agent:
+
 - ✅ Read repository contents
 - ✅ Create PR review comments
 - ❌ Create issues (not needed)

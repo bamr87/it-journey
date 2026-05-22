@@ -34,6 +34,7 @@ Multi-agent design on GitHub is primarily a GitHub Actions design problem. The p
 Two patterns cover most multi-agent use cases:
 
 ### Fan-Out (Parallelism)
+
 An orchestrator job triggers multiple sub-agents simultaneously. Each sub-agent handles a different task (e.g., frontend tests, backend tests, security scan). The orchestrator collects results after all sub-agents complete.
 
 ```yaml
@@ -56,6 +57,7 @@ jobs:
 ```
 
 ### Chain (Sequential)
+
 Each sub-agent's output is the next sub-agent's input. A planning agent produces a plan, an implementation agent implements it, a review agent reviews the output.
 
 ## Observability in Multi-Agent Systems (Sub-skill 5.2)

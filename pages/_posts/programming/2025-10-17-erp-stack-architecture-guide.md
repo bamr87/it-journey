@@ -157,7 +157,7 @@ graph TD
 
 ## Layer 1: Frontend Layer - The User Experience Gateway
 
-### Overview
+### Backend Layer Overview
 
 The frontend layer represents the critical touchpoint between users and the ERP system. This layer transforms complex business data into intuitive interfaces that empower users to perform their daily tasks efficiently. Modern ERP frontends embrace responsive design principles, ensuring seamless experiences across desktop workstations, tablets, and mobile devices.
 
@@ -380,7 +380,7 @@ sequenceDiagram
 
 ## Layer 2: Backend Layer - The Business Logic Engine
 
-### Overview
+### Data Layer Overview
 
 The backend layer orchestrates the core business logic of the ERP system. This layer validates data, enforces business rules, coordinates workflows, and serves as the intelligent intermediary between the user interface and data persistence.
 
@@ -1036,7 +1036,7 @@ graph TB
 
 ## Layer 3: Data Layer - The Persistence Foundation
 
-### Overview
+### Infrastructure Layer Overview
 
 The data layer provides durable storage for all business information, ensuring data integrity, consistency, and availability. Modern ERP systems employ sophisticated database architectures that balance performance, scalability, and reliability.
 
@@ -1362,7 +1362,7 @@ erDiagram
 
 ## Layer 4: Infrastructure & Security - The Foundation
 
-### Overview
+### Integration Layer Overview
 
 The infrastructure layer provides the hosting, scaling, security, and operational capabilities that enable the ERP system to function reliably at enterprise scale.
 

@@ -65,6 +65,7 @@ The `AGENTS.md` file in the repository root documents actions that agents are ex
 ## The Audit Trail
 
 Responsible autonomy requires an audit trail. Domain 6 expects you to know that agents must produce records of:
+
 - What they were instructed to do
 - What they actually did
 - What the outcome was

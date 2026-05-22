@@ -34,16 +34,19 @@ The core problem: agents don't automatically remember things across tasks. Every
 The Agentic Codex uses a three-tier model:
 
 ### Tier 1: Ephemeral Memory
+
 Exists only within a single workflow job. It's the `env:` block, the `$GITHUB_ENV` file, and step outputs. When the job ends, it's gone.
 
 **Use for:** Intermediate calculations, step-to-step data passing, temporary counters.
 
 ### Tier 2: Session Memory
+
 Persists for the duration of a workflow run (across jobs). In GitHub Actions, this is implemented using **artifacts** — one job uploads a file, another downloads it.
 
 **Use for:** Plans generated in the planning phase and consumed in the execution phase, task checklists that span multiple steps.
 
 ### Tier 3: Persistent Memory
+
 Persists across workflow runs. In GitHub Actions, this means **repository files** (committed and pushed by the agent) or **GitHub Actions cache**.
 
 **Use for:** Agent instruction changelogs, running task registers, approved action history, evaluation metrics.
