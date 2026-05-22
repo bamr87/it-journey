@@ -267,8 +267,8 @@ popd
 - [PowerShell PSReadLine](https://docs.microsoft.com/en-us/powershell/module/psreadline/)
 
 ### Related Quests
-- [Terminal Fundamentals Quest](/quests/level-0000-terminal-fundamentals/)
-- [Git Basics Quest](/quests/level-0000-git-basics/)
+- [Terminal Fundamentals Quest](/quests/0000/terminal-fundamentals/)
+- [Git Basics Quest](/quests/0000/git-basics/)
 - [VS Code Mastery Quest](/quests/level-0000-vscode-mastery-quest/)
 
 ---

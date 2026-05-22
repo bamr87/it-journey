@@ -69,11 +69,6 @@ validation_criteria:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
 permalink: /quests/0000/vscode-mastery/
-redirect_from:
-- /quests/vscode-mastery/
-- /quests/home/0000/vscode-mastery.md
-- /quests/home/0000/vscode-mastery/
-- /quests/level-0000-vscode-mastery/
 categories:
 - Quests
 - Tools

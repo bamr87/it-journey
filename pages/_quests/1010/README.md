@@ -8,8 +8,6 @@ lastmod: 2025-11-29 23:41:31.772000+00:00
 level: 1010
 categories: quests
 date: 2025-11-29 16:46:02+00:00
-redirect_from:
-- /quests/level-1010/
 ---
 # Level 1010: Automation & Testing
 
@@ -27,12 +25,12 @@ Level 1010 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Alerting Systems: PagerDuty Integration & Incident Management Guide](/quests/level-1010-alerting-systems/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
-| [Link to the Future: Automated Hyperlink Guardian Quest](/quests/level-1010-automated-hyperlink-guardian/) | 🟡 Medium | 120-180 minutes | main_quest | 🔮 Placeholder |
-| [Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide](/quests/level-1010-distributed-tracing/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis](/quests/level-1010-elk-stack/) | 🔴 Hard | 120-150 minutes | main_quest | 🔮 Placeholder |
-| [Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability](/quests/level-1010-monitoring-fundamentals/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial](/quests/level-1010-prometheus-grafana/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Alerting Systems: PagerDuty Integration & Incident Management Guide](/quests/1010/alerting-systems/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Link to the Future: Automated Hyperlink Guardian Quest](/quests/1010/automated-hyperlink-guardian/) | 🟡 Medium | 120-180 minutes | main_quest | 🔮 Placeholder |
+| [Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide](/quests/1010/distributed-tracing/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis](/quests/1010/elk-stack/) | 🔴 Hard | 120-150 minutes | main_quest | 🔮 Placeholder |
+| [Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability](/quests/1010/monitoring-fundamentals/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial](/quests/1010/prometheus-grafana/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
 
 
 ### 🔗 Automated Validation

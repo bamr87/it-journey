@@ -500,7 +500,7 @@ code --install-extension esbenp.prettier-vscode \
 
 - [VS Code Keyboard Shortcuts](/docs/terminal-shortcuts-cheat-sheet/)
 - [VS Code Mastery Quest](/quests/level-0000-vscode-mastery-quest/)
-- [Git Basics Quest](/quests/level-0000-git-basics/)
+- [Git Basics Quest](/quests/0000/git-basics/)
 - [Official VS Code Documentation](https://code.visualstudio.com/docs)
 
 ---

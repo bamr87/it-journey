@@ -88,9 +88,6 @@ validation_criteria:
   - Contributor profile page exists in pages/_about/contribute/contributors/
   - Character sheet renders on your profile page
   - Stats generator runs without errors for your username
-redirect_from:
-- /quests/forge-your-character/
-- /quests/level-0001-forge-your-character/
 ---
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity
 
@@ -355,11 +352,11 @@ Your character sheet has room to grow. Unlock these side quests:
 
 | Side Quest | Level | Difficulty | Reward |
 |-----------|-------|------------|--------|
-| [Avatar Forge](/quests/side-quest-avatar-forge/) | 0001 | 🟢 Easy | Custom avatar on your profile |
-| [Badge Collector](/quests/side-quest-badge-collector/) | 0001 | 🟡 Medium | Pinned badges showcase |
-| [Stats Dashboard](/quests/side-quest-stats-dashboard/) | 0010 | 🟡 Medium | Enhanced stats visualization |
-| [Contribution Calendar](/quests/side-quest-contribution-calendar/) | 0010 | 🟡 Medium | Activity heatmap |
-| [Profile Themes](/quests/side-quest-profile-themes/) | 0100 | 🔴 Hard | Custom CSS themes |
+| [Avatar Forge](/quests/0001/side-quests/avatar-forge/) | 0001 | 🟢 Easy | Custom avatar on your profile |
+| [Badge Collector](/quests/0001/side-quests/badge-collector/) | 0001 | 🟡 Medium | Pinned badges showcase |
+| [Stats Dashboard](/quests/0010/side-quests/stats-dashboard/) | 0010 | 🟡 Medium | Enhanced stats visualization |
+| [Contribution Calendar](/quests/0010/side-quests/contribution-calendar/) | 0010 | 🟡 Medium | Activity heatmap |
+| [Profile Themes](/quests/0100/side-quests/profile-themes/) | 0100 | 🔴 Hard | Custom CSS themes |
 
 ### XP Formula
 

@@ -100,9 +100,6 @@ excerpt: Embark on an epic terminal adventure that teaches Bash commands through
   interconnected dungeon chambers, each a dedicated walkthrough side-quest
 snippet: Every command is a spell, every directory a new realm to explore
 permalink: /quests/0000/bashcrawl/
-redirect_from:
-- /quests/bashcrawl-terminal-adventure/
-- /quests/level-0000-bashcrawl/
 ---
 *Welcome to the Bashcrawl Catacombs — an interactive terminal dungeon where every command is a spell and every directory a new realm to explore. Nine interconnected chambers await, each a side-quest that teaches a core set of Bash skills through gameplay.*
 

@@ -21,9 +21,6 @@ toc_sticky: true
 draft: false
 level: 73
 date: 2025-12-20 20:02:51+00:00
-redirect_from:
-- /quests/0111/
-- /quests/level-0111/
 ---
 # Level 0111 (7) - API Development
 
@@ -185,12 +182,12 @@ Upon completing all core quests:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [API Authentication: OAuth, JWT, and API Keys Implementation](/quests/level-0111-api-authentication/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [API Documentation: OpenAPI Specification and Developer Experience](/quests/level-0111-api-documentation/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [API Fundamentals: Building Web Services and HTTP APIs](/quests/level-0111-api-fundamentals/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [API Versioning: Managing API Evolution and Backwards Compatibility](/quests/level-0111-api-versioning/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Error Handling: API Response Patterns and HTTP Status Codes](/quests/level-0111-error-handling/) | 🔴 Hard | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [Rate Limiting: API Traffic Control and Throttling Strategies](/quests/level-0111-rate-limiting/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [REST Principles: RESTful API Design Best Practices](/quests/level-0111-rest-principles/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [API Authentication: OAuth, JWT, and API Keys Implementation](/quests/0111/api-authentication/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [API Documentation: OpenAPI Specification and Developer Experience](/quests/0111/api-documentation/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [API Fundamentals: Building Web Services and HTTP APIs](/quests/0111/api-fundamentals/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [API Versioning: Managing API Evolution and Backwards Compatibility](/quests/0111/api-versioning/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Error Handling: API Response Patterns and HTTP Status Codes](/quests/0111/error-handling/) | 🔴 Hard | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Rate Limiting: API Traffic Control and Throttling Strategies](/quests/0111/rate-limiting/) | 🔴 Hard | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [REST Principles: RESTful API Design Best Practices](/quests/0111/rest-principles/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
 
 

@@ -43,7 +43,7 @@ learning_outcomes:
     - 🔗 Connect CLI design principles to better user experience
 content_series: Terminal Mastery
 related_posts:
-    - /quests/level-0010-terminal-artificer/
+    - /quests/0010/side-quests/terminal-artificer/
     - /posts/bash-scripting/
 validation_methods:
     - Build a simple wrapper script using the architecture described
@@ -207,7 +207,7 @@ We call it a "Glass Interface" because it's transparent. It doesn't hide the und
 
 Ready to forge your own Glass Interface? We have prepared a dedicated quest to help you master these tools.
 
-* **Start the Quest**: [Terminal Artificer: Forging the Glass Interface](/quests/level-0010-terminal-artificer/)
+* **Start the Quest**: [Terminal Artificer: Forging the Glass Interface](/quests/0010/side-quests/terminal-artificer/)
 * **Explore the Tools**: Check out [Charm.sh](https://charm.sh/) for more TUI magic.
 
 By architecting your scripts with intention—separating the *asking* from the *doing*—you transform your terminal from a black box of mystery into a cockpit of control.

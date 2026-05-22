@@ -45,8 +45,8 @@ python3 scripts/quest/migrate-permalinks.py
 
 The migration script:
 - Rewrites `permalink:` to the canonical pattern
-- Adds the old URL to `redirect_from:` automatically
 - Remaps dependency URLs in `quest_dependencies` using a two-pass URL map
+- Globally rewrites internal references to the old URL (no `redirect_from:` stubs)
 - Never deletes files — safe to re-run
 
 #### Validate after migration
@@ -71,7 +71,7 @@ git add pages/_quests/
 git commit -m "fix(quests): repair permalink violations to canonical /quests/XXXX/[side-quests/]slug/
 
 - Migrated N quest files
-- Old URLs preserved in redirect_from:
+- Internal references rewritten globally to new canonical URLs (no redirect_from)
 - Dependency URLs remapped via two-pass url_map
 
 Validates clean: 0 errors via quest_validator.py"
@@ -82,10 +82,10 @@ Validates clean: 0 errors via quest_validator.py"
 | Old (invalid) | New (canonical) |
 |---|---|
 | `/quests/level-0001-docker-fundamentals/` | `/quests/0001/docker-fundamentals/` |
-| `/quests/side-quest-bash-run/` | `/quests/0000/side-quests/bash-run/` |
-| `/quests/level-0001/` | `/quests/0001/` |
+| `/quests/0000/side-quests/bash-run/` | `/quests/0000/side-quests/bash-run/` |
+| `/quests/0001/` | `/quests/0001/` |
 | `/quests/side-quests/bash-run/` (flat, legacy) | `/quests/0000/side-quests/bash-run/` |
-| `/quests/level-codex/glossary/` | `/quests/codex/glossary/` |
+| `/quests/codex/glossary/` | `/quests/codex/glossary/` |
 
 ## When to Run This Audit
 

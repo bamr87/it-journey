@@ -13,11 +13,11 @@
     - title: Begin Your Journey
       url: /quests/0000/begin-your-it-journey
     - title: Terminal Fundamentals
-      url: /quests/level-0000-terminal-fundamentals/
+      url: /quests/0000/terminal-fundamentals/
     - title: Bashcrawl Adventure
-      url: /quests/bashcrawl-terminal-adventure/
+      url: /quests/0000/bashcrawl/
     - title: Bash-run Extension
-      url: /quests/lvl_000/bash-run/
+      url: /quests/0000/side-quests/bash-run/
     - title: Git Basics
       url: /quests/0000/git-basics
     - title: Markdown Mastery
@@ -39,11 +39,11 @@
     - title: Git Workflow Mastery
       url: /quests/0001/git-workflow-mastery
     - title: "⚔️ Forge Your Character"
-      url: /quests/forge-your-character/
+      url: /quests/0001/forge-your-character/
     - title: "⚔️ Avatar Forge (Side)"
-      url: /quests/side-quest-avatar-forge/
+      url: /quests/0001/side-quests/avatar-forge/
     - title: "⚔️ Badge Collector (Side)"
-      url: /quests/side-quest-badge-collector/
+      url: /quests/0001/side-quests/badge-collector/
 - title: "Level 0010 - Intermediate"
   icon: bi-tree
   url: /quests/0010/
@@ -59,9 +59,9 @@
     - title: Prompt Engineering
       url: /quests/0010/prompt-engineering
     - title: "⚔️ Contribution Calendar (Side)"
-      url: /quests/side-quest-contribution-calendar/
+      url: /quests/0010/side-quests/contribution-calendar/
     - title: "⚔️ Stats Dashboard (Side)"
-      url: /quests/side-quest-stats-dashboard/
+      url: /quests/0010/side-quests/stats-dashboard/
 - title: "Level 0011 - Advanced"
   icon: bi-lightning-charge
   url: /quests/0011/
@@ -85,7 +85,7 @@
     - title: Frontend Docker
       url: /quests/0100/frontend-docker
     - title: "⚔️ Profile Themes (Side)"
-      url: /quests/side-quest-profile-themes/
+      url: /quests/0100/side-quests/profile-themes/
 - title: "Level 0101 - CI/CD"
   icon: bi-rocket-takeoff
   url: /quests/0101/

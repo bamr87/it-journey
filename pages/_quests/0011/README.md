@@ -8,8 +8,6 @@ lastmod: 2025-11-29 23:41:31.768000+00:00
 level: 9
 categories: quests
 date: 2025-11-29 16:46:02+00:00
-redirect_from:
-- /quests/level-0011/
 ---
 # Level 0011: Development Tools & AI Integration
 
@@ -27,14 +25,14 @@ Level 0011 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands](/quests/level-0011-advanced-git-workflows/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/level-0011-analytics-integration/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [Custom Domains for GitHub Pages: Professional Website Setup Guide](/quests/level-0011-custom-domains/) | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
-| [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/level-0011-github-pages-hidden-gem/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
-| [Jekyll Plugins: Essential Extensions for Powerful Static Sites](/quests/level-0011-jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/level-0011-prd-codex-mastery/) | 🟡 Medium | 45-60 minutes | main_quest | ✅ Complete |
-| [Forging the Prompt Crystal: VS Code Copilot Mastery Quest](/quests/level-0011-prompt-crystal-vscode-copilot/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [SEO Optimization: Boost Search Engine Visibility for Jekyll Sites](/quests/level-0011-seo-optimization/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands](/quests/0011/advanced-git-workflows/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/0011/analytics-integration/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Custom Domains for GitHub Pages: Professional Website Setup Guide](/quests/0011/custom-domains/) | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/0011/github-pages-hidden-gem/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
+| [Jekyll Plugins: Essential Extensions for Powerful Static Sites](/quests/0011/jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/0011/prd-codex-mastery/) | 🟡 Medium | 45-60 minutes | main_quest | ✅ Complete |
+| [Forging the Prompt Crystal: VS Code Copilot Mastery Quest](/quests/0011/prompt-crystal-vscode-copilot/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [SEO Optimization: Boost Search Engine Visibility for Jekyll Sites](/quests/0011/seo-optimization/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
 
 
 ### 🤖 AI-Powered Development

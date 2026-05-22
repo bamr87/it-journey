@@ -7,9 +7,6 @@ lastmod: 2025-11-15 04:27:16.791000+00:00
 level: 1
 categories: quests
 date: 2025-11-15 16:34:42+00:00
-redirect_from:
-- /quests/level-001/
-- /quests/level-0001/
 ---
 # Level 001: Journeyman Challenges
 
@@ -28,20 +25,20 @@ Level 001 quests focus on:
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
 | [The Knowledge Vault: Building an Automated Documentation Hub](../README.mdlevel-0001/docs-in-a-row/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
-| [Building & Testing the Git Init Script: Headless, Interactive, Scaffolding](/quests/level-0001-git-init-testing/) | 🟢 Easy | 45-75 minutes | main_quest | 🔮 Placeholder |
-| [Git Workflow Mastery: Branches, Merging & Team Collaboration](/quests/level-0001-git-workflow-mastery/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [GitHub Pages Basics: Deploy Free Websites in Minutes](/quests/level-0001-github-pages-basics/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Jekyll Fundamentals: Build Static Sites with Ruby](/quests/level-0001-jekyll-fundamentals/) | 🟢 Easy | 75-90 minutes | main_quest | 🔮 Placeholder |
-| [Kaizen Quest: The Path of Continuous Improvement in Software Alchemy](/quests/level-0001-kaizen-continuous-improvement/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Liquid Templating: Dynamic Content for Jekyll Sites](/quests/level-0001-liquid-templating/) | 🟢 Easy | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [Terminal Mastery: Conquering the Command-Line Realm](/quests/level-0001-terminal-mastery/) | 🟢 Easy | 45-90 minutes | main_quest | ✅ Complete |
-| [YAML Configuration: Site Settings Mastery](/quests/level-0001-yaml-configuration/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
-| [Technology Stack Analysis: Barodybroject](/quests/level-0001-barodybroject-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
-| [Stack Attack Analysis: IT-Journey](/quests/level-0001-it-journey-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
-| [Personal Site](/quests/level-0001-personal-site/) | 🟢 Easy | 45-60 minutes | side_quest | 🔮 Placeholder |
-| [Stack Attack: Deciphering the Technology Matrix](/quests/level-0001-stack-attack/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-0001-github-pages-portal/) | 🟢 Easy | 2-4 hours | main_quest | ✅ Complete |
-| [Forging the Stats Portal: Data Analytics Quest](/quests/level-0001-stating-the-stats/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
+| [Building & Testing the Git Init Script: Headless, Interactive, Scaffolding](/quests/0001/git-init-testing/) | 🟢 Easy | 45-75 minutes | main_quest | 🔮 Placeholder |
+| [Git Workflow Mastery: Branches, Merging & Team Collaboration](/quests/0001/git-workflow-mastery/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [GitHub Pages Basics: Deploy Free Websites in Minutes](/quests/0001/github-pages-basics/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Jekyll Fundamentals: Build Static Sites with Ruby](/quests/0001/jekyll-fundamentals/) | 🟢 Easy | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Kaizen Quest: The Path of Continuous Improvement in Software Alchemy](/quests/0001/kaizen-continuous-improvement/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Liquid Templating: Dynamic Content for Jekyll Sites](/quests/0001/liquid-templating/) | 🟢 Easy | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Terminal Mastery: Conquering the Command-Line Realm](/quests/0001/terminal-mastery/) | 🟢 Easy | 45-90 minutes | main_quest | ✅ Complete |
+| [YAML Configuration: Site Settings Mastery](/quests/0001/yaml-configuration/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
+| [Technology Stack Analysis: Barodybroject](/quests/0001/side-quests/barodybroject-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
+| [Stack Attack Analysis: IT-Journey](/quests/0001/side-quests/it-journey-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
+| [Personal Site](/quests/0001/side-quests/personal-site/) | 🟢 Easy | 45-60 minutes | side_quest | 🔮 Placeholder |
+| [Stack Attack: Deciphering the Technology Matrix](/quests/0001/stack-attack/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/0001/github-pages-portal/) | 🟢 Easy | 2-4 hours | main_quest | ✅ Complete |
+| [Forging the Stats Portal: Data Analytics Quest](/quests/0001/stating-the-stats/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
 
 
 ### 🌐 Web Deployment & Hosting

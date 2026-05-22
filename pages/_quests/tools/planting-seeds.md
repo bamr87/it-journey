@@ -26,6 +26,4 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
-redirect_from:
-- /quests/level-0010-planting-seeds/
 ---

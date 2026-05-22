@@ -120,9 +120,6 @@ related_quests:
 - character-selection.md - Choose Your IT Specialization
 - os-selection.md - Operating System Selection Guide
 slug: character-building
-redirect_from:
-- /quests/character-building/
-- /quests/level-0000-character-building/
 ---
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 

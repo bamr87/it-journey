@@ -26,8 +26,6 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
-redirect_from:
-- /quests/level-0010-change-logs/
 ---
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**
 

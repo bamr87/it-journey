@@ -63,8 +63,6 @@ related_quests:
 - 'Level 1001 (9): Jekyll Site Deployment Automation'
 - 'Level 1011 (11): Advanced GitHub Actions Patterns'
 - 'Level 1100 (12): AI-Powered Code Review Systems'
-redirect_from:
-- /quests/level-1010-automated-hyperlink-guardian/
 ---
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 

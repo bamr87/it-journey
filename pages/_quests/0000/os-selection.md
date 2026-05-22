@@ -93,9 +93,6 @@ keywords:
 fmContentType: quest
 draft: false
 slug: os-selection
-redirect_from:
-- /quests/lvl_000/os-selection/
-- /quests/level-0000-os-selection/
 ---
 *Welcome to the Realm Selection Chamber, brave adventurer! Choosing the right operating system is like selecting the right wand in the wizarding world — it's a deeply personal choice that shapes every spell you cast on your IT journey.*
 

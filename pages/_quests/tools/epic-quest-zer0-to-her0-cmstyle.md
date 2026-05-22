@@ -45,8 +45,6 @@ draft: draft
 comments: false
 attachments: ''
 sub-title: null
-redirect_from:
-- /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
 ---
 # Zer0 to Her0: How One Nerd Built an Open Source CMS Out of VS Code and Integrated AI to Do All the Heavy Lifting
 

@@ -58,8 +58,6 @@ related_quests:
 - 'Permalink Lore: Stable Slugs and Trails (Level 1100)'
 - 'CI Scribes: Automating Quality Trials (Level 1111)'
 - 'Content Gardens: Jekyll Collections (Level 10100)'
-redirect_from:
-- /quests/level-1110-404-hunting-quest/
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 

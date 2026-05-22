@@ -27,8 +27,6 @@ skill_focus:
 - reference
 learning_style: reading
 fmContentType: codex
-redirect_from:
-- /quests/level-codex/glossary/
 ---
 Enterprise
 

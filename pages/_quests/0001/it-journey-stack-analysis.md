@@ -48,10 +48,6 @@ keywords:
 - python
 - ai-integration
 author: IT-Journey Team
-redirect_from:
-- /quests/level-0001/it-journey-stack-analysis/
-- /quests/level-0001-it-journey-stack-analysis/
-- /quests/side-quest-it-journey-stack-analysis/
 ---
 # Stack Attack Analysis: IT-Journey
 

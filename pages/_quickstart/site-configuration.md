@@ -341,7 +341,7 @@ Values in `_config_dev.yml` override `_config.yml` where they overlap.
 | Understand layouts, includes, and Liquid templating | [Theme Architecture](/quickstart/theme-architecture/) |
 | Create posts, quests, and docs | [Content Creation](/quickstart/content-creation/) |
 
-> **IT-Journey Quests:** [YAML Configuration](/quests/frontend/yaml-configuration/) · [Jekyll Plugins](/quests/advanced/jekyll-plugins/) · [SEO Optimization](/quests/advanced/seo-optimization/) · [Analytics Integration](/quests/advanced/analytics-integration/)
+> **IT-Journey Quests:** [YAML Configuration](/quests/0100/frontend/yaml-configuration/) · [Jekyll Plugins](/quests/advanced/jekyll-plugins/) · [SEO Optimization](/quests/advanced/seo-optimization/) · [Analytics Integration](/quests/advanced/analytics-integration/)
 >
 > **IT-Journey Docs:** [Frontmatter Standards](/docs/standards/FRONTMATTER_STANDARDS/) · [Content Guidelines](/docs/standards/CONTENT_GUIDELINES/)
 >

@@ -293,4 +293,4 @@ About pages, profiles, and feature descriptions.
 
 > **IT-Journey Docs:** [Frontmatter Standards](/docs/standards/FRONTMATTER_STANDARDS/) · [Content Guidelines](/docs/standards/CONTENT_GUIDELINES/)
 >
-> **IT-Journey Quests:** [Markdown Mastery](/quests/init_world/markdown-mastery/) · [Forge Your Character](/quests/frontend/forge-your-character/)
+> **IT-Journey Quests:** [Markdown Mastery](/quests/init_world/markdown-mastery/) · [Forge Your Character](/quests/0100/frontend/forge-your-character/)

@@ -187,6 +187,6 @@ The `JEKYLL_ENV` variable controls environment-specific behavior:
 | Set up CI/CD for automated deployment | [CI/CD & Automation](/quickstart/cicd-automation/) |
 | Optimize for SEO, performance, and accessibility | [Optimization & Maintenance](/quickstart/optimization-maintenance/) |
 
-> **IT-Journey Quests:** [GitHub Pages Basics](/quests/frontend/github-pages-basics/) · [Azure Ascension](/quests/azure-ascension-jekyll-deployment-quest/) · [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/)
+> **IT-Journey Quests:** [GitHub Pages Basics](/quests/0100/frontend/github-pages-basics/) · [Azure Ascension](/quests/azure-ascension-jekyll-deployment-quest/) · [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/)
 >
 > **External Docs:** [GitHub Pages Docs](https://docs.github.com/en/pages) · [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/) · [Jekyll Deployment](https://jekyllrb.com/docs/deployment/)

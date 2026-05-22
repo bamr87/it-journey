@@ -218,7 +218,7 @@ git submodule update --init
 | Configure `_config.yml` for your site | [Site Configuration](/quickstart/site-configuration/) |
 | Set up your development environment | [Machine Setup](/quickstart/machine-setup/) |
 
-> **IT-Journey Quests:** [Git Basics](/quests/init_world/git-basics/) · [GitHub Pages Basics](/quests/frontend/github-pages-basics/)
+> **IT-Journey Quests:** [Git Basics](/quests/init_world/git-basics/) · [GitHub Pages Basics](/quests/0100/frontend/github-pages-basics/)
 >
 > **IT-Journey Docs:** [Repository Structure](/docs/architecture/REPOSITORY_STRUCTURE/)
 >

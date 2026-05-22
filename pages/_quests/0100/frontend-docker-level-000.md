@@ -37,9 +37,6 @@ keywords:
 - bootstrap
 fmContentType: quest
 draft: true
-redirect_from:
-- /quests/level-0100/lvl-000-frontend-docker/
-- /quests/level-0100-frontend-docker-lvl-000/
 ---
 ## Intro
 

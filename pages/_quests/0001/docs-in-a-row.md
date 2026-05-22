@@ -73,9 +73,6 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
-redirect_from:
-- /quests/0001/docs-in-a-row/
-- /quests/level-0001-docs-in-a-row/
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
 

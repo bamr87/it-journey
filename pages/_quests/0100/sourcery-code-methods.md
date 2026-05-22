@@ -62,8 +62,6 @@ related_quests:
 - Terminal Mastery Quest (Level 0001)
 - Development Environment Setup (Level 0101)
 - Code Quality Guardian Quest (Level 0110)
-redirect_from:
-- /quests/level-0100-source-control-sorcery/
 ---
 *In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 

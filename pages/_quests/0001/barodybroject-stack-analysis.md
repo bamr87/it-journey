@@ -44,10 +44,6 @@ keywords:
 - docker
 - postgresql
 author: IT-Journey Team
-redirect_from:
-- /quests/level-0001/barodybroject-stack-analysis/
-- /quests/level-0001-barodybroject-stack-analysis/
-- /quests/side-quest-barodybroject-stack-analysis/
 ---
 # Technology Stack Analysis: Barodybroject
 

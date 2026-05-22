@@ -68,8 +68,7 @@ CI enforces these via `.github/workflows/frontmatter-validation.yml` and
 
 ## 3. Permalink Rules
 
-Never change a published permalink without preserving the old URL in
-`redirect_from:`.
+Do not use `redirect_from:`. When a permalink changes, update every internal reference to the new canonical URL globally — no redirect stubs.
 
 ### Quests
 - `main_quest` → `/quests/XXXX/slug/`

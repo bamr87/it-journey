@@ -63,8 +63,6 @@ related_quests:
 - 'Level 0011: Markdown to PDF Basics'
 - 'Level 0100: Git Fundamentals'
 - 'Level 1010: Portfolio Website Publishing'
-redirect_from:
-- /quests/level-0101-latex-cv-forging/
 ---
 ## 🧙‍♂️ Epic Introduction
 

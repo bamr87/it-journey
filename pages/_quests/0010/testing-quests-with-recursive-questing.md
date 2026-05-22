@@ -71,8 +71,6 @@ rewards:
   skills_unlocked:
   - Advanced Recursion Patterns
   progression_points: 150
-redirect_from:
-- /quests/level-0010-recursive-realms-testing/
 ---
 *Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge powerful unit tests, and summon AI guardians that think in layered patterns.*
 

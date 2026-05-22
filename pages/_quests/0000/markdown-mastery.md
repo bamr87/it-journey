@@ -97,8 +97,6 @@ rewards:
   unlocks_features:
   - README creation for projects
   - Blog post and quest authoring
-redirect_from:
-- /quests/level-0000-markdown-mastery/
 ---
 *Greetings, brave adventurer! Welcome to Markdown Mastery — the quest that teaches you the universal language of technical documentation. Markdown is used everywhere: README files, blog posts, wikis, chat messages, and even this very quest you're reading. Once you master it, you'll be able to create beautifully formatted content with nothing but plain text.*
 

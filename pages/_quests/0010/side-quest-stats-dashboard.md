@@ -75,8 +75,6 @@ validation_criteria:
   - Data renders from contributor YAML data
   - Visualization is responsive and accessible
   - Integrated into character_sheet.html
-redirect_from:
-- /quests/side-quest-stats-dashboard/
 ---
 # 📊 Stats Dashboard: Enhancing Your Data Visualization
 

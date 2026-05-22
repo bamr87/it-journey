@@ -44,8 +44,6 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
-redirect_from:
-- /quests/level-0010-action-triggers/
 ---
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.
 

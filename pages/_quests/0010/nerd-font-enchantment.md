@@ -76,8 +76,6 @@ rewards:
 related_quests:
 - 'Level 0010: Terminal Enchantment - Oh-My-Zsh Mastery'
 - 'Level 0001: Terminal Fundamentals'
-redirect_from:
-- /quests/side-quest-nerd-font-enchantment/
 ---
 ## 🌟 The Legend of Font Enchantment
 

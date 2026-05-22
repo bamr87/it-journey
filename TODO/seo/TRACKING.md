@@ -173,7 +173,7 @@ python3 scripts/validation/seo-tracker.py --opportunities
 - [x] Terminal Shortcuts Cheat Sheet (`/docs/terminal-shortcuts-cheat-sheet/`)
 - [x] VS Code Extensions Guide (`/posts/essential-vscode-extensions-developers/`)
 - [x] Docker for Beginners Tutorial (`/posts/docker-beginners-tutorial/`)
-- [x] Jekyll GitHub Pages - Already exists (`/quests/level-001-github-pages-portal/`)
+- [x] Jekyll GitHub Pages - Already exists (`/quests/0001/github-pages-portal/`)
 - **Progress**: 4/4 content pieces complete ✅
 
 ### Phase 4 Goals (Week 4-6) ⏳ IN PROGRESS

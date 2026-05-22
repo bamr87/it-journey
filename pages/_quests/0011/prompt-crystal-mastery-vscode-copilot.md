@@ -121,8 +121,6 @@ rewards:
   - Access to advanced AI agent development quests
   - Ability to create team-wide prompt standards
   - Foundation for MCP server prompt patterns
-redirect_from:
-- /quests/level-0011-prompt-crystal-vscode-copilot/
 ---
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 
@@ -1335,7 +1333,7 @@ Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 | `.github/instructions/prompts.instructions.md` | Kaizen-integrated prompt engineering guide |
 | `.github/instructions/posts.instructions.md` | Post creation standards |
 | `.github/prompts/` | Example prompt templates |
-| [Prompt Engineering Quest](/quests/level-0010-prompt-engineering-mastery/) | Prerequisite fundamentals |
+| [Prompt Engineering Quest](/quests/0010/prompt-engineering-mastery/) | Prerequisite fundamentals |
 
 ### 💬 Community Support
 

@@ -16,11 +16,7 @@ tags:
   - ai-agents
   - github-copilot
 draft: false
-permalink: /docs/contributing/contributing-developer/
-redirect_from:
-  - /CONTRIBUTING/docs/CONTRIBUTING_DEVELOPER.md
-  - /contributing/docs/CONTRIBUTING_DEVELOPER.md
-  - /docs/contributing/
+permalink: /docs/contributing/contributing-developer/contributing-developer/
 sidebar:
   nav: docs
 toc_sticky: true
@@ -668,7 +664,7 @@ git push origin feature/my-ai-assisted-contribution
 ✅ Always update `lastmod` when modifying a file  
 ✅ Run `bundle exec jekyll build` to verify the site compiles  
 ✅ Provide clear PR descriptions explaining what was changed and why  
-✅ Follow the [README-First, README-Last principle](/docs/contributing/contributing-developer/#readme-first-readme-last)  
+✅ Follow the [README-First, README-Last principle](/docs/contributing/contributing-developer/contributing-developer/#readme-first-readme-last)  
 ✅ Respect the [Conventional Commits](https://www.conventionalcommits.org/) format  
 
 ❌ Do not commit secrets, API keys, or credentials  

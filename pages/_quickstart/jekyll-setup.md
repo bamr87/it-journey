@@ -207,7 +207,7 @@ bundle exec jekyll serve --livereload
 | Set up VS Code with extensions and Front Matter CMS | [VS Code Setup](/quickstart/vscode-setup/) |
 | Run the site with Docker or native Ruby | [Local Development](/quickstart/local-development/) |
 
-> **IT-Journey Quests:** [Jekyll Fundamentals](/quests/frontend/jekyll-fundamentals/) · [YAML Configuration](/quests/frontend/yaml-configuration/)
+> **IT-Journey Quests:** [Jekyll Fundamentals](/quests/0100/frontend/jekyll-fundamentals/) · [YAML Configuration](/quests/0100/frontend/yaml-configuration/)
 >
 > **IT-Journey Docs:** [Installation Update](/docs/setup/INSTALLATION_UPDATE/)
 >

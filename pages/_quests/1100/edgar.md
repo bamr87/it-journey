@@ -69,8 +69,6 @@ related_quests:
 - 'Level 1010: JSON Alchemy – From Chaos to Tables'
 - 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
 - 'Level 10001: Data Vis – Charts and Dashboards'
-redirect_from:
-- /quests/level-1100-conquer-king-edgar/
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 

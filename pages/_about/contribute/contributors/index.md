@@ -161,7 +161,7 @@ Every contributor gets a **Character Profile** — an RPG-style character sheet 
 3. Choose your **class**: Wizard, Warrior, Ranger, Rogue, Healer, Bard, or Paladin
 4. Submit a PR — the CI pipeline will auto-generate your stats on merge
 
-See the [Forge Your Character quest](/quests/forge-your-character/) for the full walkthrough.
+See the [Forge Your Character quest](/quests/0001/forge-your-character/) for the full walkthrough.
 
 ---
 

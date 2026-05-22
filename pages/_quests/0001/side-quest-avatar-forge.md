@@ -69,8 +69,6 @@ validation_criteria:
   - Avatar URL set in contributor data file
   - Avatar renders on character sheet
   - Image is appropriate and accessible (has alt text context)
-redirect_from:
-- /quests/side-quest-avatar-forge/
 ---
 # 🎨 Avatar Forge: Crafting Your Digital Portrait
 

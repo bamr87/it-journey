@@ -61,8 +61,6 @@ related_quests:
 - 'Level 0011: Programming Foundations'
 - 'Level 0100: Version Control with Git'
 - 'Level 1111: Testing and Verification Rites'
-redirect_from:
-- /quests/level-1100-temple-of-templates/
 ---
 ## 🧙‍♂️ Epic Introduction
 

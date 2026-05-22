@@ -60,7 +60,7 @@
 - **Fix**: Update social share button template to use `{{ site.url }}` instead of relative paths
 
 **Sample broken URLs:**
-- `http://0.0.0.0:4002/quests/level-1100-temple-of-templates/`
+- `http://0.0.0.0:4002/quests/1100/temple-of-templates/`
 - `http://0.0.0.0:4002/about/readme/`
 - `http://0.0.0.0:4002/notes/dev/Curiculum/curiculum/`
 

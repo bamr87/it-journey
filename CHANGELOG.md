@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **AGENTS.md and copilot-instructions.md updated** — Quest permalink convention documented as canonical gotcha with migration commands
 
 ### Changed
-- **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/level-0000-bashcrawl/` to canonical `/quests/0000/bashcrawl/`
+- **Level 0000 README** — Updated Bashcrawl cross-reference link from stale `/quests/0000/bashcrawl/` to canonical `/quests/0000/bashcrawl/`
 
 ### Fixed
 - **173 quest files** with non-canonical permalink formats (`/quests/level-XXXX-slug/`, `/quests/side-quest-slug/`) migrated to `^/quests/[01]{4}/[side-quests/]slug/$` format

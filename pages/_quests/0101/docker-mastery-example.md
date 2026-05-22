@@ -66,8 +66,6 @@ related_quests:
   parallel:
   - 'Level 0101: Linux System Administration'
   - 'Level 0100: Web Server Configuration'
-redirect_from:
-- /quests/level-0101-docker-mastery/
 ---
 *Greetings, brave adventurer! Welcome to **Docker Containerization Mastery: Level 0101 (5) Quest** - an epic 🟡 Medium journey that will transform your docker mastery. This quest will guide you through tool-mastery adventures in devops, preparing you for the next level of your IT journey.*
 

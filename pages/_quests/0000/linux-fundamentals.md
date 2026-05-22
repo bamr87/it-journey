@@ -98,9 +98,6 @@ keywords:
 - scripting
 - security
 - networking
-redirect_from:
-- /quests/hello-linux/linux-fundamentals/
-- /quests/level-0000-linux-fundamentals/
 ---
 # Linux Fundamentals
 

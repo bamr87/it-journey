@@ -78,9 +78,6 @@ related_quests:
 - 'Level 001: HTML Basics'
 - 'Level 001: CSS Fundamentals'
 - 'Level 010: Jekyll Mastery'
-redirect_from:
-- /quests/level-001-github-pages-portal/
-- /quests/level-0001-github-pages-portal/
 ---
 *Greetings, brave adventurer! Welcome to **The GitHub Pages Portal: Forging Your Digital Realm** - an epic journey that will transform your code into live web experiences. This quest will guide you through deploying your first website using GitHub Pages, the free hosting solution that turns your GitHub repositories into beautiful, accessible websites.*
 

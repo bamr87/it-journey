@@ -135,10 +135,10 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 | [IT Fundamentals](/quests/0000/it-fundamentals/) | Core Concepts | 🟢 Easy | All |
 | [OS Selection](/quests/0000/os-selection/) | Platform Choice | 🟢 Easy | All |
 | [VS Code Mastery](/quests/0000/vscode-mastery-quest/) | IDE Configuration | 🟡 Medium | All |
-| [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) | Command Line Basics | 🟢 Easy | All |
+| [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) | Command Line Basics | 🟢 Easy | All |
 | [Bashcrawl Online](https://bamr87.github.io/bashcrawl/) | Browser Terminal Practice | 🟢 Easy | All |
-| [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) | Terminal Game Quest | 🟢 Easy | All |
-| [Bash-run Extension Lab](/quests/lvl_000/bash-run/) | Local Bash Project Extension | 🟡 Medium | All |
+| [Bashcrawl Adventure](/quests/0000/bashcrawl/) | Terminal Game Quest | 🟢 Easy | All |
+| [Bash-run Extension Lab](/quests/0000/side-quests/bash-run/) | Local Bash Project Extension | 🟡 Medium | All |
 | [Markdown Mastery](/quests/0000/markdown-mastery/) | Documentation | 🟢 Easy | All |
 | [Git Basics](/quests/0000/git-basics/) | Version Control | 🟢 Easy | All |
 
