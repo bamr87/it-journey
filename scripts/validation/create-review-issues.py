@@ -55,6 +55,13 @@ PROMPTS_URL_TEMPLATE = "https://github.com/{repo}/tree/main/" + PROMPTS_PATH
 DEFAULT_LABELS = ["ai-review", "content-improvement", "automated"]
 UNKNOWN_COLLECTION = "other"
 MAX_STANDARDS_GAPS = 20
+REVIEW_GAP_FIELDS = (
+    "action_items",
+    "frontmatter_issues",
+    "seo_improvements",
+    "technical_issues",
+    "accessibility_issues",
+)
 
 
 # ---------------------------------------------------------------------------
@@ -263,20 +270,28 @@ def format_issue_body(
     avg = (sum(scores) / len(scores)) if scores else None
     ai_count = sum(1 for r in reviews.values() if r.get("review_type") == "ai")
 
-    instructions_url = INSTRUCTIONS_URL_TEMPLATE.format(repo=repo)
+    instructions_link = (
+        f"[`{INSTRUCTIONS_PATH}`]({INSTRUCTIONS_URL_TEMPLATE.format(repo=repo)})"
+        if repo
+        else f"`{INSTRUCTIONS_PATH}`"
+    )
+    workflow_link = (
+        "[`ai-content-review.yml`]"
+        f"(https://github.com/{repo}/blob/main/.github/workflows/ai-content-review.yml)"
+        if repo
+        else "`.github/workflows/ai-content-review.yml`"
+    )
 
     header = [
         f"## 🤖 AI Content Review — `_{collection}` collection",
         "",
         "This issue groups AI Content Reviewer feedback for files in the "
         f"**`_{collection}`** Jekyll collection. It was opened automatically by "
-        "[`ai-content-review.yml`]"
-        f"(https://github.com/{repo}/blob/main/.github/workflows/ai-content-review.yml).",
+        f"{workflow_link}.",
         "",
         "### How to resolve",
         "",
-        "1. Read the resolution playbook: "
-        f"[`{INSTRUCTIONS_PATH}`]({instructions_url})",
+        f"1. Read the resolution playbook: {instructions_link}",
         "2. Work through the file sections below — each action item is a "
         "checkbox.",
         f"3. Keep changes scoped to **`pages/_{collection}/`** in this PR.",
@@ -292,7 +307,12 @@ def format_issue_body(
         header.append(f"- **Average quality score:** {avg:.1f}/10")
     header.append(f"- **AI-enhanced reviews:** {ai_count} / {total}")
     if commit_sha:
-        header.append(f"- **Source commit:** [`{commit_sha[:8]}`](https://github.com/{repo}/commit/{commit_sha})")
+        if repo:
+            header.append(
+                f"- **Source commit:** [`{commit_sha[:8]}`](https://github.com/{repo}/commit/{commit_sha})"
+            )
+        else:
+            header.append(f"- **Source commit:** `{commit_sha[:8]}`")
     header.append("")
     header.append("---")
     header.append("")
@@ -322,15 +342,8 @@ def collect_standards_gaps(reviews: Dict[str, Dict[str, Any]]) -> List[str]:
     """Collect de-duplicated high-signal standards gaps from review output."""
     seen: Set[str] = set()
     gaps: List[str] = []
-    fields = (
-        "action_items",
-        "frontmatter_issues",
-        "seo_improvements",
-        "technical_issues",
-        "accessibility_issues",
-    )
     for review in reviews.values():
-        for field in fields:
+        for field in REVIEW_GAP_FIELDS:
             for item in review.get(field) or []:
                 text = str(item).strip()
                 if not text:
@@ -351,8 +364,16 @@ def format_standards_issue_body(
     commit_sha: Optional[str],
 ) -> str:
     """Build the markdown body for the instructions/prompt hardening issue."""
-    instructions_url = INSTRUCTIONS_URL_TEMPLATE.format(repo=repo)
-    prompts_url = PROMPTS_URL_TEMPLATE.format(repo=repo)
+    instructions_link = (
+        f"[`{INSTRUCTIONS_PATH}`]({INSTRUCTIONS_URL_TEMPLATE.format(repo=repo)})"
+        if repo
+        else f"`{INSTRUCTIONS_PATH}`"
+    )
+    prompts_link = (
+        f"[`{PROMPTS_PATH}`]({PROMPTS_URL_TEMPLATE.format(repo=repo)})"
+        if repo
+        else f"`{PROMPTS_PATH}`"
+    )
     collections = sorted(
         {
             (review.get("collection") or UNKNOWN_COLLECTION)
@@ -368,9 +389,9 @@ def format_standards_issue_body(
         "so recurring AI content-review misses are prevented going forward.",
         "",
         "### Scope",
-        f"- Review rules in [`{INSTRUCTIONS_PATH}`]({instructions_url})",
+        f"- Review rules in {instructions_link}",
         (
-            f"- Update prompt(s) under [`{PROMPTS_PATH}`]({prompts_url}) "
+            f"- Update prompt(s) under {prompts_link} "
             "that guide AI content creation/review"
         ),
         "- Keep this work in its own PR (do not mix with collection content fixes)",
@@ -387,9 +408,12 @@ def format_standards_issue_body(
         f"- Files reviewed: {len(reviews)}",
     ]
     if commit_sha:
-        lines.append(
-            f"- Source commit: [`{commit_sha[:8]}`](https://github.com/{repo}/commit/{commit_sha})"
-        )
+        if repo:
+            lines.append(
+                f"- Source commit: [`{commit_sha[:8]}`](https://github.com/{repo}/commit/{commit_sha})"
+            )
+        else:
+            lines.append(f"- Source commit: `{commit_sha[:8]}`")
 
     lines.extend(["", "### Recurring gaps to codify", ""])
     if gaps:
@@ -486,7 +510,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         body = format_issue_body(
             collection=collection,
             reviews=items,
-            repo=args.repo or "OWNER/REPO",
+            repo=args.repo,
             commit_sha=args.commit_sha,
         )
         labels = DEFAULT_LABELS + [f"collection:{collection}"]
@@ -520,7 +544,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         standards_title = "🤖 AI Content Review — Instructions & prompts hardening"
         standards_body = format_standards_issue_body(
             reviews=reviews,
-            repo=args.repo or "OWNER/REPO",
+            repo=args.repo,
             commit_sha=args.commit_sha,
         )
         print("\n— Standards hardening follow-up —")
