@@ -1,7 +1,18 @@
 ---
-title: "Blog Posts (`pages/_posts/`)"
-description: "Conventions, validation tooling, and authoring standards for IT-Journey blog posts."
-lastmod: 2025-11-16
+title: "Blog Posts Collection and Standards"
+description: "Conventions, validation tooling, and authoring standards for IT-Journey blog posts including frontmatter, SEO, and link hygiene."
+date: 2025-11-16T00:00:00.000Z
+lastmod: 2026-05-22T00:00:00.000Z
+author: bamr87
+categories:
+  - Documentation
+tags:
+  - blog
+  - posts
+  - standards
+  - validation
+excerpt: "Reference guide covering directory layout, naming, frontmatter, validation, and link hygiene for IT-Journey blog posts."
+draft: false
 ---
 
 # Blog Posts — `pages/_posts/`

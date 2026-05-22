@@ -1,6 +1,6 @@
 ---
-title: "From Spreadsheets to Shell Scripts: A Finance Professional's Guide to the Terminal"
-description: Discover how finance and accounting professionals can leverage the terminal and bash scripting to automate tedious tasks, process massive datasets, and level up their careers — no CS degree required.
+title: "From Spreadsheets to Shell Scripts: Finance Terminal Guide"
+description: "Discover how finance professionals can leverage bash scripting to automate tasks, process datasets, and level up their careers."
 date: 2026-02-23T12:40:05.000Z
 preview: /images/post-preview-image.png
 tags:
@@ -19,6 +19,7 @@ sub-title: "Trading VLOOKUPs for grep: Why the command line is your new best fri
 excerpt: Learn why the terminal is the ultimate productivity hack for finance and accounting professionals — and how to start using it today.
 snippet: Automate your financial workflows with bash scripting — from month-end close to audit prep.
 author: IT-Journey Team
+draft: false
 keywords:
     primary:
         - bash

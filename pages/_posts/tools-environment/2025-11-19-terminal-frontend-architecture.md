@@ -1,6 +1,6 @@
 ---
-title: "Architecting the Glass Interface: Building Frontends for Terminal Scripts"
-description: Explore the architecture behind creating interactive, user-friendly frontends for shell scripts using tools like Gum, transforming raw CLI power into accessible tools.
+title: "The Glass Interface: Frontends for Terminal Scripts"
+description: "Explore building interactive frontends for shell scripts using tools like Gum, transforming raw CLI power into accessible tools."
 date: 2025-11-19T22:47:27.000Z
 preview: ""
 tags:
@@ -18,6 +18,7 @@ sub-title: Bridging the Gap Between Wizard and Machine
 excerpt: Learn how to layer a 'Glass Interface' over your raw shell scripts to improve usability, safety, and aesthetics without sacrificing power.
 snippet: Power without control is chaos. Give your scripts a face.
 author: Quest Master Copilot
+draft: false
 keywords:
     primary:
         - terminal-frontend
