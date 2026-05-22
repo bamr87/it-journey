@@ -25,12 +25,11 @@ quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
 quest_dependencies:
   required_quests:
-  - /quests/0001/terminal-fundamentals/
+  - /quests/0000/terminal-fundamentals/
   recommended_quests:
-  - /quests/0010/nerd-font-enchantment/
+  - /quests/0010/side-quests/nerd-font-enchantment/
   unlocks_quests:
   - /quests/0010/bash-scripting/
-  - /quests/0100/advanced-shell-scripting/
 quest_relationships:
   child_quests:
   - /quests/0010/nerd-font-enchantment/

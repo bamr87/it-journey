@@ -70,7 +70,7 @@ quest_dependencies:
   - /quests/0000/hello-noob/
   unlocks_quests:
   - /quests/0000/terminal-fundamentals/
-  - /quests/0000/bash-run/
+  - /quests/0000/side-quests/bash-run/
 quest_relationships:
   child_quests: []
   sequel_quests:

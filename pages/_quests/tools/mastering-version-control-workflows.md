@@ -62,8 +62,7 @@ quest_dependencies:
   recommended_quests:
   - /quests/0010/change-logs/
   - /quests/0010/action-triggers/
-  unlocks_quests:
-  - /quests/1110/cicd-pipeline-mastery/
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
   child_quests: []

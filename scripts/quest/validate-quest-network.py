@@ -85,9 +85,18 @@ class QuestValidator:
         def process_quest_file(md_file):
             """Process a single quest file and store its data"""
             try:
-                # Skip templates, READMEs, and certain meta files
-                if any(skip in str(md_file) for skip in ['templates/', 'README.md', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md', '/docs/']):
+                # Skip templates and non-quest meta files; include README.md files that are quest indexes
+                if any(skip in str(md_file) for skip in ['templates/', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md', '/docs/', 'NETWORK_REPORT.md', 'QUEST_ORGANIZATION_SUMMARY.md']):
                     return
+                # For README.md: only include those nested inside a quest subdirectory of a
+                # binary level directory (e.g. 0000/bashcrawl/README.md).
+                # Skip level-dir READMEs (0000/README.md) and section/root READMEs (tools/README.md).
+                if md_file.name == 'README.md':
+                    parent = md_file.parent
+                    grandparent = parent.parent
+                    # Allow only when: parent is NOT a level dir AND grandparent IS a level dir
+                    if re.match(r'^[01]{4}$', parent.name) or not re.match(r'^[01]{4}$', grandparent.name):
+                        return
                 
                 frontmatter, body = self.extract_frontmatter(md_file)
                 

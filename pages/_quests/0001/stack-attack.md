@@ -24,11 +24,7 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/terminal-fundamentals/
-  - /quests/0001/docker-fundamentals/
-  unlocks_quests:
-  - /quests/0010/django-api-design/
-  - /quests/0010/react-enterprise-ui/
-  - /quests/0010/celery-task-queues/
+  unlocks_quests: []
 quest_relationships:
   child_quests:
   - /quests/0010/django-rest-framework/

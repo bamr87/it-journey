@@ -50,11 +50,11 @@ rewards:
 quest_series: Level 000 - Foundation Skills
 quest_dependencies:
   unlocks_quests:
-  - /quests/0000/bash-run/
+  - /quests/0000/side-quests/bash-run/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/0000/bash-run/
+  - /quests/0000/side-quests/bash-run/
   parallel_quests: []
 learning_paths:
   primary_paths:
