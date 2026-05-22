@@ -32,7 +32,7 @@ quest_dependencies:
   - /quests/0010/bash-scripting/
 quest_relationships:
   child_quests:
-  - /quests/0010/nerd-font-enchantment/
+  - /quests/0010/side-quests/nerd-font-enchantment/
   parallel_quests:
   - /quests/0010/advanced-markdown/
   sequel_quests:

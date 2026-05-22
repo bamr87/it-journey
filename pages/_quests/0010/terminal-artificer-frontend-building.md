@@ -22,7 +22,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/0010/terminal-mastery/
+  parent_quest: /quests/0001/terminal-mastery/
   parallel_quests: []
 learning_paths:
   primary_paths:

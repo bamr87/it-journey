@@ -23,9 +23,15 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1010/automated-hyperlink-guardian/
+  - /quests/1010/elk-stack/
+  - /quests/1010/prometheus-grafana/
+  - /quests/1010/distributed-tracing/
+  - /quests/1010/alerting-systems/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1011/security-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development

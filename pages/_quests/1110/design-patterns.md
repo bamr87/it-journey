@@ -21,9 +21,17 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1110/system-design-interviews/
+  - /quests/1110/domain-driven-design/
+  - /quests/1110/microservices-architecture/
+  - /quests/1110/404-hunting-quest/
+  - /quests/1110/scaling-strategies/
+  - /quests/1110/api-gateway-patterns/
+  - /quests/1110/event-driven-design/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1111/technical-leadership/
 learning_paths:
   primary_paths:
   - Software Development

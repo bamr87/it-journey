@@ -27,11 +27,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   child_quests:
-  - /quests/0010/django-rest-framework/
-  - /quests/0010/react-typescript-setup/
   sequel_quests:
-  - /quests/0100/erp-module-development/
-  - /quests/0100/enterprise-devops/
 learning_paths:
   primary_paths:
   - Full-Stack Development

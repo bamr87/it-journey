@@ -91,6 +91,27 @@ validation_criteria:
 redirect_from:
 - /quests/forge-your-character/
 - /quests/level-0001-forge-your-character/
+quest_relationships:
+  parent_quest: null
+  child_quests:
+  - /quests/0001/kaizen-continuous-improvement/
+  - /quests/0001/side-quests/personal-site/
+  - /quests/0001/side-quests/barodybroject-stack-analysis/
+  - /quests/0001/github-pages-portal/
+  - /quests/0001/stating-the-stats/
+  - /quests/0001/docs-in-a-row/
+  - /quests/0001/liquid-templating/
+  - /quests/0001/jekyll-fundamentals/
+  - /quests/0001/stack-attack/
+  - /quests/0001/github-pages-basics/
+  - /quests/0001/side-quests/it-journey-stack-analysis/
+  - /quests/0001/git-init-testing/
+  - /quests/0001/yaml-configuration/
+  - /quests/codex/glossary/
+  - /quests/codex/quest-network-mapping-example/
+  - /quests/codex/world-map/
+  parallel_quests: []
+  sequel_quests: []
 ---
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity
 

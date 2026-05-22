@@ -33,6 +33,22 @@ draft: true
 redirect_from:
 - /quests/frontend-docker/
 - /quests/level-0100-frontend-docker/
+quest_relationships:
+  parent_quest: null
+  child_quests:
+  - /quests/0100/docker-compose-orchestration/
+  - /quests/0100/source-control-sorcery/
+  - /quests/0100/frontend-levels/
+  - /quests/0100/side-quests/jekyll-component-refactoring/
+  - /quests/0100/container-fundamentals/
+  - /quests/0100/frontend/
+  - /quests/0100/side-quests/profile-themes/
+  - /quests/0100/frontend-docker-lvl-000/
+  - /quests/0100/lvl-010-frontend-docker/
+  - /quests/0100/lvl-001-frontend-docker/
+  parallel_quests: []
+  sequel_quests:
+  - /quests/0101/cicd-fundamentals/
 ---
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.
 

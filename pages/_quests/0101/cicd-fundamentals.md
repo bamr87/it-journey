@@ -23,9 +23,20 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0101/side-quests/jekyll-quest-tracking/
+  - /quests/0101/artifact-management/
+  - /quests/0101/github-actions-basics/
+  - /quests/0101/testing-integration/
+  - /quests/0101/environment-management/
+  - /quests/0101/docker-mastery/
+  - /quests/0101/deployment-pipelines/
+  - /quests/0101/latex-cv-forging/
+  - /quests/0101/secrets-management/
+  - /quests/0101/workflow-optimization/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/0110/database-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development

@@ -23,9 +23,13 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1000/azure-ascension-jekyll-deployment/
+  - /quests/1000/infrastructure-as-code/
+  - /quests/1000/aws-essentials/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1001/kubernetes-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development

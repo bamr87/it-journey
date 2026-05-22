@@ -57,7 +57,14 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0011/seo-optimization/
+  - /quests/0011/custom-domains/
+  - /quests/0011/analytics-integration/
+  - /quests/0011/jekyll-plugins/
+  - /quests/0011/advanced-git-workflows/
+  - /quests/0011/prompt-crystal-vscode-copilot/
+  - /quests/0011/github-pages-hidden-gem/
   parallel_quests: []
   sequel_quests: []
 learning_paths:

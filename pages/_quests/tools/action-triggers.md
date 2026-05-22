@@ -46,6 +46,25 @@ attachments: ''
 sub-title: null
 redirect_from:
 - /quests/level-0010-action-triggers/
+quest_relationships:
+  parent_quest: null
+  child_quests:
+  - /quests/0010/revolutionizing-work-with-ai-automation/
+  - /quests/0010/django-and-git/
+  - /quests/0010/epic-quest-zer0-to-her0-cmstyle/
+  - /quests/0010/planting-seeds/
+  - /quests/0010/jekyll-mermaid-integration/
+  - /quests/0010/side-quests/terminal-artificer/
+  - /quests/0010/javascript-fundamentals/
+  - /quests/0010/recursive-realms-testing/
+  - /quests/0010/bootstrap-framework/
+  - /quests/0010/css-styling-basics/
+  - /quests/0010/oh-my-zsh-mastery/
+  - /quests/oh-my-zsh-terminal-enchantment/
+  - /quests/epic-digital-portfolio-fortress/
+  parallel_quests: []
+  sequel_quests:
+  - /quests/0011/prd-codex-mastery/
 ---
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.
 

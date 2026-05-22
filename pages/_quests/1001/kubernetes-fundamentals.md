@@ -21,9 +21,13 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1001/k8s-services-networking/
+  - /quests/1001/k8s-pods-workloads/
+  - /quests/1001/k8s-config-secrets/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1010/monitoring-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
