@@ -38,7 +38,7 @@ Level 0000 quests focus on:
 | [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | ✅ Complete |
 | [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
 | [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
-| [Bashcrawl Terminal Adventure](/quests/level-0000-bashcrawl/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
 | [bashrun and Beyond: Building an Advanced Terminal Game](/quests/level-0000-bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
 | [Begin your IT Journey](/quests/level-0000-begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
 | [Character Selection](/quests/level-0000-character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | ✅ Complete |
