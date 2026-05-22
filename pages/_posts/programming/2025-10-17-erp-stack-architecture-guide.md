@@ -2,7 +2,7 @@
 title: Comprehensive Guide to Modern ERP Stack Architecture
 description: Deep dive into enterprise resource planning system architecture, exploring frontend, backend, data layers, and infrastructure components
 date: 2025-11-02T14:54:24.000Z
-preview: /images/favicon_gpt_computer_retro.png
+preview: Complete architectural blueprint for building scalable ERP systems with modern technology stacks
 tags:
     - erp
     - architecture
@@ -157,7 +157,7 @@ graph TD
 
 ## Layer 1: Frontend Layer - The User Experience Gateway
 
-### Overview
+### Frontend Layer Overview
 
 The frontend layer represents the critical touchpoint between users and the ERP system. This layer transforms complex business data into intuitive interfaces that empower users to perform their daily tasks efficiently. Modern ERP frontends embrace responsive design principles, ensuring seamless experiences across desktop workstations, tablets, and mobile devices.
 
@@ -380,7 +380,7 @@ sequenceDiagram
 
 ## Layer 2: Backend Layer - The Business Logic Engine
 
-### Overview
+### Backend Layer Overview
 
 The backend layer orchestrates the core business logic of the ERP system. This layer validates data, enforces business rules, coordinates workflows, and serves as the intelligent intermediary between the user interface and data persistence.
 
@@ -1036,7 +1036,7 @@ graph TB
 
 ## Layer 3: Data Layer - The Persistence Foundation
 
-### Overview
+### Data Layer Overview
 
 The data layer provides durable storage for all business information, ensuring data integrity, consistency, and availability. Modern ERP systems employ sophisticated database architectures that balance performance, scalability, and reliability.
 
@@ -1362,7 +1362,7 @@ erDiagram
 
 ## Layer 4: Infrastructure & Security - The Foundation
 
-### Overview
+### Infrastructure & Security Overview
 
 The infrastructure layer provides the hosting, scaling, security, and operational capabilities that enable the ERP system to function reliably at enterprise scale.
 
@@ -1839,7 +1839,7 @@ graph TB
 
 ## Layer 5: Integration & External Services
 
-### Overview
+### Integration & External Services Overview
 
 Modern ERP systems operate within broader technology ecosystems, requiring seamless integration with external services, platforms, and devices.
 

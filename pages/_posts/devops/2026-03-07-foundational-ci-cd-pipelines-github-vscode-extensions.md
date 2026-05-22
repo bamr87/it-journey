@@ -30,7 +30,7 @@ keywords:
     - automated testing
     - node.js ci pipeline
 excerpt: Build a production-ready CI/CD pipeline for a VS Code extension using GitHub Actions — from lint and test to automated marketplace publishing.
-preview: /images/previews/foundational-ci-cd-pipelines-github-vscode-extensions.png
+preview: images/previews/foundational-ci-cd-pipelines-github-vscode-extensions.png
 snippet: Ship your VS Code extension with confidence using a two-workflow CI/CD pipeline on GitHub Actions.
 difficulty: 🟡 Intermediate
 estimated_reading_time: 15-20 minutes
@@ -142,7 +142,7 @@ If your project doesn't have these scripts yet, add them before proceeding. The 
 
 The CI workflow runs on every push to `main` and on every pull request. Its job: **confirm the code is clean, compiles, and passes tests**.
 
-### The Full Workflow File
+### Release Workflow File
 
 Create `.github/workflows/ci.yml`:
 
@@ -186,7 +186,7 @@ jobs:
 
 > **Note**: The original vs-sonic-pi repo uses Node 18 + 20 in its matrix. Node.js 18 reached end-of-life in April 2025, so for new projects you should use the current LTS versions (20 and 22). Always check the [Node.js release schedule](https://nodejs.org/en/about/previous-releases) and align your matrix with active LTS versions.
 
-### Breaking It Down
+### Release Workflow Breakdown
 
 #### Triggers
 
