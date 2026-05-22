@@ -3,13 +3,14 @@
 title: Level 001 - Journeyman Challenges
 description: Web technologies and advanced scripting quests for intermediate learners
 preview: images/previews/level-001-journeyman-challenges.png
-permalink: /quests/level-001/
+permalink: /quests/level-0001/
 lastmod: 2025-11-15T04:27:16.791Z
 
 level: 0001
 categories: quests
 date: 2025-11-15T16:34:42.000Z
-
+redirect_from:
+  - /quests/level-001/
 ---
 
 # Level 001: Journeyman Challenges
@@ -37,12 +38,12 @@ Level 001 quests focus on:
 | [Liquid Templating: Dynamic Content for Jekyll Sites](/quests/level-0001-liquid-templating/) | 🟢 Easy | 45-60 minutes | main_quest | 🔮 Placeholder |
 | [Terminal Mastery: Conquering the Command-Line Realm](/quests/level-0001-terminal-mastery/) | 🟢 Easy | 45-90 minutes | main_quest | ✅ Complete |
 | [YAML Configuration: Site Settings Mastery](/quests/level-0001-yaml-configuration/) | 🟢 Easy | 30-45 minutes | main_quest | 🔮 Placeholder |
-| [Technology Stack Analysis: Barodybroject](/quests/level-0001/barodybroject-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
-| [Stack Attack Analysis: IT-Journey](/quests/level-0001/it-journey-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
-| [Personal Site](/quests/level-0001/personal-site/) | 🟢 Easy | 45-60 minutes | side_quest | 🔮 Placeholder |
-| [Stack Attack: Deciphering the Technology Matrix](/quests/level-0001/stack-attack/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-001-github-pages-portal/) | 🟢 Easy | 2-4 hours | main_quest | ✅ Complete |
-| [Forging the Stats Portal: Data Analytics Quest](/quests/stating-the-stats/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
+| [Technology Stack Analysis: Barodybroject](/quests/level-0001-barodybroject-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
+| [Stack Attack Analysis: IT-Journey](/quests/level-0001-it-journey-stack-analysis/) | 🟢 Easy | 60-90 minutes | side_quest | 🔮 Placeholder |
+| [Personal Site](/quests/level-0001-personal-site/) | 🟢 Easy | 45-60 minutes | side_quest | 🔮 Placeholder |
+| [Stack Attack: Deciphering the Technology Matrix](/quests/level-0001-stack-attack/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-0001-github-pages-portal/) | 🟢 Easy | 2-4 hours | main_quest | ✅ Complete |
+| [Forging the Stats Portal: Data Analytics Quest](/quests/level-0001-stating-the-stats/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
 
 
 ### 🌐 Web Deployment & Hosting

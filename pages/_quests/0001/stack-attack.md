@@ -88,7 +88,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: AI-Enhanced
-permalink: /quests/level-0001/stack-attack/
+permalink: /quests/level-0001-stack-attack/
 categories:
 - Quests
 - Development
@@ -141,7 +141,7 @@ rewards:
   - Enterprise architecture pattern library
 related_quests:
   prerequisites:
-  - /quests/init_world/hello-noob/
+  - /quests/level-0000-hello-noob/
   - /quests/terminal-fundamentals/
   followups:
   - /quests/django-api-design/
@@ -150,6 +150,8 @@ related_quests:
   parallel:
   - /quests/docker-fundamentals/
   - /quests/postgresql-mastery/
+redirect_from:
+  - /quests/level-0001/stack-attack/
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 

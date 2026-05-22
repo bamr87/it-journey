@@ -3,7 +3,7 @@
 title: Level 0110 (6) - Database Mastery
 description: Master the arts of data storage, retrieval, and management through SQL sorcery and NoSQL adventures
 preview: images/previews/level-0110-database-mastery.png
-permalink: /quests/0110/
+permalink: /quests/level-0110/
 categories:
   - Quests
   - Level-0110
@@ -22,7 +22,8 @@ draft: false
 
 level: 0110
 date: 2025-12-20T20:02:51.000Z
-
+redirect_from:
+  - /quests/0110/
 ---
 
 # Level 0110 (6) - Database Mastery

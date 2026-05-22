@@ -49,7 +49,7 @@ prerequisites:
         - Local Jekyll development environment
 quest_dependencies:
     required_quests:
-        - /quests/forge-your-character/
+        - /quests/level-0001-forge-your-character/
     recommended_quests:
         - /quests/side-quest-stats-dashboard/
     unlocks_quests: []

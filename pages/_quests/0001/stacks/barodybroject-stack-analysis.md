@@ -25,7 +25,7 @@ level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/level-0001/barodybroject-stack-analysis/
+permalink: /quests/level-0001-barodybroject-stack-analysis/
 date: 2025-11-02T18:34:05.000Z
 primary_technology: stack-analysis
 skill_focus:
@@ -44,6 +44,8 @@ keywords:
 - docker
 - postgresql
 author: IT-Journey Team
+redirect_from:
+  - /quests/level-0001/barodybroject-stack-analysis/
 ---
 # Technology Stack Analysis: Barodybroject
 

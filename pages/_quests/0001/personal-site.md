@@ -15,7 +15,7 @@ skill_focus:
 - Quests
 - GitHub-Pages
 learning_style: hands-on
-permalink: /quests/level-0001/personal-site/
+permalink: /quests/level-0001-personal-site/
 categories:
 - Quests
 - GitHub-Pages
@@ -31,6 +31,8 @@ fmContentType: quest
 key: tutorial
 index: 8199
 subcategory: jekyll
+redirect_from:
+  - /quests/level-0001/personal-site/
 ---
 > Services/tools used for building personal site.
 

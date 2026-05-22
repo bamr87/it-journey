@@ -47,7 +47,7 @@ prerequisites:
         - An image hosting service or local image file
 quest_dependencies:
     required_quests:
-        - /quests/forge-your-character/
+        - /quests/level-0001-forge-your-character/
     recommended_quests: []
     unlocks_quests: []
 learning_paths:

@@ -18,8 +18,8 @@ quest_dependencies:
     required_quests: []
     recommended_quests: []
     unlocks_quests:
-        - /quests/bashcrawl-terminal-adventure/
-        - /quests/0010/bash-scripting/
+        - /quests/level-0000-bashcrawl/
+        - /quests/level-0010-bash-scripting/
 quest_relationships:
     parent_quest: null
     child_quests: []
@@ -374,7 +374,7 @@ Once you can use `pwd`, `ls`, `cd`, and `cat`, reinforce those skills in [Bashcr
 - `cd cellar` moves you deeper into the adventure
 - `F1` opens in-game documentation when you need a hint
 
-After your first online run, continue with the [Bashcrawl Terminal Adventure Quest](/quests/bashcrawl-terminal-adventure/) for the full quest checklist and then [Bash Scripting Mastery](/quests/0010/bash-scripting/) when you are ready to automate.
+After your first online run, continue with the [Bashcrawl Terminal Adventure Quest](/quests/level-0000-bashcrawl/) for the full quest checklist and then [Bash Scripting Mastery](/quests/level-0010-bash-scripting/) when you are ready to automate.
 
 ---
 

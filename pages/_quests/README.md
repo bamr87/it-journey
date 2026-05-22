@@ -75,7 +75,7 @@ graph LR;
 
 ### Choose Your Difficulty Level
 
-- **🌱 What is OS?** - [n00b Quest](/quests/init_world/hello-noob/)
+- **🌱 What is OS?** - [n00b Quest](/quests/level-0000-hello-noob/)
 - **🌐 I has Internet!?** - Easy Mode
 - **🍎 Big Macintosh** - Medium Challenge
 - **🪟 Damn Windows Update** - Hard Mode
@@ -345,7 +345,7 @@ Basic scripting, terminal navigation, and environment setup
 **Available Quests:**
 
 - [x] [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
-- [x] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Master Your Primary IDE*
+- [x] [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/) - *Master Your Primary IDE*
 - [x] [Bash Fundamentals](0000/bash-run.md) - *Learn the Terminal Incantations*
 - [x] [Bashcrawl Adventure](0000/bashcrawl/) - *Your First Automation Spell*
 - [x] [Begin Your IT Journey](0000/begin-your-it-journey.md) - *The Hero's Call*

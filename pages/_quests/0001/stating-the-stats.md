@@ -74,7 +74,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-permalink: /quests/stating-the-stats/
+permalink: /quests/level-0001-stating-the-stats/
 categories:
 - Quests
 - Development
@@ -113,6 +113,8 @@ rewards:
   unlocks_features:
   - Access to advanced analytics quest line
   - Data-driven site optimization capabilities
+redirect_from:
+  - /quests/stating-the-stats/
 ---
 *In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 

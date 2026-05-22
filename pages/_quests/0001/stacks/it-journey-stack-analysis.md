@@ -29,7 +29,7 @@ level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/level-0001/it-journey-stack-analysis/
+permalink: /quests/level-0001-it-journey-stack-analysis/
 primary_technology: stack-analysis
 skill_focus:
 - Stack Analysis
@@ -48,6 +48,8 @@ keywords:
 - python
 - ai-integration
 author: IT-Journey Team
+redirect_from:
+  - /quests/level-0001/it-journey-stack-analysis/
 ---
 # Stack Attack Analysis: IT-Journey
 

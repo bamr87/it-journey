@@ -76,11 +76,11 @@ graph TB
 
 | 🌍 Realm | 🎯 Difficulty | 📍 Starting Point | 📊 Progress |
 |-----------|---------------|-------------------|-------------|
-| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](/quests/hello-macos/) | [ ] |
-| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](/quests/hello-windows/) | [ ] |
-| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](/quests/hello-linux/linux-fundamentals/) | [ ] |
-| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](/quests/hello-cloud/) | [ ] |
-| 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](/quests/init_world/hello-noob/) | [ ] |
+| 🍎 **macOS Kingdom** | 🟢 Easy | [Hello Mac](/quests/level-0000-hello-macos/) | [ ] |
+| 🪟 **Windows Empire** | 🟡 Medium | [Hello Windows](/quests/level-0000-hello-windows/) | [ ] |
+| 🐧 **Linux Territory** | 🔴 Hard | [Hello Linux](/quests/level-0000-linux-fundamentals/) | [ ] |
+| ☁️ **Cloud Heavens** | ⚔️ Epic | [Hello Cloud](/quests/level-0000-hello-cloud/) | [ ] |
+| 🌱 **Universal n00b** | 🌟 Beginner | [Hello n00b](/quests/level-0000-hello-noob/) | [ ] |
 
 ### Character Class Selection
 
@@ -159,26 +159,26 @@ Terminal Mastery & Basic Setup
 
 **Available Quests:**
 
-- [ ] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Forge Your Ultimate Development Weapon* (50 XP)
+- [ ] [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/) - *Forge Your Ultimate Development Weapon* (50 XP)
 - [ ] [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - *Command Line Mastery* (40 XP)
-- [ ] [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) - *Browser Dungeon Practice* (40 XP)
-- [ ] [Bash-run Extension Lab](/quests/lvl_000/bash-run/) - *Terminal Game Scripting* (40 XP)
-- [ ] [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) - *The Hero's Call* (30 XP)
-- [ ] [Hello n00b](/quests/init_world/hello-noob/) - *First Steps* (20 XP)
+- [ ] [Bashcrawl Adventure](/quests/level-0000-bashcrawl/) - *Browser Dungeon Practice* (40 XP)
+- [ ] [Bash-run Extension Lab](/quests/level-0000-bash-run/) - *Terminal Game Scripting* (40 XP)
+- [ ] [Begin Your IT Journey](/quests/level-0000-begin-your-it-journey/) - *The Hero's Call* (30 XP)
+- [ ] [Hello n00b](/quests/level-0000-hello-noob/) - *First Steps* (20 XP)
 - [ ] [Git Basics](/quests/level-0000-git-basics/) - *Version Control Foundation* (40 XP)
 - [ ] [Markdown Mastery](/quests/level-0000-markdown-mastery/) - *Documentation Magic* (30 XP)
-- [ ] [Character Building](/quests/character-building/) - *Forge Your Identity* (30 XP)
-- [ ] [Character Selection](/quests/lvl_000/character-selection/) - *Choose Your Path* (20 XP)
-- [ ] [OS Selection](/quests/lvl_000/os-selection/) - *Pick Your Realm* (20 XP)
-- [ ] [IT Fundamentals](/quests/lvl_000/it-fundamentals/) - *Core Concepts* (40 XP)
+- [ ] [Character Building](/quests/level-0000-character-building/) - *Forge Your Identity* (30 XP)
+- [ ] [Character Selection](/quests/level-0000-character-selection/) - *Choose Your Path* (20 XP)
+- [ ] [OS Selection](/quests/level-0000-os-selection/) - *Pick Your Realm* (20 XP)
+- [ ] [IT Fundamentals](/quests/level-0000-it-fundamentals/) - *Core Concepts* (40 XP)
 
 **Platform-Specific Tracks:**
 
 | Platform | Quest | Status | XP |
 |----------|-------|--------|-----|
-| 🪟 Windows | [Hello Windows](/quests/hello-windows/) | [ ] | 50 |
+| 🪟 Windows | [Hello Windows](/quests/level-0000-hello-windows/) | [ ] | 50 |
 | 🍎 macOS | Hello macOS (Coming Soon) | 🔮 | 50 |
-| 🐧 Linux | [Hello Linux](/quests/hello-linux/linux-fundamentals/) | [ ] | 50 |
+| 🐧 Linux | [Hello Linux](/quests/level-0000-linux-fundamentals/) | [ ] | 50 |
 | ☁️ Cloud | Hello Cloud (Coming Soon) | 🔮 | 50 |
 
 ### Level 0001 - Web Fundamentals
@@ -197,17 +197,17 @@ Web Technologies & Programming Fundamentals
 
 **Available Quests:**
 
-- [ ] [Personal Site Creation](/quests/level-0001/personal-site/) - *Build Your Digital Castle* (60 XP)
-- [ ] [GitHub Pages Portal](/quests/level-001-github-pages-portal/) - *Deploy Your First Website* (50 XP)
+- [ ] [Personal Site Creation](/quests/level-0001-personal-site/) - *Build Your Digital Castle* (60 XP)
+- [ ] [GitHub Pages Portal](/quests/level-0001-github-pages-portal/) - *Deploy Your First Website* (50 XP)
 - [ ] [GitHub Pages Basics](/quests/level-0001-github-pages-basics/) - *Static Site Hosting* (40 XP)
-- [ ] [Docs in a Row](/quests/0001/docs-in-a-row/) - *Documentation Basics* (40 XP)
-- [ ] [Stack Attack](/quests/level-0001/stack-attack/) - *Understanding Tech Stacks* (30 XP)
+- [ ] [Docs in a Row](/quests/level-0001-docs-in-a-row/) - *Documentation Basics* (40 XP)
+- [ ] [Stack Attack](/quests/level-0001-stack-attack/) - *Understanding Tech Stacks* (30 XP)
 - [ ] [Jekyll Fundamentals](/quests/level-0001-jekyll-fundamentals/) - *Static Site Generation* (50 XP)
 - [ ] [Liquid Templating](/quests/level-0001-liquid-templating/) - *Dynamic Content Magic* (40 XP)
 - [ ] [YAML Configuration](/quests/level-0001-yaml-configuration/) - *Data Structuring* (30 XP)
 - [ ] [Git Workflow Mastery](/quests/level-0001-git-workflow-mastery/) - *Collaboration Patterns* (50 XP)
 - [ ] [Kaizen](/quests/level-0001-kaizen-continuous-improvement/) - *Continuous Improvement* (40 XP)
-- [ ] [Stating the Stats](/quests/stating-the-stats/) - *Data Tracking* (30 XP)
+- [ ] [Stating the Stats](/quests/level-0001-stating-the-stats/) - *Data Tracking* (30 XP)
 - [ ] [Terminal Mastery](/quests/level-0001-terminal-mastery/) - *Advanced Terminal Skills* (40 XP)
 - [ ] [Building Testing Git Init Script](/quests/level-0001-git-init-testing/) - *Automation Testing* (50 XP)
 
@@ -227,7 +227,7 @@ Advanced Terminal & Shell Scripting
 
 **Available Quests:**
 
-- [ ] [Bash Scripting Mastery](/quests/0010/bash-scripting/) - *Ancient Bash Incantations* (70 XP)
+- [ ] [Bash Scripting Mastery](/quests/level-0010-bash-scripting/) - *Ancient Bash Incantations* (70 XP)
 - [ ] [Oh My Zsh Enchantment](/quests/level-0010-oh-my-zsh-mastery/) - *Transform Your Terminal* (50 XP)
 - [ ] [Nerd Font Enchantment](/quests/side-quest-nerd-font-enchantment/) - *Visual Terminal Magic* (30 XP)
 - [ ] [Prompt Engineering](/quests/level-0010-prompt-engineering-mastery/) - *Forge the Prompt Crystal* (40 XP)
@@ -285,13 +285,13 @@ User Interface & Docker Fundamentals
 
 **Available Quests:**
 
-- [ ] [Frontend Fundamentals](/quests/frontend/) - *Digital Presentation Arts* (60 XP)
-- [ ] [Frontend Docker](/quests/frontend-docker/) - *Containerized UI Magic* (70 XP)
+- [ ] [Frontend Fundamentals](/quests/level-0100-frontend/) - *Digital Presentation Arts* (60 XP)
+- [ ] [Frontend Docker](/quests/level-0100-frontend-docker/) - *Containerized UI Magic* (70 XP)
 - [ ] [Sourcery Code Methods](/quests/level-0100-source-control-sorcery/) - *Advanced Coding Arts* (50 XP)
 - [ ] [Container Fundamentals](/quests/level-0100-container-fundamentals/) - *Docker Basics* (60 XP)
 - [ ] [Docker Compose Orchestration](/quests/level-0100-docker-compose-orchestration/) - *Multi-Container Magic* (70 XP)
 - [ ] [Frontend Levels](/quests/level-0100-frontend-levels/) - *Progressive Learning* (50 XP)
-- [ ] [Level 000 Frontend Docker](/quests/level-0100/lvl-000-frontend-docker/) - *Beginner Containers* (40 XP)
+- [ ] [Level 000 Frontend Docker](/quests/level-0100-frontend-docker-lvl-000/) - *Beginner Containers* (40 XP)
 - [ ] [Level 001 Frontend Docker](/quests/level-0100-lvl-001-frontend-docker/) - *Intermediate Containers* (50 XP)
 - [ ] [Level 010 Frontend Docker](/quests/level-0100-lvl-010-frontend-docker/) - *Advanced Containers* (60 XP)
 
@@ -695,27 +695,27 @@ graph TB
 
 Essential Starting Adventures
 
-- [ ] [VS Code Mastery Quest](/quests/vscode-mastery/) - *Forge Your Ultimate Development Weapon*
-- [ ] [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) - *The Hero's Call*
-- [ ] [Character Building](/quests/character-building/) - *Forge Your Identity*
-- [ ] [IT Fundamentals](/quests/lvl_000/it-fundamentals/) - *Ancient Arts Foundation*
-- [ ] [Character Selection](/quests/lvl_000/character-selection/) - *Choose Your Destiny*
-- [ ] [OS Selection](/quests/lvl_000/os-selection/) - *Pick Your Realm*
+- [ ] [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/) - *Forge Your Ultimate Development Weapon*
+- [ ] [Begin Your IT Journey](/quests/level-0000-begin-your-it-journey/) - *The Hero's Call*
+- [ ] [Character Building](/quests/level-0000-character-building/) - *Forge Your Identity*
+- [ ] [IT Fundamentals](/quests/level-0000-it-fundamentals/) - *Ancient Arts Foundation*
+- [ ] [Character Selection](/quests/level-0000-character-selection/) - *Choose Your Destiny*
+- [ ] [OS Selection](/quests/level-0000-os-selection/) - *Pick Your Realm*
 
 ### Quick Start Paths by Class
 
 Fast Track Adventures
 
 #### 💻 Developer Quick Start
-1. [Hello n00b](/quests/init_world/hello-noob/) - First Steps
-2. [VS Code Mastery](/quests/vscode-mastery/) - Tool Setup
-3. [Personal Site](/quests/level-0001/personal-site/) - First Project
+1. [Hello n00b](/quests/level-0000-hello-noob/) - First Steps
+2. [VS Code Mastery](/quests/level-0000-vscode-mastery/) - Tool Setup
+3. [Personal Site](/quests/level-0001-personal-site/) - First Project
 
 #### 🏗️ Engineer Quick Start
 1. [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - Terminal Basics
-2. [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) - Browser command practice
-3. [Bash-run Extension Lab](/quests/lvl_000/bash-run/) - Local Bash project extension
-4. [Bash Scripting](/quests/0010/bash-scripting/) - Automation
+2. [Bashcrawl Adventure](/quests/level-0000-bashcrawl/) - Browser command practice
+3. [Bash-run Extension Lab](/quests/level-0000-bash-run/) - Local Bash project extension
+4. [Bash Scripting](/quests/level-0010-bash-scripting/) - Automation
 
 #### 🛡️ Security Quick Start
 1. [Terminal Mastery](/quests/level-0000/) - Command Line Foundation
@@ -723,7 +723,7 @@ Fast Track Adventures
 3. Security Fundamentals (Level 1000) - Defense Training
 
 #### 📊 Data Science Quick Start
-1. [Python Basics](/quests/level-001/) - Programming Foundation
+1. [Python Basics](/quests/level-0001/) - Programming Foundation
 2. [AI Tools](/quests/level-0011-prompt-crystal-vscode-copilot/) - AI Assistance
 3. [EDGAR Quest](/quests/level-1100-conquer-king-edgar/) - Data Analysis
 
@@ -789,7 +789,7 @@ Universal Tools for All Classes
 
 #### Cross-Platform Essentials
 
-- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](/quests/vscode-mastery/)
+- [ ] **VS Code** - *Primary IDE Mastery* → [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/)
 - [ ] **Git** - *Version Control Magic*
 - [ ] **Docker** - *Container Summoning*
 - [ ] **Terminal** - *Command Line Mastery*
@@ -810,7 +810,7 @@ Proven Magical Combinations
 Epic Campaign Objectives
 
 1. [ ] **Build Your Digital Castle**
-   - [ ] Master your IDE with [VS Code Mastery Quest](/quests/vscode-mastery/)
+   - [ ] Master your IDE with [VS Code Mastery Quest](/quests/level-0000-vscode-mastery/)
    - [ ] Set up development environment
    - [ ] Configure essential tools
    - [ ] Establish workflow processes
@@ -990,10 +990,10 @@ graph TB
 
 Based on your current progress:
 
-1. **Start Here:** [Hello n00b](/quests/init_world/hello-noob/) - Begin your journey
-2. **Then:** [VS Code Mastery](/quests/vscode-mastery/) - Set up your tools
+1. **Start Here:** [Hello n00b](/quests/level-0000-hello-noob/) - Begin your journey
+2. **Then:** [VS Code Mastery](/quests/level-0000-vscode-mastery/) - Set up your tools
 3. **Next:** [Terminal Fundamentals](/quests/level-0000-terminal-fundamentals/) - Learn the terminal
-4. **Practice:** [Bashcrawl Adventure](/quests/bashcrawl-terminal-adventure/) - Reinforce commands through play
+4. **Practice:** [Bashcrawl Adventure](/quests/level-0000-bashcrawl/) - Reinforce commands through play
 5. **Goal:** Complete Apprentice Tier (Levels 0000-0011)
 
 ## Community & Support
@@ -1053,40 +1053,40 @@ _Last generated: 2026-01-15T20:39:18Z_
 
 | Quest | Type | Difficulty | Time | Series | Status |
 | --- | --- | --- | --- | --- | --- |
-| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/lvl_000/bash-run/) | side_quest | 🟡 Medium | 90-120 minutes | Level 000 - Foundation Skills | ✅ Complete |
-| [Begin your IT Journey](/quests/lvl_000/begin-your-it-journey/) | main_quest | 🟢 Easy | 30-45 minutes | Level 0000 Quest Line | 🔮 Draft |
-| [Character Building: Forge Your IT Identity and Development Environment](/quests/character-building/) | main_quest | 🟢 Easy | 45-60 minutes | Init World - Character Creation | ✅ Complete |
-| [Character Selection](/quests/lvl_000/character-selection/) | main_quest | 🟢 Easy | 20-30 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/level-0000-bash-run/) | side_quest | 🟡 Medium | 90-120 minutes | Level 000 - Foundation Skills | ✅ Complete |
+| [Begin your IT Journey](/quests/level-0000-begin-your-it-journey/) | main_quest | 🟢 Easy | 30-45 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [Character Building: Forge Your IT Identity and Development Environment](/quests/level-0000-character-building/) | main_quest | 🟢 Easy | 45-60 minutes | Init World - Character Creation | ✅ Complete |
+| [Character Selection](/quests/level-0000-character-selection/) | main_quest | 🟢 Easy | 20-30 minutes | Level 0000 Quest Line | 🔮 Draft |
 | [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | main_quest | 🟢 Easy | 60-75 minutes | Version Control Mastery | 🔮 Draft |
-| [Hello Cloud: First Steps into the Sky Realm](/quests/hello-cloud/) | main_quest | ⚔️ Epic | 120-180 minutes | Init World - Platform Mastery | ✅ Complete |
-| [Hello macOS: Setting Up the Apple Kingdom](/quests/hello-macos/) | main_quest | 🟢 Easy | 60-90 minutes | Init World - Platform Mastery | ✅ Complete |
-| [Hello n00b: Your First Steps into the IT Journey](/quests/init_world/hello-noob/) | main_quest | 🟢 Easy | 15-30 minutes | Character Creation Journey | ✅ Complete |
-| [Hello Windows: Mastering the Windows Development Environment](/quests/hello-windows/) | main_quest | 🟡 Medium | 90-120 minutes | Init World - Platform Mastery | ✅ Complete |
-| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | main_quest | 🟢 Easy | 60-90 minutes | Level 0000 Quest Line | 🔮 Draft |
-| [Linux Fundamentals](/quests/hello-linux/linux-fundamentals/) | main_quest | 🟡 Medium | 60-90 minutes | Level 0000 Quest Line | ✅ Complete |
+| [Hello Cloud: First Steps into the Sky Realm](/quests/level-0000-hello-cloud/) | main_quest | ⚔️ Epic | 120-180 minutes | Init World - Platform Mastery | ✅ Complete |
+| [Hello macOS: Setting Up the Apple Kingdom](/quests/level-0000-hello-macos/) | main_quest | 🟢 Easy | 60-90 minutes | Init World - Platform Mastery | ✅ Complete |
+| [Hello n00b: Your First Steps into the IT Journey](/quests/level-0000-hello-noob/) | main_quest | 🟢 Easy | 15-30 minutes | Character Creation Journey | ✅ Complete |
+| [Hello Windows: Mastering the Windows Development Environment](/quests/level-0000-hello-windows/) | main_quest | 🟡 Medium | 90-120 minutes | Init World - Platform Mastery | ✅ Complete |
+| [IT Fundamentals](/quests/level-0000-it-fundamentals/) | main_quest | 🟢 Easy | 60-90 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [Linux Fundamentals](/quests/level-0000-linux-fundamentals/) | main_quest | 🟡 Medium | 60-90 minutes | Level 0000 Quest Line | ✅ Complete |
 | [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | main_quest | 🟢 Easy | 30-45 minutes | Content Creation Basics | 🔮 Draft |
-| [OS Selection](/quests/lvl_000/os-selection/) | main_quest | 🟢 Easy | 30-45 minutes | Level 0000 Quest Line | 🔮 Draft |
+| [OS Selection](/quests/level-0000-os-selection/) | main_quest | 🟢 Easy | 30-45 minutes | Level 0000 Quest Line | 🔮 Draft |
 | [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | main_quest | 🟢 Easy | 45-60 minutes | Terminal Arts | 🔮 Draft |
-| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/vscode-mastery/) | main_quest | 🟢 Easy | 45 minutes | Level 0000 Quest Line | ✅ Complete |
+| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/level-0000-vscode-mastery/) | main_quest | 🟢 Easy | 45 minutes | Level 0000 Quest Line | ✅ Complete |
 
 ### Level 0001
 
 | Quest | Type | Difficulty | Time | Series | Status |
 | --- | --- | --- | --- | --- | --- |
 | [Building & Testing the Git Init Script: Headless, Interactive, Scaffolding](/quests/level-0001-git-init-testing/) | main_quest | 🟢 Easy | 45-75 minutes | Level 0001 Quest Line | ✅ Complete |
-| [Forging the Stats Portal: Data Analytics Quest](/quests/stating-the-stats/) | main_quest | 🟢 Easy | 60-90 minutes | Jekyll Site Building | ✅ Complete |
+| [Forging the Stats Portal: Data Analytics Quest](/quests/level-0001-stating-the-stats/) | main_quest | 🟢 Easy | 60-90 minutes | Jekyll Site Building | ✅ Complete |
 | [Git Workflow Mastery: Branches, Merging & Team Collaboration](/quests/level-0001-git-workflow-mastery/) | main_quest | 🟢 Easy | 60-75 minutes | Version Control Mastery | 🔮 Draft |
 | [GitHub Pages Basics: Deploy Free Websites in Minutes](/quests/level-0001-github-pages-basics/) | main_quest | 🟢 Easy | 60-75 minutes | Web Hosting Fundamentals | 🔮 Draft |
 | [Jekyll Fundamentals: Build Static Sites with Ruby](/quests/level-0001-jekyll-fundamentals/) | main_quest | 🟢 Easy | 75-90 minutes | Static Site Mastery | 🔮 Draft |
 | [Kaizen Quest: The Path of Continuous Improvement in Software Alchemy](/quests/level-0001-kaizen-continuous-improvement/) | main_quest | 🟡 Medium | 90-120 minutes | Process Mastery Path | ✅ Complete |
 | [Liquid Templating: Dynamic Content for Jekyll Sites](/quests/level-0001-liquid-templating/) | main_quest | 🟢 Easy | 45-60 minutes | Static Site Mastery | 🔮 Draft |
-| [Personal Site](/quests/level-0001/personal-site/) | side_quest | 🟢 Easy | 45-60 minutes | Level 0001 Quest Line | ✅ Complete |
-| [Stack Attack Analysis: IT-Journey](/quests/level-0001/it-journey-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
-| [Stack Attack: Deciphering the Technology Matrix](/quests/level-0001/stack-attack/) | main_quest | 🟡 Medium | 90-120 minutes | Repository Mastery Path | ✅ Complete |
-| [Technology Stack Analysis: Barodybroject](/quests/level-0001/barodybroject-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Personal Site](/quests/level-0001-personal-site/) | side_quest | 🟢 Easy | 45-60 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Stack Attack Analysis: IT-Journey](/quests/level-0001-it-journey-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
+| [Stack Attack: Deciphering the Technology Matrix](/quests/level-0001-stack-attack/) | main_quest | 🟡 Medium | 90-120 minutes | Repository Mastery Path | ✅ Complete |
+| [Technology Stack Analysis: Barodybroject](/quests/level-0001-barodybroject-stack-analysis/) | side_quest | 🟢 Easy | 60-90 minutes | Level 0001 Quest Line | ✅ Complete |
 | [Terminal Mastery: Conquering the Command-Line Realm](/quests/level-0001-terminal-mastery/) | main_quest | 🟢 Easy | 45-90 minutes | Foundation Path: Digital Literacy Mastery | ✅ Complete |
-| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-001-github-pages-portal/) | main_quest | 🟢 Easy | 2-4 hours | Web Development Fundamentals | ✅ Complete |
-| [The Knowledge Vault: Building an Automated Documentation Hub](/quests/0001/docs-in-a-row/) | main_quest | 🟡 Medium | 2-3 hours | Automation Mastery | ✅ Complete |
+| [The GitHub Pages Portal: Forging Your Digital Realm](/quests/level-0001-github-pages-portal/) | main_quest | 🟢 Easy | 2-4 hours | Web Development Fundamentals | ✅ Complete |
+| [The Knowledge Vault: Building an Automated Documentation Hub](/quests/level-0001-docs-in-a-row/) | main_quest | 🟡 Medium | 2-3 hours | Automation Mastery | ✅ Complete |
 | [YAML Configuration: Site Settings Mastery](/quests/level-0001-yaml-configuration/) | main_quest | 🟢 Easy | 30-45 minutes | Jekyll Foundations | 🔮 Draft |
 
 ### Level 0010
@@ -1102,7 +1102,7 @@ _Last generated: 2026-01-15T20:39:18Z_
 | [Forging the Prompt Crystal: Master AI Communication](/quests/level-0010-prompt-engineering-mastery/) | main_quest | 🟡 Medium | 90-120 minutes | AI Development Mastery | ✅ Complete |
 | [JavaScript Fundamentals: DOM Manipulation & Events](/quests/level-0010-javascript-fundamentals/) | main_quest | 🟡 Medium | 75-90 minutes | Web Development Fundamentals | 🔮 Draft |
 | [Mastering Branches and Pull Requests for Developers](/quests/level-0010-branches-and-pull-requests/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
-| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | main_quest | 🟡 Medium | 90-120 minutes | Foundation Binary Mastery Path | ✅ Complete |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/level-0010-bash-scripting/) | main_quest | 🟡 Medium | 90-120 minutes | Foundation Binary Mastery Path | ✅ Complete |
 | [Nerd Font Enchantment: Terminal Icon Mastery](/quests/side-quest-nerd-font-enchantment/) | side_quest | 🟢 Easy | 20-30 minutes | Terminal Mastery Path | ✅ Complete |
 | [planting seeds](/quests/level-0010-planting-seeds/) | main_quest | 🟢 Easy | 30-60 minutes | Tools Collection | ✅ Complete |
 | [Recursive Realms: Testing Infinite Loops with AI](/quests/level-0010-recursive-realms-testing/) | main_quest | 🟡 Medium | 90-120 minutes | Python Mastery Path | ✅ Complete |
@@ -1132,12 +1132,12 @@ _Last generated: 2026-01-15T20:39:18Z_
 | --- | --- | --- | --- | --- | --- |
 | [Docker Compose Orchestration: Build Multi-Container Applications](/quests/level-0100-docker-compose-orchestration/) | main_quest | 🟡 Medium | 75-90 minutes | Docker Mastery | 🔮 Draft |
 | [Docker Container Fundamentals: Master Isolation & Portability for DevOps](/quests/level-0100-container-fundamentals/) | main_quest | 🟡 Medium | 60-75 minutes | Docker Mastery | 🔮 Draft |
-| [Dockering Jekyll with Bootstrap 5](/quests/frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
-| [Frontend Docker - level 000](/quests/level-0100/lvl-000-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Dockering Jekyll with Bootstrap 5](/quests/level-0100-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker - level 000](/quests/level-0100-frontend-docker-lvl-000/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/level-0100-lvl-001-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/level-0100-lvl-010-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Frontend Forests Levels](/quests/level-0100-frontend-levels/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
-| [Frontend Forests: Building a Jekyll Site with Bootstrap](/quests/frontend/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Forests: Building a Jekyll Site with Bootstrap](/quests/level-0100-frontend/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Quest: Mastering the Ancient Arts of Source Control Sorcery](/quests/level-0100-source-control-sorcery/) | main_quest | 🟡 Medium | 120-180 minutes | Foundation Development Skills | ✅ Complete |
 
 ### Level 0101
@@ -1193,7 +1193,7 @@ _Last generated: 2026-01-15T20:39:18Z_
 
 | Quest | Type | Difficulty | Time | Series | Status |
 | --- | --- | --- | --- | --- | --- |
-| [Azure Ascension: Deploying Jekyll to the Cloud Kingdom](/quests/azure-ascension-jekyll-deployment/) | main_quest | 🔴 Hard | 90-120 minutes | Cloud Deployment Quests | ✅ Complete |
+| [Azure Ascension: Deploying Jekyll to the Cloud Kingdom](/quests/level-1000-azure-ascension-jekyll-deployment/) | main_quest | 🔴 Hard | 90-120 minutes | Cloud Deployment Quests | ✅ Complete |
 | [Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices](/quests/level-1001-k8s-config-secrets/) | main_quest | 🔴 Hard | 75-90 minutes | Kubernetes Mastery | 🔮 Draft |
 | [Kubernetes Fundamentals: Container Orchestration Essentials](/quests/level-1001-kubernetes-fundamentals/) | main_quest | 🔴 Hard | 120-150 minutes | Kubernetes Mastery | 🔮 Draft |
 | [Kubernetes Pods and Workloads: Deployments and StatefulSets](/quests/level-1001-k8s-pods-workloads/) | main_quest | 🔴 Hard | 90-120 minutes | Kubernetes Mastery | 🔮 Draft |

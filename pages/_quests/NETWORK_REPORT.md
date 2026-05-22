@@ -316,7 +316,7 @@ QUEST NETWORK VALIDATION REPORT
   • /Users/bamr87/github/it-journey/pages/_quests/0001/github-pages-basics.md: Related quest not found: /quests/level-0001-alternative-path/ (parallel_quests)
   • /Users/bamr87/github/it-journey/pages/_quests/0001/github-pages-basics.md: Related quest not found: /quests/level-0001-continuation/ (sequel_quests)
   • Orphaned quest (not referenced): /quests/level-0011-prd-codex-mastery/
-  • Orphaned quest (not referenced): /quests/azure-ascension-jekyll-deployment/
+  • Orphaned quest (not referenced): /quests/level-1000-azure-ascension-jekyll-deployment/
   • Orphaned quest (not referenced): /quests/level-0010-action-triggers/
   • Orphaned quest (not referenced): /quests/level-0010-change-logs/
   • Orphaned quest (not referenced): /quests/level-0010-revolutionizing-work-with-ai-automation/
@@ -371,10 +371,10 @@ QUEST NETWORK VALIDATION REPORT
   • Orphaned quest (not referenced): /quests/level-0100-frontend-levels/
   • Orphaned quest (not referenced): /quests/level-0100-lvl-001-frontend-docker/
   • Orphaned quest (not referenced): /quests/level-0100-lvl-010-frontend-docker/
-  • Orphaned quest (not referenced): /quests/level-0100/lvl-000-frontend-docker/
+  • Orphaned quest (not referenced): /quests/level-0100-frontend-docker-lvl-000/
   • Orphaned quest (not referenced): /quests/level-0100-container-fundamentals/
-  • Orphaned quest (not referenced): /quests/frontend/
-  • Orphaned quest (not referenced): /quests/frontend-docker/
+  • Orphaned quest (not referenced): /quests/level-0100-frontend/
+  • Orphaned quest (not referenced): /quests/level-0100-frontend-docker/
   • Orphaned quest (not referenced): /quests/level-0101-jekyll-quest-tracking/
   • Orphaned quest (not referenced): /quests/level-0101-artifact-management/
   • Orphaned quest (not referenced): /quests/level-0101-github-actions-basics/
@@ -431,20 +431,20 @@ QUEST NETWORK VALIDATION REPORT
   • Orphaned quest (not referenced): /quests/level-1111-technical-leadership/
   • Orphaned quest (not referenced): /quests/level-1111-architecture-reviews/
   • Orphaned quest (not referenced): /quests/level-0001-kaizen-continuous-improvement/
-  • Orphaned quest (not referenced): /quests/level-0001/personal-site/
+  • Orphaned quest (not referenced): /quests/level-0001-personal-site/
   • Orphaned quest (not referenced): /quests/level-0001-terminal-mastery/
-  • Orphaned quest (not referenced): /quests/level-0001/stack-attack/
+  • Orphaned quest (not referenced): /quests/level-0001-stack-attack/
   • Orphaned quest (not referenced): /quests/level-0001-git-workflow-mastery/
-  • Orphaned quest (not referenced): /quests/level-001-github-pages-portal/
-  • Orphaned quest (not referenced): /quests/stating-the-stats/
+  • Orphaned quest (not referenced): /quests/level-0001-github-pages-portal/
+  • Orphaned quest (not referenced): /quests/level-0001-stating-the-stats/
   • Orphaned quest (not referenced): ../README.mdlevel-0001/docs-in-a-row/
   • Orphaned quest (not referenced): /quests/level-0001-liquid-templating/
   • Orphaned quest (not referenced): /quests/level-0001-jekyll-fundamentals/
   • Orphaned quest (not referenced): /quests/level-0001-github-pages-basics/
   • Orphaned quest (not referenced): /quests/level-0001-git-init-testing/
   • Orphaned quest (not referenced): /quests/level-0001-yaml-configuration/
-  • Orphaned quest (not referenced): /quests/level-0001/barodybroject-stack-analysis/
-  • Orphaned quest (not referenced): /quests/level-0001/it-journey-stack-analysis/
+  • Orphaned quest (not referenced): /quests/level-0001-barodybroject-stack-analysis/
+  • Orphaned quest (not referenced): /quests/level-0001-it-journey-stack-analysis/
 
 ================================================================================
 [0;32m[SUCCESS][0m VALIDATION PASSED ✅

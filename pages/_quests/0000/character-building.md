@@ -20,17 +20,17 @@ quest_line: Foundation Path
 quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/level-0000-hello-noob/
   recommended_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/level-0000-begin-your-it-journey/
   unlocks_quests:
-  - /quests/lvl_000/character-selection/
-  - /quests/lvl_000/os-selection/
+  - /quests/level-0000-character-selection/
+  - /quests/level-0000-os-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/lvl_000/character-selection/
-  - /quests/lvl_000/os-selection/
+  - /quests/level-0000-character-selection/
+  - /quests/level-0000-os-selection/
   parallel_quests: []
 learning_paths:
   primary_paths:
@@ -88,7 +88,7 @@ rewards:
   unlocks_features:
   - Access to specialization-specific quests
   - Development environment configured
-permalink: /quests/character-building/
+permalink: /quests/level-0000-character-building/
 categories:
 - Quests
 - Init-World
@@ -120,6 +120,8 @@ related_quests:
 - character-selection.md - Choose Your IT Specialization
 - os-selection.md - Operating System Selection Guide
 slug: character-building
+redirect_from:
+  - /quests/character-building/
 ---
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 

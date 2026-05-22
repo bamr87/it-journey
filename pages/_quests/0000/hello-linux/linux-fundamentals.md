@@ -3,7 +3,7 @@ title: Linux Fundamentals
 description: Basic Linux concepts including navigation, scripting, security, and networking
 preview: images/previews/linux-fundamentals.png
 author: bamr87
-permalink: /quests/hello-linux/linux-fundamentals/
+permalink: /quests/level-0000-linux-fundamentals/
 level: '0000'
 quest_type: main_quest
 difficulty: 🟡 Medium
@@ -66,18 +66,18 @@ quest_arc: Platform Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/lvl_000/os-selection/
-  - /quests/init_world/hello-noob/
+  - /quests/level-0000-os-selection/
+  - /quests/level-0000-hello-noob/
   unlocks_quests:
   - /quests/level-0000-terminal-fundamentals/
-  - /quests/lvl_000/bash-run/
+  - /quests/level-0000-bash-run/
 quest_relationships:
   child_quests: []
   sequel_quests:
   - /quests/level-0000-terminal-fundamentals/
   parallel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
+  - /quests/level-0000-hello-windows/
+  - /quests/level-0000-hello-macos/
 learning_paths:
   primary_paths:
   - System Administration
@@ -98,6 +98,8 @@ keywords:
 - scripting
 - security
 - networking
+redirect_from:
+  - /quests/hello-linux/linux-fundamentals/
 ---
 # Linux Fundamentals
 

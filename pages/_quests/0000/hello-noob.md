@@ -77,7 +77,7 @@ quest_mapping:
   region: Entry
   realm: Community
   biome: GitHub
-permalink: /quests/init_world/hello-noob/
+permalink: /quests/level-0000-hello-noob/
 categories:
 - Quests
 - Init-World
@@ -111,6 +111,8 @@ rewards:
   - Access to all Foundation Path quests
   - Ability to participate in community discussions
   - Foundation for version control learning
+redirect_from:
+  - /quests/init_world/hello-noob/
 ---
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 

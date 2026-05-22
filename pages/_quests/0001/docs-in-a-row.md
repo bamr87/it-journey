@@ -32,7 +32,7 @@ validation_criteria:
 - Files organized into logical directory structure
 - YAML front matter correctly added to documents
 - Workflow runs on schedule and manual trigger
-permalink: /quests/0001/docs-in-a-row/
+permalink: /quests/level-0001-docs-in-a-row/
 categories:
 - Automation
 - DevOps
@@ -73,6 +73,8 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
+redirect_from:
+  - /quests/0001/docs-in-a-row/
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
 

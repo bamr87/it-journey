@@ -26,7 +26,7 @@ Level 0010 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/level-0010-bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
 | [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](../README.mdlevel-0010-oh-my-zsh-mastery/) | 🟡 Medium | 45-90 minutes | main_quest | 🔮 Placeholder |
 | [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](../README.mdlevel-0010/jekyll-mermaid-integration-quest/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
 | [Understanding Action Triggers in Depth](/quests/level-0010-action-triggers/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |

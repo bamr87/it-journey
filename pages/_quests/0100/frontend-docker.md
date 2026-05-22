@@ -21,7 +21,7 @@ quest_series: Level 0100 Quest Line
 skill_focus:
 - Foundations
 learning_style: hands-on
-permalink: /quests/frontend-docker/
+permalink: /quests/level-0100-frontend-docker/
 keywords:
 - dockering
 - jekyll
@@ -30,6 +30,8 @@ keywords:
 - '5'
 fmContentType: quest
 draft: true
+redirect_from:
+  - /quests/frontend-docker/
 ---
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.
 

@@ -30,7 +30,7 @@ quest_arc: "Act II: The Refactorer's Journey"
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/jekyll-component-refactoring/
+permalink: /quests/level-0100-jekyll-component-refactoring/
 sub_title: "Level 0100 (4) Quest: Side Quest - Jekyll Theme Refactoring"
 layout: journals
 categories:
@@ -59,7 +59,7 @@ prerequisites:
 quest_dependencies:
     required_quests: []
     recommended_quests:
-        - /quests/frontend-docker/
+        - /quests/level-0100-frontend-docker/
 rewards:
     skills:
         - Jekyll component architecture
@@ -76,8 +76,10 @@ validation_criteria:
     - All refactored components pass Jekyll build without errors
     - CSS is scoped to avoid leaking into unrelated elements
 related_quests:
-    - /quests/frontend-docker/
+    - /quests/level-0100-frontend-docker/
     - /quests/side-quest-profile-themes/
+redirect_from:
+  - /quests/jekyll-component-refactoring/
 ---
 
 *Greetings, brave artisan! Welcome to The Artisan's Forge — an epic journey that will transform you from a coder who patches things together into a true component architect. This quest guides you through the real-world process of turning hard-coded, inline Jekyll theme elements into modular, configurable, and reusable components.*
@@ -413,7 +415,7 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 ### What's Next?
 
 - **Side Quest:** [Profile Themes](/quests/side-quest-profile-themes/) — Apply your CSS scoping skills to build full theme variants
-- **Main Quest:** [Frontend Docker](/quests/frontend-docker/) — Containerise your development environment for cross-platform consistency
+- **Main Quest:** [Frontend Docker](/quests/level-0100-frontend-docker/) — Containerise your development environment for cross-platform consistency
 - **Challenge:** Find another inline element in your theme and refactor it using the same pattern
 
 ## 📚 Resources

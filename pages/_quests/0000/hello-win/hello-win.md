@@ -4,7 +4,7 @@ description: Set up a complete Windows development environment with WSL, PowerSh
   mastery, and essential development tools for the modern Windows developer
 preview: images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
-permalink: /quests/hello-windows/
+permalink: /quests/level-0000-hello-windows/
 keywords: &id001
 - windows
 - powershell
@@ -66,18 +66,18 @@ quest_arc: Platform Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
-  - /quests/lvl_000/os-selection/
+  - /quests/level-0000-hello-noob/
+  - /quests/level-0000-os-selection/
   unlocks_quests:
-  - /quests/vscode-mastery/
+  - /quests/level-0000-vscode-mastery/
   - /quests/level-0000-terminal-fundamentals/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/vscode-mastery/
+  - /quests/level-0000-vscode-mastery/
   parallel_quests:
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/level-0000-hello-macos/
+  - /quests/level-0000-linux-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -114,6 +114,8 @@ skill_focus:
 learning_style: hands-on
 fmContentType: quest
 draft: false
+redirect_from:
+  - /quests/hello-windows/
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 

@@ -49,11 +49,11 @@ rewards:
 quest_series: Level 000 - Foundation Skills
 quest_dependencies:
     unlocks_quests:
-        - /quests/lvl_000/bash-run/
+        - /quests/level-0000-bash-run/
 quest_relationships:
     child_quests: []
     sequel_quests:
-        - /quests/lvl_000/bash-run/
+        - /quests/level-0000-bash-run/
     parallel_quests: []
 learning_paths:
     primary_paths:
@@ -74,8 +74,10 @@ validation_criteria:
 sub-title: "Level 000 Quest: Terminal Dungeon Adventure"
 excerpt: Embark on an epic terminal adventure that teaches command line skills through interactive dungeon exploration and puzzle-solving
 snippet: Learn bash through adventure - where every command is a spell and every directory is a new realm to explore
-permalink: /quests/bashcrawl-terminal-adventure/
+permalink: /quests/level-0000-bashcrawl/
 lastmod: 2026-04-25T19:27:00.007Z
+redirect_from:
+  - /quests/bashcrawl-terminal-adventure/
 ---
 
 *Welcome, brave adventurer, to the mystical realm of Bashcrawl! This is no ordinary quest - it's an interactive terminal-based adventure that will transform you from a command line novice into a seasoned digital explorer.*
@@ -329,7 +331,7 @@ When you encounter challenges:
 
 **Follow-Up Quests**:
 - [Bash Run Quest](../bash-run.md) - Shell Scripting Fundamentals
-- [Bash Scripting Mastery](/quests/0010/bash-scripting/) - Automation and reusable scripts
+- [Bash Scripting Mastery](/quests/level-0010-bash-scripting/) - Automation and reusable scripts
 - [Hello n00b Quest](../hello-noob.md) - Continuing Your IT Journey
 - [VS Code Mastery](../vscode-mastery.md) - Development Environment Setup
 

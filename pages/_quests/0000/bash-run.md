@@ -17,8 +17,8 @@ quest_line: Foundation Path
 quest_arc: Terminal Mastery Arc
 quest_dependencies:
     required_quests:
-        - /quests/bashcrawl-terminal-adventure/
-        - /quests/hello-linux/linux-fundamentals/
+        - /quests/level-0000-bashcrawl/
+        - /quests/level-0000-linux-fundamentals/
     recommended_quests:
         - /quests/level-0000-terminal-fundamentals/
     unlocks_quests: []
@@ -56,7 +56,7 @@ validation_criteria:
     - Add a new room with a scroll and interactive treasure to bashcrawl
     - Create a hidden room mechanic using dot-prefixed directories
     - Demonstrate understanding of bashcrawl patterns (env vars, executables, shared functions)
-permalink: /quests/lvl_000/bash-run/
+permalink: /quests/level-0000-bash-run/
 categories:
     - Quests
     - Terminal
@@ -90,6 +90,8 @@ rewards:
 related_quests:
     - bashcrawl/README.md - Terminal Adventure RPG
     - hello-noob.md - Beginner's IT Journey
+redirect_from:
+  - /quests/lvl_000/bash-run/
 ---
 *Greetings, aspiring script mage! In this side quest, you will study how [bashcrawl](https://github.com/bamr87/bashcrawl) is built and then extend it with new rooms, encounters, and game mechanics. bashcrawl is an elegant dungeon crawler that uses the file system itself as the game world — directories are rooms, text files are scrolls, and executable scripts are interactive items. By the end, you will have forged your own additions to this adventure.*
 

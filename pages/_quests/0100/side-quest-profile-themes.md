@@ -52,7 +52,7 @@ prerequisites:
         - Browser DevTools for inspecting styles
 quest_dependencies:
     required_quests:
-        - /quests/forge-your-character/
+        - /quests/level-0001-forge-your-character/
     recommended_quests:
         - /quests/side-quest-stats-dashboard/
         - /quests/side-quest-contribution-calendar/

@@ -19,15 +19,15 @@ quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/level-0000-begin-your-it-journey/
   unlocks_quests:
-  - /quests/character-building/
+  - /quests/level-0000-character-building/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/character-building/
+  - /quests/level-0000-character-building/
   parallel_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/level-0000-it-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -81,7 +81,7 @@ rewards:
   unlocks_features:
   - Access to Character Building quest
   - Specialization-specific quest recommendations
-permalink: /quests/lvl_000/character-selection/
+permalink: /quests/level-0000-character-selection/
 categories: []
 tags:
 - character-selection
@@ -95,6 +95,8 @@ fmContentType: quest
 draft: false
 meta: null
 slug: character-selection
+redirect_from:
+  - /quests/lvl_000/character-selection/
 ---
 *Welcome to the Character Selection chamber, brave adventurer! Just as every RPG hero must choose their class before venturing into the world, you must select your IT specialization to focus your training and skills. Each character class offers a unique path through the digital realm.*
 

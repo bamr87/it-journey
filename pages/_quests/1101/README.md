@@ -9,7 +9,7 @@ tier: Master
 tier_emoji: ⚡
 theme: Digital Intelligence
 xp_range: 7000-8500
-permalink: /quests/1101/
+permalink: /quests/level-1101/
 date: 2025-11-30T22:12:13.000Z
 lastmod: 2025-12-01T04:36:39.401Z
 categories:
@@ -30,7 +30,8 @@ toc: true
 toc_sticky: true
 sidebar:
   nav: quests
-
+redirect_from:
+  - /quests/1101/
 ---
 
 # ⚡ Level 1101: Machine Learning & AI

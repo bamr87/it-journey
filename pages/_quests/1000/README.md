@@ -3,7 +3,7 @@
 title: Level 1000 (8) - Cloud Computing Fundamentals
 description: Ascend to the clouds and master the infrastructure that powers global-scale applications
 preview: images/previews/level-1000-cloud-computing.png
-permalink: /quests/1000/
+permalink: /quests/level-1000/
 categories:
   - Quests
   - Level-1000
@@ -23,7 +23,8 @@ draft: false
 
 level: 1000
 date: 2025-12-20T20:02:51.000Z
-
+redirect_from:
+  - /quests/1000/
 ---
 
 # Level 1000 (8) - Cloud Computing Fundamentals

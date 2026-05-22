@@ -27,7 +27,7 @@ quest_arc: "Act I: Arrival at the Guild"
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/forge-your-character/
+permalink: /quests/level-0001-forge-your-character/
 categories:
     - Quests
     - Community
@@ -85,6 +85,8 @@ validation_criteria:
         - Contributor profile page exists in pages/_about/contribute/contributors/
         - Character sheet renders on your profile page
         - Stats generator runs without errors for your username
+redirect_from:
+  - /quests/forge-your-character/
 ---
 
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity

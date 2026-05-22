@@ -16,7 +16,7 @@ skill_focus:
 - static-sites
 - azure
 learning_style: hands-on
-permalink: /quests/azure-ascension-jekyll-deployment/
+permalink: /quests/level-1000-azure-ascension-jekyll-deployment/
 categories:
 - Quests
 - Cloud
@@ -35,6 +35,8 @@ keywords:
 - ci-cd
 fmContentType: quest
 draft: false
+redirect_from:
+  - /quests/azure-ascension-jekyll-deployment/
 ---
 *Rise, cloud wanderer! This quest guides you through deploying the IT-Journey Jekyll site to Azure Static Web Apps, wiring up CI/CD, and verifying a clean production build.*
 

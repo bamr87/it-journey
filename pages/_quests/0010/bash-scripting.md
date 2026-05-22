@@ -29,7 +29,7 @@ validation_criteria:
     - Demonstrate automation of repetitive tasks
     - Build a personal script library for common operations
     - Troubleshoot and debug script errors independently
-permalink: /quests/0010/bash-scripting/
+permalink: /quests/level-0010-bash-scripting/
 categories:
     - Quests
     - Foundation
@@ -65,6 +65,8 @@ related_quests:
     - "Level 0011: File Management Mastery - Builds on this quest"
     - "Level 0100: Version Control with Git - Natural progression"
     - "Level 0101: Environment Setup Quest - Development workflow"
+redirect_from:
+  - /quests/0010/bash-scripting/
 ---
 *Greetings, aspiring Digital Sorcerer! Welcome to the realm of Bash Incantations - an epic journey that will transform you from a mere terminal user into a powerful automation wizard. In this quest, you'll master the ancient art of shell scripting, learning to weave commands into powerful spells that can automate tasks, manage systems, and bend the digital realm to your will.*
 

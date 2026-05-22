@@ -18,19 +18,19 @@ quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/level-0000-it-fundamentals/
   unlocks_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/level-0000-hello-windows/
+  - /quests/level-0000-hello-macos/
+  - /quests/level-0000-linux-fundamentals/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/level-0000-hello-windows/
+  - /quests/level-0000-hello-macos/
+  - /quests/level-0000-linux-fundamentals/
   parallel_quests:
-  - /quests/lvl_000/character-selection/
+  - /quests/level-0000-character-selection/
 learning_paths:
   primary_paths:
   - Software Development
@@ -78,7 +78,7 @@ rewards:
   unlocks_features:
   - Access to platform-specific Hello quests
   - Foundation for development environment setup
-permalink: /quests/lvl_000/os-selection/
+permalink: /quests/level-0000-os-selection/
 categories:
 - Quests
 - Init-World
@@ -93,6 +93,8 @@ keywords:
 fmContentType: quest
 draft: false
 slug: os-selection
+redirect_from:
+  - /quests/lvl_000/os-selection/
 ---
 *Welcome to the Realm Selection Chamber, brave adventurer! Choosing the right operating system is like selecting the right wand in the wizarding world — it's a deeply personal choice that shapes every spell you cast on your IT journey.*
 

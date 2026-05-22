@@ -20,7 +20,7 @@ quest_series: Level 0100 Quest Line
 skill_focus:
 - Foundations
 learning_style: hands-on
-permalink: /quests/frontend/
+permalink: /quests/level-0100-frontend/
 categories: []
 tags: []
 keywords:
@@ -36,6 +36,8 @@ attachments: ''
 sub-title: null
 slug: frontend-forests
 type: default
+redirect_from:
+  - /quests/frontend/
 ---
 Embarking on the quest to build a Jekyll site using Bootstrap for CSS and JavaScript in the Frontend Forests requires a clear map and a set of steps to guide you through the enchanted woods. Below is an outline designed to navigate you through this journey, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 

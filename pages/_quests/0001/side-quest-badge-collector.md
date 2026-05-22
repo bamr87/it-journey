@@ -48,7 +48,7 @@ prerequisites:
         - Text editor or IDE
 quest_dependencies:
     required_quests:
-        - /quests/forge-your-character/
+        - /quests/level-0001-forge-your-character/
     recommended_quests:
         - /quests/side-quest-avatar-forge/
     unlocks_quests: []

@@ -20,7 +20,7 @@ skill_focus:
 - jekyll
 - bootstrap
 learning_style: hands-on
-permalink: /quests/level-0100/lvl-000-frontend-docker/
+permalink: /quests/level-0100-frontend-docker-lvl-000/
 tags:
 - level-000
 - frontend
@@ -37,6 +37,8 @@ keywords:
 - bootstrap
 fmContentType: quest
 draft: true
+redirect_from:
+  - /quests/level-0100/lvl-000-frontend-docker/
 ---
 ## Intro
 

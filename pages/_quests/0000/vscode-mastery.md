@@ -20,14 +20,14 @@ quest_arc: Tool Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/level-0000-hello-noob/
   unlocks_quests: []
 quest_relationships:
   child_quests: []
   sequel_quests: []
   parallel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
+  - /quests/level-0000-hello-windows/
+  - /quests/level-0000-hello-macos/
 learning_paths:
   primary_paths:
   - Software Development
@@ -68,10 +68,11 @@ validation_criteria:
   knowledge_checks:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
-permalink: /quests/vscode-mastery/
+permalink: /quests/level-0000-vscode-mastery/
 redirect_from:
-- /quests/home/0000/vscode-mastery.md
-- /quests/home/0000/vscode-mastery/
+  - /quests/vscode-mastery/
+  - /quests/home/0000/vscode-mastery.md
+  - /quests/home/0000/vscode-mastery/
 categories:
 - Quests
 - Tools
