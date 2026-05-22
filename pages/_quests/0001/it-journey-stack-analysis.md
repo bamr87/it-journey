@@ -3,7 +3,7 @@ title: 'Stack Attack Analysis: IT-Journey'
 description: Comprehensive technology stack analysis and documentation for the IT-Journey
   educational platform
 preview: images/previews/stack-attack-analysis-it-journey.png
-date: 2025-11-02T14:45:16.000Z
+date: 2025-11-02 14:45:16+00:00
 repository: https://github.com/bamr87/it-journey
 repository_name: it-journey
 repository_owner: bamr87
@@ -29,7 +29,7 @@ level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/level-0001/it-journey-stack-analysis/
+permalink: /quests/0001/side-quests/it-journey-stack-analysis/
 primary_technology: stack-analysis
 skill_focus:
 - Stack Analysis
@@ -48,6 +48,10 @@ keywords:
 - python
 - ai-integration
 author: IT-Journey Team
+redirect_from:
+- /quests/level-0001/it-journey-stack-analysis/
+- /quests/level-0001-it-journey-stack-analysis/
+- /quests/side-quest-it-journey-stack-analysis/
 ---
 # Stack Attack Analysis: IT-Journey
 

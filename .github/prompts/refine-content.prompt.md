@@ -1,16 +1,8 @@
 ---
-name: "Refine Content"
+mode: agent
 description: "Refine quest content with implementation challenges, Mermaid diagrams, and validation criteria"
-version: "1.0.0"
-category: "content-creation"
-inputs:
-  - quest_outline
-  - article_content
-outputs:
-  - refined_quest
-  - mermaid_diagrams
 date: 2025-11-22T16:10:21.000Z
-
+lastmod: 2026-05-18T12:00:00.000Z
 ---
 
 # Refine Quest Content

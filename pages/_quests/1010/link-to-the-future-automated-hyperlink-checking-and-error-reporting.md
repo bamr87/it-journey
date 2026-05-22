@@ -8,7 +8,7 @@ excerpt: Build an intelligent hyperlink guardian that automatically tests, analy
 snippet: Even the most magnificent digital fortress is only as strong as its weakest
   link
 preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
-date: 2025-08-12T22:51:06.000Z
+date: 2025-08-12 22:51:06+00:00
 lastmod: 2025-08-16 04:06:22.859000+00:00
 level: '1010'
 difficulty: 🟡 Medium
@@ -31,7 +31,7 @@ validation_criteria:
 - Working link testing script with comprehensive coverage
 - AI analysis component that provides meaningful insights
 - Automated issue creation with detailed reports and recommendations
-permalink: /quests/level-1010-automated-hyperlink-guardian/
+permalink: /quests/1010/automated-hyperlink-guardian/
 categories:
 - Quests
 - DevOps-Automation
@@ -63,6 +63,8 @@ related_quests:
 - 'Level 1001 (9): Jekyll Site Deployment Automation'
 - 'Level 1011 (11): Advanced GitHub Actions Patterns'
 - 'Level 1100 (12): AI-Powered Code Review Systems'
+redirect_from:
+- /quests/level-1010-automated-hyperlink-guardian/
 ---
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 

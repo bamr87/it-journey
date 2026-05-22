@@ -7,7 +7,7 @@ excerpt: Transform from coding apprentice to git wizard by mastering the ancient
   of version control, branch sorcery, and collaborative development magic
 snippet: Every line of code tells a story - learn to chronicle your digital adventures
 preview: images/previews/quest-mastering-the-ancient-arts-of-source-control.png
-date: 2025-07-28T23:34:51.000Z
+date: 2025-07-28 23:34:51+00:00
 lastmod: 2025-07-29 05:15:57.715000+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -30,7 +30,7 @@ validation_criteria:
 - Create professional pull request with proper documentation
 - Implement automated GitHub Actions workflow
 - Execute complete feature development cycle using best practices
-permalink: /quests/level-0100-source-control-sorcery/
+permalink: /quests/0100/source-control-sorcery/
 categories:
 - Quests
 - Development-Fundamentals
@@ -62,6 +62,8 @@ related_quests:
 - Terminal Mastery Quest (Level 0001)
 - Development Environment Setup (Level 0101)
 - Code Quality Guardian Quest (Level 0110)
+redirect_from:
+- /quests/level-0100-source-control-sorcery/
 ---
 *In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 

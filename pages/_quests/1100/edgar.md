@@ -8,7 +8,7 @@ excerpt: Raid King EDGAR’s data castle and transform SEC filings into structur
   analyzable datasets.
 snippet: Breach the SEC Data Castle and turn EDGAR’s scrolls into insight.
 preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
-date: 2025-08-21T22:00:59.000Z
+date: 2025-08-21 22:00:59+00:00
 lastmod: 2025-08-20 04:37:39.870000+00:00
 level: '1100'
 difficulty: 🟡 Medium
@@ -32,7 +32,7 @@ validation_criteria:
 - Call frames API for one period and compare at least 2 entities
 - Respect rate limits (no 429s in final run) and implement basic backoff
 - Write a short readme summarizing findings
-permalink: /quests/level-1100-conquer-king-edgar/
+permalink: /quests/1100/conquer-king-edgar/
 categories:
 - Quests
 - Development
@@ -69,6 +69,8 @@ related_quests:
 - 'Level 1010: JSON Alchemy – From Chaos to Tables'
 - 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
 - 'Level 10001: Data Vis – Charts and Dashboards'
+redirect_from:
+- /quests/level-1100-conquer-king-edgar/
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 

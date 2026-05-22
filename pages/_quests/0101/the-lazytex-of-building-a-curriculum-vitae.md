@@ -9,7 +9,7 @@ excerpt: Craft a professional CV from the cv.tex template using VS Code + LaTeX�
 snippet: From blank page to battle-ready CV—forge, compile, and level up your professional
   codex.
 preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
-date: 2025-08-21T22:00:59.000Z
+date: 2025-08-21 22:00:59+00:00
 lastmod: 2025-08-17 21:36:08.855000+00:00
 level: '0101'
 difficulty: 🟡 Medium
@@ -31,7 +31,7 @@ validation_criteria:
 - VS Code compiles cv.tex to a PDF without errors
 - Contact, Education, Experience, Skills sections are populated
 - Clickable links for email, LinkedIn, and GitHub
-permalink: /quests/level-0101-latex-cv-forging/
+permalink: /quests/0101/latex-cv-forging/
 categories:
 - Quests
 - Development
@@ -63,6 +63,8 @@ related_quests:
 - 'Level 0011: Markdown to PDF Basics'
 - 'Level 0100: Git Fundamentals'
 - 'Level 1010: Portfolio Website Publishing'
+redirect_from:
+- /quests/level-0101-latex-cv-forging/
 ---
 ## 🧙‍♂️ Epic Introduction
 

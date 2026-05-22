@@ -6,7 +6,7 @@ description: Compare and master PyTorch and TensorFlow frameworks. Learn tensor 
   for production deep learning.
 excerpt: Master PyTorch and TensorFlow for production deep learning with GPU acceleration
 preview: images/previews/deep-learning-frameworks-descriptive-subtitle.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1101'
 difficulty: 🔴 Hard
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1101-deep-learning-frameworks/
+permalink: /quests/1101/deep-learning-frameworks/
 categories:
 - Quests
 - Data-Science
@@ -96,6 +96,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1101-deep-learning-frameworks/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

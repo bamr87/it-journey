@@ -7,7 +7,7 @@ description: Master Docker Compose for orchestrating multi-container application
 excerpt: Build and orchestrate multi-container applications with Docker Compose YAML
   configuration and networking
 preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:04:44+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0100-docker-compose-orchestration/
+permalink: /quests/0100/docker-compose-orchestration/
 categories:
 - Quests
 - DevOps
@@ -95,6 +95,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0100-docker-compose-orchestration/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

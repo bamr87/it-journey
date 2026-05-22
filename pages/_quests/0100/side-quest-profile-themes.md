@@ -1,86 +1,89 @@
 ---
-title: "Profile Themes: Unleashing the Style Sorcerer"
+title: 'Profile Themes: Unleashing the Style Sorcerer'
 author: Quest Master IT-Journey Team
 keywords:
-    - CSS themes
-    - custom styling
-    - profile customization
-    - advanced CSS
-description: Create custom CSS theme variants for the contributor character profile system
-excerpt: The Style Sorcerer teaches the art of visual enchantment — bend colors and shapes to your will.
+- CSS themes
+- custom styling
+- profile customization
+- advanced CSS
+description: Create custom CSS theme variants for the contributor character profile
+  system
+excerpt: The Style Sorcerer teaches the art of visual enchantment — bend colors and
+  shapes to your will.
 snippet: True mastery is not just function — it is form
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.263Z
-level: "0100"
+date: 2026-03-20 00:00:00+00:00
+lastmod: 2026-03-21 15:12:32.263000+00:00
+level: '0100'
 difficulty: 🔴 Hard
 estimated_time: 60-90 minutes
 primary_technology: css
 quest_type: side_quest
 skill_focus:
-    - frontend
+- frontend
 learning_style: project-based
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act III: The Master's Path"
+quest_arc: 'Act III: The Master''s Path'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-profile-themes/
+permalink: /quests/0100/side-quests/profile-themes/
 categories:
-    - Quests
-    - Community
-    - Frontend
-    - Advanced
+- Quests
+- Community
+- Frontend
+- Advanced
 tags:
-    - lvl-0100
-    - contributor
-    - css
-    - themes
-    - design-system
-    - custom-properties
-    - gamified-learning
-    - project-based
+- lvl-0100
+- contributor
+- css
+- themes
+- design-system
+- custom-properties
+- gamified-learning
+- project-based
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - Solid CSS knowledge (custom properties, media queries)
-        - Understanding of CSS architecture and specificity
-        - Familiarity with SCSS/preprocessors (helpful but not required)
-    system_requirements:
-        - Text editor or IDE
-        - Local Jekyll development environment
-        - Browser DevTools for inspecting styles
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - Solid CSS knowledge (custom properties, media queries)
+  - Understanding of CSS architecture and specificity
+  - Familiarity with SCSS/preprocessors (helpful but not required)
+  system_requirements:
+  - Text editor or IDE
+  - Local Jekyll development environment
+  - Browser DevTools for inspecting styles
 quest_dependencies:
-    required_quests:
-        - /quests/forge-your-character/
-    recommended_quests:
-        - /quests/side-quest-stats-dashboard/
-        - /quests/side-quest-contribution-calendar/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests:
+  - /quests/0010/side-quests/stats-dashboard/
+  - /quests/0010/side-quests/contribution-calendar/
+  unlocks_quests: []
 learning_paths:
-    primary_paths:
-        - Frontend Developer
-        - UI/UX Designer
-    character_classes:
-        - 🎵 Bard
-        - 🗡️ Rogue
-    skill_trees:
-        - Frontend Development
-        - CSS Architecture
-        - Design Systems
+  primary_paths:
+  - Frontend Developer
+  - UI/UX Designer
+  character_classes:
+  - 🎵 Bard
+  - 🗡️ Rogue
+  skill_trees:
+  - Frontend Development
+  - CSS Architecture
+  - Design Systems
 rewards:
-    badges:
-        - 🎭 Style Sorcerer — Created a custom profile theme
-    progression_points: 150
+  badges:
+  - 🎭 Style Sorcerer — Created a custom profile theme
+  progression_points: 150
 validation_criteria:
-    completion_requirements:
-        - New theme CSS file created with proper custom properties
-        - Theme can be activated via contributor data file
-        - Theme includes light and dark mode support
-        - Theme passes accessibility contrast checks (WCAG AA)
-        - Pull request submitted with theme preview screenshots
+  completion_requirements:
+  - New theme CSS file created with proper custom properties
+  - Theme can be activated via contributor data file
+  - Theme includes light and dark mode support
+  - Theme passes accessibility contrast checks (WCAG AA)
+  - Pull request submitted with theme preview screenshots
+redirect_from:
+- /quests/side-quest-profile-themes/
 ---
-
 # 🎭 Profile Themes: Unleashing the Style Sorcerer
 
 > *"Color is power. Layout is language. Together, they speak the soul of a creator."*

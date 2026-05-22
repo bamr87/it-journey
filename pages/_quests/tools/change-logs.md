@@ -5,7 +5,7 @@ description: Quest covering Change Logs.
 excerpt: null
 snippet: null
 preview: /svg/penrose-gpt-vs-human.png
-date: 2025-04-18T13:43:43.000Z
+date: 2025-04-18 13:43:43+00:00
 lastmod: 2025-04-18 19:43:43.286000+00:00
 level: '0010'
 difficulty: 🟢 Easy
@@ -16,7 +16,7 @@ quest_series: Tools Collection
 skill_focus:
 - Foundations
 learning_style: hands-on
-permalink: /quests/level-0010-change-logs/
+permalink: /quests/0010/change-logs/
 categories: []
 tags: []
 keywords:
@@ -26,6 +26,8 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+redirect_from:
+- /quests/level-0010-change-logs/
 ---
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**
 

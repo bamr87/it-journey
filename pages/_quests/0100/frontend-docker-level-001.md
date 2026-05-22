@@ -8,7 +8,7 @@ excerpt: Build a Docker-containerized Jekyll development environment with Docker
   and docker-compose configuration
 snippet: Containerize your Jekyll development workflow with Docker
 preview: images/previews/level-001-frontend-docker.png
-date: 2024-05-28T15:23:32.000Z
+date: 2024-05-28 15:23:32+00:00
 lastmod: 2024-05-28 04:24:59.730000+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -20,7 +20,7 @@ skill_focus:
 - Quests
 - DevOps
 learning_style: hands-on
-permalink: /quests/level-0100-lvl-001-frontend-docker/
+permalink: /quests/0100/lvl-001-frontend-docker/
 categories:
 - Quests
 - DevOps
@@ -40,6 +40,8 @@ attachments: ''
 sub-title: 'Level 001: Create Jekyll Site with Docker'
 slug: null
 type: default
+redirect_from:
+- /quests/level-0100-lvl-001-frontend-docker/
 ---
 You've successfully set up your Docker environment, and now you're ready to delve deeper into the mystical realms of Level 001. This level involves creating your Jekyll site with the power of Docker, setting the stage for our enchanted journey ahead.
 

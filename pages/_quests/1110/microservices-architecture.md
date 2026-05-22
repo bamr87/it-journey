@@ -6,7 +6,7 @@ description: Master microservices architecture patterns for building scalable, m
 excerpt: Design and implement microservices architectures for scalable distributed
   systems
 preview: images/previews/microservices-architecture-descriptive-subtitle.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1110'
 difficulty: ⚔️ Epic
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1110-microservices-architecture/
+permalink: /quests/1110/microservices-architecture/
 categories:
 - Quests
 - Architecture
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1110-microservices-architecture/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

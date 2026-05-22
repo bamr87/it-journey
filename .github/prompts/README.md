@@ -2,7 +2,7 @@
 title: ".github/prompts Directory"
 description: "AI agent prompt collection powering IT-Journey automation flows"
 permalink: /github/prompts/readme/
-lastmod: 2025-12-19T00:00:00.000Z
+lastmod: 2026-05-18T17:21:39.000Z
 layout: default
 date: 2025-11-15T16:34:42.000Z
 
@@ -16,12 +16,21 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 
 ```
 .github/prompts/
-├── bash-it.prompt.md       # Comprehensive bash script generation agent
-├── kaizen.prompt.md        # Continuous improvement / PDCA facilitator
-├── stackattack.prompt.md   # Repository stack analysis playbook
-├── write-quest.prompt.md   # Epic quest authoring protocol
-├── wtd.prompt.md           # What To Do - TODO task execution agent
-└── README.md               # This guide
+├── bash-it.prompt.md            # Comprehensive bash script generation agent
+├── commit-publish.prompt.md     # Commit, document, and publish to gh-pages
+├── draft-article.prompt.md      # Long-form article drafting agent
+├── expand-content.prompt.md     # Content expansion helper
+├── generate-frontmatter.prompt.md  # Validator-aligned frontmatter generator
+├── kaizen.prompt.md             # Continuous improvement / PDCA facilitator
+├── publish-prep.prompt.md       # Pre-publish content readiness checks
+├── refine-content.prompt.md     # Targeted content refinement
+├── retrospective.prompt.md      # Review AI conversations → update instructions/prompts incrementally
+├── stackattack.prompt.md        # Repository stack analysis playbook
+├── validate-content.prompt.md   # Content validation against repo standards
+├── workflow-summary.prompt.md   # Summarize a recent workflow/run
+├── write-quest.prompt.md        # Epic quest authoring protocol
+├── wtd.prompt.md                # What To Do - TODO task execution agent
+└── README.md                    # This guide
 ```
 
 ## Prompt Catalog
@@ -30,12 +39,16 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 | Prompt | Trigger | Primary Mission | Key Deliverables |
 |--------|---------|-----------------|------------------|
 | `bash-it.prompt.md` | `/bash-it` | Transform articles, quests, and documentation into production-ready bash scripts with comprehensive best practices | Complete bash script with error handling, logging, testing checklist, installation guide, and integration examples |
+| `generate-frontmatter.prompt.md` | `/generate-frontmatter` | Produce Jekyll frontmatter that passes `frontmatter-validation.yml` and `content-reviewer.py` on the first try | YAML block with self-counted title (30–60) and description (120–160) char lengths and all required fields |
 | `kaizen.prompt.md` | `/kaizen` | Lead incremental PDCA improvement sessions for code, process, or tooling | PLAN/DO/CHECK/ACT report with metrics, risks, next iteration |
+| `retrospective.prompt.md` | `/retrospective` | Review an AI agent conversation/PR thread and fold lessons back into `.github/copilot-instructions.md`, `.github/instructions/*`, and `.github/prompts/*` with citations | Lesson ledger, triage table, surgical diffs, `store_memory` calls, validation report |
 | `stackattack.prompt.md` | `/stackattack` | Analyze any repository's full technology stack with diagrams and recommendations | Stack overview, five-layer analysis, Mermaid diagrams, modernization roadmap saved under quests/stacks |
 | `write-quest.prompt.md` | `/write-quest` | Transform learning context into IT-Journey compliant epic quests | Complete quest front matter, chaptered narrative, multi-platform paths, diagrams, validation + Kaizen hooks |
 | `wtd.prompt.md` | `/wtd` | Work through TODO directory items using PDCA methodology | Task selection, execution, status updates, progress tracking, suggested commits |
 
 Note: `write-quest` references the canonical front matter template stored at `/.frontmatter/templates/quests.md`. Do not duplicate YAML fields in the prompt; the agent must read and use the template to produce consistent front matter for every quest.
+
+> **Closing the loop:** `/retrospective` is the meta-prompt that keeps every other prompt and instruction file honest. Run it after any session that produced a correction loop — the proposed edits land in this same `.github/` tree, so the prompt library is self-improving.
 
 ## Usage Workflow
 

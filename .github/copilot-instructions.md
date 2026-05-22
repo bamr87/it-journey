@@ -243,6 +243,45 @@ For comprehensive README maintenance guidelines, see:
 
 Front matter in IT-Journey serves as the bridge between educational intent and AI-assisted development. Each file includes structured metadata that enables AI agents to understand learning objectives, technical requirements, and pedagogical approaches for creating effective IT education content.
 
+### ⚠️ Validated Frontmatter Constraints (Authoritative)
+
+These rules are enforced by CI (`.github/workflows/frontmatter-validation.yml`) and the content reviewer (`scripts/validation/content-reviewer.py`, `scripts/validation/frontmatter-validator.py`). Violating them is the single largest source of rework PRs in this repository (see PRs #258, #263–#270 and AI Content Review issues #243–#260). **Always self-check against this table before returning any file under `pages/`.**
+
+| Field | Status | Rule | Source |
+|-------|--------|------|--------|
+| `title` | **required** | 30–60 characters | `scripts/validation/content-reviewer.py:128-133` |
+| `description` | **required** | 120–160 characters (optimal 120–155) | `scripts/validation/content-reviewer.py:137-142`, `scripts/validation/frontmatter-validator.py:138-142` |
+| `date` | **required** | ISO 8601 (`YYYY-MM-DDTHH:MM:SS.sssZ`) | `.github/workflows/frontmatter-validation.yml:128-130` |
+| `categories` | **required** | YAML list (not string) | `.github/workflows/frontmatter-validation.yml:73, 136-137` |
+| `tags` | **required** | YAML list (not string) | `.github/workflows/frontmatter-validation.yml:73, 133-134` |
+| `author` | **required** | String (default `bamr87` if unknown) | `.github/workflows/frontmatter-validation.yml:73, 75` |
+| `excerpt` | recommended | Short summary for previews/RSS | `.github/workflows/frontmatter-validation.yml:74` |
+| `lastmod` | recommended | ISO 8601, updated on every edit | `.github/workflows/frontmatter-validation.yml:74` |
+| `draft` | recommended | Boolean (`true`/`false`) | `.github/workflows/frontmatter-validation.yml:74` |
+| `keywords` | recommended | 5–10 search phrases (list) | Observed in PRs #265, #266 |
+
+**Required for quests and posts but not enforced by the global validator** (defined in `.github/instructions/quest.instructions.md` and `.github/instructions/posts.instructions.md`): `learning_objectives`, `target_audience`, `hierarchy`/`level`/`quest_id` (quests only), `difficulty`, `estimated_time`, `prerequisites`.
+
+### 🚫 Recurring Pitfalls to Avoid (lessons from recent PRs)
+
+These mistakes have each generated dedicated corrective PRs — do not repeat them:
+
+1. **README files in content collections are content too.** Every `README.md` under `pages/_quests/<level>/`, `pages/_docs/<topic>/`, etc. needs the full required frontmatter block. Empty or skeletal frontmatter triggers the AI Content Review workflow (see PRs #264, #266, #268).
+2. **Never gitignore `Gemfile.lock`.** It must be committed so CI resolves the same gem versions that `bundle-audit` was tested against (see PR #262 and the security alerts it resolved).
+3. **Do not strip `draft: false` when editing existing files** — the field is recommended and its absence drops the quality score (PR #263).
+4. **`tags` and `categories` are YAML lists, never bare strings.** `categories: blog` is invalid; use `categories: [blog]`.
+5. **Update `lastmod` on every meaningful edit** (this is enforced by the README-First / README-Last principle below).
+6. **Do not link from `pages/_docs/` to `../../docs/...`.** The repo's `docs/` directory is excluded from Jekyll processing (`_config.yml` exclude list); use a full GitHub URL instead.
+7. **Trim long descriptions by removing words, not by adding ellipses or cutting mid-sentence.** Aim for the 120–155 char optimal band.
+8. **Posts linked from non-post content need an explicit `permalink:` override.** The default in `_config.yml` is `/:collection/:year/:month/:day/:slug/`, so a quest or doc that links to `/posts/<slug>/` will 404 unless the post's frontmatter sets `permalink: /posts/<slug>/` (see PR #272, where 7 chronicle posts broke 15+ cross-references).
+9. **Never commit literal secret prefixes in code examples.** Strings starting with `ghp_`, `gho_`, `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`, etc. trigger reviewer + scanner alerts. Always show env-var or input-prompt placeholders instead: `"${env:GITHUB_TOKEN}"`, `"${input:openai-key}"` (see PR #272, `pages/_notes/gh-600/mcp-quickref.md`).
+10. **Nested fenced code blocks need a longer outer fence.** If an example contains an inner ```` ```bash ```` block, the outer fence must be at least one backtick longer (4 backticks) — otherwise the inner closing fence terminates the outer block and the rest renders as prose (see PR #272, `pages/_quests/1010/agentic-failure-root-cause-analysis.md`).
+11. **Quest permalinks must use the level-prefixed hierarchy.** Canonical formats: `main_quest` → `/quests/XXXX/slug/`; `side_quest` → `/quests/XXXX/side-quests/slug/`; level README → `/quests/XXXX/`. The old `level-XXXX-slug` and flat `side-quest-slug` patterns are invalid and will fail CI validation. When changing a permalink, preserve the old URL in `redirect_from:`. The validator regex is `^/quests/([01]{4}/side-quests/...|[01]{4}/...|[01]{4}|codex/...)/$` — see `.github/instructions/quest.instructions.md` §3.
+
+### 🔁 Closing the Loop
+
+When you discover a *new* recurring error during a session, invoke the `/retrospective` prompt (see `.github/prompts/retrospective.prompt.md`) to fold the lesson back into this document, the relevant `.instructions.md` file, or the responsible prompt — incrementally and with citations. The goal is an ever-evolving instruction set that learns from every conversation.
+
 ### Educational Front Matter Elements for IT-Journey
 
 - **Learning Objectives**: Clear statements of what IT skills and concepts the content teaches

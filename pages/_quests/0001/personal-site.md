@@ -3,7 +3,7 @@ title: Personal Site
 author: IT-Journey Team
 description: Services and tools used for building personal site with GitHub Pages
 preview: images/previews/personal-site.png
-date: 2023-12-03T01:47:51.000Z
+date: 2023-12-03 01:47:51+00:00
 lastmod: 2025-11-30 05:46:59.346000+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -15,7 +15,7 @@ skill_focus:
 - Quests
 - GitHub-Pages
 learning_style: hands-on
-permalink: /quests/level-0001/personal-site/
+permalink: /quests/0001/side-quests/personal-site/
 categories:
 - Quests
 - GitHub-Pages
@@ -31,6 +31,10 @@ fmContentType: quest
 key: tutorial
 index: 8199
 subcategory: jekyll
+redirect_from:
+- /quests/level-0001/personal-site/
+- /quests/level-0001-personal-site/
+- /quests/side-quest-personal-site/
 ---
 > Services/tools used for building personal site.
 

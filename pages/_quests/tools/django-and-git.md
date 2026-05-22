@@ -6,7 +6,7 @@ description: Learn how to efficiently set up Django with Git for seamless versio
 excerpt: null
 snippet: null
 preview: /images/git-django.png
-date: 2025-03-13T14:00:43.000Z
+date: 2025-03-13 14:00:43+00:00
 lastmod: 2025-03-12 15:24:58.701000+00:00
 level: '0010'
 difficulty: 🟢 Easy
@@ -21,7 +21,7 @@ skill_focus:
 - Python
 - Web Development
 learning_style: hands-on
-permalink: /quests/level-0010-django-and-git/
+permalink: /quests/0010/django-and-git/
 categories:
 - Development
 - Git
@@ -44,6 +44,8 @@ fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+redirect_from:
+- /quests/level-0010-django-and-git/
 ---
 **Setting Up a GitHub Repository for Your Django Project**
 

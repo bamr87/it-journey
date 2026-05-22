@@ -295,7 +295,7 @@ jobs:
                         if success:
                             fix_results.append(fix_result)
             
-            # Save results
+            # Save results (use default=str to handle datetime objects from YAML parsing)
             with open('/tmp/validation_results.json', 'w') as f:
                 json.dump({
                     'validation_results': validation_results,

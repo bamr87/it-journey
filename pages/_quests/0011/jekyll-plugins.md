@@ -7,7 +7,7 @@ description: Master Jekyll plugins to extend your site's functionality. Learn to
 excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps,
   and custom functionality
 preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:00:15+00:00
 level: '0011'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0011-jekyll-plugins/
+permalink: /quests/0011/jekyll-plugins/
 categories:
 - Quests
 - Backend
@@ -95,6 +95,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0011-jekyll-plugins/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
