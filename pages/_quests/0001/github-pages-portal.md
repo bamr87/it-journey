@@ -7,7 +7,7 @@ excerpt: Transform your code into a live website using GitHub Pages - the free h
   solution for developers.
 snippet: 'From repository to website: Deploy with GitHub Pages!'
 preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
-date: 2025-11-15T16:34:42.000Z
+date: 2025-11-15 16:34:42+00:00
 lastmod: 2025-11-15 04:27:16.771000+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -45,7 +45,7 @@ quest_mapping:
   binary_level: '001'
   decimal_level: 1
   skill_tree: Web Development
-permalink: /quests/level-001-github-pages-portal/
+permalink: /quests/0001/github-pages-portal/
 categories:
 - Quests
 - Web Deployment
@@ -78,6 +78,9 @@ related_quests:
 - 'Level 001: HTML Basics'
 - 'Level 001: CSS Fundamentals'
 - 'Level 010: Jekyll Mastery'
+redirect_from:
+- /quests/level-001-github-pages-portal/
+- /quests/level-0001-github-pages-portal/
 ---
 *Greetings, brave adventurer! Welcome to **The GitHub Pages Portal: Forging Your Digital Realm** - an epic journey that will transform your code into live web experiences. This quest will guide you through deploying your first website using GitHub Pages, the free hosting solution that turns your GitHub repositories into beautiful, accessible websites.*
 

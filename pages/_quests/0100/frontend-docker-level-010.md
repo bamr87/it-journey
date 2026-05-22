@@ -8,7 +8,7 @@ excerpt: Integrate Bootstrap 5 into your Docker-containerized Jekyll site for re
   professional styling
 snippet: Style your Jekyll site with Bootstrap 5 in a containerized environment
 preview: images/previews/level-010-frontend-docker.png
-date: 2024-05-28T15:23:32.000Z
+date: 2024-05-28 15:23:32+00:00
 lastmod: 2024-05-28 04:25:00.957000+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -20,7 +20,7 @@ skill_focus:
 - Quests
 - Frontend
 learning_style: hands-on
-permalink: /quests/level-0100-lvl-010-frontend-docker/
+permalink: /quests/0100/lvl-010-frontend-docker/
 categories:
 - Quests
 - Frontend
@@ -42,6 +42,8 @@ attachments: ''
 sub-title: 'Level 010: Adding Bootstrap 5 to Jekyll'
 slug: null
 type: default
+redirect_from:
+- /quests/level-0100-lvl-010-frontend-docker/
 ---
 Awesome! You’ve laid a strong foundation by setting up Docker and creating your Jekyll site. Now, let’s journey further into Level 010, where we will add Bootstrap 5 to enhance the visual appeal and functionality of your site.
 

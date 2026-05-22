@@ -5,7 +5,7 @@ description: Implement API rate limiting for traffic control and protection. Lea
   throttling algorithms, quota management, rate limit headers, and DDoS protection.
 excerpt: Protect your APIs with rate limiting, throttling, and traffic control strategies
 preview: images/previews/rate-limiting-api-traffic-control-descriptive-subt.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:08:59+00:00
 level: '0111'
 difficulty: 🔴 Hard
@@ -60,7 +60,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0111-rate-limiting/
+permalink: /quests/0111/rate-limiting/
 categories:
 - Quests
 - Backend
@@ -91,6 +91,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0111-rate-limiting/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

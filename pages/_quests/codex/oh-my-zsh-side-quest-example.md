@@ -2,7 +2,7 @@
 title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
 description: Transform your terminal into a powerful, visually enhanced development
   environment with Oh-My-Zsh themes and plugins
-date: 2025-10-04T15:25:33.000Z
+date: 2025-10-04 15:25:33+00:00
 preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
 - lvl-0010
@@ -44,7 +44,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/level-0001-terminal-navigation-mastery/
+  parent_quest: /quests/0001/terminal-navigation-mastery/
   parallel_quests: []
   sequel_quests: []
 learning_paths:

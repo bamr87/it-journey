@@ -5,7 +5,7 @@ description: Master essential software design patterns including creational, str
   and behavioral patterns. Learn when and how to apply patterns for maintainable code.
 excerpt: Master essential design patterns for writing maintainable, scalable software
 preview: images/previews/software-design-patterns-descriptive-subtitle.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1110'
 difficulty: 🔴 Hard
@@ -60,7 +60,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1110-design-patterns/
+permalink: /quests/1110/design-patterns/
 categories:
 - Quests
 - Architecture
@@ -91,6 +91,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1110-design-patterns/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

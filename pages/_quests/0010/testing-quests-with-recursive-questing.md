@@ -6,7 +6,7 @@ description: Master recursion, unit testing, and AI integration by navigating se
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
 snippet: Beware the stack overflow curse—always define your base cases!
 preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
-date: 2025-10-08T19:11:31.000Z
+date: 2025-10-08 19:11:31+00:00
 lastmod: 2025-10-09 00:09:00.916000+00:00
 level: '0010'
 difficulty: 🟡 Medium
@@ -41,7 +41,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Testing
-permalink: /quests/level-0010-recursive-realms-testing/
+permalink: /quests/0010/recursive-realms-testing/
 categories:
 - Quests
 - Development
@@ -71,6 +71,8 @@ rewards:
   skills_unlocked:
   - Advanced Recursion Patterns
   progression_points: 150
+redirect_from:
+- /quests/level-0010-recursive-realms-testing/
 ---
 *Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge powerful unit tests, and summon AI guardians that think in layered patterns.*
 

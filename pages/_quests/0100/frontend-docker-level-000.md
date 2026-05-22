@@ -4,7 +4,7 @@ author: GPT and bamr87
 description: Verify Docker installation on macOS for building Jekyll sites with Bootstrap
   5 in the Frontend Forests.
 preview: images/previews/frontend-docker-level-000.png
-date: 2024-05-28T15:23:32.000Z
+date: 2024-05-28 15:23:32+00:00
 lastmod: 2024-05-28 02:28:31.950000+00:00
 level: '0100'
 difficulty: 🟡 Medium
@@ -20,7 +20,7 @@ skill_focus:
 - jekyll
 - bootstrap
 learning_style: hands-on
-permalink: /quests/level-0100/lvl-000-frontend-docker/
+permalink: /quests/0100/frontend-docker-lvl-000/
 tags:
 - level-000
 - frontend
@@ -37,6 +37,9 @@ keywords:
 - bootstrap
 fmContentType: quest
 draft: true
+redirect_from:
+- /quests/level-0100/lvl-000-frontend-docker/
+- /quests/level-0100-frontend-docker-lvl-000/
 ---
 ## Intro
 

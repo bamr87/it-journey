@@ -6,7 +6,7 @@ description: Build robust deployment pipelines for production releases. Learn bl
 excerpt: Design and implement production-grade deployment pipelines with automated
   release strategies
 preview: images/previews/deployment-pipelines-production-release-automation.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:05:30+00:00
 level: '0101'
 difficulty: 🟡 Medium
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0101-deployment-pipelines/
+permalink: /quests/0101/deployment-pipelines/
 categories:
 - Quests
 - DevOps
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0101-deployment-pipelines/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

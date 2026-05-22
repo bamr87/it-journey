@@ -98,6 +98,8 @@ Observed from Makefile, scripts, Gemfile, and workflows:
   - Validate quests: `python3 test/quest-validator/quest_validator.py <file.md>` or `-d pages/_quests/`
   - Link checker: `python3 scripts/link-checker.py --scope website --timeout 30`
   - Test validator: `./test/quest-validator/test-validator.sh`
+  - Migrate quest permalinks (dry run): `python3 scripts/quest/migrate-permalinks.py --dry-run`
+  - Migrate quest permalinks (apply): `python3 scripts/quest/migrate-permalinks.py`
 
 - **Git and CI/CD** (from .github/workflows/):
   - Workflows include azure-jekyll-deploy.yml for deployment, link-checker.yml for validation.
@@ -114,7 +116,13 @@ Observed from Makefile, scripts, Gemfile, and workflows:
   - Use YAML front matter with required fields (e.g., title, description, date, keywords, categories).
   - Fantasy/RPG theme: Sections like "Quest Objectives" (🎯), use of emojis, gamified language.
   - Structure: Headers with emojis, code blocks with language spec (e.g., ```bash), checkboxes for tasks.
-  - Permalinks: /:collection/:categories/:name/ for quests/docs.
+  - **Quest permalinks** (canonical format — `pages/_quests/**`):
+    - `main_quest`  : `/quests/XXXX/slug/`  (e.g. `/quests/0001/git-workflow-mastery/`)
+    - `side_quest`  : `/quests/XXXX/side-quests/slug/`  (e.g. `/quests/0001/side-quests/avatar-forge/`)
+    - Level README : `/quests/XXXX/`
+    - codex        : `/quests/codex/slug/`
+    - Old URLs must be preserved in `redirect_from:` when changed.
+    - Full regex: `^/quests/([01]{4}/side-quests/[a-z0-9][a-z0-9-]*|[01]{4}/[a-z0-9][a-z0-9-]*|[01]{4}|codex/[a-z0-9][a-z0-9-]*)/$`
 
 - **Scripts** (Bash/Python):
   - Bash: Strict mode (set -euo pipefail), logging, error handling, usage functions.
@@ -169,6 +177,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
 
 - **README-First/Last Principle** (from copilot-instructions.md): Always read/update README.md before/after changes in any directory.
 - **Front Matter Standards**: Required fields like title, description, learning_objectives; use YAML lists for arrays.
+- **Quest Permalink Convention**: Use `/quests/XXXX/slug/` for main quests and `/quests/XXXX/side-quests/slug/` for side quests — never the old `level-XXXX-slug` or flat `side-quest-slug` format. The validator enforces this; see `.github/instructions/quest.instructions.md` §3.
 - **Excludes in _config.yml**: Many files/dirs excluded from Jekyll processing (e.g., scripts/, test/, *.sh).
 - **Gamification**: Quests must include fantasy elements, objectives, prerequisites; use Mermaid diagrams for maps.
 - **Multi-Platform**: Content often has sections for macOS/Windows/Linux/Cloud.

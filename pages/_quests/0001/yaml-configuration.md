@@ -6,7 +6,7 @@ description: Master YAML syntax and Jekyll configuration to customize site setti
 excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional
   static websites.
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-12-20 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -61,7 +61,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0001-yaml-configuration/
+permalink: /quests/0001/yaml-configuration/
 categories:
 - Quests
 - Frontend
@@ -92,6 +92,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0001-yaml-configuration/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

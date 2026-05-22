@@ -1,23 +1,24 @@
 ---
-title: "Bashcrawl Quest: Terminal Adventure RPG"
-description: An interactive terminal-based adventure game that teaches command line skills through exploration and puzzle-solving in a mystical dungeon
+title: 'Bashcrawl Quest: Terminal Adventure RPG'
+description: An interactive terminal-based adventure game that teaches command line
+  skills through exploration and puzzle-solving in a mystical dungeon
 preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
-date: 2025-07-05T12:12:17.000Z
+date: 2025-07-05 12:12:17+00:00
 categories:
-    - Quests
-    - Terminal
-    - Gaming
-    - Education
+- Quests
+- Terminal
+- Gaming
+- Education
 tags:
-    - bashcrawl
-    - terminal
-    - command-line
-    - adventure-game
-    - learning
-    - bash
-    - lvl-000
+- bashcrawl
+- terminal
+- command-line
+- adventure-game
+- learning
+- bash
+- lvl-000
 author: IT-Journey Team
-level: "0000"
+level: '0000'
 quest_type: main_quest
 quest_line: Foundation Path
 quest_arc: Terminal Mastery Arc
@@ -26,58 +27,62 @@ difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
 primary_technology: bash
 skill_focus:
-    - Terminal
-    - Navigation
-    - File System
+- Terminal
+- Navigation
+- File System
 learning_style: hands-on
 keywords:
-    - bash
-    - terminal
-    - command-line
-    - adventure-game
-    - learning
-    - lvl-000
+- bash
+- terminal
+- command-line
+- adventure-game
+- learning
+- lvl-000
 prerequisites:
-    - Basic computer navigation
-    - Terminal access (bash/zsh shell)
-    - Curiosity and sense of adventure
+- Basic computer navigation
+- Terminal access (bash/zsh shell)
+- Curiosity and sense of adventure
 rewards:
-    - 🏆 Terminal Explorer Badge
-    - ⚡ Command Line Navigation Skills
-    - 🛠️ File System Understanding
-    - 🎯 Shell Command Mastery
+- 🏆 Terminal Explorer Badge
+- ⚡ Command Line Navigation Skills
+- 🛠️ File System Understanding
+- 🎯 Shell Command Mastery
 quest_series: Level 000 - Foundation Skills
 quest_dependencies:
-    unlocks_quests:
-        - /quests/lvl_000/bash-run/
+  unlocks_quests:
+  - /quests/0000/side-quests/bash-run/
 quest_relationships:
-    child_quests: []
-    sequel_quests:
-        - /quests/lvl_000/bash-run/
-    parallel_quests: []
+  child_quests: []
+  sequel_quests:
+  - /quests/0000/side-quests/bash-run/
+  parallel_quests: []
 learning_paths:
-    primary_paths:
-        - System Administration
-        - Software Development
-    character_classes:
-        - 💻 Software Developer
-        - 🏗️ System Engineer
-    skill_trees:
-        - Terminal Mastery
+  primary_paths:
+  - System Administration
+  - Software Development
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
 related_quests:
-    - bash-run.md - Shell Scripting Fundamentals
-    - hello-noob.md - Beginner's IT Journey Start
+- bash-run.md - Shell Scripting Fundamentals
+- hello-noob.md - Beginner's IT Journey Start
 validation_criteria:
-    - Complete the dungeon exploration
-    - Demonstrate understanding of file navigation commands
-    - Successfully solve terminal-based puzzles
-sub-title: "Level 000 Quest: Terminal Dungeon Adventure"
-excerpt: Embark on an epic terminal adventure that teaches command line skills through interactive dungeon exploration and puzzle-solving
-snippet: Learn bash through adventure - where every command is a spell and every directory is a new realm to explore
-permalink: /quests/bashcrawl-terminal-adventure/
-lastmod: 2026-04-25T19:27:00.007Z
+- Complete the dungeon exploration
+- Demonstrate understanding of file navigation commands
+- Successfully solve terminal-based puzzles
+sub-title: 'Level 000 Quest: Terminal Dungeon Adventure'
+excerpt: Embark on an epic terminal adventure that teaches command line skills through
+  interactive dungeon exploration and puzzle-solving
+snippet: Learn bash through adventure - where every command is a spell and every directory
+  is a new realm to explore
+permalink: /quests/0000/bashcrawl/
+lastmod: 2026-04-25 19:27:00.007000+00:00
+redirect_from:
+- /quests/bashcrawl-terminal-adventure/
+- /quests/level-0000-bashcrawl/
 ---
-
 *Welcome, brave adventurer, to the mystical realm of Bashcrawl! This is no ordinary quest - it's an interactive terminal-based adventure that will transform you from a command line novice into a seasoned digital explorer.*
 
 *In this epic journey, you'll navigate through mysterious dungeons, solve ancient puzzles, and discover hidden treasures, all while mastering the fundamental commands that every IT hero must know.*
@@ -329,7 +334,7 @@ When you encounter challenges:
 
 **Follow-Up Quests**:
 - [Bash Run Quest](../bash-run.md) - Shell Scripting Fundamentals
-- [Bash Scripting Mastery](/quests/0010/bash-scripting/) - Automation and reusable scripts
+- [Bash Scripting Mastery](/quests/level-0010-bash-scripting/) - Automation and reusable scripts
 - [Hello n00b Quest](../hello-noob.md) - Continuing Your IT Journey
 - [VS Code Mastery](../vscode-mastery.md) - Development Environment Setup
 

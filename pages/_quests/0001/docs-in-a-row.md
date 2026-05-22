@@ -8,7 +8,7 @@ excerpt: Build a powerful automation system that collects, organizes, and mainta
   Python
 snippet: Transform scattered docs into organized knowledge with automation magic
 preview: images/previews/the-knowledge-vault-building-an-automated-document.png
-date: 2025-10-04T15:52:00.000Z
+date: 2025-10-04 15:52:00+00:00
 lastmod: 2025-10-03 21:57:41.816000+00:00
 level: '0001'
 difficulty: 🟡 Medium
@@ -73,6 +73,9 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
+redirect_from:
+- /quests/0001/docs-in-a-row/
+- /quests/level-0001-docs-in-a-row/
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
 

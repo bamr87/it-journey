@@ -5,7 +5,7 @@ description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
 snippet: null
 preview: images/previews/it-fundamentals.png
-date: 2023-11-25T14:12:43.000Z
+date: 2023-11-25 14:12:43+00:00
 lastmod: 2025-11-29 21:40:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -18,15 +18,15 @@ quest_arc: Digital Awakening Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests:
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/os-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/os-selection/
   parallel_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/0000/begin-your-it-journey/
 learning_paths:
   primary_paths:
   - Software Development
@@ -78,7 +78,7 @@ rewards:
   unlocks_features:
   - Access to OS Selection quest
   - Foundation for all technical quests
-permalink: /quests/lvl_000/it-fundamentals/
+permalink: /quests/0000/it-fundamentals/
 categories: []
 tags:
 - fundamentals
@@ -92,6 +92,9 @@ fmContentType: quest
 draft: false
 meta: null
 slug: fundamentals
+redirect_from:
+- /quests/lvl_000/it-fundamentals/
+- /quests/level-0000-it-fundamentals/
 ---
 *Welcome, aspiring IT adventurer! Before you can cast powerful spells or build grand digital fortresses, you must understand the fundamental building blocks of the IT realm. This quest covers the essential skills every technology professional needs — from organizing files to understanding networks and cloud computing.*
 

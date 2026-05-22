@@ -7,7 +7,7 @@ description: Level up your Git skills with advanced techniques. Learn interactiv
 excerpt: Master advanced Git operations including rebase, cherry-pick, and stash for
   professional version control
 preview: images/previews/advanced-git-workflows-rebase-cherry-pick-quest-ti.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 04:59:58+00:00
 level: '0011'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0011-advanced-git-workflows/
+permalink: /quests/0011/advanced-git-workflows/
 categories:
 - Quests
 - DevOps
@@ -95,6 +95,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0011-advanced-git-workflows/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

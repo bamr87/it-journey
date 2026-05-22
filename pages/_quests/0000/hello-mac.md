@@ -1,8 +1,9 @@
 ---
 title: 'Hello macOS: Setting Up the Apple Kingdom'
-description: Set up a macOS development environment with Homebrew, Xcode Command Line Tools, and a modern terminal workflow.
+description: Set up a macOS development environment with Homebrew, Xcode Command Line
+  Tools, and a modern terminal workflow.
 author: IT-Journey Team
-date: 2026-01-14T22:23:32.000Z
+date: 2026-01-14 22:23:32+00:00
 lastmod: 2026-01-14
 level: '0000'
 difficulty: 🟢 Easy
@@ -15,18 +16,18 @@ quest_arc: Platform Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/hello-noob/
+  - /quests/0000/os-selection/
   unlocks_quests:
-  - /quests/vscode-mastery/
-  - /quests/level-0000-terminal-fundamentals/
+  - /quests/0000/vscode-mastery/
+  - /quests/0000/terminal-fundamentals/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/vscode-mastery/
+  - /quests/0000/vscode-mastery/
   parallel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-windows/
+  - /quests/0000/linux-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -45,7 +46,7 @@ skill_focus:
 - package-management
 - developer-tools
 learning_style: hands-on
-permalink: /quests/hello-macos/
+permalink: /quests/0000/hello-macos/
 categories:
 - Quests
 - Init-World
@@ -98,6 +99,9 @@ rewards:
   - Access to VS Code Mastery quest
   - Professional macOS development workflow
 draft: false
+redirect_from:
+- /quests/hello-macos/
+- /quests/level-0000-hello-macos/
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
 

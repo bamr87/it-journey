@@ -7,7 +7,7 @@ excerpt: Transform from novice prompter to master prompt engineer, wielding the 
   to communicate with AI systems through precisely crafted instructions
 snippet: Words become code, instructions become reality - the way of the Prompt Alchemist
 preview: images/previews/forging-the-prompt-crystal-master-ai-communication.png
-date: 2025-11-02T18:34:05.000Z
+date: 2025-11-02 18:34:05+00:00
 lastmod: 2025-11-03 01:10:01.141000+00:00
 level: '0010'
 difficulty: 🟡 Medium
@@ -68,7 +68,7 @@ quest_mapping:
   region: Foundation
   realm: AI-Enhanced
   biome: Communication
-permalink: /quests/level-0010-prompt-engineering-mastery/
+permalink: /quests/0010/prompt-engineering-mastery/
 categories:
 - Quests
 - AI-Development
@@ -101,6 +101,8 @@ rewards:
   unlocks_features:
   - Access to advanced AI agent development quests
   - Ability to create custom AI-powered tools
+redirect_from:
+- /quests/level-0010-prompt-engineering-mastery/
 ---
 *In the vast Digital Nexus, where streams of data flow like rivers of light and artificial minds process infinite thoughts, there exists a sacred art known only to the most skilled technologists: **Prompt Engineering**. This mystical discipline allows mortals to communicate with the great Language Spirits—vast AI entities of unimaginable knowledge—and bend their power to solve problems, create content, and transform ideas into reality.*
 

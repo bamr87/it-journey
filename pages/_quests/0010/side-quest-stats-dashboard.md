@@ -1,81 +1,83 @@
 ---
-title: "Stats Dashboard: Enhancing Your Data Visualization"
+title: 'Stats Dashboard: Enhancing Your Data Visualization'
 author: Quest Master IT-Journey Team
 keywords:
-    - stats dashboard
-    - charts
-    - data visualization
-    - JavaScript
-description: Extend the contributor stats panel with charts, graphs, and enhanced data visualizations
+- stats dashboard
+- charts
+- data visualization
+- JavaScript
+description: Extend the contributor stats panel with charts, graphs, and enhanced
+  data visualizations
 excerpt: The Data Sage reveals deeper patterns in your contribution history.
 snippet: Numbers tell tales — learn to read the runes of data
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.246Z
-level: "0010"
+date: 2026-03-20 00:00:00+00:00
+lastmod: 2026-03-21 15:12:32.246000+00:00
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: javascript
 quest_type: side_quest
 skill_focus:
-    - frontend
+- frontend
 learning_style: project-based
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act II: Mastering the Craft"
+quest_arc: 'Act II: Mastering the Craft'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-stats-dashboard/
+permalink: /quests/0010/side-quests/stats-dashboard/
 categories:
-    - Quests
-    - Community
-    - Frontend
+- Quests
+- Community
+- Frontend
 tags:
-    - lvl-0010
-    - contributor
-    - stats
-    - data-visualization
-    - javascript
-    - liquid
-    - gamified-learning
-    - project-based
+- lvl-0010
+- contributor
+- stats
+- data-visualization
+- javascript
+- liquid
+- gamified-learning
+- project-based
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - Basic HTML and CSS knowledge
-        - Familiarity with Jekyll Liquid templates
-    system_requirements:
-        - Text editor or IDE
-        - Local Jekyll development environment
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - Basic HTML and CSS knowledge
+  - Familiarity with Jekyll Liquid templates
+  system_requirements:
+  - Text editor or IDE
+  - Local Jekyll development environment
 quest_dependencies:
-    required_quests:
-        - /quests/forge-your-character/
-    recommended_quests:
-        - /quests/side-quest-badge-collector/
-    unlocks_quests:
-        - /quests/side-quest-contribution-calendar/
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests:
+  - /quests/0001/side-quests/badge-collector/
+  unlocks_quests:
+  - /quests/0010/side-quests/contribution-calendar/
 learning_paths:
-    primary_paths:
-        - Frontend Developer
-        - Community Contributor
-    character_classes:
-        - 🧙 Wizard
-        - 🗡️ Rogue
-    skill_trees:
-        - Frontend Development
-        - Data Visualization
+  primary_paths:
+  - Frontend Developer
+  - Community Contributor
+  character_classes:
+  - 🧙 Wizard
+  - 🗡️ Rogue
+  skill_trees:
+  - Frontend Development
+  - Data Visualization
 rewards:
-    badges:
-        - 📊 Data Sage — Enhanced stats visualization on character sheet
-    progression_points: 100
+  badges:
+  - 📊 Data Sage — Enhanced stats visualization on character sheet
+  progression_points: 100
 validation_criteria:
-    completion_requirements:
-        - New stats visualization include created
-        - Data renders from contributor YAML data
-        - Visualization is responsive and accessible
-        - Integrated into character_sheet.html
+  completion_requirements:
+  - New stats visualization include created
+  - Data renders from contributor YAML data
+  - Visualization is responsive and accessible
+  - Integrated into character_sheet.html
+redirect_from:
+- /quests/side-quest-stats-dashboard/
 ---
-
 # 📊 Stats Dashboard: Enhancing Your Data Visualization
 
 > *"Raw numbers are mere ink. Transform them into stories, and you wield true power."*

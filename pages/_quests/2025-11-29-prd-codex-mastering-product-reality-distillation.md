@@ -2,7 +2,7 @@
 title: 'The PRD Codex: Mastering the Art of Product Reality Distillation'
 description: Master the ancient art of transforming scattered signals into living
   Product Requirements Documents using automated tooling and CI/CD integration
-date: 2025-11-28T23:55:43.000Z
+date: 2025-11-28 23:55:43+00:00
 preview: /images/quest-preview-prd-codex.png
 level: '0011'
 difficulty: 🟡 Medium
@@ -35,7 +35,7 @@ categories:
 - Medium
 keywords: *id001
 lastmod: 2025-11-29 06:48:54.497000+00:00
-permalink: /quests/level-0011-prd-codex-mastery/
+permalink: /quests/0011/prd-codex-mastery/
 attachments: ''
 comments: true
 prerequisites:
@@ -107,6 +107,8 @@ quest_mapping:
   biome: Terminal
 draft: false
 fmContentType: quest
+redirect_from:
+- /quests/level-0011-prd-codex-mastery/
 ---
 *Greetings, brave Scribe of the Digital Realm! You stand at the threshold of an ancient art—the distillation of scattered signals into crystalline Product Requirements. In ages past, Product Managers toiled endlessly, their PRDs growing stale mere moments after quill touched parchment. But you shall learn the secrets of the PRD MACHINE—an autonomous oracle that writes, maintains, and evolves perfect PRDs faster than any mortal hand.*
 

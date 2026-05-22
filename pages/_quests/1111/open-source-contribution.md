@@ -5,7 +5,7 @@ description: Lead and maintain open source projects effectively. Learn project g
   contributor management, release processes, and sustainable OSS practices.
 excerpt: Lead and maintain open source projects with sustainable practices
 preview: images/previews/open-source-contribution-descriptive-subtitle.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:46:59.315000+00:00
 level: '1111'
 difficulty: 🔴 Hard
@@ -60,7 +60,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1111-open-source-contribution/
+permalink: /quests/1111/open-source-contribution/
 categories:
 - Quests
 - Community
@@ -91,6 +91,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-1111-open-source-contribution/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

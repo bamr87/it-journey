@@ -295,13 +295,13 @@ jobs:
                         if success:
                             fix_results.append(fix_result)
             
-            # Save results
+            # Save results (use default=str to handle datetime objects from YAML parsing)
             with open('/tmp/validation_results.json', 'w') as f:
                 json.dump({
                     'validation_results': validation_results,
                     'fix_results': fix_results,
                     'apply_fixes': apply_fixes
-                }, f, indent=2)
+                }, f, indent=2, default=str)
             
             # Print summary
             total_files = len(validation_results)

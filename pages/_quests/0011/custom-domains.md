@@ -7,7 +7,7 @@ description: Configure custom domains for GitHub Pages sites. Learn DNS setup, C
 excerpt: Transform your GitHub Pages site with a custom domain, SSL, and professional
   DNS configuration
 preview: images/previews/custom-domains-professional-site-setup-descriptive.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-11-30 05:00:31+00:00
 level: '0011'
 difficulty: 🟡 Medium
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0011-custom-domains/
+permalink: /quests/0011/custom-domains/
 categories:
 - Quests
 - DevOps
@@ -95,6 +95,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0011-custom-domains/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

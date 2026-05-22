@@ -7,7 +7,7 @@ excerpt: Transform feature requests into deployed applications using AI-assisted
   pipelines with dual-format artifacts for both humans and AI agents
 snippet: From idea to deployment - let AI magic guide your development journey
 preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.png
-date: 2022-02-27T12:00:00.000Z
+date: 2022-02-27 12:00:00+00:00
 lastmod: 2025-09-29 14:28:35.904000+00:00
 level: '1011'
 difficulty: 🔴 Hard
@@ -32,7 +32,7 @@ validation_criteria:
 - Deploy a feature from request to production using AI assistance
 - Demonstrate multi-agent system coordination
 - Document the entire pipeline with architectural decision records
-permalink: /quests/level-1011-ai-feature-pipeline-architect/
+permalink: /quests/1011/ai-feature-pipeline-architect/
 categories:
 - Quests
 - DevOps-Engineering
@@ -66,6 +66,8 @@ related_quests:
 - 'Level 1100: API Design and Integration - Service communication patterns'
 - 'Level 1101: Testing Methodologies - Quality assurance foundations'
 - 'Level 10010: DevOps and Infrastructure Automation - Advanced deployment strategies'
+redirect_from:
+- /quests/level-1011-ai-feature-pipeline-architect/
 ---
 *Greetings, master architect! Welcome to the **AI Feature Pipeline Architect Quest** - an epic journey that will transform you into a wizard of AI-orchestrated development pipelines. This quest will guide you through building intelligent systems that seamlessly convert user ideas into deployed applications, preparing you for the future of software engineering where AI and human creativity work in perfect harmony.*
 

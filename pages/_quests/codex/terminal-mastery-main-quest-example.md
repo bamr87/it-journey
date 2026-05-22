@@ -2,7 +2,7 @@
 title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
 description: Master terminal navigation and essential command-line operations to unlock
   developer productivity and system control powers
-date: 2025-10-04T15:25:33.000Z
+date: 2025-10-04 15:25:33+00:00
 preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
 - lvl-0001
@@ -28,7 +28,7 @@ keywords:
 - file-operations
 - development-fundamentals
 lastmod: 2025-10-03 12:00:00+00:00
-permalink: /quests/level-0001-terminal-navigation-mastery/
+permalink: /quests/0001/terminal-navigation-mastery/
 attachments: ''
 comments: true
 difficulty: 🟢 Easy
@@ -109,6 +109,8 @@ skill_focus:
 - reference
 learning_style: reading
 fmContentType: codex
+redirect_from:
+- /quests/level-0001-terminal-navigation-mastery/
 ---
 *Greetings, brave digital explorer! Welcome to the Terminal Navigation Mastery Quest - the foundational adventure that transforms you from a point-and-click apprentice into a command-line champion. This main quest forms the cornerstone of your IT journey, providing essential skills that every developer, system administrator, and digital craftsperson must master.*
 

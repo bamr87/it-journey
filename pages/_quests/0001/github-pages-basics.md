@@ -7,7 +7,7 @@ description: Learn to deploy static websites for free with GitHub Pages. Step-by
 excerpt: Deploy your first website for free using GitHub Pages with custom domains
   and HTTPS.
 preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-12-19 00:00:00+00:00
 level: '0001'
 difficulty: 🟢 Easy
@@ -62,7 +62,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0001-github-pages-basics/
+permalink: /quests/0001/github-pages-basics/
 categories:
 - Quests
 - DevOps
@@ -100,6 +100,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+redirect_from:
+- /quests/level-0001-github-pages-basics/
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

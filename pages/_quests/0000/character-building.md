@@ -8,7 +8,7 @@ excerpt: Begin your transformation from IT novice to digital hero by building yo
   development environment
 snippet: Every hero needs an origin story - craft yours with intention and purpose
 preview: images/previews/character-building-forge-your-it-identity-and-deve.png
-date: 2023-11-25T14:12:43.000Z
+date: 2023-11-25 14:12:43+00:00
 lastmod: 2025-11-30 05:46:59.330000+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -20,17 +20,17 @@ quest_line: Foundation Path
 quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   recommended_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/0000/begin-your-it-journey/
   unlocks_quests:
-  - /quests/lvl_000/character-selection/
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/character-selection/
+  - /quests/0000/os-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/lvl_000/character-selection/
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/character-selection/
+  - /quests/0000/os-selection/
   parallel_quests: []
 learning_paths:
   primary_paths:
@@ -88,7 +88,7 @@ rewards:
   unlocks_features:
   - Access to specialization-specific quests
   - Development environment configured
-permalink: /quests/character-building/
+permalink: /quests/0000/character-building/
 categories:
 - Quests
 - Init-World
@@ -120,6 +120,9 @@ related_quests:
 - character-selection.md - Choose Your IT Specialization
 - os-selection.md - Operating System Selection Guide
 slug: character-building
+redirect_from:
+- /quests/character-building/
+- /quests/level-0000-character-building/
 ---
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 

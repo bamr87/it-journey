@@ -1,76 +1,78 @@
 ---
-title: "Badge Collector: Showcasing Your Achievements"
+title: 'Badge Collector: Showcasing Your Achievements'
 author: Quest Master IT-Journey Team
 keywords:
-    - badges
-    - achievements
-    - gamification
-    - contributor profile
-description: Learn how badges are earned and pin your proudest achievements to your character profile
+- badges
+- achievements
+- gamification
+- contributor profile
+description: Learn how badges are earned and pin your proudest achievements to your
+  character profile
 excerpt: The Trophy Hall awaits — curate your collection of hard-won badges.
 snippet: Every achievement tells a story. Pin the ones that matter most.
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.239Z
-level: "0001"
+date: 2026-03-20 00:00:00+00:00
+lastmod: 2026-03-21 15:12:32.239000+00:00
+level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 30-45 minutes
 primary_technology: yaml
 quest_type: side_quest
 skill_focus:
-    - devops
-    - frontend
+- devops
+- frontend
 learning_style: hands-on
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act I: Arrival at the Guild"
+quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-badge-collector/
+permalink: /quests/0001/side-quests/badge-collector/
 categories:
-    - Quests
-    - Community
-    - Customization
+- Quests
+- Community
+- Customization
 tags:
-    - lvl-0001
-    - contributor
-    - badges
-    - achievements
-    - yaml
-    - gamified-learning
-    - hands-on
+- lvl-0001
+- contributor
+- badges
+- achievements
+- yaml
+- gamified-learning
+- hands-on
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - At least one earned achievement badge
-        - Basic YAML editing skills
-    system_requirements:
-        - Text editor or IDE
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - At least one earned achievement badge
+  - Basic YAML editing skills
+  system_requirements:
+  - Text editor or IDE
 quest_dependencies:
-    required_quests:
-        - /quests/forge-your-character/
-    recommended_quests:
-        - /quests/side-quest-avatar-forge/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests:
+  - /quests/0001/side-quests/avatar-forge/
+  unlocks_quests: []
 learning_paths:
-    primary_paths:
-        - Community Contributor
-    character_classes:
-        - ⚔️ Warrior
-        - 🛡️ Paladin
-    skill_trees:
-        - Community & Collaboration
+  primary_paths:
+  - Community Contributor
+  character_classes:
+  - ⚔️ Warrior
+  - 🛡️ Paladin
+  skill_trees:
+  - Community & Collaboration
 rewards:
-    badges:
-        - 🏅 Badge Collector — Curated a pinned badge showcase
-    progression_points: 75
+  badges:
+  - 🏅 Badge Collector — Curated a pinned badge showcase
+  progression_points: 75
 validation_criteria:
-    completion_requirements:
-        - badges_pinned array has 1-3 valid badge IDs
-        - Pinned badges display in the Featured section
-        - Understand how achievement thresholds work
+  completion_requirements:
+  - badges_pinned array has 1-3 valid badge IDs
+  - Pinned badges display in the Featured section
+  - Understand how achievement thresholds work
+redirect_from:
+- /quests/side-quest-badge-collector/
 ---
-
 # 🏅 Badge Collector: Showcasing Your Achievements
 
 > *"Deeds in the dark matter not. Display your triumphs for all to see."*

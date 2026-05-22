@@ -10,8 +10,8 @@ excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-gra
 snippet: The stack you choose defines the ceiling of what you can build — choose wisely,
   build boldly.
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
-date: 2025-11-02T14:45:16.000Z
-lastmod: 2026-04-13T00:00:00.000Z
+date: 2025-11-02 14:45:16+00:00
+lastmod: 2026-04-13 00:00:00+00:00
 level: '0001'
 difficulty: 🔴 Hard
 estimated_time: 3-5 hours
@@ -23,19 +23,15 @@ quest_arc: Full-Stack Architecture Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/terminal-fundamentals/
-  - /quests/docker-fundamentals/
-  unlocks_quests:
-  - /quests/django-api-design/
-  - /quests/react-enterprise-ui/
-  - /quests/celery-task-queues/
+  - /quests/0000/terminal-fundamentals/
+  unlocks_quests: []
 quest_relationships:
   child_quests:
-  - /quests/django-rest-framework/
-  - /quests/react-typescript-setup/
+  - /quests/0010/django-rest-framework/
+  - /quests/0010/react-typescript-setup/
   sequel_quests:
-  - /quests/erp-module-development/
-  - /quests/enterprise-devops/
+  - /quests/0100/erp-module-development/
+  - /quests/0100/enterprise-devops/
 learning_paths:
   primary_paths:
   - Full-Stack Development
@@ -88,7 +84,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: AI-Enhanced
-permalink: /quests/level-0001/stack-attack/
+permalink: /quests/0001/stack-attack/
 categories:
 - Quests
 - Development
@@ -141,7 +137,7 @@ rewards:
   - Enterprise architecture pattern library
 related_quests:
   prerequisites:
-  - /quests/init_world/hello-noob/
+  - /quests/level-0000-hello-noob/
   - /quests/terminal-fundamentals/
   followups:
   - /quests/django-api-design/
@@ -150,6 +146,9 @@ related_quests:
   parallel:
   - /quests/docker-fundamentals/
   - /quests/postgresql-mastery/
+redirect_from:
+- /quests/level-0001/stack-attack/
+- /quests/level-0001-stack-attack/
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 

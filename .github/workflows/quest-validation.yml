@@ -198,9 +198,73 @@ jobs:
               });
             }
 
-  # ── Job 2: Full audit (scheduled or manual) ──
+  # ── Job 2: Network integrity check on PR ──
+  validate-network-pr:
+    name: Quest Network Integrity (PR)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate quest network
+        id: network
+        run: |
+          python3 scripts/quest/validate-quest-network.py \
+            --json /tmp/network-report.json 2>&1
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Annotate PR with network issues
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let report = {};
+            try { report = JSON.parse(fs.readFileSync('/tmp/network-report.json', 'utf8')); } catch {}
+            const errors = (report.errors || []).slice(0, 20);
+            const warnings = (report.warnings || []).slice(0, 10);
+            if (errors.length === 0 && warnings.length === 0) return;
+            const lines = ['## 🕸️ Quest Network Validation', ''];
+            if (errors.length) {
+              lines.push('### ❌ Errors');
+              errors.forEach(e => lines.push(`- ${e}`));
+            }
+            if (warnings.length) {
+              lines.push('', '### ⚠️ Warnings (first 10)');
+              warnings.forEach(w => lines.push(`- ${w}`));
+            }
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Quest Network Validation')
+            );
+            const body = lines.join('\n');
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: existing.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body,
+              });
+            }
+
+  # ── Job 3: Full audit (scheduled or manual) ──
   full-audit:
-    name: Full Quest Audit
     runs-on: ubuntu-latest
     if: >
       github.event_name == 'schedule' ||
@@ -245,7 +309,15 @@ jobs:
 
       - name: Run quest network validation
         run: |
-          python3 scripts/quest/validate-quest-network.py 2>&1 || true
+          python3 scripts/quest/validate-quest-network.py \
+            --json test/quest-validator/network-report.json 2>&1 || true
+
+      - name: Upload network report
+        uses: actions/upload-artifact@v4
+        with:
+          name: quest-network-report-${{ github.run_number }}
+          path: test/quest-validator/network-report.json
+          retention-days: 90
 
       - name: Upload audit report
         uses: actions/upload-artifact@v4
@@ -281,3 +353,42 @@ jobs:
               avg = stats.get('avg_score', 0)
               print(f\"{level:<8} {stats['total']:>5} {stats['passed']:>5} {stats['failed']:>5} {avg:>5.1f}% {stats['placeholders']:>12}\")
           " >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Regenerate quest network JSON
+        id: regen_network
+        run: |
+          python3 scripts/quest/build-quest-network.py \
+            --quest-dir pages/_quests \
+            --json assets/data/quest-network.json \
+            --yaml _data/quests/network.yml
+          echo "regenerated=true" >> "$GITHUB_OUTPUT"
+
+      - name: Check for stale quest-network.json
+        run: |
+          if git diff --quiet assets/data/quest-network.json _data/quests/network.yml 2>/dev/null; then
+            echo "✅ quest-network.json and network.yml are up to date." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::quest-network.json or _data/quests/network.yml is stale. Run scripts/quest/build-quest-network.py and commit."
+            {
+              echo ""
+              echo "## ⚠️ Stale Quest Network Data"
+              echo ""
+              echo "The committed \`assets/data/quest-network.json\` or \`_data/quests/network.yml\` does not match the current quest files."
+              echo ""
+              echo "To fix, run:"
+              echo "\`\`\`bash"
+              echo "python3 scripts/quest/build-quest-network.py"
+              echo "git add assets/data/quest-network.json _data/quests/network.yml"
+              echo "git commit -m 'chore(quests): regenerate quest network data'"
+              echo "\`\`\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload regenerated network JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: quest-network-${{ github.run_number }}
+          path: |
+            assets/data/quest-network.json
+            _data/quests/network.yml
+          retention-days: 30

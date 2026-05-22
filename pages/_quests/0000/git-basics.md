@@ -6,7 +6,7 @@ description: Learn Git fundamentals including repositories, commits, branches, a
 excerpt: Master Git fundamentals to track changes, manage versions, and collaborate
   effectively with teams.
 preview: images/previews/git-basics-version-control-introduction-descriptiv.png
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2026-02-14 00:00:00+00:00
 level: '0000'
 difficulty: 🟢 Easy
@@ -18,7 +18,7 @@ quest_line: Init World
 quest_arc: Version Control Arc
 quest_dependencies:
   required_quests:
-  - /quests/level-0000-terminal-fundamentals/
+  - /quests/0000/terminal-fundamentals/
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
@@ -59,11 +59,13 @@ validation_criteria:
   - Understands staging area vs working directory
   - Can resolve a basic merge conflict
 quest_mapping:
-  coordinates: [3, 1]
+  coordinates:
+  - 3
+  - 1
   region: Foundation
   realm: Development
   biome: Version Control
-permalink: /quests/level-0000-git-basics/
+permalink: /quests/0000/git-basics/
 categories:
 - Quests
 - DevOps
@@ -96,6 +98,8 @@ rewards:
   unlocks_features:
   - Collaborative development workflows
   - Code review via pull requests
+redirect_from:
+- /quests/level-0000-git-basics/
 ---
 *Greetings, brave adventurer! Welcome to the Git Basics quest — where you'll learn the version control system that powers nearly every software project on the planet. Git lets you track changes, collaborate with others, and fearlessly experiment with code knowing you can always roll back. This is the single most important tool in any developer's inventory.*
 

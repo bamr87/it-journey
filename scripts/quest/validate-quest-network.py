@@ -85,9 +85,18 @@ class QuestValidator:
         def process_quest_file(md_file):
             """Process a single quest file and store its data"""
             try:
-                # Skip templates, READMEs, and certain meta files
-                if any(skip in str(md_file) for skip in ['templates/', 'README.md', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md', '/docs/']):
+                # Skip templates and non-quest meta files; include README.md files that are quest indexes
+                if any(skip in str(md_file) for skip in ['templates/', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md', '/docs/', 'NETWORK_REPORT.md', 'QUEST_ORGANIZATION_SUMMARY.md']):
                     return
+                # For README.md: only include those nested inside a quest subdirectory of a
+                # binary level directory (e.g. 0000/bashcrawl/README.md).
+                # Skip level-dir READMEs (0000/README.md) and section/root READMEs (tools/README.md).
+                if md_file.name == 'README.md':
+                    parent = md_file.parent
+                    grandparent = parent.parent
+                    # Allow only when: parent is NOT a level dir AND grandparent IS a level dir
+                    if re.match(r'^[01]{4}$', parent.name) or not re.match(r'^[01]{4}$', grandparent.name):
+                        return
                 
                 frontmatter, body = self.extract_frontmatter(md_file)
                 
@@ -344,21 +353,65 @@ class QuestValidator:
 
 def main():
     """Main entry point."""
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='IT-Journey Quest Network Validator',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        '-d', '--directory',
+        help='Quest directory (default: auto-detect from script location)',
+    )
+    parser.add_argument(
+        '--json',
+        metavar='FILE',
+        help='Write validation results as JSON to FILE',
+    )
+    parser.add_argument(
+        '--strict',
+        action='store_true',
+        help='Exit non-zero when warnings exist (in addition to errors)',
+    )
+    args = parser.parse_args()
+
     # Get quest directory
-    script_dir = Path(__file__).parent
-    project_root = script_dir.parent.parent
-    quest_dir = project_root / 'pages' / '_quests'
-    
+    if args.directory:
+        quest_dir = Path(args.directory)
+    else:
+        script_dir = Path(__file__).parent
+        project_root = script_dir.parent.parent
+        quest_dir = project_root / 'pages' / '_quests'
+
     if not quest_dir.exists():
         print_error(f"Quest directory not found: {quest_dir}")
         return 1
-    
+
     print_info(f"Quest directory: {quest_dir}")
     print()
-    
+
     # Run validator
     validator = QuestValidator(str(quest_dir))
-    return validator.run()
+    exit_code = validator.run()
+
+    # Write JSON report if requested
+    if args.json:
+        import json
+        report = {
+            'stats': validator.stats,
+            'errors': validator.errors,
+            'warnings': validator.warnings,
+            'passed': exit_code == 0,
+        }
+        with open(args.json, 'w') as f:
+            json.dump(report, f, indent=2, default=str)
+        print_success(f"Network report written to {args.json}")
+
+    # --strict: treat warnings as failure
+    if args.strict and validator.warnings:
+        return 1
+
+    return exit_code
 
 if __name__ == '__main__':
     sys.exit(main())

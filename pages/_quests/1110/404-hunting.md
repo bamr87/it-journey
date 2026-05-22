@@ -7,7 +7,7 @@ excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hy
   guardians, and organic resource endpoints.
 snippet: May your links never stray and your redirects never loop.
 preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
-date: 2025-08-31T18:32:58.000Z
+date: 2025-08-31 18:32:58+00:00
 lastmod: 2025-08-31 23:16:16.119000+00:00
 level: '1110'
 difficulty: 🟡 Medium
@@ -28,7 +28,7 @@ validation_criteria:
 - CI link checks pass on PRs and on a weekly schedule
 - 404 page provides helpful exits, recent content, and an issue link
 - Moved pages redirect via jekyll-redirect-from without loops
-permalink: /quests/level-1110-404-hunting-quest/
+permalink: /quests/1110/404-hunting-quest/
 categories:
 - Quests
 - Web-Development
@@ -58,6 +58,8 @@ related_quests:
 - 'Permalink Lore: Stable Slugs and Trails (Level 1100)'
 - 'CI Scribes: Automating Quality Trials (Level 1111)'
 - 'Content Gardens: Jekyll Collections (Level 10100)'
+redirect_from:
+- /quests/level-1110-404-hunting-quest/
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 
