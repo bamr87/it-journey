@@ -35,6 +35,8 @@ scripts/
 │   └── extract-script.sh
 ├── validation/             # Validation and monitoring tools
 │   ├── link-checker.py
+│   ├── content-reviewer.py
+│   ├── create-review-issues.py
 │   ├── frontmatter-validator.*
 │   ├── content-freshness-check.rb
 │   ├── ctr-report-generator.rb
@@ -66,6 +68,8 @@ The Link Health Guardian is a unified, comprehensive link checking system for th
 scripts/
 ├── validation/              # Validation and monitoring tools
 │   ├── link-checker.py      # Link health monitoring
+│   ├── content-reviewer.py  # AI + rule-based markdown content reviewer
+│   ├── create-review-issues.py # Per-collection and standards follow-up issue upserts
 │   ├── frontmatter-validator.py  # Frontmatter validation (Python)
 │   ├── frontmatter-validator.rb  # Frontmatter validation (Ruby)
 │   ├── content-freshness-check.rb # Content freshness tracking
