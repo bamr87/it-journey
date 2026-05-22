@@ -13,7 +13,7 @@ lastmod: 2025-09-27 19:59:13.794000+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
-primary_technology: lvl-0001
+primary_technology: 0001
 quest_type: main_quest
 quest_series: 'Foundation Path: Digital Literacy Mastery'
 skill_focus:
@@ -34,7 +34,7 @@ categories:
 - Quests
 - Development - Foundation
 tags:
-- lvl-0001
+- 0001
 - terminal
 - command-line
 - tool-mastery
@@ -44,7 +44,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0001
+- 0001
 - terminal
 - command-line
 - tool-mastery

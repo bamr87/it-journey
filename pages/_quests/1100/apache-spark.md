@@ -67,7 +67,7 @@ categories:
 - Data-Engineering
 - Epic
 tags:
-- lvl-1100
+- 1100
 - spark
 - pyspark
 - big-data
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1100
+- 1100
 - spark
 - pyspark
 - big-data

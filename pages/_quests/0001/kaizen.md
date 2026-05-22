@@ -13,7 +13,7 @@ lastmod: 2025-11-02 22:13:30.306000+00:00
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0001
+primary_technology: 0001
 quest_type: main_quest
 quest_series: Process Mastery Path
 quest_line: Foundation Path
@@ -78,14 +78,14 @@ categories:
 - Process-Improvement
 - Team-Development
 tags:
-- lvl-0001
+- 0001
 - kaizen
 - continuous-improvement
 - lean-development
 - process-optimization
 - team-culture
 keywords:
-- lvl-0001
+- 0001
 - kaizen
 - continuous-improvement
 - lean-development

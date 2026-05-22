@@ -23,7 +23,7 @@ sub_title: "Level 1010 Quest 1/4 — Domain 3: Context & Memory Management"
 excerpt: Context drift is the quiet enemy. An agent starts on the right path, but over a long session its focus wanders, its task understanding shifts. Learn to anchor agents to their original intent.
 author: IT-Journey Team
 tags:
-  - lvl-1010
+  - 1010
   - agentic-ai
   - context-drift
   - state-persistence

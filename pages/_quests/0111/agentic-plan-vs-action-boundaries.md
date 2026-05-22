@@ -23,7 +23,7 @@ sub_title: "Level 0111 Quest 2/3 — Domain 1: Agent Architecture & SDLC"
 excerpt: An agent that acts without planning is a curse, not a gift. Learn to inscribe the Three Sigils — Plan, Reason, Act — and enforce their order.
 author: IT-Journey Team
 tags:
-  - lvl-0111
+  - 0111
   - agentic-ai
   - github-copilot
   - agent-planning

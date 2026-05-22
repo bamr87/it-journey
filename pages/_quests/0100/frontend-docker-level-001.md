@@ -13,24 +13,24 @@ lastmod: 2024-05-28 04:24:59.730000+00:00
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0100
+primary_technology: 0100
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
 skill_focus:
 - Quests
 - DevOps
 learning_style: hands-on
-permalink: /quests/0100/lvl-001-frontend-docker/
+permalink: /quests/0100/001-frontend-docker/
 categories:
 - Quests
 - DevOps
 tags:
-- lvl-0100
+- 0100
 - docker
 - jekyll
 - frontend
 keywords:
-- lvl-0100
+- 0100
 - docker
 - jekyll
 - frontend

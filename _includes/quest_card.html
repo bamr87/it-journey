@@ -78,7 +78,7 @@
   {% if q.tags and q.tags.size > 0 %}
     <div class="quest-card__tags">
       {% for tag in q.tags limit:3 %}
-        {% unless tag contains 'lvl-' or tag == 'gamified-learning' %}
+        {% unless tag == q.level or tag == 'gamified-learning' %}
           <span class="quest-card__tag">{{ tag }}</span>
         {% endunless %}
       {% endfor %}

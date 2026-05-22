@@ -68,7 +68,7 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- lvl-1100
+- 1100
 - python
 - data-quality
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1100
+- 1100
 - python
 - data-quality
 - main_quest

@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- lvl-1010
+- 1010
 - prometheus
 - grafana
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1010
+- 1010
 - prometheus
 - grafana
 - main_quest

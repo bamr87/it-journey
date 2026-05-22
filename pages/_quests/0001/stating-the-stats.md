@@ -13,7 +13,7 @@ lastmod: 2025-10-08 18:10:29.972000+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-primary_technology: lvl-0001
+primary_technology: 0001
 quest_type: main_quest
 quest_series: Jekyll Site Building
 quest_line: Development Mastery
@@ -80,7 +80,7 @@ categories:
 - Development
 - Data-Analytics
 tags:
-- lvl-0001
+- 0001
 - jekyll
 - data-analytics
 - liquid-templating
@@ -89,7 +89,7 @@ tags:
 - data-visualization
 - yaml-data-files
 keywords:
-- lvl-0001
+- 0001
 - jekyll
 - data-analytics
 - liquid-templating

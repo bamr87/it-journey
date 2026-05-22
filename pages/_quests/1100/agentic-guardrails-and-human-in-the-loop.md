@@ -24,7 +24,7 @@ sub_title: "Level 1100 Quest 3/4 — Domain 6: Responsible Agentic AI"
 excerpt: The Warden stands at the gate between the agent's realm and the world beyond. The Pact is clear — agents may not cross without the Warden's blessing. Some doors require a key. Some require a council. Some the Warden seals forever.
 author: IT-Journey Team
 tags:
-  - lvl-1100
+  - 1100
   - agentic-ai
   - guardrails
   - human-in-the-loop

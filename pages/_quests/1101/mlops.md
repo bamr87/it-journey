@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- lvl-1101
+- 1101
 - mlops
 - docker
 - mlflow
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1101
+- 1101
 - mlops
 - docker
 - mlflow

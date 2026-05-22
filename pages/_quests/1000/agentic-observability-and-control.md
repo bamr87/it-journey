@@ -23,7 +23,7 @@ sub_title: "Level 1000 Quest 1/4 — Domain 1: Agent Architecture & SDLC"
 excerpt: An agent you cannot observe is an agent you cannot trust. Learn to wire in observability that keeps humans informed without turning every decision into a bottleneck.
 author: IT-Journey Team
 tags:
-  - lvl-1000
+  - 1000
   - agentic-ai
   - github-copilot
   - observability

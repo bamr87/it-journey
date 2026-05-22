@@ -12,7 +12,7 @@ lastmod: 2025-08-31 23:16:16.119000+00:00
 level: '1110'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-primary_technology: lvl-1110
+primary_technology: 1110
 quest_type: main_quest
 quest_series: Site Reliability for Static Sites
 skill_focus:
@@ -34,13 +34,13 @@ categories:
 - Web-Development
 - Intermediate
 tags:
-- lvl-1110
+- 1110
 - jekyll
 - github-actions
 - link-integrity
 - devops
 keywords:
-- lvl-1110
+- 1110
 - jekyll
 - github-actions
 - link-integrity

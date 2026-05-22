@@ -23,7 +23,7 @@ sub_title: "Level 1010 Quest 3/4 — Domain 4: Evaluating Agent Performance"
 excerpt: The Oracle does not celebrate effort — she celebrates completion. Define what completion means in exact, machine-verifiable terms, then teach the Oracle's Rubric to your agent.
 author: IT-Journey Team
 tags:
-  - lvl-1010
+  - 1010
   - agentic-ai
   - success-criteria
   - evaluation

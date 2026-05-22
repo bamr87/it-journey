@@ -5,7 +5,7 @@ description: Transform your terminal into a powerful, visually enhanced developm
 date: 2025-10-04 15:25:33+00:00
 preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
-- lvl-0010
+- 0010
 - terminal-enhancement
 - oh-my-zsh
 - shell-customization
@@ -22,7 +22,7 @@ excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved pro
 snippet: Transform your terminal from tool to weapon with Oh-My-Zsh magic
 author: Quest Master IT-Journey Team
 keywords:
-- lvl-0010
+- 0010
 - terminal-enhancement
 - oh-my-zsh
 - shell-customization

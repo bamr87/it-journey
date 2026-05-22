@@ -67,14 +67,14 @@ categories:
 - DevOps
 - Medium
 tags:
-- lvl-0101
+- 0101
 - github-actions
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0101
+- 0101
 - github-actions
 - main_quest
 - devops

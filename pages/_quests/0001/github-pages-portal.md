@@ -51,14 +51,14 @@ categories:
 - Web Deployment
 - Easy
 tags:
-- lvl-001
+- 001
 - github-pages
 - main
 - web-deployment
 - hands-on
 - gamified-learning
 keywords:
-- lvl-001
+- 001
 - github-pages
 - main
 - web-deployment

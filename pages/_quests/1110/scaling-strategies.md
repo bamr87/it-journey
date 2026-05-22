@@ -67,14 +67,14 @@ categories:
 - DevOps
 - Hard
 tags:
-- lvl-1110
+- 1110
 - kubernetes
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1110
+- 1110
 - kubernetes
 - main_quest
 - devops

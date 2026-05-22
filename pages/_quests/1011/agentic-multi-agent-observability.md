@@ -23,7 +23,7 @@ sub_title: "Level 1011 Quest 3/4 — Domain 5: Multi-Agent Systems"
 excerpt: The Scribe sits at the centre of the Council Chambers, watching every messenger arrive and depart. Without the Scribe's Codex, no one knows which agent did what, and failures become unsolvable mysteries.
 author: IT-Journey Team
 tags:
-  - lvl-1011
+  - 1011
   - agentic-ai
   - multi-agent
   - observability

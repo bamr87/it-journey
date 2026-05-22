@@ -25,7 +25,7 @@ tags:
 - bash
 - permissions
 - chmod
-- lvl-0000
+- 0000
 keywords:
   primary:
   - chmod command

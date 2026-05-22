@@ -17,7 +17,7 @@ sub_title: 'Level XXXX (XX) Quest: Main Quest - [Technology]'
 excerpt: One-sentence summary of the quest's core learning objective
 author: IT-Journey Team
 tags:
-- lvl-XXXX
+- XXXX
 - - primary-technology
 - main_quest
 - - skill-focus
@@ -28,7 +28,7 @@ categories:
 - - Skill-Category
 - - Difficulty-Level
 keywords:
-- lvl-XXXX
+- XXXX
 - '[''primary-technology'']'
 - main_quest
 - '[''skill-focus'']'

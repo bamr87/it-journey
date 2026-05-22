@@ -73,14 +73,14 @@ categories:
 - DevOps
 - Beginner
 tags:
-- lvl-0000
+- 0000
 - bash
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0000
+- 0000
 - bash
 - main_quest
 - devops

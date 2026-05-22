@@ -86,7 +86,7 @@ categories:
 - Tool-Mastery
 - Medium
 tags:
-- lvl-0011
+- 0011
 - prompt-engineering
 - vscode-copilot
 - ai-development
@@ -94,7 +94,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0011
+- 0011
 - prompt-engineering
 - vscode-copilot
 - ai-development

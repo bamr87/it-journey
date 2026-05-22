@@ -66,14 +66,14 @@ categories:
 - Innovation
 - Epic
 tags:
-- lvl-1111
+- 1111
 - innovation
 - main_quest
 - innovation
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
+- 1111
 - innovation
 - main_quest
 - innovation

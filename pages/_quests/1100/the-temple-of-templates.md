@@ -13,7 +13,7 @@ lastmod: 2025-08-25 00:43:51.189000+00:00
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-primary_technology: lvl-1100
+primary_technology: 1100
 quest_type: main_quest
 quest_series: Binary Function Crafting
 skill_focus:
@@ -35,14 +35,14 @@ categories:
 - Development
 - Intermediate
 tags:
-- lvl-1100
+- 1100
 - templates
 - design-patterns
 - software-architecture
 - reusable-components
 - hands-on
 keywords:
-- lvl-1100
+- 1100
 - templates
 - design-patterns
 - software-architecture

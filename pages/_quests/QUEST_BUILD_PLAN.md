@@ -533,7 +533,7 @@ description: "Complete description of what the quest teaches (150-300 characters
 date: YYYY-MM-DDTHH:MM:SS.000Z
 preview: /images/previews/quest-build-plan-complete-placeholder-quest-system.png
 tags:
-    - lvl-[BINARY]
+    - [BINARY]
     - [primary-technology]
     - [quest-type]
     - [skill-focus]
@@ -552,7 +552,7 @@ keywords:
         - [supporting-technologies]
         - [related-concepts]
 lastmod: YYYY-MM-DDTHH:MM:SS.000Z
-permalink: /quests/level-[LEVEL]-[slug]/
+permalink: /quests/[LEVEL]/[slug]/
 difficulty: "🟢 Easy | 🟡 Medium | 🔴 Hard | ⚔️ Epic"
 estimated_time: "XX-XX minutes"
 quest_type: "main_quest | side_quest | bonus_quest | epic_quest"
@@ -646,7 +646,7 @@ categories:
   - Quests
   - Level-[LEVEL]
 tags:
-  - lvl-[BINARY]
+  - [BINARY]
   - [theme]
 lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 ---

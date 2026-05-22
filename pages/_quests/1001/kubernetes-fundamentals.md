@@ -70,14 +70,14 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- lvl-1001
+- 1001
 - kubernetes
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1001
+- 1001
 - kubernetes
 - main_quest
 - cloud-engineering

@@ -68,7 +68,7 @@ categories:
 - Markdown
 - Intermediate
 tags:
-- lvl-0010
+- 0010
 - markdown
 - github-markdown
 - documentation
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- lvl-0010
+- 0010
 - markdown
 - github-markdown
 - documentation

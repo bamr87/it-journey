@@ -30,7 +30,7 @@ categories:
 - CI/CD
 - Collaboration
 tags:
-- lvl-1100
+- 1100
 - git
 - semantic-versioning
 - github-actions

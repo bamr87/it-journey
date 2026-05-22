@@ -23,7 +23,7 @@ sub_title: "Level 1000 Quest 3/4 — Domain 2: Tool Use & Environment Interactio
 excerpt: The MCP Conclave holds the contracts by which agents speak to the world beyond the repository. Master their protocols and your agents gain access to every system in the realm.
 author: IT-Journey Team
 tags:
-  - lvl-1000
+  - 1000
   - agentic-ai
   - mcp
   - github-copilot

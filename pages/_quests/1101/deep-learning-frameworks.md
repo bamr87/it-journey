@@ -67,7 +67,7 @@ categories:
 - Data-Science
 - Hard
 tags:
-- lvl-1101
+- 1101
 - pytorch
 - tensorflow
 - deep-learning
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1101
+- 1101
 - pytorch
 - tensorflow
 - deep-learning

@@ -199,9 +199,9 @@ Become a master of user interfaces and digital aesthetics
 - [Frontend Fundamentals](/quests/0100/frontend/) - The Art of Digital Presentation
 - [Frontend Docker Adventures](/quests/0100/frontend-docker/) - Containerized UI Magic
 - [Frontend Level Progression](/quests/0100/frontend-levels/) - Structured Learning Path
-- [Level 000 Frontend](/quests/0100/frontend-docker-lvl-000/) - Beginner Container Magic
-- [Level 001 Frontend](/quests/0100/lvl-001-frontend-docker/) - Intermediate UI Sorcery
-- [Level 010 Frontend](/quests/0100/lvl-010-frontend-docker/) - Advanced Interface Wizardry
+- [Level 000 Frontend](/quests/0100/frontend-docker-000/) - Beginner Container Magic
+- [Level 001 Frontend](/quests/0100/001-frontend-docker/) - Intermediate UI Sorcery
+- [Level 010 Frontend](/quests/0100/010-frontend-docker/) - Advanced Interface Wizardry
 
 #### 📚 Quest Codex (`/quests/codex/`)
 

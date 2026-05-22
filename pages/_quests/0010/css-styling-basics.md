@@ -69,7 +69,7 @@ categories:
 - CSS
 - Intermediate
 tags:
-- lvl-0010
+- 0010
 - css
 - flexbox
 - css-grid
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- lvl-0010
+- 0010
 - css
 - flexbox
 - css-grid

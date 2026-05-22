@@ -97,7 +97,7 @@
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
-      "technology": "lvl-0000",
+      "technology": "0000",
       "file": "pages/_quests/0000/hello-noob.md"
     },
     {
@@ -142,7 +142,7 @@
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
-      "technology": "lvl-0000",
+      "technology": "0000",
       "file": "pages/_quests/0000/os-selection.md"
     },
     {
@@ -250,7 +250,7 @@
       "level": "0001",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-0001",
+      "technology": "0001",
       "file": "pages/_quests/0001/kaizen.md"
     },
     {
@@ -304,7 +304,7 @@
       "level": "0001",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
-      "technology": "lvl-0001",
+      "technology": "0001",
       "file": "pages/_quests/0001/stating-the-stats.md"
     },
     {
@@ -313,7 +313,7 @@
       "level": "0001",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
-      "technology": "lvl-0001",
+      "technology": "0001",
       "file": "pages/_quests/0001/terminal-mastery.md"
     },
     {
@@ -403,7 +403,7 @@
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-0010",
+      "technology": "0010",
       "file": "pages/_quests/0010/prompt-engineering.md"
     },
     {
@@ -430,7 +430,7 @@
       "level": "0010",
       "type": "side_quest",
       "difficulty": "🟢 Easy",
-      "technology": "lvl-0010",
+      "technology": "0010",
       "file": "pages/_quests/0010/terminal-artificer-frontend-building.md"
     },
     {
@@ -524,30 +524,30 @@
       "file": "pages/_quests/0100/docker-compose-orchestration.md"
     },
     {
-      "id": "/quests/0100/frontend-docker-lvl-000/",
+      "id": "/quests/0100/frontend-docker-000/",
       "title": "Frontend Docker - level 000",
       "level": "0100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "level-000",
+      "technology": "000",
       "file": "pages/_quests/0100/frontend-docker-level-000.md"
     },
     {
-      "id": "/quests/0100/lvl-001-frontend-docker/",
+      "id": "/quests/0100/001-frontend-docker/",
       "title": "Frontend Docker Level 001: Create Jekyll Site with Docker Container",
       "level": "0100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-0100",
+      "technology": "0100",
       "file": "pages/_quests/0100/frontend-docker-level-001.md"
     },
     {
-      "id": "/quests/0100/lvl-010-frontend-docker/",
+      "id": "/quests/0100/010-frontend-docker/",
       "title": "Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker",
       "level": "0100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-0100",
+      "technology": "0100",
       "file": "pages/_quests/0100/frontend-docker-level-010.md"
     },
     {
@@ -601,7 +601,7 @@
       "level": "0100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-0100",
+      "technology": "0100",
       "file": "pages/_quests/0100/sourcery-code-methods.md"
     },
     {
@@ -691,7 +691,7 @@
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-0101",
+      "technology": "0101",
       "file": "pages/_quests/0101/the-lazytex-of-building-a-curriculum-vitae.md"
     },
     {
@@ -934,7 +934,7 @@
       "level": "1010",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-1010",
+      "technology": "1010",
       "file": "pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md"
     },
     {
@@ -961,7 +961,7 @@
       "level": "1011",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
-      "technology": "lvl-1011",
+      "technology": "1011",
       "file": "pages/_quests/1011/ai-feature-pipeline-architect.md"
     },
     {
@@ -1042,7 +1042,7 @@
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-1100",
+      "technology": "1100",
       "file": "pages/_quests/1100/edgar.md"
     },
     {
@@ -1060,7 +1060,7 @@
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-1100",
+      "technology": "1100",
       "file": "pages/_quests/1100/sec-edgar.md"
     },
     {
@@ -1078,7 +1078,7 @@
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-1100",
+      "technology": "1100",
       "file": "pages/_quests/1100/the-temple-of-templates.md"
     },
     {
@@ -1159,7 +1159,7 @@
       "level": "1110",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
-      "technology": "lvl-1110",
+      "technology": "1110",
       "file": "pages/_quests/1110/404-hunting.md"
     },
     {

@@ -25,7 +25,7 @@ tags:
 - bash
 - arithmetic
 - variables
-- lvl-0000
+- 0000
 keywords:
   primary:
   - bash arithmetic

@@ -47,7 +47,7 @@ learning_paths:
 skill_focus:
 - character-selection
 - career-paths
-- lvl-0000
+- 0000
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -86,11 +86,11 @@ categories: []
 tags:
 - character-selection
 - career-paths
-- lvl-0000
+- 0000
 keywords:
 - character-selection
 - career-paths
-- lvl-0000
+- 0000
 fmContentType: quest
 draft: false
 meta: null

@@ -33,14 +33,14 @@ categories:
 - Devops
 - Medium
 tags:
-- lvl-0101
+- 0101
 - docker
 - tool-mastery
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0101
+- 0101
 - docker
 - tool-mastery
 - devops

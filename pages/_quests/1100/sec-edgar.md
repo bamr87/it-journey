@@ -13,7 +13,7 @@ lastmod: 2025-08-20 04:18:02.180000+00:00
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 90-150 minutes
-primary_technology: lvl-1100
+primary_technology: 1100
 quest_type: main_quest
 quest_series: Data Liberation Trail
 skill_focus:
@@ -38,7 +38,7 @@ categories:
 - Data-Engineering
 - Intermediate
 tags:
-- lvl-1100
+- 1100
 - sec-edgar
 - api
 - data-engineering
@@ -46,7 +46,7 @@ tags:
 - python
 - node
 keywords:
-- lvl-1100
+- 1100
 - sec-edgar
 - api
 - data-engineering

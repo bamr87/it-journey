@@ -66,14 +66,14 @@ categories:
 - Communication
 - Hard
 tags:
-- lvl-1111
+- 1111
 - communication
 - main_quest
 - communication
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
+- 1111
 - communication
 - main_quest
 - communication

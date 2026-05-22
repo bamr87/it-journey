@@ -9,7 +9,7 @@ categories:
 - Level-[LEVEL]
 - - Theme-Category
 tags:
-- lvl-[BINARY]
+- [BINARY]
 - - theme-tag
 - - skill-area
 - quest-collection
@@ -18,7 +18,7 @@ toc: true
 toc_sticky: true
 draft: false
 keywords:
-- lvl-[BINARY]
+- [BINARY]
 - '[''theme-tag'']'
 - '[''skill-area'']'
 - quest-collection

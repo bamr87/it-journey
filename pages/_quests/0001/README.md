@@ -24,7 +24,7 @@ Level 001 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [The Knowledge Vault: Building an Automated Documentation Hub](../README.mdlevel-0001/docs-in-a-row/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
+| [The Knowledge Vault: Building an Automated Documentation Hub](/quests/0001/docs-in-a-row/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
 | [Building & Testing the Git Init Script: Headless, Interactive, Scaffolding](/quests/0001/git-init-testing/) | 🟢 Easy | 45-75 minutes | main_quest | 🔮 Placeholder |
 | [Git Workflow Mastery: Branches, Merging & Team Collaboration](/quests/0001/git-workflow-mastery/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [GitHub Pages Basics: Deploy Free Websites in Minutes](/quests/0001/github-pages-basics/) | 🟢 Easy | 60-75 minutes | main_quest | 🔮 Placeholder |

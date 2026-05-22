@@ -68,7 +68,7 @@ categories:
 - Data-Science
 - Hard
 tags:
-- lvl-1101
+- 1101
 - python
 - nlp
 - transformers
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1101
+- 1101
 - python
 - nlp
 - transformers

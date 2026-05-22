@@ -67,14 +67,14 @@ categories:
 - Security
 - Hard
 tags:
-- lvl-1011
+- 1011
 - compliance
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1011
+- 1011
 - compliance
 - main_quest
 - security

@@ -23,7 +23,7 @@ sub_title: "Level 1100 Quest 2/4 — Domain 6: Responsible Agentic AI"
 excerpt: The Scales of Autonomy measure the power you grant and the responsibility that comes with it. Too much freedom and the agent strays. Too little and it becomes a burden rather than a help. The wise master finds the balance.
 author: IT-Journey Team
 tags:
-  - lvl-1100
+  - 1100
   - agentic-ai
   - autonomy
   - governance

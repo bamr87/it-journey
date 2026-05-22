@@ -66,14 +66,14 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- lvl-1000
+- 1000
 - terraform
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1000
+- 1000
 - terraform
 - main_quest
 - cloud-engineering

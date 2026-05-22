@@ -23,7 +23,7 @@ sub_title: "Level 1010 Quest 4/4 — Domain 4: Evaluating Agent Performance"
 excerpt: The Necromancer does not fear the dead — she interrogates them. Every failed agent run leaves a forensic trail in Actions logs, artifacts, and PR comments. Learn to read the trace.
 author: IT-Journey Team
 tags:
-  - lvl-1010
+  - 1010
   - agentic-ai
   - root-cause-analysis
   - debugging

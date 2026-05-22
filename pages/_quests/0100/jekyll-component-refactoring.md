@@ -41,7 +41,7 @@ categories:
 - Frontend
 - Medium
 tags:
-- lvl-0100
+- 0100
 - jekyll
 - side_quest
 - frontend

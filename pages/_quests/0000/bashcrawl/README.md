@@ -16,7 +16,7 @@ tags:
 - command-line
 - adventure-game
 - bash
-- lvl-0000
+- 0000
 author: IT-Journey Team
 level: '0000'
 layout: journals

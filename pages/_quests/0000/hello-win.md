@@ -12,7 +12,7 @@ keywords: &id001
 - development-setup
 - package-management
 - init-world
-- lvl-001
+- 001
 date: 2020-08-17 15:28:44+00:00
 level: '0000'
 quest_type: main_quest

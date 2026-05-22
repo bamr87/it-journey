@@ -14,7 +14,7 @@ date: 2025-11-30 22:12:13+00:00
 lastmod: 2025-12-01 04:36:39.408000+00:00
 categories:
 - quests
-- level-1111
+- 1111
 - legend-tier
 - leadership
 - innovation

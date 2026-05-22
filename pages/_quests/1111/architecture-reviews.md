@@ -67,14 +67,14 @@ categories:
 - Architecture
 - Hard
 tags:
-- lvl-1111
+- 1111
 - architecture
 - main_quest
 - architecture
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
+- 1111
 - architecture
 - main_quest
 - architecture

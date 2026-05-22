@@ -25,7 +25,7 @@ tags:
 - bash
 - symlinks
 - ln
-- lvl-0000
+- 0000
 keywords:
   primary:
   - symbolic links linux

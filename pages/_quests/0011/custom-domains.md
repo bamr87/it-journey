@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Medium
 tags:
-- lvl-0011
+- 0011
 - github-pages
 - dns
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0011
+- 0011
 - github-pages
 - dns
 - main_quest

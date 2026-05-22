@@ -21,11 +21,11 @@ categories:
 - GitHub-Pages
 tags:
 - Personal Site
-- lvl-0001
+- 0001
 - github-pages
 keywords:
 - Personal Site
-- lvl-0001
+- 0001
 - github-pages
 fmContentType: quest
 key: tutorial

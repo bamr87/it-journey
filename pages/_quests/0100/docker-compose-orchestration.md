@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Medium
 tags:
-- lvl-0100
+- 0100
 - docker-compose
 - docker
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0100
+- 0100
 - docker-compose
 - docker
 - main_quest

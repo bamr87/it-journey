@@ -25,7 +25,7 @@ tags:
 - bash
 - environment-variables
 - export
-- lvl-0000
+- 0000
 keywords:
   primary:
   - bash export command

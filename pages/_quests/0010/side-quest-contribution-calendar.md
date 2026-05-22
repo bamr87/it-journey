@@ -33,7 +33,7 @@ categories:
 - Community
 - Frontend
 tags:
-- lvl-0010
+- 0010
 - contributor
 - calendar
 - heatmap

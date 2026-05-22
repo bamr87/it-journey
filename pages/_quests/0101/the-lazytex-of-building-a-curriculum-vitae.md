@@ -14,7 +14,7 @@ lastmod: 2025-08-17 21:36:08.855000+00:00
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0101
+primary_technology: 0101
 quest_type: main_quest
 quest_series: Professional Identity Path
 skill_focus:
@@ -37,14 +37,14 @@ categories:
 - Development
 - Foundation
 tags:
-- lvl-0101
+- 0101
 - latex
 - vscode
 - resume
 - pdf
 - tool-mastery
 keywords:
-- lvl-0101
+- 0101
 - latex
 - vscode
 - resume

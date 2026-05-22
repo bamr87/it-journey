@@ -74,7 +74,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- lvl-1010
+- 1010
 - monitoring
 - observability
 - main_quest
@@ -82,7 +82,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1010
+- 1010
 - monitoring
 - observability
 - main_quest

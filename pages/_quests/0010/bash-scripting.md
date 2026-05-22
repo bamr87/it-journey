@@ -38,7 +38,7 @@ categories:
 - Foundation
 - System-Administration
 tags:
-- lvl-0010
+- 0010
 - bash
 - shell-scripting
 - command-line
@@ -46,7 +46,7 @@ tags:
 - system-administration
 - gamified-learning
 keywords:
-- lvl-0010
+- 0010
 - bash
 - shell-scripting
 - command-line

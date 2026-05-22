@@ -13,7 +13,7 @@ lastmod: 2025-11-30 05:46:59.323000+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
-primary_technology: lvl-0000
+primary_technology: 0000
 quest_type: main_quest
 quest_series: Character Creation Journey
 quest_line: Foundation Path
@@ -85,14 +85,14 @@ categories:
 - Init-World
 - Beginner
 tags:
-- lvl-0000
+- 0000
 - github
 - git
 - beginner
 - init-world
 - community-entry
 keywords:
-- lvl-0000
+- 0000
 - github
 - git
 - beginner

@@ -10,7 +10,7 @@ lastmod: 2025-11-30 05:46:59.328000+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: lvl-0000
+primary_technology: 0000
 quest_type: main_quest
 quest_series: Level 0000 Quest Line
 quest_line: Foundation Path
@@ -83,11 +83,11 @@ categories:
 - Quests
 - Init-World
 tags:
-- lvl-0000
+- 0000
 - operating-systems
 - beginner
 keywords:
-- lvl-0000
+- 0000
 - operating-systems
 - beginner
 fmContentType: quest

@@ -66,14 +66,14 @@ categories:
 - Community
 - Hard
 tags:
-- lvl-1111
+- 1111
 - git
 - main_quest
 - community
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
+- 1111
 - git
 - main_quest
 - community

@@ -12,7 +12,7 @@ lastmod: 2025-11-29 01:07:17.270000+00:00
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: lvl-0010
+primary_technology: 0010
 quest_type: side_quest
 quest_series: Terminal Mastery Path
 quest_line: Foundation Path
@@ -70,7 +70,7 @@ categories:
 - Development
 - Foundation
 tags:
-- lvl-0010
+- 0010
 - gum
 - shell-scripting
 - frontend
@@ -78,7 +78,7 @@ tags:
 - tool-mastery
 - hands-on
 keywords:
-- lvl-0010
+- 0010
 - gum
 - shell-scripting
 - frontend

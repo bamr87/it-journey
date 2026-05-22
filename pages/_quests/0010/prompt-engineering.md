@@ -12,7 +12,7 @@ lastmod: 2025-11-03 01:10:01.141000+00:00
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0010
+primary_technology: 0010
 quest_type: main_quest
 quest_series: AI Development Mastery
 quest_line: Foundation Path
@@ -74,14 +74,14 @@ categories:
 - AI-Development
 - Tool-Mastery
 tags:
-- lvl-0010
+- 0010
 - ai-development
 - prompt-engineering
 - language-models
 - ai-communication
 - tool-mastery
 keywords:
-- lvl-0010
+- 0010
 - ai-development
 - prompt-engineering
 - language-models

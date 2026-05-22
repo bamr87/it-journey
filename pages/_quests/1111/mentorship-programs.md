@@ -66,14 +66,14 @@ categories:
 - Leadership
 - Hard
 tags:
-- lvl-1111
+- 1111
 - mentorship
 - main_quest
 - leadership
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
+- 1111
 - mentorship
 - main_quest
 - leadership

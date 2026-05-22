@@ -74,14 +74,14 @@ categories:
 - Backend
 - Hard
 tags:
-- lvl-0111
+- 0111
 - rest
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0111
+- 0111
 - rest
 - main_quest
 - backend

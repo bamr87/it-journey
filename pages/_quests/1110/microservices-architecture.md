@@ -67,14 +67,14 @@ categories:
 - Architecture
 - Epic
 tags:
-- lvl-1110
+- 1110
 - docker
 - main_quest
 - architecture
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1110
+- 1110
 - docker
 - main_quest
 - architecture

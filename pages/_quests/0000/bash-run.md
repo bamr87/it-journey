@@ -72,13 +72,13 @@ tags:
 - terminal
 - game-development
 - shell-scripting
-- lvl-000
+- 000
 keywords:
 - bash
 - terminal
 - game-development
 - shell-scripting
-- lvl-000
+- 000
 fmContentType: quest
 draft: false
 sub-title: 'Level 000 Quest: Extending bashcrawl''s Terminal Dungeon'

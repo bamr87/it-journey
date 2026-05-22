@@ -100,7 +100,7 @@ tags:
 - specialization
 - it-career
 - init-world
-- lvl-001
+- 001
 keywords:
 - character-building
 - career-planning
@@ -108,7 +108,7 @@ keywords:
 - specialization
 - it-career
 - init-world
-- lvl-001
+- 001
 fmContentType: quest
 draft: false
 sub-title: 'Level 001 Quest: Defining Your Digital Identity'

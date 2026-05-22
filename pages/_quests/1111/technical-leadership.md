@@ -74,14 +74,14 @@ categories:
 - Leadership
 - Epic
 tags:
-- lvl-1111
+- 1111
 - leadership
 - main_quest
 - leadership
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
+- 1111
 - leadership
 - main_quest
 - leadership

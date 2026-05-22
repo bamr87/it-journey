@@ -25,7 +25,7 @@ tags:
 - bash
 - aliases
 - file-types
-- lvl-0000
+- 0000
 keywords:
   primary:
   - ls -F command

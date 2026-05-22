@@ -9,7 +9,7 @@ categories:
 - Level-1001
 - Container-Orchestration
 tags:
-- lvl-1001
+- 1001
 - kubernetes
 - k8s
 - containers

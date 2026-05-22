@@ -32,7 +32,7 @@ categories:
 - Community
 - Customization
 tags:
-- lvl-0001
+- 0001
 - contributor
 - avatar
 - profile

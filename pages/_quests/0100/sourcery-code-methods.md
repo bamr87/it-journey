@@ -12,7 +12,7 @@ lastmod: 2025-07-29 05:15:57.715000+00:00
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: lvl-0100
+primary_technology: 0100
 quest_type: main_quest
 quest_series: Foundation Development Skills
 skill_focus:
@@ -36,14 +36,14 @@ categories:
 - Development-Fundamentals
 - Tool-Mastery
 tags:
-- lvl-0100
+- 0100
 - git
 - github
 - version-control
 - collaboration
 - workflow-mastery
 keywords:
-- lvl-0100
+- 0100
 - git
 - github
 - version-control

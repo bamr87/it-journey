@@ -66,14 +66,14 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- lvl-0110
+- 0110
 - sql
 - main_quest
 - data-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0110
+- 0110
 - sql
 - main_quest
 - data-engineering

@@ -26,7 +26,7 @@ tags:
 - bash
 - hidden-files
 - man-pages
-- lvl-0000
+- 0000
 keywords:
   primary:
   - ls -a hidden files

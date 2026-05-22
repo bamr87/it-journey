@@ -69,7 +69,7 @@ categories:
 - Templating
 - Beginner
 tags:
-- lvl-0001
+- 0001
 - liquid
 - templating
 - jekyll
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - beginner
 keywords:
-- lvl-0001
+- 0001
 - liquid
 - templating
 - jekyll

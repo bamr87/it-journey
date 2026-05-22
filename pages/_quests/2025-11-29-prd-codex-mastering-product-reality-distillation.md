@@ -20,7 +20,7 @@ excerpt: Transform scattered repository signals into a living, breathing PRD tha
 snippet: Reality fully armed. The distillery now distills distilleries.
 author: Quest Master IT-Journey
 tags: &id001
-- lvl-0011
+- 0011
 - documentation-automation
 - main_quest
 - product-management
@@ -629,17 +629,17 @@ features:
 ```mermaid
 flowchart LR
     subgraph "Prerequisites"
-        A[lvl-0001<br>Docs in a Row]
-        B[lvl-0010<br>Jekyll Mermaid]
+        A[0001<br>Docs in a Row]
+        B[0010<br>Jekyll Mermaid]
     end
     
     subgraph "Current Quest"
-        C[lvl-0011<br>PRD Codex]
+        C[0011<br>PRD Codex]
     end
     
     subgraph "Unlocks"
-        D[lvl-0100<br>Advanced Automation]
-        E[lvl-0101<br>CI/CD Mastery]
+        D[0100<br>Advanced Automation]
+        E[0101<br>CI/CD Mastery]
     end
     
     A --> C
@@ -742,8 +742,8 @@ Upon completing this quest, you've earned:
 ### Next Quest Recommendations
 
 Based on your new skills, consider:
-1. **Advanced Automation** (lvl-0100) - Extend PRD Machine with new signal sources
-2. **CI/CD Mastery** (lvl-0101) - Deep dive into GitHub Actions workflows
+1. **Advanced Automation** (0100) - Extend PRD Machine with new signal sources
+2. **CI/CD Mastery** (0101) - Deep dive into GitHub Actions workflows
 3. **AI Documentation** - Use AI to enhance PRD content generation
 
 ---

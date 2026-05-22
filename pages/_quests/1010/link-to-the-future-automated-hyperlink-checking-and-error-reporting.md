@@ -13,7 +13,7 @@ lastmod: 2025-08-16 04:06:22.859000+00:00
 level: '1010'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: lvl-1010
+primary_technology: 1010
 quest_type: main_quest
 quest_series: DevOps Automation Mastery Path
 skill_focus:
@@ -37,14 +37,14 @@ categories:
 - DevOps-Automation
 - Quality-Assurance
 tags:
-- lvl-1010
+- 1010
 - github-actions
 - automated-testing
 - ai-analysis
 - devops-automation
 - link-validation
 keywords:
-- lvl-1010
+- 1010
 - github-actions
 - automated-testing
 - ai-analysis

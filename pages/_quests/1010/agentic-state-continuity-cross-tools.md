@@ -23,7 +23,7 @@ sub_title: "Level 1010 Quest 2/4 — Domain 3: Context & Memory Management"
 excerpt: The realm is divided into planes — Issue Plane, Actions Plane, Codespace Plane. An agent that cannot cross the planes loses context at every boundary. Learn to weave a single thread through all planes.
 author: IT-Journey Team
 tags:
-  - lvl-1010
+  - 1010
   - agentic-ai
   - state-continuity
   - cross-tool

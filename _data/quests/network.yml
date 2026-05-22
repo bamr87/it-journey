@@ -301,17 +301,17 @@ nodes:
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0100/frontend-docker-lvl-000/
+- id: /quests/0100/frontend-docker-000/
   title: Frontend Docker - level 000
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0100/lvl-001-frontend-docker/
+- id: /quests/0100/001-frontend-docker/
   title: 'Frontend Docker Level 001: Create Jekyll Site with Docker Container'
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0100/lvl-010-frontend-docker/
+- id: /quests/0100/010-frontend-docker/
   title: 'Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker'
   level: '0100'
   type: main_quest

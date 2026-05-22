@@ -69,7 +69,7 @@ categories:
 - Static-Sites
 - Beginner
 tags:
-- lvl-0001
+- 0001
 - jekyll
 - static-site-generator
 - ruby
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - beginner
 keywords:
-- lvl-0001
+- 0001
 - jekyll
 - static-site-generator
 - ruby

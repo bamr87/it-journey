@@ -68,7 +68,7 @@ categories:
 - Data-Science
 - Medium
 tags:
-- lvl-1101
+- 1101
 - python
 - ai-ethics
 - responsible-ai
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1101
+- 1101
 - python
 - ai-ethics
 - responsible-ai

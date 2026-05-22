@@ -24,7 +24,7 @@ tags:
 - terminal
 - bash
 - file-management
-- lvl-0000
+- 0000
 keywords:
   primary:
   - mkdir command

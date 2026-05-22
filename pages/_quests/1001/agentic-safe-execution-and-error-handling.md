@@ -23,7 +23,7 @@ sub_title: "Level 1001 Quest 2/3 — Domain 2: Tool Use & Environment Interactio
 excerpt: The Shield of Retries doesn't prevent all failures — it ensures failures are caught, reported, and recovered from gracefully. A resilient agent knows when to try again, when to escalate, and when to stop.
 author: IT-Journey Team
 tags:
-  - lvl-1001
+  - 1001
   - agentic-ai
   - error-handling
   - resilience

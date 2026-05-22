@@ -9,7 +9,7 @@ categories:
 - Level-1000
 - Cloud-Computing
 tags:
-- lvl-1000
+- 1000
 - cloud
 - aws
 - infrastructure
