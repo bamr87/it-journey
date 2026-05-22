@@ -53,6 +53,8 @@ PROMPTS_PATH = ".github/prompts/"
 PROMPTS_URL_TEMPLATE = "https://github.com/{repo}/tree/main/" + PROMPTS_PATH
 
 DEFAULT_LABELS = ["ai-review", "content-improvement", "automated"]
+UNKNOWN_COLLECTION = "other"
+MAX_STANDARDS_GAPS = 20
 
 
 # ---------------------------------------------------------------------------
@@ -338,7 +340,7 @@ def collect_standards_gaps(reviews: Dict[str, Dict[str, Any]]) -> List[str]:
                     continue
                 seen.add(key)
                 gaps.append(text)
-                if len(gaps) >= 20:
+                if len(gaps) >= MAX_STANDARDS_GAPS:
                     return gaps
     return gaps
 
@@ -353,7 +355,7 @@ def format_standards_issue_body(
     prompts_url = PROMPTS_URL_TEMPLATE.format(repo=repo)
     collections = sorted(
         {
-            (review.get("collection") or "other")
+            (review.get("collection") or UNKNOWN_COLLECTION)
             for review in reviews.values()
         }
     )
@@ -367,7 +369,10 @@ def format_standards_issue_body(
         "",
         "### Scope",
         f"- Review rules in [`{INSTRUCTIONS_PATH}`]({instructions_url})",
-        f"- Update prompt(s) under [`{PROMPTS_PATH}`]({prompts_url}) that guide AI content creation/review",
+        (
+            f"- Update prompt(s) under [`{PROMPTS_PATH}`]({prompts_url}) "
+            "that guide AI content creation/review"
+        ),
         "- Keep this work in its own PR (do not mix with collection content fixes)",
         "",
         "### Suggested checklist",
