@@ -38,6 +38,12 @@
       url: /docs/terminal/
     - title: Obsidian Graph
       url: /docs/obsidian/graph/
+- title: Wargames
+  url: /docs/wargames/
+  icon: bi-shield-lock
+  children:
+    - title: Wargames Overview
+      url: /docs/wargames/
 - title: Notebook
   url: /notes/
   icon: bi-journal-code

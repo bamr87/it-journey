@@ -22,9 +22,15 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1011/secure-coding/
+  - /quests/1011/threat-modeling/
+  - /quests/1011/penetration-testing/
+  - /quests/1011/ai-feature-pipeline-architect/
+  - /quests/1011/compliance-standards/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1100/mastering-version-control-workflows/
 learning_paths:
   primary_paths:
   - Software Development

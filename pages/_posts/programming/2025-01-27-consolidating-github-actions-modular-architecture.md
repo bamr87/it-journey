@@ -2,7 +2,7 @@
 title: "Consolidating GitHub Actions: From Embedded Scripts to Modular Architecture"
 description: How we transformed two separate link checking workflows into a unified, maintainable system with standalone executable scripts
 date: 2025-09-30T16:56:38.000Z
-preview: Journey through refactoring GitHub Actions workflows into modular, maintainable scripts that enhance both functionality and developer experience
+preview: /images/favicon_gpt_computer_retro.png
 tags:
     - github-actions
     - devops

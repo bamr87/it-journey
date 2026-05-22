@@ -23,9 +23,17 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1101/deep-learning-frameworks/
+  - /quests/1101/side-quests/ai-ethics/
+  - /quests/1101/python-data-science/
+  - /quests/1101/natural-language-processing/
+  - /quests/1101/neural-networks/
+  - /quests/1101/mlops/
+  - /quests/1101/computer-vision/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1110/design-patterns/
 learning_paths:
   primary_paths:
   - Software Development

@@ -9,6 +9,16 @@ future: true
 # Performance: enable incremental builds for development
 incremental: true
 
+# Performance: limit post processing (only N most recent - major speedup for large sites)
+# With 88+ posts, this alone can cut build time by 50%+
+limit_posts: 30
+
+# Performance: disable LSI (latent semantic indexing) - expensive computation
+lsi: false
+
+# Performance: don't process drafts unless explicitly needed
+show_drafts: false
+
 # Performance: disable feed/sitemap regeneration during dev
 # These plugins regenerate fully on every change, adding ~10-20s
 plugins:
@@ -23,3 +33,6 @@ plugins:
 liquid:
   error_mode: warn
   strict_filters: false
+
+# Uncomment to print a per-template build profile report for diagnosing slow templates
+# profile: true

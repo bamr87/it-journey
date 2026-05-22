@@ -3,7 +3,7 @@ title: 'Glossary '
 author: IT-Journey Team
 excerpt: null
 description: 'Reference: Glossary .'
-preview: images/previews/glossary.png
+preview: /images/previews/glossary.png
 snippet: null
 categories:
 - notes

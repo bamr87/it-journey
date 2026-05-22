@@ -24,7 +24,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/hello-noob/
+  parent_quest: /quests/0000/hello-noob/
   child_quests: []
   parallel_quests: []
   sequel_quests: []

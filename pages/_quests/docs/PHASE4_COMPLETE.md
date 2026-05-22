@@ -1,6 +1,6 @@
 ---
 title: 'Phase 4 Complete: Expert Tier Quests Generated'
-preview: images/previews/phase-4-complete-expert-tier-quests-generated.png
+preview: /images/previews/phase-4-complete-expert-tier-quests-generated.png
 permalink: /quests/phase4-complete/
 lastmod: &id001 2025-11-30 05:46:59.363000+00:00
 keywords:

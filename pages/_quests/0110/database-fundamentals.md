@@ -23,7 +23,14 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0110/sql-mastery/
+  - /quests/0110/database-security/
+  - /quests/0110/data-modeling/
+  - /quests/0110/query-optimization/
+  - /quests/0110/backup-recovery/
+  - /quests/0110/database-migrations/
+  - /quests/0110/connection-pooling/
   parallel_quests: []
   sequel_quests: []
 learning_paths:

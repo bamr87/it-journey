@@ -65,11 +65,19 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1100/data-warehousing/
+  - /quests/1100/stream-processing/
+  - /quests/1100/data-quality/
+  - /quests/1100/sec-edgar-siege/
+  - /quests/1100/apache-spark/
+  - /quests/1100/conquer-king-edgar/
+  - /quests/1100/etl-pipeline-design/
+  - /quests/1100/temple-of-templates/
   parallel_quests:
   - /quests/0010/action-triggers/
   sequel_quests:
-  - /quests/1110/cicd-pipeline-mastery/
+  - /quests/1101/ml-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development

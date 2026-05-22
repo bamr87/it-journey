@@ -22,7 +22,14 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1111/career-advancement/
+  - /quests/1111/building-technical-communities/
+  - /quests/1111/tech-speaking-writing/
+  - /quests/1111/open-source-contribution/
+  - /quests/1111/innovation-rnd/
+  - /quests/1111/mentorship-programs/
+  - /quests/1111/architecture-reviews/
   parallel_quests: []
   sequel_quests: []
 learning_paths:

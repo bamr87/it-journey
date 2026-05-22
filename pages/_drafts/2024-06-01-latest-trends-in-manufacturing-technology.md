@@ -1,11 +1,27 @@
 ---
 title: Latest Trends in Manufacturing Technology
-categories: blog
+categories:
+  - Technology Trends
+  - Manufacturing
+author: bamr87
 date: 2024-06-01 22:03:24+00:00
 lastmod: 2024-06-02 01:52:54.687000+00:00
 section: Trends & Ideas
 draft: true
-description: 'Latest Trends in Manufacturing Technology: The Role of ERP Systems ------------------------------------------------------------------'
+tags:
+  - manufacturing
+  - erp
+  - technology-trends
+  - industry-4-0
+  - automation
+excerpt: An overview of the latest trends in manufacturing technology, with a focus on how ERP systems are transforming production planning, supply chain management, and financial operations.
+keywords:
+  - manufacturing technology trends
+  - erp systems manufacturing
+  - industry 4.0 erp
+  - smart manufacturing technology
+  - manufacturing automation trends
+description: "Latest Trends in Manufacturing Technology: The Role of ERP Systems in transforming production planning, supply chain management, and business operations."
 ---
 
 Latest Trends in Manufacturing Technology: The Role of ERP Systems

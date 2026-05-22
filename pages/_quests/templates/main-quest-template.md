@@ -3,7 +3,7 @@ title: '[Quest Title]: [Descriptive Subtitle]'
 description: Complete description of what the quest teaches and accomplishes (150-300
   characters for SEO)
 date: 2025-11-29T22:51:57.000Z
-preview: images/previews/quest-title-descriptive-subtitle.png
+preview: /images/previews/quest-title-descriptive-subtitle.png
 level: XXXX
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -35,25 +35,25 @@ keywords:
 - hands-on
 - gamified-learning
 lastmod: 2025-12-01 05:49:32.316000+00:00
-permalink: /quests/level-XXXX-[quest-slug]/
+permalink: /quests/XXXX/quest-slug/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
   required_quests:
-  - /quests/level-XXXX-prerequisite-quest/
+  - /quests/XXXX/prerequisite-quest/
   recommended_quests:
-  - /quests/level-XXXX-helpful-quest/
+  - /quests/XXXX/helpful-quest/
   unlocks_quests:
-  - /quests/level-XXXX-next-quest/
+  - /quests/XXXX/next-quest/
 quest_relationships:
   parent_quest: null
   child_quests:
-  - /quests/level-XXXX-side-quest-1/
-  - /quests/level-XXXX-side-quest-2/
+  - /quests/XXXX/side-quests/side-quest-1/
+  - /quests/XXXX/side-quests/side-quest-2/
   parallel_quests:
-  - /quests/level-XXXX-alternative-path/
+  - /quests/XXXX/alternative-path/
   sequel_quests:
-  - /quests/level-XXXX-continuation/
+  - /quests/XXXX/continuation/
 learning_paths:
   primary_paths:
   - Software Development

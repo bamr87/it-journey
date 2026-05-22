@@ -22,9 +22,16 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0111/api-authentication/
+  - /quests/0111/api-documentation/
+  - /quests/0111/api-versioning/
+  - /quests/0111/rate-limiting/
+  - /quests/0111/api-fundamentals/
+  - /quests/0111/error-handling/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1000/cloud-computing-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development

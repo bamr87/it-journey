@@ -46,7 +46,7 @@ permalink: /quests/gh-600/agentic-sdlc-integration/
 quest_dependencies:
   required_quests: []
   recommended_quests:
-    - /quests/level-0111-rest-api-design/
+    - /quests/0111/rest-principles/
   unlocks_quests:
     - /quests/gh-600/agentic-plan-vs-action-boundaries/
 quest_relationships:

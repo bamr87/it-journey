@@ -1,7 +1,7 @@
 ---
-title: Bash Cheatsheet
+title: "Bash Cheatsheet: Essential Commands & Scripts"
 author: bamr87
-description: Essential bash commands and scripting techniques for system administration and automation
+description: Essential bash commands and scripting techniques for system administration and automation, including variables, functions, and control flow patterns.
 excerpt: Quick reference for bash shell commands, scripting patterns, and Linux system administration
 categories:
     - notes
