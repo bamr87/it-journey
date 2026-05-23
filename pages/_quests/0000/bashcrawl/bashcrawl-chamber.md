@@ -3,7 +3,7 @@ title: 'Bashcrawl Chamber: Bash Arithmetic and the Statue Boss'
 description: "Defeat Bashcrawl's Statue Boss by solving arithmetic with let, expr,
   and $(( )). Mastering Bash math is the only weapon that can defeat this stone guardian."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -18,6 +18,10 @@ skill_focus:
 - Bash Arithmetic
 - Shell Variables
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -56,6 +60,8 @@ learning_paths:
 rewards:
 - Stone Key Fragment
 - Bash arithmetic mastery
+excerpt: "Defeat the stone statue by using let, expr, and arithmetic expansion to solve Bash math challenges and unlock the Rift."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-chamber/
 ---
 

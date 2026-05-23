@@ -1,9 +1,9 @@
 ---
-title: 'Bashcrawl Cellar: File Types, Aliases, and the Emerald Amulet'
+title: 'Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet'
 description: "Master file types with ls -F, create alias shortcuts, and discover
   the emerald amulet in Bashcrawl's Cellar. Completing this chamber unlocks four deeper areas."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -18,6 +18,10 @@ skill_focus:
 - File Types
 - Shell Aliases
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -62,6 +66,8 @@ learning_paths:
 rewards:
 - Emerald Amulet
 - Alias and file-type mastery
+excerpt: "Use ls -F, file, and aliases to map cellar artifacts, collect the emerald amulet, and unlock four branching dungeon paths."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-cellar/
 ---
 
