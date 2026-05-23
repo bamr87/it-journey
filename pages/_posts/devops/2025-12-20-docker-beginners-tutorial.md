@@ -2,7 +2,7 @@
 title: "Docker for Beginners: Get Started with Containers"
 description: "Learn Docker from scratch with this beginner-friendly tutorial. Understand containers, images, and basic commands with hands-on examples."
 date: 2025-12-20T10:05:28.000Z
-lastmod: 2025-12-20T00:00:00.000Z
+lastmod: 2026-05-23T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /posts/docker-beginners-tutorial/
 tags:
@@ -377,6 +377,128 @@ Ready to level up? Continue your Docker journey:
 - [Container Fundamentals Quest](/quests/0100/container-fundamentals/) - Deep dive into Docker
 - [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/) - Multi-container apps
 - [Frontend Docker Quest](/quests/0100/frontend-docker-lvl-000/) - Docker for web development
+
+---
+
+## 📝 Creating Your First Dockerfile
+
+A **Dockerfile** is a recipe for building your own image. Here's a minimal example:
+
+```dockerfile
+# Use an official base image
+FROM python:3.11-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy your code into the image
+COPY . .
+
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Define the command to run
+CMD ["python", "app.py"]
+```
+
+### Build and Run Your Custom Image
+
+```bash
+# Build the image (don't forget the dot!)
+docker build -t my-python-app .
+
+# Run it
+docker run my-python-app
+```
+
+### Dockerfile Best Practices
+
+| Practice | Why |
+|----------|-----|
+| Use specific base image tags (`python:3.11`, not `python:latest`) | Reproducible builds |
+| Put rarely-changing layers first (OS packages) | Better layer caching |
+| Use `.dockerignore` to exclude `node_modules/`, `.git/` | Smaller images, faster builds |
+| Run as non-root user | Security |
+| Use multi-stage builds for compiled languages | Smaller final images |
+
+---
+
+## 🐙 Docker Compose: Multi-Container Apps
+
+Real applications often need multiple services (web server + database + cache). **Docker Compose** manages them together.
+
+### Example: Web App + Database
+
+Create a `docker-compose.yml`:
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:5000"
+    environment:
+      - DATABASE_URL=postgres://user:pass@db:5432/myapp
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: myapp
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+```
+
+### Compose Commands
+
+| Command | Description |
+|---------|-------------|
+| `docker compose up` | Start all services |
+| `docker compose up -d` | Start in background |
+| `docker compose down` | Stop and remove containers |
+| `docker compose logs -f` | Follow all logs |
+| `docker compose ps` | List running services |
+| `docker compose exec web bash` | Shell into a service |
+
+---
+
+## 🔒 Docker Security Basics
+
+Keep your containers secure from day one:
+
+### 1. Don't Run as Root
+
+```dockerfile
+# Create a non-root user
+RUN adduser --disabled-password appuser
+USER appuser
+```
+
+### 2. Scan Images for Vulnerabilities
+
+```bash
+docker scout cves my-python-app
+```
+
+### 3. Use Read-Only Filesystem Where Possible
+
+```bash
+docker run --read-only nginx
+```
+
+### 4. Limit Resources
+
+```bash
+docker run --memory="256m" --cpus="0.5" my-app
+```
 
 ---
 

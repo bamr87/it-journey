@@ -206,4 +206,47 @@ for the raw validator outputs at each phase.
 
 ---
 
-**Last updated**: 2025-11-16 (Phase 7 of `chore/posts-mass-cleanup`)
+## 10. Writing tips for high-quality posts
+
+Strong posts share these traits:
+
+- **Start with a hook**: Open with a relatable scenario, provocative question, or
+  surprising fact. The first paragraph decides whether readers stay.
+- **Use progressive disclosure**: Start with the simplest concept, add complexity
+  incrementally. Readers should feel capable at each step.
+- **Include runnable examples**: Every code block should be copy-pasteable and
+  produce the described output without modification.
+- **Show before and after**: When teaching a tool or technique, contrast the old
+  way (painful) with the new way (elegant).
+- **End with next steps**: Link to related quests, follow-up posts, or external
+  resources so readers always know where to go next.
+- **Respect the reader's time**: State the estimated reading time in frontmatter
+  and deliver on it. Cut filler ruthlessly.
+
+### Content quality checklist
+
+Before submitting a post PR, verify:
+
+- [ ] Title is specific and searchable (would you click it in search results?)
+- [ ] Introduction explains *who* this is for and *what* they'll gain
+- [ ] Code examples are tested and include expected output
+- [ ] Headings create a scannable outline (reader should get value from headings alone)
+- [ ] At least one visual aid (diagram, table, or screenshot) per major section
+- [ ] Conclusion includes actionable next steps or links to quests
+- [ ] No walls of text — paragraphs are ≤ 4 sentences
+
+---
+
+## 11. Contributing a new post
+
+1. **Branch**: `feature/post-<slug>` or `docs/post-<slug>`
+2. **Create file**: `pages/_posts/<category>/YYYY-MM-DD-<slug>.md`
+3. **Fill frontmatter**: Use the template in §3 above
+4. **Write content**: Follow the writing tips in §10
+5. **Validate**: Run the commands in §4
+6. **Preview**: `bundle exec jekyll serve --drafts --config _config.yml,_config_dev.yml`
+7. **PR**: Reference any related issues; include the post URL from local preview
+
+---
+
+**Last updated**: 2026-05-22 (AI content review improvements)

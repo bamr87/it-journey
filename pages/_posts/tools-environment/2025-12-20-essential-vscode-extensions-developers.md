@@ -2,7 +2,7 @@
 title: "Essential VS Code Extensions: The Ultimate 2025 Guide"
 description: "Curated list of must-have VS Code extensions for web developers, DevOps engineers, and data scientists. Boost your productivity."
 date: 2025-12-20T10:05:28.000Z
-lastmod: 2025-12-20T00:00:00.000Z
+lastmod: 2026-05-23T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /posts/essential-vscode-extensions-developers/
 tags:
@@ -502,6 +502,95 @@ code --install-extension esbenp.prettier-vscode \
 - [VS Code Mastery Quest](/quests/level-0000-vscode-mastery-quest/)
 - [Git Basics Quest](/quests/0000/git-basics/)
 - [Official VS Code Documentation](https://code.visualstudio.com/docs)
+
+---
+
+## 🧠 Pro Tips: Getting More from Your Extensions
+
+### Tip 1: Use Workspace-Specific Settings
+
+Different projects need different configurations. Create a `.vscode/settings.json` in each project:
+
+```json
+{
+  // Python project
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "editor.rulers": [88],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
+}
+```
+
+### Tip 2: Create Extension Recommendation Files
+
+Help your team use the same extensions by adding `.vscode/extensions.json`:
+
+```json
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "GitHub.copilot"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
+}
+```
+
+When teammates open the project, VS Code will suggest installing the recommended extensions.
+
+### Tip 3: Keyboard Shortcuts That Save Hours
+
+These built-in shortcuts work even better with extensions installed:
+
+| Shortcut (Mac / Win) | Action |
+|----------------------|--------|
+| `Cmd+Shift+P` / `Ctrl+Shift+P` | Command Palette (search any action) |
+| `Cmd+P` / `Ctrl+P` | Quick Open (find any file) |
+| `Cmd+Shift+F` / `Ctrl+Shift+F` | Search across all files |
+| `Cmd+D` / `Ctrl+D` | Select next occurrence (multi-cursor) |
+| `Option+Shift+F` / `Alt+Shift+F` | Format entire document |
+| `Cmd+.` / `Ctrl+.` | Quick Fix (with ESLint/Pylance suggestions) |
+| `F12` | Go to Definition (with CSS Peek, GitLens) |
+| `Cmd+Shift+E` / `Ctrl+Shift+E` | Toggle Explorer sidebar |
+
+### Tip 4: Profile Switching for Different Roles
+
+VS Code supports **Profiles** — separate sets of extensions and settings for different work contexts:
+
+1. Open Command Palette → "Profiles: Create Profile"
+2. Name it (e.g., "Python Dev", "Web Dev", "Writing")
+3. Install only relevant extensions in each profile
+4. Switch between profiles instantly via the gear icon
+
+This keeps VS Code fast by only loading extensions you actually need.
+
+### Tip 5: Sync Settings Across Machines
+
+Enable Settings Sync to keep your setup identical everywhere:
+
+1. Click the gear icon (bottom-left) → "Turn on Settings Sync"
+2. Sign in with GitHub or Microsoft account
+3. Choose what to sync: Settings, Keybindings, Extensions, UI State
+
+---
+
+## 🆕 Honorable Mentions: Extensions Worth Watching
+
+These didn't make the main list but deserve attention:
+
+| Extension | Why It's Interesting |
+|-----------|---------------------|
+| **Thunder Client** | REST API testing without leaving VS Code |
+| **GitHub Actions** | View workflow status and logs in the sidebar |
+| **Todo Tree** | Aggregates all TODO/FIXME comments across your project |
+| **Path Intellisense** | Autocomplete for file paths in imports |
+| **Better Comments** | Color-codes comments by type (TODO, !, ?, etc.) |
+| **CodeSnap** | Beautiful screenshots of your code for presentations |
+| **Peacock** | Color-code VS Code windows when working on multiple projects |
 
 ---
 

@@ -32,7 +32,7 @@ keywords:
         - csv-processing
         - data-analysis
         - month-end-close
-lastmod: 2026-04-25T19:27:00.307Z
+lastmod: 2026-05-23T00:00:00.000Z
 permalink: /posts/terminal-bash-finance-accounting/
 comments: true
 difficulty: 🟢 Beginner
@@ -348,6 +348,68 @@ And here's the thing most people miss: the skills you learn in Bash transfer dir
 ## Your Journey Begins Here
 
 Ready to trade the spreadsheet for the shell? You don't need a computer science degree. You don't need to quit your job and attend a bootcamp. You just need curiosity and about an hour.
+
+### 🖥️ Setting Up Your Terminal (5 Minutes)
+
+Before you start the quests below, make sure your terminal is ready:
+
+**macOS** — You already have Terminal.app installed. Press `Cmd + Space`, type "Terminal", hit Enter. Done. For a better experience, install [iTerm2](https://iterm2.com/) (free).
+
+**Windows** — Install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install):
+
+```powershell
+# Open PowerShell as Administrator and run:
+wsl --install
+```
+
+Restart your computer. You now have a full Linux terminal inside Windows. Alternatively, install [Git Bash](https://git-scm.com/downloads) for a lighter option.
+
+**Linux** — Open your distribution's terminal application. It's already there.
+
+### 🧪 Try It Right Now
+
+Open your terminal and paste these commands one at a time:
+
+```bash
+# Where am I?
+pwd
+
+# What's in this directory?
+ls
+
+# Make a practice folder
+mkdir ~/bash-finance-practice
+cd ~/bash-finance-practice
+
+# Create a sample CSV (paste this whole block)
+cat > sample_expenses.csv << 'EOF'
+date,vendor,category,reference,amount
+2026-01-05,Staples,Office Supplies,INV-001,142.50
+2026-01-08,AWS,Cloud Services,INV-002,1893.47
+2026-01-12,Uber,Travel,INV-003,45.00
+2026-01-15,Staples,Office Supplies,INV-004,87.25
+2026-01-19,Microsoft,Software,INV-005,299.99
+2026-01-22,Delta Airlines,Travel,INV-006,534.00
+2026-01-25,Staples,Office Supplies,INV-007,63.10
+2026-01-28,AWS,Cloud Services,INV-008,2104.33
+EOF
+
+# Now try the commands from this article:
+grep "Office Supplies" sample_expenses.csv
+grep "Office Supplies" sample_expenses.csv | wc -l
+awk -F',' '{sum += $5} END {printf "$%.2f\n", sum}' sample_expenses.csv
+```
+
+If those worked, congratulations — you just filtered, counted, and summed financial data faster than Excel could open the file.
+
+### 📚 Recommended Learning Path
+
+| Week | Focus | Resource |
+|------|-------|----------|
+| 1 | Navigation & file basics | [Terminal Fundamentals Quest](/quests/0000/terminal-fundamentals/) |
+| 2 | Pattern matching & piping | [Bashcrawl Adventure](/quests/0000/bashcrawl/) |
+| 3 | Scripting & automation | [Bash Run Quest](/quests/0000/side-quests/bash-run/) |
+| 4 | Real financial workflows | Re-read this article and build your own scripts |
 
 We've designed a series of gamified quests — yes, *quests*, like a video game — to take you from absolute beginner to confident terminal user. Each one teaches real skills through hands-on practice.
 
