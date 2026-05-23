@@ -76,7 +76,7 @@ categories:
 - Data-Science
 - Hard
 tags:
-- 1101
+- "1101"
 - python
 - machine-learning
 - scikit-learn
@@ -85,7 +85,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1101
+- "1101"
 - python
 - machine-learning
 - scikit-learn

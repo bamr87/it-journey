@@ -29,7 +29,7 @@ tags:
 - bash
 - hidden-files
 - man-pages
-- 0000
+- "0000"
 keywords:
   primary:
   - ls -a hidden files
@@ -42,13 +42,13 @@ keywords:
   - terminal documentation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/cellar/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 validation_criteria:
 - Use ls -a to find hidden directories
 - Successfully navigate to .CHAPEL
@@ -64,7 +64,7 @@ rewards:
 - Man page and hidden file mastery
 excerpt: "Reveal hidden dot-directories, consult man pages, and use command help systems to defeat the chapel monster and claim the tome."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-hidden-chapel/
+permalink: /quests/0000/side-quests/hidden-chapel/
 ---
 
 *The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas, guarded by a monster who fears knowledge.*
@@ -81,7 +81,7 @@ permalink: /quests/0000/side-quests/bashcrawl-hidden-chapel/
 
 ## �️ Quest Prerequisites
 
-- [Cellar side-quest](/quests/0000/side-quests/bashcrawl-cellar/) complete
+- [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls`, `cd`, and basic file reading
 
 ## ⚡ Command Cheatsheet
@@ -222,8 +222,8 @@ The mausoleum is another hidden directory. Explore it for bonus lore and a secre
 
 ## ➡️ Next Steps
 
-- **Complete other branches** → [Vault](/quests/0000/side-quests/bashcrawl-vault/) · [Scrap](/quests/0000/side-quests/bashcrawl-scrap/)
-- **Enter the final gauntlet** → [The Rift](/quests/0000/side-quests/bashcrawl-rift/)
+- **Complete other branches** → [Vault](/quests/0000/side-quests/vault/) · [Scrap](/quests/0000/side-quests/scrap/)
+- **Enter the final gauntlet** → [The Rift](/quests/0000/side-quests/rift/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---

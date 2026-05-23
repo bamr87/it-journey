@@ -75,14 +75,14 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- 0110
+- "0110"
 - sql
 - main_quest
 - data-engineering
 - hands-on
 - gamified-learning
 keywords:
-- 0110
+- "0110"
 - sql
 - main_quest
 - data-engineering

@@ -88,7 +88,7 @@ categories:
 - Enterprise
 - ERP
 tags:
-- 0001
+- "0001"
 - ai-assisted-development
 - django
 - react
@@ -100,7 +100,7 @@ tags:
 - celery
 - postgresql
 keywords:
-- 0001
+- "0001"
 - ai-assisted-development
 - django erp
 - react frontend

@@ -9,7 +9,7 @@ categories:
 - Level-0110
 - Data-Engineering
 tags:
-- 0110
+- "0110"
 - databases
 - sql
 - nosql

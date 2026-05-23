@@ -36,14 +36,14 @@ categories:
 - Development-Fundamentals
 - Tool-Mastery
 tags:
-- 0100
+- "0100"
 - git
 - github
 - version-control
 - collaboration
 - workflow-mastery
 keywords:
-- 0100
+- "0100"
 - git
 - github
 - version-control

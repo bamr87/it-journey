@@ -70,14 +70,14 @@ categories:
 - Documentation
 - Beginner
 tags:
-- 0000
+- "0000"
 - markdown
 - main_quest
 - documentation
 - hands-on
 - gamified-learning
 keywords:
-- 0000
+- "0000"
 - markdown
 - main_quest
 - documentation

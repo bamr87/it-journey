@@ -34,7 +34,7 @@ categories:
 - Quests
 - Development - Foundation
 tags:
-- 0001
+- "0001"
 - terminal
 - command-line
 - tool-mastery
@@ -44,7 +44,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 0001
+- "0001"
 - terminal
 - command-line
 - tool-mastery

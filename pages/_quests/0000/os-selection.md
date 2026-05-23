@@ -83,11 +83,11 @@ categories:
 - Quests
 - Init-World
 tags:
-- 0000
+- "0000"
 - operating-systems
 - beginner
 keywords:
-- 0000
+- "0000"
 - operating-systems
 - beginner
 fmContentType: quest

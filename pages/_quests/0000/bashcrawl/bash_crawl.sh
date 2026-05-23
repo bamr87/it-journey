@@ -33,17 +33,17 @@ log_error() { echo "[ERROR] $*" >&2; }
 
 # Map of chamber aliases → walkthrough side-quest paths
 declare -A QUEST_MAP=(
-    [entrance]="/quests/0000/side-quests/bashcrawl-entrance/"
-    [workshop]="/quests/0000/side-quests/bashcrawl-workshop/"
-    [cellar]="/quests/0000/side-quests/bashcrawl-cellar/"
-    [armoury]="/quests/0000/side-quests/bashcrawl-armoury/"
-    [armory]="/quests/0000/side-quests/bashcrawl-armoury/"
-    [chamber]="/quests/0000/side-quests/bashcrawl-chamber/"
-    [chapel]="/quests/0000/side-quests/bashcrawl-hidden-chapel/"
-    [vault]="/quests/0000/side-quests/bashcrawl-vault/"
-    [scrap]="/quests/0000/side-quests/bashcrawl-scrap/"
-    [rift]="/quests/0000/side-quests/bashcrawl-rift/"
-    [agent]="/quests/0000/side-quests/bashcrawl-agent-mode/"
+    [entrance]="/quests/0000/side-quests/entrance/"
+    [workshop]="/quests/0000/side-quests/workshop/"
+    [cellar]="/quests/0000/side-quests/cellar/"
+    [armoury]="/quests/0000/side-quests/armoury/"
+    [armory]="/quests/0000/side-quests/armoury/"
+    [chamber]="/quests/0000/side-quests/chamber/"
+    [chapel]="/quests/0000/side-quests/hidden-chapel/"
+    [vault]="/quests/0000/side-quests/vault/"
+    [scrap]="/quests/0000/side-quests/scrap/"
+    [rift]="/quests/0000/side-quests/rift/"
+    [agent]="/quests/0000/side-quests/agent-mode/"
 )
 
 show_quest_url() {

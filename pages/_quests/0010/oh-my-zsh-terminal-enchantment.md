@@ -96,7 +96,7 @@ categories:
 - Tools
 - Terminal-Mastery
 tags:
-- 0010
+- "0010"
 - zsh
 - terminal-mastery
 - oh-my-zsh

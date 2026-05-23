@@ -2,7 +2,7 @@
 applyTo: "pages/_quests/**/*.md"
 description: "Create gamified IT-Journey quests: frontmatter schema, fantasy theme, learning objectives, and validation rules"
 date: 2025-07-21T23:30:21.000Z
-lastmod: 2026-05-18T12:00:00.000Z
+lastmod: 2026-06-09T00:00:00.000Z
 ---
 
 # Quest Creation Instructions
@@ -54,7 +54,7 @@ permalink: /quests/1100/docker-mastery/
 keywords:
   primary: ["docker", "containers", "orchestration"]
   secondary: ["devops", "deployment"]
-tags: [1100, docker, main_quest, devops, hands-on, gamified-learning]
+tags: ["1100", docker, main_quest, devops, hands-on, gamified-learning]
 categories: [Quests, DevOps, Containers]
 prerequisites:
   knowledge_requirements: ["Basic CLI usage", "Linux fundamentals"]
@@ -288,6 +288,7 @@ python3 test/quest-validator/quest_validator.py -d pages/_quests/
 | Code block without language | Change ` ``` ` to ` ```bash ` (or appropriate) |
 | Missing `## 🎯 Quest Objectives` | Add the section with `- [ ]` checkboxes |
 | Bad `permalink` | Match `/quests/XXXX/slug/` or `/quests/XXXX/side-quests/slug/` |
+| `undefined method 'gsub' for Integer` | Quote numeric tags — `- "1100"` not `- 1100`; YAML parses bare 4-digit integers as Integer, breaking Liquid string filters |
 
 ## 10. Integration Requirements
 

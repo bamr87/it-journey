@@ -68,7 +68,7 @@ categories:
 - Data-Science
 - Hard
 tags:
-- 1101
+- "1101"
 - python
 - opencv
 - computer-vision
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1101
+- "1101"
 - python
 - opencv
 - computer-vision

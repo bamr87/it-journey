@@ -68,7 +68,7 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- 1100
+- "1100"
 - kafka
 - flink
 - streaming
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1100
+- "1100"
 - kafka
 - flink
 - streaming

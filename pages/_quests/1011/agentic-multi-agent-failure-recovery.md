@@ -23,7 +23,7 @@ sub_title: "Level 1011 Quest 4/4 — Domain 5: Multi-Agent Systems"
 excerpt: When a familiar falls in battle, the mage does not abandon the quest — she calls a reserve, claims the familiar's partial work, and continues. Multi-agent systems must be designed the same way.
 author: IT-Journey Team
 tags:
-  - 1011
+  - "1011"
   - agentic-ai
   - multi-agent
   - failure-recovery

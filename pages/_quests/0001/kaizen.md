@@ -78,14 +78,14 @@ categories:
 - Process-Improvement
 - Team-Development
 tags:
-- 0001
+- "0001"
 - kaizen
 - continuous-improvement
 - lean-development
 - process-optimization
 - team-culture
 keywords:
-- 0001
+- "0001"
 - kaizen
 - continuous-improvement
 - lean-development

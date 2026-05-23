@@ -68,14 +68,14 @@ categories:
 - DevOps
 - Medium
 tags:
-- 0101
+- "0101"
 - environments
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- 0101
+- "0101"
 - environments
 - main_quest
 - devops

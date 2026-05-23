@@ -66,14 +66,14 @@ categories:
 - Architecture
 - Hard
 tags:
-- 1110
+- "1110"
 - docker
 - main_quest
 - architecture
 - hands-on
 - gamified-learning
 keywords:
-- 1110
+- "1110"
 - docker
 - main_quest
 - architecture

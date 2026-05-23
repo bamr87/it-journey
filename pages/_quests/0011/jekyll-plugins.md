@@ -68,7 +68,7 @@ categories:
 - Backend
 - Medium
 tags:
-- 0011
+- "0011"
 - jekyll
 - ruby
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 0011
+- "0011"
 - jekyll
 - ruby
 - main_quest

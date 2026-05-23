@@ -72,14 +72,14 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- 1000
+- "1000"
 - cloud
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- 1000
+- "1000"
 - cloud
 - main_quest
 - cloud-engineering

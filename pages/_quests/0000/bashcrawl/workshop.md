@@ -27,7 +27,7 @@ tags:
 - terminal
 - bash
 - file-management
-- 0000
+- "0000"
 keywords:
   primary:
   - mkdir command
@@ -40,13 +40,13 @@ keywords:
   - shell scripting basics
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-entrance/
+  - /quests/0000/side-quests/entrance/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/cellar/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/cellar/
 validation_criteria:
 - Create a directory and verify with ls
 - Create a file with touch and write to it with echo
@@ -61,7 +61,7 @@ rewards:
 - File management proficiency
 excerpt: "Practice mkdir, touch, echo redirection, cp, mv, and rm to construct workshop artifacts and advance deeper into Bashcrawl."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-workshop/
+permalink: /quests/0000/side-quests/workshop/
 ---
 
 *The Workshop smells of sawdust and old iron. Workbenches line the walls, covered in unfinished projects. Here, heroes learn the art of building — and destroying — the very fabric of the file system.*
@@ -79,7 +79,7 @@ permalink: /quests/0000/side-quests/bashcrawl-workshop/
 
 ## �️ Quest Prerequisites
 
-- Complete the [Entrance side-quest](/quests/0000/side-quests/bashcrawl-entrance/) first
+- Complete the [Entrance side-quest](/quests/0000/side-quests/entrance/) first
 - Comfortable with `ls`, `cd`, and `cat`
 
 ## ⚡ Command Cheatsheet
@@ -186,7 +186,7 @@ Before advancing:
 
 ## ➡️ Next Steps
 
-- **Main path** → [Cellar](/quests/0000/side-quests/bashcrawl-cellar/)
+- **Main path** → [Cellar](/quests/0000/side-quests/cellar/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---

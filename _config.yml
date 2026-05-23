@@ -43,10 +43,10 @@ portfolio                : &portfolio [*github_user, '.', 'github.io']
 
 title                    : IT-Journey
 title_url                : "/"
-title_icon               : "globe"
-subtitle                 : "zer0 to her0"
+title_icon               : ""
+subtitle                 : ""
 subtitle_url             : "localhost"
-subtitle_icon            : "code"
+subtitle_icon            : ""
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey"
 domain_ext               : ".dev"

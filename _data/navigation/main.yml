@@ -24,10 +24,6 @@
       url: /news/web-development/
     - title: Technology
       url: /news/technology/
-    - title: Quests
-      url: /quests/home/
-    - title: Stats
-      url: /stats/
 - title: Library
   url: /docs/
   icon: bi-journal-bookmark
@@ -38,12 +34,6 @@
       url: /docs/terminal/
     - title: Obsidian Graph
       url: /docs/obsidian/graph/
-- title: Wargames
-  url: /docs/wargames/
-  icon: bi-shield-lock
-  children:
-    - title: Wargames Overview
-      url: /docs/wargames/
 - title: Notebook
   url: /notes/
   icon: bi-journal-code
@@ -66,4 +56,6 @@
       url: /about/contributing/
     - title: Sitemap
       url: /about/sitemap/
+    - title: Stats
+      url: /stats/
 

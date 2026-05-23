@@ -33,14 +33,14 @@ categories:
 - Devops
 - Medium
 tags:
-- 0101
+- "0101"
 - docker
 - tool-mastery
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- 0101
+- "0101"
 - docker
 - tool-mastery
 - devops

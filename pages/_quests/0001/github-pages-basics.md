@@ -69,7 +69,7 @@ categories:
 - Web-Hosting
 - Beginner
 tags:
-- 0001
+- "0001"
 - github-pages
 - web-hosting
 - static-sites
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - beginner
 keywords:
-- 0001
+- "0001"
 - github-pages
 - web-hosting
 - static-sites

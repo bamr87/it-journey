@@ -30,7 +30,7 @@ tags:
 - automation
 - ai
 - contribution
-- 0000
+- "0000"
 keywords:
   primary:
   - bashcrawl agent mode
@@ -43,7 +43,7 @@ keywords:
   - dungeon automation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
   unlocks_quests: []
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
@@ -64,7 +64,7 @@ rewards:
 - Bashcrawl automation mastery
 excerpt: "Automate Bashcrawl runs with agent mode, scripted commands, screenshot capture, and an optional open-source contribution finale."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-agent-mode/
+permalink: /quests/0000/side-quests/agent-mode/
 ---
 
 *You have conquered the Rift. But the dungeon holds one final secret — a mode where an AI plays alongside you, a mode where you automate the entire journey, a mode where you become the dungeon master. Welcome to Agent Mode.*

@@ -68,7 +68,7 @@ categories:
 - Data-Science
 - Medium
 tags:
-- 1101
+- "1101"
 - python
 - numpy
 - pandas
@@ -78,7 +78,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1101
+- "1101"
 - python
 - numpy
 - pandas

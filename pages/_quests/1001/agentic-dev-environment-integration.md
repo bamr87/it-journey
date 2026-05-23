@@ -23,7 +23,7 @@ sub_title: "Level 1001 Quest 1/3 — Domain 2: Tool Use & Environment Interactio
 excerpt: An agent bound to a well-configured realm performs consistently. An agent cast into an unknown environment is dangerous. Write the binding spells that make your environment agent-ready.
 author: IT-Journey Team
 tags:
-  - 1001
+  - "1001"
   - agentic-ai
   - github-codespaces
   - agents-md

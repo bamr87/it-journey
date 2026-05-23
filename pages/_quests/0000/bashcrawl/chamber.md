@@ -28,7 +28,7 @@ tags:
 - bash
 - arithmetic
 - variables
-- 0000
+- "0000"
 keywords:
   primary:
   - bash arithmetic
@@ -41,13 +41,13 @@ keywords:
   - shell scripting math
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-armoury/
+  - /quests/0000/side-quests/armoury/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 validation_criteria:
 - Use let, expr, and $(( )) to compute values
 - Assign arithmetic results to variables
@@ -62,7 +62,7 @@ rewards:
 - Bash arithmetic mastery
 excerpt: "Defeat the stone statue by using let, expr, and arithmetic expansion to solve Bash math challenges and unlock the Rift."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-chamber/
+permalink: /quests/0000/side-quests/chamber/
 ---
 
 *A massive stone statue dominates the Chamber, its eyes glowing with arithmetic runes. It will not yield to a sword. Only correct calculations can break the enchantment — and wrong answers deal damage.*
@@ -77,7 +77,7 @@ permalink: /quests/0000/side-quests/bashcrawl-chamber/
 
 ## �️ Quest Prerequisites
 
-- [Armoury side-quest](/quests/0000/side-quests/bashcrawl-armoury/) complete
+- [Armoury side-quest](/quests/0000/side-quests/armoury/) complete
 - Sword in inventory (from armoury `./sword`)
 
 ## ⚡ Command Cheatsheet
@@ -184,10 +184,10 @@ The stone key fragment is needed for the Rift — but you still need pieces from
 
 Continue exploring:
 
-- [Hidden Chapel](/quests/0000/side-quests/bashcrawl-hidden-chapel/) — for the tome fragment
-- [Vault](/quests/0000/side-quests/bashcrawl-vault/) — for the goblet solution
-- [Scrap Heap](/quests/0000/side-quests/bashcrawl-scrap/) — for the portal link
-- **When all four branches complete** → [The Rift](/quests/0000/side-quests/bashcrawl-rift/)
+- [Hidden Chapel](/quests/0000/side-quests/hidden-chapel/) — for the tome fragment
+- [Vault](/quests/0000/side-quests/vault/) — for the goblet solution
+- [Scrap Heap](/quests/0000/side-quests/scrap/) — for the portal link
+- **When all four branches complete** → [The Rift](/quests/0000/side-quests/rift/)
 
 ---
 

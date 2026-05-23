@@ -66,14 +66,14 @@ categories:
 - Architecture
 - Epic
 tags:
-- 1110
+- "1110"
 - python
 - main_quest
 - architecture
 - hands-on
 - gamified-learning
 keywords:
-- 1110
+- "1110"
 - python
 - main_quest
 - architecture

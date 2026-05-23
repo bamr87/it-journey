@@ -23,7 +23,7 @@ sub_title: "Level 1011 Quest 2/4 — Domain 5: Multi-Agent Systems"
 excerpt: One agent is a soldier. A council of agents is an army. But armies without commanders create chaos, not victory. Learn to orchestrate — to divide, assign, coordinate, and unify.
 author: IT-Journey Team
 tags:
-  - 1011
+  - "1011"
   - agentic-ai
   - multi-agent
   - orchestration

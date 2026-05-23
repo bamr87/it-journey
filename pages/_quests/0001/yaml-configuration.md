@@ -67,14 +67,14 @@ categories:
 - Frontend
 - Beginner
 tags:
-- 0001
+- "0001"
 - yaml
 - main_quest
 - frontend
 - hands-on
 - gamified-learning
 keywords:
-- 0001
+- "0001"
 - yaml
 - main_quest
 - frontend

@@ -69,7 +69,7 @@ categories:
 - CSS-Frameworks
 - Intermediate
 tags:
-- 0010
+- "0010"
 - bootstrap
 - bootstrap-5
 - responsive-design
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- 0010
+- "0010"
 - bootstrap
 - bootstrap-5
 - responsive-design

@@ -71,14 +71,14 @@ categories:
 - DevOps
 - Beginner
 tags:
-- 0000
+- "0000"
 - git
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- 0000
+- "0000"
 - git
 - main_quest
 - devops

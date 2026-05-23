@@ -25,12 +25,12 @@ categories:
 - Quests
 - DevOps
 tags:
-- 0100
+- "0100"
 - docker
 - jekyll
 - frontend
 keywords:
-- 0100
+- "0100"
 - docker
 - jekyll
 - frontend

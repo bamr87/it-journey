@@ -68,7 +68,7 @@ categories:
 - Data-Science
 - Epic
 tags:
-- 1101
+- "1101"
 - tensorflow
 - neural-networks
 - deep-learning
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1101
+- "1101"
 - tensorflow
 - neural-networks
 - deep-learning

@@ -47,14 +47,14 @@ categories:
 - Development
 - Intermediate
 tags:
-- 0010
+- "0010"
 - python
 - language-learning
 - testing
 - hands-on
 - recursion
 keywords:
-- 0010
+- "0010"
 - python
 - language-learning
 - testing

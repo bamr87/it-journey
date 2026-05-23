@@ -70,7 +70,7 @@ categories:
 - Development
 - Foundation
 tags:
-- 0010
+- "0010"
 - gum
 - shell-scripting
 - frontend
@@ -78,7 +78,7 @@ tags:
 - tool-mastery
 - hands-on
 keywords:
-- 0010
+- "0010"
 - gum
 - shell-scripting
 - frontend

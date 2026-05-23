@@ -29,7 +29,7 @@ tags:
 - bash
 - pipes
 - redirection
-- 0000
+- "0000"
 keywords:
   primary:
   - bash pipes
@@ -42,14 +42,14 @@ keywords:
   - linux pipes tutorial
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-chamber/
-  - /quests/0000/side-quests/bashcrawl-hidden-chapel/
+  - /quests/0000/side-quests/chamber/
+  - /quests/0000/side-quests/hidden-chapel/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-agent-mode/
+  - /quests/0000/side-quests/agent-mode/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-agent-mode/
+  - /quests/0000/side-quests/agent-mode/
 validation_criteria:
 - Use | to pipe output between commands
 - Chain commands with && and ||
@@ -67,7 +67,7 @@ rewards:
 - Pipes and redirection mastery
 excerpt: "Conquer the final Rift by chaining commands, piping output, and redirecting streams to defeat both bosses and finish Bashcrawl."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-rift/
+permalink: /quests/0000/side-quests/rift/
 ---
 
 *You stand at the edge of the Rift — a swirling chasm where data streams collide. The rules here are different: commands don't just run, they flow into each other. Master the pipe and you master the dungeon.*
@@ -224,7 +224,7 @@ The satellite boss is the final encounter. It uses all skills: pipe a command th
 ## ➡️ Next Steps
 
 - **The dungeon is complete!** Celebrate your mastery.
-- **Capstone** → [Agent Mode](/quests/0000/side-quests/bashcrawl-agent-mode/) for advanced automation
+- **Capstone** → [Agent Mode](/quests/0000/side-quests/agent-mode/) for advanced automation
 - **Extend the dungeon** → [Bash Run](/quests/0000/side-quests/bash-run/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 

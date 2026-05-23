@@ -1,7 +1,7 @@
 # Dev config override
 
-remote_theme             : "bamr87/zer0-mistakes"
-# theme                  : "jekyll-theme-zer0"
+remote_theme             : "local"                  # sentinel: overrides _config.yml; fails owner/repo regex → no download
+theme                    : "jekyll-theme-zer0"
 
 # Allow future-dated posts to be rendered in development
 future: true

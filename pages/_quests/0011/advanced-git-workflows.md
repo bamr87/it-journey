@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Medium
 tags:
-- 0011
+- "0011"
 - git
 - version-control
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 0011
+- "0011"
 - git
 - version-control
 - main_quest

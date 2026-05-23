@@ -22,7 +22,7 @@ sub_title: "Level 0111 Quest 1/3 — Domain 1: Agent Architecture & SDLC"
 excerpt: Define what your agent does, where it lives in the SDLC, and how to stop common anti-patterns from destroying your workflow.
 author: IT-Journey Team
 tags:
-  - 0111
+  - "0111"
   - agentic-ai
   - github-copilot
   - sdlc

@@ -23,7 +23,7 @@ sub_title: "Level 1001 Quest 3/3 — Domain 3: Context & Memory Management"
 excerpt: Memory defines intelligence. An agent without memory repeats every mistake and re-discovers every insight. Open the Vaults of Recollection and teach your agent to remember.
 author: IT-Journey Team
 tags:
-  - 1001
+  - "1001"
   - agentic-ai
   - agent-memory
   - context

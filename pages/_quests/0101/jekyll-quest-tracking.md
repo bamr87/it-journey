@@ -85,7 +85,7 @@ categories:
 - Frontend
 - Hard
 tags:
-- 0101
+- "0101"
 - jekyll
 - liquid
 - collections
@@ -98,7 +98,7 @@ tags:
 - static-sites
 - python-automation
 keywords:
-- 0101
+- "0101"
 - jekyll
 - liquid
 - collections

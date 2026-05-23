@@ -45,7 +45,7 @@ learning_paths:
 skill_focus:
 - getting-started
 - beginner
-- 0000
+- "0000"
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -83,11 +83,11 @@ categories: []
 tags:
 - getting-started
 - beginner
-- 0000
+- "0000"
 keywords:
 - getting-started
 - beginner
-- 0000
+- "0000"
 fmContentType: quest
 draft: false
 meta: null

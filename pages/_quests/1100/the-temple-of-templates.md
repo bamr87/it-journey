@@ -35,14 +35,14 @@ categories:
 - Development
 - Intermediate
 tags:
-- 1100
+- "1100"
 - templates
 - design-patterns
 - software-architecture
 - reusable-components
 - hands-on
 keywords:
-- 1100
+- "1100"
 - templates
 - design-patterns
 - software-architecture

@@ -36,7 +36,7 @@ categories:
 - Community
 - Getting Started
 tags:
-- 0001
+- "0001"
 - contributor
 - profile
 - git

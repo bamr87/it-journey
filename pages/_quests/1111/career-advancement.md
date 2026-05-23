@@ -66,14 +66,14 @@ categories:
 - Leadership
 - Hard
 tags:
-- 1111
+- "1111"
 - career
 - main_quest
 - leadership
 - hands-on
 - gamified-learning
 keywords:
-- 1111
+- "1111"
 - career
 - main_quest
 - leadership

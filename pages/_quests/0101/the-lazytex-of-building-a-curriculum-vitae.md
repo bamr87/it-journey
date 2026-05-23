@@ -37,14 +37,14 @@ categories:
 - Development
 - Foundation
 tags:
-- 0101
+- "0101"
 - latex
 - vscode
 - resume
 - pdf
 - tool-mastery
 keywords:
-- 0101
+- "0101"
 - latex
 - vscode
 - resume

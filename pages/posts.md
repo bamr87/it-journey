@@ -1,5 +1,5 @@
 ---
-title: IT-Journey Blog Posts: Tutorials and Learning Articles
+title: "IT-Journey Blog Posts: Tutorials and Learning Articles"
 author: Amr
 description: Educational blog posts covering web development, DevOps, system administration, AI & ML, and emerging tech — documenting the IT journey from zero to hero.
 excerpt: A complete index of posts documenting this journey, organized into categories, journal entries, and articles

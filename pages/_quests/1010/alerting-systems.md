@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- 1010
+- "1010"
 - pagerduty
 - alerting
 - main_quest
@@ -76,7 +76,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1010
+- "1010"
 - pagerduty
 - alerting
 - main_quest

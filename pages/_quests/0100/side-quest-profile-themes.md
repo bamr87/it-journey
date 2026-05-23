@@ -34,7 +34,7 @@ categories:
 - Frontend
 - Advanced
 tags:
-- 0100
+- "0100"
 - contributor
 - css
 - themes

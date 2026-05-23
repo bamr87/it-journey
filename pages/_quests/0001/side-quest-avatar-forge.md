@@ -32,7 +32,7 @@ categories:
 - Community
 - Customization
 tags:
-- 0001
+- "0001"
 - contributor
 - avatar
 - profile

@@ -67,14 +67,14 @@ categories:
 - Security
 - Hard
 tags:
-- 1011
+- "1011"
 - security
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- 1011
+- "1011"
 - security
 - main_quest
 - security

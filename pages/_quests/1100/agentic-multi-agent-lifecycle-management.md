@@ -23,7 +23,7 @@ sub_title: "Level 1100 Quest 1/4 — Domain 5: Multi-Agent Systems"
 excerpt: The Pantheon is not built in a day. Each agent is a deity with its own domain, and each domain must be governed — created, empowered, monitored, and retired when its purpose is fulfilled.
 author: IT-Journey Team
 tags:
-  - 1100
+  - "1100"
   - agentic-ai
   - multi-agent
   - lifecycle-management

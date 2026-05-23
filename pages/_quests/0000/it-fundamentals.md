@@ -45,7 +45,7 @@ learning_paths:
 skill_focus:
 - fundamentals
 - it-basics
-- 0000
+- "0000"
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -83,11 +83,11 @@ categories: []
 tags:
 - fundamentals
 - it-basics
-- 0000
+- "0000"
 keywords:
 - fundamentals
 - it-basics
-- 0000
+- "0000"
 fmContentType: quest
 draft: false
 meta: null

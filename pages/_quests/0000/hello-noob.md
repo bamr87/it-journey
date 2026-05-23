@@ -85,14 +85,14 @@ categories:
 - Init-World
 - Beginner
 tags:
-- 0000
+- "0000"
 - github
 - git
 - beginner
 - init-world
 - community-entry
 keywords:
-- 0000
+- "0000"
 - github
 - git
 - beginner

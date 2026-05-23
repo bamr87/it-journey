@@ -27,7 +27,7 @@ tags:
 - terminal
 - bash
 - navigation
-- 0000
+- "0000"
 keywords:
   primary:
   - pwd command
@@ -42,13 +42,13 @@ quest_dependencies:
   required_quests:
   - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-workshop/
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/workshop/
+  - /quests/0000/side-quests/cellar/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-workshop/
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/workshop/
+  - /quests/0000/side-quests/cellar/
 validation_criteria:
 - Run pwd and explain the output
 - List the entrance contents with ls and ls -F
@@ -63,7 +63,7 @@ rewards:
 - Terminal navigation proficiency
 excerpt: "Start Bashcrawl by using pwd, ls, cd, and cat to read the first scroll, collect the brass key, and enter the dungeon."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-entrance/
+permalink: /quests/0000/side-quests/entrance/
 ---
 
 *The dungeon gate groans open. Cool air pours out carrying the scent of ancient scrolls. This is where every hero begins — four commands, a brass key, and the courage to type.*
@@ -151,7 +151,7 @@ pwd
 # Output: .../ENTRANCE/cellar
 ```
 
-Congratulations — you have left the entrance. Continue to the [Cellar walkthrough](/quests/0000/side-quests/bashcrawl-cellar/) or explore the [Workshop](/quests/0000/side-quests/bashcrawl-workshop/) first.
+Congratulations — you have left the entrance. Continue to the [Cellar walkthrough](/quests/0000/side-quests/cellar/) or explore the [Workshop](/quests/0000/side-quests/workshop/) first.
 
 ## 💡 Common Pitfalls
 
@@ -175,8 +175,8 @@ Before marking this side-quest complete, verify:
 
 You are now ready to explore deeper. Choose your path:
 
-- **Continue the main line** → [Cellar](/quests/0000/side-quests/bashcrawl-cellar/)
-- **Side trip first** → [Workshop](/quests/0000/side-quests/bashcrawl-workshop/)
+- **Continue the main line** → [Cellar](/quests/0000/side-quests/cellar/)
+- **Side trip first** → [Workshop](/quests/0000/side-quests/workshop/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---

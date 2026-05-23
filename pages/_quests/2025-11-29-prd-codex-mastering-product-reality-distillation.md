@@ -20,7 +20,7 @@ excerpt: Transform scattered repository signals into a living, breathing PRD tha
 snippet: Reality fully armed. The distillery now distills distilleries.
 author: Quest Master IT-Journey
 tags: &id001
-- 0011
+- "0011"
 - documentation-automation
 - main_quest
 - product-management

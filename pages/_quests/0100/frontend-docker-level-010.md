@@ -25,13 +25,13 @@ categories:
 - Quests
 - Frontend
 tags:
-- 0100
+- "0100"
 - docker
 - jekyll
 - bootstrap
 - frontend
 keywords:
-- 0100
+- "0100"
 - docker
 - jekyll
 - bootstrap

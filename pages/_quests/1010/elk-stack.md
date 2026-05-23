@@ -68,7 +68,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- 1010
+- "1010"
 - elasticsearch
 - logstash
 - kibana
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- 1010
+- "1010"
 - elasticsearch
 - logstash
 - kibana

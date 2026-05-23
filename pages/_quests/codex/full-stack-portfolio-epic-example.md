@@ -5,7 +5,7 @@ description: Build a complete portfolio website from design to deployment, integ
 date: 2025-10-04T15:25:33.000Z
 preview: /images/previews/the-digital-portfolio-fortress-full-stack-epic-con.png
 tags:
-- 1111
+- "1111"
 - full-stack-development
 - portfolio-project
 - web-development
@@ -23,7 +23,7 @@ excerpt: Create a professional portfolio website that showcases your IT journey 
 snippet: From concept to production - build the digital castle that tells your story
 author: Quest Master IT-Journey Team
 keywords:
-- 1111
+- "1111"
 - full-stack-development
 - portfolio-project
 - web-development

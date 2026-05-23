@@ -69,7 +69,7 @@ categories:
 - JavaScript
 - Intermediate
 tags:
-- 0010
+- "0010"
 - javascript
 - dom-manipulation
 - web-development
@@ -78,7 +78,7 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- 0010
+- "0010"
 - javascript
 - dom-manipulation
 - web-development

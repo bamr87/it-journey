@@ -69,7 +69,7 @@ categories:
 - Version-Control
 - Beginner
 tags:
-- 0001
+- "0001"
 - git
 - git-branching
 - pull-requests
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - beginner
 keywords:
-- 0001
+- "0001"
 - git
 - git-branching
 - pull-requests

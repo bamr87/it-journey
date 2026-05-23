@@ -33,7 +33,7 @@ categories:
 - Community
 - Customization
 tags:
-- 0001
+- "0001"
 - contributor
 - badges
 - achievements

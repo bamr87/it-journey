@@ -26,7 +26,7 @@ sub_title: "Level 1100 Quest 4/4 — The Grand Capstone — All Domains"
 excerpt: The Codex was written. The quests were walked. Now the Trial begins. All six seals must be broken. All six domains tested. The title of Agentic Codex Master is not given — it is earned in the forge of complete knowledge.
 author: IT-Journey Team
 tags:
-  - 1100
+  - "1100"
   - agentic-ai
   - capstone
   - gh-600

@@ -74,14 +74,14 @@ categories:
 - AI-Development
 - Tool-Mastery
 tags:
-- 0010
+- "0010"
 - ai-development
 - prompt-engineering
 - language-models
 - ai-communication
 - tool-mastery
 keywords:
-- 0010
+- "0010"
 - ai-development
 - prompt-engineering
 - language-models

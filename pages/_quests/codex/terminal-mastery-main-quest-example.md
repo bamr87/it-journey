@@ -5,7 +5,7 @@ description: Master terminal navigation and essential command-line operations to
 date: 2025-10-04 15:25:33+00:00
 preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
-- 0001
+- "0001"
 - terminal
 - command-line
 - navigation
@@ -21,7 +21,7 @@ excerpt: Transform from terminal novice to command-line champion through hands-o
 snippet: Where digital adventures begin - master the gateway to all development power
 author: Quest Master IT-Journey Team
 keywords:
-- 0001
+- "0001"
 - terminal
 - command-line
 - navigation

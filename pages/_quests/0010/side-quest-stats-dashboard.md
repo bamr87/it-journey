@@ -32,7 +32,7 @@ categories:
 - Community
 - Frontend
 tags:
-- 0010
+- "0010"
 - contributor
 - stats
 - data-visualization

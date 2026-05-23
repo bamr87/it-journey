@@ -67,14 +67,14 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- 1001
+- "1001"
 - kubernetes
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- 1001
+- "1001"
 - kubernetes
 - main_quest
 - cloud-engineering

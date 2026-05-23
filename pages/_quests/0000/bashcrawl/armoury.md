@@ -28,7 +28,7 @@ tags:
 - bash
 - permissions
 - chmod
-- 0000
+- "0000"
 keywords:
   primary:
   - chmod command
@@ -41,13 +41,13 @@ keywords:
   - executable scripts
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/cellar/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-chamber/
+  - /quests/0000/side-quests/chamber/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-chamber/
+  - /quests/0000/side-quests/chamber/
 validation_criteria:
 - Read ls -l permissions output correctly
 - Use chmod to make a script executable
@@ -62,7 +62,7 @@ rewards:
 - File permissions mastery
 excerpt: "Master chmod, read permission bits, and execute armoury scripts to brew potions, equip your sword, and unlock the next chamber."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-armoury/
+permalink: /quests/0000/side-quests/armoury/
 ---
 
 *Racks of weapons line the walls. Suits of armour stand at attention. But every sword and potion is locked behind a permission barrier — you must learn `chmod` before you can equip a single item.*
@@ -78,7 +78,7 @@ permalink: /quests/0000/side-quests/bashcrawl-armoury/
 
 ## �️ Quest Prerequisites
 
-- [Cellar side-quest](/quests/0000/side-quests/bashcrawl-cellar/) complete
+- [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls -F`, `cat`, and file navigation
 
 ## ⚡ Command Cheatsheet
@@ -192,8 +192,8 @@ With the sword equipped, you should win. Health permitting, the guardian falls a
 
 ## ➡️ Next Steps
 
-- **Continue main line** → [Chamber](/quests/0000/side-quests/bashcrawl-chamber/)
-- **Explore other branches** → [Chapel](/quests/0000/side-quests/bashcrawl-hidden-chapel/) · [Vault](/quests/0000/side-quests/bashcrawl-vault/) · [Scrap](/quests/0000/side-quests/bashcrawl-scrap/)
+- **Continue main line** → [Chamber](/quests/0000/side-quests/chamber/)
+- **Explore other branches** → [Chapel](/quests/0000/side-quests/hidden-chapel/) · [Vault](/quests/0000/side-quests/vault/) · [Scrap](/quests/0000/side-quests/scrap/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---

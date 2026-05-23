@@ -38,7 +38,7 @@ categories:
 - Development
 - Intermediate
 tags:
-- 1100
+- "1100"
 - python
 - api
 - sec-edgar
@@ -47,7 +47,7 @@ tags:
 - project-based
 - gamified-learning
 keywords:
-- 1100
+- "1100"
 - python
 - api
 - sec-edgar

@@ -28,7 +28,7 @@ tags:
 - bash
 - symlinks
 - ln
-- 0000
+- "0000"
 keywords:
   primary:
   - symbolic links linux
@@ -41,13 +41,13 @@ keywords:
   - terminal shortcuts
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/cellar/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 validation_criteria:
 - Create a symbolic link with ln -s
 - Verify the symlink with ls -l
@@ -63,7 +63,7 @@ rewards:
 - Symbolic links mastery
 excerpt: "Build and inspect symbolic-link portals with ln -s, ls -l, and readlink to traverse the Scrap Heap and recover the portal crystal."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-scrap/
+permalink: /quests/0000/side-quests/scrap/
 ---
 
 *The Scrap Heap is a wasteland of discarded objects — broken swords, empty potion bottles, shattered mirrors. But hidden among the junk are portal mirrors, and learning `ln -s` lets you build instant teleportation.*
@@ -79,7 +79,7 @@ permalink: /quests/0000/side-quests/bashcrawl-scrap/
 
 ## �️ Quest Prerequisites
 
-- [Cellar side-quest](/quests/0000/side-quests/bashcrawl-cellar/) complete
+- [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls -F`, `ls -l`, and `cd`
 
 ## ⚡ Command Cheatsheet
@@ -185,8 +185,8 @@ inventory
 
 ## ➡️ Next Steps
 
-- **Complete other branches** → [Hidden Chapel](/quests/0000/side-quests/bashcrawl-hidden-chapel/) · [Vault](/quests/0000/side-quests/bashcrawl-vault/)
-- **Enter the final gauntlet** → [The Rift](/quests/0000/side-quests/bashcrawl-rift/)
+- **Complete other branches** → [Hidden Chapel](/quests/0000/side-quests/hidden-chapel/) · [Vault](/quests/0000/side-quests/vault/)
+- **Enter the final gauntlet** → [The Rift](/quests/0000/side-quests/rift/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---

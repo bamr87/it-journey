@@ -46,6 +46,7 @@ GEM
       logger
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
+    ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
@@ -209,6 +210,8 @@ GEM
     jekyll-theme-time-machine (0.2.0)
       jekyll (> 3.5, < 5.0)
       jekyll-seo-tag (~> 2.0)
+    jekyll-theme-zer0 (1.6.5)
+      jekyll
     jekyll-titles-from-headings (0.5.3)
       jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
@@ -236,6 +239,8 @@ GEM
     minitest (5.27.0)
     net-http (0.9.1)
       uri (>= 0.11.1)
+    nokogiri (1.18.10-x86_64-linux-gnu)
+      racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-musl)
       racc (~> 1.4)
     octokit (4.25.1)
@@ -273,7 +278,6 @@ GEM
     webrick (1.9.2)
 
 PLATFORMS
-  ruby
   x86_64-linux
   x86_64-linux-musl
 
@@ -281,6 +285,7 @@ DEPENDENCIES
   ffi
   github-pages
   jekyll-include-cache
+  jekyll-theme-zer0
   webrick
 
 BUNDLED WITH

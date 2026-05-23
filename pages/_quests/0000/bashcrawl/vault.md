@@ -28,7 +28,7 @@ tags:
 - bash
 - environment-variables
 - export
-- 0000
+- "0000"
 keywords:
   primary:
   - bash export command
@@ -41,13 +41,13 @@ keywords:
   - bash scripting variables
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-cellar/
+  - /quests/0000/side-quests/cellar/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-rift/
+  - /quests/0000/side-quests/rift/
 validation_criteria:
 - Set a variable and access it with $VAR
 - Export a variable and verify with env
@@ -63,7 +63,7 @@ rewards:
 - Environment variables mastery
 excerpt: "Set, export, and inspect environment variables to solve the vault goblet puzzle, survive the ghost, and claim the key fragment."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-vault/
+permalink: /quests/0000/side-quests/vault/
 ---
 
 *Behind a heavy iron door, the Vault holds the dungeon's most powerful secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
@@ -79,7 +79,7 @@ permalink: /quests/0000/side-quests/bashcrawl-vault/
 
 ## �️ Quest Prerequisites
 
-- [Cellar side-quest](/quests/0000/side-quests/bashcrawl-cellar/) complete
+- [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Emerald amulet in inventory
 
 ## ⚡ Command Cheatsheet
@@ -217,8 +217,8 @@ inventory
 
 ## ➡️ Next Steps
 
-- **Complete other branches** → [Hidden Chapel](/quests/0000/side-quests/bashcrawl-hidden-chapel/) · [Scrap](/quests/0000/side-quests/bashcrawl-scrap/)
-- **Enter the final gauntlet** → [The Rift](/quests/0000/side-quests/bashcrawl-rift/)
+- **Complete other branches** → [Hidden Chapel](/quests/0000/side-quests/hidden-chapel/) · [Scrap](/quests/0000/side-quests/scrap/)
+- **Enter the final gauntlet** → [The Rift](/quests/0000/side-quests/rift/)
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---

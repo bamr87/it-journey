@@ -37,14 +37,14 @@ categories:
 - DevOps-Automation
 - Quality-Assurance
 tags:
-- 1010
+- "1010"
 - github-actions
 - automated-testing
 - ai-analysis
 - devops-automation
 - link-validation
 keywords:
-- 1010
+- "1010"
 - github-actions
 - automated-testing
 - ai-analysis

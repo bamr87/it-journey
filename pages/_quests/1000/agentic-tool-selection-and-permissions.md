@@ -23,7 +23,7 @@ sub_title: "Level 1000 Quest 2/4 — Domain 2: Tool Use & Environment Interactio
 excerpt: A blacksmith without the right tools is a storyteller. Learn to identify, configure, and restrict the exact tools your agent needs — no more, no less.
 author: IT-Journey Team
 tags:
-  - 1000
+  - "1000"
   - agentic-ai
   - github-copilot
   - tool-permissions

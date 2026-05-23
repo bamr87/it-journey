@@ -28,7 +28,7 @@ tags:
 - bash
 - aliases
 - file-types
-- 0000
+- "0000"
 keywords:
   primary:
   - ls -F command
@@ -41,19 +41,19 @@ keywords:
   - terminal navigation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/bashcrawl-entrance/
+  - /quests/0000/side-quests/entrance/
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-armoury/
-  - /quests/0000/side-quests/bashcrawl-hidden-chapel/
-  - /quests/0000/side-quests/bashcrawl-vault/
-  - /quests/0000/side-quests/bashcrawl-scrap/
+  - /quests/0000/side-quests/armoury/
+  - /quests/0000/side-quests/hidden-chapel/
+  - /quests/0000/side-quests/vault/
+  - /quests/0000/side-quests/scrap/
 quest_relationships:
   parent_quest: /quests/0000/bashcrawl/
   sequel_quests:
-  - /quests/0000/side-quests/bashcrawl-armoury/
-  - /quests/0000/side-quests/bashcrawl-hidden-chapel/
-  - /quests/0000/side-quests/bashcrawl-vault/
-  - /quests/0000/side-quests/bashcrawl-scrap/
+  - /quests/0000/side-quests/armoury/
+  - /quests/0000/side-quests/hidden-chapel/
+  - /quests/0000/side-quests/vault/
+  - /quests/0000/side-quests/scrap/
 validation_criteria:
 - Use ls -F and explain every symbol
 - Create and use at least one alias
@@ -68,7 +68,7 @@ rewards:
 - Alias and file-type mastery
 excerpt: "Use ls -F, file, and aliases to map cellar artifacts, collect the emerald amulet, and unlock four branching dungeon paths."
 draft: false
-permalink: /quests/0000/side-quests/bashcrawl-cellar/
+permalink: /quests/0000/side-quests/cellar/
 ---
 
 *The cellar reeks of wine and secrets. Barrels line the walls; cobwebs drape the ceiling. Four iron doors lead deeper into the dungeon — armoury, chapel, vault, scrap. But first you must find the emerald amulet.*
@@ -83,7 +83,7 @@ permalink: /quests/0000/side-quests/bashcrawl-cellar/
 
 ## �️ Quest Prerequisites
 
-- [Entrance side-quest](/quests/0000/side-quests/bashcrawl-entrance/) complete
+- [Entrance side-quest](/quests/0000/side-quests/entrance/) complete
 - Know how to use `ls`, `cd`, and `cat`
 
 ## ⚡ Command Cheatsheet
@@ -200,10 +200,10 @@ Choose your next chamber — all four are unlocked:
 
 | Chamber | Skills | Link |
 |---------|--------|------|
-| ⚔️ Armoury | Permissions, `chmod`, combat | [Armoury](/quests/0000/side-quests/bashcrawl-armoury/) |
-| ⛪ Hidden Chapel | Hidden files, `man` pages | [Chapel](/quests/0000/side-quests/bashcrawl-hidden-chapel/) |
-| 🔒 Vault | Environment variables, `export` | [Vault](/quests/0000/side-quests/bashcrawl-vault/) |
-| 🗑️ Scrap Heap | Symbolic links, `ln -s` | [Scrap](/quests/0000/side-quests/bashcrawl-scrap/) |
+| ⚔️ Armoury | Permissions, `chmod`, combat | [Armoury](/quests/0000/side-quests/armoury/) |
+| ⛪ Hidden Chapel | Hidden files, `man` pages | [Chapel](/quests/0000/side-quests/hidden-chapel/) |
+| 🔒 Vault | Environment variables, `export` | [Vault](/quests/0000/side-quests/vault/) |
+| 🗑️ Scrap Heap | Symbolic links, `ln -s` | [Scrap](/quests/0000/side-quests/scrap/) |
 
 ---
 
