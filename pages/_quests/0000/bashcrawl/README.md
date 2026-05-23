@@ -1,10 +1,9 @@
 ---
 title: 'Bashcrawl Quest: Terminal Adventure RPG'
-description: "Explore nine Bashcrawl dungeon chambers to master navigation, file permissions,\
-  \ environment variables, symlinks, and pipes in this gamified terminal RPG adventure."
+description: "Explore nine Bashcrawl chambers to master navigation, permissions, environment variables, symlinks, and pipes in a gamified terminal RPG adventure."
 preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
 date: 2025-07-05T12:12:17.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 categories:
 - Quests
 - Terminal
@@ -98,6 +97,7 @@ sub-title: 'Level 0000 Quest: Terminal Dungeon Adventure'
 excerpt: Embark on an epic terminal adventure that teaches Bash commands through nine
   interconnected dungeon chambers, each a dedicated walkthrough side-quest
 snippet: Every command is a spell, every directory a new realm to explore
+draft: false
 permalink: /quests/0000/bashcrawl/
 ---
 *Welcome to the Bashcrawl Catacombs — an interactive terminal dungeon where every command is a spell and every directory a new realm to explore. Nine interconnected chambers await, each a side-quest that teaches a core set of Bash skills through gameplay.*
@@ -204,6 +204,12 @@ flowchart TD
 ./main.sh --status         # Show current game progress
 ./main.sh --reset          # Reset for a fresh run
 ```
+
+## 🧭 Learning Path Tips
+
+- Start with **Entrance → Workshop → Cellar** to build confidence before branching.
+- Keep a command journal: capture one new command and one mistake after each chamber.
+- Replay one chamber in a different mode (Web, Classic, or Native) to reinforce transfer skills.
 
 ## 📚 External Resources
 

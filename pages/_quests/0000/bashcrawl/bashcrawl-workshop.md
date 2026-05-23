@@ -3,7 +3,7 @@ title: 'Bashcrawl Workshop: File Management Fundamentals'
 description: "Practice file management in the Workshop: mkdir, touch, rm, cp, mv,
   and I/O redirection. Build rooms, write scrolls, and clear debris to advance."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -18,6 +18,10 @@ skill_focus:
 - File Management
 - I/O Redirection
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -55,6 +59,8 @@ learning_paths:
 rewards:
 - Bashcrawl Workbench Tool
 - File management proficiency
+excerpt: "Practice mkdir, touch, echo redirection, cp, mv, and rm to construct workshop artifacts and advance deeper into Bashcrawl."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-workshop/
 ---
 

@@ -3,7 +3,7 @@ title: 'Bashcrawl Vault: Environment Variables and the Goblet Puzzle'
 description: "Master environment variables in Bashcrawl's Vault using export, echo
   $VAR, and env. Solve the goblet puzzle in the stronghold and survive a ghost encounter."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -18,6 +18,10 @@ skill_focus:
 - Environment Variables
 - Shell Environment
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -57,6 +61,8 @@ learning_paths:
 rewards:
 - Vault Key Fragment
 - Environment variables mastery
+excerpt: "Set, export, and inspect environment variables to solve the vault goblet puzzle, survive the ghost, and claim the key fragment."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-vault/
 ---
 

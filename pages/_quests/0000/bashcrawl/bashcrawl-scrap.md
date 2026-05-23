@@ -3,7 +3,7 @@ title: 'Bashcrawl Scrap Heap: Symbolic Links and Portal Creation'
 description: "Learn symbolic links in Bashcrawl's Scrap Heap using ln -s, readlink,
   and ls -l. Create portal symlinks that warp you instantly to distant dungeon corners."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -18,6 +18,10 @@ skill_focus:
 - Symbolic Links
 - File System Navigation
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -57,6 +61,8 @@ learning_paths:
 rewards:
 - Portal Crystal
 - Symbolic links mastery
+excerpt: "Build and inspect symbolic-link portals with ln -s, ls -l, and readlink to traverse the Scrap Heap and recover the portal crystal."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-scrap/
 ---
 

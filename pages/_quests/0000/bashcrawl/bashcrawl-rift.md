@@ -3,7 +3,7 @@ title: 'Bashcrawl Rift: Pipes, Redirection, and the Final Boss'
 description: "Conquer Bashcrawl's final gauntlet — the Rift — by mastering pipes,
   &&, ||, and output redirection. Defeat the pit boss and satellite boss to complete."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -19,6 +19,10 @@ skill_focus:
 - Command Chaining
 - Output Processing
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -61,6 +65,8 @@ learning_paths:
 rewards:
 - Rift Conquest Badge
 - Pipes and redirection mastery
+excerpt: "Conquer the final Rift by chaining commands, piping output, and redirecting streams to defeat both bosses and finish Bashcrawl."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-rift/
 ---
 

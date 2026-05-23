@@ -3,7 +3,7 @@ title: 'Bashcrawl Armoury: File Permissions and Script Execution'
 description: "Learn chmod, file permissions, and script execution in Bashcrawl's
   Armoury. Brew a health potion and wield a sword for your first combat encounter."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -18,6 +18,10 @@ skill_focus:
 - File Permissions
 - Script Execution
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -56,6 +60,8 @@ learning_paths:
 rewards:
 - Enchanted Sword
 - File permissions mastery
+excerpt: "Master chmod, read permission bits, and execute armoury scripts to brew potions, equip your sword, and unlock the next chamber."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-armoury/
 ---
 

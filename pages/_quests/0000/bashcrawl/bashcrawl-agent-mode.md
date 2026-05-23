@@ -3,7 +3,7 @@ title: 'Bashcrawl Agent Mode: AI Automation and Contribution'
 description: "Explore Bashcrawl's Agent Mode for AI playtesting, screenshot capture,
   batch automation, and upstream contribution. The capstone quest for dungeon masters."
 date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -19,6 +19,10 @@ skill_focus:
 - AI Integration
 - Open Source Contribution
 learning_style: hands-on
+categories:
+- Quests
+- Terminal
+- Bashcrawl
 tags:
 - bashcrawl
 - terminal
@@ -58,6 +62,8 @@ learning_paths:
 rewards:
 - Dungeon Master Badge
 - Bashcrawl automation mastery
+excerpt: "Automate Bashcrawl runs with agent mode, scripted commands, screenshot capture, and an optional open-source contribution finale."
+draft: false
 permalink: /quests/0000/side-quests/bashcrawl-agent-mode/
 ---
 
