@@ -42,7 +42,7 @@ Brief description of the instruction file's purpose and scope.
 |------|------------|---------|
 | `contributing.instructions.md` | `**/*` | Guide AI agents in assisting contributors across content, code, docs, community |
 | `README.instructions.md` | `**/README.md` | Maintain README.md files: structure, frontmatter, lastmod hygiene, cross-references |
-| `quest.instructions.md` | `pages/_quests/**/*.md` | Quest creation standards: fantasy theme, progressive learning, multi-platform |
+| `quest.instructions.md` | `pages/_quests/**/*.md` | Quest creation: frontmatter schema, permalink rules, `make quest-audit` gate, level README conventions |
 | `posts.instructions.md` | `pages/_posts/**/*.md` | Blog post / chronicle standards for AI-assisted development sessions |
 | `features.instructions.md` | code + workflows | Feature development pipeline and CI/CD patterns |
 | `prompts.instructions.md` | `**/prompts/**/*.md` | Prompt engineering schema and conventions |

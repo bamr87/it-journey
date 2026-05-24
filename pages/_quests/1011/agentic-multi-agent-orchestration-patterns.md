@@ -1,9 +1,11 @@
 ---
-title: "The Council of Many: Multi-Agent Orchestration Patterns"
-description: "Design and implement multi-agent systems using GitHub — orchestrator agents, sub-agent fan-out, sequential chains, and event-driven coordination using GitHub Actions and GitHub Models API."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Council of Many: Multi-Agent Orchestration Patterns'
+description: Design and implement multi-agent systems using GitHub — orchestrator
+  agents, sub-agent fan-out, sequential chains, and event-driven coordination using
+  GitHub Actions and GitHub Models API.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-multi-agent-orchestration-patterns.png
-level: "1011"
+level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 180 minutes
 primary_technology: github-copilot
@@ -11,82 +13,85 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - multi-agent
-  - orchestration
-  - github-actions
+- agentic-ai
+- multi-agent
+- orchestration
+- github-actions
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1011 Quest 2/4 — Domain 5: Multi-Agent Systems"
-excerpt: One agent is a soldier. A council of agents is an army. But armies without commanders create chaos, not victory. Learn to orchestrate — to divide, assign, coordinate, and unify.
+sub_title: 'Level 1011 Quest 2/4 — Domain 5: Multi-Agent Systems'
+excerpt: One agent is a soldier. A council of agents is an army. But armies without
+  commanders create chaos, not victory. Learn to orchestrate — to divide, assign,
+  coordinate, and unify.
 author: IT-Journey Team
 tags:
-  - "1011"
-  - agentic-ai
-  - multi-agent
-  - orchestration
-  - gh-600
-  - main_quest
-  - hands-on
+- '1011'
+- agentic-ai
+- multi-agent
+- orchestration
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - multi-agent orchestration
-  - agent coordination
-  - fan-out pattern
-  - orchestrator sub-agent
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-multi-agent-orchestration-patterns/
+- gh-600
+- multi-agent orchestration
+- agent coordination
+- fan-out pattern
+- orchestrator sub-agent
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1011/agentic-multi-agent-orchestration-patterns/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-behavior-tuning/
+  - /quests/1011/agentic-behavior-tuning/
   unlocks_quests:
-    - /quests/gh-600/agentic-multi-agent-observability/
+  - /quests/1011/agentic-multi-agent-observability/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-multi-agent-observability/
+  - /quests/1011/agentic-multi-agent-observability/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🏛️ Architect
+  - 🤖 AI Engineer
+  - 🏛️ Architect
   skill_trees:
-    - Agentic AI
-    - System Design
+  - Agentic AI
+  - System Design
 rewards:
   badges:
-    - 👑 Council Commander
+  - 👑 Council Commander
   skills_unlocked:
-    - 🕸️ Multi-Agent Architecture
-    - 🔀 Fan-Out Orchestration
+  - 🕸️ Multi-Agent Architecture
+  - 🔀 Fan-Out Orchestration
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q13 (Behaviour Tuning)
-    - Solid understanding of GitHub Actions matrix and workflow_call
+  - Completed Q13 (Behaviour Tuning)
+  - Solid understanding of GitHub Actions matrix and workflow_call
   system_requirements:
-    - GitHub account with Actions enabled
-    - Copilot coding agent access
+  - GitHub account with Actions enabled
+  - Copilot coding agent access
 validation_criteria:
   completion_requirements:
-    - At least 2 orchestration patterns implemented (fan-out and chain)
-    - Orchestrator workflow routes tasks to appropriate sub-agents
-    - Sub-agent results aggregated by orchestrator
+  - At least 2 orchestration patterns implemented (fan-out and chain)
+  - Orchestrator workflow routes tasks to appropriate sub-agents
+  - Sub-agent results aggregated by orchestrator
 quest_mapping:
-  coordinates: "[5, 1]"
+  coordinates: '[5, 1]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Council Chambers
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-multi-agent-orchestration-patterns/
 ---
-
 *The Council Chambers were built when the first great task arrived — too large for any single agent, too complex for parallelism alone. The architects designed three chambers: the Orchestration Chamber, where tasks are divided; the Sub-Agent Halls, where the work is done; and the Aggregation Room, where the pieces are assembled. An agent that understands all three rooms commands an army.*
 
 ## 🗺️ Quest Network Position
@@ -336,4 +341,17 @@ python3 scripts/validate_quest.py --quest q14
 | 👑 Council Commander Badge | Earned on completion |
 | 🕸️ Multi-Agent Architecture | Skill unlocked |
 | 100 XP | Added to Level 1011 total |
-| Unlocks | [Q15: The Scribe's Codex](/quests/gh-600/agentic-multi-agent-observability/) |
+| Unlocks | [Q15: The Scribe's Codex](/quests/1011/agentic-multi-agent-observability/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]]
+**Unlocks:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
+**Sequel quests:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

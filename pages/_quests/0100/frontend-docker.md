@@ -30,7 +30,41 @@ keywords:
 - '5'
 fmContentType: quest
 draft: true
+quest_line: 'Frontend Containers Series'
+quest_arc: 'Docker on the web'
+prerequisites:
+  knowledge_requirements: []
+  system_requirements: []
+quest_dependencies:
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
+quest_relationships:
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
+learning_paths:
+  primary_paths: []
+  character_classes: []
+rewards:
+  badges: []
+  progression_points: 0
+  skills_unlocked: []
+validation_criteria:
+  completion_requirements: []
+  skill_demonstrations: []
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.
 
 ### Step 1: Set Up Your Environment
@@ -178,3 +212,12 @@ docker-compose up
 Visit `http://localhost:4000` to see your Jekyll site in action!
 
 And there you have it! Your Docker-powered Jekyll site with Bootstrap 5 is up and running. If you need any more help, feel free to ask. Happy coding! 🌟
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

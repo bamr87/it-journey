@@ -96,7 +96,7 @@ categories:
 - Tools
 - Terminal-Mastery
 tags:
-- "0010"
+- '0010'
 - zsh
 - terminal-mastery
 - oh-my-zsh
@@ -125,6 +125,8 @@ related_quests:
 - 'Level 0010: Nerd Font Enchantment'
 - 'Level 0010: Bash Scripting'
 - VSCode Mastery Quest
+redirect_from:
+- /quests/0010/oh-my-zsh-terminal-enchantment/
 ---
 ## 🌟 The Legend of Terminal Enchantment
 
@@ -1306,3 +1308,18 @@ graph LR
 ⚡ New Abilities Unlocked: Shell Customization, Plugin Development, VSCode Integration, Workflow Optimization
 
 🔮 Next Quest Available: Continue your terminal mastery journey with advanced scripting and automation challenges!
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Recommended:** [[Nerd Font Enchantment: Terminal Icon Mastery]]
+**Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
+**Sequel quests:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
+**Parallel quests:** [[Advanced Markdown: Tables, Footnotes & Extended Syntax]]
+**Related quests:** [[Nerd Font Enchantment: Terminal Icon Mastery]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

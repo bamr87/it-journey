@@ -4,9 +4,10 @@ description: Your starting point in the IT-Journey. Character creation, OS selec
   terminal basics, and first steps into the digital realm
 preview: images/previews/level-0000-foundation-init-world.png
 permalink: /quests/0000/
-lastmod: 2026-05-20 20:57:50+00:00
+layout: quest-collection
 level: '0000'
 categories: quests
+lastmod: 2026-05-20 20:57:50+00:00
 date: 2025-11-29 16:46:02+00:00
 ---
 # Level 0000: Foundation & Init World
@@ -137,7 +138,7 @@ Choose your primary operating system realm. Understand the strengths of each pla
 
 ### 💻 Platform-Specific Onboarding
 
-#### [Hello Windows](hello-win/hello-win.md)
+#### [Hello Windows](hello-win.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 60-90 minutes
 
 Master the Windows Empire with PowerShell, WinGet, and Windows Terminal customization.
@@ -152,7 +153,7 @@ Master the Windows Empire with PowerShell, WinGet, and Windows Terminal customiz
 
 ---
 
-#### [Hello macOS](hello-mac/hello-mac.md)
+#### [Hello macOS](hello-mac.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Conquer the Apple Kingdom with Homebrew, iTerm2, and Xcode command-line tools.
@@ -167,7 +168,7 @@ Conquer the Apple Kingdom with Homebrew, iTerm2, and Xcode command-line tools.
 
 ---
 
-#### [Hello Linux](hello-linux/linux-fundamentals.md)
+#### [Hello Linux](linux-fundamentals.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🔴 Hard | **Estimated Time**: 90-120 minutes
 
 Tame the Penguin's Domain with Bash mastery, package managers, and system configuration.
@@ -182,7 +183,7 @@ Tame the Penguin's Domain with Bash mastery, package managers, and system config
 
 ---
 
-#### [Hello Cloud](hello-cloud/hello-cloud.md)
+#### [Hello Cloud](hello-cloud.md)
 **Quest Type**: Main 🏰 | **Difficulty**: ⚔️ Epic | **Estimated Time**: 120-180 minutes
 
 Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundamentals.

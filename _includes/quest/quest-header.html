@@ -1,0 +1,98 @@
+{%- comment -%}
+  quest-header.html — Hero block for an individual quest page.
+
+  Renders the title, fantasy-themed subtitle, level/tier badges, difficulty
+  pill, quest-type icon, estimated time, primary technology, and author.
+
+  Parameters:
+    include.page — page object (defaults to the current page)
+
+  Data dependencies:
+    site.data.quests.levels — tier and XP metadata (run `make quest-levels-data`)
+{%- endcomment -%}
+
+{%- assign p = include.page | default: page -%}
+{%- assign levels = site.data.quests.levels -%}
+{%- assign level_meta = levels[p.level] -%}
+
+<header class="quest-header" data-quest-level="{{ p.level }}" data-quest-type="{{ p.quest_type }}">
+  <div class="quest-header__badges">
+    {%- if p.level -%}
+      <a class="quest-badge quest-badge--level" href="{{ '/quests/' | append: p.level | append: '/' | relative_url }}" aria-label="View all Level {{ p.level }} quests">
+        <span class="quest-badge__icon">{{ level_meta.tier_emoji | default: '⭐' }}</span>
+        <span class="quest-badge__label">Lvl {{ p.level }}</span>
+        {%- if level_meta.tier -%}
+          <span class="quest-badge__tier">{{ level_meta.tier }}</span>
+        {%- endif -%}
+      </a>
+    {%- endif -%}
+
+    {%- if p.quest_type -%}
+      {%- assign type_icon = '📜' -%}
+      {%- assign type_label = p.quest_type | replace: '_', ' ' | capitalize -%}
+      {%- case p.quest_type -%}
+        {%- when 'main_quest' -%}   {%- assign type_icon = '🏰' -%}{%- assign type_label = 'Main Quest' -%}
+        {%- when 'side_quest' -%}   {%- assign type_icon = '⚔️' -%}{%- assign type_label = 'Side Quest' -%}
+        {%- when 'bonus_quest' -%}  {%- assign type_icon = '🎁' -%}{%- assign type_label = 'Bonus Quest' -%}
+        {%- when 'epic_quest' -%}   {%- assign type_icon = '👑' -%}{%- assign type_label = 'Epic Quest' -%}
+      {%- endcase -%}
+      <span class="quest-badge quest-badge--type quest-badge--type-{{ p.quest_type }}">
+        <span class="quest-badge__icon">{{ type_icon }}</span>
+        <span class="quest-badge__label">{{ type_label }}</span>
+      </span>
+    {%- endif -%}
+
+    {%- if p.difficulty -%}
+      {%- assign diff_slug = p.difficulty | split: ' ' | last | downcase -%}
+      <span class="quest-badge quest-badge--difficulty quest-badge--difficulty-{{ diff_slug }}">
+        {{ p.difficulty }}
+      </span>
+    {%- endif -%}
+
+    {%- if p.estimated_time -%}
+      <span class="quest-badge quest-badge--time">
+        <span class="quest-badge__icon" aria-hidden="true">🕐</span>
+        {{ p.estimated_time }}
+      </span>
+    {%- endif -%}
+  </div>
+
+  <h1 class="quest-header__title">{{ p.title | default: 'Quest' }}</h1>
+
+  {%- if p.excerpt or p.description -%}
+    <p class="quest-header__lead">{{ p.excerpt | default: p.description | markdownify | strip_html | strip }}</p>
+  {%- endif -%}
+
+  <dl class="quest-header__meta">
+    {%- if p.primary_technology -%}
+      <div class="quest-header__meta-item">
+        <dt>Primary Tech</dt>
+        <dd>🛠️ {{ p.primary_technology }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if p.skill_focus -%}
+      <div class="quest-header__meta-item">
+        <dt>Skill Focus</dt>
+        <dd>{{ p.skill_focus | replace: '-', ' ' | capitalize }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if p.quest_series -%}
+      <div class="quest-header__meta-item">
+        <dt>Series</dt>
+        <dd>{{ p.quest_series }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if p.author -%}
+      <div class="quest-header__meta-item">
+        <dt>Author</dt>
+        <dd>{{ p.author }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if level_meta.xp_range -%}
+      <div class="quest-header__meta-item">
+        <dt>XP Range</dt>
+        <dd>⚡ {{ level_meta.xp_range }}</dd>
+      </div>
+    {%- endif -%}
+  </dl>
+</header>

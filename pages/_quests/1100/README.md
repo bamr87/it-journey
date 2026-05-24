@@ -4,9 +4,10 @@ description: Master data integration, financial APIs, and template systems for a
   applications
 preview: images/previews/level-1100-data-templates.png
 permalink: /quests/1100/
-lastmod: 2025-12-02 04:46:12.249000+00:00
-level: 1100
+layout: quest-collection
+level: '1100'
 categories: quests
+lastmod: 2025-12-02 04:46:12.249000+00:00
 date: 2025-11-29 16:46:02+00:00
 ---
 # Level 1100: Data & Templates

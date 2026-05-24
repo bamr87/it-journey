@@ -1,14 +1,17 @@
 ---
 title: '[Quest Title]: [Descriptive Subtitle]'
+# layout defaults to `quest` via _config.yml for files in this collection.
+# Override only when authoring a non-quest reference page.
 description: Complete description of what the quest teaches and accomplishes (150-300
   characters for SEO)
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 preview: /images/previews/quest-title-descriptive-subtitle.png
-level: XXXX
+level: 'XXXX'             # 4-digit binary, quoted to remain a string
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
 primary_technology: '[main-tech]'
 quest_type: main_quest
+fmContentType: quest
 skill_focus:
 - '[skill-category]'
 learning_style: hands-on
@@ -68,6 +71,8 @@ rewards:
   - 🏆 [Achievement Badge Name]
   skills_unlocked:
   - 🛠️ [Tool or Technology Mastery]
+  # progression_points is the XP value shown by the quest UI (assets/js/quest-progress.js).
+  # Typical ranges by tier: Apprentice 50-100, Adventurer 100-200, Warrior 200-400, Master 400+.
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
@@ -97,7 +102,6 @@ quest_mapping:
   biome: Terminal
 comments: true
 draft: true
-fmContentType: template
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -505,6 +509,18 @@ Before marking this quest as complete, ensure you've:
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level {{fm.level}} - ...]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Prerequisite Quest Title]]
+**Unlocks:** [[Follow-up Quest Title]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+
+> Run `python3 scripts/quest/add-obsidian-wiki-references.py` to regenerate wiki links from `quest_dependencies` after editing frontmatter.
 
 ---
 

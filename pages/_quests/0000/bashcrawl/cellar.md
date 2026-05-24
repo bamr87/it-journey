@@ -220,3 +220,15 @@ Continue your terminal adventure with these resources:
 ---
 
 *Emerald amulet secured. Four doors, four paths. The dungeon deepens.* 🍷
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Bashcrawl Entrance: Your First Terminal Commands]]
+**Unlocks:** [[Bashcrawl Armoury: File Permissions and Script Execution]] · [[Bashcrawl Hidden Chapel: Hidden Files and Man Pages]] · [[Bashcrawl Vault: Environment Variables and the Goblet Puzzle]] · [[Bashcrawl Scrap Heap: Symbolic Links and Portal Creation]]
+**Sequel quests:** [[Bashcrawl Armoury: File Permissions and Script Execution]] · [[Bashcrawl Hidden Chapel: Hidden Files and Man Pages]] · [[Bashcrawl Vault: Environment Variables and the Goblet Puzzle]] · [[Bashcrawl Scrap Heap: Symbolic Links and Portal Creation]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -124,3 +124,11 @@ So there you have it---your story, your spells, your saga, **all documented for 
 
 Ready to step into the high tower of **Automation & GitHub Actions** next? The machines await your command. ⚙️✨ Shall we conjure Chapter 4?
 
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

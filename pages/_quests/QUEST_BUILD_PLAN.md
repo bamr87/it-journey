@@ -1,15 +1,14 @@
 ---
 title: Quest Build Plan - Complete Placeholder Quest System
+layout: default
 description: Comprehensive plan for building all placeholder quests across all levels
   with complete linking and mapping
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 lastmod: 2025-01-27
 categories:
-
 - planning
 - quest-development
 tags:
-
 - roadmap
 - quest-system
 - planning
@@ -18,7 +17,6 @@ draft: false
 toc: true
 toc_sticky: true
 keywords:
-
 - roadmap
 - quest-system
 - planning
@@ -30,14 +28,12 @@ author: IT-Journey Team
 quest_series: Quest Documentation
 primary_technology: planning
 skill_focus:
-
 - planning
 learning_style: reading
 quest_type: documentation
 fmContentType: documentation
 permalink: /quests/quest-build-plan/
 ---
-
 # Quest Build Plan: Complete Placeholder Quest System
 
 ## Executive Summary

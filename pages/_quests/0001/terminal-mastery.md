@@ -686,3 +686,12 @@ Your newfound terminal powers open several exciting paths:
 ---
 
 *May your commands execute flawlessly, your scripts run without errors, and your terminal sessions be filled with productivity and discovery! Ready for your next adventure? Check the [Quest Map](/quests/) for your next challenge!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

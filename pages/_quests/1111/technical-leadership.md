@@ -495,3 +495,13 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1111: Leadership & Innovation]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Related quests:** [[Career Advancement Strategies: Growing from Engineer to Leader]] · [[Building Technical Communities: Growing Developer Ecosystems]] · [[Tech Speaking and Writing: Building Your Technical Brand]] · [[Open Source Contribution: Leading and Maintaining Projects]] · [[Innovation and R&D: Driving Technical Innovation]] · [[Mentorship Programs: Developing and Growing Engineering Talent]] · [[Architecture Reviews: Leading Technical Design Discussions]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

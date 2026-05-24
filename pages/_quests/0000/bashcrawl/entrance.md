@@ -194,3 +194,14 @@ Continue your terminal adventure with these resources:
 ---
 
 *Four commands mastered. Hundreds to go. The dungeon opens before you.* 🗝️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[Bashcrawl Workshop: File Management Fundamentals]] · [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
+**Sequel quests:** [[Bashcrawl Workshop: File Management Fundamentals]] · [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

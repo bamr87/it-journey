@@ -148,3 +148,12 @@ These are scrolls written in the ancient language of confusion. Burn them.
 Now go forth and cast tiny, purposeful commits that will echo through the halls of version control! 🏰
 
 Ready to open the next dusty tome? We'll be diving into **Changelogs & Documentation**, the sacred texts of any thriving code kingdom. Shall we?
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

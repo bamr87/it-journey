@@ -1,0 +1,31 @@
+{%- comment -%}
+  quest-path-tracker.html — Recommended learning path tracker.
+
+  Renders a short ordered list representing a learning path: each entry shows
+  the quest title with a status pip that quest-progress.js fills in (locked /
+  available / in-progress / complete) at runtime.
+
+  Parameters:
+    include.path        — list of permalink strings (e.g. ["/quests/0000/.../", ...])
+    include.title       — optional heading for the path
+    include.description — optional descriptive text
+{%- endcomment -%}
+
+{%- assign path = include.path -%}
+{%- if path and path.size > 0 -%}
+<section class="quest-path" data-quest-path>
+  {%- if include.title -%}<h3 class="quest-path__title">{{ include.title }}</h3>{%- endif -%}
+  {%- if include.description -%}<p class="quest-path__description">{{ include.description }}</p>{%- endif -%}
+  <ol class="quest-path__list">
+    {%- for url in path -%}
+      {%- assign match = site.quests | where: 'permalink', url | first -%}
+      <li class="quest-path__item" data-quest-path-item data-quest-url="{{ url }}">
+        <span class="quest-path__pip" aria-hidden="true">•</span>
+        <a href="{{ url | relative_url }}">
+          {%- if match -%}{{ match.title }}{%- else -%}{{ url }}{%- endif -%}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ol>
+</section>
+{%- endif -%}

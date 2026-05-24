@@ -742,3 +742,12 @@ GitHub Pages represents the evolution of web hosting from complex server managem
 **Quest Completed**: Level 001 - The GitHub Pages Portal  
 **Date Completed**: {{ "now" | date: "%Y-%m-%d" }}  
 **Next Recommended Quest**: Level 010: Jekyll Mastery
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

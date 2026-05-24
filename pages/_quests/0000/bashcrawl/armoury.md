@@ -211,3 +211,15 @@ Continue your terminal adventure with these resources:
 ---
 
 *Sword in hand, potion consumed. The Chamber awaits.* ⚔️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
+**Unlocks:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]]
+**Sequel quests:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

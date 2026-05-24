@@ -32,6 +32,16 @@ sub-title: null
 slug: frontend-forests-levels
 type: default
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 Absolutely! Let's structure our adventure with binary-coded levels, making our journey both organized and fun. Each level will have specific tasks and goals to help you progress step by step. Here’s our quest map in binary-coded levels:
 
 ### Level 000: Initial Setup
@@ -215,3 +225,12 @@ Replace the `xxx` with the appropriate integrity values from the Bootstrap CDN s
 2. **Visit `http://localhost:4000` in Your Browser:**
 
 Congratulations! You've reached the end of our binary-coded adventure, and your Docker-powered Jekyll site with Bootstrap 5 is up and running. If you need any more help or want to explore more features, feel free to ask. Happy coding! 🌟
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -118,6 +118,16 @@ rewards:
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 *[Opening paragraph that sets the fantasy context using RPG metaphors and adventuring language. This should immediately immerse the learner in the quest narrative while clearly explaining the real-world technical value.]*
 
 In the vast digital kingdom of GitHub, where code warriors forge alliances and battle bugs, a legendary artifact awaits discovery—the Hidden Gem known as GitHub Pages. Powered by the mystical Ruby enchantment of Jekyll, this gem grants mortals the power to transform mere repositories into eternal web fortresses. But this is no ordinary tale; it's your epic quest to wield this gem not just for static scrolls, but to capture the fleeting whispers of AI agents and bots—those ethereal beings of silicon wisdom—and publish them for all realms to behold. Armed with Visual Studio Code (VS Code) as your trusty sword, you'll embark on a journey of creation, control, and conquest. Fear not, brave adventurer; the path is paved with step-by-step incantations, ensuring even novices can claim victory. Let the quest begin!
@@ -495,3 +505,12 @@ This quest advances you from basic GitHub usage to web publishing proficiency, o
 - [Jekyll Showcase](https://jekyllrb.com/showcase/) - Real Jekyll sites
 - [GitHub Pages Examples](https://github.com/collections/github-pages-examples) - Sample repositories
 - [AI Conversation Archives](https://github.com/search?q=ai+conversation+jekyll) - Inspiration for AI content sites
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

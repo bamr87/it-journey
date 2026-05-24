@@ -1,9 +1,11 @@
 ---
-title: "The Autonomy Scales: Mapping Agent Autonomy Levels"
-description: "Master the autonomy level spectrum for GitHub Copilot agents — from fully supervised to fully autonomous — and learn how to select, configure, and govern the right level for each task type."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
+description: Master the autonomy level spectrum for GitHub Copilot agents — from fully
+  supervised to fully autonomous — and learn how to select, configure, and govern
+  the right level for each task type.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-autonomy-levels-matrix.png
-level: "1100"
+level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 90 minutes
 primary_technology: github-copilot
@@ -11,83 +13,86 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - autonomy
-  - governance
-  - risk-management
+- agentic-ai
+- autonomy
+- governance
+- risk-management
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1100 Quest 2/4 — Domain 6: Responsible Agentic AI"
-excerpt: The Scales of Autonomy measure the power you grant and the responsibility that comes with it. Too much freedom and the agent strays. Too little and it becomes a burden rather than a help. The wise master finds the balance.
+sub_title: 'Level 1100 Quest 2/4 — Domain 6: Responsible Agentic AI'
+excerpt: The Scales of Autonomy measure the power you grant and the responsibility
+  that comes with it. Too much freedom and the agent strays. Too little and it becomes
+  a burden rather than a help. The wise master finds the balance.
 author: IT-Journey Team
 tags:
-  - "1100"
-  - agentic-ai
-  - autonomy
-  - governance
-  - gh-600
-  - main_quest
-  - hands-on
+- '1100'
+- agentic-ai
+- autonomy
+- governance
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - autonomy levels
-  - agentic AI governance
-  - human in the loop
-  - responsible AI
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-autonomy-levels-matrix/
+- gh-600
+- autonomy levels
+- agentic AI governance
+- human in the loop
+- responsible AI
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1100/agentic-autonomy-levels-matrix/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-multi-agent-lifecycle-management/
+  - /quests/1100/agentic-multi-agent-lifecycle-management/
   unlocks_quests:
-    - /quests/gh-600/agentic-guardrails-and-human-in-the-loop/
+  - /quests/1100/agentic-guardrails-and-human-in-the-loop/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-guardrails-and-human-in-the-loop/
+  - /quests/1100/agentic-guardrails-and-human-in-the-loop/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🏛️ Architect
-    - 🛡️ Security Engineer
+  - 🤖 AI Engineer
+  - 🏛️ Architect
+  - 🛡️ Security Engineer
   skill_trees:
-    - Agentic AI
-    - AI Governance
+  - Agentic AI
+  - AI Governance
 rewards:
   badges:
-    - ⚖️ Scale Master
+  - ⚖️ Scale Master
   skills_unlocked:
-    - 🎚️ Autonomy Calibration
-    - 🗂️ Task Classification
+  - 🎚️ Autonomy Calibration
+  - 🗂️ Task Classification
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q17 (Multi-Agent Lifecycle Management)
-    - Understanding of GitHub CODEOWNERS, branch protection rules, environments
+  - Completed Q17 (Multi-Agent Lifecycle Management)
+  - Understanding of GitHub CODEOWNERS, branch protection rules, environments
   system_requirements:
-    - GitHub account with Actions and Copilot enabled
-    - Repository with branch protection rules configured
+  - GitHub account with Actions and Copilot enabled
+  - Repository with branch protection rules configured
 validation_criteria:
   completion_requirements:
-    - Autonomy level matrix documented for at least 5 task types
-    - Level selection criteria documented with risk thresholds
-    - At least one task type configuration changed based on the matrix
+  - Autonomy level matrix documented for at least 5 task types
+  - Level selection criteria documented with risk thresholds
+  - At least one task type configuration changed based on the matrix
 quest_mapping:
-  coordinates: "[6, 1]"
+  coordinates: '[6, 1]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Hall of Scales
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-autonomy-levels-matrix/
 ---
-
 *The Hall of Scales holds the great balances — one side weighs agent capability, the other weighs risk. Every task that comes before the Council is placed on the scales first. Some tasks are light and the agent may proceed alone. Others are heavy, and a human hand must steady the scales before the agent moves. The scales never lie.*
 
 ## 🗺️ Quest Network Position
@@ -288,4 +293,17 @@ python3 scripts/validate_quest.py --quest q18
 | ⚖️ Scale Master Badge | Earned on completion |
 | 🎚️ Autonomy Calibration | Skill unlocked |
 | 100 XP | Added to Level 1100 total |
-| Unlocks | [Q19: The Warden's Pact](/quests/gh-600/agentic-guardrails-and-human-in-the-loop/) |
+| Unlocks | [Q19: The Warden's Pact](/quests/1100/agentic-guardrails-and-human-in-the-loop/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[Autonomy Levels Matrix]]
+**Prerequisites:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
+**Unlocks:** [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
+**Sequel quests:** [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -76,8 +76,9 @@ title: "My Blog Post"
 | `root` | Base HTML shell — `<head>`, `<body>`, scripts, stylesheets | Everything (parent of other layouts) |
 | `default` | Standard page with header, footer, and sidebar | General pages, docs, notes |
 | `article` | Blog post layout with date, author, tags, reading time | Posts |
-| `quest` | Quest layout with level badge, XP, achievements, prerequisites | Quests |
-| `quest-collection` | Groups quests by tier in a filterable grid | Quest index pages |
+| `quest` | Local layout (`_layouts/quest.html`) — header, sticky sidebar, prerequisites, rewards, network graph | Quests |
+| `quest-collection` | Local layout — groups `site.quests` by tier in a filterable grid with tier-progress bars | Level hub READMEs (`/quests/XXXX/`) |
+| `quest-hub` | Local layout — overworld dashboard with per-tier progress bars and live learner stats | `/quests/home/` and `/quests/` |
 | `journals` | Journal/notebook layout for dated entries | Notebooks |
 | `javascript` | Layout for JS-heavy interactive pages | Special pages |
 
@@ -114,11 +115,24 @@ _includes/
 │   ├── achievement_wall.html    # Achievement badge display
 │   └── stats_panel.html         # Activity statistics panel
 ├── content_statistics/          # Site-wide content stats
-├── quest-card.html              # Individual quest display card
+├── content/
+│   ├── quest-graph.html         # Mermaid quest dependency flowchart
+│   └── quest-backlinks.html     # "Referenced by" reverse links
+├── quest-card.html              # Single quest card (level hub grids)
 ├── quest-filters.html           # Quest filtering controls
-├── quest-stats.html             # Quest completion statistics
-└── quest_grid.html              # Quest grid layout
+├── quest-stats.html             # Quest collection stats panel
+└── quest/                       # Quest UI library used by _layouts/quest.html
+    ├── quest-header.html        # Title + badges (level, difficulty, type, time)
+    ├── quest-nav.html           # Breadcrumb + prev/next trail
+    ├── quest-prerequisites.html # Required + recommended deps with lock states
+    ├── quest-rewards.html       # Badges, XP, skills unlocked
+    ├── quest-progress.html      # localStorage-backed progress widget
+    ├── quest-sidebar.html       # Composes nav + progress + prereqs
+    ├── tier-progress-bar.html   # Per-level/tier completion bar
+    └── quest-path-tracker.html  # Ordered learning-path tracker
 ```
+
+Quest layouts are paired with `assets/css/quest-system.css` (visual styles) and `assets/js/quest-progress.js` (client-side progress in `localStorage`). The progress JS also exposes `window.QuestProgress.exportProgress()` for portfolio backups.
 
 ### Passing Variables to Includes
 

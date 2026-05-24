@@ -870,3 +870,13 @@ Before marking this quest complete:
 ---
 
 **Quest Complete?** Mark your progress and share your PRD generation story in the IT-Journey community!
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Related quests:** [[SEO Optimization: Boost Search Engine Visibility for Jekyll Sites]] · [[Custom Domains for GitHub Pages: Professional Website Setup Guide]] · [[Google Analytics for Jekyll: Complete User Tracking Integration Guide]] · [[Jekyll Plugins: Essential Extensions for Powerful Static Sites]] · [[Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands]] · [[Forging the Prompt Crystal: VS Code Copilot Mastery Quest]] · [[The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

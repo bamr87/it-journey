@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- comment -%}
+  quest-hub.html — Overworld hub layout for /quests/home/ and /quests/ index.
+
+  Renders:
+    - Page title + lead
+    - Overall progress bar (from learner localStorage)
+    - Four tier cards, each with their own progress bar and level chips
+    - The page's own markdown body below the dynamic widgets so authors can
+      keep the narrative/lore intact.
+
+  Pages that use this layout do not need to add the tier-progress markup
+  manually — it's emitted here. They retain full control of their body.
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
+
+<div class="quest-hub">
+  <header class="quest-hub__header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  </header>
+
+  <section class="quest-hub__overall" aria-labelledby="quest-hub-overall-heading">
+    <h2 id="quest-hub-overall-heading" class="quest-section-heading">Your Progress</h2>
+    {% include quest/tier-progress-bar.html label="All quests completed" %}
+    <p class="quest-progress__hint">
+      Progress is stored locally in your browser. Visit
+      <a href="{{ '/quests/inventory/' | relative_url }}">your inventory</a>
+      to export or import it.
+    </p>
+  </section>
+
+  <section class="quest-hub__tiers-section" aria-labelledby="quest-hub-tiers-heading">
+    <h2 id="quest-hub-tiers-heading" class="quest-section-heading">Tier Map</h2>
+    <div class="quest-hub__tiers">
+      {% assign tier_keys = "Apprentice|Adventurer|Warrior|Master" | split: "|" %}
+      {% for tname in tier_keys %}
+        {% assign tier = site.data.quests.tiers[tname] %}
+        <article class="quest-hub__tier-card quest-hub__tier-card--{{ tname | downcase }}">
+          <h3>{{ tier.emoji }} {{ tname }}</h3>
+          {% include quest/tier-progress-bar.html tier=tname label=tname %}
+          <ul>
+            {% for lvl in tier.levels %}
+              {% assign meta = site.data.quests.levels[lvl] %}
+              <li><a href="{{ '/quests/' | append: lvl | append: '/' | relative_url }}" title="{{ meta.theme }}">Lv {{ lvl }}</a></li>
+            {% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="quest-hub__content">
+    {{ content }}
+  </section>
+</div>
+
+<script src="{{ '/assets/js/quest-progress.js' | relative_url }}" defer></script>

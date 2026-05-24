@@ -280,3 +280,13 @@ Continue your terminal adventure with these resources:
 ---
 
 *The dungeon is complete. The AI learned. The bash shell is your wand. Go forth and automate.* 🤖🏰✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

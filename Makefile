@@ -1,7 +1,14 @@
-# Makefile for IT-Journey Content Statistics
-# Provides convenient commands for managing content statistics
+# Makefile for IT-Journey Content Statistics and Quest Tooling
+# Provides convenient commands for managing content statistics and quest validation
 
-.PHONY: help stats stats-update stats-show stats-clean stats-config test
+.PHONY: help stats stats-update stats-show stats-clean stats-config test \
+        serve build build-prod build-ci clean \
+        quest-validate quest-network quest-network-strict quest-build-network \
+        quest-audit quest-audit-strict quest-levels-data quest-nav
+
+JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
+JEKYLL_CONFIG_CI  := _config.yml,_config_dev.yml,_config_ci.yml
+JEKYLL_PORT       := 4002
 
 # Default target
 help:
@@ -9,12 +16,29 @@ help:
 	@echo "================================="
 	@echo ""
 	@echo "Available commands:"
-	@echo "  make stats        - Generate content statistics"
-	@echo "  make stats-update - Update statistics and show summary"
-	@echo "  make stats-show   - Display current statistics"
-	@echo "  make stats-clean  - Remove generated statistics file"
-	@echo "  make stats-config - Show current configuration"
-	@echo "  make test         - Test the statistics generator"
+	@echo "  make stats              - Generate content statistics"
+	@echo "  make stats-update       - Update statistics and show summary"
+	@echo "  make stats-show         - Display current statistics"
+	@echo "  make stats-clean        - Remove generated statistics file"
+	@echo "  make stats-config       - Show current configuration"
+	@echo "  make test               - Test the statistics generator"
+	@echo ""
+	@echo "🏗️  Jekyll Build"
+	@echo "  make serve              - Dev server (local theme, incremental)"
+	@echo "  make build              - Dev build (_config.yml + _config_dev.yml)"
+	@echo "  make build-ci           - CI smoke build (matches PR workflow)"
+	@echo "  make build-prod         - Production build (remote theme)"
+	@echo "  make clean              - Remove _site and Jekyll caches"
+	@echo ""
+	@echo "🎯 Quest Tooling"
+	@echo "  make quest-validate         - Run quest_validator.py across pages/_quests"
+	@echo "  make quest-network          - Validate quest dependency network (errors only)"
+	@echo "  make quest-network-strict   - Network validation including orphan warnings (CI parity)"
+	@echo "  make quest-build-network    - Rebuild quest-network.json / network.yml"
+	@echo "  make quest-levels-data      - Emit _data/quests/levels.yml from registry"
+	@echo "  make quest-nav              - Regenerate _data/navigation/quests.yml from collection"
+	@echo "  make quest-audit            - Full quest audit (validate + network + build)"
+	@echo "  make quest-audit-strict     - Full audit + strict network (matches CI behaviour)"
 	@echo ""
 
 # Generate statistics
@@ -110,6 +134,53 @@ dev-install:
 		echo "  sudo apt install yq  # Ubuntu"; \
 	fi
 	@echo "✅ Development environment ready"
+
+# Jekyll build and serve targets
+serve:
+	bundle exec jekyll serve --config $(JEKYLL_CONFIG_DEV) --livereload --port $(JEKYLL_PORT)
+
+build:
+	bundle exec jekyll build --config $(JEKYLL_CONFIG_DEV)
+
+build-ci:
+	bundle exec jekyll build --config $(JEKYLL_CONFIG_CI)
+
+build-prod:
+	JEKYLL_ENV=production bundle exec jekyll build --config _config.yml
+
+clean:
+	bundle exec jekyll clean
+
+# Quest validation and tooling targets
+quest-validate:
+	@echo "🎯 Validating quest content..."
+	@python3 test/quest-validator/quest_validator.py -d pages/_quests/ --summary
+
+quest-network:
+	@echo "🕸️  Validating quest dependency network..."
+	@python3 scripts/quest/validate-quest-network.py
+
+quest-network-strict:
+	@echo "🕸️  Validating quest dependency network (strict — orphans become errors)..."
+	@python3 scripts/quest/validate-quest-network.py --strict
+
+quest-build-network:
+	@echo "🔨 Rebuilding quest network artifacts..."
+	@python3 scripts/quest/build-quest-network.py
+
+quest-levels-data:
+	@echo "📚 Generating _data/quests/levels.yml from quest_registry..."
+	@python3 scripts/quest/generate-quest-levels-data.py
+
+quest-nav:
+	@echo "🧭 Regenerating quest sidebar navigation..."
+	@python3 scripts/quest/generate-quest-navigation.py
+
+quest-audit: quest-build-network quest-validate quest-network
+	@echo "✅ Quest audit complete — content, dependencies, and network artifacts validated."
+
+quest-audit-strict: quest-build-network quest-validate quest-network-strict
+	@echo "✅ Strict quest audit complete (orphan warnings escalated)."
 
 # Watch for changes and auto-update (requires fswatch on macOS)
 watch:

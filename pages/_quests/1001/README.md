@@ -4,12 +4,14 @@ description: Command the container orchestration platform that powers enterprise
   deployments
 preview: images/previews/level-1001-kubernetes.png
 permalink: /quests/1001/
+layout: quest-collection
+level: '1001'
 categories:
 - Quests
 - Level-1001
 - Container-Orchestration
 tags:
-- "1001"
+- '1001'
 - kubernetes
 - k8s
 - containers
@@ -20,7 +22,6 @@ lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-level: 1001
 date: 2025-12-20 20:02:51+00:00
 ---
 # Level 1001 (9) - Kubernetes Orchestration

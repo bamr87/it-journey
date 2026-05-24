@@ -76,6 +76,16 @@ related_quests:
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
 
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 ## � Quest Overview
 
 **Level**: Journeyman (Lvl 001) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
@@ -720,3 +730,12 @@ Built something amazing? We want to see it!
 **Quest Master's Wisdom**: *"Documentation is not just about recording what exists—it's about creating a living knowledge system that grows, adapts, and serves your team's evolving needs. Automation doesn't replace the human touch; it amplifies it, freeing you to focus on insights rather than organization."*
 
 May your documentation always be current, your automation reliable, and your knowledge easily discoverable. **Onward to greater adventures!** 🚀✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

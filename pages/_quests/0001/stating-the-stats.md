@@ -1085,3 +1085,12 @@ Liquid Exception: undefined method
 **Quest Status**: ✅ **COMPLETE**
 
 *Share your Stats Portal with the IT-Journey community and inspire others to build data-driven experiences!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

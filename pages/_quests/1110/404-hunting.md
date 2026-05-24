@@ -34,13 +34,13 @@ categories:
 - Web-Development
 - Intermediate
 tags:
-- "1110"
+- '1110'
 - jekyll
 - github-actions
 - link-integrity
 - devops
 keywords:
-- "1110"
+- '1110'
 - jekyll
 - github-actions
 - link-integrity
@@ -58,6 +58,8 @@ related_quests:
 - 'Permalink Lore: Stable Slugs and Trails (Level 1100)'
 - 'CI Scribes: Automating Quality Trials (Level 1111)'
 - 'Content Gardens: Jekyll Collections (Level 10100)'
+redirect_from:
+- /quests/1110/404-hunting/
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 
@@ -425,3 +427,12 @@ Validation Recap:
 - [ ] Link checks pass on PR and scheduled runs
 - [ ] 404 page aids recovery and reporting
 - [ ] Redirects cover moved content without loops
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1110 - Quality Assurance]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

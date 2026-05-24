@@ -106,3 +106,12 @@ Follow the prompts for Azure authentication and GitHub workflow setup.
 - [GitHub Pages Portal](0001/github-pages-portal.md)
 - [Jekyll Fundamentals](0001/jekyll-fundamentals.md)
 - [Link to the Future: Hyperlink Checking](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

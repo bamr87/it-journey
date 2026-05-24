@@ -99,6 +99,8 @@ rewards:
   - Access to VS Code Mastery quest
   - Professional macOS development workflow
 draft: false
+redirect_from:
+- /quests/0000/hello-mac/
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
 
@@ -128,9 +130,9 @@ draft: false
 ## 🌍 Choose Your Adventure Platform
 
 This quest is **macOS-only**. If you're on another OS, start with:
-- [Hello Windows](../hello-win/hello-win.md)
-- [Hello Linux](../hello-linux/linux-fundamentals.md)
-- [Hello Cloud](../hello-cloud/hello-cloud.md)
+- [Hello Windows](hello-win.md)
+- [Hello Linux](linux-fundamentals.md)
+- [Hello Cloud](hello-cloud.md)
 
 ## 🧙‍♂️ Chapter 1: Install Core Tooling
 
@@ -220,3 +222,16 @@ You should see valid versions for each command.
 - [Git Documentation](https://git-scm.com/doc)
 - [GitHub SSH Key Setup Guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 - [Apple macOS User Guide](https://support.apple.com/guide/mac-help/welcome/mac)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]]
+**Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]]
+**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Linux Fundamentals]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

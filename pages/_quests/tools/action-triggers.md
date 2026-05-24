@@ -167,3 +167,12 @@ Here are some magical event triggers:
 With GitHub Actions, you don't just code---you **orchestrate an automated kingdom** of checks, releases, and deploys. All you need is a bit of YAML and a dream. 💫
 
 Shall we proceed to the final mystical chapter: **AI-Assisted Automation**? Because now we start teaching the machines to do even more for us... Shall I open that tome?
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

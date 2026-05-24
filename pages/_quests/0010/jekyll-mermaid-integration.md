@@ -79,6 +79,16 @@ related_quests:
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 ## 🎯 Quest Overview
 
 **Level**: Journeyman (Lvl 0010) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
@@ -1032,3 +1042,12 @@ May your diagrams be clear, your documentation be comprehensive, and your Jekyll
 ---
 
 *This quest is based on a real implementation that successfully integrated Mermaid v10 into the Zer0-Mistakes Jekyll theme, achieving 100% GitHub Pages compatibility while maintaining optimal performance. The implementation has been battle-tested in production and serves as the foundation for this comprehensive learning experience.*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

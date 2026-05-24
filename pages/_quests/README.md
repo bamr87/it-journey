@@ -1,5 +1,6 @@
 ---
 title: Quests (~) Index
+layout: quest-hub
 keywords:
     - init
     - hello world
@@ -325,10 +326,10 @@ Begin your journey and establish your digital identity
 **Platform-Specific Starting Quests:**
 
 - [Hello n00b](0000/hello-noob.md) - *Your First Steps into the Digital Realm*
-- [Hello Windows](0000/hello-win/hello-win.md) - *Mastering the Microsoft Kingdom*
-- [Hello macOS](0000/hello-mac/hello-mac.md) - *Conquering the Apple Empire*
-- [Hello Linux](0000/hello-linux/linux-fundamentals.md) - *Taming the Penguin's Domain*
-- [Hello Cloud](0000/hello-cloud/hello-cloud.md) - *Ascending to the Digital Heavens*
+- [Hello Windows](0000/hello-win.md) - *Mastering the Microsoft Kingdom*
+- [Hello macOS](0000/hello-mac.md) - *Conquering the Apple Empire*
+- [Hello Linux](0000/linux-fundamentals.md) - *Taming the Penguin's Domain*
+- [Hello Cloud](0000/hello-cloud.md) - *Ascending to the Digital Heavens*
 
 📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing for this level
 
@@ -356,7 +357,7 @@ Basic scripting, terminal navigation, and environment setup
 - [ ] Environment Variables - *Configuring Your World*
 
 **Platform-Specific Quests:**
-- [Hello Windows](0000/hello-win/hello-win.md) | [Hello macOS](0000/hello-mac/hello-mac.md) | [Hello Linux](0000/hello-linux/linux-fundamentals.md) | [Hello Cloud](0000/hello-cloud/hello-cloud.md)
+- [Hello Windows](0000/hello-win.md) | [Hello macOS](0000/hello-mac.md) | [Hello Linux](0000/linux-fundamentals.md) | [Hello Cloud](0000/hello-cloud.md)
 
 📁 **[Level 0000 Directory Guide](0000/README.md)** - Complete quest listing for this level
 
@@ -471,7 +472,7 @@ Server-side development and API creation
 
 ### Specialized Quest Lines
 
-#### Level 0110 - Database Mastery (🔮 Coming Soon)
+#### Level 0110 - Database Mastery
 
 *Master the arcane arts of data storage and retrieval*
 
@@ -484,9 +485,9 @@ Server-side development and API creation
 - [ ] Query Optimization - *Speed of Lightning*
 - [ ] Database Security - *Protecting the Treasure*
 
-📁 **[Level 0110 Directory Guide](0110/README.md)** - *Coming Soon*
+📁 **[Level 0110 Directory Guide](0110/README.md)**
 
-#### Level 0111 - Full-Stack Integration (🔮 Coming Soon)
+#### Level 0111 - Full-Stack Integration
 
 *Bridge frontend and backend into unified applications*
 
@@ -499,9 +500,9 @@ Server-side development and API creation
 - [ ] Full-Stack Project - *Build Your First Castle*
 - [ ] Performance Optimization - *Speed Enhancement Spells*
 
-📁 **[Level 0111 Directory Guide](0111/README.md)** - *Coming Soon*
+📁 **[Level 0111 Directory Guide](0111/README.md)**
 
-#### Level 1000 - Security Fundamentals (🔮 Coming Soon)
+#### Level 1000 - Cloud Computing
 
 *Learn the defensive arts to protect digital realms*
 
@@ -514,9 +515,9 @@ Server-side development and API creation
 - [ ] Cryptography Fundamentals - *The Art of Secrets*
 - [ ] Security Auditing - *Fortress Inspection*
 
-📁 **[Level 1000 Directory Guide](1000/README.md)** - *Coming Soon*
+📁 **[Level 1000 Directory Guide](1000/README.md)**
 
-#### Level 1001 - Cloud Architecture (🔮 Coming Soon)
+#### Level 1001 - Kubernetes Orchestration
 
 *Ascend to the cloud realms and build sky fortresses*
 
@@ -530,7 +531,7 @@ Server-side development and API creation
 - [ ] Serverless Architecture - *Magic Without Servers*
 - [ ] Cloud Security - *Protecting Sky Fortresses*
 
-📁 **[Level 1001 Directory Guide](1001/README.md)** - *Coming Soon*
+📁 **[Level 1001 Directory Guide](1001/README.md)**
 
 #### Level 1010 - Automation & Testing
 
@@ -982,25 +983,27 @@ May your code compile and your deployments be ever successful! ⚡✨
 
 ## Quest System Overview
 
-Total Quests: **144**
+Total Quests: **182**
+
+> Each level's quest catalog is now rendered dynamically by the `quest-collection` layout on its level hub (e.g. [`/quests/0000/`](0000/README.md)). The table below is a static snapshot; follow the level links for the live, filterable list.
 
 ### Quest Distribution by Level
 
 | Level | Quests | Theme |
 |-------|--------|-------|
-| 0000 | 15 | Foundation |
-| 0001 | 15 | Web Fundamentals |
-| 0010 | 19 | Terminal Mastery |
-| 0011 | 8 | AI-Assisted Dev |
-| 0100 | 9 | Containers & Frontend |
-| 0101 | 11 | CI/CD & DevOps |
-| 0110 | 8 | Database Mastery |
-| 0111 | 7 | API Development |
-| 1000 | 3 | Cloud Computing |
-| 1001 | 5 | Kubernetes |
-| 1010 | 6 | Monitoring |
-| 1011 | 6 | Security |
-| 1100 | 8 | Data Engineering |
-| 1101 | 8 | Machine Learning |
-| 1110 | 8 | Architecture |
-| 1111 | 8 | Leadership |
+| [0000](0000/README.md) | 25 | Foundation & Init World |
+| [0001](0001/README.md) | 18 | Web Fundamentals |
+| [0010](0010/README.md) | 21 | Terminal Mastery |
+| [0011](0011/README.md) | 8 | AI-Assisted Dev |
+| [0100](0100/README.md) | 11 | Frontend & Containers |
+| [0101](0101/README.md) | 11 | CI/CD & DevOps |
+| [0110](0110/README.md) | 8 | Database Mastery |
+| [0111](0111/README.md) | 9 | API Development |
+| [1000](1000/README.md) | 6 | Cloud Computing |
+| [1001](1001/README.md) | 8 | Kubernetes |
+| [1010](1010/README.md) | 10 | Monitoring & Observability |
+| [1011](1011/README.md) | 10 | Security & Compliance |
+| [1100](1100/README.md) | 13 | Data Engineering |
+| [1101](1101/README.md) | 8 | Machine Learning |
+| [1110](1110/README.md) | 8 | Architecture & Design |
+| [1111](1111/README.md) | 8 | Leadership & Innovation |

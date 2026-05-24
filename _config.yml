@@ -375,12 +375,15 @@ defaults:
         nav: auto
     # permalink: /docs/:category/:name/
 
-  # pages/_quests
-  - 
+  # pages/_quests collection — quest.md files use the local quest layout.
+  # Level READMEs (/quests/XXXX/) keep `layout: quest-collection` set in their
+  # own frontmatter; hub/index pages set `layout: quest-hub` directly.
+  -
     scope:
       path: pages/_quests
+      type: quests
     values:
-      layout: *pages
+      layout: quest
       author_profile: true
       read_time: true
       comments: # true

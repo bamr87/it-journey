@@ -276,7 +276,7 @@ These mistakes have each generated dedicated corrective PRs — do not repeat th
 8. **Posts linked from non-post content need an explicit `permalink:` override.** The default in `_config.yml` is `/:collection/:year/:month/:day/:slug/`, so a quest or doc that links to `/posts/<slug>/` will 404 unless the post's frontmatter sets `permalink: /posts/<slug>/` (see PR #272, where 7 chronicle posts broke 15+ cross-references).
 9. **Never commit literal secret prefixes in code examples.** Strings starting with `ghp_`, `gho_`, `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`, etc. trigger reviewer + scanner alerts. Always show env-var or input-prompt placeholders instead: `"${env:GITHUB_TOKEN}"`, `"${input:openai-key}"` (see PR #272, `pages/_notes/gh-600/mcp-quickref.md`).
 10. **Nested fenced code blocks need a longer outer fence.** If an example contains an inner ```` ```bash ```` block, the outer fence must be at least one backtick longer (4 backticks) — otherwise the inner closing fence terminates the outer block and the rest renders as prose (see PR #272, `pages/_quests/1010/agentic-failure-root-cause-analysis.md`).
-11. **Quest permalinks must use the level-prefixed hierarchy.** Canonical formats: `main_quest` → `/quests/XXXX/slug/`; `side_quest` → `/quests/XXXX/side-quests/slug/`; level README → `/quests/XXXX/`. The old `level-XXXX-slug` and flat `side-quest-slug` patterns are invalid and will fail CI validation. Do **not** add `redirect_from:` — when a permalink changes, update every internal reference globally to the new canonical URL. The validator regex is `^/quests/([01]{4}/side-quests/...|[01]{4}/...|[01]{4}|codex/...)/$` — see `.github/instructions/quest.instructions.md` §3.
+11. **Quest permalinks must use the level-prefixed hierarchy.** Canonical formats: `main_quest` → `/quests/XXXX/slug/`; `side_quest` → `/quests/XXXX/side-quests/slug/`; `bonus_quest`/`epic_quest` → `/quests/codex/slug/`; level README → `/quests/XXXX/`. The old `level-XXXX-slug`, `gh-600`, and flat `side-quest-slug` patterns are invalid. Add `redirect_from:` **only when migrating** an existing permalink — new quests must not ship with redirects. After migration, update every internal reference to the canonical URL. Run `make quest-audit` before merge. See `.github/instructions/quest.instructions.md` §3.
 12. **Always quote frontmatter strings that contain `: ` (colon + space).** YAML interprets `title: My Guide: Part Two` as a nested mapping and raises `YAML Exception: mapping values are not allowed in this context`. Wrap any title, description, subtitle, or other scalar that contains a colon-space in double quotes: `title: "My Guide: Part Two"`. The validator does not always catch this before Jekyll itself fails, so fix it at authoring time.
 13. **Quote numeric tags and level numbers in YAML lists — never leave bare integers.** YAML parses `- 1100` (or `- 1010`, `- 1001`, etc.) as an Integer, not a String. Liquid string filters such as `slugify` call Ruby's `String#gsub` on each tag value; when the value is an Integer, Jekyll crashes with `undefined method 'gsub' for 1100:Integer`. Always use quoted strings: `- "1100"` instead of `- 1100`. This applies to every `tags:`, `keywords:`, and `categories:` list in quest files — especially 4-digit binary level numbers.
 
@@ -641,11 +641,11 @@ For comprehensive blog post and article creation guidelines, including frontmatt
 
 ### **README Workflow Integration**
 
-**BEFORE Creating**: Review existing quests, understand naming conventions, identify level/category
+**BEFORE Creating**: Review existing quests, understand naming conventions, identify level/category. Read `.github/instructions/quest.instructions.md` §0 workflow.
 
-**AFTER Creating**: Update quest collection READMEs, create quest-specific README, update cross-references, update navigation
+**AFTER Creating**: Run `make quest-audit`, commit network artifacts if dependencies changed, bump `lastmod`, update cross-references with canonical permalinks.
 
-**Complete Quest Creation Guide**: See `.github/instructions/quest.instructions.md`
+**Complete Quest Creation Guide**: See `.github/instructions/quest.instructions.md` · Authoring agent: `.github/prompts/write-quest.prompt.md`
 
 ---
 

@@ -4,9 +4,10 @@ description: Master frontend development workflows with Docker containerization 
   modern tooling
 preview: images/previews/level-0100-frontend-development-docker.png
 permalink: /quests/0100/
-lastmod: 2025-11-29 23:41:31.769000+00:00
-level: 64
+layout: quest-collection
+level: '0100'
 categories: quests
+lastmod: 2025-11-29 23:41:31.769000+00:00
 date: 2025-11-29 16:46:02+00:00
 ---
 # Level 0100: Frontend Development & Docker

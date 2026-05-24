@@ -86,7 +86,7 @@ categories:
 - Tool-Mastery
 - Medium
 tags:
-- "0011"
+- '0011'
 - prompt-engineering
 - vscode-copilot
 - ai-development
@@ -94,7 +94,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "0011"
+- '0011'
 - prompt-engineering
 - vscode-copilot
 - ai-development
@@ -121,6 +121,8 @@ rewards:
   - Access to advanced AI agent development quests
   - Ability to create team-wide prompt standards
   - Foundation for MCP server prompt patterns
+redirect_from:
+- /quests/0011/prompt-crystal-mastery-vscode-copilot/
 ---
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 
@@ -1440,3 +1442,12 @@ After completing this quest, update:
 *This quest was created following IT-Journey quest standards and the Write-Quest protocol. Found an issue or have an improvement? [Open an issue](https://github.com/bamr87/it-journey/issues) or contribute directly!*
 
 **Write-Quest oath fulfilled**: *"No quest leaves the forge unfinished."* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

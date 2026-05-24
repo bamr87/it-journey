@@ -493,3 +493,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Kubernetes Fundamentals: Container Orchestration Essentials]]
+**Related quests:** [[Azure Ascension: Deploying Jekyll to the Cloud Kingdom]] · [[Infrastructure as Code: Terraform and CloudFormation Fundamentals]] · [[AWS Essentials: Core Services and Cloud Architecture Patterns]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -13,7 +13,7 @@ lastmod: 2025-11-02 22:13:30.306000+00:00
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: 0001
+primary_technology: 1
 quest_type: main_quest
 quest_series: Process Mastery Path
 quest_line: Foundation Path
@@ -78,14 +78,14 @@ categories:
 - Process-Improvement
 - Team-Development
 tags:
-- "0001"
+- '0001'
 - kaizen
 - continuous-improvement
 - lean-development
 - process-optimization
 - team-culture
 keywords:
-- "0001"
+- '0001'
 - kaizen
 - continuous-improvement
 - lean-development
@@ -108,6 +108,8 @@ rewards:
   unlocks_features:
   - Access to advanced Lean Software Development quests
   - Team leadership and culture transformation paths
+redirect_from:
+- /quests/0001/kaizen/
 ---
 *In the ancient forges of the Digital Kingdom, where lines of code shimmer like molten steel and bugs lurk in shadowy caverns like dragons, a legendary call echoes across the realm. You, the valiant Code Alchemist—a master of algorithms and architect of systems—have been summoned by the High Council of Efficiency. The realm faces a dire threat: **stagnation**, the foul blight that turns innovative projects into bloated monoliths of inefficiency, riddled with waste and rework.*
 
@@ -1283,3 +1285,12 @@ A successful improvement will:
 ---
 
 *By consistently using this Kaizen-based prompt structure, you create a partnership with AI that embodies continuous improvement: systematic, measurable, and always advancing toward excellence.*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

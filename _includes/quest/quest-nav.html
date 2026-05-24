@@ -1,0 +1,73 @@
+{%- comment -%}
+  quest-nav.html — Breadcrumb + prev/next trail for a quest page.
+
+  Breadcrumb walks Overworld → Level Hub → This Quest.
+  Prev/next is derived from quest_dependencies: prev = first required quest,
+  next = first unlocks_quests entry. Both fall back to the level hub when
+  the quest declares none.
+
+  Parameters:
+    include.page — page object (defaults to current page)
+{%- endcomment -%}
+
+{%- assign p = include.page | default: page -%}
+{%- assign levels = site.data.quests.levels -%}
+{%- assign level_meta = levels[p.level] -%}
+
+{%- assign prev_url = nil -%}
+{%- assign prev_title = nil -%}
+{%- if p.quest_dependencies.required_quests and p.quest_dependencies.required_quests.size > 0 -%}
+  {%- assign raw_prev = p.quest_dependencies.required_quests | first -%}
+  {%- assign prev_url = raw_prev | split: '#' | first | strip -%}
+{%- endif -%}
+{%- if prev_url and prev_url != '' -%}
+  {%- assign match = site.quests | where: 'permalink', prev_url | first -%}
+  {%- if match -%}{%- assign prev_title = match.title -%}{%- endif -%}
+{%- endif -%}
+
+{%- assign next_url = nil -%}
+{%- assign next_title = nil -%}
+{%- if p.quest_dependencies.unlocks_quests and p.quest_dependencies.unlocks_quests.size > 0 -%}
+  {%- assign raw_next = p.quest_dependencies.unlocks_quests | first -%}
+  {%- assign next_url = raw_next | split: '#' | first | strip -%}
+{%- endif -%}
+{%- if next_url and next_url != '' -%}
+  {%- assign nmatch = site.quests | where: 'permalink', next_url | first -%}
+  {%- if nmatch -%}{%- assign next_title = nmatch.title -%}{%- endif -%}
+{%- endif -%}
+
+<nav class="quest-nav" aria-label="Quest breadcrumb and navigation">
+  <ol class="quest-breadcrumb">
+    <li><a href="{{ '/quests/home/' | relative_url }}">🏰 Overworld</a></li>
+    {%- if p.level -%}
+      <li><a href="{{ '/quests/' | append: p.level | append: '/' | relative_url }}">{{ level_meta.tier_emoji | default: '⭐' }} Level {{ p.level }}</a></li>
+    {%- endif -%}
+    <li aria-current="page">{{ p.title | default: 'Quest' }}</li>
+  </ol>
+
+  <div class="quest-nav__trail">
+    <div class="quest-nav__prev">
+      {%- if prev_url and prev_url != '' -%}
+        <a href="{{ prev_url | relative_url }}" rel="prev">
+          <span class="quest-nav__direction">← Previous</span>
+          <span class="quest-nav__title">{{ prev_title | default: prev_url }}</span>
+        </a>
+      {%- else -%}
+        <span class="quest-nav__placeholder">No prerequisite</span>
+      {%- endif -%}
+    </div>
+    <div class="quest-nav__next">
+      {%- if next_url and next_url != '' -%}
+        <a href="{{ next_url | relative_url }}" rel="next">
+          <span class="quest-nav__direction">Next →</span>
+          <span class="quest-nav__title">{{ next_title | default: next_url }}</span>
+        </a>
+      {%- else -%}
+        <a href="{{ '/quests/' | append: p.level | append: '/' | relative_url }}">
+          <span class="quest-nav__direction">↑ Back to level hub</span>
+          <span class="quest-nav__title">Level {{ p.level }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</nav>

@@ -1,76 +1,112 @@
 #!/usr/bin/env python3
-"""
-Script to ensure all level README files in pages/_quests have consistent frontmatter:
-- layout: quest-collection
-- level: <dir>
-- categories: quests
+"""Normalize frontmatter of every level README under ``pages/_quests``.
 
-This script updates only README.md files in direct child directories of pages/_quests
-where the directory name is a 4-digit binary string (e.g., 1100).
+For each ``pages/_quests/<binary>/README.md`` where ``<binary>`` matches
+``^[01]{4}$``:
+
+- Ensure ``layout: quest-collection`` (the dynamic level hub layout).
+- Force ``level`` to the quoted 4-digit binary form (`'0001'`) — historic
+  READMEs persisted decimal values like ``1`` or ``64`` that broke
+  ``{% assign filtered = site.quests | where: "level", page.level %}`` in
+  ``_layouts/quest-collection.html``.
+- Ensure ``categories: quests`` is present (kept as the simple scalar form
+  used elsewhere in the repo).
+
+Other frontmatter and the body are preserved untouched.
+
+Usage::
+
+    python3 scripts/development/update_level_readmes.py [--dry-run]
 """
 
-import os
+from __future__ import annotations
+
+import argparse
 import re
+import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-QUESTS_DIR = ROOT / 'pages' / '_quests'
-
-LEVEL_DIR_RE = re.compile(r'^[01]{4}$')
-
-def process_readme(path: Path, level: str):
-    text = path.read_text(encoding='utf-8')
-    if not text.startswith('---'):
-        print(f"Skipping {path}: no frontmatter detected")
-        return
-
-    # Split header and body
-    parts = text.split('---', 2)
-    # parts[0] == '' if starts with '---'
-    header = parts[1]
-    body = parts[2] if len(parts) > 2 else ''
-
-    # Parse header into lines
-    lines = [l.rstrip('\n') for l in header.split('\n')]
-
-    # Check for keys
-    has_layout = any(re.match(r'\s*layout\s*:', l) for l in lines)
-    has_level = any(re.match(r'\s*level\s*:', l) for l in lines)
-    has_categories = any(re.match(r'\s*categories\s*:', l) for l in lines)
-
-    new_lines = lines.copy()
-    appended = False
-    if not has_layout:
-        new_lines.append(f'layout: quest-collection')
-        appended = True
-    if not has_level:
-        new_lines.append(f'level: {level}')
-        appended = True
-    if not has_categories:
-        new_lines.append('categories: quests')
-        appended = True
-
-    if appended:
-        new_header = '\n'.join(new_lines)
-        new_text = '---\n' + new_header + '\n---' + body
-        path.write_text(new_text, encoding='utf-8')
-        print(f"Updated frontmatter for {path}")
-    else:
-        print(f"No changes for {path}")
+try:
+    import yaml
+except ImportError:  # pragma: no cover - dependency hint only
+    print("Error: PyYAML required (pip install pyyaml)", file=sys.stderr)
+    sys.exit(1)
 
 
-def main():
+REPO_ROOT = Path(__file__).resolve().parents[2]
+QUESTS_DIR = REPO_ROOT / "pages" / "_quests"
+LEVEL_DIR_RE = re.compile(r"^[01]{4}$")
+FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)", re.DOTALL)
+
+
+def normalize_readme(path: Path, level: str, dry_run: bool) -> bool:
+    text = path.read_text(encoding="utf-8")
+    match = FRONTMATTER_RE.match(text)
+    if not match:
+        print(f"  skip (no frontmatter): {path}")
+        return False
+
+    try:
+        fm = yaml.safe_load(match.group(1)) or {}
+    except yaml.YAMLError as exc:
+        print(f"  skip (YAML error in {path}): {exc}")
+        return False
+
+    body = match.group(2)
+    original = dict(fm)
+
+    fm["layout"] = "quest-collection"
+    fm["level"] = level
+    if "categories" not in fm:
+        fm["categories"] = "quests"
+
+    if fm == original:
+        print(f"  ok    {path.relative_to(REPO_ROOT)}")
+        return False
+
+    if dry_run:
+        print(f"  would update {path.relative_to(REPO_ROOT)} → layout/level/categories")
+        return True
+
+    # Preserve insertion order: emit known keys first, then the rest.
+    ordered = {}
+    for key in ("title", "description", "preview", "permalink", "layout", "level", "categories"):
+        if key in fm:
+            ordered[key] = fm[key]
+    for key, value in fm.items():
+        ordered.setdefault(key, value)
+
+    fm_text = yaml.dump(
+        ordered, default_flow_style=False, allow_unicode=True, sort_keys=False
+    ).rstrip("\n")
+    path.write_text(f"---\n{fm_text}\n---\n{body}", encoding="utf-8")
+    print(f"  updated {path.relative_to(REPO_ROOT)}")
+    return True
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dry-run", action="store_true", help="report without writing")
+    args = parser.parse_args()
+
     if not QUESTS_DIR.exists():
-        print("Quests directory not found at:", QUESTS_DIR)
-        return
+        print(f"Quests directory not found: {QUESTS_DIR}", file=sys.stderr)
+        return 1
 
-    for entry in QUESTS_DIR.iterdir():
-        if entry.is_dir() and LEVEL_DIR_RE.match(entry.name):
-            readme = entry / 'README.md'
-            if readme.exists():
-                process_readme(readme, entry.name)
-            else:
-                print(f"Skipping {entry}: README.md not present")
+    changed = 0
+    for entry in sorted(QUESTS_DIR.iterdir()):
+        if not entry.is_dir() or not LEVEL_DIR_RE.match(entry.name):
+            continue
+        readme = entry / "README.md"
+        if not readme.exists():
+            print(f"  skip (no README): {entry}")
+            continue
+        if normalize_readme(readme, entry.name, args.dry_run):
+            changed += 1
 
-if __name__ == '__main__':
-    main()
+    print(f"\n{'Would update' if args.dry_run else 'Updated'} {changed} level README(s).")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
