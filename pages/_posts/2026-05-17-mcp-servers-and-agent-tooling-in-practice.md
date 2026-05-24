@@ -1,30 +1,33 @@
 ---
-title: "MCP Servers and Agent Tooling in Practice"
-description: "A practical guide to the Model Context Protocol and GitHub-native agent tooling — what MCP servers do and how GH-600 tests them."
+title: MCP Servers and Agent Tooling in Practice
+description: A practical guide to the Model Context Protocol and GitHub-native agent tooling — what MCP servers do and how GH-600 tests them.
 permalink: /posts/mcp-servers-and-agent-tooling-in-practice/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/mcp-servers-and-agent-tooling-in-practice.png
-sub-title: "Domain 2 deep-dive for GH-600 candidates"
-excerpt: "MCP is the USB-C of AI tooling — a standard connector that lets agents speak to any external system. Here's how to use it on GitHub."
-snippet: "One protocol, many tools, infinite agent capability."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/mcp-servers-and-agent-tooling-in-practice.png
+sub-title: Domain 2 deep-dive for GH-600 candidates
+excerpt: MCP is the USB-C of AI tooling — a standard connector that lets agents speak to any external system. Here's how to use it on GitHub.
+snippet: One protocol, many tools, infinite agent capability.
 author: IT-Journey Team
 layout: article
+featured: true
 keywords:
-  primary: ["MCP server github", "model context protocol"]
-  secondary: ["gh-600 domain 2", "agentic tooling", "github copilot tools"]
-lastmod: 2026-05-17T00:00:00.000Z
+- MCP server github
+- model context protocol
+- gh-600 domain 2
+- agentic tooling
+- github copilot tools
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - mcp
-  - tooling
-  - domain-2
+- gh-600
+- agentic-ai
+- mcp
+- tooling
+- domain-2
 categories:
-  - AI & Machine Learning
-  - Developer Tools
+- AI & Machine Learning
+- Developer Tools
 ---
-
 Domain 2 of GH-600 (18% of the exam) covers the tools, environments, and capabilities that GitHub Copilot agents can use. The centrepiece is the **Model Context Protocol (MCP)**.
 
 ## What Is MCP?

@@ -5,9 +5,10 @@ preview: images/previews/level-1011-feature-development.png
 permalink: /quests/1011/
 layout: quest-collection
 level: '1011'
-categories: quests
-lastmod: 2025-11-29 23:41:31.773000+00:00
-date: 2025-11-29 16:46:02+00:00
+categories:
+- quests
+lastmod: '2025-11-29T23:41:31.000Z'
+date: '2025-11-29T16:46:02.000Z'
 ---
 # Level 1011: Feature Development
 

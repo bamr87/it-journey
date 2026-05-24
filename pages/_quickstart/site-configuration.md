@@ -1,38 +1,37 @@
 ---
-title: "Configuring Your Site with _config.yml"
+title: Configuring Your Site with _config.yml
 author: bamr87
 description: Complete walkthrough of _config.yml — site identity, theme skins, collections, default frontmatter, plugins, comments, and analytics.
-excerpt: "Walkthrough of _config.yml covering site identity, theme skins, collections, frontmatter defaults, plugins, comments, and analytics configuration."
+excerpt: Walkthrough of _config.yml covering site identity, theme skins, collections, frontmatter defaults, plugins, comments, and analytics configuration.
 permalink: /quickstart/site-configuration/
 categories:
-  - quickstart
+- quickstart
 slug: site-configuration
-lastmod: 2026-04-02T03:14:50.902Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 30-45 minutes
 prerequisites:
-  - Jekyll and zer0-mistakes theme installed (see [Jekyll Setup](/quickstart/jekyll/))
-  - Basic understanding of YAML syntax
+- Jekyll and zer0-mistakes theme installed (see [Jekyll Setup](/quickstart/jekyll/))
+- Basic understanding of YAML syntax
 tags:
-  - configuration
-  - yaml
-  - jekyll
-  - theme
+- configuration
+- yaml
+- jekyll
+- theme
 keywords:
   primary:
-    - jekyll configuration
-    - config.yml
-    - zer0-mistakes theme
+  - jekyll configuration
+  - config.yml
+  - zer0-mistakes theme
   secondary:
-    - collections
-    - plugins
-    - frontmatter defaults
+  - collections
+  - plugins
+  - frontmatter defaults
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 5** of the [Quick Start](/quickstart/) — configuring the `_config.yml` file that controls every aspect of your Jekyll site. This is the brain of your site.
 
 ---

@@ -1,17 +1,27 @@
 ---
+title: "Rise of the Matriarchs: Capitalism and Religion Meet the Femme Fatale"
+description: "A short parody piece on women breaking into the C-suite and the pulpit, and the men quietly Googling 'what is a baby shower' in response."
 author: bamr87
-categories:
-- posts
+date: '2024-05-22T08:39:24.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
+permalink: /posts/rise-of-the-matriarchs/
+categories: [Culture & Society]
 category: parody
-date: 2024-05-22 08:39:24+00:00
-draft: false
-lastmod: 2024-05-22 15:28:30.002000+00:00
-title: 'Rise of the Matriarchs: Capitalism and Religion Face the Femme Fatale'
 section: Culture & Society
-description: 'Title:'
+tags:
+  - parody
+  - culture
+  - gender
+  - society
+keywords:
+  - matriarchs
+  - women in power
+  - capitalism parody
+  - religion parody
+  - culture commentary
+excerpt: "Women take the C-suite and the pulpit; the old guard files a strongly worded LinkedIn post."
+draft: false
 ---
-
-Title:
 
 In a shocking turn of events, the rise of women in power has sent shockwaves through the seemingly unshakable pillars of modern society: capitalism and religion. As women ascend to the top of the corporate ladder and take the reins of religious institutions, the old boys' club is left reeling, desperately trying to maintain its grip on power.
 

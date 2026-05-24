@@ -1,23 +1,26 @@
 ---
 title: Refactory
 description: In the digital age, the term "refactory" emerges as a powerful portmanteau, blending "refactor"—the software engineering practice of restructuring code…
-date: 2025-08-21 22:00:59+00:00
+date: '2025-08-21T22:00:59.000Z'
 preview: ''
-tags: []
+tags:
+- programming
 categories:
 - Programming
 sub-title: null
-excerpt: null
+excerpt: In the digital age, the term "refactory" emerges as a powerful portmanteau, blending "refactor"—the software engineering practice of restructuring code…
 snippet: null
-author: ''
-keywords: {}
-lastmod: 2025-08-19 21:58:40.258000+00:00
+author: bamr87
+keywords:
+- programming
+- refactory
+lastmod: '2025-08-19T21:58:40.000Z'
 permalink: null
 attachments: ''
 comments: false
 section: Programming
+draft: false
 ---
-
 # Refactory: How to Rebuild American Manufacturing by Refactoring ERP Legacy Code Using AI
 
 In the digital age, the term "refactory" emerges as a powerful portmanteau, blending "refactor"—the software engineering practice of restructuring code to improve its internal structure without altering external behavior—with "factory," the heart of manufacturing. This concept encapsulates a transformative approach: just as developers refactor tangled, outdated code to make it more efficient and maintainable, American manufacturers can "refactor" their legacy Enterprise Resource Planning (ERP) systems using artificial intelligence (AI). By doing so, they break down rigid, inefficient old manufacturing models, paving the way for agile, resilient, and innovative production ecosystems. This isn't just a tech upgrade; it's a blueprint for revitalizing U.S. manufacturing amid global challenges.

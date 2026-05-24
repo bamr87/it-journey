@@ -1,10 +1,8 @@
 ---
 title: Wargames
-description: 'The wargames offered by the OverTheWire community can help you to learn
-  and practice security concepts in the form of fun-filled games.<br/>
+description: 'The wargames offered by the OverTheWire community can help you to learn and practice security concepts in the form of fun-filled games.<br/>
 
-  To find out more about a certain wargame, just visit its page linked from the menu
-  on the left.'
+  To find out more about a certain wargame, just visit its page linked from the menu on the left.'
 permalink: /docs/wargames/
 date: '2026-04-07T01:41:09.000Z'
 lastmod: '2026-04-07T01:41:09.000Z'
@@ -21,8 +19,15 @@ source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/index.md
 source_name: overthewire
 license: MIT
+draft: false
+keywords:
+- security
+- wargames
+- linux
+- ctf
+- cybersecurity
+author: bamr87
 ---
-
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.
 
 Wargames

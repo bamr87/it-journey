@@ -1,58 +1,56 @@
 ---
-title: "404 Hunting: The Quest for Resources"
-description: "Mystical Jekyll + GitHub Actions guide to banish 404s: stable permalinks, redirects, CI link checks, and organic resource endpoints."
-date: 2025-08-31T18:32:58.000Z
+title: '404 Hunting: The Quest for Resources'
+description: 'Mystical Jekyll + GitHub Actions guide to banish 404s: stable permalinks, redirects, CI link checks, and organic resource endpoints.'
+date: '2025-08-31T18:32:58.000Z'
 preview: /images/previews/404-hunting-binary-wards-for-unbreakable-links.png
 tags:
-    - jekyll
-    - tutorial
-    - intermediate
-    - devops
-    - github-actions
+- jekyll
+- tutorial
+- intermediate
+- devops
+- github-actions
 categories:
-    - Posts
-    - DevOps
-    - Tutorials
+- Posts
+- DevOps
+- Tutorials
 sub-title: A fantasy-themed, practical guide to links that always resolve
 excerpt: Tame 404 wraiths in your Jekyll realm with permalink magic, redirect runes, automated link guardians, and living resource endpoints—all powered by GitHub CI/CD.
 snippet: May your links never stray and your redirects never loop.
 author: IT-Journey Team
 keywords:
-    primary:
-        - jekyll-404
-        - link-integrity
-    secondary:
-        - redirects
-        - sitemap
-        - link-checking
-        - htmlproofer
-lastmod: 2025-08-31T23:09:28.442Z
+- jekyll-404
+- link-integrity
+- redirects
+- sitemap
+- link-checking
+- htmlproofer
+lastmod: '2025-08-31T23:09:28.000Z'
 section: Web Development
 permalink: /posts/404-hunting-quest/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Intermediate
 estimated_reading_time: 25-35 minutes
 prerequisites:
-    - Basic familiarity with Jekyll and front matter
-    - A GitHub repository with GitHub Actions enabled
-    - Local dev via Ruby/Bundler or Docker (optional but recommended)
+- Basic familiarity with Jekyll and front matter
+- A GitHub repository with GitHub Actions enabled
+- Local dev via Ruby/Bundler or Docker (optional but recommended)
 learning_outcomes:
-    - 🎯 Design a robust permalink strategy that avoids dead ends
-    - ⚡ Add redirects that preserve SEO and muscle memory
-    - 🛠️ Automate link checking in CI to catch regressions early
-    - 🔗 Grow missing resources organically from your 404 page and build logs
+- 🎯 Design a robust permalink strategy that avoids dead ends
+- ⚡ Add redirects that preserve SEO and muscle memory
+- 🛠️ Automate link checking in CI to catch regressions early
+- 🔗 Grow missing resources organically from your 404 page and build logs
 content_series: Site Reliability for Static Sites
 related_posts:
-    - 2025-03-19-open-ai-future-features-with-github-action.md
-    - 2025-08-27-vscode-front-matter-fork-development-setup.md
-    - 2024-06-16-unwavering-joy-of-fetch.md
+- 2025-03-19-open-ai-future-features-with-github-action.md
+- 2025-08-27-vscode-front-matter-fork-development-setup.md
+- 2024-06-16-unwavering-joy-of-fetch.md
 validation_methods:
-    - CI link checks pass green across internal and external links
-    - 404 page yields helpful suggestions and valid redirects
-    - Manual crawl of navigation produces no dead links
+- CI link checks pass green across internal and external links
+- 404 page yields helpful suggestions and valid redirects
+- Manual crawl of navigation produces no dead links
+draft: false
 ---
-
 ## Introduction
 
 In the twilight between build and deploy, a wraith roams the static valleys: the dreaded 404. It haunts broken trails, whispers through refactored slugs, and skulks in the shadows where old URLs once stood. Today, we don the mantle of Link Wardens and weave binary incantations to bind the 404, forging a realm where every path resolves and every seeker arrives.

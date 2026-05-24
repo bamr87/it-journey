@@ -1,7 +1,6 @@
 ---
 title: 'Level 1111: Leadership & Innovation'
-description: Achieve mastery in technical leadership, community building, and driving
-  innovation to shape the future of technology
+description: Achieve mastery in technical leadership, community building, and driving innovation to shape the future of technology
 preview: images/previews/level-1111-leadership-innovation.png
 permalink: /quests/1111/
 layout: quest-collection
@@ -17,8 +16,8 @@ tier: Legend
 tier_emoji: 👑
 theme: Realm Shaper
 xp_range: 10000+
-date: 2025-11-30 22:12:13+00:00
-lastmod: 2025-12-01 04:36:39.408000+00:00
+date: '2025-11-30T22:12:13.000Z'
+lastmod: '2025-12-01T04:36:39.000Z'
 tags:
 - leadership
 - innovation
@@ -141,7 +140,7 @@ Unlike previous levels focused on technical tools, this level emphasizes soft sk
 
 ## 📈 Leadership Progression
 
-```
+```text
 Individual Contributor → Tech Lead → Staff Engineer → Principal Engineer
                               │                            │
                               ├── Engineering Manager ─────┤

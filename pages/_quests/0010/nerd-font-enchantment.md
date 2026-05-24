@@ -1,28 +1,19 @@
 ---
 title: 'Nerd Font Enchantment: Terminal Icon Mastery'
 author: IT-Journey Team
-description: Complete step-by-step guide to install Nerd Fonts on macOS, Linux & Windows.
-  Transform your terminal with icons, symbols, and visual themes. 20-minute setup
-  tutorial with troubleshooting.
-excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your terminal
-  with beautiful icons, symbols, and glyphs. Complete guide with Oh-My-Zsh and VS
-  Code integration.
-snippet: Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual
-  themes on any platform
+description: Complete step-by-step guide to install Nerd Fonts on macOS, Linux & Windows. Transform your terminal with icons, symbols, and visual themes. 20-minute setup tutorial with troubleshooting.
+excerpt: Install Nerd Fonts on macOS, Linux, and Windows to transform your terminal with beautiful icons, symbols, and glyphs. Complete guide with Oh-My-Zsh and VS Code integration.
+snippet: Install Nerd Fonts in 20 minutes - unlock terminal icons, symbols, and visual themes on any platform
 preview: images/previews/nerd-font-enchantment-terminal-icon-mastery.png
-date: 2025-09-03 22:19:06+00:00
-lastmod: 2025-12-19 00:00:00+00:00
+date: '2025-09-03T22:19:06.000Z'
+lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
 primary_technology: binary-level-indicator
 quest_type: side_quest
 quest_series: Terminal Mastery Path
-skill_focus:
-- Quests
-- Side-Quests
-- Tools
-- Terminal-Mastery
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
 - Basic terminal/command-line knowledge
@@ -53,17 +44,19 @@ tags:
 - linux
 - windows
 keywords:
-- binary-level-indicator
-- terminal-mastery
-- nerd-fonts
-- font-installation
-- visual-enhancement
-- cross-platform-setup
-- development-tools
-- terminal-customization
-- macos
-- linux
-- windows
+  primary:
+  - binary-level-indicator
+  - terminal-mastery
+  - nerd-fonts
+  - font-installation
+  - visual-enhancement
+  secondary:
+  - cross-platform-setup
+  - development-tools
+  - terminal-customization
+  - macos
+  - linux
+  - windows
 fmContentType: quest
 comments: true
 attachments: ''
@@ -76,6 +69,7 @@ rewards:
 related_quests:
 - 'Level 0010: Terminal Enchantment - Oh-My-Zsh Mastery'
 - 'Level 0001: Terminal Fundamentals'
+layout: quest
 ---
 ## 🌟 The Legend of Font Enchantment
 

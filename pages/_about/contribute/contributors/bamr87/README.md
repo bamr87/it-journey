@@ -6,9 +6,8 @@ class: Wizard
 username: bamr87
 contributor_data: bamr87
 permalink: /contributors/bamr87/
-lastmod: 2026-03-21T15:12:32.206Z
+lastmod: '2026-03-21T15:12:32.000Z'
 ---
-
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
 {% include contributor/character_sheet.html username="bamr87" %}

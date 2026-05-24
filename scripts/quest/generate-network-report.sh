@@ -77,8 +77,30 @@ if [[ ! -f "$VALIDATOR_SCRIPT" ]]; then
     exit 1
 fi
 
-# Generate report header
+# Generate report header with frontmatter so the file is well-formed Jekyll content
 cat > "$REPORT_FILE" <<EOF
+---
+title: Quest Network Report
+description: "Auto-generated quest network validation summary — node and edge counts, dependency graph status, and the most recent validator run output."
+date: $(date -u +"%Y-%m-%dT%H:%M:%S.000Z")
+lastmod: $(date -u +"%Y-%m-%dT%H:%M:%S.000Z")
+author: IT-Journey Team
+categories: [Quests, Reports]
+tags: [quests, network, automation, report]
+permalink: /quests/network-report/
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 5-10 minutes
+keywords:
+  - quest network
+  - quest validation
+  - dependency graph
+  - automation
+draft: false
+generated: true
+sitemap: false
+---
+
 # Quest Network Report
 
 **Generated:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")

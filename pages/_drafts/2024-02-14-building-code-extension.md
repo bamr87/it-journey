@@ -1,30 +1,29 @@
 ---
-title: "Building a VS Code Extension for Copilot"
+title: Building a VS Code Extension for Copilot
 description: A step-by-step guide to building a VS Code extension to save, publish, and export GitHub Copilot conversations as markdown files to a repository.
 excerpt: A step-by-step guide to building a VS Code extension to save/publish/export Copilot conversations as markdown files.
-date: 2024-02-20T09:39:19.000Z
+date: '2024-02-20T09:39:19.000Z'
 author: bamr87
 categories:
-  - Programming
+- Programming
 tags:
-  - VS Code
-  - Extension
-  - GitHub Copilot
-  - Markdown
-  - nodejs
+- VS Code
+- Extension
+- GitHub Copilot
+- Markdown
+- nodejs
 keywords:
-  - build vs code extension
-  - vs code extension development
-  - github copilot conversation export
-  - vscode extension api tutorial
-  - save copilot chat markdown
+- build vs code extension
+- vs code extension development
+- github copilot conversation export
+- vscode extension api tutorial
+- save copilot chat markdown
 type: Article
 draft: true
-lastmod: 2024-02-25T18:21:36.669Z
+lastmod: '2024-02-25T18:21:36.000Z'
 section: Tools & Environment
 slug: building-code-extension
 ---
-
 [VS Code API](https://code.visualstudio.com/api)
 
 ## Introduction

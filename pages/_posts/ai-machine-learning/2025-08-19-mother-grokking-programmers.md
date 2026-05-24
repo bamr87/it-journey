@@ -1,28 +1,36 @@
 ---
 title: Mother Grokking Programmers
 description: A satirical take on the evolution of programmers from being programmed to grokking off all day.
-date: 2025-08-21T22:00:59.000Z
-preview: ""
+date: '2025-08-21T22:00:59.000Z'
+preview: ''
 tags:
-    - satire
-    - programming
-    - AI
-    - future-tech
+- satire
+- programming
+- AI
+- future-tech
 categories:
-    - humor
-    - tech
+- humor
+- tech
 sub-title: null
 excerpt: In the grand theater of technological evolution, programmers have danced a peculiar jig—from rigid automatons to frantic coders, and now, to blissful grokkers who might just be one prompt away from obsolescence.
 snippet: null
 author: bamr87
-keywords: {}
-lastmod: 2025-08-19T21:42:52.468Z
+keywords:
+- satire
+- programming
+- ai
+- future-tech
+- humor
+- tech
+- mother
+- grokking
+lastmod: '2025-08-19T21:42:52.000Z'
 permalink: null
-attachments: ""
+attachments: ''
 comments: false
 section: AI & Machine Learning
+draft: false
 ---
-
 # Mother Grokking Programmers: The Evolution of Code Monkeys
 
 Ah, the noble programmer. That caffeine-fueled wizard who bends silicon to their will, or so the myths go. But let's peel back the layers of this digital onion, shall we? In the annals of computing history, we've seen three distinct eras of these code-slinging sapiens. Legacy programmers were *programmed*. Contemporary programmers are *programming*. And future programmers? Oh, they're just *grokking off* all day. Buckle up, folks—this is going to be a fun, dark, humorous, and utterly satirical ride through the devolution of dev-kind.

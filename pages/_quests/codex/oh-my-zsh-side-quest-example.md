@@ -1,9 +1,8 @@
 ---
 title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
-layout: default
-description: Transform your terminal into a powerful, visually enhanced development
-  environment with Oh-My-Zsh themes and plugins
-date: 2025-10-04 15:25:33+00:00
+layout: quest
+description: Transform your terminal into a powerful, visually enhanced development environment with Oh-My-Zsh themes and plugins
+date: '2025-10-04T15:25:33.000Z'
 preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
 - '0010'
@@ -18,19 +17,20 @@ categories:
 - Side-Quests
 - Terminal-Enhancement
 sub-title: 'Level 0010 (2) Side Quest: Terminal Enhancement and Customization'
-excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved productivity
-  and visual appeal
+excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved productivity and visual appeal
 snippet: Transform your terminal from tool to weapon with Oh-My-Zsh magic
 author: Quest Master IT-Journey Team
 keywords:
-- '0010'
-- terminal-enhancement
-- oh-my-zsh
-- shell-customization
-- productivity-tools
-- themes
-- plugins
-lastmod: 2025-10-03 12:30:00+00:00
+  primary:
+  - '0010'
+  - terminal-enhancement
+  - oh-my-zsh
+  secondary:
+  - shell-customization
+  - productivity-tools
+  - themes
+  - plugins
+lastmod: '2025-10-03T12:30:00.000Z'
 permalink: /quests/codex/oh-my-zsh-terminal-enchantment/
 redirect_from:
 - /quests/oh-my-zsh-terminal-enchantment/
@@ -102,11 +102,9 @@ rewards:
   - Custom plugin development capabilities
 level: '0010'
 primary_technology: reference
-skill_focus:
-- codex
-- reference
+skill_focus: fullstack
 learning_style: reading
-fmContentType: codex
+fmContentType: quest
 ---
 *Welcome, terminal navigator, to the Oh-My-Zsh Terminal Enchantment side quest! Having mastered the fundamental arts of command-line navigation, you're now ready to transform your terminal from a simple tool into a powerful, visually enhanced development weapon.*
 

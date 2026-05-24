@@ -1,11 +1,8 @@
 ---
 title: Level [BINARY] ([DECIMAL]) - [Level Name]
-# Level READMEs use the dynamic quest-collection layout so the level hub
-# renders all matching site.quests automatically.
 layout: quest-collection
 description: 'Reference: Level [BINARY] ([DECIMAL]) - [Level Name].'
-preview: /images/previews/level-binary-decimal-level-name.png - Concise description
-  of what this level covers and its role in the learning journey
+preview: /images/previews/level-binary-decimal-level-name.png - Concise description of what this level covers and its role in the learning journey
 permalink: /quests/[LEVEL]/
 categories:
 - Quests
@@ -16,7 +13,7 @@ tags:
 - - theme-tag
 - - skill-area
 - quest-collection
-lastmod: 2025-11-30 05:46:59.319000+00:00
+lastmod: '2025-11-30T05:46:59.000Z'
 toc: true
 toc_sticky: true
 draft: false
@@ -25,9 +22,7 @@ keywords:
 - '[''theme-tag'']'
 - '[''skill-area'']'
 - quest-collection
-date: 2025-11-29 22:51:57+00:00
-# `level` MUST be the quoted 4-digit binary string matching the directory name.
-# Decimal/integer values break the quest-collection layout's level filter.
+date: '2025-11-29T22:51:57.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
@@ -55,9 +50,9 @@ fmContentType: template
 ```mermaid
 graph TB
     subgraph "Quest Progression"
-        PrevLevel[Level XXXX:<br/>[Previous Level]]
-        CurrentLevel[Level [BINARY]:<br/>[Current Level]]
-        NextLevel[Level XXXX:<br/>[Next Level]]
+        PrevLevel[Level XXXX<br/>Previous Level]
+        CurrentLevel[Level BINARY<br/>Current Level]
+        NextLevel[Level XXXX<br/>Next Level]
     end
     
     PrevLevel --> CurrentLevel
@@ -90,9 +85,9 @@ By completing this level, adventurers will master:
 ```mermaid
 graph TB
     subgraph "Main Quest Line"
-        MQ1[🎯 Main Quest 1:<br/>[Quest Name]]
-        MQ2[🎯 Main Quest 2:<br/>[Quest Name]]
-        MQ3[🎯 Main Quest 3:<br/>[Quest Name]]
+        MQ1[🎯 Main Quest 1:<br/>Quest Name]
+        MQ2[🎯 Main Quest 2:<br/>Quest Name]
+        MQ3[🎯 Main Quest 3:<br/>Quest Name]
     end
     
     subgraph "Side Quests"

@@ -1,16 +1,20 @@
 ---
-title: "GitHub Copilot Coding Agent Cheatsheet"
-description: "Quick reference for activating, configuring, and constraining the GitHub Copilot coding agent — including AGENTS.md structure, copilot-instructions.md, and permission scopes."
-date: 2026-05-17T00:00:00.000Z
+title: GitHub Copilot Coding Agent Cheatsheet
+description: Quick reference for activating, configuring, and constraining the GitHub Copilot coding agent — including AGENTS.md structure, copilot-instructions.md, and permission scopes.
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/copilot-coding-agent-cheatsheet/
 author: IT-Journey Team
-tags: [gh-600, copilot, coding-agent, quick-reference]
+tags:
+- gh-600
+- copilot
+- coding-agent
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # GitHub Copilot Coding Agent Cheatsheet
 
 ## Activating the Coding Agent

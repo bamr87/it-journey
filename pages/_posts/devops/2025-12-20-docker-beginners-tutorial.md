@@ -6,34 +6,31 @@ lastmod: 2026-05-23T00:00:00.000Z
 author: "IT-Journey Team"
 permalink: /posts/docker-beginners-tutorial/
 tags:
-    - docker
-    - containers
-    - devops
-    - tutorial
-    - beginner
-    - development
+- docker
+- containers
+- devops
+- tutorial
+- beginner
+- development
 categories:
-    - DevOps
-    - Tutorials
-    - Beginner
+- DevOps
+- Tutorials
+- Beginner
 keywords:
-    primary:
-        - docker tutorial
-        - docker for beginners
-        - learn docker
-    secondary:
-        - docker containers
-        - docker images
-        - docker commands
-        - containerization
-        - it-journey
-excerpt: "Master Docker basics in 30 minutes with this beginner-friendly tutorial. Learn containers, images, and essential commands to start your containerization journey."
+- docker tutorial
+- docker for beginners
+- learn docker
+- docker containers
+- docker images
+- docker commands
+- containerization
+- it-journey
+excerpt: Master Docker basics in 30 minutes with this beginner-friendly tutorial. Learn containers, images, and essential commands to start your containerization journey.
 preview: /images/previews/docker-for-beginners-complete-tutorial-to-get-star.png
-difficulty: "🟢 Easy"
-estimated_time: "30 minutes"
+difficulty: 🟢 Easy
+estimated_time: 30 minutes
 draft: false
 ---
-
 # 🐳 Docker for Beginners: Complete Tutorial
 
 > **Learn Docker from scratch** with this hands-on tutorial designed for complete beginners. In 30 minutes, you'll understand containers, images, and essential commands.

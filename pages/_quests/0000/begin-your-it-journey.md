@@ -5,8 +5,8 @@ description: Take your first steps into the world of information technology
 excerpt: Start your adventure with the essential skills and mindset for IT success
 snippet: null
 preview: images/previews/begin-your-it-journey.png
-date: 2023-11-25 14:12:43+00:00
-lastmod: 2025-11-29 21:40:00+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -42,10 +42,7 @@ learning_paths:
   skill_trees:
   - Career Planning
   - IT Fundamentals
-skill_focus:
-- getting-started
-- beginner
-- "0000"
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -83,15 +80,18 @@ categories: []
 tags:
 - getting-started
 - beginner
-- "0000"
+- '0000'
 keywords:
-- getting-started
-- beginner
-- "0000"
+  primary:
+  - getting-started
+  secondary:
+  - beginner
+  - '0000'
 fmContentType: quest
 draft: false
 meta: null
 slug: journey
+layout: quest
 ---
 *Welcome, brave newcomer, to the threshold of the IT realm! Every legendary wizard, architect, and guardian began exactly where you stand now — with curiosity as their compass and determination as their shield. This quest will illuminate the vast landscape of Information Technology and help you chart your first steps.*
 

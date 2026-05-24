@@ -1,30 +1,22 @@
 ---
 title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
-description: Master the autonomy level spectrum for GitHub Copilot agents — from fully
-  supervised to fully autonomous — and learn how to select, configure, and govern
-  the right level for each task type.
-date: 2026-05-17 00:00:00+00:00
+description: Master the autonomy level spectrum for GitHub Copilot agents — from fully supervised to fully autonomous — and learn how to select, configure, and govern the right level for each task type.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-autonomy-levels-matrix.png
 level: '1100'
 difficulty: 🔴 Hard
-estimated_time: 90 minutes
+estimated_time: 60-90 minutes
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- autonomy
-- governance
-- risk-management
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1100 Quest 2/4 — Domain 6: Responsible Agentic AI'
-excerpt: The Scales of Autonomy measure the power you grant and the responsibility
-  that comes with it. Too much freedom and the agent strays. Too little and it becomes
-  a burden rather than a help. The wise master finds the balance.
+excerpt: The Scales of Autonomy measure the power you grant and the responsibility that comes with it. Too much freedom and the agent strays. Too little and it becomes a burden rather than a help. The wise master finds the balance.
 author: IT-Journey Team
 tags:
 - '1100'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- autonomy levels
-- agentic AI governance
-- human in the loop
-- responsible AI
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - autonomy levels
+  secondary:
+  - agentic AI governance
+  - human in the loop
+  - responsible AI
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1100/agentic-autonomy-levels-matrix/
 quest_dependencies:
   required_quests:
@@ -92,6 +86,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-autonomy-levels-matrix/
+layout: quest
 ---
 *The Hall of Scales holds the great balances — one side weighs agent capability, the other weighs risk. Every task that comes before the Council is placed on the scales first. Some tasks are light and the agent may proceed alone. Others are heavy, and a human hand must steady the scales before the agent moves. The scales never lie.*
 

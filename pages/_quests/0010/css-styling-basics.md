@@ -1,14 +1,11 @@
 ---
 title: 'CSS Styling Basics: Selectors, Layout & Responsive Design'
 author: IT-Journey Team
-description: Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox,
-  grid, and responsive design. Hands-on tutorial with modern CSS techniques and best
-  practices.
-excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and
-  grid.
+description: Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox, grid, and responsive design. Hands-on tutorial with modern CSS techniques and best practices.
+excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and grid.
 preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-12-19 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -69,7 +65,7 @@ categories:
 - CSS
 - Intermediate
 tags:
-- "0010"
+- '0010'
 - css
 - flexbox
 - css-grid
@@ -79,15 +75,17 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- "0010"
-- css
-- flexbox
-- css-grid
-- responsive-design
-- frontend
-- main_quest
-- hands-on
-- intermediate
+  primary:
+  - '0010'
+  - css
+  - flexbox
+  - css-grid
+  secondary:
+  - responsive-design
+  - frontend
+  - main_quest
+  - hands-on
+  - intermediate
 fmContentType: quest
 draft: true
 comments: true
@@ -100,6 +98,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -118,7 +117,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

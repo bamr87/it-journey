@@ -1,14 +1,11 @@
 ---
 title: 'Database Fundamentals: Data Storage and Retrieval'
 author: IT-Journey Team
-description: Master the fundamentals of databases, including data storage, retrieval,
-  and management using SQL and relational database concepts. Learn how to design,
-  query, and optimize databases for real-world applications.
-excerpt: Learn how databases store and retrieve data, and gain hands-on experience
-  with SQL and relational database design.
+description: Master the fundamentals of databases, including data storage, retrieval, and management using SQL and relational database concepts. Learn how to design, query, and optimize databases for real-world applications.
+excerpt: Learn how databases store and retrieve data, and gain hands-on experience with SQL and relational database design.
 preview: images/previews/database-fundamentals-data-storage-quest-title-ret.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:07:24+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:07:24.000Z'
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -42,8 +39,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data-engineering
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -75,19 +71,21 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- "0110"
+- '0110'
 - sql
 - main_quest
 - data-engineering
 - hands-on
 - gamified-learning
 keywords:
-- "0110"
-- sql
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '0110'
+  - sql
+  - main_quest
+  secondary:
+  - data-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -100,6 +98,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -118,7 +117,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

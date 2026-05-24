@@ -1,12 +1,11 @@
 ---
 title: Shell and the CLI
-description: Command Line Interface Notes
+description: To create a clone of your fork, use the --clone flag.
 permalink: /notes/shell
 lastmod: '2022-01-05T00:55:02.209Z'
-date: 2021-11-06T10:42:04.000Z
-
+date: '2021-11-06T10:42:04.000Z'
+draft: false
 ---
-
 # Command Line
 
 ## bash

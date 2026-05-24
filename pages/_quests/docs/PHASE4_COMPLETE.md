@@ -5,7 +5,7 @@ preview: /images/previews/phase-4-complete-expert-tier-quests-generated.png
 permalink: /quests/docs/phase4-complete/
 redirect_from:
 - /quests/phase4-complete/
-lastmod: 2025-11-30 05:46:59.363000+00:00
+lastmod: '2025-11-30T05:46:59.000Z'
 keywords:
 - phase
 - '4'
@@ -14,7 +14,7 @@ keywords:
 - tier
 - quests
 description: 'Reference: Phase 4 Complete: Expert Tier Quests Generated.'
-date: 2025-11-29 22:51:57+00:00
+date: '2025-11-29T22:51:57.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
@@ -26,6 +26,9 @@ skill_focus:
 learning_style: reading
 quest_type: documentation
 fmContentType: documentation
+categories:
+- Quests
+- Documentation
 ---
 # Phase 4 Complete: Expert Tier Quest Generation ✅
 
@@ -160,7 +163,7 @@ All Phase 4 quests are rated **🔴 Hard**, representing expert-level technical 
 
 ### Level Structure
 
-```
+```text
 Expert Tier (Levels 1000-1011):
 ├── 1000/ (8)  - Cloud Fundamentals           [6 quests]
 ├── 1001/ (9)  - Kubernetes Orchestration     [4 quests]

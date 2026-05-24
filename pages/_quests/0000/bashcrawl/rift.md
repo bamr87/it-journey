@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Rift: Pipes, Redirection, and the Final Boss'
-description: "Conquer Bashcrawl's final gauntlet — the Rift — by mastering pipes,
-  &&, ||, and output redirection. Defeat the pit boss and satellite boss to complete."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: Conquer Bashcrawl's final gauntlet — the Rift — by mastering pipes, &&, ||, and output redirection. Defeat the pit boss and satellite boss to complete.
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,10 +13,7 @@ quest_line: Foundation Path
 difficulty: 🔴 Hard
 estimated_time: 40-50 minutes
 primary_technology: bash
-skill_focus:
-- Pipes and Redirection
-- Command Chaining
-- Output Processing
+skill_focus: fullstack
 learning_style: hands-on
 categories:
 - Quests
@@ -29,7 +25,7 @@ tags:
 - bash
 - pipes
 - redirection
-- "0000"
+- '0000'
 keywords:
   primary:
   - bash pipes
@@ -65,11 +61,11 @@ learning_paths:
 rewards:
 - Rift Conquest Badge
 - Pipes and redirection mastery
-excerpt: "Conquer the final Rift by chaining commands, piping output, and redirecting streams to defeat both bosses and finish Bashcrawl."
+excerpt: Conquer the final Rift by chaining commands, piping output, and redirecting streams to defeat both bosses and finish Bashcrawl.
 draft: false
 permalink: /quests/0000/side-quests/rift/
+layout: quest
 ---
-
 *You stand at the edge of the Rift — a swirling chasm where data streams collide. The rules here are different: commands don't just run, they flow into each other. Master the pipe and you master the dungeon.*
 
 ## 🎯 Quest Objectives

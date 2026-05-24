@@ -2,27 +2,24 @@
 title: 'Forge Your Character: Crafting Your Contributor Identity'
 author: Quest Master IT-Journey Team
 keywords:
-- contributor profile
-- character sheet
-- git stats
-- RPG
-- open source
-description: Create your contributor character profile with RPG-style stats, badges,
-  and class identity — powered by your git history
-excerpt: Step into the Guild Hall and forge your identity. Every adventurer needs
-  a character sheet before embarking on their journey.
-snippet: The Guild Master beckons new adventurers to forge their identity in the Hall
-  of Contributors
-date: 2026-03-20 00:00:00+00:00
-lastmod: 2026-03-21 15:12:32.226000+00:00
+  primary:
+  - contributor profile
+  - character sheet
+  secondary:
+  - git stats
+  - RPG
+  - open source
+description: Create your contributor character profile with RPG-style stats, badges, and class identity — powered by your git history
+excerpt: Step into the Guild Hall and forge your identity. Every adventurer needs a character sheet before embarking on their journey.
+snippet: The Guild Master beckons new adventurers to forge their identity in the Hall of Contributors
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 primary_technology: git
 quest_type: main_quest
-skill_focus:
-- devops
-- frontend
+skill_focus: devops
 learning_style: hands-on
 quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
@@ -36,7 +33,7 @@ categories:
 - Community
 - Getting Started
 tags:
-- "0001"
+- '0001'
 - contributor
 - profile
 - git
@@ -88,6 +85,7 @@ validation_criteria:
   - Contributor profile page exists in pages/_about/contribute/contributors/
   - Character sheet renders on your profile page
   - Stats generator runs without errors for your username
+layout: quest
 ---
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity
 

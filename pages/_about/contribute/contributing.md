@@ -5,20 +5,19 @@ excerpt: Join our community of learners, creators, and adventurers building the 
 description: How to contribute to IT-Journey - a gamified learning platform for IT education
 snippet: Transform IT education through open-source collaboration
 categories:
-    - about
+- about
 tags:
-    - contributing
-    - community
-    - open-source
-    - collaboration
+- contributing
+- community
+- open-source
+- collaboration
 meta:
-    keywords: contributing, open source, IT education, community, collaboration
+  keywords: contributing, open source, IT education, community, collaboration
 draft: false
-lastmod: 2026-03-21T15:12:32.218Z
+lastmod: '2026-03-21T15:12:32.000Z'
 permalink: /about/contributing/
-date: 2024-05-11T16:54:12.000Z
+date: '2024-05-11T16:54:12.000Z'
 ---
-
 # Contributing to IT-Journey
 
 Welcome, adventurer! 🎯 IT-Journey thrives on community collaboration. Whether you're fixing a typo, creating epic quests, or building powerful tools, your contribution matters.

@@ -1,19 +1,20 @@
 ---
 title: 'Hello Windows: Mastering the Windows Development Environment'
-description: Set up a complete Windows development environment with WSL, PowerShell
-  mastery, and essential development tools for the modern Windows developer
+description: Set up a complete Windows development environment with WSL, PowerShell mastery, and essential development tools for the modern Windows developer
 preview: /images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
 permalink: /quests/0000/hello-windows/
-keywords: &id001
-- windows
-- powershell
-- wsl
-- development-setup
-- package-management
-- init-world
-- 1
-date: 2020-08-17 15:28:44+00:00
+keywords:
+  primary:
+  - windows
+  - powershell
+  - wsl
+  secondary:
+  - development-setup
+  - package-management
+  - init-world
+  - 1
+date: '2020-08-17T15:28:44.000Z'
 level: '0000'
 quest_type: main_quest
 difficulty: 🟡 Medium
@@ -23,7 +24,14 @@ categories:
 - Init-World
 - Windows
 - Development-Environment
-tags: *id001
+tags:
+- windows
+- powershell
+- wsl
+- development-setup
+- package-management
+- init-world
+- 1
 prerequisites:
   knowledge_requirements:
   - Basic Windows navigation and system administration
@@ -89,21 +97,17 @@ related_quests:
 - 2023-11-24-os-selection.md - Operating System Selection Guide
 - ../../tools/README.md - Essential Development Tools
 sub-title: 'Level 001 Quest: Windows Development Environment Mastery'
-excerpt: Transform your Windows machine into a powerful development environment with
-  WSL, modern PowerShell, and professional-grade tools
+excerpt: Transform your Windows machine into a powerful development environment with WSL, modern PowerShell, and professional-grade tools
 snippet: Windows + Linux + Developer Tools = Ultimate Development Power
-lastmod: 2023-12-03 08:47:22.762000+00:00
+lastmod: '2023-12-03T08:47:22.000Z'
 primary_technology: windows
-skill_focus:
-- Quests
-- Init-World
-- Windows
-- Development-Environment
+skill_focus: fullstack
 learning_style: hands-on
 fmContentType: quest
 draft: false
 redirect_from:
 - /quests/0000/hello-win/
+layout: quest
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 

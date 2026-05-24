@@ -4,55 +4,49 @@ description: "Discover how finance professionals can leverage bash scripting to 
 date: 2026-02-23T12:40:05.000Z
 preview: /images/ai-erp-control.png
 tags:
-    - bash
-    - terminal
-    - finance
-    - accounting
-    - automation
-    - tutorial
-    - beginner
+- bash
+- terminal
+- finance
+- accounting
+- automation
+- tutorial
+- beginner
 categories:
-    - Posts
-    - Business
-    - Tools & Environment
-sub-title: "Trading VLOOKUPs for grep: Why the command line is your new best friend"
+- Posts
+- Business
+- Tools & Environment
+sub-title: 'Trading VLOOKUPs for grep: Why the command line is your new best friend'
 excerpt: Learn why the terminal is the ultimate productivity hack for finance and accounting professionals — and how to start using it today.
 snippet: Automate your financial workflows with bash scripting — from month-end close to audit prep.
 author: IT-Journey Team
 draft: false
 keywords:
-    primary:
-        - bash
-        - terminal
-        - finance
-    secondary:
-        - accounting
-        - automation
-        - shell-scripting
-        - csv-processing
-        - data-analysis
-        - month-end-close
+- bash
+- terminal
+- finance
+- accounting
+- automation
+- shell-scripting
+- csv-processing
+- data-analysis
+- month-end-close
 lastmod: 2026-05-23T00:00:00.000Z
 permalink: /posts/terminal-bash-finance-accounting/
 comments: true
 draft: false
 difficulty: 🟢 Beginner
-estimated_reading_time: 12-15 minutes
-    - A desire to automate tedious spreadsheet tasks
-    - Basic understanding of data organization (rows, columns, CSV files)
-    - Access to a computer with a terminal (macOS, Windows, or Linux)
+estimated_reading_time: 12-15 minutes - A desire to automate tedious spreadsheet tasks - Basic understanding of data organization (rows, columns, CSV files) - Access to a computer with a terminal (macOS, Windows, or Linux)
 learning_outcomes:
-    - 🎯 Understand the value of the terminal for financial data processing
-    - ⚡ Learn basic bash commands to replace manual spreadsheet work
-    - 🛠️ Build a real bash script that automates a financial workflow
-    - 🔗 Connect terminal skills to career advancement in finance and accounting
-    - 📊 Process CSV data faster than any spreadsheet application
+- 🎯 Understand the value of the terminal for financial data processing
+- ⚡ Learn basic bash commands to replace manual spreadsheet work
+- 🛠️ Build a real bash script that automates a financial workflow
+- 🔗 Connect terminal skills to career advancement in finance and accounting
+- 📊 Process CSV data faster than any spreadsheet application
 related_posts:
-    - /quests/0000/terminal-fundamentals/
-    - /quests/0000/bashcrawl/
-    - /quests/0000/side-quests/bash-run/
+- /quests/0000/terminal-fundamentals/
+- /quests/0000/bashcrawl/
+- /quests/0000/side-quests/bash-run/
 ---
-
 ## Introduction: The Spinning Wheel of Death
 
 Picture this: It's 11:47 PM on the last day of the month. Quarter-end close. Your controller just emailed you a 2GB CSV file containing every transaction your company made this fiscal year with the subject line "URGENT - need reconciled by morning." You double-click it. Excel opens. The screen goes white. The cursor turns into a spinning beach ball (or a blue circle, depending on your particular brand of suffering). Your laptop's fan spins up to sound like a Boeing 747 preparing for takeoff.

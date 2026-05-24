@@ -1,15 +1,15 @@
 ---
-title: "Converting Markdown Code Blocks to Shell Scripts"
+title: Converting Markdown Code Blocks to Shell Scripts
 description: Learn how to convert a markdown file into a bash script by extracting shell code blocks and commenting out all non-code text automatically.
-date: 2024-06-02 16:17:06+00:00
+date: '2024-06-02T16:17:06.000Z'
 preview: null
 draft: true
 tags:
-  - markdown
-  - bash
-  - scripting
-  - python
-  - automation
+- markdown
+- bash
+- scripting
+- python
+- automation
 categories:
 - Programming
 sub-title: null
@@ -17,19 +17,18 @@ excerpt: A Python-based approach to extract shell code blocks from markdown file
 snippet: null
 author: bamr87
 keywords:
-  - convert markdown to bash script
-  - extract shell code blocks markdown
-  - markdown to script converter
-  - python markdown parser script
-  - automate bash from markdown
-lastmod: 2024-06-02 21:11:53.991000+00:00
+- convert markdown to bash script
+- extract shell code blocks markdown
+- markdown to script converter
+- python markdown parser script
+- automate bash from markdown
+lastmod: '2024-06-02T21:11:53.000Z'
 slug: null
 permalink: null
 attachments: ''
 type: posts
 section: Programming
 ---
-
 # Converting Markdown Code Blocks to Shell Scripts
 
 bamr87: how would i convert a markdown file into a bash script? essentially, i just want all the text outside of the "```shell" code blocks to be commented out in the shell script.

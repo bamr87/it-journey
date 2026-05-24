@@ -1,6 +1,6 @@
 ---
 title: 'Glossary '
-layout: default
+layout: quest
 author: IT-Journey Team
 excerpt: null
 description: 'Reference: Glossary .'
@@ -12,22 +12,22 @@ tags:
 - notes
 meta: null
 draft: true
-lastmod: 2023-11-25 11:31:20.728000+00:00
+lastmod: '2023-11-25T11:31:20.000Z'
 permalink: /quests/codex/glossary/
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
 keywords:
-- notes
-date: 2023-11-25 14:12:43+00:00
+  primary:
+  - notes
+  secondary: []
+date: '2023-11-25T14:12:43.000Z'
 quest_series: Codex Reference
 primary_technology: reference
-skill_focus:
-- codex
-- reference
+skill_focus: fullstack
 learning_style: reading
-fmContentType: codex
+fmContentType: quest
 ---
 Enterprise
 

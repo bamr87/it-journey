@@ -1,14 +1,11 @@
 ---
 title: 'ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis'
 author: IT-Journey Team
-description: Deploy the complete ELK stack for centralized logging. Learn Elasticsearch
-  indexing, Logstash pipelines, Kibana dashboards, and log aggregation patterns for
-  distributed systems.
-excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana
-  visualization
+description: Deploy the complete ELK stack for centralized logging. Learn Elasticsearch indexing, Logstash pipelines, Kibana dashboards, and log aggregation patterns for distributed systems.
+excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana visualization
 preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:44:18+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:44:18.000Z'
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- "1010"
+- '1010'
 - elasticsearch
 - logstash
 - kibana
@@ -77,14 +73,16 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "1010"
-- elasticsearch
-- logstash
-- kibana
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '1010'
+  - elasticsearch
+  - logstash
+  - kibana
+  secondary:
+  - main_quest
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -97,6 +95,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -115,7 +114,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

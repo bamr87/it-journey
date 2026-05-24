@@ -1,40 +1,35 @@
 ---
-title: "Robots.txt: Web Crawler Control for Jekyll Sites"
+title: robots dot txt
 author: bamr87
 categories:
-    - Posts
-    - Web-Development
-    - SEO
-date: 2023-12-04T15:42:39.000Z
-description: "Learn how to properly configure robots.txt files for Jekyll websites to control search engine crawlers and optimize SEO"
+- Posts
+- Web-Development
+- SEO
+date: '2023-12-04T15:42:39.000Z'
+description: Learn how to properly configure robots.txt files for Jekyll websites to control search engine crawlers and optimize SEO
 draft: false
 section: Data & Analytics
-excerpt: "Master robots.txt configuration for Jekyll sites to guide search engine crawlers and improve your site's SEO performance"
-lastmod: 2024-05-16T02:49:07.594Z
-snippet: "robots.txt - your site's first line of communication with search engines"
-sub-title: "SEO and Web Crawler Management"
+excerpt: Master robots.txt configuration for Jekyll sites to guide search engine crawlers and improve your site's SEO performance
+lastmod: '2024-05-16T02:49:07.000Z'
+snippet: robots.txt - your site's first line of communication with search engines
+sub-title: SEO and Web Crawler Management
 tags:
-    - robots-txt
-    - seo
-    - jekyll
-    - web-crawlers
-    - search-engines
-    - web-development
-title: "robots dot txt"
+- robots-txt
+- seo
+- jekyll
+- web-crawlers
+- search-engines
+- web-development
 type: Article
 keywords:
-    primary:
-        - robots.txt
-        - jekyll seo
-        - web crawlers
-    secondary:
-        - search engine optimization
-        - site indexing
-        - crawler directives
+- robots.txt
+- jekyll seo
+- web crawlers
+- search engine optimization
+- site indexing
+- crawler directives
 permalink: /posts/robots-txt-jekyll/
 ---
-
-
 A `robots.txt` file is used to instruct web robots (typically search engine robots) which pages on your website to crawl and which not to. Here's an example of a `robots.txt` file that you might use for a Jekyll site:
 
 ```plaintext

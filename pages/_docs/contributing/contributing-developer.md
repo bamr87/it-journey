@@ -1,20 +1,20 @@
 ---
-title: "Complete Developer Contribution Guide"
+title: Complete Developer Contribution Guide
 description: Developer and AI agent guide for contributing to IT-Journey — setup, branching strategies, code standards, and PR workflows.
 excerpt: Step-by-step contribution guide for developers and AI agents — covering setup, branching, code standards, testing, pull requests, and AI-assisted workflows for the IT-Journey project.
 author: IT-Journey Team
-date: 2025-10-13T00:00:00.000Z
-lastmod: 2026-05-06T00:00:00.000Z
+date: '2025-10-13T00:00:00.000Z'
+lastmod: '2026-05-06T00:00:00.000Z'
 categories:
-  - contributing
+- contributing
 tags:
-  - contributing
-  - development
-  - workflow
-  - git
-  - pull-request
-  - ai-agents
-  - github-copilot
+- contributing
+- development
+- workflow
+- git
+- pull-request
+- ai-agents
+- github-copilot
 draft: false
 permalink: /docs/contributing/contributing-developer/contributing-developer/
 sidebar:
@@ -22,16 +22,15 @@ sidebar:
 toc_sticky: true
 keywords:
   primary:
-    - developer contribution guide
-    - contributing to it-journey
-    - ai agent contribution
+  - developer contribution guide
+  - contributing to it-journey
+  - ai agent contribution
   secondary:
-    - github copilot contribution
-    - pull request workflow
-    - jekyll contribution
-    - open source contributing
+  - github copilot contribution
+  - pull request workflow
+  - jekyll contribution
+  - open source contributing
 ---
-
 # Developer Contribution Guide
 
 This guide provides comprehensive instructions for developers and AI agents contributing to the IT-Journey repository.

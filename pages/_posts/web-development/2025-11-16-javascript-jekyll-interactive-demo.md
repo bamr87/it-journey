@@ -1,65 +1,62 @@
 ---
-title: "Interactive JavaScript & Jekyll Layout Magic: A Comprehensive Demo"
-description: Dive deep into Jekyll's layout system combined with dynamic JavaScript functionality. Learn how to create interactive web experiences that leverage both static site generation and client-side scripting.
+title: 'Interactive JavaScript & Jekyll Layout Magic: A Comprehensive Demo'
+description: Dive deep into Jekyll's layout system combined with dynamic JavaScript functionality.
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-  - javascript
-  - jekyll
-  - web-development
-  - interactive
-  - frontend
-  - layouts
-  - dynamic-content
+- javascript
+- jekyll
+- web-development
+- interactive
+- frontend
+- layouts
+- dynamic-content
 categories:
-  - Posts
-  - Web Development
-  - JavaScript
-  - Jekyll
+- Posts
+- Web Development
+- JavaScript
+- Jekyll
 sub-title: Mastering Jekyll Layouts with Dynamic JavaScript Integration
 excerpt: Discover how Jekyll's powerful layout system seamlessly integrates with modern JavaScript to create engaging, interactive web experiences.
 snippet: Jekyll + JavaScript = Interactive Web Magic! 🎉
 author: IT-Journey Team
 layout: javascript
 keywords:
-  primary:
-    - jekyll layouts
-    - javascript integration
-    - interactive web development
-    - dynamic content
-  secondary:
-    - frontend development
-    - static site generation
-    - web interactivity
-    - client-side scripting
+- jekyll layouts
+- javascript integration
+- interactive web development
+- dynamic content
+- frontend development
+- static site generation
+- web interactivity
+- client-side scripting
 section: Web Development
-lastmod: 2025-09-01T01:16:50.914Z
+lastmod: '2025-09-01T01:16:50.000Z'
 permalink: /posts/javascript-jekyll-interactive-demo/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Intermediate
 estimated_reading_time: 8-10 minutes
 prerequisites:
-  - Basic understanding of HTML and JavaScript
-  - Familiarity with Jekyll concepts
-  - Understanding of web development fundamentals
+- Basic understanding of HTML and JavaScript
+- Familiarity with Jekyll concepts
+- Understanding of web development fundamentals
 learning_outcomes:
-  - 🎯 Master Jekyll layout integration with JavaScript
-  - ⚡ Create dynamic, interactive web components
-  - 🛠️ Implement performance-optimized client-side features
-  - 🔗 Understand the relationship between static generation and dynamic content
+- 🎯 Master Jekyll layout integration with JavaScript
+- ⚡ Create dynamic, interactive web components
+- 🛠️ Implement performance-optimized client-side features
+- 🔗 Understand the relationship between static generation and dynamic content
 content_series: Web Development Mastery
 related_posts:
-  - Jekyll Fundamentals and Best Practices
-  - Modern JavaScript Development Techniques
-  - Building Interactive Web Applications
+- Jekyll Fundamentals and Best Practices
+- Modern JavaScript Development Techniques
+- Building Interactive Web Applications
 validation_methods:
-  - Test all interactive features in the demo below
-  - Inspect the page source to understand Jekyll rendering
-  - Experiment with the JavaScript console for deeper insights
-date: 2022-05-10T19:27:49.000Z
-
+- Test all interactive features in the demo below
+- Inspect the page source to understand Jekyll rendering
+- Experiment with the JavaScript console for deeper insights
+date: '2022-05-10T19:27:49.000Z'
+draft: false
 ---
-
 # 🎉 Interactive JavaScript & Jekyll Layout Integration Demo
 
 Welcome to an exciting exploration of how **Jekyll's powerful layout system** combines seamlessly with **modern JavaScript functionality** to create engaging, interactive web experiences! This comprehensive demo showcases the perfect marriage between static site generation and dynamic client-side scripting.

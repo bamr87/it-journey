@@ -1,44 +1,41 @@
 ---
-title: "VS Code for Neuroscience: Complete Setup Guide for macOS"
+title: 'VS Code for Neuroscience: Complete Setup Guide for macOS'
 description: Complete VS Code setup guide for neuroscience researchers with PsychoPy, Spyder, and computational modeling tools on macOS
-date: 2025-07-21T23:30:21.000Z
+date: '2025-07-21T23:30:21.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - psychopy
-    - neuroscience
-    - vscode
-    - python
-    - computational-modeling
-    - spyder
-    - jupyter
-    - macos
+- psychopy
+- neuroscience
+- vscode
+- python
+- computational-modeling
+- spyder
+- jupyter
+- macos
 categories:
-    - Tools
-    - Neuroscience
-    - Development
+- Tools
+- Neuroscience
+- Development
 sub-title: A researcher's guide to productive neuroscience coding
 excerpt: Learn how to configure VS Code as the ultimate development environment for neuroscience research, with support for PsychoPy experiments, computational models, and data analysis
 snippet: Transform VS Code into a powerful neuroscience research platform
 author: IT-Journey Team
 draft: false
 keywords:
-    primary:
-        - visual studio code
-        - neuroscience
-        - psychopy
-        - python
-    secondary:
-        - spyder
-        - jupyter notebooks
-        - computational modeling
-        - decision making
-        - behavioral experiments
-lastmod: 2025-07-22T03:23:41.898Z
+- visual studio code
+- neuroscience
+- psychopy
+- python
+- spyder
+- jupyter notebooks
+- computational modeling
+- decision making
+- behavioral experiments
+lastmod: '2025-07-22T03:23:41.000Z'
 permalink: /vscode-neuroscience-setup/
-attachments: ""
+attachments: ''
 comments: true
 ---
-
 # VS Code for Neuroscience: Complete Setup Guide for macOS
 
 Visual Studio Code is a powerful, free code editor that's perfect for neuroscience research. This guide will get you up and running quickly with VS Code for Python development, PsychoPy experiments, data analysis, and computational modeling on macOS.

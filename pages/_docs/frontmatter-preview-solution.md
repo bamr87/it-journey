@@ -1,6 +1,29 @@
-# FrontMatter Preview Configuration
+---
+title: Front Matter CMS Preview Configuration
+description: "Simplified Front Matter CMS preview wiring for IT-Journey — a `/preview/<collection>/<filename>/` directory pattern that survives custom Jekyll permalinks."
+date: '2024-04-25T00:00:00.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
+author: bamr87
+permalink: /docs/frontmatter-preview-solution/
+categories: [tools, jekyll]
+tags:
+  - frontmatter
+  - jekyll
+  - preview
+  - cms
+  - tooling
+keywords:
+  - frontmatter cms
+  - jekyll preview
+  - cms preview
+  - jekyll permalinks
+  - frontmatter integration
+draft: false
+---
 
-This directory contains the implementation for simplified FrontMatter CMS preview functionality in the IT-Journey repository.
+# Front Matter Preview Configuration
+
+This directory contains the implementation for simplified Front Matter CMS preview functionality in the IT-Journey repository.
 
 ## Overview
 

@@ -1,13 +1,11 @@
 ---
 title: 'Apache Spark Mastery: Big Data Processing with PySpark & Scala'
 author: IT-Journey Team
-description: Master Apache Spark for distributed data processing. Learn RDDs, DataFrames,
-  Spark SQL, MLlib machine learning, and cluster management for petabyte-scale analytics.
-excerpt: Process big data at scale with Apache Spark RDDs, DataFrames, Spark SQL,
-  and MLlib machine learning
+description: Master Apache Spark for distributed data processing. Learn RDDs, DataFrames, Spark SQL, MLlib machine learning, and cluster management for petabyte-scale analytics.
+excerpt: Process big data at scale with Apache Spark RDDs, DataFrames, Spark SQL, and MLlib machine learning
 preview: images/previews/apache-spark-mastery-descriptive-subtitle.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1100'
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data-engineering
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,7 +64,7 @@ categories:
 - Data-Engineering
 - Epic
 tags:
-- "1100"
+- '1100'
 - spark
 - pyspark
 - big-data
@@ -76,14 +73,16 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "1100"
-- spark
-- pyspark
-- big-data
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '1100'
+  - spark
+  - pyspark
+  - big-data
+  secondary:
+  - main_quest
+  - data-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -96,6 +95,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -114,7 +114,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

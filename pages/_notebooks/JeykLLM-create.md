@@ -2,10 +2,10 @@
 author: bamr87
 categories:
 - notebooks
-date: 2024-06-18T16:18:46.000Z
+date: '2024-06-18T16:18:46.000Z'
 description: This notebook demonstrates how to use the Chat GPT model for text generation.
 draft: false
-lastmod: '2025-07-03T16:47:08.3131Z'
+lastmod: '2025-07-03T16:47:08.000Z'
 libraries:
 - openai
 - python-dotenv
@@ -15,7 +15,6 @@ tags:
 - Text Generation
 title: Chat GPT Text Generation
 ---
-
 ## Introduction
 
 This notebook demonstrates how to use the Chat GPT model for text generation. Chat GPT is a variant of the GPT model that is fine-tuned on conversational data. This makes it particularly well-suited for generating conversational text.

@@ -1,25 +1,19 @@
 ---
 title: Setting up Django and Git
 author: Cloud Quest Guide
-description: Learn how to efficiently set up Django with Git for seamless version
-  control and project management in your web development journey.
+description: Learn how to efficiently set up Django with Git for seamless version control and project management in your web development journey.
 excerpt: null
 snippet: null
 preview: /images/git-django.png
-date: 2025-03-13 14:00:43+00:00
-lastmod: 2025-03-12 15:24:58.701000+00:00
+date: '2025-03-13T14:00:43.000Z'
+lastmod: '2025-03-12T15:24:58.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: Django
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-- Development
-- Git
-- Programming
-- Python
-- Web Development
+skill_focus: devops
 learning_style: hands-on
 permalink: /quests/0010/django-and-git/
 categories:
@@ -35,15 +29,18 @@ tags:
 - python
 - tutorial
 keywords:
-- Django
-- Git
-- how-to
-- python
-- tutorial
+  primary:
+  - Django
+  - Git
+  secondary:
+  - how-to
+  - python
+  - tutorial
 fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+layout: quest
 ---
 **Setting Up a GitHub Repository for Your Django Project**
 
@@ -57,7 +54,7 @@ So, grab your wand (*ahem*, keyboard) and let's begin this magical journey! 🧙
 
 First, navigate to your Django project directory. If you don't have one yet, conjure it with:
 
-```
+```bash
 mkdir django-magic && cd django-magic
 python -m venv venv
 source venv/bin/activate  # On Windows, use: venv\Scripts\activate
@@ -71,7 +68,7 @@ Poof! Your Django project is now alive! 🎇
 
 In your terminal (*or the VS Code integrated terminal*), whisper the sacred words to initialize Git in your project folder:
 
-```
+```text
 git init
 ```
 
@@ -81,7 +78,7 @@ Your project is now under the watchful eye of Git, the guardian of version contr
 
 Before pushing your secrets to GitHub, you must **ward off unnecessary files** from being tracked. Create a .gitignore file and add these forbidden artifacts:
 
-```
+```markdown
 # .gitignore
 venv/
 __pycache__/
@@ -101,13 +98,13 @@ Copy the provided **repository link**--- you'll need it in a moment! 🔗
 
 Now, cast the binding spell to connect your local project to the remote repository:
 
-```
+```text
 git remote add origin https://github.com/YOUR_USERNAME/Django-Magic.git
 ```
 
 Check if the link is established:
 
-```
+```text
 git remote -v
 ```
 
@@ -117,7 +114,7 @@ Your project is now tethered to GitHub, ready to be uploaded into the sky! 🌩�
 
 It's time to **record your progress** and push it into the vast cosmos of GitHub!
 
-```
+```text
 git add .
 git commit -m "Initial commit - A wizard is never late!"
 ```
@@ -128,7 +125,7 @@ Your work is now sealed in the **Git Grimoire**. 📜✨
 
 With your spells in place, send your Django project to GitHub:
 
-```
+```text
 git branch -M main
 git push -u origin main
 ```
@@ -139,7 +136,7 @@ git push -u origin main
 
 To ensure everything is set up properly, open VS Code and use the **magic command**:
 
-```
+```text
 code .
 ```
 

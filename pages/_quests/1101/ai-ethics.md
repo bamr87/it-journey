@@ -1,14 +1,11 @@
 ---
 title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
 author: IT-Journey Team
-description: Learn responsible AI practices and ethics frameworks. Understand bias
-  detection, fairness metrics, explainability with SHAP/LIME, model governance, and
-  regulatory compliance for AI systems.
-excerpt: Build responsible AI systems with bias detection, fairness metrics, and model
-  explainability
+description: Learn responsible AI practices and ethics frameworks. Understand bias detection, fairness metrics, explainability with SHAP/LIME, model governance, and regulatory compliance for AI systems.
+excerpt: Build responsible AI systems with bias detection, fairness metrics, and model explainability
 preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1101'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data-science
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - Data-Science
 - Medium
 tags:
-- "1101"
+- '1101'
 - python
 - ai-ethics
 - responsible-ai
@@ -77,14 +73,16 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "1101"
-- python
-- ai-ethics
-- responsible-ai
-- side_quest
-- data-science
-- hands-on
-- gamified-learning
+  primary:
+  - '1101'
+  - python
+  - ai-ethics
+  - responsible-ai
+  secondary:
+  - side_quest
+  - data-science
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -97,6 +95,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -115,7 +114,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

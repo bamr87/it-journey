@@ -13,8 +13,8 @@ future: true
 incremental: true
 
 # Performance: limit post processing (only N most recent - major speedup for large sites)
-# With 88+ posts, this alone can cut build time by 50%+
-limit_posts: 30
+# Must exceed index pages (pages/_posts/**/2000-01-01-index.md) + recent chronicles or /news/ 404s locally
+limit_posts: 120
 
 # Performance: disable LSI (latent semantic indexing) - expensive computation
 lsi: false

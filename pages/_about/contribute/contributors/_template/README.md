@@ -6,9 +6,8 @@ class: Apprentice
 username: YOUR_GITHUB_USERNAME
 contributor_data: YOUR_GITHUB_USERNAME
 permalink: /contributors/YOUR_GITHUB_USERNAME/
-lastmod: 2026-03-21T15:12:32.212Z
+lastmod: '2026-03-21T15:12:32.000Z'
 ---
-
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
 {% include contributor/character_sheet.html username="YOUR_GITHUB_USERNAME" %}

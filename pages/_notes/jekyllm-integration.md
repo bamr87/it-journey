@@ -1,25 +1,23 @@
 ---
 title: Jekyll LLM Integration Ideas
 description: Exploring ideas and implementation strategies for integrating Large Language Models (LLMs) into Jekyll static sites for automated content generation and enhancement
-date: 2024-06-01T22:03:24.000Z
+date: '2024-06-01T22:03:24.000Z'
 excerpt: A comprehensive exploration of integrating LLMs into Jekyll workflows for content automation, review, and enhancement
 author: bamr87
 categories:
-  - notes
-  - jekyll
-  - ai
+- notes
+- jekyll
+- ai
 tags:
-  - jekyll
-  - llm
-  - automation
-  - content-generation
-  - ai-integration
-lastmod: 2024-06-01T18:09:20.301Z
+- jekyll
+- llm
+- automation
+- content-generation
+- ai-integration
+lastmod: '2024-06-01T18:09:20.000Z'
 draft: false
 prompt: How can we integrate an LLM into Jekyll?
 ---
-
-
 Let's dive deeper into how you might implement some of these ideas:
 
 1. **Automated Content Generation**:

@@ -1,13 +1,11 @@
 ---
 title: 'API Documentation: OpenAPI Specification and Developer Experience'
 author: IT-Journey Team
-description: Create excellent API documentation with OpenAPI/Swagger. Learn specification
-  writing, interactive docs, SDK generation, and developer portal best practices.
-excerpt: Create comprehensive API documentation with OpenAPI specification and developer
-  portals
+description: Create excellent API documentation with OpenAPI/Swagger. Learn specification writing, interactive docs, SDK generation, and developer portal best practices.
+excerpt: Create comprehensive API documentation with OpenAPI specification and developer portals
 preview: images/previews/api-documentation-openapi-quest-title-developer-ex.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:09:31+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:09:31.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 60-75 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Backend
 - Hard
 tags:
-- "0111"
+- '0111'
 - openapi
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- "0111"
-- openapi
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - openapi
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -110,7 +110,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

@@ -1,7 +1,7 @@
 ---
-title: "Dynamic Sidebar Tree: Jekyll Navigation Guide"
-lastmod: 2024-05-16 16:15:26.771000+00:00
-date: 2024-05-14 22:06:19+00:00
+title: 'Dynamic Sidebar Tree: Jekyll Navigation Guide'
+lastmod: '2024-05-16T16:15:26.000Z'
+date: '2024-05-14T22:06:19.000Z'
 tags:
 - copilot
 - jekyll
@@ -18,11 +18,11 @@ excerpt: A guide to building a dynamic sidebar tree in Jekyll using Liquid, disp
 snippet: null
 author: bamr87
 keywords:
-  - jekyll dynamic sidebar tree
-  - liquid sidebar navigation
-  - jekyll folder tree structure
-  - dynamic navigation jekyll
-  - jekyll sub-folder display
+- jekyll dynamic sidebar tree
+- liquid sidebar navigation
+- jekyll folder tree structure
+- dynamic navigation jekyll
+- jekyll sub-folder display
 slug: dynamic-sidebar-tree
 type: posts
 FIXME: need code blocks to be raw liquid maybe vscode plugin?

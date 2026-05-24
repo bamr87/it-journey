@@ -1,38 +1,37 @@
 ---
-title: "Local Development with Docker and Ruby"
+title: Local Development with Docker and Ruby
 author: bamr87
 description: Run your Jekyll site locally with Docker, native Ruby, or VS Code tasks — with live reload, development config overrides, and debugging.
-excerpt: "Run your Jekyll site locally using Docker, native Ruby, or VS Code tasks — with live reload, config overrides, and debugging support."
+excerpt: Run your Jekyll site locally using Docker, native Ruby, or VS Code tasks — with live reload, config overrides, and debugging support.
 permalink: /quickstart/local-development/
 categories:
-  - quickstart
+- quickstart
 slug: local-development
-lastmod: 2026-04-02T03:14:50.948Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟢 Easy
 estimatedTime: 15-20 minutes
 prerequisites:
-  - Jekyll installed (see [Jekyll Setup](/quickstart/jekyll/))
-  - Docker installed (see [Machine Setup](/quickstart/machine-setup/))
+- Jekyll installed (see [Jekyll Setup](/quickstart/jekyll/))
+- Docker installed (see [Machine Setup](/quickstart/machine-setup/))
 tags:
-  - docker
-  - development
-  - local
-  - livereload
+- docker
+- development
+- local
+- livereload
 keywords:
   primary:
-    - local development
-    - docker compose
-    - jekyll serve
+  - local development
+  - docker compose
+  - jekyll serve
   secondary:
-    - livereload
-    - development config
-    - debugging
+  - livereload
+  - development config
+  - debugging
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 11** of the [Quick Start](/quickstart/) — running your Jekyll site locally with Docker, native Ruby, or VS Code tasks.
 
 ---

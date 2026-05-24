@@ -1,25 +1,19 @@
 ---
 title: Commitments to clean commits
 author: IT-Journey Team
-description: Learn how to maintain clean commits in your projects for better collaboration
-  and version control efficiency.
+description: Learn how to maintain clean commits in your projects for better collaboration and version control efficiency.
 excerpt: null
 snippet: null
 preview: images/previews/commitments-to-clean-commits.png
-date: 2025-04-18 13:43:43+00:00
-lastmod: 2025-04-18 19:27:42.681000+00:00
+date: '2025-04-18T13:43:43.000Z'
+lastmod: '2025-04-18T19:27:42.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: clean commits
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-- Development
-- Git Best Practices
-- IT Consulting
-- Programming
-- Project Management
+skill_focus: devops
 learning_style: hands-on
 permalink: /quests/0010/commitments-to-clean-commits/
 categories:
@@ -35,15 +29,18 @@ tags:
 - tutorial
 - version control
 keywords:
-- clean commits
-- Git
-- GitHub
-- tutorial
-- version control
+  primary:
+  - clean commits
+  - Git
+  secondary:
+  - GitHub
+  - tutorial
+  - version control
 fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+layout: quest
 ---
 **Ah, brave adventurer!** You've mastered the sacred art of branching and the scroll-writing ritual known as the Pull Request. Now, prepare thyself for the next enchanted trial:
 
@@ -78,7 +75,7 @@ Commits should read like commands from an ancient book. Short, imperative, and f
 
 ### **✨ The Format:**
 
-```
+```text
 [type]: Brief, powerful description
 
 Optional: Details for fellow wizards.
@@ -105,7 +102,7 @@ Optional: Details for fellow wizards.
 **🧪 Example Commit Scrolls**
 -----------------------------
 
-```
+```yaml
 fix: Prevent unicorns from breaking login form
 
 Login page now properly handles magical input.
@@ -114,13 +111,13 @@ Login page now properly handles magical input.
 
 Fixes #99
 ```
-```
+```yaml
 feat: Summon dark mode theme toggle
 
 - Adds crescent moon toggle in navbar
 - Stores user preference in local storage
 ```
-```
+```bash
 chore: Update potion dependencies to latest brew
 ```
 

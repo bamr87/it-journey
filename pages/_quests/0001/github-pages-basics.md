@@ -1,14 +1,11 @@
 ---
 title: 'GitHub Pages Basics: Deploy Free Websites in Minutes'
 author: IT-Journey Team
-description: Learn to deploy static websites for free with GitHub Pages. Step-by-step
-  tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect
-  for portfolios and projects.
-excerpt: Deploy your first website for free using GitHub Pages with custom domains
-  and HTTPS.
+description: Learn to deploy static websites for free with GitHub Pages. Step-by-step tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect for portfolios and projects.
+excerpt: Deploy your first website for free using GitHub Pages with custom domains and HTTPS.
 preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-12-19 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-19T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -69,7 +65,7 @@ categories:
 - Web-Hosting
 - Beginner
 tags:
-- "0001"
+- '0001'
 - github-pages
 - web-hosting
 - static-sites
@@ -79,15 +75,17 @@ tags:
 - hands-on
 - beginner
 keywords:
-- "0001"
-- github-pages
-- web-hosting
-- static-sites
-- free-hosting
-- main_quest
-- devops
-- hands-on
-- beginner
+  primary:
+  - '0001'
+  - github-pages
+  - web-hosting
+  - static-sites
+  secondary:
+  - free-hosting
+  - main_quest
+  - devops
+  - hands-on
+  - beginner
 fmContentType: quest
 draft: true
 comments: true
@@ -100,6 +98,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -118,7 +117,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

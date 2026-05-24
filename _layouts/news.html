@@ -1,0 +1,609 @@
+---
+layout: root
+source: "https://getbootstrap.com/docs/5.3/examples/blog/#"
+---
+<!--
+  ===================================================================
+  NEWS LAYOUT - Main News Homepage with Section Style Support
+  ===================================================================
+  
+  File: news.html
+  Path: _layouts/news.html
+  Inherits: root.html
+  Purpose: Main news homepage with full-width content sections
+  
+  Front Matter Variables:
+  - section_style: Display style (magazine, grid, list) - default: magazine
+  
+  Section Styles:
+  - magazine (default): Hero + category blocks + featured grid
+  - grid: All posts in unified card grid
+  - list: Chronological list view across all sections
+  
+  Layout Structure (NO SIDEBAR - Full Width):
+  1. News Header: Dark header with title and section navigation
+  2. Hero Section: Breaking news highlight with large image
+  3. Section Navigation: Quick links to all sections with article counts
+  4. Featured Stories: Top featured posts in card grid
+  5. Section Posts: Posts organized by top 3 sections
+  6. Latest Posts: Horizontal card list of recent posts
+  7. Tags & Archives: Discovery widgets
+  8. Newsletter: Subscription CTA
+  
+  Note: All cards are inlined to avoid Liquid nesting depth issues
+  ===================================================================
+-->
+
+{% comment %} 
+  WARNING: section_style is required in front matter!
+  Set section_style to: magazine, grid, or list
+{% endcomment %}
+{% assign section_style = page.section_style %}
+
+{% comment %} 
+  Filter posts: exclude index files
+  Index files are marked with index: true in front matter
+{% endcomment %}
+{% assign all_posts = site.posts | where_exp: "post", "post.index != true" %}
+
+<!-- ================================ -->
+<!-- NEWS HEADER                      -->
+<!-- ================================ -->
+<div class="container-fluid bg-dark text-white py-3 mb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <h1 class="h3 mb-0">
+          <i class="bi bi-newspaper me-2"></i>{{ page.title | default: "News" }}
+        </h1>
+      </div>
+      <div class="col-md-8">
+        <nav class="nav nav-pills justify-content-md-end flex-wrap">
+          <a class="nav-link text-white active" href="{{ site.baseurl }}/news/">
+            <i class="bi bi-house me-1"></i>Home
+          </a>
+          {% for item in site.data.navigation.posts %}
+            <a class="nav-link text-white-50" href="{{ item.url | replace: '/posts/', '/news/' | relative_url }}">
+              {% if item.icon %}<i class="bi {{ item.icon }} me-1"></i>{% endif %}
+              {{ item.title }}
+            </a>
+          {% endfor %}
+          <a class="nav-link text-white-50" href="{{ site.baseurl }}/tags/">
+            <i class="bi bi-tags me-1"></i>Tags
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+{% if section_style == "magazine" %}
+  <!-- ================================ -->
+  <!-- MAGAZINE STYLE LAYOUT            -->
+  <!-- ================================ -->
+
+  <!-- ================================ -->
+  <!-- HERO - BREAKING NEWS             -->
+  <!-- ================================ -->
+  {% assign breaking_posts = all_posts | where: "breaking", true %}
+  {% assign hero_post = breaking_posts | first %}
+  
+  {% unless hero_post %}
+    {% assign hero_post = all_posts | where: "featured", true | first %}
+  {% endunless %}
+  
+  {% if hero_post %}
+  <section class="hero-section mb-5">
+    <div class="row g-0 bg-body-secondary rounded-4 overflow-hidden shadow">
+      <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center">
+        {% if hero_post.breaking %}
+        <span class="badge bg-danger mb-3 align-self-start">
+          <i class="bi bi-lightning-fill me-1"></i>Breaking News
+        </span>
+        {% elsif hero_post.featured %}
+        <span class="badge bg-warning text-dark mb-3 align-self-start">
+          <i class="bi bi-star-fill me-1"></i>Featured
+        </span>
+        {% endif %}
+        
+        {% comment %} Post type badge {% endcomment %}
+        {% if hero_post.post_type and hero_post.post_type != "standard" %}
+          {% include components/post-type-badge.html post_type=hero_post.post_type %}
+        {% endif %}
+        
+        <h1 class="display-5 fw-bold mb-3">{{ hero_post.title }}</h1>
+        <p class="lead text-muted mb-4">{{ hero_post.excerpt | strip_html | truncate: 200 }}</p>
+        <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+          <small class="text-muted">
+            <i class="bi bi-calendar me-1"></i>{{ hero_post.date | date: "%B %d, %Y" }}
+          </small>
+          {% if hero_post.author %}
+            <small class="text-muted">
+              <i class="bi bi-person me-1"></i>{{ hero_post.author }}
+            </small>
+          {% endif %}
+          {% if hero_post.categories.size > 0 %}
+            <a href="{{ site.baseurl }}/news/{{ hero_post.categories | first | slugify }}/" class="badge bg-primary text-decoration-none">
+              {{ hero_post.categories | first }}
+            </a>
+          {% endif %}
+        </div>
+        <a href="{{ hero_post.url | relative_url }}" class="btn btn-primary btn-lg align-self-start">
+          Read Full Story <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+      <div class="col-lg-6">
+        {% assign hero_img = hero_post.preview | default: site.og_image %}
+        {% include components/preview-image.html 
+           src=hero_img 
+           alt=hero_post.title 
+           class="w-100 h-100" 
+           style="object-fit: cover; min-height: 400px;" 
+        %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ================================ -->
+  <!-- SECTION QUICK NAVIGATION         -->
+  <!-- ================================ -->
+  <section class="section-nav mb-5">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+      {% for nav_item in site.data.navigation.posts %}
+        {% assign section_slug = nav_item.url | remove: '/news/' | remove: '/' %}
+        {% assign section_posts = all_posts | where_exp: "post", "post.path contains section_slug" %}
+        {% if section_posts.size == 0 %}
+          {% assign section_posts = all_posts | where_exp: "post", "post.categories contains nav_item.title" %}
+        {% endif %}
+        <div class="col">
+          <a href="{{ nav_item.url | replace: '/posts/', '/news/' | relative_url }}" 
+             class="card text-center h-100 text-decoration-none border-0 shadow-sm hover-lift">
+            <div class="card-body py-4">
+              <i class="bi {{ nav_item.icon | default: 'bi-folder' }} fs-2 text-primary mb-2 d-block"></i>
+              <h6 class="card-title mb-1">{{ nav_item.title }}</h6>
+              <small class="text-muted">{{ section_posts.size }} articles</small>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- FEATURED STORIES                 -->
+  <!-- ================================ -->
+  {% assign featured_posts = all_posts | where: "featured", true %}
+  {% if featured_posts.size > 0 %}
+  <section class="featured-section mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="h3 mb-0">
+        <i class="bi bi-star-fill text-warning me-2"></i>Featured Stories
+      </h2>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Main Featured Post -->
+      {% assign main_featured = featured_posts | first %}
+      <div class="col-lg-6">
+        <div class="card h-100 border-0 shadow">
+          <div class="position-relative">
+            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 z-1">
+              <i class="bi bi-star-fill me-1"></i>Featured
+            </span>
+            {% if main_featured.post_type and main_featured.post_type != "standard" %}
+              <span class="position-absolute top-0 start-0 m-3 z-1">
+                {% include components/post-type-badge.html post_type=main_featured.post_type %}
+              </span>
+            {% endif %}
+            <a href="{{ main_featured.url | relative_url }}">
+              {% assign main_img = main_featured.preview | default: site.teaser %}
+              {% include components/preview-image.html src=main_img alt=main_featured.title class="card-img-top" style="height: 300px; object-fit: cover;" %}
+            </a>
+          </div>
+          <div class="card-body">
+            {% if main_featured.categories.size > 0 %}
+              <a href="{{ site.baseurl }}/news/{{ main_featured.categories | first | slugify }}/" 
+                 class="badge bg-primary text-decoration-none mb-2">
+                {{ main_featured.categories | first }}
+              </a>
+            {% endif %}
+            <h4 class="card-title">
+              <a href="{{ main_featured.url | relative_url }}" class="text-decoration-none text-body-emphasis">
+                {{ main_featured.title }}
+              </a>
+            </h4>
+            <p class="card-text text-muted">{{ main_featured.excerpt | strip_html | truncate: 150 }}</p>
+          </div>
+          <div class="card-footer bg-transparent">
+            <small class="text-muted">
+              <i class="bi bi-calendar me-1"></i>{{ main_featured.date | date: "%b %d, %Y" }}
+              {% if main_featured.author %}
+                <span class="mx-2">•</span>
+                <i class="bi bi-person me-1"></i>{{ main_featured.author }}
+              {% endif %}
+            </small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Secondary Featured Posts -->
+      <div class="col-lg-6">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          {% for fpost in featured_posts offset:1 limit:4 %}
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm hover-lift">
+                <div class="position-relative">
+                  {% if fpost.post_type and fpost.post_type != "standard" %}
+                    <span class="position-absolute top-0 start-0 m-2 z-1">
+                      {% include components/post-type-badge.html post_type=fpost.post_type %}
+                    </span>
+                  {% endif %}
+                  <a href="{{ fpost.url | relative_url }}">
+                    {% assign fpost_img = fpost.preview | default: site.teaser %}
+                    {% include components/preview-image.html src=fpost_img alt=fpost.title class="card-img-top" style="height: 120px; object-fit: cover;" %}
+                  </a>
+                </div>
+                <div class="card-body py-3">
+                  <h6 class="card-title mb-1">
+                    <a href="{{ fpost.url | relative_url }}" class="text-decoration-none text-body-emphasis">
+                      {{ fpost.title | truncate: 50 }}
+                    </a>
+                  </h6>
+                  <small class="text-muted">{{ fpost.date | date: "%b %d" }}</small>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ================================ -->
+  <!-- POSTS BY SECTION                 -->
+  <!-- ================================ -->
+  {% for nav_item in site.data.navigation.posts limit: 3 %}
+    {% assign section_slug = nav_item.url | remove: '/news/' | remove: '/' %}
+    {% assign section_posts = all_posts | where_exp: "post", "post.path contains section_slug" %}
+    {% if section_posts.size == 0 %}
+      {% assign section_posts = all_posts | where_exp: "post", "post.categories contains nav_item.title" %}
+    {% endif %}
+    {% if section_posts.size > 0 %}
+    <section class="section-posts mb-5 pb-4 border-bottom">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 mb-0">
+          <i class="bi {{ nav_item.icon | default: 'bi-folder' }} text-primary me-2"></i>{{ nav_item.title }}
+        </h2>
+        <a href="{{ nav_item.url | replace: '/posts/', '/news/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
+          View All {{ nav_item.title }} <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+      
+      <div class="row g-4">
+        {% for spost in section_posts limit: 4 %}
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm hover-lift">
+              <div class="position-relative">
+                {% if spost.post_type and spost.post_type != "standard" %}
+                  <span class="position-absolute top-0 start-0 m-2 z-1">
+                    {% include components/post-type-badge.html post_type=spost.post_type %}
+                  </span>
+                {% endif %}
+                <a href="{{ spost.url | relative_url }}">
+                  {% assign spost_img = spost.preview | default: site.teaser %}
+                  {% include components/preview-image.html src=spost_img alt=spost.title class="card-img-top" style="height: 140px; object-fit: cover;" %}
+                </a>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">
+                  <a href="{{ spost.url | relative_url }}" class="text-decoration-none text-body-emphasis">
+                    {{ spost.title | truncate: 55 }}
+                  </a>
+                </h6>
+                <p class="card-text small text-muted mb-0">
+                  {{ spost.excerpt | strip_html | truncate: 80 }}
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0 pt-0">
+                <small class="text-muted">
+                  <i class="bi bi-calendar me-1"></i>{{ spost.date | date: "%b %d, %Y" }}
+                </small>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  {% endfor %}
+
+{% elsif section_style == "grid" %}
+  <!-- ================================ -->
+  <!-- GRID STYLE LAYOUT                -->
+  <!-- ================================ -->
+  <section class="grid-section mb-5">
+    <h2 class="h4 mb-4">
+      <i class="bi bi-grid me-2"></i>All Articles
+    </h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for gpost in all_posts limit: 24 %}
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm hover-lift">
+            <div class="position-relative">
+              {% if gpost.breaking %}
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2 z-1">
+                  <i class="bi bi-lightning-fill me-1"></i>Breaking
+                </span>
+              {% endif %}
+              {% if gpost.featured %}
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 z-1">
+                  <i class="bi bi-star-fill me-1"></i>Featured
+                </span>
+              {% endif %}
+              {% if gpost.post_type and gpost.post_type != "standard" and gpost.post_type != "featured" and gpost.post_type != "breaking" %}
+                <span class="position-absolute bottom-0 start-0 m-2 z-1">
+                  {% include components/post-type-badge.html post_type=gpost.post_type %}
+                </span>
+              {% endif %}
+              <a href="{{ gpost.url | relative_url }}">
+                {% assign gpost_img = gpost.preview | default: site.teaser %}
+                {% include components/preview-image.html src=gpost_img alt=gpost.title class="card-img-top" style="height: 180px; object-fit: cover;" %}
+              </a>
+            </div>
+            <div class="card-body">
+              {% if gpost.categories.size > 0 %}
+                <a href="{{ site.baseurl }}/news/{{ gpost.categories | first | slugify }}/" class="badge bg-primary text-decoration-none mb-2">
+                  {{ gpost.categories | first }}
+                </a>
+              {% endif %}
+              <h5 class="card-title">
+                <a href="{{ gpost.url | relative_url }}" class="text-decoration-none text-body-emphasis">
+                  {{ gpost.title | truncate: 60 }}
+                </a>
+              </h5>
+              <p class="card-text text-muted small">{{ gpost.excerpt | strip_html | truncate: 100 }}</p>
+            </div>
+            <div class="card-footer bg-transparent">
+              <small class="text-muted">
+                <i class="bi bi-calendar me-1"></i>{{ gpost.date | date: "%b %d, %Y" }}
+              </small>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+{% elsif section_style == "list" %}
+  <!-- ================================ -->
+  <!-- LIST STYLE LAYOUT                -->
+  <!-- ================================ -->
+  <section class="list-section mb-5">
+    <h2 class="h4 mb-4">
+      <i class="bi bi-list-ul me-2"></i>Latest Articles
+    </h2>
+    {% for lpost in all_posts limit: 20 %}
+      <article class="card border-0 shadow-sm mb-3 hover-lift">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <a href="{{ lpost.url | relative_url }}">
+              {% assign lpost_img = lpost.preview | default: site.teaser %}
+              {% include components/preview-image.html src=lpost_img alt=lpost.title class="rounded-start h-100 w-100" style="object-fit: cover; min-height: 150px;" %}
+            </a>
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <div class="d-flex gap-2 mb-2 flex-wrap">
+                {% if lpost.categories.size > 0 %}
+                  <a href="{{ site.baseurl }}/news/{{ lpost.categories | first | slugify }}/" class="badge bg-primary text-decoration-none">
+                    {{ lpost.categories | first }}
+                  </a>
+                {% endif %}
+                {% if lpost.breaking %}
+                  <span class="badge bg-danger"><i class="bi bi-lightning-fill me-1"></i>Breaking</span>
+                {% endif %}
+                {% if lpost.featured %}
+                  <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>Featured</span>
+                {% endif %}
+                {% if lpost.post_type and lpost.post_type != "standard" %}
+                  {% include components/post-type-badge.html post_type=lpost.post_type %}
+                {% endif %}
+              </div>
+              <h5 class="card-title">
+                <a href="{{ lpost.url | relative_url }}" class="text-decoration-none text-body-emphasis">
+                  {{ lpost.title }}
+                </a>
+              </h5>
+              <p class="card-text text-muted">{{ lpost.excerpt | strip_html | truncate: 200 }}</p>
+              <div class="d-flex gap-3 text-muted small">
+                <span><i class="bi bi-calendar me-1"></i>{{ lpost.date | date: "%B %d, %Y" }}</span>
+                {% if lpost.author %}
+                  <span><i class="bi bi-person me-1"></i>{{ lpost.author }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+
+{% endif %}
+
+  <!-- ================================ -->
+  <!-- LATEST POSTS                     -->
+  <!-- ================================ -->
+  {% if section_style == "magazine" %}
+  <section class="latest-section mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="h4 mb-0">
+        <i class="bi bi-clock-history text-secondary me-2"></i>Latest Posts
+      </h2>
+    </div>
+    
+    <div class="row g-4">
+      {% for lpost in all_posts limit: 6 %}
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm h-100 hover-lift">
+            <div class="row g-0">
+              <div class="col-4">
+                <a href="{{ lpost.url | relative_url }}">
+                  {% assign lpost_img = lpost.preview | default: site.teaser %}
+                  {% include components/preview-image.html src=lpost_img alt=lpost.title class="rounded-start h-100 w-100" style="object-fit: cover; min-height: 120px;" %}
+                </a>
+              </div>
+              <div class="col-8">
+                <div class="card-body py-2 px-3">
+                  {% if lpost.categories.size > 0 %}
+                    <span class="badge bg-secondary mb-1">{{ lpost.categories | first }}</span>
+                  {% endif %}
+                  {% if lpost.post_type and lpost.post_type != "standard" %}
+                    {% include components/post-type-badge.html post_type=lpost.post_type %}
+                  {% endif %}
+                  <h6 class="card-title mb-1">
+                    <a href="{{ lpost.url | relative_url }}" class="text-decoration-none text-body-emphasis">
+                      {{ lpost.title | truncate: 45 }}
+                    </a>
+                  </h6>
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>{{ lpost.date | date: "%b %d" }}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ================================ -->
+  <!-- PAGE CONTENT (if any)            -->
+  <!-- ================================ -->
+  {% if content != blank %}
+  <section class="page-content mb-5">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-4 p-lg-5">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ================================ -->
+  <!-- TAGS & ARCHIVES                  -->
+  <!-- ================================ -->
+  <section class="footer-widgets mb-5">
+    <div class="row g-4">
+      <!-- Popular Tags -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 bg-body-tertiary">
+          <div class="card-body">
+            <h5 class="card-title mb-3">
+              <i class="bi bi-tags me-2"></i>Popular Tags
+            </h5>
+            {% assign all_tags = "" | split: "" %}
+            {% for post in all_posts %}
+              {% for tag in post.tags %}
+                {% assign all_tags = all_tags | push: tag %}
+              {% endfor %}
+            {% endfor %}
+            {% assign unique_tags = all_tags | uniq | slice: 0, 15 %}
+            <div class="d-flex flex-wrap gap-2">
+              {% for tag in unique_tags %}
+                <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}" 
+                   class="badge bg-secondary text-decoration-none fs-6">
+                  {{ tag }}
+                </a>
+              {% endfor %}
+            </div>
+            <a href="{{ site.baseurl }}/tags/" class="btn btn-sm btn-outline-primary mt-3">
+              Browse All Tags <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Archives -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 bg-body-tertiary">
+          <div class="card-body">
+            <h5 class="card-title mb-3">
+              <i class="bi bi-archive me-2"></i>Archives
+            </h5>
+            {% assign posts_by_year = all_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+            <div class="row">
+              {% for year in posts_by_year limit: 2 %}
+                <div class="col-6">
+                  <h6 class="text-muted mb-2">{{ year.name }}</h6>
+                  {% assign months = year.items | group_by_exp: "post", "post.date | date: '%B'" %}
+                  <ul class="list-unstyled small">
+                    {% for month in months limit: 6 %}
+                      <li class="mb-1">
+                        <a href="{{ '/archives/' | relative_url }}#{{ month.name | slugify }}-{{ year.name }}" 
+                           class="text-decoration-none">
+                          {{ month.name }}
+                          <span class="badge bg-secondary text-body">{{ month.items.size }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- NEWSLETTER SIGNUP                -->
+  <!-- ================================ -->
+  <section class="newsletter-section mb-5">
+    <div class="card border-0 bg-primary text-white">
+      <div class="card-body p-4 p-lg-5 text-center">
+        <i class="bi bi-envelope-paper fs-1 mb-3 d-block"></i>
+        <h3 class="mb-3">Stay Updated</h3>
+        <p class="mb-4 opacity-75">Subscribe to get the latest news and updates delivered to your inbox.</p>
+        <form class="row g-2 justify-content-center">
+          <div class="col-md-4">
+            <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-light btn-lg">
+              Subscribe <i class="bi bi-send ms-1"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<style>
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+  .card {
+    transition: transform 0.2s ease-in-out;
+  }
+  .hero-section img {
+    min-height: 300px;
+  }
+  @media (max-width: 767px) {
+    .hero-section img {
+      min-height: 200px;
+    }
+  }
+</style>

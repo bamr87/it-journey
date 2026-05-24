@@ -1,15 +1,25 @@
 ---
 title: Mermaid Auto-Detection Migration Guide
+description: "Migrate Jekyll pages from the legacy explicit Mermaid include to the zer0-mistakes auto-detection pattern with consistent native fenced-block syntax."
 subcategory: jekyll
-date: 2025-11-08T21:04:54.000Z
+categories: [jekyll, migration]
 tags:
-  - Mermaid
-  - Migration
-  - Auto-Detection
-  - Theme-Update
-lastmod: 2025-01-27T18:30:00.000Z
+  - mermaid
+  - migration
+  - auto-detection
+  - theme-update
+  - jekyll
+keywords:
+  - mermaid jekyll
+  - mermaid migration
+  - zer0-mistakes mermaid
+  - mermaid auto-detection
+  - markdown diagrams
+author: bamr87
+date: '2025-11-08T21:04:54.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
+draft: false
 ---
-
 # Mermaid Auto-Detection Migration Guide
 
 ## What Changed? 🎯

@@ -1,25 +1,19 @@
 ---
 title: Understanding Action Triggers in Depth
 author: IT-Journey Team
-description: Unlock the power of automation with GitHub Actions! Streamline your workflows
-  and enhance your CI/CD processes effortlessly.
+description: Unlock the power of automation with GitHub Actions! Streamline your workflows and enhance your CI/CD processes effortlessly.
 excerpt: null
 snippet: null
 preview: images/previews/understanding-action-triggers-in-depth.png
-date: 2025-04-18 13:43:43+00:00
-lastmod: 2026-03-20 22:23:36.683000+00:00
+date: '2025-04-18T13:43:43.000Z'
+lastmod: '2026-03-20T22:23:36.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: automation
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-- Automation
-- CI/CD
-- Development
-- GitHub Actions
-- Programming
+skill_focus: devops
 learning_style: hands-on
 permalink: /quests/0010/action-triggers/
 categories:
@@ -35,15 +29,18 @@ tags:
 - workflows
 - YAML
 keywords:
-- automation
-- CI/CD
-- GitHub Actions
-- workflows
-- YAML
+  primary:
+  - automation
+  - CI/CD
+  secondary:
+  - GitHub Actions
+  - workflows
+  - YAML
 fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+layout: quest
 ---
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.
 
@@ -81,7 +78,7 @@ Oh child of continuous delivery, **anything**:
 **⚙️ Your First Magic Scroll: The CI/CD Pipeline**
 --------------------------------------------------
 
-```
+```markdown
 # .github/workflows/main.yml
 name: CI/CD Pipeline
 

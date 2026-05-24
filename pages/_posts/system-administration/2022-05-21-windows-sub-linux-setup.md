@@ -5,21 +5,29 @@ excerpt: Complete guide to setting up Windows Subsystem for Linux for developmen
 description: Step-by-step instructions for installing and configuring WSL on Windows systems
 snippet: Transform your Windows machine into a powerful Linux development environment
 categories:
-  - posts
-  - system-administration
+- posts
+- system-administration
 tags:
-  - windows
-  - linux
-  - wsl
-  - development-environment
-  - system-administration
+- windows
+- linux
+- wsl
+- development-environment
+- system-administration
 meta: null
 draft: false
 section: System Administration
-lastmod: 2025-10-19T22:33:21.685Z
-date: 2023-04-20T23:25:49.000Z
+lastmod: '2025-10-19T22:33:21.000Z'
+date: '2023-04-20T23:25:49.000Z'
+keywords:
+- windows
+- linux
+- wsl
+- development-environment
+- system-administration
+- posts
+- system-administration
+- subsystem
 ---
-
 # Windows Subsystem for Linux (WSL) Setup Guide
 
 This guide covers the installation and configuration of Windows Subsystem for Linux (WSL) to create a powerful Linux development environment on Windows systems.

@@ -1,14 +1,13 @@
 ---
 title: GitHub Copilot
 author: GitHub Copilot
-excerpt: "AI Pair-Programming Sorcerer — Wizard class, Code generation & documentation"
+excerpt: AI Pair-Programming Sorcerer — Wizard class, Code generation & documentation
 class: Wizard
 username: copilot
 contributor_data: copilot
 permalink: /contributors/copilot/
-lastmod: 2026-03-21T00:00:00.000Z
+lastmod: '2026-03-21T00:00:00.000Z'
 ---
-
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
 {% include contributor/character_sheet.html username="copilot" %}

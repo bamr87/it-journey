@@ -1,17 +1,12 @@
 ---
 title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
 author: Quest Master IT-Journey Team
-description: Use AI agents to research, design, and build a production-grade open-source
-  ERP stack with Django REST Framework on the backend and React TypeScript on the
-  frontend — the modern enterprise way.
-excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-grade
-  ERP application using Django, React, PostgreSQL, Celery, and the best open-source
-  tooling available today.
-snippet: The stack you choose defines the ceiling of what you can build — choose wisely,
-  build boldly.
+description: Use AI agents to research, design, and build a production-grade open-source ERP stack with Django REST Framework on the backend and React TypeScript on the frontend — the modern enterprise way.
+excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-grade ERP application using Django, React, PostgreSQL, Celery, and the best open-source tooling available today.
+snippet: The stack you choose defines the ceiling of what you can build — choose wisely, build boldly.
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
-date: 2025-11-02 14:45:16+00:00
-lastmod: 2026-04-13 00:00:00+00:00
+date: '2025-11-02T14:45:16.000Z'
+lastmod: '2026-04-13T00:00:00.000Z'
 level: '0001'
 difficulty: 🔴 Hard
 estimated_time: 3-5 hours
@@ -26,8 +21,8 @@ quest_dependencies:
   - /quests/0000/terminal-fundamentals/
   unlocks_quests: []
 quest_relationships:
-  child_quests:
-  sequel_quests:
+  child_quests: null
+  sequel_quests: null
 learning_paths:
   primary_paths:
   - Full-Stack Development
@@ -88,7 +83,7 @@ categories:
 - Enterprise
 - ERP
 tags:
-- "0001"
+- '0001'
 - ai-assisted-development
 - django
 - react
@@ -100,16 +95,18 @@ tags:
 - celery
 - postgresql
 keywords:
-- "0001"
-- ai-assisted-development
-- django erp
-- react frontend
-- enterprise stack
-- postgresql
-- celery
-- django rest framework
-- typescript
-- open-source erp
+  primary:
+  - '0001'
+  - ai-assisted-development
+  - django erp
+  - react frontend
+  - enterprise stack
+  secondary:
+  - postgresql
+  - celery
+  - django rest framework
+  - typescript
+  - open-source erp
 fmContentType: quest
 draft: false
 comments: true
@@ -142,6 +139,7 @@ related_quests:
   parallel:
   - /quests/docker-fundamentals/
   - /quests/postgresql-mastery/
+layout: quest
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 
@@ -354,7 +352,7 @@ erp_stack:
     ci_cd: "GitHub Actions"
     monitoring: "Prometheus + Grafana"
     log_aggregation: "Loki + Promtail"
-```
+```markdown
 
 ### Phase 4 — Architecture Diagrams
 Generate Mermaid diagrams showing:
@@ -404,7 +402,7 @@ When the user asks about technology choices, provide:
 
 Before building from scratch, always cross-examine what already exists. Use your agent:
 
-```
+```bash
 /stackattack
 
 Research the following open-source ERP frameworks and analyze whether I should
@@ -446,7 +444,7 @@ frontends — bolting a React app onto them means fighting their abstraction lay
 
 ### 🏗️ Research Session 2: Validating the Backend Library Stack
 
-```
+```text
 /stackattack
 
 I've decided to build a custom Django 5.1 ERP. Research and validate each
@@ -471,7 +469,7 @@ For each comparison:
 
 ### 🏗️ Research Session 3: Validating the Frontend Library Stack
 
-```
+```bash
 /stackattack
 
 Research and validate the React TypeScript frontend stack for an enterprise ERP:
@@ -550,8 +548,8 @@ graph TB
 
     subgraph "nginx Reverse Proxy — Port 80/443"
         NginxStatic[Static Files]
-        NginxAPI[/api/* → Django]
-        NginxMedia[/media/* → MinIO]
+        NginxAPI["/api/* → Django"]
+        NginxMedia["/media/* → MinIO"]
     end
 
     subgraph "Django Backend — Port 8000"
@@ -611,7 +609,7 @@ graph TB
 
 Use your agent to design the core domain:
 
-```
+```text
 /stackattack
 
 Design the Django model architecture for a mid-market ERP with these modules:
@@ -694,7 +692,7 @@ class TenantModel(TimeStampedModel):
 
 Before writing any view code, design the API contracts:
 
-```
+```sql
 /stackattack
 
 Design the REST API contract for the Sales Orders module of a Django ERP.
@@ -866,7 +864,7 @@ python manage.py startapp accounting # Chart of accounts, journal entries
 
 Ask your agent to generate the settings structure:
 
-```
+```sql
 /stackattack
 
 Generate a production-ready Django settings configuration for an ERP project.
@@ -1177,7 +1175,7 @@ npm install -D openapi-typescript orval
 With drf-spectacular running on the backend, the OpenAPI schema is available at
 `http://localhost:8000/api/schema/`. Use your agent to configure the generator:
 
-```
+```sql
 /stackattack
 
 Configure orval to auto-generate a fully typed React API client from the Django
@@ -1275,7 +1273,7 @@ axiosInstance.interceptors.response.use(
 
 ERP applications live and die by their data tables. Use your agent to generate an enterprise-grade table component:
 
-```
+```jsx
 /stackattack
 
 Build a reusable React TypeScript ERP data table component using:
@@ -1417,7 +1415,7 @@ export function SalesOrdersPage() {
 
 ### 🏗️ Full Docker Compose Stack
 
-```
+```text
 /stackattack
 
 Generate a complete docker-compose.yml for an enterprise Django + React ERP

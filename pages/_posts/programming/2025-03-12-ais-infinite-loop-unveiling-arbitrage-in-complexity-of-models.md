@@ -1,51 +1,59 @@
 ---
-title: "AI's Infinite Loop: Unveiling Arbitrage in Complexity of Models"
+title: 'AI''s Infinite Loop: Unveiling Arbitrage in Complexity of Models'
 sub-title: null
 description: Discover how Excel's quirks reveal hidden arbitrage opportunities in complex financial models, reveling monopolies with infinite return.
 topic: FinTech
-excerpt: null
+excerpt: Discover how Excel's quirks reveal hidden arbitrage opportunities in complex financial models, reveling monopolies with infinite return
 abstract: The article explores the paradoxical phenomenon in financial modeling where Excel workbooks become so complex they encounter circular reference errors. Rather than indicating mere computational mishaps, these errors metaphorically represent algorithms approaching an abstract infinity, signaling hidden arbitrage opportunities or gaps in modern economic systems. Ironically, this computational barrier—often dismissed as user error—could hold the key to uncovering lucrative market inefficiencies. Yet, humorously, only Microsoft itself possesses the limitless computational power required to decipher and capitalize upon these opportunities.
-date: 2025-03-13T14:00:43.000Z
+date: '2025-03-13T14:00:43.000Z'
 preview: null
 tags:
-    - arbitrage
-    - complexity
-    - Excel
-    - financial
-    - modeling
-    - GPT-4
+- arbitrage
+- complexity
+- Excel
+- financial
+- modeling
+- GPT-4
 categories:
-    - Data Analytics
-    - Development
-    - Finance
-    - IT Consulting
-    - Programming
+- Data Analytics
+- Development
+- Finance
+- IT Consulting
+- Programming
 schema: sophisticated, intriguing, and humorous
 target-audience: analysts, financial modelers, economists, tech enthusiasts
 snippet: null
-keywords: {}
-lastmod: 2025-03-13T16:53:56.445Z
+keywords:
+- arbitrage
+- complexity
+- excel
+- financial
+- modeling
+- gpt-4
+- data analytics
+- development
+lastmod: '2025-03-13T16:53:56.000Z'
 permalink: null
-attachments: ""
+attachments: ''
 comments: false
 aiPrompt: I want to explore an article topic around the idea of discovering a formula for financial modeling that is abstractly integrated into modern forms of economic activity. This formula can be juxtaposed with using Microsoft Excel, such as the dreaded circular reference error when workbooks become so complex. This complexity is often misdiagnosed as an error when, in reality, the algorithm just requires such computational resources that it's actually working towards infinity and indicative of an arbitrage or gap in the marketplace. The hilarity of this dilemma is that only Microsoft will be able to uncover these market dynamics and use the infinite computational powers at their disposal to capitalize on that market gap.
 defaults:
-    ai_model: GPT-4o
-    instructions: Output an outline this article in a structured format.
-    style: narrative
-    tone: humorous, insightful
-    progression: logical
-    undertone: satirical
-    intensity: moderate
-    provocative: true
-    schema: article_default
-    number_of_sections: 7
-    points_per_section: 3
+  ai_model: GPT-4o
+  instructions: Output an outline this article in a structured format.
+  style: narrative
+  tone: humorous, insightful
+  progression: logical
+  undertone: satirical
+  intensity: moderate
+  provocative: true
+  schema: article_default
+  number_of_sections: 7
+  points_per_section: 3
 author:
-    first: Amr
-    middle: GPT
+  first: Amr
+  middle: GPT
+draft: false
 ---
-
 ## Structured approach to a {{ page.schema }} article topic
 
 ### Page Defaults

@@ -1,18 +1,12 @@
 ---
 title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
 author: IT-Journey Team
-description: Starting with bashcrawl as a base and building upon it is a great way
-  to learn advanced shell scripting. bashcrawl uses directories as rooms, text files
-  as scrolls, and executable scripts as interactive items — a brilliant architecture
-  for learning and expanding.
-excerpt: Starting with bashcrawl as a base and building upon it is a great way to
-  learn advanced shell scripting. bashcrawl uses directories as rooms, text files
-  as scrolls, and executable scripts as interactive items — a brilliant architecture
-  for learning and expanding.
+description: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
+excerpt: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
 snippet: Transform basic shell commands into an interactive gaming experience
 preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
-date: 2024-05-29 10:39:06+00:00
-lastmod: 2026-04-25 19:27:00.033000+00:00
+date: '2024-05-29T10:39:06.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
 level: '0000'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
@@ -42,10 +36,7 @@ learning_paths:
   skill_trees:
   - Terminal Mastery
   - Shell Scripting
-skill_focus:
-- Quests
-- Terminal
-- Level-000
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -72,13 +63,15 @@ tags:
 - terminal
 - game-development
 - shell-scripting
-- 000
+- 0
 keywords:
-- bash
-- terminal
-- game-development
-- shell-scripting
-- 000
+  primary:
+  - bash
+  - terminal
+  secondary:
+  - game-development
+  - shell-scripting
+  - 0
 fmContentType: quest
 draft: false
 sub-title: 'Level 000 Quest: Extending bashcrawl''s Terminal Dungeon'
@@ -96,6 +89,7 @@ rewards:
 related_quests:
 - bashcrawl/README.md - Terminal Adventure RPG
 - hello-noob.md - Beginner's IT Journey
+layout: quest
 ---
 *Greetings, aspiring script mage! In this side quest, you will study how [bashcrawl](https://github.com/bamr87/bashcrawl) is built and then extend it with new rooms, encounters, and game mechanics. bashcrawl is an elegant dungeon crawler that uses the file system itself as the game world — directories are rooms, text files are scrolls, and executable scripts are interactive items. By the end, you will have forged your own additions to this adventure.*
 

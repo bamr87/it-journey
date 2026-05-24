@@ -1,32 +1,36 @@
 ---
-title: "The Agentic Codex: GH-600 Study Hub"
-description: "Comprehensive study guide and quest map for Microsoft Exam GH-600: Developing in Agentic AI Systems. 20 quests, 7 chronicle posts, 8 reference notes — all GitHub-native."
-excerpt: "The complete GitHub-native study track for Exam GH-600: Developing in Agentic AI Systems — 20 quests, 7 chronicles, 8 reference notes."
+title: 'The Agentic Codex: GH-600 Study Hub'
+description: 'Comprehensive study guide and quest map for Microsoft Exam GH-600: Developing in Agentic AI Systems. 20 quests, 7 chronicle posts, 8 reference notes — all GitHub-native.'
+excerpt: 'The complete GitHub-native study track for Exam GH-600: Developing in Agentic AI Systems — 20 quests, 7 chronicles, 8 reference notes.'
 permalink: /docs/certifications/gh-600/
 layout: default
 draft: false
 categories:
-  - Docs
-  - Certifications
-  - Agentic-AI
+- Docs
+- Certifications
+- Agentic-AI
 tags:
-  - gh-600
-  - agentic-ai
-  - github-copilot
-  - mcp
-  - certifications
-  - study-guide
+- gh-600
+- agentic-ai
+- github-copilot
+- mcp
+- certifications
+- study-guide
 keywords:
-  primary: ["gh-600", "agentic ai certification"]
-  secondary: ["github copilot coding agent", "model context protocol", "multi-agent orchestration"]
-lastmod: 2026-05-17T00:00:00.000Z
-date: 2026-05-17T00:00:00.000Z
+  primary:
+  - gh-600
+  - agentic ai certification
+  secondary:
+  - github copilot coding agent
+  - model context protocol
+  - multi-agent orchestration
+lastmod: '2026-05-17T00:00:00.000Z'
+date: '2026-05-17T00:00:00.000Z'
 toc: true
 toc_sticky: true
 mermaid: true
 author: IT-Journey Team
 ---
-
 # 📜 The Agentic Codex
 ## Study Hub for Exam GH-600: Developing in Agentic AI Systems
 

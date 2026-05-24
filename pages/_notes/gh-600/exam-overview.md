@@ -1,16 +1,19 @@
 ---
-title: "GH-600 Exam Overview"
-description: "Quick reference for the GH-600 exam format, domain weights, passing score, and what to expect on exam day."
-date: 2026-05-17T00:00:00.000Z
+title: GH-600 Exam Overview
+description: Quick reference for the GH-600 exam format, domain weights, passing score, and what to expect on exam day.
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/exam-overview/
 author: IT-Journey Team
-tags: [gh-600, exam, quick-reference]
+tags:
+- gh-600
+- exam
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # GH-600 Exam Overview
 
 **Official Name:** Developing in Agentic AI Systems  

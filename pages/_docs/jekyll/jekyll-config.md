@@ -3,12 +3,20 @@ title: Configuration Options | Jekyll • Simple, blog-aware, static sites
 url: https://jekyllrb.com/docs/configuration/options/
 date_retrieved: 2024-05-02 16:05:28
 description: The tables below list the available settings for Jekyll, and the various options (specified in the configuration file) and flags (specified on the command-line) that control them.
-lastmod: 2024-05-02T22:07:45.703Z
-date: 2024-05-07T23:07:39.000Z
-
+lastmod: '2024-05-02T22:07:45.000Z'
+date: '2024-05-07T23:07:39.000Z'
+draft: false
+keywords:
+- configuration
+- options
+- jekyll
+- simple
+- blog-aware
+- static
+- sites
+author: bamr87
 ---
-
- [Improve this page](https://github.com/jekyll/jekyll/edit/master/docs/_docs/configuration/options.md)
+[Improve this page](https://github.com/jekyll/jekyll/edit/master/docs/_docs/configuration/options.md)
 
 # Configuration Options
 

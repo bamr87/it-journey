@@ -1,39 +1,38 @@
 ---
-title: "Styling, Navigation & Comment Systems"
+title: Styling, Navigation & Comment Systems
 author: bamr87
 description: Customize your site's look with theme skins, colors, and CSS — then configure navigation menus, sidebars, search, and comments.
-excerpt: "Customize your site's look with theme skins, CSS, and colors — then configure navigation menus, sidebars, search, and comment systems."
+excerpt: Customize your site's look with theme skins, CSS, and colors — then configure navigation menus, sidebars, search, and comment systems.
 permalink: /quickstart/styling-navigation/
 categories:
-  - quickstart
+- quickstart
 slug: styling-navigation
-lastmod: 2026-04-02T03:14:50.937Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 25-35 minutes
 prerequisites:
-  - Site configured (see [Site Configuration](/quickstart/site-configuration/))
-  - Understand layouts and includes (see [Theme Architecture](/quickstart/theme-architecture/))
+- Site configured (see [Site Configuration](/quickstart/site-configuration/))
+- Understand layouts and includes (see [Theme Architecture](/quickstart/theme-architecture/))
 tags:
-  - styling
-  - navigation
-  - css
-  - themes
-  - sidebar
+- styling
+- navigation
+- css
+- themes
+- sidebar
 keywords:
   primary:
-    - jekyll styling
-    - site navigation
-    - theme skins
+  - jekyll styling
+  - site navigation
+  - theme skins
   secondary:
-    - css customization
-    - sidebar config
-    - giscus comments
+  - css customization
+  - sidebar config
+  - giscus comments
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phases 9 and 10** of the [Quick Start](/quickstart/) — styling your site with skins, colors, and CSS, then setting up navigation, sidebars, search, and comments.
 
 ---

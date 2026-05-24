@@ -1,35 +1,33 @@
 ---
-title: "GitHub Actions Authentication Fix: Resolving CI/CD Workflow Failures"
+title: 'GitHub Actions Authentication Fix: Resolving CI/CD Workflow Failures'
 description: Comprehensive fix for GitHub Actions authentication issues in AI Evolution Engine workflow
-date: 2025-07-21T23:30:21.000Z
+date: '2025-07-21T23:30:21.000Z'
 preview: /images/previews/github-actions-authentication-fix-resolving-ci-cd-.png
 tags:
-    - github-actions
-    - authentication
-    - ci-cd
-    - debugging
-    - workflow-fix
+- github-actions
+- authentication
+- ci-cd
+- debugging
+- workflow-fix
 categories:
-    - Development
-    - DevOps
+- Development
+- DevOps
 sub-title: Systematic resolution of workflow authentication failures
 excerpt: Successfully resolved GitHub Actions workflow failures by implementing proper token environment variable configuration and enhanced authentication detection logic.
-snippet: "The key was understanding that GitHub Actions provides secrets.GITHUB_TOKEN but the CLI expects GH_TOKEN environment variable"
+snippet: The key was understanding that GitHub Actions provides secrets.GITHUB_TOKEN but the CLI expects GH_TOKEN environment variable
 author: IT-Journey Team
 keywords:
-    primary:
-        - github actions
-        - authentication fix
-    secondary:
-        - ci cd debugging
-        - workflow troubleshooting
-lastmod: 2025-07-10T18:00:00.000Z
+- github actions
+- authentication fix
+- ci cd debugging
+- workflow troubleshooting
+lastmod: '2025-07-10T18:00:00.000Z'
 permalink: /github-actions-authentication-fix-2025-07-10/
-attachments: ""
+attachments: ''
 comments: true
 section: DevOps
+draft: false
 ---
-
 ## The Challenge: GitHub Actions Authentication Failure
 
 The AI Evolution Engine GitHub Actions workflow was failing consistently with this error:

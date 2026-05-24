@@ -1,38 +1,37 @@
 ---
-title: "Jekyll & zer0-mistakes Theme Installation"
+title: Jekyll & zer0-mistakes Theme Installation
 author: bamr87
 description: Install Jekyll with the zer0-mistakes theme — via Gemfile or Docker — then verify your site builds and serves correctly.
-excerpt: "Install Jekyll with the zer0-mistakes theme via Gemfile or Docker, configure Bundler, and verify your local site builds and serves correctly."
+excerpt: Install Jekyll with the zer0-mistakes theme via Gemfile or Docker, configure Bundler, and verify your local site builds and serves correctly.
 permalink: /quickstart/jekyll/
 categories:
-  - quickstart
+- quickstart
 slug: jekyll
-lastmod: 2026-04-02T03:14:50.876Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2021-11-09T17:30:29.000Z
+date: '2021-11-09T17:30:29.000Z'
 difficulty: 🟢 Easy
 estimatedTime: 15-30 minutes
 prerequisites:
-  - Ruby 3.2+ and Bundler installed (see [Machine Setup](/quickstart/machine-setup/))
-  - Git repository created (see [GitHub Setup](/quickstart/github/))
+- Ruby 3.2+ and Bundler installed (see [Machine Setup](/quickstart/machine-setup/))
+- Git repository created (see [GitHub Setup](/quickstart/github/))
 tags:
-  - jekyll
-  - ruby
-  - theme
-  - installation
+- jekyll
+- ruby
+- theme
+- installation
 keywords:
   primary:
-    - jekyll installation
-    - zer0-mistakes theme
-    - jekyll setup
+  - jekyll installation
+  - zer0-mistakes theme
+  - jekyll setup
   secondary:
-    - bundler
-    - gemfile
-    - ruby gems
+  - bundler
+  - gemfile
+  - ruby gems
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 4** of the [Quick Start](/quickstart/) — installing Jekyll and the zer0-mistakes theme that powers [it-journey.dev](https://it-journey.dev). By the end, you'll have a working Jekyll site running locally.
 
 ---
