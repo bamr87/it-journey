@@ -114,8 +114,8 @@ class QuestValidator:
                 
                 self.stats['total_quests'] += 1
                 
-                # Track quest status
-                if frontmatter.get('draft', True):
+                # Track quest status (default false: published unless explicitly drafted)
+                if frontmatter.get('draft', False):
                     self.stats['draft_quests'] += 1
                 
                 if '🔮' in body or 'Placeholder' in body:
@@ -193,6 +193,24 @@ class QuestValidator:
                     f"{file_path}: Invalid quest_type '{quest_type}'"
                 )
     
+    @staticmethod
+    def _strip_planned_marker(value):
+        """Strip a trailing ``# planned quest`` (or ``# planned``) inline marker.
+
+        Authors may suffix a dependency URL with ``# planned quest`` to declare
+        an intentional forward reference to a quest that has not yet been
+        authored. The marker is documented in
+        ``.github/instructions/quest.instructions.md`` and must be ignored by
+        validation. Returns (clean_value, is_planned).
+        """
+        if not isinstance(value, str):
+            return value, False
+        stripped = value.strip()
+        match = re.match(r'^(.*?)\s*#\s*planned(?:\s+quest)?\s*$', stripped, re.IGNORECASE)
+        if match:
+            return match.group(1).strip(), True
+        return stripped, False
+
     def validate_dependencies(self):
         """Validate quest dependencies and relationships."""
         print_info("Validating quest dependencies...")
@@ -206,7 +224,10 @@ class QuestValidator:
             
             for dep_type in ['required_quests', 'recommended_quests', 'unlocks_quests']:
                 dep_list = dependencies.get(dep_type, [])
-                for dep_permalink in dep_list:
+                for raw in dep_list:
+                    dep_permalink, planned = self._strip_planned_marker(raw)
+                    if planned or not dep_permalink:
+                        continue
                     if dep_permalink not in self.quests:
                         self.errors.append(
                             f"{file_path}: Dependency not found: {dep_permalink} ({dep_type})"
@@ -225,8 +246,11 @@ class QuestValidator:
                 # Handle both single value and list
                 rel_list = rel_data if isinstance(rel_data, list) else [rel_data]
                 
-                for rel_permalink in rel_list:
-                    if rel_permalink and rel_permalink not in self.quests:
+                for raw in rel_list:
+                    rel_permalink, planned = self._strip_planned_marker(raw)
+                    if planned or not rel_permalink:
+                        continue
+                    if rel_permalink not in self.quests:
                         self.warnings.append(
                             f"{file_path}: Related quest not found: {rel_permalink} ({rel_type})"
                         )
@@ -243,7 +267,10 @@ class QuestValidator:
             dependencies = quest_data.get('frontmatter', {}).get('quest_dependencies', {})
             
             for dep_list_key in ['required_quests', 'recommended_quests']:
-                for dep in dependencies.get(dep_list_key, []):
+                for raw in dependencies.get(dep_list_key, []):
+                    dep, planned = self._strip_planned_marker(raw)
+                    if planned or not dep:
+                        continue
                     if dep in self.quests:
                         if dep not in visited:
                             if has_cycle(dep, visited, stack):
@@ -269,19 +296,26 @@ class QuestValidator:
         for quest_data in self.quests.values():
             frontmatter = quest_data['frontmatter']
             
+            def add_clean(value):
+                permalink, planned = self._strip_planned_marker(value)
+                if not planned and permalink:
+                    referenced_quests.add(permalink)
+            
             # Collect all references
             dependencies = frontmatter.get('quest_dependencies', {})
             for dep_list in dependencies.values():
                 if isinstance(dep_list, list):
-                    referenced_quests.update(dep_list)
+                    for raw in dep_list:
+                        add_clean(raw)
             
             relationships = frontmatter.get('quest_relationships', {})
             for rel_data in relationships.values():
                 if rel_data:
                     if isinstance(rel_data, list):
-                        referenced_quests.update(rel_data)
+                        for raw in rel_data:
+                            add_clean(raw)
                     else:
-                        referenced_quests.add(rel_data)
+                        add_clean(rel_data)
         
         # Find orphans (excluding level 0000 quests which are entry points)
         for permalink, quest_data in self.quests.items():

@@ -19,8 +19,8 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Tuple
 
-# Quest directory
-QUEST_DIR = Path(__file__).parent.parent / "pages" / "_quests"
+# Quest directory (script lives at scripts/quest/, repo root is two parents up)
+QUEST_DIR = Path(__file__).resolve().parent.parent.parent / "pages" / "_quests"
 
 # Valid values
 VALID_QUEST_TYPES = ["main_quest", "side_quest", "epic_quest", "bonus_quest", "reference"]

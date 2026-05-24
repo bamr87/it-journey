@@ -1,9 +1,11 @@
 ---
-title: "The Three Sigils: Plan, Reason, Act"
-description: "Master the boundary between agent planning and agent execution. Configure Copilot agents to output structured plans, validate them, and prevent action until approved — eliminating the most dangerous source of agent runaway."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Three Sigils: Plan, Reason, Act'
+description: Master the boundary between agent planning and agent execution. Configure
+  Copilot agents to output structured plans, validate them, and prevent action until
+  approved — eliminating the most dangerous source of agent runaway.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-plan-vs-action-boundaries.png
-level: "0111"
+level: '0111'
 difficulty: 🟡 Medium
 estimated_time: 90 minutes
 primary_technology: github-copilot
@@ -11,89 +13,92 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - agent-planning
-  - action-boundaries
-  - plan-validation
+- agentic-ai
+- agent-planning
+- action-boundaries
+- plan-validation
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 0111 Quest 2/3 — Domain 1: Agent Architecture & SDLC"
-excerpt: An agent that acts without planning is a curse, not a gift. Learn to inscribe the Three Sigils — Plan, Reason, Act — and enforce their order.
+sub_title: 'Level 0111 Quest 2/3 — Domain 1: Agent Architecture & SDLC'
+excerpt: An agent that acts without planning is a curse, not a gift. Learn to inscribe
+  the Three Sigils — Plan, Reason, Act — and enforce their order.
 author: IT-Journey Team
 tags:
-  - "0111"
-  - agentic-ai
-  - github-copilot
-  - agent-planning
-  - gh-600
-  - main_quest
-  - hands-on
+- '0111'
+- agentic-ai
+- github-copilot
+- agent-planning
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Medium
+- Quests
+- Agentic-AI
+- Medium
 keywords:
-  - gh-600
-  - agent planning
-  - plan validate act
-  - structured agent output
-  - human approval workflow
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-plan-vs-action-boundaries/
+- gh-600
+- agent planning
+- plan validate act
+- structured agent output
+- human approval workflow
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/0111/agentic-plan-vs-action-boundaries/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-sdlc-integration/
+  - /quests/0111/agentic-sdlc-integration/
   recommended_quests: []
   unlocks_quests:
-    - /quests/gh-600/agentic-observability-and-control/
+  - /quests/1000/agentic-observability-and-control/
 quest_relationships:
   parent_quest: null
   child_quests: []
   sequel_quests:
-    - /quests/gh-600/agentic-observability-and-control/
+  - /quests/1000/agentic-observability-and-control/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
+  - 🤖 AI Engineer
   skill_trees:
-    - Agentic AI
+  - Agentic AI
 rewards:
   badges:
-    - 📜 Plan-First Architect
+  - 📜 Plan-First Architect
   skills_unlocked:
-    - 🧭 Structured Agent Planning
+  - 🧭 Structured Agent Planning
   progression_points: 70
 prerequisites:
   knowledge_requirements:
-    - Completed Q1: Initiation Rites (or equivalent SDLC agent knowledge)
-    - Ability to read and write JSON / YAML
+  - Completed Q1: Initiation Rites (or equivalent SDLC agent knowledge)
+  - Ability to read and write JSON / YAML
   system_requirements:
-    - GitHub account with Copilot access
-    - VS Code with GitHub Copilot extension
-    - Git installed locally or GitHub Codespaces
+  - GitHub account with Copilot access
+  - VS Code with GitHub Copilot extension
+  - Git installed locally or GitHub Codespaces
 validation_criteria:
   completion_requirements:
-    - "Agent instructions file (copilot-instructions.md) created with explicit plan-first directive"
-    - Structured plan JSON schema defined and validated
-    - Human-approval gate demonstrated (plan produced, reviewed, then action triggered)
+  - Agent instructions file (copilot-instructions.md) created with explicit plan-first
+    directive
+  - Structured plan JSON schema defined and validated
+  - Human-approval gate demonstrated (plan produced, reviewed, then action triggered)
   skill_demonstrations:
-    - Can configure an agent to produce a structured plan before taking action
-    - Can write a prompt/instruction that prevents premature action
+  - Can configure an agent to produce a structured plan before taking action
+  - Can write a prompt/instruction that prevents premature action
   knowledge_checks:
-    - Understands why separating plan from action reduces agent risk
-    - Can describe what a valid structured agent plan looks like
+  - Understands why separating plan from action reduces agent risk
+  - Can describe what a valid structured agent plan looks like
 quest_mapping:
-  coordinates: "[1, 2]"
+  coordinates: '[1, 2]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: SDLC Forest
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-plan-vs-action-boundaries/
 ---
-
 *The Guild's grimoire speaks of the Three Sigils burned into every safe agent: first the Sigil of Planning — the agent must think before it moves; second the Sigil of Reasoning — the agent must explain its logic; third the Sigil of Action — only then may the agent act. Many apprentices skip the first two in their eagerness to see results. Their deployments rarely survive the week.*
 
 ## 🗺️ Quest Network Position
@@ -372,12 +377,25 @@ python3 scripts/validate_quest.py --quest q2
 | 📜 Plan-First Architect Badge | Earned on completion |
 | 🧭 Structured Agent Planning | Skill unlocked |
 | 70 XP | Added to Level 0111 total |
-| Unlocks | [Q3: The All-Seeing Eye](/quests/gh-600/agentic-observability-and-control/) |
+| Unlocks | [Q3: The All-Seeing Eye](/quests/1000/agentic-observability-and-control/) |
 
 ---
 
 ## 🔗 Continue Your Journey
 
-- **Next quest:** [Q3: The All-Seeing Eye — Observability & Control](/quests/gh-600/agentic-observability-and-control/)
+- **Next quest:** [Q3: The All-Seeing Eye — Observability & Control](/quests/1000/agentic-observability-and-control/)
 - **Prerequisite for:** All Domain 2+ quests
 - **Chronicle post:** [Embedding Agents in the SDLC](/posts/embedding-agents-in-the-sdlc/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0111 (7) - API Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]]
+**Unlocks:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
+**Sequel quests:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

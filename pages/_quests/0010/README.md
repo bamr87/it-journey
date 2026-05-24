@@ -4,9 +4,10 @@ description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and ad
   shell customization
 preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
 permalink: /quests/0010/
-lastmod: 2026-04-25 19:27:00.244000+00:00
+layout: quest-collection
 level: '0010'
 categories: quests
+lastmod: 2026-04-25 19:27:00.244000+00:00
 date: 2025-11-29 16:46:02+00:00
 ---
 # Level 0010: Terminal Enhancement & Shell Mastery

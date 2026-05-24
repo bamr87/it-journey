@@ -117,6 +117,16 @@ def compute_new_permalink(
 
     p = str(current).rstrip("/")
 
+    # ── gh-600 namespace  /quests/gh-600/slug
+    # Used by the agentic quest series; resolves to the canonical level/slug
+    # form using the file's parent directory as the level.
+    m = re.match(r"^/quests/gh-600/(.+)$", p)
+    if m and level_dir and LEVEL_RE.match(level_dir):
+        slug = m.group(1)
+        if quest_type == "side_quest":
+            return f"/quests/{level_dir}/side-quests/{slug}/"
+        return f"/quests/{level_dir}/{slug}/"
+
     # ── Level README  /quests/level-XXXX
     m = re.match(r"^/quests/level-([01]{4})$", p)
     if m:
@@ -215,6 +225,9 @@ def _remap(url: str, url_map: dict[str, str]) -> str | None:
     m = re.match(r"^/quests/level-([01]{4})-(.+)$", p)
     if m:
         return f"/quests/{m.group(1)}/{m.group(2)}/"
+    # gh-600 dependency URLs without level context fall through; the
+    # owning file's level is needed to rewrite them, so they are picked up
+    # via the url_map populated in pass 1.
     return None
 
 

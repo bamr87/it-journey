@@ -284,3 +284,15 @@ Once your enhanced stats dashboard renders on your profile, you've earned the **
 ---
 
 > *"You see beyond the numbers now. Welcome to the inner circle of data wielders."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
+**Recommended:** [[Badge Collector: Showcasing Your Achievements]]
+**Unlocks:** [[Contribution Calendar: Mapping Your Journey Through Time]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

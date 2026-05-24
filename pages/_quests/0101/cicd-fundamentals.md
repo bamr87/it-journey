@@ -500,3 +500,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Database Fundamentals: Data Storage and Retrieval]]
+**Related quests:** [[Jekyll Quest Tracking: Building Dynamic Collection Layouts]] · [[Artifact Management: Build Output Storage and Dependency Caching]] · [[GitHub Actions Basics: Workflow Automation for Modern DevOps]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Environment Management: Dev, Staging, and Production Configuration]] · [[Docker Containerization Mastery: Level 0101 (5) Quest]] · [[Deployment Pipelines: Production Release Automation Strategies]] · [[Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest]] · [[Secrets Management: Secure Configuration and Credential Handling]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

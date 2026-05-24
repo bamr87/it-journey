@@ -1,0 +1,33 @@
+{%- comment -%}
+  quest-progress.html — Progress widget driven by assets/js/quest-progress.js.
+
+  The JS module reads/writes to localStorage and re-applies state to:
+    - The .quest-progress-bar element below (data-quest-progress).
+    - Every native `- [ ]` checkbox under #quest-content (the quest body).
+    - The "Mark complete" toggle button.
+
+  Server-side this include is intentionally inert; all dynamic behaviour
+  happens in the browser. The empty progress bar is shown immediately so the
+  layout doesn't jump when JS hydrates.
+{%- endcomment -%}
+
+{%- assign p = include.page | default: page -%}
+
+<section class="quest-progress" data-quest-progress data-quest-permalink="{{ p.permalink }}" data-quest-level="{{ p.level }}" aria-labelledby="quest-progress-heading">
+  <h2 id="quest-progress-heading" class="quest-section-heading">📈 Your Progress</h2>
+
+  <div class="quest-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Quest completion">
+    <div class="quest-progress-bar__fill" style="width: 0%"></div>
+    <span class="quest-progress-bar__label" data-quest-progress-label>Not started · 0%</span>
+  </div>
+
+  <div class="quest-progress__actions">
+    <button type="button" class="quest-progress__toggle" data-quest-progress-toggle aria-pressed="false">
+      <span class="quest-progress__toggle-icon" aria-hidden="true">⬜</span>
+      <span class="quest-progress__toggle-label">Mark quest complete</span>
+    </button>
+    <button type="button" class="quest-progress__reset" data-quest-progress-reset>Reset</button>
+  </div>
+
+  <p class="quest-progress__hint">Your progress is stored in your browser only. Use <a href="{{ '/quests/inventory/' | relative_url }}">your inventory</a> to back it up.</p>
+</section>

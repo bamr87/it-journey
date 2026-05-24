@@ -160,3 +160,12 @@ jobs:
 And there you have it. You are now a **Cloud Dev Wizard of the 5th Circle**: branches organized, commits pristine, docs divine, workflows humming, and AI at your side. 🌩️
 
 Need a final summary scroll of your complete best practice workflow? Or perhaps a retro pixelated magical poster to hang above your CI pipeline? Say the word, and we'll conjure it.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

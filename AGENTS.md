@@ -95,11 +95,14 @@ Observed from Makefile, scripts, Gemfile, and workflows:
   - Other subcommands: configure, azure-create, github-workflow, domain-setup.
 
 - **Testing and Validation** (from test/ dir and scripts):
-  - Validate quests: `python3 test/quest-validator/quest_validator.py <file.md>` or `-d pages/_quests/`
-  - Link checker: `python3 scripts/link-checker.py --scope website --timeout 30`
-  - Test validator: `./test/quest-validator/test-validator.sh`
-  - Migrate quest permalinks (dry run): `python3 scripts/quest/migrate-permalinks.py --dry-run`
-  - Migrate quest permalinks (apply): `python3 scripts/quest/migrate-permalinks.py`
+ - Validate quests: `python3 test/quest-validator/quest_validator.py <file.md>` or `-d pages/_quests/`
+ - Link checker: `python3 scripts/link-checker.py --scope website --timeout 30`
+ - Test validator: `./test/quest-validator/test-validator.sh`
+ - Migrate quest permalinks (dry run): `python3 scripts/quest/migrate-permalinks.py --dry-run`
+ - Migrate quest permalinks (apply): `python3 scripts/quest/migrate-permalinks.py`
+ - **Full quest audit before PR**: `make quest-audit` (runs build-quest-network → quest_validator → validate-quest-network). For CI parity (orphan warnings escalate to errors), use `make quest-audit-strict`. CI blocks merges on validator errors and any score below 70%.
+ - Regenerate sidebar nav: `make quest-nav` (rewrites `_data/navigation/quests.yml` from the quest collection).
+ - Regenerate level metadata: `make quest-levels-data` (writes `_data/quests/levels.yml` from `scripts/quest/quest_registry.py`).
 
 - **Git and CI/CD** (from .github/workflows/):
   - Workflows include azure-jekyll-deploy.yml for deployment, link-checker.yml for validation.
@@ -177,7 +180,9 @@ Observed from Makefile, scripts, Gemfile, and workflows:
 
 - **README-First/Last Principle** (from copilot-instructions.md): Always read/update README.md before/after changes in any directory.
 - **Front Matter Standards**: Required fields like title, description, learning_objectives; use YAML lists for arrays.
-- **Quest Permalink Convention**: Use `/quests/XXXX/slug/` for main quests and `/quests/XXXX/side-quests/slug/` for side quests — never the old `level-XXXX-slug` or flat `side-quest-slug` format. The validator enforces this; see `.github/instructions/quest.instructions.md` §3.
+- **Quest Permalink Convention**: Use `/quests/XXXX/slug/` for main quests, `/quests/XXXX/side-quests/slug/` for side quests, and `/quests/codex/<slug>/` for `bonus_quest`/`epic_quest` types — never the old `level-XXXX-slug`, flat `side-quest-slug`, or `gh-600` format. The validator enforces this; see `.github/instructions/quest.instructions.md` §3.
+- **`redirect_from` migration policy**: New quests must not ship with `redirect_from`. Add `redirect_from` only when migrating an existing quest's permalink — preferably via `scripts/quest/migrate-permalinks.py`, which emits the redirect automatically. After migration, audit internal references and update them to the new canonical URL.
+- **Quest UI & progress tracking**: Individual quest pages render via local `_layouts/quest.html`, level READMEs via `_layouts/quest-collection.html`, and `home.md`/root index via `_layouts/quest-hub.html`. The progress widget on quest pages and tier bars on hubs read/write `localStorage` via `assets/js/quest-progress.js`. New quest UI partials live under `_includes/quest/` (kebab-case); inline `<style>` blocks should not be added to includes — extend `assets/css/quest-system.css` instead.
 - **Excludes in _config.yml**: Many files/dirs excluded from Jekyll processing (e.g., scripts/, test/, *.sh).
 - **Gamification**: Quests must include fantasy elements, objectives, prerequisites; use Mermaid diagrams for maps.
 - **Multi-Platform**: Content often has sections for macOS/Windows/Linux/Cloud.

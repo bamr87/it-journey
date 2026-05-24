@@ -1,8 +1,9 @@
 ---
 title: Validation Fixes Summary
+layout: default
 description: Reference - validation fixes summary and notes.
 author: IT-Journey Team
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes

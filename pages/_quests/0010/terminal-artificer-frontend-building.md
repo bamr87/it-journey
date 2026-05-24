@@ -12,7 +12,7 @@ lastmod: 2025-11-29 01:07:17.270000+00:00
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: 0010
+primary_technology: 8
 quest_type: side_quest
 quest_series: Terminal Mastery Path
 quest_line: Foundation Path
@@ -64,13 +64,13 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/0010/side-quests/terminal-artificer/
+permalink: /quests/0010/side-quests/terminal-artificer-frontend-building/
 categories:
 - Quests
 - Development
 - Foundation
 tags:
-- "0010"
+- '0010'
 - gum
 - shell-scripting
 - frontend
@@ -78,7 +78,7 @@ tags:
 - tool-mastery
 - hands-on
 keywords:
-- "0010"
+- '0010'
 - gum
 - shell-scripting
 - frontend
@@ -99,6 +99,8 @@ rewards:
   progression_points: 50
   unlocks_features:
   - Ability to create user-friendly CLI tools
+redirect_from:
+- /quests/0010/side-quests/terminal-artificer/
 ---
 *In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
 
@@ -367,3 +369,12 @@ Now that you can build interfaces, consider:
 ---
 
 *May your prompts be clear, your inputs sanitized, and your interfaces forever shiny!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

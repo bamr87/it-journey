@@ -249,7 +249,7 @@ build_jekyll() {
         export JEKYLL_ENV=production
         build_cmd+=" --config _config.yml"
     else
-        build_cmd+=" --config _config_dev.yml,_config.yml"
+        build_cmd+=" --config _config.yml,_config_dev.yml"
     fi
     
     # Add output directory
@@ -266,7 +266,7 @@ build_jekyll() {
     # Start development server if requested
     if [[ "$SERVE_AFTER_BUILD" == true ]] && [[ "$BUILD_ENV" == "development" ]]; then
         log "Starting Jekyll development server..."
-        bundle exec jekyll serve --config _config_dev.yml,_config.yml --livereload
+        bundle exec jekyll serve --config _config.yml,_config_dev.yml --livereload
     fi
 }
 

@@ -32,6 +32,16 @@ key: tutorial
 index: 8199
 subcategory: jekyll
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 > Services/tools used for building personal site.
 
 ## 1. Personal Site
@@ -60,3 +70,12 @@ My personal website can be accessed through following domains. These sites are a
  16  | <https://lunrjs.com/>                                | Lightweight full-text offline search
  17  | <http://nanobar.jacoborus.codes/>                    | Lightweight progress bars
  18  | <https://www.google.com/adsense/>                    | Google Ads
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

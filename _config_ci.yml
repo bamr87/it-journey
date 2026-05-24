@@ -1,0 +1,8 @@
+# CI smoke-build override — fast PR validation without remote theme fetch.
+# Usage: bundle exec jekyll build --config _config.yml,_config_dev.yml,_config_ci.yml
+
+preview_images:
+  enabled: false
+
+preview_generator:
+  enabled: false

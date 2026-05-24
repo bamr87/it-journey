@@ -205,3 +205,16 @@ These exercises are your first steps. As you complete each one, you'll build a s
 - [Docker Getting Started Guide](https://docs.docker.com/get-started/)
 - [Git Official Documentation](https://git-scm.com/doc)
 - [VirtualBox User Manual](https://www.virtualbox.org/manual/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Unlocks:** [[OS Selection]]
+**Sequel quests:** [[OS Selection]]
+**Parallel quests:** [[Begin your IT Journey]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

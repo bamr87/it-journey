@@ -530,3 +530,16 @@ A wise approach indeed! Building your character in the IT realm means equipping 
 **Action Step**: Dedicate a specific time for learning and practicing new skills.
 
 By preparing your environment and tools, you're setting the stage for a successful journey in IT. Each tool and skill you acquire is like adding a new spell to your spellbook, making you more prepared for the challenges ahead. Happy adventuring! 🧙‍♂️💻🔮
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Recommended:** [[Begin your IT Journey]]
+**Unlocks:** [[Character Selection]] · [[OS Selection]]
+**Sequel quests:** [[Character Selection]] · [[OS Selection]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

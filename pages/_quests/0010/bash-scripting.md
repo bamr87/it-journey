@@ -1101,3 +1101,12 @@ Your newfound bash powers open several paths:
 ---
 
 *May your scripts run without errors, your automation save countless hours, and your bash mastery open doors to advanced system administration and DevOps adventures! Ready for your next challenge? Check the [Quest Map](../README.md) for your next epic journey!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

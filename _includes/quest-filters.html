@@ -5,31 +5,26 @@ Uses JavaScript for client-side filtering with data attributes.
 No parameters required - filters are applied to .quest-card elements.
 {%- endcomment -%}
 
-{%- comment -%} Collect unique values for filter dropdowns {%- endcomment -%}
-{% assign all_quests = site.quests | where_exp: "q", "q.title != nil" %}
+{%- comment -%} Collect unique values for filter dropdowns. Restrict to playable quest content via fmContentType for parity with quest-stats.html. {%- endcomment -%}
+{% assign all_quests = site.quests | where: "fmContentType", "quest" %}
 {%- if include.level and include.level != '' -%}
   {% assign all_quests = all_quests | where: "level", include.level %}
 {%- endif -%}
 
-{%- comment -%} Get unique quest types {%- endcomment -%}
-{% assign quest_types = all_quests | map: "quest_type" | compact | uniq | sort %}
+{%- comment -%} Get unique quest types (join/split coerces integers to strings before sort) {%- endcomment -%}
+{% assign quest_types = all_quests | map: "quest_type" | compact | uniq | join: "|||" | split: "|||" | sort %}
 
 {%- comment -%} Get unique difficulties {%- endcomment -%}
-{% assign difficulties = all_quests | map: "difficulty" | compact | uniq | sort %}
+{% assign difficulties = all_quests | map: "difficulty" | compact | uniq | join: "|||" | split: "|||" | sort %}
 
-{%- comment -%} Get unique levels (coerce to string to avoid integer/string comparison in sort) {%- endcomment -%}
-{% assign levels_raw = all_quests | map: "level" | compact | uniq %}
-{% assign levels_joined = "" %}
-{% for lval in levels_raw %}
-  {% assign levels_joined = levels_joined | append: lval | append: "," %}
-{% endfor %}
-{% assign levels = levels_joined | split: "," | uniq | sort %}
+{%- comment -%} Get unique levels {%- endcomment -%}
+{% assign levels = all_quests | map: "level" | compact | uniq | join: "|||" | split: "|||" | sort %}
 
 {%- comment -%} Get unique primary technologies {%- endcomment -%}
-{% assign technologies = all_quests | map: "primary_technology" | compact | uniq | sort %}
+{% assign technologies = all_quests | map: "primary_technology" | compact | uniq | join: "|||" | split: "|||" | sort %}
 
 {%- comment -%} Get unique skill focuses {%- endcomment -%}
-{% assign skill_focuses = all_quests | map: "skill_focus" | compact | uniq | sort %}
+{% assign skill_focuses = all_quests | map: "skill_focus" | compact | uniq | join: "|||" | split: "|||" | sort %}
 
 <div class="quest-filters" id="quest-filters">
   <div class="filters-header">

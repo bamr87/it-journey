@@ -495,3 +495,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0111 (7) - API Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained]]
+**Related quests:** [[API Authentication: OAuth, JWT, and API Keys Implementation]] · [[API Documentation: OpenAPI Specification and Developer Experience]] · [[API Versioning: Managing API Evolution and Backwards Compatibility]] · [[Rate Limiting: API Traffic Control and Throttling Strategies]] · [[API Fundamentals: Building Web Services and HTTP APIs]] · [[Error Handling: API Response Patterns and HTTP Status Codes]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

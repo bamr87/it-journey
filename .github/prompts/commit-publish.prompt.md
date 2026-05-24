@@ -29,7 +29,7 @@ Match tests to change types:
 
 | Changed | Run |
 |---|---|
-| `pages/_quests/**` | `python3 test/quest-validator/quest_validator.py -d pages/_quests/` |
+| `pages/_quests/**` | `make quest-audit` (rebuilds network + validates content and dependencies) |
 | `pages/_posts/**` or `pages/_docs/**` | `python3 scripts/validation/frontmatter-validator.py <paths>` |
 | any `*.md` | `python3 scripts/link-checker.py --scope website --timeout 30` |
 | `scripts/**`, `_includes/**`, `_layouts/**`, `_config*.yml` | `docker-compose exec -T jekyll bundle exec jekyll build` |

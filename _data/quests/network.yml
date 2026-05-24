@@ -1,34 +1,84 @@
-generated: '2026-05-22T03:51:21.315394+00:00'
+generated: '2026-05-24T01:22:26.404720+00:00'
 stats:
-  total: 150
+  total: 180
   by_level:
-    '0000': 20
+    '0000': 30
     '0001': 18
     '0010': 14
     '0011': 8
     '0100': 11
     '0101': 11
     '0110': 8
-    '0111': 7
-    '1000': 3
-    '1001': 5
-    '1010': 6
-    '1011': 6
-    '1100': 8
+    '0111': 9
+    '1000': 6
+    '1001': 8
+    '1010': 10
+    '1011': 10
+    '1100': 12
     '1101': 8
     '1110': 9
     '1111': 8
   by_type:
     documentation: 1
     epic_quest: 1
-    main_quest: 130
-    side_quest: 18
+    main_quest: 150
+    side_quest: 28
 nodes:
 - id: /quests/0000/side-quests/bash-run/
   title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
   level: '0000'
   type: side_quest
   difficulty: 🟡 Medium
+- id: /quests/0000/side-quests/agent-mode/
+  title: 'Bashcrawl Agent Mode: AI Automation and Contribution'
+  level: '0000'
+  type: side_quest
+  difficulty: 🔴 Hard
+- id: /quests/0000/side-quests/armoury/
+  title: 'Bashcrawl Armoury: File Permissions and Script Execution'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟡 Medium
+- id: /quests/0000/side-quests/cellar/
+  title: 'Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟢 Easy
+- id: /quests/0000/side-quests/chamber/
+  title: 'Bashcrawl Chamber: Bash Arithmetic and the Statue Boss'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟡 Medium
+- id: /quests/0000/side-quests/entrance/
+  title: 'Bashcrawl Entrance: Your First Terminal Commands'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟢 Easy
+- id: /quests/0000/side-quests/hidden-chapel/
+  title: 'Bashcrawl Hidden Chapel: Hidden Files and Man Pages'
+  level: '0000'
+  type: side_quest
+  difficulty: 🔴 Hard
+- id: /quests/0000/side-quests/rift/
+  title: 'Bashcrawl Rift: Pipes, Redirection, and the Final Boss'
+  level: '0000'
+  type: side_quest
+  difficulty: 🔴 Hard
+- id: /quests/0000/side-quests/scrap/
+  title: 'Bashcrawl Scrap Heap: Symbolic Links and Portal Creation'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟡 Medium
+- id: /quests/0000/side-quests/vault/
+  title: 'Bashcrawl Vault: Environment Variables and the Goblet Puzzle'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟡 Medium
+- id: /quests/0000/side-quests/workshop/
+  title: 'Bashcrawl Workshop: File Management Fundamentals'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟢 Easy
 - id: /quests/0000/begin-your-it-journey/
   title: Begin your IT Journey
   level: '0000'
@@ -245,7 +295,7 @@ nodes:
   level: '0010'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0010/side-quests/terminal-artificer/
+- id: /quests/0010/side-quests/terminal-artificer-frontend-building/
   title: 'Terminal Artificer: Forging the Glass Interface'
   level: '0010'
   type: side_quest
@@ -441,6 +491,16 @@ nodes:
   level: '0110'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/0111/agentic-plan-vs-action-boundaries/
+  title: 'The Three Sigils: Plan, Reason, Act'
+  level: '0111'
+  type: main_quest
+  difficulty: 🟡 Medium
+- id: /quests/0111/agentic-sdlc-integration/
+  title: 'Initiation Rites: Embedding Agents in the SDLC'
+  level: '0111'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/0111/api-authentication/
   title: 'API Authentication: OAuth, JWT, and API Keys Implementation'
   level: '0111'
@@ -476,6 +536,21 @@ nodes:
   level: '0111'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/1000/agentic-mcp-server-mastery/
+  title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
+  level: '1000'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1000/agentic-observability-and-control/
+  title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
+  level: '1000'
+  type: main_quest
+  difficulty: 🟡 Medium
+- id: /quests/1000/agentic-tool-selection-and-permissions/
+  title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
+  level: '1000'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/1000/aws-essentials/
   title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
   level: '1000'
@@ -489,6 +564,21 @@ nodes:
 - id: /quests/1000/infrastructure-as-code/
   title: 'Infrastructure as Code: Terraform and CloudFormation Fundamentals'
   level: '1000'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1001/agentic-dev-environment-integration/
+  title: 'Bind the Agent to the Realm: Dev Environment Integration'
+  level: '1001'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1001/agentic-memory-strategies/
+  title: 'Vaults of Recollection: Agent Memory Strategies'
+  level: '1001'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1001/agentic-safe-execution-and-error-handling/
+  title: 'The Shield of Retries: Safe Execution and Error Handling'
+  level: '1001'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1001/k8s-config-secrets/
@@ -511,6 +601,26 @@ nodes:
   level: '1001'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/1010/agentic-failure-root-cause-analysis/
+  title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/agentic-state-continuity-cross-tools/
+  title: 'Crossing the Tool Planes: State Continuity Across Tools'
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/agentic-state-persistence-and-drift/
+  title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/agentic-success-criteria-and-signals/
+  title: 'The Oracle''s Rubric: Defining Agent Success Criteria and Signals'
+  level: '1010'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/1010/alerting-systems/
   title: 'Alerting Systems: PagerDuty Integration & Incident Management Guide'
   level: '1010'
@@ -539,6 +649,26 @@ nodes:
 - id: /quests/1010/prometheus-grafana/
   title: 'Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial'
   level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1011/agentic-behavior-tuning/
+  title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
+  level: '1011'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1011/agentic-multi-agent-failure-recovery/
+  title: 'When Familiars Fall: Multi-Agent Failure Recovery'
+  level: '1011'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1011/agentic-multi-agent-observability/
+  title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
+  level: '1011'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1011/agentic-multi-agent-orchestration-patterns/
+  title: 'The Council of Many: Multi-Agent Orchestration Patterns'
+  level: '1011'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1011/ai-feature-pipeline-architect/
@@ -571,6 +701,26 @@ nodes:
   level: '1011'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/1100/agentic-autonomy-levels-matrix/
+  title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
+  level: '1100'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1100/agentic-codex-capstone-exam-trial/
+  title: 'Trial of the Agentic Codex: The Grand Capstone'
+  level: '1100'
+  type: main_quest
+  difficulty: ⚔️ Epic
+- id: /quests/1100/agentic-guardrails-and-human-in-the-loop/
+  title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
+  level: '1100'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1100/agentic-multi-agent-lifecycle-management/
+  title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
+  level: '1100'
+  type: main_quest
+  difficulty: ⚔️ Epic
 - id: /quests/1100/apache-spark/
   title: 'Apache Spark Mastery: Big Data Processing with PySpark & Scala'
   level: '1100'
@@ -746,7 +896,7 @@ nodes:
   level: '0000'
   type: documentation
   difficulty: 🟢 Easy
-- id: /quests/epic-digital-portfolio-fortress/
+- id: /quests/codex/epic-digital-portfolio-fortress/
   title: 'The Digital Portfolio Fortress: Full-Stack Epic Construction'
   level: '1110'
   type: epic_quest
@@ -756,7 +906,7 @@ nodes:
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
-- id: /quests/oh-my-zsh-terminal-enchantment/
+- id: /quests/codex/oh-my-zsh-terminal-enchantment/
   title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
   level: '0010'
   type: side_quest
@@ -766,7 +916,7 @@ nodes:
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
-- id: /quests/0001/terminal-navigation-mastery/
+- id: /quests/codex/terminal-navigation-mastery/
   title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
   level: '0000'
   type: main_quest
@@ -786,6 +936,78 @@ edges:
 - source: /quests/0000/side-quests/bash-run/
   target: /quests/0000/terminal-fundamentals/
   kind: recommended
+- source: /quests/0000/side-quests/agent-mode/
+  target: /quests/0000/side-quests/rift/
+  kind: required
+- source: /quests/0000/side-quests/armoury/
+  target: /quests/0000/side-quests/cellar/
+  kind: required
+- source: /quests/0000/side-quests/armoury/
+  target: /quests/0000/side-quests/chamber/
+  kind: unlocks
+- source: /quests/0000/side-quests/cellar/
+  target: /quests/0000/side-quests/entrance/
+  kind: required
+- source: /quests/0000/side-quests/cellar/
+  target: /quests/0000/side-quests/armoury/
+  kind: unlocks
+- source: /quests/0000/side-quests/cellar/
+  target: /quests/0000/side-quests/hidden-chapel/
+  kind: unlocks
+- source: /quests/0000/side-quests/cellar/
+  target: /quests/0000/side-quests/vault/
+  kind: unlocks
+- source: /quests/0000/side-quests/cellar/
+  target: /quests/0000/side-quests/scrap/
+  kind: unlocks
+- source: /quests/0000/side-quests/chamber/
+  target: /quests/0000/side-quests/armoury/
+  kind: required
+- source: /quests/0000/side-quests/chamber/
+  target: /quests/0000/side-quests/rift/
+  kind: unlocks
+- source: /quests/0000/side-quests/entrance/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/side-quests/entrance/
+  target: /quests/0000/side-quests/workshop/
+  kind: unlocks
+- source: /quests/0000/side-quests/entrance/
+  target: /quests/0000/side-quests/cellar/
+  kind: unlocks
+- source: /quests/0000/side-quests/hidden-chapel/
+  target: /quests/0000/side-quests/cellar/
+  kind: required
+- source: /quests/0000/side-quests/hidden-chapel/
+  target: /quests/0000/side-quests/rift/
+  kind: unlocks
+- source: /quests/0000/side-quests/rift/
+  target: /quests/0000/side-quests/chamber/
+  kind: required
+- source: /quests/0000/side-quests/rift/
+  target: /quests/0000/side-quests/hidden-chapel/
+  kind: required
+- source: /quests/0000/side-quests/rift/
+  target: /quests/0000/side-quests/agent-mode/
+  kind: unlocks
+- source: /quests/0000/side-quests/scrap/
+  target: /quests/0000/side-quests/cellar/
+  kind: required
+- source: /quests/0000/side-quests/scrap/
+  target: /quests/0000/side-quests/rift/
+  kind: unlocks
+- source: /quests/0000/side-quests/vault/
+  target: /quests/0000/side-quests/cellar/
+  kind: required
+- source: /quests/0000/side-quests/vault/
+  target: /quests/0000/side-quests/rift/
+  kind: unlocks
+- source: /quests/0000/side-quests/workshop/
+  target: /quests/0000/side-quests/entrance/
+  kind: required
+- source: /quests/0000/side-quests/workshop/
+  target: /quests/0000/side-quests/cellar/
+  kind: unlocks
 - source: /quests/0000/begin-your-it-journey/
   target: /quests/0000/hello-noob/
   kind: recommended
@@ -862,7 +1084,7 @@ edges:
   target: /quests/0000/terminal-fundamentals/
   kind: unlocks
 - source: /quests/0000/linux-fundamentals/
-  target: /quests/0000/bash-run/
+  target: /quests/0000/side-quests/bash-run/
   kind: unlocks
 - source: /quests/0000/markdown-mastery/
   target: /quests/0000/terminal-fundamentals/
@@ -915,29 +1137,14 @@ edges:
 - source: /quests/0001/stack-attack/
   target: /quests/0000/terminal-fundamentals/
   kind: recommended
-- source: /quests/0001/stack-attack/
-  target: /quests/0001/docker-fundamentals/
-  kind: recommended
-- source: /quests/0001/stack-attack/
-  target: /quests/0010/django-api-design/
-  kind: unlocks
-- source: /quests/0001/stack-attack/
-  target: /quests/0010/react-enterprise-ui/
-  kind: unlocks
-- source: /quests/0001/stack-attack/
-  target: /quests/0010/celery-task-queues/
-  kind: unlocks
 - source: /quests/0010/oh-my-zsh-mastery/
-  target: /quests/0001/terminal-fundamentals/
+  target: /quests/0000/terminal-fundamentals/
   kind: required
 - source: /quests/0010/oh-my-zsh-mastery/
-  target: /quests/0010/nerd-font-enchantment/
+  target: /quests/0010/side-quests/nerd-font-enchantment/
   kind: recommended
 - source: /quests/0010/oh-my-zsh-mastery/
   target: /quests/0010/bash-scripting/
-  kind: unlocks
-- source: /quests/0010/oh-my-zsh-mastery/
-  target: /quests/0100/advanced-shell-scripting/
   kind: unlocks
 - source: /quests/0010/side-quests/contribution-calendar/
   target: /quests/0001/forge-your-character/
@@ -966,3 +1173,174 @@ edges:
 - source: /quests/0100/side-quests/profile-themes/
   target: /quests/0010/side-quests/contribution-calendar/
   kind: recommended
+- source: /quests/0111/agentic-plan-vs-action-boundaries/
+  target: /quests/0111/agentic-sdlc-integration/
+  kind: required
+- source: /quests/0111/agentic-plan-vs-action-boundaries/
+  target: /quests/1000/agentic-observability-and-control/
+  kind: unlocks
+- source: /quests/0111/agentic-sdlc-integration/
+  target: /quests/0111/rest-principles/
+  kind: recommended
+- source: /quests/0111/agentic-sdlc-integration/
+  target: /quests/0111/agentic-plan-vs-action-boundaries/
+  kind: unlocks
+- source: /quests/1000/agentic-mcp-server-mastery/
+  target: /quests/1000/agentic-tool-selection-and-permissions/
+  kind: required
+- source: /quests/1000/agentic-mcp-server-mastery/
+  target: /quests/1001/agentic-dev-environment-integration/
+  kind: unlocks
+- source: /quests/1000/agentic-observability-and-control/
+  target: /quests/0111/agentic-plan-vs-action-boundaries/
+  kind: required
+- source: /quests/1000/agentic-observability-and-control/
+  target: /quests/1000/agentic-tool-selection-and-permissions/
+  kind: unlocks
+- source: /quests/1000/agentic-tool-selection-and-permissions/
+  target: /quests/1000/agentic-observability-and-control/
+  kind: required
+- source: /quests/1000/agentic-tool-selection-and-permissions/
+  target: /quests/1000/agentic-mcp-server-mastery/
+  kind: unlocks
+- source: /quests/1001/agentic-dev-environment-integration/
+  target: /quests/1000/agentic-mcp-server-mastery/
+  kind: required
+- source: /quests/1001/agentic-dev-environment-integration/
+  target: /quests/1001/agentic-safe-execution-and-error-handling/
+  kind: unlocks
+- source: /quests/1001/agentic-memory-strategies/
+  target: /quests/1001/agentic-safe-execution-and-error-handling/
+  kind: required
+- source: /quests/1001/agentic-memory-strategies/
+  target: /quests/1010/agentic-state-persistence-and-drift/
+  kind: unlocks
+- source: /quests/1001/agentic-safe-execution-and-error-handling/
+  target: /quests/1001/agentic-dev-environment-integration/
+  kind: required
+- source: /quests/1001/agentic-safe-execution-and-error-handling/
+  target: /quests/1001/agentic-memory-strategies/
+  kind: unlocks
+- source: /quests/1010/agentic-failure-root-cause-analysis/
+  target: /quests/1010/agentic-success-criteria-and-signals/
+  kind: required
+- source: /quests/1010/agentic-failure-root-cause-analysis/
+  target: /quests/1011/agentic-behavior-tuning/
+  kind: unlocks
+- source: /quests/1010/agentic-state-continuity-cross-tools/
+  target: /quests/1010/agentic-state-persistence-and-drift/
+  kind: required
+- source: /quests/1010/agentic-state-continuity-cross-tools/
+  target: /quests/1010/agentic-success-criteria-and-signals/
+  kind: unlocks
+- source: /quests/1010/agentic-state-persistence-and-drift/
+  target: /quests/1001/agentic-memory-strategies/
+  kind: required
+- source: /quests/1010/agentic-state-persistence-and-drift/
+  target: /quests/1010/agentic-state-continuity-cross-tools/
+  kind: unlocks
+- source: /quests/1010/agentic-success-criteria-and-signals/
+  target: /quests/1010/agentic-state-continuity-cross-tools/
+  kind: required
+- source: /quests/1010/agentic-success-criteria-and-signals/
+  target: /quests/1010/agentic-failure-root-cause-analysis/
+  kind: unlocks
+- source: /quests/1011/agentic-behavior-tuning/
+  target: /quests/1010/agentic-failure-root-cause-analysis/
+  kind: required
+- source: /quests/1011/agentic-behavior-tuning/
+  target: /quests/1011/agentic-multi-agent-orchestration-patterns/
+  kind: unlocks
+- source: /quests/1011/agentic-multi-agent-failure-recovery/
+  target: /quests/1011/agentic-multi-agent-observability/
+  kind: required
+- source: /quests/1011/agentic-multi-agent-failure-recovery/
+  target: /quests/1100/agentic-multi-agent-lifecycle-management/
+  kind: unlocks
+- source: /quests/1011/agentic-multi-agent-observability/
+  target: /quests/1011/agentic-multi-agent-orchestration-patterns/
+  kind: required
+- source: /quests/1011/agentic-multi-agent-observability/
+  target: /quests/1011/agentic-multi-agent-failure-recovery/
+  kind: unlocks
+- source: /quests/1011/agentic-multi-agent-orchestration-patterns/
+  target: /quests/1011/agentic-behavior-tuning/
+  kind: required
+- source: /quests/1011/agentic-multi-agent-orchestration-patterns/
+  target: /quests/1011/agentic-multi-agent-observability/
+  kind: unlocks
+- source: /quests/1100/agentic-autonomy-levels-matrix/
+  target: /quests/1100/agentic-multi-agent-lifecycle-management/
+  kind: required
+- source: /quests/1100/agentic-autonomy-levels-matrix/
+  target: /quests/1100/agentic-guardrails-and-human-in-the-loop/
+  kind: unlocks
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/0111/agentic-sdlc-integration/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/0111/agentic-plan-vs-action-boundaries/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1000/agentic-observability-and-control/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1000/agentic-tool-selection-and-permissions/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1000/agentic-mcp-server-mastery/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1001/agentic-dev-environment-integration/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1001/agentic-safe-execution-and-error-handling/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1001/agentic-memory-strategies/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1010/agentic-state-persistence-and-drift/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1010/agentic-state-continuity-cross-tools/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1010/agentic-success-criteria-and-signals/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1010/agentic-failure-root-cause-analysis/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1011/agentic-behavior-tuning/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1011/agentic-multi-agent-orchestration-patterns/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1011/agentic-multi-agent-observability/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1011/agentic-multi-agent-failure-recovery/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1100/agentic-multi-agent-lifecycle-management/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1100/agentic-autonomy-levels-matrix/
+  kind: required
+- source: /quests/1100/agentic-codex-capstone-exam-trial/
+  target: /quests/1100/agentic-guardrails-and-human-in-the-loop/
+  kind: required
+- source: /quests/1100/agentic-guardrails-and-human-in-the-loop/
+  target: /quests/1100/agentic-autonomy-levels-matrix/
+  kind: required
+- source: /quests/1100/agentic-guardrails-and-human-in-the-loop/
+  target: /quests/1100/agentic-codex-capstone-exam-trial/
+  kind: unlocks
+- source: /quests/1100/agentic-multi-agent-lifecycle-management/
+  target: /quests/1011/agentic-multi-agent-failure-recovery/
+  kind: required
+- source: /quests/1100/agentic-multi-agent-lifecycle-management/
+  target: /quests/1100/agentic-autonomy-levels-matrix/
+  kind: unlocks

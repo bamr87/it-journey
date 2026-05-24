@@ -13,7 +13,7 @@ lastmod: 2024-05-28 04:24:59.730000+00:00
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: 0100
+primary_technology: 64
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
 skill_focus:
@@ -25,12 +25,12 @@ categories:
 - Quests
 - DevOps
 tags:
-- "0100"
+- '0100'
 - docker
 - jekyll
 - frontend
 keywords:
-- "0100"
+- '0100'
 - docker
 - jekyll
 - frontend
@@ -40,7 +40,19 @@ attachments: ''
 sub-title: 'Level 001: Create Jekyll Site with Docker'
 slug: null
 type: default
+redirect_from:
+- /quests/0100/frontend-docker-level-001/
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 You've successfully set up your Docker environment, and now you're ready to delve deeper into the mystical realms of Level 001. This level involves creating your Jekyll site with the power of Docker, setting the stage for our enchanted journey ahead.
 
 ### Level 001: Create Jekyll Site with Docker
@@ -128,3 +140,12 @@ You've successfully set up your Docker environment, and now you're ready to delv
 In Level 001, you've learned how to set up a project directory, create a Dockerfile and a Docker Compose file, and generate a new Jekyll site using Docker. Each step builds the foundation for running your Jekyll site in a consistent, isolated environment, ensuring that it behaves the same way regardless of where it's deployed.
 
 You've now created the groundwork for your magical project, with Docker as your trusty companion. Are you ready to proceed to the next level, where we'll add Bootstrap 5 and start customizing your site? Or do you have any questions about Level 001? 🌟🏞️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

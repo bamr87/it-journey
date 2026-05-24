@@ -38,7 +38,7 @@ categories:
 - Data-Engineering
 - Intermediate
 tags:
-- "1100"
+- '1100'
 - sec-edgar
 - api
 - data-engineering
@@ -46,7 +46,7 @@ tags:
 - python
 - node
 keywords:
-- "1100"
+- '1100'
 - sec-edgar
 - api
 - data-engineering
@@ -66,6 +66,8 @@ related_quests:
 - 2025-04-18-revolutionizing-work-with-ai-automation.md
 - frontend/frontend-docker.md
 - lvl_001/personal-site.md
+redirect_from:
+- /quests/1100/sec-edgar/
 ---
 *In the twilight of the Digital Realm, a stern monarch sits upon a throne of filings—King EDGAR,
 custodian of truths encoded in structured scrolls and cryptic XBRL sigils. His castle is vast, his
@@ -469,4 +471,12 @@ graph TD
 - Team of AI soldiers metaphor and EDGAR liberation – Done
 - Multi-platform paths, progressive chapters, challenges, rewards – Done
 - Links to official resources – Done
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

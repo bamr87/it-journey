@@ -1,11 +1,12 @@
 ---
 title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
+layout: default
 description: Master terminal navigation and essential command-line operations to unlock
   developer productivity and system control powers
 date: 2025-10-04 15:25:33+00:00
 preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
-- "0001"
+- '0001'
 - terminal
 - command-line
 - navigation
@@ -21,14 +22,16 @@ excerpt: Transform from terminal novice to command-line champion through hands-o
 snippet: Where digital adventures begin - master the gateway to all development power
 author: Quest Master IT-Journey Team
 keywords:
-- "0001"
+- '0001'
 - terminal
 - command-line
 - navigation
 - file-operations
 - development-fundamentals
 lastmod: 2025-10-03 12:00:00+00:00
-permalink: /quests/0001/terminal-navigation-mastery/
+permalink: /quests/codex/terminal-navigation-mastery/
+redirect_from:
+- /quests/0001/terminal-navigation-mastery/
 attachments: ''
 comments: true
 difficulty: 🟢 Easy
@@ -431,3 +434,12 @@ This foundational quest connects to multiple learning paths:
 
 **Achievement Unlocked: Terminal Navigation Master** 🏆  
 *Continue your adventure with related side quests or advance to the next main quest in your chosen learning path!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

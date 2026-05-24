@@ -196,3 +196,16 @@ Remember, these roles often intersect and overlap, and it's common to switch rol
 - [Bureau of Labor Statistics — Computer and IT Occupations](https://www.bls.gov/ooh/computer-and-information-technology/)
 - [GitHub — Explore Open Source Projects](https://github.com/explore)
 - [Stack Overflow Developer Survey](https://survey.stackoverflow.co/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Begin your IT Journey]]
+**Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]]
+**Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]]
+**Parallel quests:** [[IT Fundamentals]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

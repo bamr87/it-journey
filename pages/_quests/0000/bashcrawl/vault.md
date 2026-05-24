@@ -236,3 +236,15 @@ Continue your terminal adventure with these resources:
 ---
 
 *The ghost dissolves. Variables mastered. The vault yields its secrets.* 🔒
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
+**Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
+**Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

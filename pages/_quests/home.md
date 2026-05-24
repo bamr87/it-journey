@@ -4,6 +4,7 @@ author: IT-Journey Team
 description: Your central command hub for tracking progress through the IT mastery quest system. Navigate your learning journey and monitor achievements.
 preview: /images/previews/overworld-master-quest-map.png
 permalink: /quests/home/
+layout: quest-hub
 categories:
     - home
     - quest-map
@@ -32,7 +33,7 @@ keywords:
         - learning tracker
 ---
 
-This is your central hub for the IT-Journey quest system — a gamified learning framework with 144 quests organized across 16 binary levels (0000–1111). Pick a starting realm, choose a character class, and work through progressively harder challenges to build real IT skills.
+This is your central hub for the IT-Journey quest system — a gamified learning framework with 180+ quests organized across 16 binary levels (0000–1111). Pick a starting realm, choose a character class, and work through progressively harder challenges to build real IT skills.
 
 > *Behold, brave adventurer! This is your personal overworld map — the mystical realm where all paths converge and all journeys begin. Track your progress, plan your next adventures, and survey the vast landscape of IT mastery that awaits.*
 

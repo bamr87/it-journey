@@ -497,3 +497,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1010 - Automation & Testing]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
+**Related quests:** [[Link to the Future: Automated Hyperlink Guardian Quest]] · [[ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis]] · [[Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial]] · [[Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide]] · [[Alerting Systems: PagerDuty Integration & Incident Management Guide]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,8 +1,11 @@
 ---
 title: 'Phase 4 Complete: Expert Tier Quests Generated'
+layout: default
 preview: /images/previews/phase-4-complete-expert-tier-quests-generated.png
-permalink: /quests/phase4-complete/
-lastmod: &id001 2025-11-30 05:46:59.363000+00:00
+permalink: /quests/docs/phase4-complete/
+redirect_from:
+- /quests/phase4-complete/
+lastmod: 2025-11-30 05:46:59.363000+00:00
 keywords:
 - phase
 - '4'
@@ -11,7 +14,7 @@ keywords:
 - tier
 - quests
 description: 'Reference: Phase 4 Complete: Expert Tier Quests Generated.'
-date: 2025-11-29T22:51:57.000Z
+date: 2025-11-29 22:51:57+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes

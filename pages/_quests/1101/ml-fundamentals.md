@@ -501,3 +501,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1101: Machine Learning & AI]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Software Design Patterns: Gang of Four and Modern Patterns]]
+**Related quests:** [[Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation]] · [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]] · [[Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide]] · [[Natural Language Processing: Text Analysis, Transformers & LLMs with Python]] · [[Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch]] · [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] · [[Computer Vision Mastery: Image Classification, Object Detection & Segmentation]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,0 +1,86 @@
+{%- comment -%}
+  quest-prerequisites.html — Prerequisites panel.
+
+  Renders:
+    1. Required quests (errors out a "lock" badge — JS upgrades to checkmark
+       when the dependency is marked complete via assets/js/quest-progress.js).
+    2. Recommended quests.
+    3. Knowledge requirements (free-form list from page.prerequisites).
+    4. System requirements when present.
+
+  Inline `# planned quest` markers are stripped from displayed URLs.
+{%- endcomment -%}
+
+{%- assign p = include.page | default: page -%}
+{%- assign deps = p.quest_dependencies -%}
+{%- assign prereq = p.prerequisites -%}
+
+{%- if deps or prereq -%}
+<section class="quest-prerequisites" aria-labelledby="quest-prerequisites-heading">
+  <h2 id="quest-prerequisites-heading" class="quest-section-heading">🗝️ Prerequisites</h2>
+
+  {%- if deps.required_quests and deps.required_quests.size > 0 -%}
+    <div class="quest-prereq-group quest-prereq-group--required">
+      <h3>Required quests</h3>
+      <ul class="quest-prereq-list" data-quest-prereq="required">
+        {%- for raw in deps.required_quests -%}
+          {%- assign url = raw | split: '#' | first | strip -%}
+          {%- assign is_planned = false -%}
+          {%- if raw contains '# planned' -%}{%- assign is_planned = true -%}{%- endif -%}
+          {%- assign match = site.quests | where: 'permalink', url | first -%}
+          <li class="quest-prereq-item" data-quest-url="{{ url }}">
+            <span class="quest-prereq-status" aria-hidden="true">🔒</span>
+            {%- if match -%}
+              <a href="{{ url | relative_url }}">{{ match.title }}</a>
+            {%- else -%}
+              <a href="{{ url | relative_url }}">{{ url }}</a>
+            {%- endif -%}
+            {%- if is_planned -%}<span class="quest-prereq-planned" title="Planned quest">📝 planned</span>{%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if deps.recommended_quests and deps.recommended_quests.size > 0 -%}
+    <div class="quest-prereq-group quest-prereq-group--recommended">
+      <h3>Recommended quests</h3>
+      <ul class="quest-prereq-list" data-quest-prereq="recommended">
+        {%- for raw in deps.recommended_quests -%}
+          {%- assign url = raw | split: '#' | first | strip -%}
+          {%- assign is_planned = false -%}
+          {%- if raw contains '# planned' -%}{%- assign is_planned = true -%}{%- endif -%}
+          {%- assign match = site.quests | where: 'permalink', url | first -%}
+          <li class="quest-prereq-item" data-quest-url="{{ url }}">
+            <span class="quest-prereq-status" aria-hidden="true">✨</span>
+            {%- if match -%}
+              <a href="{{ url | relative_url }}">{{ match.title }}</a>
+            {%- else -%}
+              <a href="{{ url | relative_url }}">{{ url }}</a>
+            {%- endif -%}
+            {%- if is_planned -%}<span class="quest-prereq-planned">📝 planned</span>{%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if prereq.knowledge_requirements and prereq.knowledge_requirements.size > 0 -%}
+    <div class="quest-prereq-group quest-prereq-group--knowledge">
+      <h3>Knowledge requirements</h3>
+      <ul>
+        {%- for item in prereq.knowledge_requirements -%}<li>{{ item }}</li>{%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if prereq.system_requirements and prereq.system_requirements.size > 0 -%}
+    <div class="quest-prereq-group quest-prereq-group--system">
+      <h3>System requirements</h3>
+      <ul>
+        {%- for item in prereq.system_requirements -%}<li>{{ item }}</li>{%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</section>
+{%- endif -%}

@@ -291,3 +291,12 @@ echo "🎩 To start working on your project, use:"
 echo "    cd $PROJECT_NAME && source $VENV_NAME/bin/activate && code ."
 echo "🛠️ Happy coding, sorcerer! 🧙‍♂️"
 ```
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

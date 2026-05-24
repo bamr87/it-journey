@@ -1,11 +1,12 @@
 ---
 title: 'The Digital Portfolio Fortress: Full-Stack Epic Construction'
+layout: default
 description: Build a complete portfolio website from design to deployment, integrating
   frontend, backend, database, and DevOps practices in one comprehensive project
-date: 2025-10-04T15:25:33.000Z
+date: 2025-10-04 15:25:33+00:00
 preview: /images/previews/the-digital-portfolio-fortress-full-stack-epic-con.png
 tags:
-- "1111"
+- '1111'
 - full-stack-development
 - portfolio-project
 - web-development
@@ -23,7 +24,7 @@ excerpt: Create a professional portfolio website that showcases your IT journey 
 snippet: From concept to production - build the digital castle that tells your story
 author: Quest Master IT-Journey Team
 keywords:
-- "1111"
+- '1111'
 - full-stack-development
 - portfolio-project
 - web-development
@@ -31,7 +32,9 @@ keywords:
 - project-management
 - professional-development
 lastmod: 2025-10-03 13:00:00+00:00
-permalink: /quests/epic-digital-portfolio-fortress/
+permalink: /quests/codex/epic-digital-portfolio-fortress/
+redirect_from:
+- /quests/epic-digital-portfolio-fortress/
 attachments: ''
 comments: true
 difficulty: ⚔️ Epic
@@ -327,3 +330,12 @@ timeline
 
 **Epic Quest Mastered: Digital Portfolio Fortress** 👑🏰  
 *Your legend begins here - continue to even greater adventures!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1110 - Quality Assurance]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -60,10 +60,12 @@ class QuestValidator:
     #   codex      : /quests/codex/slug/
     #   template   : /quests/templates/slug/
     PERMALINK_PATTERNS = {
-        'main_quest': re.compile(r'^/quests/[01]{4}/[a-z0-9][a-z0-9-]*/$'),
-        'side_quest': re.compile(r'^/quests/[01]{4}/side-quests/[a-z0-9][a-z0-9-]*/$'),
-        'codex':      re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
-        'template':   re.compile(r'^/quests/templates/[a-z0-9][a-z0-9-]*/$'),
+        'main_quest':  re.compile(r'^/quests/[01]{4}/[a-z0-9][a-z0-9-]*/$'),
+        'side_quest':  re.compile(r'^/quests/[01]{4}/side-quests/[a-z0-9][a-z0-9-]*/$'),
+        'bonus_quest': re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
+        'epic_quest':  re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
+        'codex':       re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
+        'template':    re.compile(r'^/quests/templates/[a-z0-9][a-z0-9-]*/$'),
     }
 
     # Generic canonical permalink regex (any valid quest path)
@@ -226,6 +228,16 @@ class QuestValidator:
             else:
                 result.score += 1
                 result.max_score += 1
+
+        # fmContentType must equal 'quest' for playable content. Authors who
+        # need a different content type should not run the quest validator on
+        # the file (the test/quest-validator pipeline already skips templates,
+        # docs, and codex examples).
+        if 'fmContentType' in fm and fm['fmContentType'] not in ('quest', None, ''):
+            result.errors.append(
+                f"fmContentType must equal 'quest' for quest content, got {fm['fmContentType']!r}"
+            )
+            result.passed = False
     
     def validate_frontmatter_hierarchy(self, fm: Dict, result: ValidationResult):
         """Validate enhanced quest hierarchy fields"""
@@ -316,10 +328,10 @@ class QuestValidator:
         if pattern:
             if not pattern.match(permalink):
                 if quest_type == 'main_quest':
-                    expected = f"/quests/level-{level or 'XXXX'}-<slug>/"
+                    expected = f"/quests/{level or 'XXXX'}/<slug>/"
                 elif quest_type == 'side_quest':
-                    expected = "/quests/side-quest-<slug>/"
-                elif quest_type == 'codex':
+                    expected = f"/quests/{level or 'XXXX'}/side-quests/<slug>/"
+                elif quest_type in ('bonus_quest', 'epic_quest', 'codex'):
                     expected = "/quests/codex/<slug>/"
                 else:
                     expected = f"canonical pattern for quest_type='{quest_type}'"
@@ -372,22 +384,34 @@ class QuestValidator:
             result.info.append(f"Directory level matches frontmatter level: {level}")
     
     def validate_content_structure(self, body: str, result: ValidationResult):
-        """Validate quest content structure"""
+        """Validate quest content structure.
+
+        ``## 🎯 Quest Objectives`` is the canonical section authors must
+        provide (per ``.github/instructions/quest.instructions.md``). It is
+        promoted to an error here so CI blocks merges that drop it.
+        """
         self.log_info("Validating content structure...")
-        
-        required_sections = [
-            (r'##\s+🎯\s+Quest Objectives', 'Quest Objectives section'),
-            (r'##\s+🗺️\s+Quest Prerequisites', 'Quest Prerequisites section (optional but recommended)'),
-            (r'##\s+🌍\s+Choose Your Adventure Platform', 'Platform-specific instructions (optional)'),
+
+        # Hard requirement — fails the quest if missing.
+        if re.search(r'##\s+🎯\s+Quest Objectives', body, re.IGNORECASE):
+            result.score += 3
+            result.info.append("Found: Quest Objectives section")
+        else:
+            result.errors.append("Missing required section: '## 🎯 Quest Objectives'")
+            result.passed = False
+        result.max_score += 3
+
+        # Recommended sections — emit warnings only.
+        recommended_sections = [
+            (r'##\s+🗺️\s+Quest Prerequisites', 'Quest Prerequisites section'),
+            (r'##\s+🌍\s+Choose Your Adventure Platform', 'Platform-specific instructions'),
         ]
-        
-        for pattern, description in required_sections:
+        for pattern, description in recommended_sections:
             if re.search(pattern, body, re.IGNORECASE):
                 result.score += 3
                 result.info.append(f"Found: {description}")
             else:
-                if 'optional' not in description.lower():
-                    result.warnings.append(f"Missing recommended section: {description}")
+                result.warnings.append(f"Missing recommended section: {description}")
             result.max_score += 3
     
     def validate_code_blocks(self, body: str, result: ValidationResult):

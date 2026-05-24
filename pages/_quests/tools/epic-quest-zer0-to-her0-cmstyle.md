@@ -91,3 +91,12 @@ Inspired by this tale? Here's a structured, high-level roadmap to transform from
 - Tools to Prioritize: VS Code (daily driver), GitHub (collaboration hub), Jekyll/Docker (building blocks), AI extensions (efficiency boosters).
 
 By following this path, you'll not only master tools but build advanced apps that solve real problems. The digital world awaits—grab your keyboard and start forking your future.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

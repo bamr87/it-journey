@@ -3,18 +3,18 @@
 # It mirrors the actual file path structure under /preview/
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  puts "Preview Generator: Hook triggered! [Updated]"
-  puts "Preview Generator: Jekyll environment = #{Jekyll.env}"
-  
+  config = site.config['preview_generator'] || {}
+  unless config['enabled']
+    next
+  end
+
   # Only run in development environment
   unless Jekyll.env == 'development'
-    puts "Preview Generator: Skipping (not development environment)"
     next
   end
 
   # Skip during incremental regenerations to avoid full rebuild overhead
   if site.config['incremental']
-    puts "Preview Generator: Skipping (incremental regeneration)"
     next
   end
   
@@ -34,21 +34,16 @@ Jekyll::Hooks.register :site, :post_write do |site|
   
   if Dir.exist?(pages_source)
     Dir.glob("#{pages_source}/**/*.md").each do |file_path|
-      puts "Debug: Found markdown file: #{file_path}"
-      
       # Get the relative path from the workspace root (this matches FrontMatter pathToken.relPath exactly)
       # pathToken.relPath is relative to the workspace root, so include "pages/" prefix
       relative_path = file_path.sub("#{site.source}/", "")
-      puts "Debug: Relative path (FrontMatter format): #{relative_path}"
       
       # Remove the .md extension for the directory structure
       preview_path_base = relative_path.gsub(/\.md$/, '')
-      puts "Debug: Preview path base: #{preview_path_base}"
       
       # Create the full preview directory path
       full_preview_dir = File.join(preview_dir, preview_path_base)
       FileUtils.mkdir_p(full_preview_dir)
-      puts "Debug: Created directory: #{full_preview_dir}"
       
       # Create index.html in the directory
       index_file = File.join(full_preview_dir, 'index.html')
@@ -91,7 +86,6 @@ Jekyll::Hooks.register :site, :post_write do |site|
       if jekyll_doc && jekyll_doc.output
         # Use Jekyll's processed output
         File.write(index_file, jekyll_doc.output)
-        puts "Generated preview (Jekyll processed): /preview/#{preview_path_base}/"
       else
         # Create a basic preview with file information
         file_name = File.basename(file_path, '.md')
@@ -149,7 +143,6 @@ Jekyll::Hooks.register :site, :post_write do |site|
         HTML
         
         File.write(index_file, preview_content)
-        puts "Generated preview (basic): /preview/#{preview_path_base}/"
       end
       
       total_generated += 1

@@ -204,3 +204,15 @@ Continue your terminal adventure with these resources:
 ---
 
 *Every master builder started with a single `mkdir`. The workshop is behind you.* 🔨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Bashcrawl Entrance: Your First Terminal Commands]]
+**Unlocks:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
+**Sequel quests:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

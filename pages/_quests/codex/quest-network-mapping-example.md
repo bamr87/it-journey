@@ -1,5 +1,6 @@
 ---
 title: 'Quest Network Mapping: Comprehensive Learning Path Visualization'
+layout: default
 description: Demonstration of the enhanced quest hierarchy system with complete mapping
   examples and mermaid diagrams
 preview: images/previews/quest-network-mapping-comprehensive-learning-path-.png
@@ -685,3 +686,12 @@ const networkIssues = questEngine.validateQuestNetwork();
 ---
 
 This comprehensive example demonstrates how the enhanced quest hierarchy system creates a sophisticated, interconnected learning ecosystem that guides learners through structured progression while maintaining flexibility for different learning styles and goals. The combination of clear quest types, dependency mapping, and visual network diagrams transforms the IT-Journey platform into a truly gamified educational adventure.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

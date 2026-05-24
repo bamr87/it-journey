@@ -1,11 +1,12 @@
 ---
 title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
+layout: default
 description: Transform your terminal into a powerful, visually enhanced development
   environment with Oh-My-Zsh themes and plugins
 date: 2025-10-04 15:25:33+00:00
 preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
-- "0010"
+- '0010'
 - terminal-enhancement
 - oh-my-zsh
 - shell-customization
@@ -22,7 +23,7 @@ excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved pro
 snippet: Transform your terminal from tool to weapon with Oh-My-Zsh magic
 author: Quest Master IT-Journey Team
 keywords:
-- "0010"
+- '0010'
 - terminal-enhancement
 - oh-my-zsh
 - shell-customization
@@ -30,7 +31,9 @@ keywords:
 - themes
 - plugins
 lastmod: 2025-10-03 12:30:00+00:00
-permalink: /quests/oh-my-zsh-terminal-enchantment/
+permalink: /quests/codex/oh-my-zsh-terminal-enchantment/
+redirect_from:
+- /quests/oh-my-zsh-terminal-enchantment/
 attachments: ''
 comments: true
 difficulty: 🟡 Medium
@@ -273,3 +276,12 @@ Success in this side quest unlocks:
 
 **Side Quest Completed: Oh-My-Zsh Terminal Enchantment** ⚔️✨  
 *Your enhanced terminal powers await your next adventure!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

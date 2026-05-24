@@ -566,3 +566,12 @@ Your newfound AI orchestration powers open several exciting paths:
 *May your pipelines flow smoothly, your AI agents collaborate harmoniously, and your features deploy flawlessly! You've mastered the art of AI-orchestrated development - now go forth and build the future of software engineering!* ⚔️✨🤖
 
 **Ready for your next epic adventure?** Check the [Quest Map](/quests/) for advanced AI and DevOps challenges, or dive into specialized tracks like MLOps, Cloud Architecture, or AI Safety!
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

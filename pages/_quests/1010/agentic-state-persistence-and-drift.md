@@ -1,9 +1,11 @@
 ---
-title: "Anchoring the Drifting Agent: State Persistence and Drift Prevention"
-description: "Detect, measure, and prevent context drift in long-running GitHub Copilot agent sessions — implement state checkpointing, drift detection signals, and recovery procedures."
-date: 2026-05-17T00:00:00.000Z
+title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
+description: Detect, measure, and prevent context drift in long-running GitHub Copilot
+  agent sessions — implement state checkpointing, drift detection signals, and recovery
+  procedures.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-state-persistence-and-drift.png
-level: "1010"
+level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,83 +13,86 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - state-management
-  - context-drift
-  - checkpointing
+- agentic-ai
+- state-management
+- context-drift
+- checkpointing
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1010 Quest 1/4 — Domain 3: Context & Memory Management"
-excerpt: Context drift is the quiet enemy. An agent starts on the right path, but over a long session its focus wanders, its task understanding shifts. Learn to anchor agents to their original intent.
+sub_title: 'Level 1010 Quest 1/4 — Domain 3: Context & Memory Management'
+excerpt: Context drift is the quiet enemy. An agent starts on the right path, but
+  over a long session its focus wanders, its task understanding shifts. Learn to anchor
+  agents to their original intent.
 author: IT-Journey Team
 tags:
-  - "1010"
-  - agentic-ai
-  - context-drift
-  - state-persistence
-  - gh-600
-  - main_quest
-  - hands-on
+- '1010'
+- agentic-ai
+- context-drift
+- state-persistence
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - context drift
-  - state persistence
-  - agent checkpointing
-  - session recovery
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-state-persistence-and-drift/
+- gh-600
+- context drift
+- state persistence
+- agent checkpointing
+- session recovery
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1010/agentic-state-persistence-and-drift/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-memory-strategies/
+  - /quests/1001/agentic-memory-strategies/
   unlocks_quests:
-    - /quests/gh-600/agentic-state-continuity-cross-tools/
+  - /quests/1010/agentic-state-continuity-cross-tools/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-state-continuity-cross-tools/
+  - /quests/1010/agentic-state-continuity-cross-tools/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
+  - 🤖 AI Engineer
   skill_trees:
-    - Agentic AI
-    - Context Management
+  - Agentic AI
+  - Context Management
 rewards:
   badges:
-    - ⚓ Anchor Master
+  - ⚓ Anchor Master
   skills_unlocked:
-    - 🔍 Drift Detection
-    - 📍 State Checkpointing
+  - 🔍 Drift Detection
+  - 📍 State Checkpointing
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q8 (Memory Strategies)
-    - Understanding of LLM context windows
+  - Completed Q8 (Memory Strategies)
+  - Understanding of LLM context windows
   system_requirements:
-    - GitHub account with Actions and Artifacts enabled
+  - GitHub account with Actions and Artifacts enabled
 validation_criteria:
   completion_requirements:
-    - State checkpoint implemented at defined intervals
-    - Drift detection signal configured and tested
-    - Recovery procedure documented and tested
+  - State checkpoint implemented at defined intervals
+  - Drift detection signal configured and tested
+  - Recovery procedure documented and tested
   skill_demonstrations:
-    - Can identify signs of context drift in an agent run
-    - Can implement a checkpoint + recovery workflow
+  - Can identify signs of context drift in an agent run
+  - Can implement a checkpoint + recovery workflow
 quest_mapping:
-  coordinates: "[3, 2]"
+  coordinates: '[3, 2]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Tide Fields
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-state-persistence-and-drift/
 ---
-
 *The Tide Fields south of the Citadel are treacherous — the currents shift without warning, and many agents sent to cross them have returned to shore hundreds of leagues from their intended destination. They set off correctly, but drift, session by session, until they no longer remember the original shore.*
 
 ## 🗺️ Quest Network Position
@@ -314,4 +319,17 @@ python3 scripts/validate_quest.py --quest q9
 | ⚓ Anchor Master Badge | Earned on completion |
 | 🔍 Drift Detection | Skill unlocked |
 | 100 XP | Added to Level 1010 total |
-| Unlocks | [Q10: Crossing the Tool Planes](/quests/gh-600/agentic-state-continuity-cross-tools/) |
+| Unlocks | [Q10: Crossing the Tool Planes](/quests/1010/agentic-state-continuity-cross-tools/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1010 - Automation & Testing]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[Vaults of Recollection: Agent Memory Strategies]]
+**Unlocks:** [[Crossing the Tool Planes: State Continuity Across Tools]]
+**Sequel quests:** [[Crossing the Tool Planes: State Continuity Across Tools]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

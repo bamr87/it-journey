@@ -12,7 +12,7 @@ keywords: &id001
 - development-setup
 - package-management
 - init-world
-- 001
+- 1
 date: 2020-08-17 15:28:44+00:00
 level: '0000'
 quest_type: main_quest
@@ -102,6 +102,8 @@ skill_focus:
 learning_style: hands-on
 fmContentType: quest
 draft: false
+redirect_from:
+- /quests/0000/hello-win/
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 
@@ -494,3 +496,16 @@ With your powerful Windows development environment, you're ready to:
 *Your Windows development fortress is now complete! You've mastered the art of blending Microsoft's innovation with open-source power. Continue your journey with confidence, knowing you have one of the most versatile and powerful development environments available.*
 
 **Ready to build something amazing? Your enhanced Windows environment awaits your creativity!** ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]]
+**Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]]
+**Parallel quests:** [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

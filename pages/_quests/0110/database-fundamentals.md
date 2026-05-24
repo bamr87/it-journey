@@ -496,3 +496,13 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Related quests:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Database Security: Access Control and Data Encryption]] · [[Data Modeling: Schema Design and Database Relationships]] · [[Query Optimization: Performance Tuning for Fast Database Queries]] · [[Backup and Recovery: Data Protection Strategies for Databases]] · [[Database Migrations: Schema Evolution and Version Control]] · [[Connection Pooling: Efficient Database Resource Management]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

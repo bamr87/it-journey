@@ -1,9 +1,11 @@
 ---
-title: "The MCP Conclave: Mastering Model Context Protocol Servers"
-description: "Configure and operate Model Context Protocol (MCP) servers for GitHub Copilot agents — connect agents to external tools, data sources, and APIs using the MCP standard while maintaining security and observability."
-date: 2026-05-17T00:00:00.000Z
+title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
+description: Configure and operate Model Context Protocol (MCP) servers for GitHub
+  Copilot agents — connect agents to external tools, data sources, and APIs using
+  the MCP standard while maintaining security and observability.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-mcp-server-mastery.png
-level: "1000"
+level: '1000'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,85 +13,88 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - mcp
-  - agent-tools
-  - external-integrations
+- agentic-ai
+- mcp
+- agent-tools
+- external-integrations
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1000 Quest 3/4 — Domain 2: Tool Use & Environment Interaction"
-excerpt: The MCP Conclave holds the contracts by which agents speak to the world beyond the repository. Master their protocols and your agents gain access to every system in the realm.
+sub_title: 'Level 1000 Quest 3/4 — Domain 2: Tool Use & Environment Interaction'
+excerpt: The MCP Conclave holds the contracts by which agents speak to the world beyond
+  the repository. Master their protocols and your agents gain access to every system
+  in the realm.
 author: IT-Journey Team
 tags:
-  - "1000"
-  - agentic-ai
-  - mcp
-  - github-copilot
-  - gh-600
-  - main_quest
-  - hands-on
+- '1000'
+- agentic-ai
+- mcp
+- github-copilot
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - mcp server
-  - model context protocol
-  - agent tools
-  - external api
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-mcp-server-mastery/
+- gh-600
+- mcp server
+- model context protocol
+- agent tools
+- external api
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1000/agentic-mcp-server-mastery/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-tool-selection-and-permissions/
+  - /quests/1000/agentic-tool-selection-and-permissions/
   unlocks_quests:
-    - /quests/gh-600/agentic-dev-environment-integration/
+  - /quests/1001/agentic-dev-environment-integration/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-dev-environment-integration/
+  - /quests/1001/agentic-dev-environment-integration/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🔧 Integration Architect
+  - 🤖 AI Engineer
+  - 🔧 Integration Architect
   skill_trees:
-    - Agentic AI
-    - MCP
+  - Agentic AI
+  - MCP
 rewards:
   badges:
-    - 🌐 MCP Initiate
+  - 🌐 MCP Initiate
   skills_unlocked:
-    - 🔌 MCP Server Configuration
+  - 🔌 MCP Server Configuration
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q4 (Tool Selection & Permissions)
-    - Basic JSON and REST API understanding
-    - GitHub Actions fundamentals
+  - Completed Q4 (Tool Selection & Permissions)
+  - Basic JSON and REST API understanding
+  - GitHub Actions fundamentals
   system_requirements:
-    - GitHub account with Copilot access (includes MCP support where available)
-    - Node.js 18+ for running MCP servers locally (optional)
+  - GitHub account with Copilot access (includes MCP support where available)
+  - Node.js 18+ for running MCP servers locally (optional)
 validation_criteria:
   completion_requirements:
-    - MCP server configured in VS Code or GitHub Copilot settings
-    - At least one external tool exposed through MCP and invoked by the agent
-    - Security review: MCP server scoped to minimum required permissions
+  - MCP server configured in VS Code or GitHub Copilot settings
+  - At least one external tool exposed through MCP and invoked by the agent
+  - Security review: MCP server scoped to minimum required permissions
   skill_demonstrations:
-    - Can explain what MCP is and why it exists
-    - Can configure a GitHub MCP server connection
+  - Can explain what MCP is and why it exists
+  - Can configure a GitHub MCP server connection
 quest_mapping:
-  coordinates: "[2, 2]"
+  coordinates: '[2, 2]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Protocol Archives
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-mcp-server-mastery/
 ---
-
 *In the Protocol Archives, the ancient contracts are kept — the Model Context Protocol scrolls that allow agents to speak with systems beyond the Repository walls. Each MCP server is a Guild-certified interpreter, transforming the agent's structured requests into calls the external world understands. Without the Conclave's blessing, an agent that reaches beyond the Repository risks corruption, injection, or worse — unapproved data exfiltration.*
 
 ## 🗺️ Quest Network Position
@@ -331,10 +336,23 @@ python3 scripts/validate_quest.py --quest q5
 | 🌐 MCP Initiate Badge | Earned on completion |
 | 🔌 MCP Server Configuration | Skill unlocked |
 | 100 XP | Added to Level 1000 total |
-| Unlocks | [Q6: Bind the Agent to the Realm](/quests/gh-600/agentic-dev-environment-integration/) |
+| Unlocks | [Q6: Bind the Agent to the Realm](/quests/1001/agentic-dev-environment-integration/) |
 
 ## 🔗 Continue Your Journey
 
-- **Next:** [Q6: Bind the Agent to the Realm](/quests/gh-600/agentic-dev-environment-integration/)
+- **Next:** [Q6: Bind the Agent to the Realm](/quests/1001/agentic-dev-environment-integration/)
 - **Reference note:** [MCP Quick Reference](/notes/gh-600/mcp-quickref/)
 - **Chronicle post:** [MCP Servers and Agent Tooling in Practice](/posts/mcp-servers-and-agent-tooling-in-practice/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[MCP Quick Reference]]
+**Prerequisites:** [[Forging the Agent's Arsenal: Tool Selection & Permissions]]
+**Unlocks:** [[Bind the Agent to the Realm: Dev Environment Integration]]
+**Sequel quests:** [[Bind the Agent to the Realm: Dev Environment Integration]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+
