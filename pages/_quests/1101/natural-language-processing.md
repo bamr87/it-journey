@@ -1,14 +1,11 @@
 ---
 title: 'Natural Language Processing: Text Analysis, Transformers & LLMs with Python'
 author: IT-Journey Team
-description: Build NLP applications with Python using transformers and Hugging Face.
-  Learn text preprocessing, sentiment analysis, named entity recognition, and large
-  language model fine-tuning.
-excerpt: Build NLP applications with transformers, sentiment analysis, NER, and large
-  language models
+description: Build NLP applications with Python using transformers and Hugging Face. Learn text preprocessing, sentiment analysis, named entity recognition, and large language model fine-tuning.
+excerpt: Build NLP applications with transformers, sentiment analysis, NER, and large language models
 preview: images/previews/natural-language-processing-descriptive-subtitle.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1101'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data-science
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - Data-Science
 - Hard
 tags:
-- "1101"
+- '1101'
 - python
 - nlp
 - transformers
@@ -77,14 +73,16 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "1101"
-- python
-- nlp
-- transformers
-- main_quest
-- data-science
-- hands-on
-- gamified-learning
+  primary:
+  - '1101'
+  - python
+  - nlp
+  - transformers
+  secondary:
+  - main_quest
+  - data-science
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -97,6 +95,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

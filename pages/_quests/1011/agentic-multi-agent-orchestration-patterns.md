@@ -1,30 +1,22 @@
 ---
 title: 'The Council of Many: Multi-Agent Orchestration Patterns'
-description: Design and implement multi-agent systems using GitHub — orchestrator
-  agents, sub-agent fan-out, sequential chains, and event-driven coordination using
-  GitHub Actions and GitHub Models API.
-date: 2026-05-17 00:00:00+00:00
+description: Design and implement multi-agent systems using GitHub — orchestrator agents, sub-agent fan-out, sequential chains, and event-driven coordination using GitHub Actions and GitHub Models API.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-orchestration-patterns.png
 level: '1011'
 difficulty: 🔴 Hard
-estimated_time: 180 minutes
+estimated_time: 2-3 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- multi-agent
-- orchestration
-- github-actions
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1011 Quest 2/4 — Domain 5: Multi-Agent Systems'
-excerpt: One agent is a soldier. A council of agents is an army. But armies without
-  commanders create chaos, not victory. Learn to orchestrate — to divide, assign,
-  coordinate, and unify.
+excerpt: One agent is a soldier. A council of agents is an army. But armies without commanders create chaos, not victory. Learn to orchestrate — to divide, assign, coordinate, and unify.
 author: IT-Journey Team
 tags:
 - '1011'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- multi-agent orchestration
-- agent coordination
-- fan-out pattern
-- orchestrator sub-agent
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - multi-agent orchestration
+  secondary:
+  - agent coordination
+  - fan-out pattern
+  - orchestrator sub-agent
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1011/agentic-multi-agent-orchestration-patterns/
 quest_dependencies:
   required_quests:
@@ -91,6 +85,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-multi-agent-orchestration-patterns/
+layout: quest
 ---
 *The Council Chambers were built when the first great task arrived — too large for any single agent, too complex for parallelism alone. The architects designed three chambers: the Orchestration Chamber, where tasks are divided; the Sub-Agent Halls, where the work is done; and the Aggregation Room, where the pieces are assembled. An agent that understands all three rooms commands an army.*
 

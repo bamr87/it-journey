@@ -1,32 +1,40 @@
 ---
 title: Exploring the Roots of Injustice
 description: Explore the layers of injustice in corporate America through a case study of betrayal, racial marginalization, and the fight for recognition.
-date: 2025-05-01T18:48:47.000Z
+date: '2025-05-01T18:48:47.000Z'
 preview: /images/pixel_art_diptych_1920x1080.png
 tags:
-    - corporate betrayal
-    - Injustice
-    - post-colonialism.
-    - racial marginalization
-    - socio-economic issues
+- corporate betrayal
+- Injustice
+- post-colonialism.
+- racial marginalization
+- socio-economic issues
 categories:
-    - Data Analytics
-    - Development
-    - ERP Systems
-    - IT Consulting
-    - Project Management
+- Data Analytics
+- Development
+- ERP Systems
+- IT Consulting
+- Project Management
 sub-title: null
-excerpt: null
+excerpt: Explore the layers of injustice in corporate America through a case study of betrayal, racial marginalization, and the fight for recognition
 snippet: null
-author: ""
-keywords: {}
-lastmod: 2025-05-01T23:48:33.613Z
+author: bamr87
+keywords:
+- corporate betrayal
+- injustice
+- post-colonialism.
+- racial marginalization
+- socio-economic issues
+- data analytics
+- development
+- erp systems
+lastmod: '2025-05-01T23:48:33.000Z'
 permalink: null
-attachments: ""
+attachments: ''
 comments: false
 section: Culture & Society
+draft: false
 ---
-
 # Manufactured Dispossession: A Case Study in Corporate Betrayal, Racial Marginalization, and Geopolitical Subterfuge
 
 ## Roots of Resistance: From Nile to Midwest

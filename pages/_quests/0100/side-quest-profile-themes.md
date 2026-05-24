@@ -2,24 +2,23 @@
 title: 'Profile Themes: Unleashing the Style Sorcerer'
 author: Quest Master IT-Journey Team
 keywords:
-- CSS themes
-- custom styling
-- profile customization
-- advanced CSS
-description: Create custom CSS theme variants for the contributor character profile
-  system
-excerpt: The Style Sorcerer teaches the art of visual enchantment — bend colors and
-  shapes to your will.
+  primary:
+  - CSS themes
+  - custom styling
+  secondary:
+  - profile customization
+  - advanced CSS
+description: Create custom CSS theme variants for the contributor character profile system
+excerpt: The Style Sorcerer teaches the art of visual enchantment — bend colors and shapes to your will.
 snippet: True mastery is not just function — it is form
-date: 2026-03-20 00:00:00+00:00
-lastmod: 2026-03-21 15:12:32.263000+00:00
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
 level: '0100'
 difficulty: 🔴 Hard
 estimated_time: 60-90 minutes
 primary_technology: css
 quest_type: side_quest
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: project-based
 quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
@@ -34,7 +33,7 @@ categories:
 - Frontend
 - Advanced
 tags:
-- "0100"
+- '0100'
 - contributor
 - css
 - themes
@@ -81,6 +80,7 @@ validation_criteria:
   - Theme includes light and dark mode support
   - Theme passes accessibility contrast checks (WCAG AA)
   - Pull request submitted with theme preview screenshots
+layout: quest
 ---
 # 🎭 Profile Themes: Unleashing the Style Sorcerer
 

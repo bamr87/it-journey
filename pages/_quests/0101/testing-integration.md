@@ -1,12 +1,11 @@
 ---
 title: 'Testing Integration: Automated Quality Assurance in CI/CD Pipelines'
 author: IT-Journey Team
-description: Integrate automated testing into your CI/CD pipeline. Learn unit testing,
-  integration testing, E2E testing, and code coverage reporting for quality assurance.
+description: Integrate automated testing into your CI/CD pipeline. Learn unit testing, integration testing, E2E testing, and code coverage reporting for quality assurance.
 excerpt: Implement comprehensive automated testing strategies in your CI/CD workflows
 preview: images/previews/testing-integration-automated-quality-assurance-de.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:05:26+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:05:26.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -66,19 +64,21 @@ categories:
 - DevOps
 - Medium
 tags:
-- "0101"
+- '0101'
 - testing
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- "0101"
-- testing
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - testing
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

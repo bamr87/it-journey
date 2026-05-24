@@ -1,34 +1,33 @@
 ---
-title: "Groking About IT Journey: A Developer's Blog"
+title: 'Groking About IT Journey: A Developer''s Blog'
 description: A personal blog exploring IT and software development topics through the lens of an experienced developer, featuring Jekyll, Bootstrap, and modern web tools.
-date: 2024-05-15T20:51:52.000Z
+date: '2024-05-15T20:51:52.000Z'
 preview: null
 tags:
-  - jekyll
-  - bootstrap
-  - it-journey
+- jekyll
+- bootstrap
+- it-journey
 categories:
-  - jekyll
-  - bootstrap
-  - it-journey
+- jekyll
+- bootstrap
+- it-journey
 sub-title: null
 snippet: null
 author: bamr87 and grok
 excerpt: Grok AI's take on the IT Journey website built with Jekyll and Bootstrap, analyzing the site structure, navigation, and content organization.
 keywords:
-  - it journey developer blog
-  - jekyll bootstrap personal blog
-  - it journey website analysis
-  - jekyll site grok review
-  - software development blog jekyll
-lastmod: 2024-05-16T16:11:20.289Z
+- it journey developer blog
+- jekyll bootstrap personal blog
+- it journey website analysis
+- jekyll site grok review
+- software development blog jekyll
+lastmod: '2024-05-16T16:11:20.000Z'
 sort_by: null
 type: posts
 draft: true
 slug: groking-journey
 section: Learning
 ---
-
 ## Groking About IT Journey
 
 Based on the information provided, the website built using Jekyll and Bootstrap is a personal blog with a focus on IT and software development. The site incorporates a clean and simple design, making use of Bootstrap for responsive layout and styling.

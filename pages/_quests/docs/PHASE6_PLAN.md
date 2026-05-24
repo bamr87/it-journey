@@ -1,10 +1,9 @@
 ---
 title: 'Phase 6: Polish & Integration'
 layout: default
-description: Final phase of quest development - content filling, network linking,
-  and validation
+description: Final phase of quest development - content filling, network linking, and validation
 preview: /images/previews/phase-6-polish-integration.png
-date: 2025-12-20 20:02:51+00:00
+date: '2025-12-20T20:02:51.000Z'
 lastmod: 2025-12-20
 categories:
 - documentation
@@ -166,7 +165,7 @@ Remove template placeholder links from all generated quests:
 #### Task 3.1: Create Level Progression Links
 Build `required_quests` and `unlocks_quests` for level progression:
 
-```
+```text
 Level 0000 → Level 0001 → Level 0010 → Level 0011
     ↓           ↓            ↓            ↓
 Level 0100 → Level 0101 → Level 0110 → Level 0111

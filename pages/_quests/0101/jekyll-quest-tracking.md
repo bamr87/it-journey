@@ -1,16 +1,12 @@
 ---
 title: 'Jekyll Quest Tracking: Building Dynamic Collection Layouts'
 author: IT-Journey Team
-description: Master Jekyll's collection system by building a quest tracking interface
-  with dynamic filtering, statistics, and level-aware displays using Liquid templating
-  and frontmatter data
-excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections,
-  Liquid templating, and JavaScript filtering
-snippet: Learn to build interactive collection displays with filters, statistics,
-  and level-aware content using Jekyll's powerful templating system
+description: Master Jekyll's collection system by building a quest tracking interface with dynamic filtering, statistics, and level-aware displays using Liquid templating and frontmatter data
+excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections, Liquid templating, and JavaScript filtering
+snippet: Learn to build interactive collection displays with filters, statistics, and level-aware content using Jekyll's powerful templating system
 preview: images/previews/jekyll-quest-tracking-building-dynamic-collection-.png
-date: 2025-12-01 21:51:02+00:00
-lastmod: 2026-03-08 02:48:58.441000+00:00
+date: '2025-12-01T21:51:02.000Z'
+lastmod: '2026-03-08T02:48:58.000Z'
 level: '0101'
 difficulty: 🔴 Hard
 estimated_time: 4-6 hours
@@ -40,8 +36,7 @@ learning_paths:
   - Jekyll & Static Sites
   - Templating Systems
   - Frontend Automation
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -85,7 +80,7 @@ categories:
 - Frontend
 - Hard
 tags:
-- "0101"
+- '0101'
 - jekyll
 - liquid
 - collections
@@ -98,18 +93,20 @@ tags:
 - static-sites
 - python-automation
 keywords:
-- "0101"
-- jekyll
-- liquid
-- collections
-- frontmatter
-- javascript
-- side_quest
-- frontend
-- hands-on
-- gamified-learning
-- static-sites
-- python-automation
+  primary:
+  - '0101'
+  - jekyll
+  - liquid
+  - collections
+  - frontmatter
+  - javascript
+  secondary:
+  - side_quest
+  - frontend
+  - hands-on
+  - gamified-learning
+  - static-sites
+  - python-automation
 fmContentType: quest
 draft: false
 toc: true
@@ -133,6 +130,7 @@ rewards:
   - Custom collection layouts
   - Dynamic filtering systems
   - Automated frontmatter management
+layout: quest
 ---
 *Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging powerful layouts that respond to frontmatter incantations and user interactions alike.*
 
@@ -318,7 +316,7 @@ defaults:
 
 ### 📁 Collection Directory Structure
 
-```
+```text
 pages/
 └── _quests/
     ├── README.md           # Collection index
@@ -900,7 +898,7 @@ python scripts/development/update_level_readmes.py
 ```
 
 **Expected Output:**
-```
+```text
 Updated frontmatter for /Users/you/github/it-journey/pages/_quests/0000/README.md
 Updated frontmatter for /Users/you/github/it-journey/pages/_quests/0001/README.md
 No changes for /Users/you/github/it-journey/pages/_quests/0101/README.md

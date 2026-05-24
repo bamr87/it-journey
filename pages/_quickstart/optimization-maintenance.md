@@ -1,38 +1,37 @@
 ---
-title: "Site Optimization & Ongoing Maintenance"
+title: Site Optimization & Ongoing Maintenance
 author: bamr87
 description: Optimize your Jekyll site for SEO, performance, and accessibility — then maintain it with dependency updates, content reviews, and scaling patterns.
-excerpt: "Optimize your Jekyll site for SEO, performance, and accessibility, then maintain it with dependency updates, content reviews, and scaling tips."
+excerpt: Optimize your Jekyll site for SEO, performance, and accessibility, then maintain it with dependency updates, content reviews, and scaling tips.
 permalink: /quickstart/optimization-maintenance/
 categories:
-  - quickstart
+- quickstart
 slug: optimization-maintenance
-lastmod: 2026-04-02T03:14:50.977Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 20-30 minutes
 prerequisites:
-  - Site deployed (see [Deployment](/quickstart/deployment/))
-  - CI/CD configured (see [CI/CD & Automation](/quickstart/cicd-automation/))
+- Site deployed (see [Deployment](/quickstart/deployment/))
+- CI/CD configured (see [CI/CD & Automation](/quickstart/cicd-automation/))
 tags:
-  - seo
-  - performance
-  - accessibility
-  - maintenance
+- seo
+- performance
+- accessibility
+- maintenance
 keywords:
   primary:
-    - jekyll seo
-    - site performance
-    - accessibility
+  - jekyll seo
+  - site performance
+  - accessibility
   secondary:
-    - dependency updates
-    - content maintenance
-    - scaling
+  - dependency updates
+  - content maintenance
+  - scaling
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phases 14 and 15** of the [Quick Start](/quickstart/) — optimizing your site for SEO, performance, and accessibility, then keeping it healthy with ongoing maintenance and scaling.
 
 ---

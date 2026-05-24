@@ -1,54 +1,53 @@
 ---
-title: "Mastering Prompt Engineering: A Practical Guide to VS Code Copilot"
+title: 'Mastering Prompt Engineering: A Practical Guide to VS Code Copilot'
 description: Learn systematic prompt engineering techniques to maximize AI-assisted development with VS Code Copilot, from structured patterns to reusable templates
-date: 2025-11-26T22:17:42.000Z
-lastmod: 2025-11-27T05:01:33.326Z
+date: '2025-11-26T22:17:42.000Z'
+lastmod: '2025-11-27T05:01:33.000Z'
 author: IT-Journey Team
 permalink: /posts/mastering-prompt-engineering-vscode-copilot/
 tags:
-    - prompt-engineering
-    - ai-assisted-development
-    - vscode-copilot
-    - tutorial
-    - intermediate
+- prompt-engineering
+- ai-assisted-development
+- vscode-copilot
+- tutorial
+- intermediate
 categories:
-    - Posts
-    - AI & Machine Learning
-    - Development Tools
+- Posts
+- AI & Machine Learning
+- Development Tools
 difficulty: 🟡 Intermediate
 estimated_reading_time: 25-35 minutes
 keywords:
-    primary:
-        - prompt-engineering
-        - vs-code-copilot
-        - ai-coding-assistant
-    secondary:
-        - rctf-pattern
-        - few-shot-prompting
-        - chain-of-thought
-        - copilot-instructions
-        - prompt-templates
+- prompt-engineering
+- vs-code-copilot
+- ai-coding-assistant
+- rctf-pattern
+- few-shot-prompting
+- chain-of-thought
+- copilot-instructions
+- prompt-templates
 prerequisites:
-    - Basic familiarity with VS Code (navigation, extensions, settings)
-    - Active GitHub Copilot subscription
-    - Experience writing code in at least one programming language
-    - Understanding of Git fundamentals
+- Basic familiarity with VS Code (navigation, extensions, settings)
+- Active GitHub Copilot subscription
+- Experience writing code in at least one programming language
+- Understanding of Git fundamentals
 learning_outcomes:
-    - 🎯 Understand the RCTF pattern (Role-Context-Task-Format) for structured prompts
-    - ⚡ Implement few-shot and chain-of-thought prompting techniques
-    - 🛠️ Configure VS Code Copilot with project-level instructions
-    - 🔗 Create reusable prompt templates in .github/prompts/
-    - 📊 Apply the PDCA cycle to iterate and improve prompt quality
+- 🎯 Understand the RCTF pattern (Role-Context-Task-Format) for structured prompts
+- ⚡ Implement few-shot and chain-of-thought prompting techniques
+- 🛠️ Configure VS Code Copilot with project-level instructions
+- 🔗 Create reusable prompt templates in .github/prompts/
+- 📊 Apply the PDCA cycle to iterate and improve prompt quality
 related_posts:
-    - /quests/ai-assisted-development/
-    - /posts/vscode-productivity-tips/
+- /quests/ai-assisted-development/
+- /posts/vscode-productivity-tips/
 validation_methods:
-    - Create and test 3 structured prompts using RCTF pattern
-    - Build a .github/copilot-instructions.md for a project
-    - Design a reusable prompt template with variables
+- Create and test 3 structured prompts using RCTF pattern
+- Build a .github/copilot-instructions.md for a project
+- Design a reusable prompt template with variables
 section: AI & Machine Learning
+draft: false
+excerpt: Learn systematic prompt engineering techniques to maximize AI-assisted development with VS Code Copilot, from structured patterns to reusable templates
 ---
-
 ## Introduction
 
 Your AI coding assistant is only as good as the instructions you give it—but most developers treat prompts like casual conversations instead of precision tools.

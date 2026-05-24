@@ -10,22 +10,17 @@ keywords:
   - css layout
   - modular includes
   - ai-assisted development
-description: Learn to refactor inline Jekyll theme elements into modular, config-driven
-  components — using a real-world nanobar and footer case study.
-excerpt: The Artisan's Forge teaches the craft of reshaping raw, tangled code into
-  elegant, reusable components.
-snippet: A true artisan does not merely write code — they forge tools that others
-  can wield.
-date: 2026-04-19 00:00:00+00:00
-lastmod: 2026-04-19 00:00:00+00:00
+description: Learn to refactor inline Jekyll theme elements into modular, config-driven components — using a real-world nanobar and footer case study.
+excerpt: The Artisan's Forge teaches the craft of reshaping raw, tangled code into elegant, reusable components.
+snippet: A true artisan does not merely write code — they forge tools that others can wield.
+date: '2026-04-19T00:00:00.000Z'
+lastmod: '2026-04-19T00:00:00.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: jekyll
 quest_type: side_quest
-skill_focus:
-- frontend
-- theme-development
+skill_focus: frontend
 learning_style: hands-on
 quest_series: 'Theme Crafting: Zer0-Mistakes'
 quest_line: Theme Artisan Path
@@ -40,7 +35,7 @@ categories:
 - Frontend
 - Medium
 tags:
-- "0100"
+- '0100'
 - jekyll
 - side_quest
 - frontend
@@ -80,6 +75,7 @@ validation_criteria:
 related_quests:
 - /quests/0100/frontend-docker/
 - /quests/0100/side-quests/profile-themes/
+layout: quest
 ---
 *Greetings, brave artisan! Welcome to The Artisan's Forge — an epic journey that will transform you from a coder who patches things together into a true component architect. This quest guides you through the real-world process of turning hard-coded, inline Jekyll theme elements into modular, configurable, and reusable components.*
 

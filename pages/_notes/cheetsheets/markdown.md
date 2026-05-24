@@ -4,20 +4,18 @@ author: bamr87
 description: Quick reference guide for Markdown syntax including basic formatting, Jekyll-specific features, and Kramdown extensions
 excerpt: Essential Markdown syntax reference for content creation
 categories:
-  - notes
-  - cheatsheets
+- notes
+- cheatsheets
 tags:
-  - markdown
-  - syntax
-  - reference
-  - cheatsheet
-  - kramdown
+- markdown
+- syntax
+- reference
+- cheatsheet
+- kramdown
 lastmod: '2021-12-27T17:46:18.040Z'
 draft: false
-date: 2021-12-19T17:12:12.000Z
-
+date: '2021-12-19T17:12:12.000Z'
 ---
-
 [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 # Jekyll Markdown Quick Reference
 

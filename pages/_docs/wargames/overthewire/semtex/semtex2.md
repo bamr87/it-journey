@@ -1,13 +1,12 @@
 ---
 title: Semtex2
-description: "Dynamic tricks\n--------------\nThis program checks your user ID.\n\
-  \ \nPerhaps you can trick it, so that it thinks you have a different one.\n \nThink\
-  \ dynamically."
+description: "Dynamic tricks\n--------------\nThis program checks your user ID.\n \nPerhaps you can trick it, so that it thinks you have a different one.\n \nThink dynamically."
 permalink: /docs/wargames/semtex/semtex2/
 date: '2026-04-07T01:41:09.000Z'
 lastmod: '2026-04-07T01:41:09.000Z'
 categories:
 - wargames
+- semtex
 tags:
 - security
 - wargames
@@ -19,8 +18,16 @@ source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/semtex/semtex2.md
 source_name: overthewire
 license: MIT
+draft: false
+keywords:
+- security
+- wargames
+- linux
+- ctf
+- cybersecurity
+- semtex
+author: bamr87
 ---
-
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.
 
 Dynamic tricks

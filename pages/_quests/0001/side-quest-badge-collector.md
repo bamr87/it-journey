@@ -2,24 +2,23 @@
 title: 'Badge Collector: Showcasing Your Achievements'
 author: Quest Master IT-Journey Team
 keywords:
-- badges
-- achievements
-- gamification
-- contributor profile
-description: Learn how badges are earned and pin your proudest achievements to your
-  character profile
+  primary:
+  - badges
+  - achievements
+  secondary:
+  - gamification
+  - contributor profile
+description: Learn how badges are earned and pin your proudest achievements to your character profile
 excerpt: The Trophy Hall awaits — curate your collection of hard-won badges.
 snippet: Every achievement tells a story. Pin the ones that matter most.
-date: 2026-03-20 00:00:00+00:00
-lastmod: 2026-03-21 15:12:32.239000+00:00
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 30-45 minutes
 primary_technology: yaml
 quest_type: side_quest
-skill_focus:
-- devops
-- frontend
+skill_focus: devops
 learning_style: hands-on
 quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
@@ -33,7 +32,7 @@ categories:
 - Community
 - Customization
 tags:
-- "0001"
+- '0001'
 - contributor
 - badges
 - achievements
@@ -70,6 +69,7 @@ validation_criteria:
   - badges_pinned array has 1-3 valid badge IDs
   - Pinned badges display in the Featured section
   - Understand how achievement thresholds work
+layout: quest
 ---
 # 🏅 Badge Collector: Showcasing Your Achievements
 
@@ -108,7 +108,7 @@ Badges are **auto-earned** by the stats generator when you hit contribution mile
 
 The stats generator (`scripts/generation/generate_contributor_stats.rb`) checks thresholds after counting your contributions:
 
-```
+```text
 commits >= 1          → first_blood
 commits >= 100        → centurion
 commits >= 1000       → thousand_cuts

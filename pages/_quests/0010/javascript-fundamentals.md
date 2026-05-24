@@ -1,14 +1,11 @@
 ---
 title: 'JavaScript Fundamentals: DOM Manipulation & Events'
 author: IT-Journey Team
-description: Learn JavaScript essentials for web interactivity. Master DOM manipulation,
-  event handling, and dynamic content creation. Beginner-friendly tutorial with practical
-  examples.
-excerpt: Build interactive web pages with JavaScript DOM manipulation, events, and
-  dynamic content.
+description: Learn JavaScript essentials for web interactivity. Master DOM manipulation, event handling, and dynamic content creation. Beginner-friendly tutorial with practical examples.
+excerpt: Build interactive web pages with JavaScript DOM manipulation, events, and dynamic content.
 preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-12-19 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -69,7 +65,7 @@ categories:
 - JavaScript
 - Intermediate
 tags:
-- "0010"
+- '0010'
 - javascript
 - dom-manipulation
 - web-development
@@ -78,14 +74,16 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- "0010"
-- javascript
-- dom-manipulation
-- web-development
-- frontend
-- main_quest
-- hands-on
-- intermediate
+  primary:
+  - '0010'
+  - javascript
+  - dom-manipulation
+  - web-development
+  secondary:
+  - frontend
+  - main_quest
+  - hands-on
+  - intermediate
 fmContentType: quest
 draft: true
 comments: true
@@ -98,6 +96,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

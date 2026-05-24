@@ -1,20 +1,20 @@
 ---
 title: Using Jekyll, Lambda, and SES for Efficient Web Solutions
-description: ""
-date: 2025-02-05T14:08:47.000Z
-preview: ""
+description: Below is a detailed walkthrough on how to create a serverless “Contact Us” form using AWS Lambda, API Gateway, and Amazon SES. This lets you keep your…
+date: '2025-02-05T14:08:47.000Z'
+preview: ''
 tags: []
 categories: []
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-01-25T03:52:35.049Z
+lastmod: '2025-01-25T03:52:35.000Z'
 permalink: null
-attachments: ""
+attachments: ''
+draft: false
 ---
-
 Below is a detailed walkthrough on how to create a **serverless** “Contact Us” form using **AWS Lambda**, **API Gateway**, and **Amazon SES**. This lets you keep your site static (e.g., generated via Jekyll), and offload email handling to AWS.
 
 ---

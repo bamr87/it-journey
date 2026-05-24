@@ -1,30 +1,30 @@
 ---
 title: Set Up Azure for Jekyll Contact Us Form
 description: Learn how to easily set up Azure for your Jekyll Contact Us form and enhance user engagement on your website.
-date: 2025-02-05T14:08:47.000Z
-preview: ""
+date: '2025-02-05T14:08:47.000Z'
+preview: ''
 tags:
-    - Azure
-    - Contact Form
-    - GitHub Pages
-    - Jekyll
-    - Tutorial
+- Azure
+- Contact Form
+- GitHub Pages
+- Jekyll
+- Tutorial
 categories:
-    - Development
-    - Guides
-    - Jekyll
-    - Programming
-    - Web Development
+- Development
+- Guides
+- Jekyll
+- Programming
+- Web Development
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-01-25T03:52:33.559Z
+lastmod: '2025-01-25T03:52:33.000Z'
 permalink: null
-attachments: ""
+attachments: ''
+draft: false
 ---
-
 Below is a step-by-step guide on how to build a serverless “Contact Us” form using **Azure Functions** and a **Microsoft Exchange** server (on-premises or Exchange Online) to send emails. This approach keeps your Jekyll site static and offloads the email-sending logic to Azure. We’ll focus on a **cost-effective** setup, leveraging Azure’s consumption-based pricing for Functions.
 
 ---

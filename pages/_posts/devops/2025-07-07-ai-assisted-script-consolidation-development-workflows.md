@@ -1,39 +1,37 @@
 ---
-title: "AI-Assisted Script Consolidation: Transforming Chaotic Directories into Organized Development Workflows"
+title: 'AI-Assisted Script Consolidation: Transforming Chaotic Directories into Organized Development Workflows'
 description: Complete refactoring of script directories across IT-Journey workspace using AI assistance to eliminate redundancies and implement unified development patterns
-date: 2025-07-12T14:26:45.000Z
+date: '2025-07-12T14:26:45.000Z'
 preview: /images/previews/ai-assisted-script-consolidation-transforming-chao.png
 tags:
-    - ai-assisted-development
-    - script-consolidation
-    - development-workflows
-    - automation
-    - refactoring
-    - learning-journey
+- ai-assisted-development
+- script-consolidation
+- development-workflows
+- automation
+- refactoring
+- learning-journey
 categories:
-    - Development
-    - Process-Improvement
+- Development
+- Process-Improvement
 sub-title: From Script Chaos to Organized Excellence Using AI-Powered Development
 excerpt: A comprehensive AI-assisted refactoring session that transformed scattered, redundant scripts into a unified, principle-driven automation system following IT-Journey development practices.
 snippet: 25+ scattered scripts → unified automation system through AI-assisted development
 author: IT-Journey Team
 keywords:
-    primary:
-        - script consolidation
-        - ai-assisted development
-        - development automation
-    secondary:
-        - shell scripting
-        - workflow optimization
-        - code organization
-        - IT-Journey principles
-lastmod: 2025-07-08T03:13:33.558Z
+- script consolidation
+- ai-assisted development
+- development automation
+- shell scripting
+- workflow optimization
+- code organization
+- IT-Journey principles
+lastmod: '2025-07-08T03:13:33.000Z'
 permalink: /ai-assisted-script-consolidation-development-workflows/
-attachments: ""
+attachments: ''
 comments: true
 section: DevOps
+draft: false
 ---
-
 ## The Challenge: Script Directory Chaos
 
 When I asked GitHub Copilot to "clean up this script directory and remove any redundancies", I uncovered a classic development problem that many projects face: **script sprawl**. Across the IT-Journey workspace, we had accumulated 25+ scripts scattered across multiple directories with inconsistent naming, overlapping functionality, and no clear organization.

@@ -1,35 +1,34 @@
 ---
 author: bamr87
 categories:
-  - notes
-date: 2021-11-07T17:20:34.000Z
+- notes
+date: '2021-11-07T17:20:34.000Z'
 description: Working notes, code snippets, and quick references collected during development — PowerShell, Linux, macOS tips, and more.
-excerpt: "Working notes, code snippets, and quick references for PowerShell, Linux, macOS, and development tips collected during IT-Journey development."
+excerpt: Working notes, code snippets, and quick references for PowerShell, Linux, macOS, and development tips collected during IT-Journey development.
 draft: false
-lastmod: 2026-04-02T03:24:28.798Z
+lastmod: '2026-04-02T03:24:28.000Z'
 permalink: /notes/
 title: Notes Index
 tags:
-  - notes
-  - snippets
-  - reference
-  - powershell
-  - linux
-  - macos
+- notes
+- snippets
+- reference
+- powershell
+- linux
+- macos
 keywords:
   primary:
-    - notes
-    - code snippets
+  - notes
+  - code snippets
   secondary:
-    - powershell reference
-    - linux tips
-    - development notes
+  - powershell reference
+  - linux tips
+  - development notes
 sidebar:
   nav: docs
 toc: true
 toc_sticky: true
 ---
-
 # Notes
 
 Working notes, code snippets, and quick references collected during IT-Journey development. These are informal — think scratch pad, not polished guide. For structured learning, see the [Quick Start Guide](/quickstart/) or [Docs Library](/docs/).

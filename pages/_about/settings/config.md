@@ -1,20 +1,19 @@
 ---
 title: Jekyll Configuration & Site Structure
 excerpt: Configuration file contents, site tree structure, and automated regeneration workflows.
-lastmod: 2026-01-15T05:11:51.000Z
+lastmod: '2026-01-15T05:11:51.000Z'
 config-dir: pages/_about/settings
 config-file: _config.yml
 permalink: /about/config/
 tags:
-  - configuration
-  - jekyll
-  - automation
-  - ci-cd
-  - site-structure
-date: 2023-03-01T17:36:09.000Z
-
+- configuration
+- jekyll
+- automation
+- ci-cd
+- site-structure
+date: '2023-03-01T17:36:09.000Z'
+description: This page contains the Jekyll configuration file, site tree structure, and automated workflows for maintaining configuration synchronization across the…
 ---
-
 ## Overview
 
 This page contains the Jekyll configuration file, site tree structure, and automated workflows for maintaining configuration synchronization across the IT-Journey platform.

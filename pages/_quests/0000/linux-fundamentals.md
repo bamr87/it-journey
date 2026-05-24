@@ -18,13 +18,11 @@ tags:
 - scripting
 - security
 - networking
-lastmod: 2025-11-30 05:46:59.343000+00:00
+lastmod: '2025-11-30T05:46:59.000Z'
 draft: false
-date: 2021-03-13 15:24:06+00:00
+date: '2021-03-13T15:24:06.000Z'
 primary_technology: linux
-skill_focus:
-- quests
-- linux
+skill_focus: fullstack
 learning_style: hands-on
 fmContentType: quest
 prerequisites:
@@ -92,12 +90,15 @@ learning_paths:
   - Shell Scripting
   - Networking
 keywords:
-- linux
-- fundamentals
-- navigation
-- scripting
-- security
-- networking
+  primary:
+  - linux
+  - fundamentals
+  - navigation
+  secondary:
+  - scripting
+  - security
+  - networking
+layout: quest
 ---
 # Linux Fundamentals
 

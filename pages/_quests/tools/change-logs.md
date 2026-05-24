@@ -5,27 +5,29 @@ description: Quest covering Change Logs.
 excerpt: null
 snippet: null
 preview: /svg/penrose-gpt-vs-human.png
-date: 2025-04-18 13:43:43+00:00
-lastmod: 2025-04-18 19:43:43.286000+00:00
+date: '2025-04-18T13:43:43.000Z'
+lastmod: '2025-04-18T19:43:43.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: General
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-- Foundations
+skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0010/change-logs/
 categories: []
 tags: []
 keywords:
-- change
-- logs
+  primary:
+  - change
+  secondary:
+  - logs
 fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+layout: quest
 ---
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**
 
@@ -48,7 +50,7 @@ The changelog is your codebase's storybook. It should be clear enough for a newc
 
 ### **🧾 Changelog Format (The Spellbook Edition)**
 
-```
+```markdown
 ## [1.2.0] - 2025-04-18
 ### Added
 - OAuth login for wizards and mortals alike (#78)

@@ -1,9 +1,9 @@
 ---
 title: 'Bashcrawl Quest: Terminal Adventure RPG'
-description: "Explore nine Bashcrawl chambers to master navigation, permissions, environment variables, symlinks, and pipes in a gamified terminal RPG adventure."
+description: Explore nine Bashcrawl chambers to master navigation, permissions, environment variables, symlinks, and pipes in a gamified terminal RPG adventure.
 preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
-date: 2025-07-05T12:12:17.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+date: '2025-07-05T12:12:17.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 categories:
 - Quests
 - Terminal
@@ -15,7 +15,7 @@ tags:
 - command-line
 - adventure-game
 - bash
-- "0000"
+- '0000'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -49,8 +49,8 @@ prerequisites:
   - Bash or compatible shell
 rewards:
   badges:
-  - "🏆 Terminal Explorer"
-  - "🗝️ Dungeon Master"
+  - 🏆 Terminal Explorer
+  - 🗝️ Dungeon Master
   progression_points: 200
 quest_dependencies:
   unlocks_quests:
@@ -84,8 +84,8 @@ learning_paths:
   - System Administration
   - Software Development
   character_classes:
-  - "💻 Software Developer"
-  - "🏗️ System Engineer"
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
   - Terminal Mastery
 validation_criteria:
@@ -94,8 +94,7 @@ validation_criteria:
 - Defeat at least one combat encounter
 - Complete the Rift final boss
 sub-title: 'Level 0000 Quest: Terminal Dungeon Adventure'
-excerpt: Embark on an epic terminal adventure that teaches Bash commands through nine
-  interconnected dungeon chambers, each a dedicated walkthrough side-quest
+excerpt: Embark on an epic terminal adventure that teaches Bash commands through nine interconnected dungeon chambers, each a dedicated walkthrough side-quest
 snippet: Every command is a spell, every directory a new realm to explore
 draft: false
 permalink: /quests/0000/bashcrawl/

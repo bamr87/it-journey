@@ -1,39 +1,38 @@
 ---
-title: "Theme Architecture & Liquid Templating"
+title: Theme Architecture & Liquid Templating
 author: bamr87
 description: Understand how the zer0-mistakes theme builds pages — layouts, includes, Liquid templating, data files, and the Jekyll build pipeline.
-excerpt: "Explore the zer0-mistakes theme's layout hierarchy, includes, Liquid templating, and YAML data files — and how Jekyll assembles your pages."
+excerpt: Explore the zer0-mistakes theme's layout hierarchy, includes, Liquid templating, and YAML data files — and how Jekyll assembles your pages.
 permalink: /quickstart/theme-architecture/
 categories:
-  - quickstart
+- quickstart
 slug: theme-architecture
-lastmod: 2026-04-02T03:14:50.920Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 30-40 minutes
 prerequisites:
-  - Jekyll installed (see [Jekyll Setup](/quickstart/jekyll/))
-  - Site configuration complete (see [Site Configuration](/quickstart/site-configuration/))
+- Jekyll installed (see [Jekyll Setup](/quickstart/jekyll/))
+- Site configuration complete (see [Site Configuration](/quickstart/site-configuration/))
 tags:
-  - jekyll
-  - liquid
-  - layouts
-  - includes
-  - theme
+- jekyll
+- liquid
+- layouts
+- includes
+- theme
 keywords:
   primary:
-    - jekyll theme architecture
-    - liquid templating
-    - jekyll layouts
+  - jekyll theme architecture
+  - liquid templating
+  - jekyll layouts
   secondary:
-    - includes
-    - data files
-    - zer0-mistakes theme
+  - includes
+  - data files
+  - zer0-mistakes theme
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 7** of the [Quick Start](/quickstart/) — how the zer0-mistakes theme assembles pages from layouts, includes, Liquid templates, and data files.
 
 ---

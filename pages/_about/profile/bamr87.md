@@ -8,12 +8,12 @@ website: https://it-journey.dev
 github: bamr87
 twitter: bamr42
 linkedin: amrabdel
-lastmod: 2025-01-21T23:09:20.504Z
+lastmod: '2025-01-21T23:09:20.000Z'
 permalink: /about/bamr87/
-date: 2024-05-09T22:24:22.000Z
-
+date: '2024-05-09T22:24:22.000Z'
+description: Profile page for the IT-Journey founder and maintainer — IT generalist in Denver, lapsed banker, builder of the zer0-mistakes Jekyll theme.
+title: bamr87
 ---
-
 # Navigate to your current repository
 
 ```shell

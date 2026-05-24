@@ -1,47 +1,45 @@
 ---
-title: "Fixing GitHub Actions Link Checker: KeyError 'details' Resolution"
+title: 'Fixing GitHub Actions Link Checker: KeyError ''details'' Resolution'
 description: Debugging and resolving a Python KeyError in GitHub Actions workflow that analyzes link check results from Lychee link checker
-date: 2025-09-30T16:56:38.000Z
+date: '2025-09-30T16:56:38.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - github-actions
-    - debugging
-    - python
-    - link-checking
-    - error-handling
-    - ai-assisted-development
+- github-actions
+- debugging
+- python
+- link-checking
+- error-handling
+- ai-assisted-development
 categories:
-    - Development
-    - Debugging
-sub-title: "From Error to Excellence: Defensive Programming in CI/CD Workflows"
+- Development
+- Debugging
+sub-title: 'From Error to Excellence: Defensive Programming in CI/CD Workflows'
 excerpt: Resolved a critical KeyError in link checking automation through defensive programming and better error handling
 snippet: When automation fails, defensive programming saves the day
 author: IT-Journey Team
 keywords:
-    primary:
-        - github actions debugging
-        - python keyerror fix
-    secondary:
-        - lychee link checker
-        - defensive programming
-        - ci cd error handling
-lastmod: 2025-09-30T22:47:41.812Z
+- github actions debugging
+- python keyerror fix
+- lychee link checker
+- defensive programming
+- ci cd error handling
+lastmod: '2025-09-30T22:47:41.000Z'
 permalink: /fixing-github-actions-link-checker-keyerror/
-attachments: ""
+attachments: ''
 comments: true
 ai_content_hints:
-    - Focus on practical debugging steps
-    - Emphasize defensive programming principles
-    - Include before/after code examples
-    - Connect to broader CI/CD best practices
+- Focus on practical debugging steps
+- Emphasize defensive programming principles
+- Include before/after code examples
+- Connect to broader CI/CD best practices
 technical_requirements:
-    - GitHub Actions experience
-    - Python basic knowledge
-    - Understanding of JSON data structures
+- GitHub Actions experience
+- Python basic knowledge
+- Understanding of JSON data structures
 difficulty_level: intermediate
 estimated_reading_time: 8 minutes
+draft: false
 ---
-
 ## The Challenge: KeyError Crashes Link Checking Automation
 
 During routine maintenance of the IT-Journey automated link checking system, we encountered a critical failure in our GitHub Actions workflow. The error was clear but puzzling:

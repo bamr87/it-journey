@@ -1,12 +1,9 @@
 ---
 title: '[Quest Title]: [Descriptive Subtitle]'
-# layout defaults to `quest` via _config.yml for files in this collection.
-# Override only when authoring a non-quest reference page.
-description: Complete description of what the quest teaches and accomplishes (150-300
-  characters for SEO)
-date: 2025-11-29 22:51:57+00:00
+description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+date: '2025-11-29T22:51:57.000Z'
 preview: /images/previews/quest-title-descriptive-subtitle.png
-level: 'XXXX'             # 4-digit binary, quoted to remain a string
+level: XXXX
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
 primary_technology: '[main-tech]'
@@ -37,7 +34,7 @@ keywords:
 - '[''skill-focus'']'
 - hands-on
 - gamified-learning
-lastmod: 2025-12-01 05:49:32.316000+00:00
+lastmod: '2025-12-01T05:49:32.000Z'
 permalink: /quests/XXXX/quest-slug/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
@@ -71,8 +68,6 @@ rewards:
   - 🏆 [Achievement Badge Name]
   skills_unlocked:
   - 🛠️ [Tool or Technology Mastery]
-  # progression_points is the XP value shown by the quest UI (assets/js/quest-progress.js).
-  # Typical ranges by tier: Apprentice 50-100, Adventurer 100-200, Warrior 200-400, Master 400+.
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'

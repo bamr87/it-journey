@@ -1,13 +1,13 @@
 ---
 title: Favicons
-updated: 2024-02-20 06:17:00Z
-created: 2024-02-19 22:10:32Z
+updated: 2024-02-20 06:17:00+00:00
+created: 2024-02-19 22:10:32+00:00
 tags:
-  - notes
-date: 2024-02-20T09:39:19.000Z
-
+- notes
+date: '2024-02-20T09:39:19.000Z'
+draft: false
+description: https://mailchimp.com/resources/favicon-size/
 ---
-
 https://mailchimp.com/resources/favicon-size/
 
 start at 512x512

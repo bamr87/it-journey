@@ -1,18 +1,33 @@
 ---
-title: "GH-600 Week-by-Week Learning Path"
-description: "A structured 6-week study schedule for GH-600 with daily objectives, time estimates, and prerequisites."
+title: GH-600 Week-by-Week Learning Path
+description: A structured 6-week study schedule for GH-600 with daily objectives, time estimates, and prerequisites.
 permalink: /docs/certifications/gh-600/learning-path/
 layout: default
-categories: [Docs, Certifications, Agentic-AI]
-tags: [gh-600, agentic-ai, learning-path, study-plan]
+categories:
+- Docs
+- Certifications
+- Agentic-AI
+tags:
+- gh-600
+- agentic-ai
+- learning-path
+- study-plan
 author: IT-Journey Team
 draft: false
-lastmod: 2026-05-17T00:00:00.000Z
-date: 2026-05-17T00:00:00.000Z
+lastmod: '2026-05-17T00:00:00.000Z'
+date: '2026-05-17T00:00:00.000Z'
 toc: true
 toc_sticky: true
+keywords:
+- gh-600
+- agentic-ai
+- learning-path
+- study-plan
+- docs
+- certifications
+- week-by-week
+- learning
 ---
-
 # GH-600 Week-by-Week Learning Path
 
 *The Scrollmaster's Prescribed Curriculum — for those who prefer a map over wandering.*

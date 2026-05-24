@@ -1,62 +1,60 @@
 ---
-title: "VSCode Front Matter: Complete Fork & Development Guide"
+title: 'VSCode Front Matter: Complete Fork & Development Guide'
 description: Comprehensive guide to forking, setting up, and extending the VSCode Front Matter CMS extension for content management and development
-date: 2025-08-30T11:29:40.000Z
+date: '2025-08-30T11:29:40.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-   - vscode-extension
-   - front-matter-cms
-   - development-setup
-   - open-source-contribution
-   - content-management
-   - fork-workflow
-   - typescript
-   - webpack
+- vscode-extension
+- front-matter-cms
+- development-setup
+- open-source-contribution
+- content-management
+- fork-workflow
+- typescript
+- webpack
 categories:
-   - Development
-   - Guides
-   - IDE-Setup
-   - Open Source
-   - Tools
-sub-title: "From Fork to Feature: Your Complete Development Journey"
+- Development
+- Guides
+- IDE-Setup
+- Open Source
+- Tools
+sub-title: 'From Fork to Feature: Your Complete Development Journey'
 excerpt: Step-by-step guide to fork, setup, and extend the powerful VSCode Front Matter CMS extension for enhanced content management workflows
 snippet: Transform your content management experience by contributing to the VSCode Front Matter ecosystem
 author: IT-Journey Team
 keywords:
-   primary:
-      - vscode-front-matter
-      - extension-development
-      - cms-setup
-      - fork-workflow
-   secondary:
-      - typescript-development
-      - webpack-configuration
-      - content-management-system
-      - open-source-contribution
-      - development-environment
-lastmod: 2025-09-27T19:59:13.800Z
+- vscode-front-matter
+- extension-development
+- cms-setup
+- fork-workflow
+- typescript-development
+- webpack-configuration
+- content-management-system
+- open-source-contribution
+- development-environment
+lastmod: '2025-09-27T19:59:13.000Z'
 permalink: /posts/vscode-front-matter-fork-development-setup/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Intermediate
 estimated_reading_time: 20-25 minutes
 prerequisites:
-   - Basic Git and GitHub knowledge
-   - Node.js and npm familiarity
-   - VS Code extension development understanding
-   - TypeScript/JavaScript experience
+- Basic Git and GitHub knowledge
+- Node.js and npm familiarity
+- VS Code extension development understanding
+- TypeScript/JavaScript experience
 learning_outcomes:
-   - 🎯 Successfully fork and setup VSCode Front Matter for development
-   - ⚡ Master the development workflow and testing procedures
-   - 🛠️ Understand the extension architecture and build system
-   - 🔗 Contribute effectively to the open-source project
+- 🎯 Successfully fork and setup VSCode Front Matter for development
+- ⚡ Master the development workflow and testing procedures
+- 🛠️ Understand the extension architecture and build system
+- 🔗 Contribute effectively to the open-source project
 validation_methods:
-   - Extension loads successfully in development mode
-   - All build processes complete without errors
-   - Dashboard and panel interfaces are accessible
-   - Hot-reload development workflow functions properly
+- Extension loads successfully in development mode
+- All build processes complete without errors
+- Dashboard and panel interfaces are accessible
+- Hot-reload development workflow functions properly
+draft: false
 ---
-
 ## Introduction
 
 VSCode Front Matter is a powerful Content Management System (CMS) that runs directly within Visual Studio Code, transforming your editor into a comprehensive content management platform. Whether you're managing a blog, documentation site, or any markdown-based content, this extension provides an intuitive interface for creating, editing, and organizing your content.

@@ -1,30 +1,33 @@
 ---
-title: "Launching the Agentic Codex: A GH-600 Learning Track for the IT-Journey"
-description: "The Agentic Codex — a 20-quest learning track covering all six domains of the GH-600 GitHub Copilot certification, now open."
+title: 'Launching the Agentic Codex: A GH-600 Learning Track for the IT-Journey'
+description: The Agentic Codex — a 20-quest learning track covering all six domains of the GH-600 GitHub Copilot certification, now open.
 permalink: /posts/launching-agentic-codex-gh-600-track/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/launching-agentic-codex-gh-600-track.png
-sub-title: "The first comprehensive quest-based path to GitHub Copilot certification"
-excerpt: "We built 20 quests, 7 posts, and 8 reference notes covering every skill measured in the GH-600 exam. Here's the map."
-snippet: "The Agentic Codex is open for adventurers."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/launching-agentic-codex-gh-600-track.png
+sub-title: The first comprehensive quest-based path to GitHub Copilot certification
+excerpt: We built 20 quests, 7 posts, and 8 reference notes covering every skill measured in the GH-600 exam. Here's the map.
+snippet: The Agentic Codex is open for adventurers.
 author: IT-Journey Team
 layout: article
+featured: true
 keywords:
-  primary: ["gh-600", "agentic AI learning track"]
-  secondary: ["GitHub Copilot certification", "quest-based learning", "agentic codex"]
-lastmod: 2026-05-17T00:00:00.000Z
+- gh-600
+- agentic AI learning track
+- GitHub Copilot certification
+- quest-based learning
+- agentic codex
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - learning-track
-  - announcement
-  - quests
+- gh-600
+- agentic-ai
+- learning-track
+- announcement
+- quests
 categories:
-  - AI & Machine Learning
-  - Announcements
+- AI & Machine Learning
+- Announcements
 ---
-
 The [GH-600 certification](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) — *Developing in Agentic AI Systems* — covers some of the most important skills for the next wave of software development. It tests your ability to design, build, evaluate, and govern AI agents that work on your behalf inside the GitHub platform.
 
 We built the **Agentic Codex** to prepare IT-Journey learners for this certification. It's a complete learning arc: 20 quests, 7 chronicle posts, and 8 quick-reference notes — all organised around the six domains in the GH-600 study guide.

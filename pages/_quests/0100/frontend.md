@@ -1,41 +1,39 @@
 ---
 title: 'Frontend Forests: Building a Jekyll Site with Bootstrap'
 author: GPT and bamr87
-description: Embark on a quest to build a Jekyll site using Bootstrap for CSS and
-  JavaScript in the Frontend Forests. This guide will navigate you through the enchanted
-  woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create
-  an enchanting website.
-excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript
-  in the Frontend Forests
+description: Embark on a quest to build a Jekyll site using Bootstrap for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests
 snippet: null
 preview: /images/frontend-forests.png
-date: 2024-03-12 19:51:39+00:00
-lastmod: 2024-05-28 04:03:05.692000+00:00
+date: '2024-03-12T19:51:39.000Z'
+lastmod: '2024-05-28T04:03:05.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: General
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- Foundations
+skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0100/frontend/
 categories: []
 tags: []
 keywords:
-- frontend
-- forests
-- building
-- a
-- jekyll
-- site
+  primary:
+  - frontend
+  - forests
+  - building
+  secondary:
+  - a
+  - jekyll
+  - site
 fmContentType: quest
 draft: draft
 attachments: ''
 sub-title: null
 slug: frontend-forests
 type: default
+layout: quest
 ---
 ## 🎯 Quest Objectives
 

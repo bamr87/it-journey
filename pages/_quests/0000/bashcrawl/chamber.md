@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Chamber: Bash Arithmetic and the Statue Boss'
-description: "Defeat Bashcrawl's Statue Boss by solving arithmetic with let, expr,
-  and $(( )). Mastering Bash math is the only weapon that can defeat this stone guardian."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: Defeat Bashcrawl's Statue Boss by solving arithmetic with let, expr, and $(( )). Mastering Bash math is the only weapon that can defeat this stone guardian.
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,9 +13,7 @@ quest_line: Foundation Path
 difficulty: 🟡 Medium
 estimated_time: 25-30 minutes
 primary_technology: bash
-skill_focus:
-- Bash Arithmetic
-- Shell Variables
+skill_focus: fullstack
 learning_style: hands-on
 categories:
 - Quests
@@ -28,7 +25,7 @@ tags:
 - bash
 - arithmetic
 - variables
-- "0000"
+- '0000'
 keywords:
   primary:
   - bash arithmetic
@@ -60,11 +57,11 @@ learning_paths:
 rewards:
 - Stone Key Fragment
 - Bash arithmetic mastery
-excerpt: "Defeat the stone statue by using let, expr, and arithmetic expansion to solve Bash math challenges and unlock the Rift."
+excerpt: Defeat the stone statue by using let, expr, and arithmetic expansion to solve Bash math challenges and unlock the Rift.
 draft: false
 permalink: /quests/0000/side-quests/chamber/
+layout: quest
 ---
-
 *A massive stone statue dominates the Chamber, its eyes glowing with arithmetic runes. It will not yield to a sword. Only correct calculations can break the enchantment — and wrong answers deal damage.*
 
 ## 🎯 Quest Objectives

@@ -1,14 +1,11 @@
 ---
 title: 'Google Analytics for Jekyll: Complete User Tracking Integration Guide'
 author: IT-Journey Team
-description: Add Google Analytics 4 to your Jekyll site. Learn event tracking, custom
-  dimensions, privacy-compliant implementation, and dashboard setup to understand
-  your website traffic and user behavior.
-excerpt: Implement Google Analytics 4 on your Jekyll site to track visitors, events,
-  and user engagement metrics
+description: Add Google Analytics 4 to your Jekyll site. Learn event tracking, custom dimensions, privacy-compliant implementation, and dashboard setup to understand your website traffic and user behavior.
+excerpt: Implement Google Analytics 4 on your Jekyll site to track visitors, events, and user engagement metrics
 preview: images/previews/analytics-integration-tracking-user-engagement-des.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:00:25+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:00:25.000Z'
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - Data
 - Medium
 tags:
-- "0011"
+- '0011'
 - google-analytics
 - jekyll
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "0011"
-- google-analytics
-- jekyll
-- main_quest
-- data
-- hands-on
-- gamified-learning
+  primary:
+  - '0011'
+  - google-analytics
+  - jekyll
+  secondary:
+  - main_quest
+  - data
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

@@ -1,13 +1,12 @@
 ---
 title: Shell and the CLI
-updated: 2022-01-05 07:55:00Z
-created: 2023-12-15 04:10:54Z
-lastmod: 2024-05-17T01:52:39.490Z
+updated: 2022-01-05 07:55:00+00:00
+created: 2023-12-15 04:10:54+00:00
+lastmod: '2024-05-17T01:52:39.000Z'
 draft: draft
-date: 2021-11-06T10:42:04.000Z
-
+date: '2021-11-06T10:42:04.000Z'
+description: To create a clone of your fork, use the --clone flag.
 ---
-
 # Command Line
 
 ## bash

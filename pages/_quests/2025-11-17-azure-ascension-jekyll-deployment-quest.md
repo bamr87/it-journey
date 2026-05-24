@@ -1,9 +1,8 @@
 ---
 title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
-description: Deploy the IT-Journey Jekyll site to Azure Static Web Apps with a clean
-  CI/CD pipeline and safe secrets handling.
+description: Deploy the IT-Journey Jekyll site to Azure Static Web Apps with a clean CI/CD pipeline and safe secrets handling.
 author: IT-Journey Team
-date: 2025-07-05 12:12:17+00:00
+date: '2025-07-05T12:12:17.000Z'
 lastmod: 2026-01-14
 level: '1001'
 difficulty: 🔴 Hard
@@ -11,11 +10,7 @@ estimated_time: 90-120 minutes
 primary_technology: Azure Static Web Apps
 quest_type: main_quest
 quest_series: Cloud Deployment Quests
-skill_focus:
-- cloud-deployment
-- ci-cd
-- static-sites
-- azure
+skill_focus: devops
 learning_style: hands-on
 permalink: /quests/1000/azure-ascension-jekyll-deployment/
 categories:
@@ -29,13 +24,16 @@ tags:
 - static-web-apps
 - ci-cd
 keywords:
-- azure
-- jekyll
-- static-web-apps
-- deployment
-- ci-cd
+  primary:
+  - azure
+  - jekyll
+  secondary:
+  - static-web-apps
+  - deployment
+  - ci-cd
 fmContentType: quest
 draft: false
+layout: quest
 ---
 *Rise, cloud wanderer! This quest guides you through deploying the IT-Journey Jekyll site to Azure Static Web Apps, wiring up CI/CD, and verifying a clean production build.*
 

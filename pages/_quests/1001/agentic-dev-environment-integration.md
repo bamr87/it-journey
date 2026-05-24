@@ -1,30 +1,22 @@
 ---
 title: 'Bind the Agent to the Realm: Dev Environment Integration'
-description: Integrate GitHub Copilot agents with the development environment — configure
-  Codespaces, repositories, AGENTS.md, and environment variables so the agent operates
-  predictably across all machines.
-date: 2026-05-17 00:00:00+00:00
+description: Integrate GitHub Copilot agents with the development environment — configure Codespaces, repositories, AGENTS.md, and environment variables so the agent operates predictably across all machines.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-dev-environment-integration.png
 level: '1001'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- dev-environment
-- codespaces
-- agents-md
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1001 Quest 1/3 — Domain 2: Tool Use & Environment Interaction'
-excerpt: An agent bound to a well-configured realm performs consistently. An agent
-  cast into an unknown environment is dangerous. Write the binding spells that make
-  your environment agent-ready.
+excerpt: An agent bound to a well-configured realm performs consistently. An agent cast into an unknown environment is dangerous. Write the binding spells that make your environment agent-ready.
 author: IT-Journey Team
 tags:
 - '1001'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- agent environment
-- AGENTS.md
-- github codespaces
-- dev container
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent environment
+  secondary:
+  - AGENTS.md
+  - github codespaces
+  - dev container
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1001/agentic-dev-environment-integration/
 quest_dependencies:
   required_quests:
@@ -95,6 +89,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-dev-environment-integration/
+layout: quest
 ---
 *Before a soldier enters battle, their weapons are sharpened, their armor fitted, their orders memorised. An agent entering a repository without an `AGENTS.md` is a soldier sent to an unknown castle with a broken sword. The Barracks Masters spend their days writing the binding documents that turn a strange repository into a familiar home for any agent that enters.*
 
@@ -189,7 +184,7 @@ npm test -- --coverage
 
 # Lint
 npm run lint
-```
+```markdown
 
 ## Build Commands
 
@@ -199,7 +194,7 @@ npm run build
 
 # Start development server
 npm run dev
-```
+```bash
 
 ## Commit Message Format
 

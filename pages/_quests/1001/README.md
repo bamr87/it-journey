@@ -1,7 +1,6 @@
 ---
 title: Level 1001 (9) - Kubernetes Orchestration
-description: Command the container orchestration platform that powers enterprise-scale
-  deployments
+description: Command the container orchestration platform that powers enterprise-scale deployments
 preview: images/previews/level-1001-kubernetes.png
 permalink: /quests/1001/
 layout: quest-collection
@@ -22,7 +21,7 @@ lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-date: 2025-12-20 20:02:51+00:00
+date: '2025-12-20T20:02:51.000Z'
 ---
 # Level 1001 (9) - Kubernetes Orchestration
 

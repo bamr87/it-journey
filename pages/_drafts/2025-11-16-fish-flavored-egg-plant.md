@@ -4,14 +4,13 @@ author: null
 description: Scatter over the remaining scallion greens and serve.
 categories:
 - Posts
-lastmod: 2022-08-08 04:55:50.623000+00:00
+lastmod: '2022-08-08T04:55:50.000Z'
 draft: true
 sidebar:
   nav: cooking
 section: Creative & Experimental
-date: 2022-01-08 21:33:58+00:00
+date: '2022-01-08T21:33:58.000Z'
 ---
-
 ## Ingredients
 
 | Qty   |  UM  | Ingredient                    | Notes                               |

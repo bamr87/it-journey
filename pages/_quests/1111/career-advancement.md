@@ -1,12 +1,11 @@
 ---
 title: 'Career Advancement Strategies: Growing from Engineer to Leader'
 author: IT-Journey Team
-description: Navigate career advancement in tech from IC to leadership. Learn promotion
-  strategies, personal branding, networking, and building executive presence.
+description: Navigate career advancement in tech from IC to leadership. Learn promotion strategies, personal branding, networking, and building executive presence.
 excerpt: Navigate career advancement from individual contributor to technical leadership
 preview: images/previews/career-advancement-strategies-descriptive-subtitle.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- leadership
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -66,19 +64,21 @@ categories:
 - Leadership
 - Hard
 tags:
-- "1111"
+- '1111'
 - career
 - main_quest
 - leadership
 - hands-on
 - gamified-learning
 keywords:
-- "1111"
-- career
-- main_quest
-- leadership
-- hands-on
-- gamified-learning
+  primary:
+  - '1111'
+  - career
+  - main_quest
+  secondary:
+  - leadership
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

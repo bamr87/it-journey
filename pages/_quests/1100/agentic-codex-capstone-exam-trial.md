@@ -1,33 +1,22 @@
 ---
 title: 'Trial of the Agentic Codex: The Grand Capstone'
-description: The ultimate challenge — a six-domain scenario that tests every GH-600
-  skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural
-  decisions, and earn the title of Agentic Codex Master.
-date: 2026-05-17 00:00:00+00:00
+description: The ultimate challenge — a six-domain scenario that tests every GH-600 skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural decisions, and earn the title of Agentic Codex Master.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-codex-capstone-exam-trial.png
 level: '1100'
 difficulty: ⚔️ Epic
-estimated_time: 360 minutes
+estimated_time: 5-6 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- multi-agent
-- evaluation
-- lifecycle-management
-- guardrails
-- responsible-ai
-- exam-preparation
+skill_focus: security
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: Level 1100 Quest 4/4 — The Grand Capstone — All Domains
-excerpt: The Codex was written. The quests were walked. Now the Trial begins. All
-  six seals must be broken. All six domains tested. The title of Agentic Codex Master
-  is not given — it is earned in the forge of complete knowledge.
+excerpt: The Codex was written. The quests were walked. Now the Trial begins. All six seals must be broken. All six domains tested. The title of Agentic Codex Master is not given — it is earned in the forge of complete knowledge.
 author: IT-Journey Team
 tags:
 - '1100'
@@ -44,12 +33,14 @@ categories:
 - Agentic-AI
 - Capstone
 keywords:
-- gh-600 exam
-- agentic AI capstone
-- GitHub Copilot certification
-- agentic codex master
-- all domains review
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600 exam
+  - agentic AI capstone
+  secondary:
+  - GitHub Copilot certification
+  - agentic codex master
+  - all domains review
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1100/agentic-codex-capstone-exam-trial/
 quest_dependencies:
   required_quests:
@@ -116,6 +107,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-codex-capstone-exam-trial/
+layout: quest
 ---
 *The Hall of Mastery stands silent. The six seals of the Codex glow on the walls — one for each domain, one for each truth the candidate has learned on the journey from initiate to master. The Codex Master who placed the seals speaks: "Show me that you did not only read the Codex. Show me that you understand why it was written."*
 

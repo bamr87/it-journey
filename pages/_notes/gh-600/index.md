@@ -1,19 +1,19 @@
 ---
-title: "GH-600 Agentic AI Quick-Reference Notes"
-description: "Hub for all GH-600 quick-reference notes — domain weights, skills checklist, cheatsheets, and glossary for the GitHub Copilot Agentic AI certification."
-date: 2026-05-17T00:00:00.000Z
+title: GH-600 Agentic AI Quick-Reference Notes
+description: Hub for all GH-600 quick-reference notes — domain weights, skills checklist, cheatsheets, and glossary for the GitHub Copilot Agentic AI certification.
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/
 author: IT-Journey Team
 tags:
-  - gh-600
-  - quick-reference
-  - notes
+- gh-600
+- quick-reference
+- notes
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # GH-600 Quick-Reference Notes
 
 Quick-reference materials for the **GH-600: Developing in Agentic AI Systems** certification.

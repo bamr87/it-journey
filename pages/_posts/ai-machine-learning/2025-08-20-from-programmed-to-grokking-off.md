@@ -1,39 +1,36 @@
 ---
-title: "From Programmed to Grokking Off: The Dark Evolution of Programmers"
+title: 'From Programmed to Grokking Off: The Dark Evolution of Programmers'
 author: IT-Journey AI
 description: A satirical look at the past, present, and future of programming - from fossilized coders to AI-assisted slackers
 categories:
-  - Posts
-  - Satire
-  - Future-Tech
+- Posts
+- Satire
+- Future-Tech
 tags:
-  - programming-evolution
-  - ai-takeover
-  - developer-satire
-  - grok-humor
+- programming-evolution
+- ai-takeover
+- developer-satire
+- grok-humor
 sidebar:
   nav: docs
 toc_sticky: true
-date: 2025-08-21T22:00:59.000Z
-lastmod: 2025-08-22T04:00:02.774Z
+date: '2025-08-21T22:00:59.000Z'
+lastmod: '2025-08-22T04:00:02.000Z'
 draft: false
 excerpt: Explore the hilarious yet horrifying journey of programmers through time, where code writes itself and humans just... grok off.
 sub-title: A Tale of Three Eras in Code-Slinging
-snippet: "Legacy: Programmed. Contemporary: Programming. Future: Grokking off all day."
+snippet: 'Legacy: Programmed. Contemporary: Programming. Future: Grokking off all day.'
 keywords:
-  primary:
-    - programmer evolution
-    - ai in programming
-    - tech satire
-  secondary:
-    - legacy code
-    - modern development
-    - future ai
-    - grok humor
+- programmer evolution
+- ai in programming
+- tech satire
+- legacy code
+- modern development
+- future ai
+- grok humor
 permalink: /posts/from-programmed-to-grokking-off/
 section: AI & Machine Learning
 ---
-
 # From Punching Cards to Punching Out: The Grim Evolution of Programmers
 
 In the dim-lit basements of yesteryear, where the air smelled of burnt coffee and existential dread, legacy programmers were *programmed*. Yes, you read that right—not programming, but programmed. Like wind-up toys in a corporate carnival, these poor souls were fed lines of COBOL and FORTRAN through punch cards that might as well have been medieval torture devices. "Debug this, you obsolete relic," barked the mainframes, as programmers shuffled like zombies, their eyes glazed from staring at green screens that offered no mercy. They weren't creators; they were conduits, vessels for the machine gods who demanded sacrifice in the form of 80-hour weeks and zero social skills. Dark? Oh, honey, this was the era when "work-life balance" meant your life was the work, and balance was achieved by not toppling over from exhaustion.

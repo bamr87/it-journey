@@ -3,17 +3,15 @@ title: Personal Site
 author: IT-Journey Team
 description: Services and tools used for building personal site with GitHub Pages
 preview: images/previews/personal-site.png
-date: 2023-12-03 01:47:51+00:00
-lastmod: 2025-11-30 05:46:59.346000+00:00
+date: '2023-12-03T01:47:51.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 primary_technology: Personal Site
 quest_type: side_quest
 quest_series: Level 0001 Quest Line
-skill_focus:
-- Quests
-- GitHub-Pages
+skill_focus: devops
 learning_style: hands-on
 permalink: /quests/0001/side-quests/personal-site/
 categories:
@@ -24,15 +22,17 @@ tags:
 - '0001'
 - github-pages
 keywords:
-- Personal Site
-- '0001'
-- github-pages
+  primary:
+  - Personal Site
+  secondary:
+  - '0001'
+  - github-pages
 fmContentType: quest
 key: tutorial
 index: 8199
 subcategory: jekyll
-quest_line: 'Site Building Series'
-quest_arc: 'Personal portfolio arc'
+quest_line: Site Building Series
+quest_arc: Personal portfolio arc
 prerequisites:
   knowledge_requirements: []
   system_requirements: []
@@ -55,6 +55,7 @@ rewards:
 validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
+layout: quest
 ---
 ## 🎯 Quest Objectives
 

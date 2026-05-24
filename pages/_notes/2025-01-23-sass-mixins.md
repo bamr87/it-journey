@@ -1,31 +1,31 @@
 ---
 title: Sass mixins
 description: Learn how to use SASS mixins for modular CSS in Bootstrap 5, enhancing your front-end development with reusable styles.
-date: 2025-02-05T14:08:47.000Z
-preview: ""
+date: '2025-02-05T14:08:47.000Z'
+preview: ''
 tags:
-    - Bootstrap
-    - CSS
-    - front-end development
-    - mixins
-    - SASS
+- Bootstrap
+- CSS
+- front-end development
+- mixins
+- SASS
 categories:
-    - bootstrap
-    - Development
-    - guides
-    - Programming
-    - web-development
+- bootstrap
+- Development
+- guides
+- Programming
+- web-development
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-01-23T23:23:04.531Z
+lastmod: '2025-01-23T23:23:04.000Z'
 permalink: null
-attachments: ""
+attachments: ''
 slug: sass-mixins
+draft: false
 ---
-
 SASS mixins are powerful tools that allow you to reuse blocks of styling across your CSS, making your front-end code more modular and maintainable. In the context of Bootstrap 5, mixins are extensively used to manage responsive design, typography, spacing, and other styling features.
 
 Here’s a step-by-step guide on how to use and modify SASS mixins, with a focus on Bootstrap 5:

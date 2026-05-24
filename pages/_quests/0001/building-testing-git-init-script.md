@@ -1,22 +1,18 @@
 ---
 title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
 author: IT-Journey Team
-description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive
-  and headless repo initializer with programmatic scaffolding.
-excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable
-  in both interactive and headless modes.
+description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive and headless repo initializer with programmatic scaffolding.
+excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable in both interactive and headless modes.
 preview: images/previews/building-testing-the-git-init-script-headless-inte.png
-date: 2025-11-13 23:38:22+00:00
-lastmod: 2025-11-13 10:30:00+00:00
+date: '2025-11-13T23:38:22.000Z'
+lastmod: '2025-11-13T10:30:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-75 minutes
 primary_technology: shell-scripting
 quest_type: main_quest
 quest_series: Level 0001 Quest Line
-skill_focus:
-- Quests
-- Development
+skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0001/git-init-testing/
 categories:
@@ -28,17 +24,19 @@ tags:
 - automation
 - bash
 keywords:
-- shell-scripting
-- testing
-- automation
-- bash
+  primary:
+  - shell-scripting
+  - testing
+  secondary:
+  - automation
+  - bash
 fmContentType: quest
 comments: true
 sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
 redirect_from:
 - /quests/0001/building-testing-git-init-script/
-quest_line: 'Git Mastery Series'
-quest_arc: 'Tooling fundamentals'
+quest_line: Git Mastery Series
+quest_arc: Tooling fundamentals
 prerequisites:
   knowledge_requirements: []
   system_requirements: []
@@ -61,6 +59,7 @@ rewards:
 validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
+layout: quest
 ---
 ## The Challenge: Safe automation without surprises
 

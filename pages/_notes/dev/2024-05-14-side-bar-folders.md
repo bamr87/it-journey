@@ -4,24 +4,23 @@ author: bamr87
 description: Jekyll Liquid template code for generating dynamic sidebar navigation with folder structures from collections
 excerpt: Implementation guide for creating organized sidebar navigation that displays collection files in a hierarchical folder structure
 categories:
-   - notes
-   - dev
-   - jekyll
-   - sidebar
+- notes
+- dev
+- jekyll
+- sidebar
 tags:
-   - jekyll
-   - liquid
-   - sidebar
-   - navigation
-   - collections
-   - file-structure
+- jekyll
+- liquid
+- sidebar
+- navigation
+- collections
+- file-structure
 slug: side-bar-folders
-lastmod: 2024-05-16T01:45:59.214Z
-date: 2024-05-14T22:06:19.000Z
+lastmod: '2024-05-16T01:45:59.000Z'
+date: '2024-05-14T22:06:19.000Z'
 type: default
 draft: false
 ---
-
 ## All Notes Section
 
 {% assign root_folder = site.collections | where: "label", page.collection | first %}

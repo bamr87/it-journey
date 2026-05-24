@@ -1,34 +1,32 @@
 ---
 title: iTerm Tips and Tricks
 description: Unlock your productivity with essential iTerm2 tips for customizing keybindings and navigating text efficiently in the terminal.
-date: 2025-02-05T14:08:47.000Z
+date: '2025-02-05T14:08:47.000Z'
 preview: /assets/images/iTerm-shortcuts-2.png
 tags:
-    - customization
-    - iTerm2
-    - macOS
-    - productivity
-    - terminal
+- customization
+- iTerm2
+- macOS
+- productivity
+- terminal
 categories:
-    - guides
-    - iTerm2
-    - productivity tips
-    - shortcuts
-    - terminal customization
+- guides
+- iTerm2
+- productivity tips
+- shortcuts
+- terminal customization
 sub-title: null
 excerpt: null
 snippet: null
 author: Amr
 keywords:
-    - tips
-    - iTerm
-lastmod: 2025-01-17T02:11:14.485Z
+- tips
+- iTerm
+lastmod: '2025-01-17T02:11:14.000Z'
 permalink: null
-attachments: ""
+attachments: ''
 draft: draft
 ---
-
-
 **How to Customize iTerm2 for Efficiency: Keybindings to Delete Words and Navigate Text**
 
 **iTerm2**, a powerful terminal emulator for macOS, provides extensive customization options that can enhance your productivity when working in the terminal. In this guide, we'll walk through setting up keybindings to delete words and navigate text efficiently, and explore the benefits of mastering such customizations.

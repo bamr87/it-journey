@@ -1,37 +1,32 @@
 ---
 title: Dockering Jekyll with Bootstrap 5
 author: GPT and bamr87
-description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and
-  JavaScript in the Frontend Forests. This guide will navigate you through the enchanted
-  woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create
-  an enchanting website.
-excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript
-  in the Frontend Forests. This guide will navigate you through the enchanted woods,
-  ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting
-  website.
+description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 preview: images/previews/dockering-jekyll-with-bootstrap-5.png
-date: 2024-05-28 15:23:32+00:00
-lastmod: 2024-05-28 04:11:52.774000+00:00
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2024-05-28T04:11:52.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: General
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- Foundations
+skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0100/frontend-docker/
 keywords:
-- dockering
-- jekyll
-- with
-- bootstrap
-- '5'
+  primary:
+  - dockering
+  - jekyll
+  secondary:
+  - with
+  - bootstrap
+  - '5'
 fmContentType: quest
 draft: true
-quest_line: 'Frontend Containers Series'
-quest_arc: 'Docker on the web'
+quest_line: Frontend Containers Series
+quest_arc: Docker on the web
 prerequisites:
   knowledge_requirements: []
   system_requirements: []
@@ -54,6 +49,11 @@ rewards:
 validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
+layout: quest
+categories:
+- Quests
+- Fullstack
+- Medium
 ---
 ## 🎯 Quest Objectives
 

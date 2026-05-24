@@ -4,30 +4,29 @@ permalink: /docs/obsidian/
 description: Use Obsidian-style wiki links, backlinks, embeds, and interactive graph views across all IT-Journey docs, quests, notes, and posts.
 excerpt: Lightweight guide to the Obsidian-style knowledge features provided by the zer0-mistakes theme.
 categories:
-  - docs
-  - obsidian
+- docs
+- obsidian
 tags:
-  - obsidian
-  - wiki-links
-  - knowledge-graph
-  - notes
+- obsidian
+- wiki-links
+- knowledge-graph
+- notes
 sidebar:
   nav: docs
 toc_sticky: true
-date: 2026-04-25T00:00:00.000Z
-lastmod: 2026-04-25T00:00:00.000Z
+date: '2026-04-25T00:00:00.000Z'
+lastmod: '2026-04-25T00:00:00.000Z'
 author: Amr Abdel Eissa
 draft: false
 keywords:
   primary:
-    - obsidian
-    - knowledge graph
+  - obsidian
+  - knowledge graph
   secondary:
-    - wiki links
-    - backlinks
-    - notes
+  - wiki links
+  - backlinks
+  - notes
 ---
-
 # Obsidian Knowledge Graph
 
 IT-Journey uses the `zer0-mistakes` theme for Obsidian-style knowledge features while keeping the implementation in the theme. This site only adds the pages, navigation, and content links needed to make those features discoverable.

@@ -1,9 +1,8 @@
 ---
 title: 'Hello Cloud: First Steps into the Sky Realm'
-description: Create your first cloud account, install a cloud CLI, and deploy a simple
-  resource safely.
+description: Create your first cloud account, install a cloud CLI, and deploy a simple resource safely.
 author: IT-Journey Team
-date: 2026-01-14 22:23:32+00:00
+date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14
 level: '0000'
 difficulty: ⚔️ Epic
@@ -38,11 +37,7 @@ learning_paths:
   skill_trees:
   - Cloud Fundamentals
   - CLI Mastery
-skill_focus:
-- cloud-fundamentals
-- account-setup
-- cli-tools
-- security-basics
+skill_focus: security
 learning_style: hands-on
 permalink: /quests/0000/hello-cloud/
 categories:
@@ -58,12 +53,14 @@ tags:
 - cli
 - init-world
 keywords:
-- cloud
-- account-setup
-- cli
-- gcp
-- aws
-- azure
+  primary:
+  - cloud
+  - account-setup
+  - cli
+  secondary:
+  - gcp
+  - aws
+  - azure
 fmContentType: quest
 prerequisites:
   knowledge_requirements:
@@ -99,6 +96,7 @@ rewards:
   - Access to advanced cloud quests
   - Foundation for infrastructure-as-code learning
 draft: false
+layout: quest
 ---
 *Welcome, skybound adventurer! You stand at the edge of the mortal realm, gazing up at the shimmering **Sky Realm** — a vast kingdom of infinite compute power, boundless storage vaults, and magical services that can scale from a whisper to a thunderclap. Today, you claim your first foothold in the clouds.*
 

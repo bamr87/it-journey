@@ -1,30 +1,29 @@
 ---
-title: "Dockerizing Your IT Journey: Jekyll with Docker"
+title: 'Dockerizing Your IT Journey: Jekyll with Docker'
 description: How to use Docker to run your IT Journey Jekyll site with Ruby 2.7, including Dockerfile setup, container configuration, and running the site locally.
 author: Amr and Co-pilot
 excerpt: If you must use Ruby 2.7, you can specify the versions of Jekyll and Bundler that are compatible with Ruby 2.7 in your Dockerfile.
-date: 2024-04-04T15:57:37.000Z
-lastmod: 2024-04-02T16:06:30.908Z
+date: '2024-04-04T15:57:37.000Z'
+lastmod: '2024-04-02T16:06:30.000Z'
 draft: true
 tags:
-    - Docker
-    - Jekyll
-    - Ruby
-    - containerization
+- Docker
+- Jekyll
+- Ruby
+- containerization
 categories:
-    - Development
+- Development
 keywords:
-  - docker jekyll ruby 2.7
-  - run jekyll in docker
-  - jekyll docker container setup
-  - dockerfile jekyll site
-  - dockerize jekyll blog
+- docker jekyll ruby 2.7
+- run jekyll in docker
+- jekyll docker container setup
+- dockerfile jekyll site
+- dockerize jekyll blog
 meta: null
 snippet: null
 section: DevOps
 slug: dockering-your-it-journey
 ---
-
 bamr87: i need to update this dockerfile to run this repository in a container. 
 
 GitHub Copilot: Sure, to run a repository in a Docker container, you need to clone the repository into the Docker image. Here's an example of how you can modify your Dockerfile to do this:

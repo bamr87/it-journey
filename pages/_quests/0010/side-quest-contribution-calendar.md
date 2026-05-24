@@ -2,24 +2,23 @@
 title: 'Contribution Calendar: Mapping Your Journey Through Time'
 author: Quest Master IT-Journey Team
 keywords:
-- contribution calendar
-- heatmap
-- CSS grid
-- data visualization
-description: Build a GitHub-style contribution heatmap for your character profile
-  using the 52-week calendar data
-excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in
-  light.
+  primary:
+  - contribution calendar
+  - heatmap
+  secondary:
+  - CSS grid
+  - data visualization
+description: Build a GitHub-style contribution heatmap for your character profile using the 52-week calendar data
+excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in light.
 snippet: Time is the truest measure of an adventurer's resolve
-date: 2026-03-20 00:00:00+00:00
-lastmod: 2026-03-21 15:12:32.256000+00:00
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: css
 quest_type: side_quest
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: project-based
 quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
@@ -33,7 +32,7 @@ categories:
 - Community
 - Frontend
 tags:
-- "0010"
+- '0010'
 - contributor
 - calendar
 - heatmap
@@ -75,6 +74,7 @@ validation_criteria:
   - 52 weeks of data render as colored cells
   - Color intensity reflects commit count
   - Calendar is responsive
+layout: quest
 ---
 # 📆 Contribution Calendar: Mapping Your Journey Through Time
 

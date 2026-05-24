@@ -1,14 +1,14 @@
 ---
 title: Level 0011 - Development Tools & AI Integration
-description: Master AI-powered development tools, code search, and intelligent workflow
-  integration
+description: Master AI-powered development tools, code search, and intelligent workflow integration
 preview: images/previews/level-0011-development-tools-ai-integration.png
 permalink: /quests/0011/
 layout: quest-collection
 level: '0011'
-categories: quests
-lastmod: 2025-11-29 23:41:31.768000+00:00
-date: 2025-11-29 16:46:02+00:00
+categories:
+- quests
+lastmod: '2025-11-29T23:41:31.000Z'
+date: '2025-11-29T16:46:02.000Z'
 ---
 # Level 0011: Development Tools & AI Integration
 

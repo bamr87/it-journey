@@ -1,51 +1,48 @@
 ---
-title: "Setting Up Django and Git: A Magical Beginner's Guide"
-description: "Learn to set up a Django project with Git version control and push it to GitHub from VS Code — a fun, wizard-themed walkthrough."
-date: 2025-03-13T14:00:43.000Z
+title: 'Setting Up Django and Git: A Magical Beginner''s Guide'
+description: Learn to set up a Django project with Git version control and push it to GitHub from VS Code — a fun, wizard-themed walkthrough.
+date: '2025-03-13T14:00:43.000Z'
 preview: /images/git-django.png
 tags:
-    - django
-    - git
-    - python
-    - tutorial
-    - beginner
+- django
+- git
+- python
+- tutorial
+- beginner
 categories:
-    - Posts
-    - Web Development
-sub-title: "From zero to GitHub in one magical session"
-excerpt: "A step-by-step guide to initializing a Django project, setting up Git, and pushing your code to GitHub — all wrapped in a wizard theme."
-snippet: "Grab your wand (keyboard) and conjure a Django project bound to GitHub in minutes."
+- Posts
+- Web Development
+sub-title: From zero to GitHub in one magical session
+excerpt: A step-by-step guide to initializing a Django project, setting up Git, and pushing your code to GitHub — all wrapped in a wizard theme.
+snippet: Grab your wand (keyboard) and conjure a Django project bound to GitHub in minutes.
 author: Cloud Quest Guide
 draft: false
 layout: article
 keywords:
-    primary:
-        - django setup
-        - git version control
-    secondary:
-        - github repository
-        - python virtual environment
-        - vs code
-        - web development
-lastmod: 2025-03-12T18:24:53.477Z
+- django setup
+- git version control
+- github repository
+- python virtual environment
+- vs code
+- web development
+lastmod: '2025-03-12T18:24:53.000Z'
 permalink: /setting-up-django-and-git/
-attachments: ""
+attachments: ''
 comments: true
-difficulty: "🟢 Beginner"
-estimated_reading_time: "8-10 minutes"
+difficulty: 🟢 Beginner
+estimated_reading_time: 8-10 minutes
 prerequisites:
-    - "Python 3 installed on your system"
-    - "Git installed and configured"
-    - "A GitHub account"
-    - "VS Code (recommended) or any text editor"
+- Python 3 installed on your system
+- Git installed and configured
+- A GitHub account
+- VS Code (recommended) or any text editor
 learning_outcomes:
-    - "🎯 Create a Django project from scratch with a virtual environment"
-    - "⚡ Initialize Git and configure .gitignore properly"
-    - "🛠️ Push a local repository to GitHub"
-    - "🔗 Understand the end-to-end workflow of project initialization"
+- 🎯 Create a Django project from scratch with a virtual environment
+- ⚡ Initialize Git and configure .gitignore properly
+- 🛠️ Push a local repository to GitHub
+- 🔗 Understand the end-to-end workflow of project initialization
 section: Web Development
 ---
-
 ## Introduction
 
 Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than the powerful IDE known as **VS Code**?

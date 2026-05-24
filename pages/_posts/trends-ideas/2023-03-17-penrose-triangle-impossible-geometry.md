@@ -1,42 +1,38 @@
 ---
-title: "Penrose Triangle: Symbol of Impossibility in Design and Mathematics"
+title: penrose triangle
 author: bamr87
 categories:
-    - Posts
-    - Design
-    - Mathematics
-date: 2023-03-19T11:36:51.000Z
-description: "Explore the fascinating world of impossible geometry through the iconic Penrose Triangle, a symbol that challenges perception and mathematical logic"
+- Posts
+- Design
+- Mathematics
+date: '2023-03-19T11:36:51.000Z'
+description: Explore the fascinating world of impossible geometry through the iconic Penrose Triangle, a symbol that challenges perception and mathematical logic
 draft: false
 section: Trends & Ideas
-excerpt: "Dive into the mathematical and artistic significance of the Penrose Triangle, an impossible object that has captivated designers and mathematicians alike"
-lastmod: 2024-05-20T14:59:10.308Z
-snippet: "An impossible triangle that exists in our minds but not in our world"
-sub-title: "Impossible Geometry and Optical Illusions"
+excerpt: Dive into the mathematical and artistic significance of the Penrose Triangle, an impossible object that has captivated designers and mathematicians alike
+lastmod: '2024-05-20T14:59:10.000Z'
+snippet: An impossible triangle that exists in our minds but not in our world
+sub-title: Impossible Geometry and Optical Illusions
 tags:
-    - penrose-triangle
-    - optical-illusions
-    - impossible-objects
-    - geometry
-    - design
-    - mathematics
-    - inkscape
-    - svg
-title: "penrose triangle"
+- penrose-triangle
+- optical-illusions
+- impossible-objects
+- geometry
+- design
+- mathematics
+- inkscape
+- svg
 type: Article
 keywords:
-    primary:
-        - penrose triangle
-        - impossible objects
-        - optical illusions
-    secondary:
-        - geometry
-        - design
-        - mathematics
-        - impossible geometry
+- penrose triangle
+- impossible objects
+- optical illusions
+- geometry
+- design
+- mathematics
+- impossible geometry
 permalink: /posts/penrose-triangle-impossible-geometry/
 ---
-
 Symbol of impossibility [Wiki](https://en.wikipedia.org/wiki/Penrose_triangle)
 
 Inkscape

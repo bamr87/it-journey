@@ -1,32 +1,31 @@
 ---
-title: "GPT-4 CV Analysis: Career Path Recommendations"
+title: 'GPT-4 CV Analysis: Career Path Recommendations'
 author: ChatGPT
-date: 2024-03-12T19:51:39.000Z
+date: '2024-03-12T19:51:39.000Z'
 excerpt: An analysis of a CV and recommendations for career paths and growth based on a background in finance, IT consulting, and enterprise systems.
 description: A GPT-4 powered analysis of a finance and IT consulting CV, providing career path recommendations, skill gap insights, and professional growth strategies.
 snippet: null
 categories:
-    - Finance
+- Finance
 tags:
-    - IT Consulting
-    - Enterprise Systems
-    - ERP Systems
-    - Data Analytics
-    - Project Management
-    - CV
-    - GPT-4
+- IT Consulting
+- Enterprise Systems
+- ERP Systems
+- Data Analytics
+- Project Management
+- CV
+- GPT-4
 keywords:
-  - gpt cv analysis career advice
-  - ai career path recommendations
-  - cv review gpt-4
-  - it consulting career growth
-  - erp systems career path
+- gpt cv analysis career advice
+- ai career path recommendations
+- cv review gpt-4
+- it consulting career growth
+- erp systems career path
 meta: null
 draft: true
 section: Data & Analytics
-lastmod: 2024-05-28T04:15:59.343Z
+lastmod: '2024-05-28T04:15:59.000Z'
 ---
-
 ## CV Analysis
 
 Your CV is comprehensive and showcases a strong background in finance, IT consulting, and enterprise systems, with a significant emphasis on ERP systems, data analytics, and project management across various industries. Here's an analysis based on the main sections of your CV:

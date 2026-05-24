@@ -2,23 +2,23 @@
 title: 'Avatar Forge: Crafting Your Digital Portrait'
 author: Quest Master IT-Journey Team
 keywords:
-- avatar
-- profile image
-- contributor
-- customization
+  primary:
+  - avatar
+  - profile image
+  secondary:
+  - contributor
+  - customization
 description: Design and integrate a custom avatar for your contributor character profile
-excerpt: Visit the Portrait Studio and commission a visual identity worthy of your
-  class.
+excerpt: Visit the Portrait Studio and commission a visual identity worthy of your class.
 snippet: The Portrait Artist awaits — every hero deserves a face
-date: 2026-03-20 00:00:00+00:00
-lastmod: 2026-03-21 15:12:32.233000+00:00
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
 primary_technology: html
 quest_type: side_quest
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: hands-on
 quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
@@ -32,7 +32,7 @@ categories:
 - Community
 - Customization
 tags:
-- "0001"
+- '0001'
 - contributor
 - avatar
 - profile
@@ -69,6 +69,7 @@ validation_criteria:
   - Avatar URL set in contributor data file
   - Avatar renders on character sheet
   - Image is appropriate and accessible (has alt text context)
+layout: quest
 ---
 # 🎨 Avatar Forge: Crafting Your Digital Portrait
 

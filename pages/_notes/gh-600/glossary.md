@@ -1,16 +1,20 @@
 ---
-title: "GH-600 Glossary"
-description: "Definitions of key terms from all six domains of GH-600: Developing in Agentic AI Systems."
-date: 2026-05-17T00:00:00.000Z
+title: GH-600 Glossary
+description: 'Definitions of key terms from all six domains of GH-600: Developing in Agentic AI Systems.'
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/glossary/
 author: IT-Journey Team
-tags: [gh-600, glossary, definitions, quick-reference]
+tags:
+- gh-600
+- glossary
+- definitions
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # GH-600 Glossary
 
 ## A

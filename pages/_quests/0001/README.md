@@ -5,9 +5,10 @@ preview: images/previews/level-001-journeyman-challenges.png
 permalink: /quests/0001/
 layout: quest-collection
 level: '0001'
-categories: quests
-lastmod: 2025-11-15 04:27:16.791000+00:00
-date: 2025-11-15 16:34:42+00:00
+categories:
+- quests
+lastmod: '2025-11-15T04:27:16.000Z'
+date: '2025-11-15T16:34:42.000Z'
 ---
 # Level 001: Journeyman Challenges
 

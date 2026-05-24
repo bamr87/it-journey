@@ -1,12 +1,11 @@
 ---
 title: 'Database Migrations: Schema Evolution and Version Control'
 author: IT-Journey Team
-description: Master database migration strategies for evolving schemas safely. Learn
-  migration tools, versioning, rollback strategies, and zero-downtime schema changes.
+description: Master database migration strategies for evolving schemas safely. Learn migration tools, versioning, rollback strategies, and zero-downtime schema changes.
 excerpt: Implement safe database migrations with versioning and rollback strategies
 preview: images/previews/database-migrations-schema-evolution-descriptive-s.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:08:08+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:08:08.000Z'
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 60-75 minutes
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data-engineering
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -66,19 +64,21 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- "0110"
+- '0110'
 - sql
 - main_quest
 - data-engineering
 - hands-on
 - gamified-learning
 keywords:
-- "0110"
-- sql
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '0110'
+  - sql
+  - main_quest
+  secondary:
+  - data-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

@@ -1,14 +1,11 @@
 ---
 title: 'Jekyll Plugins: Essential Extensions for Powerful Static Sites'
 author: IT-Journey Team
-description: Master Jekyll plugins to extend your site's functionality. Learn to install,
-  configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination
-  for GitHub Pages compatibility.
-excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps,
-  and custom functionality
+description: Master Jekyll plugins to extend your site's functionality. Learn to install, configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination for GitHub Pages compatibility.
+excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps, and custom functionality
 preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:00:15+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:00:15.000Z'
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - Backend
 - Medium
 tags:
-- "0011"
+- '0011'
 - jekyll
 - ruby
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "0011"
-- jekyll
-- ruby
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0011'
+  - jekyll
+  - ruby
+  secondary:
+  - main_quest
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

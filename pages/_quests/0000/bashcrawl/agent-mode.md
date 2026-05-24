@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Agent Mode: AI Automation and Contribution'
-description: "Explore Bashcrawl's Agent Mode for AI playtesting, screenshot capture,
-  batch automation, and upstream contribution. The capstone quest for dungeon masters."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: Explore Bashcrawl's Agent Mode for AI playtesting, screenshot capture, batch automation, and upstream contribution. The capstone quest for dungeon masters.
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,10 +13,7 @@ quest_line: Foundation Path
 difficulty: 🔴 Hard
 estimated_time: 45-60 minutes
 primary_technology: bash
-skill_focus:
-- Automation
-- AI Integration
-- Open Source Contribution
+skill_focus: devops
 learning_style: hands-on
 categories:
 - Quests
@@ -30,7 +26,7 @@ tags:
 - automation
 - ai
 - contribution
-- "0000"
+- '0000'
 keywords:
   primary:
   - bashcrawl agent mode
@@ -62,11 +58,11 @@ learning_paths:
 rewards:
 - Dungeon Master Badge
 - Bashcrawl automation mastery
-excerpt: "Automate Bashcrawl runs with agent mode, scripted commands, screenshot capture, and an optional open-source contribution finale."
+excerpt: Automate Bashcrawl runs with agent mode, scripted commands, screenshot capture, and an optional open-source contribution finale.
 draft: false
 permalink: /quests/0000/side-quests/agent-mode/
+layout: quest
 ---
-
 *You have conquered the Rift. But the dungeon holds one final secret — a mode where an AI plays alongside you, a mode where you automate the entire journey, a mode where you become the dungeon master. Welcome to Agent Mode.*
 
 ## 🎯 Quest Objectives

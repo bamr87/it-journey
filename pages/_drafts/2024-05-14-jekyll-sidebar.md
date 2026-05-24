@@ -1,12 +1,12 @@
 ---
-title: "Jekyll Sidebar: Display Files and Folders"
-date: 2024-05-14 22:06:19+00:00
+title: 'Jekyll Sidebar: Display Files and Folders'
+date: '2024-05-14T22:06:19.000Z'
 tags:
-  - jekyll
-  - sidebar
-  - liquid
-  - navigation
-lastmod: 2024-05-19 16:02:26.577000+00:00
+- jekyll
+- sidebar
+- liquid
+- navigation
+lastmod: '2024-05-19T16:02:26.000Z'
 description: This guide will show you how to display files and folders in a sidebar in Jekyll, and how to create a hyperlink for each file.
 preview: null
 categories:
@@ -16,18 +16,17 @@ excerpt: A Jekyll sidebar implementation that lists files and folders from a col
 snippet: null
 author: bamr87
 keywords:
-  - jekyll sidebar files folders
-  - jekyll liquid sidebar navigation
-  - display collection files jekyll
-  - jekyll file tree sidebar
-  - jekyll navigation sidebar tutorial
+- jekyll sidebar files folders
+- jekyll liquid sidebar navigation
+- display collection files jekyll
+- jekyll file tree sidebar
+- jekyll navigation sidebar tutorial
 slug: jekyll-sidebar
 type: posts
 published: false
 draft: true
 section: Web Development
 ---
-
 {% raw %}
 
 # How to Display Files and Folders in a Sidebar in Jekyll

@@ -1,25 +1,19 @@
 ---
 title: 'The Siege of King EDGAR: Storming the SEC Data Castle'
 author: Quest Master
-description: Embark on a satirical, mystical quest to liberate financial knowledge
-  from King EDGAR's vaults. Assemble AI companions, master SEC APIs, and responsibly
-  harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight.
-excerpt: Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings into actionable
-  wisdom—ethically, safely, and with proper headers.
+description: Embark on a satirical, mystical quest to liberate financial knowledge from King EDGAR's vaults. Assemble AI companions, master SEC APIs, and responsibly harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight.
+excerpt: Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings into actionable wisdom—ethically, safely, and with proper headers.
 snippet: All hail transparency—storm the gates, free the filings, enlighten the realm.
 preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
-date: 2025-08-21 22:00:59+00:00
-lastmod: 2025-08-20 04:18:02.180000+00:00
+date: '2025-08-21T22:00:59.000Z'
+lastmod: '2025-08-20T04:18:02.000Z'
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 90-150 minutes
 primary_technology: 1100
 quest_type: main_quest
 quest_series: Data Liberation Trail
-skill_focus:
-- Quests
-- Data-Engineering
-- Intermediate
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
 - Basic command-line and Git fluency
@@ -27,8 +21,7 @@ prerequisites:
 - A contact email for SEC-compliant User-Agent headers
 - Familiarity with JSON and HTTP APIs
 validation_criteria:
-- Working script that fetches at least one company’s recent filings from SEC JSON
-  endpoints with compliant headers
+- Working script that fetches at least one company’s recent filings from SEC JSON endpoints with compliant headers
 - Evidence of rate limiting and error handling
 - Transformed output (CSV/JSON) suitable for analysis
 - Short write-up of insights learned
@@ -46,13 +39,15 @@ tags:
 - python
 - node
 keywords:
-- '1100'
-- sec-edgar
-- api
-- data-engineering
-- xbrl
-- python
-- node
+  primary:
+  - '1100'
+  - sec-edgar
+  - api
+  secondary:
+  - data-engineering
+  - xbrl
+  - python
+  - node
 fmContentType: quest
 comments: true
 attachments: ''
@@ -68,6 +63,7 @@ related_quests:
 - lvl_001/personal-site.md
 redirect_from:
 - /quests/1100/sec-edgar/
+layout: quest
 ---
 *In the twilight of the Digital Realm, a stern monarch sits upon a throne of filings—King EDGAR,
 custodian of truths encoded in structured scrolls and cryptic XBRL sigils. His castle is vast, his

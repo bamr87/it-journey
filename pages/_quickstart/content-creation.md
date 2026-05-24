@@ -1,39 +1,38 @@
 ---
-title: "Content Creation & Frontmatter Standards"
+title: Content Creation & Frontmatter Standards
 author: bamr87
 description: Create blog posts, quests, documentation, and other content types with proper frontmatter, naming conventions, and file organization.
-excerpt: "Create blog posts, quests, and documentation with proper frontmatter, naming conventions, and file organization for Jekyll collections."
+excerpt: Create blog posts, quests, and documentation with proper frontmatter, naming conventions, and file organization for Jekyll collections.
 permalink: /quickstart/content-creation/
 categories:
-  - quickstart
+- quickstart
 slug: content-creation
-lastmod: 2026-04-02T03:14:50.929Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟢 Easy
 estimatedTime: 20-30 minutes
 prerequisites:
-  - Jekyll and theme installed (see [Jekyll Setup](/quickstart/jekyll/))
-  - Understand layouts and frontmatter (see [Theme Architecture](/quickstart/theme-architecture/))
+- Jekyll and theme installed (see [Jekyll Setup](/quickstart/jekyll/))
+- Understand layouts and frontmatter (see [Theme Architecture](/quickstart/theme-architecture/))
 tags:
-  - content
-  - frontmatter
-  - posts
-  - quests
-  - markdown
+- content
+- frontmatter
+- posts
+- quests
+- markdown
 keywords:
   primary:
-    - jekyll content creation
-    - frontmatter standards
-    - blog posts
+  - jekyll content creation
+  - frontmatter standards
+  - blog posts
   secondary:
-    - quests
-    - documentation
-    - content types
+  - quests
+  - documentation
+  - content types
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 8** of the [Quick Start](/quickstart/) — creating content across all IT-Journey collection types with proper frontmatter, naming, and organization.
 
 ---

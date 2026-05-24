@@ -1,37 +1,35 @@
 ---
-title: "Fixing GitHub Actions: Bash 3.2 Compatibility for AI Evolution Engine"
+title: 'Fixing GitHub Actions: Bash 3.2 Compatibility for AI Evolution Engine'
 description: Resolving command not found errors in GitHub Actions by implementing bash 3.2 compatibility in the AI Evolution Engine health analysis scripts
-date: 2025-07-09T22:44:51.000Z
+date: '2025-07-09T22:44:51.000Z'
 preview: /images/previews/fixing-github-actions-bash-3-2-compatibility-for-a.png
 tags:
-    - ai-assisted-development
-    - github-actions
-    - bash-compatibility
-    - debugging
-    - learning-journey
-    - devops
+- ai-assisted-development
+- github-actions
+- bash-compatibility
+- debugging
+- learning-journey
+- devops
 categories:
-    - Development
-    - Debugging
+- Development
+- Debugging
 sub-title: Implementing backward compatibility for legacy bash environments in CI/CD pipelines
 excerpt: Fixed critical GitHub Actions failure by implementing bash 3.2 compatibility fallback in AI Evolution Engine health analysis scripts
-snippet: "When GitHub Actions meets bash 3.2: a tale of associative arrays and compatibility challenges"
+snippet: 'When GitHub Actions meets bash 3.2: a tale of associative arrays and compatibility challenges'
 author: IT-Journey Team
 keywords:
-    primary:
-        - github actions bash compatibility
-        - bash 3.2 associative arrays
-    secondary:
-        - ci cd debugging
-        - script compatibility
-        - devops troubleshooting
-lastmod: 2025-12-01T04:50:56.567Z
+- github actions bash compatibility
+- bash 3.2 associative arrays
+- ci cd debugging
+- script compatibility
+- devops troubleshooting
+lastmod: '2025-12-01T04:50:56.000Z'
 permalink: /fixing-github-actions-bash-compatibility-ai-evolution-engine/
-attachments: ""
+attachments: ''
 comments: true
 section: DevOps
+draft: false
 ---
-
 ## The Challenge: When Modern Scripts Meet Legacy Environments
 
 I was troubleshooting a failing GitHub Actions workflow for the AI Evolution Engine when I encountered this cryptic error:

@@ -1,17 +1,33 @@
 ---
-title: "GH-600 Recommended Resources"
-description: "Curated resources for GH-600 exam preparation: Microsoft Learn paths, GitHub documentation, MCP specification, and the GitHub Models API."
+title: GH-600 Recommended Resources
+description: 'Curated resources for GH-600 exam preparation: Microsoft Learn paths, GitHub documentation, MCP specification, and the GitHub Models API.'
 permalink: /docs/certifications/gh-600/recommended-resources/
 layout: default
-categories: [Docs, Certifications, Agentic-AI]
-tags: [gh-600, agentic-ai, resources, microsoft-learn, mcp]
+categories:
+- Docs
+- Certifications
+- Agentic-AI
+tags:
+- gh-600
+- agentic-ai
+- resources
+- microsoft-learn
+- mcp
 author: IT-Journey Team
 draft: false
-lastmod: 2026-05-17T00:00:00.000Z
-date: 2026-05-17T00:00:00.000Z
+lastmod: '2026-05-17T00:00:00.000Z'
+date: '2026-05-17T00:00:00.000Z'
 toc: true
+keywords:
+- gh-600
+- agentic-ai
+- resources
+- microsoft-learn
+- mcp
+- docs
+- certifications
+- recommended
 ---
-
 # GH-600 Recommended Resources
 
 *The Arcane Library — texts and scrolls gathered from across the digital realm.*
