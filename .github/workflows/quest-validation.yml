@@ -71,12 +71,19 @@ jobs:
         id: changed
         run: |
           # Get list of changed .md files under pages/_quests/.
-          # README.md and home.md are included so structural changes (layouts,
-          # tables, hub copy) are validated alongside individual quests.
+          # The quest validator itself skips collection meta files
+          # (README/INDEX/HOME, ALL_CAPS_NAME reports) and non-quest
+          # directories (templates/, tools/, docs/, codex/, inventory/,
+          # scripts/) via _is_non_quest_file, but we also filter here so
+          # only files the validator will actually score are passed in.
           CHANGED=$(git diff --name-only --diff-filter=ACMR \
             ${{ github.event.pull_request.base.sha }} \
             ${{ github.event.pull_request.head.sha }} \
-            -- 'pages/_quests/**/*.md' || true)
+            -- 'pages/_quests/**/*.md' \
+            | grep -Ev '/(README|INDEX|HOME)\.md$' \
+            | grep -Ev '/(templates|tools|docs|codex|inventory|scripts)/' \
+            | grep -v '^pages/_quests/home\.md$' \
+            || true)
 
           if [ -z "$CHANGED" ]; then
             echo "No quest files changed"

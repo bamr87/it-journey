@@ -115,6 +115,12 @@ graph LR
 - [ ] **Create an audit trail** — every agent action logged with actor, action, timestamp, approval state
 - [ ] **Test the guardrails** — intentionally trigger each guardrail and verify it fires
 
+## 🗺️ Quest Prerequisites
+
+- A GitHub repository where you can configure CODEOWNERS, branch protection, and Environments
+- Familiarity with GitHub Actions workflows
+- Completed [Agentic Tool Selection & Permissions](/quests/1000/agentic-tool-selection-and-permissions/) so you understand the agent surface you're guarding
+
 ## ⚔️ The Quest Begins
 
 ### Chapter 1 — The Three Types of Guardrails

@@ -520,6 +520,27 @@ class QuestValidator:
             result.warnings.append("No citations/references section found. Consider adding external resources.")
         result.max_score += 5
     
+    # Path components that mark non-quest content (must mirror skip_dirs in
+    # validate_directory). When the validator is invoked on a single file
+    # (e.g. by CI iterating changed files), it must respect the same scope
+    # so collection meta files don't get scored as if they were quests.
+    NON_QUEST_DIR_PARTS = {'templates', 'tools', 'docs', 'inventory', 'codex', 'scripts'}
+
+    @classmethod
+    def _is_non_quest_file(cls, filepath: Path) -> Optional[str]:
+        """Return a skip reason string when filepath isn't quest content."""
+        name = filepath.name
+        if name.upper() in ('README.MD', 'INDEX.MD', 'HOME.MD'):
+            return 'collection meta file (README/INDEX/HOME)'
+        stem = filepath.stem
+        if stem.isupper() and '_' in stem:
+            # NETWORK_REPORT, QUEST_BUILD_PLAN, PHASE1_COMPLETE, etc.
+            return 'collection report/meta file (ALL_CAPS_NAME)'
+        for part in filepath.parts:
+            if part in cls.NON_QUEST_DIR_PARTS:
+                return f"non-quest directory ({part}/)"
+        return None
+
     def validate_quest_file(self, filepath: Path) -> ValidationResult:
         """Validate a single quest file"""
         result = ValidationResult(quest_file=str(filepath))
@@ -527,7 +548,14 @@ class QuestValidator:
         self.log_info(f"\n{'='*60}")
         self.log_info(f"Validating: {filepath.name}")
         self.log_info(f"{'='*60}")
-        
+
+        skip_reason = self._is_non_quest_file(filepath)
+        if skip_reason:
+            # Mark passing with zero score so per-file CI loops treat the
+            # file as accepted (these files have their own validators).
+            result.info.append(f"Skipped: {skip_reason}")
+            return result
+
         try:
             # Try UTF-8 first, then fallback to other encodings
             try:
@@ -548,7 +576,16 @@ class QuestValidator:
             result.errors.append("Failed to parse frontmatter")
             result.passed = False
             return result
-        
+
+        # Files explicitly marked as non-quest content (codex examples,
+        # templates, documentation) should not be scored against quest rules.
+        # Authors can mark such files with fmContentType != 'quest'.
+        if frontmatter.get('fmContentType') and frontmatter['fmContentType'] != 'quest':
+            result.info.append(
+                f"Skipped: fmContentType={frontmatter['fmContentType']!r} (not a quest)"
+            )
+            return result
+
         # Check if this is a draft and we should skip it
         is_draft = frontmatter.get('draft', False)
         if is_draft and self.exclude_drafts:

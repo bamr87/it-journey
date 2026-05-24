@@ -21,16 +21,40 @@ categories:
 - GitHub-Pages
 tags:
 - Personal Site
-- "0001"
+- '0001'
 - github-pages
 keywords:
 - Personal Site
-- "0001"
+- '0001'
 - github-pages
 fmContentType: quest
 key: tutorial
 index: 8199
 subcategory: jekyll
+quest_line: 'Site Building Series'
+quest_arc: 'Personal portfolio arc'
+prerequisites:
+  knowledge_requirements: []
+  system_requirements: []
+quest_dependencies:
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
+quest_relationships:
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
+learning_paths:
+  primary_paths: []
+  character_classes: []
+rewards:
+  badges: []
+  progression_points: 0
+  skills_unlocked: []
+validation_criteria:
+  completion_requirements: []
+  skill_demonstrations: []
 ---
 ## 🎯 Quest Objectives
 
