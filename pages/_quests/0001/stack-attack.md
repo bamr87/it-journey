@@ -548,8 +548,8 @@ graph TB
 
     subgraph "nginx Reverse Proxy — Port 80/443"
         NginxStatic[Static Files]
-        NginxAPI[/api/* → Django]
-        NginxMedia[/media/* → MinIO]
+        NginxAPI["/api/* → Django"]
+        NginxMedia["/media/* → MinIO"]
     end
 
     subgraph "Django Backend — Port 8000"

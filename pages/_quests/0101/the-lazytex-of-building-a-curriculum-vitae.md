@@ -377,7 +377,7 @@ graph TD
   C --> F[🔧 Open cv.tex]
   D --> F
   E --> F
-  F --> G[⚙️ Compile (latexmk -pdf)]
+  F --> G["⚙️ Compile (latexmk -pdf)"]
   G -->|✅| H[📝 Populate Sections]
   H --> I[🔗 Validate Links & Layout]
   I --> J{✅ Success?}

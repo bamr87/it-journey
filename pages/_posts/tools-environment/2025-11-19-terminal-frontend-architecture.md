@@ -87,12 +87,12 @@ graph TD
     User((👤 User))
     
     subgraph "The Glass Interface"
-        Interface[🖥️ Interface Layer\n(Gum, FZF, Dialog)]
-        Orchestrator[⚙️ Orchestration Layer\n(Main Script)]
+        Interface["🖥️ Interface Layer<br/>(Gum, FZF, Dialog)"]
+        Orchestrator["⚙️ Orchestration Layer<br/>(Main Script)"]
     end
     
     subgraph "The Core"
-        Logic[🔧 Core Logic Layer\n(AWS CLI, Docker, Git, Raw Scripts)]
+        Logic["🔧 Core Logic Layer<br/>(AWS CLI, Docker, Git, Raw Scripts)"]
     end
     
     User -->|Interacts with| Interface

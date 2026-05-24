@@ -50,9 +50,9 @@ fmContentType: template
 ```mermaid
 graph TB
     subgraph "Quest Progression"
-        PrevLevel[Level XXXX:<br/>[Previous Level]]
-        CurrentLevel[Level [BINARY]:<br/>[Current Level]]
-        NextLevel[Level XXXX:<br/>[Next Level]]
+        PrevLevel[Level XXXX<br/>Previous Level]
+        CurrentLevel[Level BINARY<br/>Current Level]
+        NextLevel[Level XXXX<br/>Next Level]
     end
     
     PrevLevel --> CurrentLevel
@@ -85,9 +85,9 @@ By completing this level, adventurers will master:
 ```mermaid
 graph TB
     subgraph "Main Quest Line"
-        MQ1[🎯 Main Quest 1:<br/>[Quest Name]]
-        MQ2[🎯 Main Quest 2:<br/>[Quest Name]]
-        MQ3[🎯 Main Quest 3:<br/>[Quest Name]]
+        MQ1[🎯 Main Quest 1:<br/>Quest Name]
+        MQ2[🎯 Main Quest 2:<br/>Quest Name]
+        MQ3[🎯 Main Quest 3:<br/>Quest Name]
     end
     
     subgraph "Side Quests"

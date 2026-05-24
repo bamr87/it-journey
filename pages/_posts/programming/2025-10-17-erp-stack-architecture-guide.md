@@ -68,7 +68,7 @@ graph TD
         B3[API Gateway: Handles Authentication, Routing]
         B4[Microservices/ Monolith Services]
         B5[Business Logic Modules]
-        B6[Data Access Layer: ORM (e.g., Sequelize/Hibernate/Entity Framework)]
+        B6["Data Access Layer: ORM (e.g., Sequelize/Hibernate/Entity Framework)"]
         B1 --> B2
         B2 --> B3
         B3 --> B4
@@ -86,7 +86,7 @@ graph TD
             M8[Supply Chain: Vendors, Procurement, Logistics]
             M9[Manufacturing: Production Planning, BOM, Work Orders]
             M10[Reporting & BI: Custom Reports, Data Visualization]
-            M11[Integration: APIs for Third-Party Services (e.g., Payment Gateways, Email)]
+            M11["Integration: APIs for Third-Party Services (e.g., Payment Gateways, Email)"]
             B5 --> M1 & M2 & M3 & M4 & M5 & M6 & M7 & M8 & M9 & M10 & M11
         end
     end
@@ -94,7 +94,7 @@ graph TD
     subgraph "Data Layer (Persistence)"
         C1[Database Server: PostgreSQL/MySQL/MongoDB]
         C2[Relational Schema: Tables for Entities]
-        C3[NoSQL for Unstructured Data (if needed)]
+        C3["NoSQL for Unstructured Data (if needed)"]
         C4[Data Warehousing: For Analytics]
         C5[Backup & Replication]
 
@@ -120,14 +120,14 @@ graph TD
         D1[Cloud/On-Premise Hosting: AWS/Azure/Local Servers]
         D2[Load Balancer: For Scalability]
         D3[Security: Firewall, SSL/TLS, Encryption]
-        D4[Monitoring: Logging, Alerts (e.g., Prometheus/ELK Stack)]
+        D4["Monitoring: Logging, Alerts (e.g., Prometheus/ELK Stack)"]
         D5[Caching: Redis/Memcached for Performance]
         D6[Message Queue: RabbitMQ/Kafka for Async Tasks]
         D1 --> D2 & D3 & D4 & D5 & D6
     end
 
     subgraph "Integration & External Services"
-        F1[External APIs: Payment (Stripe), Shipping (FedEx), Email (SendGrid)]
+        F1["External APIs: Payment (Stripe), Shipping (FedEx), Email (SendGrid)"]
         F2[Mobile App Integration: iOS/Android Clients]
         F3[IoT/Devices: For Inventory Tracking]
         F4[Data Import/Export: CSV, XML, EDI]
