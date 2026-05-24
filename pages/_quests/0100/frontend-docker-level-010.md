@@ -1,24 +1,19 @@
 ---
 title: 'Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker'
 author: bamr87
-description: Integrate Bootstrap 5 CSS framework into your Docker-containerized Jekyll
-  site. Learn to include CDN resources, configure includes, and style your static
-  site with responsive components.
-excerpt: Integrate Bootstrap 5 into your Docker-containerized Jekyll site for responsive,
-  professional styling
+description: Integrate Bootstrap 5 CSS framework into your Docker-containerized Jekyll site. Learn to include CDN resources, configure includes, and style your static site with responsive components.
+excerpt: Integrate Bootstrap 5 into your Docker-containerized Jekyll site for responsive, professional styling
 snippet: Style your Jekyll site with Bootstrap 5 in a containerized environment
 preview: images/previews/level-010-frontend-docker.png
-date: 2024-05-28 15:23:32+00:00
-lastmod: 2024-05-28 04:25:00.957000+00:00
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2024-05-28T04:25:00.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: 64
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- Quests
-- Frontend
+skill_focus: frontend
 learning_style: hands-on
 permalink: /quests/0100/010-frontend-docker/
 categories:
@@ -31,11 +26,13 @@ tags:
 - bootstrap
 - frontend
 keywords:
-- '0100'
-- docker
-- jekyll
-- bootstrap
-- frontend
+  primary:
+  - '0100'
+  - docker
+  secondary:
+  - jekyll
+  - bootstrap
+  - frontend
 fmContentType: quest
 draft: draft
 attachments: ''
@@ -44,6 +41,7 @@ slug: null
 type: default
 redirect_from:
 - /quests/0100/frontend-docker-level-010/
+layout: quest
 ---
 ## 🎯 Quest Objectives
 

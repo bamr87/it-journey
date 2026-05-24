@@ -3,29 +3,28 @@ title: AWS Database Setup for Django Lambda Functions
 description: A complete guide to setting up an AWS RDS database for Django applications running on Lambda, covering RDS Proxy, Secrets Manager, VPC, and connection pooling.
 author: bamr87
 excerpt: Step-by-step instructions for configuring AWS RDS with Django Lambda, including network settings, security groups, and AWS Secrets Manager integration.
-date: 2024-12-03 10:42:33+00:00
-lastmod: 2024-10-14 16:00:26.339000+00:00
+date: '2024-12-03T10:42:33.000Z'
+lastmod: '2024-10-14T16:00:26.000Z'
 draft: true
 tags:
-  - aws
-  - django
-  - lambda
-  - rds
-  - database
+- aws
+- django
+- lambda
+- rds
+- database
 categories:
 - Data & Analytics
 keywords:
-  - aws rds django lambda
-  - database setup aws lambda
-  - django serverless database
-  - rds proxy lambda connection
-  - aws secrets manager django
+- aws rds django lambda
+- database setup aws lambda
+- django serverless database
+- rds proxy lambda connection
+- aws secrets manager django
 meta: null
 snippet: null
 slug: null
 section: Data & Analytics
 ---
-
 ## **Overview**
 
 We will:

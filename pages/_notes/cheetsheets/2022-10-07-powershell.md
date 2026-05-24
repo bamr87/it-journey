@@ -1,25 +1,23 @@
 ---
-title: "Windows PowerShell Cheatsheet"
+title: Windows PowerShell Cheatsheet
 author: bamr87
 description: PowerShell scripting reference for Windows system administration and automation
 excerpt: Comprehensive PowerShell commands and scripting techniques for Windows environments
 categories:
-  - notes
-  - cheatsheets
-  - powershell
+- notes
+- cheatsheets
+- powershell
 tags:
-  - powershell
-  - windows
-  - scripting
-  - administration
-  - cheatsheet
-  - reference
-lastmod: 2022-01-10T21:54:00.053Z
+- powershell
+- windows
+- scripting
+- administration
+- cheatsheet
+- reference
+lastmod: '2022-01-10T21:54:00.000Z'
 draft: false
-date: 2022-12-21T22:07:25.000Z
-
+date: '2022-12-21T22:07:25.000Z'
 ---
-
 Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS).
 PS may be seen as Microsoft's answer to the shells common in Unix/Linux (such as csh, bash, *etc.*). Its name implies that Microsoft sees the shell as powerful, which it arguably is.
 In these notes some important PS commands are listed and PowerShell's most notable feature, the object pipeline, is discussed. 

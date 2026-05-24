@@ -4,20 +4,25 @@ description: Study guides, quest lines, and reference materials for IT certifica
 permalink: /docs/certifications/
 layout: default
 categories:
-  - Docs
-  - Certifications
+- Docs
+- Certifications
 tags:
-  - certifications
-  - study-guide
-  - github
-  - microsoft
+- certifications
+- study-guide
+- github
+- microsoft
 draft: false
-lastmod: 2026-05-17T00:00:00.000Z
-date: 2026-05-17T00:00:00.000Z
+lastmod: '2026-05-17T00:00:00.000Z'
+date: '2026-05-17T00:00:00.000Z'
 toc: true
 author: IT-Journey Team
+keywords:
+- certifications
+- study-guide
+- github
+- microsoft
+- docs
 ---
-
 # 🏆 Certification Tracks
 
 *The Guild Hall of Credentials — where adventurers transform proven mastery into recognized titles.*

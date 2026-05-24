@@ -1,29 +1,22 @@
 ---
 title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
-description: Select and configure the right tools for GitHub Copilot agents — identify
-  required capabilities, configure tool access, and enforce least-privilege permissions
-  so your agent can only touch what it needs.
-date: 2026-05-17 00:00:00+00:00
+description: Select and configure the right tools for GitHub Copilot agents — identify required capabilities, configure tool access, and enforce least-privilege permissions so your agent can only touch what it needs.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-tool-selection-and-permissions.png
 level: '1000'
 difficulty: 🟡 Medium
-estimated_time: 90 minutes
+estimated_time: 60-90 minutes
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- tool-use
-- permissions
-- least-privilege
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1000 Quest 2/4 — Domain 2: Tool Use & Environment Interaction'
-excerpt: A blacksmith without the right tools is a storyteller. Learn to identify,
-  configure, and restrict the exact tools your agent needs — no more, no less.
+excerpt: A blacksmith without the right tools is a storyteller. Learn to identify, configure, and restrict the exact tools your agent needs — no more, no less.
 author: IT-Journey Team
 tags:
 - '1000'
@@ -38,12 +31,14 @@ categories:
 - Agentic-AI
 - Medium
 keywords:
-- gh-600
-- agent tools
-- tool permissions
-- least privilege
-- copilot tools
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent tools
+  secondary:
+  - tool permissions
+  - least privilege
+  - copilot tools
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1000/agentic-tool-selection-and-permissions/
 quest_dependencies:
   required_quests:
@@ -91,6 +86,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-tool-selection-and-permissions/
+layout: quest
 ---
 *The Master Blacksmith of the Arsenal District teaches that the most dangerous weapon is the one given to a soldier who doesn't know its purpose. Agents armed with every tool are agents destined for accidental destruction. Your task today: identify the exact tools your agent needs, no more, no less.*
 

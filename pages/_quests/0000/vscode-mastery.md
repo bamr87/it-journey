@@ -1,14 +1,12 @@
 ---
 title: 'VS Code Mastery Quest: Forge Your Ultimate Development Weapon'
 author: IT-Journey Team
-description: Master Visual Studio Code setup and configuration to create the ultimate
-  development environment for any programming domain
-excerpt: Learn to configure VS Code as your primary development weapon, mastering
-  extensions, shortcuts, and specialized setups for maximum productivity
+description: Master Visual Studio Code setup and configuration to create the ultimate development environment for any programming domain
+excerpt: Learn to configure VS Code as your primary development weapon, mastering extensions, shortcuts, and specialized setups for maximum productivity
 snippet: Forge the ultimate coding weapon with VS Code mastery
 preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
-date: 2025-07-21 23:30:21+00:00
-lastmod: 2026-05-20 20:57:50+00:00
+date: '2025-07-21T23:30:21.000Z'
+lastmod: '2026-05-20T20:57:50.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -40,11 +38,7 @@ learning_paths:
   skill_trees:
   - IDE Mastery
   - Developer Productivity
-skill_focus:
-- Quests
-- Tools
-- Development
-- IDE-Setup
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -83,13 +77,15 @@ tags:
 - quest
 - init-world
 keywords:
-- vscode
-- ide-setup
-- development-environment
-- productivity
-- coding-tools
-- quest
-- init-world
+  primary:
+  - vscode
+  - ide-setup
+  - development-environment
+  secondary:
+  - productivity
+  - coding-tools
+  - quest
+  - init-world
 fmContentType: quest
 draft: false
 comments: true
@@ -106,6 +102,7 @@ rewards:
   unlocks_features:
   - Professional development workflow
   - Advanced debugging capabilities
+layout: quest
 ---
 *Greetings, aspiring code warrior! You stand before one of the most crucial quests in your IT journey. Visual Studio Code is not just a text editor—it's a magical artifact that, when properly enchanted, becomes the ultimate weapon in any developer's arsenal.*
 

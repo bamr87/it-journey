@@ -1,7 +1,6 @@
 ---
 title: 'Technology Stack Analysis: Barodybroject'
-description: Comprehensive analysis of the Barodybroject Django-based parody news
-  generator with OpenAI integration and Azure Container Apps deployment
+description: Comprehensive analysis of the Barodybroject Django-based parody news generator with OpenAI integration and Azure Container Apps deployment
 preview: /images/previews/technology-stack-analysis-barodybroject.png
 repository: https://github.com/bamr87/barodybroject
 owner: bamr87
@@ -20,32 +19,32 @@ tags:
 categories:
 - Stack Analysis
 - Django Applications
-lastmod: 2025-11-02 21:54:51.383000+00:00
+lastmod: '2025-11-02T21:54:51.000Z'
 level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
 permalink: /quests/0001/side-quests/barodybroject-stack-analysis/
-date: 2025-11-02 18:34:05+00:00
+date: '2025-11-02T18:34:05.000Z'
 primary_technology: stack-analysis
-skill_focus:
-- Stack Analysis
-- Django Applications
+skill_focus: backend
 learning_style: hands-on
 fmContentType: quest
 quest_series: Level 0001 Quest Line
 keywords:
-- stack-analysis
-- python
-- django
-- openai
-- azure
-- web-application
-- docker
-- postgresql
+  primary:
+  - stack-analysis
+  - python
+  - django
+  - openai
+  secondary:
+  - azure
+  - web-application
+  - docker
+  - postgresql
 author: IT-Journey Team
-quest_line: 'Stack Analysis Series'
-quest_arc: 'Repository archaeology'
+quest_line: Stack Analysis Series
+quest_arc: Repository archaeology
 prerequisites:
   knowledge_requirements: []
   system_requirements: []
@@ -68,6 +67,7 @@ rewards:
 validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
+layout: quest
 ---
 # Technology Stack Analysis: Barodybroject
 
@@ -192,7 +192,7 @@ graph TB
 - **Static File Management**: Django's collectstatic for production asset optimization
 
 **Frontend Architecture**:
-```
+```text
 src/parodynews/templates/
 ├── base.html              # Base template with Bootstrap integration
 ├── parodynews/            # App-specific templates
@@ -333,7 +333,7 @@ sequenceDiagram
 ```
 
 **Infrastructure Architecture**:
-```
+```text
 infra/
 ├── main.bicep                 # Main infrastructure definition
 ├── main.bicep.minimal         # Minimal cost deployment option
@@ -384,7 +384,7 @@ infra/
 - **Code Quality**: Automated linting and formatting with Ruff and Black
 
 **Testing Framework**:
-```
+```text
 src/parodynews/tests/
 ├── __init__.py
 ├── conftest.py              # Pytest fixtures and configuration
@@ -399,7 +399,7 @@ test/                        # Infrastructure tests
 ```
 
 **GitHub Actions Workflows**:
-```
+```text
 .github/workflows/
 ├── ci.yml                   # Comprehensive CI pipeline (pre-checks, tests, Docker)
 ├── infrastructure-test.yml  # Infrastructure validation testing
@@ -419,7 +419,7 @@ test/                        # Infrastructure tests
 | Liquid | 4.0 | Templating engine | Built into Jekyll |
 
 **Static Content Structure**:
-```
+```text
 src/pages/
 ├── _config.yml              # Jekyll configuration
 ├── _posts/                  # Blog posts (59 articles documented)
@@ -947,7 +947,7 @@ pip install --upgrade <package>
 ### Technology Upgrade Path
 
 **Phase 1: Incremental Improvements (3 months)**
-```
+```text
 Current State              Target State
 -------------              ------------
 Django 4.2.20      →       Django 4.2.x (latest patch)
@@ -958,7 +958,7 @@ Manual scaling     →       Auto-scaling rules configured
 ```
 
 **Phase 2: Strategic Enhancements (6 months)**
-```
+```text
 Synchronous AI     →       Async with Celery task queue
 Static templates   →       htmx for dynamic interactions
 Monolithic app     →       Service-oriented components
@@ -967,7 +967,7 @@ Manual deployments →       Fully automated GitOps
 ```
 
 **Phase 3: Architecture Evolution (12 months)**
-```
+```text
 Django 4.2         →       Django 5.x with async views
 REST API only      →       GraphQL + REST hybrid
 Single region      →       Multi-region deployment

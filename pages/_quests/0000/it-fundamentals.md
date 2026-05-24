@@ -5,8 +5,8 @@ description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
 snippet: null
 preview: images/previews/it-fundamentals.png
-date: 2023-11-25 14:12:43+00:00
-lastmod: 2025-11-29 21:40:00+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
@@ -42,10 +42,7 @@ learning_paths:
   - Computer Architecture
   - Networking Basics
   - Operating System Concepts
-skill_focus:
-- fundamentals
-- it-basics
-- "0000"
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -83,15 +80,18 @@ categories: []
 tags:
 - fundamentals
 - it-basics
-- "0000"
+- '0000'
 keywords:
-- fundamentals
-- it-basics
-- "0000"
+  primary:
+  - fundamentals
+  secondary:
+  - it-basics
+  - '0000'
 fmContentType: quest
 draft: false
 meta: null
 slug: fundamentals
+layout: quest
 ---
 *Welcome, aspiring IT adventurer! Before you can cast powerful spells or build grand digital fortresses, you must understand the fundamental building blocks of the IT realm. This quest covers the essential skills every technology professional needs — from organizing files to understanding networks and cloud computing.*
 

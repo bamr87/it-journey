@@ -4,34 +4,33 @@ author: bamr87
 description: Set up Visual Studio Code with recommended extensions, Front Matter CMS, pre-configured tasks, and debug configurations for Jekyll development.
 permalink: /quickstart/vscode-setup/
 categories:
-  - quickstart
+- quickstart
 slug: vscode-setup
-lastmod: 2026-04-02T03:14:50.912Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟢 Easy
 estimatedTime: 15-20 minutes
 prerequisites:
-  - VS Code installed (see [Machine Setup](/quickstart/machine-setup/))
-  - IT-Journey repository cloned (see [GitHub Setup](/quickstart/github/))
+- VS Code installed (see [Machine Setup](/quickstart/machine-setup/))
+- IT-Journey repository cloned (see [GitHub Setup](/quickstart/github/))
 tags:
-  - vscode
-  - front-matter-cms
-  - extensions
-  - ide
+- vscode
+- front-matter-cms
+- extensions
+- ide
 keywords:
   primary:
-    - vscode setup
-    - front matter cms
-    - jekyll editor
+  - vscode setup
+  - front matter cms
+  - jekyll editor
   secondary:
-    - extensions
-    - tasks
-    - debug configuration
+  - extensions
+  - tasks
+  - debug configuration
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 6** of the [Quick Start](/quickstart/) — turning VS Code into a full Jekyll development and content management environment with Front Matter CMS.
 
 ---

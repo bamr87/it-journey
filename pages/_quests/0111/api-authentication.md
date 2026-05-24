@@ -1,12 +1,11 @@
 ---
 title: 'API Authentication: OAuth, JWT, and API Keys Implementation'
 author: IT-Journey Team
-description: Implement secure API authentication with OAuth 2.0, JWT tokens, and API
-  keys. Learn token-based auth, refresh tokens, scopes, and security best practices.
+description: Implement secure API authentication with OAuth 2.0, JWT tokens, and API keys. Learn token-based auth, refresh tokens, scopes, and security best practices.
 excerpt: Secure your APIs with OAuth 2.0, JWT tokens, and API key authentication methods
 preview: images/previews/api-authentication-oauth-jwt-quest-title-api-keys-.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:09:08+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:09:08.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -66,19 +64,21 @@ categories:
 - Backend
 - Hard
 tags:
-- "0111"
+- '0111'
 - authentication
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- "0111"
-- authentication
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - authentication
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

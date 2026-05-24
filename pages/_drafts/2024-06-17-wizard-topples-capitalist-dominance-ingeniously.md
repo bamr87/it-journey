@@ -1,8 +1,9 @@
 ---
-categories: gpt
-date: 2024-06-18 16:17:18+00:00
+categories:
+- gpt
+date: '2024-06-18T16:17:18.000Z'
 title: Wizard Topples Capitalist Dominance Ingeniously
-lastmod: 2025-09-01 00:59:51.883000+00:00
+lastmod: '2025-09-01T00:59:51.000Z'
 draft: true
 section: Creative & Experimental
 preview: /images/wizard-on-journey.png

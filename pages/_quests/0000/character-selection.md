@@ -2,12 +2,11 @@
 title: Character Selection
 author: IT-Journey Team
 description: Choose your character class and begin your specialized IT journey
-excerpt: Select from six unique character classes, each with distinct skills and career
-  paths
+excerpt: Select from six unique character classes, each with distinct skills and career paths
 snippet: null
 preview: images/previews/character-selection.png
-date: 2023-11-25 14:12:43+00:00
-lastmod: 2025-11-29 21:40:00+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
@@ -44,10 +43,7 @@ learning_paths:
   skill_trees:
   - Career Planning
   - Self-Assessment
-skill_focus:
-- character-selection
-- career-paths
-- "0000"
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -86,15 +82,18 @@ categories: []
 tags:
 - character-selection
 - career-paths
-- "0000"
+- '0000'
 keywords:
-- character-selection
-- career-paths
-- "0000"
+  primary:
+  - character-selection
+  secondary:
+  - career-paths
+  - '0000'
 fmContentType: quest
 draft: false
 meta: null
 slug: character-selection
+layout: quest
 ---
 *Welcome to the Character Selection chamber, brave adventurer! Just as every RPG hero must choose their class before venturing into the world, you must select your IT specialization to focus your training and skills. Each character class offers a unique path through the digital realm.*
 

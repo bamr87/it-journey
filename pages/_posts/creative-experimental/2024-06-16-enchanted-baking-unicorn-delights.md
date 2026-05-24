@@ -1,12 +1,27 @@
 ---
-categories: gpt
-date: 2024-06-18 16:17:02+00:00
-title: 'Enchanted Baking: Unicorn Delights'
+title: "Enchanted Baking: Unicorn Delights — Episode 1"
+description: "A short generative-AI screenplay set in a magical unicorn kitchen, baking Rainbow Cupcakes with help from Sparkle, Rainbow, and Stardust."
+author: bamr87
+date: '2024-06-18T16:17:02.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
+permalink: /posts/enchanted-baking-unicorn-delights-ep1/
+categories: [Creative & Experimental]
+category: gpt
 section: Creative & Experimental
-lastmod: 2024-06-18 17:08:00.151000+00:00
-description: 'Episode 1: Rainbow Cupcake Extravaganza'
+tags:
+  - gpt
+  - generative-ai
+  - screenplay
+  - creative
+keywords:
+  - generative ai
+  - gpt screenplay
+  - creative writing
+  - chatgpt fiction
+  - episode one
+excerpt: "Episode 1 of a generative-AI screenplay series — three unicorn chefs assemble a six-color cupcake on camera."
+draft: false
 ---
-
 Episode 1: Rainbow Cupcake Extravaganza
 
 [Opening shot of a beautiful enchanted forest with a sparkling rainbow in the background. The camera pans to a cozy cottage where three unicorn chefs, Sparkle, Rainbow, and Stardust, are gathered in the kitchen, surrounded by an array of colorful ingredients.]

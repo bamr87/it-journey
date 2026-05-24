@@ -1,16 +1,12 @@
 ---
-title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and
-  Conquer AI Realms'
+title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms'
 author: IT-Journey Team
-description: Embark on an epic journey to master GitHub Pages, the hidden gem of web
-  publishing, and learn to capture and immortalize AI conversations using Jekyll and
-  VS Code
-excerpt: Transform your GitHub repositories into powerful websites and learn to preserve
-  AI conversations forever
+description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
+excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
 snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
 preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
-date: 2025-11-15 16:34:42+00:00
-lastmod: 2025-11-15 03:52:35.140000+00:00
+date: '2025-11-15T16:34:42.000Z'
+lastmod: '2025-11-15T03:52:35.000Z'
 level: '0011'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
@@ -40,10 +36,7 @@ learning_paths:
   - Web Publishing
   - Version Control
   - Static Site Generation
-skill_focus:
-- Quests
-- Development
-- AI
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -90,14 +83,16 @@ tags:
 - version-control
 - markdown
 keywords:
-- github-pages
-- jekyll
-- ai-capture
-- vs-code
-- web-publishing
-- static-sites
-- version-control
-- markdown
+  primary:
+  - github-pages
+  - jekyll
+  - ai-capture
+  - vs-code
+  secondary:
+  - web-publishing
+  - static-sites
+  - version-control
+  - markdown
 fmContentType: quest
 comments: true
 attachments: ''
@@ -115,6 +110,7 @@ rewards:
   unlocks_features:
   - Access to advanced Jekyll customization quests
   - Eligibility for web development learning paths
+layout: quest
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 

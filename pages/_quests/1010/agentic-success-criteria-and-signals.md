@@ -1,30 +1,22 @@
 ---
 title: 'The Oracle''s Rubric: Defining Agent Success Criteria and Signals'
-description: Define what 'done' looks like for agent-executed tasks — craft measurable
-  acceptance criteria, configure GitHub signals that indicate success, and wire them
-  into automated task completion detection.
-date: 2026-05-17 00:00:00+00:00
+description: Define what 'done' looks like for agent-executed tasks — craft measurable acceptance criteria, configure GitHub signals that indicate success, and wire them into automated task completion detection.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-success-criteria-and-signals.png
 level: '1010'
 difficulty: 🟡 Medium
-estimated_time: 90 minutes
+estimated_time: 60-90 minutes
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- success-criteria
-- evaluation-signals
-- task-completion
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1010 Quest 3/4 — Domain 4: Evaluating Agent Performance'
-excerpt: The Oracle does not celebrate effort — she celebrates completion. Define
-  what completion means in exact, machine-verifiable terms, then teach the Oracle's
-  Rubric to your agent.
+excerpt: The Oracle does not celebrate effort — she celebrates completion. Define what completion means in exact, machine-verifiable terms, then teach the Oracle's Rubric to your agent.
 author: IT-Journey Team
 tags:
 - '1010'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Medium
 keywords:
-- gh-600
-- success criteria
-- evaluation signals
-- task completion
-- github signals
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - success criteria
+  secondary:
+  - evaluation signals
+  - task completion
+  - github signals
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1010/agentic-success-criteria-and-signals/
 quest_dependencies:
   required_quests:
@@ -89,6 +83,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-success-criteria-and-signals/
+layout: quest
 ---
 *The Oracle of the Chamber does not speak in poetry — she speaks in rubrics. Each rubric is a list of verifiable truths that must all be true before a task is complete. No rubric, no completion. She has seen too many agents return claiming victory when the ramparts were still un-built.*
 

@@ -1,30 +1,22 @@
 ---
 title: 'Crossing the Tool Planes: State Continuity Across Tools'
-description: Maintain agent state and context continuity when tasks span multiple
-  tools, sessions, and GitHub surfaces — issues, PRs, Actions runs, and Codespaces
-  all hold fragments that the agent must weave together.
-date: 2026-05-17 00:00:00+00:00
+description: Maintain agent state and context continuity when tasks span multiple tools, sessions, and GitHub surfaces — issues, PRs, Actions runs, and Codespaces all hold fragments that the agent must weave together.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-state-continuity-cross-tools.png
 level: '1010'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- state-management
-- cross-tool-continuity
-- context-weaving
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1010 Quest 2/4 — Domain 3: Context & Memory Management'
-excerpt: The realm is divided into planes — Issue Plane, Actions Plane, Codespace
-  Plane. An agent that cannot cross the planes loses context at every boundary. Learn
-  to weave a single thread through all planes.
+excerpt: The realm is divided into planes — Issue Plane, Actions Plane, Codespace Plane. An agent that cannot cross the planes loses context at every boundary. Learn to weave a single thread through all planes.
 author: IT-Journey Team
 tags:
 - '1010'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- state continuity
-- cross tool context
-- agent handoff
-- github surfaces
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - state continuity
+  secondary:
+  - cross tool context
+  - agent handoff
+  - github surfaces
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1010/agentic-state-continuity-cross-tools/
 quest_dependencies:
   required_quests:
@@ -87,6 +81,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-state-continuity-cross-tools/
+layout: quest
 ---
 *The Plane Walkers carry a single burning thread — the Context Thread — through every dimension they traverse. When they enter the Issue Plane, they attach the thread to the issue. When they cross to the Actions Plane, the thread follows. When they emerge in the PR Plane, the thread is still there, connecting every decision back to the original intent. Without the thread, they are lost between planes.*
 

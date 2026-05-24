@@ -1,30 +1,22 @@
 ---
 title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
-description: Systematically improve GitHub Copilot agent performance by analysing
-  failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring
-  the impact of each change.
-date: 2026-05-17 00:00:00+00:00
+description: Systematically improve GitHub Copilot agent performance by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring the impact of each change.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-behavior-tuning.png
 level: '1011'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- behavior-tuning
-- instruction-engineering
-- iterative-improvement
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1011 Quest 1/4 — Domain 4: Evaluating Agent Performance'
-excerpt: The forge masters say that a weapon is never finished — it is only resting
-  between iterations. The agent's mind is the same. Each RCA reveals a flaw, and the
-  forge is heated again.
+excerpt: The forge masters say that a weapon is never finished — it is only resting between iterations. The agent's mind is the same. Each RCA reveals a flaw, and the forge is heated again.
 author: IT-Journey Team
 tags:
 - '1011'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- behavior tuning
-- instruction engineering
-- copilot instructions
-- agent improvement
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - behavior tuning
+  secondary:
+  - instruction engineering
+  - copilot instructions
+  - agent improvement
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1011/agentic-behavior-tuning/
 quest_dependencies:
   required_quests:
@@ -89,6 +83,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-behavior-tuning/
+layout: quest
 ---
 *The Forge Master taps the blade and listens. A dull ring — too brittle. Back into the fire. Every master knows: you cannot improve what you cannot measure, and you cannot measure what you cannot observe. Keep a log. Test every change. Heat, strike, measure.*
 

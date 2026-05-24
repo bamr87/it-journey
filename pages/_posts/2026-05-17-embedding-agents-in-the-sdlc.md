@@ -1,30 +1,32 @@
 ---
-title: "Embedding Agents in the SDLC: From Tool to Collaborator"
-description: "Design an SDLC where GitHub Copilot agents have bounded, observable roles at each stage — from planning through deploy."
+title: 'Embedding Agents in the SDLC: From Tool to Collaborator'
+description: Design an SDLC where GitHub Copilot agents have bounded, observable roles at each stage — from planning through deploy.
 permalink: /posts/embedding-agents-in-the-sdlc/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/embedding-agents-in-the-sdlc.png
-sub-title: "Domain 1 deep-dive for GH-600 candidates"
-excerpt: "Agents aren't just IDE helpers anymore. They can plan, implement, review, and deploy. The question is: where does human ownership end and agent autonomy begin?"
-snippet: "Bounded roles, observable actions, plannable boundaries."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/embedding-agents-in-the-sdlc.png
+sub-title: Domain 1 deep-dive for GH-600 candidates
+excerpt: 'Agents aren''t just IDE helpers anymore. They can plan, implement, review, and deploy. The question is: where does human ownership end and agent autonomy begin?'
+snippet: Bounded roles, observable actions, plannable boundaries.
 author: IT-Journey Team
 layout: article
 keywords:
-  primary: ["agentic SDLC", "github copilot agent"]
-  secondary: ["plan vs action boundaries", "gh-600 domain 1", "agent observability"]
-lastmod: 2026-05-17T00:00:00.000Z
+- agentic SDLC
+- github copilot agent
+- plan vs action boundaries
+- gh-600 domain 1
+- agent observability
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - sdlc
-  - observability
-  - domain-1
+- gh-600
+- agentic-ai
+- sdlc
+- observability
+- domain-1
 categories:
-  - AI & Machine Learning
-  - DevOps
+- AI & Machine Learning
+- DevOps
 ---
-
 When developers first use GitHub Copilot, they use it as an autocomplete tool. The model suggests; the human accepts or rejects. The human is always in control. The agent's role is narrow.
 
 The GH-600 certification covers a more expansive vision: agents that operate across the entire software development lifecycle (SDLC), taking on planning, implementation, testing, review, and deployment tasks with minimal moment-to-moment supervision.

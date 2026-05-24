@@ -1,16 +1,12 @@
 ---
 title: 'Terminal Enchantment: Oh-My-Zsh Mastery'
 author: IT-Journey Team
-description: Transform your terminal into a powerful development weapon by mastering
-  Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity
-  and workflow efficiency
-excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple
-  tool into a powerful development artifact
-snippet: Unleash the true power of your terminal with Oh-My-Zsh - where every command
-  becomes a spell of productivity
+description: Transform your terminal into a powerful development weapon by mastering Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity and workflow efficiency
+excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple tool into a powerful development artifact
+snippet: Unleash the true power of your terminal with Oh-My-Zsh - where every command becomes a spell of productivity
 preview: /images/previews/terminal-enchantment-oh-my-zsh-mastery.png
-date: 2025-09-03 22:19:06+00:00
-lastmod: 2026-02-13 00:00:00+00:00
+date: '2025-09-03T22:19:06.000Z'
+lastmod: '2026-02-13T00:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-90 minutes
@@ -127,6 +123,7 @@ related_quests:
 - VSCode Mastery Quest
 redirect_from:
 - /quests/0010/oh-my-zsh-terminal-enchantment/
+layout: quest
 ---
 ## 🌟 The Legend of Terminal Enchantment
 

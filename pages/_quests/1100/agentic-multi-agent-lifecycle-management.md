@@ -1,30 +1,22 @@
 ---
 title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
-description: Manage the full lifecycle of agents in a GitHub-native multi-agent system
-  — provisioning, monitoring, scaling, decommissioning, and replacing agents across
-  long-running workflows.
-date: 2026-05-17 00:00:00+00:00
+description: Manage the full lifecycle of agents in a GitHub-native multi-agent system — provisioning, monitoring, scaling, decommissioning, and replacing agents across long-running workflows.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-lifecycle-management.png
 level: '1100'
 difficulty: ⚔️ Epic
-estimated_time: 180 minutes
+estimated_time: 2-3 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- multi-agent
-- lifecycle-management
-- operations
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1100 Quest 1/4 — Domain 5: Multi-Agent Systems'
-excerpt: The Pantheon is not built in a day. Each agent is a deity with its own domain,
-  and each domain must be governed — created, empowered, monitored, and retired when
-  its purpose is fulfilled.
+excerpt: The Pantheon is not built in a day. Each agent is a deity with its own domain, and each domain must be governed — created, empowered, monitored, and retired when its purpose is fulfilled.
 author: IT-Journey Team
 tags:
 - '1100'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Epic
 keywords:
-- gh-600
-- agent lifecycle management
-- agent provisioning
-- agent decommission
-- long-running agents
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent lifecycle management
+  secondary:
+  - agent provisioning
+  - agent decommission
+  - long-running agents
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1100/agentic-multi-agent-lifecycle-management/
 quest_dependencies:
   required_quests:
@@ -90,6 +84,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-multi-agent-lifecycle-management/
+layout: quest
 ---
 *At the summit of the Citadel stands the Pantheon — a hall of agents that have proven their worth. Each agent's name is carved into the registry stone. Each is granted a domain and a purpose. Each is monitored, supported, and eventually retired with honours. The Pantheon Keeper knows: what is not managed will eventually fail, silently, and no one will notice until it is too late.*
 

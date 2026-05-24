@@ -1,38 +1,37 @@
 ---
-title: "Deployment to GitHub Pages and Azure"
+title: Deployment to GitHub Pages and Azure
 author: bamr87
 description: Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or any static hosting provider — with custom domain configuration.
-excerpt: "Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or a custom hosting provider, with optional custom domain configuration."
+excerpt: Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or a custom hosting provider, with optional custom domain configuration.
 permalink: /quickstart/deployment/
 categories:
-  - quickstart
+- quickstart
 slug: deployment
-lastmod: 2026-04-02T03:14:50.958Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 20-30 minutes
 prerequisites:
-  - Site builds locally (see [Local Development](/quickstart/local-development/))
-  - GitHub repository set up (see [GitHub Setup](/quickstart/github/))
+- Site builds locally (see [Local Development](/quickstart/local-development/))
+- GitHub repository set up (see [GitHub Setup](/quickstart/github/))
 tags:
-  - deployment
-  - github-pages
-  - azure
-  - hosting
+- deployment
+- github-pages
+- azure
+- hosting
 keywords:
   primary:
-    - jekyll deployment
-    - github pages
-    - azure static web apps
+  - jekyll deployment
+  - github pages
+  - azure static web apps
   secondary:
-    - custom domain
-    - CNAME
-    - static hosting
+  - custom domain
+  - CNAME
+  - static hosting
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 12** of the [Quick Start](/quickstart/) — deploying your Jekyll site to GitHub Pages, Azure, or any static hosting provider.
 
 ---

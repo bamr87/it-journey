@@ -1,7 +1,6 @@
 ---
 title: Level 0111 (7) - API Development
-description: Master the craft of building robust, secure, and well-documented APIs
-  that power modern applications
+description: Master the craft of building robust, secure, and well-documented APIs that power modern applications
 preview: images/previews/level-0111-api-development.png
 permalink: /quests/0111/
 layout: quest-collection
@@ -21,7 +20,7 @@ lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-date: 2025-12-20 20:02:51+00:00
+date: '2025-12-20T20:02:51.000Z'
 ---
 # Level 0111 (7) - API Development
 

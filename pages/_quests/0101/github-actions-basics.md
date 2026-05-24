@@ -1,13 +1,11 @@
 ---
 title: 'GitHub Actions Basics: Workflow Automation for Modern DevOps'
 author: IT-Journey Team
-description: Learn to create and manage GitHub Actions workflows for CI/CD automation.
-  Build automated testing, deployment, and code quality pipelines using YAML workflows.
-excerpt: Master GitHub Actions workflow creation for automating your software development
-  lifecycle
+description: Learn to create and manage GitHub Actions workflows for CI/CD automation. Build automated testing, deployment, and code quality pipelines using YAML workflows.
+excerpt: Master GitHub Actions workflow creation for automating your software development lifecycle
 preview: images/previews/github-actions-basics-workflow-automation-descript.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:05:22+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:05:22.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - DevOps
 - Medium
 tags:
-- "0101"
+- '0101'
 - github-actions
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- "0101"
-- github-actions
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - github-actions
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

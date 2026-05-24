@@ -1,16 +1,20 @@
 ---
-title: "Autonomy Levels Matrix"
-description: "Quick reference for the five-level autonomy spectrum (L0–L4) — task classification criteria, appropriate use cases, and guardrail requirements for each level."
-date: 2026-05-17T00:00:00.000Z
+title: Autonomy Levels Matrix
+description: Quick reference for the five-level autonomy spectrum (L0–L4) — task classification criteria, appropriate use cases, and guardrail requirements for each level.
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/autonomy-levels-matrix/
 author: IT-Journey Team
-tags: [gh-600, autonomy, responsible-ai, quick-reference]
+tags:
+- gh-600
+- autonomy
+- responsible-ai
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # Autonomy Levels Matrix
 
 ## The Five Levels

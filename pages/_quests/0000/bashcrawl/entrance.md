@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Entrance: Your First Terminal Commands'
-description: "Learn pwd, ls, cd, and cat by exploring the Bashcrawl entrance — read
-  the first scroll, get a hint from Merlin, and collect your brass key to proceed."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: Learn pwd, ls, cd, and cat by exploring the Bashcrawl entrance — read the first scroll, get a hint from Merlin, and collect your brass key to proceed.
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,9 +13,7 @@ quest_line: Foundation Path
 difficulty: 🟢 Easy
 estimated_time: 15-20 minutes
 primary_technology: bash
-skill_focus:
-- Terminal Navigation
-- File Examination
+skill_focus: fullstack
 learning_style: hands-on
 categories:
 - Quests
@@ -27,7 +24,7 @@ tags:
 - terminal
 - bash
 - navigation
-- "0000"
+- '0000'
 keywords:
   primary:
   - pwd command
@@ -61,11 +58,11 @@ learning_paths:
 rewards:
 - Bashcrawl Brass Key
 - Terminal navigation proficiency
-excerpt: "Start Bashcrawl by using pwd, ls, cd, and cat to read the first scroll, collect the brass key, and enter the dungeon."
+excerpt: Start Bashcrawl by using pwd, ls, cd, and cat to read the first scroll, collect the brass key, and enter the dungeon.
 draft: false
 permalink: /quests/0000/side-quests/entrance/
+layout: quest
 ---
-
 *The dungeon gate groans open. Cool air pours out carrying the scent of ancient scrolls. This is where every hero begins — four commands, a brass key, and the courage to type.*
 
 ## 🎯 Quest Objectives

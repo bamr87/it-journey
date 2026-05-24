@@ -2,21 +2,24 @@
 author: bamr87
 categories:
 - posts
-date: 2024-02-20 09:39:19+00:00
+date: '2024-02-20T09:39:19.000Z'
 description: To write a RetroPie .img.gz image to a microSD card using the dd command in Linux, you need to follow a series of steps. The dd command is a powerful…
 draft: 2024-02-10 23:51:06.235000+00:00
-excerpt: null
-lastmod: 2024-05-20 14:59:05.949000+00:00
+excerpt: To write a RetroPie .img.gz image to a microSD card using the dd command in Linux, you need to follow a series of steps
+lastmod: '2024-05-20T14:59:05.000Z'
 slug: retropie-imaging
 snippet: 2024-02-10 23:51:06.235000+00:00
 sub-title: null
-tags: []
+tags:
+- posts
 title: RetroPie Imaging
 type: Article
 section: System Administration
+keywords:
+- posts
+- retropie
+- imaging
 ---
-
-
 To write a RetroPie `.img.gz` image to a microSD card using the `dd` command in Linux, you need to follow a series of steps. The `dd` command is a powerful utility for copying and converting files, and when used with care, it can be very effective for tasks like writing disk images to removable storage devices.
 
 However, be cautious when using `dd` as it can overwrite any disk if you specify the wrong output file, leading to data loss. Always double-check the target device's file path (`/dev/sdX`, where `X` is the letter corresponding to your device) before proceeding.

@@ -1,16 +1,16 @@
 ---
 title: Start
-updated: 2024-02-04 19:38:44Z
-created: 2024-02-01 18:05:31Z
-latitude: 39.54807890
-longitude: -104.97393330
-altitude: 0.0000
+updated: 2024-02-04 19:38:44+00:00
+created: 2024-02-01 18:05:31+00:00
+latitude: 39.5480789
+longitude: -104.9739333
+altitude: 0.0
 tags:
-  - test
-date: 2024-02-20T09:39:19.000Z
-
+- test
+date: '2024-02-20T09:39:19.000Z'
+draft: false
+description: Initialization scratch sheet for the IT-Journey 'zero' character — identity, class, inventory checklist, and onboarding setup.
 ---
-
 # Initialize
 
 ## Identity/Character

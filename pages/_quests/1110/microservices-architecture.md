@@ -1,13 +1,11 @@
 ---
 title: 'Microservices Architecture: Building Scalable Distributed Systems'
 author: IT-Journey Team
-description: Master microservices architecture patterns for building scalable, maintainable
-  systems. Learn service decomposition, communication patterns, and deployment strategies.
-excerpt: Design and implement microservices architectures for scalable distributed
-  systems
+description: Master microservices architecture patterns for building scalable, maintainable systems. Learn service decomposition, communication patterns, and deployment strategies.
+excerpt: Design and implement microservices architectures for scalable distributed systems
 preview: images/previews/microservices-architecture-descriptive-subtitle.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1110'
 difficulty: ⚔️ Epic
 estimated_time: 6-8 hours
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- architecture
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Architecture
 - Epic
 tags:
-- "1110"
+- '1110'
 - docker
 - main_quest
 - architecture
 - hands-on
 - gamified-learning
 keywords:
-- "1110"
-- docker
-- main_quest
-- architecture
-- hands-on
-- gamified-learning
+  primary:
+  - '1110'
+  - docker
+  - main_quest
+  secondary:
+  - architecture
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

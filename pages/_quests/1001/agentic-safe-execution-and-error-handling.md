@@ -1,30 +1,22 @@
 ---
 title: 'The Shield of Retries: Safe Execution and Error Handling'
-description: Design agent workflows that survive tool failures, API errors, and unexpected
-  outputs — implement retry logic, timeouts, fallback strategies, and graceful error
-  reporting for GitHub Copilot agents.
-date: 2026-05-17 00:00:00+00:00
+description: Design agent workflows that survive tool failures, API errors, and unexpected outputs — implement retry logic, timeouts, fallback strategies, and graceful error reporting for GitHub Copilot agents.
+date: '2026-05-17T00:00:00.000Z'
 preview: /assets/images/previews/agentic-safe-execution-and-error-handling.png
 level: '1001'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- error-handling
-- retry-logic
-- safe-execution
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1001 Quest 2/3 — Domain 2: Tool Use & Environment Interaction'
-excerpt: The Shield of Retries doesn't prevent all failures — it ensures failures
-  are caught, reported, and recovered from gracefully. A resilient agent knows when
-  to try again, when to escalate, and when to stop.
+excerpt: The Shield of Retries doesn't prevent all failures — it ensures failures are caught, reported, and recovered from gracefully. A resilient agent knows when to try again, when to escalate, and when to stop.
 author: IT-Journey Team
 tags:
 - '1001'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- agent error handling
-- retry logic
-- timeout
-- fallback strategy
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent error handling
+  secondary:
+  - retry logic
+  - timeout
+  - fallback strategy
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1001/agentic-safe-execution-and-error-handling/
 quest_dependencies:
   required_quests:
@@ -94,6 +88,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-safe-execution-and-error-handling/
+layout: quest
 ---
 *The old shield-masters say: a shield that breaks on first impact is worse than no shield — the warrior trusted it. Build the Shield of Retries with three principles: try again when appropriate, admit defeat when necessary, and always report your final state so the next defender knows where you fell.*
 
@@ -218,7 +213,7 @@ jobs:
 
 An escalation ladder defines what happens at each failure level:
 
-```
+```text
 Level 1 — Retryable error:      Retry with backoff (up to max_retries)
 Level 2 — Max retries hit:      Comment on PR/issue + add "needs-human" label
 Level 3 — Non-retryable error:  Immediate comment + alert + stop execution

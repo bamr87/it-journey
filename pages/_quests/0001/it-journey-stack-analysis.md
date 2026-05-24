@@ -1,9 +1,8 @@
 ---
 title: 'Stack Attack Analysis: IT-Journey'
-description: Comprehensive technology stack analysis and documentation for the IT-Journey
-  educational platform
+description: Comprehensive technology stack analysis and documentation for the IT-Journey educational platform
 preview: images/previews/stack-attack-analysis-it-journey.png
-date: 2025-11-02 14:45:16+00:00
+date: '2025-11-02T14:45:16.000Z'
 repository: https://github.com/bamr87/it-journey
 repository_name: it-journey
 repository_owner: bamr87
@@ -24,32 +23,33 @@ tags:
 - ai-integration
 categories:
 - Stack Analysis
-lastmod: 2025-11-02 21:37:25.394000+00:00
+lastmod: '2025-11-02T21:37:25.000Z'
 level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
 permalink: /quests/0001/side-quests/it-journey-stack-analysis/
 primary_technology: stack-analysis
-skill_focus:
-- Stack Analysis
+skill_focus: fullstack
 learning_style: hands-on
 fmContentType: quest
 quest_series: Level 0001 Quest Line
 keywords:
-- stack-analysis
-- technology-stack
-- ruby
-- jekyll
-- educational-platform
-- static-site
-- github-pages
-- docker
-- python
-- ai-integration
+  primary:
+  - stack-analysis
+  - technology-stack
+  - ruby
+  - jekyll
+  - educational-platform
+  secondary:
+  - static-site
+  - github-pages
+  - docker
+  - python
+  - ai-integration
 author: IT-Journey Team
-quest_line: 'Stack Analysis Series'
-quest_arc: 'Repository archaeology'
+quest_line: Stack Analysis Series
+quest_arc: Repository archaeology
 prerequisites:
   knowledge_requirements: []
   system_requirements: []
@@ -72,6 +72,7 @@ rewards:
 validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
+layout: quest
 ---
 # Stack Attack Analysis: IT-Journey
 
@@ -398,7 +399,7 @@ class LinkHealthGuardian:
 
 **No Traditional Database** - All content stored as flat files in Git:
 
-```
+```text
 Content Structure:
 pages/
 ├── _posts/          # Blog articles (Jekyll posts collection)
@@ -420,7 +421,7 @@ pages/
 
 #### Static Asset Management
 
-```
+```text
 assets/
 ├── css/           # Stylesheets (Sass)
 ├── js/            # JavaScript modules

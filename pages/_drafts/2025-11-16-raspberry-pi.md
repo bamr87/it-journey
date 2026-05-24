@@ -1,20 +1,17 @@
 ---
 title: Raspberry Pi
-author: null
-excerpt: null
-description: null
+author: bamr87
+excerpt: 'Draft: Raspberry Pi setup notes from initial image flashing through headless SSH configuration and the first round of installed services.'
+description: 'Draft: Raspberry Pi setup notes from initial image flashing through headless SSH configuration and the first round of installed services.'
 snippet: null
 categories:
-    - notes
+- notes
 tags:
-    - raspberrypi
+- raspberrypi
 meta: null
 draft: true
-lastmod: 2024-05-13T17:40:58.806Z
+lastmod: '2024-05-13T17:40:58.000Z'
 section: System Administration
-date: 2024-03-12T19:51:39.000Z
-
+date: '2024-03-12T19:51:39.000Z'
 ---
-
-
 [Specs](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf) 

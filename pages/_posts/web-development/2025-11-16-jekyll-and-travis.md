@@ -1,6 +1,6 @@
 ---
 title: Jekyll and Travis
-author: null
+author: bamr87
 excerpt: Deploying Jekyll using Travis CI and Github
 description: Jekyll compiles your website into a site available for FTP to your web server. This can be automated if your source code is already on GitHub.
 snippet: null
@@ -11,13 +11,18 @@ tags:
 - jekyll
 - travis
 - ci
-lastmod: 2022-01-13 17:30:34.958000+00:00
+lastmod: '2022-01-13T17:30:34.000Z'
 draft: false
 slug: jekyll-and-travis
 section: Web Development
-date: 2022-01-13 10:32:07+00:00
+date: '2022-01-13T10:32:07.000Z'
+keywords:
+- jekyll
+- travis
+- ci
+- posts
+- guides
 ---
-
 # Overview
 
 Jekyll compiles your website into a `_site` available for FTP to your web server. This can be automated if your source code is already on GitHub.

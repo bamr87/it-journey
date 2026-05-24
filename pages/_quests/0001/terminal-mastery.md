@@ -1,24 +1,19 @@
 ---
 title: 'Terminal Mastery: Conquering the Command-Line Realm'
 author: Quest Master IT-Journey Team
-description: Master terminal navigation and command-line tools to unlock developer
-  productivity and system control powers in this hands-on quest
-excerpt: Transform from terminal novice to command-line champion through hands-on
-  practice with essential shell commands and navigation techniques
-snippet: Where code meets the metal, heroes are forged in the fire of the command
-  line
+description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
+excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
+snippet: Where code meets the metal, heroes are forged in the fire of the command line
 preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
-date: 2025-07-28 23:34:51+00:00
-lastmod: 2025-09-27 19:59:13.794000+00:00
+date: '2025-07-28T23:34:51.000Z'
+lastmod: '2025-09-27T19:59:13.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
-primary_technology: 0001
+primary_technology: 1
 quest_type: main_quest
 quest_series: 'Foundation Path: Digital Literacy Mastery'
-skill_focus:
-- Quests
-- Development - Foundation
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
 - Basic computer literacy and file system understanding
@@ -34,7 +29,7 @@ categories:
 - Quests
 - Development - Foundation
 tags:
-- "0001"
+- '0001'
 - terminal
 - command-line
 - tool-mastery
@@ -44,15 +39,17 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "0001"
-- terminal
-- command-line
-- tool-mastery
-- foundation
-- system-administration
-- developer-tools
-- hands-on
-- gamified-learning
+  primary:
+  - '0001'
+  - terminal
+  - command-line
+  - tool-mastery
+  secondary:
+  - foundation
+  - system-administration
+  - developer-tools
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -67,6 +64,7 @@ related_quests:
 - 'Level 0000: Digital Awakening - Computer Fundamentals'
 - 'Level 0010: File System Sorcery - Directory Navigation'
 - 'Level 0011: Version Control Magic - Git Fundamentals'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 

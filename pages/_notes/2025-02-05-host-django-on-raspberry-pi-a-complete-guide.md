@@ -1,20 +1,20 @@
 ---
-title: "Host Django on Raspberry Pi: A Complete Guide"
-description: ""
-date: 2025-02-05T14:08:47.000Z
-preview: ""
+title: 'Host Django on Raspberry Pi: A Complete Guide'
+description: Below is a detailed, step-by-step guide to hosting your Django project on a Raspberry Pi behind Cloudflare Tunnel. The end result will be a secure HTTPS…
+date: '2025-02-05T14:08:47.000Z'
+preview: ''
 tags: []
 categories: []
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-02-05T21:08:47.736Z
+lastmod: '2025-02-05T21:08:47.000Z'
 permalink: null
-attachments: ""
+attachments: ''
+draft: false
 ---
-
 Below is a detailed, step-by-step guide to hosting your Django project on a Raspberry Pi behind Cloudflare Tunnel. The end result will be a secure HTTPS connection to your Raspberry Pi’s Django application using your own domain name, without having to open ports on your home router.
 
 ---

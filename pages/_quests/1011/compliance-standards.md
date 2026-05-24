@@ -1,13 +1,11 @@
 ---
 title: 'Compliance Standards: SOC 2, GDPR, and HIPAA Requirements'
 author: IT-Journey Team
-description: Navigate security compliance frameworks including SOC 2, GDPR, HIPAA,
-  and PCI-DSS. Learn audit preparation, control implementation, and regulatory requirements.
-excerpt: Implement and maintain compliance with SOC 2, GDPR, HIPAA, and other security
-  standards
+description: Navigate security compliance frameworks including SOC 2, GDPR, HIPAA, and PCI-DSS. Learn audit preparation, control implementation, and regulatory requirements.
+excerpt: Implement and maintain compliance with SOC 2, GDPR, HIPAA, and other security standards
 preview: images/previews/compliance-standards-soc-2-gdpr-quest-title-hipaa-.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:44:55+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:44:55.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- security
+skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Security
 - Hard
 tags:
-- "1011"
+- '1011'
 - compliance
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- "1011"
-- compliance
-- main_quest
-- security
-- hands-on
-- gamified-learning
+  primary:
+  - '1011'
+  - compliance
+  - main_quest
+  secondary:
+  - security
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

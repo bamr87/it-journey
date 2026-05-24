@@ -1,44 +1,40 @@
 ---
-title: "LaTeX Your CV: Professional Resume Creation with LaTeX and VS Code"
+title: LaTex your CV
 author: bamr87
 categories:
-    - Posts
-    - Professional-Development
-    - Documentation
-date: 2023-11-27T04:08:17.000Z
-description: "Complete guide to creating professional CVs and resumes using LaTeX with Visual Studio Code integration and GitHub version control"
+- Posts
+- Professional-Development
+- Documentation
+date: '2023-11-27T04:08:17.000Z'
+description: Complete guide to creating professional CVs and resumes using LaTeX with Visual Studio Code integration and GitHub version control
 draft: false
 section: Tools & Environment
-excerpt: "Learn to create stunning, professional CVs using LaTeX, integrated with VS Code for the ultimate document creation workflow"
-lastmod: 2024-05-20T14:59:08.505Z
-snippet: "LaTeX + VS Code = Professional documents that stand out from the crowd"
-sub-title: "Professional Document Creation with LaTeX"
+excerpt: Learn to create stunning, professional CVs using LaTeX, integrated with VS Code for the ultimate document creation workflow
+lastmod: '2024-05-20T14:59:08.000Z'
+snippet: LaTeX + VS Code = Professional documents that stand out from the crowd
+sub-title: Professional Document Creation with LaTeX
 tags:
-    - latex
-    - cv
-    - resume
-    - professional-development
-    - document-creation
-    - vscode
-    - github
-    - typography
-    - career
-title: "LaTex your CV"
+- latex
+- cv
+- resume
+- professional-development
+- document-creation
+- vscode
+- github
+- typography
+- career
 type: Article
 keywords:
-    primary:
-        - latex cv
-        - resume creation
-        - professional documents
-    secondary:
-        - vscode integration
-        - github version control
-        - typography
-        - career development
-        - document formatting
+- latex cv
+- resume creation
+- professional documents
+- vscode integration
+- github version control
+- typography
+- career development
+- document formatting
 permalink: /posts/latex-cv-professional-resume/
 ---
-
 Installing LaTeX on a Mac, integrating it with Visual Studio Code, and using GitHub for source control involves several steps. Below is a comprehensive manual detailing each step in the process.
 
 Installing LaTeX on macOS using Terminal

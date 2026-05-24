@@ -1,13 +1,11 @@
 ---
 title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
 author: IT-Journey Team
-description: Learn essential AWS services including EC2, S3, RDS, Lambda, and VPC.
-  Build scalable cloud architectures using AWS best practices and Well-Architected
-  Framework.
+description: Learn essential AWS services including EC2, S3, RDS, Lambda, and VPC. Build scalable cloud architectures using AWS best practices and Well-Architected Framework.
 excerpt: Master essential AWS services and build scalable cloud architectures
 preview: images/previews/aws-essentials-core-services-quest-title-architect.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:41:10+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:41:10.000Z'
 level: '1000'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- cloud-engineering
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- "1000"
+- '1000'
 - aws
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- "1000"
-- aws
-- main_quest
-- cloud-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '1000'
+  - aws
+  - main_quest
+  secondary:
+  - cloud-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

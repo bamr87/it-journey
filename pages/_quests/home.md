@@ -5,34 +5,37 @@ description: Your central command hub for tracking progress through the IT maste
 preview: /images/previews/overworld-master-quest-map.png
 permalink: /quests/home/
 layout: quest-hub
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 5-10 minutes
 categories:
-    - home
-    - quest-map
-    - progress-tracker
+- home
+- quest-map
+- progress-tracker
 tags:
-    - overworld
-    - navigation
-    - progress
-    - achievement
+- overworld
+- navigation
+- progress
+- achievement
 sidebar:
-    nav: home
+  nav: home
 mermaid: true
 toc: true
 toc_sticky: true
-date: 2021-11-30T14:41:59.000Z
-lastmod: 2026-05-20T20:57:50.000Z
+date: '2021-11-30T14:41:59.000Z'
+lastmod: '2026-05-20T20:57:50.000Z'
 draft: false
 excerpt: Your central command hub for tracking progress through the IT mastery quest system — navigate learning paths, monitor achievements, and plan next adventures.
 keywords:
-    primary:
-        - quest map
-        - it journey progress
-    secondary:
-        - overworld
-        - quest navigation
-        - learning tracker
+  primary:
+  - quest map
+  - it journey progress
+  secondary:
+  - overworld
+  - quest navigation
+  - learning tracker
+fmContentType: quest
 ---
-
 This is your central hub for the IT-Journey quest system — a gamified learning framework with 180+ quests organized across 16 binary levels (0000–1111). Pick a starting realm, choose a character class, and work through progressively harder challenges to build real IT skills.
 
 > *Behold, brave adventurer! This is your personal overworld map — the mystical realm where all paths converge and all journeys begin. Track your progress, plan your next adventures, and survey the vast landscape of IT mastery that awaits.*

@@ -1,30 +1,22 @@
 ---
 title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
-description: Detect, measure, and prevent context drift in long-running GitHub Copilot
-  agent sessions — implement state checkpointing, drift detection signals, and recovery
-  procedures.
-date: 2026-05-17 00:00:00+00:00
+description: Detect, measure, and prevent context drift in long-running GitHub Copilot agent sessions — implement state checkpointing, drift detection signals, and recovery procedures.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-state-persistence-and-drift.png
 level: '1010'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- state-management
-- context-drift
-- checkpointing
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1010 Quest 1/4 — Domain 3: Context & Memory Management'
-excerpt: Context drift is the quiet enemy. An agent starts on the right path, but
-  over a long session its focus wanders, its task understanding shifts. Learn to anchor
-  agents to their original intent.
+excerpt: Context drift is the quiet enemy. An agent starts on the right path, but over a long session its focus wanders, its task understanding shifts. Learn to anchor agents to their original intent.
 author: IT-Journey Team
 tags:
 - '1010'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- context drift
-- state persistence
-- agent checkpointing
-- session recovery
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - context drift
+  secondary:
+  - state persistence
+  - agent checkpointing
+  - session recovery
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1010/agentic-state-persistence-and-drift/
 quest_dependencies:
   required_quests:
@@ -92,6 +86,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-state-persistence-and-drift/
+layout: quest
 ---
 *The Tide Fields south of the Citadel are treacherous — the currents shift without warning, and many agents sent to cross them have returned to shore hundreds of leagues from their intended destination. They set off correctly, but drift, session by session, until they no longer remember the original shore.*
 

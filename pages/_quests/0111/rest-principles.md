@@ -1,13 +1,11 @@
 ---
 title: 'REST Principles: RESTful API Design Best Practices'
 author: IT-Journey Team
-description: Learn REST architectural principles for designing clean, scalable APIs.
-  Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
-excerpt: Design clean, scalable RESTful APIs following architectural principles and
-  best practices
+description: Learn REST architectural principles for designing clean, scalable APIs. Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
+excerpt: Design clean, scalable RESTful APIs following architectural principles and best practices
 preview: images/previews/rest-principles-restful-api-design-descriptive-sub.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:08:54+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:08:54.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
@@ -41,8 +39,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -74,19 +71,21 @@ categories:
 - Backend
 - Hard
 tags:
-- "0111"
+- '0111'
 - rest
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- "0111"
-- rest
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - rest
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -99,6 +98,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

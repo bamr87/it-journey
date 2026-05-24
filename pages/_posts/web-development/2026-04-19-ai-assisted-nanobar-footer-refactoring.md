@@ -1,61 +1,59 @@
 ---
-title: "AI-Assisted UI/UX Refactoring: Nanobar Modularization and Footer Fix"
-description: "A chronicle of using AI-powered development to refactor a Jekyll theme's inline progress bar into a config-driven component and fix a full-width footer layout, from diagnosis through implementation and visual verification."
-date: 2026-04-19T16:00:00.000Z
-preview: ""
+title: 'AI-Assisted UI/UX Refactoring: Nanobar Modularization and Footer Fix'
+description: A chronicle of using AI-powered development to refactor a Jekyll theme's inline progress bar into a config-driven component and fix a full-width footer
+date: '2026-04-19T16:00:00.000Z'
+preview: ''
 tags:
-    - jekyll
-    - tutorial
-    - intermediate
-    - web-development
-    - ui-ux
-    - refactoring
-    - bootstrap
-    - ai-development
+- jekyll
+- tutorial
+- intermediate
+- web-development
+- ui-ux
+- refactoring
+- bootstrap
+- ai-development
 categories:
-    - Posts
-    - Web-Development
-    - Tutorials
-sub-title: "From inline spaghetti to config-driven components in one AI session"
-excerpt: "How an AI-assisted refactoring session turned 60 lines of hardcoded nanobar into a single configurable include—and fixed a Bootstrap footer layout along the way."
-snippet: "Config-driven components beat hardcoded markup every time."
-author: "IT-Journey Team"
+- Posts
+- Web-Development
+- Tutorials
+sub-title: From inline spaghetti to config-driven components in one AI session
+excerpt: How an AI-assisted refactoring session turned 60 lines of hardcoded nanobar into a single configurable include—and fixed a Bootstrap footer layout along the way.
+snippet: Config-driven components beat hardcoded markup every time.
+author: IT-Journey Team
 layout: article
 keywords:
-    primary:
-        - jekyll-theme-refactoring
-        - config-driven-components
-    secondary:
-        - nanobar-progress-bar
-        - bootstrap-footer-layout
-        - liquid-templates
-        - ai-assisted-development
-        - css-scoping
-lastmod: 2026-04-19T16:00:00.000Z
+- jekyll-theme-refactoring
+- config-driven-components
+- nanobar-progress-bar
+- bootstrap-footer-layout
+- liquid-templates
+- ai-assisted-development
+- css-scoping
+lastmod: '2026-04-19T16:00:00.000Z'
 permalink: /posts/ai-assisted-nanobar-footer-refactoring/
-attachments: ""
+attachments: ''
 comments: true
-difficulty: "🟡 Intermediate"
-estimated_reading_time: "12-15 minutes"
+difficulty: 🟡 Intermediate
+estimated_reading_time: 12-15 minutes
 prerequisites:
-    - "Basic understanding of Jekyll templates and Liquid syntax"
-    - "Familiarity with Bootstrap 5 grid system and utility classes"
-    - "Experience with browser DevTools for layout debugging"
+- Basic understanding of Jekyll templates and Liquid syntax
+- Familiarity with Bootstrap 5 grid system and utility classes
+- Experience with browser DevTools for layout debugging
 learning_outcomes:
-    - "🎯 Refactor inline code into modular, config-driven Jekyll includes"
-    - "⚡ Diagnose and fix Bootstrap container nesting issues"
-    - "🛠️ Use CSS custom properties to bridge _config.yml values to stylesheets"
-    - "🔗 Understand how AI agents diagnose UI bugs through systematic elimination"
-content_series: "Zer0-Mistakes Theme Development"
+- 🎯 Refactor inline code into modular, config-driven Jekyll includes
+- ⚡ Diagnose and fix Bootstrap container nesting issues
+- 🛠️ Use CSS custom properties to bridge _config.yml values to stylesheets
+- 🔗 Understand how AI agents diagnose UI bugs through systematic elimination
+content_series: Zer0-Mistakes Theme Development
 related_posts:
-    - "/posts/2025/11/20/using-crush-vscode-github-pages/"
+- /posts/2025/11/20/using-crush-vscode-github-pages/
 validation_methods:
-    - "Build the Jekyll site and verify nanobar renders at the configured position"
-    - "Inspect footer in browser DevTools to confirm edge-to-edge dark background"
-    - "Toggle nanobar.enabled in _config.yml and verify the bar appears/disappears"
+- Build the Jekyll site and verify nanobar renders at the configured position
+- Inspect footer in browser DevTools to confirm edge-to-edge dark background
+- Toggle nanobar.enabled in _config.yml and verify the bar appears/disappears
 section: Web Development
+draft: false
 ---
-
 ## Introduction
 
 During a routine code review of the [Zer0-Mistakes Jekyll theme](https://github.com/bamr87/zer0-mistakes), we discovered that the page-loading progress bar (nanobar) was implemented as ~60 lines of hardcoded HTML, CSS, and JavaScript inlined directly in `head.html`. Values like colors, heights, and animation steps were scattered across three files with no central configuration.

@@ -1,7 +1,6 @@
 ---
 title: Drifter0
-description: 'Drifter can be accessed on drifter.labs.overthewire.org via SSH on port
-  2230. Level 0 listens
+description: 'Drifter can be accessed on drifter.labs.overthewire.org via SSH on port 2230. Level 0 listens
 
   on port 1111.'
 permalink: /docs/wargames/drifter/drifter0/
@@ -9,6 +8,7 @@ date: '2026-04-07T01:41:09.000Z'
 lastmod: '2026-04-07T01:41:09.000Z'
 categories:
 - wargames
+- drifter
 tags:
 - security
 - wargames
@@ -20,8 +20,16 @@ source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/drifter/drifter0.md
 source_name: overthewire
 license: MIT
+draft: false
+keywords:
+- security
+- wargames
+- linux
+- ctf
+- cybersecurity
+- drifter
+author: bamr87
 ---
-
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.
 
 Drifter can be accessed on drifter.labs.overthewire.org via SSH on port 2230. Level 0 listens

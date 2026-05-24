@@ -1,21 +1,32 @@
 ---
-title: Jekyll - Liquid
+title: Jekyll — Liquid Reference
+description: "Reference for Liquid templating in Jekyll — objects, filters, control flow, and the Shopify-inherited syntax that drives every layout in the site."
 key: tutorial
 index: 8111
 subcategory: jekyll
-status: published
-date: 2022-06-05T13:48:57.000Z
+categories: [jekyll, tutorials]
 tags:
-  - Jekyll
-  - Liquid
-lastmod: 2024-05-16T19:50:34.990Z
+  - jekyll
+  - liquid
+  - templating
+  - reference
+keywords:
+  - jekyll liquid
+  - liquid templating
+  - liquid filters
+  - liquid for loops
+  - shopify liquid
+author: bamr87
+date: '2022-06-05T13:48:57.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
+status: published
+draft: false
 sources:
-  - https://shopify.github.io/liquid/
-  - https://help.shopify.com/themes/liquid/objects/for-loops
-  - https://jekyllrb.com/docs/liquid/filters/
+- https://shopify.github.io/liquid/
+- https://help.shopify.com/themes/liquid/objects/for-loops
+- https://jekyllrb.com/docs/liquid/filters/
 draft: draft
 ---
-
 > Useful tricks of Liquid, which are used in Jekyll.
 
 ## 1. Liquid

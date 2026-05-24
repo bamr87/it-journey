@@ -1,9 +1,8 @@
 ---
 title: Quest Build Plan - Complete Placeholder Quest System
 layout: default
-description: Comprehensive plan for building all placeholder quests across all levels
-  with complete linking and mapping
-date: 2025-11-29 22:51:57+00:00
+description: Comprehensive plan for building all placeholder quests across all levels with complete linking and mapping
+date: '2025-11-29T22:51:57.000Z'
 lastmod: 2025-01-27
 categories:
 - planning
@@ -17,10 +16,12 @@ draft: false
 toc: true
 toc_sticky: true
 keywords:
-- roadmap
-- quest-system
-- planning
-- infrastructure
+  primary:
+  - roadmap
+  - quest-system
+  secondary:
+  - planning
+  - infrastructure
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
@@ -709,7 +710,7 @@ lastmod: YYYY-MM-DDTHH:MM:SS.000Z
 ## Resources
 
 [Level-specific resources, documentation, tools]
-```
+```bash
 
 ## Automation and Tooling
 
@@ -731,7 +732,7 @@ QUEST_TITLE=$3
 # Update home.md and main README.md
 # Validate frontmatter
 # Create git commit
-```
+```bash
 
 ### Quest Validation Script
 
@@ -747,7 +748,7 @@ Create `scripts/quest/validate-quest-network.py`:
 # Verify quest progression paths
 # Generate network visualization
 # Report orphaned quests
-```
+```bash
 
 ### Link Update Script
 
@@ -763,7 +764,7 @@ Create `scripts/quest/update-quest-links.py`:
 # Update README.md
 # Update level README files
 # Validate all links work
-```
+```markdown
 
 ## Quality Assurance Checklist
 

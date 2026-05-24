@@ -1,23 +1,30 @@
 ---
 title: Open AI Future Features with Github Action
 description: Automate GitHub Issues with OpenAI and GitHub Actions for structured feature requests and bug reports. Enhance your workflow effortlessly!
-date: 2025-04-18 13:43:43+00:00
+date: '2025-04-18T13:43:43.000Z'
 preview: ''
-tags: []
+tags:
+- ai-machine-learning
 categories:
 - AI & Machine Learning
 sub-title: null
-excerpt: null
+excerpt: Automate GitHub Issues with OpenAI and GitHub Actions for structured feature requests and bug reports
 snippet: null
-author: ''
-keywords: {}
-lastmod: 2026-03-20 22:22:52.851000+00:00
+author: bamr87
+keywords:
+- ai & machine learning
+- open
+- future
+- features
+- github
+- action
+lastmod: '2026-03-20T22:22:52.000Z'
 permalink: null
 attachments: ''
 comments: false
 section: AI & Machine Learning
+draft: false
 ---
-
 Here's a complete, detailed, and comprehensive **step-by-step tutorial** to implement automated, AI-driven structured GitHub Issues (**feature requests**, **bug reports**, **test plans**, etc.) using **GitHub Actions** and **OpenAI's GPT-4 API** for **any GitHub repository**.
 
 * * * *

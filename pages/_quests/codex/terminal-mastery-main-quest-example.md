@@ -1,9 +1,8 @@
 ---
 title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
-layout: default
-description: Master terminal navigation and essential command-line operations to unlock
-  developer productivity and system control powers
-date: 2025-10-04 15:25:33+00:00
+layout: quest
+description: Master terminal navigation and essential command-line operations to unlock developer productivity and system control powers
+date: '2025-10-04T15:25:33.000Z'
 preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
 - '0001'
@@ -17,18 +16,19 @@ categories:
 - Foundation
 - Terminal-Mastery
 sub-title: 'Level 0001 (1) Main Quest: Terminal Navigation and Command Mastery'
-excerpt: Transform from terminal novice to command-line champion through hands-on
-  practice with essential navigation and file operations
+excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential navigation and file operations
 snippet: Where digital adventures begin - master the gateway to all development power
 author: Quest Master IT-Journey Team
 keywords:
-- '0001'
-- terminal
-- command-line
-- navigation
-- file-operations
-- development-fundamentals
-lastmod: 2025-10-03 12:00:00+00:00
+  primary:
+  - '0001'
+  - terminal
+  - command-line
+  secondary:
+  - navigation
+  - file-operations
+  - development-fundamentals
+lastmod: '2025-10-03T12:00:00.000Z'
 permalink: /quests/codex/terminal-navigation-mastery/
 redirect_from:
 - /quests/0001/terminal-navigation-mastery/
@@ -107,11 +107,9 @@ rewards:
   - Foundation for all development tool mastery
 level: '0000'
 primary_technology: reference
-skill_focus:
-- codex
-- reference
+skill_focus: fullstack
 learning_style: reading
-fmContentType: codex
+fmContentType: quest
 ---
 *Greetings, brave digital explorer! Welcome to the Terminal Navigation Mastery Quest - the foundational adventure that transforms you from a point-and-click apprentice into a command-line champion. This main quest forms the cornerstone of your IT journey, providing essential skills that every developer, system administrator, and digital craftsperson must master.*
 

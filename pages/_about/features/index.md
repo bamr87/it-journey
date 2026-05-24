@@ -2,25 +2,24 @@
 title: Learning Platform Features
 description: User-facing features and educational tools available on IT-Journey platform.
 excerpt: Comprehensive list of learning features, educational tools, and community capabilities.
-date: 2024-03-12T19:51:39.000Z
+date: '2024-03-12T19:51:39.000Z'
 preview: null
 tags:
-  - features
-  - learning
-  - education
-  - community
+- features
+- learning
+- education
+- community
 categories:
-  - about
+- about
 type: default
 slug: features
 permalink: /about/features/
-lastmod: 2025-10-13T22:52:35.526Z
-draft: published
+lastmod: '2025-10-13T22:52:35.000Z'
+draft: false
 inspiration:
-  - features are the foundation of the future
+- features are the foundation of the future
 quest: /quests/featured-future/
 ---
-
 ## Educational Features
 
 These are the learning-focused features that make IT-Journey a comprehensive educational platform.

@@ -1,7 +1,7 @@
 ---
 title: 'Texan Cowboys Learn History: Pyramid Scheme Revealed'
 description: Dallas, TX – In an age where historical grievances usually serve as fodder for dusty textbooks, one American-Egyptian family found themselves in an…
-date: 2024-10-02 15:35:35+00:00
+date: '2024-10-02T15:35:35.000Z'
 preview: null
 draft: true
 tags: []
@@ -12,14 +12,13 @@ excerpt: null
 snippet: null
 author: bamr87
 keywords: {}
-lastmod: 2024-07-18 15:08:34.765000+00:00
+lastmod: '2024-07-18T15:08:34.000Z'
 slug: null
 permalink: null
 attachments: ''
 type: posts
 section: Culture & Society
 ---
-
 ## Dallas Family Ousted by Drunken Cowboys Seeking Revenge for Ancient Pyramid Schemes
 
 **Dallas, TX** – In an age where historical grievances usually serve as fodder for dusty textbooks, one American-Egyptian family found themselves in an absurd and alcohol-infused play of vengeance. As another Texan sunset bathed the city in an amber glow, the stage was set for a tale that would make even the god Anubis rethink his career choices.

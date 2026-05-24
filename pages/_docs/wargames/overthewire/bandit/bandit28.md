@@ -4,14 +4,13 @@ description: 'Level Goal
 
   ----------
 
-  There is a git repository at ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo
-  via the port 2220. The password for the user bandit27-git is the same as for the
-  user bandit27.'
+  There is a git repository at ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.'
 permalink: /docs/wargames/bandit/bandit28/
 date: '2026-04-07T01:41:08.000Z'
 lastmod: '2026-04-07T01:41:08.000Z'
 categories:
 - wargames
+- bandit
 tags:
 - security
 - wargames
@@ -24,15 +23,15 @@ source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/
 source_name: overthewire
 license: MIT
 author: bamr87
-excerpt: "OverTheWire Bandit level 28 — practice Linux command-line and security skills through hands-on challenges."
+excerpt: OverTheWire Bandit level 28 — practice Linux command-line and security skills through hands-on challenges.
 draft: false
 keywords:
-  - security
-  - wargames
-  - linux
-  - overthewire
-  - ctf
-  - cybersecurity
+- security
+- wargames
+- linux
+- overthewire
+- ctf
+- cybersecurity
 ---
 
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.

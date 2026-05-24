@@ -1,31 +1,22 @@
 ---
 title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
-description: Design and implement responsible agentic AI guardrails using GitHub-native
-  tools — boundary enforcement, human approval gates, escalation protocols, and audit
-  trails for AI-assisted actions.
-date: 2026-05-17 00:00:00+00:00
+description: Design and implement responsible agentic AI guardrails using GitHub-native tools — boundary enforcement, human approval gates, escalation protocols, and audit trails for AI-assisted actions.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-guardrails-and-human-in-the-loop.png
 level: '1100'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- guardrails
-- human-in-the-loop
-- responsible-ai
-- governance
+skill_focus: security
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1100 Quest 3/4 — Domain 6: Responsible Agentic AI'
-excerpt: The Warden stands at the gate between the agent's realm and the world beyond.
-  The Pact is clear — agents may not cross without the Warden's blessing. Some doors
-  require a key. Some require a council. Some the Warden seals forever.
+excerpt: The Warden stands at the gate between the agent's realm and the world beyond. The Pact is clear — agents may not cross without the Warden's blessing. Some doors require a key. Some require a council. Some the Warden seals forever.
 author: IT-Journey Team
 tags:
 - '1100'
@@ -41,12 +32,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- guardrails
-- human in the loop
-- responsible AI
-- approval gates
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - guardrails
+  secondary:
+  - human in the loop
+  - responsible AI
+  - approval gates
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1100/agentic-guardrails-and-human-in-the-loop/
 quest_dependencies:
   required_quests:
@@ -95,6 +88,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-guardrails-and-human-in-the-loop/
+layout: quest
 ---
 *The Warden's Gate is the last line between the agent's plans and their execution. It is not a place of fear — it is a place of clarity. Every agent knows the Pact: here are the things you may do alone; here are the things you must ask permission for; here are the things that are forever forbidden. The Warden does not judge the agent. She judges the action.*
 
@@ -137,7 +131,7 @@ graph LR
 
 > **Exercise 19.1:** Configure CODEOWNERS to enforce file-scope guardrails.
 
-```
+```markdown
 # .github/CODEOWNERS
 
 # Security-sensitive paths — require security team review

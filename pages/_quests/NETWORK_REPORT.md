@@ -1,6 +1,28 @@
+---
+title: Quest Network Report
+description: "Auto-generated quest network validation summary — node and edge counts, dependency graph status, and the most recent validator run output."
+date: 2026-05-24T15:31:24.000Z
+lastmod: 2026-05-24T15:31:24.000Z
+author: IT-Journey Team
+categories: [Quests, Reports]
+tags: [quests, network, automation, report]
+permalink: /quests/network-report/
+level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 5-10 minutes
+keywords:
+  - quest network
+  - quest validation
+  - dependency graph
+  - automation
+draft: false
+generated: true
+sitemap: false
+---
+
 # Quest Network Report
 
-**Generated:** 2026-05-24 01:09:53 UTC
+**Generated:** 2026-05-24 15:31:24 UTC
 **Quest Directory:** `/Users/bamr87/github/it-journey/pages/_quests`
 
 ---

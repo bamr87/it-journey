@@ -5,30 +5,29 @@ permalink: /docs/
 description: Reference documentation and learning resources covering terminal, Bash scripting, Jekyll, Liquid templating, and development tools for IT-Journey.
 excerpt: Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey.
 categories:
-    - docs
-    - home
+- docs
+- home
 tags:
-    - docs
-    - reference
-    - learning-resources
-    - jekyll
-    - terminal
+- docs
+- reference
+- learning-resources
+- jekyll
+- terminal
 sidebar:
-    nav: docs
+  nav: docs
 toc_sticky: true
-date: 2021-12-03T09:05:06.000Z
-lastmod: 2026-04-25T19:27:00.093Z
+date: '2021-12-03T09:05:06.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
 draft: false
 keywords:
-    primary:
-        - learning resources
-        - documentation
-    secondary:
-        - terminal reference
-        - jekyll docs
-        - bash guide
+  primary:
+  - learning resources
+  - documentation
+  secondary:
+  - terminal reference
+  - jekyll docs
+  - bash guide
 ---
-
 # Learning Resources Library
 
 Reference documentation and educational resources for the tools and technologies powering IT-Journey. Browse by topic below, or use the sidebar to navigate directly to a specific technology.

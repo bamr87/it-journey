@@ -1,9 +1,8 @@
 ---
 title: 'Hello macOS: Setting Up the Apple Kingdom'
-description: Set up a macOS development environment with Homebrew, Xcode Command Line
-  Tools, and a modern terminal workflow.
+description: Set up a macOS development environment with Homebrew, Xcode Command Line Tools, and a modern terminal workflow.
 author: IT-Journey Team
-date: 2026-01-14 22:23:32+00:00
+date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14
 level: '0000'
 difficulty: 🟢 Easy
@@ -40,11 +39,7 @@ learning_paths:
   skill_trees:
   - macOS Administration
   - Package Management
-skill_focus:
-- macOS
-- terminal
-- package-management
-- developer-tools
+skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0000/hello-macos/
 categories:
@@ -59,11 +54,13 @@ tags:
 - terminal
 - developer-tools
 keywords:
-- macos
-- homebrew
-- terminal
-- developer-tools
-- init-world
+  primary:
+  - macos
+  - homebrew
+  secondary:
+  - terminal
+  - developer-tools
+  - init-world
 fmContentType: quest
 prerequisites:
   knowledge_requirements:
@@ -101,6 +98,7 @@ rewards:
 draft: false
 redirect_from:
 - /quests/0000/hello-mac/
+layout: quest
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
 

@@ -1,16 +1,20 @@
 ---
-title: "GH-600 Skills Checklist"
-description: "All 19 sub-skills from the GH-600 study guide, organised by domain, with links to the corresponding quests. Check them off as you complete each quest."
-date: 2026-05-17T00:00:00.000Z
+title: GH-600 Skills Checklist
+description: All 19 sub-skills from the GH-600 study guide, organised by domain, with links to the corresponding quests. Check them off as you complete each quest.
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/skills-checklist/
 author: IT-Journey Team
-tags: [gh-600, skills, checklist, quick-reference]
+tags:
+- gh-600
+- skills
+- checklist
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # GH-600 Skills Checklist
 
 Check off each sub-skill as you complete the corresponding quest.

@@ -1,24 +1,19 @@
 ---
 title: '404 Hunting: Binary Wards for Unbreakable Links'
 author: Quest Master IT-Journey
-description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians,
-  and living resource endpoints powered by GitHub.
-excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink
-  guardians, and organic resource endpoints.
+description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians, and living resource endpoints powered by GitHub.
+excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink guardians, and organic resource endpoints.
 snippet: May your links never stray and your redirects never loop.
 preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
-date: 2025-08-31 18:32:58+00:00
-lastmod: 2025-08-31 23:16:16.119000+00:00
+date: '2025-08-31T18:32:58.000Z'
+lastmod: '2025-08-31T23:16:16.000Z'
 level: '1110'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
 primary_technology: 1110
 quest_type: main_quest
 quest_series: Site Reliability for Static Sites
-skill_focus:
-- Quests
-- Web-Development
-- Intermediate
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
 - GitHub account and a repository with GitHub Pages or Actions enabled
@@ -40,11 +35,13 @@ tags:
 - link-integrity
 - devops
 keywords:
-- '1110'
-- jekyll
-- github-actions
-- link-integrity
-- devops
+  primary:
+  - '1110'
+  - jekyll
+  secondary:
+  - github-actions
+  - link-integrity
+  - devops
 fmContentType: quest
 comments: true
 attachments: ''
@@ -60,6 +57,7 @@ related_quests:
 - 'Content Gardens: Jekyll Collections (Level 10100)'
 redirect_from:
 - /quests/1110/404-hunting/
+layout: quest
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 

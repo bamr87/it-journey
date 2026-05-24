@@ -4,31 +4,30 @@ permalink: /docs/obsidian/graph/
 description: Interactive knowledge graph visualizing all IT-Journey pages connected through Obsidian-style wiki links, backlinks, and cross-references.
 excerpt: Explore the IT-Journey knowledge graph generated from wiki links across docs, notes, quests, and posts.
 categories:
-  - docs
-  - obsidian
+- docs
+- obsidian
 tags:
-  - obsidian
-  - graph
-  - navigation
+- obsidian
+- graph
+- navigation
 sidebar:
   nav: docs
 toc_sticky: true
 backlinks: false
 local_graph: false
 sitemap: false
-date: 2026-04-25T00:00:00.000Z
-lastmod: 2026-04-25T00:00:00.000Z
+date: '2026-04-25T00:00:00.000Z'
+lastmod: '2026-04-25T00:00:00.000Z'
 author: Amr Abdel Eissa
 draft: false
 keywords:
   primary:
-    - obsidian graph
-    - knowledge graph
+  - obsidian graph
+  - knowledge graph
   secondary:
-    - wiki links
-    - it-journey navigation
+  - wiki links
+  - it-journey navigation
 ---
-
 <style>
   #obsidian-graph {
     width: 100%;

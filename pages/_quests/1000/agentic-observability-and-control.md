@@ -1,29 +1,22 @@
 ---
 title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
-description: Configure observability for GitHub Copilot coding agents — producing
-  inspectable artifacts, configuring audit trails, and setting up human intervention
-  points that don't slow delivery.
-date: 2026-05-17 00:00:00+00:00
+description: Configure observability for GitHub Copilot coding agents — producing inspectable artifacts, configuring audit trails, and setting up human intervention points that don't slow delivery.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-observability-and-control.png
 level: '1000'
 difficulty: 🟡 Medium
-estimated_time: 90 minutes
+estimated_time: 60-90 minutes
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- observability
-- agent-control
-- audit-trails
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1000 Quest 1/4 — Domain 1: Agent Architecture & SDLC'
-excerpt: An agent you cannot observe is an agent you cannot trust. Learn to wire in
-  observability that keeps humans informed without turning every decision into a bottleneck.
+excerpt: An agent you cannot observe is an agent you cannot trust. Learn to wire in observability that keeps humans informed without turning every decision into a bottleneck.
 author: IT-Journey Team
 tags:
 - '1000'
@@ -38,12 +31,14 @@ categories:
 - Agentic-AI
 - Medium
 keywords:
-- gh-600
-- agent observability
-- agent audit trail
-- human intervention
-- github actions tracing
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent observability
+  secondary:
+  - agent audit trail
+  - human intervention
+  - github actions tracing
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1000/agentic-observability-and-control/
 quest_dependencies:
   required_quests:
@@ -92,6 +87,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-observability-and-control/
+layout: quest
 ---
 *High in the Watchtower of the GitHub Citadel, the Scriers keep vigil. They do not control the agents — the agents operate freely. But the Scriers see everything: every decision, every action, every output. When an agent strays, the Scriers raise the alarm. Without them, the Citadel would fall to the very agents sworn to protect it.*
 

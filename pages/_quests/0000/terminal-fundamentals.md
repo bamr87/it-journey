@@ -1,13 +1,11 @@
 ---
 title: 'Terminal Fundamentals: Command Line Navigation Quest'
 author: IT-Journey Team
-description: Master essential command line skills including navigation, file management,
-  and basic shell commands across macOS, Linux, and Windows terminals.
-excerpt: Learn essential command line skills for navigating and managing files in
-  any operating system.
+description: Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals.
+excerpt: Learn essential command line skills for navigating and managing files in any operating system.
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-04-25 19:27:00.051000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -37,8 +35,7 @@ learning_paths:
   - Terminal Navigation
   - File Management
   - Shell Basics
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -73,19 +70,21 @@ categories:
 - DevOps
 - Beginner
 tags:
-- "0000"
+- '0000'
 - bash
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- "0000"
-- bash
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0000'
+  - bash
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -101,6 +100,7 @@ rewards:
   unlocks_features:
   - Foundation for all scripting and development quests
   - Confident terminal usage across platforms
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 

@@ -1,26 +1,19 @@
 ---
 title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
 author: IT-Journey Team
-description: Master advanced Git workflows including semantic versioning, branch strategies,
-  CI/CD automation, and pull request orchestration using real-world examples from
-  an active open-source project.
+description: Master advanced Git workflows including semantic versioning, branch strategies, CI/CD automation, and pull request orchestration using real-world examples from an active open-source project.
 excerpt: null
 snippet: null
 preview: images/previews/mastering-version-control-workflows.png
-date: 2026-03-21 00:00:00+00:00
-lastmod: 2026-03-21 00:00:00+00:00
+date: '2026-03-21T00:00:00.000Z'
+lastmod: '2026-03-21T00:00:00.000Z'
 level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 4-6 hours
 primary_technology: git
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-- DevOps
-- Git
-- Version Control
-- CI/CD
-- Collaboration
+skill_focus: devops
 learning_style: project-based
 permalink: /quests/1100/mastering-version-control-workflows/
 categories:
@@ -30,7 +23,7 @@ categories:
 - CI/CD
 - Collaboration
 tags:
-- "1100"
+- '1100'
 - git
 - semantic-versioning
 - github-actions
@@ -48,7 +41,7 @@ keywords:
   - pull request orchestration
   - CI/CD pipelines
   - conventional commits
-layout: article
+layout: quest
 fmContentType: quest
 comments: false
 attachments: ''

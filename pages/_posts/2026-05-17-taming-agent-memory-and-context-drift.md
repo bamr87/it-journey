@@ -1,30 +1,34 @@
 ---
-title: "Taming Agent Memory and Context Drift"
-description: "The three tiers of agent memory, how to persist state in GitHub Actions, and how to detect and recover from context drift. GH-600 Domain 3."
+title: Taming Agent Memory and Context Drift
+description: The three tiers of agent memory, how to persist state in GitHub Actions, and how to detect and recover from context drift. GH-600 Domain 3.
 permalink: /posts/taming-agent-memory-and-context-drift/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/taming-agent-memory-and-context-drift.png
-sub-title: "Domain 3 deep-dive for GH-600 candidates"
-excerpt: "An agent with no memory reinvents the wheel every time. An agent with bad memory builds on broken foundations. Domain 3 tests your understanding of how to manage both risks."
-snippet: "Three memory tiers. One persistence strategy. Zero drift."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/taming-agent-memory-and-context-drift.png
+sub-title: Domain 3 deep-dive for GH-600 candidates
+excerpt: An agent with no memory reinvents the wheel every time. An agent with bad memory builds on broken foundations. Domain 3 tests your understanding of how to manage both risks.
+snippet: Three memory tiers. One persistence strategy. Zero drift.
 author: IT-Journey Team
 layout: article
+breaking: true
+featured: true
 keywords:
-  primary: ["agent memory github", "context drift"]
-  secondary: ["gh-600 domain 3", "state persistence", "ephemeral session persistent memory"]
-lastmod: 2026-05-17T00:00:00.000Z
+- agent memory github
+- context drift
+- gh-600 domain 3
+- state persistence
+- ephemeral session persistent memory
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - memory
-  - context-management
-  - domain-3
+- gh-600
+- agentic-ai
+- memory
+- context-management
+- domain-3
 categories:
-  - AI & Machine Learning
-  - Architecture
+- AI & Machine Learning
+- Architecture
 ---
-
 Domain 3 of GH-600 (19% of the exam — the largest domain alongside D4) covers memory, context, and state management. This is where many agentic AI designs fail.
 
 The core problem: agents don't automatically remember things across tasks. Every time a GitHub Actions workflow runs, it starts in a clean environment. Every time a Copilot session begins, the model has no memory of previous conversations. This is by design — but it means you must design memory explicitly.

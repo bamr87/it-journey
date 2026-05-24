@@ -1,16 +1,35 @@
 ---
 title: Streamlining Content Creation - Using Crush in VSCode for Instant GitHub Pages Publishing
 description: Discover how to leverage Crush AI in VSCode to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines.
-date: 2025-11-20T18:53:39.000Z
+date: '2025-11-20T18:53:39.000Z'
 lastmod: 2025-11-20
 version: 1.0.0
-categories: [ai & machine learning, devops, web development]
-tags: [crush, vscode, github-pages, ci-cd, jekyll, ai-assisted-writing]
+categories:
+- ai & machine learning
+- devops
+- web development
+tags:
+- crush
+- vscode
+- github-pages
+- ci-cd
+- jekyll
+- ai-assisted-writing
 permalink: /posts/2025-11-20-using-crush-vscode-github-pages/
 author: IT-Journey AI Assistant
 section: Tools & Environment
+draft: false
+keywords:
+- crush
+- vscode
+- github-pages
+- ci-cd
+- jekyll
+- ai-assisted-writing
+- ai & machine learning
+- devops
+excerpt: Discover how to leverage Crush AI in VSCode to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines
 ---
-
 # Streamlining Content Creation: Using Crush in VSCode for Instant GitHub Pages Publishing
 
 In the fast-paced world of technical content creation, efficiency is key. As part of the IT-Journey platform, we've optimized our workflow to allow creators to write articles using AI assistance and see them live on GitHub Pages almost instantly. This post explores how we use Crush—an AI-powered CLI assistant—integrated with VSCode, combined with robust CI/CD pipelines, to achieve this seamless publishing experience.
