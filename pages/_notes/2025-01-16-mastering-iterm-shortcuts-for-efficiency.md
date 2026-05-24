@@ -1,28 +1,28 @@
 ---
 title: Mastering iTerm Shortcuts for Efficiency
 description: Enhance your productivity with iTerm shortcuts for deleting and navigating words efficiently on macOS.
-date: 2025-01-16T11:04:51.000Z
-preview: ""
+date: '2025-01-16T11:04:51.000Z'
+preview: ''
 tags:
-    - iTerm
-    - macOS
-    - productivity
-    - shortcuts
-    - terminal
+- iTerm
+- macOS
+- productivity
+- shortcuts
+- terminal
 categories:
-    - guides
-    - it-journey
-    - notes
-    - programming
-    - shortcuts
+- guides
+- it-journey
+- notes
+- programming
+- shortcuts
 sub-title: null
 excerpt: null
 snippet: null
-author: ""
+author: ''
 keywords: {}
-lastmod: 2025-01-17T01:48:44.092Z
+lastmod: '2025-01-17T01:48:44.000Z'
 permalink: null
-attachments: ""
+attachments: ''
 draft: draft
 slug: mastering-iterm-shortcuts-efficiency
 ---

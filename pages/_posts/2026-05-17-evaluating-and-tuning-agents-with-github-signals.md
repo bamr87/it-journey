@@ -1,30 +1,32 @@
 ---
-title: "Evaluating and Tuning Agents with GitHub Signals"
-description: "Define machine-verifiable success criteria, debug agent failures, and tune behaviour using GitHub-native signals — GH-600 Domain 4."
+title: Evaluating and Tuning Agents with GitHub Signals
+description: Define machine-verifiable success criteria, debug agent failures, and tune behaviour using GitHub-native signals — GH-600 Domain 4.
 permalink: /posts/evaluating-and-tuning-agents-with-github-signals/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/evaluating-and-tuning-agents-with-github-signals.png
-sub-title: "Domain 4 deep-dive for GH-600 candidates"
-excerpt: "You can't improve what you can't measure. Domain 4 tests whether you can define what 'done' means, detect when it isn't, and systematically get better."
-snippet: "Define done. Measure it. Fix it. Repeat."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/evaluating-and-tuning-agents-with-github-signals.png
+sub-title: Domain 4 deep-dive for GH-600 candidates
+excerpt: You can't improve what you can't measure. Domain 4 tests whether you can define what 'done' means, detect when it isn't, and systematically get better.
+snippet: Define done. Measure it. Fix it. Repeat.
 author: IT-Journey Team
 layout: article
 keywords:
-  primary: ["agent evaluation github", "agent success criteria"]
-  secondary: ["gh-600 domain 4", "agent behavior tuning", "root cause analysis"]
-lastmod: 2026-05-17T00:00:00.000Z
+- agent evaluation github
+- agent success criteria
+- gh-600 domain 4
+- agent behavior tuning
+- root cause analysis
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - evaluation
-  - behavior-tuning
-  - domain-4
+- gh-600
+- agentic-ai
+- evaluation
+- behavior-tuning
+- domain-4
 categories:
-  - AI & Machine Learning
-  - Engineering
+- AI & Machine Learning
+- Engineering
 ---
-
 Domain 4 of GH-600 (19% of the exam — tied with Domain 3 as the largest) covers evaluation and improvement. This is a domain that separates engineers who deploy agents from engineers who *operate* agents.
 
 Deploying an agent is a one-time act. Operating an agent is continuous work: measuring its success rate, analysing its failures, and iterating on its instructions until it reliably does what you need.

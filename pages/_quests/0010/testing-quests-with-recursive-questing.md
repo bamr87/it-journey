@@ -1,13 +1,12 @@
 ---
 title: 'Recursive Realms: Testing Infinite Loops with AI'
 author: Quest Master IT-Journey Team
-description: Master recursion, unit testing, and AI integration by navigating self-replicating
-  code towers
+description: Master recursion, unit testing, and AI integration by navigating self-replicating code towers
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
 snippet: Beware the stack overflow curse—always define your base cases!
 preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
-date: 2025-10-08 19:11:31+00:00
-lastmod: 2025-10-09 00:09:00.916000+00:00
+date: '2025-10-08T19:11:31.000Z'
+lastmod: '2025-10-09T00:09:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
@@ -22,8 +21,7 @@ quest_dependencies:
 learning_paths:
   primary_paths:
   - Software Development
-skill_focus:
-- testing
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -54,12 +52,14 @@ tags:
 - hands-on
 - recursion
 keywords:
-- '0010'
-- python
-- language-learning
-- testing
-- hands-on
-- recursion
+  primary:
+  - '0010'
+  - python
+  - language-learning
+  secondary:
+  - testing
+  - hands-on
+  - recursion
 fmContentType: quest
 draft: false
 comments: true
@@ -73,6 +73,7 @@ rewards:
   progression_points: 150
 redirect_from:
 - /quests/0010/testing-quests-with-recursive-questing/
+layout: quest
 ---
 *Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge powerful unit tests, and summon AI guardians that think in layered patterns.*
 

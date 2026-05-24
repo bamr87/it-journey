@@ -1,30 +1,22 @@
 ---
 title: 'When Familiars Fall: Multi-Agent Failure Recovery'
-description: Design resilient multi-agent systems on GitHub — detect sub-agent failures,
-  apply compensation strategies, re-delegate failed tasks, and ensure partial progress
-  is never lost.
-date: 2026-05-17 00:00:00+00:00
+description: Design resilient multi-agent systems on GitHub — detect sub-agent failures, apply compensation strategies, re-delegate failed tasks, and ensure partial progress is never lost.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-failure-recovery.png
 level: '1011'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- multi-agent
-- failure-recovery
-- resilience
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1011 Quest 4/4 — Domain 5: Multi-Agent Systems'
-excerpt: When a familiar falls in battle, the mage does not abandon the quest — she
-  calls a reserve, claims the familiar's partial work, and continues. Multi-agent
-  systems must be designed the same way.
+excerpt: When a familiar falls in battle, the mage does not abandon the quest — she calls a reserve, claims the familiar's partial work, and continues. Multi-agent systems must be designed the same way.
 author: IT-Journey Team
 tags:
 - '1011'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- multi-agent failure recovery
-- sub-agent failure
-- compensation strategy
-- resilient agents
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - multi-agent failure recovery
+  secondary:
+  - sub-agent failure
+  - compensation strategy
+  - resilient agents
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1011/agentic-multi-agent-failure-recovery/
 quest_dependencies:
   required_quests:
@@ -90,6 +84,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-multi-agent-failure-recovery/
+layout: quest
 ---
 *The Proving Grounds are where the Council sends candidates who believe their systems are perfect. The Trials of the Fallen Familiar begin simply: one sub-agent fails. Does the system collapse? Does it recover? Does it preserve what was already done? Only those who plan for failure earn the right to deploy to production.*
 

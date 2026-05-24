@@ -5,34 +5,33 @@ description: Set up GitHub Actions workflows for automated building, testing, li
 excerpt: Configure GitHub Actions workflows for automated building, testing, link checking, frontmatter validation, and deployment of your Jekyll site.
 permalink: /quickstart/cicd-automation/
 categories:
-    - quickstart
+- quickstart
 slug: cicd-automation
-lastmod: 2026-04-25T19:27:00.353Z
+lastmod: '2026-04-25T19:27:00.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 30-40 minutes
 prerequisites:
-    - GitHub repository set up (see [GitHub Setup](/quickstart/github/))
-    - Site deploys successfully (see [Deployment](/quickstart/deployment/))
+- GitHub repository set up (see [GitHub Setup](/quickstart/github/))
+- Site deploys successfully (see [Deployment](/quickstart/deployment/))
 tags:
-    - cicd
-    - github-actions
-    - automation
-    - testing
+- cicd
+- github-actions
+- automation
+- testing
 keywords:
-    primary:
-        - github actions
-        - ci/cd
-        - jekyll automation
-    secondary:
-        - build validation
-        - link checking
-        - frontmatter validation
+  primary:
+  - github actions
+  - ci/cd
+  - jekyll automation
+  secondary:
+  - build validation
+  - link checking
+  - frontmatter validation
 sidebar:
-    nav: quickstart
+  nav: quickstart
 ---
-
 This guide covers **Phase 13** of the [Quick Start](/quickstart/) — setting up GitHub Actions for automated building, testing, and deployment.
 
 ---

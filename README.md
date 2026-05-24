@@ -13,7 +13,7 @@ tags:
     - tutorials
     - documentation
 license: MIT
-lastmod: 2026-05-06T00:00:00.000Z
+lastmod: 2026-05-24T19:04:08.575Z
 created: 2022-03-01T12:00:00.000Z
 draft: false
 slug: readme
@@ -53,32 +53,6 @@ The project is organized around hands-on learning: start with beginner-friendly 
 | **Update Frequency** | Repository-driven updates | Quarterly | Varies | Monthly |
 
 Project-based learning matters because it turns reference material into practice. IT-Journey keeps the learning loop short: read, run, build, validate, and document what changed.
-
----
-
-## 🔗 Link Health Guardian v3.0
-
-The repository uses **Link Health Guardian v3.0** to keep educational links healthy without turning link checking into a maintenance maze.
-
-The current workflow combines [Lychee](https://github.com/lycheeverse/lychee), a Python analysis layer, cached results, and optional AI summaries through OpenAI or Anthropic keys:
-
-| Component | Technology | Purpose | Performance |
-|-----------|------------|---------|-------------|
-| Link Checker | Lychee + `.lychee.toml` | Fast URL validation | Cached, concurrent checks |
-| Analysis | Python 3.11 script | Delta reports and summaries | Reuses prior baselines |
-| AI Assistance | OpenAI or Anthropic, optional | Error grouping and recommendations | Disabled by default in CI |
-| Reporting | GitHub Actions | PR checks, scheduled scans, artifacts | Weekly full scan + manual dispatch |
-
-**Q: Why does link health matter?**
-A: According to Ahrefs' 2024 SEO study, websites with broken links experience 23% lower search rankings. For educational platforms, dead links directly impact learning outcomes.
-
-> **Q: But isn't link checking simple?**
-> A: Basic link checking is simple, but useful maintenance needs context. Link Health Guardian v3.0 compares failures against a baseline, summarizes what changed, and can generate AI-assisted repair guidance when keys are available.
-
-**Get Started**: 
-- **Tool**: [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) — Link Health Guardian v3.0
-- **CI/CD**: [`.github/workflows/link-checker.yml`](.github/workflows/link-checker.yml) — Automated PR & scheduled checks
-- **Quest**: [Hyperlink Guardian Quest](pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
 
 ---
 
@@ -276,6 +250,32 @@ python3 test/quest-validator/quest_validator.py -d pages/_quests/
 - **Content Validation**: Frontmatter and format checking via custom validators
 - **Performance Monitoring**: Site speed tracking (target: <3s load time)
 - **AI-Powered Analysis**: Optional issue summaries using configured AI provider keys
+
+---
+
+## 🔗 Link Health Guardian v3.0
+
+The repository uses **Link Health Guardian v3.0** to keep educational links healthy without turning link checking into a maintenance maze.
+
+The current workflow combines [Lychee](https://github.com/lycheeverse/lychee), a Python analysis layer, cached results, and optional AI summaries through OpenAI or Anthropic keys:
+
+| Component | Technology | Purpose | Performance |
+|-----------|------------|---------|-------------|
+| Link Checker | Lychee + `.lychee.toml` | Fast URL validation | Cached, concurrent checks |
+| Analysis | Python 3.11 script | Delta reports and summaries | Reuses prior baselines |
+| AI Assistance | OpenAI or Anthropic, optional | Error grouping and recommendations | Disabled by default in CI |
+| Reporting | GitHub Actions | PR checks, scheduled scans, artifacts | Weekly full scan + manual dispatch |
+
+**Q: Why does link health matter?**
+A: According to Ahrefs' 2024 SEO study, websites with broken links experience 23% lower search rankings. For educational platforms, dead links directly impact learning outcomes.
+
+> **Q: But isn't link checking simple?**
+> A: Basic link checking is simple, but useful maintenance needs context. Link Health Guardian v3.0 compares failures against a baseline, summarizes what changed, and can generate AI-assisted repair guidance when keys are available.
+
+**Get Started**: 
+- **Tool**: [`scripts/validation/link-checker.py`](scripts/validation/link-checker.py) — Link Health Guardian v3.0
+- **CI/CD**: [`.github/workflows/link-checker.yml`](.github/workflows/link-checker.yml) — Automated PR & scheduled checks
+- **Quest**: [Hyperlink Guardian Quest](pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
 
 ---
 

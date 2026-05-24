@@ -1,60 +1,58 @@
 ---
-title: "PRD Machine: Building a Self-Writing Product Requirements Distillery"
-description: "Learn how we built an autonomous CLI tool that writes, maintains, and evolves perfect PRDs from repository signals, ensuring documentation never goes stale."
-date: 2025-11-28T23:00:21.000Z
+title: 'PRD Machine: Building a Self-Writing Product Requirements Distillery'
+description: Learn how we built an autonomous CLI tool that writes, maintains, and evolves perfect PRDs from repository signals, ensuring documentation never goes stale.
+date: '2025-11-28T23:00:21.000Z'
 preview: /images/previews/prd-machine-building-a-self-writing-product-requir.png
 tags:
-  - automation
-  - cli-tools
-  - documentation
-  - python
-  - devops
-  - ai-development
-  - product-management
+- automation
+- cli-tools
+- documentation
+- python
+- devops
+- ai-development
+- product-management
 categories:
-  - Posts
-  - DevOps
-  - Tools & Environment
-sub-title: "Automating Product Requirements Documentation with Signal-Driven Generation"
-excerpt: "The PRD Machine transforms scattered repository signals—git commits, markdown files, and feature definitions—into a continuously fresh, perfectly structured PRD that never goes stale."
-snippet: "The distillery now distills distilleries."
+- Posts
+- DevOps
+- Tools & Environment
+sub-title: Automating Product Requirements Documentation with Signal-Driven Generation
+excerpt: The PRD Machine transforms scattered repository signals—git commits, markdown files, and feature definitions—into a continuously fresh, perfectly structured PRD that never goes stale.
+snippet: The distillery now distills distilleries.
 author: IT-Journey Team
 section: DevOps
 keywords:
-  primary:
-    - prd-machine
-    - documentation-automation
-  secondary:
-    - cli-development
-    - signal-ingestion
-    - conflict-detection
-    - github-actions
-lastmod: 2025-11-28T22:00:00.000Z
+- prd-machine
+- documentation-automation
+- cli-development
+- signal-ingestion
+- conflict-detection
+- github-actions
+lastmod: '2025-11-28T22:00:00.000Z'
 permalink: /posts/prd-machine-self-writing-documentation/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Intermediate
 estimated_reading_time: 15-20 minutes
 prerequisites:
-  - Basic Python programming knowledge
-  - Understanding of CLI tools and argparse
-  - Familiarity with Git and GitHub Actions
-  - Experience with markdown documentation
+- Basic Python programming knowledge
+- Understanding of CLI tools and argparse
+- Familiarity with Git and GitHub Actions
+- Experience with markdown documentation
 learning_outcomes:
-  - 🎯 Understand the architecture of autonomous documentation tools
-  - ⚡ Learn signal ingestion patterns from multiple sources
-  - 🛠️ Implement conflict detection for contradictory requirements
-  - 🔗 Integrate automated documentation with CI/CD pipelines
-  - 📊 Design self-referential systems that document themselves
+- 🎯 Understand the architecture of autonomous documentation tools
+- ⚡ Learn signal ingestion patterns from multiple sources
+- 🛠️ Implement conflict detection for contradictory requirements
+- 🔗 Integrate automated documentation with CI/CD pipelines
+- 📊 Design self-referential systems that document themselves
 content_series: Automation & DevOps
 related_posts:
-  - /posts/work-directory-ci-cd-integration/
+- /posts/work-directory-ci-cd-integration/
 validation_methods:
-  - Run prd-machine sync and verify PRD.md generation
-  - Check prd-machine status for health monitoring
-  - Review GitHub Actions workflow execution
+- Run prd-machine sync and verify PRD.md generation
+- Check prd-machine status for health monitoring
+- Review GitHub Actions workflow execution
+draft: false
 ---
-
 # PRD Machine: Building a Self-Writing Product Requirements Distillery
 
 *Reality fully armed. The distillery now distills distilleries.* 🚀

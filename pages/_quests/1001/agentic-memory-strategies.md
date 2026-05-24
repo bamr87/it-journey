@@ -1,30 +1,22 @@
 ---
 title: 'Vaults of Recollection: Agent Memory Strategies'
-description: Implement memory for GitHub Copilot agents — design ephemeral, session,
-  and persistent memory using GitHub-native artifacts, issues, and repository files
-  to maintain context across interactions.
-date: 2026-05-17 00:00:00+00:00
+description: Implement memory for GitHub Copilot agents — design ephemeral, session, and persistent memory using GitHub-native artifacts, issues, and repository files to maintain context across interactions.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-memory-strategies.png
 level: '1001'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- agent-memory
-- context-management
-- state-persistence
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1001 Quest 3/3 — Domain 3: Context & Memory Management'
-excerpt: Memory defines intelligence. An agent without memory repeats every mistake
-  and re-discovers every insight. Open the Vaults of Recollection and teach your agent
-  to remember.
+excerpt: Memory defines intelligence. An agent without memory repeats every mistake and re-discovers every insight. Open the Vaults of Recollection and teach your agent to remember.
 author: IT-Journey Team
 tags:
 - '1001'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- agent memory
-- context management
-- persistent memory
-- github artifacts
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent memory
+  secondary:
+  - context management
+  - persistent memory
+  - github artifacts
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1001/agentic-memory-strategies/
 quest_dependencies:
   required_quests:
@@ -91,6 +85,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-memory-strategies/
+layout: quest
 ---
 *The Vault Masters remember what all others forget. Each vault holds a tier of memory — ephemeral scrolls that burn after each session, session stones that persist through a day's work, and the eternal archives that outlive the agents that wrote them. An agent that knows which vault to consult, and when to write to each, is an agent that learns.*
 

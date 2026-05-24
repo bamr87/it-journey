@@ -1,39 +1,37 @@
 ---
-title: "AI-Powered Modular Shell Script Refactoring: Evolution Engine Architecture"
+title: 'AI-Powered Modular Shell Script Refactoring: Evolution Engine Architecture'
 description: A comprehensive AI-assisted refactoring of shell scripts into a modular architecture with integrated testing framework and documentation
-date: 2025-07-05T12:12:17.000Z
+date: '2025-07-05T12:12:17.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - ai-assisted-development
-    - shell-scripting
-    - modular-architecture
-    - refactoring
-    - learning-journey
-    - bash
-    - testing-frameworks
+- ai-assisted-development
+- shell-scripting
+- modular-architecture
+- refactoring
+- learning-journey
+- bash
+- testing-frameworks
 categories:
-    - Development
-    - Learning-Journey
+- Development
+- Learning-Journey
 sub-title: Transforming Shell Scripts with AI-Powered Modular Architecture
 excerpt: How AI collaboration enabled the systematic refactoring of 20+ shell scripts into a maintainable, testable modular architecture
 snippet: '"The system learns and refines its growth patterns" - AI Evolution Engine'
 author: IT-Journey Team
 keywords:
-    primary:
-        - ai-assisted development
-        - shell script refactoring
-    secondary:
-        - modular architecture
-        - bash scripting
-        - testing automation
-        - ci/cd integration
-lastmod: 2025-07-22T03:39:45.211Z
+- ai-assisted development
+- shell script refactoring
+- modular architecture
+- bash scripting
+- testing automation
+- ci/cd integration
+lastmod: '2025-07-22T03:39:45.000Z'
 permalink: /ai-powered-modular-shell-script-refactoring/
-attachments: ""
+attachments: ''
 comments: true
 section: Programming
+draft: false
 ---
-
 ## The Challenge: Refactoring Legacy Shell Scripts with AI Assistance
 
 The AI Evolution Engine repository contained over 20 shell scripts with significant code duplication, inconsistent logging, and monolithic structure. Our goal was to refactor these scripts into a modular architecture while maintaining functionality and integrating comprehensive testing - all with AI-powered assistance.

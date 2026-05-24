@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Vault: Environment Variables and the Goblet Puzzle'
-description: "Master environment variables in Bashcrawl's Vault using export, echo
-  $VAR, and env. Solve the goblet puzzle in the stronghold and survive a ghost encounter."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: Master environment variables in Bashcrawl's Vault using export, echo $VAR, and env. Solve the goblet puzzle in the stronghold and survive a ghost encounter.
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,9 +13,7 @@ quest_line: Foundation Path
 difficulty: 🟡 Medium
 estimated_time: 25-30 minutes
 primary_technology: bash
-skill_focus:
-- Environment Variables
-- Shell Environment
+skill_focus: fullstack
 learning_style: hands-on
 categories:
 - Quests
@@ -28,7 +25,7 @@ tags:
 - bash
 - environment-variables
 - export
-- "0000"
+- '0000'
 keywords:
   primary:
   - bash export command
@@ -61,11 +58,11 @@ learning_paths:
 rewards:
 - Vault Key Fragment
 - Environment variables mastery
-excerpt: "Set, export, and inspect environment variables to solve the vault goblet puzzle, survive the ghost, and claim the key fragment."
+excerpt: Set, export, and inspect environment variables to solve the vault goblet puzzle, survive the ghost, and claim the key fragment.
 draft: false
 permalink: /quests/0000/side-quests/vault/
+layout: quest
 ---
-
 *Behind a heavy iron door, the Vault holds the dungeon's most powerful secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
 
 ## 🎯 Quest Objectives

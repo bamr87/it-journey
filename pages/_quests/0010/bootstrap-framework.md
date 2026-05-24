@@ -1,14 +1,11 @@
 ---
 title: 'Bootstrap Framework: Build Responsive Sites Fast'
 author: IT-Journey Team
-description: Learn Bootstrap 5 for rapid web development. Master the grid system,
-  components, and utilities. Build mobile-first responsive websites with pre-built
-  UI elements.
-excerpt: Build professional responsive websites quickly with Bootstrap's grid, components,
-  and utilities.
+description: Learn Bootstrap 5 for rapid web development. Master the grid system, components, and utilities. Build mobile-first responsive websites with pre-built UI elements.
+excerpt: Build professional responsive websites quickly with Bootstrap's grid, components, and utilities.
 preview: images/previews/bootstrap-framework-responsive-design-toolkit-desc.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -69,7 +65,7 @@ categories:
 - CSS-Frameworks
 - Intermediate
 tags:
-- "0010"
+- '0010'
 - bootstrap
 - bootstrap-5
 - responsive-design
@@ -79,15 +75,17 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- "0010"
-- bootstrap
-- bootstrap-5
-- responsive-design
-- css-framework
-- frontend
-- main_quest
-- hands-on
-- intermediate
+  primary:
+  - '0010'
+  - bootstrap
+  - bootstrap-5
+  - responsive-design
+  secondary:
+  - css-framework
+  - frontend
+  - main_quest
+  - hands-on
+  - intermediate
 fmContentType: quest
 draft: true
 comments: true
@@ -100,6 +98,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

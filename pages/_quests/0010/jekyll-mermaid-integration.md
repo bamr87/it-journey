@@ -1,24 +1,19 @@
 ---
 title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of diagrammatic magic by integrating Mermaid.js
-  into any Jekyll static site, creating beautiful, interactive diagrams that bring
-  your documentation to life.
-excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js
-  integration, conditional loading, and comprehensive documentation
-snippet: Master the art of diagrammatic magic and bring your Jekyll documentation
-  to life
+description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
+excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
+snippet: Master the art of diagrammatic magic and bring your Jekyll documentation to life
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
-date: 2025-10-04 15:25:33+00:00
-lastmod: 2025-01-27 15:00:00+00:00
+date: '2025-10-04T15:25:33.000Z'
+lastmod: '2025-01-27T15:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: Jekyll
 quest_type: main_quest
 quest_series: Jekyll Mastery
-skill_focus:
-- Frontend Development
+skill_focus: frontend
 learning_style: Hands-on Implementation
 prerequisites:
 - Basic Jekyll site setup and configuration
@@ -49,14 +44,16 @@ tags:
 - javascript
 - cdn
 keywords:
-- jekyll
-- mermaid
-- diagrams
-- frontend
-- integration
-- documentation
-- javascript
-- cdn
+  primary:
+  - jekyll
+  - mermaid
+  - diagrams
+  - frontend
+  secondary:
+  - integration
+  - documentation
+  - javascript
+  - cdn
 fmContentType: quest
 draft: false
 comments: true
@@ -76,6 +73,7 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
+layout: quest
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 
@@ -515,7 +513,7 @@ Then add diagrams using HTML divs:
 graph TD
     A[Start] --> B[End]
 </div>
-```
+```bash
 
 ## Supported Diagram Types
 

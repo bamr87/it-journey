@@ -1,30 +1,33 @@
 ---
-title: "Agent Guardrails and Responsible Autonomy: The GH-600 View"
-description: "Design responsible agents using autonomy levels, GitHub guardrails, and human-in-the-loop checkpoints — GH-600 Domain 6 in practice."
+title: 'Agent Guardrails and Responsible Autonomy: The GH-600 View'
+description: Design responsible agents using autonomy levels, GitHub guardrails, and human-in-the-loop checkpoints — GH-600 Domain 6 in practice.
 permalink: /posts/agent-guardrails-and-responsible-autonomy/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/agent-guardrails-and-responsible-autonomy.png
-sub-title: "Domain 6 deep-dive for GH-600 candidates"
-excerpt: "Autonomy is not a binary. Every agent operates at a level, and every level carries different risk. The question isn't whether to use guardrails — it's where to put them."
-snippet: "Right autonomy, right guardrails, right human touch."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/agent-guardrails-and-responsible-autonomy.png
+sub-title: Domain 6 deep-dive for GH-600 candidates
+excerpt: Autonomy is not a binary. Every agent operates at a level, and every level carries different risk. The question isn't whether to use guardrails — it's where to put them.
+snippet: Right autonomy, right guardrails, right human touch.
 author: IT-Journey Team
 layout: article
+featured: true
 keywords:
-  primary: ["responsible agentic AI", "agent guardrails github"]
-  secondary: ["gh-600 domain 6", "human in the loop", "autonomy levels"]
-lastmod: 2026-05-17T00:00:00.000Z
+- responsible agentic AI
+- agent guardrails github
+- gh-600 domain 6
+- human in the loop
+- autonomy levels
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - guardrails
-  - responsible-ai
-  - domain-6
+- gh-600
+- agentic-ai
+- guardrails
+- responsible-ai
+- domain-6
 categories:
-  - AI & Machine Learning
-  - Security
+- AI & Machine Learning
+- Security
 ---
-
 Domain 6 of GH-600 (9% of the exam — the smallest domain, but arguably the most consequential in practice) covers responsible autonomy and governance. This is where certification prep meets real-world safety engineering.
 
 ## The Autonomy Spectrum

@@ -1,7 +1,6 @@
 ---
 title: Index
-description: '{% include beginNote.html title="2012-04-17 - blacksun is temporarily
-  down" %}
+description: '{% include beginNote.html title="2012-04-17 - blacksun is temporarily down" %}
 
   The blacksun wargame is temporarily down because we have lost the backup
 
@@ -15,6 +14,7 @@ date: '2026-04-07T01:41:09.000Z'
 lastmod: '2026-04-07T01:41:09.000Z'
 categories:
 - wargames
+- blacksun
 tags:
 - security
 - wargames
@@ -26,8 +26,16 @@ source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/blacksun/index.md
 source_name: overthewire
 license: MIT
+draft: false
+keywords:
+- security
+- wargames
+- linux
+- ctf
+- cybersecurity
+- index
+author: bamr87
 ---
-
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.
 
 

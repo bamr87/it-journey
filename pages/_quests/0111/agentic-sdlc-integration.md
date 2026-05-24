@@ -1,28 +1,22 @@
 ---
 title: 'Initiation Rites: Embedding Agents in the SDLC'
-description: Learn to integrate AI agents into the software development lifecycle
-  — define agent inputs, outputs, and success criteria, and identify the anti-patterns
-  that sink autonomous workflows before they ship.
-date: 2026-05-17 00:00:00+00:00
+description: Learn to integrate AI agents into the software development lifecycle — define agent inputs, outputs, and success criteria, and identify the anti-patterns that sink autonomous workflows before they ship.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-sdlc-integration.png
 level: '0111'
 difficulty: 🟡 Medium
-estimated_time: 90 minutes
+estimated_time: 60-90 minutes
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- sdlc
-- agent-architecture
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 0111 Quest 1/3 — Domain 1: Agent Architecture & SDLC'
-excerpt: Define what your agent does, where it lives in the SDLC, and how to stop
-  common anti-patterns from destroying your workflow.
+excerpt: Define what your agent does, where it lives in the SDLC, and how to stop common anti-patterns from destroying your workflow.
 author: IT-Journey Team
 tags:
 - '0111'
@@ -38,13 +32,15 @@ categories:
 - Agentic-AI
 - Medium
 keywords:
-- gh-600
-- agentic ai
-- sdlc
-- agent inputs outputs
-- agent anti-patterns
-- github copilot
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agentic ai
+  - sdlc
+  secondary:
+  - agent inputs outputs
+  - agent anti-patterns
+  - github copilot
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/0111/agentic-sdlc-integration/
 quest_dependencies:
   required_quests: []
@@ -87,8 +83,7 @@ validation_criteria:
   completion_requirements:
   - Agent task card created with inputs, outputs, and success criteria
   - At least three anti-patterns identified and mitigated in the agent design
-  - Agent workflow diagram produced (Mermaid or draw.io) showing SDLC integration
-    points
+  - Agent workflow diagram produced (Mermaid or draw.io) showing SDLC integration points
   skill_demonstrations:
   - Can explain what makes a task agent-appropriate vs. better handled by humans
   - Can identify the most common agent anti-patterns in a given workflow
@@ -104,6 +99,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-sdlc-integration/
+layout: quest
 ---
 *Deep in the GitHub Citadel, the Initiation Hall hums with the energy of thousands of autonomous agents. But before you can summon one, you must answer the guildmaster's three ancient questions: What does this agent do? What does it consume? What does it produce? Only those who can answer with precision earn the right to proceed.*
 

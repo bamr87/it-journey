@@ -1,13 +1,11 @@
 ---
 title: 'Secure Coding Practices: OWASP Top 10 Vulnerability Prevention'
 author: IT-Journey Team
-description: Learn secure coding practices to prevent OWASP Top 10 vulnerabilities.
-  Master input validation, output encoding, authentication, and secure development
-  patterns.
+description: Learn secure coding practices to prevent OWASP Top 10 vulnerabilities. Master input validation, output encoding, authentication, and secure development patterns.
 excerpt: Write secure code and prevent OWASP Top 10 vulnerabilities in your applications
 preview: images/previews/secure-coding-practices-owasp-top-10-descriptive-s.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:44:46.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- security
+skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Security
 - Hard
 tags:
-- "1011"
+- '1011'
 - security
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- "1011"
-- security
-- main_quest
-- security
-- hands-on
-- gamified-learning
+  primary:
+  - '1011'
+  - security
+  - main_quest
+  secondary:
+  - security
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

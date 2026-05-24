@@ -1,22 +1,19 @@
 ---
 title: dual boot win linux
-author: 
-excerpt: 
-description: 
-snippet: 
+author: bamr87
+excerpt: 'Draft: dual-booting Windows and Linux on the same machine'
+description: 'Draft: dual-booting Windows and Linux on the same machine — install order, VS Code provisioning, and shared filesystem layout decisions.'
+snippet: null
 categories:
-  - posts
+- posts
 tags:
-  - article
-meta: 
+- article
+meta: null
 draft: true
-lastmod: 2022-03-07T00:48:22.406Z
+lastmod: '2022-03-07T00:48:22.000Z'
 section: System Administration
-date: 2021-09-21T13:25:50.000Z
-
+date: '2021-09-21T13:25:50.000Z'
 ---
-
-
 ## VS Code install
 
 ```shell

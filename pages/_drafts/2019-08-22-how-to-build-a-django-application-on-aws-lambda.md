@@ -3,29 +3,28 @@ title: How to build a Django Application on AWS Lambda
 description: Learn how to build a Django application on AWS Lambda, including database integration, networking, security considerations, and connection pool management.
 author: Amr
 excerpt: A comprehensive guide to deploying Django on AWS Lambda with database connectivity, covering RDS, VPC, cold start optimization, and connection pooling strategies.
-date: 2024-12-03 10:42:33+00:00
-lastmod: 2024-10-07 22:07:48.452000+00:00
+date: '2024-12-03T10:42:33.000Z'
+lastmod: '2024-10-07T22:07:48.000Z'
 draft: true
 tags:
-  - aws
-  - django
-  - lambda
-  - serverless
-  - python
+- aws
+- django
+- lambda
+- serverless
+- python
 categories:
 - Web Development
 keywords:
-  - build django aws lambda
-  - django serverless application
-  - aws lambda django database
-  - django lambda connection pooling
-  - serverless django python
+- build django aws lambda
+- django serverless application
+- aws lambda django database
+- django lambda connection pooling
+- serverless django python
 meta: null
 snippet: null
 slug: null
 section: Web Development
 ---
-
 Integrating a database with a serverless Django application deployed on AWS Lambda requires careful consideration due to the stateless and ephemeral nature of Lambda functions. Here's an expanded guide on setting up and managing the database in this architecture.
 
 ## **1. Understanding the Challenges**

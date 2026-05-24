@@ -1,13 +1,11 @@
 ---
 title: 'Markdown Mastery: Content Formatting Fundamentals'
 author: IT-Journey Team
-description: Master Markdown syntax for creating rich documentation, blog posts, and
-  technical content with proper formatting, links, images, and code blocks.
-excerpt: Learn essential Markdown syntax to create beautifully formatted documentation
-  and technical content.
+description: Master Markdown syntax for creating rich documentation, blog posts, and technical content with proper formatting, links, images, and code blocks.
+excerpt: Learn essential Markdown syntax to create beautifully formatted documentation and technical content.
 preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-12-20 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-20T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -35,8 +33,7 @@ learning_paths:
   skill_trees:
   - Documentation
   - Content Creation
-skill_focus:
-- documentation
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -70,19 +67,21 @@ categories:
 - Documentation
 - Beginner
 tags:
-- "0000"
+- '0000'
 - markdown
 - main_quest
 - documentation
 - hands-on
 - gamified-learning
 keywords:
-- "0000"
-- markdown
-- main_quest
-- documentation
-- hands-on
-- gamified-learning
+  primary:
+  - '0000'
+  - markdown
+  - main_quest
+  secondary:
+  - documentation
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -97,6 +96,7 @@ rewards:
   unlocks_features:
   - README creation for projects
   - Blog post and quest authoring
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to Markdown Mastery — the quest that teaches you the universal language of technical documentation. Markdown is used everywhere: README files, blog posts, wikis, chat messages, and even this very quest you're reading. Once you master it, you'll be able to create beautifully formatted content with nothing but plain text.*
 
@@ -252,15 +252,15 @@ Use the `git commit` command to save changes.
 ```python
 def hello():
     print("Hello, World!")
-```
+```text
 
 ```bash
 echo "Hello from the terminal"
-```
+```text
 
 ```javascript
 console.log("Hello, JavaScript!");
-```
+```text
 ````
 
 The language identifier enables syntax highlighting — always include it!

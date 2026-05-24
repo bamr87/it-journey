@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Workshop: File Management Fundamentals'
-description: "Practice file management in the Workshop: mkdir, touch, rm, cp, mv,
-  and I/O redirection. Build rooms, write scrolls, and clear debris to advance."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: 'Practice file management in the Workshop: mkdir, touch, rm, cp, mv, and I/O redirection. Build rooms, write scrolls, and clear debris to advance.'
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,9 +13,7 @@ quest_line: Foundation Path
 difficulty: 🟢 Easy
 estimated_time: 20-25 minutes
 primary_technology: bash
-skill_focus:
-- File Management
-- I/O Redirection
+skill_focus: fullstack
 learning_style: hands-on
 categories:
 - Quests
@@ -27,7 +24,7 @@ tags:
 - terminal
 - bash
 - file-management
-- "0000"
+- '0000'
 keywords:
   primary:
   - mkdir command
@@ -59,11 +56,11 @@ learning_paths:
 rewards:
 - Bashcrawl Workbench Tool
 - File management proficiency
-excerpt: "Practice mkdir, touch, echo redirection, cp, mv, and rm to construct workshop artifacts and advance deeper into Bashcrawl."
+excerpt: Practice mkdir, touch, echo redirection, cp, mv, and rm to construct workshop artifacts and advance deeper into Bashcrawl.
 draft: false
 permalink: /quests/0000/side-quests/workshop/
+layout: quest
 ---
-
 *The Workshop smells of sawdust and old iron. Workbenches line the walls, covered in unfinished projects. Here, heroes learn the art of building — and destroying — the very fabric of the file system.*
 
 ## 🎯 Quest Objectives

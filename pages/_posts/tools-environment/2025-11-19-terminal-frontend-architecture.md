@@ -1,55 +1,53 @@
 ---
-title: "Architecting the Glass Interface: Building Frontends for Terminal Scripts"
-description: Explore the architecture behind creating interactive, user-friendly frontends for shell scripts using tools like Gum, transforming raw CLI power into accessible tools.
-date: 2025-11-19T22:47:27.000Z
-preview: ""
+title: 'Architecting the Glass Interface: Building Frontends for Terminal Scripts'
+description: Explore the architecture behind creating interactive, user-friendly frontends for shell scripts using tools like Gum, transforming raw CLI power into
+date: '2025-11-19T22:47:27.000Z'
+preview: ''
 tags:
-    - shell-scripting
-    - architecture
-    - cli-design
-    - gum
-    - frontend
-    - devops
+- shell-scripting
+- architecture
+- cli-design
+- gum
+- frontend
+- devops
 categories:
-    - Posts
-    - Tools & Environment
-    - System Administration
+- Posts
+- Tools & Environment
+- System Administration
 sub-title: Bridging the Gap Between Wizard and Machine
 excerpt: Learn how to layer a 'Glass Interface' over your raw shell scripts to improve usability, safety, and aesthetics without sacrificing power.
 snippet: Power without control is chaos. Give your scripts a face.
 author: Quest Master Copilot
 keywords:
-    primary:
-        - terminal-frontend
-        - cli-architecture
-        - gum
-    secondary:
-        - shell-scripting
-        - tui
-        - devops-tools
-lastmod: 2026-05-24T19:09:33.065Z
+- terminal-frontend
+- cli-architecture
+- gum
+- shell-scripting
+- tui
+- devops-tools
+lastmod: '2025-11-20T05:43:41.000Z'
 permalink: /posts/terminal-frontend-architecture/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Intermediate
 estimated_reading_time: 10-15 minutes
 prerequisites:
-    - Basic understanding of shell scripting
-    - Familiarity with terminal concepts
+- Basic understanding of shell scripting
+- Familiarity with terminal concepts
 learning_outcomes:
-    - 🎯 Understand the three-layer architecture of a terminal frontend
-    - ⚡ Learn how to decouple logic from presentation in shell scripts
-    - 🛠️ Discover tools like Gum for building TUIs
-    - 🔗 Connect CLI design principles to better user experience
+- 🎯 Understand the three-layer architecture of a terminal frontend
+- ⚡ Learn how to decouple logic from presentation in shell scripts
+- 🛠️ Discover tools like Gum for building TUIs
+- 🔗 Connect CLI design principles to better user experience
 content_series: Terminal Mastery
 related_posts:
-    - /quests/0010/side-quests/terminal-artificer/
-    - /posts/bash-scripting/
+- /quests/0010/side-quests/terminal-artificer/
+- /posts/bash-scripting/
 validation_methods:
-    - Build a simple wrapper script using the architecture described
-    - Refactor an existing script to separate logic from input
+- Build a simple wrapper script using the architecture described
+- Refactor an existing script to separate logic from input
+draft: false
 ---
-
 ## Introduction
 
 In the realm of system administration and DevOps, the terminal is our home. We wield powerful incantations (scripts) that can provision servers, deploy applications, or—if we're not careful—delete production databases.

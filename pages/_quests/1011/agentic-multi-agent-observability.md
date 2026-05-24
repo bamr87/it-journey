@@ -1,30 +1,22 @@
 ---
 title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
-description: Build observability into multi-agent GitHub workflows — correlate traces
-  across agents, aggregate sub-agent outputs, detect inter-agent failures, and produce
-  a unified audit log.
-date: 2026-05-17 00:00:00+00:00
+description: Build observability into multi-agent GitHub workflows — correlate traces across agents, aggregate sub-agent outputs, detect inter-agent failures, and produce a unified audit log.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-observability.png
 level: '1011'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- multi-agent
-- observability
-- distributed-tracing
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1011 Quest 3/4 — Domain 5: Multi-Agent Systems'
-excerpt: The Scribe sits at the centre of the Council Chambers, watching every messenger
-  arrive and depart. Without the Scribe's Codex, no one knows which agent did what,
-  and failures become unsolvable mysteries.
+excerpt: The Scribe sits at the centre of the Council Chambers, watching every messenger arrive and depart. Without the Scribe's Codex, no one knows which agent did what, and failures become unsolvable mysteries.
 author: IT-Journey Team
 tags:
 - '1011'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- multi-agent observability
-- distributed tracing
-- agent audit log
-- correlation id
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - multi-agent observability
+  secondary:
+  - distributed tracing
+  - agent audit log
+  - correlation id
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1011/agentic-multi-agent-observability/
 quest_dependencies:
   required_quests:
@@ -90,6 +84,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-multi-agent-observability/
+layout: quest
 ---
 *The Scribes of the Codex inscribe every action, every decision, every message that passes through the Council Chambers. Not to judge — but to know. When something goes wrong and three agents point at each other, the Scribe opens the Codex, finds the exact message where the failure began, and settles the matter in moments.*
 

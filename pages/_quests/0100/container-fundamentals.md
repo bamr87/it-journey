@@ -1,14 +1,11 @@
 ---
 title: 'Docker Container Fundamentals: Master Isolation & Portability for DevOps'
 author: IT-Journey Team
-description: Learn Docker container fundamentals including images, containers, volumes,
-  and networking. Understand container isolation, portability, and lifecycle management
-  for modern application deployment.
-excerpt: Master Docker container fundamentals including images, volumes, and networking
-  for portable application deployment
+description: Learn Docker container fundamentals including images, containers, volumes, and networking. Understand container isolation, portability, and lifecycle management for modern application deployment.
+excerpt: Master Docker container fundamentals including images, volumes, and networking for portable application deployment
 preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:04:39.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - DevOps
 - Medium
 tags:
-- "0100"
+- '0100'
 - docker
 - containers
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "0100"
-- docker
-- containers
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0100'
+  - docker
+  - containers
+  secondary:
+  - main_quest
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

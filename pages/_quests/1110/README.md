@@ -5,9 +5,10 @@ preview: images/previews/level-1110-quality-assurance.png
 permalink: /quests/1110/
 layout: quest-collection
 level: '1110'
-categories: quests
-lastmod: 2025-11-29 23:41:31.776000+00:00
-date: 2025-11-29 16:46:02+00:00
+categories:
+- quests
+lastmod: '2025-11-29T23:41:31.000Z'
+date: '2025-11-29T16:46:02.000Z'
 ---
 # Level 1110: Quality Assurance
 

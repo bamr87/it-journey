@@ -2,24 +2,24 @@
 title: Quests (~) Index
 layout: quest-hub
 keywords:
-    - init
-    - hello world
-    - quest
-    - learning path
-    - IT journey
-    - developer training
-categories: quests
+- init
+- hello world
+- quest
+- learning path
+- IT journey
+- developer training
+categories:
+- quests
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: /images/previews/quests-index.png
 permalink: /quests/
-lastmod: 2026-05-20T20:57:50.000Z
+lastmod: '2026-05-20T20:57:50.000Z'
 mermaid: true
 draft: false
 toc: true
 toc_sticky: true
-date: 2020-08-25T19:31:22.000Z
+date: '2020-08-25T19:31:22.000Z'
 ---
-
 *Ah, brave adventurer! You've entered the mystical realm of IT knowledge, where code flows like magic, systems rise like castles, and every bug is but a dragon to be slain.*
 
 This is your comprehensive quest index—a living map of learning adventures designed to transform you from a humble n00b into a legendary IT wizard. Whether you seek the path of the Code Sorcerer, the System Architect, or the Cloud Wanderer, your journey begins here.
@@ -767,7 +767,7 @@ Cross-level tools, version control mastery, and professional development workflo
 
 The quests directory follows a binary-coded level system representing skill progression:
 
-```
+```text
 _quests/
 ├── README.md              # This file - main quest index
 ├── home.md                # Overworld hub and navigation

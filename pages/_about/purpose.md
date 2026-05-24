@@ -1,10 +1,9 @@
 ---
 title: Purpose
-lastmod: 2024-05-11T22:54:10.783Z
-date: 2021-12-29T10:19:09.000Z
-
+lastmod: '2024-05-11T22:54:10.000Z'
+date: '2021-12-29T10:19:09.000Z'
+description: The comprehension of our universe is constantly morphed by the information available and what is considered to be true. That truth is the core of…
 ---
-
 ## Statement of Purpose
 
 The comprehension of our universe is constantly morphed by the information available and what is considered to be true. 

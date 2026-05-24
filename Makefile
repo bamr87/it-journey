@@ -4,7 +4,8 @@
 .PHONY: help stats stats-update stats-show stats-clean stats-config test \
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
-        quest-audit quest-audit-strict quest-levels-data quest-nav
+        quest-audit quest-audit-strict quest-levels-data quest-nav \
+        content-validate content-normalize content-normalize-apply content-audit
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
 JEKYLL_CONFIG_CI  := _config.yml,_config_dev.yml,_config_ci.yml
@@ -39,6 +40,12 @@ help:
 	@echo "  make quest-nav              - Regenerate _data/navigation/quests.yml from collection"
 	@echo "  make quest-audit            - Full quest audit (validate + network + build)"
 	@echo "  make quest-audit-strict     - Full audit + strict network (matches CI behaviour)"
+	@echo ""
+	@echo "📝 Content Tooling"
+	@echo "  make content-validate          - Frontmatter validator across pages/"
+	@echo "  make content-normalize         - Dry-run frontmatter normalizer across pages/"
+	@echo "  make content-normalize-apply   - Apply frontmatter normalization across pages/"
+	@echo "  make content-audit             - Full content audit (frontmatter + quests + network)"
 	@echo ""
 
 # Generate statistics
@@ -181,6 +188,24 @@ quest-audit: quest-build-network quest-validate quest-network
 
 quest-audit-strict: quest-build-network quest-validate quest-network-strict
 	@echo "✅ Strict quest audit complete (orphan warnings escalated)."
+
+# Content frontmatter validation and normalization targets
+content-validate:
+	@echo "📝 Validating frontmatter across pages/ ..."
+	@python3 scripts/validation/frontmatter-validator.py pages/ -o TODO/seo/data/frontmatter-report.json
+
+content-normalize:
+	@echo "🔧 Dry-run normalize across pages/ ..."
+	@python3 scripts/content/normalize-frontmatter.py pages/ --quiet \
+		--report TODO/seo/data/normalize-dry-run.json || true
+
+content-normalize-apply:
+	@echo "🔧 Applying normalize across pages/ ..."
+	@python3 scripts/content/normalize-frontmatter.py pages/ --apply --quiet \
+		--report TODO/seo/data/normalize-apply.json
+
+content-audit: content-validate quest-validate quest-network
+	@echo "✅ Content audit complete — frontmatter, quests, and network validated."
 
 # Watch for changes and auto-update (requires fswatch on macOS)
 watch:

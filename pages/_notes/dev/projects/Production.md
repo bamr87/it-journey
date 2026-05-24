@@ -1,14 +1,14 @@
 ---
 title: Production
-updated: 2024-02-13 20:20:58Z
-created: 2024-02-03 22:49:11Z
-latitude: 39.54807890
-longitude: -104.97393330
-altitude: 0.0000
-date: 2024-02-20T09:39:19.000Z
-
+updated: 2024-02-13 20:20:58+00:00
+created: 2024-02-03 22:49:11+00:00
+latitude: 39.5480789
+longitude: -104.9739333
+altitude: 0.0
+date: '2024-02-20T09:39:19.000Z'
+draft: false
+description: Projects must be well documented and designged with self preservation in mind.
 ---
-
 # Mission
 Projects must be well documented and designged with self preservation in mind. 
 

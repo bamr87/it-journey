@@ -2,18 +2,24 @@
 title: Jekyll Frontmatter CMS
 description: Guide on using Jekyll and Frontmatter as a Content Management System for static site generation
 author: bamr87
-date: 2022-06-11T12:42:20.000Z
+date: '2022-06-11T12:42:20.000Z'
 categories:
-  - docs
-  - jekyll
-  - cms
+- docs
+- jekyll
+- cms
 tags:
-  - jekyll
-  - frontmatter
-  - cms
-  - static-site
-lastmod: 2024-05-16T01:45:59.180Z
+- jekyll
+- frontmatter
+- cms
+- static-site
+lastmod: '2024-05-16T01:45:59.000Z'
 draft: false
+keywords:
+- jekyll
+- frontmatter
+- cms
+- static-site
+- docs
 ---
 This is a comprehensive guide on how to use Jekyll and Frontmatter to build a powerful Content Management System (CMS).
 

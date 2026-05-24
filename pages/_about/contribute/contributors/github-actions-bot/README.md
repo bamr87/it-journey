@@ -1,14 +1,13 @@
 ---
 title: GitHub Actions Bot
 author: GitHub Actions Bot
-excerpt: "CI/CD Automation Ranger — Ranger class, Pipeline guardian & deployment"
+excerpt: CI/CD Automation Ranger — Ranger class, Pipeline guardian & deployment
 class: Ranger
 username: github-actions-bot
 contributor_data: github-actions-bot
 permalink: /contributors/github-actions-bot/
-lastmod: 2026-03-21T00:00:00.000Z
+lastmod: '2026-03-21T00:00:00.000Z'
 ---
-
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
 {% include contributor/character_sheet.html username="github-actions-bot" %}

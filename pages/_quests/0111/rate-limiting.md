@@ -1,12 +1,11 @@
 ---
 title: 'Rate Limiting: API Traffic Control and Throttling Strategies'
 author: IT-Journey Team
-description: Implement API rate limiting for traffic control and protection. Learn
-  throttling algorithms, quota management, rate limit headers, and DDoS protection.
+description: Implement API rate limiting for traffic control and protection. Learn throttling algorithms, quota management, rate limit headers, and DDoS protection.
 excerpt: Protect your APIs with rate limiting, throttling, and traffic control strategies
 preview: images/previews/rate-limiting-api-traffic-control-descriptive-subt.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:08:59.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 60-75 minutes
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -66,19 +64,21 @@ categories:
 - Backend
 - Hard
 tags:
-- "0111"
+- '0111'
 - api
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- "0111"
-- api
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - api
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

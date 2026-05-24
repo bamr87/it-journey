@@ -1,35 +1,33 @@
 ---
-title: "Fixing GitHub Actions Workflow: Adding Missing 'prepare' Command to Version Integration Script"
+title: 'Fixing GitHub Actions Workflow: Adding Missing ''prepare'' Command to Version Integration Script'
 description: Resolving workflow failure by implementing the missing prepare command in version-integration.sh
-date: 2025-07-21T23:30:21.000Z
+date: '2025-07-21T23:30:21.000Z'
 preview: /images/previews/fixing-github-actions-workflow-adding-missing-prep.png
 tags:
-  - ai-assisted-development
-  - github-actions
-  - version-management
-  - debugging
-  - learning-journey
+- ai-assisted-development
+- github-actions
+- version-management
+- debugging
+- learning-journey
 categories:
-  - Development
-  - Debugging
+- Development
+- Debugging
 sub-title: Solving CI/CD Pipeline Failures Through Missing Command Implementation
 excerpt: Diagnosed and fixed a GitHub Actions workflow failure caused by a missing 'prepare' command in the version integration script
 snippet: When automation breaks, the solution often lies in understanding what the system expects versus what it finds
 author: IT-Journey Team
 keywords:
-  primary:
-    - github actions debugging
-    - version management scripts
-  secondary:
-    - ci/cd pipeline fixes
-    - bash script development
-lastmod: 2025-07-10T21:13:04.148Z
+- github actions debugging
+- version management scripts
+- ci/cd pipeline fixes
+- bash script development
+lastmod: '2025-07-10T21:13:04.000Z'
 permalink: /fixing-github-actions-version-integration-prepare-command/
-attachments: ""
+attachments: ''
 comments: true
 section: DevOps
+draft: false
 ---
-
 ## The Challenge: GitHub Actions Workflow Failure
 
 While reviewing the logs from the AI Evolution Engine's GitHub Actions workflow, I encountered a clear failure message:

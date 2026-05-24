@@ -1,23 +1,19 @@
 ---
 title: 'The Knowledge Vault: Building an Automated Documentation Hub'
 author: Quest Master IT-Journey Team
-description: Build a centralized documentation system that aggregates and organizes
-  knowledge from multiple GitHub repositories using automation
-excerpt: Build a powerful automation system that collects, organizes, and maintains
-  documentation from multiple GitHub repositories using GitHub Actions, Bash, and
-  Python
+description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
+excerpt: Build a powerful automation system that collects, organizes, and maintains documentation from multiple GitHub repositories using GitHub Actions, Bash, and Python
 snippet: Transform scattered docs into organized knowledge with automation magic
 preview: images/previews/the-knowledge-vault-building-an-automated-document.png
-date: 2025-10-04 15:52:00+00:00
-lastmod: 2025-10-03 21:57:41.816000+00:00
+date: '2025-10-04T15:52:00.000Z'
+lastmod: '2025-10-03T21:57:41.000Z'
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: GitHub Actions
 quest_type: main_quest
 quest_series: Automation Mastery
-skill_focus:
-- DevOps Automation
+skill_focus: devops
 learning_style: Hands-on Implementation
 prerequisites:
 - Basic Git operations (clone, commit, push, pull)
@@ -46,18 +42,19 @@ tags:
 - ci-cd
 - workflow-automation
 keywords:
-- github-actions
-- bash-scripting
-- python-automation
-- documentation
-- devops
-- ci-cd
-- workflow-automation
+  primary:
+  - github-actions
+  - bash-scripting
+  - python-automation
+  secondary:
+  - documentation
+  - devops
+  - ci-cd
+  - workflow-automation
 fmContentType: quest
 draft: false
 comments: true
-sub_title: Aggregate, organize, and maintain documentation across your entire project
-  ecosystem
+sub_title: Aggregate, organize, and maintain documentation across your entire project ecosystem
 rewards:
   badge: Documentation Architect
   skill: CI/CD Pipeline Development
@@ -73,6 +70,7 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
+layout: quest
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
 
@@ -550,7 +548,7 @@ head -n 20 docs/api/README.md
 ```
 
 **Expected Directory Structure:**
-```
+```text
 docs/
 ├── api/
 │   ├── README.md

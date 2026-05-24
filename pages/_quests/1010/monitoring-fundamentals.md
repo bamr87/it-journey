@@ -1,14 +1,11 @@
 ---
 title: 'Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability'
 author: IT-Journey Team
-description: 'Learn the three pillars of observability: metrics, logs, and traces.
-  Understand monitoring architecture, instrumentation patterns, and SRE best practices
-  for production systems.'
-excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade
-  monitoring
+description: 'Learn the three pillars of observability: metrics, logs, and traces. Understand monitoring architecture, instrumentation patterns, and SRE best practices for production systems.'
+excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade monitoring
 preview: images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:43:59.000Z'
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -41,8 +38,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -74,7 +70,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- "1010"
+- '1010'
 - monitoring
 - observability
 - main_quest
@@ -82,13 +78,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "1010"
-- monitoring
-- observability
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '1010'
+  - monitoring
+  - observability
+  secondary:
+  - main_quest
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -101,6 +99,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

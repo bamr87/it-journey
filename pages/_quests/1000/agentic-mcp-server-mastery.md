@@ -1,30 +1,22 @@
 ---
 title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
-description: Configure and operate Model Context Protocol (MCP) servers for GitHub
-  Copilot agents — connect agents to external tools, data sources, and APIs using
-  the MCP standard while maintaining security and observability.
-date: 2026-05-17 00:00:00+00:00
+description: Configure and operate Model Context Protocol (MCP) servers for GitHub Copilot agents — connect agents to external tools, data sources, and APIs using the MCP standard while maintaining security and observability.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-mcp-server-mastery.png
 level: '1000'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- mcp
-- agent-tools
-- external-integrations
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1000 Quest 3/4 — Domain 2: Tool Use & Environment Interaction'
-excerpt: The MCP Conclave holds the contracts by which agents speak to the world beyond
-  the repository. Master their protocols and your agents gain access to every system
-  in the realm.
+excerpt: The MCP Conclave holds the contracts by which agents speak to the world beyond the repository. Master their protocols and your agents gain access to every system in the realm.
 author: IT-Journey Team
 tags:
 - '1000'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- mcp server
-- model context protocol
-- agent tools
-- external api
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - mcp server
+  secondary:
+  - model context protocol
+  - agent tools
+  - external api
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1000/agentic-mcp-server-mastery/
 quest_dependencies:
   required_quests:
@@ -94,6 +88,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-mcp-server-mastery/
+layout: quest
 ---
 *In the Protocol Archives, the ancient contracts are kept — the Model Context Protocol scrolls that allow agents to speak with systems beyond the Repository walls. Each MCP server is a Guild-certified interpreter, transforming the agent's structured requests into calls the external world understands. Without the Conclave's blessing, an agent that reaches beyond the Repository risks corruption, injection, or worse — unapproved data exfiltration.*
 
@@ -120,7 +115,7 @@ graph LR
 
 MCP is an open standard that defines how AI agents communicate with external tools and data sources. Think of it as an adapter layer:
 
-```
+```text
 Agent ──► MCP Client ──► MCP Protocol (JSON-RPC) ──► MCP Server ──► External Tool/API
 ```
 
@@ -213,7 +208,7 @@ Once the server is configured, the Copilot agent can invoke GitHub API tools nat
 
 > **Exercise 5.2:** Open VS Code, switch to a Copilot Chat session with "Agent" mode, and run:
 
-```
+```text
 @github List the last 5 open issues in this repository, including their titles and authors.
 ```
 

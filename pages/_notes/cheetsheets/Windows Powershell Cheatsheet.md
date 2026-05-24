@@ -1,15 +1,15 @@
 ---
 title: Windows Powershell Cheatsheet
-updated: 2022-01-11 04:54:00Z
-created: 2023-12-15 04:10:54Z
+updated: 2022-01-11 04:54:00+00:00
+created: 2023-12-15 04:10:54+00:00
 author: bamr87
 tags:
-  - note
-  - powershell
-date: 2022-12-21T22:07:25.000Z
-
+- note
+- powershell
+date: '2022-12-21T22:07:25.000Z'
+draft: false
+description: Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows…
 ---
-
 Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS).
 PS may be seen as Microsoft's answer to the shells common in Unix/Linux (such as csh, bash, *etc.*). Its name implies that Microsoft sees the shell as powerful, which it arguably is.
 In these notes some important PS commands are listed and PowerShell's most notable feature, the object pipeline, is discussed. 

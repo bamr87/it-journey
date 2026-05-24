@@ -1,43 +1,41 @@
 ---
-title: "Integrating an AI Chatbot into Jekyll: Transforming Static Sites into Interactive Learning Platforms"
-description: "A comprehensive guide to embedding AI-powered chatbots in Jekyll sites for enhanced user engagement and real-time assistance"
-date: 2025-08-30T11:29:40.000Z
+title: 'Integrating an AI Chatbot into Jekyll: Transforming Static Sites into Interactive Learning Platforms'
+description: A comprehensive guide to embedding AI-powered chatbots in Jekyll sites for enhanced user engagement and real-time assistance
+date: '2025-08-30T11:29:40.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - ai-integration
-    - jekyll
-    - chatbot
-    - web-development
-    - user-experience
-    - javascript
-    - api-integration
+- ai-integration
+- jekyll
+- chatbot
+- web-development
+- user-experience
+- javascript
+- api-integration
 categories:
-    - Development
-    - AI-Integration
+- Development
+- AI-Integration
 sub-title: Building Interactive Static Sites with AI-Powered Assistance
 excerpt: Learn how to seamlessly integrate AI chatbots into Jekyll sites to provide real-time user assistance and enhance the learning experience
-snippet: "Static sites don't have to be static experiences - AI chatbots bridge the gap between simplicity and interactivity"
+snippet: Static sites don't have to be static experiences - AI chatbots bridge the gap between simplicity and interactivity
 author: IT-Journey Team
 keywords:
-    primary:
-        - ai chatbot integration
-        - jekyll enhancement
-        - static site interactivity
-    secondary:
-        - web development
-        - user experience
-        - javascript implementation
-        - api integration
-lastmod: 2025-08-29T08:30:00.000Z
+- ai chatbot integration
+- jekyll enhancement
+- static site interactivity
+- web development
+- user experience
+- javascript implementation
+- api integration
+lastmod: '2025-08-29T08:30:00.000Z'
 permalink: /integrating-ai-chatbot-jekyll-site/
-attachments: ""
+attachments: ''
 comments: true
 version: 1.0.0
 toc: true
 mermaid: true
 section: Web Development
+draft: false
 ---
-
 ## The Challenge: Bridging Static and Interactive
 
 Jekyll sites excel at delivering fast, secure, and maintainable content, but they can feel limited when users need real-time assistance or interactive guidance. As the IT-Journey platform evolves, we've discovered that integrating AI chatbots transforms static documentation into dynamic learning experiences where users can ask questions, get personalized help, and receive contextual guidance without leaving the site.

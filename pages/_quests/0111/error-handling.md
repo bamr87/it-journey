@@ -1,13 +1,11 @@
 ---
 title: 'Error Handling: API Response Patterns and HTTP Status Codes'
 author: IT-Journey Team
-description: Implement robust API error handling with proper HTTP status codes, error
-  response formats, error logging, and client-friendly error messages.
-excerpt: Implement professional API error handling with proper status codes and response
-  patterns
+description: Implement robust API error handling with proper HTTP status codes, error response formats, error logging, and client-friendly error messages.
+excerpt: Implement professional API error handling with proper status codes and response patterns
 preview: images/previews/error-handling-api-response-quest-title-status-cod.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:09:37.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 45-60 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Backend
 - Hard
 tags:
-- "0111"
+- '0111'
 - api
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- "0111"
-- api
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - api
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

@@ -1,38 +1,37 @@
 ---
-title: "Repository & GitHub Configuration Setup"
+title: Repository & GitHub Configuration Setup
 author: bamr87
 description: Create your Git repository, configure GitHub CLI, and set up the IT-Journey project structure for local Jekyll development.
-excerpt: "Create your Git repository, configure GitHub CLI, and initialize the IT-Journey project structure for local Jekyll development."
+excerpt: Create your Git repository, configure GitHub CLI, and initialize the IT-Journey project structure for local Jekyll development.
 permalink: /quickstart/github/
 categories:
-  - quickstart
+- quickstart
 slug: github
-lastmod: 2026-04-02T03:14:50.885Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2022-01-10T18:47:51.000Z
+date: '2022-01-10T18:47:51.000Z'
 difficulty: 🟢 Easy
 estimatedTime: 15-20 minutes
 prerequisites:
-  - Git installed (see [Machine Setup](/quickstart/machine-setup/))
-  - GitHub account ([github.com](https://github.com))
+- Git installed (see [Machine Setup](/quickstart/machine-setup/))
+- GitHub account ([github.com](https://github.com))
 tags:
-  - git
-  - github
-  - repository
-  - setup
+- git
+- github
+- repository
+- setup
 keywords:
   primary:
-    - github setup
-    - git repository
-    - github cli
+  - github setup
+  - git repository
+  - github cli
   secondary:
-    - fork
-    - clone
-    - submodules
+  - fork
+  - clone
+  - submodules
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 3** of the [Quick Start](/quickstart/) — creating your Git repository and configuring GitHub for the IT-Journey project. Every Jekyll site lives in a Git repository, and this phase sets yours up.
 
 ---

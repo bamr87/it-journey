@@ -1,36 +1,34 @@
 ---
-title: "Debugging GitHub Actions Workflows: AI-Assisted Troubleshooting Session"
+title: 'Debugging GitHub Actions Workflows: AI-Assisted Troubleshooting Session'
 description: Chronicle of debugging failing GitHub Actions workflows using AI assistance, identifying character encoding issues and script hanging problems
-date: 2025-07-12T14:26:45.000Z
+date: '2025-07-12T14:26:45.000Z'
 preview: /images/previews/debugging-github-actions-workflows-ai-assisted-tro.png
 tags:
-    - ai-assisted-development
-    - github-actions
-    - debugging
-    - workflow-automation
-    - learning-journey
+- ai-assisted-development
+- github-actions
+- debugging
+- workflow-automation
+- learning-journey
 categories:
-    - Development
-    - Debugging
+- Development
+- Debugging
 sub-title: Resolving workflow failures through systematic AI-powered analysis
 excerpt: A hands-on debugging session that uncovered character encoding issues and script timeouts in GitHub Actions workflows
 snippet: The best debugging happens when human intuition meets AI-powered systematic analysis
 author: IT-Journey Team
 keywords:
-    primary:
-        - github actions debugging
-        - workflow troubleshooting
-    secondary:
-        - ai assisted debugging
-        - character encoding issues
-        - script timeout problems
-lastmod: 2026-03-20T22:22:55.867Z
+- github actions debugging
+- workflow troubleshooting
+- ai assisted debugging
+- character encoding issues
+- script timeout problems
+lastmod: '2026-03-20T22:22:55.000Z'
 permalink: /debugging-github-actions-workflows-ai-assisted/
-attachments: ""
+attachments: ''
 comments: true
 section: DevOps
+draft: false
 ---
-
 ## The Challenge: Failing Daily Evolution Workflow
 
 During routine maintenance of the AI Evolution Engine repository, the daily_evolution.yml GitHub Actions workflow started failing consistently. The symptoms were puzzling:

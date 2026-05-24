@@ -4,18 +4,17 @@ author: IT-Journey Team
 excerpt: Meet the adventurers who build and maintain IT-Journey
 description: A directory of all IT-Journey contributors — human and AI alike — with RPG-style character profiles, stats, and achievements.
 categories:
-    - about
+- about
 tags:
-    - contributors
-    - community
-    - profiles
-    - gamification
+- contributors
+- community
+- profiles
+- gamification
 permalink: /about/contributors/
-lastmod: 2026-03-21T00:00:00.000Z
-date: 2026-03-21T00:00:00.000Z
+lastmod: '2026-03-21T00:00:00.000Z'
+date: '2026-03-21T00:00:00.000Z'
 draft: false
 ---
-
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
 # 🏛️ The Guild Hall — Contributors

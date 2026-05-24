@@ -1,15 +1,12 @@
 ---
-title: Home
+title: IT-Journey — Home
+description: "Starting point and return-to landmark for IT-Journey — current focus area, project ideas, and quick links into quests, posts, and the quickstart path."
 author: bamr87
-description: This is an overall outline of this site, and a place to start or come back to when lost.
-excerpt: This is where we begin our journey. The place where we return after getting lost or wandering off.
-purpose: To build a platform for learning and share knowledge and tools
-keywords: Home, Zer0, IT-Journey, programming, development
+excerpt: "Where the journey begins, and where you come back to when you have wandered off."
+purpose: "Build a platform for learning and sharing knowledge and tools."
 permalink: /home/
-sidebar:
-   nav: home
-date: 2020-07-30T10:19:45.000Z
-lastmod: 2025-07-22T16:40:00.000Z
+date: '2020-07-30T10:19:45.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
 categories:
   - home
   - navigation
@@ -21,11 +18,16 @@ tags:
   - programming
   - development
   - tutorial
-TODO:
-   - Add a story line
+keywords:
+  - it-journey home
+  - learning roadmap
+  - zer0 to her0
+  - it tutorials
+  - jekyll learning site
+sidebar:
+  nav: home
 draft: false
 ---
-
 Go to [bookmark]({{ page.bookmark }})
 
 ## 🚀 What to Build Today?

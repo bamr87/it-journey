@@ -1,18 +1,17 @@
 ---
 title: Configuration Automation System
 excerpt: Complete guide to the automated configuration management system for IT-Journey.
-lastmod: 2025-06-22T23:35:50.251Z
+lastmod: '2025-06-22T23:35:50.000Z'
 permalink: /about/automation/
 tags:
-    - automation
-    - configuration
-    - ci-cd
-    - github-actions
-    - documentation
-date: 2025-07-03T10:59:01.000Z
-
+- automation
+- configuration
+- ci-cd
+- github-actions
+- documentation
+date: '2025-07-03T10:59:01.000Z'
+description: This document describes the comprehensive automation system that maintains configuration files, documentation, and site structure information for the…
 ---
-
 # Configuration Automation System
 
 This document describes the comprehensive automation system that maintains configuration files, documentation, and site structure information for the IT-Journey platform.

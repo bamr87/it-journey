@@ -2,32 +2,31 @@
 title: Wargames — Security Challenges
 description: Curated security wargames from the OverTheWire community. Learn and practice security concepts through gamified challenges.
 permalink: /docs/wargames/
-date: 2025-01-27T00:00:00.000Z
-lastmod: 2026-04-07T02:46:45.136Z
+date: '2025-01-27T00:00:00.000Z'
+lastmod: '2026-04-07T02:46:45.000Z'
 categories:
-  - wargames
+- wargames
 tags:
-  - security
-  - wargames
-  - linux
-  - ctf
-  - cybersecurity
+- security
+- wargames
+- linux
+- ctf
+- cybersecurity
 toc_sticky: true
 source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
 source_name: overthewire
 license: MIT
 author: bamr87
-excerpt: "Security wargame challenges to practice Linux, CTF, and cybersecurity skills."
+excerpt: Security wargame challenges to practice Linux, CTF, and cybersecurity skills.
 draft: false
 keywords:
-  - security
-  - wargames
-  - linux
-  - overthewire
-  - ctf
-  - cybersecurity
+- security
+- wargames
+- linux
+- overthewire
+- ctf
+- cybersecurity
 ---
-
 # Wargames — Security Challenges
 
 > **Source:** This section aggregates content from the [OverTheWire](https://overthewire.org/wargames/) community project ([MIT License](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original site to play the games live via SSH.

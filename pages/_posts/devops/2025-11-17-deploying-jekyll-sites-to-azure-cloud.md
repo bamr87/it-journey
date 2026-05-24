@@ -1,66 +1,64 @@
 ---
-title: "Deploying Jekyll Sites to Azure Cloud: Complete Guide for Static Web Hosting"
-description: Comprehensive tutorial on deploying statically generated Jekyll sites to Azure Static Web Apps, including architecture overview, step-by-step instructions, and automation with GitHub Actions
-date: 2025-11-19T22:47:12.000Z
+title: 'Deploying Jekyll Sites to Azure Cloud: Complete Guide for Static Web Hosting'
+description: Comprehensive tutorial on deploying statically generated Jekyll sites to Azure Static Web Apps, including architecture overview, step-by-step
+date: '2025-11-19T22:47:12.000Z'
 preview: /images/previews/deploying-jekyll-sites-to-azure-cloud-complete-gui.png
 tags:
-    - azure
-    - jekyll
-    - static-web-apps
-    - deployment
-    - cloud-hosting
-    - devops
-    - web-development
-    - ci-cd
+- azure
+- jekyll
+- static-web-apps
+- deployment
+- cloud-hosting
+- devops
+- web-development
+- ci-cd
 categories:
-    - Posts
-    - Web-Development
-    - DevOps
+- Posts
+- Web-Development
+- DevOps
 sub-title: Transform your Jekyll site into a globally distributed web application with Azure's serverless hosting
 excerpt: Learn how to deploy your Jekyll-generated static site to Azure Static Web Apps for scalable, secure, and cost-effective hosting with built-in CI/CD
 snippet: Deploy Jekyll to Azure in minutes with Static Web Apps - serverless hosting that scales automatically
 author: IT-Journey Team
 keywords:
-    primary:
-        - azure-static-web-apps
-        - jekyll-deployment
-        - static-site-hosting
-    secondary:
-        - github-actions
-        - azure-cli
-        - custom-domains
-        - cdn
-        - serverless-hosting
-lastmod: 2025-11-19T03:51:28.564Z
+- azure-static-web-apps
+- jekyll-deployment
+- static-site-hosting
+- github-actions
+- azure-cli
+- custom-domains
+- cdn
+- serverless-hosting
+lastmod: '2025-11-19T03:51:28.000Z'
 permalink: /posts/deploying-jekyll-sites-to-azure-cloud/
-attachments: ""
+attachments: ''
 comments: true
 difficulty: 🟡 Intermediate
 estimated_reading_time: 15-20 minutes
 prerequisites:
-    - Basic understanding of Jekyll and static site generation
-    - Azure account with active subscription
-    - GitHub repository with Jekyll site
-    - Familiarity with Git and command line
+- Basic understanding of Jekyll and static site generation
+- Azure account with active subscription
+- GitHub repository with Jekyll site
+- Familiarity with Git and command line
 learning_outcomes:
-    - 🎯 Understand Azure Static Web Apps architecture and benefits
-    - ⚡ Deploy Jekyll sites using automated CI/CD pipelines
-    - 🛠️ Configure custom domains and SSL certificates
-    - 🔗 Integrate with Azure CDN for global performance
-    - 📊 Monitor and troubleshoot deployment issues
+- 🎯 Understand Azure Static Web Apps architecture and benefits
+- ⚡ Deploy Jekyll sites using automated CI/CD pipelines
+- 🛠️ Configure custom domains and SSL certificates
+- 🔗 Integrate with Azure CDN for global performance
+- 📊 Monitor and troubleshoot deployment issues
 content_series: Cloud Deployment Series
 related_posts:
-    - "GitHub Pages: The Hidden Gem Revolutionizing Web Publishing"
-    - Dockering Your IT Journey
-    - GitHub Actions Authentication Fix
+- 'GitHub Pages: The Hidden Gem Revolutionizing Web Publishing'
+- Dockering Your IT Journey
+- GitHub Actions Authentication Fix
 validation_methods:
-    - Verify site deployment through Azure portal
-    - Test custom domain configuration
-    - Validate CI/CD pipeline execution
-    - Check site performance with Azure monitoring
+- Verify site deployment through Azure portal
+- Test custom domain configuration
+- Validate CI/CD pipeline execution
+- Check site performance with Azure monitoring
 section: DevOps
+draft: false
 ---
-
 ## Introduction
 
 Welcome to the world of cloud-native static site hosting! In this comprehensive guide, we'll explore how to deploy your Jekyll-generated static site to Azure Static Web Apps - Microsoft's serverless hosting solution that combines the power of global CDN distribution with automated CI/CD pipelines.

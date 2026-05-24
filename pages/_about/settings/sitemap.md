@@ -1,17 +1,16 @@
 ---
 title: Site Navigation Map
 excerpt: Complete sitemap and navigation structure for the IT-Journey platform.
-lastmod: 2026-01-15T05:11:51.000Z
+lastmod: '2026-01-15T05:11:51.000Z'
 permalink: /about/sitemap/
 tags:
-  - navigation
-  - sitemap
-  - structure
-  - automation
-date: 2022-02-12T17:37:05.000Z
-
+- navigation
+- sitemap
+- structure
+- automation
+date: '2022-02-12T17:37:05.000Z'
+description: This page provides a comprehensive map of all pages and content available on the IT-Journey platform, automatically generated and maintained through our…
 ---
-
 ## Site Navigation Overview
 
 This page provides a comprehensive map of all pages and content available on the IT-Journey platform, automatically generated and maintained through our automation workflows.

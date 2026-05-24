@@ -1,44 +1,42 @@
 ---
-title: "Chat GPT vs The Impossible Triangle: AI Limitations in 3D Space"
-sub-title: "Machine vs Human: Understanding AI Spatial Reasoning Limitations"
-description: "Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossible 3D spaces."
+title: 'Chat GPT vs The Impossible Triangle: AI Limitations in 3D Space'
+sub-title: 'Machine vs Human: Understanding AI Spatial Reasoning Limitations'
+description: Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossible 3D spaces.
 author: Amr Abdel-Motaleb
-excerpt: "Explore the fascinating intersection of AI capabilities and limitations through the lens of impossible geometry and the famous Penrose Triangle"
-snippet: "When AI meets impossible geometry - understanding the boundaries of machine perception"
+excerpt: Explore the fascinating intersection of AI capabilities and limitations through the lens of impossible geometry and the famous Penrose Triangle
+snippet: When AI meets impossible geometry - understanding the boundaries of machine perception
 categories:
-  - Posts
-  - AI-Analysis
-  - Design
+- Posts
+- AI-Analysis
+- Design
 tags:
-  - chatgpt
-  - ai-limitations
-  - ai-evolution
-  - penrose-triangle
-  - svg
-  - 3d-geometry
-  - optical-illusions
-  - design-analysis
-  - gpt-4
-  - claude
-  - gemini
-  - ai-progress
+- chatgpt
+- ai-limitations
+- ai-evolution
+- penrose-triangle
+- svg
+- 3d-geometry
+- optical-illusions
+- design-analysis
+- gpt-4
+- claude
+- gemini
+- ai-progress
 meta:
   topic: ai-limitations
   complexity: intermediate
 draft: false
-date: 2023-03-26T11:50:26.000Z
-lastmod: 2025-11-01T03:51:36.000Z
+date: '2023-03-26T11:50:26.000Z'
+lastmod: '2025-11-01T03:51:36.000Z'
 section: AI & Machine Learning
 keywords:
-  primary:
-    - Chat GPT
-    - Penrose Triangle
-    - AI limitations
-  secondary:
-    - SVG
-    - 3D geometry
-    - spatial reasoning
-    - impossible objects
+- Chat GPT
+- Penrose Triangle
+- AI limitations
+- SVG
+- 3D geometry
+- spatial reasoning
+- impossible objects
 permalink: /posts/chatgpt-vs-impossible-triangle/
 preview: /svg/penrose-gpt-vs-human.png
 ---

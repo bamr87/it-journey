@@ -1,11 +1,24 @@
 ---
-title: "IT-Journey Statistics Portal"
-description: "Comprehensive analytics and metrics for the IT-Journey knowledge base"
+title: IT-Journey Statistics Portal
+description: "Site analytics dashboard for IT-Journey — content totals, category breakdowns, contributor counts, and the live numbers behind the navigation."
+author: IT-Journey Team
+date: '2025-10-09T18:25:11.000Z'
+lastmod: '2026-05-24T00:00:00.000Z'
 permalink: /stats/
-date: 2025-10-09T18:25:11.000Z
-
+categories: [meta, analytics]
+tags:
+  - statistics
+  - analytics
+  - meta
+  - content-metrics
+keywords:
+  - it-journey statistics
+  - site analytics
+  - content metrics
+  - jekyll analytics
+  - contributor stats
+draft: false
 ---
-
 <div class="container my-5">
   <div class="row">
     <div class="col-lg-12">

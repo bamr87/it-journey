@@ -1,13 +1,11 @@
 ---
 title: 'Workflow Optimization: Caching Strategies and Pipeline Parallelization'
 author: IT-Journey Team
-description: Optimize CI/CD workflows for speed and efficiency. Implement dependency
-  caching, parallel job execution, matrix builds, and workflow performance monitoring.
-excerpt: Speed up your CI/CD pipelines with caching strategies and parallel execution
-  techniques
+description: Optimize CI/CD workflows for speed and efficiency. Implement dependency caching, parallel job execution, matrix builds, and workflow performance monitoring.
+excerpt: Speed up your CI/CD pipelines with caching strategies and parallel execution techniques
 preview: images/previews/workflow-optimization-caching-quest-title-parallel.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:06:25.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - DevOps
 - Medium
 tags:
-- "0101"
+- '0101'
 - optimization
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- "0101"
-- optimization
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - optimization
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

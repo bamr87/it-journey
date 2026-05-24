@@ -1,12 +1,11 @@
 ---
 title: 'Open Source Contribution: Leading and Maintaining Projects'
 author: IT-Journey Team
-description: Lead and maintain open source projects effectively. Learn project governance,
-  contributor management, release processes, and sustainable OSS practices.
+description: Lead and maintain open source projects effectively. Learn project governance, contributor management, release processes, and sustainable OSS practices.
 excerpt: Lead and maintain open source projects with sustainable practices
 preview: images/previews/open-source-contribution-descriptive-subtitle.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- community
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -66,19 +64,21 @@ categories:
 - Community
 - Hard
 tags:
-- "1111"
+- '1111'
 - git
 - main_quest
 - community
 - hands-on
 - gamified-learning
 keywords:
-- "1111"
-- git
-- main_quest
-- community
-- hands-on
-- gamified-learning
+  primary:
+  - '1111'
+  - git
+  - main_quest
+  secondary:
+  - community
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

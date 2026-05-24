@@ -1,16 +1,20 @@
 ---
-title: "Evaluation Signals Table"
-description: "Quick reference mapping GitHub-native signals to acceptance criteria types — for defining machine-verifiable success criteria in agent evaluation (GH-600 Domain 4)."
-date: 2026-05-17T00:00:00.000Z
+title: Evaluation Signals Table
+description: Quick reference mapping GitHub-native signals to acceptance criteria types — for defining machine-verifiable success criteria in agent evaluation (GH-600 Domain 4).
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/evaluation-signals-table/
 author: IT-Journey Team
-tags: [gh-600, evaluation, signals, quick-reference]
+tags:
+- gh-600
+- evaluation
+- signals
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # Evaluation Signals Table
 
 ## GitHub Signal → Acceptance Criteria Mapping

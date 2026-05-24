@@ -2,23 +2,23 @@
 title: 'Stats Dashboard: Enhancing Your Data Visualization'
 author: Quest Master IT-Journey Team
 keywords:
-- stats dashboard
-- charts
-- data visualization
-- JavaScript
-description: Extend the contributor stats panel with charts, graphs, and enhanced
-  data visualizations
+  primary:
+  - stats dashboard
+  - charts
+  secondary:
+  - data visualization
+  - JavaScript
+description: Extend the contributor stats panel with charts, graphs, and enhanced data visualizations
 excerpt: The Data Sage reveals deeper patterns in your contribution history.
 snippet: Numbers tell tales — learn to read the runes of data
-date: 2026-03-20 00:00:00+00:00
-lastmod: 2026-03-21 15:12:32.246000+00:00
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: javascript
 quest_type: side_quest
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: project-based
 quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
@@ -32,7 +32,7 @@ categories:
 - Community
 - Frontend
 tags:
-- "0010"
+- '0010'
 - contributor
 - stats
 - data-visualization
@@ -75,6 +75,7 @@ validation_criteria:
   - Data renders from contributor YAML data
   - Visualization is responsive and accessible
   - Integrated into character_sheet.html
+layout: quest
 ---
 # 📊 Stats Dashboard: Enhancing Your Data Visualization
 

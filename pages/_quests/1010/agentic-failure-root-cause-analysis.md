@@ -1,30 +1,22 @@
 ---
 title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
-description: Use GitHub execution traces, Actions logs, artifact forensics, and structured
-  RCA frameworks to diagnose why an agent failed — and prevent the same failure from
-  recurring.
-date: 2026-05-17 00:00:00+00:00
+description: Use GitHub execution traces, Actions logs, artifact forensics, and structured RCA frameworks to diagnose why an agent failed — and prevent the same failure from recurring.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-failure-root-cause-analysis.png
 level: '1010'
 difficulty: 🔴 Hard
-estimated_time: 120 minutes
+estimated_time: 1-2 hours
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- root-cause-analysis
-- debugging
-- failure-analysis
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 1010 Quest 4/4 — Domain 4: Evaluating Agent Performance'
-excerpt: The Necromancer does not fear the dead — she interrogates them. Every failed
-  agent run leaves a forensic trail in Actions logs, artifacts, and PR comments. Learn
-  to read the trace.
+excerpt: The Necromancer does not fear the dead — she interrogates them. Every failed agent run leaves a forensic trail in Actions logs, artifacts, and PR comments. Learn to read the trace.
 author: IT-Journey Team
 tags:
 - '1010'
@@ -39,12 +31,14 @@ categories:
 - Agentic-AI
 - Hard
 keywords:
-- gh-600
-- root cause analysis
-- agent debugging
-- failure analysis
-- execution trace
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - root cause analysis
+  secondary:
+  - agent debugging
+  - failure analysis
+  - execution trace
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/1010/agentic-failure-root-cause-analysis/
 quest_dependencies:
   required_quests:
@@ -91,6 +85,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-failure-root-cause-analysis/
+layout: quest
 ---
 *The Necromancer's Catacombs are filled with the remains of failed agents. Each one preserved in amber, execution trace intact. The Necromancer raises them one by one and asks: why did you fail? What was the first wrong step? What could have prevented this? She has learned more from failure than from success — and she insists her students do the same.*
 
@@ -226,7 +221,7 @@ BRANCH_NAME="copilot/issue-42-add-input-validation"
 # Create and switch
 git checkout -b "$BRANCH_NAME"
 git push -u origin "$BRANCH_NAME"
-```
+```bash
 
 Never commit directly to `main` or any protected branch.
 If a push to a protected branch is rejected, STOP immediately and escalate.

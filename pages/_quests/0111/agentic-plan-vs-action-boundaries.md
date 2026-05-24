@@ -1,29 +1,22 @@
 ---
 title: 'The Three Sigils: Plan, Reason, Act'
-description: Master the boundary between agent planning and agent execution. Configure
-  Copilot agents to output structured plans, validate them, and prevent action until
-  approved — eliminating the most dangerous source of agent runaway.
-date: 2026-05-17 00:00:00+00:00
+description: Master the boundary between agent planning and agent execution. Configure Copilot agents to output structured plans, validate them, and prevent action until approved — eliminating the most dangerous source of agent runaway.
+date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-plan-vs-action-boundaries.png
 level: '0111'
 difficulty: 🟡 Medium
-estimated_time: 90 minutes
+estimated_time: 60-90 minutes
 primary_technology: github-copilot
 quest_type: main_quest
 fmContentType: quest
 mermaid: true
-skill_focus:
-- agentic-ai
-- agent-planning
-- action-boundaries
-- plan-validation
+skill_focus: devops
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
 sub_title: 'Level 0111 Quest 2/3 — Domain 1: Agent Architecture & SDLC'
-excerpt: An agent that acts without planning is a curse, not a gift. Learn to inscribe
-  the Three Sigils — Plan, Reason, Act — and enforce their order.
+excerpt: An agent that acts without planning is a curse, not a gift. Learn to inscribe the Three Sigils — Plan, Reason, Act — and enforce their order.
 author: IT-Journey Team
 tags:
 - '0111'
@@ -38,12 +31,14 @@ categories:
 - Agentic-AI
 - Medium
 keywords:
-- gh-600
-- agent planning
-- plan validate act
-- structured agent output
-- human approval workflow
-lastmod: 2026-05-17 00:00:00+00:00
+  primary:
+  - gh-600
+  - agent planning
+  secondary:
+  - plan validate act
+  - structured agent output
+  - human approval workflow
+lastmod: '2026-05-17T00:00:00.000Z'
 permalink: /quests/0111/agentic-plan-vs-action-boundaries/
 quest_dependencies:
   required_quests:
@@ -79,8 +74,7 @@ prerequisites:
   - Git installed locally or GitHub Codespaces
 validation_criteria:
   completion_requirements:
-  - Agent instructions file (copilot-instructions.md) created with explicit plan-first
-    directive
+  - Agent instructions file (copilot-instructions.md) created with explicit plan-first directive
   - Structured plan JSON schema defined and validated
   - Human-approval gate demonstrated (plan produced, reviewed, then action triggered)
   skill_demonstrations:
@@ -98,6 +92,7 @@ comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-plan-vs-action-boundaries/
+layout: quest
 ---
 *The Guild's grimoire speaks of the Three Sigils burned into every safe agent: first the Sigil of Planning — the agent must think before it moves; second the Sigil of Reasoning — the agent must explain its logic; third the Sigil of Action — only then may the agent act. Many apprentices skip the first two in their eagerness to see results. Their deployments rarely survive the week.*
 
@@ -147,7 +142,7 @@ graph TB
 
 A safe agent follows this sequence:
 
-```
+```text
 Receive Task → Analyse Context → Produce Plan → [GATE] Human Approves → Execute Plan → Report Results
 ```
 
@@ -197,7 +192,7 @@ Output a JSON plan in this exact schema before writing any code:
   "risk_level": "low|medium|high",
   "requires_human_approval": true
 }
-```
+```markdown
 
 ### Step 2 — Wait for Explicit Approval
 
@@ -219,7 +214,7 @@ If you discover you need additional steps, STOP and re-plan.
 - Open, close, or merge pull requests
 - Modify any file outside the stated scope
 ```
-```
+```bash
 
 ---
 
@@ -254,7 +249,7 @@ A parseable plan is a testable plan. Save the schema to `work/gh-600/schemas/age
     "requires_human_approval": { "type": "boolean" }
   }
 }
-```
+```text
 
 Validate a plan with:
 
@@ -268,7 +263,7 @@ plan   = json.load(open('work/gh-600/sample-plan.json'))
 jsonschema.validate(plan, schema)
 print('✅ Plan is valid')
 "
-```
+```bash
 
 ---
 
@@ -335,7 +330,7 @@ jobs:
               issue_number: context.issue.number,
               body
             });
-```
+```bash
 
 ---
 
@@ -366,7 +361,7 @@ python3 scripts/validate_quest.py --quest q2
 # ✅ GitHub Actions gate: agent-plan-gate.yml present
 # ✅ Sample plan: real-plan.json present
 # 🏆 Quest Q2 complete!
-```
+```markdown
 
 ---
 

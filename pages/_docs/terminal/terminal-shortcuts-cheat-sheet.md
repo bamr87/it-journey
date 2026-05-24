@@ -1,41 +1,40 @@
 ---
-title: "Terminal Shortcuts Cheat Sheet: macOS, Linux & Windows"
+title: 'Terminal Shortcuts Cheat Sheet: macOS, Linux & Windows'
 description: Complete reference for terminal shortcuts on macOS, Linux, and Windows. Master navigation, editing, and productivity for Bash, Zsh, and PowerShell.
-date: 2025-12-20T10:05:28.000Z
-lastmod: 2026-04-25T19:27:00.195Z
+date: '2025-12-20T10:05:28.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
 author: IT-Journey Team
 permalink: /docs/terminal-shortcuts-cheat-sheet/
 tags:
-    - terminal
-    - shortcuts
-    - bash
-    - zsh
-    - powershell
-    - command-line
-    - productivity
-    - reference
+- terminal
+- shortcuts
+- bash
+- zsh
+- powershell
+- command-line
+- productivity
+- reference
 categories:
-    - Documentation
-    - Terminal
-    - Reference
+- Documentation
+- Terminal
+- Reference
 keywords:
-    primary:
-        - terminal shortcuts
-        - command line shortcuts
-        - bash shortcuts
-    secondary:
-        - zsh shortcuts
-        - powershell shortcuts
-        - keyboard shortcuts terminal
-        - terminal navigation
-        - it-journey
+  primary:
+  - terminal shortcuts
+  - command line shortcuts
+  - bash shortcuts
+  secondary:
+  - zsh shortcuts
+  - powershell shortcuts
+  - keyboard shortcuts terminal
+  - terminal navigation
+  - it-journey
 excerpt: Master terminal productivity with this comprehensive keyboard shortcuts reference for macOS, Linux, and Windows command line interfaces.
 preview: Complete terminal shortcuts cheat sheet - boost your command line productivity across all platforms
 difficulty: 🟢 Easy
 estimated_time: 15 minutes to read
 draft: false
 ---
-
 # ⌨️ Essential Terminal Shortcuts Cheat Sheet
 
 > **Master the command line** with these essential keyboard shortcuts for macOS Terminal, Linux shells (Bash/Zsh), and Windows PowerShell/Command Prompt.

@@ -1,16 +1,20 @@
 ---
-title: "MCP Quick Reference"
-description: "Quick reference for setting up, configuring, and using Model Context Protocol (MCP) servers with GitHub Copilot — setup commands, configuration schema, and common server list."
-date: 2026-05-17T00:00:00.000Z
+title: MCP Quick Reference
+description: Quick reference for setting up, configuring, and using Model Context Protocol (MCP) servers with GitHub Copilot — setup commands, configuration schema, and common server list.
+date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/mcp-quickref/
 author: IT-Journey Team
-tags: [gh-600, mcp, model-context-protocol, quick-reference]
+tags:
+- gh-600
+- mcp
+- model-context-protocol
+- quick-reference
 categories:
-  - Notes
-lastmod: 2026-05-17T00:00:00.000Z
+- Notes
+lastmod: '2026-05-17T00:00:00.000Z'
+draft: false
 ---
-
 # MCP Quick Reference
 
 ## What Is MCP?

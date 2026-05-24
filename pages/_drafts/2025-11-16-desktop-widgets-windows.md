@@ -1,22 +1,19 @@
 ---
 title: Desktop Widgets - Windows
-author: null
-excerpt: null
-description: null
+author: bamr87
+excerpt: 'Draft: desktop widget configuration on Windows 11'
+description: 'Draft: desktop widget configuration on Windows 11 — Rainmeter setup, dashboard skins, and the layout patterns that survived more than a week.'
 snippet: null
 categories:
-  - posts
+- posts
 tags:
-  - article
+- article
 meta: null
 draft: true
-lastmod: 2022-06-10T20:22:55.675Z
+lastmod: '2022-06-10T20:22:55.000Z'
 section: System Administration
-date: 2022-06-11T12:42:20.000Z
-
+date: '2022-06-11T12:42:20.000Z'
 ---
-
-
 # Install rainmeter
 
 ```powershell

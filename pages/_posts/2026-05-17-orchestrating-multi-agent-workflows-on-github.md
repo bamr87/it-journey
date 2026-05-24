@@ -1,30 +1,33 @@
 ---
-title: "Orchestrating Multi-Agent Workflows on GitHub"
-description: "Design and operate multi-agent systems on GitHub Actions — fan-out, correlation, failure recovery, and lifecycle. GH-600 Domain 5."
+title: Orchestrating Multi-Agent Workflows on GitHub
+description: Design and operate multi-agent systems on GitHub Actions — fan-out, correlation, failure recovery, and lifecycle. GH-600 Domain 5.
 permalink: /posts/orchestrating-multi-agent-workflows-on-github/
 draft: false
-date: 2026-05-17T00:00:00.000Z
-preview: images/previews/orchestrating-multi-agent-workflows-on-github.png
-sub-title: "Domain 5 deep-dive for GH-600 candidates"
-excerpt: "One agent is powerful. A coordinated team of agents is transformative. Domain 5 tests whether you can design that team and keep it running."
-snippet: "Fan out. Trace everything. Recover gracefully. Retire cleanly."
+date: '2026-05-17T00:00:00.000Z'
+preview: /images/previews/orchestrating-multi-agent-workflows-on-github.png
+sub-title: Domain 5 deep-dive for GH-600 candidates
+excerpt: One agent is powerful. A coordinated team of agents is transformative. Domain 5 tests whether you can design that team and keep it running.
+snippet: Fan out. Trace everything. Recover gracefully. Retire cleanly.
 author: IT-Journey Team
 layout: article
+featured: true
 keywords:
-  primary: ["multi-agent github actions", "agent orchestration"]
-  secondary: ["gh-600 domain 5", "fan-out pattern", "agent lifecycle management"]
-lastmod: 2026-05-17T00:00:00.000Z
+- multi-agent github actions
+- agent orchestration
+- gh-600 domain 5
+- fan-out pattern
+- agent lifecycle management
+lastmod: '2026-05-17T00:00:00.000Z'
 tags:
-  - gh-600
-  - agentic-ai
-  - multi-agent
-  - orchestration
-  - domain-5
+- gh-600
+- agentic-ai
+- multi-agent
+- orchestration
+- domain-5
 categories:
-  - AI & Machine Learning
-  - Architecture
+- AI & Machine Learning
+- Architecture
 ---
-
 Domain 5 of GH-600 (17% of the exam) covers multi-agent systems. This is where the exam moves from "can you build one agent?" to "can you build a system of agents that works reliably together?"
 
 Multi-agent design on GitHub is primarily a GitHub Actions design problem. The primitives are workflow triggers, job dependencies, artifacts, and environments.

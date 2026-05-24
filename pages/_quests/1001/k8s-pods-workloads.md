@@ -1,13 +1,11 @@
 ---
 title: 'Kubernetes Pods and Workloads: Deployments and StatefulSets'
 author: IT-Journey Team
-description: Master Kubernetes workloads including Pods, Deployments, StatefulSets,
-  DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies.
-excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and
-  DaemonSets
+description: Master Kubernetes workloads including Pods, Deployments, StatefulSets, DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies.
+excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and DaemonSets
 preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:41:52.000Z'
 level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- cloud-engineering
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- "1001"
+- '1001'
 - kubernetes
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- "1001"
-- kubernetes
-- main_quest
-- cloud-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '1001'
+  - kubernetes
+  - main_quest
+  secondary:
+  - cloud-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

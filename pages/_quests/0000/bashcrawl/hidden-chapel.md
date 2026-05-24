@@ -1,9 +1,8 @@
 ---
 title: 'Bashcrawl Hidden Chapel: Hidden Files and Man Pages'
-description: "Uncover the Hidden Chapel with ls -a, explore the courtyard, aviary,
-  hall, and graveyard. Use man pages and --help to defeat the monster and claim the tome."
-date: 2026-05-22T00:00:00.000Z
-lastmod: 2026-05-23T02:30:23.000Z
+description: Uncover the Hidden Chapel with ls -a, explore the courtyard, aviary, hall, and graveyard. Use man pages and --help to defeat the monster and claim the tome.
+date: '2026-05-22T00:00:00.000Z'
+lastmod: '2026-05-23T02:30:23.000Z'
 author: IT-Journey Team
 level: '0000'
 fmContentType: quest
@@ -14,10 +13,7 @@ quest_line: Foundation Path
 difficulty: 🔴 Hard
 estimated_time: 35-45 minutes
 primary_technology: bash
-skill_focus:
-- Hidden Files
-- Man Pages
-- Help Systems
+skill_focus: fullstack
 learning_style: hands-on
 categories:
 - Quests
@@ -29,7 +25,7 @@ tags:
 - bash
 - hidden-files
 - man-pages
-- "0000"
+- '0000'
 keywords:
   primary:
   - ls -a hidden files
@@ -62,11 +58,11 @@ learning_paths:
 rewards:
 - Ancient Tome Fragment
 - Man page and hidden file mastery
-excerpt: "Reveal hidden dot-directories, consult man pages, and use command help systems to defeat the chapel monster and claim the tome."
+excerpt: Reveal hidden dot-directories, consult man pages, and use command help systems to defeat the chapel monster and claim the tome.
 draft: false
 permalink: /quests/0000/side-quests/hidden-chapel/
+layout: quest
 ---
-
 *The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas, guarded by a monster who fears knowledge.*
 
 ## 🎯 Quest Objectives

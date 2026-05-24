@@ -1,14 +1,11 @@
 ---
 title: 'Environment Management: Dev, Staging, and Production Configuration'
 author: IT-Journey Team
-description: Learn to manage multiple deployment environments effectively. Configure
-  dev, staging, and production environments with environment-specific settings and
-  secrets.
-excerpt: Master multi-environment configuration and management for reliable software
-  delivery
+description: Learn to manage multiple deployment environments effectively. Configure dev, staging, and production environments with environment-specific settings and secrets.
+excerpt: Master multi-environment configuration and management for reliable software delivery
 preview: images/previews/environment-management-dev-staging-quest-title-pro.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:05:35.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,19 +64,21 @@ categories:
 - DevOps
 - Medium
 tags:
-- "0101"
+- '0101'
 - environments
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- "0101"
-- environments
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - environments
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -93,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

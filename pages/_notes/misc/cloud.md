@@ -2,20 +2,18 @@
 title: AWS Practice Question Set
 author: null
 excerpt: null
-description: null
+description: Which of the following are benefits of the AWS Cloud? (Select TWO.)
 snippet: null
 categories:
-    - notes
+- notes
 tags:
-    - notes
+- notes
 meta: null
 draft: true
 slug: /aws-practice/
 lastmod: '2022-01-12T03:07:05.038Z'
-date: 2022-01-10T17:00:49.000Z
-
+date: '2022-01-10T17:00:49.000Z'
 ---
-
 [AWS vs Azure vs GCP](https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/)
 
 [AWS Training](https://explore.skillbuilder.aws/learn)

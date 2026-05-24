@@ -1,39 +1,37 @@
 ---
-title: "Consolidating GitHub Actions: From Embedded Scripts to Modular Architecture"
+title: 'Consolidating GitHub Actions: From Embedded Scripts to Modular Architecture'
 description: How we transformed two separate link checking workflows into a unified, maintainable system with standalone executable scripts
-date: 2025-09-30T16:56:38.000Z
+date: '2025-09-30T16:56:38.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - github-actions
-    - devops
-    - workflow-automation
-    - link-checking
-    - ai-assisted-development
-    - modular-architecture
-    - script-refactoring
+- github-actions
+- devops
+- workflow-automation
+- link-checking
+- ai-assisted-development
+- modular-architecture
+- script-refactoring
 categories:
-    - Development
-    - DevOps
+- Development
+- DevOps
 sub-title: Transforming workflow complexity into elegant simplicity
 excerpt: From debugging KeyErrors to building a comprehensive modular link checking system
 snippet: Sometimes the best way forward is to step back and rebuild with better foundations
 author: IT-Journey Team
 keywords:
-    primary:
-        - github actions workflow consolidation
-        - modular script architecture
-        - link checking automation
-    secondary:
-        - devops best practices
-        - workflow refactoring
-        - ai-powered analysis
-        - script maintainability
-lastmod: 2025-09-30T22:47:41.830Z
+- github actions workflow consolidation
+- modular script architecture
+- link checking automation
+- devops best practices
+- workflow refactoring
+- ai-powered analysis
+- script maintainability
+lastmod: '2025-09-30T22:47:41.000Z'
 permalink: /consolidating-github-actions-modular-architecture/
-attachments: ""
+attachments: ''
 comments: true
+draft: false
 ---
-
 ## The Challenge: When Workflows Become Unwieldy
 
 Our IT-Journey repository had grown to include two separate link checking workflows:

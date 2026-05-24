@@ -1,40 +1,37 @@
 ---
-title: "Enhancing Bashcrawl: Creating Terminal Education Content"
+title: 'Enhancing Bashcrawl: Creating Terminal Education Content'
 description: AI-assisted enhancement of Bashcrawl's cellar scroll to create comprehensive, accessible terminal education content following IT-Journey documentation standards
-date: 2025-08-12T22:51:06.000Z
+date: '2025-08-12T22:51:06.000Z'
 preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - ai-assisted-development
-    - terminal-education
-    - documentation-enhancement
-    - bashcrawl
-    - learning-journey
-    - markdown-standards
+- ai-assisted-development
+- terminal-education
+- documentation-enhancement
+- bashcrawl
+- learning-journey
+- markdown-standards
 categories:
-    - Development
-    - Education
+- Development
+- Education
 sub-title: From Basic Commands to Comprehensive Learning Experience
 excerpt: How AI assistance transformed a basic ls -F tutorial into a comprehensive terminal education experience
 snippet: Teaching through adventure - where every command becomes a spell and every file type becomes a mystical entity
 author: IT-Journey Team
 keywords:
-    primary:
-        - terminal education
-        - bashcrawl enhancement
-        - ai-assisted documentation
-    secondary:
-        - file type recognition
-        - shell aliases
-        - progressive learning
-        - gamified education
-lastmod: 2026-04-25T19:27:00.292Z
+- terminal education
+- bashcrawl enhancement
+- ai-assisted documentation
+- file type recognition
+- shell aliases
+- progressive learning
+- gamified education
+lastmod: '2026-04-25T19:27:00.000Z'
 permalink: /enhancing-bashcrawl-cellar-scroll-educational-content/
-attachments: ""
+attachments: ''
 comments: true
 draft: false
 section: Learning
 ---
-
 ## The Challenge: Transforming Basic Terminal Instructions into Comprehensive Learning
 
 > **2026 update:** Bashcrawl now has a no-install web version at [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/) and a comprehensive IT-Journey fork at [github.com/bamr87/bashcrawl](https://github.com/bamr87/bashcrawl/). This post remains the content-design story behind the cellar scroll, while the current learner path begins online and continues into the full local repository.

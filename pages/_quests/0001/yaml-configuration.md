@@ -1,13 +1,11 @@
 ---
 title: 'YAML Configuration: Site Settings Mastery'
 author: IT-Journey Team
-description: Master YAML syntax and Jekyll configuration to customize site settings,
-  manage collections, and configure build options for static websites.
-excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional
-  static websites.
+description: Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites.
+excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional static websites.
 preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-20T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- frontend
+skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -67,19 +64,21 @@ categories:
 - Frontend
 - Beginner
 tags:
-- "0001"
+- '0001'
 - yaml
 - main_quest
 - frontend
 - hands-on
 - gamified-learning
 keywords:
-- "0001"
-- yaml
-- main_quest
-- frontend
-- hands-on
-- gamified-learning
+  primary:
+  - '0001'
+  - yaml
+  - main_quest
+  secondary:
+  - frontend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

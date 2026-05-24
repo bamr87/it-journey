@@ -12,6 +12,7 @@ date: '2026-04-07T01:41:08.000Z'
 lastmod: '2026-04-07T01:41:08.000Z'
 categories:
 - wargames
+- bandit
 tags:
 - security
 - wargames
@@ -24,15 +25,15 @@ source_url: https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/
 source_name: overthewire
 license: MIT
 author: bamr87
-excerpt: "OverTheWire Bandit wargame — hands-on Linux security challenges for beginners."
+excerpt: OverTheWire Bandit wargame — hands-on Linux security challenges for beginners.
 draft: false
 keywords:
-  - security
-  - wargames
-  - linux
-  - overthewire
-  - ctf
-  - cybersecurity
+- security
+- wargames
+- linux
+- overthewire
+- ctf
+- cybersecurity
 ---
 
 > **Source:** This content is aggregated from [overthewire](https://github.com/OverTheWireOrg/OverTheWire-website) ([MIT](https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE)). Visit the original repository for the latest version.

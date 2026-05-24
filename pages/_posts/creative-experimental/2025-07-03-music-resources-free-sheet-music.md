@@ -1,41 +1,37 @@
 ---
-title: "Music Resources: Free Sheet Music and Musical Education"
-description: "Comprehensive guide to finding free sheet music, music libraries, and digital music collections for musicians, students, and music enthusiasts"
+title: 'Music Resources: Free Sheet Music and Musical Education'
+description: Comprehensive guide to finding free sheet music, music libraries, and digital music collections for musicians, students, and music enthusiasts
 author: bamr87
 categories:
-    - Hobbies
-    - Music
-    - Resources
+- Hobbies
+- Music
+- Resources
 tags:
-    - sheet-music
-    - classical-music
-    - public-domain
-    - music-education
-    - digital-libraries
-    - music-resources
-date: 2022-01-08T21:33:58.000Z
+- sheet-music
+- classical-music
+- public-domain
+- music-education
+- digital-libraries
+- music-resources
+date: '2022-01-08T21:33:58.000Z'
 draft: false
-lastmod: 2025-07-17T00:00:00.000Z
+lastmod: '2025-07-17T00:00:00.000Z'
 slug: music
-excerpt: "Discover the best sources for free sheet music, from public domain collections to modern digital archives, perfect for musicians and music students"
-sub-title: "Your Complete Guide to Free Musical Resources"
-snippet: "Music is the universal language - and these resources ensure everyone can access its written form"
+excerpt: Discover the best sources for free sheet music, from public domain collections to modern digital archives, perfect for musicians and music students
+sub-title: Your Complete Guide to Free Musical Resources
+snippet: Music is the universal language - and these resources ensure everyone can access its written form
 permalink: /posts/music-resources-free-sheet-music/
 keywords:
-    primary:
-        - free sheet music
-        - music libraries
-        - public domain music
-    secondary:
-        - classical music
-        - digital archives
-        - music education
-        - choral music
-        - historical sheet music
+- free sheet music
+- music libraries
+- public domain music
+- classical music
+- digital archives
+- music education
+- choral music
+- historical sheet music
 section: Creative & Experimental
 ---
-
-
 Libraries are a great place to find free sheet music, especially large city libraries and university libraries. For example, the [Boston Public Library](http://www.bpl.org/research/music/aboutmusic.htm "Home page of Boston Public Library music department") houses one of the finest music libraries in the world, with over 150,000 volumes. If sheet music is in the public domain and in good condition, photocopying is allowed. So ... check your local library.
 
 Indiana University offers a helpful [list of music libraries](https://libraries.indiana.edu/cook "Indiana University Cook Music Library"), sorted by location. You might be able to find a music library near you.

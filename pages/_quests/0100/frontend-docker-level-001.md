@@ -1,24 +1,19 @@
 ---
 title: 'Frontend Docker Level 001: Create Jekyll Site with Docker Container'
 author: bamr87
-description: Set up a Docker-containerized Jekyll development environment. Learn to
-  create Dockerfiles, configure docker-compose, and build Jekyll sites in isolated
-  containers for consistent development.
-excerpt: Build a Docker-containerized Jekyll development environment with Dockerfile
-  and docker-compose configuration
+description: Set up a Docker-containerized Jekyll development environment. Learn to create Dockerfiles, configure docker-compose, and build Jekyll sites in isolated containers for consistent development.
+excerpt: Build a Docker-containerized Jekyll development environment with Dockerfile and docker-compose configuration
 snippet: Containerize your Jekyll development workflow with Docker
 preview: images/previews/level-001-frontend-docker.png
-date: 2024-05-28 15:23:32+00:00
-lastmod: 2024-05-28 04:24:59.730000+00:00
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2024-05-28T04:24:59.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: 64
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- Quests
-- DevOps
+skill_focus: devops
 learning_style: hands-on
 permalink: /quests/0100/001-frontend-docker/
 categories:
@@ -30,10 +25,12 @@ tags:
 - jekyll
 - frontend
 keywords:
-- '0100'
-- docker
-- jekyll
-- frontend
+  primary:
+  - '0100'
+  - docker
+  secondary:
+  - jekyll
+  - frontend
 fmContentType: quest
 draft: draft
 attachments: ''
@@ -42,6 +39,7 @@ slug: null
 type: default
 redirect_from:
 - /quests/0100/frontend-docker-level-001/
+layout: quest
 ---
 ## 🎯 Quest Objectives
 

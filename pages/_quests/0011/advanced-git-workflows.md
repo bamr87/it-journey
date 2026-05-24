@@ -1,14 +1,11 @@
 ---
 title: 'Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands'
 author: IT-Journey Team
-description: Level up your Git skills with advanced techniques. Learn interactive
-  rebase, cherry-picking commits, stash management, and conflict resolution strategies
-  for professional development workflows.
-excerpt: Master advanced Git operations including rebase, cherry-pick, and stash for
-  professional version control
+description: Level up your Git skills with advanced techniques. Learn interactive rebase, cherry-picking commits, stash management, and conflict resolution strategies for professional development workflows.
+excerpt: Master advanced Git operations including rebase, cherry-pick, and stash for professional version control
 preview: images/previews/advanced-git-workflows-rebase-cherry-pick-quest-ti.png
-date: 2025-11-29 22:51:57+00:00
-lastmod: 2026-05-24T19:09:33.065Z
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T04:59:58.000Z'
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +64,7 @@ categories:
 - DevOps
 - Medium
 tags:
-- "0011"
+- '0011'
 - git
 - version-control
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- "0011"
-- git
-- version-control
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0011'
+  - git
+  - version-control
+  secondary:
+  - main_quest
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
