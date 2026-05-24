@@ -71,14 +71,14 @@ categories:
 - DevOps
 - Beginner
 tags:
-- lvl-0000
+- "0000"
 - git
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0000
+- "0000"
 - git
 - main_quest
 - devops
@@ -900,3 +900,13 @@ Before claiming your reward, you should be able to answer:
 - [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials) — Beginner to advanced guides
 - [Git Cheat Sheet (GitHub)](https://education.github.com/git-cheat-sheet-education.pdf) — Printable command reference
 - [Conventional Commits](https://www.conventionalcommits.org/) — Commit message standard
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

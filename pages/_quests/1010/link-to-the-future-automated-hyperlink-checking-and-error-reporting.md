@@ -13,7 +13,7 @@ lastmod: 2025-08-16 04:06:22.859000+00:00
 level: '1010'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: lvl-1010
+primary_technology: 1010
 quest_type: main_quest
 quest_series: DevOps Automation Mastery Path
 skill_focus:
@@ -37,14 +37,14 @@ categories:
 - DevOps-Automation
 - Quality-Assurance
 tags:
-- lvl-1010
+- '1010'
 - github-actions
 - automated-testing
 - ai-analysis
 - devops-automation
 - link-validation
 keywords:
-- lvl-1010
+- '1010'
 - github-actions
 - automated-testing
 - ai-analysis
@@ -63,6 +63,8 @@ related_quests:
 - 'Level 1001 (9): Jekyll Site Deployment Automation'
 - 'Level 1011 (11): Advanced GitHub Actions Patterns'
 - 'Level 1100 (12): AI-Powered Code Review Systems'
+redirect_from:
+- /quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting/
 ---
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 
@@ -1595,3 +1597,12 @@ if __name__ == "__main__":
 *With this quest complete, you now possess the knowledge to create sophisticated DevOps automation that leverages AI for intelligent analysis and reporting. Your guardian will serve as a template for building other automated quality assurance systems that enhance the reliability and user experience of digital platforms.*
 
 *May your links remain strong, your automation resilient, and your intelligence artificial yet wise! 🔗✨*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1010 - Automation & Testing]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

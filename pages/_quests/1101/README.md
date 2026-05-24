@@ -3,21 +3,22 @@ title: 'Level 1101: Machine Learning & AI'
 description: Master the fundamentals of machine learning, neural networks, and artificial
   intelligence to build intelligent systems
 preview: images/previews/level-1101-machine-learning-ai.png
+permalink: /quests/1101/
+layout: quest-collection
 level: '1101'
+categories:
+- quests
+- '1101'
+- master-tier
+- machine-learning
+- ai
 level_decimal: 13
 tier: Master
 tier_emoji: ⚡
 theme: Digital Intelligence
 xp_range: 7000-8500
-permalink: /quests/1101/
 date: 2025-11-30 22:12:13+00:00
 lastmod: 2025-12-01 04:36:39.401000+00:00
-categories:
-- quests
-- level-1101
-- master-tier
-- machine-learning
-- ai
 tags:
 - machine-learning
 - ai

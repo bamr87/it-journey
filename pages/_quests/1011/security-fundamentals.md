@@ -22,9 +22,15 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1011/secure-coding/
+  - /quests/1011/threat-modeling/
+  - /quests/1011/penetration-testing/
+  - /quests/1011/ai-feature-pipeline-architect/
+  - /quests/1011/compliance-standards/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1100/mastering-version-control-workflows/
 learning_paths:
   primary_paths:
   - Software Development
@@ -67,14 +73,14 @@ categories:
 - Security
 - Hard
 tags:
-- lvl-1011
+- "1011"
 - security
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1011
+- "1011"
 - security
 - main_quest
 - security
@@ -488,3 +494,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Mastering Version Control Workflows: The Grand Merge Ritual]]
+**Related quests:** [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[AI Feature Pipeline Architect: DevSecOps Mastery Quest]] · [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -33,14 +33,14 @@ categories:
 - Devops
 - Medium
 tags:
-- lvl-0101
+- '0101'
 - docker
 - tool-mastery
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0101
+- '0101'
 - docker
 - tool-mastery
 - devops
@@ -66,6 +66,8 @@ related_quests:
   parallel:
   - 'Level 0101: Linux System Administration'
   - 'Level 0100: Web Server Configuration'
+redirect_from:
+- /quests/0101/docker-mastery-example/
 ---
 *Greetings, brave adventurer! Welcome to **Docker Containerization Mastery: Level 0101 (5) Quest** - an epic 🟡 Medium journey that will transform your docker mastery. This quest will guide you through tool-mastery adventures in devops, preparing you for the next level of your IT journey.*
 
@@ -304,3 +306,12 @@ Your newfound docker powers open several paths:
 ---
 
 *May your code compile without errors, your deployments be swift and stable, and your learning journey be filled with discovery and joy! Ready for your next adventure? Check the [Quest Map](/quests/) for your next challenge!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

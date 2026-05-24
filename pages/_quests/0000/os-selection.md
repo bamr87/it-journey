@@ -10,7 +10,7 @@ lastmod: 2025-11-30 05:46:59.328000+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: lvl-0000
+primary_technology: operating-system
 quest_type: main_quest
 quest_series: Level 0000 Quest Line
 quest_line: Foundation Path
@@ -83,11 +83,11 @@ categories:
 - Quests
 - Init-World
 tags:
-- lvl-0000
+- "0000"
 - operating-systems
 - beginner
 keywords:
-- lvl-0000
+- "0000"
 - operating-systems
 - beginner
 fmContentType: quest
@@ -182,3 +182,16 @@ Your choice of OS will lay the foundation for your IT journey. Each has its stre
 - [WSL — Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install)
 - [Homebrew — macOS Package Manager](https://brew.sh/)
 - [DistroWatch — Compare Linux Distributions](https://distrowatch.com/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[IT Fundamentals]]
+**Unlocks:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
+**Sequel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
+**Parallel quests:** [[Character Selection]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

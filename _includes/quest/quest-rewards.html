@@ -1,0 +1,77 @@
+{%- comment -%}
+  quest-rewards.html — Badges, XP, and unlocked skills.
+
+  Reads from page.rewards:
+    badges               — list of badge strings (often with emojis)
+    progression_points   — integer XP awarded on completion
+    skills_unlocked      — optional list of skill names
+    achievements         — optional list of achievement labels
+
+  Also surfaces deps.unlocks_quests so learners see what comes next.
+{%- endcomment -%}
+
+{%- assign p = include.page | default: page -%}
+{%- assign rewards = p.rewards -%}
+{%- assign unlocks = p.quest_dependencies.unlocks_quests -%}
+
+{%- if rewards or unlocks -%}
+<section class="quest-rewards" aria-labelledby="quest-rewards-heading">
+  <h2 id="quest-rewards-heading" class="quest-section-heading">🎁 Rewards</h2>
+
+  {%- if rewards.progression_points -%}
+    <div class="quest-rewards__xp">
+      <span class="quest-xp-icon" aria-hidden="true">⚡</span>
+      <span class="quest-xp-value">{{ rewards.progression_points }} XP</span>
+    </div>
+  {%- endif -%}
+
+  {%- if rewards.badges and rewards.badges.size > 0 -%}
+    <div class="quest-rewards__group">
+      <h3>Badges</h3>
+      <ul class="quest-badge-list">
+        {%- for badge in rewards.badges -%}<li class="quest-reward-badge">{{ badge }}</li>{%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if rewards.skills_unlocked and rewards.skills_unlocked.size > 0 -%}
+    <div class="quest-rewards__group">
+      <h3>Skills unlocked</h3>
+      <ul>
+        {%- for skill in rewards.skills_unlocked -%}<li>{{ skill }}</li>{%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if rewards.achievements and rewards.achievements.size > 0 -%}
+    <div class="quest-rewards__group">
+      <h3>Achievements</h3>
+      <ul>
+        {%- for ach in rewards.achievements -%}<li>{{ ach }}</li>{%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if unlocks and unlocks.size > 0 -%}
+    <div class="quest-rewards__group quest-rewards__group--unlocks">
+      <h3>Unlocks</h3>
+      <ul class="quest-unlock-list">
+        {%- for raw in unlocks -%}
+          {%- assign url = raw | split: '#' | first | strip -%}
+          {%- assign is_planned = false -%}
+          {%- if raw contains '# planned' -%}{%- assign is_planned = true -%}{%- endif -%}
+          {%- assign match = site.quests | where: 'permalink', url | first -%}
+          <li>
+            {%- if match -%}
+              <a href="{{ url | relative_url }}">{{ match.title }}</a>
+            {%- else -%}
+              <a href="{{ url | relative_url }}">{{ url }}</a>
+            {%- endif -%}
+            {%- if is_planned -%} <span class="quest-prereq-planned">📝 planned</span>{%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</section>
+{%- endif -%}

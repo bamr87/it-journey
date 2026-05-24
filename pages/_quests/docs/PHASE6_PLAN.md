@@ -1,9 +1,10 @@
 ---
 title: 'Phase 6: Polish & Integration'
+layout: default
 description: Final phase of quest development - content filling, network linking,
   and validation
-preview: images/previews/phase-6-polish-integration.png
-date: 2025-12-20T20:02:51.000Z
+preview: /images/previews/phase-6-polish-integration.png
+date: 2025-12-20 20:02:51+00:00
 lastmod: 2025-12-20
 categories:
 - documentation

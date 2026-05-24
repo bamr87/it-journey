@@ -1,13 +1,13 @@
 ---
 title: Tools Collection - Development Tools & Workflows
-description: Quests focused on development tools, version control, CI/CD, and professional workflows
-preview: images/previews/tools-collection-development-tools-workflows.png
+layout: default
+description: Quests focused on development tools, version control, CI/CD, and professional
+  workflows
+preview: /images/previews/tools-collection-development-tools-workflows.png
 permalink: /quests/tools/
-lastmod: 2025-11-29T23:41:31.777Z
-date: 2025-11-29T16:46:02.000Z
-
+lastmod: 2025-11-29 23:41:31.777000+00:00
+date: 2025-11-29 16:46:02+00:00
 ---
-
 # Tools Collection: Development Tools & Workflows
 
 *Every craftsman needs their tools. This collection houses quests focused on mastering the tools, workflows, and practices that professional developers use daily. From version control to CI/CD, these quests transform you from a code writer into a software craftsperson.*

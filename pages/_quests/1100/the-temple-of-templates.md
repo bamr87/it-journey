@@ -13,7 +13,7 @@ lastmod: 2025-08-25 00:43:51.189000+00:00
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-primary_technology: lvl-1100
+primary_technology: 1100
 quest_type: main_quest
 quest_series: Binary Function Crafting
 skill_focus:
@@ -35,14 +35,14 @@ categories:
 - Development
 - Intermediate
 tags:
-- lvl-1100
+- '1100'
 - templates
 - design-patterns
 - software-architecture
 - reusable-components
 - hands-on
 keywords:
-- lvl-1100
+- '1100'
 - templates
 - design-patterns
 - software-architecture
@@ -61,6 +61,8 @@ related_quests:
 - 'Level 0011: Programming Foundations'
 - 'Level 0100: Version Control with Git'
 - 'Level 1111: Testing and Verification Rites'
+redirect_from:
+- /quests/1100/the-temple-of-templates/
 ---
 ## 🧙‍♂️ Epic Introduction
 
@@ -440,3 +442,12 @@ Before you depart the temple, ensure you can explain:
 - When to stop abstracting—what is “good enough” for today
 
 May your blueprints be clear, your APIs stable, and your sanctums extensible. 🏛️💡
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

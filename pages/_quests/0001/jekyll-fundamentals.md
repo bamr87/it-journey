@@ -69,7 +69,7 @@ categories:
 - Static-Sites
 - Beginner
 tags:
-- lvl-0001
+- "0001"
 - jekyll
 - static-site-generator
 - ruby
@@ -79,7 +79,7 @@ tags:
 - hands-on
 - beginner
 keywords:
-- lvl-0001
+- "0001"
 - jekyll
 - static-site-generator
 - ruby
@@ -496,3 +496,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

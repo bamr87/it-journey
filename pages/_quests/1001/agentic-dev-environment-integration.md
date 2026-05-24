@@ -1,9 +1,11 @@
 ---
-title: "Bind the Agent to the Realm: Dev Environment Integration"
-description: "Integrate GitHub Copilot agents with the development environment — configure Codespaces, repositories, AGENTS.md, and environment variables so the agent operates predictably across all machines."
-date: 2026-05-17T00:00:00.000Z
+title: 'Bind the Agent to the Realm: Dev Environment Integration'
+description: Integrate GitHub Copilot agents with the development environment — configure
+  Codespaces, repositories, AGENTS.md, and environment variables so the agent operates
+  predictably across all machines.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-dev-environment-integration.png
-level: "1001"
+level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,86 +13,89 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - dev-environment
-  - codespaces
-  - agents-md
+- agentic-ai
+- dev-environment
+- codespaces
+- agents-md
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1001 Quest 1/3 — Domain 2: Tool Use & Environment Interaction"
-excerpt: An agent bound to a well-configured realm performs consistently. An agent cast into an unknown environment is dangerous. Write the binding spells that make your environment agent-ready.
+sub_title: 'Level 1001 Quest 1/3 — Domain 2: Tool Use & Environment Interaction'
+excerpt: An agent bound to a well-configured realm performs consistently. An agent
+  cast into an unknown environment is dangerous. Write the binding spells that make
+  your environment agent-ready.
 author: IT-Journey Team
 tags:
-  - lvl-1001
-  - agentic-ai
-  - github-codespaces
-  - agents-md
-  - gh-600
-  - main_quest
-  - hands-on
+- '1001'
+- agentic-ai
+- github-codespaces
+- agents-md
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - agent environment
-  - AGENTS.md
-  - github codespaces
-  - dev container
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-dev-environment-integration/
+- gh-600
+- agent environment
+- AGENTS.md
+- github codespaces
+- dev container
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1001/agentic-dev-environment-integration/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-mcp-server-mastery/
+  - /quests/1000/agentic-mcp-server-mastery/
   unlocks_quests:
-    - /quests/gh-600/agentic-safe-execution-and-error-handling/
+  - /quests/1001/agentic-safe-execution-and-error-handling/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-safe-execution-and-error-handling/
+  - /quests/1001/agentic-safe-execution-and-error-handling/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🏗️ Platform Engineer
+  - 🤖 AI Engineer
+  - 🏗️ Platform Engineer
   skill_trees:
-    - Agentic AI
-    - GitHub Codespaces
+  - Agentic AI
+  - GitHub Codespaces
 rewards:
   badges:
-    - 🏠 Realm Binder
+  - 🏠 Realm Binder
   skills_unlocked:
-    - 📋 AGENTS.md Authoring
-    - 🐳 Agent-Ready Dev Container
+  - 📋 AGENTS.md Authoring
+  - 🐳 Agent-Ready Dev Container
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q5 (MCP Mastery)
-    - Familiarity with devcontainer.json
-    - GitHub Codespaces or Docker installed
+  - Completed Q5 (MCP Mastery)
+  - Familiarity with devcontainer.json
+  - GitHub Codespaces or Docker installed
   system_requirements:
-    - GitHub account with Codespaces access (or Docker locally)
-    - Repository with Actions enabled
+  - GitHub account with Codespaces access (or Docker locally)
+  - Repository with Actions enabled
 validation_criteria:
   completion_requirements:
-    - "AGENTS.md created in repository root with agent operating instructions"
-    - "devcontainer.json configured with agent-required extensions and secrets"
-    - Environment validated — agent can run the same way in Codespaces and locally
+  - AGENTS.md created in repository root with agent operating instructions
+  - devcontainer.json configured with agent-required extensions and secrets
+  - Environment validated — agent can run the same way in Codespaces and locally
   skill_demonstrations:
-    - Can write an AGENTS.md that a new agent could follow without prior context
-    - Can configure a devcontainer for consistent agent execution
+  - Can write an AGENTS.md that a new agent could follow without prior context
+  - Can configure a devcontainer for consistent agent execution
 quest_mapping:
-  coordinates: "[2, 3]"
+  coordinates: '[2, 3]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Barracks District
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-dev-environment-integration/
 ---
-
 *Before a soldier enters battle, their weapons are sharpened, their armor fitted, their orders memorised. An agent entering a repository without an `AGENTS.md` is a soldier sent to an unknown castle with a broken sword. The Barracks Masters spend their days writing the binding documents that turn a strange repository into a familiar home for any agent that enters.*
 
 ## 🗺️ Quest Network Position
@@ -346,4 +351,17 @@ python3 scripts/validate_quest.py --quest q6
 | 🏠 Realm Binder Badge | Earned on completion |
 | 📋 AGENTS.md Authoring | Skill unlocked |
 | 100 XP | Added to Level 1001 total |
-| Unlocks | [Q7: The Shield of Retries](/quests/gh-600/agentic-safe-execution-and-error-handling/) |
+| Unlocks | [Q7: The Shield of Retries](/quests/1001/agentic-safe-execution-and-error-handling/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The MCP Conclave: Mastering Model Context Protocol Servers]]
+**Unlocks:** [[The Shield of Retries: Safe Execution and Error Handling]]
+**Sequel quests:** [[The Shield of Retries: Safe Execution and Error Handling]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

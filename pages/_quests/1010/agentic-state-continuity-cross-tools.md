@@ -1,9 +1,11 @@
 ---
-title: "Crossing the Tool Planes: State Continuity Across Tools"
-description: "Maintain agent state and context continuity when tasks span multiple tools, sessions, and GitHub surfaces — issues, PRs, Actions runs, and Codespaces all hold fragments that the agent must weave together."
-date: 2026-05-17T00:00:00.000Z
+title: 'Crossing the Tool Planes: State Continuity Across Tools'
+description: Maintain agent state and context continuity when tasks span multiple
+  tools, sessions, and GitHub surfaces — issues, PRs, Actions runs, and Codespaces
+  all hold fragments that the agent must weave together.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-state-continuity-cross-tools.png
-level: "1010"
+level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,78 +13,81 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - state-management
-  - cross-tool-continuity
-  - context-weaving
+- agentic-ai
+- state-management
+- cross-tool-continuity
+- context-weaving
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1010 Quest 2/4 — Domain 3: Context & Memory Management"
-excerpt: The realm is divided into planes — Issue Plane, Actions Plane, Codespace Plane. An agent that cannot cross the planes loses context at every boundary. Learn to weave a single thread through all planes.
+sub_title: 'Level 1010 Quest 2/4 — Domain 3: Context & Memory Management'
+excerpt: The realm is divided into planes — Issue Plane, Actions Plane, Codespace
+  Plane. An agent that cannot cross the planes loses context at every boundary. Learn
+  to weave a single thread through all planes.
 author: IT-Journey Team
 tags:
-  - lvl-1010
-  - agentic-ai
-  - state-continuity
-  - cross-tool
-  - gh-600
-  - main_quest
-  - hands-on
+- '1010'
+- agentic-ai
+- state-continuity
+- cross-tool
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - state continuity
-  - cross tool context
-  - agent handoff
-  - github surfaces
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-state-continuity-cross-tools/
+- gh-600
+- state continuity
+- cross tool context
+- agent handoff
+- github surfaces
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1010/agentic-state-continuity-cross-tools/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-state-persistence-and-drift/
+  - /quests/1010/agentic-state-persistence-and-drift/
   unlocks_quests:
-    - /quests/gh-600/agentic-success-criteria-and-signals/
+  - /quests/1010/agentic-success-criteria-and-signals/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-success-criteria-and-signals/
+  - /quests/1010/agentic-success-criteria-and-signals/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
+  - 🤖 AI Engineer
   skill_trees:
-    - Agentic AI
+  - Agentic AI
 rewards:
   badges:
-    - 🌀 Plane Walker
+  - 🌀 Plane Walker
   skills_unlocked:
-    - 🧵 Cross-Tool Context Weaving
+  - 🧵 Cross-Tool Context Weaving
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q9 (State Persistence & Drift)
-    - Familiarity with GitHub API (issues, PRs, actions)
+  - Completed Q9 (State Persistence & Drift)
+  - Familiarity with GitHub API (issues, PRs, actions)
   system_requirements:
-    - GitHub account with all surfaces enabled
+  - GitHub account with all surfaces enabled
 validation_criteria:
   completion_requirements:
-    - State handoff schema defined for issue → branch → PR → Actions pipeline
-    - Agent correctly reads state from prior surface when starting on a new surface
-    - End-to-end cross-tool scenario tested and documented
+  - State handoff schema defined for issue → branch → PR → Actions pipeline
+  - Agent correctly reads state from prior surface when starting on a new surface
+  - End-to-end cross-tool scenario tested and documented
 quest_mapping:
-  coordinates: "[3, 3]"
+  coordinates: '[3, 3]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Plane Crossing
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-state-continuity-cross-tools/
 ---
-
 *The Plane Walkers carry a single burning thread — the Context Thread — through every dimension they traverse. When they enter the Issue Plane, they attach the thread to the issue. When they cross to the Actions Plane, the thread follows. When they emerge in the PR Plane, the thread is still there, connecting every decision back to the original intent. Without the thread, they are lost between planes.*
 
 ## 🗺️ Quest Network Position
@@ -322,4 +327,17 @@ python3 scripts/validate_quest.py --quest q10
 | 🌀 Plane Walker Badge | Earned on completion |
 | 🧵 Cross-Tool Context Weaving | Skill unlocked |
 | 100 XP | Added to Level 1010 total |
-| Unlocks | [Q11: The Oracle's Rubric](/quests/gh-600/agentic-success-criteria-and-signals/) |
+| Unlocks | [Q11: The Oracle's Rubric](/quests/1010/agentic-success-criteria-and-signals/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1010 - Automation & Testing]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
+**Unlocks:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]]
+**Sequel quests:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

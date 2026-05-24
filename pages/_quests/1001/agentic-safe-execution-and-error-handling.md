@@ -1,9 +1,11 @@
 ---
-title: "The Shield of Retries: Safe Execution and Error Handling"
-description: "Design agent workflows that survive tool failures, API errors, and unexpected outputs — implement retry logic, timeouts, fallback strategies, and graceful error reporting for GitHub Copilot agents."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Shield of Retries: Safe Execution and Error Handling'
+description: Design agent workflows that survive tool failures, API errors, and unexpected
+  outputs — implement retry logic, timeouts, fallback strategies, and graceful error
+  reporting for GitHub Copilot agents.
+date: 2026-05-17 00:00:00+00:00
 preview: /assets/images/previews/agentic-safe-execution-and-error-handling.png
-level: "1001"
+level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,85 +13,88 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - error-handling
-  - retry-logic
-  - safe-execution
+- agentic-ai
+- error-handling
+- retry-logic
+- safe-execution
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1001 Quest 2/3 — Domain 2: Tool Use & Environment Interaction"
-excerpt: The Shield of Retries doesn't prevent all failures — it ensures failures are caught, reported, and recovered from gracefully. A resilient agent knows when to try again, when to escalate, and when to stop.
+sub_title: 'Level 1001 Quest 2/3 — Domain 2: Tool Use & Environment Interaction'
+excerpt: The Shield of Retries doesn't prevent all failures — it ensures failures
+  are caught, reported, and recovered from gracefully. A resilient agent knows when
+  to try again, when to escalate, and when to stop.
 author: IT-Journey Team
 tags:
-  - lvl-1001
-  - agentic-ai
-  - error-handling
-  - resilience
-  - gh-600
-  - main_quest
-  - hands-on
+- '1001'
+- agentic-ai
+- error-handling
+- resilience
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - agent error handling
-  - retry logic
-  - timeout
-  - fallback strategy
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-safe-execution-and-error-handling/
+- gh-600
+- agent error handling
+- retry logic
+- timeout
+- fallback strategy
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1001/agentic-safe-execution-and-error-handling/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-dev-environment-integration/
+  - /quests/1001/agentic-dev-environment-integration/
   unlocks_quests:
-    - /quests/gh-600/agentic-memory-strategies/
+  - /quests/1001/agentic-memory-strategies/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-memory-strategies/
+  - /quests/1001/agentic-memory-strategies/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🛡️ SRE
+  - 🤖 AI Engineer
+  - 🛡️ SRE
   skill_trees:
-    - Agentic AI
-    - Resilience Engineering
+  - Agentic AI
+  - Resilience Engineering
 rewards:
   badges:
-    - 🛡️ Resilience Keeper
+  - 🛡️ Resilience Keeper
   skills_unlocked:
-    - ♻️ Agent Retry Patterns
-    - 🚨 Graceful Escalation
+  - ♻️ Agent Retry Patterns
+  - 🚨 Graceful Escalation
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q6 (Dev Environment Integration)
-    - Understanding of GitHub Actions failure handling
+  - Completed Q6 (Dev Environment Integration)
+  - Understanding of GitHub Actions failure handling
   system_requirements:
-    - GitHub account with Actions enabled
-    - Repository with agent workflows configured
+  - GitHub account with Actions enabled
+  - Repository with agent workflows configured
 validation_criteria:
   completion_requirements:
-    - Retry policy documented and implemented in at least one workflow
-    - Timeout configured on all agent job steps
-    - Error escalation path defined (agent → PR comment → human notification)
+  - Retry policy documented and implemented in at least one workflow
+  - Timeout configured on all agent job steps
+  - Error escalation path defined (agent → PR comment → human notification)
   skill_demonstrations:
-    - Can design a retry strategy that avoids infinite retry loops
-    - Can configure GitHub Actions to notify humans on agent failure
+  - Can design a retry strategy that avoids infinite retry loops
+  - Can configure GitHub Actions to notify humans on agent failure
 quest_mapping:
-  coordinates: "[2, 4]"
+  coordinates: '[2, 4]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Forge of Resilience
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-safe-execution-and-error-handling/
 ---
-
 *The old shield-masters say: a shield that breaks on first impact is worse than no shield — the warrior trusted it. Build the Shield of Retries with three principles: try again when appropriate, admit defeat when necessary, and always report your final state so the next defender knows where you fell.*
 
 ## 🗺️ Quest Network Position
@@ -318,4 +323,17 @@ python3 scripts/validate_quest.py --quest q7
 | 🛡️ Resilience Keeper Badge | Earned on completion |
 | ♻️ Agent Retry Patterns | Skill unlocked |
 | 100 XP | Added to Level 1001 total |
-| Unlocks | [Q8: Vaults of Recollection](/quests/gh-600/agentic-memory-strategies/) |
+| Unlocks | [Q8: Vaults of Recollection](/quests/1001/agentic-memory-strategies/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]]
+**Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]]
+**Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

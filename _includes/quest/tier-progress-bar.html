@@ -1,0 +1,54 @@
+{%- comment -%}
+  tier-progress-bar.html — Completion summary for a tier or single level.
+
+  Renders a server-rendered count of quests in scope and an empty progress
+  bar. assets/js/quest-progress.js hydrates the bar with the learner's
+  localStorage completion data on page load.
+
+  Parameters:
+    include.level — optional 4-digit binary level; restricts the bar to
+                    that level. When omitted, the bar represents the whole
+                    quest collection.
+    include.tier  — optional tier name (e.g. "Apprentice"); used when level
+                    is omitted to scope the bar to a tier.
+    include.label — optional override for the heading label.
+{%- endcomment -%}
+
+{%- assign scope_level = include.level -%}
+{%- assign scope_tier = include.tier -%}
+{%- assign all = site.quests | where: 'fmContentType', 'quest' -%}
+
+{%- if scope_level -%}
+  {%- assign scoped = all | where: 'level', scope_level -%}
+  {%- assign label = include.label | default: 'Level' | append: ' ' | append: scope_level -%}
+  {%- assign data_scope = scope_level -%}
+  {%- assign data_kind = 'level' -%}
+{%- elsif scope_tier -%}
+  {%- assign tier_meta = site.data.quests.tiers[scope_tier] -%}
+  {%- assign scoped = '' | split: '' -%}
+  {%- for lvl in tier_meta.levels -%}
+    {%- assign part = all | where: 'level', lvl -%}
+    {%- assign scoped = scoped | concat: part -%}
+  {%- endfor -%}
+  {%- assign label = include.label | default: scope_tier | append: ' tier' -%}
+  {%- assign data_scope = scope_tier -%}
+  {%- assign data_kind = 'tier' -%}
+{%- else -%}
+  {%- assign scoped = all -%}
+  {%- assign label = include.label | default: 'All quests' -%}
+  {%- assign data_scope = 'all' -%}
+  {%- assign data_kind = 'all' -%}
+{%- endif -%}
+
+<div class="tier-progress" data-quest-tier-progress data-quest-tier-kind="{{ data_kind }}" data-quest-tier-scope="{{ data_scope }}">
+  <div class="tier-progress__header">
+    <span class="tier-progress__label">{{ label }}</span>
+    <span class="tier-progress__counts">
+      <span data-quest-tier-completed>0</span> / <span data-quest-tier-total>{{ scoped.size }}</span> complete
+    </span>
+  </div>
+  <div class="quest-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="{{ label }} completion">
+    <div class="quest-progress-bar__fill" style="width: 0%"></div>
+    <span class="quest-progress-bar__label" data-quest-tier-percent>0%</span>
+  </div>
+</div>

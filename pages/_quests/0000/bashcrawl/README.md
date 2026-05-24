@@ -1,10 +1,9 @@
 ---
 title: 'Bashcrawl Quest: Terminal Adventure RPG'
-description: "Explore nine Bashcrawl dungeon chambers to master navigation, file permissions,\
-  \ environment variables, symlinks, and pipes in this gamified terminal RPG adventure."
+description: "Explore nine Bashcrawl chambers to master navigation, permissions, environment variables, symlinks, and pipes in a gamified terminal RPG adventure."
 preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
 date: 2025-07-05T12:12:17.000Z
-lastmod: 2026-05-22T00:00:00.000Z
+lastmod: 2026-05-23T02:30:23.000Z
 categories:
 - Quests
 - Terminal
@@ -16,10 +15,9 @@ tags:
 - command-line
 - adventure-game
 - bash
-- lvl-0000
+- "0000"
 author: IT-Journey Team
 level: '0000'
-layout: journals
 fmContentType: quest
 quest_type: main_quest
 quest_line: Foundation Path
@@ -56,28 +54,28 @@ rewards:
   progression_points: 200
 quest_dependencies:
   unlocks_quests:
-  - /quests/0000/side-quests/bashcrawl-entrance/
-  - /quests/0000/side-quests/bashcrawl-workshop/
-  - /quests/0000/side-quests/bashcrawl-cellar/
-  - /quests/0000/side-quests/bashcrawl-armoury/
-  - /quests/0000/side-quests/bashcrawl-chamber/
-  - /quests/0000/side-quests/bashcrawl-hidden-chapel/
-  - /quests/0000/side-quests/bashcrawl-vault/
-  - /quests/0000/side-quests/bashcrawl-scrap/
-  - /quests/0000/side-quests/bashcrawl-rift/
-  - /quests/0000/side-quests/bashcrawl-agent-mode/
+  - /quests/0000/side-quests/entrance/
+  - /quests/0000/side-quests/workshop/
+  - /quests/0000/side-quests/cellar/
+  - /quests/0000/side-quests/armoury/
+  - /quests/0000/side-quests/chamber/
+  - /quests/0000/side-quests/hidden-chapel/
+  - /quests/0000/side-quests/vault/
+  - /quests/0000/side-quests/scrap/
+  - /quests/0000/side-quests/rift/
+  - /quests/0000/side-quests/agent-mode/
 quest_relationships:
   child_quests:
-  - /quests/0000/side-quests/bashcrawl-entrance/
-  - /quests/0000/side-quests/bashcrawl-workshop/
-  - /quests/0000/side-quests/bashcrawl-cellar/
-  - /quests/0000/side-quests/bashcrawl-armoury/
-  - /quests/0000/side-quests/bashcrawl-chamber/
-  - /quests/0000/side-quests/bashcrawl-hidden-chapel/
-  - /quests/0000/side-quests/bashcrawl-vault/
-  - /quests/0000/side-quests/bashcrawl-scrap/
-  - /quests/0000/side-quests/bashcrawl-rift/
-  - /quests/0000/side-quests/bashcrawl-agent-mode/
+  - /quests/0000/side-quests/entrance/
+  - /quests/0000/side-quests/workshop/
+  - /quests/0000/side-quests/cellar/
+  - /quests/0000/side-quests/armoury/
+  - /quests/0000/side-quests/chamber/
+  - /quests/0000/side-quests/hidden-chapel/
+  - /quests/0000/side-quests/vault/
+  - /quests/0000/side-quests/scrap/
+  - /quests/0000/side-quests/rift/
+  - /quests/0000/side-quests/agent-mode/
   sequel_quests:
   - /quests/0000/side-quests/bash-run/
   parallel_quests: []
@@ -99,6 +97,7 @@ sub-title: 'Level 0000 Quest: Terminal Dungeon Adventure'
 excerpt: Embark on an epic terminal adventure that teaches Bash commands through nine
   interconnected dungeon chambers, each a dedicated walkthrough side-quest
 snippet: Every command is a spell, every directory a new realm to explore
+draft: false
 permalink: /quests/0000/bashcrawl/
 ---
 *Welcome to the Bashcrawl Catacombs — an interactive terminal dungeon where every command is a spell and every directory a new realm to explore. Nine interconnected chambers await, each a side-quest that teaches a core set of Bash skills through gameplay.*
@@ -121,32 +120,32 @@ flowchart TD
     VLT --> RFT
     SCR --> RFT
     RFT --> AGT[🤖 Agent Mode]
-    click ENT "/quests/0000/side-quests/bashcrawl-entrance/"
-    click WRK "/quests/0000/side-quests/bashcrawl-workshop/"
-    click CEL "/quests/0000/side-quests/bashcrawl-cellar/"
-    click ARM "/quests/0000/side-quests/bashcrawl-armoury/"
-    click CHM "/quests/0000/side-quests/bashcrawl-chamber/"
-    click CHP "/quests/0000/side-quests/bashcrawl-hidden-chapel/"
-    click VLT "/quests/0000/side-quests/bashcrawl-vault/"
-    click SCR "/quests/0000/side-quests/bashcrawl-scrap/"
-    click RFT "/quests/0000/side-quests/bashcrawl-rift/"
-    click AGT "/quests/0000/side-quests/bashcrawl-agent-mode/"
+    click ENT "/quests/0000/side-quests/entrance/"
+    click WRK "/quests/0000/side-quests/workshop/"
+    click CEL "/quests/0000/side-quests/cellar/"
+    click ARM "/quests/0000/side-quests/armoury/"
+    click CHM "/quests/0000/side-quests/chamber/"
+    click CHP "/quests/0000/side-quests/hidden-chapel/"
+    click VLT "/quests/0000/side-quests/vault/"
+    click SCR "/quests/0000/side-quests/scrap/"
+    click RFT "/quests/0000/side-quests/rift/"
+    click AGT "/quests/0000/side-quests/agent-mode/"
 ```
 
 ## 📖 Chapter Guide
 
 | # | Chamber | Difficulty | Key Commands | Walkthrough |
 |---|---------|-----------|--------------|-------------|
-| 1 | 🚪 Entrance | 🟢 Easy | `pwd` `ls` `cd` `cat` | [Start Here](/quests/0000/side-quests/bashcrawl-entrance/) |
-| 2 | 🔨 Workshop | 🟢 Easy | `mkdir` `touch` `rm` `echo >` | [Workshop](/quests/0000/side-quests/bashcrawl-workshop/) |
-| 3 | 🍷 Cellar | 🟢 Easy | `ls -F` `alias` `file` | [Cellar](/quests/0000/side-quests/bashcrawl-cellar/) |
-| 4 | ⚔️ Armoury | 🟡 Medium | `chmod` `./` permissions | [Armoury](/quests/0000/side-quests/bashcrawl-armoury/) |
-| 5 | 🐉 Chamber | 🟡 Medium | `let` `$(( ))` arithmetic | [Chamber](/quests/0000/side-quests/bashcrawl-chamber/) |
-| 6 | ⛪ Hidden Chapel | 🔴 Hard | `ls -a` `man` hidden dirs | [Chapel](/quests/0000/side-quests/bashcrawl-hidden-chapel/) |
-| 7 | 🔒 Vault | 🟡 Medium | `export` `$VAR` `env` | [Vault](/quests/0000/side-quests/bashcrawl-vault/) |
-| 8 | 🗑️ Scrap Heap | 🟡 Medium | `ln -s` `readlink` symlinks | [Scrap](/quests/0000/side-quests/bashcrawl-scrap/) |
-| 9 | 🌀 The Rift | 🔴 Hard | pipes `\|` `&&` redirection | [Rift](/quests/0000/side-quests/bashcrawl-rift/) |
-| ★ | 🤖 Agent Mode | 🔴 Hard | `--agent` `--batch` `--screenshot-dir` | [Agent](/quests/0000/side-quests/bashcrawl-agent-mode/) |
+| 1 | 🚪 Entrance | 🟢 Easy | `pwd` `ls` `cd` `cat` | [Start Here](/quests/0000/side-quests/entrance/) |
+| 2 | 🔨 Workshop | 🟢 Easy | `mkdir` `touch` `rm` `echo >` | [Workshop](/quests/0000/side-quests/workshop/) |
+| 3 | 🍷 Cellar | 🟢 Easy | `ls -F` `alias` `file` | [Cellar](/quests/0000/side-quests/cellar/) |
+| 4 | ⚔️ Armoury | 🟡 Medium | `chmod` `./` permissions | [Armoury](/quests/0000/side-quests/armoury/) |
+| 5 | 🐉 Chamber | 🟡 Medium | `let` `$(( ))` arithmetic | [Chamber](/quests/0000/side-quests/chamber/) |
+| 6 | ⛪ Hidden Chapel | 🔴 Hard | `ls -a` `man` hidden dirs | [Chapel](/quests/0000/side-quests/hidden-chapel/) |
+| 7 | 🔒 Vault | 🟡 Medium | `export` `$VAR` `env` | [Vault](/quests/0000/side-quests/vault/) |
+| 8 | 🗑️ Scrap Heap | 🟡 Medium | `ln -s` `readlink` symlinks | [Scrap](/quests/0000/side-quests/scrap/) |
+| 9 | 🌀 The Rift | 🔴 Hard | pipes `\|` `&&` redirection | [Rift](/quests/0000/side-quests/rift/) |
+| ★ | 🤖 Agent Mode | 🔴 Hard | `--agent` `--batch` `--screenshot-dir` | [Agent](/quests/0000/side-quests/agent-mode/) |
 
 ## ⚡ Quick Start
 
@@ -205,6 +204,12 @@ flowchart TD
 ./main.sh --status         # Show current game progress
 ./main.sh --reset          # Reset for a fresh run
 ```
+
+## 🧭 Learning Path Tips
+
+- Start with **Entrance → Workshop → Cellar** to build confidence before branching.
+- Keep a command journal: capture one new command and one mistake after each chamber.
+- Replay one chamber in a different mode (Web, Classic, or Native) to reinforce transfer skills.
 
 ## 📚 External Resources
 

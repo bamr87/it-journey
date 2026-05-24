@@ -1,9 +1,10 @@
 ---
 title: '🗺️ World Map: Navigation Guide to the IT-Journey Realm'
+layout: default
 description: Your comprehensive guide to navigating the IT-Journey platform - quests,
   documentation, tutorials, and learning paths.
-preview: images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
-date: 2024-05-28T15:23:32.000Z
+preview: /images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
+date: 2024-05-28 15:23:32+00:00
 lastmod: 2025-07-23 03:53:06.678000+00:00
 draft: false
 tags:
@@ -199,9 +200,9 @@ Become a master of user interfaces and digital aesthetics
 - [Frontend Fundamentals](/quests/0100/frontend/) - The Art of Digital Presentation
 - [Frontend Docker Adventures](/quests/0100/frontend-docker/) - Containerized UI Magic
 - [Frontend Level Progression](/quests/0100/frontend-levels/) - Structured Learning Path
-- [Level 000 Frontend](/quests/0100/frontend-docker-lvl-000/) - Beginner Container Magic
-- [Level 001 Frontend](/quests/0100/lvl-001-frontend-docker/) - Intermediate UI Sorcery
-- [Level 010 Frontend](/quests/0100/lvl-010-frontend-docker/) - Advanced Interface Wizardry
+- [Level 000 Frontend](/quests/0100/frontend-docker-000/) - Beginner Container Magic
+- [Level 001 Frontend](/quests/0100/001-frontend-docker/) - Intermediate UI Sorcery
+- [Level 010 Frontend](/quests/0100/010-frontend-docker/) - Advanced Interface Wizardry
 
 #### 📚 Quest Codex (`/quests/codex/`)
 
@@ -392,3 +393,12 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 - ⚔️ = Epic (expert-level challenges)
 
 *May your code compile, your deployments succeed, and your documentation actually match your implementation!* ⚡✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -2,10 +2,12 @@ services:
 
   jekyll:
     image: jekyll/jekyll:latest
-    command: jekyll serve --watch --force_polling --config "_config.yml,_config_dev.yml"
+    platform: linux/amd64
+    command: bash -c "bundle check || bundle install && jekyll serve --watch --force_polling --config '_config.yml,_config_dev.yml'"
     volumes:
       - ./:/app
       - jekyll-cache:/app/.jekyll-cache
+      - bundle_cache:/usr/local/bundle
     ports:
       - "4002:4002"
     working_dir: /app
@@ -13,6 +15,7 @@ services:
       - .env
     environment:
       JEKYLL_ENV: development
+      BUNDLE_PATH: /usr/local/bundle
 
   quest-validator:
     build:
@@ -51,4 +54,5 @@ services:
 
 volumes:
   jekyll-cache:
+  bundle_cache:
 

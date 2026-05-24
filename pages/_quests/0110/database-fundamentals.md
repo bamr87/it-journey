@@ -23,7 +23,14 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0110/sql-mastery/
+  - /quests/0110/database-security/
+  - /quests/0110/data-modeling/
+  - /quests/0110/query-optimization/
+  - /quests/0110/backup-recovery/
+  - /quests/0110/database-migrations/
+  - /quests/0110/connection-pooling/
   parallel_quests: []
   sequel_quests: []
 learning_paths:
@@ -68,14 +75,14 @@ categories:
 - Data-Engineering
 - Hard
 tags:
-- lvl-0110
+- "0110"
 - sql
 - main_quest
 - data-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0110
+- "0110"
 - sql
 - main_quest
 - data-engineering
@@ -489,3 +496,13 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Related quests:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Database Security: Access Control and Data Encryption]] · [[Data Modeling: Schema Design and Database Relationships]] · [[Query Optimization: Performance Tuning for Fast Database Queries]] · [[Backup and Recovery: Data Protection Strategies for Databases]] · [[Database Migrations: Schema Evolution and Version Control]] · [[Connection Pooling: Efficient Database Resource Management]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

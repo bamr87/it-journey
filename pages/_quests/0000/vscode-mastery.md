@@ -731,3 +731,14 @@ Now that you've mastered VS Code, consider these advanced quests:
 
 **Achievement Unlocked: VS Code Master** 🏆  
 *Continue your adventure with the next quest in your chosen specialization path!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

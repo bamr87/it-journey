@@ -12,7 +12,7 @@ lastmod: 2025-07-29 05:15:57.715000+00:00
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: lvl-0100
+primary_technology: 64
 quest_type: main_quest
 quest_series: Foundation Development Skills
 skill_focus:
@@ -36,14 +36,14 @@ categories:
 - Development-Fundamentals
 - Tool-Mastery
 tags:
-- lvl-0100
+- '0100'
 - git
 - github
 - version-control
 - collaboration
 - workflow-mastery
 keywords:
-- lvl-0100
+- '0100'
 - git
 - github
 - version-control
@@ -62,6 +62,8 @@ related_quests:
 - Terminal Mastery Quest (Level 0001)
 - Development Environment Setup (Level 0101)
 - Code Quality Guardian Quest (Level 0110)
+redirect_from:
+- /quests/0100/sourcery-code-methods/
 ---
 *In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 
@@ -555,3 +557,12 @@ jobs:
 *Remember: Every commit tells a story, every branch opens new possibilities, and every merge brings the community closer together. Use your newfound powers wisely, mentor other aspiring developers, and continue to expand your mastery of the ever-evolving arts of software development sorcery.*
 
 *May your repositories always be organized, your merges conflict-free, and your automation workflows forever reliable! 🚀✨*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

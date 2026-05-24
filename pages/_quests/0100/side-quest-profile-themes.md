@@ -34,7 +34,7 @@ categories:
 - Frontend
 - Advanced
 tags:
-- lvl-0100
+- "0100"
 - contributor
 - css
 - themes
@@ -273,3 +273,14 @@ Once your theme PR is merged, you've earned the **Style Sorcerer** badge (+150 X
 ---
 
 > *"You have bent the very fabric of appearance to your will. The realm is more beautiful for it."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
+**Recommended:** [[Stats Dashboard: Enhancing Your Data Visualization]] · [[Contribution Calendar: Mapping Your Journey Through Time]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

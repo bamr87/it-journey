@@ -1,9 +1,11 @@
 ---
-title: "The Warden's Pact: Guardrails and Human-in-the-Loop Patterns"
-description: "Design and implement responsible agentic AI guardrails using GitHub-native tools — boundary enforcement, human approval gates, escalation protocols, and audit trails for AI-assisted actions."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
+description: Design and implement responsible agentic AI guardrails using GitHub-native
+  tools — boundary enforcement, human approval gates, escalation protocols, and audit
+  trails for AI-assisted actions.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-guardrails-and-human-in-the-loop.png
-level: "1100"
+level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,86 +13,89 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - guardrails
-  - human-in-the-loop
-  - responsible-ai
-  - governance
+- agentic-ai
+- guardrails
+- human-in-the-loop
+- responsible-ai
+- governance
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1100 Quest 3/4 — Domain 6: Responsible Agentic AI"
-excerpt: The Warden stands at the gate between the agent's realm and the world beyond. The Pact is clear — agents may not cross without the Warden's blessing. Some doors require a key. Some require a council. Some the Warden seals forever.
+sub_title: 'Level 1100 Quest 3/4 — Domain 6: Responsible Agentic AI'
+excerpt: The Warden stands at the gate between the agent's realm and the world beyond.
+  The Pact is clear — agents may not cross without the Warden's blessing. Some doors
+  require a key. Some require a council. Some the Warden seals forever.
 author: IT-Journey Team
 tags:
-  - lvl-1100
-  - agentic-ai
-  - guardrails
-  - human-in-the-loop
-  - responsible-ai
-  - gh-600
-  - main_quest
-  - hands-on
+- '1100'
+- agentic-ai
+- guardrails
+- human-in-the-loop
+- responsible-ai
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - guardrails
-  - human in the loop
-  - responsible AI
-  - approval gates
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-guardrails-and-human-in-the-loop/
+- gh-600
+- guardrails
+- human in the loop
+- responsible AI
+- approval gates
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1100/agentic-guardrails-and-human-in-the-loop/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-autonomy-levels-matrix/
+  - /quests/1100/agentic-autonomy-levels-matrix/
   unlocks_quests:
-    - /quests/gh-600/agentic-codex-capstone-exam-trial/
+  - /quests/1100/agentic-codex-capstone-exam-trial/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-codex-capstone-exam-trial/
+  - /quests/1100/agentic-codex-capstone-exam-trial/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🛡️ Security Engineer
+  - 🤖 AI Engineer
+  - 🛡️ Security Engineer
   skill_trees:
-    - Agentic AI
-    - AI Governance
-    - Security
+  - Agentic AI
+  - AI Governance
+  - Security
 rewards:
   badges:
-    - 🛡️ The Warden
+  - 🛡️ The Warden
   skills_unlocked:
-    - 🚧 Guardrail Engineering
-    - 👤 HITL Pattern Design
+  - 🚧 Guardrail Engineering
+  - 👤 HITL Pattern Design
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q18 (Autonomy Levels Matrix)
-    - Understanding of GitHub Environments with required reviewers
-    - Familiarity with CODEOWNERS
+  - Completed Q18 (Autonomy Levels Matrix)
+  - Understanding of GitHub Environments with required reviewers
+  - Familiarity with CODEOWNERS
   system_requirements:
-    - GitHub repository with Environments configured
-    - Copilot coding agent access
+  - GitHub repository with Environments configured
+  - Copilot coding agent access
 validation_criteria:
   completion_requirements:
-    - At least 3 guardrail types implemented (file scope, approval gate, audit trail)
-    - Human-in-the-loop workflow tested end-to-end
-    - Guardrail documentation published in repository
+  - At least 3 guardrail types implemented (file scope, approval gate, audit trail)
+  - Human-in-the-loop workflow tested end-to-end
+  - Guardrail documentation published in repository
 quest_mapping:
-  coordinates: "[6, 2]"
+  coordinates: '[6, 2]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Warden's Gate
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-guardrails-and-human-in-the-loop/
 ---
-
 *The Warden's Gate is the last line between the agent's plans and their execution. It is not a place of fear — it is a place of clarity. Every agent knows the Pact: here are the things you may do alone; here are the things you must ask permission for; here are the things that are forever forbidden. The Warden does not judge the agent. She judges the action.*
 
 ## 🗺️ Quest Network Position
@@ -109,6 +114,12 @@ graph LR
 - [ ] **Implement forbidden action detection** — workflow detects if agent tries forbidden action
 - [ ] **Create an audit trail** — every agent action logged with actor, action, timestamp, approval state
 - [ ] **Test the guardrails** — intentionally trigger each guardrail and verify it fires
+
+## 🗺️ Quest Prerequisites
+
+- A GitHub repository where you can configure CODEOWNERS, branch protection, and Environments
+- Familiarity with GitHub Actions workflows
+- Completed [Agentic Tool Selection & Permissions](/quests/1000/agentic-tool-selection-and-permissions/) so you understand the agent surface you're guarding
 
 ## ⚔️ The Quest Begins
 
@@ -365,4 +376,17 @@ python3 scripts/validate_quest.py --quest q19
 | 🛡️ The Warden Badge | Earned on completion |
 | 🚧 Guardrail Engineering | Skill unlocked |
 | 100 XP | Added to Level 1100 total |
-| Unlocks | [Capstone: Trial of the Agentic Codex](/quests/gh-600/agentic-codex-capstone-exam-trial/) |
+| Unlocks | [Capstone: Trial of the Agentic Codex](/quests/1100/agentic-codex-capstone-exam-trial/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]]
+**Unlocks:** [[Trial of the Agentic Codex: The Grand Capstone]]
+**Sequel quests:** [[Trial of the Agentic Codex: The Grand Capstone]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

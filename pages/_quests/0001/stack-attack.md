@@ -27,11 +27,7 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   child_quests:
-  - /quests/0010/django-rest-framework/
-  - /quests/0010/react-typescript-setup/
   sequel_quests:
-  - /quests/0100/erp-module-development/
-  - /quests/0100/enterprise-devops/
 learning_paths:
   primary_paths:
   - Full-Stack Development
@@ -92,7 +88,7 @@ categories:
 - Enterprise
 - ERP
 tags:
-- lvl-0001
+- "0001"
 - ai-assisted-development
 - django
 - react
@@ -104,7 +100,7 @@ tags:
 - celery
 - postgresql
 keywords:
-- lvl-0001
+- "0001"
 - ai-assisted-development
 - django erp
 - react frontend
@@ -1854,4 +1850,13 @@ The open-source ERP landscape is vast — ERPNext, Odoo, and dozens of specializ
 **Stack Mastered**: Django 5 + DRF + Celery + PostgreSQL + Redis + React 18 + TypeScript + Vite + TanStack + shadcn/ui  
 
 *Achievement Unlocked: Guardian of the Enterprise Fortress* 🏆
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

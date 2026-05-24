@@ -1,9 +1,11 @@
 ---
-title: "The Scribe's Codex: Observability in Multi-Agent Systems"
-description: "Build observability into multi-agent GitHub workflows — correlate traces across agents, aggregate sub-agent outputs, detect inter-agent failures, and produce a unified audit log."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
+description: Build observability into multi-agent GitHub workflows — correlate traces
+  across agents, aggregate sub-agent outputs, detect inter-agent failures, and produce
+  a unified audit log.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-multi-agent-observability.png
-level: "1011"
+level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,81 +13,84 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - multi-agent
-  - observability
-  - distributed-tracing
+- agentic-ai
+- multi-agent
+- observability
+- distributed-tracing
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1011 Quest 3/4 — Domain 5: Multi-Agent Systems"
-excerpt: The Scribe sits at the centre of the Council Chambers, watching every messenger arrive and depart. Without the Scribe's Codex, no one knows which agent did what, and failures become unsolvable mysteries.
+sub_title: 'Level 1011 Quest 3/4 — Domain 5: Multi-Agent Systems'
+excerpt: The Scribe sits at the centre of the Council Chambers, watching every messenger
+  arrive and depart. Without the Scribe's Codex, no one knows which agent did what,
+  and failures become unsolvable mysteries.
 author: IT-Journey Team
 tags:
-  - lvl-1011
-  - agentic-ai
-  - multi-agent
-  - observability
-  - gh-600
-  - main_quest
-  - hands-on
+- '1011'
+- agentic-ai
+- multi-agent
+- observability
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - multi-agent observability
-  - distributed tracing
-  - agent audit log
-  - correlation id
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-multi-agent-observability/
+- gh-600
+- multi-agent observability
+- distributed tracing
+- agent audit log
+- correlation id
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1011/agentic-multi-agent-observability/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-multi-agent-orchestration-patterns/
+  - /quests/1011/agentic-multi-agent-orchestration-patterns/
   unlocks_quests:
-    - /quests/gh-600/agentic-multi-agent-failure-recovery/
+  - /quests/1011/agentic-multi-agent-failure-recovery/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-multi-agent-failure-recovery/
+  - /quests/1011/agentic-multi-agent-failure-recovery/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🔍 Reliability Engineer
+  - 🤖 AI Engineer
+  - 🔍 Reliability Engineer
   skill_trees:
-    - Agentic AI
-    - Observability
+  - Agentic AI
+  - Observability
 rewards:
   badges:
-    - 📜 The Scribe
+  - 📜 The Scribe
   skills_unlocked:
-    - 🔗 Correlation Tracing
-    - 📊 Multi-Agent Audit
+  - 🔗 Correlation Tracing
+  - 📊 Multi-Agent Audit
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q14 (Multi-Agent Orchestration Patterns)
-    - Understanding of GitHub Actions artifacts and logs
+  - Completed Q14 (Multi-Agent Orchestration Patterns)
+  - Understanding of GitHub Actions artifacts and logs
   system_requirements:
-    - GitHub repository with multi-agent workflows configured
+  - GitHub repository with multi-agent workflows configured
 validation_criteria:
   completion_requirements:
-    - Correlation ID propagated across all agents in a workflow
-    - Unified audit log generated from sub-agent traces
-    - At least one inter-agent failure detected using the audit log
+  - Correlation ID propagated across all agents in a workflow
+  - Unified audit log generated from sub-agent traces
+  - At least one inter-agent failure detected using the audit log
 quest_mapping:
-  coordinates: "[5, 2]"
+  coordinates: '[5, 2]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Scriptorium
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-multi-agent-observability/
 ---
-
 *The Scribes of the Codex inscribe every action, every decision, every message that passes through the Council Chambers. Not to judge — but to know. When something goes wrong and three agents point at each other, the Scribe opens the Codex, finds the exact message where the failure began, and settles the matter in moments.*
 
 ## 🗺️ Quest Network Position
@@ -320,4 +325,17 @@ python3 scripts/validate_quest.py --quest q15
 | 📜 The Scribe Badge | Earned on completion |
 | 🔗 Correlation Tracing | Skill unlocked |
 | 100 XP | Added to Level 1011 total |
-| Unlocks | [Q16: When Familiars Fall](/quests/gh-600/agentic-multi-agent-failure-recovery/) |
+| Unlocks | [Q16: When Familiars Fall](/quests/1011/agentic-multi-agent-failure-recovery/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
+**Unlocks:** [[When Familiars Fall: Multi-Agent Failure Recovery]]
+**Sequel quests:** [[When Familiars Fall: Multi-Agent Failure Recovery]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

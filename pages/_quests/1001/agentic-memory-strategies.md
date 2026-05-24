@@ -1,9 +1,11 @@
 ---
-title: "Vaults of Recollection: Agent Memory Strategies"
-description: "Implement memory for GitHub Copilot agents — design ephemeral, session, and persistent memory using GitHub-native artifacts, issues, and repository files to maintain context across interactions."
-date: 2026-05-17T00:00:00.000Z
+title: 'Vaults of Recollection: Agent Memory Strategies'
+description: Implement memory for GitHub Copilot agents — design ephemeral, session,
+  and persistent memory using GitHub-native artifacts, issues, and repository files
+  to maintain context across interactions.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-memory-strategies.png
-level: "1001"
+level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,82 +13,85 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - agent-memory
-  - context-management
-  - state-persistence
+- agentic-ai
+- agent-memory
+- context-management
+- state-persistence
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1001 Quest 3/3 — Domain 3: Context & Memory Management"
-excerpt: Memory defines intelligence. An agent without memory repeats every mistake and re-discovers every insight. Open the Vaults of Recollection and teach your agent to remember.
+sub_title: 'Level 1001 Quest 3/3 — Domain 3: Context & Memory Management'
+excerpt: Memory defines intelligence. An agent without memory repeats every mistake
+  and re-discovers every insight. Open the Vaults of Recollection and teach your agent
+  to remember.
 author: IT-Journey Team
 tags:
-  - lvl-1001
-  - agentic-ai
-  - agent-memory
-  - context
-  - gh-600
-  - main_quest
-  - hands-on
+- '1001'
+- agentic-ai
+- agent-memory
+- context
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - agent memory
-  - context management
-  - persistent memory
-  - github artifacts
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-memory-strategies/
+- gh-600
+- agent memory
+- context management
+- persistent memory
+- github artifacts
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1001/agentic-memory-strategies/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-safe-execution-and-error-handling/
+  - /quests/1001/agentic-safe-execution-and-error-handling/
   unlocks_quests:
-    - /quests/gh-600/agentic-state-persistence-and-drift/
+  - /quests/1010/agentic-state-persistence-and-drift/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-state-persistence-and-drift/
+  - /quests/1010/agentic-state-persistence-and-drift/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
+  - 🤖 AI Engineer
   skill_trees:
-    - Agentic AI
-    - Context Management
+  - Agentic AI
+  - Context Management
 rewards:
   badges:
-    - 🗄️ Vault Keeper
+  - 🗄️ Vault Keeper
   skills_unlocked:
-    - 🧠 Agent Memory Architecture
+  - 🧠 Agent Memory Architecture
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q7 (Safe Execution & Error Handling)
-    - Understanding of context windows in LLMs
+  - Completed Q7 (Safe Execution & Error Handling)
+  - Understanding of context windows in LLMs
   system_requirements:
-    - GitHub account with Actions and Artifacts enabled
+  - GitHub account with Actions and Artifacts enabled
 validation_criteria:
   completion_requirements:
-    - Three memory tiers implemented (ephemeral/session/persistent) using GitHub artifacts
-    - Memory loading integrated into agent workflow
-    - Context injection demonstrated — agent references prior decisions
+  - Three memory tiers implemented (ephemeral/session/persistent) using GitHub artifacts
+  - Memory loading integrated into agent workflow
+  - Context injection demonstrated — agent references prior decisions
   skill_demonstrations:
-    - Can explain the trade-offs between memory tiers for agent use cases
-    - Can implement persistent agent memory using GitHub repository files
+  - Can explain the trade-offs between memory tiers for agent use cases
+  - Can implement persistent agent memory using GitHub repository files
 quest_mapping:
-  coordinates: "[3, 1]"
+  coordinates: '[3, 1]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Memory Vaults
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-memory-strategies/
 ---
-
 *The Vault Masters remember what all others forget. Each vault holds a tier of memory — ephemeral scrolls that burn after each session, session stones that persist through a day's work, and the eternal archives that outlive the agents that wrote them. An agent that knows which vault to consult, and when to write to each, is an agent that learns.*
 
 ## 🗺️ Quest Network Position
@@ -306,10 +311,23 @@ python3 scripts/validate_quest.py --quest q8
 | 🗄️ Vault Keeper Badge | Earned on completion |
 | 🧠 Agent Memory Architecture | Skill unlocked |
 | 100 XP | Added to Level 1001 total |
-| Unlocks | [Q9: Anchoring the Drifting Agent](/quests/gh-600/agentic-state-persistence-and-drift/) |
+| Unlocks | [Q9: Anchoring the Drifting Agent](/quests/1010/agentic-state-persistence-and-drift/) |
 
 ## 🔗 Continue Your Journey
 
-- **Next:** [Q9: Anchoring the Drifting Agent](/quests/gh-600/agentic-state-persistence-and-drift/)
+- **Next:** [Q9: Anchoring the Drifting Agent](/quests/1010/agentic-state-persistence-and-drift/)
 - **Chronicle post:** [Taming Agent Memory and Context Drift](/posts/taming-agent-memory-and-context-drift/)
 - **Related note:** [Evaluation Signals Table](/notes/gh-600/evaluation-signals-table/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Shield of Retries: Safe Execution and Error Handling]]
+**Unlocks:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
+**Sequel quests:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

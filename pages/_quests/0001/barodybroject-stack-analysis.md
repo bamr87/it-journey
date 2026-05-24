@@ -2,7 +2,7 @@
 title: 'Technology Stack Analysis: Barodybroject'
 description: Comprehensive analysis of the Barodybroject Django-based parody news
   generator with OpenAI integration and Azure Container Apps deployment
-preview: images/previews/technology-stack-analysis-barodybroject.png
+preview: /images/previews/technology-stack-analysis-barodybroject.png
 repository: https://github.com/bamr87/barodybroject
 owner: bamr87
 primary_language: Python
@@ -44,8 +44,42 @@ keywords:
 - docker
 - postgresql
 author: IT-Journey Team
+quest_line: 'Stack Analysis Series'
+quest_arc: 'Repository archaeology'
+prerequisites:
+  knowledge_requirements: []
+  system_requirements: []
+quest_dependencies:
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
+quest_relationships:
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
+learning_paths:
+  primary_paths: []
+  character_classes: []
+rewards:
+  badges: []
+  progression_points: 0
+  skills_unlocked: []
+validation_criteria:
+  completion_requirements: []
+  skill_demonstrations: []
 ---
 # Technology Stack Analysis: Barodybroject
+
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 > **Repository**: [https://github.com/bamr87/barodybroject](https://github.com/bamr87/barodybroject)  
 > **Analysis Date**: November 2, 2025  
@@ -1132,3 +1166,12 @@ The systematic approach to architecture evolution, comprehensive documentation, 
 *Analysis completed by Stack Attack Protocol v1.0*  
 *Last updated: November 2, 2025*  
 *Next review recommended: February 2025 (after short-term recommendations)*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

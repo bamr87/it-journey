@@ -22,9 +22,16 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0111/api-authentication/
+  - /quests/0111/api-documentation/
+  - /quests/0111/api-versioning/
+  - /quests/0111/rate-limiting/
+  - /quests/0111/api-fundamentals/
+  - /quests/0111/error-handling/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1000/cloud-computing-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -67,14 +74,14 @@ categories:
 - Backend
 - Hard
 tags:
-- lvl-0111
+- "0111"
 - rest
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0111
+- "0111"
 - rest
 - main_quest
 - backend
@@ -488,3 +495,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0111 (7) - API Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained]]
+**Related quests:** [[API Authentication: OAuth, JWT, and API Keys Implementation]] · [[API Documentation: OpenAPI Specification and Developer Experience]] · [[API Versioning: Managing API Evolution and Backwards Compatibility]] · [[Rate Limiting: API Traffic Control and Throttling Strategies]] · [[API Fundamentals: Building Web Services and HTTP APIs]] · [[Error Handling: API Response Patterns and HTTP Status Codes]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

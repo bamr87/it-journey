@@ -24,7 +24,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/hello-noob/
+  parent_quest: /quests/0000/hello-noob/
   child_quests: []
   parallel_quests: []
   sequel_quests: []
@@ -117,6 +117,16 @@ rewards:
   - Eligibility for web development learning paths
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
+
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 *[Opening paragraph that sets the fantasy context using RPG metaphors and adventuring language. This should immediately immerse the learner in the quest narrative while clearly explaining the real-world technical value.]*
 
@@ -495,3 +505,12 @@ This quest advances you from basic GitHub usage to web publishing proficiency, o
 - [Jekyll Showcase](https://jekyllrb.com/showcase/) - Real Jekyll sites
 - [GitHub Pages Examples](https://github.com/collections/github-pages-examples) - Sample repositories
 - [AI Conversation Archives](https://github.com/search?q=ai+conversation+jekyll) - Inspiration for AI content sites
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

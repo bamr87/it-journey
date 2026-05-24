@@ -167,7 +167,6 @@ These fields MUST be present:
 - `learning_style` - Teaching approach: hands-on, conceptual, etc.
 - `quest_series` - Series or standalone
 - `author` - Quest creator
-- `layout` - Jekyll layout (usually "journals")
 - `keywords` - Primary and secondary keywords
 - `permalink` - URL path (must start with /quests/)
 - `fmContentType` - Should be "quest"

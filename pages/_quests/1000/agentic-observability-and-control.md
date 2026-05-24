@@ -1,9 +1,11 @@
 ---
-title: "The All-Seeing Eye: Observability & Control for Autonomous Agents"
-description: "Configure observability for GitHub Copilot coding agents — producing inspectable artifacts, configuring audit trails, and setting up human intervention points that don't slow delivery."
-date: 2026-05-17T00:00:00.000Z
+title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
+description: Configure observability for GitHub Copilot coding agents — producing
+  inspectable artifacts, configuring audit trails, and setting up human intervention
+  points that don't slow delivery.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-observability-and-control.png
-level: "1000"
+level: '1000'
 difficulty: 🟡 Medium
 estimated_time: 90 minutes
 primary_technology: github-copilot
@@ -11,84 +13,86 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - observability
-  - agent-control
-  - audit-trails
+- agentic-ai
+- observability
+- agent-control
+- audit-trails
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1000 Quest 1/4 — Domain 1: Agent Architecture & SDLC"
-excerpt: An agent you cannot observe is an agent you cannot trust. Learn to wire in observability that keeps humans informed without turning every decision into a bottleneck.
+sub_title: 'Level 1000 Quest 1/4 — Domain 1: Agent Architecture & SDLC'
+excerpt: An agent you cannot observe is an agent you cannot trust. Learn to wire in
+  observability that keeps humans informed without turning every decision into a bottleneck.
 author: IT-Journey Team
 tags:
-  - lvl-1000
-  - agentic-ai
-  - github-copilot
-  - observability
-  - gh-600
-  - main_quest
-  - hands-on
+- '1000'
+- agentic-ai
+- github-copilot
+- observability
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Medium
+- Quests
+- Agentic-AI
+- Medium
 keywords:
-  - gh-600
-  - agent observability
-  - agent audit trail
-  - human intervention
-  - github actions tracing
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-observability-and-control/
+- gh-600
+- agent observability
+- agent audit trail
+- human intervention
+- github actions tracing
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1000/agentic-observability-and-control/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-plan-vs-action-boundaries/
+  - /quests/0111/agentic-plan-vs-action-boundaries/
   unlocks_quests:
-    - /quests/gh-600/agentic-tool-selection-and-permissions/
+  - /quests/1000/agentic-tool-selection-and-permissions/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-tool-selection-and-permissions/
+  - /quests/1000/agentic-tool-selection-and-permissions/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🔭 SRE / Platform Engineer
+  - 🤖 AI Engineer
+  - 🔭 SRE / Platform Engineer
   skill_trees:
-    - Agentic AI
-    - GitHub Actions
+  - Agentic AI
+  - GitHub Actions
 rewards:
   badges:
-    - 🔭 Observability Warden
+  - 🔭 Observability Warden
   skills_unlocked:
-    - 👁️ Agent Tracing & Audit
+  - 👁️ Agent Tracing & Audit
   progression_points: 80
 prerequisites:
   knowledge_requirements:
-    - Completed Q1 and Q2 (SDLC integration + plan-first pattern)
-    - Basic GitHub Actions knowledge
+  - Completed Q1 and Q2 (SDLC integration + plan-first pattern)
+  - Basic GitHub Actions knowledge
   system_requirements:
-    - GitHub account with Copilot access
-    - GitHub Actions enabled on a repository
+  - GitHub account with Copilot access
+  - GitHub Actions enabled on a repository
 validation_criteria:
   completion_requirements:
-    - GitHub Actions workflow configured to capture agent execution traces
-    - Inspectable artifact (YAML/JSON execution log) produced per agent run
-    - Human intervention point defined that pauses risky actions
+  - GitHub Actions workflow configured to capture agent execution traces
+  - Inspectable artifact (YAML/JSON execution log) produced per agent run
+  - Human intervention point defined that pauses risky actions
   skill_demonstrations:
-    - Can read an agent execution trace and determine what the agent did and why
-    - Can configure a non-blocking observability layer for a Copilot agent
+  - Can read an agent execution trace and determine what the agent did and why
+  - Can configure a non-blocking observability layer for a Copilot agent
 quest_mapping:
-  coordinates: "[1, 3]"
+  coordinates: '[1, 3]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Watchtower Ridge
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-observability-and-control/
 ---
-
 *High in the Watchtower of the GitHub Citadel, the Scriers keep vigil. They do not control the agents — the agents operate freely. But the Scriers see everything: every decision, every action, every output. When an agent strays, the Scriers raise the alarm. Without them, the Citadel would fall to the very agents sworn to protect it.*
 
 ## 🗺️ Quest Network Position
@@ -338,12 +342,25 @@ python3 scripts/validate_quest.py --quest q3
 | 🔭 Observability Warden Badge | Earned on completion |
 | 👁️ Agent Tracing & Audit | Skill unlocked |
 | 80 XP | Added to Level 1000 total |
-| Unlocks | [Q4: Forging the Agent's Arsenal](/quests/gh-600/agentic-tool-selection-and-permissions/) |
+| Unlocks | [Q4: Forging the Agent's Arsenal](/quests/1000/agentic-tool-selection-and-permissions/) |
 
 ---
 
 ## 🔗 Continue Your Journey
 
-- **Next quest:** [Q4: Forging the Agent's Arsenal](/quests/gh-600/agentic-tool-selection-and-permissions/) — Domain 2 begins
+- **Next quest:** [Q4: Forging the Agent's Arsenal](/quests/1000/agentic-tool-selection-and-permissions/) — Domain 2 begins
 - **Chronicle post:** [Embedding Agents in the SDLC](/posts/embedding-agents-in-the-sdlc/)
 - **Related note:** [Evaluation Signals Table](/notes/gh-600/evaluation-signals-table/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Three Sigils: Plan, Reason, Act]]
+**Unlocks:** [[Forging the Agent's Arsenal: Tool Selection & Permissions]]
+**Sequel quests:** [[Forging the Agent's Arsenal: Tool Selection & Permissions]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

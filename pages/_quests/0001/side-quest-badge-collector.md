@@ -33,7 +33,7 @@ categories:
 - Community
 - Customization
 tags:
-- lvl-0001
+- "0001"
 - contributor
 - badges
 - achievements
@@ -188,3 +188,14 @@ Once you've pinned at least one badge to your Featured section, you've earned th
 ---
 
 > *"A well-curated trophy wall speaks louder than a thousand commits."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
+**Recommended:** [[Avatar Forge: Crafting Your Digital Portrait]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

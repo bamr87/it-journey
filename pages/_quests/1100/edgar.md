@@ -13,7 +13,7 @@ lastmod: 2025-08-20 04:37:39.870000+00:00
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-180 minutes
-primary_technology: lvl-1100
+primary_technology: 1100
 quest_type: main_quest
 quest_series: Data Realm Conquests
 skill_focus:
@@ -38,7 +38,7 @@ categories:
 - Development
 - Intermediate
 tags:
-- lvl-1100
+- '1100'
 - python
 - api
 - sec-edgar
@@ -47,7 +47,7 @@ tags:
 - project-based
 - gamified-learning
 keywords:
-- lvl-1100
+- '1100'
 - python
 - api
 - sec-edgar
@@ -69,6 +69,8 @@ related_quests:
 - 'Level 1010: JSON Alchemy – From Chaos to Tables'
 - 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
 - 'Level 10001: Data Vis – Charts and Dashboards'
+redirect_from:
+- /quests/1100/edgar/
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 
@@ -417,3 +419,12 @@ graph TD
 
 🎉 Congratulations, Hero! You’ve humbled King EDGAR—not by theft, but by wisdom. Use these powers ethically,
 comply with SEC edicts, and share knowledge widely. Onward—may your APIs never 429! ⚔️📜✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

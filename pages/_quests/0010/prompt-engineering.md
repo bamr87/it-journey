@@ -12,7 +12,7 @@ lastmod: 2025-11-03 01:10:01.141000+00:00
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0010
+primary_technology: 8
 quest_type: main_quest
 quest_series: AI Development Mastery
 quest_line: Foundation Path
@@ -74,14 +74,14 @@ categories:
 - AI-Development
 - Tool-Mastery
 tags:
-- lvl-0010
+- '0010'
 - ai-development
 - prompt-engineering
 - language-models
 - ai-communication
 - tool-mastery
 keywords:
-- lvl-0010
+- '0010'
 - ai-development
 - prompt-engineering
 - language-models
@@ -101,6 +101,8 @@ rewards:
   unlocks_features:
   - Access to advanced AI agent development quests
   - Ability to create custom AI-powered tools
+redirect_from:
+- /quests/0010/prompt-engineering/
 ---
 *In the vast Digital Nexus, where streams of data flow like rivers of light and artificial minds process infinite thoughts, there exists a sacred art known only to the most skilled technologists: **Prompt Engineering**. This mystical discipline allows mortals to communicate with the great Language Spirits—vast AI entities of unimaginable knowledge—and bend their power to solve problems, create content, and transform ideas into reality.*
 
@@ -1384,3 +1386,12 @@ Confirm your mastery by demonstrating:
 **Your Journey Continues**: The path of the Prompt Alchemist never truly ends. Each new AI interaction is an opportunity to refine your craft, build better templates, and achieve new levels of mastery. Share your knowledge with fellow travelers, contribute to the community's prompt library, and always remember: **Continuous improvement is the ultimate technique.**
 
 🎉 **Congratulations, Master Prompt Alchemist!** Now go forth and craft prompts that unlock the true potential of AI! 🎉
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

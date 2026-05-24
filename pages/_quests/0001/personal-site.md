@@ -21,17 +21,51 @@ categories:
 - GitHub-Pages
 tags:
 - Personal Site
-- lvl-0001
+- '0001'
 - github-pages
 keywords:
 - Personal Site
-- lvl-0001
+- '0001'
 - github-pages
 fmContentType: quest
 key: tutorial
 index: 8199
 subcategory: jekyll
+quest_line: 'Site Building Series'
+quest_arc: 'Personal portfolio arc'
+prerequisites:
+  knowledge_requirements: []
+  system_requirements: []
+quest_dependencies:
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
+quest_relationships:
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
+learning_paths:
+  primary_paths: []
+  character_classes: []
+rewards:
+  badges: []
+  progression_points: 0
+  skills_unlocked: []
+validation_criteria:
+  completion_requirements: []
+  skill_demonstrations: []
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 > Services/tools used for building personal site.
 
 ## 1. Personal Site
@@ -60,3 +94,12 @@ My personal website can be accessed through following domains. These sites are a
  16  | <https://lunrjs.com/>                                | Lightweight full-text offline search
  17  | <http://nanobar.jacoborus.codes/>                    | Lightweight progress bars
  18  | <https://www.google.com/adsense/>                    | Google Ads
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

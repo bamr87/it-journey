@@ -21,9 +21,17 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1110/system-design-interviews/
+  - /quests/1110/domain-driven-design/
+  - /quests/1110/microservices-architecture/
+  - /quests/1110/404-hunting-quest/
+  - /quests/1110/scaling-strategies/
+  - /quests/1110/api-gateway-patterns/
+  - /quests/1110/event-driven-design/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1111/technical-leadership/
 learning_paths:
   primary_paths:
   - Software Development
@@ -66,14 +74,14 @@ categories:
 - Architecture
 - Hard
 tags:
-- lvl-1110
+- "1110"
 - python
 - main_quest
 - architecture
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1110
+- "1110"
 - python
 - main_quest
 - architecture
@@ -487,3 +495,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1110 - Quality Assurance]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Technical Leadership: Building High-Performance Engineering Teams]]
+**Related quests:** [[System Design Interview Mastery: Ace Technical Interviews]] · [[Domain-Driven Design: Strategic and Tactical Patterns]] · [[Microservices Architecture: Building Scalable Distributed Systems]] · [[404 Hunting: Binary Wards for Unbreakable Links]] · [[Scaling Strategies: Horizontal and Vertical Scaling Patterns]] · [[API Gateway Patterns: Routing, Load Balancing and Security]] · [[Event-Driven Architecture: Message Queues and Event Sourcing]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -73,14 +73,14 @@ categories:
 - DevOps
 - Beginner
 tags:
-- lvl-0000
+- "0000"
 - bash
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0000
+- "0000"
 - bash
 - main_quest
 - devops
@@ -422,3 +422,13 @@ After your first online run, continue with the [Bashcrawl Terminal Adventure Que
 - [tldr pages — Simplified Man Pages](https://tldr.sh/)
 - [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) - Browser-based terminal dungeon for practicing the commands in this quest
 - [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/) - Full local game, scripts, docs, and contribution path
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

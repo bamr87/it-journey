@@ -13,25 +13,25 @@ lastmod: 2024-05-28 04:25:00.957000+00:00
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0100
+primary_technology: 64
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
 skill_focus:
 - Quests
 - Frontend
 learning_style: hands-on
-permalink: /quests/0100/lvl-010-frontend-docker/
+permalink: /quests/0100/010-frontend-docker/
 categories:
 - Quests
 - Frontend
 tags:
-- lvl-0100
+- '0100'
 - docker
 - jekyll
 - bootstrap
 - frontend
 keywords:
-- lvl-0100
+- '0100'
 - docker
 - jekyll
 - bootstrap
@@ -42,7 +42,19 @@ attachments: ''
 sub-title: 'Level 010: Adding Bootstrap 5 to Jekyll'
 slug: null
 type: default
+redirect_from:
+- /quests/0100/frontend-docker-level-010/
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 Awesome! You’ve laid a strong foundation by setting up Docker and creating your Jekyll site. Now, let’s journey further into Level 010, where we will add Bootstrap 5 to enhance the visual appeal and functionality of your site.
 
 ### Level 010: Adding Bootstrap 5
@@ -158,3 +170,12 @@ Awesome! You’ve laid a strong foundation by setting up Docker and creating you
 In Level 010, you’ve added Bootstrap 5 to your Jekyll site, allowing you to use its powerful CSS and JavaScript components. By including Bootstrap in the `_includes/head.html` file, you ensure it’s available across your entire site. You also customized your homepage to utilize Bootstrap’s components, enhancing the visual appeal and functionality of your site.
 
 You've now equipped your site with the magical powers of Bootstrap. Are you ready to proceed to the next level, where we'll further customize and style your site? Or do you have any questions about Level 010? 🌟🏞️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

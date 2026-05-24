@@ -85,7 +85,7 @@ categories:
 - Frontend
 - Hard
 tags:
-- lvl-0101
+- "0101"
 - jekyll
 - liquid
 - collections
@@ -98,7 +98,7 @@ tags:
 - static-sites
 - python-automation
 keywords:
-- lvl-0101
+- "0101"
 - jekyll
 - liquid
 - collections
@@ -1177,3 +1177,12 @@ Before committing, verify:
 ---
 
 *May your collections be organized, your filters be fast, and your frontmatter be consistent! Ready for your next adventure? Check the [Quest Map](/quests/) for your next challenge!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

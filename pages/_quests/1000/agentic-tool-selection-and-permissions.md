@@ -1,9 +1,11 @@
 ---
-title: "Forging the Agent's Arsenal: Tool Selection & Permissions"
-description: "Select and configure the right tools for GitHub Copilot agents — identify required capabilities, configure tool access, and enforce least-privilege permissions so your agent can only touch what it needs."
-date: 2026-05-17T00:00:00.000Z
+title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
+description: Select and configure the right tools for GitHub Copilot agents — identify
+  required capabilities, configure tool access, and enforce least-privilege permissions
+  so your agent can only touch what it needs.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-tool-selection-and-permissions.png
-level: "1000"
+level: '1000'
 difficulty: 🟡 Medium
 estimated_time: 90 minutes
 primary_technology: github-copilot
@@ -11,83 +13,85 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - tool-use
-  - permissions
-  - least-privilege
+- agentic-ai
+- tool-use
+- permissions
+- least-privilege
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1000 Quest 2/4 — Domain 2: Tool Use & Environment Interaction"
-excerpt: A blacksmith without the right tools is a storyteller. Learn to identify, configure, and restrict the exact tools your agent needs — no more, no less.
+sub_title: 'Level 1000 Quest 2/4 — Domain 2: Tool Use & Environment Interaction'
+excerpt: A blacksmith without the right tools is a storyteller. Learn to identify,
+  configure, and restrict the exact tools your agent needs — no more, no less.
 author: IT-Journey Team
 tags:
-  - lvl-1000
-  - agentic-ai
-  - github-copilot
-  - tool-permissions
-  - gh-600
-  - main_quest
-  - hands-on
+- '1000'
+- agentic-ai
+- github-copilot
+- tool-permissions
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Medium
+- Quests
+- Agentic-AI
+- Medium
 keywords:
-  - gh-600
-  - agent tools
-  - tool permissions
-  - least privilege
-  - copilot tools
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-tool-selection-and-permissions/
+- gh-600
+- agent tools
+- tool permissions
+- least privilege
+- copilot tools
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1000/agentic-tool-selection-and-permissions/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-observability-and-control/
+  - /quests/1000/agentic-observability-and-control/
   unlocks_quests:
-    - /quests/gh-600/agentic-mcp-server-mastery/
+  - /quests/1000/agentic-mcp-server-mastery/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-mcp-server-mastery/
+  - /quests/1000/agentic-mcp-server-mastery/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
+  - 🤖 AI Engineer
   skill_trees:
-    - Agentic AI
-    - GitHub Copilot
+  - Agentic AI
+  - GitHub Copilot
 rewards:
   badges:
-    - ⚒️ Tool Smith
+  - ⚒️ Tool Smith
   skills_unlocked:
-    - 🔐 Least-Privilege Tool Config
+  - 🔐 Least-Privilege Tool Config
   progression_points: 80
 prerequisites:
   knowledge_requirements:
-    - Completed Q1–Q3 or equivalent Domain 1 knowledge
-    - Understanding of GitHub Actions permissions model
+  - Completed Q1–Q3 or equivalent Domain 1 knowledge
+  - Understanding of GitHub Actions permissions model
   system_requirements:
-    - GitHub account with Copilot access
-    - VS Code with GitHub Copilot extension
+  - GitHub account with Copilot access
+  - VS Code with GitHub Copilot extension
 validation_criteria:
   completion_requirements:
-    - Tool inventory created for a sample agent task
-    - Permissions configured at minimum required scope
-    - "Tool allow-list defined in .github/copilot-instructions.md"
+  - Tool inventory created for a sample agent task
+  - Permissions configured at minimum required scope
+  - Tool allow-list defined in .github/copilot-instructions.md
   skill_demonstrations:
-    - Can enumerate required tools for a given agent task
-    - Can restrict agent tool access to least-privilege
+  - Can enumerate required tools for a given agent task
+  - Can restrict agent tool access to least-privilege
 quest_mapping:
-  coordinates: "[2, 1]"
+  coordinates: '[2, 1]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Arsenal District
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-tool-selection-and-permissions/
 ---
-
 *The Master Blacksmith of the Arsenal District teaches that the most dangerous weapon is the one given to a soldier who doesn't know its purpose. Agents armed with every tool are agents destined for accidental destruction. Your task today: identify the exact tools your agent needs, no more, no less.*
 
 ## 🗺️ Quest Network Position
@@ -228,4 +232,17 @@ python3 scripts/validate_quest.py --quest q4
 | ⚒️ Tool Smith Badge | Earned on completion |
 | 🔐 Least-Privilege Tool Config | Skill unlocked |
 | 80 XP | Added to Level 1000 total |
-| Unlocks | [Q5: The MCP Conclave](/quests/gh-600/agentic-mcp-server-mastery/) |
+| Unlocks | [Q5: The MCP Conclave](/quests/1000/agentic-mcp-server-mastery/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
+**Unlocks:** [[The MCP Conclave: Mastering Model Context Protocol Servers]]
+**Sequel quests:** [[The MCP Conclave: Mastering Model Context Protocol Servers]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

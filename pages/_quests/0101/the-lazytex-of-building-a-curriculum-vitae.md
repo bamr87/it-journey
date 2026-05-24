@@ -14,7 +14,7 @@ lastmod: 2025-08-17 21:36:08.855000+00:00
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0101
+primary_technology: 65
 quest_type: main_quest
 quest_series: Professional Identity Path
 skill_focus:
@@ -37,14 +37,14 @@ categories:
 - Development
 - Foundation
 tags:
-- lvl-0101
+- '0101'
 - latex
 - vscode
 - resume
 - pdf
 - tool-mastery
 keywords:
-- lvl-0101
+- '0101'
 - latex
 - vscode
 - resume
@@ -63,6 +63,8 @@ related_quests:
 - 'Level 0011: Markdown to PDF Basics'
 - 'Level 0100: Git Fundamentals'
 - 'Level 1010: Portfolio Website Publishing'
+redirect_from:
+- /quests/0101/the-lazytex-of-building-a-curriculum-vitae/
 ---
 ## 🧙‍♂️ Epic Introduction
 
@@ -421,4 +423,12 @@ Before you depart, ensure you can:
 - Aligns to `cv.tex` template (packages, sections, commands)
 - Guides VS Code + LaTeX setup across platforms
 - Provides objectives, challenges, rewards, validation, and resources
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

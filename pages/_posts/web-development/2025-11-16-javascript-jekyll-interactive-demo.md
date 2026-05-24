@@ -1,7 +1,7 @@
 ---
 title: "Interactive JavaScript & Jekyll Layout Magic: A Comprehensive Demo"
 description: Dive deep into Jekyll's layout system combined with dynamic JavaScript functionality. Learn how to create interactive web experiences that leverage both static site generation and client-side scripting.
-preview: Explore the perfect marriage of Jekyll layouts and JavaScript interactivity!
+preview: /images/favicon_gpt_computer_retro.png
 tags:
   - javascript
   - jekyll

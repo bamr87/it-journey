@@ -72,13 +72,13 @@ tags:
 - terminal
 - game-development
 - shell-scripting
-- lvl-000
+- 000
 keywords:
 - bash
 - terminal
 - game-development
 - shell-scripting
-- lvl-000
+- 000
 fmContentType: quest
 draft: false
 sub-title: 'Level 000 Quest: Extending bashcrawl''s Terminal Dungeon'
@@ -576,3 +576,14 @@ Before opening a pull request or sharing your mod, verify your addition like a m
 - [Bash Reference Manual (GNU)](https://www.gnu.org/software/bash/manual/bash.html)
 - [Advanced Bash-Scripting Guide (TLDP)](https://tldp.org/LDP/abs/html/)
 - [ShellCheck — Shell script linter](https://www.shellcheck.net/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Linux Fundamentals]]
+**Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

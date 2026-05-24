@@ -1,9 +1,11 @@
 ---
-title: "The Agent Pantheon: Multi-Agent Lifecycle Management"
-description: "Manage the full lifecycle of agents in a GitHub-native multi-agent system — provisioning, monitoring, scaling, decommissioning, and replacing agents across long-running workflows."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
+description: Manage the full lifecycle of agents in a GitHub-native multi-agent system
+  — provisioning, monitoring, scaling, decommissioning, and replacing agents across
+  long-running workflows.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-multi-agent-lifecycle-management.png
-level: "1100"
+level: '1100'
 difficulty: ⚔️ Epic
 estimated_time: 180 minutes
 primary_technology: github-copilot
@@ -11,81 +13,84 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - multi-agent
-  - lifecycle-management
-  - operations
+- agentic-ai
+- multi-agent
+- lifecycle-management
+- operations
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1100 Quest 1/4 — Domain 5: Multi-Agent Systems"
-excerpt: The Pantheon is not built in a day. Each agent is a deity with its own domain, and each domain must be governed — created, empowered, monitored, and retired when its purpose is fulfilled.
+sub_title: 'Level 1100 Quest 1/4 — Domain 5: Multi-Agent Systems'
+excerpt: The Pantheon is not built in a day. Each agent is a deity with its own domain,
+  and each domain must be governed — created, empowered, monitored, and retired when
+  its purpose is fulfilled.
 author: IT-Journey Team
 tags:
-  - lvl-1100
-  - agentic-ai
-  - multi-agent
-  - lifecycle-management
-  - gh-600
-  - main_quest
-  - hands-on
+- '1100'
+- agentic-ai
+- multi-agent
+- lifecycle-management
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Epic
+- Quests
+- Agentic-AI
+- Epic
 keywords:
-  - gh-600
-  - agent lifecycle management
-  - agent provisioning
-  - agent decommission
-  - long-running agents
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-multi-agent-lifecycle-management/
+- gh-600
+- agent lifecycle management
+- agent provisioning
+- agent decommission
+- long-running agents
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1100/agentic-multi-agent-lifecycle-management/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-multi-agent-failure-recovery/
+  - /quests/1011/agentic-multi-agent-failure-recovery/
   unlocks_quests:
-    - /quests/gh-600/agentic-autonomy-levels-matrix/
+  - /quests/1100/agentic-autonomy-levels-matrix/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-autonomy-levels-matrix/
+  - /quests/1100/agentic-autonomy-levels-matrix/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🏛️ Architect
+  - 🤖 AI Engineer
+  - 🏛️ Architect
   skill_trees:
-    - Agentic AI
-    - Platform Engineering
+  - Agentic AI
+  - Platform Engineering
 rewards:
   badges:
-    - 🏛️ Pantheon Keeper
+  - 🏛️ Pantheon Keeper
   skills_unlocked:
-    - 🌱 Agent Provisioning
-    - 🔄 Agent Lifecycle
+  - 🌱 Agent Provisioning
+  - 🔄 Agent Lifecycle
   progression_points: 150
 prerequisites:
   knowledge_requirements:
-    - Completed Q16 (Multi-Agent Failure Recovery)
-    - Understanding of GitHub Actions scheduled triggers and environment management
+  - Completed Q16 (Multi-Agent Failure Recovery)
+  - Understanding of GitHub Actions scheduled triggers and environment management
   system_requirements:
-    - GitHub account with Actions, Environments, and Copilot enabled
+  - GitHub account with Actions, Environments, and Copilot enabled
 validation_criteria:
   completion_requirements:
-    - Agent registry documented and maintained in repository
-    - Agent health monitoring workflow implemented
-    - Decommission procedure documented and tested
+  - Agent registry documented and maintained in repository
+  - Agent health monitoring workflow implemented
+  - Decommission procedure documented and tested
 quest_mapping:
-  coordinates: "[5, 4]"
+  coordinates: '[5, 4]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Pantheon Summit
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-multi-agent-lifecycle-management/
 ---
-
 *At the summit of the Citadel stands the Pantheon — a hall of agents that have proven their worth. Each agent's name is carved into the registry stone. Each is granted a domain and a purpose. Each is monitored, supported, and eventually retired with honours. The Pantheon Keeper knows: what is not managed will eventually fail, silently, and no one will notice until it is too late.*
 
 ## 🗺️ Quest Network Position
@@ -313,4 +318,17 @@ python3 scripts/validate_quest.py --quest q17
 | 🏛️ Pantheon Keeper Badge | Earned on completion |
 | 🌱 Agent Provisioning | Skill unlocked |
 | 150 XP | Added to Level 1100 total |
-| Unlocks | [Q18: The Autonomy Scales](/quests/gh-600/agentic-autonomy-levels-matrix/) |
+| Unlocks | [Q18: The Autonomy Scales](/quests/1100/agentic-autonomy-levels-matrix/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[When Familiars Fall: Multi-Agent Failure Recovery]]
+**Unlocks:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]]
+**Sequel quests:** [[The Autonomy Scales: Mapping Agent Autonomy Levels]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

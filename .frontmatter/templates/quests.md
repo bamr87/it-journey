@@ -22,9 +22,8 @@ sub_title: "Level {{fm.level}} ({{fm.level | decimal}}) Quest: {{fm.quest_type |
 excerpt: "{{fm.excerpt}}"
 snippet: "{{fm.snippet}}"
 author: "{{fm.author}}"
-layout: {{fm.layout}}
 tags:
-    - lvl-{{fm.level}}
+    - {{fm.level}}
     - {{fm.primary_technology}}
     - {{fm.quest_type}}
     - {{fm.skill_focus}}
@@ -44,7 +43,7 @@ keywords:
         - it-journey
         - quest-based-learning
 lastmod: {{fm.date}}
-permalink: /quests/level-{{fm.level}}-{{slug}}/
+permalink: /quests/{{fm.level}}/{{slug}}/
 attachments: ""
 comments: {{fm.comments}}
 prerequisites: {{fm.prerequisites}}

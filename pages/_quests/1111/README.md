@@ -3,21 +3,22 @@ title: 'Level 1111: Leadership & Innovation'
 description: Achieve mastery in technical leadership, community building, and driving
   innovation to shape the future of technology
 preview: images/previews/level-1111-leadership-innovation.png
+permalink: /quests/1111/
+layout: quest-collection
 level: '1111'
+categories:
+- quests
+- '1111'
+- legend-tier
+- leadership
+- innovation
 level_decimal: 15
 tier: Legend
 tier_emoji: 👑
 theme: Realm Shaper
 xp_range: 10000+
-permalink: /quests/1111/
 date: 2025-11-30 22:12:13+00:00
 lastmod: 2025-12-01 04:36:39.408000+00:00
-categories:
-- quests
-- level-1111
-- legend-tier
-- leadership
-- innovation
 tags:
 - leadership
 - innovation

@@ -79,7 +79,7 @@ date: YYYY-MM-DDTHH:MM:SS-05:00     # ISO 8601, matches filename
 categories: ["DevOps", "Tutorials"]  # Title Case; folder-derived default ok
 tags: [docker, jekyll, ci-cd]        # lowercase, kebab-case
 author: "Bamr"                       # default value if unsure
-preview: "images/previews/<slug>.png" # AI-generated preview image
+preview: "/images/previews/<slug>.png" # AI-generated preview image
 draft: false                          # set true to relocate to _drafts/
 ---
 ```

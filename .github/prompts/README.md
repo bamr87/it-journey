@@ -28,6 +28,7 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 ├── stackattack.prompt.md        # Repository stack analysis playbook
 ├── validate-content.prompt.md   # Content validation against repo standards
 ├── workflow-summary.prompt.md   # Summarize a recent workflow/run
+├── quest-permalink-audit.prompt.md  # Audit/repair quest permalink hierarchy
 ├── write-quest.prompt.md        # Epic quest authoring protocol
 ├── wtd.prompt.md                # What To Do - TODO task execution agent
 └── README.md                    # This guide
@@ -43,7 +44,8 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 | `kaizen.prompt.md` | `/kaizen` | Lead incremental PDCA improvement sessions for code, process, or tooling | PLAN/DO/CHECK/ACT report with metrics, risks, next iteration |
 | `retrospective.prompt.md` | `/retrospective` | Review an AI agent conversation/PR thread and fold lessons back into `.github/copilot-instructions.md`, `.github/instructions/*`, and `.github/prompts/*` with citations | Lesson ledger, triage table, surgical diffs, `store_memory` calls, validation report |
 | `stackattack.prompt.md` | `/stackattack` | Analyze any repository's full technology stack with diagrams and recommendations | Stack overview, five-layer analysis, Mermaid diagrams, modernization roadmap saved under quests/stacks |
-| `write-quest.prompt.md` | `/write-quest` | Transform learning context into IT-Journey compliant epic quests | Complete quest front matter, chaptered narrative, multi-platform paths, diagrams, validation + Kaizen hooks |
+| `write-quest.prompt.md` | `/write-quest` | Transform learning context into IT-Journey compliant quests | Complete quest at `pages/_quests/XXXX/slug.md`, canonical frontmatter, `make quest-audit` gate |
+| `quest-permalink-audit.prompt.md` | `/quest-permalink-audit` | Audit and repair permalink violations across `pages/_quests/` | Violation report, migration via `migrate-permalinks.py`, network rebuild |
 | `wtd.prompt.md` | `/wtd` | Work through TODO directory items using PDCA methodology | Task selection, execution, status updates, progress tracking, suggested commits |
 
 Note: `write-quest` references the canonical front matter template stored at `/.frontmatter/templates/quests.md`. Do not duplicate YAML fields in the prompt; the agent must read and use the template to produce consistent front matter for every quest.

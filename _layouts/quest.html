@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{%- comment -%}
+  quest.html — Individual quest page layout.
+
+  Wraps quest content with:
+    - quest-header (level/tier/difficulty badges + meta)
+    - quest-sidebar (sticky breadcrumb, progress, prerequisites)
+    - The quest's own markdown body
+    - quest-rewards
+    - Quest dependency graph + backlinks (level-filtered)
+
+  Assets/CSS for this layout live in assets/css/quest-system.scss; the
+  progress JS lives in assets/js/quest-progress.js.
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
+
+<article class="quest-page" data-quest-permalink="{{ page.permalink }}" data-quest-level="{{ page.level }}">
+  {% include quest/quest-header.html page=page %}
+
+  <div class="quest-page__body">
+    <aside class="quest-page__aside">
+      {% include quest/quest-sidebar.html page=page %}
+    </aside>
+
+    <div id="quest-content" class="quest-page__content">
+      {{ content }}
+
+      {% include quest/quest-rewards.html page=page %}
+
+      <section class="quest-page__network" aria-labelledby="quest-network-heading">
+        <h2 id="quest-network-heading" class="quest-section-heading">🕸️ Quest Network</h2>
+        {% include content/quest-graph.html level=page.level %}
+        {% include content/quest-backlinks.html %}
+      </section>
+    </div>
+  </div>
+</article>
+
+<script src="{{ '/assets/js/quest-progress.js' | relative_url }}" defer></script>

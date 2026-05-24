@@ -12,12 +12,18 @@
       url: /search/
     - title: Stats
       url: /stats/
-- title: Journey
+- title: Quests
   icon: bi-journal-text
-  url: /posts/
+  url: /quests/home/
   children:
+    - title: Quests Home
+      url: /quests/home/
     - title: Posts
       url: /posts/
-    - title: Quests
-      url: /quests/home/
+- title: Wargames
+  icon: bi-shield-lock
+  url: /docs/wargames/
+  children:
+    - title: Wargames Overview
+      url: /docs/wargames/
 

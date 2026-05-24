@@ -13,7 +13,7 @@ lastmod: 2025-10-08 18:10:29.972000+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-primary_technology: lvl-0001
+primary_technology: 0001
 quest_type: main_quest
 quest_series: Jekyll Site Building
 quest_line: Development Mastery
@@ -80,7 +80,7 @@ categories:
 - Development
 - Data-Analytics
 tags:
-- lvl-0001
+- "0001"
 - jekyll
 - data-analytics
 - liquid-templating
@@ -89,7 +89,7 @@ tags:
 - data-visualization
 - yaml-data-files
 keywords:
-- lvl-0001
+- "0001"
 - jekyll
 - data-analytics
 - liquid-templating
@@ -1085,3 +1085,12 @@ Liquid Exception: undefined method
 **Quest Status**: ✅ **COMPLETE**
 
 *Share your Stats Portal with the IT-Journey community and inspire others to build data-driven experiences!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

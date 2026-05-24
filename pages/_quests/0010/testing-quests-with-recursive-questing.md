@@ -47,14 +47,14 @@ categories:
 - Development
 - Intermediate
 tags:
-- lvl-0010
+- '0010'
 - python
 - language-learning
 - testing
 - hands-on
 - recursion
 keywords:
-- lvl-0010
+- '0010'
 - python
 - language-learning
 - testing
@@ -71,6 +71,8 @@ rewards:
   skills_unlocked:
   - Advanced Recursion Patterns
   progression_points: 150
+redirect_from:
+- /quests/0010/testing-quests-with-recursive-questing/
 ---
 *Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge powerful unit tests, and summon AI guardians that think in layered patterns.*
 
@@ -313,3 +315,12 @@ def recursive_ai_query(prompt: str, depth: int, max_depth: int = 3) -> str:
 *Quest completed? Share your journey with the IT-Journey community!*
 
 **Remember**: The path to mastery is recursive - each challenge builds upon the last. Keep climbing, brave wizard! 🧙‍♂️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

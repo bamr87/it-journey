@@ -7,6 +7,8 @@ Displays quests from the site.quests collection using frontmatter data.
 Supports filtering by level (pass level parameter to filter to specific level).
 {%- endcomment -%}
 
+<link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
+
 <div class="quest-collection">
   <header class="quest-collection-header">
     <h1>{{ page.title | default: "Quest Collection" }}</h1>
@@ -14,6 +16,13 @@ Supports filtering by level (pass level parameter to filter to specific level).
     <p class="lead">{{ page.description }}</p>
     {% endif %}
   </header>
+
+  {%- comment -%} Tier progress bar (live from learner localStorage) {%- endcomment -%}
+  {% if page.level %}
+    {% include quest/tier-progress-bar.html level=page.level %}
+  {% else %}
+    {% include quest/tier-progress-bar.html label="All quests" %}
+  {% endif %}
 
   {%- comment -%} Quest Statistics {%- endcomment -%}
   {% include quest-stats.html level=page.level %}
@@ -264,3 +273,5 @@ Supports filtering by level (pass level parameter to filter to specific level).
   }
 }
 </style>
+
+<script src="{{ '/assets/js/quest-progress.js' | relative_url }}" defer></script>

@@ -20,7 +20,7 @@ excerpt: Transform scattered repository signals into a living, breathing PRD tha
 snippet: Reality fully armed. The distillery now distills distilleries.
 author: Quest Master IT-Journey
 tags: &id001
-- lvl-0011
+- "0011"
 - documentation-automation
 - main_quest
 - product-management
@@ -57,7 +57,14 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0011/seo-optimization/
+  - /quests/0011/custom-domains/
+  - /quests/0011/analytics-integration/
+  - /quests/0011/jekyll-plugins/
+  - /quests/0011/advanced-git-workflows/
+  - /quests/0011/prompt-crystal-vscode-copilot/
+  - /quests/0011/github-pages-hidden-gem/
   parallel_quests: []
   sequel_quests: []
 learning_paths:
@@ -622,17 +629,17 @@ features:
 ```mermaid
 flowchart LR
     subgraph "Prerequisites"
-        A[lvl-0001<br>Docs in a Row]
-        B[lvl-0010<br>Jekyll Mermaid]
+        A[0001<br>Docs in a Row]
+        B[0010<br>Jekyll Mermaid]
     end
     
     subgraph "Current Quest"
-        C[lvl-0011<br>PRD Codex]
+        C[0011<br>PRD Codex]
     end
     
     subgraph "Unlocks"
-        D[lvl-0100<br>Advanced Automation]
-        E[lvl-0101<br>CI/CD Mastery]
+        D[0100<br>Advanced Automation]
+        E[0101<br>CI/CD Mastery]
     end
     
     A --> C
@@ -735,8 +742,8 @@ Upon completing this quest, you've earned:
 ### Next Quest Recommendations
 
 Based on your new skills, consider:
-1. **Advanced Automation** (lvl-0100) - Extend PRD Machine with new signal sources
-2. **CI/CD Mastery** (lvl-0101) - Deep dive into GitHub Actions workflows
+1. **Advanced Automation** (0100) - Extend PRD Machine with new signal sources
+2. **CI/CD Mastery** (0101) - Deep dive into GitHub Actions workflows
 3. **AI Documentation** - Use AI to enhance PRD content generation
 
 ---
@@ -863,3 +870,13 @@ Before marking this quest complete:
 ---
 
 **Quest Complete?** Mark your progress and share your PRD generation story in the IT-Journey community!
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Related quests:** [[SEO Optimization: Boost Search Engine Visibility for Jekyll Sites]] · [[Custom Domains for GitHub Pages: Professional Website Setup Guide]] · [[Google Analytics for Jekyll: Complete User Tracking Integration Guide]] · [[Jekyll Plugins: Essential Extensions for Powerful Static Sites]] · [[Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands]] · [[Forging the Prompt Crystal: VS Code Copilot Mastery Quest]] · [[The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

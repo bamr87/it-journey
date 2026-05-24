@@ -1,9 +1,11 @@
 ---
-title: "Reforging the Agent's Mind: Behavior Tuning Through Instructions"
-description: "Systematically improve GitHub Copilot agent performance by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring the impact of each change."
-date: 2026-05-17T00:00:00.000Z
+title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
+description: Systematically improve GitHub Copilot agent performance by analysing
+  failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring
+  the impact of each change.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-behavior-tuning.png
-level: "1011"
+level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,80 +13,83 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - behavior-tuning
-  - instruction-engineering
-  - iterative-improvement
+- agentic-ai
+- behavior-tuning
+- instruction-engineering
+- iterative-improvement
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1011 Quest 1/4 — Domain 4: Evaluating Agent Performance"
-excerpt: The forge masters say that a weapon is never finished — it is only resting between iterations. The agent's mind is the same. Each RCA reveals a flaw, and the forge is heated again.
+sub_title: 'Level 1011 Quest 1/4 — Domain 4: Evaluating Agent Performance'
+excerpt: The forge masters say that a weapon is never finished — it is only resting
+  between iterations. The agent's mind is the same. Each RCA reveals a flaw, and the
+  forge is heated again.
 author: IT-Journey Team
 tags:
-  - lvl-1011
-  - agentic-ai
-  - behavior-tuning
-  - instruction-engineering
-  - gh-600
-  - main_quest
-  - hands-on
+- '1011'
+- agentic-ai
+- behavior-tuning
+- instruction-engineering
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - behavior tuning
-  - instruction engineering
-  - copilot instructions
-  - agent improvement
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-behavior-tuning/
+- gh-600
+- behavior tuning
+- instruction engineering
+- copilot instructions
+- agent improvement
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1011/agentic-behavior-tuning/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-failure-root-cause-analysis/
+  - /quests/1010/agentic-failure-root-cause-analysis/
   unlocks_quests:
-    - /quests/gh-600/agentic-multi-agent-orchestration-patterns/
+  - /quests/1011/agentic-multi-agent-orchestration-patterns/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-multi-agent-orchestration-patterns/
+  - /quests/1011/agentic-multi-agent-orchestration-patterns/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
+  - 🤖 AI Engineer
   skill_trees:
-    - Agentic AI
-    - Instruction Engineering
+  - Agentic AI
+  - Instruction Engineering
 rewards:
   badges:
-    - 🔨 Forge Master
+  - 🔨 Forge Master
   skills_unlocked:
-    - ⚙️ Instruction Iteration
-    - 📈 Behaviour Measurement
+  - ⚙️ Instruction Iteration
+  - 📈 Behaviour Measurement
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q12 (Failure Root Cause Analysis)
-    - Working agent workflow with AGENTS.md and copilot-instructions.md
+  - Completed Q12 (Failure Root Cause Analysis)
+  - Working agent workflow with AGENTS.md and copilot-instructions.md
   system_requirements:
-    - GitHub account with Actions and Copilot enabled
+  - GitHub account with Actions and Copilot enabled
 validation_criteria:
   completion_requirements:
-    - Behaviour improvement cycle documented (baseline → change → measure → iterate)
-    - At least 2 instruction changes made with measurable outcome
-    - Instruction changelog maintained
+  - Behaviour improvement cycle documented (baseline → change → measure → iterate)
+  - At least 2 instruction changes made with measurable outcome
+  - Instruction changelog maintained
 quest_mapping:
-  coordinates: "[4, 3]"
+  coordinates: '[4, 3]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Forge
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-behavior-tuning/
 ---
-
 *The Forge Master taps the blade and listens. A dull ring — too brittle. Back into the fire. Every master knows: you cannot improve what you cannot measure, and you cannot measure what you cannot observe. Keep a log. Test every change. Heat, strike, measure.*
 
 ## 🗺️ Quest Network Position
@@ -243,4 +248,17 @@ python3 scripts/validate_quest.py --quest q13
 | 🔨 Forge Master Badge | Earned on completion |
 | ⚙️ Instruction Iteration | Skill unlocked |
 | 100 XP | Added to Level 1011 total |
-| Unlocks | [Q14: The Council of Many](/quests/gh-600/agentic-multi-agent-orchestration-patterns/) |
+| Unlocks | [Q14: The Council of Many](/quests/1011/agentic-multi-agent-orchestration-patterns/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]]
+**Unlocks:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
+**Sequel quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

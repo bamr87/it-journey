@@ -13,7 +13,7 @@ lastmod: 2025-09-27 19:59:13.794000+00:00
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
-primary_technology: lvl-0001
+primary_technology: 0001
 quest_type: main_quest
 quest_series: 'Foundation Path: Digital Literacy Mastery'
 skill_focus:
@@ -34,7 +34,7 @@ categories:
 - Quests
 - Development - Foundation
 tags:
-- lvl-0001
+- "0001"
 - terminal
 - command-line
 - tool-mastery
@@ -44,7 +44,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0001
+- "0001"
 - terminal
 - command-line
 - tool-mastery
@@ -686,3 +686,12 @@ Your newfound terminal powers open several exciting paths:
 ---
 
 *May your commands execute flawlessly, your scripts run without errors, and your terminal sessions be filled with productivity and discovery! Ready for your next adventure? Check the [Quest Map](/quests/) for your next challenge!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

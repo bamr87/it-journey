@@ -67,14 +67,14 @@ categories:
 - Security
 - Hard
 tags:
-- lvl-1011
+- "1011"
 - compliance
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1011
+- "1011"
 - compliance
 - main_quest
 - security
@@ -488,3 +488,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

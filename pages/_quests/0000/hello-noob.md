@@ -13,7 +13,7 @@ lastmod: 2025-11-30 05:46:59.323000+00:00
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
-primary_technology: lvl-0000
+primary_technology: github
 quest_type: main_quest
 quest_series: Character Creation Journey
 quest_line: Foundation Path
@@ -85,14 +85,14 @@ categories:
 - Init-World
 - Beginner
 tags:
-- lvl-0000
+- "0000"
 - github
 - git
 - beginner
 - init-world
 - community-entry
 keywords:
-- lvl-0000
+- "0000"
 - github
 - git
 - beginner
@@ -390,4 +390,13 @@ Your GitHub account opens up incredible possibilities:
 
 *Welcome to the community, fellow adventurer! Your journey from n00b to hero starts here. Every line of code you'll write, every problem you'll solve, and every project you'll build begins with this first step you've just taken.*
 
-**Ready for your next adventure? Your quest network awaits!** ⚔️✨  
+**Ready for your next adventure? Your quest network awaits!** ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

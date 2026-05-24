@@ -33,7 +33,7 @@ categories:
 - Community
 - Frontend
 tags:
-- lvl-0010
+- "0010"
 - contributor
 - calendar
 - heatmap
@@ -243,3 +243,14 @@ Once your contribution calendar renders on your profile, you've earned the **Tim
 ---
 
 > *"The passage of time reveals all. Your dedication is now written in light."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
+**Recommended:** [[Stats Dashboard: Enhancing Your Data Visualization]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

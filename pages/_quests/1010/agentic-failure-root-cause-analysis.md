@@ -1,9 +1,11 @@
 ---
-title: "The Necromancer's Inquest: Agent Failure Root Cause Analysis"
-description: "Use GitHub execution traces, Actions logs, artifact forensics, and structured RCA frameworks to diagnose why an agent failed — and prevent the same failure from recurring."
-date: 2026-05-17T00:00:00.000Z
+title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
+description: Use GitHub execution traces, Actions logs, artifact forensics, and structured
+  RCA frameworks to diagnose why an agent failed — and prevent the same failure from
+  recurring.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-failure-root-cause-analysis.png
-level: "1010"
+level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,82 +13,85 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - root-cause-analysis
-  - debugging
-  - failure-analysis
+- agentic-ai
+- root-cause-analysis
+- debugging
+- failure-analysis
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1010 Quest 4/4 — Domain 4: Evaluating Agent Performance"
-excerpt: The Necromancer does not fear the dead — she interrogates them. Every failed agent run leaves a forensic trail in Actions logs, artifacts, and PR comments. Learn to read the trace.
+sub_title: 'Level 1010 Quest 4/4 — Domain 4: Evaluating Agent Performance'
+excerpt: The Necromancer does not fear the dead — she interrogates them. Every failed
+  agent run leaves a forensic trail in Actions logs, artifacts, and PR comments. Learn
+  to read the trace.
 author: IT-Journey Team
 tags:
-  - lvl-1010
-  - agentic-ai
-  - root-cause-analysis
-  - debugging
-  - gh-600
-  - main_quest
-  - hands-on
+- '1010'
+- agentic-ai
+- root-cause-analysis
+- debugging
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - root cause analysis
-  - agent debugging
-  - failure analysis
-  - execution trace
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-failure-root-cause-analysis/
+- gh-600
+- root cause analysis
+- agent debugging
+- failure analysis
+- execution trace
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1010/agentic-failure-root-cause-analysis/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-success-criteria-and-signals/
+  - /quests/1010/agentic-success-criteria-and-signals/
   unlocks_quests:
-    - /quests/gh-600/agentic-behavior-tuning/
+  - /quests/1011/agentic-behavior-tuning/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-behavior-tuning/
+  - /quests/1011/agentic-behavior-tuning/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🔍 Reliability Engineer
+  - 🤖 AI Engineer
+  - 🔍 Reliability Engineer
   skill_trees:
-    - Agentic AI
-    - Reliability
+  - Agentic AI
+  - Reliability
 rewards:
   badges:
-    - 💀 Inquest Master
+  - 💀 Inquest Master
   skills_unlocked:
-    - 🔍 Agent Forensics
-    - 📊 RCA Framework
+  - 🔍 Agent Forensics
+  - 📊 RCA Framework
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q11 (Success Criteria and Signals)
-    - Basic GitHub Actions log reading
+  - Completed Q11 (Success Criteria and Signals)
+  - Basic GitHub Actions log reading
   system_requirements:
-    - GitHub account with Actions enabled
-    - Access to download and inspect Actions artifacts
+  - GitHub account with Actions enabled
+  - Access to download and inspect Actions artifacts
 validation_criteria:
   completion_requirements:
-    - RCA framework documented with 5-Why template
-    - At least one real or simulated agent failure analysed end-to-end
-    - Prevention recommendation documented and implemented
+  - RCA framework documented with 5-Why template
+  - At least one real or simulated agent failure analysed end-to-end
+  - Prevention recommendation documented and implemented
 quest_mapping:
-  coordinates: "[4, 2]"
+  coordinates: '[4, 2]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: Necromancer's Catacombs
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-failure-root-cause-analysis/
 ---
-
 *The Necromancer's Catacombs are filled with the remains of failed agents. Each one preserved in amber, execution trace intact. The Necromancer raises them one by one and asks: why did you fail? What was the first wrong step? What could have prevented this? She has learned more from failure than from success — and she insists her students do the same.*
 
 ## 🗺️ Quest Network Position
@@ -246,4 +251,17 @@ python3 scripts/validate_quest.py --quest q12
 | 💀 Inquest Master Badge | Earned on completion |
 | 🔍 Agent Forensics | Skill unlocked |
 | 100 XP | Added to Level 1010 total |
-| Unlocks | [Q13: Reforging the Agent's Mind](/quests/gh-600/agentic-behavior-tuning/) |
+| Unlocks | [Q13: Reforging the Agent's Mind](/quests/1011/agentic-behavior-tuning/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1010 - Automation & Testing]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]]
+**Unlocks:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]]
+**Sequel quests:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

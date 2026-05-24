@@ -1,9 +1,10 @@
 ---
 title: 🏰 Overworld - Master Quest Map
 author: IT-Journey Team
-description: Your central command hub for tracking progress through the IT mastery quest system. Navigate your learning journey, monitor achievements, and plan your next adventures.
-preview: images/previews/overworld-master-quest-map.png
+description: Your central command hub for tracking progress through the IT mastery quest system. Navigate your learning journey and monitor achievements.
+preview: /images/previews/overworld-master-quest-map.png
 permalink: /quests/home/
+layout: quest-hub
 categories:
     - home
     - quest-map
@@ -32,7 +33,7 @@ keywords:
         - learning tracker
 ---
 
-This is your central hub for the IT-Journey quest system — a gamified learning framework with 144 quests organized across 16 binary levels (0000–1111). Pick a starting realm, choose a character class, and work through progressively harder challenges to build real IT skills.
+This is your central hub for the IT-Journey quest system — a gamified learning framework with 180+ quests organized across 16 binary levels (0000–1111). Pick a starting realm, choose a character class, and work through progressively harder challenges to build real IT skills.
 
 > *Behold, brave adventurer! This is your personal overworld map — the mystical realm where all paths converge and all journeys begin. Track your progress, plan your next adventures, and survey the vast landscape of IT mastery that awaits.*
 
@@ -291,9 +292,9 @@ User Interface & Docker Fundamentals
 - [ ] [Container Fundamentals](/quests/0100/container-fundamentals/) - *Docker Basics* (60 XP)
 - [ ] [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/) - *Multi-Container Magic* (70 XP)
 - [ ] [Frontend Levels](/quests/0100/frontend-levels/) - *Progressive Learning* (50 XP)
-- [ ] [Level 000 Frontend Docker](/quests/0100/frontend-docker-lvl-000/) - *Beginner Containers* (40 XP)
-- [ ] [Level 001 Frontend Docker](/quests/0100/lvl-001-frontend-docker/) - *Intermediate Containers* (50 XP)
-- [ ] [Level 010 Frontend Docker](/quests/0100/lvl-010-frontend-docker/) - *Advanced Containers* (60 XP)
+- [ ] [Level 000 Frontend Docker](/quests/0100/frontend-docker-000/) - *Beginner Containers* (40 XP)
+- [ ] [Level 001 Frontend Docker](/quests/0100/001-frontend-docker/) - *Intermediate Containers* (50 XP)
+- [ ] [Level 010 Frontend Docker](/quests/0100/010-frontend-docker/) - *Advanced Containers* (60 XP)
 
 ### Level 0101 - Backend Systems
 
@@ -1133,9 +1134,9 @@ _Last generated: 2026-01-15T20:39:18Z_
 | [Docker Compose Orchestration: Build Multi-Container Applications](/quests/0100/docker-compose-orchestration/) | main_quest | 🟡 Medium | 75-90 minutes | Docker Mastery | 🔮 Draft |
 | [Docker Container Fundamentals: Master Isolation & Portability for DevOps](/quests/0100/container-fundamentals/) | main_quest | 🟡 Medium | 60-75 minutes | Docker Mastery | 🔮 Draft |
 | [Dockering Jekyll with Bootstrap 5](/quests/0100/frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
-| [Frontend Docker - level 000](/quests/0100/frontend-docker-lvl-000/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
-| [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/0100/lvl-001-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
-| [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/0100/lvl-010-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker - level 000](/quests/0100/frontend-docker-000/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/0100/001-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
+| [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/0100/010-frontend-docker/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Frontend Forests Levels](/quests/0100/frontend-levels/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Frontend Forests: Building a Jekyll Site with Bootstrap](/quests/0100/frontend/) | main_quest | 🟡 Medium | 90-120 minutes | Level 0100 Quest Line | 🔮 Draft |
 | [Quest: Mastering the Ancient Arts of Source Control Sorcery](/quests/0100/source-control-sorcery/) | main_quest | 🟡 Medium | 120-180 minutes | Foundation Development Skills | ✅ Complete |

@@ -2,7 +2,7 @@
 title: "Advanced Version Management System: Complete Implementation with AI-Assisted Development"
 description: Chronicles the development of a comprehensive, automated version management system for the AI Evolution Engine, eliminating backup files while providing advanced tracking and correlation capabilities.
 date: 2025-07-12T14:26:45.000Z
-preview: images/previews/advanced-version-management-system-complete-implem.png
+preview: /images/previews/advanced-version-management-system-complete-implem.png
 tags:
     - ai-assisted-development
     - version-management

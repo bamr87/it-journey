@@ -43,10 +43,10 @@ portfolio                : &portfolio [*github_user, '.', 'github.io']
 
 title                    : IT-Journey
 title_url                : "/"
-title_icon               : "globe"
-subtitle                 : "zer0 to her0"
+title_icon               : ""
+subtitle                 : ""
 subtitle_url             : "localhost"
-subtitle_icon            : "code"
+subtitle_icon            : ""
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey"
 domain_ext               : ".dev"
@@ -372,15 +372,18 @@ defaults:
       share: true
       related: true
       sidebar:
-        nav: docs
+        nav: auto
     # permalink: /docs/:category/:name/
 
-  # pages/_quests
-  - 
+  # pages/_quests collection — quest.md files use the local quest layout.
+  # Level READMEs (/quests/XXXX/) keep `layout: quest-collection` set in their
+  # own frontmatter; hub/index pages set `layout: quest-hub` directly.
+  -
     scope:
       path: pages/_quests
+      type: quests
     values:
-      layout: *pages
+      layout: quest
       author_profile: true
       read_time: true
       comments: # true

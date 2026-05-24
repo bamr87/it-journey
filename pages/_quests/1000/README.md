@@ -4,12 +4,14 @@ description: Ascend to the clouds and master the infrastructure that powers glob
   applications
 preview: images/previews/level-1000-cloud-computing.png
 permalink: /quests/1000/
+layout: quest-collection
+level: '1000'
 categories:
 - Quests
 - Level-1000
 - Cloud-Computing
 tags:
-- lvl-1000
+- '1000'
 - cloud
 - aws
 - infrastructure
@@ -20,7 +22,6 @@ lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-level: 1000
 date: 2025-12-20 20:02:51+00:00
 ---
 # Level 1000 (8) - Cloud Computing Fundamentals

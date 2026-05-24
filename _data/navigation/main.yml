@@ -24,10 +24,6 @@
       url: /news/web-development/
     - title: Technology
       url: /news/technology/
-    - title: Quests
-      url: /quests/home/
-    - title: Stats
-      url: /stats/
 - title: Library
   url: /docs/
   icon: bi-journal-bookmark
@@ -60,4 +56,6 @@
       url: /about/contributing/
     - title: Sitemap
       url: /about/sitemap/
+    - title: Stats
+      url: /stats/
 

@@ -68,7 +68,7 @@ categories:
 - Markdown
 - Intermediate
 tags:
-- lvl-0010
+- "0010"
 - markdown
 - github-markdown
 - documentation
@@ -77,7 +77,7 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- lvl-0010
+- "0010"
 - markdown
 - github-markdown
 - documentation
@@ -493,3 +493,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

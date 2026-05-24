@@ -1,0 +1,17 @@
+{%- comment -%}
+  quest-sidebar.html — Composes the sticky quest sidebar.
+
+  Renders the breadcrumb/trail, prerequisites, progress widget, and (when the
+  page enables `toc:`) a table of contents.
+
+  Parameters:
+    include.page — page object (defaults to current page)
+{%- endcomment -%}
+
+{%- assign p = include.page | default: page -%}
+
+<aside class="quest-sidebar" aria-label="Quest tools">
+  {% include quest/quest-nav.html page=p %}
+  {% include quest/quest-progress.html page=p %}
+  {% include quest/quest-prerequisites.html page=p %}
+</aside>

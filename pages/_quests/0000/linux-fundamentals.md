@@ -1,7 +1,7 @@
 ---
 title: Linux Fundamentals
 description: Basic Linux concepts including navigation, scripting, security, and networking
-preview: images/previews/linux-fundamentals.png
+preview: /images/previews/linux-fundamentals.png
 author: bamr87
 permalink: /quests/0000/linux-fundamentals/
 level: '0000'
@@ -217,3 +217,16 @@ This guide covers essential Linux concepts that every IT professional should kno
 - [Linux Command Line Basics](https://www.gnu.org/software/bash/manual/)
 - [Advanced Bash Scripting Guide](https://tldp.org/LDP/abs/html/)
 - [Linux Security Best Practices](https://www.cisecurity.org/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[OS Selection]] · [[Hello n00b: Your First Steps into the IT Journey]]
+**Unlocks:** [[Terminal Fundamentals: Command Line Navigation Quest]] · [[bashcrawl and Beyond: Extending a Terminal Dungeon Adventure]]
+**Sequel quests:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

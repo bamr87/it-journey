@@ -4,9 +4,10 @@ description: Master frontend development workflows with Docker containerization 
   modern tooling
 preview: images/previews/level-0100-frontend-development-docker.png
 permalink: /quests/0100/
-lastmod: 2025-11-29 23:41:31.769000+00:00
-level: 64
+layout: quest-collection
+level: '0100'
 categories: quests
+lastmod: 2025-11-29 23:41:31.769000+00:00
 date: 2025-11-29 16:46:02+00:00
 ---
 # Level 0100: Frontend Development & Docker
@@ -30,10 +31,10 @@ Level 0100 quests focus on:
 | [Docker Container Fundamentals: Master Isolation & Portability for DevOps](/quests/0100/container-fundamentals/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [Docker Compose Orchestration: Build Multi-Container Applications](/quests/0100/docker-compose-orchestration/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
 | [Frontend Forests Levels](/quests/0100/frontend-levels/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/0100/lvl-001-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/0100/lvl-010-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Docker Level 001: Create Jekyll Site with Docker Container](/quests/0100/001-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker](/quests/0100/010-frontend-docker/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
 | [Quest: Mastering the Ancient Arts of Source Control Sorcery](/quests/0100/source-control-sorcery/) | 🟡 Medium | 120-180 minutes | main_quest | 🔮 Placeholder |
-| [Frontend Docker - level 000](/quests/0100/frontend-docker-lvl-000/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Frontend Docker - level 000](/quests/0100/frontend-docker-000/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
 | [The Artisan's Forge: Refactoring Jekyll Theme Components](/quests/0100/side-quests/jekyll-component-refactoring/) | 🟡 Medium | 45-60 minutes | side_quest | ✅ Ready |
 
 

@@ -1,9 +1,11 @@
 ---
-title: "Initiation Rites: Embedding Agents in the SDLC"
-description: "Learn to integrate AI agents into the software development lifecycle — define agent inputs, outputs, and success criteria, and identify the anti-patterns that sink autonomous workflows before they ship."
-date: 2026-05-17T00:00:00.000Z
+title: 'Initiation Rites: Embedding Agents in the SDLC'
+description: Learn to integrate AI agents into the software development lifecycle
+  — define agent inputs, outputs, and success criteria, and identify the anti-patterns
+  that sink autonomous workflows before they ship.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-sdlc-integration.png
-level: "0111"
+level: '0111'
 difficulty: 🟡 Medium
 estimated_time: 90 minutes
 primary_technology: github-copilot
@@ -11,95 +13,98 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - sdlc
-  - agent-architecture
+- agentic-ai
+- sdlc
+- agent-architecture
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 0111 Quest 1/3 — Domain 1: Agent Architecture & SDLC"
-excerpt: Define what your agent does, where it lives in the SDLC, and how to stop common anti-patterns from destroying your workflow.
+sub_title: 'Level 0111 Quest 1/3 — Domain 1: Agent Architecture & SDLC'
+excerpt: Define what your agent does, where it lives in the SDLC, and how to stop
+  common anti-patterns from destroying your workflow.
 author: IT-Journey Team
 tags:
-  - lvl-0111
-  - agentic-ai
-  - github-copilot
-  - sdlc
-  - gh-600
-  - main_quest
-  - hands-on
-  - gamified-learning
+- '0111'
+- agentic-ai
+- github-copilot
+- sdlc
+- gh-600
+- main_quest
+- hands-on
+- gamified-learning
 categories:
-  - Quests
-  - Agentic-AI
-  - Medium
+- Quests
+- Agentic-AI
+- Medium
 keywords:
-  - gh-600
-  - agentic ai
-  - sdlc
-  - agent inputs outputs
-  - agent anti-patterns
-  - github copilot
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-sdlc-integration/
+- gh-600
+- agentic ai
+- sdlc
+- agent inputs outputs
+- agent anti-patterns
+- github copilot
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/0111/agentic-sdlc-integration/
 quest_dependencies:
   required_quests: []
   recommended_quests:
-    - /quests/level-0111-rest-api-design/
+  - /quests/0111/rest-principles/
   unlocks_quests:
-    - /quests/gh-600/agentic-plan-vs-action-boundaries/
+  - /quests/0111/agentic-plan-vs-action-boundaries/
 quest_relationships:
   parent_quest: null
   child_quests: []
   sequel_quests:
-    - /quests/gh-600/agentic-plan-vs-action-boundaries/
+  - /quests/0111/agentic-plan-vs-action-boundaries/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🏗️ Platform Engineer
+  - 🤖 AI Engineer
+  - 🏗️ Platform Engineer
   skill_trees:
-    - Agentic AI
-    - GitHub Copilot
+  - Agentic AI
+  - GitHub Copilot
 rewards:
   badges:
-    - 🤖 Agent Initiate
+  - 🤖 Agent Initiate
   skills_unlocked:
-    - 🛠️ SDLC Agent Integration
+  - 🛠️ SDLC Agent Integration
   progression_points: 70
 prerequisites:
   knowledge_requirements:
-    - Familiarity with GitHub Actions (running a workflow)
-    - Basic understanding of GitHub Copilot chat
-    - Understanding of pull requests and code review
+  - Familiarity with GitHub Actions (running a workflow)
+  - Basic understanding of GitHub Copilot chat
+  - Understanding of pull requests and code review
   system_requirements:
-    - GitHub account with Copilot access
-    - VS Code with GitHub Copilot extension
-    - Git installed locally or GitHub Codespaces
+  - GitHub account with Copilot access
+  - VS Code with GitHub Copilot extension
+  - Git installed locally or GitHub Codespaces
   skill_level_indicators:
-    - Journeyman-level: comfortable with APIs and automated pipelines
+  - Journeyman-level: comfortable with APIs and automated pipelines
 validation_criteria:
   completion_requirements:
-    - Agent task card created with inputs, outputs, and success criteria
-    - At least three anti-patterns identified and mitigated in the agent design
-    - "Agent workflow diagram produced (Mermaid or draw.io) showing SDLC integration points"
+  - Agent task card created with inputs, outputs, and success criteria
+  - At least three anti-patterns identified and mitigated in the agent design
+  - Agent workflow diagram produced (Mermaid or draw.io) showing SDLC integration
+    points
   skill_demonstrations:
-    - Can explain what makes a task agent-appropriate vs. better handled by humans
-    - Can identify the most common agent anti-patterns in a given workflow
+  - Can explain what makes a task agent-appropriate vs. better handled by humans
+  - Can identify the most common agent anti-patterns in a given workflow
   knowledge_checks:
-    - Understands why success criteria must be defined before deploying an agent
-    - Can describe inputs and outputs for at least two different agent types
+  - Understands why success criteria must be defined before deploying an agent
+  - Can describe inputs and outputs for at least two different agent types
 quest_mapping:
-  coordinates: "[1, 1]"
+  coordinates: '[1, 1]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: SDLC Forest
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-sdlc-integration/
 ---
-
 *Deep in the GitHub Citadel, the Initiation Hall hums with the energy of thousands of autonomous agents. But before you can summon one, you must answer the guildmaster's three ancient questions: What does this agent do? What does it consume? What does it produce? Only those who can answer with precision earn the right to proceed.*
 
 *This is where your journey into the Agentic Codex begins — not with code, but with clarity.*
@@ -379,13 +384,26 @@ python3 scripts/validate_quest.py --quest q1
 | 🤖 Agent Initiate Badge | Earned on quest completion |
 | 🛠️ SDLC Agent Integration | Skill unlocked |
 | 70 XP | Added to your Level 0111 total |
-| Unlocks | [Q2: The Three Sigils](/quests/gh-600/agentic-plan-vs-action-boundaries/) |
+| Unlocks | [Q2: The Three Sigils](/quests/0111/agentic-plan-vs-action-boundaries/) |
 
 ---
 
 ## 🔗 Continue Your Journey
 
-- **Next quest:** [Q2: The Three Sigils — Plan, Reason, Act](/quests/gh-600/agentic-plan-vs-action-boundaries/)
+- **Next quest:** [Q2: The Three Sigils — Plan, Reason, Act](/quests/0111/agentic-plan-vs-action-boundaries/)
 - **Domain hub:** [Domain 1 in the GH-600 Skills Measured breakdown](/docs/certifications/gh-600/skills-measured/#domain-1)
 - **Chronicle post:** [Embedding Agents in the SDLC](/posts/embedding-agents-in-the-sdlc/)
 - **Official docs:** [GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/about-copilot-coding-agent)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0111 (7) - API Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Exam Overview]]
+**Recommended:** [[REST Principles: RESTful API Design Best Practices]]
+**Unlocks:** [[The Three Sigils: Plan, Reason, Act]]
+**Sequel quests:** [[The Three Sigils: Plan, Reason, Act]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

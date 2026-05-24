@@ -1,9 +1,11 @@
 ---
-title: "When Familiars Fall: Multi-Agent Failure Recovery"
-description: "Design resilient multi-agent systems on GitHub — detect sub-agent failures, apply compensation strategies, re-delegate failed tasks, and ensure partial progress is never lost."
-date: 2026-05-17T00:00:00.000Z
+title: 'When Familiars Fall: Multi-Agent Failure Recovery'
+description: Design resilient multi-agent systems on GitHub — detect sub-agent failures,
+  apply compensation strategies, re-delegate failed tasks, and ensure partial progress
+  is never lost.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-multi-agent-failure-recovery.png
-level: "1011"
+level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120 minutes
 primary_technology: github-copilot
@@ -11,81 +13,84 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - multi-agent
-  - failure-recovery
-  - resilience
+- agentic-ai
+- multi-agent
+- failure-recovery
+- resilience
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1011 Quest 4/4 — Domain 5: Multi-Agent Systems"
-excerpt: When a familiar falls in battle, the mage does not abandon the quest — she calls a reserve, claims the familiar's partial work, and continues. Multi-agent systems must be designed the same way.
+sub_title: 'Level 1011 Quest 4/4 — Domain 5: Multi-Agent Systems'
+excerpt: When a familiar falls in battle, the mage does not abandon the quest — she
+  calls a reserve, claims the familiar's partial work, and continues. Multi-agent
+  systems must be designed the same way.
 author: IT-Journey Team
 tags:
-  - lvl-1011
-  - agentic-ai
-  - multi-agent
-  - failure-recovery
-  - gh-600
-  - main_quest
-  - hands-on
+- '1011'
+- agentic-ai
+- multi-agent
+- failure-recovery
+- gh-600
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Hard
+- Quests
+- Agentic-AI
+- Hard
 keywords:
-  - gh-600
-  - multi-agent failure recovery
-  - sub-agent failure
-  - compensation strategy
-  - resilient agents
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-multi-agent-failure-recovery/
+- gh-600
+- multi-agent failure recovery
+- sub-agent failure
+- compensation strategy
+- resilient agents
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1011/agentic-multi-agent-failure-recovery/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-multi-agent-observability/
+  - /quests/1011/agentic-multi-agent-observability/
   unlocks_quests:
-    - /quests/gh-600/agentic-multi-agent-lifecycle-management/
+  - /quests/1100/agentic-multi-agent-lifecycle-management/
 quest_relationships:
   sequel_quests:
-    - /quests/gh-600/agentic-multi-agent-lifecycle-management/
+  - /quests/1100/agentic-multi-agent-lifecycle-management/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🔍 Reliability Engineer
+  - 🤖 AI Engineer
+  - 🔍 Reliability Engineer
   skill_trees:
-    - Agentic AI
-    - Resilience Engineering
+  - Agentic AI
+  - Resilience Engineering
 rewards:
   badges:
-    - 🛡️ Battle-Tested Architect
+  - 🛡️ Battle-Tested Architect
   skills_unlocked:
-    - 🔄 Compensation Strategies
-    - 🔁 Sub-Agent Re-delegation
+  - 🔄 Compensation Strategies
+  - 🔁 Sub-Agent Re-delegation
   progression_points: 100
 prerequisites:
   knowledge_requirements:
-    - Completed Q15 (Multi-Agent Observability)
-    - Understanding of GitHub Actions failure modes and continue-on-error
+  - Completed Q15 (Multi-Agent Observability)
+  - Understanding of GitHub Actions failure modes and continue-on-error
   system_requirements:
-    - GitHub repository with multi-agent workflows configured
+  - GitHub repository with multi-agent workflows configured
 validation_criteria:
   completion_requirements:
-    - Sub-agent failure detected and reported by orchestrator
-    - Compensation strategy (retry or delegate) implemented
-    - Partial progress preserved across failure and recovery
+  - Sub-agent failure detected and reported by orchestrator
+  - Compensation strategy (retry or delegate) implemented
+  - Partial progress preserved across failure and recovery
 quest_mapping:
-  coordinates: "[5, 3]"
+  coordinates: '[5, 3]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Proving Grounds
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-multi-agent-failure-recovery/
 ---
-
 *The Proving Grounds are where the Council sends candidates who believe their systems are perfect. The Trials of the Fallen Familiar begin simply: one sub-agent fails. Does the system collapse? Does it recover? Does it preserve what was already done? Only those who plan for failure earn the right to deploy to production.*
 
 ## 🗺️ Quest Network Position
@@ -324,4 +329,17 @@ python3 scripts/validate_quest.py --quest q16
 | 🛡️ Battle-Tested Architect Badge | Earned on completion |
 | 🔄 Compensation Strategies | Skill unlocked |
 | 100 XP | Added to Level 1011 total |
-| Unlocks | [Q17: The Agent Pantheon](/quests/gh-600/agentic-multi-agent-lifecycle-management/) |
+| Unlocks | [Q17: The Agent Pantheon](/quests/1100/agentic-multi-agent-lifecycle-management/) |
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
+**Prerequisites:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
+**Unlocks:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
+**Sequel quests:** [[The Agent Pantheon: Multi-Agent Lifecycle Management]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

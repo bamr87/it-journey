@@ -1,9 +1,11 @@
 ---
-title: "Trial of the Agentic Codex: The Grand Capstone"
-description: "The ultimate challenge — a six-domain scenario that tests every GH-600 skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural decisions, and earn the title of Agentic Codex Master."
-date: 2026-05-17T00:00:00.000Z
+title: 'Trial of the Agentic Codex: The Grand Capstone'
+description: The ultimate challenge — a six-domain scenario that tests every GH-600
+  skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural
+  decisions, and earn the title of Agentic Codex Master.
+date: 2026-05-17 00:00:00+00:00
 preview: images/previews/agentic-codex-capstone-exam-trial.png
-level: "1100"
+level: '1100'
 difficulty: ⚔️ Epic
 estimated_time: 360 minutes
 primary_technology: github-copilot
@@ -11,107 +13,110 @@ quest_type: main_quest
 fmContentType: quest
 mermaid: true
 skill_focus:
-  - agentic-ai
-  - multi-agent
-  - evaluation
-  - lifecycle-management
-  - guardrails
-  - responsible-ai
-  - exam-preparation
+- agentic-ai
+- multi-agent
+- evaluation
+- lifecycle-management
+- guardrails
+- responsible-ai
+- exam-preparation
 learning_style: hands-on
 quest_series: agentic-ai-mastery
 quest_line: gh-600
 quest_arc: The Agentic Codex
-sub_title: "Level 1100 Quest 4/4 — The Grand Capstone — All Domains"
-excerpt: The Codex was written. The quests were walked. Now the Trial begins. All six seals must be broken. All six domains tested. The title of Agentic Codex Master is not given — it is earned in the forge of complete knowledge.
+sub_title: Level 1100 Quest 4/4 — The Grand Capstone — All Domains
+excerpt: The Codex was written. The quests were walked. Now the Trial begins. All
+  six seals must be broken. All six domains tested. The title of Agentic Codex Master
+  is not given — it is earned in the forge of complete knowledge.
 author: IT-Journey Team
 tags:
-  - lvl-1100
-  - agentic-ai
-  - capstone
-  - gh-600
-  - exam-prep
-  - all-domains
-  - epic
-  - main_quest
-  - hands-on
+- '1100'
+- agentic-ai
+- capstone
+- gh-600
+- exam-prep
+- all-domains
+- epic
+- main_quest
+- hands-on
 categories:
-  - Quests
-  - Agentic-AI
-  - Capstone
+- Quests
+- Agentic-AI
+- Capstone
 keywords:
-  - gh-600 exam
-  - agentic AI capstone
-  - GitHub Copilot certification
-  - agentic codex master
-  - all domains review
-lastmod: 2026-05-17T00:00:00.000Z
-permalink: /quests/gh-600/agentic-codex-capstone-exam-trial/
+- gh-600 exam
+- agentic AI capstone
+- GitHub Copilot certification
+- agentic codex master
+- all domains review
+lastmod: 2026-05-17 00:00:00+00:00
+permalink: /quests/1100/agentic-codex-capstone-exam-trial/
 quest_dependencies:
   required_quests:
-    - /quests/gh-600/agentic-sdlc-integration/
-    - /quests/gh-600/agentic-plan-vs-action-boundaries/
-    - /quests/gh-600/agentic-observability-and-control/
-    - /quests/gh-600/agentic-tool-selection-and-permissions/
-    - /quests/gh-600/agentic-mcp-server-mastery/
-    - /quests/gh-600/agentic-dev-environment-integration/
-    - /quests/gh-600/agentic-safe-execution-and-error-handling/
-    - /quests/gh-600/agentic-memory-strategies/
-    - /quests/gh-600/agentic-state-persistence-and-drift/
-    - /quests/gh-600/agentic-state-continuity-cross-tools/
-    - /quests/gh-600/agentic-success-criteria-and-signals/
-    - /quests/gh-600/agentic-failure-root-cause-analysis/
-    - /quests/gh-600/agentic-behavior-tuning/
-    - /quests/gh-600/agentic-multi-agent-orchestration-patterns/
-    - /quests/gh-600/agentic-multi-agent-observability/
-    - /quests/gh-600/agentic-multi-agent-failure-recovery/
-    - /quests/gh-600/agentic-multi-agent-lifecycle-management/
-    - /quests/gh-600/agentic-autonomy-levels-matrix/
-    - /quests/gh-600/agentic-guardrails-and-human-in-the-loop/
+  - /quests/0111/agentic-sdlc-integration/
+  - /quests/0111/agentic-plan-vs-action-boundaries/
+  - /quests/1000/agentic-observability-and-control/
+  - /quests/1000/agentic-tool-selection-and-permissions/
+  - /quests/1000/agentic-mcp-server-mastery/
+  - /quests/1001/agentic-dev-environment-integration/
+  - /quests/1001/agentic-safe-execution-and-error-handling/
+  - /quests/1001/agentic-memory-strategies/
+  - /quests/1010/agentic-state-persistence-and-drift/
+  - /quests/1010/agentic-state-continuity-cross-tools/
+  - /quests/1010/agentic-success-criteria-and-signals/
+  - /quests/1010/agentic-failure-root-cause-analysis/
+  - /quests/1011/agentic-behavior-tuning/
+  - /quests/1011/agentic-multi-agent-orchestration-patterns/
+  - /quests/1011/agentic-multi-agent-observability/
+  - /quests/1011/agentic-multi-agent-failure-recovery/
+  - /quests/1100/agentic-multi-agent-lifecycle-management/
+  - /quests/1100/agentic-autonomy-levels-matrix/
+  - /quests/1100/agentic-guardrails-and-human-in-the-loop/
   unlocks_quests: []
 quest_relationships:
   parent_quests:
-    - /docs/certifications/gh-600/
+  - /docs/certifications/gh-600/
 learning_paths:
   primary_paths:
-    - Agentic AI Systems
+  - Agentic AI Systems
   character_classes:
-    - 🤖 AI Engineer
-    - 🏛️ Architect
-    - 🛡️ Security Engineer
-    - 🔍 Reliability Engineer
+  - 🤖 AI Engineer
+  - 🏛️ Architect
+  - 🛡️ Security Engineer
+  - 🔍 Reliability Engineer
   skill_trees:
-    - Agentic AI (Complete)
+  - Agentic AI (Complete)
 rewards:
   badges:
-    - 🏆 Agentic Codex Master
-    - 🎓 GH-600 Ready
+  - 🏆 Agentic Codex Master
+  - 🎓 GH-600 Ready
   skills_unlocked:
-    - All Domain 1–6 skills
+  - All Domain 1–6 skills
   progression_points: 200
-  certificate: "GH-600 Preparation Complete"
+  certificate: GH-600 Preparation Complete
 prerequisites:
   knowledge_requirements:
-    - ALL 19 prerequisite quests completed (see required_quests above)
-    - Review the skills-measured page at /docs/certifications/gh-600/skills-measured/
+  - ALL 19 prerequisite quests completed (see required_quests above)
+  - Review the skills-measured page at /docs/certifications/gh-600/skills-measured/
   system_requirements:
-    - GitHub repository with Copilot, Actions, and Environments fully configured
-    - All tools and workflows from prior quests present and operational
+  - GitHub repository with Copilot, Actions, and Environments fully configured
+  - All tools and workflows from prior quests present and operational
 validation_criteria:
   completion_requirements:
-    - All 6 domain challenge scenarios completed
-    - Domain coverage rubric scored >= 80% for each domain
-    - Grand reflection document published to repository
-    - All validation scripts pass
+  - All 6 domain challenge scenarios completed
+  - Domain coverage rubric scored >= 80% for each domain
+  - Grand reflection document published to repository
+  - All validation scripts pass
 quest_mapping:
-  coordinates: "[6, 3]"
+  coordinates: '[6, 3]'
   region: Agentic Codex
   realm: GitHub Citadel
   biome: The Hall of Mastery
 comments: true
 draft: false
+redirect_from:
+- /quests/gh-600/agentic-codex-capstone-exam-trial/
 ---
-
 *The Hall of Mastery stands silent. The six seals of the Codex glow on the walls — one for each domain, one for each truth the candidate has learned on the journey from initiate to master. The Codex Master who placed the seals speaks: "Show me that you did not only read the Codex. Show me that you understand why it was written."*
 
 ## 🗺️ The Arc Complete
@@ -169,6 +174,16 @@ The following 6 chapters map directly to the GH-600 exam domains.
 ```markdown
 <!-- work/gh-600/capstone/sdlc-diagram.md -->
 # Our Agentic SDLC
+
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 ## Agent Integration Points
 
@@ -234,7 +249,7 @@ jobs:
 
 > **Task:** Ensure every agent run emits structured logs that can be queried.
 
-*Refer to Q3 ([Observability & Control](/quests/gh-600/agentic-observability-and-control/)) for the full pattern.*
+*Refer to Q3 ([Observability & Control](/quests/1000/agentic-observability-and-control/)) for the full pattern.*
 
 ---
 
@@ -280,7 +295,7 @@ permissions:
 
 > **Task:** Add a failure escalation workflow that creates an issue when an agent fails.
 
-*Refer to Q7 ([Safe Execution & Error Handling](/quests/gh-600/agentic-safe-execution-and-error-handling/)) for the full pattern.*
+*Refer to Q7 ([Safe Execution & Error Handling](/quests/1001/agentic-safe-execution-and-error-handling/)) for the full pattern.*
 
 ---
 
@@ -304,13 +319,13 @@ permissions:
 
 > **Task:** Produce a drift check that compares current agent state to expected state.
 
-*Refer to Q9 ([State Persistence & Drift](/quests/gh-600/agentic-state-persistence-and-drift/)) for `detect_drift.py`.*
+*Refer to Q9 ([State Persistence & Drift](/quests/1010/agentic-state-persistence-and-drift/)) for `detect_drift.py`.*
 
 ### Challenge 3.3: Implement cross-surface context handoff
 
 > **Task:** Show a `context-handoff.json` passed between an issue → PR → branch context.
 
-*Refer to Q10 ([State Continuity Cross-Tools](/quests/gh-600/agentic-state-continuity-cross-tools/)) for the schema and `inject_cross_surface_context.py`.*
+*Refer to Q10 ([State Continuity Cross-Tools](/quests/1010/agentic-state-continuity-cross-tools/)) for the schema and `inject_cross_surface_context.py`.*
 
 ---
 
@@ -353,13 +368,13 @@ permissions:
 
 > **Task:** Take a failed workflow run and produce a 5-Why RCA document.
 
-*Refer to Q12 ([Failure Root Cause Analysis](/quests/gh-600/agentic-failure-root-cause-analysis/)) for the full RCA template.*
+*Refer to Q12 ([Failure Root Cause Analysis](/quests/1010/agentic-failure-root-cause-analysis/)) for the full RCA template.*
 
 ### Challenge 4.3: Iterate on agent instructions
 
 > **Task:** Make one instruction change, measure the before/after difference.
 
-*Refer to Q13 ([Behavior Tuning](/quests/gh-600/agentic-behavior-tuning/)) for the instruction changelog template.*
+*Refer to Q13 ([Behavior Tuning](/quests/1011/agentic-behavior-tuning/)) for the instruction changelog template.*
 
 ---
 
@@ -371,25 +386,25 @@ permissions:
 
 > **Task:** Create a fan-out or chain orchestration with 3 sub-agents.
 
-*Refer to Q14 ([Multi-Agent Orchestration Patterns](/quests/gh-600/agentic-multi-agent-orchestration-patterns/)) for the fan-out and chain patterns.*
+*Refer to Q14 ([Multi-Agent Orchestration Patterns](/quests/1011/agentic-multi-agent-orchestration-patterns/)) for the fan-out and chain patterns.*
 
 ### Challenge 5.2: Add tracing to the multi-agent run
 
 > **Task:** Each sub-agent emits a trace entry with a shared correlation ID.
 
-*Refer to Q15 ([Multi-Agent Observability](/quests/gh-600/agentic-multi-agent-observability/)) for `trace_writer.py`.*
+*Refer to Q15 ([Multi-Agent Observability](/quests/1011/agentic-multi-agent-observability/)) for `trace_writer.py`.*
 
 ### Challenge 5.3: Add failure recovery to the orchestrator
 
 > **Task:** Orchestrator continues after one sub-agent fails and produces a recovery plan.
 
-*Refer to Q16 ([Multi-Agent Failure Recovery](/quests/gh-600/agentic-multi-agent-failure-recovery/)) for `recovery_coordinator.py`.*
+*Refer to Q16 ([Multi-Agent Failure Recovery](/quests/1011/agentic-multi-agent-failure-recovery/)) for `recovery_coordinator.py`.*
 
 ### Challenge 5.4: Register all agents in the agent registry
 
 > **Task:** Publish `_data/agents.yml` with all 3 agents registered.
 
-*Refer to Q17 ([Multi-Agent Lifecycle Management](/quests/gh-600/agentic-multi-agent-lifecycle-management/)) for the registry schema.*
+*Refer to Q17 ([Multi-Agent Lifecycle Management](/quests/1100/agentic-multi-agent-lifecycle-management/)) for the registry schema.*
 
 ---
 
@@ -401,13 +416,13 @@ permissions:
 
 > **Task:** Complete `_data/autonomy-matrix.yml` with 5 task types at appropriate levels.
 
-*Refer to Q18 ([Autonomy Levels Matrix](/quests/gh-600/agentic-autonomy-levels-matrix/)) for the matrix schema.*
+*Refer to Q18 ([Autonomy Levels Matrix](/quests/1100/agentic-autonomy-levels-matrix/)) for the matrix schema.*
 
 ### Challenge 6.2: Implement 3 guardrails
 
 > **Task:** CODEOWNERS file-scope boundary, approval gate environment, forbidden actions list.
 
-*Refer to Q19 ([Guardrails & Human-in-the-Loop](/quests/gh-600/agentic-guardrails-and-human-in-the-loop/)) for each guardrail.*
+*Refer to Q19 ([Guardrails & Human-in-the-Loop](/quests/1100/agentic-guardrails-and-human-in-the-loop/)) for each guardrail.*
 
 ---
 
@@ -476,25 +491,25 @@ docker-compose exec jekyll bundle exec jekyll build
 
 | Quest | Domain | Link |
 |---|---|---|
-| Q1 | D1 | [Agentic SDLC Integration](/quests/gh-600/agentic-sdlc-integration/) |
-| Q2 | D1 | [Plan vs Action Boundaries](/quests/gh-600/agentic-plan-vs-action-boundaries/) |
-| Q3 | D1 | [Observability & Control](/quests/gh-600/agentic-observability-and-control/) |
-| Q4 | D2 | [Tool Selection & Permissions](/quests/gh-600/agentic-tool-selection-and-permissions/) |
-| Q5 | D2 | [MCP Server Mastery](/quests/gh-600/agentic-mcp-server-mastery/) |
-| Q6 | D2 | [Dev Environment Integration](/quests/gh-600/agentic-dev-environment-integration/) |
-| Q7 | D2 | [Safe Execution & Error Handling](/quests/gh-600/agentic-safe-execution-and-error-handling/) |
-| Q8 | D3 | [Memory Strategies](/quests/gh-600/agentic-memory-strategies/) |
-| Q9 | D3 | [State Persistence & Drift](/quests/gh-600/agentic-state-persistence-and-drift/) |
-| Q10 | D3 | [State Continuity Cross-Tools](/quests/gh-600/agentic-state-continuity-cross-tools/) |
-| Q11 | D4 | [Success Criteria & Signals](/quests/gh-600/agentic-success-criteria-and-signals/) |
-| Q12 | D4 | [Failure Root Cause Analysis](/quests/gh-600/agentic-failure-root-cause-analysis/) |
-| Q13 | D4 | [Behavior Tuning](/quests/gh-600/agentic-behavior-tuning/) |
-| Q14 | D5 | [Multi-Agent Orchestration Patterns](/quests/gh-600/agentic-multi-agent-orchestration-patterns/) |
-| Q15 | D5 | [Multi-Agent Observability](/quests/gh-600/agentic-multi-agent-observability/) |
-| Q16 | D5 | [Multi-Agent Failure Recovery](/quests/gh-600/agentic-multi-agent-failure-recovery/) |
-| Q17 | D5 | [Multi-Agent Lifecycle Management](/quests/gh-600/agentic-multi-agent-lifecycle-management/) |
-| Q18 | D6 | [Autonomy Levels Matrix](/quests/gh-600/agentic-autonomy-levels-matrix/) |
-| Q19 | D6 | [Guardrails & HITL](/quests/gh-600/agentic-guardrails-and-human-in-the-loop/) |
+| Q1 | D1 | [Agentic SDLC Integration](/quests/0111/agentic-sdlc-integration/) |
+| Q2 | D1 | [Plan vs Action Boundaries](/quests/0111/agentic-plan-vs-action-boundaries/) |
+| Q3 | D1 | [Observability & Control](/quests/1000/agentic-observability-and-control/) |
+| Q4 | D2 | [Tool Selection & Permissions](/quests/1000/agentic-tool-selection-and-permissions/) |
+| Q5 | D2 | [MCP Server Mastery](/quests/1000/agentic-mcp-server-mastery/) |
+| Q6 | D2 | [Dev Environment Integration](/quests/1001/agentic-dev-environment-integration/) |
+| Q7 | D2 | [Safe Execution & Error Handling](/quests/1001/agentic-safe-execution-and-error-handling/) |
+| Q8 | D3 | [Memory Strategies](/quests/1001/agentic-memory-strategies/) |
+| Q9 | D3 | [State Persistence & Drift](/quests/1010/agentic-state-persistence-and-drift/) |
+| Q10 | D3 | [State Continuity Cross-Tools](/quests/1010/agentic-state-continuity-cross-tools/) |
+| Q11 | D4 | [Success Criteria & Signals](/quests/1010/agentic-success-criteria-and-signals/) |
+| Q12 | D4 | [Failure Root Cause Analysis](/quests/1010/agentic-failure-root-cause-analysis/) |
+| Q13 | D4 | [Behavior Tuning](/quests/1011/agentic-behavior-tuning/) |
+| Q14 | D5 | [Multi-Agent Orchestration Patterns](/quests/1011/agentic-multi-agent-orchestration-patterns/) |
+| Q15 | D5 | [Multi-Agent Observability](/quests/1011/agentic-multi-agent-observability/) |
+| Q16 | D5 | [Multi-Agent Failure Recovery](/quests/1011/agentic-multi-agent-failure-recovery/) |
+| Q17 | D5 | [Multi-Agent Lifecycle Management](/quests/1100/agentic-multi-agent-lifecycle-management/) |
+| Q18 | D6 | [Autonomy Levels Matrix](/quests/1100/agentic-autonomy-levels-matrix/) |
+| Q19 | D6 | [Guardrails & HITL](/quests/1100/agentic-guardrails-and-human-in-the-loop/) |
 | CAP | All | **You are here** |
 
 ## 🏆 Capstone Rewards
@@ -507,3 +522,14 @@ docker-compose exec jekyll bundle exec jekyll build
 | Arc Complete | The Agentic Codex arc is sealed |
 
 *The Codex Master speaks: "The seals are broken. The knowledge is yours. Go now and build systems worthy of the Codex."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Skills Checklist]]
+**Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]] · [[The Three Sigils: Plan, Reason, Act]] · [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] · [[Forging the Agent's Arsenal: Tool Selection & Permissions]] · [[The MCP Conclave: Mastering Model Context Protocol Servers]] · [[Bind the Agent to the Realm: Dev Environment Integration]] · [[The Shield of Retries: Safe Execution and Error Handling]] · [[Vaults of Recollection: Agent Memory Strategies]] · [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] · [[Crossing the Tool Planes: State Continuity Across Tools]] · [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]] · [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] · [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]] · [[The Council of Many: Multi-Agent Orchestration Patterns]] · [[The Scribe's Codex: Observability in Multi-Agent Systems]] · [[When Familiars Fall: Multi-Agent Failure Recovery]] · [[The Agent Pantheon: Multi-Agent Lifecycle Management]] · [[The Autonomy Scales: Mapping Agent Autonomy Levels]] · [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

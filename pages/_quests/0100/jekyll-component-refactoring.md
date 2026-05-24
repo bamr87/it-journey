@@ -35,13 +35,12 @@ draft: false
 comments: true
 permalink: /quests/0100/side-quests/jekyll-component-refactoring/
 sub_title: 'Level 0100 (4) Quest: Side Quest - Jekyll Theme Refactoring'
-layout: journals
 categories:
 - Quests
 - Frontend
 - Medium
 tags:
-- lvl-0100
+- "0100"
 - jekyll
 - side_quest
 - frontend
@@ -438,3 +437,13 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 - [Liquid Tags and Filters](https://shopify.github.io/liquid/) - Reference for the templating syntax used in Jekyll includes
 - [MDN: Layout and the Containing Block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) - Helpful background for understanding width constraints in layouts
 - [MDN: CSS width](https://developer.mozilla.org/en-US/docs/Web/CSS/width) - Reference for width behavior when building full-width or full-bleed sections
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Dockering Jekyll with Bootstrap 5]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

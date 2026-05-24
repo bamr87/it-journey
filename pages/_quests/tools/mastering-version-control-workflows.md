@@ -30,7 +30,7 @@ categories:
 - CI/CD
 - Collaboration
 tags:
-- lvl-1100
+- "1100"
 - git
 - semantic-versioning
 - github-actions
@@ -65,11 +65,19 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1100/data-warehousing/
+  - /quests/1100/stream-processing/
+  - /quests/1100/data-quality/
+  - /quests/1100/sec-edgar-siege/
+  - /quests/1100/apache-spark/
+  - /quests/1100/conquer-king-edgar/
+  - /quests/1100/etl-pipeline-design/
+  - /quests/1100/temple-of-templates/
   parallel_quests:
   - /quests/0010/action-triggers/
   sequel_quests:
-  - /quests/1110/cicd-pipeline-mastery/
+  - /quests/1101/ml-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -889,3 +897,17 @@ Apply everything you've learned to the actual IT-Journey repository:
 - [Stack Overflow — Git tag](https://stackoverflow.com/questions/tagged/git) — Q&A archive
 
 *Go forth, architect. The branches await your command, the versions await your decree, and the changelog shall record your legend for all time.* ⚔️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Mastering Branches and Pull Requests for Developers]] · [[Commitments to clean commits]]
+**Recommended:** [[Change Logs]] · [[Understanding Action Triggers in Depth]]
+**Sequel quests:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
+**Parallel quests:** [[Understanding Action Triggers in Depth]]
+**Related quests:** [[Data Warehousing: Design Star Schema & Build Modern Analytics Architecture]] · [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]] · [[The Siege of King EDGAR: Storming the SEC Data Castle]] · [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle]] · [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] · [[The Temple of Templates: Binary Abstractions and Reusable Realms]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

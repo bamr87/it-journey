@@ -23,9 +23,13 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1000/azure-ascension-jekyll-deployment/
+  - /quests/1000/infrastructure-as-code/
+  - /quests/1000/aws-essentials/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1001/kubernetes-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -68,14 +72,14 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- lvl-1000
+- "1000"
 - cloud
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1000
+- "1000"
 - cloud
 - main_quest
 - cloud-engineering
@@ -489,3 +493,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Kubernetes Fundamentals: Container Orchestration Essentials]]
+**Related quests:** [[Azure Ascension: Deploying Jekyll to the Cloud Kingdom]] · [[Infrastructure as Code: Terraform and CloudFormation Fundamentals]] · [[AWS Essentials: Core Services and Cloud Architecture Patterns]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,14 +1,17 @@
 ---
 title: '[Quest Title]: [Descriptive Subtitle]'
+# layout defaults to `quest` via _config.yml for files in this collection.
+# Override only when authoring a non-quest reference page.
 description: Complete description of what the quest teaches and accomplishes (150-300
   characters for SEO)
-date: 2025-11-29T22:51:57.000Z
-preview: images/previews/quest-title-descriptive-subtitle.png
-level: XXXX
+date: 2025-11-29 22:51:57+00:00
+preview: /images/previews/quest-title-descriptive-subtitle.png
+level: 'XXXX'             # 4-digit binary, quoted to remain a string
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
 primary_technology: '[main-tech]'
 quest_type: main_quest
+fmContentType: quest
 skill_focus:
 - '[skill-category]'
 learning_style: hands-on
@@ -17,7 +20,7 @@ sub_title: 'Level XXXX (XX) Quest: Main Quest - [Technology]'
 excerpt: One-sentence summary of the quest's core learning objective
 author: IT-Journey Team
 tags:
-- lvl-XXXX
+- XXXX
 - - primary-technology
 - main_quest
 - - skill-focus
@@ -28,32 +31,32 @@ categories:
 - - Skill-Category
 - - Difficulty-Level
 keywords:
-- lvl-XXXX
+- XXXX
 - '[''primary-technology'']'
 - main_quest
 - '[''skill-focus'']'
 - hands-on
 - gamified-learning
 lastmod: 2025-12-01 05:49:32.316000+00:00
-permalink: /quests/level-XXXX-[quest-slug]/
+permalink: /quests/XXXX/quest-slug/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
   required_quests:
-  - /quests/level-XXXX-prerequisite-quest/
+  - /quests/XXXX/prerequisite-quest/
   recommended_quests:
-  - /quests/level-XXXX-helpful-quest/
+  - /quests/XXXX/helpful-quest/
   unlocks_quests:
-  - /quests/level-XXXX-next-quest/
+  - /quests/XXXX/next-quest/
 quest_relationships:
   parent_quest: null
   child_quests:
-  - /quests/level-XXXX-side-quest-1/
-  - /quests/level-XXXX-side-quest-2/
+  - /quests/XXXX/side-quests/side-quest-1/
+  - /quests/XXXX/side-quests/side-quest-2/
   parallel_quests:
-  - /quests/level-XXXX-alternative-path/
+  - /quests/XXXX/alternative-path/
   sequel_quests:
-  - /quests/level-XXXX-continuation/
+  - /quests/XXXX/continuation/
 learning_paths:
   primary_paths:
   - Software Development
@@ -68,6 +71,8 @@ rewards:
   - 🏆 [Achievement Badge Name]
   skills_unlocked:
   - 🛠️ [Tool or Technology Mastery]
+  # progression_points is the XP value shown by the quest UI (assets/js/quest-progress.js).
+  # Typical ranges by tier: Apprentice 50-100, Adventurer 100-200, Warrior 200-400, Master 400+.
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
@@ -97,7 +102,6 @@ quest_mapping:
   biome: Terminal
 comments: true
 draft: true
-fmContentType: template
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -505,6 +509,18 @@ Before marking this quest as complete, ensure you've:
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level {{fm.level}} - ...]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Prerequisite Quest Title]]
+**Unlocks:** [[Follow-up Quest Title]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+
+> Run `python3 scripts/quest/add-obsidian-wiki-references.py` to regenerate wiki links from `quest_dependencies` after editing frontmatter.
 
 ---
 

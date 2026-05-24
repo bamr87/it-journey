@@ -36,7 +36,7 @@ categories:
 - Community
 - Getting Started
 tags:
-- lvl-0001
+- "0001"
 - contributor
 - profile
 - git
@@ -377,3 +377,14 @@ Your level is calculated from total XP:
 
 > *"Your name is now inscribed in the Guild's ledger. Go forth and contribute, adventurer — the realm of IT awaits your deeds."*
 > — The Guild Master
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Terminal Mastery: Conquering the Command-Line Realm]] · [[Git Workflow Mastery: Branches, Merging & Team Collaboration]]
+**Unlocks:** [[Avatar Forge: Crafting Your Digital Portrait]] · [[Badge Collector: Showcasing Your Achievements]] · [[Stats Dashboard: Enhancing Your Data Visualization]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

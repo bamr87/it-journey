@@ -30,9 +30,9 @@ on:
           - 'false'
           - 'true'
       fail_threshold:
-        description: 'Minimum score percentage to pass (0=disabled)'
+        description: 'Minimum score percentage to pass (default 70)'
         required: false
-        default: '0'
+        default: '70'
       exclude_drafts:
         description: 'Skip draft quests'
         required: false
@@ -70,11 +70,20 @@ jobs:
       - name: Get changed quest files
         id: changed
         run: |
-          # Get list of changed .md files under pages/_quests/
+          # Get list of changed .md files under pages/_quests/.
+          # The quest validator itself skips collection meta files
+          # (README/INDEX/HOME, ALL_CAPS_NAME reports) and non-quest
+          # directories (templates/, tools/, docs/, codex/, inventory/,
+          # scripts/) via _is_non_quest_file, but we also filter here so
+          # only files the validator will actually score are passed in.
           CHANGED=$(git diff --name-only --diff-filter=ACMR \
             ${{ github.event.pull_request.base.sha }} \
             ${{ github.event.pull_request.head.sha }} \
-            -- 'pages/_quests/**/*.md' | grep -v 'README.md' | grep -v 'home.md' || true)
+            -- 'pages/_quests/**/*.md' \
+            | grep -Ev '/(README|INDEX|HOME)\.md$' \
+            | grep -Ev '/(templates|tools|docs|codex|inventory|scripts)/' \
+            | grep -v '^pages/_quests/home\.md$' \
+            || true)
 
           if [ -z "$CHANGED" ]; then
             echo "No quest files changed"
@@ -101,11 +110,13 @@ jobs:
             echo "Validating: $quest_file"
             echo "============================================"
 
-            OUTPUT=$(python3 test/quest-validator/quest_validator.py "$quest_file" --summary 2>&1) || true
+            # Capture validator exit code separately so we can both surface it
+            # in the PR comment and propagate the failure to the job.
+            OUTPUT=$(python3 test/quest-validator/quest_validator.py "$quest_file" --summary --fail-threshold 70 2>&1) && CODE=0 || CODE=$?
             SCORE=$(echo "$OUTPUT" | grep -o 'Quality Score: [0-9]*/[0-9]* ([0-9.]*%)' | head -1 || echo "N/A")
             STATUS=$(echo "$OUTPUT" | grep -E '(PASSED|FAILED)' | head -1 || echo "UNKNOWN")
 
-            if echo "$STATUS" | grep -q "PASSED"; then
+            if [ "$CODE" -eq 0 ]; then
               ((PASSED++)) || true
               ICON="✅"
             else
@@ -120,16 +131,15 @@ jobs:
           echo "passed=$PASSED" >> "$GITHUB_OUTPUT"
           echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
 
-          # Write results for PR comment
           {
             echo "RESULTS<<ENDOFRESULTS"
             echo -e "$RESULTS"
             echo "ENDOFRESULTS"
           } >> "$GITHUB_OUTPUT"
 
-          # Set exit code
           if [ "$FAILED" -gt 0 ]; then
-            echo "::warning::${FAILED} quest(s) failed validation"
+            echo "::error::${FAILED} quest(s) failed validation (threshold 70%)"
+            exit 1
           fi
 
       - name: Comment on PR
@@ -219,9 +229,10 @@ jobs:
       - name: Validate quest network
         id: network
         run: |
+          # Non-zero exit fails the job; errors are still captured in JSON
+          # for the annotation step that runs with `if: always()`.
           python3 scripts/quest/validate-quest-network.py \
-            --json /tmp/network-report.json 2>&1
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+            --json /tmp/network-report.json
 
       - name: Annotate PR with network issues
         if: always()
@@ -291,8 +302,12 @@ jobs:
             EXTRA_ARGS="$EXTRA_ARGS --exclude-drafts"
           fi
 
+          # Default threshold = 70 (blocking). Explicit "0" disables it.
           THRESHOLD="${{ github.event.inputs.fail_threshold }}"
-          if [ -n "$THRESHOLD" ] && [ "$THRESHOLD" != "0" ]; then
+          if [ -z "$THRESHOLD" ]; then
+            THRESHOLD="70"
+          fi
+          if [ "$THRESHOLD" != "0" ]; then
             EXTRA_ARGS="$EXTRA_ARGS --fail-threshold $THRESHOLD"
           fi
 
@@ -300,7 +315,7 @@ jobs:
             -d pages/_quests/ \
             --summary \
             --report test/quest-validator/full-audit-report.json \
-            $EXTRA_ARGS 2>&1 || true
+            $EXTRA_ARGS
 
           echo ""
           echo "============================================"
@@ -310,7 +325,7 @@ jobs:
       - name: Run quest network validation
         run: |
           python3 scripts/quest/validate-quest-network.py \
-            --json test/quest-validator/network-report.json 2>&1 || true
+            --json test/quest-validator/network-report.json
 
       - name: Upload network report
         uses: actions/upload-artifact@v4
@@ -368,20 +383,21 @@ jobs:
           if git diff --quiet assets/data/quest-network.json _data/quests/network.yml 2>/dev/null; then
             echo "✅ quest-network.json and network.yml are up to date." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "::warning::quest-network.json or _data/quests/network.yml is stale. Run scripts/quest/build-quest-network.py and commit."
+            echo "::error::quest-network.json or _data/quests/network.yml is stale. Run scripts/quest/build-quest-network.py and commit."
             {
               echo ""
-              echo "## ⚠️ Stale Quest Network Data"
+              echo "## ❌ Stale Quest Network Data"
               echo ""
               echo "The committed \`assets/data/quest-network.json\` or \`_data/quests/network.yml\` does not match the current quest files."
               echo ""
               echo "To fix, run:"
               echo "\`\`\`bash"
-              echo "python3 scripts/quest/build-quest-network.py"
+              echo "make quest-build-network"
               echo "git add assets/data/quest-network.json _data/quests/network.yml"
               echo "git commit -m 'chore(quests): regenerate quest network data'"
               echo "\`\`\`"
             } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
 
       - name: Upload regenerated network JSON

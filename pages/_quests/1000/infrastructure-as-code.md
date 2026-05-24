@@ -66,14 +66,14 @@ categories:
 - Cloud-Engineering
 - Hard
 tags:
-- lvl-1000
+- "1000"
 - terraform
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1000
+- "1000"
 - terraform
 - main_quest
 - cloud-engineering
@@ -487,3 +487,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

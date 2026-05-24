@@ -23,9 +23,15 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1010/automated-hyperlink-guardian/
+  - /quests/1010/elk-stack/
+  - /quests/1010/prometheus-grafana/
+  - /quests/1010/distributed-tracing/
+  - /quests/1010/alerting-systems/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1011/security-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -68,7 +74,7 @@ categories:
 - DevOps
 - Hard
 tags:
-- lvl-1010
+- "1010"
 - monitoring
 - observability
 - main_quest
@@ -76,7 +82,7 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1010
+- "1010"
 - monitoring
 - observability
 - main_quest
@@ -491,3 +497,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1010 - Automation & Testing]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
+**Related quests:** [[Link to the Future: Automated Hyperlink Guardian Quest]] · [[ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis]] · [[Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial]] · [[Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide]] · [[Alerting Systems: PagerDuty Integration & Incident Management Guide]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

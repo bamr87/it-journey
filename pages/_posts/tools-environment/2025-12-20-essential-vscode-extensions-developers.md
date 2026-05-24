@@ -28,7 +28,7 @@ keywords:
         - visual studio code
         - it-journey
 excerpt: "Discover the essential VS Code extensions every developer needs in 2025. From productivity boosters to language-specific tools, transform your coding experience."
-preview: "Complete guide to must-have VS Code extensions - boost your development productivity with these essential tools"
+preview: /images/previews/tools-collection-development-tools-workflows.png
 difficulty: "🟢 Easy"
 estimated_time: "20 minutes to read"
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Complete Developer Contribution Guide"
-description: Comprehensive instructions for developers and AI agents contributing to the IT-Journey repository
+description: Developer and AI agent guide for contributing to IT-Journey — setup, branching strategies, code standards, and PR workflows.
 excerpt: Step-by-step contribution guide for developers and AI agents — covering setup, branching, code standards, testing, pull requests, and AI-assisted workflows for the IT-Journey project.
 author: IT-Journey Team
 date: 2025-10-13T00:00:00.000Z
