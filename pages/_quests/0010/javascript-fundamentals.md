@@ -8,7 +8,7 @@ excerpt: Build interactive web pages with JavaScript DOM manipulation, events, a
   dynamic content.
 preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-12-19 00:00:00+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
@@ -116,7 +116,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

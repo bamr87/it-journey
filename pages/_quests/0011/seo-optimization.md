@@ -8,7 +8,7 @@ excerpt: Optimize your Jekyll site for search engines with meta tags, structured
   and technical SEO best practices
 preview: images/previews/seo-optimization-search-engine-visibility-descript.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:00:21+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
@@ -113,7 +113,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

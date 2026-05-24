@@ -11,7 +11,7 @@ snippet: The stack you choose defines the ceiling of what you can build — choo
   build boldly.
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
 date: 2025-11-02 14:45:16+00:00
-lastmod: 2026-04-13 00:00:00+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '0001'
 difficulty: 🔴 Hard
 estimated_time: 3-5 hours
@@ -550,8 +550,8 @@ graph TB
 
     subgraph "nginx Reverse Proxy — Port 80/443"
         NginxStatic[Static Files]
-        NginxAPI[/api/* → Django]
-        NginxMedia[/media/* → MinIO]
+        NginxAPI["/api/* → Django"]
+        NginxMedia["/media/* → MinIO"]
     end
 
     subgraph "Django Backend — Port 8000"

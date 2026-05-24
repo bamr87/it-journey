@@ -7,7 +7,7 @@ description: Lead effective architecture reviews and design discussions. Master 
 excerpt: Lead effective architecture reviews and technical design discussions
 preview: images/previews/architecture-reviews-descriptive-subtitle.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:46:59.315000+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
@@ -110,7 +110,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

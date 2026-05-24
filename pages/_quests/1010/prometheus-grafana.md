@@ -8,7 +8,7 @@ excerpt: Build complete monitoring with Prometheus metrics collection and Grafan
   visualization dashboards
 preview: images/previews/prometheus-quest-title-grafana-metrics-collection-.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:44:08+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -113,7 +113,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

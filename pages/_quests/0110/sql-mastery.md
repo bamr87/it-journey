@@ -7,7 +7,7 @@ excerpt: Master advanced SQL query techniques including JOINs, subqueries, and w
   functions
 preview: images/previews/sql-mastery-query-language-proficiency-descriptive.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:07:39+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -110,7 +110,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

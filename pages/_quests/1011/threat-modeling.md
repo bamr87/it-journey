@@ -6,7 +6,7 @@ description: Master threat modeling with STRIDE methodology, attack trees, data 
 excerpt: Identify security threats systematically using STRIDE and attack tree methodologies
 preview: images/previews/threat-modeling-stride-quest-title-attack-trees-de.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:44:40+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -109,7 +109,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

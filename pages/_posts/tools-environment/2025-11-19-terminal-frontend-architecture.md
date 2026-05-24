@@ -27,7 +27,7 @@ keywords:
         - shell-scripting
         - tui
         - devops-tools
-lastmod: 2025-11-20T05:43:41.429Z
+lastmod: 2026-05-24T19:09:33.065Z
 permalink: /posts/terminal-frontend-architecture/
 attachments: ""
 comments: true
@@ -89,12 +89,12 @@ graph TD
     User((👤 User))
     
     subgraph "The Glass Interface"
-        Interface[🖥️ Interface Layer\n(Gum, FZF, Dialog)]
-        Orchestrator[⚙️ Orchestration Layer\n(Main Script)]
+        Interface["🖥️ Interface Layer<br/>(Gum, FZF, Dialog)"]
+        Orchestrator["⚙️ Orchestration Layer<br/>(Main Script)"]
     end
     
     subgraph "The Core"
-        Logic[🔧 Core Logic Layer\n(AWS CLI, Docker, Git, Raw Scripts)]
+        Logic["🔧 Core Logic Layer<br/>(AWS CLI, Docker, Git, Raw Scripts)"]
     end
     
     User -->|Interacts with| Interface

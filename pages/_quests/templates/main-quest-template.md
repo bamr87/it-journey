@@ -37,7 +37,7 @@ keywords:
 - '[''skill-focus'']'
 - hands-on
 - gamified-learning
-lastmod: 2025-12-01 05:49:32.316000+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 permalink: /quests/XXXX/quest-slug/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
@@ -120,7 +120,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

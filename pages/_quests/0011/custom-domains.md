@@ -8,7 +8,7 @@ excerpt: Transform your GitHub Pages site with a custom domain, SSL, and profess
   DNS configuration
 preview: images/previews/custom-domains-professional-site-setup-descriptive.png
 date: 2025-11-29 22:51:57+00:00
-lastmod: 2025-11-30 05:00:31+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 30-45 minutes
@@ -113,7 +113,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]

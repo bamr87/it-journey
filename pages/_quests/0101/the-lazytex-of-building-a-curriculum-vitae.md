@@ -10,7 +10,7 @@ snippet: From blank page to battle-ready CV—forge, compile, and level up your 
   codex.
 preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
 date: 2025-08-21 22:00:59+00:00
-lastmod: 2025-08-17 21:36:08.855000+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
@@ -381,7 +381,7 @@ graph TD
   C --> F[🔧 Open cv.tex]
   D --> F
   E --> F
-  F --> G[⚙️ Compile (latexmk -pdf)]
+  F --> G["⚙️ Compile (latexmk -pdf)"]
   G -->|✅| H[📝 Populate Sections]
   H --> I[🔗 Validate Links & Layout]
   I --> J{✅ Success?}

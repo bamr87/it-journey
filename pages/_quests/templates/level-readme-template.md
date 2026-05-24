@@ -16,7 +16,7 @@ tags:
 - - theme-tag
 - - skill-area
 - quest-collection
-lastmod: 2025-11-30 05:46:59.319000+00:00
+lastmod: 2026-05-24T19:09:33.065Z
 toc: true
 toc_sticky: true
 draft: false
@@ -55,9 +55,9 @@ fmContentType: template
 ```mermaid
 graph TB
     subgraph "Quest Progression"
-        PrevLevel[Level XXXX:<br/>[Previous Level]]
-        CurrentLevel[Level [BINARY]:<br/>[Current Level]]
-        NextLevel[Level XXXX:<br/>[Next Level]]
+        PrevLevel[Level XXXX<br/>Previous Level]
+        CurrentLevel[Level BINARY<br/>Current Level]
+        NextLevel[Level XXXX<br/>Next Level]
     end
     
     PrevLevel --> CurrentLevel
@@ -90,9 +90,9 @@ By completing this level, adventurers will master:
 ```mermaid
 graph TB
     subgraph "Main Quest Line"
-        MQ1[🎯 Main Quest 1:<br/>[Quest Name]]
-        MQ2[🎯 Main Quest 2:<br/>[Quest Name]]
-        MQ3[🎯 Main Quest 3:<br/>[Quest Name]]
+        MQ1[🎯 Main Quest 1:<br/>Quest Name]
+        MQ2[🎯 Main Quest 2:<br/>Quest Name]
+        MQ3[🎯 Main Quest 3:<br/>Quest Name]
     end
     
     subgraph "Side Quests"
