@@ -1,0 +1,67 @@
+name: Theme Drift Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_layouts/**"
+      - "_includes/**"
+      - "_sass/**"
+      - "assets/css/**"
+      - "assets/js/**"
+      - "_plugins/**"
+      - ".theme-overrides.yml"
+  schedule:
+    # Weekly on Mondays at 07:00 UTC
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+jobs:
+  theme-audit:
+    name: Check theme drift
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout it-journey
+        uses: actions/checkout@v4
+        with:
+          path: it-journey
+
+      - name: Checkout zer0-mistakes (theme source)
+        uses: actions/checkout@v4
+        with:
+          repository: bamr87/zer0-mistakes
+          path: zer0-mistakes
+
+      - name: Run theme audit
+        id: audit
+        run: |
+          chmod +x zer0-mistakes/scripts/bin/audit-consumer
+          chmod +x zer0-mistakes/scripts/lib/audit.sh || true
+          zer0-mistakes/scripts/bin/audit-consumer \
+            --consumer-path it-journey \
+            --theme-path    zer0-mistakes \
+            --mode          remote_theme \
+            --strict \
+            --format        github \
+            2>&1 | tee audit-output.txt
+        continue-on-error: true
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: theme-drift-report
+          path: audit-output.txt
+          retention-days: 30
+
+      - name: Open theme-drift issue on failure
+        if: steps.audit.outcome == 'failure'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🎨 Theme drift detected — zer0-mistakes update available"
+          content-filepath: audit-output.txt
+          labels: |
+            theme-drift
+            maintenance
+          assignees: bamr87

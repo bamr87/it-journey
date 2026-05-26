@@ -1,5 +1,15 @@
+---
+permalink: /robots.txt
+sitemap: false
+---
 User-agent: *
-Disallow: /secret/
-Disallow: /private/
-Disallow: /tmp/
-Sitemap: https://it-journey.dev/sitemap.xml
+Allow: /
+
+# Internal QA / dev artifacts that ship to _site but shouldn't be indexed
+Disallow: /link-check-results/
+Disallow: /stats/
+Disallow: /test.prompt.yml
+Disallow: /redirects.json
+Disallow: /search.json
+
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

@@ -33,6 +33,8 @@ module Jekyll
       'style' => 'retro pixel art, 8-bit video game aesthetic, vibrant colors, nostalgic, clean pixel graphics',
       'style_modifiers' => 'pixelated, retro gaming style, CRT screen glow effect, limited color palette',
       'output_dir' => 'assets/images/previews',
+      'assets_prefix' => '/assets',
+      'auto_prefix' => true,
       'auto_generate' => false,
       'collections' => ['posts', 'docs', 'quickstart']
     }.freeze
@@ -45,81 +47,158 @@ module Jekyll
 
     # Check if a document has a preview image defined
     def self.has_preview?(doc)
+      cached = cached_preview_entry(doc)
+      return cached['has_preview'] unless cached.nil?
+
       preview = doc.data['preview']
       return false if preview.nil? || preview.to_s.strip.empty?
-
+      
       # Reject non-path values (text descriptions used as preview)
       return false unless preview.match?(/\.(png|jpe?g|gif|svg|webp)$/i) || preview.start_with?('http')
-
-      # External URLs — assume they exist
-      return true if preview.start_with?('http')
-
+      
+      # Check if the preview file actually exists
       site = doc.site
-
+      config = self.config(site)
+      
+      # External URL — assume it exists
+      return true if preview.start_with?('http')
+      
+      # Normalize the preview path using assets_prefix
+      normalized_preview = normalize_preview_path(preview, config)
+      
       # Build candidate file paths to check
       candidates = []
-      if preview.start_with?('/')
-        # Absolute site path: /images/previews/file.png
-        candidates << File.join(site.source, preview)
-        candidates << File.join(site.source, 'assets', preview)
+      if normalized_preview.start_with?('/')
+        candidates << File.join(site.source, normalized_preview.sub(/^\//, ''))
+        candidates << File.join(site.source, 'assets', normalized_preview.sub(/^\//, ''))
       else
-        # Relative path: images/previews/file.png
-        # Actual file lives under assets/ on disk
-        candidates << File.join(site.source, 'assets', preview)
-        candidates << File.join(site.source, preview)
+        candidates << File.join(site.source, 'assets', normalized_preview)
+        candidates << File.join(site.source, normalized_preview)
+        candidates << File.join(site.source, config['output_dir'], normalized_preview)
       end
-
+      
       candidates.any? { |path| File.exist?(path) }
+    end
+
+    # Normalize a preview path by adding assets_prefix if needed
+    def self.normalize_preview_path(preview, config)
+      return preview if preview.nil? || preview.to_s.strip.empty?
+      return preview if preview.start_with?('http')
+      
+      assets_prefix = config['assets_prefix'] || '/assets'
+      auto_prefix = config['auto_prefix'] != false  # Default to true
+      
+      # If auto_prefix is enabled and path doesn't already contain assets_prefix
+      if auto_prefix && !preview.include?(assets_prefix)
+        "#{assets_prefix}#{preview}"
+      else
+        preview
+      end
     end
 
     # Get the preview image path for a document
     def self.preview_path(doc)
+      cached = cached_preview_entry(doc)
+      return cached['path'] unless cached.nil?
+
       preview = doc.data['preview']
       return nil if preview.nil? || preview.to_s.strip.empty?
-
+      
       # Reject non-path values
       return nil unless preview.match?(/\.(png|jpe?g|gif|svg|webp)$/i) || preview.start_with?('http')
-
-      # URLs and absolute paths returned as-is
-      return preview if preview.start_with?('/') || preview.start_with?('http')
-
-      # Relative path (e.g. images/previews/file.png) — return as-is
-      # Templates prepend the assets base URL when rendering
-      preview
+      
+      site = doc.site
+      config = self.config(site)
+      
+      # If it's an external URL, return as-is
+      return preview if preview.start_with?('http')
+      
+      # Normalize path with assets_prefix
+      normalize_preview_path(preview, config)
     end
 
     # Get list of documents missing preview images
     def self.missing_previews(site)
+      build_index(site)['missing']
+    end
+
+    def self.build_index(site)
+      cached = site.data['preview_image_index']
+      return cached if cached
+
       config = self.config(site)
+      index = {}
       missing = []
-      
-      config['collections'].each do |collection_name|
+
+      preview_documents(site, config).each do |doc, collection_name|
+        key = preview_cache_key(doc)
+        next if index.key?(key)
+
+        preview = doc.data['preview']
+        normalized_path = nil
+        has_preview = false
+
+        if preview && !preview.to_s.strip.empty? && (preview.match?(/\.(png|jpe?g|gif|svg|webp)$/i) || preview.start_with?('http'))
+          normalized_path = preview.start_with?('http') ? preview : normalize_preview_path(preview, config)
+          has_preview = preview.start_with?('http') || preview_file_exists?(site, normalized_path, config)
+        end
+
+        index[key] = {
+          'has_preview' => has_preview,
+          'path' => normalized_path,
+          'collection' => collection_name
+        }
+
+        next if has_preview
+
+        missing << {
+          'path' => doc.relative_path,
+          'title' => doc.data['title'] || File.basename(doc.relative_path),
+          'collection' => collection_name
+        }
+      end
+
+      site.data['preview_image_index'] = {
+        'documents' => index,
+        'missing' => missing
+      }
+    end
+
+    def self.cached_preview_entry(doc)
+      return nil unless doc.respond_to?(:site) && doc.site && doc.site.data['preview_image_index']
+
+      doc.site.data['preview_image_index']['documents'][preview_cache_key(doc)]
+    end
+
+    def self.preview_documents(site, config)
+      docs = []
+      Array(config['collections']).each do |collection_name|
         collection = site.collections[collection_name]
         next unless collection
-        
-        collection.docs.each do |doc|
-          unless has_preview?(doc)
-            missing << {
-              'path' => doc.relative_path,
-              'title' => doc.data['title'] || File.basename(doc.relative_path),
-              'collection' => collection_name
-            }
-          end
-        end
+
+        collection.docs.each { |doc| docs << [doc, collection_name] }
       end
-      
-      # Also check posts (which are special in Jekyll)
-      site.posts.docs.each do |doc|
-        unless has_preview?(doc)
-          missing << {
-            'path' => doc.relative_path,
-            'title' => doc.data['title'] || File.basename(doc.relative_path),
-            'collection' => 'posts'
-          }
-        end
+
+      site.posts.docs.each { |doc| docs << [doc, 'posts'] } if site.respond_to?(:posts) && site.posts
+      docs
+    end
+
+    def self.preview_cache_key(doc)
+      doc.respond_to?(:relative_path) ? doc.relative_path : doc.path
+    end
+
+    def self.preview_file_exists?(site, normalized_preview, config)
+      candidates = []
+      if normalized_preview.start_with?('/')
+        candidates << File.join(site.source, normalized_preview.sub(/^\//, ''))
+        candidates << File.join(site.source, 'assets', normalized_preview.sub(/^\//, ''))
+      else
+        candidates << File.join(site.source, 'assets', normalized_preview)
+        candidates << File.join(site.source, normalized_preview)
+        candidates << File.join(site.source, config['output_dir'], normalized_preview)
       end
-      
-      missing.uniq { |m| m['path'] }
+
+      candidates.any? { |path| File.exist?(path) }
     end
 
     # Generate a preview image filename from document
@@ -168,8 +247,12 @@ module Jekyll
         return nil if preview.nil? || preview.to_s.strip.empty?
         return nil unless preview.to_s.match?(/\.(png|jpe?g|gif|svg|webp)$/i) || preview.to_s.start_with?('http')
         
-        # Return as-is; templates handle the base URL
-        preview
+        return preview if preview.start_with?('/') || preview.start_with?('http')
+        
+        # Get config from context if available
+        site_config = @context.registers[:site].config['preview_images'] || {}
+        output_dir = site_config['output_dir'] || 'assets/images/previews'
+        "#{output_dir}/#{preview}"
       else
         PreviewImageGenerator.preview_path(doc)
       end
@@ -237,7 +320,8 @@ module Jekyll
       return unless config['enabled']
       
       # Store missing previews in site data for access in templates
-      site.data['preview_images_missing'] = PreviewImageGenerator.missing_previews(site)
+      preview_index = PreviewImageGenerator.build_index(site)
+      site.data['preview_images_missing'] = preview_index['missing']
       site.data['preview_images_config'] = config
       
       # Log status

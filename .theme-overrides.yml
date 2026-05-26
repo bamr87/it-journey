@@ -1,0 +1,101 @@
+# .theme-overrides.yml
+# Declares files in this repo that intentionally differ from the zer0-mistakes
+# theme. All paths listed here will be classified as DIFFERS_JUSTIFIED instead
+# of DIFFERS_UNJUSTIFIED when running scripts/bin/audit-consumer.
+#
+# Schema per entry:
+#   - path:   <relative path from repo root>
+#     reason: <short human description>
+#
+# Run `make theme-audit` to check for undeclared drift.
+
+overrides:
+  # --- Layouts ---
+  - path: "_layouts/news.html"
+    reason: "Adds section_slug fallback for category-less posts; two-line patch on theme base."
+
+  - path: "_layouts/javascript.html"
+    reason: "Unique interactive JS demo layout used by javascript demo posts."
+
+  - path: "_layouts/quest.html"
+    reason: "Quest gamification system: per-quest progress tracking, XP rewards, checkpoint UI."
+
+  - path: "_layouts/quest-collection.html"
+    reason: "Quest level index layout with tier progress bars and level-specific navigation."
+
+  - path: "_layouts/quest-hub.html"
+    reason: "Root quest hub layout aggregating all levels with completion summaries."
+
+  # --- Includes: quest system ---
+  - path: "_includes/quest-card.html"
+    reason: "Quest card component for quest browsing grids."
+
+  - path: "_includes/quest-filters.html"
+    reason: "Client-side filter UI for quest category/difficulty browsing."
+
+  - path: "_includes/quest-stats.html"
+    reason: "Site-wide quest completion statistics widget."
+
+  - path: "_includes/quest/quest-header.html"
+    reason: "Quest page header with level badge and XP display."
+
+  - path: "_includes/quest/quest-nav.html"
+    reason: "Previous/next navigation between quests in the same level."
+
+  - path: "_includes/quest/quest-path-tracker.html"
+    reason: "Visual path tracker for multi-step quests."
+
+  - path: "_includes/quest/quest-prerequisites.html"
+    reason: "Prerequisite checklist rendered at top of quest page."
+
+  - path: "_includes/quest/quest-progress.html"
+    reason: "Checkpoint progress bar for individual quest pages."
+
+  - path: "_includes/quest/quest-rewards.html"
+    reason: "XP / badge reward display shown on quest completion."
+
+  - path: "_includes/quest/quest-sidebar.html"
+    reason: "Quest metadata sidebar: difficulty, time, XP, tags."
+
+  - path: "_includes/quest/tier-progress-bar.html"
+    reason: "Bootstrap progress bar for quest tier completion percentage."
+
+  # --- Includes: contributor profiles ---
+  - path: "_includes/contributor/achievement_wall.html"
+    reason: "Achievement badge wall for contributor profile pages."
+
+  - path: "_includes/contributor/character_sheet.html"
+    reason: "RPG-style character sheet for contributor skill visualization."
+
+  - path: "_includes/contributor/profile_card.html"
+    reason: "Contributor profile summary card component."
+
+  - path: "_includes/contributor/stats_panel.html"
+    reason: "Contributor contribution statistics panel."
+
+  # --- Includes: content overrides ---
+  - path: "_includes/content/quest-backlinks.html"
+    reason: "Quest-specific backlinks panel (quests link to each other by level/prereq)."
+
+  - path: "_includes/content/quest-graph.html"
+    reason: "Interactive quest dependency graph visualization."
+
+  # --- Plugins ---
+  - path: "_plugins/preview_image_generator.rb"
+    reason: "Vendored copy of theme plugin (required: remote_theme does not load theme plugins)."
+
+  - path: "_plugins/obsidian_links.rb"
+    reason: "Vendored copy of theme plugin (required: remote_theme does not load theme plugins)."
+
+  - path: "_plugins/preview_generator.rb"
+    reason: "Dev-only utility: generates preview image directory listing. Unique to it-journey."
+
+  # --- Assets ---
+  - path: "assets/css/quest-system.css"
+    reason: "Quest gamification CSS: checkpoint states, tier bars, XP display."
+
+  - path: "assets/css/contributor-profile.css"
+    reason: "Contributor profile page styles: character sheet, achievement wall."
+
+  - path: "assets/js/quest-progress.js"
+    reason: "Client-side quest progress tracking via localStorage."

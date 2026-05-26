@@ -1,130 +1,3935 @@
-# Auto-generated content statistics for IT-Journey
-# Generated at: 2026-02-22T15:16:55.016-0700
 ---
-generated_at: '2026-02-22T15:16:55.016-0700'
-total_posts: 15
+generated_at: '2026-05-25 18:08:53'
+overview:
+  total_posts: 93
+  total_pages: 465
+  total_content: 558
+  total_categories: 238
+  total_tags: 689
+  total_authors: 20
+  total_words: 475041
+  average_words_per_post: 851.3
+  published: 558
+  drafts: 127
 categories:
-  posts: 8
-  devops: 5
-  tutorials: 3
-  ai & machine learning: 2
-  macos: 1
-  system-administration: 1
-  web-development: 1
-  development tools: 1
-  notes: 1
-  finance: 1
-  windows: 1
-  customization: 1
-  culture: 1
-  tools & environment: 1
-  web development: 1
+- - wargames
+  - 220
+- - Quests
+  - 95
+- - Development
+  - 41
+- - bandit
+  - 36
+- - natas
+  - 36
+- - vortex
+  - 28
+- - Agentic-AI
+  - 24
+- - Posts
+  - 19
+- - DevOps
+  - 17
+- - drifter
+  - 17
+- - Documentation
+  - 15
+- - Hard
+  - 14
+- - quickstart
+  - 14
+- - Terminal
+  - 14
+- - Programming
+  - 14
+- - quests
+  - 14
+- - semtex
+  - 14
+- - narnia
+  - 11
+- - maze
+  - 11
+- - AI & Machine Learning
+  - 11
+- - behemoth
+  - 10
+- - Bashcrawl
+  - 10
+- - utumno
+  - 10
+- - Web Development
+  - 9
+- - leviathan
+  - 9
+- - manpage
+  - 9
+- - notes
+  - 9
+- - Medium
+  - 9
+- - IT Consulting
+  - 8
+- - Tutorials
+  - 8
+- - krypton
+  - 8
+- - Notes
+  - 8
+- - formulaone
+  - 8
+- - jekyll
+  - 8
+- - Frontend
+  - 7
+- - blacksun
+  - 7
+- - Community
+  - 7
+- - Tools & Environment
+  - 6
+- - Web-Development
+  - 6
+- - Init-World
+  - 6
+- - Data Analytics
+  - 6
+- - Guides
+  - 6
+- - Tools
+  - 6
+- - guides
+  - 5
+- - Docs
+  - 5
+- - posts
+  - 5
+- - Certifications
+  - 5
+- - Intermediate
+  - 5
+- - tutorials
+  - 5
+- - Beginner
+  - 5
+- - cheatsheets
+  - 4
+- - Jekyll
+  - 4
+- - Project Management
+  - 4
+- - documentation
+  - 4
+- - docs
+  - 4
+- - quest-development
+  - 4
+- - Learning
+  - 4
+- - about
+  - 4
+- - Foundation
+  - 4
+- - Debugging
+  - 4
+- - Open Source
+  - 3
+- - Version Control
+  - 3
+- - shortcuts
+  - 3
+- - System Administration
+  - 3
+- - home
+  - 3
+- - Innovation
+  - 3
+- - notebooks
+  - 3
+- - Data & Analytics
+  - 3
+- - Development-Environment
+  - 3
+- - Terminal-Mastery
+  - 3
+- - Creative & Experimental
+  - 3
+- - Git
+  - 3
+- - gpt
+  - 3
+- - navigation
+  - 3
+- - Architecture
+  - 3
+- - Finance
+  - 3
+- - Tool-Mastery
+  - 3
+- - Technology
+  - 3
+- - IDE-Setup
+  - 2
+- - GitHub Actions
+  - 2
+- - system-administration
+  - 2
+- - Education
+  - 2
+- - Process-Improvement
+  - 2
+- - Python
+  - 2
+- - Stack Analysis
+  - 2
+- - Culture & Society
+  - 2
+- - Cloud
+  - 2
+- - ai
+  - 2
+- - ERP Systems
+  - 2
+- - Business
+  - 2
+- - CI/CD
+  - 2
+- - Design
+  - 2
+- - search
+  - 2
+- - Data-Engineering
+  - 2
+- - Customization
+  - 2
+- - AI-Development
+  - 2
+- - AI-Integration
+  - 2
+- - Automation
+  - 2
+- - Trends & Ideas
+  - 2
+- - Side-Quests
+  - 2
+- - web-development
+  - 2
+- - programming
+  - 2
+- - python
+  - 2
+- - System-Administration
+  - 2
+- - obsidian
+  - 2
+- - cms
+  - 1
+- - migration
+  - 1
+- - tools
+  - 1
+- - contributing
+  - 1
+- - Learning Path
+  - 1
+- - Articles
+  - 1
+- - JavaScript
+  - 1
+- - Millennials
+  - 1
+- - Career Development
+  - 1
+- - AI-Powered
+  - 1
+- - Emerging Technologies
+  - 1
+- - Productivity
+  - 1
+- - devops
+  - 1
+- - ai & machine learning
+  - 1
+- - web development
+  - 1
+- - macos
+  - 1
+- - customization
+  - 1
+- - Professional-Development
+  - 1
+- - javascript
+  - 1
+- - Mathematics
+  - 1
+- - Reference
+  - 1
+- - Neuroscience
+  - 1
+- - Culture
+  - 1
+- - Infrastructure
+  - 1
+- - Learning-Journey
+  - 1
+- - Social-Issues
+  - 1
+- - Cultural-Education
+  - 1
+- - breaking
+  - 1
+- - Social Impact
+  - 1
+- - Resources
+  - 1
+- - Hobbies
+  - 1
+- - Pet-Care
+  - 1
+- - Music
+  - 1
+- - Economics
+  - 1
+- - Research
+  - 1
+- - SEO
+  - 1
+- - Enterprise Systems
+  - 1
+- - Satire
+  - 1
+- - dev
+  - 1
+- - shell
+  - 1
+- - sidebar
+  - 1
+- - web-scraping
+  - 1
+- - Level-000
+  - 1
+- - it-journey
+  - 1
+- - bootstrap
+  - 1
+- - powershell
+  - 1
+- - Gaming
+  - 1
+- - iTerm2
+  - 1
+- - utilities
+  - 1
+- - productivity tips
+  - 1
+- - monxla
+  - 1
+- - hes2010
+  - 1
+- - kishi
+  - 1
+- - abraxas
+  - 1
+- - security
+  - 1
+- - Getting Started
+  - 1
+- - Web Deployment
+  - 1
+- - Easy
+  - 1
+- - Team-Development
+  - 1
+- - linux
+  - 1
+- - Windows
+  - 1
+- - Career-Development
+  - 1
+- - macOS
+  - 1
+- - Django Applications
+  - 1
+- - ERP
+  - 1
+- - AI-Powered-Tools
+  - 1
+- - Enterprise
+  - 1
+- - Development - Foundation
+  - 1
+- - Data-Analytics
+  - 1
+- - GitHub-Pages
+  - 1
+- - terminal customization
+  - 1
+- - humor
+  - 1
+- - tech
+  - 1
+- - Future-Tech
+  - 1
+- - Developer Tools
+  - 1
+- - Engineering
+  - 1
+- - Security
+  - 1
+- - Announcements
+  - 1
+- - AI-Analysis
+  - 1
+- - Development Tools
+  - 1
+- - Lifestyle
+  - 1
+- - windows
+  - 1
+- - Backend-Development
+  - 1
+- - Level-0111
+  - 1
+- - Cloud-Computing
+  - 1
+- - Level-1000
+  - 1
+- - Level-1001
+  - 1
+- - DevOps-Automation
+  - 1
+- - Quality-Assurance
+  - 1
+- - DevOps-Engineering
+  - 1
+- - Capstone
+  - 1
+- - Epic
+  - 1
+- - '1101'
+  - 1
+- - master-tier
+  - 1
+- - machine-learning
+  - 1
+- - '1111'
+  - 1
+- - Devops
+  - 1
+- - Level-0110
+  - 1
+- - innovation
+  - 1
+- - leadership
+  - 1
+- - Deployment
+  - 1
+- - Azure
+  - 1
+- - Product Management
+  - 1
+- - planning
+  - 1
+- - Reports
+  - 1
+- - Epic-Quests
+  - 1
+- - Full-Stack-Development
+  - 1
+- - Portfolio-Building
+  - 1
+- - Terminal-Enhancement
+  - 1
+- - Quest-System
+  - 1
+- - Examples
+  - 1
+- - Codex
+  - 1
+- - Advanced
+  - 1
+- - AI
+  - 1
+- - Development-Fundamentals
+  - 1
+- - Container-Orchestration
+  - 1
+- - legend-tier
+  - 1
+- - Navigation
+  - 1
+- - '["Theme-Category"]'
+  - 1
+- - Git Best Practices
+  - 1
+- - AI/ML
+  - 1
+- - progress-tracker
+  - 1
+- - quest-map
+  - 1
+- - Level-[LEVEL]
+  - 1
+- - AI Automation
+  - 1
+- - Collaboration
+  - 1
+- - index
+  - 1
+- - CMS
+  - 1
+- - meta
+  - 1
+- - analytics
+  - 1
+- - education
+  - 1
+- - technology
+  - 1
+- - career development
+  - 1
 tags:
-  devops: 4
-  ci-cd: 3
-  article: 2
-  automation: 2
-  jekyll: 2
-  cli-tools: 1
-  documentation: 1
-  python: 1
-  ai-development: 1
-  product-management: 1
-  crush: 1
-  vscode: 1
-  github-pages: 1
-  ai-assisted-writing: 1
-  macos: 1
-  bootable-usb: 1
-  system-recovery: 1
-  terminal: 1
-  installation: 1
-  apple: 1
-  system-administration: 1
-  azure: 1
-  static-web-apps: 1
-  deployment: 1
-  cloud-hosting: 1
-  web-development: 1
-  prompt-engineering: 1
-  ai-assisted-development: 1
-  vscode-copilot: 1
-  tutorial: 1
-  intermediate: 1
-  build-systems: 1
-  best-practices: 1
-  performance-optimization: 1
-  raspberrypi: 1
-  it consulting: 1
-  enterprise systems: 1
-  erp systems: 1
-  data analytics: 1
-  project management: 1
-  cv: 1
-  gpt-4: 1
-  rainmeter: 1
-  windows: 1
-  desktop-widgets: 1
-  customization: 1
-  winget: 1
-  system-monitor: 1
-  windows-11: 1
-  windows-10: 1
-  psychology: 1
-  productivity: 1
-  developer-experience: 1
-  flow: 1
+- - linux
+  - 227
+- - security
+  - 222
+- - cybersecurity
+  - 220
+- - ctf
+  - 220
+- - wargames
+  - 220
+- - jekyll
+  - 42
+- - gh-600
+  - 39
+- - hands-on
+  - 37
+- - agentic-ai
+  - 32
+- - gamified-learning
+  - 24
+- - main_quest
+  - 24
+- - terminal
+  - 24
+- - automation
+  - 23
+- - bash
+  - 21
+- - devops
+  - 21
+- - '0000'
+  - 19
+- - tutorial
+  - 16
+- - python
+  - 15
+- - github-actions
+  - 14
+- - bashcrawl
+  - 13
+- - navigation
+  - 12
+- - git
+  - 11
+- - ai-assisted-development
+  - 11
+- - documentation
+  - 10
+- - ci-cd
+  - 10
+- - web-development
+  - 10
+- - frontend
+  - 10
+- - markdown
+  - 9
+- - '0001'
+  - 9
+- - reference
+  - 9
+- - macos
+  - 9
+- - github
+  - 8
+- - beginner
+  - 8
+- - quick-reference
+  - 8
+- - docker
+  - 8
+- - '0010'
+  - 8
+- - vscode
+  - 8
+- - '1100'
+  - 8
+- - github-pages
+  - 8
+- - javascript
+  - 7
+- - github-copilot
+  - 7
+- - productivity
+  - 7
+- - learning-journey
+  - 7
+- - debugging
+  - 7
+- - contributor
+  - 6
+- - tool-mastery
+  - 6
+- - liquid
+  - 6
+- - system-administration
+  - 6
+- - ai
+  - 6
+- - ai-development
+  - 6
+- - mcp
+  - 6
+- - command-line
+  - 6
+- - shell-scripting
+  - 6
+- - azure
+  - 6
+- - quest-collection
+  - 5
+- - gpt
+  - 5
+- - '1010'
+  - 5
+- - collaboration
+  - 5
+- - '1011'
+  - 5
+- - notes
+  - 5
+- - open-source
+  - 5
+- - intermediate
+  - 5
+- - community
+  - 5
+- - powershell
+  - 5
+- - windows
+  - 5
+- - development
+  - 5
+- - frontmatter
+  - 5
+- - multi-agent
+  - 5
+- - '0100'
+  - 5
+- - programming
+  - 5
+- - init-world
+  - 5
+- - excel
+  - 4
+- - '1001'
+  - 4
+- - cms
+  - 4
+- - ai-integration
+  - 4
+- - bootstrap
+  - 4
+- - learning
+  - 4
+- - '1000'
+  - 4
+- - project-based
+  - 4
+- - version-control
+  - 4
+- - django
+  - 4
+- - refactoring
+  - 4
+- - yaml
+  - 4
+- - learning-path
+  - 4
+- - deployment
+  - 3
+- - erp
+  - 3
+- - career
+  - 3
+- - prompt-engineering
+  - 3
+- - customization
+  - 3
+- - '0101'
+  - 3
+- - api
+  - 3
+- - it-journey
+  - 3
+- - education
+  - 3
+- - mermaid
+  - 3
+- - testing
+  - 3
+- - '1'
+  - 3
+- - '0111'
+  - 3
+- - quickstart
+  - 3
+- - ruby
+  - 3
+- - theme
+  - 3
+- - configuration
+  - 3
+- - workflow-automation
+  - 3
+- - certifications
+  - 3
+- - sitemap
+  - 3
+- - scripting
+  - 3
+- - cheatsheet
+  - 3
+- - css
+  - 3
+- - shell
+  - 3
+- - react
+  - 3
+- - latex
+  - 3
+- - themes
+  - 3
+- - orchestration
+  - 3
+- - gum
+  - 3
+- - quests
+  - 3
+- - observability
+  - 3
+- - responsible-ai
+  - 3
+- - evaluation
+  - 3
+- - development-environment
+  - 3
+- - architecture
+  - 3
+- - shortcuts
+  - 3
+- - cli
+  - 3
+- - iterm2
+  - 2
+- - collections
+  - 2
+- - script
+  - 2
+- - study-guide
+  - 2
+- - contributing
+  - 2
+- - structure
+  - 2
+- - static-site
+  - 2
+- - diagrams
+  - 2
+- - culture
+  - 2
+- - obsidian
+  - 2
+- - quest
+  - 2
+- - profile
+  - 2
+- - python-automation
+  - 2
+- - version control
+  - 2
+- - society
+  - 2
+- - journey
+  - 2
+- - zer0-mistakes
+  - 2
+- - postgresql
+  - 2
+- - data-engineering
+  - 2
+- - phase-6
+  - 2
+- - learning-paths
+  - 2
+- - roadmap
+  - 2
+- - search
+  - 2
+- - version-management
+  - 2
+- - kubernetes
+  - 2
+- - aws
+  - 2
+- - autonomy
+  - 2
+- - ci/cd
+  - 2
+- - migration
+  - 2
+- - how-to
+  - 2
+- - data-analytics
+  - 2
+- - cloud
+  - 2
+- - stack-analysis
+  - 2
+- - layouts
+  - 2
+- - templates
+  - 2
+- - zsh
+  - 2
+- - seo
+  - 2
+- - machine-learning
+  - 2
+- - html
+  - 2
+- - analytics
+  - 2
+- - nlp
+  - 2
+- - ai-agents
+  - 2
+- - developer-tools
+  - 2
+- - fundamentals
+  - 2
+- - static-web-apps
+  - 2
+- - cli-tools
+  - 2
+- - build-systems
+  - 2
+- - authentication
+  - 2
+- - best-practices
+  - 2
+- - containers
+  - 2
+- - product-management
+  - 2
+- - vscode-extension
+  - 2
+- - getting-started
+  - 2
+- - auto-detection
+  - 2
+- - sidebar
+  - 2
+- - xbrl
+  - 2
+- - vscode-copilot
+  - 2
+- - future-tech
+  - 2
+- - data-visualization
+  - 2
+- - sec-edgar
+  - 2
+- - infrastructure
+  - 2
+- - ai-machine-learning
+  - 2
+- - gpt-4
+  - 2
+- - optical-illusions
+  - 2
+- - svg
+  - 2
+- - terminal-mastery
+  - 2
+- - penrose-triangle
+  - 2
+- - copilot
+  - 2
+- - integration
+  - 2
+- - shell-customization
+  - 2
+- - oh-my-zsh
+  - 2
+- - tooling
+  - 2
+- - productivity-tools
+  - 2
+- - tutorials
+  - 2
+- - side_quest
+  - 2
+- - behavior-tuning
+  - 2
+- - creative
+  - 2
+- - sdlc
+  - 2
+- - guardrails
+  - 2
+- - static-sites
+  - 2
+- - '0011'
+  - 2
+- - complete
+  - 2
+- - ide
+  - 2
+- - mathematics
+  - 2
+- - resume
+  - 2
+- - continuous-improvement
+  - 2
+- - extensions
+  - 2
+- - modular-architecture
+  - 2
+- - link-checking
+  - 2
+- - professional-development
+  - 2
+- - jupyter
+  - 2
+- - typescript
+  - 2
+- - development-setup
+  - 2
+- - networking
+  - 2
+- - installation
+  - 2
+- - front-matter-cms
+  - 2
+- - error-handling
+  - 2
+- - development-tools
+  - 2
+- - wsl
+  - 2
+- - posts
+  - 2
+- - fork-workflow
+  - 1
+- - open-source-contribution
+  - 1
+- - content-management
+  - 1
+- - project-building
+  - 1
+- - spyder
+  - 1
+- - webpack
+  - 1
+- - psychopy
+  - 1
+- - testing-frameworks
+  - 1
+- - filesystem
+  - 1
+- - rainmeter
+  - 1
+- - desktop-widgets
+  - 1
+- - system-design
+  - 1
+- - enterprise-software
+  - 1
+- - microservices
+  - 1
+- - system-monitor
+  - 1
+- - windows-10
+  - 1
+- - winget
+  - 1
+- - windows-11
+  - 1
+- - system-recovery
+  - 1
+- - bootable-usb
+  - 1
+- - apple
+  - 1
+- - sysadmin
+  - 1
+- - neuroscience
+  - 1
+- - modeling
+  - 1
+- - complexity
+  - 1
+- - arbitrage
+  - 1
+- - financial
+  - 1
+- - patterns
+  - 1
+- - languages
+  - 1
+- - script-refactoring
+  - 1
+- - documentation-enhancement
+  - 1
+- - markdown-standards
+  - 1
+- - digital-literacy
+  - 1
+- - technical-documentation
+  - 1
+- - open-source-education
+  - 1
+- - community-building
+  - 1
+- - environment
+  - 1
+- - tools
+  - 1
+- - editor
+  - 1
+- - cv
+  - 1
+- - programming-practice
+  - 1
+- - skill-development
+  - 1
+- - vendors
+  - 1
+- - document-creation
+  - 1
+- - typography
+  - 1
+- - cli-design
+  - 1
+- - crush
+  - 1
+- - hardware
+  - 1
+- - technology
+  - 1
+- - emerging tech
+  - 1
+- - learning-methodology
+  - 1
+- - developer-mindset
+  - 1
+- - ai-assisted-writing
+  - 1
+- - trends
+  - 1
+- - ideas
+  - 1
+- - industry
+  - 1
+- - coding
+  - 1
+- - predictions
+  - 1
+- - geometry
+  - 1
+- - impossible-objects
+  - 1
+- - design
+  - 1
+- - inkscape
+  - 1
+- - trends-ideas
+  - 1
+- - software-development
+  - 1
+- - terminal-education
+  - 1
+- - code
+  - 1
+- - computational-modeling
+  - 1
+- - legacy-systems
+  - 1
+- - evolution
+  - 1
+- - study
+  - 1
+- - developer-experience
+  - 1
+- - psychology
+  - 1
+- - cloud-hosting
+  - 1
+- - flow
+  - 1
+- - performance-optimization
+  - 1
+- - workflow-fix
+  - 1
+- - certification
+  - 1
+- - script-consolidation
+  - 1
+- - development-workflows
+  - 1
+- - change-tracking
+  - 1
+- - financial modeling
+  - 1
+- - circular reference
+  - 1
+- - career development
+  - 1
+- - data analysis
+  - 1
+- - vba
+  - 1
+- - arbitrage opportunities
+  - 1
+- - search-engines
+  - 1
+- - content-strategy
+  - 1
+- - robots-txt
+  - 1
+- - database
+  - 1
+- - data
+  - 1
+- - socio-economic issues
+  - 1
+- - etl
+  - 1
+- - web-crawlers
+  - 1
+- - data-quality
+  - 1
+- - artificial intelligence
+  - 1
+- - bash-compatibility
+  - 1
+- - it-manifesto
+  - 1
+- - gender
+  - 1
+- - christianity
+  - 1
+- - islam
+  - 1
+- - parody
+  - 1
+- - corporate betrayal
+  - 1
+- - religion
+  - 1
+- - demographics
+  - 1
+- - stereotypes
+  - 1
+- - cultural-understanding
+  - 1
+- - ethics
+  - 1
+- - arab-americans
+  - 1
+- - journalism-guide
+  - 1
+- - middle-east
+  - 1
+- - injustice
+  - 1
+- - shareholder-value
+  - 1
+- - global-transformation
+  - 1
+- - economic-revolution
+  - 1
+- - ethical-economics
+  - 1
+- - music-resources
+  - 1
+- - digital-libraries
+  - 1
+- - capitalism-reform
+  - 1
+- - wizard-magic
+  - 1
+- - classical-music
+  - 1
+- - lifestyle
+  - 1
+- - pet-care
+  - 1
+- - sheet-music
+  - 1
+- - microsoft
+  - 1
+- - learning-resources
+  - 1
+- - docs
+  - 1
+- - preview
+  - 1
+- - flowcharts
+  - 1
+- - sequence-diagrams
+  - 1
+- - gantt-charts
+  - 1
+- - microsoft-learn
+  - 1
+- - resources
+  - 1
+- - skills-measured
+  - 1
+- - workflow
+  - 1
+- - organization
+  - 1
+- - study-plan
+  - 1
+- - pull-request
+  - 1
+- - profiles
+  - 1
+- - contributors
+  - 1
+- - gamification
+  - 1
+- - mvp
+  - 1
+- - kis
+  - 1
+- - principles
+  - 1
+- - about
+  - 1
+- - dry
+  - 1
+- - reno
+  - 1
+- - automated-documentation
+  - 1
+- - features
+  - 1
+- - jsx
+  - 1
+- - components
+  - 1
+- - hooks
+  - 1
+- - ci
+  - 1
+- - knowledge-graph
+  - 1
+- - theme-update
+  - 1
+- - cryptography
+  - 1
+- - system-admin
+  - 1
+- - graph
+  - 1
+- - templating
+  - 1
+- - zero-configuration
+  - 1
+- - mathjax
+  - 1
+- - wiki-links
+  - 1
+- - reference-materials
+  - 1
+- - text generation
+  - 1
+- - iterm
+  - 1
+- - front-end development
+  - 1
+- - web scraping
+  - 1
+- - converter
+  - 1
+- - contact form
+  - 1
+- - sass
+  - 1
+- - github pages
+  - 1
+- - administration
+  - 1
+- - mixins
+  - 1
+- - note
+  - 1
+- - dynamic-content
+  - 1
+- - travis
+  - 1
+- - vite
+  - 1
+- - ui-ux
+  - 1
+- - web-hosting
+  - 1
+- - api-integration
+  - 1
+- - user-experience
+  - 1
+- - static-site-generation
+  - 1
+- - portfolio
+  - 1
+- - web development
+  - 1
+- - generational shift
+  - 1
+- - future trends
+  - 1
+- - millennials
+  - 1
+- - chatbot
+  - 1
+- - interactive
+  - 1
+- - site-structure
+  - 1
+- - mac
+  - 1
+- - web-scraping
+  - 1
+- - checklist
+  - 1
+- - snippets
+  - 1
+- - beautiful-soup
+  - 1
+- - content-generation
+  - 1
+- - test
+  - 1
+- - game-development
+  - 1
+- - llm
+  - 1
+- - '0'
+  - 1
+- - definitions
+  - 1
+- - contribution
+  - 1
+- - permissions
+  - 1
+- - chmod
+  - 1
+- - aliases
+  - 1
+- - file-types
+  - 1
+- - arithmetic
+  - 1
+- - variables
+  - 1
+- - hidden-files
+  - 1
+- - man-pages
+  - 1
+- - pipes
+  - 1
+- - redirection
+  - 1
+- - symlinks
+  - 1
+- - ln
+  - 1
+- - environment-variables
+  - 1
+- - exam
+  - 1
+- - signals
+  - 1
+- - glossary
+  - 1
+- - model-context-protocol
+  - 1
+- - file-structure
+  - 1
+- - syntax
+  - 1
+- - keyboard
+  - 1
+- - kramdown
+  - 1
+- - coding-agent
+  - 1
+- - skills
+  - 1
+- - adventure-game
+  - 1
+- - it-career
+  - 1
+- - career-planning
+  - 1
+- - file-management
+  - 1
+- - career-paths
+  - 1
+- - character-building
+  - 1
+- - specialization
+  - 1
+- - character-selection
+  - 1
+- - gcp
+  - 1
+- - community-entry
+  - 1
+- - homebrew
+  - 1
+- - package-management
+  - 1
+- - it-basics
+  - 1
+- - operating-systems
+  - 1
+- - ide-setup
+  - 1
+- - coding-tools
+  - 1
+- - export
+  - 1
+- - openai
+  - 1
+- - public-domain
+  - 1
+- - pets
+  - 1
+- - screenplay
+  - 1
+- - cats
+  - 1
+- - experimental
+  - 1
+- - generative
+  - 1
+- - art
+  - 1
+- - generative-ai
+  - 1
+- - dogs
+  - 1
+- - music-education
+  - 1
+- - post-colonialism.
+  - 1
+- - finance
+  - 1
+- - accounting
+  - 1
+- - economic design
+  - 1
+- - digital transformation
+  - 1
+- - enterprise architecture
+  - 1
+- - freelance
+  - 1
+- - business
+  - 1
+- - startup
+  - 1
+- - developer-satire
+  - 1
+- - programming-evolution
+  - 1
+- - ai-takeover
+  - 1
+- - grok-humor
+  - 1
+- - ai integration
+  - 1
+- - ai-progress
+  - 1
+- - claude
+  - 1
+- - gemini
+  - 1
+- - 3d-geometry
+  - 1
+- - ai-evolution
+  - 1
+- - chatgpt
+  - 1
+- - ai-limitations
+  - 1
+- - design-analysis
+  - 1
+- - satire
+  - 1
+- - context-management
+  - 1
+- - memory
+  - 1
+- - domain-3
+  - 1
+- - domain-2
+  - 1
+- - domain-5
+  - 1
+- - announcement
+  - 1
+- - domain-4
+  - 1
+- - learning-track
+  - 1
+- - domain-1
+  - 1
+- - domain-6
+  - 1
+- - machine learning
+  - 1
+- - racial marginalization
+  - 1
+- - knowledge-sharing
+  - 1
+- - countdown
+  - 1
+- - web-application
+  - 1
+- - nerd-fonts
+  - 1
+- - binary-level-indicator
+  - 1
+- - cdn
+  - 1
+- - command-line-efficiency
+  - 1
+- - heatmap
+  - 1
+- - calendar
+  - 1
+- - css-grid
+  - 1
+- - stats
+  - 1
+- - development-workflow
+  - 1
+- - language-models
+  - 1
+- - terminal-customization
+  - 1
+- - vscode-integration
+  - 1
+- - ai-communication
+  - 1
+- - web-publishing
+  - 1
+- - ai-capture
+  - 1
+- - recursion
+  - 1
+- - vs-code
+  - 1
+- - theme-development
+  - 1
+- - language-learning
+  - 1
+- - font-installation
+  - 1
+- - foundation
+  - 1
+- - liquid-templating
+  - 1
+- - celery
+  - 1
+- - site-statistics
+  - 1
+- - yaml-data-files
+  - 1
+- - visual-enhancement
+  - 1
+- - achievements
+  - 1
+- - badges
+  - 1
+- - enterprise
+  - 1
+- - sql
+  - 1
+- - databases
+  - 1
+- - nosql
+  - 1
+- - rest
+  - 1
+- - backend
+  - 1
+- - pdf
+  - 1
+- - workflow-mastery
+  - 1
+- - custom-properties
+  - 1
+- - '0110'
+  - 1
+- - paas
+  - 1
+- - iaas
+  - 1
+- - tool-permissions
+  - 1
+- - k8s
+  - 1
+- - github-codespaces
+  - 1
+- - agents-md
+  - 1
+- - data-modeling
+  - 1
+- - agent-planning
+  - 1
+- - agent-memory
+  - 1
+- - resilience
+  - 1
+- - root-cause-analysis
+  - 1
+- - context
+  - 1
+- - cross-tool
+  - 1
+- - context-drift
+  - 1
+- - state-persistence
+  - 1
+- - state-continuity
+  - 1
+- - success-criteria
+  - 1
+- - ai-analysis
+  - 1
+- - automated-testing
+  - 1
+- - link-validation
+  - 1
+- - devops-automation
+  - 1
+- - instruction-engineering
+  - 1
+- - failure-recovery
+  - 1
+- - personal site
+  - 1
+- - process-optimization
+  - 1
+- - lean-development
+  - 1
+- - team-culture
+  - 1
+- - avatar
+  - 1
+- - full-stack
+  - 1
+- - web-deployment
+  - 1
+- - main
+  - 1
+- - technology-stack
+  - 1
+- - educational-platform
+  - 1
+- - exam-prep
+  - 1
+- - capstone
+  - 1
+- - all-domains
+  - 1
+- - lifecycle-management
+  - 1
+- - human-in-the-loop
+  - 1
+- - pipeline-automation
+  - 1
+- - design-patterns
+  - 1
+- - software-architecture
+  - 1
+- - reusable-components
+  - 1
+- - neural-networks
+  - 1
+- - deep-learning
+  - 1
+- - data-science
+  - 1
+- - computer-vision
+  - 1
+- - '1110'
+  - 1
+- - link-integrity
+  - 1
+- - devops-mastery
+  - 1
+- - feature-development
+  - 1
+- - mentorship
+  - 1
+- - innovation
+  - 1
+- - prd
+  - 1
+- - documentation-automation
+  - 1
+- - network
+  - 1
+- - report
+  - 1
+- - quest-system
+  - 1
+- - planning
+  - 1
+- - '1111'
+  - 1
+- - full-stack-development
+  - 1
+- - portfolio-project
+  - 1
+- - project-management
+  - 1
+- - terminal-enhancement
+  - 1
+- - plugins
+  - 1
+- - governance
+  - 1
+- - epic
+  - 1
+- - node
+  - 1
+- - leadership
+  - 1
+- - quest-mapping
+  - 1
+- - file-operations
+  - 1
+- - hierarchy-system
+  - 1
+- - world-map
+  - 1
+- - site-map
+  - 1
+- - mermaid-diagrams
+  - 1
+- - development-fundamentals
+  - 1
+- - phase-5
+  - 1
+- - legend-tier
+  - 1
+- - master-tier
+  - 1
+- - scripts
+  - 1
+- - implementation
+  - 1
+- - polish
+  - 1
+- - validation
+  - 1
+- - overworld
+  - 1
+- - progress
+  - 1
+- - achievement
+  - 1
+- - '["binary"]'
+  - 1
+- - '["theme-tag"]'
+  - 1
+- - '["skill-area"]'
+  - 1
+- - github actions
+  - 1
+- - workflows
+  - 1
+- - pull requests
+  - 1
+- - bash-scripting
+  - 1
+- - character-creation
+  - 1
+- - kaizen
+  - 1
+- - rest-api
+  - 1
+- - cross-platform-setup
+  - 1
+- - design-system
+  - 1
+- - ai-orchestration
+  - 1
+- - ai automation
+  - 1
+- - conventional-commits
+  - 1
+- - best practices
+  - 1
+- - branch-strategy
+  - 1
+- - openai api
+  - 1
+- - github copilot
+  - 1
+- - index
+  - 1
+- - readme
+  - 1
+- - semantic-versioning
+  - 1
+- - clean commits
+  - 1
+- - glow
+  - 1
+- - charm
+  - 1
+- - content
+  - 1
+- - cicd
+  - 1
+- - hosting
+  - 1
+- - setup
+  - 1
+- - repository
+  - 1
+- - local
+  - 1
+- - pull-requests
+  - 1
+- - release-management
+  - 1
+- - code review
+  - 1
+- - livereload
+  - 1
+- - performance
+  - 1
+- - visual-studio-code
+  - 1
+- - maintenance
+  - 1
+- - styling
+  - 1
+- - includes
+  - 1
+- - machine-setup
+  - 1
+- - cross-platform
+  - 1
+- - accessibility
+  - 1
+- - home
+  - 1
+- - articles
+  - 1
+- - guides
+  - 1
+- - statistics
+  - 1
+- - meta
+  - 1
+- - content-metrics
+  - 1
+- - homepage
+  - 1
+- - learning platform
+  - 1
+- - it education
+  - 1
+- - development journey
+  - 1
+- - ai-powered-development
+  - 1
 authors:
-  IT-Journey Team: 7
-  IT-Journey AI Assistant: 1
+  bamr87: 287
+  IT-Journey Team: 156
+  Quest Master IT-Journey Team: 22
+  Quest Master IT-Journey: 3
+  Amr Abdel Eissa: 3
+  Quest Master: 3
+  Amr: 3
+  Quest Master Copilot: 2
+  GPT and bamr87: 2
+  Cloud Quest Guide: 2
+  Amr Abdel-Motaleb: 2
+  YOUR_NAME: 1
+  GitHub Actions Bot: 1
+  GitHub Copilot: 1
   ChatGPT: 1
-  Amr and ChatGPT: 1
+  IT-Journey AI Assistant: 1
+  IT-Journey AI: 1
+  Detroit Free Press (via IT-Journey Archives): 1
+  Quest Master DevOps: 1
+  Quest Master AI-Pipeline Team: 1
 years:
-  '2024': 1
-  '2025': 1
-date_range:
-  earliest: 2024
-  latest: 2025
-  span_years: 2
-skill_levels:
-  advanced: 4
-  expert: 2
-  intermediate: 2
-  beginner: 1
+  '2026': 315
+  '2023': 13
+  '2025': 136
+  '2024': 42
+  '2022': 16
+  '2021': 20
+  '2020': 4
+content_breakdown:
+  post: 93
+  page: 465
+monthly_distribution:
+  2020-07: 2
+  2020-08: 2
+  2021-03: 1
+  2021-09: 3
+  2021-10: 1
+  2021-11: 9
+  2021-12: 6
+  2022-01: 5
+  2022-02: 2
+  2022-05: 1
+  2022-06: 6
+  2022-12: 2
+  2023-03: 4
+  2023-04: 1
+  2023-11: 6
+  2023-12: 2
+  2024-02: 12
+  2024-03: 3
+  2024-04: 3
+  2024-05: 16
+  2024-06: 6
+  2024-07: 1
+  2024-10: 1
+  2025-01: 2
+  2025-02: 7
+  2025-03: 6
+  2025-04: 7
+  2025-05: 1
+  2025-06: 1
+  2025-07: 16
+  2025-08: 18
+  2025-09: 5
+  2025-10: 13
+  2025-11: 50
+  2025-12: 10
+  2026-01: 3
+  2026-02: 2
+  2026-03: 10
+  2026-04: 234
+  2026-05: 66
+word_statistics:
+  2026-05-17-agent-guardrails-and-responsible-autonomy.md:
+    words: 537
+    type: post
+    title: 'Agent Guardrails and Responsible Autonomy: The GH-600 View'
+  2026-05-17-embedding-agents-in-the-sdlc.md:
+    words: 502
+    type: post
+    title: 'Embedding Agents in the SDLC: From Tool to Collaborator'
+  2026-05-17-evaluating-and-tuning-agents-with-github-signals.md:
+    words: 441
+    type: post
+    title: Evaluating and Tuning Agents with GitHub Signals
+  2026-05-17-launching-agentic-codex-gh-600-track.md:
+    words: 320
+    type: post
+    title: 'Launching the Agentic Codex: A GH-600 Learning Track for the IT-Journey'
+  2026-05-17-mcp-servers-and-agent-tooling-in-practice.md:
+    words: 398
+    type: post
+    title: MCP Servers and Agent Tooling in Practice
+  2026-05-17-orchestrating-multi-agent-workflows-on-github.md:
+    words: 512
+    type: post
+    title: Orchestrating Multi-Agent Workflows on GitHub
+  2026-05-17-taming-agent-memory-and-context-drift.md:
+    words: 501
+    type: post
+    title: Taming Agent Memory and Context Drift
+  README.md:
+    words: 3448
+    type: page
+    title: README - it-journey
+  2000-01-01-index.md:
+    words: 0
+    type: post
+    title: Web Development
+  2023-03-26-chatgpt-vs-impossible-triangle.md:
+    words: 2745
+    type: post
+    title: 'Chat GPT vs The Impossible Triangle: AI Limitations in 3D Space'
+  2025-03-15-ai-to-create-ai.md:
+    words: 1032
+    type: post
+    title: AI to create AI
+  2025-03-19-open-ai-future-features-with-github-action.md:
+    words: 858
+    type: post
+    title: Open AI Future Features with Github Action
+  2025-08-19-mother-grokking-programmers.md:
+    words: 728
+    type: post
+    title: Mother Grokking Programmers
+  2025-08-20-from-programmed-to-grokking-off.md:
+    words: 619
+    type: post
+    title: 'From Programmed to Grokking Off: The Dark Evolution of Programmers'
+  2025-11-26-mastering-prompt-engineering-vscode-copilot.md:
+    words: 2604
+    type: post
+    title: 'Mastering Prompt Engineering: A Practical Guide to VS Code Copilot'
+  2025-05-02-erp-systems-as-the-engine-of-modern-economic-design.md:
+    words: 1270
+    type: post
+    title: ERP Systems as the Engine of Modern Economic Design
+  2026-02-23-terminal-bash-finance-accounting.md:
+    words: 2789
+    type: post
+    title: A Finance Professional's Guide to the Terminal
+  2024-06-16-enchanted-baking-unicorn-delights.md:
+    words: 472
+    type: post
+    title: 'Enchanted Baking: Unicorn Delights — Episode 1'
+  2024-06-16-unwavering-joy-of-fetch.md:
+    words: 339
+    type: post
+    title: Unwavering Joy of Fetch
+  2024-06-18-aquaaids-devastating-desert-mission.md:
+    words: 334
+    type: post
+    title: AquaAid's Devastating Desert Mission
+  2024-06-24-furry-monarchs-rule-night.md:
+    words: 168
+    type: post
+    title: Furry Monarchs Rule Night
+  2024-12-31-cats-and-dogs-pet-care.md:
+    words: 1049
+    type: post
+    title: 'Cats and Dogs: Pet Care Adventures'
+  2025-07-03-music-resources-free-sheet-music.md:
+    words: 3650
+    type: post
+    title: 'Music Resources: Free Sheet Music and Musical Education'
+  2025-09-01-enchanted-overhaul-wizards-ethical-sorcery.md:
+    words: 1835
+    type: post
+    title: 'Enchanted Overhaul: Wizard''s Ethical Sorcery Dismantles Capitalism''s
+      Dark Side, Boosts Shareholder Returns'
+  2023-04-20-arab-americans-journalists-guide.md:
+    words: 6728
+    type: post
+    title: '100 Questions & Answers About Arab-Americans: A Journalist''s Guide'
+  2024-05-22-rise-of-the-matriarchs-capitalism-and-religion-face-the-femme-fatale.md:
+    words: 446
+    type: post
+    title: 'Rise of the Matriarchs: Capitalism and Religion Meet the Femme Fatale'
+  2025-05-01-exploring-the-roots-of-injustice.md:
+    words: 1188
+    type: post
+    title: Exploring the Roots of Injustice
+  2023-12-04-robots-txt-jekyll.md:
+    words: 150
+    type: post
+    title: robots dot txt
+  2024-04-25-placeholders.md:
+    words: 641
+    type: post
+    title: 'Content Placeholders: Templates That Survive Contact With Authors'
+  2024-05-01-doc-scraper.md:
+    words: 0
+    type: post
+    title: doc scraper
+  2025-03-13-excel-gurus-are-the-most-valuable-programmers.md:
+    words: 2868
+    type: post
+    title: Excel Guru's are the most valuable programmers
+  2025-03-13-excel-to-python.md:
+    words: 2214
+    type: post
+    title: Excel to Python
+  2025-11-16-excel-circular-reference-error-by-design.md:
+    words: 687
+    type: post
+    title: 'Excel: Circular Reference Error by Design'
+  2025-07-05-advanced-version-management-ai-implementation.md:
+    words: 1564
+    type: post
+    title: 'Advanced Version Management System: Complete Implementation with AI-Assisted
+      Development'
+  2025-07-05-debugging-github-actions-workflows-ai-assisted.md:
+    words: 1265
+    type: post
+    title: 'Debugging GitHub Actions Workflows: AI-Assisted Troubleshooting Session'
+  2025-07-07-ai-assisted-script-consolidation-development-workflows.md:
+    words: 1506
+    type: post
+    title: 'AI-Assisted Script Consolidation: Transforming Chaotic Directories into
+      Organized Development Workflows'
+  2025-07-09-fixing-github-actions-bash-compatibility-ai-evolution-engine.md:
+    words: 1303
+    type: post
+    title: 'Fixing GitHub Actions: Bash 3.2 Compatibility for AI Evolution Engine'
+  2025-07-10-fixing-github-actions-version-integration-prepare-command.md:
+    words: 968
+    type: post
+    title: 'Fixing GitHub Actions Workflow: Adding Missing ''prepare'' Command to
+      Version Integration Script'
+  2025-07-10-github-actions-authentication-fix-2025-07-10.md:
+    words: 1042
+    type: post
+    title: 'GitHub Actions Authentication Fix: Resolving CI/CD Workflow Failures'
+  2025-11-16-work-directory-ci-cd.md:
+    words: 3643
+    type: post
+    title: 'The work/ Directory: CI/CD Integration Best Practices'
+  2025-11-17-deploying-jekyll-sites-to-azure-cloud.md:
+    words: 2216
+    type: post
+    title: 'Deploying Jekyll Sites to Azure Cloud: Complete Guide for Static Web Hosting'
+  2025-11-22-flow.md:
+    words: 875
+    type: post
+    title: 'Flow in DevOps: The Psychology of Optimal Engineering'
+  2025-11-28-prd-machine-self-writing-documentation.md:
+    words: 1430
+    type: post
+    title: 'PRD Machine: Building a Self-Writing Product Requirements Distillery'
+  2025-12-20-docker-beginners-tutorial.md:
+    words: 1330
+    type: post
+    title: 'Docker for Beginners: Complete Tutorial to Get Started with Containers'
+  2026-03-07-foundational-ci-cd-pipelines-github-vscode-extensions.md:
+    words: 2620
+    type: post
+    title: Foundational CI/CD Pipelines with GitHub Actions for VS Code Extensions
+  2021-11-08-it-purpose-manifesto.md:
+    words: 224
+    type: post
+    title: 'IT Purpose: Manifesto for Digital Knowledge Sharing'
+  2025-08-01-enhancing-bashcrawl-cellar-scroll-educational-content.md:
+    words: 1502
+    type: post
+    title: 'Enhancing Bashcrawl: Creating Terminal Education Content'
+  2025-01-27-consolidating-github-actions-modular-architecture.md:
+    words: 1631
+    type: post
+    title: 'Consolidating GitHub Actions: From Embedded Scripts to Modular Architecture'
+  2025-01-27-fixing-github-actions-link-checker-keyerror.md:
+    words: 960
+    type: post
+    title: 'Fixing GitHub Actions Link Checker: KeyError ''details'' Resolution'
+  2025-03-12-ais-infinite-loop-unveiling-arbitrage-in-complexity-of-models.md:
+    words: 2060
+    type: post
+    title: 'AI''s Infinite Loop: Unveiling Arbitrage in Complexity of Models'
+  2025-07-05-ai-powered-modular-shell-script-refactoring.md:
+    words: 2128
+    type: post
+    title: 'AI-Powered Modular Shell Script Refactoring: Evolution Engine Architecture'
+  2025-07-22-vscode-for-neuroscience.md:
+    words: 1464
+    type: post
+    title: 'VS Code for Neuroscience: Complete Setup Guide for macOS'
+  2025-08-19-refactory.md:
+    words: 1031
+    type: post
+    title: Refactory
+  2025-08-22-forking-around-github.md:
+    words: 622
+    type: post
+    title: Forking Around Github
+  2025-08-27-vscode-front-matter-fork-development-setup.md:
+    words: 3567
+    type: post
+    title: 'VSCode Front Matter: Complete Fork & Development Guide'
+  2025-10-17-erp-stack-architecture-guide.md:
+    words: 9196
+    type: post
+    title: Comprehensive Guide to Modern ERP Stack Architecture
+  2025-11-16-working-directories-in-software-development.md:
+    words: 2696
+    type: post
+    title: 'Working Directories: Backbone of Software Builds'
+  2022-05-21-windows-sub-linux-setup.md:
+    words: 267
+    type: post
+    title: Windows Subsystem for Linux (WSL) Setup Guide
+  2022-06-10-desktop-widgets-windows.md:
+    words: 13
+    type: post
+    title: 'Install Rainmeter Desktop Widgets on Windows: Quick Setup Guide'
+  2024-02-10-retropie-imaging.md:
+    words: 754
+    type: post
+    title: RetroPie Imaging
+  2024-03-27-bootable-mac-os.md:
+    words: 926
+    type: post
+    title: 'Create Bootable macOS Installer: Complete Guide for Recovery & Installation'
+  2025-10-13-el-capitan-bootable-installer-apple-silicon.md:
+    words: 4945
+    type: post
+    title: Creating El Capitan Bootable Installer on Apple Silicon
+  2021-10-27-build-destroy-repeat-mastery.md:
+    words: 390
+    type: post
+    title: 'Build, Destroy, Repeat: How Iteration Becomes Mastery'
+  2023-11-04-latex-cv-professional-resume.md:
+    words: 589
+    type: post
+    title: LaTex your CV
+  2023-12-14-cms-app-python-javascript.md:
+    words: 511
+    type: post
+    title: CMS App with Python and JavaScript
+  2025-11-19-terminal-frontend-architecture.md:
+    words: 982
+    type: post
+    title: 'Architecting the Glass Interface: Building Frontends for Terminal Scripts'
+  2025-11-20-using-crush-vscode-github-pages.md:
+    words: 577
+    type: post
+    title: Streamlining Content Creation - Using Crush in VSCode for Instant GitHub
+      Pages Publishing
+  2025-12-20-essential-vscode-extensions-developers.md:
+    words: 1443
+    type: post
+    title: 'Essential VS Code Extensions for Developers: The Ultimate 2025 Guide'
+  2023-03-17-penrose-triangle-impossible-geometry.md:
+    words: 171
+    type: post
+    title: penrose triangle
+  2024-05-09-bootstrap-your-theme-and-character.md:
+    words: 0
+    type: post
+    title: Bootstrap your theme and character
+  2025-06-29-planting-seeds-software-evolution.md:
+    words: 993
+    type: post
+    title: 'Planting Seeds: The DNA of Software Evolution'
+  2025-08-22-millennials-ai-takeover.md:
+    words: 983
+    type: post
+    title: Millennials AI Takeover
+  2025-03-08-setting-up-django-and-git.md:
+    words: 902
+    type: post
+    title: 'Setting Up Django and Git: A Magical Beginner''s Guide'
+  2025-08-29-integrating-ai-chatbot-jekyll-site.md:
+    words: 3844
+    type: post
+    title: 'Integrating an AI Chatbot into Jekyll: Transforming Static Sites into
+      Interactive Learning Platforms'
+  2025-08-31-404-hunting-quest.md:
+    words: 1430
+    type: post
+    title: '404 Hunting: The Quest for Resources'
+  2025-11-15-github-pages-hidden-gem.md:
+    words: 2712
+    type: post
+    title: 'GitHub Pages: The Hidden Gem Revolutionizing Web Publishing'
+  2025-11-16-javascript-jekyll-interactive-demo.md:
+    words: 1020
+    type: post
+    title: 'Interactive JavaScript & Jekyll Layout Magic: A Comprehensive Demo'
+  2025-11-16-jekyll-and-travis.md:
+    words: 865
+    type: post
+    title: Jekyll and Travis
+  2025-11-24-mastering-react-beginners-guide.md:
+    words: 1423
+    type: post
+    title: 'Mastering React: A Beginner''s Guide'
+  2026-04-19-ai-assisted-nanobar-footer-refactoring.md:
+    words: 1142
+    type: post
+    title: 'AI-Assisted UI/UX Refactoring: Nanobar Modularization and Footer Fix'
+  about.md:
+    words: 3244
+    type: page
+    title: About
+  automation.md:
+    words: 858
+    type: page
+    title: Configuration Automation System
+  contributing.md:
+    words: 827
+    type: page
+    title: Contributing to IT-Journey
+  index.md:
+    words: 933
+    type: page
+    title: IT-Journey.dev - Your Epic Quest to IT Mastery
+  bamr87.md:
+    words: 65
+    type: page
+    title: bamr87
+  purpose.md:
+    words: 340
+    type: page
+    title: Purpose
+  config.md:
+    words: 486
+    type: page
+    title: Jekyll Configuration & Site Structure
+  sitemap.md:
+    words: 5
+    type: page
+    title: Sitemap
+  tree.md:
+    words: 308
+    type: page
+    title: Site Tree Structure
+  learning-path.md:
+    words: 1399
+    type: page
+    title: GH-600 Week-by-Week Learning Path
+  recommended-resources.md:
+    words: 698
+    type: page
+    title: GH-600 Recommended Resources
+  skills-measured.md:
+    words: 1656
+    type: page
+    title: GH-600 Skills Measured — Full Breakdown
+  contributing-developer.md:
+    words: 2510
+    type: page
+    title: Complete Developer Contribution Guide
+  frontmatter-preview-solution.md:
+    words: 693
+    type: page
+    title: Front Matter CMS Preview Configuration
+  jekyll-config.md:
+    words: 1335
+    type: page
+    title: Configuration Options | Jekyll • Simple, blog-aware, static sites
+  jekyll-diagram-with-mermaid.md:
+    words: 1012
+    type: page
+    title: 'Jekyll Mermaid Diagrams: Auto-Detection Guide for Flowcharts & More'
+  jekyll-frontmatter-cms.md:
+    words: 367
+    type: page
+    title: Jekyll Frontmatter CMS
+  jekyll-liquid.md:
+    words: 404
+    type: page
+    title: Jekyll — Liquid Reference
+  jekyll-math-symbols-with-mathjax.md:
+    words: 678
+    type: page
+    title: Jekyll — Math Symbols with MathJax
+  mermaid-migration.md:
+    words: 703
+    type: page
+    title: Mermaid Auto-Detection Migration Guide
+  graph.md:
+    words: 215
+    type: page
+    title: Obsidian Graph View — Wiki Link Navigation
+  bash-complete-reference.md:
+    words: 15465
+    type: page
+    title: 'Complete BASH Reference: Commands & Techniques'
+  terminal-shortcuts-cheat-sheet.md:
+    words: 1235
+    type: page
+    title: 'Terminal Shortcuts Cheat Sheet: macOS, Linux & Windows'
+  bandit0.md:
+    words: 156
+    type: page
+    title: Bandit0
+  bandit1.md:
+    words: 176
+    type: page
+    title: Bandit1
+  bandit10.md:
+    words: 66
+    type: page
+    title: Bandit10
+  bandit11.md:
+    words: 73
+    type: page
+    title: Bandit11
+  bandit12.md:
+    words: 82
+    type: page
+    title: Bandit12
+  bandit13.md:
+    words: 132
+    type: page
+    title: Bandit13
+  bandit14.md:
+    words: 116
+    type: page
+    title: Bandit14
+  bandit15.md:
+    words: 142
+    type: page
+    title: Bandit15
+  bandit16.md:
+    words: 121
+    type: page
+    title: Bandit16
+  bandit17.md:
+    words: 151
+    type: page
+    title: Bandit17
+  bandit18.md:
+    words: 93
+    type: page
+    title: Bandit18
+  bandit19.md:
+    words: 65
+    type: page
+    title: Bandit19
+  bandit2.md:
+    words: 105
+    type: page
+    title: Bandit2
+  bandit20.md:
+    words: 85
+    type: page
+    title: Bandit20
+  bandit21.md:
+    words: 128
+    type: page
+    title: Bandit21
+  bandit22.md:
+    words: 71
+    type: page
+    title: Bandit22
+  bandit23.md:
+    words: 115
+    type: page
+    title: Bandit23
+  bandit24.md:
+    words: 123
+    type: page
+    title: Bandit24
+  bandit25.md:
+    words: 79
+    type: page
+    title: Bandit25
+  bandit26.md:
+    words: 113
+    type: page
+    title: Bandit26
+  bandit27.md:
+    words: 46
+    type: page
+    title: Bandit27
+  bandit28.md:
+    words: 112
+    type: page
+    title: Bandit28
+  bandit29.md:
+    words: 112
+    type: page
+    title: Bandit29
+  bandit3.md:
+    words: 89
+    type: page
+    title: Bandit3
+  bandit30.md:
+    words: 112
+    type: page
+    title: Bandit30
+  bandit31.md:
+    words: 112
+    type: page
+    title: Bandit31
+  bandit32.md:
+    words: 112
+    type: page
+    title: Bandit32
+  bandit33.md:
+    words: 46
+    type: page
+    title: Bandit33
+  bandit34.md:
+    words: 29
+    type: page
+    title: Bandit34
+  bandit4.md:
+    words: 65
+    type: page
+    title: Bandit4
+  bandit5.md:
+    words: 77
+    type: page
+    title: Bandit5
+  bandit6.md:
+    words: 82
+    type: page
+    title: Bandit6
+  bandit7.md:
+    words: 86
+    type: page
+    title: Bandit7
+  bandit8.md:
+    words: 62
+    type: page
+    title: Bandit8
+  bandit9.md:
+    words: 78
+    type: page
+    title: Bandit9
+  behemoth0.md:
+    words: 28
+    type: page
+    title: Behemoth0
+  behemoth1.md:
+    words: 28
+    type: page
+    title: Behemoth1
+  behemoth2.md:
+    words: 28
+    type: page
+    title: Behemoth2
+  behemoth3.md:
+    words: 28
+    type: page
+    title: Behemoth3
+  behemoth4.md:
+    words: 28
+    type: page
+    title: Behemoth4
+  behemoth5.md:
+    words: 28
+    type: page
+    title: Behemoth5
+  behemoth6.md:
+    words: 28
+    type: page
+    title: Behemoth6
+  behemoth7.md:
+    words: 28
+    type: page
+    title: Behemoth7
+  behemoth8.md:
+    words: 28
+    type: page
+    title: Behemoth8
+  blacksun0.md:
+    words: 147
+    type: page
+    title: Blacksun0
+  blacksun1.md:
+    words: 90
+    type: page
+    title: Blacksun1
+  blacksun2.md:
+    words: 164
+    type: page
+    title: Blacksun2
+  blacksun3.md:
+    words: 101
+    type: page
+    title: Blacksun3
+  blacksun4.md:
+    words: 138
+    type: page
+    title: Blacksun4
+  reading_material.md:
+    words: 566
+    type: page
+    title: Reading material
+  drifter0.md:
+    words: 490
+    type: page
+    title: Drifter0
+  drifter1.md:
+    words: 133
+    type: page
+    title: Drifter1
+  drifter10.md:
+    words: 42
+    type: page
+    title: Drifter10
+  drifter11.md:
+    words: 38
+    type: page
+    title: Drifter11
+  drifter12.md:
+    words: 28
+    type: page
+    title: Drifter12
+  drifter13.md:
+    words: 26
+    type: page
+    title: Drifter13
+  drifter14.md:
+    words: 81
+    type: page
+    title: Drifter14
+  drifter15.md:
+    words: 23
+    type: page
+    title: Drifter15
+  drifter2.md:
+    words: 50
+    type: page
+    title: Drifter2
+  drifter3.md:
+    words: 69
+    type: page
+    title: Drifter3
+  drifter4.md:
+    words: 39
+    type: page
+    title: Drifter4
+  drifter5.md:
+    words: 72
+    type: page
+    title: Drifter5
+  drifter6.md:
+    words: 97
+    type: page
+    title: Drifter6
+  drifter7.md:
+    words: 41
+    type: page
+    title: Drifter7
+  drifter8.md:
+    words: 42
+    type: page
+    title: Drifter8
+  drifter9.md:
+    words: 40
+    type: page
+    title: Drifter9
+  formulaone0.md:
+    words: 28
+    type: page
+    title: Formulaone0
+  formulaone1.md:
+    words: 28
+    type: page
+    title: Formulaone1
+  formulaone2.md:
+    words: 28
+    type: page
+    title: Formulaone2
+  formulaone3.md:
+    words: 28
+    type: page
+    title: Formulaone3
+  formulaone4.md:
+    words: 28
+    type: page
+    title: Formulaone4
+  formulaone5.md:
+    words: 28
+    type: page
+    title: Formulaone5
+  formulaone6.md:
+    words: 28
+    type: page
+    title: Formulaone6
+  krypton0.md:
+    words: 66
+    type: page
+    title: Krypton0
+  krypton1.md:
+    words: 91
+    type: page
+    title: Krypton1
+  krypton2.md:
+    words: 298
+    type: page
+    title: Krypton2
+  krypton3.md:
+    words: 142
+    type: page
+    title: Krypton3
+  krypton4.md:
+    words: 333
+    type: page
+    title: Krypton4
+  krypton5.md:
+    words: 55
+    type: page
+    title: Krypton5
+  krypton6.md:
+    words: 740
+    type: page
+    title: Krypton6
+  leviathan0.md:
+    words: 28
+    type: page
+    title: Leviathan0
+  leviathan1.md:
+    words: 28
+    type: page
+    title: Leviathan1
+  leviathan2.md:
+    words: 28
+    type: page
+    title: Leviathan2
+  leviathan3.md:
+    words: 28
+    type: page
+    title: Leviathan3
+  leviathan4.md:
+    words: 28
+    type: page
+    title: Leviathan4
+  leviathan5.md:
+    words: 28
+    type: page
+    title: Leviathan5
+  leviathan6.md:
+    words: 28
+    type: page
+    title: Leviathan6
+  leviathan7.md:
+    words: 28
+    type: page
+    title: Leviathan7
+  manpage0.md:
+    words: 28
+    type: page
+    title: Manpage0
+  manpage1.md:
+    words: 28
+    type: page
+    title: Manpage1
+  manpage2.md:
+    words: 28
+    type: page
+    title: Manpage2
+  manpage3.md:
+    words: 28
+    type: page
+    title: Manpage3
+  manpage4.md:
+    words: 28
+    type: page
+    title: Manpage4
+  manpage5.md:
+    words: 28
+    type: page
+    title: Manpage5
+  manpage6.md:
+    words: 28
+    type: page
+    title: Manpage6
+  manpage7.md:
+    words: 28
+    type: page
+    title: Manpage7
+  maze0.md:
+    words: 28
+    type: page
+    title: Maze0
+  maze1.md:
+    words: 28
+    type: page
+    title: Maze1
+  maze2.md:
+    words: 28
+    type: page
+    title: Maze2
+  maze3.md:
+    words: 28
+    type: page
+    title: Maze3
+  maze4.md:
+    words: 28
+    type: page
+    title: Maze4
+  maze5.md:
+    words: 28
+    type: page
+    title: Maze5
+  maze6.md:
+    words: 28
+    type: page
+    title: Maze6
+  maze7.md:
+    words: 28
+    type: page
+    title: Maze7
+  maze8.md:
+    words: 28
+    type: page
+    title: Maze8
+  maze9.md:
+    words: 28
+    type: page
+    title: Maze9
+  narnia0.md:
+    words: 28
+    type: page
+    title: Narnia0
+  narnia1.md:
+    words: 28
+    type: page
+    title: Narnia1
+  narnia2.md:
+    words: 28
+    type: page
+    title: Narnia2
+  narnia3.md:
+    words: 28
+    type: page
+    title: Narnia3
+  narnia4.md:
+    words: 28
+    type: page
+    title: Narnia4
+  narnia5.md:
+    words: 28
+    type: page
+    title: Narnia5
+  narnia6.md:
+    words: 28
+    type: page
+    title: Narnia6
+  narnia7.md:
+    words: 28
+    type: page
+    title: Narnia7
+  narnia8.md:
+    words: 28
+    type: page
+    title: Narnia8
+  narnia9.md:
+    words: 28
+    type: page
+    title: Narnia9
+  natas0.md:
+    words: 26
+    type: page
+    title: Natas0
+  natas1.md:
+    words: 24
+    type: page
+    title: Natas1
+  natas10.md:
+    words: 24
+    type: page
+    title: Natas10
+  natas11.md:
+    words: 24
+    type: page
+    title: Natas11
+  natas12.md:
+    words: 24
+    type: page
+    title: Natas12
+  natas13.md:
+    words: 24
+    type: page
+    title: Natas13
+  natas14.md:
+    words: 24
+    type: page
+    title: Natas14
+  natas15.md:
+    words: 24
+    type: page
+    title: Natas15
+  natas16.md:
+    words: 24
+    type: page
+    title: Natas16
+  natas17.md:
+    words: 24
+    type: page
+    title: Natas17
+  natas18.md:
+    words: 24
+    type: page
+    title: Natas18
+  natas19.md:
+    words: 24
+    type: page
+    title: Natas19
+  natas2.md:
+    words: 24
+    type: page
+    title: Natas2
+  natas20.md:
+    words: 24
+    type: page
+    title: Natas20
+  natas21.md:
+    words: 24
+    type: page
+    title: Natas21
+  natas22.md:
+    words: 24
+    type: page
+    title: Natas22
+  natas23.md:
+    words: 24
+    type: page
+    title: Natas23
+  natas24.md:
+    words: 24
+    type: page
+    title: Natas24
+  natas25.md:
+    words: 24
+    type: page
+    title: Natas25
+  natas26.md:
+    words: 24
+    type: page
+    title: Natas26
+  natas27.md:
+    words: 24
+    type: page
+    title: Natas27
+  natas28.md:
+    words: 24
+    type: page
+    title: Natas28
+  natas29.md:
+    words: 24
+    type: page
+    title: Natas29
+  natas3.md:
+    words: 24
+    type: page
+    title: Natas3
+  natas30.md:
+    words: 24
+    type: page
+    title: Natas30
+  natas31.md:
+    words: 24
+    type: page
+    title: Natas31
+  natas32.md:
+    words: 24
+    type: page
+    title: Natas32
+  natas33.md:
+    words: 24
+    type: page
+    title: Natas33
+  natas34.md:
+    words: 24
+    type: page
+    title: Natas34
+  natas4.md:
+    words: 24
+    type: page
+    title: Natas4
+  natas5.md:
+    words: 24
+    type: page
+    title: Natas5
+  natas6.md:
+    words: 24
+    type: page
+    title: Natas6
+  natas7.md:
+    words: 24
+    type: page
+    title: Natas7
+  natas8.md:
+    words: 24
+    type: page
+    title: Natas8
+  natas9.md:
+    words: 24
+    type: page
+    title: Natas9
+  semtex0.md:
+    words: 111
+    type: page
+    title: Semtex0
+  semtex1.md:
+    words: 56
+    type: page
+    title: Semtex1
+  semtex10.md:
+    words: 150
+    type: page
+    title: Semtex10
+  semtex11.md:
+    words: 49
+    type: page
+    title: Semtex11
+  semtex12.md:
+    words: 115
+    type: page
+    title: Semtex12
+  semtex2.md:
+    words: 53
+    type: page
+    title: Semtex2
+  semtex3.md:
+    words: 103
+    type: page
+    title: Semtex3
+  semtex4.md:
+    words: 81
+    type: page
+    title: Semtex4
+  semtex5.md:
+    words: 171
+    type: page
+    title: Semtex5
+  semtex6.md:
+    words: 132
+    type: page
+    title: Semtex6
+  semtex7.md:
+    words: 79
+    type: page
+    title: Semtex7
+  semtex8.md:
+    words: 145
+    type: page
+    title: Semtex8
+  semtex9.md:
+    words: 161
+    type: page
+    title: Semtex9
+  utumno0.md:
+    words: 28
+    type: page
+    title: Utumno0
+  utumno1.md:
+    words: 28
+    type: page
+    title: Utumno1
+  utumno2.md:
+    words: 28
+    type: page
+    title: Utumno2
+  utumno3.md:
+    words: 28
+    type: page
+    title: Utumno3
+  utumno4.md:
+    words: 28
+    type: page
+    title: Utumno4
+  utumno5.md:
+    words: 28
+    type: page
+    title: Utumno5
+  utumno6.md:
+    words: 28
+    type: page
+    title: Utumno6
+  utumno7.md:
+    words: 28
+    type: page
+    title: Utumno7
+  utumno8.md:
+    words: 28
+    type: page
+    title: Utumno8
+  vortex0.md:
+    words: 105
+    type: page
+    title: Vortex0
+  vortex1.md:
+    words: 81
+    type: page
+    title: Vortex1
+  vortex10.md:
+    words: 59
+    type: page
+    title: Vortex10
+  vortex11.md:
+    words: 91
+    type: page
+    title: Vortex11
+  vortex12.md:
+    words: 49
+    type: page
+    title: Vortex12
+  vortex13.md:
+    words: 45
+    type: page
+    title: Vortex13
+  vortex14.md:
+    words: 118
+    type: page
+    title: Vortex14
+  vortex15.md:
+    words: 67
+    type: page
+    title: Vortex15
+  vortex16.md:
+    words: 50
+    type: page
+    title: Vortex16
+  vortex17.md:
+    words: 50
+    type: page
+    title: Vortex17
+  vortex18.md:
+    words: 30
+    type: page
+    title: Vortex18
+  vortex19.md:
+    words: 44
+    type: page
+    title: Vortex19
+  vortex2.md:
+    words: 40
+    type: page
+    title: Vortex2
+  vortex20.md:
+    words: 48
+    type: page
+    title: Vortex20
+  vortex21.md:
+    words: 41
+    type: page
+    title: Vortex21
+  vortex22.md:
+    words: 40
+    type: page
+    title: Vortex22
+  vortex23.md:
+    words: 54
+    type: page
+    title: Vortex23
+  vortex24.md:
+    words: 36
+    type: page
+    title: Vortex24
+  vortex25.md:
+    words: 90
+    type: page
+    title: Vortex25
+  vortex26.md:
+    words: 69
+    type: page
+    title: Vortex26
+  vortex3.md:
+    words: 125
+    type: page
+    title: Vortex3
+  vortex4.md:
+    words: 93
+    type: page
+    title: Vortex4
+  vortex5.md:
+    words: 71
+    type: page
+    title: Vortex5
+  vortex6.md:
+    words: 72
+    type: page
+    title: Vortex6
+  vortex7.md:
+    words: 84
+    type: page
+    title: Vortex7
+  vortex8.md:
+    words: 40
+    type: page
+    title: Vortex8
+  vortex9.md:
+    words: 40
+    type: page
+    title: Vortex9
+  JeykLLM-create.md:
+    words: 2094
+    type: page
+    title: Chat GPT Text Generation
+  html_md_doc_scrapper.md:
+    words: 4512
+    type: page
+    title: HTML to Markdown Web Scraping
+  jupyter-to-markdown.md:
+    words: 263
+    type: page
+    title: Jupyter Notebook to Markdown Converter
+  jupyter.md:
+    words: 10
+    type: page
+    title: Jupyter
+  markdown-to-script.md:
+    words: 257
+    type: page
+    title: Markdown to Script Converter
+  2025-01-16-iterm-tips-and-tricks.md:
+    words: 572
+    type: page
+    title: iTerm Tips and Tricks
+  2025-01-16-mastering-iterm-shortcuts-for-efficiency.md:
+    words: 569
+    type: page
+    title: Mastering iTerm Shortcuts for Efficiency
+  2025-01-23-sass-mixins.md:
+    words: 521
+    type: page
+    title: Sass mixins
+  2025-01-24-set-up-azure-for-jekyll-contact-us-form.md:
+    words: 1340
+    type: page
+    title: Set Up Azure for Jekyll Contact Us Form
+  2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions.md:
+    words: 1568
+    type: page
+    title: Using Jekyll, Lambda, and SES for Efficient Web Solutions
+  2025-02-05-host-django-on-raspberry-pi-a-complete-guide.md:
+    words: 1459
+    type: page
+    title: 'Host Django on Raspberry Pi: A Complete Guide'
+  GPT App Build.md:
+    words: 88
+    type: page
+    title: GPT App Build
+  Github_s hidden gem.md:
+    words: 7
+    type: page
+    title: Github's hidden gem
+  What is my PiDentity_.md:
+    words: 11
+    type: page
+    title: What is my PiDentity?
+  2022-10-07-powershell.md:
+    words: 18361
+    type: page
+    title: Windows PowerShell Cheatsheet
+  Shell and the CLI.md:
+    words: 103
+    type: page
+    title: Shell and the CLI
+  Windows Powershell Cheatsheet.md:
+    words: 18361
+    type: page
+    title: Windows Powershell Cheatsheet
+  bash-cheatsheet.md:
+    words: 2657
+    type: page
+    title: 'Bash Cheatsheet: Essential Commands & Scripts'
+  command-line.md:
+    words: 78
+    type: page
+    title: Shell and the CLI
+  mac-shortcuts.md:
+    words: 3165
+    type: page
+    title: Mac Keyboard Shortcuts
+  markdown.md:
+    words: 418
+    type: page
+    title: Markdown Cheatsheet
+  programming.md:
+    words: 401
+    type: page
+    title: Programming
+  2024-05-14-side-bar-folders.md:
+    words: 147
+    type: page
+    title: Sidebar Folder Structure
+  Curiculum.md:
+    words: 7
+    type: page
+    title: Curiculum
+  Take good notes.md:
+    words: 15
+    type: page
+    title: Take good notes
+  Master_s Project.md:
+    words: 21
+    type: page
+    title: Master's Project
+  People.md:
+    words: 57
+    type: page
+    title: People
+  Production.md:
+    words: 36
+    type: page
+    title: Production
+  autonomy-levels-matrix.md:
+    words: 334
+    type: page
+    title: Autonomy Levels Matrix
+  copilot-coding-agent-cheatsheet.md:
+    words: 315
+    type: page
+    title: GitHub Copilot Coding Agent Cheatsheet
+  evaluation-signals-table.md:
+    words: 353
+    type: page
+    title: Evaluation Signals Table
+  exam-overview.md:
+    words: 178
+    type: page
+    title: GH-600 Exam Overview
+  glossary.md:
+    words: 768
+    type: page
+    title: GH-600 Glossary
+  mcp-quickref.md:
+    words: 293
+    type: page
+    title: MCP Quick Reference
+  skills-checklist.md:
+    words: 309
+    type: page
+    title: GH-600 Skills Checklist
+  jekyllm-integration.md:
+    words: 1182
+    type: page
+    title: Jekyll LLM Integration Ideas
+  AWS Practice Question Set.md:
+    words: 18790
+    type: page
+    title: AWS Practice Question Set
+  Favicons.md:
+    words: 57
+    type: page
+    title: Favicons
+  Start.md:
+    words: 13
+    type: page
+    title: Start
+  bash-run.md:
+    words: 2410
+    type: page
+    title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
+  agent-mode.md:
+    words: 1019
+    type: page
+    title: 'Bashcrawl Agent Mode: AI Automation and Contribution'
+  armoury.md:
+    words: 798
+    type: page
+    title: 'Bashcrawl Armoury: File Permissions and Script Execution'
+  cellar.md:
+    words: 812
+    type: page
+    title: 'Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet'
+  chamber.md:
+    words: 783
+    type: page
+    title: 'Bashcrawl Chamber: Bash Arithmetic and the Statue Boss'
+  entrance.md:
+    words: 706
+    type: page
+    title: 'Bashcrawl Entrance: Your First Terminal Commands'
+  hidden-chapel.md:
+    words: 873
+    type: page
+    title: 'Bashcrawl Hidden Chapel: Hidden Files and Man Pages'
+  rift.md:
+    words: 945
+    type: page
+    title: 'Bashcrawl Rift: Pipes, Redirection, and the Final Boss'
+  scrap.md:
+    words: 785
+    type: page
+    title: 'Bashcrawl Scrap Heap: Symbolic Links and Portal Creation'
+  vault.md:
+    words: 786
+    type: page
+    title: 'Bashcrawl Vault: Environment Variables and the Goblet Puzzle'
+  workshop.md:
+    words: 708
+    type: page
+    title: 'Bashcrawl Workshop: File Management Fundamentals'
+  begin-your-it-journey.md:
+    words: 1265
+    type: page
+    title: Begin your IT Journey
+  character-building.md:
+    words: 2688
+    type: page
+    title: 'Character Building: Forge Your IT Identity and Development Environment'
+  character-selection.md:
+    words: 916
+    type: page
+    title: Character Selection
+  git-basics.md:
+    words: 3576
+    type: page
+    title: 'Git Basics: Version Control Introduction'
+  hello-cloud.md:
+    words: 680
+    type: page
+    title: 'Hello Cloud: First Steps into the Sky Realm'
+  hello-mac.md:
+    words: 492
+    type: page
+    title: 'Hello macOS: Setting Up the Apple Kingdom'
+  hello-noob.md:
+    words: 1586
+    type: page
+    title: 'Hello n00b: Your First Steps into the IT Journey'
+  hello-win.md:
+    words: 1741
+    type: page
+    title: 'Hello Windows: Mastering the Windows Development Environment'
+  it-fundamentals.md:
+    words: 896
+    type: page
+    title: IT Fundamentals
+  linux-fundamentals.md:
+    words: 689
+    type: page
+    title: Linux Fundamentals
+  markdown-mastery.md:
+    words: 1197
+    type: page
+    title: 'Markdown Mastery: Content Formatting Fundamentals'
+  os-selection.md:
+    words: 977
+    type: page
+    title: OS Selection
+  terminal-fundamentals.md:
+    words: 1424
+    type: page
+    title: 'Terminal Fundamentals: Command Line Navigation Quest'
+  vscode-mastery.md:
+    words: 2240
+    type: page
+    title: 'VS Code Mastery Quest: Forge Your Ultimate Development Weapon'
+  barodybroject-stack-analysis.md:
+    words: 5729
+    type: page
+    title: 'Technology Stack Analysis: Barodybroject'
+  building-testing-git-init-script.md:
+    words: 490
+    type: page
+    title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
+  docs-in-a-row.md:
+    words: 2773
+    type: page
+    title: 'The Knowledge Vault: Building an Automated Documentation Hub'
+  forge-your-character.md:
+    words: 1352
+    type: page
+    title: 'Forge Your Character: Crafting Your Contributor Identity'
+  github-pages-portal.md:
+    words: 3238
+    type: page
+    title: 'The GitHub Pages Portal: Forging Your Digital Realm'
+  it-journey-stack-analysis.md:
+    words: 4988
+    type: page
+    title: 'Stack Attack Analysis: IT-Journey'
+  kaizen.md:
+    words: 5583
+    type: page
+    title: 'Kaizen Quest: The Path of Continuous Improvement in Software Alchemy'
+  personal-site.md:
+    words: 308
+    type: page
+    title: Personal Site
+  side-quest-avatar-forge.md:
+    words: 355
+    type: page
+    title: 'Avatar Forge: Crafting Your Digital Portrait'
+  side-quest-badge-collector.md:
+    words: 694
+    type: page
+    title: 'Badge Collector: Showcasing Your Achievements'
+  stack-attack.md:
+    words: 7213
+    type: page
+    title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
+  stating-the-stats.md:
+    words: 3836
+    type: page
+    title: 'Forging the Stats Portal: Data Analytics Quest'
+  terminal-mastery.md:
+    words: 3175
+    type: page
+    title: 'Terminal Mastery: Conquering the Command-Line Realm'
+  bash-scripting.md:
+    words: 4743
+    type: page
+    title: 'Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery
+      Quest'
+  jekyll-mermaid-integration.md:
+    words: 3401
+    type: page
+    title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
+  nerd-font-enchantment.md:
+    words: 2725
+    type: page
+    title: 'Nerd Font Enchantment: Terminal Icon Mastery'
+  oh-my-zsh-terminal-enchantment.md:
+    words: 5780
+    type: page
+    title: 'Terminal Enchantment: Oh-My-Zsh Mastery'
+  prompt-engineering.md:
+    words: 6007
+    type: page
+    title: 'Forging the Prompt Crystal: Master AI Communication'
+  side-quest-contribution-calendar.md:
+    words: 613
+    type: page
+    title: 'Contribution Calendar: Mapping Your Journey Through Time'
+  side-quest-stats-dashboard.md:
+    words: 674
+    type: page
+    title: 'Stats Dashboard: Enhancing Your Data Visualization'
+  terminal-artificer-frontend-building.md:
+    words: 1463
+    type: page
+    title: 'Terminal Artificer: Forging the Glass Interface'
+  testing-quests-with-recursive-questing.md:
+    words: 990
+    type: page
+    title: 'Recursive Realms: Testing Infinite Loops with AI'
+  github-pages-hidden-gem.md:
+    words: 2805
+    type: page
+    title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture
+      and Conquer AI Realms'
+  prompt-crystal-mastery-vscode-copilot.md:
+    words: 5849
+    type: page
+    title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
+  frontend-docker-level-001.md:
+    words: 909
+    type: page
+    title: 'Frontend Docker Level 001: Create Jekyll Site with Docker Container'
+  frontend-docker-level-010.md:
+    words: 840
+    type: page
+    title: 'Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker'
+  frontend-levels.md:
+    words: 734
+    type: page
+    title: Frontend Forests Levels
+  frontend.md:
+    words: 616
+    type: page
+    title: 'Frontend Forests: Building a Jekyll Site with Bootstrap'
+  jekyll-component-refactoring.md:
+    words: 1866
+    type: page
+    title: 'The Artisan''s Forge: Refactoring Jekyll Theme Components'
+  side-quest-profile-themes.md:
+    words: 846
+    type: page
+    title: 'Profile Themes: Unleashing the Style Sorcerer'
+  sourcery-code-methods.md:
+    words: 3027
+    type: page
+    title: 'Quest: Mastering the Ancient Arts of Source Control Sorcery'
+  docker-mastery-example.md:
+    words: 1336
+    type: page
+    title: 'Docker Containerization Mastery: Level 0101 (5) Quest'
+  jekyll-quest-tracking.md:
+    words: 4832
+    type: page
+    title: 'Jekyll Quest Tracking: Building Dynamic Collection Layouts'
+  the-lazytex-of-building-a-curriculum-vitae.md:
+    words: 1574
+    type: page
+    title: 'Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest'
+  agentic-plan-vs-action-boundaries.md:
+    words: 1367
+    type: page
+    title: 'The Three Sigils: Plan, Reason, Act'
+  agentic-sdlc-integration.md:
+    words: 1681
+    type: page
+    title: 'Initiation Rites: Embedding Agents in the SDLC'
+  agentic-mcp-server-mastery.md:
+    words: 1165
+    type: page
+    title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
+  agentic-observability-and-control.md:
+    words: 1324
+    type: page
+    title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
+  agentic-tool-selection-and-permissions.md:
+    words: 816
+    type: page
+    title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
+  agentic-dev-environment-integration.md:
+    words: 1097
+    type: page
+    title: 'Bind the Agent to the Realm: Dev Environment Integration'
+  agentic-memory-strategies.md:
+    words: 1104
+    type: page
+    title: 'Vaults of Recollection: Agent Memory Strategies'
+  agentic-safe-execution-and-error-handling.md:
+    words: 1148
+    type: page
+    title: 'The Shield of Retries: Safe Execution and Error Handling'
+  agentic-failure-root-cause-analysis.md:
+    words: 907
+    type: page
+    title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
+  agentic-state-continuity-cross-tools.md:
+    words: 1168
+    type: page
+    title: 'Crossing the Tool Planes: State Continuity Across Tools'
+  agentic-state-persistence-and-drift.md:
+    words: 1118
+    type: page
+    title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
+  agentic-success-criteria-and-signals.md:
+    words: 976
+    type: page
+    title: 'The Oracle''s Rubric: Defining Agent Success Criteria and Signals'
+  link-to-the-future-automated-hyperlink-checking-and-error-reporting.md:
+    words: 7199
+    type: page
+    title: 'Link to the Future: Automated Hyperlink Guardian Quest'
+  agentic-behavior-tuning.md:
+    words: 850
+    type: page
+    title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
+  agentic-multi-agent-failure-recovery.md:
+    words: 998
+    type: page
+    title: 'When Familiars Fall: Multi-Agent Failure Recovery'
+  agentic-multi-agent-observability.md:
+    words: 1043
+    type: page
+    title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
+  agentic-multi-agent-orchestration-patterns.md:
+    words: 922
+    type: page
+    title: 'The Council of Many: Multi-Agent Orchestration Patterns'
+  ai-feature-pipeline-architect.md:
+    words: 3138
+    type: page
+    title: 'AI Feature Pipeline Architect: DevSecOps Mastery Quest'
+  agentic-autonomy-levels-matrix.md:
+    words: 1077
+    type: page
+    title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
+  agentic-codex-capstone-exam-trial.md:
+    words: 2159
+    type: page
+    title: 'Trial of the Agentic Codex: The Grand Capstone'
+  agentic-guardrails-and-human-in-the-loop.md:
+    words: 1191
+    type: page
+    title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
+  agentic-multi-agent-lifecycle-management.md:
+    words: 994
+    type: page
+    title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
+  edgar.md:
+    words: 1515
+    type: page
+    title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
+  sec-edgar.md:
+    words: 1781
+    type: page
+    title: 'The Siege of King EDGAR: Storming the SEC Data Castle'
+  the-temple-of-templates.md:
+    words: 1565
+    type: page
+    title: 'The Temple of Templates: Binary Abstractions and Reusable Realms'
+  404-hunting.md:
+    words: 1287
+    type: page
+    title: '404 Hunting: Binary Wards for Unbreakable Links'
+  2025-11-17-azure-ascension-jekyll-deployment-quest.md:
+    words: 313
+    type: page
+    title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
+  2025-11-29-prd-codex-mastering-product-reality-distillation.md:
+    words: 3420
+    type: page
+    title: 'The PRD Codex: Mastering the Art of Product Reality Distillation'
+  NETWORK_REPORT.md:
+    words: 430
+    type: page
+    title: Quest Network Report
+  QUEST_BUILD_PLAN.md:
+    words: 3258
+    type: page
+    title: Quest Build Plan - Complete Placeholder Quest System
+  QUEST_ORGANIZATION_SUMMARY.md:
+    words: 1047
+    type: page
+    title: Quest Organization Summary
+  full-stack-portfolio-epic-example.md:
+    words: 1239
+    type: page
+    title: 'The Digital Portfolio Fortress: Full-Stack Epic Construction'
+  oh-my-zsh-side-quest-example.md:
+    words: 825
+    type: page
+    title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
+  quest-network-mapping-example.md:
+    words: 1979
+    type: page
+    title: 'Quest Network Mapping: Comprehensive Learning Path Visualization'
+  terminal-mastery-main-quest-example.md:
+    words: 1692
+    type: page
+    title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
+  world_map.md:
+    words: 1976
+    type: page
+    title: "\U0001F5FA️ World Map: Navigation Guide to the IT-Journey Realm"
+  PHASE1_COMPLETE.md:
+    words: 765
+    type: page
+    title: Phase 1 Complete
+  PHASE2_COMPLETE.md:
+    words: 1193
+    type: page
+    title: Phase 2 Complete
+  PHASE3_COMPLETE.md:
+    words: 1680
+    type: page
+    title: Phase 3 Complete
+  PHASE4_COMPLETE.md:
+    words: 1466
+    type: page
+    title: 'Phase 4 Complete: Expert Tier Quests Generated'
+  PHASE5_COMPLETE.md:
+    words: 1269
+    type: page
+    title: 'Phase 5 Complete: Master & Legend Tier Quest Generation'
+  PHASE6_IMPLEMENTATION_SUMMARY.md:
+    words: 679
+    type: page
+    title: Phase 6 Implementation Summary
+  PHASE6_PLAN.md:
+    words: 1251
+    type: page
+    title: 'Phase 6: Polish & Integration'
+  VALIDATION_FIXES_SUMMARY.md:
+    words: 701
+    type: page
+    title: Validation Fixes Summary
+  home.md:
+    words: 1360
+    type: page
+    title: IT-Journey — Home
+  level-readme-template.md:
+    words: 1754
+    type: page
+    title: Level [BINARY] ([DECIMAL]) - [Level Name]
+  action-triggers.md:
+    words: 571
+    type: page
+    title: Understanding Action Triggers in Depth
+  branches-and-pull-requests.md:
+    words: 477
+    type: page
+    title: Mastering Branches and Pull Requests for Developers
+  change-logs.md:
+    words: 470
+    type: page
+    title: Change Logs
+  commitments-to-clean-commits.md:
+    words: 450
+    type: page
+    title: Commitments to clean commits
+  django-and-git.md:
+    words: 1221
+    type: page
+    title: Setting up Django and Git
+  epic-quest-zer0-to-her0-cmstyle.md:
+    words: 1172
+    type: page
+    title: 'Epic Quest: Zer0-to-Her0 CMStyle'
+  mastering-version-control-workflows.md:
+    words: 4106
+    type: page
+    title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
+  planting-seeds.md:
+    words: 47
+    type: page
+    title: planting seeds
+  revolutionizing-work-with-ai-automation.md:
+    words: 550
+    type: page
+    title: Revolutionizing Work with AI Automation
+  charm-setup.md:
+    words: 1083
+    type: page
+    title: Setting Up Charm & Building a Terminal Interface
+  cicd-automation.md:
+    words: 637
+    type: page
+    title: CI/CD & Automation with GitHub Actions
+  content-creation.md:
+    words: 1003
+    type: page
+    title: Content Creation & Frontmatter Standards
+  deployment.md:
+    words: 604
+    type: page
+    title: Deployment to GitHub Pages and Azure
+  github-setup.md:
+    words: 573
+    type: page
+    title: Repository & GitHub Configuration Setup
+  jekyll-setup.md:
+    words: 614
+    type: page
+    title: Jekyll & zer0-mistakes Theme Installation
+  local-development.md:
+    words: 660
+    type: page
+    title: Local Development with Docker and Ruby
+  machine-setup.md:
+    words: 2803
+    type: page
+    title: 'Complete Machine Setup Guide: Jekyll Development Environment'
+  optimization-maintenance.md:
+    words: 760
+    type: page
+    title: Site Optimization & Ongoing Maintenance
+  site-configuration.md:
+    words: 969
+    type: page
+    title: Configuring Your Site with _config.yml
+  styling-navigation.md:
+    words: 736
+    type: page
+    title: Styling, Navigation & Comment Systems
+  theme-architecture.md:
+    words: 1188
+    type: page
+    title: Theme Architecture & Liquid Templating
+  vscode-setup.md:
+    words: 817
+    type: page
+    title: VS Code & CMS Setup
+  index.html:
+    words: 206
+    type: page
+    title: All posts
+  news.md:
+    words: 839
+    type: page
+    title: 'IT-Journey Chronicles: From Zer0 to Her0'
+  posts.md:
+    words: 1690
+    type: page
+    title: 'IT-Journey Blog Posts: Tutorials and Learning Articles'
+  search.md:
+    words: 8
+    type: page
+    title: Search
+  stats.md:
+    words: 471
+    type: page
+    title: IT-Journey Statistics Portal
+  AGENTS.md:
+    words: 1507
+    type: page
+    title: AGENTS
+  CHANGELOG.md:
+    words: 6119
+    type: page
+    title: CHANGELOG
+  CODE_OF_CONDUCT.md:
+    words: 940
+    type: page
+    title: Code of Conduct
+  CONTRIBUTING.md:
+    words: 845
+    type: page
+    title: Contributing
+  PRD.md:
+    words: 1534
+    type: page
+    title: 'PRD: IT-Journey – Open-Source IT Education Platform'
+  RESOLUTION_REPORT.md:
+    words: 557
+    type: page
+    title: RESOLUTION_REPORT
+  SECURITY.md:
+    words: 89
+    type: page
+    title: SECURITY
+  roadmap.md:
+    words: 3819
+    type: page
+    title: 'IT-Journey: The Master Roadmap'
+  404.html:
+    words: 397
+    type: page
+    title: '404'
 focus_areas:
-  AI & Machine Learning: 8
-  System Administration: 6
-  DevOps & Infrastructure: 5
-  Programming & Scripting: 4
-  Tools & Development Environment: 4
-  Creative & Experimental: 4
-  Web Development: 3
-  Data & Analytics: 2
+  System Administration: 301
+  Data & Analytics: 266
+  AI & Machine Learning: 189
+  Programming & Scripting: 164
+  Web Development: 107
+  Tools & Development Environment: 84
+  DevOps & Infrastructure: 77
+  Creative & Experimental: 59
+skill_levels:
+  intermediate: 86
+  beginner: 48
+  expert: 41
+  advanced: 29
 content_types:
-  Journal Entry: 8
-  Article: 4
-  Tutorial: 4
-  Documentation: 1
-  Creative Writing: 1
-drafts: 6
-published: 9
-category_count: 15
-tag_count: 54
-author_count: 4
+  Tutorial: 57
+  Documentation: 56
+  Article: 26
+  Journal Entry: 26
+  Creative Writing: 5
+date_range:
+  earliest: 2020
+  latest: 2026
+  span_years: 7
+drafts: 127
+published: 558
+category_count: 238
+tag_count: 689
+author_count: 20
 top_categories:
-  posts: 8
-  devops: 5
-  tutorials: 3
-  ai & machine learning: 2
-  macos: 1
+  wargames: 220
+  Quests: 95
+  Development: 41
+  bandit: 36
+  natas: 36
 top_tags:
-  devops: 4
-  ci-cd: 3
-  article: 2
-  automation: 2
-  jekyll: 2
-  cli-tools: 1
-  documentation: 1
-  python: 1
-  ai-development: 1
-  product-management: 1
+  linux: 227
+  security: 222
+  cybersecurity: 220
+  ctf: 220
+  wargames: 220
+  jekyll: 42
+  gh-600: 39
+  hands-on: 37
+  agentic-ai: 32
+  gamified-learning: 24
+top_authors:
+  bamr87: 287
+  IT-Journey Team: 156
+  Quest Master IT-Journey Team: 22
+  Quest Master IT-Journey: 3
+  Amr Abdel Eissa: 3

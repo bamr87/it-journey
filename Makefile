@@ -5,7 +5,9 @@
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
         quest-audit quest-audit-strict quest-levels-data quest-nav \
-        content-validate content-normalize content-normalize-apply content-audit
+        content-validate content-normalize content-normalize-apply content-audit \
+        theme-audit theme-audit-strict theme-audit-fix \
+        theme-sync-plugins theme-sync-plugins-all theme-sync-plugins-preview
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
 JEKYLL_CONFIG_CI  := _config.yml,_config_dev.yml,_config_ci.yml
@@ -46,6 +48,14 @@ help:
 	@echo "  make content-normalize         - Dry-run frontmatter normalizer across pages/"
 	@echo "  make content-normalize-apply   - Apply frontmatter normalization across pages/"
 	@echo "  make content-audit             - Full content audit (frontmatter + quests + network)"
+	@echo ""
+	@echo "🎨 Theme Tooling"
+	@echo "  make theme-audit               - Check for theme drift (informational)"
+	@echo "  make theme-audit-strict        - Check for theme drift (exit 1 on unjustified drift)"
+	@echo "  make theme-audit-fix           - Auto-fix safe issues (delete identical, copy plugins)"
+	@echo "  make theme-sync-plugins        - Install/update required plugins from theme"
+	@echo "  make theme-sync-plugins-all    - Install/update all plugins (required + optional)"
+	@echo "  make theme-sync-plugins-preview - Preview plugin sync (dry-run)"
 	@echo ""
 
 # Generate statistics
@@ -206,6 +216,34 @@ content-normalize-apply:
 
 content-audit: content-validate quest-validate quest-network
 	@echo "✅ Content audit complete — frontmatter, quests, and network validated."
+
+# Theme drift detection targets
+theme-audit:
+	@echo "🎨 Checking for theme drift against zer0-mistakes..."
+	@bash scripts/theme-audit.sh --format text
+
+theme-audit-strict:
+	@echo "🎨 Strict theme drift check (exit 1 on unjustified drift)..."
+	@bash scripts/theme-audit.sh --strict --format github
+
+theme-audit-fix:
+	@echo "🔧 Auto-fixing safe theme drift issues (dry-run first)..."
+	@bash scripts/theme-audit.sh --fix --dry-run
+	@echo ""
+	@echo "Run 'bash scripts/theme-audit.sh --fix' to apply."
+
+# Plugin sync targets — install/update plugins from zer0-mistakes into this repo
+theme-sync-plugins:
+	@echo "🔌 Syncing required plugins from zer0-mistakes theme..."
+	@bash scripts/theme-sync-plugins.sh --plugins required
+
+theme-sync-plugins-all:
+	@echo "🔌 Syncing all plugins (required + optional) from zer0-mistakes theme..."
+	@bash scripts/theme-sync-plugins.sh --plugins all
+
+theme-sync-plugins-preview:
+	@echo "🔌 Previewing plugin sync (dry-run)..."
+	@bash scripts/theme-sync-plugins.sh --plugins all --dry-run
 
 # Watch for changes and auto-update (requires fswatch on macOS)
 watch:

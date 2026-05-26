@@ -542,7 +542,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-file-text display-4 text-primary"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.total_posts }}
+            {{ site.data.content_statistics.overview.total_posts }}
           </h2>
           <p class="card-text text-muted">Total Posts</p>
         </div>
@@ -555,7 +555,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-fonts display-4 text-success"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.total_words | number_with_delimiter }}
+            {{ site.data.content_statistics.overview.total_words | number_with_delimiter }}
           </h2>
           <p class="card-text text-muted">Total Words</p>
         </div>
@@ -568,7 +568,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-pencil display-4 text-info"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.average_words_per_post }}
+            {{ site.data.content_statistics.overview.average_words_per_post }}
           </h2>
           <p class="card-text text-muted">Avg. Words/Post</p>
         </div>
@@ -645,7 +645,7 @@ permalink: /stats/
         <div class="card-body">
           <div class="tag-cloud">
             {% for tag in site.data.content_statistics.tags limit:30 %}
-              {% assign tag_size = tag[1] | times: 100 | divided_by: site.data.content_statistics.total_posts %}
+              {% assign tag_size = tag[1] | times: 100 | divided_by: site.data.content_statistics.overview.total_posts %}
               {% if tag_size > 50 %}
                 {% assign tag_class = "fs-1" %}
               {% elsif tag_size > 30 %}
@@ -694,7 +694,7 @@ permalink: /stats/
                     <td><strong>{{ month[1] }}</strong></td>
                     <td>
                       <div class="progress" style="height: 20px;">
-                        {% assign percentage = month[1] | times: 100 | divided_by: site.data.content_statistics.total_posts %}
+                        {% assign percentage = month[1] | times: 100 | divided_by: site.data.content_statistics.overview.total_posts %}
                         <div class="progress-bar bg-warning" role="progressbar" 
                              style="width: {{ percentage }}%" 
                              aria-valuenow="{{ percentage }}" 
@@ -737,10 +737,10 @@ permalink: /stats/
             </div>
             <div class="col-md-4 mb-3">
               <h5>Reading Metrics</h5>
-              {% assign estimated_reading_time = site.data.content_statistics.average_words_per_post | divided_by: 200 %}
+              {% assign estimated_reading_time = site.data.content_statistics.overview.average_words_per_post | divided_by: 200 %}
               <p>
                 <strong>Avg. Reading Time:</strong> ~{{ estimated_reading_time }} min<br>
-                <strong>Total Reading Time:</strong> ~{{ site.data.content_statistics.total_words | divided_by: 200 }} min<br>
+                <strong>Total Reading Time:</strong> ~{{ site.data.content_statistics.overview.total_words | divided_by: 200 }} min<br>
                 <strong>Longest Category:</strong> 
                 {% assign top_category = site.data.content_statistics.categories | first %}
                 {{ top_category[0] | capitalize }} ({{ top_category[1] }} posts)

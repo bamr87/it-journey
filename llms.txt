@@ -1,0 +1,38 @@
+---
+permalink: /llms.txt
+sitemap: false
+layout: null
+---
+# IT-Journey
+
+> An open-source educational platform for the journey from zer0 to her0 in IT. Combines tutorials, gamified "quests," AI-assisted development chronicles, and reference docs spanning frontend, backend, DevOps, AI, and cloud — built on Jekyll and deployed via GitHub Pages.
+
+Authored by Amr Abdel-Motaleb. Content is Markdown with structured frontmatter and follows a fantasy/RPG learning metaphor (levels, quests, side quests, codex).
+
+## Core sections
+
+- [Home]({{ site.url }}/): Entry point and feature overview
+- [Quickstart]({{ site.url }}/quickstart/): Phased onboarding from machine setup through deployment
+- [Quests]({{ site.url }}/quests/): Gamified, level-based learning paths (main quests, side quests, codex)
+- [Docs]({{ site.url }}/docs/): Technical reference, cheatsheets, certification study material
+- [News / Posts]({{ site.url }}/news/): Blog posts and AI-session chronicles, organized by category
+- [Notes]({{ site.url }}/notes/): Dated dev notes, snippets, and working scratch pads
+- [About]({{ site.url }}/about/): Project overview, contributor profiles, features, roadmap
+
+## Key reference files
+
+- [README]({{ site.github.repository_url }}/blob/main/README.md): Project overview and setup
+- [AGENTS.md]({{ site.github.repository_url }}/blob/main/AGENTS.md): Cross-tool guide for AI coding agents working in the repo
+- [Contributing]({{ site.github.repository_url }}/blob/main/CONTRIBUTING.md): How humans contribute
+- [Sitemap]({{ site.url }}/sitemap.xml): Machine-readable URL index
+
+## Content conventions
+
+- Every page uses YAML frontmatter (`title`, `description` 120–160 chars, `date`, `lastmod`, `categories` and `tags` as lists, `author`).
+- Quests use binary level numbers (`0001`, `1010`, …) and canonical permalinks: `/quests/XXXX/<slug>/` for main quests, `/quests/XXXX/side-quests/<slug>/` for side quests, `/quests/codex/<slug>/` for bonus/epic quests.
+- Posts live under `/news/<category>/` and may carry `permalink: /posts/<slug>/` overrides.
+
+## Optional
+
+- [Search index]({{ site.url }}/search.json): JSON index of site content (not for indexing — for in-site search)
+- [GitHub repository]({{ site.github.repository_url }}): Source of truth for content and code

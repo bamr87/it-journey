@@ -41,7 +41,7 @@ The combination — template plus placeholders — covers the two halves of the 
 | Defines structure | Defines values |
 | Stops authors from forgetting a key | Stops authors from leaving the key blank |
 
-A placeholder for `date` becomes `{{now}}`. A placeholder for `slug` becomes `{{slugify ${title}}}`. A placeholder for `author` becomes the current user. By the time the file opens, the boring fields are filled in correctly and the author can focus on the body.
+A placeholder for `date` becomes `{{now}}`. A placeholder for `slug` becomes {% raw %}`{{slugify ${title}}}`{% endraw %}. A placeholder for `author` becomes the current user. By the time the file opens, the boring fields are filled in correctly and the author can focus on the body.
 
 ## The Four Patterns I Reach For
 
@@ -61,6 +61,7 @@ Applied to `date`, `lastmod`, and `publishDate`. Stops the "did I copy this from
 
 ### 2. Slug derivation
 
+{% raw %}
 ```json
 {
   "title": "Slug",
@@ -68,6 +69,7 @@ Applied to `date`, `lastmod`, and `publishDate`. Stops the "did I copy this from
   "value": "{{slugify ${title}}}"
 }
 ```
+{% endraw %}
 
 Applied to `slug` and to `permalink` (with a path prefix). The slug always matches the title, even if the author renames the file later.
 

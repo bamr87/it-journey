@@ -13,8 +13,9 @@ future: true
 incremental: true
 
 # Performance: limit post processing (only N most recent - major speedup for large sites)
-# Must exceed index pages (pages/_posts/**/2000-01-01-index.md) + recent chronicles or /news/ 404s locally
-limit_posts: 120
+# Must exceed category index pages (2000-01-01-index.md) + recent chronicles to avoid /news/ 404s locally.
+# Raise to 120+ when editing older posts; 30 is safe for most day-to-day dev work.
+limit_posts: 30
 
 # Performance: disable LSI (latent semantic indexing) - expensive computation
 lsi: false
@@ -38,10 +39,31 @@ preview_images:
 preview_generator:
   enabled: false
 
+# Performance: skip full-site filesystem scan for statistics on every build.
+# The generator reads and YAML-parses 600+ files on every run regardless of
+# incremental mode. Re-enable to refresh _data/content_statistics.yml manually.
+content_statistics:
+  auto_generate: false
+
 # Performance: reduce Liquid processing overhead
 liquid:
   error_mode: warn
   strict_filters: false
+
+# Performance: disable rarely-edited collections during development.
+# Jekyll deep-merges this over _config.yml, so only the specified keys are overridden.
+# Comment out or set output: true for any collection you're actively editing.
+# quests and notebooks are the heaviest collections (~200+ docs each).
+# Set output: true for any collection you need to work on locally.
+collections:
+  quests:
+    output: false
+  docs:
+    output: false  # 240 files, 220 are wargames — disable unless actively editing docs
+  notebooks:
+    output: false
+  hobbies:
+    output: false
 
 # Uncomment to print a per-template build profile report for diagnosing slow templates
 # profile: true
