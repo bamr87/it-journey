@@ -1,13 +1,25 @@
 ---
-title: Start
+title: "Start: IT-Journey Character Initialization Guide"
 updated: 2026-06-13 00:00:00+00:00
 created: 2024-02-01 18:05:31+00:00
-tags:
-- onboarding
-- setup
 date: '2024-02-20T09:39:19.000Z'
+lastmod: '2026-06-13T00:00:00.000Z'
 draft: false
+author: bamr87
+categories: [Learning]
+tags:
+  - onboarding
+  - setup
+  - environment
+  - getting-started
+excerpt: "The character sheet for the IT-Journey zero — identity, SSH/GPG keys, role-based class selection, and the WSL2 inventory checklist to complete before starting any quest."
 description: Initialization scratch sheet for the IT-Journey 'zero' character — identity, class, inventory checklist, and onboarding setup.
+keywords:
+  - onboarding
+  - developer setup
+  - WSL2
+  - SSH key
+  - getting started
 ---
 
 # Initialize

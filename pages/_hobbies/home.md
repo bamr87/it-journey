@@ -1,5 +1,5 @@
 ---
-title: Hobbies
+title: "Hobbies: Art, Cooking, Gaming, and Music Side-Quests"
 description: "Landing page for off-the-clock IT-Journey notes — art, cooking, gaming, and music side-quests that exist outside the technical curriculum."
 author: bamr87
 date: '2022-02-27T12:00:00.000Z'
@@ -16,6 +16,7 @@ keywords:
   - gaming notes
   - music notes
 draft: false
+excerpt: "Off-the-clock notes on art (Krita), cooking (technique over recipe), gaming (systems thinking), and music theory — the pursuits that make the rest of the journey worth taking."
 ---
 
 The technical curriculum covers what pays the bills and sharpens the mind. This section covers what makes the rest of it worth doing.

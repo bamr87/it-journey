@@ -1,10 +1,25 @@
 ---
-title: "GitHub's Hidden Gem"
+title: "GitHub's Hidden Gem: Features Most Developers Walk Past"
 updated: 2026-06-13 00:00:00+00:00
 created: 2024-02-14 19:41:48+00:00
 date: '2024-02-20T09:39:19.000Z'
+lastmod: '2026-06-13T00:00:00.000Z'
 draft: false
+author: bamr87
+categories: [Learning, Tools & Environment]
+tags:
+  - github
+  - productivity
+  - developer-tools
+  - git
+excerpt: "GitHub ships more than most developers use. Search query language, blame timeline rewind, network graph, permanent links, and the web editor are all hiding in plain sight."
 description: "GitHub features that most developers walk past every day: the search shortcuts, network graph, blame timeline, and the REST API explorer hiding in plain sight."
+keywords:
+  - github search
+  - github blame
+  - github network graph
+  - github web editor
+  - github REST API
 ---
 
 GitHub ships so many features that the genuinely useful ones get buried under the surface. These are the ones worth surfacing.

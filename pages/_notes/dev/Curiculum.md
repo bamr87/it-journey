@@ -1,10 +1,24 @@
 ---
-title: Curriculum
+title: "IT-Journey Curriculum: Build to Teach"
 updated: 2026-06-13 00:00:00+00:00
 created: 2024-02-13 19:49:02+00:00
 date: '2024-02-20T09:39:19.000Z'
+lastmod: '2026-06-13T00:00:00.000Z'
 draft: false
+author: bamr87
+categories: [Learning]
+tags:
+  - curriculum
+  - learning-methodology
+  - teaching
+  - developer-education
+excerpt: "The IT-Journey curriculum is built backwards from teaching — if you cannot explain it, you don't know it yet. The Zero→Foundation→Tools→Projects→Specialization sequence follows from that constraint."
 description: 'The IT-Journey curriculum philosophy: you cannot teach what you do not know, so build to teach — and the sequence that follows from that.'
+keywords:
+  - curriculum design
+  - learning methodology
+  - teaching to learn
+  - developer education
 ---
 
 You don't know what you can't teach.

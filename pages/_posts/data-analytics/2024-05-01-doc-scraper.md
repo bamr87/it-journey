@@ -1,6 +1,6 @@
 ---
-title: doc scraper
-description: Notes and exploration around document scraping techniques for extracting structured data from web sources.
+title: "Document Scraping: Extracting Structured Data From Web Sources"
+description: "Notes and exploration around document scraping techniques for extracting structured data from web sources — BeautifulSoup, Playwright, rate limiting, and storage patterns."
 date: '2024-07-27T19:27:05.000Z'
 lastmod: '2026-06-13T00:00:00.000Z'
 preview: ''
@@ -21,7 +21,7 @@ keywords:
 - beautifulsoup
 - playwright
 - structured data
-excerpt: Notes and exploration around document scraping techniques for extracting structured data from web sources
+excerpt: "Practical notes on doc scraping with BeautifulSoup, Playwright, and Scrapy — covering rate limiting, JS-rendered pages, storage patterns, and the failure modes that will catch you first."
 author: bamr87
 ---
 

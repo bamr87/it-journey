@@ -1,5 +1,5 @@
 ---
-title: versioning
+title: "IT-Journey Versioning: Semver, Changelog, and Release Strategy"
 author: bamr87
 excerpt: How IT-Journey versions its releases — semantic versioning conventions, changelog format, and the relationship between the site content and the zer0-mistakes theme.
 description: Release strategy and versioning conventions for IT-Journey — semantic versioning, changelog format, and the relationship to the zer0-mistakes theme.
@@ -11,6 +11,12 @@ tags:
 - versioning
 - semver
 meta: null
+keywords:
+  - semantic versioning
+  - semver
+  - changelog
+  - release strategy
+  - jekyll versioning
 draft: false
 lastmod: '2026-06-13T00:00:00.000Z'
 date: '2022-01-10T17:00:49.000Z'

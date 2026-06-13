@@ -1,10 +1,26 @@
 ---
-title: Take good notes
+title: "Take Good Notes: The Joplin, GitHub, and Jekyll Stack"
 updated: 2026-06-13 00:00:00+00:00
 created: 2024-02-03 19:42:48+00:00
 date: '2024-02-20T09:39:19.000Z'
+lastmod: '2026-06-13T00:00:00.000Z'
 draft: false
+author: bamr87
+categories: [Learning, Tools & Environment]
+tags:
+  - note-taking
+  - joplin
+  - jekyll
+  - knowledge-management
+  - productivity
+excerpt: "Notes are thoughts materialized. The Joplin→GitHub→Jekyll stack keeps them captured, versioned, and optionally published — with almost no friction between the three stages."
 description: 'Working note on note-taking: thoughts are materialized when written down, and centralizing them via Joplin, GitHub, and Jekyll keeps them findable.'
+keywords:
+  - note taking
+  - joplin
+  - jekyll notes
+  - knowledge management
+  - personal knowledge base
 ---
 
 Notes are thoughts materialized. An idea that lives only in your head competes with every other thought you're having. An idea on paper — or in a markdown file — can be returned to, refined, and connected to other ideas.
