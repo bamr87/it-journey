@@ -8,7 +8,7 @@ altitude: 0.0
 tags:
 - test
 date: '2024-02-20T09:39:19.000Z'
-draft: false
+draft: true
 description: Initialization scratch sheet for the IT-Journey 'zero' character — identity, class, inventory checklist, and onboarding setup.
 ---
 # Initialize

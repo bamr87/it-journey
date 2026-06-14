@@ -9,8 +9,8 @@ tags:
 categories:
 - Trends & Ideas
 type: default
-lastmod: '2024-05-16T01:45:59.000Z'
-draft: false
+lastmod: '2026-06-13T00:00:00.000Z'
+draft: true
 keywords:
 - trends & ideas
 - bootstrap
