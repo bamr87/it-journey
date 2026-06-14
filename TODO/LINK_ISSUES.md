@@ -2,10 +2,10 @@
 title: "Link Issues Summary"
 description: "Quick reference summary of broken links across IT-Journey"
 created: 2026-01-17T00:00:00.000Z
-lastmod: 2026-01-17T00:00:00.000Z
-status: "PENDING_SCAN"
+lastmod: 2026-06-13T00:00:00.000Z
+status: "ISSUES_FOUND"
 priority: "HIGH"
-date: 2026-01-24T14:27:39.000Z
+date: 2026-06-13T00:00:00.000Z
 
 ---
 
@@ -19,10 +19,12 @@ date: 2026-01-24T14:27:39.000Z
 
 | Metric | Value |
 |--------|-------|
-| **Last Scan** | Never |
-| **Total Links** | - |
-| **Broken Links** | - |
-| **Success Rate** | - |
+| **Last Scan** | 2026-06-13 |
+| **Total Links** | 100+ relative .md checked (this iteration) |
+| **Broken Links** | 15 (relative .md) + 4 external |
+| **Success Rate** | — see notes |
+
+> **Note (2026-06-13):** A large batch of broken relative `.md` links was fixed this iteration. 15 broken relative `.md` links remain across 5 files NOT edited this round — 9 of which are intentional template/code-fence placeholders (won't fix), leaving 6 actionable in `docs/scripts/CLEANUP_SUMMARY.md` and `docs/testing/TESTING_FRAMEWORKS.md`. Plus 4 external broken URLs from the 2026-03-07 lychee scan (link-check-results/). See [TODO/links/reports/scan-2026-06-13.md](./links/reports/scan-2026-06-13.md) and [TODO/CONTENT_WORKLIST-2026-06-13.md](./CONTENT_WORKLIST-2026-06-13.md).
 
 ---
 
@@ -45,17 +47,23 @@ Or trigger via GitHub Actions:
 
 | Category | Count | Priority | Action |
 |----------|-------|----------|--------|
-| Internal 404s | - | Critical | Fix navigation |
-| External Broken | - | High | Update references |
-| SSL Errors | - | Medium | Review certificates |
-| Timeouts | - | Medium | Check slow sites |
-| Rate Limited | - | Low | Usually false positives |
+| Internal broken .md (actionable) | 6 | Critical | Fix navigation |
+| Internal broken .md (placeholders) | 9 | n/a | Won't fix (templates/examples) |
+| External Broken | 4 | High | Update references |
+| SSL Errors | 0 | Medium | Review certificates |
+| Timeouts | 0 | Medium | Check slow sites |
+| Rate Limited | 0 | Low | Usually false positives |
 
 ---
 
-## Top 10 Issues
+## Top Issues (2026-06-13)
 
-_Run a scan to see prioritized issues._
+1. `docs/scripts/CLEANUP_SUMMARY.md` — 4 broken script README links (also an obsolete doc; archiving resolves these).
+2. `docs/testing/TESTING_FRAMEWORKS.md` — 2 dead `test/hyperlink-guardian/docs/*` links (tool moved to scripts/validation/).
+3. `docs/CONTRIBUTING_DEVELOPER.md` — external placeholder URL `YOUR-USERNAME/it-journey.git`.
+4. `docs/architecture/{JEKYLL_IMPLEMENTATION,REPOSITORY_STRUCTURE}.md` — broken external `bamr87/zer0-mistakes` (502).
+5. `docs/workflows/ORGANIZE_POSTS_WORKFLOW.md` — placeholder `actions/runs/12345678` link.
+6. Won't fix: `docs/standards/CONTENT_GUIDELINES.md` (code-fence examples), `.github/instructions/README.instructions.md` (template), `test/quest-solutions/_shared/templates/quest-solution-readme-template.md` (template).
 
 ---
 
@@ -78,4 +86,4 @@ _Run a scan to see prioritized issues._
 ---
 
 **Project**: [Link Health Management](./links/README.md)  
-**Last Updated**: 2026-01-17
+**Last Updated**: 2026-06-13

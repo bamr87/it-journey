@@ -365,9 +365,9 @@ When time is limited, prioritize:
 ## 🔗 Resources
 
 ### Internal
-- [SEO Frontmatter Template](./templates/SEO_FRONTMATTER_TEMPLATE.md)
-- [TODO SEO Tracking](./seo/TRACKING.md)
-- [Quick Actions](./seo/QUICK_ACTIONS.md)
+- [SEO Frontmatter Template](../templates/SEO_FRONTMATTER_TEMPLATE.md)
+- [TODO SEO Tracking](./TRACKING.md)
+- [Quick Actions](./QUICK_ACTIONS.md)
 
 ### External
 - [Google Search Console](https://search.google.com/search-console)

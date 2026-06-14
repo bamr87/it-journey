@@ -196,4 +196,4 @@ date: 2025-12-20T10:05:28.000Z
 
 ---
 
-_Template Version: 1.0 | Created: 2025-12-19 | See [todo.instructions.md](../todo.instructions.md) for usage guidelines_
+_Template Version: 1.0 | Created: 2025-12-19 | See [todo.instructions.md](../../.github/instructions/todo.instructions.md) for usage guidelines_

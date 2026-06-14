@@ -246,7 +246,7 @@ HIGH IMPACT
 
 ### Project Management
 - **[STATUS.md](./STATUS.md)** - Real-time status dashboard
-- **[todo.instructions.md](./todo.instructions.md)** - AI agent guidelines
+- **[todo.instructions.md](../.github/instructions/todo.instructions.md)** - AI agent guidelines
 - **Templates** - Reusable project templates
 
 ### Analytics & Monitoring
@@ -265,7 +265,7 @@ HIGH IMPACT
 
 ### Adding New Tasks
 1. Determine the appropriate category (SEO, Content, Technical, etc.)
-2. Use the task format from [todo.instructions.md](./todo.instructions.md)
+2. Use the task format from [todo.instructions.md](../.github/instructions/todo.instructions.md)
 3. Include effort estimates and priority levels
 4. Link to relevant files and documentation
 
@@ -282,7 +282,7 @@ AI agents can help with:
 - Generating progress reports
 - Identifying stale or blocked items
 
-See **[todo.instructions.md](./todo.instructions.md)** for AI agent guidelines.
+See **[todo.instructions.md](../.github/instructions/todo.instructions.md)** for AI agent guidelines.
 
 ---
 
@@ -351,4 +351,4 @@ gantt
 **Created**: 2025-11-14  
 **Last Updated**: 2025-12-19  
 **Status**: 🎯 Active  
-**AI Instructions**: [todo.instructions.md](./todo.instructions.md)
+**AI Instructions**: [todo.instructions.md](../.github/instructions/todo.instructions.md)
