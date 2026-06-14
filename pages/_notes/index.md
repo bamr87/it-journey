@@ -171,12 +171,12 @@ vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/{{ page.path}}
 
 ### Hover Notes
 
-![](../assets/images/hover-note.png){: .img-fluid }
+![](/assets/images/hover-note.png){: .img-fluid }
 
 ### Paste images in Markdown
 
 
-![](../assets/images/markdown_paste.gif){: .img-fluid }
+![](/assets/images/markdown_paste.gif){: .img-fluid }
 
 
 ### Autoscale images
@@ -264,9 +264,9 @@ p, img
 
 ### Examples
 
-![this is a caption](../assets/images/nubi-son.png)
-![Nubi in a sink](../assets/images/nubi-sink.png)
-![Nubi yawning](../assets/images/nubi-yawn.png){: .img-thumbnail }
+![this is a caption](/assets/images/nubi-son.png)
+![Nubi in a sink](/assets/images/nubi-sink.png)
+![Nubi yawning](/assets/images/nubi-yawn.png){: .img-thumbnail }
 
 
 > this is a block quote
@@ -294,11 +294,11 @@ https://icons.getbootstrap.com/#install
 
 <i class="bi bi-gem"></i>
 
-![](../../assets/images/penrose-hard.png)
+![](/assets/images/penrose-hard.png)
 
 ## OS Based instructions
 
-TODO: find a way to include OS based instructions using liquid tags
+<!-- TODO (author note, not rendered): include OS-based instructions using Liquid tags -->
 
 These instructions are pertinent to Mac users.
 

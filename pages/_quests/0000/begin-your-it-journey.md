@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Take your first steps into the world of information technology
 excerpt: Start your adventure with the essential skills and mindset for IT success
 snippet: null
-preview: images/previews/begin-your-it-journey.png
+preview: /assets/images/previews/begin-your-it-journey.png
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'

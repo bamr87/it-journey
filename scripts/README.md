@@ -499,7 +499,7 @@ This script demonstrates advanced automation concepts:
 
 ### 🔗 Related Documentation
 
-- [Azure Ascension Quest](../../pages/_quests/level-0082-azure-ascension-jekyll-deployment/index.md) - Original educational content
+- [Azure Ascension Quest](../pages/_quests/2025-11-17-azure-ascension-jekyll-deployment-quest.md) - Original educational content
 - [Azure Jekyll Deploy README](deployment/azure-jekyll-deploy-README.md) - Complete usage guide
 - [Azure Jekyll Deploy Testing](deployment/azure-jekyll-deploy-TESTING.md) - Testing procedures
 

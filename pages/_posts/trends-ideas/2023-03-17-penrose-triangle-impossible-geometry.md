@@ -56,23 +56,23 @@ Inkscape
 </svg>
 ```
 
-<!-- ![svg](../../assets/svg/penrose.svg) -->
+<!-- ![svg](/assets/svg/penrose.svg) -->
 
-<!-- ![svg](../../assets/svg/penrose-actual.svg) -->
+<!-- ![svg](/assets/svg/penrose-actual.svg) -->
 
-![svg](../../assets/svg/qrcode-bash-consultants-site.svg)
+![svg](/assets/svg/qrcode-bash-consultants-site.svg)
 
-![svg](../../assets/svg/penrose-amr-42px.svg)
+![svg](/assets/svg/penrose-amr-42px.svg)
 
-<!-- ![svg](../../assets/svg/penrose-amr-icon-1000.svg) -->
+<!-- ![svg](/assets/svg/penrose-amr-icon-1000.svg) -->
 
-![svg](../../assets/svg/penrose-amr.svg)
+![svg](/assets/svg/penrose-amr.svg)
 
-![svg](../../assets/svg/penrose-amr-icon-32px.svg)
+![svg](/assets/svg/penrose-amr-icon-32px.svg)
 
-![svg](../../assets/svg/penrose-amr-icon-48px.svg)
+![svg](/assets/svg/penrose-amr-icon-48px.svg)
 
-![svg](../../assets/svg/penrose-amr-banner-468x60px.svg)
+![svg](/assets/svg/penrose-amr-banner-468x60px.svg)
 
 Krita
 

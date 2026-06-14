@@ -233,7 +233,7 @@ graph TD
 ### 📖 Reference
 
 For comprehensive README maintenance guidelines, see:
-- [README.instructions.md](.github/instructions/README.instructions.md) - Complete guide
+- [README.instructions.md](instructions/README.instructions.md) - Complete guide
 - [Documentation Standards](#documentation-standards) - General doc practices
 - [Front Matter Standards](#front-matter-structured-metadata-for-it-education) - Metadata requirements
 

@@ -3,7 +3,7 @@ title: 'Penetration Testing: Tools and Ethical Hacking Methodologies'
 author: IT-Journey Team
 description: Learn penetration testing tools and methodologies for ethical hacking. Master reconnaissance, vulnerability scanning, exploitation, and security assessment techniques.
 excerpt: Master ethical hacking and penetration testing tools for security assessments
-preview: images/previews/penetration-testing-tools-quest-title-methodologie.png
+preview: /assets/images/previews/penetration-testing-tools-quest-title-methodologie.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:44:51.000Z'
 level: '1011'

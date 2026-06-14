@@ -3,7 +3,7 @@ title: 'Docker Container Fundamentals: Master Isolation & Portability for DevOps
 author: IT-Journey Team
 description: Learn Docker container fundamentals including images, containers, volumes, and networking. Understand container isolation, portability, and lifecycle management for modern application deployment.
 excerpt: Master Docker container fundamentals including images, volumes, and networking for portable application deployment
-preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
+preview: /assets/images/previews/container-fundamentals-isolation-quest-title-porta.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:04:39.000Z'
 level: '0100'

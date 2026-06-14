@@ -3,7 +3,7 @@ title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
 author: IT-Journey Team
 description: Learn Liquid templating language for Jekyll. Master variables, filters, loops, and conditionals to create dynamic content. Shopify and Jekyll template tutorial with examples.
 excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters, and control flow.
-preview: images/previews/liquid-templating-dynamic-content-basics-descripti.png
+preview: /assets/images/previews/liquid-templating-dynamic-content-basics-descripti.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-12-19T00:00:00.000Z'
 level: '0001'

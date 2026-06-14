@@ -196,5 +196,3 @@ notifications:
 Deploying your Jekyll website using Travis CI is simple, fast and secure. The Pull Request workflow is perfect for collaborating on open source projects or simply scheduling your own content by merging branches when you’re ready.
 
 All of the build process is handled by Travis CI which means you can commit changes to your repository from anywhere, have your code tested and validated and then merge to push your content live. Travis CI will also notify you when the build is successful or fails.
-
-## References

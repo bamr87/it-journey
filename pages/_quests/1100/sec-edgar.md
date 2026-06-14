@@ -4,7 +4,7 @@ author: Quest Master
 description: Embark on a satirical, mystical quest to liberate financial knowledge from King EDGAR's vaults. Assemble AI companions, master SEC APIs, and responsibly harvest 10-K, 10-Q, and 8-K filings to empower your realm with transparent insight.
 excerpt: Rally AI soldiers, breach EDGAR’s API gates, and turn raw filings into actionable wisdom—ethically, safely, and with proper headers.
 snippet: All hail transparency—storm the gates, free the filings, enlighten the realm.
-preview: images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
+preview: /assets/images/previews/siege-of-king-edgar-storming-the-sec-data-castle.png
 date: '2025-08-21T22:00:59.000Z'
 lastmod: '2025-08-20T04:18:02.000Z'
 level: '1100'

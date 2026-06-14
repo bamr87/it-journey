@@ -3,7 +3,7 @@ title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
 layout: quest
 description: Master terminal navigation and essential command-line operations to unlock developer productivity and system control powers
 date: '2025-10-04T15:25:33.000Z'
-preview: images/previews/terminal-navigation-mastery-command-line-fundament.png
+preview: /assets/images/previews/terminal-navigation-mastery-command-line-fundament.png
 tags:
 - '0001'
 - terminal

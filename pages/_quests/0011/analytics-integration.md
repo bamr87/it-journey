@@ -3,7 +3,7 @@ title: 'Google Analytics for Jekyll: Complete User Tracking Integration Guide'
 author: IT-Journey Team
 description: Add Google Analytics 4 to your Jekyll site. Learn event tracking, custom dimensions, privacy-compliant implementation, and dashboard setup to understand your website traffic and user behavior.
 excerpt: Implement Google Analytics 4 on your Jekyll site to track visitors, events, and user engagement metrics
-preview: images/previews/analytics-integration-tracking-user-engagement-des.png
+preview: /assets/images/previews/analytics-integration-tracking-user-engagement-des.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:00:25.000Z'
 level: '0011'

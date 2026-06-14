@@ -3,7 +3,7 @@ title: 'Database Security: Access Control and Data Encryption'
 author: IT-Journey Team
 description: Implement robust database security with access control, encryption, audit logging, and SQL injection prevention. Learn security best practices for protecting sensitive data.
 excerpt: Secure your databases with access control, encryption, and SQL injection prevention
-preview: images/previews/database-security-access-control-quest-title-encry.png
+preview: /assets/images/previews/database-security-access-control-quest-title-encry.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:08:26.000Z'
 level: '0110'

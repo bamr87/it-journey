@@ -3,7 +3,7 @@ title: 'Apache Spark Mastery: Big Data Processing with PySpark & Scala'
 author: IT-Journey Team
 description: Master Apache Spark for distributed data processing. Learn RDDs, DataFrames, Spark SQL, MLlib machine learning, and cluster management for petabyte-scale analytics.
 excerpt: Process big data at scale with Apache Spark RDDs, DataFrames, Spark SQL, and MLlib machine learning
-preview: images/previews/apache-spark-mastery-descriptive-subtitle.png
+preview: /assets/images/previews/apache-spark-mastery-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1100'

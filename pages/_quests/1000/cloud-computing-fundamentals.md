@@ -3,7 +3,7 @@ title: 'Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained'
 author: IT-Journey Team
 description: Master cloud computing fundamentals including service models (IaaS, PaaS, SaaS), deployment models, cloud architecture, and provider comparison for modern applications.
 excerpt: Understand cloud computing service models, deployment patterns, and provider ecosystems
-preview: images/previews/cloud-computing-fundamentals-iaas-paas-quest-title.png
+preview: /assets/images/previews/cloud-computing-fundamentals-iaas-paas-quest-title.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:30:00.000Z'
 level: '1000'

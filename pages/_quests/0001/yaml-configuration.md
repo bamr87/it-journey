@@ -3,7 +3,7 @@ title: 'YAML Configuration: Site Settings Mastery'
 author: IT-Journey Team
 description: Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites.
 excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional static websites.
-preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
+preview: /assets/images/previews/yaml-configuration-site-settings-mastery-descripti.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-12-20T00:00:00.000Z'
 level: '0001'

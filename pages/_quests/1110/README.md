@@ -1,7 +1,7 @@
 ---
 title: Level 1110 - Quality Assurance
 description: Advanced testing patterns, error handling, and robust application development
-preview: images/previews/level-1110-quality-assurance.png
+preview: /assets/images/previews/level-1110-quality-assurance.png
 permalink: /quests/1110/
 layout: quest-collection
 level: '1110'

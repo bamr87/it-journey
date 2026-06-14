@@ -1,7 +1,7 @@
 ---
 title: Level 001 - Journeyman Challenges
 description: Web technologies and advanced scripting quests for intermediate learners
-preview: images/previews/level-001-journeyman-challenges.png
+preview: /assets/images/previews/level-001-journeyman-challenges.png
 permalink: /quests/0001/
 layout: quest-collection
 level: '0001'

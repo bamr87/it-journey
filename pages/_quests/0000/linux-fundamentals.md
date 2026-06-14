@@ -1,7 +1,7 @@
 ---
 title: Linux Fundamentals
 description: Basic Linux concepts including navigation, scripting, security, and networking
-preview: /images/previews/linux-fundamentals.png
+preview: /assets/images/previews/linux-fundamentals.png
 author: bamr87
 permalink: /quests/0000/linux-fundamentals/
 level: '0000'
@@ -201,8 +201,6 @@ This guide covers essential Linux concepts that every IT professional should kno
 - `netstat` - Display network connections
 - `ss` - Modern socket statistics
 - `curl` and `wget` - Download and test HTTP endpoints
-
-## Resources
 
 ## 🏆 Quest Completion Validation
 

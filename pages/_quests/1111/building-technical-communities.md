@@ -3,7 +3,7 @@ title: 'Building Technical Communities: Growing Developer Ecosystems'
 author: IT-Journey Team
 description: Build and grow technical communities around your projects. Learn community management, developer relations, event organization, and engagement strategies.
 excerpt: Build thriving technical communities and developer ecosystems
-preview: images/previews/building-technical-communities-descriptive-subtitl.png
+preview: /assets/images/previews/building-technical-communities-descriptive-subtitl.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'

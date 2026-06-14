@@ -4,7 +4,7 @@ author: Quest Master IT-Journey Team
 description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
 snippet: Transform raw site data into compelling visual insights
-preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
+preview: /assets/images/previews/forging-the-stats-portal-data-analytics-quest.png
 date: '2025-10-09T18:25:11.000Z'
 lastmod: '2025-10-08T18:10:29.000Z'
 level: '0001'

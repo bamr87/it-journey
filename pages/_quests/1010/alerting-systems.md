@@ -3,7 +3,7 @@ title: 'Alerting Systems: PagerDuty Integration & Incident Management Guide'
 author: IT-Journey Team
 description: Build production-ready alerting systems with PagerDuty and incident management workflows. Learn alert routing, escalation policies, on-call schedules, and runbook automation for SRE teams.
 excerpt: Implement production alerting with PagerDuty, escalation policies, and incident management workflows
-preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
+preview: /assets/images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:44:12.000Z'
 level: '1010'

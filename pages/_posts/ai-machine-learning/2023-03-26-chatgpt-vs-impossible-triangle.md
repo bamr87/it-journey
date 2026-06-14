@@ -48,15 +48,15 @@ Despite some of the possible "negative" consequences, this new tool opens up an 
 
 Even though this tool will lead you to an answer quickly, users must understand its capabilities and limitations in order to realize its benefits. Just like during the early days of search engines, we curated keywords and phrases for engines to interpret your needs, only to sift through a just few hundred million results...
 
-![](../../assets/images/google-gpt-results.png){: .img-fluid }
+![](/assets/images/google-gpt-results.png){: .img-fluid }
 
 Chat GPT can easily sift through the noise with very little guidance to find you the "right" answer quickly, which is great for quick questions and basic facts. However, once you start asking hard questions, it becomes obvious there's a mysteriousness of ths tool  that only data scientists understand. For the consumers of this information, we should still exercise caution about what "it" tells you to be "truth".
 
-![](../../assets/images/ai-gpt-results.png){: .img-fluid }
+![](/assets/images/ai-gpt-results.png){: .img-fluid }
 
 This new generative pre-trained transformer tool is great to answer all your silly questions, but if you don't care about so much about "truth" and "facts" (and have plenty of remedial/redundant tasks to take care of), you can use this AI capacity to generate code specific to your needs. That in itself will avoid hours of sifting through #stackoverflow forums (only to realize you missed a closing curly bracket) and allow you to focus on higher lever challenges.
 
-![](../../assets/images/gpt-code-review.png){: .img-fluid }
+![](/assets/images/gpt-code-review.png){: .img-fluid }
 
 ## Bashing out Scripts
 
@@ -70,7 +70,7 @@ For example, maybe you want to monitor the health of your site with a simple scr
 
 Or you can ask Chat GPT.
 
-![](../../assets/images/gpt-site-uptime.png){: .img-fluid }
+![](/assets/images/gpt-site-uptime.png){: .img-fluid }
 
 Those who code all the time, you may not be impressed with this example, but imagine if you had this tool during the early stages of your programming journey and avoiding all those hours dealing with syntax errors.
 
@@ -82,7 +82,7 @@ There are many people who are worried about AI technology obtaining human like s
 
 We can see this from the many examples where these AI tools fail to respond to more advanced elements of logic, reasoning, and imagination, some of which are hilarious. All of which are delivered with absolute confidence, no fatter how obvious it is factually incorrect...
 
-![](../../assets/images/gpt-gas-riddle.png){: .img-fluid }
+![](/assets/images/gpt-gas-riddle.png){: .img-fluid }
 
 One can spend countless hours trolling this bot to highlight all the language blunders only humans can understand and laugh about, but I was more interested its ability to generate [scalar vector graphics](https://en.wikipedia.org/wiki/SVG) (normally stored as an "svg" file extension).
 
@@ -92,15 +92,15 @@ We'll probably never know, but for fun, I chose the [Penrose Triangle](https://e
 
 But expectations were still a little too high...
 
-![](../../assets/images/gpt-penrose-svg.png){: .img-fluid }
+![](/assets/images/gpt-penrose-svg.png){: .img-fluid }
 
 On the left side of the following image is the "Penrose Triangle" Chat GPT created, and the right side is an actual Penrose triangle I created.
 
-![](../../assets/svg/penrose-gpt-vs-human.png){: .img-fluid }
+![](/assets/svg/penrose-gpt-vs-human.png){: .img-fluid }
 
 Just to make sure that this wasn't just a misinterpretation of the request, I asked if it knew what Penrose triangle looked like. The written answer was spot on, but the text rendering was not even close.
 
-![](../../assets/images/gpt-penrose-1.png){: .img-fluid }
+![](/assets/images/gpt-penrose-1.png){: .img-fluid }
 
 Even after all this, I had to admit I was still very impressed, mostly due to the fact that this tool generated responses within in seconds while I spent hours fumbling through [InkScape](https://en.wikipedia.org/wiki/Inkscape).
 
@@ -125,7 +125,7 @@ I guess the moral of this story is that we're still in the "80's" of AI technolo
 
 But, on the plus side, this bot is programed to be very polite.
 
-![](../../assets/images/gpt-penrose-2.png){: .img-fluid }
+![](/assets/images/gpt-penrose-2.png){: .img-fluid }
 
 **Disclaimer**: Chat GPT did ***NOT*** write this whole article for me.
 

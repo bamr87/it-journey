@@ -121,7 +121,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 * ✅ Real-world skill application through challenges
 * ✅ AI-assisted development methodologies
 
-**Quest Navigation Hub:** [Browse All Quests](/quests/) | [World Map Guide](/quests/codex/world_map/)
+**Quest Navigation Hub:** [Browse All Quests](/quests/) | [World Map Guide](/quests/codex/world-map/)
 
 #### 🗺️ Quest System by Level
 
@@ -134,7 +134,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 | [Character Building](/quests/0000/character-building/) | Environment Setup | 🟢 Easy | All |
 | [IT Fundamentals](/quests/0000/it-fundamentals/) | Core Concepts | 🟢 Easy | All |
 | [OS Selection](/quests/0000/os-selection/) | Platform Choice | 🟢 Easy | All |
-| [VS Code Mastery](/quests/0000/vscode-mastery-quest/) | IDE Configuration | 🟡 Medium | All |
+| [VS Code Mastery](/quests/0000/vscode-mastery/) | IDE Configuration | 🟡 Medium | All |
 | [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) | Command Line Basics | 🟢 Easy | All |
 | [Bashcrawl Online](https://bamr87.github.io/bashcrawl/) | Browser Terminal Practice | 🟢 Easy | All |
 | [Bashcrawl Adventure](/quests/0000/bashcrawl/) | Terminal Game Quest | 🟢 Easy | All |
@@ -145,7 +145,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 **Platform-Specific Paths:**
 - [Hello Windows](/quests/0000/hello-win/) - 🪟 Windows development setup
 - [Hello macOS](/quests/0000/hello-mac/) - 🍎 Mac development environment
-- [Hello Linux](/quests/0000/hello-linux/) - 🐧 Linux configuration
+- [Hello Linux](/quests/0000/linux-fundamentals/) - 🐧 Linux configuration
 - [Hello Cloud](/quests/0000/hello-cloud/) - ☁️ Cloud platform basics
 
 **🟢 Level 0001 - Apprentice Trials**
@@ -153,7 +153,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 
 | Quest | Technology | Time | Type |
 |-------|-----------|------|------|
-| [Personal Site](/quests/0001/personal-site/) | Web Development | 90-120 min | 🏰 Main |
+| [Personal Site](/quests/0001/side-quests/personal-site/) | Web Development | 90-120 min | 🏰 Main |
 | [Jekyll Fundamentals](/quests/0001/jekyll-fundamentals/) | Static Sites | 60-90 min | 🏰 Main |
 | [GitHub Pages Basics](/quests/0001/github-pages-basics/) | Web Hosting | 45-60 min | 🏰 Main |
 | [Liquid Templating](/quests/0001/liquid-templating/) | Template Engine | 60-90 min | ⚔️ Side |
@@ -214,7 +214,7 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 **Recent Chronicles (2024-2025):**
 - [Advanced Version Management with AI](/posts/2025-07-05-advanced-version-management-ai-implementation/)
 - [Debugging GitHub Actions Workflows](/posts/2025-07-05-debugging-github-actions-workflows-ai-assisted/)
-- [Dockering Your IT-Journey](/posts/2024-04-02-dockering-your-it-journey/)
+- [Dockering Your IT-Journey](/posts/docker-beginners-tutorial/)
 
 **Roadmap Goals:**
 
@@ -248,7 +248,7 @@ Deep knowledge vaults for comprehensive understanding - your technical reference
 **Core Documentation:**
 - [Jekyll Documentation](/docs/jekyll/) - Static site generation guides
 - [Site Configuration](/about/config/) - Platform settings and customization
-- [Theme Customization](/about/theme/) - Visual design and layouts
+- [Theme Customization](/quickstart/theme-architecture/) - Visual design and layouts
 
 **Platform Guides:**
 - [Contributing Guide](/about/contributing/) - How to add content
@@ -349,10 +349,10 @@ graph LR
 4. **Platform Selection:**
    - [Hello Windows](/quests/0000/hello-win/) OR
    - [Hello macOS](/quests/0000/hello-mac/) OR
-   - [Hello Linux](/quests/0000/hello-linux/)
-5. [VS Code Mastery](/quests/0000/vscode-mastery-quest/) - 90 min - Master your primary tool
-6. [Bash Run Quest](/quests/0000/bash-run/) - 90 min - Terminal game learning
-7. [Personal Site Project](/quests/0001/personal-site/) - Build your portfolio
+   - [Hello Linux](/quests/0000/linux-fundamentals/)
+5. [VS Code Mastery](/quests/0000/vscode-mastery/) - 90 min - Master your primary tool
+6. [Bash Run Quest](/quests/0000/side-quests/bash-run/) - 90 min - Terminal game learning
+7. [Personal Site Project](/quests/0001/side-quests/personal-site/) - Build your portfolio
 
 **Supporting Resources:**
 - [Machine Setup QuickStart](/quickstart/machine-setup/) - Environment setup
@@ -394,7 +394,7 @@ graph LR
 
 **Learn from Experience:**
 - [DevOps Posts](/posts/tags/devops/) - Real-world deployments
-- [Docker Chronicles](/posts/2024-04-02-dockering-your-it-journey/) - Container strategies
+- [Docker Chronicles](/posts/docker-beginners-tutorial/) - Container strategies
 - [GitHub Actions Debugging](/posts/2025-07-05-debugging-github-actions-workflows-ai-assisted/) - CI/CD troubleshooting
 
 ---
@@ -488,14 +488,14 @@ graph LR
    * JavaScript essentials and modern ES6+ features
 
 2. **Adventure Realm** (Journey/Quests)
-   * [Personal Site Project](/quests/0001/personal-site/) - Build your portfolio
+   * [Personal Site Project](/quests/0001/side-quests/personal-site/) - Build your portfolio
    * [Frontend Development](/quests/0100/frontend/) - UI/UX development path
    * [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/) - Enhanced documentation
    * Backend API development challenges
 
 3. **Knowledge Vault** (Library)
    * [Jekyll Documentation](/docs/jekyll/) - Comprehensive guides
-   * [Theme Customization](/about/theme/) - Design patterns
+   * [Theme Customization](/quickstart/theme-architecture/) - Design patterns
    * Web performance optimization guides
    * Security best practices for web applications
    * Accessibility and inclusive design principles
@@ -561,7 +561,7 @@ graph LR
    * Performance metrics and optimization notes
 
 **DevOps Chronicles:**
-- [Dockering Your IT-Journey](/posts/2024-04-02-dockering-your-it-journey/) - Container strategies
+- [Dockering Your IT-Journey](/posts/docker-beginners-tutorial/) - Container strategies
 - [GitHub Actions Debugging](/posts/2025-07-05-debugging-github-actions-workflows-ai-assisted/) - CI/CD troubleshooting
 - [Advanced Version Management](/posts/2025-07-05-advanced-version-management-ai-implementation/) - Complex workflows
 - [Deploy Django on AWS Lambda](/posts/devops/deploy-django-on-aws-lambda-with-sam-a-step-by-step-guide/) - Serverless deployment
@@ -677,7 +677,7 @@ Transform IT-Journey into a comprehensive platform where:
 1. [Hello n00b Quest](/quests/0000/hello-noob/) - Your first 30 minutes
 2. [Machine Setup QuickStart](/quickstart/machine-setup/) - Configure your system
 3. [Character Building](/quests/0000/character-building/) - Set up your environment
-4. [World Map Guide](/quests/codex/world_map/) - Navigate the platform
+4. [World Map Guide](/quests/codex/world-map/) - Navigate the platform
 
 **Developers with Experience:**
 1. [All Quests Index](/quests/) - Browse 46+ quests
@@ -702,7 +702,7 @@ Transform IT-Journey into a comprehensive platform where:
 - 🤖 AI Integration - [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/)
 - 📝 Documentation - [Jekyll-Mermaid](/quests/0010/jekyll-mermaid-integration-quest/)
 - ⚙️ CI/CD - [GitHub Actions](/quests/0101/github-actions-basics/), [CI/CD Fundamentals](/quests/0101/cicd-fundamentals/)
-- 🧙‍♂️ Scripting - [Bash Scripting](/quests/0010/bash-scripting/), [Bash Run](/quests/0000/bash-run/)
+- 🧙‍♂️ Scripting - [Bash Scripting](/quests/0010/bash-scripting/), [Bash Run](/quests/0000/side-quests/bash-run/)
 
 **By Quest Type:**
 - 🏰 Main Quests - Core learning adventures with substantial content
@@ -722,12 +722,12 @@ Transform IT-Journey into a comprehensive platform where:
 **Development Environment:**
 - [Machine Setup Guide](/quickstart/machine-setup/)
 - [Character Building Quest](/quests/0000/character-building/)
-- [VS Code Mastery](/quests/0000/vscode-mastery-quest/)
+- [VS Code Mastery](/quests/0000/vscode-mastery/)
 - [Platform-Specific Guides](/quests/0000/) - Windows, Mac, Linux, Cloud
 
 **Web Development:**
 - [Jekyll Setup](/quickstart/jekyll-setup/)
-- [Personal Site Project](/quests/0001/personal-site/)
+- [Personal Site Project](/quests/0001/side-quests/personal-site/)
 - [Frontend Development](/quests/0100/frontend/)
 - [Jekyll-Mermaid Integration](/quests/0010/jekyll-mermaid-integration-quest/)
 
@@ -735,17 +735,17 @@ Transform IT-Journey into a comprehensive platform where:
 - [Container Fundamentals](/quests/0100/container-fundamentals/)
 - [GitHub Actions Basics](/quests/0101/github-actions-basics/)
 - [Bash Scripting](/quests/0010/bash-scripting/)
-- [DevOps Chronicles](/posts/devops/)
+- [DevOps Chronicles](/news/devops/)
 
 **AI & Machine Learning:**
 - [Prompt Crystal Mastery](/quests/0011/prompt-crystal-mastery-vscode-copilot-quest/)
-- [AI Development Posts](/posts/ai%20%26%20machine%20learning/)
+- [AI Development Posts](/news/ai-machine-learning/)
 - [JeykLLM Notebook](/notebooks/JeykLLM-create/)
 
 ### 🗺️ Platform Maps & Guides
 
 **Navigation Resources:**
-- [World Map - Complete Site Guide](/quests/codex/world_map/) - Comprehensive navigation
+- [World Map - Complete Site Guide](/quests/codex/world-map/) - Comprehensive navigation
 - [Glossary](/quests/codex/glossary/) - IT terminology reference
 - [Sitemap](/about/sitemap/) - Complete site structure
 - [Feature Overview](/about/features/) - Platform capabilities

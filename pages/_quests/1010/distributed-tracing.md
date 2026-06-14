@@ -3,7 +3,7 @@ title: 'Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide'
 author: IT-Journey Team
 description: Implement distributed tracing with Jaeger and OpenTelemetry. Learn span contexts, trace propagation, service graphs, and performance debugging for microservices architectures.
 excerpt: Implement distributed tracing with Jaeger and OpenTelemetry for microservices debugging
-preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
+preview: /assets/images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:44:22.000Z'
 level: '1010'

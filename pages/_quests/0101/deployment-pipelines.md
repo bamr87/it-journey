@@ -3,7 +3,7 @@ title: 'Deployment Pipelines: Production Release Automation Strategies'
 author: IT-Journey Team
 description: Build robust deployment pipelines for production releases. Learn blue-green deployments, rolling updates, canary releases, and automated rollback strategies.
 excerpt: Design and implement production-grade deployment pipelines with automated release strategies
-preview: images/previews/deployment-pipelines-production-release-automation.png
+preview: /assets/images/previews/deployment-pipelines-production-release-automation.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:05:30.000Z'
 level: '0101'

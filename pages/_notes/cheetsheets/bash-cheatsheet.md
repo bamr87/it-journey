@@ -938,7 +938,7 @@ fi
 
 Escape these special characters with backslash `\` ok
 
-![](../assets/images/bash-fix.png)  
+![](/assets/images/bash-fix.png)  
 
 ### Heredoc
 

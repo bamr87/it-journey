@@ -430,17 +430,17 @@ Test Case: Recursive Realms Quest
 ## 🔗 Related Resources
 
 ### Documentation
-- [Quest Instructions](.github/instructions/quest.instructions.md)
-- [Copilot Instructions](.github/copilot-instructions.md)
-- [Quest Validator README](test/quest-validator/README.md)
+- [Quest Instructions](../../.github/instructions/quest.instructions.md)
+- [Copilot Instructions](../../.github/copilot-instructions.md)
+- [Quest Validator README](README.md)
 
 ### Example Quests
-- [Docker Mastery Example](pages/_quests/docker-mastery-example.md)
-- [Recursive Realms](pages/_quests/testing-quests-with-recurrisive-questing.md)
+- [Docker Mastery Example](../../pages/_quests/0101/docker-mastery-example.md)
+- [Recursive Realms](../../pages/_quests/0010/testing-quests-with-recursive-questing.md)
 
 ### Tools
-- [Quest Validator](test/quest-validator/quest_validator.py)
-- [Link Health Guardian](scripts/README.md)
+- [Quest Validator](quest_validator.py)
+- [Link Health Guardian](../../scripts/README.md)
 
 ## 🎉 Conclusion
 

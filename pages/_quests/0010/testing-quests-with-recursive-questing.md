@@ -4,7 +4,7 @@ author: Quest Master IT-Journey Team
 description: Master recursion, unit testing, and AI integration by navigating self-replicating code towers
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
 snippet: Beware the stack overflow curse—always define your base cases!
-preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
+preview: /assets/images/previews/recursive-realms-testing-infinite-loops-with-ai.png
 date: '2025-10-08T19:11:31.000Z'
 lastmod: '2025-10-09T00:09:00.000Z'
 level: '0010'

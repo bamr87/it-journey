@@ -4,7 +4,7 @@ author: Quest Master IT-Journey Team
 description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
 snippet: Where code meets the metal, heroes are forged in the fire of the command line
-preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
+preview: /assets/images/previews/terminal-mastery-conquering-the-command-line-realm.png
 date: '2025-07-28T23:34:51.000Z'
 lastmod: '2025-09-27T19:59:13.000Z'
 level: '0001'

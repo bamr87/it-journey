@@ -202,8 +202,8 @@ If you conjured other artifacts (storage buckets, networks), banish them now to 
 
 ## 🔗 Related Quests
 
-- [Hello n00b](../hello-noob.md)
-- [OS Selection](../os-selection.md)
+- [Hello n00b](./hello-noob.md)
+- [OS Selection](./os-selection.md)
 - [Hello Windows](hello-win.md)
 - [Hello macOS](hello-mac.md)
 - [Hello Linux](linux-fundamentals.md)

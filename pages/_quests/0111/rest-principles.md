@@ -3,7 +3,7 @@ title: 'REST Principles: RESTful API Design Best Practices'
 author: IT-Journey Team
 description: Learn REST architectural principles for designing clean, scalable APIs. Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
 excerpt: Design clean, scalable RESTful APIs following architectural principles and best practices
-preview: images/previews/rest-principles-restful-api-design-descriptive-sub.png
+preview: /assets/images/previews/rest-principles-restful-api-design-descriptive-sub.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:08:54.000Z'
 level: '0111'

@@ -3,7 +3,7 @@ title: 'Tech Speaking and Writing: Building Your Technical Brand'
 author: IT-Journey Team
 description: Master technical communication through speaking and writing. Learn conference speaking, technical blogging, documentation, and building thought leadership.
 excerpt: Develop technical speaking and writing skills for thought leadership
-preview: images/previews/tech-speaking-and-writing-descriptive-subtitle.png
+preview: /assets/images/previews/tech-speaking-and-writing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'

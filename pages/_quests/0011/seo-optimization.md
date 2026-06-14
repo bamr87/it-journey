@@ -3,7 +3,7 @@ title: 'SEO Optimization: Boost Search Engine Visibility for Jekyll Sites'
 author: IT-Journey Team
 description: Master technical SEO for Jekyll static sites. Learn meta tags, structured data, sitemap generation, robots.txt configuration, and Google Search Console integration to improve organic search rankings.
 excerpt: Optimize your Jekyll site for search engines with meta tags, structured data, and technical SEO best practices
-preview: images/previews/seo-optimization-search-engine-visibility-descript.png
+preview: /assets/images/previews/seo-optimization-search-engine-visibility-descript.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:00:21.000Z'
 level: '0011'

@@ -206,17 +206,17 @@ python quest_validator.py -d pages/_quests/ --report report.json
 ## 📚 Resources
 
 ### Documentation Files
-- [Quest Validator README](test/quest-validator/README.md)
-- [Implementation Summary](test/quest-validator/IMPLEMENTATION_SUMMARY.md)
-- [Quest Instructions](.github/instructions/quest.instructions.md)
+- [Quest Validator README](README.md)
+- [Implementation Summary](IMPLEMENTATION_SUMMARY.md)
+- [Quest Instructions](../../.github/instructions/quest.instructions.md)
 
 ### Quest Files
-- [Recursive Realms Quest](pages/_quests/testing-quests-with-recurrisive-questing.md)
-- [Docker Mastery Example](pages/_quests/docker-mastery-example.md)
+- [Recursive Realms Quest](../../pages/_quests/0010/testing-quests-with-recursive-questing.md)
+- [Docker Mastery Example](../../pages/_quests/0101/docker-mastery-example.md)
 
 ### Tools
-- [Quest Validator](test/quest-validator/quest_validator.py)
-- [Test Script](test/quest-validator/test-validator.sh)
+- [Quest Validator](quest_validator.py)
+- [Test Script](test-validator.sh)
 
 ## 🎉 Conclusion
 

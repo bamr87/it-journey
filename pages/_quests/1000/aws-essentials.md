@@ -3,7 +3,7 @@ title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
 author: IT-Journey Team
 description: Learn essential AWS services including EC2, S3, RDS, Lambda, and VPC. Build scalable cloud architectures using AWS best practices and Well-Architected Framework.
 excerpt: Master essential AWS services and build scalable cloud architectures
-preview: images/previews/aws-essentials-core-services-quest-title-architect.png
+preview: /assets/images/previews/aws-essentials-core-services-quest-title-architect.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:41:10.000Z'
 level: '1000'

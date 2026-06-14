@@ -3,7 +3,7 @@ title: 'CSS Styling Basics: Selectors, Layout & Responsive Design'
 author: IT-Journey Team
 description: Master CSS fundamentals for beautiful web pages. Learn selectors, flexbox, grid, and responsive design. Hands-on tutorial with modern CSS techniques and best practices.
 excerpt: Create beautiful, responsive web layouts with CSS selectors, flexbox, and grid.
-preview: images/previews/css-styling-basics-visual-design-fundamentals-desc.png
+preview: /assets/images/previews/css-styling-basics-visual-design-fundamentals-desc.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'

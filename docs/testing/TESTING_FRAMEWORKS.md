@@ -440,8 +440,8 @@ Workflow run > Artifacts section > Download zip
 ## Additional Resources
 
 ### Documentation
-- [Link Checker Setup](../../test/hyperlink-guardian/docs/setup.md)
-- [Link Checker Usage](../../test/hyperlink-guardian/docs/usage.md)
+- Link Checker Setup
+- Link Checker Usage
 - [Quest Validator README](../../test/quest-validator/README.md)
 
 ### External Tools

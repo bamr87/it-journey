@@ -3,7 +3,7 @@ title: 'Security Fundamentals: CIA Triad and Defense in Depth Strategies'
 author: IT-Journey Team
 description: Master information security fundamentals including the CIA triad, defense in depth, security controls, risk management, and foundational security concepts.
 excerpt: Learn foundational security concepts including CIA triad, defense in depth, and risk management
-preview: images/previews/security-fundamentals-cia-triad-quest-title-defens.png
+preview: /assets/images/previews/security-fundamentals-cia-triad-quest-title-defens.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:44:36.000Z'
 level: '1011'

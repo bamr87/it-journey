@@ -2,7 +2,7 @@
 title: 'Deploying Jekyll Sites to Azure Cloud: Complete Guide for Static Web Hosting'
 description: Comprehensive tutorial on deploying statically generated Jekyll sites to Azure Static Web Apps, including architecture overview, step-by-step
 date: '2025-11-19T22:47:12.000Z'
-preview: /images/previews/deploying-jekyll-sites-to-azure-cloud-complete-gui.png
+preview: /assets/images/previews/deploying-jekyll-sites-to-azure-cloud-complete-gui.png
 tags:
 - azure
 - jekyll
@@ -721,8 +721,7 @@ Your Jekyll site is now running on Azure Cloud with professional-grade hosting, 
 ### Related IT-Journey Content
 
 - [GitHub Pages: The Hidden Gem Revolutionizing Web Publishing](/posts/github-pages-hidden-gem/)
-- [Dockering Your IT Journey](/posts/dockering-your-it-journey/)
-- [AI-Powered Development Workflows](/posts/ai-powered-development-workflows/)
+- [Docker for Beginners: A Complete Tutorial](/posts/docker-beginners-tutorial/)
 
 ---
 

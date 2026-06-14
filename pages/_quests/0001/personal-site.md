@@ -2,7 +2,7 @@
 title: Personal Site
 author: IT-Journey Team
 description: Services and tools used for building personal site with GitHub Pages
-preview: images/previews/personal-site.png
+preview: /assets/images/previews/personal-site.png
 date: '2023-12-03T01:47:51.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '0001'

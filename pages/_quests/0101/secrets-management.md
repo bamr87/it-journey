@@ -3,7 +3,7 @@ title: 'Secrets Management: Secure Configuration and Credential Handling'
 author: IT-Journey Team
 description: Learn secure secrets management for CI/CD pipelines. Handle API keys, passwords, tokens, and sensitive configuration using vault systems and environment variables.
 excerpt: Implement secure secrets management practices for protecting sensitive credentials in your pipelines
-preview: images/previews/secrets-management-secure-configuration-handling-d.png
+preview: /assets/images/previews/secrets-management-secure-configuration-handling-d.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:05:46.000Z'
 level: '0101'

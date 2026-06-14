@@ -3,7 +3,7 @@ title: 'Git Workflow Mastery: Branches, Merging & Team Collaboration'
 author: IT-Journey Team
 description: Learn Git branching, merging, and collaboration workflows. Master feature branches, pull requests, and conflict resolution for team development. Beginner-friendly hands-on tutorial.
 excerpt: Master Git branching strategies, merging techniques, and pull request workflows for effective team collaboration.
-preview: images/previews/git-workflow-mastery-branches-and-collaboration-de.png
+preview: /assets/images/previews/git-workflow-mastery-branches-and-collaboration-de.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-12-19T00:00:00.000Z'
 level: '0001'

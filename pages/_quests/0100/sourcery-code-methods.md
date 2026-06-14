@@ -4,7 +4,7 @@ author: Quest Master IT-Journey
 description: Master the mystical powers of Git and GitHub workflows to become a legendary code guardian and collaboration wizard in the digital realm
 excerpt: Transform from coding apprentice to git wizard by mastering the ancient arts of version control, branch sorcery, and collaborative development magic
 snippet: Every line of code tells a story - learn to chronicle your digital adventures
-preview: images/previews/quest-mastering-the-ancient-arts-of-source-control.png
+preview: /assets/images/previews/quest-mastering-the-ancient-arts-of-source-control.png
 date: '2025-07-28T23:34:51.000Z'
 lastmod: '2025-07-29T05:15:57.000Z'
 level: '0100'

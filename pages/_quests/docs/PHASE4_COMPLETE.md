@@ -1,7 +1,7 @@
 ---
 title: 'Phase 4 Complete: Expert Tier Quests Generated'
 layout: default
-preview: /images/previews/phase-4-complete-expert-tier-quests-generated.png
+preview: /assets/images/previews/phase-4-complete-expert-tier-quests-generated.png
 permalink: /quests/docs/phase4-complete/
 redirect_from:
 - /quests/phase4-complete/

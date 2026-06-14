@@ -4,7 +4,7 @@ author: bamr87
 description: Set up a Docker-containerized Jekyll development environment. Learn to create Dockerfiles, configure docker-compose, and build Jekyll sites in isolated containers for consistent development.
 excerpt: Build a Docker-containerized Jekyll development environment with Dockerfile and docker-compose configuration
 snippet: Containerize your Jekyll development workflow with Docker
-preview: images/previews/level-001-frontend-docker.png
+preview: /assets/images/previews/level-001-frontend-docker.png
 date: '2024-05-28T15:23:32.000Z'
 lastmod: '2024-05-28T04:24:59.000Z'
 level: '0100'

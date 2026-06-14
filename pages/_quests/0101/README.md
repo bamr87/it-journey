@@ -1,7 +1,7 @@
 ---
 title: Level 0101 - Advanced Docker & DevOps
 description: Advanced containerization patterns, document automation, and professional portfolio building
-preview: images/previews/level-0101-advanced-docker-devops.png
+preview: /assets/images/previews/level-0101-advanced-docker-devops.png
 permalink: /quests/0101/
 layout: quest-collection
 level: '0101'

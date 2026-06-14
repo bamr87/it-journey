@@ -201,4 +201,4 @@ When adding new core scripts:
 
 - [Main Scripts README](../README.md)
 - [Development Scripts](../development/README.md)
-- [Deployment Scripts](../deployment/README.md)
+- [Deployment Scripts](../deployment/azure-jekyll-deploy-README.md)

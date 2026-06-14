@@ -3,7 +3,7 @@ title: 'ETL Pipeline Design: Build Scalable Data Pipelines with Python'
 author: IT-Journey Team
 description: Design and implement production ETL pipelines. Learn data extraction patterns, transformation logic, loading strategies, error handling, and workflow orchestration with Airflow or Prefect.
 excerpt: Build production-grade ETL pipelines with Python, including extraction, transformation, and orchestration patterns
-preview: images/previews/etl-pipeline-design-descriptive-subtitle.png
+preview: /assets/images/previews/etl-pipeline-design-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1100'

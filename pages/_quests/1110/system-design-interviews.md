@@ -3,7 +3,7 @@ title: 'System Design Interview Mastery: Ace Technical Interviews'
 author: IT-Journey Team
 description: Prepare for system design interviews with frameworks for designing scalable systems. Practice URL shorteners, social networks, and distributed systems problems.
 excerpt: Master system design interview techniques and frameworks for technical interviews
-preview: images/previews/system-design-interview-mastery-descriptive-subtit.png
+preview: /assets/images/previews/system-design-interview-mastery-descriptive-subtit.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1110'

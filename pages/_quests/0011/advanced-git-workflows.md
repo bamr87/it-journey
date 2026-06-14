@@ -3,7 +3,7 @@ title: 'Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands'
 author: IT-Journey Team
 description: Level up your Git skills with advanced techniques. Learn interactive rebase, cherry-picking commits, stash management, and conflict resolution strategies for professional development workflows.
 excerpt: Master advanced Git operations including rebase, cherry-pick, and stash for professional version control
-preview: images/previews/advanced-git-workflows-rebase-cherry-pick-quest-ti.png
+preview: /assets/images/previews/advanced-git-workflows-rebase-cherry-pick-quest-ti.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T04:59:58.000Z'
 level: '0011'

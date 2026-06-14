@@ -81,4 +81,4 @@ To update this content, run:
 bash scripts/docs-aggregator/aggregate_docs.sh
 ```
 
-See the [aggregator documentation](/it-journey/scripts/docs-aggregator/README.md) for details.
+See the [aggregator documentation](https://github.com/bamr87/it-journey/blob/main/scripts/docs-aggregator/README.md) for details.

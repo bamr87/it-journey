@@ -3,7 +3,7 @@ title: 'Career Advancement Strategies: Growing from Engineer to Leader'
 author: IT-Journey Team
 description: Navigate career advancement in tech from IC to leadership. Learn promotion strategies, personal branding, networking, and building executive presence.
 excerpt: Navigate career advancement from individual contributor to technical leadership
-preview: images/previews/career-advancement-strategies-descriptive-subtitle.png
+preview: /assets/images/previews/career-advancement-strategies-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'

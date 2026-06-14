@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
 excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
 snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
-preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
+preview: /assets/images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T03:52:35.000Z'
 level: '0011'

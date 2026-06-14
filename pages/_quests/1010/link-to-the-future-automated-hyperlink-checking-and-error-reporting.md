@@ -4,7 +4,7 @@ author: Quest Master DevOps
 description: Master the computational arts of automated link testing and AI-powered analysis to protect your digital realm from broken hyperlink corruption
 excerpt: Build an intelligent hyperlink guardian that automatically tests, analyzes, and reports on the health of your digital realm's connections
 snippet: Even the most magnificent digital fortress is only as strong as its weakest link
-preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
+preview: /assets/images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
 date: '2025-08-12T22:51:06.000Z'
 lastmod: '2025-08-16T04:06:22.000Z'
 level: '1010'

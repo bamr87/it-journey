@@ -3,7 +3,7 @@ title: 'Event-Driven Architecture: Message Queues and Event Sourcing'
 author: IT-Journey Team
 description: Build event-driven systems with message queues and event sourcing. Master Kafka, RabbitMQ, CQRS patterns, and asynchronous communication strategies.
 excerpt: Design event-driven architectures with message queues, event sourcing, and CQRS
-preview: images/previews/event-driven-architecture-descriptive-subtitle.png
+preview: /assets/images/previews/event-driven-architecture-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1110'

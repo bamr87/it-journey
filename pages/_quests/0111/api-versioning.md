@@ -3,7 +3,7 @@ title: 'API Versioning: Managing API Evolution and Backwards Compatibility'
 author: IT-Journey Team
 description: Learn API versioning strategies for managing breaking changes. Implement URL versioning, header versioning, deprecation policies, and migration strategies.
 excerpt: Manage API evolution with versioning strategies and backwards compatibility practices
-preview: images/previews/api-versioning-managing-api-evolution-descriptive-.png
+preview: /assets/images/previews/api-versioning-managing-api-evolution-descriptive-.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:09:19.000Z'
 level: '0111'

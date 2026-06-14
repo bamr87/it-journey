@@ -2,7 +2,7 @@
 title: 'AI-Assisted Script Consolidation: Transforming Chaotic Directories into Organized Development Workflows'
 description: Complete refactoring of script directories across IT-Journey workspace using AI assistance to eliminate redundancies and implement unified development patterns
 date: '2025-07-12T14:26:45.000Z'
-preview: /images/previews/ai-assisted-script-consolidation-transforming-chao.png
+preview: /assets/images/previews/ai-assisted-script-consolidation-transforming-chao.png
 tags:
 - ai-assisted-development
 - script-consolidation

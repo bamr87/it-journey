@@ -222,10 +222,10 @@ it-journey/scripts/
 ## 📚 Documentation Updates
 
 ### Created New Documentation
-- [Scripts README](../scripts/README.md) - Main directory overview
-- [Core Scripts README](../scripts/core/README.md) - Core utilities
-- [Development Scripts README](../scripts/development/README.md) - Dev tools
-- [Legacy Scripts README](../scripts/legacy/README.md) - Migration guide
+- [Scripts README](../../scripts/README.md) - Main directory overview
+- [Core Scripts README](../../scripts/core/README.md) - Core utilities
+- [Development Scripts README](../../scripts/development/README.md) - Dev tools
+- Legacy Scripts README - Migration guide
 
 ### Updated Existing Documentation
 - Main project README references to new script structure

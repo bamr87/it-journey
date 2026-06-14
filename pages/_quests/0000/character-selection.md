@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: Choose your character class and begin your specialized IT journey
 excerpt: Select from six unique character classes, each with distinct skills and career paths
 snippet: null
-preview: images/previews/character-selection.png
+preview: /assets/images/previews/character-selection.png
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'

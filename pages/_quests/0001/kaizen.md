@@ -4,7 +4,7 @@ author: Quest Master IT-Journey Team
 description: Master the ancient art of Kaizen - continuous improvement - and transform your software development practices through incremental refinement, waste elimination, and perpetual evolution
 excerpt: Embark on an epic journey to master Kaizen principles and forge a culture of continuous improvement in software development
 snippet: Small steps, infinite progress - the way of the Code Alchemist
-preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
+preview: /assets/images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
 date: '2025-11-02T18:34:05.000Z'
 lastmod: '2025-11-02T22:13:30.000Z'
 level: '0001'

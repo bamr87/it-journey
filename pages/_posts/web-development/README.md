@@ -24,22 +24,12 @@ This directory contains IT-Journey's collection of web development articles, tut
   - Building interactive UIs with hooks
   - Hands-on examples with Vite
 
-- **[Angular Tour of Heroes](2025-11-16-angular-tour-of-heros.md)** *(2025-11-16)*
-  - Angular framework tutorial
-  - Component-based architecture
-  - TypeScript integration
-
 #### JavaScript & Interactivity
 
 - **[JavaScript & Jekyll Interactive Demo](2025-11-16-javascript-jekyll-interactive-demo.md)** *(2025-11-16)*
   - Integrating JavaScript with static sites
   - Creating interactive components
   - Jekyll and JavaScript best practices
-
-- **[JavaScript Testing](../2022-05-09-javascript-testing.md)** *(2022-05-09)*
-  - Testing strategies for JavaScript applications
-  - Unit testing and integration testing
-  - Testing frameworks and best practices
 
 ### Static Site Generators & Hosting
 
@@ -57,37 +47,11 @@ This directory contains IT-Journey's collection of web development articles, tut
 
 #### Cloud Hosting & Deployment
 
-- **[Deploying Jekyll Sites to Azure Cloud](../2025-11-17-deploying-jekyll-sites-to-azure-cloud.md)** *(2025-11-17)*
+- **[Deploying Jekyll Sites to Azure Cloud](../devops/2025-11-17-deploying-jekyll-sites-to-azure-cloud.md)** *(2025-11-17)*
   - Complete Azure Static Web Apps deployment guide
   - CI/CD pipeline setup
   - Custom domain configuration
   - Production deployment strategies
-
-### UI/UX & Navigation
-
-#### Dynamic Components
-
-- **[Dynamic Sidebar Tree](2024-05-16-dynamic-sidebar-tree.md)** *(2024-05-16)*
-  - Building dynamic navigation components
-  - Tree structure implementation
-  - User experience optimization
-
-- **[Jekyll Sidebar](2024-05-14-jekyll-sidebar.md)** *(2024-05-14)*
-  - Creating sidebars for Jekyll sites
-  - Navigation patterns
-  - Responsive design considerations
-
-#### Navigation & Discoverability
-
-- **[Auto-Hide Navbar](2019-08-22-auto-hide-navbar.md)** *(2019-08-22)*
-  - Implementing auto-hiding navigation bars
-  - Scroll-based UI behavior
-  - Mobile-first navigation patterns
-
-- **[Searchbar and Sitemapping](2024-05-24-searchbar-and-sitemaping.md)** *(2024-05-24)*
-  - Site search implementation
-  - XML sitemap generation
-  - SEO optimization techniques
 
 ### Modern Web Applications
 
@@ -104,15 +68,6 @@ This directory contains IT-Journey's collection of web development articles, tut
   - Creative 404 error page design
   - User engagement strategies
   - Gamification in error handling
-
-### Full-Stack Development
-
-#### AWS & Serverless
-
-- **[Building Django on AWS Lambda](2019-08-22-how-to-build-a-django-application-on-aws-lambda.md)** *(2019-08-22)*
-  - Deploying Django applications to serverless infrastructure
-  - AWS Lambda configuration
-  - Python web framework deployment
 
 ## 📊 Category Statistics
 
@@ -148,8 +103,7 @@ This directory contains IT-Journey's collection of web development articles, tut
 
 1. Start with [GitHub Pages Hidden Gem](2025-11-15-github-pages-hidden-gem.md) for free hosting basics
 2. Learn [React Fundamentals](2025-11-24-mastering-react-beginners-guide.md) for modern frontend development
-3. Explore [JavaScript Testing](../2022-05-09-javascript-testing.md) for quality assurance
-4. Deploy with [Azure Static Web Apps](../2025-11-17-deploying-jekyll-sites-to-azure-cloud.md)
+3. Deploy with [Azure Static Web Apps](../devops/2025-11-17-deploying-jekyll-sites-to-azure-cloud.md)
 
 ## 🚀 Getting Started
 

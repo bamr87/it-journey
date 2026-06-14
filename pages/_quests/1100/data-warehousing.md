@@ -3,7 +3,7 @@ title: 'Data Warehousing: Design Star Schema & Build Modern Analytics Architectu
 author: IT-Journey Team
 description: Master data warehouse design with dimensional modeling. Learn star and snowflake schemas, fact and dimension tables, slowly changing dimensions, and modern cloud data warehouse patterns.
 excerpt: Design data warehouses with dimensional modeling, star schemas, and modern cloud analytics patterns
-preview: images/previews/data-warehousing-descriptive-subtitle.png
+preview: /assets/images/previews/data-warehousing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1100'

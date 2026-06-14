@@ -1,7 +1,7 @@
 ---
 title: 'Hello Windows: Mastering the Windows Development Environment'
 description: Set up a complete Windows development environment with WSL, PowerShell mastery, and essential development tools for the modern Windows developer
-preview: /images/previews/hello-windows-mastering-the-windows-development-en.png
+preview: /assets/images/previews/hello-windows-mastering-the-windows-development-en.png
 author: IT-Journey Team
 permalink: /quests/0000/hello-windows/
 keywords:
@@ -455,13 +455,13 @@ Set up important environment variables:
 **Quest Series**: Init World - Platform Mastery
 
 **Prerequisite Quests**:
-- [Hello n00b](../hello-noob.md) - GitHub and community basics
-- [OS Selection](../os-selection.md) - Platform decision making
+- [Hello n00b](./hello-noob.md) - GitHub and community basics
+- [OS Selection](./os-selection.md) - Platform decision making
 
 **Follow-Up Quests**:
-- [VS Code Mastery Quest](../vscode-mastery.md) - IDE optimization
-- [Bash Scripting Adventures](../bash-run.md) - Linux automation
-- [Development Tools Mastery](../../tools/README.md) - Advanced tooling
+- [VS Code Mastery Quest](./vscode-mastery.md) - IDE optimization
+- [Bash Scripting Adventures](./bash-run.md) - Linux automation
+- [Development Tools Mastery](../tools/README.md) - Advanced tooling
 
 **Parallel Quests** (can be completed in any order):
 - Platform-specific setup quests for macOS and Linux

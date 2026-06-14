@@ -253,7 +253,7 @@ python3 scripts/validation/link-checker.py --scope repo --verbose
 1. **Tool Docs**: See `scripts/validation/link-checker.py --help` for usage
 2. **Issues**: Report problems via GitHub Issues with the `testing` label
 3. **Discussions**: Join community discussions for questions and improvements
-4. **Quest Guide**: Follow the [Hyperlink Guardian Quest](../pages/_quests/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
+4. **Quest Guide**: Follow the [Hyperlink Guardian Quest](../pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
 
 ## 🤝 Contributing
 

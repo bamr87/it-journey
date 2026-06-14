@@ -3,7 +3,7 @@ title: 'Stream Processing: Real-Time Data with Apache Kafka & Flink'
 author: IT-Journey Team
 description: Build real-time data streaming pipelines with Kafka and Flink. Learn event-driven architecture, stream processing patterns, exactly-once semantics, and windowing operations.
 excerpt: Build real-time data pipelines with Kafka, stream processing patterns, and event-driven architecture
-preview: images/previews/stream-processing-descriptive-subtitle.png
+preview: /assets/images/previews/stream-processing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1100'

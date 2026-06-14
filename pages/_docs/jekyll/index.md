@@ -24,7 +24,7 @@ This section contains Jekyll documentation specific to how IT-Journey implements
 - MathJax mathematical notation
 - Jekyll configuration reference
 
-**Note:** For technical developer documentation about repository structure and contribution workflows, see the [`docs/` directory](../../docs/) in the repository root.
+**Note:** For technical developer documentation about repository structure and contribution workflows, see the [`docs/` directory](../../../docs/) in the repository root.
 
 ## Jekyll in IT-Journey
 
@@ -46,7 +46,7 @@ Jekyll requires the following:
 * RubyGems
 * GCC and Make
 
-See the [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md) guide for detailed installation instructions.
+See the [Development Environment Setup](../../../docs/setup/DEVELOPMENT_ENVIRONMENT.md) guide for detailed installation instructions.
 
 ## Available Documentation
 
@@ -148,7 +148,7 @@ collections:
   quickstart: # Quick reference guides
 ```
 
-Each collection has specific frontmatter requirements and URL patterns. See [Frontmatter Standards](../../docs/standards/FRONTMATTER_STANDARDS.md) for details.
+Each collection has specific frontmatter requirements and URL patterns. See [Frontmatter Standards](../../../docs/standards/FRONTMATTER_STANDARDS.md) for details.
 
 ### Theme Integration
 
@@ -212,10 +212,10 @@ bundle install
 ## Additional Resources
 
 ### Developer Documentation
-- [Repository Structure](../../docs/architecture/REPOSITORY_STRUCTURE.md) - Complete repository layout
-- [Jekyll Implementation](../../docs/architecture/JEKYLL_IMPLEMENTATION.md) - Detailed Jekyll configuration
-- [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md) - Complete setup guide
-- [Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md) - Contribution workflow
+- [Repository Structure](../../../docs/architecture/REPOSITORY_STRUCTURE.md) - Complete repository layout
+- [Jekyll Implementation](../../../docs/architecture/JEKYLL_IMPLEMENTATION.md) - Detailed Jekyll configuration
+- [Development Environment Setup](../../../docs/setup/DEVELOPMENT_ENVIRONMENT.md) - Complete setup guide
+- [Contributing Guide](../../../docs/CONTRIBUTING_DEVELOPER.md) - Contribution workflow
 
 ### External Resources
 - [Jekyll Official Documentation](https://jekyllrb.com/docs/)
@@ -226,9 +226,9 @@ bundle install
 
 ## Support
 
-- **Developer Issues:** See [`docs/` directory](../../docs/) for technical documentation
-- **Content Questions:** Review [Content Guidelines](../../docs/standards/CONTENT_GUIDELINES.md)
-- **Setup Problems:** Check [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+- **Developer Issues:** See [`docs/` directory](../../../docs/) for technical documentation
+- **Content Questions:** Review [Content Guidelines](../../../docs/standards/CONTENT_GUIDELINES.md)
+- **Setup Problems:** Check [Development Environment Setup](../../../docs/setup/DEVELOPMENT_ENVIRONMENT.md)
 - **General Help:** Create issue in [GitHub repository](https://github.com/bamr87/it-journey/issues)
 
 ---

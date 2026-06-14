@@ -46,14 +46,14 @@ Navigate through our comprehensive quest system designed to take you from comple
 
 **Start Your Journey:**
 - **[What is OS?](/quests/0000/hello-noob/)** - 🌱 n00b Quest for absolute beginners
-- **[Hello Windows](/quests/init_world/hello-win/)** - 🪟 Mastering the Microsoft Kingdom  
-- **[Hello macOS](/quests/init_world/hello-mac/)** - 🍎 Conquering the Apple Empire
-- **[Hello Linux](/quests/init_world/hello-linux/)** - 🐧 Taming the Penguin's Domain
-- **[Hello Cloud](/quests/init_world/hello-cloud/)** - ☁️ Ascending to the Digital Heavens
+- **[Hello Windows](/quests/0000/hello-windows/)** - 🪟 Mastering the Microsoft Kingdom  
+- **[Hello macOS](/quests/0000/hello-macos/)** - 🍎 Conquering the Apple Empire
+- **[Hello Linux](/quests/0000/linux-fundamentals/)** - 🐧 Taming the Penguin's Domain
+- **[Hello Cloud](/quests/0000/hello-cloud/)** - ☁️ Ascending to the Digital Heavens
 
 **Foundation Quests:**
-- [IT Fundamentals](/quests/init_world/2023-11-23-it-fundamentals/) - Learn the Ancient Arts
-- [Character Building](/quests/init_world/2023-11-23-character-building/) - Forge Your Identity  
+- [IT Fundamentals](/quests/0000/it-fundamentals/) - Learn the Ancient Arts
+- [Character Building](/quests/0000/character-building/) - Forge Your Identity  
 - [VS Code Mastery](/quests/0000/vscode-mastery/) - Craft Your Ultimate Development Weapon
 
 ### ⚔️ Progressive Skill Levels
@@ -66,7 +66,7 @@ Navigate through our comprehensive quest system designed to take you from comple
 
 #### 🟡 Level 001 - Journeyman Challenges  
 *Web technologies and advanced scripting*
-- [Personal Site Creation](/quests/lvl_001/personal-site/) - Build Your Digital Castle
+- [Personal Site Creation](/quests/0001/side-quests/personal-site/) - Build Your Digital Castle
 - JavaScript Mastery - Modern Web Sorcery
 - Python Basics - Pythonic Programming Arts
 
@@ -94,7 +94,7 @@ Navigate through our comprehensive quest system designed to take you from comple
 - **API Alps**: Conquer the peaks of API development, creating gateways to connect your frontend and backend realms
 - **Cloud Infrastructure**: Deploy and scale your applications in the digital heavens
 
-[Begin Your Backend Journey](/quests/backend/)
+[Begin Your Backend Journey](/quests/home/)
 
 #### DevOps & Infrastructure Path
 *Become a master of automation and deployment*
@@ -104,7 +104,7 @@ Navigate through our comprehensive quest system designed to take you from comple
 - **Infrastructure as Code**: Terraform your way to reproducible, scalable infrastructure
 - **Monitoring & Observability**: Keep watch over your digital kingdoms
 
-[Embark on the DevOps Voyage](/quests/devops/)
+[Embark on the DevOps Voyage](/quests/home/)
 
 ## 🏆 Track Your Epic Progress
 
@@ -124,7 +124,7 @@ Connect with fellow adventurers on similar quests:
 - **🎓 Mentorship Program**: Learn from experienced developers and guide newcomers
 - **🔄 Open Source Contributions**: Contribute to real-world projects and build your portfolio
 
-[Join Our Community](/community/)
+[Join Our Community](https://github.com/bamr87/it-journey/discussions)
 
 ## �️ Your Development Arsenal
 
@@ -142,7 +142,7 @@ Equip yourself with professional-grade tools and resources:
 - **📋 Cheat Sheets**: Quick reference guides for syntax and commands
 - **🧪 Practice Projects**: Real-world applications to solidify your skills
 
-[Access Your Arsenal](/resources/)
+[Access Your Arsenal](/docs/)
 
 ## 🚀 Our Mission: Open Source IT Education
 
@@ -158,10 +158,10 @@ We believe technology education should be:
 
 Ready to transform your career and join the ranks of IT professionals? Choose your starting point:
 
-1. **🌱 Complete Beginner**: Start with [Character Creation](/quests/init_world/2023-11-24-character-selection/)
-2. **💻 Some Experience**: Jump into [Level 001 Challenges](/quests/lvl_001/)
+1. **🌱 Complete Beginner**: Start with [Character Creation](/quests/0000/character-selection/)
+2. **💻 Some Experience**: Jump into [Level 001 Challenges](/quests/0001/)
 3. **🎯 Specific Skills**: Browse [All Available Quests](/quests/) by technology
-4. **🏢 Career Focused**: Explore [Professional Development Paths](/about/profile/)
+4. **🏢 Career Focused**: Explore [Professional Development Paths](/quests/home/)
 
 *Your legendary IT journey awaits. The only question is: which path will you choose first?*
 

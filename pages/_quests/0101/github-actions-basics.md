@@ -3,7 +3,7 @@ title: 'GitHub Actions Basics: Workflow Automation for Modern DevOps'
 author: IT-Journey Team
 description: Learn to create and manage GitHub Actions workflows for CI/CD automation. Build automated testing, deployment, and code quality pipelines using YAML workflows.
 excerpt: Master GitHub Actions workflow creation for automating your software development lifecycle
-preview: images/previews/github-actions-basics-workflow-automation-descript.png
+preview: /assets/images/previews/github-actions-basics-workflow-automation-descript.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:05:22.000Z'
 level: '0101'

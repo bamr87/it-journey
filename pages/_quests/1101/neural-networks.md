@@ -3,7 +3,7 @@ title: 'Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch'
 author: IT-Journey Team
 description: Master neural network architectures with TensorFlow. Learn convolutional networks, recurrent networks, attention mechanisms, and transformer architectures for computer vision and NLP.
 excerpt: Build CNN, RNN, and transformer architectures from scratch with TensorFlow and Keras
-preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
+preview: /assets/images/previews/neural-networks-deep-dive-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1101'

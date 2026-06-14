@@ -3,7 +3,7 @@ title: 'Kubernetes ConfigMaps and Secrets: Configuration Management Best Practic
 author: IT-Journey Team
 description: Master Kubernetes configuration with ConfigMaps and Secrets. Learn secure secrets management, environment variables, volume mounts, and configuration best practices.
 excerpt: Manage Kubernetes configuration securely with ConfigMaps and Secrets
-preview: images/previews/kubernetes-configmaps-quest-title-secrets-configur.png
+preview: /assets/images/previews/kubernetes-configmaps-quest-title-secrets-configur.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:42:00.000Z'
 level: '1001'

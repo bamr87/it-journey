@@ -3,7 +3,7 @@ title: 'Architecture Reviews: Leading Technical Design Discussions'
 author: IT-Journey Team
 description: Lead effective architecture reviews and design discussions. Master RFC processes, technical debt assessment, system evaluation, and architectural decision records.
 excerpt: Lead effective architecture reviews and technical design discussions
-preview: images/previews/architecture-reviews-descriptive-subtitle.png
+preview: /assets/images/previews/architecture-reviews-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'

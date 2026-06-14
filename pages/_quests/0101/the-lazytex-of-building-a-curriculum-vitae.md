@@ -4,7 +4,7 @@ author: Quest Master
 description: Build an epic, ATS-friendly Curriculum Vitae in VS Code using LaTeX, aligned to the provided cv.tex template—install tools, customize sections, compile, and export a polished PDF.
 excerpt: Craft a professional CV from the cv.tex template using VS Code + LaTeX—install, customize, compile, and validate.
 snippet: From blank page to battle-ready CV—forge, compile, and level up your professional codex.
-preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
+preview: /assets/images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
 date: '2025-08-21T22:00:59.000Z'
 lastmod: '2025-08-17T21:36:08.000Z'
 level: '0101'

@@ -3,7 +3,7 @@ title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
 author: IT-Journey Team
 description: Learn responsible AI practices and ethics frameworks. Understand bias detection, fairness metrics, explainability with SHAP/LIME, model governance, and regulatory compliance for AI systems.
 excerpt: Build responsible AI systems with bias detection, fairness metrics, and model explainability
-preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
+preview: /assets/images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1101'

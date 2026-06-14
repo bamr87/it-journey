@@ -3,7 +3,7 @@ title: 'Docker Compose Orchestration: Build Multi-Container Applications'
 author: IT-Journey Team
 description: Master Docker Compose for orchestrating multi-container applications. Learn YAML configuration, service networking, volume management, and environment variables for development and production stacks.
 excerpt: Build and orchestrate multi-container applications with Docker Compose YAML configuration and networking
-preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
+preview: /assets/images/previews/docker-compose-orchestration-multi-container-apps-.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:04:44.000Z'
 level: '0100'

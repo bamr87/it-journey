@@ -4,7 +4,7 @@ author: Quest Master IT-Journey Team
 description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
 excerpt: Build a powerful automation system that collects, organizes, and maintains documentation from multiple GitHub repositories using GitHub Actions, Bash, and Python
 snippet: Transform scattered docs into organized knowledge with automation magic
-preview: images/previews/the-knowledge-vault-building-an-automated-document.png
+preview: /assets/images/previews/the-knowledge-vault-building-an-automated-document.png
 date: '2025-10-04T15:52:00.000Z'
 lastmod: '2025-10-03T21:57:41.000Z'
 level: '0001'

@@ -2,7 +2,7 @@
 title: '🗺️ World Map: Navigation Guide to the IT-Journey Realm'
 layout: default
 description: Your comprehensive guide to navigating the IT-Journey platform - quests, documentation, tutorials, and learning paths.
-preview: /images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
+preview: /assets/images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
 date: '2024-05-28T15:23:32.000Z'
 lastmod: '2025-07-23T03:53:06.000Z'
 draft: false
@@ -117,7 +117,7 @@ Battle-tested wisdom and real-world experiences from fellow code warriors who've
 
 - [AI-Powered Development Workflows](/advanced-version-management-ai-implementation/) - Advanced automation techniques
 - [GitHub Actions Mastery](/debugging-github-actions-workflows-ai-assisted/) - CI/CD optimization
-- [Docker for IT-Journey](/posts/dockering-your-it-journey/) - Containerization strategies
+- [Docker for IT-Journey](/posts/docker-beginners-tutorial/) - Containerization strategies
 - Jekyll Theming & Bootstrap (planned) - Site customization
 
 ### ⚔️ Quests Territory (`/quests/`)
@@ -324,7 +324,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 #### 🔧 Platform Management
 
 - [⚙️ Site Configuration](/about/config/) - Jekyll and site settings
-- [🎨 Theme Customization](/about/theme/) - Visual customization guide
+- [🎨 Theme Customization](/quickstart/theme-architecture/) - Visual customization guide
 - [🤝 Contributing Guide](/about/contributing/) - How to contribute content
 - [🗺️ Complete Sitemap](/about/sitemap/) - Detailed site structure
 - [✨ Feature Overview](/about/features/) - Platform capabilities
@@ -332,8 +332,8 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 #### 🔍 Discovery Tools
 
 - [🔎 Site Search](/search/) - Find content across all domains
-- [🏷️ All Categories](/categories/) - Browse content by topic
-- [📊 Progress Tracking](/progress/) - Monitor your learning journey
+- [🏷️ All Categories](/posts/) - Browse content by topic
+- [📊 Progress Tracking](/notes/) - Monitor your learning journey
 
 ### 🛡️ Authentication & Access
 
@@ -361,7 +361,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 ### 🔧 For System Administrators
 
 1. **Platform Setup:** [Configuration Guide](/about/config/)
-2. **Docker Environment:** [Container Setup](/posts/dockering-your-it-journey/)
+2. **Docker Environment:** [Container Setup](/posts/docker-beginners-tutorial/)
 3. **CI/CD Integration:** [GitHub Actions](/debugging-github-actions-workflows-ai-assisted/)
 4. **Monitoring:** [Site Analytics](/about/features/)
 

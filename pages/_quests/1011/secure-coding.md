@@ -3,7 +3,7 @@ title: 'Secure Coding Practices: OWASP Top 10 Vulnerability Prevention'
 author: IT-Journey Team
 description: Learn secure coding practices to prevent OWASP Top 10 vulnerabilities. Master input validation, output encoding, authentication, and secure development patterns.
 excerpt: Write secure code and prevent OWASP Top 10 vulnerabilities in your applications
-preview: images/previews/secure-coding-practices-owasp-top-10-descriptive-s.png
+preview: /assets/images/previews/secure-coding-practices-owasp-top-10-descriptive-s.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:44:46.000Z'
 level: '1011'

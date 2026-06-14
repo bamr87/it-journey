@@ -4,7 +4,7 @@ author: IT-Journey Team
 description: The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development
 excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
 snippet: Every expert was once a beginner - every hero was once a n00b
-preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
+preview: /assets/images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
 date: '2022-06-05T13:48:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'

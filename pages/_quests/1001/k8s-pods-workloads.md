@@ -3,7 +3,7 @@ title: 'Kubernetes Pods and Workloads: Deployments and StatefulSets'
 author: IT-Journey Team
 description: Master Kubernetes workloads including Pods, Deployments, StatefulSets, DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies.
 excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and DaemonSets
-preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
+preview: /assets/images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:41:52.000Z'
 level: '1001'

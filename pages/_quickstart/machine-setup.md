@@ -945,7 +945,7 @@ You've successfully set up a professional Jekyll development environment! You no
 
 Your machine is now ready for professional static site development. The tools you've installed will serve you well beyond Jekyll - you now have a solid foundation for web development, automation, and collaboration.
 
-**What's Next?** Head over to our [Jekyll Quickstart Guide](./jekyll-quickstart.md) to start building your first real Jekyll project, or explore our [Advanced Jekyll Techniques](./advanced-jekyll.md) guide when you're ready to level up your skills.
+**What's Next?** Head over to our [Jekyll Quickstart Guide](./jekyll-setup.md) to start building your first real Jekyll project, or explore our Advanced Jekyll Techniques guide when you're ready to level up your skills.
 
 Welcome to the Jekyll development community! 🎉
 

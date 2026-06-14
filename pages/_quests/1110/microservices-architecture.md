@@ -3,7 +3,7 @@ title: 'Microservices Architecture: Building Scalable Distributed Systems'
 author: IT-Journey Team
 description: Master microservices architecture patterns for building scalable, maintainable systems. Learn service decomposition, communication patterns, and deployment strategies.
 excerpt: Design and implement microservices architectures for scalable distributed systems
-preview: images/previews/microservices-architecture-descriptive-subtitle.png
+preview: /assets/images/previews/microservices-architecture-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1110'

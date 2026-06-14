@@ -89,7 +89,7 @@ Security challenges aggregated from the [OverTheWire](https://overthewire.org/wa
 **Topics:**
 - [Wargames Overview](/docs/wargames/) - Introduction, game list, and how to get started
 
-> This section is populated by the [docs aggregation pipeline](/it-journey/scripts/docs-aggregator/). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
+> This section is populated by the [docs aggregation pipeline](https://github.com/bamr87/it-journey/tree/main/scripts/docs-aggregator). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
 
 ### Future Documentation Areas
 

@@ -3,7 +3,7 @@ title: 'Artifact Management: Build Output Storage and Dependency Caching'
 author: IT-Journey Team
 description: Master artifact management in CI/CD pipelines. Learn to store build outputs, manage dependencies, implement caching strategies, and version artifacts effectively.
 excerpt: Learn to manage build artifacts and dependencies efficiently in your CI/CD pipelines
-preview: images/previews/artifact-management-build-output-quest-title-depen.png
+preview: /assets/images/previews/artifact-management-build-output-quest-title-depen.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:05:59.000Z'
 level: '0101'

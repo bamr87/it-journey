@@ -4,7 +4,7 @@ layout: quest
 author: IT-Journey Team
 excerpt: null
 description: 'Reference: Glossary .'
-preview: /images/previews/glossary.png
+preview: /assets/images/previews/glossary.png
 snippet: null
 categories:
 - notes

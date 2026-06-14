@@ -3,7 +3,7 @@ title: 'API Gateway Patterns: Routing, Load Balancing and Security'
 author: IT-Journey Team
 description: Implement API gateway patterns for microservices. Master request routing, load balancing, rate limiting, authentication, and service mesh integration.
 excerpt: Implement API gateway patterns for routing, security, and service orchestration
-preview: images/previews/api-gateway-patterns-descriptive-subtitle.png
+preview: /assets/images/previews/api-gateway-patterns-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1110'

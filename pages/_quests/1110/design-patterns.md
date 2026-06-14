@@ -3,7 +3,7 @@ title: 'Software Design Patterns: Gang of Four and Modern Patterns'
 author: IT-Journey Team
 description: Master essential software design patterns including creational, structural, and behavioral patterns. Learn when and how to apply patterns for maintainable code.
 excerpt: Master essential design patterns for writing maintainable, scalable software
-preview: images/previews/software-design-patterns-descriptive-subtitle.png
+preview: /assets/images/previews/software-design-patterns-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1110'

@@ -2,7 +2,7 @@
 title: Frontend Docker - level 000
 author: GPT and bamr87
 description: Verify Docker installation on macOS for building Jekyll sites with Bootstrap 5 in the Frontend Forests.
-preview: images/previews/frontend-docker-level-000.png
+preview: /assets/images/previews/frontend-docker-level-000.png
 date: '2024-05-28T15:23:32.000Z'
 lastmod: '2024-05-28T02:28:31.000Z'
 level: '0100'

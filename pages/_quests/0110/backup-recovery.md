@@ -3,7 +3,7 @@ title: 'Backup and Recovery: Data Protection Strategies for Databases'
 author: IT-Journey Team
 description: Implement comprehensive backup and recovery strategies for databases. Learn backup types, recovery procedures, point-in-time recovery, and disaster recovery planning.
 excerpt: Protect your data with comprehensive backup strategies and recovery procedures
-preview: images/previews/backup-quest-title-recovery-data-protection-strate.png
+preview: /assets/images/previews/backup-quest-title-recovery-data-protection-strate.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:08:21.000Z'
 level: '0110'

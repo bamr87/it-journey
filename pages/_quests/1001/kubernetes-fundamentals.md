@@ -3,7 +3,7 @@ title: 'Kubernetes Fundamentals: Container Orchestration Essentials'
 author: IT-Journey Team
 description: Master Kubernetes fundamentals including cluster architecture, kubectl commands, pods, services, and core concepts for container orchestration at scale.
 excerpt: Learn Kubernetes fundamentals for container orchestration and cluster management
-preview: images/previews/kubernetes-fundamentals-container-orchestration-de.png
+preview: /assets/images/previews/kubernetes-fundamentals-container-orchestration-de.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:41:32.000Z'
 level: '1001'

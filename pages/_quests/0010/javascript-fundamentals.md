@@ -3,7 +3,7 @@ title: 'JavaScript Fundamentals: DOM Manipulation & Events'
 author: IT-Journey Team
 description: Learn JavaScript essentials for web interactivity. Master DOM manipulation, event handling, and dynamic content creation. Beginner-friendly tutorial with practical examples.
 excerpt: Build interactive web pages with JavaScript DOM manipulation, events, and dynamic content.
-preview: images/previews/javascript-fundamentals-interactive-web-elements-d.png
+preview: /assets/images/previews/javascript-fundamentals-interactive-web-elements-d.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'

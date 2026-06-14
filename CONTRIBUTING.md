@@ -67,7 +67,7 @@ AI agents assisting with contributions should reference:
 - **[Quest Instructions](.github/instructions/quest.instructions.md)** - Quest creation patterns
 - **[Post Instructions](.github/instructions/posts.instructions.md)** - Blog post standards
 - **[Feature Instructions](.github/instructions/features.instructions.md)** - Feature development
-- **[Space Instructions](.github/instructions/space.instructions.md)** - Project organization
+- **[Work Instructions](.github/instructions/work.instructions.md)** - Workspace organization
 
 The `.github/instructions/` directory contains AI-optimized instructions that help VS Code Copilot and other AI agents assist contributors more effectively while maintaining project standards and quality.
 

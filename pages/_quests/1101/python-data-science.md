@@ -3,7 +3,7 @@ title: 'Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide'
 author: IT-Journey Team
 description: Master Python data science libraries. Learn NumPy for numerical computing, Pandas for data manipulation, Matplotlib and Seaborn for visualization, and Jupyter notebooks for analysis workflows.
 excerpt: Master NumPy, Pandas, and Matplotlib for Python data science and analysis workflows
-preview: images/previews/python-for-data-science-descriptive-subtitle.png
+preview: /assets/images/previews/python-for-data-science-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1101'

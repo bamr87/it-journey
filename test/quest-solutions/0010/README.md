@@ -9,7 +9,7 @@
 
 | Quest | Difficulty | Solution Directory | Status |
 |-------|------------|-------------------|--------|
-| [Oh-My-Zsh Terminal Enchantment](../../pages/_quests/0010/oh-my-zsh-terminal-enchantment.md) | 🟡 Medium | [oh-my-zsh-terminal-enchantment/](oh-my-zsh-terminal-enchantment/) | ✅ Complete |
+| [Oh-My-Zsh Terminal Enchantment](../../../pages/_quests/0010/oh-my-zsh-terminal-enchantment.md) | 🟡 Medium | [oh-my-zsh-terminal-enchantment/](oh-my-zsh-terminal-enchantment/) | ✅ Complete |
 
 ## Validation
 

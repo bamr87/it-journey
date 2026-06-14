@@ -3,7 +3,7 @@ title: 'API Fundamentals: Building Web Services and HTTP APIs'
 author: IT-Journey Team
 description: Master the fundamentals of API development including HTTP methods, request/response patterns, headers, and building scalable web services.
 excerpt: Learn the core concepts of API development including HTTP, request patterns, and web services
-preview: images/previews/api-fundamentals-building-web-services-descriptive.png
+preview: /assets/images/previews/api-fundamentals-building-web-services-descriptive.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:08:50.000Z'
 level: '0111'

@@ -4,7 +4,7 @@ author: Quest Master
 description: Embark on a fantasy-themed quest to master software templates and reusable architectures across C++, HTML/Jinja, and React. Learn abstraction, type-safety, inheritance, and composition patterns to forge scalable, maintainable systems.
 excerpt: Master the sacred art of templates to build elegant, reusable systems across languages.
 snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
-preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
+preview: /assets/images/previews/the-temple-of-templates-binary-abstractions-and-re.png
 date: '2025-08-24T18:46:40.000Z'
 lastmod: '2025-08-25T00:43:51.000Z'
 level: '1100'

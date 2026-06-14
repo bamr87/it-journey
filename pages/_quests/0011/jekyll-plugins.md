@@ -3,7 +3,7 @@ title: 'Jekyll Plugins: Essential Extensions for Powerful Static Sites'
 author: IT-Journey Team
 description: Master Jekyll plugins to extend your site's functionality. Learn to install, configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination for GitHub Pages compatibility.
 excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps, and custom functionality
-preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
+preview: /assets/images/previews/jekyll-plugins-extending-site-functionality-descri.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:00:15.000Z'
 level: '0011'

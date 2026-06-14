@@ -3,7 +3,7 @@ title: 'Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability
 author: IT-Journey Team
 description: 'Learn the three pillars of observability: metrics, logs, and traces. Understand monitoring architecture, instrumentation patterns, and SRE best practices for production systems.'
 excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade monitoring
-preview: images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
+preview: /assets/images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:43:59.000Z'
 level: '1010'

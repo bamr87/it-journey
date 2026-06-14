@@ -3,7 +3,7 @@ title: 'Environment Management: Dev, Staging, and Production Configuration'
 author: IT-Journey Team
 description: Learn to manage multiple deployment environments effectively. Configure dev, staging, and production environments with environment-specific settings and secrets.
 excerpt: Master multi-environment configuration and management for reliable software delivery
-preview: images/previews/environment-management-dev-staging-quest-title-pro.png
+preview: /assets/images/previews/environment-management-dev-staging-quest-title-pro.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:05:35.000Z'
 level: '0101'

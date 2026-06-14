@@ -3,7 +3,7 @@ title: 'Custom Domains for GitHub Pages: Professional Website Setup Guide'
 author: IT-Journey Team
 description: Configure custom domains for GitHub Pages sites. Learn DNS setup, CNAME configuration, SSL certificates, and subdomain management to give your Jekyll site a professional web address.
 excerpt: Transform your GitHub Pages site with a custom domain, SSL, and professional DNS configuration
-preview: images/previews/custom-domains-professional-site-setup-descriptive.png
+preview: /assets/images/previews/custom-domains-professional-site-setup-descriptive.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:00:31.000Z'
 level: '0011'

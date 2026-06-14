@@ -3,7 +3,7 @@ title: 'Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementat
 author: IT-Journey Team
 description: Compare and master PyTorch and TensorFlow frameworks. Learn tensor operations, automatic differentiation, model building, training loops, and GPU acceleration for production deep learning.
 excerpt: Master PyTorch and TensorFlow for production deep learning with GPU acceleration
-preview: images/previews/deep-learning-frameworks-descriptive-subtitle.png
+preview: /assets/images/previews/deep-learning-frameworks-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '1101'
