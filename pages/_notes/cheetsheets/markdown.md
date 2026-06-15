@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/cheetsheets/markdown/markdown/
 title: Markdown Cheatsheet
 author: bamr87
 description: Quick reference guide for Markdown syntax including basic formatting, Jekyll-specific features, and Kramdown extensions

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/html_md_doc_scrapper/html_md_doc_scrapper/
 title: HTML to Markdown Web Scraping
 description: A simple web scraping project to convert HTML to markdown using Python with Beautiful Soup and markdownify
 date: '2024-05-21T12:29:08.000Z'

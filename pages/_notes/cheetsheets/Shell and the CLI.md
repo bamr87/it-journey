@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/cheetsheets/Shell and the CLI/Shell and the CLI/
 title: Shell and the CLI
 updated: 2022-01-05 07:55:00+00:00
 created: 2023-12-15 04:10:54+00:00

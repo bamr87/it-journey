@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/misc/AWS Practice Question Set/AWS Practice Question Set/
 title: AWS Practice Question Set
 updated: 2022-01-12 10:07:00+00:00
 created: 2023-12-15 04:10:54+00:00

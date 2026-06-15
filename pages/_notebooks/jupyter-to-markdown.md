@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notebooks/jupyter-to-markdown/jupyter-to-markdown/
 title: Jupyter Notebook to Markdown Converter
 description: Success! You have converted a Jupyter Notebook to Markdown.
 author: Amr Abdel-Motaleb

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/Journal Entries/Github_s hidden gem/Github_s hidden gem/
 title: Github's hidden gem
 updated: 2024-02-14 19:49:49+00:00
 created: 2024-02-14 19:41:38+00:00

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/jekyllm-integration/jekyllm-integration/
 title: Jekyll LLM Integration Ideas
 description: Exploring ideas and implementation strategies for integrating Large Language Models (LLMs) into Jekyll static sites for automated content generation and enhancement
 date: '2024-06-01T22:03:24.000Z'

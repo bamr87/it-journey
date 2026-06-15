@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/projects/Project List/Project List/
 title: Project List
 updated: 2024-02-14 18:33:22+00:00
 created: 2024-02-13 20:51:58+00:00

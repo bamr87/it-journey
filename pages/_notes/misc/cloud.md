@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/misc/cloud/cloud/
 title: AWS Practice Question Set
 author: null
 excerpt: null

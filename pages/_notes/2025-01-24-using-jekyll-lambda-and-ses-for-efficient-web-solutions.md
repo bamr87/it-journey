@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions/2025-01-24-using-jekyll-lambda-and-ses-for-efficient-web-solutions/
 title: Using Jekyll, Lambda, and SES for Efficient Web Solutions
 description: Below is a detailed walkthrough on how to create a serverless “Contact Us” form using AWS Lambda, API Gateway, and Amazon SES. This lets you keep your…
 date: '2025-02-05T14:08:47.000Z'

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/Take good notes/Take good notes/
 title: Take good notes
 updated: 2024-02-03 22:33:35+00:00
 created: 2024-02-03 19:42:48+00:00

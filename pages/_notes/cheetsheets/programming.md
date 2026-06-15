@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/cheetsheets/programming/programming/
 title: Programming
 description: Collection of programming languages notes
 lastmod: '2022-01-02T03:39:23.888Z'

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/Journal Entries/GPT App Build/GPT App Build/
 title: GPT App Build
 updated: 2024-02-14 19:43:18+00:00
 created: 2024-02-13 20:21:38+00:00

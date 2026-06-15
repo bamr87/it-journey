@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/cheetsheets/2022-10-07-powershell/2022-10-07-powershell/
 title: Windows PowerShell Cheatsheet
 author: bamr87
 description: PowerShell scripting reference for Windows system administration and automation

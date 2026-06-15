@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/projects/Master_s Project/Master_s Project/
 title: Master's Project
 updated: 2024-02-14 19:01:30+00:00
 created: 2024-02-13 19:47:20+00:00

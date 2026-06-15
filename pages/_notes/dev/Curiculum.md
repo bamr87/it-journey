@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/Curiculum/Curiculum/
 title: Curiculum
 updated: 2024-02-13 19:49:39+00:00
 created: 2024-02-13 19:49:02+00:00

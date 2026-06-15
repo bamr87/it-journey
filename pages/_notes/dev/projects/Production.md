@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/projects/Production/Production/
 title: Production
 updated: 2024-02-13 20:20:58+00:00
 created: 2024-02-03 22:49:11+00:00

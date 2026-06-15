@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/Journal Entries/What is my PiDentity_/What is my PiDentity_/
 title: What is my PiDentity?
 updated: 2024-02-14 23:13:57+00:00
 created: 2024-02-14 23:10:51+00:00

@@ -1,5 +1,6 @@
 ---
 title: Quest Network Report
+published: false  # auto-generated internal report — not a public page (excluded from build/sitemap)
 description: "Auto-generated quest network validation summary — node and edge counts, dependency graph status, and the most recent validator run output."
 date: 2026-05-24T15:31:24.000Z
 lastmod: 2026-05-24T15:31:24.000Z

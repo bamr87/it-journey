@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/misc/Favicons/Favicons/
 title: Favicons
 updated: 2024-02-20 06:17:00+00:00
 created: 2024-02-19 22:10:32+00:00

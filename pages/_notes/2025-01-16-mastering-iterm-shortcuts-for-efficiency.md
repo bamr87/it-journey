@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/2025-01-16-mastering-iterm-shortcuts-for-efficiency/2025-01-16-mastering-iterm-shortcuts-for-efficiency/
 title: Mastering iTerm Shortcuts for Efficiency
 description: Enhance your productivity with iTerm shortcuts for deleting and navigating words efficiently on macOS.
 date: '2025-01-16T11:04:51.000Z'

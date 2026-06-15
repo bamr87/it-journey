@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/zero/Start/Start/
 title: Start
 updated: 2024-02-04 19:38:44+00:00
 created: 2024-02-01 18:05:31+00:00

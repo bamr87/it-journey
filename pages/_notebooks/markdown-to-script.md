@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notebooks/markdown-to-script/markdown-to-script/
 title: Markdown to Script Converter
 description: Python utilities to convert markdown files to executable scripts
 author: bamr87

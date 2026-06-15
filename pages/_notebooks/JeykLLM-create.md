@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notebooks/JeykLLM-create/JeykLLM-create/
 author: bamr87
 categories:
 - notebooks

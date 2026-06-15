@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/2024-05-14-side-bar-folders/2024-05-14-side-bar-folders/
 title: Sidebar Folder Structure
 author: bamr87
 description: Jekyll Liquid template code for generating dynamic sidebar navigation with folder structures from collections

@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/cheetsheets/Windows Powershell Cheatsheet/Windows Powershell Cheatsheet/
 title: Windows Powershell Cheatsheet
 updated: 2022-01-11 04:54:00+00:00
 created: 2023-12-15 04:10:54+00:00

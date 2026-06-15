@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/cheetsheets/mac-shortcuts/mac-shortcuts/
 title: Mac Keyboard Shortcuts
 author: bamr87
 description: Comprehensive reference guide for Mac keyboard shortcuts to improve productivity and efficiency

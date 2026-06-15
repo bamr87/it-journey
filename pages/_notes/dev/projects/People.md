@@ -1,4 +1,6 @@
 ---
+redirect_from:
+  - /notes/dev/projects/People/People/
 title: People
 updated: 2024-02-13 19:30:25+00:00
 created: 2024-02-03 22:49:04+00:00
