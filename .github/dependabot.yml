@@ -1,6 +1,7 @@
 version: 2
 updates:
-  # Keep SHA-pinned GitHub Actions current (Dependabot bumps the pin + comment).
+  # Keep GitHub Actions current — actions float on their major tag (@v4), so
+  # Dependabot opens a PR when a new major version is published.
   - package-ecosystem: github-actions
     directory: /
     schedule:

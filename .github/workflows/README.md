@@ -264,15 +264,22 @@ Mark these as **required status checks** in branch protection for `main`
 security scan.
 
 Also enable **"Require review from Code Owners"** (see [CODEOWNERS](../CODEOWNERS))
-and let **Dependabot** ([dependabot.yml](../dependabot.yml)) keep the SHA-pinned
-actions and gems current.
+and let **Dependabot** ([dependabot.yml](../dependabot.yml)) keep the actions
+and gems current.
 
 ## Security baseline
 
 Every workflow declares least-privilege `permissions:` (default `contents: read`,
-write granted only on the job that needs it), pins all third-party actions to a
-full commit SHA, sets a `concurrency:` group, and passes untrusted
-`github.event.*` values through `env:` (never interpolated directly into `run:`).
+write granted only on the job that needs it), references actions by their
+floating **major-version tag** (`@v4`) so they track the latest release within
+that major, sets a `concurrency:` group, and passes untrusted `github.event.*`
+values through `env:` (never interpolated directly into `run:`). Dependabot
+opens PRs when a new major is published.
+
+> Trade-off: major-tag references auto-update (no manual bumping) but do not
+> defend against a hijacked tag the way a full commit SHA would. If you later
+> prefer maximum supply-chain hardening, re-pin third-party actions to a commit
+> SHA and let Dependabot bump the pin.
 
 ## Contributing
 
