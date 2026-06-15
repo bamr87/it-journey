@@ -10,6 +10,13 @@ categories:
 lastmod: '2026-04-25T19:27:00.000Z'
 date: '2025-11-29T16:46:02.000Z'
 draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '0010'
+- apprentice
+- terminal
+- mastery
 ---
 # Level 0010: Terminal Enhancement & Shell Mastery
 

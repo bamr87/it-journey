@@ -10,6 +10,13 @@ categories:
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
 draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '1010'
+- warrior
+- monitoring
+- observability
 ---
 # Level 1010: Automation & Testing
 

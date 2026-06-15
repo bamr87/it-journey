@@ -7,6 +7,16 @@ permalink: /quests/tools/
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
 draft: false
+author: IT-Journey Team
+tags:
+- quests
+- tools
+- git
+- version-control
+- workflows
+categories:
+- quests
+- tools
 ---
 # Tools Collection: Development Tools & Workflows
 

@@ -10,6 +10,13 @@ categories:
 lastmod: '2025-11-15T04:27:16.000Z'
 date: '2025-11-15T16:34:42.000Z'
 draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '0001'
+- apprentice
+- web
+- fundamentals
 ---
 # Level 001: Journeyman Challenges
 

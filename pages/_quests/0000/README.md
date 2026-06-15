@@ -10,6 +10,14 @@ categories:
 lastmod: '2026-05-20T20:57:50.000Z'
 date: '2025-11-29T16:46:02.000Z'
 draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '0000'
+- apprentice
+- foundation
+- init
+- world
 ---
 # Level 0000: Foundation & Init World
 

@@ -9,6 +9,15 @@ draft: false
 date: '2025-11-29T16:46:02.000Z'
 sidebar:
   nav: quests
+author: IT-Journey Team
+tags:
+- quests
+- inventory
+- progress
+- tracking
+- badges
+categories:
+- quests
 ---
 <link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
 

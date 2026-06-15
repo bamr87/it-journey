@@ -10,6 +10,13 @@ categories:
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
 draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '0011'
+- apprentice
+- ai-assisted
+- development
 ---
 # Level 0011: Development Tools & AI Integration
 
