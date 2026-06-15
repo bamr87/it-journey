@@ -1,6 +1,6 @@
 ---
-title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
-description: Systematically improve GitHub Copilot agent performance by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring the impact of each change.
+title: 'Reforging the Agent''s Mind: Tuning Behavior by Instruction'
+description: 'Tune your GitHub Copilot agent by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring each change''s impact.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-behavior-tuning.png
 level: '1011'
@@ -45,17 +45,7 @@ quest_dependencies:
   - /quests/1010/agentic-failure-root-cause-analysis/
   unlocks_quests:
   - /quests/1011/agentic-multi-agent-orchestration-patterns/
-quest_relationships:
-  sequel_quests:
-  - /quests/1011/agentic-multi-agent-orchestration-patterns/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
-  - Instruction Engineering
+  recommended_quests: []
 rewards:
   badges:
   - 🔨 Forge Master
@@ -74,11 +64,6 @@ validation_criteria:
   - Behaviour improvement cycle documented (baseline → change → measure → iterate)
   - At least 2 instruction changes made with measurable outcome
   - Instruction changelog maintained
-quest_mapping:
-  coordinates: '[4, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Forge
 comments: true
 draft: false
 redirect_from:

@@ -4,7 +4,7 @@
 .PHONY: help stats stats-update stats-show stats-clean stats-config test \
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
-        quest-audit quest-audit-strict quest-levels-data quest-nav \
+        quest-audit quest-audit-strict quest-levels-data quest-nav quest-data quest-normalize \
         content-validate content-normalize content-normalize-apply content-audit
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
@@ -183,11 +183,34 @@ quest-nav:
 	@echo "🧭 Regenerating quest sidebar navigation..."
 	@python3 scripts/quest/generate-quest-navigation.py
 
+quest-normalize:
+	@echo "🧹 Normalizing quest frontmatter (relationships, retired fields)..."
+	@python3 scripts/quest/normalize-quest-frontmatter.py --apply
+
+quest-data: quest-levels-data quest-nav quest-build-network
+	@echo "✅ All registry-derived quest data regenerated (levels, tiers, order, navigation, network)."
+
 quest-audit: quest-build-network quest-validate quest-network
 	@echo "✅ Quest audit complete — content, dependencies, and network artifacts validated."
 
 quest-audit-strict: quest-build-network quest-validate quest-network-strict
 	@echo "✅ Strict quest audit complete (orphan warnings escalated)."
+
+# Agentic validation (tier 2): drive Claude Code (OAuth) to play quests end-to-end.
+# SAMPLE / MODE / EXTRA are overridable, e.g.  make quest-validate-agentic SAMPLE=5 MODE=execute
+SAMPLE ?= 3
+MODE   ?= review
+quest-validate-agentic:
+	@echo "🤖 Agentic quest validation ($(MODE) mode, sample $(SAMPLE)) — needs claude login / CLAUDE_CODE_OAUTH_TOKEN..."
+	@python3 test/quest-validator/agentic_validate.py -d pages/_quests --sample $(SAMPLE) --mode $(MODE) $(EXTRA)
+
+quest-validate-agentic-mock:
+	@echo "🤖 Agentic validator — OFFLINE pipeline test (no auth, no cost)..."
+	@python3 test/quest-validator/agentic_validate.py -d pages/_quests --sample $(SAMPLE) --mock --summary
+
+quest-validate-agentic-selftest:
+	@echo "🧪 Agentic validator offline self-test suite..."
+	@bash test/quest-validator/test-agentic.sh
 
 # Content frontmatter validation and normalization targets
 content-validate:

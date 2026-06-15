@@ -3,35 +3,22 @@ title: 'Terminal Artificer: Forging the Glass Interface'
 author: Quest Master Copilot
 description: Master the art of crafting beautiful, interactive frontends for your shell scripts using Gum, transforming raw command-line magic into elegant tools.
 excerpt: Transform your raw shell scripts into interactive, user-friendly tools with menus, inputs, and beautiful styling.
-snippet: Forge the glass interface between wizard and machine.
 preview: images/previews/terminal-artificer-forging-the-glass-interface.png
 date: '2025-11-19T22:47:27.000Z'
 lastmod: '2025-11-29T01:07:17.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: 8
+primary_technology: bash
 quest_type: side_quest
 quest_series: Terminal Mastery Path
 quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0001/terminal-mastery/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0001/terminal-mastery/
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Mastery
-  - DevOps Automation
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -54,12 +41,7 @@ validation_criteria:
   knowledge_checks:
   - Explain the difference between arguments and interactive input
   - Understand exit codes in selection menus
-quest_mapping:
-  coordinates: '[1, 2]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
-permalink: /quests/0010/side-quests/terminal-artificer-frontend-building/
+permalink: /quests/0010/terminal-artificer-frontend-building/
 categories:
 - Quests
 - Development
@@ -84,8 +66,6 @@ keywords:
   - hands-on
 fmContentType: quest
 comments: true
-attachments: ''
-sub-title: 'Level 0010 (2) Quest: Terminal Frontend Building'
 rewards:
   badges:
   - 🏆 Glass Interface Artificer
@@ -98,7 +78,10 @@ rewards:
   - Ability to create user-friendly CLI tools
 redirect_from:
 - /quests/0010/side-quests/terminal-artificer/
+- /quests/0010/side-quests/terminal-artificer-frontend-building/
 layout: quest
+sub_title: 'Level 0010 (2) Quest: Terminal Frontend Building'
+draft: false
 ---
 *In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
 

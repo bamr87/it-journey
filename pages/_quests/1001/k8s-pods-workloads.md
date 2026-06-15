@@ -1,63 +1,50 @@
 ---
 title: 'Kubernetes Pods and Workloads: Deployments and StatefulSets'
 author: IT-Journey Team
-description: Master Kubernetes workloads including Pods, Deployments, StatefulSets, DaemonSets, and Jobs. Learn scaling, rolling updates, and workload management strategies.
-excerpt: Deploy and manage Kubernetes workloads with Deployments, StatefulSets, and DaemonSets
+description: 'Master Kubernetes workloads: run Pods via ReplicaSets and Deployments, scale and roll out updates, roll back, and choose StatefulSets or DaemonSets.'
+excerpt: Deploy and manage resilient Kubernetes workloads with Deployments, StatefulSets, and DaemonSets
 preview: images/previews/kubernetes-pods-quest-title-workloads-deployments-.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:41:52.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: kubernetes
 quest_type: main_quest
 quest_series: Kubernetes Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Orchestration Citadel
+quest_arc: Commanding the Workload Legions
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1001/kubernetes-fundamentals/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/1001/k8s-services-networking/
+  - /quests/1001/k8s-config-secrets/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Kubernetes Fundamentals (control plane, kubectl, object model)
+  - Comfort writing and applying YAML manifests
+  - Understanding of the declarative reconciliation loop
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A running local cluster (kind, minikube, or k3d)
+  - kubectl configured against that cluster
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can apply a Pod manifest and read kubectl describe output
+  - Ready to reason about controllers that own and heal Pods
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A Deployment scaled, updated, and rolled back successfully
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain why Deployments own ReplicaSets which own Pods
+  - Can choose the correct workload kind for a given application
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands rolling updates and rollback
+  - Can troubleshoot a stuck rollout
 permalink: /quests/1001/k8s-pods-workloads/
 categories:
 - Quests
@@ -80,108 +67,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1001 (9) Quest: Main Quest - K8s Workloads'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Workload Commander - Mastered Deployments and rollouts
+  - 🛡️ Keeper of State - Understands StatefulSets and DaemonSets
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Rolling Updates and Rollbacks
+  - 🧠 Workload Controller Selection
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to Services, Networking, and Configuration quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Welcome back, Warrior. In the previous quest you learned that a lone Pod is fragile - delete it, and it stays dead, for no controller watches over it. Now you will learn to command the **workload legions**: the controllers that create Pods, keep them at the right count, heal them when they fall, and upgrade them without downtime. This is where Kubernetes stops being a curiosity and becomes a production weapon.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you are deploying a stateless web frontend, a database that demands stable identity, or a log collector that must run on every node, this adventure teaches you to pick the right controller and wield it with confidence.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Before orchestration, deploying a new version meant a midnight maintenance window, a held breath, and a prayer. If the new version broke, rolling back meant a frantic manual scramble. Kubernetes workload controllers turned that ritual into a routine: declare a new image, and the cluster replaces old Pods with new ones gradually, watching health at every step, ready to halt or reverse at the first sign of trouble.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches the controllers that make that possible - and the subtle but vital differences between them. Master these, and zero-downtime deployment becomes the default, not the exception.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Pod as the Atom** - Explain why the Pod, not the container, is the smallest deployable unit
+- [ ] **Deployments and ReplicaSets** - Use a Deployment to keep a stateless app at a desired replica count
+- [ ] **Rolling Updates and Rollbacks** - Ship a new version with zero downtime and reverse it if it fails
+- [ ] **Choosing a Workload Kind** - Select Deployment, StatefulSet, DaemonSet, or Job correctly
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **StatefulSets** - Run workloads that need stable identity and storage (databases)
+- [ ] **DaemonSets** - Run exactly one Pod per node (agents, log collectors)
+- [ ] **Health Probes** - Add liveness and readiness probes to make rollouts safe
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Draw the ownership chain Deployment → ReplicaSet → Pod
+- [ ] Predict what happens during a rolling update step by step
+- [ ] Explain when a StatefulSet is required over a Deployment
+- [ ] Roll back a bad deployment in one command
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Kubernetes Fundamentals](/quests/1001/kubernetes-fundamentals/)
+- [ ] Comfort applying YAML manifests with `kubectl apply`
+- [ ] Understanding of the reconciliation loop
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A running local cluster (`kind`, `minikube`, or `k3d`)
+- [ ] `kubectl` configured and on your `PATH`
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can already apply and inspect a Pod
+- [ ] You are ready to reason about controllers owning other objects
+- [ ] Ready for 90-120 minutes of hands-on practice
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The manifests in this quest run identically everywhere. You only need a working cluster and `kubectl`. Confirm your environment before you begin.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +142,13 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Ensure your cluster from the previous quest is running
+kubectl config use-context kind-citadel
+kubectl get nodes
+# Create a workspace namespace for this quest
+kubectl create namespace legions
+kubectl config set-context --current --namespace=legions
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +158,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Confirm the cluster and create a working namespace
+kubectl config use-context kind-citadel
+kubectl get nodes
+kubectl create namespace legions
+kubectl config set-context --current --namespace=legions
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +173,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Same everywhere - confirm cluster and namespace
+kubectl get nodes
+kubectl create namespace legions
+kubectl config set-context --current --namespace=legions
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +187,364 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# On managed clusters (EKS/GKE/AKS) the workflow is identical.
+# Just ensure kubectl points at the right cluster:
+kubectl config current-context
+kubectl create namespace legions
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Pod and the ReplicaSet - From Atom to Army
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The **Pod** is the smallest thing Kubernetes deploys. It wraps one or more containers that share a network namespace and storage. You rarely create Pods directly - instead, a controller creates them for you. The first such controller is the **ReplicaSet**, whose only job is to keep N identical Pods running.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Why the Pod is the unit of deployment
+- How a ReplicaSet keeps a desired replica count
+- The label-selector mechanism that links controllers to Pods
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Ownership Chain
 
-**Step 1: Environment Setup**
+```mermaid
+graph TB
+    D[Deployment<br/>manages rollouts] --> RS[ReplicaSet<br/>keeps N Pods alive]
+    RS --> P1[Pod]
+    RS --> P2[Pod]
+    RS --> P3[Pod]
+    style D fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+```
+
+A **ReplicaSet** finds the Pods it owns using a **label selector**. If the count is below desired, it creates Pods; if above, it deletes them. You almost never create a ReplicaSet directly - a Deployment manages one for you - but understanding it explains everything above it.
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web          # the ReplicaSet owns Pods carrying this label
+  template:             # the Pod blueprint it stamps out
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27
+          ports:
+            - containerPort: 80
+```
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Apply it, then delete a Pod and watch the ReplicaSet replace it instantly
+kubectl apply -f web-rs.yaml
+kubectl get pods -l app=web
+kubectl delete pod -l app=web --wait=false
+kubectl get pods -l app=web --watch   # a fresh Pod appears - this is self-healing
 ```
 
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Pods and ReplicaSets
+- [ ] What does a Pod share between its containers?
+- [ ] How does a ReplicaSet decide which Pods it owns?
+- [ ] Why do you rarely create a ReplicaSet directly?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Replicas Running**: `kubectl get pods -l app=web` shows three Pods
+- [ ] **Self-Healing Seen**: A deleted Pod was replaced automatically
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Deployments - Zero-Downtime Rollouts and Rollbacks
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The **Deployment** is the workhorse of stateless applications. It manages ReplicaSets to give you declarative updates: change the image, and the Deployment creates a new ReplicaSet, shifts Pods over gradually, and keeps the old one around so you can roll back.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Declaring a Deployment with health probes
+- Performing a rolling update
+- Inspecting rollout status and rolling back
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Production-Shaped Deployment
 
-[Detailed content for chapter 2]
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1     # never lose more than 1 Pod at a time
+      maxSurge: 1           # spin up at most 1 extra Pod during the update
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27
+          ports:
+            - containerPort: 80
+          readinessProbe:    # don't send traffic until the app is ready
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          livenessProbe:     # restart the container if it becomes unhealthy
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+```
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+Apply it, then perform a rolling update and a rollback:
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+```bash
+# Deploy version 1.27
+kubectl apply -f web-deployment.yaml
+kubectl rollout status deployment/web
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+# Roll out a new version - watch Pods replace gradually with no downtime
+kubectl set image deployment/web web=nginx:1.27.1
+kubectl rollout status deployment/web
+
+# Inspect the rollout history
+kubectl rollout history deployment/web
+
+# Something wrong? Roll back to the previous revision in one command
+kubectl rollout undo deployment/web
+
+# Scale up under load
+kubectl scale deployment/web --replicas=5
+```
+
+The readiness probe is what makes the rollout *safe*: a new Pod receives no traffic until it reports ready, so a broken image fails the probe and the rollout stalls instead of taking the app down.
+
+### 🔍 Knowledge Check: Deployments
+- [ ] What does `maxUnavailable` control during a rolling update?
+- [ ] Why is a readiness probe essential for safe rollouts?
+- [ ] Which command reverses a bad deployment?
+
+## 🧙‍♂️ Chapter 3: StatefulSets, DaemonSets, and Jobs - The Right Tool for the Job
+
+*Not every workload is a stateless web server. Databases need stable identity and storage. Node agents must run everywhere. Batch tasks must run to completion. Kubernetes offers a controller for each.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- When to choose StatefulSet over Deployment
+- Running a per-node agent with a DaemonSet
+- Running batch work with Jobs and CronJobs
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ StatefulSet - Stable Identity and Storage
 
-[Detailed content for chapter 3]
+A **StatefulSet** gives Pods stable, ordered names (`db-0`, `db-1`, `db-2`) and a dedicated PersistentVolume each. Pods are created and deleted in order, which matters for clustered databases.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db
+spec:
+  serviceName: db          # a headless Service for stable DNS (next quest)
+  replicas: 3
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:    # each Pod gets its OWN persistent volume
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
+```
+
+### 🏗️ DaemonSet - One Pod Per Node
+
+A **DaemonSet** ensures a copy of a Pod runs on every node (or a selected subset) - perfect for log collectors, metrics agents, and network plugins.
+
+```yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-logger
+spec:
+  selector:
+    matchLabels:
+      app: node-logger
+  template:
+    metadata:
+      labels:
+        app: node-logger
+    spec:
+      containers:
+        - name: logger
+          image: busybox:1.36
+          command: ["sh", "-c", "while true; do echo collecting logs; sleep 30; done"]
+```
+
+### 🏗️ Job - Run to Completion
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate
+spec:
+  completions: 1
+  backoffLimit: 4          # retry up to 4 times on failure
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: busybox:1.36
+          command: ["sh", "-c", "echo running migration; sleep 5; echo done"]
+```
+
+**Decision guide - pick the controller by the question it answers:**
+
+| Need | Controller |
+| --- | --- |
+| Stateless app, any Pod is interchangeable | **Deployment** |
+| Stable network identity + per-Pod storage (databases) | **StatefulSet** |
+| Exactly one Pod on every node (agents) | **DaemonSet** |
+| Run a task to completion once | **Job** |
+| Run a task on a schedule | **CronJob** |
+
+```bash
+# Apply each and observe how differently they behave
+kubectl apply -f db-statefulset.yaml
+kubectl get pods -l app=db          # note ordered names: db-0, db-1, db-2
+kubectl apply -f node-logger-daemonset.yaml
+kubectl get pods -o wide -l app=node-logger   # one per node
+kubectl apply -f migrate-job.yaml
+kubectl logs job/migrate
+```
+
+### 🔍 Knowledge Check: Choosing a Workload
+- [ ] Why does a database need a StatefulSet rather than a Deployment?
+- [ ] What guarantees does a DaemonSet provide?
+- [ ] What is the difference between a Job and a Deployment?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Deploy and Scale
+**Objective**: Deploy the `web` Deployment and scale it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Apply the Deployment with three replicas
+- [ ] Scale it to five and back to three
+- [ ] Confirm Pods are `Running` and `Ready`
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: `kubectl get deployment web` shows the desired replica count ready.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Rolling Update and Rollback
+**Objective**: Update the image, observe the rollout, then roll back.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Change the image with `kubectl set image`
+- [ ] Watch the rollout with `kubectl rollout status`
+- [ ] Roll back with `kubectl rollout undo` and confirm
 
-**Validation**: [How to verify success]
+**Validation**: `kubectl rollout history` shows multiple revisions.
+
+### 🔴 Advanced Challenge: Match Workloads to Controllers
+**Objective**: Deploy one of each controller type and justify the choice.
+
+**Requirements**:
+- [ ] Deploy a Deployment, a StatefulSet, a DaemonSet, and a Job
+- [ ] Confirm the StatefulSet's ordered Pod names
+- [ ] Confirm the DaemonSet runs one Pod per node
+- [ ] Confirm the Job reaches `Completed`
+
+**Validation**: You can explain in one sentence why each workload used its controller.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Workload Commander** - You master Deployments and rollouts
+- 🛡️ **Keeper of State** - You understand StatefulSets and DaemonSets
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Rolling Updates and Rollbacks** - Zero-downtime deployment by default
+- **Workload Controller Selection** - The right tool for every workload
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Services and Networking - Make these workloads reachable
+- ConfigMaps and Secrets - Configure them safely
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Services and Networking](/quests/1001/k8s-services-networking/) - Expose your workloads
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [ConfigMaps and Secrets](/quests/1001/k8s-config-secrets/) - Inject configuration
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Services and Networking](/quests/1001/k8s-services-networking/)  
+**🏗️ System Engineer**: Explore [ConfigMaps and Secrets](/quests/1001/k8s-config-secrets/)  
+**🛡️ Security Specialist**: Revisit [Kubernetes Fundamentals](/quests/1001/kubernetes-fundamentals/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) - Rollouts, scaling, rollbacks
+- [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) - Stable identity and storage
+- [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) - One Pod per node
+- [Jobs and CronJobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/) - Run-to-completion workloads
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) - Health checks done right
+- [Kubernetes Patterns (book site)](https://k8spatterns.io/) - Reusable workload design patterns
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) - Rollout and scale commands
+- [Killercoda Kubernetes Scenarios](https://killercoda.com/kubernetes) - Hands-on workload labs
 
 ## 🤝 Quest Completion Checklist
 
 Before marking this quest as complete, ensure you've:
 
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Performed a rolling update and a rollback
+- [ ] ✅ Deployed each workload controller type
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +552,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]]
+**Unlocks:** [[Kubernetes Services and Networking: Ingress and DNS Configuration]] · [[Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

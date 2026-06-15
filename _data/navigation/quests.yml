@@ -41,47 +41,63 @@
   - title: 'VS Code Mastery Quest: Forge Your Ultimate Development Weapon'
     url: /quests/0000/vscode-mastery/
   - title: '⚔️ Bashcrawl Agent Mode: AI Automation and Contribution'
-    url: /quests/0000/side-quests/agent-mode/
+    url: /quests/0000/agent-mode/
   - title: '⚔️ bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
-    url: /quests/0000/side-quests/bash-run/
+    url: /quests/0000/bash-run/
   - title: '⚔️ Bashcrawl Armoury: File Permissions and Script Execution'
-    url: /quests/0000/side-quests/armoury/
+    url: /quests/0000/armoury/
   - title: '⚔️ Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet'
-    url: /quests/0000/side-quests/cellar/
+    url: /quests/0000/cellar/
   - title: '⚔️ Bashcrawl Chamber: Bash Arithmetic and the Statue Boss'
-    url: /quests/0000/side-quests/chamber/
+    url: /quests/0000/chamber/
   - title: '⚔️ Bashcrawl Entrance: Your First Terminal Commands'
-    url: /quests/0000/side-quests/entrance/
+    url: /quests/0000/entrance/
   - title: '⚔️ Bashcrawl Hidden Chapel: Hidden Files and Man Pages'
-    url: /quests/0000/side-quests/hidden-chapel/
+    url: /quests/0000/hidden-chapel/
   - title: '⚔️ Bashcrawl Rift: Pipes, Redirection, and the Final Boss'
-    url: /quests/0000/side-quests/rift/
+    url: /quests/0000/rift/
   - title: '⚔️ Bashcrawl Scrap Heap: Symbolic Links and Portal Creation'
-    url: /quests/0000/side-quests/scrap/
+    url: /quests/0000/scrap/
   - title: '⚔️ Bashcrawl Vault: Environment Variables and the Goblet Puzzle'
-    url: /quests/0000/side-quests/vault/
+    url: /quests/0000/vault/
   - title: '⚔️ Bashcrawl Workshop: File Management Fundamentals'
-    url: /quests/0000/side-quests/workshop/
+    url: /quests/0000/workshop/
+  - title: '⚔️ Glossary '
+    url: /quests/codex/glossary/
 - title: Level 0001 - Web Fundamentals
   icon: bi-feather
   url: /quests/0001/
   children:
+  - title: 'Advanced Markdown: Tables, Footnotes & Kramdown'
+    url: /quests/0001/advanced-markdown/
+  - title: 'Analytics Integration: Privacy-Aware Web Measurement'
+    url: /quests/0001/analytics-integration/
+  - title: 'Bootstrap Framework: Build Responsive Sites Fast'
+    url: /quests/0001/bootstrap-framework/
   - title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
     url: /quests/0001/git-init-testing/
+  - title: 'CSS Styling Basics: Selectors, the Box Model & Layout'
+    url: /quests/0001/css-styling-basics/
   - title: 'Forge Your Character: Crafting Your Contributor Identity'
     url: /quests/0001/forge-your-character/
   - title: 'Forging the Stats Portal: Data Analytics Quest'
     url: /quests/0001/stating-the-stats/
   - title: 'Git Workflow Mastery: Branches, Merging & Team Collaboration'
     url: /quests/0001/git-workflow-mastery/
-  - title: 'GitHub Pages Basics: Deploy Free Websites in Minutes'
+  - title: 'GitHub Pages Basics: Host Your Jekyll Site for Free'
     url: /quests/0001/github-pages-basics/
+  - title: 'JavaScript Fundamentals: Variables, Functions & the DOM'
+    url: /quests/0001/javascript-fundamentals/
   - title: 'Jekyll Fundamentals: Build Static Sites with Ruby'
     url: /quests/0001/jekyll-fundamentals/
+  - title: 'Jekyll Plugins: Extend Your Static Site Safely'
+    url: /quests/0001/jekyll-plugins/
   - title: 'Kaizen Quest: The Path of Continuous Improvement in Software Alchemy'
     url: /quests/0001/kaizen-continuous-improvement/
   - title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
     url: /quests/0001/liquid-templating/
+  - title: 'SEO Optimization: Meta Tags, Sitemaps & Structured Data'
+    url: /quests/0001/seo-optimization/
   - title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
     url: /quests/0001/stack-attack/
   - title: 'Terminal Mastery: Conquering the Command-Line Realm'
@@ -93,33 +109,25 @@
   - title: 'YAML Configuration: Site Settings Mastery'
     url: /quests/0001/yaml-configuration/
   - title: '⚔️ Avatar Forge: Crafting Your Digital Portrait'
-    url: /quests/0001/side-quests/avatar-forge/
+    url: /quests/0001/avatar-forge/
   - title: '⚔️ Badge Collector: Showcasing Your Achievements'
-    url: /quests/0001/side-quests/badge-collector/
+    url: /quests/0001/badge-collector/
   - title: ⚔️ Personal Site
-    url: /quests/0001/side-quests/personal-site/
+    url: /quests/0001/personal-site/
   - title: '⚔️ Stack Attack Analysis: IT-Journey'
-    url: /quests/0001/side-quests/it-journey-stack-analysis/
+    url: /quests/0001/it-journey-stack-analysis/
   - title: '⚔️ Technology Stack Analysis: Barodybroject'
-    url: /quests/0001/side-quests/barodybroject-stack-analysis/
+    url: /quests/0001/barodybroject-stack-analysis/
 - title: Level 0010 - Terminal Mastery
   icon: bi-terminal
   url: /quests/0010/
   children:
-  - title: 'Advanced Markdown: Tables, Footnotes & Extended Syntax'
-    url: /quests/0010/advanced-markdown/
-  - title: 'Bootstrap Framework: Build Responsive Sites Fast'
-    url: /quests/0010/bootstrap-framework/
   - title: Change Logs
     url: /quests/0010/change-logs/
   - title: Commitments to clean commits
     url: /quests/0010/commitments-to-clean-commits/
-  - title: 'CSS Styling Basics: Selectors, Layout & Responsive Design'
-    url: /quests/0010/css-styling-basics/
   - title: 'Forging the Prompt Crystal: Master AI Communication'
     url: /quests/0010/prompt-engineering-mastery/
-  - title: 'JavaScript Fundamentals: DOM Manipulation & Events'
-    url: /quests/0010/javascript-fundamentals/
   - title: Mastering Branches and Pull Requests for Developers
     url: /quests/0010/branches-and-pull-requests/
   - title: 'Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery
@@ -140,31 +148,21 @@
   - title: Understanding Action Triggers in Depth
     url: /quests/0010/action-triggers/
   - title: '⚔️ Contribution Calendar: Mapping Your Journey Through Time'
-    url: /quests/0010/side-quests/contribution-calendar/
+    url: /quests/0010/contribution-calendar/
   - title: 'Epic Quest: Zer0-to-Her0 CMStyle'
     url: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
   - title: '⚔️ Nerd Font Enchantment: Terminal Icon Mastery'
-    url: /quests/0010/side-quests/nerd-font-enchantment/
+    url: /quests/0010/nerd-font-enchantment/
   - title: '⚔️ Stats Dashboard: Enhancing Your Data Visualization'
-    url: /quests/0010/side-quests/stats-dashboard/
+    url: /quests/0010/stats-dashboard/
   - title: '⚔️ Terminal Artificer: Forging the Glass Interface'
-    url: /quests/0010/side-quests/terminal-artificer-frontend-building/
+    url: /quests/0010/terminal-artificer-frontend-building/
 - title: Level 0011 - AI-Assisted Development
   icon: bi-stars
   url: /quests/0011/
   children:
-  - title: 'Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands'
-    url: /quests/0011/advanced-git-workflows/
-  - title: 'Custom Domains for GitHub Pages: Professional Website Setup Guide'
-    url: /quests/0011/custom-domains/
   - title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
     url: /quests/0011/prompt-crystal-vscode-copilot/
-  - title: 'Google Analytics for Jekyll: Complete User Tracking Integration Guide'
-    url: /quests/0011/analytics-integration/
-  - title: 'Jekyll Plugins: Essential Extensions for Powerful Static Sites'
-    url: /quests/0011/jekyll-plugins/
-  - title: 'SEO Optimization: Boost Search Engine Visibility for Jekyll Sites'
-    url: /quests/0011/seo-optimization/
   - title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture
       and Conquer AI Realms'
     url: /quests/0011/github-pages-hidden-gem/
@@ -180,22 +178,14 @@
     url: /quests/0100/container-fundamentals/
   - title: Dockering Jekyll with Bootstrap 5
     url: /quests/0100/frontend-docker/
-  - title: Frontend Docker - level 000
-    url: /quests/0100/frontend-docker-000/
-  - title: 'Frontend Docker Level 001: Create Jekyll Site with Docker Container'
-    url: /quests/0100/001-frontend-docker/
-  - title: 'Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker'
-    url: /quests/0100/010-frontend-docker/
-  - title: Frontend Forests Levels
-    url: /quests/0100/frontend-levels/
   - title: 'Frontend Forests: Building a Jekyll Site with Bootstrap'
     url: /quests/0100/frontend/
   - title: 'Quest: Mastering the Ancient Arts of Source Control Sorcery'
     url: /quests/0100/source-control-sorcery/
   - title: '⚔️ Profile Themes: Unleashing the Style Sorcerer'
-    url: /quests/0100/side-quests/profile-themes/
+    url: /quests/0100/profile-themes/
   - title: '⚔️ The Artisan''s Forge: Refactoring Jekyll Theme Components'
-    url: /quests/0100/side-quests/jekyll-component-refactoring/
+    url: /quests/0100/jekyll-component-refactoring/
 - title: Level 0101 - CI/CD & DevOps
   icon: bi-rocket-takeoff
   url: /quests/0101/
@@ -221,7 +211,7 @@
   - title: 'Workflow Optimization: Caching Strategies and Pipeline Parallelization'
     url: /quests/0101/workflow-optimization/
   - title: '⚔️ Jekyll Quest Tracking: Building Dynamic Collection Layouts'
-    url: /quests/0101/side-quests/jekyll-quest-tracking/
+    url: /quests/0101/jekyll-quest-tracking/
 - title: Level 0110 - Database Mastery
   icon: bi-database
   url: /quests/0110/
@@ -232,7 +222,7 @@
     url: /quests/0110/connection-pooling/
   - title: 'Data Modeling: Schema Design and Database Relationships'
     url: /quests/0110/data-modeling/
-  - title: 'Database Fundamentals: Data Storage and Retrieval'
+  - title: 'Database Fundamentals: The Relational Model and ACID'
     url: /quests/0110/database-fundamentals/
   - title: 'Database Migrations: Schema Evolution and Version Control'
     url: /quests/0110/database-migrations/
@@ -246,21 +236,21 @@
   icon: bi-cloud-arrow-up
   url: /quests/0111/
   children:
-  - title: 'API Authentication: OAuth, JWT, and API Keys Implementation'
+  - title: 'API Authentication: Keys, Tokens, OAuth2, and JWT'
     url: /quests/0111/api-authentication/
-  - title: 'API Documentation: OpenAPI Specification and Developer Experience'
+  - title: 'API Documentation: OpenAPI, Swagger, and Contract-First'
     url: /quests/0111/api-documentation/
-  - title: 'API Fundamentals: Building Web Services and HTTP APIs'
+  - title: 'API Fundamentals: HTTP, Requests, and JSON'
     url: /quests/0111/api-fundamentals/
-  - title: 'API Versioning: Managing API Evolution and Backwards Compatibility'
+  - title: 'API Versioning: URI, Headers, and Backward Compatibility'
     url: /quests/0111/api-versioning/
-  - title: 'Error Handling: API Response Patterns and HTTP Status Codes'
+  - title: 'Error Handling: Status Codes, Problem Details, and Retries'
     url: /quests/0111/error-handling/
   - title: 'Initiation Rites: Embedding Agents in the SDLC'
     url: /quests/0111/agentic-sdlc-integration/
-  - title: 'Rate Limiting: API Traffic Control and Throttling Strategies'
+  - title: 'Rate Limiting: Token Buckets, 429s, and Quotas'
     url: /quests/0111/rate-limiting/
-  - title: 'REST Principles: RESTful API Design Best Practices'
+  - title: 'REST Principles: Resources, Statelessness, and Maturity'
     url: /quests/0111/rest-principles/
   - title: 'The Three Sigils: Plan, Reason, Act'
     url: /quests/0111/agentic-plan-vs-action-boundaries/
@@ -270,11 +260,13 @@
   children:
   - title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
     url: /quests/1000/aws-essentials/
+  - title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
+    url: /quests/1000/azure-ascension-jekyll-deployment/
   - title: 'Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained'
     url: /quests/1000/cloud-computing-fundamentals/
   - title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
     url: /quests/1000/agentic-tool-selection-and-permissions/
-  - title: 'Infrastructure as Code: Terraform and CloudFormation Fundamentals'
+  - title: 'Infrastructure as Code: Terraform Fundamentals and State'
     url: /quests/1000/infrastructure-as-code/
   - title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
     url: /quests/1000/agentic-observability-and-control/
@@ -284,8 +276,6 @@
   icon: bi-grid-3x3-gap
   url: /quests/1001/
   children:
-  - title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
-    url: /quests/1000/azure-ascension-jekyll-deployment/
   - title: 'Bind the Agent to the Realm: Dev Environment Integration'
     url: /quests/1001/agentic-dev-environment-integration/
   - title: 'Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices'
@@ -304,7 +294,7 @@
   icon: bi-graph-up
   url: /quests/1010/
   children:
-  - title: 'Alerting Systems: PagerDuty Integration & Incident Management Guide'
+  - title: 'Alerting Systems: Alertmanager, Routing, On-Call & Runbooks'
     url: /quests/1010/alerting-systems/
   - title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
     url: /quests/1010/agentic-state-persistence-and-drift/
@@ -316,9 +306,9 @@
     url: /quests/1010/elk-stack/
   - title: 'Link to the Future: Automated Hyperlink Guardian Quest'
     url: /quests/1010/automated-hyperlink-guardian/
-  - title: 'Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability'
+  - title: 'Monitoring Fundamentals: Metrics, Logs, and Traces for Observability'
     url: /quests/1010/monitoring-fundamentals/
-  - title: 'Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial'
+  - title: 'Prometheus & Grafana: Metrics Collection and Visualization'
     url: /quests/1010/prometheus-grafana/
   - title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
     url: /quests/1010/agentic-failure-root-cause-analysis/
@@ -330,7 +320,7 @@
   children:
   - title: 'AI Feature Pipeline Architect: DevSecOps Mastery Quest'
     url: /quests/1011/ai-feature-pipeline-architect/
-  - title: 'Compliance Standards: SOC 2, GDPR, and HIPAA Requirements'
+  - title: 'Compliance Standards: SOC 2, ISO 27001, GDPR, and PCI-DSS'
     url: /quests/1011/compliance-standards/
   - title: 'Penetration Testing: Tools and Ethical Hacking Methodologies'
     url: /quests/1011/penetration-testing/
@@ -370,8 +360,6 @@
     url: /quests/1100/agentic-multi-agent-lifecycle-management/
   - title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
     url: /quests/1100/agentic-autonomy-levels-matrix/
-  - title: 'The Siege of King EDGAR: Storming the SEC Data Castle'
-    url: /quests/1100/sec-edgar-siege/
   - title: 'The Temple of Templates: Binary Abstractions and Reusable Realms'
     url: /quests/1100/temple-of-templates/
   - title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
@@ -382,6 +370,8 @@
   icon: bi-cpu
   url: /quests/1101/
   children:
+  - title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
+    url: /quests/1101/ai-ethics/
   - title: 'Computer Vision Mastery: Image Classification, Object Detection & Segmentation'
     url: /quests/1101/computer-vision/
   - title: 'Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation'
@@ -393,51 +383,49 @@
     url: /quests/1101/mlops/
   - title: 'Natural Language Processing: Text Analysis, Transformers & LLMs with Python'
     url: /quests/1101/natural-language-processing/
-  - title: 'Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch'
+  - title: 'Neural Networks Deep Dive: Neurons, Backpropagation & Gradient Descent'
     url: /quests/1101/neural-networks/
   - title: 'Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide'
     url: /quests/1101/python-data-science/
-  - title: '⚔️ AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
-    url: /quests/1101/side-quests/ai-ethics/
-- title: Level 1110 - Architecture & Design
+- title: Level 1110 - Architecture & Design Patterns
   icon: bi-building-gear
   url: /quests/1110/
   children:
   - title: '404 Hunting: Binary Wards for Unbreakable Links'
     url: /quests/1110/404-hunting-quest/
-  - title: 'API Gateway Patterns: Routing, Load Balancing and Security'
+  - title: 'API Gateway Patterns: The Single Front Door'
     url: /quests/1110/api-gateway-patterns/
-  - title: 'Domain-Driven Design: Strategic and Tactical Patterns'
+  - title: 'Domain-Driven Design: Modeling the Business in Code'
     url: /quests/1110/domain-driven-design/
-  - title: 'Event-Driven Architecture: Message Queues and Event Sourcing'
+  - title: 'Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS'
     url: /quests/1110/event-driven-design/
-  - title: 'Microservices Architecture: Building Scalable Distributed Systems'
+  - title: 'Microservices Architecture: Decomposing the Monolith'
     url: /quests/1110/microservices-architecture/
-  - title: 'Scaling Strategies: Horizontal and Vertical Scaling Patterns'
+  - title: 'Scaling Strategies: Horizontal Growth, Caching, and CAP'
     url: /quests/1110/scaling-strategies/
   - title: 'Software Design Patterns: Gang of Four and Modern Patterns'
     url: /quests/1110/design-patterns/
-  - title: 'System Design Interview Mastery: Ace Technical Interviews'
+  - title: 'System Design Interviews: A Framework for the Whiteboard'
     url: /quests/1110/system-design-interviews/
 - title: Level 1111 - Leadership & Innovation
   icon: bi-trophy
   url: /quests/1111/
   children:
-  - title: 'Architecture Reviews: Leading Technical Design Discussions'
+  - title: 'Architecture Reviews: Running Reviews, ADRs, and Trade-off Facilitation'
     url: /quests/1111/architecture-reviews/
-  - title: 'Building Technical Communities: Growing Developer Ecosystems'
+  - title: 'Building Technical Communities: Events, Governance, and Inclusion'
     url: /quests/1111/building-technical-communities/
-  - title: 'Career Advancement Strategies: Growing from Engineer to Leader'
+  - title: 'Career Advancement: IC vs Management Tracks, Leveling, and Negotiation'
     url: /quests/1111/career-advancement/
-  - title: 'Innovation and R&D: Driving Technical Innovation'
+  - title: 'Innovation and R&D: Experimentation and Managing Technical Bets'
     url: /quests/1111/innovation-rnd/
-  - title: 'Mentorship Programs: Developing and Growing Engineering Talent'
+  - title: 'Mentorship Programs: Growing Engineering Talent and Sponsoring Others'
     url: /quests/1111/mentorship-programs/
-  - title: 'Open Source Contribution: Leading and Maintaining Projects'
+  - title: 'Open Source Contribution: Contributing, Maintaining, and Licensing'
     url: /quests/1111/open-source-contribution/
-  - title: 'Tech Speaking and Writing: Building Your Technical Brand'
+  - title: 'Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade'
     url: /quests/1111/tech-speaking-writing/
-  - title: 'Technical Leadership: Building High-Performance Engineering Teams'
+  - title: 'Technical Leadership: Leading Without Authority and Setting Tech Vision'
     url: /quests/1111/technical-leadership/
 - title: Resources
   icon: bi-book

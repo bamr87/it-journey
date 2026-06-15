@@ -1,63 +1,51 @@
 ---
-title: 'Secrets Management: Secure Configuration and Credential Handling'
+title: 'Secrets Management: Secure CI Credentials'
 author: IT-Journey Team
-description: Learn secure secrets management for CI/CD pipelines. Handle API keys, passwords, tokens, and sensitive configuration using vault systems and environment variables.
+description: Handle CI secrets securely. Learn OIDC versus long-lived credentials, vault systems, least privilege, scoping, and rotation for pipelines and applications.
 excerpt: Implement secure secrets management practices for protecting sensitive credentials in your pipelines
 preview: images/previews/secrets-management-secure-configuration-handling-d.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:05:46.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: security
 quest_type: main_quest
 quest_series: DevOps Pipeline Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Forge of Automation
+quest_arc: Gates of the Pipeline
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: devops
+  required_quests:
+  - /quests/0101/cicd-fundamentals/
+  recommended_quests:
+  - /quests/0101/environment-management/
+  unlocks_quests:
+  - /quests/0101/artifact-management/
+  - /quests/0101/workflow-optimization/
+skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Understanding of environment variables and config
+  - Familiarity with Git and pull requests
+  - Comfort using a terminal
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Git installed and a free GitHub account
+  - A text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have configured a CI pipeline before
+  - You are ready to think about how credentials leak
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A workflow that authenticates to a cloud provider with OIDC, no stored keys
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain why long-lived credentials are risky
+  - Can scope a secret to least privilege
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands OIDC short-lived tokens
+  - Can describe a secret rotation process
 permalink: /quests/0101/secrets-management/
 categories:
 - Quests
@@ -80,108 +68,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0101 (5) Quest: Main Quest - Security'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Keeper of Secrets - Stopped credentials from leaking
+  - 🔐 Bearer of the Short-Lived Token - Replaced static keys with OIDC
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Secret Scoping
+  - 🧠 Credential Rotation
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Artifact and optimization quests in Level 0101
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Every pipeline you build must hold keys - to databases, to cloud accounts, to registries. A single key dropped in the open can hand an attacker your entire kingdom. This quest, **Secrets Management**, teaches you to carry those keys without ever revealing them: where to store them, how to grant the least power that still works, and - the modern marvel - how to stop carrying long-lived keys at all.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have ever pasted a password into a config file (we have all done it) or you already manage a vault, this adventure forges the discipline that separates a hardened pipeline from a breach waiting to happen: least privilege, short-lived OIDC tokens over static credentials, central vaults, and disciplined rotation.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early ages, the secret to the cloud kingdom was a long, all-powerful key, copied into config files, pasted into chat, and committed to repositories "just for now." Attackers learned to scour public code for these keys, and a single leaked credential could drain an entire account overnight. The graveyards of the internet are full of companies felled by one committed access key.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The masters of security answered with three principles. First: **grant the least privilege that still works**, so a stolen key opens few doors. Second: **prefer short-lived, identity-based tokens over long-lived secrets**, so a leak expires in minutes. Third: **rotate what you must keep**, so even a quiet compromise has a short life. Master these and a leaked secret becomes a footnote, not a funeral.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Never Commit Secrets** - Keep credentials out of code and out of Git history
+- [ ] **OIDC vs Long-Lived Credentials** - Trade static keys for short-lived, identity-based tokens
+- [ ] **Least Privilege** - Scope every secret to the minimum access it needs
+- [ ] **Rotation** - Replace credentials on a schedule and after any suspected exposure
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Secret Vaults** - Store and fetch secrets from a central, audited vault
+- [ ] **Environment Scoping** - Bind production secrets to a protected environment
+- [ ] **Leak Detection** - Scan history and CI logs for accidentally exposed secrets
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why a long-lived cloud key is riskier than an OIDC token
+- [ ] Scope a credential so a leak exposes one resource, not the account
+- [ ] Configure a workflow that assumes a cloud role with no stored keys
+- [ ] Describe a rotation procedure for a database password
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of environment variables and configuration
+- [ ] Familiarity with Git, branches, and pull requests
+- [ ] Comfort using a terminal
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Git installed and a free GitHub account
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+- [ ] You have configured a CI pipeline before
+- [ ] You are ready to think about how credentials leak
 - [ ] Ready for 45-60 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*You will store a secret in CI, then graduate to keyless OIDC. The CI mechanics are platform-agnostic; the local tooling differs slightly.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,13 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install the GitHub CLI to manage repository secrets from the terminal
+brew install gh
+gh auth login
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Store a secret WITHOUT it ever touching your code or shell history file
+gh secret set DATABASE_URL
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +159,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install the GitHub CLI
+winget install GitHub.cli
+gh auth login
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+gh secret set DATABASE_URL
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +174,12 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian/Ubuntu
+sudo apt update && sudo apt install -y gh
+gh auth login
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+gh secret set DATABASE_URL
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +189,262 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In the cloud, prefer the platform's identity over stored keys.
+# Example: assume a role with OIDC rather than embedding an access key.
+aws sts get-caller-identity   # shows WHICH identity you authenticated as
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> The cloud-native mindset: your workload has an identity, and it borrows short-lived credentials on demand. Nothing long-lived needs to be stored at all.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Never Commit Secrets - The First Commandment
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The cheapest breach to prevent is the one you cause yourself by committing a key. This chapter builds the habits that keep secrets out of code forever.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Keeping secrets out of source and Git history
+- Storing secrets in CI instead of files
+- Understanding that masked is not the same as safe
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Secrets Live Outside the Code
 
-**Step 1: Environment Setup**
+Hardcoding a credential commits it to history forever - even deleting the line later leaves it in every past commit. Instead, read it from the environment and store the value in your CI provider's secret store.
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# ❌ Never: a key baked into code, now in Git history forever
+# const apiKey = "sk_live_51H8...";
+
+# ✅ Always: read from the environment, set the value in CI's secret store
+gh secret set STRIPE_API_KEY          # prompts for the value; never logged
+echo "STRIPE_API_KEY is stored in CI, not in the repo"
 ```
 
-**Step 2: Core Concepts**
+In a workflow, a stored secret is injected as a variable. GitHub automatically **masks** it in logs, but masking is a safety net, not a strategy - a secret echoed into a file or sent to a third party can still leak.
 
-[Explanation of fundamental concepts]
 
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ./deploy.sh
+        env:
+          # Injected from the repo/environment secret store, masked in logs
+          STRIPE_API_KEY: ${% raw %}{{ secrets.STRIPE_API_KEY }}{% endraw %}
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+
+A `.gitignore` for `.env` files plus a pre-commit secret scanner stops the accident before it ships.
+
+### 🔍 Knowledge Check: Keeping Secrets Out
+- [ ] Why does deleting a committed key fail to remove it from history?
+- [ ] Where should a secret value live instead of in code?
+- [ ] Why is log masking a safety net rather than a strategy?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Stored a secret**: A value lives in CI's store, not your repo
+- [ ] **Ignored `.env`**: Your `.gitignore` blocks local secret files
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: OIDC vs Long-Lived Credentials
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The biggest modern leap in pipeline security is to stop storing cloud keys entirely. Instead of a static secret, your pipeline proves its identity and borrows a token that expires in minutes.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Why long-lived credentials are dangerous
+- How OIDC federation issues short-lived tokens
+- Configuring keyless cloud authentication
 
-### 🏗️ Advanced Implementations
+### 🏗️ Static Keys vs Short-Lived Tokens
 
-[Detailed content for chapter 2]
+| | Long-lived credential | OIDC short-lived token |
+| --- | --- | --- |
+| **What it is** | A static access key stored as a secret | A token minted per run, valid minutes |
+| **If leaked** | Works until someone notices and revokes it | Already expired; useless to an attacker |
+| **Rotation** | Manual, error-prone, often forgotten | Automatic - every run gets a fresh token |
+| **Storage** | Must be stored somewhere (risk) | Nothing to store |
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+With **OpenID Connect (OIDC)**, your CI provider issues a signed identity token for each run. The cloud provider is configured to trust that issuer and to exchange the token for temporary credentials scoped to a specific role. No access key ever exists to be stolen.
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write        # allow the job to request an OIDC token
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          # No access keys! Assume a role via OIDC trust.
+          role-to-assume: arn:aws:iam::123456789012:role/github-deploy
+          aws-region: us-east-1
+      - run: aws s3 sync ./dist s3://my-deploy-bucket
+```
+
+
+The AWS role's trust policy is configured to accept GitHub's OIDC issuer and to restrict which repository and branch may assume it - so even the trust itself is scoped.
+
+### 🔍 Knowledge Check: OIDC
+- [ ] Why is a leaked OIDC token far less dangerous than a leaked access key?
+- [ ] What does `id-token: write` permission enable?
+- [ ] How does the cloud role limit *which* repo can assume it?
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Understood the trade**: You can argue OIDC over static keys
+- [ ] **Removed a key**: One workflow now authenticates without a stored secret
+
+## 🧙‍♂️ Chapter 3: Vaults, Least Privilege, and Rotation
+
+*For the secrets you must keep, three disciplines keep them safe: store them centrally, grant the minimum power, and replace them regularly.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Central, audited secret vaults
+- Scoping a secret to least privilege
+- A rotation procedure for unavoidable static secrets
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Least Privilege for Secrets
 
-[Detailed content for chapter 3]
+A credential should open exactly the doors it needs and no more. Compare two policies for a deploy that only uploads to one bucket:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```json
+// ❌ Over-privileged: full access to every bucket in the account
+{ "Effect": "Allow", "Action": "s3:*", "Resource": "*" }
+```
+
+```json
+// ✅ Least privilege: write only to the one deploy bucket
+{
+  "Effect": "Allow",
+  "Action": ["s3:PutObject", "s3:ListBucket"],
+  "Resource": [
+    "arn:aws:s3:::my-deploy-bucket",
+    "arn:aws:s3:::my-deploy-bucket/*"
+  ]
+}
+```
+
+If the first credential leaks, the attacker owns all storage; if the second leaks, they can write to one bucket. Scope shrinks the blast radius.
+
+### 🏗️ Vaults and Rotation
+
+A **secret vault** (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault) centralizes secrets with access control, audit logs, and - crucially - automated rotation. **Rotation** replaces a credential on a schedule and immediately after any suspected exposure.
+
+```bash
+# Fetch a secret at run time from a vault instead of storing a copy
+aws secretsmanager get-secret-value --secret-id prod/db/password \
+  --query SecretString --output text
+
+# Rotation procedure (manual illustration of the lifecycle):
+# 1. Create a new credential alongside the old (both valid briefly)
+# 2. Deploy services to use the new one
+# 3. Verify nothing still uses the old one (check audit logs)
+# 4. Revoke the old credential
+```
+
+The overlap window in step 1 means rotation causes zero downtime: nothing breaks because the old key still works until everything has moved to the new one.
+
+### 🔍 Knowledge Check: Vaults and Rotation
+- [ ] How does least privilege shrink the blast radius of a leak?
+- [ ] What three things does a vault add over a plain secret file?
+- [ ] Why does the overlap window make rotation zero-downtime?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Audit for Leaks
+**Objective**: Hunt for secrets that should not be in a repo.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Search the codebase and `.env` files for hardcoded credentials
+- [ ] Confirm `.gitignore` blocks local secret files
+- [ ] List which secrets belong in the CI store instead
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: No live secret remains in tracked files.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Scope a Secret
+**Objective**: Rewrite an over-privileged policy to least privilege.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Start from a wildcard policy granting broad access
+- [ ] Restrict it to exactly the actions and resources used
+- [ ] Explain the blast radius before and after
 
-**Validation**: [How to verify success]
+**Validation**: The scoped credential can do the job and nothing more.
+
+### 🔴 Advanced Challenge: Go Keyless with OIDC
+**Objective**: Replace a stored cloud key with OIDC authentication.
+
+**Requirements**:
+- [ ] A workflow with `id-token: write` that assumes a cloud role
+- [ ] A role trust policy restricted to your repo and branch
+- [ ] No long-lived access key stored anywhere
+
+**Validation**: The pipeline deploys successfully with zero stored cloud credentials.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Keeper of Secrets** - You stopped credentials from leaking
+- 🔐 **Bearer of the Short-Lived Token** - You replaced static keys with OIDC
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Secret Scoping** - Grant least privilege to every credential
+- **Credential Rotation** - Replace secrets without downtime
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Artifact Management - Sign and store what your pipeline builds
+- Workflow Optimization - Make secure pipelines fast too
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Artifact Management](/quests/0101/artifact-management/) - Provenance and signed builds
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Workflow Optimization](/quests/0101/workflow-optimization/) - Speed without sacrificing safety
+- ⚔️ [Environment Management](/quests/0101/environment-management/) - Per-environment secret scoping
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Artifact Management](/quests/0101/artifact-management/)  
+**🏗️ System Engineer**: Explore [Workflow Optimization](/quests/0101/workflow-optimization/)  
+**🛡️ Security Specialist**: Advance to [Artifact Management](/quests/0101/artifact-management/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [GitHub Actions: Security hardening with OpenID Connect](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect) - Keyless cloud auth
+- [GitHub Actions: Using secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) - Storing and injecting secrets
+- [HashiCorp Vault](https://developer.hashicorp.com/vault/docs) - Central secret management
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) - Practical guidance
+- [AWS: IAM least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) - Scoping policies
+- [git-secrets](https://github.com/awslabs/git-secrets) - Prevent committing secrets
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [trufflehog](https://github.com/trufflesecurity/trufflehog) - Scan history for leaked secrets
+- [Azure Key Vault overview](https://learn.microsoft.com/en-us/azure/key-vault/general/overview) - A managed vault example
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Configured a keyless OIDC deploy
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]]
+**Unlocks:** [[Artifact Management: Build Output Storage and Dependency Caching]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

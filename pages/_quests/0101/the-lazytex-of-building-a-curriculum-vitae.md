@@ -1,16 +1,15 @@
 ---
 title: 'Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest'
 author: Quest Master
-description: Build an epic, ATS-friendly Curriculum Vitae in VS Code using LaTeX, aligned to the provided cv.tex template—install tools, customize sections, compile, and export a polished PDF.
+description: 'Forge an ATS-friendly CV from the cv.tex template using VS Code and LaTeX—install the toolchain, customize sections, compile, and export a polished PDF.'
 excerpt: Craft a professional CV from the cv.tex template using VS Code + LaTeX—install, customize, compile, and validate.
-snippet: From blank page to battle-ready CV—forge, compile, and level up your professional codex.
 preview: images/previews/forging-the-la-zy-tex-cv-binary-level-0101-5-quest.png
 date: '2025-08-21T22:00:59.000Z'
 lastmod: '2025-08-17T21:36:08.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: 65
+primary_technology: latex
 quest_type: main_quest
 quest_series: Professional Identity Path
 skill_focus: fullstack
@@ -47,20 +46,16 @@ keywords:
   - tool-mastery
 fmContentType: quest
 comments: true
-attachments: ''
-sub-title: 'Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction'
 rewards:
 - 🏆 CV Forgemaster (LaTeX)
 - ⚡ VS Code LaTeX workflow mastery
 - 🛠️ Reusable CV template you can tailor per role
 - 🎯 ATS-friendly professional PDF
-related_quests:
-- 'Level 0011: Markdown to PDF Basics'
-- 'Level 0100: Git Fundamentals'
-- 'Level 1010: Portfolio Website Publishing'
 redirect_from:
 - /quests/0101/the-lazytex-of-building-a-curriculum-vitae/
 layout: quest
+sub_title: 'Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction'
+draft: false
 ---
 ## 🧙‍♂️ Epic Introduction
 

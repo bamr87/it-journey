@@ -1,9 +1,8 @@
 ---
-title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
+title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
+description: 'Master diagrammatic magic by integrating Mermaid.js into any Jekyll site, with conditional loading, dark mode, and responsive interactive diagrams.'
 excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
-snippet: Master the art of diagrammatic magic and bring your Jekyll documentation to life
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
 date: '2025-10-04T15:25:33.000Z'
 lastmod: '2025-01-27T15:00:00.000Z'
@@ -63,16 +62,6 @@ rewards:
   skill: Jekyll Integration Mastery
   tool: Mermaid Diagram System
   capability: Interactive Documentation Creation
-related_quests:
-  prerequisites:
-  - hello-noob
-  - bash-scripting
-  followups:
-  - github-pages-deployment
-  - advanced-jekyll-theming
-  parallel:
-  - action-triggers
-  - change-logs
 layout: quest
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
@@ -345,9 +334,9 @@ Add the following code to your head section:
 ```
 
 **Important**: Add the following Liquid code to your head.html file:
-- `{% if page.mermaid %}` - Check if page has mermaid enabled
-- `{% include components/mermaid.html %}` - Include the Mermaid component
-- `{% endif %}` - Close the conditional block
+- `{% raw %}{% if page.mermaid %}{% endraw %}` - Check if page has mermaid enabled
+- `{% raw %}{% include components/mermaid.html %}{% endraw %}` - Include the Mermaid component
+- `{% raw %}{% endif %}{% endraw %}` - Close the conditional block
 
 **Checkpoint**: Your Mermaid component is ready for conditional loading!
 

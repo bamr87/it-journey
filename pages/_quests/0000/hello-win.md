@@ -69,36 +69,12 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/hello-noob/
   - /quests/0000/os-selection/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
   unlocks_quests:
   - /quests/0000/vscode-mastery/
   - /quests/0000/terminal-fundamentals/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/vscode-mastery/
-  parallel_quests:
-  - /quests/0000/hello-macos/
-  - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - DevOps
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  skill_trees:
-  - Windows Development
-  - PowerShell Mastery
-  - Cross-Platform Workflow
-related_quests:
-- hello-noob.md - Beginner's First Steps
-- 2023-11-24-os-selection.md - Operating System Selection Guide
-- ../../tools/README.md - Essential Development Tools
-sub-title: 'Level 001 Quest: Windows Development Environment Mastery'
 excerpt: Transform your Windows machine into a powerful development environment with WSL, modern PowerShell, and professional-grade tools
-snippet: Windows + Linux + Developer Tools = Ultimate Development Power
 lastmod: '2023-12-03T08:47:22.000Z'
 primary_technology: windows
 skill_focus: fullstack
@@ -108,6 +84,7 @@ draft: false
 redirect_from:
 - /quests/0000/hello-win/
 layout: quest
+sub_title: 'Level 001 Quest: Windows Development Environment Mastery'
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 

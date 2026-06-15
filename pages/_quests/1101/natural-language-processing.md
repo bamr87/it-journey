@@ -1,63 +1,51 @@
 ---
-title: 'Natural Language Processing: Text Analysis, Transformers & LLMs with Python'
+title: 'Natural Language Processing: Transformers & LLMs'
 author: IT-Journey Team
-description: Build NLP applications with Python using transformers and Hugging Face. Learn text preprocessing, sentiment analysis, named entity recognition, and large language model fine-tuning.
-excerpt: Build NLP applications with transformers, sentiment analysis, NER, and large language models
+description: 'Build NLP apps in Python with Hugging Face: master tokenization, embeddings, and the attention mechanism behind modern large language models.'
+excerpt: Build NLP applications with tokenization, embeddings, transformers, and large language models
 preview: images/previews/natural-language-processing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'
 difficulty: 🔴 Hard
-estimated_time: 5-6 hours
-primary_technology: python
+estimated_time: 4-5 hours
+primary_technology: huggingface
 quest_type: main_quest
 quest_series: AI/ML Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Oracle's Ascent
+quest_arc: The Tongue of Machines
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
+  required_quests:
+  - /quests/1101/deep-learning-frameworks/
+  recommended_quests:
+  - /quests/1101/neural-networks/
+  unlocks_quests:
+  - /quests/1101/mlops/
+  - /quests/1101/ai-ethics/
+skill_focus: ai-ml
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of the Deep Learning Frameworks quest (tensors + training loop)
+  - Comfortable running Python scripts and installing packages
+  - A neural network is no longer a mystery to you
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ with pip or conda
+  - 8 GB RAM; a GPU helps but is not required for the small models here
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can read and run a PyTorch training loop
+  - You are curious how ChatGPT-style models actually work
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A working text-classification or generation pipeline you built
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain tokenization, embeddings, and attention in plain words
+  - Can run a pretrained transformer on your own text
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands why attention beat recurrence for long sequences
+  - Can distinguish pretraining, fine-tuning, and prompting
 permalink: /quests/1101/natural-language-processing/
 categories:
 - Quests
@@ -65,9 +53,9 @@ categories:
 - Hard
 tags:
 - '1101'
-- python
 - nlp
 - transformers
+- llm
 - main_quest
 - data-science
 - hands-on
@@ -75,117 +63,83 @@ tags:
 keywords:
   primary:
   - '1101'
-  - python
   - nlp
   - transformers
   secondary:
-  - main_quest
-  - data-science
-  - hands-on
-  - gamified-learning
+  - tokenization
+  - embeddings
+  - attention
+  - llm
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1101 (13) Quest: Main Quest - NLP'
+sub_title: 'Level 1101 (13) Quest: Main Quest - Natural Language Processing'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Word Weaver - Turned raw text into vectors a model can reason over
+  - 🗣️ Attention Adept - Understood the mechanism behind modern LLMs
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Hugging Face Transformers
+  - 🧠 Transformer & Attention Intuition
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the MLOps and AI Ethics quests of Level 1101
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have forged models that see patterns in numbers. Now you enter the **Hall of Tongues**, where machines learn to read, write, and converse. This quest, **Natural Language Processing**, takes you from raw text - the messiest data of all - to the transformer architecture that powers every modern large language model. By its end you will have run a real pretrained model on your own words and understood the attention mechanism that made it possible.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have only chatted with an AI assistant or you already wonder what "tokens" really are, this adventure demystifies the technology that has reshaped computing.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*For decades, machines struggled with language. Early systems counted words; later ones read text one token at a time with recurrent networks that forgot the beginning of a sentence by the time they reached its end. Then, in 2017, a paper titled "Attention Is All You Need" introduced the **transformer**, which reads an entire sequence at once and learns which words should attend to which others. This single idea - self-attention - unlocked GPT, BERT, Claude, and the entire era of large language models.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches you the pipeline every NLP practitioner uses: turn text into tokens, tokens into vectors, vectors into meaning, and meaning into predictions.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Tokenization** - Split text into the subword tokens models actually consume
+- [ ] **Embeddings** - Represent words and sentences as vectors and measure their similarity
+- [ ] **Attention & Transformers** - Explain self-attention and why it replaced recurrence
+- [ ] **Using Pretrained Models** - Run a Hugging Face transformer on your own text
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Fine-Tuning vs Prompting** - Choose between adapting weights and clever prompting
+- [ ] **Sentiment & NER** - Build classification and entity-extraction pipelines
+- [ ] **Semantic Search** - Rank documents by embedding similarity
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why "attention" lets a model handle long-range dependencies
+- [ ] Describe the journey from text to token to vector to prediction
+- [ ] Pick a pretrained model for a task without copying a tutorial
+- [ ] Reason about why LLMs sometimes "hallucinate"
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of the Deep Learning Frameworks quest (tensors, training loop)
+- [ ] Comfortable installing Python packages and running scripts
+- [ ] Basic familiarity with vectors and dot products
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10 or newer on your PATH
+- [ ] A text editor or IDE (VS Code) or a Jupyter environment
+- [ ] Internet connection (Hugging Face downloads models on first use)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 5-6 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can run a PyTorch model end to end
+- [ ] You are ready to reason about vectors and similarity
+- [ ] Ready for 4-5 hours of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The Hugging Face ecosystem is cross-platform. Create an isolated environment first.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -193,23 +147,13 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+python3 -m venv ~/nlp-quest && source ~/nlp-quest/bin/activate
+pip install --upgrade pip
+pip install transformers torch scikit-learn numpy
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify the transformers library loads
+python -c "import transformers; print('transformers', transformers.__version__)"
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -219,26 +163,13 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+python -m venv $HOME\nlp-quest
+& $HOME\nlp-quest\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install transformers torch scikit-learn numpy
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -c "import transformers; print('transformers', transformers.__version__)"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -248,28 +179,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+sudo apt update && sudo apt install -y python3-venv python3-pip
+python3 -m venv ~/nlp-quest && source ~/nlp-quest/bin/activate
+pip install --upgrade pip
+pip install transformers torch scikit-learn numpy
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -c "import transformers; print('transformers', transformers.__version__)"
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -279,225 +195,233 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Google Colab ships transformers and torch with a free GPU.
+# Models download to the runtime on first call; enable a GPU under
+# Runtime > Change runtime type for faster inference.
+pip install -q transformers
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Tokenization - Cutting Language Into Pieces
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A model cannot read letters. It reads integers. Tokenization is the bridge: it splits text into **subword tokens** (pieces like `token`, `##ization`) and maps each to an id. Modern tokenizers learn these pieces from data so that even unseen words decompose into known fragments.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Splitting text into subword tokens and ids
+- Understanding why subwords beat whole words
+- Reading the special tokens models expect
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Tokenizing Real Text
 
-**Step 1: Environment Setup**
+```python
+from transformers import AutoTokenizer
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# DistilBERT is small and fast - ideal for learning
+tok = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+
+text = "Transformers revolutionized natural language processing."
+enc = tok(text)
+
+print("Token ids:", enc["input_ids"])
+print("Tokens:   ", tok.convert_ids_to_tokens(enc["input_ids"]))
+# Note the [CLS] start token and [SEP] end token the model expects,
+# and how rare words split into subword pieces.
 ```
 
-**Step 2: Core Concepts**
+Subword tokenization is why a model never truly hits an "unknown word": it falls back to smaller pieces. A token is roughly 3-4 characters of English on average, which is why API pricing and context limits are measured in tokens, not words.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Tokenization
+- [ ] Why do models use subword tokens instead of whole words?
+- [ ] What do the `[CLS]` and `[SEP]` tokens mark?
+- [ ] Roughly how many characters is one English token?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Environment ready**: `import transformers` works
+- [ ] **First tokenization**: You printed token ids for your own sentence
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Embeddings - Meaning as Geometry
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Once text is tokenized, each token becomes a high-dimensional vector called an **embedding**. The magic: vectors for words with similar meaning sit close together. "King" minus "man" plus "woman" lands near "queen". Meaning becomes geometry you can measure.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Turning sentences into vectors
+- Measuring similarity with cosine distance
+- Seeing why embeddings power search and clustering
 
-### 🏗️ Advanced Implementations
+### 🏗️ Sentence Similarity From Embeddings
 
-[Detailed content for chapter 2]
+```python
+import numpy as np
+import torch
+from transformers import AutoTokenizer, AutoModel
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+name = "distilbert-base-uncased"
+tok = AutoTokenizer.from_pretrained(name)
+model = AutoModel.from_pretrained(name)
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+def embed(sentence):
+    enc = tok(sentence, return_tensors="pt")
+    with torch.no_grad():
+        out = model(**enc)
+    # Mean-pool the token vectors into one sentence vector
+    return out.last_hidden_state.mean(dim=1).squeeze().numpy()
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+def cosine(a, b):
+    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+
+a = embed("The cat sat on the mat.")
+b = embed("A feline rested on the rug.")
+c = embed("Quarterly revenue exceeded forecasts.")
+
+print("similar pair:", round(cosine(a, b), 3))    # high
+print("unrelated:   ", round(cosine(a, c), 3))    # low
+```
+
+The two sentences about a cat score high similarity despite sharing almost no words, because the *meaning* is close. This is the engine behind semantic search, recommendation, and retrieval-augmented generation (RAG).
+
+### 🔍 Knowledge Check: Embeddings
+- [ ] What does a high cosine similarity between two sentence vectors mean?
+- [ ] Why can two sentences with no shared words still be "similar"?
+- [ ] Name one application built directly on embedding similarity.
+
+## 🧙‍♂️ Chapter 3: Attention, Transformers, and LLMs
+
+*The transformer's core is **self-attention**: for every token, the model computes how much it should "pay attention" to every other token, then mixes their information accordingly. This lets the word "it" in a sentence look back and bind to the noun it refers to, no matter how far away.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Explaining self-attention in plain language
+- Distinguishing pretraining, fine-tuning, and prompting
+- Running a full pretrained model with one line
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Attention in One Picture
 
-[Detailed content for chapter 3]
+Self-attention scores every pair of tokens. Conceptually, each token emits a **query**, every token offers a **key**, and the dot product of query and key decides how much of each token's **value** flows into the result:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+"The animal didn't cross the street because it was tired."
+
+When processing "it", attention learns to weight "animal" heavily
+(it = the animal) rather than "street". The model discovers this
+relationship from data - no one hand-codes the rule.
+```
+
+Because every token attends to every other in parallel, transformers train far faster than the old sequential recurrent networks and capture long-range meaning. Large language models are simply very large transformers: **pretrained** on trillions of tokens to predict the next token, then **fine-tuned** or **prompted** for specific tasks. Hallucination arises because the model optimizes for plausible next tokens, not verified truth.
+
+A pretrained pipeline hides all of this behind one call:
+
+```python
+from transformers import pipeline
+
+# Sentiment analysis with a model fine-tuned for the task
+classifier = pipeline("sentiment-analysis")
+print(classifier("This quest finally made transformers click for me!"))
+# [{'label': 'POSITIVE', 'score': 0.999...}]
+
+# Named entity recognition: pull people, places, organizations out of text
+ner = pipeline("ner", grouped_entities=True)
+print(ner("Hugging Face is based in New York and Paris."))
+```
+
+### 🔍 Knowledge Check: Attention & LLMs
+- [ ] In plain words, what does self-attention compute for each token?
+- [ ] Why do transformers train faster than recurrent networks?
+- [ ] What is the difference between pretraining and prompting?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Tokenize and Count
+**Objective**: Compare token counts across sentences.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Tokenize three sentences of different lengths
+- [ ] Print the number of tokens for each
+- [ ] Identify which sentence split a rare word into subwords
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Longer or rarer-word sentences show more tokens, and you can point to a subword split.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build a Semantic Search
+**Objective**: Rank a small set of documents by relevance to a query.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Embed five short documents and one query with the Chapter 2 `embed` function
+- [ ] Score each document by cosine similarity to the query
+- [ ] Print the documents sorted from most to least relevant
 
-**Validation**: [How to verify success]
+**Validation**: The most topically related document ranks first.
+
+### 🔴 Advanced Challenge: Compare Two Models
+**Objective**: Run a task through two pretrained models and compare.
+
+**Requirements**:
+- [ ] Run sentiment analysis on the same five reviews with the default model and one other (e.g. a multilingual model)
+- [ ] Find one example where the models disagree
+- [ ] Write two sentences on why they might differ
+
+**Validation**: You produce a concrete disagreement and a plausible explanation.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Word Weaver** - You turned raw text into vectors a model can reason over
+- 🗣️ **Attention Adept** - You understand the mechanism behind modern LLMs
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Hugging Face Transformers** - The pipeline + tokenizer + model workflow
+- **Transformer & Attention Intuition** - The why behind every LLM
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- MLOps Engineering - Deploy and monitor NLP models
+- AI Ethics - Reason about bias and safety in language models
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [MLOps Engineering](/quests/1101/mlops/) - Take NLP models to production
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Computer Vision Mastery](/quests/1101/computer-vision/) - The other half of perception
+- ⚔️ [AI Ethics](/quests/1101/ai-ethics/) - Build language models responsibly
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [MLOps Engineering](/quests/1101/mlops/)  
+**🏗️ System Engineer**: Explore [MLOps Engineering](/quests/1101/mlops/)  
+**📊 Data Scientist**: Advance to [AI Ethics](/quests/1101/ai-ethics/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Hugging Face Transformers Docs](https://huggingface.co/docs/transformers/index) - The canonical reference
+- [Hugging Face NLP Course](https://huggingface.co/learn/nlp-course/) - Free, hands-on, end to end
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - The clearest visual explainer
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Hugging Face Model Hub](https://huggingface.co/models) - Thousands of pretrained models
+- [Hugging Face Forums](https://discuss.huggingface.co/) - Active community Q&A
+- [Stack Overflow: huggingface-transformers tag](https://stackoverflow.com/questions/tagged/huggingface-transformers) - Troubleshooting
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- ["Attention Is All You Need" (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762) - The original transformer paper
+- [Dive into Deep Learning: Attention](https://d2l.ai/chapter_attention-mechanisms-and-transformers/index.html) - Interactive deep dive
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Ran a pretrained transformer on your own text
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101: Machine Learning & AI]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Required:** [[Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation]]
+**Unlocks:** [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]] · [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

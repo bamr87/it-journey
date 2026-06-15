@@ -1,7 +1,7 @@
 ---
 title: '🗺️ World Map: Navigation Guide to the IT-Journey Realm'
 layout: default
-description: Your comprehensive guide to navigating the IT-Journey platform - quests, documentation, tutorials, and learning paths.
+description: 'Your complete cartographical guide to navigating the IT-Journey realm: explore quests, chronicles, documentation, and structured learning paths.'
 preview: /images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
 date: '2024-05-28T15:23:32.000Z'
 lastmod: '2025-07-23T03:53:06.000Z'

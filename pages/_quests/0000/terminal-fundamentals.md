@@ -20,21 +20,6 @@ quest_dependencies:
   unlocks_quests:
   - /quests/0000/bashcrawl/
   - /quests/0010/bash-scripting/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Navigation
-  - File Management
-  - Shell Basics
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
@@ -57,13 +42,6 @@ validation_criteria:
   knowledge_checks:
   - Understands the difference between absolute and relative paths
   - Can explain what standard input, output, and error are
-quest_mapping:
-  coordinates:
-  - 2
-  - 1
-  region: Foundation
-  realm: Development
-  biome: Terminal
 permalink: /quests/0000/terminal-fundamentals/
 categories:
 - Quests

@@ -1,0 +1,44 @@
+{%- comment -%}
+  quest-progression.html — compact "how progression works" panel for the
+  /quests/ hub: difficulty chips + a collapsible, data-driven 16-level reference.
+  Pure HTML (no kramdown dependency) so it renders identically whether injected
+  by the layout or included in content. Data: _data/quests/{order,levels}.yml.
+{%- endcomment -%}
+{%- assign qpr = site.data.quests -%}
+<section class="quest-progression" aria-labelledby="quest-progression-heading">
+  <h2 id="quest-progression-heading" class="quest-section-heading">How Progression Works</h2>
+  <p>The journey spans <strong>16 binary-coded levels</strong> (<code>0000</code>–<code>1111</code>)
+     across four tiers, each worth more XP than the last. Every quest is rated by one of four
+     canonical difficulties:</p>
+  <p class="quest-diff-ladder" aria-label="Difficulty ladder from easy to epic">
+    <span class="quest-diff-chip quest-diff-chip--easy">🟢 Easy</span>
+    <span class="quest-diff-chip quest-diff-chip--medium">🟡 Medium</span>
+    <span class="quest-diff-chip quest-diff-chip--hard">🔴 Hard</span>
+    <span class="quest-diff-chip quest-diff-chip--epic">⚔️ Epic</span>
+  </p>
+  <p class="quest-progression__note">The full taxonomy is generated from
+     <code>scripts/quest/quest_registry.py</code> (the single source of truth), so it never
+     drifts out of sync.</p>
+  <details class="quest-level-reference">
+    <summary>📖 Full 16-level reference — binary · tier · theme · XP</summary>
+    <div class="quest-level-reference__wrap">
+      <table class="quest-level-reference__table">
+        <thead>
+          <tr><th scope="col">Binary</th><th scope="col">Dec</th><th scope="col">Tier</th><th scope="col">Theme</th><th scope="col">XP</th></tr>
+        </thead>
+        <tbody>
+          {%- for code in qpr.order -%}
+            {%- assign m = qpr.levels[code] -%}
+            <tr>
+              <td><a href="{{ '/quests/' | append: code | append: '/' | relative_url }}"><code>{{ code }}</code></a></td>
+              <td>{{ m.decimal }}</td>
+              <td>{{ m.tier_emoji }} {{ m.tier }}</td>
+              <td>{{ m.theme }}</td>
+              <td>{{ m.xp_range }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>

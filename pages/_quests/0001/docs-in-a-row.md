@@ -3,7 +3,6 @@ title: 'The Knowledge Vault: Building an Automated Documentation Hub'
 author: Quest Master IT-Journey Team
 description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
 excerpt: Build a powerful automation system that collects, organizes, and maintains documentation from multiple GitHub repositories using GitHub Actions, Bash, and Python
-snippet: Transform scattered docs into organized knowledge with automation magic
 preview: images/previews/the-knowledge-vault-building-an-automated-document.png
 date: '2025-10-04T15:52:00.000Z'
 lastmod: '2025-10-03T21:57:41.000Z'
@@ -60,16 +59,6 @@ rewards:
   skill: CI/CD Pipeline Development
   tool: Automated Documentation System
   capability: Multi-Repository Management
-related_quests:
-  prerequisites:
-  - hello-noob
-  - bash-scripting
-  followups:
-  - github-pages-deployment
-  - advanced-ci-cd
-  parallel:
-  - action-triggers
-  - change-logs
 layout: quest
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
@@ -600,7 +589,7 @@ Deploy your documentation hub as a searchable website:
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3
   with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
+    github_token: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
     publish_dir: ./docs
 ```
 

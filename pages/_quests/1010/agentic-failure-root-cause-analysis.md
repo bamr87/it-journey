@@ -1,6 +1,6 @@
 ---
 title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
-description: Use GitHub execution traces, Actions logs, artifact forensics, and structured RCA frameworks to diagnose why an agent failed — and prevent the same failure from recurring.
+description: 'Read GitHub Actions logs, artifacts, and execution traces, then apply a 5-Why RCA framework to find why an agent failed and prevent it recurring.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-failure-root-cause-analysis.png
 level: '1010'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1010/agentic-success-criteria-and-signals/
   unlocks_quests:
   - /quests/1011/agentic-behavior-tuning/
-quest_relationships:
-  sequel_quests:
-  - /quests/1011/agentic-behavior-tuning/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🔍 Reliability Engineer
-  skill_trees:
-  - Agentic AI
-  - Reliability
+  recommended_quests: []
 rewards:
   badges:
   - 💀 Inquest Master
@@ -76,11 +65,6 @@ validation_criteria:
   - RCA framework documented with 5-Why template
   - At least one real or simulated agent failure analysed end-to-end
   - Prevention recommendation documented and implemented
-quest_mapping:
-  coordinates: '[4, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Necromancer's Catacombs
 comments: true
 draft: false
 redirect_from:

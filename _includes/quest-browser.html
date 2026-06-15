@@ -1,0 +1,116 @@
+{%- comment -%}
+  quest-browser.html — global, client-side searchable / filterable / sortable
+  view of every quest. Renders all playable quests as .quest-card elements and
+  lets the learner narrow + reorder them. Namespaced (qb-*) so it never clashes
+  with the per-level quest-filters.html. Driven by assets/js/quest-browser.js.
+{%- endcomment -%}
+
+{% assign qb_quests = site.quests | where: "fmContentType", "quest" %}
+{% assign qb_data = site.data.quests %}
+{% assign qb_difficulties = qb_quests | map: "difficulty" | compact | uniq | join: "|||" | split: "|||" | sort %}
+{% assign qb_types = qb_quests | map: "quest_type" | compact | uniq | join: "|||" | split: "|||" | sort %}
+{% assign qb_skills = qb_quests | map: "skill_focus" | compact | uniq | join: "|||" | split: "|||" | sort %}
+
+<section class="quest-browser" id="quest-browser" aria-labelledby="quest-browser-heading">
+  <div class="quest-browser__head">
+    <h2 id="quest-browser-heading" class="quest-section-heading">⚔️ Browse All Quests</h2>
+    <p class="quest-browser__sub">Search, filter, and sort every quest in the realm.</p>
+  </div>
+
+  <div class="quest-browser__toolbar">
+    <div class="qb-field qb-field--search">
+      <label for="qb-search">Search</label>
+      <input type="search" id="qb-search" placeholder="Search title or technology…" autocomplete="off">
+    </div>
+
+    <div class="qb-field">
+      <label for="qb-tier">Tier</label>
+      <select id="qb-tier">
+        <option value="">All tiers</option>
+        {% for tname in "Apprentice|Adventurer|Warrior|Master" | split: "|" %}
+          <option value="{{ tname | downcase }}">{{ qb_data.tiers[tname].emoji }} {{ tname }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="qb-field">
+      <label for="qb-level">Level</label>
+      <select id="qb-level">
+        <option value="">All levels</option>
+        {% for lvl in qb_data.order %}
+          {% assign lm = qb_data.levels[lvl] %}
+          <option value="{{ lvl }}">{{ lvl }} · {{ lm.theme }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="qb-field">
+      <label for="qb-difficulty">Difficulty</label>
+      <select id="qb-difficulty">
+        <option value="">All</option>
+        {% for d in qb_difficulties %}<option value="{{ d }}">{{ d }}</option>{% endfor %}
+      </select>
+    </div>
+
+    <div class="qb-field">
+      <label for="qb-type">Type</label>
+      <select id="qb-type">
+        <option value="">All</option>
+        {% for t in qb_types %}
+          <option value="{{ t }}">
+            {%- case t -%}
+              {%- when 'main_quest' -%}🗡️ Main
+              {%- when 'side_quest' -%}⚔️ Side
+              {%- when 'epic_quest' -%}👑 Epic
+              {%- when 'bonus_quest' -%}🎁 Bonus
+              {%- else -%}{{ t | replace: '_', ' ' | capitalize }}
+            {%- endcase -%}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="qb-field">
+      <label for="qb-skill">Skill focus</label>
+      <select id="qb-skill">
+        <option value="">All skills</option>
+        {% for s in qb_skills %}<option value="{{ s }}">{{ s | replace: '-', ' ' | capitalize }}</option>{% endfor %}
+      </select>
+    </div>
+
+    <div class="qb-field">
+      <label for="qb-sort">Sort by</label>
+      <select id="qb-sort">
+        <option value="level-asc">Level (low → high)</option>
+        <option value="level-desc">Level (high → low)</option>
+        <option value="difficulty-asc">Difficulty (easy → epic)</option>
+        <option value="difficulty-desc">Difficulty (epic → easy)</option>
+        <option value="time-asc">Time (short → long)</option>
+        <option value="title-asc">Title (A → Z)</option>
+      </select>
+    </div>
+
+    <div class="qb-actions">
+      <div class="qb-view" role="group" aria-label="View mode">
+        <button type="button" class="qb-view-btn is-active" data-view="grid" aria-pressed="true" title="Grid view">▦</button>
+        <button type="button" class="qb-view-btn" data-view="list" aria-pressed="false" title="List view">☰</button>
+      </div>
+      <button type="button" class="qb-reset" id="qb-reset">Clear</button>
+    </div>
+  </div>
+
+  <p class="quest-browser__count" id="qb-count" aria-live="polite"></p>
+
+  <div class="quest-grid quest-browser__grid" id="qb-grid">
+    {% for quest in qb_quests %}
+      {% include quest-card.html quest=quest %}
+    {% endfor %}
+  </div>
+
+  <div class="quest-browser__empty" id="qb-empty" hidden>
+    <p>🧭 No quests match your filters.</p>
+    <button type="button" class="btn qb-reset" id="qb-empty-reset">Clear filters</button>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/quest-browser.js' | relative_url }}" defer></script>

@@ -19,20 +19,6 @@ quest_dependencies:
   - /quests/0000/terminal-fundamentals/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Version Control
-  - Collaboration Tools
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
@@ -55,13 +41,6 @@ validation_criteria:
   knowledge_checks:
   - Understands staging area vs working directory
   - Can resolve a basic merge conflict
-quest_mapping:
-  coordinates:
-  - 3
-  - 1
-  region: Foundation
-  realm: Development
-  biome: Version Control
 permalink: /quests/0000/git-basics/
 categories:
 - Quests

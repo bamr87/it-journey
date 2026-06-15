@@ -12,7 +12,6 @@ keywords:
   - ai-assisted development
 description: Learn to refactor inline Jekyll theme elements into modular, config-driven components — using a real-world nanobar and footer case study.
 excerpt: The Artisan's Forge teaches the craft of reshaping raw, tangled code into elegant, reusable components.
-snippet: A true artisan does not merely write code — they forge tools that others can wield.
 date: '2026-04-19T00:00:00.000Z'
 lastmod: '2026-04-19T00:00:00.000Z'
 level: '0100'
@@ -28,7 +27,7 @@ quest_arc: 'Act II: The Refactorer''s Journey'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0100/side-quests/jekyll-component-refactoring/
+permalink: /quests/0100/jekyll-component-refactoring/
 sub_title: 'Level 0100 (4) Quest: Side Quest - Jekyll Theme Refactoring'
 categories:
 - Quests
@@ -72,10 +71,9 @@ validation_criteria:
 - Footer section spans the full viewport width
 - All refactored components pass Jekyll build without errors
 - CSS is scoped to avoid leaking into unrelated elements
-related_quests:
-- /quests/0100/frontend-docker/
-- /quests/0100/side-quests/profile-themes/
 layout: quest
+redirect_from:
+- /quests/0100/side-quests/jekyll-component-refactoring/
 ---
 *Greetings, brave artisan! Welcome to The Artisan's Forge — an epic journey that will transform you from a coder who patches things together into a true component architect. This quest guides you through the real-world process of turning hard-coded, inline Jekyll theme elements into modular, configurable, and reusable components.*
 
@@ -179,8 +177,8 @@ Move all the nanobar markup from the layout into this new file. The layout shoul
 Wrap the entire include in a config check so the nanobar only renders when enabled:
 
 ```liquid
-{% raw %}{% if site.nanobar.enabled %}
-<div class="nanobar nanobar--{{ site.nanobar.position | default: 'top' }}"
+{% raw %}{% if site.nanobar.enabled %}{% endraw %}
+<div class="nanobar nanobar--{% raw %}{{ site.nanobar.position | default: 'top' }}{% endraw %}"
      role="progressbar"
      aria-label="Reading progress"
      aria-valuemin="0"
@@ -188,7 +186,7 @@ Wrap the entire include in a config check so the nanobar only renders when enabl
      aria-valuenow="0">
   <div class="nanobar__bar"></div>
 </div>
-{% endif %}{% endraw %}
+{% raw %}{% endif %}{% endraw %}
 ```
 
 ### Step 2.3: Define the Configuration
@@ -253,16 +251,16 @@ touch _sass/components/_nanobar.scss
 Bridge your YAML config values into the stylesheet by setting CSS custom properties via a `style` attribute directly on the nanobar root element — keeping all CSS in the stylesheet where it belongs:
 
 ```liquid
-{% raw %}{% if site.nanobar.enabled %}
-<div class="nanobar nanobar--{{ site.nanobar.position | default: 'top' }}"
+{% raw %}{% if site.nanobar.enabled %}{% endraw %}
+<div class="nanobar nanobar--{% raw %}{{ site.nanobar.position | default: 'top' }}{% endraw %}"
      role="progressbar"
      aria-valuemin="0"
      aria-valuemax="100"
      aria-valuenow="0"
-     style="--nanobar-height: {{ site.nanobar.height | default: '3px' }}; --nanobar-color: {{ site.nanobar.color | default: '#0d6efd' }}; --nanobar-z-index: {{ site.nanobar.z_index | default: 1050 }};">
+     style="--nanobar-height: {% raw %}{{ site.nanobar.height | default: '3px' }}{% endraw %}; --nanobar-color: {% raw %}{{ site.nanobar.color | default: '#0d6efd' }}{% endraw %}; --nanobar-z-index: {% raw %}{{ site.nanobar.z_index | default: 1050 }}{% endraw %};">
   <div class="nanobar__bar"></div>
 </div>
-{% endif %}{% endraw %}
+{% raw %}{% endif %}{% endraw %}
 ```
 
 > **🧙 Artisan's Tip:** Setting CSS custom properties on the component's root element (not in a `<style>` block) keeps all CSS rules in the stylesheet where they belong. The `style` attribute only carries *values*, while the stylesheet owns the *rules* — no inline styles, no duplication.

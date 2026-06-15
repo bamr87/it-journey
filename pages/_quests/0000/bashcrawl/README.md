@@ -54,16 +54,16 @@ rewards:
   progression_points: 200
 quest_dependencies:
   unlocks_quests:
-  - /quests/0000/side-quests/entrance/
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
-  - /quests/0000/side-quests/armoury/
-  - /quests/0000/side-quests/chamber/
-  - /quests/0000/side-quests/hidden-chapel/
-  - /quests/0000/side-quests/vault/
-  - /quests/0000/side-quests/scrap/
-  - /quests/0000/side-quests/rift/
-  - /quests/0000/side-quests/agent-mode/
+  - /quests/0000/entrance/
+  - /quests/0000/workshop/
+  - /quests/0000/cellar/
+  - /quests/0000/armoury/
+  - /quests/0000/chamber/
+  - /quests/0000/hidden-chapel/
+  - /quests/0000/vault/
+  - /quests/0000/scrap/
+  - /quests/0000/rift/
+  - /quests/0000/agent-mode/
 quest_relationships:
   child_quests:
   - /quests/0000/side-quests/entrance/

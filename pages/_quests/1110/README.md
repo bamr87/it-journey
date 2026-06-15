@@ -1,6 +1,6 @@
 ---
 title: Level 1110 - Quality Assurance
-description: Advanced testing patterns, error handling, and robust application development
+description: 'Master quality assurance through advanced error handling, edge-case testing, debugging, and quality metrics to build robust, reliable applications.'
 preview: images/previews/level-1110-quality-assurance.png
 permalink: /quests/1110/
 layout: quest-collection
@@ -9,6 +9,15 @@ categories:
 - quests
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '1110'
+- master
+- architecture
+- design
+- patterns
 ---
 # Level 1110: Quality Assurance
 

@@ -8,9 +8,8 @@ keywords:
   secondary:
   - profile customization
   - advanced CSS
-description: Create custom CSS theme variants for the contributor character profile system
+description: 'Craft custom CSS theme variants for the contributor profile system using custom properties, light and dark modes, and WCAG AA accessible color contrast.'
 excerpt: The Style Sorcerer teaches the art of visual enchantment — bend colors and shapes to your will.
-snippet: True mastery is not just function — it is form
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0100'
@@ -26,7 +25,7 @@ quest_arc: 'Act III: The Master''s Path'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0100/side-quests/profile-themes/
+permalink: /quests/0100/profile-themes/
 categories:
 - Quests
 - Community
@@ -55,20 +54,9 @@ quest_dependencies:
   required_quests:
   - /quests/0001/forge-your-character/
   recommended_quests:
-  - /quests/0010/side-quests/stats-dashboard/
-  - /quests/0010/side-quests/contribution-calendar/
+  - /quests/0010/stats-dashboard/
+  - /quests/0010/contribution-calendar/
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Frontend Developer
-  - UI/UX Designer
-  character_classes:
-  - 🎵 Bard
-  - 🗡️ Rogue
-  skill_trees:
-  - Frontend Development
-  - CSS Architecture
-  - Design Systems
 rewards:
   badges:
   - 🎭 Style Sorcerer — Created a custom profile theme
@@ -81,6 +69,8 @@ validation_criteria:
   - Theme passes accessibility contrast checks (WCAG AA)
   - Pull request submitted with theme preview screenshots
 layout: quest
+redirect_from:
+- /quests/0100/side-quests/profile-themes/
 ---
 # 🎭 Profile Themes: Unleashing the Style Sorcerer
 
@@ -217,12 +207,12 @@ profile:
 Update `_includes/contributor/character_sheet.html` to apply the theme class:
 
 ```liquid
-{% raw %}
-{% if contributor.profile.theme %}
-  {% assign theme_class = "contributor-theme--" | append: contributor.profile.theme %}
-{% endif %}
-<div class="contributor-sheet {{ theme_class }}">
-{% endraw %}
+
+{% raw %}{% if contributor.profile.theme %}{% endraw %}
+  {% raw %}{% assign theme_class = "contributor-theme--" | append: contributor.profile.theme %}{% endraw %}
+{% raw %}{% endif %}{% endraw %}
+<div class="contributor-sheet {% raw %}{{ theme_class }}{% endraw %}">
+
 ```
 
 ### Step 6: Load the Theme CSS
@@ -230,11 +220,11 @@ Update `_includes/contributor/character_sheet.html` to apply the theme class:
 In your profile page (or in `character_sheet.html`):
 
 ```liquid
-{% raw %}
-{% if contributor.profile.theme %}
-<link rel="stylesheet" href="{{ '/assets/css/themes/contributor-theme-' | append: contributor.profile.theme | append: '.css' | relative_url }}">
-{% endif %}
-{% endraw %}
+
+{% raw %}{% if contributor.profile.theme %}{% endraw %}
+<link rel="stylesheet" href="{% raw %}{{ '/assets/css/themes/contributor-theme-' | append: contributor.profile.theme | append: '.css' | relative_url }}{% endraw %}">
+{% raw %}{% endif %}{% endraw %}
+
 ```
 
 ### Step 7: Test & Screenshot

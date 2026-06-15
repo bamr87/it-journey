@@ -1,68 +1,54 @@
 ---
-title: 'API Documentation: OpenAPI Specification and Developer Experience'
+title: 'API Documentation: OpenAPI, Swagger, and Contract-First'
 author: IT-Journey Team
-description: Create excellent API documentation with OpenAPI/Swagger. Learn specification writing, interactive docs, SDK generation, and developer portal best practices.
-excerpt: Create comprehensive API documentation with OpenAPI specification and developer portals
-preview: images/previews/api-documentation-openapi-quest-title-developer-ex.png
+description: 'Master API documentation using OpenAPI and Swagger: write a contract-first spec, add request and response examples, and render live docs.'
+excerpt: Learn OpenAPI and Swagger, contract-first design, examples, and documentation tooling
+preview: images/previews/api-documentation-openapi-swagger-contract-first.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:09:31.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'
-difficulty: 🔴 Hard
-estimated_time: 60-75 minutes
+difficulty: 🟡 Medium
+estimated_time: 75-90 minutes
 primary_technology: openapi
 quest_type: main_quest
 quest_series: API Design Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Gatekeeper's Road
+quest_arc: Stewards of the Interface
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
+  required_quests:
+  - /quests/0111/rest-principles/
+  recommended_quests:
+  - /quests/0111/api-versioning/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
 skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of REST Principles (resources, methods, status codes)
+  - Basic familiarity with YAML or JSON
+  - Comfort making requests with curl
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A text editor (VS Code recommended)
+  - Optional Node.js or Docker for the Swagger UI lab
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can read and write YAML
+  - You are ready to describe an API formally
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A valid OpenAPI document describing at least one endpoint
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write an OpenAPI path with parameters and responses
+  - Can render docs from a spec with Swagger UI
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the contract-first workflow
+  - Can add request and response examples to a spec
 permalink: /quests/0111/api-documentation/
 categories:
 - Quests
 - Backend
-- Hard
+- Medium
 tags:
 - '0111'
 - openapi
@@ -76,112 +62,80 @@ keywords:
   - openapi
   - main_quest
   secondary:
-  - backend
-  - hands-on
-  - gamified-learning
+  - swagger
+  - contract-first
+  - documentation
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0111 (7) Quest: Main Quest - Documentation'
+sub_title: 'Level 0111 (7) Quest: Main Quest - API Documentation'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Scribe of the Interface - Authored a valid OpenAPI specification
+  - 📖 Keeper of the Contract - Adopted a contract-first workflow
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ OpenAPI Authoring
+  - 🧠 Contract-First Design
+  progression_points: 60
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Completion of the Level 0111 API Development quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You stand at the final gate of the API Development road. You have learned to call, design, secure, protect, and evolve APIs. Now you will learn to **describe** them - so precisely that machines can generate clients, validate requests, and render beautiful interactive docs from your words alone. This is the art of **API Documentation**.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*The standard you will master is **OpenAPI** (formerly Swagger), a machine-readable contract for HTTP APIs. With it you can design **contract-first**: agree on the interface before writing a line of server code, then let tooling scaffold both sides. A well-documented API is one developers actually want to use.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the dark ages of APIs, documentation lived in a wiki that drifted out of date the moment code changed. Developers integrated by trial and error, poking endpoints to discover their shapes. Then the community gathered around a single machine-readable format - Swagger, later renamed OpenAPI - and everything changed. One document could now drive interactive docs, client SDKs in a dozen languages, request validation, and mock servers.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The greatest shift was philosophical: **contract-first** design. Write the OpenAPI document first, get every consumer to agree, and only then implement. The contract becomes the single source of truth that frontend, backend, and partners all build against in parallel.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The OpenAPI Specification** - Understand what it describes and why it matters
+- [ ] **Describing an Endpoint** - Write paths, methods, parameters, and responses
+- [ ] **Schemas and Components** - Define and reuse data models
+- [ ] **Examples** - Attach request and response examples to your spec
+- [ ] **Contract-First Workflow** - Design the contract before the code
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Swagger UI** - Render interactive docs from your spec
+- [ ] **Validation and Linting** - Catch spec errors with tooling
+- [ ] **Code Generation** - Generate clients or stubs from the contract
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Write a valid OpenAPI document for a small API from memory of the structure
+- [ ] Reuse a schema with `$ref` instead of repeating yourself
+- [ ] Render your spec in Swagger UI and try a request from the browser
+- [ ] Explain why contract-first lets teams build in parallel
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] You have completed REST Principles or know resources, methods, and status codes
+- [ ] You can read and write YAML or JSON
+- [ ] You can make requests with curl
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A text editor (VS Code with an OpenAPI extension recommended)
+- [ ] Optional: Node.js or Docker for the Swagger UI lab
+- [ ] An internet connection
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 60-75 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can read and write YAML
+- [ ] You can describe an endpoint's inputs and outputs
+- [ ] Ready for 75-90 minutes of focused learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*OpenAPI is just a text file, so any platform works. These setups let you render and validate your spec.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,14 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install the Redocly CLI to lint and preview OpenAPI docs
+brew install node
+npm install -g @redocly/cli
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Validate a spec, then preview it as a docs site
+redocly lint openapi.yaml
+redocly preview-docs openapi.yaml   # opens an interactive preview
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +160,13 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+winget install OpenJS.NodeJS
+npm install -g @redocly/cli
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Lint and preview your OpenAPI document
+redocly lint openapi.yaml
+redocly preview-docs openapi.yaml
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +176,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y nodejs npm
+npm install -g @redocly/cli
+redocly lint openapi.yaml && redocly preview-docs openapi.yaml
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +189,259 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Serve Swagger UI in a container and mount your spec into it
+docker run --rm -p 8080:8080 \
+  -e SWAGGER_JSON=/spec/openapi.yaml \
+  -v "$PWD:/spec" swaggerapi/swagger-ui
+# Open http://localhost:8080 to explore the interactive docs
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: What Is OpenAPI and Contract-First Design?
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*OpenAPI is a standard, language-agnostic description of an HTTP API written in YAML or JSON. One file tells tools everything: the endpoints, their parameters, the shapes of requests and responses, and the auth they require.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- What an OpenAPI document contains
+- The contract-first workflow
+- Why one document drives so many tools
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Shape of an OpenAPI Document
 
-**Step 1: Environment Setup**
+Every OpenAPI 3.x document has a few top-level sections: `openapi` (the version), `info`, `servers`, `paths`, and reusable `components`.
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```yaml
+openapi: 3.1.0
+info:
+  title: Bookstore API
+  version: 1.0.0
+  description: A tiny API for managing books.
+servers:
+  - url: https://api.example.com/v1
+paths: {}        # endpoints go here (next chapter)
+components: {}   # reusable schemas go here
 ```
 
-**Step 2: Core Concepts**
+**Contract-first** means you write this document *before* the implementation. The team reviews and agrees on the contract, then frontend, backend, and partner teams build against it in parallel - the frontend mocks responses from the spec while the backend implements them. The alternative, **code-first**, generates the spec from annotations in already-written code; it is convenient but lets the implementation, not a deliberate design, dictate the contract.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```text
+Contract-first flow:
+  design openapi.yaml  ->  review & agree  ->  generate mocks + stubs
+                       ->  build frontend & backend in parallel  ->  test against the contract
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: OpenAPI Basics
+- [ ] Name the top-level sections of an OpenAPI document.
+- [ ] What is the difference between contract-first and code-first?
+- [ ] Why can one OpenAPI file drive docs, mocks, and SDKs at once?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Scaffolded a spec**: You wrote a valid `info` and `servers` block
+- [ ] **Understood the flow**: You can explain contract-first in one sentence
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Describing Endpoints, Schemas, and Examples
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The heart of the document is `paths`: each endpoint, its parameters, its request body, and every response it can return. Reusable data models live in `components/schemas` and are referenced with `$ref`.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Writing a path with parameters and responses
+- Defining and reusing schemas
+- Adding examples
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Fully Described Endpoint
 
-[Detailed content for chapter 2]
+Here is `GET /books/{id}` and `POST /books`, with a reusable `Book` schema and examples:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+paths:
+  /books/{id}:
+    get:
+      summary: Get a book by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: The requested book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'   # reuse, do not repeat
+              example:
+                id: 1
+                title: The Pragmatic Programmer
+                author: Hunt and Thomas
+        '404':
+          description: No book with that id
+  /books:
+    post:
+      summary: Create a book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '201':
+          description: The created book
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+components:
+  schemas:
+    Book:
+      type: object
+      required: [title, author]
+      properties:
+        id:     { type: integer, readOnly: true }
+        title:  { type: string,  example: Clean Code }
+        author: { type: string,  example: Robert C. Martin }
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+The `$ref` keyword is the key to DRY documentation: define `Book` once and reference it from every place a book appears. **Examples** make the docs come alive - a developer can copy a realistic payload instead of guessing. Validate the document with tooling before you trust it:
+
+```bash
+# Lint the spec; a clean run means tools can rely on it
+redocly lint openapi.yaml
+```
+
+### 🔍 Knowledge Check: Endpoints & Schemas
+- [ ] What does `$ref: '#/components/schemas/Book'` accomplish?
+- [ ] Where do you declare which fields are required?
+- [ ] Why attach examples to responses?
+
+## 🧙‍♂️ Chapter 3: Tooling, Swagger UI, and Code Generation
+
+*A spec's value multiplies through tooling. The same `openapi.yaml` renders interactive docs, generates client SDKs, and validates incoming requests against the contract.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Rendering interactive docs with Swagger UI
+- Generating clients from the contract
+- Keeping docs and code in sync
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ From Spec to Living Documentation
 
-[Detailed content for chapter 3]
+**Swagger UI** turns your document into a web page where developers read every endpoint and even fire test requests from the browser. Serve it with one Docker command:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# Mount your spec and browse interactive docs at http://localhost:8080
+docker run --rm -p 8080:8080 \
+  -e SWAGGER_JSON=/spec/openapi.yaml \
+  -v "$PWD:/spec" swaggerapi/swagger-ui
+```
+
+**Code generation** reads the same contract and emits a typed client in your language, so consumers never hand-write request code:
+
+```bash
+# Generate a Python client from the contract
+npx @openapitools/openapi-generator-cli generate \
+  -i openapi.yaml -g python -o ./client
+```
+
+The golden rule is to keep the spec and the implementation in sync. Contract-first teams treat the spec as the source of truth and run **contract tests** in CI that replay the spec's examples against the live server, failing the build if the implementation drifts from the documented behavior. Whether you go contract-first (spec drives code) or code-first (annotations generate the spec), the spec must never silently lie about the API.
+
+### 🔍 Knowledge Check: Tooling
+- [ ] What can a developer do in Swagger UI besides read?
+- [ ] What does an OpenAPI code generator produce?
+- [ ] How do contract tests stop docs from drifting from reality?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Describe One Endpoint
+**Objective**: Write a valid OpenAPI fragment for a single endpoint.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Describe `GET /books/{id}` with a path parameter
+- [ ] Define a `200` and a `404` response
+- [ ] Lint it with `redocly lint` until it passes
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The linter reports no errors.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Reuse a Schema
+**Objective**: Add a second endpoint that reuses a shared schema.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Define a `Book` schema under `components/schemas`
+- [ ] Reference it with `$ref` from both a GET and a POST
+- [ ] Attach a realistic response example
 
-**Validation**: [How to verify success]
+**Validation**: No schema is duplicated; examples render in Swagger UI.
+
+### 🔴 Advanced Challenge: Contract-First Build
+**Objective**: Run a full contract-first cycle on a small API.
+
+**Requirements**:
+- [ ] Author the complete `openapi.yaml` before writing server code
+- [ ] Render it in Swagger UI and generate a client with the generator
+- [ ] Describe how a contract test would verify the implementation matches
+
+**Validation**: The generated client and rendered docs both come from your single spec.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Scribe of the Interface** - You authored a valid OpenAPI specification
+- 📖 **Keeper of the Contract** - You adopted a contract-first workflow
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **OpenAPI Authoring** - Describe any HTTP API precisely
+- **Contract-First Design** - Let the contract drive parallel development
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- You have completed the Level 0111 API Development quest line - advance to Level 1000, Cloud Computing
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +60 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 Advance to Level 1000 - Cloud Computing - deploy the APIs you have learned to build
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [API Versioning](/quests/0111/api-versioning/) - Document your versions in the spec
+- ⚔️ [Error Handling](/quests/0111/error-handling/) - Describe your error responses formally
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Advance to Level 1000 - Cloud Computing  
+**🏗️ System Engineer**: Explore [API Versioning](/quests/0111/api-versioning/)  
+**🛡️ Security Specialist**: Revisit [API Authentication](/quests/0111/api-authentication/) and document its security schemes
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html) - The authoritative standard
+- [OpenAPI Initiative](https://www.openapis.org/) - The governing body and learning hub
+- [Swagger UI](https://swagger.io/tools/swagger-ui/) - Interactive documentation tooling
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Swagger Editor](https://editor.swagger.io/) - Write and preview specs in the browser
+- [Redocly OpenAPI docs](https://redocly.com/docs/) - Linting and docs generation
+- [OpenAPI Generator](https://openapi-generator.tech/) - Generate clients and servers
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Learn OpenAPI (openapi-map)](https://openapi-map.apihandyman.io/) - Visual map of the spec
+- [Stoplight: Contract-first API design](https://stoplight.io/api-design-guide) - The workflow in depth
+- [JSON Schema](https://json-schema.org/) - The schema language OpenAPI builds on
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Authored a valid OpenAPI document
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
+**Level hub:** [[Level 0111 - API Development]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[REST Principles: Constraints, Resources, and Richardson Maturity]]
+**Unlocks:** [[Level 1000 - Cloud Computing]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

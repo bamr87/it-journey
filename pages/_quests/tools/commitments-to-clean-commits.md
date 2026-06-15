@@ -1,9 +1,7 @@
 ---
-title: Commitments to clean commits
+title: 'Commit Hygiene: Crafting Clean, Atomic Commits'
 author: IT-Journey Team
-description: Learn how to maintain clean commits in your projects for better collaboration and version control efficiency.
-excerpt: null
-snippet: null
+description: 'Master commit hygiene the wizardly way: write atomic commits, craft clear conventional messages, dodge cursed habits, and tidy history with rebase.'
 preview: images/previews/commitments-to-clean-commits.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:27:42.000Z'
@@ -38,9 +36,8 @@ keywords:
   - version control
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 **Ah, brave adventurer!** You've mastered the sacred art of branching and the scroll-writing ritual known as the Pull Request. Now, prepare thyself for the next enchanted trial:
 

@@ -21,7 +21,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python3 /app/test/quest-validator/quest_validator.py
+    command: python3 /app/test/quest-validator/quest_validator.py -d /app/pages/_quests/ --summary
     volumes:
       - ./:/app
     working_dir: /app

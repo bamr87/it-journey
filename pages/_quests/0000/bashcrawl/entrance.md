@@ -39,13 +39,9 @@ quest_dependencies:
   required_quests:
   - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/workshop/
+  - /quests/0000/cellar/
+  recommended_quests: []
 validation_criteria:
 - Run pwd and explain the output
 - List the entrance contents with ls and ls -F
@@ -53,15 +49,15 @@ validation_criteria:
 - Navigate to the cellar directory
 prerequisites:
 - Complete the Bashcrawl Hub quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Bashcrawl Brass Key
 - Terminal navigation proficiency
 excerpt: Start Bashcrawl by using pwd, ls, cd, and cat to read the first scroll, collect the brass key, and enter the dungeon.
 draft: false
-permalink: /quests/0000/side-quests/entrance/
+permalink: /quests/0000/entrance/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/entrance/
 ---
 *The dungeon gate groans open. Cool air pours out carrying the scent of ancient scrolls. This is where every hero begins — four commands, a brass key, and the courage to type.*
 

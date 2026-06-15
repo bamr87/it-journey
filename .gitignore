@@ -74,3 +74,8 @@ work/
 # Local databases / AI tooling
 ##############################
 .crush/
+
+# Generated quest validation reports (regenerate via make quest-audit)
+test/quest-validator/*-report.json
+test/quest-validator/full-audit-report.json
+pages/_quests/NETWORK_REPORT.md
