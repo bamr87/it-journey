@@ -9,7 +9,7 @@ lastmod: '2025-09-29T14:28:35.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 240-360 minutes
-primary_technology: 1011
+primary_technology: github-actions
 quest_type: main_quest
 quest_series: AI-Enhanced Development Mastery Path
 skill_focus: devops

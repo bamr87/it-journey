@@ -1,5 +1,6 @@
 ---
 title: Quests (~) Index
+author: IT-Journey Team
 layout: quest-hub
 quest_paths: true
 quest_progression: true
@@ -13,6 +14,11 @@ keywords:
 - developer training
 categories:
 - quests
+tags:
+- quests
+- learning-path
+- index
+- gamified-learning
 description: Your comprehensive guide to IT mastery through gamified learning adventures. Choose your path, level up your skills, and become an IT wizard.
 preview: /images/previews/quests-index.png
 permalink: /quests/

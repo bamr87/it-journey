@@ -1,6 +1,12 @@
 ---
 title: Dockering Jekyll with Bootstrap 5
 author: GPT and bamr87
+tags:
+- docker
+- jekyll
+- bootstrap
+- frontend
+- containers
 description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 preview: images/previews/dockering-jekyll-with-bootstrap-5.png
