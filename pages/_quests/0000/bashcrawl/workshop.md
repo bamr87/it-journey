@@ -63,6 +63,12 @@ layout: quest
 ---
 *The Workshop smells of sawdust and old iron. Workbenches line the walls, covered in unfinished projects. Here, heroes learn the art of building — and destroying — the very fabric of the file system.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Workshop" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Create a new room with `mkdir`
@@ -187,6 +193,8 @@ Before advancing:
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

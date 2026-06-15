@@ -64,6 +64,12 @@ layout: quest
 ---
 *A massive stone statue dominates the Chamber, its eyes glowing with arithmetic runes. It will not yield to a sword. Only correct calculations can break the enchantment — and wrong answers deal damage.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Chamber" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Compute values using `let`, `expr`, and `$(( ))`
@@ -187,6 +193,8 @@ Continue exploring:
 - **When all four branches complete** → [The Rift](/quests/0000/side-quests/rift/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

@@ -65,6 +65,12 @@ layout: quest
 ---
 *Behind a heavy iron door, the Vault holds the dungeon's most powerful secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Vault" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Set and read shell variables with `=` and `$VAR`
@@ -219,6 +225,8 @@ inventory
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

@@ -65,6 +65,12 @@ layout: quest
 ---
 *You have conquered the Rift. But the dungeon holds one final secret — a mode where an AI plays alongside you, a mode where you automate the entire journey, a mode where you become the dungeon master. Welcome to Agent Mode.*
 
+## 🕹️ Try Bashcrawl in Your Browser
+
+This page is your **walkthrough and strategy guide**. Agent Mode itself runs locally (see [Install &amp; Play Locally](#play-locally)) — but you can explore the dungeon in the browser first.
+
+{% include bashcrawl-terminal.html %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Launch Bashcrawl using `./main.sh --agent`
@@ -262,6 +268,8 @@ Complete all 10 side-quests and you have earned the right to call yourself a Bas
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

@@ -65,6 +65,12 @@ layout: quest
 ---
 *The dungeon gate groans open. Cool air pours out carrying the scent of ancient scrolls. This is where every hero begins — four commands, a brass key, and the courage to type.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Entrance" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Print your current location with `pwd`
@@ -177,6 +183,8 @@ You are now ready to explore deeper. Choose your path:
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

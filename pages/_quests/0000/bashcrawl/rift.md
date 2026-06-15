@@ -68,6 +68,12 @@ layout: quest
 ---
 *You stand at the edge of the Rift — a swirling chasm where data streams collide. The rules here are different: commands don't just run, they flow into each other. Master the pipe and you master the dungeon.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="The Rift" height="660" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Pipe command output to another command using `|`
@@ -225,6 +231,8 @@ The satellite boss is the final encounter. It uses all skills: pipe a command th
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

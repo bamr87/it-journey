@@ -65,6 +65,12 @@ layout: quest
 ---
 *The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas, guarded by a monster who fears knowledge.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Hidden Chapel" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Use `ls -a` to reveal the hidden `.CHAPEL` directory
@@ -223,6 +229,8 @@ The mausoleum is another hidden directory. Explore it for bonus lore and a secre
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

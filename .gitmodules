@@ -9,3 +9,6 @@
 [submodule "submodules/jekyll"]
 	path = submodules/jekyll
 	url = https://github.com/jekyll/jekyll.git
+[submodule "submodules/bashcrawl"]
+	path = submodules/bashcrawl
+	url = https://github.com/bamr87/bashcrawl.git

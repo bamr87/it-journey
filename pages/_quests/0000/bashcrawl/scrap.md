@@ -65,6 +65,12 @@ layout: quest
 ---
 *The Scrap Heap is a wasteland of discarded objects — broken swords, empty potion bottles, shattered mirrors. But hidden among the junk are portal mirrors, and learning `ln -s` lets you build instant teleportation.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Scrap Heap" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Understand the difference between hard links and symbolic links
@@ -187,6 +193,8 @@ inventory
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 
