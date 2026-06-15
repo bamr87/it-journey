@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1000/agentic-mcp-server-mastery/
   unlocks_quests:
   - /quests/1001/agentic-safe-execution-and-error-handling/
-quest_relationships:
-  sequel_quests:
-  - /quests/1001/agentic-safe-execution-and-error-handling/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏗️ Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Codespaces
+  recommended_quests: []
 rewards:
   badges:
   - 🏠 Realm Binder
@@ -80,11 +69,6 @@ validation_criteria:
   skill_demonstrations:
   - Can write an AGENTS.md that a new agent could follow without prior context
   - Can configure a devcontainer for consistent agent execution
-quest_mapping:
-  coordinates: '[2, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Barracks District
 comments: true
 draft: false
 redirect_from:

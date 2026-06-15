@@ -3,14 +3,13 @@ title: '404 Hunting: Binary Wards for Unbreakable Links'
 author: Quest Master IT-Journey
 description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians, and living resource endpoints powered by GitHub.
 excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink guardians, and organic resource endpoints.
-snippet: May your links never stray and your redirects never loop.
 preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
 date: '2025-08-31T18:32:58.000Z'
 lastmod: '2025-08-31T23:16:16.000Z'
 level: '1110'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-primary_technology: 1110
+primary_technology: jekyll
 quest_type: main_quest
 quest_series: Site Reliability for Static Sites
 skill_focus: fullstack
@@ -45,19 +44,15 @@ keywords:
 fmContentType: quest
 comments: true
 attachments: ''
-sub-title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
 rewards:
 - 🏆 Resource Guardian Badge
 - ⚡ Link Integrity +5
 - 🛠️ Jekyll Redirect Mastery
 - 🎯 CI Link Guardian Setup
-related_quests:
-- 'Permalink Lore: Stable Slugs and Trails (Level 1100)'
-- 'CI Scribes: Automating Quality Trials (Level 1111)'
-- 'Content Gardens: Jekyll Collections (Level 10100)'
 redirect_from:
 - /quests/1110/404-hunting/
 layout: quest
+sub_title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 
@@ -152,16 +147,16 @@ permalink: /404.html
   <h1>🧭 Lost in the Linkwood</h1>
   <p>The path you sought fades into mist. Try these routes:</p>
   <ul>
-    <li><a href="{{ site.baseurl }}/">Return to camp (home)</a></li>
-    <li><a href="{{ site.baseurl }}/sitemap.xml">Consult the star map (sitemap)</a></li>
+    <li><a href="{% raw %}{{ site.baseurl }}{% endraw %}/">Return to camp (home)</a></li>
+    <li><a href="{% raw %}{{ site.baseurl }}{% endraw %}/sitemap.xml">Consult the star map (sitemap)</a></li>
   </ul>
   <h2>Recent beacons</h2>
   <ul>
-    {% for post in site.posts limit:5 %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-    {% endfor %}
+    {% raw %}{% for post in site.posts limit:5 %}{% endraw %}
+      <li><a href="{% raw %}{{ post.url | relative_url }}{% endraw %}">{% raw %}{{ post.title }}{% endraw %}</a></li>
+    {% raw %}{% endfor %}{% endraw %}
   </ul>
-  <p>If this seems wrong, please <a href="https://github.com/{{ site.github.repository_nwo }}/issues/new?title=404:%20{{ page.url }}">open a scroll (issue)</a>.</p>
+  <p>If this seems wrong, please <a href="https://github.com/{% raw %}{{ site.github.repository_nwo }}{% endraw %}/issues/new?title=404:%20{% raw %}{{ page.url }}{% endraw %}">open a scroll (issue)</a>.</p>
   <style>.not-found{max-width:720px;margin:3rem auto;padding:0 1rem}</style>
 </main>
 ```
@@ -248,7 +243,7 @@ jobs:
             --timeout 20
             **/*.md **/*.html
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
 ```
 
 HTMLProofer (strict, post-build):
@@ -323,9 +318,9 @@ Data-driven links via `_data/quests.yml`:
 Template snippet:
 
 ```liquid
-{% for quest in site.data.quests %}
-  <a href="/quests/{{ quest.name | slugify }}">{{ quest.name }}</a>
-{% endfor %}
+{% raw %}{% for quest in site.data.quests %}{% endraw %}
+  <a href="/quests/{% raw %}{{ quest.name | slugify }}{% endraw %}">{% raw %}{{ quest.name }}{% endraw %}</a>
+{% raw %}{% endfor %}{% endraw %}
 ```
 
 ### 🔍 Knowledge Check: Growth

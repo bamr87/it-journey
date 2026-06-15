@@ -13,7 +13,7 @@ quest_type: side_quest
 quest_series: Level 0001 Quest Line
 skill_focus: devops
 learning_style: hands-on
-permalink: /quests/0001/side-quests/personal-site/
+permalink: /quests/0001/personal-site/
 categories:
 - Quests
 - GitHub-Pages
@@ -40,14 +40,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -56,6 +48,8 @@ validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/personal-site/
 ---
 ## 🎯 Quest Objectives
 
@@ -73,18 +67,18 @@ By the end of this quest, you will be able to:
 
 My personal website can be accessed through following domains. These sites are all using the same source files.
 
-* [{{ site.github_base_url }}](https://{{ site.github_base_url }})
+* [{% raw %}{{ site.github_base_url }}{% endraw %}](https://{% raw %}{{ site.github_base_url }}{% endraw %})
 
  No. | URL                                                | Description
 -----|----------------------------------------------------|----------------------------------------
- 1   | https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io | Source code repository
- 2   | https://{{ site.github_user }}.github.io/                      | `Domain 1`, hosted by GitHub Pages
- 3   | <https://travis-ci.org/>                             | CI/CD for {{ site.github_user }}.github.io
- 4   | https://{{ site.github_user }}.netlify.com/                    | `Domain 2`, hosted by Netlify
- 5   | <https://www.netlify.com/>                           | CI/CD for {{ site.github_user }}.netlify.com
- 6   | https://{{ site.github_user }}.github.io/                             | `Domain 3`, hosted by Cloudflare
- 7   | <https://www.cloudflare.com/>                        | CDN for {{ site.github_user }}.github.io
- 8   | <https://www.godaddy.com/>                           | Domain service for {{ site.github_user }}.github.io
+ 1   | https://github.com/{% raw %}{{ site.github_user }}{% endraw %}/{% raw %}{{ site.github_user }}{% endraw %}.github.io | Source code repository
+ 2   | https://{% raw %}{{ site.github_user }}{% endraw %}.github.io/                      | `Domain 1`, hosted by GitHub Pages
+ 3   | <https://travis-ci.org/>                             | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.github.io
+ 4   | https://{% raw %}{{ site.github_user }}{% endraw %}.netlify.com/                    | `Domain 2`, hosted by Netlify
+ 5   | <https://www.netlify.com/>                           | CI/CD for {% raw %}{{ site.github_user }}{% endraw %}.netlify.com
+ 6   | https://{% raw %}{{ site.github_user }}{% endraw %}.github.io/                             | `Domain 3`, hosted by Cloudflare
+ 7   | <https://www.cloudflare.com/>                        | CDN for {% raw %}{{ site.github_user }}{% endraw %}.github.io
+ 8   | <https://www.godaddy.com/>                           | Domain service for {% raw %}{{ site.github_user }}{% endraw %}.github.io
  9   | <https://sharethis.com/>                             | Share buttons
  10  | <https://disqus.com/>                                | Comments service
  11  | <https://analytics.google.com>                       | Track website traffic

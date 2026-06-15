@@ -28,7 +28,7 @@ level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/0001/side-quests/it-journey-stack-analysis/
+permalink: /quests/0001/it-journey-stack-analysis/
 primary_technology: stack-analysis
 skill_focus: fullstack
 learning_style: hands-on
@@ -57,14 +57,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -73,6 +65,8 @@ validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/it-journey-stack-analysis/
 ---
 # Stack Attack Analysis: IT-Journey
 

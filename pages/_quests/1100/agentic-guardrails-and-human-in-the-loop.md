@@ -46,19 +46,7 @@ quest_dependencies:
   - /quests/1100/agentic-autonomy-levels-matrix/
   unlocks_quests:
   - /quests/1100/agentic-codex-capstone-exam-trial/
-quest_relationships:
-  sequel_quests:
-  - /quests/1100/agentic-codex-capstone-exam-trial/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🛡️ Security Engineer
-  skill_trees:
-  - Agentic AI
-  - AI Governance
-  - Security
+  recommended_quests: []
 rewards:
   badges:
   - 🛡️ The Warden
@@ -79,11 +67,6 @@ validation_criteria:
   - At least 3 guardrail types implemented (file scope, approval gate, audit trail)
   - Human-in-the-loop workflow tested end-to-end
   - Guardrail documentation published in repository
-quest_mapping:
-  coordinates: '[6, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Warden's Gate
 comments: true
 draft: false
 redirect_from:
@@ -169,7 +152,7 @@ jobs:
         id: scope_check
         run: |
           # Get all files changed in this PR
-          CHANGED_FILES=$(gh pr view "${{ github.event.pull_request.number }}" \
+          CHANGED_FILES=$(gh pr view "${% raw %}{{ github.event.pull_request.number }}{% endraw %}" \
             --json files -q '.files[].path')
           
           echo "Files changed:"
@@ -230,7 +213,7 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
-      deploy_plan: ${{ steps.plan.outputs.deploy_plan }}
+      deploy_plan: ${% raw %}{{ steps.plan.outputs.deploy_plan }}{% endraw %}
     steps:
       - uses: actions/checkout@v4
       - name: Create deployment plan
@@ -246,13 +229,13 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     environment:
-      name: ${{ github.event.inputs.target_environment }}    # Must be configured with required reviewers in GitHub repo settings
+      name: ${% raw %}{{ github.event.inputs.target_environment }}{% endraw %}    # Must be configured with required reviewers in GitHub repo settings
     steps:
       - uses: actions/checkout@v4
       - name: Deploy (approved by human reviewer)
         run: |
           echo "✅ Deployment approved by human reviewer"
-          echo "Deploying plan: ${{ needs.prepare.outputs.deploy_plan }}"
+          echo "Deploying plan: ${% raw %}{{ needs.prepare.outputs.deploy_plan }}{% endraw %}"
           # ... actual deployment steps ...
 ```
 
@@ -277,7 +260,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
 
       - name: Write audit log entry
         run: |
@@ -289,12 +272,12 @@ jobs:
           {
             "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
             "actor": "github-actions[bot]",
-            "workflow": "${{ github.event.workflow_run.name }}",
-            "run_id": "${{ github.event.workflow_run.id }}",
-            "conclusion": "${{ github.event.workflow_run.conclusion }}",
-            "triggered_by": "${{ github.event.workflow_run.triggering_actor.login }}",
-            "head_branch": "${{ github.event.workflow_run.head_branch }}",
-            "head_sha": "${{ github.event.workflow_run.head_sha }}"
+            "workflow": "${% raw %}{{ github.event.workflow_run.name }}{% endraw %}",
+            "run_id": "${% raw %}{{ github.event.workflow_run.id }}{% endraw %}",
+            "conclusion": "${% raw %}{{ github.event.workflow_run.conclusion }}{% endraw %}",
+            "triggered_by": "${% raw %}{{ github.event.workflow_run.triggering_actor.login }}{% endraw %}",
+            "head_branch": "${% raw %}{{ github.event.workflow_run.head_branch }}{% endraw %}",
+            "head_sha": "${% raw %}{{ github.event.workflow_run.head_sha }}{% endraw %}"
           }
           EOF
           
@@ -305,7 +288,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add work/gh-600/audit/
-          git diff --staged --quiet || git commit -m "audit: log agent action run ${{ github.event.workflow_run.id }}"
+          git diff --staged --quiet || git commit -m "audit: log agent action run ${% raw %}{{ github.event.workflow_run.id }}{% endraw %}"
           git push
 ```
 

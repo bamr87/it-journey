@@ -4,7 +4,7 @@
 .PHONY: help stats stats-update stats-show stats-clean stats-config test \
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
-        quest-audit quest-audit-strict quest-levels-data quest-nav \
+        quest-audit quest-audit-strict quest-levels-data quest-nav quest-data quest-normalize \
         content-validate content-normalize content-normalize-apply content-audit
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
@@ -182,6 +182,13 @@ quest-levels-data:
 quest-nav:
 	@echo "🧭 Regenerating quest sidebar navigation..."
 	@python3 scripts/quest/generate-quest-navigation.py
+
+quest-normalize:
+	@echo "🧹 Normalizing quest frontmatter (relationships, retired fields)..."
+	@python3 scripts/quest/normalize-quest-frontmatter.py --apply
+
+quest-data: quest-levels-data quest-nav quest-build-network
+	@echo "✅ All registry-derived quest data regenerated (levels, tiers, order, navigation, network)."
 
 quest-audit: quest-build-network quest-validate quest-network
 	@echo "✅ Quest audit complete — content, dependencies, and network artifacts validated."

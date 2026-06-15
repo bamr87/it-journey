@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1010/agentic-state-continuity-cross-tools/
   unlocks_quests:
   - /quests/1010/agentic-failure-root-cause-analysis/
-quest_relationships:
-  sequel_quests:
-  - /quests/1010/agentic-failure-root-cause-analysis/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 📊 Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - Evaluation
+  recommended_quests: []
 rewards:
   badges:
   - 🔮 Oracle's Scribe
@@ -74,11 +63,6 @@ validation_criteria:
   - Acceptance criteria schema defined and embedded in issue template
   - At least 3 GitHub signals mapped to task completion
   - Completion detection workflow implemented and tested
-quest_mapping:
-  coordinates: '[4, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Oracle's Chamber
 comments: true
 draft: false
 redirect_from:

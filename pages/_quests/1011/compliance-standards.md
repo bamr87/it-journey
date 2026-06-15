@@ -1,74 +1,61 @@
 ---
-title: 'Compliance Standards: SOC 2, GDPR, and HIPAA Requirements'
+title: 'Compliance Standards: SOC 2, ISO 27001, GDPR, and PCI-DSS'
 author: IT-Journey Team
-description: Navigate security compliance frameworks including SOC 2, GDPR, HIPAA, and PCI-DSS. Learn audit preparation, control implementation, and regulatory requirements.
-excerpt: Implement and maintain compliance with SOC 2, GDPR, HIPAA, and other security standards
-preview: images/previews/compliance-standards-soc-2-gdpr-quest-title-hipaa-.png
+description: Navigate the major security compliance frameworks - SOC 2, ISO 27001, GDPR, and PCI-DSS. Learn controls mapping, audit evidence, and how to prepare for an audit.
+excerpt: Master SOC 2, ISO 27001, GDPR, and PCI-DSS - controls, audit evidence, and audit readiness
+preview: images/previews/compliance-standards-soc-2-iso-27001-gdpr-pci-dss.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:55.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: compliance
 quest_type: main_quest
 quest_series: Security Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Bastion
+quest_arc: The Scribe's Ledger of Trust
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
+  required_quests:
+  - /quests/1011/security-fundamentals/
+  recommended_quests:
+  - /quests/1011/secure-coding/
+  - /quests/1011/penetration-testing/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
 skill_focus: security
-learning_style: hands-on
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Security Fundamentals (recommended)
+  - Understanding of security controls and the CIA triad
+  - General awareness of how organizations handle customer data
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A spreadsheet or text editor for building a controls matrix
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable thinking about processes and evidence, not only code
+  - Ready to map technical controls to framework requirements
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A small controls-mapping matrix linking one control to multiple frameworks
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain the difference between SOC 2 and ISO 27001
+  - Can describe what audit evidence demonstrates a control is operating
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands GDPR lawful basis and data-subject rights at a high level
+  - Knows the core intent of the PCI-DSS requirements
 permalink: /quests/1011/compliance-standards/
 categories:
 - Quests
 - Security
-- Hard
+- Medium
 tags:
 - '1011'
 - compliance
 - main_quest
-- security
-- hands-on
+- soc2
+- iso-27001
+- conceptual
 - gamified-learning
 keywords:
   primary:
@@ -76,112 +63,77 @@ keywords:
   - compliance
   - main_quest
   secondary:
-  - security
-  - hands-on
-  - gamified-learning
+  - soc2
+  - iso-27001
+  - gdpr
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1011 (11) Quest: Main Quest - Compliance'
+sub_title: 'Level 1011 (11) Quest: Main Quest - Compliance Standards'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Scribe of Trust - Mapped controls to the great compliance frameworks
+  - 🛡️ Keeper of the Ledger - Prepared evidence that satisfies auditors
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Controls Mapping Across Frameworks
+  - 📜 Audit Evidence Preparation
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Ability to help an organization prepare for a real security audit
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have built strong walls and tested them well - but in the wider world, strength is not enough. You must also **prove** it, in writing, to skeptical auditors and wary customers. This quest, **Compliance Standards**, teaches the scribe's discipline: mapping the controls you already have to the great frameworks of trust - SOC 2, ISO 27001, GDPR, and PCI-DSS - and gathering the evidence that shows they truly operate.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Compliance is where security meets the ledger. A control that works but cannot be evidenced is, to an auditor, a control that does not exist. Master this quest and you can translate technical defenses into the language of attestation, certification, and regulation.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*As commerce moved into the cloud, a problem of trust arose: how could one company rely on another to guard its data? The answer was independent frameworks and audits - SOC 2 attestations, ISO 27001 certifications, and laws like GDPR and PCI-DSS - that let an outside party vouch for a system's controls. The clever defender soon realized a secret: most of these frameworks ask for the same handful of controls under different names. Map once, satisfy many.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **SOC 2** - The five Trust Services Criteria and what a Type I vs Type II report means
+- [ ] **ISO 27001** - An ISMS, Annex A controls, and how certification differs from attestation
+- [ ] **GDPR** - Lawful basis, data-subject rights, and the core privacy obligations
+- [ ] **PCI-DSS** - The intent of the requirements protecting cardholder data
+- [ ] **Controls Mapping & Evidence** - Map one control to many frameworks and gather audit evidence
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Gap Assessment** - Compare current state to a framework's requirements
+- [ ] **Continuous Compliance** - Automate evidence collection rather than scrambling at audit time
+- [ ] **Shared Responsibility** - Understand who owns which control in a cloud environment
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain how SOC 2 and ISO 27001 differ in form and outcome
+- [ ] Describe two GDPR data-subject rights
+- [ ] State what PCI-DSS exists to protect
+- [ ] Build a row of a controls matrix that satisfies several frameworks at once
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Security Fundamentals](/quests/1011/security-fundamentals/) (recommended)
+- [ ] Understanding of security controls and the CIA triad
+- [ ] General awareness of how organizations collect and store data
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A spreadsheet tool or text editor for building a controls matrix
+- [ ] A web browser to read framework references
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can reason about processes and evidence, not just code
+- [ ] You are ready to translate technical controls into framework language
+- [ ] Ready for 90-120 minutes of focused study
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*This quest is documentation- and process-heavy. Your "tools" are a controls matrix and the framework references. Any platform works.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +141,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Build your controls matrix as version-controlled, plain-text Markdown/CSV
+mkdir -p ~/compliance && cd ~/compliance
+printf "Control,SOC2,ISO27001,GDPR,PCI-DSS,Evidence\n" > controls-matrix.csv
+open -a "Numbers" controls-matrix.csv 2>/dev/null || cat controls-matrix.csv
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +155,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Start a controls matrix you can track in git
+New-Item -ItemType Directory -Force -Path "$HOME\compliance" | Out-Null
+Set-Content "$HOME\compliance\controls-matrix.csv" "Control,SOC2,ISO27001,GDPR,PCI-DSS,Evidence"
+Get-Content "$HOME\compliance\controls-matrix.csv"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +169,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Plain-text, version-controlled evidence beats a sprawling shared drive
+mkdir -p ~/compliance && cd ~/compliance
+echo "Control,SOC2,ISO27001,GDPR,PCI-DSS,Evidence" > controls-matrix.csv
+git init -q && git add controls-matrix.csv
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +183,236 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Cloud providers publish their own attestations you inherit under the
+# shared responsibility model. Pull them from the trust portals:
+#   AWS Artifact, Azure Service Trust Portal, Google Cloud Compliance Reports.
+echo "Inherit provider controls; you remain responsible for your config + data."
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: SOC 2 and ISO 27001 - Attestation vs Certification
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The two most common frameworks a software company meets are SOC 2 and ISO 27001. They overlap heavily but differ in form.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The SOC 2 Trust Services Criteria and report types
+- The ISO 27001 ISMS and Annex A controls
+- When each is asked for
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ SOC 2
 
-**Step 1: Environment Setup**
+SOC 2 is an **attestation** report produced by a licensed CPA firm, built around five **Trust Services Criteria (TSC)**:
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+| Criterion | Concern |
+| --- | --- |
+| **Security** (required) | Protection against unauthorized access |
+| **Availability** | The system is available for operation as agreed |
+| **Processing Integrity** | Processing is complete, valid, accurate, timely |
+| **Confidentiality** | Confidential information is protected |
+| **Privacy** | Personal information is handled per the privacy notice |
+
+- A **Type I** report assesses control design at a point in time.
+- A **Type II** report assesses operating effectiveness over a period (typically 3-12 months) - this is what customers usually demand.
+
+### 🏗️ ISO 27001
+
+ISO/IEC 27001 is an international standard for an **Information Security Management System (ISMS)**. Unlike SOC 2's attestation, ISO 27001 yields a formal **certification** from an accredited body. Its **Annex A** (revised in the 2022 edition to 93 controls across four themes - Organizational, People, Physical, Technological) is the control catalog.
+
+```text
+SOC 2                            ISO 27001
+- US-centric, AICPA              - International standard
+- Attestation report (CPA)       - Certification (accredited body)
+- Trust Services Criteria        - ISMS + Annex A controls
+- Type I (design) / Type II (op) - Stage 1 (docs) / Stage 2 (operation) audit
+- Renewed annually               - 3-year cycle with surveillance audits
 ```
 
-**Step 2: Core Concepts**
+### 🔍 Knowledge Check: SOC 2 & ISO 27001
+- [ ] Which SOC 2 criterion is always required?
+- [ ] What does a Type II report add over a Type I?
+- [ ] How does ISO 27001 certification differ from a SOC 2 attestation?
 
-[Explanation of fundamental concepts]
+## 🧙‍♂️ Chapter 2: GDPR and PCI-DSS - Regulation and Mandate
 
-**Step 3: First Implementation**
+*SOC 2 and ISO 27001 are voluntary frameworks. GDPR is law; PCI-DSS is a contractual mandate. Both carry real penalties.*
 
-```[language]
-# Your first working example
-[code-example]
+### ⚔️ Skills You'll Forge in This Chapter
+- GDPR lawful basis and data-subject rights
+- The intent behind PCI-DSS
 
-# Expected output:
-# [description of output]
+### 🏗️ GDPR (General Data Protection Regulation)
+
+The EU's GDPR governs the processing of personal data of people in the EU/EEA, regardless of where the processor is located. Core ideas:
+
+- **Lawful basis** - you need a legal reason to process personal data (consent, contract, legal obligation, vital interests, public task, or legitimate interests).
+- **Data-subject rights** - access, rectification, erasure ("right to be forgotten"), portability, objection, and restriction.
+- **Principles** - data minimization, purpose limitation, storage limitation, and accountability.
+- **Breach notification** - report qualifying breaches to the supervisory authority within **72 hours**.
+- **Penalties** - up to €20 million or 4% of global annual turnover, whichever is higher.
+
+### 🏗️ PCI-DSS (Payment Card Industry Data Security Standard)
+
+PCI-DSS is mandated by the card brands for any organization that stores, processes, or transmits cardholder data. The current major version is **PCI-DSS v4.0**. Its requirements protect the **cardholder data environment (CDE)**:
+
+```text
+1–2  Build and maintain a secure network (firewalls, no vendor defaults)
+3–4  Protect stored cardholder data and encrypt it in transit
+5–6  Maintain a vulnerability program (anti-malware, secure development)
+7–8  Strong access control (need-to-know, unique IDs, MFA)
+9    Restrict physical access to cardholder data
+10–11 Monitor and test networks (logging, scans, penetration tests)
+12   Maintain an information security policy
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+The cheapest path to compliance is often to **reduce scope** - e.g., never store card numbers yourself; use a tokenizing payment processor so the CDE barely touches your systems.
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+### 🔍 Knowledge Check: GDPR & PCI-DSS
+- [ ] Name two GDPR data-subject rights
+- [ ] What is the GDPR breach-notification deadline?
+- [ ] Why does reducing PCI scope reduce compliance burden?
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 3: Controls Mapping and Audit Evidence
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Here is the secret that makes compliance tractable: the frameworks overlap enormously. A single technical control - say, enforcing MFA - satisfies a requirement in every one of them. Map once, evidence once, satisfy many.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Building a controls-mapping matrix
+- Identifying valid audit evidence
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Controls-Mapping Matrix
 
-[Detailed content for chapter 2]
+```text
+Control: Multi-Factor Authentication on admin access
+  SOC 2      -> CC6.1 (logical access security)
+  ISO 27001  -> A.8.5 (secure authentication)
+  GDPR       -> Art. 32 (security of processing — appropriate measures)
+  PCI-DSS    -> Req. 8.4/8.5 (MFA for access to the CDE)
+  Evidence   -> IdP config screenshot + MFA enrollment report + access log sample
+```
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+One control, four frameworks. Maintain this matrix as the spine of your compliance program.
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+### 🏗️ What Counts as Audit Evidence
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Auditors do not take your word for it; they want artifacts proving a control is **designed** and **operating** over time:
 
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+```text
+Strong evidence types:
+  - Configuration exports (IAM policies, firewall rules, encryption settings)
+  - System-generated logs and reports (access reviews, vulnerability scans)
+  - Tickets showing a process ran (offboarding, change approvals)
+  - Signed policies and training completion records
+  - Screenshots with timestamps (least preferred — easy to fake, hard to date)
 
-### 🏗️ Building Your Real-World Solution
+For a Type II / certification: evidence must span the AUDIT PERIOD,
+not just a single moment. One screenshot is design; a quarter of access
+reviews is operation.
+```
 
-[Detailed content for chapter 3]
+Mature teams pursue **continuous compliance** - automating evidence collection (e.g., with tools like Vanta, Drata, or custom scripts pulling cloud config) so an audit is a query, not a fire drill.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+### 🔍 Knowledge Check: Mapping & Evidence
+- [ ] How can one control satisfy multiple frameworks?
+- [ ] Why must Type II evidence span a period, not a moment?
+- [ ] What makes a configuration export stronger evidence than a screenshot?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Map One Control
+**Objective**: Pick one control you actually use (encryption at rest, MFA, logging) and map it to all four frameworks.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] One control, four framework references
+- [ ] One concrete piece of evidence that proves it
+- [ ] Note which framework's wording is strictest
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Each mapping cites a plausible requirement area.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Gap Assessment
+**Objective**: Choose three SOC 2 Security criteria controls and assess whether a system you know meets them.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] State each control's intent
+- [ ] Mark met / partial / gap with justification
+- [ ] Propose how to close each gap
 
-**Validation**: [How to verify success]
+**Validation**: Each "met" claim has evidence behind it.
+
+### 🔴 Advanced Challenge: Mini Audit Package
+**Objective**: Assemble an evidence package for one control as if for a Type II audit.
+
+**Requirements**:
+- [ ] Document the control's design (the policy/config)
+- [ ] Provide operating evidence spanning a period
+- [ ] Map it across at least three frameworks
+- [ ] Identify how the evidence could be collected automatically
+
+**Validation**: An auditor could conclude the control operated for the period.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Scribe of Trust** - You mapped controls to the great frameworks
+- 🛡️ **Keeper of the Ledger** - You prepared evidence auditors accept
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Controls Mapping Across Frameworks** - Satisfy many standards with one matrix
+- **Audit Evidence Preparation** - Prove controls operate over time
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- You have completed the core Security & Compliance arc - advance toward the Master tier
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 Advance to the Master tier (Level 1100+) - Data Engineering and beyond
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Penetration Testing](/quests/1011/penetration-testing/) - Often a required PCI/SOC 2 control
+- ⚔️ [Threat Modeling](/quests/1011/threat-modeling/) - Evidence of risk assessment for auditors
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Revisit [Secure Coding Practices](/quests/1011/secure-coding/)  
+**🏗️ System Engineer**: Explore [Penetration Testing](/quests/1011/penetration-testing/)  
+**🛡️ Security Specialist**: Deepen [Threat Modeling](/quests/1011/threat-modeling/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [AICPA SOC 2 / Trust Services Criteria](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2) - The source of SOC 2
+- [ISO/IEC 27001](https://www.iso.org/standard/27001) - The international ISMS standard
+- [GDPR Full Text](https://gdpr-info.eu/) - Searchable articles and recitals
+- [PCI Security Standards Council](https://www.pcisecuritystandards.org/) - PCI-DSS v4.0 and guidance
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
+- [NIST SP 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) - A control catalog many frameworks map back to
+- [Secure Controls Framework (SCF)](https://securecontrolsframework.com/) - A meta-framework that maps across standards
+- [Cloud Security Alliance CCM](https://cloudsecurityalliance.org/research/cloud-controls-matrix) - Cloud controls matrix
 
 ### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [AWS Artifact](https://aws.amazon.com/artifact/) / [Azure Service Trust Portal](https://servicetrust.microsoft.com/) - Inherit provider attestations
+- [OpenSCAP](https://www.open-scap.org/) - Automated configuration compliance scanning
+- [GDPR Checklist](https://gdpr.eu/checklist/) - A practical readiness list
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built a controls-mapping matrix row across frameworks
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
+**Level hub:** [[Level 1011 - Security & Compliance]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
+**Related quests:** [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

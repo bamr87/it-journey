@@ -2,8 +2,7 @@
 title: Mastering Branches and Pull Requests for Developers
 author: IT-Journey Team
 description: Learn how branches and pull requests streamline collaboration and enhance code quality in software development.
-excerpt: null
-snippet: null
+excerpt:
 preview: images/previews/mastering-branches-and-pull-requests-for-developer.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:24:06.000Z'
@@ -39,8 +38,8 @@ keywords:
 fmContentType: quest
 comments: false
 attachments: ''
-sub-title: null
 layout: quest
+sub_title:
 ---
 * * * *
 

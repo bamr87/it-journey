@@ -48,20 +48,6 @@ quest_dependencies:
   - /quests/0111/rest-principles/
   unlocks_quests:
   - /quests/0111/agentic-plan-vs-action-boundaries/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  sequel_quests:
-  - /quests/0111/agentic-plan-vs-action-boundaries/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏗️ Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Copilot
 rewards:
   badges:
   - 🤖 Agent Initiate
@@ -90,11 +76,6 @@ validation_criteria:
   knowledge_checks:
   - Understands why success criteria must be defined before deploying an agent
   - Can describe inputs and outputs for at least two different agent types
-quest_mapping:
-  coordinates: '[1, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: SDLC Forest
 comments: true
 draft: false
 redirect_from:

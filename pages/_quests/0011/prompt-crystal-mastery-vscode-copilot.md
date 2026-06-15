@@ -3,7 +3,6 @@ title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
 author: Quest Master IT-Journey Team
 description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
 excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding precision-crafted prompts that unlock consistent, high-quality AI assistance in your development workflow
-snippet: Your prompts are code—version them, test them, perfect them
 preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
 date: '2025-11-26T22:17:42.000Z'
 lastmod: '2025-11-27T05:11:44.000Z'
@@ -16,27 +15,10 @@ quest_series: AI Development Mastery
 quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0010/prompt-engineering-mastery/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0010/prompt-engineering-mastery/
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - AI Development
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🤖 AI Engineer
-  - 🏗️ System Engineer
-  skill_trees:
-  - AI Development
-  - Prompt Engineering
-  - VS Code Mastery
-  - Developer Productivity
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -69,11 +51,6 @@ validation_criteria:
   - Describe the difference between zero-shot and few-shot prompting
   - Identify when Chain-of-Thought prompting improves results
   - Apply PDCA cycle principles to prompt quality improvement
-quest_mapping:
-  coordinates: '[3, 2]'
-  region: Foundation
-  realm: AI-Enhanced
-  biome: Development Tools
 permalink: /quests/0011/prompt-crystal-vscode-copilot/
 categories:
 - Quests
@@ -369,20 +346,20 @@ The codebase uses Python 3.10+ with type hints throughout.
 **Complete RCTF Template**:
 ```markdown
 [ROLE]
-You are a [specific expert with relevant experience].
+You are a senior TypeScript developer experienced in REST APIs.
 
 [CONTEXT]
-The user is working on [situation/project].
-Current state: [what exists now]
-Goal: [what we're trying to achieve]
+The user is working on a user-registration service.
+Current state: A basic Express route exists with no validation
+Goal: Add robust, well-tested email validation
 
 [TASK]
-Your task is to [specific, actionable request].
+Your task is to write an email-validation function with unit tests.
 
 Requirements:
-1. [Requirement 1]
-2. [Requirement 2]
-3. [Requirement 3]
+1. Validate format with a regex and reject empty strings
+2. Return a typed result of { isValid: boolean; error?: string }
+3. Include a JSDoc comment with at least two usage examples
 
 [CONSTRAINTS]
 - [Technical constraint]
@@ -497,7 +474,7 @@ Input: [example input]
 Output: [desired output]
 
 Now apply to:
-Input: [your input]
+Input: processPaymentQueue
 Output:
 ```
 
@@ -542,21 +519,22 @@ Output:
 
 **Zero-Shot CoT (Simplest)**:
 ```markdown
-Problem: [Your complex problem]
+Problem: This recursive function causes a stack overflow on large inputs.
+         How should I refactor it?
 
 Let's solve this step-by-step:
 ```
 
 **Few-Shot CoT (More Accurate)**:
 ```markdown
-Problem: [Example problem]
+Problem: A loop runs 1000 times and each iteration opens a DB connection.
 Let's think step by step:
-Step 1: [reasoning]
-Step 2: [reasoning]
-Step 3: [reasoning]
-Answer: [result]
+Step 1: Identify the repeated work (a new connection per iteration)
+Step 2: Note the cost (connection setup dominates runtime)
+Step 3: Choose a fix (open one connection outside the loop)
+Answer: Hoist the connection out of the loop and reuse it
 
-Problem: [Your problem]
+Problem: An API endpoint times out when fetching related records.
 Let's think step by step:
 ```
 
@@ -599,7 +577,7 @@ Step 2: Analyze join efficiency → Found: Cartesian product risk
 Step 3: Review aggregation → Found: Unnecessary DISTINCT
 Solution: Add index, reorder joins, remove DISTINCT
 
-Problem: [Your slow query]
+Problem: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at
 Let's debug step-by-step:
 ```
 
@@ -813,16 +791,16 @@ inputs:
   - severity_threshold
 ---
 
-# Code Review: {{ inputs.focus_area }}
+# Code Review: {% raw %}{{ inputs.focus_area }}{% endraw %}
 
 [ROLE] You are a senior software engineer conducting code review.
 
 [CONTEXT] 
-Reviewing code with focus on {{ inputs.focus_area }}.
+Reviewing code with focus on {% raw %}{{ inputs.focus_area }}{% endraw %}.
 This is for a production application requiring enterprise-level quality.
 
 [TASK]
-Review the provided code focusing on {{ inputs.focus_area }}.
+Review the provided code focusing on {% raw %}{{ inputs.focus_area }}{% endraw %}.
 
 ## Review Criteria
 
@@ -848,7 +826,7 @@ For each issue found:
 - **Issue**: Description of the problem
 - **Fix**: Recommended solution with code example
 
-Only report issues at {{ inputs.severity_threshold }} level or higher.
+Only report issues at {% raw %}{{ inputs.severity_threshold }}{% endraw %} level or higher.
 ```
 
 ### 📚 Template Library Structure
@@ -880,12 +858,12 @@ inputs:
   - error_type
 ---
 
-# Debug Assistant: {{ inputs.language }} {{ inputs.error_type }}
+# Debug Assistant: {% raw %}{{ inputs.language }}{% endraw %} {% raw %}{{ inputs.error_type }}{% endraw %}
 
-[ROLE] You are an expert {{ inputs.language }} debugger specializing in {{ inputs.error_type }} issues.
+[ROLE] You are an expert {% raw %}{{ inputs.language }}{% endraw %} debugger specializing in {% raw %}{{ inputs.error_type }}{% endraw %} issues.
 
 [CONTEXT]
-The user is experiencing a {{ inputs.error_type }} in their {{ inputs.language }} code.
+The user is experiencing a {% raw %}{{ inputs.error_type }}{% endraw %} in their {% raw %}{{ inputs.language }}{% endraw %} code.
 They need systematic debugging assistance.
 
 [TASK]
@@ -900,10 +878,10 @@ Analyze the provided code and error, then:
 [Step-by-step breakdown of the issue]
 
 ## 🐛 Root Cause
-[Specific cause of the error]
+The exact line and condition that triggers the failure
 
 ## ✅ Solution
-\`\`\`{{ inputs.language }}
+\`\`\`{% raw %}{{ inputs.language }}{% endraw %}
 [Fixed code with comments]
 \`\`\`
 
@@ -922,9 +900,9 @@ inputs:
   - framework
 ---
 
-# Test Generator: {{ inputs.language }} with {{ inputs.framework }}
+# Test Generator: {% raw %}{{ inputs.language }}{% endraw %} with {% raw %}{{ inputs.framework }}{% endraw %}
 
-[ROLE] You are a QA engineer specializing in {{ inputs.language }} testing with {{ inputs.framework }}.
+[ROLE] You are a QA engineer specializing in {% raw %}{{ inputs.language }}{% endraw %} testing with {% raw %}{{ inputs.framework }}{% endraw %}.
 
 [CONTEXT]
 Creating comprehensive test coverage for production code.
@@ -937,8 +915,8 @@ Generate unit tests for the provided function covering:
 3. Error cases (invalid inputs, exceptions)
 
 [FORMAT]
-\`\`\`{{ inputs.language }}
-// Test file with {{ inputs.framework }} syntax
+\`\`\`{% raw %}{{ inputs.language }}{% endraw %}
+// Test file with {% raw %}{{ inputs.framework }}{% endraw %} syntax
 // Include test descriptions explaining intent
 
 describe('[Function Name]', () => {

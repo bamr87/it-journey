@@ -1,63 +1,49 @@
 ---
 title: 'Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide'
 author: IT-Journey Team
-description: Implement distributed tracing with Jaeger and OpenTelemetry. Learn span contexts, trace propagation, service graphs, and performance debugging for microservices architectures.
-excerpt: Implement distributed tracing with Jaeger and OpenTelemetry for microservices debugging
+description: Implement distributed tracing with OpenTelemetry and Jaeger. Learn spans and traces, context propagation, instrumentation, and how to debug latency across microservices.
+excerpt: Follow a single request across services with spans, traces, OpenTelemetry, and Jaeger
 preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:22.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: opentelemetry
 quest_type: main_quest
 quest_series: Observability Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Watchtower
+quest_arc: Mastering the Traces Pillar
 quest_dependencies:
   required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  recommended_quests:
+  - /quests/1010/monitoring-fundamentals/
+  unlocks_quests:
+  - /quests/1010/alerting-systems/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort on the command line and reading YAML
+  - The three pillars of observability (metrics, logs, traces)
+  - Basic Python and how HTTP services call one another
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ with pip and venv, plus Docker for Jaeger
+  - A terminal and a text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can build and run a small Python service
+  - Ready to reason about latency spread across multiple services
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A multi-span trace visible in the Jaeger UI
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can instrument a service with OpenTelemetry and emit spans
+  - Can read a trace waterfall and locate the slow span
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands spans, traces, trace context, and propagation
+  - Can describe head versus tail sampling trade-offs
 permalink: /quests/1010/distributed-tracing/
 categories:
 - Quests
@@ -77,113 +63,78 @@ keywords:
   - jaeger
   - opentelemetry
   secondary:
-  - main_quest
-  - devops
-  - hands-on
-  - gamified-learning
+  - spans-traces
+  - context-propagation
+  - sampling
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1010 (10) Quest: Main Quest - Distributed Tracing'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Pathfinder of the Request - Followed a single request across many services
+  - 🧭 Reader of the Waterfall - Located latency in a multi-span trace
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ OpenTelemetry Instrumentation
+  - 🧠 Latency Debugging in Distributed Systems
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the Alerting Systems quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! From the **Watchtower** you have learned to read metrics and logs. But when a request limps across a dozen services and arrives slow, metrics only tell you *that* it is slow and logs only tell you *what* each service did - neither tells you **where** the time vanished. For that you need the rarest pillar of all: the **trace**. This quest, **Distributed Tracing**, teaches you to follow a single request through your entire kingdom and pin the exact span where the delay hides.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have stared helplessly at a slow endpoint with no idea which downstream call is to blame, or you already log timings by hand and crave something better, this adventure forges the skill every Warrior of the traces needs: spans and traces, context propagation, OpenTelemetry instrumentation, and reading a Jaeger waterfall.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the age of the monolith, a profiler could show you exactly where a request spent its time, because it all happened in one process. When the great cities of microservices rose, that single timeline shattered into fragments scattered across machines. A request might pass through an API gateway, an auth service, three databases, and a payment provider - and no single log could see the whole journey.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Distributed tracing stitches the fragments back together. Each service records its slice as a **span**; the spans share a **trace ID** and link parent-to-child, reassembling into one timeline. **OpenTelemetry** is the vendor-neutral standard for producing those spans, and **Jaeger** is a popular backend for storing and visualizing them. Master this and the most maddening question in distributed systems - "where did the time go?" - finally has an answer.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Spans and Traces** - Explain what a span is, how spans nest, and how they form a trace
+- [ ] **Trace Context & Propagation** - Understand the trace ID, span ID, and how context crosses service boundaries
+- [ ] **OpenTelemetry Instrumentation** - Instrument a Python service to emit spans automatically and manually
+- [ ] **Reading a Trace in Jaeger** - Open a trace waterfall and identify the slowest span
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Span Attributes & Events** - Enrich spans with attributes and timestamped events for debugging
+- [ ] **Sampling** - Choose between head and tail sampling and reason about overhead
+- [ ] **The Collector** - Route telemetry through the OpenTelemetry Collector instead of exporting directly
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Draw a trace as a tree of parent and child spans
+- [ ] Explain how the W3C `traceparent` header propagates context between services
+- [ ] Add a custom span with attributes around a slow code path
+- [ ] Open a real trace and say which span is responsible for the latency
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] The three pillars of observability (complete [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) first)
+- [ ] Basic Python: functions, imports, running a script
+- [ ] How HTTP services make requests to one another
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10+ with `pip` and `venv`
+- [ ] Docker (to run the Jaeger all-in-one backend)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can build and run a small Python service end to end
+- [ ] You are ready to reason about latency spread across many services
+- [ ] Ready for 90-120 minutes of focused, hands-on building
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The tracing backend (Jaeger) runs in a container everywhere; only Python setup differs. Then everyone meets at the same `pip install opentelemetry-...`.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -191,23 +142,17 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+brew install python
+python3 -m venv .venv && source .venv/bin/activate
+pip install --upgrade pip flask requests \
+  opentelemetry-distro opentelemetry-exporter-otlp
+opentelemetry-bootstrap -a install   # auto-installs matching instrumentation
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Jaeger all-in-one exposes OTLP on 4317/4318 and the UI on 16686
+docker run --rm -d --name jaeger -p 16686:16686 -p 4317:4317 -p 4318:4318 \
+  jaegertracing/all-in-one:1.57
+open http://localhost:16686
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -217,26 +162,14 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+winget install Python.Python.3.12
+py -3 -m venv .venv; .\.venv\Scripts\activate
+pip install --upgrade pip flask requests opentelemetry-distro opentelemetry-exporter-otlp
+opentelemetry-bootstrap -a install
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+docker run --rm -d --name jaeger -p 16686:16686 -p 4317:4317 -p 4318:4318 jaegertracing/all-in-one:1.57
+start http://localhost:16686
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -246,28 +179,14 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+sudo apt update && sudo apt install -y python3 python3-venv docker.io
+python3 -m venv .venv && source .venv/bin/activate
+pip install --upgrade pip flask requests opentelemetry-distro opentelemetry-exporter-otlp
+opentelemetry-bootstrap -a install
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo docker run --rm -d --name jaeger -p 16686:16686 -p 4317:4317 -p 4318:4318 jaegertracing/all-in-one:1.57
+xdg-open http://localhost:16686
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -277,225 +196,284 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace or any container host, run Jaeger the same way and
+# forward port 16686 (UI) to your browser.
+docker run --rm -d -p 16686:16686 -p 4317:4317 -p 4318:4318 jaegertracing/all-in-one:1.57
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Spans, Traces, and the Anatomy of a Request
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A trace is a story; spans are its sentences. Learn this vocabulary and the whole field clicks into place.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The definition of a span and a trace
+- How spans nest into a parent-child tree
+- The fields every span carries
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Vocabulary
 
-**Step 1: Environment Setup**
+- **Span** - one unit of work with a start time, end time (so a duration), a name, and attributes. Example: "HTTP GET /api/orders" or "SELECT FROM orders".
+- **Trace** - the full tree of spans for one request, sharing a single **trace ID**.
+- **Parent / child** - a span that triggers another (a service calling a database) is the *parent*; the work it triggers is a *child*.
+- **Root span** - the first span in a trace, usually the inbound request at the edge.
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+A trace is best pictured as a **waterfall**, where indentation shows parent-child nesting and width shows duration:
+
+```text
+trace_id: 4bf92f3577b34da6  (total 520ms)
+└─ checkout-api  GET /checkout              [████████████████████] 520ms   (root)
+   ├─ auth-service  validate_token          [█]                    12ms
+   ├─ inventory  check_stock                [██]                   40ms
+   └─ payment-gw  charge_card               [██████████████]      455ms    <-- the latency lives here
 ```
 
-**Step 2: Core Concepts**
+Reading this, you instantly know the payment gateway, not your own code, owns the delay. That is the entire promise of tracing.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Spans and Traces
+- [ ] What does a span measure, and what does a trace contain?
+- [ ] In the waterfall above, which span is the root and which is slow?
+- [ ] How do you know `auth-service` and `payment-gw` belong to the same request?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Read a waterfall**: You located the slow span in the example trace
+- [ ] **Defined the terms**: You can explain span, trace, and trace ID
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Trace Context and Propagation
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The magic that turns scattered spans into one trace is **context propagation**: every service passes the trace ID along when it calls the next. Lose the context and the trace breaks into orphan fragments.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- What lives in a trace context
+- How the W3C `traceparent` header carries it over HTTP
+- Why propagation is the make-or-break of distributed tracing
 
-### 🏗️ Advanced Implementations
+### 🏗️ The `traceparent` Header
 
-[Detailed content for chapter 2]
+When one service calls another over HTTP, OpenTelemetry injects a standard header so the callee knows it is part of an existing trace:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
+             │  │                                │                │
+          version  trace-id (16 bytes)       parent span-id   trace-flags
+                                              (8 bytes)        (sampled?)
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+The receiving service reads this header, starts its spans as **children** of `00f067aa0ba902b7`, and forwards a new `traceparent` to whatever it calls next. This is how a single trace ID flows end to end. If any hop drops the header (a misconfigured proxy, a queue without propagation), the downstream spans become a separate, orphaned trace - the most common tracing bug.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```python
+# OpenTelemetry's requests instrumentation injects traceparent automatically.
+# This is why auto-instrumentation matters: propagation is handled for you.
+import requests
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+
+RequestsInstrumentor().instrument()      # now every requests.get() carries context
+resp = requests.get("http://inventory:8000/stock")   # traceparent injected on the wire
+```
+
+### 🔍 Knowledge Check: Propagation
+- [ ] What three IDs/flags does `traceparent` carry?
+- [ ] What happens to a trace if one hop fails to forward the header?
+- [ ] Why does auto-instrumentation make propagation reliable?
+
+## 🧙‍♂️ Chapter 3: Instrumenting a Service with OpenTelemetry
+
+*Now produce real spans. OpenTelemetry gives you two paths: **auto-instrumentation** (zero-code, wraps known libraries) and **manual spans** (you mark the code you care about).*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Auto-instrumenting a Flask app with one command
+- Creating manual spans around custom logic
+- Adding attributes and events to enrich a span
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ A Traced Two-Service App
 
-[Detailed content for chapter 3]
+Here is a small Flask service that calls a downstream service. Manual spans wrap the interesting work:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```python
+# app.py — a service instrumented with OpenTelemetry
+from flask import Flask
+import requests
+from opentelemetry import trace
+
+app = Flask(__name__)
+tracer = trace.get_tracer(__name__)   # the handle used to create manual spans
+
+@app.route("/checkout")
+def checkout():
+    # A manual span around domain logic that auto-instrumentation can't see.
+    with tracer.start_as_current_span("validate_cart") as span:
+        span.set_attribute("cart.items", 3)        # searchable attribute in Jaeger
+        span.add_event("cart validated")           # a timestamped event on the span
+
+    # This downstream call is auto-instrumented: its span and the
+    # traceparent header are created for us.
+    resp = requests.get("http://localhost:8000/stock", timeout=5)
+    return {"ok": resp.ok}
+
+if __name__ == "__main__":
+    app.run(port=5000)
+```
+
+Run it with the zero-code auto-instrumentation wrapper, pointing at Jaeger's OTLP endpoint:
+
+```bash
+# OTEL_* env vars configure the exporter; opentelemetry-instrument wraps the app.
+OTEL_SERVICE_NAME=checkout-api \
+OTEL_TRACES_EXPORTER=otlp \
+OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 \
+opentelemetry-instrument python app.py
+
+# Generate a request, then look for the trace in Jaeger:
+curl -s http://localhost:5000/checkout
+# Open http://localhost:16686, pick service "checkout-api", click Find Traces.
+```
+
+`opentelemetry-instrument` automatically traces Flask routes and outbound `requests` calls; your manual `validate_cart` span nests inside the request span. In Jaeger you will see the whole tree.
+
+### 🔍 Knowledge Check: Instrumentation
+- [ ] What does auto-instrumentation give you for free, and what still needs a manual span?
+- [ ] What is the difference between a span attribute and a span event?
+- [ ] Where does the `validate_cart` span appear relative to the request span?
+
+## 🧙‍♂️ Chapter 4: Reading Traces and Sampling Wisely
+
+*Producing spans is half the quest; reading them and controlling their cost is the other half.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Navigating the Jaeger waterfall
+- Head versus tail sampling
+- Keeping tracing overhead affordable
+
+### 🏗️ Reading the Jaeger Waterfall
+
+In the Jaeger UI: pick the service, click **Find Traces**, open one, and read top to bottom. Each bar is a span; nesting shows parent-child; the widest bar at the deepest level that is *not* explained by its children is usually your culprit. Click a span to see its attributes, events, and the service that emitted it.
+
+### 🏗️ Sampling: You Cannot Keep Every Trace
+
+At scale, tracing every request is too expensive. **Sampling** decides which traces to keep:
+
+| Strategy | When the decision is made | Pro | Con |
+| --- | --- | --- | --- |
+| **Head sampling** | At the root, before the request runs (e.g. keep 10%) | Cheap, simple, low overhead | May discard the rare slow/error trace you needed |
+| **Tail sampling** | After the trace completes, in the Collector | Keep all errors and slow traces, drop boring ones | Must buffer whole traces; more infrastructure |
+
+A common production setup uses **tail sampling in the OpenTelemetry Collector**: keep 100% of error and high-latency traces, sample the healthy majority down to a few percent.
+
+```yaml
+# otel-collector-config.yaml — tail sampling: always keep errors and slow traces
+processors:
+  tail_sampling:
+    policies:
+      - name: keep-errors
+        type: status_code
+        status_code: { status_codes: [ERROR] }
+      - name: keep-slow
+        type: latency
+        latency: { threshold_ms: 500 }
+      - name: sample-the-rest
+        type: probabilistic
+        probabilistic: { sampling_percentage: 5 }
+```
+
+### 🔍 Knowledge Check: Reading and Sampling
+- [ ] In a waterfall, how do you spot the span responsible for latency?
+- [ ] Why might head sampling lose the exact trace you needed?
+- [ ] What does tail sampling let you guarantee that head sampling cannot?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Emit Your First Trace
+**Objective**: Instrument the Flask app, send one request, and find its trace in Jaeger.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] App runs under `opentelemetry-instrument` exporting to Jaeger
+- [ ] One request produces a trace visible in the Jaeger UI
+- [ ] The trace shows at least the request span and one child span
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can open the trace and see the parent-child waterfall.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Find the Slow Span
+**Objective**: Add an artificial `time.sleep()` inside a manual span, then locate it in Jaeger.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] A manual span wraps the slow code with descriptive attributes
+- [ ] The trace shows the slow span as the widest bar
+- [ ] You can name the offending span from the waterfall alone
 
-**Validation**: [How to verify success]
+**Validation**: The injected delay is unmistakable in the trace timeline.
+
+### 🔴 Advanced Challenge: Propagate Across Two Services
+**Objective**: Run two instrumented services where one calls the other, and confirm both appear in a single trace.
+
+**Requirements**:
+- [ ] Service A calls Service B over HTTP with propagation enabled
+- [ ] One Jaeger trace contains spans from both services
+- [ ] Breaking propagation (stripping `traceparent`) splits them into two traces
+
+**Validation**: The single trace shows both service names; removing propagation produces two orphaned traces.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Pathfinder of the Request** - You followed one request across many services
+- 🧭 **Reader of the Waterfall** - You located latency inside a multi-span trace
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **OpenTelemetry Instrumentation** - Produce spans automatically and manually
+- **Latency Debugging in Distributed Systems** - Find where the time actually goes
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Alerting Systems - Turn the slow traces you find into actionable alerts
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Alerting Systems](/quests/1010/alerting-systems/) - Route and respond to the problems tracing reveals
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [ELK Stack](/quests/1010/elk-stack/) - Correlate traces with the logs each span produced
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Alerting Systems](/quests/1010/alerting-systems/)  
+**🏗️ System Engineer**: Explore [ELK Stack](/quests/1010/elk-stack/)  
+**🛡️ Security Specialist**: Revisit [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) for SLO grounding
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [OpenTelemetry Documentation](https://opentelemetry.io/docs/) - The vendor-neutral observability standard
+- [OpenTelemetry Python](https://opentelemetry.io/docs/languages/python/) - Auto and manual instrumentation
+- [Jaeger Documentation](https://www.jaegertracing.io/docs/) - Storing and visualizing traces
+- [W3C Trace Context](https://www.w3.org/TR/trace-context/) - The `traceparent` propagation standard
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/) - Routing, processing, and tail sampling
+- [Awesome OpenTelemetry](https://github.com/magsther/awesome-opentelemetry) - Curated tools and reading
+- [CNCF Distributed Tracing](https://www.cncf.io/) - Community and projects
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Mastering Distributed Tracing (sample chapters)](https://www.shkuro.com/books/2019-mastering-distributed-tracing/) - Yuri Shkuro, Jaeger's creator
+- [Sampling in OpenTelemetry](https://opentelemetry.io/docs/concepts/sampling/) - Head versus tail in depth
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
+- [ ] ✅ Instrumented a service and emitted a trace
+- [ ] ✅ Located a slow span in the Jaeger waterfall
+- [ ] ✅ Propagated context across two services
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Automation & Testing]]
+**Level hub:** [[Level 1010 - Monitoring & Observability]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]]
+**Unlocks:** [[Alerting Systems: Alertmanager, Routing, and On-Call]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

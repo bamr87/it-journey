@@ -11,11 +11,6 @@ categories:
 - master-tier
 - machine-learning
 - ai
-level_decimal: 13
-tier: Master
-tier_emoji: ⚡
-theme: Digital Intelligence
-xp_range: 7000-8500
 date: '2025-11-30T22:12:13.000Z'
 lastmod: '2025-12-01T04:36:39.000Z'
 tags:

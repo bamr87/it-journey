@@ -10,7 +10,6 @@ keywords:
   - contributor profile
 description: Learn how badges are earned and pin your proudest achievements to your character profile
 excerpt: The Trophy Hall awaits — curate your collection of hard-won badges.
-snippet: Every achievement tells a story. Pin the ones that matter most.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
@@ -26,7 +25,7 @@ quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0001/side-quests/badge-collector/
+permalink: /quests/0001/badge-collector/
 categories:
 - Quests
 - Community
@@ -50,16 +49,8 @@ quest_dependencies:
   required_quests:
   - /quests/0001/forge-your-character/
   recommended_quests:
-  - /quests/0001/side-quests/avatar-forge/
+  - /quests/0001/avatar-forge/
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Community Contributor
-  character_classes:
-  - ⚔️ Warrior
-  - 🛡️ Paladin
-  skill_trees:
-  - Community & Collaboration
 rewards:
   badges:
   - 🏅 Badge Collector — Curated a pinned badge showcase
@@ -70,6 +61,8 @@ validation_criteria:
   - Pinned badges display in the Featured section
   - Understand how achievement thresholds work
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/badge-collector/
 ---
 # 🏅 Badge Collector: Showcasing Your Achievements
 

@@ -1,63 +1,50 @@
 ---
 title: 'ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis'
 author: IT-Journey Team
-description: Deploy the complete ELK stack for centralized logging. Learn Elasticsearch indexing, Logstash pipelines, Kibana dashboards, and log aggregation patterns for distributed systems.
-excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, and Kibana visualization
+description: Deploy the complete ELK stack for centralized logging. Learn Elasticsearch indexing, Logstash and Beats pipelines, structured logging, and Kibana dashboards for distributed systems.
+excerpt: Build centralized logging with Elasticsearch, Logstash pipelines, Beats shippers, and Kibana visualization
 preview: images/previews/elk-stack-elasticsearch-logstash-quest-title-kiban.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:18.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: elasticsearch
 quest_type: main_quest
 quest_series: Observability Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Watchtower
+quest_arc: Mastering the Logs Pillar
 quest_dependencies:
   required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  recommended_quests:
+  - /quests/1010/monitoring-fundamentals/
+  unlocks_quests:
+  - /quests/1010/distributed-tracing/
+  - /quests/1010/alerting-systems/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort on the command line and reading YAML
+  - The three pillars of observability (metrics, logs, traces)
+  - How web services emit logs and what a log line contains
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker and Docker Compose (8 GB RAM recommended for the stack)
+  - A terminal and a text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can operate a small service and read its logs
+  - Ready to reason about parsing, indexing, and searching at scale
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A running ELK stack ingesting and visualizing structured logs
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write a Logstash grok pipeline that parses an unstructured log line
+  - Can build a Kibana visualization over an index pattern
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands indices, shards, mappings, and the inverted index
+  - Can describe when to use Beats versus Logstash for shipping
 permalink: /quests/1010/elk-stack/
 categories:
 - Quests
@@ -79,113 +66,78 @@ keywords:
   - logstash
   - kibana
   secondary:
-  - main_quest
-  - devops
-  - hands-on
-  - gamified-learning
+  - structured-logging
+  - log-pipelines
+  - beats
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1010 (10) Quest: Main Quest - ELK Stack'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Loremaster of the Logs - Centralized logs from chaos into a searchable archive
+  - 📜 Keeper of the Index - Tamed Elasticsearch mappings and Logstash pipelines
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Centralized Log Aggregation
+  - 🧠 Structured Logging & Pipeline Design
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the Distributed Tracing and Alerting Systems quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! High in the **Watchtower** of the Warrior tier you have learned to read the three pillars of observability. Now you descend into the great **Hall of Records** - the realm of logs - where every service in your kingdom scribbles its story in a thousand scattered scrolls. Alone, those scrolls are noise. Gathered, parsed, and indexed, they become an oracle that answers any question about what happened, when, and why. This quest, **The ELK Stack**, teaches you to build that oracle.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have only ever run `tail -f` on a single log file, or you already grep across servers and yearn for something better, this adventure forges the discipline every Warrior of the logs needs: structured logging, parsing pipelines, indices and mappings, and dashboards that turn raw events into insight.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early ages, a service ran on one machine and its log lived in one file. When the great cities of microservices rose, a single user request might leave footprints in a dozen log files across a dozen hosts. Debugging by SSHing into each box and grepping became impossible. The operators who survived learned a single truth: logs must be **shipped, parsed, and centralized** the moment they are born, or they are useless when the fire starts.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The ELK Stack - **E**lasticsearch, **L**ogstash, and **K**ibana, joined by the lightweight **Beats** shippers - is the most widely deployed answer to that problem. Master it and you can ask any question of any log from any service, all from a single search bar.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The ELK Architecture** - Explain what Elasticsearch, Logstash, Kibana, and Beats each do and how data flows between them
+- [ ] **Elasticsearch Indexing** - Create indices, understand mappings and the inverted index, and query with the search API
+- [ ] **Logstash Pipelines** - Write an input → filter → output pipeline that parses unstructured logs with `grok`
+- [ ] **Kibana Visualization** - Build an index pattern, a Discover search, and a dashboard
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Structured Logging** - Emit JSON logs at the source so parsing becomes trivial
+- [ ] **Beats Shippers** - Use Filebeat to ship logs without a heavy Logstash on every host
+- [ ] **Index Lifecycle Management** - Roll over and delete old indices so storage does not explode
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Draw the data flow from a log line to a Kibana chart without notes
+- [ ] Write a grok pattern that turns `127.0.0.1 - GET /api 200 53ms` into structured fields
+- [ ] Explain why high-cardinality fields and unbounded indices are dangerous
+- [ ] Decide when Filebeat alone is enough and when you need Logstash in the middle
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Comfort on the command line and reading/writing YAML
+- [ ] The three pillars of observability (complete [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) first)
+- [ ] A mental model of what a log line is and where services write them
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker and Docker Compose installed (allocate at least 4 GB, ideally 8 GB, to Docker)
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 120-150 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can run multi-container apps with Docker Compose
+- [ ] You are ready to think about parsing, indexing, and searching at scale
+- [ ] Ready for 120-150 minutes of focused, hands-on building
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The stack runs in containers, so the lab is identical everywhere. The only platform difference is how you install Docker. Then everyone meets at the same `docker compose up`.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -193,23 +145,14 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install Docker Desktop (or colima) and confirm Compose is available
+brew install --cask docker
+docker --version
+docker compose version
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Elasticsearch needs a higher mmap limit; Docker Desktop's VM handles it,
+# but if you hit a vm.max_map_count error, raise it inside the VM.
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -219,26 +162,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Install Docker Desktop with the WSL2 backend
+winget install Docker.DockerDesktop
+docker --version
+docker compose version
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -248,28 +176,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+sudo apt update && sudo apt install -y docker.io docker-compose-plugin   # Debian/Ubuntu
+sudo systemctl enable --now docker
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Elasticsearch requires a raised virtual-memory map count on Linux hosts:
+sudo sysctl -w vm.max_map_count=262144
+echo 'vm.max_map_count=262144' | sudo tee /etc/sysctl.d/99-elasticsearch.conf
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -279,225 +192,366 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace or any container host, the same compose file works.
+# Forward ports 5601 (Kibana) and 9200 (Elasticsearch) to your browser.
+docker compose up -d
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> ⚠️ This single-node stack disables security for learning convenience. Never expose it to the public internet, and never use these settings in production.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Architecture of the Hall of Records
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Before you ship a single log, learn what each component does. The ELK Stack is four cooperating services, each with one job.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The role of Elasticsearch, Logstash, Kibana, and Beats
+- How a log line travels from source to dashboard
+- Where parsing should happen and why
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Four Components
 
-**Step 1: Environment Setup**
+| Component | Job | Analogy |
+| --- | --- | --- |
+| **Beats** (e.g. Filebeat) | Lightweight shipper that tails files and forwards lines | The runner who carries scrolls from each tower |
+| **Logstash** | Heavy pipeline: ingest, parse, enrich, and route | The scribe who reads, structures, and stamps each scroll |
+| **Elasticsearch** | Distributed search engine that indexes and stores | The vast indexed library you can query instantly |
+| **Kibana** | Web UI for search, visualization, and dashboards | The reading room where you ask the oracle questions |
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+The canonical data flow:
+
+```text
+[ app log file ] --> Filebeat --> Logstash (grok/filter) --> Elasticsearch (index) --> Kibana (search/chart)
 ```
 
-**Step 2: Core Concepts**
+For simple JSON logs you can skip Logstash entirely: `Filebeat --> Elasticsearch`. You add Logstash when you need to **parse unstructured text**, enrich records (GeoIP, lookups), or fan out to multiple destinations.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Architecture
+- [ ] Which component stores and searches the data?
+- [ ] When can you drop Logstash from the pipeline?
+- [ ] What does Filebeat do that Logstash also can but more expensively?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Named the four roles**: You can say what each component does in one line
+- [ ] **Drew the flow**: You sketched source → ship → parse → index → visualize
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Stand Up the Stack with Docker Compose
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Now make it real. This single Compose file brings up Elasticsearch, Logstash, and Kibana, wired together.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Running the full stack locally
+- Verifying cluster health from the Elasticsearch API
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Compose File
 
-[Detailed content for chapter 2]
+```yaml
+# docker-compose.yml — single-node ELK for learning (security disabled)
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g        # cap heap so it fits a laptop
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\"'"]
+      interval: 10s
+      retries: 12
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.13.4
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+    ports:
+      - "5044:5044"      # Beats input
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.13.4
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Bring it up and confirm the cluster is alive:
+
+```bash
+docker compose up -d
+
+# Wait for green/yellow status (yellow is normal for a single node)
+curl -s 'http://localhost:9200/_cluster/health?pretty'
+
+# Kibana takes a minute; then open it
+open http://localhost:5601   # macOS; use start/xdg-open elsewhere
+```
+
+### 🔍 Knowledge Check: Standing It Up
+- [ ] Why is a single-node cluster `yellow` and not `green`?
+- [ ] What does `ES_JAVA_OPTS=-Xms1g -Xmx1g` protect against on a laptop?
+- [ ] Why does Logstash `depend_on` Elasticsearch being healthy?
+
+## 🧙‍♂️ Chapter 3: Indexing in Elasticsearch
+
+*Elasticsearch is a search engine, not just a database. Understanding indices, mappings, and the inverted index is what separates a log searcher from a log struggler.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Indices, documents, shards, and mappings
+- How the inverted index makes full-text search fast
+- Indexing and querying documents via the REST API
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Core Concepts
 
-[Detailed content for chapter 3]
+- **Document** - a single JSON record (one log event).
+- **Index** - a named collection of documents (e.g. `logs-2026.06.14`), like a table.
+- **Shard** - a horizontal slice of an index; shards are how Elasticsearch scales and replicates.
+- **Mapping** - the schema: which fields exist and their types (`keyword` for exact match, `text` for full-text, `date`, `long`, etc.).
+- **Inverted index** - instead of scanning rows, Elasticsearch maps each *term* to the documents containing it, so searching billions of logs for "timeout" is near-instant.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+Create an index with an explicit mapping, then index and search a document:
+
+```bash
+# 1. Create an index with a mapping (keyword vs text matters for search/aggregation)
+curl -s -X PUT 'http://localhost:9200/app-logs' -H 'Content-Type: application/json' -d '{
+  "mappings": {
+    "properties": {
+      "@timestamp": { "type": "date" },
+      "level":      { "type": "keyword" },
+      "service":    { "type": "keyword" },
+      "message":    { "type": "text" },
+      "duration_ms":{ "type": "long" }
+    }
+  }
+}'
+
+# 2. Index a structured log document
+curl -s -X POST 'http://localhost:9200/app-logs/_doc' -H 'Content-Type: application/json' -d '{
+  "@timestamp": "2026-06-14T10:31:02Z",
+  "level": "error",
+  "service": "checkout",
+  "message": "payment gateway timeout",
+  "duration_ms": 5012
+}'
+
+# 3. Search it: find all error logs from the checkout service
+curl -s 'http://localhost:9200/app-logs/_search?pretty' -H 'Content-Type: application/json' -d '{
+  "query": { "bool": { "must": [
+    { "match": { "level": "error" } },
+    { "match": { "service": "checkout" } }
+  ]}}
+}'
+```
+
+> Field types matter: use `keyword` for fields you filter and aggregate on (level, service) and `text` for fields you full-text search (message). Getting this wrong is the #1 beginner mistake.
+
+### 🔍 Knowledge Check: Indexing
+- [ ] What is the difference between a `keyword` and a `text` field?
+- [ ] Why is the inverted index faster than scanning every document?
+- [ ] What does a mapping define, and why set it explicitly?
+
+## 🧙‍♂️ Chapter 4: Parsing Logs with Logstash and `grok`
+
+*Most real logs are unstructured text. Logstash's job is to turn `127.0.0.1 - - GET /api/orders 200 53` into searchable fields. The `grok` filter is the spell that does it.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- The input → filter → output pipeline shape
+- Parsing unstructured lines with `grok`
+- Why structured logging at the source beats parsing later
+
+### 🏗️ A Logstash Pipeline
+
+```ruby
+# logstash.conf — input (Beats) -> filter (parse) -> output (Elasticsearch)
+input {
+  beats { port => 5044 }
+}
+
+filter {
+  # grok parses a common access-log line into named fields.
+  grok {
+    match => { "message" => "%{IP:client_ip} %{USER:ident} %{USER:auth} %{WORD:method} %{URIPATHPARAM:request} %{NUMBER:status:int} %{NUMBER:duration_ms:int}" }
+  }
+  # Promote the parsed timestamp to the event's @timestamp.
+  date {
+    match => [ "timestamp", "ISO8601" ]
+  }
+  # Drop the raw message once parsed to save space (optional).
+  mutate { remove_field => [ "ident", "auth" ] }
+}
+
+output {
+  elasticsearch {
+    hosts => ["http://elasticsearch:9200"]
+    index => "access-logs-%{+YYYY.MM.dd}"   # daily indices, easy to roll over
+  }
+}
+```
+
+The three stages map directly onto the architecture: **input** receives from Beats, **filter** structures the data, **output** writes to Elasticsearch. The `%{NUMBER:status:int}` syntax both extracts *and* casts, so `status` becomes a real number you can aggregate.
+
+### 🏗️ The Better Path: Structured Logging at the Source
+
+Parsing text is fragile - one log-format change breaks your grok. The superior approach is to emit **JSON logs** at the application, so no parsing is needed:
+
+```python
+# Emit JSON logs the moment they are born — no grok required downstream.
+import json, logging, sys
+
+class JsonFormatter(logging.Formatter):
+    def format(self, record):
+        return json.dumps({
+            "@timestamp": self.formatTime(record),
+            "level": record.levelname.lower(),
+            "service": "checkout",
+            "message": record.getMessage(),
+        })
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(JsonFormatter())
+log = logging.getLogger("app")
+log.addHandler(handler)
+log.setLevel(logging.INFO)
+
+log.error("payment gateway timeout")   # -> a clean JSON line Elasticsearch loves
+```
+
+### 🔍 Knowledge Check: Parsing
+- [ ] What do the three Logstash stages (input/filter/output) each do?
+- [ ] Why is structured JSON logging more robust than grok parsing?
+- [ ] What does `%{NUMBER:status:int}` accomplish beyond extraction?
+
+## 🧙‍♂️ Chapter 5: Visualizing in Kibana
+
+*Elasticsearch holds the answers; Kibana asks the questions. In a few clicks you turn indexed logs into searches, charts, and dashboards.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Creating a data view (index pattern)
+- Searching in Discover with KQL
+- Building a visualization and a dashboard
+
+### 🏗️ From Index to Dashboard
+
+1. **Create a data view**: in Kibana, go to *Stack Management → Data Views* and add `access-logs-*` with `@timestamp` as the time field.
+2. **Explore in Discover**: open *Discover*, pick the data view, and filter with **KQL** (Kibana Query Language):
+
+```text
+# KQL examples you type in the Discover search bar
+status >= 500 and method : "POST"
+service : "checkout" and duration_ms > 1000
+not status : 200
+```
+
+3. **Build a visualization**: in *Lens*, drop `@timestamp` on the X axis and `Count` on the Y axis, then break it down by the `status` keyword field to see error spikes over time.
+4. **Assemble a dashboard**: combine a request-rate line chart, a top-errors table, and a p95-latency metric into one board your team watches.
+
+### 🔍 Knowledge Check: Visualization
+- [ ] What does a Kibana data view connect to?
+- [ ] Write a KQL query for "5xx responses on the checkout service"
+- [ ] Why must you choose a time field when creating the data view?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Index and Search by Hand
+**Objective**: Using only the Elasticsearch REST API, create an index, add three log documents, and run a search that returns exactly one of them.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] An index with an explicit mapping (at least one `keyword` and one `text` field)
+- [ ] Three documents indexed via `_doc`
+- [ ] A `bool`/`match` query that returns exactly one document
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The search response's `hits.total.value` equals 1.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Parse a Real Log Line
+**Objective**: Write a Logstash `grok` filter that turns a raw access-log line into structured, typed fields.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] `grok` extracts at least method, path, status, and duration
+- [ ] `status` and `duration_ms` are cast to integers
+- [ ] The output lands in a daily-rolled index in Elasticsearch
 
-**Validation**: [How to verify success]
+**Validation**: In Kibana Discover, you can filter `status >= 500` and see only matching events.
+
+### 🔴 Advanced Challenge: Build the Observability Dashboard
+**Objective**: Build a Kibana dashboard for one service with request rate, error rate, and latency.
+
+**Requirements**:
+- [ ] A time-series of request count broken down by `status`
+- [ ] A table of the top error messages
+- [ ] A metric showing p95 `duration_ms`
+
+**Validation**: Generate some traffic, then watch the dashboard reflect the error spike within a minute.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Loremaster of the Logs** - You centralized scattered logs into a searchable archive
+- 📜 **Keeper of the Index** - You tamed Elasticsearch mappings and Logstash pipelines
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Centralized Log Aggregation** - Ship, parse, and index logs from anywhere
+- **Structured Logging & Pipeline Design** - Make logs searchable by design, not by luck
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Distributed Tracing - Follow a single request across services
+- Alerting Systems - Turn indexed signals into actionable pages
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Distributed Tracing](/quests/1010/distributed-tracing/) - Master the traces pillar with OpenTelemetry and Jaeger
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Alerting Systems](/quests/1010/alerting-systems/) - Route and respond to what your logs reveal
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Distributed Tracing](/quests/1010/distributed-tracing/)  
+**🏗️ System Engineer**: Explore [Alerting Systems](/quests/1010/alerting-systems/)  
+**🛡️ Security Specialist**: Revisit [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) for SLO grounding
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Elasticsearch Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) - Indices, mappings, and the query DSL
+- [Logstash Reference](https://www.elastic.co/guide/en/logstash/current/index.html) - Pipelines, inputs, filters, outputs
+- [Kibana Guide](https://www.elastic.co/guide/en/kibana/current/index.html) - Data views, Discover, Lens, dashboards
+- [Filebeat Reference](https://www.elastic.co/guide/en/beats/filebeat/current/index.html) - Lightweight log shipping
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Grok Debugger](https://grokdebugger.com/) - Test grok patterns interactively
+- [Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/current/index.html) - A shared field naming standard
+- [Awesome Elasticsearch](https://github.com/dzharii/awesome-elasticsearch) - Curated tools and reading
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Elastic Stack Quickstart](https://www.elastic.co/guide/en/elastic-stack/current/index.html) - Get the whole stack running
+- [Index Lifecycle Management](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-lifecycle-management.html) - Roll over and retire indices
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
+- [ ] ✅ Stood up a running ELK stack with Docker Compose
+- [ ] ✅ Indexed and searched documents in Elasticsearch
+- [ ] ✅ Parsed a log line with a Logstash grok filter
+- [ ] ✅ Built a Kibana dashboard
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Automation & Testing]]
+**Level hub:** [[Level 1010 - Monitoring & Observability]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]]
+**Unlocks:** [[Distributed Tracing: OpenTelemetry and Jaeger]] · [[Alerting Systems: Alertmanager, Routing, and On-Call]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

@@ -3,14 +3,13 @@ title: 'Quest: Mastering the Ancient Arts of Source Control Sorcery'
 author: Quest Master IT-Journey
 description: Master the mystical powers of Git and GitHub workflows to become a legendary code guardian and collaboration wizard in the digital realm
 excerpt: Transform from coding apprentice to git wizard by mastering the ancient arts of version control, branch sorcery, and collaborative development magic
-snippet: Every line of code tells a story - learn to chronicle your digital adventures
 preview: images/previews/quest-mastering-the-ancient-arts-of-source-control.png
 date: '2025-07-28T23:34:51.000Z'
 lastmod: '2025-07-29T05:15:57.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: 64
+primary_technology: git
 quest_type: main_quest
 quest_series: Foundation Development Skills
 skill_focus: fullstack
@@ -49,19 +48,15 @@ keywords:
 fmContentType: quest
 comments: true
 attachments: ''
-sub-title: 'Level 0100 (4) Quest: Source Control and Collaboration Mastery'
 rewards:
 - 🏆 Source Control Sorcerer Badge
 - ⚡ Advanced Git Workflow Mastery
 - 🛠️ GitHub Automation Expertise
 - 🎯 Professional Collaboration Skills
-related_quests:
-- Terminal Mastery Quest (Level 0001)
-- Development Environment Setup (Level 0101)
-- Code Quality Guardian Quest (Level 0110)
 redirect_from:
 - /quests/0100/sourcery-code-methods/
 layout: quest
+sub_title: 'Level 0100 (4) Quest: Source Control and Collaboration Mastery'
 ---
 *In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 

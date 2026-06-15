@@ -1,63 +1,50 @@
 ---
-title: 'Domain-Driven Design: Strategic and Tactical Patterns'
+title: 'Domain-Driven Design: Modeling the Business in Code'
 author: IT-Journey Team
-description: Master Domain-Driven Design for complex software systems. Learn bounded contexts, aggregates, entities, value objects, and strategic design patterns.
-excerpt: Apply Domain-Driven Design patterns for modeling complex business domains
-preview: images/previews/domain-driven-design-descriptive-subtitle.png
+description: Master domain-driven design - ubiquitous language, entities and value objects, aggregates, and bounded contexts - so your software model mirrors the business it serves.
+excerpt: Build software whose model speaks the language of the business using DDD's tactical and strategic patterns
+preview: images/previews/domain-driven-design-modeling-business-in-code.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1110'
 difficulty: 🔴 Hard
-estimated_time: 5-6 hours
+estimated_time: 3-4 hours
 primary_technology: python
 quest_type: main_quest
 quest_series: System Design Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Architect's Citadel
+quest_arc: Blueprints of the Master
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1110/design-patterns/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/1110/microservices-architecture/
+  - /quests/1110/event-driven-design/
 skill_focus: fullstack
-learning_style: hands-on
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfortable with object-oriented modeling (classes, composition)
+  - Completed the Design Patterns quest or equivalent experience
+  - Have worked on a system with real business rules, not just CRUD
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ and a text editor or IDE
+  - A terminal for running examples
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have seen requirements get lost in translation between teams
+  - You can model a small domain on a whiteboard
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A glossary of ubiquitous language for one domain you know
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can distinguish an entity from a value object
+  - Can draw an aggregate boundary and justify it
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands why bounded contexts prevent model bloat
+  - Can explain why aggregates enforce invariants
 permalink: /quests/1110/domain-driven-design/
 categories:
 - Quests
@@ -67,121 +54,88 @@ tags:
 - '1110'
 - python
 - main_quest
-- architecture
-- hands-on
+- domain-driven-design
+- ddd
+- conceptual
 - gamified-learning
 keywords:
   primary:
   - '1110'
-  - python
+  - domain-driven-design
   - main_quest
   secondary:
-  - architecture
-  - hands-on
-  - gamified-learning
+  - ubiquitous-language
+  - aggregates
+  - bounded-contexts
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1110 (14) Quest: Main Quest - DDD'
+sub_title: 'Level 1110 (14) Quest: Main Quest - Domain-Driven Design'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Domain Cartographer - Mapped a business into bounded contexts
+  - 🗣️ Speaker of the Ubiquitous Tongue - Aligned code and conversation
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Tactical Modeling (entities, value objects, aggregates)
+  - 🧠 Strategic Design (bounded contexts, context mapping)
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Strategic design foundation for the rest of the Citadel
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Welcome back to the Citadel, Architect. You have learned to shape objects with patterns; now you must learn to shape the meaning the objects carry. **Domain-Driven Design** is the discipline of letting the business domain - not the database, not the framework - drive the design of your software. It is how a payments team and a payments codebase come to speak exactly the same language.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether your last project drowned in a "God service" that knew everything, or you have watched two teams argue because "customer" meant different things to each, this quest forges the tools to carve a complex domain into models that stay clean as they grow.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In 2003, Eric Evans gave a name to a craft that great engineers practiced by instinct: aligning the model in the code with the model in the experts' heads. He observed that the costliest defects are not bugs in algorithms but mistranslations - the moment a developer guesses what "settlement" means and guesses wrong.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*DDD's remedy is twofold. **Tactical patterns** (entities, value objects, aggregates, repositories) give you a precise vocabulary for the building blocks. **Strategic patterns** (bounded contexts, context maps, the ubiquitous language) keep large systems from collapsing into one tangled model. Master both and your microservices - which you will design next - will have boundaries that actually make sense.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Ubiquitous Language** - Build a shared vocabulary that lives in code, tests, and conversation
+- [ ] **Entities vs. Value Objects** - Decide what has identity and what is defined purely by its attributes
+- [ ] **Aggregates and Invariants** - Draw consistency boundaries that protect business rules
+- [ ] **Bounded Contexts** - Split a large domain into models that are internally consistent
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Repositories** - Abstract persistence behind a domain-shaped interface
+- [ ] **Domain Events** - Capture meaningful business occurrences as first-class objects
+- [ ] **Context Mapping** - Describe how bounded contexts relate (shared kernel, anticorruption layer)
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Defend why a given concept is an entity rather than a value object
+- [ ] Draw an aggregate boundary and name the invariant it protects
+- [ ] Explain why "customer" can legitimately mean two different things in two contexts
+- [ ] Write a ubiquitous-language glossary that a domain expert would approve
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Comfortable with OO modeling and composition
+- [ ] Completed [Software Design Patterns](/quests/1110/design-patterns/) (recommended)
+- [ ] Have worked on a system with real business rules
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10+ installed
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 5-6 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You have seen requirements lost in translation between teams
+- [ ] You can model a small domain on a whiteboard
+- [ ] Ready for 3-4 hours of focused study
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*DDD is a way of thinking, so the platform matters little. The code samples use Python; the modeling exercises need only paper or a whiteboard.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install python@3.12
+mkdir -p ~/ddd-quest && cd ~/ddd-quest
+python3 -m venv .venv && source .venv/bin/activate
+python --version
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +157,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install Python.Python.3.12
+mkdir ddd-quest; cd ddd-quest
+python -m venv .venv; .\.venv\Scripts\Activate.ps1
+python --version
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +171,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y python3 python3-venv  # Debian/Ubuntu
+mkdir -p ~/ddd-quest && cd ~/ddd-quest
+python3 -m venv .venv && source .venv/bin/activate
+python --version
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +185,254 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+docker run -it --rm python:3.12-slim bash
+python --version
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Ubiquitous Language - One Tongue for All
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A bounded context's first asset is its words. When developers, testers, and domain experts use the same term to mean the same thing, mistranslation - the costliest defect - disappears.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Distilling a glossary from how experts actually speak
+- Letting that language name your classes, methods, and tests
+- Spotting when one word secretly means two things
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Language That Lives in Code
 
-**Step 1: Environment Setup**
+The ubiquitous language is not documentation you write once. It is the names in your code. If experts say "a policy *lapses*," your code says `policy.lapse()`, not `policy.set_status(3)`.
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```python
+# ❌ Anemic, framework-shaped — the business vocabulary has vanished
+order.status = 2
+order.update()
+
+# ✅ Ubiquitous language made executable — the method names ARE the glossary
+order.confirm()        # transitions a draft to a confirmed order
+order.ship(carrier)    # only legal once confirmed
+order.cancel(reason)   # records why, not just that
 ```
 
-**Step 2: Core Concepts**
+When a new term appears in a meeting ("backorder," "settlement window"), it belongs in the glossary first, then in the code. A drifted name is a future bug.
 
-[Explanation of fundamental concepts]
+### 🔍 Knowledge Check: Language
+- [ ] Why is `order.confirm()` better than `order.status = 2`?
+- [ ] What should happen first when a domain expert uses a word you do not have?
+- [ ] How does a shared glossary reduce defects?
 
-**Step 3: First Implementation**
+## 🧙‍♂️ Chapter 2: Tactical Patterns - Entities, Value Objects, Aggregates
 
-```[language]
-# Your first working example
-[code-example]
+*Now we forge the building blocks. The central question for every concept: does it have an identity that persists through change, or is it defined entirely by its values?*
 
-# Expected output:
-# [description of output]
+### ⚔️ Skills You'll Forge in This Chapter
+- Entities vs. value objects
+- Aggregates as consistency boundaries
+- Repositories as the seam to persistence
+
+### 🏗️ Entities vs. Value Objects
+
+An **entity** has a thread of identity: a `Customer` is the same customer even after they change their name. A **value object** is interchangeable when its attributes match: two `Money(10, "USD")` instances are equal and immutable.
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)            # value object: immutable, compared by value
+class Money:
+    amount: int                    # store minor units (cents) to avoid float drift
+    currency: str
+    def __add__(self, other: "Money") -> "Money":
+        if self.currency != other.currency:
+            raise ValueError("Cannot add different currencies")
+        return Money(self.amount + other.amount, self.currency)
+
+class Customer:                    # entity: identity persists through change
+    def __init__(self, customer_id: str, name: str):
+        self.id = customer_id      # equality is by id, not by attributes
+        self.name = name
+    def rename(self, new_name: str) -> None:
+        self.name = new_name       # still the same customer afterwards
+
+print(Money(500, "USD") + Money(250, "USD"))   # Money(750, 'USD')
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🏗️ Aggregates - The Consistency Boundary
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+An **aggregate** is a cluster of objects treated as one unit for data changes, with a single **root** that is the only entry point. The aggregate guards an *invariant* - a rule that must always hold.
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+```python
+class OrderLine:
+    def __init__(self, sku: str, qty: int):
+        self.sku, self.qty = sku, qty
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+class Order:                       # aggregate root
+    MAX_LINES = 50
+    def __init__(self, order_id: str):
+        self.id = order_id
+        self._lines: list[OrderLine] = []   # internals are private
+    def add_line(self, sku: str, qty: int) -> None:
+        # Invariant enforced HERE, at the root — nowhere else may mutate lines
+        if len(self._lines) >= self.MAX_LINES:
+            raise ValueError("An order may not exceed 50 lines")
+        if qty <= 0:
+            raise ValueError("Quantity must be positive")
+        self._lines.append(OrderLine(sku, qty))
+    @property
+    def line_count(self) -> int:
+        return len(self._lines)
+```
+
+Rule of thumb: keep aggregates small, reference other aggregates by id (not by object), and load/save each aggregate as a whole through a **repository**.
+
+```python
+from abc import ABC, abstractmethod
+
+class OrderRepository(ABC):        # domain-shaped persistence seam
+    @abstractmethod
+    def get(self, order_id: str) -> Order: ...
+    @abstractmethod
+    def save(self, order: Order) -> None: ...
+```
+
+### 🔍 Knowledge Check: Tactical Patterns
+- [ ] Is an `Address` usually an entity or a value object? Why?
+- [ ] Why must all changes to order lines go through the `Order` root?
+- [ ] Why reference other aggregates by id rather than holding the object?
+
+## 🧙‍♂️ Chapter 3: Strategic Design - Bounded Contexts and Context Maps
+
+*One model cannot serve an entire enterprise. A **bounded context** is an explicit boundary within which a model and its language are consistent. Cross the boundary and the same word may mean something new.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Carving a domain into bounded contexts
+- Reading and drawing a context map
+- The anticorruption layer
 
-### 🏗️ Advanced Implementations
+### 🏗️ Why "Customer" Means Two Things
 
-[Detailed content for chapter 2]
+In **Sales**, a Customer is a lead with a pipeline stage. In **Shipping**, a Customer is an address and a delivery preference. Forcing both into one bloated `Customer` class is how models rot. Bounded contexts let each model be exactly as rich as its own job requires.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```mermaid
+graph LR
+    subgraph Sales Context
+        S_Customer[Customer<br/>= lead + pipeline]
+        Opportunity
+    end
+    subgraph Shipping Context
+        Sh_Customer[Customer<br/>= address + prefs]
+        Shipment
+    end
+    subgraph Billing Context
+        B_Customer[Customer<br/>= account + terms]
+        Invoice
+    end
+    S_Customer -. shared id .-> Sh_Customer
+    Sh_Customer -. shared id .-> B_Customer
+    style S_Customer fill:#2196F3,color:#fff
+    style Sh_Customer fill:#FF9800,color:#fff
+    style B_Customer fill:#4CAF50,color:#fff
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+A **context map** documents the relationships between contexts - shared kernel, customer/supplier, or an **anticorruption layer (ACL)** that translates an external model into yours so a foreign model never leaks in. These boundaries are the natural seams along which you will later split microservices.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
-
-### 🏗️ Building Your Real-World Solution
-
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+### 🔍 Knowledge Check: Strategic Design
+- [ ] Why is one giant `Customer` model a liability across an enterprise?
+- [ ] What does an anticorruption layer protect you from?
+- [ ] How do bounded contexts foreshadow service boundaries?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Build a Glossary
+**Objective**: Pick a domain you know (a library, a gym, a game). Write a 10-term ubiquitous-language glossary.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Each term is one a domain expert would actually use
+- [ ] Mark which terms are entities and which are value objects
+- [ ] Flag any term that means two things in two parts of the domain
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: A non-developer in that domain agrees the definitions are correct.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Draw an Aggregate
+**Objective**: Model one aggregate from your domain in code, enforcing one real invariant at the root.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] An aggregate root with private internals
+- [ ] At least one value object
+- [ ] An invariant that the root enforces and tests prove
 
-**Validation**: [How to verify success]
+**Validation**: A test demonstrates the invariant cannot be violated from outside.
+
+### 🔴 Advanced Challenge: Context Map
+**Objective**: Decompose your domain into 3+ bounded contexts and draw the context map.
+
+**Requirements**:
+- [ ] Name each context and its core model
+- [ ] Identify one term that legitimately differs across contexts
+- [ ] Mark at least one relationship as an anticorruption layer and explain why
+
+**Validation**: Each context's model is internally consistent and minimal.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Domain Cartographer** - You can carve a business into clean bounded contexts
+- 🗣️ **Speaker of the Ubiquitous Tongue** - Your code and your conversations use one language
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Tactical Modeling** - Entities, value objects, aggregates, repositories
+- **Strategic Design** - Bounded contexts and context mapping
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Microservices Architecture - Turn bounded contexts into deployable services
+- Event-Driven Design - Let domain events flow between contexts
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Microservices Architecture](/quests/1110/microservices-architecture/) - Bounded contexts become services
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Event-Driven Design](/quests/1110/event-driven-design/) - Domain events as the connective tissue
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Microservices Architecture](/quests/1110/microservices-architecture/)  
+**🏗️ System Engineer**: Explore [Event-Driven Design](/quests/1110/event-driven-design/)  
+**📊 Data Scientist**: Note how bounded contexts clarify which data is authoritative where
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Domain-Driven Design Reference (Eric Evans, free PDF)](https://www.domainlanguage.com/ddd/reference/) - The condensed pattern catalog
+- [Python `dataclasses`](https://docs.python.org/3/library/dataclasses.html) - Used for value objects above
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Domain-Driven Design (Eric Evans, the "Blue Book")](https://www.dddcommunity.org/book/evans_2003/) - The foundational text
+- [Implementing Domain-Driven Design (Vaughn Vernon)](https://www.informit.com/store/implementing-domain-driven-design-9780321834577) - The practical "Red Book"
+- [DDD Community](https://www.dddcommunity.org/) - Articles and example projects
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Martin Fowler - Bounded Context](https://martinfowler.com/bliki/BoundedContext.html) - A crisp definition
+- [Martin Fowler - DDD Aggregate](https://martinfowler.com/bliki/DDD_Aggregate.html) - Aggregates explained
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Wrote a ubiquitous-language glossary for a real domain
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Quality Assurance]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Software Design Patterns: Gang of Four and Modern Patterns]]
+**Unlocks:** [[Microservices Architecture: Decomposing the Monolith]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

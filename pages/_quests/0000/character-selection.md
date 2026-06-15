@@ -3,7 +3,6 @@ title: Character Selection
 author: IT-Journey Team
 description: Choose your character class and begin your specialized IT journey
 excerpt: Select from six unique character classes, each with distinct skills and career paths
-snippet: null
 preview: images/previews/character-selection.png
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
@@ -19,30 +18,9 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/begin-your-it-journey/
+  - /quests/0000/it-fundamentals/
   unlocks_quests:
   - /quests/0000/character-building/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/character-building/
-  parallel_quests:
-  - /quests/0000/it-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Cybersecurity
-  - Cloud Engineering
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  - ☁️ Cloud Engineer
-  skill_trees:
-  - Career Planning
-  - Self-Assessment
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -91,7 +69,7 @@ keywords:
   - '0000'
 fmContentType: quest
 draft: false
-meta: null
+meta:
 slug: character-selection
 layout: quest
 ---

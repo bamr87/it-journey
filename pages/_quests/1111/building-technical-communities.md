@@ -1,63 +1,48 @@
 ---
-title: 'Building Technical Communities: Growing Developer Ecosystems'
+title: 'Building Technical Communities: Events, Governance, and Inclusion'
 author: IT-Journey Team
-description: Build and grow technical communities around your projects. Learn community management, developer relations, event organization, and engagement strategies.
-excerpt: Build thriving technical communities and developer ecosystems
-preview: images/previews/building-technical-communities-descriptive-subtitl.png
+description: Build thriving technical communities. Learn the membership lifecycle, running events, governance and moderation, and designing for inclusion and belonging.
+excerpt: Grow a technical community with events, fair governance, and real inclusion
+preview: images/previews/building-technical-communities-events-governance.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'
 difficulty: 🔴 Hard
-estimated_time: 5-6 hours
-primary_technology: general
+estimated_time: 3-5 hours
+primary_technology: leadership
 quest_type: main_quest
 quest_series: Leadership Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Crown of Mastery
+quest_arc: The Architect-King's Ascension
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
-learning_style: hands-on
+  required_quests:
+  - /quests/1111/open-source-contribution/
+  recommended_quests:
+  - /quests/1111/mentorship-programs/
+  unlocks_quests:
+  - /quests/1111/innovation-rnd/
+skill_focus: community
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Experience participating in at least one technical community
+  - Completion of Open Source Contribution (recommended)
+  - Comfort writing clear, public communication
   system_requirements:
-  - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Access to a community platform (Discord, Slack, forum, or meetup tooling)
+  - A document tool for a code of conduct and governance docs
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You want to grow a group, not just join one
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A draft code of conduct and a governance model for one community
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can design the new-member onboarding path
+  - Can write an enforceable, fair code of conduct
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the membership lifecycle
+  - Can describe an escalation/moderation ladder
 permalink: /quests/1111/building-technical-communities/
 categories:
 - Quests
@@ -67,8 +52,9 @@ tags:
 - '1111'
 - community
 - main_quest
-- community
-- hands-on
+- governance
+- events
+- inclusion
 - gamified-learning
 keywords:
   primary:
@@ -76,112 +62,78 @@ keywords:
   - community
   - main_quest
   secondary:
-  - community
-  - hands-on
-  - gamified-learning
+  - governance
+  - events
+  - inclusion
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1111 (15) Quest: Main Quest - Community'
+sub_title: 'Level 1111 (15) Quest: Main Quest - Building Technical Communities'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Gathering-Caller - Brought scattered builders into one hall
+  - 🛡️ Warden of the Hall - Kept a community safe, fair, and welcoming
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Community Governance Design
+  - 🧠 Inclusive Event Facilitation
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, Master adventurer. A single hero can clear a dungeon, but only a guild can hold a kingdom. The most enduring forces in technology are not products - they are communities: the people who gather around a language, a project, a cause, and make each other stronger. This quest, **Building Technical Communities**, teaches you to convene that gathering, to govern it fairly, and to make sure everyone who arrives feels they belong.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you are starting a local meetup, growing a project's contributor base, or tending a Discord that grew faster than its rules, this adventure forges the warden's craft - the art of turning a crowd into a community.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the age of scattered villages, each smith worked alone, and each rediscovered the same hard lessons in isolation. Then came the great halls - places where smiths gathered to share techniques, mentor apprentices, and settle disputes by agreed rule rather than by force. The halls that thrived were not the ones with the best smiths, but the ones with the fairest customs and the warmest welcome.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Technical communities are those halls. A welcoming, well-governed community outlasts any single contributor and compounds everyone's growth. This quest teaches you to build one that lasts.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Membership Lifecycle** - Move people from lurker to contributor to leader
+- [ ] **Running Events** - Plan and run meetups, sprints, and online gatherings that energize
+- [ ] **Governance and Moderation** - Set fair rules and a clear escalation ladder
+- [ ] **Designing for Inclusion** - Build belonging in from the start, not as an afterthought
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Writing a Code of Conduct** - Author rules that are specific and enforceable
+- [ ] **Succession and Bus Factor** - Make the community survive your departure
+- [ ] **Measuring Health** - Track signals of a thriving (not just large) community
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain the membership lifecycle and design an onramp for each stage
+- [ ] Write a code of conduct that a moderator could actually enforce
+- [ ] Describe an escalation ladder from gentle nudge to ban
+- [ ] Name three concrete ways to make a newcomer feel welcome
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Experience participating in at least one technical community
+- [ ] Completion of [Open Source Contribution](/quests/1111/open-source-contribution/) (recommended)
+- [ ] Comfort writing clear, public communication
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Access to a community platform (Discord, Slack, a forum, or meetup tooling)
+- [ ] A document tool for a code of conduct and governance docs
+- [ ] Optional: a real (even tiny) group to practice on
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 5-6 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You want to grow a group, not just join one
+- [ ] You are ready to handle conflict, not avoid it
+- [ ] Ready for 3-5 hours of focused, reflective work
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Communities live on platforms. Choose where yours will gather and where its rules will live.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +141,12 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Keep governance docs in a public repo so the community can see and shape them
+mkdir -p ~/community/{governance,events}
+cd ~/community && git init
+echo "# Code of Conduct" > governance/CODE_OF_CONDUCT.md
+echo "# Governance Model" > governance/GOVERNANCE.md
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +156,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir $HOME\community\governance, $HOME\community\events
+Set-Location $HOME\community
+git init
+"# Code of Conduct" | Out-File governance\CODE_OF_CONDUCT.md
+"# Governance Model" | Out-File governance\GOVERNANCE.md
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +171,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir -p ~/community/{governance,events}
+cd ~/community && git init
+echo "# Code of Conduct" > governance/CODE_OF_CONDUCT.md
+echo "# Governance Model" > governance/GOVERNANCE.md
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +185,236 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Host docs publicly; use a community platform's built-in moderation tools
+# GitHub Discussions, a Discord server, or Discourse all keep rules visible.
+echo "Pin the code of conduct in the platform AND keep it in the repo."
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Membership Lifecycle - From Lurker to Leader
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Communities are not built by recruiting members; they are built by helping people climb a ladder of participation. Most people lurk forever unless you design the next rung.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The participation ladder
+- Designing an onramp for each rung
+- The 90-9-1 rule and why a few do most of the work
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Participation Ladder
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```text
+LURKER     -> reads, never posts        (90% of any community)
+RESPONDER  -> answers/asks occasionally  (9%)
+REGULAR    -> shows up, knows people
+CONTRIBUTOR-> creates value (PRs, posts, talks)  (the vital 1%)
+LEADER     -> organizes, governs, grows others
 ```
 
-**Step 2: Core Concepts**
+Your job as a community builder is to lower the cost of each step up. A few concrete onramps:
 
-[Explanation of fundamental concepts]
+- [ ] **Lurker -> Responder**: a "introduce yourself" thread, easy questions, a fast first reply
+- [ ] **Responder -> Regular**: recurring events at a predictable time, recognition by name
+- [ ] **Regular -> Contributor**: "good first issue" labels, a contribution guide, public thanks
+- [ ] **Contributor -> Leader**: invite them to co-organize, hand over a channel, sponsor them
 
-**Step 3: First Implementation**
+The **90-9-1 rule** says roughly 90% lurk, 9% participate occasionally, and 1% create most of the content. Do not fight this - design for it. Make lurking valuable, make the first contribution tiny, and celebrate every step loudly so the next person sees the path.
 
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Membership Lifecycle
+- [ ] What is one concrete onramp from lurker to first post?
+- [ ] Why is celebrating small contributions a recruiting strategy?
+- [ ] What does the 90-9-1 rule imply for your event design?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Mapped the ladder**: You placed your community's members on the rungs
+- [ ] **Designed one onramp**: You wrote a concrete next-step for one rung
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Events and Governance - Structure That Sustains
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Energy brings people in; structure keeps them. Events create the rhythm; governance creates the trust. Without governance, every conflict becomes a crisis and the community burns out its organizers.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Running events that energize rather than exhaust
+- Writing a governance model
+- Building a moderation escalation ladder
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Event Checklist and Governance Model
 
-[Detailed content for chapter 2]
+A repeatable event checklist:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+BEFORE:  clear purpose + audience | predictable time/place | accessible (captions, remote option)
+         | a "what to expect" so newcomers aren't lost | a code of conduct linked in the invite
+DURING:  warm welcome by name | a clear facilitator | a path for quiet folks to participate
+         | start and END on time (respect is a recruiting tool)
+AFTER:   thank people publicly | share notes/recording | one concrete next gathering announced
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+**Governance** answers "who decides, and how?" Pick a model and write it down:
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+| Model | Who decides | Good for | Risk |
+| --- | --- | --- | --- |
+| **BDFL** (benevolent dictator) | One trusted founder | Early, small projects | Bus factor of 1 |
+| **Maintainer council** | A small elected/appointed group | Mid-size projects | Slower decisions |
+| **Do-ocracy** | Whoever does the work decides | Active volunteer groups | Can exclude newcomers |
+| **Formal foundation** | Board + bylaws | Large, multi-company projects | Bureaucracy |
+
+A **moderation escalation ladder** turns ad-hoc judgment into fair, predictable enforcement:
+
+```text
+1. Gentle private nudge      ("hey, that came across harshly — can you reword?")
+2. Public clarification      (restate the norm for everyone, not just the person)
+3. Formal warning (logged)   (documented, with the specific rule cited)
+4. Temporary mute/timeout    (time-boxed, with a path back)
+5. Removal / ban             (last resort, documented, ideally reviewed by >1 mod)
+```
+
+Document who can apply each step, and always log enforcement. Consistency is what makes moderation feel fair rather than arbitrary.
+
+### 🔍 Knowledge Check: Events and Governance
+- [ ] Why does ending an event on time help recruitment?
+- [ ] What is the bus-factor risk of the BDFL model?
+- [ ] Why log every moderation action?
+
+## 🧙‍♂️ Chapter 3: Inclusion - Designing Belonging In
+
+*A community is only as welcoming as its least-included member feels. Inclusion is not a poster on the wall; it is a hundred small design choices that decide who stays.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Writing an enforceable code of conduct
+- Removing hidden barriers to entry
+- Designing for belonging, not just diversity numbers
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Code of Conduct and Inclusion Design
 
-[Detailed content for chapter 3]
+A code of conduct must be **specific and enforceable**, not aspirational fluff. Adapt a proven base like the Contributor Covenant:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```markdown
+# Code of Conduct (skeleton)
+
+## Our pledge
+We commit to a harassment-free experience for everyone, regardless of
+background, identity, or experience level.
+
+## Expected behavior
+- Be respectful of differing viewpoints and experiences.
+- Give and accept constructive feedback gracefully.
+- Assume good faith; ask before you accuse.
+
+## Unacceptable behavior (be specific!)
+- Harassment, slurs, or demeaning comments.
+- Sustained disruption of events or discussions.
+- Publishing others' private information without consent.
+
+## Reporting
+Contact <named person / email / form>. Reports are handled confidentially.
+
+## Enforcement
+Violations follow the escalation ladder. Maintainers will document actions.
+```
+
+Then remove the quiet barriers that keep people out:
+
+- [ ] **Jargon and acronyms** - explain or link them; gatekeeping language excludes newcomers
+- [ ] **"Just google it"** - replace with a real answer or a pointer; RTFM drives people away
+- [ ] **Timezone and language** - rotate event times; offer async participation
+- [ ] **Accessibility** - captions, alt text, readable color contrast, no audio-only critical info
+- [ ] **Recognition equity** - make sure credit goes to doers, not just the loudest
+
+Belonging is the goal beyond diversity: people stay where they feel their contribution matters and their identity is safe. Measure it by retention and by who feels comfortable disagreeing in public, not by headcount alone.
+
+### 🔍 Knowledge Check: Inclusion
+- [ ] What makes a code of conduct enforceable rather than aspirational?
+- [ ] Name two hidden barriers that quietly exclude newcomers
+- [ ] How is "belonging" different from a diversity headcount?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Map Your Community
+**Objective**: Map a real community onto the participation ladder and design one onramp.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Place members across lurker -> leader
+- [ ] Identify the most underused rung transition
+- [ ] Write one concrete onramp to fix it
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Someone could follow your onramp this week.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Write Governance and a CoC
+**Objective**: Draft a governance model and a code of conduct for one community.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] A named governance model with who-decides-how
+- [ ] A code of conduct with specific unacceptable behaviors and a reporting path
+- [ ] An escalation ladder with who can apply each step
 
-**Validation**: [How to verify success]
+**Validation**: A new moderator could act consistently using only your docs.
+
+### 🔴 Advanced Challenge: Run an Inclusive Event
+**Objective**: Plan (and ideally run) an event designed for inclusion.
+
+**Requirements**:
+- [ ] Accessible format (captions/remote/async option)
+- [ ] A welcome path for first-timers and quiet participants
+- [ ] A public thank-you and a concrete next gathering announced
+
+**Validation**: A first-timer reports they felt welcome and would return.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Gathering-Caller** - You brought scattered builders into one hall
+- 🛡️ **Warden of the Hall** - You kept a community safe, fair, and welcoming
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Community Governance Design** - Fair rules and clear escalation
+- **Inclusive Event Facilitation** - Gatherings where everyone belongs
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Innovation and R&D - Channel a community's energy into new ideas
+- Career Advancement - Communities are where reputations are built
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Innovation and R&D](/quests/1111/innovation-rnd/) - Turn community energy into invention
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Mentorship Programs](/quests/1111/mentorship-programs/) - Grow the leaders your community needs
+- ⚔️ [Career Advancement](/quests/1111/career-advancement/) - Build a public reputation
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Innovation and R&D](/quests/1111/innovation-rnd/)  
+**🏗️ System Engineer**: Explore [Mentorship Programs](/quests/1111/mentorship-programs/)  
+**🛡️ Security Specialist**: Advance to [Career Advancement](/quests/1111/career-advancement/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [GitHub Open Source Guides - Building Community](https://opensource.guide/building-community/) - Practical community growth
+- [Contributor Covenant](https://www.contributor-covenant.org/) - The standard, adaptable code of conduct
+- [CHAOSS community health metrics](https://chaoss.community/) - How to measure community health
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [The Art of Community by Jono Bacon](https://www.jonobacon.com/books/artofcommunity/) - The foundational text (free online)
+- [community.org guides](https://www.cmxhub.com/) - Community-building practitioners
+- [Open Source Governance models (opensource.guide)](https://opensource.guide/leadership-and-governance/) - Comparing governance structures
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Mozilla's Open Leadership resources](https://mozilla.github.io/open-leadership-training-series/) - Running open, inclusive projects
+- [Inclusive event checklist (a11y)](https://www.w3.org/WAI/teach-advocate/accessible-presentations/) - Accessibility for talks and events
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
+- [ ] ✅ Mapped a community onto the participation ladder
+- [ ] ✅ Drafted a governance model and code of conduct
+- [ ] ✅ Designed (or ran) an inclusive event
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +422,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1111: Leadership & Innovation]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Open Source Contribution: Contributing, Maintaining, and Licensing]]
+**Unlocks:** [[Innovation and R&D: Driving Experimentation and Managing Tech Bets]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

@@ -19,20 +19,6 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/terminal-fundamentals/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Documentation
-  - Content Creation
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -54,13 +40,6 @@ validation_criteria:
   knowledge_checks:
   - Understands Markdown syntax vs rendered output
   - Can structure a README with proper headings
-quest_mapping:
-  coordinates:
-  - 3
-  - 2
-  region: Foundation
-  realm: Development
-  biome: Documentation
 permalink: /quests/0000/markdown-mastery/
 categories:
 - Quests

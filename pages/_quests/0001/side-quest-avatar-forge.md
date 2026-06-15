@@ -10,7 +10,6 @@ keywords:
   - customization
 description: Design and integrate a custom avatar for your contributor character profile
 excerpt: Visit the Portrait Studio and commission a visual identity worthy of your class.
-snippet: The Portrait Artist awaits — every hero deserves a face
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
@@ -26,7 +25,7 @@ quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0001/side-quests/avatar-forge/
+permalink: /quests/0001/avatar-forge/
 categories:
 - Quests
 - Community
@@ -51,15 +50,6 @@ quest_dependencies:
   - /quests/0001/forge-your-character/
   recommended_quests: []
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Community Contributor
-  character_classes:
-  - 🎵 Bard
-  - 💚 Healer
-  skill_trees:
-  - Community & Collaboration
-  - Frontend Basics
 rewards:
   badges:
   - 🎨 Portrait Artist — Custom avatar displayed on character sheet
@@ -70,6 +60,8 @@ validation_criteria:
   - Avatar renders on character sheet
   - Image is appropriate and accessible (has alt text context)
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/avatar-forge/
 ---
 # 🎨 Avatar Forge: Crafting Your Digital Portrait
 

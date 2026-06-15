@@ -1,71 +1,55 @@
 ---
 title: 'Connection Pooling: Efficient Database Resource Management'
 author: IT-Journey Team
-description: Learn database connection pooling for optimal resource management. Configure connection pools, optimize pool sizes, and implement connection lifecycle management.
-excerpt: Optimize database connections with efficient pooling strategies and resource management
-preview: images/previews/connection-pooling-efficient-resource-management-d.png
+description: Stop your database drowning in connections - understand the connection lifecycle, size a pool correctly, deploy PgBouncer, and hunt down the connection leaks that exhaust a healthy database.
+excerpt: Master pool sizing, PgBouncer, the connection lifecycle, and finding connection leaks.
+preview: images/previews/connection-pooling-efficient-resource-quest-title.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:08:33.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
-primary_technology: sql
+primary_technology: postgresql
 quest_type: main_quest
 quest_series: Database Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Data Keep
+quest_arc: The Gatekeeper's Discipline
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
+  required_quests:
+  - /quests/0110/database-fundamentals/
+  recommended_quests:
+  - /quests/0110/query-optimization/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Database Fundamentals (recommended)
+  - Basic understanding of how applications connect to a database
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - PostgreSQL 14+ and PgBouncer (or Docker to run both)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable running services and reading config files
+  - Ready to reason about concurrency and resources
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A pool configured in front of PostgreSQL
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can calculate a sensible pool size for a workload
+  - Can configure PgBouncer in transaction pooling mode
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the cost of opening a database connection
+  - Can describe how a connection leak exhausts a database
 permalink: /quests/0110/connection-pooling/
 categories:
 - Quests
 - Data-Engineering
-- Hard
+- Medium
 tags:
 - '0110'
-- sql
+- postgresql
 - main_quest
 - data-engineering
 - hands-on
@@ -73,115 +57,81 @@ tags:
 keywords:
   primary:
   - '0110'
-  - sql
+  - postgresql
   - main_quest
   secondary:
   - data-engineering
-  - hands-on
-  - gamified-learning
+  - pgbouncer
+  - connection-pooling
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0110 (6) Quest: Main Quest - Connection Pooling'
+sub_title: 'Level 0110 (6) Quest: Main Quest - The Gatekeeper''s Discipline'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Gatekeeper of the Pool - Sized and configured a connection pool
+  - 🛡️ Hunter of Leaks - Traced and sealed a connection leak
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Connection Pool Configuration
+  - 🧠 Resource-Aware Scaling
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Completion of the Level 0110 Database Mastery quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You stand at the final gate of the Data Keep. Inside, your database can serve thousands of queries a second - but only if visitors enter through an orderly gate rather than battering down a fresh door each time. This quest, **Connection Pooling**, teaches you to be the gatekeeper: to understand the true cost of a connection, to size a pool so it neither starves nor floods the database, to deploy PgBouncer, and to hunt the connection leaks that quietly exhaust a healthy system.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Opening a database connection is expensive - far more expensive than most developers realize. A pool reuses a small set of warm connections instead of paying that cost on every request. Get pooling right and a modest database serves an army; get it wrong and a handful of users brings it to its knees with "too many connections."*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Every PostgreSQL connection spawns an entire operating-system process with its own memory. A few hundred is fine; a few thousand will consume gigabytes of RAM and grind the server to dust. Yet modern applications, especially serverless and high-concurrency ones, want to open connections freely. The connection pool resolves this tension: a thin layer that maintains a fixed, reusable set of database connections and lends them out for the brief moments each request actually needs the database. PgBouncer, the most famous PostgreSQL pooler, weighs only a few megabytes yet lets thousands of clients share a few dozen real connections.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches the lifecycle, the math of pool sizing, and the practical configuration that keeps the gate flowing.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Connection Lifecycle** - Understand what opening, using, and closing a connection costs
+- [ ] **Pool Sizing** - Calculate a pool size that maximizes throughput without overload
+- [ ] **PgBouncer** - Deploy and configure a real connection pooler
+- [ ] **Connection Leaks** - Detect and fix connections that are never returned
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Pooling Modes** - Choose session, transaction, or statement pooling correctly
+- [ ] **Application Pools** - Tune an in-app pool (HikariCP, SQLAlchemy, pgbouncer in front)
+- [ ] **Monitoring** - Watch active vs idle connections to catch trouble early
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why opening a connection per request is wasteful
+- [ ] Apply a pool-sizing formula to a given core count and workload
+- [ ] Pick the right PgBouncer pooling mode for an application
+- [ ] Diagnose a "too many connections" error as a leak versus undersized DB
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of how applications open database connections
+- [ ] Comfort editing config files and running services
+- [ ] Completion of [Database Fundamentals](/quests/0110/database-fundamentals/) (recommended)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] PostgreSQL 14+ installed, or Docker to run it
+- [ ] PgBouncer (via package manager or Docker)
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 45-60 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can run and configure background services
+- [ ] You are ready to reason about concurrency and limited resources
+- [ ] Ready for 45-60 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Run PostgreSQL, then put PgBouncer in front of it. The Docker path is the quickest way to run both.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +139,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install postgresql@16 pgbouncer
+brew services start postgresql@16
+createdb gatekeeper
+# PgBouncer config lives at /opt/homebrew/etc/pgbouncer.ini
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +153,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install PostgreSQL.PostgreSQL.16
+createdb gatekeeper
+# PgBouncer on Windows is easiest via WSL or the Docker path below.
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +166,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y postgresql pgbouncer
+sudo systemctl enable --now postgresql
+sudo -u postgres createdb gatekeeper
+# PgBouncer config lives at /etc/pgbouncer/pgbouncer.ini
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +180,228 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+docker run --name gatekeeper-db -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
+docker run --name pgbouncer --link gatekeeper-db -p 6432:6432 \
+  -e DATABASES_HOST=gatekeeper-db -e DATABASES_USER=postgres \
+  -e DATABASES_PASSWORD=quest -d edoburu/pgbouncer
+# Apps connect to port 6432 (PgBouncer), which forwards to 5432 (PostgreSQL).
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Connection Lifecycle and Its Cost
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A database connection is not a free abstraction. In PostgreSQL each one is a full OS process - costing a TCP handshake, authentication, and several megabytes of server memory. Opening one per HTTP request is like hiring a new gatekeeper for every visitor and firing them at the door.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The steps of opening, using, and closing a connection
+- Why connections are expensive in PostgreSQL specifically
+- How reuse via a pool changes the economics
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Why Reuse Beats Reconnect
 
-**Step 1: Environment Setup**
+```python
+# ❌ Anti-pattern: open and close a connection on every single request.
+def handle_request(query):
+    conn = psycopg2.connect("dbname=gatekeeper")  # TCP + auth + process spawn
+    result = conn.execute(query)                  # the actual work (milliseconds)
+    conn.close()                                  # tear it all down again
+    return result
+# Under load this spends most of its time connecting, not querying.
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# ✅ Pooled: borrow a warm connection, use it, return it to the pool.
+pool = ConnectionPool("dbname=gatekeeper", min_size=5, max_size=20)
+def handle_request_pooled(query):
+    with pool.connection() as conn:   # borrow (instant - already open)
+        return conn.execute(query)    # ...returned to the pool automatically
 ```
 
-**Step 2: Core Concepts**
+The lifecycle of a pooled connection is: **created once** when the pool starts, **borrowed** for the brief span of a query, **returned** immediately after, and **reused** thousands of times. The expensive setup is paid once, not per request. This is why a pool can turn a database that handled 50 requests/second into one that handles thousands.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Lifecycle
+- [ ] What expensive steps happen when you open a new PostgreSQL connection?
+- [ ] Why is a PostgreSQL connection more costly than, say, an HTTP request?
+- [ ] What does a pooled connection's lifecycle look like across many requests?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Cost understood**: You can name why per-request connections are wasteful
+- [ ] **Pool grasped**: You can describe borrow-and-return reuse
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Sizing the Pool - The Goldilocks Number
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A pool too small starves requests, which queue and time out. A pool too large floods the database with more concurrent work than its CPUs and disks can handle, and everything slows down. The right size is surprisingly small.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The counterintuitive math of pool sizing
+- Why more connections often means less throughput
+- Accounting for multiple app instances
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Sizing Formula
 
-[Detailed content for chapter 2]
+A widely cited starting point (from the HikariCP project) is:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+pool_size = (core_count * 2) + effective_spindle_count
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+  core_count             = CPU cores on the database server
+  effective_spindle_count = number of disks that can seek in parallel
+                            (use ~1 for SSD-backed or cloud storage)
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Example: an 8-core database on SSD storage
+  pool_size = (8 * 2) + 1 = 17  ->  start around 15-20, not 200.
+```
+
+Why so small? Because a database can only *truly* do as many things at once as it has cores and disk channels. Beyond that, extra connections just context-switch and contend, making everything slower. The classic surprise: reducing a pool from 100 to 20 connections often *increases* throughput.
+
+Crucially, the pool limit is **per application instance**. If you run 10 app servers each with a pool of 20, that is 200 connections at the database - which may exceed PostgreSQL's `max_connections` (often 100). This is exactly the scenario where a shared external pooler like PgBouncer becomes essential: hundreds of app-side connections collapse into a few dozen real database connections.
+
+### 🔍 Knowledge Check: Sizing
+- [ ] Why can a smaller pool deliver higher throughput than a larger one?
+- [ ] How do multiple app instances multiply your total connection count?
+- [ ] What value do you use for `effective_spindle_count` on SSD/cloud storage?
+
+## 🧙‍♂️ Chapter 3: PgBouncer and Hunting Connection Leaks
+
+*PgBouncer is a tiny, battle-tested pooler that sits between your apps and PostgreSQL. And the bug it most often saves you from is the **connection leak** - a borrowed connection that is never returned, slowly exhausting the pool until the database screams "too many connections."*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Configuring PgBouncer and its pooling modes
+- Choosing session vs transaction pooling
+- Detecting and fixing connection leaks
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Configure PgBouncer
 
-[Detailed content for chapter 3]
+```ini
+; pgbouncer.ini - a minimal transaction-pooling setup
+[databases]
+gatekeeper = host=127.0.0.1 port=5432 dbname=gatekeeper
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+[pgbouncer]
+listen_addr = 127.0.0.1
+listen_port = 6432
+pool_mode = transaction          ; return the connection after each transaction
+max_client_conn = 1000           ; many clients may connect to PgBouncer...
+default_pool_size = 20           ; ...but only 20 real connections to PostgreSQL
+```
+
+**Pooling modes** trade flexibility for efficiency:
+
+- **session**: a client holds a server connection for its whole session (safest, least sharing).
+- **transaction**: the connection is returned after each transaction (the sweet spot for web apps - far more sharing). Avoid session-level features like prepared statements across transactions.
+- **statement**: returned after every statement (most aggressive; no multi-statement transactions).
+
+Now hunt the **leak**. A leak is code that borrows a connection and never returns it - usually a missing `close()` or a `with` block escaped by an exception:
+
+```sql
+-- Ask PostgreSQL who is connected and what they are doing.
+SELECT pid, state, query, state_change
+FROM pg_stat_activity
+WHERE datname = 'gatekeeper'
+ORDER BY state_change;
+-- Many rows stuck in 'idle in transaction' for a long time = a LEAK.
+```
+
+Connections piling up as `idle in transaction` are the classic fingerprint of a leak: the app opened a transaction, then wandered off without committing or rolling back. The fix is always to ensure connections are returned in a `finally` block or a context manager (`with`), even when exceptions fire.
+
+### 🔍 Knowledge Check: PgBouncer & Leaks
+- [ ] What does `pool_mode = transaction` change compared to `session`?
+- [ ] How does PgBouncer let 1000 clients share 20 real connections?
+- [ ] What does a row stuck in `idle in transaction` usually indicate?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Size a Pool
+**Objective**: Given a database server's specs, compute a sensible pool size.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] State the core count and storage type
+- [ ] Apply the sizing formula
+- [ ] Account for the number of app instances
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Your total connections stay under PostgreSQL's `max_connections`.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Put PgBouncer in Front
+**Objective**: Configure PgBouncer in transaction mode and route an app through it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] A working `pgbouncer.ini` with a bounded `default_pool_size`
+- [ ] The app connects to PgBouncer's port, not PostgreSQL's
+- [ ] Verify queries still succeed through the pooler
 
-**Validation**: [How to verify success]
+**Validation**: Many client connections map to a small number of server connections.
+
+### 🔴 Advanced Challenge: Catch a Leak
+**Objective**: Reproduce a connection leak, observe it in `pg_stat_activity`, and fix it.
+
+**Requirements**:
+- [ ] Write code that borrows a connection without returning it
+- [ ] Show connections accumulating as `idle in transaction`
+- [ ] Fix it with a context manager or `finally` and confirm the count stabilizes
+
+**Validation**: After the fix, idle-in-transaction connections no longer grow unbounded.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Gatekeeper of the Pool** - You sized and configured a connection pool
+- 🛡️ **Hunter of Leaks** - You traced and sealed a connection leak
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Connection Pool Configuration** - Deploy and tune PgBouncer or an app pool
+- **Resource-Aware Scaling** - Match concurrency to the database's real limits
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- You have completed the Level 0110 Database Mastery quest line! Advance to Level 0111: API Development.
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 Advance to Level 0111: API Development - serve your well-pooled database over HTTP
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Query Optimization](/quests/0110/query-optimization/) - Fewer, faster queries need fewer connections
+- ⚔️ [Backup and Recovery](/quests/0110/backup-recovery/) - Protect the database behind the gate
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to Level 0111: API Development  
+**🏗️ System Engineer**: Explore [Backup and Recovery](/quests/0110/backup-recovery/)  
+**📊 Data Scientist**: Revisit [Query Optimization](/quests/0110/query-optimization/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PgBouncer Documentation](https://www.pgbouncer.org/usage.html) - Configuration and pooling modes
+- [PostgreSQL pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) - Watching live connections
+- [PostgreSQL max_connections](https://www.postgresql.org/docs/current/runtime-config-connection.html) - The hard limit you must respect
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [HikariCP Pool Sizing Guide](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing) - The famous sizing math
+- [PgBouncer FAQ](https://www.pgbouncer.org/faq.html) - Common configuration questions
+- [Stack Overflow: pgbouncer tag](https://stackoverflow.com/questions/tagged/pgbouncer) - Pooler troubleshooting
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Brandur: Managing Connections](https://brandur.org/postgres-connections) - Deep dive on PostgreSQL connection costs
+- [AWS RDS Proxy](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html) - Managed pooling in the cloud
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Configured a pool in front of PostgreSQL
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
+**Unlocks:** [[Level 0111 - API Development]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-
+</content>

@@ -1,187 +1,143 @@
 ---
 title: 'YAML Configuration: Site Settings Mastery'
 author: IT-Journey Team
-description: Master YAML syntax and Jekyll configuration to customize site settings, manage collections, and configure build options for static websites.
+description: Master YAML syntax for Jekyll. Learn front matter, the _config.yml file, structured data files, and the common pitfalls of indentation, quoting, and types that trip up beginners.
 excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional static websites.
-preview: images/previews/yaml-configuration-site-settings-mastery-descripti.png
+preview: images/previews/yaml-configuration-site-settings-quest-descripti.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-12-20T00:00:00.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
-estimated_time: 30-45 minutes
+estimated_time: 45-60 minutes
 primary_technology: yaml
 quest_type: main_quest
-quest_series: Jekyll Foundations
-quest_line: Init World
-quest_arc: Jekyll Mastery Arc
+quest_series: Static Site Mastery
+quest_line: The Web Fundamentals Codex
+quest_arc: Forging Your First Website
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0001/jekyll-fundamentals/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/0001/liquid-templating/
+  - /quests/0001/github-pages-basics/
 skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort editing plain text files
+  - Completion of Jekyll Fundamentals
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A text editor and a working Jekyll site
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - No prior YAML experience required
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A custom _config.yml and a _data file in use
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write valid YAML mappings, lists, and nested data
+  - Can configure a Jekyll site through _config.yml
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands why indentation must be spaces, not tabs
+  - Can spot and fix a common quoting error
 permalink: /quests/0001/yaml-configuration/
 categories:
 - Quests
 - Frontend
+- Static-Sites
 - Beginner
 tags:
 - '0001'
 - yaml
+- jekyll
+- configuration
+- web-development
 - main_quest
 - frontend
 - hands-on
-- gamified-learning
+- beginner
 keywords:
   primary:
   - '0001'
   - yaml
-  - main_quest
+  - jekyll
+  - configuration
   secondary:
+  - web-development
+  - main_quest
   - frontend
   - hands-on
-  - gamified-learning
+  - beginner
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0001 (1) Quest: Main Quest - YAML'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Keeper of the Config - Mastered _config.yml and front matter
+  - 🌱 Scribe of Structured Data - Authored clean YAML data files
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Jekyll Configuration
+  - 🧠 Structured Data Modeling
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Structured data files that power data-driven Liquid templates
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Beneath every Jekyll site lies a quiet language of settings and data: **YAML**. It is the ink in which `_config.yml` is written, the metadata atop every page, and the format of the data files your templates loop over. Master YAML and you control the entire behaviour of your site - without touching a single line of Ruby.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*This is a short but vital quest. YAML is simple to read and easy to get subtly wrong, and a single stray tab or unquoted colon can break a whole build. Learn its rules and its traps here, and you will never fear the config file again.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*The elders of computing grew weary of formats that were powerful but unreadable - XML with its endless angle brackets, JSON with its strict commas and braces. They wanted a config language a human could read at a glance and write without ceremony. So **YAML** - "YAML Ain't Markup Language" - was forged: indentation for structure, plain words for keys and values, almost no punctuation. Today it configures Jekyll, GitHub Actions, Docker Compose, Kubernetes, and half the tools you will ever use.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Learn YAML once, here, and you carry the skill into every future quest in the realm.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **YAML Syntax** - Write mappings, lists, and nested structures correctly
+- [ ] **Front Matter** - Use the `---` block to set per-page metadata
+- [ ] **The `_config.yml` File** - Configure a Jekyll site's global behaviour
+- [ ] **Data Files** - Store structured data in `_data` and read it in templates
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Types & Quoting** - Control strings, numbers, booleans, and null
+- [ ] **Multi-line Strings** - Use block scalars (`|` and `>`)
+- [ ] **Validate Before You Ship** - Lint YAML to catch errors early
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why YAML uses spaces, never tabs, for indentation
+- [ ] Spot the bug in a value like `version: 1.20` vs `version: "1.20"`
+- [ ] Model a small nested dataset and read it from a Liquid template
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Comfort creating and editing plain text files
+- [ ] Completion of [Jekyll Fundamentals](/quests/0001/jekyll-fundamentals/)
+- [ ] No prior YAML experience required
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A text editor or IDE (VS Code recommended)
+- [ ] A working Jekyll site to edit
 
 ### 🧠 Skill Level Indicators
 This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 30-45 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] Beginner-friendly - no prior YAML experience required
+- [ ] You can serve a Jekyll site locally
+- [ ] Ready for 45-60 minutes of focused learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*YAML is just text, so editing is identical everywhere. What differs is the linter you install to catch mistakes.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +145,12 @@ This **🟢 Easy** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install yamllint to validate your YAML
+brew install yamllint
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Check a file
+yamllint _config.yml
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +160,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install yamllint via pip (Python required)
+pip install yamllint
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Check a file
+yamllint _config.yml
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +175,12 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian/Ubuntu
+sudo apt update && sudo apt install -y yamllint
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Validate
+yamllint _config.yml
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +190,300 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Lint without installing anything locally
+docker run --rm -v "$PWD":/data cytopia/yamllint _config.yml
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+In VS Code, the **YAML** extension by Red Hat highlights errors as you type.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: YAML Syntax - Mappings, Lists, and Nesting
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*YAML structures data with just two shapes: **mappings** (key-value pairs) and **sequences** (lists). Indentation - always spaces - shows what belongs to what.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Writing mappings and lists
+- Nesting structures with indentation
+- Mixing the two
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Core Shapes
 
-**Step 1: Environment Setup**
+```yaml
+# A mapping: key, colon, space, value
+title: My Castle
+published: true
+post_count: 42
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# A sequence (list): each item on a dashed line
+authors:
+  - Ada
+  - Linus
+  - Grace
+
+# Nesting: indent (with SPACES) to show containment
+social:
+  github: octocat
+  links:
+    - https://example.com
+    - https://it-journey.dev
+
+# A list of mappings - extremely common in data files
+navigation:
+  - name: Home
+    url: /
+  - name: Quests
+    url: /quests/
 ```
 
-**Step 2: Core Concepts**
+The two iron rules of YAML:
 
-[Explanation of fundamental concepts]
+1. **Indentation is spaces, never tabs.** A single tab anywhere will break the parse.
+2. **A space follows every colon.** `key:value` is wrong; `key: value` is right.
 
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Syntax
+- [ ] What two shapes does all YAML reduce to?
+- [ ] What character is forbidden for indentation?
+- [ ] How do you write a list where each item is itself a mapping?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Wrote a mapping**: You created a valid key-value file
+- [ ] **Nested a list**: You indented a list under a key with spaces
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Front Matter and _config.yml - Configuring Jekyll
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Two YAML files run your Jekyll site. **Front matter** - the YAML block at the top of a page between `---` lines - sets per-page metadata. **`_config.yml`** sets site-wide behaviour.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Reading and writing front matter
+- Configuring a site in `_config.yml`
+- Setting collection and default behaviour
 
-### 🏗️ Advanced Implementations
+### 🏗️ Front Matter and Global Config
 
-[Detailed content for chapter 2]
+Front matter at the top of `about.md`:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+---
+layout: default
+title: About the Castle
+nav_order: 2
+tags:
+  - meta
+  - about
+---
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Everything between the fences is YAML, and Jekyll exposes it to Liquid as `page.title`, `page.tags`, and so on.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+A practical `_config.yml`:
+
+```yaml
+# Site identity
+title: My Castle
+description: A site forged in the Web Fundamentals tier
+url: "https://username.github.io"
+baseurl: ""
+
+# Build behaviour
+markdown: kramdown
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /recipes/:name/
+
+# Front-matter defaults - apply layout to all posts automatically
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# Files Jekyll should ignore
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+```
+
+> ⚠️ Jekyll only re-reads `_config.yml` on restart. After editing it, stop and restart `jekyll serve` - live reload will not pick up config changes.
+
+### 🔍 Knowledge Check: Configuration
+- [ ] Where does front matter live in a page, and what wraps it?
+- [ ] What does the `defaults` block let you avoid repeating?
+- [ ] Why must you restart the server after editing `_config.yml`?
+
+## 🧙‍♂️ Chapter 3: Data Files & Common Pitfalls - The Subtle Traps
+
+*The `_data` folder turns YAML into a tiny database. And because YAML guesses types, a handful of classic traps await the careless scribe.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Storing data in `_data` and reading it
+- Controlling types with quoting
+- Avoiding the famous YAML gotchas
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Data Files in Action
 
-[Detailed content for chapter 3]
+Create `_data/team.yml`:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+- name: Ada Lovelace
+  role: Architect
+  active: true
+- name: Grace Hopper
+  role: Compiler Smith
+  active: true
+```
+
+Read it in any template - the file name becomes the key under `site.data`:
+
+```liquid
+
+{% raw %}{% for member in site.data.team %}{% endraw %}
+  {% raw %}{% if member.active %}{% endraw %}
+    <p>{% raw %}{{ member.name }}{% endraw %} - {% raw %}{{ member.role }}{% endraw %}</p>
+  {% raw %}{% endif %}{% endraw %}
+{% raw %}{% endfor %}{% endraw %}
+
+```
+
+**The common pitfalls** - memorize these and you will dodge most YAML bugs:
+
+```yaml
+# 1. Unquoted booleans: these become true/false, not strings!
+answer: yes        # -> boolean true (!)  use: answer: "yes"
+state: on          # -> boolean true (!)  use: state: "on"
+
+# 2. Numbers that should be strings (versions, zip codes)
+version: 1.20      # -> the number 1.2 (trailing zero lost!)
+version: "1.20"    # -> the string "1.20"  ✅
+
+# 3. Colons inside values must be quoted
+title: Jekyll: a static generator     # ❌ parse error
+title: "Jekyll: a static generator"   # ✅
+
+# 4. Leading zeros and special chars need quotes
+zip: 01234         # ❌ may be read as octal
+zip: "01234"       # ✅
+
+# 5. Block scalars for multi-line text
+summary: |         # literal: keeps newlines
+  Line one.
+  Line two.
+tagline: >         # folded: joins lines with spaces
+  This long line will be
+  folded into one paragraph.
+```
+
+Always lint before you commit:
+
+```bash
+yamllint _config.yml _data/team.yml
+```
+
+### 🔍 Knowledge Check: Data & Pitfalls
+- [ ] Why does `version: 1.20` lose its trailing zero?
+- [ ] How do you keep `yes` as the string "yes"?
+- [ ] What is the difference between the `|` and `>` block scalars?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Valid YAML
+**Objective**: Write a small, valid YAML document.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Include at least one mapping, one list, and one nested structure
+- [ ] Use spaces only for indentation
+- [ ] Pass `yamllint` with no errors
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: `yamllint yourfile.yml` reports no errors.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Configure the Site
+**Objective**: Customize your Jekyll site through `_config.yml`.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Set `title`, `description`, and a `permalink` pattern
+- [ ] Add a `defaults` block that applies a layout automatically
+- [ ] Restart the server and confirm the changes took effect
 
-**Validation**: [How to verify success]
+**Validation**: The site reflects your new title and default layout.
+
+### 🔴 Advanced Challenge: Data-Driven Page
+**Objective**: Drive a page from a `_data` file, dodging the type traps.
+
+**Requirements**:
+- [ ] Create a `_data` file with a list of mappings
+- [ ] Quote at least one value that would otherwise mistype
+- [ ] Loop over it in a template with a conditional
+
+**Validation**: The page renders the data and no value is mistyped.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Keeper of the Config** - `_config.yml` and front matter hold no fear
+- 🌱 **Scribe of Structured Data** - You author clean, correct YAML
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Jekyll Configuration** - Bend a site's behaviour to your will
+- **Structured Data Modeling** - Shape data for templates to consume
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Liquid Templating - Loop over the data you just modeled
+- GitHub Pages Basics - Configure url and baseurl for production
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Liquid Templating](/quests/0001/liquid-templating/) - Turn data into pages
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [GitHub Pages Basics](/quests/0001/github-pages-basics/) - Config for the live web
+- ⚔️ [Git Workflow Mastery](/quests/0001/git-workflow-mastery/) - Version your config safely
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Liquid Templating](/quests/0001/liquid-templating/)  
+**🏗️ System Engineer**: Explore [GitHub Pages Basics](/quests/0001/github-pages-basics/)  
+**🎨 Frontend Specialist**: Model richer data files for your theme
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [YAML Specification](https://yaml.org/spec/1.2.2/) - The authoritative reference
+- [Jekyll Configuration Options](https://jekyllrb.com/docs/configuration/) - Every `_config.yml` setting
+- [Jekyll Data Files](https://jekyllrb.com/docs/datafiles/) - Using the `_data` folder
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
+- [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/) - A fast, complete tour
+- [YAML on Stack Overflow](https://stackoverflow.com/questions/tagged/yaml) - Tagged Q&A
+- [The Norway Problem](https://hitchdev.com/strictyaml/why/implicit-typing-removed/) - The famous `NO` -> false gotcha
 
 ### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [yamllint](https://yamllint.readthedocs.io/) - Catch errors before they ship
+- [YAML Validator (online)](https://www.yamllint.com/) - Paste and check in your browser
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Configured a site and used a data file
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Jekyll Fundamentals]]
+**Unlocks:** [[Liquid Templating]] · [[GitHub Pages Basics]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

@@ -46,18 +46,6 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests:
   - /quests/1000/agentic-observability-and-control/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  sequel_quests:
-  - /quests/1000/agentic-observability-and-control/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
 rewards:
   badges:
   - 📜 Plan-First Architect
@@ -83,11 +71,6 @@ validation_criteria:
   knowledge_checks:
   - Understands why separating plan from action reduces agent risk
   - Can describe what a valid structured agent plan looks like
-quest_mapping:
-  coordinates: '[1, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: SDLC Forest
 comments: true
 draft: false
 redirect_from:

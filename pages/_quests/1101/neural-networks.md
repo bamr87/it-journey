@@ -1,63 +1,52 @@
 ---
-title: 'Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch'
+title: 'Neural Networks Deep Dive: Neurons, Backpropagation & Gradient Descent'
 author: IT-Journey Team
-description: Master neural network architectures with TensorFlow. Learn convolutional networks, recurrent networks, attention mechanisms, and transformer architectures for computer vision and NLP.
-excerpt: Build CNN, RNN, and transformer architectures from scratch with TensorFlow and Keras
+description: Master neural network fundamentals. Learn neurons and layers, activation functions, forward propagation, backpropagation, and gradient descent by building a network from scratch and in PyTorch.
+excerpt: Build a neural network from first principles, then in PyTorch, and understand backpropagation
 preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'
 difficulty: ⚔️ Epic
-estimated_time: 6-8 hours
-primary_technology: tensorflow
+estimated_time: 5-7 hours
+primary_technology: pytorch
 quest_type: main_quest
 quest_series: AI/ML Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Oracle's Ascent
+quest_arc: The Living Network
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
+  required_quests:
+  - /quests/1101/ml-fundamentals/
+  recommended_quests:
+  - /quests/1101/python-data-science/
+  unlocks_quests:
+  - /quests/1101/deep-learning-frameworks/
+  - /quests/1101/computer-vision/
+  - /quests/1101/natural-language-processing/
+skill_focus: ai-ml
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Machine Learning Fundamentals (or equivalent)
+  - Comfortable with NumPy arrays and Python functions
+  - Basic calculus intuition (a derivative is a slope) is helpful
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ with pip or conda
+  - 8 GB RAM recommended; GPU optional
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can train a scikit-learn model end to end
+  - You want to understand what happens inside a model, not just call fit
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A from-scratch network that learns a non-linear function
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain forward propagation and backpropagation in plain words
+  - Can implement gradient descent and watch a loss curve fall
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands why non-linear activations are essential
+  - Can describe how the chain rule drives backpropagation
 permalink: /quests/1101/neural-networks/
 categories:
 - Quests
@@ -65,7 +54,7 @@ categories:
 - Epic
 tags:
 - '1101'
-- tensorflow
+- pytorch
 - neural-networks
 - deep-learning
 - main_quest
@@ -75,117 +64,82 @@ tags:
 keywords:
   primary:
   - '1101'
-  - tensorflow
+  - pytorch
   - neural-networks
   - deep-learning
   secondary:
-  - main_quest
-  - data-science
+  - backpropagation
+  - gradient-descent
+  - activation-functions
   - hands-on
-  - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1101 (13) Quest: Epic Quest - Neural Networks'
+sub_title: 'Level 1101 (13) Quest: Main Quest - Neural Networks Deep Dive'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Network Weaver - Built a neural network from first principles
+  - ⚡ Gradient Channeler - Implemented backpropagation and gradient descent
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ From-Scratch Neural Networks
+  - ⚡ Backpropagation & Autograd
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the deep learning frameworks, vision, and NLP quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Deep within the Oracle's Tower lies a chamber where lifeless numbers awaken into something that learns. This quest, **Neural Networks Deep Dive**, reveals the machinery beneath all of deep learning. You will build a neural network by hand - neuron by neuron - then watch the same idea expressed in PyTorch. By the end you will understand the two great spells of the network: forward propagation, which makes a prediction, and backpropagation, which teaches the network from its mistakes.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Many invoke `model.fit()` without knowing what it does. After this quest, you will be among the few who truly understand.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Inspired by the neurons of living brains, early artificers stacked simple units - each computing a weighted sum and a non-linear twist - into layers. Alone, a neuron is a line. Stacked with non-linear activations, layers can bend space into any shape, approximating nearly any function. The breakthrough was not the neuron but the teaching: backpropagation, which uses the chain rule of calculus to assign blame for an error backward through every layer, nudging each weight toward a better answer. This single algorithm powers everything from image recognition to the large language models of today.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Neurons and Layers** - Explain what a single neuron computes and how layers stack
+- [ ] **Activation Functions** - Use ReLU, sigmoid, and softmax and explain why non-linearity matters
+- [ ] **Forward Propagation** - Trace an input through a network to a prediction
+- [ ] **Backpropagation & Gradient Descent** - Implement learning by propagating error backward
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Loss Functions** - Choose cross-entropy for classification and MSE for regression
+- [ ] **PyTorch Autograd** - Let the framework compute gradients automatically
+- [ ] **Hyperparameter Intuition** - Reason about learning rate, epochs, and hidden size
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain backpropagation to a peer using the chain rule
+- [ ] Diagnose a network that fails to learn (e.g., dead ReLUs or a too-large learning rate)
+- [ ] Translate a from-scratch network into a PyTorch `nn.Module`
+- [ ] Read a falling loss curve and know when to stop
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of Machine Learning Fundamentals (recommended)
+- [ ] Comfortable with NumPy arrays and matrix shapes
+- [ ] Basic calculus intuition (a derivative is a slope)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10 or newer installed and on your PATH
+- [ ] 8 GB RAM recommended; a GPU is optional for this quest
+- [ ] Internet connection for installing packages
 
 ### 🧠 Skill Level Indicators
 This **⚔️ Epic** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 6-8 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You have trained at least one machine learning model
+- [ ] You are ready to work with matrices and derivatives
+- [ ] Ready for 5-7 hours of deep, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Build an isolated environment with NumPy and PyTorch.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -193,23 +147,12 @@ This **⚔️ Epic** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python3 -m venv ~/nn-quest && source ~/nn-quest/bin/activate
+pip install --upgrade pip
+pip install numpy torch matplotlib
+# Apple Silicon: PyTorch can use the MPS backend for acceleration
+python -c "import torch; print('torch', torch.__version__, 'mps', torch.backends.mps.is_available())"
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -219,26 +162,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -m venv $HOME\nn-quest
+& $HOME\nn-quest\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install numpy torch matplotlib
+python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -248,28 +177,12 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y python3-venv python3-pip
+python3 -m venv ~/nn-quest && source ~/nn-quest/bin/activate
+pip install --upgrade pip
+pip install numpy torch matplotlib
+python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())"
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -279,225 +192,264 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Google Colab provides a free GPU. Select Runtime > Change runtime type > GPU.
+# torch and numpy are preinstalled; verify the device:
+python -c "import torch; print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')"
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Neuron and the Forward Pass
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A neuron computes a weighted sum of its inputs, adds a bias, and passes the result through an activation function. Stack many neurons into a layer, stack layers into a network, and you have a function that can learn.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The math of a single neuron
+- Why activation functions must be non-linear
+- Forward propagation through a layer
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Forward Pass by Hand
 
-**Step 1: Environment Setup**
+```python
+import numpy as np
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+def relu(z):
+    return np.maximum(0, z)
+
+def sigmoid(z):
+    return 1.0 / (1.0 + np.exp(-z))
+
+# A tiny network: 2 inputs -> 3 hidden neurons -> 1 output
+np.random.seed(42)
+W1 = np.random.randn(2, 3) * 0.5   # weights for layer 1
+b1 = np.zeros(3)
+W2 = np.random.randn(3, 1) * 0.5   # weights for layer 2
+b2 = np.zeros(1)
+
+x = np.array([0.7, -1.2])          # one input example
+
+# Forward propagation: linear -> activation, layer by layer
+z1 = x @ W1 + b1                   # weighted sums of hidden layer
+a1 = relu(z1)                      # non-linear activation
+z2 = a1 @ W2 + b2
+y_hat = sigmoid(z2)                # output in (0, 1)
+
+print("Hidden activations:", np.round(a1, 3))
+print("Prediction:", float(y_hat))
 ```
 
-**Step 2: Core Concepts**
+Without the non-linear `relu`, stacking layers would collapse into a single linear function. Non-linearity is what lets networks bend.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Forward Pass
+- [ ] What does a single neuron compute before activation?
+- [ ] Why would removing all activation functions make depth useless?
+- [ ] What range does sigmoid squash its input into?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Computed a forward pass**: Your network produced a prediction
+- [ ] **Named two activations**: You can describe ReLU and sigmoid
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Backpropagation and Gradient Descent
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Forward propagation makes a guess. Backpropagation teaches. It computes how much each weight contributed to the error using the chain rule, then gradient descent nudges each weight in the direction that lowers the loss.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The intuition of the chain rule for layered functions
+- Implementing one training step from scratch
+- Watching the loss fall over epochs
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Network That Learns XOR
 
-[Detailed content for chapter 2]
+XOR is the classic problem a single linear model cannot solve. A hidden layer can.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```python
+import numpy as np
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+np.random.seed(0)
+X = np.array([[0,0],[0,1],[1,0],[1,1]], dtype=float)
+y = np.array([[0],[1],[1],[0]], dtype=float)   # XOR truth table
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+def sigmoid(z): return 1/(1+np.exp(-z))
+def dsigmoid(a): return a*(1-a)                # derivative given the activation
+
+# Initialize a 2 -> 4 -> 1 network
+W1 = np.random.randn(2,4); b1 = np.zeros((1,4))
+W2 = np.random.randn(4,1); b2 = np.zeros((1,1))
+lr = 0.5
+
+for epoch in range(5000):
+    # Forward
+    a1 = sigmoid(X @ W1 + b1)
+    a2 = sigmoid(a1 @ W2 + b2)
+
+    # Loss (mean squared error) and its gradient at the output
+    loss = np.mean((a2 - y)**2)
+    d2 = (a2 - y) * dsigmoid(a2)               # error at output layer
+
+    # Backpropagate the error to the hidden layer (chain rule)
+    d1 = (d2 @ W2.T) * dsigmoid(a1)
+
+    # Gradient descent: update weights against the gradient
+    W2 -= lr * a1.T @ d2
+    b2 -= lr * d2.sum(axis=0, keepdims=True)
+    W1 -= lr * X.T @ d1
+    b1 -= lr * d1.sum(axis=0, keepdims=True)
+
+    if epoch % 1000 == 0:
+        print(f"epoch {epoch:4d}  loss {loss:.4f}")
+
+print("Predictions:", np.round(sigmoid(sigmoid(X @ W1 + b1) @ W2 + b2).ravel(), 2))
+```
+
+The loss falls toward zero and predictions approach the XOR table. You have implemented learning itself.
+
+### 🔍 Knowledge Check: Backpropagation
+- [ ] Why does gradient descent subtract the gradient from the weights?
+- [ ] What role does the chain rule play across layers?
+- [ ] What happens if the learning rate is far too large?
+
+## 🧙‍♂️ Chapter 3: The Same Network in PyTorch
+
+*PyTorch computes gradients for you via autograd. You define the forward pass; the framework derives the backward pass automatically.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Defining a model as an `nn.Module`
+- Using an optimizer and a loss function
+- The canonical training loop
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ PyTorch Training Loop
 
-[Detailed content for chapter 3]
+```python
+import torch
+import torch.nn as nn
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+X = torch.tensor([[0,0],[0,1],[1,0],[1,1]], dtype=torch.float32)
+y = torch.tensor([[0],[1],[1],[0]], dtype=torch.float32)
+
+model = nn.Sequential(
+    nn.Linear(2, 8),
+    nn.ReLU(),
+    nn.Linear(8, 1),
+    nn.Sigmoid(),
+)
+
+loss_fn = nn.BCELoss()                      # binary cross-entropy
+optimizer = torch.optim.Adam(model.parameters(), lr=0.05)
+
+for epoch in range(2000):
+    optimizer.zero_grad()                   # clear old gradients
+    y_hat = model(X)                        # forward pass
+    loss = loss_fn(y_hat, y)
+    loss.backward()                         # autograd computes all gradients
+    optimizer.step()                        # update every weight
+    if epoch % 500 == 0:
+        print(f"epoch {epoch:4d}  loss {loss.item():.4f}")
+
+print("Predictions:", model(X).detach().round().ravel().tolist())
+```
+
+`loss.backward()` replaces the entire hand-written backpropagation from Chapter 2. This is why frameworks exist: you describe *what* to compute, and autograd handles *how* to differentiate it.
+
+### 🔍 Knowledge Check: PyTorch
+- [ ] What does `optimizer.zero_grad()` prevent?
+- [ ] Which line triggers automatic differentiation?
+- [ ] Why is cross-entropy preferred over MSE for classification?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Swap the Activation
+**Objective**: Observe how activation choice affects learning.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Take the PyTorch XOR model and replace `nn.ReLU()` with `nn.Tanh()`
+- [ ] Train both and compare final loss
+- [ ] Note which converged faster
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Both models reach a low loss; you can report the difference.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Tune the Learning Rate
+**Objective**: Feel the effect of the most important hyperparameter.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Train the from-scratch XOR network with `lr` of 0.01, 0.5, and 5.0
+- [ ] Record which converges, which is slow, and which diverges
+- [ ] Explain why the largest rate fails
 
-**Validation**: [How to verify success]
+**Validation**: You can describe the trade-off in two sentences.
+
+### 🔴 Advanced Challenge: A Real Classifier
+**Objective**: Apply a PyTorch network to a real dataset.
+
+**Requirements**:
+- [ ] Load `load_digits` from scikit-learn (8x8 handwritten digits)
+- [ ] Build a 64 -> 64 -> 10 network with ReLU and softmax (`CrossEntropyLoss`)
+- [ ] Train and report test accuracy above 0.90
+
+**Validation**: Your model classifies held-out digits with high accuracy.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Network Weaver** - You built a neural network from first principles
+- ⚡ **Gradient Channeler** - You implemented backpropagation and gradient descent
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **From-Scratch Neural Networks** - You understand the math, not just the API
+- **Backpropagation & Autograd** - Manual gradients and PyTorch automation
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Deep Learning Frameworks - Master PyTorch and TensorFlow in depth
+- Computer Vision - Apply convolutional networks to images
+- Natural Language Processing - Apply networks to text and transformers
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Deep Learning Frameworks](/quests/1101/deep-learning-frameworks/) - PyTorch vs. TensorFlow
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Computer Vision](/quests/1101/computer-vision/) - Convolutional networks for images
+- ⚔️ [Natural Language Processing](/quests/1101/natural-language-processing/) - Transformers for text
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Deep Learning Frameworks](/quests/1101/deep-learning-frameworks/)  
+**🏗️ System Engineer**: Explore [MLOps Engineering](/quests/1101/mlops/)  
+**📊 Data Scientist**: Advance to [Computer Vision](/quests/1101/computer-vision/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PyTorch Tutorials](https://pytorch.org/tutorials/) - Official guided learning
+- [PyTorch nn module](https://pytorch.org/docs/stable/nn.html) - Layers and loss functions
+- [PyTorch Autograd Mechanics](https://pytorch.org/docs/stable/notes/autograd.html) - How gradients work
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [3Blue1Brown: Neural Networks](https://www.3blue1brown.com/topics/neural-networks) - Visual intuition
+- [Stack Overflow: pytorch tag](https://stackoverflow.com/questions/tagged/pytorch) - Q&A
+- [Andrej Karpathy: Neural Networks Zero to Hero](https://karpathy.ai/zero-to-hero.html) - Build it all from scratch
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Deep Learning Book (Goodfellow et al.)](https://www.deeplearningbook.org/) - The canonical text
+- [CS231n Notes: Backpropagation](https://cs231n.github.io/optimization-2/) - Stanford lecture notes
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built a network from scratch that learns XOR
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101: Machine Learning & AI]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
+**Unlocks:** [[Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation]] · [[Computer Vision Mastery: Image Classification, Object Detection & Segmentation]] · [[Natural Language Processing: Text Analysis, Transformers & LLMs with Python]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

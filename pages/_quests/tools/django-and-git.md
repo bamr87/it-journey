@@ -2,8 +2,7 @@
 title: Setting up Django and Git
 author: Cloud Quest Guide
 description: Learn how to efficiently set up Django with Git for seamless version control and project management in your web development journey.
-excerpt: null
-snippet: null
+excerpt:
 preview: /images/git-django.png
 date: '2025-03-13T14:00:43.000Z'
 lastmod: '2025-03-12T15:24:58.000Z'
@@ -39,8 +38,8 @@ keywords:
 fmContentType: quest
 comments: false
 attachments: ''
-sub-title: null
 layout: quest
+sub_title:
 ---
 **Setting Up a GitHub Repository for Your Django Project**
 

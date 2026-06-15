@@ -1,63 +1,51 @@
 ---
 title: 'Testing Integration: Automated Quality Assurance in CI/CD Pipelines'
 author: IT-Journey Team
-description: Integrate automated testing into your CI/CD pipeline. Learn unit testing, integration testing, E2E testing, and code coverage reporting for quality assurance.
+description: Integrate automated testing into your CI/CD pipeline. Learn unit, integration, and end-to-end test stages, coverage gating, and taming flaky tests.
 excerpt: Implement comprehensive automated testing strategies in your CI/CD workflows
 preview: images/previews/testing-integration-automated-quality-assurance-de.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:05:26.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: testing
 quest_type: main_quest
 quest_series: DevOps Pipeline Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Forge of Automation
+quest_arc: Gates of the Pipeline
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/0101/cicd-fundamentals/
+  recommended_quests:
+  - /quests/0101/github-actions-basics/
+  unlocks_quests:
+  - /quests/0101/deployment-pipelines/
+  - /quests/0101/workflow-optimization/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Understanding of the build-test-deploy flow
+  - Familiarity with Git and pull requests
+  - Comfort reading code in at least one language
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Git installed and a free GitHub account
+  - Node.js 20+ and a text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have built a basic CI pipeline before
+  - You are ready to make your pipeline gates meaningful
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A pipeline with separate unit, integration, and E2E stages that gate a merge
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain the testing pyramid and place each test type
+  - Can configure a coverage threshold that fails a build
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands why E2E tests run last
+  - Can describe two strategies for handling flaky tests
 permalink: /quests/0101/testing-integration/
 categories:
 - Quests
@@ -80,108 +68,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0101 (5) Quest: Main Quest - Testing'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Gatekeeper of Quality - Built a tiered, gating test suite
+  - 🧪 Slayer of Flaky Tests - Tamed nondeterministic failures
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Test Stage Design
+  - 🧠 Coverage-Driven Gating
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Deeper Level 0101 pipeline quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! The **Forge of Automation** has taught you to turn every commit into a build. But a build that compiles is not a build that works. This quest, **Testing Integration**, hangs the gates across your pipeline - the guards that ask "does this change actually do what it claims?" before letting it pass toward production.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you write tests by reflex or have only ever clicked "run" and hoped, this adventure forges the discipline of layered, automated quality: the testing pyramid, when each kind of test runs, how coverage becomes a contract, and how to defeat the most insidious enemy of all - the flaky test that fails for no reason.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the old kingdoms, quality assurance was a final ritual performed by a separate guild after the builders had gone home. Releases waited weeks for a human to click through every screen. When the internet sped time itself up, that ritual became a bottleneck, and broken releases slipped past tired eyes.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The masters of automation answered with a new doctrine: test continuously, test in layers, and let the machine refuse any change that breaks the guarantees. The fastest, cheapest tests guard the front gate; the slowest, most realistic tests guard the last. Master this and your pipeline stops being a delivery belt and becomes a fortress wall.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Testing Pyramid** - Place unit, integration, and end-to-end tests by speed, cost, and confidence
+- [ ] **Test Stages in CI** - Run each test type as its own gating stage in a pipeline
+- [ ] **Coverage as a Gate** - Measure code coverage and fail a build that drops below a threshold
+- [ ] **Flaky Tests** - Detect, quarantine, and fix tests that fail nondeterministically
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Test Sharding** - Split a slow suite across parallel runners
+- [ ] **Fail-Fast Ordering** - Run the cheapest tests first so failures surface in seconds
+- [ ] **Status Checks** - Make a green test run a required check before merge
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Decide which test type belongs to a new requirement
+- [ ] Read a coverage report and justify a threshold
+- [ ] Diagnose a flaky test from its failure pattern
+- [ ] Block a merge on a failing test gate
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of the build-test-deploy flow (see CI/CD Fundamentals)
+- [ ] Familiarity with Git, branches, and pull requests
+- [ ] Comfort reading and running code in at least one language
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Node.js 20+ installed and a free GitHub account
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+- [ ] You have built a basic CI pipeline before
+- [ ] You are ready to make your gates meaningful
 - [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*You will write a tiny app, give it three layers of tests, and wire them into CI. The setup differs by platform; the pipeline is identical everywhere.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,15 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install Node via Homebrew
+brew install node
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Scaffold a project with a test runner
+mkdir testing-quest && cd testing-quest
+npm init -y
+npm pkg set scripts.test="node --test"
+node --version
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +161,14 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install Node with winget
+winget install OpenJS.NodeJS.LTS
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir testing-quest; cd testing-quest
+npm init -y
+npm pkg set scripts.test="node --test"
+node --version
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +178,14 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian/Ubuntu
+sudo apt update && sudo apt install -y nodejs npm
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir testing-quest && cd testing-quest
+npm init -y
+npm pkg set scripts.test="node --test"
+node --version
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +195,279 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# A GitHub Codespace already ships Node and Git.
+node --version
+npm --version
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> The same runner image that executes your tests in CI is one click away in a Codespace, so a green run locally means a green run in the pipeline.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Testing Pyramid - Three Layers of Confidence
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Not all tests are equal. Some are fast and narrow; some are slow and sweeping. The testing pyramid arranges them so you get the most confidence for the least time.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The three classic test layers and what each proves
+- Why the pyramid is wide at the bottom and narrow at the top
+- How to choose a layer for a new requirement
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Three Layers
 
-**Step 1: Environment Setup**
+| Layer | What it tests | Speed | How many you write |
+| --- | --- | --- | --- |
+| **Unit** | One function/class in isolation, dependencies mocked | Milliseconds | Many (the wide base) |
+| **Integration** | Several components together (e.g. service + real database) | Seconds | Some (the middle) |
+| **End-to-End (E2E)** | The whole app through its real interface (browser, API) | Seconds to minutes | Few (the narrow top) |
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+The pyramid is wide at the bottom because unit tests are cheap, fast, and pinpoint failures to a single function. E2E tests are precious but slow and brittle, so you write only a handful to prove the critical user journeys work end to end.
+
+Here is a unit test for a tiny module, using Node's built-in test runner:
+
+```javascript
+// total.js
+export function total(items) {
+  return items.reduce((sum, x) => sum + x.price * x.qty, 0);
+}
 ```
 
-**Step 2: Core Concepts**
+```javascript
+// total.test.js — a unit test: fast, isolated, no I/O
+import { test } from 'node:test';
+import assert from 'node:assert';
+import { total } from './total.js';
 
-[Explanation of fundamental concepts]
+test('total sums price * qty', () => {
+  assert.strictEqual(total([{ price: 2, qty: 3 }, { price: 5, qty: 1 }]), 11);
+});
 
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+test('total of an empty cart is zero', () => {
+  assert.strictEqual(total([]), 0);
+});
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Pyramid
+- [ ] Why do you write many more unit tests than E2E tests?
+- [ ] A test starts a real Postgres container and queries it. Which layer is it?
+- [ ] What does an E2E test prove that a unit test cannot?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Named the layers**: You can define unit, integration, and E2E in one sentence each
+- [ ] **Ran a unit test**: `npm test` passes locally
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Test Stages and Gating in the Pipeline
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A pipeline runs your tests in order, cheapest first, and refuses to advance when a gate fails. This chapter turns the pyramid into pipeline stages.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Separating tests into ordered CI stages
+- Gating: a failed stage blocks the next
+- Fail-fast ordering so trivial mistakes cost seconds, not minutes
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Gated, Tiered Pipeline
 
-[Detailed content for chapter 2]
+The key idea is **`needs`**: each job declares which jobs must succeed first. Unit tests gate integration tests, which gate E2E tests. If unit tests fail, the expensive E2E job never even starts.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+```yaml
+name: Test Pipeline
+on: [push, pull_request]
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci
+      - run: npm run test:unit       # cheapest gate, runs first
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+  integration:
+    needs: unit                       # only runs if unit tests pass
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_PASSWORD: test }
+        ports: ['5432:5432']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci
+      - run: npm run test:integration
+
+  e2e:
+    needs: integration                # the most expensive gate runs last
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npm run test:e2e
+```
+
+
+Because the jobs are chained with `needs`, a broken unit test fails the whole pipeline in seconds and the integration and E2E jobs are skipped entirely. This is **fail-fast** ordering applied to tests.
+
+### 🔍 Knowledge Check: Test Stages
+- [ ] What does the `needs:` keyword guarantee about job ordering?
+- [ ] Why run unit tests before spinning up a Postgres service?
+- [ ] If the integration job fails, does the E2E job run? Why not?
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Split the scripts**: You have `test:unit`, `test:integration`, `test:e2e`
+- [ ] **Chained the gates**: Each job `needs` the previous one
+
+## 🧙‍♂️ Chapter 3: Coverage Gates and Taming Flaky Tests
+
+*Two advanced disciplines separate a robust suite from a decorative one: enforcing coverage and conquering flakiness.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Measuring code coverage and turning it into a build gate
+- Why 100% coverage is a trap
+- Detecting, quarantining, and fixing flaky tests
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Coverage as a Contract
 
-[Detailed content for chapter 3]
+Code coverage measures which lines your tests exercise. It is a useful floor, not a goal - 100% coverage of meaningless assertions proves nothing. A sensible team sets a threshold and fails the build if coverage drops below it, preventing untested code from sneaking in.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# Run tests with coverage and fail below a threshold (using c8)
+npx c8 --check-coverage --lines 80 --functions 80 node --test
+
+# A drop below 80% line coverage now exits non-zero and fails CI.
+```
+
+```yaml
+# A coverage gate as its own step in the unit job
+      - run: npx c8 --check-coverage --lines 80 node --test
+```
+
+### 🏗️ The Flaky Test Menace
+
+A **flaky test** passes and fails on the same code without changes. Flakiness erodes trust: when red builds are sometimes "just flaky," the team starts ignoring red builds entirely - and then a real failure slips through. Common causes and cures:
+
+```text
+Cause                          Cure
+─────────────────────────────  ───────────────────────────────────────────
+Timing / race conditions       Wait for conditions, never sleep(fixedMs)
+Shared mutable state           Isolate each test; reset DB/state between runs
+Test order dependence          Make tests independent and randomize order
+Real network calls             Mock or stub external services
+Nondeterministic data          Pin seeds, freeze clocks, control randomness
+```
+
+The operational playbook: **detect** by re-running failures, **quarantine** a known-flaky test so it can't block merges while it's being fixed, then **fix** the root cause and un-quarantine. Quarantine is a temporary cast, never a permanent excuse.
+
+```yaml
+# Run the runner in a reporting mode that exposes flakiness rather than hiding it.
+# A test that passes only on retry should be logged and fixed, not trusted.
+      - run: npm run test:unit -- --test-reporter=tap
+```
+
+### 🔍 Knowledge Check: Coverage and Flakiness
+- [ ] Why is 100% coverage a poor goal on its own?
+- [ ] Name two root causes of flaky tests and their cures
+- [ ] Why is quietly retrying flaky tests forever dangerous?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Place the Tests
+**Objective**: Given three requirements, decide which test layer fits each.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] "A discount function returns the right total" → choose a layer
+- [ ] "The checkout endpoint writes an order row to the database" → choose a layer
+- [ ] "A user can sign up, add an item, and pay" → choose a layer
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can justify each placement by speed and confidence.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build the Gated Pipeline
+**Objective**: Add the three-stage workflow from Chapter 2 to a real repo.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Separate `unit`, `integration`, and `e2e` jobs chained with `needs`
+- [ ] A passing green run visible in the Actions tab
+- [ ] Breaking a unit test skips the integration and E2E jobs
 
-**Validation**: [How to verify success]
+**Validation**: A failed unit test fails fast and skips the expensive stages.
+
+### 🔴 Advanced Challenge: Enforce Coverage and Quarantine a Flake
+**Objective**: Add a coverage gate and demonstrate quarantine.
+
+**Requirements**:
+- [ ] CI fails when line coverage drops below 80%
+- [ ] Introduce a deliberately flaky test (e.g. a timing race)
+- [ ] Quarantine it, document the root cause, then fix and un-quarantine it
+
+**Validation**: Coverage gate blocks under-tested code; the flake is fixed at its root.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Gatekeeper of Quality** - You built a tiered, gating test suite
+- 🧪 **Slayer of Flaky Tests** - You can detect and cure nondeterminism
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Test Stage Design** - Order tests cheapest-first and gate each stage
+- **Coverage-Driven Gating** - Turn coverage into an enforceable contract
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Deployment Pipelines - Promote tested code safely to production
+- Workflow Optimization - Make these gates fast with caching and parallelism
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Deployment Pipelines](/quests/0101/deployment-pipelines/) - Ship what you've proven
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Workflow Optimization](/quests/0101/workflow-optimization/) - Make slow suites fast
+- ⚔️ [Artifact Management](/quests/0101/artifact-management/) - Version what passed the gates
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Deployment Pipelines](/quests/0101/deployment-pipelines/)  
+**🏗️ System Engineer**: Explore [Workflow Optimization](/quests/0101/workflow-optimization/)  
+**🛡️ Security Specialist**: Check out [Secrets Management](/quests/0101/secrets-management/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [GitHub Actions: Using jobs in a workflow](https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow) - Gating stages with `needs`
+- [Node.js Test Runner](https://nodejs.org/api/test.html) - The built-in runner used above
+- [Playwright](https://playwright.dev/) - End-to-end browser testing
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Martin Fowler: The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) - The canonical model
+- [Martin Fowler: Eradicating Non-Determinism in Tests](https://martinfowler.com/articles/nonDeterminism.html) - Flaky test cures
+- [Google Testing Blog](https://testing.googleblog.com/) - Flaky tests at scale
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [c8 coverage tool](https://github.com/bcoe/c8) - Coverage and thresholds for Node
+- [Testing Library](https://testing-library.com/) - User-centric test patterns
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built a three-stage gated test pipeline
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]]
+**Unlocks:** [[Deployment Pipelines: Production Release Automation Strategies]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

@@ -1,191 +1,143 @@
 ---
 title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
 author: IT-Journey Team
-description: Learn responsible AI practices and ethics frameworks. Understand bias detection, fairness metrics, explainability with SHAP/LIME, model governance, and regulatory compliance for AI systems.
-excerpt: Build responsible AI systems with bias detection, fairness metrics, and model explainability
-preview: images/previews/ai-ethics-and-responsible-ai-descriptive-subtitle.png
+description: Build responsible AI systems. Learn to measure bias and fairness, make models transparent, protect privacy, and govern AI with modern frameworks like the EU AI Act and the NIST AI RMF.
+excerpt: Build responsible AI with bias detection, fairness metrics, explainability, and governance
+preview: images/previews/ai-ethics-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
-primary_technology: python
-quest_type: side_quest
+primary_technology: fairlearn
+quest_type: main_quest
 quest_series: AI/ML Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Oracle's Ascent
+quest_arc: The Conscience of the Machine
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
+  required_quests:
+  - /quests/1101/ml-fundamentals/
+  recommended_quests:
+  - /quests/1101/mlops/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
-learning_style: hands-on
+skill_focus: ai-ml
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of the ML Fundamentals quest (train + evaluate a model)
+  - Comfortable reading a confusion matrix and classification metrics
+  - General awareness that models are used to make real decisions
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ with pip or conda
+  - 4 GB RAM; no GPU required
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can train and evaluate a classifier
+  - You are ready to weigh trade-offs, not just optimize accuracy
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A fairness audit of one model across a sensitive group
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can measure a fairness metric across groups
+  - Can explain an individual prediction with SHAP-style reasoning
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
-permalink: /quests/1101/side-quests/ai-ethics/
+  - Understands why fairness definitions can conflict
+  - Can name the obligations a high-risk AI system carries
+permalink: /quests/1101/ai-ethics/
 categories:
 - Quests
 - Data-Science
 - Medium
 tags:
 - '1101'
-- python
 - ai-ethics
 - responsible-ai
-- side_quest
+- fairness
+- main_quest
 - data-science
-- hands-on
+- conceptual
 - gamified-learning
 keywords:
   primary:
   - '1101'
-  - python
   - ai-ethics
   - responsible-ai
   secondary:
-  - side_quest
-  - data-science
-  - hands-on
-  - gamified-learning
+  - bias
+  - fairness
+  - explainability
+  - governance
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1101 (13) Quest: Side Quest - AI Ethics'
+sub_title: 'Level 1101 (13) Quest: Main Quest - AI Ethics'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Conscience Keeper - Audited a model for bias and fairness
+  - ⚖️ Just Arbiter - Reasoned through conflicting fairness definitions
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Fairness Measurement & Bias Detection
+  - 🧠 AI Governance & Explainability
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Completion of the Level 1101 Machine Learning & AI quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have learned to build models that predict, see, and speak. Now comes the gravest lesson of the Tower: a powerful model wielded carelessly causes real harm. This quest, **AI Ethics and Responsible AI**, leads you into the **Hall of Judgment**, where you learn to measure a model's fairness, explain its decisions, protect the people in its data, and govern it under the law. The Oracle's final law is the hardest: just because a model can decide does not mean it should.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have never paused to ask "who could this harm?" or you already feel the weight of deploying decisions about people, this adventure forges the conscience every AI Master must carry.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Models trained on historical data inherit history's injustices. A hiring model trained on past hires learns past prejudices; a lending model trained on biased approvals perpetuates them. These failures are not bugs in the code - they are faithful reflections of biased data, which makes them subtle and dangerous. Real systems have denied loans, mis-scored defendants, and rejected qualified applicants because no one measured fairness before shipping.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Responsible AI is the discipline of catching these harms before they reach people: measuring bias, demanding transparency, defending privacy, and submitting to governance. Regulators have caught up - the EU AI Act and the NIST AI Risk Management Framework now make many of these practices mandatory for high-stakes systems.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Bias & Fairness** - Measure how a model's outcomes differ across sensitive groups
+- [ ] **Transparency & Explainability** - Explain why a model made an individual decision
+- [ ] **Privacy** - Recognize the privacy risks in data and model outputs
+- [ ] **Governance** - Name the obligations modern AI regulation imposes on high-risk systems
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Conflicting Fairness** - Understand why fairness definitions cannot all hold at once
+- [ ] **Model Cards** - Document a model's intended use and limits
+- [ ] **Human Oversight** - Design a meaningful human-in-the-loop checkpoint
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Compute and interpret a fairness metric across two groups
+- [ ] Explain one prediction in terms a non-expert understands
+- [ ] Name a privacy risk that survives anonymization
+- [ ] Decide whether a use case is too high-risk to automate fully
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of the ML Fundamentals quest (train + evaluate a model)
+- [ ] Comfortable reading precision, recall, and a confusion matrix
+- [ ] Awareness that models make consequential decisions about people
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10 or newer on your PATH
+- [ ] A text editor or IDE (VS Code) or a Jupyter environment
+- [ ] Internet connection for installing packages
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+- [ ] You can train and evaluate a classifier
+- [ ] You are willing to weigh ethical trade-offs, not just metrics
 - [ ] Ready for 2-3 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The tools here (Fairlearn, scikit-learn) are platform-independent. Create an isolated environment so your spells do not collide.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -193,23 +145,13 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+python3 -m venv ~/ethics-quest && source ~/ethics-quest/bin/activate
+pip install --upgrade pip
+pip install fairlearn scikit-learn pandas numpy
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify the fairness toolkit loads
+python -c "import fairlearn; print('fairlearn', fairlearn.__version__)"
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -219,26 +161,13 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+python -m venv $HOME\ethics-quest
+& $HOME\ethics-quest\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install fairlearn scikit-learn pandas numpy
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -c "import fairlearn; print('fairlearn', fairlearn.__version__)"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -248,28 +177,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+sudo apt update && sudo apt install -y python3-venv python3-pip
+python3 -m venv ~/ethics-quest && source ~/ethics-quest/bin/activate
+pip install --upgrade pip
+pip install fairlearn scikit-learn pandas numpy
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -c "import fairlearn; print('fairlearn', fairlearn.__version__)"
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -279,225 +193,243 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Google Colab or any Jupyter runtime works. Pin versions for reproducibility:
+pip install "fairlearn>=0.10" "scikit-learn>=1.4" pandas numpy
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Measuring Bias and Fairness
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Bias is not a feeling - it is measurable. A model can be highly accurate overall yet systematically worse for one group. Fairness metrics expose this. The two most common: **demographic parity** (does each group receive positive outcomes at the same rate?) and **equalized odds** (is the model equally accurate for each group?).*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Splitting model metrics by a sensitive feature
+- Computing a fairness gap between groups
+- Seeing why overall accuracy hides group harm
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ A Fairness Audit
 
-**Step 1: Environment Setup**
+```python
+import numpy as np
+from sklearn.metrics import accuracy_score
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+rng = np.random.default_rng(0)
+n = 2000
+
+# Simulate a sensitive group attribute and model predictions
+group = rng.choice(["A", "B"], size=n)
+y_true = rng.integers(0, 2, size=n)
+
+# A model that is accurate for group A but worse for group B (the harm)
+y_pred = y_true.copy()
+flip_A = (group == "A") & (rng.random(n) < 0.05)   # 5% errors for A
+flip_B = (group == "B") & (rng.random(n) < 0.25)   # 25% errors for B
+y_pred[flip_A | flip_B] ^= 1
+
+def rate(mask, arr):
+    return arr[mask].mean()
+
+print("Overall accuracy:", round(accuracy_score(y_true, y_pred), 3))
+for g in ["A", "B"]:
+    m = group == g
+    acc = accuracy_score(y_true[m], y_pred[m])
+    sel = rate(m, y_pred)                     # selection (positive) rate
+    print(f"group {g}: accuracy {acc:.3f}  positive-rate {sel:.3f}")
+
+# Fairness gaps
+acc_gap = accuracy_score(y_true[group=="A"], y_pred[group=="A"]) - \
+          accuracy_score(y_true[group=="B"], y_pred[group=="B"])
+print("accuracy gap (A - B):", round(acc_gap, 3))   # a clear disparity
 ```
 
-**Step 2: Core Concepts**
+Overall accuracy looks fine, but group B suffers far more errors. This is exactly how biased systems pass naive testing. The Fairlearn library formalizes this with `MetricFrame`, computing any metric sliced by sensitive feature so the gap is impossible to miss.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Fairness
+- [ ] How can a model be accurate overall yet unfair to a group?
+- [ ] What does demographic parity require?
+- [ ] Why is splitting metrics by a sensitive feature essential?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Environment ready**: `import fairlearn` works
+- [ ] **First audit**: You printed an accuracy gap between two groups
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Transparency, Explainability, and Privacy
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A model that cannot explain itself cannot be trusted with consequential decisions. **Explainability** answers "why this prediction?" - which features pushed the decision up or down. **Privacy** asks a different question: does the model leak the people in its training data?*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Explaining individual predictions with feature attributions
+- Distinguishing SHAP and LIME
+- Spotting privacy risks that survive anonymization
 
-### 🏗️ Advanced Implementations
+### 🏗️ Explaining a Prediction
 
-[Detailed content for chapter 2]
+Feature attribution methods like **SHAP** and **LIME** assign each feature a contribution to a single prediction. The intuition: hold a prediction fixed and ask how much each input nudged it. A transparent way to approximate this is to perturb one feature at a time:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```python
+import numpy as np
+from sklearn.datasets import load_breast_cancer
+from sklearn.ensemble import RandomForestClassifier
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+data = load_breast_cancer()
+X, y, names = data.data, data.target, data.feature_names
+model = RandomForestClassifier(n_estimators=200, random_state=42).fit(X, y)
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+# Explain one prediction by measuring each feature's permutation impact
+sample = X[0:1].copy()
+base = model.predict_proba(sample)[0, 1]
+rng = np.random.default_rng(0)
+
+contributions = {}
+for j in range(X.shape[1]):
+    perturbed = sample.copy()
+    perturbed[0, j] = rng.choice(X[:, j])     # replace feature j with a random value
+    contributions[names[j]] = base - model.predict_proba(perturbed)[0, 1]
+
+top = sorted(contributions.items(), key=lambda kv: -abs(kv[1]))[:5]
+print("Top features driving this prediction:")
+for name, c in top:
+    print(f"  {name:25s} {c:+.3f}")
+```
+
+This reveals which measurements most influenced the diagnosis - exactly the kind of explanation a clinician (or a regulator) demands. On **privacy**: anonymization is fragile. Removing names does not stop re-identification by combining quasi-identifiers (ZIP + birthdate + gender re-identifies most people), and models can memorize and regurgitate training data. Techniques like differential privacy add calibrated noise to bound what any single record can leak.
+
+### 🔍 Knowledge Check: Transparency & Privacy
+- [ ] What question does explainability answer for a single prediction?
+- [ ] Why is removing names insufficient for true anonymity?
+- [ ] What does differential privacy add, and why?
+
+## 🧙‍♂️ Chapter 3: Governance and Responsible Deployment
+
+*Good intentions do not scale - governance does. Modern frameworks turn ethics into process: documented intended use, risk classification, human oversight, and accountability for outcomes.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Classifying an AI system by risk level
+- Writing a model card
+- Designing meaningful human oversight
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Governance Landscape
 
-[Detailed content for chapter 3]
+Two frameworks dominate practice:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+| Framework | What it does | Key idea |
+| --- | --- | --- |
+| **EU AI Act** | First comprehensive AI law | Tiers systems by risk: unacceptable (banned), high-risk (strict duties), limited, minimal |
+| **NIST AI RMF** | Voluntary US risk framework | Four functions: Govern, Map, Measure, Manage |
+
+A **high-risk** system (hiring, credit, healthcare, law enforcement) carries duties: documented data governance, fairness testing, human oversight, logging, and transparency to affected people. A useful artifact is the **model card** - a short document stating intended use, training data, evaluation across groups, known limitations, and out-of-scope uses:
+
+```text
+MODEL CARD — Loan Default Classifier v2.1
+  Intended use:    Assist (not replace) loan officers; advisory score only
+  Training data:   2019-2024 applications; under-represents rural applicants
+  Evaluation:      Accuracy 0.89 overall; equalized-odds gap 0.04 across groups
+  Limitations:     Degrades on incomes > $500k (sparse training data)
+  Human oversight: A human reviews every denial before it is finalized
+  Out of scope:    Any fully automated, non-reviewable decision
+```
+
+**Human oversight** must be meaningful, not a rubber stamp: the reviewer needs the explanation from Chapter 2, the authority to override, and the time to actually look. Automation bias - trusting the machine because it is a machine - is the failure mode to design against.
+
+### 🔍 Knowledge Check: Governance
+- [ ] Which EU AI Act tier carries the strictest obligations?
+- [ ] What are the four functions of the NIST AI RMF?
+- [ ] What makes human oversight meaningful rather than a rubber stamp?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Audit for a Gap
+**Objective**: Measure a fairness gap on real-ish data.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Use the Chapter 1 simulation (or your own model with a sensitive feature)
+- [ ] Report accuracy and positive-rate per group
+- [ ] State the size of the accuracy gap and whether it concerns you
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You produce per-group metrics and name the disparity.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Explain a Decision
+**Objective**: Make one prediction transparent.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Run the Chapter 2 attribution on one sample
+- [ ] List the top three features driving the prediction
+- [ ] Write a one-sentence explanation a non-expert would understand
 
-**Validation**: [How to verify success]
+**Validation**: Your plain-language explanation matches the top attributions.
+
+### 🔴 Advanced Challenge: Write a Model Card and Oversight Plan
+**Objective**: Govern a consequential model.
+
+**Requirements**:
+- [ ] Pick a high-stakes use case (hiring, lending, screening)
+- [ ] Fill out a model card with intended use, limitations, and per-group evaluation
+- [ ] Design a human-oversight checkpoint that resists automation bias
+
+**Validation**: Your card states out-of-scope uses and your oversight gives a human real authority to override.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Conscience Keeper** - You audited a model for bias and fairness
+- ⚖️ **Just Arbiter** - You reasoned through conflicting fairness definitions
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Fairness Measurement & Bias Detection** - Metrics sliced by sensitive group
+- **AI Governance & Explainability** - Model cards, oversight, and the law
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- You have completed the core Level 1101 Machine Learning & AI quest line. Carry this conscience into every model you ship.
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 You have reached the conscience of the Tower. Return to the [Level 1101 hub](/quests/1101/) to review your mastery.
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [MLOps Engineering](/quests/1101/mlops/) - Govern models in production
+- ⚔️ [Natural Language Processing](/quests/1101/natural-language-processing/) - Where bias hides in language
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Revisit [MLOps Engineering](/quests/1101/mlops/) with governance in mind  
+**🏗️ System Engineer**: Explore [MLOps Engineering](/quests/1101/mlops/) for oversight tooling  
+**📊 Data Scientist**: Advance to [Natural Language Processing](/quests/1101/natural-language-processing/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [EU AI Act (official text and summary)](https://artificialintelligenceact.eu/) - The risk-tiered AI law
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) - Govern, Map, Measure, Manage
+- [Fairlearn Documentation](https://fairlearn.org/) - Measuring and mitigating unfairness
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Google: Responsible AI Practices](https://ai.google/responsibility/responsible-ai-practices/) - Practical guidance
+- [Partnership on AI](https://partnershiponai.org/) - Multi-stakeholder responsible-AI work
+- [AI Incident Database](https://incidentdatabase.ai/) - Real-world AI harms to learn from
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Model Cards for Model Reporting (Mitchell et al.)](https://arxiv.org/abs/1810.03993) - The model-card framework
+- [Fairness and Machine Learning (Barocas, Hardt, Narayanan)](https://fairmlbook.org/) - The free standard text
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Audited a model for a fairness gap
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101: Machine Learning & AI]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Required:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
+**Recommended:** [[MLOps Engineering: CI/CD Pipelines for Machine Learning Production]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

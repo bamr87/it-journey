@@ -1,63 +1,50 @@
 ---
 title: 'Kubernetes Services and Networking: Ingress and DNS Configuration'
 author: IT-Journey Team
-description: Master Kubernetes networking with Services, Ingress controllers, DNS, NetworkPolicies, and load balancing. Configure secure, scalable application networking.
+description: Master Kubernetes networking with Services, Ingress, cluster DNS, and the ClusterIP, NodePort, and LoadBalancer types. Connect and expose workloads securely and at scale.
 excerpt: Configure Kubernetes networking with Services, Ingress, and DNS for scalable applications
 preview: images/previews/kubernetes-services-quest-title-networking-ingress.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:41:56.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: kubernetes
 quest_type: main_quest
 quest_series: Kubernetes Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Orchestration Citadel
+quest_arc: Roads, Gates, and the Naming of Things
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1001/kubernetes-fundamentals/
+  - /quests/1001/k8s-pods-workloads/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/1001/k8s-config-secrets/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Kubernetes Fundamentals and Pods and Workloads
+  - Comfort deploying a Deployment and reading its labels
+  - Basic understanding of TCP/IP, ports, and DNS
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A running local cluster (kind, minikube, or k3d)
+  - kubectl configured against that cluster
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can deploy and scale a workload with a Deployment
+  - Ready to reason about how traffic reaches a Pod
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A workload exposed via a Service and reachable through Ingress
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can choose between ClusterIP, NodePort, and LoadBalancer
+  - Can resolve a Service by its cluster DNS name from inside a Pod
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands how Service selectors map to Pod endpoints
+  - Can troubleshoot a Service that returns no endpoints
 permalink: /quests/1001/k8s-services-networking/
 categories:
 - Quests
@@ -80,108 +67,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1001 (9) Quest: Main Quest - K8s Networking'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Gatekeeper - Mastered Services and Ingress
+  - 🧭 Pathfinder - Understands cluster DNS and service discovery
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Service Exposure (ClusterIP/NodePort/LoadBalancer)
+  - 🧠 Ingress Routing and DNS Resolution
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the Configuration and Secrets quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Warrior, your workloads now run resilient and self-healing - but they are islands. Pods are mortal: they are born, they die, and their IP addresses vanish with them. How then does one Pod find another? How does the outside world reach your service when the very addresses keep shifting? This quest teaches the **roads, gates, and naming** of the cluster: Services that give workloads a stable identity, DNS that lets them find each other by name, and Ingress that opens the gates to the world beyond.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you are wiring a frontend to a backend, exposing an API to the internet, or debugging why a request never arrives, this adventure forges the networking intuition every cluster Warrior needs.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the old realms, a server had one address, written on a scroll and never changed. In the cluster, addresses are ephemeral - a Pod replaced during a rollout takes a new IP, and any client holding the old one is lost. Kubernetes solved this with an abstraction: the **Service**, a stable virtual address and name that always points at whichever Pods are currently healthy. Layered atop it, **Ingress** provides a single smart gate that routes external traffic by hostname and path. Together they turn a shifting sea of Pods into a dependable map.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches the "why" behind every connection in your cluster. Master it, and the network stops being a mystery and becomes a tool.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Service Abstraction** - Give a set of Pods a single stable virtual IP and DNS name
+- [ ] **Service Types** - Choose correctly between ClusterIP, NodePort, and LoadBalancer
+- [ ] **Cluster DNS and Discovery** - Resolve a Service by name from inside a Pod
+- [ ] **Ingress Routing** - Route external HTTP traffic by host and path through one entry point
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Endpoints** - Inspect how a Service maps its selector to live Pod IPs
+- [ ] **NetworkPolicies** - Restrict which Pods may talk to which
+- [ ] **Troubleshooting** - Diagnose a Service returning no endpoints
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why a Service is needed even though Pods already have IPs
+- [ ] Pick the right Service type for internal, dev, and production exposure
+- [ ] Resolve `service.namespace.svc.cluster.local` and explain each segment
+- [ ] Find why a Service has zero endpoints from `kubectl describe`
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Kubernetes Fundamentals](/quests/1001/kubernetes-fundamentals/) and [Pods and Workloads](/quests/1001/k8s-pods-workloads/)
+- [ ] Comfort deploying a Deployment and reading its labels
+- [ ] Basic understanding of ports, TCP/IP, and DNS
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A running local cluster (`kind`, `minikube`, or `k3d`)
+- [ ] `kubectl` configured and on your `PATH`
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can deploy and scale a workload
+- [ ] You are ready to reason about how traffic reaches a Pod
+- [ ] Ready for 90-120 minutes of hands-on practice
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Services and DNS work identically everywhere. Ingress requires a controller, which differs by platform - we'll use the NGINX Ingress controller, available on every cluster type.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +142,13 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Deploy a backend workload to expose
+kubectl create deployment web --image=nginx:1.27 --replicas=3
+# Install the NGINX Ingress controller (kind variant)
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl wait --namespace ingress-nginx --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller --timeout=120s
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +158,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+kubectl create deployment web --image=nginx:1.27 --replicas=3
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl wait --namespace ingress-nginx --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=120s
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +171,12 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# On minikube, the addon is the simplest route:
+minikube addons enable ingress
+# On kind, apply the controller manifest:
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl create deployment web --image=nginx:1.27 --replicas=3
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +186,288 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# On managed clusters, a Service of type LoadBalancer provisions a real cloud LB:
+kubectl expose deployment web --type=LoadBalancer --port=80
+kubectl get service web --watch   # EXTERNAL-IP fills in when the cloud LB is ready
 ```
 
 **Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+- `LoadBalancer` only provisions an external IP on clouds; locally it stays `<pending>`.
+- Managed clusters also offer cloud-native Ingress controllers (AWS ALB, GKE Ingress).
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Service - A Stable Address Over Shifting Pods
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Pods come and go, and each gets a fresh IP. A **Service** is a stable virtual IP (the ClusterIP) plus a DNS name that always forwards to whichever Pods currently match its **selector**. This is the cornerstone of all Kubernetes networking.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- How a Service selector maps to live Pod endpoints
+- The ClusterIP type for internal communication
+- Inspecting the Endpoints object behind a Service
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Define a Service
 
-**Step 1: Environment Setup**
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  type: ClusterIP          # internal-only stable virtual IP (the default)
+  selector:
+    app: web               # routes to every Pod carrying label app=web
+  ports:
+    - port: 80             # the port the Service listens on
+      targetPort: 80       # the container port it forwards to
+      protocol: TCP
+```
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Apply it and inspect what it found
+kubectl apply -f web-service.yaml
+kubectl get service web
+kubectl get endpoints web      # the live Pod IPs the Service forwards to
+kubectl describe service web   # selector, ports, and endpoints in one view
 ```
 
-**Step 2: Core Concepts**
+The **Endpoints** object is the magic: the Service controller watches Pods matching the selector and keeps this list of healthy Pod IPs current. If the list is empty, the Service has nothing to forward to - the single most common Service bug.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Service
+- [ ] What links a Service to the Pods it serves?
+- [ ] What is the difference between `port` and `targetPort`?
+- [ ] What does an empty Endpoints list tell you?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Service Created**: `kubectl get service web` shows a ClusterIP
+- [ ] **Endpoints Populated**: `kubectl get endpoints web` lists Pod IPs
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Service Types and Cluster DNS - Reaching In and Finding by Name
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A ClusterIP is invisible from outside the cluster. To open it up, you choose a Service **type**. And to let Pods find each other, every Service gets a predictable DNS name.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The three exposure types and when to use each
+- The cluster DNS naming scheme
+- Service discovery from inside a Pod
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Three Service Types
 
-[Detailed content for chapter 2]
+| Type | What it does | Use when |
+| --- | --- | --- |
+| **ClusterIP** | Internal-only virtual IP (default) | Pod-to-Pod traffic inside the cluster |
+| **NodePort** | Opens a port (30000-32767) on every node | Quick external access in dev / on-prem |
+| **LoadBalancer** | Provisions a cloud load balancer with a public IP | Production external access on a cloud |
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+# A NodePort Service: reach the app at <node-ip>:30080
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-nodeport
+spec:
+  type: NodePort
+  selector:
+    app: web
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080      # fixed node port (omit to let Kubernetes pick one)
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+### 🏗️ Cluster DNS - Finding Services by Name
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Kubernetes runs an internal DNS service (CoreDNS). Every Service is resolvable at:
+
+```text
+<service-name>.<namespace>.svc.cluster.local
+```
+
+From a Pod in the same namespace, the short name `web` is enough. Prove it:
+
+```bash
+# Launch a throwaway Pod and resolve the Service by name
+kubectl run netcheck --rm -it --image=busybox:1.36 --restart=Never -- \
+  sh -c "nslookup web && wget -qO- http://web"
+
+# Full FQDN works across namespaces:
+kubectl run netcheck --rm -it --image=busybox:1.36 --restart=Never -- \
+  nslookup web.default.svc.cluster.local
+```
+
+This is **service discovery**: your frontend connects to `http://backend` and never needs to know a Pod IP. CoreDNS resolves the name to the Service's stable ClusterIP, and the Service load-balances across healthy Pods.
+
+### 🔍 Knowledge Check: Types and DNS
+- [ ] When would you pick NodePort over LoadBalancer?
+- [ ] What does each segment of `web.default.svc.cluster.local` mean?
+- [ ] Why can a frontend hardcode `http://backend` safely?
+
+## 🧙‍♂️ Chapter 3: Ingress and NetworkPolicy - The Smart Gate and the Walls
+
+*Exposing every service as its own LoadBalancer is wasteful and costly. **Ingress** is a single smart gate that routes external HTTP(S) traffic to many Services by hostname and path. **NetworkPolicy** then lets you wall off who may talk to whom.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Routing external traffic with Ingress rules
+- Host- and path-based routing
+- Restricting traffic with NetworkPolicy
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ An Ingress Rule
 
-[Detailed content for chapter 3]
+An Ingress needs an **Ingress controller** running in the cluster (installed in the platform step). The Ingress resource then declares routing rules:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: app.local        # route requests for this hostname
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web     # forward to the 'web' Service
+                port:
+                  number: 80
+```
+
+```bash
+# Apply the Ingress and verify it
+kubectl apply -f web-ingress.yaml
+kubectl get ingress web-ingress
+
+# Test it (kind maps the controller to localhost). Send the Host header:
+curl -H "Host: app.local" http://localhost/
+```
+
+One Ingress can route `app.local/` to the web Service and `app.local/api` to an API Service - many backends behind one gate.
+
+### 🏗️ NetworkPolicy - Default-Deny Walls
+
+By default, every Pod can talk to every other Pod. A **NetworkPolicy** restricts this. This policy says: Pods labeled `app=db` accept traffic *only* from Pods labeled `app=web`:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: db-allow-web
+spec:
+  podSelector:
+    matchLabels:
+      app: db
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: web
+      ports:
+        - protocol: TCP
+          port: 5432
+```
+
+> Note: NetworkPolicies only take effect if your cluster's CNI plugin enforces them (Calico, Cilium). The kind default CNI does not - install Calico to practice enforcement.
+
+### 🔍 Knowledge Check: Ingress and Policy
+- [ ] What does an Ingress give you that many LoadBalancers do not?
+- [ ] What must be running in the cluster for an Ingress resource to work?
+- [ ] What is the default Pod-to-Pod traffic posture before any NetworkPolicy?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Expose with a ClusterIP
+**Objective**: Put a stable internal address in front of the `web` Deployment.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Create a ClusterIP Service selecting `app=web`
+- [ ] Confirm its Endpoints list the Pod IPs
+- [ ] Reach it by name from a throwaway Pod
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: `wget -qO- http://web` from inside the cluster returns the nginx page.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Resolve and Route
+**Objective**: Prove DNS discovery and add NodePort access.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] `nslookup web` resolves to the ClusterIP from a Pod
+- [ ] Add a NodePort Service and reach it on a node port
+- [ ] Explain each segment of the FQDN
 
-**Validation**: [How to verify success]
+**Validation**: You can curl the app via both the cluster DNS name and the node port.
+
+### 🔴 Advanced Challenge: Gate It With Ingress
+**Objective**: Route external traffic through a single Ingress.
+
+**Requirements**:
+- [ ] Install/verify an Ingress controller
+- [ ] Create an Ingress routing a hostname to the `web` Service
+- [ ] Reach the app through the Ingress with the correct Host header
+- [ ] (Bonus) Add a NetworkPolicy and reason about its effect
+
+**Validation**: `curl -H "Host: app.local" http://localhost/` returns the app.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Gatekeeper** - You master Services and Ingress
+- 🧭 **Pathfinder** - You understand cluster DNS and discovery
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Service Exposure** - ClusterIP, NodePort, and LoadBalancer
+- **Ingress Routing and DNS Resolution** - One gate, many backends
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- ConfigMaps and Secrets - Configure your now-connected workloads
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [ConfigMaps and Secrets](/quests/1001/k8s-config-secrets/) - Inject configuration safely
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Pods and Workloads](/quests/1001/k8s-pods-workloads/) - Revisit the workloads you exposed
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [ConfigMaps and Secrets](/quests/1001/k8s-config-secrets/)  
+**🏗️ System Engineer**: Revisit [Pods and Workloads](/quests/1001/k8s-pods-workloads/)  
+**🛡️ Security Specialist**: Study the NetworkPolicy section above closely
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Service](https://kubernetes.io/docs/concepts/services-networking/service/) - ClusterIP, NodePort, LoadBalancer
+- [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) - HTTP routing rules
+- [DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) - The naming scheme
+- [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) - Restricting Pod traffic
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) - The controller used above
+- [CoreDNS](https://coredns.io/) - The cluster DNS server
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) - Service and Ingress commands
+- [Killercoda Networking Scenarios](https://killercoda.com/kubernetes) - Hands-on networking labs
 
 ## 🤝 Quest Completion Checklist
 
 Before marking this quest as complete, ensure you've:
 
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Exposed a workload with a Service
+- [ ] ✅ Resolved a Service by its DNS name
+- [ ] ✅ Routed external traffic through an Ingress
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
-- [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +475,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]] · [[Kubernetes Pods and Workloads: Deployments and StatefulSets]]
+**Unlocks:** [[Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

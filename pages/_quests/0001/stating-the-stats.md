@@ -3,14 +3,13 @@ title: 'Forging the Stats Portal: Data Analytics Quest'
 author: Quest Master IT-Journey Team
 description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
-snippet: Transform raw site data into compelling visual insights
 preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
 date: '2025-10-09T18:25:11.000Z'
 lastmod: '2025-10-08T18:10:29.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-primary_technology: 1
+primary_technology: jekyll
 quest_type: main_quest
 quest_series: Jekyll Site Building
 quest_line: Development Mastery
@@ -19,20 +18,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Web Development
-  - Data Analytics
-  character_classes:
-  - 💻 Software Developer
-  - 📊 Data Analyst
-  skill_trees:
-  - Jekyll Development
-  - Data Visualization
-  - Frontend Design
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
@@ -63,11 +48,6 @@ validation_criteria:
   - Explain Jekyll build-time vs. runtime data generation
   - Describe YAML data file structure and usage
   - Understand Liquid template filters and tags
-quest_mapping:
-  coordinates: '[3, 4]'
-  region: Foundation
-  realm: Development
-  biome: Web
 permalink: /quests/0001/stating-the-stats/
 categories:
 - Quests
@@ -518,21 +498,21 @@ permalink: /stats/
         Comprehensive analytics and insights from the IT-Journey knowledge base
       </p>
       
-      {% if site.data.content_statistics %}
+      {% raw %}{% if site.data.content_statistics %}{% endraw %}
         <p class="text-muted">
           <i class="bi bi-clock"></i> 
-          Last updated: {{ site.data.content_statistics.generated_at | date: "%B %d, %Y at %I:%M %p" }}
+          Last updated: {% raw %}{{ site.data.content_statistics.generated_at | date: "%B %d, %Y at %I:%M %p" }}{% endraw %}
         </p>
-      {% else %}
+      {% raw %}{% else %}{% endraw %}
         <div class="alert alert-warning" role="alert">
           <i class="bi bi-exclamation-triangle"></i>
           Statistics not yet generated. Run <code>ruby scripts/generation/generate_statistics.rb</code> to create statistics.
         </div>
-      {% endif %}
+      {% raw %}{% endif %}{% endraw %}
     </div>
   </div>
 
-  {% if site.data.content_statistics %}
+  {% raw %}{% if site.data.content_statistics %}{% endraw %}
   
   <!-- Overview Cards -->
   <div class="row g-4 mb-5">
@@ -542,7 +522,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-file-text display-4 text-primary"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.total_posts }}
+            {% raw %}{{ site.data.content_statistics.total_posts }}{% endraw %}
           </h2>
           <p class="card-text text-muted">Total Posts</p>
         </div>
@@ -555,7 +535,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-fonts display-4 text-success"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.total_words | number_with_delimiter }}
+            {% raw %}{{ site.data.content_statistics.total_words | number_with_delimiter }}{% endraw %}
           </h2>
           <p class="card-text text-muted">Total Words</p>
         </div>
@@ -568,7 +548,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-pencil display-4 text-info"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.average_words_per_post }}
+            {% raw %}{{ site.data.content_statistics.average_words_per_post }}{% endraw %}
           </h2>
           <p class="card-text text-muted">Avg. Words/Post</p>
         </div>
@@ -581,7 +561,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-folder display-4 text-warning"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.categories | size }}
+            {% raw %}{{ site.data.content_statistics.categories | size }}{% endraw %}
           </h2>
           <p class="card-text text-muted">Categories</p>
         </div>
@@ -600,12 +580,12 @@ permalink: /stats/
         </div>
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            {% for category in site.data.content_statistics.categories limit:10 %}
+            {% raw %}{% for category in site.data.content_statistics.categories limit:10 %}{% endraw %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span>{{ category[0] | capitalize }}</span>
-                <span class="badge bg-primary rounded-pill">{{ category[1] }}</span>
+                <span>{% raw %}{{ category[0] | capitalize }}{% endraw %}</span>
+                <span class="badge bg-primary rounded-pill">{% raw %}{{ category[1] }}{% endraw %}</span>
               </li>
-            {% endfor %}
+            {% raw %}{% endfor %}{% endraw %}
           </ul>
         </div>
       </div>
@@ -621,12 +601,12 @@ permalink: /stats/
         </div>
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            {% for tag in site.data.content_statistics.tags limit:10 %}
+            {% raw %}{% for tag in site.data.content_statistics.tags limit:10 %}{% endraw %}
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span>{{ tag[0] }}</span>
-                <span class="badge bg-success rounded-pill">{{ tag[1] }}</span>
+                <span>{% raw %}{{ tag[0] }}{% endraw %}</span>
+                <span class="badge bg-success rounded-pill">{% raw %}{{ tag[1] }}{% endraw %}</span>
               </li>
-            {% endfor %}
+            {% raw %}{% endfor %}{% endraw %}
           </ul>
         </div>
       </div>
@@ -644,23 +624,23 @@ permalink: /stats/
         </div>
         <div class="card-body">
           <div class="tag-cloud">
-            {% for tag in site.data.content_statistics.tags limit:30 %}
-              {% assign tag_size = tag[1] | times: 100 | divided_by: site.data.content_statistics.total_posts %}
-              {% if tag_size > 50 %}
-                {% assign tag_class = "fs-1" %}
-              {% elsif tag_size > 30 %}
-                {% assign tag_class = "fs-2" %}
-              {% elsif tag_size > 15 %}
-                {% assign tag_class = "fs-3" %}
-              {% elsif tag_size > 8 %}
-                {% assign tag_class = "fs-4" %}
-              {% else %}
-                {% assign tag_class = "fs-5" %}
-              {% endif %}
-              <span class="badge bg-secondary {{ tag_class }} m-1">
-                {{ tag[0] }} <small>({{ tag[1] }})</small>
+            {% raw %}{% for tag in site.data.content_statistics.tags limit:30 %}{% endraw %}
+              {% raw %}{% assign tag_size = tag[1] | times: 100 | divided_by: site.data.content_statistics.total_posts %}{% endraw %}
+              {% raw %}{% if tag_size > 50 %}{% endraw %}
+                {% raw %}{% assign tag_class = "fs-1" %}{% endraw %}
+              {% raw %}{% elsif tag_size > 30 %}{% endraw %}
+                {% raw %}{% assign tag_class = "fs-2" %}{% endraw %}
+              {% raw %}{% elsif tag_size > 15 %}{% endraw %}
+                {% raw %}{% assign tag_class = "fs-3" %}{% endraw %}
+              {% raw %}{% elsif tag_size > 8 %}{% endraw %}
+                {% raw %}{% assign tag_class = "fs-4" %}{% endraw %}
+              {% raw %}{% else %}{% endraw %}
+                {% raw %}{% assign tag_class = "fs-5" %}{% endraw %}
+              {% raw %}{% endif %}{% endraw %}
+              <span class="badge bg-secondary {% raw %}{{ tag_class }}{% endraw %} m-1">
+                {% raw %}{{ tag[0] }}{% endraw %} <small>({% raw %}{{ tag[1] }}{% endraw %})</small>
               </span>
-            {% endfor %}
+            {% raw %}{% endfor %}{% endraw %}
           </div>
         </div>
       </div>
@@ -668,7 +648,7 @@ permalink: /stats/
   </div>
 
   <!-- Monthly Activity -->
-  {% if site.data.content_statistics.monthly_posts %}
+  {% raw %}{% if site.data.content_statistics.monthly_posts %}{% endraw %}
   <div class="row mb-5">
     <div class="col-lg-12">
       <div class="card">
@@ -688,24 +668,24 @@ permalink: /stats/
                 </tr>
               </thead>
               <tbody>
-                {% for month in site.data.content_statistics.monthly_posts limit:12 %}
+                {% raw %}{% for month in site.data.content_statistics.monthly_posts limit:12 %}{% endraw %}
                   <tr>
-                    <td>{{ month[0] }}</td>
-                    <td><strong>{{ month[1] }}</strong></td>
+                    <td>{% raw %}{{ month[0] }}{% endraw %}</td>
+                    <td><strong>{% raw %}{{ month[1] }}{% endraw %}</strong></td>
                     <td>
                       <div class="progress" style="height: 20px;">
-                        {% assign percentage = month[1] | times: 100 | divided_by: site.data.content_statistics.total_posts %}
+                        {% raw %}{% assign percentage = month[1] | times: 100 | divided_by: site.data.content_statistics.total_posts %}{% endraw %}
                         <div class="progress-bar bg-warning" role="progressbar" 
-                             style="width: {{ percentage }}%" 
-                             aria-valuenow="{{ percentage }}" 
+                             style="width: {% raw %}{{ percentage }}{% endraw %}%" 
+                             aria-valuenow="{% raw %}{{ percentage }}{% endraw %}" 
                              aria-valuemin="0" 
                              aria-valuemax="100">
-                          {{ percentage }}%
+                          {% raw %}{{ percentage }}{% endraw %}%
                         </div>
                       </div>
                     </td>
                   </tr>
-                {% endfor %}
+                {% raw %}{% endfor %}{% endraw %}
               </tbody>
             </table>
           </div>
@@ -713,7 +693,7 @@ permalink: /stats/
       </div>
     </div>
   </div>
-  {% endif %}
+  {% raw %}{% endif %}{% endraw %}
 
   <!-- Additional Metrics -->
   <div class="row mb-5">
@@ -729,39 +709,39 @@ permalink: /stats/
             <div class="col-md-4 mb-3">
               <h5>Content Diversity</h5>
               <p>
-                <strong>Categories:</strong> {{ site.data.content_statistics.categories | size }}<br>
-                <strong>Tags:</strong> {{ site.data.content_statistics.tags | size }}<br>
-                <strong>Avg. Categories/Post:</strong> {{ site.data.content_statistics.average_categories_per_post }}<br>
-                <strong>Avg. Tags/Post:</strong> {{ site.data.content_statistics.average_tags_per_post }}
+                <strong>Categories:</strong> {% raw %}{{ site.data.content_statistics.categories | size }}{% endraw %}<br>
+                <strong>Tags:</strong> {% raw %}{{ site.data.content_statistics.tags | size }}{% endraw %}<br>
+                <strong>Avg. Categories/Post:</strong> {% raw %}{{ site.data.content_statistics.average_categories_per_post }}{% endraw %}<br>
+                <strong>Avg. Tags/Post:</strong> {% raw %}{{ site.data.content_statistics.average_tags_per_post }}{% endraw %}
               </p>
             </div>
             <div class="col-md-4 mb-3">
               <h5>Reading Metrics</h5>
-              {% assign estimated_reading_time = site.data.content_statistics.average_words_per_post | divided_by: 200 %}
+              {% raw %}{% assign estimated_reading_time = site.data.content_statistics.average_words_per_post | divided_by: 200 %}{% endraw %}
               <p>
-                <strong>Avg. Reading Time:</strong> ~{{ estimated_reading_time }} min<br>
-                <strong>Total Reading Time:</strong> ~{{ site.data.content_statistics.total_words | divided_by: 200 }} min<br>
+                <strong>Avg. Reading Time:</strong> ~{% raw %}{{ estimated_reading_time }}{% endraw %} min<br>
+                <strong>Total Reading Time:</strong> ~{% raw %}{{ site.data.content_statistics.total_words | divided_by: 200 }}{% endraw %} min<br>
                 <strong>Longest Category:</strong> 
-                {% assign top_category = site.data.content_statistics.categories | first %}
-                {{ top_category[0] | capitalize }} ({{ top_category[1] }} posts)
+                {% raw %}{% assign top_category = site.data.content_statistics.categories | first %}{% endraw %}
+                {% raw %}{{ top_category[0] | capitalize }}{% endraw %} ({% raw %}{{ top_category[1] }}{% endraw %} posts)
               </p>
             </div>
             <div class="col-md-4 mb-3">
               <h5>Content Health</h5>
               <p>
                 <strong>Data Freshness:</strong> 
-                {% assign update_date = site.data.content_statistics.generated_at | date: "%s" %}
-                {% assign now = "now" | date: "%s" %}
-                {% assign age_hours = now | minus: update_date | divided_by: 3600 %}
-                {% if age_hours < 24 %}
-                  <span class="badge bg-success">Fresh ({{ age_hours }}h)</span>
-                {% elsif age_hours < 168 %}
+                {% raw %}{% assign update_date = site.data.content_statistics.generated_at | date: "%s" %}{% endraw %}
+                {% raw %}{% assign now = "now" | date: "%s" %}{% endraw %}
+                {% raw %}{% assign age_hours = now | minus: update_date | divided_by: 3600 %}{% endraw %}
+                {% raw %}{% if age_hours < 24 %}{% endraw %}
+                  <span class="badge bg-success">Fresh ({% raw %}{{ age_hours }}{% endraw %}h)</span>
+                {% raw %}{% elsif age_hours < 168 %}{% endraw %}
                   <span class="badge bg-warning">Good</span>
-                {% else %}
+                {% raw %}{% else %}{% endraw %}
                   <span class="badge bg-danger">Stale</span>
-                {% endif %}
+                {% raw %}{% endif %}{% endraw %}
                 <br>
-                <strong>Keywords Tracked:</strong> {{ site.data.content_statistics.top_keywords | size }}
+                <strong>Keywords Tracked:</strong> {% raw %}{{ site.data.content_statistics.top_keywords | size }}{% endraw %}
               </p>
             </div>
           </div>
@@ -770,7 +750,7 @@ permalink: /stats/
     </div>
   </div>
 
-  {% endif %}
+  {% raw %}{% endif %}{% endraw %}
 </div>
 
 <style>

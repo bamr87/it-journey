@@ -1,80 +1,63 @@
 ---
 title: 'Security Fundamentals: CIA Triad and Defense in Depth Strategies'
 author: IT-Journey Team
-description: Master information security fundamentals including the CIA triad, defense in depth, security controls, risk management, and foundational security concepts.
-excerpt: Learn foundational security concepts including CIA triad, defense in depth, and risk management
+description: Master information security fundamentals including the CIA triad, the OWASP Top 10, defense in depth, secure-by-design thinking, and practical risk management.
+excerpt: Learn foundational security concepts including the CIA triad, the OWASP Top 10, defense in depth, and a security mindset
 preview: images/previews/security-fundamentals-cia-triad-quest-title-defens.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:36.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: security
 quest_type: main_quest
 quest_series: Security Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Bastion
+quest_arc: Foundations of the Shieldwall
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests:
+  unlocks_quests:
   - /quests/1011/secure-coding/
   - /quests/1011/threat-modeling/
   - /quests/1011/penetration-testing/
-  - /quests/1011/ai-feature-pipeline-architect/
   - /quests/1011/compliance-standards/
-  parallel_quests: []
-  sequel_quests:
-  - /quests/1100/mastering-version-control-workflows/
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
 skill_focus: security
-learning_style: hands-on
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort reading code in at least one language (examples use Python and Bash)
+  - General understanding of how web applications and networks work
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A terminal and a text editor or IDE (VS Code recommended)
+  - Optional Docker for the hands-on lab
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable building or running small applications
+  - Ready to think adversarially about systems you build
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A personal threat-and-control map for one application you know
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain the CIA triad and map controls to each property
+  - Can identify which OWASP Top 10 category a given flaw belongs to
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands defense in depth and least privilege
+  - Can describe secure-by-design and shift-left security
 permalink: /quests/1011/security-fundamentals/
 categories:
 - Quests
 - Security
-- Hard
+- Medium
 tags:
 - '1011'
 - security
 - main_quest
-- security
-- hands-on
+- cia-triad
+- owasp
+- conceptual
 - gamified-learning
 keywords:
   primary:
@@ -82,112 +65,78 @@ keywords:
   - security
   - main_quest
   secondary:
-  - security
-  - hands-on
-  - gamified-learning
+  - cia-triad
+  - owasp-top-10
+  - defense-in-depth
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1011 (11) Quest: Main Quest - Security'
+sub_title: 'Level 1011 (11) Quest: Main Quest - Security Fundamentals'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Shieldbearer - Internalized the CIA triad and defense in depth
+  - 🛡️ Mind of the Defender - Adopted an adversarial security mindset
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Security Risk Assessment
+  - 🧠 Threat-and-Control Mapping
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the rest of the Level 1011 Security & Compliance quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have crossed into the **Warrior tier**, and the gates of the Bastion stand before you. Beyond them lies the realm of **Security & Compliance** - a land where every kingdom you have built in earlier quests can be defended... or breached. This quest, **Security Fundamentals**, is the oath you swear before taking up the shieldwall. It teaches you to think like both the builder and the besieger.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you are a developer who has never once asked "how would an attacker abuse this?" or a seasoned engineer formalizing instincts you already half-trust, this adventure forges the mental armor every Warrior needs: the CIA triad, the OWASP Top 10, defense in depth, and the discipline of secure-by-design.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early ages of computing, systems were built behind castle walls - air-gapped, trusted, and rarely attacked. When the great bridges of the internet were raised, every fortress became reachable from every other, and the old assumption of trust shattered. The defenders who survived were those who learned a single truth: security is not a feature you bolt on at the end, it is a property you design in from the first stone.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches you the "why" behind every control you will ever configure. Master it, and the remaining quests of the Bastion - secure coding, threat modeling, penetration testing, and compliance - become incantations you can actually understand rather than rituals you merely repeat.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The CIA Triad** - Explain Confidentiality, Integrity, and Availability and map real controls to each
+- [ ] **The OWASP Top 10** - Recognize the most common web application risk categories and what causes them
+- [ ] **Defense in Depth** - Design layered controls so that one failure does not become a breach
+- [ ] **The Security Mindset** - Reason adversarially about a system you built and find its weak points
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Least Privilege & Zero Trust** - Apply the principle of minimal access to accounts and services
+- [ ] **Risk Management** - Reason about likelihood × impact and prioritize what to fix first
+- [ ] **Secure-by-Design / Shift Left** - Move security decisions earlier in the development lifecycle
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain the CIA triad to another person without notes
+- [ ] Classify a newly discovered bug into the correct OWASP Top 10 category
+- [ ] Describe how two independent controls protect a single asset
+- [ ] Justify a fix-it-first decision using a simple risk rating
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic understanding of how web requests, servers, and databases interact
+- [ ] Familiarity with at least one programming language
+- [ ] Comfort using a terminal
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
+- [ ] Optional: Docker, for the local hands-on lab
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+This **🟡 Medium** quest expects:
+- [ ] You have built or maintained at least one small application
+- [ ] You are ready to think about how systems fail, not just how they work
 - [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The concepts here are platform-independent, but the optional lab uses a deliberately vulnerable app. Choose the path that fits your setup.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -195,23 +144,15 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install Docker Desktop (or use colima) to run the practice lab
+brew install --cask docker
 
-# Install prerequisites
-brew install [package-name]
+# Run OWASP Juice Shop, a safe, intentionally vulnerable training app
+docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Open http://localhost:3000 in your browser
+open http://localhost:3000
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -221,26 +162,15 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install Docker Desktop
+winget install Docker.DockerDesktop
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
+# Run the OWASP Juice Shop training target
+docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Open the app
+start http://localhost:3000
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -250,28 +180,16 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Install Docker via your distribution
+sudo apt update && sudo apt install -y docker.io   # Debian/Ubuntu
+# sudo dnf install -y docker                        # Fedora/RHEL
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
+sudo systemctl enable --now docker
 
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Launch the deliberately vulnerable training app
+sudo docker run --rm -d -p 3000:3000 bkimminich/juice-shop
+xdg-open http://localhost:3000
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -281,227 +199,227 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace or any container runtime, the same image works.
+docker run --rm -d -p 3000:3000 bkimminich/juice-shop
+# Forward port 3000 to your browser via your platform's port forwarding.
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> ⚠️ Only ever run intentionally vulnerable apps on isolated, local, or throwaway environments. Never expose them to the public internet.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The CIA Triad - The Three Pillars of the Bastion
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Every security decision you will ever make protects one or more of three properties. Memorize them, and you have a lens for the entire field.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The meaning of Confidentiality, Integrity, and Availability
+- How concrete controls map to each pillar
+- The trade-offs between the three
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Three Pillars
 
-**Step 1: Environment Setup**
+| Pillar | Question it answers | Example controls | Example attack it stops |
+| --- | --- | --- | --- |
+| **Confidentiality** | Can only authorized parties read this? | Encryption (TLS, AES), access control, MFA | Data theft, eavesdropping |
+| **Integrity** | Is the data exactly what it should be, unaltered? | Hashing, digital signatures, checksums, input validation | Tampering, man-in-the-middle modification |
+| **Availability** | Can authorized users reach it when needed? | Redundancy, backups, rate limiting, DDoS protection | Ransomware, denial of service |
+
+A useful sibling concept is **AAA**: **Authentication** (who are you?), **Authorization** (what may you do?), and **Accounting / Auditing** (what did you do?). Non-repudiation - proof that an actor performed an action - rounds out the model.
+
+Here is the integrity pillar made concrete. A checksum lets you detect if a file was altered in transit:
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Compute a SHA-256 hash of a downloaded artifact
+sha256sum app-release.tar.gz
+
+# Compare it to the publisher's published hash. If they differ,
+# the file's integrity is compromised - do not trust it.
+echo "EXPECTED_HASH  app-release.tar.gz" | sha256sum --check
 ```
 
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Triad
+- [ ] Which pillar does TLS primarily protect, and which does it also support?
+- [ ] A backup restores which pillar after a ransomware attack?
+- [ ] Why can maximizing one pillar sometimes weaken another?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Mapped a control to a pillar**: You named one control for each of C, I, and A
+- [ ] **Ran a checksum**: You verified a file's integrity from the terminal
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: The OWASP Top 10 - Knowing Your Enemy
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The Open Worldwide Application Security Project (OWASP) maintains a famous, data-driven list of the most critical web application security risks. The current edition is the **OWASP Top 10:2021**. Learn these categories and you will recognize most real-world web flaws on sight.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The ten risk categories and the root cause behind each
+- How to classify a finding into the right category
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Ten Categories (2021 edition)
 
-[Detailed content for chapter 2]
+1. **A01 Broken Access Control** - users can act outside their intended permissions (e.g., changing `/account?id=123` to another user's id).
+2. **A02 Cryptographic Failures** - sensitive data exposed through weak or missing encryption (formerly "Sensitive Data Exposure").
+3. **A03 Injection** - untrusted input is interpreted as a command (SQL, OS, LDAP, and cross-site scripting now live here).
+4. **A04 Insecure Design** - flaws baked into the architecture, fixable only by re-design, not patching.
+5. **A05 Security Misconfiguration** - default credentials, verbose errors, open cloud buckets, unnecessary features enabled.
+6. **A06 Vulnerable and Outdated Components** - using libraries with known CVEs.
+7. **A07 Identification and Authentication Failures** - weak passwords, broken session handling, missing MFA.
+8. **A08 Software and Data Integrity Failures** - trusting unsigned updates, insecure deserialization, compromised CI/CD pipelines.
+9. **A09 Security Logging and Monitoring Failures** - breaches that go undetected because nothing was logged or watched.
+10. **A10 Server-Side Request Forgery (SSRF)** - the server is tricked into making requests to internal or unintended destinations.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+Mapping practice — given a finding, name the category:
+  "An API returns another customer's invoice when I change the ID"  -> A01 Broken Access Control
+  "The login page accepts ' OR '1'='1 and logs me in"               -> A03 Injection
+  "The app still ships log4j 2.14"                                   -> A06 Vulnerable Components
+  "S3 bucket is world-readable"                                      -> A05 Security Misconfiguration
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+### 🔍 Knowledge Check: OWASP Top 10
+- [ ] Which category absorbed XSS in the 2021 edition?
+- [ ] What distinguishes A04 Insecure Design from A05 Misconfiguration?
+- [ ] Why did SSRF earn its own category?
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+## 🧙‍♂️ Chapter 3: Defense in Depth, Least Privilege, and Secure-by-Design
+
+*A single wall can be breached. A fortress with a moat, an outer wall, an inner keep, and vigilant guards survives the failure of any one layer. This is **defense in depth**.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Layering independent controls
+- Applying least privilege and zero trust
+- Designing security in from the start (shift left)
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Layered Defense in Practice
 
-[Detailed content for chapter 3]
+Consider protecting a single database of customer records. Defense in depth stacks independent controls:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+Layer 1 (Network):    Firewall + private subnet — the DB has no public IP
+Layer 2 (Identity):   MFA + least-privilege IAM roles for anyone reaching it
+Layer 3 (Transport):  TLS everywhere, certificate validation enforced
+Layer 4 (App):        Parameterized queries, input validation, output encoding
+Layer 5 (Data):       Encryption at rest, column-level encryption for PII
+Layer 6 (Detect):     Logging, alerting on anomalous queries, audit trails
+Layer 7 (Recover):    Tested backups, an incident response runbook
+```
+
+If an attacker defeats the firewall, identity and encryption still stand. No single failure becomes a breach.
+
+**Least privilege** means every account, process, and service gets exactly the access it needs and nothing more. Compare these two database grants:
+
+```sql
+-- ❌ Over-privileged: the app login can read AND drop tables
+GRANT ALL PRIVILEGES ON shop.* TO 'app_user'@'%';
+
+-- ✅ Least privilege: the app can only read and write the rows it serves
+GRANT SELECT, INSERT, UPDATE, DELETE ON shop.orders TO 'app_user'@'10.0.%';
+GRANT SELECT ON shop.products TO 'app_user'@'10.0.%';
+```
+
+**Zero trust** extends least privilege across the whole network: never trust a request just because it came from "inside." Authenticate and authorize every call.
+
+**Secure-by-design / shift left** moves these decisions to the earliest possible moment. Fixing a design flaw on a whiteboard costs minutes; fixing it in production after a breach costs reputations.
+
+### 🔍 Knowledge Check: Layered Defense
+- [ ] Name two layers that protect a database independently of the firewall
+- [ ] Rewrite an over-privileged grant to follow least privilege
+- [ ] Why is "shift left" cheaper than patching in production?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Map Your Own App
+**Objective**: Pick an application you have built or use daily. Identify one asset (e.g., user passwords) and write one control for each CIA pillar protecting it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Name the asset
+- [ ] One Confidentiality control, one Integrity control, one Availability control
+- [ ] State which OWASP category would apply if each control were missing
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can defend each choice in one sentence.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Threat-and-Control Map
+**Objective**: For the same app, draw a defense-in-depth diagram with at least four independent layers.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] At least four layers, each an independent control
+- [ ] Identify which OWASP Top 10 risks each layer mitigates
+- [ ] Mark which single layer, if removed, would be most dangerous and why
 
-**Validation**: [How to verify success]
+**Validation**: Removing any single layer should not, by itself, equal a breach.
+
+### 🔴 Advanced Challenge: Break the Juice Shop
+**Objective**: Using the local OWASP Juice Shop lab, find one Broken Access Control issue and one Injection issue, and classify each.
+
+**Requirements**:
+- [ ] Document the request that triggers each flaw
+- [ ] Identify the exact OWASP Top 10 category
+- [ ] Propose the control that would prevent it
+
+**Validation**: Each finding maps cleanly to a category and a concrete fix.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Shieldbearer** - You internalized the CIA triad and defense in depth
+- 🛡️ **Mind of the Defender** - You can reason adversarially about your own systems
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Security Risk Assessment** - Rank issues by likelihood and impact
+- **Threat-and-Control Mapping** - Connect assets to controls to attacks
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Secure Coding Practices - Stop the OWASP Top 10 at the code level
+- Threat Modeling - Find flaws systematically before attackers do
+- Compliance Standards - Map these controls to SOC 2, ISO 27001, and more
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Secure Coding Practices](/quests/1011/secure-coding/) - Turn principles into hardened code
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Threat Modeling](/quests/1011/threat-modeling/) - STRIDE and attack trees
+- ⚔️ [Penetration Testing](/quests/1011/penetration-testing/) - Ethical hacking methodology
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Secure Coding Practices](/quests/1011/secure-coding/)  
+**🏗️ System Engineer**: Explore [Threat Modeling](/quests/1011/threat-modeling/)  
+**🛡️ Security Specialist**: Advance to [Penetration Testing](/quests/1011/penetration-testing/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [OWASP Top 10 (2021)](https://owasp.org/www-project-top-ten/) - The canonical risk list
+- [NIST SP 800-53 Security and Privacy Controls](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) - Control catalog
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) - Identify, Protect, Detect, Respond, Recover
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) - Practical, concise guidance
+- [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) - The training app used above
+- [CISA Secure by Design](https://www.cisa.gov/securebydesign) - Government guidance on building it in
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Defense in Depth (CISA)](https://www.cisa.gov/) - Layered security guidance
+- [MITRE ATT&CK](https://attack.mitre.org/) - A knowledge base of real attacker techniques
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Mapped CIA controls to one of your own applications
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
+**Level hub:** [[Level 1011 - Security & Compliance]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Sequel quests:** [[Mastering Version Control Workflows: The Grand Merge Ritual]]
-**Related quests:** [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[AI Feature Pipeline Architect: DevSecOps Mastery Quest]] · [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]]
+**Unlocks:** [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

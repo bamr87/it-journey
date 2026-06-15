@@ -45,17 +45,7 @@ quest_dependencies:
   - /quests/1001/agentic-memory-strategies/
   unlocks_quests:
   - /quests/1010/agentic-state-continuity-cross-tools/
-quest_relationships:
-  sequel_quests:
-  - /quests/1010/agentic-state-continuity-cross-tools/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
-  - Context Management
+  recommended_quests: []
 rewards:
   badges:
   - ⚓ Anchor Master
@@ -77,11 +67,6 @@ validation_criteria:
   skill_demonstrations:
   - Can identify signs of context drift in an agent run
   - Can implement a checkpoint + recovery workflow
-quest_mapping:
-  coordinates: '[3, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Tide Fields
 comments: true
 draft: false
 redirect_from:
@@ -129,7 +114,7 @@ Context drift occurs when an agent's understanding of its task shifts as its con
 
 > **Exercise 9.1:** Add periodic checkpointing to your agent workflow.
 
-{% raw %}
+
 ```yaml
 # .github/workflows/agent-with-checkpointing.yml
 name: Agent with State Checkpointing
@@ -151,10 +136,10 @@ jobs:
           # Save the original task as the anchor — never overwrite this
           cat > .agent-memory/initial-intent.json << EOF
           {
-            "original_task": $(echo '${{ toJSON(github.event.issue.body) }}'),
-            "issue_number": ${{ github.event.issue.number }},
+            "original_task": $(echo '${% raw %}{{ toJSON(github.event.issue.body) }}{% endraw %}'),
+            "issue_number": ${% raw %}{{ github.event.issue.number }}{% endraw %},
             "recorded_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-            "anchor_hash": "$(echo '${{ github.event.issue.body }}' | sha256sum | cut -d' ' -f1)"
+            "anchor_hash": "$(echo '${% raw %}{{ github.event.issue.body }}{% endraw %}' | sha256sum | cut -d' ' -f1)"
           }
           EOF
           echo "✅ Initial task intent anchored"
@@ -182,11 +167,11 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: agent-checkpoints-${{ github.run_id }}
+          name: agent-checkpoints-${% raw %}{{ github.run_id }}{% endraw %}
           path: .agent-memory/
           retention-days: 30
 ```
-{% endraw %}
+
 
 ---
 

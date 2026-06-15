@@ -2,15 +2,14 @@
 title: 'Glossary '
 layout: quest
 author: IT-Journey Team
-excerpt: null
+excerpt:
 description: 'Reference: Glossary .'
 preview: /images/previews/glossary.png
-snippet: null
 categories:
 - notes
 tags:
 - notes
-meta: null
+meta:
 draft: true
 lastmod: '2023-11-25T11:31:20.000Z'
 permalink: /quests/codex/glossary/

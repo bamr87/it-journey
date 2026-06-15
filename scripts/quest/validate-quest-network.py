@@ -265,8 +265,11 @@ class QuestValidator:
             
             quest_data = self.quests.get(quest_permalink, {})
             dependencies = quest_data.get('frontmatter', {}).get('quest_dependencies', {})
-            
-            for dep_list_key in ['required_quests', 'recommended_quests']:
+
+            # Only required_quests form the true prerequisite graph; a cycle there
+            # means a learner can never start. recommended_quests are lateral
+            # "you might also like" links and may legitimately be mutual.
+            for dep_list_key in ['required_quests']:
                 for raw in dependencies.get(dep_list_key, []):
                     dep, planned = self._strip_planned_marker(raw)
                     if planned or not dep:

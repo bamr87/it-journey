@@ -1,63 +1,49 @@
 ---
-title: 'API Gateway Patterns: Routing, Load Balancing and Security'
+title: 'API Gateway Patterns: The Single Front Door'
 author: IT-Journey Team
-description: Implement API gateway patterns for microservices. Master request routing, load balancing, rate limiting, authentication, and service mesh integration.
-excerpt: Implement API gateway patterns for routing, security, and service orchestration
-preview: images/previews/api-gateway-patterns-descriptive-subtitle.png
+description: Master API gateway patterns - routing, authentication, rate limiting, and response aggregation - plus the Backend-for-Frontend pattern that gives each client its own tailored gateway.
+excerpt: Give many services one secure front door with routing, auth, rate limiting, aggregation, and the BFF pattern
+preview: images/previews/api-gateway-patterns-single-front-door.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1110'
 difficulty: 🔴 Hard
-estimated_time: 4-5 hours
-primary_technology: docker
+estimated_time: 3-4 hours
+primary_technology: nginx
 quest_type: main_quest
 quest_series: System Design Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Architect's Citadel
+quest_arc: Blueprints of the Master
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1110/microservices-architecture/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
+  unlocks_quests:
+  - /quests/1110/scaling-strategies/
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Understanding of microservices and HTTP routing
+  - Familiarity with authentication tokens (JWT)
+  - Completed the Microservices Architecture quest (required)
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker for the optional gateway lab
+  - A terminal and a text editor or IDE
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have called more than one backend service from a client
+  - You understand cross-cutting concerns like auth and logging
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A gateway config that routes to two services
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can list the cross-cutting concerns a gateway centralizes
+  - Can explain the Backend-for-Frontend pattern
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the gateway as a single point of failure risk
+  - Can explain response aggregation
 permalink: /quests/1110/api-gateway-patterns/
 categories:
 - Quests
@@ -65,123 +51,90 @@ categories:
 - Hard
 tags:
 - '1110'
-- docker
+- nginx
 - main_quest
-- architecture
+- api-gateway
+- bff
 - hands-on
 - gamified-learning
 keywords:
   primary:
   - '1110'
-  - docker
+  - api-gateway
   - main_quest
   secondary:
-  - architecture
-  - hands-on
-  - gamified-learning
+  - backend-for-frontend
+  - rate-limiting
+  - routing
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1110 (14) Quest: Main Quest - API Gateway'
+sub_title: 'Level 1110 (14) Quest: Main Quest - API Gateway Patterns'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Gatekeeper - Built the single secure front door for many services
+  - 🛡️ Warden of the Threshold - Centralized auth, routing, and rate limiting
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Gateway Configuration
+  - 🧠 Cross-Cutting Concern Design
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - The edge layer that fronts the scaling quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Architect, your kingdom of services now sprawls - and your clients are lost, knocking on a dozen different gates, each demanding its own credentials. An **API Gateway** is the single grand entrance to the Citadel: one address where every request arrives, is checked, is routed to the right keep, and is sent on its way. Master it, and your clients see one clean facade instead of a chaotic warren of services.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether your mobile app is making fifteen calls to render one screen, or every service is re-implementing authentication slightly differently, this quest forges the patterns of the gateway: routing, authentication, rate limiting, aggregation, and the elegant Backend-for-Frontend that gives each client a door shaped just for it.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*When you split a monolith into services, you also split its front door. Suddenly the client must know the address of every service, handle each one's authentication, and stitch together a dozen responses. This leaks internal structure to the outside world and bloats every client.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The API Gateway pattern restores order by inserting one component at the edge. It becomes the home of **cross-cutting concerns** - the things every request needs but no single service should own: authentication, rate limiting, TLS termination, logging, and routing. The gateway is so useful that it carries a real danger too: it can become a single point of failure and a bottleneck. Wielding it wisely - and knowing when a Backend-for-Frontend serves better - is the lesson of this quest.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Gateway Responsibilities** - Name the cross-cutting concerns a gateway centralizes
+- [ ] **Routing** - Direct requests to the right service by path, host, or header
+- [ ] **Auth and Rate Limiting** - Authenticate once at the edge and protect services from floods
+- [ ] **Response Aggregation** - Compose one client response from several service calls
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Backend-for-Frontend (BFF)** - Give each client type its own tailored gateway
+- [ ] **Gateway Pitfalls** - Avoid the god-gateway and the single point of failure
+- [ ] **TLS Termination and Observability** - Centralize encryption and request logging
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] List five cross-cutting concerns a gateway should own
+- [ ] Explain why aggregation belongs at the edge, not in the client
+- [ ] Describe when a BFF beats a single shared gateway
+- [ ] Name how to keep the gateway from becoming a single point of failure
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understand microservices and HTTP routing
+- [ ] Familiarity with JWT or similar auth tokens
+- [ ] Completed [Microservices Architecture](/quests/1110/microservices-architecture/) (required)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker for the optional gateway lab
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 4-5 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You have called more than one backend service from a client
+- [ ] You understand cross-cutting concerns like auth and logging
+- [ ] Ready for 3-4 hours of focused study
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The patterns are gateway-independent. The lab uses NGINX as a reverse proxy because it is everywhere; the same ideas apply to Kong, Traefik, Envoy, or a cloud gateway.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +142,10 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install --cask docker
+# Run NGINX with a custom config you will write below
+docker run -d -p 8080:80 -v "$PWD/nginx.conf:/etc/nginx/nginx.conf:ro" nginx:alpine
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +155,9 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install Docker.DockerDesktop
+docker run -d -p 8080:80 -v "${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro" nginx:alpine
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +167,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y docker.io
+sudo systemctl enable --now docker
+sudo docker run -d -p 8080:80 -v "$PWD/nginx.conf:/etc/nginx/nginx.conf:ro" nginx:alpine
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +180,264 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Managed gateways (AWS API Gateway, GCP API Gateway, Azure APIM) provide the
+# same responsibilities as configuration rather than a container. The concepts
+# transfer directly.
+docker run -d -p 8080:80 nginx:alpine
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Gateway's Responsibilities
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A gateway is a reverse proxy with opinions. Before any config, understand precisely what it should and should not own.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The cross-cutting concerns a gateway centralizes
+- What belongs at the edge vs. in a service
+- The single-point-of-failure risk
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ One Door, Many Concerns
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```mermaid
+graph LR
+    Client --> GW[API Gateway]
+    GW -->|/users/*| Users[Users Service]
+    GW -->|/orders/*| Orders[Orders Service]
+    GW -->|/catalog/*| Catalog[Catalog Service]
+    GW -.handles.-> X[Auth · Rate limit · TLS · Logging · Routing]
+    style GW fill:#7c3aed,color:#fff
+    style X fill:#FF9800,color:#fff
 ```
 
-**Step 2: Core Concepts**
+| Concern | Why it belongs at the gateway |
+| --- | --- |
+| **Routing** | Clients use one address; the gateway maps paths to services |
+| **Authentication** | Validate the token once at the edge, not in every service |
+| **Rate limiting** | Protect all services from floods in one place |
+| **TLS termination** | Decrypt once; talk plaintext on the trusted internal network |
+| **Aggregation** | Combine several service calls into one client response |
+| **Observability** | Log and trace every request from a single chokepoint |
 
-[Explanation of fundamental concepts]
+What does **not** belong at the gateway: business logic. A gateway that starts making domain decisions becomes a "god gateway" - a new monolith at the edge.
 
-**Step 3: First Implementation**
+### 🔍 Knowledge Check: Responsibilities
+- [ ] Why authenticate at the gateway instead of in each service?
+- [ ] What is the danger of putting business logic in the gateway?
+- [ ] How does a gateway become a single point of failure, and how do you mitigate it?
 
-```[language]
-# Your first working example
-[code-example]
+## 🧙‍♂️ Chapter 2: Routing, Auth, and Rate Limiting in Practice
 
-# Expected output:
-# [description of output]
+*Now configure a real gateway. NGINX makes routing and rate limiting declarative.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Path-based routing to upstream services
+- Rate limiting per client
+- Forwarding an authenticated identity downstream
+
+### 🏗️ A Minimal Gateway Config
+
+```nginx
+# nginx.conf — route by path prefix, rate-limit, and front two services
+events {}
+http {
+    # 10 requests/second per client IP, with a small burst allowance
+    limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;
+
+    upstream users    { server users:8000; }
+    upstream orders   { server orders:8000; }
+
+    server {
+        listen 80;
+
+        location /users/ {
+            limit_req zone=api burst=20 nodelay;   # rate limit at the edge
+            proxy_pass http://users/;
+            proxy_set_header X-Request-Id $request_id;   # trace every request
+        }
+
+        location /orders/ {
+            limit_req zone=api burst=20 nodelay;
+            proxy_pass http://orders/;
+            proxy_set_header X-Request-Id $request_id;
+        }
+    }
+}
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🏗️ Authenticating at the Edge
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+A common pattern: the gateway validates a JWT, then forwards the verified identity to the (now-simpler) services as a trusted header.
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+```python
+# A tiny auth gateway in Python (FastAPI) — validate once, forward identity
+import jwt, httpx
+from fastapi import FastAPI, Request, HTTPException
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+app = FastAPI()
+SECRET, SERVICES = "change-me", {"users": "http://users:8000",
+                                 "orders": "http://orders:8000"}
+
+@app.middleware("http")
+async def authenticate(request: Request, call_next):
+    token = request.headers.get("authorization", "").removeprefix("Bearer ")
+    try:
+        claims = jwt.decode(token, SECRET, algorithms=["HS256"])
+    except jwt.PyJWTError:
+        raise HTTPException(status_code=401, detail="invalid token")
+    request.state.user_id = claims["sub"]   # services trust this, set only here
+    return await call_next(request)
+```
+
+### 🔍 Knowledge Check: Routing and Auth
+- [ ] What does `limit_req` protect against?
+- [ ] Why forward the user identity as a header the services trust?
+- [ ] Why must services be unreachable except through the gateway for this trust to be safe?
+
+## 🧙‍♂️ Chapter 3: Aggregation and the Backend-for-Frontend
+
+*A mobile screen often needs data from several services. Forcing the client to make many round trips over a slow network is wasteful. The gateway can aggregate - and a BFF can do it per client type.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Response aggregation at the edge
+- The Backend-for-Frontend pattern
+- Choosing between one gateway and many BFFs
 
-### 🏗️ Advanced Implementations
+### 🏗️ Aggregation
 
-[Detailed content for chapter 2]
+```python
+# The gateway fans out to several services and composes one response.
+import asyncio, httpx
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+async def home_screen(user_id: str) -> dict:
+    async with httpx.AsyncClient() as client:
+        # Parallel calls — the client waits once, not three times
+        profile, orders, recs = await asyncio.gather(
+            client.get(f"http://users:8000/{user_id}"),
+            client.get(f"http://orders:8000/recent?user={user_id}"),
+            client.get(f"http://catalog:8000/recommend?user={user_id}"),
+        )
+    return {
+        "profile": profile.json(),
+        "recent_orders": orders.json(),
+        "recommendations": recs.json(),
+    }
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+### 🏗️ Backend-for-Frontend
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+A mobile app and a web app have different needs: the mobile client wants tiny, pre-shaped payloads; the web client wants richer data. Instead of one gateway compromising for both, the **BFF** pattern gives each client type its own gateway, owned by the team that builds that client.
 
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+```mermaid
+graph TB
+    Mobile[📱 Mobile App] --> MobileBFF[Mobile BFF<br/>small payloads]
+    Web[💻 Web App] --> WebBFF[Web BFF<br/>rich payloads]
+    MobileBFF --> Services[Users · Orders · Catalog]
+    WebBFF --> Services
+    style MobileBFF fill:#2196F3,color:#fff
+    style WebBFF fill:#4CAF50,color:#fff
+```
 
-### 🏗️ Building Your Real-World Solution
+The trade-off: BFFs eliminate one-size-fits-none compromises but multiply the number of edge components to maintain. Use a single gateway until client needs genuinely diverge.
 
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+### 🔍 Knowledge Check: Aggregation and BFF
+- [ ] Why aggregate at the gateway instead of the mobile client?
+- [ ] What problem does a BFF solve that a shared gateway cannot?
+- [ ] What is the cost of adopting BFFs?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Route Two Services
+**Objective**: Configure NGINX to route `/users/` and `/orders/` to two upstreams.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Both paths reach the correct service
+- [ ] A rate limit is applied at the edge
+- [ ] A request id is forwarded downstream
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: `curl localhost:8080/users/` and `/orders/` hit the right service.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Edge Authentication
+**Objective**: Add token validation at the gateway and forward a trusted identity header.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] An invalid token is rejected with 401 at the edge
+- [ ] A valid token forwards `X-User-Id` to the service
+- [ ] Services are unreachable except through the gateway
 
-**Validation**: [How to verify success]
+**Validation**: A service receives the identity without ever validating the token itself.
+
+### 🔴 Advanced Challenge: Aggregation or BFF Design
+**Objective**: Design the edge for an app with a mobile and a web client.
+
+**Requirements**:
+- [ ] Decide: single gateway with aggregation, or two BFFs
+- [ ] Justify the choice from the clients' differing needs
+- [ ] Name the operational cost of your decision
+
+**Validation**: The design avoids both a god-gateway and needless BFF sprawl.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Gatekeeper** - You built the single secure entrance to a kingdom of services
+- 🛡️ **Warden of the Threshold** - You centralize auth, routing, and rate limiting wisely
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Gateway Configuration** - Route, secure, and rate-limit at the edge
+- **Cross-Cutting Concern Design** - Decide what belongs at the gateway and what does not
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Scaling Strategies - Load-balance behind the gateway to scale horizontally
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Scaling Strategies](/quests/1110/scaling-strategies/) - Scale the services behind your gateway
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Event-Driven Design](/quests/1110/event-driven-design/) - The async core behind the sync facade
+- ⚔️ [Microservices Architecture](/quests/1110/microservices-architecture/) - Revisit the services the gateway fronts
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Scaling Strategies](/quests/1110/scaling-strategies/)  
+**🏗️ System Engineer**: Explore running the gateway in high availability  
+**🛡️ Security Specialist**: Deepen edge authentication and TLS termination
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [NGINX reverse proxy guide](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/) - The proxy used above
+- [Kong Gateway docs](https://docs.konghq.com/gateway/) - A full-featured API gateway
+- [Envoy Proxy docs](https://www.envoyproxy.io/docs/envoy/latest/) - The data plane behind many gateways
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [microservices.io - API Gateway](https://microservices.io/patterns/apigateway.html) - The canonical pattern
+- [Sam Newman - Backends For Frontends](https://samnewman.io/patterns/architectural/bff/) - The BFF pattern by name
+- [Building Microservices (Sam Newman), Ch. on the edge](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/) - Gateways in context
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Traefik documentation](https://doc.traefik.io/traefik/) - A modern, auto-configuring gateway
+- [JWT introduction](https://jwt.io/introduction) - The token format used in edge auth
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Configured a gateway routing to two services
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Quality Assurance]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Microservices Architecture: Decomposing the Monolith]]
+**Unlocks:** [[Scaling Strategies: Horizontal Growth, Caching, and CAP]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

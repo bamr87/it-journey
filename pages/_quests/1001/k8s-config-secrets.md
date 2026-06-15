@@ -1,68 +1,56 @@
 ---
 title: 'Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices'
 author: IT-Journey Team
-description: Master Kubernetes configuration with ConfigMaps and Secrets. Learn secure secrets management, environment variables, volume mounts, and configuration best practices.
-excerpt: Manage Kubernetes configuration securely with ConfigMaps and Secrets
+description: Master Kubernetes configuration with ConfigMaps and Secrets - inject settings via environment variables and volumes, manage sensitive data, and apply configuration best practices.
+excerpt: Manage Kubernetes configuration securely with ConfigMaps, Secrets, env vars, and volumes
 preview: images/previews/kubernetes-configmaps-quest-title-secrets-configur.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:42:00.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1001'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: kubernetes
 quest_type: main_quest
 quest_series: Kubernetes Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Orchestration Citadel
+quest_arc: The Vault and the Ledger
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/1001/kubernetes-fundamentals/
+  - /quests/1001/k8s-pods-workloads/
+  recommended_quests:
+  - /quests/1001/k8s-services-networking/
+  unlocks_quests:
+  - /quests/1010/monitoring-fundamentals/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Kubernetes Fundamentals and Pods and Workloads
+  - Comfort writing and applying Pod and Deployment manifests
+  - Awareness of the twelve-factor config principle
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A running local cluster (kind, minikube, or k3d)
+  - kubectl configured against that cluster
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can deploy a workload and edit its container spec
+  - Ready to separate configuration from code
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A Deployment that reads config from a ConfigMap and a Secret
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can inject configuration via env vars and via mounted volumes
+  - Can explain why Secrets are not encrypted by default
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between ConfigMaps and Secrets
+  - Can troubleshoot a Pod that fails to start due to missing config
 permalink: /quests/1001/k8s-config-secrets/
 categories:
 - Quests
 - Cloud-Engineering
-- Hard
+- Medium
 tags:
 - '1001'
 - kubernetes
@@ -80,108 +68,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1001 (9) Quest: Main Quest - K8s Config'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Keeper of the Vault - Mastered ConfigMaps and Secrets
+  - 🔐 Twelve-Factor Adept - Separated configuration from code
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Configuration Injection (env + volumes)
+  - 🧠 Secret Management Best Practices
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Completion of the Level 1001 Kubernetes Orchestration quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*The final gate of the Orchestration Citadel, Warrior. Your workloads run, heal, and connect - but they are hardcoded, brittle things, their database passwords baked into images for any eye to see. A true master never welds configuration to code. In this quest you learn the **Vault and the Ledger**: ConfigMaps to hold non-sensitive settings, and Secrets to guard credentials, both injected cleanly into your Pods without rebuilding a single image.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you are externalizing a feature flag, mounting a TLS certificate, or stopping a password from leaking into a Git history, this adventure teaches the discipline that separates production-grade clusters from accidents waiting to happen.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the dark ages, configuration lived wherever it was convenient: hardcoded in source, smuggled into container images, scrawled across deploy scripts. Then a single leaked image with an embedded password would unmake an entire kingdom. The twelve-factor doctrine declared a law: store config in the environment, never in the code. Kubernetes gave that law two instruments - the ConfigMap for the harmless and the Secret for the sensitive - so the same image runs unchanged in dev, staging, and production, with only the injected config differing.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches the "why" behind configuration hygiene. Master it, and you close the most common door attackers walk through: secrets left lying in the open.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **ConfigMaps** - Store non-sensitive configuration and inject it into Pods
+- [ ] **Secrets** - Hold credentials and sensitive data separately from code
+- [ ] **Injection via Environment Variables** - Surface config as env vars in a container
+- [ ] **Injection via Volumes** - Mount config and secrets as files
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Config Hygiene** - Apply the twelve-factor "config in the environment" rule
+- [ ] **Secret Security** - Understand that base64 is encoding, not encryption, and enable at-rest encryption
+- [ ] **Live Reload Awareness** - Know which injection methods update without a restart
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain when to use a ConfigMap versus a Secret
+- [ ] Inject the same data as both env vars and mounted files
+- [ ] Explain why a Secret's value is not actually encrypted by default
+- [ ] Diagnose a Pod stuck because a referenced ConfigMap is missing
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Kubernetes Fundamentals](/quests/1001/kubernetes-fundamentals/) and [Pods and Workloads](/quests/1001/k8s-pods-workloads/)
+- [ ] Comfort writing and applying Deployment manifests
+- [ ] Awareness of why configuration should live outside code
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A running local cluster (`kind`, `minikube`, or `k3d`)
+- [ ] `kubectl` configured and on your `PATH`
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can deploy a workload and edit its container spec
+- [ ] You are ready to separate configuration from code
+- [ ] Ready for 75-90 minutes of hands-on practice
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*ConfigMaps and Secrets are pure Kubernetes objects - they behave identically on every platform. You only need a working cluster and `kubectl`.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Confirm the cluster and set a working namespace
+kubectl config use-context kind-citadel
+kubectl create namespace vault
+kubectl config set-context --current --namespace=vault
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +157,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+kubectl config use-context kind-citadel
+kubectl create namespace vault
+kubectl config set-context --current --namespace=vault
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +170,9 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+kubectl create namespace vault
+kubectl config set-context --current --namespace=vault
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +182,293 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# On managed clusters the same objects work. Production clusters often integrate
+# an external secret store (AWS Secrets Manager, Vault) via the Secrets Store CSI driver:
+kubectl create namespace vault
+kubectl config set-context --current --namespace=vault
 ```
 
 **Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+- Cloud KMS can encrypt Secrets at rest in etcd - enable it for production.
+- External Secrets Operator and the Secrets Store CSI driver sync from cloud vaults.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: ConfigMaps - The Ledger of Settings
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A **ConfigMap** holds non-sensitive key-value configuration: log levels, feature flags, service URLs, entire config files. Decoupling these from the image means one image runs everywhere, configured by its environment.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Creating ConfigMaps imperatively and declaratively
+- The two shapes: simple keys and whole config files
+- Inspecting a ConfigMap
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Create a ConfigMap
 
-**Step 1: Environment Setup**
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  LOG_LEVEL: "info"            # simple key-value settings
+  FEATURE_DARK_MODE: "true"
+  app.properties: |            # an entire file as one value
+    server.port=8080
+    cache.ttl=300
+    welcome.message=Greetings, adventurer
+```
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Apply the manifest...
+kubectl apply -f app-config.yaml
+
+# ...or create one imperatively from literals or files
+kubectl create configmap app-config \
+  --from-literal=LOG_LEVEL=info \
+  --from-literal=FEATURE_DARK_MODE=true
+
+# Inspect it
+kubectl get configmap app-config -o yaml
+kubectl describe configmap app-config
 ```
 
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: ConfigMaps
+- [ ] What kind of data belongs in a ConfigMap?
+- [ ] How can a ConfigMap hold an entire config file?
+- [ ] Name two ways to create a ConfigMap.
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **ConfigMap Created**: `kubectl get configmap app-config` succeeds
+- [ ] **Data Verified**: You can see your keys in `describe` output
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Secrets - The Guarded Vault
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A **Secret** looks like a ConfigMap but is meant for sensitive data: passwords, tokens, TLS keys. Kubernetes treats Secrets with extra care - but a critical truth: **Secret values are only base64-encoded, not encrypted, by default.** Encoding is not security.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Creating Secrets safely
+- Why base64 is not encryption
+- Enabling encryption at rest
 
-### 🏗️ Advanced Implementations
+### 🏗️ Create a Secret
 
-[Detailed content for chapter 2]
+Prefer creating Secrets imperatively or from files so plaintext never lands in a committed YAML:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# From literals (Kubernetes base64-encodes for you)
+kubectl create secret generic db-credentials \
+  --from-literal=DB_USER=appuser \
+  --from-literal=DB_PASSWORD='s3cr3t-p@ss'
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+# A TLS Secret from cert files (common for Ingress)
+kubectl create secret tls web-tls --cert=tls.crt --key=tls.key
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+# Inspect - note the values are base64, NOT encrypted
+kubectl get secret db-credentials -o yaml
+echo 'czNjcjN0LXBAc3M=' | base64 --decode   # anyone can decode this!
+```
+
+If you must declare a Secret in YAML, use `stringData` so you write plaintext and Kubernetes encodes it - but **never commit such a file to Git**:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+type: Opaque
+stringData:                    # plaintext in, base64 stored (keep out of version control)
+  DB_USER: appuser
+  DB_PASSWORD: s3cr3t-p@ss
+```
+
+> ⚠️ Base64 is encoding, not encryption. Protect real Secrets with RBAC (limit who can `get secrets`), enable **encryption at rest** for etcd, and in production sync from an external vault (AWS Secrets Manager, HashiCorp Vault) via the External Secrets Operator.
+
+### 🔍 Knowledge Check: Secrets
+- [ ] Why is a Secret's value not actually secret on its own?
+- [ ] Why prefer `kubectl create secret` over a committed YAML file?
+- [ ] What three controls harden Secrets in production?
+
+## 🧙‍♂️ Chapter 3: Injecting Configuration - Env Vars and Volumes
+
+*Configuration is useless until it reaches your container. Kubernetes offers two injection styles: **environment variables** (simple, but fixed at start) and **mounted volumes** (files, which can update live).*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Injecting ConfigMaps and Secrets as env vars
+- Mounting them as files via volumes
+- Knowing which method updates without a restart
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Inject Everything Into a Deployment
 
-[Detailed content for chapter 3]
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: busybox:1.36
+          command: ["sh", "-c", "env | sort; cat /etc/appconfig/app.properties; sleep 3600"]
+          env:
+            - name: LOG_LEVEL                 # single key from a ConfigMap
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: LOG_LEVEL
+            - name: DB_PASSWORD               # single key from a Secret
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: DB_PASSWORD
+          envFrom:
+            - configMapRef:                   # import ALL keys as env vars
+                name: app-config
+          volumeMounts:
+            - name: config-volume             # mount the ConfigMap as files
+              mountPath: /etc/appconfig
+            - name: secret-volume             # mount the Secret as files
+              mountPath: /etc/secrets
+              readOnly: true
+      volumes:
+        - name: config-volume
+          configMap:
+            name: app-config
+        - name: secret-volume
+          secret:
+            secretName: db-credentials
+```
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# Apply and verify the injection worked
+kubectl apply -f app-deployment.yaml
+kubectl rollout status deployment/app
+
+# Confirm env vars landed
+kubectl exec deploy/app -- sh -c 'echo $LOG_LEVEL; echo $FEATURE_DARK_MODE'
+
+# Confirm mounted files exist (each key becomes a file)
+kubectl exec deploy/app -- ls /etc/appconfig /etc/secrets
+kubectl exec deploy/app -- cat /etc/appconfig/app.properties
+```
+
+**Env vars vs volumes - the live-update difference:**
+
+| Method | Updates without restart? | Best for |
+| --- | --- | --- |
+| `env` / `envFrom` | No - env is fixed at container start | Simple scalar settings |
+| Volume mount | Yes - the kubelet syncs changes into the file (with a short delay) | Files, certs, settings that may change |
+
+After editing a ConfigMap, env-var consumers need a rollout to pick up changes:
+
+```bash
+kubectl edit configmap app-config        # change a value
+kubectl rollout restart deployment/app   # required for env vars to refresh
+```
+
+### 🔍 Knowledge Check: Injection
+- [ ] What is the difference between `valueFrom` and `envFrom`?
+- [ ] Which injection method reflects ConfigMap edits without a restart?
+- [ ] What happens to each ConfigMap key when mounted as a volume?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Externalize a Setting
+**Objective**: Move a hardcoded setting into a ConfigMap.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Create a ConfigMap with at least two keys
+- [ ] Inject one key as an env var into a Pod
+- [ ] Confirm the value is visible inside the container
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: `kubectl exec` shows the env var set from the ConfigMap.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Guard a Credential
+**Objective**: Store a password in a Secret and consume it safely.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Create a Secret with `kubectl create secret` (no committed plaintext)
+- [ ] Inject it as an env var AND mount it as a file
+- [ ] Explain why the stored value is base64, not encrypted
 
-**Validation**: [How to verify success]
+**Validation**: Both the env var and the mounted file contain the password.
+
+### 🔴 Advanced Challenge: Full Config-Driven Deployment
+**Objective**: Run one Deployment fully configured by external ConfigMaps and Secrets.
+
+**Requirements**:
+- [ ] Use `envFrom` to import all ConfigMap keys
+- [ ] Mount both a ConfigMap and a Secret as volumes
+- [ ] Edit the ConfigMap and demonstrate the volume update vs the env-var restart requirement
+- [ ] State one production hardening step for the Secret
+
+**Validation**: You can show config arriving via env vars and files, and explain the reload behavior of each.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Keeper of the Vault** - You master ConfigMaps and Secrets
+- 🔐 **Twelve-Factor Adept** - You separate configuration from code
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Configuration Injection** - Env vars and volume mounts
+- **Secret Management Best Practices** - Encoding vs encryption, RBAC, at-rest encryption
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Monitoring Fundamentals - Observe the cluster you now fully command
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) - See inside your cluster
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Services and Networking](/quests/1001/k8s-services-networking/) - Revisit how config flows between services
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Advance to [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/)  
+**🏗️ System Engineer**: Revisit [Services and Networking](/quests/1001/k8s-services-networking/)  
+**🛡️ Security Specialist**: Study the Secret hardening notes above closely
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/) - Non-sensitive configuration
+- [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) - Sensitive data handling
+- [Configure a Pod to Use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) - Injection patterns
+- [Encrypting Confidential Data at Rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/) - Protect etcd
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [The Twelve-Factor App: Config](https://12factor.net/config) - The config-in-the-environment principle
+- [External Secrets Operator](https://external-secrets.io/) - Sync Secrets from cloud vaults
+- [Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/) - Mount external secrets as volumes
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) - ConfigMap and Secret commands
+- [Killercoda Configuration Scenarios](https://killercoda.com/kubernetes) - Hands-on config labs
 
 ## 🤝 Quest Completion Checklist
 
 Before marking this quest as complete, ensure you've:
 
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Created a ConfigMap and a Secret
+- [ ] ✅ Injected config via both env vars and volumes
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +476,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]] · [[Kubernetes Pods and Workloads: Deployments and StatefulSets]]
+**Sequel quests:** [[Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

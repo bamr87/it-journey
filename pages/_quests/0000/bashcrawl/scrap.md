@@ -38,13 +38,11 @@ keywords:
   - terminal shortcuts
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Create a symbolic link with ln -s
 - Verify the symlink with ls -l
@@ -53,15 +51,15 @@ validation_criteria:
 - Collect the portal crystal
 prerequisites:
 - Complete the Cellar side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Portal Crystal
 - Symbolic links mastery
 excerpt: Build and inspect symbolic-link portals with ln -s, ls -l, and readlink to traverse the Scrap Heap and recover the portal crystal.
 draft: false
-permalink: /quests/0000/side-quests/scrap/
+permalink: /quests/0000/scrap/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/scrap/
 ---
 *The Scrap Heap is a wasteland of discarded objects — broken swords, empty potion bottles, shattered mirrors. But hidden among the junk are portal mirrors, and learning `ln -s` lets you build instant teleportation.*
 

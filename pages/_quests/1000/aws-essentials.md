@@ -1,63 +1,51 @@
 ---
 title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
 author: IT-Journey Team
-description: Learn essential AWS services including EC2, S3, RDS, Lambda, and VPC. Build scalable cloud architectures using AWS best practices and Well-Architected Framework.
-excerpt: Master essential AWS services and build scalable cloud architectures
+description: Get hands-on with the core of AWS - IAM identities and policies, launching an EC2 instance, storing objects in S3, the building blocks of a VPC, the AWS CLI, and the Well-Architected Framework.
+excerpt: Master the foundational AWS services - IAM, EC2, S3, VPC, and the AWS CLI - and the Well-Architected pillars
 preview: images/previews/aws-essentials-core-services-quest-title-architect.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:41:10.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1000'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: aws
 quest_type: main_quest
 quest_series: Cloud Journey
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Skybridge
+quest_arc: The AWS Citadel
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: devops
+  required_quests:
+  - /quests/1000/cloud-computing-fundamentals/
+  recommended_quests:
+  - /quests/1000/cloud-computing-fundamentals/
+  unlocks_quests:
+  - /quests/1000/infrastructure-as-code/
+  - /quests/1001/kubernetes-fundamentals/
+skill_focus: cloud
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort with the terminal and basic shell commands
+  - Understanding of cloud service models (complete Cloud Computing Fundamentals first)
+  - Basic understanding of IP addresses and how a server listens on a port
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - An AWS account (the Free Tier covers everything in this quest)
+  - The AWS CLI v2 installed and configured
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Ready to work in a live cloud console and clean up resources afterward
+  - Comfortable reading JSON policy documents
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - An EC2 instance launched and then terminated, and an S3 bucket created and emptied
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can create an IAM user with a least-privilege policy
+  - Can launch, connect to, and terminate an EC2 instance from the CLI
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between a security group and a subnet
+  - Can name the pillars of the Well-Architected Framework
 permalink: /quests/1000/aws-essentials/
 categories:
 - Quests
@@ -76,112 +64,79 @@ keywords:
   - aws
   - main_quest
   secondary:
-  - cloud-engineering
-  - hands-on
-  - gamified-learning
+  - iam-ec2-s3-vpc
+  - aws-cli
+  - well-architected
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1000 (8) Quest: Main Quest - AWS'
+sub_title: 'Level 1000 (8) Quest: Main Quest - AWS Essentials'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Citadel Initiate - Provisioned your first real AWS resources
+  - 🗝️ Keymaster of IAM - Built least-privilege identities and policies
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ EC2 and S3 Provisioning
+  - 🧠 VPC Network Reasoning
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the Infrastructure as Code quest, where you automate all of this
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Welcome to the Citadel, cloud Warrior. You have studied the map of the realm in **Cloud Computing Fundamentals** - now you set foot inside the largest kingdom of all: **Amazon Web Services**. Here you will not merely read about compute and storage; you will summon a running server, store treasure in an object vault, forge keys of identity, and learn the network walls that keep the kingdom safe.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*This is a 🔴 Hard quest because it is hands-on with a live account that bills real money. Every spell you cast here, you will also dispel - launching and then terminating, creating and then deleting - so that you finish owing nothing. By the end you will have touched the four pillars every AWS architect stands on: **IAM, EC2, S3, and the VPC**, all driven from the **AWS CLI**, and judged against the **Well-Architected Framework**.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*AWS began in 2006 when Amazon realized the infrastructure it had built to run the world's largest store could be rented to everyone. Today it is the most widely used cloud, and its core services have become a shared vocabulary across the industry - even engineers on other clouds reason in terms of "the EC2 equivalent" or "an S3-like store."*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Master these essentials and you hold the keys to that vocabulary. The quest teaches not just which buttons to press, but the "why" - why an instance lives inside a subnet, why a security group is not a firewall in the old sense, and why least privilege is the first law of the cloud.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **IAM Identities and Policies** - Create users, groups, roles, and least-privilege policies
+- [ ] **EC2 Compute** - Launch, connect to, and terminate a virtual server from the CLI
+- [ ] **S3 Object Storage** - Create a bucket, upload and download objects, and lock down access
+- [ ] **VPC Networking Basics** - Explain subnets, route tables, internet gateways, and security groups
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **The AWS CLI** - Configure profiles and drive AWS entirely from the terminal
+- [ ] **Well-Architected Thinking** - Apply the six pillars to a design decision
+- [ ] **Cost Hygiene** - Tag resources and tear everything down to avoid charges
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Write an IAM policy that grants only the actions a task needs
+- [ ] Launch and terminate an EC2 instance without touching the web console
+- [ ] Explain why a public subnet needs an internet gateway and a route to it
+- [ ] Name the Well-Architected pillars and give one practice from each
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Cloud Computing Fundamentals](/quests/1000/cloud-computing-fundamentals/) (strongly recommended)
+- [ ] Comfort with the terminal and editing files
+- [ ] Basic understanding of IP addresses, ports, and SSH
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] An AWS account - the [Free Tier](https://aws.amazon.com/free/) covers this quest
+- [ ] The AWS CLI v2 installed
+- [ ] An SSH client (built into macOS/Linux; use OpenSSH or PuTTY on Windows)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 120-150 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You are comfortable working in a live account that can incur charges
+- [ ] You will diligently clean up every resource you create
+- [ ] Ready for 120-150 minutes of focused, hands-on work
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*All you truly need is the AWS CLI and an account. Install the CLI for your OS, then configure it once.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +144,17 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install the AWS CLI v2
+brew install awscli
+aws --version   # expect aws-cli/2.x
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Configure credentials (create an access key in the IAM console first)
+aws configure
+# AWS Access Key ID:     <your key>
+# AWS Secret Access Key: <your secret>
+# Default region name:   us-east-1
+# Default output format:  json
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +164,14 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install via winget
+winget install Amazon.AWSCLI
+aws --version
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Configure credentials
+aws configure
+# Provide your access key, secret, region (us-east-1), and json output
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +181,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Install AWS CLI v2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscliv2.zip
+unzip awscliv2.zip && sudo ./aws/install
+aws --version
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+aws configure   # enter key, secret, region us-east-1, json
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +197,293 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# AWS CloudShell has the CLI pre-installed and pre-authenticated.
+# Open it from the console toolbar and confirm your identity:
+aws sts get-caller-identity
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: IAM - The Keys to the Kingdom
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Before you provision anything, you must answer: who are you, and what may you do? AWS Identity and Access Management (IAM) governs every action in the account. Get IAM right and the rest of the kingdom is defensible; get it wrong and a single leaked key can burn it down.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The IAM vocabulary: users, groups, roles, and policies
+- Writing a least-privilege policy
+- Why roles beat long-lived access keys
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Identities and Policies
 
-**Step 1: Environment Setup**
+IAM has four core nouns:
+
+- **Users** - a human or application identity with long-term credentials.
+- **Groups** - a collection of users that share permissions (e.g., `developers`).
+- **Roles** - an identity with *temporary* credentials that an entity can assume (an EC2 instance, a Lambda function, or a user from another account). Prefer roles over keys.
+- **Policies** - JSON documents that grant or deny specific actions on specific resources.
+
+The first law of the cloud is **least privilege**: grant only the actions a task needs. Here is a policy that lets a principal read from one S3 bucket and nothing else:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOneBucket",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:ListBucket"],
+      "Resource": [
+        "arn:aws:s3:::my-quest-bucket",
+        "arn:aws:s3:::my-quest-bucket/*"
+      ]
+    }
+  ]
+}
+```
+
+Create a group, attach a managed policy, and add a user from the CLI:
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Create a group and attach the AWS-managed read-only policy
+aws iam create-group --group-name quest-readers
+aws iam attach-group-policy \
+  --group-name quest-readers \
+  --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess
+
+# Create a user and place it in the group
+aws iam create-user --user-name quest-apprentice
+aws iam add-user-to-group --user-name quest-apprentice --group-name quest-readers
+
+# Confirm the user's group membership
+aws iam list-groups-for-user --user-name quest-apprentice
 ```
 
-**Step 2: Core Concepts**
+> ⚠️ Never embed root account keys in code, and enable MFA on the root user. Day-to-day work should use IAM users or roles, never root.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: IAM
+- [ ] What is the difference between a user and a role?
+- [ ] What does the `Effect: Allow` / `Deny` field control in a policy?
+- [ ] Why is an IAM role safer for an EC2 instance than a stored access key?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Group created**: You created a group and attached a policy
+- [ ] **Least privilege written**: You can read the read-only policy and say what it grants
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: EC2 and S3 - Compute and Storage
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*With identity in hand, summon the two workhorses of AWS: an EC2 virtual server and an S3 object store.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Launching and terminating an EC2 instance from the CLI
+- Creating an S3 bucket and moving objects in and out
+- Locking down public access on storage
 
-### 🏗️ Advanced Implementations
+### 🏗️ Launching an EC2 Instance
 
-[Detailed content for chapter 2]
+EC2 (Elastic Compute Cloud) rents virtual machines by the second. To launch one you need a key pair (for SSH), an AMI (a machine image), and an instance type (the size). The `t2.micro` / `t3.micro` types are Free-Tier eligible.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# 1. Create an SSH key pair and save the private key locally
+aws ec2 create-key-pair --key-name quest-key \
+  --query 'KeyMaterial' --output text > quest-key.pem
+chmod 400 quest-key.pem
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+# 2. Launch a Free-Tier Amazon Linux 2023 instance
+aws ec2 run-instances \
+  --image-id resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
+  --instance-type t3.micro \
+  --key-name quest-key \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=quest-server}]' \
+  --query 'Instances[0].InstanceId' --output text
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+# 3. When finished, ALWAYS terminate to stop billing
+aws ec2 terminate-instances --instance-ids <instance-id>
+```
+
+### 🏗️ Storing Objects in S3
+
+S3 (Simple Storage Service) holds objects (files) inside buckets, with effectively unlimited capacity and 11 nines of durability.
+
+```bash
+# Create a bucket (names are globally unique - add randomness)
+aws s3 mb s3://my-quest-bucket-$RANDOM
+
+# Upload and download an object
+echo "treasure" > loot.txt
+aws s3 cp loot.txt s3://my-quest-bucket-12345/
+aws s3 cp s3://my-quest-bucket-12345/loot.txt downloaded-loot.txt
+
+# Block ALL public access (the safe default for almost every bucket)
+aws s3api put-public-access-block \
+  --bucket my-quest-bucket-12345 \
+  --public-access-block-configuration \
+  BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true
+
+# Clean up: empty and delete the bucket
+aws s3 rb s3://my-quest-bucket-12345 --force
+```
+
+> The single most common cloud breach is a publicly readable S3 bucket. Block public access by default and open it deliberately, never accidentally.
+
+### 🔍 Knowledge Check: Compute and Storage
+- [ ] What three things must you specify to launch an EC2 instance?
+- [ ] Why must an S3 bucket name be globally unique?
+- [ ] What command ensures a bucket cannot be made public?
+
+## 🧙‍♂️ Chapter 3: The VPC and the Well-Architected Framework
+
+*Your server does not float in the void - it lives inside a virtual network you control, the VPC. And every good design is measured against AWS's own rubric: the Well-Architected Framework.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- The anatomy of a VPC: subnets, route tables, gateways, security groups
+- The six pillars of the Well-Architected Framework
+- How to reason about a design, not just build it
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Anatomy of a VPC
 
-[Detailed content for chapter 3]
+A **VPC (Virtual Private Cloud)** is your own isolated network within a region, defined by a CIDR block such as `10.0.0.0/16`. Inside it:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+VPC  10.0.0.0/16
+ ├── Public subnet   10.0.1.0/24  (in AZ us-east-1a)
+ │     ├── Route table -> 0.0.0.0/0 via Internet Gateway   (reachable from the internet)
+ │     └── EC2 web server, public IP
+ └── Private subnet  10.0.2.0/24  (in AZ us-east-1b)
+       ├── Route table -> 0.0.0.0/0 via NAT Gateway        (outbound only)
+       └── Database, no public IP
+```
+
+- A **subnet** is a slice of the VPC's address range, pinned to one availability zone.
+- A **route table** decides where traffic goes. A subnet is "public" because its route table sends internet-bound traffic to an **internet gateway**.
+- A **security group** is a stateful, instance-level virtual firewall: you allow inbound rules (e.g., SSH on port 22 from your IP) and outbound is allowed by return. It is "deny by default" - if you do not allow it, it is blocked.
+
+```bash
+# Create a VPC and a security group that allows SSH only from your IP
+aws ec2 create-vpc --cidr-block 10.0.0.0/16 \
+  --query 'Vpc.VpcId' --output text
+
+aws ec2 create-security-group \
+  --group-name quest-sg --description "SSH from my IP" \
+  --vpc-id <vpc-id>
+
+aws ec2 authorize-security-group-ingress \
+  --group-id <sg-id> --protocol tcp --port 22 --cidr <your-ip>/32
+```
+
+### 🏗️ The Well-Architected Framework
+
+AWS distills good design into six pillars. Use them as a checklist for any architecture:
+
+1. **Operational Excellence** - run and monitor systems; automate and improve.
+2. **Security** - protect data and systems; apply least privilege and defense in depth.
+3. **Reliability** - recover from failure; design for multi-AZ and graceful degradation.
+4. **Performance Efficiency** - use resources efficiently; pick the right instance and storage type.
+5. **Cost Optimization** - avoid unneeded spend; right-size, use reserved/spot, and turn things off.
+6. **Sustainability** - minimize the environmental impact of your workloads.
+
+### 🔍 Knowledge Check: Networking and Architecture
+- [ ] What makes a subnet "public" rather than "private"?
+- [ ] How does a security group differ from a traditional network firewall?
+- [ ] Name three Well-Architected pillars and one practice from each.
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Forge an Identity
+**Objective**: Create an IAM group with a least-privilege policy and add a user to it, entirely from the CLI.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] A group with an attached policy (managed or custom)
+- [ ] A user added to the group
+- [ ] Verify membership with `aws iam list-groups-for-user`
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The user can perform only the actions the policy grants.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Launch and Land
+**Objective**: Launch a Free-Tier EC2 instance, connect to it over SSH, then terminate it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Create a key pair and a security group allowing SSH from your IP only
+- [ ] Launch a `t3.micro` Amazon Linux instance
+- [ ] SSH in, run `uname -a`, then terminate the instance
+- [ ] Confirm via `aws ec2 describe-instances` that it is terminated
 
-**Validation**: [How to verify success]
+**Validation**: The instance reaches `terminated` state and incurs no further charges.
+
+### 🔴 Advanced Challenge: A Well-Architected Mini-Stack
+**Objective**: Design (and optionally build) a two-subnet VPC hosting a web instance and a private datastore, then critique it against the Well-Architected pillars.
+
+**Requirements**:
+- [ ] A VPC with one public and one private subnet in different AZs
+- [ ] A security group allowing only necessary ports
+- [ ] An S3 bucket with public access blocked, tagged for cost tracking
+- [ ] A one-paragraph review naming how your design addresses at least four pillars
+
+**Validation**: Each design choice maps to a Well-Architected pillar, and you have torn every billable resource back down.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Citadel Initiate** - You provisioned and tore down real AWS resources
+- 🗝️ **Keymaster of IAM** - You build least-privilege identities by reflex
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **EC2 and S3 Provisioning** - Summon compute and storage from the CLI
+- **VPC Network Reasoning** - Explain how cloud networks are wired
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Infrastructure as Code - Stop clicking and start declaring all of this in Terraform
+- Kubernetes Fundamentals - Orchestrate containers on top of cloud compute
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Infrastructure as Code](/quests/1000/infrastructure-as-code/) - Provision everything you did here, declaratively and repeatably
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Azure Ascension](/quests/1000/azure-ascension-jekyll-deployment/) - See the same ideas on another cloud
+- ⚔️ [Cloud Computing Fundamentals](/quests/1000/cloud-computing-fundamentals/) - Revisit the concepts if any felt shaky
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Infrastructure as Code](/quests/1000/infrastructure-as-code/)  
+**🏗️ System Engineer**: Deepen VPC and networking mastery before [Infrastructure as Code](/quests/1000/infrastructure-as-code/)  
+**🛡️ Security Specialist**: Audit your IAM policies against least privilege
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) - Identities, policies, and roles
+- [Amazon EC2 Documentation](https://docs.aws.amazon.com/ec2/) - Launching and managing instances
+- [Amazon S3 Documentation](https://docs.aws.amazon.com/s3/) - Object storage and access control
+- [Amazon VPC Documentation](https://docs.aws.amazon.com/vpc/) - Virtual networks, subnets, and gateways
+- [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/) - Every command used above
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) - The six-pillar design rubric
+- [AWS Free Tier](https://aws.amazon.com/free/) - What you can run at no cost
+- [AWS Skill Builder](https://skillbuilder.aws/) - Free, official training
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [AWS Cloud Practitioner Essentials](https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/) - Free foundational course
+- [Stack Overflow: amazon-web-services tag](https://stackoverflow.com/questions/tagged/amazon-web-services) - Community Q&A
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Launched and terminated an EC2 instance, created and emptied an S3 bucket
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
-- [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
+- [ ] ✅ Tore down every billable resource to avoid charges
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1000 (8) - Cloud Computing Fundamentals]]
+**Level hub:** [[Level 1000 (8) - Cloud Computing]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained]]
+**Unlocks:** [[Infrastructure as Code: Terraform and CloudFormation Fundamentals]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

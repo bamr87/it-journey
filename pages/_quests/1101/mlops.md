@@ -1,191 +1,144 @@
 ---
 title: 'MLOps Engineering: CI/CD Pipelines for Machine Learning Production'
 author: IT-Journey Team
-description: Implement MLOps workflows for production ML systems. Learn model versioning with MLflow, CI/CD pipelines, model serving with Docker, A/B testing, and monitoring for model drift detection.
-excerpt: Build MLOps pipelines with model versioning, CI/CD, serving, and production monitoring
-preview: images/previews/mlops-engineering-descriptive-subtitle.png
+description: Operationalize machine learning models. Learn experiment tracking, model registries, serving with FastAPI, monitoring for data and model drift, and CI/CD pipelines for ML.
+excerpt: Take ML models to production with experiment tracking, serving, drift monitoring, and CI/CD
+preview: images/previews/mlops-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'
 difficulty: 🔴 Hard
-estimated_time: 5-6 hours
-primary_technology: docker
+estimated_time: 4-5 hours
+primary_technology: mlflow
 quest_type: main_quest
 quest_series: AI/ML Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Oracle's Ascent
+quest_arc: From Notebook to Production
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: devops
+  required_quests:
+  - /quests/1101/ml-fundamentals/
+  recommended_quests:
+  - /quests/1101/deep-learning-frameworks/
+  unlocks_quests:
+  - /quests/1101/ai-ethics/
+skill_focus: ai-ml
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of the ML Fundamentals quest (train + evaluate a model)
+  - Comfortable building a model with scikit-learn or PyTorch
+  - Basic familiarity with HTTP APIs and Docker helps
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ with pip or conda
+  - Docker installed for the serving section (optional but recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can train and evaluate a model end to end
+  - You want models that run reliably in production, not just notebooks
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A tracked experiment plus a model served behind an HTTP endpoint
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can log experiments and register a model version
+  - Can serve a model and detect input drift
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands why ML systems need monitoring beyond accuracy
+  - Can describe a CI/CD pipeline for retraining
 permalink: /quests/1101/mlops/
 categories:
 - Quests
-- DevOps
+- Data-Science
 - Hard
 tags:
 - '1101'
 - mlops
-- docker
 - mlflow
+- ci-cd
 - main_quest
-- devops
+- data-science
 - hands-on
 - gamified-learning
 keywords:
   primary:
   - '1101'
   - mlops
-  - docker
   - mlflow
   secondary:
-  - main_quest
-  - devops
-  - hands-on
-  - gamified-learning
+  - experiment-tracking
+  - model-serving
+  - drift-monitoring
+  - ci-cd
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1101 (13) Quest: Main Quest - MLOps'
+sub_title: 'Level 1101 (13) Quest: Main Quest - MLOps Engineering'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Production Oracle - Shipped a model from notebook to live endpoint
+  - 📡 Drift Watcher - Built monitoring that detects when a model goes stale
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Experiment Tracking & Model Registry
+  - 🧠 Model Serving & Monitoring
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the AI Ethics quest of Level 1101
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! A model that lives only in a notebook helps no one. To matter, it must serve real requests, survive real data, and improve over time. This quest, **MLOps Engineering**, leads you into the **Foundry of Production**, where machine learning becomes a reliable system instead of a one-off experiment. By its end you will have tracked an experiment, registered a model, served it behind an HTTP endpoint, and built a guard that watches for drift.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have only ever run `model.fit()` once and walked away, or you already sense that "it works on my machine" is not good enough, this adventure forges the discipline that turns a data scientist into an ML engineer.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Software has DevOps - the practice of shipping code continuously and safely. Machine learning needs more, because an ML system has three moving parts that can each rot: the code, the model, and the data. A model trained last year on last year's data quietly decays as the world shifts beneath it. **MLOps** is the craft of keeping all three healthy: tracking every experiment so results are reproducible, registering model versions so deployments are deliberate, serving models so they answer requests, and monitoring inputs so silent decay becomes a loud alert.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches the lifecycle that production AI demands - the difference between a clever demo and a system you can trust at 3 a.m.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Experiment Tracking** - Log parameters, metrics, and artifacts with MLflow so runs are reproducible
+- [ ] **Model Registry** - Version, stage, and promote models deliberately
+- [ ] **Model Serving** - Expose a trained model behind an HTTP endpoint
+- [ ] **Drift & Monitoring** - Detect when incoming data no longer matches training data
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Containerized Serving** - Package the model and API in a Docker image
+- [ ] **CI/CD for ML** - Sketch a pipeline that tests, trains, and deploys automatically
+- [ ] **A/B Comparison** - Compare two model versions on the same traffic
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why monitoring accuracy is not enough in production
+- [ ] Reproduce a past result from a logged experiment
+- [ ] Decide when drift warrants a retrain
+- [ ] Describe a safe rollout strategy for a new model version
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of the ML Fundamentals quest (train + evaluate a model)
+- [ ] Comfortable building a model with scikit-learn or PyTorch
+- [ ] Basic familiarity with HTTP requests and JSON
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10 or newer on your PATH
+- [ ] Docker (recommended for the serving section)
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 5-6 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can train and evaluate a model end to end
+- [ ] You are ready to think about systems, not just notebooks
+- [ ] Ready for 4-5 hours of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*MLflow and FastAPI are cross-platform. Docker is optional but makes the serving section production-realistic.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -193,23 +146,14 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+python3 -m venv ~/mlops-quest && source ~/mlops-quest/bin/activate
+pip install --upgrade pip
+pip install mlflow scikit-learn fastapi "uvicorn[standard]" pandas numpy
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify MLflow, then launch its tracking UI on http://localhost:5000
+python -c "import mlflow; print('mlflow', mlflow.__version__)"
+# mlflow ui    # run this in a separate terminal to browse experiments
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -219,26 +163,14 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+python -m venv $HOME\mlops-quest
+& $HOME\mlops-quest\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install mlflow scikit-learn fastapi "uvicorn[standard]" pandas numpy
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -c "import mlflow; print('mlflow', mlflow.__version__)"
+# mlflow ui   # browse runs at http://localhost:5000
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -248,28 +180,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+sudo apt update && sudo apt install -y python3-venv python3-pip
+python3 -m venv ~/mlops-quest && source ~/mlops-quest/bin/activate
+pip install --upgrade pip
+pip install mlflow scikit-learn fastapi "uvicorn[standard]" pandas numpy
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -c "import mlflow; print('mlflow', mlflow.__version__)"
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -279,225 +196,252 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace or container, the same stack runs. To serve in Docker,
+# build an image with your API and model, then run it:
+docker build -t my-model-api .
+docker run -p 8000:8000 my-model-api
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Experiment Tracking and the Model Registry
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A data scientist runs dozens of experiments. Without tracking, last week's best result is unrecoverable. **MLflow** logs every run's parameters, metrics, and the model artifact itself, so any result can be reproduced and the best one promoted.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Logging parameters, metrics, and model artifacts
+- Comparing runs to choose a winner
+- Registering and versioning a model
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Tracking a Run With MLflow
 
-**Step 1: Environment Setup**
+```python
+import mlflow
+import mlflow.sklearn
+from sklearn.datasets import load_breast_cancer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, f1_score
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+X, y = load_breast_cancer(return_X_y=True)
+X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+mlflow.set_experiment("cancer-classifier")
+
+n_estimators = 200
+with mlflow.start_run():
+    model = RandomForestClassifier(n_estimators=n_estimators, random_state=42)
+    model.fit(X_tr, y_tr)
+    pred = model.predict(X_te)
+
+    # Log the inputs and the results so this run is reproducible
+    mlflow.log_param("n_estimators", n_estimators)
+    mlflow.log_metric("accuracy", accuracy_score(y_te, pred))
+    mlflow.log_metric("f1", f1_score(y_te, pred))
+    mlflow.sklearn.log_model(model, "model")
+    print("Logged run to MLflow. Run `mlflow ui` to compare experiments.")
 ```
 
-**Step 2: Core Concepts**
+Change `n_estimators`, rerun, and MLflow records each attempt. The UI (`mlflow ui`) shows every run side by side so you pick a winner on evidence, not memory. Promote that run's model into the **registry**, which assigns it a version and a stage (Staging, Production) so deployments are deliberate and reversible.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Tracking
+- [ ] Why log parameters as well as metrics?
+- [ ] What problem does a model registry solve that file copies do not?
+- [ ] What does "promoting to Production" stage actually decide?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Environment ready**: `import mlflow` works
+- [ ] **First run logged**: You see a run in the MLflow UI
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Serving a Model Behind an Endpoint
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A registered model still does nothing until it answers requests. **Serving** wraps the model in an HTTP API so applications can send features and receive predictions. FastAPI makes this a few lines.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Wrapping a model in a FastAPI endpoint
+- Validating request payloads
+- Returning predictions as JSON
 
-### 🏗️ Advanced Implementations
+### 🏗️ A FastAPI Prediction Service
 
-[Detailed content for chapter 2]
+```python
+# save as serve.py, then run: uvicorn serve:app --reload
+import joblib
+from fastapi import FastAPI
+from pydantic import BaseModel
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+# Train once and persist (in production you would load from the registry)
+from sklearn.datasets import load_breast_cancer
+from sklearn.ensemble import RandomForestClassifier
+X, y = load_breast_cancer(return_X_y=True)
+joblib.dump(RandomForestClassifier(n_estimators=200, random_state=42).fit(X, y), "model.joblib")
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+model = joblib.load("model.joblib")
+app = FastAPI(title="Cancer Classifier")
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+class Features(BaseModel):
+    values: list[float]    # 30 feature values per the dataset
+
+@app.post("/predict")
+def predict(req: Features):
+    pred = int(model.predict([req.values])[0])
+    proba = float(model.predict_proba([req.values])[0][pred])
+    return {"prediction": pred, "confidence": round(proba, 4)}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+```
+
+Run `uvicorn serve:app --reload`, then POST feature values to `http://localhost:8000/predict`. The `/health` route is what a load balancer or Kubernetes probe checks to know the service is alive. To make it portable, package it in Docker:
+
+```dockerfile
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY serve.py model.joblib ./
+CMD ["uvicorn", "serve:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+### 🔍 Knowledge Check: Serving
+- [ ] Why validate the request payload before predicting?
+- [ ] What is the purpose of a `/health` endpoint?
+- [ ] Why containerize the service instead of running it bare?
+
+## 🧙‍♂️ Chapter 3: Monitoring, Drift, and CI/CD for ML
+
+*A deployed model degrades silently. The world changes, incoming data drifts away from the training distribution, and accuracy quietly falls - often before anyone notices. **Monitoring** catches this. The simplest signal is **data drift**: are today's inputs statistically different from training?*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Detecting input drift with a statistical test
+- Understanding model drift versus data drift
+- Sketching a CI/CD retraining pipeline
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ A Simple Drift Detector
 
-[Detailed content for chapter 3]
+```python
+import numpy as np
+from scipy.stats import ks_2samp
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+rng = np.random.default_rng(0)
+
+# Training distribution for one feature
+train_feature = rng.normal(loc=50, scale=5, size=1000)
+
+# Two batches of "live" data: one in-distribution, one drifted
+live_ok = rng.normal(loc=50, scale=5, size=300)
+live_drifted = rng.normal(loc=58, scale=5, size=300)   # the world shifted
+
+def drift_alert(reference, live, alpha=0.05):
+    # Kolmogorov-Smirnov test: small p-value => distributions differ
+    stat, p = ks_2samp(reference, live)
+    return {"p_value": round(p, 4), "drift": p < alpha}
+
+print("in-distribution:", drift_alert(train_feature, live_ok))      # drift False
+print("shifted input:  ", drift_alert(train_feature, live_drifted)) # drift True
+```
+
+When drift fires, you investigate and often **retrain**. This is where **CI/CD for ML** closes the loop: a pipeline (GitHub Actions, for example) runs on new data or on a drift alert, retrains the model, evaluates it against a held-out set and a quality gate, and - only if it beats the current Production model - promotes the new version in the registry and rolls it out (often canary or A/B first). Code, data, and model all version together so any release is reproducible and reversible.
+
+### 🔍 Knowledge Check: Monitoring & CI/CD
+- [ ] What is the difference between data drift and model drift?
+- [ ] Why might accuracy be unavailable in real time, making drift a useful proxy?
+- [ ] What quality gate should block a retrained model from shipping?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Compare Three Runs
+**Objective**: Use tracking to choose a model.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Log three MLflow runs with different `n_estimators`
+- [ ] Open `mlflow ui` and sort by F1
+- [ ] State which run you would promote and why
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can point to the highest-F1 run in the UI and justify the choice.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Serve and Call
+**Objective**: Stand up the prediction service and query it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Run the FastAPI service from Chapter 2
+- [ ] POST a real feature vector and capture the JSON response
+- [ ] Confirm `/health` returns `ok`
 
-**Validation**: [How to verify success]
+**Validation**: You receive a prediction and confidence for a valid request.
+
+### 🔴 Advanced Challenge: Drift to Retrain Trigger
+**Objective**: Wire drift detection into a decision.
+
+**Requirements**:
+- [ ] Run the KS drift detector on an in-distribution and a drifted batch
+- [ ] Write a function that returns `"retrain"` when drift fires on 2+ features
+- [ ] Describe in three sentences what your CI/CD pipeline does on that signal
+
+**Validation**: Your function recommends retraining only when meaningful drift is present.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Production Oracle** - You shipped a model from notebook to live endpoint
+- 📡 **Drift Watcher** - You built monitoring that detects a stale model
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Experiment Tracking & Model Registry** - Reproducible, versioned ML
+- **Model Serving & Monitoring** - Endpoints plus drift detection
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- AI Ethics - Govern the models you now deploy responsibly
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [AI Ethics](/quests/1101/ai-ethics/) - Govern the models you can now deploy
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Deep Learning Frameworks](/quests/1101/deep-learning-frameworks/) - Build deeper models to deploy
+- ⚔️ [ML Fundamentals](/quests/1101/ml-fundamentals/) - Refresh the evaluation discipline
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [AI Ethics](/quests/1101/ai-ethics/)  
+**🏗️ System Engineer**: Explore [AI Ethics](/quests/1101/ai-ethics/)  
+**📊 Data Scientist**: Advance to [Deep Learning Frameworks](/quests/1101/deep-learning-frameworks/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Tracking, registry, and deployment
+- [FastAPI Documentation](https://fastapi.tiangolo.com/) - The serving framework used here
+- [Docker Documentation](https://docs.docker.com/) - Containerizing the service
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Made With ML: MLOps Course](https://madewithml.com/) - A respected end-to-end course
+- [Evidently AI Docs](https://docs.evidentlyai.com/) - Production drift and data-quality monitoring
+- [Awesome MLOps](https://github.com/visenger/awesome-mlops) - Curated tools and reading
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Google: MLOps - Continuous delivery for ML](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning) - The MLOps maturity model
+- ["Hidden Technical Debt in ML Systems" (Sculley et al.)](https://papers.nips.cc/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html) - Why ML systems rot
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Tracked an experiment and served a model
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101: Machine Learning & AI]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Required:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
+**Unlocks:** [[AI Ethics and Responsible AI: Bias Detection, Fairness & Governance]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

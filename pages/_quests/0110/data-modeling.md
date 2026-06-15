@@ -1,68 +1,53 @@
 ---
 title: 'Data Modeling: Schema Design and Database Relationships'
 author: IT-Journey Team
-description: Learn data modeling techniques for designing efficient database schemas. Master ER diagrams, normalization, relationships, and data architecture best practices.
-excerpt: Design efficient database schemas with normalization, relationships, and ER diagrams
-preview: images/previews/data-modeling-schema-design-quest-title-relationsh.png
+description: Turn fuzzy requirements into rigorous database schemas using entity-relationship modeling, normalization through 3NF, and the one-to-one, one-to-many, and many-to-many relationships that connect your data.
+excerpt: Master ER modeling, normalization, relationships, and schema design to build databases that scale.
+preview: images/previews/data-modeling-schema-design-quest-title-and-relat.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:07:55.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: sql
 quest_type: main_quest
 quest_series: Database Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Data Keep
+quest_arc: Foundations of the Relational Realm
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0110/database-fundamentals/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/0110/sql-mastery/
+  - /quests/0110/query-optimization/
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Database Fundamentals (recommended)
+  - Comfort with CREATE TABLE and primary/foreign keys
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - PostgreSQL 14+ (or Docker to run it)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Understands tables, rows, and keys
+  - Ready to translate requirements into structure
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - An ER model implemented as a normalized schema
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can draw an ER diagram for a given domain
+  - Can implement a many-to-many relationship with a junction table
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands cardinality and participation
+  - Can normalize a table through 3NF
 permalink: /quests/0110/data-modeling/
 categories:
 - Quests
 - Data-Engineering
-- Hard
+- Medium
 tags:
 - '0110'
 - sql
@@ -77,111 +62,77 @@ keywords:
   - main_quest
   secondary:
   - data-engineering
-  - hands-on
-  - gamified-learning
+  - er-modeling
+  - normalization
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0110 (6) Quest: Main Quest - Data Modeling'
+sub_title: 'Level 0110 (6) Quest: Main Quest - ER Modeling & Schema Design'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Cartographer of Data - Drew an ER map of an entire domain
+  - 🛡️ Architect of the Schema - Designed normalized, relationship-rich tables
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Entity-Relationship Modeling
+  - 🧠 Normalization Through 3NF
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Deeper schema-design challenges in the Database Mastery line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Before you can query a kingdom's data, someone must first **draw its map**. That mapmaker is you. This quest, **Data Modeling**, teaches the discipline of turning vague human requirements - "we need to track students, courses, and who enrolled in what" - into a precise, normalized schema that the database can enforce forever.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*A good data model is invisible when it works and catastrophic when it doesn't. Get the relationships right and your application glides; get them wrong and you will fight your own schema for years. This is the cartographer's craft.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*The entity-relationship model was conjured in 1976 by the scholar Peter Chen, who realized that almost any domain can be described with just three primitives: **entities** (the things), **attributes** (their properties), and **relationships** (how they connect). With those three runes you can map a library, a hospital, an empire's tax records - anything. ER diagrams became the blueprint that every relational schema is built from.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest hands you Chen's runes and teaches you to wield them, then to translate the resulting diagram into real `CREATE TABLE` statements.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Entity-Relationship Modeling** - Identify entities, attributes, and relationships from requirements
+- [ ] **Cardinality** - Model one-to-one, one-to-many, and many-to-many relationships correctly
+- [ ] **Normalization (1NF-3NF)** - Eliminate redundancy and update anomalies
+- [ ] **Schema Translation** - Convert an ER diagram into a working relational schema
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Junction Tables** - Resolve many-to-many relationships into linking tables
+- [ ] **Surrogate vs Natural Keys** - Choose the right primary key strategy
+- [ ] **Denormalization Trade-offs** - Know when breaking a rule is justified
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Sketch an ER diagram for a domain you have never modeled before
+- [ ] Decide whether a relationship needs a foreign key or a junction table
+- [ ] Justify why a schema is in 3NF
+- [ ] Explain one situation where deliberate denormalization is the right call
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of tables, rows, columns, and keys
+- [ ] Familiarity with primary and foreign keys
+- [ ] Completion of [Database Fundamentals](/quests/0110/database-fundamentals/) (recommended)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] PostgreSQL 14+ installed, or Docker to run it
+- [ ] A text editor or IDE, and optionally a diagramming tool
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can read and write basic SQL `CREATE TABLE`
+- [ ] You are ready to think structurally about a problem domain
+- [ ] Ready for 75-90 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*You will draw diagrams and then build the schema in PostgreSQL. Pick how you run the database; the diagramming can happen on paper, a whiteboard, or a free online tool.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +140,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install postgresql@16
+brew services start postgresql@16
+createdb modeling_realm
+psql modeling_realm
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +154,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install PostgreSQL.PostgreSQL.16
+createdb modeling_realm
+psql modeling_realm
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +167,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y postgresql
+sudo systemctl enable --now postgresql
+sudo -u postgres createdb modeling_realm
+sudo -u postgres psql modeling_realm
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +181,237 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+docker run --name modeling -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
+docker exec -it modeling psql -U postgres
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+For diagrams, use a browser tool such as dbdiagram.io or draw.io - no install required.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Entities, Attributes, and Relationships
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The first act of modeling is reading requirements and naming the **nouns**. Most nouns become entities; their properties become attributes; the verbs connecting them become relationships.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Extracting entities and attributes from prose
+- Distinguishing an entity from an attribute
+- Naming relationships and their direction
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Reading the Requirements
 
-**Step 1: Environment Setup**
+Requirement: *"A university tracks students and courses. Each student can enrol in many courses, and each course can hold many students. Every course is taught in one department."*
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```text
+Entities:   Student, Course, Department
+Attributes: Student(student_id, name, email)
+            Course(course_id, title, credits)
+            Department(dept_id, name)
+Relationships:
+            Student  --< enrols in >--  Course      (many-to-many)
+            Course   --> belongs to -->  Department  (many-to-one)
 ```
 
-**Step 2: Core Concepts**
+A handy test: if a "thing" has its own attributes and identity, it is an entity (Course has a title and credits). If it only describes another thing, it is an attribute (a student's email describes the student).
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Entities
+- [ ] Why is `Department` an entity rather than an attribute of `Course`?
+- [ ] What attributes would you give a `Student` entity?
+- [ ] What verb names the Student-Course relationship?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Entities named**: You listed at least three entities for the domain
+- [ ] **Relationships named**: You identified the direction of each relationship
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Cardinality - One, Many, and Many-to-Many
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Cardinality describes **how many** of one entity relate to another. Get it wrong and your schema either loses data or drowns in duplication.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- One-to-one, one-to-many, and many-to-many relationships
+- Where the foreign key goes for each type
+- Resolving many-to-many with a junction table
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Three Cardinalities
 
-[Detailed content for chapter 2]
+```text
+One-to-One   (1:1):  A Person has one Passport.
+                     -> foreign key on either side, often the optional side.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+One-to-Many  (1:N):  A Department has many Courses.
+                     -> foreign key on the "many" side (Course.dept_id).
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Many-to-Many (M:N):  A Student enrols in many Courses;
+                     a Course holds many Students.
+                     -> needs a JUNCTION TABLE (enrolments).
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+The many-to-many case is where beginners stumble. You cannot put a list of students in a course row. Instead you create a third table whose rows each represent one pairing:
+
+```sql
+CREATE TABLE departments (
+    dept_id SERIAL PRIMARY KEY,
+    name    TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE courses (
+    course_id SERIAL PRIMARY KEY,
+    title     TEXT NOT NULL,
+    credits   INTEGER NOT NULL CHECK (credits > 0),
+    dept_id   INTEGER NOT NULL REFERENCES departments(dept_id)  -- 1:N
+);
+
+CREATE TABLE students (
+    student_id SERIAL PRIMARY KEY,
+    name       TEXT NOT NULL,
+    email      TEXT UNIQUE
+);
+
+-- Junction table resolves the M:N relationship between students and courses.
+CREATE TABLE enrolments (
+    student_id INTEGER NOT NULL REFERENCES students(student_id),
+    course_id  INTEGER NOT NULL REFERENCES courses(course_id),
+    enrolled_on DATE NOT NULL DEFAULT CURRENT_DATE,
+    grade      TEXT,
+    PRIMARY KEY (student_id, course_id)   -- composite key: one row per pairing
+);
+```
+
+The composite primary key `(student_id, course_id)` guarantees a student cannot enrol in the same course twice, and the junction table can carry its own attributes (`grade`, `enrolled_on`).
+
+### 🔍 Knowledge Check: Cardinality
+- [ ] On which side of a 1:N relationship does the foreign key live?
+- [ ] Why can't a many-to-many relationship be stored with a single foreign key?
+- [ ] What does the composite primary key on `enrolments` prevent?
+
+## 🧙‍♂️ Chapter 3: Normalization in Practice
+
+*Normalization formalizes the rule "store each fact once." You met it briefly in Database Fundamentals; here you apply it as a modeling step.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Driving a model from 1NF to 3NF
+- Spotting partial and transitive dependencies
+- Knowing when denormalization is a deliberate choice
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Normalizing a Real Schema
 
-[Detailed content for chapter 3]
+A naive single table for enrolments might look like this:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+enrolment(student_id, student_email, course_id, course_title,
+          dept_id, dept_name, grade)
+```
+
+Apply the forms:
+
+- **1NF**: each column atomic - already true here (no comma-separated lists).
+- **2NF**: remove columns that depend on only *part* of the composite key. `student_email` depends only on `student_id`, `course_title` only on `course_id`. Move them to `students` and `courses`.
+- **3NF**: remove transitive dependencies. `dept_name` depends on `dept_id`, which depends on the course - not on the enrolment. It belongs in `departments`.
+
+The result is exactly the four tables from Chapter 2. Normalization is not academic ceremony - it is what stops a department rename from requiring thousands of row updates and risking inconsistency.
+
+**When to denormalize:** a read-heavy analytics dashboard might deliberately store `dept_name` alongside aggregated counts to avoid repeated JOINs. That is a conscious trade of write-time complexity for read speed - acceptable only when you understand the rule you are breaking.
+
+### 🔍 Knowledge Check: Normalization
+- [ ] Which form removes partial dependencies on a composite key?
+- [ ] Why does `dept_name` violate 3NF in the flat table?
+- [ ] Name one legitimate reason to denormalize.
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Model a Blog
+**Objective**: Draw an ER diagram for a blog with Authors, Posts, and Comments.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Identify all entities and their attributes
+- [ ] Mark the cardinality of every relationship
+- [ ] Decide where each foreign key goes
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Each relationship's foreign key lands on the correct ("many") side.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build the University Schema
+**Objective**: Implement the students/courses/departments/enrolments schema in PostgreSQL.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] All four tables created with correct keys and constraints
+- [ ] The junction table uses a composite primary key
+- [ ] Insert data proving a student is enrolled in multiple courses
 
-**Validation**: [How to verify success]
+**Validation**: `SELECT` joining all four tables returns enrolment rows with grades.
+
+### 🔴 Advanced Challenge: Model and Normalize a Store
+**Objective**: Model an e-commerce store (customers, products, orders, order_items) and prove it is in 3NF.
+
+**Requirements**:
+- [ ] Resolve the order-to-product many-to-many with an `order_items` junction
+- [ ] Store the price per line item (it can change over time)
+- [ ] Document why each table satisfies 3NF
+
+**Validation**: No fact is stored twice; an order can contain many products and a product can appear in many orders.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Cartographer of Data** - You mapped an entire domain with an ER diagram
+- 🛡️ **Architect of the Schema** - You translated that map into normalized tables
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Entity-Relationship Modeling** - Convert requirements into rigorous structure
+- **Normalization Through 3NF** - Build schemas free of update anomalies
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- SQL Mastery - Query the relationships you just designed
+- Query Optimization - Index the keys that make JOINs fast
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [SQL Mastery](/quests/0110/sql-mastery/) - JOIN across the tables you modeled
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Query Optimization](/quests/0110/query-optimization/) - Tune queries over your schema
+- ⚔️ [Database Migrations](/quests/0110/database-migrations/) - Evolve the schema safely
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [SQL Mastery](/quests/0110/sql-mastery/)  
+**🏗️ System Engineer**: Explore [Database Migrations](/quests/0110/database-migrations/)  
+**📊 Data Scientist**: Advance to [Query Optimization](/quests/0110/query-optimization/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PostgreSQL Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html) - Keys, checks, and uniqueness
+- [PostgreSQL Foreign Keys](https://www.postgresql.org/docs/current/tutorial-fk.html) - Referential integrity in practice
+- [PostgreSQL Data Definition](https://www.postgresql.org/docs/current/ddl.html) - Organizing larger models
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [dbdiagram.io](https://dbdiagram.io/) - Free browser-based ER diagramming
+- [Chen's 1976 ER Model Paper](https://dl.acm.org/doi/10.1145/320434.320440) - The original entity-relationship scroll
+- [Stack Overflow: database-design tag](https://stackoverflow.com/questions/tagged/database-design) - Modeling questions answered
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Wikipedia: Entity-Relationship Model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) - Notation and concepts
+- [Wikipedia: Database Normalization](https://en.wikipedia.org/wiki/Database_normalization) - The normal forms in depth
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Drew an ER diagram and implemented it as a schema
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
+**Unlocks:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Query Optimization: Performance Tuning for Fast Database Queries]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-
+</content>

@@ -3,14 +3,13 @@ title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
 author: Quest Master IT-Journey Team
 description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into usable insights with Python and AI assistance.
 excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured, analyzable datasets.
-snippet: Breach the SEC Data Castle and turn EDGAR’s scrolls into insight.
 preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
 date: '2025-08-21T22:00:59.000Z'
 lastmod: '2025-08-20T04:37:39.000Z'
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-180 minutes
-primary_technology: 1100
+primary_technology: python
 quest_type: main_quest
 quest_series: Data Realm Conquests
 skill_focus: fullstack
@@ -55,19 +54,16 @@ fmContentType: quest
 draft: false
 comments: true
 attachments: ''
-sub-title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
 rewards:
 - 🏆 EDGAR Slayer Badge
 - ⚡ Stronger API + data wrangling skills
 - 🛠️ SEC XBRL and Frames API familiarity
 - 🎯 Reusable EDGAR data pipeline artifacts
-related_quests:
-- 'Level 1010: JSON Alchemy – From Chaos to Tables'
-- 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
-- 'Level 10001: Data Vis – Charts and Dashboards'
 redirect_from:
 - /quests/1100/edgar/
+- /quests/1100/edgar/
 layout: quest
+sub_title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 

@@ -3,7 +3,6 @@ title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture an
 author: IT-Journey Team
 description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
 excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
-snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
 preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T03:52:35.000Z'
@@ -16,26 +15,10 @@ quest_series: Web Publishing Mastery
 quest_line: Foundation Path
 quest_arc: Digital Creation Arc
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0000/hello-noob/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0000/hello-noob/
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - Content Creation
-  character_classes:
-  - 💻 Software Developer
-  - 🎨 Content Creator
-  - 🤖 AI Enthusiast
-  skill_trees:
-  - Web Publishing
-  - Version Control
-  - Static Site Generation
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -63,11 +46,6 @@ validation_criteria:
   - Explain how GitHub Pages differs from traditional web hosting
   - Describe the role of Jekyll in static site generation
   - Understand the benefits of version-controlled content publishing
-quest_mapping:
-  coordinates: '[3, 2]'
-  region: Foundation
-  realm: Development
-  biome: Web
 permalink: /quests/0011/github-pages-hidden-gem/
 categories:
 - Quests
@@ -96,7 +74,6 @@ keywords:
 fmContentType: quest
 comments: true
 attachments: ''
-sub-title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
 rewards:
   badges:
   - 🏆 GitHub Pages Master
@@ -111,6 +88,7 @@ rewards:
   - Access to advanced Jekyll customization quests
   - Eligibility for web development learning paths
 layout: quest
+sub_title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 

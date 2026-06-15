@@ -2,8 +2,7 @@
 title: Commitments to clean commits
 author: IT-Journey Team
 description: Learn how to maintain clean commits in your projects for better collaboration and version control efficiency.
-excerpt: null
-snippet: null
+excerpt:
 preview: images/previews/commitments-to-clean-commits.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:27:42.000Z'
@@ -39,8 +38,8 @@ keywords:
 fmContentType: quest
 comments: false
 attachments: ''
-sub-title: null
 layout: quest
+sub_title:
 ---
 **Ah, brave adventurer!** You've mastered the sacred art of branching and the scroll-writing ritual known as the Pull Request. Now, prepare thyself for the next enchanted trial:
 

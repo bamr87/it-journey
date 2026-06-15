@@ -10,7 +10,6 @@ keywords:
   - JavaScript
 description: Extend the contributor stats panel with charts, graphs, and enhanced data visualizations
 excerpt: The Data Sage reveals deeper patterns in your contribution history.
-snippet: Numbers tell tales — learn to read the runes of data
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0010'
@@ -26,7 +25,7 @@ quest_arc: 'Act II: Mastering the Craft'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0010/side-quests/stats-dashboard/
+permalink: /quests/0010/stats-dashboard/
 categories:
 - Quests
 - Community
@@ -52,19 +51,9 @@ quest_dependencies:
   required_quests:
   - /quests/0001/forge-your-character/
   recommended_quests:
-  - /quests/0001/side-quests/badge-collector/
+  - /quests/0001/badge-collector/
   unlocks_quests:
-  - /quests/0010/side-quests/contribution-calendar/
-learning_paths:
-  primary_paths:
-  - Frontend Developer
-  - Community Contributor
-  character_classes:
-  - 🧙 Wizard
-  - 🗡️ Rogue
-  skill_trees:
-  - Frontend Development
-  - Data Visualization
+  - /quests/0010/contribution-calendar/
 rewards:
   badges:
   - 📊 Data Sage — Enhanced stats visualization on character sheet
@@ -76,6 +65,8 @@ validation_criteria:
   - Visualization is responsive and accessible
   - Integrated into character_sheet.html
 layout: quest
+redirect_from:
+- /quests/0010/side-quests/stats-dashboard/
 ---
 # 📊 Stats Dashboard: Enhancing Your Data Visualization
 
@@ -125,52 +116,52 @@ All of this is accessible in Liquid as `site.data.contributors.YOUR_USERNAME.sta
 Create `_includes/contributor/stats_dashboard.html`:
 
 ```html
-{% raw %}
-{% assign s = include.stats %}
-{% if s %}
+
+{% raw %}{% assign s = include.stats %}{% endraw %}
+{% raw %}{% if s %}{% endraw %}
 <div class="contributor-dashboard">
 
   <!-- Language Breakdown -->
-  {% if s.top_languages.size > 0 %}
+  {% raw %}{% if s.top_languages.size > 0 %}{% endraw %}
   <div class="dashboard-section">
     <h4>🔤 Languages</h4>
     <div class="language-bars">
-      {% for lang in s.top_languages %}
+      {% raw %}{% for lang in s.top_languages %}{% endraw %}
       <div class="lang-row">
-        <span class="lang-name">{{ lang.name }}</span>
+        <span class="lang-name">{% raw %}{{ lang.name }}{% endraw %}</span>
         <div class="lang-bar-track">
-          <div class="lang-bar-fill" style="width: {{ lang.percentage }}%">
-            {{ lang.percentage }}%
+          <div class="lang-bar-fill" style="width: {% raw %}{{ lang.percentage }}{% endraw %}%">
+            {% raw %}{{ lang.percentage }}{% endraw %}%
           </div>
         </div>
       </div>
-      {% endfor %}
+      {% raw %}{% endfor %}{% endraw %}
     </div>
   </div>
-  {% endif %}
+  {% raw %}{% endif %}{% endraw %}
 
   <!-- Lines of Code -->
-  {% if s.lines_added > 0 or s.lines_removed > 0 %}
+  {% raw %}{% if s.lines_added > 0 or s.lines_removed > 0 %}{% endraw %}
   <div class="dashboard-section">
     <h4>📝 Code Impact</h4>
-    {% assign total_lines = s.lines_added | plus: s.lines_removed %}
-    {% assign add_pct = s.lines_added | times: 100 | divided_by: total_lines %}
+    {% raw %}{% assign total_lines = s.lines_added | plus: s.lines_removed %}{% endraw %}
+    {% raw %}{% assign add_pct = s.lines_added | times: 100 | divided_by: total_lines %}{% endraw %}
     <div class="code-impact-bar">
-      <div class="impact-added" style="width: {{ add_pct }}%"
-           title="{{ s.lines_added }} lines added">
-        +{{ s.lines_added }}
+      <div class="impact-added" style="width: {% raw %}{{ add_pct }}{% endraw %}%"
+           title="{% raw %}{{ s.lines_added }}{% endraw %} lines added">
+        +{% raw %}{{ s.lines_added }}{% endraw %}
       </div>
-      <div class="impact-removed" style="width: {{ 100 | minus: add_pct }}%"
-           title="{{ s.lines_removed }} lines removed">
-        -{{ s.lines_removed }}
+      <div class="impact-removed" style="width: {% raw %}{{ 100 | minus: add_pct }}{% endraw %}%"
+           title="{% raw %}{{ s.lines_removed }}{% endraw %} lines removed">
+        -{% raw %}{{ s.lines_removed }}{% endraw %}
       </div>
     </div>
   </div>
-  {% endif %}
+  {% raw %}{% endif %}{% endraw %}
 
 </div>
-{% endif %}
-{% endraw %}
+{% raw %}{% endif %}{% endraw %}
+
 ```
 
 ### Step 3: Add CSS Styles
@@ -243,9 +234,9 @@ Add to `assets/css/contributor-profile.css`:
 Edit `_includes/contributor/character_sheet.html` and add after the stats panel:
 
 ```liquid
-{% raw %}
-{% include contributor/stats_dashboard.html stats=contributor.stats %}
-{% endraw %}
+
+{% raw %}{% include contributor/stats_dashboard.html stats=contributor.stats %}{% endraw %}
+
 ```
 
 ### Step 5: Verify
@@ -266,16 +257,16 @@ Check your profile page for the new visualizations.
 Add a category section to your dashboard for extra polish:
 
 ```html
-{% raw %}
-{% if s.top_categories.size > 0 %}
+
+{% raw %}{% if s.top_categories.size > 0 %}{% endraw %}
 <div class="dashboard-section">
   <h4>📂 Top Categories</h4>
-  {% for cat in s.top_categories %}
-  <span class="category-chip">{{ cat.name }} ({{ cat.count }})</span>
-  {% endfor %}
+  {% raw %}{% for cat in s.top_categories %}{% endraw %}
+  <span class="category-chip">{% raw %}{{ cat.name }}{% endraw %} ({% raw %}{{ cat.count }}{% endraw %})</span>
+  {% raw %}{% endfor %}{% endraw %}
 </div>
-{% endif %}
-{% endraw %}
+{% raw %}{% endif %}{% endraw %}
+
 ```
 
 ## 🏆 Reward: Data Sage Badge 📊

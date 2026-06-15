@@ -45,16 +45,7 @@ quest_dependencies:
   - /quests/1010/agentic-state-persistence-and-drift/
   unlocks_quests:
   - /quests/1010/agentic-success-criteria-and-signals/
-quest_relationships:
-  sequel_quests:
-  - /quests/1010/agentic-success-criteria-and-signals/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
+  recommended_quests: []
 rewards:
   badges:
   - 🌀 Plane Walker
@@ -72,11 +63,6 @@ validation_criteria:
   - State handoff schema defined for issue → branch → PR → Actions pipeline
   - Agent correctly reads state from prior surface when starting on a new surface
   - End-to-end cross-tool scenario tested and documented
-quest_mapping:
-  coordinates: '[3, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Plane Crossing
 comments: true
 draft: false
 redirect_from:

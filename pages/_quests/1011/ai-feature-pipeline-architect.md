@@ -3,7 +3,6 @@ title: 'AI Feature Pipeline Architect: DevSecOps Mastery Quest'
 author: Quest Master AI-Pipeline Team
 description: Master the art of building AI-orchestrated feature pipelines from user request to deployment, combining DevSecOps practices with intelligent automation
 excerpt: Transform feature requests into deployed applications using AI-assisted DevSecOps pipelines with dual-format artifacts for both humans and AI agents
-snippet: From idea to deployment - let AI magic guide your development journey
 preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.png
 date: '2022-02-27T12:00:00.000Z'
 lastmod: '2025-09-29T14:28:35.000Z'
@@ -49,21 +48,16 @@ keywords:
   - feature-development
   - gamified-learning
 fmContentType: quest
-draft: draft
+draft: true
 comments: true
 attachments: ''
-sub-title: 'Level 1011 (11) Quest: AI-Powered Development Pipeline Orchestration'
 rewards:
 - 🏆 AI Pipeline Architect Badge
 - ⚡ DevSecOps Automation Mastery
 - 🛠️ Multi-Agent System Integration Skills
 - 🎯 End-to-End Feature Delivery Capability
-related_quests:
-- 'Level 1001: Backend Development Track - Server-side programming foundations'
-- 'Level 1100: API Design and Integration - Service communication patterns'
-- 'Level 1101: Testing Methodologies - Quality assurance foundations'
-- 'Level 10010: DevOps and Infrastructure Automation - Advanced deployment strategies'
 layout: quest
+sub_title: 'Level 1011 (11) Quest: AI-Powered Development Pipeline Orchestration'
 ---
 *Greetings, master architect! Welcome to the **AI Feature Pipeline Architect Quest** - an epic journey that will transform you into a wizard of AI-orchestrated development pipelines. This quest will guide you through building intelligent systems that seamlessly convert user ideas into deployed applications, preparing you for the future of software engineering where AI and human creativity work in perfect harmony.*
 

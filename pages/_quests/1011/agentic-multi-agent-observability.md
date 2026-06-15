@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1011/agentic-multi-agent-orchestration-patterns/
   unlocks_quests:
   - /quests/1011/agentic-multi-agent-failure-recovery/
-quest_relationships:
-  sequel_quests:
-  - /quests/1011/agentic-multi-agent-failure-recovery/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🔍 Reliability Engineer
-  skill_trees:
-  - Agentic AI
-  - Observability
+  recommended_quests: []
 rewards:
   badges:
   - 📜 The Scribe
@@ -75,11 +64,6 @@ validation_criteria:
   - Correlation ID propagated across all agents in a workflow
   - Unified audit log generated from sub-agent traces
   - At least one inter-agent failure detected using the audit log
-quest_mapping:
-  coordinates: '[5, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Scriptorium
 comments: true
 draft: false
 redirect_from:
@@ -123,13 +107,13 @@ jobs:
   orchestrate:
     runs-on: ubuntu-latest
     outputs:
-      correlation_id: ${{ steps.init_trace.outputs.correlation_id }}
+      correlation_id: ${% raw %}{{ steps.init_trace.outputs.correlation_id }}{% endraw %}
     steps:
       - name: Initialise correlation ID
         id: init_trace
         run: |
           # Create a unique correlation ID for this entire multi-agent operation
-          CORRELATION_ID="task-${{ github.event.issue.number }}-${{ github.run_id }}"
+          CORRELATION_ID="task-${% raw %}{{ github.event.issue.number }}{% endraw %}-${% raw %}{{ github.run_id }}{% endraw %}"
           echo "correlation_id=$CORRELATION_ID" >> "$GITHUB_OUTPUT"
           echo "🔗 Correlation ID: $CORRELATION_ID"
 
@@ -137,7 +121,7 @@ jobs:
     needs: orchestrate
     runs-on: ubuntu-latest
     env:
-      CORRELATION_ID: ${{ needs.orchestrate.outputs.correlation_id }}
+      CORRELATION_ID: ${% raw %}{{ needs.orchestrate.outputs.correlation_id }}{% endraw %}
     steps:
       - name: Execute with tracing
         run: |
@@ -150,8 +134,8 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: trace-${{ env.CORRELATION_ID }}-analysis
-          path: "trace-analysis-${{ env.CORRELATION_ID }}.json"
+          name: trace-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}-analysis
+          path: "trace-analysis-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}.json"
 ```
 
 ---

@@ -1,63 +1,48 @@
 ---
-title: 'Mentorship Programs: Developing and Growing Engineering Talent'
+title: 'Mentorship Programs: Growing Engineering Talent and Sponsoring Others'
 author: IT-Journey Team
-description: Create effective mentorship programs for engineering teams. Learn mentoring techniques, career development guidance, knowledge transfer, and talent growth strategies.
-excerpt: Build effective mentorship programs for growing engineering talent and teams
-preview: images/previews/mentorship-programs-descriptive-subtitle.png
+description: Build effective engineering mentorship. Learn mentoring models, giving feedback that lands, growth frameworks, and the difference between mentoring and sponsorship.
+excerpt: Mentor and sponsor engineers with feedback models and structured growth plans
+preview: images/previews/mentorship-programs-growing-engineering-talent.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'
 difficulty: 🔴 Hard
-estimated_time: 4-5 hours
-primary_technology: general
+estimated_time: 3-4 hours
+primary_technology: leadership
 quest_type: main_quest
 quest_series: Leadership Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Crown of Mastery
+quest_arc: The Architect-King's Ascension
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1111/technical-leadership/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
-learning_style: hands-on
+  unlocks_quests:
+  - /quests/1111/building-technical-communities/
+  - /quests/1111/career-advancement/
+skill_focus: leadership
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Solid engineering experience you can pass on
+  - Completion of Technical Leadership (recommended)
+  - Willingness to give and receive direct feedback
   system_requirements:
-  - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A document tool for growth plans and feedback notes
+  - Access to at least one person you can mentor or pair with
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can do the work well and now want to grow others who do it
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A written growth plan for one mentee and one piece of structured feedback delivered
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can deliver feedback using the SBI model
+  - Can build a growth plan tied to a real next level
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between mentoring and sponsorship
+  - Can run a useful one-on-one
 permalink: /quests/1111/mentorship-programs/
 categories:
 - Quests
@@ -67,8 +52,9 @@ tags:
 - '1111'
 - mentorship
 - main_quest
-- leadership
-- hands-on
+- feedback
+- sponsorship
+- growth
 - gamified-learning
 keywords:
   primary:
@@ -76,112 +62,78 @@ keywords:
   - mentorship
   - main_quest
   secondary:
-  - leadership
-  - hands-on
-  - gamified-learning
+  - feedback
+  - sponsorship
+  - growth-frameworks
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1111 (15) Quest: Main Quest - Mentorship'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Loremaster - Transferred hard-won knowledge to another
+  - 🛡️ Patron of the Guild - Sponsored someone into a room they could not enter alone
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Structured Feedback (SBI)
+  - 🧠 Growth-Plan Design
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, Master adventurer. Every legend you admire was shaped by someone who took the time to teach them. Now the torch passes to you. In this quest, **Mentorship Programs**, you learn the quiet, compounding art of making other engineers better - not by doing their work, but by growing their judgment, opening their doors, and telling them the truth kindly.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you mentor one junior over coffee or design a guild-wide program, this adventure gives you the frameworks to do it deliberately instead of by accident.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the old guilds, a master smith's true legacy was never a single famous blade. It was the dozen apprentices who left their forge and lit forges of their own across the realm. The master's reach multiplied with every student who surpassed them. The smiths remembered for centuries were the great teachers, not merely the great makers.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Mentorship is that multiplier. A line of code helps one product; a well-mentored engineer ships thousands of good decisions across a whole career. This quest teaches you to invest in people so their growth outlives any single project.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Mentoring vs Coaching vs Sponsoring** - Know which mode a moment calls for
+- [ ] **Feedback That Lands** - Deliver specific, kind, actionable feedback with the SBI model
+- [ ] **Growth Frameworks** - Build a development plan tied to a concrete next level
+- [ ] **Running One-on-Ones** - Hold recurring conversations that actually grow people
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Sponsorship** - Spend your own credibility to advance someone else
+- [ ] **Designing a Mentorship Program** - Pair, scope, and measure mentoring at team scale
+- [ ] **Receiving Feedback Well** - Model the behavior you want to see
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain the difference between mentoring and sponsorship to another person
+- [ ] Deliver a hard piece of feedback that the recipient thanks you for
+- [ ] Co-write a growth plan a mentee feels ownership over
+- [ ] Run a one-on-one where the mentee talks more than you do
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Real engineering experience worth passing on
+- [ ] Completion of [Technical Leadership](/quests/1111/technical-leadership/) (recommended)
+- [ ] Willingness to have honest, uncomfortable conversations
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A document tool for growth plans and feedback notes
+- [ ] At least one person you can mentor, pair with, or role-play with
+- [ ] A recurring calendar slot you can protect
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 4-5 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can do the work well and now want to grow others who do it
+- [ ] You are ready to be patient with someone else's learning curve
+- [ ] Ready for 3-4 hours of focused, reflective work
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The conversations are universal; the artifacts (growth plans, feedback logs) need a home. Pick where yours will live.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +141,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# A private, versioned mentoring journal protects continuity
+mkdir -p ~/mentoring/{growth-plans,feedback,one-on-ones}
+cd ~/mentoring && git init
+echo "# Growth Plan: <mentee>" > growth-plans/template.md
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +155,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir $HOME\mentoring\growth-plans, $HOME\mentoring\feedback, $HOME\mentoring\one-on-ones
+Set-Location $HOME\mentoring
+git init
+"# Growth Plan: <mentee>" | Out-File growth-plans\template.md
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +169,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir -p ~/mentoring/{growth-plans,feedback,one-on-ones}
+cd ~/mentoring && git init
+echo "# Growth Plan: <mentee>" > growth-plans/template.md
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +182,217 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# A shared but access-controlled doc keeps the plan visible to mentor and mentee
+# Use your team wiki; keep raw feedback notes private to protect candor.
+echo "Store growth plans in the shared wiki; keep feedback drafts private."
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Mentoring, Coaching, and Sponsoring - Three Different Spells
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*People use "mentor" for three different acts. Naming them lets you choose the right one. The biggest career accelerant - sponsorship - is the one most often skipped.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Distinguishing mentoring, coaching, and sponsoring
+- Knowing when to give answers vs ask questions
+- Spending your own capital to advance someone
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Three Modes Compared
 
-**Step 1: Environment Setup**
+| Mode | You provide | Best when | Example |
+| --- | --- | --- | --- |
+| **Mentoring** | Your experience and answers | They lack context you have | "Here's how on-call usually goes; watch for X." |
+| **Coaching** | Questions that unlock their thinking | They have the answer but can't see it | "What would have to be true for option B to work?" |
+| **Sponsoring** | Your credibility, in rooms they're not in | They're ready but lack access | Naming them for the hard project in the staffing meeting |
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```text
+The sponsorship test — ask yourself once a quarter:
+  "Whose name did I say out loud, in a room they weren't in,
+   to put them forward for an opportunity?"
+If the answer is "no one," you are mentoring but not sponsoring.
+Mentoring is advice. Sponsorship is action that costs YOU something.
 ```
 
-**Step 2: Core Concepts**
+Mentoring is generous but cheap. Sponsorship is the rarer, more powerful act: you put your own reputation on the line to advance someone. It is how careers actually accelerate.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Three Modes
+- [ ] Give an example of when coaching beats mentoring
+- [ ] Who have you sponsored - actually advocated for in a room they weren't in?
+- [ ] Why does sponsorship cost the sponsor something?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Named the mode**: You identified which mode a recent conversation needed
+- [ ] **Found a sponsorship target**: You named one person you could advocate for this quarter
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Feedback That Lands - The SBI Model
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Most feedback fails because it is vague ("be more proactive"), late, or framed as a character flaw. The **Situation-Behavior-Impact** model fixes all three: it is specific, timely, and about actions, not identity.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Structuring feedback with SBI
+- Separating observable behavior from your interpretation
+- Delivering hard feedback so it is heard, not deflected
 
-### 🏗️ Advanced Implementations
+### 🏗️ The SBI Template
 
-[Detailed content for chapter 2]
+```text
+SITUATION  — When and where, concretely:
+  "In yesterday's design review, when we hit the database section..."
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+BEHAVIOR   — What you observed, not what you assume:
+  "...you cut off Priya twice before she finished her point..."
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+IMPACT     — The effect it had:
+  "...and she went quiet for the rest of the meeting, so we lost her input
+   on the schema, which is her area of deepest expertise."
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Then stop and listen. SBI describes; it does not prescribe. Let them respond before jumping to "so next time do X." For praise, use the exact same structure - specific praise ("In the incident, your calm timeline-keeping kept us focused") is far more motivating than "great job."
+
+Pair SBI with the **Radical Candor** stance: *care personally* and *challenge directly* at the same time. Challenging without caring is obnoxious aggression; caring without challenging is ruinous empathy - the kindly silence that lets someone fail.
+
+### 🔍 Knowledge Check: Feedback
+- [ ] Rewrite "you need to communicate better" as an SBI statement
+- [ ] What is the difference between behavior and interpretation?
+- [ ] Why is "ruinous empathy" a failure of care, not an excess of it?
+
+## 🧙‍♂️ Chapter 3: Growth Plans and One-on-Ones - The Long Game
+
+*A growth plan turns "get better" into a route. A one-on-one is the recurring checkpoint where you walk it together. Neither works as a one-off; the magic is in the cadence.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Co-writing a growth plan tied to a real next level
+- Running one-on-ones the mentee owns
+- Tracking growth without micromanaging it
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Growth Plan Template
 
-[Detailed content for chapter 3]
+```markdown
+# Growth Plan: <name>  (review monthly)
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+## Current level and target
+From: <current level/role>  ->  To: <next level>, target ~<timeframe>
+
+## The 2-3 gaps to close (from the leveling rubric)
+1. <Gap, e.g. "leads design for medium-sized features end to end">
+   - Evidence we'll look for: <observable behavior>
+   - Stretch opportunity: <a real project that builds this>
+2. <Gap #2>
+
+## Strengths to lean into (don't only fix weaknesses)
+- <Strength> -> how to make it more visible/leveraged
+
+## Support I (mentor) will provide
+- <Specific commitment, e.g. "I'll get you on the X review">
+
+## Owned by the mentee
+- <What they will drive, so the plan isn't done TO them>
+```
+
+Run one-on-ones with this discipline: **it is their meeting, not your status update.** A simple agenda:
+
+```text
+1. Their topics first (always) — wins, blockers, frustrations
+2. Growth-plan check — one small step since last time?
+3. Feedback both directions — you give SBI; you ASK for SBI on yourself
+4. One thing you'll each do before next time
+```
+
+Skipping a one-on-one quietly tells someone they don't matter. Protect the slot like production.
+
+### 🔍 Knowledge Check: Growth and One-on-Ones
+- [ ] What makes a growth plan "owned by the mentee" rather than imposed?
+- [ ] Why should the mentee set the one-on-one agenda?
+- [ ] How do you track growth without micromanaging?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Practice SBI
+**Objective**: Write three SBI statements - two constructive, one of praise - about real situations.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Each names a concrete Situation, observable Behavior, and Impact
+- [ ] No character judgments ("lazy", "brilliant") - only actions and effects
+- [ ] Deliver at least one out loud to a real person
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The recipient understands exactly what to repeat or change.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build a Growth Plan
+**Objective**: Co-author a growth plan with one mentee using the template.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] 2-3 gaps tied to a real leveling rubric or next role
+- [ ] A stretch opportunity for each gap
+- [ ] A section the mentee owns and drives
 
-**Validation**: [How to verify success]
+**Validation**: The mentee can describe their own plan back without reading it.
+
+### 🔴 Advanced Challenge: Sponsor Someone
+**Objective**: Advocate for a mentee in a room they are not in.
+
+**Requirements**:
+- [ ] Name them for a real opportunity (a project, a talk, a promotion case)
+- [ ] Make a specific, evidence-backed case to the decision-makers
+- [ ] Accept that your credibility is on the line
+
+**Validation**: They get an opportunity they would not have gotten without you.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Loremaster** - You transferred hard-won knowledge to another
+- 🛡️ **Patron of the Guild** - You sponsored someone into a room they couldn't enter alone
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Structured Feedback (SBI)** - Specific, kind, actionable
+- **Growth-Plan Design** - Turn "get better" into a route
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Building Technical Communities - Scale mentorship beyond one team
+- Career Advancement - Help others (and yourself) level up deliberately
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Building Technical Communities](/quests/1111/building-technical-communities/) - Grow mentorship into a movement
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Career Advancement](/quests/1111/career-advancement/) - Plan the climb deliberately
+- ⚔️ [Technical Leadership](/quests/1111/technical-leadership/) - Revisit the leadership core
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Career Advancement](/quests/1111/career-advancement/)  
+**🏗️ System Engineer**: Explore [Building Technical Communities](/quests/1111/building-technical-communities/)  
+**🛡️ Security Specialist**: Advance to [Technical Leadership](/quests/1111/technical-leadership/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Google re:Work - Manager guides](https://rework.withgoogle.com/guides/) - Evidence-based people practices
+- [GitLab one-on-one handbook](https://handbook.gitlab.com/handbook/leadership/1-1/) - A public, detailed playbook
+- [Center for Creative Leadership - SBI model](https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-and-impact/) - The origin of Situation-Behavior-Impact
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Lara Hogan - Sponsorship vs mentorship](https://larahogan.me/blog/what-sponsorship-looks-like/) - The definitive short read
+- [Plato - engineering mentorship community](https://www.platohq.com/) - Mentor matching for engineers
+- [Rands - The Update, The Vent, and The Disaster](https://randsinrepose.com/archives/the-update-the-vent-and-the-disaster/) - One-on-one archetypes
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Radical Candor framework](https://www.radicalcandor.com/the-book/) - Kim Scott on caring and challenging
+- [Camille Fournier - The Manager's Path](https://www.oreilly.com/library/view/the-managers-path/9781491973882/) - Mentoring chapters
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
+- [ ] ✅ Delivered at least one real SBI feedback statement
+- [ ] ✅ Co-authored a growth plan with a mentee
+- [ ] ✅ Identified or acted on a sponsorship opportunity
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +400,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1111: Leadership & Innovation]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]]
+**Unlocks:** [[Building Technical Communities: Growing Developer Ecosystems]] · [[Career Advancement Strategies: Growing from Engineer to Leader]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

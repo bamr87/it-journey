@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1001/agentic-dev-environment-integration/
   unlocks_quests:
   - /quests/1001/agentic-memory-strategies/
-quest_relationships:
-  sequel_quests:
-  - /quests/1001/agentic-memory-strategies/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🛡️ SRE
-  skill_trees:
-  - Agentic AI
-  - Resilience Engineering
+  recommended_quests: []
 rewards:
   badges:
   - 🛡️ Resilience Keeper
@@ -79,11 +68,6 @@ validation_criteria:
   skill_demonstrations:
   - Can design a retry strategy that avoids infinite retry loops
   - Can configure GitHub Actions to notify humans on agent failure
-quest_mapping:
-  coordinates: '[2, 4]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Forge of Resilience
 comments: true
 draft: false
 redirect_from:
@@ -158,7 +142,7 @@ jobs:
             echo "=== Attempt $attempt of $RETRY_MAX ==="
             
             if python3 work/gh-600/scripts/run_agent_task.py \
-                --issue "${{ github.event.issue.number }}" \
+                --issue "${% raw %}{{ github.event.issue.number }}{% endraw %}" \
                 --output agent-result.json; then
               echo "✅ Agent task succeeded on attempt $attempt"
               echo "succeeded=true" >> "$GITHUB_OUTPUT"
@@ -190,8 +174,8 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const errorCode = '${{ steps.agent_task.outputs.error_code }}' || 'unknown';
-            const runUrl = `https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            const errorCode = '${% raw %}{{ steps.agent_task.outputs.error_code }}{% endraw %}' || 'unknown';
+            const runUrl = `https://github.com/${% raw %}{{ github.repository }}{% endraw %}/actions/runs/${% raw %}{{ github.run_id }}{% endraw %}`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,

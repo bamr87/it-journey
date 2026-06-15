@@ -1,81 +1,61 @@
 ---
-title: 'REST Principles: RESTful API Design Best Practices'
+title: 'REST Principles: Resources, Statelessness, and Maturity'
 author: IT-Journey Team
-description: Learn REST architectural principles for designing clean, scalable APIs. Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
-excerpt: Design clean, scalable RESTful APIs following architectural principles and best practices
-preview: images/previews/rest-principles-restful-api-design-descriptive-sub.png
+description: Master REST architectural constraints including resources, statelessness, uniform interface, HATEOAS, and the Richardson Maturity Model to design clean web APIs.
+excerpt: Learn the REST constraints, resource modeling, statelessness, HATEOAS, and the Richardson Maturity Model
+preview: images/previews/rest-principles-resources-statelessness-maturity.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:08:54.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: rest
 quest_type: main_quest
 quest_series: API Design Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Gatekeeper's Road
+quest_arc: Foundations of the Interface
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests:
-  - /quests/0111/api-authentication/
-  - /quests/0111/api-documentation/
-  - /quests/0111/api-versioning/
-  - /quests/0111/rate-limiting/
+  required_quests:
   - /quests/0111/api-fundamentals/
-  - /quests/0111/error-handling/
-  parallel_quests: []
-  sequel_quests:
-  - /quests/1000/cloud-computing-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  recommended_quests: []
+  unlocks_quests:
+  - /quests/0111/api-versioning/
+  - /quests/0111/api-documentation/
 skill_focus: backend
-learning_style: hands-on
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of API Fundamentals (HTTP methods, status codes, JSON)
+  - Comfort making requests with curl
+  - Basic understanding of client/server architecture
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - curl installed
+  - Optional jq for inspecting JSON
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can read an HTTP request and response
+  - You are ready to think about API design, not just API usage
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A resource model designed for a small domain
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can list the REST constraints and explain statelessness
+  - Can place an API on the Richardson Maturity Model
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands resource-oriented URL design
+  - Can explain what HATEOAS adds and why it is rare
 permalink: /quests/0111/rest-principles/
 categories:
 - Quests
 - Backend
-- Hard
+- Medium
 tags:
 - '0111'
 - rest
 - main_quest
 - backend
-- hands-on
+- conceptual
 - gamified-learning
 keywords:
   primary:
@@ -83,112 +63,80 @@ keywords:
   - rest
   - main_quest
   secondary:
-  - backend
-  - hands-on
-  - gamified-learning
+  - hateoas
+  - statelessness
+  - richardson-maturity
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0111 (7) Quest: Main Quest - REST'
+sub_title: 'Level 0111 (7) Quest: Main Quest - REST Principles'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Architect of Interfaces - Designed a clean, resource-oriented API
+  - 🧭 Keeper of Constraints - Internalized the six REST constraints
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Resource Modeling
+  - 🧠 REST Maturity Assessment
+  progression_points: 60
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the API Versioning and API Documentation quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have learned to speak HTTP in the API Fundamentals quest. Now you will learn to speak it **well**. **REST** - Representational State Transfer - is the architectural style that turns raw HTTP requests into elegant, predictable APIs that millions of developers can use without reading a manual.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*This quest teaches you the constraints Roy Fielding described in his year-2000 doctoral dissertation, how to model your domain as resources, why statelessness is a superpower at scale, and how to honestly assess where any API sits on the path to true REST.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the year 2000, an architect named Roy Fielding wrote down the principles that already made the web work and gave them a name: REST. He did not invent a technology - he described the constraints that, when honored, give a distributed system its remarkable properties: it scales, it tolerates failure, its parts evolve independently, and a newcomer can guess how it works.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Most APIs that call themselves "RESTful" only follow some of these constraints. Understanding the full model lets you make deliberate trade-offs instead of accidental ones - and recognize when "REST" is just a buzzword on someone's slide deck.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The REST Constraints** - Name and explain the six architectural constraints
+- [ ] **Resources and Representations** - Model a domain as nouns addressable by URL
+- [ ] **Statelessness** - Explain why each request must carry everything it needs
+- [ ] **The Uniform Interface** - Use HTTP methods and status codes consistently
+- [ ] **The Richardson Maturity Model** - Place any API on the 0-3 maturity scale
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **HATEOAS** - Understand hypermedia controls and why few APIs reach Level 3
+- [ ] **Resource Relationships** - Model nested and linked resources cleanly
+- [ ] **Idempotency and Safety** - Apply method semantics correctly in a real design
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Design resource URLs for a new domain without hesitation
+- [ ] Explain to a teammate why storing session state in the server breaks REST
+- [ ] Score any public API on the Richardson Maturity Model
+- [ ] Argue both for and against HATEOAS for a given project
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] You have completed API Fundamentals or know HTTP methods and status codes
+- [ ] You can make and read requests with curl
+- [ ] You understand JSON
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] `curl` available in your terminal
+- [ ] Optional: `jq` for inspecting JSON responses
+- [ ] An internet connection
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+This **🟡 Medium** quest expects:
+- [ ] You can already call an API and read its response
+- [ ] You are ready to reason about design trade-offs
 - [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*REST is an architectural style, not a tool - it runs everywhere HTTP does. Use these commands to explore a real REST API while you read.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -196,23 +144,10 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Explore GitHub's REST API - a famously well-designed example
+brew install jq
+curl -s https://api.github.com/repos/torvalds/linux | jq '{name, stargazers_count}'
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -222,26 +157,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Explore a real REST API from PowerShell
+winget install jqlang.jq
+curl.exe -s https://api.github.com/repos/torvalds/linux | jq "{name, stargazers_count}"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -251,28 +170,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y curl jq   # Debian/Ubuntu
+# Explore the resource-oriented structure of a real API
+curl -s https://api.github.com/repos/torvalds/linux | jq '{name, stargazers_count}'
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -282,227 +183,226 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Any container with curl works the same way
+docker run --rm curlimages/curl:latest -s \
+  https://api.github.com/repos/torvalds/linux
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Six REST Constraints
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*REST is defined by constraints, not features. An API is "RESTful" to the degree it honors these six.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The six constraints and what each buys you
+- Why constraints, not freedoms, create good architecture
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Constraints
 
-**Step 1: Environment Setup**
+1. **Client-Server** - separate the user interface from data storage so each evolves independently.
+2. **Stateless** - every request contains all the information needed to process it; the server stores no client session between requests.
+3. **Cacheable** - responses must declare whether they can be cached, so clients and intermediaries can reuse them.
+4. **Uniform Interface** - the heart of REST: resources are identified by URLs, manipulated through representations, messages are self-descriptive, and hypermedia drives state (HATEOAS).
+5. **Layered System** - a client cannot tell whether it is connected directly to the server or through proxies, gateways, and load balancers.
+6. **Code on Demand** (optional) - servers may extend clients by sending executable code (e.g., JavaScript).
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
-```
+The uniform interface is what makes REST feel familiar across APIs: a `GET` always reads, a `404` always means "not found," and a resource always lives at a URL.
 
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Constraints
+- [ ] Which constraint lets you add a load balancer without clients noticing?
+- [ ] Which constraint is the only optional one?
+- [ ] What does the "uniform interface" guarantee a newcomer?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Named all six**: You can list the constraints from memory
+- [ ] **Spotted layering**: You explained why a client need not know about proxies
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Resources, URLs, and Statelessness
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*In REST, everything is a **resource**: a user, an order, a comment. A resource is identified by a URL, and you exchange **representations** of it (usually JSON). Good URL design is mostly about choosing the right nouns.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Designing resource-oriented URLs
+- Modeling collections, items, and relationships
+- Why statelessness scales
 
-### 🏗️ Advanced Implementations
+### 🏗️ Resource-Oriented URL Design
 
-[Detailed content for chapter 2]
+URLs name **nouns**; HTTP methods supply the **verbs**. Avoid verbs in your paths.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+✅ Resource-oriented (good)            ❌ RPC-style (avoid)
+GET    /users                          GET  /getAllUsers
+GET    /users/42                       GET  /getUserById?id=42
+POST   /users                          POST /createUser
+PUT    /users/42                       POST /updateUser
+DELETE /users/42                       POST /deleteUser
+GET    /users/42/orders                GET  /getOrdersForUser?id=42
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Collections are plural (`/users`); a single item lives under its id (`/users/42`); relationships nest (`/users/42/orders`). Filtering, sorting, and paging belong in the query string, not the path:
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```bash
+# Filtering and paging via query parameters, not new endpoints
+curl -s "https://jsonplaceholder.typicode.com/comments?postId=1&_limit=3" | jq 'length'
+```
+
+**Statelessness** means the server keeps no per-client memory between requests. Each request re-sends whatever the server needs - typically an auth token in a header. The payoff is enormous: any server in a fleet can handle any request, so you scale horizontally just by adding machines, and a crash loses no session.
+
+```http
+GET /account HTTP/1.1
+Host: api.example.com
+Authorization: Bearer eyJhbGciOi...
+```
+
+### 🔍 Knowledge Check: Resources
+- [ ] Rewrite `GET /getOrdersForUser?id=42` as a resource-oriented URL
+- [ ] Where do filtering and paging parameters belong?
+- [ ] Why does statelessness make horizontal scaling easy?
+
+## 🧙‍♂️ Chapter 3: HATEOAS and the Richardson Maturity Model
+
+*Leonard Richardson described a four-level ladder that measures how RESTful an API really is. Climbing it clarifies exactly which constraints an API honors.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- The four levels of REST maturity
+- What HATEOAS adds and why it is rare
+- Scoring real APIs
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Richardson Maturity Model
 
-[Detailed content for chapter 3]
+| Level | Name | What it means |
+| --- | --- | --- |
+| **0** | The Swamp of POX | One URL, one method (usually POST). HTTP is just a tunnel. |
+| **1** | Resources | Many URLs, one resource each, but still one method. |
+| **2** | HTTP Verbs | Proper use of GET/POST/PUT/DELETE and meaningful status codes. **Most "REST" APIs live here.** |
+| **3** | Hypermedia Controls (HATEOAS) | Responses include links telling the client what it can do next. |
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+**HATEOAS** (Hypermedia As The Engine Of Application State) means the server returns not just data but the *links* to related actions, so the client discovers the API by following links rather than hard-coding URLs:
+
+```json
+{
+  "id": 42,
+  "status": "pending",
+  "total": 79.99,
+  "_links": {
+    "self":   { "href": "/orders/42" },
+    "cancel": { "href": "/orders/42/cancel", "method": "POST" },
+    "pay":    { "href": "/orders/42/payment", "method": "POST" }
+  }
+}
+```
+
+A Level 3 client never builds the URL `/orders/42/cancel` itself - it reads the `cancel` link from the response. This decouples clients from URL structure, so the server can change paths freely. In practice few APIs reach Level 3 because it adds complexity and most clients are written against fixed docs anyway. Level 2, done well, is the pragmatic sweet spot.
+
+Inspect how GitHub's API embeds related resource URLs (a hypermedia trait):
+
+```bash
+# GitHub responses embed related resource URLs ending in _url
+curl -s https://api.github.com/repos/torvalds/linux | jq 'keys | map(select(test("_url$"))) | length'
+```
+
+### 🔍 Knowledge Check: Maturity
+- [ ] At which level do most "RESTful" APIs actually sit?
+- [ ] What single feature distinguishes Level 3 from Level 2?
+- [ ] Give one reason teams skip HATEOAS.
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Fix the URLs
+**Objective**: Convert an RPC-style API to resource-oriented URLs.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Rewrite `getProduct`, `createProduct`, `deleteProduct`, `listProductsForCategory`
+- [ ] Use the correct HTTP method for each
+- [ ] Put any filtering in the query string
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: No verbs appear in your paths.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Model a Domain
+**Objective**: Design the resources for a simple blog (posts, comments, authors).
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Define collection and item URLs for each resource
+- [ ] Model the post-to-comments relationship with nesting
+- [ ] Assign a success status code to each operation
 
-**Validation**: [How to verify success]
+**Validation**: A stranger could guess your URLs from the resource names.
+
+### 🔴 Advanced Challenge: Score Three APIs
+**Objective**: Assess three public APIs on the Richardson Maturity Model.
+
+**Requirements**:
+- [ ] Pick three APIs (e.g., GitHub, JSONPlaceholder, a SOAP service)
+- [ ] Assign each a level 0-3 with justification
+- [ ] Identify what each would need to climb one level
+
+**Validation**: Each score is defensible from the API's actual behavior.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Architect of Interfaces** - You designed a clean, resource-oriented API
+- 🧭 **Keeper of Constraints** - You internalized the six REST constraints
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Resource Modeling** - Turn a domain into addressable resources
+- **REST Maturity Assessment** - Place any API on the maturity ladder
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- API Versioning - Evolve a REST API without breaking clients
+- API Documentation - Describe your resources with OpenAPI
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +60 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [API Versioning](/quests/0111/api-versioning/) - Evolve without breaking clients
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [API Documentation](/quests/0111/api-documentation/) - Describe your API with OpenAPI
+- ⚔️ [Error Handling](/quests/0111/error-handling/) - Consistent, helpful errors
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [API Versioning](/quests/0111/api-versioning/)  
+**🏗️ System Engineer**: Explore [API Documentation](/quests/0111/api-documentation/)  
+**🛡️ Security Specialist**: Check out [API Authentication](/quests/0111/api-authentication/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Roy Fielding's REST dissertation, Chapter 5](https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) - The original source
+- [MDN: HTTP overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) - HTTP foundations REST builds on
+- [GitHub REST API docs](https://docs.github.com/en/rest) - A reference-quality REST API
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Martin Fowler: Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html) - The classic explanation
+- [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines) - Production design conventions
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - A practice REST API
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [REST API Tutorial](https://restfulapi.net/) - Constraints and best practices
+- [Google API Design Guide](https://cloud.google.com/apis/design) - Resource-oriented design at scale
+- [HATEOAS (MDN glossary)](https://developer.mozilla.org/en-US/docs/Glossary/HATEOAS) - The hypermedia constraint
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Designed a resource model for a small domain
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
+**Level hub:** [[Level 0111 - API Development]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Sequel quests:** [[Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained]]
-**Related quests:** [[API Authentication: OAuth, JWT, and API Keys Implementation]] · [[API Documentation: OpenAPI Specification and Developer Experience]] · [[API Versioning: Managing API Evolution and Backwards Compatibility]] · [[Rate Limiting: API Traffic Control and Throttling Strategies]] · [[API Fundamentals: Building Web Services and HTTP APIs]] · [[Error Handling: API Response Patterns and HTTP Status Codes]]
+**Prerequisites:** [[API Fundamentals: HTTP, Requests, and JSON]]
+**Unlocks:** [[API Versioning: URI, Headers, and Backward Compatibility]] · [[API Documentation: OpenAPI, Swagger, and Contract-First]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

@@ -1,194 +1,144 @@
 ---
-title: 'GitHub Pages Basics: Deploy Free Websites in Minutes'
+title: 'GitHub Pages Basics: Host Your Jekyll Site for Free'
 author: IT-Journey Team
-description: Learn to deploy static websites for free with GitHub Pages. Step-by-step tutorial covering repository setup, custom domains, and HTTPS configuration. Perfect for portfolios and projects.
-excerpt: Deploy your first website for free using GitHub Pages with custom domains and HTTPS.
-preview: images/previews/github-pages-basics-free-hosting-fundamentals-desc.png
+description: Publish a Jekyll site to the world with GitHub Pages. Learn repository setup, the _config.yml url and baseurl, deployment, and the basics of wiring a custom domain.
+excerpt: Take your Jekyll site live for free with GitHub Pages - repo setup, config, and custom domains.
+preview: images/previews/github-pages-basics-free-hosting-quest-descriptio.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-12-19T00:00:00.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
 primary_technology: github-pages
 quest_type: main_quest
-quest_series: Web Hosting Fundamentals
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_series: Static Site Mastery
+quest_line: The Web Fundamentals Codex
+quest_arc: Forging Your First Website
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: devops
+  required_quests:
+  - /quests/0001/jekyll-fundamentals/
+  recommended_quests:
+  - /quests/0000/git-basics/
+  unlocks_quests:
+  - /quests/0001/git-workflow-mastery/
+skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic Git commands (commit, push)
+  - Completion of Jekyll Fundamentals
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Git installed and a free GitHub account
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable building a Jekyll site locally
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A Jekyll site published at a github.io URL
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can configure url and baseurl correctly
+  - Can deploy a site by pushing to GitHub
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands when baseurl must be set
+  - Can diagnose a 404 caused by a wrong baseurl
 permalink: /quests/0001/github-pages-basics/
 categories:
 - Quests
-- DevOps
-- Web-Hosting
+- Frontend
+- Static-Sites
 - Beginner
 tags:
 - '0001'
 - github-pages
-- web-hosting
-- static-sites
-- free-hosting
+- jekyll
+- hosting
+- web-development
 - main_quest
-- devops
+- frontend
 - hands-on
 - beginner
 keywords:
   primary:
   - '0001'
   - github-pages
-  - web-hosting
-  - static-sites
+  - jekyll
+  - hosting
   secondary:
-  - free-hosting
+  - web-development
   - main_quest
-  - devops
+  - frontend
   - hands-on
   - beginner
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0001 (1) Quest: Free Website Hosting with GitHub'
+sub_title: 'Level 0001 (1) Quest: Main Quest - GitHub Pages'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Herald of the Web - Published your first live website
+  - 🌱 Keeper of the Domain - Configured url, baseurl, and a custom domain
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ GitHub Pages Deployment
+  - 🧠 Site URL Configuration
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - The ability to ship every later Web Fundamentals quest to a live URL
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You forged a Jekyll site in the workshop - but a website hidden on your own machine helps no one. **GitHub Pages Basics** is the quest where your creation leaves the castle walls and joins the wider web, hosted for free and reachable from anywhere in the realm.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*This adventure teaches you to publish a static site, configure its address correctly, and even claim a custom domain of your own. By the end, you will have a real URL you can share with the world.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*For ages, putting a website online meant renting a server, configuring it, securing it, and paying for it month after month. Then the great forge of GitHub opened a gate: **GitHub Pages** - free hosting for static sites, served straight from a Git repository. Push your files, and minutes later the world can visit them, complete with HTTPS, all at no cost. It is the natural home for a Jekyll site, because GitHub Pages can even build Jekyll for you.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Master this quest and you gain a permanent place to publish everything you build in the Web Fundamentals tier and beyond.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Repository Setup** - Create a GitHub repo and enable Pages
+- [ ] **Deployment** - Publish a Jekyll site by pushing to GitHub
+- [ ] **url and baseurl** - Configure `_config.yml` so every link resolves
+- [ ] **Verify the Live Site** - Confirm your site at its `github.io` address
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Custom Domain** - Point your own domain at GitHub Pages
+- [ ] **HTTPS Enforcement** - Turn on enforced HTTPS for your site
+- [ ] **GitHub Actions Build** - Understand how Pages can build Jekyll automatically
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain when `baseurl` must be set and when it must be empty
+- [ ] Diagnose a broken-CSS page caused by a wrong `baseurl`
+- [ ] Walk someone else through publishing their first site
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic Git: `add`, `commit`, `push`
+- [ ] Completion of [Jekyll Fundamentals](/quests/0001/jekyll-fundamentals/)
+- [ ] Recommended: [Git Basics](/quests/0000/git-basics/)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Git installed and configured with your name and email
+- [ ] A free GitHub account
+- [ ] A working Jekyll site from the previous quest
 
 ### 🧠 Skill Level Indicators
 This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+- [ ] Beginner-friendly - basic Git is all you need
+- [ ] Comfortable building a Jekyll site locally
 - [ ] Ready for 60-75 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Deployment happens on GitHub's servers, so the local commands are nearly identical everywhere. Pick your shell.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -196,23 +146,15 @@ This **🟢 Easy** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Authenticate the GitHub CLI (one-time)
+brew install gh
+gh auth login
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create a repo from your existing site folder and push it
+cd my-castle
+git init && git add . && git commit -m "Initial site"
+gh repo create my-castle --public --source=. --push
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -222,26 +164,15 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install and authenticate the GitHub CLI
+winget install GitHub.cli
+gh auth login
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Initialize, commit, and push your site
+cd my-castle
+git init; git add .; git commit -m "Initial site"
+gh repo create my-castle --public --source=. --push
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -251,28 +182,15 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Install the GitHub CLI (Debian/Ubuntu example)
+sudo apt update && sudo apt install -y gh
+gh auth login
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Push your site to a new public repo
+cd my-castle
+git init && git add . && git commit -m "Initial site"
+gh repo create my-castle --public --source=. --push
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -282,225 +200,236 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a GitHub Codespace, gh is preinstalled and already authenticated.
+git add . && git commit -m "Initial site"
+git branch -M main
+git push -u origin main
+# Then enable Pages from the repo Settings UI.
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Repository - Your Site's New Home
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*GitHub Pages serves a site directly from a repository. There are two flavours, and choosing correctly saves you a world of broken links later.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The two kinds of Pages sites and how they differ
+- Creating the repo and enabling Pages
+- Where your site will live
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Two Kinds of Pages Sites
 
-**Step 1: Environment Setup**
+| Type | Repo name | Lives at | `baseurl` |
+| --- | --- | --- | --- |
+| **User/Org site** | `username.github.io` | `https://username.github.io/` | `""` (empty) |
+| **Project site** | `any-name` | `https://username.github.io/any-name/` | `"/any-name"` |
+
+This distinction matters because it determines your `baseurl` in Chapter 2.
+
+**Enable Pages** after pushing your repo. Either use the web UI (Settings -> Pages -> Source: *Deploy from a branch* -> `main` / `/ (root)`) or the CLI:
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Enable Pages from the main branch, root folder
+gh api -X POST repos/:owner/my-castle/pages \
+  -f "source[branch]=main" -f "source[path]=/"
 ```
 
-**Step 2: Core Concepts**
+GitHub will build your Jekyll site and publish it within a minute or two.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Repository
+- [ ] What repo name gives you a site at the root `username.github.io`?
+- [ ] Where does a project site named `blog` get published?
+- [ ] What does "Deploy from a branch" mean?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Repo created**: Your site is pushed to GitHub
+- [ ] **Pages enabled**: The Settings -> Pages panel shows a build in progress
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: url and baseurl - The Address Spell
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The single most common Pages bug is a site where the HTML loads but all the CSS and links are broken. The cause is almost always a mismatched `baseurl`. Learn this and you have learned the hard part.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- What `url` and `baseurl` mean
+- Setting them for user vs. project sites
+- Why links break and how to fix them
 
-### 🏗️ Advanced Implementations
+### 🏗️ Configure the Address
 
-[Detailed content for chapter 2]
+In `_config.yml`:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+# For a PROJECT site published at username.github.io/my-castle/
+url: "https://username.github.io"   # the protocol + host, no trailing slash
+baseurl: "/my-castle"               # the subpath, with a leading slash
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+# For a USER site published at username.github.io/
+# url: "https://username.github.io"
+# baseurl: ""                       # empty - the site is at the root
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+The rule: **`baseurl` is the subpath your site sits under.** A project site lives under `/my-castle/`, so links must include that prefix. Use the `relative_url` filter in templates so links respect `baseurl` automatically:
+
+```liquid
+<!-- Correct: respects baseurl on both user and project sites -->
+<link rel="stylesheet" href="{% raw %}{{ '/assets/css/style.css' | relative_url }}{% endraw %}">
+<a href="{% raw %}{{ '/about/' | relative_url }}{% endraw %}">About</a>
+
+<!-- Wrong: hard-coded path breaks on project sites -->
+<link rel="stylesheet" href="/assets/css/style.css">
+```
+
+Test the exact production configuration locally before pushing:
+
+```bash
+# Serve as GitHub Pages will, honoring baseurl
+bundle exec jekyll serve --baseurl "/my-castle"
+# Visit http://127.0.0.1:4000/my-castle/
+```
+
+### 🔍 Knowledge Check: Addressing
+- [ ] If your site loads but CSS is missing, what should you check first?
+- [ ] What `baseurl` does a user site (`username.github.io`) need?
+- [ ] Why is `relative_url` safer than hard-coding `/assets/...`?
+
+## 🧙‍♂️ Chapter 3: Custom Domains & HTTPS - Claiming Your Banner
+
+*A `github.io` address works, but a domain of your own - `mysite.dev` - is a banner worth raising. GitHub Pages supports custom domains with free, automatic HTTPS.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Pointing a domain at GitHub Pages with DNS
+- The CNAME file
+- Enforcing HTTPS
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Wire Up a Custom Domain
 
-[Detailed content for chapter 3]
+Add a `CNAME` file (no extension) to your site source containing only your domain:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+www.mysite.dev
+```
+
+Then configure DNS at your registrar. For a `www` subdomain, add a CNAME record:
+
+```text
+Type    Name    Value
+CNAME   www     username.github.io
+```
+
+For the apex domain (`mysite.dev` with no `www`), add A records to GitHub's IPs instead:
+
+```text
+Type    Name    Value
+A       @       185.199.108.153
+A       @       185.199.109.153
+A       @       185.199.110.153
+A       @       185.199.111.153
+```
+
+In **Settings -> Pages**, enter the custom domain, wait for the DNS check to pass, then tick **Enforce HTTPS**. GitHub provisions a free TLS certificate automatically.
+
+> ⚠️ DNS changes can take minutes to hours to propagate. If the domain check fails, wait and retry rather than reconfiguring.
+
+### 🔍 Knowledge Check: Domains
+- [ ] What file must your repo contain for a custom domain to stick?
+- [ ] Which record type points a `www` subdomain at GitHub Pages?
+- [ ] What does "Enforce HTTPS" give you, and what provides the certificate?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Go Live
+**Objective**: Publish your Jekyll site to a `github.io` URL.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Push your site to a public GitHub repo
+- [ ] Enable Pages from the `main` branch
+- [ ] Confirm the published URL loads
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Visiting your `github.io` URL shows your home page with working styles.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Fix the baseurl
+**Objective**: Deploy as a project site with a correct `baseurl`.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Set `url` and `baseurl` for a project site in `_config.yml`
+- [ ] Replace any hard-coded paths with `relative_url`
+- [ ] Verify locally with `--baseurl`
 
-**Validation**: [How to verify success]
+**Validation**: CSS and internal links work at `username.github.io/repo-name/`.
+
+### 🔴 Advanced Challenge: Custom Domain with HTTPS
+**Objective**: Serve your site from a domain you control with enforced HTTPS.
+
+**Requirements**:
+- [ ] Add a `CNAME` file and configure DNS records
+- [ ] Pass the GitHub Pages domain verification
+- [ ] Enable Enforce HTTPS
+
+**Validation**: `https://yourdomain` loads the site with a valid certificate.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Herald of the Web** - Your first site is live for the world
+- 🌱 **Keeper of the Domain** - You command url, baseurl, and DNS
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **GitHub Pages Deployment** - Ship a site by pushing to Git
+- **Site URL Configuration** - Never ship a broken-link site again
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Git Workflow Mastery - Collaborate and ship changes cleanly
+- Liquid Templating - Make those pages dynamic at build time
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Git Workflow Mastery](/quests/0001/git-workflow-mastery/) - Branch, review, and merge like a pro
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Liquid Templating](/quests/0001/liquid-templating/) - Power up your templates
+- ⚔️ [YAML Configuration](/quests/0001/yaml-configuration/) - Master `_config.yml`
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Git Workflow Mastery](/quests/0001/git-workflow-mastery/)  
+**🏗️ System Engineer**: Explore [YAML Configuration](/quests/0001/yaml-configuration/)  
+**🎨 Frontend Specialist**: Advance to [Liquid Templating](/quests/0001/liquid-templating/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages) - The canonical guide
+- [Configuring a Custom Domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) - DNS and CNAME setup
+- [Jekyll on GitHub Pages](https://jekyllrb.com/docs/github-pages/) - How the two fit together
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [GitHub Community Discussions](https://github.com/orgs/community/discussions) - Ask questions
+- [GitHub Pages on Stack Overflow](https://stackoverflow.com/questions/tagged/github-pages) - Tagged Q&A
+- [Let's Encrypt](https://letsencrypt.org/) - How free HTTPS certificates work
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions) - The newer build path for Pages
+- [DNS Records Explained (Cloudflare)](https://www.cloudflare.com/learning/dns/dns-records/) - A, CNAME, and friends
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Published a Jekyll site to GitHub Pages
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Jekyll Fundamentals]]
+**Unlocks:** [[Git Workflow Mastery]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

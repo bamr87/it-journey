@@ -1,68 +1,57 @@
 ---
 title: 'Deployment Pipelines: Production Release Automation Strategies'
 author: IT-Journey Team
-description: Build robust deployment pipelines for production releases. Learn blue-green deployments, rolling updates, canary releases, and automated rollback strategies.
+description: Build robust deployment pipelines for production releases. Learn environments, promotion, blue-green and canary deployments, approvals, and automated rollbacks.
 excerpt: Design and implement production-grade deployment pipelines with automated release strategies
 preview: images/previews/deployment-pipelines-production-release-automation.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:05:30.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'
-difficulty: 🟡 Medium
+difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: deployment
 quest_type: main_quest
 quest_series: DevOps Pipeline Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Forge of Automation
+quest_arc: Gates of the Pipeline
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/0101/cicd-fundamentals/
+  - /quests/0101/testing-integration/
+  recommended_quests:
+  - /quests/0101/github-actions-basics/
+  unlocks_quests:
+  - /quests/0101/environment-management/
+  - /quests/0101/secrets-management/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Understanding of CI stages and gated tests
+  - Familiarity with Git, branches, and pull requests
+  - Basic understanding of how a web service is deployed
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Git installed and a free GitHub account
+  - A text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have a working CI pipeline that builds and tests
+  - You are ready to ship changes to production safely
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A promotion pipeline with a staging gate and a manual production approval
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain blue-green, rolling, and canary deployments
+  - Can design an automated rollback trigger
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands promotion through environments
+  - Can describe when to require a human approval
 permalink: /quests/0101/deployment-pipelines/
 categories:
 - Quests
 - DevOps
-- Medium
+- Hard
 tags:
 - '0101'
 - deployment
@@ -80,108 +69,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0101 (5) Quest: Main Quest - Deployment'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Master of the Release Gate - Promoted code safely to production
+  - 🔄 Keeper of the Rollback - Designed a safe undo for every deploy
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Progressive Delivery
+  - 🧠 Rollback Strategy
+  progression_points: 60
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Environment and secrets quests in Level 0101
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have learned to build and to test. Now comes the most dangerous moment in all of software: the crossing into **production**, where real users live and real money flows. This quest, **Deployment Pipelines**, teaches you to make that crossing not with held breath and crossed fingers, but with a disciplined, reversible, automated procession.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have only ever dragged files onto a server or you already deploy on a schedule, this adventure forges the strategies that let great teams ship dozens of times a day without fear: environment promotion, blue-green and canary releases, human approval gates, and the all-important art of the rollback.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Long ago, "release day" was a feared festival. The whole guild gathered, deployed everything at once, and prayed. When it broke - and it always broke - there was no way back but a frantic, hours-long scramble to rebuild the old world from memory.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The masters of delivery rejected this terror. They declared that every deployment must be small, observed, and reversible. They built procession routes - dev to staging to production - and invented techniques to swap the kingdom's banner without the citizens ever noticing. Above all, they made the retreat as fast as the advance. Master this and a bad deploy becomes a minor inconvenience, not a catastrophe.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Environment Promotion** - Move a build through dev, staging, and production stages
+- [ ] **Deployment Strategies** - Compare recreate, rolling, blue-green, and canary releases
+- [ ] **Approval Gates** - Require a human sign-off before a production deploy
+- [ ] **Rollbacks** - Design an automatic and a manual path back to the last good release
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Progressive Delivery** - Shift traffic gradually and watch metrics before going to 100%
+- [ ] **Deployment Health Checks** - Verify a new version is healthy before sending it traffic
+- [ ] **Immutable Releases** - Deploy a versioned artifact, never a mutated server
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Choose a deployment strategy for a given risk profile
+- [ ] Explain why blue-green makes rollback instant
+- [ ] Define a metric that automatically aborts a canary
+- [ ] Promote the *same* artifact from staging to production
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of CI stages and gated tests (see Testing Integration)
+- [ ] Familiarity with Git, branches, and pull requests
+- [ ] A mental model of how a web service runs and receives traffic
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Git installed and a free GitHub account
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
-This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+This **🔴 Hard** quest expects:
+- [ ] You already have a CI pipeline that builds and tests
+- [ ] You are ready to reason about production risk
 - [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Deployment targets vary, but the pipeline patterns are universal. Each path sets up a deploy target you can promote into. The GitHub Actions environment model in Chapter 3 works on every platform.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +144,13 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install the GitHub CLI to manage environments and deployments
+brew install gh
+gh auth login
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify you can see your repo's environments
+gh api repos/:owner/:repo/environments || echo "create environments in repo settings"
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +160,13 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install the GitHub CLI
+winget install GitHub.cli
+gh auth login
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify environments
+gh api repos/:owner/:repo/environments
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +176,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian/Ubuntu
+sudo apt update && sudo apt install -y gh
+gh auth login
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify environments
+gh api repos/:owner/:repo/environments
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +192,241 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Containers make promotion trivial: the SAME image tag moves between envs.
+docker build -t myapp:$(git rev-parse --short HEAD) .
+# Push once; deploy the identical digest to staging, then production.
+docker tag myapp:$(git rev-parse --short HEAD) registry.example.com/myapp:staging
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> The golden rule of promotion: build once, deploy the same artifact everywhere. Never rebuild between staging and production, or you have not tested what you ship.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Environments and Promotion
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A change should never leap straight from a laptop to production. It travels a road of increasingly production-like environments, proving itself at each stop.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The role of dev, staging, and production
+- "Build once, promote the same artifact"
+- Why promotion beats rebuilding
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Promotion Road
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```text
+  ┌──────┐     ┌──────────┐     ┌────────────┐
+  │ dev  │ ──► │ staging  │ ──► │ production │
+  └──────┘     └──────────┘     └────────────┘
+  fast iter.   prod-like,        real users
+  loose data   integration,      real money
+               smoke tests       gated by approval
 ```
 
-**Step 2: Core Concepts**
+The single most important rule: **build the artifact once, then promote that exact artifact** through each environment. If you rebuild between staging and production, the binary you tested is not the binary you ship, and "works in staging" guarantees nothing. Promotion changes *configuration* (which database, which API keys) but never the *code artifact*.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Promotion
+- [ ] Why must production be as "prod-like" as possible before it?
+- [ ] What changes between environments - the artifact or its configuration?
+- [ ] Why is rebuilding between staging and production a trap?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Drew the road**: You sketched dev → staging → production
+- [ ] **Stated the rule**: "Build once, promote the same artifact"
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Deployment Strategies - Swapping the Banner
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*How you replace a running version matters as much as what you replace it with. Each strategy trades speed, cost, and risk differently.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Recreate, rolling, blue-green, and canary deployments
+- The rollback story for each
+- Choosing a strategy by risk tolerance
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Four Strategies
 
-[Detailed content for chapter 2]
+| Strategy | How it works | Downtime | Rollback | Best for |
+| --- | --- | --- | --- | --- |
+| **Recreate** | Stop old, start new | Yes | Redeploy old (slow) | Simple apps, dev/staging |
+| **Rolling** | Replace instances a few at a time | No | Roll forward/back instance by instance | Stateless services |
+| **Blue-Green** | Run new ("green") alongside old ("blue"), switch traffic at once | No | Flip back to blue instantly | Critical apps needing instant undo |
+| **Canary** | Send a small % of traffic to the new version, watch, then ramp up | No | Stop the ramp, route back to stable | High-traffic, risk-sensitive releases |
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+**Blue-green** keeps the old version fully running until the new one is proven, so rollback is a single, instant traffic switch. **Canary** is the most cautious: a small fraction of users hit the new version while you watch error rates and latency; only a healthy canary is promoted to full traffic.
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+```text
+Canary in action:
+  t0:  100% stable        0% canary
+  t1:   95% stable        5% canary   ← watch error rate & latency
+  t2:   75% stable       25% canary   ← still healthy? keep ramping
+  t3:    0% stable      100% canary   ← promotion complete
+  abort: route 100% back to stable the instant a metric breaches its threshold
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+### 🔍 Knowledge Check: Strategies
+- [ ] Why is rollback instant with blue-green but slow with recreate?
+- [ ] What does a canary watch before ramping traffic up?
+- [ ] Which strategy fits a high-traffic payment service, and why?
+
+## 🧙‍♂️ Chapter 3: Approval Gates and Rollbacks
+
+*The final crossing into production deserves a guard - sometimes a machine, sometimes a human - and an always-ready retreat.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- GitHub Actions environments with required reviewers
+- Automatic rollback triggers from health checks
+- The manual rollback escape hatch
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ A Promotion Pipeline with an Approval Gate
 
-[Detailed content for chapter 3]
+GitHub Actions **environments** can require a human reviewer and hold secrets. A job targeting a protected environment pauses until an approver clicks "Approve."
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+
+```yaml
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging          # auto-deploys; no reviewer required
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/deploy.sh staging
+      - run: ./scripts/smoke-test.sh staging   # health-check the new version
+
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    environment: production       # protected: requires manual approval
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/deploy.sh production
+      - name: Verify health, roll back on failure
+        run: |
+          if ! ./scripts/health-check.sh production; then
+            echo "Health check failed — rolling back"
+            ./scripts/rollback.sh production
+            exit 1
+          fi
+```
+
+
+To make the `production` job wait for a human, open the repository's **Settings → Environments → production** and add **Required reviewers**. The deployment then halts until an authorized person approves it.
+
+### 🏗️ The Rollback Discipline
+
+A rollback returns production to the last known-good release. Two paths must always exist:
+
+```bash
+# Automatic: triggered by a failing health check (as in the workflow above)
+./scripts/health-check.sh production || ./scripts/rollback.sh production
+
+# Manual: a human pulls the cord when monitoring looks wrong
+gh workflow run rollback.yml -f environment=production -f to_version=v1.4.2
+```
+
+The cardinal rule: **a deploy you cannot undo is not a deploy, it's a gamble.** Always know how to get back to the previous version before you push the new one out. Versioned, immutable artifacts make rollback as simple as re-pointing at an older tag.
+
+### 🔍 Knowledge Check: Approvals and Rollbacks
+- [ ] How do GitHub Actions environments pause a deploy for a human?
+- [ ] What should a failing post-deploy health check trigger?
+- [ ] Why must a manual rollback path exist even with automatic rollback?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Pick the Strategy
+**Objective**: Match a deployment strategy to three scenarios.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] A hobby blog with occasional updates → choose a strategy
+- [ ] A stateless API behind a load balancer → choose a strategy
+- [ ] A payment service at peak traffic → choose a strategy
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can justify each choice by downtime and rollback speed.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Gated Promotion Pipeline
+**Objective**: Build the staging → production workflow from Chapter 3.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] `deploy-staging` runs automatically with a smoke test
+- [ ] `deploy-production` targets a protected environment with a required reviewer
+- [ ] The same artifact is promoted, not rebuilt
 
-**Validation**: [How to verify success]
+**Validation**: Production waits for approval; staging deploys on its own.
+
+### 🔴 Advanced Challenge: Automated Rollback
+**Objective**: Add a health check that rolls back a bad production deploy.
+
+**Requirements**:
+- [ ] A post-deploy health check that can fail the job
+- [ ] An automatic rollback step on failure
+- [ ] A documented manual rollback command as a backup
+
+**Validation**: A deliberately broken deploy triggers an automatic rollback to the prior version.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Master of the Release Gate** - You promoted code safely to production
+- 🔄 **Keeper of the Rollback** - You designed a safe undo for every deploy
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Progressive Delivery** - Roll out gradually and observe before committing
+- **Rollback Strategy** - Make every deployment reversible
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Environment Management - Keep dev, staging, and prod in parity
+- Secrets Management - Inject the right credentials per environment
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +60 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Environment Management](/quests/0101/environment-management/) - Master parity and per-env config
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Secrets Management](/quests/0101/secrets-management/) - Credentials without leaks
+- ⚔️ [Artifact Management](/quests/0101/artifact-management/) - The immutable thing you promote
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Environment Management](/quests/0101/environment-management/)  
+**🏗️ System Engineer**: Explore [Secrets Management](/quests/0101/secrets-management/)  
+**🛡️ Security Specialist**: Check out [Secrets Management](/quests/0101/secrets-management/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [GitHub Actions: Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) - Protected environments and reviewers
+- [Kubernetes: Deployment strategies](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) - Rolling updates and rollbacks
+- [Argo Rollouts](https://argoproj.github.io/argo-rollouts/) - Canary and blue-green for Kubernetes
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Martin Fowler: Blue-Green Deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html) - The canonical write-up
+- [Martin Fowler: Canary Release](https://martinfowler.com/bliki/CanaryRelease.html) - Progressive delivery explained
+- [AWS: Deployment strategies](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/welcome.html) - Cloud-native patterns
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Accelerate / DORA metrics](https://dora.dev/) - The research linking safe deploys to performance
+- [Continuous Delivery (Humble & Farley)](https://continuousdelivery.com/) - The foundational book
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built a gated promotion pipeline with an approval
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]]
+**Unlocks:** [[Environment Management: Dev, Staging, and Production Configuration]] · [[Secrets Management: Secure Configuration and Credential Handling]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

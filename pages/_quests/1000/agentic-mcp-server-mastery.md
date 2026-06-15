@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1000/agentic-tool-selection-and-permissions/
   unlocks_quests:
   - /quests/1001/agentic-dev-environment-integration/
-quest_relationships:
-  sequel_quests:
-  - /quests/1001/agentic-dev-environment-integration/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🔧 Integration Architect
-  skill_trees:
-  - Agentic AI
-  - MCP
+  recommended_quests: []
 rewards:
   badges:
   - 🌐 MCP Initiate
@@ -79,11 +68,6 @@ validation_criteria:
   skill_demonstrations:
   - Can explain what MCP is and why it exists
   - Can configure a GitHub MCP server connection
-quest_mapping:
-  coordinates: '[2, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Protocol Archives
 comments: true
 draft: false
 redirect_from:

@@ -17,26 +17,10 @@ quest_dependencies:
   - /quests/0000/it-fundamentals/
   recommended_quests:
   - /quests/0000/os-selection/
-  unlocks_quests: []
-quest_relationships:
-  child_quests: []
-  sequel_quests: []
-  parallel_quests:
   - /quests/0000/hello-windows/
   - /quests/0000/hello-macos/
   - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Cloud Computing
-  - DevOps
-  - System Administration
-  character_classes:
-  - ☁️ Cloud Engineer
-  - 🏗️ System Engineer
-  - 💻 Software Developer
-  skill_trees:
-  - Cloud Fundamentals
-  - CLI Mastery
+  unlocks_quests: []
 skill_focus: security
 learning_style: hands-on
 permalink: /quests/0000/hello-cloud/

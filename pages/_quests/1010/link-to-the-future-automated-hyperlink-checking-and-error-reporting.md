@@ -3,14 +3,13 @@ title: 'Link to the Future: Automated Hyperlink Guardian Quest'
 author: Quest Master DevOps
 description: Master the computational arts of automated link testing and AI-powered analysis to protect your digital realm from broken hyperlink corruption
 excerpt: Build an intelligent hyperlink guardian that automatically tests, analyzes, and reports on the health of your digital realm's connections
-snippet: Even the most magnificent digital fortress is only as strong as its weakest link
 preview: images/previews/link-to-the-future-automated-hyperlink-guardian-qu.png
 date: '2025-08-12T22:51:06.000Z'
 lastmod: '2025-08-16T04:06:22.000Z'
 level: '1010'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: 1010
+primary_technology: lychee
 quest_type: main_quest
 quest_series: DevOps Automation Mastery Path
 skill_focus: devops
@@ -49,19 +48,15 @@ keywords:
 fmContentType: quest
 comments: true
 attachments: ''
-sub-title: 'Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration'
 rewards:
 - 🏆 Hyperlink Guardian Badge - Master of Automated Link Protection
 - ⚡ CI/CD Automation Mastery - Advanced pipeline orchestration skills
 - 🛠️ AI Integration Proficiency - Intelligent analysis and reporting capabilities
 - 🎯 Site Quality Assurance Excellence - Proactive issue detection and resolution
-related_quests:
-- 'Level 1001 (9): Jekyll Site Deployment Automation'
-- 'Level 1011 (11): Advanced GitHub Actions Patterns'
-- 'Level 1100 (12): AI-Powered Code Review Systems'
 redirect_from:
 - /quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting/
 layout: quest
+sub_title: 'Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration'
 ---
 *In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 
@@ -426,7 +421,7 @@ on:
         type: boolean
 
 env:
-  SITE_URL: ${{ github.pages.url }}
+  SITE_URL: ${% raw %}{{ github.pages.url }}{% endraw %}
   OUTPUT_DIR: './link-check-results'
 
 jobs:
@@ -549,9 +544,9 @@ jobs:
     - name: 📁 Upload Scan Results as Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: link-health-results-${{ github.run_number }}
+        name: link-health-results-${% raw %}{{ github.run_number }}{% endraw %}
         path: |
-          ${{ env.OUTPUT_DIR }}/
+          ${% raw %}{{ env.OUTPUT_DIR }}{% endraw %}/
         retention-days: 30
     
     - name: 🤖 Prepare AI Analysis Data
@@ -608,7 +603,7 @@ jobs:
         ls -la "$ANALYSIS_DIR"
     
     outputs:
-      broken_count: ${{ steps.prepare-analysis.outputs.broken_count }}
+      broken_count: ${% raw %}{{ steps.prepare-analysis.outputs.broken_count }}{% endraw %}
 
   ai-analysis:
     name: 🧠 AI-Powered Link Analysis
@@ -626,13 +621,13 @@ jobs:
     - name: 📥 Download Scan Results
       uses: actions/download-artifact@v4
       with:
-        name: link-health-results-${{ github.run_number }}
+        name: link-health-results-${% raw %}{{ github.run_number }}{% endraw %}
         path: ./analysis-input
     
     - name: 🧠 Execute AI Analysis
       id: ai-analysis
       env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_API_KEY: ${% raw %}{{ secrets.OPENAI_API_KEY }}{% endraw %}
       run: |
         # Create AI analysis script
         cat > ai_analyzer.py << 'PYTHON_EOF'
@@ -751,7 +746,7 @@ jobs:
     - name: 📋 Create GitHub Issue with Analysis
       uses: actions/github-script@v7
       env:
-        ANALYSIS_FILE: ${{ steps.ai-analysis.outputs.analysis_file }}
+        ANALYSIS_FILE: ${% raw %}{{ steps.ai-analysis.outputs.analysis_file }}{% endraw %}
       with:
         script: |
           const fs = require('fs');

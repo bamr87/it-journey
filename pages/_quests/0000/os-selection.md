@@ -18,30 +18,11 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/it-fundamentals/
+  - /quests/0000/character-selection/
   unlocks_quests:
   - /quests/0000/hello-windows/
   - /quests/0000/hello-macos/
   - /quests/0000/linux-fundamentals/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/hello-windows/
-  - /quests/0000/hello-macos/
-  - /quests/0000/linux-fundamentals/
-  parallel_quests:
-  - /quests/0000/character-selection/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  skill_trees:
-  - Operating Systems
-  - Platform Selection
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:

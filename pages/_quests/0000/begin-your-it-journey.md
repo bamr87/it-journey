@@ -3,7 +3,6 @@ title: Begin your IT Journey
 author: IT-Journey Team
 description: Take your first steps into the world of information technology
 excerpt: Start your adventure with the essential skills and mindset for IT success
-snippet: null
 preview: images/previews/begin-your-it-journey.png
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
@@ -19,29 +18,10 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/hello-noob/
+  - /quests/0000/it-fundamentals/
   unlocks_quests:
   - /quests/0000/character-building/
   - /quests/0000/character-selection/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/character-building/
-  parallel_quests:
-  - /quests/0000/it-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Cybersecurity
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  skill_trees:
-  - Career Planning
-  - IT Fundamentals
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -89,7 +69,7 @@ keywords:
   - '0000'
 fmContentType: quest
 draft: false
-meta: null
+meta:
 slug: journey
 layout: quest
 ---

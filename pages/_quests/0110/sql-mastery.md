@@ -1,63 +1,48 @@
 ---
 title: 'SQL Mastery: Query Language Proficiency for Data Professionals'
 author: IT-Journey Team
-description: Become proficient in SQL query language with advanced SELECT statements, JOINs, subqueries, window functions, and complex data manipulation techniques.
-excerpt: Master advanced SQL query techniques including JOINs, subqueries, and window functions
-preview: images/previews/sql-mastery-query-language-proficiency-descriptive.png
+description: Wield SQL like a battle-mage - SELECT, JOIN, GROUP BY, subqueries, views, indexes, and transactions - against a real PostgreSQL database, turning stored data into precise answers.
+excerpt: Master the SQL incantations that retrieve, combine, aggregate, and protect relational data.
+preview: images/previews/sql-mastery-query-language-proficiency-quest-titl.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:07:39.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: sql
 quest_type: main_quest
 quest_series: Database Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Data Keep
+quest_arc: The Query Codex
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/0110/database-fundamentals/
+  recommended_quests:
+  - /quests/0110/data-modeling/
+  unlocks_quests:
+  - /quests/0110/query-optimization/
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Database Fundamentals (recommended)
+  - Understanding of tables, keys, and relationships
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - PostgreSQL 14+ (or Docker to run it)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable creating tables and inserting rows
+  - Ready to write and debug nontrivial queries
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A multi-table query joining at least three tables
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write INNER and LEFT JOINs correctly
+  - Can aggregate with GROUP BY and filter with HAVING
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands when to use a subquery versus a JOIN
+  - Can explain what an index does for lookups
 permalink: /quests/0110/sql-mastery/
 categories:
 - Quests
@@ -77,111 +62,77 @@ keywords:
   - main_quest
   secondary:
   - data-engineering
-  - hands-on
-  - gamified-learning
+  - joins
+  - aggregation
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0110 (6) Quest: Main Quest - SQL'
+sub_title: 'Level 0110 (6) Quest: Main Quest - The Query Codex'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Battle-Mage of Queries - Joined, grouped, and subqueried with mastery
+  - 🛡️ Warden of the View - Built reusable views and ran safe transactions
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Advanced SQL Querying
+  - 🧠 Set-Based Thinking
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Query optimization challenges in the Database Mastery line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have learned to **store** data; now you will learn to **summon** it. SQL - the Structured Query Language - is the spellbook of the relational realm, and this quest, **SQL Mastery**, teaches you to chant its most powerful incantations. By the end you will pull precise answers from a sprawling, multi-table database the way a battle-mage pulls fire from the air.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*SQL is declarative: you describe *what* you want, and the database's query planner decides *how* to fetch it. That single shift - from "how" to "what" - is what makes SQL feel like magic and what makes mastering it a genuine power-up for any developer.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*SQL was forged at IBM in the 1970s, born directly from Codd's relational model. It survived the rise and fall of countless technologies because it rests on the unshakable foundation of set theory: a query is a question about sets of rows, answered with relational algebra. Learn SQL once and you can command PostgreSQL, MySQL, SQLite, SQL Server, and the query layers of modern data warehouses - the dialects differ only at the edges.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest hands you the core spells every practitioner must know cold: filtering, joining, aggregating, nesting, and protecting your changes inside transactions.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **SELECT & Filtering** - Project columns and filter rows with `WHERE`, `ORDER BY`, `LIMIT`
+- [ ] **JOINs** - Combine tables with `INNER`, `LEFT`, and `RIGHT` joins
+- [ ] **Aggregation** - Summarize with `GROUP BY`, aggregate functions, and `HAVING`
+- [ ] **Subqueries & Transactions** - Nest queries and wrap changes in `BEGIN`/`COMMIT`
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Views** - Save a query as a reusable virtual table
+- [ ] **Indexes** - Understand why an index turns a slow scan into a fast lookup
+- [ ] **Window Functions** - Rank and run totals without collapsing rows
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Predict the row count difference between an `INNER` and a `LEFT JOIN`
+- [ ] Decide when a subquery is clearer than a JOIN
+- [ ] Explain why `WHERE` filters before grouping and `HAVING` after
+- [ ] Wrap a multi-step change so it commits all-or-nothing
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of tables, rows, keys, and relationships
+- [ ] Comfort running SQL in a terminal
+- [ ] Completion of [Database Fundamentals](/quests/0110/database-fundamentals/) (recommended)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] PostgreSQL 14+ installed, or Docker to run it
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can create tables and insert data unaided
+- [ ] You are ready to reason about sets of rows, not loops
+- [ ] Ready for 90-120 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Spin up PostgreSQL and load the practice schema below. Every query in this quest runs against it.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +140,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install postgresql@16
+brew services start postgresql@16
+createdb query_codex
+psql query_codex
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +154,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install PostgreSQL.PostgreSQL.16
+createdb query_codex
+psql query_codex
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +167,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y postgresql
+sudo systemctl enable --now postgresql
+sudo -u postgres createdb query_codex
+sudo -u postgres psql query_codex
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +181,291 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+docker run --name query-codex -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
+docker exec -it query-codex psql -U postgres
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+### 🏗️ Seed the Practice Schema
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+Run this once to give yourself data to query throughout the quest:
+
+```sql
+CREATE TABLE customers (
+    customer_id SERIAL PRIMARY KEY,
+    name        TEXT NOT NULL,
+    city        TEXT
+);
+
+CREATE TABLE orders (
+    order_id    SERIAL PRIMARY KEY,
+    customer_id INTEGER NOT NULL REFERENCES customers(customer_id),
+    total       NUMERIC(10,2) NOT NULL,
+    placed_on   DATE NOT NULL DEFAULT CURRENT_DATE
+);
+
+INSERT INTO customers (name, city) VALUES
+    ('Aria', 'Rivenhold'), ('Bram', 'Stormgate'),
+    ('Cora', 'Rivenhold'), ('Dorn', 'Ashfen');   -- Dorn has no orders yet
+
+INSERT INTO orders (customer_id, total) VALUES
+    (1, 120.00), (1, 80.00), (2, 200.00), (3, 45.50), (3, 54.50);
+```
+
+## 🧙‍♂️ Chapter 1: SELECT, WHERE, and ORDER BY - Summoning Rows
+
+*Every query begins with `SELECT`. You name the columns you want, the table to draw from, and the rules for which rows qualify.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Projecting specific columns
+- Filtering rows with `WHERE` and boolean logic
+- Sorting and limiting results
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Your First Spells
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```sql
+-- Project two columns, filter, sort, and cap the result.
+SELECT name, city
+FROM customers
+WHERE city = 'Rivenhold'
+ORDER BY name ASC
+LIMIT 10;
+-- name | city
+-- -----+----------
+-- Aria | Rivenhold
+-- Cora | Rivenhold
 ```
 
-**Step 2: Core Concepts**
+The evaluation order matters: `FROM` chooses the table, `WHERE` filters rows, `SELECT` picks columns, `ORDER BY` sorts, and `LIMIT` trims. Knowing this order explains many "why didn't my alias work in WHERE?" puzzles - aliases from `SELECT` aren't visible to `WHERE` because `WHERE` runs first.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: SELECT
+- [ ] What is the logical evaluation order of `SELECT`, `FROM`, `WHERE`, `ORDER BY`?
+- [ ] Why can't you reference a `SELECT` alias inside `WHERE`?
+- [ ] How does `LIMIT 10` interact with `ORDER BY`?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **First query**: You returned a filtered list of customers
+- [ ] **Sorted output**: Your result obeyed `ORDER BY`
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: JOINs - Weaving Tables Together
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A single table rarely holds the whole answer. JOINs combine rows from two tables based on a related column - almost always a foreign key matching a primary key.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- `INNER JOIN` for matching rows only
+- `LEFT JOIN` to keep unmatched left-side rows
+- Reading which rows appear and which vanish
 
-### 🏗️ Advanced Implementations
+### 🏗️ Joining Customers and Orders
 
-[Detailed content for chapter 2]
+```sql
+-- INNER JOIN: only customers who have at least one order.
+SELECT c.name, o.total
+FROM customers AS c
+INNER JOIN orders AS o ON o.customer_id = c.customer_id
+ORDER BY c.name;
+-- Dorn does NOT appear: he placed no orders.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+-- LEFT JOIN: every customer, with NULL totals where there are no orders.
+SELECT c.name, o.total
+FROM customers AS c
+LEFT JOIN orders AS o ON o.customer_id = c.customer_id
+ORDER BY c.name;
+-- Dorn DOES appear, with total = NULL.
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+The difference between `INNER` and `LEFT` is precisely about unmatched rows. `INNER JOIN` returns only pairs that match on the join condition. `LEFT JOIN` keeps every row from the left table, filling the right side with `NULL` when nothing matches. Choosing wrong is one of the most common SQL bugs.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+### 🔍 Knowledge Check: JOINs
+- [ ] Why does Dorn appear in the `LEFT JOIN` but not the `INNER JOIN`?
+- [ ] What value does `o.total` hold for an unmatched left row?
+- [ ] When would you reach for a `RIGHT JOIN` instead of swapping table order?
+
+## 🧙‍♂️ Chapter 3: Aggregation - GROUP BY and HAVING
+
+*Aggregation collapses many rows into summary values: counts, sums, averages. `GROUP BY` defines the buckets; aggregate functions summarize each bucket; `HAVING` filters the buckets.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Aggregate functions: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
+- Grouping rows into buckets with `GROUP BY`
+- Filtering groups with `HAVING` (not `WHERE`)
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Summarizing Orders per Customer
 
-[Detailed content for chapter 3]
+```sql
+-- How much has each customer spent, and how many orders did they place?
+SELECT c.name,
+       COUNT(o.order_id) AS order_count,
+       COALESCE(SUM(o.total), 0) AS lifetime_value
+FROM customers AS c
+LEFT JOIN orders AS o ON o.customer_id = c.customer_id
+GROUP BY c.name
+HAVING COALESCE(SUM(o.total), 0) >= 100   -- keep only big spenders
+ORDER BY lifetime_value DESC;
+-- name | order_count | lifetime_value
+-- -----+-------------+----------------
+-- Aria |           2 |         200.00
+-- Bram |           1 |         200.00
+-- Cora |           2 |         100.00
+```
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+Remember the cardinal rule: `WHERE` filters individual rows *before* grouping; `HAVING` filters whole groups *after* aggregation. You cannot put `SUM(...)` in a `WHERE` clause - the sum does not exist yet at that stage.
+
+### 🔍 Knowledge Check: Aggregation
+- [ ] Why must `HAVING`, not `WHERE`, filter on `SUM(o.total)`?
+- [ ] What does `COALESCE(SUM(...), 0)` protect against for customers with no orders?
+- [ ] What does every non-aggregated `SELECT` column need to appear in?
+
+## 🧙‍♂️ Chapter 4: Subqueries, Views, Indexes, and Transactions
+
+*The final chapter rounds out your codex with four power tools: nested queries, reusable views, the index that makes lookups fast, and the transaction that keeps changes safe.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Subqueries in `WHERE` and `FROM`
+- Creating a `VIEW`
+- Creating an `INDEX` and knowing what it accelerates
+- Running multi-statement transactions
+
+### 🏗️ The Four Tools
+
+```sql
+-- Subquery: customers who spent more than the average order total.
+SELECT name
+FROM customers
+WHERE customer_id IN (
+    SELECT customer_id FROM orders
+    GROUP BY customer_id
+    HAVING SUM(total) > (SELECT AVG(total) FROM orders)
+);
+
+-- View: save a query as a virtual table you can SELECT from later.
+CREATE VIEW customer_value AS
+SELECT c.customer_id, c.name, COALESCE(SUM(o.total), 0) AS lifetime_value
+FROM customers c
+LEFT JOIN orders o ON o.customer_id = c.customer_id
+GROUP BY c.customer_id, c.name;
+
+SELECT * FROM customer_value WHERE lifetime_value > 100;
+```
+
+An **index** is a sorted side-structure that lets the database find rows without scanning the whole table. Foreign-key columns are prime candidates because JOINs probe them constantly:
+
+```sql
+-- Without this, every JOIN on orders.customer_id scans the whole table.
+CREATE INDEX idx_orders_customer_id ON orders(customer_id);
+```
+
+Finally, wrap multi-step changes in a **transaction** so they apply all-or-nothing:
+
+```sql
+BEGIN;
+INSERT INTO customers (name, city) VALUES ('Elin', 'Stormgate');
+INSERT INTO orders (customer_id, total)
+    VALUES (currval('customers_customer_id_seq'), 99.99);
+COMMIT;   -- both inserts land together; ROLLBACK would undo both
+```
+
+### 🔍 Knowledge Check: Power Tools
+- [ ] When is a subquery clearer than a JOIN, and when is a JOIN better?
+- [ ] What does a `VIEW` store - the rows, or the query?
+- [ ] Why are foreign-key columns good index candidates?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Filter and Sort
+**Objective**: List every order over 50.00, newest first, showing the customer's name.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Join `orders` to `customers`
+- [ ] Filter with `WHERE total > 50`
+- [ ] Sort by `placed_on DESC`
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Each row shows a name, a total above 50, in date order.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build a Leaderboard
+**Objective**: Produce a per-city ranking of total revenue.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Join all three relations and `GROUP BY city`
+- [ ] Use `SUM(total)` and `ORDER BY` it descending
+- [ ] Include cities even if a customer there has no orders (use `LEFT JOIN`)
 
-**Validation**: [How to verify success]
+**Validation**: Every city appears with a non-negative revenue total.
+
+### 🔴 Advanced Challenge: View + Subquery + Transaction
+**Objective**: Create a `top_customers` view of customers above the average lifetime value, then insert a new customer and order inside one transaction.
+
+**Requirements**:
+- [ ] The view uses a subquery for the average
+- [ ] The transaction inserts a customer and an order atomically
+- [ ] Querying the view afterward reflects the new customer if they qualify
+
+**Validation**: A `ROLLBACK` instead of `COMMIT` leaves the database unchanged.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Battle-Mage of Queries** - You joined, grouped, and nested with mastery
+- 🛡️ **Warden of the View** - You built reusable views and safe transactions
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Advanced SQL Querying** - JOINs, aggregation, subqueries, and views
+- **Set-Based Thinking** - Reason about sets of rows instead of loops
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Query Optimization - Make these queries blazing fast
+- Database Migrations - Evolve the schema your queries depend on
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Query Optimization](/quests/0110/query-optimization/) - Read EXPLAIN plans and tune queries
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Database Security](/quests/0110/database-security/) - Stop SQL injection at the query layer
+- ⚔️ [Connection Pooling](/quests/0110/connection-pooling/) - Run many queries efficiently
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Query Optimization](/quests/0110/query-optimization/)  
+**🏗️ System Engineer**: Explore [Connection Pooling](/quests/0110/connection-pooling/)  
+**🛡️ Security Specialist**: Advance to [Database Security](/quests/0110/database-security/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PostgreSQL SELECT Reference](https://www.postgresql.org/docs/current/sql-select.html) - Every clause explained
+- [PostgreSQL Joins Tutorial](https://www.postgresql.org/docs/current/tutorial-join.html) - Join types in depth
+- [PostgreSQL Window Functions](https://www.postgresql.org/docs/current/tutorial-window.html) - Rankings and running totals
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [PostgreSQL Exercises](https://pgexercises.com/) - Hundreds of graded query problems
+- [SQLBolt](https://sqlbolt.com/) - Interactive SQL lessons from zero
+- [Stack Overflow: sql tag](https://stackoverflow.com/questions/tagged/sql) - Query help from the realm
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Mode SQL Tutorial](https://mode.com/sql-tutorial/) - Analytics-focused SQL practice
+- [Use The Index, Luke!](https://use-the-index-luke.com/) - Why and how indexes speed up queries
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Wrote a query joining at least three tables
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
+**Unlocks:** [[Query Optimization: Performance Tuning for Fast Database Queries]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-
+</content>

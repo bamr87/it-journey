@@ -8,14 +8,9 @@ level: '1111'
 categories:
 - quests
 - '1111'
-- legend-tier
+- master-tier
 - leadership
 - innovation
-level_decimal: 15
-tier: Legend
-tier_emoji: 👑
-theme: Realm Shaper
-xp_range: 10000+
 date: '2025-11-30T22:12:13.000Z'
 lastmod: '2025-12-01T04:36:39.000Z'
 tags:

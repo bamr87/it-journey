@@ -17,28 +17,11 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/hello-noob/
   - /quests/0000/os-selection/
+  - /quests/0000/hello-windows/
+  - /quests/0000/linux-fundamentals/
   unlocks_quests:
   - /quests/0000/vscode-mastery/
   - /quests/0000/terminal-fundamentals/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/vscode-mastery/
-  parallel_quests:
-  - /quests/0000/hello-windows/
-  - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - iOS Development
-  - Full-Stack Development
-  character_classes:
-  - 💻 Software Developer
-  - 🎨 Digital Artist
-  - 🏗️ System Engineer
-  skill_trees:
-  - macOS Administration
-  - Package Management
 skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0000/hello-macos/

@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # Keep SHA-pinned GitHub Actions current (Dependabot bumps the pin + comment).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+
+  # Ruby gem updates (github-pages, jekyll plugins).
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: deps

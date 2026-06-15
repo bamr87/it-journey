@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1011/agentic-multi-agent-observability/
   unlocks_quests:
   - /quests/1100/agentic-multi-agent-lifecycle-management/
-quest_relationships:
-  sequel_quests:
-  - /quests/1100/agentic-multi-agent-lifecycle-management/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🔍 Reliability Engineer
-  skill_trees:
-  - Agentic AI
-  - Resilience Engineering
+  recommended_quests: []
 rewards:
   badges:
   - 🛡️ Battle-Tested Architect
@@ -75,11 +64,6 @@ validation_criteria:
   - Sub-agent failure detected and reported by orchestrator
   - Compensation strategy (retry or delegate) implemented
   - Partial progress preserved across failure and recovery
-quest_mapping:
-  coordinates: '[5, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Proving Grounds
 comments: true
 draft: false
 redirect_from:
@@ -139,7 +123,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true      # Orchestrator must see all outcomes
     outputs:
-      status: ${{ steps.run.outputs.status }}
+      status: ${% raw %}{{ steps.run.outputs.status }}{% endraw %}
     steps:
       - uses: actions/checkout@v4
       - name: Execute sub-task 1
@@ -174,7 +158,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run with awareness of upstream status
         run: |
-          UPSTREAM_STATUS="${{ needs.sub-agent-1.outputs.status }}"
+          UPSTREAM_STATUS="${% raw %}{{ needs.sub-agent-1.outputs.status }}{% endraw %}"
           
           if [ "$UPSTREAM_STATUS" = "failed" ]; then
             echo "⚠️ Sub-agent 1 failed — running in degraded mode"
@@ -204,16 +188,16 @@ jobs:
         run: |
           python3 work/gh-600/scripts/recovery_coordinator.py \
             --results-dir ./results/ \
-            --task-id "${{ github.event.inputs.task_id }}" \
-            --agent1-status "${{ needs.sub-agent-1.result }}" \
-            --agent2-status "${{ needs.sub-agent-2.result }}" \
+            --task-id "${% raw %}{{ github.event.inputs.task_id }}{% endraw %}" \
+            --agent1-status "${% raw %}{{ needs.sub-agent-1.result }}{% endraw %}" \
+            --agent2-status "${% raw %}{{ needs.sub-agent-2.result }}{% endraw %}" \
             --output recovery-plan.json
 
       - name: Re-delegate failed tasks
         if: fromJSON(steps.assess.outputs.needs_redelegation)
         run: |
           python3 work/gh-600/scripts/redelegate_tasks.py \
-            --failed-tasks "${{ steps.assess.outputs.failed_tasks }}"
+            --failed-tasks "${% raw %}{{ steps.assess.outputs.failed_tasks }}{% endraw %}"
 ```
 
 ---

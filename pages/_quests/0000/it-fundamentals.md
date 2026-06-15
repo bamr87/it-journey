@@ -3,7 +3,6 @@ title: IT Fundamentals
 author: IT-Journey Team
 description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
-snippet: null
 preview: images/previews/it-fundamentals.png
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
@@ -19,29 +18,9 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/hello-noob/
+  - /quests/0000/begin-your-it-journey/
   unlocks_quests:
   - /quests/0000/os-selection/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/os-selection/
-  parallel_quests:
-  - /quests/0000/begin-your-it-journey/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Networking
-  - Cloud Computing
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  skill_trees:
-  - Computer Architecture
-  - Networking Basics
-  - Operating System Concepts
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -89,7 +68,7 @@ keywords:
   - '0000'
 fmContentType: quest
 draft: false
-meta: null
+meta:
 slug: fundamentals
 layout: quest
 ---

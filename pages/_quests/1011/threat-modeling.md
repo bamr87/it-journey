@@ -1,63 +1,50 @@
 ---
 title: 'Threat Modeling: STRIDE Framework and Attack Trees Analysis'
 author: IT-Journey Team
-description: Master threat modeling with STRIDE methodology, attack trees, data flow diagrams, and systematic security analysis techniques for identifying vulnerabilities.
-excerpt: Identify security threats systematically using STRIDE and attack tree methodologies
-preview: images/previews/threat-modeling-stride-quest-title-attack-trees-de.png
+description: Master threat modeling with the STRIDE methodology, data-flow diagrams, trust boundaries, and attack trees to find security flaws systematically before attackers do.
+excerpt: Find security threats systematically using STRIDE, data-flow diagrams, trust boundaries, and attack trees
+preview: images/previews/threat-modeling-stride-framework-and-attack-trees.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:40.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
 primary_technology: security
 quest_type: main_quest
 quest_series: Security Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Bastion
+quest_arc: The Cartographer of Threats
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/1011/security-fundamentals/
+  recommended_quests:
+  - /quests/1011/secure-coding/
+  unlocks_quests:
+  - /quests/1011/penetration-testing/
 skill_focus: security
-learning_style: hands-on
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Security Fundamentals (recommended)
+  - Ability to describe how a system's components communicate
+  - Familiarity with the CIA triad and common attack categories
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A diagramming tool or pen and paper (Mermaid examples included)
+  - A text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable reasoning about system architecture
+  - Ready to think adversarially about a design before it ships
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A STRIDE threat model produced for one system you understand
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can draw a data-flow diagram with trust boundaries
+  - Can enumerate threats per element using STRIDE
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands what each STRIDE letter maps to
+  - Can build a simple attack tree for a chosen goal
 permalink: /quests/1011/threat-modeling/
 categories:
 - Quests
@@ -67,8 +54,9 @@ tags:
 - '1011'
 - security
 - main_quest
-- security
-- hands-on
+- stride
+- threat-modeling
+- conceptual
 - gamified-learning
 keywords:
   primary:
@@ -76,112 +64,76 @@ keywords:
   - security
   - main_quest
   secondary:
-  - security
-  - hands-on
-  - gamified-learning
+  - stride
+  - attack-trees
+  - data-flow-diagrams
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1011 (11) Quest: Main Quest - Threat Modeling'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Cartographer of Threats - Mapped a system's attack surface with STRIDE
+  - 🛡️ Seer of Weakness - Predicted attacks before they happened
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ STRIDE Threat Enumeration
+  - 🌳 Attack Tree Construction
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Ability to threat model a design before a single line of code ships
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! A wise defender never waits for the siege to discover where the walls are weak. In this quest, **Threat Modeling**, you learn the cartographer's art: to draw your system as it truly is, mark every gate and trust boundary, and ask of each one - "How would I, the attacker, break in here?" You will wield **STRIDE**, the six-fold lens of threats, and the branching logic of **attack trees**.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Threat modeling is the cheapest security work you will ever do, because it happens on paper, before the code is written. A flaw found in a diagram costs a meeting; the same flaw found in production costs a breach.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Long ago, the architects of Microsoft's great codebases faced an impossible question: how do you secure a system too large for any one mind to hold? Their answer was STRIDE - a checklist of six threat categories applied methodically to every part of a design. Where intuition missed flaws, the method caught them. Today STRIDE, data-flow diagrams, and attack trees remain the backbone of how serious teams reason about security before disaster strikes.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Data-Flow Diagrams (DFDs)** - Draw your system's processes, data stores, and flows
+- [ ] **Trust Boundaries** - Mark where data crosses from less-trusted to more-trusted zones
+- [ ] **STRIDE Enumeration** - Apply the six threat categories to every element of the design
+- [ ] **Attack Trees** - Decompose an attacker's goal into concrete, rankable steps
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Risk Ranking** - Prioritize threats using likelihood and impact (e.g., DREAD-style scoring)
+- [ ] **Mitigation Mapping** - Pair each significant threat with a control
+- [ ] **Living Threat Models** - Keep the model current as the design evolves
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Map each STRIDE letter to the security property it violates
+- [ ] Place trust boundaries correctly on a DFD
+- [ ] Build an attack tree for a goal and identify its cheapest leaf
+- [ ] Hand a developer a prioritized list of threats and mitigations
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Security Fundamentals](/quests/1011/security-fundamentals/) (recommended)
+- [ ] Ability to describe how a system's components talk to each other
+- [ ] Familiarity with the CIA triad
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A diagramming tool, or pen and paper (Mermaid examples render on GitHub)
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can reason about system architecture and component interactions
+- [ ] You are ready to adopt the attacker's perspective
+- [ ] Ready for 90-120 minutes of focused analysis
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Threat modeling is mostly thinking and drawing. Set up a diagramming workflow you enjoy.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +141,13 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Use VS Code with a Mermaid preview extension to diagram in plain text
+brew install --cask visual-studio-code
+code --install-extension bierner.markdown-mermaid
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Optionally try the Microsoft Threat Modeling Tool in a Windows VM,
+# or the cross-platform OWASP Threat Dragon (web/desktop).
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +157,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# The Microsoft Threat Modeling Tool is free and STRIDE-native on Windows
+winget install Microsoft.ThreatModelingTool
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Or use VS Code + Mermaid like every other platform
+winget install Microsoft.VisualStudioCode
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +172,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# OWASP Threat Dragon runs as a desktop app or in the browser
+# Install VS Code for text-based Mermaid diagrams
+sudo snap install code --classic
+code --install-extension bierner.markdown-mermaid
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +186,229 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# OWASP Threat Dragon has a hosted web version — no install needed.
+# Open https://www.threatdragon.com/ in any browser and start a model.
+echo "Open https://www.threatdragon.com/ to model in the cloud"
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Map the Terrain - Data-Flow Diagrams and Trust Boundaries
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*You cannot defend what you cannot see. The first act of threat modeling is to draw the system as a data-flow diagram: the processes that act, the data stores that hold, the external entities that interact, and the flows between them.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The four DFD element types
+- Where and why to place trust boundaries
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Four Elements of a DFD
 
-**Step 1: Environment Setup**
+- **External entity** (a user, a third-party API) - outside your control
+- **Process** (a service, a function) - transforms data
+- **Data store** (a database, a file, a cache) - holds data
+- **Data flow** (an arrow) - moves data between the above
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+A **trust boundary** is a line the data crosses where the level of trust changes - for example, between the public internet and your application, or between your app and the database. Threats cluster on these boundaries.
+
+```mermaid
+graph LR
+    User([User / Browser]) -->|HTTPS request| Web[Web App Process]
+    Web -->|SQL query| DB[(User Database)]
+    Web -->|API call| Pay([Payment Provider])
+
+    subgraph Internet [Untrusted: Internet]
+        User
+        Pay
+    end
+    subgraph DMZ [Semi-trusted: App Tier]
+        Web
+    end
+    subgraph Internal [Trusted: Data Tier]
+        DB
+    end
 ```
 
-**Step 2: Core Concepts**
+The two boundaries here - Internet→App and App→Data - are exactly where you will hunt for threats in the next chapter.
 
-[Explanation of fundamental concepts]
+### 🔍 Knowledge Check: DFDs
+- [ ] Name the four DFD element types
+- [ ] What changes when data crosses a trust boundary?
+- [ ] Why is the payment provider an external entity rather than a process?
 
-**Step 3: First Implementation**
+## 🧙‍♂️ Chapter 2: STRIDE - The Six-Fold Lens
 
-```[language]
-# Your first working example
-[code-example]
+*STRIDE is a mnemonic for six categories of threat. Apply each one to every element and flow in your DFD, and you systematically surface the threats intuition would miss.*
 
-# Expected output:
-# [description of output]
+### ⚔️ Skills You'll Forge in This Chapter
+- The meaning of each STRIDE letter
+- Mapping threats to the security property they violate
+
+### 🏗️ The Six Categories
+
+| Letter | Threat | Violates | Example | Mitigation |
+| --- | --- | --- | --- | --- |
+| **S** | **Spoofing** | Authentication | Pretending to be another user | Strong auth, MFA |
+| **T** | **Tampering** | Integrity | Modifying data in transit or at rest | Hashing, signatures, input validation |
+| **R** | **Repudiation** | Non-repudiation | Denying an action was performed | Audit logs, signed records |
+| **I** | **Information Disclosure** | Confidentiality | Leaking data | Encryption, access control |
+| **D** | **Denial of Service** | Availability | Exhausting resources | Rate limiting, redundancy |
+| **E** | **Elevation of Privilege** | Authorization | Gaining unauthorized rights | Least privilege, authorization checks |
+
+Walk the diagram element by element. For the `Web App → User Database` flow above, STRIDE prompts you to ask:
+
+```text
+Spoofing:               Can someone forge the app's identity to the DB?      -> mutual TLS / credentials
+Tampering:              Can the query or response be altered?                 -> TLS, parameterized queries
+Repudiation:            Are sensitive DB writes logged?                       -> audit table
+Information Disclosure: Is the connection and data at rest encrypted?         -> TLS + encryption at rest
+Denial of Service:      Can a flood of queries exhaust the DB?               -> connection pooling, rate limits
+Elevation of Privilege: Does the app login have more rights than it needs?    -> least-privilege grants
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+This single flow already yielded six concrete questions - and several real mitigations.
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+### 🔍 Knowledge Check: STRIDE
+- [ ] Which STRIDE category violates authorization?
+- [ ] Match Tampering and Information Disclosure to their CIA pillars
+- [ ] Why is repudiation about logging more than prevention?
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 3: Attack Trees and Prioritization
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Where STRIDE is breadth, an attack tree is depth. You start from a single attacker goal at the root and branch downward into the steps required to achieve it, until you reach concrete leaves you can defend.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Decomposing a goal into AND/OR sub-goals
+- Finding the cheapest path for an attacker
+- Ranking threats by likelihood and impact
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Simple Attack Tree
 
-[Detailed content for chapter 2]
+```text
+GOAL: Read another user's private messages
+├── OR: Steal their session
+│   ├── XSS to exfiltrate the session cookie        (mitigated by: HttpOnly + CSP)
+│   └── Network sniffing on an open Wi-Fi           (mitigated by: TLS everywhere)
+├── OR: Bypass access control
+│   └── Change the user_id in the API URL (IDOR)    (mitigated by: server-side authz check)
+└── OR: Compromise the database directly
+    ├── SQL injection                               (mitigated by: parameterized queries)
+    └── Stolen DB credentials from a leaked .env    (mitigated by: secrets manager + rotation)
+```
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+OR-nodes mean *any one* child suffices; AND-nodes mean *all* children are required. The attacker takes the cheapest viable leaf - so you defend the cheapest leaves first.
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+### 🏗️ Prioritize What to Fix
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Rank each threat by **likelihood × impact**. A lightweight scoring model such as DREAD (Damage, Reproducibility, Exploitability, Affected users, Discoverability) works, but even a simple High/Medium/Low matrix beats fixing things at random:
 
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+```text
+Threat                         Likelihood   Impact   Priority
+IDOR on messages API           High         High     P0 — fix first
+SQL injection                  Medium       High     P1
+Session theft via open Wi-Fi   Low          High     P2
+DoS via query flood            Low          Medium   P3
+```
 
-### 🏗️ Building Your Real-World Solution
-
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+### 🔍 Knowledge Check: Attack Trees
+- [ ] What is the difference between an AND-node and an OR-node?
+- [ ] Why fix the cheapest attacker leaf first?
+- [ ] How does likelihood × impact change your fix order?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Draw a DFD
+**Objective**: Pick a small app you know and draw its data-flow diagram with at least two trust boundaries.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] All four element types appear
+- [ ] At least two trust boundaries are marked
+- [ ] Every flow has a direction
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: A peer can identify the boundaries without your explanation.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Run STRIDE
+**Objective**: For one flow that crosses a trust boundary, enumerate threats across all six STRIDE categories.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] One concrete threat per applicable STRIDE letter
+- [ ] A proposed mitigation for each
+- [ ] Note any categories that do not apply and why
 
-**Validation**: [How to verify success]
+**Validation**: Each threat ties to a CIA/AAA property.
+
+### 🔴 Advanced Challenge: Build and Rank an Attack Tree
+**Objective**: Choose an attacker goal for your app, build an attack tree, and produce a prioritized fix list.
+
+**Requirements**:
+- [ ] Root goal with at least two OR-branches
+- [ ] Concrete leaves with mitigations
+- [ ] A priority table using likelihood × impact
+
+**Validation**: Your P0 item is genuinely the cheapest, highest-impact path.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Cartographer of Threats** - You mapped a system's full attack surface
+- 🛡️ **Seer of Weakness** - You predicted attacks before they happened
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **STRIDE Threat Enumeration** - Systematic, repeatable threat discovery
+- **Attack Tree Construction** - Goal-driven adversarial analysis
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Penetration Testing - Prove your threat model by attacking the system
+- Compliance Standards - Use the model as audit evidence of risk assessment
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Penetration Testing](/quests/1011/penetration-testing/) - Validate threats with real testing
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Secure Coding Practices](/quests/1011/secure-coding/) - Mitigate the threats you found
+- ⚔️ [Compliance Standards](/quests/1011/compliance-standards/) - Turn the model into evidence
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Secure Coding Practices](/quests/1011/secure-coding/)  
+**🏗️ System Engineer**: Explore [Penetration Testing](/quests/1011/penetration-testing/)  
+**🛡️ Security Specialist**: Advance to [Compliance Standards](/quests/1011/compliance-standards/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Microsoft Threat Modeling (STRIDE)](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats) - The canonical STRIDE reference
+- [OWASP Threat Modeling](https://owasp.org/www-community/Threat_Modeling) - Process and techniques
+- [OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html)
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [OWASP Threat Dragon](https://owasp.org/www-project-threat-dragon/) - Open-source modeling tool
+- [Microsoft Threat Modeling Tool](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool) - STRIDE-native, free
+- [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/) - Principles and values
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Attack Trees (Bruce Schneier)](https://www.schneier.com/academic/archives/1999/12/attack_trees.html) - The original essay
+- [MITRE ATT&CK](https://attack.mitre.org/) - Real adversary techniques to inform your trees
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Produced a STRIDE threat model for a real system
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
+**Level hub:** [[Level 1011 - Security & Compliance]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
+**Unlocks:** [[Penetration Testing: Tools and Ethical Hacking Methodologies]]
+**Related quests:** [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

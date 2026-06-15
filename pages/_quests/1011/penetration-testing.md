@@ -1,63 +1,51 @@
 ---
 title: 'Penetration Testing: Tools and Ethical Hacking Methodologies'
 author: IT-Journey Team
-description: Learn penetration testing tools and methodologies for ethical hacking. Master reconnaissance, vulnerability scanning, exploitation, and security assessment techniques.
-excerpt: Master ethical hacking and penetration testing tools for security assessments
-preview: images/previews/penetration-testing-tools-quest-title-methodologie.png
+description: Learn ethical penetration testing methodology - authorized scope, reconnaissance, scanning with nmap, web testing with Burp Suite and OWASP ZAP, and clear reporting.
+excerpt: Master authorized, ethical penetration testing - recon, nmap, Burp, ZAP, and professional reporting
+preview: images/previews/penetration-testing-tools-and-ethical-hacking-meth.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:51.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: security
 quest_type: main_quest
 quest_series: Security Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Bastion
+quest_arc: The Sanctioned Siege
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/1011/security-fundamentals/
+  recommended_quests:
+  - /quests/1011/threat-modeling/
+  - /quests/1011/secure-coding/
+  unlocks_quests:
+  - /quests/1011/compliance-standards/
 skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Security Fundamentals (recommended)
+  - Comfort with the command line and basic networking (IP, ports, HTTP)
+  - Understanding of the OWASP Top 10
   system_requirements:
-  - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Modern OS (macOS, Windows 10+, Linux) - Kali Linux recommended for tooling
+  - Permission to use an isolated lab target (never a system you do not own)
+  - nmap, and Burp Suite or OWASP ZAP installed
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable working in a terminal and reading HTTP traffic
+  - Committed to operating only within authorized scope
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A short penetration test report produced against a legal lab target
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can scan a host with nmap and interpret the results
+  - Can intercept and modify a request with a web proxy
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the legal and ethical boundaries of authorized testing
+  - Can structure a finding with severity, evidence, and remediation
 permalink: /quests/1011/penetration-testing/
 categories:
 - Quests
@@ -67,7 +55,8 @@ tags:
 - '1011'
 - security
 - main_quest
-- security
+- penetration-testing
+- ethical-hacking
 - hands-on
 - gamified-learning
 keywords:
@@ -76,112 +65,79 @@ keywords:
   - security
   - main_quest
   secondary:
-  - security
-  - hands-on
-  - gamified-learning
+  - penetration-testing
+  - nmap
+  - burp-suite
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1011 (11) Quest: Main Quest - Pentesting'
+sub_title: 'Level 1011 (11) Quest: Main Quest - Penetration Testing'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Sanctioned Siegemaster - Tested defenses ethically and within scope
+  - 🛡️ Reporter of the Realm - Turned findings into actionable remediation
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Reconnaissance and Network Scanning (nmap)
+  - 🕷️ Web Application Testing (Burp Suite / OWASP ZAP)
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Ability to run a basic authorized penetration test end to end
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have built the walls, hardened the code, and mapped the threats. Now you take up the most disciplined role of all: the **sanctioned besieger**. In **Penetration Testing**, you learn to attack a system the way a real adversary would - but only with permission, only within scope, and always with the goal of making the defenses stronger.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*A penetration test is not vandalism; it is a contract. The single most important rule of this quest, larger than any tool or technique, is this: **never test a system you are not explicitly authorized to test.** Master that, and the tools - nmap, Burp Suite, OWASP ZAP - become instruments of defense.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
-
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The earliest "tiger teams" were hired by governments to break into their own systems and report how. They discovered a paradox that still holds: the best way to know if a wall will hold is to attack it yourself, on your own terms, before an enemy does. Ethical hacking turns the attacker's mindset into a defender's tool - but only the authorization and the report separate a penetration tester from a criminal.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Authorization & Scope** - Define and respect the legal, ethical boundaries of a test
+- [ ] **Methodology** - Follow the recon → scan → exploit → post-exploit → report lifecycle
+- [ ] **Reconnaissance & Scanning** - Discover hosts, ports, and services with nmap
+- [ ] **Web Application Testing** - Intercept and manipulate traffic with Burp Suite or OWASP ZAP
+- [ ] **Reporting** - Write findings with severity, evidence, and remediation
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Vulnerability Validation** - Confirm a flaw is real, not a false positive
+- [ ] **CVSS Scoring** - Assign a defensible severity to a finding
+- [ ] **Retesting** - Verify that a remediation actually closed the hole
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Recite the rules of engagement before touching a target
+- [ ] Read an nmap scan and identify the interesting attack surface
+- [ ] Use a proxy to tamper with a request and observe the result
+- [ ] Write a finding a developer can actually act on
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Security Fundamentals](/quests/1011/security-fundamentals/) (recommended)
+- [ ] Basic networking: IP addresses, ports, TCP, HTTP
+- [ ] Familiarity with the OWASP Top 10
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Modern operating system (Kali Linux recommended for the toolset)
+- [ ] nmap installed, plus Burp Suite Community or OWASP ZAP
+- [ ] An isolated, legal practice target you own or are authorized to test
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 120-150 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You are comfortable in a terminal and reading HTTP traffic
+- [ ] You will operate strictly within authorized scope
+- [ ] Ready for 120-150 minutes of hands-on lab work
+
+> ⚖️ **Legal warning:** Scanning, probing, or exploiting systems without explicit written authorization is illegal in most jurisdictions (e.g., the US Computer Fraud and Abuse Act). Use only deliberately vulnerable targets you control or platforms that grant permission. When in doubt, do not.
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Set up a safe, authorized lab. The recommended target below is intentionally vulnerable and legal to attack on your own machine.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +145,14 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Tools
+brew install nmap
+brew install --cask zap        # OWASP ZAP
+brew install --cask burp-suite # Burp Suite Community Edition
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Legal practice target on localhost only
+docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,57 +162,30 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Tools
+winget install Insecure.Nmap
+winget install OWASP.ZAP
+winget install PortSwigger.BurpSuite.Community
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Legal practice target
+docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
-### 🐧 Linux Territory Path
+### 🐧 Linux Territory Path (Kali recommended)
 
 <details>
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Kali ships these preinstalled; on Debian/Ubuntu install them:
+sudo apt update && sudo apt install -y nmap zaproxy
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Burp Suite Community: download from portswigger.net
+# Legal practice target on your own machine
+sudo docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +195,244 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Authorized online labs (no setup, permission granted by the platform):
+#   - PortSwigger Web Security Academy (free)
+#   - TryHackMe / Hack The Box (authorized lab environments)
+echo "Use only platforms that explicitly authorize testing in their terms."
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Contract - Authorization, Scope, and Methodology
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Before a single packet is sent, the rules are set. This chapter is the most important in the quest.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Rules of engagement and scope definition
+- The standard penetration testing lifecycle
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Rules of Engagement
 
-**Step 1: Environment Setup**
+A legitimate engagement always defines, in writing:
+- **Scope** - exactly which IPs, domains, and applications are in (and out of) bounds
+- **Authorization** - a signed statement from the system owner permitting the test
+- **Timing** - when testing may occur, to avoid business disruption
+- **Constraints** - what is forbidden (e.g., no denial-of-service, no real customer data)
+- **Reporting** - how and to whom findings are delivered
+
+### 🏗️ The Methodology
+
+Established frameworks (PTES, the OWASP Web Security Testing Guide, NIST SP 800-115) share the same backbone:
+
+```text
+1. Planning & Scoping     — agree on rules of engagement
+2. Reconnaissance         — gather information (passive, then active)
+3. Scanning & Enumeration — map hosts, ports, services, versions
+4. Exploitation           — validate that a vulnerability is real
+5. Post-Exploitation      — assess impact (without overreaching)
+6. Reporting              — document findings, severity, remediation
+7. Remediation & Retest   — confirm fixes actually work
+```
+
+### 🔍 Knowledge Check: The Contract
+- [ ] What five things must rules of engagement define?
+- [ ] Why is the report, not the exploit, the real deliverable?
+- [ ] Name two frameworks that define a testing methodology
+
+## 🧙‍♂️ Chapter 2: Reconnaissance and Scanning with nmap
+
+*Reconnaissance maps the battlefield. Passive recon gathers public information without touching the target; active recon (scanning) probes it directly - and is only legal within scope.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Host discovery and port scanning with nmap
+- Service and version detection
+- Reading scan output to find attack surface
+
+### 🏗️ nmap in Practice
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Host discovery — which hosts on a subnet are alive? (in-scope only)
+nmap -sn 10.0.0.0/24
+
+# TCP SYN scan of the top 1000 ports on a single in-scope host
+nmap -sS 10.0.0.5
+
+# Service + version detection and default scripts (deeper enumeration)
+nmap -sV -sC -p- 10.0.0.5
+
+# Scan the local web target from the lab
+nmap -sV -p 3000 localhost
 ```
 
-**Step 2: Core Concepts**
+A representative result tells you what to investigate next:
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```text
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.9
+80/tcp   open  http     nginx 1.18.0
+3000/tcp open  http     Node.js Express framework
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+Each open service is attack surface. An outdated version is an immediate lead for the "Vulnerable Components" category from the OWASP Top 10.
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+### 🔍 Knowledge Check: Recon
+- [ ] What does `-sV` add over a plain port scan?
+- [ ] Why is passive recon legal where active scanning may not be?
+- [ ] What makes an outdated service version a finding?
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 3: Web Testing with Burp Suite / OWASP ZAP, and Reporting
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Most modern attack surface is web. An intercepting proxy lets you see and modify every request between browser and server - the heart of web penetration testing.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Intercepting and modifying HTTP requests
+- Using an automated scanner responsibly
+- Writing a clear, actionable finding
 
-### 🏗️ Advanced Implementations
+### 🏗️ Intercept and Tamper
 
-[Detailed content for chapter 2]
+Both **Burp Suite** (Community/Pro) and **OWASP ZAP** (free, open source) work as a proxy between your browser and the target:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+Browser → [ ZAP / Burp Proxy on 127.0.0.1:8080 ] → Target App
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Workflow against the legal lab target:
+1. Configure your browser to proxy through `127.0.0.1:8080` and trust the proxy's CA cert.
+2. Browse the application to populate the proxy's history.
+3. Send an interesting request to the **Repeater** (Burp) / **Manual Request Editor** (ZAP).
+4. Tamper with a parameter - e.g., change a user `id` - and watch for Broken Access Control.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```bash
+# ZAP can also run headless for automation against an authorized target
+zap.sh -cmd -quickurl http://localhost:3000 -quickout /tmp/zap-report.html
 
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+# The report lists alerts by risk level — review and validate each one
+```
 
-### 🏗️ Building Your Real-World Solution
+> Automated scanners produce **false positives**. Always manually validate a finding before reporting it.
 
-[Detailed content for chapter 3]
+### 🏗️ Write the Report
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+A useful finding is structured and actionable:
+
+```text
+Title:        Broken Access Control on /api/invoices/{id}
+Severity:     High (CVSS 8.1)
+Affected:     GET /api/invoices/{id}
+Description:  Any authenticated user can read any invoice by changing {id};
+              the server does not verify resource ownership (IDOR).
+Evidence:     Request as user A for invoice 1042 (owned by user B) returns 200
+              with B's data. [screenshot / request-response attached]
+Impact:       Disclosure of all customers' billing data (confidentiality breach).
+Remediation:  Enforce server-side authorization: confirm the invoice's owner_id
+              equals the authenticated user before returning it.
+Retest:       Confirm the same request now returns 403 for a non-owner.
+```
+
+A report's value is measured by how easily a developer can act on it - clear severity, reproducible evidence, and concrete remediation.
+
+### 🔍 Knowledge Check: Web Testing & Reporting
+- [ ] What does an intercepting proxy let you do that a browser alone cannot?
+- [ ] Why must scanner output be manually validated?
+- [ ] What are the essential fields of a finding?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Scan the Lab
+**Objective**: Run nmap against your local Juice Shop target and interpret the output.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Identify the open port(s) and service versions
+- [ ] Note one piece of attack surface worth investigating
+- [ ] Stay strictly on localhost / in-scope
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can explain what each open port implies.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Intercept and Tamper
+**Objective**: Proxy the lab app through ZAP or Burp and modify one request to demonstrate a flaw.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Capture a request in the proxy
+- [ ] Tamper with one parameter and observe the response
+- [ ] Identify the OWASP Top 10 category involved
 
-**Validation**: [How to verify success]
+**Validation**: The tampered request produces unintended behavior you can reproduce.
+
+### 🔴 Advanced Challenge: Mini Pentest Report
+**Objective**: Run a small authorized assessment end to end and write a report.
+
+**Requirements**:
+- [ ] State the scope and authorization up front
+- [ ] Document at least two validated findings with evidence
+- [ ] Assign severity and remediation to each
+- [ ] Include a retest step
+
+**Validation**: A developer could fix every finding using only your report.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Sanctioned Siegemaster** - You tested defenses ethically and within scope
+- 🛡️ **Reporter of the Realm** - You turned findings into action
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Reconnaissance and Network Scanning** - nmap fluency
+- **Web Application Testing** - Burp Suite / OWASP ZAP proficiency
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Compliance Standards - Penetration tests are often a required audit control
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Compliance Standards](/quests/1011/compliance-standards/) - Where pentests become required evidence
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Threat Modeling](/quests/1011/threat-modeling/) - Plan your attacks before you run them
+- ⚔️ [Secure Coding Practices](/quests/1011/secure-coding/) - Fix what you find
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Secure Coding Practices](/quests/1011/secure-coding/)  
+**🏗️ System Engineer**: Explore [Compliance Standards](/quests/1011/compliance-standards/)  
+**🛡️ Security Specialist**: Advance to [Threat Modeling](/quests/1011/threat-modeling/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [nmap Reference Guide](https://nmap.org/book/man.html) - Every flag explained
+- [OWASP Web Security Testing Guide (WSTG)](https://owasp.org/www-project-web-security-testing-guide/) - The methodology bible
+- [NIST SP 800-115 Technical Guide to Security Testing](https://csrc.nist.gov/pubs/sp/800/115/final)
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
+- [PortSwigger Web Security Academy](https://portswigger.net/web-security) - Free, authorized, hands-on labs
+- [OWASP ZAP](https://www.zaproxy.org/) - Free, open-source web proxy and scanner
+- [Penetration Testing Execution Standard (PTES)](http://www.pentest-standard.org/) - Engagement methodology
 
 ### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Burp Suite Community](https://portswigger.net/burp/communitydownload) - Intercepting proxy and Repeater
+- [Kali Linux](https://www.kali.org/) - A distribution pre-loaded with testing tools
+- [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/) - Standard severity scoring
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Produced a small report against a legal, in-scope target
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
+**Level hub:** [[Level 1011 - Security & Compliance]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
+**Unlocks:** [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]]
+**Related quests:** [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

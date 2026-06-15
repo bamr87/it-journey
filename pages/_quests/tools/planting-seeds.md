@@ -2,11 +2,10 @@
 title: planting seeds
 author: IT-Journey Team
 description: Quest covering planting seeds.
-excerpt: null
-snippet: null
+excerpt:
 preview: images/previews/planting-seeds.png
 date: '2025-02-05T14:08:47.000Z'
-lastmod: null
+lastmod:
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
@@ -26,8 +25,8 @@ keywords:
 fmContentType: quest
 comments: false
 attachments: ''
-sub-title: null
 layout: quest
+sub_title:
 ---
 ## 🕸️ Knowledge Graph
 

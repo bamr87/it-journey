@@ -45,17 +45,7 @@ quest_dependencies:
   - /quests/1000/agentic-observability-and-control/
   unlocks_quests:
   - /quests/1000/agentic-mcp-server-mastery/
-quest_relationships:
-  sequel_quests:
-  - /quests/1000/agentic-mcp-server-mastery/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Copilot
+  recommended_quests: []
 rewards:
   badges:
   - ⚒️ Tool Smith
@@ -77,11 +67,6 @@ validation_criteria:
   skill_demonstrations:
   - Can enumerate required tools for a given agent task
   - Can restrict agent tool access to least-privilege
-quest_mapping:
-  coordinates: '[2, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Arsenal District
 comments: true
 draft: false
 redirect_from:

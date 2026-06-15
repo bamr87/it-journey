@@ -38,19 +38,14 @@ keywords:
   - terminal navigation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/entrance/
+  - /quests/0000/entrance/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/armoury/
-  - /quests/0000/side-quests/hidden-chapel/
-  - /quests/0000/side-quests/vault/
-  - /quests/0000/side-quests/scrap/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/armoury/
-  - /quests/0000/side-quests/hidden-chapel/
-  - /quests/0000/side-quests/vault/
-  - /quests/0000/side-quests/scrap/
+  - /quests/0000/armoury/
+  - /quests/0000/hidden-chapel/
+  - /quests/0000/vault/
+  - /quests/0000/scrap/
+  recommended_quests: []
 validation_criteria:
 - Use ls -F and explain every symbol
 - Create and use at least one alias
@@ -58,15 +53,15 @@ validation_criteria:
 - Identify four exit paths from the cellar
 prerequisites:
 - Complete either the Entrance or Workshop side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Emerald Amulet
 - Alias and file-type mastery
 excerpt: Use ls -F, file, and aliases to map cellar artifacts, collect the emerald amulet, and unlock four branching dungeon paths.
 draft: false
-permalink: /quests/0000/side-quests/cellar/
+permalink: /quests/0000/cellar/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/cellar/
 ---
 *The cellar reeks of wine and secrets. Barrels line the walls; cobwebs drape the ceiling. Four iron doors lead deeper into the dungeon — armoury, chapel, vault, scrap. But first you must find the emerald amulet.*
 
