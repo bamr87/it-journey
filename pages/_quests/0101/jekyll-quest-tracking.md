@@ -89,7 +89,6 @@ draft: false
 toc: true
 toc_sticky: true
 comments: true
-attachments: ''
 sub_title: 'Level 0101 (5) Quest: Side Quest - Jekyll Collections & Dynamic Layouts'
 mermaid: true
 rewards:

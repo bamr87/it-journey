@@ -72,7 +72,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 rewards:
   badges:
   - 🏆 IDE Master Badge

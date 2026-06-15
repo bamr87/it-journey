@@ -43,7 +43,6 @@ keywords:
   - devops
 fmContentType: quest
 comments: true
-attachments: ''
 rewards:
 - 🏆 Resource Guardian Badge
 - ⚡ Link Integrity +5
@@ -53,6 +52,7 @@ redirect_from:
 - /quests/1110/404-hunting/
 layout: quest
 sub_title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
+draft: false
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 

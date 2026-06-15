@@ -9,6 +9,7 @@ categories:
 - quests
 lastmod: '2025-12-02T04:46:12.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
 ---
 # Level 1100: Data & Templates
 

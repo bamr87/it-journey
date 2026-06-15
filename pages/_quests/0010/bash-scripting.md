@@ -51,7 +51,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 rewards:
 - 🏆 Shell Script Wizard Badge - Command line automation mastery
 - ⚡ Automation Powers - Ability to create time-saving scripts

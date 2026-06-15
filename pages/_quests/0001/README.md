@@ -9,6 +9,7 @@ categories:
 - quests
 lastmod: '2025-11-15T04:27:16.000Z'
 date: '2025-11-15T16:34:42.000Z'
+draft: false
 ---
 # Level 001: Journeyman Challenges
 

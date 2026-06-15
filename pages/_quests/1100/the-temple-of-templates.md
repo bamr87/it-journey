@@ -45,7 +45,6 @@ keywords:
   - hands-on
 fmContentType: quest
 comments: true
-attachments: ''
 rewards:
 - 🏆 Pattern Weaver – Reuse and Abstraction
 - ⚡ System Design Insight +1
@@ -55,6 +54,7 @@ redirect_from:
 - /quests/1100/the-temple-of-templates/
 layout: quest
 sub_title: 'Level 1100 (12) Quest: Function Crafting and Modular Abstractions'
+draft: false
 ---
 ## 🧙‍♂️ Epic Introduction
 

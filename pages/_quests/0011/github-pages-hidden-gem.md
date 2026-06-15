@@ -73,7 +73,6 @@ keywords:
   - markdown
 fmContentType: quest
 comments: true
-attachments: ''
 rewards:
   badges:
   - 🏆 GitHub Pages Master
@@ -89,6 +88,7 @@ rewards:
   - Eligibility for web development learning paths
 layout: quest
 sub_title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
+draft: false
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 

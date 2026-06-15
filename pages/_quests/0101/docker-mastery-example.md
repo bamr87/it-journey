@@ -47,7 +47,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 0101 (5) Quest: Tool-mastery - Docker'
 rewards:
   badge: Docker Container Architect

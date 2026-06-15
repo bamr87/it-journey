@@ -58,7 +58,6 @@ keywords:
   - windows
 fmContentType: quest
 comments: true
-attachments: ''
 rewards:
 - 🏆 [Font Alchemist] - Master of terminal visual enhancement
 - ⚡ [Icon Weaver] - Creator of visually rich terminal experiences
@@ -68,6 +67,7 @@ layout: quest
 sub_title: 'Side Quest: Font Enhancement and Icon Display'
 redirect_from:
 - /quests/0010/side-quests/nerd-font-enchantment/
+draft: false
 ---
 ## 🌟 The Legend of Font Enchantment
 

@@ -68,7 +68,6 @@ keywords:
   - '0000'
 fmContentType: quest
 draft: false
-meta:
 slug: fundamentals
 layout: quest
 ---

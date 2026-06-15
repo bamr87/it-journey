@@ -78,7 +78,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 0011 (3) Quest: Main Quest - VS Code Copilot Prompt Mastery'
 rewards:
   badges:

@@ -2,7 +2,6 @@
 title: Revolutionizing Work with AI Automation
 author: IT-Journey Team
 description: Discover how AI automation can transform your workflow, enhancing code reviews, documentation, and PR summaries for a smarter coding experience.
-excerpt:
 preview: images/previews/revolutionizing-work-with-ai-automation.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:43:43.000Z'
@@ -37,9 +36,8 @@ keywords:
   - OpenAI API
 fmContentType: quest
 comments: false
-attachments: ''
 layout: quest
-sub_title:
+draft: false
 ---
 **Ah, the final frontier... the arcane fusion of human cleverness and artificial intelligence.** You've set up branches, written perfect commits, documented your journey, and summoned automation spells---but now it's time to meet your **AI familiars**.
 

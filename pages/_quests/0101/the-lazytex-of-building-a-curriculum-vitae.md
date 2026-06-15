@@ -46,7 +46,6 @@ keywords:
   - tool-mastery
 fmContentType: quest
 comments: true
-attachments: ''
 rewards:
 - 🏆 CV Forgemaster (LaTeX)
 - ⚡ VS Code LaTeX workflow mastery
@@ -56,6 +55,7 @@ redirect_from:
 - /quests/0101/the-lazytex-of-building-a-curriculum-vitae/
 layout: quest
 sub_title: 'Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction'
+draft: false
 ---
 ## 🧙‍♂️ Epic Introduction
 

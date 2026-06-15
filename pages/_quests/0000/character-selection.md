@@ -69,7 +69,6 @@ keywords:
   - '0000'
 fmContentType: quest
 draft: false
-meta:
 slug: character-selection
 layout: quest
 ---

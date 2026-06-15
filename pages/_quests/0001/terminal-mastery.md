@@ -52,7 +52,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 rewards:
 - 🏆 Terminal Navigator Badge
 - ⚡ 10x Developer Productivity Boost

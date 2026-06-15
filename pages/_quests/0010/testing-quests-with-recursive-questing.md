@@ -54,7 +54,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 0010 (2) Quest: Python Recursion & Testing'
 rewards:
   badges:

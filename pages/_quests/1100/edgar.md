@@ -53,7 +53,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 rewards:
 - 🏆 EDGAR Slayer Badge
 - ⚡ Stronger API + data wrangling skills

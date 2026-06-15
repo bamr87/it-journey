@@ -62,6 +62,7 @@ validation_criteria:
 layout: quest
 redirect_from:
 - /quests/0001/side-quests/barodybroject-stack-analysis/
+draft: false
 ---
 # Technology Stack Analysis: Barodybroject
 

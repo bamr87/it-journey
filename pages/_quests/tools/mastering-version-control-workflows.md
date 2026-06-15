@@ -2,7 +2,6 @@
 title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
 author: IT-Journey Team
 description: Master advanced Git workflows including semantic versioning, branch strategies, CI/CD automation, and pull request orchestration using real-world examples from an active open-source project.
-excerpt:
 preview: images/previews/mastering-version-control-workflows.png
 date: '2026-03-21T00:00:00.000Z'
 lastmod: '2026-03-21T00:00:00.000Z'
@@ -43,7 +42,6 @@ keywords:
 layout: quest
 fmContentType: quest
 comments: false
-attachments: ''
 quest_line: Development Mastery
 quest_arc: Version Control Mastery
 quest_dependencies:
@@ -97,6 +95,7 @@ validation_criteria:
   - Explain when to use feature, bugfix, hotfix, and refactor branches
   - Describe the SemVer implications of each commit type
 sub_title: 'Level 1100 (12) Quest: Main Quest - Advanced Git Mastery'
+draft: false
 ---
 *Greetings, battle-hardened code warrior! You have survived the introductory enchantments of branching and the clean-commit oath. But the realm of version control runs far deeper than a single `git push`. Today you face the Grand Merge Ritual — a trial reserved for those who would command entire release kingdoms, orchestrate fleets of pull requests, and bend the timeline of code to their will.*
 

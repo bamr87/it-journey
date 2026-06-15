@@ -50,6 +50,7 @@ validation_criteria:
 layout: quest
 redirect_from:
 - /quests/0001/side-quests/personal-site/
+draft: false
 ---
 ## 🎯 Quest Objectives
 

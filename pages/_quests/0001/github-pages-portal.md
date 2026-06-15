@@ -53,7 +53,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 001 (1) Quest: Main - GitHub Pages'
 rewards:
 - GitHub Pages deployment badge

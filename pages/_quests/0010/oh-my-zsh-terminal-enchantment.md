@@ -92,11 +92,11 @@ keywords:
   - productivity-tools
   - command-line-efficiency
 comments: true
-attachments: ''
 redirect_from:
 - /quests/0010/oh-my-zsh-terminal-enchantment/
 layout: quest
 sub_title: 'Level 0010 (2) Quest: Terminal Supercharging and Customization'
+draft: false
 ---
 ## 🌟 The Legend of Terminal Enchantment
 

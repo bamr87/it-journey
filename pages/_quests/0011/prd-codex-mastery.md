@@ -44,7 +44,6 @@ keywords:
   - ci-cd
 lastmod: '2025-11-29T06:48:54.000Z'
 permalink: /quests/0011/prd-codex-mastery/
-attachments: ''
 comments: true
 prerequisites:
   knowledge_requirements:

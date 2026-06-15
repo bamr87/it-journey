@@ -66,7 +66,6 @@ keywords:
   - hands-on
 fmContentType: quest
 comments: true
-attachments: ''
 rewards:
   badges:
   - 🏆 Glass Interface Artificer
@@ -82,6 +81,7 @@ redirect_from:
 - /quests/0010/side-quests/terminal-artificer-frontend-building/
 layout: quest
 sub_title: 'Level 0010 (2) Quest: Terminal Frontend Building'
+draft: false
 ---
 *In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
 

@@ -2,7 +2,6 @@
 title: Understanding Action Triggers in Depth
 author: IT-Journey Team
 description: Unlock the power of automation with GitHub Actions! Streamline your workflows and enhance your CI/CD processes effortlessly.
-excerpt:
 preview: images/previews/understanding-action-triggers-in-depth.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2026-03-20T22:23:36.000Z'
@@ -37,9 +36,8 @@ keywords:
   - YAML
 fmContentType: quest
 comments: false
-attachments: ''
 layout: quest
-sub_title:
+draft: false
 ---
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.
 

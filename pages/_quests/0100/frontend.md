@@ -28,11 +28,9 @@ keywords:
   - site
 fmContentType: quest
 draft: true
-attachments: ''
 slug: frontend-forests
 type: default
 layout: quest
-sub_title:
 ---
 ## 🎯 Quest Objectives
 

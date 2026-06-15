@@ -52,6 +52,7 @@ validation_criteria:
   skill_demonstrations: []
 layout: quest
 sub_title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
+draft: false
 ---
 ## The Challenge: Safe automation without surprises
 

@@ -67,6 +67,7 @@ validation_criteria:
 layout: quest
 redirect_from:
 - /quests/0001/side-quests/it-journey-stack-analysis/
+draft: false
 ---
 # Stack Attack Analysis: IT-Journey
 

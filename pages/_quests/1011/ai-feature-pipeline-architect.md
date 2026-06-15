@@ -50,7 +50,6 @@ keywords:
 fmContentType: quest
 draft: true
 comments: true
-attachments: ''
 rewards:
 - 🏆 AI Pipeline Architect Badge
 - ⚡ DevSecOps Automation Mastery

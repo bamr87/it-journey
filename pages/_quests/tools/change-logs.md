@@ -2,7 +2,6 @@
 title: Change Logs
 author: IT-Journey Team
 description: Quest covering Change Logs.
-excerpt:
 preview: /svg/penrose-gpt-vs-human.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:43:43.000Z'
@@ -24,9 +23,8 @@ keywords:
   - logs
 fmContentType: quest
 comments: false
-attachments: ''
 layout: quest
-sub_title:
+draft: false
 ---
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**
 
