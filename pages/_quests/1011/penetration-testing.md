@@ -1,7 +1,7 @@
 ---
 title: 'Penetration Testing: Tools and Ethical Hacking Methodologies'
 author: IT-Journey Team
-description: Learn ethical penetration testing methodology - authorized scope, reconnaissance, scanning with nmap, web testing with Burp Suite and OWASP ZAP, and clear reporting.
+description: 'Learn authorized, ethical penetration testing: defining scope, reconnaissance, nmap scanning, web testing with Burp Suite and ZAP, and clear reporting.'
 excerpt: Master authorized, ethical penetration testing - recon, nmap, Burp, ZAP, and professional reporting
 preview: images/previews/penetration-testing-tools-and-ethical-hacking-meth.png
 date: '2025-11-29T22:51:57.000Z'

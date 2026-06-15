@@ -1,5 +1,5 @@
 ---
-title: 'The PRD Codex: Mastering the Art of Product Reality Distillation'
+title: 'The PRD Codex: Master Product Reality Distillation'
 description: Master the ancient art of transforming scattered signals into living Product Requirements Documents using automated tooling and CI/CD integration
 date: '2025-11-28T23:55:43.000Z'
 preview: /images/quest-preview-prd-codex.png

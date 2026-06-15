@@ -1,7 +1,7 @@
 ---
 title: 'API Gateway Patterns: The Single Front Door'
 author: IT-Journey Team
-description: Master API gateway patterns - routing, authentication, rate limiting, and response aggregation - plus the Backend-for-Frontend pattern that gives each client its own tailored gateway.
+description: 'Master API gateway patterns - routing, authentication, rate limiting, and response aggregation - plus the Backend-for-Frontend pattern for tailored clients.'
 excerpt: Give many services one secure front door with routing, auth, rate limiting, aggregation, and the BFF pattern
 preview: images/previews/api-gateway-patterns-single-front-door.png
 date: '2025-11-29T22:51:57.000Z'

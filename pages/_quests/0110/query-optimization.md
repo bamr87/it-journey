@@ -1,7 +1,7 @@
 ---
-title: 'Query Optimization: Performance Tuning for Fast Database Queries'
+title: 'Query Optimization: Tuning Fast Database Queries'
 author: IT-Journey Team
-description: Read EXPLAIN plans, choose the right indexes, slay the N+1 query, and rewrite slow SQL so it runs in milliseconds instead of minutes on a real PostgreSQL database.
+description: 'Read EXPLAIN plans, pick the right indexes, slay the N+1 query, and rewrite slow SQL to run in milliseconds on a real PostgreSQL database.'
 excerpt: Diagnose slow queries with EXPLAIN, apply indexing strategy, and eliminate N+1 to make databases fast.
 preview: images/previews/query-optimization-performance-tuning-quest-titl.png
 date: '2025-11-29T22:51:57.000Z'

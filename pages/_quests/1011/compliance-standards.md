@@ -1,7 +1,7 @@
 ---
 title: 'Compliance Standards: SOC 2, ISO 27001, GDPR, and PCI-DSS'
 author: IT-Journey Team
-description: Navigate the major security compliance frameworks - SOC 2, ISO 27001, GDPR, and PCI-DSS. Learn controls mapping, audit evidence, and how to prepare for an audit.
+description: 'Navigate the major security compliance frameworks - SOC 2, ISO 27001, GDPR, and PCI-DSS - learning controls mapping, audit evidence, and audit prep.'
 excerpt: Master SOC 2, ISO 27001, GDPR, and PCI-DSS - controls, audit evidence, and audit readiness
 preview: images/previews/compliance-standards-soc-2-iso-27001-gdpr-pci-dss.png
 date: '2025-11-29T22:51:57.000Z'

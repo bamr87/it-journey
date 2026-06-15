@@ -1,6 +1,6 @@
 ---
 title: 'Hello macOS: Setting Up the Apple Kingdom'
-description: Set up a macOS development environment with Homebrew, Xcode Command Line Tools, and a modern terminal workflow.
+description: 'Transform your Mac into a professional dev workstation: install Xcode Command Line Tools and Homebrew, configure iTerm2, and verify Git and SSH.'
 author: IT-Journey Team
 date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14

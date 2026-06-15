@@ -1,5 +1,5 @@
 ---
-title: 'Security Fundamentals: CIA Triad and Defense in Depth Strategies'
+title: 'Security Fundamentals: CIA Triad and Defense in Depth'
 author: IT-Journey Team
 description: Master information security fundamentals including the CIA triad, the OWASP Top 10, defense in depth, secure-by-design thinking, and practical risk management.
 excerpt: Learn foundational security concepts including the CIA triad, the OWASP Top 10, defense in depth, and a security mindset

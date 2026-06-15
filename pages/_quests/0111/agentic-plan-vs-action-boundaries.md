@@ -1,6 +1,6 @@
 ---
 title: 'The Three Sigils: Plan, Reason, Act'
-description: Master the boundary between agent planning and agent execution. Configure Copilot agents to output structured plans, validate them, and prevent action until approved — eliminating the most dangerous source of agent runaway.
+description: 'Configure a GitHub Copilot coding agent to produce a structured plan, define its JSON schema, and gate every action behind human approval.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-plan-vs-action-boundaries.png
 level: '0111'

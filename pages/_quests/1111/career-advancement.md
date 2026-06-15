@@ -1,5 +1,5 @@
 ---
-title: 'Career Advancement: IC vs Management Tracks, Leveling, and Negotiation'
+title: 'Career Advancement: IC vs Management and Leveling'
 author: IT-Journey Team
 description: Advance your engineering career deliberately. Learn the IC vs management fork, how leveling rubrics work, building a technical brand, and negotiating offers.
 excerpt: Choose IC or management, navigate leveling, build a brand, and negotiate

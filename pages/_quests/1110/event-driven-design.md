@@ -1,7 +1,7 @@
 ---
 title: 'Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS'
 author: IT-Journey Team
-description: Master event-driven architecture - events as facts, publish/subscribe messaging, event sourcing, CQRS, and the eventual consistency that makes decoupled systems both powerful and tricky.
+description: 'Learn event-driven architecture: events as facts, pub/sub messaging, event sourcing, CQRS, and the eventual consistency that decouples systems.'
 excerpt: Design decoupled systems with events, pub/sub, event sourcing, CQRS, and eventual consistency
 preview: images/previews/event-driven-design-pubsub-event-sourcing-cqrs.png
 date: '2025-11-29T22:51:57.000Z'

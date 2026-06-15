@@ -1,5 +1,5 @@
 ---
-title: Quests (~) Index
+title: 'Quest Realm: Your Gamified IT Learning Hub'
 author: IT-Journey Team
 layout: quest-hub
 quest_paths: true

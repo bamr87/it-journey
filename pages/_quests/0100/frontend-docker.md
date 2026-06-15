@@ -7,7 +7,7 @@ tags:
 - bootstrap
 - frontend
 - containers
-description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+description: 'Journey into the Frontend Forests to run a Jekyll site in Docker on macOS, no Ruby install required, then style it with Bootstrap 5 from the CDN.'
 excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 preview: images/previews/dockering-jekyll-with-bootstrap-5.png
 date: '2024-05-28T15:23:32.000Z'

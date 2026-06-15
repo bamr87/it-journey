@@ -1,7 +1,7 @@
 ---
 title: 'Stream Processing: Real-Time Data with Apache Kafka & Flink'
 author: IT-Journey Team
-description: Build real-time streaming pipelines with Kafka. Learn batch versus stream, event time versus processing time, windowing, watermarks, and exactly-once semantics for event-driven systems.
+description: 'Build real-time streaming pipelines with Apache Kafka. Master batch versus stream, event-time windowing, watermarks for late data, and exactly-once delivery.'
 excerpt: Build real-time pipelines with Kafka, windowing, event-time processing, and exactly-once delivery
 preview: images/previews/stream-processing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

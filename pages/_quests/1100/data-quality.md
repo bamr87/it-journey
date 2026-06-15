@@ -1,7 +1,7 @@
 ---
-title: 'Data Quality Engineering: Testing, Validation & Monitoring Frameworks'
+title: 'Data Quality Engineering: Validation & Monitoring'
 author: IT-Journey Team
-description: Build data quality into pipelines. Learn the six quality dimensions, profiling, validation, Great-Expectations-style checks, data contracts, anomaly detection, and lineage in Python.
+description: 'Build data quality into your pipelines: master the six quality dimensions, profiling, validation suites, data contracts, anomaly detection, and lineage.'
 excerpt: Guard your pipelines with profiling, validation, data contracts, expectation suites, and lineage
 preview: images/previews/data-quality-engineering-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

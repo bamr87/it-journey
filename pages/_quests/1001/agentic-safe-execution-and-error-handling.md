@@ -1,6 +1,6 @@
 ---
 title: 'The Shield of Retries: Safe Execution and Error Handling'
-description: Design agent workflows that survive tool failures, API errors, and unexpected outputs — implement retry logic, timeouts, fallback strategies, and graceful error reporting for GitHub Copilot agents.
+description: 'Build resilient GitHub Copilot agents with retry logic, timeouts, fallback strategies, and graceful error reporting that survive tool failures and API errors.'
 date: '2026-05-17T00:00:00.000Z'
 preview: /assets/images/previews/agentic-safe-execution-and-error-handling.png
 level: '1001'

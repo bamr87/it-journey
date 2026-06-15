@@ -1,6 +1,6 @@
 ---
 title: 'Initiation Rites: Embedding Agents in the SDLC'
-description: Learn to integrate AI agents into the software development lifecycle — define agent inputs, outputs, and success criteria, and identify the anti-patterns that sink autonomous workflows before they ship.
+description: 'Integrate AI agents into the SDLC: define their inputs, outputs, and success criteria, and learn the anti-patterns that sink autonomous workflows.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-sdlc-integration.png
 level: '0111'

@@ -1,7 +1,7 @@
 ---
-title: 'Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide'
+title: 'Distributed Tracing with Jaeger & OpenTelemetry'
 author: IT-Journey Team
-description: Implement distributed tracing with OpenTelemetry and Jaeger. Learn spans and traces, context propagation, instrumentation, and how to debug latency across microservices.
+description: 'Instrument a Python service with OpenTelemetry, emit spans to Jaeger, propagate trace context, and debug latency across your microservices.'
 excerpt: Follow a single request across services with spans, traces, OpenTelemetry, and Jaeger
 preview: images/previews/distributed-tracing-jaeger-quest-title-opentelemet.png
 date: '2025-11-29T22:51:57.000Z'

@@ -1,7 +1,7 @@
 ---
 title: 'Infrastructure as Code: Terraform Fundamentals and State'
 author: IT-Journey Team
-description: Learn Infrastructure as Code with Terraform - providers and resources, the plan and apply workflow, state files, variables and outputs, and the idempotency that makes declarative infrastructure safe and repeatable.
+description: 'Provision cloud infrastructure declaratively with Terraform: providers and resources, the plan/apply lifecycle, state files, variables, and idempotency.'
 excerpt: Provision cloud infrastructure declaratively with Terraform - providers, resources, state, plan/apply, and idempotency
 preview: images/previews/infrastructure-as-code-terraform-quest-title-cloud.png
 date: '2025-11-29T22:51:57.000Z'

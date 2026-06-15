@@ -1,7 +1,7 @@
 ---
-title: 'Docker Container Fundamentals: Master Isolation & Portability for DevOps'
+title: 'Docker Container Fundamentals: Images to Registries'
 author: IT-Journey Team
-description: Learn Docker container fundamentals including images, containers, the Dockerfile, build and run workflows, image layers, and registries for modern application deployment.
+description: 'Master Docker container fundamentals: images versus containers, writing a Dockerfile, build and run workflows, image layers and caching, and registries.'
 excerpt: Master Docker container fundamentals including images, the Dockerfile, layers, and registries for portable application deployment
 preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
 date: '2025-11-29T22:51:57.000Z'

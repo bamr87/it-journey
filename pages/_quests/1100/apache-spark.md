@@ -1,7 +1,7 @@
 ---
-title: 'Apache Spark Mastery: Big Data Processing with PySpark & Scala'
+title: 'Apache Spark Mastery: Big Data with PySpark'
 author: IT-Journey Team
-description: Master Apache Spark for distributed data processing. Learn RDDs and DataFrames, transformations versus actions, lazy evaluation, partitions, shuffles, and the Catalyst optimizer with PySpark.
+description: 'Master Apache Spark for distributed data: RDDs, DataFrames, transformations vs actions, lazy evaluation, partitions, shuffles, and tuning with PySpark.'
 excerpt: Process big data at scale with Spark RDDs, DataFrames, lazy evaluation, and partition-aware tuning
 preview: images/previews/apache-spark-mastery-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

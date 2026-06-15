@@ -1,6 +1,6 @@
 ---
 title: 'Stack Attack Analysis: IT-Journey'
-description: Comprehensive technology stack analysis and documentation for the IT-Journey educational platform
+description: 'Dissect the IT-Journey platform stack: Jekyll and Ruby frontend, Python automation, Docker, GitHub Actions CI/CD, and AI-powered content analysis.'
 preview: images/previews/stack-attack-analysis-it-journey.png
 date: '2025-11-02T14:45:16.000Z'
 repository: https://github.com/bamr87/it-journey

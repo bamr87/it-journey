@@ -1,7 +1,7 @@
 ---
 title: 'Alerting Systems: Alertmanager, Routing, On-Call & Runbooks'
 author: IT-Journey Team
-description: Build production alerting with Prometheus alert rules and Alertmanager. Learn routing, grouping, silencing, inhibition, escalation, on-call schedules, and runbook-driven response.
+description: 'Forge production alerting with Prometheus rules and Alertmanager: routing, grouping, silencing, inhibition, on-call escalation, and runbooks.'
 excerpt: Turn signals into actionable pages with alert rules, Alertmanager routing, on-call, and runbooks
 preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
 date: '2025-11-29T22:51:57.000Z'

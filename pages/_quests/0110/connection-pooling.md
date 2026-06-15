@@ -1,7 +1,7 @@
 ---
 title: 'Connection Pooling: Efficient Database Resource Management'
 author: IT-Journey Team
-description: Stop your database drowning in connections - understand the connection lifecycle, size a pool correctly, deploy PgBouncer, and hunt down the connection leaks that exhaust a healthy database.
+description: 'Understand the connection lifecycle, size a pool correctly, deploy PgBouncer, and hunt down the leaks that exhaust a healthy PostgreSQL database.'
 excerpt: Master pool sizing, PgBouncer, the connection lifecycle, and finding connection leaks.
 preview: images/previews/connection-pooling-efficient-resource-quest-title.png
 date: '2025-11-29T22:51:57.000Z'

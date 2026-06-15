@@ -1,7 +1,7 @@
 ---
 title: 'Scaling Strategies: Horizontal Growth, Caching, and CAP'
 author: IT-Journey Team
-description: Master scaling strategies - vertical vs. horizontal scaling, load balancing, caching layers, database replication and sharding, and the CAP theorem that governs every distributed data store.
+description: 'Master scaling: vertical vs. horizontal growth, load balancing, caching layers, database replication and sharding, and the CAP theorem.'
 excerpt: Scale systems with horizontal growth, load balancing, caching, sharding, and a working grasp of CAP
 preview: images/previews/scaling-strategies-horizontal-caching-cap.png
 date: '2025-11-29T22:51:57.000Z'

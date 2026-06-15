@@ -1,7 +1,7 @@
 ---
 title: 'Bootstrap Framework: Build Responsive Sites Fast'
 author: IT-Journey Team
-description: Learn Bootstrap 5 for rapid web development. Master the grid system, components, utility classes, and customization to build mobile-first responsive sites without writing custom CSS.
+description: 'Master Bootstrap 5: use the 12-column grid, prebuilt components, and utility classes to build mobile-first responsive sites without custom CSS.'
 excerpt: Build professional responsive websites quickly with Bootstrap's grid, components, and utilities.
 preview: images/previews/bootstrap-framework-responsive-design-toolkit-desc.png
 date: '2025-11-29T22:51:57.000Z'

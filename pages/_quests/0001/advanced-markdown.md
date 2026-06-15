@@ -1,7 +1,7 @@
 ---
 title: 'Advanced Markdown: Tables, Footnotes & Kramdown'
 author: IT-Journey Team
-description: Master advanced Markdown beyond the basics. Learn tables, footnotes, fenced code, callouts, Kramdown attributes, and frontmatter-driven content for documentation and Jekyll sites.
+description: 'Go beyond basic Markdown with tables, footnotes, fenced code, callouts, Kramdown attributes, and YAML frontmatter that builds Jekyll pages.'
 excerpt: Level up your Markdown with tables, footnotes, fenced code, callouts, and Kramdown power features.
 preview: images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
 date: '2025-11-29T22:51:57.000Z'

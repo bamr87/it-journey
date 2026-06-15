@@ -1,6 +1,6 @@
 ---
 title: 'The Council of Many: Multi-Agent Orchestration Patterns'
-description: Design and implement multi-agent systems using GitHub — orchestrator agents, sub-agent fan-out, sequential chains, and event-driven coordination using GitHub Actions and GitHub Models API.
+description: 'Build multi-agent systems on GitHub: design fan-out, sequential chain, and event-driven orchestrators that dispatch sub-agent jobs and aggregate their results.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-orchestration-patterns.png
 level: '1011'

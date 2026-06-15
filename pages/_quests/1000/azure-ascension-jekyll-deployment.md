@@ -1,6 +1,6 @@
 ---
 title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
-description: Deploy the IT-Journey Jekyll site to Azure Static Web Apps with a clean CI/CD pipeline and safe secrets handling.
+description: 'Deploy the IT-Journey Jekyll site to Azure Static Web Apps: provision the app, wire up a CI/CD pipeline, secure your secrets, and verify production.'
 author: IT-Journey Team
 date: '2025-07-05T12:12:17.000Z'
 lastmod: 2026-01-14

@@ -1,7 +1,7 @@
 ---
-title: 'Natural Language Processing: Text Analysis, Transformers & LLMs with Python'
+title: 'Natural Language Processing: Transformers & LLMs'
 author: IT-Journey Team
-description: Build NLP applications with Python and Hugging Face. Learn tokenization, word embeddings, the transformer attention mechanism, and how modern large language models actually work.
+description: 'Build NLP apps in Python with Hugging Face: master tokenization, embeddings, and the attention mechanism behind modern large language models.'
 excerpt: Build NLP applications with tokenization, embeddings, transformers, and large language models
 preview: images/previews/natural-language-processing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

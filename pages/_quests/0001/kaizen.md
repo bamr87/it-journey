@@ -1,7 +1,7 @@
 ---
-title: 'Kaizen Quest: The Path of Continuous Improvement in Software Alchemy'
+title: 'Kaizen Quest: Continuous Improvement Alchemy'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of Kaizen - continuous improvement - and transform your software development practices through incremental refinement, waste elimination, and perpetual evolution
+description: 'Master Kaizen for software teams: run PDCA cycles, eliminate the seven wastes, map value streams, track DORA metrics, and build a blameless culture.'
 excerpt: Embark on an epic journey to master Kaizen principles and forge a culture of continuous improvement in software development
 preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
 date: '2025-11-02T18:34:05.000Z'

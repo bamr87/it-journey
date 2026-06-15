@@ -1,7 +1,7 @@
 ---
 title: 'YAML Configuration: Site Settings Mastery'
 author: IT-Journey Team
-description: Master YAML syntax for Jekyll. Learn front matter, the _config.yml file, structured data files, and the common pitfalls of indentation, quoting, and types that trip up beginners.
+description: 'Master YAML for Jekyll: write front matter, configure _config.yml, build _data files, and dodge the indentation, quoting, and type pitfalls beginners hit.'
 excerpt: Learn YAML syntax and Jekyll configuration to build and customize professional static websites.
 preview: images/previews/yaml-configuration-site-settings-quest-descripti.png
 date: '2025-11-29T22:51:57.000Z'

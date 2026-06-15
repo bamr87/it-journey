@@ -1,6 +1,6 @@
 ---
 title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
-description: Use GitHub execution traces, Actions logs, artifact forensics, and structured RCA frameworks to diagnose why an agent failed — and prevent the same failure from recurring.
+description: 'Read GitHub Actions logs, artifacts, and execution traces, then apply a 5-Why RCA framework to find why an agent failed and prevent it recurring.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-failure-root-cause-analysis.png
 level: '1010'

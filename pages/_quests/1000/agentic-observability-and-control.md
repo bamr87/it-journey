@@ -1,6 +1,6 @@
 ---
-title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
-description: Configure observability for GitHub Copilot coding agents — producing inspectable artifacts, configuring audit trails, and setting up human intervention points that don't slow delivery.
+title: 'The All-Seeing Eye: Observability for AI Agents'
+description: 'Instrument GitHub Copilot agents with execution traces, inspectable artifacts, audit trails, and human review gates that catch drift without blocking runs.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-observability-and-control.png
 level: '1000'

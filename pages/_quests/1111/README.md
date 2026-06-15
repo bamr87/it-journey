@@ -1,7 +1,7 @@
 ---
 title: 'Level 1111: Leadership & Innovation'
 author: IT-Journey Team
-description: Achieve mastery in technical leadership, community building, and driving innovation to shape the future of technology
+description: 'Master technical leadership, open source contribution, mentorship, speaking, innovation, and community building to shape the future of technology'
 preview: images/previews/level-1111-leadership-innovation.png
 permalink: /quests/1111/
 layout: quest-collection

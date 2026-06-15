@@ -1,7 +1,7 @@
 ---
 title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
+description: 'Master prompt engineering for VS Code Copilot: structured RCTF patterns, few-shot and Chain-of-Thought prompting, and PDCA-driven refinement.'
 excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding precision-crafted prompts that unlock consistent, high-quality AI assistance in your development workflow
 preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
 date: '2025-11-26T22:17:42.000Z'

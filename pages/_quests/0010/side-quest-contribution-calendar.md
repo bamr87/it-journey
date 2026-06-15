@@ -8,7 +8,7 @@ keywords:
   secondary:
   - CSS grid
   - data visualization
-description: Build a GitHub-style contribution heatmap for your character profile using the 52-week calendar data
+description: 'Build a GitHub-style contribution heatmap for your character profile, rendering 52 weeks of activity data with CSS Grid and Jekyll Liquid templates.'
 excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in light.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'

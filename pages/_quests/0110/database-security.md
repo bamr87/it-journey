@@ -1,7 +1,7 @@
 ---
 title: 'Database Security: Access Control and Data Encryption'
 author: IT-Journey Team
-description: Defend the Data Keep with least-privilege grants, parameterized queries that stop SQL injection, encryption at rest and in transit, and audit logging that records who touched what.
+description: 'Defend the Data Keep with least-privilege grants, parameterized queries that stop SQL injection, encryption at rest and in transit, and audit logging.'
 excerpt: Protect databases with least privilege, parameterized queries, encryption, and auditing.
 preview: images/previews/database-security-access-control-quest-title-and.png
 date: '2025-11-29T22:51:57.000Z'

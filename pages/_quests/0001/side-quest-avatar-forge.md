@@ -8,7 +8,7 @@ keywords:
   secondary:
   - contributor
   - customization
-description: Design and integrate a custom avatar for your contributor character profile
+description: 'Replace your default identicon by sourcing or creating a custom avatar, hosting the image, and wiring it into your contributor data file to brand your profile.'
 excerpt: Visit the Portrait Studio and commission a visual identity worthy of your class.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'

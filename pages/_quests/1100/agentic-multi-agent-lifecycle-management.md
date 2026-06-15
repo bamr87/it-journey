@@ -1,6 +1,6 @@
 ---
 title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
-description: Manage the full lifecycle of agents in a GitHub-native multi-agent system — provisioning, monitoring, scaling, decommissioning, and replacing agents across long-running workflows.
+description: 'Run the full lifecycle of a GitHub-native multi-agent system: build a registry, monitor agent health, and provision, version, and retire agents safely.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-lifecycle-management.png
 level: '1100'

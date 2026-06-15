@@ -1,6 +1,6 @@
 ---
 title: Level 001 - Journeyman Challenges
-description: Web technologies and advanced scripting quests for intermediate learners
+description: 'Journeyman-tier quests covering web fundamentals, GitHub Pages and Jekyll deployment, Liquid and YAML, Git workflows, and Python and JavaScript scripting.'
 preview: images/previews/level-001-journeyman-challenges.png
 permalink: /quests/0001/
 layout: quest-collection

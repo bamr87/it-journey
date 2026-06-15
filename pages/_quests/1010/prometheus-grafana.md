@@ -1,7 +1,7 @@
 ---
 title: 'Prometheus & Grafana: Metrics Collection and Visualization'
 author: IT-Journey Team
-description: 'Learn the Prometheus data model, write PromQL queries, run exporters and scrape targets, and build Grafana dashboards that turn raw time series into operational insight.'
+description: 'Master the Prometheus data model, write PromQL queries, run exporters and scrape targets, and build Grafana dashboards from raw time series.'
 excerpt: Collect metrics with Prometheus and visualize them in Grafana dashboards
 preview: images/previews/prometheus-grafana-metrics-collection-quest-title.png
 date: '2025-11-29T22:51:57.000Z'

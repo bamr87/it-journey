@@ -8,7 +8,7 @@ keywords:
   secondary:
   - profile customization
   - advanced CSS
-description: Create custom CSS theme variants for the contributor character profile system
+description: 'Craft custom CSS theme variants for the contributor profile system using custom properties, light and dark modes, and WCAG AA accessible color contrast.'
 excerpt: The Style Sorcerer teaches the art of visual enchantment — bend colors and shapes to your will.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'

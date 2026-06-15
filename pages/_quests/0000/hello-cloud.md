@@ -1,6 +1,6 @@
 ---
 title: 'Hello Cloud: First Steps into the Sky Realm'
-description: Create your first cloud account, install a cloud CLI, and deploy a simple resource safely.
+description: 'Claim your first foothold in the Sky Realm: create a secured cloud account with MFA, wield a cloud CLI, provision a resource, then banish it to avoid costs.'
 author: IT-Journey Team
 date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14

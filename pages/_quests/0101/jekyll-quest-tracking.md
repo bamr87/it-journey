@@ -1,7 +1,7 @@
 ---
 title: 'Jekyll Quest Tracking: Building Dynamic Collection Layouts'
 author: IT-Journey Team
-description: Master Jekyll's collection system by building a quest tracking interface with dynamic filtering, statistics, and level-aware displays using Liquid templating and frontmatter data
+description: 'Build a Jekyll quest-tracking interface with dynamic filtering, collection stats, and level-aware displays using Liquid templating and frontmatter.'
 excerpt: Transform static Jekyll sites into dynamic quest-tracking portals using collections, Liquid templating, and JavaScript filtering
 preview: images/previews/jekyll-quest-tracking-building-dynamic-collection-.png
 date: '2025-12-01T21:51:02.000Z'

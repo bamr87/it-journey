@@ -1,7 +1,7 @@
 ---
-title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
+title: 'Conquer King EDGAR: Siege of the SEC Data Castle'
 author: Quest Master IT-Journey Team
-description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into usable insights with Python and AI assistance.
+description: 'Breach the SEC EDGAR fortress with its public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into insights using Python.'
 excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured, analyzable datasets.
 preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
 date: '2025-08-21T22:00:59.000Z'

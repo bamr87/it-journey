@@ -1,6 +1,6 @@
 ---
 title: Level 0010 - Terminal Enhancement & Shell Mastery
-description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and advanced shell customization
+description: 'Customize your shell with Oh My Zsh, Nerd Fonts, and themes, then level up with advanced Bash scripting, prompt engineering, and terminal workflows.'
 preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
 permalink: /quests/0010/
 layout: quest-collection

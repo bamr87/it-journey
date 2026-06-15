@@ -1,7 +1,7 @@
 ---
 title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
 author: IT-Journey Team
-description: Learn the Liquid templating language that powers Jekyll. Master variables, filters, tags, loops, and conditionals, plus includes and layouts, to build dynamic pages at build time.
+description: 'Master Liquid, the templating language behind Jekyll: variables, filters, loops, conditionals, includes, and layouts that render dynamic pages at build time.'
 excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters, and control flow.
 preview: images/previews/liquid-templating-dynamic-content-jekyll-quest-de.png
 date: '2025-11-29T22:51:57.000Z'

@@ -1,6 +1,6 @@
 ---
 title: 'Crossing the Tool Planes: State Continuity Across Tools'
-description: Maintain agent state and context continuity when tasks span multiple tools, sessions, and GitHub surfaces — issues, PRs, Actions runs, and Codespaces all hold fragments that the agent must weave together.
+description: 'Keep an agent''s state and context intact when tasks cross GitHub surfaces — issues, PRs, Actions runs, and Codespaces each hold fragments to weave together.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-state-continuity-cross-tools.png
 level: '1010'

@@ -1,6 +1,6 @@
 ---
 title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
-description: Design and implement responsible agentic AI guardrails using GitHub-native tools — boundary enforcement, human approval gates, escalation protocols, and audit trails for AI-assisted actions.
+description: 'Build responsible agentic AI guardrails with GitHub-native tools: boundary enforcement, human approval gates, escalation protocols, and audit trails.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-guardrails-and-human-in-the-loop.png
 level: '1100'

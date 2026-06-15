@@ -1,6 +1,6 @@
 ---
 title: 'Trial of the Agentic Codex: The Grand Capstone'
-description: The ultimate challenge — a six-domain scenario that tests every GH-600 skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural decisions, and earn the title of Agentic Codex Master.
+description: 'Face the six-domain grand trial: build a complete agentic AI system on GitHub, prove competency across all GH-600 domains, and earn Codex Master.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-codex-capstone-exam-trial.png
 level: '1100'

@@ -1,6 +1,6 @@
 ---
-title: 'The Oracle''s Rubric: Defining Agent Success Criteria and Signals'
-description: Define what 'done' looks like for agent-executed tasks — craft measurable acceptance criteria, configure GitHub signals that indicate success, and wire them into automated task completion detection.
+title: 'The Oracle''s Rubric: Agent Success Signals'
+description: 'Define machine-verifiable acceptance criteria for agent tasks, map them to GitHub signals like Actions checks and PR states, then automate completion detection.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-success-criteria-and-signals.png
 level: '1010'

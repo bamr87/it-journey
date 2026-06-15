@@ -1,7 +1,7 @@
 ---
-title: 🎒 Inventory & Progress Vault
+title: '🎒 Inventory & Quest Progress Vault'
 layout: default
-description: Personal dashboard for tracking quest completion, XP, badges, and earned achievements across the IT-Journey realms.
+description: 'Your personal vault for tracking quest completion, objective progress, tier percentages, and earned badges across the IT-Journey realms.'
 preview: /images/previews/inventory-learner-collection-tracker.png
 permalink: /quests/inventory/
 lastmod: '2026-05-23T00:00:00.000Z'

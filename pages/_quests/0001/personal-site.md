@@ -1,7 +1,7 @@
 ---
-title: Personal Site
+title: 'Build a Personal Website with GitHub Pages'
 author: IT-Journey Team
-description: Services and tools used for building personal site with GitHub Pages
+description: 'Discover the services and tools behind a personal website built on GitHub Pages, from Jekyll hosting and CDN to analytics, search, and comments.'
 preview: images/previews/personal-site.png
 date: '2023-12-03T01:47:51.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'

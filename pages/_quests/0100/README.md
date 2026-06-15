@@ -1,6 +1,6 @@
 ---
 title: Level 0100 - Frontend Development & Docker
-description: Master frontend development workflows with Docker containerization and modern tooling
+description: 'Containerize frontend workflows with Docker: build images, run reproducible dev environments, and ship Jekyll and Bootstrap sites with confidence.'
 preview: images/previews/level-0100-frontend-development-docker.png
 permalink: /quests/0100/
 layout: quest-collection

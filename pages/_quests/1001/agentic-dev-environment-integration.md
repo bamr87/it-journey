@@ -1,6 +1,6 @@
 ---
 title: 'Bind the Agent to the Realm: Dev Environment Integration'
-description: Integrate GitHub Copilot agents with the development environment — configure Codespaces, repositories, AGENTS.md, and environment variables so the agent operates predictably across all machines.
+description: 'Configure AGENTS.md, a dev container, and secrets so a GitHub Copilot agent runs predictably and identically in Codespaces and on your machine.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-dev-environment-integration.png
 level: '1001'

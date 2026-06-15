@@ -1,6 +1,6 @@
 ---
 title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
-description: Build observability into multi-agent GitHub workflows — correlate traces across agents, aggregate sub-agent outputs, detect inter-agent failures, and produce a unified audit log.
+description: 'Add observability to multi-agent GitHub workflows by correlating traces across agents, detecting inter-agent failures, and building a unified audit log.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-observability.png
 level: '1011'

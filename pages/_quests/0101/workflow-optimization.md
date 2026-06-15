@@ -1,5 +1,5 @@
 ---
-title: 'Workflow Optimization: Caching Strategies and Pipeline Parallelization'
+title: 'Workflow Optimization: Caching and Parallel CI/CD'
 author: IT-Journey Team
 description: Make CI/CD pipelines fast and cheap. Learn dependency caching, parallelism, matrix builds, concurrency control, and reusable workflows.
 excerpt: Speed up your CI/CD pipelines with caching strategies and parallel execution techniques

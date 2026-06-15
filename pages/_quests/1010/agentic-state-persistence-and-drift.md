@@ -1,6 +1,6 @@
 ---
-title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
-description: Detect, measure, and prevent context drift in long-running GitHub Copilot agent sessions — implement state checkpointing, drift detection signals, and recovery procedures.
+title: 'Anchoring the Drifting Agent: Stop Context Drift'
+description: 'Detect and prevent context drift in long-running GitHub Copilot agent sessions with state checkpointing, drift signals, and recovery procedures.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-state-persistence-and-drift.png
 level: '1010'

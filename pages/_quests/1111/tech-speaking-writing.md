@@ -1,5 +1,5 @@
 ---
-title: 'Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade'
+title: 'Tech Speaking and Writing: RFCs, Docs, and Talks'
 author: IT-Journey Team
 description: Communicate technical ideas with impact. Learn technical writing, design docs and RFCs, structuring a conference talk, and persuading an audience to act.
 excerpt: Write design docs and RFCs and give talks that move an audience to act

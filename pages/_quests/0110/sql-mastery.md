@@ -1,7 +1,7 @@
 ---
-title: 'SQL Mastery: Query Language Proficiency for Data Professionals'
+title: 'SQL Mastery: Query Language Proficiency'
 author: IT-Journey Team
-description: Wield SQL like a battle-mage - SELECT, JOIN, GROUP BY, subqueries, views, indexes, and transactions - against a real PostgreSQL database, turning stored data into precise answers.
+description: 'Wield SQL like a battle-mage against a real PostgreSQL database: SELECT, JOIN, GROUP BY, subqueries, views, indexes, and transactions turning data into answers.'
 excerpt: Master the SQL incantations that retrieve, combine, aggregate, and protect relational data.
 preview: images/previews/sql-mastery-query-language-proficiency-quest-titl.png
 date: '2025-11-29T22:51:57.000Z'

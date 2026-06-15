@@ -1,7 +1,7 @@
 ---
 title: 'Terminal Enchantment: Oh-My-Zsh Mastery'
 author: IT-Journey Team
-description: Transform your terminal into a powerful development weapon by mastering Oh-My-Zsh framework, themes, plugins, and VSCode integration for enhanced productivity and workflow efficiency
+description: 'Install Oh-My-Zsh, then customize your terminal with themes, plugins, and VSCode integration to supercharge your command-line development workflow.'
 excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple tool into a powerful development artifact
 preview: /images/previews/terminal-enchantment-oh-my-zsh-mastery.png
 date: '2025-09-03T22:19:06.000Z'

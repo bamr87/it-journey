@@ -1,6 +1,6 @@
 ---
 title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
-description: Select and configure the right tools for GitHub Copilot agents — identify required capabilities, configure tool access, and enforce least-privilege permissions so your agent can only touch what it needs.
+description: 'Choose and configure the right tools for GitHub Copilot agents, then enforce least-privilege permissions so your agent touches only what it needs.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-tool-selection-and-permissions.png
 level: '1000'

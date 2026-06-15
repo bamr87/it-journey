@@ -1,7 +1,7 @@
 ---
-title: 'Secure Coding Practices: OWASP Top 10 Vulnerability Prevention'
+title: 'Secure Coding: Preventing the OWASP Top 10'
 author: IT-Journey Team
-description: Learn secure coding to prevent OWASP Top 10 flaws. Master input validation, injection prevention, authentication, authorization, secrets handling, and dependency security.
+description: 'Forge code that defeats the OWASP Top 10: master input validation, injection prevention, authentication, secrets handling, and dependency security.'
 excerpt: Write secure code that defeats injection, broken access control, weak auth, and leaked secrets
 preview: images/previews/secure-coding-practices-owasp-top-10-vulnerability.png
 date: '2025-11-29T22:51:57.000Z'

@@ -8,7 +8,7 @@ keywords:
   secondary:
   - data visualization
   - JavaScript
-description: Extend the contributor stats panel with charts, graphs, and enhanced data visualizations
+description: 'Upgrade your character sheet''s stats panel with language bars, progress rings, and contribution charts built in pure HTML, CSS, and Liquid.'
 excerpt: The Data Sage reveals deeper patterns in your contribution history.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'

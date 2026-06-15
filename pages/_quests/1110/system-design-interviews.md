@@ -1,7 +1,7 @@
 ---
 title: 'System Design Interviews: A Framework for the Whiteboard'
 author: IT-Journey Team
-description: Master the system design interview - a repeatable framework, back-of-the-envelope estimation, the RESHADED approach, and articulating trade-offs out loud while designing systems like a URL shortener or news feed.
+description: 'Learn a repeatable system design interview framework - clarify requirements, estimate capacity, apply RESHADED, and articulate trade-offs out loud.'
 excerpt: A repeatable framework for system design interviews - requirements, estimation, design, and trade-off articulation
 preview: images/previews/system-design-interviews-whiteboard-framework.png
 date: '2025-11-29T22:51:57.000Z'

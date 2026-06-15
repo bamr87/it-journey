@@ -1,7 +1,7 @@
 ---
-title: 'Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn'
+title: 'Machine Learning Fundamentals with Scikit-Learn'
 author: IT-Journey Team
-description: Master machine learning fundamentals with Python. Learn supervised and unsupervised learning, train/validation/test splits, the bias-variance tradeoff, overfitting, and scikit-learn model evaluation.
+description: 'Master supervised and unsupervised learning in Python: split data correctly, fight overfitting, and evaluate scikit-learn models with honest metrics.'
 excerpt: 'Master ML fundamentals with scikit-learn: classification, regression, clustering, and honest model evaluation'
 preview: images/previews/machine-learning-fundamentals-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

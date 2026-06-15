@@ -1,7 +1,7 @@
 ---
-title: planting seeds
+title: 'Planting Seeds: Set Up Your Dev Toolkit'
 author: IT-Journey Team
-description: Quest covering planting seeds.
+description: 'Plant the seeds of your development environment by installing and configuring the foundational tools that every IT journey grows from.'
 preview: images/previews/planting-seeds.png
 date: '2025-02-05T14:08:47.000Z'
 lastmod: '2025-02-05T14:08:47.000Z'

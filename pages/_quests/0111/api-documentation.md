@@ -1,7 +1,7 @@
 ---
 title: 'API Documentation: OpenAPI, Swagger, and Contract-First'
 author: IT-Journey Team
-description: Master API documentation with the OpenAPI specification, Swagger tooling, contract-first design, request and response examples, and automated documentation generation.
+description: 'Master API documentation using OpenAPI and Swagger: write a contract-first spec, add request and response examples, and render live docs.'
 excerpt: Learn OpenAPI and Swagger, contract-first design, examples, and documentation tooling
 preview: images/previews/api-documentation-openapi-swagger-contract-first.png
 date: '2025-11-29T22:51:57.000Z'

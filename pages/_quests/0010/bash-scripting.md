@@ -1,5 +1,5 @@
 ---
-title: 'Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest'
+title: 'Bash Incantations: Level 0010 Scripting Quest'
 author: Quest Master IT-Journey Team
 description: Master the ancient art of bash scripting and unlock the power of automation through command-line incantations and shell magic.
 excerpt: Transform from a terminal novice into a bash scripting wizard through hands-on automation magic and command-line mastery.

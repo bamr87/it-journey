@@ -1,6 +1,6 @@
 ---
 title: 'When Familiars Fall: Multi-Agent Failure Recovery'
-description: Design resilient multi-agent systems on GitHub — detect sub-agent failures, apply compensation strategies, re-delegate failed tasks, and ensure partial progress is never lost.
+description: 'Build resilient multi-agent systems on GitHub: classify and detect sub-agent failures, retry with backoff, re-delegate, and preserve partial progress.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-failure-recovery.png
 level: '1011'

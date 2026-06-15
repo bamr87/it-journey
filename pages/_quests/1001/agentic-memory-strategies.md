@@ -1,6 +1,6 @@
 ---
 title: 'Vaults of Recollection: Agent Memory Strategies'
-description: Implement memory for GitHub Copilot agents — design ephemeral, session, and persistent memory using GitHub-native artifacts, issues, and repository files to maintain context across interactions.
+description: 'Design ephemeral, session, and persistent memory for GitHub Copilot agents using artifacts, issues, and repo files to keep context across interactions.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-memory-strategies.png
 level: '1001'

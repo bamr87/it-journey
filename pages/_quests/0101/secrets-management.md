@@ -1,5 +1,5 @@
 ---
-title: 'Secrets Management: Secure Configuration and Credential Handling'
+title: 'Secrets Management: Secure CI Credentials'
 author: IT-Journey Team
 description: Handle CI secrets securely. Learn OIDC versus long-lived credentials, vault systems, least privilege, scoping, and rotation for pipelines and applications.
 excerpt: Implement secure secrets management practices for protecting sensitive credentials in your pipelines

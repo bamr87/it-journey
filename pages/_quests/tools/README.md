@@ -1,7 +1,7 @@
 ---
 title: Tools Collection - Development Tools & Workflows
 layout: default
-description: Quests focused on development tools, version control, CI/CD, and professional workflows
+description: 'Master the tools and workflows professional developers use daily — version control with Git, CI/CD with GitHub Actions, AI automation, and framework practices.'
 preview: /images/previews/tools-collection-development-tools-workflows.png
 permalink: /quests/tools/
 lastmod: '2025-11-29T23:41:31.000Z'

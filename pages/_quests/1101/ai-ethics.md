@@ -1,7 +1,7 @@
 ---
-title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
+title: 'AI Ethics: Bias Detection, Fairness & Governance'
 author: IT-Journey Team
-description: Build responsible AI systems. Learn to measure bias and fairness, make models transparent, protect privacy, and govern AI with modern frameworks like the EU AI Act and the NIST AI RMF.
+description: 'Build responsible AI: measure bias and fairness, explain model decisions, protect privacy, and govern high-risk systems under the EU AI Act and NIST AI RMF.'
 excerpt: Build responsible AI with bias detection, fairness metrics, explainability, and governance
 preview: images/previews/ai-ethics-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

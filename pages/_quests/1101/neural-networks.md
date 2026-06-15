@@ -1,7 +1,7 @@
 ---
-title: 'Neural Networks Deep Dive: Neurons, Backpropagation & Gradient Descent'
+title: 'Neural Networks Deep Dive: Build One From Scratch'
 author: IT-Journey Team
-description: Master neural network fundamentals. Learn neurons and layers, activation functions, forward propagation, backpropagation, and gradient descent by building a network from scratch and in PyTorch.
+description: 'Build a neural network from scratch, then in PyTorch, mastering neurons, layers, activations, forward propagation, backpropagation, and gradient descent.'
 excerpt: Build a neural network from first principles, then in PyTorch, and understand backpropagation
 preview: images/previews/neural-networks-deep-dive-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

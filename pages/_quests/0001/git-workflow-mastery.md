@@ -1,7 +1,7 @@
 ---
 title: 'Git Workflow Mastery: Branches, Merging & Team Collaboration'
 author: IT-Journey Team
-description: Master a clean Git workflow. Learn feature branches, good commits, pull requests, merge vs rebase, and how to resolve conflicts calmly so you can collaborate without fear.
+description: 'Master a clean Git workflow: feature branches, focused commits, pull requests, merge vs rebase, and calmly resolving conflicts to collaborate confidently.'
 excerpt: Master Git branching strategies, merging techniques, and pull request workflows for effective team collaboration.
 preview: images/previews/git-workflow-mastery-branches-merging-quest-desc.png
 date: '2025-11-29T22:51:57.000Z'

@@ -1,6 +1,6 @@
 ---
 title: Level 1010 - Automation & Testing
-description: Build automated testing pipelines, link validation systems, and CI/CD workflows
+description: 'Build automated test pipelines, link validators, and CI/CD workflows, then add monitoring, alerting, and observability to ship code with confidence.'
 preview: images/previews/level-1010-automation-testing.png
 permalink: /quests/1010/
 layout: quest-collection

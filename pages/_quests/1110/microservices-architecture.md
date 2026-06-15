@@ -1,7 +1,7 @@
 ---
 title: 'Microservices Architecture: Decomposing the Monolith'
 author: IT-Journey Team
-description: Master microservices architecture - monolith vs. microservices trade-offs, decomposition by bounded context, inter-service communication, data ownership, and the failure modes of distributed systems.
+description: 'Decide when to split a monolith, decompose by bounded context, and navigate inter-service communication, data ownership, and distributed failure modes.'
 excerpt: Decide when to split a monolith, decompose by bounded context, and manage the trade-offs of distributed systems
 preview: images/previews/microservices-architecture-decomposing-monolith.png
 date: '2025-11-29T22:51:57.000Z'

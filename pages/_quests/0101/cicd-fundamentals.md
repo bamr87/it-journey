@@ -1,7 +1,7 @@
 ---
-title: 'CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials'
+title: 'CI/CD Fundamentals: The Build-Test-Deploy Pipeline'
 author: IT-Journey Team
-description: Master the fundamentals of CI/CD including the build-test-deploy flow, the difference between continuous integration, delivery, and deployment, pipeline stages, and fast feedback loops.
+description: 'Master CI/CD fundamentals: the build-test-deploy flow, how continuous integration, delivery, and deployment differ, pipeline stages, and fast feedback loops.'
 excerpt: Learn the core concepts and practices of continuous integration and continuous deployment for automated software delivery
 preview: images/previews/ci-cd-fundamentals-continuous-integration-quest-ti.png
 date: '2025-11-29T22:51:57.000Z'

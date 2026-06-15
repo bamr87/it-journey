@@ -1,7 +1,7 @@
 ---
-title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
+title: 'Stack Attack: AI-Built Django + React Enterprise ERP'
 author: Quest Master IT-Journey Team
-description: Use AI agents to research, design, and build a production-grade open-source ERP stack with Django REST Framework on the backend and React TypeScript on the frontend — the modern enterprise way.
+description: 'Use AI agents to research, design, and scaffold a production-grade open-source ERP with a Django REST backend and a React TypeScript frontend.'
 excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-grade ERP application using Django, React, PostgreSQL, Celery, and the best open-source tooling available today.
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
 date: '2025-11-02T14:45:16.000Z'

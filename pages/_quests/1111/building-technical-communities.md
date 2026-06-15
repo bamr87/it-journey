@@ -1,5 +1,5 @@
 ---
-title: 'Building Technical Communities: Events, Governance, and Inclusion'
+title: 'Building Technical Communities: Govern and Include'
 author: IT-Journey Team
 description: Build thriving technical communities. Learn the membership lifecycle, running events, governance and moderation, and designing for inclusion and belonging.
 excerpt: Grow a technical community with events, fair governance, and real inclusion

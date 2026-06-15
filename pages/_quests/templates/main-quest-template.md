@@ -1,6 +1,6 @@
 ---
 title: '[Quest Title]: [Descriptive Subtitle]'
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+description: 'The master scaffold for authoring IT-Journey main quests: copy this template, fill the frontmatter and gamified sections, and ship a complete adventure.'
 date: '2025-11-29T22:51:57.000Z'
 preview: /images/previews/quest-title-descriptive-subtitle.png
 level: XXXX

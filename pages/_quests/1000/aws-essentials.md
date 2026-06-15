@@ -1,7 +1,7 @@
 ---
-title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
+title: 'AWS Essentials: Core Services and Architecture'
 author: IT-Journey Team
-description: Get hands-on with the core of AWS - IAM identities and policies, launching an EC2 instance, storing objects in S3, the building blocks of a VPC, the AWS CLI, and the Well-Architected Framework.
+description: 'Get hands-on with the core AWS services - IAM, EC2, S3, and VPC networking - plus the AWS CLI and the Well-Architected Framework pillars.'
 excerpt: Master the foundational AWS services - IAM, EC2, S3, VPC, and the AWS CLI - and the Well-Architected pillars
 preview: images/previews/aws-essentials-core-services-quest-title-architect.png
 date: '2025-11-29T22:51:57.000Z'

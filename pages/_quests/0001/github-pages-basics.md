@@ -1,7 +1,7 @@
 ---
 title: 'GitHub Pages Basics: Host Your Jekyll Site for Free'
 author: IT-Journey Team
-description: Publish a Jekyll site to the world with GitHub Pages. Learn repository setup, the _config.yml url and baseurl, deployment, and the basics of wiring a custom domain.
+description: 'Publish a Jekyll site to the world with GitHub Pages: repository setup, the _config.yml url and baseurl, deployment, and wiring a custom domain.'
 excerpt: Take your Jekyll site live for free with GitHub Pages - repo setup, config, and custom domains.
 preview: images/previews/github-pages-basics-free-hosting-quest-descriptio.png
 date: '2025-11-29T22:51:57.000Z'

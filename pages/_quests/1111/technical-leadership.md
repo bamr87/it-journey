@@ -1,7 +1,7 @@
 ---
-title: 'Technical Leadership: Leading Without Authority and Setting Tech Vision'
+title: 'Technical Leadership: Leading Without a Crown'
 author: IT-Journey Team
-description: Master technical leadership without relying on a title. Learn to set technical vision, make and communicate decisions, delegate effectively, and influence across teams.
+description: 'Lead engineers without a title: set a technical vision, frame and close decisions under uncertainty, and delegate work with clear ownership.'
 excerpt: Lead engineers without authority by setting vision, deciding well, and delegating
 preview: images/previews/technical-leadership-leading-without-authority.png
 date: '2025-11-29T22:51:57.000Z'

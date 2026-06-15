@@ -1,7 +1,7 @@
 ---
-title: 'Monitoring Fundamentals: Metrics, Logs, and Traces for Observability'
+title: 'Monitoring Fundamentals: Metrics, Logs, and Traces'
 author: IT-Journey Team
-description: 'Master the three pillars of observability—metrics, logs, and traces—plus SLI/SLO/SLA, the RED and USE methods, and how to fight alert fatigue in production systems.'
+description: 'Master the three pillars of observability—metrics, logs, and traces—plus SLI/SLO/SLA, the RED and USE methods, and fighting alert fatigue.'
 excerpt: Master the three pillars of observability—metrics, logs, and traces—for production-grade monitoring
 preview: images/previews/monitoring-fundamentals-metrics-logs-quest-title-t.png
 date: '2025-11-29T22:51:57.000Z'

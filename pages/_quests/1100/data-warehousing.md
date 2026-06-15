@@ -1,7 +1,7 @@
 ---
-title: 'Data Warehousing: Design Star Schema & Build Modern Analytics Architecture'
+title: 'Data Warehousing: Build a Dimensional Star Schema in SQL'
 author: IT-Journey Team
-description: Master data warehouse design with dimensional modeling. Learn OLTP versus OLAP, star and snowflake schemas, fact and dimension tables, slowly changing dimensions, and columnar storage.
+description: 'Build the Analytical Citadel: model OLTP vs OLAP, design star and snowflake schemas, implement slowly changing dimensions, and explore columnar storage.'
 excerpt: Design data warehouses with dimensional modeling, star schemas, slowly changing dimensions, and columnar storage
 preview: images/previews/data-warehousing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'

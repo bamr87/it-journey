@@ -1,7 +1,7 @@
 ---
-title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
+title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
+description: 'Master diagrammatic magic by integrating Mermaid.js into any Jekyll site, with conditional loading, dark mode, and responsive interactive diagrams.'
 excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
 date: '2025-10-04T15:25:33.000Z'

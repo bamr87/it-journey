@@ -1,7 +1,7 @@
 ---
-title: OS Selection
+title: 'OS Selection: Choose Your Realm of Power'
 author: IT-Journey Team
-description: Choose your operating system and understand the unique strengths of Windows, macOS, and Linux for your IT journey
+description: 'Compare Windows, macOS, and Linux, match each platform to your IT career goals, and try a second OS via a virtual machine or dual boot.'
 excerpt: Selecting the right operating system is a crucial first step in your IT adventure
 preview: images/previews/os-selection.png
 date: '2023-11-25T14:12:43.000Z'

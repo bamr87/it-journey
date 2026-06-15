@@ -8,7 +8,7 @@ keywords:
   secondary:
   - gamification
   - contributor profile
-description: Learn how badges are earned and pin your proudest achievements to your character profile
+description: 'Discover how achievement badges are auto-earned from your contributions, then pin your proudest three to the Featured section of your profile.'
 excerpt: The Trophy Hall awaits — curate your collection of hard-won badges.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
