@@ -1,6 +1,6 @@
-generated: '2026-05-24T15:32:13.992888+00:00'
+generated: '2026-06-15T04:41:28.509213+00:00'
 stats:
-  total: 180
+  total: 183
   by_level:
     '0000': 30
     '0001': 18
@@ -12,7 +12,7 @@ stats:
     '0111': 9
     '1000': 6
     '1001': 8
-    '1010': 10
+    '1010': 13
     '1011': 10
     '1100': 12
     '1101': 8
@@ -21,7 +21,7 @@ stats:
   by_type:
     documentation: 1
     epic_quest: 1
-    main_quest: 150
+    main_quest: 153
     side_quest: 28
 nodes:
 - id: /quests/0000/side-quests/bash-run/
@@ -626,6 +626,16 @@ nodes:
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/1010/analytics-mcp-setup/
+  title: Connect Google Analytics to Your AI Agent via MCP
+  level: '1010'
+  type: main_quest
+  difficulty: 🟡 Medium
+- id: /quests/1010/automate-traffic-report/
+  title: Automate a Weekly Traffic Report
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
 - id: /quests/1010/distributed-tracing/
   title: 'Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide'
   level: '1010'
@@ -651,6 +661,11 @@ nodes:
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/1010/query-traffic-with-mcp/
+  title: Query Your Traffic with the GA MCP Tools
+  level: '1010'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/1011/agentic-behavior-tuning/
   title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
   level: '1011'
@@ -1244,6 +1259,21 @@ edges:
   kind: required
 - source: /quests/1010/agentic-success-criteria-and-signals/
   target: /quests/1010/agentic-failure-root-cause-analysis/
+  kind: unlocks
+- source: /quests/1010/analytics-mcp-setup/
+  target: /quests/1010/query-traffic-with-mcp/
+  kind: unlocks
+- source: /quests/1010/automate-traffic-report/
+  target: /quests/1010/analytics-mcp-setup/
+  kind: required
+- source: /quests/1010/automate-traffic-report/
+  target: /quests/1010/query-traffic-with-mcp/
+  kind: recommended
+- source: /quests/1010/query-traffic-with-mcp/
+  target: /quests/1010/analytics-mcp-setup/
+  kind: required
+- source: /quests/1010/query-traffic-with-mcp/
+  target: /quests/1010/automate-traffic-report/
   kind: unlocks
 - source: /quests/1011/agentic-behavior-tuning/
   target: /quests/1010/agentic-failure-root-cause-analysis/

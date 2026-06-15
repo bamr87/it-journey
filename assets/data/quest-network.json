@@ -1,7 +1,7 @@
 {
-  "generated": "2026-05-24T15:32:13.992888+00:00",
+  "generated": "2026-06-15T04:41:28.509213+00:00",
   "stats": {
-    "total": 180,
+    "total": 183,
     "by_level": {
       "0000": 30,
       "0001": 18,
@@ -13,7 +13,7 @@
       "0111": 9,
       "1000": 6,
       "1001": 8,
-      "1010": 10,
+      "1010": 13,
       "1011": 10,
       "1100": 12,
       "1101": 8,
@@ -23,7 +23,7 @@
     "by_type": {
       "documentation": 1,
       "epic_quest": 1,
-      "main_quest": 150,
+      "main_quest": 153,
       "side_quest": 28
     }
   },
@@ -1109,6 +1109,24 @@
       "file": "pages/_quests/1010/alerting-systems.md"
     },
     {
+      "id": "/quests/1010/analytics-mcp-setup/",
+      "title": "Connect Google Analytics to Your AI Agent via MCP",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "mcp",
+      "file": "pages/_quests/1010/analytics-mcp-setup.md"
+    },
+    {
+      "id": "/quests/1010/automate-traffic-report/",
+      "title": "Automate a Weekly Traffic Report",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "automation",
+      "file": "pages/_quests/1010/automate-traffic-report.md"
+    },
+    {
       "id": "/quests/1010/distributed-tracing/",
       "title": "Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide",
       "level": "1010",
@@ -1152,6 +1170,15 @@
       "difficulty": "🔴 Hard",
       "technology": "prometheus",
       "file": "pages/_quests/1010/prometheus-grafana.md"
+    },
+    {
+      "id": "/quests/1010/query-traffic-with-mcp/",
+      "title": "Query Your Traffic with the GA MCP Tools",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "google-analytics",
+      "file": "pages/_quests/1010/query-traffic-with-mcp.md"
     },
     {
       "id": "/quests/1011/agentic-behavior-tuning/",
@@ -2178,6 +2205,31 @@
     {
       "source": "/quests/1010/agentic-success-criteria-and-signals/",
       "target": "/quests/1010/agentic-failure-root-cause-analysis/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/analytics-mcp-setup/",
+      "target": "/quests/1010/query-traffic-with-mcp/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/automate-traffic-report/",
+      "target": "/quests/1010/analytics-mcp-setup/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/1010/automate-traffic-report/",
+      "target": "/quests/1010/query-traffic-with-mcp/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1010/query-traffic-with-mcp/",
+      "target": "/quests/1010/analytics-mcp-setup/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/1010/query-traffic-with-mcp/",
+      "target": "/quests/1010/automate-traffic-report/",
       "kind": "unlocks"
     },
     {
