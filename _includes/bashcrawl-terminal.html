@@ -1,0 +1,126 @@
+{% comment %}
+  Bashcrawl Web Terminal Embed
+  ============================
+
+  Embeds the live, browser-playable Bashcrawl terminal (the interactive web
+  TUI deployed from the bamr87/bashcrawl repository, which is vendored into
+  this site as the `submodules/bashcrawl` git submodule).
+
+  The game runs entirely client-side and starts in the Entrance chamber, so
+  each quest page passes a `room` label telling the player where to navigate
+  once the dungeon loads. The quest page itself is the walkthrough / strategy
+  guide for that chamber.
+
+  Usage:
+    {% include bashcrawl-terminal.html %}
+    {% include bashcrawl-terminal.html room="Cellar" %}
+    {% include bashcrawl-terminal.html room="The Rift" height="660" %}
+
+  Parameters (all optional):
+    room    - Display name of the chamber this page covers (used in the hint).
+    height  - Embedded terminal height in px (default 620).
+    url     - Override the terminal URL (default the live GitHub Pages build).
+{% endcomment %}
+
+{% assign bc_url = include.url | default: "https://bamr87.github.io/bashcrawl/" %}
+{% assign bc_height = include.height | default: 620 %}
+
+<div class="bashcrawl-embed">
+  <div class="bashcrawl-embed-bar">
+    <span class="bashcrawl-embed-dot" aria-hidden="true"></span>
+    <span class="bashcrawl-embed-dot" aria-hidden="true"></span>
+    <span class="bashcrawl-embed-dot" aria-hidden="true"></span>
+    <span class="bashcrawl-embed-label">🕹️ Bashcrawl — Web Terminal</span>
+    <a class="bashcrawl-embed-fullscreen" href="{{ bc_url }}" target="_blank" rel="noopener noreferrer">Open full screen ↗</a>
+  </div>
+  <iframe
+    class="bashcrawl-embed-frame"
+    src="{{ bc_url }}"
+    title="Bashcrawl interactive web terminal"
+    style="height: {{ bc_height }}px;"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allow="clipboard-write"></iframe>
+  <p class="bashcrawl-embed-note">
+    The game loads in the <strong>Entrance</strong>.
+    {% if include.room %}Use <code>cd</code> to make your way to the <strong>{{ include.room }}</strong> chamber, then follow the walkthrough below.{% else %}Type a command and press <kbd>Enter</kbd> to begin — follow the walkthrough below as your strategy guide.{% endif %}
+    Progress saves in your browser. Prefer a real shell? See
+    <a href="#play-locally">Install &amp; Play Locally</a>.
+  </p>
+</div>
+
+<style>
+.bashcrawl-embed {
+  border: 1px solid var(--border-color, #30363d);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.25rem 0 1.5rem;
+  background: var(--card-bg, #0d1117);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.bashcrawl-embed-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  background: var(--code-bg, #161b22);
+  border-bottom: 1px solid var(--border-color, #30363d);
+  font-size: 0.85rem;
+}
+
+.bashcrawl-embed-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff5f56;
+  display: inline-block;
+}
+.bashcrawl-embed-dot:nth-child(2) { background: #ffbd2e; }
+.bashcrawl-embed-dot:nth-child(3) { background: #27c93f; }
+
+.bashcrawl-embed-label {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  color: var(--heading-color, #c9d1d9);
+}
+
+.bashcrawl-embed-fullscreen {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--link-color, #58a6ff);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bashcrawl-embed-fullscreen:hover { text-decoration: underline; }
+
+.bashcrawl-embed-frame {
+  width: 100%;
+  border: 0;
+  display: block;
+  background: #0d1117;
+}
+
+.bashcrawl-embed-note {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted, #8b949e);
+  background: var(--code-bg, #161b22);
+  border-top: 1px solid var(--border-color, #30363d);
+}
+
+.bashcrawl-embed-note code,
+.bashcrawl-embed-note kbd {
+  font-size: 0.8em;
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  background: var(--border-color, #30363d);
+}
+
+@media (max-width: 600px) {
+  .bashcrawl-embed-frame { height: 480px !important; }
+  .bashcrawl-embed-fullscreen { display: none; }
+}
+</style>

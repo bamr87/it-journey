@@ -101,6 +101,14 @@ permalink: /quests/0000/bashcrawl/
 ---
 *Welcome to the Bashcrawl Catacombs — an interactive terminal dungeon where every command is a spell and every directory a new realm to explore. Nine interconnected chambers await, each a side-quest that teaches a core set of Bash skills through gameplay.*
 
+This hub is your **walkthrough and strategy guide** to the game. Play instantly in the browser below, use the nine chamber walkthroughs as your field manual, then graduate to the **advanced version** — [installing Bashcrawl](#play-locally) and playing it in a real shell.
+
+## 🕹️ Play in Your Browser
+
+The full game runs right here — no install required. Keep this guide open alongside it.
+
+{% include bashcrawl-terminal.html %}
+
 ## 🗺️ Catacombs Map
 
 ```mermaid
@@ -146,29 +154,7 @@ flowchart TD
 | 9 | 🌀 The Rift | 🔴 Hard | pipes `\|` `&&` redirection | [Rift](/quests/0000/side-quests/rift/) |
 | ★ | 🤖 Agent Mode | 🔴 Hard | `--agent` `--batch` `--screenshot-dir` | [Agent](/quests/0000/side-quests/agent-mode/) |
 
-## ⚡ Quick Start
-
-```bash
-# From this directory — choose your mode:
-./bash_crawl.sh            # Interactive menu
-./bash_crawl.sh online     # Open web browser version (no install)
-./bash_crawl.sh local      # Clone repo + launch Textual TUI
-./bash_crawl.sh classic    # Clone repo + classic Bash emulator
-./bash_crawl.sh tutorial   # Tutorial mode (step-by-step)
-./bash_crawl.sh agent      # Agent mode (AI playtesting)
-./bash_crawl.sh --quest entrance   # Print walkthrough URL then launch
-```
-
-## 🎮 Play Modes
-
-| Mode | How to Launch | Best For |
-|------|--------------|----------|
-| **Web TUI** | [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/) | First playthrough, classrooms, no-install |
-| **Textual TUI** | `./main.sh --interactive` | Beginners wanting a rich local interface |
-| **Classic Bash** | `./main.sh --classic` | Systems without Python/Textual |
-| **Native Terminal** | `./main.sh --native` | Full real-filesystem experience |
-| **Tutorial Mode** | `./main.sh --tutorial` | Guided step-by-step learning |
-| **Agent Mode** | `./main.sh --agent` | AI automation and screenshots |
+{% include bashcrawl-play-local.html %}
 
 ## 🧙 In-Game Commands
 

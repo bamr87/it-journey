@@ -62,6 +62,12 @@ redirect_from:
 ---
 *Racks of weapons line the walls. Suits of armour stand at attention. But every sword and potion is locked behind a permission barrier — you must learn `chmod` before you can equip a single item.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Armoury" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Read `ls -l` output and interpret permission bits
@@ -192,6 +198,8 @@ With the sword equipped, you should win. Health permitting, the guardian falls a
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

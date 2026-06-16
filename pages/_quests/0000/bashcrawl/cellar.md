@@ -65,6 +65,12 @@ redirect_from:
 ---
 *The cellar reeks of wine and secrets. Barrels line the walls; cobwebs drape the ceiling. Four iron doors lead deeper into the dungeon — armoury, chapel, vault, scrap. But first you must find the emerald amulet.*
 
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Cellar" %}
+
 ## 🎯 Quest Objectives
 
 - [ ] Identify every file type in the cellar using `ls -F`
@@ -198,6 +204,8 @@ Choose your next chamber — all four are unlocked:
 | 🗑️ Scrap Heap | Symbolic links, `ln -s` | [Scrap](/quests/0000/side-quests/scrap/) |
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 
