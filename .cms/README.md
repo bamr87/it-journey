@@ -37,6 +37,18 @@ python3 scripts/cms/cms.py all       # index + analyze + plan
 make cms-status   cms-index   cms-analyze   cms-plan   cms-all
 ```
 
+### Review in Docker (no host Python needed)
+
+```bash
+docker compose -f docker-compose.cms.yml run --rm cms          # full review: tests + build + dashboard + mechanical preview
+docker compose -f docker-compose.cms.yml run --rm cms status   # dashboard only
+docker compose -f docker-compose.cms.yml run --rm cms test     # unit tests
+docker compose -f docker-compose.cms.yml run --rm cms shell    # interactive shell
+```
+
+This is a self-contained `python:3.12-slim` environment (no `.env`, theme, or
+Ruby). Outputs land under `.cms/` on your host via the bind mount.
+
 ## How it fits the wider system
 
 ```
