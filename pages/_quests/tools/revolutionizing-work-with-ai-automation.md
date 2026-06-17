@@ -2,8 +2,6 @@
 title: Revolutionizing Work with AI Automation
 author: IT-Journey Team
 description: Discover how AI automation can transform your workflow, enhancing code reviews, documentation, and PR summaries for a smarter coding experience.
-excerpt: null
-snippet: null
 preview: images/previews/revolutionizing-work-with-ai-automation.png
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:43:43.000Z'
@@ -38,9 +36,8 @@ keywords:
   - OpenAI API
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 **Ah, the final frontier... the arcane fusion of human cleverness and artificial intelligence.** You've set up branches, written perfect commits, documented your journey, and summoned automation spells---but now it's time to meet your **AI familiars**.
 
@@ -121,7 +118,7 @@ jobs:
     - name: Call OpenAI
       run: |
         curl https://api.openai.com/v1/chat/completions\
-        -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}"\
+        -H "Authorization: Bearer ${% raw %}{{ secrets.OPENAI_API_KEY }}{% endraw %}"\
         -d '{
           "model": "gpt-4",
           "messages": [{"role": "user", "content": "Summarize this PR diff:\n$(cat pr.diff)"}]

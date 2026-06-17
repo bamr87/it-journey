@@ -1,6 +1,6 @@
 ---
-title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
-description: Configure observability for GitHub Copilot coding agents — producing inspectable artifacts, configuring audit trails, and setting up human intervention points that don't slow delivery.
+title: 'The All-Seeing Eye: Observability for AI Agents'
+description: 'Instrument GitHub Copilot agents with execution traces, inspectable artifacts, audit trails, and human review gates that catch drift without blocking runs.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-observability-and-control.png
 level: '1000'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/0111/agentic-plan-vs-action-boundaries/
   unlocks_quests:
   - /quests/1000/agentic-tool-selection-and-permissions/
-quest_relationships:
-  sequel_quests:
-  - /quests/1000/agentic-tool-selection-and-permissions/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🔭 SRE / Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Actions
+  recommended_quests: []
 rewards:
   badges:
   - 🔭 Observability Warden
@@ -78,11 +67,6 @@ validation_criteria:
   skill_demonstrations:
   - Can read an agent execution trace and determine what the agent did and why
   - Can configure a non-blocking observability layer for a Copilot agent
-quest_mapping:
-  coordinates: '[1, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Watchtower Ridge
 comments: true
 draft: false
 redirect_from:
@@ -176,14 +160,14 @@ jobs:
         id: trace_start
         run: |
           echo "start_time=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
-          echo "run_id=${{ github.run_id }}" >> "$GITHUB_OUTPUT"
-          echo "issue_number=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
+          echo "run_id=${% raw %}{{ github.run_id }}{% endraw %}" >> "$GITHUB_OUTPUT"
+          echo "issue_number=${% raw %}{{ github.event.issue.number }}{% endraw %}" >> "$GITHUB_OUTPUT"
 
       # Copilot coding agent would run here — this step represents its work
       - name: (placeholder) Copilot agent work
         id: agent_work
         run: |
-          echo "Agent processing issue #${{ github.event.issue.number }}"
+          echo "Agent processing issue #${% raw %}{{ github.event.issue.number }}{% endraw %}"
           # In a real scenario the agent SDK or CLI call happens here
 
       - name: Generate execution trace artifact
@@ -192,21 +176,21 @@ jobs:
           cat > agent-execution-trace.json << 'EOF'
           {
             "trace_version": "1.0",
-            "run_id": "${{ github.run_id }}",
-            "workflow": "${{ github.workflow }}",
-            "repository": "${{ github.repository }}",
+            "run_id": "${% raw %}{{ github.run_id }}{% endraw %}",
+            "workflow": "${% raw %}{{ github.workflow }}{% endraw %}",
+            "repository": "${% raw %}{{ github.repository }}{% endraw %}",
             "trigger": {
               "event": "issues.labeled",
-              "issue_number": ${{ github.event.issue.number }},
-              "label": "${{ github.event.label.name }}",
-              "actor": "${{ github.actor }}"
+              "issue_number": ${% raw %}{{ github.event.issue.number }}{% endraw %},
+              "label": "${% raw %}{{ github.event.label.name }}{% endraw %}",
+              "actor": "${% raw %}{{ github.actor }}{% endraw %}"
             },
             "timing": {
-              "started_at": "${{ steps.trace_start.outputs.start_time }}",
+              "started_at": "${% raw %}{{ steps.trace_start.outputs.start_time }}{% endraw %}",
               "completed_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
             },
             "outcome": {
-              "status": "${{ job.status }}",
+              "status": "${% raw %}{{ job.status }}{% endraw %}",
               "agent_result": "completed"
             }
           }
@@ -216,7 +200,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: agent-trace-run-${{ github.run_id }}
+          name: agent-trace-run-${% raw %}{{ github.run_id }}{% endraw %}
           path: agent-execution-trace.json
           retention-days: 90
 ```

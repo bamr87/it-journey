@@ -1,9 +1,8 @@
 ---
 title: 'Hello n00b: Your First Steps into the IT Journey'
 author: IT-Journey Team
-description: The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development
+description: 'Begin your IT adventure: create a GitHub account, fork the IT-Journey repository, and confidently navigate GitHub as an absolute beginner.'
 excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
-snippet: Every expert was once a beginner - every hero was once a n00b
 preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
 date: '2022-06-05T13:48:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
@@ -19,27 +18,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  child_quests: []
-  sequel_quests: []
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Digital Literacy
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  - 🎨 Digital Artist
-  - 🎮 Game Developer
-  skill_trees:
-  - Version Control Fundamentals
-  - Community Participation
-  - Open Source Contribution
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -66,13 +44,6 @@ validation_criteria:
   knowledge_checks:
   - Explain what GitHub is and why it's important
   - Describe the concept of forking and open source collaboration
-quest_mapping:
-  coordinates:
-  - 0
-  - 0
-  region: Entry
-  realm: Community
-  biome: GitHub
 permalink: /quests/0000/hello-noob/
 categories:
 - Quests
@@ -96,7 +67,6 @@ keywords:
   - community-entry
 fmContentType: quest
 draft: false
-sub-title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
 rewards:
   badges:
   - 🏆 GitHub Account Creation Badge - Entry into developer community
@@ -110,6 +80,7 @@ rewards:
   - Ability to participate in community discussions
   - Foundation for version control learning
 layout: quest
+sub_title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
 ---
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 

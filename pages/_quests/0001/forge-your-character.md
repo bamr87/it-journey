@@ -11,7 +11,6 @@ keywords:
   - open source
 description: Create your contributor character profile with RPG-style stats, badges, and class identity — powered by your git history
 excerpt: Step into the Guild Hall and forge your identity. Every adventurer needs a character sheet before embarking on their journey.
-snippet: The Guild Master beckons new adventurers to forge their identity in the Hall of Contributors
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
@@ -57,24 +56,9 @@ quest_dependencies:
   - /quests/0001/terminal-mastery/
   - /quests/0001/git-workflow-mastery/
   unlocks_quests:
-  - /quests/0001/side-quests/avatar-forge/
-  - /quests/0001/side-quests/badge-collector/
-  - /quests/0010/side-quests/stats-dashboard/
-learning_paths:
-  primary_paths:
-  - Community Contributor
-  - Open Source Developer
-  character_classes:
-  - 🧙 Wizard
-  - ⚔️ Warrior
-  - 🏹 Ranger
-  - 🗡️ Rogue
-  - 💚 Healer
-  - 🎵 Bard
-  - 🛡️ Paladin
-  skill_trees:
-  - Community & Collaboration
-  - Git & Version Control
+  - /quests/0001/avatar-forge/
+  - /quests/0001/badge-collector/
+  - /quests/0010/stats-dashboard/
 rewards:
   badges:
   - 🏆 Guild Member — Officially joined the Guild of Contributors
@@ -243,7 +227,7 @@ permalink: /contributors/YOUR_USERNAME/
 lastmod: 2026-03-20T00:00:00.000Z
 ---
 
-{% raw %}<link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">{% endraw %}
+<link rel="stylesheet" href="{% raw %}{{ '/assets/css/contributor-profile.css' | relative_url }}{% endraw %}">
 
 {% raw %}{% include contributor/character_sheet.html username="YOUR_USERNAME" %}{% endraw %}
 

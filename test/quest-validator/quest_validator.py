@@ -19,6 +19,12 @@ from typing import Dict, List, Optional, Tuple
 
 import yaml
 
+# Single source of truth for taxonomy + schema. Import the registry so the
+# validator can never drift from the data layer / templates / scaffolder.
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(_REPO_ROOT / "scripts" / "quest"))
+import quest_registry as reg  # noqa: E402
+
 
 @dataclass
 class ValidationResult:
@@ -34,64 +40,47 @@ class ValidationResult:
 class QuestValidator:
     """Validates IT-Journey quest files against standards"""
     
-    # Required frontmatter fields
-    REQUIRED_FIELDS = [
-        'title', 'description', 'date', 'level', 'difficulty',
-        'estimated_time', 'primary_technology', 'quest_type',
-        'skill_focus', 'learning_style', 'quest_series', 'author',
-        'layout', 'keywords', 'permalink', 'fmContentType'
-    ]
-    
-    # Enhanced quest hierarchy fields
+    # Required frontmatter fields — canonical set, owned by the registry.
+    REQUIRED_FIELDS = list(reg.REQUIRED_FIELDS)
+
+    # Enhanced quest hierarchy fields (scored as quality bonuses, not required).
+    # quest_relationships / learning_paths are retired (migrated into
+    # quest_dependencies), so they are no longer rewarded here.
     HIERARCHY_FIELDS = [
         'quest_line', 'quest_arc', 'prerequisites', 'quest_dependencies',
-        'quest_relationships', 'learning_paths', 'rewards', 'validation_criteria'
+        'rewards', 'validation_criteria'
     ]
-    
-    # Difficulty levels
-    VALID_DIFFICULTIES = ['🟢 Easy', '🟡 Medium', '🔴 Hard', '⚔️ Epic']
-    
-    # Level format pattern (binary)
-    LEVEL_PATTERN = re.compile(r'^\d{4}$')
 
-    # Canonical permalink regex per quest_type
-    #   main_quest : /quests/XXXX/slug/
-    #   side_quest : /quests/XXXX/side-quests/slug/
-    #   codex      : /quests/codex/slug/
-    #   template   : /quests/templates/slug/
+    # Playable quest_type values and difficulty enum — from the registry.
+    VALID_QUEST_TYPES = list(reg.QUEST_TYPES)
+    VALID_DIFFICULTIES = list(reg.DIFFICULTIES)
+
+    # Level format pattern (4-bit binary) — from the registry.
+    LEVEL_PATTERN = reg.LEVEL_RE
+
+    # Canonical permalink regex per quest_type. Side quests are FLATTENED to
+    # /quests/XXXX/slug/ (no /side-quests/ segment) per the routing model.
+    #   main_quest / side_quest / epic_quest : /quests/XXXX/slug/
+    #   bonus_quest                          : /quests/codex/slug/
     PERMALINK_PATTERNS = {
         'main_quest':  re.compile(r'^/quests/[01]{4}/[a-z0-9][a-z0-9-]*/$'),
-        'side_quest':  re.compile(r'^/quests/[01]{4}/side-quests/[a-z0-9][a-z0-9-]*/$'),
+        'side_quest':  re.compile(r'^/quests/[01]{4}/[a-z0-9][a-z0-9-]*/$'),
+        'epic_quest':  re.compile(r'^/quests/[01]{4}/[a-z0-9][a-z0-9-]*/$'),
         'bonus_quest': re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
-        'epic_quest':  re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
-        'codex':       re.compile(r'^/quests/codex/[a-z0-9][a-z0-9-]*/$'),
-        'template':    re.compile(r'^/quests/templates/[a-z0-9][a-z0-9-]*/$'),
     }
 
-    # Generic canonical permalink regex (any valid quest path)
+    # Generic canonical permalink regex (any valid quest-tree path)
     PERMALINK_RE = re.compile(
         r'^/quests/'
         r'('
-        r'[01]{4}/side-quests/[a-z0-9][a-z0-9-]*'  # side_quest: /quests/XXXX/side-quests/slug/
-        r'|[01]{4}/[a-z0-9][a-z0-9-]*'              # main_quest: /quests/XXXX/slug/
+        r'[01]{4}/[a-z0-9][a-z0-9-]*'               # quest:       /quests/XXXX/slug/
         r'|[01]{4}'                                  # level index: /quests/XXXX/
-        r'|codex/[a-z0-9][a-z0-9-]*'                # codex:       /quests/codex/slug/
+        r'|codex/[a-z0-9][a-z0-9-]*'                # codex/bonus: /quests/codex/slug/
         r'|templates/[a-z0-9][a-z0-9-]*'            # template:    /quests/templates/slug/
         r'|tools/[a-z0-9][a-z0-9-]*'                # tools:       /quests/tools/slug/
         r'|docs/[a-z0-9][a-z0-9-]*'                 # docs:        /quests/docs/slug/
         r')/$'
     )
-    
-    # Placeholder indicators in frontmatter values
-    PLACEHOLDER_PATTERNS = [
-        r'\[.*?\]',           # [Primary Skill Tree], [Your Name], etc.
-        r'XXXX',              # Template level placeholder
-        r'your-.*-here',      # your-quest-here, your-name-here
-        r'Add .* here',       # Add quest description here
-        r'TBD|TODO|FIXME',    # Common placeholder markers
-        r'lorem ipsum',       # Lorem ipsum text
-        r'placeholder',       # Explicit placeholder text
-    ]
 
     def __init__(self, verbose: bool = False, exclude_drafts: bool = False, fail_threshold: int = 0, config_path: Optional[str] = None):
         self.verbose = verbose
@@ -286,12 +275,53 @@ class QuestValidator:
             return
         
         time = fm['estimated_time']
-        # Should match patterns like "30-60 minutes", "90-120 minutes", "1-2 hours"
-        if not re.match(r'^\d+-\d+\s+(minutes|hours?)$', str(time)):
-            result.warnings.append(f"Estimated time format unusual: {time}. Recommended: 'XX-XX minutes' or 'X-X hours'")
+        # Canonical format (registry): "N minutes", "N-M minutes", "N hours", "N-M hours".
+        if not reg.ESTIMATED_TIME_RE.match(str(time)):
+            result.warnings.append(f"Estimated time format unusual: {time}. Use 'N-M minutes' or 'N-M hours'")
         else:
             result.score += 2
         result.max_score += 2
+
+    def validate_quest_type(self, fm: Dict, result: ValidationResult):
+        """Validate quest_type against the canonical enum."""
+        if 'quest_type' not in fm or not fm['quest_type']:
+            return  # absence is caught by required-field validation
+        qt = fm['quest_type']
+        if qt not in self.VALID_QUEST_TYPES:
+            result.errors.append(
+                f"Invalid quest_type: {qt!r}. Must be one of {self.VALID_QUEST_TYPES}"
+            )
+            result.passed = False
+        else:
+            result.score += 5
+            result.info.append(f"quest_type {qt} valid")
+        result.max_score += 5
+
+    def validate_primary_technology(self, fm: Dict, result: ValidationResult):
+        """Reject corrupted numeric primary_technology values (e.g. 1, 8, 64)."""
+        pt = fm.get('primary_technology')
+        if pt is None or str(pt).strip() == '':
+            return
+        if re.fullmatch(r'\d+', str(pt).strip()):
+            result.errors.append(
+                f"primary_technology is a corrupted numeric value ({pt!r}); "
+                f"set it to a technology slug (e.g. 'github-copilot')"
+            )
+            result.passed = False
+
+    def validate_slug_matches_filename(self, fm: Dict, result: ValidationResult,
+                                       filepath: Optional[Path] = None):
+        """Warn when the permalink slug doesn't match the filename slug."""
+        if filepath is None or not fm.get('permalink'):
+            return
+        if filepath.name.upper() in ('README.MD', 'INDEX.MD', 'HOME.MD'):
+            return
+        perm_slug = reg.slug_from_permalink(str(fm['permalink']))
+        file_slug = reg.slug_from_filename(filepath.name)
+        if perm_slug and file_slug and perm_slug != file_slug:
+            result.warnings.append(
+                f"Filename slug '{file_slug}' does not match permalink slug '{perm_slug}'"
+            )
     
     def validate_permalink(self, fm: Dict, result: ValidationResult, filepath: Optional[Path] = None):
         """Validate permalink against canonical pattern based on quest_type"""
@@ -316,11 +346,11 @@ class QuestValidator:
             result.max_score += 5
             return
 
-        # Level-index README files (e.g., /quests/level-0000/)
-        if re.match(r'^/quests/level-[01]{4}/$', permalink):
-            result.score += 5
+        # Reject the obsolete /quests/level-XXXX-slug/ format outright.
+        if re.match(r'^/quests/level-[01]{4}', permalink):
+            result.errors.append(f"Obsolete permalink format (use /quests/XXXX/slug/): {permalink}")
+            result.passed = False
             result.max_score += 5
-            result.info.append(f"Level-index permalink: {permalink}")
             return
 
         # Validate quest_type ↔ permalink prefix
@@ -377,9 +407,10 @@ class QuestValidator:
                 break
 
         if dir_level and level and dir_level != level:
-            result.warnings.append(
+            result.errors.append(
                 f"Directory level '{dir_level}' does not match frontmatter level '{level}'"
             )
+            result.passed = False
         elif dir_level and level:
             result.info.append(f"Directory level matches frontmatter level: {level}")
     
@@ -597,15 +628,19 @@ class QuestValidator:
         self.validate_frontmatter_hierarchy(frontmatter, result)
         self.validate_level_format(frontmatter, result)
         self.validate_difficulty(frontmatter, result)
+        self.validate_quest_type(frontmatter, result)
+        self.validate_primary_technology(frontmatter, result)
         self.validate_estimated_time(frontmatter, result)
         self.validate_permalink(frontmatter, result, filepath)
         self.validate_dir_level_match(frontmatter, result, filepath)
+        self.validate_slug_matches_filename(frontmatter, result, filepath)
         self.validate_content_structure(body, result)
         self.validate_code_blocks(body, result)
         self.validate_checkboxes(body, result)
         self.validate_fantasy_theme(body, frontmatter, result)
         self.validate_accessibility(body, result)
         self.validate_citations(body, result)
+        self.validate_liquid_safety(body, result)
         self.validate_placeholder_status(frontmatter, body, result)
         
         # Check against fail threshold
@@ -668,51 +703,61 @@ class QuestValidator:
                 except Exception:
                     print(f"   • [Info message contains invalid characters]")
     
+    def validate_liquid_safety(self, body: str, result: ValidationResult):
+        """Catch unbalanced ``{% raw %}`` / ``{% endraw %}`` — a single unclosed
+        raw tag aborts the WHOLE Jekyll build, so it is a hard error.
+        """
+        raws = len(re.findall(r'\{%-?\s*raw\s*-?%\}', body))
+        endraws = len(re.findall(r'\{%-?\s*endraw\s*-?%\}', body))
+        if raws != endraws:
+            result.errors.append(
+                f"Unbalanced Liquid raw tags ({raws} raw / {endraws} endraw) — "
+                f"an unclosed raw block breaks the site build. Wrap each Liquid "
+                f"example in a matched {{% raw %}}…{{% endraw %}} pair."
+            )
+            result.passed = False
+
     def validate_placeholder_status(self, fm: Dict, body: str, result: ValidationResult):
-        """Detect if a quest is a placeholder with template boilerplate"""
-        placeholder_hits = 0
-        
-        # Check frontmatter values for placeholder patterns
-        for key, value in fm.items():
-            if isinstance(value, str):
-                for pattern in self.PLACEHOLDER_PATTERNS:
-                    if re.search(pattern, value, re.IGNORECASE):
-                        placeholder_hits += 1
-                        break
-        
-        # Check quest_relationships for placeholder paths like /quests/level-XXXX-side-quest-1/
-        for rel_key in ['quest_relationships', 'quest_dependencies']:
-            rel = fm.get(rel_key, {})
-            if isinstance(rel, dict):
-                for sub_key, sub_val in rel.items():
-                    if isinstance(sub_val, list):
-                        for item in sub_val:
-                            if isinstance(item, str) and re.search(r'level-\d{4}-(side-quest|alternative|continuation)', item):
-                                placeholder_hits += 1
-        
-        # Check body for template bracket placeholders like [Requirement 1], [Badge Name]
-        body_bracket_placeholders = re.findall(
+        """A placeholder/scaffold quest is a PUBLICATION BLOCKER unless it is
+        explicitly marked ``draft: true``. This is what stops unfinished
+        ``[technology]`` scaffolds from shipping as "passing".
+        """
+        # Authoritative signals from the registry: the "🔮 Placeholder ..."
+        # marker and the [technology]/[Advanced Topic]/... token regex.
+        placeholder = reg.has_placeholder_marker(body)
+
+        # Legacy template bracket placeholders (e.g. [Requirement 1], [Badge Name]).
+        bracket_hits = len(re.findall(
             r'\[(?:Requirement \d|Badge Name|Next Quest|Side Quest|Achievement|'
             r'Brief description|Complex Implementation|How to verify|'
             r'What to build|Suggested Quest|Related|Your |Technology|'
             r'Advanced Skill|Integration Skill|Campaign|Story arc)\b[^\]]*\]',
             body, re.IGNORECASE
-        )
-        if len(body_bracket_placeholders) >= 5:
-            placeholder_hits += 3  # Strong signal: many template brackets in body
-        elif len(body_bracket_placeholders) >= 2:
-            placeholder_hits += 1
-        
-        # Check body for minimal content
-        body_stripped = body.strip()
-        body_lines = [l for l in body_stripped.split('\n') if l.strip()]
+        ))
+        if bracket_hits >= 3:
+            placeholder = True
+
+        # Very short body is also a placeholder signal.
+        body_lines = [l for l in body.strip().split('\n') if l.strip()]
         if len(body_lines) < 20:
-            placeholder_hits += 2  # Very short body is a strong placeholder signal
-        
-        if placeholder_hits >= 3:
-            result.info.append(f"PLACEHOLDER_QUEST: {placeholder_hits} placeholder indicators found")
-        elif placeholder_hits >= 1:
-            result.info.append(f"PARTIAL_CONTENT: {placeholder_hits} placeholder indicators found")
+            placeholder = True
+
+        if not placeholder:
+            return
+
+        # Record for the report's placeholder count regardless of draft status.
+        result.info.append("PLACEHOLDER_QUEST: scaffold/placeholder content detected")
+        if reg.is_draft(fm):
+            result.warnings.append(
+                "Placeholder content allowed because draft: true — fill in before publishing"
+            )
+        else:
+            result.errors.append(
+                "PLACEHOLDER_QUEST: unfinished scaffold (placeholder tokens or the "
+                "'🔮 Placeholder (Content to be developed)' marker present). "
+                "Write real content or set 'draft: true'."
+            )
+            result.passed = False
 
     def validate_directory(self, directory: Path, pattern: str = "*.md", recursive: bool = True) -> List[ValidationResult]:
         """Validate all quest files in a directory"""

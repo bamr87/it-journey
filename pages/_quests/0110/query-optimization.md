@@ -1,63 +1,48 @@
 ---
-title: 'Query Optimization: Performance Tuning for Fast Database Queries'
+title: 'Query Optimization: Tuning Fast Database Queries'
 author: IT-Journey Team
-description: Learn to optimize SQL queries for maximum performance. Master query execution plans, indexing strategies, query rewriting, and database performance monitoring.
-excerpt: Optimize database query performance with indexing, execution plans, and query tuning techniques
-preview: images/previews/query-optimization-performance-tuning-descriptive-.png
+description: 'Read EXPLAIN plans, pick the right indexes, slay the N+1 query, and rewrite slow SQL to run in milliseconds on a real PostgreSQL database.'
+excerpt: Diagnose slow queries with EXPLAIN, apply indexing strategy, and eliminate N+1 to make databases fast.
+preview: images/previews/query-optimization-performance-tuning-quest-titl.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:08:02.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
 primary_technology: sql
 quest_type: main_quest
 quest_series: Database Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Data Keep
+quest_arc: The Speed Sanctum
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/0110/sql-mastery/
+  recommended_quests:
+  - /quests/0110/data-modeling/
+  unlocks_quests:
+  - /quests/0110/connection-pooling/
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of SQL Mastery (recommended)
+  - Comfort with JOINs, GROUP BY, and indexes
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - PostgreSQL 14+ (or Docker to run it)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can write multi-table queries unaided
+  - Ready to read execution plans and reason about cost
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A slow query measurably sped up with an index
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can read an EXPLAIN ANALYZE plan
+  - Can identify and fix an N+1 query pattern
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands sequential scan versus index scan
+  - Can explain when an index does not help
 permalink: /quests/0110/query-optimization/
 categories:
 - Quests
@@ -77,111 +62,77 @@ keywords:
   - main_quest
   secondary:
   - data-engineering
-  - hands-on
-  - gamified-learning
+  - indexing
+  - performance
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0110 (6) Quest: Main Quest - Query Optimization'
+sub_title: 'Level 0110 (6) Quest: Main Quest - The Speed Sanctum'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Reader of the Plan - Decoded EXPLAIN ANALYZE output
+  - 🛡️ Slayer of the N+1 - Banished the query-storm anti-pattern
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Index Strategy
+  - 🧠 Execution-Plan Reading
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Connection-level performance tuning in the Database Mastery line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! A query that returns the right answer but takes thirty seconds is a query that will one day topple your kingdom. This quest, **Query Optimization**, teaches you to see *how* the database executes your SQL - to read its battle plan - and then to tune indexes, rewrite queries, and slay the dreaded N+1 storm until milliseconds replace minutes.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Optimization is not guesswork or superstition. It is measurement. You will learn to ask the database itself, "How are you running this, and how long did it take?" - and to act on the answer.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Deep in every relational database lives a silent strategist called the **query planner**. When you submit declarative SQL, the planner weighs every possible way to fetch your answer - scan the whole table, probe an index, hash-join, sort-merge - estimates the cost of each, and chooses the cheapest. Most of the time it is brilliant. But when statistics are stale, indexes are missing, or your query is shaped badly, the planner picks a slow path. Learning to read its reasoning, through the `EXPLAIN` command, is the single highest-leverage database skill you can acquire.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches you that conversation with the planner, and the handful of techniques that fix the vast majority of slow queries.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Reading EXPLAIN Plans** - Interpret `EXPLAIN` and `EXPLAIN ANALYZE` output
+- [ ] **Indexing Strategy** - Choose which columns to index and which not to
+- [ ] **The N+1 Problem** - Recognize and eliminate the query-per-row anti-pattern
+- [ ] **Query Rewriting** - Transform slow SQL into fast SQL without changing results
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Composite & Covering Indexes** - Index multiple columns and avoid heap fetches
+- [ ] **Statistics & ANALYZE** - Keep the planner's estimates accurate
+- [ ] **Sargable Predicates** - Write `WHERE` clauses an index can actually use
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Spot a sequential scan in a plan and decide whether it is a problem
+- [ ] Add an index and prove the speedup with `EXPLAIN ANALYZE`
+- [ ] Explain why `WHERE LOWER(email) = ...` defeats a plain index
+- [ ] Replace an N+1 loop with a single JOIN or `IN` query
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Confident writing JOINs and aggregations
+- [ ] Understanding of what an index is
+- [ ] Completion of [SQL Mastery](/quests/0110/sql-mastery/) (recommended)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] PostgreSQL 14+ installed, or Docker to run it
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can write nontrivial multi-table queries
+- [ ] You are ready to measure rather than guess
+- [ ] Ready for 75-90 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*You will need a table large enough that scans actually hurt. Pick a platform, then run the seed script to generate 100,000 rows.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +140,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install postgresql@16
+brew services start postgresql@16
+createdb speed_sanctum
+psql speed_sanctum
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +154,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install PostgreSQL.PostgreSQL.16
+createdb speed_sanctum
+psql speed_sanctum
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +167,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y postgresql
+sudo systemctl enable --now postgresql
+sudo -u postgres createdb speed_sanctum
+sudo -u postgres psql speed_sanctum
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +181,237 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+docker run --name speed-sanctum -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
+docker exec -it speed-sanctum psql -U postgres
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+### 🏗️ Seed a Large Table
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+```sql
+CREATE TABLE events (
+    event_id   SERIAL PRIMARY KEY,
+    user_id    INTEGER NOT NULL,
+    action     TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT now()
+);
+
+-- Generate 100,000 rows so scans are slow enough to observe.
+INSERT INTO events (user_id, action, created_at)
+SELECT (random() * 5000)::int,
+       (ARRAY['login','click','purchase','logout'])[1 + (random()*3)::int],
+       now() - (random() * interval '90 days')
+FROM generate_series(1, 100000);
+
+ANALYZE events;   -- refresh planner statistics
+```
+
+## 🧙‍♂️ Chapter 1: Reading the Battle Plan with EXPLAIN
+
+*`EXPLAIN` shows the planner's chosen strategy without running the query. `EXPLAIN ANALYZE` actually runs it and reports real timings and row counts. Together they are your X-ray vision.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Distinguishing `Seq Scan` from `Index Scan`
+- Reading estimated vs actual rows
+- Interpreting cost and timing numbers
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Your First Plan
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```sql
+EXPLAIN ANALYZE
+SELECT * FROM events WHERE user_id = 42;
 ```
 
-**Step 2: Core Concepts**
+On the freshly seeded table you will see something like:
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```text
+Seq Scan on events  (cost=0.00..1986.00 rows=20 width=29)
+                    (actual time=0.31..48.7 rows=18 loops=1)
+  Filter: (user_id = 42)
+  Rows Removed by Filter: 99982
+Planning Time: 0.1 ms
+Execution Time: 49.1 ms
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+Read it bottom-up and key on three things: **Seq Scan** means PostgreSQL read all 100,000 rows; **Rows Removed by Filter: 99982** means it threw away almost everything; **Execution Time: 49.1 ms** is the cost you pay on every call. The planner had no index on `user_id`, so a full scan was its only option.
+
+### 🔍 Knowledge Check: EXPLAIN
+- [ ] What does `Seq Scan` tell you about how rows were read?
+- [ ] What is the difference between `EXPLAIN` and `EXPLAIN ANALYZE`?
+- [ ] Why is a high "Rows Removed by Filter" a smell?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Plan captured**: You ran `EXPLAIN ANALYZE` and saw a `Seq Scan`
+- [ ] **Baseline timed**: You recorded the execution time before optimizing
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Indexing Strategy - The Right Weapon
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*An index is a sorted lookup structure (a B-tree, by default) that lets the database jump straight to matching rows. But indexes are not free: they cost storage and slow down writes. The art is indexing exactly the columns your queries filter and join on - no more.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Creating a single-column index and measuring the win
+- Composite indexes and column order
+- Knowing when an index will NOT be used
 
-### 🏗️ Advanced Implementations
+### 🏗️ Add an Index and Prove the Win
 
-[Detailed content for chapter 2]
+```sql
+-- Index the column we filter on.
+CREATE INDEX idx_events_user_id ON events(user_id);
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+EXPLAIN ANALYZE
+SELECT * FROM events WHERE user_id = 42;
+-- Index Scan using idx_events_user_id on events
+--   (actual time=0.04..0.12 rows=18 loops=1)
+-- Execution Time: 0.2 ms
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+49 ms collapses to 0.2 ms - a 200x win - because the planner now jumps directly to the 18 matching rows instead of reading 100,000.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+For queries that filter on two columns, a **composite index** helps, but column order matters. An index on `(user_id, action)` accelerates `WHERE user_id = 42 AND action = 'login'` and also `WHERE user_id = 42` alone, but **not** `WHERE action = 'login'` by itself - the index is sorted by `user_id` first.
+
+```sql
+CREATE INDEX idx_events_user_action ON events(user_id, action);
+```
+
+A critical trap: a function on the column makes a plain index unusable (the predicate is not "sargable"). `WHERE LOWER(email) = 'x'` cannot use an index on `email`; you need an expression index on `LOWER(email)` instead.
+
+### 🔍 Knowledge Check: Indexing
+- [ ] Why does an index on `(user_id, action)` not help `WHERE action = 'login'` alone?
+- [ ] What is the write-time cost of adding an index?
+- [ ] Why does wrapping a column in a function defeat its index?
+
+## 🧙‍♂️ Chapter 3: Slaying the N+1 Query Storm
+
+*The N+1 problem is the most common performance bug in application code. It happens when you run one query to fetch N parent rows, then one more query per row to fetch each child - N+1 round trips where one or two would do.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Recognizing the N+1 pattern in application logs
+- Replacing it with a JOIN or `IN` query
+- Understanding why round trips dominate cost
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ From N+1 to One
 
-[Detailed content for chapter 3]
+```python
+# ❌ N+1: one query for users, then one query PER user for their events.
+users = db.query("SELECT user_id FROM users LIMIT 100")
+for u in users:                      # 100 more queries -> 101 round trips
+    events = db.query(
+        "SELECT * FROM events WHERE user_id = %s", u["user_id"]
+    )
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+# ✅ Fixed: a single query fetches everything with a JOIN.
+rows = db.query("""
+    SELECT u.user_id, e.action, e.created_at
+    FROM users u
+    JOIN events e ON e.user_id = u.user_id
+    WHERE u.user_id IN (SELECT user_id FROM users LIMIT 100)
+""")                                  # 1 round trip
+```
+
+Each network round trip to the database costs a fixed overhead (often a millisecond or more). 101 round trips at 1 ms each is 101 ms of pure latency before any work happens; the single JOIN pays that overhead once. ORMs hide this - look for "eager loading" or "select_related"-style options to batch the children.
+
+### 🔍 Knowledge Check: N+1
+- [ ] Where does the "+1" in N+1 come from?
+- [ ] Why do round trips, not row counts, often dominate the cost?
+- [ ] What ORM feature batches child fetches into one query?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Time and Index
+**Objective**: Baseline a filter query, add the right index, and prove the speedup.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Capture `EXPLAIN ANALYZE` before indexing
+- [ ] Add a single-column index
+- [ ] Capture `EXPLAIN ANALYZE` after and compare execution times
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The plan changes from `Seq Scan` to `Index Scan` and time drops sharply.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Composite Index
+**Objective**: Build an index that serves `WHERE user_id = ? AND action = ?` and verify it is used.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Create a composite index with the correct column order
+- [ ] Confirm via `EXPLAIN` that the planner chooses it
+- [ ] Show a query the index does NOT help and explain why
 
-**Validation**: [How to verify success]
+**Validation**: One query uses the index; the other is honestly explained as a miss.
+
+### 🔴 Advanced Challenge: Hunt and Kill an N+1
+**Objective**: In any app you have (or pseudocode), find a loop issuing per-row queries and rewrite it as a single JOIN or `IN` query.
+
+**Requirements**:
+- [ ] Identify the N+1 pattern and count the round trips
+- [ ] Rewrite to one or two queries
+- [ ] Estimate the latency saved
+
+**Validation**: The rewrite returns identical data with a fraction of the queries.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Reader of the Plan** - You decoded `EXPLAIN ANALYZE` output
+- 🛡️ **Slayer of the N+1** - You banished the query-storm anti-pattern
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Index Strategy** - Choose the right indexes for real workloads
+- **Execution-Plan Reading** - Diagnose any slow query with evidence
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Connection Pooling - Reduce the round-trip overhead you just measured
+- Backup and Recovery - Protect the data your fast queries serve
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Connection Pooling](/quests/0110/connection-pooling/) - Cut connection overhead
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Database Migrations](/quests/0110/database-migrations/) - Add indexes without downtime
+- ⚔️ [Backup and Recovery](/quests/0110/backup-recovery/) - Protect the database
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Connection Pooling](/quests/0110/connection-pooling/)  
+**🏗️ System Engineer**: Explore [Backup and Recovery](/quests/0110/backup-recovery/)  
+**📊 Data Scientist**: Advance to [Database Migrations](/quests/0110/database-migrations/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PostgreSQL Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html) - The canonical guide to plans
+- [PostgreSQL Indexes](https://www.postgresql.org/docs/current/indexes.html) - Index types and when to use them
+- [PostgreSQL Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html) - Official tuning advice
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Use The Index, Luke!](https://use-the-index-luke.com/) - The definitive index tutorial
+- [explain.depesz.com](https://explain.depesz.com/) - Paste a plan, get a readable analysis
+- [Stack Overflow: query-optimization tag](https://stackoverflow.com/questions/tagged/query-optimization) - Tuning Q&A
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [PGMustard EXPLAIN Glossary](https://www.pgmustard.com/docs/explain) - Every plan node explained
+- [Wikipedia: Database Index](https://en.wikipedia.org/wiki/Database_index) - How B-tree indexes work
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Sped up a real query with an index and proved it
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[SQL Mastery: Query Language Proficiency for Data Professionals]]
+**Unlocks:** [[Connection Pooling: Efficient Database Resource Management]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-
+</content>

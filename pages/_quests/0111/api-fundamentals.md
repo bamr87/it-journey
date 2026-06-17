@@ -1,71 +1,57 @@
 ---
-title: 'API Fundamentals: Building Web Services and HTTP APIs'
+title: 'API Fundamentals: HTTP, Requests, and JSON'
 author: IT-Journey Team
-description: Master the fundamentals of API development including HTTP methods, request/response patterns, headers, and building scalable web services.
-excerpt: Learn the core concepts of API development including HTTP, request patterns, and web services
-preview: images/previews/api-fundamentals-building-web-services-descriptive.png
+description: Master the fundamentals of web APIs including HTTP methods, status codes, request/response anatomy, headers, and JSON so you can call and reason about any API.
+excerpt: Learn what an API is, the HTTP request/response cycle, methods, status codes, and JSON
+preview: images/previews/api-fundamentals-http-requests-json.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:08:50.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0111'
-difficulty: 🔴 Hard
-estimated_time: 90-120 minutes
-primary_technology: api
+difficulty: 🟢 Easy
+estimated_time: 60-90 minutes
+primary_technology: http
 quest_type: main_quest
 quest_series: API Design Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Gatekeeper's Road
+quest_arc: Foundations of the Interface
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/0111/rest-principles/
+  - /quests/0111/api-authentication/
 skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort reading code in at least one language (examples use Bash, Python, JavaScript)
+  - General awareness that web browsers talk to servers
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - curl installed (ships with macOS and most Linux distributions)
+  - Optional Python 3 or Node.js for the scripted examples
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have used a terminal before
+  - You are ready to make your first real API call
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - Successfully called a public API and parsed its JSON response
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can name the parts of an HTTP request and response
+  - Can choose the correct HTTP method for a given action
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the meaning of 2xx, 4xx, and 5xx status codes
+  - Can read and write a simple JSON document
 permalink: /quests/0111/api-fundamentals/
 categories:
 - Quests
 - Backend
-- Hard
+- Easy
 tags:
 - '0111'
-- api
+- http
 - main_quest
 - backend
 - hands-on
@@ -73,115 +59,83 @@ tags:
 keywords:
   primary:
   - '0111'
-  - api
+  - http
   - main_quest
   secondary:
-  - backend
-  - hands-on
-  - gamified-learning
+  - rest
+  - json
+  - http-methods
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0111 (7) Quest: Main Quest - API'
+sub_title: 'Level 0111 (7) Quest: Main Quest - API Fundamentals'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Gatekeeper - Made your first real API call and understood the response
+  - 📜 Reader of Requests - Can decode any HTTP request and response by hand
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ HTTP Request Crafting
+  - 🧠 JSON Reading and Writing
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the REST Principles and API Authentication quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You stand at the gates of **Level 0111 - API Development**, the road that connects every kingdom you have ever built. An API - an Application Programming Interface - is the spoken language between programs, the way one service asks another for what it needs. This quest, **API Fundamentals**, teaches you that language from its very first word.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*By the end you will speak HTTP fluently: you will know how a request is shaped, how a response answers it, what the cryptic three-digit status codes mean, and how to read the JSON that flows between them. Every later quest in this level builds on what you forge here.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early web, pages were static scrolls - a server handed your browser a finished document and the conversation ended. Then developers realized the same protocol that delivered web pages, **HTTP**, could deliver structured data just as easily. A program could ask a server a question and receive a machine-readable answer. The API was born, and with it the modern era of services that talk to services.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Today an API is the universal handshake. Your weather app, your bank's mobile login, the map in your car, and the AI you chat with all speak through APIs. Learn this language and you can wire any two systems together.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **What an API Is** - Explain in plain language what an API does and why services use them
+- [ ] **The HTTP Request/Response Cycle** - Describe every part of a request and the response it earns
+- [ ] **HTTP Methods** - Choose the right verb (GET, POST, PUT, PATCH, DELETE) for an action
+- [ ] **Status Codes** - Read 2xx, 3xx, 4xx, and 5xx codes and know who is at fault
+- [ ] **JSON** - Read and write JSON, the lingua franca of modern APIs
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Headers** - Use `Content-Type`, `Accept`, and `Authorization` correctly
+- [ ] **Query Parameters vs Body** - Know where data belongs in a request
+- [ ] **Calling APIs from Code** - Make the same request from the terminal, Python, and JavaScript
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Sketch a full HTTP request and response on a whiteboard from memory
+- [ ] Pick the correct method and status code for a new endpoint without looking them up
+- [ ] Read an unfamiliar API's JSON response and extract the field you need
+- [ ] Explain to a teammate why an API returned `404` instead of `500`
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] You can open and use a terminal
+- [ ] You have seen code in at least one language before
+- [ ] You understand that the web involves clients (browsers) and servers
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] `curl` available in your terminal
+- [ ] Optional: Python 3 or Node.js for the scripted examples
+- [ ] An internet connection (we call free public APIs)
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟢 Easy** quest expects:
+- [ ] No prior API experience - we start from zero
+- [ ] Willingness to run commands and read their output
+- [ ] Ready for 60-90 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Every platform can make HTTP requests. Choose the path that matches your setup; the API calls themselves are identical everywhere.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,15 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# curl ships with macOS. Confirm it is present:
+curl --version
 
-# Install prerequisites
-brew install [package-name]
+# Optional: install jq to pretty-print and query JSON responses
+brew install jq
 
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Your first API call - fetch a sample post as JSON
+curl https://jsonplaceholder.typicode.com/posts/1
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +161,15 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# curl.exe ships with Windows 10+. Confirm it:
+curl.exe --version
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
+# Optional: install jq for JSON querying
+winget install jqlang.jq
 
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Your first API call
+curl.exe https://jsonplaceholder.typicode.com/posts/1
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +179,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Install curl and jq if you do not already have them
+sudo apt update && sudo apt install -y curl jq   # Debian/Ubuntu
+# sudo dnf install -y curl jq                     # Fedora/RHEL
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Your first API call
+curl https://jsonplaceholder.typicode.com/posts/1
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +195,268 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Any container or Codespace with curl works identically.
+docker run --rm curlimages/curl:latest \
+  https://jsonplaceholder.typicode.com/posts/1
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: What Is an API and What Is HTTP?
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*An **API** is a contract: "send me a request shaped like this, and I will send you a response shaped like that." On the web, that contract is carried over **HTTP** (HyperText Transfer Protocol), a simple text-based protocol where a client sends a request and a server returns a response.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The mental model of client, request, server, response
+- The anatomy of an HTTP request
+- The anatomy of an HTTP response
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Anatomy of a Request and Response
 
-**Step 1: Environment Setup**
+Every HTTP request has four parts: a **method**, a **URL** (path + query), **headers**, and an optional **body**. Use `curl -v` to see the raw conversation:
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# -v shows the request we send (>) and the response we receive (<)
+curl -v https://jsonplaceholder.typicode.com/posts/1
 ```
 
-**Step 2: Core Concepts**
+The request line looks like this (the `>` lines):
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```http
+GET /posts/1 HTTP/1.1
+Host: jsonplaceholder.typicode.com
+Accept: */*
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+And the response (the `<` lines) carries a **status line**, **headers**, and a **body**:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident",
+  "body": "quia et suscipit..."
+}
+```
+
+That is the whole game: you send a method + path + headers (+ maybe a body), and you get back a status code + headers + body.
+
+### 🔍 Knowledge Check: Anatomy
+- [ ] What are the four parts of an HTTP request?
+- [ ] Which response header tells you the body is JSON?
+- [ ] What does the `Host` header identify?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **First call made**: You received a `200 OK` from a public API
+- [ ] **Saw the raw HTTP**: You read the `>` request and `<` response lines
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: HTTP Methods - The Verbs of the Web
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The **method** declares your intent. The five you will use constantly map cleanly to the things you do with data.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The five core HTTP methods and what each means
+- Which methods are safe and which are idempotent
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Core Methods
 
-[Detailed content for chapter 2]
+| Method | Intent | Safe? | Idempotent? | Example |
+| --- | --- | --- | --- | --- |
+| **GET** | Read a resource | Yes | Yes | `GET /posts/1` |
+| **POST** | Create a new resource | No | No | `POST /posts` |
+| **PUT** | Replace a resource entirely | No | Yes | `PUT /posts/1` |
+| **PATCH** | Update part of a resource | No | No | `PATCH /posts/1` |
+| **DELETE** | Remove a resource | No | Yes | `DELETE /posts/1` |
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+**Safe** means the request does not change server state (a GET should never delete anything). **Idempotent** means making the request twice has the same effect as making it once (deleting the same record twice still leaves it deleted).
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Try a `POST` that creates a resource and sends a JSON body:
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```bash
+# -X sets the method, -H sets a header, -d sends the request body
+curl -X POST https://jsonplaceholder.typicode.com/posts \
+  -H "Content-Type: application/json" \
+  -d '{"title": "My First Post", "body": "Hello API", "userId": 1}'
+```
+
+The server replies `201 Created` and echoes the new resource, including the `id` it assigned.
+
+### 🔍 Knowledge Check: Methods
+- [ ] Which method would you use to read a list of users?
+- [ ] Why is `DELETE` idempotent but `POST` is not?
+- [ ] What is the difference between `PUT` and `PATCH`?
+
+## 🧙‍♂️ Chapter 3: Status Codes and JSON
+
+*Every response carries a three-digit **status code** that tells you what happened. The first digit is the category - learn the five categories and you can interpret any code on sight.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- The five status code families and who is to blame
+- Reading and writing JSON
+- Making the same call from three languages
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Status Code Families
 
-[Detailed content for chapter 3]
+| Range | Meaning | Common examples |
+| --- | --- | --- |
+| **1xx** | Informational | `100 Continue` |
+| **2xx** | Success | `200 OK`, `201 Created`, `204 No Content` |
+| **3xx** | Redirection | `301 Moved Permanently`, `304 Not Modified` |
+| **4xx** | Client error - *you* sent something wrong | `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `429 Too Many Requests` |
+| **5xx** | Server error - the *server* broke | `500 Internal Server Error`, `503 Service Unavailable` |
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+The crucial instinct: **4xx means fix your request; 5xx means the server failed.** Ask for a code explicitly:
+
+```bash
+# -o /dev/null discards the body; -w prints only the status code
+curl -s -o /dev/null -w "%{http_code}\n" \
+  https://jsonplaceholder.typicode.com/posts/9999
+# -> 404, because post 9999 does not exist
+```
+
+**JSON** (JavaScript Object Notation) is how almost all modern APIs encode data. It has six types: object `{}`, array `[]`, string, number, boolean, and `null`:
+
+```json
+{
+  "id": 1,
+  "name": "Ada Lovelace",
+  "active": true,
+  "roles": ["admin", "author"],
+  "manager": null
+}
+```
+
+Now make the identical request from three languages. First **Python**:
+
+```python
+import requests
+
+# GET a resource and parse the JSON body into a dict
+response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
+print(response.status_code)        # 200
+data = response.json()             # parse JSON -> Python dict
+print(data["title"])               # access a field by key
+```
+
+Then **JavaScript** (Node 18+ or any modern browser, using the built-in `fetch`):
+
+```javascript
+// fetch returns a Promise; await it, then parse the JSON body
+const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+console.log(response.status);      // 200
+const data = await response.json();// parse JSON -> object
+console.log(data.title);           // access a field
+```
+
+And the same with **curl + jq** to extract one field:
+
+```bash
+# Pipe the JSON response into jq and pull out the .title field
+curl -s https://jsonplaceholder.typicode.com/posts/1 | jq '.title'
+```
+
+### 🔍 Knowledge Check: Status & JSON
+- [ ] A request returns `503`. Whose problem is it, yours or the server's?
+- [ ] What status code should creating a new resource return?
+- [ ] Name the six JSON value types.
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Read a Public API
+**Objective**: Call a free public API and extract one field from its JSON.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Use `curl` to GET `https://api.github.com/users/octocat`
+- [ ] Identify the status code returned
+- [ ] Extract the `public_repos` field (use `jq` or read it by eye)
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: You can state the status code and the field's value.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Create and Inspect
+**Objective**: Send a `POST` with a JSON body and inspect the response.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] POST a new post to `https://jsonplaceholder.typicode.com/posts`
+- [ ] Send a correct `Content-Type` header
+- [ ] Record the status code and the `id` the server assigned
 
-**Validation**: [How to verify success]
+**Validation**: You receive `201 Created` and a new `id`.
+
+### 🔴 Advanced Challenge: Method and Code Mapping
+**Objective**: For a hypothetical "library" API, design the endpoints.
+
+**Requirements**:
+- [ ] Choose method + path for: list books, get one book, add a book, update a book, delete a book
+- [ ] State the success status code each should return
+- [ ] State which status code a request for a missing book returns
+
+**Validation**: Every choice matches the method/status conventions from this quest.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Gatekeeper** - You made your first real API call and understood the response
+- 📜 **Reader of Requests** - You can decode any HTTP request and response by hand
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **HTTP Request Crafting** - Build requests with the right method, headers, and body
+- **JSON Reading and Writing** - Parse and produce the data format the web runs on
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- REST Principles - Turn raw HTTP into well-designed resource APIs
+- API Authentication - Prove who you are when you call an API
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [REST Principles](/quests/0111/rest-principles/) - Design APIs the right way
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [API Authentication](/quests/0111/api-authentication/) - Keys, tokens, and OAuth2
+- ⚔️ [Error Handling](/quests/0111/error-handling/) - Status codes and clean error responses
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [REST Principles](/quests/0111/rest-principles/)  
+**🏗️ System Engineer**: Explore [API Authentication](/quests/0111/api-authentication/)  
+**🛡️ Security Specialist**: Check out [API Authentication](/quests/0111/api-authentication/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [MDN: An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) - The canonical HTTP primer
+- [MDN: HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - Every status code explained
+- [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html) - The authoritative specification
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - The free fake API used in this quest
+- [HTTPBin](https://httpbin.org/) - A request-and-response testing service
+- [Public APIs list](https://github.com/public-apis/public-apis) - Hundreds of free APIs to practice on
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [MDN: Working with JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) - JSON syntax and parsing
+- [curl documentation](https://curl.se/docs/) - The command-line HTTP client
+- [jq manual](https://jqlang.github.io/jq/manual/) - Query and transform JSON
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Made a real API call and parsed its JSON
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
+**Level hub:** [[Level 0111 - API Development]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[REST Principles: Constraints, Resources, and Richardson Maturity]] · [[API Authentication: Keys, Tokens, OAuth2, and JWT]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

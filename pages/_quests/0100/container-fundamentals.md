@@ -1,63 +1,48 @@
 ---
-title: 'Docker Container Fundamentals: Master Isolation & Portability for DevOps'
+title: 'Docker Container Fundamentals: Images to Registries'
 author: IT-Journey Team
-description: Learn Docker container fundamentals including images, containers, volumes, and networking. Understand container isolation, portability, and lifecycle management for modern application deployment.
-excerpt: Master Docker container fundamentals including images, volumes, and networking for portable application deployment
+description: 'Master Docker container fundamentals: images versus containers, writing a Dockerfile, build and run workflows, image layers and caching, and registries.'
+excerpt: Master Docker container fundamentals including images, the Dockerfile, layers, and registries for portable application deployment
 preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:04:39.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
 primary_technology: docker
 quest_type: main_quest
 quest_series: Docker Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Forge
+quest_arc: Containers of the Container Coast
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/0100/docker-compose-orchestration/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic command line navigation (cd, ls, running a program)
+  - Comfort editing plain text files in an editor
+  - A rough idea of what a web server or application process is
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker Engine or Docker Desktop installed
+  - A terminal and a text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable running commands and reading their output
+  - Ready to experiment, break things, and rebuild
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A working image built from your own Dockerfile and run as a container
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain the difference between an image and a container
+  - Can write, build, and run a multi-stage-aware Dockerfile
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands image layers and the build cache
+  - Can push and pull from a registry
 permalink: /quests/0100/container-fundamentals/
 categories:
 - Quests
@@ -82,108 +67,77 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0100 (4) Quest: Main Quest - Docker Fundamentals'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Containerwright - Built and ran your first container from a hand-written Dockerfile
+  - 📦 Image Smith - Understands layers, the build cache, and registries
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Docker Image Authoring
+  - 🧱 Container Lifecycle Management
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the Docker Compose Orchestration quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have crossed into the **Adventurer tier**, and the salt air of the Container Coast fills your lungs. Here, applications no longer wander the host machine as homeless processes, fighting over libraries and ports. Instead, each one is sealed inside a tidy, portable crate that runs the same on your laptop, a teammate's machine, and a server in the cloud. This quest, **Container Fundamentals**, teaches you to forge those crates yourself.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have never typed `docker` before or you have copy-pasted Dockerfiles without truly understanding them, this adventure will give you a real mental model: what an image is, what a container is, how the two differ, and how layers, builds, and registries fit together.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the old days, shipping software meant shipping a list of incantations: "install this version of the runtime, then that library, then set these three environment variables, then pray." Every machine was subtly different, and the dreaded curse "but it works on my machine" haunted every release.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
+*Then came the container. Borrowing its name from the steel boxes that revolutionized global shipping, a container packages an application together with everything it needs to run - code, runtime, libraries, and configuration - into one standardized, portable unit. The host no longer has to match the application's needs; the application brings its own world with it.*
 
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches you the "why" behind every `docker` command, so that the rest of the Container Coast - Compose, CI/CD pipelines, and eventually Kubernetes - becomes a road you can actually read.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Images vs Containers** - Explain how a read-only image becomes a running container, and manage both lifecycles
+- [ ] **Writing a Dockerfile** - Author a clear, correct Dockerfile from scratch for a real application
+- [ ] **Build & Run Workflow** - Build an image with `docker build` and run it with `docker run`, mapping ports and passing environment
+- [ ] **Image Layers & Cache** - Understand how each instruction creates a layer and how to order them for fast rebuilds
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Registries** - Tag, push, and pull images from Docker Hub or another registry
+- [ ] **Image Slimming** - Use a small base image and a multi-stage build to shrink your final image
+- [ ] **Volumes & Logs** - Persist data with a volume and inspect a container's logs
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain the image/container distinction to another person without notes
+- [ ] Write a Dockerfile for a new app and predict which instructions invalidate the cache
+- [ ] Diagnose why a container exited and read its logs to find out
+- [ ] Push an image to a registry and pull it onto a different machine
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic command line navigation (`cd`, `ls`, running a program)
+- [ ] Comfort editing a plain text file in an editor
+- [ ] A rough idea of what an application process or web server is
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker Engine or Docker Desktop installed and running
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
+- [ ] Internet connection for pulling base images
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 60-75 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can run commands and read their output without fear
+- [ ] You are willing to break a container and rebuild it
+- [ ] Ready for 60-75 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Docker behaves almost identically everywhere once it is installed - that is the whole point. The only difference between platforms is the installation step. Pick your path, install Docker, then verify with `docker run hello-world`.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -191,23 +145,17 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install Docker Desktop (includes the engine, CLI, and a small VM)
+brew install --cask docker
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Launch Docker Desktop once from Applications, then verify from the terminal
+docker --version
+docker run --rm hello-world
 ```
 
 **macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
+- Docker runs Linux containers inside a lightweight VM; this is automatic.
+- A lighter alternative is `colima`: `brew install colima && colima start`.
 
 </details>
 
@@ -217,26 +165,17 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install Docker Desktop (uses the WSL 2 backend on Windows)
+winget install Docker.DockerDesktop
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Restart if prompted, launch Docker Desktop, then verify
+docker --version
+docker run --rm hello-world
 ```
 
 **Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
+- Enable the WSL 2 backend for the best performance and Linux-container support.
+- Run your `docker build` from a WSL 2 distro (e.g. Ubuntu) for fewer path surprises.
 
 </details>
 
@@ -246,28 +185,20 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Install Docker Engine via the convenience script (or your package manager)
+curl -fsSL https://get.docker.com | sudo sh
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
+# Add yourself to the docker group so you can run docker without sudo
+sudo usermod -aG docker "$USER"   # log out and back in for this to take effect
 
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Verify
+docker --version
+docker run --rm hello-world
 ```
 
 **Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
+- On Linux, Docker runs natively - no VM, so it is the fastest path.
+- Until you re-log after the `usermod`, prefix commands with `sudo`.
 
 </details>
 
@@ -277,225 +208,327 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
+# GitHub Codespaces and most cloud dev environments ship Docker preinstalled.
+docker --version
+docker run --rm hello-world
 
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# No local install? Try the browser-based playground at https://labs.play-with-docker.com
 ```
 
 **Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+- Codespaces, Gitpod, and Cloud Shell let you complete this entire quest with zero local setup.
+- Play with Docker gives you a throwaway Linux host for four hours per session.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Images vs Containers - The Blueprint and the Building
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Two words cause more confusion than any others when learning Docker. Conquer them now and everything else falls into place.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The precise difference between an image and a container
+- Running, listing, stopping, and removing containers
+- Reading the output of `docker ps` and `docker images`
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Blueprint and the Building
 
-**Step 1: Environment Setup**
+An **image** is a read-only template - a frozen snapshot of a filesystem plus the metadata needed to run a program. Think of it as the architectural blueprint, or a class in programming.
+
+A **container** is a running (or stopped) instance of an image - a live process with its own isolated filesystem, network, and process tree. Think of it as the actual building, or an object instantiated from a class. You can run many containers from one image, just as you build many houses from one blueprint.
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Pull an image (downloads it; nothing runs yet)
+docker pull nginx:alpine
+
+# List images you have locally
+docker images
+
+# Run a container FROM that image, in the background, mapping host 8080 -> container 80
+docker run --name web -d -p 8080:80 nginx:alpine
+
+# See running containers
+docker ps
+
+# Visit http://localhost:8080 in your browser to see nginx serving its default page
+
+# Stop and remove the container (the image stays behind)
+docker stop web
+docker rm web
 ```
 
-**Step 2: Core Concepts**
+The key insight: removing the *container* does not remove the *image*. The image is the reusable blueprint; the container is a disposable instance.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Images vs Containers
+- [ ] If you run three containers from the `nginx:alpine` image, how many images exist?
+- [ ] What does the `-p 8080:80` flag do, and which number is the host port?
+- [ ] After `docker rm web`, is the `nginx:alpine` image still on your machine?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **First container running**: `docker run hello-world` printed its success message
+- [ ] **Served a page**: You reached an nginx container in your browser on port 8080
+- [ ] **Cleaned up**: You stopped and removed a container without removing its image
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: The Dockerfile - Forging Your Own Image
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
-
-### 🏗️ Advanced Implementations
-
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+*Pulling other people's images is useful, but the real power is building your own. The Dockerfile is the recipe: a plain text file of instructions that `docker build` executes top to bottom to produce an image.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Writing the core Dockerfile instructions (`FROM`, `WORKDIR`, `COPY`, `RUN`, `EXPOSE`, `CMD`)
+- Building an image and tagging it
+- Running your own image as a container
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Building Your First Real Image
 
-[Detailed content for chapter 3]
+Let's containerize a tiny Node.js web app. Create a project folder with three files.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+**`app.js`** - the application:
+
+```javascript
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end(`Hello from inside a container! Host: ${require('os').hostname()}\n`);
+});
+
+server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+```
+
+**`package.json`** - so dependencies install cleanly (this app has none, but the file matters for caching):
+
+```json
+{
+  "name": "container-hello",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": { "start": "node app.js" }
+}
+```
+
+**`Dockerfile`** - the recipe that turns the above into an image:
+
+```dockerfile
+# 1. Start from a small, official base image that already has Node.js
+FROM node:20-alpine
+
+# 2. Set the working directory inside the image
+WORKDIR /usr/src/app
+
+# 3. Copy ONLY the manifest first so dependency installs are cached separately
+COPY package.json ./
+
+# 4. Install dependencies (cached unless package.json changes)
+RUN npm install --omit=dev
+
+# 5. Now copy the rest of the source code
+COPY . .
+
+# 6. Document the port the app listens on
+EXPOSE 3000
+
+# 7. The default command run when a container starts
+CMD ["node", "app.js"]
+```
+
+Now build and run it:
+
+```bash
+# Build an image and tag it "container-hello:1.0" (run from the project folder)
+docker build -t container-hello:1.0 .
+
+# Run it, mapping host port 3000 to the container's port 3000
+docker run --name hello -d -p 3000:3000 container-hello:1.0
+
+# Confirm it works
+curl http://localhost:3000
+
+# Override the PORT env var without rebuilding
+docker run --rm -e PORT=4000 -p 4000:4000 container-hello:1.0
+```
+
+**Why copy `package.json` before the source?** Because of layer caching, covered next. If you copied everything at once, any code change would force a full reinstall of dependencies on every build.
+
+### 🔍 Knowledge Check: The Dockerfile
+- [ ] What does `FROM node:20-alpine` give you that you would otherwise have to install by hand?
+- [ ] What is the difference between `RUN` and `CMD`?
+- [ ] Why does `EXPOSE 3000` not actually publish the port to your host?
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Built an image**: `docker build` finished with `naming to ... container-hello:1.0`
+- [ ] **Ran your own image**: `curl http://localhost:3000` returned your greeting
+- [ ] **Changed config**: You overrode `PORT` with `-e` without rebuilding
+
+## 🧙‍♂️ Chapter 3: Layers, the Build Cache, and Registries - Mastery in Production
+
+*Every Dockerfile instruction creates a layer - an immutable, stacked filesystem diff. Understanding layers makes your builds fast and your images small. Registries let you share those images with the world (or just your team).*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- How layers and the build cache work, and how to order instructions to exploit them
+- Shrinking images with small base images and multi-stage builds
+- Tagging, pushing, and pulling from a registry
+
+### 🏗️ Layers and the Build Cache
+
+Each `FROM`, `COPY`, and `RUN` adds a layer. Docker caches each layer; on rebuild, it reuses every layer up to the first instruction whose inputs changed, then rebuilds from there down. This is exactly why `package.json` is copied before the source: editing `app.js` invalidates only the final `COPY . .` layer, not the expensive `npm install`.
+
+```bash
+# Inspect the layer history of your image
+docker history container-hello:1.0
+
+# Rebuild after editing only app.js — watch the dependency layer say "CACHED"
+docker build -t container-hello:1.1 .
+```
+
+**Multi-stage builds** let you compile or bundle in one stage and ship only the result in a final, lean stage. This keeps build tools out of your production image:
+
+```dockerfile
+# ---- Stage 1: build ----
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY . .
+RUN npm run build   # produces compiled output, e.g. in /app/dist
+
+# ---- Stage 2: runtime (tiny, no build tools) ----
+FROM node:20-alpine AS runtime
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY package.json ./
+RUN npm install --omit=dev
+EXPOSE 3000
+CMD ["node", "dist/app.js"]
+```
+
+Pair this with a **`.dockerfile`-aware `.dockerignore`** so you never copy junk into the build context:
+
+```text
+node_modules
+.git
+*.log
+Dockerfile
+.dockerignore
+```
+
+### 🏗️ Registries: Sharing Your Image
+
+A **registry** is a server that stores images. Docker Hub is the default public one; cloud providers and GitHub (GHCR) offer their own. An image name is really `registry/namespace/repository:tag`.
+
+```bash
+# Log in to Docker Hub (create a free account first)
+docker login
+
+# Tag your local image for your account (replace YOURNAME)
+docker tag container-hello:1.0 YOURNAME/container-hello:1.0
+
+# Push it to the registry
+docker push YOURNAME/container-hello:1.0
+
+# On any other machine, pull and run it — no source code needed
+docker pull YOURNAME/container-hello:1.0
+docker run --rm -p 3000:3000 YOURNAME/container-hello:1.0
+```
+
+That `pull` then `run` on a different machine is the entire promise of containers made real: the app runs identically, because it carries its own world.
+
+### 🔍 Knowledge Check: Layers & Registries
+- [ ] Why does editing `app.js` not trigger a re-run of `npm install` with the recommended COPY order?
+- [ ] What does a multi-stage build keep *out* of your final image?
+- [ ] In `YOURNAME/container-hello:1.0`, which part is the tag and which is the repository?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Containerize a Static Site
+**Objective**: Serve a single `index.html` you write yourself using an official nginx image.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Write an `index.html`
+- [ ] Write a Dockerfile that `FROM nginx:alpine` and `COPY`s your file into `/usr/share/nginx/html`
+- [ ] Build, run with `-p 8080:80`, and view it in a browser
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Run `curl http://localhost:8080` and see your HTML.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Slim and Configurable
+**Objective**: Make the Node app from Chapter 2 read a greeting from an environment variable and build it on a small base image.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] App reads `GREETING` from the environment, defaulting to a sensible value
+- [ ] Dockerfile uses an `alpine`-based image and a `.dockerignore`
+- [ ] Run twice with two different `-e GREETING=...` values without rebuilding
 
-**Validation**: [How to verify success]
+**Validation**: Two runs return two different greetings; `docker images` shows a small image size.
+
+### 🔴 Advanced Challenge: Multi-Stage and Published
+**Objective**: Build an image with a multi-stage Dockerfile and push it to a registry.
+
+**Requirements**:
+- [ ] A two-stage Dockerfile (build stage + slim runtime stage)
+- [ ] Tag it for Docker Hub or GHCR and `docker push` it
+- [ ] Pull and run it in a fresh environment (or `docker system prune` first to prove the pull works)
+
+**Validation**: A teammate (or a clean machine) can `docker run` your image with no source code present.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Containerwright** - You built and ran a container from your own Dockerfile
+- 📦 **Image Smith** - You understand layers, the build cache, and registries
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Docker Image Authoring** - Write clear, cache-friendly Dockerfiles
+- **Container Lifecycle Management** - Run, inspect, and clean up containers confidently
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Docker Compose Orchestration - Wire multiple containers into one application
+- Frontend Docker - Containerize a full Jekyll + Bootstrap site
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/) - Run an app, a database, and a cache together with one command
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Frontend Docker](/quests/0100/frontend-docker/) - Containerize a Jekyll + Bootstrap site
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/)  
+**🏗️ System Engineer**: Explore image hardening and registries in depth  
+**🛡️ Security Specialist**: Study minimal base images and image scanning
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Docker: Get Started](https://docs.docker.com/get-started/) - The official onboarding guide
+- [Dockerfile Reference](https://docs.docker.com/reference/dockerfile/) - Every instruction explained
+- [Docker Build Cache](https://docs.docker.com/build/cache/) - How layer caching works
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Docker Hub](https://hub.docker.com/) - The default public image registry
+- [Play with Docker](https://labs.play-with-docker.com/) - A free, browser-based Docker playground
+- [Stack Overflow: docker tag](https://stackoverflow.com/questions/tagged/docker) - Q&A for when you get stuck
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Best Practices for Writing Dockerfiles](https://docs.docker.com/build/building/best-practices/) - Official guidance
+- [Multi-stage Builds](https://docs.docker.com/build/building/multi-stage/) - Shrinking production images
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built and ran a container from your own Dockerfile
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Level hub:** [[Level 0100 - Frontend & Containers]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[Docker Compose Orchestration: Build Multi-Container Applications]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

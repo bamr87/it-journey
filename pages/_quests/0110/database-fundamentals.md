@@ -1,75 +1,57 @@
 ---
-title: 'Database Fundamentals: Data Storage and Retrieval'
+title: 'Database Fundamentals: The Relational Model and ACID'
 author: IT-Journey Team
-description: Master the fundamentals of databases, including data storage, retrieval, and management using SQL and relational database concepts. Learn how to design, query, and optimize databases for real-world applications.
-excerpt: Learn how databases store and retrieve data, and gain hands-on experience with SQL and relational database design.
+description: 'Master the relational model behind modern databases - tables, keys, ACID transactions, and normalization - then prove it with hands-on PostgreSQL SQL.'
+excerpt: Learn how relational databases store and protect data through tables, keys, ACID transactions, and normalization.
 preview: images/previews/database-fundamentals-data-storage-quest-title-ret.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:07:24.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
-difficulty: 🔴 Hard
+difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: sql
 quest_type: main_quest
 quest_series: Database Mastery
-quest_line: Foundation Path
-quest_arc: Database Fundamentals Arc
+quest_line: The Adventurer's Data Keep
+quest_arc: Foundations of the Relational Realm
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests:
+  unlocks_quests:
   - /quests/0110/sql-mastery/
-  - /quests/0110/database-security/
   - /quests/0110/data-modeling/
+  - /quests/0110/database-security/
   - /quests/0110/query-optimization/
   - /quests/0110/backup-recovery/
   - /quests/0110/database-migrations/
   - /quests/0110/connection-pooling/
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
   - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort editing text files and running shell commands
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - PostgreSQL 14+ (or Docker to run it)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Has built or used at least one small application
+  - Ready to think in terms of structured data
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A working relational schema created with CREATE TABLE
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain primary keys, foreign keys, and referential integrity
+  - Can describe each ACID property with a concrete example
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between 1NF, 2NF, and 3NF
+  - Can identify a transaction that violates atomicity
 permalink: /quests/0110/database-fundamentals/
 categories:
 - Quests
 - Data-Engineering
-- Hard
+- Medium
 tags:
 - '0110'
 - sql
@@ -84,111 +66,77 @@ keywords:
   - main_quest
   secondary:
   - data-engineering
-  - hands-on
-  - gamified-learning
+  - relational-model
+  - acid
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0110 (6) Quest: Main Quest - SQL & Relational Databases'
+sub_title: 'Level 0110 (6) Quest: Main Quest - The Relational Model & ACID'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Keeper of the Relational Keep - Built a normalized schema from scratch
+  - 🛡️ Guardian of Integrity - Understands ACID and referential integrity
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Relational Schema Design
+  - 🧠 Transaction Reasoning
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the rest of the Level 0110 Database Mastery quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have reached the gates of the **Data Keep**, the stronghold where every kingdom you will ever build stores its most precious treasure: its data. This quest, **Database Fundamentals**, is the foundation stone of the entire Level 0110 Database Mastery arc. Master it and the relational realm will obey your every command; skip it and your later spells - JOINs, indexes, migrations - will crumble for want of a footing.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have only ever poked at a spreadsheet or you have wired an app to a database without truly understanding what happened beneath, this adventure forges the bedrock: the relational model, keys, ACID guarantees, and the first rules of normalization.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In 1970, a quiet sorcerer named Edgar F. Codd published a scroll titled "A Relational Model of Data for Large Shared Data Banks." Before it, data was trapped in rigid hierarchies and tangled networks that only their creators could navigate. Codd's insight was deceptively simple: store data in tables of rows and columns, and let a precise algebra retrieve any answer. That idea became SQL, and SQL became the lingua franca of nearly every serious system on Earth.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches you the "why" beneath that scroll. Learn it well, and the rest of the Data Keep opens before you.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Relational Model** - Explain tables, rows, columns, and domains, and why structure matters
+- [ ] **Keys & Referential Integrity** - Use primary keys and foreign keys to connect data safely
+- [ ] **ACID Transactions** - Describe Atomicity, Consistency, Isolation, and Durability with real examples
+- [ ] **Normalization Basics** - Reshape a messy table into 1NF, 2NF, and 3NF
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Constraints** - Enforce rules with `NOT NULL`, `UNIQUE`, `CHECK`, and `DEFAULT`
+- [ ] **Data Types** - Choose appropriate types and understand `NULL` semantics
+- [ ] **Indexes (preview)** - Understand why a primary key is automatically fast to look up
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Draw a two-table schema and name the key that links them
+- [ ] Explain what `ROLLBACK` protects you from in one sentence
+- [ ] Spot a transitive dependency and remove it
+- [ ] Predict whether a query returns rows when a `NULL` is involved
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Comfort running commands in a terminal
+- [ ] Basic understanding that applications store data somewhere
+- [ ] Willingness to type SQL and read error messages
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] PostgreSQL 14+ installed, or Docker to run it in a container
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
-This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 90-120 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can follow multi-step setup instructions
+- [ ] You are ready for 90-120 minutes of focused, hands-on learning
+- [ ] You are comfortable experimenting and reading errors
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Every example below runs on PostgreSQL, the open-source relational database trusted from hobby projects to planet-scale systems. Choose how you summon it.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -196,23 +144,14 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install PostgreSQL with Homebrew
+brew install postgresql@16
+brew services start postgresql@16
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create and enter a practice database
+createdb datakeep
+psql datakeep
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -222,26 +161,13 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install PostgreSQL with winget
+winget install PostgreSQL.PostgreSQL.16
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create and enter a practice database (adjust the path to psql if needed)
+createdb datakeep
+psql datakeep
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -251,28 +177,16 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian/Ubuntu
+sudo apt update && sudo apt install -y postgresql
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
+# Fedora/RHEL: sudo dnf install -y postgresql-server && sudo postgresql-setup --initdb
+sudo systemctl enable --now postgresql
 
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create and enter a practice database
+sudo -u postgres createdb datakeep
+sudo -u postgres psql datakeep
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -282,226 +196,283 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
+# Run PostgreSQL in a throwaway container - perfect for practice
+docker run --name datakeep -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
 
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Connect to it
+docker exec -it datakeep psql -U postgres
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Relational Model - Tables, Rows, and Domains
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Every relational database is, at heart, a collection of **tables**. A table (formally a "relation") is a set of **rows** (tuples), each described by the same **columns** (attributes). Each column draws its values from a **domain** - a type such as integer, text, or date.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The vocabulary of the relational model
+- How to create a table with appropriate data types
+- Why every column has a domain and what `NULL` means
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Building Your First Table
 
-**Step 1: Environment Setup**
+Picture a library. We need to track members and the books they borrow. Start with one table:
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```sql
+-- A column's type (its domain) constrains what values it may hold.
+CREATE TABLE members (
+    member_id    INTEGER PRIMARY KEY,   -- a number that uniquely identifies a member
+    full_name    TEXT NOT NULL,         -- text that may never be empty
+    email        TEXT UNIQUE,           -- no two members share an email
+    joined_on    DATE DEFAULT CURRENT_DATE
+);
+
+INSERT INTO members (member_id, full_name, email)
+VALUES (1, 'Aria the Archivist', 'aria@datakeep.io'),
+       (2, 'Bram the Bold',      'bram@datakeep.io');
+
+SELECT * FROM members;
+-- member_id | full_name          | email            | joined_on
+-- ----------+--------------------+------------------+-----------
+--         1 | Aria the Archivist | aria@datakeep.io | 2026-06-14
+--         2 | Bram the Bold      | bram@datakeep.io | 2026-06-14
 ```
 
-**Step 2: Core Concepts**
+A crucial subtlety: `NULL` means "unknown / not applicable," **not** zero or empty string. `NULL = NULL` is itself unknown, so it is neither true nor false - which is why you must write `IS NULL`, never `= NULL`.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Relational Model
+- [ ] What is the difference between a row and a column?
+- [ ] Why does `email TEXT UNIQUE` prevent duplicate members from registering twice?
+- [ ] Why can't you compare a value to `NULL` with `=`?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Table created**: You ran `CREATE TABLE members` without errors
+- [ ] **Rows inserted**: `SELECT * FROM members` returns your two members
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Keys and Referential Integrity - Linking the Realm
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A single table is a lonely island. The power of the relational model is in **connecting** tables through keys.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Primary keys, candidate keys, and surrogate keys
+- Foreign keys and referential integrity
+- What the database does when integrity would be violated
 
-### 🏗️ Advanced Implementations
+### 🏗️ Connecting Two Tables
 
-[Detailed content for chapter 2]
+A **primary key** uniquely identifies each row (e.g., `member_id`). A **foreign key** is a column in one table that points at the primary key of another, creating a relationship the database will enforce.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```sql
+CREATE TABLE loans (
+    loan_id    INTEGER PRIMARY KEY,
+    member_id  INTEGER NOT NULL REFERENCES members(member_id),  -- foreign key
+    book_title TEXT NOT NULL,
+    due_date   DATE NOT NULL
+);
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+-- This succeeds: member 1 exists.
+INSERT INTO loans VALUES (100, 1, 'The Codd Codex', DATE '2026-07-01');
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+-- This FAILS: there is no member 999. Referential integrity protects you.
+INSERT INTO loans VALUES (101, 999, 'Ghost Book', DATE '2026-07-01');
+-- ERROR: insert or update on table "loans" violates foreign key constraint
+```
+
+The foreign key guarantees a loan can never reference a member who does not exist. This is **referential integrity**, and it is the single most important reason to use a relational database over loose files.
+
+### 🔍 Knowledge Check: Keys
+- [ ] What is the difference between a primary key and a foreign key?
+- [ ] Why does the database reject a loan for member 999?
+- [ ] What might `ON DELETE CASCADE` do to loans when a member is deleted?
+
+## 🧙‍♂️ Chapter 3: ACID - The Oath That Protects Your Data
+
+*A **transaction** is a group of statements that must succeed or fail as one. The four ACID properties are the sacred oath every serious database swears.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- The meaning of Atomicity, Consistency, Isolation, Durability
+- How to wrap statements in `BEGIN` / `COMMIT` / `ROLLBACK`
+- Why ACID makes money transfers safe
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ ACID Made Concrete
 
-[Detailed content for chapter 3]
+| Property | Promise | Example |
+| --- | --- | --- |
+| **Atomicity** | All statements commit, or none do | A bank transfer never debits without crediting |
+| **Consistency** | Constraints always hold after a transaction | A foreign key is never left dangling |
+| **Isolation** | Concurrent transactions don't corrupt each other | Two librarians issuing loans don't reuse a loan_id |
+| **Durability** | Once committed, data survives a crash | A power cut after `COMMIT` does not lose the loan |
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+Watch atomicity protect a transfer between two accounts:
+
+```sql
+BEGIN;                                              -- start the transaction
+UPDATE accounts SET balance = balance - 50 WHERE id = 1;
+UPDATE accounts SET balance = balance + 50 WHERE id = 2;
+-- If the second UPDATE failed (e.g., account 2 vanished), we run:
+ROLLBACK;   -- undoes BOTH updates - no money is lost or created
+-- If both succeeded:
+COMMIT;     -- makes the change permanent and durable
+```
+
+Without atomicity, a crash between the two `UPDATE`s would destroy 50 coins. The transaction guarantees the realm's books always balance.
+
+### 🔍 Knowledge Check: ACID
+- [ ] Which property guarantees a transfer never debits without crediting?
+- [ ] What does `ROLLBACK` do to statements run since `BEGIN`?
+- [ ] Which property guarantees committed data survives a power failure?
+
+## 🧙‍♂️ Chapter 4: Normalization Basics - Taming the Chaotic Table
+
+*Normalization is the discipline of organizing columns so each fact lives in exactly one place. Redundancy is the enemy: store a fact twice and the copies will eventually disagree.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- First, Second, and Third Normal Form
+- How to spot and remove redundancy
+- Why normalization prevents update anomalies
+
+### 🏗️ From Chaos to Third Normal Form
+
+Consider a flat, denormalized table:
+
+```text
+loans_flat(loan_id, member_name, member_email, book_title, author, author_country)
+```
+
+It repeats `member_email` for every loan and `author_country` for every book by that author. Update one copy and forget another, and your data lies.
+
+**1NF (First Normal Form)** - atomic columns, no repeating groups. One value per cell, no `book1, book2, book3` columns.
+
+**2NF (Second Normal Form)** - already 1NF, and every non-key column depends on the *whole* primary key (matters for composite keys). Member details belong in a `members` table keyed by `member_id`, not duplicated per loan.
+
+**3NF (Third Normal Form)** - already 2NF, and no non-key column depends on another non-key column (no **transitive** dependencies). `author_country` depends on `author`, not on the book, so it belongs in an `authors` table.
+
+```sql
+-- Normalized to 3NF: each fact lives in exactly one place.
+CREATE TABLE authors (
+    author_id      INTEGER PRIMARY KEY,
+    name           TEXT NOT NULL,
+    country        TEXT
+);
+
+CREATE TABLE books (
+    book_id   INTEGER PRIMARY KEY,
+    title     TEXT NOT NULL,
+    author_id INTEGER NOT NULL REFERENCES authors(author_id)
+);
+
+-- loans now references members and books by key - zero duplication.
+CREATE TABLE loans_3nf (
+    loan_id   INTEGER PRIMARY KEY,
+    member_id INTEGER NOT NULL REFERENCES members(member_id),
+    book_id   INTEGER NOT NULL REFERENCES books(book_id),
+    due_date  DATE NOT NULL
+);
+```
+
+Now an author who moves countries is updated in exactly one row. No anomalies, no lies.
+
+### 🔍 Knowledge Check: Normalization
+- [ ] What update anomaly does 3NF prevent for `author_country`?
+- [ ] What does "atomic column" mean in 1NF?
+- [ ] Why is duplication dangerous even if disk is cheap?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Build the Schema
+**Objective**: Create the `members`, `authors`, `books`, and `loans_3nf` tables in your `datakeep` database.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] All four tables created without errors
+- [ ] Every foreign key references the correct primary key
+- [ ] At least two rows inserted into each table
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Run `\dt` in psql and confirm all four tables appear.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Prove ACID
+**Objective**: Open a transaction that inserts a loan for a non-existent member, observe the failure, and `ROLLBACK`.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Wrap the work in `BEGIN` ... `ROLLBACK`
+- [ ] Show that no partial data remains afterward
+- [ ] Explain in one sentence which property saved you
 
-**Validation**: [How to verify success]
+**Validation**: `SELECT count(*) FROM loans_3nf` is unchanged after the rollback.
+
+### 🔴 Advanced Challenge: Normalize a Mess
+**Objective**: Given a denormalized `loans_flat` table, redesign it into 3NF on paper and write the `CREATE TABLE` statements.
+
+**Requirements**:
+- [ ] Identify every transitive and partial dependency
+- [ ] Produce at least three normalized tables
+- [ ] Connect them with foreign keys
+
+**Validation**: No fact is stored in more than one place.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Keeper of the Relational Keep** - You built a normalized schema from nothing
+- 🛡️ **Guardian of Integrity** - You wield keys and ACID with confidence
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Relational Schema Design** - Model real entities as connected tables
+- **Transaction Reasoning** - Predict what commits, what rolls back, and why
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- SQL Mastery - Query the data you just learned to store
+- Data Modeling - Turn requirements into rigorous schemas
+- Database Security - Protect the keep from intruders
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [SQL Mastery](/quests/0110/sql-mastery/) - SELECT, JOIN, and transactions in depth
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Data Modeling](/quests/0110/data-modeling/) - ER diagrams and schema design
+- ⚔️ [Query Optimization](/quests/0110/query-optimization/) - Make your queries fast
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [SQL Mastery](/quests/0110/sql-mastery/)  
+**🏗️ System Engineer**: Explore [Backup and Recovery](/quests/0110/backup-recovery/)  
+**📊 Data Scientist**: Advance to [Data Modeling](/quests/0110/data-modeling/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PostgreSQL Tutorial](https://www.postgresql.org/docs/current/tutorial.html) - The canonical hands-on intro
+- [PostgreSQL Data Types](https://www.postgresql.org/docs/current/datatype.html) - Every domain you can use
+- [SQL CREATE TABLE Reference](https://www.postgresql.org/docs/current/sql-createtable.html) - Constraints and keys
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Use The Index, Luke!](https://use-the-index-luke.com/) - SQL performance and indexing explained
+- [Codd's 1970 Relational Model Paper](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf) - The original scroll
+- [Stack Overflow: postgresql tag](https://stackoverflow.com/questions/tagged/postgresql) - Answers from the realm
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [PostgreSQL Exercises](https://pgexercises.com/) - Interactive practice problems
+- [Wikipedia: Database Normalization](https://en.wikipedia.org/wiki/Database_normalization) - Forms explained with examples
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built and populated the four-table schema
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Related quests:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Database Security: Access Control and Data Encryption]] · [[Data Modeling: Schema Design and Database Relationships]] · [[Query Optimization: Performance Tuning for Fast Database Queries]] · [[Backup and Recovery: Data Protection Strategies for Databases]] · [[Database Migrations: Schema Evolution and Version Control]] · [[Connection Pooling: Efficient Database Resource Management]]
+**Unlocks:** [[SQL Mastery: Query Language Proficiency for Data Professionals]] · [[Data Modeling: Schema Design and Database Relationships]] · [[Database Security: Access Control and Data Encryption]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-
+</content>
+</invoke>

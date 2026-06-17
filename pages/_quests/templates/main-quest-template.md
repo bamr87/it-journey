@@ -1,6 +1,6 @@
 ---
 title: '[Quest Title]: [Descriptive Subtitle]'
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+description: 'The master scaffold for authoring IT-Journey main quests: copy this template, fill the frontmatter and gamified sections, and ship a complete adventure.'
 date: '2025-11-29T22:51:57.000Z'
 preview: /images/previews/quest-title-descriptive-subtitle.png
 level: XXXX
@@ -39,14 +39,11 @@ permalink: /quests/XXXX/quest-slug/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-  - /quests/XXXX/prerequisite-quest/
-  recommended_quests:
-  - /quests/XXXX/helpful-quest/
-  unlocks_quests:
-  - /quests/XXXX/next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-  parent_quest: null
+  parent_quest:
   child_quests:
   - /quests/XXXX/side-quests/side-quest-1/
   - /quests/XXXX/side-quests/side-quest-2/
@@ -509,7 +506,7 @@ Before marking this quest as complete, ensure you've:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level {{fm.level}} - ...]]
+**Level hub:** [[Level {% raw %}{{fm.level}}{% endraw %} - ...]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
 **Prerequisites:** [[Prerequisite Quest Title]]
 **Unlocks:** [[Follow-up Quest Title]]

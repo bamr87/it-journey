@@ -39,11 +39,10 @@ keywords:
   - dungeon automation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  - /quests/0000/bashcrawl/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests: []
+  recommended_quests: []
 validation_criteria:
 - Launch Bashcrawl in agent mode
 - Capture a screenshot sequence to a directory
@@ -52,18 +51,23 @@ validation_criteria:
 - Fork and make a contribution (optional)
 prerequisites:
 - Complete the Rift side-quest
-learning_paths:
-- Terminal Mastery Path
-- Open Source Contribution Path
 rewards:
 - Dungeon Master Badge
 - Bashcrawl automation mastery
 excerpt: Automate Bashcrawl runs with agent mode, scripted commands, screenshot capture, and an optional open-source contribution finale.
 draft: false
-permalink: /quests/0000/side-quests/agent-mode/
+permalink: /quests/0000/agent-mode/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/agent-mode/
 ---
 *You have conquered the Rift. But the dungeon holds one final secret — a mode where an AI plays alongside you, a mode where you automate the entire journey, a mode where you become the dungeon master. Welcome to Agent Mode.*
+
+## 🕹️ Try Bashcrawl in Your Browser
+
+This page is your **walkthrough and strategy guide**. Agent Mode itself runs locally (see [Install &amp; Play Locally](#play-locally)) — but you can explore the dungeon in the browser first.
+
+{% include bashcrawl-terminal.html %}
 
 ## 🎯 Quest Objectives
 
@@ -262,6 +266,8 @@ Complete all 10 side-quests and you have earned the right to call yourself a Bas
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

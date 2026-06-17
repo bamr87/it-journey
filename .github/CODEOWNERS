@@ -1,0 +1,11 @@
+# Default owner for everything in the repo — enables the "require review from
+# Code Owners" branch-protection gate. Add path-specific owners below as the
+# contributor base grows.
+*       @bamr87
+
+# Quest framework: changes here ripple through generated data, the validator,
+# and every quest page — keep a tight review loop.
+/scripts/quest/                 @bamr87
+/test/quest-validator/          @bamr87
+/_data/quests/                  @bamr87
+/.github/workflows/             @bamr87

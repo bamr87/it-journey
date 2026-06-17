@@ -1,6 +1,6 @@
 ---
 title: 'Initiation Rites: Embedding Agents in the SDLC'
-description: Learn to integrate AI agents into the software development lifecycle — define agent inputs, outputs, and success criteria, and identify the anti-patterns that sink autonomous workflows before they ship.
+description: 'Integrate AI agents into the SDLC: define their inputs, outputs, and success criteria, and learn the anti-patterns that sink autonomous workflows.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-sdlc-integration.png
 level: '0111'
@@ -48,20 +48,6 @@ quest_dependencies:
   - /quests/0111/rest-principles/
   unlocks_quests:
   - /quests/0111/agentic-plan-vs-action-boundaries/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  sequel_quests:
-  - /quests/0111/agentic-plan-vs-action-boundaries/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏗️ Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Copilot
 rewards:
   badges:
   - 🤖 Agent Initiate
@@ -90,11 +76,6 @@ validation_criteria:
   knowledge_checks:
   - Understands why success criteria must be defined before deploying an agent
   - Can describe inputs and outputs for at least two different agent types
-quest_mapping:
-  coordinates: '[1, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: SDLC Forest
 comments: true
 draft: false
 redirect_from:

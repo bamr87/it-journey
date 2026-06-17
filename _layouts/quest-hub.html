@@ -21,6 +21,12 @@ layout: default
   <header class="quest-hub__header">
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    {%- assign hub_quests = site.quests | where: "fmContentType", "quest" -%}
+    <ul class="quest-hub__stats" aria-label="The quest realm at a glance">
+      <li><strong>{{ hub_quests | size }}</strong><span>Quests</span></li>
+      <li><strong>{{ site.data.quests.order | size }}</strong><span>Levels</span></li>
+      <li><strong>{{ site.data.quests.tiers | size }}</strong><span>Tiers</span></li>
+    </ul>
   </header>
 
   <section class="quest-hub__overall" aria-labelledby="quest-hub-overall-heading">
@@ -52,6 +58,22 @@ layout: default
       {% endfor %}
     </div>
   </section>
+
+  {% if page.quest_paths %}
+    <section class="quest-hub__paths" aria-labelledby="quest-hub-paths-heading">
+      <h2 id="quest-hub-paths-heading" class="quest-section-heading">Choose Your Path</h2>
+      <p class="quest-hub__paths-sub">Each class is a recommended chain through the level system — every step links to its live quest hub. Steps are tinted by tier.</p>
+      {% include quest-paths.html %}
+    </section>
+  {% endif %}
+
+  {% if page.quest_progression %}
+    {% include quest-progression.html %}
+  {% endif %}
+
+  {% if page.quest_browser %}
+    {% include quest-browser.html %}
+  {% endif %}
 
   <section class="quest-hub__content">
     {{ content }}

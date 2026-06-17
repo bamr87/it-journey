@@ -1,63 +1,50 @@
 ---
 title: 'Stream Processing: Real-Time Data with Apache Kafka & Flink'
 author: IT-Journey Team
-description: Build real-time data streaming pipelines with Kafka and Flink. Learn event-driven architecture, stream processing patterns, exactly-once semantics, and windowing operations.
-excerpt: Build real-time data pipelines with Kafka, stream processing patterns, and event-driven architecture
+description: 'Build real-time streaming pipelines with Apache Kafka. Master batch versus stream, event-time windowing, watermarks for late data, and exactly-once delivery.'
+excerpt: Build real-time pipelines with Kafka, windowing, event-time processing, and exactly-once delivery
 preview: images/previews/stream-processing-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 4-5 hours
 primary_technology: kafka
 quest_type: main_quest
 quest_series: Data Engineering Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Data Engineer's Ascent
+quest_arc: Data That Never Stops
 quest_dependencies:
   required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  recommended_quests:
+  - /quests/1100/etl-pipeline-design/
+  - /quests/1100/apache-spark/
+  unlocks_quests:
+  - /quests/1100/data-quality/
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfortable writing functions and using packages in Python 3.10+
+  - The ETL stages and idempotency from ETL Pipeline Design
+  - How services communicate and what a message queue is
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker and Docker Compose for a local Kafka broker
+  - Python 3.10+ with pip and venv
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can build and run a small Python data script end to end
+  - Ready to reason about unbounded, out-of-order data
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A Kafka producer and consumer exchanging events locally
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can produce to and consume from a Kafka topic with partitions
+  - Can explain a windowed aggregation over event time
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands batch versus stream and event versus processing time
+  - Can describe how exactly-once is achieved in practice
 permalink: /quests/1100/stream-processing/
 categories:
 - Quests
@@ -66,7 +53,6 @@ categories:
 tags:
 - '1100'
 - kafka
-- flink
 - streaming
 - main_quest
 - data-engineering
@@ -76,116 +62,80 @@ keywords:
   primary:
   - '1100'
   - kafka
-  - flink
   - streaming
   secondary:
-  - main_quest
-  - data-engineering
-  - hands-on
-  - gamified-learning
+  - windowing
+  - exactly-once
+  - event-time
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1100 (12) Quest: Main Quest - Stream Processing'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Rider of the Stream - Processed data that never stops arriving
+  - ⏱️ Keeper of Event Time - Tamed windows, watermarks, and late data
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Kafka Producer/Consumer Engineering
+  - 🧠 Windowing and Exactly-Once Stream Design
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the Data Quality Engineering quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! In every prior quest your data sat still - a file, a table, a finished batch - waiting patiently to be processed. But the real kingdom never sleeps: orders, clicks, sensor readings, and log events pour in without end, and your analysts want answers *now*, not tomorrow. This quest, **Stream Processing**, teaches you to build aqueducts for water that never stops flowing - pipelines that compute over an endless river of events in real time.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have only ever run nightly batch jobs, or you already pipe events through a queue and wrestle with late-arriving data, this adventure forges the discipline every real-time data engineer needs: the batch-versus-stream mindset, Kafka's log abstraction, windowing over event time, watermarks for late data, and the holy grail of exactly-once processing.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early ages, all data engineering was batch: collect a day of data, process it overnight, report in the morning. But fraud cannot wait until morning; a dashboard of yesterday's sales is a museum piece. The kingdoms that thrived learned to process events **as they arrive**, treating data not as a finished pile but as an infinite, ordered log.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Apache Kafka became the backbone of that revolution - a durable, partitioned, replayable log that decouples the producers of events from their consumers. Stream processors like Flink and Kafka Streams compute over that log continuously. But streaming introduces a brutal new challenge absent from batch: events arrive **out of order and late**, so you must reason carefully about *which* clock you trust. This quest teaches you to master that clock.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Batch vs Stream** - Explain the differences and choose the right model for a workload
+- [ ] **Kafka Fundamentals** - Understand topics, partitions, offsets, producers, and consumer groups
+- [ ] **Event Time vs Processing Time** - Distinguish when an event happened from when it was processed
+- [ ] **Windowing** - Aggregate an unbounded stream into tumbling, sliding, and session windows
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Watermarks & Late Data** - Handle out-of-order events with watermarks and allowed lateness
+- [ ] **Exactly-Once Semantics** - Explain how idempotent producers and transactions prevent duplicates
+- [ ] **Backpressure & Replay** - Reason about consumer lag and replaying from an offset
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Decide whether a problem needs batch or streaming and defend the choice
+- [ ] Produce to and consume from a partitioned Kafka topic
+- [ ] Explain why a windowed count differs under event time versus processing time
+- [ ] Describe the three guarantees - at-most-once, at-least-once, exactly-once
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Comfortable writing Python functions and using `pip` packages
+- [ ] The ETL stages and idempotency (complete [ETL Pipeline Design](/quests/1100/etl-pipeline-design/) first)
+- [ ] A mental model of message queues and how services pass messages
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker and Docker Compose for a local Kafka broker
+- [ ] Python 3.10+ with `pip` and `venv`
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 4-5 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can build and run a small Python data script end to end
+- [ ] You are ready to reason about unbounded, out-of-order data
+- [ ] Ready for 4-5 hours of focused, hands-on building
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Kafka runs in a container everywhere; only Docker setup differs. Then everyone meets at the same `kafka-python` producer.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -193,23 +143,13 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install --cask docker
+brew install python
+python3 -m venv .venv && source .venv/bin/activate
+pip install --upgrade pip kafka-python
+# Bring up the single-broker Kafka (compose file in Chapter 2), then:
+docker compose up -d
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -219,26 +159,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install Docker.DockerDesktop Python.Python.3.12
+py -3 -m venv .venv; .\.venv\Scripts\activate
+pip install --upgrade pip kafka-python
+docker compose up -d
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -248,28 +173,12 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y docker.io docker-compose-plugin python3 python3-venv
+sudo systemctl enable --now docker
+python3 -m venv .venv && source .venv/bin/activate
+pip install --upgrade pip kafka-python
+docker compose up -d
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -279,225 +188,314 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace or container host, run the same compose file.
+# Forward port 9092 (broker) so your Python client can connect.
+docker compose up -d
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Batch vs Stream - Two Mental Models
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Before a single event flows, decide whether you are processing a finished pile or an endless river. The two models demand different thinking.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The defining differences between batch and stream
+- When real-time processing is worth its complexity
+- The vocabulary of bounded vs unbounded data
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Two Models
 
-**Step 1: Environment Setup**
+| Aspect | **Batch** | **Stream** |
+| --- | --- | --- |
+| Data shape | Bounded - a finite, complete dataset | Unbounded - an endless, never-complete sequence |
+| Latency | Minutes to hours | Milliseconds to seconds |
+| Completeness | You see all the data before computing | You never see "all" the data; you compute as it arrives |
+| Typical use | Daily reports, ML training, reconciliation | Fraud detection, live dashboards, alerting, personalization |
+| Reprocessing | Re-run the whole job | Replay from an offset in the log |
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
-```
+**Rule of thumb:** if a delay of hours is acceptable, batch is simpler and cheaper - prefer it. Reach for streaming only when freshness has real value (a fraud alert tomorrow is worthless). Many modern systems run *both*: a streaming layer for now, a batch layer for correctness and backfills.
 
-**Step 2: Core Concepts**
-
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Batch vs Stream
+- [ ] What makes streaming data "unbounded"?
+- [ ] Name one workload where streaming's complexity is unjustified
+- [ ] Why can a stream processor never wait to "see all the data"?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Chose a model**: You can justify batch or stream for a workload you know
+- [ ] **Defined the terms**: You can explain bounded versus unbounded data
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Kafka - The Log at the Heart of Streaming
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Kafka is not a queue you drain; it is a durable, replayable **log**. Understanding that abstraction unlocks everything else.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Topics, partitions, offsets, and consumer groups
+- Why the log is replayable and durable
+- Producing and consuming events in Python
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Kafka Mental Model
 
-[Detailed content for chapter 2]
+- **Topic** - a named stream of events (e.g. `orders`).
+- **Partition** - a topic is split into ordered, append-only partitions; order is guaranteed *within* a partition, not across them. Partitions are how Kafka scales and parallelizes.
+- **Offset** - each event's position in its partition. Consumers track their offset, so they can **replay** from any point - the log is not deleted on read.
+- **Consumer group** - a set of consumers that split a topic's partitions among themselves for parallel consumption.
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+topic: orders (3 partitions)            consumer group "billing"
+  p0: [e0][e1][e2][e3 ...]  <───────────  consumer A (reads p0)
+  p1: [e0][e1][e2 ...]      <───────────  consumer B (reads p1)
+  p2: [e0][e1 ...]          <───────────  consumer C (reads p2)
+  ▲ offsets advance →          replay by resetting an offset
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Bring up a broker, then produce and consume:
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```yaml
+# docker-compose.yml — a single-broker Kafka in KRaft mode (no ZooKeeper)
+services:
+  kafka:
+    image: bitnami/kafka:3.7
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+```
+
+```python
+# producer.py — append events to the 'orders' topic
+import json, time
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers="localhost:9092",
+    value_serializer=lambda v: json.dumps(v).encode(),
+    key_serializer=lambda k: k.encode(),
+)
+for i in range(5):
+    event = {"order_id": i, "amount": 10 * i, "event_time": time.time()}
+    # The key decides the partition, so all events for one customer keep order.
+    producer.send("orders", key=f"cust-{i % 2}", value=event)
+producer.flush()
+print("produced 5 events")
+```
+
+```python
+# consumer.py — read events from the beginning, tracking offsets per group
+from kafka import KafkaConsumer
+import json
+
+consumer = KafkaConsumer(
+    "orders",
+    bootstrap_servers="localhost:9092",
+    group_id="billing",
+    auto_offset_reset="earliest",       # start from offset 0 the first time
+    value_deserializer=lambda b: json.loads(b),
+)
+for msg in consumer:
+    print(f"partition={msg.partition} offset={msg.offset} value={msg.value}")
+```
+
+### 🔍 Knowledge Check: Kafka
+- [ ] Within what scope does Kafka guarantee ordering?
+- [ ] Why can a Kafka consumer replay old events but a traditional queue cannot?
+- [ ] What determines which partition an event lands in?
+
+## 🧙‍♂️ Chapter 3: Event Time, Processing Time, and Windowing
+
+*This is the hardest and most important idea in streaming. Events carry the time they *happened*, but you process them at a different, later time - and they may arrive out of order. Choosing the right clock changes your results.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Event time vs processing time vs ingestion time
+- Tumbling, sliding, and session windows
+- Watermarks and handling late data
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Three Clocks
 
-[Detailed content for chapter 3]
+- **Event time** - when the event actually occurred (a timestamp inside the event). What you almost always *want* to aggregate by.
+- **Processing time** - when your system happened to process it. Easy, but wrong whenever events are delayed.
+- **Ingestion time** - when the event entered Kafka. A compromise between the two.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+A mobile order placed at 11:59 but uploaded at 12:03 (after the phone regained signal) *belongs* in the 11:00-12:00 hour by event time, even though it was processed in the next hour. Use processing time and you mis-bucket it.
+
+### 🏗️ Windowing an Unbounded Stream
+
+Because a stream never ends, you aggregate over **windows** - finite slices of the timeline:
+
+```text
+Tumbling (fixed, non-overlapping):  [00:00-00:05)[00:05-00:10)[00:10-00:15)
+Sliding  (fixed, overlapping):      [00:00-00:05)[00:01-00:06)[00:02-00:07)
+Session  (gap-defined):             [activity...][gap > 5m][new session...]
+```
+
+- **Tumbling** - "count orders every 5 minutes." Each event lands in exactly one window.
+- **Sliding** - "average over the last 5 minutes, updated every minute." Windows overlap.
+- **Session** - "group a user's activity until they go quiet for 5 minutes." Windows are data-driven.
+
+### 🏗️ Watermarks: Deciding When a Window Is "Done"
+
+Since late events can always trickle in, how does the processor know a window is complete enough to emit? A **watermark** is the stream's assertion that "no events older than time T will (probably) still arrive." When the watermark passes a window's end, the window fires. Events arriving after, within an **allowed lateness**, can still update it; beyond that, they are dropped or sent to a side output.
+
+```text
+window [12:00-12:05)  closes when watermark >= 12:05
+  late event with event_time 12:04 arriving at 12:06:
+    if watermark < 12:05 + allowed_lateness  -> still counted
+    else                                      -> dropped (or routed to a "late" stream)
+```
+
+### 🔍 Knowledge Check: Time and Windows
+- [ ] Why prefer event time over processing time for most aggregations?
+- [ ] When is a session window the right choice over a tumbling one?
+- [ ] What question does a watermark answer for the processor?
+
+## 🧙‍♂️ Chapter 4: Delivery Guarantees and Exactly-Once
+
+*The final mystery: in a distributed stream with retries and failures, how do you avoid counting an event twice - or losing it? The answer is a careful combination of idempotence and transactions.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- The three delivery guarantees
+- How exactly-once is actually achieved
+- Why idempotent consumers matter
+
+### 🏗️ The Three Guarantees
+
+| Guarantee | Meaning | Risk |
+| --- | --- | --- |
+| **At-most-once** | Each event delivered zero or one times | May **lose** events on failure |
+| **At-least-once** | Each event delivered one or more times | May **duplicate** events on retry |
+| **Exactly-once** | Each event takes effect exactly once | Hardest; needs coordination |
+
+Naive retries give at-least-once: if a producer resends after a timeout, the broker may store the event twice. **Exactly-once semantics (EOS)** in Kafka combines two mechanisms:
+
+1. **Idempotent producer** (`enable.idempotence=true`) - the broker deduplicates retries using a producer ID and sequence number, so a resend does not create a duplicate.
+2. **Transactions** - a consume-process-produce cycle is wrapped in a transaction so the output write and the consumer-offset commit succeed or fail **together** (`read_committed` isolation downstream).
+
+```python
+# Exactly-once flavored producer: idempotence + transactions
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers="localhost:9092",
+    enable_idempotence=True,                 # broker dedups retried sends
+    transactional_id="orders-aggregator-1",  # enables atomic transactions
+    value_serializer=lambda v: v.encode(),
+)
+producer.init_transactions()
+producer.begin_transaction()
+try:
+    producer.send("orders-agg", value="window=12:00 count=42")
+    # ... also commit the consumed offsets inside this same transaction ...
+    producer.commit_transaction()            # output + offsets land atomically
+except Exception:
+    producer.abort_transaction()             # nothing is half-applied
+```
+
+A practical complement: make your **consumer idempotent** too - key writes on a stable event id and upsert (just like the idempotent load from the ETL quest), so even an at-least-once delivery causes no harm downstream.
+
+### 🔍 Knowledge Check: Delivery Guarantees
+- [ ] What does at-least-once risk that exactly-once prevents?
+- [ ] What two mechanisms combine to give Kafka exactly-once?
+- [ ] Why does an idempotent consumer make duplicates harmless?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Produce and Consume
+**Objective**: Run the local Kafka broker, produce several events to a partitioned topic, and consume them in a group.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] A topic with at least two partitions
+- [ ] A producer that keys events so related ones share a partition
+- [ ] A consumer group that reads from the earliest offset
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The consumer prints each event with its partition and offset; replaying resets the offset and re-reads.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Windowed Count over Event Time
+**Objective**: Aggregate the stream into tumbling windows keyed by the event's own timestamp.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Events carry an `event_time` field used for bucketing
+- [ ] A tumbling window count per fixed interval
+- [ ] An out-of-order event lands in the correct window by event time
 
-**Validation**: [How to verify success]
+**Validation**: A deliberately late event is counted in its true window, not the current one.
+
+### 🔴 Advanced Challenge: Exactly-Once Aggregation
+**Objective**: Build a consume-process-produce loop that survives a forced failure without duplicating output.
+
+**Requirements**:
+- [ ] Idempotent producer with a transactional id
+- [ ] Offsets committed inside the same transaction as the output
+- [ ] An idempotent downstream upsert keyed on a stable id
+
+**Validation**: Kill the process mid-batch, restart it, and confirm the output totals are correct with no duplicates.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Rider of the Stream** - You processed data that never stops arriving
+- ⏱️ **Keeper of Event Time** - You tamed windows, watermarks, and late data
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Kafka Producer/Consumer Engineering** - Build durable, replayable event pipelines
+- **Windowing and Exactly-Once Stream Design** - Aggregate unbounded data correctly
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Data Quality Engineering - Validate streaming and batch data alike
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Data Quality Engineering](/quests/1100/data-quality/) - Guard the correctness of every event
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Apache Spark](/quests/1100/apache-spark/) - Batch-process the same data at scale
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Data Quality Engineering](/quests/1100/data-quality/)  
+**🏗️ System Engineer**: Revisit [Apache Spark](/quests/1100/apache-spark/) for Structured Streaming  
+**📊 Data Scientist**: Advance to [Data Quality Engineering](/quests/1100/data-quality/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Topics, partitions, producers, consumers
+- [Kafka Exactly-Once Semantics](https://kafka.apache.org/documentation/#semantics) - Idempotence and transactions
+- [Apache Flink Documentation](https://nightlies.apache.org/flink/flink-docs-stable/) - Event time, windows, watermarks
+- [kafka-python](https://kafka-python.readthedocs.io/) - The Python client used in this quest
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [The Log: What every engineer should know (Jay Kreps)](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying) - The foundational essay
+- [Streaming 101 & 102 (Tyler Akidau)](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/) - Event time and windowing explained
+- [Awesome Kafka](https://github.com/infoslack/awesome-kafka) - Curated tools and reading
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Kafka: The Definitive Guide (Confluent, free)](https://www.confluent.io/resources/kafka-the-definitive-guide/) - The standard book
+- [Designing Data-Intensive Applications](https://dataintensive.net/) - Chapter 11 on stream processing
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
+- [ ] ✅ Produced to and consumed from a partitioned Kafka topic
+- [ ] ✅ Built a windowed aggregation over event time
+- [ ] ✅ Handled a late event correctly with a watermark
+- [ ] ✅ Implemented an exactly-once aggregation
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
+**Level hub:** [[Level 1100 - Data Engineering]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]]
+**Unlocks:** [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

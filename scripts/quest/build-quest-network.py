@@ -24,7 +24,6 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 try:
@@ -38,12 +37,10 @@ QUEST_DIR_DEFAULT = "pages/_quests"
 JSON_OUT_DEFAULT  = "assets/data/quest-network.json"
 YAML_OUT_DEFAULT  = "_data/quests/network.yml"
 
-# Skip these stems regardless of directory
-SKIP_STEMS = {"home", "README", "QUEST_BUILD_PLAN", "NETWORK_REPORT"}
-# Skip these subdirs entirely
-SKIP_SUBDIRS = {"templates", "docs", "inventory", "tools"}
-# Level directory pattern: 4-digit binary string
-LEVEL_RE = re.compile(r"^[01]{4}$")
+# Collection rules come from the single source of truth so the graph,
+# navigation, and validators agree on exactly which files are quests.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from quest_registry import LEVEL_RE, SKIP_STEMS, SKIP_SUBDIRS  # noqa: E402
 
 EDGE_KINDS = [
     ("required_quests",    "required"),
@@ -146,7 +143,8 @@ def build_network(quest_dir: Path):
                     })
 
     network = {
-        "generated": datetime.now(timezone.utc).isoformat(),
+        # No wall-clock timestamp here: the output must be deterministic so the
+        # CI "stale data" gate can diff a fresh regen against what's committed.
         "stats": {
             "total":    len(nodes),
             "by_level": dict(sorted(by_level.items())),
@@ -177,7 +175,6 @@ def write_yaml(network, path: Path):
         for n in network["nodes"]
     ]
     slim = {
-        "generated": network["generated"],
         "stats":     network["stats"],
         "nodes":     slim_nodes,
         "edges":     network["edges"],

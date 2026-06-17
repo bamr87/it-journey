@@ -1,6 +1,6 @@
 ---
 title: 'Trial of the Agentic Codex: The Grand Capstone'
-description: The ultimate challenge — a six-domain scenario that tests every GH-600 skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural decisions, and earn the title of Agentic Codex Master.
+description: 'Face the six-domain grand trial: build a complete agentic AI system on GitHub, prove competency across all GH-600 domains, and earn Codex Master.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-codex-capstone-exam-trial.png
 level: '1100'
@@ -64,19 +64,7 @@ quest_dependencies:
   - /quests/1100/agentic-autonomy-levels-matrix/
   - /quests/1100/agentic-guardrails-and-human-in-the-loop/
   unlocks_quests: []
-quest_relationships:
-  parent_quests:
-  - /docs/certifications/gh-600/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏛️ Architect
-  - 🛡️ Security Engineer
-  - 🔍 Reliability Engineer
-  skill_trees:
-  - Agentic AI (Complete)
+  recommended_quests: []
 rewards:
   badges:
   - 🏆 Agentic Codex Master
@@ -98,11 +86,6 @@ validation_criteria:
   - Domain coverage rubric scored >= 80% for each domain
   - Grand reflection document published to repository
   - All validation scripts pass
-quest_mapping:
-  coordinates: '[6, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Hall of Mastery
 comments: true
 draft: false
 redirect_from:
@@ -208,7 +191,7 @@ jobs:
     if: contains(github.event.label.name, 'agent-implement')
     runs-on: ubuntu-latest
     outputs:
-      plan_approved: ${{ steps.plan.outputs.approved }}
+      plan_approved: ${% raw %}{{ steps.plan.outputs.approved }}{% endraw %}
     steps:
       - name: Generate plan
         id: plan

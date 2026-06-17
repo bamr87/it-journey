@@ -1,4 +1,3 @@
+# Quest validator runtime dependency. The validator + network tooling only
+# need PyYAML; CI installs exactly this.
 pyyaml>=6.0
-requests>=2.25.0
-pillow>=8.0.0
-openai>=1.0.0

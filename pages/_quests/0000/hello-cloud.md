@@ -1,6 +1,6 @@
 ---
 title: 'Hello Cloud: First Steps into the Sky Realm'
-description: Create your first cloud account, install a cloud CLI, and deploy a simple resource safely.
+description: 'Claim your first foothold in the Sky Realm: create a secured cloud account with MFA, wield a cloud CLI, provision a resource, then banish it to avoid costs.'
 author: IT-Journey Team
 date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14
@@ -17,26 +17,10 @@ quest_dependencies:
   - /quests/0000/it-fundamentals/
   recommended_quests:
   - /quests/0000/os-selection/
-  unlocks_quests: []
-quest_relationships:
-  child_quests: []
-  sequel_quests: []
-  parallel_quests:
   - /quests/0000/hello-windows/
   - /quests/0000/hello-macos/
   - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Cloud Computing
-  - DevOps
-  - System Administration
-  character_classes:
-  - ☁️ Cloud Engineer
-  - 🏗️ System Engineer
-  - 💻 Software Developer
-  skill_trees:
-  - Cloud Fundamentals
-  - CLI Mastery
+  unlocks_quests: []
 skill_focus: security
 learning_style: hands-on
 permalink: /quests/0000/hello-cloud/

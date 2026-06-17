@@ -238,6 +238,42 @@ For comprehensive workflow documentation, see:
 - **[Testing Frameworks](../../docs/testing/TESTING_FRAMEWORKS.md)** - Test infrastructure
 - **[Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)** - Contribution workflow
 
+## Deployment
+
+Production (`it-journey.dev`) deploys via **GitHub Pages from Actions**:
+[`deploy.yml`](deploy.yml) builds with `JEKYLL_ENV=production` on every push to
+`main` and publishes through `actions/deploy-pages`. Set the Pages source to
+**"GitHub Actions"** in repo Settings → Pages. There is no longer an Azure
+target or a weekly `gh-pages` cron.
+
+## Required vs advisory checks
+
+Mark these as **required status checks** in branch protection for `main`
+(Settings → Branches → Branch protection / Rulesets). They block merge:
+
+| Required check | Workflow |
+|---|---|
+| Jekyll build (`make build-ci` parity) | `build-validation.yml` |
+| Quest content + network + stale-data | `quest-validation.yml` |
+| Frontmatter validation | `frontmatter-validation.yml` |
+| Posts markdown lint | `posts-markdown-lint.yml` |
+| CodeQL | `codeql-analysis.yml` |
+
+**Advisory** (run but non-blocking; review before merge): `link-checker.yml`
+(PR incremental), `ai-content-review.yml`, the scheduled `dependency-checker.yml`
+security scan.
+
+Also enable **"Require review from Code Owners"** (see [CODEOWNERS](../CODEOWNERS))
+and let **Dependabot** ([dependabot.yml](../dependabot.yml)) keep the SHA-pinned
+actions and gems current.
+
+## Security baseline
+
+Every workflow declares least-privilege `permissions:` (default `contents: read`,
+write granted only on the job that needs it), pins all third-party actions to a
+full commit SHA, sets a `concurrency:` group, and passes untrusted
+`github.event.*` values through `env:` (never interpolated directly into `run:`).
+
 ## Contributing
 
 To contribute improvements to these workflows:

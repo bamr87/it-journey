@@ -1,6 +1,7 @@
 ---
 title: 'Level 1101: Machine Learning & AI'
-description: Master the fundamentals of machine learning, neural networks, and artificial intelligence to build intelligent systems
+author: IT-Journey Team
+description: 'Master machine learning, neural networks, deep learning, NLP, and computer vision, then deploy models to production with MLOps and ethical AI.'
 preview: images/previews/level-1101-machine-learning-ai.png
 permalink: /quests/1101/
 layout: quest-collection
@@ -11,11 +12,6 @@ categories:
 - master-tier
 - machine-learning
 - ai
-level_decimal: 13
-tier: Master
-tier_emoji: ⚡
-theme: Digital Intelligence
-xp_range: 7000-8500
 date: '2025-11-30T22:12:13.000Z'
 lastmod: '2025-12-01T04:36:39.000Z'
 tags:
@@ -30,6 +26,7 @@ toc: true
 toc_sticky: true
 sidebar:
   nav: quests
+draft: false
 ---
 # ⚡ Level 1101: Machine Learning & AI
 

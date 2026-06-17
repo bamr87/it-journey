@@ -1,16 +1,13 @@
 ---
-title: 'Glossary '
+title: 'Codex Glossary: Fantasy Terms to IT Reality'
 layout: quest
 author: IT-Journey Team
-excerpt: null
-description: 'Reference: Glossary .'
+description: 'A quick-reference codex decoding the IT-Journey fantasy metaphors, mapping spells to scripts, worlds to operating systems, and the market to GitHub.'
 preview: /images/previews/glossary.png
-snippet: null
 categories:
 - notes
 tags:
 - notes
-meta: null
 draft: true
 lastmod: '2023-11-25T11:31:20.000Z'
 permalink: /quests/codex/glossary/

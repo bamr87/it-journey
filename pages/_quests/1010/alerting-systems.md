@@ -1,63 +1,49 @@
 ---
-title: 'Alerting Systems: PagerDuty Integration & Incident Management Guide'
+title: 'Alerting Systems: Alertmanager, Routing, On-Call & Runbooks'
 author: IT-Journey Team
-description: Build production-ready alerting systems with PagerDuty and incident management workflows. Learn alert routing, escalation policies, on-call schedules, and runbook automation for SRE teams.
-excerpt: Implement production alerting with PagerDuty, escalation policies, and incident management workflows
+description: 'Forge production alerting with Prometheus rules and Alertmanager: routing, grouping, silencing, inhibition, on-call escalation, and runbooks.'
+excerpt: Turn signals into actionable pages with alert rules, Alertmanager routing, on-call, and runbooks
 preview: images/previews/alerting-systems-pagerduty-quest-title-incident-ma.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:12.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1010'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
-primary_technology: pagerduty
+primary_technology: alertmanager
 quest_type: main_quest
 quest_series: Observability Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Watchtower
+quest_arc: From Signal to Response
 quest_dependencies:
   required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  recommended_quests:
+  - /quests/1010/monitoring-fundamentals/
+  unlocks_quests:
+  - /quests/1011/security-fundamentals/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort on the command line and reading YAML
+  - SLIs, SLOs, and error budgets from Monitoring Fundamentals
+  - Basic PromQL or willingness to read the examples carefully
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker and Docker Compose for the Prometheus + Alertmanager lab
+  - A terminal and a text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can run a small monitoring stack and read a dashboard
+  - Ready to design alerts humans will actually trust at 3 a.m.
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A firing alert routed and silenced through Alertmanager
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write a Prometheus alert rule with for, labels, and annotations
+  - Can configure Alertmanager routing, grouping, and a silence
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands grouping, inhibition, and silencing
+  - Can explain what makes an alert actionable and runbook-ready
 permalink: /quests/1010/alerting-systems/
 categories:
 - Quests
@@ -65,125 +51,90 @@ categories:
 - Hard
 tags:
 - '1010'
-- pagerduty
-- alerting
+- alertmanager
+- prometheus
+- on-call
 - main_quest
 - devops
 - hands-on
-- gamified-learning
 keywords:
   primary:
   - '1010'
-  - pagerduty
-  - alerting
+  - alertmanager
+  - prometheus
   secondary:
-  - main_quest
-  - devops
-  - hands-on
-  - gamified-learning
+  - alert-routing
+  - on-call
+  - runbooks
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1010 (10) Quest: Main Quest - Alerting'
+sub_title: 'Level 1010 (10) Quest: Main Quest - Alerting Systems'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Warden of the Pager - Built alerts humans actually trust
+  - 🔔 Master of the Routing - Tamed grouping, silencing, and escalation
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Alert Rule & Alertmanager Configuration
+  - 🧠 On-Call and Runbook-Driven Incident Response
+  progression_points: 75
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Completes the Level 1010 Monitoring & Observability quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! From the **Watchtower** you have learned to see fires - in metrics, in logs, in traces. But sight alone does not save a kingdom; someone must be **woken** when the fire is real, and *not* woken for every harmless spark. This final quest of the Watchtower, **Alerting Systems**, teaches you to forge the signal-horn: alert rules that fire only on what matters, routing that wakes the right defender, and runbooks that tell them exactly what to do when the horn sounds.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have been paged at 3 a.m. for a problem that fixed itself, or you have watched a real outage go unnoticed because the alert was buried in noise, this adventure forges the discipline every on-call Warrior needs: actionable alert rules, Alertmanager routing, grouping and silencing, escalation, and the humble, life-saving runbook.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early ages, an operator watched a dashboard with their own eyes and shouted when something broke. That does not scale past one tired human. The kingdoms that survived learned a hard truth: an alert that does not demand action is **noise**, and noise trains defenders to ignore the very horn that should save them. This is alert fatigue, and it has caused more outages than any single bug.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Good alerting is therefore as much about **what you do not alert on** as what you do. This quest teaches you to wire Prometheus alert rules into Alertmanager, route each alert to the right receiver, silence the expected, suppress the redundant, and attach a runbook so the person you wake knows precisely what to do.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Alert Rules** - Write a Prometheus alerting rule with `expr`, `for`, `labels`, and `annotations`
+- [ ] **Alertmanager Routing** - Route alerts to receivers by label, with grouping to batch related alerts
+- [ ] **Silencing & Inhibition** - Mute expected alerts and suppress redundant ones during an outage
+- [ ] **On-Call & Runbooks** - Connect alerts to escalation and to a runbook the responder can follow
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Symptom-Based Alerting** - Alert on user-visible symptoms, not raw resource causes
+- [ ] **Burn-Rate Alerts** - Tie pages to error-budget burn so they fire only when it matters
+- [ ] **Escalation Policies** - Page a secondary responder when the primary does not acknowledge
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Write an alert rule that fires only after a condition holds for several minutes
+- [ ] Route a `severity: page` alert to on-call and a `severity: ticket` alert elsewhere
+- [ ] Create a silence so a planned maintenance window stays quiet
+- [ ] Explain why every page must link to a runbook
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] SLIs, SLOs, and error budgets (complete [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) first)
+- [ ] Comfort reading and writing YAML
+- [ ] Basic PromQL, or willingness to read the worked examples carefully
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker and Docker Compose installed
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can run a small monitoring stack and read a dashboard
+- [ ] You are ready to design alerts a human will trust at 3 a.m.
+- [ ] Ready for 75-90 minutes of focused, hands-on building
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Prometheus and Alertmanager run in containers everywhere; only Docker installation differs. Then everyone meets at the same `docker compose up`.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -191,23 +142,12 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install --cask docker
+docker --version && docker compose version
+# Bring up the lab (compose file below), then open the UIs:
+open http://localhost:9090   # Prometheus
+open http://localhost:9093   # Alertmanager
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -217,26 +157,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install Docker.DockerDesktop
+docker --version; docker compose version
+start http://localhost:9090   # Prometheus
+start http://localhost:9093   # Alertmanager
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -246,28 +171,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y docker.io docker-compose-plugin
+sudo systemctl enable --now docker
+xdg-open http://localhost:9090   # Prometheus
+xdg-open http://localhost:9093   # Alertmanager
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -277,225 +185,297 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace or container host, run the same compose file and forward
+# ports 9090 (Prometheus) and 9093 (Alertmanager) to your browser.
+docker compose up -d
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Anatomy of a Good Alert Rule
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*An alert begins as a question asked of your metrics, every few seconds: "is this still true?" Learn to phrase that question so it fires on real problems and stays quiet otherwise.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The four parts of a Prometheus alerting rule
+- Why `for:` prevents flapping
+- Symptom-based versus cause-based alerting
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Four Parts of a Rule
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```yaml
+# rules.yml — a symptom-based alert wired into Prometheus
+groups:
+  - name: checkout-slos
+    rules:
+      - alert: CheckoutHighErrorRate
+        expr: |
+          sum(rate(http_requests_total{service="checkout",status=~"5.."}[5m]))
+          /
+          sum(rate(http_requests_total{service="checkout"}[5m]))
+          > 0.05
+        for: 5m                       # condition must hold 5m before firing (anti-flap)
+        labels:
+          severity: page              # routing key Alertmanager uses
+          team: payments
+        annotations:
+          summary: "Checkout 5xx error rate above 5%"
+          description: "{% raw %}{{ $value | humanizePercentage }}{% endraw %} of checkout requests are failing."
+          runbook_url: "https://runbooks.example.com/checkout-5xx"
 ```
 
-**Step 2: Core Concepts**
+- **`expr`** - the PromQL condition; when it returns results, the alert is *pending*.
+- **`for`** - how long the condition must persist before *firing*. This single line kills most flapping.
+- **`labels`** - metadata Alertmanager routes on (`severity`, `team`).
+- **`annotations`** - human-facing text, including the all-important `runbook_url`.
 
-[Explanation of fundamental concepts]
+> **Alert on symptoms, not causes.** Page on "checkout error rate above 5%" (a user feels this), not "CPU at 80%" (a clue, not a problem). Users never notice your CPU; they notice failed checkouts.
 
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Alert Rules
+- [ ] What does the `for:` clause prevent?
+- [ ] Why route on `labels` rather than the alert name?
+- [ ] Why is "5xx rate above 5%" a better page than "CPU above 80%"?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Wrote a rule**: You can name `expr`, `for`, `labels`, `annotations`
+- [ ] **Chose a symptom**: You picked a user-visible condition to alert on
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Routing, Grouping, and Receivers with Alertmanager
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Prometheus decides *when* an alert fires; **Alertmanager** decides *who hears it and how*. Its routing tree sends each alert to the right receiver, grouped so one incident is one notification, not fifty.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The Alertmanager routing tree
+- Grouping related alerts into a single notification
+- Configuring receivers (email, Slack, PagerDuty)
 
-### 🏗️ Advanced Implementations
+### 🏗️ A Routing Configuration
 
-[Detailed content for chapter 2]
+```yaml
+# alertmanager.yml — route by label, group related alerts, wire receivers
+route:
+  receiver: default-email           # catch-all
+  group_by: ['alertname', 'service'] # one notification per service incident
+  group_wait: 30s                    # wait to batch alerts that fire together
+  group_interval: 5m
+  repeat_interval: 4h                # re-notify if still firing after 4h
+  routes:
+    - matchers: [ 'severity = page' ] # pages go to on-call (e.g. PagerDuty)
+      receiver: oncall-pagerduty
+    - matchers: [ 'severity = ticket' ]
+      receiver: ticket-slack
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+receivers:
+  - name: default-email
+    email_configs:
+      - to: 'ops@example.com'
+  - name: oncall-pagerduty
+    pagerduty_configs:
+      - service_key: '<integration-key>'
+  - name: ticket-slack
+    slack_configs:
+      - channel: '#alerts-tickets'
+        api_url: '<webhook-url>'
+```
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+**Grouping** is the unsung hero: if a database fails and twenty services error at once, `group_by` collapses them into *one* notification instead of twenty pages. `group_wait` gives related alerts a moment to arrive together.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+### 🔍 Knowledge Check: Routing and Grouping
+- [ ] How does Alertmanager decide which receiver an alert goes to?
+- [ ] What problem does `group_by` solve during a large outage?
+- [ ] What does `repeat_interval` control?
+
+## 🧙‍♂️ Chapter 3: Silencing and Inhibition
+
+*Not every firing alert deserves a page. **Silencing** mutes alerts you already know about; **inhibition** suppresses lesser alerts when a bigger one is already firing.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Creating time-boxed silences
+- Writing inhibition rules
+- Keeping the on-call experience signal-rich
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Silencing for Planned Work
 
-[Detailed content for chapter 3]
+A **silence** is a label-matched mute with an expiry - perfect for maintenance windows. Create one from the CLI:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# Silence all checkout alerts for a 2-hour maintenance window
+amtool silence add \
+  service=checkout \
+  --duration=2h \
+  --comment="Planned checkout DB migration — see CHG-4821" \
+  --author="oncall@example.com"
+
+# List and later expire active silences
+amtool silence query
+amtool silence expire <silence-id>
+```
+
+### 🏗️ Inhibition: Suppress the Redundant
+
+When an entire datacenter is down, you do not also want a page for every service inside it. **Inhibition** says "if the big alert is firing, mute the small ones it implies":
+
+```yaml
+# alertmanager.yml — suppress per-service alerts when the cluster is down
+inhibit_rules:
+  - source_matchers: [ 'alertname = ClusterDown' ]   # if this fires...
+    target_matchers: [ 'severity = page' ]            # ...mute these
+    equal: ['cluster']                                # ...for the same cluster
+```
+
+Together, silencing (you act ahead of time) and inhibition (Alertmanager acts automatically) keep the pager meaningful.
+
+### 🔍 Knowledge Check: Silencing and Inhibition
+- [ ] When would you create a silence rather than edit a rule?
+- [ ] What does inhibition prevent during a large, cascading failure?
+- [ ] Why should every silence have an expiry and a comment?
+
+## 🧙‍♂️ Chapter 4: On-Call, Escalation, and Runbooks
+
+*An alert is only as useful as the human response behind it. On-call schedules decide who is woken; escalation ensures someone *is* woken; runbooks ensure they know what to do.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- On-call rotations and escalation policies
+- Writing a runbook a half-asleep responder can follow
+- Closing the loop with postmortems
+
+### 🏗️ Escalation Policies
+
+An **escalation policy** defines what happens if the first responder does not acknowledge:
+
+```text
+Escalation policy: payments-oncall
+  Level 1: page primary on-call         -> wait 5 min for ack
+  Level 2: page secondary on-call       -> wait 5 min for ack
+  Level 3: page engineering manager + open an incident bridge
+```
+
+This guarantees that a missed page does not become a missed outage. Alertmanager's `severity = page` route feeds an incident tool (PagerDuty, Opsgenie) that runs this policy.
+
+### 🏗️ The Runbook
+
+Every paging alert must link a **runbook** via `runbook_url`. A good runbook is short, specific, and written for 3 a.m.:
+
+```markdown
+# Runbook: CheckoutHighErrorRate
+
+## What this means
+Checkout is returning 5xx to real users. Revenue is impacted right now.
+
+## First checks (in order)
+1. Open the checkout dashboard: <link>. Is the spike still climbing?
+2. Check the payment-gateway status page: <link>. Provider outage?
+3. Check recent deploys: `kubectl rollout history deploy/checkout`.
+
+## Likely fixes
+- Bad deploy in the last 30 min  -> `kubectl rollout undo deploy/checkout`
+- Provider outage                -> flip to backup processor (feature flag PAY_FALLBACK)
+
+## If unresolved in 15 min
+Escalate to Level 2 and open an incident. Page #incident-bridge.
+```
+
+A runbook turns a panicked guess into a checklist. After the incident, a blameless postmortem feeds improvements back into both the rule and the runbook - closing the loop.
+
+### 🔍 Knowledge Check: On-Call and Runbooks
+- [ ] What does an escalation policy guarantee that a single page cannot?
+- [ ] What three things make a runbook usable at 3 a.m.?
+- [ ] How does a postmortem improve future alerting?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Fire Your First Alert
+**Objective**: Write a Prometheus alert rule that fires when a target is down, and watch it reach Alertmanager.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] A rule using `up == 0` with a `for:` clause and a `severity` label
+- [ ] The alert moves from pending to firing in the Prometheus UI
+- [ ] The firing alert appears in the Alertmanager UI
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Stop a scrape target and see the alert fire end to end.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Route and Silence
+**Objective**: Route `severity: page` and `severity: ticket` to different receivers, then silence one during "maintenance."
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Two routes sending to two receivers based on `severity`
+- [ ] Grouping configured so related alerts batch into one notification
+- [ ] A time-boxed silence that mutes the page during a window
 
-**Validation**: [How to verify success]
+**Validation**: The page is suppressed while the silence is active and resumes after it expires.
+
+### 🔴 Advanced Challenge: Symptom-Based, Runbook-Ready Page
+**Objective**: Build a burn-rate or error-rate alert that fires on a user-visible symptom and links a runbook.
+
+**Requirements**:
+- [ ] The `expr` is a symptom (error rate / budget burn), not a resource threshold
+- [ ] The alert carries `severity`, `team`, and a `runbook_url`
+- [ ] An inhibition rule prevents a flood when a parent alert is already firing
+
+**Validation**: A reviewer agrees the page is actionable, deduplicated, and would not fire on harmless blips.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Warden of the Pager** - You built alerts humans actually trust
+- 🔔 **Master of the Routing** - You tamed grouping, silencing, and escalation
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Alert Rule & Alertmanager Configuration** - Fire, route, group, and mute with intent
+- **On-Call and Runbook-Driven Incident Response** - Wake the right person with the right plan
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Security Fundamentals - Begin the Warrior tier's next bastion, Security & Compliance
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +75 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Security Fundamentals](/quests/1011/security-fundamentals/) - Cross into the Security & Compliance tier
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Distributed Tracing](/quests/1010/distributed-tracing/) - Use traces to enrich incident response
+- ⚔️ [ELK Stack](/quests/1010/elk-stack/) - Correlate alerts with the logs behind them
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Security Fundamentals](/quests/1011/security-fundamentals/)  
+**🏗️ System Engineer**: Revisit [Monitoring Fundamentals](/quests/1010/monitoring-fundamentals/) to tighten SLOs  
+**🛡️ Security Specialist**: Advance to [Security Fundamentals](/quests/1011/security-fundamentals/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Prometheus Alerting Rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/) - `expr`, `for`, labels, annotations
+- [Alertmanager Documentation](https://prometheus.io/docs/alerting/latest/alertmanager/) - Routing, grouping, silencing, inhibition
+- [amtool](https://github.com/prometheus/alertmanager#amtool) - The Alertmanager CLI used for silences
+- [PagerDuty Integration Guide](https://www.pagerduty.com/docs/guides/prometheus-integration-guide/) - Wiring Alertmanager to on-call
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Google SRE Book - Being On-Call](https://sre.google/sre-book/being-on-call/) - The on-call chapter
+- [My Philosophy on Alerting (Rob Ewaschuk)](https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit) - The classic essay on actionable alerts
+- [Awesome SRE](https://github.com/dastergon/awesome-sre) - Curated reliability resources
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Multi-Window, Multi-Burn-Rate Alerts (SRE Workbook)](https://sre.google/workbook/alerting-on-slos/) - Budget-aware alerting in depth
+- [Writing Runbooks](https://www.atlassian.com/incident-management/devops/runbooks) - How to write an actionable runbook
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
-- [ ] ✅ Explored the resource library
+- [ ] ✅ Wrote and fired a Prometheus alert rule
+- [ ] ✅ Configured Alertmanager routing and grouping
+- [ ] ✅ Created a silence and an inhibition rule
+- [ ] ✅ Linked a paging alert to a runbook
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Automation & Testing]]
+**Level hub:** [[Level 1010 - Monitoring & Observability]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[Monitoring Fundamentals: Metrics, Logs, and Traces for Observability]]
+**Unlocks:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

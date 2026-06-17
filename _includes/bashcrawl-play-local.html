@@ -1,0 +1,66 @@
+{% comment %}
+  Bashcrawl — Install & Play Locally (Advanced Track)
+  ===================================================
+
+  The "advanced version" of the quest: install Bashcrawl and play it in a real
+  shell. Bashcrawl is vendored into this site as the `submodules/bashcrawl` git
+  submodule, so contributors who clone IT-Journey already have a copy.
+
+  Rendered as raw HTML (with a stable `id="play-locally"` anchor) so the
+  in-terminal "Install & Play Locally" link resolves regardless of how kramdown
+  slugifies headings. Usage: {% include bashcrawl-play-local.html %}
+{% endcomment %}
+
+<h2 id="play-locally">🖥️ Advanced: Install &amp; Play Locally</h2>
+
+<p>
+  The embedded terminal above is the fastest way to play — but the
+  <strong>advanced version</strong> runs Bashcrawl in a real shell on your own
+  machine, with the full Textual TUI, agent mode, and a genuine filesystem
+  sandbox. The walkthrough on this page works identically in either mode.
+</p>
+
+<h3>Option A — Clone the game</h3>
+
+<pre><code class="language-bash">git clone https://github.com/bamr87/bashcrawl.git
+cd bashcrawl
+./setup.sh        # one-time setup: dirs, permissions, help system
+./main.sh         # launch the adventure (interactive menu)
+</code></pre>
+
+<h3>Option B — It already ships with IT-Journey</h3>
+
+<p>
+  Bashcrawl lives in this repository as the <code>submodules/bashcrawl</code>
+  git submodule. If you cloned IT-Journey, pull it down and play in place:
+</p>
+
+<pre><code class="language-bash">git submodule update --init submodules/bashcrawl
+cd submodules/bashcrawl
+./setup.sh
+./main.sh --interactive
+</code></pre>
+
+<h3>Play modes</h3>
+
+<table>
+  <thead>
+    <tr><th>Command</th><th>Mode</th><th>Best for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>./main.sh --interactive</code></td><td>Textual TUI (recommended)</td><td>A rich local interface — needs Python 3 + <code>textual</code></td></tr>
+    <tr><td><code>./main.sh --classic</code></td><td>Classic bash emulator</td><td>Systems without Python</td></tr>
+    <tr><td><code>./main.sh --native</code></td><td>Native terminal</td><td>The full real-filesystem experience</td></tr>
+    <tr><td><code>./main.sh --tutorial</code></td><td>Tutorial mode</td><td>Guided, step-by-step learning</td></tr>
+    <tr><td><code>./main.sh --agent</code></td><td>Agent mode</td><td>AI automation and screenshots</td></tr>
+    <tr><td><code>./main.sh --help</code></td><td>Help</td><td>All launcher options</td></tr>
+  </tbody>
+</table>
+
+<p>
+  Want to host the browser build yourself? From the game directory run
+  <code>make web-preview</code> and open
+  <a href="http://127.0.0.1:8000" target="_blank" rel="noopener noreferrer">http://127.0.0.1:8000</a>.
+  The same static build is what powers the embedded terminal above
+  (<a href="https://bamr87.github.io/bashcrawl/" target="_blank" rel="noopener noreferrer">bamr87.github.io/bashcrawl</a>).
+</p>

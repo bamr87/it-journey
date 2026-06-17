@@ -38,13 +38,11 @@ keywords:
   - shell scripting math
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/armoury/
+  - /quests/0000/armoury/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Use let, expr, and $(( )) to compute values
 - Assign arithmetic results to variables
@@ -52,17 +50,23 @@ validation_criteria:
 - Unlock the path to the Rift
 prerequisites:
 - Complete the Armoury side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Stone Key Fragment
 - Bash arithmetic mastery
 excerpt: Defeat the stone statue by using let, expr, and arithmetic expansion to solve Bash math challenges and unlock the Rift.
 draft: false
-permalink: /quests/0000/side-quests/chamber/
+permalink: /quests/0000/chamber/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/chamber/
 ---
 *A massive stone statue dominates the Chamber, its eyes glowing with arithmetic runes. It will not yield to a sword. Only correct calculations can break the enchantment — and wrong answers deal damage.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Chamber" %}
 
 ## 🎯 Quest Objectives
 
@@ -187,6 +191,8 @@ Continue exploring:
 - **When all four branches complete** → [The Rift](/quests/0000/side-quests/rift/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

@@ -1,0 +1,32 @@
+{%- comment -%}
+  quest-paths.html — character-class learning paths as scannable cards.
+  Replaces the old per-class mermaid diagrams + duplicate text chains on the
+  /quests/ hub. Data: _data/quests/paths.yml (curated) + levels.yml (themes/tiers).
+  Each step links to its level hub and is tinted by the level's tier color.
+{%- endcomment -%}
+{%- assign qp_data = site.data.quests -%}
+<div class="quest-paths">
+  {% for path in qp_data.paths %}
+    <article class="quest-path-card">
+      <header class="quest-path-card__head">
+        <span class="quest-path-card__icon" aria-hidden="true">{{ path.icon }}</span>
+        <div class="quest-path-card__meta">
+          <h3 class="quest-path-card__name">{{ path.name }}</h3>
+          <p class="quest-path-card__tagline">{{ path.tagline }}</p>
+        </div>
+      </header>
+      <ol class="quest-path-card__steps" aria-label="{{ path.name }} recommended level order">
+        {% for lvl in path.levels %}
+          {%- assign lm = qp_data.levels[lvl] -%}
+          <li class="quest-path-step quest-path-step--{{ lm.tier | default: '' | downcase }}">
+            <a href="{{ '/quests/' | append: lvl | append: '/' | relative_url }}"
+               title="{{ lm.tier }} · {{ lm.theme }}">
+              <span class="quest-path-step__code">{{ lvl }}</span>
+              <span class="quest-path-step__theme">{{ lm.theme }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </article>
+  {% endfor %}
+</div>

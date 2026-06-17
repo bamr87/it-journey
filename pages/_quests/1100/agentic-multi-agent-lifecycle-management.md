@@ -1,6 +1,6 @@
 ---
 title: 'The Agent Pantheon: Multi-Agent Lifecycle Management'
-description: Manage the full lifecycle of agents in a GitHub-native multi-agent system — provisioning, monitoring, scaling, decommissioning, and replacing agents across long-running workflows.
+description: 'Run the full lifecycle of a GitHub-native multi-agent system: build a registry, monitor agent health, and provision, version, and retire agents safely.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-lifecycle-management.png
 level: '1100'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1011/agentic-multi-agent-failure-recovery/
   unlocks_quests:
   - /quests/1100/agentic-autonomy-levels-matrix/
-quest_relationships:
-  sequel_quests:
-  - /quests/1100/agentic-autonomy-levels-matrix/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏛️ Architect
-  skill_trees:
-  - Agentic AI
-  - Platform Engineering
+  recommended_quests: []
 rewards:
   badges:
   - 🏛️ Pantheon Keeper
@@ -75,11 +64,6 @@ validation_criteria:
   - Agent registry documented and maintained in repository
   - Agent health monitoring workflow implemented
   - Decommission procedure documented and tested
-quest_mapping:
-  coordinates: '[5, 4]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Pantheon Summit
 comments: true
 draft: false
 redirect_from:
@@ -228,7 +212,7 @@ jobs:
       - name: Upload health report
         uses: actions/upload-artifact@v4
         with:
-          name: health-report-${{ github.run_id }}
+          name: health-report-${% raw %}{{ github.run_id }}{% endraw %}
           path: health-report.json
 ```
 

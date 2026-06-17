@@ -1,6 +1,6 @@
 ---
 title: Level 0011 - Development Tools & AI Integration
-description: Master AI-powered development tools, code search, and intelligent workflow integration
+description: 'Master AI-powered development tools: GitHub Copilot pair programming, advanced code search, and intelligent workflows that supercharge how you build software.'
 preview: images/previews/level-0011-development-tools-ai-integration.png
 permalink: /quests/0011/
 layout: quest-collection
@@ -9,6 +9,14 @@ categories:
 - quests
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '0011'
+- apprentice
+- ai-assisted
+- development
 ---
 # Level 0011: Development Tools & AI Integration
 
