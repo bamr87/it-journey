@@ -1,5 +1,6 @@
 ---
 title: Quest Build Plan - Complete Placeholder Quest System
+published: false  # internal planning doc — not a public page (excluded from build/sitemap)
 layout: default
 description: Comprehensive plan for building all placeholder quests across all levels with complete linking and mapping
 date: '2025-11-29T22:51:57.000Z'

@@ -198,6 +198,13 @@ plugins:
   - jekyll-relative-links
   - jekyll-redirect-from
 
+# Convert in-content [text](file.md) links to their built URLs.
+# collections:true is required so _quests/_notes/_docs/_posts links are rewritten too
+# (default only processes pages, which is why .md links in collections 404'd).
+relative_links:
+  enabled: true
+  collections: true
+
 ## Gisgus Plugin #################################################################
 
 gisgus:
@@ -268,10 +275,10 @@ collections:
     permalink: /:collection/:categories/:name/
   notebooks:
     output: true
-    permalink: /:collection/:path/:name/
+    permalink: /:collection/:path/
   notes:
     output: true
-    permalink: /:collection/:path/:name/
+    permalink: /:collection/:path/
   quickstart:
     output: true
     permalink: /:collection/:name/
