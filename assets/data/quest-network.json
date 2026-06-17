@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total": 177,
+    "total": 180,
     "by_level": {
       "0000": 27,
       "0001": 25,
@@ -12,7 +12,7 @@
       "0111": 9,
       "1000": 7,
       "1001": 7,
-      "1010": 10,
+      "1010": 13,
       "1011": 10,
       "1100": 12,
       "1101": 8,
@@ -21,7 +21,7 @@
     },
     "by_type": {
       "epic_quest": 1,
-      "main_quest": 151,
+      "main_quest": 154,
       "side_quest": 25
     }
   },
@@ -127,7 +127,7 @@
     },
     {
       "id": "/quests/0000/begin-your-it-journey/",
-      "title": "Begin your IT Journey",
+      "title": "Begin Your IT Journey: Survey the Realm",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -136,7 +136,7 @@
     },
     {
       "id": "/quests/0000/character-building/",
-      "title": "Character Building: Forge Your IT Identity and Development Environment",
+      "title": "Character Building: Forge Your IT Hero Identity",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -145,7 +145,7 @@
     },
     {
       "id": "/quests/0000/character-selection/",
-      "title": "Character Selection",
+      "title": "Character Selection: Choose Your IT Class",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -199,7 +199,7 @@
     },
     {
       "id": "/quests/0000/it-fundamentals/",
-      "title": "IT Fundamentals",
+      "title": "IT Fundamentals: Your Digital Awakening Quest",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -208,7 +208,7 @@
     },
     {
       "id": "/quests/0000/linux-fundamentals/",
-      "title": "Linux Fundamentals",
+      "title": "Linux Fundamentals: Enter the Penguin's Domain",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -226,7 +226,7 @@
     },
     {
       "id": "/quests/0000/os-selection/",
-      "title": "OS Selection",
+      "title": "OS Selection: Choose Your Realm of Power",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -244,7 +244,7 @@
     },
     {
       "id": "/quests/0000/vscode-mastery/",
-      "title": "VS Code Mastery Quest: Forge Your Ultimate Development Weapon",
+      "title": "VS Code Mastery: Forge Your Ultimate Dev Weapon",
       "level": "0000",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -289,7 +289,7 @@
     },
     {
       "id": "/quests/0001/git-init-testing/",
-      "title": "Building & Testing the Git Init Script: Headless, Interactive, Scaffolding",
+      "title": "Building & Testing the Git Init Shell Script",
       "level": "0001",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -388,7 +388,7 @@
     },
     {
       "id": "/quests/0001/kaizen-continuous-improvement/",
-      "title": "Kaizen Quest: The Path of Continuous Improvement in Software Alchemy",
+      "title": "Kaizen Quest: Continuous Improvement Alchemy",
       "level": "0001",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -406,7 +406,7 @@
     },
     {
       "id": "/quests/0001/personal-site/",
-      "title": "Personal Site",
+      "title": "Build a Personal Website with GitHub Pages",
       "level": "0001",
       "type": "side_quest",
       "difficulty": "🟢 Easy",
@@ -442,7 +442,7 @@
     },
     {
       "id": "/quests/0001/stack-attack/",
-      "title": "Stack Attack: Building an Enterprise Django + React ERP with AI Agents",
+      "title": "Stack Attack: AI-Built Django + React Enterprise ERP",
       "level": "0001",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -478,7 +478,7 @@
     },
     {
       "id": "/quests/0010/bash-scripting/",
-      "title": "Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest",
+      "title": "Bash Incantations: Level 0010 Scripting Quest",
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -487,7 +487,7 @@
     },
     {
       "id": "/quests/0010/jekyll-mermaid-integration/",
-      "title": "The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest",
+      "title": "The Diagrammatic Enchantment: Jekyll-Mermaid Integration",
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -559,7 +559,7 @@
     },
     {
       "id": "/quests/0011/github-pages-hidden-gem/",
-      "title": "The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms",
+      "title": "Hidden Gem Quest: Publish AI Chats on GitHub Pages",
       "level": "0011",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -568,7 +568,7 @@
     },
     {
       "id": "/quests/0011/prd-codex-mastery/",
-      "title": "The PRD Codex: Mastering the Art of Product Reality Distillation",
+      "title": "The PRD Codex: Master Product Reality Distillation",
       "level": "0011",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -586,7 +586,7 @@
     },
     {
       "id": "/quests/0100/container-fundamentals/",
-      "title": "Docker Container Fundamentals: Master Isolation & Portability for DevOps",
+      "title": "Docker Container Fundamentals: Images to Registries",
       "level": "0100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -595,7 +595,7 @@
     },
     {
       "id": "/quests/0100/docker-compose-orchestration/",
-      "title": "Docker Compose Orchestration: Build Multi-Container Applications",
+      "title": "Docker Compose Orchestration: Multi-Container Apps",
       "level": "0100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -649,7 +649,7 @@
     },
     {
       "id": "/quests/0101/artifact-management/",
-      "title": "Artifact Management: Build Output Storage and Dependency Caching",
+      "title": "Artifact Management: Versioned, Signed Build Output",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -658,7 +658,7 @@
     },
     {
       "id": "/quests/0101/cicd-fundamentals/",
-      "title": "CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials",
+      "title": "CI/CD Fundamentals: The Build-Test-Deploy Pipeline",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -667,7 +667,7 @@
     },
     {
       "id": "/quests/0101/deployment-pipelines/",
-      "title": "Deployment Pipelines: Production Release Automation Strategies",
+      "title": "Deployment Pipelines: Production Release Automation",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -685,7 +685,7 @@
     },
     {
       "id": "/quests/0101/environment-management/",
-      "title": "Environment Management: Dev, Staging, and Production Configuration",
+      "title": "Environment Management: Dev, Staging, and Prod Parity",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -712,7 +712,7 @@
     },
     {
       "id": "/quests/0101/secrets-management/",
-      "title": "Secrets Management: Secure Configuration and Credential Handling",
+      "title": "Secrets Management: Secure CI Credentials",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -721,7 +721,7 @@
     },
     {
       "id": "/quests/0101/testing-integration/",
-      "title": "Testing Integration: Automated Quality Assurance in CI/CD Pipelines",
+      "title": "Testing Integration: Tiered CI/CD Test Gates",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -739,7 +739,7 @@
     },
     {
       "id": "/quests/0101/workflow-optimization/",
-      "title": "Workflow Optimization: Caching Strategies and Pipeline Parallelization",
+      "title": "Workflow Optimization: Caching and Parallel CI/CD",
       "level": "0101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -748,7 +748,7 @@
     },
     {
       "id": "/quests/0110/backup-recovery/",
-      "title": "Backup and Recovery: Data Protection Strategies for Databases",
+      "title": "Backup and Recovery: Data Protection for Databases",
       "level": "0110",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -802,7 +802,7 @@
     },
     {
       "id": "/quests/0110/query-optimization/",
-      "title": "Query Optimization: Performance Tuning for Fast Database Queries",
+      "title": "Query Optimization: Tuning Fast Database Queries",
       "level": "0110",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -811,7 +811,7 @@
     },
     {
       "id": "/quests/0110/sql-mastery/",
-      "title": "SQL Mastery: Query Language Proficiency for Data Professionals",
+      "title": "SQL Mastery: Query Language Proficiency",
       "level": "0110",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -910,7 +910,7 @@
     },
     {
       "id": "/quests/1000/agentic-observability-and-control/",
-      "title": "The All-Seeing Eye: Observability & Control for Autonomous Agents",
+      "title": "The All-Seeing Eye: Observability for AI Agents",
       "level": "1000",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -928,7 +928,7 @@
     },
     {
       "id": "/quests/1000/aws-essentials/",
-      "title": "AWS Essentials: Core Services and Cloud Architecture Patterns",
+      "title": "AWS Essentials: Core Services and Architecture",
       "level": "1000",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -991,7 +991,7 @@
     },
     {
       "id": "/quests/1001/k8s-config-secrets/",
-      "title": "Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices",
+      "title": "Kubernetes ConfigMaps and Secrets: The Vault",
       "level": "1001",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1009,7 +1009,7 @@
     },
     {
       "id": "/quests/1001/k8s-services-networking/",
-      "title": "Kubernetes Services and Networking: Ingress and DNS Configuration",
+      "title": "Kubernetes Services and Networking: Ingress and DNS",
       "level": "1001",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1045,7 +1045,7 @@
     },
     {
       "id": "/quests/1010/agentic-state-persistence-and-drift/",
-      "title": "Anchoring the Drifting Agent: State Persistence and Drift Prevention",
+      "title": "Anchoring the Drifting Agent: Stop Context Drift",
       "level": "1010",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1054,7 +1054,7 @@
     },
     {
       "id": "/quests/1010/agentic-success-criteria-and-signals/",
-      "title": "The Oracle's Rubric: Defining Agent Success Criteria and Signals",
+      "title": "The Oracle's Rubric: Agent Success Signals",
       "level": "1010",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1071,8 +1071,26 @@
       "file": "pages/_quests/1010/alerting-systems.md"
     },
     {
+      "id": "/quests/1010/analytics-mcp-setup/",
+      "title": "Connect Google Analytics to Your AI Agent via MCP",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "mcp",
+      "file": "pages/_quests/1010/analytics-mcp-setup.md"
+    },
+    {
+      "id": "/quests/1010/automate-traffic-report/",
+      "title": "Automate a Weekly Traffic Report",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "automation",
+      "file": "pages/_quests/1010/automate-traffic-report.md"
+    },
+    {
       "id": "/quests/1010/distributed-tracing/",
-      "title": "Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide",
+      "title": "Distributed Tracing with Jaeger & OpenTelemetry",
       "level": "1010",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1081,7 +1099,7 @@
     },
     {
       "id": "/quests/1010/elk-stack/",
-      "title": "ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis",
+      "title": "ELK Stack: Elasticsearch, Logstash & Kibana Logs",
       "level": "1010",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1099,7 +1117,7 @@
     },
     {
       "id": "/quests/1010/monitoring-fundamentals/",
-      "title": "Monitoring Fundamentals: Metrics, Logs, and Traces for Observability",
+      "title": "Monitoring Fundamentals: Metrics, Logs, and Traces",
       "level": "1010",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1116,8 +1134,17 @@
       "file": "pages/_quests/1010/prometheus-grafana.md"
     },
     {
+      "id": "/quests/1010/query-traffic-with-mcp/",
+      "title": "Query Your Traffic with the GA MCP Tools",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "google-analytics",
+      "file": "pages/_quests/1010/query-traffic-with-mcp.md"
+    },
+    {
       "id": "/quests/1011/agentic-behavior-tuning/",
-      "title": "Reforging the Agent's Mind: Behavior Tuning Through Instructions",
+      "title": "Reforging the Agent's Mind: Tuning Behavior by Instruction",
       "level": "1011",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1157,7 +1184,7 @@
       "level": "1011",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
-      "technology": "1011",
+      "technology": "github-actions",
       "file": "pages/_quests/1011/ai-feature-pipeline-architect.md"
     },
     {
@@ -1180,7 +1207,7 @@
     },
     {
       "id": "/quests/1011/secure-coding/",
-      "title": "Secure Coding Practices: OWASP Top 10 Vulnerability Prevention",
+      "title": "Secure Coding: Preventing the OWASP Top 10",
       "level": "1011",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1189,7 +1216,7 @@
     },
     {
       "id": "/quests/1011/security-fundamentals/",
-      "title": "Security Fundamentals: CIA Triad and Defense in Depth Strategies",
+      "title": "Security Fundamentals: CIA Triad and Defense in Depth",
       "level": "1011",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1243,7 +1270,7 @@
     },
     {
       "id": "/quests/1100/apache-spark/",
-      "title": "Apache Spark Mastery: Big Data Processing with PySpark & Scala",
+      "title": "Apache Spark Mastery: Big Data with PySpark",
       "level": "1100",
       "type": "main_quest",
       "difficulty": "⚔️ Epic",
@@ -1252,7 +1279,7 @@
     },
     {
       "id": "/quests/1100/data-quality/",
-      "title": "Data Quality Engineering: Testing, Validation & Monitoring Frameworks",
+      "title": "Data Quality Engineering: Validation & Monitoring",
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1261,7 +1288,7 @@
     },
     {
       "id": "/quests/1100/data-warehousing/",
-      "title": "Data Warehousing: Design Star Schema & Build Modern Analytics Architecture",
+      "title": "Data Warehousing: Build a Dimensional Star Schema in SQL",
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1270,7 +1297,7 @@
     },
     {
       "id": "/quests/1100/conquer-king-edgar/",
-      "title": "Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle",
+      "title": "Conquer King EDGAR: Siege of the SEC Data Castle",
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1279,7 +1306,7 @@
     },
     {
       "id": "/quests/1100/etl-pipeline-design/",
-      "title": "ETL Pipeline Design: Build Scalable Data Pipelines with Python",
+      "title": "ETL Pipeline Design: Scalable Python Data Pipelines",
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1297,7 +1324,7 @@
     },
     {
       "id": "/quests/1100/temple-of-templates/",
-      "title": "The Temple of Templates: Binary Abstractions and Reusable Realms",
+      "title": "The Temple of Templates: Reusable Abstractions",
       "level": "1100",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1306,7 +1333,7 @@
     },
     {
       "id": "/quests/1101/ai-ethics/",
-      "title": "AI Ethics and Responsible AI: Bias Detection, Fairness & Governance",
+      "title": "AI Ethics: Bias Detection, Fairness & Governance",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1315,7 +1342,7 @@
     },
     {
       "id": "/quests/1101/computer-vision/",
-      "title": "Computer Vision Mastery: Image Classification, Object Detection & Segmentation",
+      "title": "Computer Vision Mastery: CNNs and Transfer Learning",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1324,7 +1351,7 @@
     },
     {
       "id": "/quests/1101/deep-learning-frameworks/",
-      "title": "Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation",
+      "title": "Deep Learning Frameworks: PyTorch vs TensorFlow",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1333,7 +1360,7 @@
     },
     {
       "id": "/quests/1101/ml-fundamentals/",
-      "title": "Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn",
+      "title": "Machine Learning Fundamentals with Scikit-Learn",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1342,7 +1369,7 @@
     },
     {
       "id": "/quests/1101/mlops/",
-      "title": "MLOps Engineering: CI/CD Pipelines for Machine Learning Production",
+      "title": "MLOps Engineering: CI/CD Pipelines for ML in Production",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1351,7 +1378,7 @@
     },
     {
       "id": "/quests/1101/natural-language-processing/",
-      "title": "Natural Language Processing: Text Analysis, Transformers & LLMs with Python",
+      "title": "Natural Language Processing: Transformers & LLMs",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1360,7 +1387,7 @@
     },
     {
       "id": "/quests/1101/neural-networks/",
-      "title": "Neural Networks Deep Dive: Neurons, Backpropagation & Gradient Descent",
+      "title": "Neural Networks Deep Dive: Build One From Scratch",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "⚔️ Epic",
@@ -1369,7 +1396,7 @@
     },
     {
       "id": "/quests/1101/python-data-science/",
-      "title": "Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide",
+      "title": "Python for Data Science: NumPy, Pandas & Matplotlib",
       "level": "1101",
       "type": "main_quest",
       "difficulty": "🟡 Medium",
@@ -1450,7 +1477,7 @@
     },
     {
       "id": "/quests/1111/architecture-reviews/",
-      "title": "Architecture Reviews: Running Reviews, ADRs, and Trade-off Facilitation",
+      "title": "Architecture Reviews: ADRs and Trade-off Facilitation",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1459,7 +1486,7 @@
     },
     {
       "id": "/quests/1111/building-technical-communities/",
-      "title": "Building Technical Communities: Events, Governance, and Inclusion",
+      "title": "Building Technical Communities: Govern and Include",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1468,7 +1495,7 @@
     },
     {
       "id": "/quests/1111/career-advancement/",
-      "title": "Career Advancement: IC vs Management Tracks, Leveling, and Negotiation",
+      "title": "Career Advancement: IC vs Management and Leveling",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1477,7 +1504,7 @@
     },
     {
       "id": "/quests/1111/innovation-rnd/",
-      "title": "Innovation and R&D: Experimentation and Managing Technical Bets",
+      "title": "Innovation and R&D: Experimentation and Technical Bets",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "⚔️ Epic",
@@ -1486,7 +1513,7 @@
     },
     {
       "id": "/quests/1111/mentorship-programs/",
-      "title": "Mentorship Programs: Growing Engineering Talent and Sponsoring Others",
+      "title": "Mentorship Programs: Growing Engineering Talent",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1495,7 +1522,7 @@
     },
     {
       "id": "/quests/1111/open-source-contribution/",
-      "title": "Open Source Contribution: Contributing, Maintaining, and Licensing",
+      "title": "Open Source Contribution: Maintaining and Licensing",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1504,7 +1531,7 @@
     },
     {
       "id": "/quests/1111/tech-speaking-writing/",
-      "title": "Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade",
+      "title": "Tech Speaking and Writing: RFCs, Docs, and Talks",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "🔴 Hard",
@@ -1513,7 +1540,7 @@
     },
     {
       "id": "/quests/1111/technical-leadership/",
-      "title": "Technical Leadership: Leading Without Authority and Setting Tech Vision",
+      "title": "Technical Leadership: Leading Without a Crown",
       "level": "1111",
       "type": "main_quest",
       "difficulty": "⚔️ Epic",
@@ -1522,7 +1549,7 @@
     },
     {
       "id": "/quests/codex/glossary/",
-      "title": "Glossary ",
+      "title": "Codex Glossary: Fantasy Terms to IT Reality",
       "level": "0000",
       "type": "side_quest",
       "difficulty": "🟢 Easy",
@@ -1558,7 +1585,7 @@
     },
     {
       "id": "/quests/0010/change-logs/",
-      "title": "Change Logs",
+      "title": "Level 0010: Changelogs & the Chronicles of Code",
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -1567,7 +1594,7 @@
     },
     {
       "id": "/quests/0010/commitments-to-clean-commits/",
-      "title": "Commitments to clean commits",
+      "title": "Commit Hygiene: Crafting Clean, Atomic Commits",
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -1576,7 +1603,7 @@
     },
     {
       "id": "/quests/0010/django-and-git/",
-      "title": "Setting up Django and Git",
+      "title": "Conjure a Django Project into a GitHub Vault",
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -1603,7 +1630,7 @@
     },
     {
       "id": "/quests/0010/planting-seeds/",
-      "title": "planting seeds",
+      "title": "Planting Seeds: Set Up Your Dev Toolkit",
       "level": "0010",
       "type": "main_quest",
       "difficulty": "🟢 Easy",
@@ -3042,6 +3069,21 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1010/analytics-mcp-setup/",
+      "target": "/quests/1010/query-traffic-with-mcp/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/automate-traffic-report/",
+      "target": "/quests/1010/analytics-mcp-setup/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/1010/automate-traffic-report/",
+      "target": "/quests/1010/query-traffic-with-mcp/",
+      "kind": "recommended"
+    },
+    {
       "source": "/quests/1010/distributed-tracing/",
       "target": "/quests/1010/monitoring-fundamentals/",
       "kind": "recommended"
@@ -3094,6 +3136,16 @@
     {
       "source": "/quests/1010/prometheus-grafana/",
       "target": "/quests/1010/alerting-systems/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/query-traffic-with-mcp/",
+      "target": "/quests/1010/analytics-mcp-setup/",
+      "kind": "required"
+    },
+    {
+      "source": "/quests/1010/query-traffic-with-mcp/",
+      "target": "/quests/1010/automate-traffic-report/",
       "kind": "unlocks"
     },
     {
