@@ -1,63 +1,51 @@
 ---
 title: 'GitHub Actions Basics: Workflow Automation for Modern DevOps'
 author: IT-Journey Team
-description: Learn to create and manage GitHub Actions workflows for CI/CD automation. Build automated testing, deployment, and code quality pipelines using YAML workflows.
+description: 'Build GitHub Actions workflows from scratch: master jobs, steps, triggers, runners, secrets, and matrix builds to automate your testing and deployment.'
 excerpt: Master GitHub Actions workflow creation for automating your software development lifecycle
 preview: images/previews/github-actions-basics-workflow-automation-descript.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:05:22.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
 primary_technology: github-actions
 quest_type: main_quest
 quest_series: DevOps Pipeline Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Forge of Automation
+quest_arc: Wielding the Workflow
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0101/cicd-fundamentals/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/0101/testing-integration/
+  - /quests/0101/secrets-management/
+  - /quests/0101/workflow-optimization/
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Understanding of the CI/CD build-test-deploy flow
+  - Familiarity with Git and pull requests
+  - Comfort reading YAML
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A free GitHub account and a repository you can push to
+  - Git installed locally
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You completed CI/CD Fundamentals or know the build-test-deploy flow
+  - You can edit YAML without fear of indentation
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A repository with a working multi-job workflow including a matrix build
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain the workflow / job / step hierarchy
+  - Can configure triggers, runners, and secrets correctly
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between an action and a step
+  - Can read a matrix strategy and predict how many jobs it spawns
 permalink: /quests/0101/github-actions-basics/
 categories:
 - Quests
@@ -80,108 +68,74 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0101 (5) Quest: Main Quest - GitHub Actions'
+sub_title: 'Level 0101 (5) Quest: Main Quest - GitHub Actions Basics'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Workflow Weaver - Built a multi-job GitHub Actions pipeline
+  - 🤖 Runner Whisperer - Commanded runners, triggers, and matrices
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Workflow Authoring
+  - 🧠 Event-Driven Automation
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Ability to automate any task on GitHub events
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have proven you understand the build-test-deploy flow. Now you must learn to **summon a tireless automaton** that runs it for you. The Forge of Automation hands you its most popular hammer: **GitHub Actions**, a workflow engine baked directly into the repository where your code already lives.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*With a single YAML scroll committed beside your code, you can conjure runners that build, test, and deploy on every push, every pull request, every schedule, or any event you choose. This quest teaches the grammar of that scroll - workflows, jobs, steps, triggers, runners, actions, secrets, and the mighty matrix.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Before GitHub Actions, automation lived on a separate server you had to feed and water - a CI box that broke at 3 a.m. and belonged to no one. When GitHub Actions arrived, the forge moved inside the keep. Your pipeline became a file in your repo, versioned alongside the code it tests, reviewed in the same pull requests, and runnable by anyone who clones the project.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches you to read and write that file fluently, so that "automate this" becomes a reflex rather than a research project.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Workflow Hierarchy** - Explain how workflows contain jobs which contain steps
+- [ ] **Triggers and Events** - Configure `on:` to run workflows on pushes, PRs, schedules, and manual dispatch
+- [ ] **Runners and Actions** - Choose a runner and compose reusable actions into steps
+- [ ] **Matrix Builds** - Test across multiple versions or OSes with one strategy block
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Secrets** - Pass credentials into a workflow without committing them
+- [ ] **Job Dependencies** - Order jobs with `needs:` and pass outputs between them
+- [ ] **Permissions** - Scope the workflow's `GITHUB_TOKEN` to least privilege
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Sketch the workflow/job/step tree from memory
+- [ ] Predict how many jobs a given matrix produces
+- [ ] Read an unfamiliar workflow and explain what triggers it
+- [ ] Add a secret and reference it correctly with `${% raw %}{{ secrets.NAME }}{% endraw %}`
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] The CI/CD build-test-deploy flow (see CI/CD Fundamentals)
+- [ ] Basic Git and pull-request workflow
+- [ ] Comfort reading YAML indentation
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A free GitHub account and a repository you can push to
+- [ ] Git installed locally and a text editor (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+- [ ] You completed CI/CD Fundamentals or know the pipeline stages
+- [ ] You can edit YAML without breaking indentation
 - [ ] Ready for 60-75 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*GitHub Actions runs in GitHub's cloud, so your local platform only matters for editing files and pushing. The runner itself is a fresh virtual machine GitHub provides.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +143,13 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install the GitHub CLI to view runs from your terminal
+brew install gh git
+gh auth login
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create the workflows directory in your repo
+mkdir -p .github/workflows
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +159,14 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install the GitHub CLI and Git
+winget install GitHub.cli
+winget install Git.Git
+gh auth login
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create the workflows directory
+New-Item -ItemType Directory -Force -Path .github\workflows
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +176,13 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian/Ubuntu: install gh and git
+sudo apt update && sudo apt install -y gh git
+gh auth login
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Create the workflows directory
+mkdir -p .github/workflows
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +192,264 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a Codespace, gh and git are pre-installed and authenticated.
+mkdir -p .github/workflows
+gh run list   # see your workflow runs without leaving the terminal
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> The runner that executes your workflow IS the cloud realm - GitHub spins up an `ubuntu-latest`, `windows-latest`, or `macos-latest` VM per job and destroys it when finished.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Anatomy of a Workflow
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A workflow is a YAML file in `.github/workflows/`. Inside it, a nested hierarchy describes what to run, when, and where.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The workflow → job → step hierarchy
+- How runners host jobs
+- The difference between an action and a `run` command
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Hierarchy, Top to Bottom
 
-**Step 1: Environment Setup**
-
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```text
+Workflow (one .yml file)
+└── triggered by events (on:)
+    └── Job (runs on a Runner; jobs run in parallel by default)
+        └── Step (runs in order, top to bottom)
+            ├── uses: an Action (reusable, e.g. actions/checkout@v4)
+            └── run: a shell command
 ```
 
-**Step 2: Core Concepts**
+- A **workflow** is the whole file. It is triggered by events.
+- A **job** runs on a fresh **runner** (a VM). Jobs run in parallel unless you order them with `needs:`.
+- A **step** runs inside a job, in order. A step either `uses:` a reusable **action** or executes a `run:` command.
 
-[Explanation of fundamental concepts]
+Here is a complete, runnable first workflow:
 
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```yaml
+name: Hello Actions
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  greet:
+    runs-on: ubuntu-latest        # the runner
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4 # an action
+      - name: Say hello
+        run: echo "Hello from the runner, $GITHUB_ACTOR!"  # a run command
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Anatomy
+- [ ] What is the difference between a step that `uses:` and one that `run:`s?
+- [ ] Where does a job actually execute?
+- [ ] Do two jobs in the same workflow run in order or in parallel by default?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Committed a workflow**: The file lives in `.github/workflows/`
+- [ ] **Saw it run**: The Actions tab shows a green run
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Triggers, Secrets, and Job Ordering
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A workflow is only as useful as the events that wake it. And real pipelines need credentials they must never leak.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Configuring `on:` for many event types
+- Passing secrets safely
+- Ordering jobs with `needs:` and scoping permissions
 
-### 🏗️ Advanced Implementations
+### 🏗️ Triggers - the `on:` Block
 
-[Detailed content for chapter 2]
+```yaml
+on:
+  push:                       # on any push
+    branches: [main, 'release/**']
+    paths: ['src/**']         # only when source files change
+  pull_request:               # on PRs targeting this repo
+  schedule:
+    - cron: '0 6 * * 1'       # every Monday at 06:00 UTC
+  workflow_dispatch:          # a manual "Run workflow" button
+```
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+### 🏗️ Secrets and Permissions
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+Never commit a token. Store it in **Settings → Secrets and variables → Actions**, then reference it. Note that secrets are masked in logs automatically:
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```yaml
+permissions:
+  contents: read              # least privilege for the built-in GITHUB_TOKEN
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use a secret safely
+        env:
+          API_TOKEN: ${% raw %}{{ secrets.DEPLOY_TOKEN }}{% endraw %}   # never echo this directly
+        run: |
+          curl -fsS -H "Authorization: Bearer $API_TOKEN" https://example.com/ping
+```
+
+### 🏗️ Ordering Jobs with `needs:`
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "building" && npm ci && npm run build
+  deploy:
+    needs: build              # deploy waits for build to succeed
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deploying only after a successful build"
+```
+
+### 🔍 Knowledge Check: Triggers and Secrets
+- [ ] How do you give a workflow a manual "Run" button?
+- [ ] Why should you set `permissions:` explicitly?
+- [ ] What happens to a deploy job whose `needs:` job fails?
+
+## 🧙‍♂️ Chapter 3: Matrix Builds - Many Jobs from One Strategy
+
+*Why test on one Node version when you could test on three across two operating systems with one block of YAML? The **matrix** multiplies a single job definition into a grid of parallel jobs.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Defining a matrix strategy
+- Predicting the number of jobs produced
+- Controlling failures with `fail-fast`
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ A Matrix Build
 
-[Detailed content for chapter 3]
+```yaml
+name: Matrix CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ${% raw %}{{ matrix.os }}{% endraw %}
+    strategy:
+      fail-fast: false        # let every combo finish even if one fails
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['18', '20', '22']
+        exclude:
+          - os: windows-latest # skip one specific combination
+            node: '18'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${% raw %}{{ matrix.node }}{% endraw %}
+      - run: npm ci
+      - run: npm test
+```
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+A 2 × 3 grid is six jobs; the `exclude:` above drops one, leaving **five parallel jobs**. Each runs on its own runner. With `fail-fast: false`, a failure in one combination does not cancel the others, so you see exactly which combinations break.
+
+### 🔍 Knowledge Check: Matrix
+- [ ] How many jobs does a 2×3 matrix produce before any `exclude`?
+- [ ] What does `fail-fast: false` change?
+- [ ] How would you exclude one specific combination from the grid?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Your First Workflow
+**Objective**: Commit the "Hello Actions" workflow and trigger it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] File lives at `.github/workflows/hello.yml`
+- [ ] Runs on both push and pull_request
+- [ ] Produces a green run in the Actions tab
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: A push triggers the workflow and it succeeds.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build, then Deploy
+**Objective**: Create a two-job workflow where `deploy` runs only after `build` succeeds, using a repository secret.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Two jobs ordered with `needs:`
+- [ ] A secret referenced via `${% raw %}{{ secrets.NAME }}{% endraw %}`
+- [ ] Explicit `permissions:` block set to least privilege
 
-**Validation**: [How to verify success]
+**Validation**: Deleting the secret makes the deploy step fail clearly; breaking build skips deploy.
+
+### 🔴 Advanced Challenge: Matrix Across Versions
+**Objective**: Test your project across three language versions and two operating systems.
+
+**Requirements**:
+- [ ] A matrix producing at least six jobs
+- [ ] `fail-fast: false` so all combinations report
+- [ ] One excluded combination using `exclude:`
+
+**Validation**: The Actions tab shows the expected grid of parallel jobs.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Workflow Weaver** - You built a multi-job pipeline in YAML
+- 🤖 **Runner Whisperer** - You commanded runners, triggers, and matrices
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Workflow Authoring** - Express any automation as a versioned YAML file
+- **Event-Driven Automation** - Trigger work on exactly the right events
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Testing Integration - Make your workflow's test stages meaningful
+- Secrets Management - Go beyond repo secrets to OIDC and vaults
+- Workflow Optimization - Make these pipelines fast and cheap
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Testing Integration](/quests/0101/testing-integration/) - Add real test gates to your workflow
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Secrets Management](/quests/0101/secrets-management/) - Credentials done right
+- ⚔️ [Workflow Optimization](/quests/0101/workflow-optimization/) - Make it fast
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Testing Integration](/quests/0101/testing-integration/)  
+**🏗️ System Engineer**: Explore [Workflow Optimization](/quests/0101/workflow-optimization/)  
+**🛡️ Security Specialist**: Check out [Secrets Management](/quests/0101/secrets-management/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions) - The complete reference
+- [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) - Every key explained
+- [Using a matrix for your jobs](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs) - Matrix deep dive
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [GitHub Marketplace - Actions](https://github.com/marketplace?type=actions) - Thousands of reusable actions
+- [awesome-actions](https://github.com/sdras/awesome-actions) - Curated list of actions and guides
+- [GitHub Actions Community Discussions](https://github.com/orgs/community/discussions/categories/actions) - Ask questions
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [act - run Actions locally](https://github.com/nektos/act) - Test workflows on your machine
+- [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) - Secrets done right
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built a multi-job workflow with a matrix
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]]
+**Unlocks:** [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Secrets Management: Secure Configuration and Credential Handling]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

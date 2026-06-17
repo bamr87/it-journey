@@ -3,6 +3,17 @@ permalink: /404.html
 layout: root
 ---
 
+<script>
+// Legacy URL cleanup: old notes/notebooks permalinks duplicated the last path
+// segment (e.g. /notes/foo/foo/ -> /notes/foo/). Redirect such 404s to the
+// de-duplicated URL. Runs only on the 404 page, so real pages are unaffected.
+(function () {
+  var p = location.pathname.replace(/\/+$/, '');        // drop trailing slash(es)
+  var m = p.match(/^(.*\/([^\/]+))\/\2$/);              // last two segments identical
+  if (m) { location.replace(m[1] + '/' + location.search + location.hash); }
+})();
+</script>
+
 <style>
 /* Retro SCSS-inspired styles */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');

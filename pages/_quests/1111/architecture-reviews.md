@@ -1,63 +1,48 @@
 ---
-title: 'Architecture Reviews: Leading Technical Design Discussions'
+title: 'Architecture Reviews: ADRs and Trade-off Facilitation'
 author: IT-Journey Team
-description: Lead effective architecture reviews and design discussions. Master RFC processes, technical debt assessment, system evaluation, and architectural decision records.
-excerpt: Lead effective architecture reviews and technical design discussions
-preview: images/previews/architecture-reviews-descriptive-subtitle.png
+description: Run effective architecture and design reviews. Learn to facilitate trade-off discussions, write Architecture Decision Records, and lead reviews without ego.
+excerpt: Facilitate design reviews, write ADRs, and lead trade-off discussions well
+preview: images/previews/architecture-reviews-adrs-trade-off-facilitation.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'
 difficulty: 🔴 Hard
-estimated_time: 4-5 hours
-primary_technology: general
+estimated_time: 3-4 hours
+primary_technology: architecture
 quest_type: main_quest
 quest_series: Leadership Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Crown of Mastery
+quest_arc: The Architect-King's Ascension
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
+  required_quests:
+  - /quests/1111/career-advancement/
+  recommended_quests:
+  - /quests/1111/tech-speaking-writing/
+  - /quests/1011/security-fundamentals/
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
+skill_focus: architecture
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Experience designing or building non-trivial systems
+  - Comfort reasoning about trade-offs (latency, cost, complexity)
+  - Completion of Tech Speaking and Writing (recommended)
   system_requirements:
-  - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A Markdown editor for ADRs and review notes
+  - A real or recent design to review
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can hold an architecture in your head and critique it fairly
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - One ADR written and one review agenda prepared
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write an ADR with context, decision, and consequences
+  - Can facilitate a review that critiques the design, not the author
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands what belongs in an ADR
+  - Can name trade-off axes for a system design
 permalink: /quests/1111/architecture-reviews/
 categories:
 - Quests
@@ -67,8 +52,9 @@ tags:
 - '1111'
 - architecture
 - main_quest
-- architecture
-- hands-on
+- adr
+- design-review
+- trade-offs
 - gamified-learning
 keywords:
   primary:
@@ -76,112 +62,78 @@ keywords:
   - architecture
   - main_quest
   secondary:
-  - architecture
-  - hands-on
-  - gamified-learning
+  - adr
+  - design-review
+  - trade-offs
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1111 (15) Quest: Main Quest - Architecture'
+sub_title: 'Level 1111 (15) Quest: Main Quest - Architecture Reviews'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Keeper of the Blueprints - Recorded decisions future builders will thank you for
+  - 🛡️ Master of the Round Table - Facilitated a review that critiqued ideas, not people
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Architecture Decision Records (ADRs)
+  - 🧠 Trade-off Facilitation
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Completion of the Level 1111 Leadership & Innovation quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, Master adventurer. You stand at the capstone of the Crown. The grandest fortresses in the realm were never raised on a single mind's whim - they were debated at a round table where the wisest builders weighed every wall, every gate, every trade of stone for speed. This final quest, **Architecture Reviews**, teaches you to lead that round table: to facilitate a design review that makes the design stronger, to record decisions so future builders need not relitigate them, and to do it all without your ego on the table.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you are reviewing a teammate's proposal or chairing a design forum for a whole org, this adventure forges the architect-king's most subtle art - making a group of smart, opinionated people arrive at a better answer together.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*The legendary round tables of old were not about the strongest knight winning the argument. They were about the kingdom getting the wisest decision - one that survived after the knights who made it had ridden on. The kingdoms that endured wrote their decrees down, with the reasons, so that a century later no one tore down a wall without knowing why it was built.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*An architecture review is that round table; an Architecture Decision Record (ADR) is that durable decree. This quest teaches you to facilitate the conversation and to capture the decision so it outlives the meeting - and the team.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Running a Design Review** - Facilitate a review that improves the design and respects the author
+- [ ] **Writing ADRs** - Record context, the decision, and its consequences durably
+- [ ] **Trade-off Facilitation** - Surface the real trade-offs and drive the group to a choice
+- [ ] **Reviewing Without Ego** - Critique ideas, not people, and let the best idea win
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Pre-Reads That Work** - Run reviews where people arrive having actually read
+- [ ] **Asking, Not Telling** - Use questions to lead authors to see issues themselves
+- [ ] **Tracking ADR Status** - Manage decisions through accepted, deprecated, and superseded
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain what belongs in an ADR (and what doesn't)
+- [ ] Facilitate a review that ends in a clear, recorded decision
+- [ ] Name the trade-off axes for a given system design
+- [ ] Give hard design feedback the author thanks you for
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Experience designing or building non-trivial systems
+- [ ] Comfort reasoning about trade-offs (latency, cost, complexity, consistency)
+- [ ] Completion of [Tech Speaking and Writing](/quests/1111/tech-speaking-writing/) (recommended)
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A Markdown editor for ADRs and review notes
+- [ ] A real or recent design you can review
+- [ ] Optional: a `docs/adr/` directory in a repo to store decisions
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 4-5 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can hold an architecture in your head and critique it fairly
+- [ ] You can disagree with a design without attacking its author
+- [ ] Ready for 3-4 hours of focused, hands-on work
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Decisions belong in version control, next to the code they govern. Set up an ADR home.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +141,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Store ADRs in the repo; adr-tools automates numbering and templating
+brew install adr-tools
+adr init docs/adr
+adr new "Use PostgreSQL for the primary datastore"
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +155,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Without adr-tools, a simple convention works fine
+New-Item -ItemType Directory -Force docs\adr
+"# ADR-0001: <title>" | Out-File docs\adr\0001-record-architecture-decisions.md
+git add docs\adr; git commit -m "docs: start ADR log"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +169,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Install adr-tools or just use a numbered-file convention
+sudo apt install -y npm && npm install -g adr-log   # optional tooling
+mkdir -p docs/adr
+echo "# ADR-0001: Record architecture decisions" > docs/adr/0001-record-architecture-decisions.md
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +183,243 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Keep ADRs in the same repo as the code so they're reviewed in PRs
+# A pull request IS your async architecture review — comment on the ADR.
+git add docs/adr && git commit -m "docs: propose ADR-0002 for review"
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Running the Review - Facilitation, Not Domination
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A design review is a facilitation problem disguised as a technical one. The goal is the best decision for the system, not the loudest voice in the room. Your job as facilitator is to make the design better while keeping the author whole.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Running a review with a pre-read and an agenda
+- Critiquing the design, not the designer
+- Driving to a clear, recorded outcome
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Review Playbook
 
-**Step 1: Environment Setup**
+```text
+BEFORE (the pre-read does most of the work):
+  - Author circulates the design doc/ADR 48h ahead.
+  - Reviewers read it AND leave async comments before the meeting.
+  - Meeting is for the disagreements, not for reading aloud.
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+DURING (a tight agenda):
+  1. Author states the problem + the decision they propose (5 min, no slides war)
+  2. Walk the OPEN QUESTIONS and the contested comments (the bulk of the time)
+  3. Surface trade-offs explicitly — "what do we give up if we pick this?"
+  4. Drive to one of: ACCEPT / ACCEPT-WITH-CHANGES / NEEDS-REWORK
+  5. Name the decision-maker and record the decision before you leave
+
+AFTER:
+  - Update the ADR with the decision and the dissent.
+  - Track action items with owners.
 ```
 
-**Step 2: Core Concepts**
+The cardinal rule: **critique the design, not the designer.** "This caching layer adds a consistency risk" is feedback; "you didn't think about consistency" is an attack. Frame everything as about the artifact:
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```text
+❌ "You always over-engineer this."
+✅ "This design has three moving parts where one might do — what does the
+    extra complexity buy us?"
+❌ "That won't scale."
+✅ "At 10x today's traffic, where does this design hit its first wall?"
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+Lead with **questions, not verdicts.** Asking "what happens to in-flight requests during a deploy?" lets the author discover the gap themselves - far more durable than you announcing it. A review where the author leaves owning the improvements is a review that worked.
+
+### 🔍 Knowledge Check: Running the Review
+- [ ] Why does the pre-read do most of the work?
+- [ ] Rewrite "that won't scale" as a question about the design
+- [ ] What three outcomes should a review drive toward?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Reframed feedback**: You turned one "you" critique into an "it" critique
+- [ ] **Built an agenda**: You wrote a review agenda centered on open questions
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Architecture Decision Records - Decisions That Outlive the Meeting
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*The decision is worthless if it evaporates when the meeting ends. An ADR is a small, immutable record of one architecturally significant decision: the context, the choice, and the consequences. Six months later it answers "why on earth did we do it this way?"*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The ADR format
+- What is "architecturally significant"
+- Managing ADR status over time
 
-### 🏗️ Advanced Implementations
+### 🏗️ The ADR Template
 
-[Detailed content for chapter 2]
+The widely-used Michael Nygard format - keep each ADR short and immutable (supersede, never edit):
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```markdown
+# ADR-0007: Use event sourcing for the orders service
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+- Status: Proposed | Accepted | Deprecated | Superseded by ADR-0012
+- Date: 2026-06-14
+- Deciders: <names>
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+## Context
+The forces at play: requirements, constraints, and the problem. State the
+facts and pressures that make a decision necessary — NOT the solution yet.
+"We need a full audit trail of every order state change for compliance, and
+our current CRUD model loses history on update."
+
+## Decision
+The choice, in active voice: "We will use event sourcing for the orders
+service, storing each state change as an immutable event."
+
+## Consequences
+The results — good AND bad. Be honest about the costs.
+- (+) Complete, queryable audit trail; time-travel debugging.
+- (+) Natural fit for the read/write split we already planned.
+- (-) Higher complexity; team must learn event-sourcing patterns.
+- (-) Eventual consistency on read models; rebuilds are slow at scale.
+
+## Alternatives considered
+- Plain CRUD + audit table: simpler, but audit drifts from truth.
+- Temporal tables: less code, but weaker for complex projections.
+```
+
+**Architecturally significant** means the decision is *costly to reverse* and *affects multiple components or teams*: your datastore, a public API contract, a language or framework, a consistency model, an auth approach. Do not ADR trivia ("we named the variable `x`"); do ADR the doors that are hard to walk back through.
+
+Manage **status** over time. ADRs are immutable history: when a decision changes, you do not edit ADR-0007 - you write ADR-0012 that *supersedes* it, and mark 0007 "Superseded." The chain of ADRs becomes the architecture's memory.
+
+### 🔍 Knowledge Check: ADRs
+- [ ] What three sections form the heart of an ADR?
+- [ ] What makes a decision "architecturally significant"?
+- [ ] Why supersede an ADR instead of editing it?
+
+## 🧙‍♂️ Chapter 3: Trade-off Facilitation - Making the Costs Visible
+
+*Every architecture decision is a trade. The facilitator's highest skill is making the trade *explicit* - so the group chooses with eyes open instead of arguing past each other about unstated priorities.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Naming the trade-off axes
+- Surfacing hidden priorities
+- Driving a contested decision to a fair close
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Trade-off Toolkit
 
-[Detailed content for chapter 3]
+Most architecture arguments are really disagreements about *which axis matters most*. Make the axes explicit:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+Common trade-off axes:
+  Latency        vs  Throughput
+  Consistency    vs  Availability        (the CAP reality)
+  Simplicity     vs  Flexibility
+  Cost           vs  Performance
+  Speed-to-ship  vs  Long-term maintainability
+  Build          vs  Buy
+  Coupling       vs  Duplication
+```
+
+When a review stalls, it is usually because two people are silently optimizing different axes. Surface it: *"It sounds like you're prioritizing time-to-ship and you're prioritizing maintainability. Which does THIS project actually need most?"* The argument dissolves once the real priority is named.
+
+A lightweight **trade-off matrix** turns opinion into a comparable choice:
+
+```text
+Option   | Latency | Cost | Complexity | Team familiarity | Reversible?
+---------|---------|------|------------|------------------|------------
+A (chosen)|  Good   | Med  |   Low      |     High         |   Yes
+B        |  Best   | High |   High     |     Low          |   No
+C        |  OK     | Low  |   Low      |     High         |   Yes
+```
+
+Then connect it back to the vision and the reversibility rule from earlier quests: spend the group's deliberation budget on the irreversible, high-stakes choices; let the reversible ones be decided fast and revisited if wrong. End every contested decision by naming the decision-maker, recording the choice and the dissent in the ADR, and asking everyone to **disagree and commit**.
+
+### 🔍 Knowledge Check: Trade-offs
+- [ ] Name two trade-off axes for a system you've built
+- [ ] How do you unstick a review where two people argue past each other?
+- [ ] Why record the dissent in the ADR, not just the decision?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Write an ADR
+**Objective**: Write a complete ADR for a real decision using the template.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Context that states the forces, not the solution
+- [ ] A decision in active voice
+- [ ] Honest consequences, both positive and negative
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Someone reading it in a year would understand why you chose this.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Facilitate a Review
+**Objective**: Run (or design) a design review for a real proposal.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] A pre-read circulated in advance with async comments
+- [ ] An agenda built around open questions and trade-offs
+- [ ] A recorded outcome: accept / accept-with-changes / needs-rework
 
-**Validation**: [How to verify success]
+**Validation**: The author leaves owning the improvements, not bruised by them.
+
+### 🔴 Advanced Challenge: Facilitate a Contested Trade-off
+**Objective**: Drive a genuinely contested architecture decision to a fair close.
+
+**Requirements**:
+- [ ] A trade-off matrix comparing at least three options
+- [ ] The competing priorities named out loud
+- [ ] A recorded decision with the dissent captured and a disagree-and-commit
+
+**Validation**: The losing side commits fully, because the trade-off was made fairly and visibly.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Keeper of the Blueprints** - You recorded decisions future builders will thank you for
+- 🛡️ **Master of the Round Table** - You facilitated a review that critiqued ideas, not people
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Architecture Decision Records (ADRs)** - Decisions that outlive the meeting
+- **Trade-off Facilitation** - Make the costs visible, then choose
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- You have reached the capstone of Level 1111. Loop back to deepen any pillar of the Crown of Mastery.
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 You have completed the Leadership & Innovation quest line - the highest keep of the realm. Revisit any quest to go deeper.
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Technical Leadership](/quests/1111/technical-leadership/) - Apply reviews to a team you lead
+- ⚔️ [Tech Speaking and Writing](/quests/1111/tech-speaking-writing/) - Sharpen the docs your reviews depend on
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Revisit [Innovation and R&D](/quests/1111/innovation-rnd/) to pressure-test new bets  
+**🏗️ System Engineer**: Return to [Technical Leadership](/quests/1111/technical-leadership/) to lead design forums  
+**🛡️ Security Specialist**: Apply reviews to [Security Fundamentals](/quests/1011/security-fundamentals/) threat models
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Michael Nygard - Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) - The original ADR format
+- [adr.github.io - ADR organization](https://adr.github.io/) - Tooling, templates, and the community
+- [AWS - the ADR process (prescriptive guidance)](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html) - A cloud vendor's ADR playbook
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Architecture Decision Records (adr-tools)](https://github.com/npryce/adr-tools) - CLI for managing ADRs
+- [ThoughtWorks Technology Radar on ADRs](https://www.thoughtworks.com/radar/techniques/lightweight-architecture-decision-records) - Why lightweight ADRs work
+- [Will Larson - Architecture review processes](https://lethain.com/scaling-consistency/) - Scaling reviews across an org
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Fundamentals of Software Architecture - Richards & Ford](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/) - Trade-off thinking in depth
+- [The art of the design review (Square/Block engineering)](https://developer.squareup.com/blog/) - Real-world review culture
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
+- [ ] ✅ Wrote a complete ADR with honest consequences
+- [ ] ✅ Facilitated (or designed) a design review with a recorded outcome
+- [ ] ✅ Built a trade-off matrix for a contested decision
 - [ ] ✅ Explored the resource library
-- [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
+- [ ] ✅ Completed the Level 1111 Leadership & Innovation quest line
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +427,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1111: Leadership & Innovation]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Career Advancement: IC vs Management Tracks, Leveling, and Negotiation]]
+**Related quests:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]] · [[Tech Speaking and Writing: RFCs, Design Docs, and Talks That Persuade]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

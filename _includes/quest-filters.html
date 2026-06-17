@@ -70,15 +70,13 @@ No parameters required - filters are applied to .quest-card elements.
       <label for="filter-level">Level</label>
       <select id="filter-level" onchange="applyFilters()">
         <option value="">All Levels</option>
+        {%- assign quest_data = site.data.quests -%}
         {% for level in levels %}
+        {%- assign level_meta = quest_data.levels[level] -%}
+        {%- assign tier_meta = quest_data.tiers[level_meta.tier] -%}
         <option value="{{ level }}">
           {{ level }}
-          {% case level %}
-            {% when '0000', '0001', '0010', '0011' %} (🌱 Apprentice)
-            {% when '0100', '0101', '0110', '0111' %} (⚔️ Adventurer)
-            {% when '1000', '1001', '1010', '1011' %} (🔥 Warrior)
-            {% when '1100', '1101', '1110', '1111' %} (👑 Master)
-          {% endcase %}
+          {%- if level_meta.tier %} ({{ tier_meta.emoji }} {{ level_meta.tier }}){% endif -%}
         </option>
         {% endfor %}
       </select>
@@ -114,7 +112,7 @@ No parameters required - filters are applied to .quest-card elements.
   </div>
 
   <div class="filter-results" id="filter-results">
-    <span id="results-count">Showing all quests</span>
+    <span id="results-count" aria-live="polite">Showing all quests</span>
   </div>
 </div>
 

@@ -14,8 +14,11 @@ on:
         type: boolean
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   SETTINGS_DIR: pages/_about/settings
@@ -24,16 +27,18 @@ env:
 jobs:
   update-settings:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
@@ -67,13 +72,13 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ${{ env.SETTINGS_DIR }}/
-          git commit -m "🤖 Auto-update settings configuration files
+          git commit -m "🤖 Auto-update settings configuration files [skip ci]
 
           - Updated _config.yml copy
           - Regenerated tree structure
           - Updated sitemap data
           - Enhanced config.md with automation details
-          
+
           Triggered by: ${{ github.event_name }}
           Commit: ${{ github.sha }}"
           git push

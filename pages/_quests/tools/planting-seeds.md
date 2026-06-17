@@ -1,12 +1,10 @@
 ---
-title: planting seeds
+title: 'Planting Seeds: Set Up Your Dev Toolkit'
 author: IT-Journey Team
-description: Quest covering planting seeds.
-excerpt: null
-snippet: null
+description: 'Plant the seeds of your development environment by installing and configuring the foundational tools that every IT journey grows from.'
 preview: images/previews/planting-seeds.png
 date: '2025-02-05T14:08:47.000Z'
-lastmod: null
+lastmod: '2025-02-05T14:08:47.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
@@ -25,9 +23,8 @@ keywords:
   - seeds
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 ## 🕸️ Knowledge Graph
 

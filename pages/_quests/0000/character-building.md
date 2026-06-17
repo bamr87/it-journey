@@ -1,9 +1,8 @@
 ---
-title: 'Character Building: Forge Your IT Identity and Development Environment'
+title: 'Character Building: Forge Your IT Hero Identity'
 author: IT-Journey Team
 description: Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero
 excerpt: Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment
-snippet: Every hero needs an origin story - craft yours with intention and purpose
 preview: images/previews/character-building-forge-your-it-identity-and-deve.png
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
@@ -23,28 +22,6 @@ quest_dependencies:
   unlocks_quests:
   - /quests/0000/character-selection/
   - /quests/0000/os-selection/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/character-selection/
-  - /quests/0000/os-selection/
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Cybersecurity
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  - 🤝 DevOps Facilitator
-  skill_trees:
-  - Career Planning
-  - Development Environment
-  - Self-Assessment
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -107,16 +84,12 @@ keywords:
   - 1
 fmContentType: quest
 draft: false
-sub-title: 'Level 001 Quest: Defining Your Digital Identity'
 meta:
   quest_type: character_development
   skill_focus: career_planning
-related_quests:
-- hello-noob.md - First Steps into IT
-- character-selection.md - Choose Your IT Specialization
-- os-selection.md - Operating System Selection Guide
 slug: character-building
 layout: quest
+sub_title: 'Level 001 Quest: Defining Your Digital Identity'
 ---
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 

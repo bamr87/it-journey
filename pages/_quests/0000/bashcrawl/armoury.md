@@ -38,13 +38,11 @@ keywords:
   - executable scripts
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/chamber/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/chamber/
+  - /quests/0000/chamber/
+  recommended_quests: []
 validation_criteria:
 - Read ls -l permissions output correctly
 - Use chmod to make a script executable
@@ -52,17 +50,23 @@ validation_criteria:
 - Advance to the Chamber
 prerequisites:
 - Complete the Cellar side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Enchanted Sword
 - File permissions mastery
 excerpt: Master chmod, read permission bits, and execute armoury scripts to brew potions, equip your sword, and unlock the next chamber.
 draft: false
-permalink: /quests/0000/side-quests/armoury/
+permalink: /quests/0000/armoury/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/armoury/
 ---
 *Racks of weapons line the walls. Suits of armour stand at attention. But every sword and potion is locked behind a permission barrier — you must learn `chmod` before you can equip a single item.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Armoury" %}
 
 ## 🎯 Quest Objectives
 
@@ -194,6 +198,8 @@ With the sword equipped, you should win. Health permitting, the guardian falls a
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

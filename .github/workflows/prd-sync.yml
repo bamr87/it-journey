@@ -30,16 +30,20 @@ on:
         type: boolean
 
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-  models: read
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   # ── Job 1: Quick check ────────────────────────────────────────
   check:
     name: 🔍 Quick Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      models: read
     # Only run on merged PRs (not closed-without-merge) or manual dispatch
     if: >-
       github.event_name == 'workflow_dispatch' ||
@@ -50,12 +54,12 @@ jobs:
 
     steps:
     - name: 🏰 Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         fetch-depth: 0
 
     - name: 🐍 Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
       with:
         python-version: '3.11'
 
@@ -111,7 +115,7 @@ jobs:
 
     - name: 📤 Upload Check Results
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
       with:
         name: prd-check-results
         path: |
@@ -125,15 +129,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: check
     if: needs.check.outputs.needs_update == 'true'
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
     - name: 🏰 Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         fetch-depth: 0
 
     - name: 🐍 Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
       with:
         python-version: '3.11'
 
@@ -166,7 +173,7 @@ jobs:
 
     - name: 🔀 Create Pull Request
       if: steps.sync.outputs.prd_changed == 'true'
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "chore(prd): auto-sync PRD.md"
@@ -197,7 +204,7 @@ jobs:
 
     - name: 📤 Upload Sync Logs
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
       with:
         name: prd-sync-logs
         path: sync-output.log
@@ -209,15 +216,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: sync
     if: always() && needs.check.outputs.needs_update == 'true'
+    permissions:
+      contents: read
+      issues: write
 
     steps:
     - name: 🏰 Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         fetch-depth: 0
 
     - name: 🐍 Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
       with:
         python-version: '3.11'
 
@@ -243,7 +253,7 @@ jobs:
 
     - name: ⚠️ Create Issue for Conflicts
       if: steps.conflicts.outputs.conflicts_found == 'true'
-      uses: actions/github-script@v7
+      uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
       with:
         script: |
           const fs = require('fs');

@@ -1,9 +1,8 @@
 ---
-title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
+title: 'Stack Attack: AI-Built Django + React Enterprise ERP'
 author: Quest Master IT-Journey Team
-description: Use AI agents to research, design, and build a production-grade open-source ERP stack with Django REST Framework on the backend and React TypeScript on the frontend — the modern enterprise way.
+description: 'Use AI agents to research, design, and scaffold a production-grade open-source ERP with a Django REST backend and a React TypeScript frontend.'
 excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-grade ERP application using Django, React, PostgreSQL, Celery, and the best open-source tooling available today.
-snippet: The stack you choose defines the ceiling of what you can build — choose wisely, build boldly.
 preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
 date: '2025-11-02T14:45:16.000Z'
 lastmod: '2026-04-13T00:00:00.000Z'
@@ -20,23 +19,6 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/terminal-fundamentals/
   unlocks_quests: []
-quest_relationships:
-  child_quests: null
-  sequel_quests: null
-learning_paths:
-  primary_paths:
-  - Full-Stack Development
-  - Enterprise Application Architecture
-  - AI-Assisted Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🧙‍♂️ AI Architect
-  skill_trees:
-  - Django & Python Backend
-  - React & TypeScript Frontend
-  - Enterprise Architecture
-  - AI-Assisted Tooling
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -70,11 +52,6 @@ validation_criteria:
   - Describe the role of each service in the stack
   - Identify tradeoffs between technology alternatives
   - Outline how Celery handles async ERP operations
-quest_mapping:
-  coordinates: '[2, 2]'
-  region: Foundation
-  realm: Development
-  biome: AI-Enhanced
 permalink: /quests/0001/stack-attack/
 categories:
 - Quests
@@ -128,17 +105,6 @@ rewards:
   - Access to advanced Django ERP module quests
   - AI agent prompt engineering techniques
   - Enterprise architecture pattern library
-related_quests:
-  prerequisites:
-  - /quests/0000/hello-noob/
-  - /quests/terminal-fundamentals/
-  followups:
-  - /quests/django-api-design/
-  - /quests/react-enterprise-ui/
-  - /quests/erp-module-development/
-  parallel:
-  - /quests/docker-fundamentals/
-  - /quests/postgresql-mastery/
 layout: quest
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
@@ -1294,7 +1260,7 @@ Output: A generic <DataTable> component in src/components/ui/data-table.tsx
 
 **Sample Agent Output — ERP Sales Orders Page:**
 
-{% raw %}
+
 ```tsx
 // src/pages/sales/orders/index.tsx
 import { useGetSalesOrdersList } from "@/api/generated/sales";
@@ -1321,7 +1287,7 @@ const columns: ColumnDef<SalesOrder>[] = [
     accessorKey: "customer.name",
     header: "Customer",
     cell: ({ row }) => (
-      <Link to="/contacts/$id" params={{ id: row.original.customer.id }}>
+      <Link to="/contacts/$id" params={% raw %}{{ id: row.original.customer.id }}{% endraw %}>
         {row.original.customer.name}
       </Link>
     ),
@@ -1380,7 +1346,7 @@ export function SalesOrdersPage() {
   );
 }
 ```
-{% endraw %}
+
 
 ### 🎮 Challenge 3: First Full-Stack Feature
 

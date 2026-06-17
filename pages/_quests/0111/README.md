@@ -1,6 +1,6 @@
 ---
 title: Level 0111 (7) - API Development
-description: Master the craft of building robust, secure, and well-documented APIs that power modern applications
+description: 'Master the Journeyman craft of building production-grade APIs: REST design, OAuth and JWT authentication, rate limiting, versioning, and OpenAPI docs.'
 preview: images/previews/level-0111-api-development.png
 permalink: /quests/0111/
 layout: quest-collection
@@ -21,6 +21,7 @@ toc: true
 toc_sticky: true
 draft: false
 date: '2025-12-20T20:02:51.000Z'
+author: IT-Journey Team
 ---
 # Level 0111 (7) - API Development
 

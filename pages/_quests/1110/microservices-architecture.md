@@ -1,63 +1,52 @@
 ---
-title: 'Microservices Architecture: Building Scalable Distributed Systems'
+title: 'Microservices Architecture: Decomposing the Monolith'
 author: IT-Journey Team
-description: Master microservices architecture patterns for building scalable, maintainable systems. Learn service decomposition, communication patterns, and deployment strategies.
-excerpt: Design and implement microservices architectures for scalable distributed systems
-preview: images/previews/microservices-architecture-descriptive-subtitle.png
+description: 'Decide when to split a monolith, decompose by bounded context, and navigate inter-service communication, data ownership, and distributed failure modes.'
+excerpt: Decide when to split a monolith, decompose by bounded context, and manage the trade-offs of distributed systems
+preview: images/previews/microservices-architecture-decomposing-monolith.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1110'
 difficulty: ⚔️ Epic
-estimated_time: 6-8 hours
+estimated_time: 5-6 hours
 primary_technology: docker
 quest_type: main_quest
 quest_series: System Design Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Architect's Citadel
+quest_arc: Blueprints of the Master
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
-learning_style: hands-on
+  required_quests:
+  - /quests/1110/design-patterns/
+  recommended_quests:
+  - /quests/1110/domain-driven-design/
+  unlocks_quests:
+  - /quests/1110/api-gateway-patterns/
+  - /quests/1110/event-driven-design/
+  - /quests/1110/scaling-strategies/
+skill_focus: backend
+learning_style: conceptual
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Understanding of HTTP APIs and how services call each other
+  - Familiarity with containers (Docker basics)
+  - Bounded contexts from the Domain-Driven Design quest (recommended)
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker installed for the optional hands-on lab
+  - A terminal and a text editor or IDE
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have shipped at least one networked service
+  - You understand that a network call can fail
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A decomposition proposal for one monolith you know
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can justify monolith vs. microservices for a given context
+  - Can draw service boundaries along bounded contexts
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the fallacies of distributed computing
+  - Can explain database-per-service and its consequences
 permalink: /quests/1110/microservices-architecture/
 categories:
 - Quests
@@ -67,121 +56,88 @@ tags:
 - '1110'
 - docker
 - main_quest
-- architecture
-- hands-on
+- microservices
+- distributed-systems
+- conceptual
 - gamified-learning
 keywords:
   primary:
   - '1110'
-  - docker
+  - microservices
   - main_quest
   secondary:
-  - architecture
-  - hands-on
-  - gamified-learning
+  - decomposition
+  - distributed-systems
+  - bounded-contexts
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1110 (14) Quest: Main Quest - Microservices'
+sub_title: 'Level 1110 (14) Quest: Main Quest - Microservices Architecture'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Monolith Breaker - Decomposed a system along true boundaries
+  - 🕸️ Weaver of Services - Understands distributed communication and its perils
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Service Decomposition
+  - 🧠 Distributed Trade-off Analysis
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the gateway, scaling, and event-driven quests
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Architect, the Citadel now turns from the design of a single keep to the design of a *kingdom*. **Microservices Architecture** is the art of splitting one application into many independently deployable services - and the wisdom to know when that splitting helps and when it merely trades simple problems for distributed ones.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether your monolith has become a fearsome thing that no one dares deploy on a Friday, or you are tempted to start a green-field project with forty services because the conference talks said so, this quest forges the judgment to decompose deliberately, along boundaries that the business itself defines.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Once, every application was a monolith: one codebase, one deployment, one database. This is not a sin - it is often the right answer. But as teams grow and a single codebase becomes a single point of contention, the monolith can calcify. Microservices emerged as a way to let teams deploy independently, scale parts separately, and isolate failures.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*The catch, learned by every team the hard way: a microservice architecture replaces in-process function calls (fast, reliable) with network calls (slow, fallible). You inherit the **fallacies of distributed computing** - the network is not reliable, latency is not zero, bandwidth is not infinite. This quest teaches you to weigh those costs honestly, so you decompose only when the benefit is real.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Monolith vs. Microservices** - Articulate the real trade-offs and choose deliberately
+- [ ] **Decomposition by Bounded Context** - Find service boundaries that follow the business, not the code
+- [ ] **Inter-Service Communication** - Compare synchronous (REST/gRPC) and asynchronous (events) styles
+- [ ] **Data Ownership** - Apply database-per-service and confront the loss of distributed transactions
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **The Fallacies of Distributed Computing** - Internalize why distribution is hard
+- [ ] **Resilience Patterns** - Apply timeouts, retries, and circuit breakers
+- [ ] **The Saga Pattern** - Maintain consistency across services without a global transaction
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Defend "keep the monolith" as a valid, often-correct answer
+- [ ] Draw service boundaries along bounded contexts and justify each cut
+- [ ] Explain why a chatty service boundary is a design smell
+- [ ] Describe how a saga replaces a distributed transaction
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understand HTTP APIs and service-to-service calls
+- [ ] Familiarity with Docker basics
+- [ ] Completed [Domain-Driven Design](/quests/1110/domain-driven-design/) (recommended)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker installed (`docker --version`) for the optional lab
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **⚔️ Epic** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 6-8 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You have shipped at least one networked service
+- [ ] You understand that a network call can fail or hang
+- [ ] Ready for 5-6 hours of focused study
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The concepts are platform-independent. The optional lab runs two tiny services in containers so you can watch them call each other.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +145,11 @@ This **⚔️ Epic** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install --cask docker
+# Verify the engine is running
+docker --version
+docker compose version
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +159,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install Docker.DockerDesktop
+docker --version
+docker compose version
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +172,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y docker.io docker-compose-plugin
+sudo systemctl enable --now docker
+docker --version
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +185,260 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# A Codespace or any host with Docker works identically.
+docker compose version
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Monolith vs. Microservices - The Honest Ledger
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The most important microservices decision is whether to use them at all. Start here, with both columns of the ledger.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The real benefits and real costs of each style
+- The "monolith first" heuristic
+- When team topology, not technology, decides
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Trade-off Table
 
-**Step 1: Environment Setup**
+| Concern | Monolith | Microservices |
+| --- | --- | --- |
+| **Deployment** | One unit - simple, but all-or-nothing | Independent per service - flexible, more moving parts |
+| **Scaling** | Scale the whole app | Scale hot services only |
+| **Failure isolation** | A bug can take down everything | Failures can be contained (if designed for it) |
+| **Communication** | In-process calls (fast, reliable) | Network calls (slow, fallible) |
+| **Data** | One database, easy transactions | Database per service, no global transactions |
+| **Team autonomy** | Coordination on one codebase | Teams own and deploy services independently |
+| **Operational cost** | Low | High (observability, networking, CI/CD per service) |
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+The pragmatic heuristic from Martin Fowler: **"Monolith first."** Begin with a well-structured monolith, learn where the real boundaries are, and extract services only when a boundary proves stable and a team genuinely needs independent deployment.
+
+### 🔍 Knowledge Check: The Ledger
+- [ ] Name two costs microservices add that a monolith does not have
+- [ ] Why might "monolith first" save you from premature service boundaries?
+- [ ] When does team size justify splitting even a modest system?
+
+## 🧙‍♂️ Chapter 2: Decomposition and Communication
+
+*If you do split, the cut must follow a business boundary, not a technical layer. A "users service," "orders service," and "inventory service" mirror bounded contexts; a "controllers service" and "database service" do not.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Decomposing by bounded context
+- Synchronous vs. asynchronous communication
+- Database-per-service and its consequences
+
+### 🏗️ Boundaries Follow the Business
+
+```mermaid
+graph TB
+    subgraph Bad: technical layering
+        L1[UI Service] --> L2[Logic Service] --> L3[Data Service]
+    end
+    subgraph Good: business capability
+        Orders[Orders Service<br/>own DB]
+        Inventory[Inventory Service<br/>own DB]
+        Payments[Payments Service<br/>own DB]
+        Orders -->|reserve stock| Inventory
+        Orders -->|charge| Payments
+    end
+    style L1 fill:#ef4444,color:#fff
+    style L2 fill:#ef4444,color:#fff
+    style L3 fill:#ef4444,color:#fff
+    style Orders fill:#4CAF50,color:#fff
+    style Inventory fill:#4CAF50,color:#fff
+    style Payments fill:#4CAF50,color:#fff
 ```
 
-**Step 2: Core Concepts**
+### 🏗️ Synchronous vs. Asynchronous
 
-[Explanation of fundamental concepts]
+A service can call another **synchronously** (request/response, REST or gRPC) or **asynchronously** (publish an event and move on). Synchronous is simpler to reason about but couples availability: if Payments is down, Orders waits. Asynchronous decouples but adds eventual consistency.
 
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
+```yaml
+# docker-compose.yml — two services that talk over HTTP on a shared network
+services:
+  orders:
+    build: ./orders
+    ports: ["8001:8000"]
+    environment:
+      INVENTORY_URL: "http://inventory:8000"   # service discovery by name
+    depends_on: [inventory]
+  inventory:
+    build: ./inventory
+    expose: ["8000"]                            # internal only — reached via the gateway later
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+```python
+# orders/app.py — a synchronous call with a timeout and graceful degradation
+import os, httpx
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+INVENTORY_URL = os.environ["INVENTORY_URL"]
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+def reserve_stock(sku: str, qty: int) -> bool:
+    try:
+        # ALWAYS set a timeout — the network is not reliable
+        resp = httpx.post(f"{INVENTORY_URL}/reserve",
+                          json={"sku": sku, "qty": qty}, timeout=2.0)
+        return resp.status_code == 200
+    except httpx.RequestError:
+        # Inventory is unreachable — fail clearly, do not hang the user
+        return False
+```
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+**Database per service** means each service owns its data and no other service touches its tables. This buys independence but costs you cross-service transactions - which Chapter 3 addresses.
 
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+### 🔍 Knowledge Check: Decomposition
+- [ ] Why is a "data service" usually a bad boundary?
+- [ ] What does Orders lose if Payments must be called synchronously and is down?
+- [ ] Why must every network call set a timeout?
 
-### 🏗️ Advanced Implementations
+## 🧙‍♂️ Chapter 3: Distributed Reality - Failure, Sagas, and Resilience
 
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+*Distribution is not free. The defining skill of an Architect here is to design for the failures that in-process code never had.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- The fallacies of distributed computing
+- Sagas for cross-service consistency
+- Timeouts, retries, and circuit breakers
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Saga Pattern
 
-[Detailed content for chapter 3]
+With no global transaction, a business process that spans services becomes a **saga**: a sequence of local transactions, each with a **compensating action** that undoes it if a later step fails.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```text
+Place Order saga (orchestrated):
+  1. Orders:    create order (pending)        → compensate: cancel order
+  2. Inventory: reserve stock                  → compensate: release stock
+  3. Payments:  charge card                    → compensate: refund
+  4. Orders:    mark order confirmed
+If step 3 fails: run compensations 2 and 1 in reverse — never a half-charged order.
+```
+
+### 🏗️ Resilience Patterns
+
+```python
+# A circuit breaker stops hammering a failing dependency.
+class CircuitBreaker:
+    def __init__(self, threshold=5, reset_after=30):
+        self.failures, self.threshold = 0, threshold
+        self.open_until, self.reset_after = 0, reset_after
+    def call(self, fn, *args):
+        import time
+        if time.time() < self.open_until:           # circuit OPEN — fail fast
+            raise RuntimeError("circuit open; skipping call")
+        try:
+            result = fn(*args)
+            self.failures = 0                         # success resets the counter
+            return result
+        except Exception:
+            self.failures += 1
+            if self.failures >= self.threshold:       # trip the breaker
+                self.open_until = time.time() + self.reset_after
+            raise
+```
+
+Pair circuit breakers with **timeouts** (never wait forever) and **bounded retries with backoff** (retry transient failures, but not so hard you create a retry storm).
+
+### 🔍 Knowledge Check: Distributed Reality
+- [ ] What is a compensating action in a saga?
+- [ ] Why is an unbounded retry dangerous during an outage?
+- [ ] How does a circuit breaker protect both the caller and the callee?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Two-Service Lab
+**Objective**: Run the Orders and Inventory services from Chapter 2 with Docker Compose and watch one call the other.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Both services start with `docker compose up`
+- [ ] An Orders request triggers an Inventory call
+- [ ] Stopping Inventory shows Orders degrade gracefully, not hang
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Logs prove the timeout fired instead of a stuck request.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Decomposition Proposal
+**Objective**: For a monolith you know, propose a split into 3-4 services.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Each service maps to a bounded context, not a layer
+- [ ] Name the data each service owns
+- [ ] Identify one cross-service process that would need a saga
 
-**Validation**: [How to verify success]
+**Validation**: A reviewer agrees the boundaries minimize chatty calls.
+
+### 🔴 Advanced Challenge: Trade-off Defense
+**Objective**: Write a recommendation for a real or hypothetical team: monolith, modular monolith, or microservices.
+
+**Requirements**:
+- [ ] State team size, deploy frequency, and scaling needs
+- [ ] Weigh operational cost honestly
+- [ ] Recommend one and name what would change your mind
+
+**Validation**: The memo would survive a skeptical staff-engineer review.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Monolith Breaker** - You decompose along true business boundaries, only when warranted
+- 🕸️ **Weaver of Services** - You design for the failures distribution introduces
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Service Decomposition** - Find boundaries that follow bounded contexts
+- **Distributed Trade-off Analysis** - Weigh independence against operational cost
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- API Gateway Patterns - Give your services one front door
+- Event-Driven Design - Decouple services with asynchronous messaging
+- Scaling Strategies - Scale the services that actually need it
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [API Gateway Patterns](/quests/1110/api-gateway-patterns/) - The single front door for many services
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Event-Driven Design](/quests/1110/event-driven-design/) - Asynchronous, decoupled communication
+- ⚔️ [Scaling Strategies](/quests/1110/scaling-strategies/) - Scale horizontally with confidence
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [API Gateway Patterns](/quests/1110/api-gateway-patterns/)  
+**🏗️ System Engineer**: Explore [Scaling Strategies](/quests/1110/scaling-strategies/)  
+**🛡️ Security Specialist**: Note how a gateway centralizes auth across services
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [microservices.io - Pattern Language](https://microservices.io/patterns/index.html) - Chris Richardson's canonical pattern catalog
+- [Docker Compose docs](https://docs.docker.com/compose/) - Used in the lab above
+- [Saga pattern (microservices.io)](https://microservices.io/patterns/data/saga.html) - The reference description
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Building Microservices (Sam Newman)](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/) - The definitive book
+- [Martin Fowler - Microservices](https://martinfowler.com/articles/microservices.html) - The article that named the trend
+- [MonolithFirst (Martin Fowler)](https://martinfowler.com/bliki/MonolithFirst.html) - Why to resist premature splitting
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Fallacies of Distributed Computing explained](https://www.simpleorientedarchitecture.com/8-fallacies-of-distributed-computing/) - The eight assumptions that bite
+- [Release It! (Michael Nygard)](https://pragprog.com/titles/mnee2/release-it-second-edition/) - Stability and resilience patterns
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Ran the two-service lab and observed graceful degradation
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Quality Assurance]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Software Design Patterns: Gang of Four and Modern Patterns]] · [[Domain-Driven Design: Modeling the Business in Code]]
+**Unlocks:** [[API Gateway Patterns: The Single Front Door]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]] · [[Scaling Strategies: Horizontal Growth, Caching, and CAP]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

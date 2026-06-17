@@ -1,63 +1,48 @@
 ---
 title: 'Database Security: Access Control and Data Encryption'
 author: IT-Journey Team
-description: Implement robust database security with access control, encryption, audit logging, and SQL injection prevention. Learn security best practices for protecting sensitive data.
-excerpt: Secure your databases with access control, encryption, and SQL injection prevention
-preview: images/previews/database-security-access-control-quest-title-encry.png
+description: 'Defend the Data Keep with least-privilege grants, parameterized queries that stop SQL injection, encryption at rest and in transit, and audit logging.'
+excerpt: Protect databases with least privilege, parameterized queries, encryption, and auditing.
+preview: images/previews/database-security-access-control-quest-title-and.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:08:26.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0110'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
 primary_technology: sql
 quest_type: main_quest
 quest_series: Database Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Data Keep
+quest_arc: The Warded Vault
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: data-engineering
+  required_quests:
+  - /quests/0110/database-fundamentals/
+  recommended_quests:
+  - /quests/0110/sql-mastery/
+  unlocks_quests:
+  - /quests/0110/backup-recovery/
+skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Database Fundamentals (recommended)
+  - Basic understanding of how applications connect to a database
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - PostgreSQL 14+ (or Docker to run it)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable running SQL and editing application code
+  - Ready to think adversarially about data access
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A least-privilege application role created with GRANT
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write a parameterized query that resists injection
+  - Can configure TLS and encryption at rest conceptually
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between authentication and authorization
+  - Can explain why string concatenation enables SQL injection
 permalink: /quests/0110/database-security/
 categories:
 - Quests
@@ -67,7 +52,7 @@ tags:
 - '0110'
 - sql
 - main_quest
-- data-engineering
+- security
 - hands-on
 - gamified-learning
 keywords:
@@ -76,112 +61,78 @@ keywords:
   - sql
   - main_quest
   secondary:
-  - data-engineering
-  - hands-on
-  - gamified-learning
+  - security
+  - sql-injection
+  - encryption
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0110 (6) Quest: Main Quest - Security'
+sub_title: 'Level 0110 (6) Quest: Main Quest - The Warded Vault'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Warden of the Vault - Locked down access with least privilege
+  - 🛡️ Bane of the Injector - Stopped SQL injection with parameters
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Database Access Control
+  - 🧠 Secure Query Construction
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Backup and disaster-recovery quests in the Database Mastery line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Your Data Keep is full of treasure - customer secrets, credentials, the lifeblood of your kingdom - and treasure attracts thieves. This quest, **Database Security**, teaches you to ward the vault: to grant each visitor only the keys they need, to seal your queries against the injection curse, to encrypt your gold both in the chest and on the road, and to keep a ledger of every hand that reaches inside.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*A database breach is rarely a single dramatic siege. More often it is a forgotten over-privileged account, a query built by gluing strings together, or an unencrypted backup left in a public bucket. This quest closes those doors one by one.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*The most infamous database attack, **SQL injection**, has topped vulnerability lists for over two decades. It is devastatingly simple: an application builds a query by concatenating user input, and an attacker supplies input that is itself SQL. The fix - parameterized queries - has existed just as long, yet the bug persists because developers keep reaching for string concatenation. Beyond injection lie the quieter disciplines: least privilege, encryption, and auditing, the unglamorous practices that separate a defended kingdom from a plundered one.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches all four pillars, with runnable examples you can defend in a code review.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Least Privilege** - Create roles that can do exactly what they need and nothing more
+- [ ] **Parameterized Queries** - Stop SQL injection at the source
+- [ ] **Encryption** - Protect data at rest and in transit with TLS and disk/column encryption
+- [ ] **Auditing** - Log who accessed what, so a breach cannot hide
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Secrets Management** - Keep credentials out of code and config
+- [ ] **Row-Level Security** - Restrict which rows a role can even see
+- [ ] **Principle of Defense in Depth** - Layer controls so one failure is not a breach
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Rewrite a string-concatenated query as a parameterized one
+- [ ] Grant an app role read/write on one table without `DROP` rights
+- [ ] Explain the difference between encryption at rest and in transit
+- [ ] Describe what an audit log must capture to be useful after a breach
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Understanding of how applications connect to and query a database
+- [ ] Familiarity with at least one programming language
+- [ ] Completion of [Database Fundamentals](/quests/0110/database-fundamentals/) (recommended)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] PostgreSQL 14+ installed, or Docker to run it
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can run SQL and read application code
+- [ ] You are ready to think like an attacker
+- [ ] Ready for 75-90 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Spin up PostgreSQL to practice roles, grants, and TLS configuration.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +140,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+brew install postgresql@16
+brew services start postgresql@16
+createdb warded_vault
+psql warded_vault
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +154,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install PostgreSQL.PostgreSQL.16
+createdb warded_vault
+psql warded_vault
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +167,11 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y postgresql
+sudo systemctl enable --now postgresql
+sudo -u postgres createdb warded_vault
+sudo -u postgres psql warded_vault
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +181,224 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+docker run --name warded-vault -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
+docker exec -it warded-vault psql -U postgres
 ```
 
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+> ⚠️ Never expose a practice database with a weak password to the public internet.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Least Privilege - Hand Out Only the Keys You Must
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The single most effective database control is also the cheapest: give every account exactly the access it needs and nothing more. An application login that can `DROP TABLE` is a catastrophe waiting for one injection flaw.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Creating roles and granting narrow privileges
+- The difference between authentication (who) and authorization (what)
+- Separating an app role from an admin role
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Granting the Minimum
 
-**Step 1: Environment Setup**
+```sql
+-- Set up a table the app will use.
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    customer TEXT NOT NULL,
+    total    NUMERIC(10,2) NOT NULL
+);
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+-- ❌ Over-privileged: this login can read, write, AND destroy.
+-- GRANT ALL PRIVILEGES ON orders TO app_login;
+
+-- ✅ Least privilege: a role that can only serve the rows it needs.
+CREATE ROLE app_login LOGIN PASSWORD 'rotate-me-in-a-vault';
+GRANT SELECT, INSERT, UPDATE ON orders TO app_login;
+GRANT USAGE, SELECT ON SEQUENCE orders_order_id_seq TO app_login;
+-- Note: no DELETE, no DROP, no schema-altering rights.
 ```
 
-**Step 2: Core Concepts**
+If an attacker ever hijacks `app_login`, the damage ceiling is "read and modify orders" - not "delete the entire database." This is **authorization** (what you may do), distinct from **authentication** (proving who you are with a password, certificate, or token).
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Least Privilege
+- [ ] What is the difference between authentication and authorization?
+- [ ] Why should an app role usually lack `DROP` privileges?
+- [ ] How does least privilege cap the blast radius of a stolen credential?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Role created**: You created `app_login` with a password
+- [ ] **Scoped grants**: The role can read/write but not drop the table
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Parameterized Queries - Sealing the Injection Curse
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*SQL injection happens when user input is treated as SQL code. The cure is to send the query structure and the data **separately**, so the database can never confuse one for the other.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Recognizing injectable string-concatenated queries
+- Writing parameterized (prepared) queries
+- Why parameters defeat injection by design
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Curse and the Cure
 
-[Detailed content for chapter 2]
+```python
+# ❌ VULNERABLE: user input is glued directly into the SQL string.
+def find_user(conn, name):
+    sql = "SELECT * FROM users WHERE name = '" + name + "'"
+    return conn.execute(sql)
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+# An attacker passes name = "' OR '1'='1" turning the query into:
+#   SELECT * FROM users WHERE name = '' OR '1'='1'
+# ...which returns EVERY user. Or worse: "'; DROP TABLE users; --"
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+# ✅ SAFE: the query and the data travel separately. The driver binds
+#    `name` as a value, never as executable SQL.
+def find_user_safe(conn, name):
+    sql = "SELECT * FROM users WHERE name = %s"   # placeholder, not concatenation
+    return conn.execute(sql, (name,))             # data bound as a parameter
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+With a parameterized query, the string `' OR '1'='1` is searched for *literally* as a name - it is data, never code. This is not a filter you have to remember to apply; it is structural immunity. Every mature database driver supports it (`%s` in psycopg, `?` in SQLite/JDBC, `$1` in native PostgreSQL). ORMs do this for you - the danger is dropping to raw string-built SQL.
+
+### 🔍 Knowledge Check: Injection
+- [ ] Why does string concatenation let input become executable SQL?
+- [ ] How does a parameter placeholder prevent injection structurally?
+- [ ] What does the attacker input `' OR '1'='1` do to a concatenated query?
+
+## 🧙‍♂️ Chapter 3: Encryption and Auditing - Gold in the Chest and on the Road
+
+*Two final wards: encrypt the treasure so a stolen disk or sniffed connection reveals nothing, and keep a ledger so you can answer "who touched this?" after an incident.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Encryption in transit (TLS) vs at rest (disk/column)
+- When to encrypt at the column level
+- What a useful audit log records
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Encrypt In Transit and At Rest
 
-[Detailed content for chapter 3]
+**In transit** means TLS between the application and the database, so a network eavesdropper sees ciphertext. Require it explicitly:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```bash
+# Force every client connection to use TLS (in postgresql.conf):
+#   ssl = on
+# In the connection string, demand a verified certificate:
+psql "host=db.example.com dbname=warded_vault sslmode=verify-full"
+```
+
+**At rest** means the data on disk is encrypted, so a stolen drive or backup file is useless. This is often handled by full-disk or filesystem encryption (LUKS, cloud-provider volume encryption). For especially sensitive fields, add **column-level encryption** with the `pgcrypto` extension:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+-- Encrypt a secret before it ever rests in a column.
+INSERT INTO secrets (label, payload)
+VALUES ('api-key', pgp_sym_encrypt('super-secret-value', 'encryption-key'));
+
+-- Decrypt only when authorized to read it.
+SELECT pgp_sym_decrypt(payload, 'encryption-key') FROM secrets WHERE label = 'api-key';
+```
+
+**Auditing** records access so a breach cannot hide. A useful audit trail captures *who* (role), *what* (statement/table), *when* (timestamp), and *from where* (client IP). PostgreSQL's `pgaudit` extension or `log_statement = 'mod'` gives you this. Store logs on a separate, append-only system so an attacker who owns the database cannot erase their tracks.
+
+### 🔍 Knowledge Check: Encryption & Auditing
+- [ ] What threat does encryption in transit stop that at-rest encryption does not?
+- [ ] When would you reach for column-level encryption over full-disk?
+- [ ] Why store audit logs on a separate system from the database?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Lock Down a Role
+**Objective**: Create an application role that can read and write one table but cannot drop it.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] `CREATE ROLE` with a login and password
+- [ ] Grant only `SELECT`, `INSERT`, `UPDATE`
+- [ ] Verify the role cannot `DROP TABLE`
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Attempting `DROP TABLE` as the app role fails with a permission error.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Disarm an Injectable Query
+**Objective**: Take a vulnerable string-concatenated query and rewrite it parameterized.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Demonstrate the injection on the vulnerable version (in a safe sandbox)
+- [ ] Rewrite using placeholders and bound parameters
+- [ ] Confirm the malicious input is now treated as literal data
 
-**Validation**: [How to verify success]
+**Validation**: The `' OR '1'='1` input returns zero rows against the safe version.
+
+### 🔴 Advanced Challenge: Encrypt and Audit
+**Objective**: Store a secret with `pgcrypto`, enable statement logging, and produce an audit trail.
+
+**Requirements**:
+- [ ] Encrypt a column value and decrypt it back
+- [ ] Enable `log_statement` or `pgaudit` for modifications
+- [ ] Show a log entry capturing who modified what and when
+
+**Validation**: The plaintext never appears on disk, and the log records the change.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Warden of the Vault** - You enforced least privilege across roles
+- 🛡️ **Bane of the Injector** - You sealed your queries against injection
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Database Access Control** - Grant precisely, deny by default
+- **Secure Query Construction** - Parameterize everything, encrypt the sensitive
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Backup and Recovery - Protect data from loss as well as theft
+- Database Migrations - Apply schema changes safely and auditably
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Backup and Recovery](/quests/0110/backup-recovery/) - Defend against data loss
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Database Migrations](/quests/0110/database-migrations/) - Change schemas safely
+- ⚔️ [Security Fundamentals](/quests/1011/security-fundamentals/) - The CIA triad and defense in depth
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Backup and Recovery](/quests/0110/backup-recovery/)  
+**🏗️ System Engineer**: Explore [Database Migrations](/quests/0110/database-migrations/)  
+**🛡️ Security Specialist**: Advance to [Security Fundamentals](/quests/1011/security-fundamentals/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [PostgreSQL GRANT Reference](https://www.postgresql.org/docs/current/sql-grant.html) - Privileges and roles
+- [PostgreSQL SSL/TLS Setup](https://www.postgresql.org/docs/current/ssl-tcp.html) - Encryption in transit
+- [PostgreSQL pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html) - Column-level encryption
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html) - The definitive guide
+- [OWASP Top 10: A03 Injection](https://owasp.org/Top10/A03_2021-Injection/) - Why injection still tops the list
+- [pgaudit project](https://www.pgaudit.org/) - PostgreSQL audit logging
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [PortSwigger SQL Injection Labs](https://portswigger.net/web-security/sql-injection) - Hands-on, safe practice
+- [CISA Data Encryption Guidance](https://www.cisa.gov/) - At-rest and in-transit principles
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Created a least-privilege application role
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0110 (6) - Database Mastery]]
+**Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Database Fundamentals: The Relational Model and ACID]]
+**Unlocks:** [[Backup and Recovery: Data Protection Strategies for Databases]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-
+</content>

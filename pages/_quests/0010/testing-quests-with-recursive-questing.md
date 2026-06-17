@@ -1,9 +1,8 @@
 ---
 title: 'Recursive Realms: Testing Infinite Loops with AI'
 author: Quest Master IT-Journey Team
-description: Master recursion, unit testing, and AI integration by navigating self-replicating code towers
+description: 'Master Python recursion, base cases, and call stacks while building pytest suites, preventing stack overflows, and applying recursive thinking to AI design.'
 excerpt: Learn recursive problem-solving patterns and comprehensive unit testing
-snippet: Beware the stack overflow curse—always define your base cases!
 preview: images/previews/recursive-realms-testing-infinite-loops-with-ai.png
 date: '2025-10-08T19:11:31.000Z'
 lastmod: '2025-10-09T00:09:00.000Z'
@@ -18,9 +17,6 @@ quest_arc: Testing & Quality Assurance
 quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -34,11 +30,6 @@ validation_criteria:
   completion_requirements:
   - Implement 3 recursive functions
   - Create test suite with >90% coverage
-quest_mapping:
-  coordinates: '[10, 20]'
-  region: Foundation
-  realm: Development
-  biome: Testing
 permalink: /quests/0010/recursive-realms-testing/
 categories:
 - Quests
@@ -63,7 +54,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 0010 (2) Quest: Python Recursion & Testing'
 rewards:
   badges:

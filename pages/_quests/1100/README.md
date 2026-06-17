@@ -1,6 +1,6 @@
 ---
-title: Level 1100 - Data & Templates
-description: Master data integration, financial APIs, and template systems for advanced applications
+title: 'Level 1100 - Data Integration & Template Systems'
+description: 'Work with real-world data sources like SEC EDGAR, consume financial APIs, and build reusable template systems for data-driven applications.'
 preview: images/previews/level-1100-data-templates.png
 permalink: /quests/1100/
 layout: quest-collection
@@ -9,6 +9,14 @@ categories:
 - quests
 lastmod: '2025-12-02T04:46:12.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '1100'
+- master
+- data
+- engineering
 ---
 # Level 1100: Data & Templates
 

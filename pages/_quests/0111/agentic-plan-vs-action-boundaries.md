@@ -1,6 +1,6 @@
 ---
 title: 'The Three Sigils: Plan, Reason, Act'
-description: Master the boundary between agent planning and agent execution. Configure Copilot agents to output structured plans, validate them, and prevent action until approved — eliminating the most dangerous source of agent runaway.
+description: 'Configure a GitHub Copilot coding agent to produce a structured plan, define its JSON schema, and gate every action behind human approval.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-plan-vs-action-boundaries.png
 level: '0111'
@@ -46,18 +46,6 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests:
   - /quests/1000/agentic-observability-and-control/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  sequel_quests:
-  - /quests/1000/agentic-observability-and-control/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
 rewards:
   badges:
   - 📜 Plan-First Architect
@@ -83,11 +71,6 @@ validation_criteria:
   knowledge_checks:
   - Understands why separating plan from action reduces agent risk
   - Can describe what a valid structured agent plan looks like
-quest_mapping:
-  coordinates: '[1, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: SDLC Forest
 comments: true
 draft: false
 redirect_from:

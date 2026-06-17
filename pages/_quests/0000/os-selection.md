@@ -1,7 +1,7 @@
 ---
-title: OS Selection
+title: 'OS Selection: Choose Your Realm of Power'
 author: IT-Journey Team
-description: Choose your operating system and understand the unique strengths of Windows, macOS, and Linux for your IT journey
+description: 'Compare Windows, macOS, and Linux, match each platform to your IT career goals, and try a second OS via a virtual machine or dual boot.'
 excerpt: Selecting the right operating system is a crucial first step in your IT adventure
 preview: images/previews/os-selection.png
 date: '2023-11-25T14:12:43.000Z'
@@ -18,30 +18,11 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/it-fundamentals/
+  - /quests/0000/character-selection/
   unlocks_quests:
   - /quests/0000/hello-windows/
   - /quests/0000/hello-macos/
   - /quests/0000/linux-fundamentals/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/hello-windows/
-  - /quests/0000/hello-macos/
-  - /quests/0000/linux-fundamentals/
-  parallel_quests:
-  - /quests/0000/character-selection/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  skill_trees:
-  - Operating Systems
-  - Platform Selection
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:

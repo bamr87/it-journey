@@ -1,63 +1,48 @@
 ---
-title: 'Tech Speaking and Writing: Building Your Technical Brand'
+title: 'Tech Speaking and Writing: RFCs, Docs, and Talks'
 author: IT-Journey Team
-description: Master technical communication through speaking and writing. Learn conference speaking, technical blogging, documentation, and building thought leadership.
-excerpt: Develop technical speaking and writing skills for thought leadership
-preview: images/previews/tech-speaking-and-writing-descriptive-subtitle.png
+description: Communicate technical ideas with impact. Learn technical writing, design docs and RFCs, structuring a conference talk, and persuading an audience to act.
+excerpt: Write design docs and RFCs and give talks that move an audience to act
+preview: images/previews/tech-speaking-and-writing-rfcs-and-talks.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1111'
 difficulty: 🔴 Hard
-estimated_time: 4-5 hours
-primary_technology: general
+estimated_time: 3-4 hours
+primary_technology: markdown
 quest_type: main_quest
 quest_series: Leadership Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Crown of Mastery
+quest_arc: The Architect-King's Ascension
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1111/technical-leadership/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
+  unlocks_quests:
+  - /quests/1111/open-source-contribution/
+  - /quests/1111/building-technical-communities/
+skill_focus: communication
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Real technical experience to write and speak about
+  - Comfort writing in Markdown
+  - Completion of Technical Leadership (recommended)
   system_requirements:
-  - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A Markdown editor for design docs and RFCs
+  - Slides tool and a way to record yourself (optional but recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You have ideas worth sharing and want them to land
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - One design doc or RFC drafted and one talk outline written
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can structure an RFC that drives a decision
+  - Can outline a talk with a single clear takeaway
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the BLUF principle
+  - Can distinguish a design doc from an RFC
 permalink: /quests/1111/tech-speaking-writing/
 categories:
 - Quests
@@ -67,8 +52,9 @@ tags:
 - '1111'
 - communication
 - main_quest
-- communication
-- hands-on
+- technical-writing
+- rfc
+- public-speaking
 - gamified-learning
 keywords:
   primary:
@@ -76,112 +62,78 @@ keywords:
   - communication
   - main_quest
   secondary:
-  - communication
-  - hands-on
-  - gamified-learning
+  - technical-writing
+  - design-docs
+  - public-speaking
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1111 (15) Quest: Main Quest - Communication'
+sub_title: 'Level 1111 (15) Quest: Main Quest - Tech Speaking and Writing'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Wordsmith of the Realm - Wrote a doc that changed a decision
+  - 🛡️ Voice That Carries - Gave a talk an audience remembered
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ RFC and Design-Doc Authoring
+  - 🧠 Talk Structuring
+  progression_points: 90
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Continued progress through the Level 1111 Leadership & Innovation quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, Master adventurer. You have built systems few can match - but a brilliant idea trapped inside one head changes nothing. The leaders whose names echo through the realm are those who could make others SEE what they saw. This quest, **Tech Speaking and Writing**, teaches you to turn knowledge into influence: to write a design doc that wins the room, an RFC that closes a debate, and a talk an audience actually remembers.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you freeze at the thought of a stage or merely want your design docs to stop being ignored, this adventure forges the communicator's craft - the highest-leverage skill at the top of the technical ladder.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In every age, the most powerful figures were rarely the strongest warriors - they were the ones who could stand before a council and make a hundred minds move as one. The scribe who wrote the clearest decree shaped more of the realm than the soldier who guarded the gate. Words, well-ordered, are a force multiplier no sword can match.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Engineering is the same. A staff engineer's leverage is mostly prose: the design docs, RFCs, and talks that align dozens of people before a single line of code is written. This quest teaches you to wield that quiet, decisive power.*
 
 ## 🎯 Quest Objectives
 
 By the time you complete this epic journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Technical Writing Fundamentals** - Write clearly, lead with the point, and respect the reader's time
+- [ ] **Design Docs and RFCs** - Structure a proposal that drives a real decision
+- [ ] **Structuring a Talk** - Build a talk around one takeaway with a strong arc
+- [ ] **Persuasion** - Move an audience from "interesting" to "let's do it"
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Writing for Skim-Readers** - Make docs work for people who only read headings
+- [ ] **Handling Q&A** - Field hard questions without losing the room
+- [ ] **Building a Body of Work** - Turn one talk or post into a durable technical brand
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain the BLUF principle and apply it to your own writing
+- [ ] Draft an RFC that gets people to agree or disagree clearly
+- [ ] Outline a talk a stranger can summarize in one sentence
+- [ ] Rewrite a wall of text so a skim-reader still gets it
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Real technical experience worth writing and speaking about
+- [ ] Comfort writing in Markdown
+- [ ] Completion of [Technical Leadership](/quests/1111/technical-leadership/) (recommended)
 
 ### 🛠️ System Requirements
-- [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A Markdown editor for design docs and RFCs
+- [ ] A slides tool (Google Slides, Keynote, reveal.js, or similar)
+- [ ] A way to record yourself speaking (phone camera is fine)
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 4-5 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You have ideas worth sharing and want them to actually land
+- [ ] You are willing to cut your own clever sentences for clarity
+- [ ] Ready for 3-4 hours of focused work
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Your words need a durable home. Choose where you will draft and publish.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +141,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# A versioned writing folder makes your drafts reviewable and reusable
+mkdir -p ~/writing/{rfcs,design-docs,talks}
+cd ~/writing && git init
+echo "# RFC-001: <title>" > rfcs/rfc-001.md
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +155,11 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir $HOME\writing\rfcs, $HOME\writing\design-docs, $HOME\writing\talks
+Set-Location $HOME\writing
+git init
+"# RFC-001: <title>" | Out-File rfcs\rfc-001.md
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +169,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+mkdir -p ~/writing/{rfcs,design-docs,talks}
+cd ~/writing && git init
+echo "# RFC-001: <title>" > rfcs/rfc-001.md
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,219 +182,241 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Publish in the open: a blog repo gives your writing a public, lasting home
+# reveal.js or Slidev let you keep slides in version control beside your notes.
+echo "Use a static-site repo (Jekyll, Astro) for posts; reveal.js for talks."
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Technical Writing - Respecting the Reader's Time
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*The number-one mistake in technical writing is burying the point. Readers are busy, skeptical, and skimming. Write for them, not for the joy of your own prose.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- BLUF: Bottom Line Up Front
+- Writing for skim-readers
+- Cutting words without losing meaning
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Core Principles
 
-**Step 1: Environment Setup**
+**BLUF (Bottom Line Up Front):** state your conclusion or ask in the first two sentences. Everything after is justification for those who want it. A reader should be able to act after the first paragraph.
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+```text
+❌ Buried:  "We evaluated three queues over two weeks, considering throughput,
+            operational burden, and cost. After much analysis... [400 words]
+            ...therefore we recommend SQS."
+
+✅ BLUF:    "Recommendation: adopt SQS for the events pipeline.
+            It is the cheapest option that meets our throughput needs with the
+            least operational burden. Details and alternatives below."
 ```
 
-**Step 2: Core Concepts**
+**Write for skim-readers.** Most people read your headings and the first sentence of each paragraph, then decide whether to slow down. Make those load-bearing:
 
-[Explanation of fundamental concepts]
+- [ ] Headings say *what the section concludes*, not just its topic
+- [ ] The first sentence of each paragraph carries the point
+- [ ] Bullets and tables replace dense paragraphs where possible
+- [ ] You can delete 20% of the words and lose no meaning - so do
 
-**Step 3: First Implementation**
+**The omit-needless-words pass:** after drafting, hunt for "in order to" (-> "to"), "due to the fact that" (-> "because"), and every hedge ("I think maybe we could possibly"). Confidence is clarity.
 
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Technical Writing
+- [ ] Rewrite a buried recommendation as a BLUF
+- [ ] What should a heading do beyond naming a topic?
+- [ ] Which three filler phrases will you hunt and delete?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **BLUF applied**: You moved your conclusion to the top of one doc
+- [ ] **Trimmed 20%**: You deleted a fifth of the words from a paragraph
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Design Docs and RFCs - Driving Decisions on Paper
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*An RFC (Request for Comments) or design doc is how senior engineers think out loud and align a team before building. A good one turns a hallway argument into a written, reviewable, durable decision.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- The standard RFC structure
+- Surfacing alternatives and trade-offs honestly
+- Inviting dissent so the decision is real
 
-### 🏗️ Advanced Implementations
+### 🏗️ The RFC Template
 
-[Detailed content for chapter 2]
+```markdown
+# RFC-NNN: <Short, declarative title>
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+- Status: Draft | In Review | Accepted | Rejected | Superseded
+- Author(s): <name>      Reviewers: <names>
+- Created: <date>        Decision by: <date>
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+## Summary (BLUF)
+One paragraph: what we propose and why, decision-ready.
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+## Problem / Motivation
+What hurts today, in concrete terms. Who feels it. Why now.
+
+## Goals and Non-Goals
+- Goals: <what success looks like, measurable if possible>
+- Non-Goals: <what we are explicitly NOT solving here>
+
+## Proposal
+The recommended approach, in enough detail to estimate and critique.
+
+## Alternatives Considered
+| Option | Pros | Cons | Why not chosen |
+| --- | --- | --- | --- |
+| A (chosen) | ... | ... | — |
+| B | ... | ... | ... |
+
+## Trade-offs and Risks
+What we give up, what could go wrong, how we'd detect/mitigate it.
+
+## Rollout / Migration
+How we ship it safely, and how we'd roll back.
+
+## Open Questions
+The things we genuinely don't know yet — invite the reader to weigh in.
+```
+
+The "Alternatives Considered" and "Open Questions" sections are what separate an RFC from a sales pitch. A doc that only argues for one option invites suspicion; one that honestly weighs the rejected paths earns trust - and gets approved faster.
+
+A **design doc** is the close cousin: it leans more on architecture (diagrams, data models, sequence flows) and less on "should we?" Use an RFC when the decision is contested; a design doc when the decision is largely made and you need to align on the *how*.
+
+### 🔍 Knowledge Check: Design Docs and RFCs
+- [ ] Why include alternatives you rejected?
+- [ ] When do you write an RFC vs a design doc?
+- [ ] What belongs in "Non-Goals" and why does it matter?
+
+## 🧙‍♂️ Chapter 3: Talks That Persuade - One Idea, Well Delivered
+
+*A talk is not a document read aloud. Its constraint is brutal: the audience hears it once, in order, with no rewind. So a talk must do one thing - land a single, memorable idea.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- The single-takeaway rule
+- The problem-tension-resolution arc
+- Handling Q&A without losing the room
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ The Talk Outline Template
 
-[Detailed content for chapter 3]
+```text
+TITLE: <promises the takeaway>
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+THE ONE TAKEAWAY (finish this sentence):
+  "If the audience remembers ONE thing, it's: ___________"
+
+OPEN (hook, ~10%):
+  A story, a surprising number, or a painful problem the audience shares.
+  Goal: make them lean in within 60 seconds.
+
+TENSION (the problem, ~25%):
+  Make the problem vivid and relatable BEFORE offering the solution.
+  No one cares about your answer until they feel the question.
+
+RESOLUTION (your idea, ~45%):
+  The insight/approach. 2-3 supporting points, each with a concrete example
+  or demo. One idea per slide; slides are billboards, not teleprompters.
+
+CLOSE (~10%, callback to the open):
+  Restate the ONE takeaway. End with a clear "go do this Monday" action.
+
+Q&A:
+  Repeat each question before answering (for remote/recording + clarity).
+  "I don't know, but here's how I'd find out" beats bluffing every time.
+```
+
+The most common talk failure is *too much content*. Cut ruthlessly: a talk that lands one idea beats a talk that mentions ten. Rehearse out loud, on a timer, at least three times - your slides will change once you hear yourself.
+
+### 🔍 Knowledge Check: Talks
+- [ ] State the single takeaway for a talk you could give today
+- [ ] Why must tension come before resolution?
+- [ ] What is the best way to answer a question you can't answer?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: BLUF a Real Doc
+**Objective**: Take a real message, doc, or PR description you wrote and rewrite it BLUF-first.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Conclusion or ask in the first two sentences
+- [ ] Headings that state conclusions
+- [ ] 20% fewer words than the original
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: A reader can act after the first paragraph.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Draft an RFC
+**Objective**: Write a real RFC for a decision your team faces, using the template.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] At least two honestly-weighed alternatives
+- [ ] Explicit non-goals and open questions
+- [ ] Circulated to at least one reviewer for comments
 
-**Validation**: [How to verify success]
+**Validation**: A reviewer can agree or disagree clearly because the trade-offs are explicit.
+
+### 🔴 Advanced Challenge: Outline and Record a Talk
+**Objective**: Build a talk outline with one takeaway, then record a 5-minute version.
+
+**Requirements**:
+- [ ] A single, written takeaway sentence
+- [ ] Problem-tension-resolution arc
+- [ ] Recorded once and watched back for pacing
+
+**Validation**: A friend who watches can state your takeaway in one sentence.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Wordsmith of the Realm** - You wrote a doc that changed a decision
+- 🛡️ **Voice That Carries** - You delivered a talk an audience remembered
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **RFC and Design-Doc Authoring** - Drive decisions on paper
+- **Talk Structuring** - One idea, well delivered
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Open Source Contribution - Communicate across a public project
+- Building Technical Communities - Speak and write to grow an ecosystem
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +90 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Open Source Contribution](/quests/1111/open-source-contribution/) - Put your writing to work in public
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Building Technical Communities](/quests/1111/building-technical-communities/) - Reach a wider audience
+- ⚔️ [Architecture Reviews](/quests/1111/architecture-reviews/) - Where design docs meet live debate
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Open Source Contribution](/quests/1111/open-source-contribution/)  
+**🏗️ System Engineer**: Explore [Architecture Reviews](/quests/1111/architecture-reviews/)  
+**🛡️ Security Specialist**: Advance to [Building Technical Communities](/quests/1111/building-technical-communities/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Google Technical Writing Courses](https://developers.google.com/tech-writing) - Free, excellent fundamentals
+- [Google's design doc practice (industrysketch)](https://www.industrialempathy.com/posts/design-docs-at-google/) - How a large org uses design docs
+- [Rust RFC process](https://github.com/rust-lang/rfcs) - A public, mature RFC workflow to learn from
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Write the Docs community](https://www.writethedocs.org/) - The home of documentation practitioners
+- [Speaking.io by Zach Holman](https://speaking.io/) - A practical guide to conference talks
+- [The Architecture of Open Source Applications](https://aosabook.org/) - Models of clear technical explanation
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [On Writing Well by William Zinsser](https://www.harpercollins.com/products/on-writing-well-william-zinsser) - The classic on clear nonfiction
+- [Made to Stick - Heath brothers](https://heathbrothers.com/books/made-to-stick/) - Why some ideas survive and others die
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
-- [ ] ✅ Answered all knowledge check questions
-- [ ] ✅ Completed at least one mastery challenge
+- [ ] ✅ Rewrote one doc BLUF-first
+- [ ] ✅ Drafted an RFC with honest alternatives
+- [ ] ✅ Outlined (and ideally recorded) a talk with one takeaway
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
-
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
 
 ## 🕸️ Knowledge Graph
 
@@ -495,5 +424,6 @@ Before marking this quest as complete, ensure you've:
 
 **Level hub:** [[Level 1111: Leadership & Innovation]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Technical Leadership: Leading Without Authority and Setting Tech Vision]]
+**Unlocks:** [[Open Source Contribution: Leading and Maintaining Projects]] · [[Building Technical Communities: Growing Developer Ecosystems]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

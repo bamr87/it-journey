@@ -1,63 +1,48 @@
 ---
-title: 'Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide'
+title: 'Python for Data Science: NumPy, Pandas & Matplotlib'
 author: IT-Journey Team
-description: Master Python data science libraries. Learn NumPy for numerical computing, Pandas for data manipulation, Matplotlib and Seaborn for visualization, and Jupyter notebooks for analysis workflows.
-excerpt: Master NumPy, Pandas, and Matplotlib for Python data science and analysis workflows
+description: 'Forge the Data Artisan''s Toolkit: master NumPy vectorization, Pandas DataFrames, exploratory analysis, and Matplotlib charts, then train a scikit-learn model.'
+excerpt: Master NumPy, Pandas, Matplotlib, and EDA for Python data science workflows
 preview: images/previews/python-for-data-science-descriptive-subtitle.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1101'
 difficulty: 🟡 Medium
 estimated_time: 4-5 hours
-primary_technology: python
+primary_technology: pandas
 quest_type: main_quest
 quest_series: AI/ML Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Oracle's Ascent
+quest_arc: The Data Artisan's Toolkit
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
-skill_focus: fullstack
+  unlocks_quests:
+  - /quests/1101/ml-fundamentals/
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfortable with basic Python syntax (variables, functions, loops)
+  - Understands lists, dictionaries, and importing modules
+  - No prior data science experience required
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Python 3.10+ with pip or conda
+  - A Jupyter environment or VS Code with the Python extension
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - You can write and run a small Python script
+  - You are ready to manipulate tabular data and make charts
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A short exploratory data analysis on a real dataset
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can load, clean, and summarize a DataFrame
+  - Can produce a labeled visualization that answers a question
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands vectorization and why it beats Python loops
+  - Can handle missing values deliberately
 permalink: /quests/1101/python-data-science/
 categories:
 - Quests
@@ -65,9 +50,8 @@ categories:
 - Medium
 tags:
 - '1101'
-- python
-- numpy
 - pandas
+- numpy
 - matplotlib
 - main_quest
 - data-science
@@ -76,118 +60,84 @@ tags:
 keywords:
   primary:
   - '1101'
-  - python
-  - numpy
   - pandas
-  secondary:
+  - numpy
   - matplotlib
-  - main_quest
+  secondary:
+  - exploratory-data-analysis
   - data-science
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 1101 (13) Quest: Main Quest - Python Data Science'
+sub_title: 'Level 1101 (13) Quest: Main Quest - Python for Data Science'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Data Artisan - Wrangled, cleaned, and visualized real data
+  - 📊 Insight Seeker - Completed a full exploratory data analysis
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ NumPy & Pandas Mastery
+  - 📈 Matplotlib Visualization
+  progression_points: 60
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Readiness for the Machine Learning Fundamentals quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Before the Oracle can teach a machine to learn, you must first master the **Data Artisan's Toolkit**. Raw data arrives messy, missing, and mute. This quest, **Python for Data Science**, forges the three legendary instruments every practitioner carries: NumPy for raw numerical power, pandas for shaping tabular data, and Matplotlib for making data speak in pictures.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have never touched a DataFrame or you wrangle spreadsheets daily and want the real tools, this adventure will turn chaos into clarity.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early days, analysts toiled over numbers one cell at a time. Then the artisans of the scientific Python guild forged NumPy - arrays that compute on millions of values at once through vectorization. Upon that foundation rose pandas, which gave data a name, an index, and a shape. With Matplotlib, the numbers finally became visible. Together they form the bedrock beneath every machine learning model you will ever train.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Learn these tools well, and the messiest dataset becomes a story you can read.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **NumPy Arrays** - Create, index, and compute on arrays using vectorized operations
+- [ ] **Pandas DataFrames** - Load, filter, group, and aggregate tabular data
+- [ ] **Exploratory Data Analysis** - Summarize a dataset and handle missing values deliberately
+- [ ] **Visualization** - Build a clearly labeled chart that answers a real question
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **GroupBy Aggregations** - Split, apply, and combine to compute group statistics
+- [ ] **Merging Data** - Join two DataFrames on a shared key
+- [ ] **First scikit-learn Model** - Feed a cleaned DataFrame into a simple estimator
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain why a vectorized NumPy operation beats a Python loop
+- [ ] Decide whether to drop or impute missing values for a given column
+- [ ] Produce a chart that a non-technical person can read at a glance
+- [ ] Troubleshoot a `SettingWithCopyWarning` without panic
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic Python: variables, functions, loops, lists, and dictionaries
+- [ ] Familiarity with importing modules
+- [ ] No prior data science experience required
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Python 3.10 or newer installed and on your PATH
+- [ ] A Jupyter environment or VS Code with the Python extension
+- [ ] Internet connection for installing packages
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 4-5 hours of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can write and run a small Python program
+- [ ] You are comfortable experimenting in a notebook or REPL
+- [ ] Ready for 4-5 hours of hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Create an isolated environment so your data tools stay tidy.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -195,23 +145,11 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python3 -m venv ~/ds-quest && source ~/ds-quest/bin/activate
+pip install --upgrade pip
+pip install numpy pandas matplotlib seaborn scikit-learn jupyter
+python -c "import pandas as pd; print('pandas', pd.__version__)"
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -221,26 +159,12 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+python -m venv $HOME\ds-quest
+& $HOME\ds-quest\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install numpy pandas matplotlib seaborn scikit-learn jupyter
+python -c "import pandas as pd; print('pandas', pd.__version__)"
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -250,28 +174,12 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y python3-venv python3-pip
+python3 -m venv ~/ds-quest && source ~/ds-quest/bin/activate
+pip install --upgrade pip
+pip install numpy pandas matplotlib seaborn scikit-learn jupyter
+python -c "import pandas as pd; print('pandas', pd.__version__)"
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -281,225 +189,275 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Google Colab and most data science images ship these preinstalled.
+pip install "numpy>=1.26" "pandas>=2.2" matplotlib seaborn scikit-learn
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: NumPy - The Engine of Vectorized Power
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*NumPy is the foundation. Its `ndarray` stores numbers contiguously in memory and operates on the whole array at once - this is vectorization, and it is dramatically faster than Python loops.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Creating and reshaping arrays
+- Vectorized arithmetic and broadcasting
+- Boolean masking to filter data
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Arrays in Action
 
-**Step 1: Environment Setup**
+```python
+import numpy as np
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Create arrays
+a = np.array([1, 2, 3, 4, 5])
+grid = np.arange(12).reshape(3, 4)  # 3 rows, 4 columns
+
+# Vectorized math: one operation applies to every element
+print(a * 2)            # [ 2  4  6  8 10] — no loop needed
+print(a.mean(), a.std())
+
+# Broadcasting: a scalar (or smaller array) stretches across a larger one
+print(grid + 100)
+
+# Boolean masking: select elements that satisfy a condition
+print(a[a > 2])         # [3 4 5]
 ```
 
-**Step 2: Core Concepts**
+A loop summing a million numbers in pure Python is slow; `arr.sum()` runs the same work in optimized C. Vectorize whenever you can.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: NumPy
+- [ ] What does `reshape(3, 4)` require about the original array size?
+- [ ] Why is `a * 2` faster than a Python `for` loop?
+- [ ] What does `a[a > 2]` return?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Imported NumPy**: `import numpy as np` works
+- [ ] **Vectorized a calculation**: Replaced a loop with an array operation
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Pandas - Giving Data a Name and Shape
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A pandas `DataFrame` is a labeled table: rows have an index, columns have names. It is the workhorse of data science.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Loading data into a DataFrame
+- Selecting, filtering, and creating columns
+- Grouping and aggregating
 
-### 🏗️ Advanced Implementations
+### 🏗️ DataFrames in Action
 
-[Detailed content for chapter 2]
+```python
+import pandas as pd
+from sklearn.datasets import load_iris
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+# Build a DataFrame from a real dataset
+data = load_iris(as_frame=True)
+df = data.frame                      # features + target as named columns
+df["species"] = df["target"].map(dict(enumerate(data.target_names)))
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+# Inspect
+print(df.head())
+print(df.shape)                      # (rows, columns)
+print(df.describe())                 # summary statistics per column
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+# Filter rows and select columns
+big_petals = df[df["petal length (cm)"] > 4.0]
+print(big_petals[["species", "petal length (cm)"]].head())
+
+# Group and aggregate: average measurements per species
+summary = df.groupby("species").mean(numeric_only=True)
+print(summary)
+```
+
+The **split-apply-combine** pattern (`groupby`) is the most powerful idea in pandas: split rows into groups, apply a function to each, and combine the results.
+
+### 🔍 Knowledge Check: Pandas
+- [ ] What does `df.describe()` compute?
+- [ ] How do you select all rows where a column exceeds a threshold?
+- [ ] What three steps does `groupby` perform?
+
+## 🧙‍♂️ Chapter 3: Exploratory Data Analysis and Cleaning
+
+*Real data is dirty. EDA is the detective work of understanding a dataset before modeling: its shape, its distributions, and its gaps.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Detecting and handling missing values
+- Spotting outliers and distributions
+- Deciding to drop versus impute
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Cleaning in Action
 
-[Detailed content for chapter 3]
+```python
+import pandas as pd
+import numpy as np
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+# Simulate a messy dataset
+df = pd.DataFrame({
+    "age": [25, 32, np.nan, 47, 51, np.nan, 29],
+    "income": [40000, 52000, 61000, np.nan, 88000, 47000, 50000],
+    "city": ["NYC", "LA", "NYC", "SF", np.nan, "LA", "SF"],
+})
+
+# 1. Find missing values
+print(df.isna().sum())
+
+# 2. Impute numeric columns with the median (robust to outliers)
+df["age"] = df["age"].fillna(df["age"].median())
+df["income"] = df["income"].fillna(df["income"].median())
+
+# 3. Fill categorical with the most frequent value (mode)
+df["city"] = df["city"].fillna(df["city"].mode()[0])
+
+print(df.isna().sum())   # all zeros now
+print(df)
+```
+
+When more than half a column is missing, dropping it often beats imputing fabricated values. Always document the choice - silent imputation hides assumptions.
+
+### 🔍 Knowledge Check: EDA
+- [ ] Why prefer the median over the mean when imputing skewed data?
+- [ ] When might you drop a column instead of filling it?
+- [ ] How do you count missing values per column?
+
+## 🧙‍♂️ Chapter 4: Visualization - Making Data Speak
+
+*A chart turns a table into an insight. Matplotlib is the foundational plotting library; every label and axis you add increases its honesty.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Building line, bar, scatter, and histogram plots
+- Labeling axes and titles for clarity
+
+### 🏗️ Charts in Action
+
+```python
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+data = load_iris(as_frame=True)
+df = data.frame
+
+fig, ax = plt.subplots(1, 2, figsize=(10, 4))
+
+# Histogram of one feature
+ax[0].hist(df["sepal length (cm)"], bins=15, color="steelblue", edgecolor="white")
+ax[0].set_title("Distribution of Sepal Length")
+ax[0].set_xlabel("Sepal length (cm)")
+ax[0].set_ylabel("Count")
+
+# Scatter colored by species
+scatter = ax[1].scatter(
+    df["petal length (cm)"], df["petal width (cm)"],
+    c=df["target"], cmap="viridis"
+)
+ax[1].set_title("Petal Length vs. Width")
+ax[1].set_xlabel("Petal length (cm)")
+ax[1].set_ylabel("Petal width (cm)")
+
+plt.tight_layout()
+plt.savefig("iris_eda.png", dpi=120)   # or plt.show() in a notebook
+print("Saved iris_eda.png")
+```
+
+A chart without axis labels is a riddle. Always title it and label both axes.
+
+### 🔍 Knowledge Check: Visualization
+- [ ] Which plot reveals the distribution of a single variable?
+- [ ] Which plot reveals the relationship between two variables?
+- [ ] Why must every axis carry a label?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Summarize a Dataset
+**Objective**: Load a built-in dataset and produce a one-screen summary.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Load `load_wine(as_frame=True).frame` into a DataFrame
+- [ ] Print `.shape`, `.head()`, and `.describe()`
+- [ ] Report which feature has the largest spread (std)
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Your script prints the summary without errors.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Clean and Group
+**Objective**: Handle missing data and compute group statistics.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Inject some `np.nan` values into a copy of the wine DataFrame
+- [ ] Impute them with a documented strategy
+- [ ] Group by the target class and report mean alcohol content
 
-**Validation**: [How to verify success]
+**Validation**: No missing values remain and the grouped table prints.
+
+### 🔴 Advanced Challenge: Full EDA + First Model
+**Objective**: Connect data wrangling to machine learning.
+
+**Requirements**:
+- [ ] Clean a dataset and visualize at least two features
+- [ ] Split into features `X` and target `y`
+- [ ] Fit a `LogisticRegression` and print its `.score()` on a test split
+
+**Validation**: A trained model reports an accuracy on held-out data.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Data Artisan** - You wrangled, cleaned, and visualized real data
+- 📊 **Insight Seeker** - You completed a full exploratory data analysis
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **NumPy & Pandas Mastery** - Vectorized computing and tabular wrangling
+- **Matplotlib Visualization** - Turning numbers into readable pictures
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Machine Learning Fundamentals - Feed your clean data into real models
+- Neural Networks Deep Dive - Build the machinery behind deep learning
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +60 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Machine Learning Fundamentals](/quests/1101/ml-fundamentals/) - Train your first models
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Computer Vision](/quests/1101/computer-vision/) - Work with image data
+- ⚔️ [Natural Language Processing](/quests/1101/natural-language-processing/) - Work with text data
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Machine Learning Fundamentals](/quests/1101/ml-fundamentals/)  
+**🏗️ System Engineer**: Explore [MLOps Engineering](/quests/1101/mlops/)  
+**📊 Data Scientist**: Advance to [Machine Learning Fundamentals](/quests/1101/ml-fundamentals/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [NumPy User Guide](https://numpy.org/doc/stable/user/) - The array library reference
+- [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html) - DataFrame operations
+- [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html) - Plotting fundamentals
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Kaggle Learn: Pandas](https://www.kaggle.com/learn/pandas) - Hands-on micro-course
+- [Stack Overflow: pandas tag](https://stackoverflow.com/questions/tagged/pandas) - Q&A
+- [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html) - Quick start
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) - Free online book
+- [Seaborn Gallery](https://seaborn.pydata.org/examples/index.html) - Statistical visualization examples
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Cleaned and visualized a real dataset
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1101: Machine Learning & AI]]
+**Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

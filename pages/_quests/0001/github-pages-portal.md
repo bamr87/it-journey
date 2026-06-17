@@ -3,7 +3,6 @@ title: 'The GitHub Pages Portal: Forging Your Digital Realm'
 author: IT-Journey Team
 description: Master the art of deploying static websites using GitHub Pages, transforming your code into live web experiences with no server required.
 excerpt: Transform your code into a live website using GitHub Pages - the free hosting solution for developers.
-snippet: 'From repository to website: Deploy with GitHub Pages!'
 preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T04:27:16.000Z'
@@ -16,17 +15,9 @@ quest_series: Web Development Fundamentals
 quest_line: Web Development
 quest_arc: Deployment
 quest_dependencies:
-  required: []
-  recommended:
-  - Basic Git knowledge
-  - GitHub account
-quest_relationships:
-  unlocks:
-  - 'Level 010: Jekyll Mastery'
-  - 'Level 011: Static Site Generators'
-  related:
-  - 'Level 001: HTML Basics'
-  - 'Level 001: CSS Fundamentals'
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
@@ -38,10 +29,6 @@ validation_criteria:
 - Custom domain configuration (optional bonus)
 - Repository properly configured for Pages
 - Site accessible via GitHub Pages URL
-quest_mapping:
-  binary_level: '001'
-  decimal_level: 1
-  skill_tree: Web Development
 permalink: /quests/0001/github-pages-portal/
 categories:
 - Quests
@@ -66,17 +53,12 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 001 (1) Quest: Main - GitHub Pages'
 rewards:
 - GitHub Pages deployment badge
 - Live website portfolio piece
 - Understanding of static site hosting
 - Foundation for Jekyll and other SSGs
-related_quests:
-- 'Level 001: HTML Basics'
-- 'Level 001: CSS Fundamentals'
-- 'Level 010: Jekyll Mastery'
 layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **The GitHub Pages Portal: Forging Your Digital Realm** - an epic journey that will transform your code into live web experiences. This quest will guide you through deploying your first website using GitHub Pages, the free hosting solution that turns your GitHub repositories into beautiful, accessible websites.*
@@ -443,7 +425,7 @@ git push origin main
    ### Project 1: GitHub Pages Mastery
    - **Status**: ✅ Completed
    - **Technologies**: HTML, CSS, Jekyll
-   - **Live Demo**: [View Site]({{ site.url }})
+   - **Live Demo**: [View Site]({% raw %}{{ site.url }}{% endraw %})
    
    ### Project 2: Portfolio Foundation
    - **Status**: 🚧 In Progress
@@ -740,7 +722,7 @@ GitHub Pages represents the evolution of web hosting from complex server managem
 ---
 
 **Quest Completed**: Level 001 - The GitHub Pages Portal  
-**Date Completed**: {{ "now" | date: "%Y-%m-%d" }}  
+**Date Completed**: {% raw %}{{ "now" | date: "%Y-%m-%d" }}{% endraw %}  
 **Next Recommended Quest**: Level 010: Jekyll Mastery
 
 ## 🕸️ Knowledge Graph

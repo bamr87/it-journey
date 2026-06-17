@@ -1,6 +1,6 @@
 ---
-title: Linux Fundamentals
-description: Basic Linux concepts including navigation, scripting, security, and networking
+title: 'Linux Fundamentals: Enter the Penguin''s Domain'
+description: 'Navigate the Linux file system, write Bash scripts, master rwx permissions, and use SSH, cron, and networking tools in the Penguin''s Domain.'
 preview: /images/previews/linux-fundamentals.png
 author: bamr87
 permalink: /quests/0000/linux-fundamentals/
@@ -66,29 +66,11 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/os-selection/
   - /quests/0000/hello-noob/
-  unlocks_quests:
-  - /quests/0000/terminal-fundamentals/
-  - /quests/0000/side-quests/bash-run/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/terminal-fundamentals/
-  parallel_quests:
   - /quests/0000/hello-windows/
   - /quests/0000/hello-macos/
-learning_paths:
-  primary_paths:
-  - System Administration
-  - Software Development
-  - DevOps
-  character_classes:
-  - 🏗️ System Engineer
-  - 💻 Software Developer
-  - 🛡️ Security Specialist
-  skill_trees:
-  - Linux Administration
-  - Shell Scripting
-  - Networking
+  unlocks_quests:
+  - /quests/0000/terminal-fundamentals/
+  - /quests/0000/bash-run/
 keywords:
   primary:
   - linux

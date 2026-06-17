@@ -1,63 +1,50 @@
 ---
-title: 'Secure Coding Practices: OWASP Top 10 Vulnerability Prevention'
+title: 'Secure Coding: Preventing the OWASP Top 10'
 author: IT-Journey Team
-description: Learn secure coding practices to prevent OWASP Top 10 vulnerabilities. Master input validation, output encoding, authentication, and secure development patterns.
-excerpt: Write secure code and prevent OWASP Top 10 vulnerabilities in your applications
-preview: images/previews/secure-coding-practices-owasp-top-10-descriptive-s.png
+description: 'Forge code that defeats the OWASP Top 10: master input validation, injection prevention, authentication, secrets handling, and dependency security.'
+excerpt: Write secure code that defeats injection, broken access control, weak auth, and leaked secrets
+preview: images/previews/secure-coding-practices-owasp-top-10-vulnerability.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:44:46.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
 primary_technology: security
 quest_type: main_quest
 quest_series: Security Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Warrior's Bastion
+quest_arc: Forging the Hardened Codebase
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/1011/security-fundamentals/
   recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  unlocks_quests:
+  - /quests/1011/threat-modeling/
+  - /quests/1011/penetration-testing/
 skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Completion of Security Fundamentals (recommended)
+  - Comfort writing code in at least one language (examples use Python, JS, SQL)
+  - Basic understanding of how web requests and databases interact
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A code editor or IDE (VS Code recommended)
+  - A language runtime such as Python 3.10+ or Node.js 18+
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable building small applications and reading stack traces
+  - Ready to refactor insecure code into secure equivalents
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - At least one vulnerable code snippet refactored into a secure version
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can rewrite a SQL string concatenation as a parameterized query
+  - Can hash a password correctly with a modern KDF
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between authentication and authorization
+  - Can explain why secrets must never be committed to source control
 permalink: /quests/1011/secure-coding/
 categories:
 - Quests
@@ -67,7 +54,8 @@ tags:
 - '1011'
 - security
 - main_quest
-- security
+- owasp
+- input-validation
 - hands-on
 - gamified-learning
 keywords:
@@ -76,112 +64,79 @@ keywords:
   - security
   - main_quest
   secondary:
-  - security
-  - hands-on
-  - gamified-learning
+  - secure-coding
+  - injection-prevention
+  - dependency-security
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 1011 (11) Quest: Main Quest - Secure Coding'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Codesmith of the Bastion - Forged code that resists the OWASP Top 10
+  - 🛡️ Injection Slayer - Eliminated injection at the source
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
-  progression_points: 50
+  - 🛠️ Parameterized Queries & Output Encoding
+  - 🔐 Secure Secrets and Credential Handling
+  progression_points: 100
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Ability to harden real applications against common web attacks
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Having sworn the oath of the Bastion in **Security Fundamentals**, you now descend into the forge. Here, abstract principles become hardened steel: real code that input validation tempers, parameterized queries shield, and strong cryptography seals. This quest, **Secure Coding Practices**, turns you from someone who knows the OWASP Top 10 by name into someone who defeats it line by line.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you write your first login form this week or maintain a sprawling production service, the patterns you forge here are the same: trust no input, separate code from data, prove identity before granting power, and never let a secret escape into the daylight.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*The greatest breaches in the chronicles were rarely caused by exotic magic. They were caused by a missing `?` placeholder, a password stored in plaintext, an API key committed to a public repository, or a dependency left to rot with a known curse (a CVE). The defenders who endured learned that secure code is not about cleverness - it is about discipline applied consistently, everywhere.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*This quest teaches the handful of habits that prevent the overwhelming majority of real-world vulnerabilities.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Input Validation & Output Encoding** - Treat all external input as hostile and neutralize it
+- [ ] **Injection Prevention** - Defeat SQL injection, command injection, and XSS at the source
+- [ ] **Authentication & Authorization** - Verify identity with strong hashing and enforce least-privilege access
+- [ ] **Secrets Handling** - Keep credentials out of source control and inject them safely at runtime
+- [ ] **Dependency Security** - Find and remediate vulnerable third-party libraries
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Secure Session Management** - Harden cookies and tokens against theft
+- [ ] **Security Headers** - Apply CSP, HSTS, and friends to shrink the attack surface
+- [ ] **Automated Scanning** - Wire SAST and dependency scanning into your workflow
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Refactor a string-concatenated query into a parameterized one from memory
+- [ ] Explain why `bcrypt`/`argon2` beats a raw SHA-256 for passwords
+- [ ] Move a hard-coded secret into an environment variable or vault
+- [ ] Run a dependency scan and interpret the results
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Security Fundamentals](/quests/1011/security-fundamentals/) (recommended)
+- [ ] Ability to read and write code in at least one language
+- [ ] Basic understanding of HTTP requests, databases, and HTML
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A code editor or IDE (VS Code recommended)
+- [ ] Python 3.10+ or Node.js 18+ installed
 
 ### 🧠 Skill Level Indicators
 This **🔴 Hard** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 120-150 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You can build and run a small application
+- [ ] You are comfortable refactoring existing code
+- [ ] Ready for 120-150 minutes of focused, hands-on work
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*The secure-coding patterns are language-agnostic. Set up a runtime so you can run the examples.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -189,23 +144,11 @@ This **🔴 Hard** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Python toolchain plus a couple of security tools
+brew install python node
+python3 -m pip install --upgrade pip bcrypt bandit pip-audit
+python3 --version
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -215,26 +158,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+winget install Python.Python.3.12 OpenJS.NodeJS
+py -3 -m pip install --upgrade pip bcrypt bandit pip-audit
+py -3 --version
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -244,28 +171,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+sudo apt update && sudo apt install -y python3-pip nodejs npm   # Debian/Ubuntu
+python3 -m pip install --upgrade pip bcrypt bandit pip-audit
+python3 --version
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -275,225 +184,299 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Any container or Codespace with Python works
+docker run --rm -it python:3.12-slim bash -lc \
+  "pip install bcrypt bandit pip-audit && python --version"
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Trust No Input - Validation, Encoding, and Injection
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Nearly every injection flaw shares one root cause: untrusted input is allowed to change the structure of a command. The cure is to keep **data** and **code** strictly separated.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- Allowlist input validation
+- Parameterized queries to kill SQL injection
+- Safe subprocess invocation to kill command injection
+- Output encoding to kill cross-site scripting (XSS)
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ SQL Injection - The Cardinal Sin
 
-**Step 1: Environment Setup**
+```python
+# ❌ VULNERABLE: user input is concatenated into the SQL string.
+# Input  "' OR '1'='1"  turns this query into "always true".
+username = request.args["username"]
+cursor.execute("SELECT * FROM users WHERE name = '" + username + "'")
+
+# ✅ SECURE: a parameterized query. The driver sends the SQL and the
+# values separately, so input can never alter the query's structure.
+cursor.execute("SELECT * FROM users WHERE name = %s", (username,))
+```
+
+The same rule holds in every language - use bound parameters, an ORM, or prepared statements. Never build SQL by string-joining user input.
+
+### 🏗️ Command Injection - Don't Hand the Shell to Strangers
+
+```python
+import subprocess
+
+# ❌ VULNERABLE: shell=True with interpolated input.
+# Input "report.txt; rm -rf /" runs a second command.
+subprocess.run(f"cat {filename}", shell=True)
+
+# ✅ SECURE: pass an argument list, no shell. The filename can never
+# be parsed as additional commands.
+subprocess.run(["cat", filename])
+```
+
+### 🏗️ Cross-Site Scripting (XSS) - Encode on Output
+
+```javascript
+// ❌ VULNERABLE: raw user content injected into the DOM.
+element.innerHTML = userComment; // <script>...</script> executes
+
+// ✅ SECURE: treat it as text, not markup. The browser will not run it.
+element.textContent = userComment;
+```
+
+For server-rendered HTML, rely on a template engine with **auto-escaping enabled** (Jinja2, ERB, Razor) and add a Content-Security-Policy header as a second layer.
+
+### 🏗️ Allowlist Validation
+
+```python
+import re
+
+# ✅ Validate against a strict allowlist, reject everything else.
+def validate_account_id(value: str) -> str:
+    if not re.fullmatch(r"[A-Z]{2}\d{6}", value):
+        raise ValueError("invalid account id")
+    return value
+```
+
+Prefer allowlists ("only these are valid") over denylists ("block these bad ones") - attackers are endlessly creative at evading denylists.
+
+### 🔍 Knowledge Check: Injection
+- [ ] Why does a parameterized query stop SQL injection where escaping might not?
+- [ ] What makes `shell=True` dangerous?
+- [ ] Why is output encoding the right defense against XSS rather than input filtering alone?
+
+## 🧙‍♂️ Chapter 2: Authentication, Authorization, and Sessions
+
+*Authentication asks "who are you?"; authorization asks "what are you allowed to do?". Confusing or skipping either is the heart of OWASP A01 and A07.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Hashing passwords with a modern key-derivation function
+- Enforcing authorization on every sensitive action
+- Hardening sessions and tokens
+
+### 🏗️ Store Passwords Correctly
+
+```python
+import bcrypt
+
+# ❌ NEVER store plaintext, and don't use plain SHA-256/MD5 — they are
+# too fast and trivially brute-forced.
+
+# ✅ Use a slow, salted, adaptive hash (bcrypt, scrypt, or argon2id).
+def hash_password(plaintext: str) -> bytes:
+    return bcrypt.hashpw(plaintext.encode(), bcrypt.gensalt(rounds=12))
+
+def verify_password(plaintext: str, stored_hash: bytes) -> bool:
+    return bcrypt.checkpw(plaintext.encode(), stored_hash)
+```
+
+bcrypt salts automatically and is deliberately slow, which makes offline cracking expensive. Pair it with multi-factor authentication for high-value accounts.
+
+### 🏗️ Enforce Authorization Server-Side
+
+```python
+# ❌ Broken Access Control (OWASP A01): trusting a client-supplied id.
+@app.get("/invoices/<invoice_id>")
+def get_invoice(invoice_id):
+    return db.get_invoice(invoice_id)  # any user can read any invoice!
+
+# ✅ Always check that the CURRENT user owns the resource.
+@app.get("/invoices/<invoice_id>")
+@login_required
+def get_invoice(invoice_id):
+    invoice = db.get_invoice(invoice_id)
+    if invoice.owner_id != current_user.id:
+        abort(403)
+    return invoice
+```
+
+Authorization must be enforced on the server for **every** request. Never rely on hiding a button in the UI.
+
+### 🏗️ Harden Sessions
+
+- Set cookies with `HttpOnly` (block JS access), `Secure` (HTTPS only), and `SameSite=Lax/Strict` (mitigate CSRF).
+- Rotate the session id on login to prevent session fixation.
+- Give tokens a short lifetime and support revocation.
+
+### 🔍 Knowledge Check: AuthN/AuthZ
+- [ ] Why is bcrypt preferable to SHA-256 for passwords?
+- [ ] Where must authorization checks live, and why never the client?
+- [ ] What does the `HttpOnly` cookie flag defend against?
+
+## 🧙‍♂️ Chapter 3: Secrets and the Supply Chain
+
+*The last two great weaknesses are leaked secrets and rotten dependencies. Both are mundane, both are devastating, and both are preventable with tooling.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Keeping secrets out of source control
+- Scanning dependencies for known vulnerabilities
+- Running static analysis on your own code
+
+### 🏗️ Never Commit Secrets
+
+```python
+# ❌ VULNERABLE: a hard-coded credential. Once committed, it lives in
+# git history forever, even if you delete the line later.
+API_KEY = "sk_live_51H8xQ2eZvKYlo2C..."
+
+# ✅ SECURE: read from the environment (or a secrets manager).
+import os
+API_KEY = os.environ["API_KEY"]
+```
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Add an ignore rule so secret files never get staged
+echo ".env" >> .gitignore
+
+# Scan a repository for accidentally committed secrets before pushing
+pip install detect-secrets
+detect-secrets scan > .secrets.baseline
 ```
 
-**Step 2: Core Concepts**
+If a secret ever lands in git history, treat it as compromised: **rotate it immediately**, do not just delete the line.
 
-[Explanation of fundamental concepts]
+### 🏗️ Audit Your Dependencies
 
-**Step 3: First Implementation**
+```bash
+# Python: list dependencies with known CVEs
+pip-audit
 
-```[language]
-# Your first working example
-[code-example]
+# Node.js: the same idea for npm
+npm audit
+npm audit fix
 
-# Expected output:
-# [description of output]
+# Apply only safe, non-breaking fixes; review the rest manually.
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+Pin versions, keep a lockfile in source control, and enable automated update PRs (e.g., Dependabot or Renovate).
 
-### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+### 🏗️ Static Analysis (SAST)
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+```bash
+# Bandit finds common security anti-patterns in Python source
+bandit -r ./src
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+# Wire it into CI so insecure patterns fail the build
+bandit -r ./src --severity-level medium
+```
 
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
-
-### 🏗️ Advanced Implementations
-
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
-
-### 🏗️ Building Your Real-World Solution
-
-[Detailed content for chapter 3]
-
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+### 🔍 Knowledge Check: Secrets & Supply Chain
+- [ ] Why is deleting a committed secret insufficient?
+- [ ] What does `pip-audit` / `npm audit` actually check?
+- [ ] What is the difference between SAST and a dependency scan?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Parameterize a Query
+**Objective**: Take a vulnerable string-concatenated SQL query and refactor it to use bound parameters.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Identify the injection point
+- [ ] Rewrite with parameter binding
+- [ ] Confirm the input `' OR '1'='1` no longer changes the result
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Run `bandit -r .` and confirm the SQL warning disappears.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Build a Secure Login
+**Objective**: Implement registration and login that hashes passwords with bcrypt and reads its secret from the environment.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Passwords stored only as bcrypt hashes
+- [ ] No secret hard-coded in source
+- [ ] Authorization check on a protected route
+- [ ] Cookies set `HttpOnly`, `Secure`, `SameSite`
 
-**Validation**: [How to verify success]
+**Validation**: `detect-secrets scan` reports no secrets; the protected route returns 403 for the wrong user.
+
+### 🔴 Advanced Challenge: Harden a Real Repo
+**Objective**: Take an existing small project and run a full pass: secrets scan, dependency audit, and SAST.
+
+**Requirements**:
+- [ ] Remediate at least one finding from each tool
+- [ ] Add a CI step that runs all three
+- [ ] Document the before/after
+
+**Validation**: The CI job fails on a planted vulnerability and passes once fixed.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Codesmith of the Bastion** - You forge code that resists the OWASP Top 10
+- 🛡️ **Injection Slayer** - You eliminate injection at the source
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Parameterized Queries & Output Encoding** - Structural defenses against injection
+- **Secure Secrets and Credential Handling** - Keep keys out of the codebase
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- Threat Modeling - Find these flaws systematically before you write the code
+- Penetration Testing - Verify your defenses by attacking them ethically
 
-**📊 Progression Points**: +50 XP
+**📊 Progression Points**: +100 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [Threat Modeling](/quests/1011/threat-modeling/) - Design out whole classes of bugs
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Penetration Testing](/quests/1011/penetration-testing/) - Attack your own work
+- ⚔️ [Compliance Standards](/quests/1011/compliance-standards/) - Prove your controls to auditors
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [Threat Modeling](/quests/1011/threat-modeling/)  
+**🏗️ System Engineer**: Explore [Compliance Standards](/quests/1011/compliance-standards/)  
+**🛡️ Security Specialist**: Advance to [Penetration Testing](/quests/1011/penetration-testing/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [OWASP Top 10 (2021)](https://owasp.org/www-project-top-ten/) - The risk categories you are defending against
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) - Per-topic secure-coding guidance
+- [OWASP Proactive Controls](https://owasp.org/www-project-proactive-controls/) - The defensive techniques developers should apply
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
-
-### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
+- [SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+- [Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+- [CWE Top 25 Most Dangerous Software Weaknesses](https://cwe.mitre.org/top25/)
 
 ### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Bandit](https://bandit.readthedocs.io/) - Python static analysis for security
+- [pip-audit](https://pypi.org/project/pip-audit/) and [npm audit](https://docs.npmjs.com/cli/v10/commands/npm-audit) - Dependency vulnerability scanners
+- [detect-secrets](https://github.com/Yelp/detect-secrets) - Catch secrets before they are committed
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Refactored at least one vulnerable snippet into a secure version
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
+**Level hub:** [[Level 1011 - Security & Compliance]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
+**Unlocks:** [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

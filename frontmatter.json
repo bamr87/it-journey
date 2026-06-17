@@ -231,59 +231,28 @@
         {
           "title": "Estimated Time",
           "name": "estimated_time",
-          "type": "choice",
-          "choices": [
-            "15-30 minutes",
-            "30-60 minutes",
-            "60-90 minutes",
-            "90-120 minutes",
-            "2-3 hours",
-            "3-4 hours",
-            "4+ hours (multi-session)"
-          ],
+          "type": "string",
           "default": "30-60 minutes",
-          "description": "Expected time to complete the quest"
+          "description": "Expected time to complete, format 'N-M minutes' or 'N-M hours' (e.g. '45-60 minutes', '2-3 hours')"
         },
         {
           "title": "Primary Technology",
           "name": "primary_technology",
-          "type": "choice",
-          "choices": [
-            "python",
-            "javascript",
-            "docker",
-            "git",
-            "linux",
-            "bash",
-            "html-css",
-            "sql",
-            "aws",
-            "azure",
-            "kubernetes",
-            "react",
-            "nodejs",
-            "java",
-            "c-sharp",
-            "go",
-            "rust",
-            "terraform",
-            "ansible"
-          ],
-          "description": "Main technology or tool focus of the quest"
+          "type": "string",
+          "description": "Main technology/tool focus as a lowercase slug (e.g. python, docker, github-copilot, jekyll)"
         },
         {
           "title": "Quest Type",
           "name": "quest_type",
           "type": "choice",
           "choices": [
-            "tool-mastery",
-            "language-learning",
-            "project-building",
-            "concept-exploration",
-            "integration-challenge",
-            "troubleshooting"
+            "main_quest",
+            "side_quest",
+            "epic_quest",
+            "bonus_quest"
           ],
-          "description": "Type of learning experience"
+          "default": "main_quest",
+          "description": "Playable quest type (drives permalink + icon). Non-quest pages use fmContentType instead."
         },
         {
           "title": "Skill Focus",
@@ -295,11 +264,10 @@
             "fullstack",
             "devops",
             "security",
-            "data-science",
-            "mobile",
+            "data-engineering",
             "cloud",
             "infrastructure",
-            "testing"
+            "ai-ml"
           ],
           "description": "Primary skill area being developed"
         },
