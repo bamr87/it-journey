@@ -1,0 +1,1316 @@
+{
+  "version": 1,
+  "generated_from": [
+    "frontmatter.json",
+    ".cms/config.yml",
+    ".github/content-review-config.yml"
+  ],
+  "constraints": {
+    "title": {
+      "hard_max": 60,
+      "optimal_min": 30,
+      "optimal_max": 60
+    },
+    "description": {
+      "hard_min": 50,
+      "hard_max": 160,
+      "optimal_min": 120,
+      "optimal_max": 155
+    },
+    "tags": {
+      "max": 10
+    },
+    "keywords": {
+      "min": 3,
+      "max": 10
+    },
+    "word_count": {
+      "min": 100,
+      "max_suggest_split": 3000
+    },
+    "headings": {
+      "min": 1
+    }
+  },
+  "read_only": {
+    "frontmatter_markers": [
+      "source_repo",
+      "source_url"
+    ],
+    "globs": [
+      "pages/_docs/wargames/**"
+    ],
+    "structural_globs": [
+      "**/README.md",
+      "pages/_quests/templates/**",
+      "pages/_quests/tools/**",
+      "pages/_quests/inventory/**",
+      "pages/_quests/codex/**"
+    ]
+  },
+  "generated": {
+    "globs": [
+      "_data/quests/levels.yml",
+      "_data/quests/tiers.yml",
+      "_data/quests/order.yml",
+      "_data/quests/network.yml",
+      "_data/quests/paths.yml",
+      "_data/navigation/quests.yml",
+      "_data/content_statistics.yml"
+    ],
+    "quest_regen_command": "make quest-data"
+  },
+  "collections": {
+    "posts": {
+      "path": "pages/_posts",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "excerpt",
+        "lastmod",
+        "draft",
+        "keywords",
+        "preview"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "quests": {
+      "path": "pages/_quests",
+      "fm_content_type": "quest",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags",
+        "level",
+        "difficulty",
+        "estimated_time",
+        "permalink"
+      ],
+      "recommended": [
+        "keywords",
+        "excerpt",
+        "lastmod",
+        "preview",
+        "quest_type",
+        "skill_focus",
+        "prerequisites"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "description": "Clear and action-oriented quest title"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string",
+          "description": "Complete description of what the quest teaches (150-300 characters for SEO)"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image",
+          "default": "/images/quest-preview-image.png"
+        },
+        {
+          "title": "Binary Level",
+          "name": "level",
+          "type": "choice",
+          "choices": [
+            "0000",
+            "0001",
+            "0010",
+            "0011",
+            "0100",
+            "0101",
+            "0110",
+            "0111",
+            "1000",
+            "1001",
+            "1010",
+            "1011",
+            "1100",
+            "1101",
+            "1110",
+            "1111"
+          ],
+          "default": "0001",
+          "description": "Binary level indicating quest complexity and prerequisites"
+        },
+        {
+          "title": "Difficulty",
+          "name": "difficulty",
+          "type": "choice",
+          "choices": [
+            "\ud83d\udfe2 Easy",
+            "\ud83d\udfe1 Medium",
+            "\ud83d\udd34 Hard",
+            "\u2694\ufe0f Epic"
+          ],
+          "default": "\ud83d\udfe2 Easy",
+          "description": "Quest difficulty level"
+        },
+        {
+          "title": "Estimated Time",
+          "name": "estimated_time",
+          "type": "string",
+          "default": "30-60 minutes",
+          "description": "Expected time to complete, format 'N-M minutes' or 'N-M hours' (e.g. '45-60 minutes', '2-3 hours')"
+        },
+        {
+          "title": "Primary Technology",
+          "name": "primary_technology",
+          "type": "string",
+          "description": "Main technology/tool focus as a lowercase slug (e.g. python, docker, github-copilot, jekyll)"
+        },
+        {
+          "title": "Quest Type",
+          "name": "quest_type",
+          "type": "choice",
+          "choices": [
+            "main_quest",
+            "side_quest",
+            "epic_quest",
+            "bonus_quest"
+          ],
+          "default": "main_quest",
+          "description": "Playable quest type (drives permalink + icon). Non-quest pages use fmContentType instead."
+        },
+        {
+          "title": "Skill Focus",
+          "name": "skill_focus",
+          "type": "choice",
+          "choices": [
+            "frontend",
+            "backend",
+            "fullstack",
+            "devops",
+            "security",
+            "data-engineering",
+            "cloud",
+            "infrastructure",
+            "ai-ml"
+          ],
+          "description": "Primary skill area being developed"
+        },
+        {
+          "title": "Learning Style",
+          "name": "learning_style",
+          "type": "choice",
+          "choices": [
+            "hands-on",
+            "conceptual",
+            "project-based",
+            "problem-solving",
+            "guided-tutorial",
+            "exploratory"
+          ],
+          "description": "Approach to learning in this quest"
+        },
+        {
+          "title": "Quest Series",
+          "name": "quest_series",
+          "type": "string",
+          "default": "Standalone Quest",
+          "description": "Name of quest series if part of a learning path"
+        },
+        {
+          "title": "Sub-title",
+          "name": "sub_title",
+          "type": "string",
+          "description": "Level and specific classification of the quest"
+        },
+        {
+          "title": "Excerpt",
+          "name": "excerpt",
+          "type": "string",
+          "description": "One-sentence summary of core learning objective"
+        },
+        {
+          "title": "Snippet",
+          "name": "snippet",
+          "type": "string",
+          "description": "Memorable quest tagline or motto"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "default": "Quest Master IT-Journey Team"
+        },
+        {
+          "title": "Layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "journals",
+            "default",
+            "quest"
+          ],
+          "default": "journals"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags",
+          "taxonomyLimit": 10
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Prerequisites",
+          "name": "prerequisites",
+          "type": "dataFile",
+          "dataFileId": "prerequisites",
+          "dataFileKey": "prerequisites",
+          "dataFileValue": "title",
+          "multiple": true
+        },
+        {
+          "title": "Rewards",
+          "name": "rewards",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Achievement Badge",
+              "name": "badge",
+              "type": "string"
+            },
+            {
+              "title": "Skill Enhancement",
+              "name": "skill",
+              "type": "string"
+            },
+            {
+              "title": "Tool Mastery",
+              "name": "tool",
+              "type": "string"
+            },
+            {
+              "title": "Project Capability",
+              "name": "capability",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "title": "Related Quests",
+          "name": "related_quests",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Prerequisites",
+              "name": "prerequisites",
+              "type": "string",
+              "multiple": true
+            },
+            {
+              "title": "Follow-ups",
+              "name": "followups",
+              "type": "string",
+              "multiple": true
+            },
+            {
+              "title": "Parallel Quests",
+              "name": "parallel",
+              "type": "string",
+              "multiple": true
+            }
+          ]
+        },
+        {
+          "title": "Validation Criteria",
+          "name": "validation_criteria",
+          "type": "string",
+          "multiple": true,
+          "description": "Specific, measurable completion requirements"
+        },
+        {
+          "title": "Comments",
+          "name": "comments",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        }
+      ],
+      "registry_governed": true
+    },
+    "docs": {
+      "path": "pages/_docs",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "keywords",
+        "tags",
+        "lastmod"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "notes": {
+      "path": "pages/_notes",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "tags",
+        "lastmod",
+        "description"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "quickstart": {
+      "path": "pages/_quickstart",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "excerpt",
+        "lastmod",
+        "keywords"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "about": {
+      "path": "pages/_about",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "lastmod"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "hobbies": {
+      "path": "pages/_hobbies",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "lastmod"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "notebooks": {
+      "path": "pages/_notebooks",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "tags",
+        "lastmod"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    },
+    "pages": {
+      "path": "pages",
+      "fm_content_type": "default",
+      "required": [
+        "title",
+        "description",
+        "date",
+        "author",
+        "categories",
+        "tags"
+      ],
+      "recommended": [
+        "lastmod"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "sub-title",
+          "name": "sub-title",
+          "type": "string"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "snippet",
+          "name": "snippet",
+          "type": "string"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "choice",
+          "choices": [
+            "default",
+            "journals",
+            "collection",
+            "root",
+            "quest"
+          ],
+          "default": "default"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "lastmod",
+          "name": "lastmod",
+          "type": "datetime"
+        },
+        {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string",
+          "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        }
+      ],
+      "registry_governed": false
+    }
+  }
+}

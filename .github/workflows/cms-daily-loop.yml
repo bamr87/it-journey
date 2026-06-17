@@ -1,0 +1,321 @@
+name: 🧭 CMS Daily Content Loop
+
+# Daily, incremental content-improvement loop built on the .cms/ engine and the
+# `cms-curator` Claude Code skill. Two lanes, matching the project's autonomy
+# choice (auto-merge mechanical / PR for substantive):
+#
+#   • mechanical  — deterministic frontmatter normalization. No AI, no cost.
+#                   Validated in-job, opened as a PR, best-effort auto-merged.
+#   • substantive — agentic pass (Claude Code) over the top-N worklist items.
+#                   Validated in-job, opened as a PR for HUMAN review.
+#
+# COST / SAFETY NOTES
+#   * The substantive (agentic) job costs money and needs a Claude credential, so
+#     it is OPT-IN: it only runs when repo variable CMS_LOOP_SUBSTANTIVE == 'true'
+#     (or via manual dispatch with enable_substantive=true) AND a credential
+#     secret is present. The mechanical job is free and runs on schedule.
+#   * Per repo policy we use only secrets.GITHUB_TOKEN (no PATs). A consequence:
+#     PRs opened here do NOT auto-trigger the required check workflows, so GitHub
+#     `--auto` merge cannot gate on them. We therefore run the SAME gates
+#     (build-ci, content/quest validation) INSIDE this job before opening any PR
+#     — that in-job run IS the gate, plus a guard that vendored/read-only content
+#     was not touched.
+#   * The mechanical PR is left OPEN for one-click human merge by default. To let
+#     it merge hands-off after the in-job gate, set repo variable
+#     CMS_MECHANICAL_AUTOMERGE == 'true' (the merge then trusts the in-job gate,
+#     since required checks won't run on a GITHUB_TOKEN PR). The substantive PR
+#     is ALWAYS human-reviewed.
+
+on:
+  schedule:
+    - cron: '0 9 * * *'        # daily 09:00 UTC (staggered from existing crons)
+  workflow_dispatch:
+    inputs:
+      enable_substantive:
+        description: 'Run the agentic substantive lane (costs money)'
+        type: boolean
+        default: false
+      mechanical:
+        description: 'Run the mechanical normalization lane'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cms-daily-loop
+  cancel-in-progress: false
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Lane A — mechanical normalization (deterministic, free, auto-merge target)
+  # ---------------------------------------------------------------------------
+  mechanical:
+    name: Mechanical normalization
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && inputs.mechanical)
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby + Jekyll (for build-ci gate)
+        uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python deps
+        run: pip install pyyaml
+
+      - name: Apply deterministic normalization
+        id: norm
+        run: |
+          set -euo pipefail
+          make content-normalize-apply || true
+          # Safe key edit the normalizer doesn't cover: drop null permalinks.
+          # Scoped to the frontmatter block only, and skips vendored/read-only
+          # files (source_repo/source_url) so attribution is never touched.
+          python3 - <<'PY'
+          import re, pathlib
+          FM = re.compile(r"^(---\s*\n)(.*?\n)(---\s*\n)", re.DOTALL)
+          for p in pathlib.Path("pages").rglob("*.md"):
+              t = p.read_text(encoding="utf-8")
+              m = FM.match(t)
+              if not m:
+                  continue
+              fm = m.group(2)
+              if "source_repo:" in fm or "source_url:" in fm:
+                  continue  # read-only / vendored
+              new_fm = re.sub(r"^permalink:[ \t]*(null|~)?[ \t]*\n", "", fm, flags=re.MULTILINE)
+              if new_fm != fm:
+                  p.write_text(m.group(1) + new_fm + m.group(3) + t[m.end():], encoding="utf-8")
+          PY
+          # Refresh the CMS index/report/worklist so the health delta is captured.
+          make cms-all
+          # Regenerate quest-derived data if any quest frontmatter changed.
+          if ! git diff --quiet -- 'pages/_quests'; then make quest-data || true; fi
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Guard — vendored/read-only content untouched (defense in depth)
+        if: steps.norm.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          bad="$(git diff --name-only -- 'pages/_docs/wargames/**')"
+          for f in $(git diff --name-only -- 'pages/**/*.md'); do
+            if [ -f "$f" ] && grep -qE '^(source_repo|source_url):' "$f"; then
+              bad="$bad $f"
+            fi
+          done
+          if [ -n "$(echo "$bad" | tr -d '[:space:]')" ]; then
+            echo "::error::Mechanical lane modified vendored/read-only files:$bad"
+            exit 1
+          fi
+
+      - name: Validate in-job (this IS the gate)
+        if: steps.norm.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          make build-ci
+          make content-validate
+
+      - name: Open mechanical PR
+        if: steps.norm.outputs.changed == 'true'
+        id: pr
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(content): normalize frontmatter [cms-mechanical]"
+          branch: automated/cms-mechanical
+          delete-branch: true
+          add-paths: |
+            pages/**
+            _data/**
+            assets/data/**
+            .cms/**
+          title: "🧭 CMS: mechanical frontmatter normalization"
+          body: |
+            ## 🧭 CMS daily loop — mechanical lane
+
+            Deterministic, validated-in-CI frontmatter normalization produced by
+            `make content-normalize-apply` + null-permalink cleanup. No content
+            prose was changed.
+
+            Gates run in-job: `make build-ci`, `make content-validate`
+            (and `make quest-data` if quests changed).
+
+            See `.cms/reports/` for the health delta.
+
+            *Generated by the CMS Daily Content Loop — [run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
+          labels: |
+            cms
+            automated
+            cms-mechanical
+
+      # Opt-in hands-off merge. Off by default -> PR is left open for one-click
+      # merge. When CMS_MECHANICAL_AUTOMERGE=='true', merge directly: the in-job
+      # gate + vendored guard above are the validation (a GITHUB_TOKEN PR does not
+      # trigger the required-check workflows, so `--auto` cannot gate on them).
+      - name: Merge mechanical PR (opt-in)
+        if: steps.pr.outputs.pull-request-number != '' && vars.CMS_MECHANICAL_AUTOMERGE == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ steps.pr.outputs.pull-request-number }}
+        run: |
+          gh pr merge "$PR" --squash --delete-branch \
+            || echo "::notice::Could not merge PR #$PR automatically; left open for manual merge."
+
+  # ---------------------------------------------------------------------------
+  # Lane B — substantive (agentic Claude Code pass, opt-in, human-reviewed PR)
+  # ---------------------------------------------------------------------------
+  substantive:
+    name: Substantive content pass
+    runs-on: ubuntu-latest
+    if: >-
+      (github.event_name == 'schedule' && vars.CMS_LOOP_SUBSTANTIVE == 'true') ||
+      (github.event_name == 'workflow_dispatch' && inputs.enable_substantive)
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify Claude credential
+        id: auth
+        env:
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$OAUTH" ] && [ -z "$APIKEY" ]; then
+            echo "::warning::No Claude credential; skipping substantive lane."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Ruby + Jekyll
+        if: steps.auth.outputs.ok == 'true'
+        uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Set up Python
+        if: steps.auth.outputs.ok == 'true'
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        if: steps.auth.outputs.ok == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '20'
+
+      - name: Install deps + Claude Code CLI
+        if: steps.auth.outputs.ok == 'true'
+        run: |
+          pip install pyyaml
+          npm install -g @anthropic-ai/claude-code
+          claude --version
+
+      - name: Build today's worklist
+        if: steps.auth.outputs.ok == 'true'
+        run: make cms-all
+
+      - name: Run the cms-curator skill (Lane B only)
+        if: steps.auth.outputs.ok == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -o pipefail
+          claude -p "Use the cms-curator skill to run ONE substantive (Lane B) pass over today's .cms worklist. Apply edits and validate locally, but do NOT create a branch, commit, push, or open a PR — this workflow handles git. Respect the batch cap and all safety rules in the skill." \
+            --permission-mode acceptEdits \
+            --allowedTools "Bash,Read,Edit,Write,Glob,Grep" \
+            --disallowedTools "Bash(git:*),Bash(gh:*)" \
+            --max-turns 60 \
+            --model claude-opus-4-8 \
+            --output-format text | tee curator-run.log
+
+      - name: Validate in-job (this IS the gate)
+        if: steps.auth.outputs.ok == 'true'
+        id: gate
+        run: |
+          set -euo pipefail
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          # Vendored guard: the agent must never have edited read-only content.
+          bad="$(git diff --name-only -- 'pages/_docs/wargames/**')"
+          for f in $(git diff --name-only -- 'pages/**/*.md'); do
+            if [ -f "$f" ] && grep -qE '^(source_repo|source_url):' "$f"; then bad="$bad $f"; fi
+          done
+          if [ -n "$(echo "$bad" | tr -d '[:space:]')" ]; then
+            echo "::error::Substantive lane modified vendored/read-only files:$bad"; exit 1
+          fi
+          # Regenerate derived data FIRST so build-ci validates the final tree.
+          if ! git diff --quiet -- 'pages/_quests'; then make quest-data; fi
+          make cms-all
+          make build-ci
+          make content-validate
+          if ! git diff --quiet -- 'pages/_quests'; then make quest-audit; fi
+
+      - name: Open substantive PR (human review)
+        if: steps.auth.outputs.ok == 'true' && steps.gate.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "content: daily curated improvements [cms]"
+          branch: automated/cms-substantive
+          delete-branch: true
+          add-paths: |
+            pages/**
+            _data/**
+            assets/data/**
+            .cms/**
+          title: "🧭 CMS: daily content improvements (review)"
+          body: |
+            ## 🧭 CMS daily loop — substantive lane
+
+            Claude Code worked the top items from today's `.cms/worklists/`.
+            Each change needs your review before merge.
+
+            Gates run in-job before this PR opened: `make build-ci`,
+            `make content-validate` (+ `make quest-audit` if quests changed).
+
+            Outline of what was attempted is in `.cms/worklists/`; health delta in
+            `.cms/reports/`. Agent log attached as a build artifact.
+
+            *Generated by the CMS Daily Content Loop — [run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
+          labels: |
+            cms
+            automated
+
+      - name: Upload agent log
+        if: always() && steps.auth.outputs.ok == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: cms-curator-run
+          path: curator-run.log
+          if-no-files-found: ignore
