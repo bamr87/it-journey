@@ -493,6 +493,7 @@ exclude:
   
   # Configuration and metadata files
   - frontmatter.json
+  - CLAUDE.md            # Claude Code guide — agent-facing, not site content
   - "*.md.backup"
   - "*.tmp"
   - ".seed.md"

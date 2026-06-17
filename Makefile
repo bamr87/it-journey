@@ -5,7 +5,8 @@
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
         quest-audit quest-audit-strict quest-levels-data quest-nav quest-data quest-normalize \
-        content-validate content-normalize content-normalize-apply content-audit
+        content-validate content-normalize content-normalize-apply content-audit \
+        cms-index cms-analyze cms-plan cms-status cms-all
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
 JEKYLL_CONFIG_CI  := _config.yml,_config_dev.yml,_config_ci.yml
@@ -46,6 +47,13 @@ help:
 	@echo "  make content-normalize         - Dry-run frontmatter normalizer across pages/"
 	@echo "  make content-normalize-apply   - Apply frontmatter normalization across pages/"
 	@echo "  make content-audit             - Full content audit (frontmatter + quests + network)"
+	@echo ""
+	@echo "🧭 AI-Augmented CMS"
+	@echo "  make cms-status         - Terminal content dashboard (health by collection)"
+	@echo "  make cms-index          - Build .cms/index (content-index + summary + schema)"
+	@echo "  make cms-analyze        - Write the daily .cms/reports analysis"
+	@echo "  make cms-plan           - Write the daily .cms/worklists (mechanical/substantive)"
+	@echo "  make cms-all            - Index + analyze + plan"
 	@echo ""
 
 # Generate statistics
@@ -229,6 +237,23 @@ content-normalize-apply:
 
 content-audit: content-validate quest-validate quest-network
 	@echo "✅ Content audit complete — frontmatter, quests, and network validated."
+
+# AI-augmented CMS engine (scripts/cms/cms.py -> .cms/)
+cms-index:
+	@python3 scripts/cms/cms.py index
+
+cms-analyze:
+	@python3 scripts/cms/cms.py analyze
+
+cms-plan:
+	@python3 scripts/cms/cms.py plan
+
+cms-status:
+	@python3 scripts/cms/cms.py status
+
+cms-all:
+	@echo "🧭 Building CMS index, analysis report, and daily worklist..."
+	@python3 scripts/cms/cms.py all
 
 # Watch for changes and auto-update (requires fswatch on macOS)
 watch:

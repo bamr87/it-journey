@@ -1,0 +1,209 @@
+# IT-Journey CMS — engine configuration
+#
+# This is the single knob-board for the AI-augmented CMS layer. It is hand-edited.
+# The engine (scripts/cms/cms.py) reads it to build the content index, the daily
+# analysis report, and the prioritized worklist that drives the cms-curator loop.
+#
+# Design rule: this layer *aggregates and orchestrates* existing tooling
+# (scripts/validation/frontmatter-validator.py, scripts/content/normalize-frontmatter.py,
+# the quest registry, make content-audit / build-ci). It does not duplicate fixes.
+#
+# Everything the CMS generates lives under .cms/ (a dot-dir, so Jekyll ignores it
+# automatically and the future VS Code extension reads it at a stable path).
+
+version: 1
+
+# ---------------------------------------------------------------------------
+# Scope — where managed site content lives. All paths are repo-relative.
+# Only pages/ is site content; scripts/, TODO/, docs/, test/ are tooling and
+# are already excluded from the Jekyll build.
+# ---------------------------------------------------------------------------
+content_root: pages
+file_extensions: [".md", ".html", ".ipynb"]
+
+# Collections under pages/_<name>. Each maps to a Front Matter content type and
+# carries its own required/recommended-field contract.
+#
+# `required_base` mirrors the STRICTER documented contract in
+# .github/content-review-config.yml + the .github/workflows/frontmatter-validation.yml
+# workflow. NOTE: this is intentionally stricter than the `make content-validate`
+# gate (scripts/validation/frontmatter-validator.py), which only hard-requires a
+# looser per-collection subset. So the CMS may flag a missing author/tags as a
+# quality gap even when content-validate passes — that gap is SUBSTANTIVE
+# (reviewed PR), never an auto-merge or a false CI failure. `required_extra` adds
+# collection-specific musts (applied to playable quests only; see cms.py).
+required_base: [title, description, date, author, categories, tags]
+
+collections:
+  posts:
+    path: pages/_posts
+    fm_content_type: default
+    required_extra: []
+    recommended: [excerpt, lastmod, draft, keywords, preview]
+    date_prefixed_filenames: true        # YYYY-MM-DD-slug.md
+  quests:
+    path: pages/_quests
+    fm_content_type: quest
+    required_extra: [level, difficulty, estimated_time, permalink]
+    recommended: [keywords, excerpt, lastmod, preview, quest_type, skill_focus, prerequisites]
+    registry_governed: true              # _data/quests/*.yml is generated; never hand-edit
+  docs:
+    path: pages/_docs
+    fm_content_type: default
+    required_extra: []
+    recommended: [keywords, tags, lastmod]
+  notes:
+    path: pages/_notes
+    fm_content_type: default
+    required_extra: []
+    recommended: [tags, lastmod, description]
+  quickstart:
+    path: pages/_quickstart
+    fm_content_type: default
+    required_extra: []
+    recommended: [excerpt, lastmod, keywords]
+  about:
+    path: pages/_about
+    fm_content_type: default
+    required_extra: []
+    recommended: [lastmod]
+  hobbies:
+    path: pages/_hobbies
+    fm_content_type: default
+    required_extra: []
+    recommended: [lastmod]
+  notebooks:
+    path: pages/_notebooks
+    fm_content_type: default
+    required_extra: []
+    recommended: [tags, lastmod]
+  pages:                                  # loose top-level pages collection
+    path: pages
+    fm_content_type: default
+    required_extra: []
+    recommended: [lastmod]
+
+# ---------------------------------------------------------------------------
+# Read-only / do-not-rewrite content. The loop may still flag issues on these,
+# but must NEVER rewrite their prose or attribution.
+# ---------------------------------------------------------------------------
+read_only:
+  # Vendored upstream content carries source_repo/source_url/license frontmatter.
+  # Detected dynamically by frontmatter key, plus this glob as a backstop.
+  frontmatter_markers: [source_repo, source_url]
+  globs:
+    - "pages/_docs/wargames/**"
+  # Structural / scaffolding files: indexed for visibility but exempt from deep
+  # field/SEO checks. READMEs are skipped to match the CI frontmatter validator
+  # (scripts/validation/frontmatter-validator.py SKIP_FILES). Flip individual
+  # globs off here if you want the loop to manage index-hub READMEs too.
+  structural_globs:
+    - "**/README.md"
+    - "pages/_quests/templates/**"
+    - "pages/_quests/tools/**"
+    - "pages/_quests/inventory/**"
+    - "pages/_quests/codex/**"
+
+# Generated artifacts the loop must regenerate (via make), never hand-edit.
+generated:
+  globs:
+    - "_data/quests/levels.yml"
+    - "_data/quests/tiers.yml"
+    - "_data/quests/order.yml"
+    - "_data/quests/network.yml"
+    - "_data/quests/paths.yml"
+    - "_data/navigation/quests.yml"
+    - "_data/content_statistics.yml"
+  # When quest *frontmatter* changes, run this to refresh derived data.
+  quest_regen_command: "make quest-data"
+
+# ---------------------------------------------------------------------------
+# SEO / quality constraints. "hard" values are CI-enforced (build fails / PR
+# flagged); "optimal" values drive the health score and suggestions only.
+# Sourced from .github/content-review-config.yml + frontmatter-validator.py.
+# ---------------------------------------------------------------------------
+constraints:
+  title:        { hard_max: 60, optimal_min: 30, optimal_max: 60 }
+  description:  { hard_min: 50, hard_max: 160, optimal_min: 120, optimal_max: 155 }
+  tags:         { max: 10 }
+  keywords:     { min: 3, max: 10 }
+  word_count:   { min: 100, max_suggest_split: 3000 }
+  headings:     { min: 1 }
+
+# ---------------------------------------------------------------------------
+# Freshness buckets, by days since lastmod (or date if lastmod absent).
+# Mirrors the existing freshness-report.json status vocabulary.
+# ---------------------------------------------------------------------------
+freshness:
+  fresh_max_days: 90
+  aging_max_days: 180
+  stale_max_days: 365
+  # beyond stale_max_days => "critical"
+
+# ---------------------------------------------------------------------------
+# Health score weights (sum need not be 100; normalized to 0-100).
+# ---------------------------------------------------------------------------
+health_weights:
+  required_fields: 40      # all required present & non-empty
+  seo: 25                  # title/description/keywords within range
+  freshness: 15            # recently updated
+  links: 10                # no known broken links
+  structure: 10            # has headings, sane word count
+
+# ---------------------------------------------------------------------------
+# Daily-loop work selection. The planner emits a bounded batch each run so PRs
+# stay reviewable. "mechanical" items are deterministic and eligible for the
+# fast-track (auto-merge after green CI); "substantive" items go to a reviewed PR.
+# ---------------------------------------------------------------------------
+loop:
+  batch_size: 25                  # max files proposed per daily run
+  mechanical_batch_size: 80       # normalize pass can touch more (deterministic)
+  # Documentation only: the engine tags each issue with an authoritative `lane`
+  # field; these are the issue `kind`s it routes to the mechanical (auto-merge)
+  # lane. Keep in sync with scripts/cms/cms.py if you add issue kinds.
+  # The mechanical lane runs ONLY format normalization (string->list, ISO dates,
+  # draft booleans, quest keyword shape, null-permalink removal). Populating any
+  # missing field — including author/date — is substantive (it needs a value
+  # chosen with judgment). `filename_has_spaces` is substantive (renames need
+  # inbound-link fixes).
+  mechanical_issue_kinds:
+    - categories_not_list        # normalizer: string -> YAML list
+    - tags_not_list              # normalizer: string -> YAML list
+    - date_not_iso               # normalizer: non-ISO date STRING -> ISO-ms
+    - lastmod_not_iso            # normalizer: non-ISO date STRING -> ISO-ms
+    - quest_keywords_list_shape  # normalizer: list -> {primary, secondary}
+    - null_permalink             # CI step: remove the null permalink key
+  # NOTE: a non-boolean `draft` value is SUBSTANTIVE, not mechanical — coercing
+  # it requires interpreting publication intent (the normalizer's draft handling
+  # has state-vs-literal ambiguity), so a human/agent decides. A bare YAML date
+  # object (e.g. 2026-01-14) is a valid date and is NOT flagged.
+  # Everything else (missing title/description, thin content, stale prose, SEO
+  # rewrites, broken links, renames, new content, quest body work) is
+  # substantive -> reviewed PR lane.
+  # Per-collection priority multiplier for work selection (higher = sooner).
+  collection_priority:
+    quests: 1.4
+    posts: 1.3
+    quickstart: 1.2
+    docs: 1.0
+    notes: 0.9
+    about: 0.8
+    hobbies: 0.6
+    notebooks: 0.7
+    pages: 0.8
+
+# ---------------------------------------------------------------------------
+# Output locations (all under .cms/, auto-ignored by Jekyll).
+# ---------------------------------------------------------------------------
+output:
+  index: .cms/index/content-index.json
+  summary: .cms/index/summary.json
+  schema: .cms/schema/content-schema.json
+  reports_dir: .cms/reports
+  worklists_dir: .cms/worklists
+
+# External report inputs the indexer enriches from when present (it does not run
+# these; they are produced by the existing slow/networked jobs).
+enrich_from:
+  link_report: TODO/links/data/link-report.json
+  freshness_report: TODO/seo/data/freshness-report.json
