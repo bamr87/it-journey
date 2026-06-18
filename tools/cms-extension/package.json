@@ -43,6 +43,7 @@
       { "command": "itjCms.curateFile", "title": "CMS: Curate This File with Claude", "icon": "$(sparkle)", "category": "IT-Journey CMS" },
       { "command": "itjCms.curateWorklist", "title": "CMS: Curate Worklist (substantive batch)", "icon": "$(sparkle)", "category": "IT-Journey CMS" },
       { "command": "itjCms.runMechanical", "title": "CMS: Run Mechanical Fixes (preview)", "icon": "$(wand)", "category": "IT-Journey CMS" },
+      { "command": "itjCms.applyMechanical", "title": "CMS: Apply Mechanical Fixes", "icon": "$(check)", "category": "IT-Journey CMS" },
       { "command": "itjCms.openReport", "title": "CMS: Open Today's Analysis Report", "category": "IT-Journey CMS" },
       { "command": "itjCms.openWorklist", "title": "CMS: Open Today's Worklist", "category": "IT-Journey CMS" }
     ],

@@ -170,6 +170,37 @@ export function runMechanicalPreview(
   });
 }
 
+/** Apply the deterministic mechanical normalizer (writes changes). */
+export function runMechanicalApply(
+  root: string
+): Promise<{ code: number; stdout: string; stderr: string }> {
+  const python = vscode.workspace
+    .getConfiguration("itjCms")
+    .get<string>("pythonPath", "python3");
+  return new Promise((resolve) => {
+    cp.execFile(
+      python,
+      [path.join("scripts", "content", "normalize-frontmatter.py"), "pages/", "--apply"],
+      { cwd: root, maxBuffer: 32 * 1024 * 1024 },
+      (err, stdout, stderr) => {
+        resolve({
+          code: err && typeof (err as any).code === "number" ? (err as any).code : err ? 1 : 0,
+          stdout: stdout?.toString() ?? "",
+          stderr: stderr?.toString() ?? "",
+        });
+      }
+    );
+  });
+}
+
+/** Strip the noisy "SKIP ... read-only/vendored" lines, returning {shown, skipped}. */
+export function condenseNormalizerOutput(raw: string): { shown: string; skipped: number } {
+  const lines = raw.split("\n");
+  const skipped = lines.filter((l) => l.includes("read-only/vendored")).length;
+  const shown = lines.filter((l) => !l.includes("read-only/vendored")).join("\n").trim();
+  return { shown, skipped };
+}
+
 /** Files that are safe for the agent/UI to edit (not read-only/generated/structural). */
 export function isEditable(f: CmsFile): boolean {
   return !f.read_only && !f.generated && !f.structural && !f.is_notebook;

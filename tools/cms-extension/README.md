@@ -7,7 +7,8 @@ AI-augmented content management for IT-Journey, embedded in VS Code. It reads th
 - **Dashboard** — health summary by collection, worklist, and a live agent panel.
 - **Curate with Claude** — runs the `cms-curator` skill via the Claude Agent SDK,
   with an **approve/deny diff card for every edit** before it touches disk.
-- **Mechanical preview** — dry-run of the deterministic frontmatter normalizer.
+- **Mechanical lane** — preview (dry-run) or apply the deterministic frontmatter
+  normalizer; vendored content is always skipped.
 
 This is the Phase 1–3 MVP of the design in
 [`docs/cms/EXTENSION_DESIGN.md`](../../docs/cms/EXTENSION_DESIGN.md). It currently

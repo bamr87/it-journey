@@ -3,11 +3,13 @@ import * as vscode from "vscode";
 import { CmsAgent } from "./agent";
 import {
   CmsSummary,
+  condenseNormalizerOutput,
   findRepoRoot,
   loadIndex,
   loadSummary,
   reportPath,
   runEngine,
+  runMechanicalApply,
   runMechanicalPreview,
   worklistPath,
 } from "./contract";
@@ -112,12 +114,35 @@ export function activate(ctx: vscode.ExtensionContext): void {
     dashboard.setStatus("running mechanical preview", true);
     dashboard.append("system", "Mechanical lane PREVIEW (dry-run via normalize-frontmatter.py)…");
     const r = await runMechanicalPreview(repoRoot);
-    dashboard.append(r.code === 0 || r.code === 2 ? "result" : "error", (r.stdout || r.stderr).trim());
+    const { shown, skipped } = condenseNormalizerOutput(r.stdout || r.stderr);
+    dashboard.append(r.code === 0 || r.code === 2 ? "result" : "error", shown);
+    if (skipped) {
+      dashboard.append("system", `(${skipped} vendored/read-only files skipped — protected)`);
+    }
     dashboard.append(
       "system",
-      "This was a dry-run. To apply: run `make content-normalize-apply` (it's the mechanical lane)."
+      'This was a dry-run. Click "✅ Apply mechanical" to write these changes.'
     );
     dashboard.setStatus("idle", false);
+  });
+
+  reg("itjCms.applyMechanical", async () => {
+    const ok = await vscode.window.showWarningMessage(
+      "Apply deterministic frontmatter normalization to pages/ ? This writes files (vendored content is skipped). Review the diff in Source Control afterward.",
+      { modal: true },
+      "Apply"
+    );
+    if (ok !== "Apply") return;
+    dashboard.show();
+    dashboard.setStatus("applying mechanical fixes", true);
+    dashboard.append("system", "Applying mechanical normalization…");
+    const r = await runMechanicalApply(repoRoot);
+    const { shown, skipped } = condenseNormalizerOutput(r.stdout || r.stderr);
+    dashboard.append(r.code === 0 || r.code === 2 ? "result" : "error", shown);
+    if (skipped) dashboard.append("system", `(${skipped} vendored/read-only files skipped)`);
+    dashboard.setStatus("idle", false);
+    await refresh(); // re-index so the tree/summary reflect the applied fixes
+    vscode.window.showInformationMessage("CMS: mechanical fixes applied — review the diff in Source Control.");
   });
 
   reg("itjCms.openReport", async () => {
@@ -131,6 +156,7 @@ export function activate(ctx: vscode.ExtensionContext): void {
   dashboard.onRefresh = refresh;
   dashboard.onStop = () => agent.stop();
   dashboard.onRunMechanical = () => vscode.commands.executeCommand("itjCms.runMechanical");
+  dashboard.onApplyMechanical = () => vscode.commands.executeCommand("itjCms.applyMechanical");
   dashboard.onCurateWorklist = () => vscode.commands.executeCommand("itjCms.curateWorklist");
 
   // ---- initial load ------------------------------------------------------ //

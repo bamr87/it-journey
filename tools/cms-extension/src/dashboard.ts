@@ -17,10 +17,12 @@ type TranscriptRole = "assistant" | "tool" | "system" | "result" | "user" | "err
 export class CmsDashboard {
   private panel?: vscode.WebviewPanel;
   private pending = new Map<string, (ok: boolean) => void>();
+  private lastSummary: CmsSummary | undefined;
 
   /** Wired by the extension. */
   onCurateWorklist?: () => void;
   onRunMechanical?: () => void;
+  onApplyMechanical?: () => void;
   onRefresh?: () => void;
   onStop?: () => void;
 
@@ -50,6 +52,11 @@ export class CmsDashboard {
     });
     this.panel.webview.onDidReceiveMessage((m) => {
       switch (m?.type) {
+        case "ready":
+          // Webview finished loading — send the cached summary so a freshly
+          // opened dashboard renders without waiting for a refresh.
+          if (this.lastSummary) this.post({ type: "summary", summary: this.lastSummary });
+          break;
         case "approve":
         case "deny": {
           const res = this.pending.get(m.id);
@@ -64,6 +71,9 @@ export class CmsDashboard {
           break;
         case "runMechanical":
           this.onRunMechanical?.();
+          break;
+        case "applyMechanical":
+          this.onApplyMechanical?.();
           break;
         case "refresh":
           this.onRefresh?.();
@@ -80,8 +90,10 @@ export class CmsDashboard {
   }
 
   postSummary(summary: CmsSummary | undefined): void {
-    this.show();
-    this.post({ type: "summary", summary });
+    // Cache it, but do NOT force the panel open — that would pop the dashboard
+    // on every activation/refresh. openDashboard() shows it explicitly.
+    this.lastSummary = summary;
+    if (this.panel) this.post({ type: "summary", summary });
   }
 
   append(role: TranscriptRole, text: string): void {
@@ -152,6 +164,7 @@ export class CmsDashboard {
   <div class="bar">
     <button id="btnCurate">✨ Curate worklist</button>
     <button class="secondary" id="btnMech">🪄 Mechanical preview</button>
+    <button class="secondary" id="btnApply">✅ Apply mechanical</button>
     <button class="secondary" id="btnRefresh">↻ Refresh</button>
     <button class="secondary" id="btnStop">⏹ Stop</button>
     <span id="status"><span class="dot" id="dot"></span><span id="statusText">idle</span></span>
@@ -167,6 +180,7 @@ export class CmsDashboard {
   const $ = (id) => document.getElementById(id);
   $('btnCurate').onclick = () => vscode.postMessage({type:'curateWorklist'});
   $('btnMech').onclick = () => vscode.postMessage({type:'runMechanical'});
+  $('btnApply').onclick = () => vscode.postMessage({type:'applyMechanical'});
   $('btnRefresh').onclick = () => vscode.postMessage({type:'refresh'});
   $('btnStop').onclick = () => vscode.postMessage({type:'stop'});
 
@@ -232,6 +246,9 @@ export class CmsDashboard {
     else if(m.type==='clear') $('transcript').innerHTML='';
     else if(m.type==='status'){ $('statusText').textContent=m.text; $('dot').className='dot'+(m.running?' run':''); }
   });
+
+  // Tell the extension we're ready so it can send the cached summary.
+  vscode.postMessage({type:'ready'});
 </script>
 </body>
 </html>`;
