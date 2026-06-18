@@ -1,0 +1,11 @@
+# The full per-file index is large (~500KB) and fully regenerated on demand by
+# `python3 scripts/cms/cms.py index` (run by the daily loop, CI, and the VS Code
+# extension on open). It is intentionally not committed.
+index/content-index.json
+
+# Keep the small rollup, the schema contract, and dated reports/worklists in git
+# so health trends and the daily loop's history are reviewable.
+!index/summary.json
+!schema/content-schema.json
+!reports/
+!worklists/

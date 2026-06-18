@@ -38,14 +38,12 @@ keywords:
   - linux pipes tutorial
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/chamber/
-  - /quests/0000/side-quests/hidden-chapel/
+  - /quests/0000/chamber/
+  - /quests/0000/hidden-chapel/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/agent-mode/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/agent-mode/
+  - /quests/0000/agent-mode/
+  recommended_quests: []
 validation_criteria:
 - Use | to pipe output between commands
 - Chain commands with && and ||
@@ -56,17 +54,23 @@ validation_criteria:
 - Complete the dungeon
 prerequisites:
 - Complete Chamber plus at least one of Chapel/Vault/Scrap
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Rift Conquest Badge
 - Pipes and redirection mastery
 excerpt: Conquer the final Rift by chaining commands, piping output, and redirecting streams to defeat both bosses and finish Bashcrawl.
 draft: false
-permalink: /quests/0000/side-quests/rift/
+permalink: /quests/0000/rift/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/rift/
 ---
 *You stand at the edge of the Rift — a swirling chasm where data streams collide. The rules here are different: commands don't just run, they flow into each other. Master the pipe and you master the dungeon.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="The Rift" height="660" %}
 
 ## 🎯 Quest Objectives
 
@@ -225,6 +229,8 @@ The satellite boss is the final encounter. It uses all skills: pipe a command th
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

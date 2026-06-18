@@ -55,30 +55,22 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 QUESTS_DIR = REPO_ROOT / "pages" / "_quests"
 NAV_PATH = REPO_ROOT / "_data" / "navigation" / "quests.yml"
 
-LEVEL_RE = re.compile(r"^[01]{4}$")
+# Single source of truth — see scripts/quest/quest_registry.py.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from quest_registry import (  # noqa: E402
+    LEVELS,
+    LEVEL_ORDER,
+    LEVEL_RE,
+    QUEST_TYPE_EMOJI,
+    SKIP_STEMS,
+    SKIP_SUBDIRS,
+    is_quest,
+)
+
 FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)", re.DOTALL)
 
-# Per-level metadata kept in sync with scripts/quest/quest_registry.py.
-# Duplicated here to avoid an import-path quirk when this file is run via
-# ``make`` from the repository root.
-LEVEL_META = {
-    "0000": ("Foundation & Init World", "bi-emoji-sunglasses"),
-    "0001": ("Web Fundamentals", "bi-feather"),
-    "0010": ("Terminal Mastery", "bi-terminal"),
-    "0011": ("AI-Assisted Development", "bi-stars"),
-    "0100": ("Frontend & Containers", "bi-box-seam"),
-    "0101": ("CI/CD & DevOps", "bi-rocket-takeoff"),
-    "0110": ("Database Mastery", "bi-database"),
-    "0111": ("API Development", "bi-cloud-arrow-up"),
-    "1000": ("Cloud Computing", "bi-cloud"),
-    "1001": ("Kubernetes Orchestration", "bi-grid-3x3-gap"),
-    "1010": ("Monitoring & Observability", "bi-graph-up"),
-    "1011": ("Security & Compliance", "bi-shield-lock"),
-    "1100": ("Data Engineering", "bi-diagram-3"),
-    "1101": ("Machine Learning & AI", "bi-cpu"),
-    "1110": ("Architecture & Design", "bi-building-gear"),
-    "1111": ("Leadership & Innovation", "bi-trophy"),
-}
+# Derive (theme, icon) per level from the registry so navigation can never drift.
+LEVEL_META = {code: (meta["theme"], meta["icon"]) for code, meta in LEVELS.items()}
 
 
 def read_fm(md_path: Path):
@@ -101,14 +93,14 @@ def collect_quests():
     by_level: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
 
     for md_file in sorted(QUESTS_DIR.rglob("*.md")):
-        if md_file.name in {"README.md", "home.md", "QUEST_BUILD_PLAN.md", "NETWORK_REPORT.md"}:
+        if md_file.stem in SKIP_STEMS:
             continue
-        if any(part in {"templates", "docs", "inventory"} for part in md_file.parts):
+        if any(part in SKIP_SUBDIRS for part in md_file.parts):
             continue
         fm = read_fm(md_file)
         if fm is None:
             continue
-        if fm.get("fmContentType") != "quest":
+        if not is_quest(fm):
             continue
         permalink = fm.get("permalink")
         if not permalink:
@@ -148,7 +140,7 @@ def build_nav(by_level):
         quests = by_level.get(level, [])
         children = []
         for title, url, quest_type in quests:
-            prefix = "⚔️ " if quest_type == "side_quest" else ""
+            prefix = f"{QUEST_TYPE_EMOJI['side_quest']} " if quest_type == "side_quest" else ""
             children.append({"title": f"{prefix}{title}", "url": url})
         nav.append(
             {

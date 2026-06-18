@@ -1,75 +1,59 @@
 ---
 title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
 author: IT-Journey Team
-description: Learn Liquid templating language for Jekyll. Master variables, filters, loops, and conditionals to create dynamic content. Shopify and Jekyll template tutorial with examples.
+description: 'Master Liquid, the templating language behind Jekyll: variables, filters, loops, conditionals, includes, and layouts that render dynamic pages at build time.'
 excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters, and control flow.
-preview: images/previews/liquid-templating-dynamic-content-basics-descripti.png
+preview: images/previews/liquid-templating-dynamic-content-jekyll-quest-de.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-12-19T00:00:00.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'
-difficulty: 🟢 Easy
-estimated_time: 45-60 minutes
+difficulty: 🟡 Medium
+estimated_time: 75-90 minutes
 primary_technology: liquid
 quest_type: main_quest
 quest_series: Static Site Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Web Fundamentals Codex
+quest_arc: Forging Your First Website
 quest_dependencies:
-  required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  required_quests:
+  - /quests/0001/jekyll-fundamentals/
+  recommended_quests:
+  - /quests/0001/yaml-configuration/
+  unlocks_quests:
+  - /quests/0001/github-pages-basics/
 skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic HTML
+  - Completion of Jekyll Fundamentals
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - A working Jekyll site to experiment in
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Comfortable editing layouts and includes
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A page that loops over data and renders conditionally
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can chain filters to transform a value
+  - Can write a loop with a conditional inside it
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the difference between output and tag delimiters
+  - Can include a partial and pass it parameters
 permalink: /quests/0001/liquid-templating/
 categories:
 - Quests
 - Frontend
-- Templating
+- Static-Sites
 - Beginner
 tags:
 - '0001'
 - liquid
-- templating
 - jekyll
-- shopify
+- templating
+- web-development
 - main_quest
 - frontend
 - hands-on
@@ -78,117 +62,82 @@ keywords:
   primary:
   - '0001'
   - liquid
-  - templating
   - jekyll
+  - templating
   secondary:
-  - shopify
+  - web-development
   - main_quest
   - frontend
   - hands-on
   - beginner
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0001 (1) Quest: Liquid Template Language'
+sub_title: 'Level 0001 (1) Quest: Main Quest - Liquid'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Loremaster of Liquid - Mastered variables, filters, and control flow
+  - 🌱 Weaver of Templates - Composed pages from includes and layouts
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Liquid Template Authoring
+  - 🧠 Build-Time Templating Concepts
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - The ability to build data-driven pages in any later quest
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You can now scaffold and serve a Jekyll site - but every page is still hand-written and static. **Liquid Templating** teaches you the spoken magic of Jekyll: a templating language that lets one template render a hundred pages, pull in data, loop over lists, and decide what to show. This is where your site stops being a stack of files and starts being a living thing.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Liquid runs at build time, not in the browser, so all this power costs your visitors nothing. Learn it well, for every layout, include, and theme you ever touch in Jekyll speaks Liquid.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*Long ago, the merchants of Shopify needed a safe way to let shopkeepers customize their storefront pages without handing them the keys to the whole engine. So they forged **Liquid** - a templating language powerful enough to loop, filter, and decide, yet sandboxed so a careless incantation could never break the server. Jekyll adopted Liquid, and today it is the lingua franca of static templating.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*With Liquid you write a page once and let the data fill it in - a blog index that lists every post, a navigation menu built from a data file, a card that changes colour based on a value. Master it, and you wield the heart of every Jekyll theme.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **Objects & Variables** - Output values with the double-brace syntax
+- [ ] **Filters** - Transform values by chaining filters with the pipe
+- [ ] **Tags: Loops & Conditionals** - Use `for`, `if`, and `assign` to control logic
+- [ ] **Includes & Layouts** - Compose pages from reusable partials and skeletons
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Passing Parameters to Includes** - Make partials reusable with arguments
+- [ ] **Whitespace Control** - Use `{% raw %}{%- -%}{% endraw %}` to keep generated HTML clean
+- [ ] **Looping Over Site Data** - Read `_data` files in a template
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain the difference between output `{% raw %}{{ }}{% endraw %}` and tag `{% raw %}{% %}{% endraw %}` delimiters
+- [ ] Chain three filters to format a value end to end
+- [ ] Build a list page that loops over a collection with a conditional badge
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic HTML (tags, attributes)
+- [ ] Completion of [Jekyll Fundamentals](/quests/0001/jekyll-fundamentals/)
+- [ ] Recommended: [YAML Configuration](/quests/0001/yaml-configuration/) for data files
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] A working Jekyll site to experiment in
+- [ ] A text editor or IDE (VS Code recommended)
 
 ### 🧠 Skill Level Indicators
-This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 45-60 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+This **🟡 Medium** quest expects:
+- [ ] You can build and serve a Jekyll site already
+- [ ] You are comfortable editing files in `_layouts` and `_includes`
+- [ ] Ready for 75-90 minutes of focused learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Liquid lives inside your Jekyll site, so the only setup is a running site. Use `--livereload` so each edit shows instantly.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -196,23 +145,10 @@ This **🟢 Easy** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
-
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Serve your site with live reload so Liquid edits appear instantly
+cd my-castle
+bundle exec jekyll serve --livereload
 ```
-
-**macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -222,26 +158,10 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
-
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Serve with live reload
+cd my-castle
+bundle exec jekyll serve --livereload
 ```
-
-**Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
 
 </details>
 
@@ -251,28 +171,10 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
-
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Serve with live reload
+cd my-castle
+bundle exec jekyll serve --livereload
 ```
-
-**Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
 
 </details>
 
@@ -282,225 +184,260 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
-
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# In a container, bind the host so live reload reaches your browser
+docker run --rm -it -p 4000:4000 -p 35729:35729 -v "$PWD":/srv/jekyll \
+  jekyll/jekyll:4 jekyll serve --livereload --host 0.0.0.0
 ```
-
-**Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: Objects, Tags, and Filters - The Three Words of Power
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Liquid has exactly three kinds of markup. Learn the three, and you can read any template.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The output delimiter `{% raw %}{{ }}{% endraw %}` for printing values
+- The tag delimiter `{% raw %}{% %}{% endraw %}` for logic
+- Filters for transforming values
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ The Three Delimiters
 
-**Step 1: Environment Setup**
+```liquid
 
-```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+{% raw %}{{ page.title }}{% endraw %}              <!-- OBJECT: prints a value into the page -->
+{% raw %}{% assign greeting = "hi" %}{% endraw %}  <!-- TAG: runs logic, prints nothing -->
+{% raw %}{{ greeting | upcase }}{% endraw %}       <!-- FILTER: transforms a value -> "HI" -->
+
 ```
 
-**Step 2: Core Concepts**
+- **Objects** `{% raw %}{{ ... }}{% endraw %}` output content - a variable, a string, a number.
+- **Tags** `{% raw %}{% ... %}{% endraw %}` perform logic - assignments, loops, conditionals. They produce no visible output themselves.
+- **Filters** appear inside objects after a pipe `|` and transform the value flowing through.
 
-[Explanation of fundamental concepts]
+**Chaining filters** is where Liquid shines. Each filter feeds the next:
 
-**Step 3: First Implementation**
+```liquid
 
-```[language]
-# Your first working example
-[code-example]
+{% raw %}{{ "the static web" | capitalize | replace: "web", "kingdom" }}{% endraw %}
+<!-- Output: The static kingdom -->
 
-# Expected output:
-# [description of output]
+{% raw %}{{ page.date | date: "%B %-d, %Y" }}{% endraw %}
+<!-- Output: June 14, 2026 -->
+
+{% raw %}{{ post.content | strip_html | truncatewords: 20 }}{% endraw %}
+<!-- A 20-word plain-text preview of a post -->
+
 ```
 
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+Jekyll exposes useful global objects too: `site` (everything in `_config.yml` and `_data`), `page` (the current page's front matter), `content`, and inside loops, `post` / `item`.
+
+### 🔍 Knowledge Check: The Three Words
+- [ ] Which delimiter prints a value, and which runs logic?
+- [ ] What does the pipe `|` do?
+- [ ] What does `{% raw %}{{ site.title }}{% endraw %}` read from?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Printed a value**: You output `{% raw %}{{ page.title }}{% endraw %}` on a page
+- [ ] **Chained a filter**: You transformed a string with at least two filters
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Loops and Conditionals - Logic in the Template
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*A blog index is just a `for` loop over posts. A "featured" badge is just an `if`. This chapter gives your templates a brain.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- Iterating with `for`
+- Branching with `if` / `elsif` / `else`
+- Filtering and limiting loops
 
-### 🏗️ Advanced Implementations
+### 🏗️ Looping and Branching
 
-[Detailed content for chapter 2]
+A list of the five most recent posts, each with an optional "New" badge:
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```liquid
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+<ul class="post-list">
+{% raw %}{% for post in site.posts limit:5 %}{% endraw %}
+  <li>
+    <a href="{% raw %}{{ post.url | relative_url }}{% endraw %}">{% raw %}{{ post.title }}{% endraw %}</a>
+    {% raw %}{% if post.featured %}{% endraw %}
+      <span class="badge">⭐ Featured</span>
+    {% raw %}{% elsif post.date > site.time | date: "%s" | minus: 604800 %}{% endraw %}
+      <span class="badge">New</span>
+    {% raw %}{% endif %}{% endraw %}
+  </li>
+{% raw %}{% endfor %}{% endraw %}
+</ul>
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+```
+
+Useful loop helpers:
+
+```liquid
+
+{% raw %}{% for item in site.data.navigation %}{% endraw %}
+  {% raw %}{{ forloop.index }}{% endraw %}. {% raw %}{{ item.name }}{% endraw %}   <!-- forloop.index is 1-based -->
+{% raw %}{% endfor %}{% endraw %}
+
+{% raw %}{% assign sorted = site.posts | sort: "title" %}{% endraw %}
+{% raw %}{% for p in sorted reversed %}{% endraw %}
+  {% raw %}{{ p.title }}{% endraw %}
+{% raw %}{% endfor %}{% endraw %}
+
+```
+
+`if` understands `and`, `or`, `==`, `!=`, `>`, `<`, `contains`. Use `unless` for the negative case and `case`/`when` for many branches.
+
+### 🔍 Knowledge Check: Logic
+- [ ] How do you limit a `for` loop to the first five items?
+- [ ] What variable gives you the current iteration number?
+- [ ] When would you use `unless` instead of `if`?
+
+## 🧙‍♂️ Chapter 3: Includes & Layouts - Composing Pages
+
+*Repetition is the enemy. Liquid lets you write a header once as an **include**, and a page skeleton once as a **layout**, then reuse them everywhere.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Pulling in partials with `include`
+- Passing parameters to includes
+- Wrapping content in layouts
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Reuse with Includes and Layouts
 
-[Detailed content for chapter 3]
+Create `_includes/card.html` - a reusable component that accepts parameters:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```html
+<div class="card">
+  <h3>{% raw %}{{ include.title }}{% endraw %}</h3>
+  <p>{% raw %}{{ include.body }}{% endraw %}</p>
+</div>
+```
+
+Use it anywhere, passing arguments by name:
+
+```liquid
+
+{% raw %}{% include card.html title="Static Sites" body="Fast and secure by design." %}{% endraw %}
+{% raw %}{% include card.html title="Liquid" body="Templating without a server." %}{% endraw %}
+
+```
+
+**Layouts** wrap a page's content in shared chrome. Create `_layouts/default.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% raw %}{{ page.title }}{% endraw %} | {% raw %}{{ site.title }}{% endraw %}</title>
+  </head>
+  <body>
+    {% raw %}{% include header.html %}{% endraw %}
+    <main>{% raw %}{{ content }}{% endraw %}</main>
+    {% raw %}{% include footer.html %}{% endraw %}
+  </body>
+</html>
+```
+
+Any page declaring `layout: default` in its front matter gets wrapped automatically; the special `{% raw %}{{ content }}{% endraw %}` object is where the page's own body lands. Layouts can even nest by giving a layout its own `layout:` front matter.
+
+### 🔍 Knowledge Check: Composition
+- [ ] How do you pass a value into an include?
+- [ ] What object renders the page body inside a layout?
+- [ ] How would you make every page share one footer?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Filter Chain
+**Objective**: Print a formatted, transformed value on a page.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Output `{% raw %}{{ page.title }}{% endraw %}` somewhere visible
+- [ ] Chain at least two filters on one value
+- [ ] Format a date with the `date` filter
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: The rendered page shows the transformed text and a formatted date.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Data-Driven List
+**Objective**: Build a navigation menu from a `_data` file.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Create `_data/navigation.yml` with a list of links
+- [ ] Loop over it with `for`
+- [ ] Mark the current page with an `if` comparison
 
-**Validation**: [How to verify success]
+**Validation**: The menu renders every entry and highlights the active page.
+
+### 🔴 Advanced Challenge: Parameterized Component
+**Objective**: Create a reusable card include and a layout that uses it.
+
+**Requirements**:
+- [ ] Build `_includes/card.html` that accepts `title` and `body`
+- [ ] Render at least three cards from a loop over data
+- [ ] Wrap the page in a custom layout
+
+**Validation**: Cards render from data and the page is wrapped by your layout.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Loremaster of Liquid** - Variables, filters, and control flow are yours
+- 🌱 **Weaver of Templates** - You compose pages from includes and layouts
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Liquid Template Authoring** - Write dynamic pages that render at build time
+- **Build-Time Templating Concepts** - Reason about data-driven generation
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- GitHub Pages Basics - Publish your dynamic site for free
+- YAML Configuration - Feed your templates with structured data
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [GitHub Pages Basics](/quests/0001/github-pages-basics/) - Take your templated site live
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [YAML Configuration](/quests/0001/yaml-configuration/) - The data your templates loop over
+- ⚔️ [Git Workflow Mastery](/quests/0001/git-workflow-mastery/) - Ship template changes cleanly
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [GitHub Pages Basics](/quests/0001/github-pages-basics/)  
+**🏗️ System Engineer**: Explore [YAML Configuration](/quests/0001/yaml-configuration/)  
+**🎨 Frontend Specialist**: Deepen your theming with custom layouts
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Liquid Reference (Shopify)](https://shopify.github.io/liquid/) - The canonical language reference
+- [Jekyll Liquid Documentation](https://jekyllrb.com/docs/liquid/) - Liquid as Jekyll uses it
+- [Jekyll Includes](https://jekyllrb.com/docs/includes/) - Reusable partials with parameters
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Jekyll Talk Forum](https://talk.jekyllrb.com/) - Ask Liquid questions
+- [Liquid on Stack Overflow](https://stackoverflow.com/questions/tagged/liquid) - Tagged Q&A
+- [Jekyll Cheat Sheet](https://devhints.io/jekyll) - Quick Liquid and Jekyll syntax
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Jekyll Step-by-Step: Includes](https://jekyllrb.com/docs/step-by-step/05-includes/) - Hands-on include tutorial
+- [Jekyll Variables](https://jekyllrb.com/docs/variables/) - Every object Liquid can read
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built a page that loops over data with a conditional
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Jekyll Fundamentals]]
+**Unlocks:** [[GitHub Pages Basics]] · [[YAML Configuration]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

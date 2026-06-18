@@ -1,5 +1,5 @@
 ---
-title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
+title: 'Building & Testing the Git Init Shell Script'
 author: IT-Journey Team
 description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive and headless repo initializer with programmatic scaffolding.
 excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable in both interactive and headless modes.
@@ -32,7 +32,6 @@ keywords:
   - bash
 fmContentType: quest
 comments: true
-sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
 redirect_from:
 - /quests/0001/building-testing-git-init-script/
 quest_line: Git Mastery Series
@@ -44,14 +43,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -60,6 +51,8 @@ validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
 layout: quest
+sub_title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
+draft: false
 ---
 ## The Challenge: Safe automation without surprises
 

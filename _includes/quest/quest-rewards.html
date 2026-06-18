@@ -5,7 +5,7 @@
     badges               — list of badge strings (often with emojis)
     progression_points   — integer XP awarded on completion
     skills_unlocked      — optional list of skill names
-    achievements         — optional list of achievement labels
+    unlocks_features     — optional list of features/capabilities unlocked
 
   Also surfaces deps.unlocks_quests so learners see what comes next.
 {%- endcomment -%}
@@ -43,11 +43,11 @@
     </div>
   {%- endif -%}
 
-  {%- if rewards.achievements and rewards.achievements.size > 0 -%}
+  {%- if rewards.unlocks_features and rewards.unlocks_features.size > 0 -%}
     <div class="quest-rewards__group">
-      <h3>Achievements</h3>
+      <h3>Features unlocked</h3>
       <ul>
-        {%- for ach in rewards.achievements -%}<li>{{ ach }}</li>{%- endfor -%}
+        {%- for feature in rewards.unlocks_features -%}<li>{{ feature }}</li>{%- endfor -%}
       </ul>
     </div>
   {%- endif -%}

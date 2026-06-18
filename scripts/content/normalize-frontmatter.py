@@ -339,6 +339,13 @@ def process_file(
     if err or fm is None:
         return FileChange(rel, content_type, skipped_reason=f"frontmatter: {err}")
 
+    # Never rewrite vendored / read-only content. Files imported from upstream
+    # carry source_repo/source_url (and live under pages/_docs/wargames/**);
+    # rewriting their frontmatter would clobber attribution. This mirrors the
+    # read_only boundary in .cms/config.yml.
+    if "source_repo" in fm or "source_url" in fm or "/_docs/wargames/" in rel.replace("\\", "/"):
+        return FileChange(rel, content_type, skipped_reason="read-only/vendored (source_repo/source_url)")
+
     new_fm, changes = normalize_frontmatter(fm, body, content_type, touch_lastmod)
     if not changes:
         return FileChange(rel, content_type)

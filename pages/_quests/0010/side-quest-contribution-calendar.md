@@ -8,9 +8,8 @@ keywords:
   secondary:
   - CSS grid
   - data visualization
-description: Build a GitHub-style contribution heatmap for your character profile using the 52-week calendar data
+description: 'Build a GitHub-style contribution heatmap for your character profile, rendering 52 weeks of activity data with CSS Grid and Jekyll Liquid templates.'
 excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in light.
-snippet: Time is the truest measure of an adventurer's resolve
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0010'
@@ -26,7 +25,7 @@ quest_arc: 'Act II: Mastering the Craft'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0010/side-quests/contribution-calendar/
+permalink: /quests/0010/contribution-calendar/
 categories:
 - Quests
 - Community
@@ -52,18 +51,8 @@ quest_dependencies:
   required_quests:
   - /quests/0001/forge-your-character/
   recommended_quests:
-  - /quests/0010/side-quests/stats-dashboard/
+  - /quests/0010/stats-dashboard/
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Frontend Developer
-  - Community Contributor
-  character_classes:
-  - 🧙 Wizard
-  - 🏹 Ranger
-  skill_trees:
-  - Frontend Development
-  - CSS Layout
 rewards:
   badges:
   - 📆 Timekeeper — Contribution calendar displayed on character sheet
@@ -75,6 +64,8 @@ validation_criteria:
   - Color intensity reflects commit count
   - Calendar is responsive
 layout: quest
+redirect_from:
+- /quests/0010/side-quests/contribution-calendar/
 ---
 # 📆 Contribution Calendar: Mapping Your Journey Through Time
 
@@ -113,28 +104,28 @@ This quest turns that data into a visual heatmap — similar to GitHub's contrib
 Create `_includes/contributor/contribution_calendar.html`:
 
 ```html
-{% raw %}
-{% assign calendar = include.calendar %}
-{% if calendar and calendar.size > 0 %}
+
+{% raw %}{% assign calendar = include.calendar %}{% endraw %}
+{% raw %}{% if calendar and calendar.size > 0 %}{% endraw %}
 <div class="contributor-calendar">
   <h4>📆 Contribution History</h4>
   <div class="calendar-grid">
-    {% for week in calendar %}
-      {% if week.commits == 0 %}
-        {% assign intensity = "zero" %}
-      {% elsif week.commits < 3 %}
-        {% assign intensity = "low" %}
-      {% elsif week.commits < 7 %}
-        {% assign intensity = "medium" %}
-      {% elsif week.commits < 15 %}
-        {% assign intensity = "high" %}
-      {% else %}
-        {% assign intensity = "max" %}
-      {% endif %}
-      <div class="calendar-cell calendar-{{ intensity }}"
-           title="{{ week.week }}: {{ week.commits }} commits">
+    {% raw %}{% for week in calendar %}{% endraw %}
+      {% raw %}{% if week.commits == 0 %}{% endraw %}
+        {% raw %}{% assign intensity = "zero" %}{% endraw %}
+      {% raw %}{% elsif week.commits < 3 %}{% endraw %}
+        {% raw %}{% assign intensity = "low" %}{% endraw %}
+      {% raw %}{% elsif week.commits < 7 %}{% endraw %}
+        {% raw %}{% assign intensity = "medium" %}{% endraw %}
+      {% raw %}{% elsif week.commits < 15 %}{% endraw %}
+        {% raw %}{% assign intensity = "high" %}{% endraw %}
+      {% raw %}{% else %}{% endraw %}
+        {% raw %}{% assign intensity = "max" %}{% endraw %}
+      {% raw %}{% endif %}{% endraw %}
+      <div class="calendar-cell calendar-{% raw %}{{ intensity }}{% endraw %}"
+           title="{% raw %}{{ week.week }}{% endraw %}: {% raw %}{{ week.commits }}{% endraw %} commits">
       </div>
-    {% endfor %}
+    {% raw %}{% endfor %}{% endraw %}
   </div>
   <div class="calendar-legend">
     <span>Less</span>
@@ -146,8 +137,8 @@ Create `_includes/contributor/contribution_calendar.html`:
     <span>More</span>
   </div>
 </div>
-{% endif %}
-{% endraw %}
+{% raw %}{% endif %}{% endraw %}
+
 ```
 
 ### Step 2: Add CSS Styles
@@ -213,9 +204,9 @@ Add to `assets/css/contributor-profile.css`:
 Edit `_includes/contributor/character_sheet.html` and add after the stats panel or achievement wall:
 
 ```liquid
-{% raw %}
-{% include contributor/contribution_calendar.html calendar=contributor.stats.contribution_calendar %}
-{% endraw %}
+
+{% raw %}{% include contributor/contribution_calendar.html calendar=contributor.stats.contribution_calendar %}{% endraw %}
+
 ```
 
 ### Step 4: Verify

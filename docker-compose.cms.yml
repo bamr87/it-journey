@@ -1,0 +1,26 @@
+# Self-contained CMS review environment.
+#
+# Runs the AI-augmented CMS engine in a throwaway python:3.12-slim container so
+# you can review/test it without host Python, Ruby, the theme gem, or a .env.
+# Outputs land under .cms/ on your host via the bind mount.
+#
+#   docker compose -f docker-compose.cms.yml run --rm cms            # full review
+#   docker compose -f docker-compose.cms.yml run --rm cms status     # dashboard only
+#   docker compose -f docker-compose.cms.yml run --rm cms test       # unit tests
+#   docker compose -f docker-compose.cms.yml run --rm cms normalize  # mechanical preview
+#   docker compose -f docker-compose.cms.yml run --rm cms shell      # interactive shell
+#
+# Note: this is intentionally a separate compose file so it has no dependency on
+# the jekyll service's .env / remote theme. To also browse the rendered site,
+# use the main `docker compose up jekyll` (port 4002) — the .cms/ data is tooling
+# output, reviewed as files, not part of the published site.
+services:
+  cms:
+    image: python:3.12-slim
+    platform: linux/amd64
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      PYTHONUNBUFFERED: "1"
+    entrypoint: ["bash", "scripts/cms/docker-entrypoint.sh"]

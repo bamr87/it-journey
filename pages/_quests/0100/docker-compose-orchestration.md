@@ -1,63 +1,48 @@
 ---
-title: 'Docker Compose Orchestration: Build Multi-Container Applications'
+title: 'Docker Compose Orchestration: Multi-Container Apps'
 author: IT-Journey Team
-description: Master Docker Compose for orchestrating multi-container applications. Learn YAML configuration, service networking, volume management, and environment variables for development and production stacks.
-excerpt: Build and orchestrate multi-container applications with Docker Compose YAML configuration and networking
+description: 'Master Docker Compose to orchestrate multi-container apps. Define services, networks, volumes, depends_on, and environment variables in one YAML file.'
+excerpt: Build and orchestrate multi-container applications with Docker Compose - services, networks, volumes, and environment configuration
 preview: images/previews/docker-compose-orchestration-multi-container-apps-.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-11-30T05:04:44.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
 primary_technology: docker-compose
 quest_type: main_quest
 quest_series: Docker Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Adventurer's Forge
+quest_arc: Containers of the Container Coast
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0100/container-fundamentals/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
+  - Completion of Container Fundamentals (images, containers, build, run)
   - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Comfort editing plain text and YAML files
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Docker Engine or Docker Desktop with the Compose plugin
+  - A terminal and a text editor or IDE (VS Code recommended)
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - Can build and run a single container on your own
+  - Ready to coordinate several containers as one application
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A working multi-service stack started with a single command
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can write a compose YAML file defining multiple services
+  - Can connect services over a shared network and persist data with a volume
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands depends_on and service discovery by name
+  - Can pass configuration through environment variables and an env file
 permalink: /quests/0100/docker-compose-orchestration/
 categories:
 - Quests
@@ -82,108 +67,77 @@ keywords:
   - hands-on
   - gamified-learning
 fmContentType: quest
-draft: true
+draft: false
 comments: true
 sub_title: 'Level 0100 (4) Quest: Main Quest - Docker Compose'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Stack Conductor - Orchestrated a multi-container app with a single command
+  - 🔗 Service Weaver - Connected services over networks and persisted data with volumes
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Multi-Container Orchestration
+  - 🧩 Declarative Stack Configuration
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Readiness for the CI/CD & DevOps quest line at Level 0101
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! You have already forged single containers in the fires of the Container Coast. But real applications are rarely a lone process - they are a web server, a database, a cache, and a background worker, all needing to find each other, share secrets, and start in the right order. Coordinating them by hand with a dozen `docker run` flags is a path to madness.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*This quest, **Docker Compose Orchestration**, hands you the conductor's baton. With a single declarative file and one command, you will bring an entire ensemble of containers to life, wire them together, and tear them down just as cleanly.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*When developers first containerized their apps, they discovered a new problem: an app and its database are two containers, and keeping them in sync through raw `docker run` invocations was error-prone and impossible to share. Each teammate had a slightly different startup ritual, and the old curse - "but it starts on my machine" - threatened to return.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
+*Docker Compose answered with a simple idea: describe the whole stack in one YAML file, commit it to the repository, and let `docker compose up` reproduce the exact same environment for everyone. The file becomes the single source of truth - infrastructure you can read, review, and version like code.*
 
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Master Compose and you hold the keystone of local development environments and the on-ramp to every orchestration tool that follows, from CI pipelines to Kubernetes.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **The Compose File** - Write a `compose.yaml` that defines multiple services declaratively
+- [ ] **Services & Networking** - Let containers discover and talk to each other by service name
+- [ ] **Volumes** - Persist database data so it survives container restarts and rebuilds
+- [ ] **Lifecycle Commands** - Bring the stack up, view logs, and tear it down with single commands
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **depends_on & Health** - Control startup order and wait for dependencies to be healthy
+- [ ] **Environment & .env** - Configure services with environment variables and an `.env` file
+- [ ] **Build vs Image** - Mix locally built services with pulled images in one stack
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain how one service reaches another using only its service name
+- [ ] Describe why a named volume keeps data that a container's writable layer would lose
+- [ ] Add a new service to an existing stack without breaking the others
+- [ ] Move a secret out of the compose file and into an `.env` file
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Completion of [Container Fundamentals](/quests/0100/container-fundamentals/) (images, containers, build, run)
+- [ ] Comfort building and running a single container
+- [ ] Ability to edit YAML carefully (indentation matters)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Docker with the Compose plugin (`docker compose version` should work)
+- [ ] A terminal and a text editor or IDE (VS Code recommended)
+- [ ] Internet connection for pulling base images
 
 ### 🧠 Skill Level Indicators
 This **🟡 Medium** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
-- [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
+- [ ] You completed Container Fundamentals or can already build and run images
+- [ ] You are comfortable with precise YAML indentation
+- [ ] Ready for 75-90 minutes of focused, hands-on learning
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Compose ships as a plugin inside modern Docker, so once Docker itself runs, Compose runs everywhere the same way. Verify it before you begin: `docker compose version`.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -191,23 +145,16 @@ This **🟡 Medium** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Docker Desktop already bundles the Compose plugin
+docker compose version
 
-# Install prerequisites
-brew install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# If you installed only the engine via colima, add the plugin
+brew install docker-compose
 ```
 
 **macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
+- With Docker Desktop, no separate install is needed.
+- Use the modern `docker compose` (space) form, not the legacy `docker-compose` (hyphen) binary.
 
 </details>
 
@@ -217,26 +164,16 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Docker Desktop on Windows includes Compose
+docker compose version
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+# Run commands from a WSL 2 distro for the smoothest experience
+wsl docker compose version
 ```
 
 **Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
+- Keep your project files inside the WSL 2 filesystem for fast bind mounts.
+- The Compose plugin is installed with Docker Desktop automatically.
 
 </details>
 
@@ -246,28 +183,16 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Install the Compose plugin if it isn't already present
+sudo apt update && sudo apt install -y docker-compose-plugin   # Debian/Ubuntu
+# sudo dnf install -y docker-compose-plugin                     # Fedora/RHEL
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
-
-# For Fedora/RHEL
-sudo dnf install [package-name]
-
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+docker compose version
 ```
 
 **Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
+- Native Docker on Linux gives the fastest builds and bind mounts.
+- If `docker compose` is missing, the `docker-compose-plugin` package provides it.
 
 </details>
 
@@ -277,225 +202,358 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
+# Codespaces and most cloud dev environments include Compose
+docker compose version
 
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Forward the published ports (e.g. 8080) through your platform's port forwarding
 ```
 
 **Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+- GitHub Codespaces ships Docker and Compose preinstalled.
+- Remember to forward published ports so you can reach the app in your browser.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Compose File - One Stack, One Command
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*A single YAML file replaces a wall of `docker run` flags. Learn its shape and you can describe any stack.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The anatomy of a `compose.yaml` file
+- Defining a service from a pulled image and from a local build
+- The core lifecycle commands: `up`, `ps`, `logs`, `down`
 
-### 🏗️ Building Your Knowledge Foundation
+### 🏗️ Your First Compose File
 
-**Step 1: Environment Setup**
+A Compose file is a map of **services** (each becomes one or more containers), plus optional top-level **networks** and **volumes**. Here is a minimal two-service stack: a web app that talks to Redis.
+
+**`app.py`** - a tiny Flask app that counts visits in Redis:
+
+```python
+import os
+from flask import Flask
+import redis
+
+app = Flask(__name__)
+cache = redis.Redis(host=os.environ.get("REDIS_HOST", "redis"), port=6379)
+
+@app.route("/")
+def hello():
+    count = cache.incr("hits")
+    return f"Hello from Compose! This page has been viewed {count} times.\n"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+```
+
+**`Dockerfile`** - to build the web service:
+
+```dockerfile
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 5000
+CMD ["python", "app.py"]
+```
+
+**`requirements.txt`**:
+
+```text
+flask
+redis
+```
+
+**`compose.yaml`** - the conductor's score:
+
+```yaml
+services:
+  web:
+    build: .                 # build the image from the local Dockerfile
+    ports:
+      - "8080:5000"          # host 8080 -> container 5000
+    environment:
+      REDIS_HOST: redis      # match the service name below
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine    # pulled, not built
+```
+
+Bring the whole thing up:
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Build images as needed and start everything in the background
+docker compose up -d
+
+# See the services and their status
+docker compose ps
+
+# Follow the logs from all services (Ctrl-C to stop following)
+docker compose logs -f
+
+# Reload http://localhost:8080 a few times and watch the counter climb
+
+# Stop and remove the containers, networks (keep named volumes)
+docker compose down
 ```
 
-**Step 2: Core Concepts**
+One command started an app and a database, networked them, and published a port. That is the entire promise of Compose.
 
-[Explanation of fundamental concepts]
-
-**Step 3: First Implementation**
-
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: The Compose File
+- [ ] Which service is built locally, and which is pulled from a registry?
+- [ ] What does `"8080:5000"` map, and which side is the host?
+- [ ] What does `docker compose down` remove, and what does it keep by default?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Stack is up**: `docker compose ps` shows both `web` and `redis` running
+- [ ] **Counter works**: Reloading the page increments the visit count
+- [ ] **Clean teardown**: `docker compose down` removed the containers cleanly
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: Networks, Service Discovery, and Volumes
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
-
-### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
-
-### 🏗️ Advanced Implementations
-
-[Detailed content for chapter 2]
-
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
-
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
-
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+*How did the web service reach Redis using just the hostname `redis`? And why didn't your data vanish? Two of Compose's quiet superpowers: automatic networking and named volumes.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Service discovery by name on the default Compose network
+- Defining custom networks to segment traffic
+- Persisting data with named volumes
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Networking and Service Discovery
 
-[Detailed content for chapter 3]
+Compose puts every service on a shared, private network and registers each service name as a DNS hostname. That is why `redis.Redis(host="redis")` just works - `redis` resolves to the Redis container's IP automatically. You never hard-code IP addresses.
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+You can also define **custom networks** to isolate tiers, so that, for example, the database is only reachable by the backend and not by anything else:
+
+```yaml
+services:
+  web:
+    build: .
+    ports:
+      - "8080:5000"
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    networks:
+      - backend            # only on backend; nothing on frontend can reach it
+
+networks:
+  frontend:
+  backend:
+```
+
+### 🏗️ Persisting Data with Volumes
+
+A container's writable layer is ephemeral - delete the container and its data is gone. A **named volume** is storage managed by Docker that lives independently of any container, so your database survives restarts, rebuilds, and `down`/`up` cycles. Compare two ways to attach storage:
+
+```yaml
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - db-data:/var/lib/postgresql/data   # named volume: durable, Docker-managed
+      - ./init:/docker-entrypoint-initdb.d  # bind mount: maps a host folder in
+
+volumes:
+  db-data:                                  # declares the named volume
+```
+
+- A **named volume** (`db-data`) is the right tool for database data: durable and portable.
+- A **bind mount** (`./init:...`) maps a host directory straight into the container - perfect for live-reloading source code during development.
+
+```bash
+# Bring the stack up, then prove persistence:
+docker compose up -d
+docker compose down          # containers gone...
+docker compose up -d         # ...but db-data volume is reattached, data intact
+
+# List and inspect volumes
+docker volume ls
+docker compose down -v       # the -v flag DOES delete named volumes — use with care
+```
+
+### 🔍 Knowledge Check: Networking & Volumes
+- [ ] Why can the web service use `redis` as a hostname without any IP configuration?
+- [ ] What is the difference between a named volume and a bind mount?
+- [ ] Which command removes named volumes, and why is it dangerous?
+
+## 🧙‍♂️ Chapter 3: Configuration, Startup Order, and a Full Stack
+
+*Production-shaped stacks need configuration that lives outside the file, dependencies that start in order, and the discipline to keep secrets out of version control.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Externalizing configuration with environment variables and an `.env` file
+- Controlling startup order with `depends_on` and health checks
+- Assembling a complete three-service application
+
+### 🏗️ Environment Variables and the .env File
+
+Hard-coding values in `compose.yaml` is fine for harmless defaults, but secrets and per-environment settings belong in an `.env` file that you **never commit**. Compose loads `.env` from the project directory automatically and substitutes `${VAR}` references.
+
+**`.env`** (add it to `.gitignore`):
+
+```text
+POSTGRES_PASSWORD=super-secret-change-me
+APP_PORT=8080
+```
+
+**`compose.yaml`** referencing it:
+
+```yaml
+services:
+  web:
+    build: .
+    ports:
+      - "${APP_PORT}:5000"
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy   # wait until db is healthy, not just started
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  db-data:
+```
+
+`depends_on` alone only controls *start order* - it does not wait for a service to be *ready*. Pairing it with `condition: service_healthy` and a `healthcheck` makes the web service wait until Postgres can actually accept connections, eliminating a whole class of flaky-startup bugs.
+
+### 🏗️ The Full Stack in Action
+
+```bash
+# Validate and view the fully-resolved configuration (great for debugging)
+docker compose config
+
+# Start everything; web waits for db to be healthy
+docker compose up -d
+
+# Scale a stateless service to three replicas behind the same network
+docker compose up -d --scale web=3
+
+# Tear down, removing volumes too for a truly clean slate
+docker compose down -v
+```
+
+You now have a reproducible, version-controlled, multi-service environment that any teammate can launch with a single command - the foundation every CI/CD pipeline and orchestration platform builds upon.
+
+### 🔍 Knowledge Check: Config & Startup
+- [ ] Why should the `.env` file be listed in `.gitignore`?
+- [ ] What does `depends_on` guarantee, and what does it NOT guarantee on its own?
+- [ ] How does `condition: service_healthy` change startup behavior?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Two-Service Stack
+**Objective**: Reproduce the web + Redis stack from Chapter 1 and confirm the visit counter increments.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] A `compose.yaml` with a built `web` service and a pulled `redis` service
+- [ ] The web service reaches Redis by service name
+- [ ] `docker compose up -d` starts both
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Reloading `http://localhost:8080` increases the counter.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Add a Persistent Database
+**Objective**: Replace (or add) a Postgres service with a named volume and prove the data survives a teardown.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] A `db` service using `postgres` with a named volume
+- [ ] Credentials supplied through an `.env` file, not hard-coded
+- [ ] Demonstrate `down` then `up` keeps the data
 
-**Validation**: [How to verify success]
+**Validation**: Write a row, run `docker compose down` (without `-v`), `up` again, and the row is still there.
+
+### 🔴 Advanced Challenge: Health-Gated Three-Service App
+**Objective**: Build a web + db + cache stack where the web service waits for the database to be healthy before starting.
+
+**Requirements**:
+- [ ] Three services on appropriate networks
+- [ ] A `healthcheck` on the database and `condition: service_healthy` on the web service
+- [ ] All configuration via `.env`; `docker compose config` resolves cleanly
+
+**Validation**: Stopping then starting the stack never produces a "database not ready" error from the web service.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Stack Conductor** - You orchestrated a multi-container app with a single command
+- 🔗 **Service Weaver** - You connected services over networks and persisted data with volumes
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Multi-Container Orchestration** - Coordinate many containers as one application
+- **Declarative Stack Configuration** - Describe infrastructure as a versioned file
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- CI/CD Pipeline Basics - Run these stacks automatically on every commit
+- Container Registries Deep Dive - Ship your stack's images to production
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 Level 0101 - CI/CD & DevOps - Automate building and deploying your containerized stacks
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Frontend Docker](/quests/0100/frontend-docker/) - Containerize a Jekyll + Bootstrap site
+- ⚔️ [Container Fundamentals](/quests/0100/container-fundamentals/) - Revisit images, layers, and registries
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Advance toward CI/CD pipelines for your stacks  
+**🏗️ System Engineer**: Study networks, health checks, and resource limits in depth  
+**🛡️ Security Specialist**: Explore secrets management and network segmentation
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Docker Compose Overview](https://docs.docker.com/compose/) - The official introduction
+- [Compose File Reference](https://docs.docker.com/reference/compose-file/) - Every key explained
+- [Compose Networking](https://docs.docker.com/compose/how-tos/networking/) - Service discovery and custom networks
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Awesome Compose](https://github.com/docker/awesome-compose) - Ready-made multi-service examples
+- [Docker Hub](https://hub.docker.com/) - Find official images for databases and caches
+- [Stack Overflow: docker-compose](https://stackoverflow.com/questions/tagged/docker-compose) - Q&A when you get stuck
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Use Compose in Development](https://docs.docker.com/compose/how-tos/) - Practical how-to guides
+- [Environment Variables in Compose](https://docs.docker.com/compose/how-tos/environment-variables/) - The .env file and substitution
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Started a multi-service stack with a single command
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Level hub:** [[Level 0100 - Frontend & Containers]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Requires:** [[Docker Container Fundamentals: Master Isolation & Portability for DevOps]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

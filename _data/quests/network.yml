@@ -1,96 +1,94 @@
-generated: '2026-05-24T15:32:13.992888+00:00'
 stats:
   total: 180
   by_level:
-    '0000': 30
-    '0001': 18
-    '0010': 14
-    '0011': 8
-    '0100': 11
+    '0000': 27
+    '0001': 25
+    '0010': 17
+    '0011': 3
+    '0100': 7
     '0101': 11
     '0110': 8
     '0111': 9
-    '1000': 6
-    '1001': 8
-    '1010': 10
+    '1000': 7
+    '1001': 7
+    '1010': 13
     '1011': 10
     '1100': 12
     '1101': 8
-    '1110': 9
+    '1110': 8
     '1111': 8
   by_type:
-    documentation: 1
     epic_quest: 1
-    main_quest: 150
-    side_quest: 28
+    main_quest: 154
+    side_quest: 25
 nodes:
-- id: /quests/0000/side-quests/bash-run/
+- id: /quests/0000/bash-run/
   title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
   level: '0000'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0000/side-quests/agent-mode/
+- id: /quests/0000/agent-mode/
   title: 'Bashcrawl Agent Mode: AI Automation and Contribution'
   level: '0000'
   type: side_quest
   difficulty: 🔴 Hard
-- id: /quests/0000/side-quests/armoury/
+- id: /quests/0000/armoury/
   title: 'Bashcrawl Armoury: File Permissions and Script Execution'
   level: '0000'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0000/side-quests/cellar/
+- id: /quests/0000/cellar/
   title: 'Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet'
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
-- id: /quests/0000/side-quests/chamber/
+- id: /quests/0000/chamber/
   title: 'Bashcrawl Chamber: Bash Arithmetic and the Statue Boss'
   level: '0000'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0000/side-quests/entrance/
+- id: /quests/0000/entrance/
   title: 'Bashcrawl Entrance: Your First Terminal Commands'
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
-- id: /quests/0000/side-quests/hidden-chapel/
+- id: /quests/0000/hidden-chapel/
   title: 'Bashcrawl Hidden Chapel: Hidden Files and Man Pages'
   level: '0000'
   type: side_quest
   difficulty: 🔴 Hard
-- id: /quests/0000/side-quests/rift/
+- id: /quests/0000/rift/
   title: 'Bashcrawl Rift: Pipes, Redirection, and the Final Boss'
   level: '0000'
   type: side_quest
   difficulty: 🔴 Hard
-- id: /quests/0000/side-quests/scrap/
+- id: /quests/0000/scrap/
   title: 'Bashcrawl Scrap Heap: Symbolic Links and Portal Creation'
   level: '0000'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0000/side-quests/vault/
+- id: /quests/0000/vault/
   title: 'Bashcrawl Vault: Environment Variables and the Goblet Puzzle'
   level: '0000'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0000/side-quests/workshop/
+- id: /quests/0000/workshop/
   title: 'Bashcrawl Workshop: File Management Fundamentals'
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
 - id: /quests/0000/begin-your-it-journey/
-  title: Begin your IT Journey
+  title: 'Begin Your IT Journey: Survey the Realm'
   level: '0000'
   type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/0000/character-building/
-  title: 'Character Building: Forge Your IT Identity and Development Environment'
+  title: 'Character Building: Forge Your IT Hero Identity'
   level: '0000'
   type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/0000/character-selection/
-  title: Character Selection
+  title: 'Character Selection: Choose Your IT Class'
   level: '0000'
   type: main_quest
   difficulty: 🟢 Easy
@@ -120,12 +118,12 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0000/it-fundamentals/
-  title: IT Fundamentals
+  title: 'IT Fundamentals: Your Digital Awakening Quest'
   level: '0000'
   type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/0000/linux-fundamentals/
-  title: Linux Fundamentals
+  title: 'Linux Fundamentals: Enter the Penguin''s Domain'
   level: '0000'
   type: main_quest
   difficulty: 🟡 Medium
@@ -135,7 +133,7 @@ nodes:
   type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/0000/os-selection/
-  title: OS Selection
+  title: 'OS Selection: Choose Your Realm of Power'
   level: '0000'
   type: main_quest
   difficulty: 🟢 Easy
@@ -145,17 +143,37 @@ nodes:
   type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/0000/vscode-mastery/
-  title: 'VS Code Mastery Quest: Forge Your Ultimate Development Weapon'
+  title: 'VS Code Mastery: Forge Your Ultimate Dev Weapon'
   level: '0000'
   type: main_quest
   difficulty: 🟢 Easy
-- id: /quests/0001/side-quests/barodybroject-stack-analysis/
+- id: /quests/0001/advanced-markdown/
+  title: 'Advanced Markdown: Tables, Footnotes & Kramdown'
+  level: '0001'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0001/analytics-integration/
+  title: 'Analytics Integration: Privacy-Aware Web Measurement'
+  level: '0001'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0001/barodybroject-stack-analysis/
   title: 'Technology Stack Analysis: Barodybroject'
   level: '0001'
   type: side_quest
   difficulty: 🟢 Easy
+- id: /quests/0001/bootstrap-framework/
+  title: 'Bootstrap Framework: Build Responsive Sites Fast'
+  level: '0001'
+  type: main_quest
+  difficulty: 🟢 Easy
 - id: /quests/0001/git-init-testing/
-  title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
+  title: Building & Testing the Git Init Shell Script
+  level: '0001'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0001/css-styling-basics/
+  title: 'CSS Styling Basics: Selectors, the Box Model & Layout'
   level: '0001'
   type: main_quest
   difficulty: 🟢 Easy
@@ -173,9 +191,9 @@ nodes:
   title: 'Git Workflow Mastery: Branches, Merging & Team Collaboration'
   level: '0001'
   type: main_quest
-  difficulty: 🟢 Easy
+  difficulty: 🟡 Medium
 - id: /quests/0001/github-pages-basics/
-  title: 'GitHub Pages Basics: Deploy Free Websites in Minutes'
+  title: 'GitHub Pages Basics: Host Your Jekyll Site for Free'
   level: '0001'
   type: main_quest
   difficulty: 🟢 Easy
@@ -184,18 +202,28 @@ nodes:
   level: '0001'
   type: main_quest
   difficulty: 🟢 Easy
-- id: /quests/0001/side-quests/it-journey-stack-analysis/
+- id: /quests/0001/it-journey-stack-analysis/
   title: 'Stack Attack Analysis: IT-Journey'
   level: '0001'
   type: side_quest
   difficulty: 🟢 Easy
+- id: /quests/0001/javascript-fundamentals/
+  title: 'JavaScript Fundamentals: Variables, Functions & the DOM'
+  level: '0001'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/0001/jekyll-fundamentals/
   title: 'Jekyll Fundamentals: Build Static Sites with Ruby'
   level: '0001'
   type: main_quest
   difficulty: 🟢 Easy
+- id: /quests/0001/jekyll-plugins/
+  title: 'Jekyll Plugins: Extend Your Static Site Safely'
+  level: '0001'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/0001/kaizen-continuous-improvement/
-  title: 'Kaizen Quest: The Path of Continuous Improvement in Software Alchemy'
+  title: 'Kaizen Quest: Continuous Improvement Alchemy'
   level: '0001'
   type: main_quest
   difficulty: 🟡 Medium
@@ -203,24 +231,29 @@ nodes:
   title: 'Liquid Templating: Dynamic Content for Jekyll Sites'
   level: '0001'
   type: main_quest
-  difficulty: 🟢 Easy
-- id: /quests/0001/side-quests/personal-site/
-  title: Personal Site
+  difficulty: 🟡 Medium
+- id: /quests/0001/personal-site/
+  title: Build a Personal Website with GitHub Pages
   level: '0001'
   type: side_quest
   difficulty: 🟢 Easy
-- id: /quests/0001/side-quests/avatar-forge/
+- id: /quests/0001/seo-optimization/
+  title: 'SEO Optimization: Meta Tags, Sitemaps & Structured Data'
+  level: '0001'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0001/avatar-forge/
   title: 'Avatar Forge: Crafting Your Digital Portrait'
   level: '0001'
   type: side_quest
   difficulty: 🟢 Easy
-- id: /quests/0001/side-quests/badge-collector/
+- id: /quests/0001/badge-collector/
   title: 'Badge Collector: Showcasing Your Achievements'
   level: '0001'
   type: side_quest
   difficulty: 🟡 Medium
 - id: /quests/0001/stack-attack/
-  title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
+  title: 'Stack Attack: AI-Built Django + React Enterprise ERP'
   level: '0001'
   type: main_quest
   difficulty: 🔴 Hard
@@ -239,38 +272,17 @@ nodes:
   level: '0001'
   type: main_quest
   difficulty: 🟢 Easy
-- id: /quests/0010/advanced-markdown/
-  title: 'Advanced Markdown: Tables, Footnotes & Extended Syntax'
-  level: '0010'
-  type: main_quest
-  difficulty: 🟡 Medium
 - id: /quests/0010/bash-scripting/
-  title: 'Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery
-    Quest'
-  level: '0010'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0010/bootstrap-framework/
-  title: 'Bootstrap Framework: Build Responsive Sites Fast'
-  level: '0010'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0010/css-styling-basics/
-  title: 'CSS Styling Basics: Selectors, Layout & Responsive Design'
-  level: '0010'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0010/javascript-fundamentals/
-  title: 'JavaScript Fundamentals: DOM Manipulation & Events'
+  title: 'Bash Incantations: Level 0010 Scripting Quest'
   level: '0010'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0010/jekyll-mermaid-integration/
-  title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
+  title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration'
   level: '0010'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0010/side-quests/nerd-font-enchantment/
+- id: /quests/0010/nerd-font-enchantment/
   title: 'Nerd Font Enchantment: Terminal Icon Mastery'
   level: '0010'
   type: side_quest
@@ -285,17 +297,17 @@ nodes:
   level: '0010'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0010/side-quests/contribution-calendar/
+- id: /quests/0010/contribution-calendar/
   title: 'Contribution Calendar: Mapping Your Journey Through Time'
   level: '0010'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0010/side-quests/stats-dashboard/
+- id: /quests/0010/stats-dashboard/
   title: 'Stats Dashboard: Enhancing Your Data Visualization'
   level: '0010'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0010/side-quests/terminal-artificer-frontend-building/
+- id: /quests/0010/terminal-artificer-frontend-building/
   title: 'Terminal Artificer: Forging the Glass Interface'
   level: '0010'
   type: side_quest
@@ -305,29 +317,13 @@ nodes:
   level: '0010'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0011/advanced-git-workflows/
-  title: 'Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands'
-  level: '0011'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0011/analytics-integration/
-  title: 'Google Analytics for Jekyll: Complete User Tracking Integration Guide'
-  level: '0011'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0011/custom-domains/
-  title: 'Custom Domains for GitHub Pages: Professional Website Setup Guide'
-  level: '0011'
-  type: main_quest
-  difficulty: 🟡 Medium
 - id: /quests/0011/github-pages-hidden-gem/
-  title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and
-    Conquer AI Realms'
+  title: 'Hidden Gem Quest: Publish AI Chats on GitHub Pages'
   level: '0011'
   type: main_quest
   difficulty: 🟢 Easy
-- id: /quests/0011/jekyll-plugins/
-  title: 'Jekyll Plugins: Essential Extensions for Powerful Static Sites'
+- id: /quests/0011/prd-codex-mastery/
+  title: 'The PRD Codex: Master Product Reality Distillation'
   level: '0011'
   type: main_quest
   difficulty: 🟡 Medium
@@ -336,33 +332,13 @@ nodes:
   level: '0011'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0011/seo-optimization/
-  title: 'SEO Optimization: Boost Search Engine Visibility for Jekyll Sites'
-  level: '0011'
-  type: main_quest
-  difficulty: 🟡 Medium
 - id: /quests/0100/container-fundamentals/
-  title: 'Docker Container Fundamentals: Master Isolation & Portability for DevOps'
+  title: 'Docker Container Fundamentals: Images to Registries'
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0100/docker-compose-orchestration/
-  title: 'Docker Compose Orchestration: Build Multi-Container Applications'
-  level: '0100'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0100/frontend-docker-000/
-  title: Frontend Docker - level 000
-  level: '0100'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0100/001-frontend-docker/
-  title: 'Frontend Docker Level 001: Create Jekyll Site with Docker Container'
-  level: '0100'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/0100/010-frontend-docker/
-  title: 'Frontend Docker Level 010: Adding Bootstrap 5 to Jekyll in Docker'
+  title: 'Docker Compose Orchestration: Multi-Container Apps'
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
@@ -371,22 +347,17 @@ nodes:
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0100/frontend-levels/
-  title: Frontend Forests Levels
-  level: '0100'
-  type: main_quest
-  difficulty: 🟡 Medium
 - id: /quests/0100/frontend/
   title: 'Frontend Forests: Building a Jekyll Site with Bootstrap'
   level: '0100'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0100/side-quests/jekyll-component-refactoring/
+- id: /quests/0100/jekyll-component-refactoring/
   title: 'The Artisan''s Forge: Refactoring Jekyll Theme Components'
   level: '0100'
   type: side_quest
   difficulty: 🟡 Medium
-- id: /quests/0100/side-quests/profile-themes/
+- id: /quests/0100/profile-themes/
   title: 'Profile Themes: Unleashing the Style Sorcerer'
   level: '0100'
   type: side_quest
@@ -397,27 +368,27 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0101/artifact-management/
-  title: 'Artifact Management: Build Output Storage and Dependency Caching'
+  title: 'Artifact Management: Versioned, Signed Build Output'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0101/cicd-fundamentals/
-  title: 'CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials'
+  title: 'CI/CD Fundamentals: The Build-Test-Deploy Pipeline'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0101/deployment-pipelines/
-  title: 'Deployment Pipelines: Production Release Automation Strategies'
+  title: 'Deployment Pipelines: Production Release Automation'
   level: '0101'
   type: main_quest
-  difficulty: 🟡 Medium
+  difficulty: 🔴 Hard
 - id: /quests/0101/docker-mastery/
   title: 'Docker Containerization Mastery: Level 0101 (5) Quest'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0101/environment-management/
-  title: 'Environment Management: Dev, Staging, and Production Configuration'
+  title: 'Environment Management: Dev, Staging, and Prod Parity'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
@@ -426,18 +397,18 @@ nodes:
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/0101/side-quests/jekyll-quest-tracking/
+- id: /quests/0101/jekyll-quest-tracking/
   title: 'Jekyll Quest Tracking: Building Dynamic Collection Layouts'
   level: '0101'
   type: side_quest
   difficulty: 🔴 Hard
 - id: /quests/0101/secrets-management/
-  title: 'Secrets Management: Secure Configuration and Credential Handling'
+  title: 'Secrets Management: Secure CI Credentials'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0101/testing-integration/
-  title: 'Testing Integration: Automated Quality Assurance in CI/CD Pipelines'
+  title: 'Testing Integration: Tiered CI/CD Test Gates'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
@@ -447,30 +418,30 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0101/workflow-optimization/
-  title: 'Workflow Optimization: Caching Strategies and Pipeline Parallelization'
+  title: 'Workflow Optimization: Caching and Parallel CI/CD'
   level: '0101'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0110/backup-recovery/
-  title: 'Backup and Recovery: Data Protection Strategies for Databases'
+  title: 'Backup and Recovery: Data Protection for Databases'
   level: '0110'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0110/connection-pooling/
   title: 'Connection Pooling: Efficient Database Resource Management'
   level: '0110'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0110/data-modeling/
   title: 'Data Modeling: Schema Design and Database Relationships'
   level: '0110'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0110/database-fundamentals/
-  title: 'Database Fundamentals: Data Storage and Retrieval'
+  title: 'Database Fundamentals: The Relational Model and ACID'
   level: '0110'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0110/database-migrations/
   title: 'Database Migrations: Schema Evolution and Version Control'
   level: '0110'
@@ -482,12 +453,12 @@ nodes:
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/0110/query-optimization/
-  title: 'Query Optimization: Performance Tuning for Fast Database Queries'
+  title: 'Query Optimization: Tuning Fast Database Queries'
   level: '0110'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/0110/sql-mastery/
-  title: 'SQL Mastery: Query Language Proficiency for Data Professionals'
+  title: 'SQL Mastery: Query Language Proficiency'
   level: '0110'
   type: main_quest
   difficulty: 🔴 Hard
@@ -502,47 +473,47 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/0111/api-authentication/
-  title: 'API Authentication: OAuth, JWT, and API Keys Implementation'
+  title: 'API Authentication: Keys, Tokens, OAuth2, and JWT'
   level: '0111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/0111/api-documentation/
-  title: 'API Documentation: OpenAPI Specification and Developer Experience'
+  title: 'API Documentation: OpenAPI, Swagger, and Contract-First'
   level: '0111'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0111/api-fundamentals/
-  title: 'API Fundamentals: Building Web Services and HTTP APIs'
+  title: 'API Fundamentals: HTTP, Requests, and JSON'
   level: '0111'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟢 Easy
 - id: /quests/0111/api-versioning/
-  title: 'API Versioning: Managing API Evolution and Backwards Compatibility'
+  title: 'API Versioning: URI, Headers, and Backward Compatibility'
   level: '0111'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0111/error-handling/
-  title: 'Error Handling: API Response Patterns and HTTP Status Codes'
+  title: 'Error Handling: Status Codes, Problem Details, and Retries'
   level: '0111'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0111/rate-limiting/
-  title: 'Rate Limiting: API Traffic Control and Throttling Strategies'
+  title: 'Rate Limiting: Token Buckets, 429s, and Quotas'
   level: '0111'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/0111/rest-principles/
-  title: 'REST Principles: RESTful API Design Best Practices'
+  title: 'REST Principles: Resources, Statelessness, and Maturity'
   level: '0111'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/1000/agentic-mcp-server-mastery/
   title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
   level: '1000'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1000/agentic-observability-and-control/
-  title: 'The All-Seeing Eye: Observability & Control for Autonomous Agents'
+  title: 'The All-Seeing Eye: Observability for AI Agents'
   level: '1000'
   type: main_quest
   difficulty: 🟡 Medium
@@ -552,7 +523,12 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/1000/aws-essentials/
-  title: 'AWS Essentials: Core Services and Cloud Architecture Patterns'
+  title: 'AWS Essentials: Core Services and Architecture'
+  level: '1000'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1000/azure-ascension-jekyll-deployment/
+  title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
   level: '1000'
   type: main_quest
   difficulty: 🔴 Hard
@@ -560,9 +536,9 @@ nodes:
   title: 'Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained'
   level: '1000'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/1000/infrastructure-as-code/
-  title: 'Infrastructure as Code: Terraform and CloudFormation Fundamentals'
+  title: 'Infrastructure as Code: Terraform Fundamentals and State'
   level: '1000'
   type: main_quest
   difficulty: 🔴 Hard
@@ -582,17 +558,17 @@ nodes:
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1001/k8s-config-secrets/
-  title: 'Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices'
+  title: 'Kubernetes ConfigMaps and Secrets: The Vault'
   level: '1001'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/1001/k8s-pods-workloads/
   title: 'Kubernetes Pods and Workloads: Deployments and StatefulSets'
   level: '1001'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1001/k8s-services-networking/
-  title: 'Kubernetes Services and Networking: Ingress and DNS Configuration'
+  title: 'Kubernetes Services and Networking: Ingress and DNS'
   level: '1001'
   type: main_quest
   difficulty: 🔴 Hard
@@ -612,27 +588,37 @@ nodes:
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1010/agentic-state-persistence-and-drift/
-  title: 'Anchoring the Drifting Agent: State Persistence and Drift Prevention'
+  title: 'Anchoring the Drifting Agent: Stop Context Drift'
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1010/agentic-success-criteria-and-signals/
-  title: 'The Oracle''s Rubric: Defining Agent Success Criteria and Signals'
+  title: 'The Oracle''s Rubric: Agent Success Signals'
   level: '1010'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/1010/alerting-systems/
-  title: 'Alerting Systems: PagerDuty Integration & Incident Management Guide'
+  title: 'Alerting Systems: Alertmanager, Routing, On-Call & Runbooks'
+  level: '1010'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/analytics-mcp-setup/
+  title: Connect Google Analytics to Your AI Agent via MCP
+  level: '1010'
+  type: main_quest
+  difficulty: 🟡 Medium
+- id: /quests/1010/automate-traffic-report/
+  title: Automate a Weekly Traffic Report
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1010/distributed-tracing/
-  title: 'Distributed Tracing: Jaeger & OpenTelemetry Implementation Guide'
+  title: Distributed Tracing with Jaeger & OpenTelemetry
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1010/elk-stack/
-  title: 'ELK Stack Tutorial: Elasticsearch, Logstash & Kibana for Log Analysis'
+  title: 'ELK Stack: Elasticsearch, Logstash & Kibana Logs'
   level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
@@ -642,17 +628,22 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/1010/monitoring-fundamentals/
-  title: 'Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability'
+  title: 'Monitoring Fundamentals: Metrics, Logs, and Traces'
   level: '1010'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/1010/prometheus-grafana/
-  title: 'Prometheus & Grafana: Complete Metrics Collection & Visualization Tutorial'
+  title: 'Prometheus & Grafana: Metrics Collection and Visualization'
   level: '1010'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
+- id: /quests/1010/query-traffic-with-mcp/
+  title: Query Your Traffic with the GA MCP Tools
+  level: '1010'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/1011/agentic-behavior-tuning/
-  title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
+  title: 'Reforging the Agent''s Mind: Tuning Behavior by Instruction'
   level: '1011'
   type: main_quest
   difficulty: 🔴 Hard
@@ -677,25 +668,25 @@ nodes:
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1011/compliance-standards/
-  title: 'Compliance Standards: SOC 2, GDPR, and HIPAA Requirements'
+  title: 'Compliance Standards: SOC 2, ISO 27001, GDPR, and PCI-DSS'
   level: '1011'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/1011/penetration-testing/
   title: 'Penetration Testing: Tools and Ethical Hacking Methodologies'
   level: '1011'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1011/secure-coding/
-  title: 'Secure Coding Practices: OWASP Top 10 Vulnerability Prevention'
+  title: 'Secure Coding: Preventing the OWASP Top 10'
   level: '1011'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1011/security-fundamentals/
-  title: 'Security Fundamentals: CIA Triad and Defense in Depth Strategies'
+  title: 'Security Fundamentals: CIA Triad and Defense in Depth'
   level: '1011'
   type: main_quest
-  difficulty: 🔴 Hard
+  difficulty: 🟡 Medium
 - id: /quests/1011/threat-modeling/
   title: 'Threat Modeling: STRIDE Framework and Attack Trees Analysis'
   level: '1011'
@@ -722,82 +713,77 @@ nodes:
   type: main_quest
   difficulty: ⚔️ Epic
 - id: /quests/1100/apache-spark/
-  title: 'Apache Spark Mastery: Big Data Processing with PySpark & Scala'
+  title: 'Apache Spark Mastery: Big Data with PySpark'
   level: '1100'
   type: main_quest
   difficulty: ⚔️ Epic
 - id: /quests/1100/data-quality/
-  title: 'Data Quality Engineering: Testing, Validation & Monitoring Frameworks'
+  title: 'Data Quality Engineering: Validation & Monitoring'
   level: '1100'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1100/data-warehousing/
-  title: 'Data Warehousing: Design Star Schema & Build Modern Analytics Architecture'
+  title: 'Data Warehousing: Build a Dimensional Star Schema in SQL'
   level: '1100'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1100/conquer-king-edgar/
-  title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
+  title: 'Conquer King EDGAR: Siege of the SEC Data Castle'
   level: '1100'
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/1100/etl-pipeline-design/
-  title: 'ETL Pipeline Design: Build Scalable Data Pipelines with Python'
+  title: 'ETL Pipeline Design: Scalable Python Data Pipelines'
   level: '1100'
   type: main_quest
   difficulty: 🔴 Hard
-- id: /quests/1100/sec-edgar-siege/
-  title: 'The Siege of King EDGAR: Storming the SEC Data Castle'
-  level: '1100'
-  type: main_quest
-  difficulty: 🟡 Medium
 - id: /quests/1100/stream-processing/
   title: 'Stream Processing: Real-Time Data with Apache Kafka & Flink'
   level: '1100'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1100/temple-of-templates/
-  title: 'The Temple of Templates: Binary Abstractions and Reusable Realms'
+  title: 'The Temple of Templates: Reusable Abstractions'
   level: '1100'
   type: main_quest
   difficulty: 🟡 Medium
-- id: /quests/1101/side-quests/ai-ethics/
-  title: 'AI Ethics and Responsible AI: Bias Detection, Fairness & Governance'
+- id: /quests/1101/ai-ethics/
+  title: 'AI Ethics: Bias Detection, Fairness & Governance'
   level: '1101'
-  type: side_quest
+  type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/1101/computer-vision/
-  title: 'Computer Vision Mastery: Image Classification, Object Detection & Segmentation'
+  title: 'Computer Vision Mastery: CNNs and Transfer Learning'
   level: '1101'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1101/deep-learning-frameworks/
-  title: 'Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation'
+  title: 'Deep Learning Frameworks: PyTorch vs TensorFlow'
   level: '1101'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1101/ml-fundamentals/
-  title: 'Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn'
+  title: Machine Learning Fundamentals with Scikit-Learn
   level: '1101'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1101/mlops/
-  title: 'MLOps Engineering: CI/CD Pipelines for Machine Learning Production'
+  title: 'MLOps Engineering: CI/CD Pipelines for ML in Production'
   level: '1101'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1101/natural-language-processing/
-  title: 'Natural Language Processing: Text Analysis, Transformers & LLMs with Python'
+  title: 'Natural Language Processing: Transformers & LLMs'
   level: '1101'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1101/neural-networks/
-  title: 'Neural Networks Deep Dive: Build CNNs, RNNs & Transformers from Scratch'
+  title: 'Neural Networks Deep Dive: Build One From Scratch'
   level: '1101'
   type: main_quest
   difficulty: ⚔️ Epic
 - id: /quests/1101/python-data-science/
-  title: 'Python for Data Science: NumPy, Pandas & Matplotlib Complete Guide'
+  title: 'Python for Data Science: NumPy, Pandas & Matplotlib'
   level: '1101'
   type: main_quest
   difficulty: 🟡 Medium
@@ -807,7 +793,7 @@ nodes:
   type: main_quest
   difficulty: 🟡 Medium
 - id: /quests/1110/api-gateway-patterns/
-  title: 'API Gateway Patterns: Routing, Load Balancing and Security'
+  title: 'API Gateway Patterns: The Single Front Door'
   level: '1110'
   type: main_quest
   difficulty: 🔴 Hard
@@ -817,199 +803,239 @@ nodes:
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1110/domain-driven-design/
-  title: 'Domain-Driven Design: Strategic and Tactical Patterns'
+  title: 'Domain-Driven Design: Modeling the Business in Code'
   level: '1110'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1110/event-driven-design/
-  title: 'Event-Driven Architecture: Message Queues and Event Sourcing'
+  title: 'Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS'
   level: '1110'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1110/microservices-architecture/
-  title: 'Microservices Architecture: Building Scalable Distributed Systems'
+  title: 'Microservices Architecture: Decomposing the Monolith'
   level: '1110'
   type: main_quest
   difficulty: ⚔️ Epic
 - id: /quests/1110/scaling-strategies/
-  title: 'Scaling Strategies: Horizontal and Vertical Scaling Patterns'
+  title: 'Scaling Strategies: Horizontal Growth, Caching, and CAP'
   level: '1110'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1110/system-design-interviews/
-  title: 'System Design Interview Mastery: Ace Technical Interviews'
+  title: 'System Design Interviews: A Framework for the Whiteboard'
   level: '1110'
   type: main_quest
   difficulty: ⚔️ Epic
 - id: /quests/1111/architecture-reviews/
-  title: 'Architecture Reviews: Leading Technical Design Discussions'
+  title: 'Architecture Reviews: ADRs and Trade-off Facilitation'
   level: '1111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1111/building-technical-communities/
-  title: 'Building Technical Communities: Growing Developer Ecosystems'
+  title: 'Building Technical Communities: Govern and Include'
   level: '1111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1111/career-advancement/
-  title: 'Career Advancement Strategies: Growing from Engineer to Leader'
+  title: 'Career Advancement: IC vs Management and Leveling'
   level: '1111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1111/innovation-rnd/
-  title: 'Innovation and R&D: Driving Technical Innovation'
+  title: 'Innovation and R&D: Experimentation and Technical Bets'
   level: '1111'
   type: main_quest
   difficulty: ⚔️ Epic
 - id: /quests/1111/mentorship-programs/
-  title: 'Mentorship Programs: Developing and Growing Engineering Talent'
+  title: 'Mentorship Programs: Growing Engineering Talent'
   level: '1111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1111/open-source-contribution/
-  title: 'Open Source Contribution: Leading and Maintaining Projects'
+  title: 'Open Source Contribution: Maintaining and Licensing'
   level: '1111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1111/tech-speaking-writing/
-  title: 'Tech Speaking and Writing: Building Your Technical Brand'
+  title: 'Tech Speaking and Writing: RFCs, Docs, and Talks'
   level: '1111'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1111/technical-leadership/
-  title: 'Technical Leadership: Building High-Performance Engineering Teams'
+  title: 'Technical Leadership: Leading Without a Crown'
   level: '1111'
   type: main_quest
   difficulty: ⚔️ Epic
-- id: /quests/1000/azure-ascension-jekyll-deployment/
-  title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
-  level: '1001'
-  type: main_quest
-  difficulty: 🔴 Hard
-- id: /quests/0011/prd-codex-mastery/
-  title: 'The PRD Codex: Mastering the Art of Product Reality Distillation'
-  level: '0011'
-  type: main_quest
-  difficulty: 🟡 Medium
-- id: /quests/codex/quest-organization-summary/
-  title: Quest Organization Summary
-  level: '0000'
-  type: documentation
-  difficulty: 🟢 Easy
-- id: /quests/codex/epic-digital-portfolio-fortress/
-  title: 'The Digital Portfolio Fortress: Full-Stack Epic Construction'
-  level: '1110'
-  type: epic_quest
-  difficulty: ⚔️ Epic
 - id: /quests/codex/glossary/
-  title: 'Glossary '
+  title: 'Codex Glossary: Fantasy Terms to IT Reality'
   level: '0000'
   type: side_quest
-  difficulty: 🟢 Easy
-- id: /quests/codex/oh-my-zsh-terminal-enchantment/
-  title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
-  level: '0010'
-  type: side_quest
-  difficulty: 🟡 Medium
-- id: /quests/codex/quest-network-mapping-example/
-  title: 'Quest Network Mapping: Comprehensive Learning Path Visualization'
-  level: '0000'
-  type: side_quest
-  difficulty: 🟢 Easy
-- id: /quests/codex/terminal-navigation-mastery/
-  title: 'Terminal Navigation Mastery: Command-Line Fundamentals'
-  level: '0000'
-  type: main_quest
   difficulty: 🟢 Easy
 - id: /quests/codex/world-map/
   title: '🗺️ World Map: Navigation Guide to the IT-Journey Realm'
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
+- id: /quests/0010/action-triggers/
+  title: Understanding Action Triggers in Depth
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0010/branches-and-pull-requests/
+  title: Mastering Branches and Pull Requests for Developers
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0010/change-logs/
+  title: 'Level 0010: Changelogs & the Chronicles of Code'
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0010/commitments-to-clean-commits/
+  title: 'Commit Hygiene: Crafting Clean, Atomic Commits'
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0010/django-and-git/
+  title: Conjure a Django Project into a GitHub Vault
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
+  title: 'Epic Quest: Zer0-to-Her0 CMStyle'
+  level: '0010'
+  type: epic_quest
+  difficulty: 🟢 Easy
+- id: /quests/1100/mastering-version-control-workflows/
+  title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
+  level: '1100'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/0010/planting-seeds/
+  title: 'Planting Seeds: Set Up Your Dev Toolkit'
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
+- id: /quests/0010/revolutionizing-work-with-ai-automation/
+  title: Revolutionizing Work with AI Automation
+  level: '0010'
+  type: main_quest
+  difficulty: 🟢 Easy
 edges:
-- source: /quests/0000/side-quests/bash-run/
+- source: /quests/0000/bash-run/
   target: /quests/0000/bashcrawl/
   kind: required
-- source: /quests/0000/side-quests/bash-run/
+- source: /quests/0000/bash-run/
   target: /quests/0000/linux-fundamentals/
   kind: required
-- source: /quests/0000/side-quests/bash-run/
+- source: /quests/0000/bash-run/
   target: /quests/0000/terminal-fundamentals/
   kind: recommended
-- source: /quests/0000/side-quests/agent-mode/
-  target: /quests/0000/side-quests/rift/
+- source: /quests/0000/agent-mode/
+  target: /quests/0000/rift/
   kind: required
-- source: /quests/0000/side-quests/armoury/
-  target: /quests/0000/side-quests/cellar/
-  kind: required
-- source: /quests/0000/side-quests/armoury/
-  target: /quests/0000/side-quests/chamber/
-  kind: unlocks
-- source: /quests/0000/side-quests/cellar/
-  target: /quests/0000/side-quests/entrance/
-  kind: required
-- source: /quests/0000/side-quests/cellar/
-  target: /quests/0000/side-quests/armoury/
-  kind: unlocks
-- source: /quests/0000/side-quests/cellar/
-  target: /quests/0000/side-quests/hidden-chapel/
-  kind: unlocks
-- source: /quests/0000/side-quests/cellar/
-  target: /quests/0000/side-quests/vault/
-  kind: unlocks
-- source: /quests/0000/side-quests/cellar/
-  target: /quests/0000/side-quests/scrap/
-  kind: unlocks
-- source: /quests/0000/side-quests/chamber/
-  target: /quests/0000/side-quests/armoury/
-  kind: required
-- source: /quests/0000/side-quests/chamber/
-  target: /quests/0000/side-quests/rift/
-  kind: unlocks
-- source: /quests/0000/side-quests/entrance/
+- source: /quests/0000/agent-mode/
   target: /quests/0000/bashcrawl/
   kind: required
-- source: /quests/0000/side-quests/entrance/
-  target: /quests/0000/side-quests/workshop/
-  kind: unlocks
-- source: /quests/0000/side-quests/entrance/
-  target: /quests/0000/side-quests/cellar/
-  kind: unlocks
-- source: /quests/0000/side-quests/hidden-chapel/
-  target: /quests/0000/side-quests/cellar/
+- source: /quests/0000/armoury/
+  target: /quests/0000/cellar/
   kind: required
-- source: /quests/0000/side-quests/hidden-chapel/
-  target: /quests/0000/side-quests/rift/
+- source: /quests/0000/armoury/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/armoury/
+  target: /quests/0000/chamber/
   kind: unlocks
-- source: /quests/0000/side-quests/rift/
-  target: /quests/0000/side-quests/chamber/
+- source: /quests/0000/cellar/
+  target: /quests/0000/entrance/
   kind: required
-- source: /quests/0000/side-quests/rift/
-  target: /quests/0000/side-quests/hidden-chapel/
+- source: /quests/0000/cellar/
+  target: /quests/0000/bashcrawl/
   kind: required
-- source: /quests/0000/side-quests/rift/
-  target: /quests/0000/side-quests/agent-mode/
+- source: /quests/0000/cellar/
+  target: /quests/0000/armoury/
   kind: unlocks
-- source: /quests/0000/side-quests/scrap/
-  target: /quests/0000/side-quests/cellar/
-  kind: required
-- source: /quests/0000/side-quests/scrap/
-  target: /quests/0000/side-quests/rift/
+- source: /quests/0000/cellar/
+  target: /quests/0000/hidden-chapel/
   kind: unlocks
-- source: /quests/0000/side-quests/vault/
-  target: /quests/0000/side-quests/cellar/
-  kind: required
-- source: /quests/0000/side-quests/vault/
-  target: /quests/0000/side-quests/rift/
+- source: /quests/0000/cellar/
+  target: /quests/0000/vault/
   kind: unlocks
-- source: /quests/0000/side-quests/workshop/
-  target: /quests/0000/side-quests/entrance/
+- source: /quests/0000/cellar/
+  target: /quests/0000/scrap/
+  kind: unlocks
+- source: /quests/0000/chamber/
+  target: /quests/0000/armoury/
   kind: required
-- source: /quests/0000/side-quests/workshop/
-  target: /quests/0000/side-quests/cellar/
+- source: /quests/0000/chamber/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/chamber/
+  target: /quests/0000/rift/
+  kind: unlocks
+- source: /quests/0000/entrance/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/entrance/
+  target: /quests/0000/workshop/
+  kind: unlocks
+- source: /quests/0000/entrance/
+  target: /quests/0000/cellar/
+  kind: unlocks
+- source: /quests/0000/hidden-chapel/
+  target: /quests/0000/cellar/
+  kind: required
+- source: /quests/0000/hidden-chapel/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/hidden-chapel/
+  target: /quests/0000/rift/
+  kind: unlocks
+- source: /quests/0000/rift/
+  target: /quests/0000/chamber/
+  kind: required
+- source: /quests/0000/rift/
+  target: /quests/0000/hidden-chapel/
+  kind: required
+- source: /quests/0000/rift/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/rift/
+  target: /quests/0000/agent-mode/
+  kind: unlocks
+- source: /quests/0000/scrap/
+  target: /quests/0000/cellar/
+  kind: required
+- source: /quests/0000/scrap/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/scrap/
+  target: /quests/0000/rift/
+  kind: unlocks
+- source: /quests/0000/vault/
+  target: /quests/0000/cellar/
+  kind: required
+- source: /quests/0000/vault/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/vault/
+  target: /quests/0000/rift/
+  kind: unlocks
+- source: /quests/0000/workshop/
+  target: /quests/0000/entrance/
+  kind: required
+- source: /quests/0000/workshop/
+  target: /quests/0000/bashcrawl/
+  kind: required
+- source: /quests/0000/workshop/
+  target: /quests/0000/cellar/
   kind: unlocks
 - source: /quests/0000/begin-your-it-journey/
   target: /quests/0000/hello-noob/
+  kind: recommended
+- source: /quests/0000/begin-your-it-journey/
+  target: /quests/0000/it-fundamentals/
   kind: recommended
 - source: /quests/0000/begin-your-it-journey/
   target: /quests/0000/character-building/
@@ -1031,6 +1057,9 @@ edges:
   kind: unlocks
 - source: /quests/0000/character-selection/
   target: /quests/0000/begin-your-it-journey/
+  kind: recommended
+- source: /quests/0000/character-selection/
+  target: /quests/0000/it-fundamentals/
   kind: recommended
 - source: /quests/0000/character-selection/
   target: /quests/0000/character-building/
@@ -1044,11 +1073,26 @@ edges:
 - source: /quests/0000/hello-cloud/
   target: /quests/0000/os-selection/
   kind: recommended
+- source: /quests/0000/hello-cloud/
+  target: /quests/0000/hello-windows/
+  kind: recommended
+- source: /quests/0000/hello-cloud/
+  target: /quests/0000/hello-macos/
+  kind: recommended
+- source: /quests/0000/hello-cloud/
+  target: /quests/0000/linux-fundamentals/
+  kind: recommended
 - source: /quests/0000/hello-macos/
   target: /quests/0000/hello-noob/
   kind: recommended
 - source: /quests/0000/hello-macos/
   target: /quests/0000/os-selection/
+  kind: recommended
+- source: /quests/0000/hello-macos/
+  target: /quests/0000/hello-windows/
+  kind: recommended
+- source: /quests/0000/hello-macos/
+  target: /quests/0000/linux-fundamentals/
   kind: recommended
 - source: /quests/0000/hello-macos/
   target: /quests/0000/vscode-mastery/
@@ -1063,6 +1107,12 @@ edges:
   target: /quests/0000/os-selection/
   kind: recommended
 - source: /quests/0000/hello-windows/
+  target: /quests/0000/hello-macos/
+  kind: recommended
+- source: /quests/0000/hello-windows/
+  target: /quests/0000/linux-fundamentals/
+  kind: recommended
+- source: /quests/0000/hello-windows/
   target: /quests/0000/vscode-mastery/
   kind: unlocks
 - source: /quests/0000/hello-windows/
@@ -1072,6 +1122,9 @@ edges:
   target: /quests/0000/hello-noob/
   kind: recommended
 - source: /quests/0000/it-fundamentals/
+  target: /quests/0000/begin-your-it-journey/
+  kind: recommended
+- source: /quests/0000/it-fundamentals/
   target: /quests/0000/os-selection/
   kind: unlocks
 - source: /quests/0000/linux-fundamentals/
@@ -1081,16 +1134,25 @@ edges:
   target: /quests/0000/hello-noob/
   kind: recommended
 - source: /quests/0000/linux-fundamentals/
+  target: /quests/0000/hello-windows/
+  kind: recommended
+- source: /quests/0000/linux-fundamentals/
+  target: /quests/0000/hello-macos/
+  kind: recommended
+- source: /quests/0000/linux-fundamentals/
   target: /quests/0000/terminal-fundamentals/
   kind: unlocks
 - source: /quests/0000/linux-fundamentals/
-  target: /quests/0000/side-quests/bash-run/
+  target: /quests/0000/bash-run/
   kind: unlocks
 - source: /quests/0000/markdown-mastery/
   target: /quests/0000/terminal-fundamentals/
   kind: recommended
 - source: /quests/0000/os-selection/
   target: /quests/0000/it-fundamentals/
+  kind: recommended
+- source: /quests/0000/os-selection/
+  target: /quests/0000/character-selection/
   kind: recommended
 - source: /quests/0000/os-selection/
   target: /quests/0000/hello-windows/
@@ -1110,6 +1172,39 @@ edges:
 - source: /quests/0000/vscode-mastery/
   target: /quests/0000/hello-noob/
   kind: recommended
+- source: /quests/0000/vscode-mastery/
+  target: /quests/0000/hello-windows/
+  kind: recommended
+- source: /quests/0000/vscode-mastery/
+  target: /quests/0000/hello-macos/
+  kind: recommended
+- source: /quests/0001/advanced-markdown/
+  target: /quests/0001/seo-optimization/
+  kind: unlocks
+- source: /quests/0001/advanced-markdown/
+  target: /quests/0001/jekyll-plugins/
+  kind: unlocks
+- source: /quests/0001/analytics-integration/
+  target: /quests/0001/seo-optimization/
+  kind: recommended
+- source: /quests/0001/analytics-integration/
+  target: /quests/0001/javascript-fundamentals/
+  kind: recommended
+- source: /quests/0001/analytics-integration/
+  target: /quests/0001/jekyll-plugins/
+  kind: unlocks
+- source: /quests/0001/bootstrap-framework/
+  target: /quests/0001/css-styling-basics/
+  kind: recommended
+- source: /quests/0001/bootstrap-framework/
+  target: /quests/0001/javascript-fundamentals/
+  kind: unlocks
+- source: /quests/0001/css-styling-basics/
+  target: /quests/0001/javascript-fundamentals/
+  kind: unlocks
+- source: /quests/0001/css-styling-basics/
+  target: /quests/0001/bootstrap-framework/
+  kind: unlocks
 - source: /quests/0001/forge-your-character/
   target: /quests/0001/terminal-mastery/
   kind: recommended
@@ -1117,62 +1212,344 @@ edges:
   target: /quests/0001/git-workflow-mastery/
   kind: recommended
 - source: /quests/0001/forge-your-character/
-  target: /quests/0001/side-quests/avatar-forge/
+  target: /quests/0001/avatar-forge/
   kind: unlocks
 - source: /quests/0001/forge-your-character/
-  target: /quests/0001/side-quests/badge-collector/
+  target: /quests/0001/badge-collector/
   kind: unlocks
 - source: /quests/0001/forge-your-character/
-  target: /quests/0010/side-quests/stats-dashboard/
+  target: /quests/0010/stats-dashboard/
   kind: unlocks
-- source: /quests/0001/side-quests/avatar-forge/
+- source: /quests/0001/git-workflow-mastery/
+  target: /quests/0000/git-basics/
+  kind: required
+- source: /quests/0001/git-workflow-mastery/
+  target: /quests/0001/github-pages-basics/
+  kind: recommended
+- source: /quests/0001/git-workflow-mastery/
+  target: /quests/0001/jekyll-fundamentals/
+  kind: unlocks
+- source: /quests/0001/github-pages-basics/
+  target: /quests/0001/jekyll-fundamentals/
+  kind: required
+- source: /quests/0001/github-pages-basics/
+  target: /quests/0000/git-basics/
+  kind: recommended
+- source: /quests/0001/github-pages-basics/
+  target: /quests/0001/git-workflow-mastery/
+  kind: unlocks
+- source: /quests/0001/javascript-fundamentals/
+  target: /quests/0001/css-styling-basics/
+  kind: recommended
+- source: /quests/0001/javascript-fundamentals/
+  target: /quests/0001/jekyll-plugins/
+  kind: unlocks
+- source: /quests/0001/javascript-fundamentals/
+  target: /quests/0001/analytics-integration/
+  kind: unlocks
+- source: /quests/0001/jekyll-fundamentals/
+  target: /quests/0000/git-basics/
+  kind: recommended
+- source: /quests/0001/jekyll-fundamentals/
+  target: /quests/0001/github-pages-basics/
+  kind: unlocks
+- source: /quests/0001/jekyll-fundamentals/
+  target: /quests/0001/liquid-templating/
+  kind: unlocks
+- source: /quests/0001/jekyll-fundamentals/
+  target: /quests/0001/yaml-configuration/
+  kind: unlocks
+- source: /quests/0001/jekyll-plugins/
+  target: /quests/0001/advanced-markdown/
+  kind: recommended
+- source: /quests/0001/jekyll-plugins/
+  target: /quests/0001/seo-optimization/
+  kind: recommended
+- source: /quests/0001/jekyll-plugins/
+  target: /quests/0001/analytics-integration/
+  kind: unlocks
+- source: /quests/0001/liquid-templating/
+  target: /quests/0001/jekyll-fundamentals/
+  kind: required
+- source: /quests/0001/liquid-templating/
+  target: /quests/0001/yaml-configuration/
+  kind: recommended
+- source: /quests/0001/liquid-templating/
+  target: /quests/0001/github-pages-basics/
+  kind: unlocks
+- source: /quests/0001/seo-optimization/
+  target: /quests/0001/advanced-markdown/
+  kind: recommended
+- source: /quests/0001/seo-optimization/
+  target: /quests/0001/analytics-integration/
+  kind: unlocks
+- source: /quests/0001/seo-optimization/
+  target: /quests/0001/jekyll-plugins/
+  kind: unlocks
+- source: /quests/0001/avatar-forge/
   target: /quests/0001/forge-your-character/
   kind: required
-- source: /quests/0001/side-quests/badge-collector/
+- source: /quests/0001/badge-collector/
   target: /quests/0001/forge-your-character/
   kind: required
-- source: /quests/0001/side-quests/badge-collector/
-  target: /quests/0001/side-quests/avatar-forge/
+- source: /quests/0001/badge-collector/
+  target: /quests/0001/avatar-forge/
   kind: recommended
 - source: /quests/0001/stack-attack/
   target: /quests/0000/terminal-fundamentals/
   kind: recommended
+- source: /quests/0001/yaml-configuration/
+  target: /quests/0001/jekyll-fundamentals/
+  kind: required
+- source: /quests/0001/yaml-configuration/
+  target: /quests/0001/liquid-templating/
+  kind: unlocks
+- source: /quests/0001/yaml-configuration/
+  target: /quests/0001/github-pages-basics/
+  kind: unlocks
 - source: /quests/0010/oh-my-zsh-mastery/
   target: /quests/0000/terminal-fundamentals/
   kind: required
 - source: /quests/0010/oh-my-zsh-mastery/
-  target: /quests/0010/side-quests/nerd-font-enchantment/
+  target: /quests/0010/nerd-font-enchantment/
+  kind: recommended
+- source: /quests/0010/oh-my-zsh-mastery/
+  target: /quests/0001/advanced-markdown/
   kind: recommended
 - source: /quests/0010/oh-my-zsh-mastery/
   target: /quests/0010/bash-scripting/
   kind: unlocks
-- source: /quests/0010/side-quests/contribution-calendar/
-  target: /quests/0001/forge-your-character/
-  kind: required
-- source: /quests/0010/side-quests/contribution-calendar/
-  target: /quests/0010/side-quests/stats-dashboard/
-  kind: recommended
-- source: /quests/0010/side-quests/stats-dashboard/
-  target: /quests/0001/forge-your-character/
-  kind: required
-- source: /quests/0010/side-quests/stats-dashboard/
-  target: /quests/0001/side-quests/badge-collector/
-  kind: recommended
-- source: /quests/0010/side-quests/stats-dashboard/
-  target: /quests/0010/side-quests/contribution-calendar/
+- source: /quests/0010/oh-my-zsh-mastery/
+  target: /quests/0010/nerd-font-enchantment/
   kind: unlocks
-- source: /quests/0100/side-quests/jekyll-component-refactoring/
+- source: /quests/0010/contribution-calendar/
+  target: /quests/0001/forge-your-character/
+  kind: required
+- source: /quests/0010/contribution-calendar/
+  target: /quests/0010/stats-dashboard/
+  kind: recommended
+- source: /quests/0010/stats-dashboard/
+  target: /quests/0001/forge-your-character/
+  kind: required
+- source: /quests/0010/stats-dashboard/
+  target: /quests/0001/badge-collector/
+  kind: recommended
+- source: /quests/0010/stats-dashboard/
+  target: /quests/0010/contribution-calendar/
+  kind: unlocks
+- source: /quests/0010/terminal-artificer-frontend-building/
+  target: /quests/0001/terminal-mastery/
+  kind: required
+- source: /quests/0011/github-pages-hidden-gem/
+  target: /quests/0000/hello-noob/
+  kind: required
+- source: /quests/0011/prd-codex-mastery/
+  target: /quests/0001/seo-optimization/
+  kind: unlocks
+- source: /quests/0011/prd-codex-mastery/
+  target: /quests/0001/analytics-integration/
+  kind: unlocks
+- source: /quests/0011/prd-codex-mastery/
+  target: /quests/0001/jekyll-plugins/
+  kind: unlocks
+- source: /quests/0011/prd-codex-mastery/
+  target: /quests/0011/prompt-crystal-vscode-copilot/
+  kind: unlocks
+- source: /quests/0011/prd-codex-mastery/
+  target: /quests/0011/github-pages-hidden-gem/
+  kind: unlocks
+- source: /quests/0011/prompt-crystal-vscode-copilot/
+  target: /quests/0010/prompt-engineering-mastery/
+  kind: required
+- source: /quests/0100/container-fundamentals/
+  target: /quests/0100/docker-compose-orchestration/
+  kind: unlocks
+- source: /quests/0100/docker-compose-orchestration/
+  target: /quests/0100/container-fundamentals/
+  kind: required
+- source: /quests/0100/jekyll-component-refactoring/
   target: /quests/0100/frontend-docker/
   kind: recommended
-- source: /quests/0100/side-quests/profile-themes/
+- source: /quests/0100/profile-themes/
   target: /quests/0001/forge-your-character/
   kind: required
-- source: /quests/0100/side-quests/profile-themes/
-  target: /quests/0010/side-quests/stats-dashboard/
+- source: /quests/0100/profile-themes/
+  target: /quests/0010/stats-dashboard/
   kind: recommended
-- source: /quests/0100/side-quests/profile-themes/
-  target: /quests/0010/side-quests/contribution-calendar/
+- source: /quests/0100/profile-themes/
+  target: /quests/0010/contribution-calendar/
   kind: recommended
+- source: /quests/0101/artifact-management/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/artifact-management/
+  target: /quests/0101/deployment-pipelines/
+  kind: recommended
+- source: /quests/0101/artifact-management/
+  target: /quests/0101/workflow-optimization/
+  kind: unlocks
+- source: /quests/0101/cicd-fundamentals/
+  target: /quests/0101/github-actions-basics/
+  kind: unlocks
+- source: /quests/0101/cicd-fundamentals/
+  target: /quests/0101/testing-integration/
+  kind: unlocks
+- source: /quests/0101/cicd-fundamentals/
+  target: /quests/0101/deployment-pipelines/
+  kind: unlocks
+- source: /quests/0101/deployment-pipelines/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/deployment-pipelines/
+  target: /quests/0101/testing-integration/
+  kind: required
+- source: /quests/0101/deployment-pipelines/
+  target: /quests/0101/github-actions-basics/
+  kind: recommended
+- source: /quests/0101/deployment-pipelines/
+  target: /quests/0101/environment-management/
+  kind: unlocks
+- source: /quests/0101/deployment-pipelines/
+  target: /quests/0101/secrets-management/
+  kind: unlocks
+- source: /quests/0101/environment-management/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/environment-management/
+  target: /quests/0101/deployment-pipelines/
+  kind: recommended
+- source: /quests/0101/environment-management/
+  target: /quests/0101/secrets-management/
+  kind: unlocks
+- source: /quests/0101/environment-management/
+  target: /quests/0101/artifact-management/
+  kind: unlocks
+- source: /quests/0101/github-actions-basics/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/github-actions-basics/
+  target: /quests/0101/testing-integration/
+  kind: unlocks
+- source: /quests/0101/github-actions-basics/
+  target: /quests/0101/secrets-management/
+  kind: unlocks
+- source: /quests/0101/github-actions-basics/
+  target: /quests/0101/workflow-optimization/
+  kind: unlocks
+- source: /quests/0101/secrets-management/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/secrets-management/
+  target: /quests/0101/environment-management/
+  kind: recommended
+- source: /quests/0101/secrets-management/
+  target: /quests/0101/artifact-management/
+  kind: unlocks
+- source: /quests/0101/secrets-management/
+  target: /quests/0101/workflow-optimization/
+  kind: unlocks
+- source: /quests/0101/testing-integration/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/testing-integration/
+  target: /quests/0101/github-actions-basics/
+  kind: recommended
+- source: /quests/0101/testing-integration/
+  target: /quests/0101/deployment-pipelines/
+  kind: unlocks
+- source: /quests/0101/testing-integration/
+  target: /quests/0101/workflow-optimization/
+  kind: unlocks
+- source: /quests/0101/workflow-optimization/
+  target: /quests/0101/cicd-fundamentals/
+  kind: required
+- source: /quests/0101/workflow-optimization/
+  target: /quests/0101/testing-integration/
+  kind: required
+- source: /quests/0101/workflow-optimization/
+  target: /quests/0101/github-actions-basics/
+  kind: recommended
+- source: /quests/0110/backup-recovery/
+  target: /quests/0110/database-fundamentals/
+  kind: required
+- source: /quests/0110/backup-recovery/
+  target: /quests/0110/database-security/
+  kind: recommended
+- source: /quests/0110/backup-recovery/
+  target: /quests/0110/connection-pooling/
+  kind: unlocks
+- source: /quests/0110/connection-pooling/
+  target: /quests/0110/database-fundamentals/
+  kind: required
+- source: /quests/0110/connection-pooling/
+  target: /quests/0110/query-optimization/
+  kind: recommended
+- source: /quests/0110/data-modeling/
+  target: /quests/0110/database-fundamentals/
+  kind: required
+- source: /quests/0110/data-modeling/
+  target: /quests/0110/sql-mastery/
+  kind: unlocks
+- source: /quests/0110/data-modeling/
+  target: /quests/0110/query-optimization/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/sql-mastery/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/data-modeling/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/database-security/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/query-optimization/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/backup-recovery/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/database-migrations/
+  kind: unlocks
+- source: /quests/0110/database-fundamentals/
+  target: /quests/0110/connection-pooling/
+  kind: unlocks
+- source: /quests/0110/database-migrations/
+  target: /quests/0110/data-modeling/
+  kind: required
+- source: /quests/0110/database-migrations/
+  target: /quests/0110/sql-mastery/
+  kind: recommended
+- source: /quests/0110/database-migrations/
+  target: /quests/0110/backup-recovery/
+  kind: unlocks
+- source: /quests/0110/database-security/
+  target: /quests/0110/database-fundamentals/
+  kind: required
+- source: /quests/0110/database-security/
+  target: /quests/0110/sql-mastery/
+  kind: recommended
+- source: /quests/0110/database-security/
+  target: /quests/0110/backup-recovery/
+  kind: unlocks
+- source: /quests/0110/query-optimization/
+  target: /quests/0110/sql-mastery/
+  kind: required
+- source: /quests/0110/query-optimization/
+  target: /quests/0110/data-modeling/
+  kind: recommended
+- source: /quests/0110/query-optimization/
+  target: /quests/0110/connection-pooling/
+  kind: unlocks
+- source: /quests/0110/sql-mastery/
+  target: /quests/0110/database-fundamentals/
+  kind: required
+- source: /quests/0110/sql-mastery/
+  target: /quests/0110/data-modeling/
+  kind: recommended
+- source: /quests/0110/sql-mastery/
+  target: /quests/0110/query-optimization/
+  kind: unlocks
 - source: /quests/0111/agentic-plan-vs-action-boundaries/
   target: /quests/0111/agentic-sdlc-integration/
   kind: required
@@ -1184,6 +1561,72 @@ edges:
   kind: recommended
 - source: /quests/0111/agentic-sdlc-integration/
   target: /quests/0111/agentic-plan-vs-action-boundaries/
+  kind: unlocks
+- source: /quests/0111/api-authentication/
+  target: /quests/0111/api-fundamentals/
+  kind: required
+- source: /quests/0111/api-authentication/
+  target: /quests/0111/rest-principles/
+  kind: recommended
+- source: /quests/0111/api-authentication/
+  target: /quests/0111/error-handling/
+  kind: unlocks
+- source: /quests/0111/api-authentication/
+  target: /quests/0111/rate-limiting/
+  kind: unlocks
+- source: /quests/0111/api-documentation/
+  target: /quests/0111/rest-principles/
+  kind: required
+- source: /quests/0111/api-documentation/
+  target: /quests/0111/api-versioning/
+  kind: recommended
+- source: /quests/0111/api-fundamentals/
+  target: /quests/0111/rest-principles/
+  kind: unlocks
+- source: /quests/0111/api-fundamentals/
+  target: /quests/0111/api-authentication/
+  kind: unlocks
+- source: /quests/0111/api-versioning/
+  target: /quests/0111/rest-principles/
+  kind: required
+- source: /quests/0111/api-versioning/
+  target: /quests/0111/error-handling/
+  kind: recommended
+- source: /quests/0111/api-versioning/
+  target: /quests/0111/api-documentation/
+  kind: unlocks
+- source: /quests/0111/error-handling/
+  target: /quests/0111/api-fundamentals/
+  kind: required
+- source: /quests/0111/error-handling/
+  target: /quests/0111/rest-principles/
+  kind: recommended
+- source: /quests/0111/error-handling/
+  target: /quests/0111/rate-limiting/
+  kind: unlocks
+- source: /quests/0111/error-handling/
+  target: /quests/0111/api-versioning/
+  kind: unlocks
+- source: /quests/0111/rate-limiting/
+  target: /quests/0111/api-fundamentals/
+  kind: required
+- source: /quests/0111/rate-limiting/
+  target: /quests/0111/error-handling/
+  kind: recommended
+- source: /quests/0111/rate-limiting/
+  target: /quests/0111/api-versioning/
+  kind: unlocks
+- source: /quests/0111/rate-limiting/
+  target: /quests/0111/api-documentation/
+  kind: unlocks
+- source: /quests/0111/rest-principles/
+  target: /quests/0111/api-fundamentals/
+  kind: required
+- source: /quests/0111/rest-principles/
+  target: /quests/0111/api-versioning/
+  kind: unlocks
+- source: /quests/0111/rest-principles/
+  target: /quests/0111/api-documentation/
   kind: unlocks
 - source: /quests/1000/agentic-mcp-server-mastery/
   target: /quests/1000/agentic-tool-selection-and-permissions/
@@ -1202,6 +1645,42 @@ edges:
   kind: required
 - source: /quests/1000/agentic-tool-selection-and-permissions/
   target: /quests/1000/agentic-mcp-server-mastery/
+  kind: unlocks
+- source: /quests/1000/aws-essentials/
+  target: /quests/1000/cloud-computing-fundamentals/
+  kind: required
+- source: /quests/1000/aws-essentials/
+  target: /quests/1000/cloud-computing-fundamentals/
+  kind: recommended
+- source: /quests/1000/aws-essentials/
+  target: /quests/1000/infrastructure-as-code/
+  kind: unlocks
+- source: /quests/1000/aws-essentials/
+  target: /quests/1001/kubernetes-fundamentals/
+  kind: unlocks
+- source: /quests/1000/cloud-computing-fundamentals/
+  target: /quests/1000/aws-essentials/
+  kind: unlocks
+- source: /quests/1000/cloud-computing-fundamentals/
+  target: /quests/1000/infrastructure-as-code/
+  kind: unlocks
+- source: /quests/1000/cloud-computing-fundamentals/
+  target: /quests/1000/azure-ascension-jekyll-deployment/
+  kind: unlocks
+- source: /quests/1000/cloud-computing-fundamentals/
+  target: /quests/1001/kubernetes-fundamentals/
+  kind: unlocks
+- source: /quests/1000/infrastructure-as-code/
+  target: /quests/1000/aws-essentials/
+  kind: required
+- source: /quests/1000/infrastructure-as-code/
+  target: /quests/1000/cloud-computing-fundamentals/
+  kind: recommended
+- source: /quests/1000/infrastructure-as-code/
+  target: /quests/1000/aws-essentials/
+  kind: recommended
+- source: /quests/1000/infrastructure-as-code/
+  target: /quests/1001/kubernetes-fundamentals/
   kind: unlocks
 - source: /quests/1001/agentic-dev-environment-integration/
   target: /quests/1000/agentic-mcp-server-mastery/
@@ -1220,6 +1699,51 @@ edges:
   kind: required
 - source: /quests/1001/agentic-safe-execution-and-error-handling/
   target: /quests/1001/agentic-memory-strategies/
+  kind: unlocks
+- source: /quests/1001/k8s-config-secrets/
+  target: /quests/1001/kubernetes-fundamentals/
+  kind: required
+- source: /quests/1001/k8s-config-secrets/
+  target: /quests/1001/k8s-pods-workloads/
+  kind: required
+- source: /quests/1001/k8s-config-secrets/
+  target: /quests/1001/k8s-services-networking/
+  kind: recommended
+- source: /quests/1001/k8s-config-secrets/
+  target: /quests/1010/monitoring-fundamentals/
+  kind: unlocks
+- source: /quests/1001/k8s-pods-workloads/
+  target: /quests/1001/kubernetes-fundamentals/
+  kind: required
+- source: /quests/1001/k8s-pods-workloads/
+  target: /quests/1001/k8s-services-networking/
+  kind: unlocks
+- source: /quests/1001/k8s-pods-workloads/
+  target: /quests/1001/k8s-config-secrets/
+  kind: unlocks
+- source: /quests/1001/k8s-services-networking/
+  target: /quests/1001/kubernetes-fundamentals/
+  kind: required
+- source: /quests/1001/k8s-services-networking/
+  target: /quests/1001/k8s-pods-workloads/
+  kind: required
+- source: /quests/1001/k8s-services-networking/
+  target: /quests/1001/k8s-config-secrets/
+  kind: unlocks
+- source: /quests/1001/kubernetes-fundamentals/
+  target: /quests/1000/cloud-computing-fundamentals/
+  kind: recommended
+- source: /quests/1001/kubernetes-fundamentals/
+  target: /quests/1001/k8s-pods-workloads/
+  kind: unlocks
+- source: /quests/1001/kubernetes-fundamentals/
+  target: /quests/1001/k8s-services-networking/
+  kind: unlocks
+- source: /quests/1001/kubernetes-fundamentals/
+  target: /quests/1001/k8s-config-secrets/
+  kind: unlocks
+- source: /quests/1001/kubernetes-fundamentals/
+  target: /quests/1010/monitoring-fundamentals/
   kind: unlocks
 - source: /quests/1010/agentic-failure-root-cause-analysis/
   target: /quests/1010/agentic-success-criteria-and-signals/
@@ -1244,6 +1768,60 @@ edges:
   kind: required
 - source: /quests/1010/agentic-success-criteria-and-signals/
   target: /quests/1010/agentic-failure-root-cause-analysis/
+  kind: unlocks
+- source: /quests/1010/alerting-systems/
+  target: /quests/1010/monitoring-fundamentals/
+  kind: recommended
+- source: /quests/1010/alerting-systems/
+  target: /quests/1011/security-fundamentals/
+  kind: unlocks
+- source: /quests/1010/analytics-mcp-setup/
+  target: /quests/1010/query-traffic-with-mcp/
+  kind: unlocks
+- source: /quests/1010/automate-traffic-report/
+  target: /quests/1010/analytics-mcp-setup/
+  kind: required
+- source: /quests/1010/automate-traffic-report/
+  target: /quests/1010/query-traffic-with-mcp/
+  kind: recommended
+- source: /quests/1010/distributed-tracing/
+  target: /quests/1010/monitoring-fundamentals/
+  kind: recommended
+- source: /quests/1010/distributed-tracing/
+  target: /quests/1010/alerting-systems/
+  kind: unlocks
+- source: /quests/1010/elk-stack/
+  target: /quests/1010/monitoring-fundamentals/
+  kind: recommended
+- source: /quests/1010/elk-stack/
+  target: /quests/1010/distributed-tracing/
+  kind: unlocks
+- source: /quests/1010/elk-stack/
+  target: /quests/1010/alerting-systems/
+  kind: unlocks
+- source: /quests/1010/monitoring-fundamentals/
+  target: /quests/1010/prometheus-grafana/
+  kind: unlocks
+- source: /quests/1010/monitoring-fundamentals/
+  target: /quests/1010/elk-stack/
+  kind: unlocks
+- source: /quests/1010/monitoring-fundamentals/
+  target: /quests/1010/distributed-tracing/
+  kind: unlocks
+- source: /quests/1010/monitoring-fundamentals/
+  target: /quests/1010/alerting-systems/
+  kind: unlocks
+- source: /quests/1010/prometheus-grafana/
+  target: /quests/1010/monitoring-fundamentals/
+  kind: required
+- source: /quests/1010/prometheus-grafana/
+  target: /quests/1010/alerting-systems/
+  kind: unlocks
+- source: /quests/1010/query-traffic-with-mcp/
+  target: /quests/1010/analytics-mcp-setup/
+  kind: required
+- source: /quests/1010/query-traffic-with-mcp/
+  target: /quests/1010/automate-traffic-report/
   kind: unlocks
 - source: /quests/1011/agentic-behavior-tuning/
   target: /quests/1010/agentic-failure-root-cause-analysis/
@@ -1268,6 +1846,57 @@ edges:
   kind: required
 - source: /quests/1011/agentic-multi-agent-orchestration-patterns/
   target: /quests/1011/agentic-multi-agent-observability/
+  kind: unlocks
+- source: /quests/1011/compliance-standards/
+  target: /quests/1011/security-fundamentals/
+  kind: required
+- source: /quests/1011/compliance-standards/
+  target: /quests/1011/secure-coding/
+  kind: recommended
+- source: /quests/1011/compliance-standards/
+  target: /quests/1011/penetration-testing/
+  kind: recommended
+- source: /quests/1011/penetration-testing/
+  target: /quests/1011/security-fundamentals/
+  kind: required
+- source: /quests/1011/penetration-testing/
+  target: /quests/1011/threat-modeling/
+  kind: recommended
+- source: /quests/1011/penetration-testing/
+  target: /quests/1011/secure-coding/
+  kind: recommended
+- source: /quests/1011/penetration-testing/
+  target: /quests/1011/compliance-standards/
+  kind: unlocks
+- source: /quests/1011/secure-coding/
+  target: /quests/1011/security-fundamentals/
+  kind: required
+- source: /quests/1011/secure-coding/
+  target: /quests/1011/threat-modeling/
+  kind: unlocks
+- source: /quests/1011/secure-coding/
+  target: /quests/1011/penetration-testing/
+  kind: unlocks
+- source: /quests/1011/security-fundamentals/
+  target: /quests/1011/secure-coding/
+  kind: unlocks
+- source: /quests/1011/security-fundamentals/
+  target: /quests/1011/threat-modeling/
+  kind: unlocks
+- source: /quests/1011/security-fundamentals/
+  target: /quests/1011/penetration-testing/
+  kind: unlocks
+- source: /quests/1011/security-fundamentals/
+  target: /quests/1011/compliance-standards/
+  kind: unlocks
+- source: /quests/1011/threat-modeling/
+  target: /quests/1011/security-fundamentals/
+  kind: required
+- source: /quests/1011/threat-modeling/
+  target: /quests/1011/secure-coding/
+  kind: recommended
+- source: /quests/1011/threat-modeling/
+  target: /quests/1011/penetration-testing/
   kind: unlocks
 - source: /quests/1100/agentic-autonomy-levels-matrix/
   target: /quests/1100/agentic-multi-agent-lifecycle-management/
@@ -1343,4 +1972,325 @@ edges:
   kind: required
 - source: /quests/1100/agentic-multi-agent-lifecycle-management/
   target: /quests/1100/agentic-autonomy-levels-matrix/
+  kind: unlocks
+- source: /quests/1100/apache-spark/
+  target: /quests/1100/etl-pipeline-design/
+  kind: recommended
+- source: /quests/1100/apache-spark/
+  target: /quests/1100/stream-processing/
+  kind: unlocks
+- source: /quests/1100/apache-spark/
+  target: /quests/1100/data-quality/
+  kind: unlocks
+- source: /quests/1100/data-quality/
+  target: /quests/1100/etl-pipeline-design/
+  kind: recommended
+- source: /quests/1100/data-quality/
+  target: /quests/1100/apache-spark/
+  kind: recommended
+- source: /quests/1100/data-quality/
+  target: /quests/1100/stream-processing/
+  kind: recommended
+- source: /quests/1100/data-warehousing/
+  target: /quests/1100/etl-pipeline-design/
+  kind: required
+- source: /quests/1100/data-warehousing/
+  target: /quests/0110/data-modeling/
+  kind: recommended
+- source: /quests/1100/data-warehousing/
+  target: /quests/1100/apache-spark/
+  kind: unlocks
+- source: /quests/1100/data-warehousing/
+  target: /quests/1100/data-quality/
+  kind: unlocks
+- source: /quests/1100/etl-pipeline-design/
+  target: /quests/1100/conquer-king-edgar/
+  kind: recommended
+- source: /quests/1100/etl-pipeline-design/
+  target: /quests/1100/data-warehousing/
+  kind: unlocks
+- source: /quests/1100/etl-pipeline-design/
+  target: /quests/1100/apache-spark/
+  kind: unlocks
+- source: /quests/1100/etl-pipeline-design/
+  target: /quests/1100/data-quality/
+  kind: unlocks
+- source: /quests/1100/stream-processing/
+  target: /quests/1100/etl-pipeline-design/
+  kind: recommended
+- source: /quests/1100/stream-processing/
+  target: /quests/1100/apache-spark/
+  kind: recommended
+- source: /quests/1100/stream-processing/
+  target: /quests/1100/data-quality/
+  kind: unlocks
+- source: /quests/1101/ai-ethics/
+  target: /quests/1101/ml-fundamentals/
+  kind: required
+- source: /quests/1101/ai-ethics/
+  target: /quests/1101/mlops/
+  kind: recommended
+- source: /quests/1101/computer-vision/
+  target: /quests/1101/deep-learning-frameworks/
+  kind: required
+- source: /quests/1101/computer-vision/
+  target: /quests/1101/neural-networks/
+  kind: recommended
+- source: /quests/1101/computer-vision/
+  target: /quests/1101/mlops/
+  kind: unlocks
+- source: /quests/1101/computer-vision/
+  target: /quests/1101/ai-ethics/
+  kind: unlocks
+- source: /quests/1101/deep-learning-frameworks/
+  target: /quests/1101/neural-networks/
+  kind: required
+- source: /quests/1101/deep-learning-frameworks/
+  target: /quests/1101/ml-fundamentals/
+  kind: recommended
+- source: /quests/1101/deep-learning-frameworks/
+  target: /quests/1101/computer-vision/
+  kind: unlocks
+- source: /quests/1101/deep-learning-frameworks/
+  target: /quests/1101/natural-language-processing/
+  kind: unlocks
+- source: /quests/1101/deep-learning-frameworks/
+  target: /quests/1101/mlops/
+  kind: unlocks
+- source: /quests/1101/ml-fundamentals/
+  target: /quests/1101/python-data-science/
+  kind: recommended
+- source: /quests/1101/ml-fundamentals/
+  target: /quests/1101/neural-networks/
+  kind: unlocks
+- source: /quests/1101/ml-fundamentals/
+  target: /quests/1101/mlops/
+  kind: unlocks
+- source: /quests/1101/ml-fundamentals/
+  target: /quests/1101/ai-ethics/
+  kind: unlocks
+- source: /quests/1101/mlops/
+  target: /quests/1101/ml-fundamentals/
+  kind: required
+- source: /quests/1101/mlops/
+  target: /quests/1101/deep-learning-frameworks/
+  kind: recommended
+- source: /quests/1101/mlops/
+  target: /quests/1101/ai-ethics/
+  kind: unlocks
+- source: /quests/1101/natural-language-processing/
+  target: /quests/1101/deep-learning-frameworks/
+  kind: required
+- source: /quests/1101/natural-language-processing/
+  target: /quests/1101/neural-networks/
+  kind: recommended
+- source: /quests/1101/natural-language-processing/
+  target: /quests/1101/mlops/
+  kind: unlocks
+- source: /quests/1101/natural-language-processing/
+  target: /quests/1101/ai-ethics/
+  kind: unlocks
+- source: /quests/1101/neural-networks/
+  target: /quests/1101/ml-fundamentals/
+  kind: required
+- source: /quests/1101/neural-networks/
+  target: /quests/1101/python-data-science/
+  kind: recommended
+- source: /quests/1101/neural-networks/
+  target: /quests/1101/deep-learning-frameworks/
+  kind: unlocks
+- source: /quests/1101/neural-networks/
+  target: /quests/1101/computer-vision/
+  kind: unlocks
+- source: /quests/1101/neural-networks/
+  target: /quests/1101/natural-language-processing/
+  kind: unlocks
+- source: /quests/1101/python-data-science/
+  target: /quests/1101/ml-fundamentals/
+  kind: unlocks
+- source: /quests/1110/api-gateway-patterns/
+  target: /quests/1110/microservices-architecture/
+  kind: required
+- source: /quests/1110/api-gateway-patterns/
+  target: /quests/1110/scaling-strategies/
+  kind: unlocks
+- source: /quests/1110/design-patterns/
+  target: /quests/1110/domain-driven-design/
+  kind: unlocks
+- source: /quests/1110/design-patterns/
+  target: /quests/1110/microservices-architecture/
+  kind: unlocks
+- source: /quests/1110/design-patterns/
+  target: /quests/1110/event-driven-design/
+  kind: unlocks
+- source: /quests/1110/domain-driven-design/
+  target: /quests/1110/design-patterns/
+  kind: required
+- source: /quests/1110/domain-driven-design/
+  target: /quests/1110/microservices-architecture/
+  kind: unlocks
+- source: /quests/1110/domain-driven-design/
+  target: /quests/1110/event-driven-design/
+  kind: unlocks
+- source: /quests/1110/event-driven-design/
+  target: /quests/1110/microservices-architecture/
+  kind: required
+- source: /quests/1110/event-driven-design/
+  target: /quests/1110/domain-driven-design/
+  kind: recommended
+- source: /quests/1110/event-driven-design/
+  target: /quests/1110/scaling-strategies/
+  kind: unlocks
+- source: /quests/1110/microservices-architecture/
+  target: /quests/1110/design-patterns/
+  kind: required
+- source: /quests/1110/microservices-architecture/
+  target: /quests/1110/domain-driven-design/
+  kind: recommended
+- source: /quests/1110/microservices-architecture/
+  target: /quests/1110/api-gateway-patterns/
+  kind: unlocks
+- source: /quests/1110/microservices-architecture/
+  target: /quests/1110/event-driven-design/
+  kind: unlocks
+- source: /quests/1110/microservices-architecture/
+  target: /quests/1110/scaling-strategies/
+  kind: unlocks
+- source: /quests/1110/scaling-strategies/
+  target: /quests/1110/microservices-architecture/
+  kind: required
+- source: /quests/1110/scaling-strategies/
+  target: /quests/1110/event-driven-design/
+  kind: recommended
+- source: /quests/1110/scaling-strategies/
+  target: /quests/1110/system-design-interviews/
+  kind: unlocks
+- source: /quests/1110/system-design-interviews/
+  target: /quests/1110/scaling-strategies/
+  kind: required
+- source: /quests/1110/system-design-interviews/
+  target: /quests/1110/microservices-architecture/
+  kind: recommended
+- source: /quests/1110/system-design-interviews/
+  target: /quests/1111/technical-leadership/
+  kind: unlocks
+- source: /quests/1111/architecture-reviews/
+  target: /quests/1111/career-advancement/
+  kind: required
+- source: /quests/1111/architecture-reviews/
+  target: /quests/1111/tech-speaking-writing/
+  kind: recommended
+- source: /quests/1111/architecture-reviews/
+  target: /quests/1011/security-fundamentals/
+  kind: recommended
+- source: /quests/1111/building-technical-communities/
+  target: /quests/1111/open-source-contribution/
+  kind: required
+- source: /quests/1111/building-technical-communities/
+  target: /quests/1111/mentorship-programs/
+  kind: recommended
+- source: /quests/1111/building-technical-communities/
+  target: /quests/1111/innovation-rnd/
+  kind: unlocks
+- source: /quests/1111/career-advancement/
+  target: /quests/1111/innovation-rnd/
+  kind: required
+- source: /quests/1111/career-advancement/
+  target: /quests/1111/mentorship-programs/
+  kind: recommended
+- source: /quests/1111/career-advancement/
+  target: /quests/1111/architecture-reviews/
+  kind: unlocks
+- source: /quests/1111/innovation-rnd/
+  target: /quests/1111/building-technical-communities/
+  kind: required
+- source: /quests/1111/innovation-rnd/
+  target: /quests/1111/technical-leadership/
+  kind: recommended
+- source: /quests/1111/innovation-rnd/
+  target: /quests/1111/architecture-reviews/
+  kind: unlocks
+- source: /quests/1111/innovation-rnd/
+  target: /quests/1111/career-advancement/
+  kind: unlocks
+- source: /quests/1111/mentorship-programs/
+  target: /quests/1111/technical-leadership/
+  kind: required
+- source: /quests/1111/mentorship-programs/
+  target: /quests/1111/building-technical-communities/
+  kind: unlocks
+- source: /quests/1111/mentorship-programs/
+  target: /quests/1111/career-advancement/
+  kind: unlocks
+- source: /quests/1111/open-source-contribution/
+  target: /quests/1111/tech-speaking-writing/
+  kind: required
+- source: /quests/1111/open-source-contribution/
+  target: /quests/1111/technical-leadership/
+  kind: recommended
+- source: /quests/1111/open-source-contribution/
+  target: /quests/1111/building-technical-communities/
+  kind: unlocks
+- source: /quests/1111/tech-speaking-writing/
+  target: /quests/1111/technical-leadership/
+  kind: required
+- source: /quests/1111/tech-speaking-writing/
+  target: /quests/1111/open-source-contribution/
+  kind: unlocks
+- source: /quests/1111/tech-speaking-writing/
+  target: /quests/1111/building-technical-communities/
+  kind: unlocks
+- source: /quests/1111/technical-leadership/
+  target: /quests/1011/security-fundamentals/
+  kind: recommended
+- source: /quests/1111/technical-leadership/
+  target: /quests/1111/mentorship-programs/
+  kind: unlocks
+- source: /quests/1111/technical-leadership/
+  target: /quests/1111/architecture-reviews/
+  kind: unlocks
+- source: /quests/1111/technical-leadership/
+  target: /quests/1111/career-advancement/
+  kind: unlocks
+- source: /quests/1111/technical-leadership/
+  target: /quests/1111/tech-speaking-writing/
+  kind: unlocks
+- source: /quests/1111/technical-leadership/
+  target: /quests/1111/innovation-rnd/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/0010/branches-and-pull-requests/
+  kind: required
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/0010/commitments-to-clean-commits/
+  kind: required
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/0010/change-logs/
+  kind: recommended
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/0010/action-triggers/
+  kind: recommended
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/data-warehousing/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/stream-processing/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/data-quality/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/apache-spark/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/conquer-king-edgar/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/etl-pipeline-design/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1100/temple-of-templates/
+  kind: unlocks
+- source: /quests/1100/mastering-version-control-workflows/
+  target: /quests/1101/ml-fundamentals/
   kind: unlocks

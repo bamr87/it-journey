@@ -38,13 +38,11 @@ keywords:
   - terminal documentation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Use ls -a to find hidden directories
 - Successfully navigate to .CHAPEL
@@ -53,17 +51,23 @@ validation_criteria:
 - Collect the ancient tome
 prerequisites:
 - Complete the Cellar side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Ancient Tome Fragment
 - Man page and hidden file mastery
 excerpt: Reveal hidden dot-directories, consult man pages, and use command help systems to defeat the chapel monster and claim the tome.
 draft: false
-permalink: /quests/0000/side-quests/hidden-chapel/
+permalink: /quests/0000/hidden-chapel/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/hidden-chapel/
 ---
 *The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas, guarded by a monster who fears knowledge.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Hidden Chapel" %}
 
 ## 🎯 Quest Objectives
 
@@ -223,6 +227,8 @@ The mausoleum is another hidden directory. Explore it for bonus lore and a secre
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

@@ -18,6 +18,13 @@ on:
         default: '3'
         type: string
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -27,16 +34,16 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    
+
     steps:
       - name: 'Checkout Repository'
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 'Setup Python Environment'
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -69,11 +76,13 @@ jobs:
 
       - name: 'Identify Posts for Archiving (3+ months old)'
         id: archive_check
+        env:
+          ARCHIVE_THRESHOLD_MONTHS: ${{ github.event.inputs.archive_threshold_months || '3' }}
         run: |
-          echo "📅 Identifying posts older than ${{ github.event.inputs.archive_threshold_months || '3' }} months..."
-          
+          echo "📅 Identifying posts older than ${ARCHIVE_THRESHOLD_MONTHS} months..."
+
           # Calculate cutoff date (3 months ago)
-          cutoff_date=$(date -d "${{ github.event.inputs.archive_threshold_months || '3' }} months ago" +%Y-%m-%d)
+          cutoff_date=$(date -d "${ARCHIVE_THRESHOLD_MONTHS} months ago" +%Y-%m-%d)
           echo "Cutoff date: $cutoff_date"
           
           # Find posts older than cutoff date
@@ -141,10 +150,12 @@ jobs:
 
       - name: 'Archive Old Posts'
         if: ${{ steps.archive_check.outputs.OLD_POSTS_COUNT > 0 && github.event.inputs.dry_run != 'true' }}
+        env:
+          ARCHIVE_THRESHOLD_MONTHS: ${{ github.event.inputs.archive_threshold_months || '3' }}
         run: |
-          echo "📦 Archiving posts older than ${{ github.event.inputs.archive_threshold_months || '3' }} months..."
-          
-          cutoff_date=$(date -d "${{ github.event.inputs.archive_threshold_months || '3' }} months ago" +%Y-%m-%d)
+          echo "📦 Archiving posts older than ${ARCHIVE_THRESHOLD_MONTHS} months..."
+
+          cutoff_date=$(date -d "${ARCHIVE_THRESHOLD_MONTHS} months ago" +%Y-%m-%d)
           current_year=$(date +%Y)
           archived_count=0
           
@@ -171,29 +182,34 @@ jobs:
       - name: 'Generate Change Summary'
         id: summary
         if: ${{ github.event.inputs.dry_run != 'true' }}
+        env:
+          ARCHIVE_THRESHOLD_MONTHS: ${{ github.event.inputs.archive_threshold_months || '3' }}
+          ARCHIVE_CANDIDATES: ${{ steps.archive_check.outputs.ARCHIVE_CANDIDATES }}
+          ORGANIZE_OUTPUT: ${{ steps.organize.outputs.ORGANIZE_OUTPUT }}
+          OLD_POSTS_COUNT: ${{ steps.archive_check.outputs.OLD_POSTS_COUNT || 0 }}
         run: |
           echo "📊 Generating change summary..."
-          
+
           # Count changes
           organized_files=$(git diff --name-only | grep "pages/_posts" | grep -v "archive" | wc -l || echo "0")
-          archived_files="${{ steps.archive_check.outputs.OLD_POSTS_COUNT || 0 }}"
-          
-          # Generate summary
+          archived_files="$OLD_POSTS_COUNT"
+
+          # Generate summary (untrusted values referenced via quoted shell vars)
           summary="## 📋 Weekly Post Organization Summary
 
           ### 📁 Post Organization
           - **Files organized**: $organized_files
           - **Files archived**: $archived_files
-          - **Archive threshold**: ${{ github.event.inputs.archive_threshold_months || '3' }} months
-          
+          - **Archive threshold**: ${ARCHIVE_THRESHOLD_MONTHS} months
+
           ### 🔍 Archive Candidates
-          ${{ steps.archive_check.outputs.ARCHIVE_CANDIDATES }}
-          
+          ${ARCHIVE_CANDIDATES}
+
           ### 📝 Organization Details
           \`\`\`
-          ${{ steps.organize.outputs.ORGANIZE_OUTPUT }}
+          ${ORGANIZE_OUTPUT}
           \`\`\`"
-          
+
           echo "SUMMARY<<EOF" >> $GITHUB_OUTPUT
           echo "$summary" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -201,23 +217,25 @@ jobs:
       - name: 'Create Branch and Commit Changes'
         if: ${{ steps.organize.outputs.CHANGES_MADE == 'true' && github.event.inputs.dry_run != 'true' }}
         id: create_branch
+        env:
+          ARCHIVE_THRESHOLD_MONTHS: ${{ github.event.inputs.archive_threshold_months || '3' }}
         run: |
           # Create a new branch for the PR
           BRANCH_NAME="automated/organize-posts-${{ github.run_id }}"
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_OUTPUT
-          
+
           git checkout -b "$BRANCH_NAME"
-          
+
           # Stage all changes in pages/_posts/
           git add pages/_posts/
-          
+
           # Create commit message
           git commit -m "🤖 Weekly post organization and archiving
 
           - Organized posts into subdirectories by section
-          - Archived posts older than ${{ github.event.inputs.archive_threshold_months || '3' }} months
+          - Archived posts older than ${ARCHIVE_THRESHOLD_MONTHS} months
           - Automated via GitHub Actions on ${{ github.run_id }}
-          
+
           Generated by: ${{ github.workflow }} workflow"
           
           # Push the branch

@@ -37,13 +37,11 @@ keywords:
   - shell scripting basics
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/entrance/
+  - /quests/0000/entrance/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/cellar/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  recommended_quests: []
 validation_criteria:
 - Create a directory and verify with ls
 - Create a file with touch and write to it with echo
@@ -51,17 +49,23 @@ validation_criteria:
 - Copy and move files between directories
 prerequisites:
 - Complete the Entrance side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Bashcrawl Workbench Tool
 - File management proficiency
 excerpt: Practice mkdir, touch, echo redirection, cp, mv, and rm to construct workshop artifacts and advance deeper into Bashcrawl.
 draft: false
-permalink: /quests/0000/side-quests/workshop/
+permalink: /quests/0000/workshop/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/workshop/
 ---
 *The Workshop smells of sawdust and old iron. Workbenches line the walls, covered in unfinished projects. Here, heroes learn the art of building — and destroying — the very fabric of the file system.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Workshop" %}
 
 ## 🎯 Quest Objectives
 
@@ -187,6 +191,8 @@ Before advancing:
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 

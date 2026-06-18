@@ -3,14 +3,13 @@ title: 'Terminal Mastery: Conquering the Command-Line Realm'
 author: Quest Master IT-Journey Team
 description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
-snippet: Where code meets the metal, heroes are forged in the fire of the command line
 preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
 date: '2025-07-28T23:34:51.000Z'
 lastmod: '2025-09-27T19:59:13.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
-primary_technology: 1
+primary_technology: bash
 quest_type: main_quest
 quest_series: 'Foundation Path: Digital Literacy Mastery'
 skill_focus: fullstack
@@ -53,18 +52,13 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
-sub-title: 'Level 0001 (1) Quest: Command-Line Interface Mastery'
 rewards:
 - 🏆 Terminal Navigator Badge
 - ⚡ 10x Developer Productivity Boost
 - 🛠️ Command-Line Mastery Foundation
 - 🎯 Advanced Developer Toolkit Access
-related_quests:
-- 'Level 0000: Digital Awakening - Computer Fundamentals'
-- 'Level 0010: File System Sorcery - Directory Navigation'
-- 'Level 0011: Version Control Magic - Git Fundamentals'
 layout: quest
+sub_title: 'Level 0001 (1) Quest: Command-Line Interface Mastery'
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 

@@ -24,7 +24,7 @@ level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/0001/side-quests/barodybroject-stack-analysis/
+permalink: /quests/0001/barodybroject-stack-analysis/
 date: '2025-11-02T18:34:05.000Z'
 primary_technology: stack-analysis
 skill_focus: backend
@@ -52,14 +52,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -68,6 +60,9 @@ validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/barodybroject-stack-analysis/
+draft: false
 ---
 # Technology Stack Analysis: Barodybroject
 

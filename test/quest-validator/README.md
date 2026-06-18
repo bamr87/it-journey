@@ -8,6 +8,66 @@
 
 The Quest Validator is a comprehensive testing framework designed to validate IT-Journey quest files against established standards. It ensures quest quality, consistency, and adherence to the gamified learning experience guidelines.
 
+Validation comes in **two tiers**:
+
+| Tier | Tool | What it checks | Cost |
+|------|------|----------------|------|
+| **1 — Structural** | `quest_validator.py` | Shape: frontmatter, taxonomy, required sections, permalinks, Liquid safety. Deterministic. | Free |
+| **2 — Agentic** | `agentic_validate.py` | Substance: drives **Claude Code** to read a quest, run its commands end-to-end, and judge accuracy/completeness/clarity. | Uses your Claude quota |
+
+Tier 1 answers *"is this quest shaped right?"*; tier 2 answers *"does this quest actually work?"*. Run tier 1 always (it gates CI); run tier 2 on demand for a deeper, semantic review.
+
+## Agentic Validation (Tier 2 — Claude Code / OAuth)
+
+`agentic_validate.py` hands a quest to a sandboxed Claude Code agent that reads it, attempts its commands, and returns a **weighted 0–100 score** across six dimensions plus prioritized, actionable recommendations.
+
+**Dimensions** (weights): Commands & code work (30%), Technical accuracy (25%), Completeness (15%), Clarity & followability (15%), Safety (10%), Structure & pedagogy (5%). The agent assigns 0–5 per dimension with evidence; the **overall score is computed in Python** from those (we never trust the model's arithmetic). Verdict bands: ✅ pass ≥ 80, ⚠️ warn 60–79, ❌ fail < 60.
+
+### Authentication (OAuth)
+
+Auth is delegated to the `claude` CLI — set up **one** of:
+
+```bash
+# Local: log in once; credentials live in ~/.claude
+claude login          # or: claude setup-token
+
+# CI / headless: generate a long-lived OAuth token and store it as a secret
+export CLAUDE_CODE_OAUTH_TOKEN="$(claude setup-token)"
+```
+
+The CLI also honors `ANTHROPIC_API_KEY` (API billing) as a fallback. Inside a managed/sandboxed agent session, host auth is **not** passed to child `claude` processes — run from a normal shell or a CI runner with the token set.
+
+### Modes
+
+- **`review`** (default) — read-only. The agent reasons like an expert reviewer + first-time learner and executes nothing. Safe to run anywhere.
+- **`execute`** — the agent runs the quest's *safe, self-contained* commands in a disposable sandbox to verify they actually work (network + `sudo`/`rm -rf`/`curl`/`wget` are denied). Intended for **CI runners / containers**, not your primary machine.
+
+### Usage
+
+```bash
+# Offline pipeline test — no auth, no cost (synthetic verdicts):
+make quest-validate-agentic-mock                 # or: agentic_validate.py ... --mock
+
+# See exactly what would be sent to Claude, without invoking it:
+python3 test/quest-validator/agentic_validate.py pages/_quests/0101/secrets-management.md --dry-run
+
+# Real read-only review of one quest:
+python3 test/quest-validator/agentic_validate.py pages/_quests/0101/secrets-management.md
+
+# Representative sample (one per level, round-robin), sandboxed execution, reports + gate:
+make quest-validate-agentic SAMPLE=5 MODE=execute \
+  EXTRA="--md review.md --report review.json --fail-threshold 70"
+
+# Offline self-test of the whole harness (8 checks, no auth):
+make quest-validate-agentic-selftest
+```
+
+Key flags: `--mode {review,execute}`, `--sample N`, `--mock`, `--dry-run`, `--md FILE`, `--report FILE`, `--fail-threshold PCT`, `--model`, `--timeout`, `--list`.
+
+### In CI
+
+The opt-in workflow `.github/workflows/agentic-quest-review.yml` runs tier 2 **only** when you ask — via the Actions tab (workflow_dispatch) or by adding the **`agentic-review`** label to a PR (which reviews that PR's changed quests in `execute` mode). It needs the `CLAUDE_CODE_OAUTH_TOKEN` (or `ANTHROPIC_API_KEY`) secret, posts a scored table to the job summary, uploads `review.json`, and comments on the PR. It never runs on ordinary PRs, so it can't block merges or spend quota unexpectedly.
+
 ## Features
 
 ### ✅ Comprehensive Validation

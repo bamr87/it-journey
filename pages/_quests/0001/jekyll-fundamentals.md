@@ -1,63 +1,48 @@
 ---
 title: 'Jekyll Fundamentals: Build Static Sites with Ruby'
 author: IT-Journey Team
-description: Master Jekyll static site generation from scratch. Learn installation, configuration, layouts, includes, and deployment. Build fast, secure websites without databases or servers.
+description: 'Master Jekyll static site generation: install Ruby and Jekyll, learn the project structure and collections, then build and serve a fast, secure site.'
 excerpt: Build fast, secure static websites with Jekyll - no databases or servers required.
 preview: images/previews/jekyll-fundamentals-static-site-generation-descrip.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-12-19T00:00:00.000Z'
+lastmod: '2026-06-14T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 75-90 minutes
 primary_technology: jekyll
 quest_type: main_quest
 quest_series: Static Site Mastery
-quest_line: '[Campaign/storyline name]'
-quest_arc: '[Story arc or thematic grouping]'
+quest_line: The Web Fundamentals Codex
+quest_arc: Forging Your First Website
 quest_dependencies:
   required_quests: []
-  recommended_quests: []
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - '[Primary Skill Tree]'
-  - '[Secondary Skill Tree]'
+  recommended_quests:
+  - /quests/0000/git-basics/
+  unlocks_quests:
+  - /quests/0001/github-pages-basics/
+  - /quests/0001/liquid-templating/
+  - /quests/0001/yaml-configuration/
 skill_focus: frontend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
-  - Basic command line navigation
-  - '[Specific prior knowledge]'
+  - Basic command line navigation (cd, ls, mkdir)
+  - Comfort editing text files in any editor
   system_requirements:
   - Modern OS (macOS, Windows 10+, Linux)
-  - '[Required software installed]'
+  - Ruby 3.x and a terminal
   skill_level_indicators:
-  - '[Recommended skill level description]'
+  - No prior Jekyll or Ruby experience required
 validation_criteria:
   completion_requirements:
   - All primary objectives completed
-  - '[Specific deliverable created]'
+  - A working Jekyll site built and served locally
   skill_demonstrations:
-  - Can explain [concept] clearly
-  - Can implement [skill] independently
+  - Can explain what a static site generator does
+  - Can build and serve a Jekyll site independently
   knowledge_checks:
-  - Understands [principle]
-  - Can troubleshoot [common issue]
-quest_mapping:
-  coordinates: '[x, y]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
+  - Understands the role of the _site output folder
+  - Can troubleshoot a failed build
 permalink: /quests/0001/jekyll-fundamentals/
 categories:
 - Quests
@@ -87,108 +72,74 @@ keywords:
   - hands-on
   - beginner
 fmContentType: quest
-draft: true
+draft: false
 comments: true
-sub_title: 'Level 0001 (1) Quest: Jekyll Static Site Generator'
+sub_title: 'Level 0001 (1) Quest: Main Quest - Jekyll'
 rewards:
   badges:
-  - 🏆 [Achievement Badge Name]
+  - 🏆 Site Smith - Built your first static site from scratch
+  - 🌱 Sprout of the Static Web - Internalized the build-and-serve loop
   skills_unlocked:
-  - 🛠️ [Tool or Technology Mastery]
+  - 🛠️ Jekyll Project Scaffolding
+  - 🧠 Static Site Generation Concepts
   progression_points: 50
   unlocks_features:
-  - '[Feature or capability unlocked]'
+  - Access to the rest of the Level 0001 Web Fundamentals quest line
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
+*Greetings, brave adventurer! Welcome to **Jekyll Fundamentals** - your first true step into the realm of the web. In the previous tier you learned to wield the terminal and the version-control scrolls. Now you will forge something the whole world can visit: a website. And you will build it the wise way - as a fast, secure **static site** that needs no database and no fragile server to defend.*
 
-*Whether you're a novice seeking your first [technology] spell or an experienced practitioner looking to master advanced [skill], this adventure will challenge and reward you with practical, real-world knowledge.*
+*Whether you have never written a line of HTML or you are an old hand looking to ship sites without the weight of a content-management beast, this adventure will teach you the "how" and, more importantly, the "why" behind the static web.*
 
 ## 📖 The Legend Behind This Quest
 
-*In the ancient times of computing, when developers first discovered the power of [technology], they realized it held the key to [benefit/transformation]. Today, this knowledge remains one of the most valuable skills in any IT adventurer's arsenal, enabling you to [real-world application].*
+*In the early days, every web page was conjured fresh on each visit - the server would wake a database, run code, assemble the page, and only then send it. Powerful, but slow, costly, and full of trap doors for attackers. Then a band of builders realized a simple truth: most pages do not change between visitors. Why rebuild the castle every time someone knocks? **Jekyll** was born from this insight - generate every page once, ahead of time, and serve plain files. The result is a site that loads instantly, costs nearly nothing to host, and has almost no attack surface.*
 
-*This quest will guide you through the mystical arts of [technology], teaching you not just the "how," but the "why" behind each incantation and command.*
-
-## 🗺️ Your Quest Network Position
-
-```mermaid
-graph TB
-    subgraph "Current Quest Chain"
-        PreReq1[📍 Prerequisite Quest 1]
-        PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>Quest Name]
-        Side1[⭐ Side Quest 1]
-        Side2[⭐ Side Quest 2]
-        Next1[🔜 Unlocked Quest 1]
-        Next2[🔜 Unlocked Quest 2]
-    end
-    
-    PreReq1 --> Current
-    PreReq2 --> Current
-    Current --> Side1
-    Current --> Side2
-    Current --> Next1
-    Current --> Next2
-    
-    style Current fill:#4CAF50,stroke:#2E7D32,stroke-width:4px,color:#fff
-    style PreReq1 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style PreReq2 fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style Side1 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Side2 fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style Next1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-    style Next2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
+*Jekyll, written in Ruby, powers GitHub Pages and countless documentation sites, blogs, and portfolios across the kingdom. Master it, and you hold the foundation stone of the entire Web Fundamentals tier.*
 
 ## 🎯 Quest Objectives
 
-By the time you complete this epic journey, you will have mastered:
+By the time you complete this journey, you will have mastered:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **[Specific Learning Goal 1]** - Clear, measurable skill acquisition
-- [ ] **[Specific Learning Goal 2]** - Practical application or implementation
-- [ ] **[Specific Learning Goal 3]** - Integration with existing knowledge
-- [ ] **[Specific Learning Goal 4]** - Real-world problem solving
+- [ ] **What a Static Site Generator Is** - Explain how Jekyll turns source files into a finished website
+- [ ] **The Jekyll Directory Structure** - Recognize every special folder and what it does
+- [ ] **Collections & Content** - Add posts, pages, and a custom collection
+- [ ] **The Build & Serve Loop** - Run `jekyll build` and `jekyll serve` and read the output
 
 ### Secondary Objectives (Bonus Achievements)
-- [ ] **[Advanced Skill 1]** - Enhanced capability for experienced adventurers
-- [ ] **[Advanced Skill 2]** - Cross-technology integration
-- [ ] **[Community Contribution]** - Sharing knowledge or helping others
-- [ ] **[Optimization Challenge]** - Performance or efficiency improvements
+- [ ] **Bundler & Gemfile** - Manage Jekyll and plugins reproducibly
+- [ ] **Front Matter Basics** - Add metadata to a page that controls how it renders
+- [ ] **Drafts & Live Reload** - Use `--drafts` and `--livereload` to speed up authoring
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain the concepts to another person clearly and accurately
-- [ ] Apply the skills to a new, similar problem independently
-- [ ] Integrate this knowledge with other technical skills effectively
-- [ ] Troubleshoot common issues without external help
-- [ ] Teach others or contribute to the community
+- [ ] Explain to a friend why a static site is faster and safer than a dynamic one
+- [ ] Scaffold a new Jekyll site and serve it without looking up the commands
+- [ ] Point to the `_site` folder and say exactly what lives there and why
 
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Basic understanding of [foundational concept]
-- [ ] Familiarity with [prerequisite technology]
-- [ ] Completion of [prerequisite quest name] (recommended)
-- [ ] [Additional knowledge requirement]
+- [ ] Basic command line navigation (`cd`, `ls`, `mkdir`)
+- [ ] Comfort creating and editing plain text files
+- [ ] Recommended: completion of [Git Basics](/quests/0000/git-basics/)
 
 ### 🛠️ System Requirements
 - [ ] Modern operating system (Windows 10+, macOS 10.14+, or Linux)
-- [ ] [Primary technology] installed and configured
-- [ ] Text editor or IDE of your choice (VS Code recommended)
-- [ ] Internet connection for downloading resources
-- [ ] [Additional system requirement]
+- [ ] Ruby 3.x installed (we install it below)
+- [ ] A text editor or IDE (VS Code recommended)
+- [ ] Internet connection for downloading gems
 
 ### 🧠 Skill Level Indicators
 This **🟢 Easy** quest expects:
-- [ ] Beginner-friendly - no prior [technology] experience required
-- [ ] Comfortable working with basic development tools
+- [ ] Beginner-friendly - no prior Jekyll or Ruby experience required
+- [ ] Comfortable running commands you copy into a terminal
 - [ ] Ready for 75-90 minutes of focused learning
-- [ ] Willingness to experiment and troubleshoot
 
 ## 🌍 Choose Your Adventure Platform
 
-*Different platforms offer unique advantages for this quest. Choose the path that best fits your current setup and learning goals.*
+*Jekyll needs Ruby and a couple of build tools. Pick the path that matches your machine.*
 
 ### 🍎 macOS Kingdom Path
 
@@ -196,23 +147,24 @@ This **🟢 Easy** quest expects:
 <summary>Click to expand macOS instructions</summary>
 
 ```bash
-# macOS-specific commands and setup
-# Using Homebrew package manager
+# Install a modern Ruby with Homebrew (the system Ruby is too old)
+brew install ruby
 
-# Install prerequisites
-brew install [package-name]
+# Add the Homebrew Ruby to your PATH (zsh)
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 
-# Verify installation
-[verification-command] --version
+# Install Jekyll and Bundler
+gem install jekyll bundler
 
-# Example implementation
-[example-code]
+# Verify
+ruby --version
+jekyll --version
 ```
 
 **macOS-Specific Notes:**
-- [Platform-specific consideration]
-- [macOS advantage or feature]
-- [Troubleshooting tip]
+- On Apple Silicon Homebrew lives in `/opt/homebrew`; on Intel Macs it is `/usr/local`.
+- Never `sudo gem install` - it pollutes the system Ruby.
 
 </details>
 
@@ -222,26 +174,23 @@ brew install [package-name]
 <summary>Click to expand Windows instructions</summary>
 
 ```powershell
-# PowerShell and Windows-specific commands
-# Using Chocolatey or winget
+# Install RubyInstaller with DevKit via winget
+winget install RubyInstallerTeam.RubyWithDevKit.3.2
 
-# Install prerequisites
-choco install [package-name]
-# or
-winget install [package-name]
+# Close and reopen the terminal, then install the toolchain when prompted
+ridk install
 
-# Verify installation
-[verification-command] --version
+# Install Jekyll and Bundler
+gem install jekyll bundler
 
-# Example implementation
-[example-code]
+# Verify
+ruby --version
+jekyll --version
 ```
 
 **Windows-Specific Notes:**
-- [Platform-specific consideration]
-- [Windows advantage or feature]
-- [WSL option if applicable]
-- [Troubleshooting tip]
+- Choose option 3 during `ridk install` to build native gems.
+- WSL2 with Ubuntu is an excellent alternative - follow the Linux path inside it.
 
 </details>
 
@@ -251,28 +200,24 @@ winget install [package-name]
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Linux distribution-specific commands
+# Debian / Ubuntu
+sudo apt update && sudo apt install -y ruby-full build-essential zlib1g-dev
 
-# For Ubuntu/Debian
-sudo apt update && sudo apt install [package-name]
+# Fedora / RHEL
+# sudo dnf install -y ruby ruby-devel @development-tools
 
-# For Fedora/RHEL
-sudo dnf install [package-name]
+# Install gems to your home directory (no sudo)
+echo 'export GEM_HOME="$HOME/.gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/.gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 
-# For Arch
-sudo pacman -S [package-name]
-
-# Verify installation
-[verification-command] --version
-
-# Example implementation
-[example-code]
+gem install jekyll bundler
+jekyll --version
 ```
 
 **Linux-Specific Notes:**
-- [Distribution differences]
-- [Linux advantage or feature]
-- [Troubleshooting tip]
+- Installing gems to `$GEM_HOME` in your home directory avoids needing `sudo`.
+- `build-essential` (or the dev tools group) is required to compile native gems.
 
 </details>
 
@@ -282,225 +227,265 @@ sudo pacman -S [package-name]
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-# Docker/Container-based approach
-docker run -it [image-name] [command]
+# Run Jekyll in a container - zero local Ruby setup
+docker run --rm -it -p 4000:4000 -v "$PWD":/srv/jekyll \
+  jekyll/jekyll:4 jekyll serve --host 0.0.0.0
 
-# Or using cloud platforms
-# AWS, Azure, GCP specific commands
-[cloud-platform-commands]
+# Or use a GitHub Codespace, which ships Ruby preinstalled
 ```
 
 **Cloud-Specific Notes:**
-- [Cloud platform advantages]
-- [Container benefits]
-- [Resource considerations]
+- The container mounts your current directory, so edits on your host appear instantly.
+- `--host 0.0.0.0` is required so the forwarded port reaches your browser.
 
 </details>
 
-## 🧙‍♂️ Chapter 1: [Technology] Foundation - Setting Up Your Digital Workshop
+## 🧙‍♂️ Chapter 1: The Static Site Generator - What Jekyll Actually Does
 
-*In this foundational chapter, we'll establish your [technology] environment and explore the core concepts that will power your entire journey. Every great [skill] practitioner begins with a solid understanding of the fundamentals.*
+*Before you build, understand the machine. A **static site generator** takes source files - Markdown, HTML templates, data, and config - and renders them once into a folder of plain HTML, CSS, and JS. That folder is your website. No database runs at request time; the server just hands over files.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Technology] environment setup and configuration
-- Core concepts and terminology for [skill] development
-- First practical implementation using hands-on approach
-- Connection to broader [skill] ecosystem
+- The difference between dynamic and static sites
+- The Jekyll input-to-output pipeline
+- Your first scaffolded site
 
-### 🏗️ Building Your Knowledge Foundation
-
-**Step 1: Environment Setup**
+### 🏗️ Build Your First Site
 
 ```bash
-# Step-by-step setup commands
-[setup-command-1]
-[setup-command-2]
-[setup-command-3]
+# Scaffold a brand-new Jekyll site
+jekyll new my-castle
+
+# Enter the new site and serve it locally
+cd my-castle
+bundle exec jekyll serve
+
+# Jekyll prints something like:
+#   Server address: http://127.0.0.1:4000/
+#   Server running... press ctrl-c to stop.
 ```
 
-**Step 2: Core Concepts**
+Open `http://127.0.0.1:4000/` in your browser. You are looking at HTML that Jekyll generated from Markdown and templates. Press `Ctrl-C` to stop the server.
 
-[Explanation of fundamental concepts]
+**Dynamic vs. static, at a glance:**
 
-**Step 3: First Implementation**
+| | Dynamic site (e.g. WordPress) | Static site (Jekyll) |
+| --- | --- | --- |
+| When is the page built? | On every request | Once, ahead of time |
+| Needs a database? | Yes | No |
+| Attack surface | Large (DB, PHP, plugins) | Tiny (just files) |
+| Hosting cost | Server + DB | Free file host (GitHub Pages) |
+| Speed | Variable | Very fast |
 
-```[language]
-# Your first working example
-[code-example]
-
-# Expected output:
-# [description of output]
-```
-
-### 🔍 Knowledge Check: [Technology] Fundamentals
-- [ ] Can you explain the core purpose of [technology] in [skill-area]?
-- [ ] What would happen if you modified [specific parameter]?
-- [ ] How does [technology] connect to other tools in your toolkit?
+### 🔍 Knowledge Check: Static Generation
+- [ ] In your own words, when does a Jekyll page get built?
+- [ ] Why does a static site have a smaller attack surface?
+- [ ] What did `jekyll new` create that `jekyll serve` then rendered?
 
 ### ⚡ Quick Wins and Checkpoints
-*Celebrate these victories as you progress through the chapter:*
-- [ ] **Setup Complete**: [Technology] environment is ready for development
-- [ ] **First Success**: Successfully executed your first [technology] implementation
-- [ ] **Understanding Gained**: Can explain key concepts to another person
+- [ ] **Setup Complete**: `jekyll --version` prints a version
+- [ ] **First Success**: You viewed your scaffolded site at `localhost:4000`
 
-## 🧙‍♂️ Chapter 2: [Advanced Topic] - Leveling Up Your Skills
+## 🧙‍♂️ Chapter 2: The Directory Structure - A Map of Your Castle
 
-*Now that you've mastered the basics, it's time to explore more advanced capabilities of [technology]. In this chapter, you'll learn techniques that separate novices from practitioners.*
+*Every Jekyll site follows a layout of special folders. The leading underscore marks folders Jekyll treats specially.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Advanced skill 1]
-- [Advanced skill 2]
-- [Integration technique]
-- [Best practices]
+- What each special folder and file is for
+- The role of the `_site` output folder
+- How `_config.yml` ties it together
 
-### 🏗️ Advanced Implementations
+### 🏗️ The Anatomy of a Jekyll Site
 
-[Detailed content for chapter 2]
+```text
+my-castle/
+├── _config.yml      # Global settings: title, baseurl, plugins, build options
+├── Gemfile          # The Ruby gems this site depends on
+├── index.md         # The home page (Markdown becomes HTML)
+├── _posts/          # Blog posts, named YYYY-MM-DD-title.md
+├── _layouts/        # Page skeletons (default.html, post.html)
+├── _includes/       # Reusable HTML snippets (header.html, footer.html)
+├── _data/           # YAML/JSON/CSV data files you can read in templates
+├── assets/          # CSS, JS, images - copied through as-is
+└── _site/           # GENERATED OUTPUT - never edit, never commit
+```
 
-### 🔍 Knowledge Check: [Advanced Topic]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+The golden rule: **you edit the source, never `_site`.** Jekyll wipes and rebuilds `_site` on every run. Add it to `.gitignore`:
 
-## 🧙‍♂️ Chapter 3: [Real-World Application] - Practical Mastery
+```bash
+echo "_site/" >> .gitignore
+echo ".jekyll-cache/" >> .gitignore
+```
 
-*In this final chapter, you'll apply everything you've learned to solve real-world problems. This is where theory transforms into practical mastery.*
+Here is what a minimal `_config.yml` looks like:
+
+```yaml
+title: My Castle
+description: A site forged in the Web Fundamentals tier
+baseurl: ""          # subpath, e.g. "/blog"
+url: ""              # full host, e.g. "https://example.com"
+markdown: kramdown
+plugins:
+  - jekyll-feed
+```
+
+### 🔍 Knowledge Check: Directory Structure
+- [ ] Which folder holds the generated website you would deploy?
+- [ ] Why should you never edit files inside `_site`?
+- [ ] What naming pattern must files in `_posts/` follow?
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Mapped the castle**: You can name what `_layouts`, `_includes`, and `_data` hold
+- [ ] **Ignored the output**: `_site/` is in your `.gitignore`
+
+## 🧙‍♂️ Chapter 3: Collections & the Build Loop - Bringing It to Life
+
+*Posts are just the beginning. **Collections** let you group any kind of related content - quests, recipes, team members - and Jekyll will render each item with shared logic.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- [Real-world skill 1]
-- [Real-world skill 2]
-- [Problem-solving approach]
-- [Best practices in production]
+- Declaring and using a custom collection
+- Adding content with front matter
+- The full build-and-serve workflow
 
-### 🏗️ Building Your Real-World Solution
+### 🏗️ Declare a Collection
 
-[Detailed content for chapter 3]
+Add a collection in `_config.yml`:
 
-### 🔍 Knowledge Check: [Real-World Application]
-- [ ] [Check question 1]
-- [ ] [Check question 2]
-- [ ] [Check question 3]
+```yaml
+collections:
+  recipes:
+    output: true          # generate a page for each recipe
+    permalink: /recipes/:name/
+```
+
+Now create the folder and a first item:
+
+```bash
+mkdir _recipes
+```
+
+Create `_recipes/bread.md`. The block between the `---` lines is **front matter** - metadata that controls rendering:
+
+```markdown
+---
+title: Hearth Bread
+layout: default
+prep_time: 20 minutes
+---
+
+A simple loaf forged in the castle hearth. Mix flour, water, salt, and yeast.
+```
+
+Now run the build and watch the loop:
+
+```bash
+# Build once into _site/, with verbose output
+bundle exec jekyll build --verbose
+
+# Or serve with live reload so the browser refreshes on every save
+bundle exec jekyll serve --livereload --drafts
+```
+
+Visit `http://127.0.0.1:4000/recipes/bread/` - Jekyll generated that page from your Markdown plus the `default` layout. The `--drafts` flag also renders anything in a `_drafts/` folder so you can preview unfinished work.
+
+### 🔍 Knowledge Check: Collections & Build
+- [ ] What does `output: true` do for a collection?
+- [ ] What is front matter, and where does it live in a file?
+- [ ] What is the difference between `jekyll build` and `jekyll serve`?
 
 ## 🎮 Mastery Challenges
 
-### 🟢 Novice Challenge: [Basic Implementation]
-**Objective**: [What to build/accomplish]
+### 🟢 Novice Challenge: Scaffold and Serve
+**Objective**: Create a fresh Jekyll site and view it in your browser.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+- [ ] Run `jekyll new my-site`
+- [ ] Serve it with `bundle exec jekyll serve`
+- [ ] Confirm it loads at `http://127.0.0.1:4000/`
 
-**Validation**: Run `[command]` to verify your implementation works correctly.
+**Validation**: Run `bundle exec jekyll build` and confirm a `_site/index.html` file exists.
 
-### 🟡 Intermediate Challenge: [Enhanced Implementation]
-**Objective**: [What to build/accomplish]
-
-**Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-
-**Validation**: [How to verify success]
-
-### 🔴 Advanced Challenge: [Complex Implementation]
-**Objective**: [What to build/accomplish]
+### 🟡 Intermediate Challenge: Add a Custom Collection
+**Objective**: Add a `recipes` (or `quests`) collection with at least two items.
 
 **Requirements**:
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
-- [ ] [Requirement 4]
-- [ ] [Requirement 5]
+- [ ] Declare the collection in `_config.yml`
+- [ ] Create two Markdown files with front matter
+- [ ] Confirm each renders at its own permalink
 
-**Validation**: [How to verify success]
+**Validation**: Both collection pages appear under `_site/` and open in the browser.
+
+### 🔴 Advanced Challenge: Tame the Build
+**Objective**: Configure a reproducible build and a custom home page.
+
+**Requirements**:
+- [ ] Pin Jekyll in the `Gemfile` and commit `Gemfile.lock`
+- [ ] Edit `index.md` to list your collection items
+- [ ] Add `_site/` and `.jekyll-cache/` to `.gitignore`
+
+**Validation**: `bundle exec jekyll build` succeeds with no warnings and your home page lists the collection.
 
 ## 🏆 Quest Rewards & Achievements
 
-### Upon Quest Completion, You'll Unlock:
-
 **🎖️ Badges Earned**:
-- 🏆 **[Badge Name]** - [Achievement description]
-- ⭐ **[Badge Name]** - [Achievement description]
+- 🏆 **Site Smith** - You built a static site from nothing
+- 🌱 **Sprout of the Static Web** - The build-and-serve loop is second nature
 
 **🛠️ Skills Unlocked**:
-- **[Technology] Fundamentals** - Core understanding and practical application
-- **[Advanced Skill]** - Enhanced capabilities
-- **[Integration Skill]** - Cross-technology proficiency
+- **Jekyll Project Scaffolding** - Stand up a new site in seconds
+- **Static Site Generation Concepts** - Reason about source-to-output pipelines
 
 **🔓 Unlocked Quests**:
-- [Next Quest 1] - Continue your journey in [area]
-- [Next Quest 2] - Explore [related topic]
-- [Side Quest 1] - Deepen your [specific skill]
+- GitHub Pages Basics - Put your site online for free
+- Liquid Templating - Make your pages dynamic at build time
+- YAML Configuration - Master the config and data files
 
 **📊 Progression Points**: +50 XP
 
 ## 🗺️ Next Steps in Your Journey
 
-### Recommended Quest Paths
-
 **Continue the Main Story**:
-- 🎯 [Next Main Quest] - [Brief description]
+- 🎯 [GitHub Pages Basics](/quests/0001/github-pages-basics/) - Host your Jekyll site for free
 
 **Explore Side Adventures**:
-- ⭐ [Side Quest 1] - [Brief description]
-- ⭐ [Side Quest 2] - [Brief description]
-
-**Deepen Your Mastery**:
-- 📚 [Related Advanced Quest] - [Brief description]
+- ⚔️ [Liquid Templating](/quests/0001/liquid-templating/) - The templating language Jekyll speaks
+- ⚔️ [YAML Configuration](/quests/0001/yaml-configuration/) - Configure sites and store data
 
 ### Character Class Recommendations
 
-**💻 Software Developer**: Continue to [Suggested Quest]  
-**🏗️ System Engineer**: Explore [Suggested Quest]  
-**🛡️ Security Specialist**: Check out [Suggested Quest]  
-**📊 Data Scientist**: Advance to [Suggested Quest]
+**💻 Software Developer**: Continue to [GitHub Pages Basics](/quests/0001/github-pages-basics/)  
+**🏗️ System Engineer**: Explore [YAML Configuration](/quests/0001/yaml-configuration/)  
+**🎨 Frontend Specialist**: Advance to [Liquid Templating](/quests/0001/liquid-templating/)
 
-## 📚 Resource Library
+## 📚 Resources
 
 ### Official Documentation
-- [Technology Official Docs](https://url)
-- [Related Tool Documentation](https://url)
+- [Jekyll Documentation](https://jekyllrb.com/docs/) - The canonical guide
+- [Jekyll Step-by-Step Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/) - Build a site one concept at a time
+- [Jekyll Collections](https://jekyllrb.com/docs/collections/) - Grouping related content
 
 ### Community Resources
-- [Community Forum](https://url)
-- [Stack Overflow Tag](https://url)
-- [Discord/Slack Channel](https://url)
+- [Jekyll Talk Forum](https://talk.jekyllrb.com/) - Ask and answer questions
+- [Jekyll on Stack Overflow](https://stackoverflow.com/questions/tagged/jekyll) - Tagged Q&A
+- [Awesome Jekyll](https://github.com/planetjekyll/awesome-jekyll) - Curated themes and plugins
 
 ### Learning Materials
-- [Tutorial Series](https://url)
-- [Video Course](https://url)
-- [Interactive Practice](https://url)
-
-### Tools & Utilities
-- [Helpful Tool 1](https://url) - [Description]
-- [Helpful Tool 2](https://url) - [Description]
+- [Ruby Installation Guide](https://www.ruby-lang.org/en/documentation/installation/) - Get Ruby on any OS
+- [Bundler: The Gemfile](https://bundler.io/guides/gemfile.html) - Reproducible dependencies
 
 ## 🤝 Quest Completion Checklist
 
-Before marking this quest as complete, ensure you've:
-
 - [ ] ✅ Completed all primary objectives
-- [ ] ✅ Verified your implementations work correctly
+- [ ] ✅ Built and served a Jekyll site locally
 - [ ] ✅ Answered all knowledge check questions
 - [ ] ✅ Completed at least one mastery challenge
 - [ ] ✅ Explored the resource library
 - [ ] ✅ Identified your next quest in the journey
 
----
-
-*Congratulations, brave adventurer! You've completed the **[Quest Name]** quest and gained valuable [technology/skill] mastery. Your journey through the IT realm continues - choose your next adventure wisely!*
-
-**Quest Status**: 🔮 Placeholder (Content to be developed)  
-**Last Updated**: 2025-11-29  
-**Version**: 1.0.0
-
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[GitHub Pages Basics]] · [[Liquid Templating]] · [[YAML Configuration]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
-

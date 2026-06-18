@@ -1,6 +1,6 @@
 ---
 title: 'Vaults of Recollection: Agent Memory Strategies'
-description: Implement memory for GitHub Copilot agents — design ephemeral, session, and persistent memory using GitHub-native artifacts, issues, and repository files to maintain context across interactions.
+description: 'Design ephemeral, session, and persistent memory for GitHub Copilot agents using artifacts, issues, and repo files to keep context across interactions.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-memory-strategies.png
 level: '1001'
@@ -45,17 +45,7 @@ quest_dependencies:
   - /quests/1001/agentic-safe-execution-and-error-handling/
   unlocks_quests:
   - /quests/1010/agentic-state-persistence-and-drift/
-quest_relationships:
-  sequel_quests:
-  - /quests/1010/agentic-state-persistence-and-drift/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
-  - Context Management
+  recommended_quests: []
 rewards:
   badges:
   - 🗄️ Vault Keeper
@@ -76,11 +66,6 @@ validation_criteria:
   skill_demonstrations:
   - Can explain the trade-offs between memory tiers for agent use cases
   - Can implement persistent agent memory using GitHub repository files
-quest_mapping:
-  coordinates: '[3, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Memory Vaults
 comments: true
 draft: false
 redirect_from:
@@ -166,9 +151,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .agent-memory/session.json
-          key: agent-session-${{ github.event.issue.number }}
+          key: agent-session-${% raw %}{{ github.event.issue.number }}{% endraw %}
           restore-keys: |
-            agent-session-${{ github.event.issue.number }}
+            agent-session-${% raw %}{{ github.event.issue.number }}{% endraw %}
 
       - name: Initialise session memory
         run: |
@@ -176,8 +161,8 @@ jobs:
           if [ ! -f .agent-memory/session.json ]; then
             cat > .agent-memory/session.json << 'EOF'
             {
-              "session_id": "${{ github.run_id }}",
-              "issue_number": ${{ github.event.issue.number }},
+              "session_id": "${% raw %}{{ github.run_id }}{% endraw %}",
+              "issue_number": ${% raw %}{{ github.event.issue.number }}{% endraw %},
               "started_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
               "completed_steps": [],
               "decisions": [],
@@ -214,7 +199,7 @@ jobs:
       - name: Save session memory
         uses: actions/upload-artifact@v4
         with:
-          name: agent-session-${{ github.event.issue.number }}-${{ github.run_id }}
+          name: agent-session-${% raw %}{{ github.event.issue.number }}{% endraw %}-${% raw %}{{ github.run_id }}{% endraw %}
           path: .agent-memory/session.json
           retention-days: 1
 ```

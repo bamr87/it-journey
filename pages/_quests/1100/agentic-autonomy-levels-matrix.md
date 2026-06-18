@@ -1,6 +1,6 @@
 ---
 title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
-description: Master the autonomy level spectrum for GitHub Copilot agents — from fully supervised to fully autonomous — and learn how to select, configure, and govern the right level for each task type.
+description: 'Map GitHub Copilot agents across a five-level autonomy spectrum, classify your task types by risk, and configure the GitHub controls that govern each level.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-autonomy-levels-matrix.png
 level: '1100'
@@ -45,19 +45,7 @@ quest_dependencies:
   - /quests/1100/agentic-multi-agent-lifecycle-management/
   unlocks_quests:
   - /quests/1100/agentic-guardrails-and-human-in-the-loop/
-quest_relationships:
-  sequel_quests:
-  - /quests/1100/agentic-guardrails-and-human-in-the-loop/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏛️ Architect
-  - 🛡️ Security Engineer
-  skill_trees:
-  - Agentic AI
-  - AI Governance
+  recommended_quests: []
 rewards:
   badges:
   - ⚖️ Scale Master
@@ -77,11 +65,6 @@ validation_criteria:
   - Autonomy level matrix documented for at least 5 task types
   - Level selection criteria documented with risk thresholds
   - At least one task type configuration changed based on the matrix
-quest_mapping:
-  coordinates: '[6, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Hall of Scales
 comments: true
 draft: false
 redirect_from:
@@ -204,31 +187,31 @@ jobs:
       - name: Validate task classification
         run: |
           python3 work/gh-600/scripts/classify_task.py \
-            --issue "${{ github.event.issue.number }}" \
+            --issue "${% raw %}{{ github.event.issue.number }}{% endraw %}" \
             --matrix _data/autonomy-matrix.yml \
             --expected-level L2
 
       - name: Create draft PR (L2 — human must review before merge)
         id: create-pr
         run: |
-          git checkout -b "copilot/issue-${{ github.event.issue.number }}-implementation"
+          git checkout -b "copilot/issue-${% raw %}{{ github.event.issue.number }}{% endraw %}-implementation"
           
           # Agent performs the implementation
           # ... (agent work here)
           
           git add .
-          git commit -m "feat: implement #${{ github.event.issue.number }}"
+          git commit -m "feat: implement #${% raw %}{{ github.event.issue.number }}{% endraw %}"
           git push origin HEAD
           
           # Always create as DRAFT at L2 — agent cannot mark as ready
           gh pr create \
             --draft \
-            --title "feat: [Agent L2] issue #${{ github.event.issue.number }}" \
-            --body "Automated implementation at autonomy level L2. **Human review required before merge.**\n\nCloses #${{ github.event.issue.number }}"
+            --title "feat: [Agent L2] issue #${% raw %}{{ github.event.issue.number }}{% endraw %}" \
+            --body "Automated implementation at autonomy level L2. **Human review required before merge.**\n\nCloses #${% raw %}{{ github.event.issue.number }}{% endraw %}"
 
       - name: Request required reviewers
         run: |
-          PR_NUMBER=$(gh pr list --head "copilot/issue-${{ github.event.issue.number }}-implementation" --json number -q '.[0].number')
+          PR_NUMBER=$(gh pr list --head "copilot/issue-${% raw %}{{ github.event.issue.number }}{% endraw %}-implementation" --json number -q '.[0].number')
           gh pr edit "$PR_NUMBER" --add-reviewer "@team-platform"
 ```
 
