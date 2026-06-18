@@ -34,8 +34,9 @@ make cms-all        # rebuild .cms/index + .cms/reports/<date>.md + .cms/worklis
 To run an incremental content-improvement pass, **invoke the `cms-curator`
 skill** — it is the single source of loop behavior, used by both `/loop`
 locally and the daily CI workflow (`.github/workflows/cms-daily-loop.yml`).
-The future VS Code CMS extension (separate repo) reads `.cms/` too; see
-`docs/cms/EXTENSION_DESIGN.md` for the contract.
+The VS Code CMS extension — **zer0-CMS** (a fork of Front Matter at
+`github.com/bamr87/zer0-CMS`) — reads `.cms/` too; see
+[`docs/cms/README.md`](docs/cms/README.md) for the contract and where it lives.
 
 ## Essential commands
 
