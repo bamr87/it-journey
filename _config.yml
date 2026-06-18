@@ -473,6 +473,7 @@ exclude:
   - "*.sh"
   - "*.py"
   - scripts/
+  - tools/          # dev tooling (e.g. tools/cms-extension) — not site content
   - Makefile
   
   # Testing and validation

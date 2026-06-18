@@ -1,0 +1,102 @@
+{
+  "name": "it-journey-cms",
+  "displayName": "IT-Journey CMS",
+  "description": "AI-augmented content management for IT-Journey: browse content health, work the daily worklist, and curate content with embedded Claude Code.",
+  "version": "0.1.0",
+  "publisher": "bamr87",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bamr87/it-journey"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "workspaceContains:.cms/config.yml"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "itjCms",
+          "title": "IT-Journey CMS",
+          "icon": "media/cms.svg"
+        }
+      ]
+    },
+    "views": {
+      "itjCms": [
+        {
+          "id": "itjCms.content",
+          "name": "Content",
+          "icon": "media/cms.svg",
+          "contextualTitle": "IT-Journey CMS"
+        }
+      ]
+    },
+    "commands": [
+      { "command": "itjCms.refresh", "title": "CMS: Refresh Index", "icon": "$(refresh)", "category": "IT-Journey CMS" },
+      { "command": "itjCms.openDashboard", "title": "CMS: Open Dashboard", "icon": "$(dashboard)", "category": "IT-Journey CMS" },
+      { "command": "itjCms.curateFile", "title": "CMS: Curate This File with Claude", "icon": "$(sparkle)", "category": "IT-Journey CMS" },
+      { "command": "itjCms.curateWorklist", "title": "CMS: Curate Worklist (substantive batch)", "icon": "$(sparkle)", "category": "IT-Journey CMS" },
+      { "command": "itjCms.runMechanical", "title": "CMS: Run Mechanical Fixes (preview)", "icon": "$(wand)", "category": "IT-Journey CMS" },
+      { "command": "itjCms.openReport", "title": "CMS: Open Today's Analysis Report", "category": "IT-Journey CMS" },
+      { "command": "itjCms.openWorklist", "title": "CMS: Open Today's Worklist", "category": "IT-Journey CMS" }
+    ],
+    "menus": {
+      "view/title": [
+        { "command": "itjCms.refresh", "when": "view == itjCms.content", "group": "navigation@1" },
+        { "command": "itjCms.openDashboard", "when": "view == itjCms.content", "group": "navigation@2" }
+      ],
+      "view/item/context": [
+        { "command": "itjCms.curateFile", "when": "view == itjCms.content && viewItem == cmsFile", "group": "inline" }
+      ],
+      "commandPalette": [
+        { "command": "itjCms.curateFile", "when": "false" }
+      ]
+    },
+    "configuration": {
+      "title": "IT-Journey CMS",
+      "properties": {
+        "itjCms.pythonPath": {
+          "type": "string",
+          "default": "python3",
+          "description": "Python interpreter used to run the CMS engine (scripts/cms/cms.py)."
+        },
+        "itjCms.model": {
+          "type": "string",
+          "default": "claude-opus-4-8",
+          "description": "Claude model id used by the agent (curate) commands."
+        },
+        "itjCms.permissionMode": {
+          "type": "string",
+          "enum": ["default", "acceptEdits", "plan"],
+          "default": "default",
+          "description": "Agent SDK permission mode. 'default' routes every edit through an approve/deny prompt; 'acceptEdits' auto-applies; 'plan' is read-only."
+        },
+        "itjCms.maxTurns": {
+          "type": "number",
+          "default": 40,
+          "description": "Max agent turns per curate run (safety cap)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.181"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.0"
+  }
+}
