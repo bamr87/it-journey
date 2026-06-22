@@ -334,6 +334,62 @@ SKILL/prompt/instruction conventions, `make cms-all`, the `cms-daily-loop` workf
 `brand:` config block, the `brand-voice` skill, the `draft-muse`/`brand-audit` prompts,
 `brand.instructions.md`.
 
+6. **Upstream to the zer0-mistakes theme (separate PR, after validation).** Once
+   Phases 1–5 are merged in it-journey **and validated** (build-ci + content-audit
+   green; `_check_brand` producing sane drift output; the skill/prompts exercised on
+   real drafts), generalize the framework and open a **separate draft PR to
+   `bamr87/zer0-mistakes`**. See §9.
+
+---
+
+## 9. Follow-up — upstream the framework to the zer0-mistakes theme
+
+**Why.** `_config.yml` line 227 already states the governing philosophy — *"Keep
+implementation in the zer0-mistakes theme; configure only site paths here."* And
+[`.github/FRONTMATTER.md`](../../.github/FRONTMATTER.md) is already a **shared canonical
+asset across bashconsultants / zer0-mistakes / it-journey, with zer0-mistakes as the
+source of truth** (FRONTMATTER.md: "Keep the three copies in sync"). So the
+branding-governance *framework* is a natural **theme feature**: any site on
+`bamr87/zer0-mistakes` inherits the scaffolding and overrides only its own brand facts.
+This task ports the reusable parts upstream after they have proven out in it-journey.
+
+**Gate (do this only after it-journey is finalized/validated).** PR #338 + Phases 1–5
+merged; `make build-ci` + `make content-audit` green; brand-drift output reviewed; the
+`brand-voice` skill and `/draft-muse` / `/brand-audit` prompts used on at least one real
+post and one real muse.
+
+**Theme vs site split** (the core design rule of the upstream):
+
+- **Upstream to the theme (generic framework / scaffolding):**
+  - The `_data/brand/` **schema + a neutral default set + README** — the theme ships
+    sensible empty/example defaults; consuming sites override with their own values.
+  - The **section-guide template** + the `_registry.yml` **schema** (the *shape*, not
+    IT-Journey's 14 concrete guides).
+  - The **authoring surfaces as canonical templates**, mirrored per the FRONTMATTER.md
+    precedent: `brand-voice` skill, `brand.instructions.md`, `/draft-muse` +
+    `/brand-audit` prompts land in zer0-mistakes `.claude/` / `.github/` as the source
+    of truth, then mirror back into it-journey + bashconsultants.
+  - Optional **theme Liquid includes** that render `site.data.brand.*` (section color
+    chips, a values block) — rendering is the theme's job.
+  - **Feature doc** under the theme's `docs/features/` (matches the existing pattern
+    referenced at `_config.yml` line 574) + a **theme version bump** (the theme is
+    versioned; `_data/navigation/README.md` notes the v0.17+ convention).
+- **Stays site-specific (NOT upstreamed):** IT-Journey's actual brand *facts*
+  (`values.yml` / `voice.yml` / `colors.yml` / `personas.yml` content), the 14 concrete
+  section guides, and the site's `section_accent` mappings.
+
+**Open decision to resolve at upstream time:** whether the theme also ships the CMS
+**engine** (`scripts/cms/cms.py` + `_check_brand`) or only the brand-store schema +
+authoring templates + docs. `cms.py` is currently it-journey tooling, not part of the
+theme. **Recommended:** upstream the store schema, authoring surfaces, rendering
+includes, and docs first; treat the engine `_check_brand` as a documented, optional
+add-on for sites that also run the CMS engine — keeps the theme PR focused on what every
+themed site can consume.
+
+**Deliverable:** a **draft PR to `bamr87/zer0-mistakes`** containing the generalized
+framework + feature doc + version bump, plus the mirror-sync of the shared `.github`
+canonical assets.
+
 ## Critical files
 
 **Modify:** `scripts/cms/cms.py`, `.cms/config.yml`, `frontmatter.json`,
