@@ -14,7 +14,6 @@ author: bamr87
 keywords: {}
 lastmod: '2024-06-30T14:18:02.000Z'
 slug: gpt-prompt-engineering
-permalink: null
 attachments: ''
 type: posts
 section: AI & Machine Learning

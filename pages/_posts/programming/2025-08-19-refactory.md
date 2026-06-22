@@ -15,7 +15,6 @@ keywords:
 - programming
 - refactory
 lastmod: '2025-08-19T21:58:40.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: Programming

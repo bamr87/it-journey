@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-17T04:01:41.774655+00:00",
-  "total_files": 658,
-  "scored_files": 652,
-  "actionable_files": 389,
-  "avg_health": 94.3,
-  "avg_health_actionable": 90.5,
-  "total_mechanical_issues": 22,
+  "generated_at": "2026-06-22T10:52:47.593199+00:00",
+  "total_files": 662,
+  "scored_files": 656,
+  "actionable_files": 393,
+  "avg_health": 94.2,
+  "avg_health_actionable": 90.4,
+  "total_mechanical_issues": 0,
   "total_substantive_issues": 242,
   "total_errors": 56,
   "read_only_files": 220,
@@ -16,7 +16,7 @@
       "mechanical": 0,
       "substantive": 17,
       "errors": 8,
-      "avg_health": 88.4
+      "avg_health": 87.8
     },
     "docs": {
       "count": 240,
@@ -29,7 +29,7 @@
     "pages": {
       "count": 41,
       "scored": 41,
-      "mechanical": 5,
+      "mechanical": 0,
       "substantive": 39,
       "errors": 10,
       "avg_health": 80.0
@@ -53,26 +53,26 @@
     "notes": {
       "count": 40,
       "scored": 40,
-      "mechanical": 6,
+      "mechanical": 0,
       "substantive": 86,
       "errors": 26,
       "avg_health": 78.9
     },
     "posts": {
-      "count": 93,
-      "scored": 93,
-      "mechanical": 11,
+      "count": 94,
+      "scored": 94,
+      "mechanical": 0,
       "substantive": 75,
       "errors": 0,
-      "avg_health": 87.3
+      "avg_health": 87.1
     },
     "quests": {
-      "count": 201,
-      "scored": 201,
+      "count": 204,
+      "scored": 204,
       "mechanical": 0,
       "substantive": 5,
       "errors": 5,
-      "avg_health": 97.9
+      "avg_health": 97.7
     },
     "quickstart": {
       "count": 15,
@@ -85,14 +85,14 @@
   },
   "freshness_distribution": {
     "critical": 96,
-    "stale": 93,
-    "fresh": 440,
-    "aging": 21,
+    "stale": 104,
+    "aging": 26,
+    "fresh": 428,
     "unknown": 2
   },
   "health_buckets": {
-    "excellent_90_100": 523,
-    "good_70_89": 107,
+    "excellent_90_100": 526,
+    "good_70_89": 108,
     "fair_50_69": 21,
     "poor_0_49": 1
   }

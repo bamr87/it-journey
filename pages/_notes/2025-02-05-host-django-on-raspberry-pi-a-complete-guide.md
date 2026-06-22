@@ -11,7 +11,6 @@ snippet: null
 author: ''
 keywords: {}
 lastmod: '2025-02-05T21:08:47.000Z'
-permalink: null
 attachments: ''
 draft: false
 ---

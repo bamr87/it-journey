@@ -25,7 +25,6 @@ keywords:
 - mother
 - grokking
 lastmod: '2025-08-19T21:42:52.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: AI & Machine Learning

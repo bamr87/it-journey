@@ -29,7 +29,6 @@ keywords:
 - github actions
 - open source
 lastmod: '2025-08-25T00:46:40.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: Programming

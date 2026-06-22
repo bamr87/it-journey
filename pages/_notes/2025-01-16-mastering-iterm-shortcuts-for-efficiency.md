@@ -21,7 +21,6 @@ snippet: null
 author: ''
 keywords: {}
 lastmod: '2025-01-17T01:48:44.000Z'
-permalink: null
 attachments: ''
 draft: draft
 slug: mastering-iterm-shortcuts-efficiency

@@ -24,7 +24,6 @@ keywords:
 - automate bash from markdown
 lastmod: '2024-06-02T21:11:53.000Z'
 slug: null
-permalink: null
 attachments: ''
 type: posts
 section: Programming

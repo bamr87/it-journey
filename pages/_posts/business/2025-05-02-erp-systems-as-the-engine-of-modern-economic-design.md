@@ -29,7 +29,6 @@ keywords:
 - enterprise systems
 - erp systems
 lastmod: '2025-05-02T16:49:48.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: Business

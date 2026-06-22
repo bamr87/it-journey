@@ -28,7 +28,6 @@ keywords:
 - innovation
 - millennials
 lastmod: '2025-08-22T05:24:47.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: Trends & Ideas

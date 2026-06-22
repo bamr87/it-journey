@@ -19,7 +19,6 @@ keywords:
 - github
 - action
 lastmod: '2026-03-20T22:22:52.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: AI & Machine Learning

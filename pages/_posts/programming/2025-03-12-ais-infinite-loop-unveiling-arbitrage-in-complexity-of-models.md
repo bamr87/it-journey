@@ -33,7 +33,6 @@ keywords:
 - data analytics
 - development
 lastmod: '2025-03-13T16:53:56.000Z'
-permalink: null
 attachments: ''
 comments: false
 aiPrompt: I want to explore an article topic around the idea of discovering a formula for financial modeling that is abstractly integrated into modern forms of economic activity. This formula can be juxtaposed with using Microsoft Excel, such as the dreaded circular reference error when workbooks become so complex. This complexity is often misdiagnosed as an error when, in reality, the algorithm just requires such computational resources that it's actually working towards infinity and indicative of an arbitrage or gap in the marketplace. The hilarity of this dilemma is that only Microsoft will be able to uncover these market dynamics and use the infinite computational powers at their disposal to capitalize on that market gap.

@@ -14,7 +14,6 @@ author: bamr87
 keywords: {}
 lastmod: '2024-07-18T15:08:34.000Z'
 slug: null
-permalink: null
 attachments: ''
 type: posts
 section: Culture & Society

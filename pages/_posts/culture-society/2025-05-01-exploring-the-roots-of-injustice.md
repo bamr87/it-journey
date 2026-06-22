@@ -29,7 +29,6 @@ keywords:
 - development
 - erp systems
 lastmod: '2025-05-01T23:48:33.000Z'
-permalink: null
 attachments: ''
 comments: false
 section: Culture & Society

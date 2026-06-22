@@ -14,7 +14,6 @@ author: bamr87
 keywords: {}
 lastmod: '2024-06-30T14:18:09.000Z'
 slug: null
-permalink: null
 attachments: ''
 type: posts
 section: Creative & Experimental

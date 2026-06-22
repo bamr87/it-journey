@@ -21,7 +21,6 @@ snippet: null
 author: ''
 keywords: {}
 lastmod: '2025-01-23T23:23:04.000Z'
-permalink: null
 attachments: ''
 slug: sass-mixins
 draft: false

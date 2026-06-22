@@ -24,7 +24,6 @@ keywords:
 - jekyll searchable content
 lastmod: '2024-05-24T03:19:52.000Z'
 slug: null
-permalink: null
 attachments: ''
 type: posts
 section: Web Development
