@@ -1,0 +1,159 @@
+# IT-Journey — section guide registry (machine-readable core)
+#
+# Maps a section slug to its display facts + the voice profile and personas that
+# govern it. This is the SOURCE for the category map; the table in
+# .github/instructions/index-hub.instructions.md §4 and _data/navigation/posts.yml
+# mirror it (keep them in sync). cms.py (_check_brand) and the brand-voice skill
+# resolve a post -> section -> profile through this file.
+#
+# slug = the pages/_posts/<slug>/ folder name (so posts resolve by folder for free).
+# voice_profile must be a key in ../voice.yml > profiles.
+# personas are ids in ../personas.yml.
+# icon = Bootstrap Icons name (no bi- prefix); accent = token in ../colors.yml.
+# guide = the narrative file in this directory.
+
+sections:
+  ai-machine-learning:
+    title: AI & Machine Learning
+    permalink: /news/ai-machine-learning/
+    voice_profile: practitioner-chronicle
+    personas: [practitioner, ai-enthusiast]
+    icon: robot
+    accent: cyan
+    guide: ai-machine-learning.md
+  business:
+    title: Business
+    permalink: /news/business/
+    voice_profile: concept-essay
+    personas: [practitioner, educator]
+    icon: briefcase
+    accent: secondary
+    guide: business.md
+  creative-experimental:
+    title: Creative & Experimental
+    permalink: /news/creative-experimental/
+    voice_profile: concept-essay
+    personas: [learner, ai-enthusiast]
+    icon: palette
+    accent: pink
+    guide: creative-experimental.md
+  culture-society:
+    title: Culture & Society
+    permalink: /news/culture-society/
+    voice_profile: concept-essay
+    personas: [educator, practitioner]
+    icon: people
+    accent: deep_purple
+    guide: culture-society.md
+  data-analytics:
+    title: Data & Analytics
+    permalink: /news/data-analytics/
+    voice_profile: practitioner-chronicle
+    personas: [practitioner]
+    icon: bar-chart
+    accent: amber
+    guide: data-analytics.md
+  devops:
+    title: DevOps
+    permalink: /news/devops/
+    voice_profile: practitioner-chronicle
+    personas: [contributor, practitioner]
+    icon: gear
+    accent: teal
+    guide: devops.md
+  learning:
+    title: Learning
+    permalink: /news/learning/
+    voice_profile: practitioner-chronicle
+    personas: [learner, educator]
+    icon: book
+    accent: green
+    guide: learning.md
+  programming:
+    title: Programming
+    permalink: /news/programming/
+    voice_profile: practitioner-chronicle
+    personas: [learner, practitioner]
+    icon: code-slash
+    accent: indigo
+    guide: programming.md
+  system-administration:
+    title: System Administration
+    permalink: /news/system-administration/
+    voice_profile: practitioner-chronicle
+    personas: [practitioner]
+    icon: server
+    accent: brown
+    guide: system-administration.md
+  technology:
+    title: Technology
+    permalink: /news/technology/
+    voice_profile: concept-essay
+    personas: [practitioner, learner]
+    icon: cpu
+    accent: blue
+    guide: technology.md
+  tools-environment:
+    title: Tools & Environment
+    permalink: /news/tools-environment/
+    voice_profile: practitioner-chronicle
+    personas: [practitioner, contributor]
+    icon: tools
+    accent: orange
+    guide: tools-environment.md
+  trends-ideas:
+    title: Trends & Ideas
+    permalink: /news/trends-ideas/
+    voice_profile: concept-essay
+    personas: [ai-enthusiast, practitioner]
+    icon: lightbulb
+    accent: yellow
+    guide: trends-ideas.md
+  web-development:
+    title: Web Development
+    permalink: /news/web-development/
+    voice_profile: practitioner-chronicle
+    personas: [learner, practitioner]
+    icon: globe
+    accent: light_blue
+    guide: web-development.md
+
+  # Format overlay, not a folder. "Muses" are short-form opinion/news posts that
+  # live in pages/_posts/devops/ but are written in the muse-opinion voice and
+  # surfaced on the magazine landing. A post opts in via section_guide: devops-news-muse.
+  devops-news-muse:
+    title: DevOps News & Muses
+    permalink: /news/devops/
+    voice_profile: muse-opinion
+    personas: [practitioner, ai-enthusiast]
+    icon: newspaper
+    accent: teal
+    guide: devops-news-muse.md
+    overlay_of: devops
+
+  # Whole-collection sections (not folder-derived). Quests and docs resolve to
+  # these via collection_defaults below, regardless of sub-folder.
+  quest:
+    title: Quests
+    permalink: /quests/
+    voice_profile: quest-fantasy
+    personas: [learner, contributor]
+    icon: dpad
+    accent: purple
+    guide: quest.md
+    collection: quests
+  docs:
+    title: Docs
+    permalink: /docs/
+    voice_profile: reference
+    personas: [practitioner, learner]
+    icon: book-half
+    accent: secondary
+    guide: docs.md
+    collection: docs
+
+# Default section per collection for collections that are NOT resolved by folder
+# (posts resolve by their category folder; these resolve to one section each).
+collection_defaults:
+  quests: quest
+  docs: docs

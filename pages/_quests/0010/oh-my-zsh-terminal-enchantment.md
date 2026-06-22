@@ -1,11 +1,11 @@
 ---
 title: 'Terminal Enchantment: Oh-My-Zsh Mastery'
 author: IT-Journey Team
-description: 'Install Oh-My-Zsh, then customize your terminal with themes, plugins, and VSCode integration to supercharge your command-line development workflow.'
+description: 'Install Oh-My-Zsh, then customize your terminal with themes, plugins, and VS Code integration to supercharge your command-line development workflow.'
 excerpt: Master the ancient arts of Oh-My-Zsh to transform your terminal from a simple tool into a powerful development artifact
 preview: /images/previews/terminal-enchantment-oh-my-zsh-mastery.png
 date: '2025-09-03T22:19:06.000Z'
-lastmod: '2026-02-13T00:00:00.000Z'
+lastmod: '2026-06-22T12:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-90 minutes
@@ -33,7 +33,7 @@ prerequisites:
   - Understanding of file system navigation
   system_requirements:
   - Zsh shell installed on your system
-  - VSCode editor with terminal integration
+  - VS Code editor with terminal integration
   - Internet connection for downloading scripts and plugins
   skill_level_indicators:
   - Can navigate directories and run basic commands
@@ -45,7 +45,7 @@ validation_criteria:
   - Install and activate 5+ plugins
   skill_demonstrations:
   - Customize terminal with themes and plugins
-  - Integrate enhanced terminal with VSCode
+  - Integrate enhanced terminal with VS Code
   - Demonstrate improved development workflow
   knowledge_checks:
   - Explain the .zshrc configuration file structure
@@ -55,7 +55,7 @@ rewards:
   - 🏆 Terminal Sorcerer - Master of Shell Customization
   - ⚡ Productivity Surge - 40% faster command-line workflows
   - 🛠️ Plugin Artisan - Custom terminal tool creation skills
-  - 🎯 VSCode Alchemist - Seamless editor-terminal synergy
+  - 🎯 VS Code Alchemist - Smooth editor-terminal synergy
   skills_unlocked:
   - 🛠️ Advanced Shell Customization
   - 🎯 Plugin Management and Development
@@ -102,7 +102,7 @@ draft: false
 
 *In the vast digital realms where developers forge their code, there exists a legendary framework known as Oh-My-Zsh. This ancient artifact transforms the humble terminal from a mere tool into a powerful weapon of productivity. Like a master blacksmith who takes raw iron and crafts it into an exquisite sword, Oh-My-Zsh takes the basic Zsh shell and enchants it with themes, plugins, and magical enhancements that make every command a spell of efficiency.*
 
-*But beware, brave adventurer! This quest requires you to investigate mysterious installation scripts and venture into the depths of shell configuration. Only those who master the art of terminal enchantment will emerge with the power to command their development environment like a true sorcerer of code. Throughout this journey, you'll use VSCode as your primary tool for examining files, editing configurations, and understanding the code that powers your terminal enhancements.*
+*But beware, brave adventurer! This quest requires you to investigate mysterious installation scripts and venture into the depths of shell configuration. Only those who master the art of terminal enchantment will emerge with the power to command their development environment like a true sorcerer of code. Throughout this journey, you'll use VS Code as your primary tool for examining files, editing configurations, and understanding the code that powers your terminal enhancements.*
 
 ### 🏰 The Ancient Scrolls of Installation
 
@@ -161,7 +161,7 @@ flowchart TD
     E --> F
     F --> G["🎨 Ch2: Theme Enchantment"]
     G --> H["🔌 Ch3: Plugin Integration"]
-    H --> I["💻 Ch4: VSCode Synergy"]
+    H --> I["💻 Ch4: VS Code Synergy"]
     I --> J["⚔️ Implementation Challenges"]
     J --> K{"✅ All Passed?"}
     K -->|Yes| L["🐉 Boss Battle"]
@@ -183,7 +183,7 @@ By the time you complete this epic terminal enchantment, you will have mastered:
 - [ ] **Framework Installation**: Successfully install Oh-My-Zsh using the sacred scripts
 - [ ] **Theme Mastery**: Configure and customize terminal themes for optimal visual experience
 - [ ] **Plugin Integration**: Install and configure essential plugins for enhanced functionality
-- [ ] **VSCode Synergy**: Integrate your enchanted terminal with VSCode for seamless development
+- [ ] **VS Code Synergy**: Integrate your enchanted terminal with VS Code for smooth development
 - [ ] **Workflow Optimization**: Demonstrate measurable improvements in development productivity
 
 ### Secondary Objectives (Bonus Achievements)
@@ -198,10 +198,10 @@ By the time you complete this epic terminal enchantment, you will have mastered:
 You'll know you've truly mastered terminal enchantment when you can:
 
 - [ ] Navigate your filesystem with lightning speed using plugins
-- [ ] Customize your terminal appearance to match your workflow using VSCode
+- [ ] Customize your terminal appearance to match your workflow using VS Code
 - [ ] Execute complex commands with minimal keystrokes
-- [ ] Seamlessly switch between terminal and VSCode contexts
-- [ ] Troubleshoot and optimize your shell configuration using VSCode tools
+- [ ] Smoothly switch between terminal and VS Code contexts
+- [ ] Troubleshoot and optimize your shell configuration using VS Code tools
 
 ## 🌍 Choose Your Platform Realm
 
@@ -268,10 +268,10 @@ zsh --version
 # Download the script for examination
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
-# Open the downloaded script in VSCode for examination
+# Open the downloaded script in VS Code for examination
 code install.sh
 
-# In VSCode, you can:
+# In VS Code, you can:
 # - Read the full script content with syntax highlighting
 # - Search for specific functions or commands
 # - Understand the script's logic and safety measures
@@ -281,10 +281,10 @@ code install.sh
 #### Step 2: Verify Script Properties
 
 ```bash
-# Check script permissions and ownership in VSCode
-# In VSCode: File → Open Folder → Navigate to your download directory
+# Check script permissions and ownership in VS Code
+# In VS Code: File → Open Folder → Navigate to your download directory
 # Right-click on install.sh → Properties/Information
-# Or use VSCode's file explorer to examine file details
+# Or use VS Code's file explorer to examine file details
 
 ls -la install.sh  # Still useful for quick verification in terminal
 ```
@@ -316,10 +316,10 @@ sh install.sh
 # Verify installation success
 ls -la ~/.oh-my-zsh/
 
-# Open your new .zshrc in VSCode for examination
+# Open your new .zshrc in VS Code for examination
 code ~/.zshrc
 
-# In VSCode, you can:
+# In VS Code, you can:
 # - View the complete configuration with syntax highlighting
 # - Understand what each setting does
 # - Make modifications safely with IntelliSense
@@ -349,10 +349,10 @@ echo $ZSH_THEME  # Should show default theme
 # List all available themes
 ls ~/.oh-my-zsh/themes/
 
-# Open the themes directory in VSCode for exploration
+# Open the themes directory in VS Code for exploration
 code ~/.oh-my-zsh/themes/
 
-# In VSCode, you can:
+# In VS Code, you can:
 # - Browse all available theme files
 # - Open individual themes to examine their code
 # - Compare different themes side-by-side
@@ -367,10 +367,10 @@ ls ~/.oh-my-zsh/themes/ | grep -E '\.zsh-theme$' | sed 's/\.zsh-theme//'
 #### Step 2: Theme Configuration
 
 ```bash
-# Open your .zshrc in VSCode for editing
+# Open your .zshrc in VS Code for editing
 code ~/.zshrc
 
-# In VSCode, find the line: ZSH_THEME="robbyrussell"
+# In VS Code, find the line: ZSH_THEME="robbyrussell"
 # Change it to your preferred theme, e.g.:
 # ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel10k/powerlevel10k"  # If installed
@@ -382,10 +382,10 @@ source ~/.zshrc
 
 #### Step 3: Popular Theme Recommendations
 
-*For VSCode Integration:*
+*For VS Code Integration:*
 
 ```bash
-# Themes that work well with VSCode's color schemes
+# Themes that work well with VS Code's color schemes
 ZSH_THEME="agnoster"        # Clean, informative
 ZSH_THEME="powerlevel10k"   # Highly customizable
 ZSH_THEME="spaceship"       # Minimal and fast
@@ -396,7 +396,7 @@ ZSH_THEME="spaceship"       # Minimal and fast
 - [ ] How do themes affect terminal appearance?
 - [ ] What information do different themes display?
 - [ ] How can themes improve your workflow?
-- [ ] What makes a theme VSCode-compatible?
+- [ ] What makes a theme VS Code-compatible?
 
 ## 🧙‍♂️ Chapter 3: Plugin Integration and Power Enhancement
 
@@ -414,10 +414,10 @@ ZSH_THEME="spaceship"       # Minimal and fast
 #### Step 1: Enable Core Plugins
 
 ```bash
-# Open .zshrc in VSCode for plugin configuration
+# Open .zshrc in VS Code for plugin configuration
 code ~/.zshrc
 
-# In VSCode, find the plugins line and modify:
+# In VS Code, find the plugins line and modify:
 plugins=(
   git
   docker
@@ -440,7 +440,7 @@ plugins=(
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-# Open the custom plugins directory in VSCode to explore
+# Open the custom plugins directory in VS Code to explore
 code ~/.oh-my-zsh/custom/plugins/
 
 # Reload configuration
@@ -473,30 +473,30 @@ d run -it ubuntu  # Quick container launch
 - [ ] What plugins are most valuable for development?
 - [ ] How do plugins enhance existing commands?
 - [ ] What is the difference between built-in and external plugins?
-- [ ] How can plugins improve VSCode workflows?
+- [ ] How can plugins improve VS Code workflows?
 
-## 🧙‍♂️ Chapter 4: VSCode Terminal Synergy
+## 🧙‍♂️ Chapter 4: VS Code Terminal Synergy
 
-*True terminal mastery requires seamless integration with your development environment. Let's enchant VSCode to work in perfect harmony with your enhanced terminal.*
+*True terminal mastery requires smooth integration with your development environment. Let's enchant VS Code to work in perfect harmony with your enhanced terminal.*
 
-### ⚔️ VSCode Integration Skills
+### ⚔️ VS Code Integration Skills
 
-- VSCode terminal configuration
+- VS Code terminal configuration
 - Shell integration optimization
 - Workflow synchronization
 - Cross-environment consistency
 
-### 🏗️ VSCode Terminal Integration
+### 🏗️ VS Code Terminal Integration
 
-#### Step 1: Configure VSCode Terminal
+#### Step 1: Configure VS Code Terminal
 
 ```bash
-# Open VSCode settings for terminal configuration
-# In VSCode: Cmd/Ctrl + Shift + P → "Preferences: Open Settings (JSON)"
+# Open VS Code settings for terminal configuration
+# In VS Code: Cmd/Ctrl + Shift + P → "Preferences: Open Settings (JSON)"
 ```
 
 ```json
-// Add these settings to your VSCode settings.json
+// Add these settings to your VS Code settings.json
 {
   "terminal.integrated.shell.osx": "/bin/zsh",
   "terminal.integrated.shell.linux": "/bin/zsh", 
@@ -511,20 +511,20 @@ d run -it ubuntu  # Quick container launch
 #### Step 2: Theme Synchronization
 
 ```bash
-# Ensure terminal theme matches VSCode
-# In VSCode: File → Preferences → Color Theme
+# Ensure terminal theme matches VS Code
+# In VS Code: File → Preferences → Color Theme
 # Choose a theme that complements your zsh theme
 
 # Popular combinations:
-# VSCode: "GitHub Dark" + Zsh: "agnoster"
-# VSCode: "Monokai" + Zsh: "powerlevel10k"
+# VS Code: "GitHub Dark" + Zsh: "agnoster"
+# VS Code: "Monokai" + Zsh: "powerlevel10k"
 ```
 
 #### Step 3: Workflow Integration
 
 ```bash
-# Create VSCode-specific aliases in .zshrc
-# Open .zshrc in VSCode and add these aliases:
+# Create VS Code-specific aliases in .zshrc
+# Open .zshrc in VS Code and add these aliases:
 code ~/.zshrc
 
 # Add these lines to your .zshrc:
@@ -532,17 +532,17 @@ alias code="code ."
 alias c="code"
 alias vsc="code --new-window"
 
-# Git integration with VSCode
+# Git integration with VS Code
 alias gdiff="git difftool --tool=code -- ."
 alias gmerge="git mergetool --tool=code"
 ```
 
-### 🔍 Knowledge Check: VSCode Synergy
+### 🔍 Knowledge Check: VS Code Synergy
 
-- [ ] How does VSCode detect and use zsh in its integrated terminal?
-- [ ] What VSCode features enhance file examination and editing for terminal configuration?
-- [ ] How can you synchronize themes between VSCode and terminal?
-- [ ] What workflow improvements does this integrated VSCode-terminal approach provide?
+- [ ] How does VS Code detect and use zsh in its integrated terminal?
+- [ ] What VS Code features enhance file examination and editing for terminal configuration?
+- [ ] How can you synchronize themes between VS Code and terminal?
+- [ ] What workflow improvements does this integrated VS Code-terminal approach provide?
 
 ## 🎮 Terminal Enchantment Challenges
 
@@ -552,18 +552,18 @@ alias gmerge="git mergetool --tool=code"
 
 **Requirements**:
 
-- [ ] Install Oh-My-Zsh using VSCode for script examination and verification
-- [ ] Configure a theme that matches your VSCode setup using VSCode file editing
-- [ ] Install and configure at least 5 essential plugins using VSCode
-- [ ] Create custom aliases for your development workflow in VSCode
-- [ ] Verify VSCode terminal integration and configuration
+- [ ] Install Oh-My-Zsh using VS Code for script examination and verification
+- [ ] Configure a theme that matches your VS Code setup using VS Code file editing
+- [ ] Install and configure at least 5 essential plugins using VS Code
+- [ ] Create custom aliases for your development workflow in VS Code
+- [ ] Verify VS Code terminal integration and configuration
 
 **Success Criteria**:
 
-- [ ] Terminal loads with custom theme and plugins configured in VSCode
+- [ ] Terminal loads with custom theme and plugins configured in VS Code
 - [ ] Essential commands work with plugin enhancements
-- [ ] VSCode terminal uses zsh with proper configuration
-- [ ] Custom aliases improve development efficiency when used in VSCode terminal
+- [ ] VS Code terminal uses zsh with proper configuration
+- [ ] Custom aliases improve development efficiency when used in VS Code terminal
 
 ### Challenge 2: Workflow Optimization (🕐 45 minutes)
 
@@ -571,17 +571,17 @@ alias gmerge="git mergetool --tool=code"
 
 **Requirements**:
 
-- [ ] Time a common development task before optimization using VSCode terminal
-- [ ] Implement Oh-My-Zsh enhancements for that task using VSCode file editing
-- [ ] Measure and document the time savings using VSCode for tracking
-- [ ] Create a script that showcases the improvements, edited in VSCode
+- [ ] Time a common development task before optimization using VS Code terminal
+- [ ] Implement Oh-My-Zsh enhancements for that task using VS Code file editing
+- [ ] Measure and document the time savings using VS Code for tracking
+- [ ] Create a script that showcases the improvements, edited in VS Code
 
 **Success Criteria**:
 
-- [ ] Document baseline workflow time measured in VSCode terminal
-- [ ] Show optimized workflow with time measurements using VSCode tools
-- [ ] Create shareable demonstration script edited and tested in VSCode
-- [ ] Explain the productivity gains achieved through VSCode-terminal integration
+- [ ] Document baseline workflow time measured in VS Code terminal
+- [ ] Show optimized workflow with time measurements using VS Code tools
+- [ ] Create shareable demonstration script edited and tested in VS Code
+- [ ] Explain the productivity gains achieved through VS Code-terminal integration
 
 ### 🏆 Master Challenge: Custom Plugin Creation (🕐 60 minutes)
 
@@ -589,17 +589,17 @@ alias gmerge="git mergetool --tool=code"
 
 **Requirements**:
 
-- [ ] Identify a repetitive task in your workflow using VSCode for analysis
-- [ ] Design a plugin to automate that task using VSCode for planning
-- [ ] Implement the plugin following Oh-My-Zsh conventions in VSCode
-- [ ] Test and document the plugin functionality using VSCode tools
+- [ ] Identify a repetitive task in your workflow using VS Code for analysis
+- [ ] Design a plugin to automate that task using VS Code for planning
+- [ ] Implement the plugin following Oh-My-Zsh conventions in VS Code
+- [ ] Test and document the plugin functionality using VS Code tools
 
 **Success Criteria**:
 
-- [ ] Functional plugin that solves a real problem, developed in VSCode
-- [ ] Proper plugin structure and documentation created in VSCode
-- [ ] Integration with existing Oh-My-Zsh ecosystem verified in VSCode
-- [ ] Shareable plugin code with usage examples maintained in VSCode
+- [ ] Functional plugin that solves a real problem, developed in VS Code
+- [ ] Proper plugin structure and documentation created in VS Code
+- [ ] Integration with existing Oh-My-Zsh ecosystem verified in VS Code
+- [ ] Shareable plugin code with usage examples maintained in VS Code
 
 ### 🎯 Side Quest: Nerd Font Enchantment (🕐 20-30 minutes)
 
@@ -612,13 +612,13 @@ alias gmerge="git mergetool --tool=code"
 - [ ] Understand what Nerd Fonts are and why they're needed
 - [ ] Install a compatible Nerd Font on your system
 - [ ] Configure your terminal to use the Nerd Font
-- [ ] Configure VSCode to use the Nerd Font
+- [ ] Configure VS Code to use the Nerd Font
 - [ ] Verify that icons display correctly in your terminal
 
 **Success Criteria**:
 
 - [ ] Terminal displays proper icons and symbols
-- [ ] VSCode terminal uses the same Nerd Font
+- [ ] VS Code terminal uses the same Nerd Font
 - [ ] Oh-My-Zsh themes render correctly with full visual elements
 - [ ] Font configuration persists across terminal sessions
 
@@ -775,18 +775,18 @@ chmod +x ~/validate-plugins.sh
 | Aliases functional | `alias \| grep -c 'git\|docker'` | Count >= 3 |
 | Shell reload works | `source ~/.zshrc && echo 'OK'` | Prints "OK" |
 
-### 🔧 Implementation Challenge 4: VSCode-Terminal Harmony (🕐 20 minutes)
+### 🔧 Implementation Challenge 4: VS Code-Terminal Harmony (🕐 20 minutes)
 
-**Scenario**: Achieve pixel-perfect integration between your enhanced terminal and VSCode.
+**Scenario**: Achieve pixel-perfect integration between your enhanced terminal and VS Code.
 
-**Task**: Configure VSCode settings and create a validation script.
+**Task**: Configure VS Code settings and create a validation script.
 
 ```bash
-# Create a VSCode integration validation script
+# Create a VS Code integration validation script
 cat > ~/validate-vscode-terminal.sh << 'SCRIPT'
 #!/usr/bin/env zsh
 
-echo "=== VSCode Terminal Integration Validation ==="
+echo "=== VS Code Terminal Integration Validation ==="
 echo ""
 
 checks_passed=0
@@ -819,23 +819,23 @@ else
     echo "❌ No theme set"
 fi
 
-# Check 4: TERM_PROGRAM for VSCode
+# Check 4: TERM_PROGRAM for VS Code
 ((checks_total++))
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-    echo "✅ Running inside VSCode terminal"
+    echo "✅ Running inside VS Code terminal"
     ((checks_passed++))
 else
-    echo "⚠️ Not running in VSCode (TERM_PROGRAM=$TERM_PROGRAM)"
+    echo "⚠️ Not running in VS Code (TERM_PROGRAM=$TERM_PROGRAM)"
     ((checks_passed++)) # Not a hard failure
 fi
 
 # Check 5: Custom aliases exist
 ((checks_total++))
 if alias | grep -q 'code\|vsc'; then
-    echo "✅ VSCode aliases configured"
+    echo "✅ VS Code aliases configured"
     ((checks_passed++))
 else
-    echo "❌ No VSCode aliases found in shell"
+    echo "❌ No VS Code aliases found in shell"
 fi
 
 echo ""
@@ -849,10 +849,10 @@ chmod +x ~/validate-vscode-terminal.sh
 
 | Criterion | Verification | Expected Result |
 |-----------|-------------|-----------------|
-| VSCode settings updated | `cat ~/Library/Application\ Support/Code/User/settings.json \| grep fontFamily` | Shows Nerd Font |
-| Zsh detected in VSCode | `echo $TERM_PROGRAM` inside VSCode terminal | "vscode" |
+| VS Code settings updated | `cat ~/Library/Application\ Support/Code/User/settings.json \| grep fontFamily` | Shows Nerd Font |
+| Zsh detected in VS Code | `echo $TERM_PROGRAM` inside VS Code terminal | "vscode" |
 | Theme renders correctly | Visual inspection | Icons/glyphs display |
-| Aliases work in VSCode | `type c vsc` in VSCode terminal | Shows alias definitions |
+| Aliases work in VS Code | `type c vsc` in VS Code terminal | Shows alias definitions |
 | Validation passes | `~/validate-vscode-terminal.sh` | All checks pass |
 
 ### 📊 Challenge Progress Tracker
@@ -873,7 +873,7 @@ gantt
     Plugin Ecosystem       :ch3, 35, 60
     
     section Integration
-    VSCode Harmony         :ch4, 60, 80
+    VS Code Harmony         :ch4, 60, 80
     
     section Boss Battle
     Terminal Fortress       :crit, boss, 80, 120
@@ -883,11 +883,11 @@ gantt
 
 ## 🐉 Boss Battle: The Terminal Fortress
 
-*The final trial awaits, brave adventurer. Deep within the Digital Fortress lies the ultimate challenge — a comprehensive test of everything you've learned. Only those who have truly mastered the arts of terminal enchantment will emerge victorious.*
+*The final trial awaits, brave adventurer. Deep within the Digital Fortress lies the ultimate challenge — a thorough test of everything you've learned. Only those who have truly mastered the arts of terminal enchantment will emerge victorious.*
 
 ### 🏰 The Challenge
 
-**Objective**: Build a complete, production-ready Oh-My-Zsh configuration from scratch that demonstrates mastery of installation, theming, plugins, custom functions, and VSCode integration — all in under 60 minutes.
+**Objective**: Build a complete, production-ready Oh-My-Zsh configuration from scratch that demonstrates mastery of installation, theming, plugins, custom functions, and VS Code integration — all in under 60 minutes.
 
 **Scenario**: You've been assigned to onboard a new developer on your team. Create a reproducible terminal setup script and documentation package that transforms a bare zsh installation into a fully enchanted development powerstation.
 
@@ -961,7 +961,7 @@ function note() {
 
 #### Phase 3: The Integration (15 minutes)
 
-- [ ] Generate a VSCode `settings.json` snippet for terminal integration
+- [ ] Generate a VS Code `settings.json` snippet for terminal integration
 - [ ] Create a `.vscode/tasks.json` with terminal-related tasks
 - [ ] Implement a health-check command that validates the full setup
 
@@ -988,7 +988,7 @@ flowchart LR
     end
     
     subgraph "Phase 3: Integration"
-        C1["VSCode settings valid"] --> C2["Tasks.json works"]
+        C1["VS Code settings valid"] --> C2["Tasks.json works"]
         C2 --> C3["Health check passes"]
     end
     
@@ -1011,14 +1011,14 @@ flowchart LR
 |----------|--------|----------|
 | Foundation | 25 | Script runs, pre-checks pass, rollback works |
 | Enchantment | 30 | Theme + 7 plugins + 5 aliases + 2 functions |
-| Integration | 25 | VSCode config + tasks + health check |
+| Integration | 25 | VS Code config + tasks + health check |
 | Documentation | 20 | README + troubleshooting + quick reference |
 | **Total** | **100** | **80+ to pass, 95+ for mastery** |
 
 **Final Validation Command**:
 
 ```bash
-# Run the comprehensive validation
+# Run the thorough validation
 echo "=== 🐉 BOSS BATTLE FINAL VALIDATION ==="
 echo ""
 
@@ -1068,7 +1068,7 @@ graph LR
     
     subgraph "Level 3: Expert"
         S4 --> S5["Custom Functions"]
-        S5 --> S6["VSCode Integration"]
+        S5 --> S6["VS Code Integration"]
     end
     
     subgraph "Level 4: Master"
@@ -1096,8 +1096,8 @@ graph LR
 | Ch 2: Themes | `ls ~/.oh-my-zsh/themes/ \| wc -l` | 100+ themes available | - [ ] |
 | Ch 3: Plugins | `echo $plugins` | 5+ plugin names | - [ ] |
 | Ch 3: Plugins | `ls ~/.oh-my-zsh/custom/plugins/` | 2+ external plugins | - [ ] |
-| Ch 4: VSCode | `echo $TERM_PROGRAM` (in VSCode) | `vscode` | - [ ] |
-| Ch 4: VSCode | Custom aliases work | `c` opens VSCode | - [ ] |
+| Ch 4: VS Code | `echo $TERM_PROGRAM` (in VS Code) | `vscode` | - [ ] |
+| Ch 4: VS Code | Custom aliases work | `c` opens VS Code | - [ ] |
 | Boss Battle | `~/setup-terminal.sh --dry-run` | Completes without error | - [ ] |
 | Boss Battle | Score >= 80 | Final validation passes | - [ ] |
 
@@ -1108,7 +1108,7 @@ graph LR
 | **Installation** | Can follow script | Understands each step | Can audit scripts | Can write installers |
 | **Themes** | Uses default | Switches themes | Customizes themes | Creates themes |
 | **Plugins** | Uses 1-2 built-in | Uses 5+ plugins | Configures external | Develops plugins |
-| **VSCode** | Basic terminal | Font configured | Full integration | Automated setup |
+| **VS Code** | Basic terminal | Font configured | Full integration | Automated setup |
 | **Scripting** | Runs commands | Writes aliases | Writes functions | Builds frameworks |
 
 **Target Score**: 15+ out of 20 to complete this quest successfully.
@@ -1117,7 +1117,7 @@ graph LR
 
 - [ ] All primary objectives completed successfully
 - [ ] Terminal customization matches development needs
-- [ ] VSCode integration working seamlessly with enhanced terminal
+- [ ] VS Code integration working smoothly with enhanced terminal
 - [ ] Productivity improvements measured and documented
 - [ ] Custom enhancements created and tested
 - [ ] Implementation challenges completed with acceptance criteria met
@@ -1133,7 +1133,7 @@ graph LR
 | 🏆 | **Terminal Sorcerer** | Complete Oh-My-Zsh installation and configure custom theme |
 | ⚡ | **Productivity Surge** | Demonstrate 40%+ faster workflows with plugins |
 | 🛠️ | **Plugin Artisan** | Install, configure, and validate 7+ plugins |
-| 🎯 | **VSCode Alchemist** | Achieve full VSCode-terminal integration |
+| 🎯 | **VS Code Alchemist** | Achieve full VS Code-terminal integration |
 | 🐉 | **Fortress Conqueror** | Score 80+ on the Boss Battle |
 | 👑 | **Terminal Archmage** | Score 95+ on the Boss Battle (legendary tier) |
 
@@ -1155,14 +1155,14 @@ mindmap
       Custom Functions
       Automation Scripts
     Tool Integration
-      VSCode Synergy
+      VS Code Synergy
       Git Workflows
       Docker Shortcuts
 ```
 
 - **[Shell Mastery]** - Advanced command-line proficiency with custom enhancements
 - **[Workflow Optimization]** - Ability to streamline development processes
-- **[Tool Integration]** - Seamless connection between development tools
+- **[Tool Integration]** - Smooth connection between development tools
 - **[Customization Expertise]** - Creation of personalized development environments
 - **[Security Awareness]** - Ability to audit and verify installation scripts
 - **[Automation Thinking]** - Design reproducible setup processes for teams
@@ -1172,7 +1172,7 @@ mindmap
 - **Oh-My-Zsh Framework** - Complete terminal enhancement system
 - **Theme Collection** - Visual customization for different contexts
 - **Plugin Ecosystem** - Extensible functionality for specific needs
-- **VSCode Integration** - Unified development experience
+- **VS Code Integration** - Unified development experience
 - **Benchmarking Scripts** - Performance measurement for shell configurations
 - **Validation Tools** - Automated setup verification and health checking
 
@@ -1233,13 +1233,13 @@ graph LR
 
 - [Oh-My-Zsh Official Documentation](https://ohmyz.sh/) - Primary reference and guides
 - [Zsh Manual](https://zsh.sourceforge.io/Doc/Release/zsh_toc.html) - Complete zsh reference
-- [VSCode Terminal Documentation](https://code.visualstudio.com/docs/terminal/) - Integration guides
+- [VS Code Terminal Documentation](https://code.visualstudio.com/docs/terminal/) - Integration guides
 
 ### 🎥 Visual Learning Resources
 
 - [Oh-My-Zsh Installation Tutorial](https://www.youtube.com/results?search_query=oh+my+zsh+installation) - Step-by-step visual guides
 - [Terminal Customization Showcase](https://www.youtube.com/results?search_query=terminal+customization+showcase) - Inspiration and examples
-- [VSCode Terminal Integration](https://www.youtube.com/results?search_query=vscode+terminal+zsh) - Integration tutorials
+- [VS Code Terminal Integration](https://www.youtube.com/results?search_query=vscode+terminal+zsh) - Integration tutorials
 
 ### 💬 Community and Support
 
@@ -1252,7 +1252,7 @@ graph LR
 - [Powerlevel10k Theme](https://github.com/romkatv/powerlevel10k) - Advanced customizable theme
 - [Zsh Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Command completion
 - [Zsh Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Syntax coloring
-- [VSCode Terminal Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-terminal) - Enhanced terminal integration
+- [VS Code Terminal Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-terminal) - Enhanced terminal integration
 
 ### 📋 Cheat Sheets and References
 
@@ -1269,13 +1269,13 @@ graph LR
 
 ---
 
-*Congratulations, brave terminal adventurer! You have successfully completed the Oh-My-Zsh Mastery Quest using VSCode as your primary development companion. Your terminal is now enchanted with the power of advanced customization, plugin integration, and seamless VSCode synergy. The ancient arts of shell mastery are now yours to command, and your development workflow will never be the same. May your future coding adventures be filled with efficiency, elegance, and the perfect harmony between VSCode and your enhanced terminal!*
+*Congratulations, brave terminal adventurer! You have successfully completed the Oh-My-Zsh Mastery Quest using VS Code as your primary development companion. Your terminal is now enchanted with the power of advanced customization, plugin integration, and smooth VS Code synergy. The ancient arts of shell mastery are now yours to command, and your development workflow will never be the same. May your future coding adventures be filled with efficiency, elegance, and the perfect harmony between VS Code and your enhanced terminal!*
 
-*Remember: A true terminal sorcerer never stops learning. The Oh-My-Zsh ecosystem evolves constantly, and there are always new plugins, themes, and techniques to discover. Continue your journey, share your knowledge with fellow adventurers, and may your commands always execute flawlessly within the powerful embrace of VSCode!*
+*Remember: A true terminal sorcerer never stops learning. The Oh-My-Zsh ecosystem evolves constantly, and there are always new plugins, themes, and techniques to discover. Continue your journey, share your knowledge with fellow adventurers, and may your commands always execute flawlessly within the powerful embrace of VS Code!*
 
 🏆 Quest Completed: Level 0010 (10) - Terminal Enchantment: Oh-My-Zsh Mastery
 
-⚡ New Abilities Unlocked: Shell Customization, Plugin Development, VSCode Integration, Workflow Optimization
+⚡ New Abilities Unlocked: Shell Customization, Plugin Development, VS Code Integration, Workflow Optimization
 
 🔮 Next Quest Available: Continue your terminal mastery journey with advanced scripting and automation challenges!
 

@@ -144,6 +144,42 @@
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "docs",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this content's voice. Defaults to the folder/collection; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion",
+            "quest-fantasy",
+            "reference"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
+        },
+        {
           "title": "attachments",
           "name": "attachments",
           "type": "string"
@@ -416,6 +452,20 @@
           "title": "Is in draft",
           "name": "draft",
           "type": "draft"
+        },
+        {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": ["quest"],
+          "description": "Optional brand pointer. Quests resolve to the 'quest' voice guide by default; set only to override."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": ["quest-fantasy", "practitioner-chronicle", "concept-essay", "muse-opinion", "reference"],
+          "description": "Optional override of the quest voice profile (see _data/brand/voice.yml). Normally omitted."
         }
       ]
     }

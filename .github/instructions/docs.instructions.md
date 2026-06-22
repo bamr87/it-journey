@@ -2,7 +2,7 @@
 applyTo: "pages/_docs/**/*.md"
 description: "Author IT-Journey docs collection entries: technical reference, cheatsheets, wargame writeups, and certification study material"
 date: 2026-05-24T00:00:00.000Z
-lastmod: 2026-05-24T00:00:00.000Z
+lastmod: 2026-06-22T00:00:00.000Z
 ---
 
 # Docs Collection — `pages/_docs/**`
@@ -151,6 +151,14 @@ These break CI or the docs index:
 - [ ] `draft: false`
 - [ ] Local Jekyll build succeeds (`bundle exec jekyll build`)
 
+## Voice & brand
+
+Docs use the `reference` voice profile — terse, scannable, answer-first, low emoji.
+Voice/tone and the discouraged-terms list live in the brand store; see
+[`_data/brand/sections/docs.md`](../../_data/brand/sections/docs.md) and
+[`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand drift
+advisorily (`make cms-all`); vendored wargame docs are exempt.
+
 ---
 
-**Related:** [`posts.instructions.md`](posts.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).
+**Related:** [`posts.instructions.md`](posts.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).

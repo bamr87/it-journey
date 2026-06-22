@@ -75,7 +75,11 @@ If the landing has no narrative content beyond the post list, leave the body emp
 
 ## 4. Canonical Category Map
 
-These are the 13 sections; keep slugs and titles in sync with `_data/navigation/posts.yml`:
+These are the 13 sections. The brand layer mirrors this map in
+[`_data/brand/sections/_registry.yml`](../../_data/brand/sections/_registry.yml)
+(which adds each section's voice profile, personas, and accent) — treat the
+registry as the source and keep this table, the registry, and
+`_data/navigation/posts.yml` in sync:
 
 | Folder | Title | Permalink | Icon |
 |---|---|---|---|
