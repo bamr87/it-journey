@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-22T17:37:22.246755+00:00",
+  "generated_at": "2026-06-22T22:28:46.007773+00:00",
   "total_files": 665,
   "scored_files": 659,
   "actionable_files": 396,
   "avg_health": 94.3,
-  "avg_health_actionable": 90.5,
+  "avg_health_actionable": 90.6,
   "total_mechanical_issues": 22,
-  "total_substantive_issues": 388,
+  "total_substantive_issues": 382,
   "total_errors": 56,
   "read_only_files": 220,
   "by_collection": {
@@ -70,9 +70,9 @@
       "count": 204,
       "scored": 204,
       "mechanical": 0,
-      "substantive": 47,
+      "substantive": 41,
       "errors": 5,
-      "avg_health": 97.7
+      "avg_health": 97.8
     },
     "quickstart": {
       "count": 15,
@@ -85,9 +85,9 @@
   },
   "freshness_distribution": {
     "critical": 96,
-    "stale": 101,
-    "aging": 26,
-    "fresh": 434,
+    "stale": 100,
+    "aging": 25,
+    "fresh": 436,
     "unknown": 2
   },
   "health_buckets": {
