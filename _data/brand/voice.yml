@@ -57,3 +57,38 @@ profiles:
       - One link out, not ten. Tight word budget.
     avoid:
       - Burying the take; turning a muse into a full tutorial.
+
+  quest-fantasy:
+    summary: >-
+      The voice of the gamified quest system. Fantasy-framed, encouraging,
+      hands-on — every command is a spell, every level a new rank. Governs
+      pages/_quests (structure is enforced separately by quest.instructions.md +
+      quest_validator.py; this is the *voice* layer on top).
+    person: second person ("You'll wield...", "Your mission")
+    tense: imperative for steps; present for narration
+    formality: low (≈40) — playful and motivating
+    emoji: heavy and intentional — the fantasy framing (🎯 ⚔️ 🏆 🧙) is on-brand;
+      emoji density is NOT policed for quests (see .cms/config.yml > brand)
+    sentence_length: short, energetic
+    hallmarks:
+      - Frames real skills as an adventure without hiding the real learning.
+      - Never gatekeeps; a n00b should feel invited, not judged.
+      - Keeps the fantasy in service of the skill, not instead of it.
+    avoid:
+      - Empty hype dressed as flavor; fantasy so thick the real task gets lost.
+
+  reference:
+    summary: >-
+      The voice of the docs collection — terse, scannable, accurate reference.
+      Optimized for someone who is mid-task and wants the answer fast.
+    person: imperative / neutral
+    tense: present
+    formality: higher (≈60)
+    emoji: minimal — docs are looked up, not read cover to cover
+    sentence_length: short; favor tables, lists, and command blocks over prose
+    hallmarks:
+      - Answer-first; the reader is here to do one thing.
+      - Correct and current over comprehensive; link the source.
+      - Copy-paste-ready commands with the expected result.
+    avoid:
+      - Narrative throat-clearing; hype adjectives; walls of prose.

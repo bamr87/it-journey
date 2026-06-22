@@ -130,3 +130,30 @@ sections:
     accent: teal
     guide: devops-news-muse.md
     overlay_of: devops
+
+  # Whole-collection sections (not folder-derived). Quests and docs resolve to
+  # these via collection_defaults below, regardless of sub-folder.
+  quest:
+    title: Quests
+    permalink: /quests/
+    voice_profile: quest-fantasy
+    personas: [learner, contributor]
+    icon: dpad
+    accent: purple
+    guide: quest.md
+    collection: quests
+  docs:
+    title: Docs
+    permalink: /docs/
+    voice_profile: reference
+    personas: [practitioner, learner]
+    icon: book-half
+    accent: secondary
+    guide: docs.md
+    collection: docs
+
+# Default section per collection for collections that are NOT resolved by folder
+# (posts resolve by their category folder; these resolve to one section each).
+collection_defaults:
+  quests: quest
+  docs: docs

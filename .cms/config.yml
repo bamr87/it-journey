@@ -202,12 +202,16 @@ loop:
 # the health score (advisory_only). Brand FACTS live in _data/brand/; these are
 # the ENFORCEMENT thresholds. Resolution: a post -> section slug -> profile via
 # _data/brand/sections/_registry.yml (folder name is the default slug). Flip
-# `enabled: false` to disable the whole subsystem.
+# `enabled: true` to disable the whole subsystem.
 # ---------------------------------------------------------------------------
 brand:
   enabled: true
   store_root: _data/brand           # pointer to the authoritative brand store
   advisory_only: true               # brand issues never affect health or auto-merge
+  # Collections the brand check runs on. posts resolve a section by folder;
+  # quests/docs resolve to one section each via _registry.yml > collection_defaults.
+  # (Vendored/structural/generated files are always skipped regardless.)
+  collections: [posts, quests, docs]
   # Global ruleset; per-section entries below override/extend it.
   global:
     # Empty-hype words to flag (mirror of _data/brand/glossary.yml > discouraged).
@@ -237,6 +241,19 @@ brand:
       banned_terms_relax: [cutting-edge, revolutionary]
     trends-ideas:
       banned_terms_relax: [cutting-edge]
+    # Quests are gamified/fantasy and intentionally emoji-heavy (median ~82
+    # emoji/file), so emoji density is NOT policed (emoji_intensity has no max).
+    # Structure is already enforced by quest_validator.py + quest.instructions.md,
+    # so no required_structural here. "powerful" is relaxed as fantasy flavor;
+    # other empty-hype terms still flag.
+    quest:
+      emoji_intensity: { min: 0 }     # no max -> emoji check effectively off
+      formality_target: 40            # playful/gamified
+      banned_terms_relax: [powerful]
+    # Docs are terse reference: low emoji, neutral-to-formal, hype still flagged.
+    docs:
+      emoji_intensity: { min: 0, max: 12 }
+      formality_target: 60
 
 # ---------------------------------------------------------------------------
 # Output locations (all under .cms/, auto-ignored by Jekyll).

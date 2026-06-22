@@ -1,8 +1,8 @@
 ---
-title: Streamlining Content Creation - Using Crush in VSCode for Instant GitHub Pages Publishing
-description: Discover how to leverage Crush AI in VSCode to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines.
+title: Streamlining Content Creation - Using Crush in VS Code for Instant GitHub Pages Publishing
+description: Discover how to leverage Crush AI in VS Code to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines.
 date: '2025-11-20T18:53:39.000Z'
-lastmod: 2025-11-20
+lastmod: '2026-06-22T12:00:00.000Z'
 version: 1.0.0
 categories:
 - ai & machine learning
@@ -28,15 +28,15 @@ keywords:
 - ai-assisted-writing
 - ai & machine learning
 - devops
-excerpt: Discover how to leverage Crush AI in VSCode to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines
+excerpt: Discover how to leverage Crush AI in VS Code to write, edit, and publish articles to GitHub Pages with near-instant deployment through efficient CI/CD pipelines
 ---
-# Streamlining Content Creation: Using Crush in VSCode for Instant GitHub Pages Publishing
+# Streamlining Content Creation: Using Crush in VS Code for Instant GitHub Pages Publishing
 
-In the fast-paced world of technical content creation, efficiency is key. As part of the IT-Journey platform, we've optimized our workflow to allow creators to write articles using AI assistance and see them live on GitHub Pages almost instantly. This post explores how we use Crush—an AI-powered CLI assistant—integrated with VSCode, combined with robust CI/CD pipelines, to achieve this seamless publishing experience.
+In the fast-paced world of technical content creation, efficiency is key. As part of the IT-Journey platform, we've optimized our workflow to allow creators to write articles using AI assistance and see them live on GitHub Pages almost instantly. This post explores how we use Crush—an AI-powered CLI assistant—integrated with VS Code, combined with robust CI/CD pipelines, to achieve this fast, repeatable publishing experience.
 
 ## What is Crush?
 
-Crush is a powerful AI assistant that operates through CLI commands and function calls, enabling tasks like file editing, bash execution, web fetching, and more. In the context of IT-Journey, it's used for autonomous code and content generation without constant user intervention. When integrated into VSCode's terminal, it becomes a potent tool for content creators.
+Crush is a capable AI assistant that operates through CLI commands and function calls, enabling tasks like file editing, bash execution, web fetching, and more. In the context of IT-Journey, it's used for autonomous code and content generation without constant user intervention. When integrated into VS Code's terminal, it becomes a potent tool for content creators.
 
 Key features observed in Crush:
 
@@ -44,14 +44,14 @@ Key features observed in Crush:
 - Tool usage: Bash, edit, write, view, grep, glob for file operations.
 - Safety-focused: Adheres to strict rules, never invents information.
 
-## Setting Up Crush in VSCode
+## Setting Up Crush in VS Code
 
 To get started:
 
 1. **Install Crush CLI**: Follow the setup from Charm (<crush@charm.land>) tools. Ensure it's available in your PATH.
 
-2. **VSCode Configuration**:
-   - Open VSCode in the IT-Journey repo.
+2. **VS Code Configuration**:
+   - Open VS Code in the IT-Journey repo.
    - Use the integrated terminal for Crush commands.
    - Optional: Set up keybindings or tasks for common Crush operations.
 

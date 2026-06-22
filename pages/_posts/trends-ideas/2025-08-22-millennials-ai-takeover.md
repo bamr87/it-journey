@@ -27,7 +27,7 @@ keywords:
 - emerging technologies
 - innovation
 - millennials
-lastmod: '2025-08-22T05:24:47.000Z'
+lastmod: '2026-06-22T12:00:00.000Z'
 permalink: null
 attachments: ''
 comments: false
@@ -62,7 +62,7 @@ Generational differences in tech adoption are stark, and they explain why millen
 
 In contrast, baby boomers (born 1946-1964) often lag, familiar with archaic systems like COBOL but slower to embrace modern AI. While 34% of Gen Z and 25% of millennials engage with AI for work tasks, boomers trail significantly. Boomers' experience with legacy tech is valuable in niche areas, but in AI-driven consulting, it's a liability when speed and innovation rule.
 
-Gen Z new grads, digital natives raised on seamless apps like those from Apple, expect technology to be intuitive and effortless. However, this can lead to over-reliance on simplicity, clashing with AI's need for critical verification and iterative collaboration. They adopt tech early but may lack the depth millennials gained from bridging analog and digital eras.
+Gen Z new grads, digital natives raised on polished apps like those from Apple, expect technology to be intuitive and frictionless. However, this can lead to over-reliance on simplicity, clashing with AI's need for critical verification and iterative collaboration. They adopt tech early but may lack the depth millennials gained from bridging analog and digital eras.
 
 Millennials bridge this gap: Comfortable with tech's complexities yet adaptable to AI's demands, they use it to amplify insights and drive transformation.
 

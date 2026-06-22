@@ -1,8 +1,18 @@
 # IT-Journey — Branding & Content-Governance System (plan)
 
-> Status: plan. This document specifies a central branding layer for collection
-> content and how it wires into the existing CMS engine, skills, prompts, and
-> editor instructions. Scope is **posts only** for the first iteration.
+> Status: implemented. This document specifies a central branding layer for
+> collection content and how it wires into the existing CMS engine, skills,
+> prompts, and editor instructions.
+>
+> **Scope update (2026-06-22):** the first iteration shipped **posts-scoped**;
+> coverage was then extended to **quests and docs**. The brand check now runs for
+> the collections in `.cms/config.yml › brand.collections` (`posts, quests, docs`).
+> Posts resolve a section by folder; quests and docs resolve to one section each
+> (`quest` / `docs`) via `_data/brand/sections/_registry.yml › collection_defaults`.
+> Two profiles were added for them — `quest-fantasy` (gamified, emoji-rich; emoji
+> density is **not** policed and `powerful` is relaxed as fantasy flavor) and
+> `reference` (terse docs). Vendored read-only docs (`pages/_docs/wargames/**`)
+> remain exempt. Notes/quickstart/about/etc. stay out of scope.
 
 IT-Journey has rich brand raw material scattered across the repo — the mission and
 seven core principles in `pages/_about/about.md`, the philosophy in

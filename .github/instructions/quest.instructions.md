@@ -2,7 +2,7 @@
 applyTo: "pages/_quests/**/*.md"
 description: "Create gamified IT-Journey quests: frontmatter schema, fantasy theme, learning objectives, and validation rules"
 date: 2025-07-21T23:30:21.000Z
-lastmod: 2026-05-23T00:00:00.000Z
+lastmod: 2026-06-22T00:00:00.000Z
 ---
 
 # Quest Creation Instructions
@@ -401,6 +401,15 @@ When you add a quest, also:
 - [ ] Network artifacts committed if graph changed
 - [ ] `lastmod` updated
 
+## Voice & brand
+
+Quests use the `quest-fantasy` voice profile — gamified, encouraging, emoji-rich.
+**Structure** stays governed by this file; **voice/tone** and the discouraged-terms
+list live in the brand store: [`_data/brand/sections/quest.md`](../../_data/brand/sections/quest.md)
+and [`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand
+drift advisorily (`make cms-all`); emoji density is **not** policed for quests, and
+`powerful` is relaxed as fantasy flavor.
+
 ---
 
-**Related:** [`features.instructions.md`](features.instructions.md) · [`posts.instructions.md`](posts.instructions.md) · [`../prompts/write-quest.prompt.md`](../prompts/write-quest.prompt.md) · canonical frontmatter schema in [`../FRONTMATTER.md`](../FRONTMATTER.md) · script runbook in [`../../scripts/quest/README.md`](../../scripts/quest/README.md).
+**Related:** [`features.instructions.md`](features.instructions.md) · [`posts.instructions.md`](posts.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · [`../prompts/write-quest.prompt.md`](../prompts/write-quest.prompt.md) · canonical frontmatter schema in [`../FRONTMATTER.md`](../FRONTMATTER.md) · script runbook in [`../../scripts/quest/README.md`](../../scripts/quest/README.md).

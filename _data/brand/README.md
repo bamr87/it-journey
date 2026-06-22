@@ -2,7 +2,8 @@
 
 The **single source of truth** for the brand's identity, values, voice, style,
 colors, and audience — and the per-section narrative guides that govern how
-collection content (posts + the devops-news *muse* format) is written.
+collection content (**posts, quests, and docs**, including the devops-news *muse*
+format) is written.
 
 It lives under `_data/` so it is **build-consumed** (`site.data.brand.*`,
 addressable in layouts/includes) and sits beside the other site data. The CMS
@@ -21,8 +22,8 @@ directly.
 | `personas.yml` | audience personas (referenced by guides) | facts (YAML) |
 | `voice.md` | the voice-and-tone bible (prose) | narrative (MD) |
 | `style.md` | prose/formatting rules (prose) | narrative (MD) |
-| `sections/_registry.yml` | slug → {title, permalink, voice_profile, personas, icon, accent} | facts (YAML) |
-| `sections/<slug>.md` | the 13 category guides + `devops-news-muse.md` | narrative (MD) |
+| `sections/_registry.yml` | slug → {title, permalink, voice_profile, personas, icon, accent} + `collection_defaults` | facts (YAML) |
+| `sections/<slug>.md` | 13 post-category guides + `devops-news-muse.md` + `quest.md` + `docs.md` | narrative (MD) |
 
 ## The one rule: facts here, thresholds in the engine config
 
@@ -36,20 +37,23 @@ The engine reads the thresholds from config and uses this store only to resolve
 which section/profile governs a post and to validate profile names. Guides and
 `.github/instructions/*` **point at** this store; they never restate it (DRY).
 
-## How a post resolves to a guide
+## How content resolves to a guide
 
-1. The post's `voice_profile:` frontmatter, if set; else
+1. The file's `voice_profile:` frontmatter, if set; else
 2. its `section_guide:` frontmatter → that guide's profile in `_registry.yml`; else
-3. the folder it lives in (`pages/_posts/<category>/`) → the `<category>` guide; else
+3. **posts:** the folder (`pages/_posts/<category>/`) → the `<category>` guide;
+   **quests/docs:** `_registry.yml › collection_defaults` (`quests → quest`,
+   `docs → docs`); else
 4. `voice.yml: default_profile` (`practitioner-chronicle`).
 
-So the two frontmatter keys are **optional** — every existing post already
-resolves via its folder.
+So the two frontmatter keys are **optional** — every existing post, quest, and doc
+already resolves via its folder/collection.
 
 ## Consumers
 
 - `scripts/cms/cms.py` (`_check_brand`) — flags brand drift into the daily worklist.
 - `.claude/skills/brand-voice/SKILL.md` — loads this store before drafting/editing.
 - `.github/prompts/{draft-article,draft-muse,brand-audit,…}.prompt.md`.
-- `.github/instructions/brand.instructions.md` (auto-applies to `pages/_posts/**`).
+- `.github/instructions/brand.instructions.md` (auto-applies to `pages/_posts/**`,
+  `pages/_quests/**`, `pages/_docs/**`).
 - The site (later): `site.data.brand.*` for on-page rendering.

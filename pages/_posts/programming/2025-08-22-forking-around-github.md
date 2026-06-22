@@ -1,5 +1,5 @@
 ---
-title: Forking Around Github
+title: Forking Around GitHub
 description: Discover the ins and outs of forking on GitHub and enhance your collaborative coding skills with our comprehensive guide.
 date: '2025-08-24T18:46:40.000Z'
 preview: ''
@@ -28,7 +28,7 @@ keywords:
 - development
 - github actions
 - open source
-lastmod: '2025-08-25T00:46:40.000Z'
+lastmod: '2026-06-22T12:00:00.000Z'
 permalink: null
 attachments: ''
 comments: false

@@ -358,12 +358,15 @@ def analyze_file(p: Path, cfg: dict, now: datetime,
             f"{rec.broken_links} broken link(s) from last scan", "substantive",
             "Fix or remove dead links")))
 
-    # Brand / voice governance (advisory) — POSTS only, never on read-only/
-    # structural/generated content. Emits substantive `brand_drift:*` issues but
-    # does NOT feed the health score (see _score: only `missing_required:` counts).
-    if (rec.collection == "posts"
+    # Brand / voice governance (advisory) — for the collections listed in
+    # brand.collections (posts, quests, docs), never on read-only/structural/
+    # generated content. Emits substantive `brand_drift:*` issues but does NOT
+    # feed the health score (see _score: only `missing_required:` counts).
+    brand_cfg = cfg.get("brand", {})
+    brand_collections = brand_cfg.get("collections", ["posts"])
+    if (rec.collection in brand_collections
             and not (rec.read_only or rec.structural or rec.generated)
-            and cfg.get("brand", {}).get("enabled")):
+            and brand_cfg.get("enabled")):
         store = load_brand_store(cfg)
         if store:
             _check_brand(rec, fm, body, cfg, store)
@@ -546,6 +549,7 @@ def load_brand_store(cfg: dict) -> Optional[dict]:
                 "profiles": set((voice.get("profiles") or {}).keys()),
                 "default_profile": voice.get("default_profile"),
                 "registry": reg.get("sections") or {},
+                "collection_defaults": reg.get("collection_defaults") or {},
             }
         except (yaml.YAMLError, ValueError):
             store = None
@@ -553,9 +557,11 @@ def load_brand_store(cfg: dict) -> Optional[dict]:
     return store
 
 
-def _resolve_section(rel_path: str, fm: dict, store: dict) -> tuple:
+def _resolve_section(rel_path: str, fm: dict, store: dict,
+                     collection: str = "posts") -> tuple:
     """Resolve (section_slug, voice_profile, unresolved). Order: explicit
-    voice_profile -> explicit section_guide -> folder -> default_profile."""
+    voice_profile -> explicit section_guide -> posts: category folder /
+    other collections: collection_defaults -> default_profile."""
     registry = store["registry"]
     profiles = store["profiles"]
     unresolved: list[tuple[str, str]] = []
@@ -567,11 +573,16 @@ def _resolve_section(rel_path: str, fm: dict, store: dict) -> tuple:
             section = sg
         else:
             unresolved.append(("section_guide", sg))
-    if section is None:                       # infer from pages/_posts/<cat>/...
-        parts = rel_path.split("/")
-        if len(parts) >= 4 and parts[0] == "pages" and parts[1] == "_posts":
-            if parts[2] in registry:
-                section = parts[2]
+    if section is None:
+        if collection == "posts":             # infer from pages/_posts/<cat>/...
+            parts = rel_path.split("/")
+            if len(parts) >= 4 and parts[0] == "pages" and parts[1] == "_posts":
+                if parts[2] in registry:
+                    section = parts[2]
+        else:                                  # quests/docs -> one section each
+            default_slug = store.get("collection_defaults", {}).get(collection)
+            if default_slug in registry:
+                section = default_slug
 
     profile: Optional[str] = None
     vp = fm.get("voice_profile")
@@ -639,7 +650,8 @@ def _estimate_formality(text: str) -> int:
 
 
 def _check_brand(rec: FileRecord, fm: dict, body: str, cfg: dict, store: dict) -> None:
-    section, profile, unresolved = _resolve_section(rec.path, fm, store)
+    section, profile, unresolved = _resolve_section(
+        rec.path, fm, store, rec.collection)
     rec.section_guide = section
     rec.voice_profile = profile
 
@@ -994,9 +1006,9 @@ def cmd_analyze(cfg: dict, records: list, summary: dict, now: datetime) -> Path:
             brand_rows[key] = brand_rows.get(key, 0) + r.brand_issue_count
     if brand_rows:
         lines += ["## Brand drift by section (advisory)", "",
-                  "_Voice/term/format drift on posts. Advisory only — does not "
-                  "affect health. See `.cms/config.yml > brand`._", "",
-                  "| Section | Drift issues |", "|---|---|"]
+                  "_Voice/term/format drift on posts, quests, and docs. Advisory "
+                  "only — does not affect health. See `.cms/config.yml > brand`._",
+                  "", "| Section | Drift issues |", "|---|---|"]
         for k, n in sorted(brand_rows.items(), key=lambda kv: -kv[1]):
             lines.append(f"| {k} | {n} |")
         lines.append("")
