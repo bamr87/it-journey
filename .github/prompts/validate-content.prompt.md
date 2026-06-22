@@ -58,6 +58,16 @@ Dependency URLs must be full canonical paths with trailing slashes.
 - Code examples with language tags
 - Accessibility (headings, alt text)
 
+## Brand / Voice (advisory)
+
+`make cms-all` runs the brand check and emits **advisory** `brand_drift:*` issues
+(banned terms, non-canonical spellings, emoji band, missing structure like a
+**Verify** step, format word band, formality). These **never block CI** and don't
+affect the health score. Read the **Brand drift by section** table in
+`.cms/reports/<date>.md`, or run the [`/brand-audit`](brand-audit.prompt.md) prompt
+for a grouped report. Fix with the `brand-voice` skill. Rules: `_data/brand/` +
+`.cms/config.yml › brand`.
+
 ## Scoring
 
 Quest scores come from `quest_validator.py`:

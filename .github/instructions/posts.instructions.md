@@ -32,7 +32,7 @@ YYYY-MM-DD-kebab-case-slug.md
 | `lastmod` | ISO 8601; update on every edit |
 | `draft` | Boolean (`false` for publish) |
 
-**Recommended:** `keywords` (5–10 phrases as a list), `preview` (social-share image path), `permalink` (when linked from non-post content — see §5).
+**Recommended:** `keywords` (5–10 phrases as a list), `preview` (social-share image path), `permalink` (when linked from non-post content — see §5), `section_guide` (brand pointer — usually inferred from the folder; set to override, e.g. `devops-news-muse`; see [`brand.instructions.md`](brand.instructions.md)).
 
 ```yaml
 ---
@@ -110,14 +110,18 @@ These break CI — never violate:
 7. Nested fenced blocks need a longer outer fence (4 backticks if inner uses 3).
 8. Don't link from `pages/_docs/` to `../../docs/...` — that dir is excluded from Jekyll. Use a GitHub URL.
 
-## 7. Style
+## 7. Style & voice
 
-- **Imperative voice** in instructions ("Run `bundle exec jekyll serve`").
-- **Past tense** in chronicles ("The model suggested…").
-- **One H1** (auto-generated from `title`); start body at `##`.
-- **Cross-references** as markdown links, never inline code.
-- **No marketing fluff:** cut "comprehensive", "powerful", "seamless".
-- **Diagrams:** Mermaid for flows; PNG/SVG under `assets/images/posts/<slug>/`.
+Prose, formatting, and voice rules live in the central brand store (DRY) — this
+section only points there:
+
+- **Formatting & prose:** [`_data/brand/style.md`](../../_data/brand/style.md)
+  (imperative for steps, past tense for chronicles, one H1, language tags on code,
+  links not inline code, Mermaid for flows, no marketing fluff).
+- **Voice & tone:** [`_data/brand/voice.md`](../../_data/brand/voice.md) and the
+  per-section guide your post resolves to (see [`brand.instructions.md`](brand.instructions.md)).
+- **Banned/canonical terms:** [`_data/brand/glossary.yml`](../../_data/brand/glossary.yml)
+  — the CMS engine flags drift advisorily (`.cms/config.yml › brand`).
 
 ## 8. Cross-References
 

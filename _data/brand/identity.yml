@@ -1,0 +1,48 @@
+# IT-Journey — brand identity (machine-readable core)
+#
+# The stable identity facts that govern how the brand is named and described.
+# Authoritative source: pages/_about/about.md, pages/_about/purpose.md, _config.yml.
+# Edit FACTS here; edit brand ENFORCEMENT thresholds in .cms/config.yml > brand.
+# Consumed as site.data.brand.identity.* and by the brand-voice skill + cms.py.
+
+name: IT-Journey
+tagline: From zer0 to her0
+description: >-
+  An open-source learning platform that takes people from zer0 to her0 in
+  information technology — through gamified quests, hands-on tutorials, and
+  honest chronicles of real, AI-assisted development.
+domain: it-journey.dev
+url: https://it-journey.dev
+
+# Who stands behind the brand. Mirrors _config.yml (founder/author/maintainers).
+team:
+  founder: Amr Abdel-Motaleb        # GitHub: bamr87
+  handle: bamr87
+  location: Denver, CO
+  bio: IT nerd trying to be an IT hero
+  # Byline used for community-authored / team content (vs a named individual).
+  team_author_label: IT-Journey Team
+  default_author: bamr87
+
+# The niche the brand owns. Posts live in 13 sections (see sections/_registry.yml);
+# these are the topical pillars the writing should stay anchored to.
+niche:
+  primary: [DevOps, Web Development, AI & Machine Learning, Programming, System Administration]
+  secondary: [Data & Analytics, Tools & Environment, Trends & Ideas, Learning, Culture & Society, Business, Creative & Experimental, Technology]
+  audience_in_one_line: >-
+    Self-directed learners and working practitioners who learn by building,
+    in the open, with AI as a collaborator.
+
+# The recurring motif. "zer0 -> her0" is the spine; quests use 4-bit binary levels
+# 0000 (n00b) through 1111 (mastery). Stylize as zer0/her0 (zero with a zero glyph),
+# lowercase, never "Zero to Hero".
+motifs:
+  progression: zer0 -> her0
+  level_system: 4-bit binary, 0000 (n00b) through 1111 (mastery)
+  short_form_label: muse            # opinion/news short-form, surfaced via /news/
+  long_form_label: chronicle        # the magazine framing on /news/
+
+# Where the brand shows up. The news landing is framed as a magazine of "Chronicles".
+surfaces:
+  news_landing: /news/              # "IT-Journey Chronicles: From Zer0 to Her0"
+  news_framing: magazine

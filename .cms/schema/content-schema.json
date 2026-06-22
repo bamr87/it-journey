@@ -77,7 +77,8 @@
         "lastmod",
         "draft",
         "keywords",
-        "preview"
+        "preview",
+        "section_guide"
       ],
       "fields": [
         {
@@ -166,6 +167,39 @@
           "name": "permalink",
           "type": "string",
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
         },
         {
           "title": "attachments",
@@ -570,6 +604,39 @@
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
+        },
+        {
           "title": "attachments",
           "name": "attachments",
           "type": "string"
@@ -690,6 +757,39 @@
           "name": "permalink",
           "type": "string",
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
         },
         {
           "title": "attachments",
@@ -814,6 +914,39 @@
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
+        },
+        {
           "title": "attachments",
           "name": "attachments",
           "type": "string"
@@ -934,6 +1067,39 @@
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
+        },
+        {
           "title": "attachments",
           "name": "attachments",
           "type": "string"
@@ -1052,6 +1218,39 @@
           "name": "permalink",
           "type": "string",
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
         },
         {
           "title": "attachments",
@@ -1175,6 +1374,39 @@
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
+        },
+        {
           "title": "attachments",
           "name": "attachments",
           "type": "string"
@@ -1293,6 +1525,39 @@
           "name": "permalink",
           "type": "string",
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
+        },
+        {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this post's voice. Defaults to the post's folder; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
         },
         {
           "title": "attachments",

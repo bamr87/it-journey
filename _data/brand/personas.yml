@@ -1,0 +1,37 @@
+# IT-Journey — audience personas (machine-readable core)
+#
+# Who we write for. Section guides reference personas by `id`; the brand-voice
+# skill loads the resolved personas to tune depth and framing. Distilled from
+# pages/_about/about.md ("Get Involved") + the beginner/intermediate/advanced
+# skill ladder used across the site. Consumed as site.data.brand.personas.*.
+
+personas:
+  - id: learner
+    label: The Self-Directed Learner
+    knows: Beginner to intermediate; learning IT to change or start a career.
+    wants: A clear, hands-on path that works on their machine without gatekeeping.
+    reading_for: Step-by-step guidance, why it matters, and what to do next.
+
+  - id: practitioner
+    label: The Working Practitioner
+    knows: Intermediate to advanced; ships software or runs systems for a living.
+    wants: Reproducible techniques, honest trade-offs, and time saved.
+    reading_for: Commands that work, verify steps, and the gotchas nobody documents.
+
+  - id: contributor
+    label: The Open-Source Contributor
+    knows: Comfortable with Git/GitHub; wants to give back.
+    wants: To improve the project and learn collaboration patterns in the open.
+    reading_for: Clear conventions, where to start, and credit for the work.
+
+  - id: ai-enthusiast
+    label: The AI-Augmented Builder
+    knows: Uses AI agents/tools in their workflow; curious about agentic patterns.
+    wants: Real patterns for building with AI, with the human-review loop intact.
+    reading_for: What AI got right/wrong, prompts that worked, and guardrails.
+
+  - id: educator
+    label: The Educator
+    knows: Teaches or mentors; evaluates content for reuse.
+    wants: Accurate, open, well-structured material they can build a lesson on.
+    reading_for: Learning objectives, structure, and correctness.

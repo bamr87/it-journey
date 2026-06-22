@@ -39,7 +39,10 @@ collections:
     path: pages/_posts
     fm_content_type: default
     required_extra: []
-    recommended: [excerpt, lastmod, draft, keywords, preview]
+    # section_guide/voice_profile are the optional brand pointers (see brand:
+    # below). They are nudges, never CI-blocking — most posts resolve their
+    # guide by folder, so the keys are only needed to override.
+    recommended: [excerpt, lastmod, draft, keywords, preview, section_guide]
     date_prefixed_filenames: true        # YYYY-MM-DD-slug.md
   quests:
     path: pages/_quests
@@ -191,6 +194,49 @@ loop:
     hobbies: 0.6
     notebooks: 0.7
     pages: 0.8
+
+# ---------------------------------------------------------------------------
+# Brand / voice governance (advisory). The engine (cms.py _check_brand) flags
+# brand drift on POSTS only and emits substantive `brand_drift:*` issues into the
+# worklist. These NEVER block CI, never auto-merge, and — by design — do NOT enter
+# the health score (advisory_only). Brand FACTS live in _data/brand/; these are
+# the ENFORCEMENT thresholds. Resolution: a post -> section slug -> profile via
+# _data/brand/sections/_registry.yml (folder name is the default slug). Flip
+# `enabled: false` to disable the whole subsystem.
+# ---------------------------------------------------------------------------
+brand:
+  enabled: true
+  store_root: _data/brand           # pointer to the authoritative brand store
+  advisory_only: true               # brand issues never affect health or auto-merge
+  # Global ruleset; per-section entries below override/extend it.
+  global:
+    # Empty-hype words to flag (mirror of _data/brand/glossary.yml > discouraged).
+    banned_terms: [comprehensive, powerful, seamless, cutting-edge, revolutionary, game-changing, effortless]
+    # Canonical spellings (wrong -> right); mirror of glossary.yml > preferred.
+    preferred_terms:
+      Github: GitHub
+      Javascript: JavaScript
+      CICD: CI/CD
+      NodeJS: Node.js
+      VSCode: VS Code
+    emoji_intensity: { min: 0, max: 10 }   # per-document emoji count band
+    formality_target: 55                   # 0=casual ... 100=formal (heuristic)
+  # Per-section overrides, keyed by section slug (see _registry.yml). Absent keys
+  # inherit `global`.
+  sections:
+    devops:
+      formality_target: 60
+      required_structural: ["Verify"]      # each how-to should show a verify step
+    system-administration:
+      required_structural: ["Verify"]
+    devops-news-muse:
+      emoji_intensity: { min: 1, max: 14 } # magazine framing tolerates more
+      formality_target: 45
+      word_count: { min: 150, max_suggest: 700 }
+    creative-experimental:
+      banned_terms_relax: [cutting-edge, revolutionary]
+    trends-ideas:
+      banned_terms_relax: [cutting-edge]
 
 # ---------------------------------------------------------------------------
 # Output locations (all under .cms/, auto-ignored by Jekyll).

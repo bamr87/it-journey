@@ -1,0 +1,59 @@
+# IT-Journey — voice profiles (machine-readable core)
+#
+# The registry of voice profiles. This file is the authoritative list of profile
+# NAMES (the keys under `profiles`). The brand-voice skill loads the resolved
+# profile here; cms.py validates that a post's voice_profile/section guide names a
+# real profile. NUMERIC enforcement thresholds (emoji counts, formality target,
+# required structural elements) live in .cms/config.yml > brand, keyed by section
+# slug — edit those there, not here. The narrative pillars live in voice.md.
+# Consumed as site.data.brand.voice.*.
+
+default_profile: practitioner-chronicle
+
+profiles:
+  practitioner-chronicle:
+    summary: >-
+      The house default. A working practitioner walking you through real work —
+      pragmatic, evidence-first, honest about what broke.
+    person: second person + imperative ("Run", "You'll see")
+    tense: imperative for steps; past tense for what happened in a session
+    formality: medium (≈55 on a 0=casual…100=formal scale)
+    emoji: light — occasional section markers, never decorative spam
+    sentence_length: short-to-medium; one idea per sentence
+    hallmarks:
+      - Every claim has a verify step or a command behind it.
+      - Owns the dead ends (DFF) instead of hiding them.
+      - Links the canonical doc once instead of re-explaining (DRY).
+    avoid:
+      - Marketing adjectives; unverified benchmark claims; gatekeeping.
+
+  concept-essay:
+    summary: >-
+      For ideas, trends, business, and culture pieces — analytical and
+      reflective rather than step-by-step.
+    person: third person / first person where a take is owned
+    tense: present
+    formality: higher (≈65)
+    emoji: minimal
+    sentence_length: medium; arguments may run longer than a tutorial's
+    hallmarks:
+      - Makes a clear argument and supports it with evidence or experience.
+      - Connects the idea back to a reader's practice ("so what").
+    avoid:
+      - Hype, hand-waving, and trend-chasing without substance.
+
+  muse-opinion:
+    summary: >-
+      Short-form opinion / news "muses" surfaced via the magazine landing.
+      Punchy, first-person, opinion-forward.
+    person: first person
+    tense: present
+    formality: lower (≈45)
+    emoji: moderate — fits the magazine framing
+    sentence_length: short; lead with the hook and the take
+    structure: hook -> take -> one piece of evidence / one link out -> zer0-to-her0 tie-back
+    hallmarks:
+      - Has an actual opinion and states it early.
+      - One link out, not ten. Tight word budget.
+    avoid:
+      - Burying the take; turning a muse into a full tutorial.

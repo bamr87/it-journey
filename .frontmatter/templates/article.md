@@ -11,4 +11,7 @@ categories: []
 meta: null
 snippet: null
 slug: null
+# Optional brand pointer — defaults to the post's folder; set to override the
+# governing _data/brand/sections guide (e.g. devops-news-muse for a short muse).
+section_guide: null
 ---

@@ -1,0 +1,74 @@
+# IT-Journey — brand values (machine-readable core)
+#
+# The values are the governance backbone for authoring. Each carries a
+# `writing_implication`: how the value should change the prose itself. The
+# brand-voice skill reads these when drafting; section guides reference them by
+# code rather than restating them. Source: pages/_about/about.md ("Core
+# Principles"), pages/_about/purpose.md ("Approaches" + "Mission").
+# Consumed as site.data.brand.values.*.
+
+mission: >-
+  Democratize IT education through open-source technologies and AI tools so
+  anyone with curiosity and dedication can learn — equalizing the imbalance
+  between the haves and have-nots by empowering people with tools that have
+  grassroots potential.
+
+# The seven core principles (about.md). These shape both what we build and how
+# we write about it.
+principles:
+  - code: DFF
+    name: Design for Failure
+    one_liner: Failures are inevitable; build (and write) to handle them gracefully.
+    writing_implication: >-
+      Be honest about what broke. Show the failure, the diagnosis, and the
+      recovery — not just the happy path. A post that hides its dead ends
+      teaches less than one that owns them.
+  - code: DRY
+    name: Don't Repeat Yourself
+    one_liner: One authoritative source per piece of knowledge.
+    writing_implication: >-
+      Link to the canonical explanation instead of re-explaining it. Guides
+      point at this store; they never restate the values or voice pillars.
+  - code: KIS
+    name: Keep It Simple
+    one_liner: Clarity over cleverness.
+    writing_implication: >-
+      Plain words over jargon; short sentences over clever ones. If a sentence
+      needs a second read to parse, simplify it.
+  - code: REnO
+    name: Release Early and Often
+    one_liner: Ship increments, gather feedback, improve.
+    writing_implication: >-
+      Publish a tight, useful piece now over a sprawling perfect one later.
+      A working tutorial beats an unfinished epic.
+  - code: MVP
+    name: Minimum Viable Product
+    one_liner: Build the smallest thing that delivers real value.
+    writing_implication: >-
+      Cover the core path that lets the reader succeed; cut tangents that don't
+      serve the stated objective.
+  - code: COLAB
+    name: Collaboration
+    one_liner: Collective intelligence beats lone effort.
+    writing_implication: >-
+      Credit sources and contributors. Invite the reader in (issues, PRs,
+      discussions). Write with the community, not at it.
+  - code: AIPD
+    name: AI-Powered Development
+    one_liner: AI is a collaborator that accelerates, not a replacement for judgment.
+    writing_implication: >-
+      Be transparent when AI assisted the work, and honest about what it got
+      right and wrong. Show the human review, never imply blind trust.
+
+# The three working approaches (purpose.md). Lighter-weight heuristics that
+# complement the principles.
+approaches:
+  - code: PoLR
+    name: Path of Least Resistance
+    writing_implication: Recommend the simplest route that works before the advanced one.
+  - code: OSAP
+    name: Open Source As Possible
+    writing_implication: Prefer open tools and free tiers; flag when something is paid/proprietary.
+  - code: KISS
+    name: Keep It Stupid Simple
+    writing_implication: Default to the most boring, reliable solution that meets the need.

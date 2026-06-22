@@ -24,6 +24,13 @@ Default to `intermediate` and `all platforms` if user says "default".
 
 ## Operating Protocol (DO)
 
+### 0. Load brand voice
+
+Invoke the `brand-voice` skill first. Resolve the governing section from the
+target folder (`pages/_posts/<category>/`) or the user's topic, load the matching
+`_data/brand/sections/<slug>.md` + the central store, and write the outline in that
+voice. Carry the resolved slug into `section_guide` below.
+
 ### 1. Generate Front Matter
 
 ```yaml
@@ -36,6 +43,7 @@ permalink: /posts/<kebab-slug>/
 categories: [<primary>, <secondary>]
 tags: [<3-7 tags>]
 author: bamr87
+section_guide: <resolved section slug — usually matches the folder>
 excerpt: "<1-2 sentence preview>"
 learning_objectives:
   - "<verb> <thing>"
@@ -135,6 +143,7 @@ Before returning to user:
 - [ ] No literal secrets in examples (use `${env:TOKEN}` placeholders)
 - [ ] Platform notes present if scope > 1 platform
 - [ ] Cross-links to ≥ 1 related quest/post
+- [ ] Voice matches the resolved section profile; no discouraged terms (run `/brand-audit` or `make cms-all`)
 - [ ] Permalink follows `/posts/<slug>/` (required if non-post content will link here)
 
 ## Kaizen Hook (ACT)
