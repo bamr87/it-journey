@@ -71,5 +71,6 @@ If `curl` returns `build OK`, the container is up and serving.
   it re-resolve, not to fight it.
 
 **Related:**
+
 - [Foundational CI/CD Pipelines](/posts/foundational-ci-cd-pipelines-github-vscode-extensions/)
 - [Docker Beginner's Tutorial](/posts/docker-beginners-tutorial/)
