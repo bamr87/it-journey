@@ -4,7 +4,9 @@
 .PHONY: help stats stats-update stats-show stats-clean stats-config test \
         serve build build-prod build-ci clean \
         quest-validate quest-network quest-network-strict quest-build-network \
-        quest-audit quest-audit-strict quest-levels-data quest-nav quest-data quest-normalize \
+        quest-audit quest-audit-strict quest-audit-report quest-levels-data quest-nav quest-data quest-normalize \
+        docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
+        quest-execute quest-execute-host \
         content-validate content-normalize content-normalize-apply content-audit \
         cms-index cms-analyze cms-plan cms-status cms-all
 
@@ -39,8 +41,17 @@ help:
 	@echo "  make quest-build-network    - Rebuild quest-network.json / network.yml"
 	@echo "  make quest-levels-data      - Emit _data/quests/levels.yml from registry"
 	@echo "  make quest-nav              - Regenerate _data/navigation/quests.yml from collection"
-	@echo "  make quest-audit            - Full quest audit (validate + network + build)"
-	@echo "  make quest-audit-strict     - Full audit + strict network (matches CI behaviour)"
+	@echo "  make quest-audit            - Unified audit: content + network + data freshness (one report)"
+	@echo "  make quest-audit-strict     - Unified audit with warnings escalated to failures"
+	@echo "  make quest-audit-report     - Unified audit + JSON report (quest-audit-report.json)"
+	@echo ""
+	@echo "🐳 Dockerized Validation (CI-parity, no host Ruby/Python)"
+	@echo "  make docker-validate        - Run the unified quest audit in Docker (python:3.12-slim)"
+	@echo "  make docker-validate-strict - Dockerized audit with warnings as failures"
+	@echo "  make docker-build-ci        - CI-parity Jekyll build in Docker (ruby:3.2.3 + github-pages)"
+	@echo "  make docker-audit-tier2     - Dockerized audit + Claude tier-2 (needs CLAUDE_CODE_OAUTH_TOKEN)"
+	@echo "  make quest-execute QUEST=<path> - Claude RUNS a quest's code snippets, isolated in Docker"
+	@echo "  make quest-execute SAMPLE=N     - same, across a spread of N quests"
 	@echo ""
 	@echo "📝 Content Tooling"
 	@echo "  make content-validate          - Frontmatter validator across pages/"
@@ -198,11 +209,57 @@ quest-normalize:
 quest-data: quest-levels-data quest-nav quest-build-network
 	@echo "✅ All registry-derived quest data regenerated (levels, tiers, order, navigation, network)."
 
-quest-audit: quest-build-network quest-validate quest-network
-	@echo "✅ Quest audit complete — content, dependencies, and network artifacts validated."
+quest-audit:
+	@echo "🎯 Unified quest audit (content + network + data freshness)..."
+	@python3 scripts/quest/quest_audit.py $(EXTRA)
 
-quest-audit-strict: quest-build-network quest-validate quest-network-strict
-	@echo "✅ Strict quest audit complete (orphan warnings escalated)."
+quest-audit-strict:
+	@echo "🎯 Strict quest audit (warnings escalated to failures)..."
+	@python3 scripts/quest/quest_audit.py --strict $(EXTRA)
+
+# Run the audit the way CI / the daily loop should: deterministic layers only,
+# JSON report written for tooling to pick up.
+quest-audit-report:
+	@python3 scripts/quest/quest_audit.py --json quest-audit-report.json $(EXTRA)
+
+# ── Dockerized validation (CI-parity, no host Ruby/Python needed) ───────────
+# docker-validate : full deterministic audit in python:3.12-slim (fast).
+# docker-build-ci : real Jekyll build in the ruby:3.2.3 + github-pages image.
+# docker-audit-tier2 : audit + Claude review (needs CLAUDE_CODE_OAUTH_TOKEN).
+# Override args with EXTRA=..., e.g.  make docker-validate EXTRA=--strict
+docker-validate:
+	@echo "🐳 Quest audit in Docker (python:3.12-slim)..."
+	@docker compose run --rm quest-audit audit $(EXTRA)
+
+docker-validate-strict:
+	@docker compose run --rm quest-audit strict $(EXTRA)
+
+docker-build-ci:
+	@echo "🐳 CI-parity Jekyll build in Docker (ruby:3.2.3 + github-pages)..."
+	@docker compose run --rm quest-build
+
+docker-audit-tier2:
+	@echo "🐳 Quest audit + Claude tier-2 in Docker (needs CLAUDE_CODE_OAUTH_TOKEN)..."
+	@docker compose run --rm -e CLAUDE_CODE_OAUTH_TOKEN -e ANTHROPIC_API_KEY \
+		quest-audit tier2 $(MODE) $(EXTRA)
+
+# ── Execute a quest's code snippets with a Claude agent (isolated) ──────────
+# A Claude Code agent walks a quest and ACTUALLY RUNS its runnable code snippets
+# in a disposable Docker container (real isolation), reporting which work.
+#   make quest-execute QUEST=pages/_quests/0001/terminal-mastery.md
+#   make quest-execute SAMPLE=3            # a spread of quests across levels
+#   make quest-execute-host QUEST=...      # run on the HOST (no container) — riskier
+# Needs CLAUDE_CODE_OAUTH_TOKEN (or ANTHROPIC_API_KEY); without it, runs --mock.
+quest-execute:
+	@echo "🤖🐳 Claude executing quest code snippets in an isolated container..."
+	@if [ -n "$(QUEST)" ]; then TARGET="--changed $(QUEST)"; else TARGET="--tier2-sample $(SAMPLE)"; fi; \
+	docker compose run --rm -e CLAUDE_CODE_OAUTH_TOKEN -e ANTHROPIC_API_KEY \
+		quest-audit execute $$TARGET $(EXTRA)
+
+quest-execute-host:
+	@echo "🤖 Claude executing quest snippets on the HOST sandbox (prefer 'make quest-execute' for isolation)..."
+	@if [ -n "$(QUEST)" ]; then TARGET="$(QUEST)"; else TARGET="-d pages/_quests --sample $(SAMPLE)"; fi; \
+	python3 test/quest-validator/agentic_validate.py $$TARGET --mode execute --max-turns 40 --summary $(EXTRA)
 
 # Agentic validation (tier 2): drive Claude Code (OAuth) to play quests end-to-end.
 # SAMPLE / MODE / EXTRA are overridable, e.g.  make quest-validate-agentic SAMPLE=5 MODE=execute

@@ -295,133 +295,48 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
-      - name: Setup Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install pyyaml
-
-      - name: Run full quest validation
+      # Heavy/scheduled audit runs in the SAME Docker image developers use
+      # locally (`make docker-validate`) so CI and local are one code path. The
+      # unified orchestrator gates content (≥70%), network integrity, AND data
+      # freshness (regenerate + diff) in a single command + report.
+      - name: Run unified quest audit (Docker)
+        id: audit
         env:
           EXCLUDE_DRAFTS: ${{ github.event.inputs.exclude_drafts }}
           FAIL_THRESHOLD: ${{ github.event.inputs.fail_threshold }}
         run: |
-          EXTRA_ARGS=""
+          EXTRA="--json quest-audit-report.json"
+          [ "$EXCLUDE_DRAFTS" = "true" ] && EXTRA="$EXTRA --exclude-drafts"
+          THRESHOLD="${FAIL_THRESHOLD:-70}"
+          EXTRA="$EXTRA --fail-threshold $THRESHOLD"
+          echo "Running: quest_audit.py $EXTRA"
+          set +e
+          docker compose run --rm quest-audit audit $EXTRA | tee /tmp/audit.txt
+          echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          set -e
 
-          if [ "$EXCLUDE_DRAFTS" = "true" ]; then
-            EXTRA_ARGS="$EXTRA_ARGS --exclude-drafts"
-          fi
-
-          # Default threshold = 70 (blocking). Explicit "0" disables it.
-          THRESHOLD="$FAIL_THRESHOLD"
-          if [ -z "$THRESHOLD" ]; then
-            THRESHOLD="70"
-          fi
-          if [ "$THRESHOLD" != "0" ]; then
-            EXTRA_ARGS="$EXTRA_ARGS --fail-threshold $THRESHOLD"
-          fi
-
-          python3 test/quest-validator/quest_validator.py \
-            -d pages/_quests/ \
-            --summary \
-            --report test/quest-validator/full-audit-report.json \
-            $EXTRA_ARGS
-
-          echo ""
-          echo "============================================"
-          echo "Report saved to test/quest-validator/full-audit-report.json"
-          echo "============================================"
-
-      - name: Run quest network validation
+      - name: Audit summary
+        if: always()
         run: |
-          python3 scripts/quest/validate-quest-network.py \
-            --json test/quest-validator/network-report.json
+          {
+            echo "## 🎯 Quest Audit (unified, Docker)"
+            echo ""
+            echo '```'
+            sed 's/\x1b\[[0-9;]*m//g' /tmp/audit.txt 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload network report
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: quest-network-report-${{ github.run_number }}
-          path: test/quest-validator/network-report.json
-          retention-days: 90
-
-      - name: Upload audit report
+      - name: Upload consolidated report
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: quest-audit-report-${{ github.run_number }}
-          path: test/quest-validator/full-audit-report.json
+          path: quest-audit-report.json
+          if-no-files-found: ignore
           retention-days: 90
 
-      - name: Generate audit summary
+      - name: Fail if the audit did not pass
+        if: steps.audit.outputs.rc != '0'
         run: |
-          python3 -c "
-          import json
-          with open('test/quest-validator/full-audit-report.json') as f:
-              data = json.load(f)
-
-          print('## Quest Audit Summary')
-          print(f\"- **Total quests**: {data['total']}\")
-          print(f\"- **Complete**: {data['complete']}\")
-          print(f\"- **Placeholders**: {data['placeholders']}\")
-          print(f\"- **Passed**: {data['passed']}\")
-          print(f\"- **Failed**: {data['failed']}\")
-          print(f\"- **Average score**: {data['average_score']:.1f}%\")
-          print()
-          print('### Score Distribution')
-          for bucket, count in data.get('score_distribution', {}).items():
-              bar = '█' * count
-              print(f\"  {bucket:>7}: {count:3d} {bar}\")
-          print()
-          print('### Per-Level Breakdown')
-          print(f\"{'Level':<8} {'Total':>5} {'Pass':>5} {'Fail':>5} {'Avg%':>6} {'Placeholders':>12}\")
-          print('-' * 46)
-          for level, stats in sorted(data.get('level_stats', {}).items()):
-              avg = stats.get('avg_score', 0)
-              print(f\"{level:<8} {stats['total']:>5} {stats['passed']:>5} {stats['failed']:>5} {avg:>5.1f}% {stats['placeholders']:>12}\")
-          " >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Regenerate all registry-derived data
-        id: regen_network
-        run: |
-          # All four artifacts derive from scripts/quest/quest_registry.py + the
-          # quest files; regenerating proves nothing has drifted.
-          python3 scripts/quest/generate-quest-levels-data.py
-          python3 scripts/quest/generate-quest-navigation.py
-          python3 scripts/quest/build-quest-network.py \
-            --quest-dir pages/_quests \
-            --json assets/data/quest-network.json \
-            --yaml _data/quests/network.yml
-          echo "regenerated=true" >> "$GITHUB_OUTPUT"
-
-      - name: Check for stale generated data
-        run: |
-          STALE_FILES="assets/data/quest-network.json _data/quests/network.yml _data/quests/levels.yml _data/quests/tiers.yml _data/quests/order.yml _data/navigation/quests.yml"
-          if git diff --quiet $STALE_FILES 2>/dev/null; then
-            echo "✅ Generated quest data (network, levels, tiers, order, navigation) is up to date." >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "::error::Generated quest data is stale. Regenerate from the registry and commit."
-            {
-              echo ""
-              echo "## ❌ Stale Generated Quest Data"
-              echo ""
-              echo "Committed quest data (network / levels / tiers / order / navigation) does not match the registry + quest files."
-              echo ""
-              echo "To fix, run:"
-              echo "\`\`\`bash"
-              echo "make quest-data"
-              echo "git add _data/quests assets/data/quest-network.json _data/navigation/quests.yml"
-              echo "git commit -m 'chore(quests): regenerate quest data'"
-              echo "\`\`\`"
-            } >> "$GITHUB_STEP_SUMMARY"
-            exit 1
-          fi
-
-      - name: Upload regenerated network JSON
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: quest-network-${{ github.run_number }}
-          path: |
-            assets/data/quest-network.json
-            _data/quests/network.yml
-          retention-days: 30
+          echo "::error::Unified quest audit failed (content gate, network integrity, or stale generated data). See the job summary; fix and, for stale data, run 'make quest-data' and commit."
+          exit 1
