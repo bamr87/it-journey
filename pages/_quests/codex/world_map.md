@@ -38,6 +38,7 @@ skill_focus:
 - reference
 learning_style: reading
 fmContentType: codex
+mermaid: true
 ---
 *Welcome, brave traveler, to the complete cartographical guide of the IT-Journey realm! This mystical map reveals every secret path, hidden treasure, and learning adventure across our digital kingdom.*
 

@@ -56,6 +56,7 @@ redirect_from:
 layout: quest
 sub_title: 'Level 0101 (5) Quest: LaTeX Tool Mastery and CV Construction'
 draft: false
+mermaid: true
 ---
 ## 🧙‍♂️ Epic Introduction
 

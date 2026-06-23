@@ -53,6 +53,7 @@ author:
   first: Amr
   middle: GPT
 draft: false
+mermaid: true
 ---
 ## Structured approach to a {{ page.schema }} article topic
 

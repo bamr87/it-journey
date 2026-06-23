@@ -96,6 +96,7 @@ validation_criteria:
   - Describe the SemVer implications of each commit type
 sub_title: 'Level 1100 (12) Quest: Main Quest - Advanced Git Mastery'
 draft: false
+mermaid: true
 ---
 *Greetings, battle-hardened code warrior! You have survived the introductory enchantments of branching and the clean-commit oath. But the realm of version control runs far deeper than a single `git push`. Today you face the Grand Merge Ritual — a trial reserved for those who would command entire release kingdoms, orchestrate fleets of pull requests, and bend the timeline of code to their will.*
 

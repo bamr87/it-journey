@@ -81,6 +81,7 @@ rewards:
   unlocks_features:
   - Access to Services, Networking, and Configuration quests
 layout: quest
+mermaid: true
 ---
 *Welcome back, Warrior. In the previous quest you learned that a lone Pod is fragile - delete it, and it stays dead, for no controller watches over it. Now you will learn to command the **workload legions**: the controllers that create Pods, keep them at the right count, heal them when they fall, and upgrade them without downtime. This is where Kubernetes stops being a curiosity and becomes a production weapon.*
 

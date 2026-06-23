@@ -58,6 +58,7 @@ validation_methods:
 - Check site performance with Azure monitoring
 section: DevOps
 draft: false
+mermaid: true
 ---
 ## Introduction
 

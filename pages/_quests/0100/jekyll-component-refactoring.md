@@ -74,6 +74,7 @@ validation_criteria:
 layout: quest
 redirect_from:
 - /quests/0100/side-quests/jekyll-component-refactoring/
+mermaid: true
 ---
 *Greetings, brave artisan! Welcome to The Artisan's Forge — an epic journey that will transform you from a coder who patches things together into a true component architect. This quest guides you through the real-world process of turning hard-coded, inline Jekyll theme elements into modular, configurable, and reusable components.*
 

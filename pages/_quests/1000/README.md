@@ -23,6 +23,7 @@ toc_sticky: true
 draft: false
 date: '2025-12-20T20:02:51.000Z'
 author: IT-Journey Team
+mermaid: true
 ---
 # Level 1000 (8) - Cloud Computing Fundamentals
 

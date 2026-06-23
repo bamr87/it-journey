@@ -81,6 +81,7 @@ rewards:
   unlocks_features:
   - The edge layer that fronts the scaling quest
 layout: quest
+mermaid: true
 ---
 *Architect, your kingdom of services now sprawls - and your clients are lost, knocking on a dozen different gates, each demanding its own credentials. An **API Gateway** is the single grand entrance to the Citadel: one address where every request arrives, is checked, is routed to the right keep, and is sent on its way. Master it, and your clients see one clean facade instead of a chaotic warren of services.*
 

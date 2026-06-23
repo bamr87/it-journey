@@ -94,6 +94,7 @@ quest_mapping:
   biome: Terminal
 comments: true
 draft: true
+mermaid: true
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 

@@ -45,7 +45,13 @@ jobs:
     - name: Install dependencies
       run: |
         pip install pyyaml
-    
+
+    - name: Check Mermaid render flags
+      # Fails if any page contains a Mermaid diagram but omits `mermaid: true`
+      # (the theme only loads Mermaid when that flag is set). Stdlib-only.
+      run: |
+        python3 scripts/validation/check_mermaid_flags.py
+
     - name: Get changed markdown files
       id: changed-files
       run: |

@@ -29,6 +29,7 @@ permalink: /erp-stack-architecture-guide/
 attachments: ''
 comments: true
 draft: false
+mermaid: true
 ---
 ## Introduction: Understanding Enterprise Resource Planning Systems
 

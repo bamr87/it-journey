@@ -77,6 +77,7 @@ rewards:
   - Collaborative development workflows
   - Code review via pull requests
 layout: quest
+mermaid: true
 ---
 *Greetings, brave adventurer! Welcome to the Git Basics quest — where you'll learn the version control system that powers nearly every software project on the planet. Git lets you track changes, collaborate with others, and fearlessly experiment with code knowing you can always roll back. This is the single most important tool in any developer's inventory.*
 
