@@ -90,6 +90,7 @@ rewards:
   - Data-driven site optimization capabilities
 layout: quest
 draft: false
+mermaid: true
 ---
 *In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 

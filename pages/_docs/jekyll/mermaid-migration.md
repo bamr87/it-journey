@@ -19,6 +19,7 @@ author: bamr87
 date: '2025-11-08T21:04:54.000Z'
 lastmod: '2026-05-24T00:00:00.000Z'
 draft: false
+mermaid: true
 ---
 # Mermaid Auto-Detection Migration Guide
 

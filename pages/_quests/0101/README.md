@@ -18,6 +18,7 @@ tags:
 - ci
 - cd
 - devops
+mermaid: true
 ---
 # Level 0101: Advanced Docker & DevOps
 

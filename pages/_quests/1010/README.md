@@ -17,6 +17,7 @@ tags:
 - warrior
 - monitoring
 - observability
+mermaid: true
 ---
 # Level 1010: Automation & Testing
 

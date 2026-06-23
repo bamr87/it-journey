@@ -7,6 +7,7 @@ username: bamr87
 contributor_data: bamr87
 permalink: /contributors/bamr87/
 lastmod: '2026-03-21T15:12:32.000Z'
+mermaid: true
 ---
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 

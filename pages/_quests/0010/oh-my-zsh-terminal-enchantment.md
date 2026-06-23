@@ -97,6 +97,7 @@ redirect_from:
 layout: quest
 sub_title: 'Level 0010 (2) Quest: Terminal Supercharging and Customization'
 draft: false
+mermaid: true
 ---
 ## 🌟 The Legend of Terminal Enchantment
 

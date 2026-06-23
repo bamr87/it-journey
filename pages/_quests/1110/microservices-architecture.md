@@ -84,6 +84,7 @@ rewards:
   unlocks_features:
   - Access to the gateway, scaling, and event-driven quests
 layout: quest
+mermaid: true
 ---
 *Architect, the Citadel now turns from the design of a single keep to the design of a *kingdom*. **Microservices Architecture** is the art of splitting one application into many independently deployable services - and the wisdom to know when that splitting helps and when it merely trades simple problems for distributed ones.*
 

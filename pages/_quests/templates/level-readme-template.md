@@ -34,6 +34,7 @@ skill_focus:
 learning_style: reading
 quest_type: template
 fmContentType: template
+mermaid: true
 ---
 # Level [BINARY] ([DECIMAL]) - [Level Name]
 

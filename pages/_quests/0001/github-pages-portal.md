@@ -60,6 +60,7 @@ rewards:
 - Understanding of static site hosting
 - Foundation for Jekyll and other SSGs
 layout: quest
+mermaid: true
 ---
 *Greetings, brave adventurer! Welcome to **The GitHub Pages Portal: Forging Your Digital Realm** - an epic journey that will transform your code into live web experiences. This quest will guide you through deploying your first website using GitHub Pages, the free hosting solution that turns your GitHub repositories into beautiful, accessible websites.*
 

@@ -17,6 +17,7 @@ tags:
 categories:
 - quests
 - tools
+mermaid: true
 ---
 # Tools Collection: Development Tools & Workflows
 

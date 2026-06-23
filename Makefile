@@ -8,6 +8,7 @@
         docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
         quest-execute quest-execute-host \
         content-validate content-normalize content-normalize-apply content-audit \
+        mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
@@ -292,8 +293,16 @@ content-normalize-apply:
 	@python3 scripts/content/normalize-frontmatter.py pages/ --apply --quiet \
 		--report TODO/seo/data/normalize-apply.json
 
-content-audit: content-validate quest-validate quest-network
-	@echo "✅ Content audit complete — frontmatter, quests, and network validated."
+mermaid-check:
+	@echo "🧜 Checking Mermaid front-matter flags across pages/ ..."
+	@python3 scripts/validation/check_mermaid_flags.py
+
+mermaid-fix:
+	@echo "🧜 Adding missing 'mermaid: true' flags across pages/ ..."
+	@python3 scripts/validation/check_mermaid_flags.py --fix
+
+content-audit: content-validate mermaid-check quest-validate quest-network
+	@echo "✅ Content audit complete — frontmatter, mermaid, quests, and network validated."
 
 # AI-augmented CMS engine (scripts/cms/cms.py -> .cms/)
 cms-index:

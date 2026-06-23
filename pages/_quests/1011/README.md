@@ -17,6 +17,7 @@ tags:
 - warrior
 - security
 - compliance
+mermaid: true
 ---
 # Level 1011: Feature Development
 

@@ -55,6 +55,7 @@ redirect_from:
 layout: quest
 sub_title: 'Level 1100 (12) Quest: Function Crafting and Modular Abstractions'
 draft: false
+mermaid: true
 ---
 ## 🧙‍♂️ Epic Introduction
 

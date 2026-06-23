@@ -47,6 +47,7 @@ validation_methods:
 - Build a simple wrapper script using the architecture described
 - Refactor an existing script to separate logic from input
 draft: false
+mermaid: true
 ---
 ## Introduction
 

@@ -68,6 +68,7 @@ layout: quest
 redirect_from:
 - /quests/0001/side-quests/it-journey-stack-analysis/
 draft: false
+mermaid: true
 ---
 # Stack Attack Analysis: IT-Journey
 

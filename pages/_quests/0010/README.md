@@ -17,6 +17,7 @@ tags:
 - apprentice
 - terminal
 - mastery
+mermaid: true
 ---
 # Level 0010: Terminal Enhancement & Shell Mastery
 

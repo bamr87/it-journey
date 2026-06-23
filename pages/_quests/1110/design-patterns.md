@@ -82,6 +82,7 @@ rewards:
   unlocks_features:
   - Access to the Architecture & Design Patterns quest line
 layout: quest
+mermaid: true
 ---
 *Greetings, Architect! You have ascended to the **Master tier**, where the Citadel of Architecture rises above every kingdom you have ever built. Here you do not write a single spell - you design the very grammar in which all spells are written. This quest, **Software Design Patterns**, hands you the master builder's catalog: named, battle-tested solutions to problems that have recurred in software since the first object met the first method.*
 

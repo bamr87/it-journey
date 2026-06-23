@@ -81,6 +81,7 @@ rewards:
   - Foundation for version control learning
 layout: quest
 sub_title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
+mermaid: true
 ---
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 

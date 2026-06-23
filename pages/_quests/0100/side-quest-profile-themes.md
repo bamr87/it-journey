@@ -71,6 +71,7 @@ validation_criteria:
 layout: quest
 redirect_from:
 - /quests/0100/side-quests/profile-themes/
+mermaid: true
 ---
 # 🎭 Profile Themes: Unleashing the Style Sorcerer
 
