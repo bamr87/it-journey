@@ -73,6 +73,14 @@ def main():
                         "execute = run safe commands in a sandbox (use in CI/containers).")
     p.add_argument("--model", help="Model override passed to claude (e.g. an alias).")
     p.add_argument("--timeout", type=int, default=600, help="Per-quest timeout in seconds (default 600).")
+    p.add_argument("--max-turns", type=int, default=0,
+                   help="Per-quest agent turn ceiling (0 = CLI default). Bounds runaway loops.")
+    p.add_argument("--max-cost-usd", type=float, default=0.0,
+                   help="Abort the batch once cumulative reported cost exceeds this (0 = no ceiling).")
+    p.add_argument("--isolate", choices=["none", "docker"], default="none",
+                   help="execute-mode isolation. 'docker' is provided by running this whole "
+                        "validator inside a container (see `make docker-audit-tier2`); accepted "
+                        "here so callers can pass it through without erroring.")
     p.add_argument("--claude-bin", default="claude", help="Path to the claude CLI.")
     p.add_argument("--mock", action="store_true",
                    help="Synthetic deterministic verdicts (no CLI, no cost) — for pipeline testing.")
@@ -101,7 +109,7 @@ def main():
     r = runner.AgenticRunner(
         mode=args.mode, model=args.model, timeout=args.timeout,
         claude_bin=args.claude_bin, mock=args.mock, dry_run=args.dry_run,
-        verbose=args.verbose,
+        verbose=args.verbose, max_turns=args.max_turns,
     )
 
     if not (args.mock or args.dry_run) and not r.available():
@@ -125,11 +133,20 @@ def main():
         sys.exit(0)
 
     results = []
+    spent = 0.0
+    truncated = False
     for i, q in enumerate(quests, 1):
+        if args.max_cost_usd and spent >= args.max_cost_usd:
+            print(f"\n💰 Cost ceiling reached (${spent:.4f} ≥ ${args.max_cost_usd}); "
+                  f"stopping after {i - 1}/{len(quests)} quest(s).", file=sys.stderr)
+            truncated = True
+            break
         if not args.mock:
             print(f"[{i}/{len(quests)}] {args.mode}: {q.rel_path} …", file=sys.stderr, flush=True)
         try:
-            results.append(r.run(q))
+            res = r.run(q)
+            results.append(res)
+            spent += (res.get("meta", {}) or {}).get("cost_usd") or 0.0
         except runner.AuthError as e:
             # Auth won't fix itself between quests — abort the whole batch.
             print(f"\n❌ {e}", file=sys.stderr)
@@ -140,7 +157,16 @@ def main():
                             "verdict_obj": None})
 
     agg = report.aggregate(results)
+    if truncated:
+        # Record partial coverage so a cost-truncated batch is never mistaken
+        # for full, clean coverage (by a human or the gate below).
+        agg["truncated"] = True
+        agg["evaluated"] = len(results)
+        agg["requested"] = len(quests)
     print("\n" + report.render_console(agg, verbose=args.verbose))
+    if truncated:
+        print(f"\n⚠️  BATCH TRUNCATED by cost ceiling — evaluated {len(results)}/{len(quests)} quest(s). "
+              f"The score gate covers only the evaluated subset.", file=sys.stderr)
 
     if args.report:
         Path(args.report).write_text(report.render_json(agg), encoding="utf-8")
@@ -156,6 +182,13 @@ def main():
         below = [r for r in results if r.get("overall", 0) < args.fail_threshold]
         if below:
             print(f"\n❌ {len(below)} quest(s) below {args.fail_threshold}%.", file=sys.stderr)
+            sys.exit(1)
+        # A truncated batch cannot certify the quests it never evaluated, so a
+        # gated run must NOT report success on partial coverage.
+        if truncated:
+            print(f"\n❌ Cannot certify a cost-truncated batch against a "
+                  f"{args.fail_threshold}% gate ({len(results)}/{len(quests)} evaluated).",
+                  file=sys.stderr)
             sys.exit(1)
     if agg["scored"] == 0:
         sys.exit(1)

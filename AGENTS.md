@@ -100,7 +100,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
  - Test validator: `./test/quest-validator/test-validator.sh`
  - Migrate quest permalinks (dry run): `python3 scripts/quest/migrate-permalinks.py --dry-run`
  - Migrate quest permalinks (apply): `python3 scripts/quest/migrate-permalinks.py`
- - **Full quest audit before PR**: `make quest-audit` (runs build-quest-network → quest_validator → validate-quest-network). For CI parity (orphan warnings escalate to errors), use `make quest-audit-strict`. CI blocks merges on validator errors and any score below 70%.
+ - **Full quest audit before PR**: `make quest-audit` — the unified validator `scripts/quest/quest_audit.py`: tier-1 content scoring + dependency-network integrity + generated-data freshness, in one consolidated report and exit code. Run the identical audit in Docker (CI-parity, no host Python) with `make docker-validate`. If the freshness layer flags stale data, run `make quest-data` and commit. Use `make quest-audit-strict` to escalate warnings to errors. CI blocks merges on validator errors and any score below 70%.
  - Regenerate sidebar nav: `make quest-nav` (rewrites `_data/navigation/quests.yml` from the quest collection).
  - Regenerate level metadata: `make quest-levels-data` (writes `_data/quests/levels.yml` from `scripts/quest/quest_registry.py`).
 

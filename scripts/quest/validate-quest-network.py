@@ -1,454 +1,506 @@
 #!/usr/bin/env python3
 """
-validate-quest-network.py
+validate-quest-network.py — quest dependency-graph integrity checker.
 
-Validates the quest network integrity across the IT-Journey quest system.
-Checks for:
-- Required frontmatter fields
-- Quest dependencies exist
-- No circular dependencies
-- Orphaned quests
-- Broken links
-- Quest progression paths
+Validates the *relationships between* quests (the network), as opposed to the
+per-file content quality that ``test/quest-validator/quest_validator.py`` (tier
+1) scores. Concretely it checks:
+
+  * every quest-tree page that should be a graph node has a permalink;
+  * controlled-vocabulary fields (level / difficulty / quest_type) hold legal
+    values — sourced from the registry, never re-hardcoded here;
+  * no file still carries a RETIRED frontmatter field (e.g. quest_relationships);
+  * every quest_dependency (required / recommended / unlocks) resolves to a real
+    node, honouring the ``# planned quest`` forward-reference escape hatch;
+  * no duplicate permalinks (two files claiming the same node id);
+  * no circular *required* prerequisites (a learner could never start);
+  * prerequisite level monotonicity (a quest shouldn't require a higher-level one);
+  * orphaned quests (reachable from nothing) — reported as warnings;
+  * (optional) the committed quest-network.json: every edge resolves to a node,
+    no duplicate node ids — i.e. the artifact the site actually ships is sound.
+
+Taxonomy and "what is a quest" rules come from ``quest_registry`` +
+``quest_lib`` so this validator can never drift from tier 1, the generators, or
+the templates. This module is import-safe: ``run_network_validation()`` returns
+a structured result for the unified ``quest_audit`` orchestrator.
 """
 
-import os
+from __future__ import annotations
+
+import argparse
+import json
 import sys
-import re
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
-from collections import defaultdict
+from typing import Dict, List, Optional
 
-# Try to import yaml, provide helpful error if not available
-try:
-    import yaml
-except ImportError:
-    print("Error: PyYAML is required but not installed.")
-    print("Install it with: pip3 install pyyaml")
-    sys.exit(1)
+_HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
+import quest_registry as reg  # noqa: E402
+import quest_lib  # noqa: E402
 
-# ANSI color codes
-RED = '\033[0;31m'
-GREEN = '\033[0;32m'
-YELLOW = '\033[1;33m'
-BLUE = '\033[0;34m'
-NC = '\033[0m'  # No Color
+# ANSI colours (suppressed when stdout is not a TTY).
+_TTY = sys.stdout.isatty()
+RED = "\033[0;31m" if _TTY else ""
+GREEN = "\033[0;32m" if _TTY else ""
+YELLOW = "\033[1;33m" if _TTY else ""
+BLUE = "\033[0;34m" if _TTY else ""
+NC = "\033[0m" if _TTY else ""
+
 
 def print_info(msg): print(f"{BLUE}[INFO]{NC} {msg}")
 def print_success(msg): print(f"{GREEN}[SUCCESS]{NC} {msg}")
 def print_warning(msg): print(f"{YELLOW}[WARNING]{NC} {msg}")
 def print_error(msg): print(f"{RED}[ERROR]{NC} {msg}")
 
-class QuestValidator:
-    def __init__(self, quest_dir: str):
+
+# Dependency buckets that form the directed graph. Sourced from the registry's
+# QUEST_DEPENDENCIES_KEYS so the edge kinds can't drift from the schema.
+_DEP_KINDS = list(reg.QUEST_DEPENDENCIES_KEYS)  # required/recommended/unlocks_quests
+# Edges that represent a hard prerequisite (used for cycle + monotonicity checks).
+_PREREQ_KEY = "required_quests"
+
+
+def _strip_planned_marker(value):
+    """Strip a trailing ``# planned quest`` / ``# planned`` inline marker.
+
+    Authors suffix a dependency URL with ``# planned quest`` to declare an
+    intentional forward reference to an unwritten quest (documented in
+    ``.github/instructions/quest.instructions.md``). Returns (clean, is_planned).
+    """
+    if not isinstance(value, str):
+        return value, False
+    stripped = value.strip()
+    import re
+    m = re.match(r"^(.*?)\s*#\s*planned(?:\s+quest)?\s*$", stripped, re.IGNORECASE)
+    if m:
+        return m.group(1).strip(), True
+    return stripped, False
+
+
+def _norm_link(value: str) -> str:
+    """Normalise a permalink to a trailing-slash node id."""
+    v = str(value).strip()
+    return v if v.endswith("/") else v + "/"
+
+
+class QuestNetworkValidator:
+    def __init__(self, quest_dir: str, network_json: Optional[str] = None):
         self.quest_dir = Path(quest_dir)
-        self.quests: Dict[str, Dict] = {}
+        self.network_json = Path(network_json) if network_json else None
+        # node id (permalink) -> {doc, frontmatter}
+        self.nodes: Dict[str, Dict] = {}
         self.errors: List[str] = []
         self.warnings: List[str] = []
         self.stats = {
-            'total_quests': 0,
-            'complete_quests': 0,
-            'placeholder_quests': 0,
-            'draft_quests': 0,
-            'orphaned_quests': 0,
-            'broken_dependencies': 0
+            "total_quests": 0,
+            "complete_quests": 0,
+            "placeholder_quests": 0,
+            "draft_quests": 0,
+            "orphaned_quests": 0,
+            "broken_dependencies": 0,
+            "duplicate_permalinks": 0,
+            "retired_fields": 0,
+            "dangling_edges": 0,
         }
-        
-        # Required frontmatter fields
-        self.required_fields = [
-            'title', 'description', 'level', 'difficulty', 
-            'estimated_time', 'quest_type', 'permalink'
-        ]
-    
-    def extract_frontmatter(self, file_path: Path) -> Tuple[Dict, str]:
-        """Extract YAML frontmatter from markdown file."""
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Match frontmatter between --- delimiters
-        match = re.match(r'^---\s*\n(.*?)\n---\s*\n(.*)', content, re.DOTALL)
-        if not match:
-            return {}, content
-        
-        try:
-            frontmatter = yaml.safe_load(match.group(1))
-            body = match.group(2)
-            return frontmatter or {}, body
-        except yaml.YAMLError as e:
-            self.errors.append(f"YAML parsing error in {file_path}: {e}")
-            return {}, content
-    
-    def scan_quests(self):
-        """Scan all quest markdown files and extract metadata."""
-        print_info("Scanning quest files...")
-        
-        def process_quest_file(md_file):
-            """Process a single quest file and store its data"""
-            try:
-                # Skip templates and non-quest meta files; include README.md files that are quest indexes
-                if any(skip in str(md_file) for skip in ['templates/', 'home.md', 'QUEST_BUILD_PLAN.md', 'PHASE1_COMPLETE.md', '/docs/', 'NETWORK_REPORT.md', 'QUEST_ORGANIZATION_SUMMARY.md']):
-                    return
-                # For README.md: only include those nested inside a quest subdirectory of a
-                # binary level directory (e.g. 0000/bashcrawl/README.md).
-                # Skip level-dir READMEs (0000/README.md) and section/root READMEs (tools/README.md).
-                if md_file.name == 'README.md':
-                    parent = md_file.parent
-                    grandparent = parent.parent
-                    # Allow only when: parent is NOT a level dir AND grandparent IS a level dir
-                    if re.match(r'^[01]{4}$', parent.name) or not re.match(r'^[01]{4}$', grandparent.name):
-                        return
-                
-                frontmatter, body = self.extract_frontmatter(md_file)
-                
-                if not frontmatter:
-                    self.warnings.append(f"No frontmatter found in {md_file}")
-                    return
-                
-                # Store quest data
-                permalink = frontmatter.get('permalink', str(md_file))
-                self.quests[permalink] = {
-                    'file_path': md_file,
-                    'frontmatter': frontmatter,
-                    'body': body
-                }
-                
-                self.stats['total_quests'] += 1
-                
-                # Track quest status (default false: published unless explicitly drafted)
-                if frontmatter.get('draft', False):
-                    self.stats['draft_quests'] += 1
-                
-                if '🔮' in body or 'Placeholder' in body:
-                    self.stats['placeholder_quests'] += 1
-                else:
-                    self.stats['complete_quests'] += 1
-                    
-            except (OSError, PermissionError) as e:
-                print_warn(f"Skipping file {md_file}: {e}")
-        
-        try:
-            # Try recursive scan first
-            for md_file in self.quest_dir.rglob('*.md'):
-                process_quest_file(md_file)
-        except (OSError, PermissionError, FileNotFoundError) as e:
-            print_error(f"Error during recursive scan: {e}")
-            print_info("Falling back to manual directory traversal...")
-            
-            # Fallback: manually traverse directories
-            def scan_directory(directory):
-                """Recursively scan a directory, skipping problematic paths"""
-                try:
-                    for item in directory.iterdir():
-                        if item.is_file() and item.suffix == '.md':
-                            process_quest_file(item)
-                        elif item.is_dir() and item.name not in ['templates', '__pycache__', '.git']:
-                            # Recursively scan subdirectories
-                            scan_directory(item)
-                except (OSError, PermissionError) as e:
-                    print_warn(f"Skipping directory {directory}: {e}")
-            
-            scan_directory(self.quest_dir)
-        
-        print_success(f"Found {self.stats['total_quests']} quests")
-    
-    def validate_frontmatter(self):
-        """Validate required frontmatter fields."""
-        print_info("Validating frontmatter...")
-        
-        for permalink, quest_data in self.quests.items():
-            frontmatter = quest_data['frontmatter']
-            file_path = quest_data['file_path']
-            
-            # Check required fields
-            missing_fields = []
-            for field in self.required_fields:
-                if field not in frontmatter:
-                    missing_fields.append(field)
-            
-            if missing_fields:
-                self.errors.append(
-                    f"{file_path}: Missing required fields: {', '.join(missing_fields)}"
-                )
-            
-            # Validate level format (should be 4 binary digits)
-            level = frontmatter.get('level', '')
-            if level and not re.match(r'^[01]{4}$', str(level)):
-                self.warnings.append(
-                    f"{file_path}: Invalid level format '{level}' (should be 4 binary digits)"
-                )
-            
-            # Validate difficulty format
-            difficulty = frontmatter.get('difficulty', '')
-            valid_difficulties = ['🟢 Easy', '🟡 Medium', '🔴 Hard', '⚔️ Epic']
-            if difficulty and difficulty not in valid_difficulties:
-                self.warnings.append(
-                    f"{file_path}: Invalid difficulty '{difficulty}'"
-                )
-            
-            # Validate quest_type
-            quest_type = frontmatter.get('quest_type', '')
-            valid_types = ['main_quest', 'side_quest', 'bonus_quest', 'epic_quest']
-            if quest_type and quest_type not in valid_types:
-                self.warnings.append(
-                    f"{file_path}: Invalid quest_type '{quest_type}'"
-                )
-    
-    @staticmethod
-    def _strip_planned_marker(value):
-        """Strip a trailing ``# planned quest`` (or ``# planned``) inline marker.
 
-        Authors may suffix a dependency URL with ``# planned quest`` to declare
-        an intentional forward reference to a quest that has not yet been
-        authored. The marker is documented in
-        ``.github/instructions/quest.instructions.md`` and must be ignored by
-        validation. Returns (clean_value, is_planned).
+    # ── discovery ────────────────────────────────────────────────────────────
+
+    def scan_quests(self):
+        """Build the node set from quest-tree files that carry a permalink.
+
+        Node set matches the network *builder* (``build-quest-network.py``):
+        skip templates/docs/inventory + meta files, include everything else that
+        has a permalink. That way the validator checks the same graph the site
+        ships, not a different one.
         """
-        if not isinstance(value, str):
-            return value, False
-        stripped = value.strip()
-        match = re.match(r'^(.*?)\s*#\s*planned(?:\s+quest)?\s*$', stripped, re.IGNORECASE)
-        if match:
-            return match.group(1).strip(), True
-        return stripped, False
+        print_info("Scanning quest files...")
+        for path in quest_lib.iter_quest_files(
+            self.quest_dir, skip_subdirs=reg.SKIP_SUBDIRS, include_index_readmes=True
+        ):
+            doc = quest_lib.read_quest(path)
+            if doc.fm_error:
+                self.errors.append(f"{doc.rel_path}: invalid frontmatter — {doc.fm_error}")
+                continue
+            permalink = doc.permalink
+            if not permalink:
+                # No permalink → invisible to the graph. Warn so it isn't a
+                # silent dead end (a quest nobody can link to).
+                self.warnings.append(f"{doc.rel_path}: no permalink — excluded from the quest network")
+                continue
+            node_id = _norm_link(permalink)
+            if node_id in self.nodes:
+                other = self.nodes[node_id]["doc"].rel_path
+                self.errors.append(
+                    f"Duplicate permalink {node_id!r}: {doc.rel_path} and {other} "
+                    f"resolve to the same node (one will silently overwrite the other)"
+                )
+                self.stats["duplicate_permalinks"] += 1
+                continue
+            self.nodes[node_id] = {"doc": doc, "frontmatter": doc.fm}
+            self.stats["total_quests"] += 1
+            if doc.is_draft():
+                self.stats["draft_quests"] += 1
+            if doc.has_placeholder_marker():
+                self.stats["placeholder_quests"] += 1
+            else:
+                self.stats["complete_quests"] += 1
+        print_success(f"Found {self.stats['total_quests']} quest nodes")
+
+    # ── frontmatter (graph-relevant only; tier 1 owns the full field gate) ────
+
+    def validate_frontmatter(self):
+        """Validate only the controlled-vocabulary fields the graph depends on.
+
+        The full required-field gate (with _config.yml default awareness) lives
+        in tier 1; duplicating it here would either drift or false-fail on
+        config-supplied fields. We validate values against the registry enums
+        (warnings) and flag retired fields.
+        """
+        print_info("Validating controlled vocabularies...")
+        for node_id, data in self.nodes.items():
+            fm = data["frontmatter"]
+            rel = data["doc"].rel_path
+
+            level = str(fm.get("level", ""))
+            if level and not reg.LEVEL_RE.match(level):
+                self.warnings.append(f"{rel}: invalid level '{level}' (expected 4-bit binary)")
+
+            difficulty = fm.get("difficulty", "")
+            if difficulty and difficulty not in reg.DIFFICULTIES:
+                self.warnings.append(
+                    f"{rel}: invalid difficulty '{difficulty}' (expected one of {reg.DIFFICULTIES})"
+                )
+
+            quest_type = fm.get("quest_type", "")
+            if quest_type and quest_type not in reg.QUEST_TYPES:
+                self.warnings.append(
+                    f"{rel}: invalid quest_type '{quest_type}' (expected one of {reg.QUEST_TYPES})"
+                )
+
+            # Flag retired fields rather than silently reading them. The
+            # normalizer (make quest-normalize) migrates + strips these.
+            present_retired = [f for f in reg.RETIRED_FIELDS if f in fm]
+            if present_retired:
+                self.stats["retired_fields"] += 1
+                self.warnings.append(
+                    f"{rel}: carries retired field(s) {present_retired} — run `make quest-normalize`"
+                )
+
+            # quest_dependencies buckets must be lists of permalinks. A scalar
+            # (e.g. `required_quests: 42`) is a schema error; warn once per file
+            # (the edge iterator tolerates it silently to stay crash-free).
+            deps = fm.get("quest_dependencies")
+            if isinstance(deps, dict):
+                for kind in _DEP_KINDS:
+                    val = deps.get(kind)
+                    if val is not None and not isinstance(val, (list, tuple, str)):
+                        self.warnings.append(
+                            f"{rel}: quest_dependencies.{kind} is "
+                            f"{type(val).__name__}, expected a list of permalinks")
+            elif deps is not None and not isinstance(deps, dict):
+                self.warnings.append(
+                    f"{rel}: quest_dependencies is {type(deps).__name__}, expected a mapping")
+
+    # ── dependency edges ─────────────────────────────────────────────────────
+
+    def _iter_edges(self, fm: dict, rel: str = ""):
+        """Yield (dep_kind, clean_target, is_planned) for each dependency edge.
+
+        Purely defensive: a scalar target is wrapped; anything that is neither a
+        string nor a list (e.g. ``required_quests: 42``) is silently skipped so a
+        malformed file can't raise out of the import-safe entry point. The
+        once-per-file schema warning is emitted by ``validate_frontmatter`` —
+        not here, since this is called by four checks per node.
+        """
+        deps = fm.get("quest_dependencies") or {}
+        if not isinstance(deps, dict):
+            return
+        for kind in _DEP_KINDS:
+            targets = deps.get(kind) or []
+            if isinstance(targets, str):
+                targets = [targets]
+            elif not isinstance(targets, (list, tuple)):
+                continue
+            for raw in targets:
+                clean, planned = _strip_planned_marker(raw)
+                if clean:
+                    yield kind, _norm_link(clean) if not planned else clean, planned
 
     def validate_dependencies(self):
-        """Validate quest dependencies and relationships."""
+        """Every required/recommended/unlocks target must resolve to a node."""
         print_info("Validating quest dependencies...")
-        
-        for permalink, quest_data in self.quests.items():
-            frontmatter = quest_data['frontmatter']
-            file_path = quest_data['file_path']
-            
-            # Check quest_dependencies
-            dependencies = frontmatter.get('quest_dependencies', {})
-            
-            for dep_type in ['required_quests', 'recommended_quests', 'unlocks_quests']:
-                dep_list = dependencies.get(dep_type, [])
-                for raw in dep_list:
-                    dep_permalink, planned = self._strip_planned_marker(raw)
-                    if planned or not dep_permalink:
-                        continue
-                    if dep_permalink not in self.quests:
-                        self.errors.append(
-                            f"{file_path}: Dependency not found: {dep_permalink} ({dep_type})"
-                        )
-                        self.stats['broken_dependencies'] += 1
-            
-            # Check quest_relationships
-            relationships = frontmatter.get('quest_relationships', {})
-            
-            for rel_type in ['parent_quest', 'child_quests', 'parallel_quests', 'sequel_quests']:
-                rel_data = relationships.get(rel_type)
-                
-                if rel_data is None:
+        for node_id, data in self.nodes.items():
+            rel = data["doc"].rel_path
+            for kind, target, planned in self._iter_edges(data["frontmatter"], rel):
+                if planned:
                     continue
-                
-                # Handle both single value and list
-                rel_list = rel_data if isinstance(rel_data, list) else [rel_data]
-                
-                for raw in rel_list:
-                    rel_permalink, planned = self._strip_planned_marker(raw)
-                    if planned or not rel_permalink:
-                        continue
-                    if rel_permalink not in self.quests:
-                        self.warnings.append(
-                            f"{file_path}: Related quest not found: {rel_permalink} ({rel_type})"
-                        )
-    
-    def detect_circular_dependencies(self):
-        """Detect circular dependencies in quest progression."""
-        print_info("Checking for circular dependencies...")
-        
-        def has_cycle(quest_permalink, visited, stack):
-            visited.add(quest_permalink)
-            stack.add(quest_permalink)
-            
-            quest_data = self.quests.get(quest_permalink, {})
-            dependencies = quest_data.get('frontmatter', {}).get('quest_dependencies', {})
+                if target not in self.nodes:
+                    self.errors.append(f"{rel}: dependency not found: {target} ({kind})")
+                    self.stats["broken_dependencies"] += 1
 
-            # Only required_quests form the true prerequisite graph; a cycle there
-            # means a learner can never start. recommended_quests are lateral
-            # "you might also like" links and may legitimately be mutual.
-            for dep_list_key in ['required_quests']:
-                for raw in dependencies.get(dep_list_key, []):
-                    dep, planned = self._strip_planned_marker(raw)
-                    if planned or not dep:
-                        continue
-                    if dep in self.quests:
-                        if dep not in visited:
-                            if has_cycle(dep, visited, stack):
-                                return True
-                        elif dep in stack:
-                            self.errors.append(f"Circular dependency detected: {quest_permalink} -> {dep}")
-                            return True
-            
-            stack.remove(quest_permalink)
-            return False
-        
-        visited = set()
-        for permalink in self.quests:
-            if permalink not in visited:
-                has_cycle(permalink, visited, set())
-    
-    def find_orphaned_quests(self):
-        """Find quests that are not referenced by any other quest."""
-        print_info("Finding orphaned quests...")
-        
-        referenced_quests = set()
-        
-        for quest_data in self.quests.values():
-            frontmatter = quest_data['frontmatter']
-            
-            def add_clean(value):
-                permalink, planned = self._strip_planned_marker(value)
-                if not planned and permalink:
-                    referenced_quests.add(permalink)
-            
-            # Collect all references
-            dependencies = frontmatter.get('quest_dependencies', {})
-            for dep_list in dependencies.values():
-                if isinstance(dep_list, list):
-                    for raw in dep_list:
-                        add_clean(raw)
-            
-            relationships = frontmatter.get('quest_relationships', {})
-            for rel_data in relationships.values():
-                if rel_data:
-                    if isinstance(rel_data, list):
-                        for raw in rel_data:
-                            add_clean(raw)
-                    else:
-                        add_clean(rel_data)
-        
-        # Find orphans (excluding level 0000 quests which are entry points)
-        for permalink, quest_data in self.quests.items():
-            level = quest_data['frontmatter'].get('level', '')
-            
-            # Skip entry-level quests (0000) as they're expected to be starting points
-            if level == '0000':
+    def validate_prerequisite_monotonicity(self):
+        """A quest's required prerequisites should not live at a *higher* level
+        than the quest itself (you can't require a harder quest to start an
+        easier one). Reported as warnings — some cross-tier prerequisites are
+        intentional, but the common case is an authoring slip."""
+        print_info("Checking prerequisite level monotonicity...")
+        for node_id, data in self.nodes.items():
+            fm = data["frontmatter"]
+            rel = data["doc"].rel_path
+            level = str(fm.get("level", ""))
+            if not reg.LEVEL_RE.match(level):
                 continue
-            
-            if permalink not in referenced_quests:
-                self.warnings.append(f"Orphaned quest (not referenced): {permalink}")
-                self.stats['orphaned_quests'] += 1
-    
+            my_rank = reg.LEVELS.get(level, {}).get("decimal")
+            if my_rank is None:
+                continue
+            for kind, target, planned in self._iter_edges(fm, rel):
+                if planned or kind != _PREREQ_KEY or target not in self.nodes:
+                    continue
+                tgt_level = str(self.nodes[target]["frontmatter"].get("level", ""))
+                tgt_rank = reg.LEVELS.get(tgt_level, {}).get("decimal")
+                if tgt_rank is not None and tgt_rank > my_rank:
+                    self.warnings.append(
+                        f"{rel}: required prerequisite {target} is at a higher level "
+                        f"({tgt_level} > {level}) — learner can't reach it first"
+                    )
+
+    def detect_circular_dependencies(self):
+        """Detect cycles in the *required* prerequisite graph (a cycle there
+        means a learner can never start). recommended/unlocks are lateral and
+        may legitimately be mutual, so they're excluded."""
+        print_info("Checking for circular dependencies...")
+
+        def required_targets(node_id):
+            data = self.nodes.get(node_id, {})
+            fm = data.get("frontmatter", {})
+            rel = data.get("doc").rel_path if data.get("doc") else node_id
+            for kind, target, planned in self._iter_edges(fm, rel):
+                if kind == _PREREQ_KEY and not planned and target in self.nodes:
+                    yield target
+
+        visited = set()
+
+        def has_cycle(node_id, stack):
+            visited.add(node_id)
+            stack.add(node_id)
+            for dep in required_targets(node_id):
+                if dep not in visited:
+                    if has_cycle(dep, stack):
+                        return True
+                elif dep in stack:
+                    self.errors.append(f"Circular dependency detected: {node_id} -> {dep}")
+                    return True
+            stack.discard(node_id)
+            return False
+
+        for node_id in self.nodes:
+            if node_id not in visited:
+                has_cycle(node_id, set())
+
+    def find_orphaned_quests(self):
+        """Quests referenced by no other quest's dependencies (warnings).
+
+        Entry-level (0000) quests are expected starting points and excluded.
+        Retired relationship fields are intentionally NOT consulted.
+        """
+        print_info("Finding orphaned quests...")
+        referenced = set()
+        for data in self.nodes.values():
+            for kind, target, planned in self._iter_edges(data["frontmatter"]):
+                if not planned:
+                    referenced.add(target)
+        for node_id, data in self.nodes.items():
+            if str(data["frontmatter"].get("level", "")) == "0000":
+                continue
+            if node_id not in referenced:
+                self.warnings.append(f"Orphaned quest (not referenced): {node_id}")
+                self.stats["orphaned_quests"] += 1
+
+    # ── shipped artifact (optional) ──────────────────────────────────────────
+
+    def validate_network_json(self):
+        """Validate the committed quest-network.json: unique node ids and every
+        edge endpoint resolves to a node. A bad graph won't fail the Jekyll
+        build, so this is the only thing that catches a shipped dangling edge."""
+        if not self.network_json:
+            return
+        if not self.network_json.exists():
+            self.warnings.append(f"network JSON not found (skipped): {self.network_json}")
+            return
+        print_info(f"Validating shipped graph: {self.network_json}")
+        try:
+            graph = json.loads(self.network_json.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as e:
+            self.errors.append(f"{self.network_json}: unreadable/invalid JSON — {e}")
+            return
+        node_ids = set()
+        for n in graph.get("nodes", []):
+            nid = n.get("id")
+            if nid in node_ids:
+                self.errors.append(f"network JSON: duplicate node id {nid!r}")
+            node_ids.add(nid)
+        # A node-set drift between the live scan and the shipped graph means the
+        # JSON is stale — surface it (the CI freshness gate is the hard stop).
+        live_ids = set(self.nodes)
+        if node_ids and live_ids and node_ids != live_ids:
+            missing = len(live_ids - node_ids)
+            extra = len(node_ids - live_ids)
+            self.warnings.append(
+                f"network JSON node set differs from live scan "
+                f"({missing} missing, {extra} stale) — run `make quest-build-network`"
+            )
+        # Dangling edges are WARNINGS here: the builder intentionally emits edges
+        # for `# planned quest` forward-references whose targets aren't nodes yet.
+        # The authoritative, planned-aware broken-dependency ERROR check is
+        # validate_dependencies() above (reads the markdown, not the artifact).
+        for e in graph.get("edges", []):
+            for end in ("source", "target"):
+                ref = e.get(end)
+                if ref and ref not in node_ids:
+                    self.warnings.append(
+                        f"network JSON: edge {end} {ref!r} ({e.get('kind','?')}) has no matching node "
+                        f"(planned forward-reference, or stale graph)"
+                    )
+                    self.stats["dangling_edges"] += 1
+
+    # ── report ───────────────────────────────────────────────────────────────
+
     def generate_report(self):
-        """Generate validation report."""
         print()
         print("=" * 80)
         print("QUEST NETWORK VALIDATION REPORT")
         print("=" * 80)
         print()
-        
-        # Statistics
-        print("📊 Quest Statistics:")
-        print(f"  Total Quests:       {self.stats['total_quests']}")
-        print(f"  Complete Quests:    {self.stats['complete_quests']}")
-        print(f"  Placeholder Quests: {self.stats['placeholder_quests']}")
-        print(f"  Draft Quests:       {self.stats['draft_quests']}")
-        print(f"  Orphaned Quests:    {self.stats['orphaned_quests']}")
-        print(f"  Broken Dependencies: {self.stats['broken_dependencies']}")
+        print("📊 Quest Network Statistics:")
+        print(f"  Total Nodes:          {self.stats['total_quests']}")
+        print(f"  Complete:             {self.stats['complete_quests']}")
+        print(f"  Placeholder:          {self.stats['placeholder_quests']}")
+        print(f"  Draft:                {self.stats['draft_quests']}")
+        print(f"  Orphaned:             {self.stats['orphaned_quests']}")
+        print(f"  Broken Dependencies:  {self.stats['broken_dependencies']}")
+        print(f"  Duplicate Permalinks: {self.stats['duplicate_permalinks']}")
+        print(f"  Dangling Edges (JSON):{self.stats['dangling_edges']}")
+        print(f"  Files w/ Retired FM:  {self.stats['retired_fields']}")
         print()
-        
-        # Errors
         if self.errors:
             print_error(f"❌ {len(self.errors)} Error(s) Found:")
-            for error in self.errors:
-                print(f"  • {error}")
+            for e in self.errors:
+                print(f"  • {e}")
             print()
         else:
             print_success("✅ No errors found!")
             print()
-        
-        # Warnings
         if self.warnings:
             print_warning(f"⚠️  {len(self.warnings)} Warning(s):")
-            for warning in self.warnings:
-                print(f"  • {warning}")
+            for w in self.warnings:
+                print(f"  • {w}")
             print()
         else:
             print_success("✅ No warnings!")
             print()
-        
-        # Overall result
         print("=" * 80)
         if not self.errors:
             print_success("VALIDATION PASSED ✅")
             return 0
-        else:
-            print_error("VALIDATION FAILED ❌")
-            return 1
-    
+        print_error("VALIDATION FAILED ❌")
+        return 1
+
     def run(self):
-        """Run all validation checks."""
         self.scan_quests()
         self.validate_frontmatter()
         self.validate_dependencies()
+        self.validate_prerequisite_monotonicity()
         self.detect_circular_dependencies()
         self.find_orphaned_quests()
+        self.validate_network_json()
         return self.generate_report()
 
-def main():
-    """Main entry point."""
-    import argparse
 
+def run_network_validation(quest_dir, network_json=None, strict=False, quiet=True) -> dict:
+    """Import-friendly entry point for the unified orchestrator.
+
+    Returns a result dict: {stats, errors, warnings, passed}. ``passed`` is
+    False if there are errors, or (when ``strict``) any warnings. ``quiet``
+    suppresses the per-check INFO chatter so the orchestrator owns all output.
+    """
+    import contextlib
+    import io
+    validator = QuestNetworkValidator(str(quest_dir), network_json=network_json)
+    sink = io.StringIO() if quiet else sys.stdout
+    with contextlib.redirect_stdout(sink):
+        # Run checks without the console report (orchestrator renders its own).
+        validator.scan_quests()
+        validator.validate_frontmatter()
+        validator.validate_dependencies()
+        validator.validate_prerequisite_monotonicity()
+        validator.detect_circular_dependencies()
+        validator.find_orphaned_quests()
+        validator.validate_network_json()
+    passed = not validator.errors and (not strict or not validator.warnings)
+    return {
+        "stats": validator.stats,
+        "errors": validator.errors,
+        "warnings": validator.warnings,
+        "passed": passed,
+    }
+
+
+def main():
     parser = argparse.ArgumentParser(
-        description='IT-Journey Quest Network Validator',
+        description="IT-Journey Quest Network Validator",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument(
-        '-d', '--directory',
-        help='Quest directory (default: auto-detect from script location)',
-    )
-    parser.add_argument(
-        '--json',
-        metavar='FILE',
-        help='Write validation results as JSON to FILE',
-    )
-    parser.add_argument(
-        '--strict',
-        action='store_true',
-        help='Exit non-zero when warnings exist (in addition to errors)',
-    )
+    parser.add_argument("-d", "--directory",
+                        help="Quest directory (default: auto-detect pages/_quests)")
+    parser.add_argument("--network-json", metavar="FILE",
+                        help="Also validate this committed quest-network.json "
+                             "(default: auto-detect assets/data/quest-network.json)")
+    parser.add_argument("--no-network-json", action="store_true",
+                        help="Skip validating the shipped quest-network.json")
+    parser.add_argument("--json", metavar="FILE", help="Write results as JSON to FILE")
+    parser.add_argument("--strict", action="store_true",
+                        help="Exit non-zero when warnings exist (in addition to errors)")
     args = parser.parse_args()
 
-    # Get quest directory
     if args.directory:
         quest_dir = Path(args.directory)
     else:
-        script_dir = Path(__file__).parent
-        project_root = script_dir.parent.parent
-        quest_dir = project_root / 'pages' / '_quests'
-
+        quest_dir = _HERE.parents[1] / "pages" / "_quests"
     if not quest_dir.exists():
         print_error(f"Quest directory not found: {quest_dir}")
         return 1
 
+    network_json = None
+    if not args.no_network_json:
+        if args.network_json:
+            network_json = args.network_json
+        else:
+            candidate = _HERE.parents[1] / "assets" / "data" / "quest-network.json"
+            network_json = str(candidate) if candidate.exists() else None
+
     print_info(f"Quest directory: {quest_dir}")
+    if network_json:
+        print_info(f"Network JSON:    {network_json}")
     print()
 
-    # Run validator
-    validator = QuestValidator(str(quest_dir))
+    validator = QuestNetworkValidator(str(quest_dir), network_json=network_json)
     exit_code = validator.run()
 
-    # Write JSON report if requested
     if args.json:
-        import json
         report = {
-            'stats': validator.stats,
-            'errors': validator.errors,
-            'warnings': validator.warnings,
-            'passed': exit_code == 0,
+            "stats": validator.stats,
+            "errors": validator.errors,
+            "warnings": validator.warnings,
+            "passed": exit_code == 0,
         }
-        with open(args.json, 'w') as f:
-            json.dump(report, f, indent=2, default=str)
+        Path(args.json).write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
         print_success(f"Network report written to {args.json}")
 
-    # --strict: treat warnings as failure
     if args.strict and validator.warnings:
         return 1
-
     return exit_code
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sys.exit(main())

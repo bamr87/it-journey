@@ -80,16 +80,21 @@ All four are regenerated from the registry + quest files by `make quest-data`:
 | script | purpose |
 |---|---|
 | `quest_registry.py` | the single source of truth (imported by everything) |
+| `quest_lib.py` | the ONE frontmatter parser + quest-file iterator + `QuestDoc` + code-snippet extractor (`extract_code_blocks`); every validator imports it so parsing/discovery can't drift |
+| `quest_audit.py` | **the unified validation system** — runs content + network + data-freshness (+ optional Claude tier-2) in one report and exit code |
 | `generate-quest-levels-data.py` | emit `levels.yml` / `tiers.yml` / `order.yml` |
 | `generate-quest-navigation.py` | emit `_data/navigation/quests.yml` |
 | `build-quest-network.py` | emit the dependency graph (JSON + YAML) |
-| `validate-quest-network.py` | graph integrity: required-cycle, broken-dep, orphan checks |
+| `validate-quest-network.py` | graph integrity: required-cycle, broken-dep, duplicate-permalink, dangling-edge, orphan, retired-field checks (registry-driven) |
 | `normalize-quest-frontmatter.py` | the ONE idempotent frontmatter normalizer |
 | `generate-placeholder-quest.sh` | scaffold a new placeholder quest |
+| `docker-entrypoint.sh` | runs `quest_audit.py` inside the `quest-audit` Docker service |
 
 Quest **content quality** is validated by
 [`test/quest-validator/quest_validator.py`](../../test/quest-validator/quest_validator.py),
-which imports its schema from the registry.
+which imports its schema from the registry. An **optional Claude Code tier-2**
+(`test/quest-validator/agentic_validate.py`) reads/plays quests for a deeper
+quality verdict; it's advisory and opt-in (see that directory's README).
 
 ## Runbook
 
@@ -98,8 +103,27 @@ make quest-data        # regenerate all derived data from the registry + files
 make quest-normalize   # idempotently normalize quest frontmatter
 make quest-validate    # content-quality validation (quest_validator.py)
 make quest-network     # dependency-graph validation
-make quest-audit       # build network → validate content → validate network
+make quest-audit       # UNIFIED audit: content + network + data-freshness (one report)
+make docker-validate   # the same unified audit, in Docker (CI-parity, no host Python)
+make docker-audit-tier2 MODE=review   # + Claude tier-2 in a container (needs token)
+make quest-execute QUEST=pages/_quests/0001/terminal-mastery.md  # Claude RUNS the quest's snippets, isolated
 ```
+
+### Running a quest's code snippets (execute mode)
+
+`make quest-execute` has a Claude Code agent **walk a quest and actually run its
+runnable code snippets** (`bash`/`python`/`node`/…) in a disposable Docker
+container, then report which worked. The container is the isolation boundary —
+the agent's commands never touch the host. `quest_lib.extract_code_blocks()`
+deterministically inventories the runnable snippets, and the report shows
+`ran N/M` coverage with per-snippet `passed`/`failed`/`skipped`/`reasoned`
+status. It is **opt-in and advisory** (it costs money and needs
+`CLAUDE_CODE_OAUTH_TOKEN`); without a token it falls back to a no-cost mock.
+Pass `SAMPLE=N` instead of `QUEST=` to run a spread across levels, or
+`make quest-execute-host` to run on the host sandbox (no container — riskier).
+
+`make quest-audit` only **validates** (it never writes files); if its freshness
+layer reports stale data, run `make quest-data` to regenerate, then commit.
 
 Scaffold a new quest, then fill and validate it:
 
