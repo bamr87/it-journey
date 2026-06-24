@@ -112,7 +112,7 @@ jobs:
 
         if [ "${{ github.event_name }}" = "pull_request" ]; then
           BUILD_CONFIG="_config.yml,_config_dev.yml,_config_ci.yml"
-          BUILD_LABEL="CI smoke (local theme, no preview scan)"
+          BUILD_LABEL="CI smoke (remote theme @ main, no preview scan)"
         else
           BUILD_CONFIG="_config.yml"
           BUILD_LABEL="production"

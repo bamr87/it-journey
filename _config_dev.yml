@@ -1,10 +1,11 @@
 # Dev config override — merged after _config.yml:
 #   bundle exec jekyll serve --config _config.yml,_config_dev.yml
 #
-# Note: Jekyll skips nil values when merging, so use "" (not null) to clear remote_theme.
-
-remote_theme             : ""
-theme                    : "jekyll-theme-zer0"
+# Theme: dev/CI inherit `remote_theme: bamr87/zer0-mistakes` from _config.yml so
+# every build tracks the theme's main branch (same as production) — no gem, no
+# pin, no version to bump. jekyll-remote-theme must stay in this file's plugins
+# list below for that to load. (Trade-off: builds fetch the theme over the
+# network instead of from a local gem.)
 
 # Allow future-dated posts to be rendered in development
 future: true
@@ -24,7 +25,9 @@ show_drafts: false
 
 # Performance: disable feed/sitemap regeneration during dev
 # These plugins regenerate fully on every change, adding ~10-20s
+# jekyll-remote-theme is required here so the inherited remote_theme loads in dev.
 plugins:
+  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-relative-links
   - jekyll-redirect-from

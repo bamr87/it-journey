@@ -11,10 +11,9 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages'
 
-# Jekyll Theme: use local gem for dev (avoids remote_theme network download)
-gem 'jekyll-theme-zer0'
-
-# Jekyll Theme is loaded via `remote_theme` in `_config.yml` and `_config_dev.yml`.
+# Jekyll Theme: served via `remote_theme: bamr87/zer0-mistakes` in _config.yml
+# (and dev/CI via _config_dev.yml), so every build tracks the theme's main
+# branch. jekyll-remote-theme ships with the github-pages gem — no theme gem.
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
