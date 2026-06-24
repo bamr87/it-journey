@@ -363,7 +363,7 @@ defaults:
       layout: article
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true   # giscus on by default for the whole posts collection; set `comments: false` per-post to opt out
       share: true
       related: true
       sidebar:

@@ -25,7 +25,6 @@ keywords:
 excerpt: "Turn GitHub Discussions into a comment system: generate the giscus embed on giscus.app and wire it into IT-Journey's zer0-mistakes theme — including the one-character config bug that was silently disabling it."
 permalink: /posts/2026-06-23-embedding-giscus-comments-zer0-mistakes/
 section: Tools & Environment
-comments: true
 draft: false
 ---
 
@@ -106,11 +105,10 @@ In this version of the theme, only the **post** layout embeds giscus:
 notebooks, docs, quests, and the hub/index pages resolve to layouts
 (`default.html`, `collection.html`, …) that don't reference giscus. There's a
 second gate, too: the guard's `page.comments != false` half. The site's
-front-matter defaults set `comments: false` at the root scope, and that wins for
-any post that doesn't say otherwise — so **comments are opt-in: a post only shows
-the widget if its front matter sets `comments: true`.** (Other zer0-mistakes
-sites can flip that default or wire comments into more layouts; this site keeps
-it opt-in on posts.)
+front-matter defaults set `comments: false` at the root scope, but the
+`pages/_posts` scope overrides that with **`comments: true`** — so **every post
+shows the widget by default**, and you opt a single post out with
+`comments: false`. Everything that isn't a post stays off via the root default.
 
 ### A real bug in the shipped include — vendor a corrected copy
 
@@ -339,21 +337,21 @@ a misconfiguration looks identical to a disabled feature. If a config-driven
 include silently produces nothing, **dump the variable** (`{% raw %}{{ site.giscus | inspect }}{% endraw %}`)
 before assuming the include is broken.
 
-### A second subtlety: it's opt-in, and the guard tests existence not `enabled`
+### A second subtlety: defaults precedence, and the guard tests existence not `enabled`
 
-Two things trip people up here. First, **opt-in**: because the root-scope default
-is `comments: false`, fixing the config does *not* light up comments everywhere —
-it only enables them on posts that explicitly set `comments: true`. A brand-new
-post (like this one, until we add the flag) renders no widget at all. Second, the
-guard tests whether the `giscus` **key exists**, not `site.giscus.enabled`. So
-`enabled: false` does *not* turn comments off site-wide — only removing the whole
-`giscus:` block (making `site.giscus` nil) does. Keep `enabled: true` for
-forward-compatibility, but treat per-post `comments: true`/`false` as the real
-on/off switch.
+Two things trip people up here. First, **defaults precedence**: the root scope
+sets `comments: false`, but the more-specific `pages/_posts` scope sets
+`comments: true`, and the most-specific matching default wins — so posts get
+comments while everything else stays off. Override a single post with
+`comments: false`. Second, the guard tests whether the `giscus` **key exists**,
+not `site.giscus.enabled`. So `enabled: false` does *not* turn comments off
+site-wide — only removing the whole `giscus:` block (making `site.giscus` nil)
+does. Keep `enabled: true` for forward-compatibility, but treat the
+`pages/_posts` default (plus per-post `comments: false`) as the real on/off switch.
 
 ## Part 4 — Verify it locally
 
-Build the site and open a post that sets `comments: true` (this one does):
+Build the site and open any post (comments are on for the whole posts collection):
 
 ```bash
 make serve            # Docker-based dev server on port 4002
@@ -401,9 +399,10 @@ still `nil` — i.e. the key is misspelled or missing.
   exactly like a disabled feature.
 - Vendor a corrected `_includes/content/giscus.html` (tag-free comment) so the
   theme's Liquid-in-comment bug doesn't break the build.
-- It's opt-in: only **posts** that set `comments: true` render the widget (posts
-  use `layout: article`; notes, docs, quests, and hub pages use layouts that
-  don't embed giscus, and the root default is `comments: false`).
+- Comments are on for the whole **posts** collection by default (the
+  `pages/_posts` default sets `comments: true`); opt a post out with
+  `comments: false`. Notes, docs, quests, and hub pages use layouts that don't
+  embed giscus, so they never show comments.
 
 **Related:**
 - [giscus.app](https://giscus.app/) — the configuration generator
