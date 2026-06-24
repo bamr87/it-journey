@@ -1,10 +1,8 @@
 # Dev config override — merged after _config.yml:
 #   bundle exec jekyll serve --config _config.yml,_config_dev.yml
 #
-# Note: Jekyll skips nil values when merging, so use "" (not null) to clear remote_theme.
-
-remote_theme             : ""
-theme                    : "jekyll-theme-zer0"
+# Theme: inherited from _config.yml (the pinned jekyll-theme-zer0 gem). Same
+# source in dev, CI, and production — no override needed here.
 
 # Allow future-dated posts to be rendered in development
 future: true

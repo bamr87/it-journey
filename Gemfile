@@ -11,10 +11,10 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages'
 
-# Jekyll Theme: use local gem for dev (avoids remote_theme network download)
+# Jekyll Theme — pinned gem used everywhere (production + CI/dev) for
+# reproducible builds. Gemfile.lock pins the version; Dependabot + the auto-merge
+# workflow (.github/workflows/dependabot-automerge.yml) keep it current.
 gem 'jekyll-theme-zer0'
-
-# Jekyll Theme is loaded via `remote_theme` in `_config.yml` and `_config_dev.yml`.
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do

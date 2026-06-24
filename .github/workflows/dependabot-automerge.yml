@@ -1,0 +1,40 @@
+---
+name: 🤖 Dependabot auto-merge (theme)
+
+# Auto-merges Dependabot PRs that bump the `jekyll-theme-zer0` gem once required
+# CI checks pass — keeping the pinned theme current hands-free. Minor/patch only;
+# major bumps are left for manual review.
+#
+# Prerequisites (repo settings):
+#   • Settings → General → "Allow auto-merge" must be enabled.
+#   • Branch protection on `main` should require the Build Validation checks, so
+#     auto-merge waits for green before merging (otherwise it merges as soon as
+#     the PR is mergeable).
+
+on:
+  pull_request:
+    branches: [main]
+
+# Elevates the Dependabot GITHUB_TOKEN so it can enable auto-merge.
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    name: Enable auto-merge for theme bumps
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+
+      - name: Enable auto-merge (jekyll-theme-zer0, non-major)
+        if: >-
+          steps.meta.outputs.dependency-names == 'jekyll-theme-zer0' &&
+          steps.meta.outputs.update-type != 'version-update:semver-major'
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
