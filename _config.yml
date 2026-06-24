@@ -205,9 +205,13 @@ relative_links:
   enabled: true
   collections: true
 
-## Gisgus Plugin #################################################################
+## Giscus (GitHub Discussions comments) ##########################################
+# The zer0-mistakes theme reads `site.giscus.*` (see _includes/content/giscus.html).
+# The key MUST be spelled `giscus` — a `nil` key reads as a disabled feature and
+# the widget silently never renders. See the tutorial:
+#   pages/_posts/tools-environment/2026-06-23-embedding-giscus-comments-zer0-mistakes.md
 
-gisgus:
+giscus:
   enabled: true
   data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
   data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
