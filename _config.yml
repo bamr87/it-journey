@@ -27,11 +27,11 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
-# Theme: the pinned `jekyll-theme-zer0` gem (version in Gemfile.lock), used in
-# production and CI/dev alike — one reproducible source, no version skew.
-# Dependabot + the auto-merge workflow keep it current.
-theme                    : "jekyll-theme-zer0"
-# remote_theme           : "bamr87/zer0-mistakes"   # was: tracked main HEAD (unpinned)
+# Theme: pinned `remote_theme` ref. Production deploys via legacy GitHub Pages
+# building Jekyll from the gh-pages branch, which can't use a gem theme (it never
+# runs `bundle install`) — so the theme is sourced and version-pinned here.
+# Bump the tag to upgrade; CI/dev use the same ref (see _config_dev.yml).
+remote_theme             : "bamr87/zer0-mistakes@v1.20.1"
 
 ## Github Information
 github_user              : &github_user "bamr87"
@@ -193,6 +193,7 @@ powered_by:
 plugins:
   - github-pages
   - jekyll-include-cache
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -224,7 +225,7 @@ giscus:
 #   1. Add 'mermaid: true' to page front matter
 #   2. Use ```mermaid ... ``` code blocks OR <div class="mermaid">...</div>
 #
-# GitHub Pages Compatible: Yes (client-side; assets served from the theme gem)
+# GitHub Pages Compatible: Yes (client-side; assets served via remote_theme)
 
 mermaid:
   src: '/assets/vendor/mermaid/mermaid.min.js'
