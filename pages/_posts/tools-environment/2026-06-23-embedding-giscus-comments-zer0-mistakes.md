@@ -405,6 +405,7 @@ still `nil` — i.e. the key is misspelled or missing.
   embed giscus, so they never show comments.
 
 **Related:**
+
 - [giscus.app](https://giscus.app/) — the configuration generator
 - [GitHub Discussions docs](https://docs.github.com/en/discussions)
 - [zer0-mistakes theme](https://github.com/bamr87/zer0-mistakes) — the theme powering this site
