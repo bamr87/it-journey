@@ -27,8 +27,11 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
-remote_theme             : "bamr87/zer0-mistakes"
-# theme                    : "jekyll-theme-zer0"
+# Theme: the pinned `jekyll-theme-zer0` gem (version in Gemfile.lock), used in
+# production and CI/dev alike — one reproducible source, no version skew.
+# Dependabot + the auto-merge workflow keep it current.
+theme                    : "jekyll-theme-zer0"
+# remote_theme           : "bamr87/zer0-mistakes"   # was: tracked main HEAD (unpinned)
 
 ## Github Information
 github_user              : &github_user "bamr87"
@@ -190,7 +193,6 @@ powered_by:
 plugins:
   - github-pages
   - jekyll-include-cache
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -218,7 +220,7 @@ gisgus:
 #   1. Add 'mermaid: true' to page front matter
 #   2. Use ```mermaid ... ``` code blocks OR <div class="mermaid">...</div>
 #
-# GitHub Pages Compatible: Yes (client-side; assets served via remote_theme)
+# GitHub Pages Compatible: Yes (client-side; assets served from the theme gem)
 
 mermaid:
   src: '/assets/vendor/mermaid/mermaid.min.js'
