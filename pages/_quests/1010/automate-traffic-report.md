@@ -241,4 +241,4 @@ It's tempting to run this as a hosted cron, but the script needs the **local ser
 
 ## 🎓 Path Complete
 
-You've connected Google Analytics to your agent, learned to query it, and automated the reporting. Loop back to **[the series hub](/quests/1010/)** for more Monitoring & Observability quests — or read the full story in the post [Auditing Site Analytics & SEO with an AI Agent and MCP](/posts/ai-assisted-analytics-seo-audit/).
+You've connected Google Analytics to your agent, learned to query it, and automated the reporting. Loop back to **[the series hub](/quests/1010/)** for more Monitoring & Observability quests — or read the full story in the post [Auditing Site Analytics & SEO with an AI Agent and MCP](https://lifehacker.dev).

@@ -35,15 +35,6 @@ file_extensions: [".md", ".html", ".ipynb"]
 required_base: [title, description, date, author, categories, tags]
 
 collections:
-  posts:
-    path: pages/_posts
-    fm_content_type: default
-    required_extra: []
-    # section_guide/voice_profile are the optional brand pointers (see brand:
-    # below). They are nudges, never CI-blocking — most posts resolve their
-    # guide by folder, so the keys are only needed to override.
-    recommended: [excerpt, lastmod, draft, keywords, preview, section_guide]
-    date_prefixed_filenames: true        # YYYY-MM-DD-slug.md
   quests:
     path: pages/_quests
     fm_content_type: quest
@@ -186,7 +177,6 @@ loop:
   # Per-collection priority multiplier for work selection (higher = sooner).
   collection_priority:
     quests: 1.4
-    posts: 1.3
     quickstart: 1.2
     docs: 1.0
     notes: 0.9
@@ -208,10 +198,10 @@ brand:
   enabled: true
   store_root: _data/brand           # pointer to the authoritative brand store
   advisory_only: true               # brand issues never affect health or auto-merge
-  # Collections the brand check runs on. posts resolve a section by folder;
-  # quests/docs resolve to one section each via _registry.yml > collection_defaults.
+  # Collections the brand check runs on. quests/docs resolve to one section each
+  # via _registry.yml > collection_defaults.
   # (Vendored/structural/generated files are always skipped regardless.)
-  collections: [posts, quests, docs]
+  collections: [quests, docs]
   # Global ruleset; per-section entries below override/extend it.
   global:
     # Empty-hype words to flag (mirror of _data/brand/glossary.yml > discouraged).

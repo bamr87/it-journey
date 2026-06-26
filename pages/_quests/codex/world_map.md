@@ -118,7 +118,7 @@ Battle-tested wisdom and real-world experiences from fellow code warriors who've
 
 - [AI-Powered Development Workflows](/advanced-version-management-ai-implementation/) - Advanced automation techniques
 - [GitHub Actions Mastery](/debugging-github-actions-workflows-ai-assisted/) - CI/CD optimization
-- [Docker for IT-Journey](/posts/dockering-your-it-journey/) - Containerization strategies
+- [Docker for IT-Journey](https://lifehacker.dev) - Containerization strategies
 - Jekyll Theming & Bootstrap (planned) - Site customization
 
 ### ⚔️ Quests Territory (`/quests/`)
@@ -318,7 +318,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 - [🏛️ Main Portal](/) - Primary entrance to IT-Journey
 - [🏰 Quest Central](/quests/) - Complete quest index and navigation
-- [📜 Chronicle Archive](/posts/) - All chronicles and blog posts
+- [📜 Chronicle Archive](https://lifehacker.dev) - All chronicles and blog posts
 - [📚 Library Index](/docs/) - Documentation and guides
 - [📔 Personal Notebook](/notes/) - Your learning space
 
@@ -362,7 +362,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 ### 🔧 For System Administrators
 
 1. **Platform Setup:** [Configuration Guide](/about/config/)
-2. **Docker Environment:** [Container Setup](/posts/dockering-your-it-journey/)
+2. **Docker Environment:** [Container Setup](https://lifehacker.dev)
 3. **CI/CD Integration:** [GitHub Actions](/debugging-github-actions-workflows-ai-assisted/)
 4. **Monitoring:** [Site Analytics](/about/features/)
 

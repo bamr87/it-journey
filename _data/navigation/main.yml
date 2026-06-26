@@ -10,20 +10,9 @@
       url: /quickstart/jekyll
     - title: Charm Tools
       url: /quickstart/charm-setup/
-- title: News
-  url: /news/
+- title: Blog
+  url: https://lifehacker.dev
   icon: bi-newspaper
-  children:
-    - title: All News
-      url: /news/
-    - title: AI & ML
-      url: /news/ai-machine-learning/
-    - title: DevOps
-      url: /news/devops/
-    - title: Web Development
-      url: /news/web-development/
-    - title: Technology
-      url: /news/technology/
 - title: Library
   url: /docs/
   icon: bi-journal-bookmark

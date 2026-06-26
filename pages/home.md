@@ -201,7 +201,7 @@ Static Website Generator (Jekyll) [Local link](\_quickstart\Jekyll.md)  Or [Web 
 This is a fixed navigation bar that is always visible at the top of the page. It is a horizontal bar that contains links to the different sections of the site. The links are organized into five main sections:
 
 - **[Quick-Start](/quickstart/)** - Fast-track tutorials and essential setup guides
-- **[Journey](/posts/)** - Learning posts, quests, and pages documenting your adventure
+- **[Quests](/quests/home/)** - Gamified learning adventures from zer0 to her0
 - **[Library](/docs/)** - Comprehensive documentation and technical guides
 - **[Notebook](/notes/)** - Personal notes and Jupyter notebook experiments  
 - **[About](/about/)** - Platform information, configuration, and community resources
