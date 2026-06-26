@@ -1,4 +1,6 @@
-# CI smoke-build override — fast PR validation without remote theme fetch.
+# CI smoke-build override — fast PR validation (skips the preview-image scan).
+# The theme is fetched via the pinned remote_theme in _config.yml, same as the
+# production gh-pages build.
 # Usage: bundle exec jekyll build --config _config.yml,_config_dev.yml,_config_ci.yml
 
 preview_images:
