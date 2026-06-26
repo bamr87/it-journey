@@ -1,0 +1,43 @@
+{%- comment -%} GitHub repos widget — synced data (pinned strip + tabs + language bar). {%- endcomment -%}
+{%- assign g = site.data.github -%}
+<div class="hw-gh">
+  {% if g.pinned.items and g.pinned.items.size > 0 %}
+  <div class="hw-gh__pinned">
+    {% for r in g.pinned.items %}
+    <a class="hw-gh__pin" href="{{ r.url }}" target="_blank" rel="noopener">
+      <span class="hw-gh__pin-name"><i class="bi bi-pin-angle-fill"></i> {{ r.name }}</span>
+      <span class="hw-gh__pin-desc">{{ r.description | truncate: 70 }}</span>
+      <span class="hw-gh__pin-meta">{% if r.language %}<i class="hw-dot" style="background:{{ r.language_color | default: '#888' }}"></i>{{ r.language }}{% endif %} · ★ {{ r.stars }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="hw-gh__tabs" data-gh-tabs>
+    <button type="button" class="hw-gh__tab is-active" data-gh-tab="top">Top</button>
+    <button type="button" class="hw-gh__tab" data-gh-tab="recent">Recent</button>
+    <button type="button" class="hw-gh__tab" data-gh-tab="starred">Starred</button>
+  </div>
+
+  <ul class="hw-gh__list" data-gh-panel="top">
+    {% for r in g.repos.top_starred %}
+    <li><a href="{{ r.url }}" target="_blank" rel="noopener"><span class="hw-gh__r-name">{{ r.name }}</span><span class="hw-gh__r-desc">{{ r.description | truncate: 60 }}</span><span class="hw-gh__r-meta">{% if r.language %}<i class="hw-dot"></i>{{ r.language }} {% endif %}★{{ r.stars }}</span></a></li>
+    {% endfor %}
+  </ul>
+  <ul class="hw-gh__list" data-gh-panel="recent" hidden>
+    {% for r in g.repos.recent %}
+    <li><a href="{{ r.url }}" target="_blank" rel="noopener"><span class="hw-gh__r-name">{{ r.name }}</span><span class="hw-gh__r-desc">{{ r.description | truncate: 60 }}</span><span class="hw-gh__r-meta">{% if r.language %}<i class="hw-dot"></i>{{ r.language }}{% endif %}</span></a></li>
+    {% endfor %}
+  </ul>
+  <ul class="hw-gh__list" data-gh-panel="starred" hidden>
+    {% for r in g.starred.items %}
+    <li><a href="{{ r.url }}" target="_blank" rel="noopener"><span class="hw-gh__r-name">{{ r.full_name }}</span><span class="hw-gh__r-desc">{{ r.description | truncate: 60 }}</span><span class="hw-gh__r-meta">{% if r.language %}<i class="hw-dot"></i>{{ r.language }}{% endif %}</span></a></li>
+    {% endfor %}
+  </ul>
+
+  {% if g.languages.ranked and g.languages.ranked.size > 0 %}
+  <div class="hw-gh__langs" title="Languages across owned repos">
+    {% for l in g.languages.ranked %}<span class="hw-gh__lang">{{ l.name }} <em>{{ l.repos }}</em></span>{% endfor %}
+  </div>
+  {% endif %}
+</div>

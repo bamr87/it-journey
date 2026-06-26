@@ -1,83 +1,185 @@
 ---
 layout: default
+hide_intro: true
 ---
 {%- comment -%}
-  quest-hub.html — Overworld hub layout for /quests/home/ and /quests/ index.
+  quest-hub.html — the Overworld dashboard for /quests/home/ (and /quests/).
 
-  Renders:
-    - Page title + lead
-    - Overall progress bar (from learner localStorage)
-    - Four tier cards, each with their own progress bar and level chips
-    - The page's own markdown body below the dynamic widgets so authors can
-      keep the narrative/lore intact.
+  A data-driven game hub. Everything below the header is rendered from data:
+    - levels / tiers / order  → _data/quests/{levels,tiers,order}.yml (generated)
+    - class paths             → _data/quests/paths.yml  (via quest-paths.html)
+    - sections / onboarding / codex → _data/quests/dashboard.yml (curated)
+  Page markdown stays minimal — authors add narrative in the body, which renders
+  in the "content" slot at the end.
 
-  Pages that use this layout do not need to add the tier-progress markup
-  manually — it's emitted here. They retain full control of their body.
+  Behaviour (assets/js/quest-dashboard.js):
+    - Collapsible sections (Bootstrap collapse) with per-user open/closed memory.
+    - A Customize panel to show/hide sections + pick an accent — saved to
+      localStorage so it carries across sessions and pages.
+    - Live "Completed / % done" stats from the quest-progress.js store.
 {%- endcomment -%}
 
 <link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/quest-dashboard.css' | relative_url }}">
 
-<div class="quest-hub">
-  <header class="quest-hub__header">
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
-    {%- assign hub_quests = site.quests | where: "fmContentType", "quest" -%}
-    <ul class="quest-hub__stats" aria-label="The quest realm at a glance">
-      <li><strong>{{ hub_quests | size }}</strong><span>Quests</span></li>
-      <li><strong>{{ site.data.quests.order | size }}</strong><span>Levels</span></li>
-      <li><strong>{{ site.data.quests.tiers | size }}</strong><span>Tiers</span></li>
-    </ul>
+{%- assign hub_quests = site.quests | where: "fmContentType", "quest" -%}
+{%- assign dash = site.data.quests.dashboard -%}
+
+<div class="quest-dash" data-quest-dash data-quest-total="{{ hub_quests | size }}">
+
+  <!-- ===== Header ===== -->
+  <header class="quest-dash__header">
+    <div class="quest-dash__heading">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    </div>
+    <button type="button" class="quest-dash__btn quest-dash__btn--ghost" data-dash-customize
+            aria-expanded="false" aria-controls="quest-dash-settings">
+      <i class="bi bi-sliders" aria-hidden="true"></i> Customize
+    </button>
   </header>
 
-  <section class="quest-hub__overall" aria-labelledby="quest-hub-overall-heading">
-    <h2 id="quest-hub-overall-heading" class="quest-section-heading">Your Progress</h2>
-    {% include quest/tier-progress-bar.html label="All quests completed" %}
-    <p class="quest-progress__hint">
-      Progress is stored locally in your browser. Visit
-      <a href="{{ '/quests/inventory/' | relative_url }}">your inventory</a>
-      to export or import it.
-    </p>
-  </section>
+  <!-- ===== At a glance ===== -->
+  <ul class="quest-dash__stats" aria-label="Your realm at a glance">
+    <li><strong>{{ hub_quests | size }}</strong><span>Quests</span></li>
+    <li><strong>{{ site.data.quests.order | size }}</strong><span>Levels</span></li>
+    <li><strong>{{ site.data.quests.tiers | size }}</strong><span>Tiers</span></li>
+    <li class="quest-dash__stat--accent"><strong data-dash-stat="completed">0</strong><span>Completed</span></li>
+    <li class="quest-dash__stat--accent"><strong data-dash-stat="percent">0%</strong><span>Done</span></li>
+  </ul>
 
-  <section class="quest-hub__tiers-section" aria-labelledby="quest-hub-tiers-heading">
-    <h2 id="quest-hub-tiers-heading" class="quest-section-heading">Tier Map</h2>
-    <div class="quest-hub__tiers">
-      {% assign tier_keys = "Apprentice|Adventurer|Warrior|Master" | split: "|" %}
-      {% for tname in tier_keys %}
-        {% assign tier = site.data.quests.tiers[tname] %}
-        <article class="quest-hub__tier-card quest-hub__tier-card--{{ tname | downcase }}">
-          <h3>{{ tier.emoji }} {{ tname }}</h3>
-          {% include quest/tier-progress-bar.html tier=tname label=tname %}
-          <ul>
-            {% for lvl in tier.levels %}
-              {% assign meta = site.data.quests.levels[lvl] %}
-              <li><a href="{{ '/quests/' | append: lvl | append: '/' | relative_url }}" title="{{ meta.theme }}">Lv {{ lvl }}</a></li>
-            {% endfor %}
-          </ul>
-        </article>
-      {% endfor %}
+  <!-- ===== Customize panel ===== -->
+  <div class="quest-dash__settings collapse" id="quest-dash-settings" data-dash-settings>
+    <div class="quest-dash__settings-grid">
+      <div class="quest-dash__settings-group">
+        <h2>Show sections</h2>
+        <div class="quest-dash__toggles" data-dash-section-toggles>
+          {% for sec in dash.sections %}
+          <label class="quest-dash__toggle">
+            <input type="checkbox" value="{{ sec.id }}" checked>
+            <span><i class="bi {{ sec.icon }}" aria-hidden="true"></i> {{ sec.title }}</span>
+          </label>
+          {% endfor %}
+        </div>
+        <div class="quest-dash__settings-actions">
+          <button type="button" class="quest-dash__btn quest-dash__btn--sm" data-dash-expand-all>Expand all</button>
+          <button type="button" class="quest-dash__btn quest-dash__btn--sm" data-dash-collapse-all>Collapse all</button>
+        </div>
+      </div>
+
+      <div class="quest-dash__settings-group">
+        <h2>Accent</h2>
+        <div class="quest-dash__accents" data-dash-accents role="group" aria-label="Choose an accent colour">
+          <button type="button" data-accent="#22d3ee" style="--sw:#22d3ee" aria-label="Cyan"></button>
+          <button type="button" data-accent="#a855f7" style="--sw:#a855f7" aria-label="Purple"></button>
+          <button type="button" data-accent="#34d399" style="--sw:#34d399" aria-label="Green"></button>
+          <button type="button" data-accent="#fb923c" style="--sw:#fb923c" aria-label="Orange"></button>
+          <button type="button" data-accent="#f472b6" style="--sw:#f472b6" aria-label="Pink"></button>
+          <button type="button" data-accent="#fbbf24" style="--sw:#fbbf24" aria-label="Gold"></button>
+        </div>
+        <p class="quest-dash__settings-note">Your picks (sections + accent) are saved in this browser and carry across pages.</p>
+      </div>
+
+      <div class="quest-dash__settings-group">
+        <h2>Progress</h2>
+        <div class="quest-dash__settings-actions">
+          <button type="button" class="quest-dash__btn quest-dash__btn--sm" data-dash-export><i class="bi bi-download"></i> Export</button>
+          <button type="button" class="quest-dash__btn quest-dash__btn--sm" data-dash-import><i class="bi bi-upload"></i> Import</button>
+          <button type="button" class="quest-dash__btn quest-dash__btn--sm quest-dash__btn--danger" data-dash-reset><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+          <input type="file" accept="application/json" hidden data-dash-import-file>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Sections ===== -->
+  {% for sec in dash.sections %}
+  <section class="quest-dash__section" data-dash-section="{{ sec.id }}">
+    <h2 class="quest-dash__section-head">
+      <button type="button" class="quest-dash__section-toggle" data-bs-toggle="collapse"
+              data-bs-target="#dash-{{ sec.id }}" aria-expanded="{{ sec.default_open }}"
+              aria-controls="dash-{{ sec.id }}" data-dash-toggle="{{ sec.id }}">
+        <i class="bi {{ sec.icon }} quest-dash__section-icon" aria-hidden="true"></i>
+        <span>{{ sec.title }}</span>
+        <i class="bi bi-chevron-down quest-dash__chev" aria-hidden="true"></i>
+      </button>
+    </h2>
+    <div class="collapse {% if sec.default_open %}show{% endif %}" id="dash-{{ sec.id }}">
+      <div class="quest-dash__section-body">
+      {% case sec.id %}
+
+      {% when 'progress' %}
+        {% include quest/tier-progress-bar.html label="All quests completed" %}
+        <p class="quest-dash__hint">
+          Progress is stored locally in your browser. Mark quests complete on each quest page, or
+          <a href="{{ '/quests/inventory/' | relative_url }}">visit your inventory</a> to export / import it.
+        </p>
+
+      {% when 'tiers' %}
+        <div class="quest-dash__tiers">
+          {% assign tier_keys = "Apprentice|Adventurer|Warrior|Master" | split: "|" %}
+          {% for tname in tier_keys %}
+            {% assign tier = site.data.quests.tiers[tname] %}
+            <article class="quest-dash__tier quest-dash__tier--{{ tname | downcase }}">
+              <header><span class="quest-dash__tier-emoji">{{ tier.emoji }}</span> <h3>{{ tname }}</h3></header>
+              {% include quest/tier-progress-bar.html tier=tname label=tname %}
+              <ul class="quest-dash__levels">
+                {% for lvl in tier.levels %}
+                  {% assign meta = site.data.quests.levels[lvl] %}
+                  <li>
+                    <a href="{{ meta.permalink | relative_url }}" title="{{ meta.theme }}">
+                      <code>{{ lvl }}</code>
+                      <i class="bi {{ meta.icon | default: 'bi-stars' }}" aria-hidden="true"></i>
+                      <span class="quest-dash__level-theme">{{ meta.theme }}</span>
+                      <span class="quest-dash__level-xp">{{ meta.xp_range }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </article>
+          {% endfor %}
+        </div>
+
+      {% when 'start' %}
+        <p class="quest-dash__lead">New here? These foundation quests forge your hero. Start anywhere.</p>
+        <div class="quest-dash__cards">
+          {% for q in dash.start_here %}
+          <a class="quest-dash__card" href="{{ q.url | relative_url }}">
+            <span class="quest-dash__card-check" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
+            <h4>{{ q.title }}</h4>
+            <p>{{ q.blurb }}</p>
+            {% if q.xp %}<span class="quest-dash__card-xp">+{{ q.xp }} XP</span>{% endif %}
+          </a>
+          {% endfor %}
+        </div>
+
+      {% when 'paths' %}
+        <p class="quest-dash__lead">Each class is a recommended chain through the level system — every step links to its live quest hub, tinted by tier.</p>
+        {% include quest-paths.html %}
+
+      {% when 'codex' %}
+        <div class="quest-dash__codex">
+          {% for c in dash.codex %}
+          <a class="quest-dash__codex-link" href="{{ c.url | relative_url }}">
+            <i class="bi {{ c.icon | default: 'bi-link-45deg' }}" aria-hidden="true"></i>
+            <span>{{ c.title }}</span>
+          </a>
+          {% endfor %}
+        </div>
+
+      {% endcase %}
+      </div>
     </div>
   </section>
+  {% endfor %}
 
-  {% if page.quest_paths %}
-    <section class="quest-hub__paths" aria-labelledby="quest-hub-paths-heading">
-      <h2 id="quest-hub-paths-heading" class="quest-section-heading">Choose Your Path</h2>
-      <p class="quest-hub__paths-sub">Each class is a recommended chain through the level system — every step links to its live quest hub. Steps are tinted by tier.</p>
-      {% include quest-paths.html %}
-    </section>
-  {% endif %}
-
-  {% if page.quest_progression %}
-    {% include quest-progression.html %}
-  {% endif %}
-
-  {% if page.quest_browser %}
-    {% include quest-browser.html %}
-  {% endif %}
-
-  <section class="quest-hub__content">
+  {%- assign trimmed = content | strip -%}
+  {% if trimmed != "" %}
+  <section class="quest-dash__content">
     {{ content }}
   </section>
+  {% endif %}
 </div>
 
 <script src="{{ '/assets/js/quest-progress.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/quest-dashboard.js' | relative_url }}" defer></script>

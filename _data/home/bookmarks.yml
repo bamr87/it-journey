@@ -1,0 +1,18 @@
+# Curated bookmarks. icon = Bootstrap Icons name (no bi- prefix).
+groups:
+  - name: Daily
+    items:
+      - { title: GitHub, url: 'https://github.com/bamr87', icon: github }
+      - { title: it-journey.dev, url: 'https://it-journey.dev', icon: rocket-takeoff }
+      - { title: BASH Consulting, url: 'https://bashconsultants.com', icon: terminal }
+      - { title: lifehacker.dev, url: 'https://lifehacker.dev', icon: newspaper }
+  - name: AI
+    items:
+      - { title: Anthropic Console, url: 'https://console.anthropic.com', icon: robot }
+      - { title: LangGraph, url: 'https://github.com/langchain-ai/langgraph', icon: diagram-3 }
+      - { title: OpenAI Platform, url: 'https://platform.openai.com', icon: cpu }
+  - name: Build
+    items:
+      - { title: Jekyll Docs, url: 'https://jekyllrb.com/docs/', icon: braces }
+      - { title: Bootstrap Icons, url: 'https://icons.getbootstrap.com', icon: bootstrap }
+      - { title: GitHub Actions, url: 'https://github.com/bamr87/it-journey/actions', icon: gear }

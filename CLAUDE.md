@@ -55,8 +55,8 @@ make quest-audit      # quest content + dependency network validation
 make quest-data       # regenerate _data/quests/* after quest frontmatter edits
 ```
 
-Host Ruby cannot build this site (needs Ruby ≥3.1 via `github-pages`); use the
-Docker path documented in the `run-it-journey` skill.
+Host Ruby cannot build this site (the `jekyll-theme-zer0` gem ≥1.21 needs Ruby
+≥3.2); use the Docker path documented in the `run-it-journey` skill.
 
 ## Non-negotiable conventions
 

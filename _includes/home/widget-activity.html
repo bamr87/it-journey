@@ -1,0 +1,16 @@
+{%- comment -%} Contribution heatmap — synced site.data.github.activity (GitHub calendar). {%- endcomment -%}
+{%- assign act = site.data.github.activity -%}
+<div class="hw-activity">
+  <div class="hw-activity__head">
+    <strong>{{ act.total_contributions | default: 0 }}</strong> contributions in the last year
+    {% if act.generated_at %}<span class="hw-activity__synced">synced {{ act.generated_at | date: "%b %-d" }}</span>{% endif %}
+  </div>
+  <div class="hw-cal" role="img" aria-label="Contribution heatmap">
+    {% for d in act.days %}
+      {%- assign n = d.count -%}
+      {%- if n == 0 -%}{%- assign lv = 0 -%}{%- elsif n < 3 -%}{%- assign lv = 1 -%}{%- elsif n < 6 -%}{%- assign lv = 2 -%}{%- elsif n < 10 -%}{%- assign lv = 3 -%}{%- else -%}{%- assign lv = 4 -%}{%- endif -%}
+      <i class="hw-cal__d hw-cal__d--{{ lv }}" title="{{ d.date }}: {{ n }}"></i>
+    {% endfor %}
+  </div>
+  <div class="hw-cal__legend"><span>Less</span><i class="hw-cal__d hw-cal__d--0"></i><i class="hw-cal__d hw-cal__d--1"></i><i class="hw-cal__d hw-cal__d--2"></i><i class="hw-cal__d hw-cal__d--3"></i><i class="hw-cal__d hw-cal__d--4"></i><span>More</span></div>
+</div>

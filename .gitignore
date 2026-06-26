@@ -79,3 +79,5 @@ work/
 test/quest-validator/*-report.json
 test/quest-validator/full-audit-report.json
 pages/_quests/NETWORK_REPORT.md
+.playwright-mcp/
+landing-full.png

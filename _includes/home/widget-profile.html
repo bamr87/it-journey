@@ -1,0 +1,48 @@
+{%- comment -%} Profile / status widget — curated contributor data + live GitHub profile. {%- endcomment -%}
+{%- assign c = site.data.contributors.bamr87 -%}
+{%- assign gh = site.data.github.profile -%}
+<div class="hw-profile">
+  <div class="hw-profile__top">
+    <img class="hw-profile__avatar" src="{{ gh.avatar_url | default: 'https://avatars.githubusercontent.com/u/10567847?v=4' }}"
+         alt="{{ c.profile.display_name | default: 'Amr' }}" width="76" height="76" loading="eager"
+         onerror="this.onerror=null;this.src='https://avatars.githubusercontent.com/u/10567847?v=4'">
+    <div class="hw-profile__id">
+      <h3 class="hw-profile__name">{{ c.profile.display_name | default: gh.name | default: 'Amr' }}</h3>
+      <p class="hw-profile__class">{{ c.profile.class | default: 'IT Wizard' }} · {{ c.profile.title | default: 'Founder' }}</p>
+      {% if c.profile.motto %}<p class="hw-profile__motto">“{{ c.profile.motto }}”</p>{% endif %}
+    </div>
+  </div>
+
+  <label class="hw-profile__status">
+    <span class="hw-status-dot" aria-hidden="true"></span>
+    <input type="text" data-home-status maxlength="80" aria-label="Status"
+           placeholder="set a status…" value="actively shipping zer0-mistakes + it-journey">
+  </label>
+
+  {% if c.level %}
+  <div class="hw-profile__xp">
+    <div class="hw-xp-meta"><span>Lv {{ c.level.current_level }} · {{ c.level.tier }}</span><span>{{ c.level.xp }} XP</span></div>
+    <div class="hw-xp-bar"><span style="width:{{ c.level.progress_percent | default: 0 }}%"></span></div>
+  </div>
+  {% endif %}
+
+  <ul class="hw-profile__stats">
+    <li><strong data-gh-field="public_repos">{{ gh.totals.owned_repos | default: gh.public_repos | default: 0 }}</strong><span>repos</span></li>
+    <li><strong data-gh-field="followers">{{ gh.followers | default: 0 }}</strong><span>followers</span></li>
+    <li><strong>{{ gh.totals.starred | default: 0 }}</strong><span>starred</span></li>
+    <li><strong>{{ c.stats.total_commits | default: 0 }}</strong><span>commits</span></li>
+  </ul>
+
+  <p class="hw-profile__meta">
+    {% if gh.company %}<span><i class="bi bi-building"></i> {{ gh.company }}</span>{% endif %}
+    {% if gh.location %}<span><i class="bi bi-geo-alt"></i> {{ gh.location }}</span>{% endif %}
+    {% if gh.member_since %}<span><i class="bi bi-calendar-check"></i> since {{ gh.member_since | slice: 0,4 }}</span>{% endif %}
+  </p>
+
+  <div class="hw-profile__links">
+    <a href="{{ gh.html_url | default: 'https://github.com/bamr87' }}" title="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+    {% if gh.blog and gh.blog != '' %}<a href="https://{{ gh.blog | remove: 'https://' | remove: 'http://' }}" title="Website" target="_blank" rel="noopener"><i class="bi bi-globe2"></i></a>{% endif %}
+    <a href="https://github.com/bamr42" title="X / Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+    <a href="{{ '/quests/inventory/' | relative_url }}" title="Quest inventory"><i class="bi bi-bag-heart"></i></a>
+  </div>
+</div>

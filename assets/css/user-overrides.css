@@ -1,0 +1,201 @@
+/* ===========================================================================
+   IT-Journey — site-wide "cosmic quest" theme
+   ---------------------------------------------------------------------------
+   Loaded LAST by the zer0-mistakes theme (core/head.html links
+   /assets/css/user-overrides.css after main.css + tokens-inline), so these
+   rules win over the theme defaults. Strategy: override the theme's design
+   TOKENS (--zer0-color-*, --zer0-font-*, and the --bs-* bridge) so every
+   component inherits the look for free, then add a little component polish.
+   Palette mirrors the landing page (index.html #itj): deep cosmic navy-purple
+   with purple / cyan / gold accents, Cinzel display + Space Grotesk + JetBrains
+   Mono. See also _config.yml `theme_color` for the semantic palette.
+   =========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ---- design tokens (win over main.css + the dark skin) ------------------- */
+:root,
+[data-theme-skin="dark"] {
+  /* surfaces */
+  --zer0-color-bg:               #0b0a1e;
+  --zer0-color-bg-elevated:      #16142f;
+  --zer0-color-bg-muted:         #100e26;
+  --zer0-color-ink:              #e7e9ff;
+  --zer0-color-ink-muted:        #9aa2c8;
+  --zer0-color-border:           rgba(168, 85, 247, .22);
+  --zer0-color-border-translucent: rgba(168, 85, 247, .12);
+  /* brand */
+  --zer0-color-primary:          #a855f7;
+  --zer0-color-primary-rgb:      168, 85, 247;
+  --zer0-color-secondary:        #7c8099;
+  --zer0-color-accent:           #22d3ee;
+  --zer0-color-link:             #38d6f0;
+  --zer0-color-link-hover:       #c084fc;
+  /* status */
+  --zer0-color-success:          #34d399;
+  --zer0-color-warning:          #fbbf24;
+  --zer0-color-danger:           #fb7185;
+  --zer0-color-info:             #22d3ee;
+  /* code */
+  --zer0-color-code-bg:          #0a0a1f;
+  --zer0-color-code-ink:         #d4d8f5;
+  /* type */
+  --zer0-font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --zer0-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Bridge to Bootstrap tokens for components that read --bs-* directly. */
+  --bs-body-bg:           #0b0a1e;
+  --bs-body-bg-rgb:       11, 10, 30;
+  --bs-body-color:        #e7e9ff;
+  --bs-body-color-rgb:    231, 233, 255;
+  --bs-emphasis-color:    #ffffff;
+  --bs-secondary-color:   #9aa2c8;
+  --bs-tertiary-bg:       #16142f;
+  --bs-border-color:      rgba(168, 85, 247, .22);
+  --bs-primary:           #a855f7;
+  --bs-primary-rgb:       168, 85, 247;
+  --bs-link-color:        #38d6f0;
+  --bs-link-color-rgb:    56, 214, 240;
+  --bs-link-hover-color:  #c084fc;
+  --bs-code-color:        #22d3ee;
+  --bs-heading-color:     #ffffff;
+}
+
+/* ---- global surface ----------------------------------------------------- */
+body.zer0-bg-body,
+body {
+  background-color: #0b0a1e;
+  background-image:
+    radial-gradient(1100px 620px at 82% -8%, rgba(124, 58, 237, .26), transparent 60%),
+    radial-gradient(900px 560px at 6% 4%, rgba(34, 211, 238, .12), transparent 55%),
+    url('/assets/backgrounds/noise/dark.svg');
+  background-attachment: fixed, fixed, fixed;
+  color: var(--zer0-color-ink);
+  font-family: var(--zer0-font-sans);
+}
+
+::selection { background: rgba(168, 85, 247, .35); color: #fff; }
+
+/* themed scrollbar */
+* { scrollbar-color: #6d28d9 transparent; }
+*::-webkit-scrollbar { width: 11px; height: 11px; }
+*::-webkit-scrollbar-thumb { background: linear-gradient(#7c3aed, #22d3ee); border-radius: 10px; border: 2px solid transparent; background-clip: content-box; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- typography --------------------------------------------------------- */
+h1, .h1, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.page-title, .bd-title {
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: .01em;
+  color: var(--bs-heading-color);
+}
+h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--zer0-font-sans);
+  font-weight: 700;
+  color: #f3f1ff;
+}
+a { color: var(--zer0-color-link); text-decoration-color: rgba(56, 214, 240, .35); }
+a:hover { color: var(--zer0-color-link-hover); }
+code, kbd, pre, samp { font-family: var(--zer0-font-mono); }
+:not(pre) > code { color: var(--zer0-color-accent); background: rgba(34, 211, 238, .08); padding: .12em .4em; border-radius: 6px; }
+hr { border-color: var(--zer0-color-border); opacity: .6; }
+
+/* ---- navbar ------------------------------------------------------------- */
+#navbar, .navbar-main, header.fixed-top {
+  background: rgba(10, 9, 26, .82) !important;
+  backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid var(--zer0-color-border);
+}
+#navbar .nav-link, .navbar-main .nav-link { color: #c9cdf0; }
+#navbar .nav-link:hover, #navbar .nav-link.active,
+.navbar-main .nav-link:hover, .navbar-main .nav-link.active { color: #fff; }
+
+/* ---- cards / panels / surfaces ------------------------------------------ */
+.card, .bd-callout, .accordion, .list-group, .toast, .dropdown-menu, .modal-content {
+  background-color: var(--zer0-color-bg-elevated);
+  border: 1px solid var(--zer0-color-border);
+  color: var(--zer0-color-ink);
+}
+.card { border-radius: 16px; transition: transform .2s ease, border-color .2s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-4px); border-color: rgba(34, 211, 238, .45); box-shadow: 0 18px 44px rgba(0, 0, 0, .45); }
+.bg-body-tertiary, .bg-light, .bg-white { background-color: var(--zer0-color-bg-muted) !important; color: var(--zer0-color-ink) !important; }
+.bg-dark, .bg-body-secondary { background-color: #0a0a1f !important; }
+.text-body-secondary, .text-muted { color: var(--zer0-color-ink-muted) !important; }
+.text-body, .text-body-emphasis { color: var(--zer0-color-ink) !important; }
+.border, .border-top, .border-bottom, .border-start, .border-end { border-color: var(--zer0-color-border) !important; }
+
+/* ---- buttons ------------------------------------------------------------ */
+.btn-primary {
+  --bs-btn-bg: #7c3aed; --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: #8b48f5; --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: #6d28d9; --bs-btn-color: #fff;
+  background: linear-gradient(100deg, #22d3ee, #a855f7);
+  border: none; color: #0d041f; font-weight: 700;
+  box-shadow: 0 8px 22px rgba(124, 58, 237, .4);
+}
+.btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.btn-outline-primary { --bs-btn-color: #c4b5fd; --bs-btn-border-color: rgba(168,85,247,.5); --bs-btn-hover-bg: rgba(168,85,247,.16); --bs-btn-hover-border-color: #a855f7; --bs-btn-hover-color: #fff; }
+.btn-outline-secondary, .btn-outline-light { --bs-btn-color: #c9cdf0; --bs-btn-border-color: rgba(255,255,255,.2); --bs-btn-hover-bg: rgba(255,255,255,.06); --bs-btn-hover-color: #fff; }
+.btn-secondary { --bs-btn-bg: #2a2750; --bs-btn-border-color: transparent; --bs-btn-hover-bg: #353060; }
+
+/* ---- sidebars + TOC ----------------------------------------------------- */
+.bd-sidebar, .bd-toc {
+  background: transparent;
+  border-color: var(--zer0-color-border) !important;
+}
+.bd-sidebar a, .bd-toc a, .bd-links a, .page-links a { color: var(--zer0-color-ink-muted); border-radius: 8px; }
+.bd-sidebar a:hover, .bd-toc a:hover { color: #fff; background: rgba(168, 85, 247, .12); }
+.bd-sidebar .active > a, .bd-sidebar a.active, .bd-toc a.active,
+.bd-links .active > a {
+  color: #fff !important; background: rgba(168, 85, 247, .18);
+  border-left: 2px solid var(--zer0-color-accent);
+}
+
+/* ---- code blocks -------------------------------------------------------- */
+pre, .highlight, .highlighter-rouge {
+  background: var(--zer0-color-code-bg) !important;
+  color: var(--zer0-color-code-ink);
+  border: 1px solid var(--zer0-color-border);
+  border-radius: 12px;
+}
+pre code { color: var(--zer0-color-code-ink); background: transparent; padding: 0; }
+.code-header, .highlight .gutter { background: rgba(255, 255, 255, .03); border-bottom: 1px solid var(--zer0-color-border); }
+
+/* ---- tables ------------------------------------------------------------- */
+.table {
+  --bs-table-bg: transparent; --bs-table-color: var(--zer0-color-ink);
+  --bs-table-border-color: var(--zer0-color-border);
+  --bs-table-striped-bg: rgba(168, 85, 247, .06); --bs-table-striped-color: var(--zer0-color-ink);
+  --bs-table-hover-bg: rgba(34, 211, 238, .08); --bs-table-hover-color: #fff;
+}
+.table thead th { color: var(--zer0-color-accent); border-bottom: 2px solid var(--zer0-color-border); }
+
+/* ---- blockquotes / callouts -------------------------------------------- */
+blockquote, .blockquote {
+  border-left: 3px solid var(--zer0-color-primary);
+  background: rgba(124, 58, 237, .08);
+  padding: .8rem 1rem; border-radius: 0 10px 10px 0; color: #d4d8f5;
+}
+
+/* ---- badges / pills / progress ----------------------------------------- */
+.badge.bg-primary { background: linear-gradient(100deg, #22d3ee, #a855f7) !important; color: #0d041f; }
+.badge.bg-secondary { background: #2a2750 !important; }
+.progress { background: rgba(255, 255, 255, .06); }
+.progress-bar { background: linear-gradient(90deg, #22d3ee, #a855f7); }
+
+/* ---- forms -------------------------------------------------------------- */
+.form-control, .form-select {
+  background: rgba(255, 255, 255, .04); border-color: var(--zer0-color-border); color: var(--zer0-color-ink);
+}
+.form-control:focus, .form-select:focus { background: rgba(255, 255, 255, .06); border-color: var(--zer0-color-accent); box-shadow: 0 0 0 .2rem rgba(34, 211, 238, .2); color: #fff; }
+.form-control::placeholder { color: #6f76a0; }
+
+/* ---- footer ------------------------------------------------------------- */
+footer, .footer, .footer-powered-by {
+  background: #08071a; border-top: 1px solid var(--zer0-color-border); color: var(--zer0-color-ink-muted);
+}
+footer a { color: var(--zer0-color-link); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .btn-primary { transition: none !important; }
+}

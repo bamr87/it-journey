@@ -1,0 +1,11 @@
+# Quick-launch shortcuts. Feed both the launcher widget and the Cmd+K palette.
+# key = single-letter hint (optional). icon = Bootstrap Icons name.
+items:
+  - { label: Quests, url: /quests/home/, icon: controller, key: q }
+  - { label: Quickstart, url: /quickstart/, icon: lightning-charge, key: s }
+  - { label: Docs, url: /docs/, icon: journal-bookmark, key: d }
+  - { label: Notes, url: /notes/, icon: journal-code, key: n }
+  - { label: Blog, url: 'https://lifehacker.dev', icon: newspaper, key: b }
+  - { label: Repos, url: 'https://github.com/bamr87?tab=repositories', icon: github, key: r }
+  - { label: Actions, url: 'https://github.com/bamr87/it-journey/actions', icon: gear }
+  - { label: Sitemap, url: /sitemap/, icon: diagram-2 }
