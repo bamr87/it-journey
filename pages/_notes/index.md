@@ -42,7 +42,7 @@ Working notes, code snippets, and quick references collected during IT-Journey d
 | [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
 | [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
 | [📚 Docs Library](/docs/) | Reference documentation — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax |
-| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
+| [📰 Blog (lifehacker.dev)](https://lifehacker.dev) | Tutorials, AI development chronicles, and technical write-ups — now published on lifehacker.dev |
 
 ---
 
