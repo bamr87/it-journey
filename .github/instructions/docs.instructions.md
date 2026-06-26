@@ -1,6 +1,6 @@
 ---
 applyTo: "pages/_docs/**/*.md"
-description: "Author IT-Journey docs collection entries: technical reference, cheatsheets, wargame writeups, and certification study material"
+description: "Author IT-Journey docs collection entries: technical reference, cheatsheets, and certification study material"
 date: 2026-05-24T00:00:00.000Z
 lastmod: 2026-06-22T00:00:00.000Z
 ---
@@ -13,7 +13,7 @@ Published reference library at `/docs/...`. Distinct from the repo-root `docs/` 
 
 | Field | Constraint |
 |---|---|
-| `title` | Plain string; reference style ("Bandit Level 5", "Liquid Filter Cheatsheet") — no marketing fluff |
+| `title` | Plain string; reference style ("Liquid Filter Cheatsheet", "Bash Redirection Reference") — no marketing fluff |
 | `description` | 120–160 characters; one sentence describing what the doc covers |
 | `date` | ISO 8601 with milliseconds (`2026-05-24T00:00:00.000Z`) |
 | `lastmod` | ISO 8601 with milliseconds; bump on every meaningful edit |
@@ -23,23 +23,21 @@ Published reference library at `/docs/...`. Distinct from the repo-root `docs/` 
 | `draft` | Boolean (`false` for publish) |
 | `permalink` | Match the section pattern (see §4) when overriding the default |
 
-**Recommended:** `keywords` (list of 5–10 phrases), `excerpt` (short summary for indexes), `source_repo` and `source_url` for imported content (wargames, vendor docs), `preview` (social card image).
+**Recommended:** `keywords` (list of 5–10 phrases), `excerpt` (short summary for indexes), `source_repo` and `source_url` for imported content (vendor docs), `preview` (social card image).
 
 ### Frontmatter skeleton
 
 ```yaml
 ---
-title: Bandit Level 5
-description: "Walk through OverTheWire Bandit level 5 — finding a 1033-byte readable, non-executable file hidden inside inhere/."
+title: Liquid Filter Cheatsheet
+description: "Reference for the Liquid filters used most in IT-Journey templates — string, array, date, and URL transformations with minimal examples."
 date: 2025-06-12T00:00:00.000Z
 lastmod: 2026-05-24T00:00:00.000Z
 author: bamr87
-categories: [wargames, security]
-tags: [security, wargames, linux, ctf, bandit]
-keywords: [bandit, overthewire, find command, file permissions, ctf walkthrough]
-permalink: /docs/wargames/bandit/bandit5/
-source_repo: https://github.com/OverTheWireOrg/OverTheWire-website
-source_url: https://overthewire.org/wargames/bandit/bandit5.html
+categories: [jekyll, reference]
+tags: [jekyll, liquid, templating, cheatsheet]
+keywords: [liquid filters, jekyll templating, string filters, array filters, date format]
+permalink: /docs/jekyll/liquid-filters/
 draft: false
 ---
 ```
@@ -48,13 +46,12 @@ draft: false
 
 | Subfolder | Purpose | Notes |
 |---|---|---|
-| `wargames/overthewire/<game>/` | CTF level walkthroughs | Imported; preserve `source_repo` / `source_url`. Body verbatim from author; do **not** rewrite solution steps |
 | `jekyll/` | IT-Journey Jekyll implementation notes | Full reference voice; cross-link with `/quests/` and `/posts/` |
 | `terminal/` | Bash/zsh/iTerm reference and cheatsheets | Compact tables, command + meaning |
 | `certifications/<exam>/` | Study hubs (currently `gh-600/`) | Long-form; well-developed bodies |
 | `obsidian/` | Knowledge-graph and PKM docs | Same as `jekyll/` |
 
-Wargame writeups are the largest cohort (~200 files). Their `description` field is the most common frontmatter gap — derive from the level goal or first prose paragraph.
+Imported content carrying `source_repo` / `source_url` is read-only: preserve those fields and do **not** rewrite the vendored body.
 
 ## 3. Body Structure
 
@@ -76,24 +73,6 @@ Definition, syntax, minimal example.
 - Cross-links to other docs, posts, quests
 ```
 
-### Wargame walkthrough
-
-```markdown
-## Level Goal
-Verbatim from the game.
-
-## Approach
-Hypothesis: what command/tool to reach for and why.
-
-## Solution
-```bash
-# commands with output
-```
-
-## Lessons
-What the level taught (file permissions, find flags, etc.).
-```
-
 ### Certification study hub
 
 ```markdown
@@ -113,7 +92,6 @@ Default is `/docs/:categories/:name/`. Override `permalink` explicitly when the 
 
 | Subsection | Pattern | Example |
 |---|---|---|
-| Wargames | `/docs/wargames/<game>/<level>/` | `/docs/wargames/bandit/bandit5/` |
 | Jekyll | `/docs/jekyll/<name>/` | `/docs/jekyll/liquid-filters/` |
 | Terminal | `/docs/terminal/<name>/` | `/docs/terminal/bash-cheatsheet/` |
 | Certifications | `/docs/certifications/<exam>/<name>/` | `/docs/certifications/gh-600/study-plan/` |
@@ -136,7 +114,7 @@ These break CI or the docs index:
 3. Update `lastmod` on every edit.
 4. Code blocks have language tags; nested fences use 4 backticks if the inner block uses 3.
 5. Never commit secret prefixes (`ghp_`, `sk-`, `AKIA`) — use `${env:NAME}` placeholders.
-6. For imported content (wargames), preserve `source_repo` and `source_url`.
+6. For imported content carrying `source_repo` / `source_url`, preserve those fields.
 7. Don't link to `../../docs/...` (the developer-only directory excluded from Jekyll). Use a GitHub URL instead.
 
 ## 7. Pre-publish Checklist
@@ -157,7 +135,7 @@ Docs use the `reference` voice profile — terse, scannable, answer-first, low e
 Voice/tone and the discouraged-terms list live in the brand store; see
 [`_data/brand/sections/docs.md`](../../_data/brand/sections/docs.md) and
 [`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand drift
-advisorily (`make cms-all`); vendored wargame docs are exempt.
+advisorily (`make cms-all`); vendored read-only docs (carrying `source_repo` / `source_url`) are exempt.
 
 ---
 

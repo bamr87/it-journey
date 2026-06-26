@@ -82,14 +82,10 @@ Obsidian-style links help connect notes, docs, quests, and posts into a lightwei
 - [Obsidian Knowledge Graph](/docs/obsidian/) - How IT-Journey uses theme-owned wiki links and graph views
 - [Obsidian Graph View](/docs/obsidian/graph/) - Interactive map of linked content across the site
 
-### Wargames (External)
+### Wargames (External Repo)
 
-Security challenges aggregated from the [OverTheWire](https://overthewire.org/wargames/) community project. Learn and practice security concepts through gamified challenges.
-
-**Topics:**
-- [Wargames Overview](/docs/wargames/) - Introduction, game list, and how to get started
-
-> This section is populated by the [docs aggregation pipeline](/it-journey/scripts/docs-aggregator/). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
+Security wargames (OverTheWire) now live in a dedicated repository:
+**[github.com/bamr87/wargames](https://github.com/bamr87/wargames)** — Bandit, Natas, Narnia, Behemoth, and more, with their own aggregation pipeline.
 
 ### Future Documentation Areas
 

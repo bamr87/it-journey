@@ -92,10 +92,10 @@ collections:
 # ---------------------------------------------------------------------------
 read_only:
   # Vendored upstream content carries source_repo/source_url/license frontmatter.
-  # Detected dynamically by frontmatter key, plus this glob as a backstop.
+  # Detected dynamically by the frontmatter key. (No vendored path tree remains
+  # in this repo; wargames moved to github.com/bamr87/wargames.)
   frontmatter_markers: [source_repo, source_url]
-  globs:
-    - "pages/_docs/wargames/**"
+  globs: []
   # Structural / scaffolding files: indexed for visibility but exempt from deep
   # field/SEO checks. READMEs are skipped to match the CI frontmatter validator
   # (scripts/validation/frontmatter-validator.py SKIP_FILES). Flip individual

@@ -11,8 +11,8 @@
 > (`quest` / `docs`) via `_data/brand/sections/_registry.yml › collection_defaults`.
 > Two profiles were added for them — `quest-fantasy` (gamified, emoji-rich; emoji
 > density is **not** policed and `powerful` is relaxed as fantasy flavor) and
-> `reference` (terse docs). Vendored read-only docs (`pages/_docs/wargames/**`)
-> remain exempt. Notes/quickstart/about/etc. stay out of scope.
+> `reference` (terse docs). Vendored read-only docs (any upstream content
+> carrying `source_repo`/`source_url`) remain exempt. Notes/quickstart/about/etc. stay out of scope.
 
 IT-Journey has rich brand raw material scattered across the repo — the mission and
 seven core principles in `pages/_about/about.md`, the philosophy in

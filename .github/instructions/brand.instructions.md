@@ -66,7 +66,7 @@ in `.cms/config.yml › brand.collections` (posts, quests, docs). It never block
 and never changes the health score. Run `make cms-all` and read the **Brand drift by
 section** table in `.cms/reports/<date>.md`, or use the `/brand-audit` prompt. To
 draft/revise with the brand loaded, use the `brand-voice` skill. Vendored read-only
-docs (e.g. `pages/_docs/wargames/**`) are always skipped.
+docs (any upstream content carrying `source_repo`/`source_url` frontmatter) are always skipped.
 
 ---
 

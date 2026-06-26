@@ -63,8 +63,8 @@ Docker path documented in the `run-it-journey` skill.
 - **Quests are registry-governed.** `_data/quests/*.yml` is generated from
   `scripts/quest/quest_registry.py`; never hand-edit it. After changing quest
   frontmatter run `make quest-data` or `quest-validation` CI fails on stale data.
-- **Vendored content is read-only.** ~220 `pages/_docs/wargames/**` files carry
-  `source_repo`/`license`; sync, never rewrite.
+- **Vendored content is read-only.** Any upstream content carrying
+  `source_repo`/`source_url` frontmatter is synced, never rewritten.
 - **Validate before you push.** `make build-ci` + `make content-audit` (+ `make
   quest-audit` if quests changed) must pass.
 

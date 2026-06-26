@@ -117,7 +117,7 @@ jobs:
         if: steps.norm.outputs.changed == 'true'
         run: |
           set -euo pipefail
-          bad="$(git diff --name-only -- 'pages/_docs/wargames/**')"
+          bad=""
           for f in $(git diff --name-only -- 'pages/**/*.md'); do
             if [ -f "$f" ] && grep -qE '^(source_repo|source_url):' "$f"; then
               bad="$bad $f"
@@ -267,7 +267,7 @@ jobs:
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
           # Vendored guard: the agent must never have edited read-only content.
-          bad="$(git diff --name-only -- 'pages/_docs/wargames/**')"
+          bad=""
           for f in $(git diff --name-only -- 'pages/**/*.md'); do
             if [ -f "$f" ] && grep -qE '^(source_repo|source_url):' "$f"; then bad="$bad $f"; fi
           done
