@@ -32,7 +32,7 @@ IT-Journey is a static site generator powered by Jekyll **{{ site.data.powered_b
 
 ### Key Features
 
-- **Collections System:** Organizing content into _posts, _docs, _quests, _notebooks, _notes, _about, and _quickstart
+- **Collections System:** Organizing content into _docs, _quests, _notes, _about, and _quickstart
 - **Remote Theme:** Using the [zer0-mistakes theme](https://github.com/bamr87/zer0-mistakes)
 - **GitHub Pages:** Automated deployment via GitHub Pages
 - **Markdown Processing:** GitHub Flavored Markdown via Kramdown

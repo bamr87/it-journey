@@ -181,11 +181,9 @@ my-site/
 ├── _plugins/                 # Custom Jekyll plugins
 ├── assets/                   # Static files (CSS, JS, images)
 ├── pages/                    # Content collections
-│   ├── _posts/               # Blog posts (YYYY-MM-DD-slug.md)
 │   ├── _quests/              # Gamified learning content
 │   ├── _docs/                # Reference documentation
 │   ├── _quickstart/          # Quick start guides
-│   ├── _notebooks/           # Jupyter notebooks
 │   ├── _notes/               # Draft notes
 │   └── _about/               # About pages
 ├── scripts/                  # Automation scripts

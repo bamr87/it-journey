@@ -148,9 +148,6 @@ IT-Journey includes scripts for common tasks:
 ### Content Management
 
 ```bash
-# Convert Jupyter notebooks to Markdown
-./scripts/development/content/jupyter-to-markdown.sh pages/_notebooks/
-
 # Organize posts by category
 python3 scripts/development/content/organize-posts.py --dry-run
 

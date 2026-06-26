@@ -200,7 +200,7 @@ The `navigation/` directory contains navigation menu configurations for differen
 | `posts.yml` | Posts/blog category navigation | N/A (uses `searchCats` mode) | `/posts/` pages |
 | `quests.yml` | Quest system navigation by level | `pages/_quests` | `/quests/` pages |
 | `quickstart.yml` | Quick-start guides navigation | `pages/_quickstart` | `/quickstart/` pages |
-| `notebooks.yml` | Notes and notebooks navigation | `pages/_notes`, `pages/_notebooks` | `/notes/`, `/notebooks/` |
+| `notes.yml` | Notes navigation | `pages/_notes` | `/notes/` |
 | `hobbies.yml` | Hobbies section navigation | `pages/_hobbies` | `/hobbies/` pages |
 
 ### Sidebar Navigation Modes

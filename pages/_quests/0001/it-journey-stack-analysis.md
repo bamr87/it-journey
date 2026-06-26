@@ -386,7 +386,6 @@ class LinkHealthGuardian:
 
 **Additional Scripts**:
 - `zer0-to-hero-complete.sh` - Complete learning journey automation
-- `jupyter-to-markdown.sh` - Notebook conversion
 - Various utility and test scripts
 
 ### 4. Database/Storage Layer
@@ -398,13 +397,11 @@ class LinkHealthGuardian:
 ```text
 Content Structure:
 pages/
-├── _posts/          # Blog articles (Jekyll posts collection)
 ├── _quests/         # Gamified learning content
 │   ├── lvl_000/    # Beginner level
 │   ├── lvl_001/    # Intermediate level
 │   └── ...
 ├── _docs/           # Documentation
-├── _notebooks/      # Jupyter notebooks
 └── _notes/          # Personal notes
 ```
 

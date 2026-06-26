@@ -261,7 +261,6 @@ Access all categories at `/categories/` to explore content by topic:
 
 | Section | Path | Tools | Purpose |
 |---------|------|-------|---------|
-| **💻 Jupyter Labs** | `/notes/jupyter/` | Interactive Notebooks | Code experimentation and analysis |
 | **📝 Personal Notes** | `/notes/` | Markdown Notes | Quick captures and reminders |
 | **🧩 Code Collections** | `/notes/snippets/` | Reusable Code | Curated examples and patterns |
 | **📊 Learning Logs** | `/notes/progress/` | Progress Tracking | Journey documentation |
@@ -283,15 +282,13 @@ it-journey/
 │   ├── _quickstart/          # Quick setup guides
 │   └── scripts/              # Automation scripts
 ├── ⚔️ Journey Content
-│   ├── pages/_posts/         # Chronicles (blog posts)
 │   ├── pages/_quests/        # Epic quests and challenges
 │   └── pages/_about/         # Platform information
 ├── 📚 Library Resources
 │   ├── pages/_docs/          # Documentation collection
 │   └── docs/                 # Additional guides
-├── 📔 Notebook Space
-│   ├── pages/_notes/         # Personal notes
-│   └── pages/_notebooks/     # Jupyter environments
+├── 📔 Notes Space
+│   └── pages/_notes/         # Personal notes
 ├── ⚙️ Site Configuration
 │   ├── _config.yml           # Main Jekyll config
 │   ├── _data/navigation/     # Site navigation

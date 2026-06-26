@@ -31,7 +31,6 @@ These are the learning-focused features that make IT-Journey a comprehensive edu
 | ----------------------------------------------------- | ----------- | ----------- | ----- |
 | **AI-Powered Learning Paths**                         | ✅ Active   | Personalized learning recommendations using AI | [AI Journey](/quests/ai-powered-learning/) |
 | **Interactive Quests System**                         | ✅ Active   | Gamified learning challenges and exercises | [Quest System](/quests/) |
-| **Hands-on Notebooks**                                | ✅ Active   | Jupyter notebooks for practical coding | [Notebooks](/notebooks/) |
 | **Progressive Skill Levels**                          | ✅ Active   | Structured progression from zero to hero | [Levels](/quests/levels/) |
 | **Community Discussions**                             | ✅ Active   | GitHub Discussions for peer learning | [Join Discussion](https://github.com/bamr87/it-journey/discussions) |
 | **Collaborative Learning**                            | ✅ Active   | Open-source contribution opportunities | [Contributing](/about/contributing/) |

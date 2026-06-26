@@ -231,14 +231,6 @@ pages/_quickstart/
 
 Quickstart guides like this one use the `default` layout with a `quickstart` sidebar nav.
 
-### Notebooks
-
-```
-pages/_notebooks/
-```
-
-Jupyter notebooks converted to Markdown. By default they use the `default` layout (via `_config.yml`), but individual notebooks can set `layout: article` in their frontmatter to use the article layout instead.
-
 ### Notes
 
 ```
@@ -261,11 +253,9 @@ About pages, profiles, and feature descriptions.
 
 | Collection | Folder | Layout | Naming Convention | Permalink Pattern |
 |-----------|--------|--------|-------------------|-------------------|
-| Posts | `pages/_posts/` | `articles` | `YYYY-MM-DD-slug.md` | `/posts/YYYY/MM/DD/slug/` |
 | Quests | `pages/_quests/` | `quest` | `quest-name.md` in level folder | `/quests/category/name/` |
 | Docs | `pages/_docs/` | `default` | `descriptive-name.md` | `/docs/category/name/` |
 | Quickstart | `pages/_quickstart/` | `default` | `descriptive-name.md` | `/quickstart/name/` |
-| Notebooks | `pages/_notebooks/` | `journals` | `name.md` or converted `.ipynb` | `/notebooks/path/name/` |
 | Notes | `pages/_notes/` | `default` | `descriptive-name.md` | `/notes/path/name/` |
 | About | `pages/_about/` | `default` | `descriptive-name.md` | `/about/category/name/` |
 

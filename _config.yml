@@ -275,9 +275,6 @@ collections:
   hobbies:
     output: true
     permalink: /:collection/:categories/:name/
-  notebooks:
-    output: true
-    permalink: /:collection/:path/
   notes:
     output: true
     permalink: /:collection/:path/
@@ -404,19 +401,7 @@ defaults:
       share: false
       author_profile: false
       sidebar:
-        nav: notebooks
-
-  # pages/_notebooks
-  - 
-    scope:
-      path: pages/_notebooks
-      type: notebooks
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: notebooks
+        nav: notes
 
 # Exclude from processing.
 # The following items will not be processed, by default.

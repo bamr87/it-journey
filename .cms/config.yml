@@ -66,11 +66,6 @@ collections:
     fm_content_type: default
     required_extra: []
     recommended: [lastmod]
-  notebooks:
-    path: pages/_notebooks
-    fm_content_type: default
-    required_extra: []
-    recommended: [tags, lastmod]
   pages:                                  # loose top-level pages collection
     path: pages
     fm_content_type: default
@@ -182,7 +177,6 @@ loop:
     notes: 0.9
     about: 0.8
     hobbies: 0.6
-    notebooks: 0.7
     pages: 0.8
 
 # ---------------------------------------------------------------------------
