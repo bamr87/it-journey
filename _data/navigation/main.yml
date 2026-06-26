@@ -1,3 +1,13 @@
+- title: Quests
+  url: /quests/home/
+  icon: bi-controller
+  children:
+    - title: Quest Home
+      url: /quests/home/
+    - title: Start Here (n00b)
+      url: /quests/0000/hello-noob/
+    - title: All Quests
+      url: /quests/
 - title: Quick-Start
   url: /quickstart/
   icon: bi-rocket-takeoff

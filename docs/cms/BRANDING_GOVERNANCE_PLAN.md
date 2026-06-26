@@ -13,6 +13,16 @@
 > density is **not** policed and `powerful` is relaxed as fantasy flavor) and
 > `reference` (terse docs). Vendored read-only docs (any upstream content
 > carrying `source_repo`/`source_url`) remain exempt. Notes/quickstart/about/etc. stay out of scope.
+>
+> **⚠️ Post-overhaul note (2026-06-25):** this plan predates the 2026 de-blog
+> overhaul and is kept as a historical record. The `_posts`/`_drafts` blog was
+> **removed** (general content moved to the **lifehacker.dev** repo), so all
+> posts-/`/news/`-/muse-scoped mechanics below are obsolete: the 13 per-category
+> section guides under `_data/brand/sections/` were deleted (only `quest.md` +
+> `docs.md` remain), `_registry.yml` carries just the `quest` + `docs` sections,
+> `brand.collections` is now `quests, docs`, and the referenced
+> `index-hub.instructions.md` / `posts.instructions.md` files no longer exist.
+> Treat the brand layer as governing **quests and docs only**.
 
 IT-Journey has rich brand raw material scattered across the repo — the mission and
 seven core principles in `pages/_about/about.md`, the philosophy in

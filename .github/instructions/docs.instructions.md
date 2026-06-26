@@ -139,4 +139,4 @@ advisorily (`make cms-all`); vendored read-only docs (carrying `source_repo` / `
 
 ---
 
-**Related:** [`posts.instructions.md`](posts.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).
+**Related:** [`quest.instructions.md`](quest.instructions.md) · [`notes.instructions.md`](notes.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).

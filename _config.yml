@@ -67,9 +67,8 @@ og_image                 : '/images/wizard-on-journey.png'
 name                     : &name "Amr"
 email                    : "amr@it-journey.dev"
 description              : >- # this means to ignore newlines until the next variable
-  Collection of articles, notes, and tutorials to build a website
-  or headless CMS using Jekyll and Github Pages.
-  This is my journey from zer0 to her0.
+  A gamified, open-source platform for learning IT and software development
+  through quests — progressive, hands-on adventures that take you from zer0 to her0.
 level                    : 'her0'
 
 
@@ -272,9 +271,6 @@ collections:
   quests:
     output: true
     permalink: /:collection/:categories/:name/
-  hobbies:
-    output: true
-    permalink: /:collection/:categories/:name/
   notes:
     output: true
     permalink: /:collection/:path/
@@ -378,18 +374,6 @@ defaults:
       sidebar:
         nav: quests
       permalink: /:categories/:slug
-
-  # pages/_hobbies
-  - 
-    scope:
-      path: pages/_hobbies
-      type: hobbies
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: hobbies
 
   # pages/_notes
   - 

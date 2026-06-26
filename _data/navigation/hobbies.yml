@@ -1,6 +1,0 @@
-- title: Hobbies
-  url: /hobbies/
-  icon: bi-controller
-  children:
-    - title: Home
-      url: /hobbies/

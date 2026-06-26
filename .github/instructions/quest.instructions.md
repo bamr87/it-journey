@@ -412,4 +412,4 @@ drift advisorily (`make cms-all`); emoji density is **not** policed for quests, 
 
 ---
 
-**Related:** [`features.instructions.md`](features.instructions.md) · [`posts.instructions.md`](posts.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · [`../prompts/write-quest.prompt.md`](../prompts/write-quest.prompt.md) · canonical frontmatter schema in [`../FRONTMATTER.md`](../FRONTMATTER.md) · script runbook in [`../../scripts/quest/README.md`](../../scripts/quest/README.md).
+**Related:** [`features.instructions.md`](features.instructions.md) · [`docs.instructions.md`](docs.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · [`../prompts/write-quest.prompt.md`](../prompts/write-quest.prompt.md) · canonical frontmatter schema in [`../FRONTMATTER.md`](../FRONTMATTER.md) · script runbook in [`../../scripts/quest/README.md`](../../scripts/quest/README.md).

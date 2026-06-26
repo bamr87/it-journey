@@ -61,11 +61,6 @@ collections:
     fm_content_type: default
     required_extra: []
     recommended: [lastmod]
-  hobbies:
-    path: pages/_hobbies
-    fm_content_type: default
-    required_extra: []
-    recommended: [lastmod]
   pages:                                  # loose top-level pages collection
     path: pages
     fm_content_type: default
@@ -176,7 +171,6 @@ loop:
     docs: 1.0
     notes: 0.9
     about: 0.8
-    hobbies: 0.6
     pages: 0.8
 
 # ---------------------------------------------------------------------------

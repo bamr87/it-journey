@@ -17,6 +17,8 @@ This page displays the complete directory structure of the IT-Journey platform, 
 
 ### Current Tree Structure
 
+> **Note:** This is a point-in-time snapshot pending the next automated regeneration. It reflects the quest-focused structure (quests, docs, notes, quickstart, about) after the removal of the blog (`_posts`), notebooks, hobbies, and the wargames docs. For the authoritative current layout, browse the [repository](https://github.com/bamr87/it-journey).
+
 \`\`\`
 {% include_relative tree.txt %}
 \`\`\`
@@ -32,11 +34,11 @@ Our directory organization follows these principles:
 - \`_site/\` - Generated site files (excluded from version control)
 
 #### **Content Organization**
-- \`_about/\` - About pages and documentation
+- \`_quests/\` - Gamified learning path (the core of the site)
+- \`_quickstart/\` - Fast-track setup and onboarding guides
 - \`_docs/\` - Technical documentation and guides
-- \`_posts/\` - Blog posts and articles
-- \`_notebooks/\` - Jupyter notebooks and interactive content
-- \`_quests/\` - Learning challenges and exercises
+- \`_notes/\` - Curated cheatsheets and quest-relevant reference notes
+- \`_about/\` - About pages and platform information
 
 #### **Configuration Files**
 - \`_config.yml\` - Main Jekyll configuration

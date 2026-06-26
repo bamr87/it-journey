@@ -62,7 +62,7 @@ These are the learning-focused features that make IT-Journey a comprehensive edu
 {: .table .table-bordered .table-striped .table-hover .table-responsive}
 | Feature                                               | Status      | Description |
 | ----------------------------------------------------- | ----------- | ----------- |
-| **Comment System (giscus)**                           | ✅ Active   | GitHub-based discussions on posts |
+| **Comment System (giscus)**                           | ✅ Active   | GitHub-based discussions on content pages |
 | **Contributor Profiles**                              | ✅ Active   | Showcase community contributors |
 | **GitHub Integration**                                | ✅ Active   | Direct editing and contributions |
 | **Progress Tracking**                                 | 🔄 Planned  | Track your learning journey |

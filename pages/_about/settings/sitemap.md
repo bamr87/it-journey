@@ -63,7 +63,7 @@ This ensures the sitemap contains only relevant, public-facing content that user
 
 **Filtering Examples:**
 - Excluded: .venv/, _site/, .sass-cache/, .obsidian/
-- Included: pages/, docs/, about/, posts/
+- Included: pages/, docs/, about/, quests/
 - Logic: Respects .gitignore + additional intelligent filtering
 
 ### Manual Generation Commands

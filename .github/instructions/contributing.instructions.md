@@ -24,7 +24,7 @@ Read the user's intent against this table; ask one clarifying question only if a
 | Signal | Type | Route to |
 |---|---|---|
 | "new quest" / files under `pages/_quests/` | Quest | `quest.instructions.md` |
-| "blog post" / files under `pages/_posts/` | Post | `posts.instructions.md` |
+| "doc" / files under `pages/_docs/` | Doc | `docs.instructions.md` |
 | "fix doc" / `README.md`, `docs/**` edit | Documentation | `README.instructions.md` |
 | "feature" / source under `scripts/`, `_includes/`, `assets/` | Code | `features.instructions.md` |
 | "fix" / single-file edit + bug report | Bug fix | `features.instructions.md` |
@@ -32,10 +32,10 @@ Read the user's intent against this table; ask one clarifying question only if a
 
 ## Workflows
 
-### Content (Quest / Post)
+### Content (Quest / Doc)
 
 1. Confirm: title, audience level, learning objectives (or article angle).
-2. Scaffold front matter per `quest.instructions.md` or `posts.instructions.md`.
+2. Scaffold front matter per `quest.instructions.md` or `docs.instructions.md`.
 3. Draft structure (sections + checkpoints, no filler prose).
 4. User authors the actual prose. Agent assists with examples, code, validation.
 5. Run validation (`scripts/validation/frontmatter-validator.py` etc.).
@@ -171,4 +171,4 @@ After any contribution session, if a recurring friction is detected:
 
 ---
 
-**Related:** [`README.instructions.md`](README.instructions.md) · [`features.instructions.md`](features.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · [`posts.instructions.md`](posts.instructions.md)
+**Related:** [`README.instructions.md`](README.instructions.md) · [`features.instructions.md`](features.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · [`docs.instructions.md`](docs.instructions.md)
