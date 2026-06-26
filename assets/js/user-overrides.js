@@ -16,6 +16,14 @@
     if (root.getAttribute('data-theme-skin') !== 'dark') root.setAttribute('data-theme-skin', 'dark');
   }
   pinDark();
+  // Carry the user's chosen accent (set on the /quests/home/ dashboard) to every page.
+  try {
+    var accent = localStorage.getItem('it-journey-accent');
+    if (accent) {
+      root.style.setProperty('--zer0-color-accent', accent);
+      root.style.setProperty('--zer0-color-link', accent);
+    }
+  } catch (e) { /* no-op */ }
   // Re-assert if the OS theme changes or the appearance panel writes a new value.
   try {
     var mq = window.matchMedia('(prefers-color-scheme: light)');
