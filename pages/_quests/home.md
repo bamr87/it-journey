@@ -6,6 +6,8 @@ preview: /images/previews/overworld-master-quest-map.png
 permalink: /quests/home/
 layout: quest-hub
 level: "0000"
+difficulty: 🟢 Easy
+estimated_time: 5-10 minutes
 categories:
 - home
 - quest-map
