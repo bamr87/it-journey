@@ -1,0 +1,20 @@
+# Curated skills for the /home/ desktop. Edit freely. level = 0-100.
+groups:
+  - name: Languages
+    items:
+      - { name: Python, level: 90 }
+      - { name: Shell / Bash, level: 88 }
+      - { name: Ruby, level: 62 }
+      - { name: TypeScript, level: 58 }
+      - { name: SQL, level: 70 }
+  - name: Infra & DevOps
+    items:
+      - { name: Jekyll, level: 92 }
+      - { name: Docker, level: 82 }
+      - { name: GitHub Actions, level: 86 }
+      - { name: Git, level: 90 }
+  - name: AI & Agents
+    items:
+      - { name: LLM tooling, level: 80 }
+      - { name: Prompt engineering, level: 84 }
+      - { name: Agentic workflows, level: 76 }

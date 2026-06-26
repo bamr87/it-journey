@@ -82,6 +82,7 @@ rewards:
   unlocks_features:
   - Ability to threat model a design before a single line of code ships
 layout: quest
+mermaid: true
 ---
 *Greetings, brave adventurer! A wise defender never waits for the siege to discover where the walls are weak. In this quest, **Threat Modeling**, you learn the cartographer's art: to draw your system as it truly is, mark every gate and trust boundary, and ask of each one - "How would I, the attacker, break in here?" You will wield **STRIDE**, the six-fold lens of threats, and the branching logic of **attack trees**.*
 

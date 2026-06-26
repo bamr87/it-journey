@@ -56,6 +56,19 @@ FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
 ISO_MS_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$")
 HEADING_RE = re.compile(r"^#{1,6}\s+\S", re.MULTILINE)
 CODE_FENCE_RE = re.compile(r"```.*?```", re.DOTALL)
+INLINE_CODE_RE = re.compile(r"`[^`]*`")
+# Broad emoji coverage for counting (symbols/pictographs, dingbats, flags,
+# arrows, technical/geometric shapes, plus the variation selector). Good enough
+# to budget emoji density; not a strict Unicode emoji spec.
+EMOJI_RE = re.compile(
+    "[\U0001F300-\U0001FAFF"   # symbols & pictographs, supplemental, extended-A
+    "\U00002600-\U000027BF"    # misc symbols + dingbats
+    "\U0001F1E6-\U0001F1FF"    # regional indicators (flags)
+    "\U00002190-\U000021FF"    # arrows
+    "\U00002300-\U000023FF"    # misc technical (⏱ ⚙ etc.)
+    "\U00002B00-\U00002BFF"    # misc symbols & arrows
+    "\U0000FE0F]"              # variation selector-16
+)
 
 
 # --------------------------------------------------------------------------- #
@@ -103,12 +116,18 @@ class FileRecord:
     age_days: Optional[int] = None
     freshness: str = "unknown"
     broken_links: int = 0
+    section_guide: Optional[str] = None     # resolved brand section slug (posts)
+    voice_profile: Optional[str] = None     # resolved brand voice profile (posts)
     health: int = 0
     issues: list = field(default_factory=list)
 
     @property
     def error_count(self) -> int:
         return sum(1 for i in self.issues if i["severity"] == "error")
+
+    @property
+    def brand_issue_count(self) -> int:
+        return sum(1 for i in self.issues if i["kind"].startswith("brand_drift"))
 
     @property
     def mechanical_count(self) -> int:
@@ -339,6 +358,19 @@ def analyze_file(p: Path, cfg: dict, now: datetime,
             f"{rec.broken_links} broken link(s) from last scan", "substantive",
             "Fix or remove dead links")))
 
+    # Brand / voice governance (advisory) — for the collections listed in
+    # brand.collections (posts, quests, docs), never on read-only/structural/
+    # generated content. Emits substantive `brand_drift:*` issues but does NOT
+    # feed the health score (see _score: only `missing_required:` counts).
+    brand_cfg = cfg.get("brand", {})
+    brand_collections = brand_cfg.get("collections", ["posts"])
+    if (rec.collection in brand_collections
+            and not (rec.read_only or rec.structural or rec.generated)
+            and brand_cfg.get("enabled")):
+        store = load_brand_store(cfg)
+        if store:
+            _check_brand(rec, fm, body, cfg, store)
+
     rec.health = _score(rec, required, cfg)
     return rec
 
@@ -485,6 +517,231 @@ def _check_structure(rec: FileRecord, cfg: dict) -> None:
         rec.issues.append(asdict(Issue(
             "no_headings", "info", "body",
             "no headings found", "substantive", "Add section headings")))
+
+
+# --------------------------------------------------------------------------- #
+# Brand / voice governance (advisory). Reads the _data/brand/ store to resolve a
+# post -> section -> voice profile, then flags drift against .cms/config.yml >
+# brand thresholds. Emits substantive `brand_drift:*` issues; never feeds _score.
+# --------------------------------------------------------------------------- #
+_BRAND_STORE_CACHE: dict[str, Optional[dict]] = {}
+
+
+def load_brand_store(cfg: dict) -> Optional[dict]:
+    """Load + cache the brand store (voice profiles + section registry). Returns
+    None if disabled or the store files are absent (so the engine degrades
+    gracefully when brand assets haven't shipped yet)."""
+    brand = cfg.get("brand", {})
+    if not brand.get("enabled"):
+        return None
+    root = brand.get("store_root", "_data/brand")
+    if root in _BRAND_STORE_CACHE:
+        return _BRAND_STORE_CACHE[root]
+    base = REPO_ROOT / root
+    voice_p = base / "voice.yml"
+    reg_p = base / "sections" / "_registry.yml"
+    store: Optional[dict] = None
+    if voice_p.exists() and reg_p.exists():
+        try:
+            voice = yaml.safe_load(voice_p.read_text(encoding="utf-8")) or {}
+            reg = yaml.safe_load(reg_p.read_text(encoding="utf-8")) or {}
+            store = {
+                "profiles": set((voice.get("profiles") or {}).keys()),
+                "default_profile": voice.get("default_profile"),
+                "registry": reg.get("sections") or {},
+                "collection_defaults": reg.get("collection_defaults") or {},
+            }
+        except (yaml.YAMLError, ValueError):
+            store = None
+    _BRAND_STORE_CACHE[root] = store
+    return store
+
+
+def _resolve_section(rel_path: str, fm: dict, store: dict,
+                     collection: str = "posts") -> tuple:
+    """Resolve (section_slug, voice_profile, unresolved). Order: explicit
+    voice_profile -> explicit section_guide -> posts: category folder /
+    other collections: collection_defaults -> default_profile."""
+    registry = store["registry"]
+    profiles = store["profiles"]
+    unresolved: list[tuple[str, str]] = []
+
+    section: Optional[str] = None
+    sg = fm.get("section_guide")
+    if isinstance(sg, str) and sg.strip():
+        if sg in registry:
+            section = sg
+        else:
+            unresolved.append(("section_guide", sg))
+    if section is None:
+        if collection == "posts":             # infer from pages/_posts/<cat>/...
+            parts = rel_path.split("/")
+            if len(parts) >= 4 and parts[0] == "pages" and parts[1] == "_posts":
+                if parts[2] in registry:
+                    section = parts[2]
+        else:                                  # quests/docs -> one section each
+            default_slug = store.get("collection_defaults", {}).get(collection)
+            if default_slug in registry:
+                section = default_slug
+
+    profile: Optional[str] = None
+    vp = fm.get("voice_profile")
+    if isinstance(vp, str) and vp.strip():
+        if vp in profiles:
+            profile = vp
+        else:
+            unresolved.append(("voice_profile", vp))
+    if profile is None and section is not None:
+        profile = registry[section].get("voice_profile")
+    if profile is None:
+        profile = store.get("default_profile")
+    return section, profile, unresolved
+
+
+def _brand_ruleset(brand_cfg: dict, slug: Optional[str]) -> dict:
+    """Merge brand.global with the per-section override for `slug`."""
+    g = brand_cfg.get("global", {}) or {}
+    rule = {
+        "banned_terms": list(g.get("banned_terms", []) or []),
+        "preferred_terms": dict(g.get("preferred_terms", {}) or {}),
+        "emoji_intensity": dict(g.get("emoji_intensity", {}) or {}),
+        "formality_target": g.get("formality_target"),
+        "required_structural": list(g.get("required_structural", []) or []),
+        "word_count": dict(g.get("word_count", {}) or {}),
+    }
+    sec = (brand_cfg.get("sections", {}) or {}).get(slug or "", {}) or {}
+    if "banned_terms" in sec:
+        rule["banned_terms"] = list(sec["banned_terms"])
+    relax = set(sec.get("banned_terms_relax", []) or [])
+    if relax:
+        rule["banned_terms"] = [t for t in rule["banned_terms"] if t not in relax]
+    if "preferred_terms" in sec:
+        rule["preferred_terms"].update(sec["preferred_terms"])
+    for key in ("emoji_intensity", "word_count"):
+        if key in sec:
+            rule[key] = dict(sec[key])
+    if "formality_target" in sec:
+        rule["formality_target"] = sec["formality_target"]
+    if "required_structural" in sec:
+        rule["required_structural"] = list(sec["required_structural"])
+    return rule
+
+
+def _strip_code(body: str) -> str:
+    return INLINE_CODE_RE.sub(" ", CODE_FENCE_RE.sub(" ", body))
+
+
+def _estimate_formality(text: str) -> int:
+    """Cheap 0..100 formality heuristic. Longer sentences read more formal;
+    contractions, exclamations, and second-person address read more casual."""
+    words = re.findall(r"[A-Za-z']+", text)
+    n = len(words) or 1
+    sentences = [s for s in re.split(r"[.!?]+", text) if s.strip()] or [text]
+    avg_len = n / len(sentences)
+    contractions = len(re.findall(r"\b\w+'(?:s|re|ll|ve|t|d|m)\b", text, re.I))
+    exclamations = text.count("!")
+    second_person = len(re.findall(r"\b(?:you|your|you're)\b", text, re.I))
+    score = 50.0
+    score += max(-10.0, min(25.0, (avg_len - 14) * 1.5))
+    score -= min(20.0, contractions / n * 200)
+    score -= min(15.0, exclamations / len(sentences) * 100)
+    score -= min(15.0, second_person / n * 150)
+    return max(0, min(100, round(score)))
+
+
+def _check_brand(rec: FileRecord, fm: dict, body: str, cfg: dict, store: dict) -> None:
+    section, profile, unresolved = _resolve_section(
+        rec.path, fm, store, rec.collection)
+    rec.section_guide = section
+    rec.voice_profile = profile
+
+    for fld, val in unresolved:
+        what = "section" if fld == "section_guide" else "voice profile"
+        rec.issues.append(asdict(Issue(
+            "brand_drift:guide_unresolved", "info", fld,
+            f"{fld} '{val}' is not a known {what}", "substantive",
+            "Use a slug from _data/brand/sections/_registry.yml "
+            "or a profile from _data/brand/voice.yml")))
+
+    rule = _brand_ruleset(cfg.get("brand", {}), section)
+    text = _strip_code(body)
+    title = rec.title or ""
+    haystack = f"{title}\n{text}"
+    low = haystack.lower()
+
+    # banned / discouraged terms (word-boundary, case-insensitive)
+    for term in rule["banned_terms"]:
+        if re.search(r"\b" + re.escape(term.lower()) + r"\b", low):
+            pref = rule["preferred_terms"].get(term)
+            sug = (f"Replace with '{pref}'" if pref
+                   else "Rephrase; drop the empty-hype word")
+            rec.issues.append(asdict(Issue(
+                "brand_drift:banned_term", "warning", "body",
+                f"uses discouraged term '{term}'", "substantive", sug)))
+
+    # canonical spellings — flag the WRONG form (case-sensitive)
+    for wrong, right in rule["preferred_terms"].items():
+        if wrong == right:
+            continue
+        if re.search(r"\b" + re.escape(wrong) + r"\b", haystack):
+            rec.issues.append(asdict(Issue(
+                "brand_drift:preferred_term", "info", "body",
+                f"'{wrong}' should be '{right}'", "substantive",
+                f"Use the canonical spelling '{right}'")))
+
+    # emoji intensity band
+    ei = rule.get("emoji_intensity") or {}
+    if ei:
+        n_emoji = len(EMOJI_RE.findall(haystack))
+        hi, lo = ei.get("max"), ei.get("min", 0)
+        if hi is not None and n_emoji > hi:
+            rec.issues.append(asdict(Issue(
+                "brand_drift:emoji_intensity", "info", "body",
+                f"{n_emoji} emoji (> {hi} for this section)", "substantive",
+                "Trim decorative emoji")))
+        elif lo and n_emoji < lo and rec.draft is not True:
+            rec.issues.append(asdict(Issue(
+                "brand_drift:emoji_intensity", "info", "body",
+                f"{n_emoji} emoji (< {lo} expected for this format)", "substantive",
+                "This format expects a little more visual structure")))
+
+    # required structural elements (heading or bold label containing the word)
+    for elem in rule.get("required_structural", []):
+        pat = re.compile(
+            r"(?im)^\s{0,3}#{1,6}\s.*" + re.escape(elem) + r"|\*\*[^*\n]*"
+            + re.escape(elem))
+        if not pat.search(body) and rec.draft is not True:
+            rec.issues.append(asdict(Issue(
+                "brand_drift:missing_structural", "info", "body",
+                f"missing expected '{elem}' element for this section",
+                "substantive",
+                f"Add a '{elem}' step/section per the section guide")))
+
+    # format word-count band (advisory; distinct from global thin_content)
+    wc = rule.get("word_count") or {}
+    if wc and rec.word_count and rec.draft is not True:
+        if "min" in wc and rec.word_count < wc["min"]:
+            rec.issues.append(asdict(Issue(
+                "brand_drift:length", "info", "body",
+                f"{rec.word_count} words (< {wc['min']} for this format)",
+                "substantive", "Expand to the format's expected length")))
+        elif "max_suggest" in wc and rec.word_count > wc["max_suggest"]:
+            rec.issues.append(asdict(Issue(
+                "brand_drift:length", "info", "body",
+                f"{rec.word_count} words (> {wc['max_suggest']} for this format)",
+                "substantive", "This format favors short form; consider splitting")))
+
+    # formality heuristic (wide tolerance; advisory only)
+    target = rule.get("formality_target")
+    if target is not None and rec.word_count >= 150 and rec.draft is not True:
+        est = _estimate_formality(text)
+        if abs(est - target) > 30:
+            direction = "casual" if est < target else "formal"
+            rec.issues.append(asdict(Issue(
+                "brand_drift:formality", "info", "body",
+                f"reads more {direction} than this section targets "
+                f"(est {est} vs {target})", "substantive",
+                "Adjust tone toward the section's voice profile (advisory)")))
 
 
 def _score(rec: FileRecord, required: list, cfg: dict) -> int:
@@ -740,6 +997,21 @@ def cmd_analyze(cfg: dict, records: list, summary: dict, now: datetime) -> Path:
     for k, n in sorted(kinds.items(), key=lambda kv: -kv[1])[:15]:
         lines.append(f"| `{k}` | {n} |")
     lines.append("")
+
+    # brand drift by section (advisory) — only rendered when brand checks ran
+    brand_rows: dict[str, int] = {}
+    for r in records:
+        if r.brand_issue_count:
+            key = r.section_guide or "(unresolved / loose)"
+            brand_rows[key] = brand_rows.get(key, 0) + r.brand_issue_count
+    if brand_rows:
+        lines += ["## Brand drift by section (advisory)", "",
+                  "_Voice/term/format drift on posts, quests, and docs. Advisory "
+                  "only — does not affect health. See `.cms/config.yml > brand`._",
+                  "", "| Section | Drift issues |", "|---|---|"]
+        for k, n in sorted(brand_rows.items(), key=lambda kv: -kv[1]):
+            lines.append(f"| {k} | {n} |")
+        lines.append("")
 
     # lowest-health files
     worst = sorted([r for r in records if _actionable(r)],

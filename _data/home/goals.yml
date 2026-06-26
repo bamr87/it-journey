@@ -1,0 +1,10 @@
+# Curated goals/status. status: done | in_progress | warning | blocked
+# -> --zer0-color-success / info / warning / danger. Checkbox state persists
+# client-side (it-journey-home-goals).
+goals:
+  - { id: home-os, title: "Ship the /home/ desktop OS", status: in_progress, progress: 60, target: '2026-07-15' }
+  - { id: quest-focus, title: "Land the quest-focus overhaul (PR #366)", status: in_progress, progress: 85, target: '2026-07-01' }
+  - { id: zer0-cms, title: "zer0-CMS VS Code extension v1", status: in_progress, progress: 25, target: '2026-09-01' }
+  - { id: quests-redesign, title: "Quest module + CI/CD redesign", status: warning, progress: 55 }
+  - { id: lifehacker, title: "Spin up lifehacker.dev with imported posts", status: in_progress, progress: 40 }
+  - { id: ga-clean, title: "Fix GA prod-vs-dev traffic pollution", status: blocked, progress: 10 }

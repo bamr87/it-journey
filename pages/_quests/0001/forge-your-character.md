@@ -70,6 +70,7 @@ validation_criteria:
   - Character sheet renders on your profile page
   - Stats generator runs without errors for your username
 layout: quest
+mermaid: true
 ---
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity
 

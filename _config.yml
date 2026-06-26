@@ -27,8 +27,11 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
-remote_theme             : "bamr87/zer0-mistakes"
-# theme                    : "jekyll-theme-zer0"
+# Theme: pinned `remote_theme` ref. Production deploys via legacy GitHub Pages
+# building Jekyll from the gh-pages branch, which can't use a gem theme (it never
+# runs `bundle install`) — so the theme is sourced and version-pinned here.
+# Bump the tag to upgrade; CI/dev use the same ref (see _config_dev.yml).
+remote_theme             : "bamr87/zer0-mistakes@v1.21.0"
 
 ## Github Information
 github_user              : &github_user "bamr87"
@@ -64,9 +67,8 @@ og_image                 : '/images/wizard-on-journey.png'
 name                     : &name "Amr"
 email                    : "amr@it-journey.dev"
 description              : >- # this means to ignore newlines until the next variable
-  Collection of articles, notes, and tutorials to build a website
-  or headless CMS using Jekyll and Github Pages.
-  This is my journey from zer0 to her0.
+  A gamified, open-source platform for learning IT and software development
+  through quests — progressive, hands-on adventures that take you from zer0 to her0.
 level                    : 'her0'
 
 
@@ -194,7 +196,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-relative-links
   - jekyll-redirect-from
 
@@ -205,9 +206,13 @@ relative_links:
   enabled: true
   collections: true
 
-## Gisgus Plugin #################################################################
+## Giscus (GitHub Discussions comments) ##########################################
+# The zer0-mistakes theme reads `site.giscus.*` (see _includes/content/giscus.html).
+# The key MUST be spelled `giscus` — a `nil` key reads as a disabled feature and
+# the widget silently never renders. See the tutorial:
+#   pages/_posts/tools-environment/2026-06-23-embedding-giscus-comments-zer0-mistakes.md
 
-gisgus:
+giscus:
   enabled: true
   data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
   data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
@@ -261,21 +266,12 @@ collections:
   pages:
     output: true
     permalink: /:collection/:name/
-  posts:
-    output: true
-    permalink: /:collection/:year/:month/:day/:slug/
   docs:
     output: true
     permalink: /:collection/:categories/:name/
   quests:
     output: true
     permalink: /:collection/:categories/:name/
-  hobbies:
-    output: true
-    permalink: /:collection/:categories/:name/
-  notebooks:
-    output: true
-    permalink: /:collection/:path/
   notes:
     output: true
     permalink: /:collection/:path/
@@ -287,11 +283,6 @@ collections:
     permalink: /:collection/:categories/:name/
 
 permalink: pretty
-
-#  pagination https://jekyllrb.com/docs/pagination/
-
-paginate: 10
-paginate_path: "/pages/:num/"
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
@@ -351,21 +342,6 @@ defaults:
       sidebar:
         nav: quickstart
 
-  # pages/_posts
-  - 
-    scope:
-      path: pages/_posts
-    values:
-      layout: article
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      sidebar:
-        nav: dynamic
-      # permalink: /:collection/:name/
-
   # pages/_docs
   - 
     scope:
@@ -400,18 +376,6 @@ defaults:
         nav: quests
       permalink: /:categories/:slug
 
-  # pages/_hobbies
-  - 
-    scope:
-      path: pages/_hobbies
-      type: hobbies
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: hobbies
-
   # pages/_notes
   - 
     scope:
@@ -422,19 +386,7 @@ defaults:
       share: false
       author_profile: false
       sidebar:
-        nav: notebooks
-
-  # pages/_notebooks
-  - 
-    scope:
-      path: pages/_notebooks
-      type: notebooks
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: notebooks
+        nav: notes
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -526,27 +478,34 @@ sass:
 # theme                  : "zer0-mistakes-jekyll"
 # remote_theme           : "bamr87/zer0-mistakes"
 theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# Opt in to the theme's fork-override hooks: loads /assets/css/user-overrides.css
+# and /assets/js/user-overrides.js LAST, so the site's "cosmic quest" theme wins
+# over compiled defaults. Required for the site-wide styling to apply.
+user_overrides           : true
 
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
 # remote_style           : "bamr87/zer0-mistakes"
 
+# NOTE: hex values MUST be quoted — unquoted `main: #007bff` is parsed by YAML as
+# a comment (null), so the token never reaches core/tokens-inline.html. The
+# site-wide "cosmic quest" palette (mirrors assets/css/user-overrides.css).
 theme_color:
-  main: #007bff
-  secondary: #6c757d
-  red: #a11111
-  yellow: #ffe900
-  teal: #376986
-  blue: #007bff
-  green: #28a745
-  purple: #6f42c1
-  pink: #e83e8c
-  orange: #fd7e14
-  brown: #795548
-  cyan: #17a2b8
-  indigo: #6610f2
-  lime: #cddc39
-  amber: #ffc107
-  deep_orange: #ff5722
+  main: "#a855f7"      # → --zer0-color-primary (cosmic purple)
+  secondary: "#7c8099"
+  red: "#fb7185"
+  yellow: "#fbbf24"
+  teal: "#22d3ee"
+  blue: "#38bdf8"      # → --zer0-color-link
+  green: "#34d399"
+  purple: "#a855f7"    # → --zer0-color-accent (re-themed to cyan in user-overrides.css)
+  pink: "#f472b6"
+  orange: "#fb923c"
+  brown: "#795548"
+  cyan: "#22d3ee"
+  indigo: "#6610f2"
+  lime: "#cddc39"
+  amber: "#ffc107"
+  deep_orange: "#ff5722"
   deep_purple: #673ab7
   light_blue: #03a9f4
   light_green: #8bc34a

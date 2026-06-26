@@ -17,6 +17,7 @@ tags:
 - master
 - data
 - engineering
+mermaid: true
 ---
 # Level 1100: Data & Templates
 

@@ -82,6 +82,7 @@ rewards:
   unlocks_features:
   - Strategic design foundation for the rest of the Citadel
 layout: quest
+mermaid: true
 ---
 *Welcome back to the Citadel, Architect. You have learned to shape objects with patterns; now you must learn to shape the meaning the objects carry. **Domain-Driven Design** is the discipline of letting the business domain - not the database, not the framework - drive the design of your software. It is how a payments team and a payments codebase come to speak exactly the same language.*
 

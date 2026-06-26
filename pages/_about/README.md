@@ -51,8 +51,8 @@ The IT-Journey about section focuses on:
 - Open-source values
 
 ### ✨ User-Facing Features
-- Learning paths and quests
-- Interactive notebooks
+- The gamified quest learning path (zer0 to her0)
+- Quickstart guides and curated reference notes
 - Community discussions
 - Content organization
 - Navigation and discovery

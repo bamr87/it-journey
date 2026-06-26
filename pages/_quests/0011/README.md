@@ -17,6 +17,7 @@ tags:
 - apprentice
 - ai-assisted
 - development
+mermaid: true
 ---
 # Level 0011: Development Tools & AI Integration
 

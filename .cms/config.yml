@@ -35,12 +35,6 @@ file_extensions: [".md", ".html", ".ipynb"]
 required_base: [title, description, date, author, categories, tags]
 
 collections:
-  posts:
-    path: pages/_posts
-    fm_content_type: default
-    required_extra: []
-    recommended: [excerpt, lastmod, draft, keywords, preview]
-    date_prefixed_filenames: true        # YYYY-MM-DD-slug.md
   quests:
     path: pages/_quests
     fm_content_type: quest
@@ -67,16 +61,6 @@ collections:
     fm_content_type: default
     required_extra: []
     recommended: [lastmod]
-  hobbies:
-    path: pages/_hobbies
-    fm_content_type: default
-    required_extra: []
-    recommended: [lastmod]
-  notebooks:
-    path: pages/_notebooks
-    fm_content_type: default
-    required_extra: []
-    recommended: [tags, lastmod]
   pages:                                  # loose top-level pages collection
     path: pages
     fm_content_type: default
@@ -89,10 +73,10 @@ collections:
 # ---------------------------------------------------------------------------
 read_only:
   # Vendored upstream content carries source_repo/source_url/license frontmatter.
-  # Detected dynamically by frontmatter key, plus this glob as a backstop.
+  # Detected dynamically by the frontmatter key. (No vendored path tree remains
+  # in this repo; wargames moved to github.com/bamr87/wargames.)
   frontmatter_markers: [source_repo, source_url]
-  globs:
-    - "pages/_docs/wargames/**"
+  globs: []
   # Structural / scaffolding files: indexed for visibility but exempt from deep
   # field/SEO checks. READMEs are skipped to match the CI frontmatter validator
   # (scripts/validation/frontmatter-validator.py SKIP_FILES). Flip individual
@@ -183,14 +167,71 @@ loop:
   # Per-collection priority multiplier for work selection (higher = sooner).
   collection_priority:
     quests: 1.4
-    posts: 1.3
     quickstart: 1.2
     docs: 1.0
     notes: 0.9
     about: 0.8
-    hobbies: 0.6
-    notebooks: 0.7
     pages: 0.8
+
+# ---------------------------------------------------------------------------
+# Brand / voice governance (advisory). The engine (cms.py _check_brand) flags
+# brand drift on POSTS only and emits substantive `brand_drift:*` issues into the
+# worklist. These NEVER block CI, never auto-merge, and — by design — do NOT enter
+# the health score (advisory_only). Brand FACTS live in _data/brand/; these are
+# the ENFORCEMENT thresholds. Resolution: a post -> section slug -> profile via
+# _data/brand/sections/_registry.yml (folder name is the default slug). Flip
+# `enabled: true` to disable the whole subsystem.
+# ---------------------------------------------------------------------------
+brand:
+  enabled: true
+  store_root: _data/brand           # pointer to the authoritative brand store
+  advisory_only: true               # brand issues never affect health or auto-merge
+  # Collections the brand check runs on. quests/docs resolve to one section each
+  # via _registry.yml > collection_defaults.
+  # (Vendored/structural/generated files are always skipped regardless.)
+  collections: [quests, docs]
+  # Global ruleset; per-section entries below override/extend it.
+  global:
+    # Empty-hype words to flag (mirror of _data/brand/glossary.yml > discouraged).
+    banned_terms: [comprehensive, powerful, seamless, cutting-edge, revolutionary, game-changing, effortless]
+    # Canonical spellings (wrong -> right); mirror of glossary.yml > preferred.
+    preferred_terms:
+      Github: GitHub
+      Javascript: JavaScript
+      CICD: CI/CD
+      NodeJS: Node.js
+      VSCode: VS Code
+    emoji_intensity: { min: 0, max: 10 }   # per-document emoji count band
+    formality_target: 55                   # 0=casual ... 100=formal (heuristic)
+  # Per-section overrides, keyed by section slug (see _registry.yml). Absent keys
+  # inherit `global`.
+  sections:
+    devops:
+      formality_target: 60
+      required_structural: ["Verify"]      # each how-to should show a verify step
+    system-administration:
+      required_structural: ["Verify"]
+    devops-news-muse:
+      emoji_intensity: { min: 1, max: 14 } # magazine framing tolerates more
+      formality_target: 45
+      word_count: { min: 150, max_suggest: 700 }
+    creative-experimental:
+      banned_terms_relax: [cutting-edge, revolutionary]
+    trends-ideas:
+      banned_terms_relax: [cutting-edge]
+    # Quests are gamified/fantasy and intentionally emoji-heavy (median ~82
+    # emoji/file), so emoji density is NOT policed (emoji_intensity has no max).
+    # Structure is already enforced by quest_validator.py + quest.instructions.md,
+    # so no required_structural here. "powerful" is relaxed as fantasy flavor;
+    # other empty-hype terms still flag.
+    quest:
+      emoji_intensity: { min: 0 }     # no max -> emoji check effectively off
+      formality_target: 40            # playful/gamified
+      banned_terms_relax: [powerful]
+    # Docs are terse reference: low emoji, neutral-to-formal, hype still flagged.
+    docs:
+      emoji_intensity: { min: 0, max: 12 }
+      formality_target: 60
 
 # ---------------------------------------------------------------------------
 # Output locations (all under .cms/, auto-ignored by Jekyll).

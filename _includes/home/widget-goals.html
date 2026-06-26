@@ -1,0 +1,13 @@
+{%- comment -%} Goals widget — curated _data/home/goals.yml. Checkbox state persists client-side. {%- endcomment -%}
+<ul class="hw-goals">
+  {% for g in site.data.home.goals.goals %}
+  <li class="hw-goal hw-goal--{{ g.status }}" data-goal-id="{{ g.id }}">
+    <label class="hw-goal__check"><input type="checkbox" data-home-goal="{{ g.id }}" {% if g.status == 'done' %}checked{% endif %}><span></span></label>
+    <div class="hw-goal__body">
+      <div class="hw-goal__top"><span class="hw-goal__title">{{ g.title }}</span><span class="hw-goal__badge">{{ g.status | replace: '_',' ' }}</span></div>
+      <div class="hw-goal__track"><span class="hw-goal__fill" style="width:{{ g.progress | default: 0 }}%"></span></div>
+      {% if g.target %}<span class="hw-goal__target"><i class="bi bi-flag"></i> {{ g.target }}</span>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

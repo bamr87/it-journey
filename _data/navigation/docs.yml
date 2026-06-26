@@ -65,9 +65,3 @@
       url: /docs/terminal-shortcuts-cheat-sheet/
     - title: Complete BASH Reference
       url: /docs/bash-complete-reference/
-- title: Wargames
-  url: /docs/wargames/
-  icon: bi-shield-lock
-  children:
-  - title: Wargames Overview
-    url: /docs/wargames/

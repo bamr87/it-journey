@@ -369,7 +369,7 @@ python3 scripts/validate_quest.py --quest q1
 
 - **Next quest:** [Q2: The Three Sigils — Plan, Reason, Act](/quests/0111/agentic-plan-vs-action-boundaries/)
 - **Domain hub:** [Domain 1 in the GH-600 Skills Measured breakdown](/docs/certifications/gh-600/skills-measured/#domain-1)
-- **Chronicle post:** [Embedding Agents in the SDLC](/posts/embedding-agents-in-the-sdlc/)
+- **Chronicle post:** [Embedding Agents in the SDLC](/docs/agentic-codex/embedding-agents-in-the-sdlc/)
 - **Official docs:** [GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/about-copilot-coding-agent)
 
 ## 🕸️ Knowledge Graph

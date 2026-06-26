@@ -53,6 +53,7 @@ redirect_from:
 layout: quest
 sub_title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
 draft: false
+mermaid: true
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 
@@ -375,7 +376,7 @@ Objective: Use guardian logs to create a minimal viable resource (MVR) or redire
 
 ## 📚 Quest Resource Codex
 
-- Companion Article: </posts/404-hunting-quest/>
+- Companion Article: <https://lifehacker.dev>
 - Jekyll Permalinks: <https://jekyllrb.com/docs/permalinks/>
 - jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
 - jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>

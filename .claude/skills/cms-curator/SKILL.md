@@ -26,7 +26,10 @@ pass CI on the first try:
   table (title 30–60, description 120–160, ISO-8601 dates, YAML-list
   tags/categories) and the numbered recurring pitfalls.
 - `.github/instructions/*.instructions.md` — the per-collection rules
-  (`posts`, `quest`, `index-hub`, etc.). Load the one matching the files you touch.
+  (`posts`, `quest`, `index-hub`, `brand`, etc.). Load the one matching the files
+  you touch.
+- `_data/brand/` — the brand store (voice, values, style, section guides), when a
+  worklist item is a `brand_drift:*` issue on a post.
 - `AGENTS.md` — quest permalink regex and essential commands.
 
 ## 1. Orient — refresh the index and read the worklist
@@ -45,8 +48,8 @@ If the worklist is empty in both lanes, report "no work" and stop.
 
 ## 2. Hard safety rules (never violate)
 
-- **Never edit** files flagged `read_only` (vendored — carry `source_repo`/
-  `source_url`, e.g. `pages/_docs/wargames/**`). You may report issues, not rewrite.
+- **Never edit** files flagged `read_only` (vendored — any upstream content
+  carrying `source_repo`/`source_url` frontmatter). You may report issues, not rewrite.
 - **Before editing ANY file not already on the worklist** (e.g. a link target you
   chased into another file), look it up in `.cms/index/content-index.json` and
   abort the edit if its `read_only` or `generated` flag is true. Do not rely on
@@ -106,6 +109,10 @@ the smallest change that resolves the listed issues:
   inbound links to the old name and update them.
 - **Quest body work / new content** → follow `.github/instructions/quest.instructions.md`
   and the `.frontmatter/templates/quests.md` scaffold.
+- **`brand_drift:*` (posts)** → load the `brand-voice` skill, resolve the section
+  guide, and apply the *smallest* term/voice fix (drop a banned word, fix a
+  spelling, add a missing Verify step). Never rewrite a post wholesale; brand drift
+  is advisory.
 
 Group Lane B commits **by collection** (one commit per collection touched), e.g.
 `content(posts): improve frontmatter + descriptions [cms]`.

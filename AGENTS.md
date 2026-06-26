@@ -5,10 +5,10 @@ This document provides essential information for AI agents (like Grok/Crush) to 
 ## Project Overview
 
 - **Type**: Jekyll-based static site generator for an educational IT platform.
-- **Purpose**: Democratize IT education through open-source content, gamified quests, blog posts, and technical documentation. Focuses on learning journeys from beginner to advanced levels, with themes of fantasy and progression (e.g., "zer0 to her0").
+- **Purpose**: A gamified, open-source platform for learning IT and software development through **quests** (zer0 → her0). Focuses on learning journeys from beginner to advanced levels, with themes of fantasy and progression. (A 2026 overhaul removed the blog: general posts moved to **lifehacker.dev**, and the OverTheWire `wargames` docs were extracted to **github.com/bamr87/wargames**.)
 - **Tech Stack**:
   - Ruby/Jekyll for site generation.
-  - Markdown for content (posts, quests, notes).
+  - Markdown for content (quests, docs, notes).
   - YAML for configuration and data.
   - Bash and Python for automation scripts.
   - JavaScript for site assets and interactivity.
@@ -22,15 +22,13 @@ This document provides essential information for AI agents (like Grok/Crush) to 
 
 Based on `ls` output with depth 3:
 
-- **pages/**: Core content collections.
-  - _about/: About pages, features, profiles.
-  - _docs/: Documentation (e.g., Jekyll-related).
-  - _hobbies/: Personal/hobby content.
-  - _notes/: Notes, journals, code snippets.
-  - _notebooks/: Jupyter notebooks and conversions.
-  - _posts/: Blog posts organized by categories (e.g., ai & machine learning, devops).
-  - _quests/: Educational quests with levels (e.g., lvl_000, lvl_001) and themes (e.g., init_world, frontend).
+- **pages/**: Core content collections (5 surviving collections + loose files).
+  - _quests/: Educational quests (~204 Markdown files, the center of gravity) with levels (e.g., lvl_000, lvl_001) and themes (e.g., init_world, frontend).
+  - _docs/: Documentation and reference material (~27 files; includes the relocated `agentic-codex/` track).
+  - _notes/: Slim notes set (~16 files): CLI/markdown cheatsheets, curriculum, capstone framework, the GH-600 reference set, zero onboarding, index hub.
   - _quickstart/: Beginner guides (e.g., setup instructions).
+  - _about/: About pages, features, profiles.
+  - (Removed: `_posts`/`_drafts` → moved to lifehacker.dev; `_notebooks` and `_hobbies` → deleted; `_docs/wargames` → extracted to github.com/bamr87/wargames.)
 
 - **scripts/**: Automation and utility scripts.
   - core/: Environment setup scripts (Bash).
@@ -51,7 +49,7 @@ Based on `ls` output with depth 3:
 
 - **.github/**: GitHub configurations.
   - workflows/: CI/CD YAML files (e.g., azure-jekyll-deploy.yml, link-checker.yml).
-  - instructions/: Markdown guides (e.g., quest.instructions.md, posts.instructions.md).
+  - instructions/: Markdown guides (e.g., quest.instructions.md, docs.instructions.md, notes.instructions.md).
   - prompts/: Prompt templates (Markdown, YAML).
 
 - **test/**: Testing utilities.
@@ -100,7 +98,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
  - Test validator: `./test/quest-validator/test-validator.sh`
  - Migrate quest permalinks (dry run): `python3 scripts/quest/migrate-permalinks.py --dry-run`
  - Migrate quest permalinks (apply): `python3 scripts/quest/migrate-permalinks.py`
- - **Full quest audit before PR**: `make quest-audit` (runs build-quest-network → quest_validator → validate-quest-network). For CI parity (orphan warnings escalate to errors), use `make quest-audit-strict`. CI blocks merges on validator errors and any score below 70%.
+ - **Full quest audit before PR**: `make quest-audit` — the unified validator `scripts/quest/quest_audit.py`: tier-1 content scoring + dependency-network integrity + generated-data freshness, in one consolidated report and exit code. Run the identical audit in Docker (CI-parity, no host Python) with `make docker-validate`. If the freshness layer flags stale data, run `make quest-data` and commit. Use `make quest-audit-strict` to escalate warnings to errors. CI blocks merges on validator errors and any score below 70%.
  - Regenerate sidebar nav: `make quest-nav` (rewrites `_data/navigation/quests.yml` from the quest collection).
  - Regenerate level metadata: `make quest-levels-data` (writes `_data/quests/levels.yml` from `scripts/quest/quest_registry.py`).
 
@@ -147,7 +145,7 @@ Observed from Makefile, scripts, Gemfile, and workflows:
 ## Naming Conventions and Style Patterns
 
 - **Files**:
-  - Markdown: kebab-case with dates (e.g., 2025-11-17-deploying-jekyll-sites-to-azure-cloud.md).
+  - Markdown: kebab-case slugs (e.g., git-workflow-mastery.md); quest files live under `pages/_quests/<level>/`.
   - Scripts: kebab-case (e.g., azure-jekyll-deploy.sh, link-checker.py).
   - YAML: snake_case (e.g., content_statistics.yml).
 

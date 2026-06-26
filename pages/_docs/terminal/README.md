@@ -85,7 +85,7 @@ cd bashcrawl
 | Learner | Best First Step | Next Step |
 |---------|-----------------|-----------|
 | Absolute beginner | [Play online](https://bamr87.github.io/bashcrawl/) | [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) |
-| Finance or operations learner | [Finance terminal guide](/posts/terminal-bash-finance-accounting/) | [Bash Scripting Mastery](/quests/0010/bash-scripting/) |
+| Finance or operations learner | [Finance terminal guide](https://lifehacker.dev) | [Bash Scripting Mastery](/quests/0010/bash-scripting/) |
 | Developer or contributor | [Bashcrawl GitHub repo](https://github.com/bamr87/bashcrawl/) | [Bash-run Extension Quest](/quests/0000/side-quests/bash-run/) |
 | Teacher or mentor | [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) | [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) |
 

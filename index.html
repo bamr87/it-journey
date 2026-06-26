@@ -1,0 +1,504 @@
+---
+layout: root
+title: "IT-Journey — Your Epic Quest from zer0 to her0"
+description: "A gamified, open-source platform for learning IT and software development through 180+ hands-on quests across 16 levels and 4 tiers. Begin your adventure from zer0 to her0."
+permalink: /
+slug: /
+hide_intro: true
+og_image: /assets/images/wizard-on-journey.png
+keywords:
+  - IT education
+  - gamified learning
+  - software development
+  - coding quests
+  - learn to code
+---
+
+{%- comment -%} Quest-focused epic landing page. Self-contained: data via site.data.quests.* , scoped styles + vanilla JS animations. {%- endcomment -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+#itj {
+  --ink: #e7e9ff;
+  --muted: #9aa2c8;
+  --bg0: #060616;
+  --bg1: #0b0a24;
+  --bg2: #120b30;
+  --purple: #a855f7;
+  --violet: #7c3aed;
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --blue: #38bdf8;
+  --orange: #fb923c;
+  --gold: #fbbf24;
+  --pink: #f472b6;
+  --display: "Cinzel", "Iowan Old Style", Georgia, serif;
+  --sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  position: relative;
+  color: var(--ink);
+  font-family: var(--sans);
+  background: var(--bg0);
+  overflow-x: clip;
+  line-height: 1.6;
+  /* break out of the theme's content container to go full-bleed */
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50vw);
+}
+#itj * { box-sizing: border-box; }
+#itj a { text-decoration: none; }
+#itj .itj-wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 3rem); }
+#itj .itj-eyebrow {
+  font-family: var(--mono); font-size: .8rem; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--cyan); opacity: .9; margin-bottom: 1rem;
+}
+#itj h2.itj-h { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.1; margin: 0 0 .6rem; letter-spacing: .01em; }
+#itj .itj-lead { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 46rem; }
+#itj .grad {
+  background: linear-gradient(100deg, var(--cyan), var(--purple) 45%, var(--pink) 80%, var(--gold));
+  background-size: 250% 250%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: itj-grad 9s ease infinite;
+}
+@keyframes itj-grad { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+/* ===== HERO ===== */
+#itj .itj-hero {
+  position: relative; min-height: 100svh; display: grid; place-items: center;
+  padding: clamp(6rem,12vh,9rem) 0 4rem; overflow: hidden;
+  background:
+    radial-gradient(1200px 700px at 78% 18%, rgba(124,58,237,.40), transparent 60%),
+    radial-gradient(900px 600px at 12% 85%, rgba(34,211,238,.22), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg0));
+}
+#itj #itj-stars { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+#itj .itj-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(1.5rem,4vw,3.5rem); align-items: center; }
+@media (max-width: 900px){ #itj .itj-hero-grid { grid-template-columns: 1fr; text-align: center; } }
+#itj .itj-badge {
+  display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .9rem; border-radius:999px;
+  font-family: var(--mono); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
+  color: var(--ink); background: rgba(168,85,247,.12); border:1px solid rgba(168,85,247,.45);
+  box-shadow: 0 0 24px rgba(168,85,247,.25) inset; margin-bottom: 1.4rem;
+}
+#itj .itj-badge .dot { width:.5rem;height:.5rem;border-radius:50%;background:var(--green); box-shadow:0 0 10px var(--green); animation: itj-pulse 1.8s infinite; }
+#itj .itj-title { font-family: var(--display); font-weight: 900; font-size: clamp(3rem, 9vw, 6.6rem); line-height:.92; margin:0; letter-spacing:.02em; text-shadow: 0 2px 40px rgba(124,58,237,.4); }
+#itj .itj-title small { display:block; font-family: var(--sans); font-weight:600; font-size: clamp(1rem,2.4vw,1.6rem); letter-spacing:.5em; color: var(--muted); margin-top:1rem; text-shadow:none; }
+#itj .itj-rotator { font-family: var(--mono); font-size: clamp(1rem,2vw,1.35rem); margin: 1.6rem 0 .4rem; color: var(--ink); min-height: 1.6em; }
+#itj .itj-rotator b { color: var(--cyan); font-weight: 600; }
+#itj .itj-rotator .caret { color: var(--purple); animation: itj-blink 1s step-end infinite; }
+#itj .itj-sub { color: var(--muted); font-size: clamp(1rem,1.5vw,1.18rem); max-width: 34rem; margin: .6rem 0 2rem; }
+@media (max-width:900px){ #itj .itj-sub{ margin-inline:auto; } }
+#itj .itj-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+@media (max-width:900px){ #itj .itj-cta{ justify-content:center; } }
+#itj .btn-q {
+  display:inline-flex; align-items:center; gap:.6rem; padding:.95rem 1.6rem; border-radius:14px;
+  font-weight:700; font-family: var(--sans); font-size:1.02rem; letter-spacing:.01em; cursor:pointer;
+  transition: transform .2s ease, box-shadow .25s ease, filter .25s; border:1px solid transparent;
+}
+#itj .btn-q.primary { color:#11021f; background: linear-gradient(100deg, var(--cyan), var(--purple)); box-shadow: 0 10px 30px rgba(124,58,237,.5); }
+#itj .btn-q.primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 44px rgba(34,211,238,.5); filter: brightness(1.08); }
+#itj .btn-q.ghost { color: var(--ink); background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.22); }
+#itj .btn-q.ghost:hover { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 10px 30px rgba(34,211,238,.25); }
+#itj .itj-wizard-wrap { position:relative; display:grid; place-items:center; }
+#itj .itj-wizard {
+  width: min(100%, 30rem); border-radius: 24px; aspect-ratio: 1/1; object-fit: cover;
+  border:1px solid rgba(168,85,247,.35); box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 60px rgba(124,58,237,.35);
+  animation: itj-float 7s ease-in-out infinite;
+}
+#itj .itj-wizard-ring { position:absolute; inset:-6% ; border-radius:50%; border:1px dashed rgba(34,211,238,.35); animation: itj-spin 30s linear infinite; pointer-events:none; }
+#itj .itj-scroll { position:absolute; bottom:1.4rem; left:50%; transform:translateX(-50%); z-index:3; color:var(--muted); font-family:var(--mono); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:.4rem; }
+#itj .itj-scroll i { font-size:1.1rem; animation: itj-bob 1.6s infinite; color: var(--cyan); }
+
+/* ===== SECTION SHELL ===== */
+#itj section { position: relative; padding: clamp(3.5rem, 8vh, 6rem) 0; }
+#itj .itj-section-head { margin-bottom: 2.4rem; }
+#itj .bg-panel { background: linear-gradient(180deg, var(--bg1), var(--bg2)); }
+
+/* ===== STATS DASHBOARD ===== */
+#itj .itj-stats { display:grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top:-3.5rem; position:relative; z-index:4; }
+@media (max-width:720px){ #itj .itj-stats{ grid-template-columns: repeat(2,1fr); } }
+#itj .stat {
+  background: rgba(18,16,48,.7); backdrop-filter: blur(10px); border:1px solid rgba(168,85,247,.25);
+  border-radius:18px; padding:1.4rem 1.2rem; text-align:center; box-shadow: 0 18px 50px rgba(0,0,0,.45);
+  transition: transform .25s, border-color .25s;
+}
+#itj .stat:hover{ transform: translateY(-6px); border-color: var(--cyan); }
+#itj .stat .num { font-family: var(--display); font-weight:800; font-size: clamp(2rem,4.5vw,2.9rem); line-height:1; }
+#itj .stat .lbl { color: var(--muted); font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; margin-top:.5rem; font-family:var(--mono); }
+
+/* ===== TIERS ===== */
+#itj .itj-tiers { display:grid; grid-template-columns: repeat(4,1fr); gap:1.2rem; }
+@media (max-width:980px){ #itj .itj-tiers{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width:540px){ #itj .itj-tiers{ grid-template-columns: 1fr; } }
+#itj .tier {
+  position:relative; border-radius:20px; overflow:hidden; min-height: 22rem; display:flex; flex-direction:column; justify-content:flex-end;
+  border:1px solid rgba(255,255,255,.10); background:#0d0b22; transition: transform .3s, box-shadow .3s; isolation:isolate;
+}
+#itj .tier:hover{ transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,.55); }
+#itj .tier img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; opacity:.5; transition: transform .5s, opacity .3s; }
+#itj .tier:hover img{ transform: scale(1.08); opacity:.65; }
+#itj .tier::after{ content:""; position:absolute; inset:0; z-index:-1; background: linear-gradient(180deg, transparent 18%, rgba(8,7,22,.55) 55%, rgba(6,6,18,.96)); }
+#itj .tier .glow{ position:absolute; top:0; left:0; right:0; height:5px; z-index:1; }
+#itj .tier .body{ padding:1.4rem; }
+#itj .tier .emoji{ font-size:2.2rem; filter: drop-shadow(0 0 12px currentColor); }
+#itj .tier h3{ font-family:var(--display); font-weight:800; font-size:1.5rem; margin:.5rem 0 .2rem; }
+#itj .tier .rng{ font-family:var(--mono); font-size:.78rem; color:var(--muted); letter-spacing:.1em; }
+#itj .tier p{ color:#c9cdf0; font-size:.9rem; margin:.7rem 0 1rem; }
+#itj .tier .go{ display:inline-flex; align-items:center; gap:.4rem; font-weight:600; font-size:.9rem; color:var(--ink); }
+#itj .tier:hover .go{ gap:.7rem; }
+
+/* ===== LEVEL MAP ===== */
+#itj .itj-levels { display:grid; grid-template-columns: repeat(4,1fr); gap:.9rem; }
+@media (max-width:980px){ #itj .itj-levels{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width:540px){ #itj .itj-levels{ grid-template-columns:1fr; } }
+#itj .lvl {
+  display:flex; gap:.9rem; align-items:center; padding:1rem; border-radius:14px;
+  background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); transition: transform .2s, background .2s, border-color .2s;
+}
+#itj .lvl:hover{ transform: translateX(4px); background: rgba(255,255,255,.06); border-color: var(--lc, var(--purple)); }
+#itj .lvl .ic { width:2.6rem; height:2.6rem; flex:0 0 auto; border-radius:11px; display:grid; place-items:center; font-size:1.2rem; color:#08060f; background: var(--lc, var(--purple)); box-shadow: 0 0 18px -2px var(--lc, var(--purple)); }
+#itj .lvl .meta{ min-width:0; }
+#itj .lvl .code{ font-family:var(--mono); font-size:.72rem; letter-spacing:.25em; color: var(--lc, var(--purple)); }
+#itj .lvl .nm{ font-weight:600; font-size:.98rem; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#itj .lvl .xp{ font-family:var(--mono); font-size:.72rem; color:var(--muted); }
+
+/* ===== TASTE / TERMINAL ===== */
+#itj .itj-taste { display:grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items:center; }
+@media (max-width:900px){ #itj .itj-taste{ grid-template-columns:1fr; } }
+#itj .term { background:#0a0a1f; border:1px solid rgba(34,211,238,.25); border-radius:16px; overflow:hidden; box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+#itj .term .bar{ display:flex; align-items:center; gap:.5rem; padding:.7rem 1rem; background: rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.08); }
+#itj .term .bar .b{ width:.8rem;height:.8rem;border-radius:50%; }
+#itj .term .bar .t{ margin-left:.6rem; font-family:var(--mono); font-size:.78rem; color:var(--muted); }
+#itj .term .scr{ padding:1.2rem 1.3rem; font-family:var(--mono); font-size:.92rem; line-height:1.75; min-height: 16rem; white-space:pre-wrap; }
+#itj .term .scr .pr{ color: var(--green); }
+#itj .term .scr .ac{ color: var(--cyan); }
+#itj .term .scr .xp{ color: var(--gold); }
+#itj .term .scr .caret{ color: var(--purple); animation: itj-blink 1s step-end infinite; }
+#itj .sample {
+  border-radius:16px; padding:1.4rem; background: linear-gradient(160deg, rgba(124,58,237,.16), rgba(34,211,238,.07));
+  border:1px solid rgba(168,85,247,.3);
+}
+#itj .sample .row{ display:flex; justify-content:space-between; align-items:center; gap:.5rem; font-family:var(--mono); font-size:.78rem; color:var(--muted); }
+#itj .sample h4{ font-family:var(--display); font-weight:800; font-size:1.3rem; margin:.6rem 0 .8rem; }
+#itj .sample .chip{ display:inline-block; padding:.2rem .6rem; border-radius:999px; font-size:.72rem; font-family:var(--mono); border:1px solid rgba(255,255,255,.2); }
+#itj .sample ul{ list-style:none; padding:0; margin:.4rem 0 0; }
+#itj .sample li{ display:flex; gap:.6rem; align-items:flex-start; padding:.3rem 0; font-size:.92rem; color:#d4d8f5; }
+#itj .sample li i{ color: var(--green); margin-top:.15rem; }
+
+/* ===== GALLERY ===== */
+#itj .itj-gal { display:grid; grid-template-columns: repeat(4,1fr); gap:.9rem; }
+@media (max-width:980px){ #itj .itj-gal{ grid-template-columns: repeat(2,1fr); } }
+#itj .gcard{ position:relative; border-radius:14px; overflow:hidden; aspect-ratio: 16/10; border:1px solid rgba(255,255,255,.08); }
+#itj .gcard img{ width:100%; height:100%; object-fit:cover; transition: transform .5s; }
+#itj .gcard:hover img{ transform: scale(1.1); }
+#itj .gcard span{ position:absolute; left:0; right:0; bottom:0; padding:.8rem .9rem; font-weight:600; font-size:.9rem; background: linear-gradient(transparent, rgba(6,6,18,.92)); }
+
+/* ===== PILLARS ===== */
+#itj .itj-pillars{ display:grid; grid-template-columns: repeat(4,1fr); gap:1.1rem; }
+@media (max-width:980px){ #itj .itj-pillars{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width:540px){ #itj .itj-pillars{ grid-template-columns:1fr; } }
+#itj .pillar{ padding:1.5rem; border-radius:16px; background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); transition: transform .25s, border-color .25s; }
+#itj .pillar:hover{ transform: translateY(-6px); border-color: var(--cyan); }
+#itj .pillar .pi{ width:3rem;height:3rem;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;color:#08060f;margin-bottom:1rem; }
+#itj .pillar h3{ font-size:1.1rem; font-weight:700; margin:0 0 .4rem; }
+#itj .pillar p{ color:var(--muted); font-size:.92rem; margin:0; }
+
+/* ===== FINAL CTA ===== */
+#itj .itj-final{ position:relative; text-align:center; overflow:hidden;
+  background: radial-gradient(900px 500px at 50% 0%, rgba(124,58,237,.4), transparent 60%), linear-gradient(180deg, var(--bg2), var(--bg0)); }
+#itj .itj-final h2{ font-family:var(--display); font-weight:900; font-size: clamp(2.2rem,6vw,4rem); line-height:1.04; margin:0 0 1rem; }
+#itj .itj-final p{ color:var(--muted); font-size:1.15rem; max-width:40rem; margin:0 auto 2rem; }
+
+/* ===== REVEAL ===== */
+#itj .reveal{ opacity:0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+#itj .reveal.in{ opacity:1; transform:none; }
+
+@keyframes itj-float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-16px) } }
+@keyframes itj-spin { to { transform: rotate(360deg) } }
+@keyframes itj-pulse { 0%,100%{ opacity:1 } 50%{ opacity:.3 } }
+@keyframes itj-blink { 50%{ opacity:0 } }
+@keyframes itj-bob { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(6px) } }
+
+@media (prefers-reduced-motion: reduce){
+  #itj *, #itj *::before, #itj *::after { animation: none !important; transition: none !important; }
+  #itj .reveal{ opacity:1; transform:none; }
+}
+</style>
+
+<noscript><style>#itj .reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<div id="itj">
+
+  <!-- ============ HERO ============ -->
+  <header class="itj-hero">
+    <canvas id="itj-stars" aria-hidden="true"></canvas>
+    <div class="itj-wrap itj-hero-grid">
+      <div class="itj-hero-copy">
+        <span class="itj-badge"><span class="dot"></span> Open-source &middot; gamified &middot; self-paced</span>
+        <h1 class="itj-title"><span class="grad">IT-JOURNEY</span><small>ZER0 &rarr; HER0</small></h1>
+        <p class="itj-rotator">&gt; learn <b id="itj-rot">the terminal</b><span class="caret">&#9608;</span></p>
+        <p class="itj-sub">Turn learning IT &amp; software development into an epic adventure. Every concept is a quest, every skill an unlocked power, every level a step from novice to architect.</p>
+        <div class="itj-cta">
+          <a class="btn-q primary" href="{{ '/quests/0000/hello-noob/' | relative_url }}"><i class="bi bi-controller"></i> Begin Your Quest</a>
+          <a class="btn-q ghost" href="{{ '/quests/home/' | relative_url }}"><i class="bi bi-map"></i> Enter the Overworld</a>
+        </div>
+      </div>
+      <div class="itj-wizard-wrap">
+        <div class="itj-wizard-ring"></div>
+        <img class="itj-wizard" src="{{ '/assets/images/wizard-on-journey.png' | relative_url }}" alt="The IT-Journey wizard setting out on an epic quest" width="480" height="480" loading="eager" decoding="async">
+      </div>
+    </div>
+    <div class="itj-scroll"><span>scroll to explore</span><i class="bi bi-chevron-double-down"></i></div>
+  </header>
+
+  <!-- ============ STATS DASHBOARD ============ -->
+  <section class="bg-panel" style="padding-top:0;">
+    <div class="itj-wrap">
+      <div class="itj-stats">
+        <div class="stat reveal"><div class="num grad" data-count="180" data-suffix="+">0</div><div class="lbl">Quests</div></div>
+        <div class="stat reveal"><div class="num grad" data-count="16">0</div><div class="lbl">Levels 0000&ndash;1111</div></div>
+        <div class="stat reveal"><div class="num grad" data-count="4">0</div><div class="lbl">Tiers</div></div>
+        <div class="stat reveal"><div class="num grad" data-count="100" data-suffix="%">0</div><div class="lbl">Free &amp; Open</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIERS ============ -->
+  <section class="bg-panel" style="padding-top:1rem;">
+    <div class="itj-wrap">
+      <div class="itj-section-head reveal">
+        <p class="itj-eyebrow">// the path</p>
+        <h2 class="itj-h">Four tiers. One <span class="grad">hero's journey.</span></h2>
+        <p class="itj-lead">Progress through 16 binary-coded levels grouped into four tiers — each a leap in skill, scope, and power. Pick where your story begins.</p>
+      </div>
+      <div class="itj-tiers">
+        {%- for t in site.data.quests.tiers -%}
+          {%- assign name = t[0] -%}
+          {%- assign lv = t[1].levels -%}
+          {%- assign first = lv | first -%}
+          {%- case name -%}
+            {%- when 'Apprentice' -%}{%- assign c = '#34d399' -%}{%- assign img = 'character-building-forge-your-it-identity-and-deve.png' -%}{%- assign blurb = 'Forge your identity, tame the terminal, and write your first spells. The origin story every hero needs.' -%}
+            {%- when 'Adventurer' -%}{%- assign c = '#38bdf8' -%}{%- assign img = 'container-fundamentals-isolation-quest-title-porta.png' -%}{%- assign blurb = 'Build real things — frontends, containers, APIs. Venture beyond the basics into working software.' -%}
+            {%- when 'Warrior'    -%}{%- assign c = '#fb923c' -%}{%- assign img = 'ci-cd-fundamentals-continuous-integration-quest-ti.png' -%}{%- assign blurb = 'Automate, deploy, and defend. CI/CD pipelines, cloud, and AI-augmented engineering at scale.' -%}
+            {%- else -%}{%- assign c = '#a855f7' -%}{%- assign img = 'cloud-computing-fundamentals-iaas-paas-quest-title.png' -%}{%- assign blurb = 'Architect systems, lead teams, and shape platforms. The final ascent from her0 to legend.' -%}
+          {%- endcase -%}
+          <a class="tier reveal" href="{{ '/quests/' | append: first | append: '/' | relative_url }}">
+            <img src="{{ '/assets/images/previews/' | append: img | relative_url }}" alt="{{ name }} tier" loading="lazy">
+            <div class="glow" style="background:linear-gradient(90deg,{{ c }},transparent);"></div>
+            <div class="body">
+              <div class="emoji" style="color:{{ c }}">{{ t[1].emoji }}</div>
+              <h3 style="color:{{ c }}">{{ name }}</h3>
+              <div class="rng">LEVELS {{ lv | first }} &rarr; {{ lv | last }}</div>
+              <p>{{ blurb }}</p>
+              <span class="go">Start this tier <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEVEL MAP ============ -->
+  <section>
+    <div class="itj-wrap">
+      <div class="itj-section-head reveal">
+        <p class="itj-eyebrow">// the world map</p>
+        <h2 class="itj-h">16 levels, counted in <span class="grad">binary.</span></h2>
+        <p class="itj-lead">From <code style="color:var(--cyan)">0000</code> to <code style="color:var(--purple)">1111</code> — each level is a themed skill world with its own quests and XP. Here's the whole map.</p>
+      </div>
+      <div class="itj-levels">
+        {%- for L in site.data.quests.levels -%}
+          {%- assign code = L[0] -%}{%- assign d = L[1] -%}
+          {%- case d.tier -%}
+            {%- when 'Apprentice' -%}{%- assign c = '#34d399' -%}
+            {%- when 'Adventurer' -%}{%- assign c = '#38bdf8' -%}
+            {%- when 'Warrior'    -%}{%- assign c = '#fb923c' -%}
+            {%- else -%}{%- assign c = '#a855f7' -%}
+          {%- endcase -%}
+          <a class="lvl reveal" style="--lc:{{ c }}" href="{{ d.permalink | relative_url }}">
+            <div class="ic"><i class="bi {{ d.icon | default: 'bi-stars' }}"></i></div>
+            <div class="meta">
+              <div class="code">{{ code }} &middot; {{ d.tier_emoji }} {{ d.tier }}</div>
+              <div class="nm">{{ d.theme }}</div>
+              <div class="xp">{{ d.xp_range }} XP</div>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A TASTE OF THE ADVENTURE ============ -->
+  <section class="bg-panel">
+    <div class="itj-wrap">
+      <div class="itj-section-head reveal">
+        <p class="itj-eyebrow">// a taste of the adventure</p>
+        <h2 class="itj-h">Real commands. Real skills. <span class="grad">Real XP.</span></h2>
+        <p class="itj-lead">Quests aren't videos to watch — they're missions you complete in a live terminal and your own repo. Here's what a quest feels like.</p>
+      </div>
+      <div class="itj-taste">
+        <div class="term reveal">
+          <div class="bar">
+            <span class="b" style="background:#ff5f56"></span><span class="b" style="background:#ffbd2e"></span><span class="b" style="background:#27c93f"></span>
+            <span class="t">~/it-journey — quest shell</span>
+          </div>
+          <div class="scr" id="itj-term"></div>
+        </div>
+        <div class="sample reveal">
+          <div class="row"><span><i class="bi bi-geo-alt"></i> Level 0000 · Foundation</span><span class="chip" style="color:var(--green);border-color:var(--green)">🌱 Beginner</span></div>
+          <h4>Quest: "What is an OS?"</h4>
+          <div class="row" style="margin-bottom:.8rem"><span>⏱ 30–45 min</span><span class="xp" style="color:var(--gold)">+50 XP</span></div>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i> Identify your operating system &amp; shell</li>
+            <li><i class="bi bi-check-circle-fill"></i> Open a terminal and run your first command</li>
+            <li><i class="bi bi-check-circle-fill"></i> Navigate the filesystem like a wizard</li>
+            <li><i class="bi bi-check-circle-fill"></i> Earn your first achievement badge</li>
+          </ul>
+          <a class="btn-q primary" style="margin-top:1.2rem;width:100%;justify-content:center" href="{{ '/quests/0000/hello-noob/' | relative_url }}"><i class="bi bi-play-fill"></i> Accept this quest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section>
+    <div class="itj-wrap">
+      <div class="itj-section-head reveal">
+        <p class="itj-eyebrow">// the questboard</p>
+        <h2 class="itj-h">A glimpse of what <span class="grad">awaits.</span></h2>
+        <p class="itj-lead">A few of the many adventures across the realms — from terminal dungeons to cloud citadels.</p>
+      </div>
+      <div class="itj-gal">
+        {%- assign gal = "character-building-forge-your-it-identity-and-deve.png|Forge Your Identity,bashcrawl-quest-terminal-adventure-rpg.png|Bashcrawl: Terminal Dungeon,container-fundamentals-isolation-quest-title-porta.png|Master Containers,advanced-git-workflows-rebase-cherry-pick-quest-ti.png|Git Sorcery,ci-cd-fundamentals-continuous-integration-quest-ti.png|Automate with CI/CD,ai-feature-pipeline-architect-devsecops-mastery-qu.png|AI DevSecOps,cloud-computing-fundamentals-iaas-paas-quest-title.png|Ascend to the Cloud,404-hunting-binary-wards-for-unbreakable-links.png|404 Hunting" | split: "," -%}
+        {%- for g in gal -%}
+          {%- assign parts = g | split: "|" -%}
+          <div class="gcard reveal">
+            <img src="{{ '/assets/images/previews/' | append: parts[0] | relative_url }}" alt="{{ parts[1] }}" loading="lazy">
+            <span>{{ parts[1] }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PILLARS ============ -->
+  <section class="bg-panel">
+    <div class="itj-wrap">
+      <div class="itj-section-head reveal">
+        <p class="itj-eyebrow">// why it works</p>
+        <h2 class="itj-h">Learning, <span class="grad">leveled up.</span></h2>
+      </div>
+      <div class="itj-pillars">
+        <div class="pillar reveal"><div class="pi" style="background:var(--green)"><i class="bi bi-controller"></i></div><h3>Gamified</h3><p>XP, levels, tiers, and badges turn the grind into a game you actually want to finish.</p></div>
+        <div class="pillar reveal"><div class="pi" style="background:var(--blue)"><i class="bi bi-tools"></i></div><h3>Hands-on</h3><p>No passive videos. You build real projects in a real terminal and your own GitHub repo.</p></div>
+        <div class="pillar reveal"><div class="pi" style="background:var(--orange)"><i class="bi bi-robot"></i></div><h3>AI-augmented</h3><p>Learn to build <em>with</em> AI — agents, MCP, and modern workflows woven through the path.</p></div>
+        <div class="pillar reveal"><div class="pi" style="background:var(--purple)"><i class="bi bi-git"></i></div><h3>Open source</h3><p>Free forever, built in the open. Fork it, improve it, and contribute your own quests.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="itj-final">
+    <div class="itj-wrap reveal">
+      <p class="itj-eyebrow" style="text-align:center">// your legend begins now</p>
+      <h2>The journey of a thousand<br>commits begins with <span class="grad">one quest.</span></h2>
+      <p>No signup. No paywall. Just open a terminal and take your first step from zer0 to her0.</p>
+      <div class="itj-cta" style="justify-content:center">
+        <a class="btn-q primary" href="{{ '/quests/0000/hello-noob/' | relative_url }}"><i class="bi bi-rocket-takeoff"></i> Start Level 0000</a>
+        <a class="btn-q ghost" href="{{ '/quickstart/' | relative_url }}"><i class="bi bi-compass"></i> Quick-Start Guide</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('itj');
+  if(!root) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- starfield ---- */
+  var cv = document.getElementById('itj-stars');
+  if(cv && !reduce){
+    var ctx = cv.getContext('2d'), stars = [], W, H, raf, mx=-999, my=-999;
+    function size(){ var r = cv.parentElement.getBoundingClientRect(); W = cv.width = r.width; H = cv.height = r.height;
+      var n = Math.min(150, Math.floor(W*H/9000)); stars = [];
+      for(var i=0;i<n;i++){ stars.push({x:Math.random()*W,y:Math.random()*H,z:Math.random()*0.8+0.2,t:Math.random()*Math.PI*2}); } }
+    function tick(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<stars.length;i++){ var s=stars[i]; s.t+=0.02; s.y+=s.z*0.15; if(s.y>H){s.y=0;s.x=Math.random()*W;}
+        var tw = 0.55+0.45*Math.sin(s.t); var dx=s.x-mx, dy=s.y-my, near=dx*dx+dy*dy<14000;
+        ctx.beginPath(); ctx.arc(s.x,s.y,s.z*(near?2.4:1.5),0,6.28);
+        ctx.fillStyle = near? 'rgba(34,211,238,'+tw+')' : 'rgba(180,170,255,'+(tw*s.z)+')';
+        ctx.shadowBlur = near?12:0; ctx.shadowColor='rgba(34,211,238,.8)'; ctx.fill(); ctx.shadowBlur=0; }
+      raf = requestAnimationFrame(tick);
+    }
+    cv.parentElement.addEventListener('mousemove',function(e){ var r=cv.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; });
+    cv.parentElement.addEventListener('mouseleave',function(){ mx=my=-999; });
+    size(); tick(); window.addEventListener('resize', function(){ cancelAnimationFrame(raf); size(); tick(); });
+  }
+
+  /* ---- hero word rotator ---- */
+  var rot = document.getElementById('itj-rot');
+  if(rot){
+    var words = ['the terminal','to ship code','Docker & cloud','Git wizardry','to build with AI','from zer0'];
+    var wi=0; setInterval(function(){ wi=(wi+1)%words.length; rot.style.opacity=0;
+      setTimeout(function(){ rot.textContent=words[wi]; rot.style.transition='opacity .35s'; rot.style.opacity=1; },180); }, 2400);
+  }
+
+  /* ---- reveal on scroll ---- */
+  var revs = root.querySelectorAll('.reveal');
+  function revealAll(){ revs.forEach(function(el){ el.classList.add('in'); }); }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e,i){ if(e.isIntersecting){ var el=e.target;
+      setTimeout(function(){ el.classList.add('in'); }, (el.dataset.d||0)); io.unobserve(el); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    revs.forEach(function(el,i){ el.dataset.d = (i%4)*70; io.observe(el); });
+    /* safety net: never leave content hidden (no-scroll users, screenshots, IO misses) */
+    setTimeout(revealAll, 1800);
+  } else { revealAll(); }
+
+  /* ---- count up ---- */
+  function countUp(el){ var target=+el.dataset.count, suf=el.dataset.suffix||'', t0=null, dur=1400;
+    function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*e) + suf; if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step); }
+  var nums = root.querySelectorAll('[data-count]');
+  if('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); io2.unobserve(e.target); } }); }, {threshold:.6});
+    nums.forEach(function(el){ io2.observe(el); });
+  } else { nums.forEach(countUp); }
+
+  /* ---- quest terminal typewriter ---- */
+  var term = document.getElementById('itj-term');
+  if(term){
+    var lines = [
+      {c:'pr', p:'$ ', t:'git init my-legend'},
+      {c:'ac', t:'✨  Repository forged. Your story begins.'},
+      {c:'pr', p:'$ ', t:'quest start hello-noob'},
+      {c:'ac', t:'🌱  Quest accepted: "What is an OS?"'},
+      {c:'',   t:'    > You step into the Init World...'},
+      {c:'pr', p:'$ ', t:'whoami'},
+      {c:'',   t:'    a future her0'},
+      {c:'xp', t:'🏅  Objective complete  ·  +50 XP  ·  Level 0000'},
+      {c:'pr', p:'$ ', t:'_'}
+    ];
+    var li=0, ci=0;
+    function type(){
+      if(li>=lines.length){ setTimeout(function(){ term.innerHTML=''; li=0; ci=0; type(); }, 4200); return; }
+      var ln=lines[li];
+      if(ci===0){ var span=document.createElement('div'); span.className='ln';
+        if(ln.p){ var ps=document.createElement('span'); ps.className='pr'; ps.textContent=ln.p; span.appendChild(ps); }
+        var tx=document.createElement('span'); tx.className=ln.c; span.appendChild(tx); term.appendChild(span); ln._tx=tx; }
+      if(ci<ln.t.length){ ln._tx.textContent += ln.t[ci]; ci++; setTimeout(type, ln.p?42:26); }
+      else { ci=0; li++; setTimeout(type, ln.p?260:480); }
+    }
+    if(reduce){ lines.forEach(function(ln){ var d=document.createElement('div'); d.innerHTML=(ln.p?'<span class="pr">'+ln.p+'</span>':'')+'<span class="'+ln.c+'">'+ln.t+'</span>'; term.appendChild(d); }); }
+    else if('IntersectionObserver' in window){ var io3=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ type(); io3.disconnect(); } },{threshold:.3}); io3.observe(term); }
+    else { type(); }
+  }
+})();
+</script>

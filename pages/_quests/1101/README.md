@@ -27,6 +27,7 @@ toc_sticky: true
 sidebar:
   nav: quests
 draft: false
+mermaid: true
 ---
 # ⚡ Level 1101: Machine Learning & AI
 

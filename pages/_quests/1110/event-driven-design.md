@@ -82,6 +82,7 @@ rewards:
   unlocks_features:
   - Asynchronous foundations for scaling the kingdom
 layout: quest
+mermaid: true
 ---
 *Architect, your services now stand as separate keeps - but they still shout across the courtyard, each waiting for the other to answer. **Event-Driven Design** teaches them a better way to communicate: instead of demanding answers, a service simply *announces what happened* and lets anyone who cares react. This single shift - from commands to events - is the secret behind systems that scale, decouple, and heal.*
 

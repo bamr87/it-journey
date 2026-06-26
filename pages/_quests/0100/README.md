@@ -17,6 +17,7 @@ tags:
 - adventurer
 - frontend
 - containers
+mermaid: true
 ---
 # Level 0100: Frontend Development & Docker
 

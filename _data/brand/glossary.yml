@@ -1,0 +1,57 @@
+# IT-Journey — glossary & term governance (machine-readable core)
+#
+# Canonical spellings, preferred terms, and brand vocabulary. The `preferred`
+# map (wrong -> right) is mirrored into .cms/config.yml > brand.global so the
+# engine can flag drift; keep the two in sync. The brand-voice skill reads this
+# when drafting. Consumed as site.data.brand.glossary.*.
+
+# Canonical spellings. Key = wrong/variant form, value = correct form.
+# The engine flags the variant; the skill rewrites to the canonical form.
+preferred:
+  Github: GitHub
+  github: GitHub
+  "git hub": GitHub
+  Javascript: JavaScript
+  javascript: JavaScript
+  NodeJS: Node.js
+  nodejs: Node.js
+  CICD: CI/CD
+  "ci/cd": CI/CD
+  vscode: VS Code
+  "VSCode": VS Code
+  docker-compose: Docker Compose
+  markdown: Markdown
+  jekyll: Jekyll
+
+# Brand stylizations — distinctive spellings that are correct on purpose.
+stylizations:
+  - term: zer0
+    note: lowercase with a zero glyph; the start of the progression. Not "Zero".
+  - term: her0
+    note: lowercase with a zero glyph; the aspirational end state. Not "Hero".
+  - term: zer0 -> her0
+    note: the progression motif; prefer over "zero to hero".
+  - term: n00b
+    note: playful label for the 0000 level; affectionate, never derogatory.
+
+# Brand-specific term definitions so writers use them consistently.
+definitions:
+  - term: quest
+    means: A gamified, structured learning path in pages/_quests (registry-governed, 4-bit levels).
+  - term: chronicle
+    means: A long-form post documenting real (often AI-assisted) work, surfaced on /news/.
+  - term: muse
+    means: A short-form opinion/news post (the muse-opinion voice), surfaced on /news/.
+  - term: section
+    means: One of the 13 post categories (see sections/_registry.yml).
+
+# Terms to avoid as empty hype. Mirrored to .cms/config.yml > brand.global.banned_terms.
+# Sections may relax specific entries via brand.sections.<slug>.banned_terms_relax.
+discouraged:
+  - comprehensive
+  - powerful
+  - seamless
+  - cutting-edge
+  - revolutionary
+  - game-changing
+  - effortless

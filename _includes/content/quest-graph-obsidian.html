@@ -1,0 +1,382 @@
+{%- comment -%}
+  ===================================================================
+  quest-graph-obsidian.html — Obsidian-style quest dependency graph
+  ===================================================================
+  File: _includes/content/quest-graph-obsidian.html
+  Purpose: Renders the quest dependency network as a force-directed
+           "Obsidian graph view" using cytoscape.js — the same look &
+           feel as the site knowledge graph (_includes/obsidian/*),
+           but built from the quest registry instead of wiki-links.
+
+  This replaces the Mermaid quest graph (content/quest-graph.html) at
+  the bottom of quest pages. Unlike Mermaid, it is fully self-contained:
+  it lazy-loads cytoscape itself and does NOT depend on `page.mermaid`,
+  so it renders on every quest regardless of front matter.
+
+  Parameters:
+    include.level    (optional) — 4-digit binary level string ("0000").
+                     Filters the graph to a single level. Omit for the
+                     full cross-level network.
+    include.current  (optional) — permalink of the quest to highlight as
+                     "you are here" (e.g. page.permalink).
+
+  Data source:
+    assets/data/quest-network.json  (scripts/quest/build-quest-network.py)
+      { nodes:[{id,title,level,type,difficulty,technology}], edges:[{source,target,kind}] }
+
+  Dependencies:
+    cytoscape.js (loaded lazily from CDN with SRI, shared with the
+    theme's obsidian graph if already present).
+  ===================================================================
+{%- endcomment -%}
+
+{%- assign graph_id = include.level | default: "all" -%}
+
+<div class="quest-obsidian-graph my-3"
+     id="quest-obsidian-{{ graph_id }}"
+     data-level="{{ include.level }}"
+     data-current="{{ include.current }}"
+     data-index-url="{{ '/assets/data/quest-network.json' | relative_url }}">
+  <div class="quest-obsidian-graph__toolbar">
+    <span class="quest-obsidian-graph__status" role="status">Loading quest graph…</span>
+    <button type="button" class="btn btn-outline-secondary btn-sm quest-obsidian-graph__fit" hidden>
+      <i class="bi bi-arrows-fullscreen" aria-hidden="true"></i> Reset view
+    </button>
+  </div>
+  <div class="quest-obsidian-graph__canvas"
+       role="img"
+       aria-label="Quest dependency graph"></div>
+  <div class="quest-obsidian-graph__legend" aria-hidden="true">
+    <span><i class="dot" style="background:#4caf50"></i>🟢 Easy</span>
+    <span><i class="dot" style="background:#f9a825"></i>🟡 Medium</span>
+    <span><i class="dot" style="background:#ef5350"></i>🔴 Hard</span>
+    <span><i class="dot" style="background:#ab47bc"></i>⚔️ Epic</span>
+    <span><i class="dot dot--here"></i>You are here</span>
+    <span><i class="edge"></i>required</span>
+    <span><i class="edge edge--unlocks"></i>unlocks</span>
+    <span><i class="edge edge--dashed"></i>recommended</span>
+  </div>
+  <p class="quest-obsidian-graph__tips">
+    Click a node to open the quest · ⌘/Ctrl-click for a new tab · drag to
+    reposition · scroll to zoom.
+  </p>
+</div>
+
+<style>
+  .quest-obsidian-graph__canvas {
+    width: 100%;
+    height: 60vh;
+    min-height: 420px;
+    border: 1px solid rgba(var(--bs-border-color-rgb, 222, 226, 230), 0.55);
+    border-radius: var(--bs-border-radius-lg, .5rem);
+    background: rgba(var(--bs-body-bg-rgb, 255, 255, 255), 0.45);
+    overflow: hidden;
+    position: relative;
+  }
+  [data-bs-theme="dark"] .quest-obsidian-graph__canvas {
+    background: rgba(var(--bs-body-bg-rgb, 33, 37, 41), 0.38);
+  }
+  .quest-obsidian-graph__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    margin-bottom: .5rem;
+  }
+  .quest-obsidian-graph__status {
+    font-size: .8125rem;
+    color: var(--bs-secondary-color, #6c757d);
+  }
+  .quest-obsidian-graph__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .75rem;
+    margin-top: .6rem;
+    font-size: .78rem;
+    color: var(--bs-body-color, #212529);
+  }
+  .quest-obsidian-graph__legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+  }
+  .quest-obsidian-graph__legend .dot {
+    width: .7rem; height: .7rem; border-radius: 50%;
+    display: inline-block; box-shadow: 0 0 0 1px rgba(0,0,0,.12);
+  }
+  .quest-obsidian-graph__legend .dot--here {
+    background: transparent; box-shadow: 0 0 0 2px #fd7e14;
+  }
+  .quest-obsidian-graph__legend .edge {
+    width: 1.1rem; height: 0; display: inline-block;
+    border-top: 2px solid var(--bs-secondary-color, #6c757d);
+  }
+  .quest-obsidian-graph__legend .edge--unlocks { border-top-color: #0d6efd; }
+  .quest-obsidian-graph__legend .edge--dashed { border-top-style: dashed; }
+  .quest-obsidian-graph__tips {
+    margin-top: .5rem;
+    font-size: .78rem;
+    color: var(--bs-secondary-color, #6c757d);
+  }
+</style>
+
+<script>
+(function () {
+  var CY_URL = 'https://cdn.jsdelivr.net/npm/cytoscape@3.30.0/dist/cytoscape.min.js';
+  var CY_SRI = 'sha384-kpMsYllYzyaWU69Piok08rPNktpnjqAoDMdB00fjqUkEk3lkuUbSuwJ+oXrjvN6B';
+
+  var root = document.getElementById("quest-obsidian-{{ graph_id }}");
+  if (!root) return;
+
+  var canvas = root.querySelector('.quest-obsidian-graph__canvas');
+  var statusEl = root.querySelector('.quest-obsidian-graph__status');
+  var fitBtn = root.querySelector('.quest-obsidian-graph__fit');
+  var levelFilter = root.getAttribute('data-level') || '';
+  var current = normPath(root.getAttribute('data-current') || '');
+  var dataUrl = root.getAttribute('data-index-url');
+
+  function normPath(p) {
+    if (!p) return '';
+    p = p.split('#')[0].split('?')[0];
+    if (p.length > 1 && p.charAt(p.length - 1) !== '/') p += '/';
+    return p;
+  }
+
+  function setStatus(msg) { if (statusEl) statusEl.textContent = msg || ''; }
+
+  // Difficulty emoji → node color.
+  function diffColor(d) {
+    d = d || '';
+    if (d.indexOf('🟢') !== -1) return '#4caf50'; // 🟢
+    if (d.indexOf('🟡') !== -1) return '#f9a825'; // 🟡
+    if (d.indexOf('🔴') !== -1) return '#ef5350'; // 🔴
+    if (d.indexOf('⚔') !== -1)       return '#ab47bc'; // ⚔️
+    return '#6c757d';
+  }
+
+  function readTheme() {
+    var attr = (document.documentElement.getAttribute('data-bs-theme') || '').toLowerCase();
+    var dark = attr === 'dark' || attr === 'wizard' ||
+      (!attr && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return dark ? {
+      label: '#e9ecef', labelOutline: '#1b1f23',
+      edge: 'rgba(173,181,189,0.45)', edgeArrow: 'rgba(173,181,189,0.65)',
+      unlock: 'rgba(125,211,252,0.55)', canvasBg: '#1b1f23',
+      nodeBorder: 'rgba(255,255,255,0.22)'
+    } : {
+      label: '#1b1f23', labelOutline: '#f8f9fa',
+      edge: 'rgba(73,80,87,0.40)', edgeArrow: 'rgba(73,80,87,0.60)',
+      unlock: 'rgba(13,110,253,0.45)', canvasBg: '#f8f9fa',
+      nodeBorder: 'rgba(0,0,0,0.20)'
+    };
+  }
+
+  function loadCytoscape(cb) {
+    if (typeof window.cytoscape === 'function') return cb();
+    // Shares the in-flight queue with the theme's obsidian-local-graph loader.
+    // Set the queue BEFORE the existing-<script> check and PUSH (never
+    // overwrite), matching obsidian-local-graph.js so the two loaders can't
+    // clobber each other's pending callbacks.
+    if (window.__obsidianCytoscapeLoading) {
+      window.__obsidianCytoscapeLoading.push(cb);
+      return;
+    }
+    window.__obsidianCytoscapeLoading = [cb];
+    function flush() {
+      (window.__obsidianCytoscapeLoading || []).forEach(function (fn) { fn(); });
+      window.__obsidianCytoscapeLoading = null;
+    }
+    var existing = document.querySelector('script[src*="cytoscape"]');
+    if (existing) {
+      existing.addEventListener('load', flush);
+      return;
+    }
+    var s = document.createElement('script');
+    s.src = CY_URL; s.integrity = CY_SRI; s.crossOrigin = 'anonymous'; s.defer = true;
+    s.onload = flush;
+    s.onerror = function () {
+      setStatus('Quest graph unavailable (could not load renderer).');
+      window.__obsidianCytoscapeLoading = null;
+    };
+    document.head.appendChild(s);
+  }
+
+  function build(data) {
+    var allNodes = (data && data.nodes) || [];
+    var nodes = levelFilter
+      ? allNodes.filter(function (n) { return n.level === levelFilter; })
+      : allNodes;
+
+    if (!nodes.length) {
+      setStatus('No quests found for this level.');
+      return;
+    }
+
+    var ids = {};
+    nodes.forEach(function (n) { ids[n.id] = true; });
+
+    var edges = ((data && data.edges) || []).filter(function (e) {
+      return ids[e.source] && ids[e.target];
+    });
+
+    var elements = [];
+    nodes.forEach(function (n) {
+      var url = normPath(n.id);
+      elements.push({
+        group: 'nodes',
+        data: {
+          id: n.id,
+          label: (n.title || n.id).substring(0, 48),
+          url: url,
+          color: diffColor(n.difficulty),
+          type: n.type || 'main_quest',
+          isCurrent: current && url === current
+        }
+      });
+    });
+    var seen = {};
+    edges.forEach(function (e) {
+      var k = e.source + '|' + e.target;
+      if (seen[k]) return;
+      seen[k] = true;
+      elements.push({
+        group: 'edges',
+        data: { id: 'qe:' + k, source: e.source, target: e.target, kind: e.kind || 'required' }
+      });
+    });
+
+    loadCytoscape(function () { render(elements); });
+  }
+
+  function render(elements) {
+    var theme = readTheme();
+    canvas.style.backgroundColor = theme.canvasBg;
+
+    var cy = window.cytoscape({
+      container: canvas,
+      elements: elements,
+      minZoom: 0.2,
+      maxZoom: 3,
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'background-color': 'data(color)',
+            'label': 'data(label)',
+            'font-size': '10px',
+            'font-weight': 500,
+            'color': theme.label,
+            'text-outline-color': theme.labelOutline,
+            'text-outline-width': 2,
+            'text-valign': 'bottom',
+            'text-margin-y': 3,
+            'text-wrap': 'ellipsis',
+            'text-max-width': '120px',
+            'width': 15, 'height': 15,
+            'border-width': 1.5,
+            'border-color': theme.nodeBorder
+          }
+        },
+        {
+          // Side quests rendered as hollow / dashed-border circles.
+          selector: 'node[type = "side_quest"]',
+          style: { 'border-style': 'dashed', 'border-width': 2 }
+        },
+        {
+          selector: 'node[?isCurrent]',
+          style: {
+            'width': 24, 'height': 24,
+            'border-width': 3,
+            'border-color': '#fd7e14',
+            'font-weight': 700,
+            'z-index': 99
+          }
+        },
+        {
+          selector: 'edge',
+          style: {
+            'width': 1,
+            'line-color': theme.edge,
+            'target-arrow-color': theme.edgeArrow,
+            'target-arrow-shape': 'triangle',
+            'arrow-scale': 0.7,
+            'curve-style': 'bezier'
+          }
+        },
+        {
+          selector: 'edge[kind = "unlocks"]',
+          style: { 'line-color': theme.unlock, 'target-arrow-color': theme.unlock }
+        },
+        {
+          selector: 'edge[kind = "recommended"]',
+          style: { 'line-style': 'dashed' }
+        }
+      ],
+      layout: {
+        name: 'cose',
+        animate: false,
+        padding: 16,
+        nodeRepulsion: function () { return 7000; },
+        idealEdgeLength: function () { return 70; },
+        edgeElasticity: function () { return 60; },
+        nodeOverlap: 14,
+        gravity: 0.25,
+        numIter: 1200,
+        fit: true
+      }
+    });
+
+    root.__cy = cy;
+
+    cy.on('tap', 'node', function (evt) {
+      var d = evt.target.data();
+      if (!d.url || d.url === current) return;
+      var oe = evt.originalEvent;
+      if (oe && (oe.metaKey || oe.ctrlKey)) {
+        window.open(d.url, '_blank', 'noopener');
+      } else {
+        window.location.href = d.url;
+      }
+    });
+
+    // Focus the current quest in view if present.
+    var hereNode = current ? cy.nodes('[?isCurrent]') : cy.collection();
+    if (fitBtn) {
+      fitBtn.hidden = false;
+      fitBtn.addEventListener('click', function () { cy.fit(cy.elements(), 24); });
+    }
+
+    setStatus(cy.nodes().length + ' quests · ' + cy.edges().length + ' links' +
+      (hereNode.nonempty() ? ' · centered on this quest' : ''));
+
+    requestAnimationFrame(function () {
+      cy.resize();
+      cy.fit(cy.elements(), 24);
+      if (hereNode.nonempty()) { cy.center(hereNode); }
+    });
+
+    // Recolor on Bootstrap theme toggle without a full relayout.
+    var obs = new MutationObserver(function () {
+      var t = readTheme();
+      canvas.style.backgroundColor = t.canvasBg;
+      cy.style()
+        .selector('node').style({
+          'color': t.label, 'text-outline-color': t.labelOutline, 'border-color': t.nodeBorder
+        })
+        .selector('node[?isCurrent]').style({ 'border-color': '#fd7e14' })
+        .selector('edge').style({ 'line-color': t.edge, 'target-arrow-color': t.edgeArrow })
+        .selector('edge[kind = "unlocks"]').style({ 'line-color': t.unlock, 'target-arrow-color': t.unlock })
+        .update();
+    });
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
+  }
+
+  fetch(dataUrl, { credentials: 'same-origin' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+    .then(build)
+    .catch(function (err) {
+      setStatus('Quest graph unavailable.');
+      console.warn('[quest-graph-obsidian] failed to load network data', err);
+    });
+})();
+</script>

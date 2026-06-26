@@ -170,7 +170,7 @@ Create custom templates in `_includes/content_statistics/`:
 1. **Ruby not found**: Install Ruby 2.6+ 
 2. **YAML parsing errors**: Check post frontmatter syntax
 3. **File permissions**: Ensure scripts are executable
-4. **Missing posts**: Verify `pages/_posts` directory exists
+4. **Missing content**: Verify the content collections under `pages/` exist (`pages/_quests`, `pages/_docs`, …)
 
 #### Debug Mode
 
@@ -197,11 +197,11 @@ The `navigation/` directory contains navigation menu configurations for differen
 | `home.yml` | Home page sidebar navigation | N/A (used in header) | `/home/` page |
 | `about.yml` | About section sidebar | `pages/_about` | `/about/` pages |
 | `docs.yml` | Documentation sidebar | `pages/_docs` | `/docs/` pages |
-| `posts.yml` | Posts/blog category navigation | N/A (uses `searchCats` mode) | `/posts/` pages |
 | `quests.yml` | Quest system navigation by level | `pages/_quests` | `/quests/` pages |
 | `quickstart.yml` | Quick-start guides navigation | `pages/_quickstart` | `/quickstart/` pages |
-| `notebooks.yml` | Notes and notebooks navigation | `pages/_notes`, `pages/_notebooks` | `/notes/`, `/notebooks/` |
-| `hobbies.yml` | Hobbies section navigation | `pages/_hobbies` | `/hobbies/` pages |
+| `notes.yml` | Notes navigation | `pages/_notes` | `/notes/` pages |
+
+> **Removed in the 2026 overhaul:** `posts.yml` and `hobbies.yml` — the `_posts`/`_drafts` blog moved to the **lifehacker.dev** repo and the `_hobbies` collection was deleted. `notes.yml` was added when the notes set was slimmed.
 
 ### Sidebar Navigation Modes
 
@@ -233,7 +233,7 @@ When adding new pages or collections:
 3. If needed, update sidebar configuration in `_config.yml` defaults
 4. Test navigation rendering locally with `bundle exec jekyll serve`
 
-**Last Updated:** 2026-04-25
+**Last Updated:** 2026-06-25
 
 ## Schema Data
 

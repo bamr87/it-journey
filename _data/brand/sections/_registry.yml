@@ -1,0 +1,37 @@
+# IT-Journey — section guide registry (machine-readable core)
+#
+# Maps a section slug to its display facts + the voice profile and personas that
+# govern it. cms.py (_check_brand) and the brand-voice skill resolve a
+# collection -> section -> profile through this file.
+#
+# voice_profile must be a key in ../voice.yml > profiles.
+# personas are ids in ../personas.yml.
+# icon = Bootstrap Icons name (no bi- prefix); accent = token in ../colors.yml.
+# guide = the narrative file in this directory.
+
+sections:
+  # Whole-collection sections. Quests and docs resolve to these via
+  # collection_defaults below, regardless of sub-folder.
+  quest:
+    title: Quests
+    permalink: /quests/
+    voice_profile: quest-fantasy
+    personas: [learner, contributor]
+    icon: dpad
+    accent: purple
+    guide: quest.md
+    collection: quests
+  docs:
+    title: Docs
+    permalink: /docs/
+    voice_profile: reference
+    personas: [practitioner, learner]
+    icon: book-half
+    accent: secondary
+    guide: docs.md
+    collection: docs
+
+# Default section per collection.
+collection_defaults:
+  quests: quest
+  docs: docs

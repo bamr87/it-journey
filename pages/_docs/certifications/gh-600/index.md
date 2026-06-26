@@ -186,13 +186,13 @@ graph TD
 
 | Post | Domain(s) | Category |
 |---|---|---|
-| [Launching the Agentic Codex: A GH-600 Learning Track for GitHub Native AI](/posts/launching-agentic-codex-gh-600-track/) | All | ai-agents |
-| [Embedding Agents in the SDLC — What Actually Changes](/posts/embedding-agents-in-the-sdlc/) | D1 | ai-agents |
-| [MCP Servers and Agent Tooling in Practice](/posts/mcp-servers-and-agent-tooling-in-practice/) | D2 | ai-agents |
-| [Taming Agent Memory and Context Drift](/posts/taming-agent-memory-and-context-drift/) | D3 | ai-agents |
-| [Evaluating and Tuning Agents with GitHub Signals](/posts/evaluating-and-tuning-agents-with-github-signals/) | D4 | ai-agents |
-| [Orchestrating Multi-Agent Workflows on GitHub](/posts/orchestrating-multi-agent-workflows-on-github/) | D5 | ai-agents |
-| [Agent Guardrails and Responsible Autonomy](/posts/agent-guardrails-and-responsible-autonomy/) | D6 | ai-agents |
+| [Launching the Agentic Codex: A GH-600 Learning Track for GitHub Native AI](/docs/agentic-codex/) | All | ai-agents |
+| [Embedding Agents in the SDLC — What Actually Changes](/docs/agentic-codex/embedding-agents-in-the-sdlc/) | D1 | ai-agents |
+| [MCP Servers and Agent Tooling in Practice](/docs/agentic-codex/mcp-servers-and-agent-tooling-in-practice/) | D2 | ai-agents |
+| [Taming Agent Memory and Context Drift](/docs/agentic-codex/taming-agent-memory-and-context-drift/) | D3 | ai-agents |
+| [Evaluating and Tuning Agents with GitHub Signals](/docs/agentic-codex/evaluating-and-tuning-agents-with-github-signals/) | D4 | ai-agents |
+| [Orchestrating Multi-Agent Workflows on GitHub](/docs/agentic-codex/orchestrating-multi-agent-workflows-on-github/) | D5 | ai-agents |
+| [Agent Guardrails and Responsible Autonomy](/docs/agentic-codex/agent-guardrails-and-responsible-autonomy/) | D6 | ai-agents |
 
 ---
 

@@ -1,3 +1,13 @@
+- title: Quests
+  url: /quests/home/
+  icon: bi-controller
+  children:
+    - title: Quest Home
+      url: /quests/home/
+    - title: Start Here (n00b)
+      url: /quests/0000/hello-noob/
+    - title: All Quests
+      url: /quests/
 - title: Quick-Start
   url: /quickstart/
   icon: bi-rocket-takeoff
@@ -10,20 +20,9 @@
       url: /quickstart/jekyll
     - title: Charm Tools
       url: /quickstart/charm-setup/
-- title: News
-  url: /news/
+- title: Blog
+  url: https://lifehacker.dev
   icon: bi-newspaper
-  children:
-    - title: All News
-      url: /news/
-    - title: AI & ML
-      url: /news/ai-machine-learning/
-    - title: DevOps
-      url: /news/devops/
-    - title: Web Development
-      url: /news/web-development/
-    - title: Technology
-      url: /news/technology/
 - title: Library
   url: /docs/
   icon: bi-journal-bookmark
@@ -34,16 +33,16 @@
       url: /docs/terminal/
     - title: Obsidian Graph
       url: /docs/obsidian/graph/
-- title: Notebook
+- title: Notes
   url: /notes/
   icon: bi-journal-code
   children:
     - title: Notes Index
       url: /notes/
-    - title: Jupyter
-      url: /notes/jupyter/
     - title: Cheatsheets
       url: /notes/cheetsheets/
+    - title: GH-600 Reference
+      url: /notes/gh-600/
 - title: About
   url: /about/
   icon: bi-info-circle
