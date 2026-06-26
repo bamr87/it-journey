@@ -1,17 +1,60 @@
 version: 2
 updates:
-  # Keep SHA-pinned GitHub Actions current (Dependabot bumps the pin + comment).
+  # ---------------------------------------------------------------------------
+  # GitHub Actions — keep SHA-pinned actions current (Dependabot bumps the pin
+  # + the trailing version comment).
+  #
+  # Grouped so related actions move together in a single PR. This is REQUIRED
+  # for github/codeql-action: its init/autobuild/analyze steps must all run the
+  # same major version, or the workflow fails with
+  #   "Loaded a configuration file for version '4.x', but running version '3.x'".
+  # Splitting them into separate PRs (the old default) made every CodeQL bump
+  # fail. See .github/workflows/dependabot-auto-merge.yml for the merge policy.
+  # ---------------------------------------------------------------------------
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 5
     commit-message:
       prefix: ci
+    labels:
+      - dependencies
+      - github-actions
+    groups:
+      # The three CodeQL steps always travel together (any version-update type),
+      # so a 3.x -> 4.x major lands as one coherent, passing PR.
+      codeql:
+        patterns:
+          - "github/codeql-action*"
+      # Everything else: routine minor/patch bumps batched into one PR.
+      # (A non-CodeQL action's MAJOR bump still opens as its own PR so it can be
+      # reviewed individually.)
+      actions:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+        exclude-patterns:
+          - "github/codeql-action*"
 
-  # Ruby gem updates (github-pages, jekyll plugins).
+  # ---------------------------------------------------------------------------
+  # Ruby gems (github-pages, jekyll plugins). Minor/patch batched into one PR;
+  # a MAJOR gem bump (e.g. jekyll) opens individually for a deliberate review.
+  # ---------------------------------------------------------------------------
   - package-ecosystem: bundler
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 5
     commit-message:
       prefix: deps
+    labels:
+      - dependencies
+      - ruby
+    groups:
+      ruby:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
