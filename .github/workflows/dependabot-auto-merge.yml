@@ -4,16 +4,15 @@ name: 🤖 Dependabot auto-merge
 #
 # Policy
 # ------
-#   • minor / patch bumps  -> wait for CI, then squash-merge automatically.
-#   • a check FAILS         -> stop, label `ci-failed`, leave the PR open for you.
-#   • MAJOR version bumps   -> never auto-merged; labeled `requires-review` and
-#                              left open for a deliberate look (majors are where
-#                              breakage hides, and CI can't always catch it).
+#   • any Dependabot bump  -> wait for CI, then squash-merge automatically.
+#   • a check FAILS        -> stop, label `ci-failed`, leave the PR open for you.
+#
+# So the only PRs you ever look at are the ones that actually break something.
 #
 # This is self-contained: it does NOT require branch protection or the repo
 # "auto-merge" setting, and it never blocks the workflows that push to `main`
-# directly. It simply watches the checks that actually run on each PR and merges
-# only when they are green.
+# directly. It simply watches the checks that actually run on each PR (which are
+# path-filtered, so it waits for whatever is relevant) and merges only when green.
 #
 # Security: triggered via pull_request_target so the token can merge, but it
 # never checks out or executes the PR's code — it only calls the GitHub API.
@@ -38,26 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Fetch Dependabot metadata
-        id: meta
-        uses: dependabot/fetch-metadata@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Hold major version bumps for review
-        if: ${{ steps.meta.outputs.update-type == 'version-update:semver-major' }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          NAMES: ${{ steps.meta.outputs.dependency-names }}
-        run: |
-          gh pr edit "$PR_URL" --add-label "requires-review" || true
-          gh pr comment "$PR_URL" --body \
-            "🟠 **Major** version bump (\`$NAMES\`). Auto-merge is held — review and merge manually when you're ready."
-          echo "Major bump held for review; not auto-merging."
-
       - name: Wait for checks, then merge
-        if: ${{ steps.meta.outputs.update-type != 'version-update:semver-major' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
