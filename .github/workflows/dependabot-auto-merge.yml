@@ -1,0 +1,54 @@
+name: 🤖 Dependabot auto-merge
+
+# Keeps dependencies current with zero manual review for the routine case.
+#
+# Policy
+# ------
+#   • any Dependabot bump  -> wait for CI, then squash-merge automatically.
+#   • a check FAILS        -> stop, label `ci-failed`, leave the PR open for you.
+#
+# So the only PRs you ever look at are the ones that actually break something.
+#
+# This is self-contained: it does NOT require branch protection or the repo
+# "auto-merge" setting, and it never blocks the workflows that push to `main`
+# directly. It simply watches the checks that actually run on each PR (which are
+# path-filtered, so it waits for whatever is relevant) and merges only when green.
+#
+# Security: triggered via pull_request_target so the token can merge, but it
+# never checks out or executes the PR's code — it only calls the GitHub API.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+concurrency:
+  group: dependabot-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge:
+    # Only act on Dependabot's own PRs.
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Wait for checks, then merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          # Block until every check on this PR finishes. --fail-fast exits non-zero
+          # the moment one fails, so a broken update is never merged.
+          if gh pr checks "$PR_URL" --watch --fail-fast --interval 30; then
+            gh pr merge "$PR_URL" --squash --delete-branch
+            echo "All checks green — merged ✅"
+          else
+            echo "A check failed — leaving the PR open for review."
+            gh pr edit "$PR_URL" --add-label "ci-failed" || true
+            exit 1
+          fi
