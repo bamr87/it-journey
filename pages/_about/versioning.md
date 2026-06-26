@@ -45,7 +45,7 @@ Pre-release builds get a suffix: `1.3.0-beta.1` for a layout overhaul in staging
 The site has two versioned components that move independently:
 
 - **zer0-mistakes theme** — the Jekyll theme that controls layout, CSS, and includes. Versioned in its own repository.
-- **IT-Journey content** — the `_posts`, `_pages`, `_docs`, and `_notes` that make up the actual site. Versioned here.
+- **IT-Journey content** — the `_quests`, `_pages`, `_docs`, and `_notes` that make up the actual site. Versioned here.
 
 A theme update that does not break content is a `MINOR` bump on the theme and a `PATCH` on the content. A theme update that forces frontmatter changes is a `MAJOR` bump on both.
 
@@ -57,16 +57,16 @@ Changelog entries follow [Keep a Changelog](https://keepachangelog.com/) convent
 ## [1.2.0] - 2024-07-01
 
 ### Added
-- New `data-analytics` post category with index page
+- New Level 1010 quest with index page
 
 ### Changed
-- Frontmatter `categories` normalized from string to list across all posts
+- Frontmatter `categories` normalized from string to list across all quests
 
 ### Deprecated
 - `snippet` frontmatter field (use `excerpt` instead)
 
 ### Fixed
-- Broken permalink on `/posts/build-destroy-repeat-mastery/`
+- Broken permalink on `/quests/1010/link-to-the-future/`
 ```
 
 The changelog lives at `/CHANGELOG.md` in the repository root. CI fails if a PR bumps the version tag without a matching changelog entry.

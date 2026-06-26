@@ -107,4 +107,4 @@ One paragraph: what you contribute and why.
 
 ---
 
-**Related:** [`posts.instructions.md`](posts.instructions.md) · [`quickstart.instructions.md`](quickstart.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).
+**Related:** [`quest.instructions.md`](quest.instructions.md) · [`quickstart.instructions.md`](quickstart.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).

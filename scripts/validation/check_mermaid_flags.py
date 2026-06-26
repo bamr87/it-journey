@@ -55,7 +55,9 @@ from typing import List, Optional
 CONTENT_GLOBS = ("pages/**/*.md", "pages/**/*.markdown", "pages/**/*.html")
 
 # Vendored / read-only content is never edited; surfaced separately.
-VENDORED_PATH_MARKERS = ("/wargames/",)
+# Detected by frontmatter key (no vendored path tree remains after the
+# wargames extraction to github.com/bamr87/wargames).
+VENDORED_PATH_MARKERS = ()
 VENDORED_FRONTMATTER_KEYS = ("source_repo",)
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?\n)---\s*\n", re.DOTALL)

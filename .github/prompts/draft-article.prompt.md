@@ -2,12 +2,12 @@
 mode: agent
 description: "Generate IT-education article outline with learning objectives, target audience, and Kaizen structure"
 date: 2025-11-22T16:10:21.000Z
-lastmod: 2026-05-18T12:00:00.000Z
+lastmod: 2026-06-25T00:00:00.000Z
 ---
 
 # Draft Article
 
-Generate a complete IT-Journey article outline (post or doc) ready for human prose. Front matter compliant with [`posts.instructions.md`](../instructions/posts.instructions.md), structure follows Kaizen pedagogy.
+Generate a complete IT-Journey **doc** outline ready for human prose. Front matter compliant with [`docs.instructions.md`](../instructions/docs.instructions.md), structure follows Kaizen pedagogy. (General blog posts now live in the separate **lifehacker.dev** repo — this prompt targets the surviving `pages/_docs/` collection.)
 
 ## Intake (PLAN)
 
@@ -26,10 +26,9 @@ Default to `intermediate` and `all platforms` if user says "default".
 
 ### 0. Load brand voice
 
-Invoke the `brand-voice` skill first. Resolve the governing section from the
-target folder (`pages/_posts/<category>/`) or the user's topic, load the matching
-`_data/brand/sections/<slug>.md` + the central store, and write the outline in that
-voice. Carry the resolved slug into `section_guide` below.
+Invoke the `brand-voice` skill first. Docs resolve to the `docs` section guide
+(`_data/brand/sections/docs.md`) by default; load it + the central store and write
+the outline in that voice. Carry the resolved slug into `section_guide` below.
 
 ### 1. Generate Front Matter
 
@@ -39,7 +38,7 @@ title: "<60-char compelling title>"
 description: "<120-160 char SEO summary>"
 date: <today ISO>
 lastmod: <today ISO>
-permalink: /posts/<kebab-slug>/
+permalink: /docs/<kebab-slug>/
 categories: [<primary>, <secondary>]
 tags: [<3-7 tags>]
 author: bamr87
@@ -191,4 +190,4 @@ Do **not** write the file to disk unless user confirms.
 
 ---
 
-**Related:** [`.github/instructions/posts.instructions.md`](../instructions/posts.instructions.md) · [`.github/prompts/kaizen.prompt.md`](kaizen.prompt.md)
+**Related:** [`.github/instructions/docs.instructions.md`](../instructions/docs.instructions.md) · [`.github/prompts/kaizen.prompt.md`](kaizen.prompt.md)

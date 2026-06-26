@@ -48,8 +48,8 @@ If the worklist is empty in both lanes, report "no work" and stop.
 
 ## 2. Hard safety rules (never violate)
 
-- **Never edit** files flagged `read_only` (vendored — carry `source_repo`/
-  `source_url`, e.g. `pages/_docs/wargames/**`). You may report issues, not rewrite.
+- **Never edit** files flagged `read_only` (vendored — any upstream content
+  carrying `source_repo`/`source_url` frontmatter). You may report issues, not rewrite.
 - **Before editing ANY file not already on the worklist** (e.g. a link target you
   chased into another file), look it up in `.cms/index/content-index.json` and
   abort the edit if its `read_only` or `generated` flag is true. Do not rely on

@@ -12,7 +12,7 @@ collection: docs
 
 > Governs the `pages/_docs` collection (resolved via
 > `_registry.yml › collection_defaults`), excluding vendored read-only content
-> (e.g. `pages/_docs/wargames/**`, which carries `source_repo` and is never
+> (any upstream content carrying `source_repo`/`source_url`, which is never
 > rewritten). Voice/values live in `_data/brand/`. Structural rules:
 > [`docs.instructions.md`](../../../.github/instructions/docs.instructions.md).
 
@@ -52,5 +52,5 @@ the thing the reader is looking for.
 ## Section taxonomy
 
 Follow the docs taxonomy in `.frontmatter/database/taxonomyDb.json`
-(`Guides`, `Cheatsheet`, `Reference`, technology tags). Vendored wargame docs keep
-their upstream attribution and are out of scope.
+(`Guides`, `Cheatsheet`, `Reference`, technology tags). Vendored read-only docs
+(carrying `source_repo` / `source_url`) keep their upstream attribution and are out of scope.

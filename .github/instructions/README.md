@@ -43,7 +43,12 @@ Brief description of the instruction file's purpose and scope.
 | `contributing.instructions.md` | `**/*` | Guide AI agents in assisting contributors across content, code, docs, community |
 | `README.instructions.md` | `**/README.md` | Maintain README.md files: structure, frontmatter, lastmod hygiene, cross-references |
 | `quest.instructions.md` | `pages/_quests/**/*.md` | Quest creation: frontmatter schema, permalink rules, `make quest-audit` gate, level README conventions |
-| `posts.instructions.md` | `pages/_posts/**/*.md` | Blog post / chronicle standards for AI-assisted development sessions |
+| `docs.instructions.md` | `pages/_docs/**/*.md` | Reference-doc standards: terse, answer-first, scannable |
+| `notes.instructions.md` | `pages/_notes/**/*.md` | Notes/cheatsheet standards (slim curated set) |
+| `quickstart.instructions.md` | `pages/_quickstart/**/*.md` | Quick-start guide standards |
+| `about.instructions.md` | `pages/_about/**/*.md` | About-section page standards |
+| `brand.instructions.md` | quests + docs | Applying brand voice/tone/values to quest and doc content |
+| `ai-content-review.instructions.md` | `pages/**/*.md` | Resolving AI Content Review issues per collection |
 | `features.instructions.md` | code + workflows | Feature development pipeline and CI/CD patterns |
 | `prompts.instructions.md` | `**/prompts/**/*.md` | Prompt engineering schema and conventions |
 | `scripts.instructions.md` | `scripts/**/*` | Script structure, naming, logging, cross-platform safety |

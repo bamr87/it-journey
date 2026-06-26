@@ -67,9 +67,8 @@ og_image                 : '/images/wizard-on-journey.png'
 name                     : &name "Amr"
 email                    : "amr@it-journey.dev"
 description              : >- # this means to ignore newlines until the next variable
-  Collection of articles, notes, and tutorials to build a website
-  or headless CMS using Jekyll and Github Pages.
-  This is my journey from zer0 to her0.
+  A gamified, open-source platform for learning IT and software development
+  through quests — progressive, hands-on adventures that take you from zer0 to her0.
 level                    : 'her0'
 
 
@@ -196,7 +195,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-relative-links
   - jekyll-redirect-from
 
@@ -267,21 +265,12 @@ collections:
   pages:
     output: true
     permalink: /:collection/:name/
-  posts:
-    output: true
-    permalink: /:collection/:year/:month/:day/:slug/
   docs:
     output: true
     permalink: /:collection/:categories/:name/
   quests:
     output: true
     permalink: /:collection/:categories/:name/
-  hobbies:
-    output: true
-    permalink: /:collection/:categories/:name/
-  notebooks:
-    output: true
-    permalink: /:collection/:path/
   notes:
     output: true
     permalink: /:collection/:path/
@@ -293,11 +282,6 @@ collections:
     permalink: /:collection/:categories/:name/
 
 permalink: pretty
-
-#  pagination https://jekyllrb.com/docs/pagination/
-
-paginate: 10
-paginate_path: "/pages/:num/"
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
@@ -357,21 +341,6 @@ defaults:
       sidebar:
         nav: quickstart
 
-  # pages/_posts
-  - 
-    scope:
-      path: pages/_posts
-    values:
-      layout: article
-      author_profile: true
-      read_time: true
-      comments: true   # giscus on by default for the whole posts collection; set `comments: false` per-post to opt out
-      share: true
-      related: true
-      sidebar:
-        nav: dynamic
-      # permalink: /:collection/:name/
-
   # pages/_docs
   - 
     scope:
@@ -406,18 +375,6 @@ defaults:
         nav: quests
       permalink: /:categories/:slug
 
-  # pages/_hobbies
-  - 
-    scope:
-      path: pages/_hobbies
-      type: hobbies
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: hobbies
-
   # pages/_notes
   - 
     scope:
@@ -428,19 +385,7 @@ defaults:
       share: false
       author_profile: false
       sidebar:
-        nav: notebooks
-
-  # pages/_notebooks
-  - 
-    scope:
-      path: pages/_notebooks
-      type: notebooks
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: notebooks
+        nav: notes
 
 # Exclude from processing.
 # The following items will not be processed, by default.

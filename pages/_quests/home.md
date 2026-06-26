@@ -1035,7 +1035,7 @@ The quest system is one part of the IT-Journey platform. These collections compl
 | [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
 | [📚 Docs Library](/docs/) | Reference documentation — terminal shortcuts, Bash, Jekyll config, Liquid, Mermaid, MathJax |
 | [📝 Notes](/notes/) | Working notes, code snippets, and quick references collected during development |
-| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
+| [📰 Blog Posts](https://lifehacker.dev) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
 
 ---
 

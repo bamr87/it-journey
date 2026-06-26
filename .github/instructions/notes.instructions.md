@@ -121,4 +121,4 @@ Optional usage note.
 
 ---
 
-**Related:** [`docs.instructions.md`](docs.instructions.md) · [`posts.instructions.md`](posts.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).
+**Related:** [`docs.instructions.md`](docs.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).

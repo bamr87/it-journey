@@ -35,9 +35,9 @@ Welcome, adventurer! 🎯 IT-Journey thrives on community collaboration. Whether
 
 ### 📝 Content Creation
 - **Write Quests**: Create gamified learning experiences
-- **Author Posts**: Share knowledge through blog posts
-- **Develop Tutorials**: Build step-by-step guides
-- **Create Notebooks**: Contribute Jupyter notebooks
+- **Develop Tutorials**: Build step-by-step guides and quickstart paths
+- **Improve Docs & Notes**: Expand the reference docs and curated cheatsheets
+- **Refine Quest Paths**: Improve prerequisites, level maps, and walkthroughs
 
 ### 💻 Code Contributions  
 - **Build Features**: Implement new capabilities
@@ -112,7 +112,8 @@ git subtree add --prefix=pages/_about/contributors/{{ page.username | default: '
 
 ### For Content Creators
 - **[Quest Creation Guide](https://github.com/bamr87/it-journey/blob/main/.github/instructions/quest.instructions.md)** - Build epic quests
-- **[Post Writing Guide](https://github.com/bamr87/it-journey/blob/main/.github/instructions/posts.instructions.md)** - Author blog posts
+- **[Notes Writing Guide](https://github.com/bamr87/it-journey/blob/main/.github/instructions/notes.instructions.md)** - Author cheatsheets and reference notes
+- **[Quickstart Guide](https://github.com/bamr87/it-journey/blob/main/.github/instructions/quickstart.instructions.md)** - Write fast-track onboarding guides
 - **[README Guidelines](https://github.com/bamr87/it-journey/blob/main/.github/instructions/README.instructions.md)** - Documentation standards
 
 ## 🎯 IT-Journey Principles
@@ -138,8 +139,8 @@ Not sure where to start? Try these:
 - Update a broken link
 
 ### Intermediate Contributions (1-2 hours)
-- Write a blog post about your learning journey
 - Create a beginner-level quest
+- Add a cheatsheet or reference note for a tool you use
 - Improve existing documentation
 - Add test coverage
 
@@ -163,7 +164,7 @@ Your contributions are valued and recognized through:
 
 - **Character Profile** with auto-calculated stats from your git history
 - **Achievement badges** unlocked by contribution milestones
-- **XP and leveling** — earn XP for commits, PRs, quests, and posts
+- **XP and leveling** — earn XP for commits, PRs, and completed quests
 - Contributor profile page on our website
 - Mentions in release notes
 - Recognition in the About page

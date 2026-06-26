@@ -117,7 +117,7 @@ Stop. Create a new TODO for the extra work. Resume original task with original s
 | Task type | Specific steps |
 |---|---|
 | **SEO** | Audit current state (Lighthouse) → fix → re-audit → record metrics in Outcome |
-| **Content (quest/post)** | Use `/draft-article` or `quest.instructions.md` template → write → validate → commit |
+| **Content (quest/doc)** | Use `/draft-article` or `quest.instructions.md` template → write → validate → commit |
 | **Technical** | Branch → implement → test → docs → PR (use `/commit-publish`) |
 | **Refactor** | Identify scope → tests as safety net → small steps → verify no behavior change |
 

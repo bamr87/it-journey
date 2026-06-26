@@ -1,7 +1,7 @@
 ---
 title: README - it-journey
-description: IT-Journey - Your comprehensive learning platform with QuickStart tutorials, gamified quests, documentation library, and personal notebooks.
-excerpt: IT-Journey combines quick tutorials, epic quests, comprehensive documentation, and personal notebooks in an interconnected learning ecosystem
+description: IT-Journey is a gamified, open-source platform for learning IT and software development through quests — progressive, hands-on adventures from zer0 to her0.
+excerpt: A gamified, open-source platform for learning IT and software development through quests — progressive, hands-on adventures from zer0 to her0.
 version: 0.0.1
 date-released: 2022-03-01
 repo: https://github.com/bamr87/it-journey
@@ -10,10 +10,10 @@ tags:
     - jekyll
     - gamified-learning
     - learning-path
-    - tutorials
+    - quests
     - documentation
 license: MIT
-lastmod: 2026-05-24T19:04:08.575Z
+lastmod: 2026-06-25T00:00:00.000Z
 created: 2022-03-01T12:00:00.000Z
 draft: false
 slug: readme
@@ -21,10 +21,9 @@ keywords:
     - readme
     - it-journey
     - learning-platform
-    - tutorials
     - quests
+    - gamified-learning
     - documentation
-    - jupyter-notebooks
 permalink: /readme/
 layout: home
 date: 2020-07-30T10:19:45.000Z
@@ -33,9 +32,11 @@ date: 2020-07-30T10:19:45.000Z
 
 # IT-Journey
 
-Welcome to **IT-Journey**, an open-source learning platform for building practical IT skills through guided quests, reference documentation, automation scripts, notebooks, and reflective development posts. The repository is both a learning site and a working example of a Jekyll-based documentation platform, with GitHub Actions, Docker, validation tooling, and AI-assisted workflows woven into the project.
+Welcome to **IT-Journey**, a gamified, open-source platform for learning IT and software development through **quests** — progressive, hands-on adventures that take you from **zer0 to her0**. The site is built around a single gamified learning path, supported by reference docs, quick-start guides, and curated notes. The repository is both a learning site and a working example of a Jekyll-based platform, with GitHub Actions, Docker, validation tooling, and AI-assisted workflows woven into the project.
 
-The project is organized around hands-on learning: start with beginner-friendly quests, use the docs as a reference library, inspect the scripts that keep the site healthy, and contribute improvements as you grow.
+The project is organized around hands-on learning: start with the beginner-friendly Level 0000 quests, follow the binary-leveled path upward, use the docs and notes as a reference library, and contribute improvements as you grow.
+
+> Looking for the blog? Articles, reflections, and devops news now live at **[lifehacker.dev](https://lifehacker.dev)**.
 
 ---
 
@@ -87,7 +88,7 @@ A: Start with our Zero to Hero guide, which was designed specifically for absolu
 
 1. **Begin Your Journey**: Follow [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md)
 2. **Basic Quests**: Complete foundational [learning quests](pages/_quests/)
-3. **Hands-on Practice**: Work through [practical tutorials](pages/_posts/)
+3. **Hands-on Practice**: Work through the Level 0000–0011 [quest path](pages/_quests/)
 
 > **Q: How long until I can build real projects?**
 > A: Based on feedback from over 200 IT-Journey learners since March 2022, most beginners complete their first meaningful project within 6-8 weeks of consistent practice.
@@ -95,7 +96,7 @@ A: Start with our Zero to Hero guide, which was designed specifically for absolu
 ### For Intermediate Learners
 
 1. **Advanced Quests**: Tackle complex [automation projects](pages/_quests/)
-2. **Real Projects**: Build [practical applications](pages/_notebooks/)
+2. **Real Projects**: Build portfolio-ready applications through the higher-level [quests](pages/_quests/)
 3. **DevOps Skills**: Learn [automation and monitoring](scripts/)
 
 ### For Advanced Users
@@ -114,12 +115,12 @@ A: Start with our Zero to Hero guide, which was designed specifically for absolu
 
 | Content Type | Location | Best For | Format | Interactivity |
 |--------------|----------|----------|--------|---------------|
-| **Learning Quests** | `pages/_quests/` | Hands-on skills | Markdown + supporting assets | ⭐⭐⭐⭐⭐ |
-| **Educational Posts** | `pages/_posts/` | Tutorials and reflections | Markdown | ⭐⭐⭐ |
-| **Notebooks** | `pages/_notebooks/` | Data exploration and experiments | Jupyter + Markdown | ⭐⭐⭐⭐ |
+| **Learning Quests** | `pages/_quests/` | Hands-on, gamified skill-building | Markdown + supporting assets | ⭐⭐⭐⭐⭐ |
+| **Quickstart Guides** | `pages/_quickstart/` | Fast-track setup and onboarding | Markdown | ⭐⭐⭐ |
+| **Curated Notes** | `pages/_notes/` | Cheatsheets and quick reference | Markdown | ⭐⭐ |
+| **Learner Docs** | `pages/_docs/` | Tool and terminal references | Markdown | ⭐⭐ |
 | **Automation Scripts** | `scripts/` | Production-style tooling | Bash, Python, Ruby | ⭐⭐⭐⭐⭐ |
 | **Developer Docs** | `docs/` | Contributor reference | Markdown | ⭐⭐ |
-| **Learner Docs** | `pages/_docs/` | Tool and terminal references | Markdown | ⭐⭐ |
 
 ### Learning Quests (`pages/_quests/`)
 
@@ -136,22 +137,21 @@ A: Quests combine narrative elements with practical exercises:
 > **Q: Why use a "binary" level system?**
 > A: The binary system (0000, 0001, 0010, etc.) teaches learners to think in computational terms from day one. It's a subtle introduction to how computers represent information, reinforcing core CS concepts through everyday use.
 
-### Educational Posts (`pages/_posts/`)
+### Quickstart Guides (`pages/_quickstart/`)
 
-In-depth articles, tutorials, chronicles, and technical explorations:
+Fast-track guides that get you set up and oriented before diving into quests:
 
-- **Step-by-step Guides**: Detailed implementation instructions
-- **Case Studies**: Real-world problem-solving examples
-- **Technology Reviews**: Analysis of tools and platforms
-- **Learning Reflections**: Insights from the development journey
+- **Environment Setup**: Get your machine ready for the learning path
+- **Onboarding**: Understand how the quest system and binary levels work
+- **Tool Primers**: Short, focused introductions to core tools
 
-### Interactive Notebooks (`pages/_notebooks/`)
+### Curated Notes (`pages/_notes/`)
 
-Jupyter-compatible notebooks and notebook writeups for hands-on experimentation:
+A slim, quest-relevant reference core kept close to the learning path:
 
-- **Code Examples**: Runnable demonstrations
-- **Data Analysis**: Practical data science and exploration examples
-- **Automation Scripts**: System administration examples
+- **Cheatsheets**: Quick reference for the shell, command line, and common tools
+- **Curriculum & Onboarding**: Maps and reference material for the journey
+- **Reference Set**: Supporting notes that back specific quests
 
 ### Automation Scripts (`scripts/`)
 
@@ -519,17 +519,30 @@ A: Because systems will eventually fail. As documented by Google's Site Reliabil
 
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
-| **Quest Markdown Files** | 194 | April 25, 2026 |
-| **Post Markdown Files** | 88 | April 25, 2026 |
-| **Jupyter Notebooks** | 6 notebooks + 5 notebook writeups | April 25, 2026 |
-| **Developer Docs** | 24 markdown files | April 25, 2026 |
-| **Learner Docs** | 12 markdown files | April 25, 2026 |
-| **Automation Scripts** | 73 files | April 25, 2026 |
-| **GitHub Workflows** | 16 workflows | April 25, 2026 |
+| **Quest Markdown Files** | 204 | June 25, 2026 |
+| **Quest Levels** | 16 binary levels (0000–1111) | June 25, 2026 |
+| **Quickstart Guides** | 15 markdown files | June 25, 2026 |
+| **Curated Notes** | 16 markdown files | June 25, 2026 |
+| **Learner Docs** | 27 markdown files | June 25, 2026 |
+| **Developer Docs** | 27 markdown files | June 25, 2026 |
+| **Automation Scripts** | 72 files | June 25, 2026 |
+| **GitHub Workflows** | 16 workflows | June 25, 2026 |
 | **Active Since** | March 1, 2022 | - |
+
+---
+
+## 🔗 Related Projects
+
+IT-Journey is the quest-focused core of a small family of open-source projects:
+
+| Project | Where | What |
+|---------|-------|------|
+| **Blog** | [lifehacker.dev](https://lifehacker.dev) | Articles, tutorials, reflections, and devops news that used to live here |
+| **Wargames** | [github.com/bamr87/wargames](https://github.com/bamr87/wargames) | The OverTheWire-style security wargame walkthroughs, extracted into their own repo |
+| **Zer0-Mistakes Theme** | [github.com/bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes) | The Jekyll remote theme that powers this site |
 
 ---
 
 *Ready to begin your journey? Start with [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md) or explore the full [learning quest index](pages/_quests/) to dive into hands-on IT education!*
 
-**Last Updated:** April 25, 2026 | **Version:** 0.0.1 | **License:** MIT | **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
+**Last Updated:** June 25, 2026 | **Version:** 0.0.1 | **License:** MIT | **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)

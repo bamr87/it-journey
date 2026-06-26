@@ -32,7 +32,7 @@ lastmod: 2026-05-18T12:00:00.000Z
 ---
 ```
 
-Optional: `categories`, `tags`, `author`, `draft: false`. Posts/quests/notes have stricter frontmatter — see [`posts.instructions.md`](posts.instructions.md), [`quest.instructions.md`](quest.instructions.md).
+Optional: `categories`, `tags`, `author`, `draft: false`. Quests/docs/notes have stricter frontmatter — see [`quest.instructions.md`](quest.instructions.md), [`docs.instructions.md`](docs.instructions.md).
 
 ## 3. Canonical Structure
 

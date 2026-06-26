@@ -63,7 +63,7 @@ Checklist of tools to install before starting any quest. Each item links to setu
 
 ### 1. Installation — Windows
 
-- [ ] [Windows Subsystem for Linux (WSL2)](/posts/windows-sub-linux-setup/) — Linux environment on Windows
+- [ ] [Windows Subsystem for Linux (WSL2)](https://learn.microsoft.com/windows/wsl/install) — Linux environment on Windows
 - [ ] [Windows Terminal](https://aka.ms/terminal) — tabbed terminal with profiles
 - [ ] [Git for Windows](https://git-scm.com/download/win) — includes Git Bash as fallback
 - [ ] [VS Code](https://code.visualstudio.com/) — editor with WSL2 integration built in

@@ -47,7 +47,7 @@ When generating code for IT-Journey projects:
 When providing suggestions, consider:
 
 **Project Context**:
-- Is this a quest, blog post, or feature development?
+- Is this a quest, reference doc, or feature development?
 - What skill level is the target audience?
 - How does this fit into the learning progression?
 - What prerequisites should be assumed?
@@ -260,7 +260,7 @@ These rules are enforced by CI (`.github/workflows/frontmatter-validation.yml`) 
 | `draft` | recommended | Boolean (`true`/`false`) | `.github/workflows/frontmatter-validation.yml:74` |
 | `keywords` | recommended | 5–10 search phrases (list) | Observed in PRs #265, #266 |
 
-**Required for quests and posts but not enforced by the global validator** (defined in `.github/instructions/quest.instructions.md` and `.github/instructions/posts.instructions.md`): `learning_objectives`, `target_audience`, `hierarchy`/`level`/`quest_id` (quests only), `difficulty`, `estimated_time`, `prerequisites`.
+**Required for quests but not enforced by the global validator** (defined in `.github/instructions/quest.instructions.md`): `learning_objectives`, `target_audience`, `hierarchy`/`level`/`quest_id`, `difficulty`, `estimated_time`, `prerequisites`.
 
 ### 🚫 Recurring Pitfalls to Avoid (lessons from recent PRs)
 
@@ -273,7 +273,7 @@ These mistakes have each generated dedicated corrective PRs — do not repeat th
 5. **Update `lastmod` on every meaningful edit** (this is enforced by the README-First / README-Last principle below).
 6. **Do not link from `pages/_docs/` to `../../docs/...`.** The repo's `docs/` directory is excluded from Jekyll processing (`_config.yml` exclude list); use a full GitHub URL instead.
 7. **Trim long descriptions by removing words, not by adding ellipses or cutting mid-sentence.** Aim for the 120–155 char optimal band.
-8. **Posts linked from non-post content need an explicit `permalink:` override.** The default in `_config.yml` is `/:collection/:year/:month/:day/:slug/`, so a quest or doc that links to `/posts/<slug>/` will 404 unless the post's frontmatter sets `permalink: /posts/<slug>/` (see PR #272, where 7 chronicle posts broke 15+ cross-references).
+8. **The blog is gone — don't author `pages/_posts/`, `pages/_notebooks`, or `pages/_hobbies`.** Those collections were removed: general posts moved to the separate **lifehacker.dev** repo, and the OverTheWire `wargames` docs were extracted to **github.com/bamr87/wargames**. Surviving collections are `quests`, `docs`, `notes` (slim), `quickstart`, `about`. The GH-600 "Agentic Codex" track now lives in `pages/_docs/agentic-codex/`.
 9. **Never commit literal secret prefixes in code examples.** Strings starting with `ghp_`, `gho_`, `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`, etc. trigger reviewer + scanner alerts. Always show env-var or input-prompt placeholders instead: `"${env:GITHUB_TOKEN}"`, `"${input:openai-key}"` (see PR #272, `pages/_notes/gh-600/mcp-quickref.md`).
 10. **Nested fenced code blocks need a longer outer fence.** If an example contains an inner ```` ```bash ```` block, the outer fence must be at least one backtick longer (4 backticks) — otherwise the inner closing fence terminates the outer block and the rest renders as prose (see PR #272, `pages/_quests/1010/agentic-failure-root-cause-analysis.md`).
 11. **Quest permalinks must use the level-prefixed hierarchy.** Canonical formats: `main_quest` → `/quests/XXXX/slug/`; `side_quest` → `/quests/XXXX/side-quests/slug/`; `bonus_quest`/`epic_quest` → `/quests/codex/slug/`; level README → `/quests/XXXX/`. The old `level-XXXX-slug`, `gh-600`, and flat `side-quest-slug` patterns are invalid. Add `redirect_from:` **only when migrating** an existing permalink — new quests must not ship with redirects. After migration, update every internal reference to the canonical URL. Run `make quest-audit` before merge. See `.github/instructions/quest.instructions.md` §3.
@@ -529,7 +529,9 @@ This main copilot-instructions.md file provides **high-level principles and refe
 | **contributing.instructions.md** | Guide AI agents in assisting contributors | All contribution workflows |
 | **README.instructions.md** | Standards for creating and maintaining README files | Creating/updating any README.md |
 | **quest.instructions.md** | Quest creation standards and patterns | Creating educational quest content |
-| **posts.instructions.md** | Blog post and chronicle creation standards | Writing development session articles |
+| **docs.instructions.md** | Reference-doc standards (terse, answer-first) | Writing/editing `pages/_docs/` content |
+| **notes.instructions.md** | Notes / cheatsheet standards | Editing the slim `pages/_notes/` set |
+| **brand.instructions.md** | Applying brand voice to quests + docs | Voice/tone on quest and doc content |
 | **features.instructions.md** | Feature development pipeline and CI/CD | Implementing features and automation |
 | **work.instructions.md** | Work directory patterns for development | Organizing workspace and build outputs |
 | **prompts.instructions.md** | Prompt engineering for AI development | Crafting effective AI prompts |
@@ -538,7 +540,7 @@ This main copilot-instructions.md file provides **high-level principles and refe
 
 **1. Identify the Task Type**
    - Creating a quest? → `quest.instructions.md`
-   - Writing a blog post? → `posts.instructions.md`
+   - Writing a reference doc? → `docs.instructions.md`
    - Updating documentation? → `README.instructions.md`
    - Building a feature? → `features.instructions.md`
    - Contributing code/content? → `contributing.instructions.md`
@@ -570,7 +572,9 @@ This main copilot-instructions.md file provides **high-level principles and refe
 ├─ contributing.instructions.md → Contribution workflows
 ├─ README.instructions.md → Documentation standards
 ├─ quest.instructions.md → Educational quest creation
-├─ posts.instructions.md → Blog post/chronicle writing
+├─ docs.instructions.md → Reference-doc writing
+├─ notes.instructions.md → Notes / cheatsheet standards
+├─ brand.instructions.md → Voice/tone for quests + docs
 ├─ features.instructions.md → Feature development & CI/CD
 ├─ work.instructions.md → Workspace organization
 └─ prompts.instructions.md → AI prompt engineering
@@ -589,43 +593,20 @@ This main copilot-instructions.md file provides **high-level principles and refe
 
 ---
 
-## Jekyll Article Writing Guidelines for IT-Journey
+## Content Writing Guidelines for IT-Journey
 
-### **Chronicle Every AI-Powered Development Session**
+### **The blog moved out**
 
-For comprehensive blog post and article creation guidelines, including frontmatter standards, content structure, and documentation workflows, please refer to the dedicated **Posts Instructions** file at `.github/instructions/posts.instructions.md`.
+IT-Journey no longer hosts a blog. The `_posts`/`_drafts` collections were removed
+and general blog content (including AI-session chronicles) now lives in the separate
+**lifehacker.dev** repo (`github.com/bamr87/lifehacker.dev`). The OverTheWire
+`wargames` docs were likewise extracted to **github.com/bamr87/wargames**.
 
-**Key Principle**: When working with AI agents on any development task, **ALWAYS** create a corresponding Jekyll article to document the learning journey in `pages/_posts/`.
-
-### **Essential Standards Summary**
-
-**Naming**: `YYYY-MM-DD-descriptive-title-with-hyphens.md`
-
-**Required Elements**:
-- Comprehensive frontmatter with title, description, dates, tags, categories
-- Clear problem statement and context
-- AI-assisted development process documentation
-- Step-by-step implementation with code examples
-- Learning insights and reflections
-- Future development paths
-
-**Complete Details**: See `.github/instructions/posts.instructions.md`
-
-### **Article Documentation Workflow**
-
-**During Development**: Take notes, save code snippets, capture errors, record insights
-
-**After Development**: Create article immediately while fresh, test all code, add context, include reflection
-
-**Article Categories**: Feature-Implementation, Debugging, Process-Improvement, Infrastructure, Learning-Journey
-
-**Integration Requirements**:
-- Cross-reference related articles and quests
-- Update relevant README files
-- Create bidirectional links
-- Connect to broader IT-Journey narrative
-
-**Complete Workflow Details**: See `.github/instructions/posts.instructions.md`
+**Key Principle**: In this repo, document work through the surviving collections —
+author learning content as **quests** (`pages/_quests/`, see
+`.github/instructions/quest.instructions.md`) or **reference docs** (`pages/_docs/`,
+see `.github/instructions/docs.instructions.md`). Chronicle-style write-ups belong
+in lifehacker.dev, not here.
 
 ## Quest Creation Guidelines for IT-Journey
 
@@ -1586,7 +1567,7 @@ git push origin v1.0.1
 | **Onboarding** | `CONTRIBUTING.md`, `docs/dev/` | Markdown | Yes |
 | **Changelog** | `CHANGELOG.md` | Auto-generated | Yes |
 | **Quest Content** | `pages/_quests/` | Jekyll, Markdown | Yes |
-| **Blog Posts** | `pages/_posts/` | Jekyll, Markdown | Yes |
+| **Reference Docs** | `pages/_docs/` | Jekyll, Markdown | Yes |
 
 **Golden Rule:** All documentation lives in the repository. No Notion, Confluence, or external tool silos.
 
@@ -1598,7 +1579,7 @@ git push origin v1.0.1
 | Docs + Code | Same as code | `feature/login-2fa` (includes docs) |
 | API changes | `api/` or `feature/` | `api/v2-payments-spec` |
 | Quest content | `quest/` or `feature/` | `quest/docker-basics` |
-| Blog posts | `post/` or `docs/` | `post/ai-development-session` |
+| Reference docs | `docs/` or `content/` | `docs/agentic-codex-update` |
 
 **Rule:** Never allow `docs/` branches to live more than 1 week.
 
@@ -1613,7 +1594,6 @@ git push origin v1.0.1
 - [ ] Created/updated ADR for significant decisions
 - [ ] Updated README.md files (README-First, README-Last)
 - [ ] Updated quest content (if learning materials affected)
-- [ ] Created blog post (if AI development session)
 - [ ] Tested all documentation links
 - [ ] Updated CHANGELOG.md (or auto-generated)
 ```
@@ -1794,7 +1774,7 @@ openapi.yaml           @backend-team
 
 # Educational Content
 pages/_quests/         @education-team
-pages/_posts/          @education-team
+pages/_docs/           @education-team
 
 # Architecture Decisions
 docs/adr/              @architecture-team

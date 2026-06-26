@@ -2,14 +2,6 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.pageFolders": [
     {
-      "title": "posts",
-      "previewPath": "/preview/pages/_posts/{{pathToken.relPath}}/",
-      "path": "[[workspace]]/pages/_posts",
-      "contentTypes": [
-        "default"
-      ]
-    },
-    {
       "title": "quickstart",
       "path": "[[workspace]]/pages/_quickstart",
       "filePrefix": "",
@@ -743,15 +735,6 @@
       "id": "homeNav",
       "title": "Home Navigation",
       "file": "[[workspace]]/_data/navigation/home.yml",
-      "fileType": "yaml",
-      "labelField": "title",
-      "singleEntry": false,
-      "type": "navigation"
-    },
-    {
-      "id": "postsNav",
-      "title": "Posts Navigation",
-      "file": "[[workspace]]/_data/navigation/posts.yml",
       "fileType": "yaml",
       "labelField": "title",
       "singleEntry": false,
