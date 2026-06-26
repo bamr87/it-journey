@@ -1,0 +1,14 @@
+{%- comment -%} Skills widget — curated _data/home/skills.yml. {%- endcomment -%}
+<div class="hw-skills">
+  {% for grp in site.data.home.skills.groups %}
+  <div class="hw-skills__group">
+    <h4 class="hw-skills__group-name">{{ grp.name }}</h4>
+    {% for s in grp.items %}
+    <div class="hw-skill">
+      <span class="hw-skill__name">{{ s.name }}</span>
+      <span class="hw-skill__track"><span class="hw-skill__fill" style="width:{{ s.level }}%"></span></span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>

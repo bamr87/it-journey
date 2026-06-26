@@ -1,0 +1,17 @@
+# Default widget registry + layout for the /home/ desktop OS.
+# This is the SERVER-SIDE default; the browser hydrates from localStorage
+# (it-journey-home-layout) once the owner customizes. Each widget renders
+# _includes/home/widget-<id>.html inside window chrome. span = [cols, rows]
+# on a 4-column grid. Reorder/resize/hide are persisted client-side.
+widgets:
+  - { id: profile,   title: whoami,        icon: person-badge,    span: [2, 2], order: 0, closable: false }
+  - { id: github,    title: github.repos,  icon: github,          span: [2, 2], order: 1 }
+  - { id: skills,    title: skills.json,   icon: diagram-3,       span: [1, 2], order: 2 }
+  - { id: trophies,  title: trophies,      icon: trophy,          span: [2, 1], order: 3 }
+  - { id: goals,     title: goals.md,      icon: bullseye,        span: [2, 1], order: 4 }
+  - { id: activity,  title: activity,      icon: calendar3,       span: [4, 1], order: 5 }
+  - { id: bookmarks, title: bookmarks,     icon: bookmark-star,   span: [1, 2], order: 6 }
+  - { id: shortcuts, title: launcher,      icon: grid-3x3-gap,    span: [1, 1], order: 7 }
+  - { id: notes,     title: notes.md,      icon: sticky,          span: [2, 1], order: 8 }
+density: comfortable
+wallpaper: 0

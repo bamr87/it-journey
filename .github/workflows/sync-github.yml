@@ -1,0 +1,57 @@
+name: Sync GitHub Profile Data
+
+# Fetches the site owner's public GitHub data (REST + GraphQL) into
+# _data/github/*.yml so the /home/ desktop renders fresh stats at build time.
+# Mirrors update-contributor-profiles.yml: least-privilege, [skip ci] commit.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # daily 06:00 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/generation/sync_github.py']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-github-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install pyyaml
+
+      - name: Sync GitHub data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+        run: python scripts/generation/sync_github.py
+
+      - name: Commit if changed
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          if ! git diff --quiet -- _data/github/; then
+            git add _data/github/*.yml
+            git commit -m "chore(github): sync profile data [skip ci]"
+            git push
+          else
+            echo "No GitHub data changes."
+          fi

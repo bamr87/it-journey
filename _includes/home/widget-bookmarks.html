@@ -1,0 +1,15 @@
+{%- comment -%} Bookmarks widget — curated _data/home/bookmarks.yml. {%- endcomment -%}
+<div class="hw-bookmarks">
+  {% for grp in site.data.home.bookmarks.groups %}
+  <div class="hw-bm__group">
+    <h4 class="hw-bm__group-name">{{ grp.name }}</h4>
+    <div class="hw-bm__links">
+      {% for b in grp.items %}
+      <a class="hw-bm__link" href="{{ b.url }}" {% unless b.url contains '/' and b.url contains 'http' == false %}target="_blank" rel="noopener"{% endunless %}>
+        <i class="bi bi-{{ b.icon | default: 'link-45deg' }}" aria-hidden="true"></i><span>{{ b.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
