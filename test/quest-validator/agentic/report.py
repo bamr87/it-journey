@@ -19,6 +19,7 @@ def aggregate(results: List[dict]) -> dict:
     avg = round(sum(r["overall"] for r in scored) / len(scored), 1) if scored else 0.0
     cost = sum((r.get("meta", {}).get("cost_usd") or 0.0) for r in results)
     return {
+        "schema_version": schema.SCHEMA_VERSION,
         "total": len(results), "scored": len(scored), "errored": len(errored),
         "average": avg, "counts": counts, "cost_usd": round(cost, 4),
         "results": results,
@@ -44,6 +45,14 @@ def render_console(agg: dict, verbose: bool = False) -> str:
             for k in schema.DIM_KEYS
         )
         lines.append(f"      {dim_bits}   executed={v.get('executed')}")
+        snip = r.get("snippets") or {}
+        if snip.get("available_runnable") is not None:
+            ran, runnable = snip.get("ran", 0), snip.get("available_runnable", 0)
+            lines.append(
+                f"      snippets: ran {ran}/{runnable} runnable "
+                f"({snip.get('passed',0)} ok, {snip.get('failed',0)} failed, "
+                f"{snip.get('skipped',0)} skipped, {snip.get('reasoned',0)} reasoned)"
+            )
         if v.get("summary"):
             lines.append(f"      {v['summary']}")
         recs = v.get("recommendations") or []
@@ -81,7 +90,7 @@ def render_markdown(agg: dict, title: str = "Agentic Quest Review") -> str:
                f"avg **{agg['average']}%**"
                + (f" · ~${agg['cost_usd']}" if agg["cost_usd"] else ""))
     out.append("")
-    out.append("| | Score | Quest | Level | Executed | Summary |")
+    out.append("| | Score | Quest | Level | Snippets run | Summary |")
     out.append("|---|--:|---|---|:-:|---|")
     for r in agg["results"]:
         m = r["quest"]
@@ -91,8 +100,15 @@ def render_markdown(agg: dict, title: str = "Agentic Quest Review") -> str:
             continue
         v = r.get("verdict_obj") or {}
         summ = (v.get("summary") or "").replace("|", "\\|").replace("\n", " ")
+        snip = r.get("snippets") or {}
+        if snip.get("available_runnable"):
+            run_cell = f"{snip.get('ran',0)}/{snip['available_runnable']}"
+            if snip.get("failed"):
+                run_cell += f" ({snip['failed']}✗)"
+        else:
+            run_cell = "yes" if v.get("executed") else "no"
         out.append(f"| {emoji} | {r.get('overall',0):.0f} | {m['title']} | {m['level']} | "
-                   f"{'yes' if v.get('executed') else 'no'} | {summ} |")
+                   f"{run_cell} | {summ} |")
     out.append("")
     # Detailed recommendations for non-passing quests.
     flagged = [r for r in agg["results"]

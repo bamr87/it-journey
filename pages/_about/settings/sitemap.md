@@ -28,7 +28,6 @@ This page provides a comprehensive map of all pages and content available on the
 - **[About](/about/)** - Mission, principles, and platform information
 - **[Documentation](/docs/)** - Technical guides and tutorials
 - **[Quickstart](/quickstart/)** - Fast-track learning paths
-- **[Notebooks](/notebooks/)** - Interactive learning materials
 
 #### **Learning Paths**
 - **Frontend Development** - HTML, CSS, JavaScript, and modern frameworks
@@ -64,7 +63,7 @@ This ensures the sitemap contains only relevant, public-facing content that user
 
 **Filtering Examples:**
 - Excluded: .venv/, _site/, .sass-cache/, .obsidian/
-- Included: pages/, docs/, about/, posts/
+- Included: pages/, docs/, about/, quests/
 - Logic: Respects .gitignore + additional intelligent filtering
 
 ### Manual Generation Commands

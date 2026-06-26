@@ -18,6 +18,7 @@ tags:
 - foundation
 - init
 - world
+mermaid: true
 ---
 # Level 0000: Foundation & Init World
 

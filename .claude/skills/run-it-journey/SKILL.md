@@ -11,10 +11,11 @@ and screenshots pages with headless Google Chrome.
 All paths below are relative to the **repo root**.
 
 > Authored and verified on **macOS (Apple Silicon)**. The stock macOS system
-> Ruby (2.6.10) **cannot** run this site — `github-pages` (v232) needs Ruby
-> ≥ 3.1 — and there's no `rbenv`/`brew` Ruby here, so the native
+> Ruby (2.6.10) **cannot** run this site — the `jekyll-theme-zer0` gem (≥ 1.21)
+> needs Ruby ≥ 3.2 — and there's no `rbenv`/`brew` Ruby here, so the native
 > `bundle exec jekyll serve` path is a dead end. **Docker is the path.** The
-> `jekyll/jekyll:latest` image ships Ruby 3.1.1, which is why it works.
+> `jekyll` compose service builds from the repo `Dockerfile` (Ruby 3.2.3),
+> which is why it works.
 
 ## Prerequisites
 
@@ -49,7 +50,7 @@ The first start runs `bundle install` inside the container and then a full site
 build. **Wait for `Server running`** before driving it:
 
 ```bash
-# blocks until the server is actually serving (build takes ~8-10 min)
+# blocks until the server is actually serving (first run builds image + bundle; a few min)
 until docker compose logs jekyll 2>&1 | grep -q 'Server running'; do sleep 10; done
 docker compose logs jekyll 2>&1 | grep -E 'done in|Server (address|running)'
 ```
@@ -113,26 +114,22 @@ The repo also ships a `quest-validator` compose service for the same purpose
 
 ## Gotchas
 
-- **First serve takes ~8-10 minutes, and `:4002` refuses connections the whole
-  time.** `docker-compose.yml` pins `platform: linux/amd64`, so on Apple Silicon
-  the container runs under emulation; the site build alone was `done in 494
-  seconds` here. Until it finishes, `curl localhost:4002` returns *"Connection
+- **First serve builds the Docker image (Ruby 3.2.3) + bundle, then the site —
+  a few minutes, and `:4002` refuses connections the whole time.** The `jekyll`
+  service now builds from the repo `Dockerfile` and runs natively (no amd64
+  emulation), so it's much faster than the old `jekyll/jekyll` image — the site
+  build is ~30-40s. Until it finishes, `curl localhost:4002` returns *"Connection
   reset by peer."* Don't kill it — watch for `Server running` in the logs.
 - **`.env` must exist or `docker compose up jekyll` errors.** The service has
   `env_file: .env`; the repo only ships `.env.example`. `cp .env.example .env`.
-- **Don't fight the host Ruby.** System Ruby 2.6.10 can't resolve `github-pages`
-  232 (needs ≥ 3.1) and there's no version manager installed. `bundle exec
+- **Don't fight the host Ruby.** System Ruby 2.6.10 can't resolve the theme
+  (needs ≥ 3.2) and there's no version manager installed. `bundle exec
   jekyll …` on the host gives `command not found: jekyll`. The whole point of
-  Docker here is the 3.1.1 image.
+  Docker here is the Ruby 3.2.3 image built from the `Dockerfile`.
 - **A curl 200 is not proof of a render.** Always open the screenshot PNG.
 - **macOS sometimes hands scripts a stripped PATH** — bare `curl`/`grep` come
   back `command not found`. `smoke.sh` pins PATH defensively; in one-off shells
   use absolute paths like `/usr/bin/curl`.
-- **Harmless build warning, every time:** `Liquid syntax error … Unexpected
-  character $ in "{{slugify ${title}}"` in
-  `pages/_posts/data-analytics/2024-04-25-placeholders.md`. It's a placeholder
-  file, not a build failure.
-
 ## Troubleshooting
 
 - **`curl: (56) Recv failure: Connection reset by peer` on :4002** — the server

@@ -55,6 +55,6 @@
     - title: 📝 Notes
       url: /notes/
       description: Working notes, code snippets, and quick references from development
-    - title: 📰 Blog Posts
-      url: /posts/
-      description: Tutorials, AI development chronicles, and write-ups across 10 categories
+    - title: 📰 Blog (lifehacker.dev)
+      url: https://lifehacker.dev
+      description: Tutorials, AI development chronicles, and write-ups — now published on lifehacker.dev

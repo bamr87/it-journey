@@ -1,14 +1,18 @@
 name: 🤖 Agentic Quest Review
 
-# Tier-2 quest validation: drives Claude Code (OAuth) to play quests end-to-end
-# and score their content/commands. OPT-IN ONLY — it costs money and needs a
-# secret, so it never runs on ordinary PRs:
-#   • Manually via the Actions tab (workflow_dispatch), or
-#   • By adding the `agentic-review` label to a PR (validates that PR's changed quests).
+# Tier-2 quest validation: drives Claude Code (OAuth) to read/play quests and
+# score their content. Two modes, by trigger:
 #
-# Auth: set repository secret CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`,
-# the OAuth/subscription path) — or fall back to ANTHROPIC_API_KEY. The runner is
-# ephemeral and disposable, so `execute` mode (real command execution) is safe here.
+#   • AUTO (advisory)  — on every PR that changes quests, Claude does a READ-ONLY
+#     `review` of the changed quests and posts findings as a sticky comment. It
+#     NEVER fails the PR (advisory) and is skipped (not failed) when no Claude
+#     secret is configured, so it's safe to leave always-on.
+#   • OPT-IN (execute) — add the `agentic-review` label to a PR, or run it
+#     manually, to let Claude actually RUN the quests' commands in the ephemeral
+#     runner sandbox. Can gate on a score threshold.
+#
+# Auth: repo secret CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`) or
+# ANTHROPIC_API_KEY. The runner is disposable, so `execute` is safe here.
 
 on:
   workflow_dispatch:
@@ -25,7 +29,9 @@ on:
         description: 'Fail the job if any quest scores below this %% (0 = never fail)'
         default: '0'
   pull_request:
-    types: [labeled]
+    types: [opened, synchronize, reopened, labeled]
+    paths:
+      - 'pages/_quests/**/*.md'
 
 permissions:
   contents: read
@@ -38,57 +44,92 @@ jobs:
   agentic-review:
     name: Agentic Quest Review
     runs-on: ubuntu-latest
-    # Only run for manual dispatch, or when the specific label is applied.
+    # Run on manual dispatch, on quest-changing PR opens/updates (auto advisory
+    # review), and on `labeled` ONLY when the label is `agentic-review` — so a
+    # random label never triggers a paid run.
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'pull_request' && github.event.label.name == 'agentic-review')
+      (github.event_name == 'pull_request' &&
+       (github.event.action != 'labeled' || github.event.label.name == 'agentic-review'))
     permissions:
       contents: read
       pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0
 
-      - name: Verify Claude auth secret is present
+      # Decide mode + whether this run gates. Auto PR runs are advisory `review`;
+      # the `agentic-review` label or manual dispatch unlocks `execute`/gating.
+      - name: Determine run parameters
+        id: params
+        env:
+          EVENT: ${{ github.event_name }}
+          LABEL: ${{ github.event.label.name }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+          INPUT_SAMPLE: ${{ github.event.inputs.sample }}
+          INPUT_THRESH: ${{ github.event.inputs.fail_threshold }}
+          HAS_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'agentic-review') }}
+        run: |
+          MODE=review; THRESH=0; SAMPLE="${INPUT_SAMPLE:-5}"; GATING=false
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            MODE="${INPUT_MODE:-execute}"; THRESH="${INPUT_THRESH:-0}"
+            [ "$THRESH" != "0" ] && GATING=true
+          elif [ "$HAS_LABEL" = "true" ] || [ "$LABEL" = "agentic-review" ]; then
+            MODE=execute   # opt-in deep run, still advisory unless dispatched with a threshold
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "thresh=$THRESH" >> "$GITHUB_OUTPUT"
+          echo "sample=$SAMPLE" >> "$GITHUB_OUTPUT"
+          echo "gating=$GATING" >> "$GITHUB_OUTPUT"
+          echo "Mode=$MODE threshold=$THRESH sample=$SAMPLE gating=$GATING"
+
+      - name: Check for Claude credentials
+        id: auth
         env:
           OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ -z "$OAUTH" ] && [ -z "$APIKEY" ]; then
-            echo "::error::No Claude credentials. Set secret CLAUDE_CODE_OAUTH_TOKEN (preferred, from 'claude setup-token') or ANTHROPIC_API_KEY."
-            exit 1
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No Claude credentials (CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY) — agentic review skipped (advisory)."
+          else
+            echo "present=true" >> "$GITHUB_OUTPUT"
           fi
-          echo "Auth source: ${OAUTH:+CLAUDE_CODE_OAUTH_TOKEN}${OAUTH:+ }${APIKEY:+ANTHROPIC_API_KEY}"
 
       - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        if: steps.auth.outputs.present == 'true'
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: '3.12'
 
       - name: Install Python deps
+        if: steps.auth.outputs.present == 'true'
         run: pip install pyyaml
 
       - name: Set up Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        if: steps.auth.outputs.present == 'true'
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '20'
 
       - name: Install Claude Code CLI
+        if: steps.auth.outputs.present == 'true'
         run: |
           npm install -g @anthropic-ai/claude-code
           claude --version
 
       - name: Determine target quests
         id: targets
+        if: steps.auth.outputs.present == 'true'
         env:
           BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            git fetch --no-tags --depth=1 origin "$BASE_REF" || true
+            git fetch --no-tags --depth=50 origin "$BASE_REF" || true
             CHANGED=$(git diff --name-only "origin/$BASE_REF...HEAD" -- 'pages/_quests/**/*.md' \
-                      | grep -vE '/(README|index)\.md$' | head -n 8)
+                      | grep -vE '/(README|index|home)\.md$' | head -n 8)
             if [ -z "$CHANGED" ]; then
               echo "No changed quest files; nothing to review."
               echo "skip=true" >> "$GITHUB_OUTPUT"
@@ -98,17 +139,20 @@ jobs:
           fi
 
       - name: Run agentic validation
-        if: steps.targets.outputs.skip != 'true'
+        id: run
+        if: steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true'
+        continue-on-error: ${{ steps.params.outputs.gating != 'true' }}
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          MODE: ${{ github.event.inputs.mode || 'execute' }}
-          SAMPLE: ${{ github.event.inputs.sample || '5' }}
-          THRESH: ${{ github.event.inputs.fail_threshold || '0' }}
+          MODE: ${{ steps.params.outputs.mode }}
+          SAMPLE: ${{ steps.params.outputs.sample }}
+          THRESH: ${{ steps.params.outputs.thresh }}
           FILES: ${{ steps.targets.outputs.files }}
         run: |
           set -o pipefail
-          ARGS="--mode $MODE --md review.md --report review.json --fail-threshold $THRESH -v"
+          # Bound runaway loops AND total spend on automatic runs.
+          ARGS="--mode $MODE --md review.md --report review.json --fail-threshold $THRESH --max-turns 30 --max-cost-usd 3.00 -v"
           if [ -n "$FILES" ]; then
             python3 test/quest-validator/agentic_validate.py $FILES $ARGS
           else
@@ -116,12 +160,12 @@ jobs:
           fi
 
       - name: Job summary
-        if: always() && steps.targets.outputs.skip != 'true'
+        if: always() && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true'
         run: |
           if [ -f review.md ]; then cat review.md >> "$GITHUB_STEP_SUMMARY"; fi
 
       - name: Upload report
-        if: always() && steps.targets.outputs.skip != 'true'
+        if: always() && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: agentic-quest-review
@@ -131,13 +175,17 @@ jobs:
           if-no-files-found: ignore
 
       - name: Comment on PR
-        if: github.event_name == 'pull_request' && steps.targets.outputs.skip != 'true' && always()
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        if: github.event_name == 'pull_request' && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && always()
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const fs = require('fs');
             if (!fs.existsSync('review.md')) return;
-            const body = "<!-- agentic-quest-review -->\n" + fs.readFileSync('review.md', 'utf8');
+            const mode = '${{ steps.params.outputs.mode }}';
+            const note = mode === 'review'
+              ? '\n\n> ℹ️ _Advisory read-only review — does not block this PR. Add the `agentic-review` label for a sandboxed `execute` run._'
+              : '';
+            const body = "<!-- agentic-quest-review -->\n" + fs.readFileSync('review.md', 'utf8') + note;
             const { owner, repo } = context.repo;
             const issue_number = context.payload.pull_request.number;
             const comments = await github.rest.issues.listComments({ owner, repo, issue_number });

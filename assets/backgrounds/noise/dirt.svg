@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <!--
+    Subtle grayscale noise texture for the zer0-mistakes "dark" skin background
+    layer (theme >= 1.21 SVG-background feature, _data/theme_backgrounds.yml).
+    The theme ships background maps only for air/aqua/neon/etc.; this provides
+    the dark-skin noise the site references. Generated with feTurbulence
+    (fffuel-style) at low opacity so it never competes with page content.
+  -->
+  <filter id="noise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="240" height="240" filter="url(#noise)" opacity="0.035"/>
+</svg>

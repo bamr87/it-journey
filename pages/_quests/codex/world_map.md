@@ -38,6 +38,7 @@ skill_focus:
 - reference
 learning_style: reading
 fmContentType: codex
+mermaid: true
 ---
 *Welcome, brave traveler, to the complete cartographical guide of the IT-Journey realm! This mystical map reveals every secret path, hidden treasure, and learning adventure across our digital kingdom.*
 
@@ -117,7 +118,7 @@ Battle-tested wisdom and real-world experiences from fellow code warriors who've
 
 - [AI-Powered Development Workflows](/advanced-version-management-ai-implementation/) - Advanced automation techniques
 - [GitHub Actions Mastery](/debugging-github-actions-workflows-ai-assisted/) - CI/CD optimization
-- [Docker for IT-Journey](/posts/dockering-your-it-journey/) - Containerization strategies
+- [Docker for IT-Journey](https://lifehacker.dev) - Containerization strategies
 - Jekyll Theming & Bootstrap (planned) - Site customization
 
 ### ⚔️ Quests Territory (`/quests/`)
@@ -260,7 +261,6 @@ Access all categories at `/categories/` to explore content by topic:
 
 | Section | Path | Tools | Purpose |
 |---------|------|-------|---------|
-| **💻 Jupyter Labs** | `/notes/jupyter/` | Interactive Notebooks | Code experimentation and analysis |
 | **📝 Personal Notes** | `/notes/` | Markdown Notes | Quick captures and reminders |
 | **🧩 Code Collections** | `/notes/snippets/` | Reusable Code | Curated examples and patterns |
 | **📊 Learning Logs** | `/notes/progress/` | Progress Tracking | Journey documentation |
@@ -282,15 +282,13 @@ it-journey/
 │   ├── _quickstart/          # Quick setup guides
 │   └── scripts/              # Automation scripts
 ├── ⚔️ Journey Content
-│   ├── pages/_posts/         # Chronicles (blog posts)
 │   ├── pages/_quests/        # Epic quests and challenges
 │   └── pages/_about/         # Platform information
 ├── 📚 Library Resources
 │   ├── pages/_docs/          # Documentation collection
 │   └── docs/                 # Additional guides
-├── 📔 Notebook Space
-│   ├── pages/_notes/         # Personal notes
-│   └── pages/_notebooks/     # Jupyter environments
+├── 📔 Notes Space
+│   └── pages/_notes/         # Personal notes
 ├── ⚙️ Site Configuration
 │   ├── _config.yml           # Main Jekyll config
 │   ├── _data/navigation/     # Site navigation
@@ -317,7 +315,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 - [🏛️ Main Portal](/) - Primary entrance to IT-Journey
 - [🏰 Quest Central](/quests/) - Complete quest index and navigation
-- [📜 Chronicle Archive](/posts/) - All chronicles and blog posts
+- [📜 Chronicle Archive](https://lifehacker.dev) - All chronicles and blog posts
 - [📚 Library Index](/docs/) - Documentation and guides
 - [📔 Personal Notebook](/notes/) - Your learning space
 
@@ -361,7 +359,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 ### 🔧 For System Administrators
 
 1. **Platform Setup:** [Configuration Guide](/about/config/)
-2. **Docker Environment:** [Container Setup](/posts/dockering-your-it-journey/)
+2. **Docker Environment:** [Container Setup](https://lifehacker.dev)
 3. **CI/CD Integration:** [GitHub Actions](/debugging-github-actions-workflows-ai-assisted/)
 4. **Monitoring:** [Site Analytics](/about/features/)
 

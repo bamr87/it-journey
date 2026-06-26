@@ -134,7 +134,7 @@ A feature PR is incomplete without:
 - [ ] Quest, post, or doc page if the feature is user-facing
 - [ ] Migration note if behavior changed
 
-See [`README.instructions.md`](README.instructions.md), [`posts.instructions.md`](posts.instructions.md), [`quest.instructions.md`](quest.instructions.md).
+See [`README.instructions.md`](README.instructions.md), [`docs.instructions.md`](docs.instructions.md), [`quest.instructions.md`](quest.instructions.md).
 
 ## 9. PR Checklist
 

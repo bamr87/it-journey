@@ -72,6 +72,28 @@ echo "── 6. exit-code gating ──"
 "$PY" "$CLI" pages/_quests/0101/docker-mastery-example.md --mock --fail-threshold 80 >/dev/null 2>&1
 [ $? -eq 0 ] && ok "above-threshold -> exit 0" || bad "threshold 80 should pass"
 
+echo "── 7. envelope/scoring contract test ──"
+"$PY" "$HERE/agentic/test_envelope.py" >/dev/null 2>&1 && ok "envelope contract holds" || bad "envelope contract drift"
+
+echo "── 8. cost/turn governors ──"
+"$PY" "$CLI" pages/_quests/0101/docker-mastery-example.md --max-turns 7 --dry-run 2>/dev/null \
+  | grep -q -- '--max-turns 7' && ok "max-turns reaches the claude command" || bad "max-turns not wired"
+"$PY" "$CLI" -d pages/_quests --sample 2 --mock --max-cost-usd 1 >/dev/null 2>&1 \
+  && ok "max-cost-usd accepted" || bad "max-cost-usd rejected"
+
+echo "── 9. execute mode drives snippet execution ──"
+dr=$("$PY" "$CLI" pages/_quests/0101/docker-mastery-example.md --mode execute --dry-run 2>/dev/null)
+echo "$dr" | grep -q 'ACTUALLY RUN' && echo "$dr" | grep -qiE 'Code snippets \(determ' \
+  && ok "execute prompt lists snippets + says run them" || bad "execute prompt missing snippet drive"
+"$PY" "$CLI" pages/_quests/0101/docker-mastery-example.md --mode execute --mock --report /tmp/_exec_selftest.json >/dev/null 2>&1
+"$PY" - <<'PY' && ok "execute report carries snippet coverage" || bad "snippet coverage missing"
+import json
+d=json.load(open("/tmp/_exec_selftest.json"))
+s=d["results"][0]["snippets"]
+assert s["available_runnable"] is not None and s["available_runnable"]>=1, s
+assert s["recorded"]>=1 and "ran" in s, s
+PY
+
 echo ""
 echo "════════════════════════════════════════"
 echo "agentic self-test: $pass passed, $fail failed"

@@ -18,12 +18,4 @@
   children:
     - title: Quests Home
       url: /quests/home/
-    - title: Posts
-      url: /posts/
-- title: Wargames
-  icon: bi-shield-lock
-  url: /docs/wargames/
-  children:
-    - title: Wargames Overview
-      url: /docs/wargames/
 

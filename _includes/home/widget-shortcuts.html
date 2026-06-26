@@ -1,0 +1,10 @@
+{%- comment -%} Shortcuts / launcher widget — curated _data/home/shortcuts.yml. {%- endcomment -%}
+<div class="hw-shortcuts" data-home-shortcuts>
+  {% for s in site.data.home.shortcuts.items %}
+  <a class="hw-shortcut" href="{{ s.url | relative_url }}" data-launch-label="{{ s.label }}">
+    <i class="bi bi-{{ s.icon | default: 'box-arrow-up-right' }}" aria-hidden="true"></i>
+    <span>{{ s.label }}</span>
+    {% if s.key %}<kbd>{{ s.key }}</kbd>{% endif %}
+  </a>
+  {% endfor %}
+</div>

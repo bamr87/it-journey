@@ -85,7 +85,7 @@ Welcome to the IT-Journey Contributor Guild Hall. Every contributor earns an RPG
           💻 {{ data.stats.total_commits | default: 0 }} commits &middot;
           🔀 {{ data.stats.total_prs_merged | default: 0 }} PRs &middot;
           🏰 {{ data.stats.total_quests_authored | default: 0 }} quests &middot;
-          📝 {{ data.stats.total_posts_authored | default: 0 }} posts
+          ⭐ {{ data.stats.xp | default: 0 }} XP
         </p>
       </div>
     </div>

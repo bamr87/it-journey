@@ -1,0 +1,9 @@
+# Extra trophies beyond the auto-generated contributor achievements[]
+# (_data/contributors/bamr87.yml). The trophies widget shows both.
+# `featured` ids are highlighted first (match achievement ids or extra ids).
+extra:
+  - { id: site_launch, name: "Site Launch", icon: "🚀", description: "Shipped it-journey.dev to the world", earned_date: '2021-03-13' }
+  - { id: theme_smith, name: "Theme Smith", icon: "🎨", description: "Built & published the zer0-mistakes Jekyll theme", earned_date: '2024-08-01' }
+  - { id: extractor, name: "Great Extraction", icon: "📦", description: "Carved wargames into its own repo; moved the blog to lifehacker.dev", earned_date: '2026-06-26' }
+  - { id: agentic, name: "Agentic Architect", icon: "🤖", description: "Wove AI agents through the quest curriculum (GH-600)", earned_date: '2026-05-17' }
+featured: [site_launch, theme_smith, extractor]

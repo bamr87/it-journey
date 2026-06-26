@@ -2,7 +2,7 @@
 applyTo: "pages/**/*.md"
 description: "Guide GitHub Copilot when resolving AI Content Review issues — per-collection scope, frontmatter rules, fix patterns, validation, and PR conventions"
 date: 2026-05-22T14:55:00.000Z
-lastmod: 2026-05-22T14:55:00.000Z
+lastmod: 2026-06-25T00:00:00.000Z
 ---
 
 # AI Content Review — Resolution Instructions
@@ -10,8 +10,8 @@ lastmod: 2026-05-22T14:55:00.000Z
 This file governs **how Copilot (or any contributor) resolves issues opened by the
 [`ai-content-review.yml`](../workflows/ai-content-review.yml) workflow**.
 
-Each AI-review issue is **scoped to a single Jekyll collection** (e.g. `_posts`,
-`_quests`, `_docs`, `_about`, `_notes`, `_notebooks`, `_quickstart`, `_hobbies`)
+Each AI-review issue is **scoped to a single Jekyll collection** (`_quests`,
+`_docs`, `_notes`, `_quickstart`, `_about`)
 and lists the files in that collection that need improvement. **Stay inside the
 collection named in the issue title — do not edit files in other collections in
 the same PR.**
@@ -62,7 +62,8 @@ CI enforces these via `.github/workflows/frontmatter-validation.yml` and
 - **Quests** (`pages/_quests/**`): add `learning_objectives`, `target_audience`,
   `hierarchy`, `level`, `quest_id`, `difficulty`, `estimated_time`,
   `prerequisites`. See [`quest.instructions.md`](quest.instructions.md).
-- **Posts** (`pages/_posts/**`): see [`posts.instructions.md`](posts.instructions.md).
+- **Docs** (`pages/_docs/**`): see [`docs.instructions.md`](docs.instructions.md).
+- **Notes** (`pages/_notes/**`): see [`notes.instructions.md`](notes.instructions.md).
 
 ---
 
@@ -176,7 +177,7 @@ Then proceed with the rest. Don't block the entire issue on one ambiguous item.
 
 - [`copilot-instructions.md`](../copilot-instructions.md) — core principles
 - [`README.instructions.md`](README.instructions.md) — README-First / README-Last
-- [`posts.instructions.md`](posts.instructions.md) — blog-post-specific rules
+- [`docs.instructions.md`](docs.instructions.md) — doc-specific rules
 - [`quest.instructions.md`](quest.instructions.md) — quest-specific rules
 - [`.github/content-review-config.yml`](../content-review-config.yml) — thresholds and tag keywords
 - [`scripts/validation/content-reviewer.py`](../../scripts/validation/content-reviewer.py) — review engine

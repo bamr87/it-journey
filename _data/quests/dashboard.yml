@@ -1,0 +1,79 @@
+# =============================================================================
+# Quest dashboard content for /quests/home/ (the Overworld hub).
+# -----------------------------------------------------------------------------
+# CURATED — hand-authored. Keeps pages/_quests/home.md lean: the levels, tiers,
+# and class paths are rendered from the GENERATED data files
+# (levels.yml / tiers.yml / order.yml) and the curated paths.yml. This file only
+# holds what those don't cover: dashboard section config, onboarding quests, and
+# the codex/quick-links. Rendered by _layouts/quest-hub.html.
+# =============================================================================
+
+# Collapsible dashboard sections, in display order. `id` must match the
+# {% case %} arms in quest-hub.html. `default_open` is the first-visit state;
+# quest-dashboard.js persists per-user open/closed + show/hide overrides.
+sections:
+  - id: progress
+    title: Your Progress
+    icon: bi-graph-up-arrow
+    default_open: true
+  - id: tiers
+    title: The Realm Map
+    icon: bi-diagram-3
+    default_open: true
+  - id: start
+    title: Start Here
+    icon: bi-flag-fill
+    default_open: true
+  - id: paths
+    title: Choose Your Path
+    icon: bi-signpost-split-fill
+    default_open: false
+  - id: codex
+    title: Codex & Quick Links
+    icon: bi-journal-bookmark-fill
+    default_open: false
+
+# Onboarding quests — the "Init World" foundation set. Each links to a live
+# quest; quest-progress.js tints completed ones.
+start_here:
+  - title: "Hello, n00b"
+    url: /quests/0000/hello-noob/
+    blurb: Your very first steps — what even is an operating system?
+    xp: 50
+  - title: Begin Your IT Journey
+    url: /quests/0000/begin-your-it-journey/
+    blurb: Answer the hero's call and set out from zer0.
+    xp: 50
+  - title: VS Code Mastery
+    url: /quests/0000/vscode-mastery/
+    blurb: Forge your ultimate development weapon.
+    xp: 60
+  - title: Character Building
+    url: /quests/0000/character-building/
+    blurb: Forge your IT identity and dev environment.
+    xp: 40
+  - title: Bashcrawl Adventure
+    url: /quests/0000/bashcrawl/
+    blurb: A browser-based terminal dungeon — no install required.
+    xp: 40
+
+# Codex / quick navigation — the mystical library.
+codex:
+  - title: World Map
+    url: /quests/codex/world-map/
+    icon: bi-map-fill
+  - title: Glossary
+    url: /quests/codex/glossary/
+    icon: bi-book-half
+  - title: All Quests
+    url: /quests/
+    icon: bi-grid-3x3-gap-fill
+  - title: Your Inventory
+    url: /quests/inventory/
+    icon: bi-bag-fill
+  - title: Terminal Docs
+    url: /docs/terminal/
+    icon: bi-terminal-fill
+  - title: Agentic Codex
+    url: /docs/agentic-codex/
+    icon: bi-robot

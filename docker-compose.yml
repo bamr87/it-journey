@@ -1,13 +1,19 @@
 services:
 
   jekyll:
-    image: jekyll/jekyll:latest
-    platform: linux/amd64
-    command: bash -c "bundle check || bundle install && jekyll serve --watch --force_polling --config '_config.yml,_config_dev.yml'"
+    # Serve from the project's Ruby 3.2.3 image (Dockerfile) — the zer0-mistakes
+    # theme >= 1.21 requires Ruby >= 3.2, so the old jekyll/jekyll:latest (Ruby
+    # 3.1) image can no longer resolve the theme. Native arch (no amd64 emulation).
+    # Gems are baked into the image; `bundle check || bundle install` self-heals
+    # when Gemfile.lock moves. No bundle_cache volume (it would shadow the image
+    # gems and break with GemNotFound — same reason quest-build omits it).
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "bundle check || bundle install && bundle exec jekyll serve --watch --force_polling --config '_config.yml,_config_dev.yml' --host 0.0.0.0"
     volumes:
       - ./:/app
       - jekyll-cache:/app/.jekyll-cache
-      - bundle_cache:/usr/local/bundle
     ports:
       - "4002:4002"
     working_dir: /app
@@ -15,7 +21,6 @@ services:
       - .env
     environment:
       JEKYLL_ENV: development
-      BUNDLE_PATH: /usr/local/bundle
 
   quest-validator:
     build:
@@ -51,6 +56,39 @@ services:
       PYTHONPATH: /app
       PYTHONUNBUFFERED: 1
       PATH: "/opt/venv/bin:$PATH"
+
+  # ── Unified quest validation (the canonical Docker path) ──────────────────
+  # Runs scripts/quest/quest_audit.py (content + network + freshness) in a
+  # stock, fast-to-pull python:3.12-slim — no image build, no Ruby. This is
+  # what `make docker-validate` drives and what the scheduled CI audit uses for
+  # CI-parity. Tier-2 (Claude) is opt-in and degrades gracefully when the CLI
+  # is absent. Default command is a full audit; pass a subcommand to override.
+  quest-audit:
+    image: python:3.12-slim
+    platform: linux/amd64
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      PYTHONUNBUFFERED: "1"
+    entrypoint: ["bash", "scripts/quest/docker-entrypoint.sh"]
+
+  # ── CI-parity Jekyll build ────────────────────────────────────────────────
+  # Heavy path: the ruby:3.2.3 + github-pages image actually building the site
+  # the way Pages ships it. Drives `make docker-build-ci`. Uses the gems baked
+  # into the image (NOT the jekyll service's Ruby-3.1 bundle_cache volume, which
+  # would shadow them and break with GemNotFound); `bundle check || bundle
+  # install` self-heals if the committed Gemfile.lock has moved on.
+  quest-build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "bundle check || bundle install && bundle exec jekyll build --config _config.yml,_config_dev.yml,_config_ci.yml"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      JEKYLL_ENV: development
 
 volumes:
   jekyll-cache:

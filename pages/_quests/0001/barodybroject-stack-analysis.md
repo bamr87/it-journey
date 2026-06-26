@@ -63,6 +63,7 @@ layout: quest
 redirect_from:
 - /quests/0001/side-quests/barodybroject-stack-analysis/
 draft: false
+mermaid: true
 ---
 # Technology Stack Analysis: Barodybroject
 

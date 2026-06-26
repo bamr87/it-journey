@@ -1,3 +1,13 @@
+# ============================================================================
+# ⚠️  STALE SNAPSHOT — PENDING REGENERATION
+# This is a point-in-time COPY of the root _config.yml kept for the /about/config/
+# page. It still lists collections that have since been REMOVED from the site
+# (posts, drafts, notebooks, hobbies, and the wargames docs). IT-Journey is now a
+# quest-focused platform (quests, docs, notes, quickstart, about). Do not treat
+# this file as authoritative — the root _config.yml is the source of truth. It will
+# be refreshed by the update-settings workflow on the next regeneration.
+# ============================================================================
+#
 # Welcome to Jekyll!
 # Configuration file for Jekyll.
 # Full docs at: http://jekyllrb.com/docs/configuration/

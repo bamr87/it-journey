@@ -91,8 +91,8 @@ content changes under human review. See `config.yml › loop`.
 
 `config.yml` declares:
 
-- `read_only` — vendored upstream content (e.g. OverTheWire wargame walkthroughs,
-  detected by `source_repo`/`source_url` frontmatter + the `wargames/**` glob).
+- `read_only` — vendored upstream content (any upstream content carrying
+  `source_repo`/`source_url` frontmatter).
   Indexed for visibility, **never rewritten**.
 - `read_only.structural_globs` — READMEs, quest templates/tools/codex. Indexed
   but exempt from deep field checks (matches the CI validator's skip list).

@@ -82,14 +82,10 @@ Obsidian-style links help connect notes, docs, quests, and posts into a lightwei
 - [Obsidian Knowledge Graph](/docs/obsidian/) - How IT-Journey uses theme-owned wiki links and graph views
 - [Obsidian Graph View](/docs/obsidian/graph/) - Interactive map of linked content across the site
 
-### Wargames (External)
+### Wargames (External Repo)
 
-Security challenges aggregated from the [OverTheWire](https://overthewire.org/wargames/) community project. Learn and practice security concepts through gamified challenges.
-
-**Topics:**
-- [Wargames Overview](/docs/wargames/) - Introduction, game list, and how to get started
-
-> This section is populated by the [docs aggregation pipeline](/it-journey/scripts/docs-aggregator/). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
+Security wargames (OverTheWire) now live in a dedicated repository:
+**[github.com/bamr87/wargames](https://github.com/bamr87/wargames)** — Bandit, Natas, Narnia, Behemoth, and more, with their own aggregation pipeline.
 
 ### Future Documentation Areas
 
@@ -177,29 +173,11 @@ See [Content Guidelines](https://github.com/bamr87/it-journey/blob/main/docs/sta
 
 ## Documentation Sources
 
-### Git Submodules & Aggregation
+### External content
 
-The documentation library supports two approaches for integrating external content:
+Vendored upstream content carries `source_repo` / `source_url` / `license` frontmatter recording its origin, and is treated as read-only — synced from upstream rather than edited by hand.
 
-**Docs Aggregation Pipeline** (Active):
-```bash
-# Aggregate external documentation into _docs
-bash scripts/docs-aggregator/aggregate_docs.sh
-```
-
-The aggregation pipeline clones external repos, extracts documentation, transforms it to Jekyll-compatible format with it-journey frontmatter, and places it under `pages/_docs/`. See [docs-aggregator README](../../scripts/docs-aggregator/README.md) for details and how to add new sources.
-
-**Git Submodules** (Future alternative):
-
-```bash
-# Example: Adding Jekyll official docs
-git submodule add https://github.com/jekyll/jekyll.git jekyll-docs
-
-# Configure sparse checkout for specific directories
-cd jekyll-docs/docs/_docs
-git sparse-checkout init --cone
-git sparse-checkout set docs/_docs
-```
+The OverTheWire **wargames** collection that previously lived here was extracted to its own repository, [github.com/bamr87/wargames](https://github.com/bamr87/wargames), together with the aggregation pipeline that generates it.
 
 This approach allows:
 - Always up-to-date official documentation
@@ -258,7 +236,7 @@ For detailed information, see [Jekyll Implementation](https://github.com/bamr87/
 | [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
 | [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
 | [📝 Notes](/notes/) | Working notes, code snippets, and quick references from development |
-| [📰 Blog Posts](/news/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
+| [📰 Blog Posts](https://lifehacker.dev) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
 
 ### External Resources
 - [Jekyll Documentation](https://jekyllrb.com/docs/)

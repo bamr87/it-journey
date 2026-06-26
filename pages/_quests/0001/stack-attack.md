@@ -106,6 +106,7 @@ rewards:
   - AI agent prompt engineering techniques
   - Enterprise architecture pattern library
 layout: quest
+mermaid: true
 ---
 *In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 

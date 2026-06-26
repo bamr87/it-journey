@@ -296,7 +296,7 @@ python3 scripts/validate_quest.py --quest q8
 ## 🔗 Continue Your Journey
 
 - **Next:** [Q9: Anchoring the Drifting Agent](/quests/1010/agentic-state-persistence-and-drift/)
-- **Chronicle post:** [Taming Agent Memory and Context Drift](/posts/taming-agent-memory-and-context-drift/)
+- **Chronicle post:** [Taming Agent Memory and Context Drift](/docs/agentic-codex/taming-agent-memory-and-context-drift/)
 - **Related note:** [Evaluation Signals Table](/notes/gh-600/evaluation-signals-table/)
 
 ## 🕸️ Knowledge Graph

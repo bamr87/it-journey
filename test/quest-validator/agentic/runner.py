@@ -19,17 +19,29 @@ command + prompts without invoking anything.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 from pathlib import Path
 from typing import List, Optional
 
 from . import prompts, schema
+
+# Shared deterministic snippet extractor (single source of truth for "runnable
+# snippet"), used to report how much of the quest's code the agent actually ran.
+_QUEST_DIR = Path(__file__).resolve().parents[3] / "scripts" / "quest"
+if str(_QUEST_DIR) not in sys.path:
+    sys.path.insert(0, str(_QUEST_DIR))
+try:
+    import quest_lib  # noqa: E402
+except Exception:  # pragma: no cover
+    quest_lib = None
 
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)
 
@@ -54,13 +66,17 @@ class AuthError(RunnerError):
 def _looks_like_auth_failure(text: str) -> bool:
     t = (text or "").lower()
     return ("401" in t and "auth" in t) or "failed to authenticate" in t \
-        or "invalid authentication" in t or "invalid api key" in t
+        or "invalid authentication" in t or "invalid api key" in t \
+        or "invalid x-api-key" in t or "no credentials" in t \
+        or ("oauth" in t and "token" in t and ("expired" in t or "invalid" in t)) \
+        or "please run" in t and "login" in t
 
 
 class AgenticRunner:
     def __init__(self, mode: str = "review", model: Optional[str] = None,
                  timeout: int = 600, claude_bin: str = "claude",
-                 mock: bool = False, dry_run: bool = False, verbose: bool = False):
+                 mock: bool = False, dry_run: bool = False, verbose: bool = False,
+                 max_turns: int = 0):
         if mode not in ("review", "execute"):
             raise ValueError(f"mode must be 'review' or 'execute', got {mode!r}")
         self.mode = mode
@@ -70,6 +86,9 @@ class AgenticRunner:
         self.mock = mock
         self.dry_run = dry_run
         self.verbose = verbose
+        # Per-quest turn ceiling (0 = CLI default). Bounds runaway agent loops
+        # and is the cheapest cost governor: fewer turns ≈ less spend.
+        self.max_turns = max_turns
 
     # ---- public ---------------------------------------------------------
 
@@ -83,7 +102,7 @@ class AgenticRunner:
         try:
             (sandbox / "QUEST.md").write_text(quest.body, encoding="utf-8")
             system_prompt = prompts.build_system_prompt(self.mode)
-            user_prompt = prompts.build_user_prompt(quest)
+            user_prompt = prompts.build_user_prompt(quest, mode=self.mode)
             cmd = self._build_cmd(system_prompt, user_prompt)
 
             if self.dry_run:
@@ -125,6 +144,8 @@ class AgenticRunner:
                 "--allowedTools", "Read",
                 "--disallowedTools", "Bash", "Write", "Edit", "WebFetch", "WebSearch",
             ]
+        if self.max_turns and self.max_turns > 0:
+            cmd += ["--max-turns", str(self.max_turns)]
         if self.model:
             cmd += ["--model", self.model]
         return cmd
@@ -156,6 +177,17 @@ class AgenticRunner:
             raise RunnerError(f"claude exited {proc.returncode}: {tail}")
 
         envelope = self._parse_envelope(proc.stdout)
+        # The CLI signals failures (incl. the --max-turns cap) with is_error=true
+        # and a subtype, often WITH returncode 0. Surface it as a real error
+        # rather than letting it fall through to "couldn't parse a verdict" —
+        # otherwise the --max-turns governor's own trip is invisible.
+        err = self._error_from_envelope(envelope)
+        if err:
+            meta = {"mock": False, "cost_usd": envelope.get("total_cost_usd"),
+                    "turns": envelope.get("num_turns"),
+                    "session_id": envelope.get("session_id"), "duration_s": dur}
+            return self._finalize(quest, None, meta=meta, error=err,
+                                  raw=json.dumps(envelope)[:2000])
         verdict, raw = self._extract_verdict(envelope)
         meta = {
             "mock": False,
@@ -187,6 +219,17 @@ class AgenticRunner:
                     except json.JSONDecodeError:
                         continue
             raise RunnerError("claude stdout was not valid JSON")
+
+    @staticmethod
+    def _error_from_envelope(envelope: dict) -> Optional[str]:
+        """Return an error string if the CLI envelope signals a failure
+        (``is_error: true``, e.g. ``subtype: error_max_turns``), else None.
+        Pulled out as a pure function so the contract test can pin it."""
+        if not isinstance(envelope, dict) or not envelope.get("is_error"):
+            return None
+        subtype = envelope.get("subtype") or "error"
+        detail = str(envelope.get("result") or envelope.get("error") or "")[:200]
+        return f"agent run failed ({subtype}): {detail}"
 
     @classmethod
     def _extract_verdict(cls, envelope: dict):
@@ -235,7 +278,32 @@ class AgenticRunner:
         result["per_dimension"] = scored["per_dimension"]
         result["weight_covered"] = scored["weight_covered"]
         result["verdict"] = schema.verdict_label(scored["overall"])
+        result["snippets"] = self._snippet_coverage(quest, verdict)
         return result
+
+    @staticmethod
+    def _snippet_coverage(quest, verdict: dict) -> dict:
+        """Cross the deterministic snippet inventory with what the agent reported
+        running, so a report can show 'ran N/M runnable snippets'."""
+        total = runnable = None
+        if quest_lib is not None:
+            try:
+                s = quest_lib.snippet_summary(getattr(quest, "body", "") or "")
+                total, runnable = s["total"], s["runnable"]
+            except Exception:
+                pass
+        cmds = verdict.get("commands") or []
+        status = {"passed": 0, "failed": 0, "skipped": 0, "reasoned": 0}
+        for c in cmds:
+            st = (c.get("status") if isinstance(c, dict) else None)
+            if st in status:
+                status[st] += 1
+        return {
+            "available_total": total, "available_runnable": runnable,
+            "recorded": len(cmds), "ran": status["passed"] + status["failed"],
+            **status,
+            "executed": bool(verdict.get("executed")),
+        }
 
     # ---- mock ----------------------------------------------------------
 
@@ -244,18 +312,37 @@ class AgenticRunner:
         """Deterministic synthetic verdict derived from the quest text so the
         full pipeline (parse → score → report) can be tested offline."""
         body = quest.body or ""
-        # Cheap, deterministic signals — NOT a real assessment.
-        h = abs(hash((quest.slug, len(body)))) % 3
+        # Cheap, DETERMINISTIC signals — NOT a real assessment. Uses sha256 (not
+        # Python's salted hash()) so the same quest always yields the same mock
+        # verdict across processes — required for a reproducible offline pipeline
+        # test and the envelope contract test.
+        digest = hashlib.sha256(f"{quest.slug}:{len(body)}".encode("utf-8")).digest()
+        h = digest[0] % 3
         base = 4 if len(body) > 4000 else 3
         dims = {}
         for i, key in enumerate(schema.DIM_KEYS):
             s = max(0, min(schema.MAX_DIM, base + ((i + h) % 2)))
             dims[key] = {"score": s, "findings": [f"[mock] {key}: synthetic score {s} (offline pipeline test)."]}
+        # Snippet-aware synthetic commands so the coverage report is exercisable
+        # offline. Mock doesn't run anything, so each is `reasoned`.
+        commands = [{"command": "(mock) no commands run", "status": "reasoned",
+                     "detail": "Mock mode — pipeline test only."}]
+        if quest_lib is not None:
+            try:
+                snips = quest_lib.runnable_snippets(body)
+                if snips:
+                    commands = [
+                        {"command": (b.code.splitlines()[0][:80] if b.code.splitlines() else b.lang),
+                         "status": "reasoned",
+                         "detail": f"[mock] {b.lang} snippet at line {b.line} (not run in mock)."}
+                        for b in snips[:25]
+                    ]
+            except Exception:
+                pass
         return {
             "executed": False,
             "dimensions": dims,
-            "commands": [{"command": "(mock) no commands run", "status": "reasoned",
-                          "detail": "Mock mode — pipeline test only."}],
+            "commands": commands,
             "recommendations": ([] if base + h >= 5 else
                                 [{"priority": "low", "area": "mock",
                                   "suggestion": "Run without --mock for a real assessment."}]),

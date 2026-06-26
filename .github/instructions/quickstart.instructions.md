@@ -127,4 +127,4 @@ sudo apt install ruby-full
 
 ---
 
-**Related:** [`posts.instructions.md`](posts.instructions.md) · [`quest.instructions.md`](quest.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).
+**Related:** [`quest.instructions.md`](quest.instructions.md) · [`docs.instructions.md`](docs.instructions.md) · canonical frontmatter rules in [`../FRONTMATTER.md`](../FRONTMATTER.md).

@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-06-26T22:09:54.000Z",
+  "mode": "apply",
+  "touch_lastmod": false,
+  "target": "pages",
+  "summary": {
+    "total_files": 282,
+    "changed_files": 7,
+    "skipped_files": 1,
+    "error_files": 0
+  },
+  "files": [
+    {
+      "path": "pages/_docs/agentic-codex/agent-guardrails-and-responsible-autonomy.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_docs/agentic-codex/embedding-agents-in-the-sdlc.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_docs/agentic-codex/evaluating-and-tuning-agents-with-github-signals.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_docs/agentic-codex/index.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_docs/agentic-codex/mcp-servers-and-agent-tooling-in-practice.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_docs/agentic-codex/orchestrating-multi-agent-workflows-on-github.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_docs/agentic-codex/taming-agent-memory-and-context-drift.md",
+      "content_type": "docs",
+      "changed_fields": [
+        "date",
+        "lastmod"
+      ],
+      "skipped_reason": null,
+      "error": null
+    },
+    {
+      "path": "pages/_quests/templates/README.md",
+      "content_type": "quest-readme",
+      "changed_fields": [],
+      "skipped_reason": "frontmatter: no frontmatter delimiters",
+      "error": null
+    }
+  ]
+}

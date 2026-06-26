@@ -1,9 +1,16 @@
 # CLAUDE.md — Claude Code guide for IT-Journey
 
-IT-Journey is a large **Jekyll** site (GitHub Pages, custom domain
-`it-journey.dev`) teaching IT through gamified quests, tutorials, docs, and notes.
-~650 content files live under `pages/` across 9 collections. The remote theme is
-`bamr87/zer0-mistakes`.
+IT-Journey is a **Jekyll** site (GitHub Pages, custom domain `it-journey.dev`): a
+gamified, open-source platform for learning IT and software development through
+**quests** (zer0 → her0). ~280 Markdown content files live under `pages/` across 5
+collections — **quests** (~204, the center of gravity), `docs` (~27), a slim
+`notes` set (~16), `quickstart` (~15), and `about` (~19), plus a few loose
+`pages/` files. The remote theme is `bamr87/zer0-mistakes`.
+
+> **Recent overhaul:** the `_posts`/`_drafts` blog, `_notebooks`, and `_hobbies`
+> collections were removed. General blog content moved to **lifehacker.dev**
+> (`github.com/bamr87/lifehacker.dev`); the OverTheWire `wargames` docs (+
+> `scripts/docs-aggregator/`) were extracted to **`github.com/bamr87/wargames`**.
 
 This repo already has a deep instruction set written for Copilot/Cursor. **Read
 the right file for the task** instead of guessing — they are authoritative.
@@ -14,7 +21,7 @@ the right file for the task** instead of guessing — they are authoritative.
 |---|---|
 | Anything | `AGENTS.md` (overview, commands, quest permalink regex, gotchas) |
 | Frontmatter / content rules | `.github/copilot-instructions.md` (constraints table + numbered pitfalls), `.github/FRONTMATTER.md` |
-| A specific collection | `.github/instructions/<name>.instructions.md` (posts, quest, index-hub, about, …) |
+| A specific collection | `.github/instructions/<name>.instructions.md` (quest, docs, notes, about, quickstart) |
 | Content curation / the daily loop | `.claude/skills/cms-curator/SKILL.md` + `.cms/README.md` |
 | Running/previewing the site | `.claude/skills/run-it-journey/SKILL.md` |
 | A `/slash` action | `.github/prompts/<name>.prompt.md` (15 prompt-agents: write-quest, draft-article, validate-content, publish-prep, retrospective, …) |
@@ -48,8 +55,8 @@ make quest-audit      # quest content + dependency network validation
 make quest-data       # regenerate _data/quests/* after quest frontmatter edits
 ```
 
-Host Ruby cannot build this site (needs Ruby ≥3.1 via `github-pages`); use the
-Docker path documented in the `run-it-journey` skill.
+Host Ruby cannot build this site (the `jekyll-theme-zer0` gem ≥1.21 needs Ruby
+≥3.2); use the Docker path documented in the `run-it-journey` skill.
 
 ## Non-negotiable conventions
 
@@ -63,15 +70,16 @@ Docker path documented in the `run-it-journey` skill.
 - **Quests are registry-governed.** `_data/quests/*.yml` is generated from
   `scripts/quest/quest_registry.py`; never hand-edit it. After changing quest
   frontmatter run `make quest-data` or `quest-validation` CI fails on stale data.
-- **Vendored content is read-only.** ~220 `pages/_docs/wargames/**` files carry
-  `source_repo`/`license`; sync, never rewrite.
+- **Vendored content is read-only.** Any upstream content carrying
+  `source_repo`/`source_url` frontmatter is synced, never rewritten.
 - **Validate before you push.** `make build-ci` + `make content-audit` (+ `make
   quest-audit` if quests changed) must pass.
 
 ## Repo map (quick)
 
-- `pages/_<collection>/` — all site content (posts, quests, docs, notes,
-  quickstart, about, hobbies, notebooks; loose `pages/` files).
+- `pages/_<collection>/` — all site content (quests, docs, notes, quickstart,
+  about; loose `pages/` files). The brand/voice system governs only `quests` and
+  `docs` (`_data/brand/sections/` holds just `quest.md` + `docs.md`).
 - `_data/` — site data (quests/*, navigation/*, statistics). Much is generated.
 - `scripts/` — Python/Ruby/Bash tooling (cms, quest, validation, generation, …).
 - `.cms/` — CMS index, schema, reports, worklists (Jekyll-ignored).

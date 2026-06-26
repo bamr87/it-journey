@@ -1,0 +1,109 @@
+---
+layout: default
+hide_intro: true
+toc: false
+---
+{%- comment -%}
+  home-os.html — the site owner's personal "desktop OS" homepage (/home/).
+
+  A PostHog-inspired desktop: a configurable widget GRID (drag-to-reorder,
+  show/hide, resize-by-span) in window chrome, a dock/taskbar, and a Cmd+K
+  launcher. Data comes from three lanes:
+    - GitHub-synced : site.data.github.*      (scripts/generation/sync_github.py)
+    - curated       : site.data.home.*        (owner-edited _data/home/*.yml)
+    - live          : localStorage + window.QuestProgress
+
+  Build-time Liquid renders every widget statically (works with JS off);
+  assets/js/home-os.js then hydrates layout/drag/dock/launcher from localStorage.
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/quest-system.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/home-os.css' | relative_url }}">
+
+{%- assign desktop = site.data.home.desktop -%}
+
+<div class="home-os" data-home-os data-density="{{ desktop.density | default: 'comfortable' }}">
+
+  <!-- ===== Desktop top bar ===== -->
+  <div class="home-os__topbar">
+    <div class="home-os__id">
+      <span class="home-os__logo">🖥️</span>
+      <span class="home-os__title">{{ page.title }}</span>
+    </div>
+    <button type="button" class="home-os__launch" data-home-launch aria-haspopup="dialog">
+      <i class="bi bi-search" aria-hidden="true"></i> <kbd>⌘K</kbd>
+    </button>
+  </div>
+
+  <!-- ===== Widget grid ===== -->
+  <div class="home-grid" data-home-grid>
+    {% for w in desktop.widgets %}
+      {%- assign cols = w.span[0] | default: 1 -%}
+      {%- assign rows = w.span[1] | default: 1 -%}
+      <section class="home-widget" data-home-widget="{{ w.id }}" data-closable="{{ w.closable | default: true }}"
+               style="--w-cols:{{ cols }};--w-rows:{{ rows }};order:{{ w.order | default: forloop.index0 }};">
+        <header class="home-widget__bar" data-home-handle draggable="true">
+          <span class="home-widget__lights" aria-hidden="true">
+            <button type="button" class="hl hl--close" data-home-action="close" title="Close" {% if w.closable == false %}disabled{% endif %}></button>
+            <button type="button" class="hl hl--min" data-home-action="minimize" title="Minimize to dock"></button>
+            <button type="button" class="hl hl--collapse" data-home-action="collapse" title="Collapse"></button>
+          </span>
+          <span class="home-widget__title"><i class="bi bi-{{ w.icon }}" aria-hidden="true"></i> {{ w.title }}</span>
+          <span class="home-widget__controls">
+            <button type="button" class="home-widget__ctl" data-home-action="resize" title="Resize">⤢</button>
+            <button type="button" class="home-widget__ctl home-widget__grip" data-home-action="move" title="Move">⣿</button>
+          </span>
+        </header>
+        <div class="home-widget__body">
+          {% case w.id %}
+          {% when 'profile' %}{% include home/widget-profile.html %}
+          {% when 'github' %}{% include home/widget-github.html %}
+          {% when 'skills' %}{% include home/widget-skills.html %}
+          {% when 'trophies' %}{% include home/widget-trophies.html %}
+          {% when 'goals' %}{% include home/widget-goals.html %}
+          {% when 'activity' %}{% include home/widget-activity.html %}
+          {% when 'bookmarks' %}{% include home/widget-bookmarks.html %}
+          {% when 'shortcuts' %}{% include home/widget-shortcuts.html %}
+          {% when 'notes' %}{% include home/widget-notes.html %}
+          {% endcase %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+
+  <!-- narrative / fallback (renders the page body; visible with JS off) -->
+  {%- assign trimmed = content | strip -%}
+  {% if trimmed != "" %}
+  <section class="home-os__about">{{ content }}</section>
+  {% endif %}
+
+  <!-- ===== Dock / taskbar ===== -->
+  <div class="home-dock" data-home-dock>
+    <button type="button" class="home-dock__btn" data-home-launch title="Launcher (⌘K)"><i class="bi bi-grid-3x3-gap-fill"></i></button>
+    <div class="home-dock__chips" data-home-chips aria-label="Minimized widgets"></div>
+    <div class="home-dock__spacer"></div>
+    <div class="home-dock__accents" data-home-accents role="group" aria-label="Accent colour">
+      <button type="button" data-accent="#22d3ee" style="--sw:#22d3ee" aria-label="Cyan"></button>
+      <button type="button" data-accent="#a855f7" style="--sw:#a855f7" aria-label="Purple"></button>
+      <button type="button" data-accent="#34d399" style="--sw:#34d399" aria-label="Green"></button>
+      <button type="button" data-accent="#fb923c" style="--sw:#fb923c" aria-label="Orange"></button>
+      <button type="button" data-accent="#f472b6" style="--sw:#f472b6" aria-label="Pink"></button>
+      <button type="button" data-accent="#fbbf24" style="--sw:#fbbf24" aria-label="Gold"></button>
+    </div>
+    <button type="button" class="home-dock__btn" data-home-density title="Toggle density"><i class="bi bi-distribute-vertical"></i></button>
+    <button type="button" class="home-dock__btn" data-home-reset title="Reset layout"><i class="bi bi-arrow-counterclockwise"></i></button>
+    <time class="home-dock__clock" data-home-clock>--:--</time>
+  </div>
+
+  <!-- ===== Launcher (Cmd+K) ===== -->
+  <div class="home-launcher" data-home-launcher hidden role="dialog" aria-modal="true" aria-label="Launcher">
+    <div class="home-launcher__panel">
+      <input type="search" class="home-launcher__input" data-home-launch-input placeholder="Search widgets, shortcuts, repos…  (Esc to close)" autocomplete="off">
+      <ul class="home-launcher__results" data-home-launch-results></ul>
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/quest-progress.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/home-os.js' | relative_url }}" defer></script>

@@ -18,6 +18,7 @@ tags:
 - architecture
 - design
 - patterns
+mermaid: true
 ---
 # Level 1110: Quality Assurance
 

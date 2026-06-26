@@ -1,0 +1,38 @@
+<!--
+  content/giscus.html  —  GitHub Discussions comment widget (giscus)
+  ------------------------------------------------------------------
+  VENDORED, CORRECTED LOCAL OVERRIDE.
+
+  _layouts/article.html embeds this include for the comment section. We keep a
+  local copy for two reasons:
+
+  1. The pinned gem (jekyll-theme-zer0 in Gemfile.lock) can lag the theme's main
+     branch, so the include may be absent from the gem used by local/CI builds.
+     A site-level copy is resolved ahead of any theme, fixing every build path.
+  2. The theme's shipped version carried Liquid tags inside this comment block
+     (a "Usage:" example). Liquid evaluates tags even inside HTML comments, so
+     that example executed as a real include and broke the build. This copy keeps
+     the comment tag-free.
+
+  Reads three values from site config (everything else is a theme default):
+    - site.repository               -> data-repo            (e.g. bamr87/it-journey)
+    - site.giscus.data-repo-id      -> data-repo-id
+    - site.giscus.data-category-id  -> data-category-id
+
+  Walkthrough: pages/_posts/tools-environment/2026-06-23-embedding-giscus-comments-zer0-mistakes.md
+  Docs: https://giscus.app/
+-->
+<script src="https://giscus.app/client.js"
+        data-repo="{{ site.repository }}"
+        data-repo-id="{{ site.giscus.data-repo-id }}"
+        data-category-id="{{ site.giscus.data-category-id }}"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>

@@ -44,8 +44,8 @@ out to this on open and on a watcher; it is fast, pure-Python + pyyaml).
 interface CmsIndex { generated_at: string; files: CmsFile[] }
 
 interface CmsFile {
-  path: string;                 // repo-relative, e.g. "pages/_posts/devops/x.md"
-  collection: string;           // posts | quests | docs | notes | ...
+  path: string;                 // repo-relative, e.g. "pages/_quests/0001/git-workflow-mastery.md"
+  collection: string;           // quests | docs | notes | quickstart | about
   fm_content_type: string;      // "default" | "quest"
   is_notebook: boolean;
   frontmatter_present: boolean;

@@ -63,6 +63,7 @@ redirect_from:
 - /quests/1100/edgar/
 layout: quest
 sub_title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
+mermaid: true
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 

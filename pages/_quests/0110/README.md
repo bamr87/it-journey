@@ -22,6 +22,7 @@ toc_sticky: true
 draft: false
 date: '2025-12-20T20:02:51.000Z'
 author: IT-Journey Team
+mermaid: true
 ---
 # Level 0110 (6) - Database Mastery
 

@@ -1,0 +1,19 @@
+{%- comment -%} Trophies widget — contributor achievements[] + curated extras. {%- endcomment -%}
+{%- assign ach = site.data.contributors.bamr87.achievements -%}
+{%- assign extra = site.data.home.trophies.extra -%}
+<div class="hw-trophies">
+  {% for t in extra %}
+  <div class="hw-trophy hw-trophy--featured" title="{{ t.description }}">
+    <span class="hw-trophy__icon">{{ t.icon }}</span>
+    <span class="hw-trophy__name">{{ t.name }}</span>
+    {% if t.earned_date %}<span class="hw-trophy__date">{{ t.earned_date }}</span>{% endif %}
+  </div>
+  {% endfor %}
+  {% for a in ach %}
+  <div class="hw-trophy" title="{{ a.description }}">
+    <span class="hw-trophy__icon">{{ a.icon }}</span>
+    <span class="hw-trophy__name">{{ a.name }}</span>
+    {% if a.earned_date %}<span class="hw-trophy__date">{{ a.earned_date }}</span>{% endif %}
+  </div>
+  {% endfor %}
+</div>

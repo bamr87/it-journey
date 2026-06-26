@@ -32,6 +32,10 @@ WEIGHTS = {d[0]: d[2] for d in DIMENSIONS}
 DIM_GUIDANCE = {d[0]: d[3] for d in DIMENSIONS}
 MAX_DIM = 5  # each dimension scored 0..5
 
+# Verdict schema version. Bump when DIMENSIONS / weights / the JSON shape change
+# so persisted reports and the envelope contract test can detect a mismatch.
+SCHEMA_VERSION = "1.0.0"
+
 VERDICT_PASS, VERDICT_WARN, VERDICT_FAIL = "pass", "warn", "fail"
 VERDICT_EMOJI = {VERDICT_PASS: "✅", VERDICT_WARN: "⚠️", VERDICT_FAIL: "❌"}
 
