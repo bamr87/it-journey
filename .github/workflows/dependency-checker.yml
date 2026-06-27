@@ -1,33 +1,21 @@
 name: 🔍 Dependency Security & Build Checker
 
 on:
-  # Run on dependency changes
+  # Run only when the dependency definitions actually change. (Previously this
+  # also fired on every _config.yml / Dockerfile / .github/workflows/** push,
+  # which spawned a fresh "Critical" issue on unrelated workflow edits.)
   push:
     branches: [ main, master ]
     paths:
       - 'Gemfile'
       - 'Gemfile.lock'
-      - '_config.yml'
-      - 'Dockerfile'
-      - '.github/workflows/**'
-  
+
   # Weekly scheduled dependency check
   schedule:
     - cron: '0 7 * * 1'  # Every Monday at 7 AM UTC (staggered from link-checker)
   
-  # Manual trigger
+  # Manual trigger (run the checks on demand)
   workflow_dispatch:
-    inputs:
-      force_update:
-        description: 'Force update outdated dependencies'
-        required: false
-        default: false
-        type: boolean
-      security_only:
-        description: 'Only check for security vulnerabilities'
-        required: false
-        default: false
-        type: boolean
 
 permissions:
   contents: read
@@ -47,8 +35,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    outputs:
-      outdated_gems: ${{ steps.ruby_check.outputs.outdated_gems }}
 
     steps:
     - name: 🏰 Checkout Repository
@@ -102,20 +88,31 @@ jobs:
         echo "" >> dependency-check-results/summary.md
         echo "### Security Vulnerabilities:" >> dependency-check-results/summary.md
         
-        # Check for security vulnerabilities (Gemfile.lock now exists from bundle install above)
-        if bundle-audit check --format json > dependency-check-results/security-audit.json 2>&1; then
+        # Check for security vulnerabilities (Gemfile.lock now exists from bundle
+        # install above). Keep stdout (JSON) and stderr (DB-update / parse
+        # warnings) SEPARATE — mixing them with 2>&1 corrupts the JSON, and
+        # bundle-audit also exits non-zero for benign findings like insecure
+        # sources. So decide from the parsed results, not the exit code: only a
+        # real `unpatched_gem` advisory counts as a vulnerability. (This is what
+        # was filing empty-detail "Critical" false positives on every run.)
+        bundle-audit check --format json \
+          > dependency-check-results/security-audit.json \
+          2> dependency-check-results/security-audit.err || true
+
+        vuln_count=$(jq '[.results[]? | select(.type == "unpatched_gem")] | length' \
+          dependency-check-results/security-audit.json 2>/dev/null || echo 0)
+
+        if [ "${vuln_count:-0}" -gt 0 ]; then
+          echo "❌ ${vuln_count} security vulnerability(ies) detected!" >> dependency-check-results/summary.md
+          echo "security_issues=true" >> $GITHUB_OUTPUT
+          echo '```json' >> dependency-check-results/summary.md
+          jq '[.results[]? | select(.type == "unpatched_gem")]' \
+            dependency-check-results/security-audit.json >> dependency-check-results/summary.md 2>/dev/null \
+            || cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
+          echo '```' >> dependency-check-results/summary.md
+        else
           echo "✅ No security vulnerabilities found" >> dependency-check-results/summary.md
           echo "security_issues=false" >> $GITHUB_OUTPUT
-        else
-          echo "❌ Security vulnerabilities detected!" >> dependency-check-results/summary.md
-          echo "security_issues=true" >> $GITHUB_OUTPUT
-          
-          # Extract and format vulnerabilities
-          if [ -f dependency-check-results/security-audit.json ]; then
-            echo "```json" >> dependency-check-results/summary.md
-            cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
-            echo "```" >> dependency-check-results/summary.md
-          fi
         fi
         
         # Check for outdated gems
@@ -318,16 +315,46 @@ jobs:
         EOF
         
         cat dependency-check-results/summary.md >> issue_body.md
-        
-        # Create the issue
-        ISSUE_TITLE="🚨 Critical: Dependency/Build Issues - $(date -u +"%Y-%m-%d")"
-        
-        gh issue create \
-          --title "$ISSUE_TITLE" \
-          --body-file issue_body.md \
-          --label "critical,dependencies,security,automated" \
-          --assignee "${{ github.repository_owner }}"
-    
+
+        # Dedup: maintain ONE open issue instead of filing a new one each run.
+        # Stable title; reuse any existing open automated dependency issue
+        # (matches the old date-stamped ones too) by updating it in place.
+        ISSUE_TITLE="🚨 Dependency/Build Issues (automated)"
+        EXISTING=$(gh issue list --state open --label automated --label critical \
+          --json number,title \
+          --jq '[.[] | select(.title | test("Dependency/Build Issues"))] | .[0].number // empty')
+
+        if [ -n "$EXISTING" ]; then
+          gh issue edit "$EXISTING" --body-file issue_body.md
+          gh issue comment "$EXISTING" \
+            --body "🔁 Re-checked on $(date -u +"%Y-%m-%d") — issues still present (run ${{ github.run_id }})."
+          echo "Updated existing issue #$EXISTING"
+        else
+          gh issue create \
+            --title "$ISSUE_TITLE" \
+            --body-file issue_body.md \
+            --label "critical,dependencies,security,automated" \
+            --assignee "${{ github.repository_owner }}"
+        fi
+
+    - name: ✅ Auto-Close Resolved Issue
+      # When the latest check is fully green, close any open automated
+      # dependency issue so the tracker stays clean without manual triage.
+      if: steps.ruby_check.outputs.security_issues != 'true' && steps.jekyll_check.outputs.jekyll_build != 'failed'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        EXISTING=$(gh issue list --state open --label automated --label critical \
+          --json number,title \
+          --jq '[.[] | select(.title | test("Dependency/Build Issues"))] | .[0].number // empty')
+        if [ -n "$EXISTING" ]; then
+          gh issue close "$EXISTING" \
+            --comment "✅ Resolved automatically — the latest dependency/build check is green (run ${{ github.run_id }})."
+          echo "Closed resolved issue #$EXISTING"
+        else
+          echo "No open automated dependency issue to close."
+        fi
+
     - name: 📤 Upload Detailed Results
       uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
       with:
@@ -341,48 +368,7 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         cat dependency-check-results/summary.md >> $GITHUB_STEP_SUMMARY
 
-  auto-update-dependencies:
-    name: 🔄 Auto-Update Dependencies
-    runs-on: ubuntu-latest
-    if: github.event.inputs.force_update == 'true' || (github.event_name == 'schedule' && needs.dependency-security-check.outputs.outdated_gems == 'found')
-    needs: dependency-security-check
-    permissions:
-      contents: write
-
-    steps:
-    - name: 🏰 Checkout Repository
-      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: 🔧 Setup Ruby Environment
-      uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
-      with:
-        ruby-version: ${{ env.RUBY_VERSION }}
-        bundler-cache: true
-    
-    - name: 🔄 Update Dependencies
-      run: |
-        # Update to latest compatible versions
-        bundle update
-        
-        # Test that everything still works
-        bundle exec jekyll build --verbose
-    
-    - name: 💾 Commit Updates
-      run: |
-        if ! git diff --quiet Gemfile.lock; then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add Gemfile.lock
-          git commit -m "🔄 Auto-update Ruby dependencies [skip ci]
-
-          - Updated to latest compatible versions
-          - Verified build compatibility
-          - Automated by dependency checker workflow
-
-          Run ID: ${{ github.run_id }}"
-          git push
-        else
-          echo "No dependency updates needed"
-        fi
+  # NOTE: the former `auto-update-dependencies` job (scheduled `bundle update`
+  # → direct push of Gemfile.lock to main) was removed. Dependabot's `bundler`
+  # updates now solely own gem bumps (grouped + auto-merged), so the two no
+  # longer compete to rewrite Gemfile.lock. This workflow is now check-only.
