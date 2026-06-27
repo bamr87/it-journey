@@ -1,6 +1,6 @@
 # Generic `.zer0-bg-body > :not(...)` stacking rule causes 16px horizontal overflow on mobile
 
-**Repo:** `bamr87/zer0-mistakes`
+**Repo:** [bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes)
 **Severity:** Medium (mobile UX — every content page scrolls sideways)
 **Affects:** any page where `.obsidian-local-graph-fab` is rendered (i.e. not `display:none`)
 

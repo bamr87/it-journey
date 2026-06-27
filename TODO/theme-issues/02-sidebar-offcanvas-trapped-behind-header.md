@@ -1,6 +1,6 @@
 # Sidebar offcanvas (`#bdSidebar`) opens behind the fixed header on mobile — close button unreachable
 
-**Repo:** `bamr87/zer0-mistakes`
+**Repo:** [bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes)
 **Severity:** High (mobile UX — the sidebar nav cannot be closed by tapping ×)
 **Affects:** any layout that renders the `#bdSidebar` offcanvas inside `<main>`
 
