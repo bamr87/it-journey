@@ -1,0 +1,36 @@
+# =============================================================================
+# ai.yml — the ONE place AI is configured for the whole repo
+# -----------------------------------------------------------------------------
+# Everything that calls a model — every workflow agent step and every skill —
+# goes through scripts/ai/run.sh, which reads this file. Primary path is Claude
+# Code (the `claude` CLI / agent, authenticated by CLAUDE_CODE_OAUTH_TOKEN); if
+# it is unavailable or fails, run.sh falls back to the Claude API
+# (scripts/ai/api_call.py, via scripts/lib/ai_client.py). Change the model or
+# budget here and it changes everywhere.
+#
+# Auth is NOT set here (a token is a secret, never committed): provide EITHER
+# CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`; subscription auth, the
+# preferred CI credential) OR ANTHROPIC_API_KEY in the environment. run.sh
+# prefers the OAuth token for the Claude Code path; the API fallback can only
+# use ANTHROPIC_API_KEY.
+#
+# Mirrors lifehacker.dev's _data/ai.yml so the two sibling sites share one
+# agentic convention.
+# =============================================================================
+provider: anthropic
+
+# The model Claude Code uses (claude -p --model) AND the default for the API
+# fallback. Default to the most capable model; switch to a cheaper one
+# (claude-sonnet-4-6 / claude-haiku-4-5) here, once, if cost matters.
+model: claude-opus-4-8
+
+# The model the API fallback uses when it differs from the primary.
+# Defaults to `model` when unset.
+fallback_model: claude-opus-4-8
+
+# Per-call output ceiling for the API fallback.
+max_tokens: 8000
+
+# Claude API wire details (rarely changed).
+api_version: "2023-06-01"
+api_base: https://api.anthropic.com

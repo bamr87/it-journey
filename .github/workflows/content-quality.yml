@@ -1,0 +1,92 @@
+# =============================================================================
+# content-quality.yml — deterministic brand/voice gate on content PRs
+# -----------------------------------------------------------------------------
+# The cheap, always-on half of "minimize drift": a plain scanner (no AI, no auth,
+# no cost) checks every changed page against _data/brand/glossary.yml and posts a
+# summary. SPELLING drift (Github -> GitHub, jekyll -> Jekyll) FAILS the check —
+# so it blocks the content auto-merge until fixed. HYPE terms (comprehensive,
+# powerful, …) are reported as advice, not a hard failure (the content-reviewer
+# agent rewrites those).
+#
+# This replaces the old "AI Content Review" workflow, which used heuristic scoring
+# to file a per-collection advisory ISSUE on every push (the issue spam). Real
+# improvement now happens in PRs (content-factory + content-review); this is just
+# the fast objective gate.
+#
+# Runs on `pull_request` (safe, read-only) so it also covers fork PRs.
+# =============================================================================
+name: ✒️ Content Quality (brand gate)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'pages/**/*.md'
+      - 'pages/**/*.markdown'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: content-quality-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  brand-gate:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BASE: ${{ github.event.pull_request.base.sha }}
+      HEAD: ${{ github.event.pull_request.head.sha }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Python tooling
+        run: pip install pyyaml
+
+      - name: Brand-lint the changed pages
+        id: lint
+        run: |
+          mapfile -t files < <(git diff --name-only "$BASE" "$HEAD" \
+            | grep -E '^pages/.*\.(md|markdown)$' || true)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "no changed content files." | tee report.txt
+            echo "spelling=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Full report (never fails) for the comment...
+          python3 scripts/ci/brand_lint.py "${files[@]}" --warn-only --json brand.json | tee report.txt || true
+          spelling=$(python3 -c "import json;print(json.load(open('brand.json')).get('spelling',0))" 2>/dev/null || echo 0)
+          echo "spelling=$spelling" >> "$GITHUB_OUTPUT"
+
+      - name: Comment the brand report
+        if: ${{ always() }}
+        run: |
+          {
+            echo "### ✒️ Content quality — brand gate"
+            echo ""
+            echo '```'
+            cat report.txt
+            echo '```'
+            if [ "${{ steps.lint.outputs.spelling }}" != "0" ]; then
+              echo ""
+              echo "❌ **Spelling drift blocks auto-merge.** Fix the \`preferred\` spellings above (or let the content-reviewer agent do it)."
+            fi
+          } > body.md
+          gh pr comment "$PR" --body-file body.md || true
+
+      - name: Fail on spelling drift (blocks auto-merge)
+        run: |
+          if [ "${{ steps.lint.outputs.spelling }}" != "0" ]; then
+            echo "::error::${{ steps.lint.outputs.spelling }} spelling-drift finding(s) — see the brand report comment."
+            exit 1
+          fi
+          echo "brand gate clean ✅"

@@ -1,0 +1,87 @@
+# =============================================================================
+# agent-audit.yml — periodic drift audit of the AI fleet itself
+# -----------------------------------------------------------------------------
+# Weekly (when enabled), the agent-auditor reviews .claude/agents, .claude/skills,
+# and the AI workflows against the live repo: stale paths, contradictory rules,
+# over-broad tool scopes, missing references. It opens ONE small tightening PR if
+# the fleet has drifted, or nothing if it's sound. It never weakens a guardrail
+# and never disables a kill switch.
+#
+# This is the meta half of "minimize drift": the content gates keep PAGES on-brand;
+# this keeps the AGENTS honest about the repo they operate on.
+#
+# OFF by default behind AGENT_AUDIT_ENABLED + Claude auth.
+# =============================================================================
+name: 🔍 Agent Audit
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'    # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: agent-audit
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+    steps:
+      - id: check
+        env:
+          ENABLED: ${{ vars.AGENT_AUDIT_ENABLED }}
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "agent audit is off (AGENT_AUDIT_ENABLED != true, or no Claude auth) — idle."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  audit:
+    needs: gate
+    if: ${{ needs.gate.outputs.go == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Python tooling
+        run: pip install pyyaml
+
+      - name: Audit the fleet (agent-auditor)
+        uses: ./.github/actions/claude-run
+        with:
+          agent: agent-auditor
+          prompt: >-
+            Audit the IT-Journey AI fleet for drift. Inventory .claude/agents/*.md,
+            .claude/skills/*/SKILL.md, the content-*.yml + agent-audit.yml workflows,
+            and the runner (scripts/ai/run.sh, .github/actions/claude-run,
+            _data/ai.yml). Verify every quoted path, make target, label, collection
+            name, and model is accurate against the live repo; that each workflow's
+            prompt agrees with its agent's hard rules and the skill it delegates to;
+            and that each agent's tools list is least-privilege. Apply the SMALLEST
+            edits that fix real, verified drift, then open ONE PR on a branch
+            'chore/agent-audit', label 'auto:agents', summarizing what drifted. If
+            everything is sound, open NO PR and exit cleanly. Never weaken a
+            guardrail, never disable a kill switch, never edit site content.
+          tools: "Bash,Read,Write,Edit,Grep,Glob"
+          system: "You are the IT-Journey agent-auditor. Tighten the fleet's accuracy and least-privilege; one small PR or none. Never weaken a guardrail or disable a kill switch."
