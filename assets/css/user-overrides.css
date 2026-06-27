@@ -218,6 +218,24 @@ footer a { color: var(--zer0-color-link); }
   html, body { overflow-x: clip; }
 }
 
+/* ---- mobile: make the sidebar offcanvas closable -------------------------- */
+/* `#bdSidebar` (the docs/quest sidebar nav) is nested inside <main>, which the
+   theme's stacking rule gives `z-index: 1`. That traps the offcanvas — even at
+   its own `z-index: 1045` — inside main's stacking context, *below* the fixed
+   site header (a body-level child at z-index 1030). On mobile the offcanvas
+   therefore opens behind the header: its title bar and × close button are
+   hidden under the navbar, so a touch user has no visible way to close it.
+   (The main-nav offcanvas `#bdNavbar` is unaffected — it lives in the header,
+   not in <main>.) Drop the open offcanvas below the header so its close control
+   is reachable; 62px matches the theme's `body { padding-top }` header offset. */
+@media (max-width: 991.98px) {
+  :root { --itj-header-height: 62px; }
+  #bdSidebar.offcanvas-lg.show {
+    top: var(--itj-header-height);
+    height: calc(100% - var(--itj-header-height));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card, .btn-primary { transition: none !important; }
 }
