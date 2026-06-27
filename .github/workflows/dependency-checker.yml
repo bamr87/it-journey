@@ -14,19 +14,8 @@ on:
   schedule:
     - cron: '0 7 * * 1'  # Every Monday at 7 AM UTC (staggered from link-checker)
   
-  # Manual trigger
+  # Manual trigger (run the checks on demand)
   workflow_dispatch:
-    inputs:
-      force_update:
-        description: 'Force update outdated dependencies'
-        required: false
-        default: false
-        type: boolean
-      security_only:
-        description: 'Only check for security vulnerabilities'
-        required: false
-        default: false
-        type: boolean
 
 permissions:
   contents: read
@@ -46,8 +35,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    outputs:
-      outdated_gems: ${{ steps.ruby_check.outputs.outdated_gems }}
 
     steps:
     - name: 🏰 Checkout Repository
@@ -381,48 +368,7 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         cat dependency-check-results/summary.md >> $GITHUB_STEP_SUMMARY
 
-  auto-update-dependencies:
-    name: 🔄 Auto-Update Dependencies
-    runs-on: ubuntu-latest
-    if: github.event.inputs.force_update == 'true' || (github.event_name == 'schedule' && needs.dependency-security-check.outputs.outdated_gems == 'found')
-    needs: dependency-security-check
-    permissions:
-      contents: write
-
-    steps:
-    - name: 🏰 Checkout Repository
-      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: 🔧 Setup Ruby Environment
-      uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
-      with:
-        ruby-version: ${{ env.RUBY_VERSION }}
-        bundler-cache: true
-    
-    - name: 🔄 Update Dependencies
-      run: |
-        # Update to latest compatible versions
-        bundle update
-        
-        # Test that everything still works
-        bundle exec jekyll build --verbose
-    
-    - name: 💾 Commit Updates
-      run: |
-        if ! git diff --quiet Gemfile.lock; then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add Gemfile.lock
-          git commit -m "🔄 Auto-update Ruby dependencies [skip ci]
-
-          - Updated to latest compatible versions
-          - Verified build compatibility
-          - Automated by dependency checker workflow
-
-          Run ID: ${{ github.run_id }}"
-          git push
-        else
-          echo "No dependency updates needed"
-        fi
+  # NOTE: the former `auto-update-dependencies` job (scheduled `bundle update`
+  # → direct push of Gemfile.lock to main) was removed. Dependabot's `bundler`
+  # updates now solely own gem bumps (grouped + auto-merged), so the two no
+  # longer compete to rewrite Gemfile.lock. This workflow is now check-only.
