@@ -1,16 +1,15 @@
 name: 🔍 Dependency Security & Build Checker
 
 on:
-  # Run on dependency changes
+  # Run only when the dependency definitions actually change. (Previously this
+  # also fired on every _config.yml / Dockerfile / .github/workflows/** push,
+  # which spawned a fresh "Critical" issue on unrelated workflow edits.)
   push:
     branches: [ main, master ]
     paths:
       - 'Gemfile'
       - 'Gemfile.lock'
-      - '_config.yml'
-      - 'Dockerfile'
-      - '.github/workflows/**'
-  
+
   # Weekly scheduled dependency check
   schedule:
     - cron: '0 7 * * 1'  # Every Monday at 7 AM UTC (staggered from link-checker)
@@ -102,20 +101,31 @@ jobs:
         echo "" >> dependency-check-results/summary.md
         echo "### Security Vulnerabilities:" >> dependency-check-results/summary.md
         
-        # Check for security vulnerabilities (Gemfile.lock now exists from bundle install above)
-        if bundle-audit check --format json > dependency-check-results/security-audit.json 2>&1; then
+        # Check for security vulnerabilities (Gemfile.lock now exists from bundle
+        # install above). Keep stdout (JSON) and stderr (DB-update / parse
+        # warnings) SEPARATE — mixing them with 2>&1 corrupts the JSON, and
+        # bundle-audit also exits non-zero for benign findings like insecure
+        # sources. So decide from the parsed results, not the exit code: only a
+        # real `unpatched_gem` advisory counts as a vulnerability. (This is what
+        # was filing empty-detail "Critical" false positives on every run.)
+        bundle-audit check --format json \
+          > dependency-check-results/security-audit.json \
+          2> dependency-check-results/security-audit.err || true
+
+        vuln_count=$(jq '[.results[]? | select(.type == "unpatched_gem")] | length' \
+          dependency-check-results/security-audit.json 2>/dev/null || echo 0)
+
+        if [ "${vuln_count:-0}" -gt 0 ]; then
+          echo "❌ ${vuln_count} security vulnerability(ies) detected!" >> dependency-check-results/summary.md
+          echo "security_issues=true" >> $GITHUB_OUTPUT
+          echo '```json' >> dependency-check-results/summary.md
+          jq '[.results[]? | select(.type == "unpatched_gem")]' \
+            dependency-check-results/security-audit.json >> dependency-check-results/summary.md 2>/dev/null \
+            || cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
+          echo '```' >> dependency-check-results/summary.md
+        else
           echo "✅ No security vulnerabilities found" >> dependency-check-results/summary.md
           echo "security_issues=false" >> $GITHUB_OUTPUT
-        else
-          echo "❌ Security vulnerabilities detected!" >> dependency-check-results/summary.md
-          echo "security_issues=true" >> $GITHUB_OUTPUT
-          
-          # Extract and format vulnerabilities
-          if [ -f dependency-check-results/security-audit.json ]; then
-            echo "```json" >> dependency-check-results/summary.md
-            cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
-            echo "```" >> dependency-check-results/summary.md
-          fi
         fi
         
         # Check for outdated gems
@@ -318,16 +328,46 @@ jobs:
         EOF
         
         cat dependency-check-results/summary.md >> issue_body.md
-        
-        # Create the issue
-        ISSUE_TITLE="🚨 Critical: Dependency/Build Issues - $(date -u +"%Y-%m-%d")"
-        
-        gh issue create \
-          --title "$ISSUE_TITLE" \
-          --body-file issue_body.md \
-          --label "critical,dependencies,security,automated" \
-          --assignee "${{ github.repository_owner }}"
-    
+
+        # Dedup: maintain ONE open issue instead of filing a new one each run.
+        # Stable title; reuse any existing open automated dependency issue
+        # (matches the old date-stamped ones too) by updating it in place.
+        ISSUE_TITLE="🚨 Dependency/Build Issues (automated)"
+        EXISTING=$(gh issue list --state open --label automated --label critical \
+          --json number,title \
+          --jq '[.[] | select(.title | test("Dependency/Build Issues"))] | .[0].number // empty')
+
+        if [ -n "$EXISTING" ]; then
+          gh issue edit "$EXISTING" --body-file issue_body.md
+          gh issue comment "$EXISTING" \
+            --body "🔁 Re-checked on $(date -u +"%Y-%m-%d") — issues still present (run ${{ github.run_id }})."
+          echo "Updated existing issue #$EXISTING"
+        else
+          gh issue create \
+            --title "$ISSUE_TITLE" \
+            --body-file issue_body.md \
+            --label "critical,dependencies,security,automated" \
+            --assignee "${{ github.repository_owner }}"
+        fi
+
+    - name: ✅ Auto-Close Resolved Issue
+      # When the latest check is fully green, close any open automated
+      # dependency issue so the tracker stays clean without manual triage.
+      if: steps.ruby_check.outputs.security_issues != 'true' && steps.jekyll_check.outputs.jekyll_build != 'failed'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        EXISTING=$(gh issue list --state open --label automated --label critical \
+          --json number,title \
+          --jq '[.[] | select(.title | test("Dependency/Build Issues"))] | .[0].number // empty')
+        if [ -n "$EXISTING" ]; then
+          gh issue close "$EXISTING" \
+            --comment "✅ Resolved automatically — the latest dependency/build check is green (run ${{ github.run_id }})."
+          echo "Closed resolved issue #$EXISTING"
+        else
+          echo "No open automated dependency issue to close."
+        fi
+
     - name: 📤 Upload Detailed Results
       uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
       with:
