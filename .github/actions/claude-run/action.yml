@@ -1,0 +1,65 @@
+# =============================================================================
+# claude-run — the universal AI step (Claude Code first, Claude API fallback)
+# -----------------------------------------------------------------------------
+# Every workflow that needs a model uses THIS action instead of hand-rolling an
+# `npm install` + `claude -p` block, so the install, the model, the auth, and
+# the fallback are configured in one place (scripts/ai/run.sh + _data/ai.yml).
+# Installs Claude Code (best-effort), then runs scripts/ai/run.sh; if Claude
+# Code is missing or fails, run.sh falls back to the Claude API.
+#
+# The caller must provide auth in the job env: EITHER a Claude Code OAuth token
+# (CLAUDE_CODE_OAUTH_TOKEN, from `claude setup-token` — drives the primary Claude
+# Code path) OR an ANTHROPIC_API_KEY (works for both the primary path and the
+# API fallback). With only the OAuth token the fallback is unavailable, which is
+# fine — the primary path is what runs. With NO auth at all, this step is a clean
+# no-op (exit 0), so every AI workflow degrades gracefully when the key is unset.
+#
+# Ported from lifehacker.dev/.github/actions/claude-run so the sibling sites
+# share one agentic convention.
+# =============================================================================
+name: claude-run
+description: Run an AI step via Claude Code, falling back to the Claude API.
+inputs:
+  prompt:
+    description: The instruction for the agent.
+    required: true
+  agent:
+    description: Run AS a named agent (.claude/agents/<name>.md) — its system prompt, tools, and constraints. The single source of truth for a role.
+    default: ""
+  tools:
+    description: Comma-separated --allowedTools for Claude Code (ignored by the API fallback).
+    default: ""
+  mcp:
+    description: Path to an MCP config JSON for Claude Code.
+    default: ""
+  system:
+    description: System prompt appended to the agent (and used by the API fallback).
+    default: ""
+  out:
+    description: Write the result to this file instead of stdout.
+    default: ""
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        PROMPT: ${{ inputs.prompt }}
+        AGENT: ${{ inputs.agent }}
+        TOOLS: ${{ inputs.tools }}
+        MCP: ${{ inputs.mcp }}
+        SYSTEM: ${{ inputs.system }}
+        OUT: ${{ inputs.out }}
+      run: |
+        if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+          echo "::warning::no Claude auth (CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY) — AI step is a no-op."
+          exit 0
+        fi
+        npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 \
+          || echo "::warning::Claude Code install failed — using the Claude API fallback."
+        args=(--prompt "$PROMPT")
+        [ -n "$AGENT" ]  && args+=(--agent "$AGENT")
+        [ -n "$TOOLS" ]  && args+=(--tools "$TOOLS")
+        [ -n "$MCP" ]    && args+=(--mcp "$MCP")
+        [ -n "$SYSTEM" ] && args+=(--system "$SYSTEM")
+        [ -n "$OUT" ]    && args+=(--out "$OUT")
+        bash scripts/ai/run.sh "${args[@]}"
