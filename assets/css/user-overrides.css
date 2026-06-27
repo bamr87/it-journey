@@ -196,6 +196,28 @@ footer, .footer, .footer-powered-by {
 }
 footer a { color: var(--zer0-color-link); }
 
+/* ---- mobile: kill horizontal overflow ----------------------------------- */
+/* The theme's generic stacking rule
+   `.zer0-bg-body > :not(.fixed-top):not(.offcanvas):not(.modal)` carries
+   specificity (0,4,0) and overrode `.obsidian-local-graph-fab`'s intended
+   `position: fixed` (0,1,0). That dropped the local-graph FAB back into normal
+   flow as a full-width block shifted +16px right by its own `left: 1rem`
+   offset — producing 16px of horizontal scroll on every content page (most
+   visible on mobile). Restore the intended floating behaviour; `!important`
+   matches this file's convention and is needed to beat the theme rule. */
+.obsidian-local-graph-fab,
+.bd-toc-fab {
+  position: fixed !important;
+  width: auto !important;
+}
+
+/* Belt-and-suspenders: never let a stray full-bleed child force the page wider
+   than the viewport on small screens. `clip` (not `hidden`) avoids creating a
+   scroll container, so `position: sticky` headers/sidebars keep working. */
+@media (max-width: 991.98px) {
+  html, body { overflow-x: clip; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card, .btn-primary { transition: none !important; }
 }
