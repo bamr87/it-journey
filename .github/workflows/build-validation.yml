@@ -59,6 +59,53 @@ env:
   NODE_VERSION: '20'
 
 jobs:
+  # Cheap gate so the expensive jobs (Docker build, 3-OS cross-platform matrix)
+  # only run when their inputs actually changed. A content-only push to main no
+  # longer spins up Windows + macOS runners or a ~6-minute Docker build just to
+  # re-confirm dependency compatibility that didn't change.
+  detect-changes:
+    name: 🔎 Detect Changed Inputs
+    runs-on: ubuntu-latest
+    outputs:
+      deps: ${{ steps.filter.outputs.deps }}
+      docker: ${{ steps.filter.outputs.docker }}
+    steps:
+      - name: 🏰 Checkout Repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Compute changed file groups
+        id: filter
+        run: |
+          # Manual runs always exercise everything.
+          if [ "${{ github.event_name }}" != "push" ]; then
+            echo "deps=true" >> "$GITHUB_OUTPUT"
+            echo "docker=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          BASE="${{ github.event.before }}"
+          HEAD="${{ github.sha }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "${BASE}^{commit}" 2>/dev/null; then
+            CHANGED=$(git diff --name-only "${HEAD}~1" "${HEAD}" 2>/dev/null || echo "")
+          else
+            CHANGED=$(git diff --name-only "$BASE" "$HEAD" 2>/dev/null || echo "")
+          fi
+          echo "Changed files:"; echo "$CHANGED"
+
+          if echo "$CHANGED" | grep -qE '^(Gemfile|Gemfile\.lock)$'; then
+            echo "deps=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "deps=false" >> "$GITHUB_OUTPUT"
+          fi
+          if echo "$CHANGED" | grep -qE '^(Dockerfile|docker-compose\.yml|Gemfile|Gemfile\.lock)$'; then
+            echo "docker=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "docker=false" >> "$GITHUB_OUTPUT"
+          fi
+
   jekyll-build-test:
     name: 🏗️ Jekyll Build Test
     runs-on: ubuntu-latest
@@ -168,9 +215,12 @@ jobs:
   docker-build-test:
     name: 🐳 Docker Build Test
     runs-on: ubuntu-latest
+    needs: detect-changes
+    # Only build the image on manual runs or when Docker/dependency inputs change.
     if: |
       github.event.inputs.test_docker != 'false' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'push' && needs.detect-changes.outputs.docker == 'true'))
 
     steps:
     - name: 🏰 Checkout Repository
@@ -237,7 +287,12 @@ jobs:
 
   cross-platform-validation:
     name: 🌐 Cross-Platform Validation
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: detect-changes
+    # Windows + macOS runners are costly; only verify cross-platform Ruby/Jekyll
+    # compatibility when the Gemfile changes or on a manual run.
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && needs.detect-changes.outputs.deps == 'true')
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

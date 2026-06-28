@@ -34,7 +34,7 @@ jobs:
           REPO_URL: https://github.com/${{ github.repository }}/issues/
           GITHUB_WORKSPACE: ${{ github.workspace }}
         run: |
-          python script/append_feature.py
+          python scripts/development/content/append_feature.py
 
       - name: Build commit message
         id: commit_msg
