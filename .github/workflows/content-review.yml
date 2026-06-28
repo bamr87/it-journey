@@ -1,0 +1,102 @@
+# =============================================================================
+# content-review.yml — agentic editorial pass on content PRs
+# -----------------------------------------------------------------------------
+# When a PR touches pages/** (the factory's own auto:content PRs, or a human's),
+# the content-reviewer agent reads the diff, judges it on correctness / voice /
+# reader value, applies small on-brand fixes to the branch, and surfaces bigger
+# ideas as PR comments. It never merges.
+#
+# Trigger is `pull_request` (NOT _target): same-repo PRs (the factory + the owner)
+# get the auth + a writable token and run; FORK PRs receive no secrets, so the
+# claude-run step cleanly no-ops — untrusted code is never run with a token.
+# It does NOT run on `synchronize`, so the editor's own commit can't re-trigger it.
+#
+# OFF by default behind CONTENT_REVIEW_ENABLED + Claude auth.
+# =============================================================================
+name: 📝 Content Review
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+    paths:
+      - 'pages/**/*.md'
+      - 'pages/**/*.markdown'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: content-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+    steps:
+      - id: check
+        env:
+          ENABLED: ${{ vars.CONTENT_REVIEW_ENABLED }}
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "content review is off (CONTENT_REVIEW_ENABLED != true, or no Claude auth, or fork PR without secrets) — idle."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  review:
+    needs: gate
+    if: ${{ needs.gate.outputs.go == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+    steps:
+      # Check out the PR's head branch so edits push back to it (same-repo only;
+      # forks already no-op at the gate for lack of secrets).
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Python tooling
+        run: pip install pyyaml requests
+
+      - name: Configure git identity for editorial commits
+        run: |
+          git config user.name "itj-content-reviewer[bot]"
+          git config user.email "bot@it-journey.dev"
+
+      - name: Editorial pass (content-reviewer agent)
+        uses: ./.github/actions/claude-run
+        with:
+          agent: content-reviewer
+          prompt: >-
+            Run one editorial pass on PR #${{ env.PR_NUMBER }}. Use `gh pr diff
+            ${{ env.PR_NUMBER }}` to read only the changed files. Judge them on
+            correctness/completeness, voice (load the brand-voice skill; run
+            `python3 scripts/ci/brand_lint.py <files>` and leave it clean), and
+            reader value. Apply small on-brand fixes directly to this branch and
+            commit + push them (re-run `make content-audit` so the branch stays
+            green). Surface any bigger restructuring idea as ONE specific PR comment
+            via `gh pr comment ${{ env.PR_NUMBER }}`. If nothing needs changing,
+            comment "looks good — on voice, links check out". Never merge. Content
+            only — never edit .github, .claude, scripts, _config, _data/brand, .cms.
+          tools: "Bash,Read,Write,Edit,Grep,Glob"
+          system: "You are the IT-Journey content reviewer. One editorial pass: improve on-brand (zer0 -> her0), push small fixes, comment the big ideas. Never merge. Content only."

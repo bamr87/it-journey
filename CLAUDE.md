@@ -44,6 +44,30 @@ locally and the daily CI workflow (`.github/workflows/cms-daily-loop.yml`).
 The future VS Code CMS extension (separate repo) reads `.cms/` too; see
 `docs/cms/EXTENSION_DESIGN.md` for the contract.
 
+## The AI content fleet (Claude-Code-OAuth, on-brand, continuous)
+
+The substantive (Lane B) half of the CMS is executed by a **fleet of Claude Code
+agents** modeled on lifehacker.dev. All AI goes through one runner
+(`scripts/ai/run.sh` + `_data/ai.yml` + the `.github/actions/claude-run` step),
+authenticated by a `CLAUDE_CODE_OAUTH_TOKEN` secret. Roles are in
+`.claude/agents/*.md`; the `content-curator` skill composes the existing
+`cms-curator` + `brand-voice` skills. See **`scripts/ai/README.md`** for the full
+map and setup.
+
+- `content-factory.yml` (daily) — `content-curator` improves one page per
+  collection from the `.cms` worklist → one `auto:content` PR each.
+- `content-review.yml` (content PR) — `content-reviewer` editorial pass.
+- `content-quality.yml` — deterministic `scripts/ci/brand_lint.py` gate; **spelling
+  drift fails the check** (blocks auto-merge).
+- `content-auto-merge.yml` — smuggle-guard (`classify_changes.py`, content-only) +
+  checks-green → squash-merge.
+- `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
+
+**OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the
+auth secret, so nothing runs until you add `CLAUDE_CODE_OAUTH_TOKEN` and flip the
+variables. The old heuristic `ai-content-review.yml` (per-collection advisory
+issue spam) was **replaced** by this fleet + the deterministic brand gate.
+
 ## Essential commands
 
 ```bash
@@ -74,6 +98,15 @@ Host Ruby cannot build this site (the `jekyll-theme-zer0` gem ≥1.21 needs Ruby
   `source_repo`/`source_url` frontmatter is synced, never rewritten.
 - **Validate before you push.** `make build-ci` + `make content-audit` (+ `make
   quest-audit` if quests changed) must pass.
+- **UI/UX changes ship with before/after screenshots.** Any change that alters
+  rendered layout, styling, or interaction (CSS/SCSS, templates/includes, nav,
+  JS that affects the DOM) must include **before** and **after** screenshots in
+  the PR — at minimum a **mobile** viewport (≈390px), plus desktop when the
+  change affects it. Capture them by driving the running site (see the
+  `run-it-journey` skill); a labeled side-by-side comparison is preferred.
+  Commit the images under `TODO/screenshots/` (build-excluded) and embed them in
+  the PR body. State what to look for, and call out that no other viewport
+  regressed.
 
 ## Repo map (quick)
 

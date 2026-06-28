@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
+        uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
@@ -47,13 +47,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y tree
 
       - name: Make update script executable
-        run: chmod +x scripts/update-settings.sh
+        run: chmod +x scripts/deployment/update-settings.sh
 
       - name: Run update settings script
         run: |
           export SETTINGS_DIR="${{ env.SETTINGS_DIR }}"
           export CONFIG_FILE="${{ env.CONFIG_FILE }}"
-          ./scripts/update-settings.sh
+          ./scripts/deployment/update-settings.sh
 
       - name: Check for changes
         id: changes
@@ -88,7 +88,7 @@ jobs:
           echo "## Settings Update Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Update Method:" >> $GITHUB_STEP_SUMMARY
-          echo "- ✅ **Using modular script**: \`scripts/update-settings.sh\`" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Using modular script**: \`scripts/deployment/update-settings.sh\`" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ **DRY Principle**: Single source of truth for update logic" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ **Maintainable**: Logic centralized in reusable script" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

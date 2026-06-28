@@ -17,8 +17,8 @@ tags:
 - engineering
 author: IT-Journey Team
 draft: false
-date: 2026-05-17T00:00:00.000Z
-lastmod: 2026-06-25T00:00:00.000Z
+date: '2026-05-17T00:00:00.000Z'
+lastmod: '2026-06-25T00:00:00.000Z'
 toc: true
 toc_sticky: true
 keywords:

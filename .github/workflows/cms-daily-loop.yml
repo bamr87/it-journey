@@ -67,13 +67,13 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Ruby + Jekyll (for build-ci gate)
-        uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
+        uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Set up Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: '3.12'
 
@@ -214,14 +214,14 @@ jobs:
 
       - name: Set up Ruby + Jekyll
         if: steps.auth.outputs.ok == 'true'
-        uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
+        uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
       - name: Set up Python
         if: steps.auth.outputs.ok == 'true'
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: '3.12'
 

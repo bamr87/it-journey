@@ -1,0 +1,77 @@
+# =============================================================================
+# content-auto-merge.yml — hands-off merge of on-brand content PRs
+# -----------------------------------------------------------------------------
+# An `auto:content` PR whose checks are all green and whose diff is content-ONLY
+# squash-merges itself. Mirrors the Dependabot auto-merge discipline (wait for the
+# checks that actually run, then merge) plus lifehacker's SMUGGLE GUARD: the diff
+# is re-classified at merge time, so a content-labeled PR can never quietly carry
+# a workflow / dependency / brand-rule / AI-config change to main.
+#
+# Brand-cleanliness is NOT re-checked here — it is a required status check
+# (content-quality.yml runs brand_lint on the PR), so "all checks green" already
+# means on-brand. A failing check (build, frontmatter, brand) leaves the PR open.
+#
+# OFF by default behind CONTENT_AUTOMERGE_ENABLED. Add the `needs-human` label to
+# any PR to force manual review. Runs via pull_request_target but never checks out
+# or runs the PR's code — it only calls the GitHub API and our own base scripts.
+# =============================================================================
+name: 🤝 Content Auto-Merge
+
+on:
+  pull_request_target:
+    types: [labeled, opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+concurrency:
+  group: content-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge:
+    # Only `auto:content` PRs that aren't flagged for a human.
+    if: >-
+      vars.CONTENT_AUTOMERGE_ENABLED == 'true' &&
+      contains(github.event.pull_request.labels.*.name, 'auto:content') &&
+      !contains(github.event.pull_request.labels.*.name, 'needs-human')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      # Base checkout (default for pull_request_target) — gives us OUR scripts to
+      # run against the PR's file LIST (never the PR's code).
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Smuggle guard — diff must be content-only
+        run: |
+          if gh pr diff "$PR" --name-only | python3 scripts/ci/classify_changes.py --content-only; then
+            echo "content-only ✅"
+          else
+            echo "::warning::PR #$PR touches non-content paths — routing to a human."
+            gh pr edit "$PR" --add-label needs-human || true
+            gh pr comment "$PR" --body "🛑 Auto-merge declined: this \`auto:content\` PR also changes infra/config/deps. A human needs to review it (label \`needs-human\` added)." || true
+            exit 1
+          fi
+
+      - name: Wait for checks, then squash-merge
+        run: |
+          # Block until every check on the PR finishes; --fail-fast stops the moment
+          # one fails, so a build/frontmatter/brand failure never merges. Green here
+          # already implies on-brand (content-quality.yml is one of those checks).
+          if gh pr checks "$PR" --watch --fail-fast --interval 30; then
+            gh pr merge "$PR" --squash --delete-branch
+            echo "All checks green + content-only — merged ✅"
+          else
+            echo "A check failed — leaving PR #$PR open for review."
+            gh pr edit "$PR" --add-label ci-failed || true
+            exit 1
+          fi

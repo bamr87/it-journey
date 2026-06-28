@@ -1,0 +1,139 @@
+# =============================================================================
+# content-factory.yml — daily autonomous, on-brand content improvement
+# -----------------------------------------------------------------------------
+# Each day (when enabled), runs ONE substantive improvement pass for every
+# content collection and opens one pull request each, labeled `auto:content` so
+# the content auto-merge gate can recognize it. It wraps the content-curator
+# agent + skill — the skill does the work (read .cms worklist + brand voice,
+# improve one file, verify, open the PR); this workflow just schedules and
+# parameterizes it per collection.
+#
+# This is the Lane B (substantive) executor the .cms worklist always lacked.
+# OFF by default behind CONTENT_FACTORY_ENABLED (a repo variable) + Claude auth.
+# It never merges — PRs flow into the normal content gate; content-auto-merge.yml
+# (also gated) decides. The matrix is the daily cap: at most one PR per collection.
+#
+# Setup: add a CLAUDE_CODE_OAUTH_TOKEN secret (`claude setup-token`), then set the
+# repo variable CONTENT_FACTORY_ENABLED=true. Until both exist, this idles.
+# =============================================================================
+name: 🏭 Content Factory
+
+on:
+  schedule:
+    - cron: '0 8 * * *'    # 08:00 UTC daily (before the 09:00 lifehacker run)
+  workflow_dispatch:
+    inputs:
+      collection:
+        description: 'Improve only this collection (blank = all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: content-factory
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+    steps:
+      - id: check
+        env:
+          ENABLED: ${{ vars.CONTENT_FACTORY_ENABLED }}
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "$ENABLED" = "true" ] && { [ -n "$OAUTH" ] || [ -n "$KEY" ]; }; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "content factory is off (CONTENT_FACTORY_ENABLED != true, or no CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY) — idle."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  improve:
+    needs: gate
+    if: ${{ needs.gate.outputs.go == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      # Serialize: the per-agent "check open auto:content PRs, then open one" dedup
+      # RACES if agents run in parallel (two could pick the same worklist item
+      # before either's PR exists). max-parallel:1 makes each agent see its
+      # siblings' already-open PRs, so dedup works.
+      max-parallel: 1
+      matrix:
+        collection: [quests, docs, notes, quickstart, about]
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # A PAT (contents+PRs, NO admin) so the agent can open PRs that ALSO trigger
+      # CI — GITHUB_TOKEN-authored PRs don't trigger workflows, so auto-merge would
+      # have no checks to wait on. Falls back to github.token (degrades to no-PR).
+      GH_TOKEN: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
+
+      - uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Python tooling
+        run: pip install pyyaml requests
+
+      - name: Skip collections not requested (manual single-collection runs)
+        id: scope
+        env:
+          ONLY: ${{ github.event.inputs.collection }}
+          THIS: ${{ matrix.collection }}
+        run: |
+          if [ -n "$ONLY" ] && [ "$ONLY" != "$THIS" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "skip $THIS (dispatch asked for '$ONLY' only)"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # NOT continue-on-error: a crashed run must show RED, not a silent green skip.
+      # The matrix is fail-fast:false, so one collection failing never kills others.
+      - name: Improve one ${{ matrix.collection }} and open a PR
+        if: ${{ steps.scope.outputs.run == 'true' }}
+        uses: ./.github/actions/claude-run
+        with:
+          agent: content-curator
+          prompt: >-
+            Use the content-curator skill to run ONE substantive, on-brand
+            improvement pass for the IT-Journey '${{ matrix.collection }}' collection.
+            Pick the lowest-health / most-drifted Lane B item for this collection from
+            today's .cms worklist (or the weakest existing page if Lane B is dry);
+            first run `gh pr list --state open --label auto:content --json title,headRefName`
+            and if your target already has an open PR, take the next one. Improve it
+            for real (prose, structure, frontmatter to CI constraints, brand_lint
+            clean), verify with `make content-audit` (and `make quest-data` +
+            `make quest-audit` for quests), then open exactly ONE pull request on a
+            branch, label it 'auto:content' and 'collection/${{ matrix.collection }}',
+            write the PR URL to pr-result.txt, and STOP. Never merge. Content only —
+            never edit .github, .claude, scripts, _config, _data/brand, .cms, or deps.
+          tools: "Bash,Read,Write,Edit,Grep,Glob"
+          system: "You are the IT-Journey content factory. Improve one page on-brand (zer0 -> her0) and open one PR. Never merge. Content only."
+
+      - name: Confirm a PR was opened (fail visibly if the agent didn't)
+        if: ${{ steps.scope.outputs.run == 'true' }}
+        run: |
+          if [ -s pr-result.txt ]; then
+            echo "opened: $(cat pr-result.txt)"
+          else
+            echo "::warning::content-factory ${{ matrix.collection }}: no PR opened (worklist dry, all candidates already have PRs, or a build issue — see the agent log)."
+          fi

@@ -1,33 +1,21 @@
-name: 🔍 Dependency Security & Build Checker
+name: 🔍 Dependency Security Checker
 
 on:
-  # Run on dependency changes
+  # Run only when the dependency definitions actually change. (Previously this
+  # also fired on every _config.yml / Dockerfile / .github/workflows/** push,
+  # which spawned a fresh "Critical" issue on unrelated workflow edits.)
   push:
     branches: [ main, master ]
     paths:
       - 'Gemfile'
       - 'Gemfile.lock'
-      - '_config.yml'
-      - 'Dockerfile'
-      - '.github/workflows/**'
-  
+
   # Weekly scheduled dependency check
   schedule:
     - cron: '0 7 * * 1'  # Every Monday at 7 AM UTC (staggered from link-checker)
-  
-  # Manual trigger
+
+  # Manual trigger (run the checks on demand)
   workflow_dispatch:
-    inputs:
-      force_update:
-        description: 'Force update outdated dependencies'
-        required: false
-        default: false
-        type: boolean
-      security_only:
-        description: 'Only check for security vulnerabilities'
-        required: false
-        default: false
-        type: boolean
 
 permissions:
   contents: read
@@ -38,17 +26,20 @@ concurrency:
 
 env:
   RUBY_VERSION: '3.2'
-  NODE_VERSION: '20'
 
 jobs:
+  # Scope is intentionally security + dependency hygiene ONLY. Jekyll and Docker
+  # build compatibility used to live here too, but that duplicated
+  # build-validation.yml (which builds both on every push to main and on PRs
+  # that touch build inputs) — so on a Gemfile change BOTH workflows ran a full
+  # ~10-minute Jekyll+Docker build. Build coverage now lives solely in
+  # build-validation.yml; this workflow is the lean security/audit gate.
   dependency-security-check:
-    name: 🛡️ Security & Compatibility Analysis
+    name: 🛡️ Security & Dependency Hygiene
     runs-on: ubuntu-latest
     permissions:
       contents: read
       issues: write
-    outputs:
-      outdated_gems: ${{ steps.ruby_check.outputs.outdated_gems }}
 
     steps:
     - name: 🏰 Checkout Repository
@@ -56,31 +47,26 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: 🔧 Setup Ruby Environment
-      uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
+      uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
       with:
         ruby-version: ${{ env.RUBY_VERSION }}
         bundler-cache: false  # We'll handle caching manually to detect issues
-    
-    - name: 🔧 Setup Node.js Environment
-      uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    
+
     - name: 📊 Create Results Directory
       run: |
         mkdir -p dependency-check-results
         echo "Check started at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" > dependency-check-results/summary.md
-    
+
     - name: 🔍 Check Ruby Dependencies
       id: ruby_check
       run: |
         echo "## 💎 Ruby Dependency Analysis" >> dependency-check-results/summary.md
         echo "" >> dependency-check-results/summary.md
-        
+
         echo "### Dependency Status:" >> dependency-check-results/summary.md
-        
+
         # Install dependencies first so Gemfile.lock exists for security audit
         if bundle install 2>&1 | tee dependency-check-results/bundle-install.log; then
           echo "✅ Bundle install successful" >> dependency-check-results/summary.md
@@ -92,32 +78,43 @@ jobs:
           tail -20 dependency-check-results/bundle-install.log >> dependency-check-results/summary.md
           echo "```" >> dependency-check-results/summary.md
         fi
-        
+
         # Install bundler-audit for security checking
         gem install bundler-audit
-        
+
         # Update vulnerability database
         bundle-audit update
-        
+
         echo "" >> dependency-check-results/summary.md
         echo "### Security Vulnerabilities:" >> dependency-check-results/summary.md
-        
-        # Check for security vulnerabilities (Gemfile.lock now exists from bundle install above)
-        if bundle-audit check --format json > dependency-check-results/security-audit.json 2>&1; then
+
+        # Check for security vulnerabilities (Gemfile.lock now exists from bundle
+        # install above). Keep stdout (JSON) and stderr (DB-update / parse
+        # warnings) SEPARATE — mixing them with 2>&1 corrupts the JSON, and
+        # bundle-audit also exits non-zero for benign findings like insecure
+        # sources. So decide from the parsed results, not the exit code: only a
+        # real `unpatched_gem` advisory counts as a vulnerability. (This is what
+        # was filing empty-detail "Critical" false positives on every run.)
+        bundle-audit check --format json \
+          > dependency-check-results/security-audit.json \
+          2> dependency-check-results/security-audit.err || true
+
+        vuln_count=$(jq '[.results[]? | select(.type == "unpatched_gem")] | length' \
+          dependency-check-results/security-audit.json 2>/dev/null || echo 0)
+
+        if [ "${vuln_count:-0}" -gt 0 ]; then
+          echo "❌ ${vuln_count} security vulnerability(ies) detected!" >> dependency-check-results/summary.md
+          echo "security_issues=true" >> $GITHUB_OUTPUT
+          echo '```json' >> dependency-check-results/summary.md
+          jq '[.results[]? | select(.type == "unpatched_gem")]' \
+            dependency-check-results/security-audit.json >> dependency-check-results/summary.md 2>/dev/null \
+            || cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
+          echo '```' >> dependency-check-results/summary.md
+        else
           echo "✅ No security vulnerabilities found" >> dependency-check-results/summary.md
           echo "security_issues=false" >> $GITHUB_OUTPUT
-        else
-          echo "❌ Security vulnerabilities detected!" >> dependency-check-results/summary.md
-          echo "security_issues=true" >> $GITHUB_OUTPUT
-          
-          # Extract and format vulnerabilities
-          if [ -f dependency-check-results/security-audit.json ]; then
-            echo "```json" >> dependency-check-results/summary.md
-            cat dependency-check-results/security-audit.json >> dependency-check-results/summary.md
-            echo "```" >> dependency-check-results/summary.md
-          fi
         fi
-        
+
         # Check for outdated gems
         echo "" >> dependency-check-results/summary.md
         echo "### Outdated Dependencies:" >> dependency-check-results/summary.md
@@ -131,97 +128,17 @@ jobs:
           cat dependency-check-results/outdated-gems.txt >> dependency-check-results/summary.md
           echo "```" >> dependency-check-results/summary.md
         fi
-    
-    - name: 🔍 Check Jekyll Build Compatibility
-      id: jekyll_check
-      if: steps.ruby_check.outputs.bundle_install == 'success'
-      run: |
-        echo "" >> dependency-check-results/summary.md
-        echo "## 🏗️ Jekyll Build Compatibility" >> dependency-check-results/summary.md
-        echo "" >> dependency-check-results/summary.md
-        
-        # Test Jekyll build process
-        echo "### Build Test Results:" >> dependency-check-results/summary.md
-        
-        if timeout 300 bundle exec jekyll build --verbose --trace 2>&1 | tee dependency-check-results/jekyll-build.log; then
-          echo "✅ Jekyll build successful" >> dependency-check-results/summary.md
-          echo "jekyll_build=success" >> $GITHUB_OUTPUT
-          
-          # Check for warnings
-          if grep -i "warning\|error" dependency-check-results/jekyll-build.log; then
-            echo "⚠️ Build completed with warnings:" >> dependency-check-results/summary.md
-            echo "```" >> dependency-check-results/summary.md
-            grep -i "warning\|error" dependency-check-results/jekyll-build.log >> dependency-check-results/summary.md
-            echo "```" >> dependency-check-results/summary.md
-          fi
-        else
-          echo "❌ Jekyll build failed!" >> dependency-check-results/summary.md
-          echo "jekyll_build=failed" >> $GITHUB_OUTPUT
-          echo "```" >> dependency-check-results/summary.md
-          tail -50 dependency-check-results/jekyll-build.log >> dependency-check-results/summary.md
-          echo "```" >> dependency-check-results/summary.md
-        fi
-        
-        # Test configuration validation
-        echo "" >> dependency-check-results/summary.md
-        echo "### Configuration Validation:" >> dependency-check-results/summary.md
-        
-        if bundle exec jekyll doctor 2>&1 | tee dependency-check-results/jekyll-doctor.log; then
-          echo "✅ Configuration validation passed" >> dependency-check-results/summary.md
-        else
-          echo "⚠️ Configuration issues detected:" >> dependency-check-results/summary.md
-          echo "```" >> dependency-check-results/summary.md
-          cat dependency-check-results/jekyll-doctor.log >> dependency-check-results/summary.md
-          echo "```" >> dependency-check-results/summary.md
-        fi
-    
-    - name: 🔍 Check Docker Build Compatibility
-      id: docker_check
-      run: |
-        echo "" >> dependency-check-results/summary.md
-        echo "## 🐳 Docker Build Compatibility" >> dependency-check-results/summary.md
-        echo "" >> dependency-check-results/summary.md
-        
-        # Test Docker build
-        echo "### Docker Build Test:" >> dependency-check-results/summary.md
-        
-        if timeout 600 docker build -t it-journey-test . 2>&1 | tee dependency-check-results/docker-build.log; then
-          echo "✅ Docker build successful" >> dependency-check-results/summary.md
-          echo "docker_build=success" >> $GITHUB_OUTPUT
-          
-          # Clean up test image
-          docker rmi it-journey-test || true
-        else
-          echo "❌ Docker build failed!" >> dependency-check-results/summary.md
-          echo "docker_build=failed" >> $GITHUB_OUTPUT
-          echo "```" >> dependency-check-results/summary.md
-          tail -50 dependency-check-results/docker-build.log >> dependency-check-results/summary.md
-          echo "```" >> dependency-check-results/summary.md
-        fi
-    
-    - name: 🔍 Check GitHub Actions Compatibility
+
+    - name: 🔍 Check GitHub Actions Workflow Validity
       id: actions_check
       run: |
         echo "" >> dependency-check-results/summary.md
         echo "## ⚙️ GitHub Actions Compatibility" >> dependency-check-results/summary.md
         echo "" >> dependency-check-results/summary.md
-        
-        # Check for outdated actions
-        echo "### Action Version Analysis:" >> dependency-check-results/summary.md
-        
-        # Find all action versions
-        action_versions=$(grep -r "uses:" .github/workflows/ | grep -E "@v[0-9]" | sort | uniq)
-        
-        # Check for potential updates needed
-        echo "**Current Action Versions:**" >> dependency-check-results/summary.md
-        echo "```" >> dependency-check-results/summary.md
-        echo "$action_versions" >> dependency-check-results/summary.md
-        echo "```" >> dependency-check-results/summary.md
-        
-        # Basic validation of workflow files
-        echo "" >> dependency-check-results/summary.md
+
+        # Basic YAML validation of every workflow file
         echo "### Workflow Validation:" >> dependency-check-results/summary.md
-        
+
         workflow_errors=0
         for workflow in .github/workflows/*.yml; do
           if python3 -c "import yaml; yaml.safe_load(open('$workflow'))" 2>/dev/null; then
@@ -231,13 +148,13 @@ jobs:
             workflow_errors=$((workflow_errors + 1))
           fi
         done
-        
+
         if [ $workflow_errors -eq 0 ]; then
           echo "actions_valid=true" >> $GITHUB_OUTPUT
         else
           echo "actions_valid=false" >> $GITHUB_OUTPUT
         fi
-    
+
     - name: 📊 Generate Comprehensive Report
       run: |
         echo "" >> dependency-check-results/summary.md
@@ -247,142 +164,112 @@ jobs:
         echo "|-----------|--------|--------|" >> dependency-check-results/summary.md
         echo "| Security | ${{ steps.ruby_check.outputs.security_issues == 'false' && '✅ Clean' || '❌ Vulnerabilities' }} | ${{ steps.ruby_check.outputs.security_issues == 'true' && 'Security audit required' || 'None detected' }} |" >> dependency-check-results/summary.md
         echo "| Ruby Dependencies | ${{ steps.ruby_check.outputs.bundle_install == 'success' && '✅ Working' || '❌ Failed' }} | ${{ steps.ruby_check.outputs.outdated_gems == 'found' && 'Updates available' || 'Up to date' }} |" >> dependency-check-results/summary.md
-        echo "| Jekyll Build | ${{ steps.jekyll_check.outputs.jekyll_build == 'success' && '✅ Working' || '❌ Failed' }} | Build compatibility verified |" >> dependency-check-results/summary.md
-        echo "| Docker Build | ${{ steps.docker_check.outputs.docker_build == 'success' && '✅ Working' || '❌ Failed' }} | Container compatibility verified |" >> dependency-check-results/summary.md
         echo "| GitHub Actions | ${{ steps.actions_check.outputs.actions_valid == 'true' && '✅ Valid' || '❌ Issues' }} | Workflow syntax validated |" >> dependency-check-results/summary.md
         echo "" >> dependency-check-results/summary.md
-        
+        echo "> Build/Docker compatibility is validated by build-validation.yml." >> dependency-check-results/summary.md
+        echo "" >> dependency-check-results/summary.md
+
         # Generate recommendations
         echo "## 🚀 Recommendations" >> dependency-check-results/summary.md
         echo "" >> dependency-check-results/summary.md
-        
+
         if [ "${{ steps.ruby_check.outputs.security_issues }}" == "true" ]; then
           echo "🔴 **High Priority**: Security vulnerabilities detected - update dependencies immediately" >> dependency-check-results/summary.md
         fi
-        
+
         if [ "${{ steps.ruby_check.outputs.outdated_gems }}" == "found" ]; then
-          echo "🟡 **Medium Priority**: Outdated gems available - consider updating for latest features and bug fixes" >> dependency-check-results/summary.md
+          echo "🟡 **Medium Priority**: Outdated gems available - Dependabot will usually open these bumps automatically" >> dependency-check-results/summary.md
         fi
-        
-        if [ "${{ steps.jekyll_check.outputs.jekyll_build }}" == "failed" ]; then
-          echo "🔴 **High Priority**: Jekyll build failing - site deployment may be affected" >> dependency-check-results/summary.md
-        fi
-        
-        if [ "${{ steps.docker_check.outputs.docker_build }}" == "failed" ]; then
-          echo "🟡 **Medium Priority**: Docker build failing - containerized deployment unavailable" >> dependency-check-results/summary.md
-        fi
-        
+
         echo "" >> dependency-check-results/summary.md
         echo "---" >> dependency-check-results/summary.md
         echo "*Report generated on $(date -u +"%Y-%m-%d %H:%M:%S UTC") by IT-Journey Dependency Checker*" >> dependency-check-results/summary.md
-    
-    - name: 🚨 Create Issue for Critical Issues
-      if: steps.ruby_check.outputs.security_issues == 'true' || steps.jekyll_check.outputs.jekyll_build == 'failed'
+
+    - name: 🚨 Create Issue for Security Vulnerabilities
+      if: steps.ruby_check.outputs.security_issues == 'true'
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Create issue for critical problems
+        # Create issue for security problems
         cat > issue_body.md << 'EOF'
-        # 🚨 Critical Dependency/Build Issues Detected
-        
+        # 🚨 Security Vulnerability Detected in Dependencies
+
         This issue was automatically generated by the dependency checker workflow.
-        
-        ## 🔍 Issues Found
-        
+
+        ## 🛡️ Security Vulnerabilities
+
+        Security vulnerabilities have been detected in Ruby dependencies. This requires immediate attention.
+
         EOF
-        
-        if [ "${{ steps.ruby_check.outputs.security_issues }}" == "true" ]; then
-          echo "### 🛡️ Security Vulnerabilities" >> issue_body.md
-          echo "" >> issue_body.md
-          echo "Security vulnerabilities have been detected in Ruby dependencies. This requires immediate attention." >> issue_body.md
-          echo "" >> issue_body.md
-          if [ -f dependency-check-results/security-audit.json ]; then
-            echo "**Details:**" >> issue_body.md
-            echo "```json" >> issue_body.md
-            cat dependency-check-results/security-audit.json >> issue_body.md
-            echo "```" >> issue_body.md
-          fi
+
+        if [ -f dependency-check-results/security-audit.json ]; then
+          echo "**Details:**" >> issue_body.md
+          echo "```json" >> issue_body.md
+          cat dependency-check-results/security-audit.json >> issue_body.md
+          echo "```" >> issue_body.md
           echo "" >> issue_body.md
         fi
-        
-        if [ "${{ steps.jekyll_check.outputs.jekyll_build }}" == "failed" ]; then
-          echo "### 🏗️ Build Failure" >> issue_body.md
-          echo "" >> issue_body.md
-          echo "Jekyll build is currently failing, which may prevent site deployment." >> issue_body.md
-          echo "" >> issue_body.md
-        fi
-        
+
         cat >> issue_body.md << 'EOF'
         ## 📋 Full Report
-        
+
         EOF
-        
+
         cat dependency-check-results/summary.md >> issue_body.md
-        
-        # Create the issue
-        ISSUE_TITLE="🚨 Critical: Dependency/Build Issues - $(date -u +"%Y-%m-%d")"
-        
-        gh issue create \
-          --title "$ISSUE_TITLE" \
-          --body-file issue_body.md \
-          --label "critical,dependencies,security,automated" \
-          --assignee "${{ github.repository_owner }}"
-    
+
+        # Dedup: maintain ONE open issue instead of filing a new one each run.
+        # Stable title; reuse any existing open automated dependency issue
+        # (matches the old date-stamped ones too) by updating it in place.
+        ISSUE_TITLE="🚨 Dependency Security Issues (automated)"
+        EXISTING=$(gh issue list --state open --label automated --label critical \
+          --json number,title \
+          --jq '[.[] | select(.title | test("Dependency.*Issues"))] | .[0].number // empty')
+
+        if [ -n "$EXISTING" ]; then
+          gh issue edit "$EXISTING" --body-file issue_body.md
+          gh issue comment "$EXISTING" \
+            --body "🔁 Re-checked on $(date -u +"%Y-%m-%d") — issues still present (run ${{ github.run_id }})."
+          echo "Updated existing issue #$EXISTING"
+        else
+          gh issue create \
+            --title "$ISSUE_TITLE" \
+            --body-file issue_body.md \
+            --label "critical,dependencies,security,automated" \
+            --assignee "${{ github.repository_owner }}"
+        fi
+
+    - name: ✅ Auto-Close Resolved Issue
+      # When the latest check is clean, close any open automated dependency
+      # issue so the tracker stays clean without manual triage.
+      if: steps.ruby_check.outputs.security_issues != 'true'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        EXISTING=$(gh issue list --state open --label automated --label critical \
+          --json number,title \
+          --jq '[.[] | select(.title | test("Dependency.*Issues"))] | .[0].number // empty')
+        if [ -n "$EXISTING" ]; then
+          gh issue close "$EXISTING" \
+            --comment "✅ Resolved automatically — the latest dependency security check is clean (run ${{ github.run_id }})."
+          echo "Closed resolved issue #$EXISTING"
+        else
+          echo "No open automated dependency issue to close."
+        fi
+
     - name: 📤 Upload Detailed Results
       uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
       with:
         name: dependency-check-results-${{ github.run_number }}
         path: dependency-check-results/
         retention-days: 30
-    
+
     - name: 📊 Summary
       run: |
-        echo "## 🔍 Dependency & Build Check Summary" >> $GITHUB_STEP_SUMMARY
+        echo "## 🔍 Dependency Security Check Summary" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         cat dependency-check-results/summary.md >> $GITHUB_STEP_SUMMARY
 
-  auto-update-dependencies:
-    name: 🔄 Auto-Update Dependencies
-    runs-on: ubuntu-latest
-    if: github.event.inputs.force_update == 'true' || (github.event_name == 'schedule' && needs.dependency-security-check.outputs.outdated_gems == 'found')
-    needs: dependency-security-check
-    permissions:
-      contents: write
-
-    steps:
-    - name: 🏰 Checkout Repository
-      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: 🔧 Setup Ruby Environment
-      uses: ruby/setup-ruby@89f90524b88a01fe6e0b732220432cc6142926af # v1
-      with:
-        ruby-version: ${{ env.RUBY_VERSION }}
-        bundler-cache: true
-    
-    - name: 🔄 Update Dependencies
-      run: |
-        # Update to latest compatible versions
-        bundle update
-        
-        # Test that everything still works
-        bundle exec jekyll build --verbose
-    
-    - name: 💾 Commit Updates
-      run: |
-        if ! git diff --quiet Gemfile.lock; then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add Gemfile.lock
-          git commit -m "🔄 Auto-update Ruby dependencies [skip ci]
-
-          - Updated to latest compatible versions
-          - Verified build compatibility
-          - Automated by dependency checker workflow
-
-          Run ID: ${{ github.run_id }}"
-          git push
-        else
-          echo "No dependency updates needed"
-        fi
+  # NOTE: the former `auto-update-dependencies` job (scheduled `bundle update`
+  # → direct push of Gemfile.lock to main) was removed. Dependabot's `bundler`
+  # updates now solely own gem bumps (grouped + auto-merged), so the two no
+  # longer compete to rewrite Gemfile.lock. This workflow is now check-only.
