@@ -47,13 +47,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y tree
 
       - name: Make update script executable
-        run: chmod +x scripts/update-settings.sh
+        run: chmod +x scripts/deployment/update-settings.sh
 
       - name: Run update settings script
         run: |
           export SETTINGS_DIR="${{ env.SETTINGS_DIR }}"
           export CONFIG_FILE="${{ env.CONFIG_FILE }}"
-          ./scripts/update-settings.sh
+          ./scripts/deployment/update-settings.sh
 
       - name: Check for changes
         id: changes
@@ -88,7 +88,7 @@ jobs:
           echo "## Settings Update Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Update Method:" >> $GITHUB_STEP_SUMMARY
-          echo "- ✅ **Using modular script**: \`scripts/update-settings.sh\`" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Using modular script**: \`scripts/deployment/update-settings.sh\`" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ **DRY Principle**: Single source of truth for update logic" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ **Maintainable**: Logic centralized in reusable script" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

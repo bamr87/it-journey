@@ -1,8 +1,11 @@
 name: Update Contributor Profiles
 
 on:
-  push:
-    branches: [main]
+  # Contributor stats are derived from the GitHub API and barely move between
+  # individual commits, so a per-push run was almost pure waste (one API sweep
+  # per merge to main). Refresh weekly instead, with on-demand dispatch.
+  schedule:
+    - cron: '0 5 * * 1'  # Every Monday at 5 AM UTC
   workflow_dispatch:
     inputs:
       username:
