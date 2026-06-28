@@ -225,14 +225,50 @@ footer a { color: var(--zer0-color-link); }
    site header (a body-level child at z-index 1030). On mobile the offcanvas
    therefore opens behind the header: its title bar and × close button are
    hidden under the navbar, so a touch user has no visible way to close it.
-   (The main-nav offcanvas `#bdNavbar` is unaffected — it lives in the header,
-   not in <main>.) Drop the open offcanvas below the header so its close control
-   is reachable; 62px matches the theme's `body { padding-top }` header offset. */
+   (The main-nav offcanvas `#bdNavbar` has a related but distinct failure —
+   see the next block.) Drop the open offcanvas below the header so its close
+   control is reachable; 62px matches the theme's `body { padding-top }`. */
 @media (max-width: 991.98px) {
   :root { --itj-header-height: 62px; }
   #bdSidebar.offcanvas-lg.show {
     top: var(--itj-header-height);
     height: calc(100% - var(--itj-header-height));
+  }
+}
+
+/* ---- mobile: make the main-nav offcanvas render ---------------------------- */
+/* `#bdNavbar` is the responsive navbar offcanvas (inline at ≥lg, a slide-in
+   panel below lg). On mobile it opened broken: the panel collapsed to the
+   navbar's height (~44px) with a transparent body, and — because it is nested
+   inside the fixed `header#navbar` (z-index 1030) while Bootstrap's
+   `.offcanvas-backdrop` is a body-level child at z-index 1040 — the whole menu
+   painted *behind* the backdrop. Net effect: tapping the menu showed the dimmed
+   page with no visible links. Two things are needed: (1) force the panel to a
+   real full-height, opaque, scrollable offcanvas; (2) lift the header that
+   contains it above the backdrop, but only while the menu is open (`:has()`),
+   so nothing else is affected. */
+@media (max-width: 991.98px) {
+  #bdNavbar.offcanvas-lg.show {
+    position: fixed !important;
+    inset: 0 0 0 auto !important;            /* top/right/bottom 0, left auto */
+    height: 100dvh !important;
+    width: var(--bs-offcanvas-width, min(21rem, 86vw)) !important;
+    background-color: var(--zer0-color-bg, #0b0a1e) !important;
+    transform: none !important;
+    z-index: 1046 !important;
+    flex-direction: column !important;
+  }
+  #bdNavbar.offcanvas-lg.show .offcanvas-header { display: flex !important; }
+  #bdNavbar.offcanvas-lg.show .offcanvas-body {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+  }
+  body:has(#bdNavbar.offcanvas-lg.show) #navbar,
+  body:has(#bdNavbar.offcanvas-lg.show) header.fixed-top {
+    z-index: 1047 !important;
   }
 }
 
