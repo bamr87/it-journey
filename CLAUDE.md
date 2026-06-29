@@ -66,6 +66,12 @@ map and setup.
   (`scripts/quest/forge_issue.py`) and authors a full `epic_quest` hub +
   `bonus_quest` chapters in `pages/_quests/codex/` → one `auto:quest` PR. Closes the
   loop with lifehacker.dev (its quest-forge hook files the proposal; this consumes it).
+- `quest-walkthrough.yml` (daily) — the `quest-walker` agent picks one linked
+  (character, level) quest slice via `scripts/quest/walkthrough_plan.py`, **plays it
+  end-to-end in the runner sandbox as a learner** (reusing the
+  `test/quest-validator/agentic_validate.py` execute engine), and opens one report PR
+  with evidence/issues/reasoning under `test/quest-validator/walkthroughs/`. Read-only
+  over content; never merges.
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
 
 **OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the
