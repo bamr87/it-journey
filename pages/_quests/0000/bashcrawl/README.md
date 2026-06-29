@@ -64,38 +64,12 @@ quest_dependencies:
   - /quests/0000/scrap/
   - /quests/0000/rift/
   - /quests/0000/agent-mode/
-quest_relationships:
-  child_quests:
-  - /quests/0000/side-quests/entrance/
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
-  - /quests/0000/side-quests/armoury/
-  - /quests/0000/side-quests/chamber/
-  - /quests/0000/side-quests/hidden-chapel/
-  - /quests/0000/side-quests/vault/
-  - /quests/0000/side-quests/scrap/
-  - /quests/0000/side-quests/rift/
-  - /quests/0000/side-quests/agent-mode/
-  sequel_quests:
-  - /quests/0000/side-quests/bash-run/
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - System Administration
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Mastery
 validation_criteria:
 - Navigate through the entrance and read the first scroll
 - Navigate through at least five chambers
 - Defeat at least one combat encounter
 - Complete the Rift final boss
-sub-title: 'Level 0000 Quest: Terminal Dungeon Adventure'
 excerpt: Embark on an epic terminal adventure that teaches Bash commands through nine interconnected dungeon chambers, each a dedicated walkthrough side-quest
-snippet: Every command is a spell, every directory a new realm to explore
 draft: false
 permalink: /quests/0000/bashcrawl/
 mermaid: true

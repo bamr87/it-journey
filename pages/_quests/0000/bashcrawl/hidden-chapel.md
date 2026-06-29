@@ -61,7 +61,7 @@ layout: quest
 redirect_from:
 - /quests/0000/side-quests/hidden-chapel/
 ---
-*The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas, guarded by a monster who fears knowledge.*
+*The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas — the courtyard, the aviary nested within it, the hall, the library, and the graveyard — guarded by a monster who fears knowledge.*
 
 ## 🕹️ Play This Chamber
 
@@ -158,14 +158,14 @@ man grep
 # Press q to quit
 ```
 
-> Tip: `man grep | grep "\-n"` pipes the manual through grep to find the `-n` flag quickly.
+> Tip: `man grep | grep -- '-n'` pipes the manual through grep to find the `-n` flag quickly. The `--` tells grep to treat `-n` as a search pattern, not a flag.
 
 The relevant knowledge: `grep -n` prints line numbers. The hall monster demands you specify which line contains the incantation.
 
 ### Step 5 — Navigate to the hall and fight
 
 ```bash
-cd ../hall
+cd ../../hall   # from .CHAPEL/courtyard/aviary back up to .CHAPEL, then into hall
 ls -F
 # inscription  monster*  locked_door
 
@@ -174,7 +174,8 @@ cat inscription
 
 ./monster
 # The monster demands: "Which grep flag shows line numbers?"
-# Your answer: -n
+# Type your answer at the prompt and press Enter:
+# -n
 # The monster falls!
 ```
 
@@ -189,6 +190,8 @@ cat tome
 # The Ancient Tome of Shell Knowledge — tome fragment obtained.
 inventory
 ```
+
+> Note: `inventory` is a bashcrawl game command (it lists items you've collected), not a standard Unix command.
 
 ### Step 7 (Optional) — Explore the graveyard
 

@@ -118,6 +118,7 @@ ls -F
 
 inventory
 # stone key fragment, tome fragment, vault key fragment, portal crystal ✓
+# (inventory is a Bashcrawl game command, not a standard shell command — it lists what you carry)
 
 ./key_assembler
 # All fragments combined → Rift Key obtained.
@@ -161,14 +162,21 @@ cat instructions
 ### Step 4 — Spire — Redirection
 
 ```bash
-cd ../../spire
+cd ../spire
 cat spire_challenge
 # "Capture all output from the oracle — both wisdom and errors — into oracle.log"
 
 ./oracle > oracle.log 2>&1
 cat oracle.log
 
-# Also capture with tee so you still see it:
+# Run again and APPEND to the same log instead of overwriting:
+echo '--- additional run ---' >> oracle.log
+./oracle >> oracle.log 2>&1
+
+# Capture ONLY the errors (stderr) and leave wisdom on screen:
+./oracle 2> errors_only.log
+
+# Also capture everything with tee so you still see it:
 ./oracle 2>&1 | tee oracle.log
 ```
 
@@ -178,6 +186,7 @@ cat oracle.log
 cd mezzanine
 # Combine all techniques:
 ls -la | sort -k5 -rn | head -10 > biggest_files.txt
+# -k5 sorts by column 5 (file size); -rn is reverse numeric (largest first)
 cat biggest_files.txt
 ```
 
@@ -200,6 +209,10 @@ cat signal_logs | grep "ERROR" | tee error_report.txt
 cat error_report.txt
 
 ./satellite_boss
+
+# Confirm the dungeon registers as finished:
+map
+# All chambers should now read as complete.
 ```
 
 The satellite boss is the final encounter. It uses all skills: pipe a command through grep, redirect errors, chain with `&&`. Complete it to finish the dungeon.
@@ -208,7 +221,7 @@ The satellite boss is the final encounter. It uses all skills: pipe a command th
 
 | Problem | Cause | Fix |
 |---------|-------|-----|
-| `|` not working | Wrong pipe character | Use `\|` in tables; actual `\|` is just `|` in shell |
+| `|` not working | Confused table escaping with shell syntax | In Markdown tables you write `\\|` to *display* a literal `\|`, but in the shell you always type a plain `\|` — never type `\\|` as a pipeline |
 | `2>&1` must come AFTER `>` | Order matters | Always: `> file 2>&1` not `2>&1 > file` |
 | `&&` chain stops early | A command failed | Add `\|\|` fallback or check exit codes |
 | Hidden dirs not found | Forgot `ls -a` | Always use `ls -a` in unfamiliar directories |

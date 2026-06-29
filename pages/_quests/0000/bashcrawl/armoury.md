@@ -95,11 +95,12 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 ### Permission String Decoder
 
 ```text
--rwxr-xr-x
-│└──┘└──┘└──┘
-│ u   g   o
-│ user group others
-└── file type: - = regular, d = dir, l = link
+-  rwx  r-x  r-x
+│   │    │    │
+│   │    │    └── others (o)
+│   │    └─────── group (g)
+│   └──────────── user / owner (u)
+└──────────────── file type: - = regular, d = dir, l = link
 ```
 
 Each group: `r` = read (4), `w` = write (2), `x` = execute (1)
@@ -112,9 +113,9 @@ Octal shorthand: `755` = `rwx r-x r-x`, `644` = `rw- r-- r--`
 
 ```bash
 ls -l
-# -rw-r--r-- 1 user group  512 Jan 01 potion
-# -rw-r--r-- 1 user group 1024 Jan 01 sword
-# -rwxr-xr-x 1 user group  256 Jan 01 guardian*
+# -rw-r--r-- 1 user group  512 Jan  1 00:00 potion
+# -rw-r--r-- 1 user group 1024 Jan  1 00:00 sword
+# -rwxr-xr-x 1 user group  256 Jan  1 00:00 guardian
 ```
 
 `potion` and `sword` lack the `x` bit — they are **not yet executable**. You cannot run them.
@@ -134,9 +135,14 @@ This is the expected result. Now fix it.
 chmod +x potion
 chmod +x sword
 ls -l potion sword
-# -rwxr-xr-x 1 user group 512 Jan 01 potion*
-# -rwxr-xr-x 1 user group 1024 Jan 01 sword*
+# -rwxr-xr-x 1 user group  512 Jan  1 00:00 potion
+# -rwxr-xr-x 1 user group 1024 Jan  1 00:00 sword
 ```
+
+> **Why the `./`?** When you type `./potion`, the `./` tells the shell to run
+> the script in the **current directory**. Without it, the shell only searches
+> the directories in your `PATH` — and `.` (the current directory) is **not** in
+> `PATH` by default, so `potion` alone would fail with "command not found".
 
 ### Step 4 — Drink the potion
 
@@ -158,10 +164,15 @@ ls -l potion sword
 ./guardian
 # A stone golem steps forward...
 # You raise your sword...
-# [combat sequence]
+# Guardian defeated! The door creaks open.
 ```
 
-With the sword equipped, you should win. Health permitting, the guardian falls and the door to the Chamber opens.
+With the sword equipped, the guardian falls and the door to the Chamber opens.
+List the room (`ls`) to find the path onward, then step through into the
+Chamber's directory (for example, `cd ../chamber`).
+
+> **Low on health?** Your HP carries over between rooms. If a fight leaves you
+> weakened, re-run `./potion` (if a potion is still available) before moving on.
 
 ## 💡 Understanding Octal Permissions
 
@@ -182,7 +193,7 @@ With the sword equipped, you should win. Health permitting, the guardian falls a
 | `Permission denied` after chmod | Not the file owner | Use `ls -l` to check owner |
 | Script does nothing | Missing shebang line | Add `#!/usr/bin/env bash` as line 1 |
 | `No such file: ./sword` | Wrong directory | `pwd` and `ls` first |
-| Health still low after potion | Bug in game version | Run `./setup.sh --repair` |
+| Health still low after potion | Stale game state | Re-run the bashcrawl setup or restart the game from the entrance, then revisit the room |
 
 ## ✅ Validation
 

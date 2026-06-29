@@ -61,7 +61,7 @@ layout: quest
 redirect_from:
 - /quests/0000/side-quests/vault/
 ---
-*Behind a heavy iron door, the Vault holds the dungeon's most powerful secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
+*Behind a heavy iron door, the Vault holds the dungeon's most closely guarded secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
 
 ## 🕹️ Play This Chamber
 

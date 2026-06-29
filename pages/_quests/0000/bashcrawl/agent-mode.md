@@ -67,6 +67,8 @@ redirect_from:
 
 This page is your **walkthrough and strategy guide**. Agent Mode itself runs locally (see [Install &amp; Play Locally](#play-locally)) — but you can explore the dungeon in the browser first.
 
+> The live terminal below is rendered by a Jekyll include; the `{% raw %}{% include %}{% endraw %}` tags and `[[wiki-links]]` in this file render as literal text when viewed outside the IT-Journey site (Jekyll) or Obsidian.
+
 {% include bashcrawl-terminal.html %}
 
 ## 🎯 Quest Objectives
@@ -81,6 +83,9 @@ This page is your **walkthrough and strategy guide**. Agent Mode itself runs loc
 
 - All 9 dungeon areas explored
 - Comfortable with shell scripting and pipes
+- The agent/automation flags below require the IT-Journey fork of Bashcrawl ([github.com/bamr87/bashcrawl](https://github.com/bamr87/bashcrawl)); a learner running upstream Bashcrawl may not have them.
+- The `llm` Python package for the AI agent: `pip install llm` (the agent falls back to a heuristic navigator if it is missing)
+- Screenshot capture may require extra terminal tooling on your system — the PNGs are produced by the screenshot-capable run modes below, and a terminal that supports them
 - (Optional) GitHub account for contribution track
 
 ## ⚡ Command Reference
@@ -88,13 +93,16 @@ This page is your **walkthrough and strategy guide**. Agent Mode itself runs loc
 | Mode | What It Does |
 |------|-------------|
 | `./main.sh --agent` | AI playtesting mode — AI navigates autonomously |
-| `./main.sh --agent-bash` | Agent mode in classic bash-only interface |
+| `./main.sh --agent-bash` | Agent mode in classic bash-only interface (not demonstrated below) |
 | `./main.sh --batch commands.txt` | Execute a list of commands from a file |
-| `./main.sh --command "cmd"` | Run a single command inside the dungeon |
+| `./main.sh --command "cmd"` | Run a single command inside the dungeon (not demonstrated below) |
 | `./main.sh --screenshot-dir ./shots/` | Capture terminal screenshots while playing |
+| `./main.sh --classic` | Run in plain (non-TUI) mode — often paired with `--screenshot-dir` |
 | `./main.sh --status` | Print dungeon completion status |
 | `./main.sh --demo` | Run the built-in demo walkthrough |
 | `./main.sh --reset` | Reset the dungeon to initial state |
+
+> These automation flags ship with the IT-Journey fork ([github.com/bamr87/bashcrawl](https://github.com/bamr87/bashcrawl)). If you are on upstream Bashcrawl, some may not be available.
 
 Or use the IT-Journey launcher from the hub directory:
 
@@ -129,9 +137,10 @@ Watch to see if the AI takes different paths than you did. Note: the AI makes mi
 mkdir -p ./walkthrough_screenshots
 
 ./main.sh --screenshot-dir ./walkthrough_screenshots --classic
-# Play through the dungeon normally
+# Play through the dungeon normally (--classic runs in plain, non-TUI mode)
 # Screenshots auto-saved at each room
 
+# Exit the session first (Ctrl+C or type quit), then list your captures:
 ls ./walkthrough_screenshots/
 # entrance_01.png  workshop_01.png  cellar_01.png  ...
 ```
@@ -213,8 +222,9 @@ cd bashcrawl
 git checkout -b feature/my-improvement
 
 # Make changes (new rooms, better documentation, bug fixes)
-# Example: add a new combat command
-echo 'cast_spell() { echo "You cast $1!"; }' >> lib/combat.sh
+# Illustrative example: add a helper function to a helpers file
+# (create lib/helpers.sh if it does not already exist)
+echo 'cast_spell() { echo "You cast $1!"; }' >> lib/helpers.sh
 
 git add .
 git commit -m "feat(combat): add cast_spell helper function"
