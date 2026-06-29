@@ -79,6 +79,43 @@ desktop) plus a terminal render of its recorded command transcript
 [`test/quest-validator/walkthroughs/README.md`](../../test/quest-validator/walkthroughs/README.md)
 for the report contract.
 
+## The quest-perfection loop (walk → fix → ledger, until perfect)
+
+The walkthrough arm only *witnesses* where the curriculum breaks; the perfection
+loop closes that gap by *repairing* it, autonomously, until every (character,
+level) slice is perfect. A daily orchestrator (`quest-perfection.yml`) fans out
+over all six character paths and, per path, picks the highest-priority
+not-yet-perfect slice from the committed ledger.
+
+- **Walk arm** — `quest-walkthrough.yml` plays the selected slice and emits its
+  evidence (`scripts/quest/ledger.py update` merges it and recomputes "perfect" —
+  which requires an honest `execute`-mode, non-truncated, fully-scored run).
+- **Fix arm** — `quest-fix.yml` runs the `quest-fix` agent over that slice's
+  *verified* issues, keeping an edit **only** when a deterministic signal improves
+  (tier-1 structural score holds/rises **and** `brand_lint` stays clean **and** no
+  sandbox command regresses) — never because the model graded its own work up. It
+  opens a **separate** content-only fix PR (`auto:content` + `auto:quest-fix` +
+  `automated`), runs `make quest-data` (failing on uncommitted `_data/quests`
+  drift), refuses to touch vendored (`source_repo`/`source_url`) quests, and
+  hard-fails without a PAT so the PR's required checks actually fire.
+- **Ledger** — `scripts/quest/ledger.py` is the one deterministic source of truth
+  (`.quests/ledger.json`, committed; `.quests/DASHBOARD.md` generated). It tracks
+  per-slice state, `fix-update` bumps a fix round without ever certifying perfect,
+  and a circuit breaker marks a slice `needs_human` after `max_fix_rounds` (default
+  3) fixes that never reached perfect. Ledger commits ride the **walkthrough report
+  PR**, never the fix PR (which is content-only).
+
+Staged kill switches (all OFF): `QUEST_PERFECTION_ENABLED` (the orchestrator),
+`QUEST_FIX_ENABLED` (the write/fix lane), with the existing
+`QUEST_WALKTHROUGH_ENABLED` (walk arm) and `CONTENT_AUTOMERGE_ENABLED` (gates the
+fix PR through `content-auto-merge.yml`). Locally: `make quest-perfection-plan`,
+`make quest-fix CHARACTER=… LEVEL=…`, `make quest-ledger-dashboard`.
+
+**Safety note:** `result.verdict_obj.executed` is model-supplied, so fully
+hands-off auto-merge of *fix* PRs stays gated (behind `CONTENT_AUTOMERGE_ENABLED`)
+until a harness-stamped execution proof exists — even though the loop already
+requires execute mode + a non-truncated run to certify perfect.
+
 ## The frontend canary (theme bugs → upstream)
 
 | Workflow | Trigger | Agent | What it does | Gate variable |
