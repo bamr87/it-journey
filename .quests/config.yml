@@ -30,10 +30,8 @@
 # code, is satisfied). All-or-nothing.
 # -----------------------------------------------------------------------------
 perfect:
+  # --- READ + enforced by ledger.py's perfect predicate ---
   require_mode: execute        # only execute-mode runs can certify (M7)
-  require_executed: true       # verdict_obj.executed must be true (model-supplied; see header)
-  t1_bar: 70                   # tier-1 structural score (quest_validator.py) must be >= this
-  t2_pass: 80                  # tier-2 agentic per-quest pass score must be >= this
   average_min: 95              # run-level average score must be >= this
   max_warn: 0                  # zero quests may verdict "warn"
   max_fail: 0                  # zero quests may verdict "fail"
@@ -41,6 +39,15 @@ perfect:
   max_open_issues: 0           # zero open recommendations/issues remaining
   max_high_priority: 0         # zero high-priority recommendations remaining
   forbid_truncated: true       # a truncated run can never be perfect (M7)
+  # --- RESERVED — enforced elsewhere, NOT read by ledger.py (documented here) ---
+  require_executed: true       # RESERVED: verdict_obj.executed is MODEL-SUPPLIED, so the
+                               #   predicate deliberately does NOT trust it (would be
+                               #   self-grading). Honesty is enforced by require_mode+forbid_truncated.
+  t1_bar: 70                   # RESERVED: the tier-1 floor is enforced by quest-validation CI
+                               #   (--fail-threshold 70) + the M1 no-regression gate in quest-fix.yml,
+                               #   not by ledger.py (the agentic evidence does not carry tier-1 scores).
+  t2_pass: 80                  # RESERVED: matches the agentic pass band (schema.DEFAULT_PASS_THRESHOLD),
+                               #   which already determines each quest's pass/warn/fail verdict.
 
 # -----------------------------------------------------------------------------
 # history — per-slice append-only event log retention.
@@ -49,12 +56,16 @@ history:
   cap: 10                      # keep the last N events per slice (walk + fix)
 
 # -----------------------------------------------------------------------------
-# selection — how `ledger.py select` chooses the next slice to work.
+# selection — RESERVED / documentation. `ledger.py select` hard-codes the
+# priority order (cold-start → not-perfect → not-stuck → worst verdict → lowest
+# average → oldest); these keys describe that behavior but are not read. The
+# perfect-skip window that IS enforced lives in .quests/budget.yml
+# (skip_perfect_within_days), read by quest-perfection.yml.
 # -----------------------------------------------------------------------------
 selection:
-  strategy: priority           # worst/oldest not-perfect slice first
-  skip_perfect_within_days: 7  # don't re-walk a slice certified perfect in the last N days
-  rewalk_failing: true         # always re-walk slices that are failing/open
+  strategy: priority           # (reserved) worst/oldest not-perfect slice first — hard-coded in select
+  skip_perfect_within_days: 7  # (reserved) the ENFORCED copy is in budget.yml
+  rewalk_failing: true         # (reserved) failing/open slices are always re-selected
 
 # -----------------------------------------------------------------------------
 # fix — the write/fix lane (circuit breaker, M6).

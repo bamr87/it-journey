@@ -332,7 +332,8 @@ jobs:
         if: steps.breaker.outputs.skip != 'true'
         run: |
           set -euo pipefail
-          mapfile -t changed < <(git diff --name-only -- 'pages/_quests/**/*.md')
+          # Match every depth (incl. depth-1 pages/_quests/*.md), not just nested.
+          mapfile -t changed < <(git diff --name-only -- pages/_quests | grep -E '\.md$' || true)
           bad=0
           for f in "${changed[@]}"; do
             [ -f "$f" ] || continue
@@ -345,6 +346,67 @@ jobs:
           done
           [ "$bad" -eq 0 ] || exit 1
           echo "no vendored quest was modified."
+
+      # M1 anti-self-grading (DETERMINISTIC, agent-independent) — for every changed
+      # quest, the tier-1 quest_validator score must HOLD-OR-RISE vs its pre-edit
+      # (HEAD) version. A fix that drops a quest's structural score (e.g. 95→72)
+      # FAILS here even though it would still clear quest-validation's absolute 70
+      # floor. This is the CI-enforced half of the keep/revert gate the agent claims
+      # to honor; brand_lint (the other half) is enforced by content-quality.yml at
+      # PR time. The agent never grades its own work past this gate.
+      - name: Tier-1 no-regression gate (M1)
+        if: steps.breaker.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, subprocess, sys, tempfile
+          from pathlib import Path
+
+          changed = subprocess.run(
+              ["git", "diff", "--name-only", "--", "pages/_quests"],
+              capture_output=True, text=True).stdout.split()
+          changed = [c for c in changed if c.endswith(".md")]
+
+          def score(path_on_disk):
+              """Tier-1 structural score_pct for one quest file (None if unscored)."""
+              with tempfile.TemporaryDirectory() as d:
+                  rep = os.path.join(d, "r.json")
+                  subprocess.run(
+                      ["python3", "test/quest-validator/quest_validator.py",
+                       path_on_disk, "--json", rep],
+                      capture_output=True, text=True)
+                  try:
+                      results = (json.load(open(rep)) or {}).get("results") or []
+                  except Exception:
+                      return None
+                  return results[0].get("score_pct") if results else None
+
+          regressions = []
+          for f in changed:
+              base = subprocess.run(["git", "show", f"HEAD:{f}"],
+                                    capture_output=True, text=True)
+              if base.returncode != 0:
+                  continue  # newly-added quest — no baseline to regress from
+              # Score the base content from a sibling temp file so the validator
+              # sees the same directory/level context as the working file.
+              parent = Path(f).parent
+              tmp = parent / f".m1-base-{Path(f).name}"
+              tmp.write_text(base.stdout, encoding="utf-8")
+              try:
+                  b, a = score(str(tmp)), score(f)
+              finally:
+                  tmp.unlink(missing_ok=True)
+              print(f"{f}: base={b} post={a}")
+              if b is not None and a is not None and a + 0.05 < b:
+                  regressions.append((f, b, a))
+
+          if regressions:
+              for f, b, a in regressions:
+                  print(f"::error::M1 tier-1 regression in {f}: {b:.1f}% -> {a:.1f}% "
+                        f"— the fix lowered the quest's structural score.", file=sys.stderr)
+              sys.exit(1)
+          print("M1 tier-1 gate: no structural regressions in changed quests.")
+          PY
 
       # Did the fixer keep anything? A clean no-op (the skill aborted on M7, or
       # every edit reverted under the M1 gate) is a valid honest outcome.

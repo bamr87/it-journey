@@ -63,7 +63,10 @@ permissions:
 # this loop never race a manual walkthrough run. cancel-in-progress stays off:
 # never abandon a slice mid-write.
 concurrency:
-  group: quest-perfection
+  # SHARED with quest-walkthrough.yml (same group) so .quests/** ledger writes
+  # from this loop never race a manual walkthrough run. cancel-in-progress stays
+  # off: never abandon a slice mid-write.
+  group: quest-ledger
   cancel-in-progress: false
 
 jobs:
@@ -162,7 +165,7 @@ jobs:
           export OPEN_FIX_PRS="$open_fix_prs"
           export MAX_SLICES="${MAX_SLICES:-}"
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json, os, glob
+          import json, os, glob, re, sys
           from datetime import datetime, timezone, timedelta
           from pathlib import Path
 
@@ -179,6 +182,7 @@ jobs:
           caps = budget.get("caps", {}) or {}
           max_walks = int(caps.get("max_walkthroughs_per_run", 6))
           max_open = int(caps.get("max_open_quest_prs", 6))
+          max_fix_per_run = int(caps.get("max_fix_prs_per_run", 3))
           skip_days = int(caps.get("skip_perfect_within_days", 7))
 
           # An explicit --max_slices dispatch input tightens (never loosens) the cap.
@@ -212,7 +216,9 @@ jobs:
               if s.get("stuck") or s.get("needs_human"):
                   return True
               if s.get("perfect"):
-                  last = _parse(s.get("last_perfect") or s.get("last_walk"))
+                  # ledger.py writes perfect_since (date) + last_run/last_run_date.
+                  last = _parse(s.get("perfect_since") or s.get("last_run_date")
+                                or s.get("last_run"))
                   if last and (now - last) < timedelta(days=skip_days):
                       return True
               return False
@@ -232,11 +238,18 @@ jobs:
               except Exception:
                   slugs = []
           if not slugs:
+              # Reconstruct the slash slug "<char>/<code>" from the dash filename.
+              # Character keys can contain dashes (system-engineer), so split on the
+              # TRAILING 4-bit level, not the first dash.
               for f in sorted(glob.glob("plans/walk-plan-*.json")):
-                  slugs.append(Path(f).name[len("walk-plan-"):-len(".json")])
+                  name = Path(f).name[len("walk-plan-"):-len(".json")]
+                  m = re.match(r"^(.+)-([01]{4})$", name)
+                  slugs.append(f"{m.group(1)}/{m.group(2)}" if m else name)
 
           def plan_file(slug):
-              return f"plans/walk-plan-{slug}.json"
+              # The planner writes dash filenames (plans/walk-plan-<char>-<code>.json);
+              # the slug is slash-form (<char>/<code>) so the slice job can split it.
+              return f"plans/walk-plan-{slug.replace('/', '-')}.json"
 
           def plan_has_quests(slug):
               try:
@@ -245,13 +258,30 @@ jobs:
               except Exception:
                   return False
 
-          # --- OODA: is the fix queue too full to open new fix PRs? -------------
+          # --- OODA: how many NEW fix PRs may this run open? --------------------
+          # Bounded by BOTH the open-queue headroom (max_open - already-open) and
+          # the per-run throttle (max_fix_prs_per_run) so a single sweep can never
+          # flood the reviewer even from an empty queue.
           open_fix_prs = int(os.environ.get("OPEN_FIX_PRS", "0") or 0)
-          open_new = open_fix_prs < max_open
+          fix_budget = max(0, min(max_open - open_fix_prs, max_fix_per_run))
+
+          # --- loud drift guard: a printed slug must have an on-disk plan file --
+          # (the planner skips empty slices, so every slug it printed was written).
+          # A missing file means a slug/filename format drift — fail, don't no-op.
+          missing = [s for s in slugs if not Path(plan_file(s)).exists()]
+          if slugs and missing:
+              print(f"::error::planned slugs have no matching plan file (format drift): {missing}",
+                    file=sys.stderr)
+              sys.exit(1)
 
           # --- assemble the matrix include --------------------------------------
+          # Walk up to max_walks slices; grant open_new_fix_prs to only the first
+          # fix_budget of them (the rest still walk + ledger, just don't open a fix PR).
           include = []
+          granted = 0
           for slug in slugs:
+              if len(include) >= max_walks:
+                  break
               pf = plan_file(slug)
               if not Path(pf).exists():
                   continue
@@ -259,6 +289,9 @@ jobs:
                   continue
               if skip_slice(slug):
                   continue
+              open_new = granted < fix_budget
+              if open_new:
+                  granted += 1
               include.append({
                   "slug": slug,
                   "plan_file": pf,
@@ -266,8 +299,6 @@ jobs:
                   # explicit string the slice job compares as a string.
                   "open_new_fix_prs": "true" if open_new else "false",
               })
-
-          include = include[:max_walks]
           matrix = {"include": include}
           print(f"matrix={json.dumps(matrix)}")
           print(f"count={len(include)}")

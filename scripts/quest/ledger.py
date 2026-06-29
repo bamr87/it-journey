@@ -394,6 +394,11 @@ def build_slice_entry(
     truncated = bool(agg.get("truncated", False)) or _plan_truncated(plan)
     average = agg.get("average")
     average = float(average) if isinstance(average, (int, float)) else None
+    # The plan is the trusted count of how many quests the slice SHOULD have. With
+    # no plan, `requested` would degenerate to `total` (both from the same untrusted
+    # aggregate), making scored==requested self-referential — so a plan is REQUIRED
+    # to certify perfect. Both shipping workflows pass --plan; this guards CLI misuse.
+    plan_present = _plan_quest_count(plan) > 0
     requested = _plan_quest_count(plan) or total
 
     verdict = _worst_verdict(results)
@@ -424,6 +429,7 @@ def build_slice_entry(
     # require_mode==execute + forbid_truncated, which the harness controls.
     perfect = (
         (mode == require_mode == "execute")
+        and plan_present
         and not (truncated and forbid_truncated)
         and scored == requested
         and requested > 0
@@ -538,23 +544,39 @@ def merge_slice(
     if cap and len(history) > cap:
         history = history[-cap:]
 
-    # Carry circuit-breaker state forward (a walk does not reset fix_rounds; only
-    # a fresh walk that achieves perfect clears stuck — see below).
+    # Circuit breaker (M6) — WALK-DRIVEN so it actually fires without a separate
+    # call. fix_rounds counts CONSECUTIVE real (verdict-bearing) walks that did
+    # not reach perfect: the loop walks a slice, a fix PR lands, it re-walks; if
+    # it is still imperfect after `max_fix_rounds` such rounds the slice is marked
+    # stuck/needs_human and `select` stops choosing it (no infinite oscillation).
+    # A fresh perfect walk resets the breaker. (cmd_fix_update can also bump it for
+    # an explicit fix event, but the breaker no longer DEPENDS on being wired.)
     fix_rounds = int(prev.get("fix_rounds", 0) or 0)
     stuck = bool(prev.get("stuck", False))
     stuck_reason = prev.get("stuck_reason")
     last_fixed = prev.get("last_fixed")
+    max_rounds = cfg_max_fix_rounds(config)
 
     perfect = bool(entry.get("perfect"))
     perfect_since = prev.get("perfect_since")
+    # Only verdict-bearing walks (a real evaluation, not an empty/unparseable run)
+    # advance or reset the breaker — a no-evidence walk must not count as a round.
+    real_walk = event == "walk" and entry.get("verdict") is not None
     if perfect:
         if not perfect_since:
             perfect_since = today_str()
-        # A fresh perfect walk clears the circuit breaker for this slice.
+        fix_rounds = 0           # converged — reset the breaker
         stuck = False
         stuck_reason = None
     else:
         perfect_since = None
+        if real_walk and int(prev.get("runs", 0) or 0) > 0 and not prev.get("perfect"):
+            # A repeat imperfect walk: one more fix round elapsed without converging.
+            fix_rounds += 1
+            if max_rounds and fix_rounds >= max_rounds and not stuck:
+                stuck = True
+                stuck_reason = (f"still imperfect after {fix_rounds} walk→fix rounds "
+                                f"(max {max_rounds}); needs human review")
 
     merged = {
         "slug": slug,
@@ -1105,21 +1127,19 @@ def _selftest() -> int:  # noqa: C901 - exhaustive on purpose
     check(select_priority(ledger3) is None, "all-perfect → select returns None")
     check(select_all_paths(ledger3) == [], "all-perfect → all-paths empty")
 
-    # ---- CIRCUIT BREAKER (M6) ----
+    # ---- CIRCUIT BREAKER (M6) — WALK-DRIVEN ----
+    # Repeated imperfect (verdict-bearing) walks must trip stuck at max_fix_rounds
+    # WITHOUT any manual mutation — the breaker fires from merge_slice itself, so
+    # it works even though no workflow calls fix-update.
     ledger4 = empty_ledger()
-    merge_slice(ledger4, "developer/0001", ew, "walk", cfg)  # warn, not perfect
     maxr = cfg_max_fix_rounds(cfg)
-    for i in range(maxr):
-        slc = ledger4["slices"]["developer/0001"]
-        slc["fix_rounds"] = int(slc.get("fix_rounds", 0)) + 1
-        slc["perfect"] = False
-        slc["perfect_since"] = None
-        if slc["fix_rounds"] >= maxr:
-            slc["stuck"] = True
-            slc["needs_human"] = True
-            slc["stuck_reason"] = "test"
+    for i in range(maxr + 1):
+        merge_slice(ledger4, "developer/0001", ew, "walk", cfg)  # warn, not perfect
+    slc4 = ledger4["slices"]["developer/0001"]
+    check(slc4["fix_rounds"] >= maxr, "consecutive imperfect walks must accrue fix_rounds")
     recompute_totals(ledger4)
-    check(ledger4["slices"]["developer/0001"]["stuck"] is True, "slice should be stuck after max rounds")
+    check(slc4["stuck"] is True, "slice should be stuck after max consecutive imperfect walks")
+    check(slc4["needs_human"] is True, "stuck slice should alias needs_human")
     # A stuck slice is excluded from select candidacy.
     picked4 = select_priority(ledger4)
     check(picked4 != "developer/0001", "stuck slice must be excluded from select")

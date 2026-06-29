@@ -637,8 +637,9 @@ def main() -> int:
     # JSON list of chosen "<char>/<code>" slugs (skipping empty slices). Explicit
     # --character/--level still win over this (handled below), so guard for them.
     if args.all_paths and not (args.character or args.level):
-        out_dir = Path(args.out_dir) if args.out_dir else Path.cwd()
-        plans_dir = out_dir / "plans"
+        # --out-dir IS the plans directory (the orchestrator passes --out-dir plans
+        # and then looks in plans/walk-plan-<char>-<code>.json — no extra subdir).
+        plans_dir = Path(args.out_dir) if args.out_dir else Path.cwd()
         plans_dir.mkdir(parents=True, exist_ok=True)
         chosen: List[str] = []
         for slug in select_all_paths_slugs(paths, on, ledger_path):

@@ -49,7 +49,9 @@ permissions:
   contents: read
 
 concurrency:
-  group: quest-walkthrough
+  # SHARED with quest-perfection.yml so a manual walkthrough never races the
+  # daily loop's .quests/** ledger writes (last-writer-wins clobber).
+  group: quest-ledger
   cancel-in-progress: false
 
 jobs:

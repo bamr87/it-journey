@@ -1,6 +1,6 @@
 # Quest Perfection — ledger dashboard
 
-_Generated 1970-01-01T00:00:00Z. Source of truth: `.quests/ledger.json` (committed, generated)._
+_Generated 1970-01-01T00:00:00+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
 
 **0/27** slices perfect · **0** walked · **0** stuck (needs human) · **0** open issue(s) outstanding
 
