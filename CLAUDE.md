@@ -70,8 +70,10 @@ map and setup.
   (character, level) quest slice via `scripts/quest/walkthrough_plan.py`, **plays it
   end-to-end in the runner sandbox as a learner** (reusing the
   `test/quest-validator/agentic_validate.py` execute engine), and opens one report PR
-  with evidence/issues/reasoning under `test/quest-validator/walkthroughs/`. Read-only
-  over content; never merges.
+  with evidence/issues/reasoning under `test/quest-validator/walkthroughs/`. Also
+  uploads session screenshots (rendered quest pages + a terminal render of the
+  recorded transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run
+  artifacts. Read-only over content; never merges.
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
 
 **OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the
