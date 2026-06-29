@@ -29,6 +29,7 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 ├── validate-content.prompt.md   # Content validation against repo standards
 ├── workflow-summary.prompt.md   # Summarize a recent workflow/run
 ├── quest-permalink-audit.prompt.md  # Audit/repair quest permalink hierarchy
+├── forge-quest.prompt.md        # Forge an epic-quest proposal issue into a campaign
 ├── write-quest.prompt.md        # Epic quest authoring protocol
 ├── wtd.prompt.md                # What To Do - TODO task execution agent
 └── README.md                    # This guide
@@ -45,6 +46,7 @@ This directory houses the reusable prompt blueprints that power IT-Journey's int
 | `retrospective.prompt.md` | `/retrospective` | Review an AI agent conversation/PR thread and fold lessons back into `.github/copilot-instructions.md`, `.github/instructions/*`, and `.github/prompts/*` with citations | Lesson ledger, triage table, surgical diffs, `store_memory` calls, validation report |
 | `stackattack.prompt.md` | `/stackattack` | Analyze any repository's full technology stack with diagrams and recommendations | Stack overview, five-layer analysis, Mermaid diagrams, modernization roadmap saved under quests/stacks |
 | `write-quest.prompt.md` | `/write-quest` | Transform learning context into IT-Journey compliant quests | Complete quest at `pages/_quests/XXXX/slug.md`, canonical frontmatter, `make quest-audit` gate |
+| `forge-quest.prompt.md` | `/forge-quest` | Forge an epic-quest **proposal issue** into a full campaign (local twin of `quest-forge.yml`); quotes PR/commit facts only from `scripts/quest/forge_issue.py` | `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/`, `make quest-audit` gate, one `auto:quest` PR |
 | `quest-permalink-audit.prompt.md` | `/quest-permalink-audit` | Audit and repair permalink violations across `pages/_quests/` | Violation report, migration via `migrate-permalinks.py`, network rebuild |
 | `wtd.prompt.md` | `/wtd` | Work through TODO directory items using PDCA methodology | Task selection, execution, status updates, progress tracking, suggested commits |
 
