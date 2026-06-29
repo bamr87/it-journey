@@ -76,7 +76,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Run `./statue` to trigger and win the boss encounter
 - [ ] Collect the Chamber's treasure and unlock the Rift path
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Armoury side-quest](/quests/0000/side-quests/armoury/) complete
 - Sword in inventory (from armoury `./sword`)
@@ -134,11 +134,12 @@ echo $vault_code     # 11
 
 ### Step 3 — Compute your specific answer
 
-Replace the example numbers with the values from YOUR runes:
+Substitute the values from YOUR runes for the two example numbers below
+(the `3` and `4` are placeholders — swap in the door and exit counts you found):
 
 ```bash
-# Template:
-answer=$(( doors_in_cellar * exits_in_entrance + 7 ))
+# Template — replace 3 and 4 with the counts from YOUR runes:
+answer=$(( 3 * 4 + 7 ))     # 19 in this example
 echo "My answer is: $answer"
 ```
 
@@ -161,6 +162,8 @@ cat chest
 inventory
 ```
 
+> **Note:** `inventory` is a bashcrawl game command (provided by the dungeon), not a standard Unix command — it shows what you've picked up on your crawl.
+
 The stone key fragment is part of the multi-piece key that opens the Rift.
 
 ## 💡 Arithmetic Gotchas
@@ -168,9 +171,15 @@ The stone key fragment is part of the multi-piece key that opens the Rift.
 | Problem | Cause | Fix |
 |---------|-------|-----|
 | `expr 4 * 1` → error | `*` glob-expanded | Escape: `expr 4 \* 1` |
-| `let "x=5/2"` → `2` | Integer division | Use `bc` for floats: `echo "5/2" \| bc -l` |
+| `let "x=5/2"` → `2` | Integer division | Use `bc` for floats (see below) |
 | Variable not set | Missing `$` | Use `echo $var`, not `echo var` |
 | Wrong answer, took damage | Calculation error | Recalculate carefully before `./statue` |
+
+Bash arithmetic is integer-only. For floating-point division, pipe the expression to `bc -l`:
+
+```bash
+echo "5/2" | bc -l     # 2.50000000000000000000
+```
 
 ## ✅ Validation
 

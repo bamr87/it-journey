@@ -69,6 +69,8 @@ redirect_from:
 
 This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
 
+> The `{% raw %}{% include %}{% endraw %}` tag below renders an interactive terminal on the published site; in the raw Markdown source it just looks like a macro.
+
 {% include bashcrawl-terminal.html room="Cellar" %}
 
 ## 🎯 Quest Objectives
@@ -79,7 +81,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Find and collect the emerald amulet
 - [ ] Locate all four exits (armoury, chapel, vault, scrap)
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Entrance side-quest](/quests/0000/side-quests/entrance/) complete
 - Know how to use `ls`, `cd`, and `cat`
@@ -109,6 +111,24 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 
 ## 🗺️ Walkthrough
 
+### Step 0 — Enter the cellar
+
+First launch the game shell — this drops you *inside* the dungeon at an interactive prompt:
+
+```bash
+./main.sh --interactive
+```
+
+Once you see the game prompt, descend from the entrance into the CELLAR:
+
+```bash
+cd cellar
+pwd
+# e.g. /home/yourname/bashcrawl/ENTRANCE/cellar  (the ... is your install path)
+```
+
+If you arrived here straight from the [Entrance walkthrough](/quests/0000/side-quests/entrance/), you are already in the game shell — just `cd cellar`.
+
 ### Step 1 — Survey the cellar
 
 ```bash
@@ -117,7 +137,7 @@ ls -F
 # emerald_amulet  armoury/  chapel/  vault/  scrap/  dusty_scroll  recipe*
 ```
 
-Notice the variety: a regular file (`emerald_amulet`), directories (`/`), and an executable (`recipe*`).
+Notice the variety: a regular file (`emerald_amulet`), directories (`/`), and an executable (`recipe*`). The `*` after `recipe` is the executable marker `ls -F` adds — it is not part of the filename, and running the recipe is optional.
 
 ### Step 2 — Investigate with `file`
 
@@ -137,7 +157,7 @@ file recipe
 cat dusty_scroll
 ```
 
-The scroll reveals a clue about the emerald amulet's location and warns about hidden traps in the deeper chambers.
+The scroll confirms the emerald amulet rests here in the cellar and warns about hidden traps in the deeper chambers.
 
 ### Step 4 — Collect the amulet
 
@@ -145,7 +165,7 @@ The scroll reveals a clue about the emerald amulet's location and warns about hi
 cat emerald_amulet
 ```
 
-Reading it adds it to your inventory. Verify:
+Reading it adds it to your inventory. Verify with `inventory` — a special command the bashcrawl game environment provides (not a standard Unix command):
 
 ```bash
 inventory
@@ -165,6 +185,14 @@ alias back='cd ..'
 alias
 ```
 
+Curious how the shell resolves a name? `type` tells you whether it is a builtin, an alias, a function, or a file on disk:
+
+```bash
+type ls
+# On Debian/Ubuntu: ls is aliased to `ls --color=auto`
+# On a minimal system: ls is /bin/ls
+```
+
 Aliases last only for the current session unless added to `~/.bashrc` or `~/.bash_profile`.
 
 ### Step 6 — Identify all four exits
@@ -174,7 +202,7 @@ ls -F
 # armoury/  chapel/  vault/  scrap/
 ```
 
-Each leads to a distinct area of the dungeon. You can tackle them in any order.
+The output above is abbreviated to highlight the four doorways — the regular files from Step 1 (`emerald_amulet`, `dusty_scroll`, `recipe*`) are still listed too. Each directory leads to a distinct area of the dungeon. You can tackle them in any order.
 
 ## 💡 Common Pitfalls
 
@@ -223,7 +251,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections. The `[[wiki-link]]` syntax below is Obsidian wiki-link notation — clickable in Obsidian, plain text elsewhere.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
