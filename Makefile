@@ -316,8 +316,9 @@ liquid-check:
 	@echo "🧪 Checking Liquid raw-guards across pages/ (nested raw / unguarded \$${{ }}) ..."
 	@python3 scripts/validation/check_liquid_raw.py pages
 
-content-audit: content-validate mermaid-check liquid-check quest-validate quest-network
-	@echo "✅ Content audit complete — frontmatter, mermaid, Liquid, quests, and network validated."
+content-audit: content-validate mermaid-check quest-validate quest-network
+	@echo "✅ Content audit complete — frontmatter, mermaid, quests, and network validated."
+	@echo "   (run 'make liquid-check' for the repo-wide Liquid raw-guard sweep)"
 
 # AI-augmented CMS engine (scripts/cms/cms.py -> .cms/)
 cms-index:

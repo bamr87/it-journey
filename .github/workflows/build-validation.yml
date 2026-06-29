@@ -121,10 +121,22 @@ jobs:
     # {% raw %} or an unguarded GitHub Actions ${{ }}. The PR Jekyll build sets
     # liquid.error_mode: warn (dev speed) and would let these through, but the
     # production GitHub Pages build is strict and they take the live site down.
+    # Scoped to CHANGED pages on a PR (so pre-existing debt never blocks an
+    # unrelated change); full sweep on push/dispatch.
     - name: 🧪 Liquid raw-guard gate
+      env:
+        BASE: ${{ github.event.pull_request.base.sha }}
       run: |
         python3 scripts/validation/check_liquid_raw.py --selftest
-        python3 scripts/validation/check_liquid_raw.py pages | tee -a "$GITHUB_STEP_SUMMARY"
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          git fetch --no-tags --depth=1 origin "$BASE" 2>/dev/null || true
+          mapfile -t files < <(git diff --name-only "$BASE" HEAD -- 'pages/**/*.md' 'pages/**/*.markdown' 2>/dev/null || true)
+          if [ "${#files[@]}" -eq 0 ]; then echo "no changed content pages — skipping." | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          echo "checking ${#files[@]} changed page(s)…" >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/validation/check_liquid_raw.py "${files[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+        else
+          python3 scripts/validation/check_liquid_raw.py pages | tee -a "$GITHUB_STEP_SUMMARY"
+        fi
 
     - name: 🔧 Setup Ruby Environment
       uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1

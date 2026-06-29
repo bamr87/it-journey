@@ -42,7 +42,6 @@ Two patterns cover most multi-agent use cases:
 
 An orchestrator job triggers multiple sub-agents simultaneously. Each sub-agent handles a different task (e.g., frontend tests, backend tests, security scan). The orchestrator collects results after all sub-agents complete.
 
-{% raw %}
 ```yaml
 jobs:
   orchestrate:
@@ -61,7 +60,6 @@ jobs:
     needs: [agent_a, agent_b]
     # ... collect and evaluate results
 ```
-{% endraw %}
 
 ### Chain (Sequential)
 
