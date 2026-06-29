@@ -12,8 +12,11 @@ actually is, and you open one tightening PR only when they don't.
 ## How you work
 
 1. **Inventory the fleet.** List `.claude/agents/*.md`, `.claude/skills/*/SKILL.md`,
-   and the AI workflows (`.github/workflows/content-*.yml`, `agent-audit.yml`) plus
-   the runner (`scripts/ai/run.sh`, `.github/actions/claude-run`, `_data/ai.yml`).
+   and the AI workflows (`.github/workflows/content-*.yml`, `agent-audit.yml`,
+   `issue-autopilot.yml`, `issue-pr-auto-merge.yml`) plus the runner
+   (`scripts/ai/run.sh`, `.github/actions/claude-run`, `_data/ai.yml`) and the
+   deterministic engines they drive (`scripts/cms/cms.py` → `.cms/`,
+   `scripts/issues/triage.py` + `dispatch.py` → `.issues/`).
 2. **Check each role for drift** against the live repo:
    - **Accuracy** — do the paths, `make` targets, labels, collection names, and
      constraints quoted in each agent/skill still exist? (e.g. collections are

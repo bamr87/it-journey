@@ -1,0 +1,108 @@
+# =============================================================================
+# .issues/config.yml — Issue Autopilot configuration
+# -----------------------------------------------------------------------------
+# The single hand-edited knob-board for the issue-triage loop, mirroring
+# .cms/config.yml. The deterministic engine (scripts/issues/triage.py) reads this
+# to (1) classify every OPEN issue into a `disposition`, and (2) group issues into
+# PR-sized `batches`. The skill/agents ACT on the engine's plan; they never
+# re-decide policy. Edit this file to tune routing — not the Python.
+#
+# HARD GUARDRAIL (enforced in code, not a knob): a HUMAN-authored issue
+# (author.is_bot == false) can NEVER receive a *close* disposition. The engine
+# downgrades any such match to `needs-human`. Only bot/automation-authored noise
+# is ever eligible for auto-close, and only when ISSUE_AUTOCLOSE_ENABLED is set.
+# =============================================================================
+
+repo: bamr87/it-journey
+
+# Boundedness — how much one pass may act on (like .cms loop.batch_size).
+limits:
+  max_issues_per_run: 40
+  max_resolve_batches_per_run: 3   # at most N resolution PRs proposed per pass
+
+# Disposition rules, evaluated top-to-bottom; FIRST match wins. Each `match` is an
+# AND of the keys present (author_is_bot, any_label, all_label, title_regex,
+# body_regex). Omitted keys are not constrained.
+dispositions:
+  - id: close-stale
+    title: Stale auto-generated content-review noise
+    match:
+      author_is_bot: true
+      any_label: [ai-review, content-improvement]
+      title_regex: '^(\s*🤖\s*)?AI Content Review'
+    action: recommend-close          # auto-close only if bot-authored AND enabled
+    route_to: cms-worklist           # genuine findings flow into the .cms lanes
+    note: >-
+      Superseded by the .cms fleet + the deterministic brand_lint gate (see
+      CLAUDE.md, which marks ai-content-review.yml as replaced). Genuine findings
+      are routed to the .cms worklist, not worked one-PR-per-issue from a checklist.
+
+  - id: close-report
+    title: Recurring report issue
+    match:
+      author_is_bot: true            # defense-in-depth: never even propose closing
+      title_regex: '(Weekly traffic|📊\s*Weekly|traffic\s*—)'
+    action: recommend-close
+    note: >-
+      Informational recurring report with no action items. Recommend rolling the
+      automation into a single rolling issue / GitHub Discussion / dashboard
+      instead of opening one fresh issue per period.
+
+  - id: epic
+    title: Epic / tracking issue — decompose, never close
+    match:
+      any_label: [enhancement, epic]
+      title_regex: '(Epic Quest|⚔️|\bepic\b)'
+    action: decompose
+    note: >-
+      Too large for one PR. Post a decomposition plan (a milestone of PR-sized
+      children) and keep the issue open as the tracker. Quests are registry-
+      governed: children must edit quest frontmatter then run `make quest-data`.
+
+  - id: content
+    title: Actionable content work
+    match:
+      any_label: [documentation, content, content-improvement, good first issue]
+    action: resolve-content
+
+  - id: bug
+    title: Actionable code / bug fix
+    match:
+      any_label: [bug]
+    action: resolve-code
+
+# Everything unmatched (and every human-authored would-be-close) lands here.
+default_disposition:
+  id: needs-human
+  action: route-human
+
+# Collections used to tag/group content issues into per-area batches.
+areas:
+  collections: [quests, docs, notes, quickstart, about]
+
+# Safety boundary for the RESOLVER: an auto-resolution PR may only touch these
+# paths. A batch whose required change falls outside is downgraded to needs-human.
+# (Code/infra fixes are intentionally human-reviewed — the resolver is content-
+# scoped by default; the content-only auto-merge guard is the second layer.)
+resolve_allow_globs:
+  - 'pages/**'
+  - 'assets/**'
+  - '_data/quests/**'
+
+# The label namespace the autopilot owns (routing keys).
+labels:
+  pr: auto:issue                # machine-authored issue-resolution PR
+  triaged: autopilot:triaged    # issue has been analyzed by the triager
+  stale: autopilot:stale        # recommended for closing (bot-noise / report)
+  epic: autopilot:epic          # large, decomposed, kept open
+  go: autopilot:go              # human opt-in: resolve this issue now
+  needs_human: needs-human      # reused: forces manual handling
+
+# Generated artifacts. worklists/ + reports/ are tracked in git (committed on
+# local runs; CI uploads them as a run artifact for the audit trail); index/plan
+# are transient working state and are gitignored.
+output:
+  index: .issues/index.json     # raw snapshot of open issues (transient)
+  plan: .issues/plan.json       # the machine contract (transient)
+  worklist_dir: .issues/worklists
+  report_dir: .issues/reports
