@@ -72,7 +72,7 @@ rewards:
 
 ## 📖 The Legend Behind This Quest
 
-In the old kingdoms, every scriptorium kept a reviewer who annotated the margins. The IT-Journey way goes one step further: the reviewer doesn't just comment — it **rewrites the draft in place** on the PR branch, so the next human to look at the pull request sees an already-improved manuscript. This is an agentic editorial pass: a Claude Code step reads the changed files, applies brand-voice and clarity fixes, and pushes a commit back to the branch. Powerful — and exactly the kind of automation that, done naively, becomes the dragon. Push a commit to a PR and GitHub fires a `synchronize` event; if your reviewer runs on `synchronize`, it wakes itself. Today you build the editor *and* the wards that keep it from devouring its own tail.
+In the old kingdoms, every scriptorium kept a reviewer who annotated the margins. The IT-Journey way goes one step further: the reviewer doesn't just comment — it **rewrites the draft in place** on the PR branch, so the next human to look at the pull request sees an already-improved manuscript. This is an agentic editorial pass: a Claude Code step reads the changed files, applies brand-voice and clarity fixes, and pushes a commit back to the branch. It can clear a whole class of editorial nits before a human ever opens the PR — and is exactly the kind of automation that, done naively, becomes the dragon. Push a commit to a PR and GitHub fires a `synchronize` event; if your reviewer runs on `synchronize`, it wakes itself. Today you build the editor *and* the wards that keep it from devouring its own tail.
 
 ## 🎯 Quest Objectives
 
