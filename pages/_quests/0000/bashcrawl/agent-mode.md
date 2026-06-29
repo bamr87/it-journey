@@ -84,7 +84,7 @@ This page is your **walkthrough and strategy guide**. Agent Mode itself runs loc
 - All 9 dungeon areas explored
 - Comfortable with shell scripting and pipes
 - The agent/automation flags below require the IT-Journey fork of Bashcrawl ([github.com/bamr87/bashcrawl](https://github.com/bamr87/bashcrawl)); a learner running upstream Bashcrawl may not have them.
-- The `llm` Python package for the AI agent: `pip install llm` (the agent falls back to a heuristic navigator if it is missing)
+- The `llm` Python package for the AI agent: `pip install llm` **and** a configured model provider key (e.g. `llm keys set openai`, or set `OPENAI_API_KEY`). Installing the package alone is not enough — without a key the agent uses its built-in heuristic navigator instead of a real model.
 - Screenshot capture may require extra terminal tooling on your system — the PNGs are produced by the screenshot-capable run modes below, and a terminal that supports them
 - (Optional) GitHub account for contribution track
 

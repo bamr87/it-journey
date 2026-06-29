@@ -113,13 +113,18 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 
 ### Step 0 — Enter the cellar
 
-Launch the game shell, then descend from the entrance into the CELLAR:
+First launch the game shell — this drops you *inside* the dungeon at an interactive prompt:
 
 ```bash
 ./main.sh --interactive
+```
+
+Once you see the game prompt, descend from the entrance into the CELLAR:
+
+```bash
 cd cellar
 pwd
-# Output: .../ENTRANCE/cellar
+# e.g. /home/yourname/bashcrawl/ENTRANCE/cellar  (the ... is your install path)
 ```
 
 If you arrived here straight from the [Entrance walkthrough](/quests/0000/side-quests/entrance/), you are already in the game shell — just `cd cellar`.
@@ -184,7 +189,8 @@ Curious how the shell resolves a name? `type` tells you whether it is a builtin,
 
 ```bash
 type ls
-# ls is aliased to ... / ls is /bin/ls
+# On Debian/Ubuntu: ls is aliased to `ls --color=auto`
+# On a minimal system: ls is /bin/ls
 ```
 
 Aliases last only for the current session unless added to `~/.bashrc` or `~/.bash_profile`.

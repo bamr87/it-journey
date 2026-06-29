@@ -166,7 +166,9 @@ readlink -f quick_entrance
 Building your `quick_entrance` portal and stepping through it is what earns the portal crystal — the act of creating and using the symlink is the puzzle. Then check your haul with `inventory`, a bashcrawl game command (not a standard Unix tool) that lists the treasures you've gathered:
 
 ```bash
-cat crystal_hint
+cd quick_entrance    # step through the portal you built
+pwd                  # now inside ENTRANCE, reached via your symlink
+cd -                 # return to the scrap heap
 inventory
 # portal crystal ✓
 ```

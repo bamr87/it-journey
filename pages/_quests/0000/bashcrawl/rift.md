@@ -183,7 +183,7 @@ echo '--- additional run ---' >> oracle.log
 ### Step 5 — Mezzanine — Advanced chaining
 
 ```bash
-cd mezzanine
+cd ../mezzanine     # mezzanine is a sibling of spire under the Rift root (like arena → pit → spire)
 # Combine all techniques:
 ls -la | sort -k5 -rn | head -10 > biggest_files.txt
 # -k5 sorts by column 5 (file size); -rn is reverse numeric (largest first)

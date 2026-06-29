@@ -73,7 +73,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] List the dungeon entrance contents with `ls` and `ls -F`
 - [ ] Read the entrance scroll with `cat`
 - [ ] Ask Merlin for a hint with the `merlin` command
-- [ ] Collect the brass key and move to the cellar
+- [ ] Find the brass key clue in the scroll and move to the cellar
 
 ## 🗺️ Quest Prerequisites
 
@@ -85,7 +85,7 @@ To play locally (and unlock the `merlin` and `quest` commands), clone the dungeo
 ```bash
 git clone https://github.com/bamr87/bashcrawl
 cd bashcrawl
-bash main.sh --interactive
+./main.sh --interactive
 ```
 
 ## ⚡ Command Cheatsheet
