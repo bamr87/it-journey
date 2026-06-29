@@ -72,7 +72,10 @@ The procedure is the **`quest-walkthrough`** skill (plan → execute → walk th
 one report); locally the same loop runs via `make quest-walkthrough`
 (`make quest-walkthrough-plan` previews the slice with no AI/cost). The agent is
 read-only over content — it **never edits a quest and never merges**; fixable bugs
-land in the report's issues section for a content pass or a human. See
+land in the report's issues section for a content pass or a human. Each run also
+uploads **session screenshots** — every walked quest's rendered page (mobile +
+desktop) plus a terminal render of its recorded command transcript
+(`scripts/quest/walkthrough_screenshots.mjs`) — as run artifacts for review. See
 [`test/quest-validator/walkthroughs/README.md`](../../test/quest-validator/walkthroughs/README.md)
 for the report contract.
 

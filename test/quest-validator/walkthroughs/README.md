@@ -30,6 +30,23 @@ make quest-walkthrough     CHARACTER=developer LEVEL=0001    # full agentic walk
 Omit `CHARACTER`/`LEVEL` to let the planner **date-rotate** the slice — that is how
 the daily workflow sweeps the whole curriculum over time.
 
+## Session screenshots (CI artifacts)
+
+Each CI run also captures **visual evidence** of the session and uploads it as the
+`quest-walkthrough-*` workflow artifact (not committed to the repo):
+
+- `screenshots/pages/<slug>-mobile.png` + `-desktop.png` — each walked quest's
+  rendered page (what a learner sees), driven off the permalink with headless
+  Chromium at a ~390px mobile and a 1440px desktop viewport.
+- `screenshots/session/<slug>-terminal.png` — a terminal-styled render of the
+  recorded session transcript (the commands the walkthrough ran + their
+  `passed`/`failed`/`skipped`/`reasoned` outcome), built from `walk-evidence.json`.
+  This is a faithful render of the recorded transcript, not a raw TTY frame grab.
+
+Produced by `scripts/quest/walkthrough_screenshots.mjs` (Playwright). Run it locally
+after a walkthrough with `make quest-walkthrough-screenshots` (set `BASE_URL` to a
+local server to screenshot un-published changes).
+
 ## File naming
 
 ```
