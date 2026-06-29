@@ -61,6 +61,11 @@ map and setup.
   drift fails the check** (blocks auto-merge).
 - `content-auto-merge.yml` — smuggle-guard (`classify_changes.py`, content-only) +
   checks-green → squash-merge.
+- `quest-forge.yml` (issue labeled `epic-quest` / `/forge-quest` comment) — the
+  `quest-forge` agent collects an epic-quest **proposal issue** deterministically
+  (`scripts/quest/forge_issue.py`) and authors a full `epic_quest` hub +
+  `bonus_quest` chapters in `pages/_quests/codex/` → one `auto:quest` PR. Closes the
+  loop with lifehacker.dev (its quest-forge hook files the proposal; this consumes it).
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
 
 **OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the

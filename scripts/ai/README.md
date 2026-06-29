@@ -23,7 +23,16 @@ _data/ai.yml               # model + budget (claude-opus-4-8)
 | `content-review.yml` | content PR opened | `content-reviewer` | editorial pass: small on-brand fixes + comments | `CONTENT_REVIEW_ENABLED` |
 | `content-quality.yml` | content PR | _(none — deterministic)_ | `brand_lint` gate; **spelling drift fails the check** | _(always on)_ |
 | `content-auto-merge.yml` | `auto:content` PR | _(none)_ | smuggle-guard (content-only) + checks green → squash-merge | `CONTENT_AUTOMERGE_ENABLED` |
+| `quest-forge.yml` | issue labeled `epic-quest`, `/forge-quest` comment, dispatch | `quest-forge` | reads an epic-quest **proposal issue**, collects it deterministically (`scripts/quest/forge_issue.py`), authors a full `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/`, validates (`make quest-audit`), opens one `auto:content`+`auto:quest` PR | `QUEST_FORGE_ENABLED` |
 | `agent-audit.yml` | weekly Mon 06:00 | `agent-auditor` | tightens the fleet for drift / least-privilege | `AGENT_AUDIT_ENABLED` |
+
+The **issue→quest** lane closes the loop with lifehacker.dev: its quest-forge hook
+*files* a proposal issue here (e.g. [#365](https://github.com/bamr87/it-journey/issues/365)),
+and `quest-forge.yml` *consumes* it into a published quest campaign. The output PR
+reuses the existing content gates (quest-validation, content-quality,
+content-review, agentic-quest-review, build) and the same content-only smuggle
+guard, so a forged campaign is reviewed and merged exactly like any content PR —
+human still holding the merge button.
 
 Roles live in `.claude/agents/*.md`; procedures in `.claude/skills/` (the new
 `content-curator` skill composes the existing `cms-curator` + `brand-voice`
@@ -47,7 +56,12 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set CONTENT_REVIEW_ENABLED    --body true --repo bamr87/it-journey
    gh variable set CONTENT_AUTOMERGE_ENABLED --body true --repo bamr87/it-journey
    gh variable set AGENT_AUDIT_ENABLED       --body true --repo bamr87/it-journey
+   gh variable set QUEST_FORGE_ENABLED       --body true --repo bamr87/it-journey
    ```
+
+   With `QUEST_FORGE_ENABLED` on, label any epic-quest proposal issue `epic-quest`
+   (or comment `/forge-quest`) to forge it into a quest-campaign PR. Locally, the
+   same procedure runs via the `/forge-quest <issue#>` prompt-agent.
 
 Recommended ramp: turn on `CONTENT_FACTORY_ENABLED` + `CONTENT_REVIEW_ENABLED`
 first, watch a few PRs, then enable `CONTENT_AUTOMERGE_ENABLED` once you trust the
