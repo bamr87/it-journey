@@ -9,7 +9,8 @@
         quest-execute quest-execute-host \
         content-validate content-normalize content-normalize-apply content-audit \
         mermaid-check mermaid-fix \
-        cms-index cms-analyze cms-plan cms-status cms-all
+        cms-index cms-analyze cms-plan cms-status cms-all \
+        theme-crawl theme-triage
 
 JEKYLL_CONFIG_DEV := _config.yml,_config_dev.yml
 JEKYLL_CONFIG_CI  := _config.yml,_config_dev.yml,_config_ci.yml
@@ -66,6 +67,10 @@ help:
 	@echo "  make cms-analyze        - Write the daily .cms/reports analysis"
 	@echo "  make cms-plan           - Write the daily .cms/worklists (mechanical/substantive)"
 	@echo "  make cms-all            - Index + analyze + plan"
+	@echo ""
+	@echo "🔭 Theme Scout (frontend canary)"
+	@echo "  make theme-crawl        - Test it-journey.dev -> .frontend/findings.jsonl"
+	@echo "  make theme-triage       - Classify theme-vs-content + dedup -> candidates"
 	@echo ""
 
 # Generate statistics
@@ -320,6 +325,14 @@ cms-status:
 cms-all:
 	@echo "🧭 Building CMS index, analysis report, and daily worklist..."
 	@python3 scripts/cms/cms.py all
+
+# Theme Scout — frontend canary for it-journey.dev (-> files theme bugs upstream)
+theme-crawl:
+	@echo "🔭 Crawling $${BASE_URL:-https://it-journey.dev} ..."
+	@node scripts/frontend/crawl.mjs
+
+theme-triage:
+	@python3 scripts/frontend/triage_findings.py
 
 # Watch for changes and auto-update (requires fswatch on macOS)
 watch:

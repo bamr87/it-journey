@@ -47,6 +47,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 | `cms-daily-loop.yml` | daily 09:00 UTC; dispatch | **Lane A** deterministic normalization (`make content-normalize-apply`, free) → PR; **Lane B** (gated) agentic `cms-curator` pass → PR for review. |
 | `agentic-quest-review.yml` | dispatch; PR on quests; `agentic-review` label | Agentic quest review/execute (`test/quest-validator/agentic_validate.py`); spend-capped. |
 | `agent-audit.yml` | weekly; dispatch (gated) | `agent-auditor` checks the AI fleet (`.claude/agents`, skills, workflows) for drift; opens at most one tightening PR. |
+| `theme-scout.yml` | weekly Tue 06:00; dispatch (gated) | **Frontend canary.** A Playwright crawler (`scripts/frontend/crawl.mjs`) tests **it-journey.dev** (mobile + desktop); `triage_findings.py` classifies findings theme-vs-content + dedups; the `theme-scout` agent files **theme** bugs (site-wide / theme-injected, e.g. `/tags/` 404s) upstream to `bamr87/zer0-mistakes`. OFF behind `THEME_SCOUT_ENABLED` + `THEME_REPO_TOKEN` (cross-repo PAT). |
 
 ### Scheduled maintenance & generation
 

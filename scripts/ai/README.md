@@ -25,6 +25,17 @@ _data/ai.yml               # model + budget (claude-opus-4-8)
 | `content-auto-merge.yml` | `auto:content` PR | _(none)_ | smuggle-guard (content-only) + checks green → squash-merge | `CONTENT_AUTOMERGE_ENABLED` |
 | `agent-audit.yml` | weekly Mon 06:00 | `agent-auditor` | tightens the fleet for drift / least-privilege | `AGENT_AUDIT_ENABLED` |
 
+## The frontend canary (theme bugs → upstream)
+
+| Workflow | Trigger | Agent | What it does | Gate variable |
+|---|---|---|---|---|
+| `theme-scout.yml` | weekly Tue 06:00 | `theme-scout` | a Playwright crawler tests the **it-journey.dev** frontend; the agent files **theme** bugs (site-wide / theme-injected) upstream to `bamr87/zer0-mistakes`, deduped | `THEME_SCOUT_ENABLED` (+ `THEME_REPO_TOKEN`) |
+
+it-journey.dev consumes the theme via `remote_theme`, so it's a live canary: the
+deterministic `scripts/frontend/crawl.mjs` + `triage_findings.py` find site-wide
+defects (e.g. 404s on theme-injected `/tags/`, `/search.json`), and the
+`theme-scout` agent reports them to the theme repo. See [`.frontend/README.md`](../../.frontend/README.md).
+
 Roles live in `.claude/agents/*.md`; procedures in `.claude/skills/` (the new
 `content-curator` skill composes the existing `cms-curator` + `brand-voice`
 skills). Brand is anchored by `_data/brand/*` and enforced cheaply by
@@ -47,6 +58,12 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set CONTENT_REVIEW_ENABLED    --body true --repo bamr87/it-journey
    gh variable set CONTENT_AUTOMERGE_ENABLED --body true --repo bamr87/it-journey
    gh variable set AGENT_AUDIT_ENABLED       --body true --repo bamr87/it-journey
+   gh variable set THEME_SCOUT_ENABLED       --body true --repo bamr87/it-journey
+   ```
+
+   The theme scout also needs a cross-repo PAT to file upstream:
+   ```bash
+   gh secret set THEME_REPO_TOKEN --repo bamr87/it-journey   # issues:write on zer0-mistakes
    ```
 
 Recommended ramp: turn on `CONTENT_FACTORY_ENABLED` + `CONTENT_REVIEW_ENABLED`
