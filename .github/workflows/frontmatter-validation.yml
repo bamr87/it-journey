@@ -65,8 +65,13 @@ jobs:
             find pages -name '*.md' -type f \
               | grep -v '^pages/_quests/' > /tmp/fm/targets.txt || true
           fi
-          COUNT=$(grep -c . /tmp/fm/targets.txt || echo 0)
-          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          # `grep -c .` prints "0" AND exits 1 when nothing matches (e.g. a
+          # quest-only PR, where every changed page is filtered out above). The
+          # old `|| echo 0` then appended a SECOND "0", making a multiline
+          # GITHUB_OUTPUT value GitHub rejects ("Invalid format '0'"). Swallow the
+          # non-zero exit and default an empty capture to 0 so count is one int.
+          COUNT=$(grep -c . /tmp/fm/targets.txt 2>/dev/null || true)
+          echo "count=${COUNT:-0}" >> "$GITHUB_OUTPUT"
           echo "Targeting $COUNT file(s):"
           cat /tmp/fm/targets.txt || true
 

@@ -47,6 +47,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 | `cms-daily-loop.yml` | daily 09:00 UTC; dispatch | **Lane A** deterministic normalization (`make content-normalize-apply`, free) → PR; **Lane B** (gated) agentic `cms-curator` pass → PR for review. |
 | `agentic-quest-review.yml` | dispatch; PR on quests; `agentic-review` label | Agentic quest review/execute (`test/quest-validator/agentic_validate.py`); spend-capped. |
 | `agent-audit.yml` | weekly; dispatch (gated) | `agent-auditor` checks the AI fleet (`.claude/agents`, skills, workflows) for drift; opens at most one tightening PR. |
+| `quest-forge.yml` | issue labeled `epic-quest`; `/forge-quest` comment; dispatch (gated) | `quest-forge` agent reads an epic-quest **proposal issue**, collects it deterministically (`scripts/quest/forge_issue.py`), authors an `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/`, runs `make quest-audit`, and opens one `auto:content`+`auto:quest` PR. Never merges. |
 
 ### Scheduled maintenance & generation
 
@@ -66,6 +67,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 | `new-feature-request.yml` | issue labeled `approved` | Appends the approved feature to the features page (`scripts/development/content/append_feature.py`). |
 | `issue-autopilot.yml` | daily 07:00 UTC; dispatch; `autopilot:go` label (gated) | **The issue autopilot loop.** Deterministic engine (`scripts/issues/triage.py`) classifies every open issue + groups into batches; `issue-triager` comments a plan, labels, and closes **bot-noise only** (never a human's issue, double-gated on `ISSUE_AUTOCLOSE_ENABLED`); `issue-resolver` turns one batch into one `auto:issue` PR (`Closes #N`), backpressured via `scripts/issues/dispatch.py` + `.issues/budget.yml`. OFF behind `ISSUE_AUTOPILOT_ENABLED` (+ `ISSUE_RESOLVE_ENABLED` for the PR lane). |
 | `issue-pr-auto-merge.yml` | `auto:issue` PR events (gated) | Smuggle-guard (`scripts/ci/classify_changes.py`, content-only) + all checks green → squash-merge, closing the linked issues. OFF behind `ISSUE_AUTOMERGE_ENABLED`. |
+| `quest-forge.yml` | issue labeled `epic-quest`; `/forge-quest` comment; dispatch (gated) | Forges an epic-quest **proposal issue** into a quest-campaign PR (see the AI fleet table above). |
 | `dependabot-auto-merge.yml` | Dependabot PRs | Enables auto-merge for passing Dependabot PRs. |
 
 ## Required vs advisory checks

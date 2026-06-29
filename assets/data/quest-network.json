@@ -1,27 +1,27 @@
 {
   "stats": {
-    "total": 180,
+    "total": 191,
     "by_level": {
       "0000": 27,
-      "0001": 25,
+      "0001": 26,
       "0010": 17,
       "0011": 3,
-      "0100": 7,
-      "0101": 11,
+      "0100": 8,
+      "0101": 12,
       "0110": 8,
       "0111": 9,
-      "1000": 7,
-      "1001": 7,
-      "1010": 13,
+      "1000": 8,
+      "1001": 8,
+      "1010": 14,
       "1011": 10,
-      "1100": 12,
-      "1101": 8,
-      "1110": 8,
-      "1111": 8
+      "1100": 14,
+      "1101": 9,
+      "1110": 9,
+      "1111": 9
     },
     "by_type": {
-      "epic_quest": 1,
-      "main_quest": 154,
+      "epic_quest": 2,
+      "main_quest": 164,
       "side_quest": 25
     }
   },
@@ -414,6 +414,15 @@
       "file": "pages/_quests/0001/personal-site.md"
     },
     {
+      "id": "/quests/0001/self-operating-website-01-the-summoning/",
+      "title": "The Summoning: Raise the Site and Give It a Voice",
+      "level": "0001",
+      "type": "main_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "jekyll",
+      "file": "pages/_quests/0001/self-operating-website-01-the-summoning.md"
+    },
+    {
       "id": "/quests/0001/seo-optimization/",
       "title": "SEO Optimization: Meta Tags, Sitemaps & Structured Data",
       "level": "0001",
@@ -630,6 +639,15 @@
       "file": "pages/_quests/0100/jekyll-component-refactoring.md"
     },
     {
+      "id": "/quests/0100/self-operating-website-02-the-proving-grounds/",
+      "title": "The Proving Grounds: The Repo's First CI Gate",
+      "level": "0100",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "github-actions",
+      "file": "pages/_quests/0100/self-operating-website-02-the-proving-grounds.md"
+    },
+    {
       "id": "/quests/0100/profile-themes/",
       "title": "Profile Themes: Unleashing the Style Sorcerer",
       "level": "0100",
@@ -718,6 +736,15 @@
       "difficulty": "🟡 Medium",
       "technology": "security",
       "file": "pages/_quests/0101/secrets-management.md"
+    },
+    {
+      "id": "/quests/0101/self-operating-website-08-the-cartographer/",
+      "title": "The Cartographer: File Platform Bugs Upstream",
+      "level": "0101",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "github",
+      "file": "pages/_quests/0101/self-operating-website-08-the-cartographer.md"
     },
     {
       "id": "/quests/0101/testing-integration/",
@@ -963,6 +990,15 @@
       "file": "pages/_quests/1000/infrastructure-as-code.md"
     },
     {
+      "id": "/quests/1000/self-operating-website-03-the-war-machine/",
+      "title": "The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation",
+      "level": "1000",
+      "type": "main_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "github-actions",
+      "file": "pages/_quests/1000/self-operating-website-03-the-war-machine.md"
+    },
+    {
       "id": "/quests/1001/agentic-dev-environment-integration/",
       "title": "Bind the Agent to the Realm: Dev Environment Integration",
       "level": "1001",
@@ -1024,6 +1060,15 @@
       "difficulty": "🔴 Hard",
       "technology": "kubernetes",
       "file": "pages/_quests/1001/kubernetes-fundamentals.md"
+    },
+    {
+      "id": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
+      "title": "The Sigils of Trust: Auth, Secrets, and the Kill Switch",
+      "level": "1001",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "oauth",
+      "file": "pages/_quests/1001/self-operating-website-04-the-sigils-of-trust.md"
     },
     {
       "id": "/quests/1010/agentic-failure-root-cause-analysis/",
@@ -1141,6 +1186,15 @@
       "difficulty": "🟡 Medium",
       "technology": "google-analytics",
       "file": "pages/_quests/1010/query-traffic-with-mcp.md"
+    },
+    {
+      "id": "/quests/1010/self-operating-website-05-the-content-forge/",
+      "title": "The Content Forge: Autonomous Generation That Refuses to Lie",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "claude-code",
+      "file": "pages/_quests/1010/self-operating-website-05-the-content-forge.md"
     },
     {
       "id": "/quests/1011/agentic-behavior-tuning/",
@@ -1314,6 +1368,24 @@
       "file": "pages/_quests/1100/etl-pipeline-design.md"
     },
     {
+      "id": "/quests/1100/self-operating-website-06-the-editors-eye/",
+      "title": "The Editor's Eye: A Reviewer, and the Dragon It Becomes",
+      "level": "1100",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "github-actions",
+      "file": "pages/_quests/1100/self-operating-website-06-the-editors-eye.md"
+    },
+    {
+      "id": "/quests/1100/self-operating-website-10-the-bard-forge/",
+      "title": "The Bard Forge: The Quest That Writes Quests",
+      "level": "1100",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "claude-code",
+      "file": "pages/_quests/1100/self-operating-website-10-the-bard-forge.md"
+    },
+    {
       "id": "/quests/1100/stream-processing/",
       "title": "Stream Processing: Real-Time Data with Apache Kafka & Flink",
       "level": "1100",
@@ -1404,6 +1476,15 @@
       "file": "pages/_quests/1101/python-data-science.md"
     },
     {
+      "id": "/quests/1101/self-operating-website-07-the-named-familiars/",
+      "title": "The Named Familiars: Agents, Skills, and a Self-Review Loop",
+      "level": "1101",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "claude-code",
+      "file": "pages/_quests/1101/self-operating-website-07-the-named-familiars.md"
+    },
+    {
       "id": "/quests/1110/404-hunting-quest/",
       "title": "404 Hunting: Binary Wards for Unbreakable Links",
       "level": "1110",
@@ -1465,6 +1546,15 @@
       "difficulty": "🔴 Hard",
       "technology": "kubernetes",
       "file": "pages/_quests/1110/scaling-strategies.md"
+    },
+    {
+      "id": "/quests/1110/self-operating-website-09-the-chronicle/",
+      "title": "The Chronicle: A SessionEnd Hook That Remembers",
+      "level": "1110",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "bash",
+      "file": "pages/_quests/1110/self-operating-website-09-the-chronicle.md"
     },
     {
       "id": "/quests/1110/system-design-interviews/",
@@ -1555,6 +1645,15 @@
       "difficulty": "🟢 Easy",
       "technology": "reference",
       "file": "pages/_quests/codex/glossary.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website/",
+      "title": "Epic Quest: The Self-Operating Website",
+      "level": "1111",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "github-actions",
+      "file": "pages/_quests/codex/self-operating-website.md"
     },
     {
       "id": "/quests/codex/world-map/",
@@ -2239,6 +2338,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0001/self-operating-website-01-the-summoning/",
+      "target": "/quests/codex/self-operating-website/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0001/self-operating-website-01-the-summoning/",
+      "target": "/quests/0100/self-operating-website-02-the-proving-grounds/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0001/seo-optimization/",
       "target": "/quests/0001/advanced-markdown/",
       "kind": "recommended"
@@ -2394,6 +2503,16 @@
       "kind": "recommended"
     },
     {
+      "source": "/quests/0100/self-operating-website-02-the-proving-grounds/",
+      "target": "/quests/0001/self-operating-website-01-the-summoning/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0100/self-operating-website-02-the-proving-grounds/",
+      "target": "/quests/1000/self-operating-website-03-the-war-machine/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0100/profile-themes/",
       "target": "/quests/0001/forge-your-character/",
       "kind": "required"
@@ -2521,6 +2640,16 @@
     {
       "source": "/quests/0101/secrets-management/",
       "target": "/quests/0101/workflow-optimization/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/0101/self-operating-website-08-the-cartographer/",
+      "target": "/quests/1101/self-operating-website-07-the-named-familiars/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0101/self-operating-website-08-the-cartographer/",
+      "target": "/quests/1110/self-operating-website-09-the-chronicle/",
       "kind": "unlocks"
     },
     {
@@ -2914,6 +3043,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1000/self-operating-website-03-the-war-machine/",
+      "target": "/quests/0100/self-operating-website-02-the-proving-grounds/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1000/self-operating-website-03-the-war-machine/",
+      "target": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1001/agentic-dev-environment-integration/",
       "target": "/quests/1000/agentic-mcp-server-mastery/",
       "kind": "required"
@@ -3016,6 +3155,16 @@
     {
       "source": "/quests/1001/kubernetes-fundamentals/",
       "target": "/quests/1010/monitoring-fundamentals/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
+      "target": "/quests/1000/self-operating-website-03-the-war-machine/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
+      "target": "/quests/1010/self-operating-website-05-the-content-forge/",
       "kind": "unlocks"
     },
     {
@@ -3146,6 +3295,16 @@
     {
       "source": "/quests/1010/query-traffic-with-mcp/",
       "target": "/quests/1010/automate-traffic-report/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1010/self-operating-website-05-the-content-forge/",
+      "target": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1010/self-operating-website-05-the-content-forge/",
+      "target": "/quests/1100/self-operating-website-06-the-editors-eye/",
       "kind": "unlocks"
     },
     {
@@ -3469,6 +3628,21 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1100/self-operating-website-06-the-editors-eye/",
+      "target": "/quests/1010/self-operating-website-05-the-content-forge/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1100/self-operating-website-06-the-editors-eye/",
+      "target": "/quests/1101/self-operating-website-07-the-named-familiars/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1100/self-operating-website-10-the-bard-forge/",
+      "target": "/quests/1110/self-operating-website-09-the-chronicle/",
+      "kind": "recommended"
+    },
+    {
       "source": "/quests/1100/stream-processing/",
       "target": "/quests/1100/etl-pipeline-design/",
       "kind": "recommended"
@@ -3624,6 +3798,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1101/self-operating-website-07-the-named-familiars/",
+      "target": "/quests/1100/self-operating-website-06-the-editors-eye/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1101/self-operating-website-07-the-named-familiars/",
+      "target": "/quests/0101/self-operating-website-08-the-cartographer/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1110/api-gateway-patterns/",
       "target": "/quests/1110/microservices-architecture/",
       "kind": "required"
@@ -3719,6 +3903,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1110/self-operating-website-09-the-chronicle/",
+      "target": "/quests/0101/self-operating-website-08-the-cartographer/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1110/self-operating-website-09-the-chronicle/",
+      "target": "/quests/1100/self-operating-website-10-the-bard-forge/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1110/system-design-interviews/",
       "target": "/quests/1110/scaling-strategies/",
       "kind": "required"
@@ -3871,6 +4065,61 @@
     {
       "source": "/quests/1111/technical-leadership/",
       "target": "/quests/1111/innovation-rnd/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/0010/epic-quest-zer0-to-her0-cmstyle/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/0001/self-operating-website-01-the-summoning/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/0100/self-operating-website-02-the-proving-grounds/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1000/self-operating-website-03-the-war-machine/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1001/self-operating-website-04-the-sigils-of-trust/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1010/self-operating-website-05-the-content-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1100/self-operating-website-06-the-editors-eye/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1101/self-operating-website-07-the-named-familiars/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/0101/self-operating-website-08-the-cartographer/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1110/self-operating-website-09-the-chronicle/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/1100/self-operating-website-10-the-bard-forge/",
       "kind": "unlocks"
     },
     {

@@ -59,6 +59,9 @@ start_here:
 
 # Codex / quick navigation — the mystical library.
 codex:
+  - title: "Epic: The Self-Operating Website"
+    url: /quests/codex/self-operating-website/
+    icon: bi-robot
   - title: World Map
     url: /quests/codex/world-map/
     icon: bi-map-fill
