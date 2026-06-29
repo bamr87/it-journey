@@ -8,6 +8,7 @@
         docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
         quest-execute quest-execute-host \
         quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
+        quest-ledger-update quest-ledger-dashboard quest-ledger-selftest quest-perfection-plan quest-fix \
         content-validate content-normalize content-normalize-apply content-audit \
         mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all \
@@ -326,6 +327,48 @@ quest-walkthrough:
 	@claude -p "Use the quest-walkthrough skill to walk one linked quest slice end-to-end and write ONE session report. CHARACTER='$(CHARACTER)' LEVEL='$(LEVEL)' MAX_QUESTS=$(MAX_QUESTS). Run agentic_validate.py in --mode $(MODE). Write the report to test/quest-validator/walkthroughs/ and STOP — do not edit quest content, branch, commit, or merge." \
 		--permission-mode acceptEdits \
 		--allowedTools "Bash,Read,Write,Glob,Grep" \
+		--disallowedTools "Bash(git:*),Bash(gh:*)" \
+		--max-turns 80 --model claude-opus-4-8 --output-format text
+
+# ── Autonomous quest-PERFECTION loop (walk → fix → ledger, until perfect) ───
+# The fix arm is the inverse of the walkthrough arm: the walker witnesses where a
+# (character,level) slice breaks; the fixer repairs exactly what it witnessed.
+# .quests/ledger.json is the ONE deterministic source of truth (committed); the
+# ledger CLI never trusts the model's own grade. Slice id is "<char>/<code>"
+# (e.g. developer/0001), NEVER the permalink. MODE reused from above.
+
+# Merge one walkthrough's evidence into the ledger and recompute "perfect"
+# (perfect requires --mode execute + a non-truncated, fully-scored run).
+quest-ledger-update:
+	@echo "📒 Updating the quest-perfection ledger from walk evidence ($(MODE) mode)..."
+	@python3 scripts/quest/ledger.py update \
+		--evidence walk-evidence.json --plan walk-plan.json \
+		--mode $(MODE) --event walk $(EXTRA)
+
+# Regenerate the committed, human-readable dashboard from the ledger.
+quest-ledger-dashboard:
+	@echo "📊 Rendering .quests/DASHBOARD.md from the ledger..."
+	@python3 scripts/quest/ledger.py render
+
+quest-ledger-selftest:
+	@echo "🧪 Quest-perfection ledger self-test (offline)..."
+	@python3 scripts/quest/ledger.py selftest
+
+# Plan one highest-priority not-yet-perfect slice per character path, ledger-aware.
+# Writes one plan per path into ./plans/ for the daily orchestrator to fan out.
+quest-perfection-plan:
+	@echo "🗺️  Planning the quest-perfection slices (all paths, ledger-prioritized)..."
+	@python3 scripts/quest/walkthrough_plan.py \
+		--all-paths --priority --ledger .quests/ledger.json --out-dir plans $(EXTRA)
+
+# Fix arm: drive the quest-fix skill locally over ONE (CHARACTER,LEVEL) slice.
+# Repairs only the walkthrough's VERIFIED issues under a deterministic keep/revert
+# gate; writes only quest content (never branches, commits, or merges).
+quest-fix:
+	@echo "🔧 Quest fix ($(CHARACTER)/$(LEVEL)) — needs claude login / CLAUDE_CODE_OAUTH_TOKEN..."
+	@claude -p "Use the quest-fix skill to apply the smallest content-only edits that fix the VERIFIED issues from the walkthrough of the CHARACTER='$(CHARACTER)' LEVEL='$(LEVEL)' slice, under the deterministic keep/revert gate. Edit only quest content under pages/_quests/ and STOP — do not branch, commit, or merge." \
+		--permission-mode acceptEdits \
+		--allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
 		--disallowedTools "Bash(git:*),Bash(gh:*)" \
 		--max-turns 80 --model claude-opus-4-8 --output-format text
 

@@ -26,11 +26,27 @@ Usage:
     # Date-rotated slice (the daily routine's default — deterministic per day):
     python3 scripts/quest/walkthrough_plan.py --date 2026-06-29 --json plan.json
 
+    # Ledger-driven SELECTION (the quest-perfection loop): one highest-priority
+    # not-yet-perfect slice, falling back to date-rotation if the ledger is cold:
+    python3 scripts/quest/walkthrough_plan.py --priority --json plan.json
+
+    # One slice per character (fans the loop across every path), writing each
+    # plan into --out-dir and printing the chosen slugs as a JSON list:
+    python3 scripts/quest/walkthrough_plan.py --all-paths --out-dir .work
+
     # List the characters / levels available, then exit:
     python3 scripts/quest/walkthrough_plan.py --list
 
     # Self-check (no network, no args): asserts the planner on the live data.
     python3 scripts/quest/walkthrough_plan.py --selftest
+
+SELECTION vs PLANNING — this file owns only the deterministic curriculum slicing
+(`build_plan` / `rotate_slice`, UNCHANGED). The `--priority` / `--all-paths` modes
+add *ledger-aware selection* on top: they ask `scripts/quest/ledger.py` (the ONE
+source of truth) which slice is worst/oldest-not-perfect, then plan exactly that
+slice. The ledger is consulted as an oracle; this planner never writes it. If
+`ledger.py` or `.quests/ledger.json` is missing or cold, selection degrades
+gracefully to the existing date-rotation, so the planner always emits a plan.
 
 The plan is advisory structure, not a schema gate: a level with no quests degrades
 to an empty `quests` list with a reason rather than failing, because the network
@@ -96,6 +112,102 @@ def load_paths(path: Path = PATHS_YML) -> List[dict]:
     if not path.exists():
         raise FileNotFoundError(f"{path} not found.")
     return yaml.safe_load(path.read_text(encoding="utf-8")) or []
+
+
+# --- ledger-aware selection (oracle only; this planner never writes it) -----
+
+# Default ledger path mirrors the LEDGER CLI CONTRACT (.quests/ledger.json).
+DEFAULT_LEDGER = REPO_ROOT / ".quests" / "ledger.json"
+
+
+def _import_ledger():
+    """Import scripts/quest/ledger.py (it lives beside this file). Returns the
+    module, or None if it cannot be imported — callers then degrade to rotation.
+
+    The ledger is the ONE deterministic source of truth for which slice is
+    worst/oldest-not-perfect; we consult its `select_*` helpers as an oracle and
+    never mutate it here. Missing/broken ledger.py is non-fatal by design."""
+    if str(_HERE) not in sys.path:
+        sys.path.insert(0, str(_HERE))
+    try:
+        import ledger as _ledger  # noqa: E402  (scripts/quest/ledger.py)
+        return _ledger
+    except Exception:  # pragma: no cover - degrade to rotation if unavailable
+        return None
+
+
+def _load_ledger_or_none(ledger_mod, ledger_path: Path) -> Optional[dict]:
+    """Load the ledger dict via the module's loader (tolerates a cold/empty file).
+    Returns None if the module is absent or loading raised — caller falls back."""
+    if ledger_mod is None:
+        return None
+    try:
+        return ledger_mod.load_ledger(ledger_path)
+    except Exception:  # pragma: no cover - any trouble → rotation fallback
+        return None
+
+
+def resolve_slug(paths: List[dict], slug: str) -> tuple:
+    """Resolve a ledger slice id "<char>/<code>" to a (character, level) pair.
+
+    The slug is the deterministic slice key (NEVER a permalink). The character
+    key must exist in paths.yml; the level must be a valid 4-bit code."""
+    if not slug or "/" not in slug:
+        raise ValueError(f"malformed slice id '{slug}' (expected '<char>/<code>')")
+    char_key, _, level = slug.partition("/")
+    character = resolve_character(paths, char_key)
+    if not reg.is_valid_level(level):
+        raise ValueError(f"slice id '{slug}' has invalid level '{level}'")
+    return character, level
+
+
+def select_priority_slug(paths: List[dict], on: _date,
+                         ledger_path: Path = DEFAULT_LEDGER) -> str:
+    """Pick ONE slice id (worst/oldest not-perfect) via the ledger oracle.
+
+    Degrades to date-rotation when ledger.py / ledger.json is missing or cold:
+    a cold ledger has no informative ordering, so the deterministic daily
+    rotation is the honest fallback."""
+    ledger_mod = _import_ledger()
+    ledger = _load_ledger_or_none(ledger_mod, ledger_path)
+    if ledger_mod is not None and ledger is not None:
+        try:
+            slug = ledger_mod.select_priority(ledger)
+        except Exception:  # pragma: no cover - degrade to rotation
+            slug = None
+        if slug:
+            return slug
+    char, level = rotate_slice(paths, on)
+    return f"{char.get('key')}/{level}"
+
+
+def select_all_paths_slugs(paths: List[dict], on: _date,
+                           ledger_path: Path = DEFAULT_LEDGER) -> List[str]:
+    """One slice id per character via the ledger oracle.
+
+    Per-character degrade: if the ledger yields no slice for a character (cold or
+    absent), fall back to rotate_slice([char], on) for THAT character, so every
+    path still contributes a slice. Order follows paths.yml."""
+    ledger_mod = _import_ledger()
+    ledger = _load_ledger_or_none(ledger_mod, ledger_path)
+    ledger_slugs: Dict[str, str] = {}
+    if ledger_mod is not None and ledger is not None:
+        try:
+            for s in ledger_mod.select_all_paths(ledger) or []:
+                char_key = str(s).split("/", 1)[0]
+                ledger_slugs.setdefault(char_key, s)
+        except Exception:  # pragma: no cover - degrade per-character below
+            ledger_slugs = {}
+
+    out: List[str] = []
+    for c in paths:
+        key = c.get("key")
+        slug = ledger_slugs.get(key)
+        if not slug:
+            _, level = rotate_slice([c], on)
+            slug = f"{key}/{level}"
+        out.append(slug)
+    return out
 
 
 # --- selection -------------------------------------------------------------
@@ -423,8 +535,51 @@ def _selftest() -> int:
     if len(order) > 1:
         assert capped["stats"]["truncated"], "truncation not flagged"
 
+    # --- ledger-aware SELECTION (offline): exercise --priority / --all-paths.
+    # We point at a guaranteed-absent ledger path. Whatever ledger.py does with a
+    # cold/missing file (cold-start selection if it's importable, or None if it
+    # is not), the SELECTION layer must always yield valid, resolvable, buildable
+    # slices — one per character for --all-paths, in paths.yml order.
+    no_ledger = Path("/nonexistent/walkthrough_plan_selftest/ledger.json")
+    assert not no_ledger.exists(), "self-test sentinel ledger path unexpectedly exists"
+
+    # --priority: produces ONE valid slug that resolves and plans without raising.
+    pslug = select_priority_slug(paths, d, no_ledger)
+    assert pslug and "/" in pslug, f"--priority produced a malformed slug: {pslug!r}"
+    pchar, plevel = resolve_slug(paths, pslug)
+    _ = build_plan(pchar, plevel, network)  # must not raise
+
+    # --all-paths: one slug per character, in paths.yml order, each buildable.
+    aslugs = select_all_paths_slugs(paths, d, no_ledger)
+    assert len(aslugs) == len(paths), \
+        f"--all-paths must emit one slice per character ({len(aslugs)} vs {len(paths)})"
+    for c, slug in zip(paths, aslugs):
+        ac, al = resolve_slug(paths, slug)
+        assert ac["key"] == c["key"], "--all-paths slice order escaped paths.yml order"
+        _ = build_plan(ac, al, network)  # must not raise
+
+    # Force the GENUINE degradation path: with the ledger module unavailable, both
+    # modes MUST fall back to deterministic rotation (priority → whole-paths
+    # rotation; all-paths → per-character rotation), proving graceful degradation.
+    _real_import = _import_ledger
+    try:
+        globals()["_import_ledger"] = lambda: None  # simulate missing ledger.py
+        fslug = select_priority_slug(paths, d, no_ledger)
+        rchar, rlevel = rotate_slice(paths, d)
+        assert fslug == f"{rchar.get('key')}/{rlevel}", \
+            "--priority must fall back to date-rotation when ledger.py is unavailable"
+        fall = select_all_paths_slugs(paths, d, no_ledger)
+        for c, slug in zip(paths, fall):
+            _, fl = rotate_slice([c], d)
+            assert slug == f"{c.get('key')}/{fl}", \
+                "--all-paths must fall back to per-character rotation when ledger.py is unavailable"
+    finally:
+        globals()["_import_ledger"] = _real_import
+
     print("✅ walkthrough_plan self-test passed "
-          f"(developer/0001 → {len(order)} quests, rotation deterministic).")
+          f"(developer/0001 → {len(order)} quests, rotation deterministic; "
+          f"--priority → {pslug}, --all-paths → {len(aslugs)} slices; "
+          f"degradation-to-rotation verified offline).")
     return 0
 
 
@@ -441,6 +596,18 @@ def main() -> int:
     p.add_argument("--date", help="ISO date (YYYY-MM-DD) used to rotate the slice. Default: today.")
     p.add_argument("--max-quests", type=int, default=0,
                    help="Cap the chain to N quests (0 = no cap). Bounds a long walkthrough.")
+    p.add_argument("--priority", action="store_true",
+                   help="Ledger SELECTION: plan the worst/oldest not-perfect slice "
+                        "(falls back to date-rotation if the ledger is absent/cold).")
+    p.add_argument("--all-paths", action="store_true",
+                   help="Ledger SELECTION: one slice per character. Writes "
+                        "plans/walk-plan-<char>-<code>.json into --out-dir and prints "
+                        "a JSON list of '<char>/<code>' slugs to stdout.")
+    p.add_argument("--ledger", default=str(DEFAULT_LEDGER),
+                   help="Path to the ledger consulted by --priority/--all-paths "
+                        "(default .quests/ledger.json).")
+    p.add_argument("--out-dir",
+                   help="Output directory for --all-paths plans (plans/ subdir is created).")
     p.add_argument("--json", help="Write the plan as JSON to this file ('-' for stdout).")
     p.add_argument("--list", action="store_true",
                    help="List characters and their levels, then exit.")
@@ -461,9 +628,36 @@ def main() -> int:
         return 0
 
     network = load_network()
-
-    # Resolve the (character, level) slice: explicit args win; otherwise rotate.
     on = _date.fromisoformat(args.date) if args.date else _date.today()
+    ledger_path = Path(args.ledger)
+
+    # --all-paths: fan SELECTION across every character. One slice per path
+    # (ledger oracle, per-character rotation fallback), each planned and written
+    # as plans/walk-plan-<char>-<code>.json under --out-dir; stdout gets the
+    # JSON list of chosen "<char>/<code>" slugs (skipping empty slices). Explicit
+    # --character/--level still win over this (handled below), so guard for them.
+    if args.all_paths and not (args.character or args.level):
+        # --out-dir IS the plans directory (the orchestrator passes --out-dir plans
+        # and then looks in plans/walk-plan-<char>-<code>.json — no extra subdir).
+        plans_dir = Path(args.out_dir) if args.out_dir else Path.cwd()
+        plans_dir.mkdir(parents=True, exist_ok=True)
+        chosen: List[str] = []
+        for slug in select_all_paths_slugs(paths, on, ledger_path):
+            character, level = resolve_slug(paths, slug)
+            plan = build_plan(character, level, network, max_quests=args.max_quests)
+            print(render_text(plan), file=sys.stderr)
+            if not plan["quests"]:
+                continue  # empty slice (sparse/all-codex level): nothing to walk
+            dest = plans_dir / f"walk-plan-{character.get('key')}-{level}.json"
+            dest.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n",
+                            encoding="utf-8")
+            print(f"\n📄 Plan → {dest}", file=sys.stderr)
+            chosen.append(f"{character.get('key')}/{level}")
+        print(json.dumps(chosen, ensure_ascii=False))
+        return 0
+
+    # Resolve the (character, level) slice: explicit args win; then --priority
+    # SELECTION (ledger oracle, rotation fallback); otherwise rotate (default).
     if args.character and args.level:
         character = resolve_character(paths, args.character)
         level = args.level
@@ -473,6 +667,8 @@ def main() -> int:
     elif args.level:
         character, _ = rotate_slice(paths, on)
         level = args.level
+    elif args.priority:
+        character, level = resolve_slug(paths, select_priority_slug(paths, on, ledger_path))
     else:
         character, level = rotate_slice(paths, on)
 

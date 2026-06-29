@@ -8,7 +8,7 @@ per line, from:
 
   content   — pages/**, _data/{quests,navigation,...}, assets/** (the site)
   infra     — .github/**, scripts/**, Dockerfile, docker-compose, Gemfile*, Makefile
-  config    — _config*.yml, _data/ai.yml, _data/brand/**, .cms/**, *.json config
+  config    — _config*.yml, _data/ai.yml, _data/brand/**, .cms/**, .quests/** (the perfection-loop ledger/config/budget), *.json config
   data      — other _data/**
 
 The content auto-merge workflow refuses to merge any PR whose categories include
@@ -42,6 +42,7 @@ RULES = [
         "_config.yml", "_config*.yml",
         "_data/ai.yml", "_data/brand/*", "_data/brand/**",
         ".cms/*", ".cms/**",
+        ".quests/*", ".quests/**",
         "frontmatter.json", ".frontmatter/*", ".frontmatter/**",
     ]),
     ("infra", [
