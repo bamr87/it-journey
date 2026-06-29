@@ -7,14 +7,14 @@ level: '1100'
 difficulty: '🔴 Hard'
 estimated_time: 3-4 hours
 primary_technology: github-actions
-quest_type: bonus_quest
+quest_type: main_quest
 quest_series: The Autonomous Realm
 quest_line: The Self-Operating Website
 quest_arc: 'The Editor''s Eye'
 skill_focus: fullstack
 learning_style: project-based
 author: IT-Journey Team
-permalink: /quests/codex/self-operating-website-06-the-editors-eye/
+permalink: /quests/1100/self-operating-website-06-the-editors-eye/
 fmContentType: quest
 layout: quest
 draft: false
@@ -52,9 +52,9 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/codex/self-operating-website-05-the-content-forge/
+  - /quests/1010/self-operating-website-05-the-content-forge/
   unlocks_quests:
-  - /quests/codex/self-operating-website-07-the-named-familiars/
+  - /quests/1101/self-operating-website-07-the-named-familiars/
 rewards:
   badges:
   - 🐉 Loop Breaker — broke the self-retrigger loop
@@ -79,7 +79,7 @@ In the old kingdoms, every scriptorium kept a reviewer who annotated the margins
 ### Primary Objectives
 
 - [ ] Add a `content-review` job that runs on pull requests and improves changed Markdown **in place**, pushing a commit back to the PR branch
-- [ ] Gate the editorial step behind an `action_required` permission/condition so it only runs when it is allowed to push
+- [ ] Gate the editorial step behind a same-repo permission condition so it only runs when it is allowed to push
 - [ ] Add a `synchronize` loop-breaker guard so the reviewer never re-reviews its own bot commit
 - [ ] Add a smuggle guard that blocks a "content" PR from carrying workflow or infrastructure changes
 
@@ -89,17 +89,29 @@ In the old kingdoms, every scriptorium kept a reviewer who annotated the margins
 - [ ] You can diff a "good" reviewer run (one bot commit, then quiet) from a "dragon" run (commit → trigger → commit → …) by reading the Actions run list
 - [ ] You can describe what your smuggle guard inspects and why a content workflow must refuse infra paths
 
-## 🧙‍♂️ Chapter 1: Summoning the Editor (the action_required gate)
+## 🗺️ Quest Prerequisites
+
+Before you summon the editor, gather your tools and make sure the forge is lit:
+
+- **Prior chapter:** [Chapter V — The Content Forge](/quests/1010/self-operating-website-05-the-content-forge/). The editor reviews the drafts the Forge produces; without a draft-producing pipeline, there is nothing to edit.
+- **Accounts:** A GitHub account and a repository you own (so the workflow has `contents: write` to push editorial commits — fork PRs cannot, which Chapter 1 handles).
+- **Secrets:** A `CLAUDE_CODE_OAUTH_TOKEN` stored as a repository secret, used by `scripts/ai/run.sh` to authenticate the Claude Code agent.
+- **Tools:** Git and a text editor/IDE locally; the `scripts/ai/run.sh` runner (introduced earlier in the campaign) and the `content-reviewer` agent role file in `.claude/agents/`.
+- **Knowledge:** Comfort with Git branches and pull requests, and a basic mental model of GitHub Actions events (`pull_request` and its `types`).
+
+## 🧙‍♂️ Chapter 1: Summoning the Editor (the same-repo gate)
 
 ### ⚔️ Skills You'll Forge
 
 - Writing a PR-triggered job that edits files **in place** and pushes back to the head branch
-- Using an `action_required` gate so the editorial step only runs when permitted
+- Using a same-repo gate so the editorial step only runs when it can actually push
 - Committing and pushing from inside a GitHub Actions job with the right token and identity
 
 The editor is a job on `pull_request`. When a content PR opens or updates, it checks out the **head** branch (not a detached merge ref), lets an agent improve the changed files, and commits any changes straight back. The crucial design choice: the agent's output lands on the same branch, so reviewers and humans see the improved draft, not a separate suggestion thread.
 
-Two things make this safe to *start*. First, you check out the PR's actual head branch so a push goes somewhere meaningful. Second, you gate the push behind an `action_required` condition — the step that mutates the branch runs only when the workflow has permission and the event is one you intend to act on. Think of it as the editor only picking up the quill when the manuscript is genuinely theirs to edit.
+Two things make this safe to *start*. First, you check out the PR's actual head branch so a push goes somewhere meaningful. Second, you gate the push behind a condition we'll call the **action_required gate** — a *custom* check, not GitHub's branch-protection `action_required` status. It confirms the PR comes from the same repository (not a fork) so the workflow's `GITHUB_TOKEN` actually carries write permission. Think of it as the editor only picking up the quill when the manuscript is genuinely theirs to edit.
+
+> (The `{% raw %}`/`{% endraw %}` tags below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml
@@ -124,7 +136,8 @@ jobs:
           ref: ${{ github.head_ref }}   # check out the PR's head branch, not the merge ref
           fetch-depth: 0
 
-      # The action_required gate: only run the editor when we are allowed to push.
+      # The action_required gate (custom, NOT GitHub's action_required status):
+      # only run the editor when the PR is from THIS repo, so the token can push.
       - name: Should the editor act?
         id: gate
         run: |
@@ -151,11 +164,37 @@ jobs:
 
 Notice the `git push origin HEAD:{% raw %}${{ github.head_ref }}{% endraw %}` — that push is exactly what fires the next `synchronize` event. Hold that thought; it is the seed of the boss.
 
+### 🔧 What `./scripts/ai/run.sh content-reviewer` actually does
+
+That one line is the whole point of the chapter, so it should not be a black box. `scripts/ai/run.sh` is the campaign's single AI runner: it reads the named role from `_data/ai.yml` / `.claude/agents/content-reviewer.md`, assembles a prompt (the editorial instructions + the list of changed files), and shells out to the Claude Code CLI in headless mode. In broad strokes it does this:
+
+```bash
+#!/usr/bin/env bash
+# scripts/ai/run.sh <role>   — drive one Claude Code agent non-interactively
+set -euo pipefail
+role="$1"                                   # e.g. content-reviewer
+
+# 1. Resolve the role's system prompt / instructions from the agent file.
+prompt_file=".claude/agents/${role}.md"
+
+# 2. Collect the files this PR changed so the agent only edits those.
+changed=$(git diff --name-only "origin/${BASE:-main}...HEAD" | grep -E '\.md$' || true)
+
+# 3. Invoke Claude Code headlessly: -p runs one prompt and exits;
+#    --allowedTools restricts it to reading and editing files (no shell, no push).
+claude -p "Apply the editorial pass in ${prompt_file} to these files, in place: ${changed}" \
+  --allowedTools "Read,Edit,Glob,Grep"
+# Auth comes from CLAUDE_CODE_OAUTH_TOKEN in the environment.
+```
+
+The key points: `claude -p "<prompt>"` runs Claude Code **non-interactively** (one prompt, then exit — perfect for CI); `--allowedTools "Read,Edit,Glob,Grep"` is the leash — the agent may read and rewrite Markdown but cannot run shell commands or push, so the *workflow* (not the agent) owns the commit-and-push step you saw above. The agent's only output is modified files in the working tree; the surrounding `git add`/`commit`/`push` turns that into the editorial commit. (Your real `run.sh` may add logging, retries, and model selection — the shape above is the load-bearing part.)
+
 ### 🔍 Knowledge Check
 
 - [ ] Why does the editor check out `github.head_ref` instead of the default detached merge ref?
-- [ ] What does the `action_required`-style gate protect against when the PR comes from a fork?
+- [ ] What does the custom action_required gate protect against when the PR comes from a fork?
 - [ ] Which permission must be set to `write` for the editorial commit to push successfully?
+- [ ] Why does `run.sh` pass `--allowedTools` without shell or push tools?
 
 ## 🧙‍♂️ Chapter 2: The Smuggle Guard (content PRs stay content)
 
@@ -167,34 +206,48 @@ Notice the `git push origin HEAD:{% raw %}${{ github.head_ref }}{% endraw %}` �
 
 An editor with `contents: write` is a trusted office. If a pull request labeled "content" can also slip in a change to `.github/workflows/**`, then an attacker (or a confused agent) could ride the content lane to alter the automation itself. The **smuggle guard** is the bouncer: before the editor lifts a quill, it lists the changed paths and refuses to proceed if anything outside the allowed content globs appears.
 
-```bash
-# smuggle-guard: a content PR must touch ONLY content paths.
-ALLOWED='^(_posts/|pages/|assets/images/)'
-INFRA='^(\.github/|scripts/|Gemfile|_config\.yml|frontmatter\.json)'
+The guard needs a base ref to diff against. On a `pull_request` event GitHub exposes the target branch as `github.base_ref`, so we plumb it into the step's environment as `BASE` — otherwise `origin/${BASE}` would expand to `origin/` (an invalid ref) and the diff would fail or, worse, silently produce nothing. Slot this step into the Chapter 1 workflow **after the checkout and before the editorial step**, so a smuggled change stops the run before any trusted commit is made:
 
-changed=$(git diff --name-only "origin/${BASE}...HEAD")
-smuggled=$(echo "$changed" | grep -E "$INFRA" || true)
+{% raw %}
+```yaml
+      # ⬆️ ...this goes right after `actions/checkout@v4`
+      #    and BEFORE the "Editorial pass (in place)" step.
+      - name: Smuggle guard — content PRs stay content
+        env:
+          BASE: ${{ github.base_ref }}   # the PR's target branch, e.g. "main"
+        run: |
+          # A content PR must touch ONLY content paths.
+          ALLOWED='^(_posts/|pages/|assets/images/)'
+          INFRA='^(\.github/|scripts/|Gemfile|_config\.yml|frontmatter\.json)'
 
-if [ -n "$smuggled" ]; then
-  echo "::error::Content PR is smuggling infrastructure changes:"
-  echo "$smuggled"
-  exit 1
-fi
+          changed=$(git diff --name-only "origin/${BASE}...HEAD")
+          smuggled=$(echo "$changed" | grep -E "$INFRA" || true)
 
-# Belt-and-suspenders: anything not in ALLOWED is also rejected.
-echo "$changed" | grep -vE "$ALLOWED" && {
-  echo "::error::Non-content paths present; refusing editorial run."
-  exit 1
-} || echo "Smuggle guard passed: content-only."
+          if [ -n "$smuggled" ]; then
+            echo "::error::Content PR is smuggling infrastructure changes:"
+            echo "$smuggled"
+            exit 1
+          fi
+
+          # Belt-and-suspenders: anything not in ALLOWED is also rejected.
+          if echo "$changed" | grep -vE "$ALLOWED"; then
+            echo "::error::Non-content paths present; refusing editorial run."
+            exit 1
+          fi
+          echo "Smuggle guard passed: content-only."
 ```
+{% endraw %}
 
 The guard runs **before** the editorial step, so a smuggled infra change stops the run cold instead of getting an automated, trusted commit on top of it. This is the same instinct as a code reviewer who says "this is supposed to be a typo fix — why is it editing the deploy pipeline?"
+
+> **Why `env: BASE` and not a bare `${BASE}`?** GitHub Actions does not export `github.base_ref` into the shell automatically. Without the `env:` mapping (or `BASE="$GITHUB_BASE_REF"` set inside the step), `${BASE}` is empty and `git diff "origin/...HEAD"` references a ref that does not exist. Plumbing the value in is what makes the diff real.
 
 ### 🔍 Knowledge Check
 
 - [ ] What set of paths does the smuggle guard treat as infrastructure, and why is `.github/workflows/**` the most dangerous?
 - [ ] Why must the smuggle guard run *before* the editor's commit-and-push step?
 - [ ] How does this guard reinforce least-privilege for a job that holds `contents: write`?
+- [ ] Why must `BASE` be defined (via `env:` or `$GITHUB_BASE_REF`) before the `git diff`?
 
 ## 🐉 Boss Fight: The Self-Retrigger Loop
 
@@ -304,13 +357,15 @@ graph LR
     B --> C[Chapter VII: The Named Familiars]
     classDef current fill:#7c3aed,stroke:#4c1d95,color:#fff;
     class B current;
+    click A "/quests/1010/self-operating-website-05-the-content-forge/"
+    click C "/quests/1101/self-operating-website-07-the-named-familiars/"
 ```
 
 ## 🔮 Next Adventures
 
-- ➡️ **Next chapter:** [The Named Familiars](/quests/codex/self-operating-website-07-the-named-familiars/) — give each agent a name, a role file, and least-privilege scope.
+- ➡️ **Next chapter:** [The Named Familiars](/quests/1101/self-operating-website-07-the-named-familiars/) — give each agent a name, a role file, and least-privilege scope.
 - 🏰 **Campaign hub:** [The Self-Operating Website](/quests/codex/self-operating-website/) — return to the epic's table of contents.
-- ⬅️ **Previous chapter:** [The Content Forge](/quests/codex/self-operating-website-05-the-content-forge/) — where the drafts your editor reviews are born.
+- ⬅️ **Previous chapter:** [The Content Forge](/quests/1010/self-operating-website-05-the-content-forge/) — where the drafts your editor reviews are born.
 
 ## 📚 Resource Codex
 

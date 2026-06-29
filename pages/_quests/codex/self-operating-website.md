@@ -60,16 +60,16 @@ quest_dependencies:
   recommended_quests:
   - /quests/0010/epic-quest-zer0-to-her0-cmstyle/
   unlocks_quests:
-  - /quests/codex/self-operating-website-01-the-summoning/
-  - /quests/codex/self-operating-website-02-the-proving-grounds/
-  - /quests/codex/self-operating-website-03-the-war-machine/
-  - /quests/codex/self-operating-website-04-the-sigils-of-trust/
-  - /quests/codex/self-operating-website-05-the-content-forge/
-  - /quests/codex/self-operating-website-06-the-editors-eye/
-  - /quests/codex/self-operating-website-07-the-named-familiars/
-  - /quests/codex/self-operating-website-08-the-cartographer/
-  - /quests/codex/self-operating-website-09-the-chronicle/
-  - /quests/codex/self-operating-website-10-the-bard-forge/
+  - /quests/0001/self-operating-website-01-the-summoning/
+  - /quests/0100/self-operating-website-02-the-proving-grounds/
+  - /quests/1000/self-operating-website-03-the-war-machine/
+  - /quests/1001/self-operating-website-04-the-sigils-of-trust/
+  - /quests/1010/self-operating-website-05-the-content-forge/
+  - /quests/1100/self-operating-website-06-the-editors-eye/
+  - /quests/1101/self-operating-website-07-the-named-familiars/
+  - /quests/0101/self-operating-website-08-the-cartographer/
+  - /quests/1110/self-operating-website-09-the-chronicle/
+  - /quests/1100/self-operating-website-10-the-bard-forge/
 rewards:
   badges:
   - 👑 The Self-Operating Architect — completed the full autonomous-CMS campaign
@@ -139,16 +139,16 @@ Each chapter maps to merged branches from the reference build you can study and 
 
 | # | Chapter | Level | Difficulty | XP | Class | Reference PRs |
 |---|---|---|---|---|---|---|
-| I | [The Summoning](/quests/codex/self-operating-website-01-the-summoning/) | `0001` | 🟢 Easy | 50 | 💻 Developer | #1 · #2 · #11 |
-| II | [The Proving Grounds](/quests/codex/self-operating-website-02-the-proving-grounds/) | `0100` | 🟡 Medium | 75 | 🏗️ System Eng | #3 · #4 |
-| III | [The War Machine](/quests/codex/self-operating-website-03-the-war-machine/) | `1000` | ⚔️ Epic | 150 | 🏗️ System Eng | #7 · #16 · #21 |
-| IV | [The Sigils of Trust](/quests/codex/self-operating-website-04-the-sigils-of-trust/) | `1001` | 🔴 Hard | 90 | 🛡️ Security | #12 · #13 · #14 · #15 |
-| V | [The Content Forge](/quests/codex/self-operating-website-05-the-content-forge/) | `1010` | 🔴 Hard | 120 | 💻 Developer | #9 · #22 · #26 |
-| VI | [The Editor's Eye](/quests/codex/self-operating-website-06-the-editors-eye/) | `1100` | 🔴 Hard | 110 | 💻 Developer | #25 · #35 · #36 · 🐉 #49 |
-| VII | [The Named Familiars](/quests/codex/self-operating-website-07-the-named-familiars/) | `1101` | 🟡 Medium | 80 | 🏗️ System Eng | #45 · #46 |
-| VIII | [The Cartographer](/quests/codex/self-operating-website-08-the-cartographer/) | `0101` | 🟡 Medium | 60 | 💻 Developer | #42 |
-| IX | [The Chronicle](/quests/codex/self-operating-website-09-the-chronicle/) | `1110` | 🔴 Hard | 100 | 💻 Developer | #47 · #50 · #51 · #52 |
-| X | [The Bard Forge](/quests/codex/self-operating-website-10-the-bard-forge/) | `1100` | 🔴 Hard | 120 | 💻 Developer | #53 |
+| I | [The Summoning](/quests/0001/self-operating-website-01-the-summoning/) | `0001` | 🟢 Easy | 50 | 💻 Developer | #1 · #2 · #11 |
+| II | [The Proving Grounds](/quests/0100/self-operating-website-02-the-proving-grounds/) | `0100` | 🟡 Medium | 75 | 🏗️ System Eng | #3 · #4 |
+| III | [The War Machine](/quests/1000/self-operating-website-03-the-war-machine/) | `1000` | ⚔️ Epic | 150 | 🏗️ System Eng | #7 · #16 · #21 |
+| IV | [The Sigils of Trust](/quests/1001/self-operating-website-04-the-sigils-of-trust/) | `1001` | 🔴 Hard | 90 | 🛡️ Security | #12 · #13 · #14 · #15 |
+| V | [The Content Forge](/quests/1010/self-operating-website-05-the-content-forge/) | `1010` | 🔴 Hard | 120 | 💻 Developer | #9 · #22 · #26 |
+| VI | [The Editor's Eye](/quests/1100/self-operating-website-06-the-editors-eye/) | `1100` | 🔴 Hard | 110 | 💻 Developer | #25 · #35 · #36 · 🐉 #49 |
+| VII | [The Named Familiars](/quests/1101/self-operating-website-07-the-named-familiars/) | `1101` | 🟡 Medium | 80 | 🏗️ System Eng | #45 · #46 |
+| VIII | [The Cartographer](/quests/0101/self-operating-website-08-the-cartographer/) | `0101` | 🟡 Medium | 60 | 💻 Developer | #42 |
+| IX | [The Chronicle](/quests/1110/self-operating-website-09-the-chronicle/) | `1110` | 🔴 Hard | 100 | 💻 Developer | #47 · #50 · #51 · #52 |
+| X | [The Bard Forge](/quests/1100/self-operating-website-10-the-bard-forge/) | `1100` | 🔴 Hard | 120 | 💻 Developer | #53 |
 
 > 🐉 **Boss gate.** The Self-Retrigger Loop stands between Chapter VI and Chapter VII. You cannot pass to the Named Familiars until you have broken the loop in the Editor's Eye (reference PR #49).
 
@@ -194,7 +194,7 @@ Two optional lines run alongside the main campaign. Their content is authored in
 
 This campaign was forged automatically from issue #365 by the **quest-forge** fleet. To reproduce or extend it:
 
-1. The `epic_quest` hub (this file) lives at `pages/_quests/codex/self-operating-website.md`; each chapter is a `bonus_quest` in the same `codex/` folder, carrying its binary `level:` for difficulty/XP and a `/quests/codex/<slug>/` permalink.
+1. The `epic_quest` hub (this file) lives at `pages/_quests/codex/self-operating-website.md` (epic quests use the `/quests/codex/` URL namespace). Each chapter is a `main_quest` in its **binary-level** directory (`pages/_quests/XXXX/`) with a `/quests/XXXX/<slug>/` permalink, so it also surfaces on that level's hub; the campaign is held together by `quest_dependencies` and this hub's chapter index.
 2. Chapters chain via `quest_dependencies.recommended_quests` / `unlocks_quests`; the hub `unlocks_quests` every chapter.
 3. Badges are free-text `rewards.badges` — no central registry to update.
 4. Re-run is automatic: label any future quest-forge proposal issue `epic-quest` (or comment `/forge-quest`) and the `quest-forge.yml` workflow opens a fresh campaign PR.
@@ -243,9 +243,9 @@ Each chapter's **🔁 Reproduce it** section cites the specific PRs and commits 
 
 ## 🔮 Next Adventures
 
-- 🎯 Begin the campaign: [Chapter I — The Summoning](/quests/codex/self-operating-website-01-the-summoning/)
+- 🎯 Begin the campaign: [Chapter I — The Summoning](/quests/0001/self-operating-website-01-the-summoning/)
 - 👑 Revisit the prequel: [Epic Quest: Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/)
-- 🪄 The closing twist: [Chapter X — The Bard Forge](/quests/codex/self-operating-website-10-the-bard-forge/)
+- 🪄 The closing twist: [Chapter X — The Bard Forge](/quests/1100/self-operating-website-10-the-bard-forge/)
 
 ## 📚 Resource Codex
 

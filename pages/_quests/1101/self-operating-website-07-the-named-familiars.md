@@ -7,14 +7,14 @@ level: '1101'
 difficulty: '🟡 Medium'
 estimated_time: 2-3 hours
 primary_technology: claude-code
-quest_type: bonus_quest
+quest_type: main_quest
 quest_series: The Autonomous Realm
 quest_line: The Self-Operating Website
 quest_arc: 'The Named Familiars'
 skill_focus: devops
 learning_style: project-based
 author: IT-Journey Team
-permalink: /quests/codex/self-operating-website-07-the-named-familiars/
+permalink: /quests/1101/self-operating-website-07-the-named-familiars/
 fmContentType: quest
 layout: quest
 draft: false
@@ -52,9 +52,9 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/codex/self-operating-website-06-the-editors-eye/
+  - /quests/1100/self-operating-website-06-the-editors-eye/
   unlocks_quests:
-  - /quests/codex/self-operating-website-08-the-cartographer/
+  - /quests/0101/self-operating-website-08-the-cartographer/
 rewards:
   badges:
   - 🤖 Familiar Master — the agent set and its self-review
@@ -89,6 +89,16 @@ In the old grimoires every incantation was a tangled scroll: persona, tools, and
 - [ ] Two different agents reuse the same skill without duplicating its steps
 - [ ] The fleet-audit run opens a PR or issue when an agent drifts out of spec
 
+## 🗺️ Quest Prerequisites
+
+Before you summon a single familiar, make sure your camp is stocked. Walking in without these will leave you fighting the YAML instead of the boss:
+
+- **Prior chapter:** Complete [VI — The Editor's Eye](/quests/1100/self-operating-website-06-the-editors-eye/) — you need a working content-review loop to bind a familiar to.
+- **Accounts:** A GitHub account and a repository you own (admin rights, so you can add secrets and run workflows).
+- **A Claude Code OAuth token** stored as the repo secret `CLAUDE_CODE_OAUTH_TOKEN` — this is the mana that powers every agent step. Generate it with `claude setup-token` and add it under **Settings → Secrets and variables → Actions**.
+- **Tools on your bench:** Git, a text editor or IDE, and the [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed locally so you can test agents and skills before pushing.
+- **Knowledge:** comfort with Git branches and pull requests, plus enough GitHub Actions familiarity to read a `on:`/`jobs:`/`steps:` workflow.
+
 ## 🧙‍♂️ Chapter 1: Naming the Familiars — Agents vs Skills
 
 ### ⚔️ Skills You'll Forge
@@ -117,18 +127,44 @@ tools:
 #   3. Output a single review comment; do not push commits.
 ```
 
-The body of that same file (below the frontmatter) is plain prose: the persona ("You are a careful copy editor for a gamified learning site…") and the rules spelled out so a reviewer can read them.
+The body of that same file (below the frontmatter) is plain prose: the persona and the rules spelled out so a reviewer — human or machine — can read them. Crucially, the body is also where the familiar *summons a skill by name*. Claude Code discovers skills by scanning `.claude/skills/` for folders containing a `SKILL.md`, so referencing one is as simple as naming it:
 
-Now the **skill** — the procedure, with no persona attached, callable by any familiar:
+```markdown
+<!-- .claude/agents/content-reviewer.md  (body, below the frontmatter) -->
+You are a careful copy editor for a gamified learning site. You suggest
+improvements as review comments; you never rewrite the author's work.
 
-```bash
-# .claude/skills/brand-voice/SKILL.md exists; an agent invokes it like so.
-# A skill is just a folder with a SKILL.md describing reusable steps.
-ls .claude/skills/brand-voice/
-# SKILL.md   examples/   checklist.md
+When you review a page, **use the `brand-voice` skill** to check the draft
+against the house style. That skill lives in `.claude/skills/brand-voice/`;
+naming it here is the entire wiring — no path, no import, just the name.
+
+Hard rules:
+1. NEVER edit files outside `pages/` — refuse and explain why.
+2. NEVER use Bash, git, or gh — you are review-only, no side effects.
+3. Output a single review comment; do not push commits.
 ```
 
-The same `brand-voice` skill can be summoned by the `content-reviewer` familiar *and* by a `content-curator` familiar that actually writes. One procedure, two personas. When you tighten the brand checklist, both improve at once — that is the whole point of the seam.
+That phrase — **use the `brand-voice` skill** — is the load-bearing line. Claude Code matches the name against the folders in `.claude/skills/` and pulls in the matching `SKILL.md` on demand. Now the **skill** itself — the procedure, with no persona attached, callable by any familiar. A skill is a folder whose `SKILL.md` carries its own frontmatter (so it can be discovered) plus the reusable steps:
+
+```markdown
+<!-- .claude/skills/brand-voice/SKILL.md -->
+---
+name: brand-voice
+description: Check a draft against IT-Journey house style — voice, tone, and structure.
+---
+
+# Brand Voice Check
+
+Run this procedure on any draft before it ships.
+
+1. Confirm the title is ≤ 60 characters and the description is 120–160.
+2. Read the opening: is it encouraging, second-person, and quest-framed?
+3. Scan for banned phrases (see `checklist.md`) and flag each occurrence.
+4. Verify every code block is language-tagged.
+5. Summarize findings as a short, prioritized checklist — suggestions only.
+```
+
+The folder holds the `SKILL.md` plus any supporting files the steps reference — for example a `checklist.md` of banned phrases and an `examples/` directory of on-brand passages. The same `brand-voice` skill can be summoned by the `content-reviewer` familiar *and* by a `content-curator` familiar that actually writes. One procedure, two personas. When you tighten the brand checklist, both improve at once — that is the whole point of the seam.
 
 ### 🔍 Knowledge Check
 
@@ -145,6 +181,41 @@ The same `brand-voice` skill can be summoned by the `content-reviewer` familiar 
 - Writing a *meta* agent whose subject is the other agents
 
 A familiar that lives only in a file does nothing. To put it to work you bind it to an event — here, every pull request labeled `content` — and hand its name to a single runner step. Keeping one runner (rather than re-authoring the Claude invocation in every workflow) means tokens, model, and timeout are configured once.
+
+The shared runner is a **composite action** at `.github/actions/claude-run/action.yml`. Both workflows below reference it, so define it first. It takes two inputs — which familiar to run, and the OAuth token to authenticate with — and hands them to Claude Code:
+
+> (The `{% raw %}`/`{% endraw %}` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+
+{% raw %}
+```yaml
+# .github/actions/claude-run/action.yml  (composite action — the shared runner)
+name: claude-run
+description: Run a named Claude Code agent from .claude/agents against the checkout.
+inputs:
+  agent:
+    description: Name of the agent file in .claude/agents/ (without .md).
+    required: true
+  oauth_token:
+    description: Claude Code OAuth token used to authenticate the run.
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install Claude Code
+      shell: bash
+      run: npm install -g @anthropic-ai/claude-code
+    - name: Run the named agent
+      shell: bash
+      env:
+        CLAUDE_CODE_OAUTH_TOKEN: ${{ inputs.oauth_token }}
+      run: |
+        claude --agent "${{ inputs.agent }}" \
+          --permission-mode acceptEdits \
+          --print "Run your assigned duty against this repository."
+```
+{% endraw %}
+
+With the runner defined, binding a familiar to an event is short. Here every pull request labeled `content` summons the `content-reviewer`:
 
 {% raw %}
 ```yaml
@@ -169,7 +240,24 @@ jobs:
 
 The workflow names *which* familiar acts; the shared `claude-run` action knows *how* to summon any of them. Swap `agent: content-reviewer` for `agent: content-curator` and the same plumbing drives a different persona.
 
-Now the signature move of this chapter: a familiar that reads the others. Over months, agents accrete stale tools, rules drift from reality, and a skill gets renamed but an agent still references the old name. The **fleet auditor** is a scheduled agent whose subject is `.claude/agents/*.md` and `.claude/skills/*/SKILL.md`. It checks each one against a small rubric and opens a PR (or issue) when something is off.
+Now the signature move of this chapter: a familiar that reads the others. Over months, agents accrete stale tools, rules drift from reality, and a skill gets renamed but an agent still references the old name. The **fleet auditor** is itself a named familiar — give it its own character sheet, analogous to the reviewer, but scoped to read the fleet rather than the content:
+
+```yaml
+# .claude/agents/agent-auditor.md  (frontmatter shown)
+name: agent-auditor
+description: Weekly meta-review of the agent fleet and skills. Proposes diffs, never force-applies.
+tools:
+  - Read
+  - Grep
+  - Glob
+  - Write   # to draft the proposed diff/PR body — bounded to .claude/ in the body rules
+# Hard rules (enforced in the body):
+#   1. Read .claude/agents/*.md and .claude/skills/*/SKILL.md only — do not touch site content.
+#   2. Propose a minimal diff and open ONE PR; NEVER squash-merge it yourself.
+#   3. Flag findings against the rubric below; if the fleet is clean, report "no findings".
+```
+
+Its body spells out the persona and the same rubric you'll see below, and — like the reviewer — it can **use the `brand-voice` skill** if it wants to check that an agent's own description stays on-brand. Bind it to a schedule (and a manual trigger) through the very same shared runner:
 
 {% raw %}
 ```yaml
@@ -191,6 +279,8 @@ jobs:
           oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 ```
 {% endraw %}
+
+Because of the `workflow_dispatch:` trigger you don't have to wait until Monday to test it — fire it on demand with `gh workflow run agent-audit.yml` and watch the auditor read the fleet.
 
 What does the auditor actually look for? A concrete, checkable rubric — least privilege, dead references, and persona-vs-rule integrity:
 
@@ -243,11 +333,14 @@ Read the diffs in that order: #45 establishes the familiars, #46 teaches one of 
 graph LR
     A[VI — The Editor's Eye] --> B[VII — The Named Familiars]
     B --> C[VIII — The Cartographer]
+    click A "/quests/1100/self-operating-website-06-the-editors-eye/"
+    click B "/quests/1101/self-operating-website-07-the-named-familiars/"
+    click C "/quests/0101/self-operating-website-08-the-cartographer/"
 ```
 
 ## 🔮 Next Adventures
 
-- **Next chapter:** [VIII — The Cartographer](/quests/codex/self-operating-website-08-the-cartographer/) — teach the realm to map itself.
+- **Next chapter:** [VIII — The Cartographer](/quests/0101/self-operating-website-08-the-cartographer/) — teach the realm to map itself.
 - **Campaign hub:** [The Self-Operating Website](/quests/codex/self-operating-website/) — return to the full epic to track your progress.
 
 ## 📚 Resource Codex

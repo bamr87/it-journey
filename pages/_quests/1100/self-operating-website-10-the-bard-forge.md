@@ -7,14 +7,14 @@ level: '1100'
 difficulty: '🔴 Hard'
 estimated_time: 3-4 hours
 primary_technology: claude-code
-quest_type: bonus_quest
+quest_type: main_quest
 quest_series: The Autonomous Realm
 quest_line: The Self-Operating Website
 quest_arc: 'The Bard Forge'
 skill_focus: fullstack
 learning_style: project-based
 author: IT-Journey Team
-permalink: /quests/codex/self-operating-website-10-the-bard-forge/
+permalink: /quests/1100/self-operating-website-10-the-bard-forge/
 fmContentType: quest
 layout: quest
 draft: false
@@ -52,7 +52,7 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/codex/self-operating-website-09-the-chronicle/
+  - /quests/1110/self-operating-website-09-the-chronicle/
   unlocks_quests: []
 rewards:
   badges:
@@ -88,6 +88,15 @@ Every quest in this campaign ended with a Chronicle — a retrospective committe
 - [ ] You can trace every fact in the proposed quest back to a real SHA or PR number
 - [ ] You can describe the trust boundary between the source repo and the target repo
 
+## 🗺️ Quest Prerequisites
+
+Before the forge will light, gather your gear:
+
+- **🏅 Prior chapter:** Complete [Chapter IX — The Chronicle](/quests/1110/self-operating-website-09-the-chronicle/). The retrospective it teaches you to publish is the *spark* this chapter listens for.
+- **🧰 Tools on your bench:** `git`, the [GitHub CLI](https://cli.github.com/) (`gh`) authenticated against your account, and `jq` for shaping JSON. A text editor or IDE for reading the workflow files.
+- **🔑 Accounts & secrets:** A **source** GitHub repository you own (the one whose history you'll mine), a **separate target** repository to receive proposals (a "quest-forge" repo), a [Claude Code OAuth token](https://docs.claude.com/en/docs/claude-code/overview) stored as the `CLAUDE_CODE_OAUTH_TOKEN` secret, and a fine-grained personal access token scoped **only** to the target repo, stored as `QUEST_FORGE_TOKEN`.
+- **🧠 Concepts:** Comfort with Git branches and pull requests, and a working idea of how GitHub Actions events (`on:`) and `permissions:` scopes behave.
+
 ## 🧙‍♂️ Chapter 1: Reading the Cold Runes (Mining Merged-Branch Metadata)
 
 ### ⚔️ Skills You'll Forge
@@ -97,6 +106,8 @@ Every quest in this campaign ended with a Chronicle — a retrospective committe
 - Treating version-control history as a read-only data source
 
 A merge is a fact. Once a branch lands, Git has permanently recorded who changed what, the head SHA, and the diffstat. The Bard's first job is to **read** those runes — never to guess them. The cleanest trigger is the `pull_request` event filtered to the merged case, because a closed PR is not the same as a merged one.
+
+*(The `{% raw %}`/`{% endraw %}` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)*
 
 {% raw %}
 ```yaml
@@ -119,7 +130,8 @@ jobs:
       - name: Mine merged-branch metadata
         env:
           GH_TOKEN: ${{ github.token }}
-        run: ./scripts/mine_merge.sh "${{ github.event.pull_request.number }}"
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: ./scripts/mine_merge.sh "$PR_NUMBER"
 ```
 {% endraw %}
 
@@ -131,12 +143,19 @@ The `permissions: contents: read` line is the load-bearing rune: the source repo
 set -euo pipefail
 PR_NUMBER="$1"
 
-# The merge commit and head SHA are facts Git already recorded.
+# The head SHA and merge commit SHA are facts Git/GitHub already recorded.
 HEAD_SHA="$(gh pr view "$PR_NUMBER" --json headRefOid --jq '.headRefOid')"
 MERGE_SHA="$(gh pr view "$PR_NUMBER" --json mergeCommit --jq '.mergeCommit.oid')"
 
-# Diffstat for the merged range — also a recorded fact, never invented.
+# A merge or squash commit has the base as its first parent, so MERGE_SHA^
+# is the pre-merge tip. Diff that range — also a recorded fact, never invented.
 DIFFSTAT="$(git diff --shortstat "${MERGE_SHA}^" "${MERGE_SHA}")"
+
+# Fail loudly if any rune is missing rather than emitting a half-empty proposal.
+if [[ -z "$HEAD_SHA" || -z "$MERGE_SHA" ]]; then
+  echo "Refusing to proceed: could not read head/merge SHA for PR #${PR_NUMBER}" >&2
+  exit 1
+fi
 
 jq -n \
   --arg pr "$PR_NUMBER" \
@@ -166,38 +185,52 @@ Every value above came from `gh` or `git`. The Bard will later be *forbidden* to
 
 Now the Bard has clean runes. It drafts a quest — but the draft must live in a **different** keep. Pushing the proposal back into the source repo would let an automated author mutate the very history it just read; that loop must stay open. Instead, the agent uses a token scoped to the *target* repo (a forge repo for proposed quests) and opens a pull request there for a human to accept.
 
+The agent runs **read-only at the source**: it reads `merge_metadata.json` and the Chronicle, and its only write is the Markdown file it emits to the cloned target. Its guardrails are spelled out in the prompt — cite only what the JSON contains, never invent a SHA or PR number, never run a merge command.
+
 {% raw %}
 ```yaml
       - name: Forge a quest proposal (read-only authoring)
         uses: ./.github/actions/claude-run
         with:
           # The agent reads merge_metadata.json and the Chronicle; it may NOT
-          # invent SHAs, PR numbers, or output it did not observe.
+          # invent SHAs, PR numbers, or output it did not observe. It writes a
+          # single file — quest.md — and nothing else.
           prompt: >
-            Read merge_metadata.json. Draft a gamified quest in Markdown that
-            teaches what this merge accomplished. Cite ONLY the pr/head_sha/
-            merge_sha present in the JSON. If a fact is missing, omit it.
+            Read merge_metadata.json in the workspace. Draft a gamified quest in
+            Markdown that teaches what this merge accomplished, and write it to
+            quest.md. Cite ONLY the pr/head_sha/merge_sha values present in the
+            JSON. If a fact is missing, omit it — never guess. Do not run git,
+            do not open or merge any pull request; another step handles that.
           oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
       - name: Open proposal PR in the SEPARATE quest-forge repo
         env:
           # A token scoped ONLY to the target repo — not the source.
           GH_TOKEN: ${{ secrets.QUEST_FORGE_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          gh repo clone bamr87/quest-forge target && cp quest.md target/proposed/
+          set -euo pipefail
+          # Verify the agent produced a quest before touching the target repo.
+          test -s quest.md || { echo "No quest.md produced — aborting." >&2; exit 1; }
+
+          gh repo clone bamr87/quest-forge target
+          BRANCH="proposal/pr-${PR_NUMBER}"
+          cp quest.md "target/proposed/pr-${PR_NUMBER}.md"
           cd target
-          git checkout -b "proposal/pr-${PR_NUMBER}"
-          git add proposed/ && git commit -m "Propose quest from merged PR #${PR_NUMBER}"
-          git push origin "proposal/pr-${PR_NUMBER}"
+          git checkout -b "$BRANCH"
+          git add "proposed/pr-${PR_NUMBER}.md"
+          git commit -m "Propose quest from merged PR #${PR_NUMBER}"
+          git push origin "$BRANCH"
           # Open the PR — but DO NOT merge it. A human gate decides.
-          gh pr create --fill --base main --label "auto:quest-proposal"
+          gh pr create --fill --base main --head "$BRANCH" \
+            --label "auto:quest-proposal"
 ```
 {% endraw %}
 
 Three rules make this safe, and they are the whole point of the chapter:
 
-1. **Separate repos.** The agent reads `bamr87/lifehacker.dev`-style history and writes only to a distinct forge repo. The source is never mutated.
-2. **Scoped credentials.** `QUEST_FORGE_TOKEN` can write to the target and nothing else; the source workflow's own `github.token` stays read-only.
+1. **Separate repos.** The agent reads `bamr87/lifehacker.dev`-style history and writes only to a distinct forge repo (`bamr87/quest-forge`). The source is never mutated.
+2. **Scoped credentials.** `QUEST_FORGE_TOKEN` can write to the target and nothing else; the source workflow's own `github.token` stays read-only (`contents: read`).
 3. **A human gate.** The agent calls `gh pr create`, never `gh pr merge`. Auto-merge is deliberately absent — a person reviews the proposed quest before it joins the codex.
 
 This is the autonomy ceiling done right: the machine does the tedious mining and drafting; the human keeps the final say. *Propose, don't merge* is the same principle that keeps a self-healing pipeline from quietly shipping a bad fix.
@@ -239,6 +272,9 @@ graph LR
     A[IX — The Chronicle] --> B[X — The Bard Forge]
     B --> C[Campaign Hub:<br/>The Self-Operating Website]
     style B fill:#7c3aed,stroke:#4c1d95,color:#fff
+    click A "/quests/1110/self-operating-website-09-the-chronicle/"
+    click B "/quests/1100/self-operating-website-10-the-bard-forge/"
+    click C "/quests/codex/self-operating-website/"
 ```
 
 ## 🔮 Next Adventures
@@ -246,7 +282,7 @@ graph LR
 This is the final chapter of the campaign. Return to the hub to review the full arc, replay a chapter, or branch into a new epic:
 
 - 🏰 **Campaign hub:** [The Self-Operating Website](/quests/codex/self-operating-website/)
-- 📜 **Previous chapter:** [The Chronicle](/quests/codex/self-operating-website-09-the-chronicle/)
+- 📜 **Previous chapter:** [The Chronicle](/quests/1110/self-operating-website-09-the-chronicle/)
 
 ## 📚 Resource Codex
 

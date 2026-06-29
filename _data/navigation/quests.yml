@@ -106,6 +106,8 @@
     url: /quests/0001/github-pages-portal/
   - title: 'The Knowledge Vault: Building an Automated Documentation Hub'
     url: /quests/0001/docs-in-a-row/
+  - title: 'The Summoning: Raise the Site and Give It a Voice'
+    url: /quests/0001/self-operating-website-01-the-summoning/
   - title: 'YAML Configuration: Site Settings Mastery'
     url: /quests/0001/yaml-configuration/
   - title: '⚔️ Avatar Forge: Crafting Your Digital Portrait'
@@ -118,8 +120,6 @@
     url: /quests/0001/it-journey-stack-analysis/
   - title: '⚔️ Technology Stack Analysis: Barodybroject'
     url: /quests/0001/barodybroject-stack-analysis/
-  - title: 'The Summoning: Raise the Site and Give It a Voice'
-    url: /quests/codex/self-operating-website-01-the-summoning/
 - title: Level 0010 - Terminal Mastery
   icon: bi-terminal
   url: /quests/0010/
@@ -182,12 +182,12 @@
     url: /quests/0100/frontend/
   - title: 'Quest: Mastering the Ancient Arts of Source Control Sorcery'
     url: /quests/0100/source-control-sorcery/
+  - title: 'The Proving Grounds: The Repo''s First CI Gate'
+    url: /quests/0100/self-operating-website-02-the-proving-grounds/
   - title: '⚔️ Profile Themes: Unleashing the Style Sorcerer'
     url: /quests/0100/profile-themes/
   - title: '⚔️ The Artisan''s Forge: Refactoring Jekyll Theme Components'
     url: /quests/0100/jekyll-component-refactoring/
-  - title: 'The Proving Grounds: The Repo''s First CI Gate'
-    url: /quests/codex/self-operating-website-02-the-proving-grounds/
 - title: Level 0101 - CI/CD & DevOps
   icon: bi-rocket-takeoff
   url: /quests/0101/
@@ -210,12 +210,12 @@
     url: /quests/0101/secrets-management/
   - title: 'Testing Integration: Tiered CI/CD Test Gates'
     url: /quests/0101/testing-integration/
+  - title: 'The Cartographer: File Platform Bugs Upstream'
+    url: /quests/0101/self-operating-website-08-the-cartographer/
   - title: 'Workflow Optimization: Caching and Parallel CI/CD'
     url: /quests/0101/workflow-optimization/
   - title: '⚔️ Jekyll Quest Tracking: Building Dynamic Collection Layouts'
     url: /quests/0101/jekyll-quest-tracking/
-  - title: 'The Cartographer: File Platform Bugs Upstream'
-    url: /quests/codex/self-operating-website-08-the-cartographer/
 - title: Level 0110 - Database Mastery
   icon: bi-database
   url: /quests/0110/
@@ -277,7 +277,7 @@
   - title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
     url: /quests/1000/agentic-mcp-server-mastery/
   - title: 'The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation'
-    url: /quests/codex/self-operating-website-03-the-war-machine/
+    url: /quests/1000/self-operating-website-03-the-war-machine/
 - title: Level 1001 - Kubernetes Orchestration
   icon: bi-grid-3x3-gap
   url: /quests/1001/
@@ -294,10 +294,10 @@
     url: /quests/1001/k8s-services-networking/
   - title: 'The Shield of Retries: Safe Execution and Error Handling'
     url: /quests/1001/agentic-safe-execution-and-error-handling/
+  - title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
+    url: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   - title: 'Vaults of Recollection: Agent Memory Strategies'
     url: /quests/1001/agentic-memory-strategies/
-  - title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
-    url: /quests/codex/self-operating-website-04-the-sigils-of-trust/
 - title: Level 1010 - Monitoring & Observability
   icon: bi-graph-up
   url: /quests/1010/
@@ -324,12 +324,12 @@
     url: /quests/1010/prometheus-grafana/
   - title: Query Your Traffic with the GA MCP Tools
     url: /quests/1010/query-traffic-with-mcp/
+  - title: 'The Content Forge: Autonomous Generation That Refuses to Lie'
+    url: /quests/1010/self-operating-website-05-the-content-forge/
   - title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
     url: /quests/1010/agentic-failure-root-cause-analysis/
   - title: 'The Oracle''s Rubric: Agent Success Signals'
     url: /quests/1010/agentic-success-criteria-and-signals/
-  - title: 'The Content Forge: Autonomous Generation That Refuses to Lie'
-    url: /quests/codex/self-operating-website-05-the-content-forge/
 - title: Level 1011 - Security & Compliance
   icon: bi-shield-lock
   url: /quests/1011/
@@ -376,16 +376,16 @@
     url: /quests/1100/agentic-multi-agent-lifecycle-management/
   - title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
     url: /quests/1100/agentic-autonomy-levels-matrix/
+  - title: 'The Bard Forge: The Quest That Writes Quests'
+    url: /quests/1100/self-operating-website-10-the-bard-forge/
+  - title: 'The Editor''s Eye: A Reviewer, and the Dragon It Becomes'
+    url: /quests/1100/self-operating-website-06-the-editors-eye/
   - title: 'The Temple of Templates: Reusable Abstractions'
     url: /quests/1100/temple-of-templates/
   - title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
     url: /quests/1100/agentic-guardrails-and-human-in-the-loop/
   - title: 'Trial of the Agentic Codex: The Grand Capstone'
     url: /quests/1100/agentic-codex-capstone-exam-trial/
-  - title: 'The Bard Forge: The Quest That Writes Quests'
-    url: /quests/codex/self-operating-website-10-the-bard-forge/
-  - title: 'The Editor''s Eye: A Reviewer, and the Dragon It Becomes'
-    url: /quests/codex/self-operating-website-06-the-editors-eye/
 - title: Level 1101 - Machine Learning & AI
   icon: bi-cpu
   url: /quests/1101/
@@ -407,7 +407,7 @@
   - title: 'Python for Data Science: NumPy, Pandas & Matplotlib'
     url: /quests/1101/python-data-science/
   - title: 'The Named Familiars: Agents, Skills, and a Self-Review Loop'
-    url: /quests/codex/self-operating-website-07-the-named-familiars/
+    url: /quests/1101/self-operating-website-07-the-named-familiars/
 - title: Level 1110 - Architecture & Design Patterns
   icon: bi-building-gear
   url: /quests/1110/
@@ -429,7 +429,7 @@
   - title: 'System Design Interviews: A Framework for the Whiteboard'
     url: /quests/1110/system-design-interviews/
   - title: 'The Chronicle: A SessionEnd Hook That Remembers'
-    url: /quests/codex/self-operating-website-09-the-chronicle/
+    url: /quests/1110/self-operating-website-09-the-chronicle/
 - title: Level 1111 - Leadership & Innovation
   icon: bi-trophy
   url: /quests/1111/

@@ -7,14 +7,14 @@ level: '1110'
 difficulty: '🔴 Hard'
 estimated_time: 3-4 hours
 primary_technology: bash
-quest_type: bonus_quest
+quest_type: main_quest
 quest_series: The Autonomous Realm
 quest_line: The Self-Operating Website
 quest_arc: 'The Chronicle'
 skill_focus: fullstack
 learning_style: project-based
 author: IT-Journey Team
-permalink: /quests/codex/self-operating-website-09-the-chronicle/
+permalink: /quests/1110/self-operating-website-09-the-chronicle/
 fmContentType: quest
 layout: quest
 draft: false
@@ -52,9 +52,9 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/codex/self-operating-website-08-the-cartographer/
+  - /quests/0101/self-operating-website-08-the-cartographer/
   unlocks_quests:
-  - /quests/codex/self-operating-website-10-the-bard-forge/
+  - /quests/1100/self-operating-website-10-the-bard-forge/
 rewards:
   badges:
   - 📜 Chronicler — the retrospective hook remembers every session
@@ -89,6 +89,21 @@ In the old stories, a chronicler is not a hero — they are the one who survives
 - [ ] You can demonstrate a YAML edit that preserves a leading comment block byte-for-byte.
 - [ ] You can read the ledger back and compute total spend across N sessions.
 
+## 🗺️ Quest Prerequisites
+
+Before the Chronicler can pick up the quill, gather these:
+
+- **Prior chapter:** Complete [The Cartographer](/quests/0101/self-operating-website-08-the-cartographer/) — you should already have a working Claude Code project with a `.claude/` directory and a repo you own.
+- **Tools on your machine:**
+  - `bash` (the hook is a shell script)
+  - [`jq`](https://jqlang.github.io/jq/) for parsing the hook's JSON payload (`brew install jq` / `apt-get install jq`)
+  - `python3` ≥ 3.8 for the drainer; install [`ruamel.yaml`](https://yaml.readthedocs.io/en/latest/) with `pip install ruamel.yaml` for the comment-preserving variant
+  - Git and a text editor or IDE
+- **Accounts & access:**
+  - A GitHub repository you own (the ledger and hook live here)
+  - A Claude Code installation and a `CLAUDE_CODE_OAUTH_TOKEN` so the agent steps can run
+- **Project layout:** a `.claude/settings.json` (or `.claude/settings.local.json`) you can edit to register the hook.
+
 ## 🧙‍♂️ Chapter 1: The SessionEnd Hook and the Queue
 
 ### ⚔️ Skills You'll Forge
@@ -99,7 +114,7 @@ In the old stories, a chronicler is not a hero — they are the one who survives
 
 A hook is just a command the agent runtime runs at a defined lifecycle moment. `SessionEnd` is the last one — it fires as the session closes, and the runtime pipes a small JSON object to your command's **stdin** describing the session that just ended. Your job is to read that, extract what matters, and get out of the way *fast*. If your hook is slow or fragile, you make every session slower or, worse, you make shutdown flaky.
 
-Register the hook in `.claude/settings.json`. The `command` is whatever you want run; here we point it at a script in the repo.
+Register the hook in `.claude/settings.json`. The `command` is whatever you want run; here we point it at a script in the repo. The `$CLAUDE_PROJECT_DIR` variable is set by the runtime to your project root, so the path resolves no matter where the session was launched from.
 
 ```json
 {
@@ -115,6 +130,8 @@ Register the hook in `.claude/settings.json`. The `command` is whatever you want
 }
 ```
 
+Save the script below at `.claude/hooks/chronicle.sh` and make it executable with `chmod +x .claude/hooks/chronicle.sh` — the runtime invokes it directly, so an un-executable file means the hook silently never runs.
+
 The script reads the payload from stdin and appends **one line** to a queue file. The queue is deliberately dumb — newline-delimited JSON (`.jsonl`), append-only, no parsing, no locking gymnastics. The single most important rule: **the hook must not do the expensive work.** It enqueues; something else drains.
 
 ```bash
@@ -122,7 +139,9 @@ The script reads the payload from stdin and appends **one line** to a queue file
 # .claude/hooks/chronicle.sh — SessionEnd hook: enqueue, do not process.
 set -euo pipefail
 
-QUEUE="${CLAUDE_PROJECT_DIR:-.}/.chronicle/queue.jsonl"
+# CLAUDE_PROJECT_DIR is exported by the runtime; fall back to CWD for manual runs.
+ROOT="${CLAUDE_PROJECT_DIR:-$(pwd)}"
+QUEUE="$ROOT/.chronicle/queue.jsonl"
 mkdir -p "$(dirname "$QUEUE")"
 
 # The runtime pipes a JSON payload on stdin. Capture it; never block on it.
@@ -138,6 +157,14 @@ printf '{"ts":"%s","session_id":"%s","cost_usd":%s}\n' \
 ```
 
 Two design choices are load-bearing. First, **`set -euo pipefail`** so a silent failure surfaces instead of writing garbage. Second, the `// default` fallbacks in `jq` — a SessionEnd payload that lacks a field you expected should still produce a valid ledger row, not an exception that kills shutdown. The hook's contract is "always append something true, never block." Everything heavier happens downstream.
+
+You can prove the hook works without ending a real session by piping a fake payload into it:
+
+```bash
+echo '{"session_id":"test-123","cost":{"total_usd":0.42}}' | .claude/hooks/chronicle.sh
+cat .chronicle/queue.jsonl
+# {"ts":"2026-06-28T00:00:00Z","session_id":"test-123","cost_usd":0.42}
+```
 
 ### 🔍 Knowledge Check
 
@@ -155,13 +182,19 @@ Two design choices are load-bearing. First, **`set -euo pipefail`** so a silent 
 
 The queue is fast but flat. The **ledger** is the realm's real memory: a structured file you can read back, sum, and reason about. A drainer — run on a schedule or at the start of the next session — reads the queue, folds new rows into the ledger, and truncates the queue. Because both files are append-only at heart, a crash mid-drain costs you at most a re-processed line, never the whole archive.
 
+The simplest safe drainer never feeds the header through a serializer at all — it treats the header as constant text it owns and concatenates it ahead of the data on every write. Save this at `.chronicle/drain.py` and run it with `python3 .chronicle/drain.py`:
+
 {% raw %}
 ```python
 #!/usr/bin/env python3
-"""Drain .chronicle/queue.jsonl into a durable ledger.yml, preserving header."""
-import json, pathlib, datetime
+"""Drain .chronicle/queue.jsonl into a durable ledger.yml, preserving the header.
 
-ROOT = pathlib.Path(__file__).resolve().parents[2] / ".chronicle"
+Run from anywhere: it resolves paths relative to this file's own .chronicle dir.
+"""
+import json
+import pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parent  # the .chronicle directory
 QUEUE = ROOT / "queue.jsonl"
 LEDGER = ROOT / "ledger.yml"
 
@@ -170,22 +203,31 @@ HEADER = (
     "# Each entry is one ended session. Totals are derived, never stored.\n"
 )
 
-def load_entries(text: str) -> list:
-    # Skip the comment header; entries live below a `sessions:` marker.
-    body = text.split("sessions:", 1)[-1] if "sessions:" in text else ""
-    return [l for l in body.splitlines() if l.strip().startswith("- ")]
 
-if QUEUE.exists():
-    existing = LEDGER.read_text() if LEDGER.exists() else ""
-    rows = load_entries(existing)
+def existing_rows(text: str) -> list[str]:
+    """Recover prior `- ` data lines, skipping the comment header and marker."""
+    body = text.split("sessions:", 1)[-1] if "sessions:" in text else ""
+    return [ln for ln in body.splitlines() if ln.strip().startswith("- ")]
+
+
+def main() -> None:
+    if not QUEUE.exists():
+        return
+    rows = existing_rows(LEDGER.read_text() if LEDGER.exists() else "")
     for line in QUEUE.read_text().splitlines():
         if not line.strip():
             continue
         e = json.loads(line)
-        rows.append(f"  - {{ ts: {e['ts']}, session: {e['session_id']}, cost_usd: {e['cost_usd']} }}")
+        rows.append(
+            f"  - {{ ts: {e['ts']}, session: {e['session_id']}, cost_usd: {e['cost_usd']} }}"
+        )
     # Rebuild the file: header FIRST, then the data. The header is sacred.
     LEDGER.write_text(HEADER + "sessions:\n" + "\n".join(rows) + "\n")
-    QUEUE.write_text("")  # truncate the queue only after a successful write
+    QUEUE.write_text("")  # truncate the queue only AFTER a successful write
+
+
+if __name__ == "__main__":
+    main()
 ```
 {% endraw %}
 
@@ -199,13 +241,84 @@ data["sessions"] << { "ts" => Time.now.utc.iso8601, "cost_usd" => 0.12 }
 File.write("ledger.yml", data.to_yaml)  # writes valid YAML with NO header
 ```
 
-The cure is to treat the header as text you own and never feed through the serializer. Reconstruct the file by **concatenating a constant header string with the serialized body**, exactly as the Python drainer above does — header first, always, on every write. If you genuinely need a round-trip that keeps comments, reach for a comment-preserving library (`ruamel.yaml` in Python), but for an append-only ledger the concatenation pattern is simpler and bulletproof: the serializer never touches the header, so it can never shred it.
+The cure is to treat the header as text you own and never feed it through the serializer. The concatenation pattern in the drainer above does exactly that — header first, always, on every write. But sometimes you genuinely need a real parsed round-trip (you're mutating nested structure, not just appending). For that, reach for a comment-preserving library. In Python, `ruamel.yaml` in round-trip mode keeps the header *and* the data structure intact:
+
+```python
+#!/usr/bin/env python3
+"""Append-and-resave with ruamel.yaml — keeps the leading comment header."""
+import datetime
+import pathlib
+
+from ruamel.yaml import YAML
+
+LEDGER = pathlib.Path(__file__).resolve().parent / "ledger.yml"
+
+yaml = YAML()            # round-trip mode is the default; this is what saves us
+yaml.preserve_quotes = True
+
+# Load the FULL document, including the comment tokens ruamel attaches to nodes.
+with LEDGER.open() as f:
+    doc = yaml.load(f)
+
+now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+doc["sessions"].append({"ts": now, "session": "abc123", "cost_usd": 0.12})
+
+# Dump it back. ruamel re-emits the `# DO NOT EDIT BY HAND` header it parsed.
+with LEDGER.open("w") as f:
+    yaml.dump(doc, f)
+```
+
+The difference is the whole lesson: `yaml.dump`/`to_yaml` from the standard library round-trips *data*; `ruamel.yaml` round-trips the *document* — comments, blank lines, and key order included. For an append-only ledger the concatenation pattern is simpler and bulletproof (the serializer never touches the header, so it can never shred it); when you must mutate parsed structure in place, `ruamel.yaml` is the comment-safe tool.
 
 ### 🔍 Knowledge Check
 
 - [ ] What exactly does a standard `to_yaml` / `yaml.dump` round-trip lose, and why is the file still "valid" afterward?
 - [ ] In the drainer, why is `QUEUE.write_text("")` placed *after* the ledger write succeeds?
 - [ ] Name two cures for the comment-loss hazard and when you'd choose each.
+
+## ⏰ Chapter 3: Draining on a Schedule
+
+You can drain the queue at the start of the next session, but the tidier pattern is a scheduled GitHub Actions workflow that drains and commits the ledger on a cadence. (The `` `{% raw %}` ``/`` `{% endraw %}` `` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+
+{% raw %}
+```yaml
+# .github/workflows/chronicle-drain.yml
+name: chronicle-drain
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily at 06:00 UTC
+  workflow_dispatch: {}     # also drain on demand
+
+permissions:
+  contents: write           # needed to commit the updated ledger
+
+jobs:
+  drain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruamel.yaml
+      - run: python3 .chronicle/drain.py
+      - name: Commit the updated ledger
+        run: |
+          git config user.name  "chronicle-bot"
+          git config user.email "chronicle-bot@users.noreply.github.com"
+          git add .chronicle/ledger.yml .chronicle/queue.jsonl
+          if git diff --staged --quiet; then
+            echo "Nothing to drain."
+          else
+            git commit -m "chore(chronicle): drain session ledger [skip ci]"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+{% endraw %}
+
+The `git diff --staged --quiet` guard means an empty queue produces no commit at all — the workflow is safe to run every day forever.
 
 ## 🔁 Reproduce It
 
@@ -220,9 +333,13 @@ This chapter is anchored to a real merged branch on the reference build, where t
 
 **Objective:** Run three sessions and prove the realm remembers all three — with its header intact.
 
-- [ ] After three SessionEnd events, `ledger.yml` contains exactly three `- ` entries and the queue is empty.
+- [ ] After three SessionEnd events (or three pipes of a fake payload into the hook, followed by a drain), `ledger.yml` contains exactly three `- ` entries and the queue is empty.
 - [ ] The `# DO NOT EDIT BY HAND` header survives every drain, byte-for-byte, after all three sessions.
-- [ ] A one-line script reads the ledger and prints the correct **total** `cost_usd` across all sessions.
+- [ ] A one-line script reads the ledger and prints the correct **total** `cost_usd` across all sessions, e.g.:
+
+```bash
+python3 -c "from ruamel.yaml import YAML; d=YAML().load(open('.chronicle/ledger.yml')); print(sum(s['cost_usd'] for s in d['sessions']))"
+```
 
 ## 🎁 Rewards & Progression
 
@@ -236,11 +353,14 @@ This chapter is anchored to a real merged branch on the reference build, where t
 graph LR
   A[VIII · The Cartographer] --> B[IX · The Chronicle]
   B --> C[X · The Bard Forge]
+  click A "/quests/0101/self-operating-website-08-the-cartographer/"
+  click B "/quests/1110/self-operating-website-09-the-chronicle/"
+  click C "/quests/1100/self-operating-website-10-the-bard-forge/"
 ```
 
 ## 🔮 Next Adventures
 
-- **Next chapter:** [The Bard Forge](/quests/codex/self-operating-website-10-the-bard-forge/) — the realm learns to compose, not just remember.
+- **Next chapter:** [The Bard Forge](/quests/1100/self-operating-website-10-the-bard-forge/) — the realm learns to compose, not just remember.
 - **Campaign hub:** [The Self-Operating Website](/quests/codex/self-operating-website/)
 
 ## 📚 Resource Codex
@@ -255,6 +375,6 @@ graph LR
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
 **Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[The Cartographer: A Map the Castle Draws Itself]]
-**Next:** [[The Bard Forge: Where the Realm Composes]]
+**Previous:** [[The Cartographer]]
+**Next:** [[The Bard Forge]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -7,14 +7,14 @@ level: '0001'
 difficulty: '🟢 Easy'
 estimated_time: 1-2 hours
 primary_technology: jekyll
-quest_type: bonus_quest
+quest_type: main_quest
 quest_series: The Autonomous Realm
 quest_line: The Self-Operating Website
 quest_arc: 'The Summoning'
 skill_focus: fullstack
 learning_style: project-based
 author: IT-Journey Team
-permalink: /quests/codex/self-operating-website-01-the-summoning/
+permalink: /quests/0001/self-operating-website-01-the-summoning/
 fmContentType: quest
 layout: quest
 draft: false
@@ -54,7 +54,7 @@ quest_dependencies:
   recommended_quests:
   - /quests/codex/self-operating-website/
   unlocks_quests:
-  - /quests/codex/self-operating-website-02-the-proving-grounds/
+  - /quests/0100/self-operating-website-02-the-proving-grounds/
 rewards:
   badges:
   - 🥇 First Pull Request — opened your first autopilot pull request
@@ -88,6 +88,18 @@ Every autonomous system begins as a summoning — a deliberate act of bringing s
 - [ ] You can explain why brand-as-data beats brand-as-prose for automation
 - [ ] You can render a value from `_data/` inside a layout without hardcoding it
 - [ ] Your repository deploys on push and produces a readable session summary artifact
+
+## 🗺️ Quest Prerequisites
+
+Before you draw the summoning circle, gather your reagents. This is the first chapter of the campaign, so there is no prior chapter to clear — but you do need a working bench:
+
+- **A live zer0-mistakes Jekyll site** — complete the prequel epic first so you have a known-good remote-theme site to model.
+- **A GitHub account and a repository you own** — the empty repo that will become your realm. You need push access to its `main` branch.
+- **Git + a text editor or IDE** — installed locally so you can scaffold files and open pull requests.
+- **Comfort with Git, branches, and pull requests** — you will ship each piece as a small, reviewable PR.
+- **Basic GitHub Actions familiarity** — enough to read a workflow YAML and know where `.github/workflows/` lives.
+- **A Claude Code OAuth token** — to drive the agent steps that automate later chapters of this campaign.
+- **GitHub Pages enabled for the repo** — Settings → Pages → Source → **GitHub Actions**. Do this *before* your first deploy or the publish step fails (see Chapter 1).
 
 ## 🧙‍♂️ Chapter 1: Drawing the Circle — Jekyll, a Remote Theme, and the Pages Beacon
 
@@ -123,8 +135,24 @@ group :jekyll_plugins do
 end
 ```
 
-Now light the beacon. GitHub Pages can build with its own Actions workflow; the official starter wires Ruby, runs the Jekyll build, and publishes the `_site` artifact. The essential shape:
+Every construct needs a face. The remote theme supplies the layouts, but your repo still needs an entry page that picks one. A minimal `index.md` is all it takes — front matter that names a layout the theme provides, plus a heading:
 
+```markdown
+---
+layout: home
+title: The Autonomous Realm
+---
+
+# The Autonomous Realm
+
+A site that learns to operate itself.
+```
+
+Now light the beacon. GitHub Pages can build with its own Actions workflow; the official starter wires Ruby, runs the Jekyll build, uploads the `_site` artifact in a **build** job, and then publishes it in a separate **deploy** job. Both jobs matter — without the deploy job the artifact is built but never goes live.
+
+(The `{% raw %}`/`{% endraw %}` tags below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+
+{% raw %}
 ```yaml
 # .github/workflows/pages.yml
 name: Deploy site to Pages
@@ -139,6 +167,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/configure-pages@v5
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
@@ -148,14 +177,27 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
 ```
+{% endraw %}
 
-Push to `main`, enable Pages in repository settings (source: GitHub Actions), and the circle is complete: a remote-theme Jekyll site that redeploys itself on every commit. The construct now has a body.
+Before the first run, **enable Pages**: Settings → Pages → Source → **GitHub Actions**. Skip that and the deploy job fails with no environment to publish into. Once it is set, push to `main` and the circle is complete: the `build` job compiles the remote-theme site and uploads the artifact, the `deploy` job pushes it live, and every commit redeploys itself. The construct now has a body.
 
 ### 🔍 Knowledge Check
 
 - [ ] Why does `remote_theme` keep your repository smaller than copying the theme's files in?
-- [ ] Which `permissions` does the Pages workflow need to publish, and why is `id-token: write` present?
+- [ ] Which `permissions` does the deploy job need to publish, and why is `id-token: write` present?
 - [ ] What single event triggers a redeploy in the workflow above?
 
 ## 🧙‍♂️ Chapter 2: Giving It a Voice — Brand as Data and the Session Scribe
@@ -215,12 +257,22 @@ mkdir -p dispatches
   git log --since="6 hours ago" --pretty="- %s" || true
   echo
   echo "## Files touched"
-  git diff --name-only HEAD~1..HEAD | sed 's/^/- /' || true
+  git diff --name-only HEAD^1 HEAD 2>/dev/null \
+    || git show --name-only --format='' HEAD \
+    || true
 } > "$out"
 echo "Wrote $out"
 ```
 
-Run it after a session and you get a Markdown dispatch summarizing the work — readable by you today and by an agent tomorrow. The site now has a body, a voice, and the beginnings of a memory.
+Make it executable once, then run it after a session:
+
+```bash
+chmod +x scripts/session-scribe.sh
+./scripts/session-scribe.sh
+# or, without the chmod: bash scripts/session-scribe.sh
+```
+
+The `git diff --name-only HEAD^1 HEAD` call lists files touched in the last commit, with a fallback (`git show --name-only`) so the script still works on a repository's very first commit, when there is no `HEAD^1` to compare against. You get a Markdown dispatch summarizing the work — readable by you today and by an agent tomorrow. The site now has a body, a voice, and the beginnings of a memory.
 
 ### 🔍 Knowledge Check
 
@@ -242,7 +294,7 @@ Read those three squash-merges in order and you will see this chapter as it actu
 
 **Objective:** Summon your own realm and prove it can speak for itself.
 
-- [ ] Your repository deploys a remote-theme Jekyll site to GitHub Pages on push to `main`
+- [ ] Your repository deploys a remote-theme Jekyll site to GitHub Pages on push to `main` (build job *and* deploy job)
 - [ ] A layout renders at least one value from `_data/brand.yml` (no hardcoded brand text)
 - [ ] Running `scripts/session-scribe.sh` produces a dated dispatch under `dispatches/`, committed via your first autopilot pull request
 
@@ -259,6 +311,8 @@ Read those three squash-merges in order and you will see this chapter as it actu
 graph LR
   A["Epic Quest: The Self-Operating Website"] --> B["Ch. I — The Summoning"]
   B --> C["Ch. II — The Proving Grounds"]
+  click B "/quests/0001/self-operating-website-01-the-summoning/"
+  click C "/quests/0100/self-operating-website-02-the-proving-grounds/"
   classDef current fill:#1f6feb,stroke:#0b3d91,color:#fff;
   class B current;
 ```
@@ -267,7 +321,7 @@ graph LR
 
 The construct lives and speaks — but it has not yet been *tested*. In the next chapter you build the trials that prove its work is safe to ship.
 
-- ➡️ **Next chapter:** [Chapter II — The Proving Grounds](/quests/codex/self-operating-website-02-the-proving-grounds/)
+- ➡️ **Next chapter:** [Chapter II — The Proving Grounds](/quests/0100/self-operating-website-02-the-proving-grounds/)
 - 🏰 **Campaign hub:** [Epic Quest: The Self-Operating Website](/quests/codex/self-operating-website/)
 
 ## 📚 Resource Codex
@@ -282,6 +336,6 @@ The construct lives and speaks — but it has not yet been *tested*. In the next
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
 **Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[Epic Quest: The Self-Operating Website]]
+**Previous:** none — first chapter
 **Next:** [[The Proving Grounds: Test, Gate, and Trust the Build]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

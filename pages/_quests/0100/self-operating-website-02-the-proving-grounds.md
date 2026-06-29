@@ -7,14 +7,14 @@ level: '0100'
 difficulty: '🟡 Medium'
 estimated_time: 2-3 hours
 primary_technology: github-actions
-quest_type: bonus_quest
+quest_type: main_quest
 quest_series: The Autonomous Realm
 quest_line: The Self-Operating Website
 quest_arc: 'The Proving Grounds'
 skill_focus: devops
 learning_style: project-based
 author: IT-Journey Team
-permalink: /quests/codex/self-operating-website-02-the-proving-grounds/
+permalink: /quests/0100/self-operating-website-02-the-proving-grounds/
 fmContentType: quest
 layout: quest
 draft: false
@@ -52,9 +52,9 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/codex/self-operating-website-01-the-summoning/
+  - /quests/0001/self-operating-website-01-the-summoning/
   unlocks_quests:
-  - /quests/codex/self-operating-website-03-the-war-machine/
+  - /quests/1000/self-operating-website-03-the-war-machine/
 rewards:
   badges:
   - ✅ Gatekeeper — built the required verify check
@@ -89,6 +89,17 @@ In the old kingdoms, a fortress was only as strong as its gatehouse. Anyone coul
 - [ ] You can open a deliberately broken PR and watch `verify` fail before any human reviews it
 - [ ] You can read `findings.jsonl` and trace each entry back to the exact file and rule that produced it
 
+## 🗺️ Quest Prerequisites
+
+Before you raise the gatehouse, make sure your camp is stocked. This chapter assumes you arrive with:
+
+- 🏰 **The Summoning, completed** — finish [Chapter I — The Summoning](/quests/0001/self-operating-website-01-the-summoning/) first. You need the agent you awakened there before the gate has anything to guard.
+- 🐙 **A GitHub repository you own** — with admin rights, because promoting `verify` to a *required* check lives under branch protection settings only an owner/admin can edit.
+- 🔑 **A Claude Code OAuth token** — stored as a repository secret, to drive the agent steps in later chapters of the campaign.
+- 🧰 **Local toolchain** — Git, a text editor or IDE, and **Python 3.12+** with `pip` so you can run the harness locally before you ever push it.
+- 📦 **One Python dependency** — `pyyaml`, used by the front-matter linter (`pip install pyyaml`). The workflow installs it too, but installing it locally lets you test first.
+- 🌿 **Git fluency** — comfort with branches and pull requests, since the whole quest is exercised through a PR that the gate either accepts or refuses.
+
 ## 🧙‍♂️ Chapter 1: Forging the Findings Contract
 
 ### ⚔️ Skills You'll Forge
@@ -101,10 +112,17 @@ Most CI scripts print a wall of human-readable text and exit. That works for a p
 
 We use **JSONL** (JSON Lines) — one JSON object per line — because it is append-friendly, stream-friendly, and trivial to read incrementally. The schema is *frozen*: once you ship these field names, you treat them like an API. Downstream tools depend on `file`, `rule`, `severity`, and `message` existing and meaning the same thing forever.
 
+First, give the harness a home on disk:
+
+```bash
+mkdir -p scripts/ci
+```
+
+Now the emitter. This is the heart of the contract — the part that turns a list of problems into a deterministic, machine-readable artifact:
+
 ```python
-# scripts/ci/verify.py — a minimal deterministic findings emitter
+# scripts/ci/verify.py — the FROZEN findings contract (emitter half)
 import json
-import sys
 from pathlib import Path
 
 # The FROZEN contract. Field names and meanings do not change casually.
@@ -138,11 +156,12 @@ The load-bearing detail is **determinism**. We sort the findings and serialize w
 - Writing a GitHub Actions workflow triggered on `pull_request`
 - Promoting a job to a **required status check** with branch protection
 
-Now you give the sentinel something to inspect. For a Jekyll content repo, two checks earn their keep immediately: **broken internal links** (a relative link pointing at a file that does not exist) and **front-matter linting** (every content file must carry the required keys). Each problem becomes a `finding(...)` entry, so both checks speak the same frozen language.
+Now you give the sentinel something to inspect. For a Jekyll content repo, two checks earn their keep immediately: **broken site-absolute links** (a link like `/quests/...` pointing at a file that does not exist) and **front-matter linting** (every content file must carry the required keys). Each problem becomes a `finding(...)` entry, so both checks speak the same frozen language.
 
 ```python
-# inside verify.py — two checks that emit into the same contract
-import re, yaml
+# scripts/ci/verify.py (continued) — two checks that emit into the same contract
+import re
+import yaml
 
 REQUIRED_KEYS = {"title", "description", "date", "author"}
 
@@ -158,6 +177,8 @@ def check_frontmatter(md_path, text):
     return out
 
 def check_links(md_path, text, repo_root):
+    # Only checks SITE-ABSOLUTE links, e.g. [text](/quests/foo/). Relative
+    # ./ and ../ links are intentionally out of scope for this first gate.
     out = []
     for target in re.findall(r"\]\((/[^)\s#]+)", text):
         # Resolve a site-absolute link to a candidate file on disk.
@@ -167,8 +188,87 @@ def check_links(md_path, text, repo_root):
     return out
 ```
 
-With the checks written, the harness walks your content, accumulates findings, and exits non-zero when any error is present. The final piece is the **gatehouse itself** — a workflow that runs on every pull request:
+The harness needs a driver: something that walks your content, runs both checks on every Markdown file, accumulates the findings, emits the contract, and exits with the right code. Without this `__main__` block the script would simply define functions and exit `0` — and a gate that always passes is no gate at all. Here is the **complete, assembled `scripts/ci/verify.py`** — copy this one file end to end:
 
+```python
+# scripts/ci/verify.py — complete deterministic verification harness
+import json
+import re
+import sys
+from pathlib import Path
+
+import yaml
+
+# --- The FROZEN contract -----------------------------------------------------
+# Field names and meanings do not change casually.
+# severity is one of: "error" | "warning". Only "error" fails the gate.
+
+def finding(file, rule, severity, message):
+    return {"file": file, "rule": rule, "severity": severity, "message": message}
+
+def emit(findings, out_path="findings.jsonl"):
+    # Sort for determinism: same input -> byte-identical output, every run.
+    findings.sort(key=lambda f: (f["file"], f["rule"], f["message"]))
+    with open(out_path, "w", encoding="utf-8") as fh:
+        for f in findings:
+            fh.write(json.dumps(f, sort_keys=True, ensure_ascii=False) + "\n")
+    errors = [f for f in findings if f["severity"] == "error"]
+    return 1 if errors else 0
+
+# --- The checks --------------------------------------------------------------
+
+REQUIRED_KEYS = {"title", "description", "date", "author"}
+
+def check_frontmatter(md_path, text):
+    out = []
+    if not text.startswith("---"):
+        out.append(finding(md_path, "fm-missing", "error", "no front matter block"))
+        return out
+    block = text.split("---", 2)[1]
+    data = yaml.safe_load(block) or {}
+    for key in sorted(REQUIRED_KEYS - set(data)):
+        out.append(finding(md_path, "fm-required-key", "error", f"missing key: {key}"))
+    return out
+
+def check_links(md_path, text, repo_root):
+    # Only checks SITE-ABSOLUTE links, e.g. [text](/quests/foo/). Relative
+    # ./ and ../ links are intentionally out of scope for this first gate.
+    out = []
+    for target in re.findall(r"\]\((/[^)\s#]+)", text):
+        candidate = Path(repo_root) / target.lstrip("/")
+        if not candidate.exists() and not (candidate.with_suffix(".md")).exists():
+            out.append(finding(md_path, "link-broken", "warning", f"dead link: {target}"))
+    return out
+
+# --- The driver: walk content, run checks, emit, exit ------------------------
+
+def main():
+    repo_root = Path(".")
+    findings = []
+    for md_path in sorted(repo_root.glob("**/*.md")):
+        text = md_path.read_text(encoding="utf-8")
+        rel = str(md_path)
+        findings.extend(check_frontmatter(rel, text))
+        findings.extend(check_links(rel, text, repo_root))
+    return emit(findings)
+
+if __name__ == "__main__":
+    sys.exit(main())
+```
+
+That `if __name__ == "__main__"` block is what makes the gate real: it walks every Markdown file with `Path(".").glob("**/*.md")`, runs both checks, accumulates findings, writes the contract via `emit()`, and `sys.exit()`s the harness's exit code. Now `python scripts/ci/verify.py` returns non-zero whenever any `error`-severity finding exists — exactly the behavior the gate depends on.
+
+**Test it locally before you wire any CI.** A gate you have never run is a guess:
+
+```bash
+pip install pyyaml && python scripts/ci/verify.py
+```
+
+A clean repo prints nothing and exits `0` (check with `echo $?`); a repo with a missing front-matter key exits `1` and you'll find the offending entry in `findings.jsonl`.
+
+With the harness verified locally, the final piece is the **gatehouse itself** — a workflow that runs the same command on every pull request:
+
+{% raw %}
 ```yaml
 # .github/workflows/verify.yml
 name: verify
@@ -190,18 +290,21 @@ jobs:
       - name: Run verification harness
         run: python scripts/ci/verify.py
       - name: Upload findings contract
-        if: always()            # publish findings even when the gate fails
+        if: {% raw %}${{ always() }}{% endraw %}   # publish findings even when the gate fails
         uses: actions/upload-artifact@v4
         with:
           name: findings
           path: findings.jsonl
 ```
+{% endraw %}
 
-Two subtleties make this a real gate. First, `if: always()` on the upload step means `findings.jsonl` is published as an artifact *even when the harness exits non-zero* — so you can always inspect what failed. Second, the workflow is only advisory until you make it **required**: in your repository settings, under *Branches → Branch protection rules → main*, enable "Require status checks to pass before merging" and select `verify`. From that moment, GitHub itself refuses to merge any PR — yours or an agent's — until the sentinel passes. That single toggle is what turns a script into a contract.
+> 📝 The `` {% raw %} ``/`` {% endraw %} `` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.
+
+Two subtleties make this a real gate. First, `always()` on the upload step means `findings.jsonl` is published as an artifact *even when the harness exits non-zero* — so you can always inspect what failed. Second, the workflow is only advisory until you make it **required**: in your repository settings, under *Branches → Branch protection rules → main*, enable "Require status checks to pass before merging" and select `verify`. From that moment, GitHub itself refuses to merge any PR — yours or an agent's — until the sentinel passes. That single toggle is what turns a script into a contract.
 
 ### 🔍 Knowledge Check
 
-- [ ] Why does the upload step use `if: always()` instead of running only on success?
+- [ ] Why does the upload step use `always()` instead of running only on success?
 - [ ] What exactly changes the moment you mark `verify` as a *required* status check in branch protection?
 - [ ] Which check above emits an `error` (fails the gate) versus a `warning` (reported but tolerated), and why might you choose differently?
 
@@ -236,13 +339,16 @@ graph LR
     A[The Summoning] --> B[The Proving Grounds]
     B --> C[The War Machine]
     style B fill:#f9d71c,stroke:#333,stroke-width:2px
+    click A "/quests/0001/self-operating-website-01-the-summoning/"
+    click B "/quests/0100/self-operating-website-02-the-proving-grounds/"
+    click C "/quests/1000/self-operating-website-03-the-war-machine/"
 ```
 
 ## 🔮 Next Adventures
 
-- ➡️ **Next chapter:** [The War Machine](/quests/codex/self-operating-website-03-the-war-machine/) — scale the single gate into a fleet of automated workflows.
+- ➡️ **Next chapter:** [The War Machine](/quests/1000/self-operating-website-03-the-war-machine/) — scale the single gate into a fleet of automated workflows.
 - 🏰 **Campaign hub:** [The Self-Operating Website](/quests/codex/self-operating-website/) — see the full campaign map.
-- ⬅️ **Previous chapter:** [The Summoning](/quests/codex/self-operating-website-01-the-summoning/) — where you first summoned the agent.
+- ⬅️ **Previous chapter:** [The Summoning](/quests/0001/self-operating-website-01-the-summoning/) — where you first summoned the agent.
 
 ## 📚 Resource Codex
 
@@ -256,6 +362,6 @@ graph LR
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
 
 **Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[The Summoning: Awakening the Repository's First Agent]]
-**Next:** [[The War Machine: Scaling the Gate into a Fleet]]
+**Previous:** [[The Summoning]]
+**Next:** [[The War Machine]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
