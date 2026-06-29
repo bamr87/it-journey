@@ -51,6 +51,31 @@ backpressure (`.issues/budget.yml`) so the loop never buries the reviewer. See
 Closing bot-noise is double-gated on `ISSUE_AUTOCLOSE_ENABLED`; a **human-authored
 issue is never auto-closed** (the engine downgrades it to `needs-human`).
 
+## The quest walkthrough (end-to-end validation → report)
+
+The validation arm of the fleet: instead of improving content, it *plays* the
+curriculum to find out whether it actually works. A deterministic planner
+(`scripts/quest/walkthrough_plan.py`) picks ONE coherent slice — a character class
+at a binary level, date-rotated so a daily run sweeps everything over time — and
+resolves its **linked, dependency-ordered set of quests** from the same data the
+site renders from (`_data/quests/network.yml` + `paths.yml`). The `quest-walker`
+agent then walks that set **end-to-end in the disposable runner sandbox as if it
+were a learner**, running quest commands for real via the existing execute engine
+(`test/quest-validator/agentic_validate.py`), and writes ONE evidence-based session
+report (evidence, issues, reasoning) to `test/quest-validator/walkthroughs/`.
+
+| Workflow | Trigger | Agent | What it does | Gate variable |
+|---|---|---|---|---|
+| `quest-walkthrough.yml` | daily 10:00 UTC + dispatch | `quest-walker` | plays one linked (character, level) quest slice end-to-end in a sandbox, opens one report PR (`quest-walkthrough` label) for human review | `QUEST_WALKTHROUGH_ENABLED` |
+
+The procedure is the **`quest-walkthrough`** skill (plan → execute → walk the chain →
+one report); locally the same loop runs via `make quest-walkthrough`
+(`make quest-walkthrough-plan` previews the slice with no AI/cost). The agent is
+read-only over content — it **never edits a quest and never merges**; fixable bugs
+land in the report's issues section for a content pass or a human. See
+[`test/quest-validator/walkthroughs/README.md`](../../test/quest-validator/walkthroughs/README.md)
+for the report contract.
+
 ## The frontend canary (theme bugs → upstream)
 
 | Workflow | Trigger | Agent | What it does | Gate variable |
@@ -65,7 +90,7 @@ defects (e.g. 404s on theme-injected `/tags/`, `/search.json`), and the
 Roles live in `.claude/agents/*.md`; procedures in `.claude/skills/` (the
 `content-curator` skill composes `cms-curator` + `brand-voice`; the `issue-triage`
 skill drives the issue-triager + issue-resolver; the `theme-scout` skill drives
-the frontend canary). Brand is anchored by `_data/brand/*` and enforced cheaply by
+the frontend canary; the `quest-walkthrough` skill drives the quest-walker). Brand is anchored by `_data/brand/*` and enforced cheaply by
 `scripts/ci/brand_lint.py`; the auto-merge guard is `scripts/ci/classify_changes.py`.
 
 ## Setup (required to turn it on)
@@ -95,6 +120,8 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set ISSUE_AUTOMERGE_ENABLED   --body true --repo bamr87/it-journey
    # frontend canary
    gh variable set THEME_SCOUT_ENABLED       --body true --repo bamr87/it-journey
+   # quest walkthrough (end-to-end validation)
+   gh variable set QUEST_WALKTHROUGH_ENABLED --body true --repo bamr87/it-journey
    ```
 
    The theme scout also needs a cross-repo PAT to file upstream:

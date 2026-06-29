@@ -7,6 +7,7 @@
         quest-audit quest-audit-strict quest-audit-report quest-levels-data quest-nav quest-data quest-normalize \
         docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
         quest-execute quest-execute-host \
+        quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest \
         content-validate content-normalize content-normalize-apply content-audit \
         mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all \
@@ -288,6 +289,35 @@ quest-validate-agentic-mock:
 quest-validate-agentic-selftest:
 	@echo "🧪 Agentic validator offline self-test suite..."
 	@bash test/quest-validator/test-agentic.sh
+
+# ── Daily quest WALKTHROUGH (end-to-end, by character + level) ──────────────
+# Plays a LINKED set of quests for one character class at one level end-to-end,
+# as if you were a learner, and writes ONE evidence-based session report. The
+# planner picks the slice deterministically (date-rotated by default); the
+# quest-walkthrough skill drives the agent. Overridable: CHARACTER, LEVEL,
+# MAX_QUESTS, MODE.  e.g.  make quest-walkthrough CHARACTER=developer LEVEL=0001
+CHARACTER ?=
+LEVEL     ?=
+MAX_QUESTS ?= 5
+quest-walkthrough-plan:
+	@echo "🗺️  Planning the quest walkthrough slice (deterministic)..."
+	@python3 scripts/quest/walkthrough_plan.py \
+		$(if $(CHARACTER),--character $(CHARACTER),) $(if $(LEVEL),--level $(LEVEL),) \
+		--max-quests $(MAX_QUESTS) $(EXTRA)
+
+quest-walkthrough-plan-selftest:
+	@echo "🧪 Quest walkthrough planner self-test (offline, against live data)..."
+	@python3 scripts/quest/walkthrough_plan.py --selftest
+
+# Full agentic walkthrough via the quest-walkthrough skill (needs claude login /
+# CLAUDE_CODE_OAUTH_TOKEN). Writes a report under test/quest-validator/walkthroughs/.
+quest-walkthrough:
+	@echo "🧭 Quest walkthrough ($(MODE) mode) — needs claude login / CLAUDE_CODE_OAUTH_TOKEN..."
+	@claude -p "Use the quest-walkthrough skill to walk one linked quest slice end-to-end and write ONE session report. CHARACTER='$(CHARACTER)' LEVEL='$(LEVEL)' MAX_QUESTS=$(MAX_QUESTS). Run agentic_validate.py in --mode $(MODE). Write the report to test/quest-validator/walkthroughs/ and STOP — do not edit quest content, branch, commit, or merge." \
+		--permission-mode acceptEdits \
+		--allowedTools "Bash,Read,Write,Glob,Grep" \
+		--disallowedTools "Bash(git:*),Bash(gh:*)" \
+		--max-turns 80 --model claude-opus-4-8 --output-format text
 
 # Content frontmatter validation and normalization targets
 content-validate:
