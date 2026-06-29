@@ -83,7 +83,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Defeat the pit boss and the satellite boss
 - [ ] Complete the Bashcrawl dungeon
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 All of these should be in your inventory before entering the Rift:
 

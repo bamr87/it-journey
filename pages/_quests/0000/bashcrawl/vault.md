@@ -78,7 +78,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Survive the ghost encounter in the lab
 - [ ] Collect the vault key fragment
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Emerald amulet in inventory

@@ -75,7 +75,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Ask Merlin for a hint with the `merlin` command
 - [ ] Collect the brass key and move to the cellar
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - A terminal with Bash (macOS, Linux, or WSL)
 - Bashcrawl installed or running at [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/)

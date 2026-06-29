@@ -77,7 +77,7 @@ This page is your **walkthrough and strategy guide**. Agent Mode itself runs loc
 - [ ] Use `--status` to generate a dungeon completion report
 - [ ] (Optional) Fork the upstream repo and submit an improvement
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - All 9 dungeon areas explored
 - Comfortable with shell scripting and pipes

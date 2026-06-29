@@ -77,7 +77,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Defeat the armoury guardian
 - [ ] Proceed to the Chamber
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls -F`, `cat`, and file navigation

@@ -76,7 +76,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Run `./statue` to trigger and win the boss encounter
 - [ ] Collect the Chamber's treasure and unlock the Rift path
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Armoury side-quest](/quests/0000/side-quests/armoury/) complete
 - Sword in inventory (from armoury `./sword`)

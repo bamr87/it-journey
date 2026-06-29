@@ -79,7 +79,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Find and collect the emerald amulet
 - [ ] Locate all four exits (armoury, chapel, vault, scrap)
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Entrance side-quest](/quests/0000/side-quests/entrance/) complete
 - Know how to use `ls`, `cd`, and `cat`

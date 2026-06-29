@@ -79,7 +79,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Enter the library and collect the ancient tome
 - [ ] Explore the graveyard — optional but rewarding
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls`, `cd`, and basic file reading

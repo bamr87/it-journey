@@ -78,7 +78,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Use the scrap's portal symlinks to shortcut navigation
 - [ ] Collect the portal crystal
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls -F`, `ls -l`, and `cd`

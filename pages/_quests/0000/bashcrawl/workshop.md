@@ -78,7 +78,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Remove an item with `rm`
 - [ ] Clean the workshop and advance to the cellar
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - Complete the [Entrance side-quest](/quests/0000/side-quests/entrance/) first
 - Comfortable with `ls`, `cd`, and `cat`
