@@ -1,0 +1,66 @@
+# =============================================================================
+# .frontend/config.yml — frontend tester + theme-scout configuration
+# -----------------------------------------------------------------------------
+# Drives scripts/frontend/crawl.mjs (the browser tester) and triage_findings.py
+# (theme-vs-content classifier + deduper). The theme-scout agent files the THEME
+# findings upstream to the theme repo. It-journey.dev consumes the zer0-mistakes
+# theme via remote_theme, so it is the perfect canary for theme regressions.
+# =============================================================================
+
+base_url: https://it-journey.dev
+
+# Representative routes to test (one per collection + the home/landing pages).
+routes:
+  - /
+  - /quests/
+  - /docs/
+  - /about/
+  - /quickstart/
+  - /notes/
+
+viewports:
+  - { name: mobile, width: 390, height: 844 }
+  - { name: desktop, width: 1280, height: 900 }
+
+# Where THEME issues are filed (cross-repo). Needs a PAT with issues:write there.
+upstream_repo: bamr87/zer0-mistakes
+
+# -- Classification: theme vs content -----------------------------------------
+# A finding is THEME (file upstream) rather than content (keep in it-journey) when
+# it is site-wide — the theme injects it on every page. Signals:
+classification:
+  # An http-error whose path contains any of these is theme-injected chrome
+  # (nav/footer/sidebar/plugins) — a 404 here hits every remote-theme consumer.
+  theme_injected_paths:
+    - /authors
+    - /tags
+    - /news
+    - /posts
+    - /search.json
+    - /sitemap
+    - /assets/js/
+    - obsidian
+    - cytoscape
+    - /assets/css/
+  # A console-error referencing one of these assets is a theme bundle error.
+  theme_asset_hints:
+    - /assets/js/
+    - /assets/css/
+    - bootstrap
+    - mermaid
+  # These finding kinds are theme when they RECUR across >= recur_threshold routes
+  # (site-wide => theme chrome); a single-route occurrence is treated as content.
+  site_wide_kinds: [a11y, horizontal-overflow, console-error]
+  recur_threshold: 2
+  # Kinds that are essentially always page/content authoring, never filed upstream.
+  content_only_kinds: [img-missing-alt]
+
+# -- Dedup + rate limiting -----------------------------------------------------
+dedup:
+  # Search open AND closed upstream issues so we never re-file a known/fixed bug.
+  upstream_state: all
+  max_new_issues_per_run: 5     # never open more than N upstream issues per run
+
+output:
+  findings: .frontend/findings.jsonl
+  candidates: .frontend/upstream-candidates.json

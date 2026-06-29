@@ -1,0 +1,24 @@
+# =============================================================================
+# .issues/budget.yml — loop backpressure for the issue autopilot
+# -----------------------------------------------------------------------------
+# Clamps autonomous throughput to HUMAN REVIEW SPEED (mirrors lifehacker.dev's
+# _data/fleet/budget.yml). The dispatcher (scripts/issues/dispatch.py) refuses to
+# propose new resolution PRs once `max_open_prs` auto:issue PRs are already
+# awaiting review — so the loop can never bury the one human reviewer.
+# =============================================================================
+
+caps:
+  max_open_prs: 5              # never leave more than N auto:issue PRs unreviewed
+  max_resolve_batches_per_run: 3
+  max_issues_per_run: 40
+  plan_max_age_minutes: 1440  # fail-safe: a plan older than this dispatches nothing
+
+# Behavior split by queue health (how many auto:issue PRs are already open).
+policy:
+  # When open auto:issue PRs >= max_open_prs: stop opening new ones, only triage.
+  backlog_heavy:
+    open_new_prs: false
+  # Otherwise: dispatch up to the remaining slots (max_open_prs - currently open),
+  # capped by max_resolve_batches_per_run.
+  normal:
+    open_new_prs: true
