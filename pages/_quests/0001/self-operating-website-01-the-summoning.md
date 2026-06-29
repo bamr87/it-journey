@@ -150,7 +150,7 @@ A site that learns to operate itself.
 
 Now light the beacon. GitHub Pages can build with its own Actions workflow; the official starter wires Ruby, runs the Jekyll build, uploads the `_site` artifact in a **build** job, and then publishes it in a separate **deploy** job. Both jobs matter — without the deploy job the artifact is built but never goes live.
 
-(The `{% raw %}`/`{% endraw %}` tags below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+(The `raw`/`endraw` tags below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

@@ -213,7 +213,7 @@ The rule that makes this trustworthy: **an unknown claim type fails closed.** If
 
 The second discipline is concurrency. If two scheduled runs both grab `docs` at once, they will clobber each other's branch and produce a tangled diff. GitHub Actions solves this with a `concurrency` group keyed to the collection — **one writer per lane**.
 
-(The `` {% raw %} ``/`` {% endraw %} `` tags wrapping the YAML below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+(The ``raw``/``endraw`` tags wrapping the YAML below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

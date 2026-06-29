@@ -107,7 +107,7 @@ Before the forge will light, gather your gear:
 
 A merge is a fact. Once a branch lands, Git has permanently recorded who changed what, the head SHA, and the diffstat. The Bard's first job is to **read** those runes — never to guess them. The cleanest trigger is the `pull_request` event filtered to the merged case, because a closed PR is not the same as a merged one.
 
-*(The `{% raw %}`/`{% endraw %}` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)*
+*(The `raw`/`endraw` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)*
 
 {% raw %}
 ```yaml

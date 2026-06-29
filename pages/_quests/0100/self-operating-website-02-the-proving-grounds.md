@@ -290,7 +290,7 @@ jobs:
       - name: Run verification harness
         run: python scripts/ci/verify.py
       - name: Upload findings contract
-        if: {% raw %}${{ always() }}{% endraw %}   # publish findings even when the gate fails
+        if: ${{ always() }}   # publish findings even when the gate fails
         uses: actions/upload-artifact@v4
         with:
           name: findings
@@ -298,7 +298,7 @@ jobs:
 ```
 {% endraw %}
 
-> 📝 The `` {% raw %} ``/`` {% endraw %} `` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.
+> 📝 The ``raw``/``endraw`` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.
 
 Two subtleties make this a real gate. First, `always()` on the upload step means `findings.jsonl` is published as an artifact *even when the harness exits non-zero* — so you can always inspect what failed. Second, the workflow is only advisory until you make it **required**: in your repository settings, under *Branches → Branch protection rules → main*, enable "Require status checks to pass before merging" and select `verify`. From that moment, GitHub itself refuses to merge any PR — yours or an agent's — until the sentinel passes. That single toggle is what turns a script into a contract.
 
