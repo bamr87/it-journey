@@ -1,0 +1,4 @@
+# Transient crawl output, regenerated every run. The real output is the upstream
+# issues the theme-scout files; these are just the working evidence.
+findings.jsonl
+upstream-candidates.json

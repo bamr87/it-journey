@@ -51,11 +51,22 @@ backpressure (`.issues/budget.yml`) so the loop never buries the reviewer. See
 Closing bot-noise is double-gated on `ISSUE_AUTOCLOSE_ENABLED`; a **human-authored
 issue is never auto-closed** (the engine downgrades it to `needs-human`).
 
+## The frontend canary (theme bugs → upstream)
+
+| Workflow | Trigger | Agent | What it does | Gate variable |
+|---|---|---|---|---|
+| `theme-scout.yml` | weekly Tue 06:00 | `theme-scout` | a Playwright crawler tests the **it-journey.dev** frontend; the agent files **theme** bugs (site-wide / theme-injected) upstream to `bamr87/zer0-mistakes`, deduped | `THEME_SCOUT_ENABLED` (+ `THEME_REPO_TOKEN`) |
+
+it-journey.dev consumes the theme via `remote_theme`, so it's a live canary: the
+deterministic `scripts/frontend/crawl.mjs` + `triage_findings.py` find site-wide
+defects (e.g. 404s on theme-injected `/tags/`, `/search.json`), and the
+`theme-scout` agent reports them to the theme repo. See [`.frontend/README.md`](../../.frontend/README.md).
+
 Roles live in `.claude/agents/*.md`; procedures in `.claude/skills/` (the
 `content-curator` skill composes `cms-curator` + `brand-voice`; the `issue-triage`
-skill drives the issue-triager + issue-resolver). Brand is anchored by
-`_data/brand/*` and enforced cheaply by `scripts/ci/brand_lint.py`; the auto-merge
-guard is `scripts/ci/classify_changes.py`.
+skill drives the issue-triager + issue-resolver; the `theme-scout` skill drives
+the frontend canary). Brand is anchored by `_data/brand/*` and enforced cheaply by
+`scripts/ci/brand_lint.py`; the auto-merge guard is `scripts/ci/classify_changes.py`.
 
 ## Setup (required to turn it on)
 
@@ -82,6 +93,13 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set ISSUE_RESOLVE_ENABLED     --body true --repo bamr87/it-journey
    gh variable set ISSUE_AUTOCLOSE_ENABLED   --body true --repo bamr87/it-journey
    gh variable set ISSUE_AUTOMERGE_ENABLED   --body true --repo bamr87/it-journey
+   # frontend canary
+   gh variable set THEME_SCOUT_ENABLED       --body true --repo bamr87/it-journey
+   ```
+
+   The theme scout also needs a cross-repo PAT to file upstream:
+   ```bash
+   gh secret set THEME_REPO_TOKEN --repo bamr87/it-journey   # issues:write on zer0-mistakes
    ```
 
    With `QUEST_FORGE_ENABLED` on, label any epic-quest proposal issue `epic-quest`
