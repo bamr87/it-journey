@@ -93,6 +93,17 @@ layout: quest
 - [ ] Can write a basic script to automate a simple task
 - [ ] Understands the basics of virtualization and containers
 
+## 🗺️ Quest Prerequisites
+
+*Every adventurer must pack the right supplies before setting out. Gather these before you begin so no exercise leaves you stranded:*
+
+- **A modern operating system** — Windows 10/11, macOS, or a Linux distribution. Any of them works for this quest.
+- **Internet access** — for downloading tools, reaching cloud platforms, and a couple of online exercises.
+- **Administrator / install rights** — you'll install Python, Git, VirtualBox, and Docker, which require permission to install software on your machine.
+- **~20 GB free disk space** — the Linux virtual machine and container images need room to live (the VM alone can take 10+ GB).
+
+> 🧭 **No admin rights?** If you're on a locked-down school or work computer, you can still complete the file-management, networking-exploration, and Python exercises. Save the VM and Docker secondary objectives for a machine you fully control.
+
 ---
 
 Absolutely! Hands-on exercises are like spells and incantations – they're best learned by doing. Let's start with some foundational IT skills and practical exercises to get you going:
@@ -113,6 +124,8 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
   - Download the Ubuntu ISO and install it on your virtual machine.
   - Practice basic Linux commands: `pwd`, `ls`, `cd`, `mkdir`, `rm`.
 
+  > ⚠️ **Handle `rm` with care.** Unlike dragging a file to the trash, `rm` permanently deletes files — there is **no recycle bin** and no undo. Practice on throwaway files you created (like a test folder), and use `rm -i` to make the shell ask for confirmation before each deletion. Never run `rm -rf` on a path you don't fully understand.
+
 ### 3. **Networking Fundamentals**
 
 - **Exercise**: Explore your home network.
@@ -123,16 +136,60 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 ### 4. **Basic Programming with Python**
 
 - **Exercise**: Write a simple Python script.
-  - Install Python on your computer.
-  - Write a script that takes user input and prints a personalized greeting.
-  - Explore Python libraries by writing a script that fetches and displays the current weather from an online API.
+  - Install Python on your computer (download from [python.org](https://www.python.org/downloads/) and check the box to add Python to your PATH on Windows).
+  - Verify the install by running `python --version` (or `python3 --version` on macOS/Linux) in your terminal.
+  - Write a script that takes user input and prints a personalized greeting. Save this as `greet.py`:
+
+    ```python
+    name = input("What is your name, adventurer? ")
+    print(f"Welcome to the IT realm, {name}! 🧙")
+    ```
+
+    Run it with `python greet.py` (or `python3 greet.py`).
+
+- **Bonus — explore a library**: Fetch the current weather using a public endpoint that needs **no API key or sign-up**. First install the `requests` library:
+
+  ```bash
+  pip install requests
+  ```
+
+  Then save this as `weather.py` and run it with `python weather.py`:
+
+  ```python
+  import requests
+
+  # wttr.in is a free weather service — no API key required.
+  # "?format=3" returns one short line, e.g. "London: ⛅️ +15°C"
+  response = requests.get("https://wttr.in/?format=3")
+  print(response.text)
+  ```
+
+  Try changing the URL to `https://wttr.in/Tokyo?format=3` to check another city. You've just made your first program talk to the internet! 🌦️
 
 ### 5. **Scripting and Automation**
 
 - **Exercise for Windows**: Write a basic Batch script.
-  - Create a script that cleans up temporary files from your computer.
-- **Exercise for Linux**: Write a Bash script.
-  - Create a script that lists all files in a directory and sorts them by size.
+  - Open Notepad, paste the script below, and save it as `hello.bat` (choose "All Files" as the file type so it doesn't become `hello.bat.txt`). Double-click the file, or run it from Command Prompt with `hello.bat`.
+
+    ```batch
+    @echo off
+    echo Hello from your first Batch script!
+    echo The current date and time is: %date% %time%
+    echo Files in this folder:
+    dir /b
+    pause
+    ```
+
+- **Exercise for Linux** (also works on macOS): Write a Bash script.
+  - Save the script below as `list_by_size.sh`. Make it runnable with `chmod +x list_by_size.sh`, then run it with `./list_by_size.sh`.
+
+    ```bash
+    #!/bin/bash
+    echo "Hello from your first Bash script!"
+    echo "Files in this directory, largest first:"
+    # -l = long listing, -S = sort by size, -h = human-readable sizes
+    ls -lSh
+    ```
 
 ### 6. **Introduction to Cloud Computing**
 
@@ -143,9 +200,26 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 ### 7. **Virtualization and Containers**
 
 - **Exercise**: Create a Docker container.
-  - Install Docker on your machine.
-  - Pull a simple image like `nginx` or `hello-world` from Docker Hub.
-  - Run the container and access it via your web browser.
+  - Install Docker on your machine ([Docker Desktop](https://www.docker.com/products/docker-desktop/) is the easiest way on Windows and macOS). Confirm it works with `docker --version`. For a deeper dive later, see the [Frontend Docker quest](/quests/0100/frontend-docker/).
+  - **Run your very first container** — this pulls the image and prints a welcome message, then exits:
+
+    ```bash
+    docker run hello-world
+    ```
+
+  - **Run a real web server** you can visit in your browser. This starts the `nginx` web server and maps it to port 8080 on your computer:
+
+    ```bash
+    docker run -d -p 8080:80 --name my-web nginx
+    ```
+
+    Now open **<http://localhost:8080>** in your browser — you'll see the nginx welcome page being served from inside the container. 🎉
+  - **Stop and clean up** when you're done:
+
+    ```bash
+    docker stop my-web
+    docker rm my-web
+    ```
 
 ### 8. **Basic System Security**
 

@@ -145,9 +145,9 @@ By completing this foundational quest, you will achieve:
 
 ### Primary Objectives (Required for Quest Completion)
 - [ ] **Create Your GitHub Account** - Establish your identity in the developer universe
-- [ ] **Fork the IT-Journey Repository** - Make your first contribution to open source
+- [ ] **Fork the IT-Journey Repository** - Create your own copy to learn and experiment in
 - [ ] **Navigate GitHub Interface** - Understand the basic layout and features
-- [ ] **Join the Community** - Connect with fellow adventurers on their learning journeys
+- [ ] **Find the Community** - Locate the IT-Journey Discussions tab where adventurers gather
 
 ### Secondary Objectives (Bonus Achievements)
 - [ ] **Customize Your Profile** - Add a bio, avatar, and personal information
@@ -245,7 +245,7 @@ Check your email for a verification message from GitHub and click the confirmati
 
 ## 🎮 Chapter 3: Your First Fork - Join the IT Journey
 
-*Now for the exciting part - making your first contribution to an open source project!*
+*Now for the exciting part - claiming your very own copy of an open source project so you can explore and experiment freely!*
 
 ### 🏗️ Step 1: Navigate to IT-Journey Repository
 
@@ -268,8 +268,20 @@ Or manually navigate:
 
 Congratulations! You've just:
 - ✅ Created a GitHub account
-- ✅ Made your first open source contribution
-- ✅ Joined the IT-Journey community
+- ✅ Forked an open source project, giving you your own copy to learn in
+- ✅ Taken your first step into the IT-Journey community
+
+> 💡 **A quick clarification:** Forking gives you your *own* copy of the project to experiment with. It is *not* yet a contribution back to the original — that happens when you send a **pull request** to propose your changes. You'll learn how to do exactly that in a later quest. For now, having your own fork is the perfect place to start.
+
+### 🤝 Step 4: Find the Community
+
+You're not adventuring alone! IT-Journey has a gathering place where learners ask questions, share progress, and help one another.
+
+1. Visit the **[IT-Journey Discussions](https://github.com/bamr87/it-journey/discussions)** tab
+2. Browse the categories to see what fellow adventurers are talking about
+3. Notice the **Issues** tab too — that's where bugs and improvement ideas are reported
+
+No need to post anything yet. Just knowing where the community lives is your goal for now.
 
 ## 🧭 Chapter 4: Exploring Your New Environment
 
@@ -295,6 +307,19 @@ Familiarize yourself with these important buttons and sections:
 - **Settings**: Configure your repository options
 - **Star**: Show appreciation for projects you like
 - **Watch**: Get notifications about project updates
+
+### ✨ Bonus: Customize Your Profile
+
+*Make your corner of GitHub feel like yours. This is a secondary objective — optional, but a great touch for your developer identity.*
+
+1. Click your **avatar** in the top-right corner, then choose **Settings**
+2. Under the **Public profile** section, add:
+   - **Name**: How you'd like to be known
+   - **Bio**: A short line about yourself (e.g. "Aspiring developer on the IT-Journey")
+   - **Profile picture (avatar)**: Upload an image so you're not just the default icon
+3. Click **Update profile** to save
+
+That's it — your profile now tells the world a little about the adventurer behind the account.
 
 ## 🏆 Quest Completion Validation
 
@@ -335,8 +360,8 @@ Familiarize yourself with these important buttons and sections:
 
 ### 🌟 What You've Accomplished
 
-- **Joined the Developer Community**: You're now part of the massive global community of developers
-- **Made Your First Open Source Contribution**: By forking IT-Journey, you've participated in open source
+- **Joined the Developer Community**: You're now part of the massive global community of developers, and you know where IT-Journey's Discussions live
+- **Forked Your First Open Source Project**: By forking IT-Journey, you've claimed your own copy to learn in — contributing changes back via a pull request is an adventure for a later quest
 - **Established Your Online Presence**: Your GitHub profile is the beginning of your developer portfolio
 - **Overcome the First Hurdle**: The hardest part of any journey is taking the first step - and you've done it!
 
