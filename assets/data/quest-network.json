@@ -1,26 +1,27 @@
 {
   "stats": {
-    "total": 180,
+    "total": 191,
     "by_level": {
       "0000": 27,
-      "0001": 25,
+      "0001": 26,
       "0010": 17,
       "0011": 3,
-      "0100": 7,
-      "0101": 11,
+      "0100": 8,
+      "0101": 12,
       "0110": 8,
       "0111": 9,
-      "1000": 7,
-      "1001": 7,
-      "1010": 13,
+      "1000": 8,
+      "1001": 8,
+      "1010": 14,
       "1011": 10,
-      "1100": 12,
-      "1101": 8,
-      "1110": 8,
-      "1111": 8
+      "1100": 14,
+      "1101": 9,
+      "1110": 9,
+      "1111": 9
     },
     "by_type": {
-      "epic_quest": 1,
+      "bonus_quest": 10,
+      "epic_quest": 2,
       "main_quest": 154,
       "side_quest": 25
     }
@@ -1555,6 +1556,105 @@
       "difficulty": "🟢 Easy",
       "technology": "reference",
       "file": "pages/_quests/codex/glossary.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-01-the-summoning/",
+      "title": "The Summoning: Raise the Site and Give It a Voice",
+      "level": "0001",
+      "type": "bonus_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "jekyll",
+      "file": "pages/_quests/codex/self-operating-website-01-the-summoning.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-02-the-proving-grounds/",
+      "title": "The Proving Grounds: The Repo's First CI Gate",
+      "level": "0100",
+      "type": "bonus_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "github-actions",
+      "file": "pages/_quests/codex/self-operating-website-02-the-proving-grounds.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-03-the-war-machine/",
+      "title": "The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation",
+      "level": "1000",
+      "type": "bonus_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "github-actions",
+      "file": "pages/_quests/codex/self-operating-website-03-the-war-machine.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-04-the-sigils-of-trust/",
+      "title": "The Sigils of Trust: Auth, Secrets, and the Kill Switch",
+      "level": "1001",
+      "type": "bonus_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "oauth",
+      "file": "pages/_quests/codex/self-operating-website-04-the-sigils-of-trust.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-05-the-content-forge/",
+      "title": "The Content Forge: Autonomous Generation That Refuses to Lie",
+      "level": "1010",
+      "type": "bonus_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "claude-code",
+      "file": "pages/_quests/codex/self-operating-website-05-the-content-forge.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-06-the-editors-eye/",
+      "title": "The Editor's Eye: A Reviewer, and the Dragon It Becomes",
+      "level": "1100",
+      "type": "bonus_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "github-actions",
+      "file": "pages/_quests/codex/self-operating-website-06-the-editors-eye.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-07-the-named-familiars/",
+      "title": "The Named Familiars: Agents, Skills, and a Self-Review Loop",
+      "level": "1101",
+      "type": "bonus_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "claude-code",
+      "file": "pages/_quests/codex/self-operating-website-07-the-named-familiars.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-08-the-cartographer/",
+      "title": "The Cartographer: File Platform Bugs Upstream",
+      "level": "0101",
+      "type": "bonus_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "github",
+      "file": "pages/_quests/codex/self-operating-website-08-the-cartographer.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-09-the-chronicle/",
+      "title": "The Chronicle: A SessionEnd Hook That Remembers",
+      "level": "1110",
+      "type": "bonus_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "bash",
+      "file": "pages/_quests/codex/self-operating-website-09-the-chronicle.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website-10-the-bard-forge/",
+      "title": "The Bard Forge: The Quest That Writes Quests",
+      "level": "1100",
+      "type": "bonus_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "claude-code",
+      "file": "pages/_quests/codex/self-operating-website-10-the-bard-forge.md"
+    },
+    {
+      "id": "/quests/codex/self-operating-website/",
+      "title": "Epic Quest: The Self-Operating Website",
+      "level": "1111",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "github-actions",
+      "file": "pages/_quests/codex/self-operating-website.md"
     },
     {
       "id": "/quests/codex/world-map/",
@@ -3871,6 +3971,156 @@
     {
       "source": "/quests/1111/technical-leadership/",
       "target": "/quests/1111/innovation-rnd/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-01-the-summoning/",
+      "target": "/quests/codex/self-operating-website/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-01-the-summoning/",
+      "target": "/quests/codex/self-operating-website-02-the-proving-grounds/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-02-the-proving-grounds/",
+      "target": "/quests/codex/self-operating-website-01-the-summoning/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-02-the-proving-grounds/",
+      "target": "/quests/codex/self-operating-website-03-the-war-machine/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-03-the-war-machine/",
+      "target": "/quests/codex/self-operating-website-02-the-proving-grounds/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-03-the-war-machine/",
+      "target": "/quests/codex/self-operating-website-04-the-sigils-of-trust/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-04-the-sigils-of-trust/",
+      "target": "/quests/codex/self-operating-website-03-the-war-machine/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-04-the-sigils-of-trust/",
+      "target": "/quests/codex/self-operating-website-05-the-content-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-05-the-content-forge/",
+      "target": "/quests/codex/self-operating-website-04-the-sigils-of-trust/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-05-the-content-forge/",
+      "target": "/quests/codex/self-operating-website-06-the-editors-eye/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-06-the-editors-eye/",
+      "target": "/quests/codex/self-operating-website-05-the-content-forge/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-06-the-editors-eye/",
+      "target": "/quests/codex/self-operating-website-07-the-named-familiars/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-07-the-named-familiars/",
+      "target": "/quests/codex/self-operating-website-06-the-editors-eye/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-07-the-named-familiars/",
+      "target": "/quests/codex/self-operating-website-08-the-cartographer/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-08-the-cartographer/",
+      "target": "/quests/codex/self-operating-website-07-the-named-familiars/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-08-the-cartographer/",
+      "target": "/quests/codex/self-operating-website-09-the-chronicle/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-09-the-chronicle/",
+      "target": "/quests/codex/self-operating-website-08-the-cartographer/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-09-the-chronicle/",
+      "target": "/quests/codex/self-operating-website-10-the-bard-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website-10-the-bard-forge/",
+      "target": "/quests/codex/self-operating-website-09-the-chronicle/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/0010/epic-quest-zer0-to-her0-cmstyle/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-01-the-summoning/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-02-the-proving-grounds/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-03-the-war-machine/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-04-the-sigils-of-trust/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-05-the-content-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-06-the-editors-eye/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-07-the-named-familiars/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-08-the-cartographer/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-09-the-chronicle/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/self-operating-website/",
+      "target": "/quests/codex/self-operating-website-10-the-bard-forge/",
       "kind": "unlocks"
     },
     {
