@@ -41,19 +41,24 @@ is your only license to quote a PR number or commit hash.** Read issue comments 
 
 ## 3. Plan the campaign (placement + manifest)
 
-Decide the file set **before** writing. The whole campaign lives in
-`pages/_quests/codex/` so it stays cohesive and never pollutes a themed level hub:
+Decide the file set **before** writing. The hub is the campaign's `epic_quest`
+landing page; each chapter is a first-class `main_quest` placed at its **binary
+level** so it also surfaces on that level's hub (the campaign should run *through*
+the levels, not sit in one bucket):
 
-| File | type | slug | permalink |
+| File | type | path | permalink |
 |---|---|---|---|
-| hub | `epic_quest` | `<campaign>` | `/quests/codex/<campaign>/` |
-| chapter N | `bonus_quest` | `<campaign>-NN-<slug>` | `/quests/codex/<campaign>-NN-<slug>/` |
+| hub | `epic_quest` | `pages/_quests/codex/<campaign>.md` | `/quests/codex/<campaign>/` |
+| chapter N | `main_quest` | `pages/_quests/<level>/<campaign>-NN-<slug>.md` | `/quests/<level>/<campaign>-NN-<slug>/` |
 
-Each chapter carries the proposal's binary `level:` (difficulty/XP signal) but a
-**codex** permalink. Map difficulty to the enum exactly (`🟢 Easy`/`🟡 Medium`/
-`🔴 Hard`/`⚔️ Epic`); map `class` to a `skill_focus` enum value
-(`fullstack`/`devops`/`security`/`data-engineering`/…) — there is no
-"digital-artist" focus, fold it into `fullstack`.
+`epic_quest` MUST use the `/quests/codex/` URL namespace (validator rule — it is the
+home of epic landing pages, not a lesser bucket). Each `main_quest` chapter lives in
+the directory of its proposal binary `level:`, which must match that `level` field.
+Map difficulty to the enum exactly (`🟢 Easy`/`🟡 Medium`/`🔴 Hard`/`⚔️ Epic`); map
+`class` to a `skill_focus` enum value (`fullstack`/`devops`/`security`/
+`data-engineering`/…) — there is no "digital-artist" focus, fold it into `fullstack`.
+When a chapter's level theme differs from its topic (the proposal levels are a
+difficulty signal), add one line noting the campaign uses the level for progression.
 
 ## 4. Wire the dependency graph (warning-free)
 
@@ -87,7 +92,8 @@ fence does **not** protect `${{ … }}` / `{{ … }}` / `{% … %}`. Any code bl
 inline span that shows GitHub Actions expressions or Liquid syntax MUST be wrapped
 in `{% raw %}…{% endraw %}` (the convention 40+ existing quests already follow). An
 unguarded `${{ A || B }}` is a Liquid syntax error that fails the required build —
-and tier-1 content scoring skips `codex/`, so nothing but the build will catch it.
+and the validator only checks that `{% raw %}` pairs balance, not that every
+expression is guarded, so the build is the real catch.
 
 The **hub** additionally carries the quest-metadata table, the chapter index table
 (links to every chapter), the badge roster, the boss-fight gate, and the full build
@@ -100,10 +106,11 @@ make quest-data    # regenerate levels/tiers/order/network/navigation from the r
 make quest-audit   # content ≥70%, network integrity, freshness (must pass)
 ```
 
-Fix every error before opening. `make quest-audit` network- and freshness-validates
-`codex/` (the tier-1 content *score* skips the codex directory, so author to the
-full quest structure regardless — `agentic-quest-review` reads it like any quest).
-If the audit reports stale data, you forgot `make quest-data`; run it and re-audit.
+Fix every error before opening. `make quest-audit` SCORES every `main_quest`
+chapter (each must clear 70%) and network-/freshness-validates the whole campaign.
+The `epic_quest` hub lives in `codex/`, which tier-1 scoring skips — author it to the
+full quest structure anyway. If the audit reports stale data, you forgot
+`make quest-data`; run it and re-audit.
 
 ## 7. Open exactly one PR
 
