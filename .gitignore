@@ -81,3 +81,12 @@ test/quest-validator/full-audit-report.json
 pages/_quests/NETWORK_REPORT.md
 .playwright-mcp/
 landing-full.png
+
+# Quest walkthrough routine — local session artifacts (uploaded as CI artifacts, never committed)
+/walk-plan.json
+/walk-evidence.json
+/walk-evidence.md
+/screenshots/
+
+# Node deps (installed --no-save for the walkthrough screenshot script + frontend crawler)
+/node_modules/

@@ -33,10 +33,13 @@ the planner selected, in the order it selected.
 ```bash
 python3 scripts/quest/walkthrough_plan.py \
   ${CHARACTER:+--character "$CHARACTER"} ${LEVEL:+--level "$LEVEL"} \
-  --max-quests "${MAX_QUESTS:-5}" --json /tmp/walk-plan.json
+  --max-quests "${MAX_QUESTS:-5}" --json walk-plan.json
 ```
 
-`/tmp/walk-plan.json` holds the resolved `character`, `level` (theme + tier), and an
+Write `walk-plan.json` (and the evidence in step 2) to the **working directory**,
+not `/tmp` — the workflow renders the session screenshots from those two files.
+
+`walk-plan.json` holds the resolved `character`, `level` (theme + tier), and an
 ordered `quests` list (each with `permalink`, `title`, `difficulty`, `type`, and the
 on-disk `path`). This linked, dependency-sorted chain is the **session's syllabus**.
 If `quests` is empty, read `reason`, write a one-line "no-walkable-slice" report, and
@@ -52,11 +55,14 @@ it is why the environment stays controlled.
 
 ```bash
 # Feed the planned quest paths, in order, to the execute-mode validator.
-paths=$(python3 -c 'import json;print(" ".join(q["path"] for q in json.load(open("/tmp/walk-plan.json"))["quests"]))')
+paths=$(python3 -c 'import json;print(" ".join(q["path"] for q in json.load(open("walk-plan.json"))["quests"]))')
 python3 test/quest-validator/agentic_validate.py $paths \
   --mode execute --max-turns 40 \
-  --report /tmp/walk-evidence.json --md /tmp/walk-evidence.md
+  --report walk-evidence.json --md walk-evidence.md
 ```
+
+`walk-evidence.json` is also what the workflow renders the per-quest **terminal
+session screenshots** from, so keep it in the working directory.
 
 - In CI the runner is disposable, so `--mode execute` is safe. Outside CI (or if you
   cannot run commands safely), fall back to `--mode review` and **say so** in the

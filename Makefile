@@ -7,7 +7,7 @@
         quest-audit quest-audit-strict quest-audit-report quest-levels-data quest-nav quest-data quest-normalize \
         docker-validate docker-validate-strict docker-build-ci docker-audit-tier2 \
         quest-execute quest-execute-host \
-        quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest \
+        quest-walkthrough quest-walkthrough-plan quest-walkthrough-plan-selftest quest-walkthrough-screenshots \
         content-validate content-normalize content-normalize-apply content-audit \
         mermaid-check mermaid-fix \
         cms-index cms-analyze cms-plan cms-status cms-all \
@@ -308,6 +308,16 @@ quest-walkthrough-plan:
 quest-walkthrough-plan-selftest:
 	@echo "🧪 Quest walkthrough planner self-test (offline, against live data)..."
 	@python3 scripts/quest/walkthrough_plan.py --selftest
+
+# Capture session screenshots (rendered quest pages mobile+desktop + a terminal
+# render of the recorded session transcript) into ./screenshots/. Reads the
+# walk-plan.json + walk-evidence.json a walkthrough run left in the working dir.
+# Needs Node + playwright (npm install --no-save playwright; npx playwright install chromium).
+# BASE_URL overrides the site (default https://it-journey.dev), e.g. a local server.
+quest-walkthrough-screenshots:
+	@echo "📸 Capturing quest-walkthrough session screenshots into ./screenshots/ ..."
+	@node scripts/quest/walkthrough_screenshots.mjs \
+		--plan walk-plan.json --evidence walk-evidence.json --out screenshots
 
 # Full agentic walkthrough via the quest-walkthrough skill (needs claude login /
 # CLAUDE_CODE_OAUTH_TOKEN). Writes a report under test/quest-validator/walkthroughs/.
