@@ -112,7 +112,7 @@ Before you inscribe a single sigil, gather these:
 
 The cardinal rule: **never let a credential live in the repository in plaintext.** Secrets go in GitHub's encrypted secret store and are referenced by name. The agent step reads the token from `secrets`, never from a committed file.
 
-> ℹ️ *(The `{% raw %}` / `{% endraw %}` tags in the YAML below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)*
+> ℹ️ *(The `raw` / `endraw` tags in the YAML below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)*
 
 {% raw %}
 ```yaml

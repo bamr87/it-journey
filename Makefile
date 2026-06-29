@@ -312,8 +312,12 @@ mermaid-fix:
 	@echo "🧜 Adding missing 'mermaid: true' flags across pages/ ..."
 	@python3 scripts/validation/check_mermaid_flags.py --fix
 
-content-audit: content-validate mermaid-check quest-validate quest-network
-	@echo "✅ Content audit complete — frontmatter, mermaid, quests, and network validated."
+liquid-check:
+	@echo "🧪 Checking Liquid raw-guards across pages/ (nested raw / unguarded \$${{ }}) ..."
+	@python3 scripts/validation/check_liquid_raw.py pages
+
+content-audit: content-validate mermaid-check liquid-check quest-validate quest-network
+	@echo "✅ Content audit complete — frontmatter, mermaid, Liquid, quests, and network validated."
 
 # AI-augmented CMS engine (scripts/cms/cms.py -> .cms/)
 cms-index:

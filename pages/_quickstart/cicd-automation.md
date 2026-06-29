@@ -209,7 +209,7 @@ Store sensitive values as GitHub Secrets (**Settings â†’ Secrets and variables â
 | `AZURE_STATIC_WEB_APPS_API_TOKEN` | Azure deployment |
 | `OPENAI_API_KEY` | AI Content Review workflow |
 
-Access in workflows with `${{ secrets.SECRET_NAME }}`.
+Access in workflows with `{% raw %}${{ secrets.SECRET_NAME }}{% endraw %}`.
 
 ---
 

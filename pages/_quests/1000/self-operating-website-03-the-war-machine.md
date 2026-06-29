@@ -215,7 +215,7 @@ Here is the trick that makes the whole fleet serverless. To claim a task safely,
 
 Here **CAS means compare-and-swap** — an atomic *conditional update*: "set this ref to X **only if** its current value is what I expect." (This is the concurrency primitive; do not confuse it with a *content-addressable store*, which is a different idea about naming data by its hash.) Git exposes exactly this through `--force-with-lease`, whose value names the ref and the *expected* current value. We give an **empty** expected value, which asserts the ref must **not already exist** — a create-only CAS. Two runners that `decide()` the same task try to create the *same* ref, and the remote lets only one succeed.
 
-> **Note:** The `{% raw %}`/`{% endraw %}` tags you'll see around the YAML below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.
+> **Note:** The `raw`/`endraw` tags you'll see around the YAML below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.
 
 ```bash
 #!/usr/bin/env bash

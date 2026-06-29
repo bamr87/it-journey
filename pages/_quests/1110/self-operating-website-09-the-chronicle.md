@@ -278,7 +278,7 @@ The difference is the whole lesson: `yaml.dump`/`to_yaml` from the standard libr
 
 ## ⏰ Chapter 3: Draining on a Schedule
 
-You can drain the queue at the start of the next session, but the tidier pattern is a scheduled GitHub Actions workflow that drains and commits the ledger on a cadence. (The `` `{% raw %}` ``/`` `{% endraw %}` `` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+You can drain the queue at the start of the next session, but the tidier pattern is a scheduled GitHub Actions workflow that drains and commits the ledger on a cadence. (The `` `raw` ``/`` `endraw` `` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

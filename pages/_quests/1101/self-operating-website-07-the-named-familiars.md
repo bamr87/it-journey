@@ -184,7 +184,7 @@ A familiar that lives only in a file does nothing. To put it to work you bind it
 
 The shared runner is a **composite action** at `.github/actions/claude-run/action.yml`. Both workflows below reference it, so define it first. It takes two inputs — which familiar to run, and the OAuth token to authenticate with — and hands them to Claude Code:
 
-> (The `{% raw %}`/`{% endraw %}` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+> (The `raw`/`endraw` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

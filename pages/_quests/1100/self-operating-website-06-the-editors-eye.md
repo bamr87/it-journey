@@ -111,7 +111,7 @@ The editor is a job on `pull_request`. When a content PR opens or updates, it ch
 
 Two things make this safe to *start*. First, you check out the PR's actual head branch so a push goes somewhere meaningful. Second, you gate the push behind a condition we'll call the **action_required gate** — a *custom* check, not GitHub's branch-protection `action_required` status. It confirms the PR comes from the same repository (not a fork) so the workflow's `GITHUB_TOKEN` actually carries write permission. Think of it as the editor only picking up the quill when the manuscript is genuinely theirs to edit.
 
-> (The `{% raw %}`/`{% endraw %}` tags below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+> (The `raw`/`endraw` tags below are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

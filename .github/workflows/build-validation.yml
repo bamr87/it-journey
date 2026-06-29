@@ -117,6 +117,15 @@ jobs:
       with:
         fetch-depth: 1
 
+    # Fail FAST (before the slow Ruby build) on Liquid raw-guard bugs — nested
+    # {% raw %} or an unguarded GitHub Actions ${{ }}. The PR Jekyll build sets
+    # liquid.error_mode: warn (dev speed) and would let these through, but the
+    # production GitHub Pages build is strict and they take the live site down.
+    - name: 🧪 Liquid raw-guard gate
+      run: |
+        python3 scripts/validation/check_liquid_raw.py --selftest
+        python3 scripts/validation/check_liquid_raw.py pages | tee -a "$GITHUB_STEP_SUMMARY"
+
     - name: 🔧 Setup Ruby Environment
       uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1
       with:
