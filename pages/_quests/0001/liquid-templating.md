@@ -369,9 +369,10 @@ Any page declaring `layout: default` in its front matter gets wrapped automatica
 
 ```liquid
 
-{% raw %}{% raw %}{% endraw %}
-  In Handlebars, {% raw %}{{ this }}{% endraw %} is HTML-escaped, but {% raw %}{{{ that }}}{% endraw %} is not.
-{% raw %}{% endraw %}{% endraw %}
+{% raw %}
+  In Handlebars, {{ this }} is HTML-escaped, but {{{ that }}} is not.
+  These braces pass through literally because the raw block holds Liquid back.
+{% endraw %}
 
 ```
 
@@ -402,7 +403,7 @@ Pair this with **loop-edge helpers** to render clean separators. `forloop.first`
 
 ### 🔍 Knowledge Check: Restraint
 - [ ] How do you leave a note in a template that never reaches the output?
-- [ ] When would you wrap a block in `{% raw %}{% raw %}{% endraw %}`?
+- [ ] When would you wrap a block in a `raw` tag?
 - [ ] What does the dash in `{% raw %}{%- -%}{% endraw %}` do, and how is `forloop.first` useful?
 
 ## 🎮 Mastery Challenges

@@ -374,8 +374,11 @@ The Chapter 2 workflow used `on: [push, pull_request]` - it fires on both, so co
 
 ### 🏗️ Secrets: Keys the Forge Must Not Reveal
 
-A pipeline often needs credentials - a deploy token, an API key - but **committing a secret to the repository is one of the most common and costly mistakes in DevOps.** Anyone who reads the history reads the key. Instead, store sensitive values in your platform's secret vault (on GitHub: **Settings → Secrets and variables → Actions**) and reference them by name at runtime:
+A pipeline often needs credentials - a deploy token, an API key - but **committing a secret to the repository is one of the most common and costly mistakes in DevOps.** Anyone who reads the history reads the key. Instead, store sensitive values in your platform's secret vault (on GitHub: **Settings → Secrets and variables → Actions**) and reference them by name at runtime.
 
+(Omit this site's `raw` escape tags when you copy the YAML into your own `.github/workflows/`.)
+
+{% raw %}
 ```yaml
 name: Deploy
 on:
@@ -389,6 +392,7 @@ jobs:
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}   # injected, never printed
 ```
+{% endraw %}
 
 The secret is injected into the job's environment but never written to the log or the repo. The same rule covers a deploy token, an `OPENAI_API_KEY`, or any cloud credential: the value lives in the vault, and the workflow only ever names it.
 

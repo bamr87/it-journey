@@ -101,9 +101,9 @@ Follow the prompts for Azure authentication and GitHub workflow setup.
 
 ## 🔗 Related Quests
 
-- [GitHub Pages Portal](0001/github-pages-portal.md)
-- [Jekyll Fundamentals](0001/jekyll-fundamentals.md)
-- [Link to the Future: Hyperlink Checking](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
+- [GitHub Pages Portal](../0001/github-pages-portal.md)
+- [Jekyll Fundamentals](../0001/jekyll-fundamentals.md)
+- [Link to the Future: Hyperlink Checking](../1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
 
 ## 🕸️ Knowledge Graph
 

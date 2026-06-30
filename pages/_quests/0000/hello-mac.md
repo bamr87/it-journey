@@ -190,9 +190,9 @@ You should see valid versions for each command.
 
 ## 🔗 Related Quests
 
-- [Hello n00b](../hello-noob.md)
-- [OS Selection](../os-selection.md)
-- [VS Code Mastery Quest](../vscode-mastery.md)
+- [Hello n00b](hello-noob.md)
+- [OS Selection](os-selection.md)
+- [VS Code Mastery Quest](vscode-mastery.md)
 
 ## 📚 References & Resources
 

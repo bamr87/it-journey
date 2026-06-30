@@ -1002,10 +1002,10 @@ Congratulations, Code Alchemist! Upon completing this epic journey, you have ear
 ## 🔮 Your Next Epic Adventures
 
 ### 🎯 Recommended Follow-Up Quests
-- **Lean Software Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **DevOps Culture Transformation** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **Metrics That Matter** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **Facilitation Mastery** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- **Lean Software Development** - Planned quest (see Quest Build Plan)
+- **DevOps Culture Transformation** - Planned quest (see Quest Build Plan)
+- **Metrics That Matter** - Planned quest (see Quest Build Plan)
+- **Facilitation Mastery** - Planned quest (see Quest Build Plan)
 
 ### 🌐 Skill Web Connections
 **Cross-Technology Skills**: 

@@ -378,7 +378,7 @@ Any of these realms will happily host the same static output:
 | **AWS S3 + CloudFront** | `aws s3 sync _site/ s3://bucket/` | Upload then serve via CDN |
 | **Any web server** | FTP/SCP upload | Copy `_site/` contents into the docroot |
 
-> 🔮 For a heavier-duty deployment with managed CI/CD on Microsoft's cloud, see the [Azure Ascension](/quests/azure-ascension-jekyll-deployment-quest/) quest - it scripts the whole Azure Static Web Apps setup.
+> 🔮 For a heavier-duty deployment with managed CI/CD on Microsoft's cloud, see the [Azure Ascension](/quests/1000/azure-ascension-jekyll-deployment/) quest - it scripts the whole Azure Static Web Apps setup.
 
 ### 🔍 Knowledge Check: The Production Build
 - [ ] What command produces an optimized, deployable `_site/` folder?

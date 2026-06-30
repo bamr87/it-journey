@@ -69,10 +69,10 @@ Not everything makes it into the curriculum. The selection criteria:
 2. **Non-obvious** — anything that required more than five minutes of debugging is worth documenting
 3. **Teachable** — if the explanation would confuse a reader one level below, rewrite it
 
-The backlog lives in [Project List](/notes/dev/projects/project-list/). Topics that clear all three criteria get promoted to draft posts and eventually published.
+The backlog lives in Project List. Topics that clear all three criteria get promoted to draft posts and eventually published.
 
 ## Related
 
-- [Notes: Take Good Notes](/notes/dev/take-good-notes/)
+- Notes: Take Good Notes
 - [Notes: Start](/notes/zero/start/)
-- [Notes: Project List](/notes/dev/projects/project-list/)
+- Notes: Project List

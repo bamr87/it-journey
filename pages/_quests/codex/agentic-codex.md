@@ -228,7 +228,7 @@ That JSON is the seed of the whole Codex: a plan the agent (and a human) can ins
 
 Every chapter draws from the same GitHub-native toolchain. The **Copilot coding agent** is the familiar itself: assign it an issue and it plans, edits in a branch, and opens a pull request you review — it never merges its own work. The **Model Context Protocol (MCP)** is how you *arm* that familiar: an MCP server declares a typed set of tools (read a file, query an API, search a registry), and an allow-list controls exactly which the agent may call. **GitHub Actions** is the arena where agents run on a schedule or trigger, and **Environments** add the human seal — a required reviewer who must approve before a deploy-class action proceeds.
 
-Here is the shape of an Actions workflow that runs an agent step under least privilege and pauses for a human at an Environment gate. (Wrap any Actions YAML containing `${{ }}` in this site's `raw` escapes — omit them when you copy into your own `.github/workflows/`.)
+Here is the shape of an Actions workflow that runs an agent step under least privilege and pauses for a human at an Environment gate. (Wrap any Actions YAML containing {% raw %}`${{ }}`{% endraw %} in this site's `raw` escapes — omit them when you copy into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

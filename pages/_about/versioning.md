@@ -89,4 +89,4 @@ GitHub Actions picks up the tag, builds the site, and deploys to GitHub Pages. T
 
 - [semver.org](https://semver.org/)
 - [Keep a Changelog](https://keepachangelog.com/)
-- [About: Contributing](/about/contribute/)
+- [About: Contributing](/about/contributing/)

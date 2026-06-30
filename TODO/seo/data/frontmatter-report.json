@@ -1,17 +1,16 @@
 {
-  "timestamp": "2026-06-25T22:49:50.459688",
+  "timestamp": "2026-06-30T15:48:46.994182",
   "summary": {
-    "total_files": 252,
-    "valid_files": 252,
+    "total_files": 237,
+    "valid_files": 237,
     "invalid_files": 0,
     "total_errors": 0,
-    "total_warnings": 236,
-    "average_seo_score": 79.2,
+    "total_warnings": 242,
+    "average_seo_score": 77.8,
     "files_by_type": {
-      "other": 29,
-      "docs": 26,
-      "quests": 181,
-      "notes": 16
+      "other": 11,
+      "quests": 200,
+      "notes": 26
     }
   },
   "files": [
@@ -54,15 +53,21 @@
       "content_type": "other",
       "is_valid": true,
       "frontmatter_present": true,
-      "seo_score": 100,
+      "seo_score": 80,
       "error_count": 0,
-      "warning_count": 0,
+      "warning_count": 1,
       "issues": [
         {
           "severity": "info",
           "field": "description",
-          "message": "Description length optimal (150 chars)",
+          "message": "Description length optimal (153 chars)",
           "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Missing keywords field",
+          "suggestion": "Add keywords for better discoverability"
         }
       ]
     },
@@ -134,299 +139,6 @@
       "content_type": "other",
       "is_valid": true,
       "frontmatter_present": true,
-      "seo_score": 75,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (121 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Missing keywords field",
-          "suggestion": "Add keywords for better discoverability"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_about/automation.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 75,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (150 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Missing keywords field",
-          "suggestion": "Add keywords for better discoverability"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/frontmatter-preview-solution.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (155 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/index.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (146 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/styling-navigation.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (127 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/site-configuration.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (133 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/theme-architecture.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (134 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/cicd-automation.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (139 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/local-development.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (136 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/optimization-maintenance.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (148 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/github-setup.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (123 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/jekyll-setup.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (120 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/deployment.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (130 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/index.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
       "seo_score": 70,
       "error_count": 0,
       "warning_count": 1,
@@ -434,100 +146,8 @@
         {
           "severity": "warning",
           "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/vscode-setup.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (143 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/machine-setup.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (121 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/content-creation.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (133 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_quickstart/charm-setup.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (127 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+          "message": "Missing keywords field",
+          "suggestion": "Add keywords for better discoverability"
         }
       ]
     },
@@ -543,14 +163,31 @@
         {
           "severity": "info",
           "field": "description",
-          "message": "Description length optimal (140 chars)",
+          "message": "Description length optimal (148 chars)",
           "suggestion": null
         },
         {
           "severity": "warning",
           "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+          "message": "Missing keywords field",
+          "suggestion": "Add keywords for better discoverability"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/frontmatter-preview-solution.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 100,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (155 chars)",
+          "suggestion": null
         }
       ]
     },
@@ -601,7 +238,7 @@
       ]
     },
     {
-      "file_path": "pages/_notes/zero/Start.md",
+      "file_path": "pages/_notes/zero/start.md",
       "content_type": "notes",
       "is_valid": true,
       "frontmatter_present": true,
@@ -618,7 +255,87 @@
       ]
     },
     {
-      "file_path": "pages/_notes/cheetsheets/markdown.md",
+      "file_path": "pages/_notes/dev/curriculum.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 100,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (137 chars)",
+          "suggestion": null
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/obsidian/index.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (131 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/obsidian/graph.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (138 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/cheatsheets/mathjax-symbols.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 100,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (141 chars)",
+          "suggestion": null
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/cheatsheets/markdown.md",
       "content_type": "notes",
       "is_valid": true,
       "frontmatter_present": true,
@@ -635,7 +352,53 @@
       ]
     },
     {
-      "file_path": "pages/_notes/cheetsheets/bash-cheatsheet.md",
+      "file_path": "pages/_notes/cheatsheets/index.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (143 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/cheatsheets/bash-complete-reference.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (140 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/cheatsheets/bash-cheatsheet.md",
       "content_type": "notes",
       "is_valid": true,
       "frontmatter_present": true,
@@ -652,7 +415,30 @@
       ]
     },
     {
-      "file_path": "pages/_notes/cheetsheets/2022-10-07-powershell.md",
+      "file_path": "pages/_notes/cheatsheets/terminal-shortcuts.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (147 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/cheatsheets/powershell.md",
       "content_type": "notes",
       "is_valid": true,
       "frontmatter_present": true,
@@ -669,7 +455,24 @@
       ]
     },
     {
-      "file_path": "pages/_notes/dev/Curiculum.md",
+      "file_path": "pages/_notes/gh-600/learning-path.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 100,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (147 chars)",
+          "suggestion": null
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/gh-600/recommended-resources.md",
       "content_type": "notes",
       "is_valid": true,
       "frontmatter_present": true,
@@ -745,6 +548,23 @@
           "field": "keywords",
           "message": "Missing keywords field",
           "suggestion": "Add keywords for better discoverability"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_notes/gh-600/skills-measured.md",
+      "content_type": "notes",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 100,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (130 chars)",
+          "suggestion": null
         }
       ]
     },
@@ -852,7 +672,7 @@
       ]
     },
     {
-      "file_path": "pages/_notes/dev/projects/Master_s Project.md",
+      "file_path": "pages/_notes/dev/projects/masters-project.md",
       "content_type": "notes",
       "is_valid": true,
       "frontmatter_present": true,
@@ -1142,6 +962,29 @@
           "field": "description",
           "message": "Description length optimal (152 chars)",
           "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1101/self-operating-website-07-the-named-familiars.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (190 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
         },
         {
           "severity": "warning",
@@ -1571,6 +1414,29 @@
       ]
     },
     {
+      "file_path": "pages/_quests/1100/self-operating-website-06-the-editors-eye.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (195 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/1100/stream-processing.md",
       "content_type": "quests",
       "is_valid": true,
@@ -1579,6 +1445,29 @@
       "error_count": 0,
       "warning_count": 1,
       "issues": [
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1100/self-operating-website-10-the-bard-forge.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (204 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
         {
           "severity": "warning",
           "field": "keywords",
@@ -1625,6 +1514,23 @@
           "message": "Description length optimal (151 chars)",
           "suggestion": null
         },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1100/agentic-codex-06-guardrails-and-accountability.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 70,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
         {
           "severity": "warning",
           "field": "keywords",
@@ -1789,6 +1695,29 @@
       ]
     },
     {
+      "file_path": "pages/_quests/codex/agentic-codex.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (149 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/codex/world_map.md",
       "content_type": "quests",
       "is_valid": true,
@@ -1841,6 +1770,69 @@
       ]
     },
     {
+      "file_path": "pages/_quests/codex/self-operating-website.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (220 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/codex/index.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (143 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1010/agentic-codex-04-evaluation-and-tuning.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 70,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md",
       "content_type": "quests",
       "is_valid": true,
@@ -1872,6 +1864,29 @@
       "error_count": 0,
       "warning_count": 1,
       "issues": [
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1010/self-operating-website-05-the-content-forge.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (177 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
         {
           "severity": "warning",
           "field": "keywords",
@@ -2174,6 +2189,29 @@
       ]
     },
     {
+      "file_path": "pages/_quests/0100/self-operating-website-02-the-proving-grounds.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (194 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/0100/jekyll-component-refactoring.md",
       "content_type": "quests",
       "is_valid": true,
@@ -2423,6 +2461,29 @@
           "field": "description",
           "message": "Description length optimal (140 chars)",
           "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/0101/self-operating-website-08-the-cartographer.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (173 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
         },
         {
           "severity": "warning",
@@ -2691,6 +2752,29 @@
       ]
     },
     {
+      "file_path": "pages/_quests/1011/agentic-codex-05-multi-agent-coordination.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (152 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/1011/agentic-multi-agent-orchestration-patterns.md",
       "content_type": "quests",
       "is_valid": true,
@@ -2937,6 +3021,23 @@
       ]
     },
     {
+      "file_path": "pages/_quests/0111/agentic-codex-01-agents-in-the-sdlc.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 70,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/1001/agentic-safe-execution-and-error-handling.md",
       "content_type": "quests",
       "is_valid": true,
@@ -2945,6 +3046,29 @@
       "error_count": 0,
       "warning_count": 1,
       "issues": [
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1001/self-operating-website-04-the-sigils-of-trust.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (191 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
         {
           "severity": "warning",
           "field": "keywords",
@@ -2989,6 +3113,29 @@
           "severity": "info",
           "field": "description",
           "message": "Description length optimal (155 chars)",
+          "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1001/agentic-codex-03-memory-state-and-execution.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 80,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (152 chars)",
           "suggestion": null
         },
         {
@@ -3184,6 +3331,23 @@
       ]
     },
     {
+      "file_path": "pages/_quests/1000/agentic-codex-02-tool-use-and-environment.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 70,
+      "error_count": 0,
+      "warning_count": 1,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/1000/infrastructure-as-code.md",
       "content_type": "quests",
       "is_valid": true,
@@ -3243,6 +3407,35 @@
           "field": "description",
           "message": "Description length optimal (155 chars)",
           "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1000/self-operating-website-03-the-war-machine.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 55,
+      "error_count": 0,
+      "warning_count": 3,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (192 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
+        {
+          "severity": "warning",
+          "field": "title",
+          "message": "Title may be truncated in search (63 chars). Max: 60",
+          "suggestion": "Consider shortening title"
         },
         {
           "severity": "warning",
@@ -3794,6 +3987,29 @@
           "field": "description",
           "message": "Description length optimal (137 chars)",
           "suggestion": null
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
+      "file_path": "pages/_quests/1110/self-operating-website-09-the-chronicle.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (186 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
         },
         {
           "severity": "warning",
@@ -4619,6 +4835,29 @@
       ]
     },
     {
+      "file_path": "pages/_quests/0001/self-operating-website-01-the-summoning.md",
+      "content_type": "quests",
+      "is_valid": true,
+      "frontmatter_present": true,
+      "seo_score": 65,
+      "error_count": 0,
+      "warning_count": 2,
+      "issues": [
+        {
+          "severity": "warning",
+          "field": "description",
+          "message": "Description too long (178 chars). May be truncated in search results. Max: 160",
+          "suggestion": "Shorten description to under 160 characters"
+        },
+        {
+          "severity": "warning",
+          "field": "keywords",
+          "message": "Keywords should be a list/array",
+          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
+        }
+      ]
+    },
+    {
       "file_path": "pages/_quests/0001/building-testing-git-init-script.md",
       "content_type": "quests",
       "is_valid": true,
@@ -4871,515 +5110,6 @@
       ]
     },
     {
-      "file_path": "pages/_docs/jekyll/jekyll-math-symbols-with-mathjax.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (141 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/jekyll/index.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 70,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Too few keywords (2). Recommended: 3-10",
-          "suggestion": "Add more relevant keywords"
-        },
-        {
-          "severity": "info",
-          "field": "tags",
-          "message": "No tags defined",
-          "suggestion": "Add relevant tags for categorization"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/jekyll/jekyll-config.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 65,
-      "error_count": 0,
-      "warning_count": 2,
-      "issues": [
-        {
-          "severity": "warning",
-          "field": "description",
-          "message": "Description too long (179 chars). May be truncated in search results. Max: 160",
-          "suggestion": "Shorten description to under 160 characters"
-        },
-        {
-          "severity": "warning",
-          "field": "title",
-          "message": "Title may be truncated in search (65 chars). Max: 60",
-          "suggestion": "Consider shortening title"
-        },
-        {
-          "severity": "info",
-          "field": "tags",
-          "message": "No tags defined",
-          "suggestion": "Add relevant tags for categorization"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/jekyll/jekyll-frontmatter-cms.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 90,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": []
-    },
-    {
-      "file_path": "pages/_docs/jekyll/jekyll-liquid.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (146 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/jekyll/jekyll-diagram-with-mermaid.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 75,
-      "error_count": 0,
-      "warning_count": 2,
-      "issues": [
-        {
-          "severity": "warning",
-          "field": "description",
-          "message": "Description too long (183 chars). May be truncated in search results. Max: 160",
-          "suggestion": "Shorten description to under 160 characters"
-        },
-        {
-          "severity": "warning",
-          "field": "title",
-          "message": "Title may be truncated in search (67 chars). Max: 60",
-          "suggestion": "Consider shortening title"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/jekyll/mermaid-migration.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (149 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/contributing/contributing-developer.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (124 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/evaluating-and-tuning-agents-with-github-signals.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (141 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/embedding-agents-in-the-sdlc.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (146 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/agent-guardrails-and-responsible-autonomy.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (142 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/index.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (150 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/mcp-servers-and-agent-tooling-in-practice.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (137 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/orchestrating-multi-agent-workflows-on-github.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (141 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/agentic-codex/taming-agent-memory-and-context-drift.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (139 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/terminal/terminal-shortcuts-cheat-sheet.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (147 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/terminal/bash-complete-reference.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (140 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/certifications/index.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 90,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": []
-    },
-    {
-      "file_path": "pages/_docs/obsidian/index.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (131 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/obsidian/graph.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 80,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (138 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/certifications/gh-600/learning-path.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 90,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": []
-    },
-    {
-      "file_path": "pages/_docs/certifications/gh-600/recommended-resources.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 100,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (137 chars)",
-          "suggestion": null
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_docs/certifications/gh-600/skills-measured.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 90,
-      "error_count": 0,
-      "warning_count": 0,
-      "issues": []
-    },
-    {
-      "file_path": "pages/_docs/certifications/gh-600/index.md",
-      "content_type": "docs",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 65,
-      "error_count": 0,
-      "warning_count": 2,
-      "issues": [
-        {
-          "severity": "warning",
-          "field": "description",
-          "message": "Description too long (169 chars). May be truncated in search results. Max: 160",
-          "suggestion": "Shorten description to under 160 characters"
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Keywords should be a list/array",
-          "suggestion": "Format as: keywords:\\n  - keyword1\\n  - keyword2"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_about/settings/config.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 75,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (152 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Missing keywords field",
-          "suggestion": "Add keywords for better discoverability"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_about/settings/tree.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 75,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (139 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Missing keywords field",
-          "suggestion": "Add keywords for better discoverability"
-        }
-      ]
-    },
-    {
-      "file_path": "pages/_about/settings/sitemap.md",
-      "content_type": "other",
-      "is_valid": true,
-      "frontmatter_present": true,
-      "seo_score": 75,
-      "error_count": 0,
-      "warning_count": 1,
-      "issues": [
-        {
-          "severity": "info",
-          "field": "description",
-          "message": "Description length optimal (153 chars)",
-          "suggestion": null
-        },
-        {
-          "severity": "warning",
-          "field": "keywords",
-          "message": "Missing keywords field",
-          "suggestion": "Add keywords for better discoverability"
-        }
-      ]
-    },
-    {
       "file_path": "pages/_about/features/index.md",
       "content_type": "other",
       "is_valid": true,
@@ -5430,10 +5160,16 @@
       "content_type": "other",
       "is_valid": true,
       "frontmatter_present": true,
-      "seo_score": 70,
+      "seo_score": 80,
       "error_count": 0,
       "warning_count": 1,
       "issues": [
+        {
+          "severity": "info",
+          "field": "description",
+          "message": "Description length optimal (141 chars)",
+          "suggestion": null
+        },
         {
           "severity": "warning",
           "field": "keywords",

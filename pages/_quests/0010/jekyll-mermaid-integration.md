@@ -66,6 +66,7 @@ rewards:
   tool: Mermaid Diagram System
   capability: Interactive Documentation Creation
 layout: quest
+mermaid: true
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 

@@ -1273,16 +1273,16 @@ Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 ### 🎯 Recommended Follow-Up Quests
 
 **Immediate Next Steps**:
-- 🤖 **AI Agent Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 📊 **Prompt Performance Monitoring** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤖 **AI Agent Development** - Planned quest (see Quest Build Plan)
+- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see Quest Build Plan)
+- 📊 **Prompt Performance Monitoring** - Planned quest (see Quest Build Plan)
 
 **Advanced Specializations**:
-- 🔬 **Advanced RAG Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 🏗️ **Multi-Agent Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🔬 **Advanced RAG Systems** - Planned quest (see Quest Build Plan)
+- 🏗️ **Multi-Agent Systems** - Planned quest (see Quest Build Plan)
 
 **Team & Community**:
-- 🤝 **Team Prompt Library Setup** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤝 **Team Prompt Library Setup** - Planned quest (see Quest Build Plan)
 
 ---
 

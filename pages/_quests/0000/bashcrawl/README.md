@@ -175,7 +175,7 @@ flowchart TD
 
 - [Bashcrawl — Play Online](https://bamr87.github.io/bashcrawl/)
 - [Bashcrawl GitHub Repository](https://github.com/bamr87/bashcrawl/)
-- [The Spellbook: Bash Cheatsheet](/shell/)
+- [The Spellbook: Bash Cheatsheet](/notes/cheatsheets/bash-cheatsheet/)
 - [The Grand Grimoire: Complete Bash Reference](/docs/bash-complete-reference/)
 - [Original Upstream — GitLab slackermedia/bashcrawl](https://gitlab.com/slackermedia/bashcrawl)
 

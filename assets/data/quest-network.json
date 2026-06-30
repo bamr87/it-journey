@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total": 198,
+    "total": 199,
     "by_level": {
-      "0000": 27,
+      "0000": 28,
       "0001": 26,
       "0010": 17,
       "0011": 3,
@@ -22,7 +22,7 @@
     "by_type": {
       "epic_quest": 3,
       "main_quest": 170,
-      "side_quest": 25
+      "side_quest": 26
     }
   },
   "nodes": [
@@ -1708,6 +1708,15 @@
       "difficulty": "🟢 Easy",
       "technology": "reference",
       "file": "pages/_quests/codex/glossary.md"
+    },
+    {
+      "id": "/quests/codex/",
+      "title": "The Codex: Epic Quests & Reference",
+      "level": "0000",
+      "type": "side_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "reference",
+      "file": "pages/_quests/codex/index.md"
     },
     {
       "id": "/quests/codex/self-operating-website/",

@@ -35,9 +35,9 @@ Level 0011 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands](/quests/0011/advanced-git-workflows/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/0011/analytics-integration/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [Custom Domains for GitHub Pages: Professional Website Setup Guide](/quests/0011/custom-domains/) | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
+| Custom Domains for GitHub Pages: Professional Website Setup Guide | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
 | [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/0011/github-pages-hidden-gem/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
 | [Jekyll Plugins: Essential Extensions for Powerful Static Sites](/quests/0011/jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/0011/prd-codex-mastery/) | 🟡 Medium | 45-60 minutes | main_quest | ✅ Complete |

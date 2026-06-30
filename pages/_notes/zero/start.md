@@ -88,4 +88,4 @@ Once the inventory is checked off, head to the first quest in the sequence:
 
 - [Quest: Begin Your IT Journey](/quests/0000/begin-your-it-journey/)
 - [Quest: Git Basics](/quests/0000/git-basics/)
-- [Notes: Take Good Notes](/notes/dev/take-good-notes/)
+- Notes: Take Good Notes
