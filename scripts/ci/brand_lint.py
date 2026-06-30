@@ -44,6 +44,11 @@ CONTENT_GLOBS = ("pages/**/*.md", "pages/**/*.markdown")
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?\n)---\s*\n", re.DOTALL)
 FENCE_RE = re.compile(r"^([`~]{3,})")
 INLINE_CODE_RE = re.compile(r"`[^`]*`")
+# Markdown link/image destinations `](url)`, bare URLs, and `<url>` autolinks are
+# NOT prose — a real asset filename like `/assets/images/github-login.png` can't be
+# re-cased, so spelling/hype must not be policed inside them (false positives that
+# would otherwise block the brand gate on any quest referencing such a file).
+LINK_TARGET_RE = re.compile(r"\]\([^)]*\)|<https?://[^>]*>|\bhttps?://\S+")
 VENDORED_KEYS = ("source_repo:", "source_url:")
 
 
@@ -101,7 +106,12 @@ def strip_code(body: str) -> List[str]:
                 in_fence = False
             out.append("")          # the fence line itself is not prose
             continue
-        out.append("" if in_fence else INLINE_CODE_RE.sub(" ", raw))
+        if in_fence:
+            out.append("")
+        else:
+            # Blank inline code, then markdown link/image URL targets + bare URLs,
+            # so only PROSE is scanned (link text stays; only the destination goes).
+            out.append(LINK_TARGET_RE.sub("](url)", INLINE_CODE_RE.sub(" ", raw)))
     return out
 
 
