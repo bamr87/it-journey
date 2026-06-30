@@ -1,12 +1,24 @@
 ---
 title: GitHub Actions Bot
 author: GitHub Actions Bot
+description: The automated CI/CD agent for IT-Journey — builds the site, runs tests, validates quests, checks links, and deploys to GitHub Pages on every change.
 excerpt: CI/CD Automation Ranger — Ranger class, Pipeline guardian & deployment
 class: Ranger
 username: github-actions-bot
 contributor_data: github-actions-bot
 permalink: /contributors/github-actions-bot/
 lastmod: '2026-03-21T00:00:00.000Z'
+tags:
+- ci-cd
+- automation
+- contributor
+keywords:
+  primary:
+  - github actions
+  - ci/cd
+  secondary:
+  - automation
+  - deployment
 ---
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
