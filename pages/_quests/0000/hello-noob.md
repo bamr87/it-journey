@@ -87,7 +87,7 @@ mermaid: true
 
 *This quest is specifically designed for absolute beginners - those who might not even know what GitHub is yet. That's perfectly okay! Every expert started exactly where you are now.*
 
-### 🗺️ Quest Network Position
+### 🗺️ Quest Network Map
 
 ```mermaid
 graph TB

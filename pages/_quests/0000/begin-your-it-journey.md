@@ -118,7 +118,23 @@ Remember, every great wizard started as an apprentice. Mistakes are part of the 
 
 # Choose your path
 
-Every path in the realm has its own apprenticeship, but they all follow the same approach: learn the fundamentals, pick your tools, then practice on real projects. To show you what that looks like, let's walk one path end-to-end as a **worked example** — the *systems builder*. As you read it, notice the pattern; a developer, a security guardian, or a cloud wizard would chart a nearly identical course with their own tools swapped in. (Use the [Developer Roadmaps](https://roadmap.sh/) to trace your chosen path the same way.)
+Every path in the realm has its own apprenticeship, but they all follow the same approach: learn the fundamentals, pick your tools, then practice on real projects. Before tracing a single path, study the whole map of the realm below — then watch one path get walked end-to-end as a worked example.
+
+## 🗺️ Forge Your IT Career Map
+
+Before you can chart a learning plan, you need a map of the realm. The table below shows how each path leads to real-world roles and the first skills worth gathering. Find the row that excites you most — that's your direction.
+
+| Path | Sample Roles | First Skills to Gather |
+|---|---|---|
+| **Development** | Web Developer, Software Engineer, Mobile Dev | Python or JavaScript, Git, HTML/CSS |
+| **Systems / Sysadmin** | System Administrator, DevOps Engineer | Linux, Bash scripting, networking basics |
+| **Security** | Security Analyst, Penetration Tester | Networking, Linux, the security mindset |
+| **Cloud** | Cloud Engineer, Solutions Architect | One cloud platform (AWS/Azure/GCP), Linux, automation |
+| **Networking** | Network Engineer, Network Admin | TCP/IP, DNS, routing & switching concepts |
+
+### A worked example: walking the Systems Builder path
+
+To show you what an apprenticeship looks like, let's walk one path end-to-end — the *systems builder*. As you read it, notice the pattern; a developer, a security guardian, or a cloud wizard would chart a nearly identical course with their own tools swapped in. (Use the [Developer Roadmaps](https://roadmap.sh/) to trace your chosen path the same way.)
 
 Ah, a systems builder! Crafting robust and efficient systems is akin to constructing magical fortresses and intricate contraptions in our fantastical IT realm. Here's how you can start your journey as a system architect:
 
@@ -142,17 +158,7 @@ Ah, a systems builder! Crafting robust and efficient systems is akin to construc
 
 10. **Stay Curious and Updated**: The field of system building is constantly evolving. Keep learning about new technologies and best practices. Your quest for knowledge is never-ending.
 
-## 🗺️ Forge Your IT Career Map
-
-Before you can chart a learning plan, you need a map of the realm. The table below shows how each path leads to real-world roles and the first skills worth gathering. Find the row that excites you most — that's your direction.
-
-| Path | Sample Roles | First Skills to Gather |
-|---|---|---|
-| **Development** | Web Developer, Software Engineer, Mobile Dev | Python or JavaScript, Git, HTML/CSS |
-| **Systems / Sysadmin** | System Administrator, DevOps Engineer | Linux, Bash scripting, networking basics |
-| **Security** | Security Analyst, Penetration Tester | Networking, Linux, the security mindset |
-| **Cloud** | Cloud Engineer, Solutions Architect | One cloud platform (AWS/Azure/GCP), Linux, automation |
-| **Networking** | Network Engineer, Network Admin | TCP/IP, DNS, routing & switching concepts |
+That's the pattern: fundamentals first, then tools, then real projects, with security and curiosity woven throughout. If you chose a different path, swap in the tools from the career-map table above and follow the same pattern — the steps map onto every specialization in the realm.
 
 ## 📝 Create Your Learning Plan
 
@@ -177,7 +183,7 @@ Keep this file somewhere you'll see it. You'll revisit and grow it as you progre
 
 Every wizard remembers their first spell. Yours automates a tiny, real task — greeting the world and stamping it with the current date. Pick the version that matches your tools.
 
-**Bash** (macOS / Linux / WSL) — save as `hello.sh`:
+**Bash** (macOS / Linux / WSL) — open any text editor (VS Code, nano, or TextEdit), paste the following, and save it as `hello.sh`:
 
 ```bash
 #!/usr/bin/env bash
@@ -190,7 +196,7 @@ Run it with:
 bash hello.sh
 ```
 
-**Python** (any OS with Python installed) — save as `hello.py`:
+**Python** (any OS with Python installed) — open any text editor (VS Code, nano, or Notepad), paste the following, and save it as `hello.py`:
 
 ```python
 from datetime import date
@@ -205,6 +211,10 @@ python3 hello.py
 
 That's it — you just made the computer do your bidding. Trivial today, but it's the same idea behind every automation spell you'll ever cast. 🪄
 
+## 🤝 Join Your First Guild
+
+No wizard learns alone. Claim your place in a community so you have somewhere to ask questions and share your spells. The simplest first move: create a free **GitHub** account at [github.com/signup](https://github.com/signup) — it's where you'll store your projects and join the wider IT realm. (Prefer somewhere else? A free [Stack Overflow](https://stackoverflow.com/) account or a tech community forum works just as well.) Sign up now, before you move on — that account is one of your quest artifacts.
+
 ## 🏆 Quest Completion Validation
 
 ### Portfolio Artifacts Created
@@ -217,9 +227,13 @@ That's it — you just made the computer do your bidding. Trivial today, but it'
 - [ ] **Research Skills** — Ability to explore and compare IT career paths
 - [ ] **Goal Setting** — Creating actionable, time-bound learning objectives
 
+### 🎖️ Rewards
+
+> 🏆 Completing this quest awards **50 progression points**, the **Journey Initiate Badge**, and the **⚡ IT Awareness Achievement** — and unlocks the next quest: [Character Building: Forge Your IT Identity](/quests/0000/character-building/).
+
 ## 📚 References & Resources
 
-- [CompTIA IT Fundamentals Certification](https://www.comptia.org/certifications/it-fundamentals)
+- [CompTIA ITF+ (IT Fundamentals+)](https://www.comptia.org/certifications/it-fundamentals)
 - [freeCodeCamp — Learn to Code for Free](https://www.freecodecamp.org/)
 - [roadmap.sh — Developer Roadmaps](https://roadmap.sh/)
 - [The Odin Project — Full Stack Curriculum](https://www.theodinproject.com/)

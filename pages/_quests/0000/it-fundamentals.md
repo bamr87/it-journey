@@ -113,6 +113,13 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 - **Exercise**: Organize your files and folders.
   - Create a new folder structure on your computer.
   - Organize your documents, images, and other files into these folders.
+  - **Prefer the terminal?** On macOS or Linux, conjure the whole structure in one command:
+
+    ```bash
+    mkdir -p ~/projects/my-quest/{docs,scripts,images}
+    ```
+
+    This creates `my-quest` with three sub-folders in one stroke (`-p` makes parent folders as needed; the `{...}` brace expansion creates all three at once). Verify it with `ls ~/projects/my-quest`.
 
 ### 2. **Operating Systems (OS) Basics**
 
@@ -129,8 +136,30 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 ### 3. **Networking Fundamentals**
 
 - **Exercise**: Explore your home network.
-  - Find out your computer’s IP address and default gateway.
-  - Log into your router’s admin page (usually through the default gateway IP).
+  - Find out your computer’s IP address and default gateway. Open your terminal and run the command for your realm:
+
+    **Windows** (Command Prompt or PowerShell) — your IPv4 address is the `IPv4 Address` line; the gateway is `Default Gateway`:
+
+    ```powershell
+    ipconfig
+    ```
+
+    **Linux** — the first command lists your addresses; the second shows the gateway (the IP after `default via`):
+
+    ```bash
+    ip addr show
+    ip route show
+    ```
+
+    **macOS** — `ifconfig` lists everything; the shortcut prints just your Wi‑Fi IP, and `route` reveals the gateway:
+
+    ```bash
+    ipconfig getifaddr en0
+    ifconfig
+    netstat -nr | grep default
+    ```
+
+  - Log into your router’s admin page by typing the default gateway IP (for example `192.168.1.1`) into your browser’s address bar.
   - Explore settings and understand terms like DHCP, DNS, and NAT.
 
 ### 4. **Basic Programming with Python**
@@ -151,6 +180,13 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 
   ```bash
   pip install requests
+  ```
+
+  On macOS or Linux, use `pip3` (or invoke pip through the interpreter to be sure you're installing into the right Python):
+
+  ```bash
+  pip3 install requests
+  python3 -m pip install requests
   ```
 
   Then save this as `weather.py` and run it with `python weather.py`:
@@ -181,6 +217,13 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
     ```
 
 - **Exercise for Linux** (also works on macOS): Write a Bash script.
+  - First, give your scripts a home and move into it (keeping with the file-organization habit from Exercise 1):
+
+    ```bash
+    mkdir -p ~/scripts
+    cd ~/scripts
+    ```
+
   - Save the script below as `list_by_size.sh`. Make it runnable with `chmod +x list_by_size.sh`, then run it with `./list_by_size.sh`.
 
     ```bash
@@ -195,7 +238,11 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 
 - **Exercise**: Create a free account on a cloud platform like Google Cloud Platform (GCP) or AWS.
   - Explore the dashboard and familiarize yourself with the interface.
-  - Follow a tutorial to deploy a simple 'Hello World' application.
+  - Follow a guided "Hello World" quickstart so the cloud stops being abstract. Pick one:
+    - **Google Cloud Run** — deploy a sample container with the [Cloud Run quickstart](https://cloud.google.com/run/docs/quickstarts/deploy-container). On your own machine you can start the CLI with `gcloud init` after installing the [gcloud CLI](https://cloud.google.com/sdk/docs/install).
+    - **AWS CloudShell** — open a free browser terminal already signed in to your account from the [CloudShell guide](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html); run `aws --version` to confirm you're talking to AWS.
+
+    > 💡 Both platforms have a free tier, but always check what counts as free before deploying — spinning down resources when you're done keeps your bill at zero.
 
 ### 7. **Virtualization and Containers**
 
@@ -226,13 +273,49 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
 - **Exercise**: Install and use an antivirus software.
   - Perform a full system scan.
   - Explore the settings and schedule regular scans.
+- **Exercise**: Check your system for pending updates. Outdated software is one of the most common ways attackers break in — patching closes known holes before someone walks through them. See what's waiting to be updated on your realm:
+
+  **Windows** (PowerShell) — lists available upgrades; drop `--all` to preview without installing:
+
+  ```powershell
+  winget upgrade --all
+  ```
+
+  **Linux** (Debian/Ubuntu) — refresh the package list, then see what can be upgraded:
+
+  ```bash
+  sudo apt update
+  apt list --upgradable
+  ```
+
+  **macOS** — list available system updates:
+
+  ```bash
+  softwareupdate -l
+  ```
 
 ### 9. **Version Control with Git**
 
 - **Exercise**: Set up Git and practice basic commands.
-  - Install Git.
-  - Create a new repository and practice `git add`, `git commit`, `git push`.
-  - Clone an existing repository from GitHub and explore its contents.
+  - Install Git from [git-scm.com/downloads](https://git-scm.com/downloads), then confirm it's ready with `git --version`.
+  - Create your first repository and make your first commit. Run these one at a time:
+
+    ```bash
+    git init my-repo
+    cd my-repo
+    echo "# My first repo" > README.md
+    git add .
+    git commit -m "first commit"
+    ```
+
+    `git init` creates the repo, `git add .` stages your new file, and `git commit` records a snapshot. Run `git log` to see your commit in the project's history. 🎉
+  - Clone an existing repository from GitHub and explore its contents:
+
+    ```bash
+    git clone https://github.com/bamr87/it-journey.git
+    ```
+
+  - **Want to go deeper?** This is just the spark — the dedicated [Git Basics quest](/quests/0000/git-basics/) walks you through version control end-to-end.
 
 These exercises are your first steps. As you complete each one, you'll build a strong foundation in IT. Remember, the key is to practice regularly and keep challenging yourself with more complex tasks as you grow. Happy learning! 🌟💻🔧
 
