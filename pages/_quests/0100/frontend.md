@@ -167,7 +167,7 @@ Filters transform values on the way out — a few you will reach for constantly:
 | `date` | `{% raw %}{{ page.date \| date: "%B %d, %Y" }}{% endraw %}` | "March 31, 2026" |
 | `slugify` | `{% raw %}{{ "My Title" \| slugify }}{% endraw %}` | "my-title" |
 | `where` | `{% raw %}{{ site.quests \| where: "difficulty", "🟢 Easy" }}{% endraw %}` | Filtered array |
-| `markdownify` | `{% raw %}{{ page.description \| markdownify }}{% endraw %}` | HTML from markdown |
+| `markdownify` | `{% raw %}{{ page.description \| markdownify }}{% endraw %}` | HTML from Markdown |
 
 ### 🗄️ Data Files
 

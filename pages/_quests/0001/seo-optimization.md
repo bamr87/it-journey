@@ -103,7 +103,7 @@ By the time you complete this journey, you will have mastered:
 - [ ] **Titles & Meta Descriptions** - Write the snippets that appear in search results
 - [ ] **Meta & Open Graph Tags** - Control how pages look in search and social shares
 - [ ] **Sitemaps & robots.txt** - Tell crawlers what to read and where to find it
-- [ ] **jekyll-seo-tag** - Automate metadata generation across a whole site
+- [ ] **Jekyll-seo-tag** - Automate metadata generation across a whole site
 
 ### Secondary Objectives (Bonus Achievements)
 - [ ] **Structured Data** - Add JSON-LD so engines understand your content type
@@ -266,14 +266,14 @@ Good titles are specific and front-load the keyword; good descriptions read like
 - [ ] **Wrote a title**: A concise, keyword-forward `<title>` is set
 - [ ] **Wrote a description**: A compelling ~155-character description is set
 
-## 🧙‍♂️ Chapter 2: Sitemaps, robots.txt & jekyll-seo-tag - Helping the Crawler
+## 🧙‍♂️ Chapter 2: Sitemaps, robots.txt & Jekyll-seo-tag - Helping the Crawler
 
 *Crawlers need a map and a key. A **sitemap** lists your URLs; **robots.txt** grants or restricts access. And `jekyll-seo-tag` generates most of Chapter 1's tags for every page automatically.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Generating a sitemap with a plugin
 - Writing a sensible robots.txt
-- Wiring up jekyll-seo-tag site-wide
+- Wiring up Jekyll-seo-tag site-wide
 
 ### 🏗️ Automating Metadata
 
@@ -508,8 +508,8 @@ Verify with a dedicated checker beyond Lighthouse:
 
 ### Official Documentation
 - [Google Search Central: SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) - The canonical guidance
-- [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) - The metadata plugin
-- [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) - Automatic sitemap generation
+- [Jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) - The metadata plugin
+- [Jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) - Automatic sitemap generation
 
 ### Community Resources
 - [schema.org](https://schema.org/) - The structured-data vocabulary

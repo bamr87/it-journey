@@ -378,8 +378,8 @@ Objective: Use guardian logs to create a minimal viable resource (MVR) or redire
 
 - Companion Article: <https://lifehacker.dev>
 - Jekyll Permalinks: <https://jekyllrb.com/docs/permalinks/>
-- jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
-- jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>
+- Jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
+- Jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>
 - HTMLProofer: <https://github.com/gjtorikian/html-proofer>
 - Lychee Action: <https://github.com/lycheeverse/lychee-action>
 - GitHub Pages 404s: <https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site>

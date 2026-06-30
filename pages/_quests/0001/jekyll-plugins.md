@@ -260,7 +260,7 @@ Anything outside the list - including any code in your `_plugins/` folder - is i
 *Most of the value comes from configuring the community gems well. A few lines unlock SEO, a sitemap, a feed, and pagination.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- Wiring up jekyll-feed and pagination
+- Wiring up Jekyll-feed and pagination
 - Placing plugin output tags in layouts
 - Verifying plugin output
 

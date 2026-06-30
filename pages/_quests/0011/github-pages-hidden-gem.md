@@ -346,7 +346,7 @@ Test the waters: Update a chat log, commit/push—watch it refresh live. Collabo
 
 **Common Jekyll Enhancements:**
 - **Themes**: Change theme in _config.yml for different appearances
-- **Plugins**: Add jekyll-feed for RSS, jekyll-sitemap for SEO
+- **Plugins**: Add Jekyll-feed for RSS, Jekyll-sitemap for SEO
 - **Custom Pages**: Create about.md, contact.md for additional content
 - **Collections**: Organize content beyond posts (e.g., projects, tutorials)
 

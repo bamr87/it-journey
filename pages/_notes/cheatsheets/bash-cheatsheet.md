@@ -31,7 +31,7 @@ date: '2021-12-28T13:35:40.000Z'
 redirect_from:
 - /notes/cheetsheets/bash-cheatsheet/
 ---
-[![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)
+[![hackmd-GitHub-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)
 
 ## Practice Routes
 

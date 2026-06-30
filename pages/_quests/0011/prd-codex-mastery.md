@@ -108,7 +108,7 @@ mermaid: true
 
 *Then came the prophecy of Signal-Driven Documentation: "Let the code speak. Let the commits testify. Let the machine distill reality into requirements."*
 
-*The PRD MACHINE was forged in this vision—a tool that transforms repository signals (commits, markdown files, feature definitions) into a living PRD that stays fresh, detects conflicts automatically, and integrates seamlessly with CI/CD pipelines.*
+*The PRD MACHINE was forged in this vision—a tool that transforms repository signals (commits, Markdown files, feature definitions) into a living PRD that stays fresh, detects conflicts automatically, and integrates seamlessly with CI/CD pipelines.*
 
 *Today, you shall master this ancient artifact.*
 
@@ -328,7 +328,7 @@ Traditional PRDs are written once and decay over time. Signal-driven PRDs are di
 
 The `sync` command is the heart of PRD Machine. It:
 1. Ingests git commits from repository history
-2. Scans all markdown files for signals
+2. Scans all Markdown files for signals
 3. Parses feature definitions
 4. Detects conflicts
 5. Generates complete PRD.md
@@ -670,7 +670,7 @@ Before claiming victory, verify:
 
 - [ ] **PRD Generated**: `PRD.md` exists with all 10 sections
 - [ ] **Commands Work**: All three commands execute without errors
-- [ ] **Signals Counted**: Output shows commit, markdown, feature counts
+- [ ] **Signals Counted**: Output shows commit, Markdown, feature counts
 - [ ] **Health Monitored**: Status command shows HEALTHY
 - [ ] **Conflicts Understood**: Can explain what detected conflicts mean
 

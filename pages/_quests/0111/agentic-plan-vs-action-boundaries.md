@@ -296,7 +296,7 @@ jobs:
           EOF
 
       - name: Comment plan on PR
-        uses: actions/github-script@v7
+        uses: actions/GitHub-script@v7
         with:
           script: |
             const fs = require('fs');

@@ -344,7 +344,7 @@ git push origin main
 
 ## 🧙‍♂️ Chapter 3: Realm Enhancement - Adding Jekyll Magic
 
-*To truly master the portal, learn to wield Jekyll - the powerful static site generator that transforms markdown into magnificent websites!*
+*To truly master the portal, learn to wield Jekyll - the powerful static site generator that transforms Markdown into magnificent websites!*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Jekyll installation and setup

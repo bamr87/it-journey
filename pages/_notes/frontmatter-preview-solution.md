@@ -88,7 +88,7 @@ _site/
 
 ### For Content Creators
 
-1. **Open any markdown file** in VS Code within the configured collections
+1. **Open any Markdown file** in VS Code within the configured collections
 2. **Click the FrontMatter "Open Preview" button**
 3. **Preview opens** at `http://localhost:4002/preview/<collection>/<filename>/`
 

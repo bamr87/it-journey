@@ -104,7 +104,7 @@ Update file `_inlude/head.html`, include the above template file if `page.mathja
 {% endraw %}
 ```
 ### 3.2 Using Math Formula in Markdown Page
-In order to use the math formula in markdown page, it must have a variable `mathjax` and set its value to `true`. For example, the following example is a markdown page using mathjax.
+In order to use the math formula in Markdown page, it must have a variable `mathjax` and set its value to `true`. For example, the following example is a Markdown page using mathjax.
 ~~~markdown
 ---
 
@@ -157,6 +157,6 @@ Here are some notes about the above example:
 
 ## 4. References
 * [Putting mathematics on the Web with MathJax](https://www.w3.org/Math/MJ/Overview.html)
-* [How to use MathJax in Jekyll generated Github pages](http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/)
+* [How to use MathJax in Jekyll generated GitHub pages](http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/)
 * [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
 * [Typesetting Math Using MathJax](http://jeffskinnerbox.me/notebooks/typesetting-math-using-mathjax.html)

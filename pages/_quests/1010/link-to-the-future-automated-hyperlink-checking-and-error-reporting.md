@@ -58,7 +58,7 @@ layout: quest
 sub_title: 'Level 1010 (10) Quest: Advanced CI/CD Automation and AI Integration'
 draft: false
 ---
-*In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
+*In the vast digital realm of Jekyll-powered GitHub Pages, where content flows like rivers of Markdown and links connect distant territories of knowledge, a silent corruption threatens the very foundation of your domain. Broken hyperlinks - those severed pathways between digital realms - can transform a magnificent knowledge fortress into a maze of frustration for visiting adventurers.*
 
 *The ancient DevOps masters speak of a legendary guardian system: an intelligent sentinel that tirelessly patrols every corner of your digital domain, testing each hyperlink's integrity and summoning AI-powered analysis to root out the causes of corruption. This automated guardian not only detects the broken pathways but uses artificial intelligence to understand why they failed and how to prevent future breaks.*
 
@@ -139,7 +139,7 @@ npm install -g markdown-link-check
 
 ### 🏗️ Building Your Link Detection Foundation
 
-The first enchantment we'll craft is a powerful script that can discover every hyperlink hidden throughout your Jekyll domain. This isn't merely about finding obvious markdown links - we need to detect links in HTML, frontmatter, data files, and even dynamically generated content.
+The first enchantment we'll craft is a powerful script that can discover every hyperlink hidden throughout your Jekyll domain. This isn't merely about finding obvious Markdown links - we need to detect links in HTML, frontmatter, data files, and even dynamically generated content.
 
 ```bash
 #!/bin/bash
@@ -744,7 +744,7 @@ jobs:
         fi
     
     - name: 📋 Create GitHub Issue with Analysis
-      uses: actions/github-script@v7
+      uses: actions/GitHub-script@v7
       env:
         ANALYSIS_FILE: ${% raw %}{{ steps.ai-analysis.outputs.analysis_file }}{% endraw %}
       with:
@@ -891,7 +891,7 @@ jobs:
       uses: actions/checkout@v4
     
     - name: 🗑️ Close Old Link Health Issues
-      uses: actions/github-script@v7
+      uses: actions/GitHub-script@v7
       with:
         script: |
           // Find and close old automated link health reports
@@ -1204,7 +1204,7 @@ class HyperlinkIntelligenceEngine:
                 # Try to parse as JSON
                 analysis_result = json.loads(ai_response)
             except json.JSONDecodeError:
-                # Fallback: extract JSON from response if it's wrapped in markdown
+                # Fallback: extract JSON from response if it's wrapped in Markdown
                 json_match = re.search(r'```json\s*(.*?)\s*```', ai_response, re.DOTALL)
                 if json_match:
                     analysis_result = json.loads(json_match.group(1))

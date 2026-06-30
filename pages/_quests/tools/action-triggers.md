@@ -121,11 +121,11 @@ Here are some handy enchantments to add to your arsenal:
 
 | **Spell Type** | **GitHub Action** |
 | --- |  --- |
-| 🧼 Linting | github/super-linter |
+| 🧼 Linting | GitHub/super-linter |
 | --- |  --- |
 | 🧪 Python Tests | actions/setup-python + pytest |
 | 🐍 Auto-Releases | release-drafter/release-drafter |
-| 🧪 Security | github/codeql-action |
+| 🧪 Security | GitHub/codeql-action |
 | 🧙‍♂️ AI Assist | Custom scripts using OpenAI API |
 
 * * * *

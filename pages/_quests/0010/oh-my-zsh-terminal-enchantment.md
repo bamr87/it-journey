@@ -852,7 +852,7 @@ chmod +x ~/validate-vscode-terminal.sh
 | Criterion | Verification | Expected Result |
 |-----------|-------------|-----------------|
 | VS Code settings updated | `cat ~/Library/Application\ Support/Code/User/settings.json \| grep fontFamily` | Shows Nerd Font |
-| Zsh detected in VS Code | `echo $TERM_PROGRAM` inside VS Code terminal | "vscode" |
+| Zsh detected in VS Code | `echo $TERM_PROGRAM` inside VS Code terminal | "VS Code" |
 | Theme renders correctly | Visual inspection | Icons/glyphs display |
 | Aliases work in VS Code | `type c vsc` in VS Code terminal | Shows alias definitions |
 | Validation passes | `~/validate-vscode-terminal.sh` | All checks pass |

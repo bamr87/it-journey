@@ -86,7 +86,7 @@ My personal website can be accessed through following domains. These sites are a
  12  | <https://jekyllrb.com/>                              | Comments service
  13  | <https://highlightjs.org/>                           | Syntax highlighting
  14  | <https://www.mathjax.org/>                           | JS engine for mathematics
- 15  | <https://mermaidjs.github.io/>                       | Charts generated from text via javascript
+ 15  | <https://mermaidjs.github.io/>                       | Charts generated from text via JavaScript
  16  | <https://lunrjs.com/>                                | Lightweight full-text offline search
  17  | <http://nanobar.jacoborus.codes/>                    | Lightweight progress bars
  18  | <https://www.google.com/adsense/>                    | Google Ads

@@ -485,7 +485,7 @@ Three ideas you just used:
 ### Community Resources
 - [JavaScript.info](https://javascript.info/) - A thorough, modern tutorial
 - [freeCodeCamp JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) - Free interactive curriculum
-- [Stack Overflow: javascript](https://stackoverflow.com/questions/tagged/javascript) - Tagged Q&A
+- [Stack Overflow: JavaScript](https://stackoverflow.com/questions/tagged/javascript) - Tagged Q&A
 
 ### Learning Materials
 - [Eloquent JavaScript (free book)](https://eloquentjavascript.net/) - Deep, beginner-to-advanced

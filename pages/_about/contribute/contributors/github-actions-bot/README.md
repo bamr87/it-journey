@@ -10,7 +10,7 @@ lastmod: '2026-03-21T00:00:00.000Z'
 ---
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
-{% include contributor/character_sheet.html username="github-actions-bot" %}
+{% include contributor/character_sheet.html username="GitHub-actions-bot" %}
 
 ---
 

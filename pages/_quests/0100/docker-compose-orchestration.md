@@ -534,7 +534,7 @@ You now have a reproducible, version-controlled, multi-service environment that 
 ### Community Resources
 - [Awesome Compose](https://github.com/docker/awesome-compose) - Ready-made multi-service examples
 - [Docker Hub](https://hub.docker.com/) - Find official images for databases and caches
-- [Stack Overflow: docker-compose](https://stackoverflow.com/questions/tagged/docker-compose) - Q&A when you get stuck
+- [Stack Overflow: Docker Compose](https://stackoverflow.com/questions/tagged/docker-compose) - Q&A when you get stuck
 
 ### Learning Materials
 - [Use Compose in Development](https://docs.docker.com/compose/how-tos/) - Practical how-to guides
