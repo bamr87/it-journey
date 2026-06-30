@@ -1,0 +1,74 @@
+# =============================================================================
+# .quests/config.yml — Autonomous quest-perfection loop policy
+# -----------------------------------------------------------------------------
+# The single hand-edited knob-board for the quest-perfection loop, mirroring
+# .cms/config.yml and .issues/config.yml. The deterministic ledger
+# (scripts/quest/ledger.py) reads this to decide (1) what "perfect" MEANS, (2)
+# which not-yet-perfect (character, level) slice to walk/fix next, and (3) when a
+# repeatedly-fixed slice is declared stuck. The walk + fix agents ACT on the
+# ledger's decisions; they never re-decide policy. Edit this file to tune the
+# bar — not the Python.
+#
+# A SLICE is "<character.key>/<level.code>" e.g. "developer/0001". This is the
+# stable key everywhere; NEVER the permalink. Character keys: developer,
+# system-engineer, security-specialist, data-scientist, digital-artist,
+# game-developer. level.code is a 4-bit string like 0001.
+#
+# HARD GUARDRAILS (enforced in scripts/quest/ledger.py, not knobs):
+#   * "perfect" REQUIRES mode == execute AND a non-truncated, fully-scored run
+#     (M7). review-mode or truncated runs can NEVER certify perfect, regardless
+#     of the numbers below.
+#   * result.verdict_obj.executed is MODEL-SUPPLIED, so even an execute-mode,
+#     non-truncated pass does NOT authorize full hands-off auto-merge of fixes:
+#     fix PRs stay gated on CONTENT_AUTOMERGE_ENABLED until a harness-stamped
+#     execution proof exists. These knobs gate CERTIFICATION, not merge.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# perfect — the certification bar. A slice is "perfect" only when EVERY one of
+# these holds for its most-recent walk evidence (and the M7 honest-run gate, in
+# code, is satisfied). All-or-nothing.
+# -----------------------------------------------------------------------------
+perfect:
+  # --- READ + enforced by ledger.py's perfect predicate ---
+  require_mode: execute        # only execute-mode runs can certify (M7)
+  average_min: 95              # run-level average score must be >= this
+  max_warn: 0                  # zero quests may verdict "warn"
+  max_fail: 0                  # zero quests may verdict "fail"
+  max_errored: 0               # zero quests may error out during the run
+  max_open_issues: 0           # zero open recommendations/issues remaining
+  max_high_priority: 0         # zero high-priority recommendations remaining
+  forbid_truncated: true       # a truncated run can never be perfect (M7)
+  # --- RESERVED — enforced elsewhere, NOT read by ledger.py (documented here) ---
+  require_executed: true       # RESERVED: verdict_obj.executed is MODEL-SUPPLIED, so the
+                               #   predicate deliberately does NOT trust it (would be
+                               #   self-grading). Honesty is enforced by require_mode+forbid_truncated.
+  t1_bar: 70                   # RESERVED: the tier-1 floor is enforced by quest-validation CI
+                               #   (--fail-threshold 70) + the M1 no-regression gate in quest-fix.yml,
+                               #   not by ledger.py (the agentic evidence does not carry tier-1 scores).
+  t2_pass: 80                  # RESERVED: matches the agentic pass band (schema.DEFAULT_PASS_THRESHOLD),
+                               #   which already determines each quest's pass/warn/fail verdict.
+
+# -----------------------------------------------------------------------------
+# history — per-slice append-only event log retention.
+# -----------------------------------------------------------------------------
+history:
+  cap: 10                      # keep the last N events per slice (walk + fix)
+
+# -----------------------------------------------------------------------------
+# selection — RESERVED / documentation. `ledger.py select` hard-codes the
+# priority order (cold-start → not-perfect → not-stuck → worst verdict → lowest
+# average → oldest); these keys describe that behavior but are not read. The
+# perfect-skip window that IS enforced lives in .quests/budget.yml
+# (skip_perfect_within_days), read by quest-perfection.yml.
+# -----------------------------------------------------------------------------
+selection:
+  strategy: priority           # (reserved) worst/oldest not-perfect slice first — hard-coded in select
+  skip_perfect_within_days: 7  # (reserved) the ENFORCED copy is in budget.yml
+  rewalk_failing: true         # (reserved) failing/open slices are always re-selected
+
+# -----------------------------------------------------------------------------
+# fix — the write/fix lane (circuit breaker, M6).
+# -----------------------------------------------------------------------------
+fix:
+  max_fix_rounds: 3            # after N fix rounds without becoming perfect, mark stuck/needs_human

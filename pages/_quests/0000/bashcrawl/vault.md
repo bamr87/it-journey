@@ -61,7 +61,7 @@ layout: quest
 redirect_from:
 - /quests/0000/side-quests/vault/
 ---
-*Behind a heavy iron door, the Vault holds the dungeon's most powerful secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
+*Behind a heavy iron door, the Vault holds the dungeon's most closely guarded secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
 
 ## 🕹️ Play This Chamber
 
@@ -78,7 +78,7 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] Survive the ghost encounter in the lab
 - [ ] Collect the vault key fragment
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Emerald amulet in inventory

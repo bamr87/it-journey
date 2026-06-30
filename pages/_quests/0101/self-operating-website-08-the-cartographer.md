@@ -246,7 +246,7 @@ Workaround for platform bug; remove when upstream lands.
 Tracking: bamr87/zer0-mistakes#<n>"
 ```
 
-If you wire the tracking note into an automated workflow that re-checks the upstream issue, you'll see GitHub Actions expression syntax like the block below. (The `{% raw %}`/`{% endraw %}` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
+If you wire the tracking note into an automated workflow that re-checks the upstream issue, you'll see GitHub Actions expression syntax like the block below. (The `raw`/`endraw` tags are Jekyll escapes for this site's renderer — omit them when you copy the YAML into your own `.github/workflows/`.)
 
 {% raw %}
 ```yaml

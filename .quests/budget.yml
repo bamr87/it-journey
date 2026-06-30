@@ -1,0 +1,29 @@
+# =============================================================================
+# .quests/budget.yml — loop backpressure for the quest-perfection loop
+# -----------------------------------------------------------------------------
+# Clamps autonomous throughput to HUMAN REVIEW SPEED (mirrors .issues/budget.yml
+# and lifehacker.dev's _data/fleet/budget.yml). The orchestrator refuses to open
+# new fix PRs once `max_open_quest_prs` auto:content quest-fix PRs are already
+# awaiting review — so the loop can never bury the one human reviewer. These caps
+# bound a single run; the daily cadence + circuit breaker (config.fix
+# .max_fix_rounds, M6) bound the longer arc.
+# =============================================================================
+
+# ENFORCED by quest-perfection.yml's matrix step:
+caps:
+  max_walkthroughs_per_run: 6   # at most N (character, level) slices walked per run (one per path)
+  max_fix_prs_per_run: 3        # at most N auto:content quest-fix PRs proposed per run
+  max_open_quest_prs: 6         # never open new fix PRs once N are already awaiting review
+  skip_perfect_within_days: 7   # don't re-walk a slice certified perfect in the last N days
+  plan_max_age_minutes: 1440    # RESERVED — not yet enforced (plans are rebuilt each run)
+
+# RESERVED / documentation only — the orchestrator hard-codes this behavior in its
+# matrix step (it does NOT read this block): once open quest-fix PRs reach
+# max_open_quest_prs it stops granting open_new_fix_prs for the run (walk + ledger
+# continue, no new write pressure); otherwise it grants up to
+# min(max_open_quest_prs - open, max_fix_prs_per_run) of the run's slices.
+policy:
+  backlog_heavy:
+    open_new_fix_prs: false
+  normal:
+    open_new_fix_prs: true

@@ -51,6 +51,71 @@ backpressure (`.issues/budget.yml`) so the loop never buries the reviewer. See
 Closing bot-noise is double-gated on `ISSUE_AUTOCLOSE_ENABLED`; a **human-authored
 issue is never auto-closed** (the engine downgrades it to `needs-human`).
 
+## The quest walkthrough (end-to-end validation → report)
+
+The validation arm of the fleet: instead of improving content, it *plays* the
+curriculum to find out whether it actually works. A deterministic planner
+(`scripts/quest/walkthrough_plan.py`) picks ONE coherent slice — a character class
+at a binary level, date-rotated so a daily run sweeps everything over time — and
+resolves its **linked, dependency-ordered set of quests** from the same data the
+site renders from (`_data/quests/network.yml` + `paths.yml`). The `quest-walker`
+agent then walks that set **end-to-end in the disposable runner sandbox as if it
+were a learner**, running quest commands for real via the existing execute engine
+(`test/quest-validator/agentic_validate.py`), and writes ONE evidence-based session
+report (evidence, issues, reasoning) to `test/quest-validator/walkthroughs/`.
+
+| Workflow | Trigger | Agent | What it does | Gate variable |
+|---|---|---|---|---|
+| `quest-walkthrough.yml` | daily 10:00 UTC + dispatch | `quest-walker` | plays one linked (character, level) quest slice end-to-end in a sandbox, opens one report PR (`quest-walkthrough` label) for human review | `QUEST_WALKTHROUGH_ENABLED` |
+
+The procedure is the **`quest-walkthrough`** skill (plan → execute → walk the chain →
+one report); locally the same loop runs via `make quest-walkthrough`
+(`make quest-walkthrough-plan` previews the slice with no AI/cost). The agent is
+read-only over content — it **never edits a quest and never merges**; fixable bugs
+land in the report's issues section for a content pass or a human. Each run also
+uploads **session screenshots** — every walked quest's rendered page (mobile +
+desktop) plus a terminal render of its recorded command transcript
+(`scripts/quest/walkthrough_screenshots.mjs`) — as run artifacts for review. See
+[`test/quest-validator/walkthroughs/README.md`](../../test/quest-validator/walkthroughs/README.md)
+for the report contract.
+
+## The quest-perfection loop (walk → fix → ledger, until perfect)
+
+The walkthrough arm only *witnesses* where the curriculum breaks; the perfection
+loop closes that gap by *repairing* it, autonomously, until every (character,
+level) slice is perfect. A daily orchestrator (`quest-perfection.yml`) fans out
+over all six character paths and, per path, picks the highest-priority
+not-yet-perfect slice from the committed ledger.
+
+- **Walk arm** — `quest-walkthrough.yml` plays the selected slice and emits its
+  evidence (`scripts/quest/ledger.py update` merges it and recomputes "perfect" —
+  which requires an honest `execute`-mode, non-truncated, fully-scored run).
+- **Fix arm** — `quest-fix.yml` runs the `quest-fix` agent over that slice's
+  *verified* issues, keeping an edit **only** when a deterministic signal improves
+  (tier-1 structural score holds/rises **and** `brand_lint` stays clean **and** no
+  sandbox command regresses) — never because the model graded its own work up. It
+  opens a **separate** content-only fix PR (`auto:content` + `auto:quest-fix` +
+  `automated`), runs `make quest-data` (failing on uncommitted `_data/quests`
+  drift), refuses to touch vendored (`source_repo`/`source_url`) quests, and
+  hard-fails without a PAT so the PR's required checks actually fire.
+- **Ledger** — `scripts/quest/ledger.py` is the one deterministic source of truth
+  (`.quests/ledger.json`, committed; `.quests/DASHBOARD.md` generated). It tracks
+  per-slice state, `fix-update` bumps a fix round without ever certifying perfect,
+  and a circuit breaker marks a slice `needs_human` after `max_fix_rounds` (default
+  3) fixes that never reached perfect. Ledger commits ride the **walkthrough report
+  PR**, never the fix PR (which is content-only).
+
+Staged kill switches (all OFF): `QUEST_PERFECTION_ENABLED` (the orchestrator),
+`QUEST_FIX_ENABLED` (the write/fix lane), with the existing
+`QUEST_WALKTHROUGH_ENABLED` (walk arm) and `CONTENT_AUTOMERGE_ENABLED` (gates the
+fix PR through `content-auto-merge.yml`). Locally: `make quest-perfection-plan`,
+`make quest-fix CHARACTER=… LEVEL=…`, `make quest-ledger-dashboard`.
+
+**Safety note:** `result.verdict_obj.executed` is model-supplied, so fully
+hands-off auto-merge of *fix* PRs stays gated (behind `CONTENT_AUTOMERGE_ENABLED`)
+until a harness-stamped execution proof exists — even though the loop already
+requires execute mode + a non-truncated run to certify perfect.
+
 ## The frontend canary (theme bugs → upstream)
 
 | Workflow | Trigger | Agent | What it does | Gate variable |
@@ -65,7 +130,7 @@ defects (e.g. 404s on theme-injected `/tags/`, `/search.json`), and the
 Roles live in `.claude/agents/*.md`; procedures in `.claude/skills/` (the
 `content-curator` skill composes `cms-curator` + `brand-voice`; the `issue-triage`
 skill drives the issue-triager + issue-resolver; the `theme-scout` skill drives
-the frontend canary). Brand is anchored by `_data/brand/*` and enforced cheaply by
+the frontend canary; the `quest-walkthrough` skill drives the quest-walker). Brand is anchored by `_data/brand/*` and enforced cheaply by
 `scripts/ci/brand_lint.py`; the auto-merge guard is `scripts/ci/classify_changes.py`.
 
 ## Setup (required to turn it on)
@@ -95,6 +160,8 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set ISSUE_AUTOMERGE_ENABLED   --body true --repo bamr87/it-journey
    # frontend canary
    gh variable set THEME_SCOUT_ENABLED       --body true --repo bamr87/it-journey
+   # quest walkthrough (end-to-end validation)
+   gh variable set QUEST_WALKTHROUGH_ENABLED --body true --repo bamr87/it-journey
    ```
 
    The theme scout also needs a cross-repo PAT to file upstream:

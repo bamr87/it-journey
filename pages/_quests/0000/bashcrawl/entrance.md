@@ -73,12 +73,20 @@ This page is your **walkthrough and strategy guide** — play right here in the 
 - [ ] List the dungeon entrance contents with `ls` and `ls -F`
 - [ ] Read the entrance scroll with `cat`
 - [ ] Ask Merlin for a hint with the `merlin` command
-- [ ] Collect the brass key and move to the cellar
+- [ ] Find the brass key clue in the scroll and move to the cellar
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - A terminal with Bash (macOS, Linux, or WSL)
 - Bashcrawl installed or running at [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/)
+
+To play locally (and unlock the `merlin` and `quest` commands), clone the dungeon and enter the game shell:
+
+```bash
+git clone https://github.com/bamr87/bashcrawl
+cd bashcrawl
+./main.sh --interactive
+```
 
 ## ⚡ Command Cheatsheet
 
@@ -126,6 +134,8 @@ cat scroll
 
 The scroll contains the first piece of the dungeon's story and a clue about the brass key. Read it carefully — items and hints mentioned here matter later.
 
+The **brass key** is part of the story you uncover by reading the scroll — there is no separate `take key` command to run. Simply reading the scroll and following its clue arms you for the next chamber; the key travels with you as you descend into the cellar.
+
 ### Step 4 — Ask Merlin
 
 ```bash
@@ -157,6 +167,7 @@ Congratulations — you have left the entrance. Continue to the [Cellar walkthro
 | Problem | Cause | Fix |
 |---------|-------|-----|
 | `command not found: merlin` | Not in the game shell | Run `./main.sh --interactive` first |
+| `command not found: quest` | Not in the game shell | Run `./main.sh --interactive` first |
 | `No such file: scroll` | Wrong directory | Run `pwd`; navigate to ENTRANCE with `cd` |
 | `ls` shows nothing | Empty directory | Make sure you are in ENTRANCE, not `/` |
 | Path has spaces | Rare edge case | Wrap in quotes: `cd "my dir"` |
@@ -168,6 +179,7 @@ Before marking this side-quest complete, verify:
 - [ ] You can explain what `pwd` returns without running it
 - [ ] You know the difference between `ls` and `ls -F`
 - [ ] You read the scroll and understand its clue
+- [ ] You found the brass key clue in the scroll (it travels with you — no `take` command needed)
 - [ ] You successfully navigated into cellar
 
 ## ➡️ Next Steps
