@@ -65,11 +65,11 @@ redirect_from:
 - /quests/0010/testing-quests-with-recursive-questing/
 layout: quest
 ---
-*Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge powerful unit tests, and summon AI guardians that think in layered patterns.*
+*Greetings, brave code wizard! Welcome to the **Recursive Realms** - a mystical 🟡 Medium journey where ancient towers stretch infinitely. In this quest, you'll master recursion, forge unit tests that catch infinite loops, and summon AI guardians that think in layered patterns.*
 
 ### 🌟 The Legend Behind This Quest
 
-*In the vast digital realm, recursion is one of the most powerful arts. Like an ancient tower containing smaller versions of itself, recursive functions elegantly solve complex problems.*
+*In the vast digital realm, recursion solves a problem by calling itself on a smaller version of that problem. Like an ancient tower containing smaller versions of itself, recursive functions elegantly solve complex problems.*
 
 *But beware! Without proper base cases and testing, recursive spells spiral into infinite chaos. This quest teaches you to harness recursion's power while avoiding its deadly pitfalls.*
 
@@ -77,14 +77,14 @@ layout: quest
 
 ### Primary Objectives (Required for Quest Completion)
 - [ ] **Recursion Fundamentals** - Understand base cases, recursive cases, and call stack management
-- [ ] **Comprehensive Unit Testing** - Build test suites that validate recursive functions  
+- [ ] **Unit Testing** - Build test suites that cover base cases, recursive cases, and invalid inputs  
 - [ ] **Stack Overflow Prevention** - Implement safeguards against infinite recursion
 - [ ] **AI Integration Patterns** - Apply recursive thinking to AI system design
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
 - [ ] Write recursive functions with proper base and recursive cases
-- [ ] Create comprehensive test suites for recursive algorithms
+- [ ] Create test suites covering base cases, recursive cases, and edge cases for recursive algorithms
 - [ ] Debug stack overflow errors efficiently
 - [ ] Apply recursive patterns to AI system design
 
@@ -226,7 +226,7 @@ pytest test_factorial.py --cov=factorial --cov-report=term-missing
 **Requirements**:
 - [ ] Create `fibonacci.py` with a recursive Fibonacci function
 - [ ] Handle base cases: fib(0) = 0, fib(1) = 1
-- [ ] Create `test_fibonacci.py` with comprehensive tests
+- [ ] Create `test_fibonacci.py` covering base cases, recursive cases, and invalid inputs
 - [ ] Test at least 10 different inputs
 
 **Success Criteria**:

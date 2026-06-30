@@ -210,7 +210,7 @@ Become a master of user interfaces and digital aesthetics
 
 Reference materials and navigation aids
 
-- [🗺️ World Map](/quests/codex/world-map/) - This comprehensive navigation guide
+- [🗺️ World Map](/quests/codex/world-map/) - This guide to every quest, doc, and learning path
 - [📖 Glossary](/quests/codex/glossary/) - Dictionary of Digital Spells and Terms
 
 #### 🕰️ Recent Quest Chronicles (2025)
@@ -225,10 +225,10 @@ Reference materials and navigation aids
 
 ## 📚 Library Domain - The Sacred Repository of Knowledge
 
-*Deep knowledge repositories and comprehensive documentation for when you need to go deeper.*
+*Reference docs and step-by-step guides for when you need to go deeper.*
 
 **Location:** `/docs/`  
-**Purpose:** Comprehensive guides, references, and architectural blueprints
+**Purpose:** Step-by-step guides, references, and architectural blueprints
 
 ### 🏛️ Library Collections
 
@@ -238,7 +238,7 @@ Reference materials and navigation aids
 | **🏗️ Architecture Guides** | `/docs/architecture/` | System Design | Blueprints and patterns |
 | **📋 Configuration Codex** | `/docs/config/` | Setup Guides | System and tool configurations |
 | **🔍 Reference Materials** | `/docs/reference/` | Quick Lookup | APIs, syntax, and commands |
-| **📖 Comprehensive Guides** | `/docs/guides/` | Deep Dives | Step-by-step tutorials |
+| **📖 Step-by-Step Guides** | `/docs/guides/` | Deep Dives | Step-by-step tutorials |
 
 ### 🗂️ Documentation Categories
 

@@ -216,7 +216,7 @@ Design and implement a devops solution that:
 - [ ] Solves a practical, real-world problem
 - [ ] Demonstrates advanced docker techniques
 - [ ] Incorporates security and scalability considerations
-- [ ] Includes comprehensive testing and documentation
+- [ ] Includes unit tests, integration tests, and setup documentation
 
 *Estimated time: Varies based on scope and complexity*
 

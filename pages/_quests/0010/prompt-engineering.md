@@ -511,7 +511,7 @@ Solution: [AI provides corrected code with empty list check]"
 
 **CoT PDCA Application**:
 When using CoT, apply Kaizen to the reasoning steps themselves:
-- **Plan**: Are the steps comprehensive?
+- **Plan**: Do the steps cover every part of the problem?
 - **Do**: Run the CoT prompt
 - **Check**: Did the AI follow all steps? Did it skip any?
 - **Act**: Add missing steps or clarify vague ones
@@ -1341,7 +1341,7 @@ Confirm your mastery by demonstrating:
 ### 📚 Additional Resources
 
 **Prompt Engineering Research & Techniques**:
-- [Prompt Engineering Guide](https://www.promptingguide.ai/) - Comprehensive technique reference
+- [Prompt Engineering Guide](https://www.promptingguide.ai/) - Reference covering zero-shot, few-shot, CoT, and advanced techniques
 - [OpenAI Best Practices](https://platform.openai.com/docs/guides/prompt-engineering) - Official guidance from OpenAI
 - [Anthropic Prompt Engineering](https://docs.anthropic.com/claude/docs/prompt-engineering) - Claude-specific techniques
 

@@ -96,7 +96,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*The elders of computing grew weary of formats that were powerful but unreadable - XML with its endless angle brackets, JSON with its strict commas and braces. They wanted a config language a human could read at a glance and write without ceremony. So **YAML** - "YAML Ain't Markup Language" - was forged: indentation for structure, plain words for keys and values, almost no punctuation. Today it configures Jekyll, GitHub Actions, Docker Compose, Kubernetes, and half the tools you will ever use.*
+*The elders of computing grew weary of formats that could describe any structure but were a chore to read - XML with its endless angle brackets, JSON with its strict commas and braces. They wanted a config language a human could read at a glance and write without ceremony. So **YAML** - "YAML Ain't Markup Language" - was forged: indentation for structure, plain words for keys and values, almost no punctuation. Today it configures Jekyll, GitHub Actions, Docker Compose, Kubernetes, and half the tools you will ever use.*
 
 *Learn YAML once, here, and you carry the skill into every future quest in the realm.*
 

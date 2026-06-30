@@ -99,7 +99,7 @@ By completing this quest, you will:
 - [ ] **Install and configure VS Code** across different operating systems
 - [ ] **Master essential extensions** for enhanced productivity
 - [ ] **Customize your workspace** for optimal workflow
-- [ ] **Learn powerful shortcuts** that separate novices from pros
+- [ ] **Learn keyboard shortcuts** that separate novices from pros
 - [ ] **Set up domain-specific environments** (Web, Python, Data Science, etc.)
 - [ ] **Configure debugging and testing** capabilities
 - [ ] **Integrate version control** with Git
@@ -776,7 +776,7 @@ Now that you've mastered VS Code, consider these advanced quests:
 
 ---
 
-*Congratulations, brave code warrior! You have successfully forged VS Code into your ultimate development weapon. With this powerful tool at your command, no coding challenge shall stand in your way. Your journey to IT mastery continues—may your code be bug-free and your deployments successful!* ⚔️✨
+*Congratulations, brave code warrior! You have successfully forged VS Code into your ultimate development weapon. With a fully configured editor at your command, no coding challenge shall stand in your way. Your journey to IT mastery continues—may your code be bug-free and your deployments successful!* ⚔️✨
 
 **Achievement Unlocked: VS Code Master** 🏆  
 *Continue your adventure with the next quest in your chosen specialization path!*

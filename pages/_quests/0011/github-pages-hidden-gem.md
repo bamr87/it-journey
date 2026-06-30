@@ -194,7 +194,7 @@ Jekyll is a static site generator that converts Markdown files into HTML website
 
 Before delving into the gem's depths, sharpen your blade: Install VS Code, the ultimate forge for coders and chroniclers alike. Download it from the official scrolls (code.visualstudio.com) and summon these essential extensions to amplify your powers:
 
-1. **GitHub Pull Requests and Issues** – Your portal to GitHub's heart, for seamless pushing and pulling.
+1. **GitHub Pull Requests and Issues** – Your portal to GitHub's heart, for pushing and pulling without leaving the editor.
 2. **Markdown All in One** – Enhances Markdown editing, previews, and exports—perfect for AI chat logs.
 3. **GitLens** – Reveals commit histories like ancient runes, tracking every change in your quest log.
 4. **Live Server** – Launches local previews of your site, simulating the web realm before deployment.
@@ -210,7 +210,7 @@ With VS Code ready, create a new GitHub account if you lack one (github.com/sign
 ### 🏗️ Building Your Knowledge Foundation
 
 **VS Code Extensions for This Quest:**
-- **GitHub Pull Requests and Issues**: Enables seamless GitHub integration
+- **GitHub Pull Requests and Issues**: Review PRs and issues directly in VS Code
 - **Markdown All in One**: Provides enhanced Markdown editing capabilities
 - **GitLens**: Offers advanced Git history and blame features
 - **Live Server**: Allows local preview of HTML/Markdown files
@@ -386,7 +386,7 @@ Test the waters: Update a chat log, commit/push—watch it refresh live. Collabo
 - [ ] Plugins are working (verify RSS feed, sitemap, etc.)
 
 ### 🏆 Master Challenge: Multi-Post AI Chronicles (🕐 60 minutes)
-**Objective**: Create a comprehensive collection of AI conversations
+**Objective**: Create a multi-post collection of AI conversations
 
 **Requirements**:
 - [ ] Capture and publish at least 3 different AI conversations

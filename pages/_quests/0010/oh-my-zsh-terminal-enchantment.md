@@ -102,7 +102,7 @@ mermaid: true
 ---
 ## 🌟 The Legend of Terminal Enchantment
 
-*In the vast digital realms where developers forge their code, there exists a legendary framework known as Oh-My-Zsh. This ancient artifact transforms the humble terminal from a mere tool into a powerful weapon of productivity. Like a master blacksmith who takes raw iron and crafts it into an exquisite sword, Oh-My-Zsh takes the basic Zsh shell and enchants it with themes, plugins, and magical enhancements that make every command a spell of efficiency.*
+*In the vast digital realms where developers forge their code, there exists a legendary framework known as Oh-My-Zsh. This ancient artifact transforms the humble terminal from a mere tool into a weapon of productivity, scripting repetitive commands into single keystrokes. Like a master blacksmith who takes raw iron and crafts it into an exquisite sword, Oh-My-Zsh takes the basic Zsh shell and enchants it with themes, plugins, and magical enhancements that make every command a spell of efficiency.*
 
 *But beware, brave adventurer! This quest requires you to investigate mysterious installation scripts and venture into the depths of shell configuration. Only those who master the art of terminal enchantment will emerge with the power to command their development environment like a true sorcerer of code. Throughout this journey, you'll use VS Code as your primary tool for examining files, editing configurations, and understanding the code that powers your terminal enhancements.*
 
@@ -1053,7 +1053,7 @@ echo "=== FINAL SCORE: $score / 100 ==="
 
 ## ✨ Bonus Enchantment: Forge a Glamorous Terminal Interface with Charm
 
-*A true terminal sorcerer doesn't stop at aliases and plugins — they conjure entire interactive realms from a single shell script. The [Charm](https://charm.sh/) guild forged a set of artifacts that make the command line glamorous, letting you weave menus, prompts, and beautifully rendered scrolls without ever leaving the terminal. In this bonus enchantment you'll summon two of their most powerful relics and bind them into a custom dashboard for navigating the IT-Journey realm itself.*
+*A true terminal sorcerer doesn't stop at aliases and plugins — they conjure entire interactive realms from a single shell script. The [Charm](https://charm.sh/) guild forged a set of artifacts that make the command line glamorous, letting you weave menus, prompts, and beautifully rendered scrolls without ever leaving the terminal. In this bonus enchantment you'll summon two of their relics — Gum and Glow — and bind them into a custom dashboard for navigating the IT-Journey realm itself.*
 
 ### ⚔️ Skills You'll Forge in This Enchantment
 
@@ -1410,7 +1410,7 @@ graph LR
 
 *Congratulations, brave terminal adventurer! You have successfully completed the Oh-My-Zsh Mastery Quest using VS Code as your primary development companion. Your terminal is now enchanted with the power of advanced customization, plugin integration, and smooth VS Code synergy. The ancient arts of shell mastery are now yours to command, and your development workflow will never be the same. May your future coding adventures be filled with efficiency, elegance, and the perfect harmony between VS Code and your enhanced terminal!*
 
-*Remember: A true terminal sorcerer never stops learning. The Oh-My-Zsh ecosystem evolves constantly, and there are always new plugins, themes, and techniques to discover. Continue your journey, share your knowledge with fellow adventurers, and may your commands always execute flawlessly within the powerful embrace of VS Code!*
+*Remember: A true terminal sorcerer never stops learning. The Oh-My-Zsh ecosystem evolves constantly, and there are always new plugins, themes, and techniques to discover. Continue your journey, share your knowledge with fellow adventurers, and may your commands always execute flawlessly within the embrace of VS Code!*
 
 🏆 Quest Completed: Level 0010 (10) - Terminal Enchantment: Oh-My-Zsh Mastery
 

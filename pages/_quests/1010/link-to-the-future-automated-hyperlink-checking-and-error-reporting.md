@@ -87,7 +87,7 @@ By the time you complete this epic automation journey, you will have mastered:
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
-- [ ] Explain how automated testing fits into a comprehensive DevOps strategy
+- [ ] Explain how automated testing fits into a full CI/CD DevOps strategy
 - [ ] Customize the guardian system for different types of Jekyll sites and requirements
 - [ ] Troubleshoot and optimize the workflow for performance and reliability
 - [ ] Extend the AI analysis with additional intelligence and reporting capabilities
@@ -133,13 +133,13 @@ npm install -g markdown-link-check
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Understanding different types of links in Jekyll sites (internal, external, anchor links)
-- Building comprehensive link extraction algorithms
+- Building link extraction algorithms that cover Markdown, HTML, and reference-style links
 - Handling edge cases and complex URL patterns
 - Creating configurable and maintainable scanning logic
 
 ### 🏗️ Building Your Link Detection Foundation
 
-The first enchantment we'll craft is a powerful script that can discover every hyperlink hidden throughout your Jekyll domain. This isn't merely about finding obvious Markdown links - we need to detect links in HTML, frontmatter, data files, and even dynamically generated content.
+The first enchantment we'll craft is a Bash script that can discover every hyperlink hidden throughout your Jekyll domain. This isn't merely about finding obvious Markdown links - we need to detect links in HTML, frontmatter, data files, and even dynamically generated content.
 
 ```bash
 #!/bin/bash
@@ -390,7 +390,7 @@ fi
 - [ ] How does parallel processing improve the efficiency of link testing?
 
 ### ⚡ Quick Wins and Checkpoints
-*You've successfully created a powerful link detection spell! Test it locally with a small subset of your site before deploying the full automation.*
+*You've successfully created a link detection spell that scans Markdown and HTML, normalizes URLs, and tests them in parallel! Test it locally with a small subset of your site before deploying the full automation.*
 
 ## 🧙‍♂️ Chapter 2: GitHub Actions Automation Orchestration
 
@@ -402,7 +402,7 @@ fi
 
 ### 🏗️ Building Your Automated Guardian Workflow
 
-Now we'll weave the automation spell that transforms your link testing script into a tireless guardian that watches over your digital realm. This GitHub Actions workflow will run daily, execute comprehensive scans, and prepare data for AI analysis.
+Now we'll weave the automation spell that transforms your link testing script into a tireless guardian that watches over your digital realm. This GitHub Actions workflow will run daily, scan every link across the site, and prepare data for AI analysis.
 
 ```yaml
 # .github/workflows/hyperlink-guardian.yml
@@ -1100,7 +1100,7 @@ class HyperlinkIntelligenceEngine:
         return patterns
     
     def generate_ai_analysis(self, scan_data: Dict) -> Dict:
-        """Generate comprehensive AI analysis of link health"""
+        """Generate AI analysis of link health across all broken-link categories"""
         
         # Prepare data for AI analysis
         broken_links = scan_data['summary'].get('broken_link_details', [])
@@ -1239,7 +1239,7 @@ class HyperlinkIntelligenceEngine:
             }
     
     def generate_actionable_report(self, analysis_result: Dict, scan_data: Dict) -> str:
-        """Generate a comprehensive, actionable report for GitHub issues"""
+        """Generate a detailed, actionable report for GitHub issues"""
         
         summary = scan_data['summary']
         repo_context = scan_data['repository_context']

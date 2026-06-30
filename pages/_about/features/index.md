@@ -22,7 +22,7 @@ quest: /quests/featured-future/
 ---
 ## Educational Features
 
-These are the learning-focused features that make IT-Journey a comprehensive educational platform.
+These are the learning-focused features that make IT-Journey an end-to-end educational platform, from interactive quests to documentation, search, and community tools.
 
 ### 🎓 Learning & Content Features
 
@@ -40,7 +40,7 @@ These are the learning-focused features that make IT-Journey a comprehensive edu
 {: .table .table-bordered .table-striped .table-hover .table-responsive}
 | Feature                                               | Status      | Description |
 | ----------------------------------------------------- | ----------- | ----------- |
-| **Comprehensive Documentation**                       | ✅ Active   | Detailed guides and tutorials |
+| **Step-by-Step Documentation**                        | ✅ Active   | Detailed guides and tutorials |
 | **AI-Generated Documentation**                        | ✅ Active   | Automated content updates and summaries |
 | **Code Examples & Snippets**                          | ✅ Active   | Practical code demonstrations |
 | **Programming Language Cheat Sheets**                 | ✅ Active   | Quick reference guides |

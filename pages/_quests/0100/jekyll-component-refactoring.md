@@ -392,7 +392,7 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 
 ## 🏆 Quest Completion
 
-*Congratulations, artisan! You have forged two powerful improvements:*
+*Congratulations, artisan! You have forged two reusable, config-driven improvements:*
 
 1. **A modular, config-driven nanobar** — extracted from inline code into a clean include + stylesheet + config pattern
 2. **A full-width footer fix** — freed from constraining containers so its background stretches to the viewport edges

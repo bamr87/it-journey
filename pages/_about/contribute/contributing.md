@@ -22,13 +22,13 @@ redirect_from:
 ---
 # Contributing to IT-Journey
 
-Welcome, adventurer! 🎯 IT-Journey thrives on community collaboration. Whether you're fixing a typo, creating epic quests, or building powerful tools, your contribution matters.
+Welcome, adventurer! 🎯 IT-Journey thrives on community collaboration. Whether you're fixing a typo, creating epic quests, or building developer tools, your contribution matters.
 
 ## 🚀 Quick Start for New Contributors
 
 **Never contributed to open source before?** Perfect! Start here:
 
-1. **Read the Full Guide**: Check our comprehensive [Contributing Guide](https://github.com/bamr87/it-journey/blob/main/CONTRIBUTING.md) on GitHub
+1. **Read the Full Guide**: Check the end-to-end [Contributing Guide](https://github.com/bamr87/it-journey/blob/main/CONTRIBUTING.md) on GitHub — it walks the whole workflow from setup to merged PR
 2. **Pick Your Adventure**: Choose from content creation, code contributions, documentation, or community support
 3. **Setup Your Environment**: Follow our [Development Setup Guide](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)
 4. **Make Your First Contribution**: Start with something small like fixing a typo or improving documentation

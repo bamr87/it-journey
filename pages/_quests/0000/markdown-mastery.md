@@ -432,7 +432,7 @@ Everything below the closing `---` is your normal Markdown body. The engine read
 
 ## 📚 References & Resources
 
-- [Markdown Guide — Comprehensive Reference](https://www.markdownguide.org/)
+- [Markdown Guide — Syntax Reference with Basic and Extended Cheat Sheets](https://www.markdownguide.org/)
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [CommonMark Specification](https://commonmark.org/)
 - [Dillinger — Online Markdown Editor](https://dillinger.io/)

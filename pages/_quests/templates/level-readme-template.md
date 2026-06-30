@@ -371,7 +371,7 @@ Rate your confidence (1-5) in each area:
 
 **If you want more practice**:
 - Revisit quests with **higher difficulty** implementations
-- Complete all **side quests** for comprehensive mastery
+- Complete all **side quests** to cover every skill area in this level
 - Take on **bonus quests** for advanced challenges
 - Create your own **variant quests** to solidify learning
 

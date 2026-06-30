@@ -90,7 +90,7 @@ redirect_from:
 ### Secondary Objectives (Bonus Achievements)
 - [ ] **Build a combat system** — Create enemy encounters with attack/run mechanics
 - [ ] **Add ASCII art and UI polish** — Improve the visual presentation of the game
-- [ ] **Create a comprehensive tutorial** — Help new players learn the game mechanics
+- [ ] **Create a step-by-step tutorial** — Help new players learn the game mechanics
 - [ ] **Write unit tests for game functions** — Validate game logic with automated tests
 
 ### Mastery Indicators

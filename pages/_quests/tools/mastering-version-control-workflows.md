@@ -437,7 +437,7 @@ You've just finished a feature that adds dark mode to the site. Write a complete
 
 ## 🧙‍♂️ Chapter 4: Release Orchestration — The Grand Ritual
 
-*The most powerful spell in the version control codex is the **release**. It transforms a stream of commits into a versioned artifact that the world can depend on.*
+*The final spell in the version control codex is the **release**. It transforms a stream of commits into a versioned artifact that the world can depend on.*
 
 ### ⚔️ The Release Lifecycle
 

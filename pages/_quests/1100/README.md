@@ -129,7 +129,7 @@ Upon completing Level 1100 quests, you'll unlock:
 ## Next Level: Level 1110
 
 After Level 1100, advance to [Level 1110 - Quality Assurance](../1110/README.md) where you'll:
-- Build comprehensive testing systems
+- Build unit, integration, and end-to-end testing systems
 - Handle error scenarios gracefully
 - Create robust applications
 

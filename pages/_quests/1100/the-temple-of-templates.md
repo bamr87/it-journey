@@ -426,7 +426,7 @@ graph TD
 
 ---
 
-### 🧠 Knowledge Check (Comprehensive)
+### 🧠 Knowledge Check
 
 Before you depart the temple, ensure you can explain:
 

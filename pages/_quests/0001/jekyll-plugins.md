@@ -85,7 +85,7 @@ layout: quest
 redirect_from:
 - /quests/0011/jekyll-plugins/
 ---
-*Greetings, brave adventurer! Welcome to **Jekyll Plugins** - the quest where you teach the static-site engine new spells. Jekyll out of the box is powerful, but plugins are how it becomes truly yours: they add SEO tags, sitemaps, feeds, image processing, and any custom logic you can imagine. A plugin runs during the build, so the cost is paid once and your visitors still receive plain, fast files.*
+*Greetings, brave adventurer! Welcome to **Jekyll Plugins** - the quest where you teach the static-site engine new spells. Jekyll out of the box turns Markdown and Liquid into static HTML, but plugins are how it becomes truly yours: they add SEO tags, sitemaps, feeds, image processing, and any custom logic you can imagine. A plugin runs during the build, so the cost is paid once and your visitors still receive plain, fast files.*
 
 *Whether you simply want to switch on the community's battle-tested gems or you are ready to write your own Ruby to generate pages, this adventure will teach you what plugins are, which ones GitHub Pages allows, how to configure the common ones, and how to forge a simple generator of your own.*
 

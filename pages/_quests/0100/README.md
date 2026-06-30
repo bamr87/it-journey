@@ -112,7 +112,7 @@ Advanced Docker patterns for frontend development including networking, volumes,
 #### [Frontend Development Quest](frontend.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 120-180 minutes
 
-Comprehensive frontend development covering HTML, CSS, JavaScript, and modern frameworks. Build responsive, interactive web applications.
+Frontend development covering HTML, CSS, JavaScript, and modern frameworks. Build responsive, interactive web applications.
 
 **Skills You'll Master:**
 - Modern HTML5 and CSS3 techniques

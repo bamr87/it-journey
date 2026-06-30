@@ -87,7 +87,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*In every age, the most powerful figures were rarely the strongest warriors - they were the ones who could stand before a council and make a hundred minds move as one. The scribe who wrote the clearest decree shaped more of the realm than the soldier who guarded the gate. Words, well-ordered, are a force multiplier no sword can match.*
+*In every age, the most influential figures were rarely the strongest warriors - they were the ones who could stand before a council and make a hundred minds move as one. The scribe who wrote the clearest decree shaped more of the realm than the soldier who guarded the gate. Words, well-ordered, are a force multiplier no sword can match.*
 
 *Engineering is the same. A staff engineer's leverage is mostly prose: the design docs, RFCs, and talks that align dozens of people before a single line of code is written. This quest teaches you to wield that quiet, decisive power.*
 

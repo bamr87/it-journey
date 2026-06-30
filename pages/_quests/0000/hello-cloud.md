@@ -116,7 +116,7 @@ Each Sky Kingdom offers unique powers. Pick one for your first expedition — yo
 |---------|-----------|----------|
 | **AWS** | Vast army of services, battle-tested | General-purpose cloud mastery |
 | **Azure** | Strong Microsoft alliance, enterprise fortifications | Windows-integrated workflows |
-| **GCP** | Elegant developer tools, powerful data magic | Data science and clean APIs |
+| **GCP** | Elegant developer tools, BigQuery analytics | Data science and clean APIs |
 
 This quest includes GCP helper scrolls (scripts) for a low-friction first adventure.
 
