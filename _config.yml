@@ -77,8 +77,6 @@ level                    : 'her0'
 maintainers:
   - name: *name
     profile: ["https://github.com", "/", *github_user]
-  - name: "Vacant"
-    profile: "/github.com"
 
 ## Personalization ----------------------------------------------------------------
 
