@@ -171,7 +171,7 @@ The discipline that separates a competent design from a leaky one is **scoping a
 - Implementing Tier 2 with artifact upload/download between jobs
 - Implementing Tier 3 with an agent-committed memory file
 
-The plan/act split is most powerful when the **plan** is a real, durable object rather than a fleeting chat turn. Here a `plan` job lets the agent (via the Copilot coding agent or a Models-API call) write a structured plan to disk, then **uploads it as an artifact**. A separate `act` job **downloads** that artifact and executes against it. The plan crossed a job boundary — Tier 2 session memory — without ever living in a database.
+The plan/act split survives restarts and reviews only when the **plan** is a real, durable object rather than a fleeting chat turn. Here a `plan` job lets the agent (via the Copilot coding agent or a Models-API call) write a structured plan to disk, then **uploads it as an artifact**. A separate `act` job **downloads** that artifact and executes against it. The plan crossed a job boundary — Tier 2 session memory — without ever living in a database.
 
 {% raw %}
 ```yaml
