@@ -39,7 +39,7 @@ Level 0011 quests focus on:
 | [Google Analytics for Jekyll: Complete User Tracking Integration Guide](/quests/0011/analytics-integration/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
 | Custom Domains for GitHub Pages: Professional Website Setup Guide | 🟡 Medium | 30-45 minutes | main_quest | 🔮 Placeholder |
 | [The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms](/quests/0011/github-pages-hidden-gem/) | 🟢 Easy | 60-90 minutes | main_quest | 🔮 Placeholder |
-| [Jekyll Plugins: Essential Extensions for Powerful Static Sites](/quests/0011/jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Jekyll Plugins: Essential Extensions for Static Sites](/quests/0011/jekyll-plugins/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [The PRD Codex: Mastering the Art of Product Reality Distillation](/quests/0011/prd-codex-mastery/) | 🟡 Medium | 45-60 minutes | main_quest | ✅ Complete |
 | [Forging the Prompt Crystal: VS Code Copilot Mastery Quest](/quests/0011/prompt-crystal-vscode-copilot/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
 | [SEO Optimization: Boost Search Engine Visibility for Jekyll Sites](/quests/0011/seo-optimization/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |

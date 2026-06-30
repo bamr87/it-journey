@@ -211,7 +211,7 @@ Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundam
 #### [Terminal Fundamentals](terminal-fundamentals.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 45-60 minutes
 
-Master the command line — the most powerful interface in any IT hero's arsenal. Learn to navigate the file system, manage files, and chain commands with pipes and redirection.
+Master the command line — the scriptable, chainable interface at the heart of every IT hero's arsenal. Learn to navigate the file system, manage files, and chain commands with pipes and redirection.
 
 **Skills You'll Master:**
 - File system navigation (cd, ls, pwd)

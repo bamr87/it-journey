@@ -269,7 +269,7 @@ summary = df.groupby("species").mean(numeric_only=True)
 print(summary)
 ```
 
-The **split-apply-combine** pattern (`groupby`) is the most powerful idea in pandas: split rows into groups, apply a function to each, and combine the results.
+The **split-apply-combine** pattern (`groupby`) is the workhorse of analysis in pandas: split rows into groups, apply a function to each, and combine the results into one table.
 
 ### 🔍 Knowledge Check: Pandas
 - [ ] What does `df.describe()` compute?

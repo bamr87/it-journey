@@ -93,7 +93,7 @@ mermaid: true
 
 ### 🌟 The Legend Behind This Quest
 
-In the mortal world of software development, teams often seek grand transformations: massive rewrites, revolutionary frameworks, sweeping organizational changes. Yet the ancient masters knew a deeper truth—that true power lies not in dramatic upheavals, but in the accumulation of countless small improvements, each building upon the last like drops of water carving through stone.
+In the mortal world of software development, teams often seek grand transformations: massive rewrites, wholesale framework switches, sweeping organizational changes. Yet the ancient masters knew a deeper truth—that true power lies not in dramatic upheavals, but in the accumulation of countless small improvements, each building upon the last like drops of water carving through stone.
 
 Kaizen (改善, "change for better") emerged from the post-war Japanese manufacturing renaissance, where Toyota and others discovered that empowering every worker to suggest and implement tiny improvements created systems of unprecedented efficiency and quality. This philosophy, when applied to software development, transforms how teams think, work, and evolve.
 

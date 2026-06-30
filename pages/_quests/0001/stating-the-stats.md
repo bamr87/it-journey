@@ -92,7 +92,7 @@ layout: quest
 draft: false
 mermaid: true
 ---
-*In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
+*In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a build-time Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 
 *By mastering the ancient arts of Jekyll data generation and Liquid templating, you'll create a living dashboard that automatically tracks content metrics, analyzes patterns, and presents statistics with Bootstrap-powered elegance. This portal will serve as a beacon for adventurers, showcasing the collective wisdom accumulated on their journey.*
 
@@ -180,7 +180,7 @@ You'll know you've truly mastered this quest when you can:
 
 ### 🏗️ Building Your Knowledge Foundation
 
-Jekyll provides powerful data management capabilities through YAML files stored in the `_data` directory. During the build process, Jekyll reads these files and makes them available to your templates via the `site.data` object.
+Jekyll loads YAML files stored in the `_data` directory and exposes them to your templates. During the build process, Jekyll reads these files and makes them available to your templates via the `site.data` object.
 
 **Why Use YAML Data Files?**
 - **Separation of Concerns**: Keep data separate from presentation
@@ -918,7 +918,7 @@ Your completed Stats Portal must demonstrate:
 ## 🎁 Quest Rewards and Achievements
 
 ### 🏆 Achievement Badges Earned
-- **Data Portal Architect** - Successfully built a comprehensive statistics portal
+- **Data Portal Architect** - Successfully built a statistics portal covering posts, words, categories, and tags
 - **Jekyll Analytics Master** - Mastered Jekyll data files and Liquid templating
 - **Bootstrap Visualizer** - Created responsive, styled data presentations
 
@@ -1058,7 +1058,7 @@ Liquid Exception: undefined method
 
 ---
 
-*Congratulations, Data Portal Architect! You've successfully mastered the art of Jekyll data analytics and visualization. Your Stats Portal now serves as a powerful window into the IT-Journey knowledge base, revealing insights and celebrating the community's collective wisdom. May your metrics always be accurate, your visualizations compelling, and your dashboards ever-informative!*
+*Congratulations, Data Portal Architect! You've successfully mastered the art of Jekyll data analytics and visualization. Your Stats Portal now serves as a live window into the IT-Journey knowledge base, revealing insights and celebrating the community's collective wisdom. May your metrics always be accurate, your visualizations compelling, and your dashboards ever-informative!*
 
 **Quest Status**: ✅ **COMPLETE**
 

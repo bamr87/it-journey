@@ -84,7 +84,7 @@ sub_title: 'Level 0010 (2) Quest: Terminal Frontend Building'
 draft: false
 mermaid: true
 ---
-*In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
+*In the raw chaotic energy of the command line, far-reaching spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that reach without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield destructive magic safely.*
 
 *Today, you will learn to craft these interfaces using **Gum**, a mystical artifact from the Charm realm that brings glamour and interactivity to your shell scripts.*
 
@@ -224,7 +224,7 @@ echo "Welcome, $NAME. Your secret is safe with me."
 
 ## 🧙‍♂️ Chapter 3: The Seal of Binding (Confirmation)
 
-*Powerful spells require safeguards. Before deleting a kingdom (or a file), an Artificer must ask: "Are you sure?"*
+*Destructive spells require safeguards. Before deleting a kingdom (or a file), an Artificer must ask: "Are you sure?"*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Creating confirmation dialogs.

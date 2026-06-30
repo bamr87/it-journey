@@ -100,7 +100,7 @@ sub_title: 'Level 001 Quest: Defining Your Digital Identity'
 Through this character-building adventure, you will:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **Define Your IT Persona** - Create a comprehensive character profile including strengths, interests, and goals
+- [ ] **Define Your IT Persona** - Create a character profile documenting your strengths, interests, and goals
 - [ ] **Choose Your Specialization Path** - Select primary and secondary areas of focus for your IT journey
 - [ ] **Design Your Development Environment** - Configure the tools and platforms that will support your growth
 - [ ] **Set Learning Milestones** - Establish clear, measurable goals for your advancement
@@ -207,7 +207,7 @@ Based on your responses, identify your primary IT archetype:
 **Strengths**:
 - Preferred in server and development environments
 - Open-source ecosystem with incredible customization
-- Powerful command-line tools and scripting capabilities
+- Scriptable command-line tools (bash, grep, sed, cron) for automation
 - Strong security and stability reputation
 
 **Best For**: Server administration, open-source development, DevOps, cybersecurity
@@ -219,7 +219,7 @@ Based on your responses, identify your primary IT archetype:
 - Unix-based environment with polished interface
 - Excellent for iOS and macOS development
 - Popular among creative professionals and developers
-- Seamless integration with Apple ecosystem
+- Handoff, AirDrop, and iCloud sync with other Apple devices
 
 **Best For**: Mobile app development, design work, content creation, full-stack development
 
@@ -294,7 +294,7 @@ Choose ONE secondary area to complement your primary focus:
 Choose your primary development environment:
 
 - **Visual Studio Code**: Versatile, extensible, great for web development
-- **IntelliJ IDEA**: Powerful for Java and enterprise development  
+- **IntelliJ IDEA**: Deep refactoring and debugging support for Java and enterprise development  
 - **PyCharm**: Specialized for Python development
 - **Sublime Text**: Lightweight and fast for various languages
 
@@ -374,7 +374,7 @@ Set up systems to monitor your advancement:
 ## 🏆 Quest Completion Validation
 
 ### Portfolio Artifacts Created
-- [ ] **Character Profile Document**: Comprehensive overview of your IT identity
+- [ ] **Character Profile Document**: A written overview of your IT identity covering strengths, interests, and goals
 - [ ] **Specialization Plan**: Detailed learning path with timelines and milestones
 - [ ] **Development Environment**: Fully configured and personalized workspace
 - [ ] **Goal Tracking System**: Framework for monitoring progress and achievements

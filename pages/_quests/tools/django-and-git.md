@@ -43,7 +43,7 @@ draft: false
 
 **A Magical Adventure with VS Code**
 
-🎩✨ Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than the powerful IDE known as **VS Code**?
+🎩✨ Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than **VS Code**, with its built-in terminal and Source Control panel?
 
 So, grab your wand (*ahem*, keyboard) and let's begin this magical journey! 🧙‍♂️🐍
 

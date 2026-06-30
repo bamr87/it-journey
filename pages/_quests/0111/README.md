@@ -64,7 +64,7 @@ By completing this level, adventurers will master:
 ### Skill Objectives
 - [ ] **API Design** - Create intuitive, consistent, and developer-friendly APIs
 - [ ] **Authentication Implementation** - Secure endpoints with modern auth patterns
-- [ ] **Documentation** - Generate comprehensive API docs with OpenAPI/Swagger
+- [ ] **Documentation** - Generate API docs covering endpoints, parameters, and example requests/responses with OpenAPI/Swagger
 
 ### Application Objectives
 - [ ] **Production APIs** - Build and deploy real-world API services

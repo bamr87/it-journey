@@ -232,7 +232,7 @@ print(edges.squeeze().round())
 # Strong responses appear where brightness changes left-to-right.
 ```
 
-Two ideas make convolutions powerful. **Parameter sharing**: the same small kernel scans the whole image, so a dense net's millions of weights collapse to a handful. **Translation tolerance**: an edge is detected wherever it appears. **Pooling** (e.g. max-pooling) then shrinks feature maps, keeping the strongest signal and discarding exact position - so the network recognizes a cat whether it sits left or right.
+Two ideas make convolutions efficient on images. **Parameter sharing**: the same small kernel scans the whole image, so a dense net's millions of weights collapse to a handful. **Translation tolerance**: an edge is detected wherever it appears. **Pooling** (e.g. max-pooling) then shrinks feature maps, keeping the strongest signal and discarding exact position - so the network recognizes a cat whether it sits left or right.
 
 ### 🔍 Knowledge Check: Convolutions
 - [ ] What does parameter sharing save compared to a dense layer?
@@ -312,7 +312,7 @@ After two short epochs this tiny model already classifies clothing with high acc
 
 ## 🧙‍♂️ Chapter 3: Transfer Learning - Standing on Giants
 
-*Training from scratch needs lots of data. **Transfer learning** reuses a model already trained on millions of images (like ResNet on ImageNet): keep its powerful feature extractor, replace only the final classification layer, and fine-tune. You get strong results from a few hundred images.*
+*Training from scratch needs lots of data. **Transfer learning** reuses a model already trained on millions of images (like ResNet on ImageNet): keep its feature extractor (already trained to detect edges, textures, and shapes that generalize across images), replace only the final classification layer, and fine-tune. You get strong results from a few hundred images.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Loading a pretrained model from torchvision

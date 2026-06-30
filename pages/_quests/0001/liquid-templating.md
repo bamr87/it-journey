@@ -94,7 +94,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*Long ago, the merchants of Shopify needed a safe way to let shopkeepers customize their storefront pages without handing them the keys to the whole engine. So they forged **Liquid** - a templating language powerful enough to loop, filter, and decide, yet sandboxed so a careless incantation could never break the server. Jekyll adopted Liquid, and today it is the lingua franca of static templating.*
+*Long ago, the merchants of Shopify needed a safe way to let shopkeepers customize their storefront pages without handing them the keys to the whole engine. So they forged **Liquid** - a templating language that can loop, filter, and decide, yet sandboxed so a careless incantation could never break the server. Jekyll adopted Liquid, and today it is the lingua franca of static templating.*
 
 *With Liquid you write a page once and let the data fill it in - a blog index that lists every post, a navigation menu built from a data file, a card that changes colour based on a value. Master it, and you wield the heart of every Jekyll theme.*
 

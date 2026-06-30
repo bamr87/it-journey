@@ -84,7 +84,7 @@ By the end of this quest, you will be able to:
 
 **Level**: Journeyman (Lvl 0010) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
 
-*In the mystical realm of static site generation, there exists a powerful art known as diagrammatic magic. The ability to weave complex visualizations directly into your documentation, creating living diagrams that explain, illustrate, and enchant your readers. This quest will teach you to master the ancient integration of Mermaid.js with Jekyll, transforming any static site into a dynamic diagramming platform.*
+*In the mystical realm of static site generation, there exists an art known as diagrammatic magic. The ability to weave complex visualizations directly into your documentation, creating living diagrams that explain, illustrate, and enchant your readers. This quest will teach you to master the ancient integration of Mermaid.js with Jekyll, transforming any static site into a dynamic diagramming platform.*
 
 ### What You'll Master
 
@@ -93,7 +93,7 @@ This epic quest will guide you through:
 - **All Major Diagram Types** - Flowcharts, sequence diagrams, class diagrams, state diagrams, ER diagrams, Gantt charts, pie charts, git graphs, journey diagrams, and mindmaps
 - **GitHub Pages Compatibility** - Works seamlessly with both local development and GitHub Pages deployment
 - **Performance Optimization** - Conditional loading, responsive design, and dark mode support
-- **Comprehensive Documentation** - Complete user guide with live examples and troubleshooting
+- **User Guide & Examples** - User guide with live examples and a troubleshooting section
 
 ### Real-World Applications
 
@@ -107,7 +107,7 @@ This epic quest will guide you through:
 
 ## 🌟 The Legend Behind This Quest
 
-*Long ago, in the early days of web development, creating diagrams required complex tools, expensive software, and manual image generation. Then came Mermaid.js - a powerful JavaScript library that could render diagrams from simple text descriptions. But integrating it with Jekyll, the beloved static site generator, required arcane knowledge and careful incantations.*
+*Long ago, in the early days of web development, creating diagrams required complex tools, expensive software, and manual image generation. Then came Mermaid.js - a JavaScript library that renders diagrams from plain-text descriptions. But integrating it with Jekyll, the beloved static site generator, required arcane knowledge and careful incantations.*
 
 *This quest is based on a real implementation that successfully integrated Mermaid v10 into the Zer0-Mistakes Jekyll theme, achieving 100% GitHub Pages compatibility while maintaining optimal performance. You'll learn from battle-tested code that powers production documentation sites.*
 
@@ -145,7 +145,7 @@ By completing this quest, you will:
 3. **Ensure Compatibility**: Achieve 100% GitHub Pages compatibility
 4. **Create Responsive Design**: Build diagrams that work across all devices
 5. **Implement Dark Mode**: Support both light and dark themes
-6. **Build Documentation**: Create comprehensive user guides and examples
+6. **Build Documentation**: Create user guides, live examples, and a troubleshooting section
 7. **Test Thoroughly**: Implement automated testing and validation
 
 ---
@@ -167,7 +167,7 @@ By completing this quest, you will:
 ### Phase 3: Advanced Features (30 minutes)
 - Add FontAwesome icon support
 - Implement dark mode compatibility
-- Create comprehensive documentation
+- Create the user guide documentation
 - Add troubleshooting guides
 
 ### Phase 4: Testing & Optimization (30 minutes)
@@ -346,7 +346,7 @@ Add the following code to your head section:
 
 ### Step 3: Create Your First Diagram Page
 
-**Objective**: Test the integration with a comprehensive example page.
+**Objective**: Test the integration with an example page covering every diagram type.
 
 #### Create a Test Page
 
@@ -471,7 +471,7 @@ Visit `http://localhost:4000/mermaid-test/` to see your diagrams in action!
 
 **Checkpoint**: Your Mermaid integration is working with all diagram types!
 
-### Step 4: Create Comprehensive Documentation
+### Step 4: Create the User Guide and Examples
 
 **Objective**: Build documentation that helps users understand and use the Mermaid integration.
 

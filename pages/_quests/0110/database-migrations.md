@@ -354,7 +354,7 @@ CREATE INDEX CONCURRENTLY idx_users_handle ON users(handle);
 
 **🎖️ Badges Earned**:
 - 🏆 **Keeper of the Living Schema** - You versioned and reversed a migration
-- 🛡️ **Master of the Seamless Shift** - You changed a live schema with zero downtime
+- 🛡️ **Master of the Zero-Downtime Shift** - You changed a live schema with zero downtime
 
 **🛠️ Skills Unlocked**:
 - **Versioned Migrations** - Reproducible, ordered schema change

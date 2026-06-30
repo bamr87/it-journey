@@ -860,6 +860,6 @@ Before marking this quest complete:
 
 **Level hub:** [[Level 0011 - Development Tools & AI Integration]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Related quests:** [[SEO Optimization: Boost Search Engine Visibility for Jekyll Sites]] · [[Custom Domains for GitHub Pages: Professional Website Setup Guide]] · [[Google Analytics for Jekyll: Complete User Tracking Integration Guide]] · [[Jekyll Plugins: Essential Extensions for Powerful Static Sites]] · [[Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands]] · [[Forging the Prompt Crystal: VS Code Copilot Mastery Quest]] · [[The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms]]
+**Related quests:** [[SEO Optimization: Boost Search Engine Visibility for Jekyll Sites]] · [[Custom Domains for GitHub Pages: Professional Website Setup Guide]] · [[Google Analytics for Jekyll: Complete User Tracking Integration Guide]] · [[Jekyll Plugins: Extend Your Static Site Safely]] · [[Advanced Git Workflows: Master Rebase, Cherry-pick, and Stash Commands]] · [[Forging the Prompt Crystal: VS Code Copilot Mastery Quest]] · [[The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

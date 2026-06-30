@@ -386,7 +386,7 @@ git commit -m "fix: resolve merge conflict in greeting"
 
 ## 🧙‍♂️ Chapter 3: Remote Repositories — Connecting to the World
 
-*Local Git is powerful, but the real magic happens when you connect to a remote like GitHub. This enables collaboration, backup, and sharing.*
+*Local Git works fully offline, but the real magic happens when you connect to a remote like GitHub. This enables collaboration, backup, and sharing.*
 
 ### 🌐 Local ↔ Remote Sync Flow
 
@@ -965,7 +965,7 @@ Before claiming your reward, you should be able to answer:
 
 ### 📖 Essential Documentation
 - [Git Official Documentation](https://git-scm.com/doc) — Primary reference guide
-- [Pro Git Book (free)](https://git-scm.com/book/en/v2) — Comprehensive deep dive
+- [Pro Git Book (free)](https://git-scm.com/book/en/v2) — The full book, basics through internals
 - [GitHub Docs](https://docs.github.com/) — Remote collaboration reference
 
 ### 🎮 Interactive Learning

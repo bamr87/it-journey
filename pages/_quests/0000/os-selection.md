@@ -115,7 +115,7 @@ Choosing the right operating system (OS) is like selecting the right wand in the
 
 ### 2. **Linux**
 - **Pros**:
-  - **Powerful Command Line Interface (CLI)**: Ideal for programming and server management.
+  - **Scriptable Command Line Interface (CLI)**: Ideal for programming and server management.
   - **Open Source**: Free to use, modify, and distribute. Offers a variety of distributions (distros) like Ubuntu, Fedora, and Debian.
   - **Customization**: Highly customizable to suit different needs.
   - **Security and Privacy**: Generally considered more secure and privacy-focused.

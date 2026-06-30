@@ -97,7 +97,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*In the early days, every web page was conjured fresh on each visit - the server would wake a database, run code, assemble the page, and only then send it. Powerful, but slow, costly, and full of trap doors for attackers. Then a band of builders realized a simple truth: most pages do not change between visitors. Why rebuild the castle every time someone knocks? **Jekyll** was born from this insight - generate every page once, ahead of time, and serve plain files. The result is a site that loads instantly, costs nearly nothing to host, and has almost no attack surface.*
+*In the early days, every web page was conjured fresh on each visit - the server would wake a database, run code, assemble the page, and only then send it. That let every page be personalized per visitor, but it was slow, costly, and full of trap doors for attackers. Then a band of builders realized a simple truth: most pages do not change between visitors. Why rebuild the castle every time someone knocks? **Jekyll** was born from this insight - generate every page once, ahead of time, and serve plain files. The result is a site that loads instantly, costs nearly nothing to host, and has almost no attack surface.*
 
 *Jekyll, written in Ruby, powers GitHub Pages and countless documentation sites, blogs, and portfolios across the kingdom. Master it, and you hold the foundation stone of the entire Web Fundamentals tier.*
 
