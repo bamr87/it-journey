@@ -140,7 +140,7 @@ Ah, a systems builder! Crafting robust and efficient systems is akin to construc
 
 1. **Understand the Fundamentals**: Before you start building, you need to understand the basics of computer systems. This includes hardware components, operating systems, and networking. It's like learning the foundation of castle-building before creating your own fortress.
 
-2. **Learn About Operating Systems**: Get comfortable with different operating systems, especially Linux, as it's widely used in server environments. Think of Linux as an arcane language that, once mastered, can control the most powerful of systems.
+2. **Learn About Operating Systems**: Get comfortable with different operating systems, especially Linux, as it's widely used in server environments. Think of Linux as an arcane language that, once mastered, can control the systems that run the world's servers.
 
 3. **Dive into Networking**: Systems don't exist in isolation; they communicate with each other. Learn about network protocols, IP addresses, DNS, and firewalls. It's like understanding the ley lines and teleportation spells that connect different locations in a magical world.
 
