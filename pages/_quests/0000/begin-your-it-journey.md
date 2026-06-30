@@ -183,7 +183,7 @@ Keep this file somewhere you'll see it. You'll revisit and grow it as you progre
 
 Every wizard remembers their first spell. Yours automates a tiny, real task — greeting the world and stamping it with the current date. Pick the version that matches your tools.
 
-**Bash** (macOS / Linux / WSL) — open any text editor (VS Code, nano, or TextEdit), paste the following, and save it as `hello.sh`:
+**Bash** (macOS / Linux / WSL) — open a plain-text editor (VS Code or nano; if you use macOS TextEdit, first choose **Format → Make Plain Text**, or it saves unusable rich text), paste the following, and save it as `hello.sh`:
 
 ```bash
 #!/usr/bin/env bash
@@ -208,6 +208,8 @@ Run it with:
 ```bash
 python3 hello.py
 ```
+
+> On Windows, use `python hello.py` or `py hello.py` if `python3` isn't recognized.
 
 That's it — you just made the computer do your bidding. Trivial today, but it's the same idea behind every automation spell you'll ever cast. 🪄
 

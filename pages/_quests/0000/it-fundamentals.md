@@ -275,11 +275,13 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
   - Explore the settings and schedule regular scans.
 - **Exercise**: Check your system for pending updates. Outdated software is one of the most common ways attackers break in — patching closes known holes before someone walks through them. See what's waiting to be updated on your realm:
 
-  **Windows** (PowerShell) — lists available upgrades; drop `--all` to preview without installing:
+  **Windows** (PowerShell) — list what's upgradable first (review before installing):
 
   ```powershell
-  winget upgrade --all
+  winget upgrade
   ```
+
+  > ⚠️ `winget upgrade --all` **installs every available upgrade immediately** — it is not a preview. Run plain `winget upgrade` to review the list, then add `--all` only when you're ready to apply them all.
 
   **Linux** (Debian/Ubuntu) — refresh the package list, then see what can be upgraded:
 
@@ -301,6 +303,8 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
   - Create your first repository and make your first commit. Run these one at a time:
 
     ```bash
+    git config --global user.name "Your Name"
+    git config --global user.email "you@example.com"
     git init my-repo
     cd my-repo
     echo "# My first repo" > README.md
@@ -308,7 +312,7 @@ Absolutely! Hands-on exercises are like spells and incantations – they're best
     git commit -m "first commit"
     ```
 
-    `git init` creates the repo, `git add .` stages your new file, and `git commit` records a snapshot. Run `git log` to see your commit in the project's history. 🎉
+    The two `git config` lines set your identity — Git refuses to commit without them on a fresh install. `git init` creates the repo, `git add .` stages your new file, and `git commit` records a snapshot. Run `git log` to see your commit in the project's history. 🎉
   - Clone an existing repository from GitHub and explore its contents:
 
     ```bash

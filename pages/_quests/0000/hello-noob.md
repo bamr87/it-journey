@@ -227,7 +227,7 @@ Fill out the registration form with:
 1. **Username**: Choose wisely! This becomes part of your developer identity
    - Make it professional (you might use this for job applications someday)
    - Keep it memorable and relatively short
-   - Examples: `sarah_codes`, `mike_developer`, `alex_learns_tech`
+   - Examples: `sarah-codes`, `mike-developer`, `alex-learns-tech` (GitHub usernames allow only letters, numbers, and single hyphens — no underscores or spaces)
 
 2. **Email**: Use an email you check regularly
    - GitHub will send you important notifications
