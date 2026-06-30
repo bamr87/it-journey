@@ -377,7 +377,10 @@ defaults:
       permalink: /:categories/:slug
 
   # pages/_notes
-  - 
+  # nav: auto -> the theme auto-generates the left sidebar from the collection's
+  # files (see _includes/navigation/sidebar-folders.html), so every note is listed
+  # dynamically. No hand-maintained _data/navigation/notes.yml to drift.
+  -
     scope:
       path: pages/_notes
       type: notes
@@ -386,7 +389,7 @@ defaults:
       share: false
       author_profile: false
       sidebar:
-        nav: notes
+        nav: auto
 
 # Exclude from processing.
 # The following items will not be processed, by default.

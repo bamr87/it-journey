@@ -17,6 +17,9 @@ tags:
 lastmod: '2022-01-10T21:54:00.000Z'
 draft: false
 date: '2022-12-21T22:07:25.000Z'
+redirect_from:
+- /notes/cheetsheets/powershell/
+- /notes/cheetsheets/2022-10-07-powershell/
 ---
 Windows PowerShell is the successor of the windows cmd language, which itself has its roots in the ms-dos Bat language. All recent versions of Windows offer PowerShell (PS).
 PS may be seen as Microsoft's answer to the shells common in Unix/Linux (such as csh, bash, *etc.*). Its name implies that Microsoft sees the shell as powerful, which it arguably is.

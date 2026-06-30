@@ -22,13 +22,14 @@ keywords:
 - Loops
 - Conditional execution
 - Command substitution
-slug: /shell/
 lastmod: '2026-04-25T19:27:00.000Z'
 draft: false
 related_quests:
 - /quests/0000/bashcrawl/
 - /quests/0000/side-quests/bash-run/
 date: '2021-12-28T13:35:40.000Z'
+redirect_from:
+- /notes/cheetsheets/bash-cheatsheet/
 ---
 [![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)
 

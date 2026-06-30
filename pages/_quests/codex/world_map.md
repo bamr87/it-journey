@@ -321,10 +321,8 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 #### 🔧 Platform Management
 
-- [⚙️ Site Configuration](/about/config/) - Jekyll and site settings
-- [🎨 Theme Customization](/about/theme/) - Visual customization guide
+- [🏰 The Self-Operating Website](/quests/codex/self-operating-website/) - Build & configure the site as an epic quest
 - [🤝 Contributing Guide](/about/contributing/) - How to contribute content
-- [🗺️ Complete Sitemap](/about/sitemap/) - Detailed site structure
 - [✨ Feature Overview](/about/features/) - Platform capabilities
 
 #### 🔍 Discovery Tools
@@ -358,7 +356,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 ### 🔧 For System Administrators
 
-1. **Platform Setup:** [Configuration Guide](/about/config/)
+1. **Platform Setup:** [The Self-Operating Website epic](/quests/codex/self-operating-website/)
 2. **Docker Environment:** [Container Setup](https://lifehacker.dev)
 3. **CI/CD Integration:** [GitHub Actions](/debugging-github-actions-workflows-ai-assisted/)
 4. **Monitoring:** [Site Analytics](/about/features/)

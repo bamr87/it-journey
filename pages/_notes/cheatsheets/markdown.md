@@ -15,6 +15,8 @@ tags:
 lastmod: '2021-12-27T17:46:18.040Z'
 draft: false
 date: '2021-12-19T17:12:12.000Z'
+redirect_from:
+- /notes/cheetsheets/markdown/
 ---
 [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 # Jekyll Markdown Quick Reference

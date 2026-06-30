@@ -24,8 +24,6 @@ keywords:
   - powershell reference
   - linux tips
   - development notes
-sidebar:
-  nav: docs
 toc: true
 toc_sticky: true
 ---
