@@ -263,7 +263,7 @@ Each chapter's **🔁 Reproduce it** section cites the specific PRs and commits 
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
 **Prequel:** [[Epic Quest: Zer0-to-Her0 CMStyle]]

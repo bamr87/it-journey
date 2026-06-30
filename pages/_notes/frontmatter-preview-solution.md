@@ -4,7 +4,9 @@ description: "Simplified Front Matter CMS preview wiring for IT-Journey — a `/
 date: '2024-04-25T00:00:00.000Z'
 lastmod: '2026-05-24T00:00:00.000Z'
 author: bamr87
-permalink: /docs/frontmatter-preview-solution/
+permalink: /notes/frontmatter-preview-solution/
+redirect_from:
+  - /docs/frontmatter-preview-solution/
 categories: [tools, jekyll]
 tags:
   - frontmatter

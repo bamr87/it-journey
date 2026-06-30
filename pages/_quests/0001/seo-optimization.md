@@ -5,7 +5,7 @@ description: 'Master technical SEO for Jekyll: write meta tags, generate sitemap
 excerpt: Make your Jekyll site discoverable with meta tags, sitemaps, structured data, and jekyll-seo-tag.
 preview: images/previews/seo-optimization-search-engine-visibility-descript.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -83,6 +83,7 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0011/seo-optimization/
+- /quickstart/optimization-maintenance/
 ---
 *Greetings, brave adventurer! Welcome to **SEO Optimization** - the quest where you light a beacon so the search engines of the realm can find your work. You can forge the most beautiful site in the kingdom, but if no crawler can read it and no result links to it, it stands silent in the fog. Search Engine Optimization is the craft of making your pages discoverable, understandable, and shareable.*
 
@@ -108,6 +109,7 @@ By the time you complete this journey, you will have mastered:
 - [ ] **Structured Data** - Add JSON-LD so engines understand your content type
 - [ ] **Canonical URLs** - Prevent duplicate-content confusion
 - [ ] **Search Console** - Verify your site and watch how it is indexed
+- [ ] **Performance & Accessibility** - Audit Core Web Vitals and WCAG basics that lift rank
 
 ### Mastery Indicators
 You'll know you've truly mastered this quest when you can:
@@ -289,7 +291,16 @@ author:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed      # generates /feed.xml so readers and aggregators can subscribe
 ```
+
+These three plugins forge your site's discoverability assets automatically - each is on GitHub Pages' allowlist:
+
+| Plugin | Generates | Where |
+|---|---|---|
+| `jekyll-seo-tag` | Meta, Open Graph & JSON-LD tags | `<head>` of every page |
+| `jekyll-sitemap` | XML sitemap | `/sitemap.xml` |
+| `jekyll-feed` | RSS feed | `/feed.xml` |
 
 Then place a single tag in your layout's `<head>`. It reads your `_config.yml` and each page's frontmatter and emits the title, description, canonical link, Open Graph, and JSON-LD all at once:
 
@@ -361,6 +372,65 @@ To confirm everything works:
 - [ ] What does the `@type` field communicate to a search engine?
 - [ ] Which tool validates structured data, and which monitors indexing?
 
+## 🧙‍♂️ Chapter 4: Performance & Accessibility - Signals That Lift the Rank
+
+*Discoverability is only half the beacon. Search engines now weigh how **fast** a page loads (Core Web Vitals) and how **usable** it is. A slow or inaccessible page is demoted in results - and turns away the visitors your tags worked to attract. These signals are ranking factors and good craft at once.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Trimming page weight for Core Web Vitals
+- Auditing with Lighthouse
+- Meeting baseline accessibility standards
+
+### 🏗️ Make Pages Fast
+
+Heavy images are the most common drag on a static site. Resize and compress them before they ship:
+
+```bash
+# Resize to a sane max width (macOS built-in)
+sips --resampleWidth 1200 assets/images/large-photo.jpg
+
+# Or compress in place across a folder with ImageOptim CLI
+brew install imageoptim-cli
+imageoptim assets/images/
+```
+
+Then tighten the rest of the page:
+
+- [ ] **Lazy-load below-the-fold images** with `loading="lazy"`
+- [ ] **Build for production** so Jekyll minifies output: `JEKYLL_ENV=production`
+- [ ] **Ship only the JavaScript you need** - every extra script blocks render
+- [ ] **Serve static assets from a CDN** when self-hosting
+- [ ] **Audit with Lighthouse** - Chrome DevTools → Lighthouse tab - and chase the score up
+
+### 🏗️ Make Pages Accessible
+
+Accessible pages rank better, read better in screen readers, and are simply correct. Run this checklist over a page:
+
+- [ ] Every image has descriptive `alt` text
+- [ ] Text meets WCAG AA contrast (4.5:1 ratio)
+- [ ] Interactive elements are keyboard-navigable with visible focus
+- [ ] Heading hierarchy is logical (h1 → h2 → h3, no skips)
+- [ ] Links use descriptive text, never "click here"
+- [ ] The page sets a language attribute: `<html lang="en">`
+
+Verify with a dedicated checker beyond Lighthouse:
+
+| Tool | Type | Where |
+|---|---|---|
+| **Lighthouse** | Browser built-in | Chrome DevTools |
+| **axe DevTools** | Browser extension | [deque.com/axe](https://www.deque.com/axe/) |
+| **WAVE** | Online checker | [wave.webaim.org](https://wave.webaim.org/) |
+| **Pa11y** | CLI | `npm install -g pa11y` |
+
+### 🔍 Knowledge Check: Performance & Accessibility
+- [ ] Which build environment makes Jekyll minify its output?
+- [ ] What contrast ratio does WCAG AA require for body text?
+- [ ] Name one tool that audits both performance and accessibility.
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Lighthouse run**: You have a baseline score for a key page
+- [ ] **Alt text pass**: Every image on one page has descriptive `alt` text
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: A Perfect Snippet
@@ -392,6 +462,16 @@ To confirm everything works:
 - [ ] Verify the site in Search Console and submit the sitemap
 
 **Validation**: The Rich Results Test reports no errors for your structured data.
+
+### 🟡 Bonus Challenge: Audit Speed & Access
+**Objective**: Prove a page is fast and accessible.
+
+**Requirements**:
+- [ ] Run Lighthouse on a key page and record the Performance and Accessibility scores
+- [ ] Add `alt` text to every image and `loading="lazy"` below the fold
+- [ ] Fix the highest-impact issue Lighthouse or axe DevTools reports
+
+**Validation**: A re-run of Lighthouse shows the score improve after your fix.
 
 ## 🏆 Quest Rewards & Achievements
 
@@ -440,6 +520,11 @@ To confirm everything works:
 - [Google Search Console](https://search.google.com/search-console/about) - Monitor indexing and performance
 - [Moz Beginner's Guide to SEO](https://moz.com/beginners-guide-to-seo) - A thorough primer
 
+### Performance & Accessibility
+- [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/) - Audit performance, accessibility, and SEO
+- [WCAG Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) - The accessibility standard
+- [axe DevTools](https://www.deque.com/axe/) - In-browser accessibility checker
+
 ## 🤝 Quest Completion Checklist
 
 - [ ] ✅ Completed all primary objectives
@@ -451,7 +536,7 @@ To confirm everything works:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

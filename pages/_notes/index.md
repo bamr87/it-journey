@@ -8,6 +8,8 @@ excerpt: Working notes, code snippets, and quick references for PowerShell, Linu
 draft: false
 lastmod: '2026-04-02T03:24:28.000Z'
 permalink: /notes/
+redirect_from:
+- /docs/
 title: Notes Index
 tags:
 - notes

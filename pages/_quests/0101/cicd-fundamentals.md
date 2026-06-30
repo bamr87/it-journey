@@ -5,7 +5,7 @@ description: 'Master CI/CD fundamentals: the build-test-deploy flow, how continu
 excerpt: Learn the core concepts and practices of continuous integration and continuous deployment for automated software delivery
 preview: images/previews/ci-cd-fundamentals-continuous-integration-quest-ti.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
@@ -46,6 +46,8 @@ validation_criteria:
   - Understands why fast feedback matters
   - Can troubleshoot a failing pipeline stage
 permalink: /quests/0101/cicd-fundamentals/
+redirect_from:
+- /quickstart/cicd-automation/
 categories:
 - Quests
 - DevOps
@@ -348,6 +350,57 @@ git push -u origin add-greeting
 - [ ] Why do small batches make failed builds easier to diagnose?
 - [ ] What should the whole team do the moment the build goes red?
 
+## 🧙‍♂️ Chapter 4: Triggers and Secrets - What Wakes the Forge
+
+*A pipeline does nothing until something summons it, and it cannot reach production without keys it must never reveal. Two small ideas - **triggers** and **secrets** - decide when the forge fires and how it carries credentials safely.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- The four events that commonly start a pipeline
+- Why secrets belong in the vault, never in version control
+- How a workflow reads a secret at runtime without exposing it
+
+### 🏗️ Triggers: When the Pipeline Fires
+
+Every pipeline declares which events wake it. The same `Commit ─► Build ─► Test` belt can be summoned by very different triggers, and choosing the right one is part of pipeline design:
+
+| Trigger | When it runs | Typical use |
+| --- | --- | --- |
+| `push` | On every push to the named branches | Fast feedback on each change |
+| `pull_request` | On PR open, sync, or reopen | The safety net gate before merge |
+| `schedule` | On a cron schedule | Nightly link checks, security scans |
+| `workflow_dispatch` | Manually, from the UI | On-demand deploys and one-off jobs |
+
+The Chapter 2 workflow used `on: [push, pull_request]` - it fires on both, so contributors get feedback locally on push and reviewers get a green check on the PR.
+
+### 🏗️ Secrets: Keys the Forge Must Not Reveal
+
+A pipeline often needs credentials - a deploy token, an API key - but **committing a secret to the repository is one of the most common and costly mistakes in DevOps.** Anyone who reads the history reads the key. Instead, store sensitive values in your platform's secret vault (on GitHub: **Settings → Secrets and variables → Actions**) and reference them by name at runtime:
+
+```yaml
+name: Deploy
+on:
+  workflow_dispatch        # manual, deliberate deploys
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./deploy.sh
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}   # injected, never printed
+```
+
+The secret is injected into the job's environment but never written to the log or the repo. The same rule covers a deploy token, an `OPENAI_API_KEY`, or any cloud credential: the value lives in the vault, and the workflow only ever names it.
+
+### 🔍 Knowledge Check: Triggers and Secrets
+- [ ] Which trigger gives a reviewer a green check before a merge?
+- [ ] Why should a deploy token never be committed to the repository?
+- [ ] How does a workflow use a secret without revealing its value?
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Picked a trigger**: You can match each of the four triggers to a use case
+- [ ] **Vaulted a secret**: You know where credentials live and how a workflow reads them
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Define the Trio
@@ -439,7 +492,7 @@ git push -u origin add-greeting
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0101 - CI/CD & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -266,18 +266,12 @@ collections:
   pages:
     output: true
     permalink: /:collection/:name/
-  docs:
-    output: true
-    permalink: /:collection/:categories/:name/
   quests:
     output: true
     permalink: /:collection/:categories/:name/
   notes:
     output: true
     permalink: /:collection/:path/
-  quickstart:
-    output: true
-    permalink: /:collection/:name/
   about:
     output: true
     permalink: /:collection/:categories/:name/
@@ -330,33 +324,6 @@ defaults:
       sidebar:
         nav: about
 
-  # pages/_quickstart
-  - 
-    scope:
-      path: pages/_quickstart
-    values:
-      layout: default
-      collection: quickstart
-      share: true
-      related: true
-      sidebar:
-        nav: quickstart
-
-  # pages/_docs
-  - 
-    scope:
-      path: pages/_docs
-    values:
-      layout: *pages
-      # category: docs
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      sidebar:
-        nav: auto
-    # permalink: /docs/:category/:name/
 
   # pages/_quests collection — quest.md files use the local quest layout.
   # Level READMEs (/quests/XXXX/) keep `layout: quest-collection` set in their

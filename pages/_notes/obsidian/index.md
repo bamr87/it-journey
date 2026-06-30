@@ -1,10 +1,12 @@
 ---
 title: Obsidian Knowledge Graph and Wiki Links
-permalink: /docs/obsidian/
+permalink: /notes/obsidian/
+redirect_from:
+- /notes/obsidian/
 description: Use Obsidian-style wiki links, backlinks, embeds, and interactive graph views across all IT-Journey docs, quests, notes, and posts.
 excerpt: Lightweight guide to the Obsidian-style knowledge features provided by the zer0-mistakes theme.
 categories:
-- docs
+- notes
 - obsidian
 tags:
 - obsidian
@@ -12,7 +14,7 @@ tags:
 - knowledge-graph
 - notes
 sidebar:
-  nav: docs
+  nav: auto
 toc_sticky: true
 date: '2026-04-25T00:00:00.000Z'
 lastmod: '2026-04-25T00:00:00.000Z'
@@ -40,7 +42,7 @@ IT-Journey uses the `zer0-mistakes` theme for Obsidian-style knowledge features 
 
 ## Start Here
 
-- [Open the Obsidian Graph View](/docs/obsidian/graph/)
+- [Open the Obsidian Graph View](/notes/obsidian/graph/)
 - [Browse all notes](/notes/)
 - [Browse documentation](/docs/)
 

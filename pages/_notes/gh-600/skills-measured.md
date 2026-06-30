@@ -1,7 +1,9 @@
 ---
 title: GH-600 Skills Measured — Full Breakdown
-description: Complete breakdown of all 6 domains and 19 sub-skills for GH-600, each linked to its corresponding quest.
-permalink: /docs/certifications/gh-600/skills-measured/
+description: Complete breakdown of all 6 domains and 19 sub-skills for GH-600, each linked to its corresponding agentic quest in the codex arc.
+permalink: /notes/gh-600/skills-measured/
+redirect_from:
+- /docs/certifications/gh-600/skills-measured/
 layout: default
 categories:
 - Docs
@@ -58,20 +60,20 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Identify steps for agents to perform  
 - Identify and mitigate common anti-patterns in agents  
 - Define inputs, outputs, and success criteria for agents  
-**→ Quest:** [Q1: Initiation Rites — Embedding Agents in the SDLC](/quests/gh-600/agentic-sdlc-integration/)
+**→ Quest:** [Q1: Initiation Rites — Embedding Agents in the SDLC](/quests/0111/agentic-sdlc-integration/)
 
 ### Sub-Skill 1.2 — Define boundaries between planning, reasoning, and action
 - Configure agent planning to be distinct from agent execution  
 - Configure an agent to output a structured plan  
 - Validate agent plans  
 - Prevent agent action until the agent checked and approved  
-**→ Quest:** [Q2: The Three Sigils — Plan, Reason, Act](/quests/gh-600/agentic-plan-vs-action-boundaries/)
+**→ Quest:** [Q2: The Three Sigils — Plan, Reason, Act](/quests/0111/agentic-plan-vs-action-boundaries/)
 
 ### Sub-Skill 1.3 — Configure observability and control for autonomous agents
 - Plan and implement the degree of agent autonomy, including guardrails  
 - Configure agent to produce inspectable artifacts within standard development tooling  
 - Configure human intervention for autonomous agents without slowing delivery  
-**→ Quest:** [Q3: The All-Seeing Eye — Observability & Control](/quests/gh-600/agentic-observability-and-control/)
+**→ Quest:** [Q3: The All-Seeing Eye — Observability & Control](/quests/1000/agentic-observability-and-control/)
 
 ---
 
@@ -81,14 +83,14 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Identify required tools  
 - Configure agent tools  
 - Configure agent tool permissions  
-**→ Quest:** [Q4: Forging the Agent's Arsenal](/quests/gh-600/agentic-tool-selection-and-permissions/)
+**→ Quest:** [Q4: Forging the Agent's Arsenal](/quests/1000/agentic-tool-selection-and-permissions/)
 
 ### Sub-Skill 2.2 — Configure MCP servers
 - Add an MCP server as a tool to an agent  
 - Configure a GitHub remote MCP server  
 - Configure the MCP registries  
 - Configure MCP allow lists  
-**→ Quest:** [Q5: The MCP Conclave](/quests/gh-600/agentic-mcp-server-mastery/)
+**→ Quest:** [Q5: The MCP Conclave](/quests/1000/agentic-mcp-server-mastery/)
 
 ### Sub-Skill 2.3 — Integrate agents within development environments
 - Evaluate the execution context for an agent  
@@ -97,7 +99,7 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Configure an agent to use branch-based scope  
 - Enable an agent to perform autonomous actions (branches, PRs)  
 - Configure an agent to handle environment-specific constraints  
-**→ Quest:** [Q6: Bind the Agent to the Realm](/quests/gh-600/agentic-dev-environment-integration/)
+**→ Quest:** [Q6: Bind the Agent to the Realm](/quests/1001/agentic-dev-environment-integration/)
 
 ### Sub-Skill 2.4 — Operate agents with safe execution paths and robust error handling
 - Implement error handling  
@@ -105,7 +107,7 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Implement rollbacks  
 - Implement escalation paths  
 - Implement traceability and accountability for agent actions  
-**→ Quest:** [Q7: The Shield of Retries](/quests/gh-600/agentic-safe-execution-and-error-handling/)
+**→ Quest:** [Q7: The Shield of Retries](/quests/1001/agentic-safe-execution-and-error-handling/)
 
 ---
 
@@ -115,19 +117,19 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Choose between short-term, long-term, and external memory  
 - Scope agent memory to task-relevant information  
 - Define memory expiration, pruning, and reset rules  
-**→ Quest:** [Q8: Vaults of Recollection — Memory Strategies](/quests/gh-600/agentic-memory-strategies/)
+**→ Quest:** [Q8: Vaults of Recollection — Memory Strategies](/quests/1001/agentic-memory-strategies/)
 
 ### Sub-Skill 3.2 — Persist agent state and manage context drift
 - Capture task progress and decisions as durable artifacts  
 - Resume agent work without repeating steps or diverging from prior decisions  
 - Detect and correct drift during extended agent execution  
-**→ Quest:** [Q9: Anchoring the Drifting Agent](/quests/gh-600/agentic-state-persistence-and-drift/)
+**→ Quest:** [Q9: Anchoring the Drifting Agent](/quests/1010/agentic-state-persistence-and-drift/)
 
 ### Sub-Skill 3.3 — Ensure continuity of agent memory and state across tools and environments
 - Share agent state  
 - Prevent conflicting context  
 - Prevent stale context  
-**→ Quest:** [Q10: Crossing the Tool Planes](/quests/gh-600/agentic-state-continuity-cross-tools/)
+**→ Quest:** [Q10: Crossing the Tool Planes](/quests/1010/agentic-state-continuity-cross-tools/)
 
 ---
 
@@ -138,18 +140,18 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Identify qualitative and quantitative evaluation signals  
 - Align evaluation criteria with development intent  
 - Generate evaluation signals by using automated scanning tools  
-**→ Quest:** [Q11: The Oracle's Rubric](/quests/gh-600/agentic-success-criteria-and-signals/)
+**→ Quest:** [Q11: The Oracle's Rubric](/quests/1010/agentic-success-criteria-and-signals/)
 
 ### Sub-Skill 4.2 — Analyze agent failures and identify root causes
 - Identify failures using logs, plans, traces, outputs, and workflow artifacts  
 - Classify root causes: reasoning errors, tool misuse, context/environment issues  
-**→ Quest:** [Q12: The Necromancer's Inquest](/quests/gh-600/agentic-failure-root-cause-analysis/)
+**→ Quest:** [Q12: The Necromancer's Inquest](/quests/1010/agentic-failure-root-cause-analysis/)
 
 ### Sub-Skill 4.3 — Tune agent behavior based on evaluation results
 - Revise instructions, workflows, or constraints  
 - Refine memory usage  
 - Refine tool usage and tool access  
-**→ Quest:** [Q13: Reforging the Agent's Mind](/quests/gh-600/agentic-behavior-tuning/)
+**→ Quest:** [Q13: Reforging the Agent's Mind](/quests/1011/agentic-behavior-tuning/)
 
 ---
 
@@ -159,25 +161,25 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Apply an orchestration pattern to coordinate multiple agents  
 - Configure agent isolation for parallel execution  
 - Detect and resolve agent conflicts (overlapping code changes, duplicated effort, contradictory outputs)  
-**→ Quest:** [Q14: The Council of Many — Orchestration Patterns](/quests/gh-600/agentic-multi-agent-orchestration-patterns/)
+**→ Quest:** [Q14: The Council of Many — Orchestration Patterns](/quests/1011/agentic-multi-agent-orchestration-patterns/)
 
 ### Sub-Skill 5.2 — Configure observability for multi-agent behavior
 - Configure multi-agent workflows to produce artifacts suitable for review and audit  
 - Document key decisions, handoffs, and outcomes across agents  
 - Perform post-hoc analysis of multi-agent behavior  
-**→ Quest:** [Q15: The Scribe's Codex — Multi-Agent Observability](/quests/gh-600/agentic-multi-agent-observability/)
+**→ Quest:** [Q15: The Scribe's Codex — Multi-Agent Observability](/quests/1011/agentic-multi-agent-observability/)
 
 ### Sub-Skill 5.3 — Detect and respond to multi-agent failures and degraded behavior
 - Identify failed, partial, or stalled agent executions  
 - Respond to degraded behavior or coordination across agents  
 - Implement multi-agent recovery patterns (rollback, human-in-the-loop)  
-**→ Quest:** [Q16: When Familiars Fall — Failure & Recovery](/quests/gh-600/agentic-multi-agent-failure-recovery/)
+**→ Quest:** [Q16: When Familiars Fall — Failure & Recovery](/quests/1011/agentic-multi-agent-failure-recovery/)
 
 ### Sub-Skill 5.4 — Manage the lifecycle of agents within multi-agent workflows
 - Add agents to existing multi-agent workflows  
 - Update, reconfigure, or replace agents without disrupting active workflows  
 - Retire agents while preserving auditability and workflow continuity  
-**→ Quest:** [Q17: The Agent Pantheon — Lifecycle Management](/quests/gh-600/agentic-multi-agent-lifecycle-management/)
+**→ Quest:** [Q17: The Agent Pantheon — Lifecycle Management](/quests/1100/agentic-multi-agent-lifecycle-management/)
 
 ---
 
@@ -186,7 +188,7 @@ Keep these archetypes in mind as you read each sub-skill below.
 ### Sub-Skill 6.1 — Define autonomy levels
 - Classify agent actions by operational, security, and compliance risk  
 - Assign autonomy levels to maximize delivery speed while remaining compliant  
-**→ Quest:** [Q18: The Autonomy Scales](/quests/gh-600/agentic-autonomy-levels-matrix/)
+**→ Quest:** [Q18: The Autonomy Scales](/quests/1100/agentic-autonomy-levels-matrix/)
 
 ### Sub-Skill 6.2 — Implement guardrails and human-in-the-loop workflows
 - Identify the subset of actions that require human judgment  
@@ -194,7 +196,7 @@ Keep these archetypes in mind as you read each sub-skill below.
 - Scope permissions and execution contexts to enforce least-privilege access  
 - Require explicit authorization for irreversible or compliance-sensitive changes  
 - Preserve execution velocity by minimizing approvals that do not materially reduce risk  
-**→ Quest:** [Q19: The Warden's Pact — Guardrails & HITL](/quests/gh-600/agentic-guardrails-and-human-in-the-loop/)
+**→ Quest:** [Q19: The Warden's Pact — Guardrails & HITL](/quests/1100/agentic-guardrails-and-human-in-the-loop/)
 
 ---
 
@@ -224,6 +226,8 @@ Keep these archetypes in mind as you read each sub-skill below.
 | **Capstone** | All 6 domains | 1100 |
 
 **Coverage: 19/19 (100%)** — no gaps, no duplicates.
+
+> **Arc hub:** Start the full campaign at [Agentic Codex — the GH-600 quest arc](/quests/codex/agentic-codex/).
 
 ---
 

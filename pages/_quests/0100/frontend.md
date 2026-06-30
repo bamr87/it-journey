@@ -15,6 +15,8 @@ quest_series: Level 0100 Quest Line
 skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0100/frontend/
+redirect_from:
+- /quickstart/theme-architecture/
 categories: []
 tags: []
 keywords:
@@ -90,9 +92,113 @@ Embarking on the quest to build a Jekyll site using Bootstrap for CSS and JavaSc
 
 This map will guide you through the Frontend Forests as you build your Jekyll site with Bootstrap. Remember, the path to mastery involves experimentation and continuous learning. May the winds of the Frontend Forests be ever in your favor!
 
+## 🔮 Chapter 9: Reading the Theme's Spellbook
+
+Before you start swapping CDN links and editing layouts, it helps to understand *how* Jekyll actually assembles a page. The IT-Journey site runs on the `zer0-mistakes` theme, and the same mechanics apply to any Jekyll site you build.
+
+### 🪄 How Jekyll Builds a Page
+
+Every page is woven together through this pipeline:
+
+```text
+Markdown file (content + frontmatter)
+        ↓
+Layout template (_layouts/article.html)
+        ↓
+Includes (_includes/header.html, sidebar.html, …)
+        ↓
+Theme base layout (root.html → default.html)
+        ↓
+Static HTML file (in _site/)
+```
+
+When you run `bundle exec jekyll build`, Jekyll reads each content file, merges it with its assigned layout, resolves every `{% raw %}{% include %}{% endraw %}` call, evaluates the Liquid expressions, and writes the finished HTML into `_site/`.
+
+### 📜 Layouts and Inheritance
+
+Layouts are HTML templates that wrap your content. You pick one in front matter:
+
+```yaml
+---
+layout: article
+title: "My Blog Post"
+---
+```
+
+Layouts chain together, each one wrapping the next. The special `content` variable in a parent layout is replaced by its child:
+
+```text
+article.html   →  default.html  →  root.html
+(post content)    (header/footer)   (HTML skeleton)
+```
+
+So `root` provides the bare `<head>`/`<body>` shell and scripts, `default` adds the header, footer, and sidebar, and `article` adds post-specific chrome like date, author, and reading time. Quest pages use a local `quest` layout that adds prerequisites, rewards, and the network graph.
+
+### 🧩 Includes (Reusable Partials)
+
+Includes are reusable HTML snippets injected into layouts:
+
+```liquid
+{% raw %}{% include component.html %}{% endraw %}
+```
+
+You can pass variables into an include and read them back via the `include` object:
+
+```liquid
+{% raw %}{% include quest-card.html quest=quest show_xp=true %}{% endraw %}
+```
+
+Inside `quest-card.html`, those arrive as `include.quest` and `include.show_xp`. This is how a single partial renders dozens of different cards.
+
+### ✨ Liquid Templating
+
+Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language for dynamic content. There are three constructs to know:
+
+```liquid
+{% raw %}{{ page.title }}                              {# output a variable #}
+{% if page.draft %}…{% endif %}              {# logic / control flow #}
+{% for post in site.posts limit:5 %}…{% endfor %}  {# loop a collection #}{% endraw %}
+```
+
+Filters transform values on the way out — a few you will reach for constantly:
+
+| Filter | Example | Result |
+|--------|---------|--------|
+| `date` | `{% raw %}{{ page.date \| date: "%B %d, %Y" }}{% endraw %}` | "March 31, 2026" |
+| `slugify` | `{% raw %}{{ "My Title" \| slugify }}{% endraw %}` | "my-title" |
+| `where` | `{% raw %}{{ site.quests \| where: "difficulty", "🟢 Easy" }}{% endraw %}` | Filtered array |
+| `markdownify` | `{% raw %}{{ page.description \| markdownify }}{% endraw %}` | HTML from markdown |
+
+### 🗄️ Data Files
+
+YAML files in `_data/` are available everywhere as `site.data.*`, keeping structured data out of your templates. For example, `_data/navigation/main.yml` powers the primary menu via `site.data.navigation.main`:
+
+```liquid
+{% raw %}{% for item in site.data.navigation.main %}
+  <a href="{{ item.url }}">{{ item.title }}</a>
+{% endfor %}{% endraw %}
+```
+
+### 🛡️ Customizing a Theme Without Forking It
+
+Because IT-Journey uses a *remote* theme gem, you do not edit the theme directly — you **override** it. Jekyll checks your own project first, then falls back to the gem:
+
+```text
+_layouts/default.html    ← your copy wins over the theme's
+_includes/header.html    ← same override pattern
+```
+
+Drop a file with the same path into your project to replace the theme's version, or add entirely new files to `_layouts/`/`_includes/` to extend it. And remember: `_site/` is regenerated on every build and listed in `.gitignore` — never edit files there directly.
+
+### 🔍 Knowledge Check
+
+- [ ] Can you trace a page from its Markdown file through layouts to `_site/`?
+- [ ] How do you override a theme layout without editing the gem?
+- [ ] What does the `where` filter return, and where would you use it?
+
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0100 - Frontend Development & Docker]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

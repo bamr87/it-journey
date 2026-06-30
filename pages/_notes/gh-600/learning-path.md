@@ -1,10 +1,12 @@
 ---
 title: GH-600 Week-by-Week Learning Path
-description: A structured 6-week study schedule for GH-600 with daily objectives, time estimates, and prerequisites.
-permalink: /docs/certifications/gh-600/learning-path/
+description: A structured 6-week study schedule for the GH-600 exam with daily objectives, time estimates, prerequisites, plus sprint and micro-learning tracks.
+permalink: /notes/gh-600/learning-path/
+redirect_from:
+- /docs/certifications/gh-600/learning-path/
 layout: default
 categories:
-- Docs
+- Notes
 - Certifications
 - Agentic-AI
 tags:

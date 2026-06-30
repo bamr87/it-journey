@@ -43,6 +43,10 @@ validation_criteria:
   - Understands why indentation must be spaces, not tabs
   - Can spot and fix a common quoting error
 permalink: /quests/0001/yaml-configuration/
+redirect_from:
+- /quickstart/site-configuration/
+- /docs/jekyll/jekyll-config/
+- /docs/jekyll-config/
 categories:
 - Quests
 - Frontend
@@ -390,6 +394,71 @@ yamllint _config.yml _data/team.yml
 - [ ] How do you keep `yes` as the string "yes"?
 - [ ] What is the difference between the `|` and `>` block scalars?
 
+## 🔮 Chapter 4: Production-Ready Config - Plugins, Environments & Strict Validation
+
+*A real `_config.yml` does more than name your site. It summons **plugins** that generate feeds and sitemaps, layers a **development override** so localhost and production never collide, and turns on a switch that makes a build **fail loudly** on a single bad YAML character.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Loading plugins and knowing what each one generates
+- Layering configs with `_config_dev.yml` for safe local development
+- Forcing the build to reject malformed front matter
+
+### 🏗️ Plugins - Generators You Enable in YAML
+
+Plugins are listed as a YAML sequence. Each one quietly produces files you would otherwise hand-write:
+
+```yaml
+plugins:
+  - jekyll-feed       # RSS feed at /feed.xml
+  - jekyll-sitemap    # sitemap.xml for search engines
+  - jekyll-seo-tag    # <meta> tags for SEO and social sharing
+  - jekyll-remote-theme  # load a theme straight from GitHub
+```
+
+| Plugin | What it generates |
+|---|---|
+| `jekyll-feed` | An RSS feed at `/feed.xml` |
+| `jekyll-sitemap` | A `sitemap.xml` so crawlers find every page |
+| `jekyll-seo-tag` | SEO and social `<meta>` tags in your `<head>` |
+| `jekyll-remote-theme` | Loads a theme (like `bamr87/zer0-mistakes`) from a GitHub repo |
+
+### 🏗️ Environment Layering - One Site, Two Configs
+
+Jekyll can read **several config files in order**, with later files overriding earlier ones. Keep production values in `_config.yml` and local-only values in a `_config_dev.yml`:
+
+```yaml
+# _config_dev.yml - local overrides only
+url: "http://localhost:4002"
+```
+
+Serve with both, comma-separated and **no spaces**:
+
+```bash
+bundle exec jekyll serve --config _config.yml,_config_dev.yml
+```
+
+Now `url` points at localhost while you develop, but production still publishes the real domain - you never accidentally ship a `localhost` link. Pair this with `JEKYLL_ENV=production` to switch on analytics and other production-only behaviour:
+
+```bash
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+### 🏗️ Fail Fast on Bad YAML
+
+By default Jekyll silently ignores front matter it cannot parse. Flip one switch and a malformed `---` block becomes a hard build error instead of a mystery:
+
+```yaml
+# _config.yml
+strict_front_matter: true
+```
+
+> ⚠️ **Tabs are forbidden in config files too.** A stray tab in `_config.yml` will either throw a parse error or - worse - make Jekyll silently revert to defaults. Use spaces everywhere, and let `yamllint` catch the tab before Jekyll does.
+
+### 🔍 Knowledge Check: Production Config
+- [ ] Which plugin produces `sitemap.xml`, and why does it matter for SEO?
+- [ ] How does `_config_dev.yml` stop a `localhost` URL reaching production?
+- [ ] What does `strict_front_matter: true` change about a build with bad YAML?
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Valid YAML
@@ -457,7 +526,8 @@ yamllint _config.yml _data/team.yml
 
 ### Official Documentation
 - [YAML Specification](https://yaml.org/spec/1.2.2/) - The authoritative reference
-- [Jekyll Configuration Options](https://jekyllrb.com/docs/configuration/) - Every `_config.yml` setting
+- [Jekyll Configuration Options](https://jekyllrb.com/docs/configuration/options/) - Every build, serve, and global setting and flag
+- [Jekyll Front-matter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) - The `defaults` block in depth
 - [Jekyll Data Files](https://jekyllrb.com/docs/datafiles/) - Using the `_data` folder
 
 ### Community Resources
@@ -480,7 +550,7 @@ yamllint _config.yml _data/team.yml
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

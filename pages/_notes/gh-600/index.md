@@ -4,6 +4,9 @@ description: Hub for all GH-600 quick-reference notes — domain weights, skills
 date: '2026-05-17T00:00:00.000Z'
 layout: default
 permalink: /notes/gh-600/
+redirect_from:
+- /docs/certifications/gh-600/
+- /docs/certifications/
 author: IT-Journey Team
 tags:
 - gh-600
@@ -30,12 +33,15 @@ Quick-reference materials for the **GH-600: Developing in Agentic AI Systems** c
 | [Evaluation Signals Table](evaluation-signals-table/) | GitHub signals mapped to acceptance criteria types |
 | [Glossary](glossary/) | Key terms from all six domains |
 
-## Related Resources
+## Hands-On Quest Arc
 
-- [GH-600 Certification Hub](/docs/certifications/gh-600/)
-- [Skills Measured](/docs/certifications/gh-600/skills-measured/)
-- [Learning Path](/docs/certifications/gh-600/learning-path/)
-- [Agentic Codex Quest Arc](/docs/certifications/gh-600/) — All 20 quests
+> **Ready to practice?** Work through the **[The Agentic Codex epic quest](/quests/codex/agentic-codex/)** — the hands-on arc that turns every GH-600 domain into buildable, evaluated agentic-AI challenges.
+
+## Study Guides in This Folder
+
+- [Skills Measured](/notes/gh-600/skills-measured/) — Full breakdown of the six exam domains and their sub-skills
+- [Learning Path](/notes/gh-600/learning-path/) — Recommended study sequence from fundamentals to capstone
+- [Recommended Resources](/notes/gh-600/recommended-resources/) — Curated docs, labs, and reading for each domain
 
 ---
 
@@ -43,4 +49,4 @@ Quick-reference materials for the **GH-600: Developing in Agentic AI Systems** c
 
 **Notes in this collection:** [[GH-600 Exam Overview]] · [[GH-600 Skills Checklist]] · [[GitHub Copilot Coding Agent Cheatsheet]] · [[MCP Quick Reference]] · [[Autonomy Levels Matrix]] · [[Evaluation Signals Table]] · [[GH-600 Glossary]]
 
-**Certification Hub:** [[The Agentic Codex: GH-600 Study Hub]]
+**Hands-on quest arc:** [[The Agentic Codex]]

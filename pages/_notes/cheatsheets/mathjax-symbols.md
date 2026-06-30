@@ -1,6 +1,10 @@
 ---
 title: Jekyll — Math Symbols with MathJax
 description: "Render LaTeX-style mathematical notation in a Jekyll site by wiring up MathJax, configuring inline and block delimiters, and per-page opt-in."
+permalink: /notes/cheatsheets/mathjax-symbols/
+redirect_from:
+  - /docs/jekyll/jekyll-math-symbols-with-mathjax/
+  - /docs/jekyll-math-symbols-with-mathjax/
 key: tutorial
 index: 8126
 subcategory: jekyll

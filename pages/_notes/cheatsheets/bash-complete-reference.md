@@ -4,7 +4,9 @@ description: Deep GNU Bash reference for built-ins, expansion, process control, 
 date: '2026-02-21T14:34:24.000Z'
 lastmod: '2026-04-25T19:27:00.000Z'
 author: IT-Journey Team
-permalink: /docs/bash-complete-reference/
+permalink: /notes/cheatsheets/bash-complete-reference/
+redirect_from:
+- /docs/bash-complete-reference/
 tags:
 - bash
 - shell

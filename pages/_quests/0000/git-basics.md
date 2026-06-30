@@ -5,7 +5,7 @@ description: Learn Git fundamentals including repositories, commits, branches, a
 excerpt: Master Git fundamentals to track changes, manage versions, and collaborate effectively with teams.
 preview: images/previews/git-basics-version-control-introduction-descriptiv.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-02-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
@@ -42,6 +42,9 @@ validation_criteria:
   - Understands staging area vs working directory
   - Can resolve a basic merge conflict
 permalink: /quests/0000/git-basics/
+redirect_from:
+- /quickstart/github/
+- /quickstart/github-setup/
 categories:
 - Quests
 - DevOps
@@ -554,6 +557,100 @@ git revert abc1234
 
 ---
 
+## 🧙‍♂️ Chapter 5: The GitHub CLI — Summoning the Gateway
+
+*The GitHub web interface is fine, but true sorcerers never leave the terminal. The GitHub CLI (`gh`) lets you authenticate, fork, and open pull requests without breaking your command-line trance — and it makes the fork-and-PR flow in the challenges below far smoother.*
+
+### 🌍 Install the GitHub CLI
+
+#### 🍎 macOS
+
+```bash
+brew install gh
+```
+
+#### 🪟 Windows
+
+```powershell
+winget install GitHub.cli
+```
+
+#### 🐧 Linux (Ubuntu/Debian)
+
+```bash
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update && sudo apt install gh
+
+# Verify on any platform
+gh --version
+```
+
+### 🔐 Authenticate Once, Push Forever
+
+```bash
+# Login to GitHub (follow the interactive prompts — pick HTTPS, authenticate in browser)
+gh auth login
+
+# Confirm you're connected
+gh auth status
+```
+
+Authenticating with `gh` configures your Git credentials too, so `git push` to your repos just works — no personal access token juggling.
+
+### 🛡️ Protect Your Email with a Noreply Address
+
+GitHub can hide your real email from public commits. Use your GitHub-provided noreply address so your inbox stays private in the commit history:
+
+```bash
+# Replace <username> with your GitHub handle
+git config --global user.email "<username>@users.noreply.github.com"
+```
+
+### 🍴 Fork a Repository from the Terminal
+
+Forking creates your own copy of someone else's repo — the foundation of open-source contribution (and Challenge 3 below):
+
+```bash
+# Fork and clone in one step
+gh repo fork owner/repository --clone
+
+# This creates a fork under your account and clones it locally
+```
+
+### 🧩 Working with Submodules
+
+Some projects embed other Git repositories as **submodules** — repos nested inside repos:
+
+```bash
+# Add a submodule at a chosen path
+git submodule add https://github.com/owner/repository.git vendor/lib
+
+# After cloning a repo that uses submodules, populate them
+git submodule update --init
+```
+
+### ✅ Chapter 5 Checkpoint: Gateway Mastery
+
+**Validation — confirm each before proceeding:**
+
+- [ ] `gh --version` prints a version number
+- [ ] `gh auth status` reports you are logged in
+- [ ] You can fork a public repo with `gh repo fork`
+
+**🧠 Knowledge Check:**
+- [ ] Why does authenticating with `gh` remove the need to paste a personal access token on every push?
+- [ ] What is the difference between forking a repo and cloning it directly?
+- [ ] When would a project use a submodule instead of just copying files in?
+
+### ⚡ Quick Wins
+- [ ] Install `gh` and run `gh auth login`
+- [ ] Set your `user.email` to a GitHub noreply address
+- [ ] Fork any public repo with `gh repo fork owner/repo --clone`
+
+---
+
 ## 🎮 Implementation Challenges
 
 ### Challenge 1: 🟢 The Chronicle Keeper (🕐 20 minutes)
@@ -883,7 +980,7 @@ Before claiming your reward, you should be able to answer:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

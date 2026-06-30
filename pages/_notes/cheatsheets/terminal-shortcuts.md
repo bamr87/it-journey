@@ -4,7 +4,10 @@ description: Complete reference for terminal shortcuts on macOS, Linux, and Wind
 date: '2025-12-20T10:05:28.000Z'
 lastmod: '2026-04-25T19:27:00.000Z'
 author: IT-Journey Team
-permalink: /docs/terminal-shortcuts-cheat-sheet/
+permalink: /notes/cheatsheets/terminal-shortcuts/
+redirect_from:
+- /docs/terminal-shortcuts-cheat-sheet/
+- /docs/terminal/
 tags:
 - terminal
 - shortcuts
@@ -268,7 +271,7 @@ popd
 ### Related Quests
 - [Terminal Fundamentals Quest](/quests/0000/terminal-fundamentals/)
 - [Git Basics Quest](/quests/0000/git-basics/)
-- [VS Code Mastery Quest](/quests/level-0000-vscode-mastery-quest/)
+- [VS Code Mastery Quest](/quests/0000/vscode-mastery/)
 
 ---
 

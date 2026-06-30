@@ -251,7 +251,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections. The `[[wiki-link]]` syntax below is Obsidian wiki-link notation — clickable in Obsidian, plain text elsewhere.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections. The `[[wiki-link]]` syntax below is Obsidian wiki-link notation — clickable in Obsidian, plain text elsewhere.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

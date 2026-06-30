@@ -5,8 +5,11 @@ description: 'Master diagrammatic magic by integrating Mermaid.js into any Jekyl
 excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
 date: '2025-10-04T15:25:33.000Z'
-lastmod: '2025-01-27T15:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0010'
+redirect_from:
+- /docs/jekyll/jekyll-diagram-with-mermaid/
+- /docs/jekyll/mermaid-migration/
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: Jekyll
@@ -845,6 +848,68 @@ Create a comprehensive test page with all diagram types and verify:
 
 ---
 
+## ✨ Bonus Incantation: Zero-Config Auto-Detection
+
+*You've forged the integration by hand — now learn the shortcut the masters use.* The
+[zer0-mistakes theme](https://bamr87.github.io/zer0-mistakes/) (v0.5.0+) ships an
+**auto-detection** spell so you no longer need the `mermaid: true` flag at all. Drop a
+standard fenced ` ```mermaid ` block into any page and the theme renders it — no front
+matter, no manual configuration.
+
+````markdown
+```mermaid
+graph TD;
+    A[Start] --> B{Is it working?};
+    B -->|Yes| C[Great!];
+    B -->|No| D[Check console];
+```
+````
+
+### 🔮 How the Auto-Detection Works
+
+The theme scans rendered HTML **client-side** (after Jekyll/Kramdown builds the page), so
+it stays fully GitHub Pages compatible — no server-side plugin required. It triggers on any of:
+
+- ` ```mermaid ` fenced code blocks in markdown
+- `<div class="mermaid">` HTML elements
+- `mermaid: true` front matter (kept for backwards compatibility)
+
+When a diagram is found, Mermaid.js (~200KB) loads on-demand from the CDN; pages without
+diagrams pay **zero** cost. The wiring lives in `_includes/components/mermaid-auto.html`
+and `_includes/core/head.html`.
+
+### 🧹 Migrating from the Manual Flag
+
+Already have pages using the manual `mermaid: true` approach you built above? Migration is
+**optional and backwards-compatible** — old pages keep working. To clean them up, find the
+flagged files and drop the now-redundant flag:
+
+```bash
+# Find every page still carrying the manual flag
+grep -r "mermaid: true" pages/
+```
+
+````diff
+---
+title: My Post
+- mermaid: true
+---
+````
+
+Benefits of switching: impossible to forget the flag, fewer front matter fields to maintain,
+and the library loads only where it's actually needed.
+
+> **🐛 Rendering nothing?** Validate your syntax at [mermaid.live](https://mermaid.live/),
+> confirm the fence reads exactly ` ```mermaid ` (not `mermade`/`mermaud`), check the browser
+> console for a "Mermaid diagrams detected" message, and verify the theme is v0.5.0+.
+
+### 🔙 Rollback Plan
+
+If you ever need the old behavior, pin the theme to `zer0-mistakes` v0.4.0 and re-add
+`mermaid: true` to every page with diagrams.
+
+---
+
 ## 🎉 Quest Complete: Diagrammatic Mastery
 
 ### What You've Accomplished
@@ -1032,7 +1097,7 @@ May your diagrams be clear, your documentation be comprehensive, and your Jekyll
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

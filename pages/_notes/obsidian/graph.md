@@ -1,6 +1,8 @@
 ---
 title: Obsidian Graph View — Wiki Link Navigation
-permalink: /docs/obsidian/graph/
+permalink: /notes/obsidian/graph/
+redirect_from:
+- /docs/obsidian/graph/
 description: Interactive knowledge graph visualizing all IT-Journey pages connected through Obsidian-style wiki links, backlinks, and cross-references.
 excerpt: Explore the IT-Journey knowledge graph generated from wiki links across docs, notes, quests, and posts.
 categories:
@@ -11,7 +13,7 @@ tags:
 - graph
 - navigation
 sidebar:
-  nav: docs
+  nav: auto
 toc_sticky: true
 backlinks: false
 local_graph: false

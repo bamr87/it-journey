@@ -5,7 +5,7 @@ description: 'Publish a Jekyll site to the world with GitHub Pages: repository s
 excerpt: Take your Jekyll site live for free with GitHub Pages - repo setup, config, and custom domains.
 preview: images/previews/github-pages-basics-free-hosting-quest-descriptio.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
@@ -43,6 +43,8 @@ validation_criteria:
   - Understands when baseurl must be set
   - Can diagnose a 404 caused by a wrong baseurl
 permalink: /quests/0001/github-pages-basics/
+redirect_from:
+- /quickstart/deployment/
 categories:
 - Quests
 - Frontend
@@ -336,6 +338,66 @@ In **Settings -> Pages**, enter the custom domain, wait for the DNS check to pas
 - [ ] Which record type points a `www` subdomain at GitHub Pages?
 - [ ] What does "Enforce HTTPS" give you, and what provides the certificate?
 
+## 🧙‍♂️ Chapter 4: Beyond GitHub Pages - Other Realms & the Production Build
+
+*GitHub Pages is the gentlest gate to the web, but it is not the only one. Sometimes you want a different host, or you simply have the finished `_site/` and want to drop it anywhere. The secret is that Jekyll's output is just plain static files - any host that serves files can serve your site.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Building a production site by hand
+- Shipping that build to any static host
+- Guarding production-only behavior with `JEKYLL_ENV`
+
+### 🏗️ The Production Build Incantation
+
+Build the optimized site yourself, then upload the resulting `_site/` folder anywhere:
+
+```bash
+# Build the production site - JEKYLL_ENV unlocks production-only behavior
+JEKYLL_ENV=production bundle exec jekyll build
+
+# Everything the browser needs is now in _site/ - upload its contents to your host
+```
+
+The `JEKYLL_ENV` variable lets templates behave differently in production - for example, only loading analytics on the live site:
+
+```liquid
+{% raw %}{% if jekyll.environment == "production" %}
+  {% include analytics.html %}
+{% endif %}{% endraw %}
+```
+
+### 🌐 Hosts That Serve a `_site/` Folder
+
+Any of these realms will happily host the same static output:
+
+| Host | How to deploy | Notes |
+| --- | --- | --- |
+| **Netlify** | Git push or drag-and-drop | Auto-builds from your repo |
+| **Vercel** | Git push | Auto-builds from your repo |
+| **Cloudflare Pages** | Git push | Auto-builds from your repo |
+| **AWS S3 + CloudFront** | `aws s3 sync _site/ s3://bucket/` | Upload then serve via CDN |
+| **Any web server** | FTP/SCP upload | Copy `_site/` contents into the docroot |
+
+> 🔮 For a heavier-duty deployment with managed CI/CD on Microsoft's cloud, see the [Azure Ascension](/quests/azure-ascension-jekyll-deployment-quest/) quest - it scripts the whole Azure Static Web Apps setup.
+
+### 🔍 Knowledge Check: The Production Build
+- [ ] What command produces an optimized, deployable `_site/` folder?
+- [ ] What does `JEKYLL_ENV=production` change about the build?
+- [ ] Name two hosts besides GitHub Pages that can serve your `_site/` output.
+
+### 🧾 Pre-Launch Checklist
+
+Before you summon your site to a live URL, walk this final checklist:
+
+- [ ] Site builds without errors locally
+- [ ] `_config.yml` has the correct `url` and `baseurl`
+- [ ] `CNAME` file present (only if using a custom domain)
+- [ ] DNS records configured and propagated
+- [ ] HTTPS enforced
+- [ ] Images optimized
+- [ ] No draft content published by accident
+- [ ] `robots.txt` and `sitemap.xml` generated
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Go Live
@@ -426,7 +488,7 @@ In **Settings -> Pages**, enter the custom domain, wait for the DNS check to pas
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

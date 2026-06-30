@@ -1,7 +1,9 @@
 ---
 title: GH-600 Recommended Resources
 description: 'Curated resources for GH-600 exam preparation: Microsoft Learn paths, GitHub documentation, MCP specification, and the GitHub Models API.'
-permalink: /docs/certifications/gh-600/recommended-resources/
+permalink: /notes/gh-600/recommended-resources/
+redirect_from:
+- /docs/certifications/gh-600/recommended-resources/
 layout: default
 categories:
 - Docs
