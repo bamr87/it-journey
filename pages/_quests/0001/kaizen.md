@@ -1002,10 +1002,10 @@ Congratulations, Code Alchemist! Upon completing this epic journey, you have ear
 ## 🔮 Your Next Epic Adventures
 
 ### 🎯 Recommended Follow-Up Quests
-- **Lean Software Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **DevOps Culture Transformation** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **Metrics That Matter** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **Facilitation Mastery** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- **Lean Software Development** - Planned quest (see Quest Build Plan)
+- **DevOps Culture Transformation** - Planned quest (see Quest Build Plan)
+- **Metrics That Matter** - Planned quest (see Quest Build Plan)
+- **Facilitation Mastery** - Planned quest (see Quest Build Plan)
 
 ### 🌐 Skill Web Connections
 **Cross-Technology Skills**: 
@@ -1264,7 +1264,7 @@ A successful improvement will:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

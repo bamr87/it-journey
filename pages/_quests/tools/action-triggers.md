@@ -121,11 +121,11 @@ Here are some handy enchantments to add to your arsenal:
 
 | **Spell Type** | **GitHub Action** |
 | --- |  --- |
-| 🧼 Linting | github/super-linter |
+| 🧼 Linting | GitHub/super-linter |
 | --- |  --- |
 | 🧪 Python Tests | actions/setup-python + pytest |
 | 🐍 Auto-Releases | release-drafter/release-drafter |
-| 🧪 Security | github/codeql-action |
+| 🧪 Security | GitHub/codeql-action |
 | 🧙‍♂️ AI Assist | Custom scripts using OpenAI API |
 
 * * * *
@@ -164,7 +164,7 @@ Shall we proceed to the final mystical chapter: **AI-Assisted Automation**? Beca
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -309,7 +309,7 @@ def recursive_ai_query(prompt: str, depth: int, max_depth: int = 3) -> str:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

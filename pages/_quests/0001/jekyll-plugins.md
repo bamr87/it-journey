@@ -260,7 +260,7 @@ Anything outside the list - including any code in your `_plugins/` folder - is i
 *Most of the value comes from configuring the community gems well. A few lines unlock SEO, a sitemap, a feed, and pagination.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- Wiring up jekyll-feed and pagination
+- Wiring up Jekyll-feed and pagination
 - Placing plugin output tags in layouts
 - Verifying plugin output
 
@@ -476,7 +476,7 @@ After a build, visit `/stats.html` - a page that did not exist as a source file,
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

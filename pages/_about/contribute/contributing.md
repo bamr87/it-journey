@@ -2,7 +2,7 @@
 title: Contributing to IT-Journey
 author: IT-Journey Team
 excerpt: Join our community of learners, creators, and adventurers building the future of IT education
-description: How to contribute to IT-Journey - a gamified learning platform for IT education
+description: How to contribute to IT-Journey, the gamified open-source platform for IT education — content, code, AI-agent workflows, and developer setup.
 snippet: Transform IT education through open-source collaboration
 categories:
 - about
@@ -14,9 +14,11 @@ tags:
 meta:
   keywords: contributing, open source, IT education, community, collaboration
 draft: false
-lastmod: '2026-03-21T15:12:32.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 permalink: /about/contributing/
 date: '2024-05-11T16:54:12.000Z'
+redirect_from:
+- /docs/contributing/contributing-developer/contributing-developer/
 ---
 # Contributing to IT-Journey
 
@@ -56,6 +58,104 @@ Welcome, adventurer! 🎯 IT-Journey thrives on community collaboration. Whether
 - **Review PRs**: Provide constructive feedback
 - **Mentor Others**: Share your expertise
 - **Spread the Word**: Tell others about IT-Journey
+
+## ⚔️ The Developer's Contribution Path
+
+Ready to commit code? This is the battle-tested workflow every developer (and AI agent) follows to land a change in the repo.
+
+### 🍴 Fork, Clone, and Sync
+
+```bash
+# Clone your fork, then point at the upstream repo
+git clone https://github.com/YOUR-USERNAME/it-journey.git
+cd it-journey
+git remote add upstream https://github.com/bamr87/it-journey.git
+
+# Sync before every new branch
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+```
+
+### 🌿 Branch with Intent
+
+Never commit to `main`. Branch with a type prefix that announces your quest:
+
+```bash
+git checkout -b feature/add-quest-validator   # new functionality
+git checkout -b fix/broken-link-in-docs       # bug fix
+git checkout -b docs/update-setup-guide        # documentation
+git checkout -b refactor/consolidate-scripts   # code refactoring
+```
+
+### 📜 Commit Like a Chronicler
+
+We follow [Conventional Commits](https://www.conventionalcommits.org/) — `<type>(<scope>): <subject>`. Types are `feat, fix, docs, style, refactor, test, chore`.
+
+```bash
+✅ feat(quest): add link guardian quest with AI analysis
+✅ fix(docs): correct broken links in setup guide
+✅ refactor(scripts): unify version management scripts
+
+❌ Update files
+❌ Fix bug
+❌ WIP
+```
+
+### 🔍 Verify Before You Push
+
+Run the local checks so CI doesn't surprise you:
+
+```bash
+make build-ci          # CI-parity Jekyll build
+make content-audit     # frontmatter + link validation
+make quest-audit       # only if you touched quests
+```
+
+CI re-runs build validation, frontmatter validation, internal link checking, and CodeQL on every pull request — green checks are required before merge.
+
+### 🎯 Open a Focused Pull Request
+
+Use a Conventional-Commits-style title (`feat(quest): add link guardian automation`) and a description that covers **what changed**, **why**, the **type of change**, a **testing checklist**, and any **related issues** (`Closes #123`). Keep each PR focused — one concern per PR makes review fast. A maintainer reviews (target: within 48 hours), then squash-and-merges once checks are green.
+
+## 🤖 Contributing with AI Agents
+
+IT-Journey embraces **AIPD** (AI-Powered Development) — AI is a force multiplier, not a replacement for human judgment. There are two supported paths.
+
+### 🛰️ Delegate an Issue to GitHub Copilot
+
+The [GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-claude-sonnet-in-github-copilot) works directly inside the repo's CI environment:
+
+1. Open an issue, then in the **Assignees** panel assign **Copilot**.
+2. Copilot opens a PR on a new branch and posts progress as comments.
+3. Review the diff as you would any contributor's — agents can miss project conventions.
+4. Confirm CI is green, then **squash and merge**.
+
+A `copilot-setup-steps.yml` workflow pre-installs Ruby, Bundler, and dependencies automatically, so the agent's environment matches local development.
+
+### 🧙 Drive an AI Assistant Locally
+
+Use Claude, Copilot, Cursor, Continue.dev, or similar in your editor to draft changes, then verify and open the PR yourself. A few prompt strategies that work well here:
+
+| Task | Prompt strategy |
+|------|----------------|
+| **New doc page** | "Create a Jekyll Markdown file in `pages/_docs/<topic>/` with all required frontmatter fields." |
+| **Fix frontmatter** | "Audit this file's YAML frontmatter against the Frontmatter Standards and add missing fields." |
+| **Improve content** | "Review this for clarity, accuracy, and completeness; suggest additions for a contributor." |
+| **Update a guide** | "Update this to reflect [change], keep the existing voice, and bump `lastmod` to today." |
+
+**Agent do's and don'ts:**
+
+✅ Always bump `lastmod` when editing a file  
+✅ Run `make build-ci` to confirm the site compiles  
+✅ Write clear PR descriptions explaining what and why  
+✅ Follow Conventional Commits  
+
+❌ Never commit secrets, API keys, or credentials  
+❌ Don't touch CI workflow files unless asked  
+❌ Don't reorder or drop frontmatter fields without understanding the impact  
+❌ Don't hard-code absolute local paths or bypass branch protection  
 
 ## 🌟 Our Contributors
 

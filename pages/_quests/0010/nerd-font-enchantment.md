@@ -91,7 +91,7 @@ By the time you complete this font enchantment, you will have mastered:
 - [ ] **Font Understanding**: Learn what Nerd Fonts are and why they're essential
 - [ ] **Platform Installation**: Install Nerd Fonts on your specific operating system
 - [ ] **Terminal Configuration**: Configure your terminal application to use Nerd Fonts
-- [ ] **VSCode Integration**: Set up VSCode to use Nerd Fonts for both editor and terminal
+- [ ] **VS Code Integration**: Set up VS Code to use Nerd Fonts for both editor and terminal
 - [ ] **Visual Verification**: Confirm that icons and symbols display correctly
 
 ### Secondary Objectives (Bonus Achievements)
@@ -270,7 +270,7 @@ echo "Git:  ✓ ✗"
 ### ⚔️ Configuration Skills
 
 - Terminal emulator font settings
-- VSCode font configuration
+- VS Code font configuration
 - Font rendering optimization
 - Cross-application consistency
 
@@ -339,7 +339,7 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 }
 ```
 
-### 🏗️ VSCode Configuration
+### 🏗️ VS Code Configuration
 
 #### Step 1: Editor Font Settings
 
@@ -367,7 +367,7 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 }
 ```
 
-#### Step 3: Additional VSCode Optimizations
+#### Step 3: Additional VS Code Optimizations
 
 ```json
 // VSCode settings.json - Enhanced font experience
@@ -383,7 +383,7 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 ### 🔍 Knowledge Check: Configuration Mastery
 
 - [ ] How do you configure fonts in your terminal emulator?
-- [ ] What VSCode settings control font rendering?
+- [ ] What VS Code settings control font rendering?
 - [ ] How do you optimize font display for better readability?
 - [ ] What settings ensure consistent fonts across applications?
 
@@ -493,7 +493,7 @@ fc-list | grep -i "meslo"
 # - Adjust character spacing
 ```
 
-#### Issue 3: VSCode Terminal Font Issues
+#### Issue 3: VS Code Terminal Font Issues
 
 ```json
 // VSCode settings for font troubleshooting
@@ -537,7 +537,7 @@ fc-cache -fv
 
 - [ ] Install Nerd Fonts using your platform's method
 - [ ] Configure your terminal emulator to use the font
-- [ ] Set up VSCode with Nerd Font for both editor and terminal
+- [ ] Set up VS Code with Nerd Font for both editor and terminal
 - [ ] Run the comprehensive font test script
 - [ ] Verify icons display correctly in Oh-My-Zsh themes
 
@@ -545,7 +545,7 @@ fc-cache -fv
 
 - [ ] Font appears in system font list
 - [ ] Terminal displays all test symbols correctly
-- [ ] VSCode uses Nerd Font in both editor and terminal
+- [ ] VS Code uses Nerd Font in both editor and terminal
 - [ ] No boxes or question marks appear in terminal output
 
 ### Challenge 2: Theme Compatibility Testing (🕐 10 minutes)
@@ -588,7 +588,7 @@ fc-cache -fv
 
 - [ ] Nerd Fonts successfully installed on system
 - [ ] Terminal configured to use Nerd Font
-- [ ] VSCode configured for Nerd Font usage
+- [ ] VS Code configured for Nerd Font usage
 - [ ] All test symbols display correctly
 - [ ] Oh-My-Zsh themes render properly
 - [ ] Font configuration persists across sessions
@@ -662,7 +662,7 @@ fc-cache -fv
 
 - [Nerd Fonts Overview](https://www.youtube.com/results?search_query=nerd+fonts+overview) - Introduction to patched fonts
 - [Terminal Font Setup](https://www.youtube.com/results?search_query=terminal+nerd+fonts+setup) - Step-by-step installation guides
-- [VSCode Font Configuration](https://www.youtube.com/results?search_query=vscode+nerd+fonts) - Editor integration tutorials
+- [VS Code Font Configuration](https://www.youtube.com/results?search_query=vscode+nerd+fonts) - Editor integration tutorials
 
 ### 💬 Community and Support
 
@@ -703,7 +703,7 @@ fc-cache -fv
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

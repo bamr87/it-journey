@@ -485,7 +485,7 @@ Three ideas you just used:
 ### Community Resources
 - [JavaScript.info](https://javascript.info/) - A thorough, modern tutorial
 - [freeCodeCamp JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) - Free interactive curriculum
-- [Stack Overflow: javascript](https://stackoverflow.com/questions/tagged/javascript) - Tagged Q&A
+- [Stack Overflow: JavaScript](https://stackoverflow.com/questions/tagged/javascript) - Tagged Q&A
 
 ### Learning Materials
 - [Eloquent JavaScript (free book)](https://eloquentjavascript.net/) - Deep, beginner-to-advanced
@@ -502,7 +502,7 @@ Three ideas you just used:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -5,7 +5,7 @@ description: 'Master Docker container fundamentals: images versus containers, wr
 excerpt: Master Docker container fundamentals including images, the Dockerfile, layers, and registries for portable application deployment
 preview: images/previews/container-fundamentals-isolation-quest-title-porta.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -44,6 +44,8 @@ validation_criteria:
   - Understands image layers and the build cache
   - Can push and pull from a registry
 permalink: /quests/0100/container-fundamentals/
+redirect_from:
+- /quickstart/local-development/
 categories:
 - Quests
 - DevOps
@@ -437,6 +439,67 @@ That `pull` then `run` on a different machine is the entire promise of container
 - [ ] What does a multi-stage build keep *out* of your final image?
 - [ ] In `YOURNAME/container-hello:1.0`, which part is the tag and which is the repository?
 
+## 🧪 Chapter 4: The Live Development Loop - Editing on the Host, Running in the Crate
+
+*So far you have rebuilt the image every time the code changes. That is correct for shipping, but painful while you are writing code. The trick for fast iteration is to **bind-mount** your project folder into the running container, so the container reads your live files instead of a frozen copy baked into the image. You edit in your editor on the host; the process inside the crate sees the change instantly.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- The difference between a **named volume** (managed data) and a **bind mount** (a host folder mapped in)
+- A live-reload development loop without rebuilding the image
+- Reading a container's logs while it runs
+
+### 🏗️ Bind-Mount Your Source for Instant Feedback
+
+A `-v <host-path>:<container-path>` flag maps a directory on your machine straight into the container. Combined with a tool that watches for file changes, this gives you edit-and-refresh development with no rebuild:
+
+```bash
+# Mount the current folder over the image's app directory, then run.
+# Edits to app.js on the host are seen immediately inside the container.
+docker run --name dev -d \
+  -p 3000:3000 \
+  -v "$(pwd)":/usr/src/app \
+  container-hello:1.0
+
+# Follow the logs in real time to watch requests and restarts
+docker logs -f dev
+```
+
+Bind mounts are a **development convenience**, not a production pattern: in production the code lives *inside* the image so it travels with it. Use the mount only on your own machine for the tight feedback loop, then build a clean image to ship.
+
+### 🏗️ One Command with Compose
+
+Long `docker run` lines get unwieldy fast. A `compose.yaml` file records the same port mapping, volume, and environment once, so a single `docker compose up` launches everything:
+
+```yaml
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"        # host:container
+    volumes:
+      - .:/usr/src/app     # live bind mount of the source
+    environment:
+      - PORT=3000
+```
+
+```bash
+docker compose up -d        # build (if needed) and start in the background
+docker compose logs -f      # watch output
+docker compose down         # stop and remove containers + network
+```
+
+This is your on-ramp to the next quest, where Compose wires *several* containers - an app, a database, a cache - into one application.
+
+### 🔍 Knowledge Check: The Development Loop
+- [ ] When would you bind-mount source instead of `COPY`-ing it into the image?
+- [ ] Why is a bind mount a development-only trick rather than a way to ship code?
+- [ ] What does `docker compose down` remove that simply stopping a container does not?
+
+### ⚡ Quick Wins and Checkpoints
+- [ ] **Edited live**: A change to `app.js` showed up without rebuilding the image
+- [ ] **Followed logs**: `docker logs -f` streamed output while the container ran
+- [ ] **Launched with Compose**: `docker compose up` started your app from one command
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Containerize a Static Site
@@ -526,7 +589,7 @@ That `pull` then `run` on a different machine is the entire promise of container
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0100 - Frontend & Containers]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

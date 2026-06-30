@@ -588,7 +588,7 @@ EOF
 
 Useful IT-Journey commands:
   - scripts/core/version-manager.sh  # Manage project versions
-  - scripts/deployment/update-settings.sh  # Update configuration
+  - make build-ci  # CI-parity Jekyll build
 
 For support, visit: https://github.com/bamr87/it-journey
 

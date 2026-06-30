@@ -296,7 +296,7 @@ jobs:
           EOF
 
       - name: Comment plan on PR
-        uses: actions/github-script@v7
+        uses: actions/GitHub-script@v7
         with:
           script: |
             const fs = require('fs');
@@ -367,7 +367,7 @@ python3 scripts/validate_quest.py --quest q2
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0111 (7) - API Development]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -86,14 +86,14 @@ My personal website can be accessed through following domains. These sites are a
  12  | <https://jekyllrb.com/>                              | Comments service
  13  | <https://highlightjs.org/>                           | Syntax highlighting
  14  | <https://www.mathjax.org/>                           | JS engine for mathematics
- 15  | <https://mermaidjs.github.io/>                       | Charts generated from text via javascript
+ 15  | <https://mermaidjs.github.io/>                       | Charts generated from text via JavaScript
  16  | <https://lunrjs.com/>                                | Lightweight full-text offline search
  17  | <http://nanobar.jacoborus.codes/>                    | Lightweight progress bars
  18  | <https://www.google.com/adsense/>                    | Google Ads
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

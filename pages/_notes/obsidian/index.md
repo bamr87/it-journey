@@ -1,0 +1,60 @@
+---
+title: Obsidian Knowledge Graph and Wiki Links
+permalink: /notes/obsidian/
+redirect_from:
+- /notes/obsidian/
+description: Use Obsidian-style wiki links, backlinks, embeds, and interactive graph views across all IT-Journey docs, quests, notes, and posts.
+excerpt: Lightweight guide to the Obsidian-style knowledge features provided by the zer0-mistakes theme.
+categories:
+- notes
+- obsidian
+tags:
+- obsidian
+- wiki-links
+- knowledge-graph
+- notes
+sidebar:
+  nav: auto
+toc_sticky: true
+date: '2026-04-25T00:00:00.000Z'
+lastmod: '2026-04-25T00:00:00.000Z'
+author: Amr Abdel Eissa
+draft: false
+keywords:
+  primary:
+  - obsidian
+  - knowledge graph
+  secondary:
+  - wiki links
+  - backlinks
+  - notes
+---
+# Obsidian Knowledge Graph
+
+IT-Journey uses the `zer0-mistakes` theme for Obsidian-style knowledge features while keeping the implementation in the theme. This site only adds the pages, navigation, and content links needed to make those features discoverable.
+
+## What Is Enabled
+
+- `[[wiki links]]` resolve to matching pages, notes, docs, quests, and posts.
+- `![[embeds]]` can preview linked notes or note images.
+- `#tags` in content become tag links.
+- The site graph is generated from `assets/data/wiki-index.json`.
+
+## Start Here
+
+- [Open the Obsidian Graph View](/notes/obsidian/graph/)
+- [Browse all notes](/notes/)
+- [Browse documentation](/docs/)
+
+## Related Wiki Links
+
+- [[Learning Resources Library]]
+- [[Jekyll Documentation]]
+- [[Terminal and Bash Learning Path]]
+- [[Notes Index]]
+- [[Quick Start: Build a Jekyll Site from Scratch]]
+- [[Markdown Mastery: Content Formatting Fundamentals]]
+
+## Authoring Guidance
+
+Add wiki links where they help learners move between concepts naturally. Prefer stable page titles or `aliases:` in front matter for important concepts, and keep `.obsidian/` as editor metadata only.

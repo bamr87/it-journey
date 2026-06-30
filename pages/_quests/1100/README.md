@@ -40,7 +40,7 @@ Level 1100 quests focus on:
 | [Data Quality Engineering: Testing, Validation & Monitoring Frameworks](/quests/1100/data-quality/) | 🔴 Hard | 3-4 hours | main_quest | 🔮 Placeholder |
 | [Data Warehousing: Design Star Schema & Build Modern Analytics Architecture](/quests/1100/data-warehousing/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
 | [ETL Pipeline Design: Build Scalable Data Pipelines with Python](/quests/1100/etl-pipeline-design/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [The Siege of King EDGAR: Storming the SEC Data Castle](/quests/1100/sec-edgar-siege/) | 🟡 Medium | 90-150 minutes | main_quest | 🔮 Placeholder |
+| The Siege of King EDGAR: Storming the SEC Data Castle | 🟡 Medium | 90-150 minutes | main_quest | 🔮 Placeholder |
 | [Stream Processing: Real-Time Data with Apache Kafka & Flink](/quests/1100/stream-processing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
 | [The Temple of Templates: Binary Abstractions and Reusable Realms](/quests/1100/temple-of-templates/) | 🟡 Medium | 60-90 minutes | main_quest | 🔮 Placeholder |
 
@@ -62,7 +62,7 @@ Learn to access and process SEC EDGAR data. Build applications that consume fina
 
 ---
 
-#### [SEC EDGAR Deep Dive](sec-edgar.md)
+#### SEC EDGAR Deep Dive
 **Quest Type**: Side ⚔️ | **Difficulty**: 🔴 Hard | **Estimated Time**: 120-180 minutes
 
 Advanced SEC EDGAR techniques including bulk downloads, filing analysis, and financial statement extraction.
@@ -94,7 +94,7 @@ Master the art of creating reusable templates. Build template systems that scale
 
 ### For Financial Developers
 1. [EDGAR API Integration](edgar.md) - Foundation
-2. [SEC EDGAR Deep Dive](sec-edgar.md) - Advanced patterns
+2. SEC EDGAR Deep Dive - Advanced patterns
 3. Build financial applications
 
 ### For Platform Developers

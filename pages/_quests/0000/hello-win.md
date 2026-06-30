@@ -432,13 +432,13 @@ Set up important environment variables:
 **Quest Series**: Init World - Platform Mastery
 
 **Prerequisite Quests**:
-- [Hello n00b](../hello-noob.md) - GitHub and community basics
-- [OS Selection](../os-selection.md) - Platform decision making
+- [Hello n00b](hello-noob.md) - GitHub and community basics
+- [OS Selection](os-selection.md) - Platform decision making
 
 **Follow-Up Quests**:
-- [VS Code Mastery Quest](../vscode-mastery.md) - IDE optimization
-- [Bash Scripting Adventures](../bash-run.md) - Linux automation
-- [Development Tools Mastery](../../tools/README.md) - Advanced tooling
+- [VS Code Mastery Quest](vscode-mastery.md) - IDE optimization
+- [Bash Scripting Adventures](bash-run.md) - Linux automation
+- [Development Tools Mastery](../tools/README.md) - Advanced tooling
 
 **Parallel Quests** (can be completed in any order):
 - Platform-specific setup quests for macOS and Linux
@@ -480,7 +480,7 @@ With your powerful Windows development environment, you're ready to:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

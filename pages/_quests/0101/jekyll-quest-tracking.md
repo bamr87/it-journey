@@ -116,7 +116,7 @@ redirect_from:
 
 ## 📜 The Legend Behind This Quest
 
-In the realm of static site generators, Jekyll reigns as the venerable wizard-king—simple yet powerful, transforming markdown into magnificent web pages. But many who wield Jekyll's power never venture beyond basic posts and pages, missing the treasure trove of **collections**.
+In the realm of static site generators, Jekyll reigns as the venerable wizard-king—simple yet powerful, transforming Markdown into magnificent web pages. But many who wield Jekyll's power never venture beyond basic posts and pages, missing the treasure trove of **collections**.
 
 Collections are Jekyll's secret weapon for organizing related content: quests, products, team members, portfolio pieces—anything that shares a common structure. Combined with **Liquid templating** and **frontmatter metadata**, collections become the foundation for dynamic, data-driven interfaces that rival server-rendered applications.
 
@@ -1156,7 +1156,7 @@ Before committing, verify:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

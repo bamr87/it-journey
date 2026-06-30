@@ -55,7 +55,7 @@ draft: false
 
 ## Related Quest
 
-[Q11: Success Criteria & Signals](/quests/gh-600/agentic-success-criteria-and-signals/) — Full `acceptance-criteria.json` schema and `check-task-completion.yml` workflow.
+[Q11: Success Criteria & Signals](/quests/1010/agentic-success-criteria-and-signals/) — Full `acceptance-criteria.json` schema and `check-task-completion.yml` workflow.
 
 ---
 

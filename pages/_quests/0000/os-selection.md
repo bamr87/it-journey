@@ -5,7 +5,7 @@ description: 'Compare Windows, macOS, and Linux, match each platform to your IT 
 excerpt: Selecting the right operating system is a crucial first step in your IT adventure
 preview: images/previews/os-selection.png
 date: '2023-11-25T14:12:43.000Z'
-lastmod: '2025-11-30T05:46:59.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -57,6 +57,8 @@ rewards:
   - Access to platform-specific Hello quests
   - Foundation for development environment setup
 permalink: /quests/0000/os-selection/
+redirect_from:
+- /quickstart/machine-setup/
 categories:
 - Quests
 - Init-World
@@ -144,6 +146,60 @@ Choosing the right operating system (OS) is like selecting the right wand in the
 
 Your choice of OS will lay the foundation for your IT journey. Each has its strengths and aligns with different career paths and personal preferences. It's not uncommon for IT professionals to be familiar with multiple operating systems, as each has unique advantages in certain scenarios. Choose the one that resonates with your current goals and interests, and remember, you can always explore others as you advance in your IT quest. 🖥️🌟🔍
 
+## 📦 Each Realm's Summoning Tool: Package Managers
+
+Before you can cast real spells, every realm gives you a **package manager** — the trusted gateway you'll use to summon software, resolve dependencies, and keep your tools updated. Knowing which one rules each realm is part of choosing wisely, because it shapes how you'll install everything from here on.
+
+### 🍎 macOS — Homebrew
+
+```zsh
+# Install Homebrew, the de facto package manager for macOS
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Then summon software with a single incantation
+brew install git
+```
+
+### 🪟 Windows — Winget
+
+```powershell
+# Winget ships with Windows 11 and recent Windows 10 builds
+winget --version
+
+# Summon software from Microsoft's curated catalog
+winget install Git.Git
+```
+
+### 🐧 Linux — APT (Debian/Ubuntu)
+
+```bash
+# Refresh the repository scrolls, then summon
+sudo apt update && sudo apt install -y git
+
+# Other realms speak different dialects:
+# Fedora/RHEL → sudo dnf install git
+# Arch        → sudo pacman -S git
+```
+
+> 🔮 **Lore note:** A package manager is "an app store for developers" — it verifies and signs packages, installs dependencies automatically, and lets you update everything with one command. You'll lean on it in nearly every future quest.
+
+## 🌉 The Bridge Between Realms: WSL
+
+You don't always have to *choose* between Windows and Linux. The **Windows Subsystem for Linux (WSL2)** runs a real Linux kernel *inside* Windows — letting you wield Linux's command-line power without leaving the Windows realm or dual-booting. It's the most popular way developers get the best of both worlds.
+
+### 🪟 Enable WSL2 on Windows
+
+```powershell
+# Run as Administrator to enable the bridge
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+# Make WSL2 the default, then install a Linux distro (e.g. Ubuntu) from the Microsoft Store
+wsl --set-default-version 2
+```
+
+> ⚡ Completing this satisfies the **Explore WSL** bonus objective above — a low-risk way to experience a second OS without touching your boot loader.
+
 ## 🏆 Quest Completion Validation
 
 ### Portfolio Artifacts Created
@@ -166,7 +222,7 @@ Your choice of OS will lay the foundation for your IT journey. Each has its stre
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

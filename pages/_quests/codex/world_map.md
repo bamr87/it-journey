@@ -116,8 +116,8 @@ Battle-tested wisdom and real-world experiences from fellow code warriors who've
 
 #### 📅 Recent Chronicles (2024-2025)
 
-- [AI-Powered Development Workflows](/advanced-version-management-ai-implementation/) - Advanced automation techniques
-- [GitHub Actions Mastery](/debugging-github-actions-workflows-ai-assisted/) - CI/CD optimization
+- [AI-Powered Development Workflows](https://lifehacker.dev) - Advanced automation techniques
+- [GitHub Actions Mastery](https://lifehacker.dev) - CI/CD optimization
 - [Docker for IT-Journey](https://lifehacker.dev) - Containerization strategies
 - Jekyll Theming & Bootstrap (planned) - Site customization
 
@@ -201,10 +201,10 @@ Become a master of user interfaces and digital aesthetics
 
 - [Frontend Fundamentals](/quests/0100/frontend/) - The Art of Digital Presentation
 - [Frontend Docker Adventures](/quests/0100/frontend-docker/) - Containerized UI Magic
-- [Frontend Level Progression](/quests/0100/frontend-levels/) - Structured Learning Path
-- [Level 000 Frontend](/quests/0100/frontend-docker-000/) - Beginner Container Magic
-- [Level 001 Frontend](/quests/0100/001-frontend-docker/) - Intermediate UI Sorcery
-- [Level 010 Frontend](/quests/0100/010-frontend-docker/) - Advanced Interface Wizardry
+- [Frontend Level Progression](/quests/0100/frontend/) - Structured Learning Path
+- [Level 000 Frontend](/quests/0100/frontend-docker/) - Beginner Container Magic
+- [Level 001 Frontend](/quests/0100/frontend-docker/) - Intermediate UI Sorcery
+- [Level 010 Frontend](/quests/0100/frontend-docker/) - Advanced Interface Wizardry
 
 #### 📚 Quest Codex (`/quests/codex/`)
 
@@ -321,17 +321,15 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 #### 🔧 Platform Management
 
-- [⚙️ Site Configuration](/about/config/) - Jekyll and site settings
-- [🎨 Theme Customization](/about/theme/) - Visual customization guide
+- [🏰 The Self-Operating Website](/quests/codex/self-operating-website/) - Build & configure the site as an epic quest
 - [🤝 Contributing Guide](/about/contributing/) - How to contribute content
-- [🗺️ Complete Sitemap](/about/sitemap/) - Detailed site structure
 - [✨ Feature Overview](/about/features/) - Platform capabilities
 
 #### 🔍 Discovery Tools
 
 - [🔎 Site Search](/search/) - Find content across all domains
-- [🏷️ All Categories](/categories/) - Browse content by topic
-- [📊 Progress Tracking](/progress/) - Monitor your learning journey
+- [🏷️ All Categories](/quests/) - Browse content by topic
+- [📊 Progress Tracking](/quests/home/) - Monitor your learning journey
 
 ### 🛡️ Authentication & Access
 
@@ -358,9 +356,9 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 ### 🔧 For System Administrators
 
-1. **Platform Setup:** [Configuration Guide](/about/config/)
+1. **Platform Setup:** [The Self-Operating Website epic](/quests/codex/self-operating-website/)
 2. **Docker Environment:** [Container Setup](https://lifehacker.dev)
-3. **CI/CD Integration:** [GitHub Actions](/debugging-github-actions-workflows-ai-assisted/)
+3. **CI/CD Integration:** [GitHub Actions](https://lifehacker.dev)
 4. **Monitoring:** [Site Analytics](/about/features/)
 
 ## 🌟 Hidden Treasures & Advanced Features
@@ -395,7 +393,7 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

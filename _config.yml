@@ -77,8 +77,6 @@ level                    : 'her0'
 maintainers:
   - name: *name
     profile: ["https://github.com", "/", *github_user]
-  - name: "Vacant"
-    profile: "/github.com"
 
 ## Personalization ----------------------------------------------------------------
 
@@ -266,18 +264,12 @@ collections:
   pages:
     output: true
     permalink: /:collection/:name/
-  docs:
-    output: true
-    permalink: /:collection/:categories/:name/
   quests:
     output: true
     permalink: /:collection/:categories/:name/
   notes:
     output: true
     permalink: /:collection/:path/
-  quickstart:
-    output: true
-    permalink: /:collection/:name/
   about:
     output: true
     permalink: /:collection/:categories/:name/
@@ -330,33 +322,6 @@ defaults:
       sidebar:
         nav: about
 
-  # pages/_quickstart
-  - 
-    scope:
-      path: pages/_quickstart
-    values:
-      layout: default
-      collection: quickstart
-      share: true
-      related: true
-      sidebar:
-        nav: quickstart
-
-  # pages/_docs
-  - 
-    scope:
-      path: pages/_docs
-    values:
-      layout: *pages
-      # category: docs
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      sidebar:
-        nav: auto
-    # permalink: /docs/:category/:name/
 
   # pages/_quests collection — quest.md files use the local quest layout.
   # Level READMEs (/quests/XXXX/) keep `layout: quest-collection` set in their
@@ -377,7 +342,10 @@ defaults:
       permalink: /:categories/:slug
 
   # pages/_notes
-  - 
+  # nav: auto -> the theme auto-generates the left sidebar from the collection's
+  # files (see _includes/navigation/sidebar-folders.html), so every note is listed
+  # dynamically. No hand-maintained _data/navigation/notes.yml to drift.
+  -
     scope:
       path: pages/_notes
       type: notes
@@ -386,7 +354,7 @@ defaults:
       share: false
       author_profile: false
       sidebar:
-        nav: notes
+        nav: auto
 
 # Exclude from processing.
 # The following items will not be processed, by default.

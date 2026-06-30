@@ -346,7 +346,7 @@ Test the waters: Update a chat log, commit/push—watch it refresh live. Collabo
 
 **Common Jekyll Enhancements:**
 - **Themes**: Change theme in _config.yml for different appearances
-- **Plugins**: Add jekyll-feed for RSS, jekyll-sitemap for SEO
+- **Plugins**: Add Jekyll-feed for RSS, Jekyll-sitemap for SEO
 - **Custom Pages**: Create about.md, contact.md for additional content
 - **Collections**: Organize content beyond posts (e.g., projects, tutorials)
 
@@ -482,7 +482,7 @@ This quest advances you from basic GitHub usage to web publishing proficiency, o
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0011 - Development Tools & AI Integration]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
