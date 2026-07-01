@@ -86,6 +86,7 @@ rewards:
 layout: quest
 redirect_from:
 - /quests/0010/css-styling-basics/
+- /quickstart/styling-navigation/
 ---
 *Greetings, brave adventurer! Welcome to **CSS Styling Basics** - the quest where a plain, gray wall of text transforms into something people actually want to look at. HTML is the skeleton of a web page; **CSS** (Cascading Style Sheets) is the robe, the colors, and the architecture. With it you control every pixel: spacing, typography, layout, and how the whole thing reshapes itself on a phone versus a wide monitor.*
 
@@ -459,6 +460,53 @@ Resize the browser across those breakpoints and the column count changes. That s
 
 **Validation**: Changing one variable on `:root` updates the component's color or spacing everywhere it is used.
 
+## 🎨 Theming with Custom Properties - One Switch, a New Look
+
+*Once your colors and spacing live in custom properties, you can re-skin an entire interface by changing those variables in one place. This is exactly how site themes - including the one running IT-Journey - offer "skins" like light, dark, and high-contrast: a single set of variables drives the whole page.*
+
+Define a base palette on `:root`, then override just the colors inside a media query or a theme class:
+
+```css
+:root {
+  --bg: #f9f9f9;
+  --text: #111111;
+  --brand: #007bff;
+}
+
+/* A "dark skin": flip only the variables, not every rule */
+[data-theme="dark"] {
+  --bg: #111111;
+  --text: #f9f9f9;
+  --brand: #2563eb;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--brand);
+}
+```
+
+Toggling `data-theme="dark"` on the `<html>` element re-themes the whole page without touching a single rule below `:root`. You can even respect the visitor's system preference automatically:
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --text: #f9f9f9;
+  }
+}
+```
+
+The same idea scales: a `--space` scale, a `--radius`, and a handful of color tokens become the single source of truth for an entire design - change a token, change everything that references it.
+
+### 🔍 Knowledge Check: Theming
+- [ ] Why does overriding variables on a theme selector re-skin the page without rewriting every rule?
+- [ ] What does `prefers-color-scheme: dark` let you detect?
+
 ## 🏆 Quest Rewards & Achievements
 
 **🎖️ Badges Earned**:
@@ -517,7 +565,7 @@ Resize the browser across those breakpoints and the column count changes. That s
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

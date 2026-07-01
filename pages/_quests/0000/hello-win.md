@@ -92,7 +92,7 @@ sub_title: 'Level 001 Quest: Windows Development Environment Mastery'
 
 ## 🎯 Quest Objectives
 
-This comprehensive setup quest will equip you with:
+This setup quest covers PowerShell, WSL2, package management, and a cross-platform workflow. You'll come away with:
 
 ### Primary Objectives (Required for Quest Completion)
 - [ ] **PowerShell Mastery** - Master advanced PowerShell commands and automation
@@ -291,7 +291,7 @@ winget install Hashicorp.Terraform
 
 ## 🧙‍♂️ Chapter 4: Cross-Platform Development Workflow
 
-*Configure seamless interaction between Windows and Linux environments.*
+*Configure Windows and Linux to share files and tools directly, with no copy step between them.*
 
 ### 🔗 WSL-Windows Integration
 
@@ -403,7 +403,7 @@ Set up important environment variables:
 
 ### 🔴 Expert Challenge: Cross-Platform Mastery
 - [ ] Build a project that uses both Windows and Linux tools
-- [ ] Create a comprehensive development environment setup script
+- [ ] Create a setup script that installs tools, enables WSL, and configures your environment
 - [ ] Optimize system performance for development workloads
 - [ ] Contribute to or maintain an open-source project using your setup
 
@@ -417,7 +417,7 @@ Set up important environment variables:
 
 ### Skills Demonstrated
 - [ ] **PowerShell Proficiency**: Advanced command usage and scripting
-- [ ] **WSL Mastery**: Seamless Windows-Linux integration
+- [ ] **WSL Mastery**: Run Linux tools and access shared files from Windows
 - [ ] **Package Management**: Efficient tool installation and maintenance
 - [ ] **Environment Optimization**: Performance-tuned development setup
 
@@ -432,13 +432,13 @@ Set up important environment variables:
 **Quest Series**: Init World - Platform Mastery
 
 **Prerequisite Quests**:
-- [Hello n00b](../hello-noob.md) - GitHub and community basics
-- [OS Selection](../os-selection.md) - Platform decision making
+- [Hello n00b](hello-noob.md) - GitHub and community basics
+- [OS Selection](os-selection.md) - Platform decision making
 
 **Follow-Up Quests**:
-- [VS Code Mastery Quest](../vscode-mastery.md) - IDE optimization
-- [Bash Scripting Adventures](../bash-run.md) - Linux automation
-- [Development Tools Mastery](../../tools/README.md) - Advanced tooling
+- [VS Code Mastery Quest](vscode-mastery.md) - IDE optimization
+- [Bash Scripting Adventures](bash-run.md) - Linux automation
+- [Development Tools Mastery](../tools/README.md) - Advanced tooling
 
 **Parallel Quests** (can be completed in any order):
 - Platform-specific setup quests for macOS and Linux
@@ -450,7 +450,7 @@ Set up important environment variables:
 
 ### 🌟 What You've Achieved
 
-- **Dual-Environment Mastery**: Seamless operation across Windows and Linux
+- **Dual-Environment Mastery**: Run Windows and Linux tools side by side, sharing the same files with no copy step
 - **Professional Toolchain**: Industry-standard development tools and workflows  
 - **Automation Skills**: PowerShell scripting and process optimization abilities
 - **Cloud Readiness**: Modern cloud development tool integration
@@ -458,7 +458,7 @@ Set up important environment variables:
 
 ### 🔮 Your Next Adventures
 
-With your powerful Windows development environment, you're ready to:
+With your Windows + WSL development environment, you're ready to:
 
 - **Tackle Complex Projects**: Build applications that span multiple platforms
 - **Contribute to Open Source**: Participate in projects using professional-grade tools
@@ -474,13 +474,13 @@ With your powerful Windows development environment, you're ready to:
 
 ---
 
-*Your Windows development fortress is now complete! You've mastered the art of blending Microsoft's innovation with open-source power. Continue your journey with confidence, knowing you have one of the most versatile and powerful development environments available.*
+*Your Windows development fortress is now complete! You've mastered the art of blending Microsoft's innovation with open-source power. Continue your journey with confidence, knowing you can run both Windows and Linux toolchains from a single machine.*
 
 **Ready to build something amazing? Your enhanced Windows environment awaits your creativity!** ⚔️✨
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -5,7 +5,7 @@ description: 'Master Jekyll static site generation: install Ruby and Jekyll, lea
 excerpt: Build fast, secure static websites with Jekyll - no databases or servers required.
 preview: images/previews/jekyll-fundamentals-static-site-generation-descrip.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 75-90 minutes
@@ -44,6 +44,10 @@ validation_criteria:
   - Understands the role of the _site output folder
   - Can troubleshoot a failed build
 permalink: /quests/0001/jekyll-fundamentals/
+redirect_from:
+- /quickstart/jekyll/
+- /docs/jekyll/jekyll-frontmatter-cms/
+- /docs/jekyll/
 categories:
 - Quests
 - Frontend
@@ -93,7 +97,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*In the early days, every web page was conjured fresh on each visit - the server would wake a database, run code, assemble the page, and only then send it. Powerful, but slow, costly, and full of trap doors for attackers. Then a band of builders realized a simple truth: most pages do not change between visitors. Why rebuild the castle every time someone knocks? **Jekyll** was born from this insight - generate every page once, ahead of time, and serve plain files. The result is a site that loads instantly, costs nearly nothing to host, and has almost no attack surface.*
+*In the early days, every web page was conjured fresh on each visit - the server would wake a database, run code, assemble the page, and only then send it. That let every page be personalized per visitor, but it was slow, costly, and full of trap doors for attackers. Then a band of builders realized a simple truth: most pages do not change between visitors. Why rebuild the castle every time someone knocks? **Jekyll** was born from this insight - generate every page once, ahead of time, and serve plain files. The result is a site that loads instantly, costs nearly nothing to host, and has almost no attack surface.*
 
 *Jekyll, written in Ruby, powers GitHub Pages and countless documentation sites, blogs, and portfolios across the kingdom. Master it, and you hold the foundation stone of the entire Web Fundamentals tier.*
 
@@ -392,6 +396,76 @@ Visit `http://127.0.0.1:4000/recipes/bread/` - Jekyll generated that page from y
 - [ ] What is front matter, and where does it live in a file?
 - [ ] What is the difference between `jekyll build` and `jekyll serve`?
 
+## 🧙‍♂️ Chapter 4: Front Matter as a CMS & Taming the Theme
+
+*You have built, mapped, and populated your castle. Now learn the deeper magic: those little blocks of front matter are not just metadata - together with your Markdown files they **are your content-management system**. No admin panel, no database to back up. Git is your edit history, your editor is your dashboard, and every change is reviewable.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Treating version-controlled front matter as a database-free CMS
+- Splitting production and development config so the same repo serves both
+- Diagnosing the three failures every Jekyll builder hits
+
+### 🏗️ Front Matter Is Your CMS
+
+A traditional CMS stores posts in a database behind a login. Jekyll flips this: each Markdown file *is* a record, and its front matter *is* the row of fields. The payoff is concrete:
+
+- **Version control** - every edit is a Git commit you can diff, review, and revert.
+- **No database** - files are trivial to back up, migrate, or move to another generator.
+- **Security** - no database and no admin login means almost nothing to attack.
+- **Portability** - the same Markdown works in any static site generator.
+
+To make this CMS *trustworthy* rather than a pile of loose files, hold to a few practices:
+
+- **Consistent schema** - use the same front matter fields across each content type (every recipe has `prep_time`; every post has `date`).
+- **Validation** - check that required fields exist before you build (CI can fail a missing `title`).
+- **Templates** - keep a skeleton front matter block per content type so new files start correct.
+
+A VS Code extension like **Front Matter CMS** gives you a visual editor over exactly these fields - a dashboard for your file-based content, with no server required.
+
+### 🏗️ One Repo, Two Configs: Dev vs. Production
+
+A real site usually loads its theme one way locally and another way once deployed. Jekyll lets you layer config files so a single repo does both. In `_config.yml` (used in production, e.g. GitHub Pages) point at a remote theme:
+
+```yaml
+remote_theme: "bamr87/zer0-mistakes"
+```
+
+Then in a `_config_dev.yml` override, use the locally installed gem instead - faster, and it works offline:
+
+```yaml
+theme: "jekyll-theme-zer0"
+```
+
+Jekyll merges configs left-to-right, so the dev file wins locally while production never sees it:
+
+```bash
+# Local development - dev overrides win
+bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
+# Production build - remote_theme from _config.yml only
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+Prefer zero local Ruby? Run the whole thing in a container:
+
+```bash
+docker-compose up -d
+# Open http://localhost:4002 in your browser
+```
+
+### 🛠️ Troubleshooting the Three Common Curses
+
+| Symptom | Cause | Cure |
+| --- | --- | --- |
+| `cannot load such file -- webrick` | Ruby 3.0+ dropped webrick from the stdlib | `bundle add webrick` |
+| `bundle install` fails on a version error | Stale Bundler | `gem install bundler` then `bundle install` |
+| Pages render with no styling | Theme not resolved | Confirm `theme`/`remote_theme` in `_config.yml`, re-run `bundle install`, restart the server |
+
+### 🔍 Knowledge Check: CMS & Theme
+- [ ] Why can a folder of Markdown files replace a database-backed CMS?
+- [ ] What does `--config _config.yml,_config_dev.yml` let you do that one config can't?
+- [ ] Which command fixes a `webrick` LoadError on Ruby 3.0+?
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Scaffold and Serve
@@ -483,7 +557,7 @@ Visit `http://127.0.0.1:4000/recipes/bread/` - Jekyll generated that page from y
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

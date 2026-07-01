@@ -56,7 +56,7 @@ draft: false
 ---
 ## The Challenge: Safe automation without surprises
 
-You have a powerful repository initializer — `scripts/git_init.sh` — that supports interactive prompts and programmatic `--headless` invocations. This quest will guide you through validating the script's behavior, adding tests, and ensuring it behaves well in CI.
+You have a repository initializer — `scripts/git_init.sh` — that supports interactive prompts and programmatic `--headless` invocations. This quest will guide you through validating the script's behavior, adding tests, and ensuring it behaves well in CI.
 
 Why this matters:
 - Scripts are often used in automation and CI; they must behave predictably and be testable.
@@ -167,7 +167,7 @@ Good luck! 🛠️
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

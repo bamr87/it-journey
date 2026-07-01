@@ -344,7 +344,7 @@ git push origin main
 
 ## 🧙‍♂️ Chapter 3: Realm Enhancement - Adding Jekyll Magic
 
-*To truly master the portal, learn to wield Jekyll - the powerful static site generator that transforms markdown into magnificent websites!*
+*To truly master the portal, learn to wield Jekyll - the static site generator that transforms Markdown into magnificent websites!*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Jekyll installation and setup
@@ -644,7 +644,7 @@ Based on your performance in this quest:
 
 ## 📓 AI Collaboration Log
 
-*This quest was developed with AI assistance to ensure comprehensive coverage of GitHub Pages deployment, multi-platform compatibility, and educational best practices. AI helped generate code examples, validate technical accuracy, and enhance the fantasy narrative while maintaining educational integrity.*
+*This quest was developed with AI assistance to cover GitHub Pages deployment, multi-platform compatibility, and educational best practices. AI helped generate code examples, validate technical accuracy, and enhance the fantasy narrative while maintaining educational integrity.*
 
 *Human oversight ensured:*
 - Technical accuracy of GitHub Pages workflows
@@ -657,9 +657,9 @@ Based on your performance in this quest:
 
 ### Key Takeaways from This Quest
 - **GitHub Pages democratizes web hosting** - No server management or hosting costs
-- **Static sites are powerful** - Fast, secure, and SEO-friendly by default
+- **Static sites are fast, secure, and SEO-friendly by default** - No server-side processing to slow them down or expose attack surface
 - **Git workflow integration** - Deployment becomes part of your development process
-- **Jekyll enhances productivity** - Markdown content with powerful templating
+- **Jekyll enhances productivity** - Write content in Markdown with reusable layouts and Liquid templating
 - **Custom domains add professionalism** - Transform GitHub URLs into branded sites
 
 ### Modern Web Development Context
@@ -728,7 +728,7 @@ GitHub Pages represents the evolution of web hosting from complex server managem
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

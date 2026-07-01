@@ -5,7 +5,7 @@ description: Master Visual Studio Code setup and configuration to create the ult
 excerpt: Learn to configure VS Code as your primary development weapon, mastering extensions, shortcuts, and specialized setups for maximum productivity
 preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
 date: '2025-07-21T23:30:21.000Z'
-lastmod: '2026-05-20T20:57:50.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -46,6 +46,8 @@ validation_criteria:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
 permalink: /quests/0000/vscode-mastery/
+redirect_from:
+- /quickstart/vscode-setup/
 categories:
 - Quests
 - Tools
@@ -97,7 +99,7 @@ By completing this quest, you will:
 - [ ] **Install and configure VS Code** across different operating systems
 - [ ] **Master essential extensions** for enhanced productivity
 - [ ] **Customize your workspace** for optimal workflow
-- [ ] **Learn powerful shortcuts** that separate novices from pros
+- [ ] **Learn keyboard shortcuts** that separate novices from pros
 - [ ] **Set up domain-specific environments** (Web, Python, Data Science, etc.)
 - [ ] **Configure debugging and testing** capabilities
 - [ ] **Integrate version control** with Git
@@ -636,6 +638,74 @@ code --install-extension ms-python.python
 - Disable unused extensions in the current workspace profile.
 - Use one profile per domain to keep extension loadouts focused.
 
+## 📜 Bonus Sidequest: The IT-Journey Jekyll Forge
+
+*Want to wield VS Code on the very codex you're reading? The IT-Journey repo ships its own enchantments so your editor becomes a content-authoring workshop with a visual CMS, one-key Docker rituals, and live-preview debugging. Clone the repo first, then layer these on.*
+
+### 🧩 Jekyll Authoring Extensions
+
+Beyond the universal grimoire above, these unlock Markdown + Liquid + Ruby authoring. They also live in the repo's `.vscode/extensions.json`, so VS Code will offer them when you open the project:
+
+```bash
+code --install-extension eliostruyf.vscode-front-matter \
+     --install-extension shopify.ruby-lsp \
+     --install-extension shopify.liquid \
+     --install-extension redhat.vscode-yaml \
+     --install-extension yzhang.markdown-all-in-one \
+     --install-extension davidanson.vscode-markdownlint \
+     --install-extension streetsidesoftware.code-spell-checker
+```
+
+### 📊 Front Matter CMS — A Visual Content Dashboard
+
+[Front Matter CMS](https://frontmatter.codes/) turns VS Code into a headless CMS — a visual dashboard for every post, quest, and doc — so you create content without hand-writing frontmatter YAML. The repo's `frontmatter.json` configures it all: page folders, content-type field schemas, snippets, and live-preview paths.
+
+| Content Type | Notable Fields | Used By |
+|-------------|----------------|---------|
+| **default** | title, description, date, draft, tags, categories, layout, author, permalink, image | Posts, pages, docs, notes |
+| **quest** | All default fields + level, difficulty, estimated_time, xp, achievements, prerequisites, platforms, quest_type, skill_focus | Quests |
+
+To summon the dashboard: **Cmd/Ctrl + Shift + P** → **Front Matter: Open Dashboard** (it auto-opens on project load). Then **Create content** → pick the target folder → fill fields visually → the CMS writes a properly formatted Markdown file with valid frontmatter.
+
+### ⚡ One-Key Build Rituals (Tasks)
+
+The repo's `.vscode/tasks.json` binds the Docker + Jekyll workflow to **Cmd/Ctrl + Shift + B**:
+
+| Task | Command | Purpose |
+|------|---------|---------|
+| **Docker: Compose Up** | `docker-compose up -d` | Start the dev environment |
+| **Docker: Compose Down** | `docker-compose down` | Stop and clean up |
+| **Docker: Rebuild (Force)** | `docker-compose up --build --force-recreate -d` | Full rebuild |
+| **Docker: Logs (Follow)** | `docker-compose logs -f jekyll` | Watch the build output |
+| **Jekyll: Build Site** | `bundle exec jekyll build` | Production build (in Docker) |
+| **Lint: Markdown Files** | `markdownlint **/*.md` | Check Markdown quality |
+
+Press **Cmd/Ctrl + Shift + B**, pick a task, and output streams into the integrated terminal.
+
+### 🐛 Live-Preview Debug Configurations
+
+`.vscode/launch.json` ships ready-made launch configs — hit **F5** and choose one:
+
+- **Debug IT-Journey (Docker)** — launches a browser with remote debugging attached
+- **Attach to Running Jekyll** — connects to an already-running container
+- **Docker Rebuild & Debug** — force-rebuilds, then debugs
+- **Mobile Debug** — simulates an iPhone screen for responsive testing
+
+### 🔧 Workspace Spells for Jekyll
+
+Drop these into `.vscode/settings.json` so `.html` files render as Liquid and Markdown gets validated:
+
+```json
+{
+  "files.associations": {
+    "*.html": "liquid",
+    "*.md": "markdown"
+  },
+  "editor.wordWrap": "on",
+  "markdown.validate.enabled": true
+}
+```
+
 ## 🏆 Quest Completion Challenges
 
 ### Challenge 1: Speed Setup (10 minutes)
@@ -706,14 +776,14 @@ Now that you've mastered VS Code, consider these advanced quests:
 
 ---
 
-*Congratulations, brave code warrior! You have successfully forged VS Code into your ultimate development weapon. With this powerful tool at your command, no coding challenge shall stand in your way. Your journey to IT mastery continues—may your code be bug-free and your deployments successful!* ⚔️✨
+*Congratulations, brave code warrior! You have successfully forged VS Code into your ultimate development weapon. With a fully configured editor at your command, no coding challenge shall stand in your way. Your journey to IT mastery continues—may your code be bug-free and your deployments successful!* ⚔️✨
 
 **Achievement Unlocked: VS Code Master** 🏆  
 *Continue your adventure with the next quest in your chosen specialization path!*
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

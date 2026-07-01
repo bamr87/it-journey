@@ -215,7 +215,7 @@ docker run --rm -p 8080:8080 apache/airflow:2.9.3 standalone
 | Raw data kept? | Often discarded after transform | Raw lands first, so you can re-transform later |
 | Tooling | Python, Spark, Informatica, custom code | dbt, SQL, warehouse compute |
 
-**Rule of thumb:** if your destination is a powerful cloud warehouse, prefer **ELT** - load raw, transform with SQL/dbt, and keep the raw layer so you can fix transforms without re-extracting. If you must cleanse, mask, or reshape before data ever touches storage (PII, tiny target, on-prem), use **ETL**. This quest builds an ETL pipeline because it teaches every stage explicitly; the warehousing quest that follows leans into ELT.
+**Rule of thumb:** if your destination is a cloud warehouse with cheap, scalable compute, prefer **ELT** - load raw, transform with SQL/dbt, and keep the raw layer so you can fix transforms without re-extracting. If you must cleanse, mask, or reshape before data ever touches storage (PII, tiny target, on-prem), use **ETL**. This quest builds an ETL pipeline because it teaches every stage explicitly; the warehousing quest that follows leans into ELT.
 
 ### 🔍 Knowledge Check: ETL vs ELT
 - [ ] Why does ELT let you re-run transformations without re-extracting?
@@ -527,7 +527,7 @@ The `>>` operator declares dependencies: `load` cannot start until `transform` s
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1100 - Data Engineering]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

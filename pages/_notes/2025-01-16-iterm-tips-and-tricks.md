@@ -29,7 +29,7 @@ draft: draft
 ---
 **How to Customize iTerm2 for Efficiency: Keybindings to Delete Words and Navigate Text**
 
-**iTerm2**, a powerful terminal emulator for macOS, provides extensive customization options that can enhance your productivity when working in the terminal. In this guide, we'll walk through setting up keybindings to delete words and navigate text efficiently, and explore the benefits of mastering such customizations.
+**iTerm2**, a scriptable terminal emulator for macOS, lets you remap keys, set escape sequences, and define custom actions that speed up your work in the terminal. In this guide, we'll walk through setting up keybindings to delete words and navigate text efficiently, and explore the benefits of mastering such customizations.
 
 **Why Customize Your Terminal?**
 
@@ -107,7 +107,7 @@ These mimic common shortcuts in many shells (bash, zsh, fish) for word-by-word n
 
 **Advanced Benefits of Terminal Customization**
 
-- **Faster Text Manipulation**: Editing long commands or configuration files becomes seamless with shortcuts for deleting or navigating by word.
+- **Faster Text Manipulation**: Editing long commands or configuration files takes fewer keystrokes with shortcuts for deleting or navigating by word.
 
 - **Command Line Mastery**: These customizations align with common shell keybindings, improving your command-line proficiency across environments.
 

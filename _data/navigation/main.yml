@@ -1,3 +1,6 @@
+# Top masthead menu — read by the theme's _includes/navigation/navbar.html
+# (site.data.navigation.main). This is the single source of the header nav.
+# Focus: main quests, side quests, epic quests; notes/cheatsheets for reference.
 - title: Quests
   url: /quests/home/
   icon: bi-controller
@@ -8,39 +11,27 @@
       url: /quests/0000/hello-noob/
     - title: All Quests
       url: /quests/
-- title: Quick-Start
-  url: /quickstart/
-  icon: bi-rocket-takeoff
+- title: Epic
+  url: /quests/codex/
+  icon: bi-trophy
   children:
-    - title: Machine Setup
-      url: /quickstart/machine-setup
-    - title: GitHub Setup
-      url: /quickstart/github
-    - title: Jekyll Setup
-      url: /quickstart/jekyll
-    - title: Charm Tools
-      url: /quickstart/charm-setup/
+    - title: All Epic Quests
+      url: /quests/codex/
+    - title: The Self-Operating Website
+      url: /quests/codex/self-operating-website/
+    - title: The Agentic Codex (GH-600)
+      url: /quests/codex/agentic-codex/
+    - title: Zer0-to-Her0 CMStyle
+      url: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
 - title: Blog
   url: https://lifehacker.dev
   icon: bi-newspaper
-- title: Library
-  url: /docs/
-  icon: bi-journal-bookmark
-  children:
-    - title: Jekyll
-      url: /docs/jekyll/
-    - title: Terminal
-      url: /docs/terminal/
-    - title: Obsidian Graph
-      url: /docs/obsidian/graph/
 - title: Notes
   url: /notes/
   icon: bi-journal-code
   children:
-    - title: Notes Index
-      url: /notes/
     - title: Cheatsheets
-      url: /notes/cheetsheets/
+      url: /notes/cheatsheets/
     - title: GH-600 Reference
       url: /notes/gh-600/
 - title: About
@@ -49,12 +40,7 @@
   children:
     - title: Features
       url: /about/features/
-    - title: Config
-      url: /about/config/
     - title: Contributing
       url: /about/contributing/
-    - title: Sitemap
-      url: /about/sitemap/
     - title: Stats
       url: /stats/
-

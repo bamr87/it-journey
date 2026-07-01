@@ -7,7 +7,7 @@ This directory contains templates and tools for creating and managing quests in 
 ### Main Quest Template
 **File**: `main-quest-template.md`
 
-Comprehensive template for main storyline quests. Includes:
+Full template for main storyline quests. Includes:
 - Complete frontmatter with all required and optional fields
 - Quest network positioning diagrams
 - Multi-platform implementation paths (macOS, Windows, Linux, Cloud)
@@ -93,7 +93,7 @@ python3 scripts/quest/validate-quest-network.py
 - ✅ No circular dependencies
 - ✅ Identifies orphaned quests
 - ✅ Validates quest relationships
-- ✅ Generates comprehensive report
+- ✅ Generates a report with statistics, errors, and warnings
 
 **Output**:
 - Quest statistics (total, complete, placeholder, draft)
@@ -265,7 +265,7 @@ Before marking a quest complete:
 When creating new templates or improving existing ones:
 
 1. Follow existing template structure
-2. Include comprehensive comments
+2. Comment each field and section so users know what to fill in
 3. Test with generation script
 4. Update this README
 5. Submit PR with examples

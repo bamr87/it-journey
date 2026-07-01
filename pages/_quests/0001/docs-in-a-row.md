@@ -77,7 +77,7 @@ By the end of this quest, you will be able to:
 
 **Level**: Journeyman (Lvl 001) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
 
-In the realm of software development, documentation is your most powerful spell—but only if you can find it when you need it! As projects multiply across GitHub repositories, valuable knowledge becomes scattered across dozens of README files, wiki pages, and doc folders. This quest will teach you to build an **automated documentation aggregation system** that collects, organizes, and maintains a centralized knowledge hub.
+In the realm of software development, documentation is your most valuable spell—but only if you can find it when you need it! As projects multiply across GitHub repositories, valuable knowledge becomes scattered across dozens of README files, wiki pages, and doc folders. This quest will teach you to build an **automated documentation aggregation system** that collects, organizes, and maintains a centralized knowledge hub.
 
 ### What You'll Build
 
@@ -563,7 +563,7 @@ Congratulations, Documentation Architect! You've successfully:
 
 ✅ **Built a Multi-Repository Documentation System** that automatically aggregates knowledge  
 ✅ **Mastered GitHub Actions** with scheduled and manual workflow triggers  
-✅ **Combined Bash and Python** for powerful automation workflows  
+✅ **Combined Bash and Python** for scheduled, multi-step automation workflows  
 ✅ **Implemented Intelligent Organization** with category-based file structure  
 ✅ **Enhanced Documents** with rich YAML front matter metadata  
 ✅ **Created a Scalable Solution** that grows with your project ecosystem  
@@ -720,7 +720,7 @@ May your documentation always be current, your automation reliable, and your kno
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

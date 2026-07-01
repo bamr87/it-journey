@@ -93,7 +93,7 @@ mermaid: true
 
 ### 🌟 The Legend Behind This Quest
 
-In the mortal world of software development, teams often seek grand transformations: massive rewrites, revolutionary frameworks, sweeping organizational changes. Yet the ancient masters knew a deeper truth—that true power lies not in dramatic upheavals, but in the accumulation of countless small improvements, each building upon the last like drops of water carving through stone.
+In the mortal world of software development, teams often seek grand transformations: massive rewrites, wholesale framework switches, sweeping organizational changes. Yet the ancient masters knew a deeper truth—that true power lies not in dramatic upheavals, but in the accumulation of countless small improvements, each building upon the last like drops of water carving through stone.
 
 Kaizen (改善, "change for better") emerged from the post-war Japanese manufacturing renaissance, where Toyota and others discovered that empowering every worker to suggest and implement tiny improvements created systems of unprecedented efficiency and quality. This philosophy, when applied to software development, transforms how teams think, work, and evolve.
 
@@ -1002,10 +1002,10 @@ Congratulations, Code Alchemist! Upon completing this epic journey, you have ear
 ## 🔮 Your Next Epic Adventures
 
 ### 🎯 Recommended Follow-Up Quests
-- **Lean Software Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **DevOps Culture Transformation** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **Metrics That Matter** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- **Facilitation Mastery** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- **Lean Software Development** - Planned quest (see Quest Build Plan)
+- **DevOps Culture Transformation** - Planned quest (see Quest Build Plan)
+- **Metrics That Matter** - Planned quest (see Quest Build Plan)
+- **Facilitation Mastery** - Planned quest (see Quest Build Plan)
 
 ### 🌐 Skill Web Connections
 **Cross-Technology Skills**: 
@@ -1264,7 +1264,7 @@ A successful improvement will:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

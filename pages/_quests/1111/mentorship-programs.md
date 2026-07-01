@@ -214,7 +214,7 @@ If the answer is "no one," you are mentoring but not sponsoring.
 Mentoring is advice. Sponsorship is action that costs YOU something.
 ```
 
-Mentoring is generous but cheap. Sponsorship is the rarer, more powerful act: you put your own reputation on the line to advance someone. It is how careers actually accelerate.
+Mentoring is generous but cheap. Sponsorship is the rarer, costlier act: you put your own reputation on the line to advance someone. It is how careers actually accelerate.
 
 ### 🔍 Knowledge Check: Three Modes
 - [ ] Give an example of when coaching beats mentoring
@@ -396,7 +396,7 @@ Skipping a one-on-one quietly tells someone they don't matter. Protect the slot 
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1111: Leadership & Innovation]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

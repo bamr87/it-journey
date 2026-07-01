@@ -90,7 +90,7 @@ redirect_from:
 ### Secondary Objectives (Bonus Achievements)
 - [ ] **Build a combat system** — Create enemy encounters with attack/run mechanics
 - [ ] **Add ASCII art and UI polish** — Improve the visual presentation of the game
-- [ ] **Create a comprehensive tutorial** — Help new players learn the game mechanics
+- [ ] **Create a step-by-step tutorial** — Help new players learn the game mechanics
 - [ ] **Write unit tests for game functions** — Validate game logic with automated tests
 
 ### Mastery Indicators
@@ -547,7 +547,7 @@ Before opening a pull request or sharing your mod, verify your addition like a m
 
 ## 📚 References & Resources
 
-- [The Spellbook: Bash Cheatsheet](/shell/) - Quick reference for essential commands and scripting techniques.
+- [The Spellbook: Bash Cheatsheet](/notes/cheatsheets/bash-cheatsheet/) - Quick reference for essential commands and scripting techniques.
 - [The Grand Grimoire: Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive guide covering every aspect of GNU Bash.
 - [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) — No-install first playthrough with local browser saves
 - [bashcrawl on GitHub](https://github.com/bamr87/bashcrawl) — The game repository this quest is based on
@@ -557,7 +557,7 @@ Before opening a pull request or sharing your mod, verify your addition like a m
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

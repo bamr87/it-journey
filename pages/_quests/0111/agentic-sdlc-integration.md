@@ -374,7 +374,7 @@ python3 scripts/validate_quest.py --quest q1
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0111 (7) - API Development]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

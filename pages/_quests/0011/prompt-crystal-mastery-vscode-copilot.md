@@ -101,7 +101,7 @@ mermaid: true
 ---
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 
-*You, brave Code Alchemist, stand at the threshold of VS Code's most powerful enchantment: **GitHub Copilot**. But like any great artifact, its power lies dormant without the proper incantations. Your quest: to master the art of prompt engineering within VS Code, learning to craft instructions that consistently unlock Copilot's full potential.*
+*You, brave Code Alchemist, stand at the threshold of VS Code's AI pair-programmer enchantment: **GitHub Copilot**. But like any great artifact, its power lies dormant without the proper incantations. Your quest: to master the art of prompt engineering within VS Code, learning to craft instructions that consistently unlock Copilot's full potential.*
 
 *Whether you've been frustrated by inconsistent suggestions, struggled to get Copilot to understand your project's patterns, or simply want to 10x your AI-assisted productivity, this quest will transform your relationship with your AI pair programmer forever.*
 
@@ -209,7 +209,7 @@ mkdir -p .github/prompts
 touch .github/copilot-instructions.md
 ```
 
-*macOS adventurers enjoy native terminal integration. Use iTerm2 or Terminal.app for the most seamless experience.*
+*macOS adventurers enjoy native terminal integration. Use iTerm2 or Terminal.app to run these commands without extra setup.*
 
 ### 🪟 Windows Empire Path
 
@@ -658,7 +658,7 @@ Create `.github/copilot-instructions.md` to give Copilot persistent, project-wid
 
 ### 🧙‍♂️ Workspace Agents and References
 
-VS Code Copilot provides powerful context-gathering tools:
+VS Code Copilot provides context-gathering tools that pull your codebase, open files, and terminal output into a prompt:
 
 **Using `@workspace` for Codebase Context**:
 ```text
@@ -1273,16 +1273,16 @@ Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 ### 🎯 Recommended Follow-Up Quests
 
 **Immediate Next Steps**:
-- 🤖 **AI Agent Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 📊 **Prompt Performance Monitoring** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤖 **AI Agent Development** - Planned quest (see Quest Build Plan)
+- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see Quest Build Plan)
+- 📊 **Prompt Performance Monitoring** - Planned quest (see Quest Build Plan)
 
 **Advanced Specializations**:
-- 🔬 **Advanced RAG Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 🏗️ **Multi-Agent Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🔬 **Advanced RAG Systems** - Planned quest (see Quest Build Plan)
+- 🏗️ **Multi-Agent Systems** - Planned quest (see Quest Build Plan)
 
 **Team & Community**:
-- 🤝 **Team Prompt Library Setup** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤝 **Team Prompt Library Setup** - Planned quest (see Quest Build Plan)
 
 ---
 
@@ -1421,7 +1421,7 @@ After completing this quest, update:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0011 - Development Tools & AI Integration]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

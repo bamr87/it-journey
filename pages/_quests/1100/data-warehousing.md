@@ -471,7 +471,7 @@ This is why Snowflake, BigQuery, Redshift, Parquet files, and DuckDB are all col
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1100 - Data Engineering]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

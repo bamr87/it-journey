@@ -43,7 +43,7 @@ draft: false
 
 **A Magical Adventure with VS Code**
 
-🎩✨ Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than the powerful IDE known as **VS Code**?
+🎩✨ Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than **VS Code**, with its built-in terminal and Source Control panel?
 
 So, grab your wand (*ahem*, keyboard) and let's begin this magical journey! 🧙‍♂️🐍
 
@@ -288,7 +288,7 @@ echo "🛠️ Happy coding, sorcerer! 🧙‍♂️"
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

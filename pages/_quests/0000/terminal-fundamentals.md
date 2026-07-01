@@ -80,7 +80,7 @@ rewards:
   - Confident terminal usage across platforms
 layout: quest
 ---
-*Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
+*Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, where you type one instruction and get one result, then chain those instructions into scripts you can repeat and automate. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 
 ## 🎯 Quest Objectives
 
@@ -270,7 +270,7 @@ less long-file.txt
 
 ## 🧙‍♂️ Chapter 3: Command Mastery — Flags, Pipes, and Redirection
 
-*Now you'll learn the advanced incantations that chain simple commands into powerful spells.*
+*Now you'll learn the advanced incantations that pipe and redirect simple commands so the output of one feeds the next.*
 
 ### 🏳️ Understanding Command Structure
 
@@ -403,7 +403,7 @@ After your first online run, continue with the [Bashcrawl Terminal Adventure Que
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

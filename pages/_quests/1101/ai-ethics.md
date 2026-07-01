@@ -84,7 +84,7 @@ rewards:
   - Completion of the Level 1101 Machine Learning & AI quest line
 layout: quest
 ---
-*Greetings, brave adventurer! You have learned to build models that predict, see, and speak. Now comes the gravest lesson of the Tower: a powerful model wielded carelessly causes real harm. This quest, **AI Ethics and Responsible AI**, leads you into the **Hall of Judgment**, where you learn to measure a model's fairness, explain its decisions, protect the people in its data, and govern it under the law. The Oracle's final law is the hardest: just because a model can decide does not mean it should.*
+*Greetings, brave adventurer! You have learned to build models that predict, see, and speak. Now comes the gravest lesson of the Tower: a model that decides about people, wielded carelessly, causes real harm. This quest, **AI Ethics and Responsible AI**, leads you into the **Hall of Judgment**, where you learn to measure a model's fairness, explain its decisions, protect the people in its data, and govern it under the law. The Oracle's final law is the hardest: just because a model can decide does not mean it should.*
 
 *Whether you have never paused to ask "who could this harm?" or you already feel the weight of deploying decisions about people, this adventure forges the conscience every AI Master must carry.*
 
@@ -315,7 +315,7 @@ Two frameworks dominate practice:
 
 | Framework | What it does | Key idea |
 | --- | --- | --- |
-| **EU AI Act** | First comprehensive AI law | Tiers systems by risk: unacceptable (banned), high-risk (strict duties), limited, minimal |
+| **EU AI Act** | First binding, economy-wide AI law | Tiers systems by risk: unacceptable (banned), high-risk (strict duties), limited, minimal |
 | **NIST AI RMF** | Voluntary US risk framework | Four functions: Govern, Map, Measure, Manage |
 
 A **high-risk** system (hiring, credit, healthcare, law enforcement) carries duties: documented data governance, fairness testing, human oversight, logging, and transparency to affected people. A useful artifact is the **model card** - a short document stating intended use, training data, evaluation across groups, known limitations, and out-of-scope uses:
@@ -426,7 +426,7 @@ MODEL CARD — Loan Default Classifier v2.1
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

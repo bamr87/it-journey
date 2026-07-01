@@ -216,7 +216,7 @@ Design and implement a devops solution that:
 - [ ] Solves a practical, real-world problem
 - [ ] Demonstrates advanced docker techniques
 - [ ] Incorporates security and scalability considerations
-- [ ] Includes comprehensive testing and documentation
+- [ ] Includes unit tests, integration tests, and setup documentation
 
 *Estimated time: Varies based on scope and complexity*
 
@@ -297,7 +297,7 @@ Your newfound docker powers open several paths:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

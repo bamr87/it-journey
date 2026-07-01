@@ -4,6 +4,8 @@ author: IT-Journey Team
 description: Your central command hub for the IT-mastery quest system — track progress across levels and tiers, follow class paths, and plan your next adventure.
 preview: /images/previews/overworld-master-quest-map.png
 permalink: /quests/home/
+redirect_from:
+- /quickstart/
 layout: quest-hub
 level: "0000"
 difficulty: 🟢 Easy

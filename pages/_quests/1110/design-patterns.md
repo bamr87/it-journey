@@ -494,7 +494,7 @@ The Strategy pattern from Chapter 2 is the Open/Closed Principle made concrete: 
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1110 - Architecture & Design Patterns]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

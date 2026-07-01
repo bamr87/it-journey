@@ -89,7 +89,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*In the early ages, "big data" meant MapReduce: powerful, but every step wrote to disk and the code was brutal to author. Then came **Spark**, which kept data in memory across steps and offered an elegant API - and the field changed overnight. The engineers who thrived learned one truth that separates the masters from the dabblers: Spark is **lazy**. It does nothing until you force it to, and understanding *why* is the key to writing jobs that are fast instead of jobs that merely finish.*
+*In the early ages, "big data" meant MapReduce: it scaled across many machines, but every step wrote to disk and the code was brutal to author. Then came **Spark**, which kept data in memory across steps and offered an elegant API - and the field changed overnight. The engineers who thrived learned one truth that separates the masters from the dabblers: Spark is **lazy**. It does nothing until you force it to, and understanding *why* is the key to writing jobs that are fast instead of jobs that merely finish.*
 
 *This quest teaches the "why" beneath every Spark job: how an RDD or DataFrame is split into partitions, why a `groupBy` is expensive and a `map` is cheap, and how the engine plans your work into a DAG before moving a single byte. Master this and the streaming and quality quests that follow become natural extensions.*
 
@@ -203,7 +203,7 @@ docker run --rm -p 8888:8888 jupyter/pyspark-notebook
 
 ### 🏗️ The Two Core Abstractions
 
-- **RDD (Resilient Distributed Dataset)** - the original low-level abstraction: an immutable, partitioned collection of objects spread across the cluster. You write explicit `map`/`reduce` functions. Powerful, but unoptimized and verbose.
+- **RDD (Resilient Distributed Dataset)** - the original low-level abstraction: an immutable, partitioned collection of objects spread across the cluster. You write explicit `map`/`reduce` functions. Gives you fine-grained control, but unoptimized and verbose.
 - **DataFrame** - a higher-level, table-like abstraction with named columns and a schema. Because Spark *understands the structure*, its **Catalyst optimizer** can rewrite your query for speed. Prefer DataFrames unless you truly need RDD's low-level control.
 
 The execution model has three roles:
@@ -464,7 +464,7 @@ Cache only what you reuse; caching everything wastes memory and can slow you dow
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1100 - Data Engineering]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

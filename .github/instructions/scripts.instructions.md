@@ -29,7 +29,7 @@ Pick the most specific subdirectory. Don't create a new top-level category witho
 | Convention | Example |
 |---|---|
 | Lower-case, hyphen-separated | `link-checker.py`, `generate-statistics.sh` |
-| Verb-first for action scripts | `update-settings.sh`, `validate-quest.py` |
+| Verb-first for action scripts | `build-quest-network.py`, `validate-quest.py` |
 | Noun for libraries | `lib/common.sh`, `lib/git.sh` |
 | Extension matches interpreter | `.sh`, `.bash`, `.py`, `.rb` |
 

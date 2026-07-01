@@ -66,7 +66,7 @@ Master the art of hunting down and handling 404 errors. Learn to create user-fri
 ### For Quality Engineers
 1. [404 Hunting Quest](404-hunting.md) - Error handling fundamentals
 2. Combine with Level 1010 automation
-3. Build comprehensive test suites
+3. Build test suites that cover edge cases and error paths
 
 ### For Full-Stack Developers
 1. [404 Hunting Quest](404-hunting.md)

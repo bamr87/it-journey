@@ -269,7 +269,7 @@ summary = df.groupby("species").mean(numeric_only=True)
 print(summary)
 ```
 
-The **split-apply-combine** pattern (`groupby`) is the most powerful idea in pandas: split rows into groups, apply a function to each, and combine the results.
+The **split-apply-combine** pattern (`groupby`) is the workhorse of analysis in pandas: split rows into groups, apply a function to each, and combine the results into one table.
 
 ### 🔍 Knowledge Check: Pandas
 - [ ] What does `df.describe()` compute?
@@ -455,7 +455,7 @@ A chart without axis labels is a riddle. Always title it and label both axes.
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1101 - Machine Learning & AI]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

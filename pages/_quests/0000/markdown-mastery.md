@@ -5,7 +5,7 @@ description: Master Markdown syntax for creating rich documentation, blog posts,
 excerpt: Learn essential Markdown syntax to create beautifully formatted documentation and technical content.
 preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2025-12-20T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -41,6 +41,8 @@ validation_criteria:
   - Understands Markdown syntax vs rendered output
   - Can structure a README with proper headings
 permalink: /quests/0000/markdown-mastery/
+redirect_from:
+- /quickstart/content-creation/
 categories:
 - Quests
 - Documentation
@@ -342,6 +344,57 @@ Hidden content goes here. Supports **Markdown** inside!
 
 ---
 
+## 🧙‍♂️ Chapter 4: Frontmatter — Metadata at the Top of the Scroll
+
+*When your Markdown lives inside a real site — a blog, a wiki, a docs platform like Jekyll, Hugo, or this very IT-Journey codex — a hidden block of metadata at the very top tells the engine how to render, title, and categorize the page. That block is called **frontmatter**, and it's the bridge between plain Markdown and a published page.*
+
+### 📜 The Frontmatter Block
+
+Frontmatter is **YAML** enclosed between two `---` fences, and it must be the very first thing in the file:
+
+```yaml
+---
+title: "Deploying Jekyll to Azure Cloud"
+description: "Step-by-step guide to deploying a Jekyll site on Azure Static Web Apps."
+date: 2026-03-31
+author: bamr87
+categories:
+  - devops
+tags:
+  - jekyll
+  - azure
+draft: false
+---
+```
+
+Everything below the closing `---` is your normal Markdown body. The engine reads the metadata, then renders the rest.
+
+### 🔑 Common Fields
+
+| Field | Purpose |
+|-------|---------|
+| `title` | Page title — drives SEO and navigation |
+| `description` | Short summary for search engines and previews |
+| `date` / `lastmod` | Publication and last-modified dates |
+| `categories` / `tags` | YAML lists that power filtering and discovery |
+| `draft` | `true` hides the page in production; `false` publishes it |
+| `layout` | Which template renders the page (e.g. `article`, `quest`, `default`) |
+
+**Rule of thumb**: `categories` and `tags` are YAML **lists** — each item on its own line prefixed with `-`. At minimum, always include `title` and `description`.
+
+### 🛠️ Frontmatter Best Practices
+- [ ] Always set a clear `title` and `description` — they drive SEO and link previews
+- [ ] Use `draft: true` while a page is a work in progress to keep it out of production
+- [ ] Keep `categories` and `tags` consistent across pages so filtering works
+- [ ] Bump `lastmod` when you revise a page so readers and search engines see freshness
+
+### ⚡ Quick Wins
+- [ ] Add a frontmatter block to your `practice.md` with `title` and `description`
+- [ ] Include a `tags` YAML list with at least two tags
+- [ ] Set `draft: true`, preview, then flip it to `false`
+
+---
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Personal Profile Page
@@ -379,7 +432,7 @@ Hidden content goes here. Supports **Markdown** inside!
 
 ## 📚 References & Resources
 
-- [Markdown Guide — Comprehensive Reference](https://www.markdownguide.org/)
+- [Markdown Guide — Syntax Reference with Basic and Extended Cheat Sheets](https://www.markdownguide.org/)
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [CommonMark Specification](https://commonmark.org/)
 - [Dillinger — Online Markdown Editor](https://dillinger.io/)
@@ -388,7 +441,7 @@ Hidden content goes here. Supports **Markdown** inside!
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

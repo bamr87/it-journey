@@ -23,15 +23,8 @@ _about/
 │       └── bamr87/             # Example contributor
 ├── features/                   # Learning platform features
 │   └── index.md                # User-facing features list
-├── profile/                    # User profiles
-│   └── bamr87.md               # Maintainer profile
-└── settings/                   # Platform configuration
-    ├── _config.yml             # Jekyll configuration copy
-    ├── config.md               # Configuration documentation
-    ├── sitemap.md              # Site navigation
-    ├── sitemap-data.yml        # Navigation data
-    ├── tree.md                 # Site structure
-    └── tree.txt                # Directory tree
+└── profile/                    # User profiles
+    └── bamr87.md               # Maintainer profile
 ```
 
 ## Content Focus
@@ -80,7 +73,6 @@ Visit the **[Zer0-Mistakes Theme Documentation](https://github.com/bamr87/zer0-m
 - **[Learning Features](/about/features/)** - Platform capabilities
 - **[Contributing](/about/contributing/)** - How to get involved
 - **[Purpose](/about/purpose/)** - Educational mission statement
-- **[Configuration](/about/config/)** - Platform settings and structure
 
 ## Complementary Relationship
 

@@ -1,26 +1,26 @@
 stats:
-  total: 191
+  total: 199
   by_level:
-    '0000': 27
+    '0000': 28
     '0001': 26
     '0010': 17
     '0011': 3
     '0100': 8
     '0101': 12
     '0110': 8
-    '0111': 9
-    '1000': 8
-    '1001': 8
-    '1010': 14
-    '1011': 10
-    '1100': 14
+    '0111': 10
+    '1000': 9
+    '1001': 9
+    '1010': 15
+    '1011': 11
+    '1100': 16
     '1101': 9
     '1110': 9
     '1111': 9
   by_type:
-    epic_quest: 2
-    main_quest: 164
-    side_quest: 25
+    epic_quest: 3
+    main_quest: 170
+    side_quest: 26
 nodes:
 - id: /quests/0000/bash-run/
   title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
@@ -477,6 +477,11 @@ nodes:
   level: '0110'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/0111/agentic-codex-01-agents-in-the-sdlc/
+  title: 'Initiation Rites: Agents in the SDLC'
+  level: '0111'
+  type: main_quest
+  difficulty: 🟡 Medium
 - id: /quests/0111/agentic-plan-vs-action-boundaries/
   title: 'The Three Sigils: Plan, Reason, Act'
   level: '0111'
@@ -522,6 +527,11 @@ nodes:
   level: '0111'
   type: main_quest
   difficulty: 🟡 Medium
+- id: /quests/1000/agentic-codex-02-tool-use-and-environment/
+  title: 'Forging the Arsenal: Tool Use & Environment'
+  level: '1000'
+  type: main_quest
+  difficulty: 🔴 Hard
 - id: /quests/1000/agentic-mcp-server-mastery/
   title: 'The MCP Conclave: Mastering Model Context Protocol Servers'
   level: '1000'
@@ -562,6 +572,11 @@ nodes:
   level: '1000'
   type: main_quest
   difficulty: ⚔️ Epic
+- id: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  title: 'Vaults of Recollection: Memory & State'
+  level: '1001'
+  type: main_quest
+  difficulty: 🔴 Hard
 - id: /quests/1001/agentic-dev-environment-integration/
   title: 'Bind the Agent to the Realm: Dev Environment Integration'
   level: '1001'
@@ -600,6 +615,11 @@ nodes:
 - id: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   title: 'The Sigils of Trust: Auth, Secrets, and the Kill Switch'
   level: '1001'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1010/agentic-codex-04-evaluation-and-tuning/
+  title: 'The Oracle Rubric: Evaluation & Tuning'
+  level: '1010'
   type: main_quest
   difficulty: 🔴 Hard
 - id: /quests/1010/agentic-failure-root-cause-analysis/
@@ -677,6 +697,11 @@ nodes:
   level: '1011'
   type: main_quest
   difficulty: 🔴 Hard
+- id: /quests/1011/agentic-codex-05-multi-agent-coordination/
+  title: 'The Council of Many: Multi-Agent Coordination'
+  level: '1011'
+  type: main_quest
+  difficulty: 🔴 Hard
 - id: /quests/1011/agentic-multi-agent-failure-recovery/
   title: 'When Familiars Fall: Multi-Agent Failure Recovery'
   level: '1011'
@@ -724,6 +749,11 @@ nodes:
   difficulty: 🔴 Hard
 - id: /quests/1100/agentic-autonomy-levels-matrix/
   title: 'The Autonomy Scales: Mapping Agent Autonomy Levels'
+  level: '1100'
+  type: main_quest
+  difficulty: 🔴 Hard
+- id: /quests/1100/agentic-codex-06-guardrails-and-accountability/
+  title: 'The Warden Pact: Guardrails & Accountability'
   level: '1100'
   type: main_quest
   difficulty: 🔴 Hard
@@ -917,8 +947,18 @@ nodes:
   level: '1111'
   type: main_quest
   difficulty: ⚔️ Epic
+- id: /quests/codex/agentic-codex/
+  title: 'Epic Quest: The Agentic Codex'
+  level: '1100'
+  type: epic_quest
+  difficulty: ⚔️ Epic
 - id: /quests/codex/glossary/
   title: 'Codex Glossary: Fantasy Terms to IT Reality'
+  level: '0000'
+  type: side_quest
+  difficulty: 🟢 Easy
+- id: /quests/codex/
+  title: 'The Codex: Epic Quests & Reference'
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
@@ -1623,6 +1663,12 @@ edges:
 - source: /quests/0110/sql-mastery/
   target: /quests/0110/query-optimization/
   kind: unlocks
+- source: /quests/0111/agentic-codex-01-agents-in-the-sdlc/
+  target: /quests/codex/agentic-codex/
+  kind: recommended
+- source: /quests/0111/agentic-codex-01-agents-in-the-sdlc/
+  target: /quests/1000/agentic-codex-02-tool-use-and-environment/
+  kind: unlocks
 - source: /quests/0111/agentic-plan-vs-action-boundaries/
   target: /quests/0111/agentic-sdlc-integration/
   kind: required
@@ -1701,6 +1747,12 @@ edges:
 - source: /quests/0111/rest-principles/
   target: /quests/0111/api-documentation/
   kind: unlocks
+- source: /quests/1000/agentic-codex-02-tool-use-and-environment/
+  target: /quests/0111/agentic-codex-01-agents-in-the-sdlc/
+  kind: recommended
+- source: /quests/1000/agentic-codex-02-tool-use-and-environment/
+  target: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  kind: unlocks
 - source: /quests/1000/agentic-mcp-server-mastery/
   target: /quests/1000/agentic-tool-selection-and-permissions/
   kind: required
@@ -1760,6 +1812,12 @@ edges:
   kind: recommended
 - source: /quests/1000/self-operating-website-03-the-war-machine/
   target: /quests/1001/self-operating-website-04-the-sigils-of-trust/
+  kind: unlocks
+- source: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  target: /quests/1000/agentic-codex-02-tool-use-and-environment/
+  kind: recommended
+- source: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  target: /quests/1010/agentic-codex-04-evaluation-and-tuning/
   kind: unlocks
 - source: /quests/1001/agentic-dev-environment-integration/
   target: /quests/1000/agentic-mcp-server-mastery/
@@ -1829,6 +1887,12 @@ edges:
   kind: recommended
 - source: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   target: /quests/1010/self-operating-website-05-the-content-forge/
+  kind: unlocks
+- source: /quests/1010/agentic-codex-04-evaluation-and-tuning/
+  target: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  kind: recommended
+- source: /quests/1010/agentic-codex-04-evaluation-and-tuning/
+  target: /quests/1011/agentic-codex-05-multi-agent-coordination/
   kind: unlocks
 - source: /quests/1010/agentic-failure-root-cause-analysis/
   target: /quests/1010/agentic-success-criteria-and-signals/
@@ -1920,6 +1984,12 @@ edges:
 - source: /quests/1011/agentic-behavior-tuning/
   target: /quests/1011/agentic-multi-agent-orchestration-patterns/
   kind: unlocks
+- source: /quests/1011/agentic-codex-05-multi-agent-coordination/
+  target: /quests/1010/agentic-codex-04-evaluation-and-tuning/
+  kind: recommended
+- source: /quests/1011/agentic-codex-05-multi-agent-coordination/
+  target: /quests/1100/agentic-codex-06-guardrails-and-accountability/
+  kind: unlocks
 - source: /quests/1011/agentic-multi-agent-failure-recovery/
   target: /quests/1011/agentic-multi-agent-observability/
   kind: required
@@ -1994,6 +2064,12 @@ edges:
   kind: required
 - source: /quests/1100/agentic-autonomy-levels-matrix/
   target: /quests/1100/agentic-guardrails-and-human-in-the-loop/
+  kind: unlocks
+- source: /quests/1100/agentic-codex-06-guardrails-and-accountability/
+  target: /quests/1011/agentic-codex-05-multi-agent-coordination/
+  kind: recommended
+- source: /quests/1100/agentic-codex-06-guardrails-and-accountability/
+  target: /quests/1100/agentic-codex-capstone-exam-trial/
   kind: unlocks
 - source: /quests/1100/agentic-codex-capstone-exam-trial/
   target: /quests/0111/agentic-sdlc-integration/
@@ -2369,6 +2445,24 @@ edges:
   kind: unlocks
 - source: /quests/1111/technical-leadership/
   target: /quests/1111/innovation-rnd/
+  kind: unlocks
+- source: /quests/codex/agentic-codex/
+  target: /quests/0111/agentic-codex-01-agents-in-the-sdlc/
+  kind: unlocks
+- source: /quests/codex/agentic-codex/
+  target: /quests/1000/agentic-codex-02-tool-use-and-environment/
+  kind: unlocks
+- source: /quests/codex/agentic-codex/
+  target: /quests/1001/agentic-codex-03-memory-state-and-execution/
+  kind: unlocks
+- source: /quests/codex/agentic-codex/
+  target: /quests/1010/agentic-codex-04-evaluation-and-tuning/
+  kind: unlocks
+- source: /quests/codex/agentic-codex/
+  target: /quests/1011/agentic-codex-05-multi-agent-coordination/
+  kind: unlocks
+- source: /quests/codex/agentic-codex/
+  target: /quests/1100/agentic-codex-06-guardrails-and-accountability/
   kind: unlocks
 - source: /quests/codex/self-operating-website/
   target: /quests/0010/epic-quest-zer0-to-her0-cmstyle/

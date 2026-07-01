@@ -511,7 +511,7 @@ Solution: [AI provides corrected code with empty list check]"
 
 **CoT PDCA Application**:
 When using CoT, apply Kaizen to the reasoning steps themselves:
-- **Plan**: Are the steps comprehensive?
+- **Plan**: Do the steps cover every part of the problem?
 - **Do**: Run the CoT prompt
 - **Check**: Did the AI follow all steps? Did it skip any?
 - **Act**: Add missing steps or clarify vague ones
@@ -1326,14 +1326,14 @@ Confirm your mastery by demonstrating:
 **Build upon your Prompt Crystal mastery with these quests**:
 
 **Immediate Follow-Ups**:
-- 🤖 **AI Agent Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- ⚙️ **AI Workflow Automation** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 📊 **Prompt Performance Monitoring** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤖 **AI Agent Development** - Planned quest (see Quest Build Plan)
+- ⚙️ **AI Workflow Automation** - Planned quest (see Quest Build Plan)
+- 📊 **Prompt Performance Monitoring** - Planned quest (see Quest Build Plan)
 
 **Advanced Specializations**:
-- 🔬 **Advanced RAG Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 🧪 **Prompt Testing & Validation** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 🏗️ **Multi-Agent Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🔬 **Advanced RAG Systems** - Planned quest (see Quest Build Plan)
+- 🧪 **Prompt Testing & Validation** - Planned quest (see Quest Build Plan)
+- 🏗️ **Multi-Agent Systems** - Planned quest (see Quest Build Plan)
 
 **Continuous Improvement**:
 - ♻️ **Kaizen Continuous Improvement** - Continue in [Kaizen](../0001/kaizen.md) for deeper practice
@@ -1341,7 +1341,7 @@ Confirm your mastery by demonstrating:
 ### 📚 Additional Resources
 
 **Prompt Engineering Research & Techniques**:
-- [Prompt Engineering Guide](https://www.promptingguide.ai/) - Comprehensive technique reference
+- [Prompt Engineering Guide](https://www.promptingguide.ai/) - Reference covering zero-shot, few-shot, CoT, and advanced techniques
 - [OpenAI Best Practices](https://platform.openai.com/docs/guides/prompt-engineering) - Official guidance from OpenAI
 - [Anthropic Prompt Engineering](https://docs.anthropic.com/claude/docs/prompt-engineering) - Claude-specific techniques
 
@@ -1369,7 +1369,7 @@ Confirm your mastery by demonstrating:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

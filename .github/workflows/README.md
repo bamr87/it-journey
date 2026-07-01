@@ -30,7 +30,7 @@ its own rationale.
 | `build-validation.yml` | PR + push on build inputs; dispatch | Jekyll build (CI-parity) on every relevant change. The **Docker build** and the **3-OS cross-platform matrix** only run when `Gemfile`/`Dockerfile`/`docker-compose.yml` change or on manual dispatch — a `detect-changes` job gates them so content-only pushes don't spin up Windows/macOS runners. |
 | `frontmatter-validation.yml` | PR on `pages/**/*.md`; dispatch | Validation-only gate. Runs the canonical `scripts/validation/frontmatter-validator.py` (same code as `make content-validate`) on changed **non-quest** pages, plus the Mermaid-flag check, and comments results on the PR. Mechanical auto-fixing lives in `cms-daily-loop.yml`, not here. |
 | `quest-validation.yml` | PR/push on `pages/_quests/**`; weekly; dispatch | Quest content scoring (≥70%), network integrity, and stale generated-data check (the weekly/push full audit runs the unified Docker audit = `make docker-validate`). |
-| `validate-solutions.yml` | PR/push on `test/quest-solutions/**`; dispatch | Structural validation of quest solution fixtures. |
+| `validate-solutions.yml` | PR/push on `test/quest-solutions/**` (main/master); dispatch | Structural validation of quest solution fixtures. |
 | `codeql-analysis.yml` | push/PR to main; weekly | CodeQL security analysis (JavaScript, Python, Ruby). |
 
 ### Content quality & AI fleet (opt-in)
@@ -61,7 +61,6 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 | `link-checker.yml` | PR on `*.md`/`*.html`; twice weekly; dispatch | Incremental link check on PRs; full Link Health Guardian sweep on schedule. |
 | `sync-github.yml` | daily; dispatch; on script change | Regenerates GitHub-derived site data (`scripts/generation/sync_github.py`). |
 | `update-contributor-profiles.yml` | **weekly** (Mon 05:00 UTC); dispatch | Refreshes `_data/contributors/*.yml`. (Previously ran on every push to main — now weekly, since the stats barely move per-commit.) |
-| `update-settings.yml` | push on `_config.yml`; dispatch | Regenerates the settings/tree/sitemap docs under `pages/_about/settings/` (`scripts/deployment/update-settings.sh`). |
 | `prd-sync.yml` | PR merged to main; dispatch | Keeps the PRD in sync with merged changes (`scripts/prd-machine/prd-machine.py`). |
 
 ### Issue / PR automation
@@ -95,11 +94,39 @@ Also enable **"Require review from Code Owners"** (see [CODEOWNERS](../CODEOWNER
 
 ## Deployment
 
-The production site (`it-journey.dev`) is served by **GitHub Pages**. There is
-no `deploy.yml` in this repo — publishing is handled by the built-in Pages
-build, configured in repo **Settings → Pages**. If you migrate to
-"Deploy from GitHub Actions", add the deploy workflow here and update this
-section.
+The production site (`it-journey.dev`) is served by **GitHub Pages** in legacy
+**"Deploy from a branch"** mode: Pages builds Jekyll from the **`gh-pages`**
+branch (source, not `_site`) and publishes it. That Pages build (shown as
+**"pages build and deployment"**) is the only thing that should ever run when
+`gh-pages` changes.
+
+`deploy-gh-pages.yml` keeps `gh-pages` in sync automatically, replacing the old
+manual "Merge main into gh-pages" PRs:
+
+| Workflow | Triggers | What it does |
+|---|---|---|
+| `deploy-gh-pages.yml` | completion of the push-to-`main` CI workflows; dispatch | **Auto-publish gate.** When CI finishes for a `main` commit, it re-reads **all** check-runs + commit statuses for that exact commit and merges it into `gh-pages` **only if nothing is pending and nothing failed** (strict "no CI/CD errors"). Merges the *validated* SHA (never an unvalidated newer HEAD), is idempotent (skips if `gh-pages` already has it), and pushes with the default `GITHUB_TOKEN` so **no CI reruns** — only the Pages build fires. |
+
+Guarantees behind "only the Pages build runs on a `gh-pages` push":
+
+1. Every push-triggered workflow is scoped to `main`/`master` (this is why
+   `validate-solutions.yml` — previously branchless — is now branch-guarded).
+2. Pushes made with the default `GITHUB_TOKEN` do not trigger new Actions runs;
+   the legacy Pages build is a Pages-service job, not an Actions workflow, so it
+   still fires on the branch update.
+
+Operational notes:
+
+- `workflow_run` always resolves this file **from `main`**, so the gate only
+  takes effect once merged to `main`.
+- The trigger list must include every workflow that can run on a push to `main`
+  (CodeQL runs on all of them, guaranteeing a wake-up). Add new push-to-`main`
+  workflows to both that list here and keep them `main`-scoped.
+- Optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`): used for
+  the push if present. Only needed if the legacy Pages build ever fails to fire
+  from a `GITHUB_TOKEN` push; branch-scoping still prevents CI reruns.
+- If you migrate to "Deploy from GitHub Actions", replace this gate with a
+  `actions/deploy-pages` workflow and update this section.
 
 ## Contributing
 

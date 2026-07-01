@@ -60,7 +60,7 @@ When classifying a task, answer three questions:
 
 ## Related Quest
 
-[Q18: Autonomy Levels Matrix](/quests/gh-600/agentic-autonomy-levels-matrix/) — Full implementation with `_data/autonomy-matrix.yml` schema.
+[Q18: Autonomy Levels Matrix](/quests/1100/agentic-autonomy-levels-matrix/) — Full implementation with `_data/autonomy-matrix.yml` schema.
 
 ---
 

@@ -26,7 +26,7 @@ draft: false
         <i class="bi bi-graph-up"></i> Site Statistics Portal
       </h1>
       <p class="lead">
-        Comprehensive analytics and insights from the IT-Journey knowledge base
+        Content totals, category breakdowns, and tag counts from the IT-Journey knowledge base
       </p>
       
       {% if site.data.content_statistics %}

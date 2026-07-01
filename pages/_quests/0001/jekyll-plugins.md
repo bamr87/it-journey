@@ -85,7 +85,7 @@ layout: quest
 redirect_from:
 - /quests/0011/jekyll-plugins/
 ---
-*Greetings, brave adventurer! Welcome to **Jekyll Plugins** - the quest where you teach the static-site engine new spells. Jekyll out of the box is powerful, but plugins are how it becomes truly yours: they add SEO tags, sitemaps, feeds, image processing, and any custom logic you can imagine. A plugin runs during the build, so the cost is paid once and your visitors still receive plain, fast files.*
+*Greetings, brave adventurer! Welcome to **Jekyll Plugins** - the quest where you teach the static-site engine new spells. Jekyll out of the box turns Markdown and Liquid into static HTML, but plugins are how it becomes truly yours: they add SEO tags, sitemaps, feeds, image processing, and any custom logic you can imagine. A plugin runs during the build, so the cost is paid once and your visitors still receive plain, fast files.*
 
 *Whether you simply want to switch on the community's battle-tested gems or you are ready to write your own Ruby to generate pages, this adventure will teach you what plugins are, which ones GitHub Pages allows, how to configure the common ones, and how to forge a simple generator of your own.*
 
@@ -260,7 +260,7 @@ Anything outside the list - including any code in your `_plugins/` folder - is i
 *Most of the value comes from configuring the community gems well. A few lines unlock SEO, a sitemap, a feed, and pagination.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- Wiring up jekyll-feed and pagination
+- Wiring up Jekyll-feed and pagination
 - Placing plugin output tags in layouts
 - Verifying plugin output
 
@@ -476,7 +476,7 @@ After a build, visit `/stats.html` - a page that did not exist as a source file,
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -354,7 +354,7 @@ CREATE INDEX CONCURRENTLY idx_users_handle ON users(handle);
 
 **🎖️ Badges Earned**:
 - 🏆 **Keeper of the Living Schema** - You versioned and reversed a migration
-- 🛡️ **Master of the Seamless Shift** - You changed a live schema with zero downtime
+- 🛡️ **Master of the Zero-Downtime Shift** - You changed a live schema with zero downtime
 
 **🛠️ Skills Unlocked**:
 - **Versioned Migrations** - Reproducible, ordered schema change
@@ -408,7 +408,7 @@ CREATE INDEX CONCURRENTLY idx_users_handle ON users(handle);
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

@@ -21,7 +21,7 @@ mermaid: true
 ---
 # Level 0010: Terminal Enhancement & Shell Mastery
 
-*Having conquered the basic incantations, you now seek to augment your terminal with powerful enchantments. Level 0010 transforms your command line from a simple tool into a beautifully customized powerhouse that enhances your productivity and delights the eye.*
+*Having conquered the basic incantations, you now seek to augment your terminal with new enchantments. Level 0010 transforms your command line from a simple tool into a customized workspace with themes, fonts, plugins, and scripts that speed up your daily work.*
 
 ## Quest Overview
 
@@ -38,7 +38,7 @@ Level 0010 quests focus on:
 |-------|------------|------|------|--------|
 | [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
 | [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](/quests/0010/oh-my-zsh-mastery/) | 🟡 Medium | 45-90 minutes | main_quest | 🔮 Placeholder |
-| [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](/quests/0010/jekyll-mermaid-integration-quest/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
+| [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](/quests/0010/jekyll-mermaid-integration/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
 | [Understanding Action Triggers in Depth](/quests/0010/action-triggers/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
 | [Advanced Markdown: Tables, Footnotes & Extended Syntax](/quests/0010/advanced-markdown/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
 | [Bootstrap Framework: Build Responsive Sites Fast](/quests/0010/bootstrap-framework/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
@@ -62,7 +62,7 @@ Level 0010 quests focus on:
 #### [Oh My Zsh Terminal Enchantment](oh-my-zsh-terminal-enchantment.md)
 **Quest Type**: Side ⚔️ | **Difficulty**: 🟡 Medium | **Estimated Time**: 45-90 minutes
 
-Transform your terminal with Oh My Zsh - the delightful, open source framework for managing your Zsh configuration. Unlock powerful plugins, beautiful themes, and productivity-boosting features.
+Transform your terminal with Oh My Zsh - the open source framework for managing your Zsh configuration. Unlock plugins for Git, Docker, and kubectl, themes like Powerlevel10k, and auto-completion features.
 
 **Skills You'll Master:**
 - Oh My Zsh installation and configuration
@@ -107,7 +107,7 @@ Master the art of terminal-based frontend development workflows. Build, test, an
 #### [Bash Scripting Mastery](bash-scripting.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 90-120 minutes
 
-Advance beyond basic commands to write powerful, reusable Bash scripts. Use Bashcrawl as a capstone project for studying launchers, setup checks, state, and testable command workflows.
+Advance beyond basic commands to write reusable Bash scripts with error handling and parameters. Use Bashcrawl as a capstone project for studying launchers, setup checks, state, and testable command workflows.
 
 **Skills You'll Master:**
 - Advanced Bash scripting patterns
@@ -228,4 +228,4 @@ After mastering terminal enhancement, advance to [Level 0011 - Development Tools
 
 ---
 
-*Your terminal is your command center. Make it beautiful, make it powerful, make it yours.* 🎨✨
+*Your terminal is your command center. Make it beautiful, make it fast, make it yours.* 🎨✨

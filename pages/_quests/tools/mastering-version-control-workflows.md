@@ -437,7 +437,7 @@ You've just finished a feature that adds dark mode to the site. Write a complete
 
 ## 🧙‍♂️ Chapter 4: Release Orchestration — The Grand Ritual
 
-*The most powerful spell in the version control codex is the **release**. It transforms a stream of commits into a versioned artifact that the world can depend on.*
+*The final spell in the version control codex is the **release**. It transforms a stream of commits into a versioned artifact that the world can depend on.*
 
 ### ⚔️ The Release Lifecycle
 
@@ -869,7 +869,7 @@ Apply everything you've learned to the actual IT-Journey repository:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 1100 - Data & Templates]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

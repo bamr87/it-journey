@@ -129,7 +129,7 @@ Core scripts are designed to be used by other scripts in the IT-Journey ecosyste
 ./scripts/development/build/build-site.sh
 
 # Deployment scripts can verify environment
-./scripts/deployment/update-settings.sh
+./scripts/deployment/azure-jekyll-deploy.sh
 ```
 
 ## Error Handling

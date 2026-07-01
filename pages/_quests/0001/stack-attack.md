@@ -108,7 +108,7 @@ rewards:
 layout: quest
 mermaid: true
 ---
-*In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
+*In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into one connected flow of operational data. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 
 *Your weapons? **Django 5**, the battle-hardened Python framework trusted by the world's largest platforms. **React 18 with TypeScript**, the reactive UI engine powering the most demanding frontends. And your most potent asset — **AI agents**, your tireless companions who research technologies at machine speed, analyze repositories in seconds, and help you design systems that would take a team of architects weeks to plan.*
 
@@ -125,7 +125,7 @@ Building an ERP from scratch is one of the highest-order challenges in software 
 - **Async processing** — order fulfillment, email dispatch, report generation running in the background
 - **Rich interactive UI** — data tables, dashboards, forms with complex conditional logic
 
-The open-source world offers a powerful arsenal to tackle all of these. But choosing the wrong tool at the wrong layer is catastrophic — it becomes technical debt that compounds into system failure at scale.
+The open-source world offers a deep arsenal of mature libraries to tackle all of these. But choosing the wrong tool at the wrong layer is catastrophic — it becomes technical debt that compounds into system failure at scale.
 
 This quest teaches you to **harness AI agents as your research department**, rapidly evaluating the open-source ERP landscape, stress-testing technology choices against enterprise requirements, and ultimately assembling a stack that is both battle-tested and maintainable.
 
@@ -201,7 +201,7 @@ graph TB
 
 ## 🧙‍♂️ Chapter 1: Deploying the Stack Attack AI Agent
 
-*Before constructing your enterprise fortress, you must summon your most powerful ally — the `/stackattack` AI agent. This is not a simple chatbot. It is a purpose-built research and architecture agent that knows the open-source ERP landscape, understands Django and React deeply, and can investigate any repository or technology in minutes.*
+*Before constructing your enterprise fortress, you must summon your research-and-architecture ally — the `/stackattack` AI agent. This is not a simple chatbot. It is a purpose-built research and architecture agent that knows the open-source ERP landscape, understands Django and React deeply, and can investigate any repository or technology in minutes.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Crafting VS Code custom agent prompts with specialized personas
@@ -1818,7 +1818,7 @@ The open-source ERP landscape is vast — ERPNext, Odoo, and dozens of specializ
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 001 - Journeyman Challenges]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

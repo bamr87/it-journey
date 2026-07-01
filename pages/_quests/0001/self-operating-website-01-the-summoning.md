@@ -333,7 +333,7 @@ The construct lives and speaks — but it has not yet been *tested*. In the next
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Campaign hub:** [[Epic Quest: The Self-Operating Website]]
 **Previous:** none — first chapter

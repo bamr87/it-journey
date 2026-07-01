@@ -116,7 +116,7 @@ Each Sky Kingdom offers unique powers. Pick one for your first expedition — yo
 |---------|-----------|----------|
 | **AWS** | Vast army of services, battle-tested | General-purpose cloud mastery |
 | **Azure** | Strong Microsoft alliance, enterprise fortifications | Windows-integrated workflows |
-| **GCP** | Elegant developer tools, powerful data magic | Data science and clean APIs |
+| **GCP** | Elegant developer tools, BigQuery analytics | Data science and clean APIs |
 
 This quest includes GCP helper scrolls (scripts) for a low-friction first adventure.
 
@@ -186,15 +186,15 @@ If you conjured other artifacts (storage buckets, networks), banish them now to 
 
 ## 🔗 Related Quests
 
-- [Hello n00b](../hello-noob.md)
-- [OS Selection](../os-selection.md)
+- [Hello n00b](hello-noob.md)
+- [OS Selection](os-selection.md)
 - [Hello Windows](hello-win.md)
 - [Hello macOS](hello-mac.md)
 - [Hello Linux](linux-fundamentals.md)
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0000 - Foundation & Init World]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

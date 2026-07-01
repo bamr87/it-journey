@@ -22,16 +22,16 @@ quest: /quests/featured-future/
 ---
 ## Educational Features
 
-These are the learning-focused features that make IT-Journey a comprehensive educational platform.
+These are the learning-focused features that make IT-Journey an end-to-end educational platform, from interactive quests to documentation, search, and community tools.
 
 ### 🎓 Learning & Content Features
 
 {: .table .table-bordered .table-striped .table-hover .table-responsive}
 | Feature                                               | Status      | Description | Quest |
 | ----------------------------------------------------- | ----------- | ----------- | ----- |
-| **AI-Powered Learning Paths**                         | ✅ Active   | Personalized learning recommendations using AI | [AI Journey](/quests/ai-powered-learning/) |
+| **AI-Powered Learning Paths**                         | ✅ Active   | Personalized learning recommendations using AI | [AI Journey](/quests/) |
 | **Interactive Quests System**                         | ✅ Active   | Gamified learning challenges and exercises | [Quest System](/quests/) |
-| **Progressive Skill Levels**                          | ✅ Active   | Structured progression from zero to hero | [Levels](/quests/levels/) |
+| **Progressive Skill Levels**                          | ✅ Active   | Structured progression from zero to hero | [Levels](/quests/home/) |
 | **Community Discussions**                             | ✅ Active   | GitHub Discussions for peer learning | [Join Discussion](https://github.com/bamr87/it-journey/discussions) |
 | **Collaborative Learning**                            | ✅ Active   | Open-source contribution opportunities | [Contributing](/about/contributing/) |
 
@@ -40,7 +40,7 @@ These are the learning-focused features that make IT-Journey a comprehensive edu
 {: .table .table-bordered .table-striped .table-hover .table-responsive}
 | Feature                                               | Status      | Description |
 | ----------------------------------------------------- | ----------- | ----------- |
-| **Comprehensive Documentation**                       | ✅ Active   | Detailed guides and tutorials |
+| **Step-by-Step Documentation**                        | ✅ Active   | Detailed guides and tutorials |
 | **AI-Generated Documentation**                        | ✅ Active   | Automated content updates and summaries |
 | **Code Examples & Snippets**                          | ✅ Active   | Practical code demonstrations |
 | **Programming Language Cheat Sheets**                 | ✅ Active   | Quick reference guides |

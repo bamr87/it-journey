@@ -110,13 +110,13 @@ layout: quest
 redirect_from:
 - /quests/0101/side-quests/jekyll-quest-tracking/
 ---
-*Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging powerful layouts that respond to frontmatter incantations and user interactions alike.*
+*Greetings, intrepid static site architect! You stand before the great Hall of Collections—a mystical chamber where scattered content transforms into organized, filterable, and dynamic displays. In this quest, you shall master the ancient arts of Jekyll collections, forging layouts that respond to frontmatter incantations and user interactions alike.*
 
 *The knowledge you gain here will allow you to build quest tracking systems, portfolio galleries, documentation hubs, and any content collection that demands organization and discovery. Whether you seek to catalog your own adventures or create portals for fellow travelers, this quest will arm you with the spells needed to succeed.*
 
 ## 📜 The Legend Behind This Quest
 
-In the realm of static site generators, Jekyll reigns as the venerable wizard-king—simple yet powerful, transforming markdown into magnificent web pages. But many who wield Jekyll's power never venture beyond basic posts and pages, missing the treasure trove of **collections**.
+In the realm of static site generators, Jekyll reigns as the venerable wizard-king—transforming plain Markdown into static HTML pages with no database or server to run. But many who wield Jekyll's power never venture beyond basic posts and pages, missing the treasure trove of **collections**.
 
 Collections are Jekyll's secret weapon for organizing related content: quests, products, team members, portfolio pieces—anything that shares a common structure. Combined with **Liquid templating** and **frontmatter metadata**, collections become the foundation for dynamic, data-driven interfaces that rival server-rendered applications.
 
@@ -1058,7 +1058,7 @@ flowchart LR
 
 ## 🎉 Congratulations, Collection Architect!
 
-*You have successfully forged the Jekyll Quest Tracking system! Your mastery of collections, Liquid templating, and client-side filtering has created a powerful, reusable system for organizing and discovering content.*
+*You have successfully forged the Jekyll Quest Tracking system! Your mastery of collections, Liquid templating, and client-side filtering has created a reusable system for organizing and discovering content.*
 
 ### 🌟 What's Next?
 
@@ -1101,7 +1101,7 @@ This quest was developed through AI-assisted content generation:
 ## 🧠 Lessons & Next Steps
 
 ### Key Takeaways
-1. **Collections are powerful** - They transform Jekyll from a blog engine into a CMS
+1. **Collections turn Jekyll into a CMS** - They group related content (quests, products, team members) under shared layouts and queryable metadata
 2. **Data attributes bridge static/dynamic** - Server-render data, filter client-side
 3. **Automation saves time** - Batch frontmatter updates prevent manual errors
 4. **Edge cases matter** - The Integer/String issue only surfaces with mixed data
@@ -1156,7 +1156,7 @@ Before committing, verify:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

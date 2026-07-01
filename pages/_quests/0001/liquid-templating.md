@@ -5,7 +5,7 @@ description: 'Master Liquid, the templating language behind Jekyll: variables, f
 excerpt: Create dynamic content in Jekyll with Liquid - master variables, filters, and control flow.
 preview: images/previews/liquid-templating-dynamic-content-jekyll-quest-de.png
 date: '2025-11-29T22:51:57.000Z'
-lastmod: '2026-06-14T00:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
@@ -43,6 +43,8 @@ validation_criteria:
   - Understands the difference between output and tag delimiters
   - Can include a partial and pass it parameters
 permalink: /quests/0001/liquid-templating/
+redirect_from:
+- /docs/jekyll/jekyll-liquid/
 categories:
 - Quests
 - Frontend
@@ -92,7 +94,7 @@ layout: quest
 
 ## 📖 The Legend Behind This Quest
 
-*Long ago, the merchants of Shopify needed a safe way to let shopkeepers customize their storefront pages without handing them the keys to the whole engine. So they forged **Liquid** - a templating language powerful enough to loop, filter, and decide, yet sandboxed so a careless incantation could never break the server. Jekyll adopted Liquid, and today it is the lingua franca of static templating.*
+*Long ago, the merchants of Shopify needed a safe way to let shopkeepers customize their storefront pages without handing them the keys to the whole engine. So they forged **Liquid** - a templating language that can loop, filter, and decide, yet sandboxed so a careless incantation could never break the server. Jekyll adopted Liquid, and today it is the lingua franca of static templating.*
 
 *With Liquid you write a page once and let the data fill it in - a blog index that lists every post, a navigation menu built from a data file, a card that changes colour based on a value. Master it, and you wield the heart of every Jekyll theme.*
 
@@ -344,6 +346,66 @@ Any page declaring `layout: default` in its front matter gets wrapped automatica
 - [ ] What object renders the page body inside a layout?
 - [ ] How would you make every page share one footer?
 
+## 🧙‍♂️ Chapter 4: Scrolls of Restraint - Comments, Raw, and Whitespace
+
+*Sometimes the strongest spell is the one that holds back. These three incantations stop Liquid from acting - so you can leave notes, print literal syntax, or clean up the HTML your template generates.*
+
+### ⚔️ Skills You'll Forge in This Chapter
+- Silencing a block with `comment`
+- Escaping conflicting syntax with `raw`
+- Trimming whitespace with the dash and detecting loop edges with `forloop.first`
+
+### 🏗️ Holding Liquid Back
+
+**Comments** leave un-rendered notes in a template. Anything between the tags is dropped from the output, and any Liquid inside is never executed - perfect for a reminder to your future self:
+
+```liquid
+
+{% raw %}{% comment %} TODO: paginate this list once we pass 50 posts {% endcomment %}{% endraw %}
+
+```
+
+**Raw** temporarily disables tag processing - essential when your output itself contains Liquid-like braces, such as Handlebars or Mustache templates, code samples, or (as this very quest does) documentation *about* Liquid:
+
+```liquid
+
+{% raw %}
+  In Handlebars, {{ this }} is HTML-escaped, but {{{ that }}} is not.
+  These braces pass through literally because the raw block holds Liquid back.
+{% endraw %}
+
+```
+
+**Whitespace control** keeps generated HTML clean. A bare tag leaves a blank line where it ran; add a dash `-` to the delimiter to swallow the surrounding whitespace:
+
+```liquid
+
+{% raw %}{% assign fruit = "tomato" %}{% endraw %}
+{% raw %}{{ fruit }}{% endraw %}
+<!-- Output: a blank line, then "tomato" -->
+
+{% raw %}{%- assign fruit = "tomato" -%}{% endraw %}
+{% raw %}{{ fruit }}{% endraw %}
+<!-- Output: just "tomato", no leading blank line -->
+
+```
+
+Pair this with **loop-edge helpers** to render clean separators. `forloop.first` is `true` on the first pass and `forloop.last` on the last - handy for commas, dividers, or a heading printed only once:
+
+```liquid
+
+{% raw %}{% for tag in page.tags %}{% endraw %}
+  {% raw %}{% unless forloop.first %}{% endraw %}, {% raw %}{% endunless %}{% endraw %}{% raw %}{{ tag }}{% endraw %}
+{% raw %}{% endfor %}{% endraw %}
+<!-- Output: liquid, jekyll, templating  (no leading comma) -->
+
+```
+
+### 🔍 Knowledge Check: Restraint
+- [ ] How do you leave a note in a template that never reaches the output?
+- [ ] When would you wrap a block in a `raw` tag?
+- [ ] What does the dash in `{% raw %}{%- -%}{% endraw %}` do, and how is `forloop.first` useful?
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Filter Chain
@@ -413,6 +475,7 @@ Any page declaring `layout: default` in its front matter gets wrapped automatica
 - [Liquid Reference (Shopify)](https://shopify.github.io/liquid/) - The canonical language reference
 - [Jekyll Liquid Documentation](https://jekyllrb.com/docs/liquid/) - Liquid as Jekyll uses it
 - [Jekyll Includes](https://jekyllrb.com/docs/includes/) - Reusable partials with parameters
+- [Liquid Whitespace Control](https://shopify.github.io/liquid/basics/whitespace/) - The dash delimiter and clean output
 
 ### Community Resources
 - [Jekyll Talk Forum](https://talk.jekyllrb.com/) - Ask Liquid questions
@@ -434,7 +497,7 @@ Any page declaring `layout: default` in its front matter gets wrapped automatica
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0001 - Web Fundamentals]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

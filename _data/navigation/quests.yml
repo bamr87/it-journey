@@ -250,6 +250,8 @@
     url: /quests/0111/api-versioning/
   - title: 'Error Handling: Status Codes, Problem Details, and Retries'
     url: /quests/0111/error-handling/
+  - title: 'Initiation Rites: Agents in the SDLC'
+    url: /quests/0111/agentic-codex-01-agents-in-the-sdlc/
   - title: 'Initiation Rites: Embedding Agents in the SDLC'
     url: /quests/0111/agentic-sdlc-integration/
   - title: 'Rate Limiting: Token Buckets, 429s, and Quotas'
@@ -270,6 +272,8 @@
     url: /quests/1000/cloud-computing-fundamentals/
   - title: 'Forging the Agent''s Arsenal: Tool Selection & Permissions'
     url: /quests/1000/agentic-tool-selection-and-permissions/
+  - title: 'Forging the Arsenal: Tool Use & Environment'
+    url: /quests/1000/agentic-codex-02-tool-use-and-environment/
   - title: 'Infrastructure as Code: Terraform Fundamentals and State'
     url: /quests/1000/infrastructure-as-code/
   - title: 'The All-Seeing Eye: Observability for AI Agents'
@@ -298,6 +302,8 @@
     url: /quests/1001/self-operating-website-04-the-sigils-of-trust/
   - title: 'Vaults of Recollection: Agent Memory Strategies'
     url: /quests/1001/agentic-memory-strategies/
+  - title: 'Vaults of Recollection: Memory & State'
+    url: /quests/1001/agentic-codex-03-memory-state-and-execution/
 - title: Level 1010 - Monitoring & Observability
   icon: bi-graph-up
   url: /quests/1010/
@@ -328,6 +334,8 @@
     url: /quests/1010/self-operating-website-05-the-content-forge/
   - title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
     url: /quests/1010/agentic-failure-root-cause-analysis/
+  - title: 'The Oracle Rubric: Evaluation & Tuning'
+    url: /quests/1010/agentic-codex-04-evaluation-and-tuning/
   - title: 'The Oracle''s Rubric: Agent Success Signals'
     url: /quests/1010/agentic-success-criteria-and-signals/
 - title: Level 1011 - Security & Compliance
@@ -346,6 +354,8 @@
     url: /quests/1011/secure-coding/
   - title: 'Security Fundamentals: CIA Triad and Defense in Depth'
     url: /quests/1011/security-fundamentals/
+  - title: 'The Council of Many: Multi-Agent Coordination'
+    url: /quests/1011/agentic-codex-05-multi-agent-coordination/
   - title: 'The Council of Many: Multi-Agent Orchestration Patterns'
     url: /quests/1011/agentic-multi-agent-orchestration-patterns/
   - title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
@@ -382,10 +392,14 @@
     url: /quests/1100/self-operating-website-06-the-editors-eye/
   - title: 'The Temple of Templates: Reusable Abstractions'
     url: /quests/1100/temple-of-templates/
+  - title: 'The Warden Pact: Guardrails & Accountability'
+    url: /quests/1100/agentic-codex-06-guardrails-and-accountability/
   - title: 'The Warden''s Pact: Guardrails and Human-in-the-Loop Patterns'
     url: /quests/1100/agentic-guardrails-and-human-in-the-loop/
   - title: 'Trial of the Agentic Codex: The Grand Capstone'
     url: /quests/1100/agentic-codex-capstone-exam-trial/
+  - title: 'Epic Quest: The Agentic Codex'
+    url: /quests/codex/agentic-codex/
 - title: Level 1101 - Machine Learning & AI
   icon: bi-cpu
   url: /quests/1101/

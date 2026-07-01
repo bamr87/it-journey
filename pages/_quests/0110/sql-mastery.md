@@ -80,7 +80,7 @@ rewards:
   - Query optimization challenges in the Database Mastery line
 layout: quest
 ---
-*Greetings, brave adventurer! You have learned to **store** data; now you will learn to **summon** it. SQL - the Structured Query Language - is the spellbook of the relational realm, and this quest, **SQL Mastery**, teaches you to chant its most powerful incantations. By the end you will pull precise answers from a sprawling, multi-table database the way a battle-mage pulls fire from the air.*
+*Greetings, brave adventurer! You have learned to **store** data; now you will learn to **summon** it. SQL - the Structured Query Language - is the spellbook of the relational realm, and this quest, **SQL Mastery**, teaches you to chant the incantations that join, group, and nest data. By the end you will pull precise answers from a sprawling, multi-table database the way a battle-mage pulls fire from the air.*
 
 *SQL is declarative: you describe *what* you want, and the database's query planner decides *how* to fetch it. That single shift - from "how" to "what" - is what makes SQL feel like magic and what makes mastering it a genuine power-up for any developer.*
 
@@ -461,7 +461,7 @@ COMMIT;   -- both inserts land together; ROLLBACK would undo both
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0110 - Database Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

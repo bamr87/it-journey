@@ -10,8 +10,7 @@ scripts/
 │   ├── environment-setup.sh
 │   └── version-manager.sh
 ├── deployment/              # Deployment automation
-│   ├── azure-jekyll-deploy.sh
-│   └── update-settings.sh
+│   └── azure-jekyll-deploy.sh
 ├── development/             # Development workflow scripts
 │   ├── build/              # Build automation
 │   ├── content/            # Content management
@@ -336,7 +335,7 @@ Reports are saved to the TODO directory:
 - `version-manager.sh` - Version management utilities
 
 ### Deployment Scripts
-- `update-settings.sh` - Configuration updates
+- `azure-jekyll-deploy.sh` - Azure Static Web Apps deployment
 
 ### Content Scripts
 - `append_feature.py` - Feature addition automation

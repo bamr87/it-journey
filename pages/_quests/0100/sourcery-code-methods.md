@@ -58,7 +58,7 @@ layout: quest
 sub_title: 'Level 0100 (4) Quest: Source Control and Collaboration Mastery'
 draft: false
 ---
-*In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
+*In the mystical realm of software development, there exists an ancient magic for tracking every change known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 
 *Through this epic quest, you will master the arcane arts of Git magic and GitHub collaboration spells. You'll learn to weave branches like a skilled enchanter, merge realities without creating chaos, and maintain the sacred chronicles of your code's evolution. By quest's end, you'll possess the power to collaborate with fellow developers across the world, automate your workflows with mystical GitHub Actions, and ensure that no code is ever lost to the void.*
 
@@ -271,10 +271,10 @@ git branch -d feature/user-authentication
 
 ## 🧙‍♂️ Chapter 3: GitHub Collaboration Magic - Working with Fellow Wizards
 
-*Master the art of collaborating with other developers through GitHub's powerful social coding platform.*
+*Master the art of collaborating with other developers through GitHub's pull requests, reviews, and issue tracking.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
-- Create professional pull requests with comprehensive documentation
+- Create professional pull requests that document what changed, why, and how it was tested
 - Conduct thorough code reviews that improve team code quality
 - Implement issue tracking and project management workflows
 - Establish team coding standards and review processes
@@ -422,12 +422,12 @@ jobs:
 **Success Criteria**:
 - [ ] Feature branch follows naming conventions
 - [ ] Commits follow conventional commit format
-- [ ] Pull request includes comprehensive description and testing plan
+- [ ] Pull request describes what changed and why, plus a testing plan
 - [ ] All automated checks pass
 
 **Bonus Points**:
 - [ ] Implement automated testing for your feature
-- [ ] Add comprehensive documentation
+- [ ] Add documentation covering setup and usage
 - [ ] Include security considerations in your review
 
 ### Challenge 2: Collaboration Simulation (🕐 Estimated Time: 60 minutes)
@@ -451,7 +451,7 @@ jobs:
 
 **Requirements**:
 - [ ] Set up a repository with proper branching strategy
-- [ ] Implement comprehensive GitHub Actions workflow
+- [ ] Implement a GitHub Actions workflow that tests, lints, and scans for security issues
 - [ ] Create pull request and issue templates
 - [ ] Set up automated testing, linting, and security scanning
 - [ ] Configure branch protection rules and review requirements
@@ -475,7 +475,7 @@ jobs:
 ### 🏆 Achievement Badges Earned
 - **Source Control Sorcerer** - Master of Git fundamentals and advanced techniques
 - **GitHub Collaboration Wizard** - Expert in team development workflows and code reviews
-- **Automation Enchanter** - Creator of powerful CI/CD pipelines and automated workflows
+- **Automation Enchanter** - Creator of CI/CD pipelines and automated workflows
 - **Code Guardian** - Protector of code quality and development standards
 
 ### ⚡ Skills and Abilities Unlocked
@@ -514,12 +514,12 @@ jobs:
 ## 📚 Quest Resource Codex
 
 ### 📖 Essential Documentation
-- [Git Official Documentation](https://git-scm.com/doc) - Comprehensive Git reference and tutorials
+- [Git Official Documentation](https://git-scm.com/doc) - Full Git command reference and tutorials
 - [GitHub Docs](https://docs.github.com/) - Complete GitHub platform documentation
 - [GitHub Actions Documentation](https://docs.github.com/en/actions) - Automation and workflow guides
 
 ### 🎥 Visual Learning Resources
-- [Git and GitHub Tutorial Series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) - Comprehensive video tutorials
+- [Git and GitHub Tutorial Series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) - Step-by-step video tutorials
 - [GitHub Skills](https://skills.github.com/) - Interactive learning courses
 - [Git Immersion](http://gitimmersion.com/) - Hands-on Git tutorial
 
@@ -553,7 +553,7 @@ jobs:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0100 - Frontend Development & Docker]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
