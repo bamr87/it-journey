@@ -109,6 +109,12 @@ jobs:
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
       count: ${{ steps.matrix.outputs.count }}
+      # A pre-filtered view of `matrix` holding only the entries granted a fix PR
+      # (open_new_fix_prs == "true"). The `fix` job fans out over THIS instead of
+      # gating on matrix.open_new_fix_prs — a job-level `if` can't read the matrix
+      # context, so per-entry gating has to happen by shaping the matrix upstream.
+      fix_matrix: ${{ steps.matrix.outputs.fix_matrix }}
+      fix_count: ${{ steps.matrix.outputs.fix_count }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -302,9 +308,17 @@ jobs:
           matrix = {"include": include}
           print(f"matrix={json.dumps(matrix)}")
           print(f"count={len(include)}")
+          # The fix lane fans out over ONLY the granted entries. A reusable-workflow
+          # job's `if` can't read the matrix context, so the per-entry open_new_fix_prs
+          # gate is applied HERE, by shaping a separate matrix the fix job consumes.
+          fix_include = [e for e in include if e.get("open_new_fix_prs") == "true"]
+          print(f"fix_matrix={json.dumps({'include': fix_include})}")
+          print(f"fix_count={len(fix_include)}")
           PY
           echo "--- planned matrix ---"
-          tail -n2 "$GITHUB_OUTPUT" || true
+          # Show every output this step emitted (matrix/count + fix_matrix/fix_count),
+          # not a fixed tail — so the debug view can't silently drop outputs again.
+          grep -E '^(matrix|count|fix_matrix|fix_count)=' "$GITHUB_OUTPUT" || true
 
   # ---------------------------------------------------------------------------
   # slice — one (character, level) slice per matrix entry, IN SERIES
@@ -516,18 +530,18 @@ jobs:
   # ---------------------------------------------------------------------------
   fix:
     needs: [plan, slice]
-    # Only when this entry's queue check said new fix PRs are allowed (the budget
-    # job sets open_new_fix_prs uniformly across the matrix from the OODA count of
-    # open auto:quest-fix PRs). A reusable-workflow `uses` job can't gate a step,
-    # but its job-level `if` can read the matrix context — so the per-entry flag is
-    # the gate here. Per-slice "already perfect" / circuit-breaker short-circuiting
-    # is re-checked INSIDE quest-fix.yml (it reads the ledger before editing), so a
-    # slice that became perfect during the walk still ships no fix PR.
-    if: ${{ needs.plan.outputs.count != '0' && needs.plan.outputs.matrix != '' && matrix.open_new_fix_prs == 'true' }}
+    # Runs only for the slices the budget/OODA step granted a fix PR. A
+    # reusable-workflow `uses` job can't gate a step, AND its job-level `if` can't
+    # read the matrix context — so the per-entry open_new_fix_prs gate is applied
+    # UPSTREAM: the plan job emits `fix_matrix` holding only the granted entries and
+    # this job fans out over that. Per-slice "already perfect" / circuit-breaker
+    # short-circuiting is re-checked INSIDE quest-fix.yml (it reads the ledger before
+    # editing), so a slice that became perfect during the walk still ships no fix PR.
+    if: ${{ needs.plan.outputs.fix_count != '0' && needs.plan.outputs.fix_matrix != '' }}
     strategy:
       max-parallel: 1
       fail-fast: false
-      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+      matrix: ${{ fromJson(needs.plan.outputs.fix_matrix) }}
     uses: ./.github/workflows/quest-fix.yml
     with:
       slug: ${{ matrix.slug }}
