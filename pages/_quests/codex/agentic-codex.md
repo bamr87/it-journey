@@ -347,7 +347,7 @@ The conceptual companion to the chapters lives in the **GH-600 reference notes**
 - [Glossary](/notes/gh-600/glossary/) — agent, MCP, HITL, drift, autonomy, and more
 - [MCP Quick Reference](/notes/gh-600/mcp-quickref/) — server config, registries, allow-list syntax
 
-**Deeper study (moving to notes):**
+**Deeper study (in notes):**
 - [Skills Measured — Full Breakdown](/notes/gh-600/skills-measured/) — every sub-skill, domain by domain
 - [Week-by-Week Learning Path](/notes/gh-600/learning-path/) — a structured study schedule
 - [Recommended Resources](/notes/gh-600/recommended-resources/) — Microsoft Learn paths and GitHub docs
@@ -357,6 +357,7 @@ The conceptual companion to the chapters lives in the **GH-600 reference notes**
 - 🎯 Begin the campaign: [Chapter I — Initiation Rites: Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/)
 - 🏆 Face the trial: [Trial of the Agentic Codex: The Grand Capstone](/quests/1100/agentic-codex-capstone-exam-trial/)
 - 📜 Study the map: [GH-600 Study Hub](/notes/gh-600/)
+- 🏰 Sibling campaign: [Epic Quest: The Self-Operating Website](/quests/codex/self-operating-website/) — apply the same governance discipline to a site that runs itself
 
 ## 📚 Resource Codex
 

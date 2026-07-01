@@ -82,7 +82,7 @@ graph TD
 | Territory | Path | Description |
 |-----------|------|-------------|
 | **🔧 Master Setup** | `/quickstart/machine-setup/` | Essential development environment configuration |
-| **🛠️ Zer0-Mistakes Foundation** | `/quests/0010/epic-quest-zer0-to-her0-cmstyle/` | Core setup and fundamental tools |
+| **🛠️ Zer0-Mistakes Foundation** | `/quests/codex/zer0-to-her0-cmstyle/` | Core setup and fundamental tools |
 | **⚡ Essential Tools Arsenal** | `/quickstart/` | Critical software and utilities |
 | **👣 First Steps Ceremony** | `/quickstart/first-steps/` | Gentle introductions for newcomers |
 
@@ -90,7 +90,7 @@ graph TD
 
 - [Machine Setup Guide](/quickstart/machine-setup/) - Configure your development fortress
 - [Essential Tools](/quickstart/) - Arm yourself with the right weapons
-- [Zer0-Mistakes Starter](/quests/0010/epic-quest-zer0-to-her0-cmstyle/) - Foundation principles and practices
+- [Zer0-Mistakes Starter](/quests/codex/zer0-to-her0-cmstyle/) - Foundation principles and practices
 
 ## ⚔️ Journey Domain - The Epic Quest Realm
 

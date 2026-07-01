@@ -51,7 +51,7 @@ quest chains many quests into a guided story with a capstone at the end.
 |---|---|---|---|
 | 🤖 **[The Agentic Codex](/quests/codex/agentic-codex/)** | A GH-600-ready command of autonomous AI agents on GitHub — six exam domains, hands-on | ⚔️ Epic | [Begin →](/quests/codex/agentic-codex/) |
 | 🏰 **[The Self-Operating Website](/quests/codex/self-operating-website/)** | A Jekyll site that drafts content, files bugs, and reviews its own PRs behind a human gate | ⚔️ Epic | [Begin →](/quests/codex/self-operating-website/) |
-| 🌱 **[Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/)** | Your first AI-powered open-source CMS, from nothing to a live site | 🟢 Easy | [Begin →](/quests/0010/epic-quest-zer0-to-her0-cmstyle/) |
+| 🌱 **[Zer0-to-Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/)** | Your first AI-powered open-source CMS, from nothing to a live site | ⚔️ Epic | [Begin →](/quests/codex/zer0-to-her0-cmstyle/) |
 
 > 💡 New here? Start with **Zer0-to-Her0 CMStyle** to build your first site, then
 > graduate to **The Self-Operating Website** to make it run itself.
