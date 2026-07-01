@@ -316,7 +316,9 @@ jobs:
           print(f"fix_count={len(fix_include)}")
           PY
           echo "--- planned matrix ---"
-          tail -n2 "$GITHUB_OUTPUT" || true
+          # Show every output this step emitted (matrix/count + fix_matrix/fix_count),
+          # not a fixed tail — so the debug view can't silently drop outputs again.
+          grep -E '^(matrix|count|fix_matrix|fix_count)=' "$GITHUB_OUTPUT" || true
 
   # ---------------------------------------------------------------------------
   # slice — one (character, level) slice per matrix entry, IN SERIES
