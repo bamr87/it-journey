@@ -2,6 +2,10 @@ name: Validate Quest Solutions
 
 on:
   push:
+    # Guard to the source branches. Without this, the branchless `push` trigger
+    # would also fire when `deploy-gh-pages.yml` syncs `main` → `gh-pages`, so a
+    # gh-pages update would run more than just the Pages deploy.
+    branches: [ main, master ]
     paths:
       - 'test/quest-solutions/**'
   pull_request:

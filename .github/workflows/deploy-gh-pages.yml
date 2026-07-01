@@ -1,0 +1,265 @@
+# Automatically sync `main` → `gh-pages` once every CI check on the commit is
+# green, so the built-in GitHub Pages build (the *only* thing that runs on a
+# `gh-pages` push) publishes it. Replaces the manual "Merge main into gh-pages"
+# PRs.
+#
+# HOW THE GATE WORKS
+#   • Triggered by the *completion* of the CI workflows that run on a push to
+#     `main` (CodeQL runs on every main push, so a signal always arrives).
+#   • For the exact commit that CI ran against, it re-reads ALL check-runs and
+#     commit statuses. It deploys only when nothing is pending and nothing
+#     failed — the strict reading of "no CI/CD errors". A single triggering
+#     workflow being green is NOT enough; the whole commit must be green.
+#   • It merges the *validated* SHA (never a newer, unvalidated `main` HEAD).
+#   • Idempotent: if `gh-pages` already contains the SHA, it does nothing.
+#
+# WHY NO OTHER WORKFLOW RUNS ON THE gh-pages PUSH
+#   • Every push-triggered workflow is filtered to `main`/`master` (this repo's
+#     `validate-solutions.yml` was the only gap — now guarded).
+#   • The push here uses the default `GITHUB_TOKEN`, whose pushes do not trigger
+#     further Actions runs. The legacy Pages build is a Pages-service job (not an
+#     Actions workflow) and still fires on the branch update — that is the one
+#     run you want.
+#
+# NOTE: `workflow_run` always uses this file *from the default branch*, so this
+# gate only takes effect once merged to `main`.
+
+name: 🚀 Deploy · main → gh-pages (when green)
+
+on:
+  workflow_run:
+    # Every workflow that can run on a push to `main`. The gate wakes on each
+    # completion and re-checks the whole commit, so listing them all guarantees
+    # a wake-up after the last one finishes. Keep this list in sync when you add
+    # a new push-to-main workflow.
+    workflows:
+      - "🏗️ Build Validation & Cross-Platform Testing"
+      - "CodeQL"
+      - "🎯 Quest Content Validation"
+      - "🔍 Dependency Security Checker"
+      - "Sync GitHub Profile Data"
+      - "Validate Quest Solutions"
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Commit/branch to deploy (blank = current main HEAD). Still refuses to deploy if CI is red.'
+        required: false
+        default: ''
+
+# Push access to gh-pages; read access to the commit's checks/statuses.
+permissions:
+  contents: write
+  checks: read
+  statuses: read
+
+# Serialize all deploys so pushes to gh-pages never race. GitHub keeps the
+# oldest in-progress run plus the newest queued one and cancels stale queued
+# runs, so the duplicate wake-ups from several CI workflows collapse cheaply.
+concurrency:
+  group: deploy-gh-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: 🟢 Gate on green CI · sync gh-pages
+    runs-on: ubuntu-latest
+    # Only react to CI that ran for a *push to main*. Ignore PR builds, other
+    # branches, and scheduled scans (they don't represent a new main commit).
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch' ||
+          ((github.event.workflow_run.head_branch == 'main' ||
+            github.event.workflow_run.head_branch == 'master') &&
+           github.event.workflow_run.event == 'push') }}
+    steps:
+      - name: 🏰 Checkout (full history, both branches)
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          # Prefer a PAT if provided (guarantees the legacy Pages build fires in
+          # every environment); otherwise the default token, which is enough for
+          # legacy "Deploy from a branch" Pages.
+          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN || secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: 🎯 Resolve the commit CI validated
+        id: target
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_REF: ${{ github.event.inputs.ref }}
+          RUN_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --prune origin main gh-pages
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            if [ -n "$DISPATCH_REF" ]; then
+              SHA="$(git rev-parse "origin/$DISPATCH_REF" 2>/dev/null || git rev-parse "$DISPATCH_REF")"
+            else
+              SHA="$(git rev-parse origin/main)"
+            fi
+          else
+            SHA="$RUN_HEAD_SHA"
+          fi
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          echo "Target commit: $SHA"
+          git --no-pager log -1 --oneline "$SHA" || true
+
+      - name: 🔁 Skip if gh-pages already has this commit
+        id: contains
+        env:
+          SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          set -euo pipefail
+          if git merge-base --is-ancestor "$SHA" origin/gh-pages; then
+            echo "gh-pages already contains $SHA — nothing to deploy."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 🟢 Require ALL checks on the commit to be green
+        id: gate
+        if: steps.contains.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ steps.target.outputs.sha }}
+          SELF: ${{ github.workflow }}
+          MAX_WAIT_SECONDS: '1200'   # bound the wait for stragglers (20 min)
+          POLL_INTERVAL_SECONDS: '20'
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, sys, time
+
+          repo = os.environ["REPO"]
+          sha  = os.environ["SHA"]
+          self_name = os.environ.get("SELF", "")
+          max_wait = int(os.environ.get("MAX_WAIT_SECONDS", "1200"))
+          interval = int(os.environ.get("POLL_INTERVAL_SECONDS", "20"))
+          out_path = os.environ["GITHUB_OUTPUT"]
+
+          # Anything in this set is a hard red and blocks the deploy.
+          FAILISH = {"failure", "cancelled", "timed_out",
+                     "action_required", "startup_failure", "stale"}
+
+          def gh_json(path):
+              r = subprocess.run(
+                  ["gh", "api", "-H", "Accept: application/vnd.github+json", path],
+                  capture_output=True, text=True)
+              if r.returncode != 0:
+                  sys.stderr.write(r.stderr)
+                  raise SystemExit(f"gh api failed: {path}")
+              return json.loads(r.stdout or "{}")
+
+          def evaluate():
+              cr = gh_json(f"repos/{repo}/commits/{sha}/check-runs?per_page=100")
+              pending, failed, passed = [], [], []
+              for run in cr.get("check_runs", []):
+                  name = run.get("name", "?")
+                  # Never gate on ourselves (defensive; the gate isn't a check-run
+                  # on this commit, but a rename could change that).
+                  if self_name and name.startswith(self_name):
+                      continue
+                  if run.get("status") != "completed":
+                      pending.append(name)
+                  elif run.get("conclusion") in FAILISH:
+                      failed.append(f"{name}={run.get('conclusion')}")
+                  else:  # success / neutral / skipped / None → treat as pass
+                      passed.append(name)
+              # Classic commit statuses from external integrations (if any).
+              st = gh_json(f"repos/{repo}/commits/{sha}/status")
+              if st.get("total_count", 0) > 0:
+                  state = st.get("state")
+                  if state == "pending":
+                      pending.append("commit-status")
+                  elif state in ("failure", "error"):
+                      failed.append(f"commit-status={state}")
+                  else:
+                      passed.append("commit-status")
+              return pending, failed, passed
+
+          deadline = time.time() + max_wait
+          while True:
+              pending, failed, passed = evaluate()
+              print(f"[gate] green={len(passed)} pending={len(pending)} "
+                    f"failed={len(failed)} | pending={pending} failed={failed}",
+                    flush=True)
+              if not pending:
+                  break
+              if time.time() >= deadline:
+                  print(f"::warning::Timed out after {max_wait}s waiting on "
+                        f"pending checks {pending}; not deploying this run.")
+                  with open(out_path, "a") as fh:
+                      fh.write("deploy=false\n")
+                  raise SystemExit(0)
+              time.sleep(interval)
+
+          with open(out_path, "a") as fh:
+              if failed:
+                  print(f"::notice::CI is not green for {sha} (failed: {failed}). "
+                        f"Skipping deploy.")
+                  fh.write("deploy=false\n")
+              else:
+                  print(f"::notice::All {len(passed)} check(s) green for {sha}. "
+                        f"Deploying to gh-pages.")
+                  fh.write("deploy=true\n")
+          PY
+
+      - name: 🚀 Merge main → gh-pages
+        if: steps.contains.outputs.skip != 'true' && steps.gate.outputs.deploy == 'true'
+        env:
+          SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          SHORT="$(git rev-parse --short "$SHA")"
+
+          git checkout -B gh-pages origin/gh-pages
+          # main is the source of truth for this deploy mirror, so it wins on the
+          # (never-expected) conflict rather than wedging the automation.
+          git merge --no-ff -X theirs "$SHA" \
+            -m "🚀 Deploy: sync gh-pages to main@${SHORT}" \
+            -m "Automated by deploy-gh-pages.yml after all CI checks passed on ${SHA}."
+
+          # Safety net: a deploy mirror must never drift. If the merged tree isn't
+          # byte-identical to main@SHA, hard-align it (keeps the merge commit).
+          if ! git diff --quiet "$SHA" HEAD; then
+            echo "::warning::merged tree differed from main@${SHORT}; hard-aligning to main."
+            git read-tree -m -u "$SHA"
+            git commit --amend --no-edit
+          fi
+
+          # Serialized by concurrency, so a reject is only possible if something
+          # outside this workflow wrote to gh-pages. Reconcile once and retry.
+          for attempt in 1 2 3; do
+            if git push origin gh-pages; then
+              echo "Pushed gh-pages @ $(git rev-parse --short HEAD) — the Pages build will deploy it."
+              break
+            fi
+            echo "push rejected (attempt ${attempt}); reconciling with remote gh-pages…"
+            git fetch --no-tags origin gh-pages
+            git merge --no-ff -X theirs origin/gh-pages -m "Merge remote gh-pages into deploy sync" || true
+            [ "$attempt" = "3" ] && { echo "::error::could not push gh-pages after 3 attempts"; exit 1; }
+            sleep 3
+          done
+
+      - name: 📊 Summary
+        if: always()
+        env:
+          SHA: ${{ steps.target.outputs.sha }}
+          SKIP: ${{ steps.contains.outputs.skip }}
+          DEPLOY: ${{ steps.gate.outputs.deploy }}
+        run: |
+          {
+            echo "## 🚀 Deploy gate → gh-pages"
+            echo ""
+            echo "- **Commit:** \`${SHA}\`"
+            if [ "$SKIP" = "true" ]; then
+              echo "- **Result:** ⏭️ gh-pages already contains this commit — no-op."
+            elif [ "$DEPLOY" = "true" ]; then
+              echo "- **Result:** ✅ All checks green → merged into \`gh-pages\`. GitHub Pages will build & deploy."
+            else
+              echo "- **Result:** 🛑 Not deployed (CI not green yet, red, or timed out). Will re-evaluate on the next green CI signal."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
