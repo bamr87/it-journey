@@ -100,32 +100,36 @@ branch (source, not `_site`) and publishes it. That Pages build (shown as
 **"pages build and deployment"**) is the only thing that should ever run when
 `gh-pages` changes.
 
-`deploy-gh-pages.yml` keeps `gh-pages` in sync automatically, replacing the old
+`sync-gh-pages.yml` keeps `gh-pages` in sync automatically, replacing the old
 manual "Merge main into gh-pages" PRs:
 
 | Workflow | Triggers | What it does |
 |---|---|---|
-| `deploy-gh-pages.yml` | completion of the push-to-`main` CI workflows; dispatch | **Auto-publish gate.** When CI finishes for a `main` commit, it re-reads **all** check-runs + commit statuses for that exact commit and merges it into `gh-pages` **only if nothing is pending and nothing failed** (strict "no CI/CD errors"). Merges the *validated* SHA (never an unvalidated newer HEAD), is idempotent (skips if `gh-pages` already has it), and pushes with the default `GITHUB_TOKEN` so **no CI reruns** — only the Pages build fires. |
+| `sync-gh-pages.yml` | every 6h; dispatch | **Routine deploy sync.** If `main` is ahead of `gh-pages` **and** main's latest commit is fully green (all check-runs + commit statuses passed), it opens a PR from `main` into `gh-pages` and merges it (merge commit). Pages then builds `gh-pages`. Reads main's already-finished CI — **no reruns, no waiting**. Does nothing if gh-pages is up to date or main is pending/red. |
 
-Guarantees behind "only the Pages build runs on a `gh-pages` push":
+`gh-pages` is a pure mirror of `main` (kept in lockstep by this workflow), so
+the PR is always a clean, conflict-free merge. If the branches ever diverge,
+re-run the one-time reconciliation: merge `main` into `gh-pages` with `-X theirs`
+(main authoritative) so their trees match again.
+
+Guarantees behind "only the Pages build runs on a `gh-pages` update":
 
 1. Every push-triggered workflow is scoped to `main`/`master` (this is why
    `validate-solutions.yml` — previously branchless — is now branch-guarded).
-2. Pushes made with the default `GITHUB_TOKEN` do not trigger new Actions runs;
-   the legacy Pages build is a Pages-service job, not an Actions workflow, so it
-   still fires on the branch update.
+2. The merge is performed with `GITHUB_TOKEN`, whose pushes do not start new
+   Actions runs; the legacy Pages build is a Pages-service job, not an Actions
+   workflow, so it still fires on the branch update.
 
 Operational notes:
 
-- `workflow_run` always resolves this file **from `main`**, so the gate only
-  takes effect once merged to `main`.
-- The trigger list must include every workflow that can run on a push to `main`
-  (CodeQL runs on all of them, guaranteeing a wake-up). Add new push-to-`main`
-  workflows to both that list here and keep them `main`-scoped.
+- Scheduled/dispatch runs resolve this file **from `main`**, so it only takes
+  effect once merged to `main`.
+- Trigger it on demand from the Actions tab (`workflow_dispatch`) to publish
+  immediately instead of waiting for the next 6-hour tick.
 - Optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`): used for
-  the push if present. Only needed if the legacy Pages build ever fails to fire
-  from a `GITHUB_TOKEN` push; branch-scoping still prevents CI reruns.
-- If you migrate to "Deploy from GitHub Actions", replace this gate with a
+  the checkout/merge if present. Only needed if the legacy Pages build ever fails
+  to fire from a `GITHUB_TOKEN` push; branch-scoping still prevents CI reruns.
+- If you migrate to "Deploy from GitHub Actions", replace this workflow with an
   `actions/deploy-pages` workflow and update this section.
 
 ## Contributing

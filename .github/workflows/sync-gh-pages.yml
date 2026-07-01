@@ -1,0 +1,164 @@
+# Routine deploy sync: on a schedule (and on demand), if `main` is ahead of the
+# `gh-pages` Pages branch AND main's latest commit is fully green in CI, open a
+# PR from `main` into `gh-pages` and merge it. GitHub Pages (legacy "Deploy from
+# a branch") then builds `gh-pages` — the only run triggered by that update.
+#
+# Why a schedule instead of reacting to CI: by the time the routine fires, main's
+# CI has already finished, so we just read the existing check results — no
+# waiting, no reruns. `gh-pages` is a pure mirror of `main` (kept in lockstep by
+# this workflow), so the PR is always a clean, conflict-free merge.
+#
+# Only the Pages build runs on the gh-pages update because:
+#   • every push-triggered workflow is scoped to main/master (validate-solutions
+#     included), and
+#   • the merge is performed with GITHUB_TOKEN, whose pushes don't start new
+#     Actions runs — while the legacy Pages build (a Pages-service job) still
+#     fires on the branch update.
+#
+# NOTE: scheduled/dispatch runs use this file from the default branch, so it only
+# takes effect once merged to `main`.
+
+name: 🚀 Sync gh-pages from main
+
+on:
+  schedule:
+    - cron: '20 */6 * * *'   # every 6 hours (00:20, 06:20, 12:20, 18:20 UTC) — tunable
+  workflow_dispatch:
+
+permissions:
+  contents: write          # push the merge to gh-pages
+  pull-requests: write     # open + merge the PR
+  checks: read             # read main's check-runs
+  statuses: read           # read main's commit statuses
+
+concurrency:
+  group: sync-gh-pages
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Open & merge main → gh-pages when green
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏰 Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          # A PAT (if provided) guarantees the legacy Pages build fires everywhere;
+          # otherwise the default token, which is enough for legacy Pages.
+          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: 🔎 Is main ahead of gh-pages?
+        id: ahead
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --prune origin main gh-pages
+          COUNT="$(git rev-list --count origin/gh-pages..origin/main)"
+          SHA="$(git rev-parse origin/main)"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "✅ gh-pages already up to date with main — nothing to sync." | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "main is $COUNT commit(s) ahead of gh-pages (HEAD ${SHA})." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: 🟢 Is main's latest commit green?
+        id: ci
+        if: steps.ahead.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ steps.ahead.outputs.sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, sys
+
+          repo = os.environ["REPO"]
+          sha  = os.environ["SHA"]
+          out  = os.environ["GITHUB_OUTPUT"]
+          FAILISH = {"failure", "cancelled", "timed_out",
+                     "action_required", "startup_failure", "stale"}
+
+          def gh(path):
+              r = subprocess.run(
+                  ["gh", "api", "-H", "Accept: application/vnd.github+json", path],
+                  capture_output=True, text=True)
+              if r.returncode != 0:
+                  sys.stderr.write(r.stderr)
+                  raise SystemExit(f"gh api failed: {path}")
+              return json.loads(r.stdout or "{}")
+
+          pending, failed, passed = [], [], []
+          for run in gh(f"repos/{repo}/commits/{sha}/check-runs?per_page=100").get("check_runs", []):
+              n = run.get("name", "?")
+              if run.get("status") != "completed":
+                  pending.append(n)
+              elif run.get("conclusion") in FAILISH:
+                  failed.append(f"{n}={run.get('conclusion')}")
+              else:  # success / neutral / skipped
+                  passed.append(n)
+
+          # Classic commit statuses (external integrations). Guard total_count:
+          # the combined state is "pending" when there are zero statuses.
+          st = gh(f"repos/{repo}/commits/{sha}/status")
+          if st.get("total_count", 0) > 0:
+              s = st.get("state")
+              if s == "pending":
+                  pending.append("commit-status")
+              elif s in ("failure", "error"):
+                  failed.append(f"commit-status={s}")
+              else:
+                  passed.append("commit-status")
+
+          state = "pending" if pending else ("failed" if failed else "green")
+          print(f"[ci] state={state} green={len(passed)} pending={pending} failed={failed}")
+          with open(out, "a") as fh:
+              fh.write(f"state={state}\n")
+          PY
+
+      - name: 🔀 Open or reuse PR, then merge it
+        if: steps.ahead.outputs.count != '0' && steps.ci.outputs.state == 'green'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.ahead.outputs.sha }}
+        run: |
+          set -euo pipefail
+          NUM="$(gh pr list --base gh-pages --head main --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$NUM" ]; then
+            SHORT="$(git rev-parse --short "$SHA")"
+            URL="$(gh pr create --base gh-pages --head main \
+              --title "🚀 Deploy: sync gh-pages with main@${SHORT}" \
+              --body "Automated routine deploy sync. \`main\` is green and ahead of \`gh-pages\`; merging republishes the site via the GitHub Pages build. No CI is re-run.")"
+            NUM="$(printf '%s\n' "$URL" | grep -oE '[0-9]+$' | tail -1)"
+            echo "Opened PR #${NUM}: ${URL}"
+          else
+            echo "Reusing open PR #${NUM}."
+          fi
+          # Merge commit to preserve history; NEVER --delete-branch (the head is main!).
+          if gh pr merge "$NUM" --merge; then
+            echo "✅ Merged PR #${NUM} into gh-pages — the Pages build will deploy." | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::Could not merge PR #${NUM} (conflict or branch protection); leaving it open."
+            gh pr comment "$NUM" --body "🛑 Automated deploy sync could not merge this PR (conflict or branch protection). Please resolve manually." || true
+            exit 1
+          fi
+
+      - name: 📊 Summary
+        if: always()
+        env:
+          COUNT: ${{ steps.ahead.outputs.count }}
+          STATE: ${{ steps.ci.outputs.state }}
+        run: |
+          {
+            echo "## 🚀 gh-pages sync"
+            if [ "${COUNT:-0}" = "0" ]; then
+              echo "- gh-pages already up to date — no action."
+            elif [ "$STATE" = "green" ]; then
+              echo "- main green & ahead → PR opened and merged into gh-pages."
+            elif [ "$STATE" = "pending" ]; then
+              echo "- main CI still running — will retry on the next routine run."
+            else
+              echo "- main CI not green (\`${STATE:-unknown}\`) — not deploying."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
