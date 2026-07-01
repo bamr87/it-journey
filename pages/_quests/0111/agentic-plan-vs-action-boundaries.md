@@ -363,7 +363,7 @@ python3 scripts/validate_quest.py --quest q2
 
 - **Next quest:** [Q3: The All-Seeing Eye — Observability & Control](/quests/1000/agentic-observability-and-control/)
 - **Prerequisite for:** All Domain 2+ quests
-- **Chronicle post:** [Embedding Agents in the SDLC](/docs/agentic-codex/embedding-agents-in-the-sdlc/)
+- **Codex chapter:** [Initiation Rites: Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/)
 
 ## 🕸️ Knowledge Graph
 

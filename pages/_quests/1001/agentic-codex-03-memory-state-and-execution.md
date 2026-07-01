@@ -2,7 +2,7 @@
 title: 'Vaults of Recollection: Memory & State'
 description: 'Master the three tiers of agent memory, persist state across GitHub Actions runs, and detect context drift before it corrupts an agent. GH-600 Domain 3.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '1001'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -340,6 +340,86 @@ This single document prevents the two failure modes named in the sub-skill. It p
 - [ ] Why does the handoff carry a `handoff_at` timestamp?
 - [ ] Why can't you assume the Copilot agent and the PR's Actions run already share memory?
 
+## 🧪 Hands-On Lab: Carve All Three Vaults on Your Own Machine
+
+*The vaults do not require a cloud — they require discipline you can practice at a terminal.* This lab builds every memory tier and the drift guard locally, in ten minutes, with `git`, `jq`, and `sha256sum`.
+
+### Step 1 — Raise the lab realm
+
+```bash
+mkdir -p ~/codex-vaults-lab && cd ~/codex-vaults-lab
+git init -q && echo "# The Realm" > README.md
+mkdir -p .agent/memory scripts
+git add . && git commit -qm "lab: the realm stands"
+```
+
+### Step 2 — Tier 2: hand a plan across a job boundary
+
+Simulate the `plan` job and the `act` job as two separate shells that share **only** the artifact directory:
+
+```bash
+# --- the "plan job": writes the plan, touches nothing else
+jq -n '{goal:"update changelog",steps:["read","edit","verify"]}' > .agent/plan.json
+
+# --- the "act job": knows nothing except what the artifact tells it
+jq -r '.steps[]' .agent/plan.json
+```
+
+Expected:
+
+```text
+read
+edit
+verify
+```
+
+The act shell recovered the plan's full intent from the artifact alone. That is Tier 2: state that survives the job boundary because you made it a **file**, not a memory.
+
+### Step 3 — Tier 3: commit memory the next run can read
+
+```bash
+jq -n --arg ts "$(date -u +%FT%TZ)" '{run:"local-1", at:$ts, status:"completed"}' \
+  >> .agent/memory/task-register.jsonl
+git add .agent/memory && git commit -qm "chore(memory): record run local-1"
+
+# A "next run", hours later, asks: what already happened?
+jq -r '.run + " → " + .status' .agent/memory/task-register.jsonl
+```
+
+Expected: `local-1 → completed` — the next run resumes instead of repeating. Delete your shell history if you like; the memory is in Git now, which is the point.
+
+### Step 4 — The drift guard catches a moved world
+
+Save the `drift-guard.sh` script from Chapter 3 above into `scripts/drift-guard.sh` (`chmod +x` it), then:
+
+```bash
+# Snapshot right after "planning"
+bash scripts/drift-guard.sh snapshot
+
+# Verify immediately — the world has not moved
+bash scripts/drift-guard.sh verify; echo "exit=$?"
+
+# Now the world moves out from under the agent…
+echo "a rival scribe edits the scroll" >> README.md
+bash scripts/drift-guard.sh verify; echo "exit=$?"
+```
+
+Expected:
+
+```text
+Snapshot taken.
+No drift — safe to act.
+exit=0
+::warning::Context drift detected — key files changed since snapshot.
+exit=78
+```
+
+*(Adjust the `WATCH` array in the script to `("README.md" ".agent/plan.json")` for this lab — the realm has no `_config.yml`.)* The `exit=78` is your abort-before-acting signal: the plan was drawn against a world that no longer exists, and the guard refused to let the agent pretend otherwise.
+
+### Step 5 — Prove you can place state in its tier
+
+Close the lab with the placement drill from the Mastery Indicators. For each item, say the tier aloud before checking: a retry counter inside one job (*Tier 1 — ephemeral*), the plan crossing plan→act (*Tier 2 — artifact*), the task register (*Tier 3 — committed file*), a cached dependency graph (*Tier 3 — cache, non-authoritative*). If any answer surprised you, re-read Chapter 1's table — the exam will hand you exactly this drill.
+
 ## ⚔️ The Quests of This Domain
 
 This chapter is the map of the Vaults; these three quests are the chambers you descend into. Each carries complete workflows, drift-detection scripts, and the handoff schema — finish all three to seal Domain 3.
@@ -397,7 +477,7 @@ The vaults are carved and the world can no longer drift out from under your agen
 - [Caching dependencies with `actions/cache`](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows) — non-authoritative persistent state
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) — stateless tool surfaces that need explicit shared state
 - [GitHub Models](https://docs.github.com/en/github-models) — the reasoning engine behind cheap re-planning
-- [Agentic Codex: Taming Agent Memory and Context Drift](/docs/agentic-codex/taming-agent-memory-and-context-drift/) — the reference article this chapter teaches from
+- [GH-600 Study Hub](/notes/gh-600/) — the campaign map: domains, weights, and the full quest line
 
 ## 🕸️ Knowledge Graph
 

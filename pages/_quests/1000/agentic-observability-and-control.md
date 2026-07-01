@@ -329,7 +329,7 @@ python3 scripts/validate_quest.py --quest q3
 ## 🔗 Continue Your Journey
 
 - **Next quest:** [Q4: Forging the Agent's Arsenal](/quests/1000/agentic-tool-selection-and-permissions/) — Domain 2 begins
-- **Chronicle post:** [Embedding Agents in the SDLC](/docs/agentic-codex/embedding-agents-in-the-sdlc/)
+- **Codex chapter:** [Initiation Rites: Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/)
 - **Related note:** [Evaluation Signals Table](/notes/gh-600/evaluation-signals-table/)
 
 ## 🕸️ Knowledge Graph

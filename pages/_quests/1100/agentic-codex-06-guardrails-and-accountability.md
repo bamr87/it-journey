@@ -2,7 +2,7 @@
 title: 'The Warden Pact: Guardrails & Accountability'
 description: 'GH-600 Domain 6: classify agent actions by risk, set autonomy levels, enforce least-privilege guardrails, gate humans in the loop, and build an audit trail.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '1100'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -329,6 +329,107 @@ A final accountability note that the exam loves: the human gate must never be a 
 - [ ] What three things must every audit entry record?
 - [ ] Where do the "instruction" and "outcome" of an agent action live in GitHub's native tooling?
 - [ ] Why is append-only `.jsonl` safer than a single JSON array for parallel agent runs?
+
+## 🧪 Hands-On Lab: Build a Warden That Says No
+
+*A guardrail you have never watched refuse an action is a decoration.* This lab builds a working policy gate on your own machine: an autonomy map, a forbidden-paths list, and a warden script that allows, gates, or refuses each proposed action. Then you attack it and watch it hold. Pure shell, five minutes.
+
+### Step 1 — Write the Pact as data
+
+```bash
+mkdir -p ~/codex-warden-lab && cd ~/codex-warden-lab
+
+# action → autonomy level (the ladder from Chapter 1, as machine-readable policy)
+cat > autonomy-map.txt <<'EOF'
+format-and-lint L4
+bump-patch-dependency L3
+implement-feature L2
+edit-database-migration L0
+EOF
+
+# paths no agent diff may ever touch unattended (the CODEOWNERS boundary, simulated)
+cat > forbidden-paths.txt <<'EOF'
+.github/workflows/
+src/auth/
+database/migrations/
+EOF
+```
+
+### Step 2 — Forge the Warden
+
+```bash
+cat > warden.sh <<'EOF'
+#!/usr/bin/env bash
+# warden.sh <action> <changed-file>... — allow, gate, or refuse
+set -euo pipefail
+action="$1"; shift
+
+level=$(awk -v a="$action" '$1 == a {print $2}' autonomy-map.txt)
+[ -n "$level" ] || { echo "🚫 REFUSED: unknown action '$action' — unmapped actions default to manual"; exit 1; }
+
+for f in "$@"; do
+  while read -r p; do
+    case "$f" in "$p"*) echo "🚫 REFUSED: '$f' is inside forbidden path '$p'"; exit 1;; esac
+  done < forbidden-paths.txt
+done
+
+case "$level" in
+  L0)      echo "🚫 REFUSED: '$action' is $level — never the agent's call"; exit 1 ;;
+  L1|L2)   if [ "${APPROVED:-no}" = "yes" ]; then
+             echo "✅ ALLOWED (gated): '$action' is $level and a human approved"
+           else
+             echo "⏸️  WAITING: '$action' is $level — set APPROVED=yes after human review"; exit 78
+           fi ;;
+  L3|L4)   echo "✅ ALLOWED: '$action' is $level — autonomous, audit-logged" ;;
+esac
+printf '{"ts":"%s","action":"%s","level":"%s","files":"%s","verdict":"allowed"}\n' \
+  "$(date -u +%FT%TZ)" "$action" "$level" "$*" >> ledger.jsonl
+EOF
+chmod +x warden.sh
+```
+
+### Step 3 — Petition the gate
+
+```bash
+./warden.sh format-and-lint src/app.js;                          echo "exit=$?"
+./warden.sh implement-feature src/routes/signup.ts;              echo "exit=$?"
+APPROVED=yes ./warden.sh implement-feature src/routes/signup.ts; echo "exit=$?"
+./warden.sh edit-database-migration database/migrations/001.sql; echo "exit=$?"
+```
+
+Expected — four different verdicts from one policy:
+
+```text
+✅ ALLOWED: 'format-and-lint' is L4 — autonomous, audit-logged
+exit=0
+⏸️  WAITING: 'implement-feature' is L2 — set APPROVED=yes after human review
+exit=78
+✅ ALLOWED (gated): 'implement-feature' is L2 and a human approved
+exit=0
+🚫 REFUSED: 'edit-database-migration' is L0 — never the agent's call
+exit=1
+```
+
+### Step 4 — Attack the Pact
+
+Now play the adversarial prompt. Try to smuggle a forbidden file under an innocent action, and try an action the policy has never heard of:
+
+```bash
+./warden.sh format-and-lint .github/workflows/deploy.yml; echo "exit=$?"
+./warden.sh casually-drop-the-database prod.sql;          echo "exit=$?"
+```
+
+Expected: both **REFUSED**, exit 1 — the forbidden path beats the friendly action name, and an unmapped action falls to manual by default. That is the definition from Chapter 2 made real: *a constraint that holds regardless of instruction.* Finish by reading `cat ledger.jsonl` — every allowed action left a ledger line recording what ran, at which level, against which files. Instruction, action, outcome: the three pillars, on your own bench.
+
+### Step 5 — Map it back to GitHub (where each piece really lives)
+
+| Lab piece | Production control |
+|---|---|
+| `autonomy-map.txt` | `.github/agent-autonomy.yml` read by a gate workflow |
+| `forbidden-paths.txt` | CODEOWNERS + branch protection |
+| `exit 78` waiting state | Environment with required reviewers |
+| `APPROVED=yes` | The reviewer clicking *Approve* on the run |
+| `ledger.jsonl` | The committed audit trail from Chapter 3 |
 
 ## ⚔️ The Quests of This Domain
 

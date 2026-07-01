@@ -321,7 +321,7 @@ python3 scripts/validate_quest.py --quest q5
 
 - **Next:** [Q6: Bind the Agent to the Realm](/quests/1001/agentic-dev-environment-integration/)
 - **Reference note:** [MCP Quick Reference](/notes/gh-600/mcp-quickref/)
-- **Chronicle post:** [MCP Servers and Agent Tooling in Practice](/docs/agentic-codex/mcp-servers-and-agent-tooling-in-practice/)
+- **Codex chapter:** [Forging the Arsenal: Tool Use & Environment](/quests/1000/agentic-codex-02-tool-use-and-environment/)
 
 ## 🕸️ Knowledge Graph
 
