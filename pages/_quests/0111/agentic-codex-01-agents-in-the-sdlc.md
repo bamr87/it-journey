@@ -2,7 +2,7 @@
 title: 'Initiation Rites: Agents in the SDLC'
 description: 'Embed GitHub Copilot agents into the software lifecycle with bounded roles, plan-then-act gates, and observable traces — GH-600 Domain 1 of The Agentic Codex.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '0111'
 difficulty: '🟡 Medium'
 estimated_time: 2-4 hours
@@ -310,6 +310,109 @@ Now the **degree of autonomy** is a dial you control: the JSONL trail is the evi
 - [ ] Why is a JSONL trace more useful to an auditor than free-text log lines?
 - [ ] What two artifacts let a reviewer understand an agent run *without re-running* the workflow?
 - [ ] How does good observability let you *shrink* the set of actions that need a human approval gate?
+
+## 🧪 Hands-On Lab: Raise the Gate in Fifteen Minutes
+
+*Rites are learned by performing them, not reading them.* This lab stands up a real plan-then-act pipeline — plan job, human gate, observable trace — in a scratch repository, using nothing but the `gh` CLI. No Copilot subscription required: the "agent" is a stub you can later replace with the real coding agent.
+
+### Step 1 — Forge the scratch repo
+
+```bash
+gh auth login                                  # skip if already authenticated
+gh repo create codex-rites-lab --private --clone
+cd codex-rites-lab
+mkdir -p .github/workflows scripts
+```
+
+### Step 2 — Lay down the workflow
+
+One file gives you all three rites: a `plan` job that only plans, an `execute` job behind the gate, and a trace both jobs write. (Drop the `raw` escapes when copying from this page.)
+
+{% raw %}
+```yaml
+# .github/workflows/plan-then-act.yml
+name: Plan-then-Act Lab
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Produce the plan (no changes, only intent)
+        run: |
+          mkdir -p .agent
+          cat > .agent/plan.json <<'PLAN'
+          {"task":"demo","edits":["README.md"],"success":"README gains a lab badge"}
+          PLAN
+          echo '{"ts":"'"$(date -u +%FT%TZ)"'","action":"plan","result":"ok"}' >> .agent/trace.jsonl
+          echo "### 🗺️ Plan produced — awaiting the gate" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent-plan
+          path: .agent/
+  execute:
+    needs: plan
+    runs-on: ubuntu-latest
+    environment: agent-approval        # the gate — configured in Step 3
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: agent-plan
+          path: .agent
+      - name: Act on the approved plan (observed)
+        run: |
+          echo "Executing: $(jq -r .task .agent/plan.json)"
+          echo '{"ts":"'"$(date -u +%FT%TZ)"'","action":"execute","result":"ok"}' >> .agent/trace.jsonl
+          echo "### ✅ Executed after human approval" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent-trace
+          path: .agent/trace.jsonl
+```
+{% endraw %}
+
+### Step 3 — Bind the gate with yourself as Warden
+
+The `agent-approval` environment must exist and name a required reviewer, or the `execute` job will run ungated:
+
+```bash
+me=$(gh api user -q .id)
+cat > /tmp/env.json <<EOF
+{ "reviewers": [ { "type": "User", "id": $me } ] }
+EOF
+gh api -X PUT "repos/{owner}/{repo}/environments/agent-approval" --input /tmp/env.json
+```
+
+### Step 4 — Trigger the rite and watch it wait
+
+```bash
+git add . && git commit -m "lab: plan-then-act pipeline" && git push -u origin main
+gh workflow run plan-then-act.yml
+sleep 5 && gh run watch
+```
+
+Expected: the `plan` job completes, then the run **pauses** — `gh run list` shows it `waiting`, and the run page says *"Review pending deployments: agent-approval"*. The agent planned; it cannot act. That pause **is** Rite Two working.
+
+### Step 5 — Approve, then audit without re-running
+
+Approve the pending deployment on the run page (`gh run view --web`), then pull the evidence:
+
+```bash
+run_id=$(gh run list --workflow=plan-then-act.yml -L1 --json databaseId -q '.[0].databaseId')
+gh run download "$run_id" --name agent-trace --dir /tmp/lab-trace
+cat /tmp/lab-trace/trace.jsonl
+```
+
+Expected — one JSONL line per action, plan before execute:
+
+```text
+{"ts":"2026-07-01T20:14:02Z","action":"plan","result":"ok"}
+{"ts":"2026-07-01T20:16:41Z","action":"execute","result":"ok"}
+```
+
+You reconstructed the run from its trace and step summaries alone — Rite Three. Clean up with `gh repo delete codex-rites-lab --yes` when you are done, and note what you proved: a **bounded entry point** (`workflow_dispatch`), a **plan that cannot act**, a **human gate that actually held**, and a **trace an auditor can read cold**.
 
 ## ⚔️ The Quests of This Domain
 

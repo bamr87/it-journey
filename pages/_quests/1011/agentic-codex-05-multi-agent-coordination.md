@@ -2,7 +2,7 @@
 title: 'The Council of Many: Multi-Agent Coordination'
 description: 'Orchestrate a council of agents on GitHub Actions: fan-out and chain patterns, correlation-ID tracing, failure recovery, and lifecycle. GH-600 Domain 5.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '1011'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -310,6 +310,71 @@ Adding an agent to an existing workflow is a new roster row plus a new job; *rep
 - [ ] Which recovery strategy fits a *transient* network failure, and which fits a *logic* error — and why are they different?
 - [ ] What signal distinguishes a stalled sub-agent from a conflicting one, and why is a blind retry wrong for the conflicting case?
 - [ ] What three lifecycle operations does `_data/agents.yml` govern, and what does flipping a `status` to `deprecated` communicate?
+
+## 🧪 Hands-On Lab: Convene a Council at Your Own Table
+
+*The exam's hardest Domain 5 question hands you a trace and asks which agent caused the fault. Answer it once with your own hands and you will never miss it.* This lab runs a three-agent council locally — one of them sabotaged — then stitches the unified trace and finds the culprit. Pure shell and `jq`, five minutes.
+
+### Step 1 — Mint the correlation ID and the trace writer
+
+```bash
+mkdir -p ~/codex-council-lab && cd ~/codex-council-lab
+export CID="council-$(date +%s)"
+
+trace() {  # seq, agent, event, detail — one JSONL line, stamped with the shared CID
+  printf '{"cid":"%s","seq":%s,"agent":"%s","event":"%s","detail":"%s"}\n' \
+    "$CID" "$1" "$2" "$3" "$4" >> "trace-$2-$CID.jsonl"
+}
+```
+
+### Step 2 — Run the council (one member is subtly broken)
+
+The planner hands off cleanly; the frontend agent finishes its slice but hands the backend an **empty payload** — the seeded fault; the backend then crashes on it:
+
+```bash
+# planner: draws the plan, hands off to both agents
+trace 1 planner start   "drawing the plan"
+trace 2 planner handoff "frontend:build-ui backend:build-api"
+trace 3 planner done    "plan issued"
+
+# frontend agent: succeeds, but its handoff payload is empty — the real fault
+trace 4 frontend start   "building ui slice"
+trace 5 frontend handoff ""
+trace 6 frontend done    "ui slice green"
+
+# backend agent: crashes on the empty handoff — the visible failure
+trace 7 backend start "building api slice"
+trace 8 backend error "empty payload received from upstream handoff"
+```
+
+### Step 3 — The collect job: stitch one narrative from three logs
+
+```bash
+cat trace-*-"$CID".jsonl \
+  | jq -s 'sort_by(.seq) | .[] | "\(.seq)  \(.agent)\t\(.event)\t\(.detail)"' -r \
+  | tee "council-trace-$CID.txt"
+```
+
+Expected — the whole council's work in one ordered record:
+
+```text
+1  planner   start    drawing the plan
+2  planner   handoff  frontend:build-ui backend:build-api
+3  planner   done     plan issued
+4  frontend  start    building ui slice
+5  frontend  handoff
+6  frontend  done     ui slice green
+7  backend   start    building api slice
+8  backend   error    empty payload received from upstream handoff
+```
+
+### Step 4 — Name the culprit
+
+Answer the exam's question from the trace alone: **which agent introduced the fault?** The backend *crashed* (seq 8) — but read upstream: the frontend's handoff at seq 5 is empty while its own status reports `done … green`. The fault was **introduced by the frontend agent** and merely *surfaced* by the backend. Now prove why the correlation ID mattered: imagine the same three log files with no shared key — you could still see the backend crash, but you could never join seq 5 to seq 8 across files with confidence. The shared `cid` is what turns three alibis into one testimony.
+
+### Step 5 — Promote it to the real arena (optional)
+
+Everything above maps one-to-one onto the `council-fanout.yml` workflow from Chapter 1: the `trace` function becomes the traced step in each job, `$CID` becomes `needs.orchestrate.outputs.run_id`, the local files become uploaded artifacts, and Step 3 becomes the `collect` job. Ship it to a scratch repo and confirm the stitched narrative appears as a run artifact — the same forensics, now surviving in CI where your future councils will actually fail.
 
 ## ⚔️ The Quests of This Domain
 

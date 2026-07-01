@@ -60,7 +60,7 @@ keywords:
 | Tue | Complete **Q1: Initiation Rites** — SDLC Integration | 90 min |
 | Wed | Complete **Q2: The Three Sigils** — Plan vs. Action Boundaries | 90 min |
 | Thu | Complete **Q3: The All-Seeing Eye** — Observability & Control | 90 min |
-| Fri | Write a 1-page reflection: anti-patterns you've seen in your own AI usage; review [Domain 1 chronicle post](/docs/agentic-codex/embedding-agents-in-the-sdlc/) | 30 min |
+| Fri | Write a 1-page reflection: anti-patterns you've seen in your own AI usage; review [Domain 1 chronicle post](/quests/0111/agentic-codex-01-agents-in-the-sdlc/) | 30 min |
 
 ---
 
@@ -88,7 +88,7 @@ keywords:
 | Tue | Complete **Q8: Vaults of Recollection** — Memory Strategies | 90 min |
 | Wed | Complete **Q9: Anchoring the Drifting Agent** — State Persistence & Drift | 90 min |
 | Thu | Complete **Q10: Crossing the Tool Planes** — State Continuity Cross-Tools | 90 min |
-| Fri | Review [Taming Agent Memory post](/docs/agentic-codex/taming-agent-memory-and-context-drift/) | 30 min |
+| Fri | Review [Taming Agent Memory post](/quests/1001/agentic-codex-03-memory-state-and-execution/) | 30 min |
 
 ---
 
@@ -102,7 +102,7 @@ keywords:
 | Tue | Complete **Q11: The Oracle's Rubric** — Success Criteria & Signals | 90 min |
 | Wed | Complete **Q12: The Necromancer's Inquest** — Failure Root Cause Analysis | 90 min |
 | Thu | Complete **Q13: Reforging the Agent's Mind** — Behavior Tuning | 2 hrs |
-| Fri | Review [Evaluation post](/docs/agentic-codex/evaluating-and-tuning-agents-with-github-signals/) | 30 min |
+| Fri | Review [Evaluation post](/quests/1010/agentic-codex-04-evaluation-and-tuning/) | 30 min |
 
 ---
 
@@ -182,7 +182,7 @@ keywords:
 
 | Day | Session |
 |---|---|
-| 1 | Read [Exam at a Glance](/docs/certifications/gh-600/) (the hub table) |
+| 1 | Read [Exam at a Glance](/notes/gh-600/) (the hub table) |
 | 2 | Read [Domain 1 Skills Measured](../skills-measured/#domain-1) |
 | 3 | Skim [Copilot coding agent docs](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/about-copilot-coding-agent) |
 | 4 | Start **Q1** (first half — read through "Quest Setup") |
@@ -191,7 +191,7 @@ keywords:
 | 7 | Finish **Q2** |
 | 8 | Start **Q3** |
 | 9 | Finish **Q3** |
-| 10 | Read [Domain 1 chronicle post](/docs/agentic-codex/embedding-agents-in-the-sdlc/) |
+| 10 | Read [Domain 1 chronicle post](/quests/0111/agentic-codex-01-agents-in-the-sdlc/) |
 
 ### Phase 2 — Tools & Environment (Days 11–30)
 

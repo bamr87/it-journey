@@ -3,7 +3,7 @@ title: 'Epic Quest: The Agentic Codex'
 description: 'Earn the GitHub GH-600 — six chapters that build, evaluate, and govern autonomous AI agents on GitHub-native rails, from the SDLC to the Warden Pact.'
 excerpt: A six-chapter GH-600 campaign — build, tool, remember, evaluate, coordinate, and govern AI agents with Copilot, MCP, Actions, and the Models API.
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '1100'
 difficulty: '⚔️ Epic'
 estimated_time: 40-60 hours
@@ -144,6 +144,8 @@ The six chapters map one-to-one to the six GH-600 exam domains, with the same we
 | IV | [The Oracle Rubric: Evaluation & Tuning](/quests/1010/agentic-codex-04-evaluation-and-tuning/) | `1010` | D4 · Evaluation & Tuning (19%) | 🔴 Hard |
 | V | [The Council of Many: Multi-Agent Systems](/quests/1011/agentic-codex-05-multi-agent-coordination/) | `1011` | D5 · Multi-Agent Coordination (17%) | 🔴 Hard |
 | VI | [The Warden Pact: Guardrails & Accountability](/quests/1100/agentic-codex-06-guardrails-and-accountability/) | `1100` | D6 · Guardrails & Accountability (9%) | 🔴 Hard |
+
+> 🧪 **Every chapter ends at a workbench.** Each chapter closes with a hands-on lab you can run in minutes — most entirely on your own machine with `bash`, `jq`, and the `gh` CLI, no Copilot subscription required — so every domain's key pattern (the approval gate, the retry harness, the drift guard, the rubric grader, the council trace, the warden policy) is something you have actually watched work *and* watched fail.
 
 > 🏆 **Capstone gate.** The [Grand Capstone](/quests/1100/agentic-codex-capstone-exam-trial/) stands beyond Chapter VI. You cannot face the Trial of the Agentic Codex until all six domain seals are broken — it integrates every domain into a single working multi-agent system with observability, evaluation, and governance in place.
 
