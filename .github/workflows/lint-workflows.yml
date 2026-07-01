@@ -1,0 +1,69 @@
+# =============================================================================
+# lint-workflows.yml — keep GitHub Actions workflow files valid at PR time.
+# -----------------------------------------------------------------------------
+# Guards the class of bug that a plain YAML lint misses: a workflow file that
+# PARSES as YAML but is invalid to GitHub Actions — a bad context reference, an
+# undefined `needs.<job>`, a `matrix` read in a job-level `if`, and so on. GitHub
+# only surfaces those AT RUN TIME as a 0-job "This run likely failed because of a
+# workflow file issue" failure — and because every push re-validates *all*
+# workflows, a single broken file spews red runs on unrelated branches until it's
+# fixed. `actionlint` catches the same errors statically, so they're caught in
+# review instead of after merge. (This is exactly what would have flagged the
+# `matrix.open_new_fix_prs` bug in quest-perfection.yml at PR time.)
+#
+# Scope = the workflow files a PR CHANGES, not the whole directory: pre-existing
+# style noise in untouched files never blocks an unrelated PR, but anything you
+# add or edit must be clean. shellcheck integration is OFF (`-shellcheck=`) — this
+# gates workflow VALIDITY, not shell style.
+# =============================================================================
+name: 🧹 Lint workflows
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lint-workflows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      # Only the workflow YAML this PR added/modified/renamed (not deleted),
+      # diffed from the merge-base so a moving base branch doesn't pull in files
+      # the PR never touched.
+      - name: Collect changed workflow files
+        id: changed
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          merge_base="$(git merge-base "$BASE_SHA" "$HEAD_SHA")"
+          git diff --name-only --diff-filter=ACMR "$merge_base" "$HEAD_SHA" -- \
+            '.github/workflows/**.yml' '.github/workflows/**.yaml' > changed.txt || true
+          count="$(wc -l < changed.txt | tr -d ' ')"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "changed workflow files ($count):"
+          cat changed.txt || true
+
+      - name: actionlint (changed workflows only)
+        if: steps.changed.outputs.count != '0'
+        run: |
+          set -euo pipefail
+          mapfile -t files < changed.txt
+          echo "Running actionlint 1.7.12 on ${#files[@]} file(s)…"
+          # Official actionlint image, digest-pinned. `-shellcheck=` disables the
+          # bundled shellcheck so this gates workflow VALIDITY, not shell style.
+          docker run --rm -v "${PWD}:/repo" --workdir /repo \
+            rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 \
+            -shellcheck= -color "${files[@]}"
