@@ -135,12 +135,25 @@ jobs:
           else
             echo "Reusing open PR #${NUM}."
           fi
+
+          # Wait for GitHub to compute mergeability (a large sync PR isn't instant).
+          for _ in $(seq 1 15); do
+            STATE="$(gh pr view "$NUM" --json mergeable --jq .mergeable)"
+            [ "$STATE" = "MERGEABLE" ] && break
+            if [ "$STATE" = "CONFLICTING" ]; then
+              echo "::error::PR #${NUM} conflicts — gh-pages has diverged from main."
+              gh pr comment "$NUM" --body "🛑 Deploy sync can't merge: \`gh-pages\` diverged from \`main\`. Re-run the one-time reconciliation (merge main into gh-pages with \`-X theirs\`)." || true
+              exit 1
+            fi
+            sleep 4
+          done
+
           # Merge commit to preserve history; NEVER --delete-branch (the head is main!).
           if gh pr merge "$NUM" --merge; then
             echo "✅ Merged PR #${NUM} into gh-pages — the Pages build will deploy." | tee -a "$GITHUB_STEP_SUMMARY"
           else
-            echo "::error::Could not merge PR #${NUM} (conflict or branch protection); leaving it open."
-            gh pr comment "$NUM" --body "🛑 Automated deploy sync could not merge this PR (conflict or branch protection). Please resolve manually." || true
+            echo "::error::Could not merge PR #${NUM} (branch protection?); leaving it open."
+            gh pr comment "$NUM" --body "🛑 Automated deploy sync could not merge this PR. Please resolve manually." || true
             exit 1
           fi
 

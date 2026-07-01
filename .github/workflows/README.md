@@ -126,9 +126,14 @@ Operational notes:
   effect once merged to `main`.
 - Trigger it on demand from the Actions tab (`workflow_dispatch`) to publish
   immediately instead of waiting for the next 6-hour tick.
-- Optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`): used for
-  the checkout/merge if present. Only needed if the legacy Pages build ever fails
-  to fire from a `GITHUB_TOKEN` push; branch-scoping still prevents CI reruns.
+- **Prefer the default `GITHUB_TOKEN`** (used automatically): its pushes create
+  no Actions runs at all, so the `gh-pages` update stays Pages-build-only. An
+  optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`) is used
+  if present — only set it if the legacy Pages build ever fails to fire from a
+  `GITHUB_TOKEN` push. A PAT push, unlike `GITHUB_TOKEN`, makes GitHub
+  re-evaluate the workflow files now mirrored on `gh-pages`, which can log a
+  harmless startup-failure for reusable-workflow files (e.g. `quest-perfection`);
+  branch-scoping still keeps the real CI workflows from running.
 - If you migrate to "Deploy from GitHub Actions", replace this workflow with an
   `actions/deploy-pages` workflow and update this section.
 
