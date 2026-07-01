@@ -40,12 +40,11 @@ on:
       - "Sync GitHub Profile Data"
       - "Validate Quest Solutions"
     types: [completed]
-  workflow_dispatch:
-    inputs:
-      ref:
-        description: 'Commit/branch to deploy (blank = current main HEAD). Still refuses to deploy if CI is red.'
-        required: false
-        default: ''
+  # Manual safety net: force a re-sync of current `main` HEAD (still gated on
+  # green CI below). Intentionally takes no `ref` input — `gh-pages` is a
+  # green-`main` mirror, so deploying an arbitrary branch/tag/commit to the
+  # production Pages branch is out of scope; merge to `main` first.
+  workflow_dispatch: {}
 
 # Push access to gh-pages; read access to the commit's checks/statuses.
 permissions:
@@ -64,13 +63,17 @@ jobs:
   deploy:
     name: 🟢 Gate on green CI · sync gh-pages
     runs-on: ubuntu-latest
-    # Only react to CI that ran for a *push to main*. Ignore PR builds, other
-    # branches, and scheduled scans (they don't represent a new main commit).
+    # React to any CI completion on main/master (push, re-run, or scheduled
+    # scan) — NOT just push. This is safe because the deploy is gated twice
+    # below: it only merges a fully-green commit, and skips one gh-pages already
+    # contains. Reacting to non-push completions too means a commit that was
+    # still pending when an earlier run timed out gets re-evaluated on the next
+    # CI signal, instead of being stranded until the next push. PR builds carry
+    # the PR head branch here, so they're excluded.
     if: >-
       ${{ github.event_name == 'workflow_dispatch' ||
-          ((github.event.workflow_run.head_branch == 'main' ||
-            github.event.workflow_run.head_branch == 'master') &&
-           github.event.workflow_run.event == 'push') }}
+          github.event.workflow_run.head_branch == 'main' ||
+          github.event.workflow_run.head_branch == 'master' }}
     steps:
       - name: 🏰 Checkout (full history, both branches)
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
@@ -86,17 +89,13 @@ jobs:
         id: target
         env:
           EVENT_NAME: ${{ github.event_name }}
-          DISPATCH_REF: ${{ github.event.inputs.ref }}
           RUN_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
           set -euo pipefail
           git fetch --no-tags --prune origin main gh-pages
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            if [ -n "$DISPATCH_REF" ]; then
-              SHA="$(git rev-parse "origin/$DISPATCH_REF" 2>/dev/null || git rev-parse "$DISPATCH_REF")"
-            else
-              SHA="$(git rev-parse origin/main)"
-            fi
+            # Manual runs deploy current main HEAD (green-gated below).
+            SHA="$(git rev-parse origin/main)"
           else
             SHA="$RUN_HEAD_SHA"
           fi
