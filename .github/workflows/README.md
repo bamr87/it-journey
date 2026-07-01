@@ -61,7 +61,6 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 | `link-checker.yml` | PR on `*.md`/`*.html`; twice weekly; dispatch | Incremental link check on PRs; full Link Health Guardian sweep on schedule. |
 | `sync-github.yml` | daily; dispatch; on script change | Regenerates GitHub-derived site data (`scripts/generation/sync_github.py`). |
 | `update-contributor-profiles.yml` | **weekly** (Mon 05:00 UTC); dispatch | Refreshes `_data/contributors/*.yml`. (Previously ran on every push to main — now weekly, since the stats barely move per-commit.) |
-| `prd-sync.yml` | PR merged to main; dispatch | Keeps the PRD in sync with merged changes (`scripts/prd-machine/prd-machine.py`). |
 
 ### Issue / PR automation
 
