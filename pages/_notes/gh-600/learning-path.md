@@ -60,7 +60,7 @@ keywords:
 | Tue | Complete **Q1: Initiation Rites** — SDLC Integration | 90 min |
 | Wed | Complete **Q2: The Three Sigils** — Plan vs. Action Boundaries | 90 min |
 | Thu | Complete **Q3: The All-Seeing Eye** — Observability & Control | 90 min |
-| Fri | Write a 1-page reflection: anti-patterns you've seen in your own AI usage; review [Domain 1 chronicle post](/quests/0111/agentic-codex-01-agents-in-the-sdlc/) | 30 min |
+| Fri | Write a 1-page reflection: anti-patterns you've seen in your own AI usage; review [Chapter I — Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/) | 30 min |
 
 ---
 
@@ -88,7 +88,7 @@ keywords:
 | Tue | Complete **Q8: Vaults of Recollection** — Memory Strategies | 90 min |
 | Wed | Complete **Q9: Anchoring the Drifting Agent** — State Persistence & Drift | 90 min |
 | Thu | Complete **Q10: Crossing the Tool Planes** — State Continuity Cross-Tools | 90 min |
-| Fri | Review [Taming Agent Memory post](/quests/1001/agentic-codex-03-memory-state-and-execution/) | 30 min |
+| Fri | Review [Chapter III — Vaults of Recollection: Memory & State](/quests/1001/agentic-codex-03-memory-state-and-execution/) | 30 min |
 
 ---
 
@@ -102,7 +102,7 @@ keywords:
 | Tue | Complete **Q11: The Oracle's Rubric** — Success Criteria & Signals | 90 min |
 | Wed | Complete **Q12: The Necromancer's Inquest** — Failure Root Cause Analysis | 90 min |
 | Thu | Complete **Q13: Reforging the Agent's Mind** — Behavior Tuning | 2 hrs |
-| Fri | Review [Evaluation post](/quests/1010/agentic-codex-04-evaluation-and-tuning/) | 30 min |
+| Fri | Review [Chapter IV — The Oracle Rubric: Evaluation & Tuning](/quests/1010/agentic-codex-04-evaluation-and-tuning/) | 30 min |
 
 ---
 
@@ -160,7 +160,7 @@ keywords:
 | 3 | Domain 2 deep dive | Q6 + Q7 | 3 hrs |
 | 4 | Domain 3 memory | Q8 + Q9 + Q10 | 3 hrs |
 | 5 | Domain 4 eval | Q11 + Q12 | 2 hrs |
-| 6 | Domain 4 tuning | Q13 + review D4 chronicle post | 2 hrs |
+| 6 | Domain 4 tuning | Q13 + review Chapter IV | 2 hrs |
 | 7 | **Rest day** — light review of [Glossary](/notes/gh-600/glossary/) | 30 min |
 | 8 | Domain 5 part 1 | Q14 + Q15 | 3 hrs |
 | 9 | Domain 5 part 2 | Q16 + Q17 | 3 hrs |
@@ -191,7 +191,7 @@ keywords:
 | 7 | Finish **Q2** |
 | 8 | Start **Q3** |
 | 9 | Finish **Q3** |
-| 10 | Read [Domain 1 chronicle post](/quests/0111/agentic-codex-01-agents-in-the-sdlc/) |
+| 10 | Read [Chapter I — Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/) |
 
 ### Phase 2 — Tools & Environment (Days 11–30)
 

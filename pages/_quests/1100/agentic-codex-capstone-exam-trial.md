@@ -461,7 +461,7 @@ seal "S1: plan-then-execute workflow"     grep -ql "environment:" .github/workfl
 seal "S2: least-privilege permissions"    grep -ql "pull-requests: write" .github/workflows/plan-then-execute.yml
 seal "S2: MCP server configured"          test -s .vscode/mcp.json
 # Seal 3 — memory + drift
-seal "S3: persistent memory committed"    git log --oneline -- .agent/memory/ 2>/dev/null | grep -q .
+seal "S3: persistent memory committed"    sh -c 'git log --oneline -- .agent/memory/ | grep -q .'
 seal "S3: drift guard present"            test -x scripts/drift-guard.sh
 # Seal 4 — evaluation
 seal "S4: acceptance criteria schema"     jq -e '.criteria | length >= 3' work/gh-600/capstone/acceptance-criteria.json
