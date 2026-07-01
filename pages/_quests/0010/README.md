@@ -47,7 +47,7 @@ Level 0010 quests focus on:
 | [Commitments to clean commits](/quests/0010/commitments-to-clean-commits/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
 | [CSS Styling Basics: Selectors, Layout & Responsive Design](/quests/0010/css-styling-basics/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
 | [Setting up Django and Git](/quests/0010/django-and-git/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Epic Quest: Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/) | 🟢 Easy | 30-60 minutes | epic_quest | 🔮 Placeholder |
+| [Epic Quest: Zer0-to-Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/) | ⚔️ Epic | 15-25 hours | epic_quest | ✅ Complete |
 | [JavaScript Fundamentals: DOM Manipulation & Events](/quests/0010/javascript-fundamentals/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
 | [planting seeds](/quests/0010/planting-seeds/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
 | [Forging the Prompt Crystal: Master AI Communication](/quests/0010/prompt-engineering-mastery/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |

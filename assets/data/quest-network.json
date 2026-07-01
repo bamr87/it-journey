@@ -1737,6 +1737,15 @@
       "file": "pages/_quests/codex/world_map.md"
     },
     {
+      "id": "/quests/codex/zer0-to-her0-cmstyle/",
+      "title": "Epic Quest: Zer0-to-Her0 CMStyle",
+      "level": "0010",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "ai-integration",
+      "file": "pages/_quests/codex/zer0-to-her0-cmstyle.md"
+    },
+    {
       "id": "/quests/0010/action-triggers/",
       "title": "Understanding Action Triggers in Depth",
       "level": "0010",
@@ -1780,15 +1789,6 @@
       "difficulty": "🟢 Easy",
       "technology": "Django",
       "file": "pages/_quests/tools/django-and-git.md"
-    },
-    {
-      "id": "/quests/0010/epic-quest-zer0-to-her0-cmstyle/",
-      "title": "Epic Quest: Zer0-to-Her0 CMStyle",
-      "level": "0010",
-      "type": "epic_quest",
-      "difficulty": "🟢 Easy",
-      "technology": "ai-integration",
-      "file": "pages/_quests/tools/epic-quest-zer0-to-her0-cmstyle.md"
     },
     {
       "id": "/quests/1100/mastering-version-control-workflows/",
@@ -4231,7 +4231,7 @@
     },
     {
       "source": "/quests/codex/self-operating-website/",
-      "target": "/quests/0010/epic-quest-zer0-to-her0-cmstyle/",
+      "target": "/quests/codex/zer0-to-her0-cmstyle/",
       "kind": "recommended"
     },
     {
@@ -4282,6 +4282,71 @@
     {
       "source": "/quests/codex/self-operating-website/",
       "target": "/quests/1100/self-operating-website-10-the-bard-forge/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0000/begin-your-it-journey/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0000/vscode-mastery/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/git-workflow-mastery/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/yaml-configuration/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/jekyll-fundamentals/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/liquid-templating/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/bootstrap-framework/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/github-pages-portal/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/personal-site/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0010/revolutionizing-work-with-ai-automation/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/docs-in-a-row/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/0001/stating-the-stats/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/zer0-to-her0-cmstyle/",
+      "target": "/quests/1010/automated-hyperlink-guardian/",
       "kind": "unlocks"
     },
     {

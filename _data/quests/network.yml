@@ -972,6 +972,11 @@ nodes:
   level: '0000'
   type: side_quest
   difficulty: 🟢 Easy
+- id: /quests/codex/zer0-to-her0-cmstyle/
+  title: 'Epic Quest: Zer0-to-Her0 CMStyle'
+  level: '0010'
+  type: epic_quest
+  difficulty: ⚔️ Epic
 - id: /quests/0010/action-triggers/
   title: Understanding Action Triggers in Depth
   level: '0010'
@@ -996,11 +1001,6 @@ nodes:
   title: Conjure a Django Project into a GitHub Vault
   level: '0010'
   type: main_quest
-  difficulty: 🟢 Easy
-- id: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
-  title: 'Epic Quest: Zer0-to-Her0 CMStyle'
-  level: '0010'
-  type: epic_quest
   difficulty: 🟢 Easy
 - id: /quests/1100/mastering-version-control-workflows/
   title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
@@ -2465,7 +2465,7 @@ edges:
   target: /quests/1100/agentic-codex-06-guardrails-and-accountability/
   kind: unlocks
 - source: /quests/codex/self-operating-website/
-  target: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
+  target: /quests/codex/zer0-to-her0-cmstyle/
   kind: recommended
 - source: /quests/codex/self-operating-website/
   target: /quests/0001/self-operating-website-01-the-summoning/
@@ -2496,6 +2496,45 @@ edges:
   kind: unlocks
 - source: /quests/codex/self-operating-website/
   target: /quests/1100/self-operating-website-10-the-bard-forge/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0000/begin-your-it-journey/
+  kind: recommended
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0000/vscode-mastery/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/git-workflow-mastery/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/yaml-configuration/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/jekyll-fundamentals/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/liquid-templating/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/bootstrap-framework/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/github-pages-portal/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/personal-site/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0010/revolutionizing-work-with-ai-automation/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/docs-in-a-row/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/0001/stating-the-stats/
+  kind: unlocks
+- source: /quests/codex/zer0-to-her0-cmstyle/
+  target: /quests/1010/automated-hyperlink-guardian/
   kind: unlocks
 - source: /quests/1100/mastering-version-control-workflows/
   target: /quests/0010/branches-and-pull-requests/
