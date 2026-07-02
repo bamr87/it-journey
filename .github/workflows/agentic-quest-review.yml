@@ -13,6 +13,14 @@ name: 🤖 Agentic Quest Review
 #
 # Auth: repo secret CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`) or
 # ANTHROPIC_API_KEY. The runner is disposable, so `execute` is safe here.
+#
+# CONVERGENCE (cost control on automatic runs): the sticky comment carries a
+# per-PR ledger (<!-- aqr-state -->) of run count + per-file scores. Automatic
+# passes skip quests whose last score already meets
+# AGENTIC_REVIEW_SCORE_EXEMPT (repo var, default 85) and stop entirely after
+# AGENTIC_REVIEW_MAX_RUNS passes (repo var, default 3) — a converged quest is
+# not re-graded on every push, and an advisory reviewer can never become a
+# spend loop. The `agentic-review` label / manual dispatch bypass both caps.
 
 on:
   workflow_dispatch:
@@ -138,9 +146,70 @@ jobs:
             fi
           fi
 
+      # Convergence guard — stop re-reviewing what has already converged.
+      # The sticky PR comment carries a machine-readable ledger of this PR's
+      # prior verdicts (<!-- aqr-state {runs, scores} -->). On automatic PR
+      # runs we (a) exempt any changed quest whose last score already meets
+      # AGENTIC_REVIEW_SCORE_EXEMPT (default 85 — converged is converged),
+      # and (b) stop entirely after AGENTIC_REVIEW_MAX_RUNS automatic passes
+      # (default 3) so an advisory reviewer can never become a spend loop.
+      # The `agentic-review` label (or manual dispatch) bypasses both caps.
+      - name: Convergence guard (score exemption + run cap)
+        id: guard
+        if: steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          FORCED: ${{ contains(github.event.pull_request.labels.*.name, 'agentic-review') }}
+          MAX_RUNS: ${{ vars.AGENTIC_REVIEW_MAX_RUNS || '3' }}
+          EXEMPT: ${{ vars.AGENTIC_REVIEW_SCORE_EXEMPT || '85' }}
+          FILES: ${{ steps.targets.outputs.files }}
+        run: |
+          set -euo pipefail
+          gh api "repos/$REPO/issues/$PR/comments?per_page=100" > /tmp/aqr-comments.json || echo '[]' > /tmp/aqr-comments.json
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, re, sys
+          comments = json.load(open('/tmp/aqr-comments.json'))
+          body = next((c.get('body') or '' for c in comments
+                       if 'agentic-quest-review' in (c.get('body') or '')), '')
+          m = re.search(r'<!-- aqr-state (\{.*?\}) -->', body, re.S)
+          try:
+              state = json.loads(m.group(1)) if m else {}
+          except Exception:
+              state = {}
+          runs = int(state.get('runs') or 0)
+          scores = state.get('scores') or {}
+          max_runs = int(os.environ['MAX_RUNS'])
+          exempt = float(os.environ['EXEMPT'])
+          files = [f for f in os.environ['FILES'].splitlines() if f.strip()]
+          forced = os.environ['FORCED'] == 'true'
+
+          if forced:
+              keep, skip = files, False
+              reason = 'agentic-review label present — caps bypassed'
+          elif runs >= max_runs:
+              keep, skip = [], True
+              reason = (f'run cap reached ({runs}/{max_runs} automatic passes) — '
+                        'add the agentic-review label to force another')
+          else:
+              keep = [f for f in files if float(scores.get(f, -1)) < exempt]
+              skip = not keep
+              reason = (f'all {len(files)} changed quest(s) already scored ≥ {exempt:g}'
+                        if skip else
+                        f'reviewing {len(keep)}/{len(files)} changed quest(s); '
+                        f'{len(files) - len(keep)} exempt (last score ≥ {exempt:g})')
+
+          print(f"skip={'true' if skip else 'false'}")
+          print('files<<EOF'); [print(f) for f in keep]; print('EOF')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as fh:
+              fh.write(f'### ♻️ Agentic-review convergence guard\n- {reason}\n')
+          print(f'[guard] runs={runs} skip={skip} — {reason}', file=sys.stderr)
+          PY
+
       - name: Run agentic validation
         id: run
-        if: steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true'
+        if: steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && steps.guard.outputs.skip != 'true'
         continue-on-error: ${{ steps.params.outputs.gating != 'true' }}
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -148,7 +217,7 @@ jobs:
           MODE: ${{ steps.params.outputs.mode }}
           SAMPLE: ${{ steps.params.outputs.sample }}
           THRESH: ${{ steps.params.outputs.thresh }}
-          FILES: ${{ steps.targets.outputs.files }}
+          FILES: ${{ github.event_name == 'pull_request' && steps.guard.outputs.files || steps.targets.outputs.files }}
         run: |
           set -o pipefail
           # Bound runaway loops AND total spend on automatic runs.
@@ -160,12 +229,12 @@ jobs:
           fi
 
       - name: Job summary
-        if: always() && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true'
+        if: always() && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && steps.guard.outputs.skip != 'true'
         run: |
           if [ -f review.md ]; then cat review.md >> "$GITHUB_STEP_SUMMARY"; fi
 
       - name: Upload report
-        if: always() && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true'
+        if: always() && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && steps.guard.outputs.skip != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: agentic-quest-review
@@ -175,7 +244,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Comment on PR
-        if: github.event_name == 'pull_request' && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && always()
+        if: github.event_name == 'pull_request' && steps.auth.outputs.present == 'true' && steps.targets.outputs.skip != 'true' && steps.guard.outputs.skip != 'true' && always()
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
@@ -185,11 +254,34 @@ jobs:
             const note = mode === 'review'
               ? '\n\n> ℹ️ _Advisory read-only review — does not block this PR. Add the `agentic-review` label for a sandboxed `execute` run._'
               : '';
-            const body = "<!-- agentic-quest-review -->\n" + fs.readFileSync('review.md', 'utf8') + note;
             const { owner, repo } = context.repo;
             const issue_number = context.payload.pull_request.number;
-            const comments = await github.rest.issues.listComments({ owner, repo, issue_number });
+            const comments = await github.rest.issues.listComments({ owner, repo, issue_number, per_page: 100 });
             const mine = comments.data.find(c => c.body && c.body.includes('<!-- agentic-quest-review -->'));
+
+            // Carry the convergence ledger forward: merge this run's per-file
+            // scores into the prior state and count the pass. The guard step
+            // reads this on the next push to skip converged quests / cap runs.
+            let prev = { runs: 0, scores: {} };
+            if (mine) {
+              const m = mine.body.match(/<!-- aqr-state (\{[\s\S]*?\}) -->/);
+              if (m) { try { prev = JSON.parse(m[1]); } catch (e) { /* start fresh */ } }
+            }
+            const scores = Object.assign({}, prev.scores || {});
+            try {
+              const rep = JSON.parse(fs.readFileSync('review.json', 'utf8'));
+              for (const r of (rep.results || [])) {
+                const p = r.quest && r.quest.path;
+                if (p && typeof r.overall === 'number') scores[p] = r.overall;
+              }
+            } catch (e) { /* no report — keep prior scores */ }
+            const runs = (Number(prev.runs) || 0) + 1;
+            const maxRuns = Number('${{ vars.AGENTIC_REVIEW_MAX_RUNS }}' || 3);
+            const exempt = Number('${{ vars.AGENTIC_REVIEW_SCORE_EXEMPT }}' || 85);
+            const state = `<!-- aqr-state ${JSON.stringify({ runs, scores })} -->`;
+            const conv = `\n> ♻️ _Convergence: automatic pass ${runs}/${maxRuns} for this PR; quests last scoring ≥ ${exempt} are exempt from re-review on later pushes. Add the \`agentic-review\` label to force a full pass._`;
+
+            const body = "<!-- agentic-quest-review -->\n" + state + "\n" + fs.readFileSync('review.md', 'utf8') + note + conv;
             if (mine) {
               await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
             } else {
