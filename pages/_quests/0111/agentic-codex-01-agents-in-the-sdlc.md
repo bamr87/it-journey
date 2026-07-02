@@ -352,6 +352,7 @@ jobs:
         with:
           name: agent-plan
           path: .agent/
+          include-hidden-files: true   # .agent/ is dot-prefixed — v4 skips hidden files unless told
   execute:
     needs: plan
     runs-on: ubuntu-latest
@@ -370,6 +371,7 @@ jobs:
         with:
           name: agent-trace
           path: .agent/trace.jsonl
+          include-hidden-files: true
 ```
 {% endraw %}
 
