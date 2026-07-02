@@ -225,8 +225,10 @@ jobs:
         run: |
           mkdir -p .agent/memory
           ts=$(date -u +%FT%TZ)
-          jq -n --arg ts "$ts" --arg id "${{ github.run_id }}" \
+          jq -cn --arg ts "$ts" --arg id "${{ github.run_id }}" \
             '{run:$id, at:$ts, status:"completed"}' >> .agent/memory/task-register.jsonl
+          # -c is load-bearing: JSONL means ONE object per line — pretty-printed
+          # output would silently break every consumer that reads line-by-line
       - name: Commit the memory
         run: |
           git config user.name "agent[bot]"
@@ -386,8 +388,8 @@ The act shell recovered the plan's full intent from the artifact alone. That is 
 ### Step 3 — Tier 3: commit memory the next run can read
 
 ```bash
-jq -n --arg ts "$(date -u +%FT%TZ)" '{run:"local-1", at:$ts, status:"completed"}' \
-  >> .agent/memory/task-register.jsonl
+jq -cn --arg ts "$(date -u +%FT%TZ)" '{run:"local-1", at:$ts, status:"completed"}' \
+  >> .agent/memory/task-register.jsonl   # -c: one object per line, or it isn't JSONL
 git add .agent/memory && git commit -qm "chore(memory): record run local-1"
 
 # A "next run", hours later, asks: what already happened?

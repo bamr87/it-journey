@@ -153,7 +153,7 @@ outputs:
   - a pull request from a feature branch (never a push to main)
   - a unit test proving the rejection path
 success_criteria:
-  - "npm test" passes
+  - '"npm test" passes'
   - no edits outside src/routes/signup.ts and its test file
 exit_condition: "PR opened, checks green, awaiting human review"
 ```
@@ -274,7 +274,8 @@ result="$3"        # "ok" | "fail"
 
 mkdir -p .agent    # first call of a run creates the trace home — set -e would die without it
 
-# 1) Machine-readable JSONL: one event per line, appended to a committed log.
+# 1) Machine-readable JSONL: one event per line, appended to a log you commit
+#    (or publish as a run artifact, as the Hands-On Lab does).
 printf '{"ts":"%s","action":"%s","target":"%s","result":"%s"}\n' \
   "$(date -u +%FT%TZ)" "$action" "$target" "$result" \
   >> .agent/trace.jsonl
