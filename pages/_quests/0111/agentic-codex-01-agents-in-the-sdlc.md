@@ -85,7 +85,7 @@ validation_criteria:
 
 *The realm has summoned its first familiars — tireless constructs that read your code, draft your changes, and stand ready at the gate. But a familiar without a leash is a liability. Loose one with the keys to the whole castle and no record of where it walked, and the first night it errs you will have no torch to follow its steps. The Initiation Rites teach the oldest discipline of the agentic order: give every familiar a **bound** — a door it enters, rooms it may touch, a task it knows is finished, and a trail of footprints anyone can read.*
 
-*Behind the spellcraft is the most-tested idea in GH-600 Domain 1 (18% of the exam): an agent is most useful and least dangerous when it has a **bounded role** in the software development lifecycle. You will design where Copilot's coding agent enters the SDLC, separate the act of **planning** from the act of **doing** with a human-approved gate, and make every agent run leave an **observable trace**. These are not three tricks — they are the contract that lets autonomy scale without becoming a runaway machine.*
+*Behind the spellcraft is the most-tested idea in GH-600 Domain 1 (18% of the exam, per the [official study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600)): an agent is most useful and least dangerous when it has a **bounded role** in the software development lifecycle. You will design where Copilot's coding agent enters the SDLC, separate the act of **planning** from the act of **doing** with a human-approved gate, and make every agent run leave an **observable trace**. These are not three tricks — they are the contract that lets autonomy scale without becoming a runaway machine.*
 
 ## 📖 The Legend Behind This Quest
 
@@ -153,7 +153,7 @@ outputs:
   - a pull request from a feature branch (never a push to main)
   - a unit test proving the rejection path
 success_criteria:
-  - "npm test" passes
+  - '"npm test" passes'
   - no edits outside src/routes/signup.ts and its test file
 exit_condition: "PR opened, checks green, awaiting human review"
 ```
@@ -211,8 +211,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Produce a structured plan (no code changes)
         run: |
-          # The agent writes plan.json describing intended edits.
-          # This job NEVER touches source files — it only plans.
+          # The agent plans here — this job NEVER touches source files. The
+          # stub below stands in for the agent so the workflow runs as-is.
+          echo '{"task":"demo","edits":["README.md"],"risk":"low"}' > plan.json
           echo "Plan generated and uploaded as an artifact for review."
       - uses: actions/upload-artifact@v4
         with:
@@ -271,7 +272,10 @@ action="$1"        # e.g. "edit-file"
 target="$2"        # e.g. "src/routes/signup.ts"
 result="$3"        # "ok" | "fail"
 
-# 1) Machine-readable JSONL: one event per line, appended to a committed log.
+mkdir -p .agent    # first call of a run creates the trace home — set -e would die without it
+
+# 1) Machine-readable JSONL: one event per line, appended to a log you commit
+#    (or publish as a run artifact, as the Hands-On Lab does).
 printf '{"ts":"%s","action":"%s","target":"%s","result":"%s"}\n' \
   "$(date -u +%FT%TZ)" "$action" "$target" "$result" \
   >> .agent/trace.jsonl
@@ -284,7 +288,7 @@ printf '{"ts":"%s","action":"%s","target":"%s","result":"%s"}\n' \
 } >> "$GITHUB_STEP_SUMMARY"
 ```
 
-Wire it into the workflow so every meaningful step narrates itself:
+Save it as `scripts/agent-trace.sh`, `chmod +x` it, then wire it into the workflow so every meaningful step narrates itself:
 
 {% raw %}
 ```yaml
@@ -319,10 +323,12 @@ Now the **degree of autonomy** is a dial you control: the JSONL trail is the evi
 
 ```bash
 gh auth login                                  # skip if already authenticated
-gh repo create codex-rites-lab --private --clone
+gh repo create codex-rites-lab --public --clone
 cd codex-rites-lab
-mkdir -p .github/workflows scripts
+mkdir -p .github/workflows
 ```
+
+> ⚠️ **Why `--public`?** Environment protection rules (the required reviewer this lab hinges on) work on **public** repos on every plan, but on **private** repos they need a paid plan (Pro/Team/Enterprise). A public scratch repo therefore gives every learner the gate for free — and it will hold nothing but this demo.
 
 ### Step 2 — Lay down the workflow
 
@@ -352,6 +358,7 @@ jobs:
         with:
           name: agent-plan
           path: .agent/
+          include-hidden-files: true   # .agent/ is dot-prefixed — v4 skips hidden files unless told
   execute:
     needs: plan
     runs-on: ubuntu-latest
@@ -370,6 +377,7 @@ jobs:
         with:
           name: agent-trace
           path: .agent/trace.jsonl
+          include-hidden-files: true
 ```
 {% endraw %}
 
@@ -388,9 +396,13 @@ gh api -X PUT "repos/{owner}/{repo}/environments/agent-approval" --input /tmp/en
 ### Step 4 — Trigger the rite and watch it wait
 
 ```bash
-git add . && git commit -m "lab: plan-then-act pipeline" && git push -u origin main
+git add . && git commit -m "lab: plan-then-act pipeline"
+git branch -M main            # a fresh repo's branch name follows YOUR git config — pin it
+git push -u origin main
 gh workflow run plan-then-act.yml
-sleep 5 && gh run watch
+sleep 5
+run_id=$(gh run list --workflow=plan-then-act.yml -L1 --json databaseId -q '.[0].databaseId')
+gh run watch "$run_id"
 ```
 
 Expected: the `plan` job completes, then the run **pauses** — `gh run list` shows it `waiting`, and the run page says *"Review pending deployments: agent-approval"*. The agent planned; it cannot act. That pause **is** Rite Two working.
@@ -400,7 +412,6 @@ Expected: the `plan` job completes, then the run **pauses** — `gh run list` sh
 Approve the pending deployment on the run page (`gh run view --web`), then pull the evidence:
 
 ```bash
-run_id=$(gh run list --workflow=plan-then-act.yml -L1 --json databaseId -q '.[0].databaseId')
 gh run download "$run_id" --name agent-trace --dir /tmp/lab-trace
 cat /tmp/lab-trace/trace.jsonl
 ```
@@ -412,7 +423,7 @@ Expected — one JSONL line per action, plan before execute:
 {"ts":"2026-07-01T20:16:41Z","action":"execute","result":"ok"}
 ```
 
-You reconstructed the run from its trace and step summaries alone — Rite Three. Clean up with `gh repo delete codex-rites-lab --yes` when you are done, and note what you proved: a **bounded entry point** (`workflow_dispatch`), a **plan that cannot act**, a **human gate that actually held**, and a **trace an auditor can read cold**.
+You reconstructed the run from its trace and step summaries alone — Rite Three. Clean up with `gh repo delete codex-rites-lab --yes` when you are done — **careful:** `--yes` skips the confirmation and the deletion is permanent, so read the repo name twice. Note what you proved: a **bounded entry point** (`workflow_dispatch`), a **plan that cannot act**, a **human gate that actually held**, and a **trace an auditor can read cold**.
 
 ## ⚔️ The Quests of This Domain
 
@@ -420,7 +431,7 @@ Domain 1 splits into three playable quests — one per sub-skill. Clear all thre
 
 - 🎯 **[Initiation Rites: Embedding Agents in the SDLC](/quests/0111/agentic-sdlc-integration/)** — sub-skill 1.1: integrate agents into the SDLC, identify and mitigate anti-patterns, and define inputs, outputs, and success criteria for an agent task.
 - 🎯 **[The Three Sigils: Plan, Reason, Act](/quests/0111/agentic-plan-vs-action-boundaries/)** — sub-skill 1.2: separate planning from execution, output a structured plan, validate it, and block action until it is checked and approved.
-- 🎯 **[The All-Seeing Eye: Observability for AI Agents](/quests/1000/agentic-observability-and-control/)** — sub-skill 1.3: configure autonomy and guardrails, produce inspectable artifacts in standard tooling, and add human intervention without slowing delivery.
+- 🎯 **[The All-Seeing Eye: Observability for AI Agents](/quests/1000/agentic-observability-and-control/)** — sub-skill 1.3: configure autonomy and guardrails, produce inspectable artifacts in standard tooling, and add human intervention without slowing delivery. *(Housed at level `1000` rather than `0111`: observability is where Domain 1 hands off to Domain 2's tooling, so this quest lives beside the arsenal it instruments.)*
 
 ## 🎮 Mastery Challenge
 

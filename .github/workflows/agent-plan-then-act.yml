@@ -109,6 +109,7 @@ jobs:
         with:
           name: agent-plan-${{ steps.mint.outputs.cid }}
           path: .agent/
+          include-hidden-files: true   # .agent/ is dot-prefixed; v4 skips hidden files by default
 
   execute:
     needs: plan
@@ -168,6 +169,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: agent-audit-${{ needs.plan.outputs.cid }}
+          include-hidden-files: true   # same hidden-dir rule as the plan artifact
           path: |
             .agent/audit.json
             .agent/trace.jsonl

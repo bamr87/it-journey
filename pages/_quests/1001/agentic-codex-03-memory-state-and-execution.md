@@ -117,7 +117,7 @@ Before you descend into the vaults, confirm your bench is ready:
 - **Chapter II cleared** — you should already know how an agent selects tools and binds to an environment (see [Tool Use & Environment](/quests/1000/agentic-codex-02-tool-use-and-environment/)). Memory builds directly on that execution context.
 - **A GitHub repository you own, with Actions enabled** — you will run real workflows that upload artifacts and commit files.
 - **Comfort reading workflow YAML** — you will edit `.github/workflows/` and reason about jobs, steps, and `needs:`.
-- **Basic JSON + shell** — the drift detector and handoff document are a few lines each of `jq`, `sha256sum`, and `bash`.
+- **Basic JSON + shell** — the drift detector and handoff document are a few lines each of `jq`, `sha256sum`, and `bash`. *(macOS ships without GNU `sha256sum` — `brew install coreutils`, or substitute `shasum -a 256`.)*
 - **Access to GitHub Copilot + a Models/MCP-capable agent** — so the memory you build has a mind to serve.
 
 ## 🧙‍♂️ Chapter 1: The Three Vaults — Mapping Agent Memory to GitHub Primitives
@@ -135,6 +135,7 @@ The single most useful mental model in Domain 3 is the **three-tier vault**. Eac
 {% raw %}
 ```yaml
 # Tier 1 — ephemeral: a value passed step-to-step inside ONE job
+# (steps-only excerpt — drop these into an existing job, not a bare file)
 - name: Compute a plan id
   id: plan
   run: echo "plan_id=plan-$(date +%s)" >> "$GITHUB_OUTPUT"
@@ -212,6 +213,7 @@ For **Tier 3**, the agent must write memory that outlives the run. The pattern i
 {% raw %}
 ```yaml
 # Tier 3 — persistent: commit a memory file so the NEXT run remembers
+# (excerpt — add your own `name:` and `on:` to make it a complete workflow)
 permissions:
   contents: write
 jobs:
@@ -223,15 +225,17 @@ jobs:
         run: |
           mkdir -p .agent/memory
           ts=$(date -u +%FT%TZ)
-          jq -n --arg ts "$ts" --arg id "${{ github.run_id }}" \
+          jq -cn --arg ts "$ts" --arg id "${{ github.run_id }}" \
             '{run:$id, at:$ts, status:"completed"}' >> .agent/memory/task-register.jsonl
+          # -c is load-bearing: JSONL means ONE object per line — pretty-printed
+          # output would silently break every consumer that reads line-by-line
       - name: Commit the memory
         run: |
           git config user.name "agent[bot]"
           git config user.email "agent@users.noreply.github.com"
           git add .agent/memory/task-register.jsonl
           git commit -m "chore(memory): record run ${{ github.run_id }}" || echo "nothing to record"
-          git push
+          git push origin HEAD:${{ github.ref_name }}   # explicit ref — survives a detached-HEAD checkout
 ```
 {% endraw %}
 
@@ -264,16 +268,16 @@ Detection (sub-skill 3.2) is mechanical and reliable: take a **state snapshot** 
 # scripts/drift-guard.sh — snapshot key files, then verify before acting
 set -euo pipefail
 SNAP=".agent/snapshot.sha256"
-WATCH=("README.md" "_config.yml" ".agent/plan.json")
+WATCH=("README.md" "_config.yml" ".agent/plan.json")   # EDIT for YOUR repo — a missing file kills snapshot() under set -e
 
-snapshot() { sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
+snapshot() { mkdir -p "$(dirname "$SNAP")"; sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
 
 verify() {
   if sha256sum -c "$SNAP" --quiet; then
     echo "No drift — safe to act."
   else
     echo "::warning::Context drift detected — key files changed since snapshot."
-    exit 78          # neutral/abort: stop before acting on a stale world
+    exit 78          # drift-abort: OUR convention — stop before acting on a stale world
   fi
 }
 
@@ -283,7 +287,7 @@ case "${1:-verify}" in
 esac
 ```
 
-Wire it into the run so the snapshot is taken right after planning and verified right before acting. The `exit 78` is GitHub Actions' neutral exit — a clean way to halt a step without marking a false hard failure, then hand control to a re-plan path or a human.
+Wire it into the run so the snapshot is taken right after planning and verified right before acting. A note on the `exit 78`: it is **this campaign's convention** for "halted on drift" — a distinct code so an orchestrator can tell *the world moved* from *the script broke* (`exit 1`). GitHub Actions itself treats **any** nonzero exit as a plain failure (the old "neutral" exit 78 died with the deprecated 2018 HCL-era Actions), so when the run must survive the halt and route to a re-plan instead of going red, absorb the exit with `continue-on-error` and branch on the step's outcome:
 
 {% raw %}
 ```yaml
@@ -291,7 +295,12 @@ Wire it into the run so the snapshot is taken right after planning and verified 
   run: bash scripts/drift-guard.sh snapshot
 # ... agent does long-running work, other commits may land ...
 - name: Verify before acting
+  id: drift
+  continue-on-error: true    # absorb the exit so WE choose what happens next
   run: bash scripts/drift-guard.sh verify
+- name: Route on drift — re-plan or escalate, never act
+  if: steps.drift.outcome == 'failure'
+  run: echo "::warning::World moved while we worked — re-planning instead of acting."
 ```
 {% endraw %}
 
@@ -322,7 +331,7 @@ The key tool is a **context-handoff document** — a small JSON file that captur
   "intent": "Add a drift-guard step to the nightly agent workflow",
   "decisions": [
     "Watch README.md and _config.yml for drift",
-    "Use neutral exit (78) to halt, not hard-fail"
+    "Halt on drift with exit 78 (our convention), absorbed via continue-on-error"
   ],
   "open_questions": ["Should re-plan be automatic or require human approval?"],
   "produced_by": "copilot-coding-agent",
@@ -349,6 +358,7 @@ This single document prevents the two failure modes named in the sub-skill. It p
 ```bash
 mkdir -p ~/codex-vaults-lab && cd ~/codex-vaults-lab
 git init -q && echo "# The Realm" > README.md
+git config user.name "Vault Keeper" && git config user.email "keeper@example.com"  # fresh machines need an identity to commit
 mkdir -p .agent/memory scripts
 git add . && git commit -qm "lab: the realm stands"
 ```
@@ -378,8 +388,8 @@ The act shell recovered the plan's full intent from the artifact alone. That is 
 ### Step 3 — Tier 3: commit memory the next run can read
 
 ```bash
-jq -n --arg ts "$(date -u +%FT%TZ)" '{run:"local-1", at:$ts, status:"completed"}' \
-  >> .agent/memory/task-register.jsonl
+jq -cn --arg ts "$(date -u +%FT%TZ)" '{run:"local-1", at:$ts, status:"completed"}' \
+  >> .agent/memory/task-register.jsonl   # -c: one object per line, or it isn't JSONL
 git add .agent/memory && git commit -qm "chore(memory): record run local-1"
 
 # A "next run", hours later, asks: what already happened?
@@ -390,9 +400,33 @@ Expected: `local-1 → completed` — the next run resumes instead of repeating.
 
 ### Step 4 — The drift guard catches a moved world
 
-Save the `drift-guard.sh` script from Chapter 3 above into `scripts/drift-guard.sh` (`chmod +x` it), then:
+Forge the lab's own guard — the same shape as the Chapter 3 script, with the `WATCH` array correct for this realm *by construction* (the chapter version watches `_config.yml`, which this lab doesn't have):
 
 ```bash
+cat > scripts/drift-guard.sh <<'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+SNAP=".agent/snapshot.sha256"
+WATCH=("README.md" ".agent/plan.json")
+
+snapshot() { mkdir -p "$(dirname "$SNAP")"; sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
+
+verify() {
+  if sha256sum -c "$SNAP" --quiet; then
+    echo "No drift — safe to act."
+  else
+    echo "::warning::Context drift detected — key files changed since snapshot."
+    exit 78
+  fi
+}
+
+case "${1:-verify}" in
+  snapshot) snapshot ;;
+  verify)   verify   ;;
+esac
+EOF
+chmod +x scripts/drift-guard.sh
+
 # Snapshot right after "planning"
 bash scripts/drift-guard.sh snapshot
 
@@ -410,15 +444,44 @@ Expected:
 Snapshot taken.
 No drift — safe to act.
 exit=0
+README.md: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
 ::warning::Context drift detected — key files changed since snapshot.
 exit=78
 ```
 
-*(Adjust the `WATCH` array in the script to `("README.md" ".agent/plan.json")` for this lab — the realm has no `_config.yml`.)* The `exit=78` is your abort-before-acting signal: the plan was drawn against a world that no longer exists, and the guard refused to let the agent pretend otherwise.
+*(The `FAILED`/`WARNING` lines come from `sha256sum -c` itself — `--quiet` silences the `OK` lines, not the failures — and then the guard adds its own warning and aborts.)*
 
-### Step 5 — Prove you can place state in its tier
+The `exit=78` is your abort-before-acting signal: the plan was drawn against a world that no longer exists, and the guard refused to let the agent pretend otherwise.
 
-Close the lab with the placement drill from the Mastery Indicators. For each item, say the tier aloud before checking: a retry counter inside one job (*Tier 1 — ephemeral*), the plan crossing plan→act (*Tier 2 — artifact*), the task register (*Tier 3 — committed file*), a cached dependency graph (*Tier 3 — cache, non-authoritative*). If any answer surprised you, re-read Chapter 1's table — the exam will hand you exactly this drill.
+### Step 5 — Carry intent across a surface boundary
+
+Sub-skill 3.3, practiced: the planning surface writes the handoff, and a consumer on a *different* surface — sharing no memory — recovers the intent and refuses a stale one:
+
+```bash
+# The planning surface writes its handoff (Tier 3 — committed, so it travels).
+# Two timestamps: ISO for humans reading the file, epoch for machines doing math
+# (portable — no GNU-only `date -d` needed on the consumer side).
+jq -n --arg ts "$(date -u +%FT%TZ)" --argjson epoch "$(date -u +%s)" '{
+  schema: "context-handoff/v1", issue: 42,
+  intent: "add a drift-guard step to the nightly workflow",
+  decisions: ["watch README.md", "abort on drift"],
+  handoff_at: $ts, handoff_epoch: $epoch
+}' > .agent/context-handoff.json
+git add .agent/context-handoff.json && git commit -qm "chore(memory): handoff for issue 42"
+
+# The PR-side consumer, later: recover the intent, reject a handoff too old to trust
+jq -r '"intent: " + .intent' .agent/context-handoff.json
+age=$(( $(date -u +%s) - $(jq -r .handoff_epoch .agent/context-handoff.json) ))
+[ "$age" -lt 86400 ] && echo "handoff fresh (${age}s old) — proceeding" \
+                     || echo "handoff stale — re-derive intent before acting"
+```
+
+Expected: the intent line, then `handoff fresh (Ns old) — proceeding`. The consumer never guessed — it read the same committed truth the planner wrote, and the timestamp gave it grounds to refuse a stale belief.
+
+### Step 6 — Prove you can place state in its tier
+
+Close the lab with the placement drill from the Mastery Indicators. For each item, say the tier aloud before checking: a retry counter inside one job (*Tier 1 — ephemeral*), the plan crossing plan→act (*Tier 2 — artifact*), the task register (*Tier 3 — committed file*), the handoff document (*Tier 3 — committed, timestamped*), a cached dependency graph (*Tier 3 — cache, non-authoritative*). If any answer surprised you, re-read Chapter 1's table — the exam will hand you exactly this drill.
 
 ## ⚔️ The Quests of This Domain
 
@@ -434,7 +497,7 @@ This chapter is the map of the Vaults; these three quests are the chambers you d
 
 - [ ] A `plan` job writes a structured plan and uploads it as an artifact; an `act` job downloads and executes against it (Tier 2 proven)
 - [ ] The workflow commits a `.agent/memory/` register that a *subsequent* run reads to avoid repeating completed work (Tier 3 proven)
-- [ ] `scripts/drift-guard.sh` snapshots key files after planning and halts the run with a neutral exit when they change before acting
+- [ ] `scripts/drift-guard.sh` snapshots key files after planning and aborts before acting (exit 78) when they change — absorbed with `continue-on-error` where the run must survive to re-plan
 - [ ] The agent writes a `context-handoff.json` on PR creation that the PR's Actions run reads to recover intent
 - [ ] You can hand any one of these four pieces of state to a peer and have them name its correct tier
 
