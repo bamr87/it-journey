@@ -327,7 +327,7 @@ cd codex-rites-lab
 mkdir -p .github/workflows
 ```
 
-> ⚠️ **Why `--public`?** Environment protection rules (the required reviewer this lab hinges on) only work on **private** repos with a paid plan (Pro/Team/Enterprise). A public scratch repo gives every learner the gate for free — and it will hold nothing but this demo.
+> ⚠️ **Why `--public`?** Environment protection rules (the required reviewer this lab hinges on) work on **public** repos on every plan, but on **private** repos they need a paid plan (Pro/Team/Enterprise). A public scratch repo therefore gives every learner the gate for free — and it will hold nothing but this demo.
 
 ### Step 2 — Lay down the workflow
 

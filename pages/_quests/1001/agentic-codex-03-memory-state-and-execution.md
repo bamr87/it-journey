@@ -457,17 +457,20 @@ The `exit=78` is your abort-before-acting signal: the plan was drawn against a w
 Sub-skill 3.3, practiced: the planning surface writes the handoff, and a consumer on a *different* surface — sharing no memory — recovers the intent and refuses a stale one:
 
 ```bash
-# The planning surface writes its handoff (Tier 3 — committed, so it travels)
-jq -n --arg ts "$(date -u +%FT%TZ)" '{
+# The planning surface writes its handoff (Tier 3 — committed, so it travels).
+# Two timestamps: ISO for humans reading the file, epoch for machines doing math
+# (portable — no GNU-only `date -d` needed on the consumer side).
+jq -n --arg ts "$(date -u +%FT%TZ)" --argjson epoch "$(date -u +%s)" '{
   schema: "context-handoff/v1", issue: 42,
   intent: "add a drift-guard step to the nightly workflow",
-  decisions: ["watch README.md", "abort on drift"], handoff_at: $ts
+  decisions: ["watch README.md", "abort on drift"],
+  handoff_at: $ts, handoff_epoch: $epoch
 }' > .agent/context-handoff.json
 git add .agent/context-handoff.json && git commit -qm "chore(memory): handoff for issue 42"
 
 # The PR-side consumer, later: recover the intent, reject a handoff too old to trust
 jq -r '"intent: " + .intent' .agent/context-handoff.json
-age=$(( $(date -u +%s) - $(date -u -d "$(jq -r .handoff_at .agent/context-handoff.json)" +%s) ))
+age=$(( $(date -u +%s) - $(jq -r .handoff_epoch .agent/context-handoff.json) ))
 [ "$age" -lt 86400 ] && echo "handoff fresh (${age}s old) — proceeding" \
                      || echo "handoff stale — re-derive intent before acting"
 ```
