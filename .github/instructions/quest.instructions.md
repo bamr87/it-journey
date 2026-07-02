@@ -325,6 +325,17 @@ Use this mapping consistently for narrative cohesion:
 
 Keep technical accuracy intact — fantasy is a wrapper, never a substitute.
 
+This table is only the authoring quick-reference. The **complete canonical
+lexicon** (~120 entries: geography, classes, spellcraft, chronomancy, bestiary,
+artifacts, great works, law, words of power) lives at
+`pages/_quests/codex/glossary.md` (rendered at `/quests/codex/glossary/`) and is
+the single source of naming truth for quest narrative:
+
+- **Don't mint synonyms** for anything the glossary already names — one realm,
+  one dragon.
+- **New coinages land in the glossary first**: add the entry there in the same
+  PR, then use it in your quest.
+
 ## 9. Validation Workflow
 
 Run before every commit:
