@@ -117,7 +117,7 @@ Before you descend into the vaults, confirm your bench is ready:
 - **Chapter II cleared** — you should already know how an agent selects tools and binds to an environment (see [Tool Use & Environment](/quests/1000/agentic-codex-02-tool-use-and-environment/)). Memory builds directly on that execution context.
 - **A GitHub repository you own, with Actions enabled** — you will run real workflows that upload artifacts and commit files.
 - **Comfort reading workflow YAML** — you will edit `.github/workflows/` and reason about jobs, steps, and `needs:`.
-- **Basic JSON + shell** — the drift detector and handoff document are a few lines each of `jq`, `sha256sum`, and `bash`.
+- **Basic JSON + shell** — the drift detector and handoff document are a few lines each of `jq`, `sha256sum`, and `bash`. *(macOS ships without GNU `sha256sum` — `brew install coreutils`, or substitute `shasum -a 256`.)*
 - **Access to GitHub Copilot + a Models/MCP-capable agent** — so the memory you build has a mind to serve.
 
 ## 🧙‍♂️ Chapter 1: The Three Vaults — Mapping Agent Memory to GitHub Primitives
@@ -268,7 +268,7 @@ Detection (sub-skill 3.2) is mechanical and reliable: take a **state snapshot** 
 # scripts/drift-guard.sh — snapshot key files, then verify before acting
 set -euo pipefail
 SNAP=".agent/snapshot.sha256"
-WATCH=("README.md" "_config.yml" ".agent/plan.json")
+WATCH=("README.md" "_config.yml" ".agent/plan.json")   # EDIT for YOUR repo — a missing file kills snapshot() under set -e
 
 snapshot() { mkdir -p "$(dirname "$SNAP")"; sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
 
@@ -331,7 +331,7 @@ The key tool is a **context-handoff document** — a small JSON file that captur
   "intent": "Add a drift-guard step to the nightly agent workflow",
   "decisions": [
     "Watch README.md and _config.yml for drift",
-    "Use neutral exit (78) to halt, not hard-fail"
+    "Halt on drift with exit 78 (our convention), absorbed via continue-on-error"
   ],
   "open_questions": ["Should re-plan be automatic or require human approval?"],
   "produced_by": "copilot-coding-agent",

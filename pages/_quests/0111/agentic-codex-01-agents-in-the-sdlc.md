@@ -288,7 +288,7 @@ printf '{"ts":"%s","action":"%s","target":"%s","result":"%s"}\n' \
 } >> "$GITHUB_STEP_SUMMARY"
 ```
 
-Wire it into the workflow so every meaningful step narrates itself:
+Save it as `scripts/agent-trace.sh`, `chmod +x` it, then wire it into the workflow so every meaningful step narrates itself:
 
 {% raw %}
 ```yaml
