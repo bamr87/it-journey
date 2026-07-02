@@ -58,7 +58,7 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/0010/epic-quest-zer0-to-her0-cmstyle/
+  - /quests/codex/zer0-to-her0-cmstyle/
   unlocks_quests:
   - /quests/0001/self-operating-website-01-the-summoning/
   - /quests/0100/self-operating-website-02-the-proving-grounds/
@@ -94,7 +94,7 @@ validation_criteria:
 ---
 *You raised your castle from the `zer0-mistakes` stones. Now you will teach it to run itself — to write its own scrolls, mend its own walls, and keep a diary of every battle — without ever handing a stranger the keys to the gate.*
 
-*This is a direct sequel to **[Epic Quest: Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/)**. There you built a living site. Here you teach it autonomy: a robot drafts content, screenshots it, files its own bugs, opens pull requests, reviews and improves them, contributes fixes upstream, and writes a retrospective of every working session — while a **human still holds the merge button.** This campaign is reverse-engineered from a real 40-branch build, so every chapter is a milestone you can actually complete and verify.*
+*This is a direct sequel to **[Epic Quest: Zer0-to-Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/)**. There you built a living site. Here you teach it autonomy: a robot drafts content, screenshots it, files its own bugs, opens pull requests, reviews and improves them, contributes fixes upstream, and writes a retrospective of every working session — while a **human still holds the merge button.** This campaign is reverse-engineered from a real 40-branch build, so every chapter is a milestone you can actually complete and verify.*
 
 ## 📖 The Legend Behind This Quest
 
@@ -129,7 +129,7 @@ You will know you have mastered this campaign when you can:
 | **Tier** | ⚡ Master `1111` capstone — chapters span 🌱 Apprentice → ⚡ Master |
 | **Total XP** | ~955 XP across 10 chapters, plus two side-quest lines |
 | **Primary classes** | 🏗️ System Engineer · 💻 Software Developer · 🛡️ Security Specialist |
-| **Prerequisites** | [Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/), basic Git, a GitHub account |
+| **Prerequisites** | [Zer0-to-Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/), basic Git, a GitHub account |
 | **Boss** | 🐉 The Self-Retrigger Loop (a CI job that re-triggers itself forever) |
 | **Source build** | `bamr87/lifehacker.dev` — 40 merged branches, +16,223 / −499 lines (see issue [#365](https://github.com/bamr87/it-journey/issues/365)) |
 
@@ -215,6 +215,17 @@ graph TD
     VII --> VIII[VIII · The Cartographer]
     VIII --> IX[IX · The Chronicle]
     IX --> X[X · The Bard Forge]
+    click Pre "/quests/codex/zer0-to-her0-cmstyle/"
+    click I "/quests/0001/self-operating-website-01-the-summoning/"
+    click II "/quests/0100/self-operating-website-02-the-proving-grounds/"
+    click III "/quests/1000/self-operating-website-03-the-war-machine/"
+    click IV "/quests/1001/self-operating-website-04-the-sigils-of-trust/"
+    click V "/quests/1010/self-operating-website-05-the-content-forge/"
+    click VI "/quests/1100/self-operating-website-06-the-editors-eye/"
+    click VII "/quests/1101/self-operating-website-07-the-named-familiars/"
+    click VIII "/quests/0101/self-operating-website-08-the-cartographer/"
+    click IX "/quests/1110/self-operating-website-09-the-chronicle/"
+    click X "/quests/1100/self-operating-website-10-the-bard-forge/"
 ```
 
 ## 🧾 The Canonical Build Ledger
@@ -244,8 +255,9 @@ Each chapter's **🔁 Reproduce it** section cites the specific PRs and commits 
 ## 🔮 Next Adventures
 
 - 🎯 Begin the campaign: [Chapter I — The Summoning](/quests/0001/self-operating-website-01-the-summoning/)
-- 👑 Revisit the prequel: [Epic Quest: Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/)
+- 👑 Revisit the prequel: [Epic Quest: Zer0-to-Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/)
 - 🪄 The closing twist: [Chapter X — The Bard Forge](/quests/1100/self-operating-website-10-the-bard-forge/)
+- 🤖 Sibling campaign: [Epic Quest: The Agentic Codex](/quests/codex/agentic-codex/) — master the agents that power a fleet like this one
 
 ## 📚 Resource Codex
 

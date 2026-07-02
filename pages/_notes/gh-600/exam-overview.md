@@ -40,8 +40,8 @@ Official study guide: [Microsoft Learn — GH-600 Study Guide](https://learn.mic
 
 ## Key Preparation Milestones
 
-- [ ] Review all 19 sub-skills in the [Skills Measured](/docs/certifications/gh-600/skills-measured/) page
-- [ ] Complete all 20 quests in the [Agentic Codex arc](/docs/certifications/gh-600/)
+- [ ] Review all 19 sub-skills in the [Skills Measured](/notes/gh-600/skills-measured/) page
+- [ ] Complete all 20 quests in the [Agentic Codex arc](/notes/gh-600/)
 - [ ] Score ≥ 70% on each domain in the Capstone rubric
 - [ ] Review the [Glossary](/notes/gh-600/glossary/) before exam day
 

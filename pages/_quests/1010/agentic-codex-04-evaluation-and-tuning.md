@@ -2,7 +2,7 @@
 title: 'The Oracle Rubric: Evaluation & Tuning'
 description: 'Define machine-verifiable success criteria, read GitHub signals to grade agent runs, run root-cause analysis on failures, and tune behaviour by instruction.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '1010'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -382,6 +382,96 @@ This closes the loop the legend opened: rubric → signal → trace → tuned in
 - [ ] An agent keeps re-reading the same file every run — is the right lever an instruction, a constraint, a memory rule, or a tool change? Why?
 - [ ] What does an instruction changelog give you that a raw `git log` of `AGENTS.md` does not?
 
+## 🧪 Hands-On Lab: Build the Oracle on Your Own Bench
+
+*A rubric you have never watched fail is a rubric you do not understand.* This lab builds a working completion detector locally — deterministic signals in a JSON file, a grader that reads them — then points it at a real pull request with `gh`. Ten minutes, no Copilot required.
+
+### Step 1 — Fabricate a run's signals
+
+```bash
+mkdir -p ~/codex-oracle-lab && cd ~/codex-oracle-lab
+cat > signals.json <<'EOF'
+{
+  "checks":        { "test": "success", "lint": "success" },
+  "pr":            { "draft": false, "body": "Fix parser crash. Closes #42", "approvals": 1 },
+  "new_alerts":    0,
+  "changed_files": ["src/parser.js", "test/parser.test.js"]
+}
+EOF
+```
+
+### Step 2 — Write the grader
+
+Every line of the Chapter 1 rubric becomes one `jq` assertion — the machine-verifiable criteria, executed:
+
+```bash
+cat > grade.sh <<'EOF'
+#!/usr/bin/env bash
+# grade.sh — the Oracle's rubric as a function: signals in, verdict out
+set -euo pipefail
+S="${1:-signals.json}"
+fails=0
+grade() {  # name, jq-expression that must be true
+  if [ "$(jq -r "$2" "$S")" = "true" ]; then echo "✅ $1"
+  else echo "❌ $1"; fails=$((fails + 1)); fi
+}
+grade "Tests pass"          '.checks.test  == "success"'
+grade "Lint passes"         '.checks.lint  == "success"'
+grade "No new alerts"       '.new_alerts   == 0'
+grade "References issue"    '.pr.body | test("Closes #[0-9]+")'
+grade "Ready for review"    '.pr.draft     == false'
+grade "Human approved"      '.pr.approvals >= 1'
+grade "In scope"            '[.changed_files[] | test("^(src|test)/")] | all'
+[ "$fails" -eq 0 ] && echo "🔮 Rubric satisfied — task complete" \
+                   || { echo "⏳ Rubric not satisfied — $fails signal(s) failing"; exit 1; }
+EOF
+chmod +x grade.sh && ./grade.sh
+```
+
+Expected: seven ✅ lines and `🔮 Rubric satisfied — task complete`, exit code 0.
+
+### Step 3 — Watch it fail for the right reason
+
+```bash
+jq '.pr.draft = true | .changed_files += [".github/workflows/deploy.yml"]' \
+  signals.json > drifted.json
+./grade.sh drifted.json; echo "exit=$?"
+```
+
+Expected — the two poisoned signals fail, everything else still passes, and the exit code goes red:
+
+```text
+✅ Tests pass
+✅ Lint passes
+✅ No new alerts
+✅ References issue
+❌ Ready for review
+✅ Human approved
+❌ In scope
+⏳ Rubric not satisfied — 2 signal(s) failing
+exit=1
+```
+
+Notice what the second ❌ caught: a workflow file crept into the diff — exactly the "out of scope" failure a tests-only rubric would have waved through.
+
+### Step 4 — Point the Oracle at reality
+
+Now build `signals.json` from a **real** PR instead of a fixture — any PR in a repo you can read:
+
+```bash
+repo="<owner>/<repo>"; pr=<number>
+jq -n \
+  --argjson pr    "$(gh pr view "$pr" --repo "$repo" --json isDraft,body,reviews)" \
+  --argjson files "$(gh pr view "$pr" --repo "$repo" --json files -q '[.files[].path]')" \
+  '{ checks: {test:"success", lint:"success"},
+     pr: { draft: $pr.isDraft, body: $pr.body,
+           approvals: ([$pr.reviews[] | select(.state=="APPROVED")] | length) },
+     new_alerts: 0, changed_files: $files }' > signals.json
+./grade.sh
+```
+
+The fabricated `checks`/`new_alerts` fields are the two signals that need a workflow context to read — in CI they come from `checks.listForRef` and `code-scanning.listAlertsForRef`, exactly as in the `check-task-completion.yml` above. The lab's lesson survives the swap: **the rubric is a pure function of signals**, and anything that can produce the signals can be graded — a fixture, a live PR, or the agent run you ship next week.
+
 ## ⚔️ The Quests of This Domain
 
 This chapter is the campaign hub for Domain 4. Each linked quest takes one craft deep with hands-on exercises — play them in order:
@@ -442,7 +532,8 @@ You can now grade an agent, diagnose its failures, and reforge its mind. The nex
 - [GitHub CLI: `gh run`](https://cli.github.com/manual/gh_run) — downloading run logs and artifacts for forensics
 - [GitHub Models](https://docs.github.com/en/github-models) — adding an LLM-as-judge signal for qualitative criteria
 - [Code scanning REST API](https://docs.github.com/en/rest/code-scanning) — reading the "no new alerts" signal
-- [Agentic Codex: Evaluating & Tuning Agents with GitHub Signals](/docs/agentic-codex/evaluating-and-tuning-agents-with-github-signals/) — the Domain 4 reference article
+- [Evaluation Signals Table (GH-600 notes)](/notes/gh-600/evaluation-signals-table/) — every Domain 4 signal and the API call that reads it
+- 🏰 **In the wild (this repo):** the quest-fix **deterministic keep/revert gate** ([`quest-fix.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/quest-fix.yml)) keeps an agent's edit only if tier-1 score + brand lint improved — the model never grades its own work; the RCA template and instruction changelog live in [`docs/agents/`](https://github.com/bamr87/it-journey/tree/main/docs/agents). Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

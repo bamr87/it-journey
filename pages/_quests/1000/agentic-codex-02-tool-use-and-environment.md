@@ -2,7 +2,7 @@
 title: 'Forging the Arsenal: Tool Use & Environment'
 description: 'Equip GitHub Copilot agents with the right tools, wire MCP servers, scope least-privilege permissions, and bind agents to a CI environment — GH-600 Domain 2.'
 date: '2026-06-30T00:00:00.000Z'
-lastmod: '2026-06-30T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 level: '1000'
 difficulty: '🔴 Hard'
 estimated_time: 2-4 hours
@@ -58,9 +58,9 @@ prerequisites:
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/0111/agentic-codex-01-agents-in-the-sdlc/ # planned quest
+  - /quests/0111/agentic-codex-01-agents-in-the-sdlc/
   unlocks_quests:
-  - /quests/1001/agentic-codex-03-memory-state-and-execution/ # planned quest
+  - /quests/1001/agentic-codex-03-memory-state-and-execution/
 rewards:
   badges:
   - 🗡️ Arsenal Smith — equipped an agent with scoped tools and a remote MCP server
@@ -331,6 +331,86 @@ Three safety properties make this safe: **bounded retries** (transient blips rec
 - [ ] Why must the script `exit 1` on final failure instead of logging and returning 0?
 - [ ] How does `timeout-minutes` bound an agent's blast radius differently than `permissions:` does?
 
+## 🧪 Hands-On Lab: Slay the Silent Failure on Your Own Bench
+
+*You do not need a CI runner to fight this dragon — you need a flaky tool and a script that refuses to lie about it.* This lab runs entirely on your machine with zero credentials: a stub tool fails deterministically, the safe-execution wrapper retries and escalates, and you verify every exit code yourself.
+
+### Step 1 — Build the flaky tool and a stubbed `gh`
+
+```bash
+mkdir -p ~/codex-arsenal-lab && cd ~/codex-arsenal-lab
+
+# The tool: fails twice, succeeds on the third call — a classic transient fault
+cat > agent-step.sh <<'EOF'
+#!/usr/bin/env bash
+n=$(cat .attempts 2>/dev/null || echo 0)
+echo $((n + 1)) > .attempts
+if [ "$n" -lt 2 ]; then
+  echo "tool error: transient failure (call $((n + 1)))" >&2
+  exit 1
+fi
+echo "tool ok on call $((n + 1))"
+EOF
+chmod +x agent-step.sh
+
+# A stub gh so the escalation path is observable without touching GitHub
+cat > gh <<'EOF'
+#!/usr/bin/env bash
+echo "[stub gh] would run: $*"
+EOF
+chmod +x gh
+export PATH="$PWD:$PATH"
+```
+
+### Step 2 — Copy in the safe-execution wrapper
+
+Save the `run-agent.sh` script from Chapter 3 above as `run-agent.sh` in this directory (replace `./agent-step.sh` paths as-is — they match), then `chmod +x run-agent.sh`.
+
+### Step 3 — Watch bounded retries absorb a transient fault
+
+```bash
+rm -f .attempts && ./run-agent.sh; echo "exit=$?"
+```
+
+Expected — two failures absorbed, success on the third, exit code 0:
+
+```text
+tool error: transient failure (call 1)
+Attempt 1 failed; retrying after backoff…
+tool error: transient failure (call 2)
+Attempt 2 failed; retrying after backoff…
+tool ok on call 3
+Agent step succeeded on attempt 3.
+exit=0
+```
+
+### Step 4 — Make the fault permanent and watch it escalate loudly
+
+```bash
+rm -f .attempts
+sed -i.bak 's/-lt 2/-lt 99/' agent-step.sh    # now it always fails
+./run-agent.sh; echo "exit=$?"
+```
+
+Expected — the retries exhaust, a `needs-human` issue is filed (by the stub), and the run ends **red**:
+
+```text
+tool error: transient failure (call 1)
+Attempt 1 failed; retrying after backoff…
+tool error: transient failure (call 2)
+Attempt 2 failed; retrying after backoff…
+tool error: transient failure (call 3)
+::error::Agent failed after 3 attempts — escalating to a human.
+[stub gh] would run: issue create --title Agent run failed: … --label needs-human …
+exit=1
+```
+
+That `exit=1` is the whole lesson: the dragon only lives where a failed run can report green. Now break the wrapper on purpose — delete the `exit 1` line and re-run — and watch the run end `exit=0` while the tool never succeeded. You have reproduced the Silent CI Failure and can name the one line that kills it.
+
+### Step 5 — Take it to the real forge (optional)
+
+Swap the stub for reality: commit `run-agent.sh` and `agent-step.sh` to a scratch repo, wrap them in the CI workflow from Chapter 3, and confirm the Actions run goes red with a real `needs-human` issue filed by the real `gh`. The scripts do not change — only the bench does.
+
 ## ⚔️ The Quests of This Domain
 
 This chapter is the field guide; the four quests below are the forge where you swing the hammer. Walk them in order — they ascend Domain 2's sub-skills 2.1 → 2.4.
@@ -393,6 +473,7 @@ The agent now holds its weapons and stands inside the realm's walls — but it h
 - [Copilot coding agent — GitHub Docs](https://docs.github.com/en/copilot/using-github-copilot/coding-agent) — the asynchronous, PR-opening agent
 - [Controlling permissions for `GITHUB_TOKEN`](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) — the least-privilege `permissions:` block
 - [Using environments for deployment — GitHub Docs](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) — environment protection rules and required reviewers
+- 🏰 **In the wild (this repo):** [`.vscode/mcp.json`](https://github.com/bamr87/it-journey/blob/main/.vscode/mcp.json) (editor MCP, prompt-supplied token), [`scripts/ai/mcp/github-readonly.json`](https://github.com/bamr87/it-journey/blob/main/scripts/ai/mcp/github-readonly.json) (runner MCP + allow-list convention), and the least-privilege `permissions:` blocks in every workflow. Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

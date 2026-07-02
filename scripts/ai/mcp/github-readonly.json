@@ -1,0 +1,12 @@
+{
+  "_comment": "GH-600 Domain 2 implemented for this repo: a declared MCP server with the token supplied from the environment (never committed). Pass to the universal runner with `scripts/ai/run.sh --mcp scripts/ai/mcp/github-readonly.json`. The ALLOW-LIST lives at the runner call site: pair this file with `--tools 'mcp__github__get_issue,mcp__github__get_pull_request,mcp__github__list_pull_requests'` so the agent may call only the read tools its task needs — omission is denial. Taught by /quests/1000/agentic-codex-02-tool-use-and-environment/.",
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_MCP_TOKEN}"
+      }
+    }
+  }
+}

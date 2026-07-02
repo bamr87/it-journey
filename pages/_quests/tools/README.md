@@ -141,8 +141,10 @@ Master Git workflows specifically for Django projects. Learn migration managemen
 
 ### 👑 Epic Adventures
 
-#### [Epic Quest: Zer0 to Her0 CMStyle](epic-quest-zer0-to-her0-cmstyle.md)
-**Quest Type**: Epic 👑 | **Difficulty**: ⚔️ Epic | **Estimated Time**: 4+ hours
+#### [Epic Quest: Zer0 to Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/)
+**Quest Type**: Epic 👑 | **Difficulty**: ⚔️ Epic | **Estimated Time**: 15-25 hours
+
+> 🏰 This epic now lives in [the Codex](/quests/codex/) with the realm's other campaign hubs.
 
 The ultimate journey from complete beginner to configuration management hero. A multi-session quest covering environment setup, version control, CI/CD pipelines, and documentation.
 
@@ -168,7 +170,7 @@ The ultimate journey from complete beginner to configuration management hero. A 
 3. [Planting Seeds: Software Evolution](planting-seeds.md)
 
 ### For the Complete Journey
-1. [Epic Quest: Zer0 to Her0 CMStyle](epic-quest-zer0-to-her0-cmstyle.md) - Start here for the full experience!
+1. [Epic Quest: Zer0 to Her0 CMStyle](/quests/codex/zer0-to-her0-cmstyle/) - Start here for the full experience!
 
 ## Collection Integration
 

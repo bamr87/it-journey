@@ -1,0 +1,106 @@
+# =============================================================================
+# _data/agents/registry.yml — the fleet roster (GH-600 Domain 5: lifecycle)
+# -----------------------------------------------------------------------------
+# The machine-readable source of truth for every AI agent operating on this
+# repository. Provisioning = add a row; deprecation = flip `status` to
+# `deprecated` (it still runs, no new dependencies on it); retirement = flip to
+# `retired` (its workflow gate stays OFF). Past runs stay auditable because
+# workflow logs and PR history outlive the roster row.
+#
+# HAND-MAINTAINED (not generated). The weekly agent-audit.yml fleet audit
+# checks this roster against .claude/agents/*.md and the workflow gates —
+# a row without a definition file, or a definition without a row, is drift.
+#
+# status: active | deprecated | retired
+# lane:   read-only (never edits content) | content-write (edits via gated PRs)
+# Taught by: /quests/1011/agentic-codex-05-multi-agent-coordination/
+# =============================================================================
+- name: agent-auditor
+  definition: .claude/agents/agent-auditor.md
+  workflow: .github/workflows/agent-audit.yml
+  role: Weekly drift audit of the fleet itself — keeps agents/skills/workflows accurate and least-privilege
+  lane: content-write
+  kill_switch: AGENT_AUDIT_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: content-curator
+  definition: .claude/agents/content-curator.md
+  workflow: .github/workflows/content-factory.yml
+  role: Improves ONE page per collection from the .cms worklist, opens one gated auto:content PR
+  lane: content-write
+  kill_switch: CONTENT_FACTORY_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: content-reviewer
+  definition: .claude/agents/content-reviewer.md
+  workflow: .github/workflows/content-review.yml
+  role: Editorial pass on content PRs — small on-brand fixes to the branch, bigger ideas as comments
+  lane: content-write
+  kill_switch: CONTENT_REVIEW_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: issue-triager
+  definition: .claude/agents/issue-triager.md
+  workflow: .github/workflows/issue-autopilot.yml
+  role: Analyzes open issues into PR-sized batches — comments and labels only; a gated step does any closing
+  lane: read-only
+  kill_switch: ISSUE_AUTOPILOT_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: issue-resolver
+  definition: .claude/agents/issue-resolver.md
+  workflow: .github/workflows/issue-autopilot.yml
+  role: Resolves ONE triaged batch into one grouped auto:issue PR
+  lane: content-write
+  kill_switch: ISSUE_RESOLVE_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: quest-forge
+  definition: .claude/agents/quest-forge.md
+  workflow: .github/workflows/quest-forge.yml
+  role: Turns an epic-quest proposal issue into a validated campaign in pages/_quests/codex/ — one auto:quest PR
+  lane: content-write
+  kill_switch: QUEST_FORGE_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: quest-walker
+  definition: .claude/agents/quest-walker.md
+  workflow: .github/workflows/quest-walkthrough.yml
+  role: Plays one (character, level) quest slice end-to-end as a learner — evidence report PR, read-only over content
+  lane: read-only
+  kill_switch: QUEST_WALKTHROUGH_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: quest-fixer
+  definition: .claude/agents/quest-fixer.md
+  workflow: .github/workflows/quest-fix.yml
+  role: Repairs ONLY a walkthrough's verified issues under a deterministic keep/revert gate — never grades its own work
+  lane: content-write
+  kill_switch: QUEST_FIX_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01
+
+- name: theme-scout
+  definition: .claude/agents/theme-scout.md
+  workflow: .github/workflows/theme-scout.yml
+  role: Frontend canary — classifies theme-vs-content defects and files theme issues upstream; never fixes
+  lane: read-only
+  kill_switch: THEME_SCOUT_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01

@@ -28,6 +28,12 @@ actually is, and you open one tightening PR only when they don't.
    - **Least privilege** — does each agent's `tools:` list match what its role needs?
      Flag any agent that can do more than its job (e.g. an editor that doesn't need
      `Write` to infra).
+   - **Policy surface** — does `_data/agents/registry.yml` still match reality
+     (a roster row per `.claude/agents/*.md` definition and vice versa; each row's
+     workflow, lane, and `*_ENABLED` kill switch correct), and do the guardrails
+     named in `_data/agents/autonomy-matrix.yml` and the Warden Pact in `AGENTS.md`
+     still exist as described? A row without a definition, a definition without a
+     row, or a named guardrail that no longer exists is drift to report.
    - **Completeness** — every agent referenced by a workflow exists; every skill an
      agent delegates to exists.
 3. **Apply the smallest edits** that fix real drift — correct a stale path, align a

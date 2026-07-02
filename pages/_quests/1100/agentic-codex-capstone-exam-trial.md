@@ -40,7 +40,7 @@ keywords:
   - GitHub Copilot certification
   - agentic codex master
   - all domains review
-lastmod: '2026-05-17T00:00:00.000Z'
+lastmod: '2026-07-01T00:00:00.000Z'
 permalink: /quests/1100/agentic-codex-capstone-exam-trial/
 quest_dependencies:
   required_quests:
@@ -76,7 +76,7 @@ rewards:
 prerequisites:
   knowledge_requirements:
   - ALL 19 prerequisite quests completed (see required_quests above)
-  - Review the skills-measured page at /docs/certifications/gh-600/skills-measured/
+  - Review the skills-measured page at /notes/gh-600/skills-measured/
   system_requirements:
   - GitHub repository with Copilot, Actions, and Environments fully configured
   - All tools and workflows from prior quests present and operational
@@ -117,7 +117,9 @@ graph TD
     style D6 fill:#4CAF50,stroke:#2E7D32,color:#fff
 ```
 
-## 🎯 Capstone Objectives
+## 🎯 Quest Objectives
+
+*Six seals, six domains — break them all to claim the trial:*
 
 - [ ] **Seal 1 (Domain 1 — 18%)**: Implement agent-in-SDLC and define boundaries
 - [ ] **Seal 2 (Domain 2 — 18%)**: Configure tools, permissions, MCP, environment integration
@@ -136,6 +138,8 @@ graph TD
 
 The following 6 chapters map directly to the GH-600 exam domains.
 
+> 🏰 **A worked answer key exists.** The IT-Journey repository itself implements every seal below — its AI fleet, kill switches, autonomy matrix, drift guard, and audit trails are mapped file-by-file in [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/). Consult it when you are stuck, the way you would check a solved example — but the trial wants *your* build, in *your* repository.
+
 ---
 
 ## ⚔️ Seal 1: The Agentic SDLC (Domain 1 — 18%)
@@ -149,16 +153,6 @@ The following 6 chapters map directly to the GH-600 exam domains.
 ```markdown
 <!-- work/gh-600/capstone/sdlc-diagram.md -->
 # Our Agentic SDLC
-
-## 🎯 Quest Objectives
-
-By the end of this quest, you will be able to:
-
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
-
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 ## Agent Integration Points
 
@@ -176,8 +170,9 @@ By the end of this quest, you will be able to:
 
 ### Challenge 1.2: Demonstrate planning vs. action separation
 
-> **Task:** Show a GitHub Actions workflow that separates the plan step from the execute step with a mandatory break between them.
+> **Task:** Show a GitHub Actions workflow that separates the plan step from the execute step with a mandatory break between them. (The `raw`/`endraw` tags below are this site's Liquid escapes — drop them when you copy the YAML into your own `.github/workflows/`.)
 
+{% raw %}
 ```yaml
 # .github/workflows/plan-then-execute.yml
 name: Plan-Then-Execute (Sealed Capstone)
@@ -191,7 +186,7 @@ jobs:
     if: contains(github.event.label.name, 'agent-implement')
     runs-on: ubuntu-latest
     outputs:
-      plan_approved: ${% raw %}{{ steps.plan.outputs.approved }}{% endraw %}
+      plan_approved: ${{ steps.plan.outputs.approved }}
     steps:
       - name: Generate plan
         id: plan
@@ -219,6 +214,7 @@ jobs:
       - name: Execute approved plan
         run: echo "Executing plan after human approval..."
 ```
+{% endraw %}
 
 ### Challenge 1.3: Configure an observability workflow
 
@@ -446,19 +442,50 @@ After completing all 6 seals, publish your reflection:
 
 ## ✅ Capstone Validation
 
+The trial ends the way every domain taught you to end: with a **machine-verifiable verdict**, not a feeling. Create this script in your capstone repository and make it pass — it checks that every seal left its artifact behind:
+
 ```bash
-# Validate all 20 quests in the arc
-python3 test/quest-validator/quest_validator.py -d pages/_quests/
+cat > validate-capstone.sh <<'EOF'
+#!/usr/bin/env bash
+# validate-capstone.sh — each seal must have left its artifact behind
+set -uo pipefail
+fails=0
+seal() {  # description, test-command...
+  local desc="$1"; shift
+  if "$@" >/dev/null 2>&1; then echo "✅ $desc"
+  else echo "❌ $desc"; fails=$((fails + 1)); fi
+}
 
-# Check all 6 seals are present
-python3 work/gh-600/scripts/validate_capstone.py \
-  --registry _data/agents.yml \
-  --matrix _data/autonomy-matrix.yml \
-  --reflection work/gh-600/capstone/grand-reflection.md
+# Seal 1 — SDLC design + plan/act separation
+seal "S1: SDLC diagram exists"            test -s work/gh-600/capstone/sdlc-diagram.md
+seal "S1: plan-then-execute workflow"     grep -ql "environment:" .github/workflows/plan-then-execute.yml
+# Seal 2 — tools, permissions, MCP
+seal "S2: least-privilege permissions"    grep -ql "pull-requests: write" .github/workflows/plan-then-execute.yml
+seal "S2: MCP server configured"          test -s .vscode/mcp.json
+# Seal 3 — memory + drift
+seal "S3: persistent memory committed"    sh -c 'git log --oneline -- .agent/memory/ | grep -q .'
+seal "S3: drift guard present"            test -x scripts/drift-guard.sh
+# Seal 4 — evaluation
+seal "S4: acceptance criteria schema"     jq -e '.criteria | length >= 3' work/gh-600/capstone/acceptance-criteria.json
+seal "S4: RCA document written"           grep -qil "5-why" forensics/*.md
+# Seal 5 — multi-agent
+seal "S5: agent registry (>= 3 agents)"   test "$(grep -c '^- name:' _data/agents.yml)" -ge 3
+seal "S5: orchestration workflow"         grep -ql "needs:" .github/workflows/council-fanout.yml
+# Seal 6 — governance
+seal "S6: autonomy matrix"                test -s _data/autonomy-matrix.yml
+seal "S6: CODEOWNERS boundary"            test -s .github/CODEOWNERS
+seal "S6: forbidden actions in AGENTS.md" grep -qi "forbidden" AGENTS.md
+# The reflection
+seal "🪞 Grand reflection published"      test -s work/gh-600/capstone/grand-reflection.md
 
-# Build site
-docker-compose exec jekyll bundle exec jekyll build
+echo
+[ "$fails" -eq 0 ] && echo "🏆 All seals hold — the trial is complete." \
+                   || { echo "⚔️  $fails seal(s) unbroken — return to the domain and finish the work."; exit 1; }
+EOF
+chmod +x validate-capstone.sh && ./validate-capstone.sh
 ```
+
+Adjust paths to match where your trial actually put each artifact — the script encodes the *contract* (every seal leaves evidence), not a sacred directory layout. A capstone whose validator passes on the first try was written after the artifacts; one that fails a few times first was written honestly.
 
 ---
 
