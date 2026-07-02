@@ -135,6 +135,7 @@ The single most useful mental model in Domain 3 is the **three-tier vault**. Eac
 {% raw %}
 ```yaml
 # Tier 1 — ephemeral: a value passed step-to-step inside ONE job
+# (steps-only excerpt — drop these into an existing job, not a bare file)
 - name: Compute a plan id
   id: plan
   run: echo "plan_id=plan-$(date +%s)" >> "$GITHUB_OUTPUT"
@@ -212,6 +213,7 @@ For **Tier 3**, the agent must write memory that outlives the run. The pattern i
 {% raw %}
 ```yaml
 # Tier 3 — persistent: commit a memory file so the NEXT run remembers
+# (excerpt — add your own `name:` and `on:` to make it a complete workflow)
 permissions:
   contents: write
 jobs:
@@ -231,7 +233,7 @@ jobs:
           git config user.email "agent@users.noreply.github.com"
           git add .agent/memory/task-register.jsonl
           git commit -m "chore(memory): record run ${{ github.run_id }}" || echo "nothing to record"
-          git push
+          git push origin HEAD:${{ github.ref_name }}   # explicit ref — survives a detached-HEAD checkout
 ```
 {% endraw %}
 
@@ -396,9 +398,33 @@ Expected: `local-1 → completed` — the next run resumes instead of repeating.
 
 ### Step 4 — The drift guard catches a moved world
 
-Save the `drift-guard.sh` script from Chapter 3 above into `scripts/drift-guard.sh` (`chmod +x` it), then:
+Forge the lab's own guard — the same shape as the Chapter 3 script, with the `WATCH` array correct for this realm *by construction* (the chapter version watches `_config.yml`, which this lab doesn't have):
 
 ```bash
+cat > scripts/drift-guard.sh <<'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+SNAP=".agent/snapshot.sha256"
+WATCH=("README.md" ".agent/plan.json")
+
+snapshot() { mkdir -p "$(dirname "$SNAP")"; sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
+
+verify() {
+  if sha256sum -c "$SNAP" --quiet; then
+    echo "No drift — safe to act."
+  else
+    echo "::warning::Context drift detected — key files changed since snapshot."
+    exit 78
+  fi
+}
+
+case "${1:-verify}" in
+  snapshot) snapshot ;;
+  verify)   verify   ;;
+esac
+EOF
+chmod +x scripts/drift-guard.sh
+
 # Snapshot right after "planning"
 bash scripts/drift-guard.sh snapshot
 
@@ -424,11 +450,33 @@ exit=78
 
 *(The `FAILED`/`WARNING` lines come from `sha256sum -c` itself — `--quiet` silences the `OK` lines, not the failures — and then the guard adds its own warning and aborts.)*
 
-*(Adjust the `WATCH` array in the script to `("README.md" ".agent/plan.json")` for this lab — the realm has no `_config.yml`.)* The `exit=78` is your abort-before-acting signal: the plan was drawn against a world that no longer exists, and the guard refused to let the agent pretend otherwise.
+The `exit=78` is your abort-before-acting signal: the plan was drawn against a world that no longer exists, and the guard refused to let the agent pretend otherwise.
 
-### Step 5 — Prove you can place state in its tier
+### Step 5 — Carry intent across a surface boundary
 
-Close the lab with the placement drill from the Mastery Indicators. For each item, say the tier aloud before checking: a retry counter inside one job (*Tier 1 — ephemeral*), the plan crossing plan→act (*Tier 2 — artifact*), the task register (*Tier 3 — committed file*), a cached dependency graph (*Tier 3 — cache, non-authoritative*). If any answer surprised you, re-read Chapter 1's table — the exam will hand you exactly this drill.
+Sub-skill 3.3, practiced: the planning surface writes the handoff, and a consumer on a *different* surface — sharing no memory — recovers the intent and refuses a stale one:
+
+```bash
+# The planning surface writes its handoff (Tier 3 — committed, so it travels)
+jq -n --arg ts "$(date -u +%FT%TZ)" '{
+  schema: "context-handoff/v1", issue: 42,
+  intent: "add a drift-guard step to the nightly workflow",
+  decisions: ["watch README.md", "abort on drift"], handoff_at: $ts
+}' > .agent/context-handoff.json
+git add .agent/context-handoff.json && git commit -qm "chore(memory): handoff for issue 42"
+
+# The PR-side consumer, later: recover the intent, reject a handoff too old to trust
+jq -r '"intent: " + .intent' .agent/context-handoff.json
+age=$(( $(date -u +%s) - $(date -u -d "$(jq -r .handoff_at .agent/context-handoff.json)" +%s) ))
+[ "$age" -lt 86400 ] && echo "handoff fresh (${age}s old) — proceeding" \
+                     || echo "handoff stale — re-derive intent before acting"
+```
+
+Expected: the intent line, then `handoff fresh (Ns old) — proceeding`. The consumer never guessed — it read the same committed truth the planner wrote, and the timestamp gave it grounds to refuse a stale belief.
+
+### Step 6 — Prove you can place state in its tier
+
+Close the lab with the placement drill from the Mastery Indicators. For each item, say the tier aloud before checking: a retry counter inside one job (*Tier 1 — ephemeral*), the plan crossing plan→act (*Tier 2 — artifact*), the task register (*Tier 3 — committed file*), the handoff document (*Tier 3 — committed, timestamped*), a cached dependency graph (*Tier 3 — cache, non-authoritative*). If any answer surprised you, re-read Chapter 1's table — the exam will hand you exactly this drill.
 
 ## ⚔️ The Quests of This Domain
 
