@@ -38,6 +38,10 @@ is your only license to quote a PR number or commit hash.** Read issue comments 
 - **Voice:** run the **`brand-voice`** skill for the `quests` section and read
   `_data/brand/sections/quest.md` — the `quest-fantasy` profile (gamified,
   encouraging, emoji-rich; technical accuracy intact under the fantasy wrapper).
+- **Vocabulary:** `pages/_quests/codex/glossary.md` (`/quests/codex/glossary/`)
+  — the canonical fantasy↔technical lexicon. Take names from it; never mint a
+  synonym for a term it already names; a new coinage is added there first (same
+  PR), then used in the quest.
 
 ## 3. Plan the campaign (placement + manifest)
 
