@@ -1,0 +1,131 @@
+/* =============================================================================
+ * quest-idea-portal.css — styles for the Quest Idea Forge (/quests/ideas/).
+ * Dark-first (the site pins data-bs-theme="dark"); themed via --bs-* /
+ * --zer0-* tokens so it inherits the cosmic palette from user-overrides.css.
+ * Companion files: pages/quest-ideas.md + assets/js/quest-idea-portal.js.
+ * ========================================================================== */
+
+#quest-idea-portal .qip-hero .lead {
+  max-width: 46rem;
+}
+
+#quest-idea-portal .qip-step {
+  position: relative;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.75rem;
+  padding: 1rem 1rem 1rem 3.25rem;
+  background: rgba(124, 92, 255, 0.1); /* fallback where color-mix() is unsupported */
+  background: color-mix(in srgb, var(--bs-body-bg) 88%, var(--zer0-color-accent, #7c5cff) 12%);
+}
+
+#quest-idea-portal .qip-step-num {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: var(--zer0-color-accent, var(--bs-primary));
+  color: var(--bs-body-bg);
+}
+
+#quest-idea-portal .qip-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.75rem;
+  background: var(--bs-body-bg);
+}
+
+#quest-idea-portal .qip-suggest-btn {
+  margin-left: 0.5rem;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+}
+
+#quest-idea-portal .qip-progress {
+  height: 0.9rem;
+  border-radius: 0.45rem;
+}
+
+#quest-idea-portal .qip-checklist li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.15rem 0;
+  font-size: 0.875rem;
+}
+
+#quest-idea-portal .qip-checklist .qip-check-pts {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--bs-secondary-color);
+}
+
+#quest-idea-portal .qip-checklist .qip-done {
+  color: var(--bs-success);
+}
+
+#quest-idea-portal .qip-checklist .qip-todo {
+  color: var(--bs-secondary-color);
+}
+
+#quest-idea-portal .qip-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+#quest-idea-portal .qip-chip {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--bs-body-color);
+  font-size: 0.78rem;
+  padding: 0.1rem 0.65rem;
+  cursor: pointer;
+}
+
+#quest-idea-portal .qip-chip:hover {
+  border-color: var(--zer0-color-accent, var(--bs-primary));
+  color: var(--zer0-color-accent, var(--bs-primary));
+}
+
+#quest-idea-portal .qip-dupe {
+  border-left: 3px solid var(--bs-warning);
+  padding: 0.35rem 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  background: rgba(255, 193, 7, 0.08); /* fallback where color-mix() is unsupported */
+  background: color-mix(in srgb, var(--bs-body-bg) 92%, var(--bs-warning) 8%);
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+#quest-idea-portal .qip-dupe-none {
+  color: var(--bs-success);
+  font-size: 0.85rem;
+}
+
+#quest-idea-portal .qip-preview {
+  max-height: 22rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.25); /* fallback where color-mix() is unsupported */
+  background: color-mix(in srgb, var(--bs-body-bg) 85%, black 15%);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+@media (max-width: 575.98px) {
+  #quest-idea-portal .qip-step {
+    padding-left: 3rem;
+  }
+  #quest-idea-portal .qip-preview {
+    max-height: 14rem;
+  }
+}

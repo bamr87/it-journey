@@ -24,6 +24,7 @@ _data/ai.yml               # model + budget (claude-opus-4-8)
 | `content-quality.yml` | content PR | _(none — deterministic)_ | `brand_lint` gate; **spelling drift fails the check** | _(always on)_ |
 | `content-auto-merge.yml` | `auto:content` PR | _(none)_ | smuggle-guard (content-only) + checks green → squash-merge | `CONTENT_AUTOMERGE_ENABLED` |
 | `quest-forge.yml` | issue labeled `epic-quest`, `/forge-quest` comment, dispatch | `quest-forge` | reads an epic-quest **proposal issue**, collects it deterministically (`scripts/quest/forge_issue.py`), authors a full `epic_quest` hub + `bonus_quest` chapters in `pages/_quests/codex/`, validates (`make quest-audit`), opens one `auto:content`+`auto:quest` PR | `QUEST_FORGE_ENABLED` |
+| `quest-idea-intake.yml` | issue labeled `quest-idea` (the portal's issue form), `/refine` comment, dispatch | `idea-refiner` | reviews a **Quest Idea Forge** submission (portal: `/quests/ideas/`): deterministic floor first (`scripts/quest/idea_intake.py` — rubric score, spam flags, duplicate radar), then one review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label; never closes, never escalates — a human promotes a ready idea with the `epic-quest` label | `QUEST_IDEA_ENABLED` |
 | `agent-audit.yml` | weekly Mon 06:00 | `agent-auditor` | tightens the fleet for drift / least-privilege | `AGENT_AUDIT_ENABLED` |
 
 The **issue→quest** lane closes the loop with lifehacker.dev: its quest-forge hook
@@ -153,6 +154,13 @@ The whole fleet is **OFF by default** and idles silently until you do both:
    gh variable set AGENT_AUDIT_ENABLED       --body true --repo bamr87/it-journey
    # quest forge
    gh variable set QUEST_FORGE_ENABLED       --body true --repo bamr87/it-journey
+   # quest idea intake (the /quests/ideas/ portal's reviewer)
+   gh variable set QUEST_IDEA_ENABLED        --body true --repo bamr87/it-journey
+   # one-time: issue forms only apply labels that already exist, so create the
+   # trigger label BEFORE flipping the variable or early submissions go unreviewed
+   gh label create quest-idea --color F9D0C4 \
+     --description "Community quest idea from the Quest Idea Forge portal" \
+     --repo bamr87/it-journey
    # issue autopilot
    gh variable set ISSUE_AUTOPILOT_ENABLED   --body true --repo bamr87/it-journey
    gh variable set ISSUE_RESOLVE_ENABLED     --body true --repo bamr87/it-journey

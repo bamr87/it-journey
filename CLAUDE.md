@@ -66,6 +66,16 @@ map and setup.
   (`scripts/quest/forge_issue.py`) and authors a full `epic_quest` hub +
   `bonus_quest` chapters in `pages/_quests/codex/` → one `auto:quest` PR. Closes the
   loop with lifehacker.dev (its quest-forge hook files the proposal; this consumes it).
+- `quest-idea-intake.yml` (issue labeled `quest-idea` / `/refine` comment) — the
+  **Quest Idea Forge** lane. The portal page (`pages/quest-ideas.md`, permalink
+  `/quests/ideas/`) shapes a visitor's quest idea client-side (registry-driven
+  autocomplete, duplicate radar, readiness meter that gates the submit button) and
+  files it through the `quest-idea.yml` issue form; the `idea-refiner` agent then
+  reviews it — deterministic floor first (`scripts/quest/idea_intake.py`: rubric
+  score, spam flags, duplicate radar; the model can only lower its verdict) → one
+  review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label.
+  Never closes, never escalates; a human promotes a ready idea into quest-forge
+  by adding `epic-quest`.
 - `quest-walkthrough.yml` (daily) — the `quest-walker` agent picks one linked
   (character, level) quest slice via `scripts/quest/walkthrough_plan.py`, **plays it
   end-to-end in the runner sandbox as a learner** (reusing the
