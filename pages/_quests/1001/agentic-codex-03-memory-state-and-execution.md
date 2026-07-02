@@ -266,7 +266,7 @@ set -euo pipefail
 SNAP=".agent/snapshot.sha256"
 WATCH=("README.md" "_config.yml" ".agent/plan.json")
 
-snapshot() { sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
+snapshot() { mkdir -p "$(dirname "$SNAP")"; sha256sum "${WATCH[@]}" > "$SNAP"; echo "Snapshot taken."; }
 
 verify() {
   if sha256sum -c "$SNAP" --quiet; then
