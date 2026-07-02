@@ -435,6 +435,7 @@ The council convenes, traces its own work, and survives a fallen familiar. But a
 - [Storing and sharing workflow data with artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) — where the correlation-ID traces live
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) — the tool-integration standard agents share across a council
 - [GitHub Models](https://docs.github.com/en/github-models) — the Models API for reconciling agent outputs in the collector
+- 🏰 **In the wild (this repo):** [`_data/agents/registry.yml`](https://github.com/bamr87/it-journey/blob/main/_data/agents/registry.yml) is the living roster (nine agents, lanes, kill switches, review dates), [`quest-perfection.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/quest-perfection.yml) chains walk → fix per slice, and the weekly [`agent-audit.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/agent-audit.yml) is lifecycle management running on a schedule. Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

@@ -40,6 +40,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 
 | Workflow | Triggers | What it does |
 |---|---|---|
+| `agent-plan-then-act.yml` | dispatch (gated) | **The GH-600 reference pipeline.** A deterministic plan job → `agent-approval` Environment (required-reviewer human gate) → execute job with an artifact-carried plan, a `scripts/ai/drift-guard.sh` verify, a threaded correlation ID, and an audit artifact (instruction → action → outcome). Teaching-grade demo of the control plane the whole fleet shares; no model call, no auth needed. OFF behind `AGENT_DEMO_ENABLED`. Mapped in `/notes/gh-600/implemented-in-it-journey/`. |
 | `content-quality.yml` | PR on content | Deterministic brand lint (`scripts/ci/brand_lint.py`). **Spelling drift fails** the check; hype terms warn. No AI, no cost. |
 | `content-review.yml` | PR on content (gated) | `content-reviewer` agent editorial pass; applies small on-brand fixes, posts bigger ideas as comments. Never merges. |
 | `content-factory.yml` | daily 08:00 UTC (gated) | `content-curator` improves one page per collection from the `.cms` worklist → one `auto:content` PR each. |

@@ -492,6 +492,7 @@ The Warden stands her post; the gate holds. Every clause of the Pact is sworn �
 - [Controlling permissions for `GITHUB_TOKEN`](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) — least-privilege `permissions:` blocks
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) — the tool surface you scope and allow-list
 - [GitHub Models](https://docs.github.com/en/github-models) — summarize the audit ledger and reason over agent runs
+- 🏰 **In the wild (this repo):** [`_data/agents/autonomy-matrix.yml`](https://github.com/bamr87/it-journey/blob/main/_data/agents/autonomy-matrix.yml) classifies every recurring agent action L0–L4, [`.github/CODEOWNERS`](https://github.com/bamr87/it-journey/blob/main/.github/CODEOWNERS) holds the file-scope boundary, and the Warden Pact itself lives in [`AGENTS.md`](https://github.com/bamr87/it-journey/blob/main/AGENTS.md). Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

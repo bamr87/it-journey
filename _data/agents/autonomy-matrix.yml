@@ -1,0 +1,87 @@
+# =============================================================================
+# _data/agents/autonomy-matrix.yml — action → autonomy level (GH-600 Domain 6)
+# -----------------------------------------------------------------------------
+# Every recurring agent action on this repository, classified by the three
+# risk factors the Warden weighs — reversibility, blast radius, predictability —
+# and pinned to the autonomy ladder:
+#
+#   L0 manual · L1 assisted · L2 supervised · L3 monitored · L4 autonomous
+#
+# The rule: assign the HIGHEST level the risk profile allows, not one rung
+# higher. Each row names the guardrails that make its level safe; if a
+# guardrail is removed, the level must drop until it is restored.
+#
+# HAND-MAINTAINED policy, reviewed by the weekly agent-audit.yml fleet audit.
+# Taught by: /quests/1100/agentic-codex-06-guardrails-and-accountability/
+# =============================================================================
+- action: regenerate-quest-data
+  description: make quest-data — regenerate _data/quests/*, navigation, network from frontmatter
+  autonomy_level: L4
+  reversibility: high        # deterministic output of committed inputs; git revert restores
+  blast_radius: minimal
+  guardrails:
+    - quest-validation CI fails on stale or hand-edited generated data
+
+- action: open-content-improvement-pr
+  description: content-factory / issue-resolver / quest-forge propose content PRs
+  autonomy_level: L2
+  reversibility: high        # a PR is a proposal, not a change
+  blast_radius: low
+  guardrails:
+    - '*_ENABLED kill switch + Claude auth secret (OFF by default)'
+    - PR only — agents never push to main (AGENTS.md Warden Pact)
+    - brand-gate + frontmatter + quest-validation required checks
+
+- action: auto-merge-content-pr
+  description: content-auto-merge squash-merges a content-only PR when every check is green
+  autonomy_level: L3
+  reversibility: medium      # squash-merge is revertable, but it shipped
+  blast_radius: low
+  guardrails:
+    - classify_changes.py smuggle guard (content-only diff or no merge)
+    - deterministic brand_lint gate (spelling drift blocks)
+    - all required checks green; human can veto any open PR
+
+- action: fix-walked-quest
+  description: quest-fix repairs a walkthrough's verified issues and opens a fix PR
+  autonomy_level: L3
+  reversibility: high
+  blast_radius: low
+  guardrails:
+    - deterministic keep/revert gate — the model never grades its own work
+    - content-only add-paths; vendored (source_repo) files hard-fail
+    - ledger skip on stuck/needs_human slices
+
+- action: walkthrough-report
+  description: quest-walker plays a slice and publishes an evidence report
+  autonomy_level: L2
+  reversibility: high        # read-only over content; output is a report PR
+  blast_radius: minimal
+  guardrails:
+    - read-only lane; never edits quest content, never merges
+
+- action: close-stale-bot-issue
+  description: issue autopilot closes triaged stale bot-noise issues
+  autonomy_level: L3
+  reversibility: high        # closed issues reopen with one click
+  blast_radius: low
+  guardrails:
+    - triager only labels; a deterministic gated step (ISSUE_AUTOCLOSE_ENABLED) closes
+
+- action: edit-workflows-or-infra
+  description: any change under .github/workflows/, scripts/ci/, or agent definitions
+  autonomy_level: L0
+  reversibility: low         # a bad workflow can act before it is caught
+  blast_radius: high
+  guardrails:
+    - forbidden to the fleet (AGENTS.md Warden Pact)
+    - CODEOWNERS requires @bamr87 review on /.github/workflows/
+
+- action: modify-guardrails
+  description: CODEOWNERS, branch protection, secrets, kill-switch variables, this matrix
+  autonomy_level: L0
+  reversibility: low
+  blast_radius: high
+  guardrails:
+    - never the agent's call — humans only, by definition
+    - the audit trail (workflow logs + PR history) records any attempt

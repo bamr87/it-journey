@@ -147,6 +147,8 @@ The six chapters map one-to-one to the six GH-600 exam domains, with the same we
 
 > 🧪 **Every chapter ends at a workbench.** Each chapter closes with a hands-on lab you can run in minutes — most entirely on your own machine with `bash`, `jq`, and the `gh` CLI, no Copilot subscription required — so every domain's key pattern (the approval gate, the retry harness, the drift guard, the rubric grader, the council trace, the warden policy) is something you have actually watched work *and* watched fail.
 
+> 🏰 **The Codex is load-bearing here.** This very repository practices what the campaign preaches: an AI fleet drafts content, walks quests as a learner, repairs what it witnessed breaking, and audits itself — behind kill switches, deterministic gates, an autonomy matrix, and a human merge button. Every domain is mapped to its live artifact, file by file, in **[GH-600 in the Wild: Implemented in IT-Journey](/notes/gh-600/implemented-in-it-journey/)** — read the chapter, then read the running source.
+
 > 🏆 **Capstone gate.** The [Grand Capstone](/quests/1100/agentic-codex-capstone-exam-trial/) stands beyond Chapter VI. You cannot face the Trial of the Agentic Codex until all six domain seals are broken — it integrates every domain into a single working multi-agent system with observability, evaluation, and governance in place.
 
 ## 🌍 Choose Your Adventure Platform
@@ -348,6 +350,7 @@ The conceptual companion to the chapters lives in the **GH-600 reference notes**
 - [Exam Overview & Logistics](/notes/gh-600/exam-overview/) — scoring, scheduling, renewal
 - [Glossary](/notes/gh-600/glossary/) — agent, MCP, HITL, drift, autonomy, and more
 - [MCP Quick Reference](/notes/gh-600/mcp-quickref/) — server config, registries, allow-list syntax
+- [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/) — every domain mapped to the live artifact implementing it in this repository
 
 **Deeper study (in notes):**
 - [Skills Measured — Full Breakdown](/notes/gh-600/skills-measured/) — every sub-skill, domain by domain
