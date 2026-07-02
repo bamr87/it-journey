@@ -322,10 +322,12 @@ Now the **degree of autonomy** is a dial you control: the JSONL trail is the evi
 
 ```bash
 gh auth login                                  # skip if already authenticated
-gh repo create codex-rites-lab --private --clone
+gh repo create codex-rites-lab --public --clone
 cd codex-rites-lab
-mkdir -p .github/workflows scripts
+mkdir -p .github/workflows
 ```
+
+> ⚠️ **Why `--public`?** Environment protection rules (the required reviewer this lab hinges on) only work on **private** repos with a paid plan (Pro/Team/Enterprise). A public scratch repo gives every learner the gate for free — and it will hold nothing but this demo.
 
 ### Step 2 — Lay down the workflow
 
@@ -397,7 +399,9 @@ git add . && git commit -m "lab: plan-then-act pipeline"
 git branch -M main            # a fresh repo's branch name follows YOUR git config — pin it
 git push -u origin main
 gh workflow run plan-then-act.yml
-sleep 5 && gh run watch
+sleep 5
+run_id=$(gh run list --workflow=plan-then-act.yml -L1 --json databaseId -q '.[0].databaseId')
+gh run watch "$run_id"
 ```
 
 Expected: the `plan` job completes, then the run **pauses** — `gh run list` shows it `waiting`, and the run page says *"Review pending deployments: agent-approval"*. The agent planned; it cannot act. That pause **is** Rite Two working.
@@ -407,7 +411,6 @@ Expected: the `plan` job completes, then the run **pauses** — `gh run list` sh
 Approve the pending deployment on the run page (`gh run view --web`), then pull the evidence:
 
 ```bash
-run_id=$(gh run list --workflow=plan-then-act.yml -L1 --json databaseId -q '.[0].databaseId')
 gh run download "$run_id" --name agent-trace --dir /tmp/lab-trace
 cat /tmp/lab-trace/trace.jsonl
 ```

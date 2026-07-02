@@ -273,7 +273,7 @@ verify() {
     echo "No drift — safe to act."
   else
     echo "::warning::Context drift detected — key files changed since snapshot."
-    exit 78          # neutral/abort: stop before acting on a stale world
+    exit 78          # drift-abort: OUR convention — stop before acting on a stale world
   fi
 }
 
@@ -283,7 +283,7 @@ case "${1:-verify}" in
 esac
 ```
 
-Wire it into the run so the snapshot is taken right after planning and verified right before acting. The `exit 78` is GitHub Actions' neutral exit — a clean way to halt a step without marking a false hard failure, then hand control to a re-plan path or a human.
+Wire it into the run so the snapshot is taken right after planning and verified right before acting. A note on the `exit 78`: it is **this campaign's convention** for "halted on drift" — a distinct code so an orchestrator can tell *the world moved* from *the script broke* (`exit 1`). GitHub Actions itself treats **any** nonzero exit as a plain failure (the old "neutral" exit 78 died with the deprecated 2018 HCL-era Actions), so when the run must survive the halt and route to a re-plan instead of going red, absorb the exit with `continue-on-error` and branch on the step's outcome:
 
 {% raw %}
 ```yaml
@@ -291,7 +291,12 @@ Wire it into the run so the snapshot is taken right after planning and verified 
   run: bash scripts/drift-guard.sh snapshot
 # ... agent does long-running work, other commits may land ...
 - name: Verify before acting
+  id: drift
+  continue-on-error: true    # absorb the exit so WE choose what happens next
   run: bash scripts/drift-guard.sh verify
+- name: Route on drift — re-plan or escalate, never act
+  if: steps.drift.outcome == 'failure'
+  run: echo "::warning::World moved while we worked — re-planning instead of acting."
 ```
 {% endraw %}
 
@@ -349,6 +354,7 @@ This single document prevents the two failure modes named in the sub-skill. It p
 ```bash
 mkdir -p ~/codex-vaults-lab && cd ~/codex-vaults-lab
 git init -q && echo "# The Realm" > README.md
+git config user.name "Vault Keeper" && git config user.email "keeper@example.com"  # fresh machines need an identity to commit
 mkdir -p .agent/memory scripts
 git add . && git commit -qm "lab: the realm stands"
 ```
@@ -410,9 +416,13 @@ Expected:
 Snapshot taken.
 No drift — safe to act.
 exit=0
+README.md: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
 ::warning::Context drift detected — key files changed since snapshot.
 exit=78
 ```
+
+*(The `FAILED`/`WARNING` lines come from `sha256sum -c` itself — `--quiet` silences the `OK` lines, not the failures — and then the guard adds its own warning and aborts.)*
 
 *(Adjust the `WATCH` array in the script to `("README.md" ".agent/plan.json")` for this lab — the realm has no `_config.yml`.)* The `exit=78` is your abort-before-acting signal: the plan was drawn against a world that no longer exists, and the guard refused to let the agent pretend otherwise.
 
@@ -434,7 +444,7 @@ This chapter is the map of the Vaults; these three quests are the chambers you d
 
 - [ ] A `plan` job writes a structured plan and uploads it as an artifact; an `act` job downloads and executes against it (Tier 2 proven)
 - [ ] The workflow commits a `.agent/memory/` register that a *subsequent* run reads to avoid repeating completed work (Tier 3 proven)
-- [ ] `scripts/drift-guard.sh` snapshots key files after planning and halts the run with a neutral exit when they change before acting
+- [ ] `scripts/drift-guard.sh` snapshots key files after planning and aborts before acting (exit 78) when they change — absorbed with `continue-on-error` where the run must survive to re-plan
 - [ ] The agent writes a `context-handoff.json` on PR creation that the PR's Actions run reads to recover intent
 - [ ] You can hand any one of these four pieces of state to a peer and have them name its correct tier
 
