@@ -473,6 +473,7 @@ The agent now holds its weapons and stands inside the realm's walls — but it h
 - [Copilot coding agent — GitHub Docs](https://docs.github.com/en/copilot/using-github-copilot/coding-agent) — the asynchronous, PR-opening agent
 - [Controlling permissions for `GITHUB_TOKEN`](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) — the least-privilege `permissions:` block
 - [Using environments for deployment — GitHub Docs](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) — environment protection rules and required reviewers
+- 🏰 **In the wild (this repo):** [`.vscode/mcp.json`](https://github.com/bamr87/it-journey/blob/main/.vscode/mcp.json) (editor MCP, prompt-supplied token), [`scripts/ai/mcp/github-readonly.json`](https://github.com/bamr87/it-journey/blob/main/scripts/ai/mcp/github-readonly.json) (runner MCP + allow-list convention), and the least-privilege `permissions:` blocks in every workflow. Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

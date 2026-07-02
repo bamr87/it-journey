@@ -478,6 +478,7 @@ The vaults are carved and the world can no longer drift out from under your agen
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) — stateless tool surfaces that need explicit shared state
 - [GitHub Models](https://docs.github.com/en/github-models) — the reasoning engine behind cheap re-planning
 - [GH-600 Study Hub](/notes/gh-600/) — the campaign map: domains, weights, and the full quest line
+- 🏰 **In the wild (this repo):** [`scripts/ai/drift-guard.sh`](https://github.com/bamr87/it-journey/blob/main/scripts/ai/drift-guard.sh) is this chapter's drift detector in production, and the committed [`.quests/` ledger](https://github.com/bamr87/it-journey/blob/main/.quests/README.md) is Tier-3 memory the quest-perfection loop resumes from daily. Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

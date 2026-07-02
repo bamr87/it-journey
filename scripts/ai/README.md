@@ -194,3 +194,15 @@ Add the `needs-human` label to any PR or issue to force manual handling.
 - **Meta audit** — `agent-audit` keeps the agents/skills accurate to the repo.
 - **Kill switches** — every AI workflow gates on its `*_ENABLED` variable + auth,
   so the fleet is off until you opt in and stops the instant you unset a variable.
+- **Policy as data** — the fleet roster (`_data/agents/registry.yml`: lane, kill
+  switch, status, review date per agent) and the autonomy matrix
+  (`_data/agents/autonomy-matrix.yml`: recurring action → L0–L4 level + the
+  guardrails that justify it) are the machine-readable contract the weekly
+  audit checks reality against; the forbidden-actions Warden Pact lives in
+  `AGENTS.md`.
+- **Drift guard** — `scripts/ai/drift-guard.sh` snapshots watched files at plan
+  time and aborts (exit 78) before an agent acts on a world that changed while
+  it waited; `scripts/ai/mcp/` holds committed MCP server configs (tokens come
+  from the environment, allow-lists at the `run.sh --tools` call site). Both are
+  demonstrated end-to-end by `.github/workflows/agent-plan-then-act.yml` — the
+  GH-600 reference pipeline, mapped in `/notes/gh-600/implemented-in-it-journey/`.

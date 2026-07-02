@@ -1,0 +1,173 @@
+# =============================================================================
+# agent-plan-then-act.yml — the GH-600 reference pipeline, live in this repo
+# -----------------------------------------------------------------------------
+# The canonical plan-then-act pattern from The Agentic Codex, implemented as a
+# working workflow so learners (and the fleet) can watch every discipline hold:
+#
+#   D1 — planning is a separate job from acting; the execute job sits WAITING
+#        behind the `agent-approval` Environment until a human approves.
+#   D3 — the plan crosses the job boundary as an ARTIFACT (Tier-2 session
+#        memory), and a drift-guard snapshot aborts the act phase if the
+#        governance surface changed while the run waited (exit 78).
+#   D5 — a correlation ID minted in `plan` is threaded through job outputs,
+#        step summaries, trace lines, and artifact names, so the whole run
+#        reassembles into one auditable narrative.
+#   D6 — least-privilege by omission (`contents: read` is the ONLY grant), an
+#        Environment gate on the irreversible half, and an audit artifact
+#        recording instruction → action → outcome.
+#
+# The "agent" here is deliberately a deterministic stub (no model call, no
+# auth needed): the pipeline demonstrates the CONTROL PLANE the fleet's real
+# workflows share. Swap the stub step for `scripts/ai/run.sh` to make it live.
+#
+# OFF by default behind AGENT_DEMO_ENABLED (a repo variable). One-time setup:
+#   1. Settings → Environments → new environment `agent-approval` → add a
+#      required reviewer (yourself), or:
+#        gh api -X PUT repos/{owner}/{repo}/environments/agent-approval \
+#          --input <(echo '{"reviewers":[{"type":"User","id":<your-id>}]}')
+#   2. gh variable set AGENT_DEMO_ENABLED --body true --repo bamr87/it-journey
+# Until both exist this idles as a clean no-op (and without the environment's
+# required reviewer, the gate would not hold — create it FIRST).
+#
+# Taught by: /quests/0111/agentic-codex-01-agents-in-the-sdlc/ (whole pattern),
+#            /quests/1001/agentic-codex-03-memory-state-and-execution/ (memory),
+#            /quests/1011/agentic-codex-05-multi-agent-coordination/ (tracing),
+#            /quests/1100/agentic-codex-06-guardrails-and-accountability/ (gates).
+# Mapped in: /notes/gh-600/implemented-in-it-journey/
+# =============================================================================
+name: 🜂 Agent Plan-then-Act (GH-600 reference)
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'One-line task brief the plan is drawn for (the "instruction" of the audit record).'
+        required: false
+        default: 'Demonstrate the plan-then-act control plane end to end.'
+
+permissions:
+  contents: read   # least privilege by omission — this pipeline proposes, it never writes
+
+concurrency:
+  group: agent-plan-then-act
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    if: vars.AGENT_DEMO_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      cid: ${{ steps.mint.outputs.cid }}
+    env:
+      TASK: ${{ inputs.task }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Mint the correlation ID (D5 — one name for the whole run)
+        id: mint
+        run: echo "cid=codex-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+
+      - name: Produce the structured plan (no changes — planning only)
+        run: |
+          mkdir -p .agent
+          python3 - "$TASK" <<'PY'
+          import json, sys
+          json.dump({
+              "schema": "agent-plan/v1",
+              "task": sys.argv[1],
+              "inputs": ["repository at the pinned run SHA", "the task brief above"],
+              "tools_allowed": ["read_files"],
+              "steps": ["snapshot governance surface", "await human seal", "verify drift", "act"],
+              "success_criteria": ["execute job ran only after approval",
+                                    "drift guard verified before acting",
+                                    "audit artifact records instruction, action, outcome"],
+              "stop_conditions": ["approval rejected", "context drift detected"],
+          }, open(".agent/plan.json", "w"), indent=2)
+          PY
+          echo "Plan written:" && cat .agent/plan.json
+
+      - name: Snapshot the governance surface (D3 — the world the plan was drawn against)
+        run: |
+          DRIFT_SNAPSHOT=.agent/snapshot.sha256 scripts/ai/drift-guard.sh snapshot \
+            AGENTS.md .github/CODEOWNERS _data/agents/autonomy-matrix.yml _data/agents/registry.yml
+
+      - name: Emit the plan-phase trace (D5 — every action, one JSONL line)
+        env:
+          CID: ${{ steps.mint.outputs.cid }}
+        run: |
+          printf '{"cid":"%s","agent":"planner","event":"plan-ready","task":"%s"}\n' \
+            "$CID" "$(echo "$TASK" | tr '"' "'")" >> .agent/trace.jsonl
+          {
+            echo "### 🗺️ Plan ready — run \`$CID\`"
+            echo "- task: $TASK"
+            echo "- the execute job now WAITS for the \`agent-approval\` environment reviewer"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Hand the plan across the job boundary (D3 — Tier-2 session memory)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: agent-plan-${{ steps.mint.outputs.cid }}
+          path: .agent/
+
+  execute:
+    needs: plan
+    if: vars.AGENT_DEMO_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # D1/D6 — the human seal: this job does not start until a required reviewer
+    # on the `agent-approval` environment approves the pending deployment.
+    environment: agent-approval
+    env:
+      CID: ${{ needs.plan.outputs.cid }}
+    steps:
+      # Deliberately the LIVE branch tip, not the pinned run SHA: the approval
+      # wait is real time, and if a commit touched the governance surface while
+      # the run sat at the gate, the drift guard below must catch it.
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Recover the plan (the act phase knows ONLY what the artifact tells it)
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: agent-plan-${{ needs.plan.outputs.cid }}
+          path: .agent
+
+      - name: Verify the world has not drifted while we waited (D3 — abort before acting)
+        run: DRIFT_SNAPSHOT=.agent/snapshot.sha256 scripts/ai/drift-guard.sh verify
+
+      - name: Act on the approved plan (stub — swap for scripts/ai/run.sh to go live)
+        run: |
+          task="$(python3 -c 'import json;print(json.load(open(".agent/plan.json"))["task"])')"
+          echo "Executing approved plan for task: $task"
+          printf '{"cid":"%s","agent":"executor","event":"acted","result":"ok"}\n' \
+            "$CID" >> .agent/trace.jsonl
+
+      - name: Write the audit record (D6 — instruction, action, outcome)
+        run: |
+          python3 - "$CID" <<'PY'
+          import json, sys
+          plan = json.load(open(".agent/plan.json"))
+          json.dump({
+              "schema": "agent-audit/v1",
+              "cid": sys.argv[1],
+              "instruction": plan["task"],
+              "action": "executed the approved plan after the agent-approval gate",
+              "outcome": "ok",
+              "autonomy_level": "L1",
+              "policy": "_data/agents/autonomy-matrix.yml",
+          }, open(".agent/audit.json", "w"), indent=2)
+          PY
+          {
+            echo "### ✅ Acted after human approval — run \`$CID\`"
+            echo '- audit record and full trace attached as `agent-audit-*` artifact'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish the audit artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: agent-audit-${{ needs.plan.outputs.cid }}
+          path: |
+            .agent/audit.json
+            .agent/trace.jsonl

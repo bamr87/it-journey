@@ -138,6 +138,8 @@ graph TD
 
 The following 6 chapters map directly to the GH-600 exam domains.
 
+> 🏰 **A worked answer key exists.** The IT-Journey repository itself implements every seal below — its AI fleet, kill switches, autonomy matrix, drift guard, and audit trails are mapped file-by-file in [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/). Consult it when you are stuck, the way you would check a solved example — but the trial wants *your* build, in *your* repository.
+
 ---
 
 ## ⚔️ Seal 1: The Agentic SDLC (Domain 1 — 18%)

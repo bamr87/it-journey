@@ -31,6 +31,7 @@ Quick-reference materials for the **GH-600: Developing in Agentic AI Systems** c
 | [MCP Quick Reference](mcp-quickref/) | MCP server setup commands and configuration |
 | [Autonomy Levels Matrix](autonomy-levels-matrix/) | L0–L4 spectrum, task classification |
 | [Evaluation Signals Table](evaluation-signals-table/) | GitHub signals mapped to acceptance criteria types |
+| [GH-600 in the Wild](implemented-in-it-journey/) | Every domain mapped to the live artifact implementing it in this repository |
 | [Glossary](glossary/) | Key terms from all six domains |
 
 ## Hands-On Quest Arc

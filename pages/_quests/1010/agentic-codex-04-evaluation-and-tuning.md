@@ -533,6 +533,7 @@ You can now grade an agent, diagnose its failures, and reforge its mind. The nex
 - [GitHub Models](https://docs.github.com/en/github-models) — adding an LLM-as-judge signal for qualitative criteria
 - [Code scanning REST API](https://docs.github.com/en/rest/code-scanning) — reading the "no new alerts" signal
 - [Evaluation Signals Table (GH-600 notes)](/notes/gh-600/evaluation-signals-table/) — every Domain 4 signal and the API call that reads it
+- 🏰 **In the wild (this repo):** the quest-fix **deterministic keep/revert gate** ([`quest-fix.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/quest-fix.yml)) keeps an agent's edit only if tier-1 score + brand lint improved — the model never grades its own work; the RCA template and instruction changelog live in [`docs/agents/`](https://github.com/bamr87/it-journey/tree/main/docs/agents). Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 

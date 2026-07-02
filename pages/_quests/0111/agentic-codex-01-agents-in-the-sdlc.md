@@ -472,6 +472,7 @@ The familiars now know their bounds, wait at the gate, and leave footprints. Nex
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) — the tool-and-context standard you arm agents with in Chapter 2
 - [GitHub Actions: environments & required reviewers](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) — the human-approval gate behind plan-then-act
 - [Workflow commands: job summaries](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary) — `$GITHUB_STEP_SUMMARY` for inspectable agent traces
+- 🏰 **In the wild (this repo):** [`agent-plan-then-act.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/agent-plan-then-act.yml) is this chapter's pattern running for real — plan job, `agent-approval` gate, observable trace. Full domain map: [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/)
 
 ## 🕸️ Knowledge Graph
 
