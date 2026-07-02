@@ -25,10 +25,9 @@ quests. They want an adventure that still teaches a real, verifiable skill.
 `quest-fantasy` (see `../voice.md`). Second person, imperative, playful, heavily
 fantasy-framed ("wield", "spell", "rank up"). **Emoji are on-brand and are not
 policed for quests** — the fantasy framing (🎯 ⚔️ 🏆 🧙) is expected.
-Fantasy vocabulary comes from the
-[Codex Glossary](../../../pages/_quests/codex/glossary.md)
-(`/quests/codex/glossary/`) — the naming canon: no synonyms for terms it already
-names; new coinages land there first.
+Fantasy vocabulary comes from the [Codex Glossary](/quests/codex/glossary/) —
+the naming canon: no synonyms for terms it already names; new coinages land
+there first.
 
 ## Tone
 
