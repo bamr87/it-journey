@@ -30,6 +30,7 @@ permissions:
   pull-requests: write     # open + merge the PR
   checks: read             # read main's check-runs
   statuses: read           # read main's commit statuses
+  actions: read            # resolve this run's check_suite_id (self-exclusion)
 
 concurrency:
   group: sync-gh-pages
