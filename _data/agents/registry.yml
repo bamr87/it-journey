@@ -104,3 +104,13 @@
   owner: bamr87
   status: active
   review_date: 2026-10-01
+
+- name: idea-refiner
+  definition: .claude/agents/idea-refiner.md
+  workflow: .github/workflows/quest-idea-intake.yml
+  role: Reviews ONE portal-submitted quest idea — polishes, coaches, or declines via one comment + one idea:* label; deterministic manifest is its ceiling
+  lane: read-only
+  kill_switch: QUEST_IDEA_ENABLED
+  owner: bamr87
+  status: active
+  review_date: 2026-10-01

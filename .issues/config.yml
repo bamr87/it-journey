@@ -48,6 +48,17 @@ dispositions:
       automation into a single rolling issue / GitHub Discussion / dashboard
       instead of opening one fresh issue per period.
 
+  - id: quest-idea-lane
+    title: Quest Idea Forge submission — owned by the quest-idea-intake lane
+    match:
+      any_label: [quest-idea]
+    action: route-human
+    note: >-
+      Reviewed by the idea-refiner agent (quest-idea-intake.yml), which applies
+      an idea:ready / idea:needs-detail / idea:declined verdict. The autopilot
+      never batches or closes these; a human escalates a ready idea into the
+      quest forge with the epic-quest label.
+
   - id: epic
     title: Epic / tracking issue — decompose, never close
     match:

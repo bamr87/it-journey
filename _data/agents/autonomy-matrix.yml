@@ -85,3 +85,15 @@
   guardrails:
     - never the agent's call — humans only, by definition
     - the audit trail (workflow logs + PR history) records any attempt
+
+- action: review-quest-idea
+  description: idea-refiner reviews a portal-submitted quest-idea issue — one comment + one idea:* verdict label
+  autonomy_level: L3
+  reversibility: high        # labels and comments; one click undoes either
+  blast_radius: minimal
+  guardrails:
+    - QUEST_IDEA_ENABLED kill switch + Claude auth secret (OFF by default)
+    - deterministic ceiling — a plain-code post-step strips any verdict label more generous than idea_intake.py allows
+    - comment/label only — never closes; escalation to quest-forge stays human (epic-quest label)
+    - no file-edit tools; CI Bash limited to an explicit gh/python command allowlist (issue text is drive-by internet content)
+    - runs only on open issues; submitter /refine is blocked once idea:declined (maintainers can always /refine)

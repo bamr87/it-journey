@@ -36,6 +36,7 @@ Welcome, adventurer! 🎯 IT-Journey thrives on community collaboration. Whether
 ## 🎭 Types of Contributions
 
 ### 📝 Content Creation
+- **Propose a Quest**: Shape an idea in the [Quest Idea Forge](/quests/ideas/) — live duplicate radar and readiness scoring, then one-click submission for AI review
 - **Write Quests**: Create gamified learning experiences
 - **Develop Tutorials**: Build step-by-step guides and quickstart paths
 - **Improve Docs & Notes**: Expand the reference docs and curated cheatsheets
