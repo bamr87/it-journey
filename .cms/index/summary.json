@@ -1,75 +1,59 @@
 {
-  "generated_at": "2026-06-26T22:10:23.981140+00:00",
-  "total_files": 282,
-  "scored_files": 282,
-  "actionable_files": 241,
-  "avg_health": 96.6,
-  "avg_health_actionable": 96.0,
-  "total_mechanical_issues": 1,
-  "total_substantive_issues": 103,
-  "total_errors": 21,
+  "generated_at": "2026-07-03T10:00:34.819046+00:00",
+  "total_files": 267,
+  "scored_files": 267,
+  "actionable_files": 225,
+  "avg_health": 97.0,
+  "avg_health_actionable": 96.4,
+  "total_mechanical_issues": 0,
+  "total_substantive_issues": 51,
+  "total_errors": 11,
   "read_only_files": 0,
   "by_collection": {
     "about": {
-      "count": 16,
-      "scored": 16,
+      "count": 12,
+      "scored": 12,
       "mechanical": 0,
-      "substantive": 17,
-      "errors": 8,
-      "avg_health": 87.4
+      "substantive": 8,
+      "errors": 4,
+      "avg_health": 91.9
     },
-    "docs": {
+    "notes": {
       "count": 27,
       "scored": 27,
       "mechanical": 0,
-      "substantive": 25,
-      "errors": 4,
-      "avg_health": 95.3
-    },
-    "notes": {
-      "count": 16,
-      "scored": 16,
-      "mechanical": 1,
       "substantive": 12,
       "errors": 2,
-      "avg_health": 92.2
+      "avg_health": 95.0
     },
     "quests": {
-      "count": 204,
-      "scored": 204,
+      "count": 223,
+      "scored": 223,
       "mechanical": 0,
-      "substantive": 44,
-      "errors": 7,
-      "avg_health": 97.7
-    },
-    "quickstart": {
-      "count": 15,
-      "scored": 15,
-      "mechanical": 0,
-      "substantive": 0,
-      "errors": 0,
-      "avg_health": 100.0
+      "substantive": 25,
+      "errors": 5,
+      "avg_health": 97.6
     },
     "pages": {
-      "count": 4,
-      "scored": 4,
+      "count": 5,
+      "scored": 5,
       "mechanical": 0,
-      "substantive": 5,
+      "substantive": 6,
       "errors": 0,
-      "avg_health": 90.0
+      "avg_health": 91.0
     }
   },
   "freshness_distribution": {
-    "critical": 22,
-    "stale": 54,
-    "aging": 22,
+    "critical": 17,
     "fresh": 183,
+    "aging": 18,
+    "stale": 48,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 257,
-    "good_70_89": 21,
-    "fair_50_69": 4,
+    "excellent_90_100": 252,
+    "good_70_89": 12,
+    "fair_50_69": 3,
     "poor_0_49": 0
   }
 }

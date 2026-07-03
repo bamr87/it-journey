@@ -23,7 +23,6 @@ keywords:
 - tips
 - iTerm
 lastmod: '2025-01-17T02:11:14.000Z'
-permalink: null
 attachments: ''
 draft: draft
 ---
