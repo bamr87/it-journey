@@ -107,6 +107,7 @@ def parse_fields(body: str) -> Dict[str, str]:
     value instead of silently truncating everything after it.
     """
     fields: Dict[str, str] = {name: "" for name in FIELD_NAMES}
+    seen: set = set()
     current: Optional[str] = None
     buf: List[str] = []
     in_fence = False
@@ -117,9 +118,7 @@ def parse_fields(body: str) -> Dict[str, str]:
         value = "\n".join(buf).strip()
         if value.lower() == NO_RESPONSE:
             value = ""
-        # First occurrence wins; a duplicated heading never overwrites.
-        if not fields[current]:
-            fields[current] = value
+        fields[current] = value
 
     for line in body.splitlines():
         if FENCE_RE.match(line):
@@ -130,12 +129,15 @@ def parse_fields(body: str) -> Dict[str, str]:
         m = None if in_fence else HEADING_RE.match(line)
         if m:
             name = _field_for(m.group("label"))
-            if name is not None:
+            # First heading occurrence claims the field — a later duplicate is
+            # untrusted content, never a second chance to (over)write it.
+            if name is not None and name not in seen:
                 flush()
                 current = name
+                seen.add(name)
                 buf = []
             elif current is not None:
-                buf.append(line)   # user-written '###' inside a field value
+                buf.append(line)   # user-written or duplicated '###' inside a value
         elif current is not None:
             buf.append(line)
     flush()
@@ -262,9 +264,11 @@ def spam_flags(body: str, fields: Dict[str, str]) -> Dict[str, bool]:
 def load_network(path: Path) -> List[Dict]:
     try:
         with open(path, encoding="utf-8") as fh:
-            return json.load(fh).get("nodes", [])
+            data = json.load(fh)
     except (OSError, ValueError):
         return []
+    nodes = data.get("nodes") if isinstance(data, dict) else None
+    return [n for n in nodes if isinstance(n, dict)] if isinstance(nodes, list) else []
 
 
 def find_duplicates(title: str, summary: str, nodes: List[Dict], limit: int = 3) -> List[Dict]:
@@ -272,11 +276,12 @@ def find_duplicates(title: str, summary: str, nodes: List[Dict], limit: int = 3)
     probe = f"{title} {summary[:160]}".lower()
     if not probe.strip():
         return []
+    title_lower = title.lower()
+    tokens_a = set(re.findall(r"[a-z0-9]{3,}", probe))
     scored = []
     for node in nodes:
         node_title = str(node.get("title") or "")
-        ratio = difflib.SequenceMatcher(None, title.lower(), node_title.lower()).ratio()
-        tokens_a = set(re.findall(r"[a-z0-9]{3,}", probe))
+        ratio = difflib.SequenceMatcher(None, title_lower, node_title.lower()).ratio()
         tokens_b = set(re.findall(r"[a-z0-9]{3,}", node_title.lower()))
         overlap = len(tokens_a & tokens_b) / len(tokens_b) if tokens_b else 0.0
         best = max(ratio, overlap)

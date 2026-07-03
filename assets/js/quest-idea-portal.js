@@ -75,6 +75,23 @@
   var LEVELS = ['0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111',
     '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'];
 
+  // Controlled-vocabulary validators mirrored from idea_intake.py — the meter
+  // must award enum points only for values the server would also accept.
+  var SKILL_FOCUS = ['frontend', 'backend', 'fullstack', 'devops', 'security',
+    'data-engineering', 'cloud', 'infrastructure', 'ai-ml'];
+
+  function validPath(raw) {
+    return SKILL_FOCUS.indexOf(raw.trim().toLowerCase()) !== -1;
+  }
+
+  function validLevel(raw) {
+    return /\b[01]{4}\b/.test(raw);
+  }
+
+  function validDifficulty(raw) {
+    return /easy|medium|hard|epic/i.test(raw);
+  }
+
   // --- helpers ---------------------------------------------------------------
 
   function debounce(fn, ms) {
@@ -158,9 +175,9 @@
       { id: 'why', label: 'Outcome / why it matters (40+ chars)', points: 15, earned: f.why.length >= 40 ? 15 : 0 },
       { id: 'objectives', label: 'At least 2 learning objectives', points: 15, earned: objectives.length >= 2 ? 15 : 0 },
       { id: 'objectives_depth', label: '3+ learning objectives', points: 5, earned: objectives.length >= 3 ? 5 : 0 },
-      { id: 'path', label: 'Character path chosen', points: 10, earned: f.path ? 10 : 0 },
-      { id: 'level', label: 'Binary level chosen', points: 5, earned: f.level ? 5 : 0 },
-      { id: 'difficulty', label: 'Difficulty chosen', points: 5, earned: f.difficulty ? 5 : 0 },
+      { id: 'path', label: 'Character path chosen', points: 10, earned: validPath(f.path) ? 10 : 0 },
+      { id: 'level', label: 'Binary level chosen', points: 5, earned: validLevel(f.level) ? 5 : 0 },
+      { id: 'difficulty', label: 'Difficulty chosen', points: 5, earned: validDifficulty(f.difficulty) ? 5 : 0 },
       { id: 'technologies', label: 'Tools / technologies named', points: 10, earned: techs.length ? 10 : 0 },
       { id: 'specificity', label: 'Concrete tools or code in the prose', points: 10, earned: specific ? 10 : 0 }
     ];

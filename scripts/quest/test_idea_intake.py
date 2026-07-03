@@ -84,6 +84,12 @@ class TestFieldParsing(unittest.TestCase):
         fields = intake.parse_fields(body)
         self.assertNotIn("spoofed", fields["summary"])
 
+    def test_duplicate_heading_never_fills_an_empty_field(self):
+        body = form_body(**{"What's the quest idea?": "_No response_"}) + \
+            "\n### What's the quest idea?\n\nspoofed into the empty slot\n"
+        fields = intake.parse_fields(body)
+        self.assertEqual(fields["summary"], "")
+
     def test_unknown_headings_ignored(self):
         body = "### Mystery field\n\nnoise\n\n" + form_body()
         fields = intake.parse_fields(body)
@@ -257,6 +263,18 @@ class TestDuplicateRadar(unittest.TestCase):
         manifest = intake.collect(form_body(), NO_NETWORK)
         self.assertEqual(manifest["duplicates"], [])
         self.assertEqual(manifest["stats"]["network_nodes"], 0)
+
+    def test_malformed_network_shapes_degrade(self):
+        for payload in ('[]', '"nodes"', '{"nodes": "oops"}', '{"nodes": [1, {"title": "ok"}]}'):
+            with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+                fh.write(payload)
+                path = Path(fh.name)
+            try:
+                nodes = intake.load_network(path)
+                self.assertIsInstance(nodes, list, payload)
+                self.assertTrue(all(isinstance(n, dict) for n in nodes), payload)
+            finally:
+                path.unlink()
 
 
 class TestIssueTitle(unittest.TestCase):

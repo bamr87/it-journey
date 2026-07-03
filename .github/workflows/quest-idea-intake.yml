@@ -231,10 +231,13 @@ jobs:
           labels = [l for l in json.loads(out.stdout) if l.startswith("idea:")]
 
           keep = [l for l in order if l in labels and l in allowed][:1]
-          if not keep:  # nothing valid applied — fall back to the manifest verdict
+          if not keep:
+              # Nothing valid applied — fall back to the manifest verdict. With
+              # no model judgment to soften it, spam_suspect defaults to the
+              # most conservative label (a human can always override).
               keep = [{"ready": "idea:ready",
                        "needs_detail": "idea:needs-detail",
-                       "spam_suspect": "idea:needs-detail"}[verdict]]
+                       "spam_suspect": "idea:declined"}[verdict]]
           drop = [l for l in labels if l not in keep]
 
           for label in drop:
