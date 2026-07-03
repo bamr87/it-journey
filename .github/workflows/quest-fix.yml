@@ -139,6 +139,12 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN }}
+          # checkout v7 persists credentials via an includeIf'd config file that
+          # create-pull-request v6 can't see — CPR then adds its own auth header
+          # and GitHub 400s the push with 'Duplicate header: Authorization'
+          # (the bug that broke the CMS daily loop). CPR authenticates itself
+          # from its `token:` input; this job has no raw `git push`.
+          persist-credentials: false
 
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:

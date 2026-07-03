@@ -62,8 +62,6 @@
     url: /quests/0000/vault/
   - title: '⚔️ Bashcrawl Workshop: File Management Fundamentals'
     url: /quests/0000/workshop/
-  - title: '⚔️ Codex Glossary: Fantasy Terms to IT Reality'
-    url: /quests/codex/glossary/
 - title: Level 0001 - Web Fundamentals
   icon: bi-feather
   url: /quests/0001/
