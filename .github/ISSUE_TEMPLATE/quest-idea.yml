@@ -1,0 +1,132 @@
+# =============================================================================
+# quest-idea.yml — the structured intake form for the Quest Idea Forge.
+# -----------------------------------------------------------------------------
+# The portal at https://it-journey.dev/quests/ideas/ prefills this form via URL
+# query parameters keyed on the field `id`s below, so KEEP IDS AND LABELS IN
+# SYNC with assets/js/quest-idea-portal.js and scripts/quest/idea_intake.py
+# (the deterministic collector parses the rendered `### <label>` headings).
+#
+# Issues filed with this form carry the `quest-idea` label, which (when
+# QUEST_IDEA_ENABLED is on) wakes .github/workflows/quest-idea-intake.yml:
+# the idea-refiner agent reviews the idea, comments, and applies one
+# idea:ready / idea:needs-detail / idea:declined verdict label.
+# =============================================================================
+name: "⚔️ Quest idea"
+description: "Propose a new IT-Journey quest. Best filed from the Quest Idea Forge, which helps you shape it first."
+title: "Quest idea: "
+labels: ["quest-idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for forging a quest idea! For live assistance — duplicate detection,
+        readiness scoring, and autocomplete — start from the
+        [Quest Idea Forge](https://it-journey.dev/quests/ideas/) instead of filling
+        this form raw. Either way, an AI reviewer will read your idea shortly after
+        you submit and reply with feedback or a polished proposal.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "What's the quest idea?"
+      description: "What will the learner build or do? Concrete beats grand — name the tools, the steps, the artifact they end up with."
+      placeholder: "Build a self-healing uptime monitor: a GitHub Actions cron pings your site, and on failure it opens an issue and rolls back the deploy..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why does it matter?"
+      description: "The payoff. What can the learner do afterwards that they couldn't before?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: objectives
+    attributes:
+      label: "Learning objectives"
+      description: "One per line. Start each with a verb — build, deploy, debug, automate..."
+      placeholder: |
+        - Schedule a GitHub Actions cron workflow
+        - Trigger a rollback from a workflow
+        - Open and label an incident issue automatically
+    validations:
+      required: true
+
+  - type: dropdown
+    id: path
+    attributes:
+      label: "Character path (skill focus)"
+      description: "Which learning path does this quest belong to?"
+      options:
+        - frontend
+        - backend
+        - fullstack
+        - devops
+        - security
+        - data-engineering
+        - cloud
+        - infrastructure
+        - ai-ml
+        - not sure
+      default: 9
+    validations:
+      required: false
+
+  - type: dropdown
+    id: level
+    attributes:
+      label: "Level (binary progression)"
+      description: "Where in the 0000 → 1111 journey does this fit? 0000 = absolute beginner, 1111 = mastery."
+      options:
+        - "0000"
+        - "0001"
+        - "0010"
+        - "0011"
+        - "0100"
+        - "0101"
+        - "0110"
+        - "0111"
+        - "1000"
+        - "1001"
+        - "1010"
+        - "1011"
+        - "1100"
+        - "1101"
+        - "1110"
+        - "1111"
+        - "not sure"
+      default: 16
+    validations:
+      required: false
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: "Difficulty"
+      options:
+        - "🟢 Easy"
+        - "🟡 Medium"
+        - "🔴 Hard"
+        - "⚔️ Epic"
+        - "not sure"
+      default: 4
+    validations:
+      required: false
+
+  - type: input
+    id: technologies
+    attributes:
+      label: "Tools & technologies"
+      description: "Comma-separated, e.g. github-actions, bash, docker"
+    validations:
+      required: false
+
+  - type: input
+    id: existing
+    attributes:
+      label: "Similar existing quests you checked"
+      description: "The Quest Idea Forge fills this in automatically from its duplicate radar."
+    validations:
+      required: false
