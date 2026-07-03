@@ -301,6 +301,10 @@ jobs:
               include.append({
                   "slug": slug,
                   "plan_file": pf,
+                  # Dash form of the slug for artifact + branch names: artifact
+                  # names reject '/', and it keeps branches consistent with the
+                  # fix lane's automated/quest-fix-<char>-<code>.
+                  "branch_slug": slug.replace("/", "-"),
                   # GitHub matrix values stringify booleans inconsistently; carry an
                   # explicit string the slice job compares as a string.
                   "open_new_fix_prs": "true" if open_new else "false",
@@ -468,7 +472,7 @@ jobs:
         with:
           token: ${{ secrets.AUTO_PR_GITHUB_TOKEN || secrets.PAT_TOKEN || github.token }}
           commit-message: "test(quests): quest walkthrough + ledger update [${{ matrix.slug }}]"
-          branch: automated/quest-perfection-${{ matrix.slug }}
+          branch: automated/quest-perfection-${{ matrix.branch_slug }}
           delete-branch: true
           add-paths: |
             test/quest-validator/walkthroughs/**
@@ -498,7 +502,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: quest-perfection-${{ matrix.slug }}
+          # branch_slug, not slug — artifact names reject '/'. The fix job below
+          # downloads this same artifact by name, so the two must stay in sync.
+          name: quest-perfection-${{ matrix.branch_slug }}
           path: |
             walk-plan.json
             walk-evidence.json
@@ -544,6 +550,15 @@ jobs:
     # short-circuiting is re-checked INSIDE quest-fix.yml (it reads the ledger before
     # editing), so a slice that became perfect during the walk still ships no fix PR.
     if: ${{ needs.plan.outputs.fix_count != '0' && needs.plan.outputs.fix_matrix != '' }}
+    # The caller job's permissions CAP every job in the called workflow, and GitHub
+    # validates that containment when assembling the workflow graph AT TRIGGER TIME.
+    # quest-fix.yml's `fix` job requests contents:write + pull-requests:write, so
+    # without this explicit grant the whole workflow (gate included) dies as a
+    # startup_failure before a single job runs — the workflow-level default here
+    # is contents:read.
+    permissions:
+      contents: write
+      pull-requests: write
     strategy:
       max-parallel: 1
       fail-fast: false
@@ -551,4 +566,11 @@ jobs:
     uses: ./.github/workflows/quest-fix.yml
     with:
       slug: ${{ matrix.slug }}
+      # Hand the walk's OWN plan + evidence (the slice job's artifact — both
+      # inputs name the same artifact) to the fix lane, so it repairs exactly
+      # what THIS run's walkthrough witnessed instead of re-deriving evidence
+      # with a second expensive agentic execute run. quest-fix still re-derives
+      # anything the artifact turns out not to contain.
+      plan_artifact: quest-perfection-${{ matrix.branch_slug }}
+      evidence_artifact: quest-perfection-${{ matrix.branch_slug }}
     secrets: inherit
