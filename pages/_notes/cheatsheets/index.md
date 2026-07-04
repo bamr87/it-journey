@@ -27,8 +27,8 @@ keywords:
   - markdown cheatsheet
 toc: true
 toc_sticky: true
+draft: false
 ---
-
 # 📑 Cheatsheets
 
 Fast, scannable reference cards for the tools you reach for every day. These are
