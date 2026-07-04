@@ -1,13 +1,14 @@
 # Quest Perfection — ledger dashboard
 
-_Generated 2026-07-03T11:06:49+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
+_Generated 2026-07-04T12:26:41+00:00. Source of truth: `.quests/ledger.json` (committed, generated)._
 
-**0/27** slices perfect · **1** walked · **0** stuck (needs human) · **0** open issue(s) outstanding
+**0/27** slices perfect · **2** walked · **0** stuck (needs human) · **0** open issue(s) outstanding
 
 ## Slices (worst-first)
 
 | Slice | Theme | Verdict | Avg | Open | Perfect | Stuck | Last run | Report |
 | --- | --- | :-: | --: | --: | :-: | :-: | --- | --- |
+| `game-developer/0001` | Web Fundamentals | ❓ — | — | 0 |  |  | 2026-07-04 | [run](https://github.com/bamr87/it-journey/actions/runs/28704852428) |
 | `developer/0000` | Foundation & Init World | ⚠️ warn | 87.6 | 0 |  |  | 2026-07-03 | [run](https://github.com/bamr87/it-journey/actions/runs/28656175477) |
 
 ## Per-character roll-up
@@ -19,7 +20,7 @@ _Generated 2026-07-03T11:06:49+00:00. Source of truth: `.quests/ledger.json` (co
 | `security-specialist` | 4 | 0 | 0 | 0 |
 | `data-scientist` | 4 | 0 | 0 | 0 |
 | `digital-artist` | 4 | 0 | 0 | 0 |
-| `game-developer` | 4 | 0 | 0 | 0 |
+| `game-developer` | 4 | 0 | 0 | 1 |
 
 ## Recently perfected
 
