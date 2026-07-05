@@ -148,17 +148,36 @@ jobs:
           set -euo pipefail
           mkdir -p plans
           # --all-paths is the daily default; an explicit `all_paths: false` dispatch
-          # narrows to a single priority slice. The planner emits one
-          # plans/walk-plan-<slug>.json per character and prints a JSON slug list.
-          paths_flag="--all-paths"
+          # narrows to a single priority slice. Either way this step must end with
+          # one plans/walk-plan-<char>-<code>.json per chosen slice AND a JSON slug
+          # list in plans/slugs.json. The planner only does that itself in
+          # --all-paths mode; its single-slice mode writes neither (it emits ONE
+          # plan document via --json), so that branch adapts the output here.
           if [ "${ALL_PATHS:-true}" = "false" ]; then
-            paths_flag=""
+            python3 scripts/quest/walkthrough_plan.py \
+              --priority --ledger .quests/ledger.json --json plans/single.json
+            python3 - <<'PY'
+          import json
+          from pathlib import Path
+          src = Path("plans/single.json")
+          p = json.loads(src.read_text(encoding="utf-8"))
+          slug = f"{p['character']['key']}/{p['level']['code']}"
+          dest = Path("plans") / f"walk-plan-{slug.replace('/', '-')}.json"
+          dest.write_text(json.dumps(p, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          src.unlink()
+          # An empty slice plans to an empty slug list (the matrix step also
+          # filters plan files with no quests — belt and braces).
+          slugs = [slug] if p.get("quests") else []
+          Path("plans/slugs.json").write_text(json.dumps(slugs) + "\n", encoding="utf-8")
+          print(f"single priority slice: {slug} ({len(p.get('quests') or [])} quest(s))")
+          PY
+          else
+            python3 scripts/quest/walkthrough_plan.py \
+              --all-paths --priority \
+              --ledger .quests/ledger.json \
+              --out-dir plans \
+              | tee plans/slugs.json
           fi
-          python3 scripts/quest/walkthrough_plan.py \
-            $paths_flag --priority \
-            --ledger .quests/ledger.json \
-            --out-dir plans \
-            | tee plans/slugs.json
           echo "--- plans/ ---"
           ls -1 plans/ || true
 
