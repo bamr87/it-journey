@@ -30,6 +30,9 @@ editing them — this session NEVER changes quest content.
 The curriculum slice is **chosen by data, never by you** — your job is to play what
 the planner selected, in the order it selected.
 
+**If `./walk-plan.json` already exists** (CI plans the slice in a prior workflow
+step), consume it as-is — do NOT re-plan, and NEVER edit it. Otherwise:
+
 ```bash
 python3 scripts/quest/walkthrough_plan.py \
   ${CHARACTER:+--character "$CHARACTER"} ${LEVEL:+--level "$LEVEL"} \
@@ -52,6 +55,16 @@ order. It sandboxes each quest in a disposable temp dir, runs its safe commands 
 real, and returns a schema-constrained verdict (per-dimension scores + the commands
 it actually ran + recommendations) — this is your **machine-checked evidence**, and
 it is why the environment stays controlled.
+
+**If `./walk-evidence.json` already exists, this step is DONE — skip to step 3.**
+In CI the workflow pre-computes it with a deterministic engine step, because the
+engine's child `claude` processes can only authenticate from the job env — Claude
+Code scrubs auth env vars from Bash-tool subprocesses, so an engine you launch
+yourself will auth-abort. Consume the file as-is and NEVER edit, regenerate, or
+hand-write `walk-plan.json` / `walk-evidence.*` — the workflow seals them before
+you run and restores them after, so a hand-written copy never reaches the ledger;
+it only destroys the session's honesty. If the evidence is missing and you cannot
+run the engine (no auth), **STOP and say so** — never substitute your own numbers.
 
 ```bash
 # Feed the planned quest paths, in order, to the execute-mode validator.
@@ -122,7 +135,7 @@ Structure (this IS the report contract — keep these sections):
    confidence. Honesty about coverage is mandatory.
 
 Append the machine evidence verbatim where useful by quoting from
-`/tmp/walk-evidence.md`. Keep the report self-contained: a maintainer reading only
+`./walk-evidence.md`. Keep the report self-contained: a maintainer reading only
 this file should know exactly what was walked, what worked, and what to fix.
 
 ## 5. Stop (one report, never a content edit)

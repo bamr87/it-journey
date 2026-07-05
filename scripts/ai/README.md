@@ -67,8 +67,13 @@ report (evidence, issues, reasoning) to `test/quest-validator/walkthroughs/`.
 
 | Workflow | Trigger | Agent | What it does | Gate variable |
 |---|---|---|---|---|
-| `quest-walkthrough.yml` | daily 10:00 UTC + dispatch | `quest-walker` | plays one linked (character, level) quest slice end-to-end in a sandbox, opens one report PR (`quest-walkthrough` label) for human review | `QUEST_WALKTHROUGH_ENABLED` |
+| `quest-walkthrough.yml` | dispatch only (the daily sweep is `quest-perfection.yml`) | `quest-walker` | plays one linked (character, level) quest slice end-to-end in a sandbox, opens one report PR (`quest-walkthrough` label) for human review | `QUEST_WALKTHROUGH_ENABLED` |
 
+The evidence is **workflow-minted**: a deterministic workflow step runs the agentic
+engine (its child `claude` processes authenticate from the job env — Claude Code
+scrubs auth env vars from Bash-tool subprocesses, so an engine launched inside an
+agent auth-aborts), seals `walk-plan.json`/`walk-evidence.*`, and restores them
+after the agent step, so the walker can only *consume* evidence, never write it.
 The procedure is the **`quest-walkthrough`** skill (plan → execute → walk the chain →
 one report); locally the same loop runs via `make quest-walkthrough`
 (`make quest-walkthrough-plan` previews the slice with no AI/cost). The agent is
@@ -88,9 +93,13 @@ level) slice is perfect. A daily orchestrator (`quest-perfection.yml`) fans out
 over all six character paths and, per path, picks the highest-priority
 not-yet-perfect slice from the committed ledger.
 
-- **Walk arm** — `quest-walkthrough.yml` plays the selected slice and emits its
-  evidence (`scripts/quest/ledger.py update` merges it and recomputes "perfect" —
-  which requires an honest `execute`-mode, non-truncated, fully-scored run).
+- **Walk arm** — the orchestrator's `slice` job plays each selected slice: a
+  deterministic engine step mints sealed evidence, the `quest-walker` agent writes
+  the session report, and a consolidated `report` job replays every slice into the
+  ledger (`scripts/quest/ledger.py update` recomputes "perfect" — which requires an
+  honest `execute`-mode, non-truncated, fully-scored run) and opens **ONE**
+  walkthrough+ledger PR per run (per-slice PRs would carry sibling ledger deltas
+  that conflict with each other).
 - **Fix arm** — `quest-fix.yml` runs the `quest-fix` agent over that slice's
   *verified* issues, keeping an edit **only** when a deterministic signal improves
   (tier-1 structural score holds/rises **and** `brand_lint` stays clean **and** no
