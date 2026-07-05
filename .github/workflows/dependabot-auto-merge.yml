@@ -37,18 +37,40 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Wait for checks, then merge
+      - name: Wait for checks (excluding self), then merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
+          RUN_ID: ${{ github.run_id }}
         run: |
-          # Block until every check on this PR finishes. --fail-fast exits non-zero
-          # the moment one fails, so a broken update is never merged.
-          if gh pr checks "$PR_URL" --watch --fail-fast --interval 30; then
-            gh pr merge "$PR_URL" --squash --delete-branch
-            echo "All checks green — merged ✅"
-          else
-            echo "A check failed — leaving the PR open for review."
-            gh pr edit "$PR_URL" --add-label "ci-failed" || true
-            exit 1
-          fi
+          set -euo pipefail
+          # `gh pr checks --watch` waits for EVERY check on the PR to finish —
+          # including THIS auto-merge job's own check, which stays "pending" for as
+          # long as it is doing the watching. That is a self-deadlock: the watch
+          # never returns, the job hits timeout-minutes (30), and the PR is left
+          # unmerged with a failed "auto-merge" check. Every Dependabot PR sat like
+          # this. Poll the checks ourselves and EXCLUDE our own run (its check link
+          # carries this run_id), so we wait only on the checks that can actually
+          # finish. A hard failure still stops the merge; only genuine greens merge.
+          deadline=$(( $(date +%s) + 25 * 60 ))
+          while :; do
+            rows=$(gh pr checks "$PR_URL" --json bucket,link \
+                     --jq '.[] | [.bucket, .link] | @tsv' 2>/dev/null || true)
+            others=$(printf '%s\n' "$rows" | grep -v "/${RUN_ID}/" || true)
+            if [ -z "$others" ]; then                 # only our own check so far
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "::error::no non-self checks appeared before timeout."; exit 1; }
+              sleep 30; continue
+            fi
+            if printf '%s\n' "$others" | awk -F'\t' '$1=="fail"{f=1} END{exit !f}'; then
+              echo "A check failed — leaving the PR open for review."
+              gh pr edit "$PR_URL" --add-label "ci-failed" || true
+              exit 1
+            fi
+            if printf '%s\n' "$others" | awk -F'\t' '$1=="pending"{p=1} END{exit !p}'; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "::error::timed out waiting for checks."; exit 1; }
+              sleep 30; continue
+            fi
+            break                                     # no fails, none pending → green
+          done
+          gh pr merge "$PR_URL" --squash --delete-branch
+          echo "All checks green — merged ✅"
