@@ -62,16 +62,37 @@ jobs:
             exit 1
           fi
 
-      - name: Wait for checks, then squash-merge
+      - name: Wait for checks (excluding self), then squash-merge
+        env:
+          RUN_ID: ${{ github.run_id }}
         run: |
-          # Block until every check on the PR finishes; --fail-fast stops the moment
-          # one fails, so a build/frontmatter/brand failure never merges. Green here
-          # already implies on-brand (content-quality.yml is one of those checks).
-          if gh pr checks "$PR" --watch --fail-fast --interval 30; then
-            gh pr merge "$PR" --squash --delete-branch
-            echo "All checks green + content-only — merged ✅"
-          else
-            echo "A check failed — leaving PR #$PR open for review."
-            gh pr edit "$PR" --add-label ci-failed || true
-            exit 1
-          fi
+          set -euo pipefail
+          # `gh pr checks --watch` waits for EVERY check to finish — including THIS
+          # job's own check, which stays "pending" while it watches: a self-deadlock
+          # that never returns and hits timeout-minutes, leaving the PR unmerged.
+          # Poll instead, EXCLUDING our own run (its check link carries this run_id),
+          # so we wait only on checks that can actually finish. A build/frontmatter/
+          # brand failure still stops the merge; green here already implies on-brand
+          # (content-quality.yml is one of those checks).
+          deadline=$(( $(date +%s) + 25 * 60 ))
+          while :; do
+            rows=$(gh pr checks "$PR" --json bucket,link \
+                     --jq '.[] | [.bucket, .link] | @tsv' 2>/dev/null || true)
+            others=$(printf '%s\n' "$rows" | grep -v "/${RUN_ID}/" || true)
+            if [ -z "$others" ]; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "::error::no non-self checks appeared before timeout."; exit 1; }
+              sleep 30; continue
+            fi
+            if printf '%s\n' "$others" | awk -F'\t' '$1=="fail"{f=1} END{exit !f}'; then
+              echo "A check failed — leaving PR #$PR open for review."
+              gh pr edit "$PR" --add-label ci-failed || true
+              exit 1
+            fi
+            if printf '%s\n' "$others" | awk -F'\t' '$1=="pending"{p=1} END{exit !p}'; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "::error::timed out waiting for checks."; exit 1; }
+              sleep 30; continue
+            fi
+            break
+          done
+          gh pr merge "$PR" --squash --delete-branch
+          echo "All checks green + content-only — merged ✅"
