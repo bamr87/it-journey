@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-03T11:06:49+00:00",
+  "generated": "2026-07-05T02:41:52+00:00",
   "totals": {
-    "slices": 1,
+    "slices": 2,
     "perfect": 0,
     "stuck": 0,
-    "open_issues": 0
+    "open_issues": 10
   },
   "slices": {
     "developer/0000": {
@@ -53,6 +53,54 @@
           "open_issues": 0,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/28656175477"
+        }
+      ]
+    },
+    "data-scientist/0011": {
+      "slug": "data-scientist/0011",
+      "character": "data-scientist",
+      "level": "0011",
+      "theme": "AI-Assisted Development",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "warn",
+      "average": 71.0,
+      "total": 3,
+      "scored": 2,
+      "requested": 3,
+      "errored": 1,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 2,
+        "fail": 1
+      },
+      "open_issues": 10,
+      "high_priority_issues": 3,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "scored 2/3; 1 errored; 1 fail; 2 warn; avg 71.0 < 95.0; 10 open issue(s); 3 high-priority",
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-05T02:41:52+00:00",
+      "last_run_date": "2026-07-05",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28726879271",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-05T02:41:52+00:00",
+          "date": "2026-07-05",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 71.0,
+          "open_issues": 10,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28726879271"
         }
       ]
     }
