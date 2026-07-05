@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-04T10:50:12+00:00",
+  "generated": "2026-07-05T20:09:29+00:00",
   "totals": {
-    "slices": 2,
+    "slices": 3,
     "perfect": 0,
     "stuck": 0,
-    "open_issues": 0
+    "open_issues": 6
   },
   "slices": {
     "developer/0000": {
@@ -101,6 +101,67 @@
           "open_issues": 0,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/28703664065"
+        }
+      ]
+    },
+    "data-scientist/0011": {
+      "slug": "data-scientist/0011",
+      "character": "data-scientist",
+      "level": "0011",
+      "theme": "AI-Assisted Development",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "warn",
+      "average": 61.0,
+      "total": 3,
+      "scored": 1,
+      "requested": 3,
+      "total_quests": 3,
+      "covered": 1,
+      "errored": 2,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 1,
+        "fail": 0
+      },
+      "open_issues": 6,
+      "high_priority_issues": 2,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 1/3; 1 warn; avg 61.0 < 95.0; 6 open issue(s); 2 high-priority",
+      "coverage": {
+        "pages/_quests/0011/github-pages-hidden-gem.md": {
+          "verdict": "warn",
+          "average": 61.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-05"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-05T20:09:29+00:00",
+      "last_run_date": "2026-07-05",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28752175815",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-05T20:09:29+00:00",
+          "date": "2026-07-05",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 61.0,
+          "open_issues": 6,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28752175815"
         }
       ]
     }
