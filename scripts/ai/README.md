@@ -93,6 +93,19 @@ level) slice is perfect. A daily orchestrator (`quest-perfection.yml`) fans out
 over all six character paths and, per path, picks the highest-priority
 not-yet-perfect slice from the committed ledger.
 
+**Rotating window (why a run stays bounded).** A level can hold 20–30 quests;
+walking them all in one run runs the engine for hours and exhausts the OAuth
+token's rate limit (the 2026-07-05 run auth-failed 5/6 slices doing exactly
+this). So the loop walks a **rotating window** of `caps.max_quests_per_slice`
+quests (`.quests/budget.yml`, default 5) per slice per run — `walkthrough_plan.py
+--window N`, rotated by date so following days sweep the rest. The ledger
+**accumulates per-quest coverage across runs** (`slice.coverage`, keyed by quest
+path) and certifies a slice `perfect` only once the *whole* level is covered,
+every quest execute-mode + passing, within a freshness window
+(`perfect.coverage_days`). A re-walk overwrites a quest's prior verdict, so a
+fix that flips fail→pass sticks; the circuit breaker only counts a fully-covered
+slice that stays imperfect (a mid-sweep run is progress, not a failed round).
+
 - **Walk arm** — the orchestrator's `slice` job plays each selected slice: a
   deterministic engine step mints sealed evidence, the `quest-walker` agent writes
   the session report, and a consolidated `report` job replays every slice into the

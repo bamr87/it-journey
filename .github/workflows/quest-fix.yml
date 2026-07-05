@@ -262,9 +262,15 @@ jobs:
         run: |
           set -euo pipefail
           if [ ! -s walk-plan.json ]; then
+            # Same rotating-window cap as the walk arm (budget.yml) so a re-derive
+            # fallback can't run the engine over the whole unbounded level and
+            # exhaust the token. Normally the orchestrator's artifact supplies the
+            # already-windowed plan and this branch never fires.
+            window=$(python3 -c "import yaml;print((yaml.safe_load(open('.quests/budget.yml')) or {}).get('caps',{}).get('max_quests_per_slice',5) or 0)" 2>/dev/null || echo 5)
             python3 scripts/quest/walkthrough_plan.py \
               --character "${{ steps.slice.outputs.character }}" \
               --level "${{ steps.slice.outputs.level }}" \
+              --window "$window" \
               --json walk-plan.json
           fi
           if [ ! -s walk-evidence.json ]; then

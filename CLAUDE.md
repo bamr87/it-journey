@@ -94,9 +94,14 @@ map and setup.
   opens a **separate** content-only fix PR per granted slice that repairs only that
   walkthrough's *verified* issues (kept solely on a deterministic signal — tier-1
   score + brand lint + sandbox commands — never the model's own grade) →
-  auto-merges when green → repeats "until perfect". A committed ledger + generated
-  dashboard in `.quests/` are the source of truth; staged kill switches
-  `QUEST_PERFECTION_ENABLED` (orchestrator) and `QUEST_FIX_ENABLED` (write lane).
+  auto-merges when green → repeats "until perfect". Each slice walks a **rotating
+  window** of `caps.max_quests_per_slice` quests (`.quests/budget.yml`, default 5)
+  via `walkthrough_plan.py --window` — a level holds 20–30 quests and walking them
+  all in one run exhausts the OAuth token's rate limit; the ledger accumulates
+  per-quest coverage across runs and only certifies `perfect` once the whole level
+  is swept + passing. A committed ledger + generated dashboard in `.quests/` are
+  the source of truth; staged kill switches `QUEST_PERFECTION_ENABLED`
+  (orchestrator) and `QUEST_FIX_ENABLED` (write lane).
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
 
 **OFF by default.** Each workflow gates on a `*_ENABLED` repo variable **and** the

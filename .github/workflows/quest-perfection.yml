@@ -147,6 +147,16 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p plans
+          # ROTATING WINDOW — cap each slice to caps.max_quests_per_slice quests per
+          # run (a level can hold 20-30; walking them all runs the engine for hours
+          # and exhausts the OAuth token). The planner rotates the window by --date,
+          # so following days sweep the rest; the ledger accumulates coverage. Pin
+          # the date so the slice job's re-derive reproduces THIS window exactly.
+          WINDOW=$(python3 -c "import yaml;print((yaml.safe_load(open('.quests/budget.yml')) or {}).get('caps',{}).get('max_quests_per_slice',5) or 0)")
+          PLAN_DATE=$(date -u +%F)
+          echo "window=$WINDOW" >> "$GITHUB_OUTPUT"
+          echo "plan_date=$PLAN_DATE" >> "$GITHUB_OUTPUT"
+          echo "quest window per slice: $WINDOW (date $PLAN_DATE)"
           # --all-paths is the daily default; an explicit `all_paths: false` dispatch
           # narrows to a single priority slice. Either way this step must end with
           # one plans/walk-plan-<char>-<code>.json per chosen slice AND a JSON slug
@@ -155,7 +165,8 @@ jobs:
           # plan document via --json), so that branch adapts the output here.
           if [ "${ALL_PATHS:-true}" = "false" ]; then
             python3 scripts/quest/walkthrough_plan.py \
-              --priority --ledger .quests/ledger.json --json plans/single.json
+              --priority --ledger .quests/ledger.json \
+              --window "$WINDOW" --date "$PLAN_DATE" --json plans/single.json
             python3 - <<'PY'
           import json
           from pathlib import Path
@@ -175,6 +186,7 @@ jobs:
             python3 scripts/quest/walkthrough_plan.py \
               --all-paths --priority \
               --ledger .quests/ledger.json \
+              --window "$WINDOW" --date "$PLAN_DATE" \
               --out-dir plans \
               | tee plans/slugs.json
           fi
@@ -200,6 +212,10 @@ jobs:
           echo "open auto:quest-fix PRs: $open_fix_prs"
           export OPEN_FIX_PRS="$open_fix_prs"
           export MAX_SLICES="${MAX_SLICES:-}"
+          # The window + pinned date the plan step used — carried into every matrix
+          # entry so the slice job re-derives the SAME rotating window.
+          export WINDOW="${{ steps.plan.outputs.window }}"
+          export PLAN_DATE="${{ steps.plan.outputs.plan_date }}"
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json, os, glob, re, sys
           from datetime import datetime, timezone, timedelta
@@ -335,6 +351,11 @@ jobs:
                   # names reject '/', and it keeps branches consistent with the
                   # fix lane's automated/quest-fix-<char>-<code>.
                   "branch_slug": slug.replace("/", "-"),
+                  # The rotating-window params the plan step used — the slice job
+                  # re-derives walk-plan.json with EXACTLY these so it walks the same
+                  # quests (not the whole unbounded level).
+                  "window": os.environ.get("WINDOW", "5"),
+                  "plan_date": os.environ.get("PLAN_DATE", ""),
                   # GitHub matrix values stringify booleans inconsistently; carry an
                   # explicit string the slice job compares as a string.
                   "open_new_fix_prs": "true" if open_new else "false",
@@ -382,6 +403,9 @@ jobs:
       SLUG: ${{ matrix.slug }}
       PLAN_FILE: ${{ matrix.plan_file }}
       OPEN_NEW_FIX_PRS: ${{ matrix.open_new_fix_prs }}
+      # The rotating-window params the plan step pinned — re-derive the SAME window.
+      WINDOW: ${{ matrix.window }}
+      PLAN_DATE: ${{ matrix.plan_date }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -404,8 +428,9 @@ jobs:
       # Re-derive this slice's plan deterministically so the log shows exactly
       # what will be walked and the rest of the job has a stable walk-plan.json.
       # The orchestrator's plan job emitted plans/walk-plan-<slug>.json; this run
-      # re-plans the same slice from the same data, fail-fast if the slice is now
-      # empty/broken.
+      # re-plans the same slice with the SAME rotating window + pinned date, so it
+      # walks exactly that window (NOT the whole unbounded level), fail-fast if the
+      # slice is now empty/broken.
       - name: Materialize this slice's plan
         id: plan
         run: |
@@ -415,11 +440,25 @@ jobs:
           level="${SLUG##*/}"
           python3 scripts/quest/walkthrough_plan.py \
             --character "$character" --level "$level" \
+            --window "${WINDOW:-5}" ${PLAN_DATE:+--date "$PLAN_DATE"} \
             --json walk-plan.json
-          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          # empty=... goes to $GITHUB_OUTPUT (key=value ONLY — a ::notice:: line
+          # here would be an "Invalid format" and fail the step). The human-readable
+          # window note is a separate echo to the normal log.
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
           import json
           p = json.load(open("walk-plan.json"))
           print(f"empty={'true' if not p.get('quests') else 'false'}")
+          PY
+          python3 - <<'PY'
+          import json
+          p = json.load(open("walk-plan.json"))
+          s = p.get("stats") or {}
+          w = s.get("window") or {}
+          if w:
+              print(f"::notice::slice {p['character']['key']}/{p['level']['code']} — "
+                    f"window {w.get('index',0)+1}/{w.get('of','?')}, "
+                    f"{s.get('count')} of {s.get('total_quests')} quests this run")
           PY
 
       # (1) EVIDENCE — run the agentic execute engine as a DETERMINISTIC workflow
@@ -612,8 +651,8 @@ jobs:
               except Exception:
                   led = {}
           slices = led.get("slices", {}) or {}
-          print("| slice | walk | state | note |")
-          print("|---|---|---|---|")
+          print("| slice | walk | window | coverage | state | note |")
+          print("|---|---|---|---|---|---|")
           for f in sorted(glob.glob("slices/*/walk-plan.json")):
               try:
                   p = json.loads(Path(f).read_text())
@@ -621,10 +660,15 @@ jobs:
                   continue
               slug = f"{p['character']['key']}/{p['level']['code']}"
               s = slices.get(slug) or {}
+              st = p.get("stats") or {}
+              w = st.get("window") or {}
               ev = (Path(f).parent / "walk-evidence.json").is_file()
               walk = "✅ evidenced" if ev else "⚠️ no evidence"
-              state = "🏆 perfect" if s.get("perfect") else ("🛑 stuck" if s.get("stuck") or s.get("needs_human") else "🔁 not yet perfect")
-              print(f"| `{slug}` | {walk} | {state} | {s.get('reason') or ''} |")
+              win = f"{w.get('index',0)+1}/{w.get('of','?')} ({st.get('count','?')}q)" if w else "full"
+              tot = s.get("total_quests")
+              cov = f"{s.get('covered','?')}/{tot}" if isinstance(tot, int) and tot else "—"
+              state = "🏆 perfect" if s.get("perfect") else ("🛑 stuck" if s.get("stuck") or s.get("needs_human") else "🔁 sweeping")
+              print(f"| `{slug}` | {walk} | {win} | {cov} | {state} | {s.get('reason') or ''} |")
           PY
           {
             echo "## ♾️ Quest perfection — daily walkthroughs + ledger"
@@ -689,7 +733,11 @@ jobs:
     # this job fans out over that. Per-slice "already perfect" / circuit-breaker
     # short-circuiting is re-checked INSIDE quest-fix.yml (it reads the ledger before
     # editing), so a slice that became perfect during the walk still ships no fix PR.
-    if: ${{ needs.plan.outputs.fix_count != '0' && needs.plan.outputs.fix_matrix != '' }}
+    # !cancelled() (not the default all-success): the `slice` matrix runs fail-fast:
+    # false, so one throttled/failed slice must NOT skip the fix lane for the slices
+    # that DID produce evidence. A granted slice with no evidence just no-ops in
+    # quest-fix (M7); a successful sibling still gets its fix PR.
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.fix_count != '0' && needs.plan.outputs.fix_matrix != '' }}
     # The caller job's permissions CAP every job in the called workflow, and GitHub
     # validates that containment when assembling the workflow graph AT TRIGGER TIME.
     # quest-fix.yml's `fix` job requests contents:write + pull-requests:write, so
