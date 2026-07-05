@@ -6,10 +6,10 @@ _Generated 2026-07-04T10:50:12+00:00. Source of truth: `.quests/ledger.json` (co
 
 ## Slices (worst-first)
 
-| Slice | Theme | Verdict | Avg | Open | Perfect | Stuck | Last run | Report |
-| --- | --- | :-: | --: | --: | :-: | :-: | --- | --- |
-| `system-engineer/0010` | Terminal Mastery | ⚠️ warn | — | 0 |  |  | 2026-07-04 | [run](https://github.com/bamr87/it-journey/actions/runs/28703664065) |
-| `developer/0000` | Foundation & Init World | ⚠️ warn | 87.6 | 0 |  |  | 2026-07-03 | [run](https://github.com/bamr87/it-journey/actions/runs/28656175477) |
+| Slice | Theme | Verdict | Avg | Cov | Open | Perfect | Stuck | Last run | Report |
+| --- | --- | :-: | --: | :-: | --: | :-: | :-: | --- | --- |
+| `system-engineer/0010` | Terminal Mastery | ⚠️ warn | — | — | 0 |  |  | 2026-07-04 | [run](https://github.com/bamr87/it-journey/actions/runs/28703664065) |
+| `developer/0000` | Foundation & Init World | ⚠️ warn | 87.6 | — | 0 |  |  | 2026-07-03 | [run](https://github.com/bamr87/it-journey/actions/runs/28656175477) |
 
 ## Per-character roll-up
 
