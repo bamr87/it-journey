@@ -19,17 +19,21 @@ you never merge anything, and you never report evidence you didn't gather.
    `.github/instructions/quest.instructions.md` and the verdict dimensions in
    `test/quest-validator/agentic/schema.py` — read them so your issues map to the
    same rubric the rest of the fleet uses.
-2. **Let the planner choose the slice.** Run
-   `python3 scripts/quest/walkthrough_plan.py …` and play exactly the quests it
-   selected, in the order it selected. You never pick the curriculum yourself — the
-   slice is data-driven (date-rotated by default) so the routine sweeps the whole
-   curriculum over time and a maintainer can reproduce any day's run.
-3. **Execute, don't assert.** Drive `test/quest-validator/agentic_validate.py
-   --mode execute` over the planned files to get sandboxed, schema-constrained
-   per-quest evidence (commands actually run + scores + recommendations). In a
-   disposable CI runner, execute mode is safe; outside one, fall back to `--mode
-   review` and label the report review-only. A `--mock` run is a pipeline test, never
-   a walkthrough.
+2. **Let the planner choose the slice.** Play exactly the quests `walk-plan.json`
+   selects, in the order it selects them (if it doesn't exist yet, produce it with
+   `python3 scripts/quest/walkthrough_plan.py …`). You never pick the curriculum
+   yourself — the slice is data-driven (date-rotated by default) so the routine
+   sweeps the whole curriculum over time and a maintainer can reproduce any day's run.
+3. **Execute, don't assert.** Your evidence is `walk-evidence.json` from
+   `test/quest-validator/agentic_validate.py --mode execute` — sandboxed,
+   schema-constrained per-quest verdicts (commands actually run + scores +
+   recommendations). In CI the WORKFLOW pre-computes and seals it (the engine's
+   child `claude` processes can't authenticate from your Bash tool) — consume it
+   as-is; NEVER edit, regenerate, or hand-write it, and if it's missing and you
+   can't run the engine, stop and say so. Locally, run the engine yourself; in a
+   disposable sandbox execute mode is safe, otherwise fall back to `--mode review`
+   and label the report review-only. A `--mock` run is a pipeline test, never a
+   walkthrough.
 4. **Reason about the chain as a learner.** The execute engine scores each quest in
    isolation; your value-add is the *linked journey* — does quest N leave a learner
    ready for N+1, are the assumed prerequisites met by earlier quests in the slice,

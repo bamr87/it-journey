@@ -76,21 +76,26 @@ map and setup.
   review comment + one `idea:ready`/`idea:needs-detail`/`idea:declined` label.
   Never closes, never escalates; a human promotes a ready idea into quest-forge
   by adding `epic-quest`.
-- `quest-walkthrough.yml` (daily) — the `quest-walker` agent picks one linked
-  (character, level) quest slice via `scripts/quest/walkthrough_plan.py`, **plays it
-  end-to-end in the runner sandbox as a learner** (reusing the
-  `test/quest-validator/agentic_validate.py` execute engine), and opens one report PR
-  with evidence/issues/reasoning under `test/quest-validator/walkthroughs/`. Also
-  uploads session screenshots (rendered quest pages + a terminal render of the
-  recorded transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run
-  artifacts. Read-only over content; never merges.
+- `quest-walkthrough.yml` (dispatch-only; the daily sweep is quest-perfection) —
+  walks one linked (character, level) quest slice **end-to-end in the runner
+  sandbox as a learner**: a deterministic workflow step runs the
+  `test/quest-validator/agentic_validate.py` execute engine and **seals** the
+  evidence (the engine can't run inside an agent — Claude Code scrubs auth env
+  vars from Bash-tool subprocesses, so its child `claude` processes would
+  auth-abort); the `quest-walker` agent then writes the session report, and a
+  report PR opens under `test/quest-validator/walkthroughs/`. Also uploads
+  session screenshots (rendered quest pages + a terminal render of the recorded
+  transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run artifacts.
+  Read-only over content; never merges.
 - `quest-perfection.yml` (daily) — the **autonomous quest-perfection loop**. For
   every character path it walks the highest-priority not-yet-perfect (character,
-  level) slice, then `quest-fix.yml` opens a **separate** content-only fix PR that
-  repairs only that walkthrough's *verified* issues (kept solely on a deterministic
-  signal — tier-1 score + brand lint + sandbox commands — never the model's own
-  grade) → auto-merges when green → repeats "until perfect". A committed ledger +
-  generated dashboard in `.quests/` are the source of truth; staged kill switches
+  level) slice (same sealed, workflow-minted evidence pattern as above), opens
+  **ONE consolidated** walkthroughs+ledger report PR per run, then `quest-fix.yml`
+  opens a **separate** content-only fix PR per granted slice that repairs only that
+  walkthrough's *verified* issues (kept solely on a deterministic signal — tier-1
+  score + brand lint + sandbox commands — never the model's own grade) →
+  auto-merges when green → repeats "until perfect". A committed ledger + generated
+  dashboard in `.quests/` are the source of truth; staged kill switches
   `QUEST_PERFECTION_ENABLED` (orchestrator) and `QUEST_FIX_ENABLED` (write lane).
 - `agent-audit.yml` (weekly) — `agent-auditor` keeps the fleet accurate/least-privilege.
 
