@@ -442,12 +442,19 @@ jobs:
             --character "$character" --level "$level" \
             --window "${WINDOW:-5}" ${PLAN_DATE:+--date "$PLAN_DATE"} \
             --json walk-plan.json
-          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          # empty=... goes to $GITHUB_OUTPUT (key=value ONLY — a ::notice:: line
+          # here would be an "Invalid format" and fail the step). The human-readable
+          # window note is a separate echo to the normal log.
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json
+          p = json.load(open("walk-plan.json"))
+          print(f"empty={'true' if not p.get('quests') else 'false'}")
+          PY
+          python3 - <<'PY'
           import json
           p = json.load(open("walk-plan.json"))
           s = p.get("stats") or {}
           w = s.get("window") or {}
-          print(f"empty={'true' if not p.get('quests') else 'false'}")
           if w:
               print(f"::notice::slice {p['character']['key']}/{p['level']['code']} — "
                     f"window {w.get('index',0)+1}/{w.get('of','?')}, "
