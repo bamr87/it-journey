@@ -56,6 +56,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from datetime import date as _date
 from pathlib import Path
@@ -361,17 +362,46 @@ def _strongly_connected(ids: List[str], succ: Dict[str, set]) -> List[List[str]]
 
 
 def build_plan(character: dict, level: str, network: dict,
-               max_quests: int = 0) -> dict:
-    """Resolve the linked playthrough plan for one (character, level) slice."""
+               max_quests: int = 0, window: int = 0,
+               window_on: Optional[_date] = None) -> dict:
+    """Resolve the linked playthrough plan for one (character, level) slice.
+
+    Two independent ways to bound a big slice (a level can hold 20-30 quests):
+      * `max_quests` — a hard first-N cap (the standalone/manual arm). Flags
+        `stats.truncated`: the run only ever sees the first N quests.
+      * `window` — a date-ROTATED window of N quests (the perfection loop). Each
+        run walks a different contiguous slice, so over ceil(total/N) days the
+        whole level is covered. The ledger accumulates that per-quest coverage
+        across runs and only certifies `perfect` once the sweep is complete, so a
+        single window is NOT treated as the whole slice. `stats.total_quests`
+        always carries the full size for that cross-run accounting.
+    `window` wins if both are set.
+    """
     if not reg.is_valid_level(level):
         raise ValueError(f"invalid level '{level}' (expected a 4-bit code like 0001).")
 
     nodes = [n for n in network.get("nodes", [])
              if n.get("level") == level and n.get("type") in WALKABLE_TYPES]
     ordered = _order_links(nodes, network.get("edges", []))
+    total_quests = len(ordered)
 
     truncated = False
-    if max_quests and max_quests > 0 and len(ordered) > max_quests:
+    window_info: Optional[dict] = None
+    if window and window > 0:
+        # Date-rotated window: systematic daily sweep (index += 1 per day, wraps).
+        # An empty/small slice (total <= window) is one window covering everything.
+        num_windows = max(1, math.ceil(total_quests / window)) if total_quests else 1
+        on = window_on or _date.today()
+        index = on.toordinal() % num_windows
+        start = index * window
+        ordered = ordered[start:start + window]
+        window_info = {
+            "index": index,
+            "of": num_windows,
+            "size": window,
+            "offset": start,
+        }
+    elif max_quests and max_quests > 0 and len(ordered) > max_quests:
         ordered = ordered[:max_quests]
         truncated = True
 
@@ -411,7 +441,15 @@ def build_plan(character: dict, level: str, network: dict,
         "quests": quests,
         "stats": {
             "count": len(quests),
+            # The FULL slice size — the denominator the ledger's cross-run coverage
+            # + perfect predicate use. `count` is just this run's (possibly windowed)
+            # subset; `total_quests` is the whole level.
+            "total_quests": total_quests,
             "truncated": truncated,
+            # Present only for a rotated (loop) plan: which window of the sweep this
+            # run walks. Absent/None for a full or first-N-capped plan.
+            "windowed": window_info is not None,
+            "window": window_info,
             "by_type": _count(quests, "type"),
             "by_difficulty": _count(quests, "difficulty"),
         },
@@ -462,8 +500,16 @@ def render_text(plan: dict) -> str:
         diff = q["difficulty"] or "—"
         lines.append(f"   {i:>2}. [{q['type']}] {q['title']}")
         lines.append(f"       {diff}  ·  {q['permalink']}  ·  {q['path']}")
-    if plan["stats"]["truncated"]:
+    stats = plan["stats"]
+    if stats["truncated"]:
         lines.append("\n   (list truncated by --max-quests)")
+    w = stats.get("window")
+    if w:
+        lines.append(
+            f"\n   (rotated window {w['index'] + 1}/{w['of']} — quests "
+            f"{w['offset'] + 1}‑{w['offset'] + stats['count']} of "
+            f"{stats['total_quests']}; the ledger accumulates full-slice coverage "
+            f"across runs)")
     return "\n".join(lines)
 
 
@@ -535,6 +581,32 @@ def _selftest() -> int:
     if len(order) > 1:
         assert capped["stats"]["truncated"], "truncation not flagged"
 
+    # --- rotated window: bounds the run to N, carries the FULL size, and sweeps
+    # every quest over ceil(total/N) days without gap or overlap.
+    dev = resolve_character(paths, "developer")
+    full = build_plan(dev, "0001", network)["stats"]["total_quests"]
+    if full > 2:
+        N = 2
+        num_windows = math.ceil(full / N)
+        seen: list = []
+        for day in range(num_windows):
+            wp = build_plan(dev, "0001", network, window=N,
+                            window_on=_date.fromordinal(d.toordinal() + day))
+            ws = wp["stats"]
+            assert ws["count"] <= N, "window exceeded its size"
+            assert ws["total_quests"] == full, "window lost the full slice size"
+            assert ws["windowed"] and ws["window"], "window not flagged"
+            assert ws["window"]["of"] == num_windows, "window count drift"
+            seen += [q["permalink"] for q in wp["quests"]]
+        # num_windows consecutive days must cover every quest exactly once (the last
+        # window may be short, so it's a set-equality, not a multiset check).
+        allq = [q["permalink"] for q in build_plan(dev, "0001", network)["quests"]]
+        assert set(seen) == set(allq), \
+            f"rotation did not sweep the full slice ({len(set(seen))}/{len(allq)})"
+        # window wins over max_quests when both are set.
+        both = build_plan(dev, "0001", network, max_quests=1, window=N)["stats"]
+        assert both["windowed"] and both["count"] <= N, "window must win over max_quests"
+
     # --- ledger-aware SELECTION (offline): exercise --priority / --all-paths.
     # We point at a guaranteed-absent ledger path. Whatever ledger.py does with a
     # cold/missing file (cold-start selection if it's importable, or None if it
@@ -595,7 +667,13 @@ def main() -> int:
     p.add_argument("--level", help="Binary level code (e.g. 0001). Default: date-rotated.")
     p.add_argument("--date", help="ISO date (YYYY-MM-DD) used to rotate the slice. Default: today.")
     p.add_argument("--max-quests", type=int, default=0,
-                   help="Cap the chain to N quests (0 = no cap). Bounds a long walkthrough.")
+                   help="Hard first-N cap on the chain (0 = no cap). Bounds a long "
+                        "walkthrough; the run only ever sees the first N quests.")
+    p.add_argument("--window", type=int, default=0,
+                   help="Walk a date-ROTATED window of N quests instead of a first-N "
+                        "cap (the perfection loop). Over ceil(total/N) days the whole "
+                        "level is swept; the ledger accumulates coverage across runs. "
+                        "Rotated by --date. Takes precedence over --max-quests.")
     p.add_argument("--priority", action="store_true",
                    help="Ledger SELECTION: plan the worst/oldest not-perfect slice "
                         "(falls back to date-rotation if the ledger is absent/cold).")
@@ -644,7 +722,9 @@ def main() -> int:
         chosen: List[str] = []
         for slug in select_all_paths_slugs(paths, on, ledger_path):
             character, level = resolve_slug(paths, slug)
-            plan = build_plan(character, level, network, max_quests=args.max_quests)
+            plan = build_plan(character, level, network,
+                              max_quests=args.max_quests,
+                              window=args.window, window_on=on)
             print(render_text(plan), file=sys.stderr)
             if not plan["quests"]:
                 continue  # empty slice (sparse/all-codex level): nothing to walk
@@ -672,7 +752,8 @@ def main() -> int:
     else:
         character, level = rotate_slice(paths, on)
 
-    plan = build_plan(character, level, network, max_quests=args.max_quests)
+    plan = build_plan(character, level, network, max_quests=args.max_quests,
+                      window=args.window, window_on=on)
 
     print(render_text(plan), file=sys.stderr)
     if args.json:
