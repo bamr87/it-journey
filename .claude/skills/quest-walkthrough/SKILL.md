@@ -48,6 +48,12 @@ on-disk `path`). This linked, dependency-sorted chain is the **session's syllabu
 If `quests` is empty, read `reason`, write a one-line "no-walkable-slice" report, and
 **STOP** — do not substitute a different level.
 
+The perfection loop plans with `--window N` (`stats.window` present): a big level
+is swept N quests per day, and the ledger accumulates coverage across runs, so your
+`quests` list may be a **window** of the full slice, not the whole level. Walk
+exactly the quests you were given — `stats.total_quests` tells you the full size for
+context, but you never expand beyond the planned window.
+
 ## 2. Execute each quest in the sandbox (the rigorous evidence pass)
 
 Drive the existing **agentic execute engine** over exactly the planned files, in

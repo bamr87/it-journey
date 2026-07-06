@@ -12,6 +12,12 @@
 # ENFORCED by quest-perfection.yml's matrix step:
 caps:
   max_walkthroughs_per_run: 6   # at most N (character, level) slices walked per run (one per path)
+  max_quests_per_slice: 5       # ROTATING WINDOW: walk at most N quests of a slice per run,
+                                #   sweeping the rest over following days (planner --window). A level
+                                #   can hold 20-30 quests; walking them all in one run runs the engine
+                                #   for hours and exhausts the OAuth token's rate limit. The ledger
+                                #   accumulates per-quest coverage across runs and certifies a slice
+                                #   `perfect` only once the whole sweep is covered + passing.
   max_fix_prs_per_run: 3        # at most N auto:content quest-fix PRs proposed per run
   max_open_quest_prs: 6         # never open new fix PRs once N are already awaiting review
   skip_perfect_within_days: 7   # don't re-walk a slice certified perfect in the last N days

@@ -205,6 +205,34 @@ def cfg_max_fix_rounds(config: dict) -> int:
     return int((config.get("fix") or {}).get("max_fix_rounds", 3) or 0)
 
 
+def cfg_coverage_days(config: dict) -> int:
+    """Freshness window (days) for cross-run per-quest coverage.
+
+    The loop walks a rotating WINDOW of a big slice each run, so a full sweep
+    takes ceil(total/window) days; a quest's walk only counts toward the slice's
+    `perfect` while it is this-fresh. Size it comfortably above one sweep + a fix
+    cycle so a slow-but-steady rotation still certifies. 0 = never expire.
+    """
+    return int(_perfect_cfg(config).get("coverage_days", 21) or 0)
+
+
+def _within_days(date_str: Optional[str], days: int) -> bool:
+    """True if `date_str` (YYYY-MM-DD) is within `days` of today (UTC).
+
+    days <= 0 means "no expiry" (always fresh). An unparseable/absent date is
+    treated as stale (False) so junk never counts as coverage.
+    """
+    if days <= 0:
+        return True
+    if not date_str:
+        return False
+    try:
+        d = datetime.strptime(str(date_str)[:10], "%Y-%m-%d").date()
+    except Exception:
+        return False
+    return (datetime.now(timezone.utc).date() - d).days <= days
+
+
 # --------------------------------------------------------------------------- #
 # Ledger I/O
 # --------------------------------------------------------------------------- #
@@ -368,6 +396,11 @@ def build_slice_entry(
             "total": 0,
             "scored": 0,
             "requested": _plan_quest_count(plan),
+            # The full slice size still matters (the ledger carries it forward so a
+            # no-evidence run doesn't erase the known denominator); this run just
+            # contributes no coverage.
+            "total_quests": _plan_total_quests(plan),
+            "per_quest": [],
             "errored": 0,
             "truncated": _plan_truncated(plan),
             "counts": {VERDICT_PASS: 0, VERDICT_WARN: 0, VERDICT_FAIL: 0},
@@ -450,12 +483,42 @@ def build_slice_entry(
             average, average_min, open_issues, max_open, high, max_high,
         )
 
+    # Per-quest coverage deltas — merge_slice folds these into slice.coverage so a
+    # ROTATED (windowed) sweep accumulates toward full-slice perfect across runs.
+    # An errored result carries no usable verdict, so it contributes no coverage
+    # (the quest must be re-walked); a passing/warn/fail result does.
+    per_quest = []
+    for r in results:
+        if "error" in r:
+            continue
+        q = r.get("quest") or {}
+        path = q.get("path") or q.get("rel_path")
+        v = r.get("verdict")
+        if not path or v not in (VERDICT_PASS, VERDICT_WARN, VERDICT_FAIL):
+            continue
+        r_open, r_high = _count_recommendations([r])
+        per_quest.append({
+            "path": path,
+            "verdict": v,
+            "average": r.get("overall"),
+            "open_issues": r_open,
+            "high": r_high,
+            "mode": mode,
+            "executed": bool((r.get("verdict_obj") or {}).get("executed")),
+        })
+
     entry.update({
         "verdict": verdict,
         "average": average,
         "total": total,
         "scored": scored,
         "requested": requested,
+        # Full slice size (the cross-run coverage denominator) + this run's per-quest
+        # coverage deltas. merge_slice is the AUTHORITY on slice `perfect` (over
+        # accumulated coverage); the `perfect` above is this single run's structural
+        # check, which merge overrides.
+        "total_quests": _plan_total_quests(plan) or requested,
+        "per_quest": per_quest,
         "errored": errored,
         "truncated": truncated,
         "counts": counts,
@@ -476,6 +539,18 @@ def _plan_quest_count(plan: Optional[dict]) -> int:
         return stats["count"]
     quests = plan.get("quests") or []
     return len(quests) if isinstance(quests, list) else 0
+
+
+def _plan_total_quests(plan: Optional[dict]) -> int:
+    """The FULL slice size (all quests in the level), the denominator for cross-run
+    coverage. A rotated plan carries `stats.total_quests`; a plan that predates the
+    field (or a first-N cap) falls back to its own quest count."""
+    if not isinstance(plan, dict):
+        return 0
+    stats = plan.get("stats") or {}
+    if isinstance(stats.get("total_quests"), int) and stats["total_quests"] > 0:
+        return stats["total_quests"]
+    return _plan_quest_count(plan)
 
 
 def _plan_truncated(plan: Optional[dict]) -> bool:
@@ -512,6 +587,112 @@ def _why_not_perfect(mode, require_mode, truncated, forbid_truncated,
     if high > max_high:
         bits.append(f"{high} high-priority")
     return "; ".join(bits) or "not perfect"
+
+
+# --------------------------------------------------------------------------- #
+# Cross-run coverage (rotating-window sweeps → whole-slice perfect)
+# --------------------------------------------------------------------------- #
+def _merge_coverage(prev_cov: Optional[dict], per_quest: Optional[list],
+                    coverage_days: int) -> dict:
+    """Fold this run's per-quest verdicts into the slice coverage map + prune stale.
+
+    Keyed by quest path: a re-walk OVERWRITES that quest's prior verdict (so a
+    fail→pass fix sticks). Entries older than `coverage_days` are dropped, so a
+    removed or long-unwalked quest stops counting as coverage.
+    """
+    cov = dict(prev_cov or {})
+    today = today_str()
+    for pq in (per_quest or []):
+        path = pq.get("path")
+        if not path:
+            continue
+        cov[path] = {
+            "verdict": pq.get("verdict"),
+            "average": pq.get("average"),
+            "open_issues": int(pq.get("open_issues") or 0),
+            "high": int(pq.get("high") or 0),
+            "mode": pq.get("mode"),
+            "executed": bool(pq.get("executed")),
+            "date": today,
+        }
+    return {p: c for p, c in cov.items()
+            if _within_days((c or {}).get("date"), coverage_days)}
+
+
+def _coverage_rollup(cov: dict, total_quests: int, config: dict) -> dict:
+    """Roll the coverage map up to a slice verdict + the `perfect` decision.
+
+    `perfect` requires the WHOLE slice covered (covered >= total_quests), every
+    covered quest walked in execute mode and passing, the mean score at/above the
+    bar, and issue counts within caps. Mirrors the single-run predicate's config
+    knobs, applied to accumulated coverage instead of one run.
+    """
+    entries = list(cov.values())
+    counts = {VERDICT_PASS: 0, VERDICT_WARN: 0, VERDICT_FAIL: 0}
+    for c in entries:
+        v = c.get("verdict")
+        if v in counts:
+            counts[v] += 1
+    covered = counts[VERDICT_PASS] + counts[VERDICT_WARN] + counts[VERDICT_FAIL]
+    avgs = [c["average"] for c in entries if isinstance(c.get("average"), (int, float))]
+    average = round(sum(avgs) / len(avgs), 1) if avgs else None
+    open_issues = sum(int(c.get("open_issues") or 0) for c in entries)
+    high = sum(int(c.get("high") or 0) for c in entries)
+    verdict = _worst_verdict([{"verdict": c.get("verdict")} for c in entries])
+    all_execute = bool(entries) and all(c.get("mode") == "execute" for c in entries)
+    fully_covered = total_quests > 0 and covered >= total_quests
+
+    average_min = cfg_average_min(config)
+    max_warn = cfg_max(config, "max_warn", 0)
+    max_fail = cfg_max(config, "max_fail", 0)
+    max_open = cfg_max(config, "max_open_issues", 0)
+    max_high = cfg_max(config, "max_high_priority", 0)
+
+    perfect = (
+        cfg_require_mode(config) == "execute"
+        and all_execute
+        and fully_covered
+        and counts[VERDICT_WARN] <= max_warn
+        and counts[VERDICT_FAIL] <= max_fail
+        and average is not None
+        and average >= average_min
+        and open_issues <= max_open
+        and high <= max_high
+    )
+
+    reason = ""
+    if not perfect:
+        bits: list[str] = []
+        if not all_execute and entries:
+            bits.append("coverage includes non-execute walks")
+        if not fully_covered:
+            bits.append(f"covered {covered}/{total_quests}")
+        if counts[VERDICT_FAIL] > max_fail:
+            bits.append(f"{counts[VERDICT_FAIL]} fail")
+        if counts[VERDICT_WARN] > max_warn:
+            bits.append(f"{counts[VERDICT_WARN]} warn")
+        if average is None:
+            bits.append("no average")
+        elif average < average_min:
+            bits.append(f"avg {average} < {average_min}")
+        if open_issues > max_open:
+            bits.append(f"{open_issues} open issue(s)")
+        if high > max_high:
+            bits.append(f"{high} high-priority")
+        reason = "; ".join(bits) or "not perfect"
+
+    return {
+        "covered": covered,
+        "counts": counts,
+        "average": average,
+        "open_issues": open_issues,
+        "high": high,
+        "verdict": verdict,
+        "all_execute": all_execute,
+        "fully_covered": fully_covered,
+        "perfect": perfect,
+        "reason": reason,
+    }
 
 
 # --------------------------------------------------------------------------- #
@@ -557,11 +738,27 @@ def merge_slice(
     last_fixed = prev.get("last_fixed")
     max_rounds = cfg_max_fix_rounds(config)
 
-    perfect = bool(entry.get("perfect"))
+    # ----- CROSS-RUN COVERAGE (the authority on slice `perfect`) --------------
+    # Fold this run's per-quest verdicts into the slice's coverage map, prune
+    # stale entries, then certify `perfect` over the WHOLE slice — not the single
+    # (possibly windowed) run. This is what lets a rotated sweep of a 26-quest
+    # level converge to perfect across days: each run advances coverage; a re-walk
+    # of a quest OVERWRITES its prior verdict (so a fix that flips fail→pass sticks).
+    # entry["perfect"] (build_slice_entry's single-run structural check) is NOT
+    # trusted here; slice perfect is recomputed from the accumulated map.
+    cov = _merge_coverage(prev.get("coverage"), entry.get("per_quest"),
+                          cfg_coverage_days(config))
+    total_quests = int(entry.get("total_quests") or prev.get("total_quests") or 0)
+    roll = _coverage_rollup(cov, total_quests, config)
+    perfect = roll["perfect"]
     perfect_since = prev.get("perfect_since")
-    # Only verdict-bearing walks (a real evaluation, not an empty/unparseable run)
-    # advance or reset the breaker — a no-evidence walk must not count as a round.
-    real_walk = event == "walk" and entry.get("verdict") is not None
+    # The circuit breaker only advances once the slice is FULLY COVERED but still
+    # imperfect — that is the "walk → fix → re-walk, still not perfect" loop it
+    # exists to break. A walk that merely advances an INCOMPLETE rotating sweep is
+    # progress, not a failed fix round, so it must not accrue toward `stuck`
+    # (otherwise a 26-quest slice would trip the breaker mid-first-sweep).
+    real_round = (event == "walk" and entry.get("verdict") is not None
+                  and roll["fully_covered"])
     if perfect:
         if not perfect_since:
             perfect_since = today_str()
@@ -570,14 +767,17 @@ def merge_slice(
         stuck_reason = None
     else:
         perfect_since = None
-        if real_walk and int(prev.get("runs", 0) or 0) > 0 and not prev.get("perfect"):
-            # A repeat imperfect walk: one more fix round elapsed without converging.
+        if real_round and int(prev.get("runs", 0) or 0) > 0 and not prev.get("perfect"):
+            # A repeat FULLY-COVERED imperfect walk: one more fix round without converging.
             fix_rounds += 1
             if max_rounds and fix_rounds >= max_rounds and not stuck:
                 stuck = True
                 stuck_reason = (f"still imperfect after {fix_rounds} walk→fix rounds "
                                 f"(max {max_rounds}); needs human review")
 
+    # Display fields report the SLICE's accumulated state (from coverage), not just
+    # the last window — so the dashboard/PR table show "the slice overall", with a
+    # covered N/total that makes an in-progress sweep legible.
     merged = {
         "slug": slug,
         "character": entry.get("character") or prev.get("character") or slug.split("/")[0],
@@ -585,20 +785,24 @@ def merge_slice(
         "theme": entry.get("theme") or prev.get("theme"),
         "tier": entry.get("tier") or prev.get("tier"),
         "mode": entry.get("mode"),
-        "verdict": entry.get("verdict"),
-        "average": entry.get("average"),
+        "verdict": roll["verdict"],
+        "average": roll["average"],
         "total": entry.get("total"),
-        "scored": entry.get("scored"),
-        "requested": entry.get("requested"),
+        # scored/requested reinterpreted at slice scope: covered-so-far / full size.
+        "scored": roll["covered"],
+        "requested": total_quests,
+        "total_quests": total_quests,
+        "covered": roll["covered"],
         "errored": entry.get("errored"),
         "truncated": entry.get("truncated"),
-        "counts": entry.get("counts"),
-        "open_issues": entry.get("open_issues"),
-        "high_priority_issues": entry.get("high_priority_issues"),
-        "executed": entry.get("executed"),
+        "counts": roll["counts"],
+        "open_issues": roll["open_issues"],
+        "high_priority_issues": roll["high"],
+        "executed": roll["all_execute"],
         "perfect": perfect,
         "perfect_since": perfect_since,
-        "reason": entry.get("reason"),
+        "reason": "" if perfect else roll["reason"],
+        "coverage": cov,
         "fix_rounds": fix_rounds,
         "stuck": stuck,
         "stuck_reason": stuck_reason,
@@ -747,8 +951,8 @@ def render_dashboard(ledger: dict) -> str:
     # ----- all slices, worst-first ------------------------------------------ #
     lines.append("## Slices (worst-first)")
     lines.append("")
-    lines.append("| Slice | Theme | Verdict | Avg | Open | Perfect | Stuck | Last run | Report |")
-    lines.append("| --- | --- | :-: | --: | --: | :-: | :-: | --- | --- |")
+    lines.append("| Slice | Theme | Verdict | Avg | Cov | Open | Perfect | Stuck | Last run | Report |")
+    lines.append("| --- | --- | :-: | --: | :-: | --: | :-: | :-: | --- | --- |")
 
     def row_sort(item):
         slug, slc = item
@@ -767,9 +971,12 @@ def render_dashboard(ledger: dict) -> str:
         run_url = slc.get("run_url")
         report = f"[run]({run_url})" if run_url else "—"
         theme = (slc.get("theme") or "").replace("|", "\\|")
+        tot_q = slc.get("total_quests")
+        cov_cell = (f"{slc.get('covered', 0)}/{tot_q}"
+                    if isinstance(tot_q, int) and tot_q > 0 else "—")
         lines.append(
             f"| `{slug}` | {theme} | {emoji} {verdict or '—'} | {avg_cell} | "
-            f"{slc.get('open_issues', 0)} | {perfect_cell} | {stuck_cell} | "
+            f"{cov_cell} | {slc.get('open_issues', 0)} | {perfect_cell} | {stuck_cell} | "
             f"{last} | {report} |"
         )
     lines.append("")
@@ -997,12 +1204,16 @@ def _agg(results: list[dict], **top) -> dict:
     return base
 
 
-def _result(level, verdict, overall, *, executed=True, recs=None, error=None):
+def _result(level, verdict, overall, *, qid="q", executed=True, recs=None, error=None):
+    # qid gives each synthetic quest a STABLE, distinct path — the ledger keys
+    # cross-run coverage by path, so a re-walk of the same qid overwrites (models a
+    # fix landing) and distinct qids accumulate as separate coverage.
+    path = f"pages/_quests/{level}/{qid}.md"
     if error:
-        return {"quest": {"path": f"q/{level}", "slug": "s", "level": level},
+        return {"quest": {"path": path, "slug": qid, "level": level},
                 "verdict": VERDICT_FAIL, "error": error}
     return {
-        "quest": {"path": f"q/{level}", "slug": "s", "level": level},
+        "quest": {"path": path, "slug": qid, "level": level},
         "verdict": verdict,
         "overall": overall,
         "verdict_obj": {
@@ -1014,13 +1225,16 @@ def _result(level, verdict, overall, *, executed=True, recs=None, error=None):
     }
 
 
-def _plan(char, level, count=1, truncated=False):
+def _plan(char, level, count=1, truncated=False, total=None):
+    # total (stats.total_quests) is the FULL slice size the ledger's cross-run
+    # coverage measures against; defaults to count (a full, non-windowed plan).
     return {
         "schema_version": "1.0.0",
         "character": {"key": char},
         "level": {"code": level, "theme": reg.theme_of(level), "tier": reg.tier_of(level)},
         "quests": [{"permalink": f"/quests/{level}/q{i}/"} for i in range(count)],
-        "stats": {"count": count, "truncated": truncated},
+        "stats": {"count": count, "total_quests": count if total is None else total,
+                  "truncated": truncated},
     }
 
 
@@ -1033,10 +1247,11 @@ def _selftest() -> int:  # noqa: C901 - exhaustive on purpose
             fails.append(msg)
 
     # 1) PERFECT: execute, non-truncated, fully scored, all pass, high avg, 0 issues.
+    # Two DISTINCT quests (qid a, b) so this doubles as a full-slice coverage input.
     plan = _plan("developer", "0001", count=2)
     agg = _agg([
-        _result("0001", VERDICT_PASS, 98),
-        _result("0001", VERDICT_PASS, 96),
+        _result("0001", VERDICT_PASS, 98, qid="a"),
+        _result("0001", VERDICT_PASS, 96, qid="b"),
     ])
     e = build_slice_entry(agg, plan, "execute", "http://run/1", cfg)
     check(e["perfect"] is True, f"perfect slice should be perfect: {e.get('reason')}")
@@ -1044,12 +1259,14 @@ def _selftest() -> int:  # noqa: C901 - exhaustive on purpose
     check(e["open_issues"] == 0, "perfect slice open_issues should be 0")
 
     # 2) WARN: a warn result can never be perfect; open_issues counts its recs.
+    # Full-slice {a pass, b warn} so re-walks overwrite the same quests in coverage.
     aggw = _agg([
-        _result("0001", VERDICT_WARN, 72,
+        _result("0001", VERDICT_PASS, 96, qid="a"),
+        _result("0001", VERDICT_WARN, 72, qid="b",
                 recs=[{"priority": "high", "area": "cmd", "suggestion": "fix"},
                       {"priority": "low", "area": "x", "suggestion": "y"}]),
     ])
-    ew = build_slice_entry(aggw, _plan("developer", "0001"), "execute", None, cfg)
+    ew = build_slice_entry(aggw, _plan("developer", "0001", count=2), "execute", None, cfg)
     check(ew["perfect"] is False, "warn slice must not be perfect")
     check(ew["verdict"] == VERDICT_WARN, "warn verdict")
     check(ew["open_issues"] == 2, f"warn open_issues should be 2, got {ew['open_issues']}")
@@ -1104,6 +1321,31 @@ def _selftest() -> int:  # noqa: C901 - exhaustive on purpose
     check(ledger["slices"]["developer/0001"]["perfect"] is False, "regressed not perfect")
     check(ledger["slices"]["developer/0001"]["perfect_since"] is None, "perfect_since cleared")
     check(ledger["slices"]["developer/0001"]["runs"] == 2, "runs bumped to 2")
+
+    # ---- WINDOWED coverage: a ROTATING sweep certifies perfect only once the WHOLE
+    # slice is covered (never on the first all-pass window), and a re-walk that flips
+    # a quest fail→pass completes it. total=3, one quest per run (window of 1).
+    lw = empty_ledger()
+
+    def _win(qid, verdict, overall=98, recs=None):
+        return build_slice_entry(
+            _agg([_result("0011", verdict, overall, qid=qid, recs=recs)]),
+            _plan("data-scientist", "0011", count=1, total=3), "execute", None, cfg)
+
+    mw = merge_slice(lw, "data-scientist/0011", _win("a", VERDICT_PASS), "walk", cfg)
+    check(mw["perfect"] is False and mw["covered"] == 1, "1/3 covered → not perfect yet")
+    check("1/3" in (mw["reason"] or ""), f"reason should show partial coverage: {mw['reason']}")
+    mw = merge_slice(lw, "data-scientist/0011", _win("b", VERDICT_PASS), "walk", cfg)
+    check(mw["perfect"] is False and mw["covered"] == 2, "2/3 covered → not perfect yet")
+    mw = merge_slice(lw, "data-scientist/0011", _win("c", VERDICT_FAIL, 30), "walk", cfg)
+    check(mw["perfect"] is False and mw["covered"] == 3, "3/3 covered but a fail → not perfect")
+    check("fail" in (mw["reason"] or ""), "coverage reason names the fail")
+    # Re-walk quest c after a 'fix' flips fail→pass; coverage OVERWRITES, slice completes.
+    mw = merge_slice(lw, "data-scientist/0011", _win("c", VERDICT_PASS), "walk", cfg)
+    check(mw["perfect"] is True, f"re-walk fixing the last quest → perfect: {mw.get('reason')}")
+    check(mw["covered"] == 3 and mw["requested"] == 3, "perfect slice covered 3/3")
+    check(lw["slices"]["data-scientist/0011"]["stuck"] is False,
+          "a normal multi-day sweep must NOT trip the circuit breaker")
 
     # ---- COLD START select: an unwalked slice outranks a walked non-perfect one ----
     ledger2 = empty_ledger()

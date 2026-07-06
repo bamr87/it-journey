@@ -135,6 +135,7 @@ def main():
     results = []
     spent = 0.0
     truncated = False
+    auth_truncated = False
     for i, q in enumerate(quests, 1):
         if args.max_cost_usd and spent >= args.max_cost_usd:
             print(f"\n💰 Cost ceiling reached (${spent:.4f} ≥ ${args.max_cost_usd}); "
@@ -148,9 +149,18 @@ def main():
             results.append(res)
             spent += (res.get("meta", {}) or {}).get("cost_usd") or 0.0
         except runner.AuthError as e:
-            # Auth won't fix itself between quests — abort the whole batch.
-            print(f"\n❌ {e}", file=sys.stderr)
-            sys.exit(2)
+            # Auth won't recover between quests (throttle / expired token), so stop
+            # the batch — but DON'T discard the quests that already scored. We
+            # aggregate + write the partial evidence below (marked truncated), so a
+            # rate-limited run still contributes its completed quests as coverage
+            # rather than reddening the job and losing everything. A run that got
+            # ZERO quests still hard-fails (exit 2) at the end.
+            print(f"\n⚠️  {e}", file=sys.stderr)
+            print(f"⚠️  Auth failed after {len(results)}/{len(quests)} quest(s) — "
+                  f"stopping the batch and writing PARTIAL evidence.", file=sys.stderr)
+            truncated = True
+            auth_truncated = True
+            break
         except runner.RunnerError as e:
             results.append({"quest": q.to_meta(), "mode": args.mode, "meta": {},
                             "error": str(e), "overall": 0.0, "verdict": schema.VERDICT_FAIL,
@@ -158,14 +168,17 @@ def main():
 
     agg = report.aggregate(results)
     if truncated:
-        # Record partial coverage so a cost-truncated batch is never mistaken
-        # for full, clean coverage (by a human or the gate below).
+        # Record partial coverage so a truncated batch is never mistaken for full,
+        # clean coverage (by a human, the ledger, or the gate below).
         agg["truncated"] = True
         agg["evaluated"] = len(results)
         agg["requested"] = len(quests)
+        if auth_truncated:
+            agg["auth_truncated"] = True
     print("\n" + report.render_console(agg, verbose=args.verbose))
     if truncated:
-        print(f"\n⚠️  BATCH TRUNCATED by cost ceiling — evaluated {len(results)}/{len(quests)} quest(s). "
+        cause = "auth failure" if auth_truncated else "cost ceiling"
+        print(f"\n⚠️  BATCH TRUNCATED by {cause} — evaluated {len(results)}/{len(quests)} quest(s). "
               f"The score gate covers only the evaluated subset.", file=sys.stderr)
 
     if args.report:
@@ -190,8 +203,13 @@ def main():
                   f"{args.fail_threshold}% gate ({len(results)}/{len(quests)} evaluated).",
                   file=sys.stderr)
             sys.exit(1)
+    # Nothing scored is a hard failure regardless of cause — an auth throttle that
+    # let ZERO quests through is exit 2 (matching the pre-partial behavior), any
+    # other empty run is exit 1. A PARTIAL run that scored ≥1 quest exits 0: it
+    # wrote usable (truncated) evidence the ledger records as coverage, and the
+    # caller shouldn't red the whole slice job for an expected rate-limit.
     if agg["scored"] == 0:
-        sys.exit(1)
+        sys.exit(2 if auth_truncated else 1)
     sys.exit(0)
 
 

@@ -39,6 +39,12 @@ perfect:
   max_open_issues: 0           # zero open recommendations/issues remaining
   max_high_priority: 0         # zero high-priority recommendations remaining
   forbid_truncated: true       # a truncated run can never be perfect (M7)
+  coverage_days: 21            # cross-run coverage freshness: with the rotating window
+                               #   (budget.yml caps.max_quests_per_slice), a slice is walked
+                               #   a few quests at a time over several days; a quest's walk
+                               #   counts toward `perfect` only while it is this-fresh. Size it
+                               #   above one full sweep (ceil(total/window) days) + a fix cycle
+                               #   so a slow rotation still certifies. 0 = never expire.
   # --- RESERVED — enforced elsewhere, NOT read by ledger.py (documented here) ---
   require_executed: true       # RESERVED: verdict_obj.executed is MODEL-SUPPLIED, so the
                                #   predicate deliberately does NOT trust it (would be
