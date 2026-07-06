@@ -103,7 +103,7 @@ This quest turns that data into a visual heatmap — similar to GitHub's contrib
 
 Create `_includes/contributor/contribution_calendar.html`:
 
-> The `{% raw %}{% raw %}{% endraw %}` / `{% raw %}{% endraw %}{% endraw %}` lines below are display-only guards so this documentation page shows the Liquid literally. Copy only the inner markup (everything *between* those two lines) into the file.
+> The opening and closing Liquid `raw` / `endraw` guard lines inside the code block below are display-only — they stop Jekyll from executing the example so this page can show the Liquid literally. Copy only the markup *between* those two guard lines into the file.
 
 ```html
 {% raw %}
