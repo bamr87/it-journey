@@ -62,6 +62,9 @@ jobs:
     - name: 🔍 Check Ruby Dependencies
       id: ruby_check
       run: |
+        # pipefail: `if bundle install | tee` must test bundle's exit code, not
+        # tee's — without it the failure branch below is unreachable.
+        set -o pipefail
         echo "## 💎 Ruby Dependency Analysis" >> dependency-check-results/summary.md
         echo "" >> dependency-check-results/summary.md
 
