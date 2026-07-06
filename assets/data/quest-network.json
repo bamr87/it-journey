@@ -1,27 +1,27 @@
 {
   "stats": {
-    "total": 199,
+    "total": 207,
     "by_level": {
-      "0000": 28,
+      "0000": 29,
       "0001": 26,
       "0010": 17,
-      "0011": 3,
+      "0011": 4,
       "0100": 8,
-      "0101": 12,
+      "0101": 13,
       "0110": 8,
       "0111": 10,
       "1000": 9,
       "1001": 9,
-      "1010": 15,
-      "1011": 11,
+      "1010": 16,
+      "1011": 12,
       "1100": 16,
-      "1101": 9,
-      "1110": 9,
+      "1101": 10,
+      "1110": 11,
       "1111": 9
     },
     "by_type": {
-      "epic_quest": 3,
-      "main_quest": 170,
+      "epic_quest": 4,
+      "main_quest": 177,
       "side_quest": 26
     }
   },
@@ -232,6 +232,15 @@
       "difficulty": "🟢 Easy",
       "technology": "operating-system",
       "file": "pages/_quests/0000/os-selection.md"
+    },
+    {
+      "id": "/quests/0000/ouroboros-loop-01-the-first-turn/",
+      "title": "The First Turn: A Loop That Checks One Scroll a Day",
+      "level": "0000",
+      "type": "main_quest",
+      "difficulty": "🟢 Easy",
+      "technology": "github-actions",
+      "file": "pages/_quests/0000/ouroboros-loop-01-the-first-turn.md"
     },
     {
       "id": "/quests/0000/terminal-fundamentals/",
@@ -576,6 +585,15 @@
       "file": "pages/_quests/0011/github-pages-hidden-gem.md"
     },
     {
+      "id": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "title": "Summon the Golem: An AI Agent Joins the Loop",
+      "level": "0011",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "claude-code",
+      "file": "pages/_quests/0011/ouroboros-loop-03-summon-the-golem.md"
+    },
+    {
       "id": "/quests/0011/prd-codex-mastery/",
       "title": "The PRD Codex: Master Product Reality Distillation",
       "level": "0011",
@@ -727,6 +745,15 @@
       "difficulty": "🔴 Hard",
       "technology": "jekyll",
       "file": "pages/_quests/0101/jekyll-quest-tracking.md"
+    },
+    {
+      "id": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
+      "title": "The Warden's Gate: Kill Switches and Stage Gates",
+      "level": "0101",
+      "type": "main_quest",
+      "difficulty": "🟡 Medium",
+      "technology": "github-actions",
+      "file": "pages/_quests/0101/ouroboros-loop-02-the-wardens-gate.md"
     },
     {
       "id": "/quests/0101/secrets-management/",
@@ -1206,6 +1233,15 @@
       "file": "pages/_quests/1010/monitoring-fundamentals.md"
     },
     {
+      "id": "/quests/1010/ouroboros-loop-05-the-mana-ledger/",
+      "title": "The Mana Ledger: Budgets, Windows, and Coverage",
+      "level": "1010",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "python",
+      "file": "pages/_quests/1010/ouroboros-loop-05-the-mana-ledger.md"
+    },
+    {
       "id": "/quests/1010/prometheus-grafana/",
       "title": "Prometheus & Grafana: Metrics Collection and Visualization",
       "level": "1010",
@@ -1294,6 +1330,15 @@
       "difficulty": "🟡 Medium",
       "technology": "compliance",
       "file": "pages/_quests/1011/compliance-standards.md"
+    },
+    {
+      "id": "/quests/1011/ouroboros-loop-04-the-sealed-evidence/",
+      "title": "The Sealed Evidence: Slaying the Self-Grading Golem",
+      "level": "1011",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "github-actions",
+      "file": "pages/_quests/1011/ouroboros-loop-04-the-sealed-evidence.md"
     },
     {
       "id": "/quests/1011/penetration-testing/",
@@ -1521,6 +1566,15 @@
       "file": "pages/_quests/1101/neural-networks.md"
     },
     {
+      "id": "/quests/1101/ouroboros-loop-06-the-fixers-oath/",
+      "title": "The Fixer's Oath: Repairs Kept by Gates, Not Grades",
+      "level": "1101",
+      "type": "main_quest",
+      "difficulty": "🔴 Hard",
+      "technology": "claude-code",
+      "file": "pages/_quests/1101/ouroboros-loop-06-the-fixers-oath.md"
+    },
+    {
       "id": "/quests/1101/python-data-science/",
       "title": "Python for Data Science: NumPy, Pandas & Matplotlib",
       "level": "1101",
@@ -1591,6 +1645,15 @@
       "difficulty": "⚔️ Epic",
       "technology": "docker",
       "file": "pages/_quests/1110/microservices-architecture.md"
+    },
+    {
+      "id": "/quests/1110/ouroboros-loop-07-weaving-the-whole/",
+      "title": "Weaving the Whole: The Serpent Closes the Circle",
+      "level": "1110",
+      "type": "main_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "github-actions",
+      "file": "pages/_quests/1110/ouroboros-loop-07-weaving-the-whole.md"
     },
     {
       "id": "/quests/1110/scaling-strategies/",
@@ -1717,6 +1780,15 @@
       "difficulty": "🟢 Easy",
       "technology": "reference",
       "file": "pages/_quests/codex/index.md"
+    },
+    {
+      "id": "/quests/codex/ouroboros-loop/",
+      "title": "Epic Quest: The Ouroboros Loop",
+      "level": "1110",
+      "type": "epic_quest",
+      "difficulty": "⚔️ Epic",
+      "technology": "github-actions",
+      "file": "pages/_quests/codex/ouroboros-loop.md"
     },
     {
       "id": "/quests/codex/self-operating-website/",
@@ -2220,6 +2292,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/0000/ouroboros-loop-01-the-first-turn/",
+      "target": "/quests/codex/ouroboros-loop/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0000/ouroboros-loop-01-the-first-turn/",
+      "target": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0000/terminal-fundamentals/",
       "target": "/quests/0000/bashcrawl/",
       "kind": "unlocks"
@@ -2530,6 +2612,16 @@
       "kind": "required"
     },
     {
+      "source": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "target": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "target": "/quests/1011/ouroboros-loop-04-the-sealed-evidence/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/0011/prd-codex-mastery/",
       "target": "/quests/0001/seo-optimization/",
       "kind": "unlocks"
@@ -2692,6 +2784,16 @@
     {
       "source": "/quests/0101/github-actions-basics/",
       "target": "/quests/0101/workflow-optimization/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
+      "target": "/quests/0000/ouroboros-loop-01-the-first-turn/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
+      "target": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
       "kind": "unlocks"
     },
     {
@@ -3390,6 +3492,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1010/ouroboros-loop-05-the-mana-ledger/",
+      "target": "/quests/1011/ouroboros-loop-04-the-sealed-evidence/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1010/ouroboros-loop-05-the-mana-ledger/",
+      "target": "/quests/1101/ouroboros-loop-06-the-fixers-oath/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1010/prometheus-grafana/",
       "target": "/quests/1010/monitoring-fundamentals/",
       "kind": "required"
@@ -3483,6 +3595,16 @@
       "source": "/quests/1011/compliance-standards/",
       "target": "/quests/1011/penetration-testing/",
       "kind": "recommended"
+    },
+    {
+      "source": "/quests/1011/ouroboros-loop-04-the-sealed-evidence/",
+      "target": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1011/ouroboros-loop-04-the-sealed-evidence/",
+      "target": "/quests/1010/ouroboros-loop-05-the-mana-ledger/",
+      "kind": "unlocks"
     },
     {
       "source": "/quests/1011/penetration-testing/",
@@ -3925,6 +4047,16 @@
       "kind": "unlocks"
     },
     {
+      "source": "/quests/1101/ouroboros-loop-06-the-fixers-oath/",
+      "target": "/quests/1010/ouroboros-loop-05-the-mana-ledger/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1101/ouroboros-loop-06-the-fixers-oath/",
+      "target": "/quests/1110/ouroboros-loop-07-weaving-the-whole/",
+      "kind": "unlocks"
+    },
+    {
       "source": "/quests/1101/python-data-science/",
       "target": "/quests/1101/ml-fundamentals/",
       "kind": "unlocks"
@@ -4017,6 +4149,16 @@
     {
       "source": "/quests/1110/microservices-architecture/",
       "target": "/quests/1110/scaling-strategies/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/1110/ouroboros-loop-07-weaving-the-whole/",
+      "target": "/quests/1101/ouroboros-loop-06-the-fixers-oath/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/1110/ouroboros-loop-07-weaving-the-whole/",
+      "target": "/quests/codex/ouroboros-loop/",
       "kind": "unlocks"
     },
     {
@@ -4227,6 +4369,46 @@
     {
       "source": "/quests/codex/agentic-codex/",
       "target": "/quests/1100/agentic-codex-06-guardrails-and-accountability/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/codex/self-operating-website/",
+      "kind": "recommended"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/0000/ouroboros-loop-01-the-first-turn/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/0101/ouroboros-loop-02-the-wardens-gate/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/0011/ouroboros-loop-03-summon-the-golem/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/1011/ouroboros-loop-04-the-sealed-evidence/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/1010/ouroboros-loop-05-the-mana-ledger/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/1101/ouroboros-loop-06-the-fixers-oath/",
+      "kind": "unlocks"
+    },
+    {
+      "source": "/quests/codex/ouroboros-loop/",
+      "target": "/quests/1110/ouroboros-loop-07-weaving-the-whole/",
       "kind": "unlocks"
     },
     {
