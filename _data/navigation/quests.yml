@@ -38,6 +38,8 @@
     url: /quests/0000/os-selection/
   - title: 'Terminal Fundamentals: Command Line Navigation Quest'
     url: /quests/0000/terminal-fundamentals/
+  - title: 'The First Turn: A Loop That Checks One Scroll a Day'
+    url: /quests/0000/ouroboros-loop-01-the-first-turn/
   - title: 'VS Code Mastery: Forge Your Ultimate Dev Weapon'
     url: /quests/0000/vscode-mastery/
   - title: '⚔️ Bashcrawl Agent Mode: AI Automation and Contribution'
@@ -164,6 +166,8 @@
     url: /quests/0011/prompt-crystal-vscode-copilot/
   - title: 'Hidden Gem Quest: Publish AI Chats on GitHub Pages'
     url: /quests/0011/github-pages-hidden-gem/
+  - title: 'Summon the Golem: An AI Agent Joins the Loop'
+    url: /quests/0011/ouroboros-loop-03-summon-the-golem/
   - title: 'The PRD Codex: Master Product Reality Distillation'
     url: /quests/0011/prd-codex-mastery/
 - title: Level 0100 - Frontend & Containers
@@ -210,6 +214,8 @@
     url: /quests/0101/testing-integration/
   - title: 'The Cartographer: File Platform Bugs Upstream'
     url: /quests/0101/self-operating-website-08-the-cartographer/
+  - title: 'The Warden''s Gate: Kill Switches and Stage Gates'
+    url: /quests/0101/ouroboros-loop-02-the-wardens-gate/
   - title: 'Workflow Optimization: Caching and Parallel CI/CD'
     url: /quests/0101/workflow-optimization/
   - title: '⚔️ Jekyll Quest Tracking: Building Dynamic Collection Layouts'
@@ -330,6 +336,8 @@
     url: /quests/1010/query-traffic-with-mcp/
   - title: 'The Content Forge: Autonomous Generation That Refuses to Lie'
     url: /quests/1010/self-operating-website-05-the-content-forge/
+  - title: 'The Mana Ledger: Budgets, Windows, and Coverage'
+    url: /quests/1010/ouroboros-loop-05-the-mana-ledger/
   - title: 'The Necromancer''s Inquest: Agent Failure Root Cause Analysis'
     url: /quests/1010/agentic-failure-root-cause-analysis/
   - title: 'The Oracle Rubric: Evaluation & Tuning'
@@ -358,6 +366,8 @@
     url: /quests/1011/agentic-multi-agent-orchestration-patterns/
   - title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
     url: /quests/1011/agentic-multi-agent-observability/
+  - title: 'The Sealed Evidence: Slaying the Self-Grading Golem'
+    url: /quests/1011/ouroboros-loop-04-the-sealed-evidence/
   - title: 'Threat Modeling: STRIDE Framework and Attack Trees Analysis'
     url: /quests/1011/threat-modeling/
   - title: 'When Familiars Fall: Multi-Agent Failure Recovery'
@@ -418,6 +428,8 @@
     url: /quests/1101/neural-networks/
   - title: 'Python for Data Science: NumPy, Pandas & Matplotlib'
     url: /quests/1101/python-data-science/
+  - title: 'The Fixer''s Oath: Repairs Kept by Gates, Not Grades'
+    url: /quests/1101/ouroboros-loop-06-the-fixers-oath/
   - title: 'The Named Familiars: Agents, Skills, and a Self-Review Loop'
     url: /quests/1101/self-operating-website-07-the-named-familiars/
 - title: Level 1110 - Architecture & Design Patterns
@@ -442,6 +454,10 @@
     url: /quests/1110/system-design-interviews/
   - title: 'The Chronicle: A SessionEnd Hook That Remembers'
     url: /quests/1110/self-operating-website-09-the-chronicle/
+  - title: 'Weaving the Whole: The Serpent Closes the Circle'
+    url: /quests/1110/ouroboros-loop-07-weaving-the-whole/
+  - title: 'Epic Quest: The Ouroboros Loop'
+    url: /quests/codex/ouroboros-loop/
 - title: Level 1111 - Leadership & Innovation
   icon: bi-trophy
   url: /quests/1111/

@@ -3,7 +3,7 @@ title: 'Codex Glossary: Fantasy Terms to IT Reality'
 description: The canonical lexicon of the IT-Journey realm — every fantasy term decoded into the technology behind it, from spells and scripts to golems and pipelines.
 excerpt: The realm's shared dictionary — fantasy on one side, real technology on the other.
 date: '2023-11-25T14:12:43.000Z'
-lastmod: '2026-07-02T00:00:00.000Z'
+lastmod: '2026-07-06T00:00:00.000Z'
 draft: false
 permalink: /quests/codex/glossary/
 author: IT-Journey Team
@@ -256,6 +256,7 @@ undone.*
 | **Transmutation** | Refactoring | Change the form, preserve the essence. The Gauntlet proves the essence held. |
 | **Alchemy** | Data engineering | Distilling rivers of raw data into gold. Pipelines are the stills; [Level 1100](/quests/1100/) is the school. |
 | **Prophecy** | Machine learning | Foretelling from patterns of the past. Honest prophets state their confidence — every prophecy carries error bars. Studied at [Level 1101](/quests/1101/). |
+| **The Ouroboros Loop** | A self-perfecting automation cycle (test → fix → merge → re-test) | The Factory's highest art: an oath-bound golem loop that walks the realm's own scrolls, repairs only what it witnessed break, and rests only when the seals say *perfect*. Forged in the [epic of the same name](/quests/codex/ouroboros-loop/). |
 
 ## 🏛️ Law and Fellowship — Governance and Community
 

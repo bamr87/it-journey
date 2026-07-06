@@ -103,29 +103,32 @@ This quest turns that data into a visual heatmap — similar to GitHub's contrib
 
 Create `_includes/contributor/contribution_calendar.html`:
 
-```html
+> The `{% raw %}{% raw %}{% endraw %}` / `{% raw %}{% endraw %}{% endraw %}` lines below are display-only guards so this documentation page shows the Liquid literally. Copy only the inner markup (everything *between* those two lines) into the file.
 
-{% raw %}{% assign calendar = include.calendar %}{% endraw %}
-{% raw %}{% if calendar and calendar.size > 0 %}{% endraw %}
-<div class="contributor-calendar">
+```html
+{% raw %}
+{% assign calendar = include.calendar %}
+{% if calendar and calendar.size > 0 %}
+<div class="contributor-calendar" role="img"
+     aria-label="Contribution calendar heatmap: weekly commit activity over the past year">
   <h4>📆 Contribution History</h4>
   <div class="calendar-grid">
-    {% raw %}{% for week in calendar %}{% endraw %}
-      {% raw %}{% if week.commits == 0 %}{% endraw %}
-        {% raw %}{% assign intensity = "zero" %}{% endraw %}
-      {% raw %}{% elsif week.commits < 3 %}{% endraw %}
-        {% raw %}{% assign intensity = "low" %}{% endraw %}
-      {% raw %}{% elsif week.commits < 7 %}{% endraw %}
-        {% raw %}{% assign intensity = "medium" %}{% endraw %}
-      {% raw %}{% elsif week.commits < 15 %}{% endraw %}
-        {% raw %}{% assign intensity = "high" %}{% endraw %}
-      {% raw %}{% else %}{% endraw %}
-        {% raw %}{% assign intensity = "max" %}{% endraw %}
-      {% raw %}{% endif %}{% endraw %}
-      <div class="calendar-cell calendar-{% raw %}{{ intensity }}{% endraw %}"
-           title="{% raw %}{{ week.week }}{% endraw %}: {% raw %}{{ week.commits }}{% endraw %} commits">
+    {% for week in calendar %}
+      {% if week.commits == 0 %}
+        {% assign intensity = "zero" %}
+      {% elsif week.commits < 3 %}
+        {% assign intensity = "low" %}
+      {% elsif week.commits < 7 %}
+        {% assign intensity = "medium" %}
+      {% elsif week.commits < 15 %}
+        {% assign intensity = "high" %}
+      {% else %}
+        {% assign intensity = "max" %}
+      {% endif %}
+      <div class="calendar-cell calendar-{{ intensity }}"
+           title="{{ week.week }}: {{ week.commits }} commits">
       </div>
-    {% raw %}{% endfor %}{% endraw %}
+    {% endfor %}
   </div>
   <div class="calendar-legend">
     <span>Less</span>
@@ -137,8 +140,8 @@ Create `_includes/contributor/contribution_calendar.html`:
     <span>More</span>
   </div>
 </div>
-{% raw %}{% endif %}{% endraw %}
-
+{% endif %}
+{% endraw %}
 ```
 
 ### Step 2: Add CSS Styles
@@ -171,10 +174,10 @@ Add to `assets/css/contributor-profile.css`:
 .calendar-max    { background: var(--cal-max, #216e39); }
 
 /* Class-themed calendar colors */
-.contributor-card--wizard ~ .contributor-calendar .calendar-low    { background: #c4b5fd; }
-.contributor-card--wizard ~ .contributor-calendar .calendar-medium { background: #8b5cf6; }
-.contributor-card--wizard ~ .contributor-calendar .calendar-high   { background: #6d28d9; }
-.contributor-card--wizard ~ .contributor-calendar .calendar-max    { background: #4c1d95; }
+.contributor-card--wizard .contributor-calendar .calendar-low    { background: #c4b5fd; }
+.contributor-card--wizard .contributor-calendar .calendar-medium { background: #8b5cf6; }
+.contributor-card--wizard .contributor-calendar .calendar-high   { background: #6d28d9; }
+.contributor-card--wizard .contributor-calendar .calendar-max    { background: #4c1d95; }
 
 .calendar-legend {
   display: flex;
@@ -204,12 +207,14 @@ Add to `assets/css/contributor-profile.css`:
 Edit `_includes/contributor/character_sheet.html` and add after the stats panel or achievement wall:
 
 ```liquid
-
-{% raw %}{% include contributor/contribution_calendar.html calendar=contributor.stats.contribution_calendar %}{% endraw %}
-
+{% raw %}
+{% include contributor/contribution_calendar.html calendar=contributor.stats.contribution_calendar %}
+{% endraw %}
 ```
 
 ### Step 4: Verify
+
+> **Prerequisite:** This step needs the working Jekyll project and `Gemfile` you set up in the [Forge Your Character](/quests/0001/forge-your-character/) quest. Run this from that project's root — without it, `bundle exec jekyll serve` will fail with a missing bundler/Gemfile error.
 
 ```bash
 bundle exec jekyll serve
