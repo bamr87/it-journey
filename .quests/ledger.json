@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-04T10:50:12+00:00",
+  "generated": "2026-07-06T14:21:55+00:00",
   "totals": {
-    "slices": 2,
+    "slices": 8,
     "perfect": 0,
     "stuck": 0,
-    "open_issues": 0
+    "open_issues": 87
   },
   "slices": {
     "developer/0000": {
@@ -101,6 +101,471 @@
           "open_issues": 0,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/28703664065"
+        }
+      ]
+    },
+    "data-scientist/0011": {
+      "slug": "data-scientist/0011",
+      "character": "data-scientist",
+      "level": "0011",
+      "theme": "AI-Assisted Development",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 59.7,
+      "total": 3,
+      "scored": 3,
+      "requested": 3,
+      "total_quests": 3,
+      "covered": 3,
+      "errored": 0,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 2,
+        "fail": 1
+      },
+      "open_issues": 17,
+      "high_priority_issues": 6,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "1 fail; 2 warn; avg 59.7 < 95.0; 17 open issue(s); 6 high-priority",
+      "coverage": {
+        "pages/_quests/0011/prd-codex-mastery.md": {
+          "verdict": "fail",
+          "average": 39.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0011/github-pages-hidden-gem.md": {
+          "verdict": "warn",
+          "average": 65.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0011/prompt-crystal-mastery-vscode-copilot.md": {
+          "verdict": "warn",
+          "average": 75.0,
+          "open_issues": 5,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-06T14:21:55+00:00",
+      "last_run_date": "2026-07-06",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-06T14:21:55+00:00",
+          "date": "2026-07-06",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 59.7,
+          "open_issues": 17,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "developer/0001": {
+      "slug": "developer/0001",
+      "character": "developer",
+      "level": "0001",
+      "theme": "Web Fundamentals",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 59.7,
+      "total": 4,
+      "scored": 3,
+      "requested": 26,
+      "total_quests": 26,
+      "covered": 3,
+      "errored": 1,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 1,
+        "fail": 2
+      },
+      "open_issues": 18,
+      "high_priority_issues": 7,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 3/26; 2 fail; 1 warn; avg 59.7 < 95.0; 18 open issue(s); 7 high-priority",
+      "coverage": {
+        "pages/_quests/0001/stating-the-stats.md": {
+          "verdict": "fail",
+          "average": 51.0,
+          "open_issues": 5,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/terminal-mastery.md": {
+          "verdict": "fail",
+          "average": 54.0,
+          "open_issues": 8,
+          "high": 4,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/side-quest-avatar-forge.md": {
+          "verdict": "warn",
+          "average": 74.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-06T14:21:55+00:00",
+      "last_run_date": "2026-07-06",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-06T14:21:55+00:00",
+          "date": "2026-07-06",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 59.7,
+          "open_issues": 18,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "digital-artist/0001": {
+      "slug": "digital-artist/0001",
+      "character": "digital-artist",
+      "level": "0001",
+      "theme": "Web Fundamentals",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 59.2,
+      "total": 5,
+      "scored": 4,
+      "requested": 26,
+      "total_quests": 26,
+      "covered": 4,
+      "errored": 1,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 2,
+        "fail": 2
+      },
+      "open_issues": 24,
+      "high_priority_issues": 7,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 4/26; 2 fail; 2 warn; avg 59.2 < 95.0; 24 open issue(s); 7 high-priority",
+      "coverage": {
+        "pages/_quests/0001/stating-the-stats.md": {
+          "verdict": "fail",
+          "average": 48.0,
+          "open_issues": 7,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/terminal-mastery.md": {
+          "verdict": "fail",
+          "average": 44.0,
+          "open_issues": 9,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/side-quest-avatar-forge.md": {
+          "verdict": "warn",
+          "average": 79.0,
+          "open_issues": 4,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/side-quest-badge-collector.md": {
+          "verdict": "warn",
+          "average": 66.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-06T14:21:55+00:00",
+      "last_run_date": "2026-07-06",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-06T14:21:55+00:00",
+          "date": "2026-07-06",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 59.2,
+          "open_issues": 24,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "game-developer/0001": {
+      "slug": "game-developer/0001",
+      "character": "game-developer",
+      "level": "0001",
+      "theme": "Web Fundamentals",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 65.0,
+      "total": 5,
+      "scored": 4,
+      "requested": 26,
+      "total_quests": 26,
+      "covered": 4,
+      "errored": 1,
+      "truncated": false,
+      "counts": {
+        "pass": 1,
+        "warn": 2,
+        "fail": 1
+      },
+      "open_issues": 18,
+      "high_priority_issues": 6,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 4/26; 1 fail; 2 warn; avg 65.0 < 95.0; 18 open issue(s); 6 high-priority",
+      "coverage": {
+        "pages/_quests/0001/stating-the-stats.md": {
+          "verdict": "fail",
+          "average": 48.0,
+          "open_issues": 7,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/terminal-mastery.md": {
+          "verdict": "warn",
+          "average": 60.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/side-quest-avatar-forge.md": {
+          "verdict": "pass",
+          "average": 88.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0001/side-quest-badge-collector.md": {
+          "verdict": "warn",
+          "average": 64.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-06T14:21:55+00:00",
+      "last_run_date": "2026-07-06",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-06T14:21:55+00:00",
+          "date": "2026-07-06",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 65.0,
+          "open_issues": 18,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "security-specialist/0010": {
+      "slug": "security-specialist/0010",
+      "character": "security-specialist",
+      "level": "0010",
+      "theme": "Terminal Mastery",
+      "tier": "Apprentice",
+      "mode": "execute",
+      "verdict": "warn",
+      "average": 62.0,
+      "total": 1,
+      "scored": 1,
+      "requested": 16,
+      "total_quests": 16,
+      "covered": 1,
+      "errored": 0,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 1,
+        "fail": 0
+      },
+      "open_issues": 4,
+      "high_priority_issues": 1,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 1/16; 1 warn; avg 62.0 < 95.0; 4 open issue(s); 1 high-priority",
+      "coverage": {
+        "pages/_quests/0010/side-quest-contribution-calendar.md": {
+          "verdict": "warn",
+          "average": 62.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-06T14:21:55+00:00",
+      "last_run_date": "2026-07-06",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-06T14:21:55+00:00",
+          "date": "2026-07-06",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 62.0,
+          "open_issues": 4,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "system-engineer/0101": {
+      "slug": "system-engineer/0101",
+      "character": "system-engineer",
+      "level": "0101",
+      "theme": "CI/CD & DevOps",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 53.5,
+      "total": 2,
+      "scored": 2,
+      "requested": 12,
+      "total_quests": 12,
+      "covered": 2,
+      "errored": 0,
+      "truncated": true,
+      "counts": {
+        "pass": 1,
+        "warn": 0,
+        "fail": 1
+      },
+      "open_issues": 6,
+      "high_priority_issues": 4,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 2/12; 1 fail; avg 53.5 < 95.0; 6 open issue(s); 4 high-priority",
+      "coverage": {
+        "pages/_quests/0101/cicd-fundamentals.md": {
+          "verdict": "pass",
+          "average": 92.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        },
+        "pages/_quests/0101/docker-mastery-example.md": {
+          "verdict": "fail",
+          "average": 15.0,
+          "open_issues": 6,
+          "high": 4,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-06"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-06T14:21:55+00:00",
+      "last_run_date": "2026-07-06",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-06T14:21:55+00:00",
+          "date": "2026-07-06",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 53.5,
+          "open_issues": 6,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
         }
       ]
     }
