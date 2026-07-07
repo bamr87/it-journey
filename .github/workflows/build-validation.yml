@@ -117,16 +117,18 @@ jobs:
       with:
         fetch-depth: 1
 
-    # Fail FAST (before the slow Ruby build) on Liquid raw-guard bugs — nested
-    # {% raw %} or an unguarded GitHub Actions ${{ }}. The PR Jekyll build sets
-    # liquid.error_mode: warn (dev speed) and would let these through, but the
-    # production GitHub Pages build is strict and they take the live site down.
-    # Scoped to CHANGED pages on a PR (so pre-existing debt never blocks an
-    # unrelated change); full sweep on push/dispatch.
+    # Fail FAST (before the slow Ruby build) on Liquid raw-guard bugs — an
+    # orphan/nested {% raw %}/{% endraw %} or an unguarded GitHub Actions ${{ }}.
+    # These are fatal to every Jekyll build, production Pages included, and take
+    # the deploy down. Scoped to CHANGED pages on a PR (so pre-existing debt
+    # never blocks an unrelated change); full sweep on push/dispatch.
+    # pipefail: `checker | tee` must fail on the CHECKER's exit code, not tee's —
+    # without it this gate can never fail in PR mode (the PR #445 escape).
     - name: 🧪 Liquid raw-guard gate
       env:
         BASE: ${{ github.event.pull_request.base.sha }}
       run: |
+        set -o pipefail
         python3 scripts/validation/check_liquid_raw.py --selftest
         if [ "${{ github.event_name }}" = "pull_request" ]; then
           git fetch --no-tags --depth=1 origin "$BASE" 2>/dev/null || true
@@ -160,6 +162,8 @@ jobs:
 
     - name: 🔍 Check Configuration Validity
       run: |
+        # pipefail: `if cmd | tee` must test cmd's exit code, not tee's.
+        set -o pipefail
         echo "## ⚙️ Configuration Validation" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -175,6 +179,11 @@ jobs:
     - name: 🏗️ Test Jekyll Build Process
       id: jekyll_build
       run: |
+        # pipefail is load-bearing: GH Actions' default shell (`bash -e {0}`)
+        # does NOT set it, so `if jekyll build | tee log` tests tee's exit code
+        # (always 0) and a failed build reports ✅. That masking let the PR #445
+        # Liquid crash merge and break the production Pages deploy.
+        set -o pipefail
         echo "## 🏗️ Jekyll Build Test" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -252,6 +261,8 @@ jobs:
     - name: 🐳 Test Docker Build
       id: docker_build
       run: |
+        # pipefail: `if cmd | tee` must test cmd's exit code, not tee's.
+        set -o pipefail
         echo "## 🐳 Docker Build Test" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
