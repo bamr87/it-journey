@@ -305,22 +305,24 @@ aws ec2 terminate-instances --instance-ids <instance-id>
 S3 (Simple Storage Service) holds objects (files) inside buckets, with effectively unlimited capacity and 11 nines of durability.
 
 ```bash
-# Create a bucket (names are globally unique - add randomness)
-aws s3 mb s3://my-quest-bucket-$RANDOM
+# Create a bucket (names are globally unique - add randomness).
+# Store the generated name in a variable and reuse it in every command below.
+BUCKET=my-quest-bucket-$RANDOM
+aws s3 mb s3://$BUCKET
 
 # Upload and download an object
 echo "treasure" > loot.txt
-aws s3 cp loot.txt s3://my-quest-bucket-12345/
-aws s3 cp s3://my-quest-bucket-12345/loot.txt downloaded-loot.txt
+aws s3 cp loot.txt s3://$BUCKET/
+aws s3 cp s3://$BUCKET/loot.txt downloaded-loot.txt
 
 # Block ALL public access (the safe default for almost every bucket)
 aws s3api put-public-access-block \
-  --bucket my-quest-bucket-12345 \
+  --bucket $BUCKET \
   --public-access-block-configuration \
   BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true
 
 # Clean up: empty and delete the bucket
-aws s3 rb s3://my-quest-bucket-12345 --force
+aws s3 rb s3://$BUCKET --force
 ```
 
 > The single most common cloud breach is a publicly readable S3 bucket. Block public access by default and open it deliberately, never accidentally.
