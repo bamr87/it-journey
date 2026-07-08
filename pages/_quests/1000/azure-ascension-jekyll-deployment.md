@@ -55,10 +55,20 @@ layout: quest
 ### 🛠️ System Requirements
 - [ ] Azure account with permissions to create Static Web Apps
 - [ ] GitHub account with repo access
+- [ ] [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) installed and authenticated (`az login`) — Chapter 2 depends on Azure authentication
+- [ ] Ruby ≥ 3.2 and Bundler installed (`gem install bundler`)
 
 ## 🧙‍♂️ Chapter 1: Prepare the Repository
 
-Ensure dependencies are installed:
+First, clone the IT-Journey repository and change into the Jekyll site root — every
+command below assumes this is your working directory (it is where the `Gemfile` lives):
+
+```bash
+git clone https://github.com/bamr87/it-journey.git
+cd it-journey
+```
+
+Ensure dependencies are installed (run from the `it-journey` repo root, next to the `Gemfile`):
 
 ```bash
 bundle install
@@ -72,18 +82,26 @@ bundle exec jekyll build
 
 ## ☁️ Chapter 2: Deploy with the Azure Helper Script
 
-Use the built-in deployment script:
+Use the built-in deployment script. Run it **from the `it-journey` repo root** (the same
+directory you cloned into in Chapter 1) using its repo-relative path:
 
 ```bash
-../../scripts/deployment/azure-jekyll-deploy.sh setup
-../../scripts/deployment/azure-jekyll-deploy.sh deploy --app-name <your-app-name> --github-repo <your-repo-url>
+# setup: verifies prerequisites and provisions the Azure Static Web App
+scripts/deployment/azure-jekyll-deploy.sh setup
+
+# deploy: pushes the build and wires up the GitHub Actions CI/CD workflow
+#   --app-name    the name for your Azure Static Web App (e.g. my-it-journey)
+#   --github-repo the HTTPS URL of your fork (e.g. https://github.com/<you>/it-journey)
+scripts/deployment/azure-jekyll-deploy.sh deploy --app-name <your-app-name> --github-repo <your-repo-url>
 ```
 
 Follow the prompts for Azure authentication and GitHub workflow setup.
 
 ## 🔐 Chapter 3: Secrets & Workflow Verification
 
-1. Confirm required GitHub secrets are set.
+1. Confirm the required GitHub secret is set: the Azure Static Web Apps deployment token,
+   stored as `AZURE_STATIC_WEB_APPS_API_TOKEN` under **Settings → Secrets and variables →
+   Actions** in your repo. The `deploy` step above prints this token; copy it into the secret.
 2. Open the generated workflow in `.github/workflows/`.
 3. Trigger a deploy by pushing a small change.
 
@@ -109,7 +127,7 @@ Follow the prompts for Azure authentication and GitHub workflow setup.
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Level hub:** [[Level 1000 (8) - Cloud Computing]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]
 **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 
