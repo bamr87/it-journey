@@ -112,7 +112,13 @@ The **OODA loop** gives us four named stages. *Observe* loads the world (the wor
 
 We rank with **RICE**: `score = (Reach × Impact × Confidence) / Effort`. Reach is how many pages or users a fix touches, Impact is how much it moves the needle, Confidence is how sure we are, and Effort is the cost. Dividing by effort means a cheap, broad, high-confidence win beats a heroic gamble every time.
 
+Save these pure functions as `scripts/decide_core.py` — `decide.py` below imports them
+with `from decide_core import Task, decide`, so the file must sit next to `decide.py` in
+`scripts/` (or be on your `PYTHONPATH`), otherwise you get `ModuleNotFoundError: No module
+named 'decide_core'`.
+
 ```python
+# scripts/decide_core.py — the pure OODA/RICE decision functions, imported by decide.py.
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -145,7 +151,8 @@ The two helpers the dispatch script shells out to are thin. `build_backlog.py` i
 # Output shape (one object per candidate task), consumed by decide.py:
 #   [{"id": "fix-broken-link-42", "reach": 120, "impact": 2.0,
 #     "confidence": 0.9, "effort": 1.5}, ...]
-import json, sys
+import json
+import sys
 
 def build_backlog() -> list[dict]:
     # Replace this stub with a read of your Chapter-II worklist.
@@ -163,7 +170,8 @@ if __name__ == "__main__":
 
 ```python
 # scripts/decide.py — Orient + Decide: read backlog JSON on stdin, print one id.
-import json, sys
+import json
+import sys
 from decide_core import Task, decide   # the pure functions defined above
 
 def main() -> None:
@@ -228,8 +236,17 @@ TASK_ID="$1"
 
 LEASE_REF="refs/leases/${TASK_ID}"
 
-# Point the lease at the current commit; the *name* is the lock.
-git update-ref "$LEASE_REF" HEAD
+# Point the lease at a UNIQUE per-runner commit — NOT at HEAD.
+# If two runners share the same HEAD SHA, pushing HEAD to the lease ref is
+# byte-identical for both, so git reports "Everything up-to-date" (exit 0) for
+# the second runner too and BOTH would believe they won. A per-attempt nonce
+# commit makes the two pushes differ, so the create-only CAS below correctly
+# rejects the loser with a stale-info error.
+NONCE="${GITHUB_RUN_ID:-$$}-${RANDOM}-$(date +%s%N)"
+LEASE_SHA="$(GIT_AUTHOR_NAME=war-machine GIT_AUTHOR_EMAIL=war-machine@ci \
+  GIT_COMMITTER_NAME=war-machine GIT_COMMITTER_EMAIL=war-machine@ci \
+  git commit-tree 'HEAD^{tree}' -p HEAD -m "lease ${TASK_ID} ${NONCE}")"
+git update-ref "$LEASE_REF" "$LEASE_SHA"
 
 # The push IS the compare-and-swap. An EMPTY expected value
 # (the part after the trailing ':') asserts the ref must NOT already
