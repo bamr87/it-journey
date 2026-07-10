@@ -88,6 +88,14 @@ You'll know you've truly mastered this quest when you can:
 - [ ] Design and implement professional development workflows for teams
 - [ ] Troubleshoot version control issues and guide others through solutions
 
+## 🗺️ Quest Prerequisites
+
+Before you begin, make sure your realm is stocked with the tools this quest assumes:
+
+- **A GitHub account** — Chapter 1 pushes to a remote repository and later chapters wire up GitHub Actions. Sign up at [github.com](https://github.com/) if you don't have one.
+- **Git installed and configured** — the "Choose Your Adventure Platform" section below installs Git for your OS.
+- **Node.js installed** — the Chapter 4 GitHub Actions workflow runs `npm` scripts (test, lint, coverage), so a working Node.js/npm toolchain is required to follow that chapter against a real project. Grab it from [nodejs.org](https://nodejs.org/).
+
 ## 🌍 Choose Your Adventure Platform
 
 *Different platforms offer unique advantages for mastering source control sorcery. Choose the path that best fits your current realm and magical setup.*
@@ -174,6 +182,7 @@ Every source control journey begins with understanding the three mystical realms
 mkdir my-first-quest
 cd my-first-quest
 git init  # Initialize the repository with Git magic
+git branch -M main  # Name the default branch 'main' now, so it matches GitHub's default and the output below
 
 # Check the status of your realm
 git status  # Shows which files are tracked, modified, or staged
@@ -191,10 +200,19 @@ This marks the beginning of my source control journey.
 Created initial documentation for the project."
 
 # Connect to a remote GitHub repository
+# ⚠️ First create an EMPTY repo on GitHub (web UI, or `gh repo create my-first-quest --public`),
+# then swap `yourusername`/repo name below for your own — this URL is only a placeholder.
 git remote add origin https://github.com/yourusername/my-first-quest.git
-git branch -M main
 git push -u origin main
 ```
+
+> 🔑 **Heads-up — the push needs a real repo and authentication.** `git push` only
+> succeeds once `origin` points at a repository you actually created on GitHub **and**
+> you're signed in (a browser/credential-manager prompt, or a
+> [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)).
+> Against the placeholder URL above it fails with
+> `fatal: could not read Username for 'https://github.com'` — that's expected until you
+> substitute your own repo and credentials.
 
 **Expected Output**:
 ```text

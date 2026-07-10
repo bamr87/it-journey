@@ -207,6 +207,8 @@ profile:
 
 Update `_includes/contributor/character_sheet.html` to apply the theme class:
 
+> ⚠️ **Strip the Liquid `raw`/`endraw` wrapper tags before pasting.** They only exist here so this quest page can *display* the Liquid tags instead of running them. Copy the code into the real `.html` file **without** the `raw`/`endraw` lines — otherwise Jekyll renders the literal `{% raw %}{% if %}{% endraw %}`/`{% raw %}{{ theme_class }}{% endraw %}` markup as visible text instead of applying your theme.
+
 ```liquid
 
 {% raw %}{% if contributor.profile.theme %}{% endraw %}
@@ -219,6 +221,8 @@ Update `_includes/contributor/character_sheet.html` to apply the theme class:
 ### Step 6: Load the Theme CSS
 
 In your profile page (or in `character_sheet.html`):
+
+> ⚠️ **Same as Step 5 — remove the Liquid `raw`/`endraw` wrapper tags before pasting.** Paste only the Liquid between them; leaving the `raw`/`endraw` lines in produces a broken literal `<link>` tag (with visible `{% raw %}{{ ... }}{% endraw %}` markup) instead of loading your theme's stylesheet.
 
 ```liquid
 
