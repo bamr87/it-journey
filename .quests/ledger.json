@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-06T14:21:55+00:00",
+  "generated": "2026-07-11T12:58:23+00:00",
   "totals": {
-    "slices": 8,
+    "slices": 14,
     "perfect": 0,
     "stuck": 0,
-    "open_issues": 87
+    "open_issues": 147
   },
   "slices": {
     "developer/0000": {
@@ -566,6 +566,406 @@
           "open_issues": 6,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "data-scientist/0110": {
+      "slug": "data-scientist/0110",
+      "character": "data-scientist",
+      "level": "0110",
+      "theme": "Database Mastery",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": null,
+      "average": null,
+      "total": 0,
+      "scored": 0,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 0,
+      "errored": 0,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 0,
+        "fail": 0
+      },
+      "open_issues": 0,
+      "high_priority_issues": 0,
+      "executed": false,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 0/8; no average",
+      "coverage": {},
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-11T12:58:23+00:00",
+      "last_run_date": "2026-07-11",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-11T12:58:23+00:00",
+          "date": "2026-07-11",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 0.0,
+          "open_issues": 0,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861"
+        }
+      ]
+    },
+    "developer/0100": {
+      "slug": "developer/0100",
+      "character": "developer",
+      "level": "0100",
+      "theme": "Frontend & Containers",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 30.0,
+      "total": 3,
+      "scored": 1,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 1,
+      "errored": 2,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 0,
+        "fail": 1
+      },
+      "open_issues": 6,
+      "high_priority_issues": 3,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 1/8; 1 fail; avg 30.0 < 95.0; 6 open issue(s); 3 high-priority",
+      "coverage": {
+        "pages/_quests/0100/frontend-docker.md": {
+          "verdict": "fail",
+          "average": 30.0,
+          "open_issues": 6,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-11T12:58:23+00:00",
+      "last_run_date": "2026-07-11",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-11T12:58:23+00:00",
+          "date": "2026-07-11",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 30.0,
+          "open_issues": 6,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861"
+        }
+      ]
+    },
+    "digital-artist/0100": {
+      "slug": "digital-artist/0100",
+      "character": "digital-artist",
+      "level": "0100",
+      "theme": "Frontend & Containers",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 59.5,
+      "total": 5,
+      "scored": 4,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 4,
+      "errored": 1,
+      "truncated": false,
+      "counts": {
+        "pass": 1,
+        "warn": 1,
+        "fail": 2
+      },
+      "open_issues": 23,
+      "high_priority_issues": 9,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 4/8; 2 fail; 1 warn; avg 59.5 < 95.0; 23 open issue(s); 9 high-priority",
+      "coverage": {
+        "pages/_quests/0100/container-fundamentals.md": {
+          "verdict": "pass",
+          "average": 83.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        },
+        "pages/_quests/0100/frontend-docker.md": {
+          "verdict": "fail",
+          "average": 28.0,
+          "open_issues": 10,
+          "high": 5,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        },
+        "pages/_quests/0100/frontend.md": {
+          "verdict": "fail",
+          "average": 54.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        },
+        "pages/_quests/0100/jekyll-component-refactoring.md": {
+          "verdict": "warn",
+          "average": 73.0,
+          "open_issues": 7,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-11T12:58:23+00:00",
+      "last_run_date": "2026-07-11",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-11T12:58:23+00:00",
+          "date": "2026-07-11",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 59.5,
+          "open_issues": 23,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861"
+        }
+      ]
+    },
+    "game-developer/0100": {
+      "slug": "game-developer/0100",
+      "character": "game-developer",
+      "level": "0100",
+      "theme": "Frontend & Containers",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 51.7,
+      "total": 5,
+      "scored": 3,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 3,
+      "errored": 2,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 1,
+        "fail": 2
+      },
+      "open_issues": 21,
+      "high_priority_issues": 8,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 3/8; 2 fail; 1 warn; avg 51.7 < 95.0; 21 open issue(s); 8 high-priority",
+      "coverage": {
+        "pages/_quests/0100/frontend-docker.md": {
+          "verdict": "fail",
+          "average": 30.0,
+          "open_issues": 8,
+          "high": 4,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        },
+        "pages/_quests/0100/frontend.md": {
+          "verdict": "fail",
+          "average": 55.0,
+          "open_issues": 7,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        },
+        "pages/_quests/0100/jekyll-component-refactoring.md": {
+          "verdict": "warn",
+          "average": 70.0,
+          "open_issues": 6,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-11T12:58:23+00:00",
+      "last_run_date": "2026-07-11",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-11T12:58:23+00:00",
+          "date": "2026-07-11",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 51.7,
+          "open_issues": 21,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861"
+        }
+      ]
+    },
+    "security-specialist/1000": {
+      "slug": "security-specialist/1000",
+      "character": "security-specialist",
+      "level": "1000",
+      "theme": "Cloud Computing",
+      "tier": "Warrior",
+      "mode": "execute",
+      "verdict": null,
+      "average": null,
+      "total": 0,
+      "scored": 0,
+      "requested": 9,
+      "total_quests": 9,
+      "covered": 0,
+      "errored": 0,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 0,
+        "fail": 0
+      },
+      "open_issues": 0,
+      "high_priority_issues": 0,
+      "executed": false,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 0/9; no average",
+      "coverage": {},
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-11T12:58:23+00:00",
+      "last_run_date": "2026-07-11",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-11T12:58:23+00:00",
+          "date": "2026-07-11",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 0.0,
+          "open_issues": 0,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861"
+        }
+      ]
+    },
+    "system-engineer/1000": {
+      "slug": "system-engineer/1000",
+      "character": "system-engineer",
+      "level": "1000",
+      "theme": "Cloud Computing",
+      "tier": "Warrior",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 48.5,
+      "total": 2,
+      "scored": 2,
+      "requested": 9,
+      "total_quests": 9,
+      "covered": 2,
+      "errored": 0,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 0,
+        "fail": 2
+      },
+      "open_issues": 10,
+      "high_priority_issues": 5,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 2/9; 2 fail; avg 48.5 < 95.0; 10 open issue(s); 5 high-priority",
+      "coverage": {
+        "pages/_quests/1000/agentic-observability-and-control.md": {
+          "verdict": "fail",
+          "average": 42.0,
+          "open_issues": 6,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        },
+        "pages/_quests/1000/agentic-tool-selection-and-permissions.md": {
+          "verdict": "fail",
+          "average": 55.0,
+          "open_issues": 4,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-11"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-11T12:58:23+00:00",
+      "last_run_date": "2026-07-11",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-11T12:58:23+00:00",
+          "date": "2026-07-11",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 48.5,
+          "open_issues": 10,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29150921861"
         }
       ]
     }
