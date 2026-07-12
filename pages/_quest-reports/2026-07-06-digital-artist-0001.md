@@ -104,7 +104,7 @@ clarity **3** · structure **4** · safety **5**.
 - ✅ `pages/stats.md` Liquid/Bootstrap template — **passed** (built with Jekyll
   4.4.1 against generated data): categories/tags loops, tag-cloud sizing, `first`
   on a Hash, and the freshness-badge epoch math all rendered correctly.
-- `reasoned`: `{{ ... | number_with_delimiter }}` (line 539) is **not** a real
+- `reasoned`: `{​{ ... | number_with_delimiter }​}` (line 539) is **not** a real
   Jekyll/Liquid filter — verified against jekyll-4.4.1's filters.rb; Liquid
   silently no-ops it, so "Total Words" renders unformatted.
 

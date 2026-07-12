@@ -61,7 +61,7 @@ maintainer should (1) treat `frontend-docker` as needing a substantial rewrite, 
 |---|:--:|---|--:|---|
 | 1 | 🟨 reasoned | Docker Container Fundamentals: Images to Registries | — | Engine auth-aborted mid-run (no live verdict); statically a coherent, well-scaffolded quest that ends by handing off to Compose. |
 | 2 | ⚠️ warn | Docker Compose Orchestration: Multi-Container Apps | 75 | Live-verified across all 3 chapters; one real defect — `--scale web=3` fails against the quest's own static-port compose file. |
-| 3 | ❌ fail | Dockering Jekyll with Bootstrap 5 | 30 | `draft: true`; happy path broken at almost every step (dead `docker-compose` CLI, `jekyll new .` conflict, phantom `cd`, `{% raw %}`-defeated includes, Bootstrap 4 markup mislabeled v5). |
+| 3 | ❌ fail | Dockering Jekyll with Bootstrap 5 | 30 | `draft: true`; happy path broken at almost every step (dead `docker-compose` CLI, `jekyll new .` conflict, phantom `cd`, `{​% raw %​}`-defeated includes, Bootstrap 4 markup mislabeled v5). |
 | 4 | 🟨 reasoned | Frontend Forests: Building a Jekyll Site with Bootstrap | — | Not evaluated (auth-truncated); `draft: true`, outline-level with auto-seeded placeholder objectives + empty tags/categories. Solid Chapter 9 theme primer. |
 | 5 | 🟨 reasoned | The Artisan's Forge: Refactoring Jekyll Theme Components | — | Not evaluated (auth-truncated); statically the strongest of the Jekyll cluster, but ships one deprecated `docker-compose exec` and a duplicated Resources section. |
 
@@ -116,8 +116,8 @@ trimmed from the engine's recorded findings.
     that subfolder.
   - A real `jekyll build` proved the Step 4 HTML snippet produces invalid nested HTML
     (literal `<p>&lt;!DOCTYPE html&gt;</p>`, duplicated `<html>/<head>/<body>`) because
-    `layout: home` is left in place, and `{% raw %}{% include head.html %}{% endraw %}`
-    leaks verbatim into `_site/index.html` (grep-confirmed) because the `{% raw %}`
+    `layout: home` is left in place, and `{​% raw %​}{​% include head.html %​}{​% endraw %​}`
+    leaks verbatim into `_site/index.html` (grep-confirmed) because the `{​% raw %​}`
     wrapper defeats the include.
 - **Passed, live:** `git init && git add . && git commit …` ran cleanly.
 
@@ -126,7 +126,7 @@ trimmed from the engine's recorded findings.
   read only: `draft: true`; objectives are the auto-seeded placeholder
   (*"Note: objectives auto-seeded during framework alignment…"*); `tags: []` and
   `categories: []` are empty; Steps 1–8 are outline-level prose. Chapter 9 ("Reading
-  the Theme's Spellbook") is genuinely good, correctly-`{% raw %}`-escaped Liquid
+  the Theme's Spellbook") is genuinely good, correctly-`{​% raw %​}`-escaped Liquid
   teaching. No commands run this session.
 
 ### 5. The Artisan's Forge — 🟨 not evaluated (reasoned only)
@@ -160,10 +160,10 @@ quote from the quest.
   such directory is ever created. **Fix:** remove the `cd`, or scaffold with
   `jekyll new my-jekyll-site`.
 - **[live] · Dockering Jekyll with Bootstrap 5 · Step 4 HTML snippet** — A real
-  `jekyll build` showed the `{% raw %}` wrapper prevents the `{% include %}` calls
+  `jekyll build` showed the `{​% raw %​}` wrapper prevents the `{​% include %​}` calls
   from executing (literal tags leak into `_site/index.html`), and the full
   `<!DOCTYPE html>` doc collides with the untouched `layout: home`. **Fix:** drop the
-  `{% raw %}` wrapper and set `layout: none` (or rewrite as a partial).
+  `{​% raw %​}` wrapper and set `layout: none` (or rewrite as a partial).
 - **[reasoned] · Dockering Jekyll with Bootstrap 5 · Step 3 Bootstrap version** —
   Markup labeled "Bootstrap 5" uses v4 idioms: `data-toggle`/`data-target` (should be
   `data-bs-*`), `.jumbotron` (removed in v5), `sr-only` (now `visually-hidden`), plus
@@ -252,7 +252,7 @@ window 1 of 2 (5 of 8 quests); the remaining 3 quests were not part of this sess
   and are labeled as such throughout; I make no pass/fail claims about their commands.
 - **Confidence:** High for the two live-scored quests (real commands, real output).
   Medium for the three reasoned quests — my issues there are quotable from source
-  (draft flags, placeholder objectives, deprecated `docker-compose`, `{% raw %}`
+  (draft flags, placeholder objectives, deprecated `docker-compose`, `{​% raw %​}`
   reasoning), but they were not executed this session and deserve a real engine pass.
 - **Recommended follow-up:** re-run the execute engine (fresh token) over the three
   unscored quests to convert this session's `reasoned` findings into live evidence,

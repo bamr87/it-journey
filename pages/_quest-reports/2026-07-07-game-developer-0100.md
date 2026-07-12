@@ -61,7 +61,7 @@ try to build the frontend. Quest 1 errored in the engine and was only reasoned a
 |---|:--:|---|:--:|---|
 | 1 | ⚪ reasoned | Docker Container Fundamentals: Images to Registries | — (engine error) | Reads as a polished, well-sequenced main quest; **no machine score** — engine hit max_turns after curl was denied. |
 | 2 | ⚠️ warn | Docker Compose Orchestration: Multi-Container Apps | 65 | Chapters 1–2 executed flawlessly (real Redis counter + verified volume persistence); Chapter 3 "Full Stack" section has two confirmed runtime failures. |
-| 3 | ❌ fail | Dockering Jekyll with Bootstrap 5 | 30 | Breaks at almost every step: `docker-compose` v1 CLI absent, `jekyll new .` conflict, `cd my-jekyll-site` into a dir never created, `{% raw %}` artifact, BS4 code, `up` crashes. |
+| 3 | ❌ fail | Dockering Jekyll with Bootstrap 5 | 30 | Breaks at almost every step: `docker-compose` v1 CLI absent, `jekyll new .` conflict, `cd my-jekyll-site` into a dir never created, `{​% raw %​}` artifact, BS4 code, `up` crashes. |
 | 4 | ❌ fail | Frontend Forests: Building a Jekyll Site with Bootstrap | 55 | Concepts accurate, but Steps 3–4 edit `_includes/head.html` / `_layouts/default.html` that **don't exist** in a fresh `jekyll new` + minima site. |
 | 5 | ⚠️ warn | The Artisan's Forge: Refactoring Jekyll Theme Components | 72 | Core pattern is sound and builds end-to-end; first-pass `touch` fails (no `mkdir -p`), SCSS partial never wired to a compiled stylesheet, duplicated Resources block. |
 
@@ -115,8 +115,8 @@ Dimensions: commands_work 1 · content_accuracy 1 · completeness 1 · clarity 2
 - **failed** — final `docker-compose up` → reproducible `Bundler::GemNotFound` (compose
   never runs `bundle install`); even patched, the server binds only `127.0.0.1` inside
   the container (confirmed via `/proc/net/tcp`), so `localhost:4000` on the host resets.
-- **failed** — Step 4 homepage renders literal `{% raw %}{% include head.html %}{% endraw %}`
-  text (a stray `{% raw %}` wrapper) instead of pulling in Bootstrap — verified via a real `jekyll build`.
+- **failed** — Step 4 homepage renders literal `{​% raw %​}{​% include head.html %​}{​% endraw %​}`
+  text (a stray `{​% raw %​}` wrapper) instead of pulling in Bootstrap — verified via a real `jekyll build`.
 - **passed** — only `git init && git add . && git commit …` (deploy scaffolding) ran clean.
 - **reasoned/content** — BS4 holdovers confirmed by read: `jquery-3.3.1.slim.min.js`,
   `data-toggle`/`data-target`, `.jumbotron`, `.sr-only`, and placeholder
@@ -173,7 +173,7 @@ Dimensions: commands_work 3 · content_accuracy 4 · completeness 3 · clarity 4
   with `Bundler::GemNotFound`, and even fixed the server binds loopback-only so
   `localhost:4000` never loads. *Fix:* `bash -c "bundle install && jekyll serve --watch
   --force_polling --host 0.0.0.0"`.
-- **frontend-docker · Step 4 HTML** — stray `{% raw %}…{% endraw %}` wrapper renders as
+- **frontend-docker · Step 4 HTML** — stray `{​% raw %​}…{​% endraw %​}` wrapper renders as
   literal text; no front-matter block, so Jekyll won't process the page. *Fix:* remove
   the wrapper, add a `---\n---` front matter block.
 - **frontend-docker · Bootstrap 5 accuracy** — jQuery, `data-toggle`/`data-target`,

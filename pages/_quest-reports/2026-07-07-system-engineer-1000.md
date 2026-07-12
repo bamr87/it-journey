@@ -44,13 +44,13 @@ The headline verdict is **FAIL**: of the five quests, **0 passed, 3 warned, 2 fa
 (one of those a 600-second engine timeout), average score **61.2%**.
 
 Two things dominate this slice. First, the **flagship observability quest is broken as
-written** — its centerpiece GitHub Actions workflow carries leaked Jekyll `{% raw %}`
-tags *inside* every `${{ }}` expression, which the engine reproduced as an immediate
+written** — its centerpiece GitHub Actions workflow carries leaked Jekyll `{​% raw %​}`
+tags *inside* every `${​{ }​}` expression, which the engine reproduced as an immediate
 `bash: bad substitution` error, and a quoted heredoc silently no-ops its timestamp.
 Second, a **systemic dead validation gate** runs through the whole GH-600 sub-arc:
 three quests (Q1, Q2, Q5) end with `python3 scripts/validate_quest.py --quest qN`, a
 script that **does not exist anywhere in the repo** — the engine ran it and it failed
-with "No such file or directory." A maintainer should treat the `{% raw %}` leakage and
+with "No such file or directory." A maintainer should treat the `{​% raw %​}` leakage and
 the missing validator as the two must-fix items before this slice teaches what it claims.
 
 > **Mode & honesty note:** this is a real `--mode execute` run whose evidence was
@@ -63,7 +63,7 @@ the missing validator as the two must-fix items before this slice teaches what i
 
 Plan order (dependency/name-sorted, **not** pedagogical order — see §6):
 
-1. ❌ **The All-Seeing Eye: Observability for AI Agents** — **39** · flagship workflow broken two ways (`{% raw %}` leak + quoted heredoc), dead validator, unaddressed secondary objectives.
+1. ❌ **The All-Seeing Eye: Observability for AI Agents** — **39** · flagship workflow broken two ways (`{​% raw %​}` leak + quoted heredoc), dead validator, unaddressed secondary objectives.
 2. ⚠️ **Forging the Agent's Arsenal: Tool Selection & Permissions** — **62** · clean YAML/markdown artifacts, but the only runnable command (the validator) fails, and it sells soft prompt text as a hard permission boundary.
 3. ⚠️ **Cloud Computing Fundamentals: IaaS, PaaS, SaaS** — **75** · accurate, well-built concepts; two of three Secondary Objectives are promised but never written, and two AWS CLI snippets fail `NoCredentials` with no prerequisite note.
 4. ⚠️ **Forging the Arsenal: Tool Use & Environment** — **69** · strong pedagogy and 4/4 lab steps run byte-perfect, but the climactic "break it on purpose" step is factually wrong (infinite loop, not `exit=0`) and cites an unverifiable "GH-600" exam code.
@@ -77,7 +77,7 @@ sandbox** (`./walk-evidence.json`); `reasoned` items were judged statically.
 ### 1. The All-Seeing Eye — Observability (39 · FAIL)
 Snippets: **ran 4 of 6 recorded (3 runnable); 2 passed, 2 failed, 2 reasoned.**
 - ❌ **`.github/workflows/agent-with-tracing.yml` (Ch.2)** — copied verbatim, YAML parses,
-  but `bash -c 'echo "run_id=${% raw %}{{ github.run_id }}{% endraw %}"'` → **`bash: bad
+  but `bash -c 'echo "run_id=${​% raw %​}{​{ github.run_id }​}{​% endraw %​}"'` → **`bash: bad
   substitution` (exit 1)**. The leaked Jekyll tags are in the source at lines 163–204.
 - ❌ **Trace heredoc** — `cat > agent-execution-trace.json << 'EOF'` uses a **quoted**
   delimiter, so `"completed_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"` is written **literally**,
@@ -121,7 +121,7 @@ Snippets: **ran 6 of 12 recorded (4 runnable); 5 passed, 1 failed, 6 reasoned.**
   blocks **byte for byte**, including transient-failure absorption (exit=0 on attempt 3) and
   permanent-failure escalation (`::error::`, stub `gh issue create`, exit=1).
 - ✅ **All YAML/JSON/mermaid snippets** — parse/render cleanly (PyYAML, json, mermaid-cli 14KB SVG).
-  Note: this quest correctly wraps whole fenced blocks in `{% raw %}` (source lines 152, 273)
+  Note: this quest correctly wraps whole fenced blocks in `{​% raw %​}` (source lines 152, 273)
   — the *right* way to do what Quest 1 got wrong.
 - ❌ **Final "break it on purpose" instruction** — quest claims deleting `exit 1` yields
   "exit=0 while the tool never succeeded." **Actually run, it loops forever**: the
@@ -149,13 +149,13 @@ Everything here is **`reasoned`** from a static read of the source only:
 
 **High**
 - **H1 · Q1 Observability · Ch.2 `agent-with-tracing.yml` (src lines 163–204)** — *Observed:*
-  leaked `{% raw %}...{% endraw %}` inside every `${{ }}`; `bash: bad substitution` on the first
-  step. *Fix:* remove the inline tags (`${{ github.run_id }}`), and if the renderer needs
+  leaked `{​% raw %​}...{​% endraw %​}` inside every `${​{ }​}`; `bash: bad substitution` on the first
+  step. *Fix:* remove the inline tags (`${​{ github.run_id }​}`), and if the renderer needs
   escaping, wrap the **entire** fenced block once — exactly how sibling Quest 4 does it (lines
   152, 273).
 - **H2 · Q1 Observability · Ch.2 trace heredoc** — *Observed:* quoted `<< 'EOF'` writes
   `$(date …)` literally; the trace never captures a real timestamp. *Fix:* capture the time to
-  a step output/env var beforehand, or use an unquoted heredoc with the `${{ }}` expressions
+  a step output/env var beforehand, or use an unquoted heredoc with the `${​{ }​}` expressions
   escaped.
 - **H3 · Q1/Q2/Q5 · closing "Quest Validation" blocks** — *Observed:* `scripts/validate_quest.py`
   does not exist; engine ran it for Q1 and Q2 → "No such file or directory" (Q5 reasoned,
@@ -188,7 +188,7 @@ Everything here is **`reasoned`** from a static read of the source only:
   then pipe into `npx` on its own line.
 
 **Low**
-- **L1 · Q1** — trace JSON omits `commit_sha` (`${{ github.sha }}`), so it can't prove the
+- **L1 · Q1** — trace JSON omits `commit_sha` (`${​{ github.sha }​}`), so it can't prove the
   commit-level traceability the objective claims.
 - **L2 · Q1** — secondary "multi-run dashboard" objective has no supporting snippet at all.
 - **L3 · Q2/Q4** — both reference a "dependency updater agent you designed in Q1" without
@@ -222,7 +222,7 @@ chapter** — it explicitly lists Quest 2 (Tool Selection) and Quest 5 (MCP Conc
 sub-quests and re-teaches the same artifacts (least-privilege `permissions:` block, MCP
 allow-list, `AGENTS.md`, the retry/escalation wrapper). A learner taking both the hub and
 the individual quests meets the same material twice. Notably the hub (Quest 4) gets the
-`{% raw %}` escaping **right**, while the older individual quest (Quest 1) gets it **wrong**
+`{​% raw %​}` escaping **right**, while the older individual quest (Quest 1) gets it **wrong**
 — evidence the arc was authored in two passes that haven't been reconciled.
 
 **Prerequisite satisfaction:** the internal dependency edges are sound —
@@ -235,7 +235,7 @@ assuming setup the window never provides.
 
 **Bottom line for a real learner:** the cloud quest stands alone and teaches well; the
 agentic arc has a solid conceptual spine (observe → scope → connect → bind) but trips a
-beginner on copy-paste (`{% raw %}` leak), on a dead validation command they're told to run
+beginner on copy-paste (`{​% raw %​}` leak), on a dead validation command they're told to run
 three times, and on numbering that contradicts itself between front-matter and body.
 
 ## 🧠 Reasoning & Method
@@ -245,8 +245,8 @@ three times, and on numbering that contradicts itself between front-matter and b
   `agentic_validate.py --mode execute`, exactly as the skill's step 2 requires when evidence
   pre-exists. Every `passed`/`failed` in §4 is a command the engine ran in its disposable
   sandbox; I additionally **read all five quest sources in plan order** and cross-checked the
-  engine's findings against the raw markdown (e.g., confirmed the `{% raw %}` leak at Q1 lines
-  163–204 and the Q4 loop bug at lines 303–324, and verified Q4 escapes `{% raw %}` correctly).
+  engine's findings against the raw markdown (e.g., confirmed the `{​% raw %​}` leak at Q1 lines
+  163–204 and the Q4 loop bug at lines 303–324, and verified Q4 escapes `{​% raw %​}` correctly).
 - **Mode:** `execute`, real (not `--mock`). 4 quests scored, average 61.2%, engine cost
   ~$2.67, reported by the sealed evidence.
 - **Coverage limits (honest):**

@@ -85,7 +85,7 @@ or static judgements (`reasoned`). Full transcript in `walk-evidence.md`.
   cleanly: `jobs = ['test','release']`, triggers `['pull_request','push']`.
 - Action refs `actions/checkout@v4`, `actions/setup-python@v5`,
   `release-drafter/release-drafter@v6` → **reasoned**: all current, valid tags.
-- `{% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}` renders to `${{ secrets.GITHUB_TOKEN }}`
+- `{​% raw %​}{​{ secrets.GITHUB_TOKEN }​}{​% endraw %​}` renders to `${​{ secrets.GITHUB_TOKEN }​}`
   → **reasoned**: the Liquid `raw` guard is correct; the leading `$` is intended (not a bug).
 - `## 🎯 Quest Objectives` present? → **failed** (grep): section absent.
 

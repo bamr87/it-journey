@@ -55,7 +55,7 @@ starting this level in order hits a wall on quest 1. The other two quests are us
 (warn): the GitHub Pages quest's Jekyll build-and-serve path **actually worked
 end-to-end in the sandbox**, and the Prompt Crystal's shell scaffolding **all ran
 clean** — both just ship fixable content defects (wrong extension IDs, leftover
-authoring placeholders, and Liquid `{% raw %}` artifacts). All three are read-only
+authoring placeholders, and Liquid `{​% raw %​}` artifacts). All three are read-only
 findings for a later content pass; I changed nothing.
 
 ## 🗺️ The Journey
@@ -73,7 +73,7 @@ learner takeaway:
    the opening.
 3. ⚠️ **Forging the Prompt Crystal: VS Code Copilot Mastery Quest** — **75 / warn** ·
    Strongest of the three; all scaffolding commands run, but it overstates Copilot's
-   `{{ inputs.x }}` templating and leaves `{% raw %}` website-rendering artifacts in
+   `{​{ inputs.x }​}` templating and leaves `{​% raw %​}` website-rendering artifacts in
    copy-paste fragments.
 
 Difficulty as declared: 🟡 Medium, 🟢 Easy, 🟡 Medium. Note the ordering hazard —
@@ -139,8 +139,8 @@ structure 5, safety 5.
   install can't run in the sandbox) — a coverage gap, not a defect.
 - **reasoned** — the 23 prompt/template text blocks are illustrative, not executable.
   Two content problems verified in source: the `.prompt.md` templates literally carry
-  `{% raw %}{{ inputs.x }}{% endraw %}` Liquid escaping (lines 794–829, 861–919), and
-  the frontmatter `inputs:` + `{{ inputs.x }}` convention (lines 789–791, 856–858,
+  `{​% raw %​}{​{ inputs.x }​}{​% endraw %​}` Liquid escaping (lines 794–829, 861–919), and
+  the frontmatter `inputs:` + `{​{ inputs.x }​}` convention (lines 789–791, 856–858,
   898–900) implies native Copilot variable substitution that does not exist.
 
 ## 🐞 Issues Found
@@ -167,12 +167,12 @@ source line I read). These are for a later content pass — **no edits were made
   (reasoned):* un-deleted authoring scaffolding is published to the learner:
   `> *Note: objectives auto-seeded during framework alignment…*` and
   `*[Opening paragraph that sets the fantasy context…]*`. *Fix:* delete both.
-- **HIGH · Prompt Crystal · Chapter 4 `{{ inputs.x }}` templating (lines 785–829,
+- **HIGH · Prompt Crystal · Chapter 4 `{​{ inputs.x }​}` templating (lines 785–829,
   852–920)** — *Observed (reasoned):* the quest presents `inputs:` frontmatter +
-  `{{ inputs.x }}` as if VS Code Copilot renders variables; it does not. *Fix:* state
+  `{​{ inputs.x }​}` as if VS Code Copilot renders variables; it does not. *Fix:* state
   it's a manual find-and-replace placeholder convention, or drop the templating claim.
 - **HIGH · Prompt Crystal · `.prompt.md` code fences (lines 794–829, 861–919)** —
-  *Observed (reasoned):* fragments literally contain `{% raw %}…{% endraw %}` Liquid
+  *Observed (reasoned):* fragments literally contain `{​% raw %​}…{​% endraw %​}` Liquid
   escaping that would break if copy-pasted into a real prompt file. *Fix:* strip the
   tags, or add a visible note they are website-render artifacts.
 - **MEDIUM · PRD Codex · conflicts Expected Output (lines 400–410)** — *Observed
@@ -244,7 +244,7 @@ engine run or a line I read in the quest source.
   engine's real sandbox command results (Docker 28.0.4 present; PRD's compose commands
   failed; the Jekyll build/serve and all Copilot scaffolding commands ran). Everything
   I label **reasoned** — arithmetic errors, placeholder scaffolding, wrong URLs,
-  `{% raw %}` artifacts, `{{ inputs.x }}` overstatement, fence-language mismatches — I
+  `{​% raw %​}` artifacts, `{​{ inputs.x }​}` overstatement, fence-language mismatches — I
   confirmed by reading the quest source and citing exact lines; I did not execute those
   parts.
 - **Coverage / limits:** Snippet coverage was strong for PRD Codex (13 runnable ran)
@@ -260,7 +260,7 @@ engine run or a line I read in the quest source.
   usable once their listed defects are fixed.
 - **Confidence:** High on command outcomes (real sandbox execution) and on the source
   citations (verified line-by-line). Lower only on the exact user-facing impact of the
-  Copilot `{{ inputs.x }}` behavior, which depends on VS Code version — flagged as
+  Copilot `{​{ inputs.x }​}` behavior, which depends on VS Code version — flagged as
   reasoned. One slice, one report; no content was changed and nothing was merged.
 
 ---

@@ -47,7 +47,7 @@ order and reason about the linked journey below.
 
 **Headline verdict: fail (partial coverage).** Both machine-evaluated quests failed
 (42% and 55%), each for concrete, learner-blocking reasons the sandbox actually
-reproduced: a flagship GitHub Actions snippet corrupted by leaked Jekyll `{% raw %}`
+reproduced: a flagship GitHub Actions snippet corrupted by leaked Jekyll `{​% raw %​}`
 tags that produces invalid JSON, a `gh api` call that serializes nested JSON as
 strings (422 from the real API), and a `scripts/validate_quest.py` completion gate
 that references a script the quest never ships. That last defect is **systemic** — the
@@ -62,7 +62,7 @@ introduce.
 Plan order (dependency-sorted by `walkthrough_plan.py`; `stats.windowed: true`):
 
 1. ❌ **The All-Seeing Eye: Observability for AI Agents** — **42%** (execute) · flagship
-   tracing workflow is broken by leaked `{% raw %}` Liquid tags → invalid JSON, plus a
+   tracing workflow is broken by leaked `{​% raw %​}` Liquid tags → invalid JSON, plus a
    quoted-heredoc that drops the `completed_at` timestamp and a `gh api` call the real
    API would reject.
 2. ❌ **Forging the Agent's Arsenal: Tool Selection & Permissions** — **55%** (execute) ·
@@ -74,7 +74,7 @@ Plan order (dependency-sorted by `walkthrough_plan.py`; `stats.windowed: true`):
    no agent content); AWS/AZ commands need real cloud credentials.
 4. ⚪ **Forging the Arsenal: Tool Use & Environment** (Codex Ch. II hub) — **reasoned
    only (not run)** · strong field-guide; a self-contained zero-credential lab; uses the
-   *correct* `{% raw %}` fence pattern (instructive contrast with quest 1).
+   *correct* `{​% raw %​}` fence pattern (instructive contrast with quest 1).
 5. ⚪ **The MCP Conclave: Mastering MCP Servers** — **reasoned only (not run)** · same
    missing `validate_quest.py` gate; a malformed PowerShell snippet and a possibly-stale
    MCP SDK API I flag but did **not** execute.
@@ -89,7 +89,7 @@ Per-dimension: commands_work **1**, content_accuracy **2**, completeness **2**,
 clarity **2**, structure **4**, safety **5**.
 
 - ❌ **`agent-with-tracing.yml` (Exercise 3.1)** — engine wrote the file verbatim and
-  found the literal string `{% raw %}` embedded in **12** GitHub Actions expressions
+  found the literal string `{​% raw %​}` embedded in **12** GitHub Actions expressions
   (confirmed with `grep -c`). Simulating the unsubstituted output and feeding the trace
   JSON to `python3 json.load()` returned *"Expecting value: line 8 column 21"* — **invalid
   JSON**. The quest's flagship "machine-readable execution log artifact" does not parse.
@@ -132,10 +132,10 @@ Machine summary (verbatim from `walk-evidence.md`): *"2 quests evaluated · ✅ 
 ## 🐞 Issues Found
 
 **High**
-- **[Q1 · Exercise 3.1 workflow YAML · lines 163–204] Leaked Jekyll `{% raw %}` tags
-  corrupt every GH Actions expression** — *observed (execute):* literal `${% raw %}{{ ... }}{% endraw %}`
+- **[Q1 · Exercise 3.1 workflow YAML · lines 163–204] Leaked Jekyll `{​% raw %​}` tags
+  corrupt every GH Actions expression** — *observed (execute):* literal `${​% raw %​}{​{ ... }​}{​% endraw %​}`
   in 12 expressions; simulated output is invalid JSON (`json.load` error line 8 col 21).
-  *Fix:* strip the inline `{% raw %}…{% endraw %}` and either escape the braces per the
+  *Fix:* strip the inline `{​% raw %​}…{​% endraw %​}` and either escape the braces per the
   quest instructions or wrap the whole fenced block in raw tags on their own lines (see
   how quest 4 does it correctly).
 - **[Q1 · trace JSON heredoc · lines 176–197] Quoted heredoc drops the timestamp** —
@@ -229,7 +229,7 @@ frontmatter* is sound — Observability `unlocks` Tool Selection `unlocks` MCP C
 each `required_quests` points back correctly (Q1 line 47, Q2 lines 44–47, Q5 lines 43–48).
 The narrative arc (observe → scope tools → wire MCP) is a genuinely coherent progression.
 And there's a useful **positive** contrast to mine for a fix: quest 4 demonstrates the
-*correct* `{% raw %}` fence pattern (whole block wrapped, lines 152–160 / 273–299) that
+*correct* `{​% raw %​}` fence pattern (whole block wrapped, lines 152–160 / 273–299) that
 quest 1 gets wrong inline — the fix for Q1 already exists elsewhere in the same slice.
 
 ## 🧠 Reasoning & Method

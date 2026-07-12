@@ -47,7 +47,7 @@ quest series that happens to share the level.
 **Headline verdict: FAIL.** The sealed execute-engine evidence scored the slice at an
 average **56.2%** — 1 pass, 1 warn, 3 fail. The single conceptual quest (Cloud
 Fundamentals, 80%) is solid and technically accurate; the hands-on agentic quests are
-undermined by **verified, reproducible code defects**: a Jekyll `{% raw %}`-tag leak
+undermined by **verified, reproducible code defects**: a Jekyll `{​% raw %​}`-tag leak
 that breaks the flagship workflow in the very first quest, a factually-wrong "watch it
 exit=0" lab exercise that actually loops forever, a deprecated npm package plus a
 crashing SDK API in the MCP quest, and — most tellingly — **the same nonexistent
@@ -62,8 +62,8 @@ trusted; the concrete, evidenced fixes are in §Issues.
 Plan order (window 1 of 2; `stats.total_quests` = 9):
 
 1. ❌ **The All-Seeing Eye: Observability for AI Agents** — 40% · The flagship
-   tracing workflow is broken as written: `{% raw %}`/`{% endraw %}` tags leaked
-   *inside* every `${{ }}` expression → immediate bash `bad substitution`.
+   tracing workflow is broken as written: `{​% raw %​}`/`{​% endraw %​}` tags leaked
+   *inside* every `${​{ }​}` expression → immediate bash `bad substitution`.
 2. ❌ **Forging the Agent's Arsenal: Tool Selection & Permissions** — 57% · Data
    artifacts are clean, but the only runnable command (validation script) doesn't
    exist, and it frames markdown prompts as real least-privilege *enforcement*.
@@ -85,9 +85,9 @@ quest sources.
 
 ### 1. The All-Seeing Eye — Observability (40%, fail) — ran 5/3 runnable snippets, 3 passed / 2 failed / 1 reasoned
 - **`.github/workflows/agent-with-tracing.yml` → FAILED.** The engine extracted the
-  exact `run:` text and ran it: `run_id=${% raw %}{{ github.run_id }}{% endraw %}:
+  exact `run:` text and ran it: `run_id=${​% raw %​}{​{ github.run_id }​}{​% endraw %​}:
   bad substitution` (exit 1). Confirmed in source at lines 163–164, 170, 179–193, 203 —
-  the Liquid `{% raw %}`/`{% endraw %}` tags leaked *inside* each expression (8
+  the Liquid `{​% raw %​}`/`{​% endraw %​}` tags leaked *inside* each expression (8
   occurrences) instead of wrapping the block, so neither bash nor GitHub Actions would
   interpolate them.
 - **`gh api ... /environments/agent-production` → REASONED (not run against live GitHub).**
@@ -128,7 +128,7 @@ quest sources.
   exit=1). This is the strongest hands-on lab in the slice.
 - **All config snippets → PASSED** (`.vscode/mcp.json` valid JSON; allow-list JSONC
   valid; `permissions:` block + `agent-task.yml` valid GitHub Actions YAML). Note:
-  this quest correctly wraps its YAML in `{% raw %}…{% endraw %}` blocks (lines 152–160,
+  this quest correctly wraps its YAML in `{​% raw %​}…{​% endraw %​}` blocks (lines 152–160,
   273–299) — the exact pattern quest 1 got wrong.
 - **Closing "break the wrapper — delete `exit 1`, watch exit=0" exercise → FAILED.**
   The engine removed only the `exit 1` line and re-ran: the `until` loop ran **forever**,
@@ -161,11 +161,11 @@ quest sources.
 **High severity**
 
 - **high · Observability (Q1) · Chapter 2, `agent-with-tracing.yml`, source lines
-  163–203** — Leaked `{% raw %}`/`{% endraw %}` tags *inside* every `${{ }}` expression
-  (8×) produce `${% raw %}{{ github.run_id }}{% endraw %}`. *Observed:* engine
+  163–203** — Leaked `{​% raw %​}`/`{​% endraw %​}` tags *inside* every `${​{ }​}` expression
+  (8×) produce `${​% raw %​}{​{ github.run_id }​}{​% endraw %​}`. *Observed:* engine
   reproduced `bad substitution` (exit 1); the workflow can never interpolate. *Fix:*
-  wrap the whole `run:`/YAML block in a single `{% raw %} … {% endraw %}` pair (the
-  pattern codex-02 uses correctly) so the rendered page shows plain `${{ github.run_id }}`.
+  wrap the whole `run:`/YAML block in a single `{​% raw %​} … {​% endraw %​}` pair (the
+  pattern codex-02 uses correctly) so the rendered page shows plain `${​{ github.run_id }​}`.
 
 - **high · Observability, Tool-Selection, MCP-Conclave · "Quest Validation" sections
   (Q1 line 306, Q2 line 202, Q5 line 304)** — All three end with `python3

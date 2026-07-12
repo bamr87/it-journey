@@ -62,7 +62,7 @@ one pattern lifts the whole back half of the level.
 |---|:--:|---|--:|---|
 | 1 | ❌ | Docker Container Fundamentals: Images to Registries | — (errored) | Engine hit max-turns curling a container the sandbox can't run — **unscored**, not a proven quest defect. |
 | 2 | ✅ | Docker Compose Orchestration: Multi-Container Apps | 83 | Technically excellent; every compose/lifecycle claim verified — one real bug: `--scale web=3` collides with a fixed host port. |
-| 3 | ❌ | Dockering Jekyll with Bootstrap 5 | 33 | Breaks at nearly every checkpoint: `jekyll new .` conflict, phantom `cd`, `{% raw %}`-wrapped include, gem-persistence crash, Bootstrap 4 markup. |
+| 3 | ❌ | Dockering Jekyll with Bootstrap 5 | 33 | Breaks at nearly every checkpoint: `jekyll new .` conflict, phantom `cd`, `{​% raw %​}`-wrapped include, gem-persistence crash, Bootstrap 4 markup. |
 | 4 | ❌ | Frontend Forests: Building a Jekyll Site with Bootstrap | 55 | Scaffolding works, but the core Bootstrap step edits files that don't exist in the default theme; no concrete CDN snippet; placeholder objectives. |
 | 5 | ⚠️ | The Artisan's Forge: Refactoring Jekyll Theme Components | 78 | Solid, verified refactoring pattern — but the new SCSS partial is never imported, so a green build ships zero nanobar styling. |
 
@@ -110,8 +110,8 @@ are labelled `reasoned`.
   `jekyll new . --force` `passed`.
 - `failed` — `cd my-jekyll-site` → **directory never exists** (`jekyll new .`
   installs into the current dir, so there is no subfolder).
-- `failed` — `index.html` containing `{% raw %}{% include head.html %}{% endraw %}`
-  → the `{% raw %}` wrapper is in the *copy-pasteable* sample, so the include (and
+- `failed` — `index.html` containing `{​% raw %​}{​% include head.html %​}{​% endraw %​}`
+  → the `{​% raw %​}` wrapper is in the *copy-pasteable* sample, so the include (and
   thus Bootstrap) never loads when built.
 - `failed` — final `docker-compose up` → crashes `Bundler::GemNotFound` because
   installed gems don't persist between container runs (no bundle volume).
@@ -139,8 +139,8 @@ are labelled `reasoned`.
 ### 5 · The Artisan's Forge: Refactoring Jekyll Theme Components — ⚠️ 78
 - Snippets: **ran 11, passed 11, failed 0, skipped 1, reasoned 2** (runnable 3).
 - `passed` — full refactor verified end-to-end in a real **Jekyll 4.4.1** build:
-  `touch _includes/components/nanobar.html`, the `{% include %}` tag, the
-  `{% if site.nanobar.enabled %}` config guard, the `nanobar:` YAML config,
+  `touch _includes/components/nanobar.html`, the `{​% include %​}` tag, the
+  `{​% if site.nanobar.enabled %​}` config guard, the `nanobar:` YAML config,
   `mkdir -p _sass/components && touch _nanobar.scss`, the SCSS partial, the
   custom-property `style` attribute, the scroll-progress `<script>`, the
   BEFORE/AFTER footer restructuring, `bundle exec jekyll build`, and the
@@ -163,9 +163,9 @@ source. Severity uses the engine's own recommendation grading where present.
   `jekyll new .` in an empty dir first, or document `--force` and why.
 - **HIGH · Step 3.1 (`cd my-jekyll-site`)** — observed the directory does not exist.
   *Fix:* remove the step; `jekyll new .` stays in the current directory.
-- **HIGH · Step 4 (`{% raw %}{% include head.html %}{% endraw %}`)** — observed the
+- **HIGH · Step 4 (`{​% raw %​}{​% include head.html %​}{​% endraw %​}`)** — observed the
   built site never includes Bootstrap because the `raw` wrapper is in the pasteable
-  sample. *Fix:* use plain `{% include head.html %}`.
+  sample. *Fix:* use plain `{​% include head.html %​}`.
 - **HIGH · Final `docker-compose up` (gem persistence)** — observed
   `Bundler::GemNotFound` crash. *Fix:* add a named `bundle_cache:/usr/local/bundle`
   volume, or run `bundle install && jekyll serve` in the serving container.

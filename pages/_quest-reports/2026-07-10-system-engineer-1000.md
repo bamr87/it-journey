@@ -273,7 +273,7 @@ backend-bootstrap note; the gaps are *between* arcs the window artificially juxt
 | ⚠️ | 68 | The War Machine: Dispatch, Leasing, and a Fifty-Case Simulation | 13/7 (3✗) |
 
 Azure error tail (verbatim): `claude exited 1 … "permission_denials":[{"tool_name":"Bash",
-"tool_input":{"command":"… bash scripts/deployment/azure-jekyll-deploy.sh --help …"}}],
+"tool_input":{"command":"… bash scripts/deployment/azure-jekyll-deploy.sh --help …"}​}],
 "terminal_reason":"max_turns" … "errors":["Reached maximum number of turns (40)"]`
 
 </details>

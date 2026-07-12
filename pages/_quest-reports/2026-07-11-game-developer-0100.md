@@ -62,7 +62,7 @@ quests before a beginner is routed through them.
 |---|:--:|---|:--:|---|
 | 1 | ⚠️ errored | Docker Container Fundamentals: Images to Registries | — | Engine hit `max_turns` retrying `curl localhost:8080` (nginx unreachable in sandbox); **no content verdict** — reasoned-only, looks structurally strong. |
 | 2 | ⚠️ errored | Docker Compose Orchestration: Multi-Container Apps | — | Same failure mode (`max_turns` on repeated `curl localhost:8080`); **no content verdict** — reasoned-only, well-structured and prereq-linked. |
-| 3 | ❌ fail | Dockering Jekyll with Bootstrap 5 | 30 | Core payoff never works as written: `docker-compose up` gem crash, phantom `cd my-jekyll-site`, `{% raw %}` wrapper + missing front matter means Bootstrap never renders; BS4 markup labelled "BS5". |
+| 3 | ❌ fail | Dockering Jekyll with Bootstrap 5 | 30 | Core payoff never works as written: `docker-compose up` gem crash, phantom `cd my-jekyll-site`, `{​% raw %​}` wrapper + missing front matter means Bootstrap never renders; BS4 markup labelled "BS5". |
 | 4 | ❌ fail | Frontend Forests: Building a Jekyll Site with Bootstrap | 55 | Ch.9 theory is accurate & verified, but Steps 3–4 tell learners to edit `_includes/head.html` / `_layouts/default.html` that don't exist in a fresh `jekyll new` site; undocumented gem-permission failures; CDN snippet never shown. |
 | 5 | ⚠️ warn | The Artisan's Forge: Refactoring Jekyll Theme Components | 70 | Technically sound and builds end-to-end; only Step 2.1's `touch` fails (missing `mkdir -p`), plus an aria-label drop, a duplicate Resources block, and two untaught bonus objectives. |
 
@@ -93,7 +93,7 @@ All numbers below are quoted from the sealed `walk-evidence.json` (execute mode,
 - Real commands the engine ran in the sandbox:
   - `docker compose run jekyll jekyll new .` → **failed**: `docker-compose` binary absent (exit 127); substituted `docker compose`, then `Conflict: /srv/jekyll exists and is not empty.` (exit 1) — Dockerfile/compose already in the dir.
   - `cd my-jekyll-site` → **failed**: `jekyll new .` installed in place; that subdirectory is never created.
-  - `index.md` Bootstrap sample with `{% raw %}{% include head.html %}{% endraw %}` → **failed**: built in real Jekyll — with no front matter Jekyll copies the file verbatim, output contained literal `{% include head.html %}`, **Bootstrap never included**.
+  - `index.md` Bootstrap sample with `{​% raw %​}{​% include head.html %​}{​% endraw %​}` → **failed**: built in real Jekyll — with no front matter Jekyll copies the file verbatim, output contained literal `{​% include head.html %​}`, **Bootstrap never included**.
   - `docker compose up -d` → **failed**: container crash-loops with `Bundler::GemNotFound: Could not find base64-0.3.0, csv-3.3.5, json-2.20.0, logger-1.7.0, bigdecimal…` (no `bundle install`).
   - `git init / add / commit` → **passed** (root commit, 11 files). Registry `git push` → **skipped** (placeholder remote, unsafe).
   - `_includes/head.html` block & `Dockerfile` → **reasoned**: valid syntax but BS4 attrs (`data-toggle`), needless jQuery, `integrity="sha384-xxx"` placeholder; Dockerfile is dead weight (no `build:` in compose).
@@ -108,14 +108,14 @@ All numbers below are quoted from the sealed `walk-evidence.json` (execute mode,
   - **Step 3** edit `_includes/head.html` → **failed**: file does not exist in a fresh site (`find . -not -path './vendor*'` confirms); lives only in `vendor/bundle/…/minima-2.5.2/_includes/head.html`.
   - **Step 4** edit `_layouts/default.html` → **failed**: same — only inside the minima gem.
   - `bundle exec jekyll build` → **passed** (valid `_site/`, only unrelated minima Sass deprecations); `bundle exec jekyll serve` → **passed**.
-  - Filter table (`date`/`slugify`/`where`) → **passed**, verified live: `{{ "My Title" | slugify }}` → `my-title`. Ch.9 Liquid/layout material → **reasoned** accurate.
+  - Filter table (`date`/`slugify`/`where`) → **passed**, verified live: `{​{ "My Title" | slugify }​}` → `my-title`. Ch.9 Liquid/layout material → **reasoned** accurate.
 
 ### 5. The Artisan's Forge — ⚠️ warn (70)
 - **Dimensions:** commands_work 3 · content_accuracy 4 · completeness 3 · clarity 3 · structure 4 · safety 5. `weight_covered: 1.0`.
 - **Snippets:** available 13 (3 runnable) · recorded 13 · **ran 10 · passed 9 · failed 1 · skipped 1 · reasoned 2** · executed.
 - Real commands:
   - **Step 2.1** `touch _includes/components/nanobar.html` → **failed**: `cannot touch … No such file or directory` — `components/` never created (Step 3.1 correctly does `mkdir -p _sass/components`).
-  - After adding the dir: `{% include components/nanobar.html %}` → **passed**; `nanobar:` config in `_config.yml` → **passed** (rendered `position=top`, `color=#0d6efd`, `height=3px`, `z_index=1050`).
+  - After adding the dir: `{​% include components/nanobar.html %​}` → **passed**; `nanobar:` config in `_config.yml` → **passed** (rendered `position=top`, `color=#0d6efd`, `height=3px`, `z_index=1050`).
   - Step 3.1 `mkdir -p _sass/components && touch …` → **passed**; SCSS `@import` + build → **passed** (compiled `.nanobar` rules present in `_site/…/main.css`).
   - Step 3.3 nanobar markup → **passed** (`style="--nanobar-height: 3px; --nanobar-color: #0d6efd; …"`) — **but drops the `aria-label`** that Step 2.2 had.
   - Phase 4 scroll `<script>`, Phase 5 footer AFTER snippet, Phase 7 `bundle exec jekyll build`, and `nanobar.enabled: false` toggle → all **passed** (build exit 0; toggle → 0 nanobar occurrences).
@@ -130,7 +130,7 @@ quest line (quests 1–2, reasoned-only). Issues on the two errored quests are l
 ### High
 - **H1 · frontend-docker · Step 2/Step 5 (`docker-compose up`)** — *observed:* container crash-loops with `Bundler::GemNotFound` because no gems are installed in the fresh image. *Fix:* bake `bundle install` into the build (a `build: .` Dockerfile with `RUN bundle install`) or add it to the compose `command`.
 - **H2 · frontend-docker · Step 2→3 (`jekyll new .` / `cd my-jekyll-site`)** — *observed:* `jekyll new .` installs in place; `cd my-jekyll-site` then fails (no such dir), and `jekyll new .` itself hits `Conflict: /srv/jekyll exists and is not empty`. *Fix:* drop the `cd`, and document `jekyll new . --force` since Dockerfile/compose already occupy the dir.
-- **H3 · frontend-docker · Step 4 (Bootstrap include)** — *observed:* built in real Jekyll, the `{% raw %}{% include head.html %}{% endraw %}` file with no front matter is copied verbatim; Bootstrap is never included. *Fix:* add `---\n---` front matter and remove the `{% raw %}` wrapper (or explain it is a doc-escaping artifact, not to be copied).
+- **H3 · frontend-docker · Step 4 (Bootstrap include)** — *observed:* built in real Jekyll, the `{​% raw %​}{​% include head.html %​}{​% endraw %​}` file with no front matter is copied verbatim; Bootstrap is never included. *Fix:* add `---\n---` front matter and remove the `{​% raw %​}` wrapper (or explain it is a doc-escaping artifact, not to be copied).
 - **H4 · frontend-docker · Step 4 (BS version accuracy)** — *observed:* "Bootstrap 5" sample uses BS4 `data-toggle`/`data-target`, `.jumbotron`, `.sr-only`, and jQuery. *Fix:* use `data-bs-toggle`/`data-bs-target`, BS5 utilities instead of `.jumbotron`, `.visually-hidden` instead of `.sr-only`, drop jQuery.
 - **H5 · frontend · Steps 3 & 4 (edit theme files)** — *observed:* `_includes/head.html` and `_layouts/default.html` do not exist in a fresh `jekyll new` site (`find` confirms; they live in the minima gem). This contradicts the quest's own Chapter 9 override explanation. *Fix:* instruct learners to copy the files out of the theme gem (or create them at those paths) first, and cross-reference Ch.9.
 - **H6 · frontend · Steps 1–2 (gem/bundle install)** — *observed:* `gem install` and `jekyll new`'s auto-`bundle install` fail with `PermissionError` on the system gemdir. *Fix:* document `--user-install` or `bundle config set --local path 'vendor/bundle'` as the supported path.

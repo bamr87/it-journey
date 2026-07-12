@@ -123,8 +123,8 @@ md snippet coverage `9/4 (5✗)`.
 - **failed** — `cd my-jekyll-site`: `bash: cd: my-jekyll-site: No such file or
   directory` — that directory is never created by any prior step.
 - **failed** — `index.html` homepage: after `jekyll build`, the file lacks front
-  matter so `{% include %}` tags are **not** processed — verified literal
-  `{% include head.html %}` / `{% include footer.html %}` text left in built
+  matter so `{​% include %​}` tags are **not** processed — verified literal
+  `{​% include head.html %​}` / `{​% include footer.html %​}` text left in built
   `_site/index.html`; also references a never-created `_includes/footer.html`.
 - **failed** — `docker compose up`: container crashes with
   `Bundler::GemNotFound: Could not find base64-0.3.0, csv-3.3.5, … in locally installed
@@ -175,8 +175,8 @@ reasoned** (of 14); md snippet coverage `10/3 (2✗)`.
   a fresh empty subdir (or `jekyll new . --force`) and make every later `cd` match where
   the site actually lands.
 - **high · frontend-docker.md · Step 4 (`index.html` Liquid includes)** — Observed:
-  built `_site/index.html` still contains literal `{% include head.html %}` /
-  `{% include footer.html %}` because the file has no front matter; `_includes/footer.html`
+  built `_site/index.html` still contains literal `{​% include head.html %​}` /
+  `{​% include footer.html %​}` because the file has no front matter; `_includes/footer.html`
   is never created. *Fix:* add the `---\n---` front-matter fence and create/remove the
   footer include.
 - **high · frontend-docker.md · Step 5 (`docker compose up`)** — Observed:

@@ -95,7 +95,7 @@ is asserted without a witnessing command or a quoted source line.
   (`title: "test`), crashes the whole harness with an unhandled
   `yaml.scanner.ScannerError` traceback instead of a clean finding. Reproduced twice.
 - `.github/workflows/verify.yml` → **reasoned** — valid YAML, current action versions
-  (`checkout@v4`, `setup-python@v5`, `upload-artifact@v4`), correct `if: ${{ always() }}`
+  (`checkout@v4`, `setup-python@v5`, `upload-artifact@v4`), correct `if: ${​{ always() }​}`
   semantics; not executable on real GitHub Actions from the sandbox.
 - Mermaid quest-network diagram → **reasoned** — valid syntax; CLI render blocked only
   by missing container browser sandbox.
@@ -126,7 +126,7 @@ is asserted without a witnessing command or a quoted source line.
 - Step 3 CSS template (placeholders filled with cyberpunk values) → **passed** —
   brace-balanced, valid custom properties + `prefers-color-scheme` media query.
 - Step 5 YAML `profile:\n  theme: YOUR_THEME` → **passed** — parses to
-  `{'profile': {'theme': 'cyberpunk'}}`.
+  `{'profile': {'theme': 'cyberpunk'}​}`.
 - Step 5 Liquid (raw/endraw stripped) → **passed** — rendered
   `<div class="contributor-sheet contributor-theme--cyberpunk">`.
 - Step 6 Liquid `<link>` chain → **passed** — rendered

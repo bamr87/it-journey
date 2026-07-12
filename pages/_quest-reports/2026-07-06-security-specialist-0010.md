@@ -46,7 +46,7 @@ Through Time*, earned a **warn** verdict at **62%**. The underlying design is so
 the execute engine verified the Liquid intensity-bucket logic and the CSS with real
 tooling — but **the quest's own fenced code blocks are broken as literally written**:
 every individual Liquid tag in Step 1 and Step 3 is wrapped in its own
-`{% raw %}...{% endraw %}` pair, so a learner who copy-pastes the raw `.md` source
+`{​% raw %​}...{​% endraw %​}` pair, so a learner who copy-pastes the raw `.md` source
 gets inert, un-executed tag text instead of a working include. A maintainer should
 treat the raw-tag escaping (high) and a non-matching CSS sibling combinator (medium)
 as the two concrete, verified defects to fix.
@@ -77,9 +77,9 @@ skipped** (`available_runnable: 1`).
   cleanly with PyYAML; valid list-of-weeks shape.
 - ❌ **`failed` — Step 1 include (`_includes/contributor/contribution_calendar.html`):**
   the block was copy-pasted verbatim and rendered with the `liquid` gem (v5.13.0).
-  Output was the **literal, un-executed tag text** (e.g. `{% assign calendar =
-  include.calendar %}`), producing "zero interactivity, no cells, nothing but escaped
-  tag text." When the engine *stripped* the per-tag `{% raw %}/{% endraw %}` wrappers,
+  Output was the **literal, un-executed tag text** (e.g. `{​% assign calendar =
+  include.calendar %​}`), producing "zero interactivity, no cells, nothing but escaped
+  tag text." When the engine *stripped* the per-tag `{​% raw %​}/{​% endraw %​}` wrappers,
   the same logic rendered correctly — sample commits `3/0/7/20/1` produced
   `calendar-medium/zero/high/max/low`, confirming the bucket thresholds
   (`0 / <3 / <7 / <15 / else`) are correct.
@@ -87,7 +87,7 @@ skipped** (`available_runnable: 1`).
   real `.css` file; braces balanced (17/17), standard Grid / `aspect-ratio` / custom
   properties / media query all parse. *However*, jsdom testing of the wizard-theme
   rule surfaced a content-accuracy defect (see Issues).
-- ❌ **`failed` — Step 3 integration (`{% include contributor/contribution_calendar.html … %}`):**
+- ❌ **`failed` — Step 3 integration (`{​% include contributor/contribution_calendar.html … %​}`):**
   same raw/endraw corruption as Step 1 — rendering the line exactly as it appears in
   the source printed the include tag as text instead of executing it. The
   include-parameter syntax itself (`calendar=contributor.stats.contribution_calendar`
@@ -103,12 +103,12 @@ Per-dimension scores (engine): `commands_work 2 · content_accuracy 3 · complet
 ## 🐞 Issues Found
 
 - **HIGH · Contribution Calendar · Step 1 & Step 3 code fences · `raw`-tag corruption.**
-  *Observed:* every Liquid tag is individually wrapped in `{% raw %}…{% endraw %}`
+  *Observed:* every Liquid tag is individually wrapped in `{​% raw %​}…{​% endraw %​}`
   (source lines 108–140 for Step 1, line 208 for Step 3). Rendering the verbatim
   blocks with the `liquid` gem produced escaped tag text, not a heatmap — a learner
   copying the raw `.md` (from GitHub, an editor, or this artifact) gets a completely
   non-functional feature. *Suggested fix:* stop wrapping each tag; wrap the whole
-  block once (single `{% raw %}` … `{% endraw %}`), or verify the docs pipeline even
+  block once (single `{​% raw %​}` … `{​% endraw %​}`), or verify the docs pipeline even
   needs escaping inside fenced code blocks — many Jekyll configs don't process Liquid
   inside fences at all.
 - **MEDIUM · Contribution Calendar · Step 2 CSS · wizard-theme sibling combinator is dead code.**
@@ -184,7 +184,7 @@ and is out of scope for this report — the ledger accumulates that coverage sep
 
 _Machine summary (verbatim from `walk-evidence.md`):_ "The underlying Liquid logic and
 CSS design are sound … but the quest's own fenced code blocks are broken as literally
-written: every Liquid tag is individually wrapped in {% raw %}/{% endraw %}, so
+written: every Liquid tag is individually wrapped in {​% raw %​}/{​% endraw %​}, so
 copy-pasting Step 1 or Step 3 verbatim produces inert, unexecuted tag text rather than
 a working include. A secondary, verified bug is that the wizard-theme CSS uses a
 sibling combinator that doesn't match the nested DOM structure the quest itself

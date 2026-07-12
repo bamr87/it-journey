@@ -99,7 +99,7 @@ Per-dimension: commands_work 1 · content_accuracy 1 · completeness 2 · clarit
 Per-dimension: commands_work 3 · content_accuracy 3 · completeness 2 · clarity 3 · structure 2 · safety 5.
 - ❌ `bundle install` failed on a permission error to the shared gem path; only succeeded after `bundle config set --local path vendor/bundle` — a stock-Linux learner would be stuck here with no guidance.
 - ❌ Step 3/4: `ls _includes` and `ls _layouts` both `No such file or directory` on a fresh `jekyll new` (minima) site — the files the quest tells you to edit live inside the gem, not the project. Editing them as written does nothing.
-- ❌ Ch.9 Liquid block: `{{ page.title }}`, `{% if %}`, `{% for %}` rendered correctly, but the `{# … #}` comment syntax (source lines 158–160) renders as **literal visible text** — invalid Liquid; correct form is `{% comment %}…{% endcomment %}`.
+- ❌ Ch.9 Liquid block: `{​{ page.title }​}`, `{​% if %​}`, `{​% for %​}` rendered correctly, but the `{# … #}` comment syntax (source lines 158–160) renders as **literal visible text** — invalid Liquid; correct form is `{​% comment %​}…{​% endcomment %​}`.
 - 💭 `_posts` naming convention and "deploy to GitHub Pages/Netlify" (Step 8) — `reasoned` accurate but generic (no concrete commands).
 
 ### 5. jekyll-component-refactoring — 73% ⚠️ (snippets: ran 11, passed 9, failed 2, reasoned 2, skipped 1)
@@ -117,7 +117,7 @@ Per-dimension: commands_work 3 · content_accuracy 4 · completeness 3 · clarit
 - **high · frontend-docker · Step 4 · Bootstrap 5 markup** — BS4 leftovers `data-toggle`/`data-target` (line 149), `.jumbotron` (line 170), `.sr-only` (line 155), jQuery include silently fail in BS5. *Fix:* `data-bs-*`, replace `.jumbotron`, `.visually-hidden`, drop jQuery.
 - **high · frontend · Step 3/4 · non-existent local theme files** — a fresh `jekyll new` (minima) site has no local `_includes/head.html` / `_layouts/default.html`; the edits do nothing. *Fix:* tell the learner to copy them out of the theme gem (`bundle show minima`) or use a starter that ships them.
 - **high · frontend · Step 3 · missing Bootstrap snippet** — the quest's central skill has zero concrete code (only prose). *Fix:* include the actual pinned Bootstrap CDN `<link>`/`<script>`.
-- **high · frontend · Ch.9 · invalid Liquid comment** — `{# … #}` (lines 158–160) renders as literal text. *Fix:* use `{% comment %}…{% endcomment %}`.
+- **high · frontend · Ch.9 · invalid Liquid comment** — `{# … #}` (lines 158–160) renders as literal text. *Fix:* use `{​% comment %​}…{​% endcomment %​}`.
 - **high · container-fundamentals · Ch.3 · multi-stage build** — `npm run build` → `Missing script: "build"` against the Ch.2 project. *Fix:* add a real build step to the sample app, or explicitly label the snippet as a generic example for a different project.
 - **high · container-fundamentals · Ch.4 · "live reload" overstated** — plain `node app.js` does not reload on host edits. *Fix:* use `node --watch app.js`/nodemon, or soften the claim + checkpoint.
 - **high · docker-compose-orchestration · Ch.3 · dropped Redis** — capstone `compose.yaml` reuses the Redis-dependent `app.py` but omits redis → web 500s. *Fix:* add the redis service back (a genuine 3-service stack) or ship a Postgres-only `app.py` for Ch.3.

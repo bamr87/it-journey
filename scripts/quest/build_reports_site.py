@@ -163,6 +163,25 @@ def dump_frontmatter(fm: Dict[str, Any]) -> str:
     return f"---\n{body}\n---\n"
 
 
+_ZWSP = "​"  # zero-width space
+
+
+def neutralize_liquid(text: str) -> str:
+    """Break every Liquid delimiter ({{ }} {% %}) with a zero-width space so the
+    quoted quest code renders as LITERAL text.
+
+    This is the one reliable defense on **Jekyll 3.10** (what GitHub Pages builds
+    with): its Liquid pass runs over the WHOLE file — code fences and inline code
+    included — and does NOT honor `render_with_liquid: false` (a Jekyll-4 feature),
+    so a walkthrough quoting `{% … %}` from a quest otherwise aborts the build
+    (the #449 failure class). The ZWSP is invisible, so the page reads identically;
+    and a walkthrough is a review transcript, not a runnable snippet — the canonical,
+    copy-pasteable code lives in the quest each report links to."""
+    for delim in ("{{", "}}", "{%", "%}"):
+        text = text.replace(delim, delim[0] + _ZWSP + delim[1])
+    return text
+
+
 # ---------------------------------------------------------------------------
 # link builders
 # ---------------------------------------------------------------------------
@@ -262,7 +281,9 @@ def build_report_page(src_rel: str, meta: Dict[str, str], fm: Dict[str, Any],
         + " · ".join(links)
         + "\n\n---\n"
     )
-    return dump_frontmatter(page_fm) + "\n" + header + "\n" + body.lstrip("\n")
+    # Neutralize Liquid in BOTH the (agent-written) body and my header — belt and
+    # braces, since the body is the only part that can carry quoted quest tags.
+    return dump_frontmatter(page_fm) + "\n" + neutralize_liquid(header + "\n" + body.lstrip("\n"))
 
 
 def _cov_str(slc: Dict[str, Any]) -> str:
@@ -360,7 +381,8 @@ def build_dashboard(ledger: Dict[str, Any],
             f" (`{r['slug']}`)")
     lines.append("")
 
-    return dump_frontmatter(fm) + "\n" + "\n".join(lines)
+    # Neutralize Liquid in case a ledger `reason`/theme string carries a stray tag.
+    return dump_frontmatter(fm) + "\n" + neutralize_liquid("\n".join(lines))
 
 
 # ---------------------------------------------------------------------------
