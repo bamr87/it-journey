@@ -98,6 +98,23 @@ def iter_files(paths):
             yield pp
 
 
+_RWL_RE = re.compile(r"^\s*render_with_liquid\s*:\s*(?:false|no|off)\s*$",
+                     re.IGNORECASE | re.MULTILINE)
+
+
+def liquid_rendering_disabled(text: str) -> bool:
+    """True if the doc's frontmatter opts out of Liquid (``render_with_liquid:
+    false``). Such a page's ``{% raw %}`` / ``${{ }}`` are literal text Jekyll
+    never executes, so the raw-guard — which exists to catch Liquid that WILL
+    break the build — does not apply. This is what lets the generated
+    ``pages/_quest-reports/`` collection quote quest code (and even DISCUSS
+    raw/endraw bugs) without tripping the gate."""
+    if not text.startswith("---"):
+        return False
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.DOTALL)
+    return bool(_RWL_RE.search(m.group(1))) if m else False
+
+
 _GOOD = (
     "intro\n{% raw %}\n```yaml\nx: ${{ y }}\n```\n{% endraw %}\n"
     "inline `a{% raw %}${{ z }}{% endraw %}b` ok\n"
@@ -125,6 +142,11 @@ def _selftest() -> int:
     assert [p for _, p in unclosed] == ["unclosed {% raw %} block at end of file"], unclosed
     unguarded = list(check_text(_BAD_UNGUARDED))
     assert any("unguarded" in p for _, p in unguarded), unguarded
+    # render_with_liquid:false opts a page out of the guard (the _quest-reports
+    # collection); a normal page is still scanned.
+    assert liquid_rendering_disabled("---\ntitle: x\nrender_with_liquid: false\n---\n" + _BAD_UNCLOSED)
+    assert not liquid_rendering_disabled("---\ntitle: x\n---\n" + _BAD_UNCLOSED)
+    assert not liquid_rendering_disabled(_BAD_UNCLOSED)  # no frontmatter
     print("check_liquid_raw selftest: OK")
     return 0
 
@@ -140,20 +162,28 @@ def main(argv=None) -> int:
 
     files = list(iter_files(args.paths or ["pages"]))
     total = 0
+    scanned = skipped = 0
     for f in files:
         try:
             text = f.read_text(encoding="utf-8")
         except Exception:
             continue
+        # A page that disables Liquid rendering never executes {% raw %}/${{ }},
+        # so the raw-guard can't apply to it — skip it (see liquid_rendering_disabled).
+        if liquid_rendering_disabled(text):
+            skipped += 1
+            continue
+        scanned += 1
         for ln, prob in check_text(text):
             print(f"{f}:{ln}: {prob}")
             total += 1
     if total:
-        print(f"\n❌ {total} Liquid raw-guard problem(s) in {len(files)} file(s) — "
+        print(f"\n❌ {total} Liquid raw-guard problem(s) in {scanned} scanned file(s) — "
               f"fatal to EVERY Jekyll build (dev, CI, and production Pages).", file=sys.stderr)
         return 1
     if not args.quiet:
-        print(f"✅ Liquid raw-guards clean across {len(files)} file(s).")
+        note = f" ({skipped} skipped: render_with_liquid:false)" if skipped else ""
+        print(f"✅ Liquid raw-guards clean across {scanned} file(s){note}.")
     return 0
 
 

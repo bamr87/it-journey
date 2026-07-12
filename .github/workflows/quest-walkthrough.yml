@@ -234,6 +234,9 @@ jobs:
             --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
             --event walk
           python3 scripts/quest/ledger.py render
+          # Keep the site collection (pages/_quest-reports/) in sync so an
+          # auto-merged walkthrough publishes to the frontend too.
+          python3 scripts/quest/build_reports_site.py
 
       # Visual evidence for review: rendered quest pages (mobile + desktop) off the
       # live site, plus a terminal-styled render of the recorded session transcript.
@@ -262,6 +265,7 @@ jobs:
           add-paths: |
             test/quest-validator/walkthroughs/**
             .quests/**
+            pages/_quest-reports/**
           title: "🧭 Quest walkthrough: ${{ steps.plan.outputs.slug }}"
           body: |
             ## 🧭 Daily quest walkthrough — session report

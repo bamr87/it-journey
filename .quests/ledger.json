@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-06T14:21:55+00:00",
+  "generated": "2026-07-12T22:40:41+00:00",
   "totals": {
-    "slices": 8,
+    "slices": 14,
     "perfect": 0,
     "stuck": 0,
-    "open_issues": 87
+    "open_issues": 123
   },
   "slices": {
     "developer/0000": {
@@ -566,6 +566,434 @@
           "open_issues": 6,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/28791022929"
+        }
+      ]
+    },
+    "data-scientist/0110": {
+      "slug": "data-scientist/0110",
+      "character": "data-scientist",
+      "level": "0110",
+      "theme": "Database Mastery",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "fail",
+      "average": 66.3,
+      "total": 3,
+      "scored": 3,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 3,
+      "errored": 0,
+      "truncated": false,
+      "counts": {
+        "pass": 0,
+        "warn": 2,
+        "fail": 1
+      },
+      "open_issues": 16,
+      "high_priority_issues": 4,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 3/8; 1 fail; 2 warn; avg 66.3 < 95.0; 16 open issue(s); 4 high-priority",
+      "coverage": {
+        "pages/_quests/0110/backup-recovery.md": {
+          "verdict": "warn",
+          "average": 73.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/0110/query-optimization.md": {
+          "verdict": "warn",
+          "average": 74.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/0110/connection-pooling.md": {
+          "verdict": "fail",
+          "average": 52.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-12T12:59:49+00:00",
+      "last_run_date": "2026-07-12",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-12T12:59:49+00:00",
+          "date": "2026-07-12",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 66.3,
+          "open_issues": 16,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
+        }
+      ]
+    },
+    "developer/0100": {
+      "slug": "developer/0100",
+      "character": "developer",
+      "level": "0100",
+      "theme": "Frontend & Containers",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": null,
+      "average": null,
+      "total": 0,
+      "scored": 0,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 0,
+      "errored": 0,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 0,
+        "fail": 0
+      },
+      "open_issues": 0,
+      "high_priority_issues": 0,
+      "executed": false,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 0/8; no average",
+      "coverage": {},
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-12T12:59:49+00:00",
+      "last_run_date": "2026-07-12",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-12T12:59:49+00:00",
+          "date": "2026-07-12",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 0.0,
+          "open_issues": 0,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
+        }
+      ]
+    },
+    "digital-artist/0100": {
+      "slug": "digital-artist/0100",
+      "character": "digital-artist",
+      "level": "0100",
+      "theme": "Frontend & Containers",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "pass",
+      "average": 83.3,
+      "total": 3,
+      "scored": 3,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 3,
+      "errored": 0,
+      "truncated": false,
+      "counts": {
+        "pass": 3,
+        "warn": 0,
+        "fail": 0
+      },
+      "open_issues": 0,
+      "high_priority_issues": 0,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 3/8; avg 83.3 < 95.0",
+      "coverage": {
+        "pages/_quests/0100/self-operating-website-02-the-proving-grounds.md": {
+          "verdict": "pass",
+          "average": 83.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/0100/sourcery-code-methods.md": {
+          "verdict": "pass",
+          "average": 86.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/0100/side-quest-profile-themes.md": {
+          "verdict": "pass",
+          "average": 81.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-12T12:59:49+00:00",
+      "last_run_date": "2026-07-12",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-12T12:59:49+00:00",
+          "date": "2026-07-12",
+          "mode": "execute",
+          "verdict": "pass",
+          "average": 83.3,
+          "open_issues": 0,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
+        }
+      ]
+    },
+    "game-developer/0100": {
+      "slug": "game-developer/0100",
+      "character": "game-developer",
+      "level": "0100",
+      "theme": "Frontend & Containers",
+      "tier": "Adventurer",
+      "mode": "execute",
+      "verdict": "warn",
+      "average": 81.3,
+      "total": 3,
+      "scored": 3,
+      "requested": 8,
+      "total_quests": 8,
+      "covered": 3,
+      "errored": 0,
+      "truncated": false,
+      "counts": {
+        "pass": 2,
+        "warn": 1,
+        "fail": 0
+      },
+      "open_issues": 4,
+      "high_priority_issues": 1,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 3/8; 1 warn; avg 81.3 < 95.0; 4 open issue(s); 1 high-priority",
+      "coverage": {
+        "pages/_quests/0100/self-operating-website-02-the-proving-grounds.md": {
+          "verdict": "pass",
+          "average": 86.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/0100/sourcery-code-methods.md": {
+          "verdict": "pass",
+          "average": 80.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/0100/side-quest-profile-themes.md": {
+          "verdict": "warn",
+          "average": 78.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-12T12:59:49+00:00",
+      "last_run_date": "2026-07-12",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-12T12:59:49+00:00",
+          "date": "2026-07-12",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 81.3,
+          "open_issues": 4,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
+        }
+      ]
+    },
+    "security-specialist/1000": {
+      "slug": "security-specialist/1000",
+      "character": "security-specialist",
+      "level": "1000",
+      "theme": "Cloud Computing",
+      "tier": "Warrior",
+      "mode": "execute",
+      "verdict": "warn",
+      "average": 74.0,
+      "total": 1,
+      "scored": 1,
+      "requested": 9,
+      "total_quests": 9,
+      "covered": 1,
+      "errored": 0,
+      "truncated": true,
+      "counts": {
+        "pass": 0,
+        "warn": 1,
+        "fail": 0
+      },
+      "open_issues": 5,
+      "high_priority_issues": 1,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 1/9; 1 warn; avg 74.0 < 95.0; 5 open issue(s); 1 high-priority",
+      "coverage": {
+        "pages/_quests/1000/aws-essentials.md": {
+          "verdict": "warn",
+          "average": 74.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-12T12:59:49+00:00",
+      "last_run_date": "2026-07-12",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-12T12:59:49+00:00",
+          "date": "2026-07-12",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 74.0,
+          "open_issues": 5,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
+        }
+      ]
+    },
+    "system-engineer/1000": {
+      "slug": "system-engineer/1000",
+      "character": "system-engineer",
+      "level": "1000",
+      "theme": "Cloud Computing",
+      "tier": "Warrior",
+      "mode": "execute",
+      "verdict": "warn",
+      "average": 76.3,
+      "total": 4,
+      "scored": 3,
+      "requested": 9,
+      "total_quests": 9,
+      "covered": 3,
+      "errored": 1,
+      "truncated": false,
+      "counts": {
+        "pass": 1,
+        "warn": 2,
+        "fail": 0
+      },
+      "open_issues": 11,
+      "high_priority_issues": 3,
+      "executed": true,
+      "perfect": false,
+      "perfect_since": null,
+      "reason": "covered 3/9; 2 warn; avg 76.3 < 95.0; 11 open issue(s); 3 high-priority",
+      "coverage": {
+        "pages/_quests/1000/aws-essentials.md": {
+          "verdict": "warn",
+          "average": 72.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/1000/infrastructure-as-code.md": {
+          "verdict": "pass",
+          "average": 89.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        },
+        "pages/_quests/1000/self-operating-website-03-the-war-machine.md": {
+          "verdict": "warn",
+          "average": 68.0,
+          "open_issues": 6,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-12"
+        }
+      },
+      "fix_rounds": 0,
+      "stuck": false,
+      "stuck_reason": null,
+      "needs_human": false,
+      "last_fixed": null,
+      "last_run": "2026-07-12T12:59:50+00:00",
+      "last_run_date": "2026-07-12",
+      "runs": 1,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "history": [
+        {
+          "event": "walk",
+          "at": "2026-07-12T12:59:50+00:00",
+          "date": "2026-07-12",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 76.3,
+          "open_issues": 11,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
         }
       ]
     }
