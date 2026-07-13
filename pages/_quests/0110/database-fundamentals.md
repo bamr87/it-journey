@@ -303,7 +303,17 @@ The foreign key guarantees a loan can never reference a member who does not exis
 | **Isolation** | Concurrent transactions don't corrupt each other | Two librarians issuing loans don't reuse a loan_id |
 | **Durability** | Once committed, data survives a crash | A power cut after `COMMIT` does not lose the loan |
 
-Watch atomicity protect a transfer between two accounts:
+First, create the `accounts` table and seed two rows so the example runs as written. The `CHECK` constraint refuses any update that would drive a balance negative - a `CHECK` guards a rule *inside* a single row, the way a foreign key guards a rule *between* tables:
+
+```sql
+CREATE TABLE accounts (
+    id      INTEGER PRIMARY KEY,
+    balance NUMERIC NOT NULL CHECK (balance >= 0)   -- CHECK: no account may go negative
+);
+INSERT INTO accounts (id, balance) VALUES (1, 100), (2, 100);
+```
+
+Now watch atomicity protect a transfer between those two accounts:
 
 ```sql
 BEGIN;                                              -- start the transaction

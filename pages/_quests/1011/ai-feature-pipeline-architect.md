@@ -219,25 +219,35 @@ const aiPipeline = {
 
 ```python
 # Install the AI orchestration framework
-pip install langchain anthropic openai mcp-client
+# (the Model Context Protocol package on PyPI is `mcp`, not `mcp-client`)
+pip install langchain anthropic openai mcp
 
 # Create your first AI agent for requirement processing
-from langchain.agents import Agent
-from mcp import MCPClient
+import os
+from anthropic import Anthropic
+from mcp import ClientSession
 
 class RequirementProcessor:
     def __init__(self):
-        self.llm = Anthropic(api_key="your-key")
-        self.mcp_client = MCPClient()
-    
-    async def process_user_request(self, raw_request: str):
+        # Read credentials from the environment — never hard-code API keys
+        self.llm = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        self.mcp_session: ClientSession | None = None  # opened via an MCP transport
+
+    def process_user_request(self, raw_request: str):
         """Transform natural language into structured requirements"""
         # AI processes the request and generates structured output
-        structured_req = await self.llm.agenerate({
-            "prompt": f"Convert this feature request into structured format: {raw_request}",
-            "schema": "user_story_schema.json"
-        })
-        return structured_req
+        response = self.llm.messages.create(
+            model="claude-3-5-sonnet-latest",
+            max_tokens=1024,
+            messages=[{
+                "role": "user",
+                "content": (
+                    "Convert this feature request into structured JSON "
+                    f"matching user_story_schema.json: {raw_request}"
+                ),
+            }],
+        )
+        return response.content[0].text
 ```
 
 **Why this matters**: The intake stage is critical because unclear requirements lead to failed projects. AI excels at parsing natural language and asking clarifying questions that humans might miss.
@@ -259,6 +269,22 @@ class RequirementProcessor:
 ```
 
 **Step 3: Test your intake pipeline**
+
+First save the `RequirementProcessor` class above into `intake_agent.py` and add a
+`__main__` entry point that reads the request from stdin, so the module is runnable
+from the command line:
+
+```python
+# intake_agent.py (append below the RequirementProcessor class)
+import sys
+
+if __name__ == "__main__":
+    raw_request = sys.stdin.read().strip()
+    processor = RequirementProcessor()
+    print(processor.process_user_request(raw_request))
+```
+
+Then run it (make sure `ANTHROPIC_API_KEY` is exported in your environment):
 
 ```bash
 # Test the requirement processor

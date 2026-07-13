@@ -117,7 +117,7 @@ Key sections an `AGENTS.md` must include:
 
 > **Exercise 6.1:** Create `AGENTS.md` in the root of your sandbox repository.
 
-```markdown
+````markdown
 # AGENTS.md — Agent Operating Guide
 
 This file provides operating instructions for AI agents (GitHub Copilot
@@ -168,7 +168,7 @@ npm test -- --coverage
 
 # Lint
 npm run lint
-```markdown
+```
 
 ## Build Commands
 
@@ -178,7 +178,7 @@ npm run build
 
 # Start development server
 npm run dev
-```bash
+```
 
 ## Commit Message Format
 
@@ -193,7 +193,7 @@ The following environment variables are set in the devcontainer:
 
 Do NOT use any other secrets. If your task requires a secret not listed
 here, STOP and report what you need.
-```
+````
 
 ---
 
@@ -256,10 +256,10 @@ check() {
     local cmd="$2"
     if eval "$cmd" &>/dev/null; then
         echo "✅ $name"
-        ((PASS++))
+        PASS=$((PASS+1))
     else
         echo "❌ $name"
-        ((FAIL++))
+        FAIL=$((FAIL+1))
     fi
 }
 
