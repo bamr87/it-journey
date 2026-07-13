@@ -115,6 +115,7 @@ Not all failures are equal. Before building retry logic, classify what can and c
 
 > **Exercise 7.1:** Add retry configuration to your agent workflow.
 
+{% raw %}
 ```yaml
 # .github/workflows/agent-with-retries.yml
 name: Agent with Resilient Execution
@@ -142,7 +143,7 @@ jobs:
             echo "=== Attempt $attempt of $RETRY_MAX ==="
             
             if python3 work/gh-600/scripts/run_agent_task.py \
-                --issue "${% raw %}{{ github.event.issue.number }}{% endraw %}" \
+                --issue "${{ github.event.issue.number }}" \
                 --output agent-result.json; then
               echo "✅ Agent task succeeded on attempt $attempt"
               echo "succeeded=true" >> "$GITHUB_OUTPUT"
@@ -174,8 +175,8 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const errorCode = '${% raw %}{{ steps.agent_task.outputs.error_code }}{% endraw %}' || 'unknown';
-            const runUrl = `https://github.com/${% raw %}{{ github.repository }}{% endraw %}/actions/runs/${% raw %}{{ github.run_id }}{% endraw %}`;
+            const errorCode = '${{ steps.agent_task.outputs.error_code }}' || 'unknown';
+            const runUrl = `https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,
@@ -190,6 +191,7 @@ jobs:
                 `with an updated body.`
             });
 ```
+{% endraw %}
 
 ---
 
@@ -239,8 +241,8 @@ Level 4 — Timeout:              Hard stop + comment + disable agent label
 > **Exercise 7.3:** Create a test that deliberately causes each failure type and verify the escalation path.
 
 ```bash
-# work/gh-600/scripts/test_failure_scenarios.sh
 #!/usr/bin/env bash
+# work/gh-600/scripts/test_failure_scenarios.sh
 set -euo pipefail
 
 echo "=== Testing Agent Failure Scenarios ==="

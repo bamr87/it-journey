@@ -132,6 +132,7 @@ Only then proceed to plan.
 
 > **Exercise 8.1:** Implement session memory using GitHub Actions artifacts.
 
+{% raw %}
 ```yaml
 # .github/workflows/agent-with-session-memory.yml
 name: Agent with Session Memory
@@ -151,9 +152,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .agent-memory/session.json
-          key: agent-session-${% raw %}{{ github.event.issue.number }}{% endraw %}
+          key: agent-session-${{ github.event.issue.number }}
           restore-keys: |
-            agent-session-${% raw %}{{ github.event.issue.number }}{% endraw %}
+            agent-session-${{ github.event.issue.number }}
 
       - name: Initialise session memory
         run: |
@@ -161,14 +162,14 @@ jobs:
           if [ ! -f .agent-memory/session.json ]; then
             cat > .agent-memory/session.json << 'EOF'
             {
-              "session_id": "${% raw %}{{ github.run_id }}{% endraw %}",
-              "issue_number": ${% raw %}{{ github.event.issue.number }}{% endraw %},
+              "session_id": "${{ github.run_id }}",
+              "issue_number": ${{ github.event.issue.number }},
               "started_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
               "completed_steps": [],
               "decisions": [],
               "files_modified": []
             }
-            EOF
+          EOF
           fi
 
       - name: Run agent task (reads and updates session memory)
@@ -199,10 +200,11 @@ jobs:
       - name: Save session memory
         uses: actions/upload-artifact@v4
         with:
-          name: agent-session-${% raw %}{{ github.event.issue.number }}{% endraw %}-${% raw %}{{ github.run_id }}{% endraw %}
+          name: agent-session-${{ github.event.issue.number }}-${{ github.run_id }}
           path: .agent-memory/session.json
           retention-days: 1
 ```
+{% endraw %}
 
 > **Why upload-artifact instead of `actions/cache/save`?** GitHub Actions caches are **immutable** — once a key is written, later writes for the same key are silently ignored, so the agent can restore stale session memory. For *mutable* same-run handoff, use upload/download artifacts (per-run). For *cross-run* mutable state, write to a repo file in a PR, or post the JSON as an issue comment and re-read it.
 
