@@ -173,6 +173,94 @@ def test_mock_determinism():
     check("different quest → different verdict", other != v1)
 
 
+class _FakeProc:
+    def __init__(self, returncode=0, stdout="", stderr=""):
+        self.returncode = returncode
+        self.stdout = stdout
+        self.stderr = stderr
+
+
+def _valid_envelope():
+    """A clean CLI envelope carrying a parseable verdict, so a successful
+    _invoke reaches _finalize without raising."""
+    verdict = {"executed": True, "dimensions": {}, "commands": [],
+               "recommendations": [], "summary": "ok"}
+    return json.dumps({"result": verdict, "num_turns": 1, "total_cost_usd": 0.0})
+
+
+def test_retry_policy():
+    print("\nretry policy — transient blips self-heal, sustained ones stop the batch:")
+    from agentic.runner import AuthError
+    import tempfile as _tf
+
+    orig_run = runner.subprocess.run
+    orig_sleep = runner.time.sleep
+    runner.time.sleep = lambda *_a, **_k: None  # no real waits in the test
+
+    def _make_runner():
+        # 3 attempts, ~0 backoff; pretend the claude CLI is on PATH.
+        r = AgenticRunner(mode="execute", max_attempts=3,
+                          retry_base_s=0.001, retry_max_s=0.001)
+        r.available = lambda: True
+        return r
+
+    def _drive(procs):
+        """Feed a queue of fake process results to a single _invoke call and
+        return (result_or_exception, call_count)."""
+        seq = list(procs)
+        calls = {"n": 0}
+
+        def fake_run(*_a, **_k):
+            calls["n"] += 1
+            return seq[min(calls["n"] - 1, len(seq) - 1)]
+
+        runner.subprocess.run = fake_run
+        r = _make_runner()
+        q = _StubQuest("retry-probe", "x" * 200)
+        sandbox = Path(_tf.mkdtemp(prefix="retry-test-"))
+        try:
+            return r._invoke(q, ["claude", "-p", "x"], sandbox), calls["n"]
+        finally:
+            import shutil as _sh
+            _sh.rmtree(sandbox, ignore_errors=True)
+
+    try:
+        # 1) One transient (overload) blip, then a clean run → recovers, 2 calls.
+        res, n = _drive([
+            _FakeProc(returncode=1, stderr="API Error: 529 overloaded_error"),
+            _FakeProc(returncode=0, stdout=_valid_envelope()),
+        ])
+        check("transient blip then success → recovers", isinstance(res, dict))
+        check("recovered after exactly one retry (2 calls)", n == 2)
+
+        # 2) Sustained rate-limit across all attempts → AuthError (stops the batch).
+        raised = None
+        try:
+            _drive([_FakeProc(returncode=1, stderr="429 Too Many Requests")] * 5)
+        except AuthError as e:
+            raised = e
+        check("sustained throttle → AuthError (batch-stop signal)", raised is not None)
+
+        # 3) A CLEAN run whose transcript merely MENTIONS a 503 is a real result,
+        #    never retried (guards the agent-transcript false-positive).
+        env = json.loads(_valid_envelope())
+        env["result"]["summary"] = "the tutorial covers 503 Service Unavailable and rate limit handling"
+        res, n = _drive([_FakeProc(returncode=0, stdout=json.dumps(env))])
+        check("clean run mentioning '503' is NOT retried", isinstance(res, dict) and n == 1)
+
+        # 4) A non-transient hard error (exit 2, no transient/auth text) fails fast.
+        raised = None
+        try:
+            _drive([_FakeProc(returncode=2, stderr="unexpected boom")] * 5)
+        except RunnerError as e:
+            raised = e
+        check("non-transient error fails fast (RunnerError, no retry)",
+              isinstance(raised, RunnerError) and not isinstance(raised, AuthError))
+    finally:
+        runner.subprocess.run = orig_run
+        runner.time.sleep = orig_sleep
+
+
 def main():
     print("=" * 64)
     print("AGENTIC ENVELOPE CONTRACT TEST (offline, no claude, no cost)")
@@ -183,6 +271,7 @@ def main():
     test_snippet_extraction()
     test_schema_and_scoring()
     test_mock_determinism()
+    test_retry_policy()
     print("\n" + "=" * 64)
     if _failures:
         print(f"❌ {len(_failures)} contract check(s) FAILED: {_failures}")

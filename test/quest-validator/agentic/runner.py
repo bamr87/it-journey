@@ -22,6 +22,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import random
 import re
 import shutil
 import subprocess
@@ -54,12 +55,24 @@ AUTH_HINT = (
     "`claude` processes — run this validator from a normal shell or a CI runner with the token set."
 )
 
+THROTTLE_HINT = (
+    "Claude's backend stayed unavailable (rate-limit / overload / transient 5xx) across every "
+    "retry. This is almost always temporary — the OAuth token is shared across the slice sweep "
+    "and its rate limit refills over time, so the loop retries this slice on its next run."
+)
+
 
 class RunnerError(RuntimeError):
     pass
 
 
 class AuthError(RunnerError):
+    """The backend refused to serve us and won't recover mid-batch — a bad/expired
+    token OR a *sustained* rate-limit/overload that outlived every retry. The batch
+    stops on this (auth won't fix itself between quests), writes the quests that DID
+    score as partial evidence, and — if zero scored — exits non-zero so the caller
+    can soft-skip the slice. Transient blips are retried in `_invoke` first; this is
+    only raised once retries are exhausted."""
     pass
 
 
@@ -72,11 +85,32 @@ def _looks_like_auth_failure(text: str) -> bool:
         or "please run" in t and "login" in t
 
 
+def _looks_like_transient(text: str) -> bool:
+    """Recoverable backend/transport conditions — overload, rate-limit, a 5xx, or a
+    network blip — that a short backoff usually clears. Kept deliberately DISTINCT
+    from auth (a bad token never recovers, so retrying it just burns time) and
+    matched only on distinctive error phrasings, not bare status numbers, so an
+    agent transcript that merely *mentions* '503' can't masquerade as a transport
+    failure. Callers additionally gate this on a non-zero exit — a clean run is a
+    real result no matter what its transcript says."""
+    t = (text or "").lower()
+    needles = (
+        "overloaded", "rate limit", "rate_limit", "rate-limit", "429", "529",
+        "too many requests", "internal server error", "service unavailable",
+        "bad gateway", "gateway timeout", "temporarily unavailable",
+        "please try again", "try again later", "connection reset",
+        "connection refused", "econnreset", "etimedout", "eai_again",
+        "network error", "request timed out",
+    )
+    return any(n in t for n in needles)
+
+
 class AgenticRunner:
     def __init__(self, mode: str = "review", model: Optional[str] = None,
                  timeout: int = 600, claude_bin: str = "claude",
                  mock: bool = False, dry_run: bool = False, verbose: bool = False,
-                 max_turns: int = 0):
+                 max_turns: int = 0, max_attempts: int = 0,
+                 retry_base_s: float = 0.0, retry_max_s: float = 0.0):
         if mode not in ("review", "execute"):
             raise ValueError(f"mode must be 'review' or 'execute', got {mode!r}")
         self.mode = mode
@@ -89,6 +123,15 @@ class AgenticRunner:
         # Per-quest turn ceiling (0 = CLI default). Bounds runaway agent loops
         # and is the cheapest cost governor: fewer turns ≈ less spend.
         self.max_turns = max_turns
+        # Transient-failure retry policy (see _invoke). A single overload/rate-limit
+        # blip on the first quest otherwise aborts the whole batch and wastes the
+        # slice, so retry the recoverable classes with exponential backoff + jitter
+        # before giving up. 0 = fall back to env/default; tests pass explicit small
+        # values to keep them fast. Total added worst-case wait per quest is bounded
+        # by (max_attempts-1) × retry_max_s.
+        self.max_attempts = max_attempts or int(os.environ.get("QUEST_QA_MAX_ATTEMPTS", "4") or 4)
+        self.retry_base_s = retry_base_s or float(os.environ.get("QUEST_QA_RETRY_BASE_S", "3") or 3)
+        self.retry_max_s = retry_max_s or float(os.environ.get("QUEST_QA_RETRY_MAX_S", "45") or 45)
 
     # ---- public ---------------------------------------------------------
 
@@ -152,6 +195,15 @@ class AgenticRunner:
 
     # ---- invocation + parsing ------------------------------------------
 
+    def _backoff(self, attempt: int, reason: str) -> None:
+        """Sleep exponentially (base × 2^(attempt-1), capped) with jitter before the
+        next retry, narrating to stderr so CI logs show why the pause happened."""
+        delay = min(self.retry_base_s * (2 ** (attempt - 1)), self.retry_max_s)
+        delay += random.uniform(0, self.retry_base_s)  # jitter, avoid thundering herd
+        print(f"⏳ transient failure ({reason}) — retry {attempt}/{self.max_attempts - 1} "
+              f"in {delay:.1f}s …", file=sys.stderr, flush=True)
+        time.sleep(delay)
+
     def _invoke(self, quest, cmd: List[str], sandbox: Path) -> dict:
         if not self.available():
             raise RunnerError(
@@ -159,22 +211,50 @@ class AgenticRunner:
             )
         env = dict(os.environ)
         env.setdefault("CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC", "1")
-        t0 = time.time()
-        try:
-            proc = subprocess.run(
-                cmd, cwd=str(sandbox), env=env, capture_output=True, text=True,
-                timeout=self.timeout,
-            )
-        except subprocess.TimeoutExpired:
-            raise RunnerError(f"claude timed out after {self.timeout}s")
-        dur = round(time.time() - t0, 1)
 
-        combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
-        if _looks_like_auth_failure(combined):
-            raise AuthError(AUTH_HINT)
-        if proc.returncode != 0:
-            tail = (proc.stderr or proc.stdout or "").strip()[-800:]
-            raise RunnerError(f"claude exited {proc.returncode}: {tail}")
+        # Retry the recoverable failure classes before surfacing a hard error: a
+        # single overload/rate-limit/5xx/network blip (or an ambiguous auth-endpoint
+        # hiccup) on ANY quest — especially the first — otherwise aborts the whole
+        # batch and throws away the slice. Only a NON-clean exit (returncode != 0)
+        # is eligible: a clean run is a real result even if its transcript happens
+        # to mention "503"/"rate limit" as quest content. A genuine timeout or a
+        # non-transient error still fails fast (retrying won't help). Once retries
+        # are exhausted, auth/throttle raise AuthError (stop the batch, write partial
+        # evidence); any other non-zero exit is a per-quest RunnerError (batch
+        # continues to the next quest).
+        attempts = max(1, self.max_attempts)
+        for attempt in range(1, attempts + 1):
+            t0 = time.time()
+            try:
+                proc = subprocess.run(
+                    cmd, cwd=str(sandbox), env=env, capture_output=True, text=True,
+                    timeout=self.timeout,
+                )
+            except subprocess.TimeoutExpired:
+                # A timeout is expensive (up to self.timeout burned) and often a
+                # runaway quest rather than a transport blip, so don't multiply it —
+                # record it as this quest's error and let the batch move on.
+                raise RunnerError(f"claude timed out after {self.timeout}s")
+            dur = round(time.time() - t0, 1)
+
+            combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
+            clean = proc.returncode == 0
+            auth = (not clean) and _looks_like_auth_failure(combined)
+            transient = (not clean) and _looks_like_transient(combined)
+
+            if (auth or transient) and attempt < attempts:
+                self._backoff(attempt, "auth-endpoint" if auth and not transient
+                              else "rate-limit/overload")
+                continue
+            if auth:
+                raise AuthError(AUTH_HINT)
+            if transient:
+                tail = (proc.stderr or proc.stdout or "").strip()[-400:]
+                raise AuthError(f"{THROTTLE_HINT}\nLast output: {tail}")
+            if not clean:
+                tail = (proc.stderr or proc.stdout or "").strip()[-800:]
+                raise RunnerError(f"claude exited {proc.returncode}: {tail}")
+            break  # clean run — fall through to envelope parsing below
 
         envelope = self._parse_envelope(proc.stdout)
         # The CLI signals failures (incl. the --max-turns cap) with is_error=true

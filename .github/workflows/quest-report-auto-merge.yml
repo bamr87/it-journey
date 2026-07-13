@@ -1,0 +1,112 @@
+# =============================================================================
+# quest-report-auto-merge.yml — hands-off merge of quest-perfection report PRs
+# -----------------------------------------------------------------------------
+# The daily quest-perfection loop (quest-perfection.yml) opens ONE consolidated
+# `automated` + `quest-walkthrough` PR carrying the session walkthroughs, the
+# ledger, and the generated pages/_quest-reports/ site collection. Historically
+# those PRs waited for a human. This flips that: once the PR's checks are green
+# and its diff is confined to the report/ledger/site-collection paths, it
+# squash-merges itself — so the walkthroughs + dashboard reach it-journey.dev
+# automatically and the review happens on the FRONTEND (each page links back to
+# its run + the file's commit history) instead of inside the PR.
+#
+# Safety net (same discipline as content-auto-merge.yml):
+#   * SMUGGLE GUARD — the diff is re-classified at merge time and must touch ONLY
+#     pages/_quest-reports/**, .quests/**, test/quest-validator/walkthroughs/**.
+#     A report PR can never quietly carry a quest-content, workflow, config, or
+#     dependency change to main + the live site.
+#   * GREEN CHECKS — build-validation + frontmatter-validation are required status
+#     checks; "all non-self checks green" already means the site builds and every
+#     generated page's frontmatter is valid (the render_with_liquid:false collection
+#     default keeps quoted Liquid in a walkthrough from ever breaking the build).
+#   * `needs-human` on any PR forces manual review.
+#
+# Gated on QUEST_REPORT_AUTOMERGE_ENABLED + runs via pull_request_target but NEVER
+# checks out or runs the PR's code — only the GitHub API + our own base scripts.
+# =============================================================================
+name: 🤝 Quest Report Auto-Merge
+
+on:
+  pull_request_target:
+    types: [labeled, opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+concurrency:
+  group: quest-report-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  auto-merge:
+    # Only the perfection loop's report PRs, and only when not flagged for a human.
+    if: >-
+      vars.QUEST_REPORT_AUTOMERGE_ENABLED == 'true' &&
+      contains(github.event.pull_request.labels.*.name, 'quest-walkthrough') &&
+      contains(github.event.pull_request.labels.*.name, 'automated') &&
+      !contains(github.event.pull_request.labels.*.name, 'needs-human')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      # Base checkout (default for pull_request_target) — gives us OUR scripts to
+      # run against the PR's file LIST (never the PR's code).
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Smuggle guard — diff must stay within the report/ledger/site paths
+        run: |
+          set -euo pipefail
+          # --allow-globs (composes standalone in classify_changes.py) requires EVERY
+          # changed path to match one of these — nothing else may ride along.
+          if gh pr diff "$PR" --name-only \
+               | python3 scripts/ci/classify_changes.py --allow-globs \
+                   'pages/_quest-reports/**' '.quests/**' 'test/quest-validator/walkthroughs/**'; then
+            echo "report-only diff ✅"
+          else
+            echo "::warning::PR #$PR touches paths outside the report/ledger/site collection — routing to a human."
+            gh pr edit "$PR" --add-label needs-human || true
+            gh pr comment "$PR" --body "🛑 Auto-merge declined: this report PR also changes paths outside \`pages/_quest-reports/\`, \`.quests/\`, or the walkthroughs dir. A human needs to review it (label \`needs-human\` added)." || true
+            exit 1
+          fi
+
+      - name: Wait for checks (excluding self), then squash-merge
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          # `gh pr checks --watch` waits for EVERY check — including THIS job's own,
+          # which stays "pending" while it watches: a self-deadlock that hits
+          # timeout-minutes and leaves the PR unmerged (the #441 bug). Poll instead,
+          # EXCLUDING our own run (its check link carries this run_id), so we wait
+          # only on checks that can actually finish. A build/frontmatter failure
+          # still stops the merge.
+          deadline=$(( $(date +%s) + 25 * 60 ))
+          while :; do
+            rows=$(gh pr checks "$PR" --json bucket,link \
+                     --jq '.[] | [.bucket, .link] | @tsv' 2>/dev/null || true)
+            others=$(printf '%s\n' "$rows" | grep -v "/${RUN_ID}/" || true)
+            if [ -z "$others" ]; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "::error::no non-self checks appeared before timeout."; exit 1; }
+              sleep 30; continue
+            fi
+            if printf '%s\n' "$others" | awk -F'\t' '$1=="fail"{f=1} END{exit !f}'; then
+              echo "A check failed — leaving PR #$PR open for review."
+              gh pr edit "$PR" --add-label ci-failed || true
+              exit 1
+            fi
+            if printf '%s\n' "$others" | awk -F'\t' '$1=="pending"{p=1} END{exit !p}'; then
+              [ "$(date +%s)" -ge "$deadline" ] && { echo "::error::timed out waiting for checks."; exit 1; }
+              sleep 30; continue
+            fi
+            break
+          done
+          gh pr merge "$PR" --squash --delete-branch
+          echo "All checks green + report-only — merged ✅ (published to the site)."

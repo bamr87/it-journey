@@ -11,6 +11,10 @@
       url: /quests/0000/hello-noob/
     - title: All Quests
       url: /quests/
+    - title: Perfection Dashboard
+      url: /quest-reports/
+    - title: Walkthrough Reports
+      url: /quest-reports/#walkthrough-reports
 - title: Epic
   url: /quests/codex/
   icon: bi-trophy
