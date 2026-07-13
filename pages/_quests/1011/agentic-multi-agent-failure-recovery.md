@@ -227,7 +227,9 @@ def assess_and_recover(
     results = {}
     for result_file in Path(results_dir).rglob("*.json"):
         with open(result_file) as f:
-            results[result_file.stem] = json.load(f)
+            # Key by the artifact directory (e.g. "subtask1-result"), which
+            # matches the upload-artifact name used in the workflow above.
+            results[result_file.parent.name] = json.load(f)
     
     failed_agents = [k for k, v in agent_statuses.items() if v == "failure"]
     succeeded_agents = [k for k, v in agent_statuses.items() if v == "success"]
@@ -241,8 +243,12 @@ def assess_and_recover(
     }
     
     for agent_id in failed_agents:
-        # Determine recovery strategy based on what's available
-        agent_result = results.get(f"{agent_id}-result")
+        # Determine recovery strategy based on what's available.
+        # Map the orchestrator agent id (e.g. "sub-agent-1") to the artifact
+        # naming used by the workflow (e.g. "subtask1-result") so checkpoint
+        # detection actually finds the preserved partial results.
+        subtask_name = agent_id.replace("sub-agent-", "subtask")
+        agent_result = results.get(f"{subtask_name}-result")
         
         if agent_result and agent_result.get("checkpoint_available"):
             recovery_plan["recovery_actions"].append({
@@ -263,12 +269,16 @@ def assess_and_recover(
     print(f"Recovery plan: {len(failed_agents)} failed, {len(succeeded_agents)} succeeded")
     print(f"Recovery actions: {len(recovery_plan['recovery_actions'])}")
     
-    # Set GitHub Actions outputs
+    # Set GitHub Actions outputs via $GITHUB_OUTPUT (the `::set-output`
+    # workflow command was deprecated and no longer works on hosted runners).
     needs_redelegation = any(
         a["strategy"] == "redelegate"
         for a in recovery_plan["recovery_actions"]
     )
-    print(f"::set-output name=needs_redelegation::{str(needs_redelegation).lower()}")
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a") as gh_out:
+            gh_out.write(f"needs_redelegation={str(needs_redelegation).lower()}\n")
     
     return recovery_plan
 
