@@ -168,9 +168,12 @@ pip install alembic psycopg2-binary
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-sudo apt update && sudo apt install -y postgresql python3-pip
+sudo apt update && sudo apt install -y postgresql python3-pip python3-venv
 sudo systemctl enable --now postgresql
 sudo -u postgres createdb living_schema
+# Ubuntu 23.04+/Debian 12+ mark the system Python "externally managed" (PEP 668),
+# so install into a virtualenv rather than pip-installing globally:
+python3 -m venv .venv && source .venv/bin/activate
 pip install alembic psycopg2-binary
 ```
 
@@ -182,9 +185,13 @@ pip install alembic psycopg2-binary
 <summary>Click to expand Cloud/Container instructions</summary>
 
 ```bash
-docker run --name living-schema -e POSTGRES_PASSWORD=quest -p 5432:5432 -d postgres:16
-# Flyway via Docker - no local install needed:
-docker run --rm flyway/flyway -url=jdbc:postgresql://host.docker.internal/living_schema info
+# POSTGRES_DB creates the living_schema database on first boot:
+docker run --name living-schema -e POSTGRES_PASSWORD=quest -e POSTGRES_DB=living_schema -p 5432:5432 -d postgres:16
+# Flyway via Docker - no local install needed.
+# --add-host is required on native Linux Docker: host.docker.internal resolves
+# automatically only on Docker Desktop (Mac/Windows). Pass -user/-password too:
+docker run --rm --add-host=host.docker.internal:host-gateway flyway/flyway \
+  -url=jdbc:postgresql://host.docker.internal/living_schema -user=postgres -password=quest info
 ```
 
 </details>
