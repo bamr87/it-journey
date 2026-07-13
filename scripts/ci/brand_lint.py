@@ -50,6 +50,11 @@ INLINE_CODE_RE = re.compile(r"`[^`]*`")
 # would otherwise block the brand gate on any quest referencing such a file).
 LINK_TARGET_RE = re.compile(r"\]\([^)]*\)|<https?://[^>]*>|\bhttps?://\S+")
 VENDORED_KEYS = ("source_repo:", "source_url:")
+# Generated meta-content the brand voice deliberately does NOT govern (the brand
+# system covers only quests + docs — see _data/brand/sections/). pages/_quest-reports/
+# is a machine transcript of what the walker observed; "correcting" jekyll→Jekyll in
+# an evidence report would falsify the transcript, so it is exempt like vendored content.
+EXEMPT_PREFIXES = ("pages/_quest-reports/",)
 
 
 class C:
@@ -129,6 +134,8 @@ def scan_file(path: Path, preferred: Dict[str, str], discouraged: List[str],
         rel = path.resolve().relative_to(REPO).as_posix()
     except ValueError:
         rel = path.as_posix()
+    if rel.startswith(EXEMPT_PREFIXES):
+        return []                                   # generated meta-content (not brand-governed)
     findings: List[Finding] = []
     lines = strip_code(body)
 

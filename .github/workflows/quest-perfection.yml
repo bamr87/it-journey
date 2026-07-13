@@ -471,17 +471,51 @@ jobs:
       # is the only honest input. Fails LOUDLY (no degraded fallback): without
       # engine evidence there is nothing worth reporting or fixing.
       - name: Gather sandboxed evidence (agentic execute engine)
+        id: evidence
         if: steps.plan.outputs.empty != 'true'
         run: |
           set -euo pipefail
           npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 \
             || { echo "::error::Claude Code install failed — the execute engine needs the claude CLI."; exit 1; }
           # Feed the planned quest paths, in order, to the execute-mode engine
-          # (same invocation as the quest-walkthrough skill documents).
-          python3 -c 'import json;[print(q["path"]) for q in json.load(open("walk-plan.json"))["quests"]]' \
-            | xargs -r python3 test/quest-validator/agentic_validate.py \
-                --mode execute --max-turns 40 \
-                --report walk-evidence.json --md walk-evidence.md
+          # (same invocation as the quest-walkthrough skill documents). Read the
+          # paths into an array rather than piping through `xargs`: xargs collapses
+          # the engine's exit code to a flat 123 for anything in 1-125, which hides
+          # the difference between a genuine crash (exit 1/other) and an EXPECTED
+          # rate-limit truncation (exit 2). We need that distinction to soft-skip.
+          mapfile -t QUEST_PATHS < <(python3 -c 'import json,sys;[print(q["path"]) for q in json.load(open("walk-plan.json")).get("quests") or []]')
+          if [ "${#QUEST_PATHS[@]}" -eq 0 ]; then
+            echo "::warning::no quest paths in walk-plan.json for $SLUG — nothing to evaluate."
+            exit 0
+          fi
+          set +e
+          python3 test/quest-validator/agentic_validate.py \
+            --mode execute --max-turns 40 \
+            --report walk-evidence.json --md walk-evidence.md \
+            "${QUEST_PATHS[@]}"
+          rc=$?
+          set -e
+          # Exit-code contract (agentic_validate.py):
+          #   0 → evidence gathered (full, or partial-but-≥1-quest-scored).
+          #   2 → auth/rate-limit truncation with ZERO quests scored. The shared
+          #       OAuth token's limit refills over time, so this is EXPECTED across a
+          #       big daily sweep — soft-skip the slice (warning, not a red build) and
+          #       skip the walker agent (it shares the throttled token). The engine
+          #       still wrote a TRUNCATED walk-evidence.json: the fix lane recognises
+          #       it and no-ops WITHOUT re-running the engine, and the ledger records
+          #       it as a non-coverage truncated run — so the slice is retried next run.
+          #   * → a genuine engine failure: fail loudly.
+          case "$rc" in
+            0) echo "evidence gathered for $SLUG." ;;
+            2)
+              echo "::warning::$SLUG — execute engine hit a sustained auth/rate-limit truncation (0 quests scored after in-engine retries). Soft-skipping this slice; the loop retries it next run. No red build."
+              echo "auth_skipped=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "::error::$SLUG — execute engine failed (exit $rc); not an auth/rate-limit truncation."
+              exit "$rc"
+              ;;
+          esac
 
       # SEAL — snapshot the deterministic outputs before ANY agent runs. The
       # walker reads these; only the workflow may write them. Restored below.
@@ -495,8 +529,12 @@ jobs:
       # (2) WALK — the quest-walker agent consumes the sealed evidence + the quest
       # sources and writes the ONE session report (the linked-journey reasoning the
       # engine can't do). It gathers no evidence of its own.
+      # Skipped when the evidence step soft-skipped (auth_skipped): the walker is a
+      # Claude Code agent authed by the SAME throttled token, so it would only burn
+      # more rate-limit budget to reason over zero-quest evidence. The slice retries
+      # in full on the next run.
       - name: Walk the slice and write a session report
-        if: steps.plan.outputs.empty != 'true'
+        if: steps.plan.outputs.empty != 'true' && steps.evidence.outputs.auth_skipped != 'true'
         uses: ./.github/actions/claude-run
         with:
           agent: quest-walker
@@ -558,9 +596,13 @@ jobs:
       # quest-fix.yml re-checking the ledger + this walk's evidence before it edits).
       - name: Log the per-slice fix decision
         if: always() && steps.plan.outputs.empty != 'true'
+        env:
+          AUTH_SKIPPED: ${{ steps.evidence.outputs.auth_skipped }}
         run: |
           set -euo pipefail
-          if [ "$OPEN_NEW_FIX_PRS" = "true" ]; then
+          if [ "${AUTH_SKIPPED:-}" = "true" ]; then
+            echo "fix lane will NO-OP for $SLUG — evidence was a rate-limit truncation; quest-fix aborts on truncated evidence (no re-run, no edits)." | tee -a "$GITHUB_STEP_SUMMARY"
+          elif [ "$OPEN_NEW_FIX_PRS" = "true" ]; then
             echo "fix lane WILL be invoked for $SLUG (queue had room at plan time; quest-fix re-checks the ledger + evidence before editing)." | tee -a "$GITHUB_STEP_SUMMARY"
           else
             echo "fix lane SKIPPED for $SLUG (open_new_fix_prs=false — budget/OODA backpressure)." | tee -a "$GITHUB_STEP_SUMMARY"
@@ -617,14 +659,24 @@ jobs:
           set -euo pipefail
           run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           shopt -s nullglob
-          ledgered=0
+          ledgered=0        # slices whose evidence was replayed into the ledger
+          productive=0      # slices that actually SCORED >=1 quest this run
+          attempted=0       # slices that produced a plan (i.e. were walked at all)
           for d in slices/*/; do
             [ -s "${d}walk-plan.json" ] || continue
+            attempted=$((attempted+1))
             if [ -s "${d}walk-evidence.json" ]; then
               python3 scripts/quest/ledger.py update \
                 --evidence "${d}walk-evidence.json" --plan "${d}walk-plan.json" \
                 --mode execute --run-url "$run_url" --event walk
               ledgered=$((ledgered+1))
+              # A soft-skipped slice uploads a TRUNCATED, zero-scored evidence file
+              # (so the fix lane no-ops without re-running the engine). Count only
+              # slices that scored >=1 quest as "productive" — the systemic-health
+              # signal below distinguishes an expected per-slice rate-limit from a
+              # whole-sweep wipeout (exhausted / broken token).
+              scored=$(python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); print(int(d.get("scored") or 0))' "${d}walk-evidence.json" 2>/dev/null || echo 0)
+              [ "${scored:-0}" -ge 1 ] && productive=$((productive+1))
             else
               echo "::warning::no walk-evidence.json in ${d} — that slice's walk failed; not ledgered."
             fi
@@ -633,7 +685,22 @@ jobs:
             fi
           done
           python3 scripts/quest/ledger.py render
-          echo "replayed $ledgered slice(s) into the ledger." | tee -a "$GITHUB_STEP_SUMMARY"
+          # Surface the walkthroughs + ledger on the site: regenerate the
+          # pages/_quest-reports/ Jekyll collection from every committed walkthrough
+          # + the freshly-rendered ledger. Deterministic + idempotent; this is what
+          # makes the output reviewable on the frontend (with run/commit links)
+          # instead of only inside this PR.
+          python3 scripts/quest/build_reports_site.py
+          echo "replayed $ledgered slice(s) into the ledger ($productive productive, $attempted attempted)." | tee -a "$GITHUB_STEP_SUMMARY"
+          # Systemic-health guard: a per-slice rate-limit is EXPECTED (the slice soft-
+          # skips green and retries next run). But if EVERY attempted slice scored
+          # zero, the shared OAuth token is likely exhausted or misconfigured — the
+          # sweep made no progress at all, so fail LOUDLY rather than open a hollow
+          # report PR that looks like healthy activity.
+          if [ "$attempted" -ge 1 ] && [ "$productive" -eq 0 ]; then
+            echo "::error::whole-sweep wipeout — $attempted slice(s) attempted, 0 scored a single quest. The shared CLAUDE_CODE_OAUTH_TOKEN is likely rate-exhausted or invalid; investigate before trusting the dashboard."
+            exit 1
+          fi
 
       - name: Compose the consolidated PR body
         id: body
@@ -684,6 +751,10 @@ jobs:
             echo "fixes arrive as SEPARATE \`auto:content\` PRs from the fix lane. Per-slice"
             echo "plan/evidence/report artifacts are attached to the run."
             echo
+            echo "📊 Once merged this publishes to the site — browse the walkthroughs +"
+            echo "coverage at **[/quest-reports/](https://it-journey.dev/quest-reports/)**"
+            echo "(regenerated from \`pages/_quest-reports/\`). Auto-merges when green."
+            echo
             echo "*Generated by the Quest Perfection Loop — [run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*"
           } > pr-body.md
 
@@ -698,6 +769,7 @@ jobs:
           add-paths: |
             test/quest-validator/walkthroughs/**
             .quests/**
+            pages/_quest-reports/**
           title: "♾️ Quest perfection — walkthroughs + ledger: ${{ steps.body.outputs.date }}"
           body-path: pr-body.md
           labels: |
