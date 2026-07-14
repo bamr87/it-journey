@@ -237,6 +237,10 @@ consumer = KafkaConsumer(
     "user-events",
     bootstrap_servers="localhost:9092",
     group_id="welcome-emailer",                  # consumer groups enable scaling
+    auto_offset_reset="earliest",                # a brand-new group starts at the
+                                                 # log's beginning, so events published
+                                                 # before it connected still arrive
+    consumer_timeout_ms=10000,                   # stop blocking after 10s of silence
     value_deserializer=lambda b: json.loads(b.decode("utf-8")),
 )
 for message in consumer:
@@ -244,6 +248,8 @@ for message in consumer:
     if event["type"] == "UserRegistered":
         print(f"Sending welcome email to user {event['user_id']}")
 ```
+
+> **Heads-up:** without `auto_offset_reset="earliest"`, kafka-python defaults a fresh consumer group to `"latest"` — so if you run the producer *then* this consumer, the already-published event is skipped and the `for` loop blocks silently forever. The `consumer_timeout_ms` makes the loop exit cleanly once the backlog is drained; in production you would omit it and stop the long-running loop with Ctrl+C instead.
 
 ### 🔍 Knowledge Check: Events and Pub/Sub
 - [ ] Why is `UserRegistered` a better message than `SendWelcomeEmail`?
@@ -337,6 +343,21 @@ A non-idempotent consumer that "adds $100" on every delivery will double-credit 
 ### 🏗️ Designing for Stale Reads
 
 Because the read model lags, a user who places an order may not see it in their list for a few hundred milliseconds. Design around it: show an optimistic "processing" state, read-your-own-writes from the write side when freshness matters, and reserve strong consistency for the few operations that truly need it.
+
+### 🏗️ Ordering and Partitioning
+
+A broker guarantees order only *within a partition*, never across a whole topic. Kafka and Redpanda split a topic into partitions and hash each message's **key** to pick one — so every event sharing a key lands in the same partition and is delivered in the order it was produced. Events for *different* keys spread across partitions and may interleave.
+
+```python
+# Same key → same partition → per-entity ordering preserved
+producer.send("user-events", key=b"user-42",
+              value={"type": "EmailChanged",  "user_id": 42})
+producer.send("user-events", key=b"user-42",
+              value={"type": "EmailVerified", "user_id": 42})
+# Both user-42 events arrive in order; events for other users may interleave
+```
+
+Choose a key that matches the entity whose order matters (a `user_id`, an `order_id`). Send no key and events round-robin across partitions for maximum throughput — at the cost of any cross-event ordering guarantee.
 
 ### 🔍 Knowledge Check: Consistency
 - [ ] Why must an at-least-once consumer be idempotent?
