@@ -137,6 +137,8 @@ This **🟡 Medium** quest expects:
 
 *OpenAPI is just a text file, so any platform works. These setups let you render and validate your spec.*
 
+> **Heads-up:** the `redocly lint` and `redocly build-docs` commands below act on an `openapi.yaml` file that you author in Chapters 1–2. Install the tooling now, but run the lint/render commands *after* the spec exists (or create an empty `openapi.yaml` placeholder first) — running them in an empty directory fails with `openapi.yaml does not exist`.
+
 ### 🍎 macOS Kingdom Path
 
 <details>
@@ -147,9 +149,9 @@ This **🟡 Medium** quest expects:
 brew install node
 npm install -g @redocly/cli
 
-# Validate a spec, then preview it as a docs site
+# Validate a spec, then render it as a docs site
 redocly lint openapi.yaml
-redocly preview-docs openapi.yaml   # opens an interactive preview
+redocly build-docs openapi.yaml -o docs.html   # static HTML (or: redocly preview for a live server)
 ```
 
 </details>
@@ -163,9 +165,9 @@ redocly preview-docs openapi.yaml   # opens an interactive preview
 winget install OpenJS.NodeJS
 npm install -g @redocly/cli
 
-# Lint and preview your OpenAPI document
+# Lint and render your OpenAPI document
 redocly lint openapi.yaml
-redocly preview-docs openapi.yaml
+redocly build-docs openapi.yaml -o docs.html   # or: redocly preview for a live server
 ```
 
 </details>
@@ -178,7 +180,7 @@ redocly preview-docs openapi.yaml
 ```bash
 sudo apt update && sudo apt install -y nodejs npm
 npm install -g @redocly/cli
-redocly lint openapi.yaml && redocly preview-docs openapi.yaml
+redocly lint openapi.yaml && redocly build-docs openapi.yaml -o docs.html
 ```
 
 </details>
@@ -254,6 +256,9 @@ Contract-first flow:
 Here is `GET /books/{id}` and `POST /books`, with a reusable `Book` schema and examples:
 
 ```yaml
+# Declare an empty default security requirement so redocly's
+# security-defined rule is satisfied (these demo endpoints need no auth)
+security: []
 paths:
   /books/{id}:
     get:
@@ -304,7 +309,9 @@ components:
 The `$ref` keyword is the key to DRY documentation: define `Book` once and reference it from every place a book appears. **Examples** make the docs come alive - a developer can copy a realistic payload instead of guessing. Validate the document with tooling before you trust it:
 
 ```bash
-# Lint the spec; a clean run means tools can rely on it
+# Lint the spec; zero errors means tools can rely on it.
+# redocly may still print advisory *warnings* (e.g. a missing license,
+# an example.com server, or a missing operationId) — those do not fail the run.
 redocly lint openapi.yaml
 ```
 
