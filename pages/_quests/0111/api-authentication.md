@@ -139,6 +139,8 @@ This **🔴 Hard** quest expects:
 
 *Authentication concepts are universal. These setups give you tools to decode and forge tokens locally so you can see what is inside them.*
 
+> **Get a token first:** the GitHub API calls below read a personal access token from `$GITHUB_TOKEN`. See the **Novice Challenge: Authenticate for Real** near the end of this quest for how to create one (with the `read:user` scope), then export it before running the curl commands — `export GITHUB_TOKEN=ghp_your_token` (PowerShell: `$env:GITHUB_TOKEN="ghp_your_token"`). Without it, curl sends an empty header and the call is rejected.
+
 ### 🍎 macOS Kingdom Path
 
 <details>
@@ -324,6 +326,8 @@ curl -s -X POST https://auth.example.com/token \
 ```
 
 **Scopes** express least privilege: the client asks only for what it needs (`read:profile`, not `admin:everything`). The user sees and approves the exact scopes. A **refresh token** lets the client obtain a new short-lived access token when it expires, without bothering the user again. For mobile and single-page apps that cannot keep a secret, **PKCE** (Proof Key for Code Exchange) replaces the client secret with a per-request dynamic proof.
+
+**Where you keep a token is a security decision.** In a browser, a cookie marked `httpOnly`, `Secure`, and `SameSite` keeps the token out of reach of JavaScript so a cross-site scripting bug cannot steal it (at the cost of needing CSRF protection); storing a token in `localStorage` is convenient but readable by any script on the page, so one injected script leaks it. On mobile, use the platform secure store (iOS Keychain, Android Keystore), never plain app preferences. On a server, keep tokens and client secrets in environment variables or a secrets manager, never in source control. Everywhere the rule is the same: give the token the shortest lifetime and the smallest blast radius you can.
 
 ### 🔍 Knowledge Check: OAuth2
 - [ ] What is the one-time code exchanged for, and why does that happen server-to-server?
