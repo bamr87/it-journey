@@ -137,6 +137,8 @@ This **🔴 Hard** quest expects:
 
 *The patterns are gateway-independent. The lab uses NGINX as a reverse proxy because it is everywhere; the same ideas apply to Kong, Traefik, Envoy, or a cloud gateway.*
 
+> **Before you run the container:** the `nginx.conf` you write in Chapter 2 proxies to `users` and `orders` upstreams, so NGINX exits immediately with `host not found in upstream` unless those services already exist on the same network. Start the whole lab — gateway plus two stub upstreams — with the Docker Compose file in **Chapter 2** rather than the bare `docker run` shown per-platform below (that standalone command only serves the default page until the upstreams are provisioned).
+
 ### 🍎 macOS Kingdom Path
 
 <details>
@@ -266,6 +268,37 @@ http {
 }
 ```
 
+### 🏗️ Provisioning the Upstreams
+
+The config above names `users` and `orders` upstreams by hostname, so those services must resolve on the same Docker network *before* NGINX will start — otherwise it crash-loops with `nginx: [emerg] host not found in upstream "users:8000"`. Bring the gateway and two trivial stub services up together with Docker Compose:
+
+```yaml
+# docker-compose.yml — the gateway plus two stub upstream services
+services:
+  users:
+    image: hashicorp/http-echo
+    command: ["-text=users service", "-listen=:8000"]
+  orders:
+    image: hashicorp/http-echo
+    command: ["-text=orders service", "-listen=:8000"]
+  gateway:
+    image: nginx:alpine
+    ports: ["8080:80"]
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on: [users, orders]
+```
+
+Put `docker-compose.yml` next to your `nginx.conf`, then start the whole lab with one command and watch the routes resolve:
+
+```bash
+docker compose up -d
+curl localhost:8080/users/     # -> users service
+curl localhost:8080/orders/    # -> orders service
+```
+
+Now the Novice Challenge's `curl localhost:8080/users/` is genuinely reachable.
+
 ### 🏗️ Authenticating at the Edge
 
 A common pattern: the gateway validates a JWT, then forwards the verified identity to the (now-simpler) services as a trusted header.
@@ -273,7 +306,8 @@ A common pattern: the gateway validates a JWT, then forwards the verified identi
 ```python
 # A tiny auth gateway in Python (FastAPI) — validate once, forward identity
 import jwt, httpx
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 SECRET, SERVICES = "change-me", {"users": "http://users:8000",
@@ -285,7 +319,10 @@ async def authenticate(request: Request, call_next):
     try:
         claims = jwt.decode(token, SECRET, algorithms=["HS256"])
     except jwt.PyJWTError:
-        raise HTTPException(status_code=401, detail="invalid token")
+        # Return the 401 directly. A raised HTTPException inside an
+        # @app.middleware("http") escapes FastAPI's exception handlers and
+        # surfaces as a 500 — so build the response here instead.
+        return JSONResponse({"detail": "invalid token"}, status_code=401)
     request.state.user_id = claims["sub"]   # services trust this, set only here
     return await call_next(request)
 ```
