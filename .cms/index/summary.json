@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-05T09:49:44.213373+00:00",
-  "total_files": 267,
-  "scored_files": 267,
-  "actionable_files": 225,
-  "avg_health": 97.0,
-  "avg_health_actionable": 96.4,
+  "generated_at": "2026-07-13T10:05:17.714080+00:00",
+  "total_files": 313,
+  "scored_files": 313,
+  "actionable_files": 270,
+  "avg_health": 97.2,
+  "avg_health_actionable": 96.8,
   "total_mechanical_issues": 0,
-  "total_substantive_issues": 51,
+  "total_substantive_issues": 58,
   "total_errors": 11,
   "read_only_files": 0,
   "by_collection": {
@@ -26,32 +26,32 @@
       "errors": 2,
       "avg_health": 95.0
     },
-    "quests": {
-      "count": 223,
-      "scored": 223,
-      "mechanical": 0,
-      "substantive": 25,
-      "errors": 5,
-      "avg_health": 97.6
-    },
     "pages": {
-      "count": 5,
-      "scored": 5,
+      "count": 43,
+      "scored": 43,
       "mechanical": 0,
       "substantive": 6,
       "errors": 0,
-      "avg_health": 91.0
+      "avg_health": 99.0
+    },
+    "quests": {
+      "count": 231,
+      "scored": 231,
+      "mechanical": 0,
+      "substantive": 32,
+      "errors": 5,
+      "avg_health": 97.4
     }
   },
   "freshness_distribution": {
     "critical": 17,
-    "fresh": 183,
-    "aging": 18,
+    "fresh": 228,
+    "aging": 19,
     "stale": 48,
     "unknown": 1
   },
   "health_buckets": {
-    "excellent_90_100": 252,
+    "excellent_90_100": 298,
     "good_70_89": 12,
     "fair_50_69": 3,
     "poor_0_49": 0
