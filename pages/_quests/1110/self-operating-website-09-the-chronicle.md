@@ -236,7 +236,10 @@ Now the curse. It is tempting to load the ledger with a YAML library, append a r
 ```ruby
 # THE CURSE — never do this to a file with a comment header:
 require "yaml"
-data = YAML.load_file("ledger.yml")     # comments are dropped here, invisibly
+require "time"  # needed for Time#iso8601
+# Psych 4 (default since Ruby 3.1) safe-loads: permit Time or the ledger's
+# bare ISO8601 timestamps raise Psych::DisallowedClass before you get here.
+data = YAML.load_file("ledger.yml", permitted_classes: [Time])  # comments are dropped here, invisibly
 data["sessions"] << { "ts" => Time.now.utc.iso8601, "cost_usd" => 0.12 }
 File.write("ledger.yml", data.to_yaml)  # writes valid YAML with NO header
 ```
