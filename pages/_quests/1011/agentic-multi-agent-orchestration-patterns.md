@@ -263,10 +263,9 @@ jobs:
 
 ### Chapter 4 — Sub-Agent Contracts
 
-Every sub-agent in a multi-agent system needs a well-defined contract — standard inputs and outputs:
+Every sub-agent in a multi-agent system needs a well-defined contract — standard inputs and outputs. Save this as `work/gh-600/schemas/sub-agent-contract.json` (plain `.json` files can't contain `//` comments, so the path lives here in prose rather than inside the block):
 
 ```json
-// work/gh-600/schemas/sub-agent-contract.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "SubAgentContract",
@@ -305,12 +304,18 @@ Every sub-agent in a multi-agent system needs a well-defined contract — standa
 
 ## ✅ Quest Validation
 
+Run this manual self-check from your repo root — it verifies your Q14 deliverables directly, so you don't need any external validator script:
+
 ```bash
-python3 scripts/validate_quest.py --quest q14
-# ✅ Fan-out workflow: orchestrator-fan-out.yml present
-# ✅ Chain workflow: orchestrator-chain.yml present
-# ✅ Sub-agent contract: sub-agent-contract.json present
-# 🏆 Quest Q14 complete!
+# Manual self-check — confirm your Q14 deliverables exist
+test -f .github/workflows/orchestrator-fan-out.yml \
+  && echo "✅ Fan-out workflow: orchestrator-fan-out.yml present"
+test -f .github/workflows/orchestrator-chain.yml \
+  && echo "✅ Chain workflow: orchestrator-chain.yml present"
+test -f work/gh-600/schemas/sub-agent-contract.json \
+  && python3 -m json.tool work/gh-600/schemas/sub-agent-contract.json >/dev/null \
+  && echo "✅ Sub-agent contract: sub-agent-contract.json present and valid JSON"
+# 🏆 Quest Q14 complete when all three checks print ✅
 ```
 
 ## 🏆 Quest Rewards

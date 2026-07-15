@@ -205,10 +205,10 @@ On GitHub Actions the correlation ID is born in the orchestrator and travels as 
     steps:
       - name: Run agent and emit a traced log line
         run: |
-          echo "{\"cid\":\"$CORRELATION_ID\",\"agent\":\"backend\",\"event\":\"start\"}" \
+          echo "{\"ts\":\"$(date -u +%s.%N)\",\"cid\":\"$CORRELATION_ID\",\"agent\":\"backend\",\"event\":\"start\"}" \
             | tee -a "trace-$CORRELATION_ID.jsonl"
           # ... agent work ...
-          echo "{\"cid\":\"$CORRELATION_ID\",\"agent\":\"backend\",\"event\":\"done\"}" \
+          echo "{\"ts\":\"$(date -u +%s.%N)\",\"cid\":\"$CORRELATION_ID\",\"agent\":\"backend\",\"event\":\"done\"}" \
             | tee -a "trace-$CORRELATION_ID.jsonl"
       - name: Write to the run summary
         run: echo "### backend agent — run \`$CORRELATION_ID\`" >> "$GITHUB_STEP_SUMMARY"
@@ -219,7 +219,7 @@ On GitHub Actions the correlation ID is born in the orchestrator and travels as 
 ```
 {% endraw %}
 
-Because every agent stamps the same `cid`, the `collect` job can download all the trace artifacts, concatenate them, and sort by event order to produce one human-readable narrative of the whole council's work: who started, what each handed off, where the chain broke. That artifact is the **audit record** — Domain 5 explicitly asks you to "document key decisions, handoffs, and outcomes across agents" and to enable "post-hoc analysis." A correlation-ID trace is how you satisfy both. The exam's classic stem — *"a trace excerpt is shown; which agent introduced the fault?"* — is answerable only because the trace is unified; without the shared ID you can name the agent that *crashed* but never the one that *caused* it.
+Because every agent stamps the same `cid` **and a monotonic `ts` timestamp**, the `collect` job can download all the trace artifacts, concatenate them, and sort by `ts` to reconstruct true chronological order — producing one human-readable narrative of the whole council's work: who started, what each handed off, where the chain broke. (Sorting by `event` name alone would sort alphabetically — `done` before `start` — and scramble the timeline, which is why an explicit ordering field is required.) That artifact is the **audit record** — Domain 5 explicitly asks you to "document key decisions, handoffs, and outcomes across agents" and to enable "post-hoc analysis." A correlation-ID trace is how you satisfy both. The exam's classic stem — *"a trace excerpt is shown; which agent introduced the fault?"* — is answerable only because the trace is unified; without the shared ID you can name the agent that *crashed* but never the one that *caused* it.
 
 You can collapse all three agents' artifacts in the orchestrator with the Models API or a small script, but the primitive is the same: shared ID in, unified trace out.
 
@@ -227,7 +227,7 @@ You can collapse all three agents' artifacts in the orchestrator with the Models
 # collect step — stitch every agent's trace into one ordered narrative
 cid="$1"                                  # the run's correlation ID
 cat trace-*-"$cid"/*.jsonl 2>/dev/null \
-  | jq -s 'sort_by(.event) | .[] | "\(.cid) \(.agent) \(.event)"' -r \
+  | jq -s 'sort_by(.ts) | .[] | "\(.ts) \(.agent) \(.event)"' -r \
   > "council-trace-$cid.md"
 echo "Wrote council-trace-$cid.md"
 ```
