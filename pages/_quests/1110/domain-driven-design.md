@@ -255,7 +255,7 @@ class Customer:                    # entity: identity persists through change
     def rename(self, new_name: str) -> None:
         self.name = new_name       # still the same customer afterwards
 
-print(Money(500, "USD") + Money(250, "USD"))   # Money(750, 'USD')
+print(Money(500, "USD") + Money(250, "USD"))   # Money(amount=750, currency='USD')
 ```
 
 ### 🏗️ Aggregates - The Consistency Boundary
@@ -295,6 +295,35 @@ class OrderRepository(ABC):        # domain-shaped persistence seam
     @abstractmethod
     def save(self, order: Order) -> None: ...
 ```
+
+### 🏗️ Domain Events - Capturing What Happened
+
+A **domain event** records a meaningful business occurrence as a first-class,
+immutable object — named in the past tense because it describes something that
+*already happened*. Aggregates raise events when they enforce an invariant, and
+other parts of the system (or other bounded contexts) react to them without the
+aggregate needing to know who is listening.
+
+```python
+from dataclasses import dataclass
+from datetime import datetime, timezone
+
+@dataclass(frozen=True)            # events are immutable facts about the past
+class OrderConfirmed:
+    order_id: str
+    confirmed_at: datetime
+
+# The aggregate root raises the event as part of enforcing its invariant.
+class Order:                       # (extends the aggregate root above)
+    def confirm(self) -> "OrderConfirmed":
+        if self.line_count == 0:
+            raise ValueError("Cannot confirm an empty order")
+        return OrderConfirmed(self.id, datetime.now(timezone.utc))
+```
+
+Domain events are the seam that lets you evolve toward event-driven design: the
+same `OrderConfirmed` fact can trigger an email, update a read model, or flow to
+another bounded context — each reacting independently.
 
 ### 🔍 Knowledge Check: Tactical Patterns
 - [ ] Is an `Address` usually an entity or a value object? Why?

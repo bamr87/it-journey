@@ -140,6 +140,7 @@ plugins:
 
 Create an inviting `404.html`:
 
+{% raw %}
 ```html
 ---
 permalink: /404.html
@@ -148,19 +149,20 @@ permalink: /404.html
   <h1>🧭 Lost in the Linkwood</h1>
   <p>The path you sought fades into mist. Try these routes:</p>
   <ul>
-    <li><a href="{% raw %}{{ site.baseurl }}{% endraw %}/">Return to camp (home)</a></li>
-    <li><a href="{% raw %}{{ site.baseurl }}{% endraw %}/sitemap.xml">Consult the star map (sitemap)</a></li>
+    <li><a href="{{ site.baseurl }}/">Return to camp (home)</a></li>
+    <li><a href="{{ site.baseurl }}/sitemap.xml">Consult the star map (sitemap)</a></li>
   </ul>
   <h2>Recent beacons</h2>
   <ul>
-    {% raw %}{% for post in site.posts limit:5 %}{% endraw %}
-      <li><a href="{% raw %}{{ post.url | relative_url }}{% endraw %}">{% raw %}{{ post.title }}{% endraw %}</a></li>
-    {% raw %}{% endfor %}{% endraw %}
+    {% for post in site.posts limit:5 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
   </ul>
-  <p>If this seems wrong, please <a href="https://github.com/{% raw %}{{ site.github.repository_nwo }}{% endraw %}/issues/new?title=404:%20{% raw %}{{ page.url }}{% endraw %}">open a scroll (issue)</a>.</p>
+  <p>If this seems wrong, please <a href="https://github.com/{{ site.github.repository_nwo }}/issues/new?title=404:%20{{ page.url }}">open a scroll (issue)</a>.</p>
   <style>.not-found{max-width:720px;margin:3rem auto;padding:0 1rem}</style>
 </main>
 ```
+{% endraw %}
 
 ### 🔍 Knowledge Check: Paths
 
@@ -221,6 +223,7 @@ permalink: /legacy-path/
 
 Lychee (quick, generous):
 
+{% raw %}
 ```yaml
 name: Hyperlink Guardian
 on:
@@ -244,8 +247,9 @@ jobs:
             --timeout 20
             **/*.md **/*.html
         env:
-          GITHUB_TOKEN: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+{% endraw %}
 
 HTMLProofer (strict, post-build):
 
@@ -263,18 +267,19 @@ jobs:
           bundler-cache: true
       - name: Build Jekyll
         run: |
-          bundle install --path vendor/bundle
+          bundle config set --local path vendor/bundle
+          bundle install
           bundle exec jekyll build --trace
       - name: HTMLProofer
         run: |
-          gem install html-proofer
+          gem install html-proofer -v 5.2.1
           htmlproofer ./_site \
             --assume-extension \
             --check-external-hash \
             --enforce-https \
-            --typhoeus-config 'timeout:20' \
-            --url-ignore "^https://localhost,https://127.0.0.1" \
-            --http-status-ignore '0,429'
+            --typhoeus '{"timeout":20}' \
+            --ignore-urls "^https://localhost,https://127.0.0.1" \
+            --ignore-status-codes '0,429'
 ```
 
 ### 🔍 Knowledge Check: Guardians
