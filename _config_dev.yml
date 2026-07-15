@@ -1,8 +1,9 @@
 # Dev config override — merged after _config.yml:
 #   bundle exec jekyll serve --config _config.yml,_config_dev.yml
 #
-# Theme: inherited from _config.yml (pinned remote_theme). jekyll-remote-theme
-# is in this file's plugins list below so the remote_theme loads in dev/CI too.
+# Theme: inherited from _config.yml (unpinned remote_theme — latest main).
+# jekyll-remote-theme is in this file's plugins list below so the remote_theme
+# loads in dev/CI too.
 
 # Allow future-dated posts to be rendered in development
 future: true

@@ -27,11 +27,13 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
-# Theme: pinned `remote_theme` ref. Production deploys via legacy GitHub Pages
-# building Jekyll from the gh-pages branch, which can't use a gem theme (it never
-# runs `bundle install`) — so the theme is sourced and version-pinned here.
-# Bump the tag to upgrade; CI/dev use the same ref (see _config_dev.yml).
-remote_theme             : "bamr87/zer0-mistakes@v1.21.0"
+# Theme: unpinned `remote_theme` ref — always tracks the latest zer0-mistakes
+# default-branch (main) commit, so every build picks up upstream theme changes
+# automatically. Production deploys via legacy GitHub Pages building Jekyll from
+# the gh-pages branch, which can't use a gem theme (it never runs `bundle
+# install`) — so the theme is sourced here; CI/dev use the same ref (see
+# _config_dev.yml). To freeze a version, append a tag: `bamr87/zer0-mistakes@vX.Y.Z`.
+remote_theme             : "bamr87/zer0-mistakes"
 
 ## Github Information
 github_user              : &github_user "bamr87"
