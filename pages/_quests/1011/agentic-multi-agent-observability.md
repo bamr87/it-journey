@@ -130,12 +130,12 @@ jobs:
           python3 work/gh-600/scripts/traced_subtask.py \
             --correlation-id "$CORRELATION_ID" \
             --subtask "analysis" \
-            --output "trace-analysis-$CORRELATION_ID.json"
+            --output "trace-analysis-$CORRELATION_ID.jsonl"
 
       - uses: actions/upload-artifact@v4
         with:
           name: trace-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}-analysis
-          path: "trace-analysis-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}.json"
+          path: "trace-analysis-${% raw %}{{ env.CORRELATION_ID }}{% endraw %}.jsonl"
 ```
 
 ---
