@@ -97,6 +97,12 @@ Before tuning, you need a benchmark. Run three representative tasks and record o
 
 > **Exercise 13.1:** Create the baseline measurement script.
 
+**Prerequisites** (the script reads real workflow history, so it needs a repo with agent activity):
+>
+> - `gh auth login` completed, or `GH_TOKEN` exported, so the GitHub CLI is authenticated
+> - an `agent-task.yml` workflow already committed to the repo
+> - at least one prior agent run/PR for tasks 1–3 to measure
+
 ```bash
 # work/gh-600/scripts/measure_agent_baseline.sh
 #!/usr/bin/env bash
@@ -117,8 +123,12 @@ echo "=== Agent Behaviour Baseline Measurement ==="
 for TASK_NUM in 1 2 3; do
     echo "Measuring task $TASK_NUM..."
     
-    # Get the latest agent run for this task
-    RUN_ID=$(gh run list --workflow=agent-task.yml --limit=1 --json databaseId -q '.[0].databaseId')
+    # Get the latest agent run for this task (degrade gracefully if none exists yet)
+    RUN_ID=$(gh run list --workflow=agent-task.yml --limit=1 --json databaseId -q '.[0].databaseId' 2>/dev/null || true)
+    if [ -z "$RUN_ID" ]; then
+        echo "⚠️  No agent-task.yml run found for task $TASK_NUM — run the agent workflow at least once, then re-run this script."
+        continue
+    fi
     
     PR_OPENED=$(gh pr list --state all --search "is:pr in:title issue-$TASK_NUM" --json number -q 'length')
     TESTS_PASSED=$(gh run view "$RUN_ID" --json conclusion -q '.conclusion')
@@ -213,12 +223,17 @@ Format: Date | File | Change | Reason | Outcome
 
 ## ✅ Quest Validation
 
+Run this manual self-check from your repo root — it verifies your Q13 deliverables directly, so you don't need any external validator script:
+
 ```bash
-python3 scripts/validate_quest.py --quest q13
-# ✅ Baseline measurement: baseline-results.jsonl present
-# ✅ Iteration log: iteration records in docs/agent-instructions/
-# ✅ Instruction changelog: CHANGELOG.md present
-# 🏆 Quest Q13 complete!
+# Manual self-check — confirm your Q13 deliverables exist
+test -f work/gh-600/baseline-results.jsonl \
+  && echo "✅ Baseline measurement: baseline-results.jsonl present"
+ls docs/agent-instructions/*.md >/dev/null 2>&1 \
+  && echo "✅ Iteration log: iteration records in docs/agent-instructions/"
+test -f docs/agent-instructions/CHANGELOG.md \
+  && echo "✅ Instruction changelog: CHANGELOG.md present"
+# 🏆 Quest Q13 complete when all three checks print ✅
 ```
 
 ## 🏆 Quest Rewards
