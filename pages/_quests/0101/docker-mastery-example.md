@@ -169,15 +169,31 @@ Follow these step-by-step instructions to build your foundation:
 3. **First Implementation** - Create your first working example using hands-on techniques
 4. **Validation** - Verify your setup and understanding through practical exercises
 
-```docker
-# Docker example code will go here
-# This example demonstrates fundamental concepts
-# Expected output: [Describe what users should see]
+Create a file named `Dockerfile` (no extension) with the minimal, runnable image below.
+Every Dockerfile needs at least a `FROM` base image and an instruction to run:
 
-# Step-by-step implementation
-# 1. [First step explanation]
-# 2. [Second step explanation]
-# 3. [Third step explanation]
+```dockerfile
+# Dockerfile — a minimal, runnable image
+FROM alpine:3.20
+
+# Print a greeting when a container starts from this image
+CMD ["echo", "Hello from your first Docker container!"]
+```
+
+Build the image and run a container from it, in the same folder as the `Dockerfile`:
+
+```bash
+# Build an image tagged "my-first-image" from the current directory (.)
+docker build -t my-first-image .
+
+# Run a throwaway container from that image
+docker run --rm my-first-image
+```
+
+Expected output from the `docker run` command:
+
+```text
+Hello from your first Docker container!
 ```
 
 ### 🔍 Knowledge Check: Docker Fundamentals
