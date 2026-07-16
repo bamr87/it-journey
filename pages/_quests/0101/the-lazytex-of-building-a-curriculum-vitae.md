@@ -193,6 +193,7 @@ starter below as `cv/cv.tex`. It is self‑contained—it uses only base TeX Liv
 and defines the custom commands (`\resumeSubheading`, `\resumeItem`, and the list helpers)
 that you will use in Chapter 3, so it compiles cleanly with a stock LaTeX install.
 
+{% raw %}
 ```latex
 \documentclass[letterpaper,11pt]{article}
 
@@ -249,6 +250,7 @@ that you will use in Chapter 3, so it compiles cleanly with a stock LaTeX instal
 
 \end{document}
 ```
+{% endraw %}
 
 Once saved, compile it from a terminal in the `cv/` folder to confirm the toolchain works:
 
