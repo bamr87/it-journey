@@ -134,6 +134,9 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: '3.12'
+          # Wheel-cache pip installs across runs (keyed on the repo's committed
+          # requirements files; the jobs themselves only `pip install pyyaml`).
+          cache: pip
 
       - name: Install Python tooling
         run: pip install pyyaml
@@ -378,12 +381,30 @@ jobs:
   # ---------------------------------------------------------------------------
   # slice — one (character, level) slice per matrix entry, IN SERIES
   # (max-parallel: 1) so ledger writes serialize and the human reviewer is never
-  # flooded. fail-fast: false so one bad slice doesn't abort the sweep.
+  # flooded. fail-fast: false so one bad slice doesn't abort the sweep, and
+  # continue-on-error so one bad slice doesn't fail the RUN either (see below).
   # ---------------------------------------------------------------------------
   slice:
     needs: plan
     if: ${{ needs.plan.outputs.count != '0' && needs.plan.outputs.matrix != '' }}
     runs-on: ubuntu-latest
+    # FAILURE ISOLATION — one flaky leg must not convert the whole multi-hour
+    # sweep into a "failed" run. fail-fast: false already lets sibling slices
+    # finish, but a single failed leg still set the workflow conclusion to
+    # `failure`, booking every productive minute of a 5/6-good sweep as waste
+    # (observed: a transient GitHub "Set up job" action-resolution 500 killed
+    # one leg at minute 0 and wrote off a 140-minute run). continue-on-error
+    # lifts the leg's failure out of the run conclusion — and, being job-level,
+    # it also covers "Set up job" infra failures that no in-job retry step can
+    # reach. Failures stay visible, never masked: the leg still shows red in
+    # the run UI, and the report job surfaces every undelivered slice (and
+    # hard-fails the run on a sweep-wide wipeout).
+    continue-on-error: true
+    # Bound each leg: a stuck agentic engine must not run toward the 6h job
+    # ceiling. The engine walks a bounded quest window (13-30 min observed) plus
+    # the walker agent, so 45 minutes is generous headroom per leg; a timed-out
+    # leg soft-fails (continue-on-error) and retries next run.
+    timeout-minutes: 45
     # Read-only over GitHub: this job walks + uploads an artifact. All git writes
     # (the consolidated report PR) happen in the `report` job; the fix PR in the
     # called quest-fix.yml.
@@ -417,6 +438,9 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: '3.12'
+          # Wheel-cache pip installs across runs (keyed on the repo's committed
+          # requirements files; the jobs themselves only `pip install pyyaml`).
+          cache: pip
 
       - name: Install Python tooling
         run: pip install pyyaml
@@ -641,6 +665,9 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: '3.12'
+          # Wheel-cache pip installs across runs (keyed on the repo's committed
+          # requirements files; the jobs themselves only `pip install pyyaml`).
+          cache: pip
 
       - name: Install Python tooling
         run: pip install pyyaml
@@ -653,6 +680,43 @@ jobs:
         with:
           pattern: quest-perfection-*
           path: slices
+
+      # FAILED-SLICE VISIBILITY — the slice legs run continue-on-error so one
+      # flaky leg can't fail the whole sweep, which means the run conclusion no
+      # longer tells you a leg died. This step does: compare the planned matrix
+      # against the artifacts that actually arrived, warn (annotation + step
+      # summary) for every slice that failed or delivered nothing, and hard-fail
+      # the run ONLY when every planned slice is missing — a sweep-wide wipeout
+      # is a real problem (infra/auth), not a flaky leg.
+      - name: Surface failed slices (planned vs delivered)
+        env:
+          PLAN_MATRIX: ${{ needs.plan.outputs.matrix }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          entries = (json.loads(os.environ.get("PLAN_MATRIX") or "{}") or {}).get("include", [])
+          missing = [e["slug"] for e in entries
+                     if not (Path("slices") / f"quest-perfection-{e['branch_slug']}"
+                             / "walk-plan.json").is_file()]
+          delivered = len(entries) - len(missing)
+          line = f"**Slices delivered:** {delivered}/{len(entries)}"
+          if missing:
+              line += " — failed/undelivered: " + ", ".join(f"`{s}`" for s in missing)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+              fh.write(line + "\n")
+          print(line)
+          for slug in missing:
+              print(f"::warning::slice {slug} failed or uploaded no artifact — the other "
+                    f"slices' work still counts; this slice stays in the queue and is "
+                    f"retried on the next run.")
+          if entries and delivered == 0:
+              print("::error::every planned slice failed to deliver an artifact — "
+                    "sweep-wide failure (runner infra or Claude auth), not a flaky leg. "
+                    "Failing the run loudly.")
+              sys.exit(1)
+          PY
 
       - name: Replay ledger updates + collect the session reports
         run: |
