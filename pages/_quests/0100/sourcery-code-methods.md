@@ -366,6 +366,29 @@ Screenshots will be added in a future update (UI artifacts in progress).
 
 ### 🏗️ Creating Your First GitHub Action
 
+Before the workflow can pass, your repo needs a project the pipeline can act on. The steps below reference `npm ci`, `npm test`, `npm run lint`, and `npm run coverage`, so scaffold a minimal `package.json` first — then run `npm install` once to generate the `package-lock.json` that `npm ci` requires:
+
+```json
+// package.json — minimal scaffold so the workflow's npm steps resolve
+{
+  "name": "my-first-quest",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0",
+    "lint": "echo \"no linter configured yet\" && exit 0",
+    "coverage": "echo \"no coverage configured yet\" && exit 0"
+  }
+}
+```
+
+```bash
+npm install   # generates package-lock.json so `npm ci` works in CI
+git add package.json package-lock.json
+git commit -m "chore: scaffold package.json for CI pipeline"
+```
+
+With those no-op scripts committed, the pipeline runs green end to end; swap each `echo` for a real test/lint/coverage tool as your project grows.
+
 Automation is the highest form of development magic:
 
 ```yaml
@@ -389,7 +412,7 @@ jobs:
     - name: 🧙‍♂️ Setup Node.js Magic
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
         
     - name: ⚡ Install Dependencies

@@ -137,6 +137,8 @@ Choose a theme concept. Examples:
 | `sunset` | Warm gradients | `#ff6b35` | `#fff3e0` |
 | `terminal` | Green on black | `#33ff33` | `#1a1a1a` |
 
+> ⚠️ **Accent color ≠ text color.** These accent/background pairs are design *concepts*, not guaranteed-accessible text colors. The light pairings — `arctic` (`#00bcd4` on `#e3f2fd` ≈ 2.0:1) and `sunset` (`#ff6b35` on `#fff3e0` ≈ 2.6:1) — fall short of the 3:1 minimum you'll enforce in Step 4. When a themed accent is used for text or interactive elements, pair it with a separate, darker text-safe variant of that hue so it clears the contrast bar. Always validate your final colors against the Step 4 table before opening a PR.
+
 ### Step 3: Create the Theme CSS
 
 Create `assets/css/themes/contributor-theme-YOUR_THEME.css`:

@@ -178,8 +178,11 @@ node --version
 <summary>Click to expand Linux instructions</summary>
 
 ```bash
-# Debian/Ubuntu
-sudo apt update && sudo apt install -y nodejs npm
+# Debian/Ubuntu — use NodeSource so you get Node 20+.
+# The default apt repo ships Node 18, which fails this quest's Node 20+ requirement.
+sudo apt update
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
 
 mkdir testing-quest && cd testing-quest
 npm init -y
@@ -264,6 +267,18 @@ test('total of an empty cart is zero', () => {
 - Separating tests into ordered CI stages
 - Gating: a failed stage blocks the next
 - Fail-fast ordering so trivial mistakes cost seconds, not minutes
+
+### 🏗️ Define the Three Test Scripts
+
+Before the pipeline can call them, create the three npm scripts every job below references. Each stage maps to the folder that holds its tests:
+
+```bash
+npm pkg set scripts.test:unit="node --test test/unit"
+npm pkg set scripts.test:integration="node --test test/integration"
+npm pkg set scripts.test:e2e="node --test test/e2e"
+```
+
+Now `npm run test:unit` (and its `test:integration` and `test:e2e` siblings) run locally exactly as the CI jobs invoke them - without this step, `npm run test:unit` fails with `Missing script: "test:unit"`.
 
 ### 🏗️ A Gated, Tiered Pipeline
 

@@ -185,7 +185,8 @@ python3 --version
 
 ```bash
 # Any container or Codespace with Python works
-docker run --rm -it python:3.12-slim bash -lc \
+# (no -it: this runs non-interactively in scripts/CI without a TTY)
+docker run --rm python:3.12-slim bash -lc \
   "pip install bcrypt bandit pip-audit && python --version"
 ```
 
