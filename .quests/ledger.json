@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-07-15T14:05:32+00:00",
+  "generated": "2026-07-16T13:53:37+00:00",
   "totals": {
     "slices": 27,
     "perfect": 0,
     "stuck": 0,
-    "open_issues": 328
+    "open_issues": 384
   },
   "slices": {
     "developer/0000": {
@@ -270,16 +270,16 @@
       "tier": "Apprentice",
       "mode": "execute",
       "verdict": "fail",
-      "average": 61.5,
+      "average": 67.5,
       "total": 5,
-      "scored": 8,
+      "scored": 11,
       "requested": 26,
       "total_quests": 26,
-      "covered": 8,
-      "errored": 1,
+      "covered": 11,
+      "errored": 2,
       "truncated": false,
       "counts": {
-        "pass": 1,
+        "pass": 4,
         "warn": 4,
         "fail": 3
       },
@@ -288,7 +288,7 @@
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 8/26; 3 fail; 4 warn; avg 61.5 < 95.0; 39 open issue(s); 13 high-priority",
+      "reason": "covered 11/26; 3 fail; 4 warn; avg 67.5 < 95.0; 39 open issue(s); 13 high-priority",
       "coverage": {
         "pages/_quests/0001/stating-the-stats.md": {
           "verdict": "fail",
@@ -361,6 +361,33 @@
           "mode": "execute",
           "executed": true,
           "date": "2026-07-15"
+        },
+        "pages/_quests/0001/github-pages-basics.md": {
+          "verdict": "pass",
+          "average": 82.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0001/jekyll-fundamentals.md": {
+          "verdict": "pass",
+          "average": 88.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0001/git-workflow-mastery.md": {
+          "verdict": "pass",
+          "average": 80.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
         }
       },
       "fix_rounds": 0,
@@ -368,10 +395,10 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-15T14:05:32+00:00",
-      "last_run_date": "2026-07-15",
-      "runs": 2,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762",
+      "last_run": "2026-07-16T13:53:37+00:00",
+      "last_run_date": "2026-07-16",
+      "runs": 3,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212",
       "history": [
         {
           "event": "walk",
@@ -394,6 +421,17 @@
           "open_issues": 15,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-16T13:53:37+00:00",
+          "date": "2026-07-16",
+          "mode": "execute",
+          "verdict": "pass",
+          "average": 83.3,
+          "open_issues": 0,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212"
         }
       ]
     },
@@ -405,25 +443,25 @@
       "tier": "Apprentice",
       "mode": "execute",
       "verdict": "fail",
-      "average": 62.4,
+      "average": 68.4,
       "total": 5,
-      "scored": 9,
+      "scored": 14,
       "requested": 26,
       "total_quests": 26,
-      "covered": 9,
+      "covered": 14,
       "errored": 0,
       "truncated": false,
       "counts": {
-        "pass": 3,
-        "warn": 3,
+        "pass": 5,
+        "warn": 6,
         "fail": 3
       },
-      "open_issues": 37,
-      "high_priority_issues": 14,
+      "open_issues": 51,
+      "high_priority_issues": 17,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 9/26; 3 fail; 3 warn; avg 62.4 < 95.0; 37 open issue(s); 14 high-priority",
+      "reason": "covered 14/26; 3 fail; 6 warn; avg 68.4 < 95.0; 51 open issue(s); 17 high-priority",
       "coverage": {
         "pages/_quests/0001/stating-the-stats.md": {
           "verdict": "fail",
@@ -505,6 +543,51 @@
           "mode": "execute",
           "executed": true,
           "date": "2026-07-15"
+        },
+        "pages/_quests/0001/github-pages-basics.md": {
+          "verdict": "warn",
+          "average": 74.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0001/jekyll-fundamentals.md": {
+          "verdict": "warn",
+          "average": 68.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0001/yaml-configuration.md": {
+          "verdict": "pass",
+          "average": 100.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0001/git-workflow-mastery.md": {
+          "verdict": "pass",
+          "average": 83.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0001/liquid-templating.md": {
+          "verdict": "warn",
+          "average": 71.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
         }
       },
       "fix_rounds": 0,
@@ -512,10 +595,10 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-15T14:05:32+00:00",
-      "last_run_date": "2026-07-15",
-      "runs": 2,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762",
+      "last_run": "2026-07-16T13:53:37+00:00",
+      "last_run_date": "2026-07-16",
+      "runs": 3,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212",
       "history": [
         {
           "event": "walk",
@@ -538,6 +621,17 @@
           "open_issues": 19,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-16T13:53:37+00:00",
+          "date": "2026-07-16",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 79.2,
+          "open_issues": 14,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212"
         }
       ]
     },
@@ -610,25 +704,25 @@
       "tier": "Adventurer",
       "mode": "execute",
       "verdict": "fail",
-      "average": 60.8,
+      "average": 72.2,
       "total": 5,
-      "scored": 5,
+      "scored": 10,
       "requested": 13,
       "total_quests": 13,
-      "covered": 5,
+      "covered": 10,
       "errored": 0,
       "truncated": false,
       "counts": {
-        "pass": 3,
-        "warn": 0,
+        "pass": 7,
+        "warn": 1,
         "fail": 2
       },
-      "open_issues": 10,
-      "high_priority_issues": 5,
+      "open_issues": 15,
+      "high_priority_issues": 7,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 5/13; 2 fail; avg 60.8 < 95.0; 10 open issue(s); 5 high-priority",
+      "reason": "covered 10/13; 2 fail; 1 warn; avg 72.2 < 95.0; 15 open issue(s); 7 high-priority",
       "coverage": {
         "pages/_quests/0101/cicd-fundamentals.md": {
           "verdict": "pass",
@@ -674,6 +768,51 @@
           "mode": "execute",
           "executed": true,
           "date": "2026-07-15"
+        },
+        "pages/_quests/0101/self-operating-website-08-the-cartographer.md": {
+          "verdict": "pass",
+          "average": 87.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0101/testing-integration.md": {
+          "verdict": "warn",
+          "average": 71.0,
+          "open_issues": 5,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0101/deployment-pipelines.md": {
+          "verdict": "pass",
+          "average": 89.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0101/environment-management.md": {
+          "verdict": "pass",
+          "average": 88.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0101/secrets-management.md": {
+          "verdict": "pass",
+          "average": 83.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
         }
       },
       "fix_rounds": 0,
@@ -681,10 +820,10 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-15T14:05:32+00:00",
-      "last_run_date": "2026-07-15",
-      "runs": 2,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762",
+      "last_run": "2026-07-16T13:53:37+00:00",
+      "last_run_date": "2026-07-16",
+      "runs": 3,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212",
       "history": [
         {
           "event": "walk",
@@ -707,6 +846,17 @@
           "open_issues": 10,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-16T13:53:37+00:00",
+          "date": "2026-07-16",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 83.6,
+          "open_issues": 5,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212"
         }
       ]
     },
@@ -796,36 +946,64 @@
       "theme": "Frontend & Containers",
       "tier": "Adventurer",
       "mode": "execute",
-      "verdict": null,
-      "average": null,
-      "total": 0,
-      "scored": 0,
+      "verdict": "warn",
+      "average": 76.3,
+      "total": 3,
+      "scored": 3,
       "requested": 8,
       "total_quests": 8,
-      "covered": 0,
+      "covered": 3,
       "errored": 0,
-      "truncated": true,
+      "truncated": false,
       "counts": {
         "pass": 0,
-        "warn": 0,
+        "warn": 3,
         "fail": 0
       },
-      "open_issues": 0,
-      "high_priority_issues": 0,
-      "executed": false,
+      "open_issues": 13,
+      "high_priority_issues": 3,
+      "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 0/8; no average",
-      "coverage": {},
+      "reason": "covered 3/8; 3 warn; avg 76.3 < 95.0; 13 open issue(s); 3 high-priority",
+      "coverage": {
+        "pages/_quests/0100/self-operating-website-02-the-proving-grounds.md": {
+          "verdict": "warn",
+          "average": 72.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0100/sourcery-code-methods.md": {
+          "verdict": "warn",
+          "average": 79.0,
+          "open_issues": 4,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/0100/side-quest-profile-themes.md": {
+          "verdict": "warn",
+          "average": 78.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        }
+      },
       "fix_rounds": 0,
       "stuck": false,
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-12T12:59:49+00:00",
-      "last_run_date": "2026-07-12",
-      "runs": 1,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265",
+      "last_run": "2026-07-16T13:53:37+00:00",
+      "last_run_date": "2026-07-16",
+      "runs": 2,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212",
       "history": [
         {
           "event": "walk",
@@ -837,6 +1015,17 @@
           "open_issues": 0,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29190829265"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-16T13:53:37+00:00",
+          "date": "2026-07-16",
+          "mode": "execute",
+          "verdict": "warn",
+          "average": 76.3,
+          "open_issues": 13,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212"
         }
       ]
     },
@@ -1437,7 +1626,7 @@
       "tier": "Warrior",
       "mode": "execute",
       "verdict": "fail",
-      "average": 63.6,
+      "average": 69.2,
       "total": 5,
       "scored": 10,
       "requested": 12,
@@ -1447,51 +1636,51 @@
       "truncated": false,
       "counts": {
         "pass": 3,
-        "warn": 3,
-        "fail": 4
+        "warn": 4,
+        "fail": 3
       },
-      "open_issues": 36,
-      "high_priority_issues": 14,
+      "open_issues": 37,
+      "high_priority_issues": 13,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 10/12; 4 fail; 3 warn; avg 63.6 < 95.0; 36 open issue(s); 14 high-priority",
+      "reason": "covered 10/12; 3 fail; 4 warn; avg 69.2 < 95.0; 37 open issue(s); 13 high-priority",
       "coverage": {
         "pages/_quests/1011/agentic-multi-agent-failure-recovery.md": {
-          "verdict": "fail",
-          "average": 50.0,
+          "verdict": "warn",
+          "average": 65.0,
           "open_issues": 5,
-          "high": 3,
+          "high": 2,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-07-16"
         },
         "pages/_quests/1011/ai-feature-pipeline-architect.md": {
           "verdict": "fail",
-          "average": 30.0,
+          "average": 59.0,
           "open_issues": 7,
-          "high": 3,
+          "high": 2,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-07-16"
         },
         "pages/_quests/1011/ouroboros-loop-04-the-sealed-evidence.md": {
-          "verdict": "warn",
-          "average": 77.0,
-          "open_issues": 4,
-          "high": 0,
-          "mode": "execute",
-          "executed": true,
-          "date": "2026-07-13"
-        },
-        "pages/_quests/1011/secure-coding.md": {
           "verdict": "pass",
-          "average": 82.0,
+          "average": 94.0,
           "open_issues": 0,
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-07-16"
+        },
+        "pages/_quests/1011/secure-coding.md": {
+          "verdict": "warn",
+          "average": 77.0,
+          "open_issues": 5,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
         },
         "pages/_quests/1011/threat-modeling.md": {
           "verdict": "pass",
@@ -1500,7 +1689,7 @@
           "high": 0,
           "mode": "execute",
           "executed": true,
-          "date": "2026-07-13"
+          "date": "2026-07-16"
         },
         "pages/_quests/1011/security-fundamentals.md": {
           "verdict": "pass",
@@ -1553,10 +1742,10 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-15T14:05:32+00:00",
-      "last_run_date": "2026-07-15",
-      "runs": 2,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762",
+      "last_run": "2026-07-16T13:53:37+00:00",
+      "last_run_date": "2026-07-16",
+      "runs": 3,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212",
       "history": [
         {
           "event": "walk",
@@ -1579,6 +1768,17 @@
           "open_issues": 20,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29412020762"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-16T13:53:37+00:00",
+          "date": "2026-07-16",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 77.2,
+          "open_issues": 17,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212"
         }
       ]
     },
@@ -1687,25 +1887,25 @@
       "tier": "Master",
       "mode": "execute",
       "verdict": "fail",
-      "average": 59.4,
+      "average": 62.3,
       "total": 5,
-      "scored": 5,
+      "scored": 10,
       "requested": 15,
       "total_quests": 15,
-      "covered": 5,
+      "covered": 10,
       "errored": 0,
       "truncated": false,
       "counts": {
-        "pass": 1,
-        "warn": 1,
-        "fail": 3
+        "pass": 2,
+        "warn": 2,
+        "fail": 6
       },
-      "open_issues": 27,
-      "high_priority_issues": 10,
+      "open_issues": 50,
+      "high_priority_issues": 18,
       "executed": true,
       "perfect": false,
       "perfect_since": null,
-      "reason": "covered 5/15; 3 fail; 1 warn; avg 59.4 < 95.0; 27 open issue(s); 10 high-priority",
+      "reason": "covered 10/15; 6 fail; 2 warn; avg 62.3 < 95.0; 50 open issue(s); 18 high-priority",
       "coverage": {
         "pages/_quests/1100/agentic-guardrails-and-human-in-the-loop.md": {
           "verdict": "fail",
@@ -1751,6 +1951,51 @@
           "mode": "execute",
           "executed": true,
           "date": "2026-07-14"
+        },
+        "pages/_quests/1100/data-warehousing.md": {
+          "verdict": "pass",
+          "average": 92.0,
+          "open_issues": 0,
+          "high": 0,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/1100/self-operating-website-06-the-editors-eye.md": {
+          "verdict": "warn",
+          "average": 64.0,
+          "open_issues": 5,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/1100/self-operating-website-10-the-bard-forge.md": {
+          "verdict": "fail",
+          "average": 57.0,
+          "open_issues": 5,
+          "high": 2,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/1100/agentic-multi-agent-lifecycle-management.md": {
+          "verdict": "fail",
+          "average": 54.0,
+          "open_issues": 7,
+          "high": 3,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
+        },
+        "pages/_quests/1100/agentic-autonomy-levels-matrix.md": {
+          "verdict": "fail",
+          "average": 59.0,
+          "open_issues": 6,
+          "high": 1,
+          "mode": "execute",
+          "executed": true,
+          "date": "2026-07-16"
         }
       },
       "fix_rounds": 0,
@@ -1758,10 +2003,10 @@
       "stuck_reason": null,
       "needs_human": false,
       "last_fixed": null,
-      "last_run": "2026-07-14T13:47:56+00:00",
-      "last_run_date": "2026-07-14",
-      "runs": 1,
-      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29329246935",
+      "last_run": "2026-07-16T13:53:37+00:00",
+      "last_run_date": "2026-07-16",
+      "runs": 2,
+      "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212",
       "history": [
         {
           "event": "walk",
@@ -1773,6 +2018,17 @@
           "open_issues": 27,
           "perfect": false,
           "run_url": "https://github.com/bamr87/it-journey/actions/runs/29329246935"
+        },
+        {
+          "event": "walk",
+          "at": "2026-07-16T13:53:37+00:00",
+          "date": "2026-07-16",
+          "mode": "execute",
+          "verdict": "fail",
+          "average": 65.2,
+          "open_issues": 23,
+          "perfect": false,
+          "run_url": "https://github.com/bamr87/it-journey/actions/runs/29494904212"
         }
       ]
     },
