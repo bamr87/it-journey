@@ -11,9 +11,10 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages'
 
-# Jekyll Theme — served via the pinned `remote_theme` in _config.yml (works with
-# the legacy GitHub Pages gh-pages build). jekyll-remote-theme ships with the
-# github-pages gem, so no theme gem is needed here.
+# Jekyll Theme — served via the unpinned `remote_theme` in _config.yml, which
+# always tracks the latest zer0-mistakes main (works with the legacy GitHub Pages
+# gh-pages build). jekyll-remote-theme ships with the github-pages gem, so no
+# theme gem is needed here.
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
