@@ -171,7 +171,13 @@ def check_frontmatter(md_path, text):
         out.append(finding(md_path, "fm-missing", "error", "no front matter block"))
         return out
     block = text.split("---", 2)[1]
-    data = yaml.safe_load(block) or {}
+    try:
+        data = yaml.safe_load(block) or {}
+    except yaml.YAMLError as e:
+        # A malformed block (e.g. an unquoted colon in a value) must degrade to
+        # a clean finding, never crash the harness — the gate stays deterministic.
+        out.append(finding(md_path, "fm-invalid", "error", f"invalid front matter: {e}"))
+        return out
     for key in sorted(REQUIRED_KEYS - set(data)):
         out.append(finding(md_path, "fm-required-key", "error", f"missing key: {key}"))
     return out
@@ -225,7 +231,13 @@ def check_frontmatter(md_path, text):
         out.append(finding(md_path, "fm-missing", "error", "no front matter block"))
         return out
     block = text.split("---", 2)[1]
-    data = yaml.safe_load(block) or {}
+    try:
+        data = yaml.safe_load(block) or {}
+    except yaml.YAMLError as e:
+        # A malformed block (e.g. an unquoted colon in a value) must degrade to
+        # a clean finding, never crash the harness — the gate stays deterministic.
+        out.append(finding(md_path, "fm-invalid", "error", f"invalid front matter: {e}"))
+        return out
     for key in sorted(REQUIRED_KEYS - set(data)):
         out.append(finding(md_path, "fm-required-key", "error", f"missing key: {key}"))
     return out
