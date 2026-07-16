@@ -230,7 +230,13 @@ from mcp import ClientSession
 class RequirementProcessor:
     def __init__(self):
         # Read credentials from the environment — never hard-code API keys
-        self.llm = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise SystemExit(
+                "ANTHROPIC_API_KEY is not set. Export it before running this agent, "
+                "e.g. `export ANTHROPIC_API_KEY=sk-...`."
+            )
+        self.llm = Anthropic(api_key=api_key)
         self.mcp_session: ClientSession | None = None  # opened via an MCP transport
 
     def process_user_request(self, raw_request: str):

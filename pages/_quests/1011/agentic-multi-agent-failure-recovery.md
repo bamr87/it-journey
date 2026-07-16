@@ -303,13 +303,24 @@ if __name__ == "__main__":
 
 ## ✅ Quest Validation
 
+Validate your work with these standalone checks — run each from your quest
+workspace (no extra tooling required):
+
 ```bash
-python3 scripts/validate_quest.py --quest q16
-# ✅ Recovery workflow: orchestrator-with-recovery.yml present
-# ✅ Recovery coordinator: recovery_coordinator.py present
-# ✅ Compensation strategies: all 5 types documented
-# 🏆 Quest Q16 complete!
+# ✅ Recovery workflow present
+test -f orchestrator-with-recovery.yml && echo "orchestrator-with-recovery.yml present"
+# ✅ Recovery coordinator present
+test -f recovery_coordinator.py && echo "recovery_coordinator.py present"
+# ✅ Compensation strategies documented (expect a count of 5)
+grep -c -iE "retry|fallback|escalat|compensat|checkpoint" recovery_coordinator.py
 ```
+
+Manual completion checklist:
+
+- [ ] `orchestrator-with-recovery.yml` defines the recover-and-report job
+- [ ] `recovery_coordinator.py` implements the failure assessment logic
+- [ ] All 5 compensation strategy types are documented
+- [ ] 🏆 Quest Q16 complete!
 
 ## 🏆 Quest Rewards
 
