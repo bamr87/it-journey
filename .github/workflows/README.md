@@ -31,7 +31,7 @@ its own rationale.
 | `frontmatter-validation.yml` | PR on `pages/**/*.md`; dispatch | Validation-only gate. Runs the canonical `scripts/validation/frontmatter-validator.py` (same code as `make content-validate`) on changed **non-quest** pages, plus the Mermaid-flag check, and comments results on the PR. Mechanical auto-fixing lives in `cms-daily-loop.yml`, not here. |
 | `quest-validation.yml` | PR/push on `pages/_quests/**`; weekly; dispatch | Quest content scoring (≥70%), network integrity, and stale generated-data check (the weekly/push full audit runs the unified Docker audit = `make docker-validate`). |
 | `validate-solutions.yml` | PR/push on `test/quest-solutions/**` (main/master); dispatch | Structural validation of quest solution fixtures. |
-| `codeql-analysis.yml` | push/PR to main; weekly | CodeQL security analysis (JavaScript, Python, Ruby). |
+| `codeql-analysis.yml` | push/PR to main (code paths only); weekly | CodeQL security analysis (JavaScript, Python, Ruby). Push/PR runs skip content-only diffs (`pages/**`, `**/*.md`, `_data/**`, `assets/images/**`); the weekly cron always runs a full scan. |
 
 ### Content quality & AI fleet (opt-in)
 
@@ -44,7 +44,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 | `content-quality.yml` | PR on content | Deterministic brand lint (`scripts/ci/brand_lint.py`). **Spelling drift fails** the check; hype terms warn. No AI, no cost. |
 | `content-review.yml` | PR on content (gated) | `content-reviewer` agent editorial pass; applies small on-brand fixes, posts bigger ideas as comments. Never merges. |
 | `content-factory.yml` | daily 08:00 UTC (gated) | `content-curator` improves one page per collection from the `.cms` worklist → one `auto:content` PR each. |
-| `content-auto-merge.yml` | content PR events | Smuggle-guard (`scripts/ci/classify_changes.py`, content-only) + all checks green → squash-merge. |
+| `content-auto-merge.yml` | labeled PR events (gated) | **The single label-routed auto-merge lane** (absorbed `issue-pr-auto-merge.yml` and `quest-report-auto-merge.yml`). Routes by label — `auto:content` (content-only diff, `CONTENT_AUTOMERGE_ENABLED`), `auto:issue` (same-repo + resolver scope, `ISSUE_AUTOMERGE_ENABLED`; merging closes the linked issues), `automated`+`quest-walkthrough` (report/ledger paths, `QUEST_REPORT_AUTOMERGE_ENABLED`) — then smuggle-guard (`scripts/ci/classify_changes.py`) + all checks green → squash-merge. |
 | `cms-daily-loop.yml` | daily 09:00 UTC; dispatch | **Lane A** deterministic normalization (`make content-normalize-apply`, free) → PR; **Lane B** (gated) agentic `cms-curator` pass → PR for review. |
 | `agentic-quest-review.yml` | dispatch; PR on quests; `agentic-review` label | Agentic quest review/execute (`test/quest-validator/agentic_validate.py`); spend-capped per run **and converged per PR**: a sticky-comment ledger skips quests whose last score ≥ `AGENTIC_REVIEW_SCORE_EXEMPT` (default 85) and stops after `AGENTIC_REVIEW_MAX_RUNS` automatic passes (default 3); the label/dispatch bypasses both. |
 | `quest-walkthrough.yml` | daily 10:00 UTC; dispatch (gated) | **End-to-end quest validation.** The `quest-walker` agent picks one linked (character, level) quest slice via `scripts/quest/walkthrough_plan.py`, plays it end-to-end in the runner sandbox as a learner (execute engine: `agentic_validate.py`), and opens one report PR (evidence/issues/reasoning) under `test/quest-validator/walkthroughs/`. Also uploads **session screenshots** (each walked quest's rendered page mobile+desktop + a terminal render of the recorded transcript, via `scripts/quest/walkthrough_screenshots.mjs`) as run artifacts. Read-only over content; never merges. OFF behind `QUEST_WALKTHROUGH_ENABLED`. |
@@ -67,9 +67,7 @@ These implement the AI-augmented CMS described in the root `CLAUDE.md` and
 
 | Workflow | Triggers | What it does |
 |---|---|---|
-| `new-feature-request.yml` | issue labeled `approved` | Appends the approved feature to the features page (`scripts/development/content/append_feature.py`). |
-| `issue-autopilot.yml` | daily 07:00 UTC; dispatch; `autopilot:go` label (gated) | **The issue autopilot loop.** Deterministic engine (`scripts/issues/triage.py`) classifies every open issue + groups into batches; `issue-triager` comments a plan, labels, and closes **bot-noise only** (never a human's issue, double-gated on `ISSUE_AUTOCLOSE_ENABLED`); `issue-resolver` turns one batch into one `auto:issue` PR (`Closes #N`), backpressured via `scripts/issues/dispatch.py` + `.issues/budget.yml`. OFF behind `ISSUE_AUTOPILOT_ENABLED` (+ `ISSUE_RESOLVE_ENABLED` for the PR lane). |
-| `issue-pr-auto-merge.yml` | `auto:issue` PR events (gated) | Smuggle-guard (`scripts/ci/classify_changes.py`, content-only) + all checks green → squash-merge, closing the linked issues. OFF behind `ISSUE_AUTOMERGE_ENABLED`. |
+| `issue-autopilot.yml` | daily 07:00 UTC; dispatch; `autopilot:go` label (gated) | **The issue autopilot loop.** Deterministic engine (`scripts/issues/triage.py`) classifies every open issue + groups into batches; `issue-triager` comments a plan, labels, and closes **bot-noise only** (never a human's issue, double-gated on `ISSUE_AUTOCLOSE_ENABLED`); `issue-resolver` turns one batch into one `auto:issue` PR (`Closes #N`), backpressured via `scripts/issues/dispatch.py` + `.issues/budget.yml`. OFF behind `ISSUE_AUTOPILOT_ENABLED` (+ `ISSUE_RESOLVE_ENABLED` for the PR lane). Green `auto:issue` PRs merge via the `auto:issue` policy in `content-auto-merge.yml`. |
 | `quest-forge.yml` | issue labeled `epic-quest`; `/forge-quest` comment; dispatch (gated) | Forges an epic-quest **proposal issue** into a quest-campaign PR (see the AI fleet table above). |
 | `dependabot-auto-merge.yml` | Dependabot PRs | Enables auto-merge for passing Dependabot PRs. |
 
@@ -84,7 +82,7 @@ Mark these as **required status checks** in branch protection for `main`
 | Quest content + network + stale-data | `quest-validation.yml` |
 | Frontmatter validation | `frontmatter-validation.yml` (`validate-frontmatter`) |
 | Content brand lint | `content-quality.yml` |
-| CodeQL | `codeql-analysis.yml` |
+| CodeQL | `codeql-analysis.yml` — **caveat:** now path-filtered to code diffs, so only mark it required if content-only PRs are exempted (a required check that never starts blocks the merge) |
 
 **Advisory** (run but non-blocking): `link-checker.yml` (PR incremental),
 `content-review.yml`, `agentic-quest-review.yml`, and the scheduled
@@ -105,7 +103,7 @@ manual "Merge main into gh-pages" PRs:
 
 | Workflow | Triggers | What it does |
 |---|---|---|
-| `sync-gh-pages.yml` | every 6h; dispatch | **Routine deploy sync.** If `main` is ahead of `gh-pages` **and** main's latest commit is fully green (all check-runs + commit statuses passed), it opens a PR from `main` into `gh-pages` and merges it (merge commit). Pages then builds `gh-pages`. Reads main's already-finished CI — **no reruns, no waiting**. Does nothing if gh-pages is up to date or main is pending/red. |
+| `sync-gh-pages.yml` | 2×/day (02:20, 14:20 UTC); dispatch | **Routine deploy sync.** If `main` is ahead of `gh-pages` **and** main's latest commit is fully green (all check-runs + commit statuses passed), it opens a PR from `main` into `gh-pages` and merges it (merge commit). Pages then builds `gh-pages`. Reads main's already-finished CI — **no reruns, no waiting**. Does nothing if gh-pages is up to date or main is pending/red. |
 
 `gh-pages` is a pure mirror of `main` (kept in lockstep by this workflow), so
 the PR is always a clean, conflict-free merge. If the branches ever diverge,
@@ -125,7 +123,7 @@ Operational notes:
 - Scheduled/dispatch runs resolve this file **from `main`**, so it only takes
   effect once merged to `main`.
 - Trigger it on demand from the Actions tab (`workflow_dispatch`) to publish
-  immediately instead of waiting for the next 6-hour tick.
+  immediately instead of waiting for the next scheduled tick (02:20/14:20 UTC).
 - **Prefer the default `GITHUB_TOKEN`** (used automatically): its pushes create
   no Actions runs at all, so the `gh-pages` update stays Pages-build-only. An
   optional `GH_PAGES_DEPLOY_TOKEN` secret (a PAT with `contents:write`) is used

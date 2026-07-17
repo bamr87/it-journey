@@ -28,8 +28,9 @@ they never re-decide the policy encoded here.
 3. **Agents** — the `issue-triager` acts on the triage batches (comment, label,
    close bot-noise) and the `issue-resolver` turns one resolve batch into one
    `auto:issue` PR. Both run the `issue-triage` skill.
-4. **Workflow** — `issue-autopilot.yml` schedules the loop; `issue-pr-auto-merge.yml`
-   merges green content-only `auto:issue` PRs (which closes the linked issues).
+4. **Workflow** — `issue-autopilot.yml` schedules the loop; the `auto:issue`
+   policy in `content-auto-merge.yml` merges green content-only `auto:issue`
+   PRs (which closes the linked issues).
 
 ## Dispositions (what can happen to an issue)
 

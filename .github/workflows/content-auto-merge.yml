@@ -1,19 +1,50 @@
 # =============================================================================
-# content-auto-merge.yml — hands-off merge of on-brand content PRs
+# content-auto-merge.yml — hands-off merge of green, in-scope automated PRs
 # -----------------------------------------------------------------------------
-# An `auto:content` PR whose checks are all green and whose diff is content-ONLY
-# squash-merges itself. Mirrors the Dependabot auto-merge discipline (wait for the
-# checks that actually run, then merge) plus lifehacker's SMUGGLE GUARD: the diff
-# is re-classified at merge time, so a content-labeled PR can never quietly carry
-# a workflow / dependency / brand-rule / AI-config change to main.
+# ONE label-routed auto-merge lane. This file absorbed the formerly separate
+# issue-pr-auto-merge.yml and quest-report-auto-merge.yml — three copy-pasted
+# ~100-line workflows that each fired (and mostly skipped) on every PR event.
+# Now a single run fires per PR event and routes by label:
 #
-# Brand-cleanliness is NOT re-checked here — it is a required status check
-# (content-quality.yml runs brand_lint on the PR), so "all checks green" already
-# means on-brand. A failing check (build, frontmatter, brand) leaves the PR open.
+#   label(s)                        | gate variable                    | allowed diff (smuggle guard)
+#   --------------------------------|----------------------------------|------------------------------------------
+#   auto:content                    | CONTENT_AUTOMERGE_ENABLED        | content-only (classify_changes.py)
+#   auto:issue  (same-repo only)    | ISSUE_AUTOMERGE_ENABLED          | content-only AND pages/**, assets/**,
+#                                   |                                  |   _data/quests/** (resolver scope —
+#                                   |                                  |   .issues/config.yml resolve_allow_globs)
+#   automated + quest-walkthrough   | QUEST_REPORT_AUTOMERGE_ENABLED   | pages/_quest-reports/**, .quests/**,
+#                                   |                                  |   test/quest-validator/walkthroughs/**
 #
-# OFF by default behind CONTENT_AUTOMERGE_ENABLED. Add the `needs-human` label to
-# any PR to force manual review. Runs via pull_request_target but never checks out
-# or runs the PR's code — it only calls the GitHub API and our own base scripts.
+# The FIRST matching enabled policy wins (most specific first: quest-report,
+# then issue, then content). Per-policy notes preserved from the merged files:
+#   * auto:issue additionally requires the head branch to live in THIS repo (a
+#     same-repo branch the autopilot pushed), never an external fork that merely
+#     carries the label — the label is privileged, this is defense-in-depth,
+#     mirroring the provenance gate in dependabot-auto-merge.yml. Its scope is
+#     tighter than plain --content-only because theme files (_layouts/_includes/
+#     _sass) and navigation data are "content" to the broad classifier but are
+#     infra the resolver must never auto-merge (CLAUDE.md requires before/after
+#     screenshots for layout/SCSS/include changes).
+#   * quest-report PRs are the daily quest-perfection loop's consolidated
+#     walkthrough + ledger + site-collection PRs; review happens on the FRONTEND
+#     (each page links back to its run), so a green, report-only PR self-merges.
+#
+# Shared discipline (unchanged): the diff is RE-CLASSIFIED at merge time
+# (smuggle guard), so a labeled PR can never quietly carry a workflow / dep /
+# brand-rule / AI-config change to main. Brand-cleanliness is NOT re-checked
+# here — content-quality.yml runs brand_lint on the PR, so "all checks green"
+# already means on-brand. A failing check (build, frontmatter, brand) leaves
+# the PR open. Add `needs-human` to any PR to force manual review.
+#
+# WHY THE POLL LOOP (and not `gh pr merge --auto`): --auto only waits when the
+# base branch has required status checks. As of 2026-07-16, `main` has NO branch
+# protection and NO rulesets (branches/main/protection → 404, rules/branches/main
+# → []), so --auto would merge instantly with checks still running. Until
+# required checks are configured, the poll below IS the green gate. If branch
+# protection is ever enabled, replace the poll step with `gh pr merge --auto`.
+#
+# Runs via pull_request_target but never checks out or runs the PR's code — it
+# only calls the GitHub API and our own base scripts.
 # =============================================================================
 name: 🤝 Content Auto-Merge
 
@@ -32,11 +63,21 @@ concurrency:
 
 jobs:
   auto-merge:
-    # Only `auto:content` PRs that aren't flagged for a human.
+    # Only PRs matching an ENABLED policy's label(s), never ones flagged for a
+    # human. Anything else skips here — one cheap skipped run per PR event
+    # instead of the previous three.
     if: >-
-      vars.CONTENT_AUTOMERGE_ENABLED == 'true' &&
-      contains(github.event.pull_request.labels.*.name, 'auto:content') &&
-      !contains(github.event.pull_request.labels.*.name, 'needs-human')
+      !contains(github.event.pull_request.labels.*.name, 'needs-human') &&
+      (
+        (vars.CONTENT_AUTOMERGE_ENABLED == 'true' &&
+         contains(github.event.pull_request.labels.*.name, 'auto:content')) ||
+        (vars.ISSUE_AUTOMERGE_ENABLED == 'true' &&
+         github.event.pull_request.head.repo.full_name == github.repository &&
+         contains(github.event.pull_request.labels.*.name, 'auto:issue')) ||
+        (vars.QUEST_REPORT_AUTOMERGE_ENABLED == 'true' &&
+         contains(github.event.pull_request.labels.*.name, 'quest-walkthrough') &&
+         contains(github.event.pull_request.labels.*.name, 'automated'))
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -51,14 +92,72 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Smuggle guard — diff must be content-only
+      - name: Route label → policy
+        id: route
+        env:
+          # Booleans computed by the expression engine; the shell only routes.
+          QUEST_OK: >-
+            ${{ vars.QUEST_REPORT_AUTOMERGE_ENABLED == 'true' &&
+                contains(github.event.pull_request.labels.*.name, 'quest-walkthrough') &&
+                contains(github.event.pull_request.labels.*.name, 'automated') }}
+          ISSUE_OK: >-
+            ${{ vars.ISSUE_AUTOMERGE_ENABLED == 'true' &&
+                github.event.pull_request.head.repo.full_name == github.repository &&
+                contains(github.event.pull_request.labels.*.name, 'auto:issue') }}
+          CONTENT_OK: >-
+            ${{ vars.CONTENT_AUTOMERGE_ENABLED == 'true' &&
+                contains(github.event.pull_request.labels.*.name, 'auto:content') }}
         run: |
-          if gh pr diff "$PR" --name-only | python3 scripts/ci/classify_changes.py --content-only; then
-            echo "content-only ✅"
+          set -euo pipefail
+          if [ "$QUEST_OK" = "true" ]; then
+            POLICY=quest-report
+          elif [ "$ISSUE_OK" = "true" ]; then
+            POLICY=issue
+          elif [ "$CONTENT_OK" = "true" ]; then
+            POLICY=content
           else
-            echo "::warning::PR #$PR touches non-content paths — routing to a human."
+            echo "::error::job gate passed but no policy matched — labels changed mid-run?"
+            exit 1
+          fi
+          echo "policy=$POLICY" >> "$GITHUB_OUTPUT"
+          echo "Routing PR #$PR via the '$POLICY' policy."
+
+      - name: Smuggle guard — diff must stay within the policy's allowed paths
+        env:
+          POLICY: ${{ steps.route.outputs.policy }}
+        run: |
+          set -euo pipefail
+          # The policy table: classify_changes.py arguments + human-facing scope.
+          # --allow-globs requires EVERY changed path to match one of the globs;
+          # it composes with --content-only (both must hold) or stands alone.
+          case "$POLICY" in
+            content)
+              args=(--content-only)
+              scope="content-only paths"
+              decline="🛑 Auto-merge declined: this \`auto:content\` PR also changes infra/config/deps. A human needs to review it (label \`needs-human\` added)."
+              ;;
+            issue)
+              args=(--content-only --allow-globs 'pages/**' 'assets/**' '_data/quests/**')
+              scope="the resolver's content scope (pages/**, assets/**, _data/quests/**)"
+              decline="🛑 Auto-merge declined: this \`auto:issue\` PR changes paths outside the resolver's allowed content scope (pages/**, assets/**, _data/quests/**). A human needs to review it (label \`needs-human\` added)."
+              ;;
+            quest-report)
+              args=(--allow-globs 'pages/_quest-reports/**' '.quests/**' 'test/quest-validator/walkthroughs/**')
+              scope="the report/ledger/site collection (pages/_quest-reports/**, .quests/**, test/quest-validator/walkthroughs/**)"
+              decline="🛑 Auto-merge declined: this report PR also changes paths outside \`pages/_quest-reports/\`, \`.quests/\`, or the walkthroughs dir. A human needs to review it (label \`needs-human\` added)."
+              ;;
+            *)
+              echo "::error::unknown policy '$POLICY'"
+              exit 1
+              ;;
+          esac
+
+          if gh pr diff "$PR" --name-only | python3 scripts/ci/classify_changes.py "${args[@]}"; then
+            echo "within $scope ✅"
+          else
+            echo "::warning::PR #$PR touches paths outside $scope — routing to a human."
             gh pr edit "$PR" --add-label needs-human || true
-            gh pr comment "$PR" --body "🛑 Auto-merge declined: this \`auto:content\` PR also changes infra/config/deps. A human needs to review it (label \`needs-human\` added)." || true
+            gh pr comment "$PR" --body "$decline" || true
             exit 1
           fi
 
@@ -69,11 +168,12 @@ jobs:
           set -euo pipefail
           # `gh pr checks --watch` waits for EVERY check to finish — including THIS
           # job's own check, which stays "pending" while it watches: a self-deadlock
-          # that never returns and hits timeout-minutes, leaving the PR unmerged.
-          # Poll instead, EXCLUDING our own run (its check link carries this run_id),
-          # so we wait only on checks that can actually finish. A build/frontmatter/
-          # brand failure still stops the merge; green here already implies on-brand
-          # (content-quality.yml is one of those checks).
+          # that never returns and hits timeout-minutes, leaving the PR unmerged
+          # (the #441 bug). Poll instead, EXCLUDING our own run (its check link
+          # carries this run_id), so we wait only on checks that can actually
+          # finish. A build/frontmatter/brand failure still stops the merge.
+          # (See the header for why this is a poll and not `gh pr merge --auto`:
+          # main has no required status checks, so --auto wouldn't wait at all.)
           deadline=$(( $(date +%s) + 25 * 60 ))
           while :; do
             rows=$(gh pr checks "$PR" --json bucket,link \
@@ -95,4 +195,4 @@ jobs:
             break
           done
           gh pr merge "$PR" --squash --delete-branch
-          echo "All checks green + content-only — merged ✅"
+          echo "All checks green + in-scope diff — merged ✅ (issue PRs close their linked issues; report PRs publish to the site)."

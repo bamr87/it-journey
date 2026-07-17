@@ -47,7 +47,7 @@ backpressure (`.issues/budget.yml`) so the loop never buries the reviewer. See
 |---|---|---|---|---|
 | `issue-autopilot.yml` (triage) | daily 07:00 UTC + `autopilot:go` label | `issue-triager` | comment a triage plan, label, close **bot-noise only** | `ISSUE_AUTOPILOT_ENABLED` |
 | `issue-autopilot.yml` (resolve) | (same run) | `issue-resolver` | turn one batch into one `auto:issue` PR (`Closes #N`) | `ISSUE_RESOLVE_ENABLED` (+ master) |
-| `issue-pr-auto-merge.yml` | `auto:issue` PR | _(none)_ | smuggle-guard (content-only) + checks green → squash-merge | `ISSUE_AUTOMERGE_ENABLED` |
+| `content-auto-merge.yml` (`auto:issue` policy) | `auto:issue` PR | _(none)_ | smuggle-guard (resolver scope) + checks green → squash-merge | `ISSUE_AUTOMERGE_ENABLED` |
 
 Closing bot-noise is double-gated on `ISSUE_AUTOCLOSE_ENABLED`; a **human-authored
 issue is never auto-closed** (the engine downgrades it to `needs-human`).
