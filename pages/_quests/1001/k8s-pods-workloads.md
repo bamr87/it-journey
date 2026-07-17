@@ -551,8 +551,4 @@ Before marking this quest as complete, ensure you've:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]]
-**Unlocks:** [[Kubernetes Services and Networking: Ingress and DNS Configuration]] · [[Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Kubernetes Fundamentals: Container Orchestration Essentials]] **Unlocks:** [[Kubernetes Services and Networking: Ingress and DNS Configuration]] · [[Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

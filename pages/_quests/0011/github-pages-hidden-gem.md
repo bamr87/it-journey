@@ -171,15 +171,13 @@ But why this gem for AI conquests? In an age where chats with Grok, ChatGPT, or 
 
 ### 🏗️ Building Your Knowledge Foundation
 
-**What is GitHub Pages?**
-GitHub Pages is a static site hosting service that takes files from your GitHub repository and publishes them as a website. It's free for public repositories and provides:
+**What is GitHub Pages?** GitHub Pages is a static site hosting service that takes files from your GitHub repository and publishes them as a website. It's free for public repositories and provides:
 - Automatic HTTPS encryption
 - Global CDN distribution
 - Custom domain support
 - Integration with Jekyll for enhanced functionality
 
-**Why Jekyll?**
-Jekyll is a static site generator that converts Markdown files into HTML websites. It provides:
+**Why Jekyll?** Jekyll is a static site generator that converts Markdown files into HTML websites. It provides:
 - Blog functionality with posts and pages
 - Theme support for professional appearance
 - Plugin system for extended features
@@ -484,7 +482,5 @@ This quest advances you from basic GitHub usage to web publishing proficiency, o
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

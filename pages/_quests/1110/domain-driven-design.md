@@ -298,11 +298,7 @@ class OrderRepository(ABC):        # domain-shaped persistence seam
 
 ### 🏗️ Domain Events - Capturing What Happened
 
-A **domain event** records a meaningful business occurrence as a first-class,
-immutable object — named in the past tense because it describes something that
-*already happened*. Aggregates raise events when they enforce an invariant, and
-other parts of the system (or other bounded contexts) react to them without the
-aggregate needing to know who is listening.
+A **domain event** records a meaningful business occurrence as a first-class, immutable object — named in the past tense because it describes something that *already happened*. Aggregates raise events when they enforce an invariant, and other parts of the system (or other bounded contexts) react to them without the aggregate needing to know who is listening.
 
 ```python
 from dataclasses import dataclass
@@ -321,9 +317,7 @@ class Order:                       # (extends the aggregate root above)
         return OrderConfirmed(self.id, datetime.now(timezone.utc))
 ```
 
-Domain events are the seam that lets you evolve toward event-driven design: the
-same `OrderConfirmed` fact can trigger an email, update a read model, or flow to
-another bounded context — each reacting independently.
+Domain events are the seam that lets you evolve toward event-driven design: the same `OrderConfirmed` fact can trigger an email, update a read model, or flow to another bounded context — each reacting independently.
 
 ### 🔍 Knowledge Check: Tactical Patterns
 - [ ] Is an `Address` usually an entity or a value object? Why?
@@ -461,8 +455,4 @@ A **context map** documents the relationships between contexts - shared kernel, 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Software Design Patterns: Gang of Four and Modern Patterns]]
-**Unlocks:** [[Microservices Architecture: Decomposing the Monolith]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Software Design Patterns: Gang of Four and Modern Patterns]] **Unlocks:** [[Microservices Architecture: Decomposing the Monolith]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

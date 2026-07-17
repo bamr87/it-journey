@@ -406,8 +406,4 @@ The biggest mistake is anchoring against yourself - discounting your number befo
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1111: Leadership & Innovation]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Innovation and R&D: Experimentation and Managing Technical Bets]]
-**Unlocks:** [[Architecture Reviews: Running Reviews, ADRs, and Trade-off Facilitation]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1111: Leadership & Innovation]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Innovation and R&D: Experimentation and Managing Technical Bets]] **Unlocks:** [[Architecture Reviews: Running Reviews, ADRs, and Trade-off Facilitation]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

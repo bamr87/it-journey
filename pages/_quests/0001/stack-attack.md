@@ -405,9 +405,7 @@ The agent will surface key findings like:
 
 **Agent Recommendation Pattern:**
 
-For a React SPA frontend that needs a clean REST API, a decoupled custom Django
-application gives the most control. ERPNext and Odoo are designed for their own
-frontends — bolting a React app onto them means fighting their abstraction layers.
+For a React SPA frontend that needs a clean REST API, a decoupled custom Django application gives the most control. ERPNext and Odoo are designed for their own frontends — bolting a React app onto them means fighting their abstraction layers.
 
 ### 🏗️ Research Session 2: Validating the Backend Library Stack
 
@@ -1139,8 +1137,7 @@ npm install -D openapi-typescript orval
 
 ### 🏗️ Auto-Generating the API Client
 
-With drf-spectacular running on the backend, the OpenAPI schema is available at
-`http://localhost:8000/api/schema/`. Use your agent to configure the generator:
+With drf-spectacular running on the backend, the OpenAPI schema is available at `http://localhost:8000/api/schema/`. Use your agent to configure the generator:
 
 ```sql
 /stackattack
@@ -1820,8 +1817,5 @@ The open-source ERP landscape is vast — ERPNext, Odoo, and dozens of specializ
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -321,6 +321,4 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph.*
 
-**Campaign hub:** [[Epic Quest: The Ouroboros Loop]]
-**Next chapter:** [[The Warden's Gate]]
-**Level home:** [[Level 0000 - Foundation & Init World]]
+**Campaign hub:** [[Epic Quest: The Ouroboros Loop]] **Next chapter:** [[The Warden's Gate]] **Level home:** [[Level 0000 - Foundation & Init World]]

@@ -411,8 +411,4 @@ Mature teams pursue **continuous compliance** - automating evidence collection (
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Security & Compliance]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
-**Related quests:** [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Security & Compliance]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]] **Related quests:** [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

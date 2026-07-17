@@ -1179,17 +1179,13 @@ Before completing this quest, verify you can:
 
 ### 🎮 Quest Completion Challenges
 
-**Novice Challenge** (Required):
-Transform 3 vague prompts into RCTF format with scores of 7+
+**Novice Challenge** (Required): Transform 3 vague prompts into RCTF format with scores of 7+
 
-**Journeyman Challenge** (Required):
-Create a complete `.github/copilot-instructions.md` for your project
+**Journeyman Challenge** (Required): Create a complete `.github/copilot-instructions.md` for your project
 
-**Master Challenge** (Required):
-Build a prompt template library with at least 3 templates and a README
+**Master Challenge** (Required): Build a prompt template library with at least 3 templates and a README
 
-**Epic Challenge** (Bonus):
-Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
+**Epic Challenge** (Bonus): Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 
 ---
 
@@ -1423,7 +1419,5 @@ After completing this quest, update:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -277,7 +277,4 @@ Each chapter's **🔁 Reproduce it** section cites the specific PRs and commits 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prequel:** [[Epic Quest: Zer0-to-Her0 CMStyle]]
-**Chapters:** [[The Summoning]] · [[The Proving Grounds]] · [[The War Machine]] · [[The Sigils of Trust]] · [[The Content Forge]] · [[The Editor's Eye]] · [[The Named Familiars]] · [[The Cartographer]] · [[The Chronicle]] · [[The Bard Forge]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]] **Prequel:** [[Epic Quest: Zer0-to-Her0 CMStyle]] **Chapters:** [[The Summoning]] · [[The Proving Grounds]] · [[The War Machine]] · [[The Sigils of Trust]] · [[The Content Forge]] · [[The Editor's Eye]] · [[The Named Familiars]] · [[The Cartographer]] · [[The Chronicle]] · [[The Bard Forge]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

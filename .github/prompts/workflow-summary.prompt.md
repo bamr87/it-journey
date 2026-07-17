@@ -9,8 +9,7 @@ lastmod: 2026-05-18T12:00:00.000Z
 
 Generate a comprehensive summary of the workflow execution.
 
-**Workflow**: {{ inputs.workflow_name }}
-**Execution ID**: {{ inputs.execution_id }}
+**Workflow**: {{ inputs.workflow_name }} **Execution ID**: {{ inputs.execution_id }}
 
 ## Summary Requirements
 

@@ -411,8 +411,4 @@ Because the definition is identical, staging genuinely rehearses what production
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - CI/CD & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]]
-**Unlocks:** [[Secrets Management: Secure Configuration and Credential Handling]] · [[Artifact Management: Build Output Storage and Dependency Caching]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] **Unlocks:** [[Secrets Management: Secure Configuration and Credential Handling]] · [[Artifact Management: Build Output Storage and Dependency Caching]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

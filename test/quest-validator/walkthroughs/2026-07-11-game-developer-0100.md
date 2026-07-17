@@ -23,24 +23,9 @@ session:
 
 ## 🎯 Session Summary
 
-I walked a **window of 5 quests (1–5 of 8)** from the **Game Developer** path at
-**Level 0100 — Frontend & Containers** (Adventurer ⚔️), in plan order, as a learner
-would: two Docker main quests, then two Jekyll+Bootstrap main quests, then one Jekyll
-refactoring side quest. Evidence came from the workflow-sealed execute engine
-(`walk-evidence.json`), which I consumed as-is.
+I walked a **window of 5 quests (1–5 of 8)** from the **Game Developer** path at **Level 0100 — Frontend & Containers** (Adventurer ⚔️), in plan order, as a learner would: two Docker main quests, then two Jekyll+Bootstrap main quests, then one Jekyll refactoring side quest. Evidence came from the workflow-sealed execute engine (`walk-evidence.json`), which I consumed as-is.
 
-**Headline verdict: FAIL for the slice as a learning path.** Of the five, only three
-produced machine verdicts (avg **51.7%**): one warn (`jekyll-component-refactoring`,
-70), two fail (`frontend`, 55; `frontend-docker`, 30). The **two lead quests that
-define the whole level — `container-fundamentals` and `docker-compose-orchestration`
-— errored in the sandbox (engine hit `max_turns` retrying unreachable `curl` calls)
-and have no content verdict at all**, so the chain's foundation is un-witnessed by the
-engine. On top of that, the two `draft: true` frontend quests (`frontend-docker`,
-`frontend`) are demonstrably broken when followed verbatim (gem-persistence crash,
-`cd` into a directory never created, editing theme files that don't exist locally,
-Bootstrap that never actually renders). A maintainer's highest-leverage fixes are: (1)
-resolve the Docker-quest evidence gap, and (2) repair or de-list the two draft frontend
-quests before a beginner is routed through them.
+**Headline verdict: FAIL for the slice as a learning path.** Of the five, only three produced machine verdicts (avg **51.7%**): one warn (`jekyll-component-refactoring`, 70), two fail (`frontend`, 55; `frontend-docker`, 30). The **two lead quests that define the whole level — `container-fundamentals` and `docker-compose-orchestration` — errored in the sandbox (engine hit `max_turns` retrying unreachable `curl` calls) and have no content verdict at all**, so the chain's foundation is un-witnessed by the engine. On top of that, the two `draft: true` frontend quests (`frontend-docker`, `frontend`) are demonstrably broken when followed verbatim (gem-persistence crash, `cd` into a directory never created, editing theme files that don't exist locally, Bootstrap that never actually renders). A maintainer's highest-leverage fixes are: (1) resolve the Docker-quest evidence gap, and (2) repair or de-list the two draft frontend quests before a beginner is routed through them.
 
 ## 🗺️ The Journey
 
@@ -54,24 +39,17 @@ quests before a beginner is routed through them.
 
 ## 🔬 Evidence
 
-All numbers below are quoted from the sealed `walk-evidence.json` (execute mode,
-`mock: false`). Per-dimension scores are 1–5.
+All numbers below are quoted from the sealed `walk-evidence.json` (execute mode, `mock: false`). Per-dimension scores are 1–5.
 
 ### 1. Docker Container Fundamentals — ⚠️ errored (no verdict)
 - **Engine result:** `verdict: fail`, `overall: 0.0`, `error: "claude exited 1 … Reached maximum number of turns (40)"`. `meta: {}` (no dimensions, no snippet tallies).
 - The error trace shows the agent looping on real commands it *did* run —
-  `docker run --name web -d -p 8080:80 nginx:alpine`, then repeated
-  `curl -s http://localhost:8080` and `curl http://localhost:3000` — never getting a
-  response, exhausting the 40-turn budget. This is a **sandbox/engine limitation**
-  (published container port not reachable via `curl` in the runner), **not** evidence
-  of a content defect. **No pass/fail on any quest step can be claimed here.**
+`docker run --name web -d -p 8080:80 nginx:alpine`, then repeated `curl -s http://localhost:8080` and `curl http://localhost:3000` — never getting a response, exhausting the 40-turn budget. This is a **sandbox/engine limitation** (published container port not reachable via `curl` in the runner), **not** evidence of a content defect. **No pass/fail on any quest step can be claimed here.**
 
 ### 2. Docker Compose Orchestration — ⚠️ errored (no verdict)
 - **Engine result:** `verdict: fail`, `overall: 0.0`, `error: "claude exited 1 … Reached maximum number of turns (40)"`; `meta: {}`.
 - Error trace shows `permission_denials` on `curl -s http://localhost:8080/` (looped
-  `for i in 1 2 3; do curl …`) plus `curl -s -m 5 http://127.0.0.1:8080/`. Same
-  unreachable-port loop as quest 1. `costUSD` ≈ 0.98 was spent before the turn cap.
-  **No content verdict; reasoned-only.**
+`for i in 1 2 3; do curl …`) plus `curl -s -m 5 http://127.0.0.1:8080/`. Same unreachable-port loop as quest 1. `costUSD` ≈ 0.98 was spent before the turn cap. **No content verdict; reasoned-only.**
 
 ### 3. Dockering Jekyll with Bootstrap 5 — ❌ fail (30)
 - **Dimensions:** commands_work 1 · content_accuracy 1 · completeness 1 · clarity 2 · structure 2 · safety 4. `weight_covered: 1.0`.
@@ -109,9 +87,7 @@ All numbers below are quoted from the sealed `walk-evidence.json` (execute mode,
 
 ## 🐞 Issues Found
 
-Every item below is backed by a real sandbox command (quests 3–5) or a directly quoted
-quest line (quests 1–2, reasoned-only). Issues on the two errored quests are labelled
-`reasoned` because the engine produced no content verdict for them.
+Every item below is backed by a real sandbox command (quests 3–5) or a directly quoted quest line (quests 1–2, reasoned-only). Issues on the two errored quests are labelled `reasoned` because the engine produced no content verdict for them.
 
 ### High
 - **H1 · frontend-docker · Step 2/Step 5 (`docker-compose up`)** — *observed:* container crash-loops with `Bundler::GemNotFound` because no gems are installed in the fresh image. *Fix:* bake `bundle install` into the build (a `build: .` Dockerfile with `RUN bundle install`) or add it to the compose `command`.
@@ -135,37 +111,25 @@ quest line (quests 1–2, reasoned-only). Issues on the two errored quests are l
 - **L4 · frontend · Knowledge-Graph `[[wiki-link]]`** — resolves only inside the IT-Journey/Obsidian vault; renders as broken text elsewhere. *Note for learners.*
 - **L5 · frontend-docker metadata** — `draft: true`, empty prerequisites/rewards, Node.js listed as a tool but never used. Same `draft: true` on `frontend`. *Fix:* finish or clearly gate these drafts.
 
-**No blocking issue was found in quests 1 or 2** — but that is *not* a clean bill of
-health: those two were never scored (see §7). It means "unverified," not "passed."
+**No blocking issue was found in quests 1 or 2** — but that is *not* a clean bill of health: those two were never scored (see §7). It means "unverified," not "passed."
 
 ## 🔗 Chain Continuity
 
-Read as one Game-Developer → 0100 journey, the slice **does not currently hold together
-as an authored path**, even though its intended arc is sound:
+Read as one Game-Developer → 0100 journey, the slice **does not currently hold together as an authored path**, even though its intended arc is sound:
 
 - **Two disjoint sub-arcs.** Quests 1–2 (`container-fundamentals` → `docker-compose-orchestration`) form a clean, well-linked Docker arc: quest 2 declares `required_quests: [container-fundamentals]`, its prose explicitly builds on "single containers you already forged," and it re-teaches the `docker compose up` on-ramp that quest 1 previews in its Chapter 4. Prereqs are satisfied *within the pair*. Quests 3–4 (`frontend-docker`, `frontend`) are a **separate, older `draft: true` Jekyll+Bootstrap sub-arc** with empty `quest_dependencies` and no link back to the Docker arc — a learner arriving from quest 2 gets no bridge into them.
 - **A prerequisite the path never provides.** `frontend` Steps 1–2 assume a working host Ruby/Bundler toolchain and *local* theme files, while `frontend-docker` assumes Docker — yet neither the Docker arc nor these quests hand off the Jekyll environment cleanly. The engine had to invent `bundle config set --local path` to make `frontend` build at all; a real beginner following the text verbatim stalls at the very first `gem install`.
 - **Ordering smell.** `frontend-docker` (score 30) and `frontend` (55) are the two weakest, most dated quests, yet they sit *ahead* of the polished side quest `jekyll-component-refactoring` (70) whose `recommended_quests` points *back* to `frontend-docker`. So the side quest sends learners back into the most broken quest in the slice for its assumed setup (a Docker Jekyll project + `_config_dev.yml`), which `frontend-docker` never actually leaves in a working state (H1–H3).
 - **Where a real learner gets stuck:** (a) the Docker arc — likely fine, but unproven here; (b) `frontend-docker` Step 2, at the first `docker-compose` command (binary/ naming + gem crash); (c) `frontend` Step 1, at `gem install` permissions; (d) `frontend`/`frontend-docker` Steps 3–4, editing theme files that aren't there. The one quest that would leave a learner genuinely "ready for the next step" is quest 5 — ironically the side quest, not the main line.
 
-**Continuity verdict:** the Docker pair is a coherent (if un-witnessed) mini-path; the
-frontend pair is broken-as-written and only loosely bolted on. The slice needs the two
-draft quests repaired or resequenced before it reads as one journey.
+**Continuity verdict:** the Docker pair is a coherent (if un-witnessed) mini-path; the frontend pair is broken-as-written and only loosely bolted on. The slice needs the two draft quests repaired or resequenced before it reads as one journey.
 
 ## 🧠 Reasoning & Method
 
 - **Mode & evidence.** Execute mode, sealed by the workflow. I consumed
-  `walk-plan.json` and `walk-evidence.json` / `walk-evidence.md` **as-is** — I did not
-  re-run the engine (its child `claude` processes can't authenticate from my Bash tool)
-  and did not edit any plan/evidence file. All pass/fail/skip/reasoned tallies and
-  per-dimension scores in §4 are quoted from that sealed evidence; all quest-source
-  quotes in §5 come from reading the five `path`s in plan order.
+`walk-plan.json` and `walk-evidence.json` / `walk-evidence.md` **as-is** — I did not re-run the engine (its child `claude` processes can't authenticate from my Bash tool) and did not edit any plan/evidence file. All pass/fail/skip/reasoned tallies and per-dimension scores in §4 are quoted from that sealed evidence; all quest-source quotes in §5 come from reading the five `path`s in plan order.
 - **What I ran vs. reasoned.** I ran no quest commands myself (read-only session); the
-  *engine* ran them in its disposable sandbox and I reported its witnessed results.
-  For quests **3–5** that evidence is real and rich (per-dimension scores + executed
-  snippet tallies). For quests **1–2** there is **no content verdict** — I reasoned
-  about them statically from the source only, and I have labelled every statement about
-  them `reasoned`.
+*engine* ran them in its disposable sandbox and I reported its witnessed results. For quests **3–5** that evidence is real and rich (per-dimension scores + executed snippet tallies). For quests **1–2** there is **no content verdict** — I reasoned about them statically from the source only, and I have labelled every statement about them `reasoned`.
 - **Coverage limits (honest).**
   1. **2 of 5 quests errored** (`max_turns`) and are un-scored — the two most important
      quests in the level (the Docker foundation) among them. The engine's own `fail /
@@ -181,12 +145,9 @@ draft quests repaired or resequenced before it reads as one journey.
   4. Browser-dependent behavior (scroll animation, live Bootstrap rendering) was not
      exercised — no browser in the sandbox — and is marked `reasoned` where relevant.
 - **Confidence.** *High* for the three scored quests (real, reproducible command
-  failures with quoted output). *Low* for quests 1–2 — structurally they look strong and
-  well-linked, but I witnessed nothing, so I make no quality claim about them.
+failures with quoted output). *Low* for quests 1–2 — structurally they look strong and well-linked, but I witnessed nothing, so I make no quality claim about them.
 - **Overall verdict = fail** for the slice: average 51.7% across scored quests, two
-  hard-fail draft quests blocking a beginner, and the foundation pair unverified. Not a
-  path I could hand a real Game-Developer learner today without the H-series fixes and a
-  resolution of the Docker evidence gap.
+hard-fail draft quests blocking a beginner, and the foundation pair unverified. Not a path I could hand a real Game-Developer learner today without the H-series fixes and a resolution of the Docker evidence gap.
 
 ---
 

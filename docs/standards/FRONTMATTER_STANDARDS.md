@@ -228,8 +228,7 @@ draft: false
 ---
 ```
 
-**For Jupyter (.ipynb):**
-Frontmatter is stored in the notebook metadata. When converting to markdown, extract and format appropriately.
+**For Jupyter (.ipynb):** Frontmatter is stored in the notebook metadata. When converting to markdown, extract and format appropriately.
 
 **Notebook-Specific Fields:**
 - `notebook_type` - Type of notebook content

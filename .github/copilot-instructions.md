@@ -597,16 +597,9 @@ This main copilot-instructions.md file provides **high-level principles and refe
 
 ### **The blog moved out**
 
-IT-Journey no longer hosts a blog. The `_posts`/`_drafts` collections were removed
-and general blog content (including AI-session chronicles) now lives in the separate
-**lifehacker.dev** repo (`github.com/bamr87/lifehacker.dev`). The OverTheWire
-`wargames` docs were likewise extracted to **github.com/bamr87/wargames**.
+IT-Journey no longer hosts a blog. The `_posts`/`_drafts` collections were removed and general blog content (including AI-session chronicles) now lives in the separate **lifehacker.dev** repo (`github.com/bamr87/lifehacker.dev`). The OverTheWire `wargames` docs were likewise extracted to **github.com/bamr87/wargames**.
 
-**Key Principle**: In this repo, document work through the surviving collections —
-author learning content as **quests** (`pages/_quests/`, see
-`.github/instructions/quest.instructions.md`) or **reference docs** (`pages/_docs/`,
-see `.github/instructions/docs.instructions.md`). Chronicle-style write-ups belong
-in lifehacker.dev, not here.
+**Key Principle**: In this repo, document work through the surviving collections — author learning content as **quests** (`pages/_quests/`, see `.github/instructions/quest.instructions.md`) or **reference docs** (`pages/_docs/`, see `.github/instructions/docs.instructions.md`). Chronicle-style write-ups belong in lifehacker.dev, not here.
 
 ## Quest Creation Guidelines for IT-Journey
 

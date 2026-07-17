@@ -427,8 +427,4 @@ Never retry a `400` or `422` - the request is wrong and will fail forever. Alway
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[API Fundamentals: HTTP, Requests, and JSON]]
-**Unlocks:** [[Rate Limiting: Token Buckets, 429s, and Quotas]] · [[API Versioning: URI, Headers, and Backward Compatibility]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[API Fundamentals: HTTP, Requests, and JSON]] **Unlocks:** [[Rate Limiting: Token Buckets, 429s, and Quotas]] · [[API Versioning: URI, Headers, and Backward Compatibility]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

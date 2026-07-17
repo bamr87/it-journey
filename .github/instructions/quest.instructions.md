@@ -325,11 +325,7 @@ Use this mapping consistently for narrative cohesion:
 
 Keep technical accuracy intact — fantasy is a wrapper, never a substitute.
 
-This table is only the authoring quick-reference. The **complete canonical
-lexicon** (~120 entries: geography, classes, spellcraft, chronomancy, bestiary,
-artifacts, great works, law, words of power) lives at
-`pages/_quests/codex/glossary.md` (rendered at `/quests/codex/glossary/`) and is
-the single source of naming truth for quest narrative:
+This table is only the authoring quick-reference. The **complete canonical lexicon** (~120 entries: geography, classes, spellcraft, chronomancy, bestiary, artifacts, great works, law, words of power) lives at `pages/_quests/codex/glossary.md` (rendered at `/quests/codex/glossary/`) and is the single source of naming truth for quest narrative:
 
 - **Don't mint synonyms** for anything the glossary already names — one realm,
   one dragon.
@@ -414,12 +410,7 @@ When you add a quest, also:
 
 ## Voice & brand
 
-Quests use the `quest-fantasy` voice profile — gamified, encouraging, emoji-rich.
-**Structure** stays governed by this file; **voice/tone** and the discouraged-terms
-list live in the brand store: [`_data/brand/sections/quest.md`](../../_data/brand/sections/quest.md)
-and [`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand
-drift advisorily (`make cms-all`); emoji density is **not** policed for quests, and
-`powerful` is relaxed as fantasy flavor.
+Quests use the `quest-fantasy` voice profile — gamified, encouraging, emoji-rich. **Structure** stays governed by this file; **voice/tone** and the discouraged-terms list live in the brand store: [`_data/brand/sections/quest.md`](../../_data/brand/sections/quest.md) and [`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand drift advisorily (`make cms-all`); emoji density is **not** policed for quests, and `powerful` is relaxed as fantasy flavor.
 
 ---
 

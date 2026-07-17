@@ -38,24 +38,9 @@ source_report: test/quest-validator/walkthroughs/2026-07-14-game-developer-1101.
 
 ## 🎯 Session Summary
 
-I walked a **5-quest window (window 1 of 2)** of the **Game Developer** path at
-**Level 1101 · Machine Learning & AI (Master)**, in the planner's order:
-Deep Learning Frameworks → Computer Vision → Natural Language Processing → MLOps →
-AI Ethics. Evidence came from the sealed execute-mode engine run
-(`walk-evidence.json` / `walk-evidence.md`) — I consumed it as-is and did **not**
-re-run the engine or edit any quest.
+I walked a **5-quest window (window 1 of 2)** of the **Game Developer** path at **Level 1101 · Machine Learning & AI (Master)**, in the planner's order: Deep Learning Frameworks → Computer Vision → Natural Language Processing → MLOps → AI Ethics. Evidence came from the sealed execute-mode engine run (`walk-evidence.json` / `walk-evidence.md`) — I consumed it as-is and did **not** re-run the engine or edit any quest.
 
-**Headline verdict: WARN.** Four quests scored and three passed cleanly (avg **84.2%**);
-the hands-on Python content across the slice is genuinely strong — nearly every
-runnable snippet was actually executed in the sandbox and its output matched the
-quest's own inline claims. Two things keep this from a clean pass: (1) a **high-priority
-broken snippet** in NLP — `pipeline("ner", grouped_entities=True)` crashes with a
-`TypeError` on the exact transformers version the quest's own unpinned install pulls
-(5.13.1); and (2) **MLOps could not be evaluated** — the engine hit its 40-turn cap
-mid-execution (launching and curling a FastAPI server), so its "fail" is a harness
-timeout, **not** a proven content defect. A maintainer should treat the NER fix as the
-one urgent item, re-run MLOps under a higher turn budget, and note that this slice is
-generic ML content with **zero game-developer framing**.
+**Headline verdict: WARN.** Four quests scored and three passed cleanly (avg **84.2%**); the hands-on Python content across the slice is genuinely strong — nearly every runnable snippet was actually executed in the sandbox and its output matched the quest's own inline claims. Two things keep this from a clean pass: (1) a **high-priority broken snippet** in NLP — `pipeline("ner", grouped_entities=True)` crashes with a `TypeError` on the exact transformers version the quest's own unpinned install pulls (5.13.1); and (2) **MLOps could not be evaluated** — the engine hit its 40-turn cap mid-execution (launching and curling a FastAPI server), so its "fail" is a harness timeout, **not** a proven content defect. A maintainer should treat the NER fix as the one urgent item, re-run MLOps under a higher turn budget, and note that this slice is generic ML content with **zero game-developer framing**.
 
 ## 🗺️ The Journey
 
@@ -69,9 +54,7 @@ generic ML content with **zero game-developer framing**.
 
 ## 🔬 Evidence
 
-All per-quest numbers, commands, and outputs below are quoted from the sealed
-`walk-evidence.json` (execute mode). Snippet coverage is reported as
-`ran (passed/failed) · reasoned/skipped` out of the runnable snippets the engine found.
+All per-quest numbers, commands, and outputs below are quoted from the sealed `walk-evidence.json` (execute mode). Snippet coverage is reported as `ran (passed/failed) · reasoned/skipped` out of the runnable snippets the engine found.
 
 ### 1. Deep Learning Frameworks — ✅ 88 · ran 5/8 runnable (5 passed, 0 failed) · 3 reasoned
 - `commands_work 5 · content_accuracy 4 · completeness 3 · clarity 5 · structure 4 · safety 5` (weight covered 1.0)
@@ -109,8 +92,7 @@ All per-quest numbers, commands, and outputs below are quoted from the sealed
 
 ## 🐞 Issues Found
 
-Grouped by severity. Every item cites witnessed sandbox output or a quoted quest line;
-MLOps items are flagged `reasoned` because no command result exists for that quest.
+Grouped by severity. Every item cites witnessed sandbox output or a quoted quest line; MLOps items are flagged `reasoned` because no command result exists for that quest.
 
 **HIGH**
 - **NLP · Chapter 3 code block · `pipeline("ner", grouped_entities=True)`** — *Observed:* crashes with `TypeError: … unexpected keyword argument 'grouped_entities'` on transformers 5.13.1, which the quest's own unpinned `pip install transformers` installs; a learner following the quest today gets a crash instead of the printed entity output. *Fix:* replace `grouped_entities=True` with `aggregation_strategy="simple"` (engine verified this produces the expected ORG/LOC output).
@@ -132,52 +114,25 @@ MLOps items are flagged `reasoned` because no command result exists for that que
 
 ## 🔗 Chain Continuity
 
-**As a linked learning path, this window holds together well for the two quests that
-build directly on each other, and is coherent for the rest given the windowing.**
+**As a linked learning path, this window holds together well for the two quests that build directly on each other, and is coherent for the rest given the windowing.**
 
 - **Prerequisite satisfaction inside the window is good for the "middle" of the chain.**
-  Deep Learning Frameworks (quest 1) `unlocks` Computer Vision, NLP, and MLOps, and both
-  **Computer Vision** and **NLP** list *deep-learning-frameworks* as their **required**
-  prerequisite — which the learner completes first in this exact plan order. So a learner
-  walking 1→2→3 arrives at CV and NLP with precisely the tensors + four-beat training-loop
-  foundation those quests assume. Continuity here is clean.
+Deep Learning Frameworks (quest 1) `unlocks` Computer Vision, NLP, and MLOps, and both **Computer Vision** and **NLP** list *deep-learning-frameworks* as their **required** prerequisite — which the learner completes first in this exact plan order. So a learner walking 1→2→3 arrives at CV and NLP with precisely the tensors + four-beat training-loop foundation those quests assume. Continuity here is clean.
 - **MLOps and AI Ethics reach back to `ml-fundamentals`, which is *outside* this window.**
-  Both `require: /quests/1101/ml-fundamentals/` (and DLF `requires: neural-networks`, also
-  outside the window). This is **expected** for a windowed sweep (window 1 of 2, quests
-  5–10 of 10) — the ledger accumulates the lower quests separately — but a learner who
-  literally started at this window would be missing the scikit-learn "train + evaluate a
-  model" grounding that MLOps/AI-Ethics assume. Worth noting, not a defect of these files.
+Both `require: /quests/1101/ml-fundamentals/` (and DLF `requires: neural-networks`, also outside the window). This is **expected** for a windowed sweep (window 1 of 2, quests 5–10 of 10) — the ledger accumulates the lower quests separately — but a learner who literally started at this window would be missing the scikit-learn "train + evaluate a model" grounding that MLOps/AI-Ethics assume. Worth noting, not a defect of these files.
 - **Ordering is sensible.** The `unlocks` graph (DLF → {CV, NLP, MLOps}; CV/NLP → {MLOps,
-  AI-Ethics}; MLOps → AI-Ethics; AI-Ethics ends the line) is consistent with the plan's
-  linear order, and AI Ethics correctly presents itself as the capstone/conscience of the
-  level. No forward-reference or circular-dependency problems surfaced.
+AI-Ethics}; MLOps → AI-Ethics; AI-Ethics ends the line) is consistent with the plan's linear order, and AI Ethics correctly presents itself as the capstone/conscience of the level. No forward-reference or circular-dependency problems surfaced.
 - **Character-relevance gap (medium, spans the whole slice).** This is the **Game Developer**
-  path, yet all five quests are generic Data-Science/ML content (`categories: [Quests,
-  Data-Science, …]`) with **no game-development framing** — no mention of game AI, NPC
-  behavior, procedural content, RL agents, or in-engine inference. More concretely, every
-  quest's **"Character Class Recommendations"** block lists only *Software Developer*,
-  *System Engineer*, and *Data Scientist* — the **Game Developer class is never named**, so a
-  learner arriving on this path gets no next-step guidance for their own class. A real
-  game-dev beginner would reasonably wonder why "Level 1101" for their track is a straight
-  ML curriculum. Recommend either adding a Game-Developer recommendation line or a short
-  game-facing "why this matters for games" hook per quest.
+path, yet all five quests are generic Data-Science/ML content (`categories: [Quests, Data-Science, …]`) with **no game-development framing** — no mention of game AI, NPC behavior, procedural content, RL agents, or in-engine inference. More concretely, every quest's **"Character Class Recommendations"** block lists only *Software Developer*, *System Engineer*, and *Data Scientist* — the **Game Developer class is never named**, so a learner arriving on this path gets no next-step guidance for their own class. A real game-dev beginner would reasonably wonder why "Level 1101" for their track is a straight ML curriculum. Recommend either adding a Game-Developer recommendation line or a short game-facing "why this matters for games" hook per quest.
 - **Continuity friction a real beginner would hit:** (1) the NLP NER crash breaks the very
-  "run a pretrained transformer on your own text" objective mid-chapter; (2) the ~4.8 GB CV
-  install would stall a bandwidth-limited learner right at quest 2; (3) MLOps front-loads a
-  serve-and-curl exercise heavy enough that even the automated engine ran out of turns.
+"run a pretrained transformer on your own text" objective mid-chapter; (2) the ~4.8 GB CV install would stall a bandwidth-limited learner right at quest 2; (3) MLOps front-loads a serve-and-curl exercise heavy enough that even the automated engine ran out of turns.
 
 ## 🧠 Reasoning & Method
 
 - **Mode:** `execute` (sandboxed), consumed from the **pre-sealed** `walk-evidence.json` /
-  `walk-evidence.md`. Per the skill's step 2, I did **not** run the engine myself (its child
-  `claude` processes can't authenticate from the agent's Bash tool) and did **not** modify
-  `walk-plan.json` or the evidence files. Engine cost for this slice: **$2.7908**.
+`walk-evidence.md`. Per the skill's step 2, I did **not** run the engine myself (its child `claude` processes can't authenticate from the agent's Bash tool) and did **not** modify `walk-plan.json` or the evidence files. Engine cost for this slice: **$2.7908**.
 - **What I ran vs. reasoned:** I ran no quest commands myself — all `passed`/`failed`
-  outcomes above are the engine's actual sandbox executions, quoted from the evidence. I
-  **read all five quest sources in plan order** and reasoned about the linked journey
-  (prerequisites, ordering, character relevance, beginner friction) in §6. Anything I could
-  only judge statically is labeled `reasoned` (notably **all** of MLOps and the alternate-OS
-  setup blocks the engine chose not to run).
+outcomes above are the engine's actual sandbox executions, quoted from the evidence. I **read all five quest sources in plan order** and reasoned about the linked journey (prerequisites, ordering, character relevance, beginner friction) in §6. Anything I could only judge statically is labeled `reasoned` (notably **all** of MLOps and the alternate-OS setup blocks the engine chose not to run).
 - **Coverage / limits (honest):**
   - **4 of 5 quests scored; MLOps was NOT evaluated** — the engine hit `max_turns: 40` while
     standing up the FastAPI service, so there is no MLOps verdict, no per-dimension scores,
@@ -189,9 +144,7 @@ build directly on each other, and is coherent for the rest given the windowing.*
     per quest and reasoned about the others, and skipped `sudo apt` lines in a couple quests.
     Totals: DLF 5/8 ran, CV 6/7, NLP 8 (1 failed), Ethics 5/6.
 - **Confidence:** **High** on the four scored quests — findings are backed by real,
-  reproducible sandbox output (and the NLP fix was independently verified by the engine).
-  **Low** on MLOps — no execution evidence exists; its "fail" reflects a harness timeout,
-  and the maintainer should re-run it before drawing any content conclusion.
+reproducible sandbox output (and the NLP fix was independently verified by the engine). **Low** on MLOps — no execution evidence exists; its "fail" reflects a harness timeout, and the maintainer should re-run it before drawing any content conclusion.
 - **Deliverable:** this single report. No quest content was edited; no branch/commit/PR was
   made. The workflow handles git. **STOP.**
 

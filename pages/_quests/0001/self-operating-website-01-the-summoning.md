@@ -335,7 +335,4 @@ The construct lives and speaks — but it has not yet been *tested*. In the next
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** none — first chapter
-**Next:** [[The Proving Grounds: Test, Gate, and Trust the Build]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Self-Operating Website]] **Previous:** none — first chapter **Next:** [[The Proving Grounds: Test, Gate, and Trust the Build]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

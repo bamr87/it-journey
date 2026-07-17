@@ -18,24 +18,19 @@ collection: docs
 
 ## Audience
 
-Practitioners and learners who are mid-task and want the answer fast — a command, a
-config snippet, a cheatsheet row — not a narrative.
+Practitioners and learners who are mid-task and want the answer fast — a command, a config snippet, a cheatsheet row — not a narrative.
 
 ## Voice profile
 
-`reference` (see `../voice.md`). Terse, scannable, answer-first. Minimal emoji
-(docs are looked up, not read cover to cover; the engine keeps a low emoji band).
+`reference` (see `../voice.md`). Terse, scannable, answer-first. Minimal emoji (docs are looked up, not read cover to cover; the engine keeps a low emoji band).
 
 ## Tone
 
-Neutral and precise. Correct and current beats exhaustive. State the command and
-its expected result; link the upstream source rather than reproducing it (DRY).
+Neutral and precise. Correct and current beats exhaustive. State the command and its expected result; link the upstream source rather than reproducing it (DRY).
 
 ## Structure
 
-Owned by `docs.instructions.md`. Favor tables, lists, and copy-paste-ready command
-blocks over prose. Every code block carries a language tag. Lead each section with
-the thing the reader is looking for.
+Owned by `docs.instructions.md`. Favor tables, lists, and copy-paste-ready command blocks over prose. Every code block carries a language tag. Lead each section with the thing the reader is looking for.
 
 ## Do / Don't
 
@@ -51,6 +46,4 @@ the thing the reader is looking for.
 
 ## Section taxonomy
 
-Follow the docs taxonomy in `.frontmatter/database/taxonomyDb.json`
-(`Guides`, `Cheatsheet`, `Reference`, technology tags). Vendored read-only docs
-(carrying `source_repo` / `source_url`) keep their upstream attribution and are out of scope.
+Follow the docs taxonomy in `.frontmatter/database/taxonomyDb.json` (`Guides`, `Cheatsheet`, `Reference`, technology tags). Vendored read-only docs (carrying `source_repo` / `source_url`) keep their upstream attribution and are out of scope.

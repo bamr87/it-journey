@@ -421,8 +421,4 @@ In production, limiters usually live in a shared store like **Redis** so that ev
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[API Fundamentals: HTTP, Requests, and JSON]]
-**Unlocks:** [[API Versioning: URI, Headers, and Backward Compatibility]] · [[API Documentation: OpenAPI, Swagger, and Contract-First]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[API Fundamentals: HTTP, Requests, and JSON]] **Unlocks:** [[API Versioning: URI, Headers, and Backward Compatibility]] · [[API Documentation: OpenAPI, Swagger, and Contract-First]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

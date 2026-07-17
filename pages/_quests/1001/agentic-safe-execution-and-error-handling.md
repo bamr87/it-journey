@@ -312,11 +312,5 @@ grep -q 'error_report_version' work/gh-600/scripts/*.json 2>/dev/null && echo "�
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]]
-**Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]] **Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]] **Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

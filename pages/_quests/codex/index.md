@@ -40,10 +40,7 @@ toc_sticky: true
 
 # 📜 The Codex
 
-The **Codex** is the home of IT-Journey's **epic quests** — long, multi-session
-campaigns that build a real, working system from end to end — plus the reference
-maps that tie the realm together. Where a single quest teaches one skill, an epic
-quest chains many quests into a guided story with a capstone at the end.
+The **Codex** is the home of IT-Journey's **epic quests** — long, multi-session campaigns that build a real, working system from end to end — plus the reference maps that tie the realm together. Where a single quest teaches one skill, an epic quest chains many quests into a guided story with a capstone at the end.
 
 ## ⚔️ Epic Quests
 

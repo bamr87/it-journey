@@ -41,20 +41,11 @@ toc: true
 toc_sticky: true
 ---
 
-*Every realm keeps a codex — the book its scribes consult so that a dragon in
-one tale is not a lizard in the next. This is ours: the shared dictionary that
-maps the fantasy of IT-Journey onto the technology it teaches. Met a strange
-word mid-quest? Look it up here. Writing a quest? Take your words from here.
-For where things **are**, see the [World Map](/quests/codex/world-map/); for
-what things are **called**, you're home.*
+*Every realm keeps a codex — the book its scribes consult so that a dragon in one tale is not a lizard in the next. This is ours: the shared dictionary that maps the fantasy of IT-Journey onto the technology it teaches. Met a strange word mid-quest? Look it up here. Writing a quest? Take your words from here. For where things **are**, see the [World Map](/quests/codex/world-map/); for what things are **called**, you're home.*
 
 ## 🧭 How to Read This Codex
 
-Here is the realm's oldest secret: **the mortals' computing tongue was already
-half fantasy before we arrived.** Daemons run their background chores. Zombie
-processes shamble until reaped. Software installs itself through wizards,
-oracles answer queries, artifacts drop out of build pipelines, and security
-researchers collect bounties. We didn't invent the metaphor — we finished it.
+Here is the realm's oldest secret: **the mortals' computing tongue was already half fantasy before we arrived.** Daemons run their background chores. Zombie processes shamble until reaped. Software installs itself through wizards, oracles answer queries, artifacts drop out of build pipelines, and security researchers collect bounties. We didn't invent the metaphor — we finished it.
 
 So this codex obeys one law:
 
@@ -181,10 +172,7 @@ Chosen — and re-chosen — in the [Character Selection quest](/quests/0000/cha
 
 ## 🕰️ Chronomancy — Git and the Weave of Time
 
-*Git is the realm's school of time magic: chronicle branching and timeline
-weaving. It is taught early — [Level 0001](/quests/0001/) — because
-chronomancers fear almost nothing: every mistake sits one counter-spell from
-undone.*
+*Git is the realm's school of time magic: chronicle branching and timeline weaving. It is taught early — [Level 0001](/quests/0001/) — because chronomancers fear almost nothing: every mistake sits one counter-spell from undone.*
 
 | Fantasy | In the mortal world | Field notes |
 |---|---|---|
@@ -277,8 +265,7 @@ undone.*
 
 ## 🗝️ Words of Power — Commands That Demand Respect
 
-*Some incantations are strong enough that the realm pauses before granting
-them. Speak them deliberately.*
+*Some incantations are strong enough that the realm pauses before granting them. Speak them deliberately.*
 
 | Word of Power | What it invokes | The caution |
 |---|---|---|
@@ -291,12 +278,10 @@ them. Speak them deliberately.*
 
 ## ✍️ For Quest Scribes — Using This Lexicon
 
-This codex is the **single source of naming truth** for quest narrative. To
-keep the realm speaking one tongue:
+This codex is the **single source of naming truth** for quest narrative. To keep the realm speaking one tongue:
 
 1. **Obey the Prime Rule.** The fantasy dresses the technology; it never
-   replaces it. Commands stay real, outputs stay real, and the learner must
-   finish able to *do* the thing.
+replaces it. Commands stay real, outputs stay real, and the learner must finish able to *do* the thing.
 2. **Decode on first use.** Introduce a term with its translation in tow —
    *"open your spellbook (the terminal)"* — then use either freely.
 3. **Don't mint synonyms.** If a thing is named here, use this name. One realm,
@@ -304,8 +289,7 @@ keep the realm speaking one tongue:
 4. **New coinages land here first.** Found a mapping this codex lacks? Send an
    emissary (a pull request) adding it, then use it in your quest.
 5. **The deeper laws live elsewhere.** Quest structure belongs to
-   `.github/instructions/quest.instructions.md`; voice and tone to
-   `_data/brand/`. Structure there, vocabulary here.
+`.github/instructions/quest.instructions.md`; voice and tone to `_data/brand/`. Structure there, vocabulary here.
 
 **The lexicon at work.** A plain instruction:
 
@@ -319,13 +303,10 @@ becomes a quest line without losing a single fact:
 
 ---
 
-*The Codex Glossary is a living artifact — it grows as the realm does. Spotted
-a term in the wild that belongs here? [Send an emissary](https://github.com/bamr87/it-journey/pulls).*
+*The Codex Glossary is a living artifact — it grows as the realm does. Spotted a term in the wild that belongs here? [Send an emissary](https://github.com/bamr87/it-journey/pulls).*
 
 ## 🕸️ Knowledge Graph
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

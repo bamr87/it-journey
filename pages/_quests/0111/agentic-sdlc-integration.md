@@ -376,11 +376,5 @@ python3 scripts/validate_quest.py --quest q1
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Exam Overview]]
-**Recommended:** [[REST Principles: RESTful API Design Best Practices]]
-**Unlocks:** [[The Three Sigils: Plan, Reason, Act]]
-**Sequel quests:** [[The Three Sigils: Plan, Reason, Act]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 (7) - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Exam Overview]] **Recommended:** [[REST Principles: RESTful API Design Best Practices]] **Unlocks:** [[The Three Sigils: Plan, Reason, Act]] **Sequel quests:** [[The Three Sigils: Plan, Reason, Act]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

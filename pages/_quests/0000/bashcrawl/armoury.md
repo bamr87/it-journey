@@ -167,9 +167,7 @@ ls -l potion sword
 # Guardian defeated! The door creaks open.
 ```
 
-With the sword equipped, the guardian falls and the door to the Chamber opens.
-List the room (`ls`) to find the path onward, then step through into the
-Chamber's directory (for example, `cd ../chamber`).
+With the sword equipped, the guardian falls and the door to the Chamber opens. List the room (`ls`) to find the path onward, then step through into the Chamber's directory (for example, `cd ../chamber`).
 
 > **Low on health?** Your HP carries over between rooms. If a fight leaves you
 > weakened, re-run `./potion` (if a potion is still available) before moving on.
@@ -230,10 +228,5 @@ Continue your terminal adventure with these resources:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Unlocks:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]]
-**Sequel quests:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Unlocks:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]] **Sequel quests:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

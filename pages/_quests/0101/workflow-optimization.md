@@ -462,7 +462,4 @@ The mindset: **fast feedback and low cost are the same goal** - both come from d
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - CI/CD & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

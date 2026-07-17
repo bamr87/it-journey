@@ -310,7 +310,4 @@ graph TD
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Sequel:** [[Epic Quest: The Self-Operating Website]]
-**Chapters:** [[VS Code Mastery: Forge Your Ultimate Dev Weapon]] · [[Git Workflow Mastery: Branches, Merging & Team Collaboration]] · [[Jekyll Fundamentals: Build Static Sites with Ruby]] · [[The GitHub Pages Portal: Forging Your Digital Realm]] · [[Link to the Future: Automated Hyperlink Guardian Quest]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]] **Sequel:** [[Epic Quest: The Self-Operating Website]] **Chapters:** [[VS Code Mastery: Forge Your Ultimate Dev Weapon]] · [[Git Workflow Mastery: Branches, Merging & Team Collaboration]] · [[Jekyll Fundamentals: Build Static Sites with Ruby]] · [[The GitHub Pages Portal: Forging Your Digital Realm]] · [[Link to the Future: Automated Hyperlink Guardian Quest]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

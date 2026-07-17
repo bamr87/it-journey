@@ -490,8 +490,4 @@ terraform output bucket_arn
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1000 (8) - Cloud Computing]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[AWS Essentials: Core Services and Cloud Architecture Patterns]]
-**Unlocks:** [[Kubernetes Fundamentals: Container Orchestration Essentials]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1000 (8) - Cloud Computing]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[AWS Essentials: Core Services and Cloud Architecture Patterns]] **Unlocks:** [[Kubernetes Fundamentals: Container Orchestration Essentials]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

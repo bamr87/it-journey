@@ -431,7 +431,4 @@ Once you can name the category a service belongs to, you can learn any new produ
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1000 (8) - Cloud Computing]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[AWS Essentials: Core Services and Cloud Architecture Patterns]] · [[Infrastructure as Code: Terraform and CloudFormation Fundamentals]] · [[Azure Ascension: Deploying Jekyll to the Cloud Kingdom]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1000 (8) - Cloud Computing]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[AWS Essentials: Core Services and Cloud Architecture Patterns]] · [[Infrastructure as Code: Terraform and CloudFormation Fundamentals]] · [[Azure Ascension: Deploying Jekyll to the Cloud Kingdom]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

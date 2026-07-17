@@ -24,25 +24,9 @@ session:
 
 ## 🎯 Session Summary
 
-I walked the **System Engineer** path through **Level 1000 (Cloud Computing,
-Warrior tier 🔥)** — the second and final window of the level (4 of the level's 9
-quests; the planner already swept window 1). This window is the level's **cloud
-provisioning arc plus one detour**: `AWS Essentials` → `Infrastructure as Code`
-form a tight linear pair, `Azure Ascension` is a side-branch alternate-cloud
-deploy, and `The War Machine` is Chapter III of an unrelated automation campaign
-that happens to live at this level.
+I walked the **System Engineer** path through **Level 1000 (Cloud Computing, Warrior tier 🔥)** — the second and final window of the level (4 of the level's 9 quests; the planner already swept window 1). This window is the level's **cloud provisioning arc plus one detour**: `AWS Essentials` → `Infrastructure as Code` form a tight linear pair, `Azure Ascension` is a side-branch alternate-cloud deploy, and `The War Machine` is Chapter III of an unrelated automation campaign that happens to live at this level.
 
-**Headline verdict: ⚠️ warn.** The engine scored 3 of 4 quests (avg **76.3%**:
-1 pass, 2 warn) and **errored** on the 4th (Azure) at max_turns, so that one has
-no evidence. The two provisioning quests are technically sound — every AWS CLI and
-Terraform snippet parsed and executed correctly in the sandbox, failing only at the
-expected "no credentials" stage — but both carry **learner-blocking gaps a real
-beginner would hit**: AWS Essentials teaches the SSH-enabling security group *after*
-the EC2 launch that needs it (so the Intermediate Challenge's "SSH in" is
-impossible as written), and The War Machine's own Mastery Challenge headline ("two
-parallel runs claim two different tasks") is **not achievable with the shipped
-code**. Terraform is the standout (89%, pass). A maintainer should prioritise the
-two `high`-severity issues below.
+**Headline verdict: ⚠️ warn.** The engine scored 3 of 4 quests (avg **76.3%**: 1 pass, 2 warn) and **errored** on the 4th (Azure) at max_turns, so that one has no evidence. The two provisioning quests are technically sound — every AWS CLI and Terraform snippet parsed and executed correctly in the sandbox, failing only at the expected "no credentials" stage — but both carry **learner-blocking gaps a real beginner would hit**: AWS Essentials teaches the SSH-enabling security group *after* the EC2 launch that needs it (so the Intermediate Challenge's "SSH in" is impossible as written), and The War Machine's own Mastery Challenge headline ("two parallel runs claim two different tasks") is **not achievable with the shipped code**. Terraform is the standout (89%, pass). A maintainer should prioritise the two `high`-severity issues below.
 
 ## 🗺️ The Journey
 
@@ -55,10 +39,7 @@ two `high`-severity issues below.
 
 ## 🔬 Evidence
 
-All evidence below comes from `walk-evidence.json` (execute mode, sealed by the
-workflow — the engine ran each quest's safe commands in a disposable sandbox).
-Where I only reasoned from the quest source rather than a run, I label it
-`reasoned`.
+All evidence below comes from `walk-evidence.json` (execute mode, sealed by the workflow — the engine ran each quest's safe commands in a disposable sandbox). Where I only reasoned from the quest source rather than a run, I label it `reasoned`.
 
 ### 1. AWS Essentials — 72% ⚠️ (ran 2/8 runnable snippets: 1 passed, 1 failed, 8 skipped)
 - **passed** · IAM least-privilege policy JSON — validated with `python3 -c "json.loads(...)"`; parses with correct `Version`/`Statement`/`Effect`/`Action`/`Resource`.
@@ -94,9 +75,7 @@ Where I only reasoned from the quest source rather than a run, I label it
 
 ## 🐞 Issues Found
 
-Grouped by quest; every item is backed by a sandbox run (`tested`) or a quoted line
-from the source (`reasoned`). Severity follows the recommendations in the sealed
-evidence.
+Grouped by quest; every item is backed by a sandbox run (`tested`) or a quoted line from the source (`reasoned`). Severity follows the recommendations in the sealed evidence.
 
 **AWS Essentials** (`pages/_quests/1000/aws-essentials.md`)
 - **high** · Chapter 2 EC2 launch / Intermediate Challenge · `tested`+`reasoned` — `aws ec2 run-instances` (lines 292–297) has no `--security-group-ids`; the SG that opens SSH is created in Chapter 3 (lines 367–373) and never referenced back. A learner following top-to-bottom then attempting the Intermediate Challenge ("SSH in, run `uname -a`", line 409) is locked out. **Fix:** add `--security-group-ids <sg-id>` to the launch (or move SG creation before Ch2) and show the actual `ssh -i quest-key.pem ec2-user@<ip>` + how to fetch the public IP via `describe-instances --query`.
@@ -123,62 +102,29 @@ evidence.
 - **medium** · Script executability · `tested` — `dispatch.sh`/`lease.sh` use `exec scripts/lease.sh` / `exec scripts/work.sh`; without `chmod +x` (never mentioned) they fail `Permission denied` (exit 126). **Fix:** add a `chmod +x scripts/*.sh` step or note.
 - **low** · 50-case simulation snippet · `tested` — copy-pasted literally the block raises `NameError`; it needs `from decide_core import Task, decide` prepended. **Fix:** add the import to the snippet so it runs standalone.
 
-*No quest in this slice was clean of blocking issues, but the two `pass`/near-pass
-quests (Terraform, AWS Essentials) are close — their fixes are small and local.*
+*No quest in this slice was clean of blocking issues, but the two `pass`/near-pass quests (Terraform, AWS Essentials) are close — their fixes are small and local.*
 
 ## 🔗 Chain Continuity
 
-Reasoning about the slice as one learner's path through the System Engineer's
-Level 1000:
+Reasoning about the slice as one learner's path through the System Engineer's Level 1000:
 
 - **AWS Essentials → Infrastructure as Code is a genuinely strong link.** IaC's
-  frontmatter declares `required_quests: [/quests/1000/aws-essentials/]`, and its
-  opening line ("In the previous quest you clicked and typed your way through the
-  AWS console...") explicitly picks up where AWS Essentials leaves off. Concepts
-  carry cleanly: the S3 bucket, the `aws_ami`/Amazon Linux 2023 data source, and
-  `aws sts get-caller-identity` all reappear in Terraform form. A learner finishing
-  quest 1 is genuinely ready for quest 3. **This pair is the spine of the slice.**
+frontmatter declares `required_quests: [/quests/1000/aws-essentials/]`, and its opening line ("In the previous quest you clicked and typed your way through the AWS console...") explicitly picks up where AWS Essentials leaves off. Concepts carry cleanly: the S3 bucket, the `aws_ami`/Amazon Linux 2023 data source, and `aws sts get-caller-identity` all reappear in Terraform form. A learner finishing quest 1 is genuinely ready for quest 3. **This pair is the spine of the slice.**
 - **Azure Ascension is a side-branch, not a rung.** It's an alternate-cloud
-  (Azure Static Web Apps) deploy of the Jekyll site; nothing in AWS Essentials sets
-  it up, and IaC doesn't depend on it. Walked in plan order (position 2) it reads as
-  a detour between the two AWS quests. That's defensible (AWS Essentials itself lists
-  Azure under "Explore Side Adventures"), but a learner should be told it's optional
-  and orthogonal, not the next step after AWS.
+(Azure Static Web Apps) deploy of the Jekyll site; nothing in AWS Essentials sets it up, and IaC doesn't depend on it. Walked in plan order (position 2) it reads as a detour between the two AWS quests. That's defensible (AWS Essentials itself lists Azure under "Explore Side Adventures"), but a learner should be told it's optional and orthogonal, not the next step after AWS.
 - **The War Machine is a hard context switch.** It belongs to a *different campaign*
-  (The Self-Operating Website / The Autonomous Realm), is **Chapter III**, and its
-  prerequisites lean on **Chapter II — The Proving Grounds (a Level 0100 quest not in
-  this slice)**: "You need its self-survey worklist ... because that ledger *is* the
-  backlog this dispatcher observes." Its `quest_dependencies.required_quests` is
-  empty, but the prose assumes Ch II's artifacts. For a learner arriving straight
-  from Terraform, this is a jarring jump into GitHub-Actions/agent-fleet territory
-  with an unstated cross-level prerequisite. **Ordering note:** it is correctly
-  last, but the slice would read better if the level hub signposted it as a separate
-  arc rather than the fourth cloud quest.
+(The Self-Operating Website / The Autonomous Realm), is **Chapter III**, and its prerequisites lean on **Chapter II — The Proving Grounds (a Level 0100 quest not in this slice)**: "You need its self-survey worklist ... because that ledger *is* the backlog this dispatcher observes." Its `quest_dependencies.required_quests` is empty, but the prose assumes Ch II's artifacts. For a learner arriving straight from Terraform, this is a jarring jump into GitHub-Actions/agent-fleet territory with an unstated cross-level prerequisite. **Ordering note:** it is correctly last, but the slice would read better if the level hub signposted it as a separate arc rather than the fourth cloud quest.
 - **Net:** this window is not one linear journey — it's *the cloud-provisioning arc
-  (AWS → Terraform) + an Azure side-branch + one chapter of an automation campaign*,
-  bundled by level code. That's an acceptable level-hub composition, but a beginner
-  would benefit from an explicit "these are three tracks, not four steps" cue.
+(AWS → Terraform) + an Azure side-branch + one chapter of an automation campaign*, bundled by level code. That's an acceptable level-hub composition, but a beginner would benefit from an explicit "these are three tracks, not four steps" cue.
 - **Prerequisite satisfaction within the slice:** ✅ IaC's prerequisite (AWS
-  Essentials) is present and precedes it. ⚠️ AWS Essentials' own prerequisite
-  (Cloud Computing Fundamentals) sits in window 1, not here — expected under
-  windowing. ⚠️ War Machine's real prerequisite (Proving Grounds, L0100) is
-  out-of-slice and cross-level. Azure has no in-slice prerequisites but needs a live
-  Azure account + `az login` + Ruby ≥3.2.
+Essentials) is present and precedes it. ⚠️ AWS Essentials' own prerequisite (Cloud Computing Fundamentals) sits in window 1, not here — expected under windowing. ⚠️ War Machine's real prerequisite (Proving Grounds, L0100) is out-of-slice and cross-level. Azure has no in-slice prerequisites but needs a live Azure account + `az login` + Ruby ≥3.2.
 
 ## 🧠 Reasoning & Method
 
 - **Mode:** `execute` — the workflow pre-computed and **sealed** `walk-evidence.json`
-  by running `test/quest-validator/agentic_validate.py --mode execute` in the
-  disposable runner sandbox. I consumed that evidence as-is; I did **not** re-run the
-  engine (its child `claude` processes can't authenticate from my Bash tool), and I
-  did not edit `walk-plan.json` or `walk-evidence.*`.
+by running `test/quest-validator/agentic_validate.py --mode execute` in the disposable runner sandbox. I consumed that evidence as-is; I did **not** re-run the engine (its child `claude` processes can't authenticate from my Bash tool), and I did not edit `walk-plan.json` or `walk-evidence.*`.
 - **What I ran vs. reasoned:** the *engine* ran the commands (AWS CLI v2.35.15,
-  Terraform v1.15.8 via Docker with a local-provider stand-in, and the War Machine's
-  Python/bash/git scripts against a local bare repo). I independently **read all four
-  quest sources in plan order** and cross-checked the engine's findings against the
-  actual lines, then reasoned about the linked journey (§6). Every issue is labelled
-  `tested` (sandbox run) or `reasoned` (quoted source). I additionally verified on
-  the host filesystem that the Azure quest's referenced deploy script exists.
+Terraform v1.15.8 via Docker with a local-provider stand-in, and the War Machine's Python/bash/git scripts against a local bare repo). I independently **read all four quest sources in plan order** and cross-checked the engine's findings against the actual lines, then reasoned about the linked journey (§6). Every issue is labelled `tested` (sandbox run) or `reasoned` (quoted source). I additionally verified on the host filesystem that the Azure quest's referenced deploy script exists.
 - **Coverage & limits (honest):**
   - **Azure Ascension has NO machine score** — the engine exited 1 at max_turns(40).
     I report it as no-evidence/tooling-error and only reasoned statically; I did not
@@ -195,8 +141,6 @@ Level 1000:
   - No link-checking or rendered-site validation was performed; the Azure
     relative-link note is flagged for a content pass, not verified here.
 - **Confidence:** High on Terraform (pass, reproduced verbatim) and on the two
-  `high` War Machine findings (directly reproduced). High on the AWS security-group
-  ordering gap (engine-traced + confirmed against source lines). **None** on Azure
-  (no evidence). Medium on the Azure structural observations (source-only).
+`high` War Machine findings (directly reproduced). High on the AWS security-group ordering gap (engine-traced + confirmed against source lines). **None** on Azure (no evidence). Medium on the Azure structural observations (source-only).
 - **Scope discipline:** one slice, one report. No quest content was modified; no
   branch/commit/PR was made. Fixable bugs live in §5 for a content pass to act on.

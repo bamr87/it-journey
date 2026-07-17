@@ -1,7 +1,6 @@
 # Oh-My-Zsh Terminal Enchantment — Solutions & Validation
 
-**Quest**: [Terminal Enchantment: Oh-My-Zsh Mastery](/quests/0010/oh-my-zsh-mastery/)
-**Level**: 0010 — Terminal Enhancement & Shell Mastery
+**Quest**: [Terminal Enchantment: Oh-My-Zsh Mastery](/quests/0010/oh-my-zsh-mastery/) **Level**: 0010 — Terminal Enhancement & Shell Mastery
 **Difficulty**: 🟡 Medium | **Estimated Time**: 45–90 minutes
 
 ---

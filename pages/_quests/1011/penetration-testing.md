@@ -430,9 +430,4 @@ A report's value is measured by how easily a developer can act on it - clear sev
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Security & Compliance]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]]
-**Unlocks:** [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]]
-**Related quests:** [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Security & Compliance]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Security Fundamentals: CIA Triad and Defense in Depth Strategies]] **Unlocks:** [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]] **Related quests:** [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

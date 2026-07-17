@@ -1,7 +1,6 @@
 # Level 0100 — Quest Solutions
 
-**Level**: 0100 — Frontend Development & Docker
-**Quest Source**: [pages/_quests/0100/](../../pages/_quests/0100/)
+**Level**: 0100 — Frontend Development & Docker **Quest Source**: [pages/_quests/0100/](../../pages/_quests/0100/)
 
 ---
 

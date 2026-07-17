@@ -474,8 +474,4 @@ The trade-off: BFFs eliminate one-size-fits-none compromises but multiply the nu
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Microservices Architecture: Decomposing the Monolith]]
-**Unlocks:** [[Scaling Strategies: Horizontal Growth, Caching, and CAP]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Microservices Architecture: Decomposing the Monolith]] **Unlocks:** [[Scaling Strategies: Horizontal Growth, Caching, and CAP]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

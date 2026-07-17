@@ -547,9 +547,4 @@ The vaults are carved and the world can no longer drift out from under your agen
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Agentic Codex]]
-**Previous:** [[Tool Use & Environment]]
-**Next:** [[Evaluation & Tuning]]
-**Domain quests:** [[Vaults of Recollection: Agent Memory Strategies]] · [[Anchoring the Drifting Agent: Stop Context Drift]] · [[Crossing the Tool Planes: State Continuity Across Tools]]
-**Reference:** [[Taming Agent Memory and Context Drift]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Agentic Codex]] **Previous:** [[Tool Use & Environment]] **Next:** [[Evaluation & Tuning]] **Domain quests:** [[Vaults of Recollection: Agent Memory Strategies]] · [[Anchoring the Drifting Agent: Stop Context Drift]] · [[Crossing the Tool Planes: State Continuity Across Tools]] **Reference:** [[Taming Agent Memory and Context Drift]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

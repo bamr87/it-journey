@@ -77,8 +77,7 @@ draft: false
 
 ### 🏰 The Ancient Glyph Repository
 
-The sacred repository of Nerd Fonts can be found at:
-**<https://github.com/ryanoasis/nerd-fonts>**
+The sacred repository of Nerd Fonts can be found at: **<https://github.com/ryanoasis/nerd-fonts>**
 
 *This digital archive contains patched versions of popular fonts, enhanced with thousands of additional glyphs that bring your terminal to life.*
 
@@ -705,7 +704,5 @@ fc-cache -fv
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

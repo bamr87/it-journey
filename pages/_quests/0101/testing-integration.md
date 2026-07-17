@@ -481,8 +481,4 @@ The operational playbook: **detect** by re-running failures, **quarantine** a kn
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - CI/CD & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]]
-**Unlocks:** [[Deployment Pipelines: Production Release Automation Strategies]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Requires:** [[CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials]] **Unlocks:** [[Deployment Pipelines: Production Release Automation Strategies]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

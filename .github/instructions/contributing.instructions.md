@@ -84,8 +84,7 @@ Conventional Commits, scopes match repo areas:
 Closes #<issue>
 ```
 
-Types: `feat fix docs style refactor perf test chore ci`.
-Common scopes: `quest post docs scripts workflows config`.
+Types: `feat fix docs style refactor perf test chore ci`. Common scopes: `quest post docs scripts workflows config`.
 
 Example:
 

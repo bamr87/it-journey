@@ -1,8 +1,5 @@
 <!--
-description: Canonical frontmatter schema for AI agent instructions and prompts across bashconsultants, zer0-mistakes, and it-journey repositories.
-date: 2026-05-18T12:00:00.000Z
-lastmod: 2026-05-18T12:00:00.000Z
--->
+description: Canonical frontmatter schema for AI agent instructions and prompts across bashconsultants, zer0-mistakes, and it-journey repositories. date: 2026-05-18T12:00:00.000Z lastmod: 2026-05-18T12:00:00.000Z -->
 
 # Frontmatter Schema for AI Agent Files
 
@@ -29,8 +26,7 @@ lastmod: 2026-05-18T12:00:00.000Z # required — bump on every meaningful edit
 ---
 ```
 
-**Dropped legacy fields** (do not reintroduce):
-`agent`, `name`, `version`, `category`, `trigger`, `inputs`, `outputs`, `related_prompts`, `related_instructions`, `purpose`, `title`.
+**Dropped legacy fields** (do not reintroduce): `agent`, `name`, `version`, `category`, `trigger`, `inputs`, `outputs`, `related_prompts`, `related_instructions`, `purpose`, `title`.
 
 If you need to document inputs/outputs/related files, put them as Markdown sections in the body, not in YAML.
 

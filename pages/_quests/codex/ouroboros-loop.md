@@ -249,7 +249,4 @@ Every chapter's **🔁 Reproduce It** section cites the real merged pull request
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prequel:** [[Epic Quest: The Self-Operating Website]]
-**Chapters:** [[The First Turn]] · [[The Warden's Gate]] · [[Summon the Golem]] · [[The Sealed Evidence]] · [[The Mana Ledger]] · [[The Fixer's Oath]] · [[Weaving the Whole]]
-**Lexicon:** [[Codex Glossary: Fantasy Terms to IT Reality]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]] **Prequel:** [[Epic Quest: The Self-Operating Website]] **Chapters:** [[The First Turn]] · [[The Warden's Gate]] · [[Summon the Golem]] · [[The Sealed Evidence]] · [[The Mana Ledger]] · [[The Fixer's Oath]] · [[Weaving the Whole]] **Lexicon:** [[Codex Glossary: Fantasy Terms to IT Reality]]

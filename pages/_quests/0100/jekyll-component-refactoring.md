@@ -437,8 +437,5 @@ Rebuild and confirm no nanobar appears and no build errors occur.
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0100 - Frontend Development & Docker]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Dockering Jekyll with Bootstrap 5]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0100 - Frontend Development & Docker]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Dockering Jekyll with Bootstrap 5]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

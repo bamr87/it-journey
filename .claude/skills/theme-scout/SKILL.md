@@ -5,11 +5,7 @@ description: Run ONE pass of the IT-Journey frontend canary — crawl it-journey
 
 # Theme Scout — one frontend-canary pass
 
-it-journey.dev runs the `bamr87/zer0-mistakes` theme via `remote_theme`, so it is
-a live canary for the theme. One pass: **test the frontend → classify findings →
-dedup → file the theme ones upstream**. Deterministic spine, AI judgment at the
-filing step. Runs identically locally (`/loop` / `make`) and in CI
-(`theme-scout.yml`).
+it-journey.dev runs the `bamr87/zer0-mistakes` theme via `remote_theme`, so it is a live canary for the theme. One pass: **test the frontend → classify findings → dedup → file the theme ones upstream**. Deterministic spine, AI judgment at the filing step. Runs identically locally (`/loop` / `make`) and in CI (`theme-scout.yml`).
 
 ## 0. Read the policy
 
@@ -23,10 +19,7 @@ filing step. Runs identically locally (`/loop` / `make`) and in CI
 BASE_URL=https://it-journey.dev node scripts/frontend/crawl.mjs
 ```
 
-The crawler drives a real browser over every configured route at mobile + desktop
-and writes `.frontend/findings.jsonl`: page/HTTP errors (incl. the theme-injected
-link 404s), console errors, mobile horizontal overflow, missing alt text, and
-axe-core WCAG violations. It is read-only — it never logs in or submits anything.
+The crawler drives a real browser over every configured route at mobile + desktop and writes `.frontend/findings.jsonl`: page/HTTP errors (incl. the theme-injected link 404s), console errors, mobile horizontal overflow, missing alt text, and axe-core WCAG violations. It is read-only — it never logs in or submits anything.
 
 ## 2. Classify + dedup (deterministic)
 
@@ -34,17 +27,11 @@ axe-core WCAG violations. It is read-only — it never logs in or submits anythi
 python3 scripts/frontend/triage_findings.py
 ```
 
-Groups findings by signature, decides which are **theme** (site-wide / theme-
-injected) vs **content** (one page), dedups against existing upstream issues, and
-writes `.frontend/upstream-candidates.json` (capped).
+Groups findings by signature, decides which are **theme** (site-wide / theme- injected) vs **content** (one page), dedups against existing upstream issues, and writes `.frontend/upstream-candidates.json` (capped).
 
 ## 3. File theme issues upstream (the theme-scout agent)
 
-The **theme-scout** agent reads the candidates, makes the final theme-vs-content
-call, searches upstream once more to avoid paraphrased duplicates, and files each
-genuine theme bug with `gh issue create --repo bamr87/zer0-mistakes` (title +
-repro/evidence + `bug` + `area:*` labels). Filing upstream needs a PAT with
-issues:write on the theme repo (the workflow provides it as `THEME_REPO_TOKEN`).
+The **theme-scout** agent reads the candidates, makes the final theme-vs-content call, searches upstream once more to avoid paraphrased duplicates, and files each genuine theme bug with `gh issue create --repo bamr87/zer0-mistakes` (title + repro/evidence + `bug` + `area:*` labels). Filing upstream needs a PAT with issues:write on the theme repo (the workflow provides it as `THEME_REPO_TOKEN`).
 
 ## 4. Safety rules (every pass)
 
@@ -57,6 +44,4 @@ issues:write on the theme repo (the workflow provides it as `THEME_REPO_TOKEN`).
 
 ## 5. Report honestly
 
-State what you filed (URLs), what you skipped as duplicates, and what you judged
-content (for it-journey to handle). Never imply you found everything — this is one
-bounded canary pass over a sample of routes.
+State what you filed (URLs), what you skipped as duplicates, and what you judged content (for it-journey to handle). Never imply you found everything — this is one bounded canary pass over a sample of routes.

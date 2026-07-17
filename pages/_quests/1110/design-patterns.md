@@ -496,7 +496,4 @@ The Strategy pattern from Chapter 2 is the Open/Closed Principle made concrete: 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Domain-Driven Design: Modeling the Business in Code]] · [[Microservices Architecture: Decomposing the Monolith]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Domain-Driven Design: Modeling the Business in Code]] · [[Microservices Architecture: Decomposing the Monolith]] · [[Event-Driven Design: Pub/Sub, Event Sourcing, and CQRS]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

@@ -244,6 +244,4 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph.*
 
-**Campaign hub:** [[Epic Quest: The Ouroboros Loop]]
-**Previous:** [[The First Turn]] · **Next:** [[Summon the Golem]]
-**Level home:** [[Level 0101 - CI/CD & DevOps]]
+**Campaign hub:** [[Epic Quest: The Ouroboros Loop]] **Previous:** [[The First Turn]] · **Next:** [[Summon the Golem]] **Level home:** [[Level 0101 - CI/CD & DevOps]]

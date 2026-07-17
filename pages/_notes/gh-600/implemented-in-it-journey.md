@@ -17,26 +17,13 @@ draft: false
 ---
 # GH-600 in the Wild: Implemented in IT-Journey
 
-The Agentic Codex is not a thought experiment — **this repository runs on the
-disciplines the exam tests.** An AI fleet drafts content, walks quests as a
-learner, repairs what it witnessed breaking, triages issues, and audits
-itself — every lane behind kill switches, deterministic gates, and a human
-merge button. This note maps each GH-600 domain to the live artifact that
-implements it, so you can read real source instead of imagining it.
+The Agentic Codex is not a thought experiment — **this repository runs on the disciplines the exam tests.** An AI fleet drafts content, walks quests as a learner, repairs what it witnessed breaking, triages issues, and audits itself — every lane behind kill switches, deterministic gates, and a human merge button. This note maps each GH-600 domain to the live artifact that implements it, so you can read real source instead of imagining it.
 
-**How to use this page:** study a chapter, then open the artifact and see the
-same pattern holding production weight. Each path links to the source on
-GitHub; each row names the chapter that teaches the concept.
+**How to use this page:** study a chapter, then open the artifact and see the same pattern holding production weight. Each path links to the source on GitHub; each row names the chapter that teaches the concept.
 
 ## The control plane in one workflow
 
-[`.github/workflows/agent-plan-then-act.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/agent-plan-then-act.yml)
-is the campaign's reference pipeline, live: a `plan` job that only plans, an
-`execute` job held **Waiting** behind the `agent-approval` Environment, the
-plan crossing the boundary as an artifact, a drift-guard verify before acting,
-a correlation ID threading every step, and an audit artifact recording
-instruction → action → outcome. It is OFF by default behind
-`AGENT_DEMO_ENABLED`, exactly like every other agent lane here.
+[`.github/workflows/agent-plan-then-act.yml`](https://github.com/bamr87/it-journey/blob/main/.github/workflows/agent-plan-then-act.yml) is the campaign's reference pipeline, live: a `plan` job that only plans, an `execute` job held **Waiting** behind the `agent-approval` Environment, the plan crossing the boundary as an artifact, a drift-guard verify before acting, a correlation ID threading every step, and an audit artifact recording instruction → action → outcome. It is OFF by default behind `AGENT_DEMO_ENABLED`, exactly like every other agent lane here.
 
 ## Domain 1 — Agentic AI in the SDLC (18%)
 
@@ -107,9 +94,7 @@ instruction → action → outcome. It is OFF by default behind
 
 1. Read a chapter, then its artifact above — the pattern is identical, at scale.
 2. Run the reference pipeline in your fork: create the `agent-approval`
-   Environment with yourself as required reviewer, set
-   `AGENT_DEMO_ENABLED=true`, dispatch **🜂 Agent Plan-then-Act**, and watch the
-   execute job wait for your seal.
+Environment with yourself as required reviewer, set `AGENT_DEMO_ENABLED=true`, dispatch **🜂 Agent Plan-then-Act**, and watch the execute job wait for your seal.
 3. Face the [Grand Capstone](/quests/1100/agentic-codex-capstone-exam-trial/) —
    this repository is a worked answer key, but the trial wants *your* build.
 

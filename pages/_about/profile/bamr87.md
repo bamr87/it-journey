@@ -37,9 +37,7 @@ git subtree add --prefix=pages/_about/contributors/bamr87 bamr87 main
 
 <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
 <link
-  rel="stylesheet"
-  href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-/>
+rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 
 <!-- Prepare a container for your calendar. -->
 <div class="calendar">

@@ -7,14 +7,9 @@ lastmod: 2026-06-25T00:00:00.000Z
 
 # AI Content Review — Resolution Instructions
 
-This file governs **how Copilot (or any contributor) resolves issues opened by the
-[`ai-content-review.yml`](../workflows/ai-content-review.yml) workflow**.
+This file governs **how Copilot (or any contributor) resolves issues opened by the [`ai-content-review.yml`](../workflows/ai-content-review.yml) workflow**.
 
-Each AI-review issue is **scoped to a single Jekyll collection** (`_quests`,
-`_docs`, `_notes`, `_quickstart`, `_about`)
-and lists the files in that collection that need improvement. **Stay inside the
-collection named in the issue title — do not edit files in other collections in
-the same PR.**
+Each AI-review issue is **scoped to a single Jekyll collection** (`_quests`, `_docs`, `_notes`, `_quickstart`, `_about`) and lists the files in that collection that need improvement. **Stay inside the collection named in the issue title — do not edit files in other collections in the same PR.**
 
 ---
 
@@ -28,15 +23,13 @@ Work through the issue in this order. Skip steps that don't apply.
 4. **Technical accuracy** (code blocks, commands, links)
 5. **Accessibility** (alt text, heading hierarchy)
 
-If a single file has many issues, fix it fully before moving on — partial fixes
-across many files are harder to review than complete fixes on fewer files.
+If a single file has many issues, fix it fully before moving on — partial fixes across many files are harder to review than complete fixes on fewer files.
 
 ---
 
 ## 2. Frontmatter Rules (Hard Requirements)
 
-CI enforces these via `.github/workflows/frontmatter-validation.yml` and
-`scripts/validation/content-reviewer.py`:
+CI enforces these via `.github/workflows/frontmatter-validation.yml` and `scripts/validation/content-reviewer.py`:
 
 | Field | Required | Constraint |
 |-------|----------|------------|
@@ -60,8 +53,7 @@ CI enforces these via `.github/workflows/frontmatter-validation.yml` and
 
 ### Collection-Specific Required Fields
 - **Quests** (`pages/_quests/**`): add `learning_objectives`, `target_audience`,
-  `hierarchy`, `level`, `quest_id`, `difficulty`, `estimated_time`,
-  `prerequisites`. See [`quest.instructions.md`](quest.instructions.md).
+`hierarchy`, `level`, `quest_id`, `difficulty`, `estimated_time`, `prerequisites`. See [`quest.instructions.md`](quest.instructions.md).
 - **Docs** (`pages/_docs/**`): see [`docs.instructions.md`](docs.instructions.md).
 - **Notes** (`pages/_notes/**`): see [`notes.instructions.md`](notes.instructions.md).
 
@@ -91,8 +83,7 @@ Old `level-XXXX-slug` and flat `side-quest-slug` patterns are invalid.
 - **Nested fenced code blocks** need a longer outer fence (4 backticks if inner
   uses 3).
 - **No literal secrets**: never paste strings starting with `ghp_`, `gho_`,
-  `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`. Use placeholders like
-  `${env:GITHUB_TOKEN}` or `${input:openai-key}`.
+`ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`. Use placeholders like `${env:GITHUB_TOKEN}` or `${input:openai-key}`.
 
 ---
 
@@ -156,8 +147,7 @@ bundle exec jekyll build
 - ❌ Touching `.github/instructions/*.md` — open a separate PR
 - ❌ Bulk dependency upgrades
 
-If the review flags something out of scope, leave a comment on the issue noting
-it and open a follow-up issue.
+If the review flags something out of scope, leave a comment on the issue noting it and open a follow-up issue.
 
 ---
 

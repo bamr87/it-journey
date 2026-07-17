@@ -9,8 +9,7 @@ lastmod: 2026-05-23T00:00:00.000Z
 
 Enhance an existing quest with implementation details, diagrams, and validation — without breaking [`.github/instructions/quest.instructions.md`](../instructions/quest.instructions.md) compliance.
 
-**Quest file**: {{ inputs.quest_outline }}
-**Related article**: {{ inputs.article_content }}
+**Quest file**: {{ inputs.quest_outline }} **Related article**: {{ inputs.article_content }}
 
 ## Hard Rules
 

@@ -331,11 +331,5 @@ test -f work/gh-600/schemas/sub-agent-contract.json \
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]]
-**Unlocks:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
-**Sequel quests:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]] **Unlocks:** [[The Scribe's Codex: Observability in Multi-Agent Systems]] **Sequel quests:** [[The Scribe's Codex: Observability in Multi-Agent Systems]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

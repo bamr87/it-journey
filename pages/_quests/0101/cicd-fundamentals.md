@@ -498,7 +498,4 @@ The secret is injected into the job's environment but never written to the log o
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0101 - CI/CD & DevOps]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[GitHub Actions Basics: Workflow Automation for Modern DevOps]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Deployment Pipelines: Production Release Automation Strategies]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0101 - CI/CD & DevOps]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[GitHub Actions Basics: Workflow Automation for Modern DevOps]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Deployment Pipelines: Production Release Automation Strategies]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

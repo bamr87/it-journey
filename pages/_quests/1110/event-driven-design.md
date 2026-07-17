@@ -455,8 +455,4 @@ Choose a key that matches the entity whose order matters (a `user_id`, an `order
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Architecture & Design Patterns]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Microservices Architecture: Decomposing the Monolith]] · [[Domain-Driven Design: Modeling the Business in Code]]
-**Unlocks:** [[Scaling Strategies: Horizontal Growth, Caching, and CAP]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1110 - Architecture & Design Patterns]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Microservices Architecture: Decomposing the Monolith]] · [[Domain-Driven Design: Modeling the Business in Code]] **Unlocks:** [[Scaling Strategies: Horizontal Growth, Caching, and CAP]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

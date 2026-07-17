@@ -192,8 +192,7 @@ Think of GitHub as:
 
 ### 🔗 What is "Forking"?
 
-When you "fork" a repository (project), you're essentially saying:
-*"I like this project, and I want my own copy that I can experiment with!"*
+When you "fork" a repository (project), you're essentially saying: *"I like this project, and I want my own copy that I can experiment with!"*
 
 It's like photocopying a recipe so you can try your own variations without affecting the original.
 
@@ -390,7 +389,5 @@ Your GitHub account opens up incredible possibilities:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

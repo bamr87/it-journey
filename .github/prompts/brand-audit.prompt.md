@@ -7,14 +7,9 @@ lastmod: 2026-06-21T00:00:00.000Z
 
 # Brand Audit
 
-Read-only reporter for **brand/voice drift** across posts. It runs the CMS engine's
-brand check and surfaces what drifted, grouped by section. It does **not** rewrite
-content — fixing is a separate, reviewed step (the `brand-voice` skill or
-`cms-curator`).
+Read-only reporter for **brand/voice drift** across posts. It runs the CMS engine's brand check and surfaces what drifted, grouped by section. It does **not** rewrite content — fixing is a separate, reviewed step (the `brand-voice` skill or `cms-curator`).
 
-Brand rules live in `_data/brand/` (facts) and `.cms/config.yml › brand`
-(thresholds). Drift is **advisory**: it never affects the health score and never
-blocks CI.
+Brand rules live in `_data/brand/` (facts) and `.cms/config.yml › brand` (thresholds). Drift is **advisory**: it never affects the health score and never blocks CI.
 
 ## Operating Protocol
 

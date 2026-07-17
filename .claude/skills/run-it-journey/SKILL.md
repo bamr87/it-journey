@@ -3,10 +3,7 @@ name: run-it-journey
 description: Build, run, and drive the IT-Journey Jekyll site. Use when asked to start IT-Journey, serve the site locally, preview a content change, take a screenshot of a page, smoke-test routes, or validate frontmatter/quests.
 ---
 
-IT-Journey is a large GitHub-Pages **Jekyll site** (quests, docs, notes, posts).
-You run it with **Docker Compose** (port 4002) and drive it with
-`.claude/skills/run-it-journey/smoke.sh` — a smoke harness that checks routes
-and screenshots pages with headless Google Chrome.
+IT-Journey is a large GitHub-Pages **Jekyll site** (quests, docs, notes, posts). You run it with **Docker Compose** (port 4002) and drive it with `.claude/skills/run-it-journey/smoke.sh` — a smoke harness that checks routes and screenshots pages with headless Google Chrome.
 
 All paths below are relative to the **repo root**.
 
@@ -21,18 +18,13 @@ All paths below are relative to the **repo root**.
 
 - **Docker Desktop**, running. Verify: `docker info >/dev/null && echo ok`.
 - **Google Chrome** (for screenshots), at the default macOS location
-  `/Applications/Google Chrome.app`. Verify:
-  `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version`.
-  (`smoke.sh` skips screenshots with a warning if Chrome is absent; override
-  with `CHROME=/path/to/chrome`.)
+`/Applications/Google Chrome.app`. Verify: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version`. (`smoke.sh` skips screenshots with a warning if Chrome is absent; override with `CHROME=/path/to/chrome`.)
 
-No `apt-get`/`bundle install` on the host — everything Ruby happens inside the
-container.
+No `apt-get`/`bundle install` on the host — everything Ruby happens inside the container.
 
 ## Setup
 
-The compose `jekyll` service declares `env_file: .env`, so that file must exist
-(its API keys are optional and unused for serving):
+The compose `jekyll` service declares `env_file: .env`, so that file must exist (its API keys are optional and unused for serving):
 
 ```bash
 cp .env.example .env
@@ -46,8 +38,7 @@ cp .env.example .env
 docker compose up -d jekyll
 ```
 
-The first start runs `bundle install` inside the container and then a full site
-build. **Wait for `Server running`** before driving it:
+The first start runs `bundle install` inside the container and then a full site build. **Wait for `Server running`** before driving it:
 
 ```bash
 # blocks until the server is actually serving (first run builds image + bundle; a few min)
@@ -61,9 +52,7 @@ docker compose logs jekyll 2>&1 | grep -E 'done in|Server (address|running)'
 bash .claude/skills/run-it-journey/smoke.sh
 ```
 
-Expected tail: seven `HTTP 200 OK` routes and `==> PASS`. Screenshots land in
-**`/tmp/it-journey-shots/`** (`home.png`, `quests.png`). **Open them** — a curl
-200 with a blank body still "passes"; the PNG is the proof the site rendered.
+Expected tail: seven `HTTP 200 OK` routes and `==> PASS`. Screenshots land in **`/tmp/it-journey-shots/`** (`home.png`, `quests.png`). **Open them** — a curl 200 with a blank body still "passes"; the PNG is the proof the site rendered.
 
 `smoke.sh` knobs (all optional env / args):
 
@@ -83,11 +72,7 @@ docker compose down          # stops + removes the container; keeps the
 
 ## Run (human path)
 
-`make serve` (→ `bundle exec jekyll serve --config _config.yml,_config_dev.yml
---livereload --port 4002`) is the documented native workflow, but it needs a
-local Ruby ≥ 3.1 with gems bundled. On stock macOS system Ruby it fails with
-`command not found: jekyll`. Use the Docker path above unless you've set up a
-modern Ruby yourself.
+`make serve` (→ `bundle exec jekyll serve --config _config.yml,_config_dev.yml --livereload --port 4002`) is the documented native workflow, but it needs a local Ruby ≥ 3.1 with gems bundled. On stock macOS system Ruby it fails with `command not found: jekyll`. Use the Docker path above unless you've set up a modern Ruby yourself.
 
 ## Test
 
@@ -97,9 +82,7 @@ Lightweight syntax/sanity checks (host Ruby is fine — no gems needed):
 make test          # ruby -c + bash -n on the statistics scripts → "All tests passed!"
 ```
 
-Content / frontmatter validation (PRs here are mostly markdown). Host Python
-lacks `pyyaml`, so run it in a throwaway container — `python:3.12-slim` is the
-small base used here:
+Content / frontmatter validation (PRs here are mostly markdown). Host Python lacks `pyyaml`, so run it in a throwaway container — `python:3.12-slim` is the small base used here:
 
 ```bash
 docker run --rm -v "$PWD":/app -w /app python:3.12-slim \
@@ -108,35 +91,25 @@ docker run --rm -v "$PWD":/app -w /app python:3.12-slim \
 # Swap pages/_about for pages/ to validate everything, or pages/_quests for quests.
 ```
 
-The repo also ships a `quest-validator` compose service for the same purpose
-(`docker compose run --rm quest-validator`), but it builds the heavier
-`Dockerfile` image (full `bundle install` + pip) on first use.
+The repo also ships a `quest-validator` compose service for the same purpose (`docker compose run --rm quest-validator`), but it builds the heavier `Dockerfile` image (full `bundle install` + pip) on first use.
 
 ## Gotchas
 
 - **First serve builds the Docker image (Ruby 3.2.3) + bundle, then the site —
-  a few minutes, and `:4002` refuses connections the whole time.** The `jekyll`
-  service now builds from the repo `Dockerfile` and runs natively (no amd64
-  emulation), so it's much faster than the old `jekyll/jekyll` image — the site
-  build is ~30-40s. Until it finishes, `curl localhost:4002` returns *"Connection
-  reset by peer."* Don't kill it — watch for `Server running` in the logs.
+a few minutes, and `:4002` refuses connections the whole time.** The `jekyll` service now builds from the repo `Dockerfile` and runs natively (no amd64 emulation), so it's much faster than the old `jekyll/jekyll` image — the site build is ~30-40s. Until it finishes, `curl localhost:4002` returns *"Connection reset by peer."* Don't kill it — watch for `Server running` in the logs.
 - **`.env` must exist or `docker compose up jekyll` errors.** The service has
   `env_file: .env`; the repo only ships `.env.example`. `cp .env.example .env`.
 - **Don't fight the host Ruby.** System Ruby 2.6.10 can't resolve the theme
-  (needs ≥ 3.2) and there's no version manager installed. `bundle exec
-  jekyll …` on the host gives `command not found: jekyll`. The whole point of
-  Docker here is the Ruby 3.2.3 image built from the `Dockerfile`.
+(needs ≥ 3.2) and there's no version manager installed. `bundle exec jekyll …` on the host gives `command not found: jekyll`. The whole point of Docker here is the Ruby 3.2.3 image built from the `Dockerfile`.
 - **A curl 200 is not proof of a render.** Always open the screenshot PNG.
 - **macOS sometimes hands scripts a stripped PATH** — bare `curl`/`grep` come
-  back `command not found`. `smoke.sh` pins PATH defensively; in one-off shells
-  use absolute paths like `/usr/bin/curl`.
+back `command not found`. `smoke.sh` pins PATH defensively; in one-off shells use absolute paths like `/usr/bin/curl`.
 ## Troubleshooting
 
 - **`curl: (56) Recv failure: Connection reset by peer` on :4002** — the server
   is still building. Wait for `Server running` (`docker compose logs -f jekyll`).
 - **`Error: PyYAML is required but not installed`** when running a validator on
-  the host — host Python has no deps. Use the `python:3.12-slim` docker command
-  in the Test section.
+the host — host Python has no deps. Use the `python:3.12-slim` docker command in the Test section.
 - **`bundler: command not found: jekyll`** on the host — system Ruby has no gems
   installed and is too old anyway. Use Docker.
 - **`docker compose up` hangs at `Generating...`** — it's not hung; that's the

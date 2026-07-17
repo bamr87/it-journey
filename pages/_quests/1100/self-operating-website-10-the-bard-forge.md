@@ -295,6 +295,4 @@ This is the final chapter of the campaign. Return to the hub to review the full 
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Campaign hub:** [[Epic Quest: The Self-Operating Website]]
-**Previous:** [[The Chronicle]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Campaign hub:** [[Epic Quest: The Self-Operating Website]] **Previous:** [[The Chronicle]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

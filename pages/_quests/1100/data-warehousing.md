@@ -473,8 +473,4 @@ This is why Snowflake, BigQuery, Redshift, Parquet files, and DuckDB are all col
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data Engineering]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]]
-**Unlocks:** [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data Engineering]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] **Unlocks:** [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]

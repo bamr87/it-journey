@@ -307,11 +307,5 @@ grep -q 'Memory Loading Protocol' .github/copilot-instructions.md 2>/dev/null &&
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The Shield of Retries: Safe Execution and Error Handling]]
-**Unlocks:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
-**Sequel quests:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The Shield of Retries: Safe Execution and Error Handling]] **Unlocks:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] **Sequel quests:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

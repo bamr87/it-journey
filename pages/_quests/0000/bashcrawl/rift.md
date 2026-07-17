@@ -263,10 +263,5 @@ Continue your terminal adventure with these resources:
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]] · [[Bashcrawl Hidden Chapel: Hidden Files and Man Pages]]
-**Unlocks:** [[Bashcrawl Agent Mode: AI Automation and Contribution]]
-**Sequel quests:** [[Bashcrawl Agent Mode: AI Automation and Contribution]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]] · [[Bashcrawl Hidden Chapel: Hidden Files and Man Pages]] **Unlocks:** [[Bashcrawl Agent Mode: AI Automation and Contribution]] **Sequel quests:** [[Bashcrawl Agent Mode: AI Automation and Contribution]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

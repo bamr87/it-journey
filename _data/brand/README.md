@@ -1,14 +1,8 @@
 # `_data/brand/` — IT-Journey brand store
 
-The **single source of truth** for the brand's identity, values, voice, style,
-colors, and audience — and the per-section narrative guides that govern how
-collection content (**posts, quests, and docs**, including the devops-news *muse*
-format) is written.
+The **single source of truth** for the brand's identity, values, voice, style, colors, and audience — and the per-section narrative guides that govern how collection content (**posts, quests, and docs**, including the devops-news *muse* format) is written.
 
-It lives under `_data/` so it is **build-consumed** (`site.data.brand.*`,
-addressable in layouts/includes) and sits beside the other site data. The CMS
-engine (`scripts/cms/cms.py`) and the `brand-voice` skill read these files
-directly.
+It lives under `_data/` so it is **build-consumed** (`site.data.brand.*`, addressable in layouts/includes) and sits beside the other site data. The CMS engine (`scripts/cms/cms.py`) and the `brand-voice` skill read these files directly.
 
 ## What lives here
 
@@ -30,24 +24,19 @@ directly.
 - **Brand facts** (values, voice pillars, palette, personas, glossary) live
   **here**.
 - **Brand enforcement thresholds** (banned/preferred terms toggles, emoji count
-  ranges, formality targets, required structural elements) live in
-  **`.cms/config.yml` → `brand`**, keyed by section slug.
+ranges, formality targets, required structural elements) live in **`.cms/config.yml` → `brand`**, keyed by section slug.
 
-The engine reads the thresholds from config and uses this store only to resolve
-which section/profile governs a post and to validate profile names. Guides and
-`.github/instructions/*` **point at** this store; they never restate it (DRY).
+The engine reads the thresholds from config and uses this store only to resolve which section/profile governs a post and to validate profile names. Guides and `.github/instructions/*` **point at** this store; they never restate it (DRY).
 
 ## How content resolves to a guide
 
 1. The file's `voice_profile:` frontmatter, if set; else
 2. its `section_guide:` frontmatter → that guide's profile in `_registry.yml`; else
 3. **posts:** the folder (`pages/_posts/<category>/`) → the `<category>` guide;
-   **quests/docs:** `_registry.yml › collection_defaults` (`quests → quest`,
-   `docs → docs`); else
+**quests/docs:** `_registry.yml › collection_defaults` (`quests → quest`, `docs → docs`); else
 4. `voice.yml: default_profile` (`practitioner-chronicle`).
 
-So the two frontmatter keys are **optional** — every existing post, quest, and doc
-already resolves via its folder/collection.
+So the two frontmatter keys are **optional** — every existing post, quest, and doc already resolves via its folder/collection.
 
 ## Consumers
 

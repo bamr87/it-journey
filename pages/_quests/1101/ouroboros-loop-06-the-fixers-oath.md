@@ -238,6 +238,4 @@ graph LR
 
 *Structured wiki-links connect this quest to the IT-Journey knowledge graph.*
 
-**Campaign hub:** [[Epic Quest: The Ouroboros Loop]]
-**Previous:** [[The Mana Ledger]] · **Next:** [[Weaving the Whole]]
-**Level home:** [[Level 1101 - Machine Learning & AI]]
+**Campaign hub:** [[Epic Quest: The Ouroboros Loop]] **Previous:** [[The Mana Ledger]] · **Next:** [[Weaving the Whole]] **Level home:** [[Level 1101 - Machine Learning & AI]]
